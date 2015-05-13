@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+<_locDefinition xmlns="urn:locstudio">
+    <_locDefault _loc="locNone" />
+    <_locTag _loc="locData">Title</_locTag>
+    <_locTag _loc="locData">Description</_locTag>
+    <_locTag _loc="locData">Author</_locTag>
+    <_locTag _loc="locData">ToolTip</_locTag>
+</_locDefinition>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Create Numbers table</Title>
+                        <Shortcut></Shortcut>
+			<Description>Creates a numbers table and populates it with 10000 rows.</Description>
+			<Author>Matan Yungman</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                                <Literal>
+                                	<ID>NumbersTableName</ID>
+                                	<ToolTip>Name of the numbers table</ToolTip>
+                                	<Default>#Numbers</Default>
+                                </Literal>
+                                <Literal>
+                                	<ID>TempTableName</ID>
+                                	<ToolTip>Name of the temporary table</ToolTip>
+                                	<Default>#T</Default>
+                                </Literal>
+                                
+			</Declarations>
+			<Code Language="SQL">
+				<![CDATA[
+create table $TempTableName$(col1 int)
+go
+insert $TempTableName$ select 1
+go 10
+
+create table $NumbersTableName$(id int primary key)
+
+insert $NumbersTableName$(id)
+select row_number() over(order by temp1.col1) 
+from $TempTableName$ temp1 cross join $TempTableName$ temp2 
+cross join $TempTableName$ temp3 cross join $TempTableName$ temp4
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
