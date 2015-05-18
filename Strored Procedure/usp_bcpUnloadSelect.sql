@@ -36,7 +36,7 @@ BEGIN
 
         /* remove break lines from select statement*/
         SET @sqlCommand = REPLACE(REPLACE(@sqlCommand, CHAR(13), ' '), CHAR(10), ' ');
-        /* remove break lines from select statement*/
+        /* remove duplicate spaces from select statement*/
         SET @sqlCommand = REPLACE(REPLACE(REPLACE(@sqlCommand,' ','<>'),'><',''),'<>',' ');
 
         IF @debug = 1
