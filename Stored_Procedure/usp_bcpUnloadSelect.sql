@@ -14,10 +14,11 @@ ALTER PROCEDURE usp_bcpUnloadSelect(
 AS
 /*--
 Official bcp documentation: http://technet.microsoft.com/en-us/library/ms162802.aspx
+In select statement please use full table names: DATABASENAME.SHEMANAME.TABLENAME
 EXECUTE [NIIGAZ].[dbo].[usp_bcpUnloadSelect]
     @outputFilePath  = 'd:\',
     @serverName      = '',
-    @sqlCommand     = 'SELECT * FROM YourTable',
+    @sqlCommand     = 'SELECT * FROM DATABASENAME.SHEMANAME.TABLENAME1 AS t1 INNER JOIN DATABASENAME.SHEMANAME.TABLENAME2 AS t2 ON t1.Column1 = t2.Column1',
     @fileName        = '',
     @fieldTerminator = '|',
     @fileExtension = 'txt',
