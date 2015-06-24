@@ -8,6 +8,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
  - Awesome [BRENT OZAR] scripts and articles
  - [Glenn Berry's SQL Server Performance]
  - Best backup and index maintence [Ola Hallengren]
+ - [SQL Server Managment Studio] download link
 
 
 ## Index option Include
@@ -41,3 +42,4 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 [BRENT OZAR]:http://www.brentozar.com/
 [Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
 [Ola Hallengren]:http://ola.hallengren.com/
+[SQL Server Managment Studio]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
