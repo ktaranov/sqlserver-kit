@@ -3,7 +3,7 @@ GO
 
 
 ALTER PROCEDURE dbo.usp_BulkUpload (
-     @path                 NVARCHAR(900)
+     @path                 NVARCHAR(900)  --  add a slash (\) at the end of a variable @path
     ,@fileName             NVARCHAR(200) = ''
     ,@fileExtension        NVARCHAR(10) = N'txt'
     ,@databaseName         SYSNAME
@@ -19,6 +19,7 @@ ALTER PROCEDURE dbo.usp_BulkUpload (
     ,@LASTROW              INTEGER = 0
     ,@ROWTERMINATOR        NVARCHAR(10) = N'\n'
     ,@TABLOCK              BIT = 1
+    ,@ERRORFILE            NVARCHAR(300) = ''
     ,@excludeColumns       NVARCHAR(MAX) = ''''''
     ,@rowOrder             NVARCHAR(MAX) = ''
     ,@orderColumnName      BIT = 1
@@ -87,14 +88,19 @@ BEGIN
         DECLARE @Columns        NVARCHAR(MAX) = '';
         DECLARE @filePath       NVARCHAR(MAX)  = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
         DECLARE @CrLf           NVARCHAR(10)   = CHAR(13);
-        DECLARE @TROW50000      NVARCHAR(MAX) = ''
+        DECLARE @TROW50000      NVARCHAR(MAX) = '';
+
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @Crlf;
 
         SET @TROW50000 = 'Table ' + @tableFullName + ' is not exists in database ' + QUOTENAME(@databaseName) + '!!!';
         IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
 
+        IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
+
         IF @debug = 1 PRINT ISNULL(N'@filePath = {' + @filePath + N'}', '@filePath = Null');
+
+        IF @ERRORFILE = '' SET @ERRORFILE = @path + @tableFullName + N'_error_' + REPLACE(CONVERT(NCHAR(23), GETDATE(), 126), ':', '_') + N'.txt';
 
         IF @databaseRecoveryMode <> ''
         BEGIN
@@ -158,6 +164,7 @@ WITH (
       ___KEEPNULLS___
       __LASTROW__
       __TABLOCK__
+      ,ERRORFILE = ''__ERRORFILE__''
 );
 
 __useIdentityON__
@@ -183,8 +190,9 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__KEEPIDENTITY__',    CASE WHEN @useIdentity = 1 THEN ',KEEPIDENTITY' ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIRSTROW__',        @FIRSTROW);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '___KEEPNULLS___',     CASE WHEN @KEEPNULLS = 1 THEN ',KEEPNULLS' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__LASTROW__',         CASE WHEN @LASTROW > 0 THEN ',LASTROW = ' + CAST(@LASTROW AS NVARCHAR) ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',         CASE WHEN @TABLOCK = 1 THEN ',TABLOCK' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__LASTROW__',         CASE WHEN @LASTROW > 0   THEN ',LASTROW = ' + CAST(@LASTROW AS NVARCHAR) ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',         CASE WHEN @TABLOCK = 1   THEN ',TABLOCK' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ERRORFILE__',       @ERRORFILE);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityON__',   CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' ON;' ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',        CASE WHEN @rowOrder <> '' THEN 'ORDER BY ' + @rowOrder ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityOFF__',  CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' OFF;' ELSE '' END);
