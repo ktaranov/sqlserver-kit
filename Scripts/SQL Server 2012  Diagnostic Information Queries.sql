@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- June 2015
--- Last Modified: June 9, 2015
+-- July 2015
+-- Last Modified: July 10, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -85,6 +85,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- Performance and Stability Related Fixes in Post-SQL Server 2012 SP2 Builds
 -- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp2-builds/
 
+-- Performance and Stability Related Fixes in Post-SQL Server 2012 SP1 Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp1-builds-2/
+
 
 -- When was SQL Server installed  (Query 2) (SQL Server Install Date)  
 SELECT @@SERVERNAME AS [Server Name], create_date AS [SQL Server Install Date] 
@@ -154,6 +157,10 @@ DBCC TRACESTATUS (-1);
 --           Recommendations to reduce allocation contention in SQL Server tempdb database
 --           http://support2.microsoft.com/kb/2154845
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+
+-- SQL Server query optimizer hotfix trace flag 4199 servicing model
+-- https://support.microsoft.com/en-us/kb/974006
+
 
 
 -- Windows information (SQL Server 2012)  (Query 7) (Windows Info)
@@ -351,7 +358,8 @@ vs.logical_volume_name, CONVERT(DECIMAL(18,2),vs.total_bytes/1073741824.0) AS [T
 CONVERT(DECIMAL(18,2),vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
 CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL(18,2)) * 100 AS [Space Free %] 
 FROM sys.master_files AS f WITH (NOLOCK)
-CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs OPTION (RECOMPILE);
+CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs 
+ORDER BY vs.volume_mount_point OPTION (RECOMPILE);
 
 -- Shows you the total and free space on the LUNs where you have database files
 -- Being low on free space can negatively affect performance
