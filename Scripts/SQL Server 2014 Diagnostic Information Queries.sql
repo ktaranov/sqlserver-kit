@@ -1,8 +1,8 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- April 2015
--- Last Modified: April 28, 2015
+-- June 2015
+-- Last Modified: June 9, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -56,7 +56,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 12.0.2370        CU2                 6/27/2014
 -- 12.0.2402		CU3					8/18/2014
 -- 12.0.2430        CU4					10/21/2014
--- 12.0.2456		CU5					12/17/2014	---->	12.0.4050		SP1 RTM			4/15/2015	(temporarily pulled by Microsoft on 4/16/2015)	
+-- 12.0.2456		CU5					12/17/2014	---->	12.0.4100		SP1 RTM			5/4/2015
 -- 12.0.2474		CU5 + COD HF		2/3/2015   
 -- 12.0.2480		CU6					2/16/2015
 -- 12.0.2495        CU7                 4/20/2015
@@ -79,7 +79,8 @@ WHERE name = N'NT AUTHORITY\SYSTEM'
 OR name = N'NT AUTHORITY\NETWORK SERVICE' OPTION (RECOMPILE);
 
 -- Tells you the date and time that SQL Server was installed
--- It is a good idea to know how old your instance is
+-- It is a good idea to know how old your instance is so you can get a better
+-- idea how old the hardware is and how long the instance has been in service
 
 
 -- Get selected server properties (SQL Server 2014)  (Query 3) (Server Properties)
@@ -135,11 +136,12 @@ DBCC TRACESTATUS (-1);
 -- It is very useful to know what global trace flags are currently enabled as part of the diagnostic process.
 
 -- Common trace flags that should be enabled in most cases
--- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
 -- TF 1118 - Helps alleviate allocation contention in tempdb, SQL Server allocates full extents to each database object, 
 --           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
 --           Recommendations to reduce allocation contention in SQL Server tempdb database
 --           http://support2.microsoft.com/kb/2154845
+-- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+
 
 
 -- Windows information (SQL Server 2014)  (Query 7) (Windows Info)
@@ -190,7 +192,7 @@ WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 
 -- Gives you some useful information about the composition and relative load on your NUMA nodes
 -- You want to see an equal number of schedulers on each NUMA node
-
+-- Watch out if SQL Server 2014 Standard Edition has been installed on a machine with more than 16 physical cores
 
 -- Hardware information from SQL Server 2014  (Query 10) (Hardware Info)
 -- (Cannot distinguish between HT and multi-core)
@@ -293,12 +295,13 @@ ORDER BY name OPTION (RECOMPILE);
 -- remote admin connections (should be 1)
 
 
--- See if buffer pool extension (BPE) is enabled (Query 19) (BPE Configuration)
+-- See if buffer pool extensions (BPE) is enabled (Query 19) (BPE Configuration)
 SELECT [path], state_description, current_size_in_kb, 
 CAST(current_size_in_kb/1048576.0 AS DECIMAL(10,2)) AS [Size (GB)]
 FROM sys.dm_os_buffer_pool_extension_configuration WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- BPE is available in both Standard Edition and Enterprise Edition
+-- It is a more interesting feature for Standard Edition
 
 
 -- Look at buffer descriptors to see BPE usage by database (Query 20) (BPE Usage) 
@@ -332,16 +335,13 @@ ORDER BY creation_time DESC OPTION (RECOMPILE);
 -- not had any memory dumps (which is a good thing)
 
 
--- File names and paths for TempDB and all user databases in instance  (Query 23) (Database Filenames and Paths)
+-- File names and paths for all user and system databases on instance  (Query 23) (Database Filenames and Paths)
 SELECT DB_NAME([database_id]) AS [Database Name], 
        [file_id], name, physical_name, type_desc, state_desc,
 	   is_percent_growth, growth,
 	   CONVERT(bigint, growth/128.0) AS [Growth in MB], 
        CONVERT(bigint, size/128.0) AS [Total Size in MB]
 FROM sys.master_files WITH (NOLOCK)
-WHERE [database_id] > 4 
-AND [database_id] <> 32767
-OR [database_id] = 2
 ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
 
 -- Things to look at:
@@ -362,7 +362,8 @@ CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL
 FROM sys.master_files AS f WITH (NOLOCK)
 CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs OPTION (RECOMPILE);
 
---Shows you the total and free space on the LUNs where you have database files
+-- Shows you the total and free space on the LUNs where you have database files
+-- Being low on free space can negatively affect performance
 
 
 -- Look for I/O requests taking longer than 15 seconds in the five most recent SQL Server Error Logs (Query 25) (IO Warnings)
@@ -455,15 +456,15 @@ ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
 
 -- Recovery model, log reuse wait description, log file size, log usage size  (Query 28) (Database Properties)
 -- and compatibility level for all databases on instance
-SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], db.state_desc, 
+SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], db.state_desc, db.containment_desc,
 db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
 CONVERT(DECIMAL(18,2), ls.cntr_value/1024.0) AS [Log Size (MB)], CONVERT(DECIMAL(18,2), lu.cntr_value/1024.0) AS [Log Used (MB)],
 CAST(CAST(lu.cntr_value AS FLOAT) / CAST(ls.cntr_value AS FLOAT)AS DECIMAL(18,2)) * 100 AS [Log Used %], 
 db.[compatibility_level] AS [DB Compatibility Level], db.page_verify_option_desc AS [Page Verify Option], 
 db.is_auto_create_stats_on, db.is_auto_update_stats_on, db.is_auto_update_stats_async_on, db.is_parameterization_forced, 
 db.snapshot_isolation_state_desc, db.is_read_committed_snapshot_on, db.is_auto_close_on, db.is_auto_shrink_on, 
-db.target_recovery_time_in_seconds, db.is_cdc_enabled, db.is_memory_optimized_elevate_to_snapshot_on, db.delayed_durability_desc, 
-db.is_auto_create_stats_incremental_on     
+db.target_recovery_time_in_seconds, db.is_cdc_enabled, db.is_published, db.group_database_id, db.replica_id,
+db.is_memory_optimized_elevate_to_snapshot_on, db.delayed_durability_desc, db.is_auto_create_stats_incremental_on      
 FROM sys.databases AS db WITH (NOLOCK)
 INNER JOIN sys.dm_os_performance_counters AS lu WITH (NOLOCK)
 ON db.name = lu.instance_name
@@ -477,7 +478,7 @@ AND ls.cntr_value > 0 OPTION (RECOMPILE);
 -- How many databases are on the instance?
 -- What recovery models are they using?
 -- What is the log reuse wait description?
--- How full are the transaction logs ?
+-- How full are the transaction logs?
 -- What compatibility level are the databases on? 
 -- What is the Page Verify Option? (should be CHECKSUM)
 -- Is Auto Update Statistics Asynchronously enabled?
@@ -798,9 +799,12 @@ FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 
--- PLE is a good measurement of memory pressure.
--- Higher PLE is better. Watch the trend over time, not the absolute value.
--- This will only return one row for non-NUMA systems.
+-- PLE is a good measurement of memory pressure
+-- Higher PLE is better. Watch the trend over time, not the absolute value
+-- This will only return one row for non-NUMA systems
+
+-- Page Life Expectancy isn’t what you think…
+-- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
 -- Memory Grants Pending value for current instance  (Query 44) (Memory Grants Pending)
@@ -842,8 +846,11 @@ ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
 
 -- Gives you the text, type and size of single-use ad-hoc and prepared queries that waste space in the plan cache
 -- Enabling 'optimize for ad hoc workloads' for the instance can help (SQL Server 2008 and above only)
--- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this.
+-- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this
 -- Enabling forced parameterization for the database can help, but test first!
+
+-- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
+-- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
 
 
 -- Database specific queries *****************************************************************
@@ -1127,7 +1134,7 @@ ORDER BY SUM(Rows) DESC OPTION (RECOMPILE);
 
 -- Get some key table properties (Query 63) (Table Properties)
 SELECT [name], create_date, lock_on_bulk_load, is_replicated, has_replication_filter, 
-       is_tracked_by_cdc, lock_escalation_desc, is_memory_optimized, durability_desc
+       is_tracked_by_cdc, lock_escalation_desc, is_memory_optimized, durability_desc, is_filetable
 FROM sys.tables WITH (NOLOCK) 
 ORDER BY [name] OPTION (RECOMPILE);
 
@@ -1290,14 +1297,14 @@ SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database N
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
 CONVERT (NUMERIC (20,2), (CONVERT (FLOAT, bs.backup_size) /
-CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], bs.has_backup_checksums,
+CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], bs.has_backup_checksums, is_copy_only, encryptor_type,
 DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) AS [Backup Elapsed Time (sec)],
 bs.backup_finish_date AS [Backup Finish Date]
 FROM msdb.dbo.backupset AS bs WITH (NOLOCK)
-WHERE DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) > 0 
+WHERE database_name = DB_NAME(DB_ID())
 AND bs.backup_size > 0
 AND bs.[type] = 'D' -- Change to L if you want Log backups
-AND database_name = DB_NAME(DB_ID())
+AND DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) > 0 
 ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- Are your backup sizes and times changing over time?
