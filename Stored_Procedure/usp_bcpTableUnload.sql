@@ -7,7 +7,8 @@ ALTER PROCEDURE dbo.usp_bcpTableUnload (
     , @databaseName        SYSNAME
     , @schemaName          SYSNAME
     , @tableName           SYSNAME
-    , @fieldTerminator     NVARCHAR(10)  = '|'
+    , @field_term          NVARCHAR(10)  = '|'
+    , @row_term            NVARCHAR(10)  = '\n'
     , @fileExtension       NVARCHAR(10)  = 'txt'
     , @codePage            NVARCHAR(10)  = 'C1251'
     , @excludeColumns      NVARCHAR(MAX) = ''
@@ -35,7 +36,8 @@ EXECUTE [dbo].[usp_bcpTableUnload]
     , @databaseName        = 'DatabaseName'
     , @schemaName          = 'dbo'
     , @tableName           = 'TableName'
-    , @fieldTerminator     = '|'
+    , @field_term          = '|'
+    , @row_term            = '\n'
     , @fileExtension       = 'txt'
     , @excludeColumns      = '[CreatedDate],[ModifiedDate],[UserID]'
     , @orderByColumns      = 'TableNameID'
@@ -82,19 +84,24 @@ BEGIN
 
     SET @tsqlCommand = 'EXECUTE xp_cmdshell ' +  '''bcp "SELECT ' + @Columns + '  FROM ' + @tableFullName +
                         CASE WHEN @orderByColumns <> '' THEN ' ORDER BY ' + @orderByColumns ELSE '' END +
-                        '" queryout "' +  @filePath + '" -T -S ' + @serverName +' -c -' + @codePage + ' -t"' + @fieldTerminator + '"''' + @crlf;
+                        '" queryout "' +  @filePath + '" -T -S ' + @serverName +' -c -' + @codePage + ' -t"' +  @field_term + '"''' + @crlf;
 
     IF @debug = 1 PRINT CAST(ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}' + @crlf) AS TEXT);
     ELSE EXECUTE sp_executesql @tsqlCommand;
 
     IF @outputColumnHeaders = 1
         BEGIN
-             SET @tsqlCommand = 'EXECUTE xp_cmdshell ' +  '''bcp "SELECT ''''' + REPLACE(@Columns, ',', @fieldTerminator) + '''''" queryout "' +  @path + @tableFullName + '_headers.txt' + '" -T -S ' + @serverName + ' -c -' + @codePage + ' -t"' + @fieldTerminator + '"''' + @crlf;
+             SET @tsqlCommand = 'EXECUTE xp_cmdshell ' +  '''bcp "SELECT ''''' + REPLACE(@Columns, ',',  @field_term) +
+                                '''''" queryout "' +  @path + @tableFullName + '_headers.txt' + '" -T -S ' +
+                                @serverName + ' -c -' + @codePage + ' -t"' +  @field_term + '"''' +
+                                ' -r"' +  @row_term + '"''' + @crlf;
         
-             IF @debug = 1 PRINT CAST(ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}' + @crlf) AS TEXT);
+             IF @debug = 1 PRINT CAST(ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}',
+                                      '@tsqlCommand = {Null}' + @crlf) AS TEXT);
              ELSE EXECUTE sp_executesql @tsqlCommand;
         
-             SET @cmdCommand = 'copy /b ' + @path + @tableFullName + '_headers.' + @fileExtension + ' + ' + @filePath + ' ' + @path + @tableFullName + '_headers.' + @fileExtension;
+             SET @cmdCommand = 'copy /b ' + @path + @tableFullName + '_headers.' + @fileExtension + ' + ' +
+                               @filePath + ' ' + @path + @tableFullName + '_headers.' + @fileExtension;
         
              IF @debug = 1 PRINT CAST(ISNULL('@cmdCommand = {' + @crlf + @cmdCommand + @crlf + '}', '@cmdCommand = {Null}' + @crlf) AS TEXT)
              ELSE EXECUTE xp_cmdshell @cmdCommand;
