@@ -84,7 +84,8 @@ BEGIN
 
     SET @tsqlCommand = 'EXECUTE xp_cmdshell ' +  '''bcp "SELECT ' + @Columns + '  FROM ' + @tableFullName +
                         CASE WHEN @orderByColumns <> '' THEN ' ORDER BY ' + @orderByColumns ELSE '' END +
-                        '" queryout "' +  @filePath + '" -T -S ' + @serverName +' -c -' + @codePage + ' -t"' +  @field_term + '"''' + @crlf;
+                        '" queryout "' +  @filePath + '" -T -S ' + @serverName +' -c -' + @codePage +
+                        ' -t"' +  @field_term + '"' + ' -r"' +  @row_term + '"''' + @crlf;
 
     IF @debug = 1 PRINT CAST(ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}' + @crlf) AS TEXT);
     ELSE EXECUTE sp_executesql @tsqlCommand;
@@ -93,7 +94,7 @@ BEGIN
         BEGIN
              SET @tsqlCommand = 'EXECUTE xp_cmdshell ' +  '''bcp "SELECT ''''' + REPLACE(@Columns, ',',  @field_term) +
                                 '''''" queryout "' +  @path + @tableFullName + '_headers.txt' + '" -T -S ' +
-                                @serverName + ' -c -' + @codePage + ' -t"' +  @field_term + '"''' +
+                                @serverName + ' -c -' + @codePage + ' -t"' +  @field_term + '"' +
                                 ' -r"' +  @row_term + '"''' + @crlf;
         
              IF @debug = 1 PRINT CAST(ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}',
