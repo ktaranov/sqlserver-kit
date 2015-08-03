@@ -49,24 +49,39 @@ BEGIN
     BEGIN TRY
     IF @debug = 0 SET NOCOUNT ON;
 
-    DECLARE @tsqlCommand     NVARCHAR(MAX) = '';
-    DECLARE @cmdCommand      VARCHAR(8000)  = '';
-    DECLARE @ParmDefinition  NVARCHAR(500) = '@object_idIN INTEGER, @ColumnsOUT VARCHAR(MAX) OUTPUT';
-    DECLARE @tableFullName   NVARCHAR(500) = QUOTENAME(@databaseName) + '.' + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
-    DECLARE @object_id       INTEGER       = OBJECT_ID(@tableFullName);
-    DECLARE @Columns         NVARCHAR(MAX) = '';
-    DECLARE @filePath        NVARCHAR(900) = @path + @tableFullName + '.' + @fileExtension;
-    DECLARE @crlf            NVARCHAR(10)  = CHAR(13);
-    DECLARE @TROW50000       NVARCHAR(MAX) = ''
+    DECLARE @tsqlCommand         NVARCHAR(MAX) = '';
+    DECLARE @cmdCommand          VARCHAR(8000)  = '';
+    DECLARE @ParmDefinition      NVARCHAR(500) = '@object_idIN INTEGER, @ColumnsOUT VARCHAR(MAX) OUTPUT';
+    DECLARE @tableFullName       SYSNAME       = QUOTENAME(@databaseName) + '.' + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+    DECLARE @object_id           INTEGER       = OBJECT_ID(@tableFullName);
+    DECLARE @Columns             NVARCHAR(MAX) = '';
+    DECLARE @filePath            NVARCHAR(900) = @path + @tableFullName + '.' + @fileExtension;
+    DECLARE @crlf                NVARCHAR(10)  = CHAR(13);
+    DECLARE @orderByColumns_term NVARCHAR(10)  = ',';
+    DECLARE @TROW50000           NVARCHAR(MAX) = 'Table ' + @tableFullName + ' is not exists in database ' + QUOTENAME(@databaseName) + '!!!';
+    DECLARE @TROW50001           NVARCHAR(MAX) = 'Some columns in @orderByColumns = {' + @orderByColumns + '} not exists in table ' + @tableFullName + '!!!';
 
-    IF @debug = 1 PRINT ISNULL('/******* Start Debug' + @crlf + '@tableFullName = {' + CAST(@tableFullName AS NVARCHAR) + '}', '@tableFullName = {Null}');
-    IF @debug = 1 PRINT ISNULL('@object_id = {' + CAST(@object_id AS NVARCHAR) + '}', '@object_id = {Null}');
+    IF @debug = 1 PRINT ISNULL('/******* Start Debug' + @crlf + '@tableFullName = {' + CAST(@tableFullName AS NVARCHAR(MAX)) + '}', '@tableFullName = {Null}');
+    IF @debug = 1 PRINT ISNULL('@object_id = {' + CAST(@object_id AS NVARCHAR(MAX)) + '}', '@object_id = {Null}');
 
-    SET @TROW50000 = 'Table ' + @tableFullName + ' is not exists in database ' + QUOTENAME(@databaseName) + '!!!';
-    IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
+    IF @object_id IS NULL THROW 50000, @TROW50000, 1
+    ELSE
+    BEGIN
+        SET @tsqlCommand = N'USE ' + @databaseName + ';'                                                             + @crlf +
+                           N'SELECT @ColumnsOUT = COUNT(*)'                                                          + @crlf +
+                           N'FROM sys.columns sac '                                                                  + @crlf +
+                           N'WHERE sac.object_id = @object_idIN'                                                     + @crlf +
+                           N'      AND QUOTENAME(Name) IN (''[' + REPLACE(@orderByColumns, ',', ']'',''[') + ']'');' + @crlf;
+
+        IF @debug = 1 PRINT ISNULL(N'@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + N'}', N'@tsqlCommand = {Null}');
+        EXECUTE sp_executesql @tsqlCommand, @ParmDefinition, @object_idIN = @object_id, @ColumnsOUT = @Columns OUTPUT SELECT @Columns;
+        IF @Columns <> (DATALENGTH(@orderByColumns) - DATALENGTH(Replace(@orderByColumns, @orderByColumns_term, ''))) / DATALENGTH(@orderByColumns_term) + 1
+        THROW 50001, @TROW50001, 1;
+        SET @Columns = '';
+    END;
 
     SET @tsqlCommand = N'USE ' + @databaseName + ';'                                                            + @crlf +
-                       N'SELECT @ColumnsOUT  = @ColumnsOUT + QUOTENAME(Name) + '','''                           + @crlf +
+                       N'SELECT @ColumnsOUT = @ColumnsOUT + QUOTENAME(Name) + '','''                            + @crlf +
                        N'FROM sys.columns sac '                                                                 + @crlf +
                        N'WHERE sac.object_id = @object_idIN'                                                    + @crlf +
                        N'      AND QUOTENAME(Name) NOT IN (''' + REPLACE(@excludeColumns, ',', ''',''') + ''')' + @crlf +
