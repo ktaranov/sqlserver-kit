@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2015
--- Last Modified: July 10, 2015
+-- August 2015
+-- Last Modified: August 7, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -69,6 +69,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --                                                                                                              11.0.5571       SP2 CU4 + COD HF     2/4/2015  (this includes the AlwaysOn AG hotfix that is in SP2 CU5)
 --                                                          11.0.3487		SP1 CU15		3/16/2015 -->       11.0.5582       SP2 CU5             3/16/2015
 --															11.0.3492       SP1 CU16        5/18/2015 -->       11.0.5592		SP2 CU6				5/18/2015
+--                                                                                                              11.0.5623       SP2 CU7				7/20/2015
 
 -- The SQL Server 2012 builds that were released after SQL Server 2012 was released
 -- http://support.microsoft.com/kb/2692828
@@ -108,6 +109,7 @@ SERVERPROPERTY('Edition') AS [Edition], SERVERPROPERTY('ProductLevel') AS [Produ
 SERVERPROPERTY('ProductVersion') AS [ProductVersion], SERVERPROPERTY('ProcessID') AS [ProcessID],
 SERVERPROPERTY('Collation') AS [Collation], SERVERPROPERTY('IsFullTextInstalled') AS [IsFullTextInstalled], 
 SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly],
+SERVERPROPERTY('FilestreamConfiguredLevel') AS [FilestreamConfiguredLevel],
 SERVERPROPERTY('IsHadrEnabled') AS [IsHadrEnabled], SERVERPROPERTY('HadrManagerStatus') AS [HadrManagerStatus];
 
 -- This gives you a lot of useful information about your instance of SQL Server,
@@ -256,6 +258,12 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\Syste
 -- Gives you the model number and rated clock speed of your processor(s)
 -- Your processors may be running at less that the rated clock speed due
 -- to the Windows Power Plan or hardware power management
+
+-- You can use CPU-Z to get your actual CPU core speed and a lot of other useful information
+-- http://www.cpuid.com/softwares/cpu-z.html
+
+-- You can learn more about processor selection for SQL Server by following this link
+-- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
 
 
 -- You can skip the next four queries if you know you don't 
@@ -749,14 +757,18 @@ ORDER BY record_id DESC OPTION (RECOMPILE);
 
 
 -- Get top total worker time queries for entire instance (Query 38) (Top Worker Time Queries)
-SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], LEFT(t.[text], 255) AS [Short Query Text],  
+SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], LEFT(t.[text], 50) AS [Short Query Text],  
 qs.total_worker_time AS [Total Worker Time], qs.min_worker_time AS [Min Worker Time],
 qs.total_worker_time/qs.execution_count AS [Avg Worker Time], 
-qs.max_worker_time AS [Max Worker Time], qs.execution_count AS [Execution Count], 
+qs.max_worker_time AS [Max Worker Time], 
+qs.min_elapsed_time AS [Min Elapsed Time], 
 qs.total_elapsed_time/qs.execution_count AS [Avg Elapsed Time], 
-qs.total_logical_reads/qs.execution_count AS [Avg Logical Reads], 
-qs.total_physical_reads/qs.execution_count AS [Avg Physical Reads], qs.creation_time AS [Creation Time]
---, t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
+qs.max_elapsed_time AS [Max Elapsed Time],
+qs.min_logical_reads AS [Min Logical Reads],
+qs.total_logical_reads/qs.execution_count AS [Avg Logical Reads],
+qs.max_logical_reads AS [Max Logical Reads], 
+qs.execution_count AS [Execution Count], qs.creation_time AS [Creation Time]
+-- ,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
@@ -764,6 +776,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 
 -- Helps you find the most expensive queries from a CPU perspective across the entire instance
+-- Can also help track down parameter sniffing issues
 
 
 -- Good basic information about OS memory amounts and state  (Query 39) (System Memory)
@@ -1223,7 +1236,7 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 
 --- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 66) (Overall Index Usage - Reads)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   user_seeks + user_scans + user_lookups AS [Reads], s.user_updates AS [Writes],  
+	   s.user_seeks + s.user_scans + s.user_lookups AS [Reads], s.user_updates AS [Writes],  
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition, 
 	   s.last_user_scan, s.last_user_lookup, s.last_user_seek
 FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
@@ -1240,7 +1253,7 @@ ORDER BY user_seeks + user_scans + user_lookups DESC OPTION (RECOMPILE); -- Orde
 
 --- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 67) (Overall Index Usage - Writes)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_updates AS [Writes], user_seeks + user_scans + user_lookups AS [Reads], 
+	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Reads], 
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition,
 	   s.last_system_update, s.last_user_update
 FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)

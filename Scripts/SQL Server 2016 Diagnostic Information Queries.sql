@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2015
--- Last Modified: July 10, 2015
+-- August 2015
+-- Last Modified: August 7, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -32,7 +32,7 @@
 --*
 --******************************************************************************
 
--- Check the major product version to see if it is SQL Server 2016 CTP2 or greater
+-- Check the major product version to see if it is SQL Server 2016 CTP 2 or greater
 IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '13%')
 	BEGIN
 		DECLARE @ProductVersion varchar(128) = CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'));
@@ -49,8 +49,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- SQL Server 2016 RTM Branch Builds											
 -- Build			Description			Release Date				
--- 13.0.200.172		CTP2				5/27/2015
--- 13.0.300.44		CTP2.1				6/12/2015
+-- 13.0.200.172		CTP 2.0				5/26/2015
+-- 13.0.300.44		CTP 2.1				6/14/2015
+-- 13.0.407.1		CTP 2.2				7/28/2015 
 
 
 
@@ -79,6 +80,7 @@ SERVERPROPERTY('Edition') AS [Edition], SERVERPROPERTY('ProductLevel') AS [Produ
 SERVERPROPERTY('ProductVersion') AS [ProductVersion], SERVERPROPERTY('ProcessID') AS [ProcessID],
 SERVERPROPERTY('Collation') AS [Collation], SERVERPROPERTY('IsFullTextInstalled') AS [IsFullTextInstalled], 
 SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly],
+SERVERPROPERTY('FilestreamConfiguredLevel') AS [FilestreamConfiguredLevel],
 SERVERPROPERTY('IsHadrEnabled') AS [Is Hadr Enabled], SERVERPROPERTY('HadrManagerStatus') AS [Hadr ManagerStatus],
 SERVERPROPERTY('IsXTPSupported') AS [Is XTP Supported],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version];
@@ -229,6 +231,12 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\Syste
 -- Gives you the model number and rated clock speed of your processor(s)
 -- Your processors may be running at less than the rated clock speed due
 -- to the Windows Power Plan or hardware power management
+
+-- You can use CPU-Z to get your actual CPU core speed and a lot of other useful information
+-- http://www.cpuid.com/softwares/cpu-z.html
+
+-- You can learn more about processor selection for SQL Server by following this link
+-- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
 
 
 -- You can skip the next four queries if you know you don't 
@@ -534,8 +542,11 @@ DROP TABLE #VLFInfo;
 DROP TABLE #VLFCountResults;
 
 -- High VLF counts can affect write performance 
--- and they can make database restores and recovery take much longer
--- Try to keep your VLF counts under 200 in most cases
+-- and they can make full database restores and crash recovery take much longer
+-- Try to keep your VLF counts under 200 in most cases (depending on log file size)
+
+-- Important change to VLF creation algorithm in SQL Server 2014
+-- http://www.sqlskills.com/blogs/paul/important-change-vlf-creation-algorithm-sql-server-2014/
 
 
 
@@ -763,14 +774,18 @@ ORDER BY record_id DESC OPTION (RECOMPILE);
 
 
 -- Get top total worker time queries for entire instance (Query 40) (Top Worker Time Queries)
-SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], LEFT(t.[text], 255) AS [Short Query Text],  
+SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], LEFT(t.[text], 50) AS [Short Query Text],  
 qs.total_worker_time AS [Total Worker Time], qs.min_worker_time AS [Min Worker Time],
 qs.total_worker_time/qs.execution_count AS [Avg Worker Time], 
-qs.max_worker_time AS [Max Worker Time], qs.execution_count AS [Execution Count], 
+qs.max_worker_time AS [Max Worker Time], 
+qs.min_elapsed_time AS [Min Elapsed Time], 
 qs.total_elapsed_time/qs.execution_count AS [Avg Elapsed Time], 
-qs.total_logical_reads/qs.execution_count AS [Avg Logical Reads], 
-qs.total_physical_reads/qs.execution_count AS [Avg Physical Reads], qs.creation_time AS [Creation Time]
---, t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
+qs.max_elapsed_time AS [Max Elapsed Time],
+qs.min_logical_reads AS [Min Logical Reads],
+qs.total_logical_reads/qs.execution_count AS [Avg Logical Reads],
+qs.max_logical_reads AS [Max Logical Reads], 
+qs.execution_count AS [Execution Count], qs.creation_time AS [Creation Time]
+-- ,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
@@ -778,6 +793,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 
 -- Helps you find the most expensive queries from a CPU perspective across the entire instance
+-- Can also help track down parameter sniffing issues
 
 
 -- Good basic information about OS memory amounts and state  (Query 41) (System Memory)
@@ -1242,7 +1258,7 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 
 --- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 68) (Overall Index Usage - Reads)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   user_seeks + user_scans + user_lookups AS [Reads], s.user_updates AS [Writes],  
+	   s.user_seeks + s.user_scans + s.user_lookups AS [Reads], s.user_updates AS [Writes],  
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition, 
 	   s.last_user_scan, s.last_user_lookup, s.last_user_seek
 FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
@@ -1259,7 +1275,7 @@ ORDER BY user_seeks + user_scans + user_lookups DESC OPTION (RECOMPILE); -- Orde
 
 --- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 69) (Overall Index Usage - Writes)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_updates AS [Writes], user_seeks + user_scans + user_lookups AS [Reads], 
+	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Reads], 
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition,
 	   s.last_system_update, s.last_user_update
 FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
@@ -1319,19 +1335,30 @@ ORDER BY OBJECT_NAME(object_id) OPTION (RECOMPILE);
 -- New for SQL Server 2016
 -- Helps you investigate UDF performance issues
 
--- Get highest aggregate duration queries over last hour (Query 73) (High Aggregate Duration Queries)
+
+-- Get QueryStore Options for this database (Query 73) (QueryStore Options)
+SELECT actual_state, actual_state_desc, readonly_reason, 
+       current_storage_size_mb, max_storage_size_mb
+FROM sys.database_query_store_options WITH (NOLOCK)
+OPTION (RECOMPILE);
+
+-- New for SQL Server 2016
+-- Requires that QueryStore is enabled for this database
+
+
+-- Get highest aggregate duration queries over last hour (Query 74) (High Aggregate Duration Queries)
 WITH AggregatedDurationLastHour
 AS
 (SELECT q.query_id, SUM(count_executions * avg_duration) AS total_duration,
    COUNT (distinct p.plan_id) AS number_of_plans
-   FROM sys.query_store_query_text AS qt 
-   INNER JOIN sys.query_store_query AS q 
+   FROM sys.query_store_query_text AS qt WITH (NOLOCK)
+   INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
    ON qt.query_text_id = q.query_text_id
-   INNER JOIN sys.query_store_plan AS p 
+   INNER JOIN sys.query_store_plan AS p WITH (NOLOCK)
    ON q.query_id = p.query_id
-   INNER JOIN sys.query_store_runtime_stats AS rs 
+   INNER JOIN sys.query_store_runtime_stats AS rs WITH (NOLOCK)
    ON rs.plan_id = p.plan_id
-   INNER JOIN sys.query_store_runtime_stats_interval AS rsi 
+   INNER JOIN sys.query_store_runtime_stats_interval AS rsi WITH (NOLOCK)
    ON rsi.runtime_stats_interval_id = rs.runtime_stats_interval_id
    WHERE rsi.start_time >= DATEADD(hour, -1, GETUTCDATE()) 
    AND rs.execution_type_desc = N'Regular'
@@ -1348,21 +1375,21 @@ q.query_parameterization_type_desc, p.[compatibility_level],
 p.last_compile_start_time, q.last_execution_time,
 CONVERT(xml, p.query_plan) AS query_plan_xml 
 FROM OrderedDuration AS od 
-INNER JOIN sys.query_store_query AS q 
+INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
 ON q.query_id  = od.query_id
-INNER JOIN sys.query_store_query_text AS qt 
+INNER JOIN sys.query_store_query_text AS qt WITH (NOLOCK)
 ON q.query_text_id = qt.query_text_id
-INNER JOIN sys.query_store_plan AS p 
+INNER JOIN sys.query_store_plan AS p WITH (NOLOCK)
 ON q.query_id = p.query_id
 WHERE od.RN <= 50 
-ORDER BY total_duration DESC;
+ORDER BY total_duration DESC OPTION (RECOMPILE);
 
 -- New for SQL Server 2016
 -- Requires that QueryStore is enabled for this database
 
 
 
--- Look at recent Full backups for the current database (Query 74) (Recent Full Backups)
+-- Look at recent Full backups for the current database (Query 75) (Recent Full Backups)
 SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database Name], bs.recovery_model,
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
