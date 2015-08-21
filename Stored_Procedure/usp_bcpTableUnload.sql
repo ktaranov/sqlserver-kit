@@ -65,7 +65,7 @@ BEGIN
     IF @debug = 1 PRINT ISNULL('@object_id = {' + CAST(@object_id AS NVARCHAR(MAX)) + '}', '@object_id = {Null}');
 
     IF @object_id IS NULL THROW 50000, @TROW50000, 1
-    ELSE
+    IF @orderByColumns <> ''
     BEGIN
         SET @tsqlCommand = N'USE ' + @databaseName + ';'                                                             + @crlf +
                            N'SELECT @ColumnsOUT = COUNT(*)'                                                          + @crlf +
