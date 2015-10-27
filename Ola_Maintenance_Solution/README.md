@@ -11,6 +11,12 @@ SQL Server Magazine Awards. The SQL Server Maintenance Solution is [free](/licen
 Download [MaintenanceSolution.sql](/scripts/MaintenanceSolution.sql).
 This script creates all the objects and jobs that you need.
 Learn more about using the SQL Server Maintenance Solution:
- - [DatabaseBackup](/sql-server-backup.html): SQL Server Backup
- - [DatabaseIntegrityCheck](/sql-server-integrity-check.html): SQL Server Integrity Check
- - [IndexOptimize](/sql-server-index-and-statistics-maintenance.html): SQL Server Index and Statistics Maintenance
+ - [DatabaseBackup](/sql-server-backup.sql): SQL Server Backup
+ - [DatabaseIntegrityCheck](/sql-server-integrity-check.sql): SQL Server Integrity Check
+ - [IndexOptimize](/sql-server-index-and-statistics-maintenance.sql): SQL Server Index and Statistics Maintenance
+ - [CommandExecute](/CommandExecute.sql): Stored procedure to execute and log commands
+ - [CommandLog](/CommandLog.sql:) Table to log commands
+
+Note that you always need CommandExecute; DatabaseBackup, DatabaseIntegrityCheck, and IndexOptimize are using it. You need CommandLog if you are going to use the option to log commands to a table.
+
+The SQL Server Maintenance Solution is supported on SQL Server 2005, SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, and SQL Server 2014.
