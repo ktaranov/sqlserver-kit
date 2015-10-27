@@ -2,13 +2,27 @@
 Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 
+## Repo folders
+ - [Base line Collector script](/) (Written by Robert Virag)
+ - [CLR procedures](/CLR) 
+ - [Known Erros](/Errors)
+ - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (Written by Ola Hallengren)
+ - [SSMS addons](/SSMS_addons)
+ - [Useful scripts](/Scripts)
+ - [SSMS snippets](/Snippets)
+ - [Stored Procedure](/Stored_Procedure)
+ - [User Defined Function](/User_Defined_Function)
+ - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (Written by Stevie Rounds and Michael Rounds)
+
+
 ## Web recource
  - [SQL Central blog Scripts]
  - [SQL Central blog Articles]
  - Awesome [BRENT OZAR] scripts and articles
  - [Glenn Berry's SQL Server Performance]
- - Best backup and index maintence [Ola Hallengren]
- - [SQL Server Managment Studio] download link
+ - Best backup and index maintence solution [Ola Hallengren]
+ - [SQL Server Managment Studio] installation download link
+ - [SQL#](/http://www.sqlsharp.com/)
 
 
 ## Index option Include
