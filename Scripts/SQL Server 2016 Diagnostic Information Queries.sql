@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- September 2015
--- Last Modified: September 24, 2015
+-- October 2015
+-- Last Modified: October 25, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -52,7 +52,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.200.172		CTP 2.0				5/26/2015
 -- 13.0.300.44		CTP 2.1				6/14/2015
 -- 13.0.407.1		CTP 2.2				7/28/2015
--- 13.0.500.53		CTP 2.3				9/4/2015 
+-- 13.0.500.53		CTP 2.3				9/4/2015
+-- 13.0.600.65		CTP 2.4				9/30/2015 
 
 
 
@@ -71,21 +72,34 @@ OR name = N'NT AUTHORITY\NETWORK SERVICE' OPTION (RECOMPILE);
 -- idea how old the hardware is and how long the instance has been in service
 
 
--- Get selected server properties (SQL Server 2016)  (Query 3) (Server Properties)
-SELECT SERVERPROPERTY('MachineName') AS [MachineName], SERVERPROPERTY('ServerName') AS [ServerName],  
-SERVERPROPERTY('InstanceName') AS [Instance], SERVERPROPERTY('IsClustered') AS [IsClustered], 
+-- Get selected server properties (Query 3) (Server Properties)
+SELECT SERVERPROPERTY('MachineName') AS [MachineName], 
+SERVERPROPERTY('ServerName') AS [ServerName],  
+SERVERPROPERTY('InstanceName') AS [Instance], 
+SERVERPROPERTY('IsClustered') AS [IsClustered], 
 SERVERPROPERTY('ComputerNamePhysicalNetBIOS') AS [ComputerNamePhysicalNetBIOS], 
-SERVERPROPERTY('Edition') AS [Edition], SERVERPROPERTY('ProductLevel') AS [ProductLevel], 
-SERVERPROPERTY('ProductVersion') AS [ProductVersion], SERVERPROPERTY('ProcessID') AS [ProcessID],
-SERVERPROPERTY('Collation') AS [Collation], SERVERPROPERTY('IsFullTextInstalled') AS [IsFullTextInstalled], 
+SERVERPROPERTY('Edition') AS [Edition], 
+SERVERPROPERTY('ProductLevel') AS [ProductLevel],				-- What servicing branch (RTM/SP/CU)
+SERVERPROPERTY('ProductUpdateLevel') AS [ProductUpdateLevel],	-- Within a servicing branch, what CU# is applied
+SERVERPROPERTY('ProductVersion') AS [ProductVersion],
+SERVERPROPERTY('ProductMajorVersion') AS [ProductMajorVersion], 
+SERVERPROPERTY('ProductMinorVersion') AS [ProductMinorVersion], 
+SERVERPROPERTY('ProductBuild') AS [ProductBuild], 
+SERVERPROPERTY('ProductBuildType') AS [ProductBuildType],		-- Is this a GDR or OD hotfix (NULL if on a CU build)
+SERVERPROPERTY('ProductUpdateReference') AS [ProductUpdateReference], -- KB article number that is applicable for this build
+SERVERPROPERTY('ProcessID') AS [ProcessID],
+SERVERPROPERTY('Collation') AS [Collation], 
+SERVERPROPERTY('IsFullTextInstalled') AS [IsFullTextInstalled], 
 SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly],
 SERVERPROPERTY('FilestreamConfiguredLevel') AS [FilestreamConfiguredLevel],
-SERVERPROPERTY('IsHadrEnabled') AS [Is Hadr Enabled], SERVERPROPERTY('HadrManagerStatus') AS [Hadr ManagerStatus],
-SERVERPROPERTY('IsXTPSupported') AS [Is XTP Supported],
+SERVERPROPERTY('IsHadrEnabled') AS [IsHadrEnabled], 
+SERVERPROPERTY('HadrManagerStatus') AS [HadrManagerStatus],
+SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version];
 
 -- This gives you a lot of useful information about your instance of SQL Server,
 -- such as the ProcessID for SQL Server and your collation
+-- Note: Some columns will be NULL on older SQL Server builds
 
 
 
@@ -126,10 +140,6 @@ DBCC TRACESTATUS (-1);
 -- It is very useful to know what global trace flags are currently enabled as part of the diagnostic process.
 
 -- Common trace flags that should be enabled in most cases
--- TF 1118 - Helps alleviate allocation contention in tempdb, SQL Server allocates full extents to each database object, 
---           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
---           Recommendations to reduce allocation contention in SQL Server tempdb database
---           http://support2.microsoft.com/kb/2154845
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
 -- TF 2371 - Lowers auto update statistics threshold for large tables
 --           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
@@ -200,13 +210,17 @@ cpu_count/hyperthread_ratio AS [Physical CPU Count],
 physical_memory_kb/1024 AS [Physical Memory (MB)], committed_kb/1024 AS [Committed Memory (MB)],
 committed_target_kb/1024 AS [Committed Target Memory (MB)],
 max_workers_count AS [Max Workers Count], affinity_type_desc AS [Affinity Type], 
-sqlserver_start_time AS [SQL Server Start Time], virtual_machine_type_desc AS [Virtual Machine Type]
+sqlserver_start_time AS [SQL Server Start Time], virtual_machine_type_desc AS [Virtual Machine Type], 
+softnuma_configuration_desc AS [Soft NUMA Configuration]
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- Gives you some good basic hardware information about your database server
 -- Cannot distinguish between HT and multi-core
 -- Note: virtual_machine_type_desc of HYPERVISOR does not automatically mean you are running SQL Server inside of a VM
 -- It merely indicates that you have a hypervisor running on your host
+
+-- Configure SQL Server to Use Soft-NUMA (SQL Server)
+-- https://msdn.microsoft.com/en-us/library/ms345357(v=sql.130).aspx
 
 
 -- Get System Manufacturer and model number from SQL Server Error log (Query 11) (System Manufacturer)
@@ -301,7 +315,7 @@ ORDER BY name OPTION (RECOMPILE);
 -- New options for SQL Server 2016
 -- hadoop connectivity
 -- polybase network encryption
--- remote data archive
+-- remote data archive (to enable Stretch Databases)
 
 
 -- See if buffer pool extensions (BPE) is enabled (Query 19) (BPE Configuration)
@@ -348,7 +362,7 @@ ORDER BY creation_time DESC OPTION (RECOMPILE);
 
 -- File names and paths for all user and system databases on instance  (Query 23) (Database Filenames and Paths)
 SELECT DB_NAME([database_id]) AS [Database Name], 
-       [file_id], name, physical_name, type_desc, state_desc,
+       [file_id], name, physical_name, [type_desc], state_desc,
 	   is_percent_growth, growth,
 	   CONVERT(bigint, growth/128.0) AS [Growth in MB], 
        CONVERT(bigint, size/128.0) AS [Total Size in MB]
@@ -404,6 +418,9 @@ DROP TABLE #IOWarningResults;
 
 -- Finding 15 second I/O warnings in the SQL Server Error Log is useful evidence of
 -- poor I/O performance (which might have many different causes)
+
+-- Diagnostics in SQL Server help detect stalled and stuck I/O operations
+-- https://support.microsoft.com/en-us/kb/897284
 
 
 -- Drive level latency information (Query 26) (Drive Level Latency)
@@ -478,7 +495,8 @@ db.snapshot_isolation_state_desc, db.is_read_committed_snapshot_on, db.is_auto_c
 db.target_recovery_time_in_seconds, db.is_cdc_enabled, db.is_published, db.is_distributor, db.is_encrypted,
 db.group_database_id, db.replica_id,db.is_memory_optimized_elevate_to_snapshot_on, 
 db.delayed_durability_desc, db.is_auto_create_stats_incremental_on,
-db.is_query_store_on, db.is_sync_with_backup      
+db.is_query_store_on, db.is_sync_with_backup, 
+db.is_supplemental_logging_enabled, db.is_remote_data_archive_enabled      
 FROM sys.databases AS db WITH (NOLOCK)
 INNER JOIN sys.dm_os_performance_counters AS lu WITH (NOLOCK)
 ON db.name = lu.instance_name
@@ -645,7 +663,7 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
 		N'SQLTRACE_BUFFER_FLUSH', N'SQLTRACE_INCREMENTAL_FLUSH_SLEEP', N'SQLTRACE_WAIT_ENTRIES',
 		N'WAIT_FOR_RESULTS', N'WAITFOR', N'WAITFOR_TASKSHUTDOWN', N'WAIT_XTP_HOST_WAIT',
 		N'WAIT_XTP_OFFLINE_CKPT_NEW_LOG', N'WAIT_XTP_CKPT_CLOSE', N'XE_DISPATCHER_JOIN',
-        N'XE_DISPATCHER_WAIT', N'XE_TIMER_EVENT')
+        N'XE_DISPATCHER_WAIT', N'XE_LIVE_TARGET_TVF', N'XE_TIMER_EVENT')
     AND waiting_tasks_count > 0)
 SELECT
     MAX (W1.wait_type) AS [WaitType],
@@ -709,7 +727,7 @@ WHERE wait_type NOT IN (
 		N'SQLTRACE_BUFFER_FLUSH', N'SQLTRACE_INCREMENTAL_FLUSH_SLEEP', N'SQLTRACE_WAIT_ENTRIES',
 		N'WAIT_FOR_RESULTS', N'WAITFOR', N'WAITFOR_TASKSHUTDOWN', N'WAIT_XTP_HOST_WAIT',
 		N'WAIT_XTP_OFFLINE_CKPT_NEW_LOG', N'WAIT_XTP_CKPT_CLOSE', N'XE_DISPATCHER_JOIN',
-        N'XE_DISPATCHER_WAIT', N'XE_TIMER_EVENT') OPTION (RECOMPILE);
+        N'XE_DISPATCHER_WAIT', N'XE_LIVE_TARGET_TVF', N'XE_TIMER_EVENT') OPTION (RECOMPILE);
 
 -- Signal Waits above 10-15% is usually a confirming sign of CPU pressure
 -- Cumulative wait stats are not as useful on an idle instance that is not under load or performance pressure
@@ -1200,7 +1218,8 @@ FROM sys.tables WITH (NOLOCK)
 ORDER BY [name] OPTION (RECOMPILE);
 
 -- Gives you some good information about your tables
--- Is Memory optimized and durability description are Hekaton-related properties that are new in SQL Server 2014
+-- Is Memory optimized and durability description are Hekaton-related properties that were new in SQL Server 2014
+-- temporal_type_desc, is_remote_data_archive_enabled, remote_data_archive_migration_state_desc, is_external are new in SQL Server 2016
 
 
 
@@ -1356,7 +1375,7 @@ ORDER BY total_lock_wait_in_ms DESC OPTION (RECOMPILE);
 
 -- Look at UDF execution statistics (Query 73) (UDF Statistics)
 SELECT OBJECT_NAME(object_id) AS [Function Name], execution_count,
-   total_elapsed_time/1000 AS [time_milliseconds], fs.type_desc
+   total_elapsed_time/1000 AS [time_milliseconds], fs.[type_desc]
 FROM sys.dm_exec_function_stats AS fs WITH (NOLOCK) 
 WHERE database_id = DB_ID()
 ORDER BY OBJECT_NAME(object_id) OPTION (RECOMPILE);
