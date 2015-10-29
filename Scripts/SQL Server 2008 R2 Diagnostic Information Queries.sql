@@ -490,8 +490,9 @@ DROP TABLE #VLFInfo;
 DROP TABLE #VLFCountResults;
 
 -- High VLF counts can affect write performance 
--- and they can make database restores and recovery take much longer
--- Try to keep your VLF counts under 200 in most cases
+-- and they can make full database restores and crash recovery take much longer
+-- Try to keep your VLF counts under 200 in most cases (depending on log file size)
+
 
 
 
