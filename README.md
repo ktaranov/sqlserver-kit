@@ -3,9 +3,9 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 
 ## Repo folders
- - [Base line Collector script](/) (Written by Robert Virag)
+ - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
  - [CLR procedures](/CLR) 
- - [Known Erros](/Errors)
+ - [Known Errors](/Errors)
  - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (Written by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
  - [Useful scripts](/Scripts)
@@ -15,14 +15,21 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
  - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (Written by Stevie Rounds and Michael Rounds)
 
 
-## Web recource
+## Web resource
  - [SQL Central blog Scripts]
  - [SQL Central blog Articles]
  - Awesome [BRENT OZAR] scripts and articles
  - [Glenn Berry's SQL Server Performance]
- - Best backup and index maintence solution [Ola Hallengren]
- - [SQL Server Managment Studio] installation download link
- - [SQL#](/http://www.sqlsharp.com/)
+ - Best backup and index maintenance solution [Ola Hallengren]
+ - [SQL Server Management Studio] installation download link
+ - [SQL# CLR functions](http://www.sqlsharp.com/)
+
+
+## Microsoft Adventure Works Sample Databases download links
+ - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
+ - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
+ - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
+ - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
 
 
 ## Index option Include
@@ -31,7 +38,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 
 ## PowerShell and SQL Server
- - https://sqlpowerdoc.codeplex.com/
+ - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/)
 
 
 ## TSQL format code
@@ -56,4 +63,4 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 [BRENT OZAR]:http://www.brentozar.com/
 [Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
 [Ola Hallengren]:http://ola.hallengren.com/
-[SQL Server Managment Studio]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
+[SQL Server Management Studio]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
