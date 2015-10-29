@@ -4,13 +4,24 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 ## Repo folders
  - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
- - [CLR procedures](/CLR) 
+ - [CLR procedures](/CLR)
+    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL in Microsoft SQL Server 2005, 2008(R2), 2012, and 2014
+    - SplitterB_CLR
  - [Known Errors](/Errors)
  - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (Written by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
+    - SSMSBoost add-in
+    - SQL Code Guard
  - [Useful scripts](/Scripts)
+    - **Awesome SQL Server Diagnostic Information Queries** (Written by Glenn Alan Berry)
+    - Table count alternative (Written by Jes Schultz Borland)
+    - Foreign Key batch rename (Written by Wes Henriksen)
  - [SSMS snippets](/Snippets)
  - [Stored Procedure](/Stored_Procedure)
+   - sp_DBPermissions (Written by Kenneth Fisher)
+   - sp_SrvPermissions (Written by Kenneth Fisher)
+   - usp_who5 (Written by Sean Smith)
+   - and many others...
  - [User Defined Function](/User_Defined_Function)
  - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (Written by Stevie Rounds and Michael Rounds)
 
@@ -18,7 +29,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 ## Web resource
  - [SQL Central blog Scripts]
  - [SQL Central blog Articles]
- - Awesome [BRENT OZAR] scripts and articles
+ - **Awesome [BRENT OZAR] scripts and articles**
  - [Glenn Berry's SQL Server Performance]
  - Best backup and index maintenance solution [Ola Hallengren]
  - [SQL Server Management Studio] installation download link

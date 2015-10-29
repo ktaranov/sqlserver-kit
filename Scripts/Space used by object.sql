@@ -71,4 +71,4 @@ WHERE
 	so.[type] IN ('U ','V ','S ','SQ','IT')
 ORDER BY
 	schema_name(so.schema_id)
-	,so.name
+	,so.name;
