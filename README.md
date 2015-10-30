@@ -21,6 +21,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
    - sp_DBPermissions (Written by Kenneth Fisher)
    - sp_SrvPermissions (Written by Kenneth Fisher)
    - usp_who5 (Written by Sean Smith)
+   - usp_String_Search (Written by Sean Smith)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
  - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (Written by Stevie Rounds and Michael Rounds)

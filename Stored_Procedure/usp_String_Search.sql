@@ -3,13 +3,13 @@ SET NOCOUNT ON
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	Error Trapping: Check If Procedure Already Exists And Drop If Applicable
+--	Error Trapping: Check If Procedure Already Exists And Create Shell If Applicable
 -----------------------------------------------------------------------------------------------------------------------------
 
-IF OBJECT_ID (N'[dbo].[usp_String_Search]', N'P') IS NOT NULL
+IF OBJECT_ID (N'dbo.usp_String_Search', N'P') IS NULL
 BEGIN
 
-	DROP PROCEDURE [dbo].[usp_String_Search]
+	EXECUTE ('CREATE PROCEDURE dbo.usp_String_Search AS SELECT 1 AS shell')
 
 END
 GO
@@ -21,7 +21,7 @@ GO
 
 --	Purpose: Search For A String Value Within Columns Of Data Types CHAR, NCHAR, NTEXT, NVARCHAR, TEXT, VARCHAR, XML
 --	Create Date (MM/DD/YYYY): 03/20/2012
---	Developer: Sean Smith (s(DOT)smith(DOT)sql(AT)gmail(DOT)com)
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
 --	Additional Notes: N/A
 
 
@@ -39,14 +39,14 @@ GO
 --	Main Query: Create Procedure
 -----------------------------------------------------------------------------------------------------------------------------
 
-CREATE PROCEDURE [dbo].[usp_String_Search]
+ALTER PROCEDURE dbo.usp_String_Search
 
-	 @v_Search_String AS NVARCHAR (500)
-	,@v_Database_Name AS NVARCHAR (300)
-	,@v_Object_Types AS NVARCHAR (10) = NULL
-	,@v_Data_Types AS NVARCHAR (100) = NULL
-	,@v_Table_Max_Rows AS BIGINT = NULL
-	,@v_Column_Max_Length AS SMALLINT = NULL
+	 @Search_String AS NVARCHAR (500)
+	,@Database_Name AS NVARCHAR (300)
+	,@Object_Types AS NVARCHAR (10) = NULL
+	,@Data_Types AS NVARCHAR (100) = NULL
+	,@Table_Max_Rows AS BIGINT = NULL
+	,@Column_Max_Length AS SMALLINT = NULL
 
 WITH RECOMPILE
 
@@ -60,29 +60,32 @@ SET ARITHIGNORE ON
 SET TEXTSIZE 2147483647
 
 
-DECLARE @v_Loop_Column_Number AS BIGINT
-DECLARE @v_Loop_Column_Number_First AS BIGINT
-DECLARE @v_Loop_Object_Number AS BIGINT
-DECLARE @v_Object_Name AS SYSNAME
-DECLARE @v_Schema_Name AS SYSNAME
-DECLARE @v_SQL_String_Full AS NVARCHAR (MAX)
-DECLARE @v_SQL_String_IN_Column_Name AS NVARCHAR (MAX)
-DECLARE @v_SQL_String_SELECT AS NVARCHAR (MAX)
-DECLARE @v_SQL_String_WHERE AS NVARCHAR (MAX)
+DECLARE
+	 @Loop_Column_Number AS BIGINT
+	,@Loop_Column_Number_First AS BIGINT
+	,@Loop_Object_Number AS BIGINT
+	,@Object_Name AS SYSNAME
+	,@Schema_Name AS SYSNAME
+	,@SQL_String_Full AS NVARCHAR (MAX)
+	,@SQL_String_IN_Column_Name AS NVARCHAR (MAX)
+	,@SQL_String_SELECT AS NVARCHAR (MAX)
+	,@SQL_String_WHERE AS NVARCHAR (MAX)
 
 
-SET @v_Object_Types = N''''+REPLACE (REPLACE (NULLIF (@v_Object_Types, N''), N' ', N''), N',', N''',''')+N''''
-SET @v_Data_Types = N''''+REPLACE (REPLACE (NULLIF (@v_Data_Types, N''), N' ', N''), N',', N''',''')+N''''
+SET @Object_Types = N'''' + REPLACE (REPLACE (NULLIF (@Object_Types, N''), N' ', N''), N',', N''',''') + N''''
+
+
+SET @Data_Types = N'''' + REPLACE (REPLACE (NULLIF (@Data_Types, N''), N' ', N''), N',', N''',''') + N''''
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	Error Trapping I: Validate "@v_Search_String" And "@v_Database_Name" Input Parameter Values
+--	Error Trapping I: Validate "@Search_String" And "@Database_Name" Input Parameter Values
 -----------------------------------------------------------------------------------------------------------------------------
 
-IF NULLIF (@v_Search_String, N'') IS NOT NULL
+IF NULLIF (@Search_String, N'') IS NOT NULL
 BEGIN
 
-	SET @v_Search_String = REPLACE (REPLACE (REPLACE (REPLACE (@v_Search_String, N'[', N'[[]'), N'%', N'[%]'), N'_', N'[_]'), N'''', N'''''')
+	SET @Search_String = REPLACE (REPLACE (REPLACE (REPLACE (@Search_String, N'[', N'[[]'), N'%', N'[%]'), N'_', N'[_]'), N'''', N'''''')
 
 END
 ELSE BEGIN
@@ -90,30 +93,30 @@ ELSE BEGIN
 	RAISERROR
 
 		(
-			 N'ERROR: @v_Search_String input parameter cannot be blank or NULL.'
+			 N'ERROR: @Search_String input parameter cannot be blank or NULL.'
 			,16
 			,1
 		)
 
 
-	GOTO Skip_Query
+	RETURN
 
 END
 
 
-IF EXISTS (SELECT * FROM [master].[sys].[databases] DB WHERE DB.name = @v_Database_Name)
+IF EXISTS (SELECT * FROM master.sys.databases DB WHERE DB.name = @Database_Name)
 BEGIN
 
-	SET @v_Database_Name = QUOTENAME (@v_Database_Name)
+	SET @Database_Name = QUOTENAME (@Database_Name)
 
 END
-ELSE IF EXISTS (SELECT * FROM [master].[sys].[databases] DB WHERE QUOTENAME (DB.name) = @v_Database_Name+N']')
+ELSE IF EXISTS (SELECT * FROM master.sys.databases DB WHERE QUOTENAME (DB.name) = @Database_Name + N']')
 BEGIN
 
-	SET @v_Database_Name = @v_Database_Name+N']'
+	SET @Database_Name = @Database_Name + N']'
 
 END
-ELSE IF NOT EXISTS (SELECT * FROM [master].[sys].[databases] DB WHERE QUOTENAME (DB.name) = @v_Database_Name)
+ELSE IF NOT EXISTS (SELECT * FROM master.sys.databases DB WHERE QUOTENAME (DB.name) = @Database_Name)
 BEGIN
 
 	RAISERROR
@@ -122,11 +125,11 @@ BEGIN
 			 N'ERROR: Database (''%s'') does not exist. Make sure that the name is entered correctly.'
 			,16
 			,1
-			,@v_Database_Name
+			,@Database_Name
 		)
 
 
-	GOTO Skip_Query
+	RETURN
 
 END
 
@@ -189,16 +192,9 @@ CREATE TABLE dbo.#temp_string_search_results
 --	Table Update I: Insert Searchable Objects / Columns Into Temp Table
 -----------------------------------------------------------------------------------------------------------------------------
 
-SET @v_SQL_String_Full =
+SET @SQL_String_Full =
 
 	N'
-		SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-		SET NOCOUNT ON
-		SET ANSI_WARNINGS OFF
-		SET ARITHABORT OFF
-		SET ARITHIGNORE ON
-
-
 		SELECT
 			 O.[type] AS object_type
 			,T.name AS data_type
@@ -218,53 +214,53 @@ SET @v_SQL_String_Full =
 									C.name
 							) AS column_row_number
 		FROM
-			'+@v_Database_Name+N'.[sys].[schemas] S
-			INNER JOIN '+@v_Database_Name+N'.[sys].[objects] O ON O.[schema_id] = S.[schema_id]
-				AND O.[type] IN ('+(CASE
-										WHEN @v_Object_Types IS NOT NULL THEN @v_Object_Types
+			' + @Database_Name + N'.sys.schemas S
+			INNER JOIN ' + @Database_Name + N'.sys.objects O ON O.[schema_id] = S.[schema_id]
+				AND O.[type] IN (' + (CASE
+										WHEN @Object_Types IS NOT NULL THEN @Object_Types
 										ELSE N'''U'', ''V'''
-										END)+N')
-			INNER JOIN '+@v_Database_Name+N'.[sys].[columns] C ON C.[object_id] = O.[object_id]
+										END) + N')
+			INNER JOIN ' + @Database_Name + N'.sys.columns C ON C.[object_id] = O.[object_id]
 	 '
 
 
-IF @v_Column_Max_Length > 0
+IF @Column_Max_Length > 0
 BEGIN
 
-	SET @v_SQL_String_Full = @v_SQL_String_Full+
+	SET @SQL_String_Full = @SQL_String_Full +
 
 		N'
-			'+NCHAR (9)+N'AND C.system_type_id IN (167, 175, 231, 239)
-			'+NCHAR (9)+N'AND C.max_length BETWEEN 1 AND '+CONVERT (NVARCHAR (6), @v_Column_Max_Length)+N'
+			' + NCHAR (9) + N'AND C.system_type_id IN (167, 175, 231, 239)
+			' + NCHAR (9) + N'AND C.max_length BETWEEN 1 AND ' + CONVERT (NVARCHAR (6), @Column_Max_Length) + N'
 		 '
 
 END
 ELSE BEGIN
 
-	SET @v_SQL_String_Full = @v_SQL_String_Full+
+	SET @SQL_String_Full = @SQL_String_Full +
 
 		N'
-			'+NCHAR (9)+N'AND C.system_type_id IN (35, 99, 167, 175, 231, 239, 241)
+			' + NCHAR (9) + N'AND C.system_type_id IN (35, 99, 167, 175, 231, 239, 241)
 		 '
 
 END
 
 
-SET @v_SQL_String_Full = @v_SQL_String_Full+
+SET @SQL_String_Full = @SQL_String_Full +
 
 	N'
-			INNER JOIN '+@v_Database_Name+N'.[sys].[types] T ON T.system_type_id = C.system_type_id
+			INNER JOIN ' + @Database_Name + N'.sys.types T ON T.system_type_id = C.system_type_id
 				AND T.user_type_id = C.user_type_id
-	 '+(CASE
-			WHEN @v_Data_Types IS NOT NULL THEN REPLICATE (NCHAR (9), 3)+N'AND T.name IN ('+@v_Data_Types+N')'
+	 ' + (CASE
+			WHEN @Data_Types IS NOT NULL THEN REPLICATE (NCHAR (9), 3) + N'AND T.name IN (' + @Data_Types + N')'
 			ELSE N''
 			END)
 
 
-IF @v_Table_Max_Rows > 0
+IF @Table_Max_Rows > 0
 BEGIN
 
-	SET @v_SQL_String_Full = @v_SQL_String_Full+
+	SET @SQL_String_Full = @SQL_String_Full +
 
 		N'
 			INNER JOIN
@@ -273,22 +269,33 @@ BEGIN
 					SELECT
 						DDPS.[object_id]
 					FROM
-						'+@v_Database_Name+N'.[sys].[dm_db_partition_stats] DDPS
+						' + @Database_Name + N'.sys.dm_db_partition_stats DDPS
 					WHERE
 						DDPS.index_id < 2
 					GROUP BY
 						DDPS.[object_id]
 					HAVING
-						SUM (DDPS.row_count) <= '+CONVERT (NVARCHAR (20), @v_Table_Max_Rows)+N'
-				) SQ1 ON SQ1.[object_id] = O.[object_id]
+						SUM (DDPS.row_count) <= ' + CONVERT (NVARCHAR (20), @Table_Max_Rows) + N'
+				) sqTMR ON sqTMR.[object_id] = O.[object_id]
 		 '
 
 END
 
 
-INSERT INTO #temp_string_search_objects_columns
+INSERT INTO dbo.#temp_string_search_objects_columns
 
-EXECUTE (@v_SQL_String_Full)
+	(
+		 object_type
+		,data_type
+		,max_length
+		,[schema_name]
+		,[object_name]
+		,column_name
+		,schema_object_dense_rank
+		,column_row_number
+	)
+
+EXECUTE (@SQL_String_Full)
 
 
 -----------------------------------------------------------------------------------------------------------------------------
@@ -296,82 +303,83 @@ EXECUTE (@v_SQL_String_Full)
 -----------------------------------------------------------------------------------------------------------------------------
 
 SELECT TOP (1)
-	 @v_Loop_Object_Number = X.schema_object_dense_rank
-	,@v_Schema_Name = X.[schema_name]
-	,@v_Object_Name = X.[object_name]
+	 @Loop_Object_Number = X.schema_object_dense_rank
+	,@Schema_Name = X.[schema_name]
+	,@Object_Name = X.[object_name]
 FROM
-	#temp_string_search_objects_columns X
+	dbo.#temp_string_search_objects_columns X
 ORDER BY
 	X.schema_object_dense_rank
 
 
-WHILE @v_Loop_Object_Number IS NOT NULL
+WHILE @Loop_Object_Number IS NOT NULL
 BEGIN
 
-	SET @v_SQL_String_SELECT = N''
-	SET @v_SQL_String_IN_Column_Name = N''
-	SET @v_SQL_String_WHERE = N''
-	SET @v_Loop_Column_Number = (SELECT MIN (X.column_row_number) FROM #temp_string_search_objects_columns X WHERE X.schema_object_dense_rank = @v_Loop_Object_Number)
-	SET @v_Loop_Column_Number_First = @v_Loop_Column_Number
+	SET @SQL_String_SELECT = N''
 
 
-	WHILE @v_Loop_Column_Number IS NOT NULL
+	SET @SQL_String_IN_Column_Name = N''
+
+
+	SET @SQL_String_WHERE = N''
+
+
+	SET @Loop_Column_Number = (SELECT MIN (X.column_row_number) FROM dbo.#temp_string_search_objects_columns X WHERE X.schema_object_dense_rank = @Loop_Object_Number)
+
+
+	SET @Loop_Column_Number_First = @Loop_Column_Number
+
+
+	WHILE @Loop_Column_Number IS NOT NULL
 	BEGIN
 
 		SELECT
-			 @v_SQL_String_SELECT = @v_SQL_String_SELECT+(CASE
-															WHEN @v_Loop_Column_Number = @v_Loop_Column_Number_First THEN N'SELECT'+NCHAR (13)+REPLICATE (NCHAR (9), 7)+N' '
-															ELSE NCHAR (13)+REPLICATE (NCHAR (9), 7)+N','
-															END)+N'CONVERT (NVARCHAR (MAX), (CASE
-																								WHEN '+(CASE
-																											WHEN X.data_type = N'XML' THEN N'CONVERT (NVARCHAR (MAX), '
-																											ELSE N''
-																											END)+QUOTENAME (X.column_name)+(CASE
-																																				WHEN X.data_type = N'XML' THEN N')'
-																																				ELSE N''
-																																				END)+N' LIKE ''%'+@v_Search_String+N'%'' THEN '+QUOTENAME (X.column_name)+N'
-																								ELSE NULL
-																								END)) AS '+QUOTENAME (X.column_name)
-			,@v_SQL_String_IN_Column_Name = @v_SQL_String_IN_Column_Name+(CASE
-																			WHEN @v_Loop_Column_Number = @v_Loop_Column_Number_First THEN N''
+			 @SQL_String_SELECT = @SQL_String_SELECT + (CASE
+															WHEN @Loop_Column_Number = @Loop_Column_Number_First THEN N'SELECT' + NCHAR (13) + REPLICATE (NCHAR (9), 7) + N' '
+															ELSE NCHAR (13) + REPLICATE (NCHAR (9), 7) + N','
+															END) + N'CONVERT (NVARCHAR (MAX), (CASE
+																									WHEN ' + (CASE
+																												WHEN X.data_type = N'XML' THEN N'CONVERT (NVARCHAR (MAX), '
+																												ELSE N''
+																												END) + QUOTENAME (X.column_name) + (CASE
+																																						WHEN X.data_type = N'XML' THEN N')'
+																																						ELSE N''
+																																						END) + N' LIKE ''%' + @Search_String + N'%'' THEN ' + QUOTENAME (X.column_name) + N'
+																									ELSE NULL
+																									END)) AS ' + QUOTENAME (X.column_name)
+			,@SQL_String_IN_Column_Name = @SQL_String_IN_Column_Name + (CASE
+																			WHEN @Loop_Column_Number = @Loop_Column_Number_First THEN N''
 																			ELSE N', '
-																			END)+QUOTENAME (X.column_name)
-			,@v_SQL_String_WHERE = @v_SQL_String_WHERE+(CASE
-															WHEN @v_Loop_Column_Number = @v_Loop_Column_Number_First THEN NCHAR (13)+REPLICATE (NCHAR (9), 6)+N'WHERE'+NCHAR (13)+REPLICATE (NCHAR (9), 7)
-															ELSE NCHAR (13)+REPLICATE (NCHAR (9), 7)+N'OR '
-															END)+(CASE
+																			END) + QUOTENAME (X.column_name)
+			,@SQL_String_WHERE = @SQL_String_WHERE + (CASE
+														WHEN @Loop_Column_Number = @Loop_Column_Number_First THEN NCHAR (13) + REPLICATE (NCHAR (9), 6) + N'WHERE' + NCHAR (13) + REPLICATE (NCHAR (9), 7)
+														ELSE NCHAR (13) + REPLICATE (NCHAR (9), 7) + N'OR '
+														END) + (CASE
 																	WHEN X.data_type = N'XML' THEN N'CONVERT (NVARCHAR (MAX), '
 																	ELSE N''
-																	END)+QUOTENAME (X.column_name)+(CASE
-																										WHEN X.data_type = N'XML' THEN N')'
-																										ELSE N''
-																										END)+N' LIKE ''%'+@v_Search_String+N'%'''
+																	END) + QUOTENAME (X.column_name) + (CASE
+																											WHEN X.data_type = N'XML' THEN N')'
+																											ELSE N''
+																											END) + N' LIKE ''%' + @Search_String + N'%'''
 		FROM
-			#temp_string_search_objects_columns X
+			dbo.#temp_string_search_objects_columns X
 		WHERE
-			X.schema_object_dense_rank = @v_Loop_Object_Number
-			AND X.column_row_number = @v_Loop_Column_Number
+			X.schema_object_dense_rank = @Loop_Object_Number
+			AND X.column_row_number = @Loop_Column_Number
 
 
-		SET @v_Loop_Column_Number = (SELECT MIN (X.column_row_number) FROM #temp_string_search_objects_columns X WHERE X.schema_object_dense_rank = @v_Loop_Object_Number AND X.column_row_number > @v_Loop_Column_Number)
+		SET @Loop_Column_Number = (SELECT MIN (X.column_row_number) FROM dbo.#temp_string_search_objects_columns X WHERE X.schema_object_dense_rank = @Loop_Object_Number AND X.column_row_number > @Loop_Column_Number)
 
 	END
 
 
-	SET @v_SQL_String_Full =
+	SET @SQL_String_Full =
 
 		(
 			N'
-				SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
-				SET NOCOUNT ON
-				SET ANSI_WARNINGS OFF
-				SET ARITHABORT OFF
-				SET ARITHIGNORE ON
-
-
 				SELECT
-					 '''+@v_Schema_Name+N''' AS [schema_name]
-					,'''+@v_Object_Name+N''' AS [object_name]
+					 ''' + @Schema_Name + N''' AS [schema_name]
+					,''' + @Object_Name + N''' AS [object_name]
 					,UNPV.column_name
 					,UNPV.column_data
 					,COUNT (*) AS occurrences
@@ -379,23 +387,26 @@ BEGIN
 
 					(
 						'
-							+@v_SQL_String_SELECT
-							+NCHAR (13)+REPLICATE (NCHAR (9), 6)+N'FROM'+NCHAR (13)
-							+REPLICATE (NCHAR (9), 7)+@v_Database_Name
-							+N'.'
-							+QUOTENAME (@v_Schema_Name)
-							+N'.'
-							+QUOTENAME (@v_Object_Name)
-							+@v_SQL_String_WHERE
-						+N'
-					) SQ1
+							+ @SQL_String_SELECT
+							+ NCHAR (13) + REPLICATE (NCHAR (9), 6) + N'FROM' + NCHAR (13)
+							+ REPLICATE (NCHAR (9), 7) + @Database_Name
+							+ N'.'
+							+ QUOTENAME (@Schema_Name)
+							+ N'.'
+							+ QUOTENAME (@Object_Name)
+							+ @SQL_String_WHERE
+						+ N'
+					) sqMAT
 
 				UNPIVOT
 
 					(
-						column_data
-						FOR
-							column_name IN ('+@v_SQL_String_IN_Column_Name+N')
+						column_data FOR column_name IN
+
+							(
+								' + @SQL_String_IN_Column_Name + N'
+							)
+
 					) UNPV
 
 				GROUP BY
@@ -407,9 +418,17 @@ BEGIN
 
 	BEGIN TRY
 
-		INSERT INTO #temp_string_search_results
+		INSERT INTO dbo.#temp_string_search_results
 
-		EXECUTE (@v_SQL_String_Full)
+			(
+				 [schema_name]
+				,[object_name]
+				,column_name
+				,column_data
+				,occurrences
+			)
+
+		EXECUTE (@SQL_String_Full)
 
 	END TRY
 	BEGIN CATCH
@@ -418,13 +437,13 @@ BEGIN
 
 
 	SELECT TOP (1)
-		 @v_Loop_Object_Number = X.schema_object_dense_rank
-		,@v_Schema_Name = X.[schema_name]
-		,@v_Object_Name = X.[object_name]
+		 @Loop_Object_Number = X.schema_object_dense_rank
+		,@Schema_Name = X.[schema_name]
+		,@Object_Name = X.[object_name]
 	FROM
-		#temp_string_search_objects_columns X
+		dbo.#temp_string_search_objects_columns X
 	WHERE
-		X.schema_object_dense_rank = @v_Loop_Object_Number+1
+		X.schema_object_dense_rank = @Loop_Object_Number + 1
 	ORDER BY
 		X.schema_object_dense_rank
 
@@ -432,7 +451,7 @@ BEGIN
 	IF @@ROWCOUNT = 0
 	BEGIN
 
-		SET @v_Loop_Object_Number = NULL
+		SET @Loop_Object_Number = NULL
 
 	END
 
@@ -451,7 +470,7 @@ SELECT
 		END) AS object_type
 	,UPPER (Y.data_type) AS data_type
 	,Y.max_length AS data_length
-	,DB_NAME (DB_ID (SUBSTRING (@v_Database_Name, 2, LEN (@v_Database_Name)-2))) AS database_name
+	,DB_NAME (DB_ID (SUBSTRING (@Database_Name, 2, LEN (@Database_Name) - 2))) AS database_name
 	,Y.[schema_name]
 	,Y.[object_name]
 	,Y.column_name
@@ -462,8 +481,8 @@ SELECT
 						END)) AS column_data_xml
 	,Z.occurrences
 FROM
-	#temp_string_search_objects_columns Y
-	INNER JOIN #temp_string_search_results Z ON Z.[schema_name] = Y.[schema_name]
+	dbo.#temp_string_search_objects_columns Y
+	INNER JOIN dbo.#temp_string_search_results Z ON Z.[schema_name] = Y.[schema_name]
 		AND Z.[object_name] = Y.[object_name]
 		AND Z.column_name = Y.column_name
 ORDER BY
@@ -491,7 +510,4 @@ BEGIN
 	DROP TABLE dbo.#temp_string_search_results
 
 END
-
-
-Skip_Query:
 GO
