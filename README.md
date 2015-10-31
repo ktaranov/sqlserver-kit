@@ -28,6 +28,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 
 ## Web resource
+ - [Microsoft SQL Server Version List](http://sqlserverbuilds.blogspot.ru/) 
  - [SQL Central blog Scripts]
  - [SQL Central blog Articles]
  - **Awesome [BRENT OZAR] scripts and articles**
