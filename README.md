@@ -3,6 +3,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 
 ## Repo folders
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 161 Trace Flag')
  - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL in Microsoft SQL Server 2005, 2008(R2), 2012, and 2014
