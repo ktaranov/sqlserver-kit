@@ -40,6 +40,7 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
 
 ## Microsoft Adventure Works Sample Databases download links
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
+ - [Adventure Works Sample Databases and Scripts for SQL Server 2016 CTP3](http://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
