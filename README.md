@@ -39,6 +39,44 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
  - [SQL# CLR functions](http://www.sqlsharp.com/)
 
 
+## SQL Server Express direct download links
+Original post written by Scott Hanselman: <http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx><br />
+Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/sql-server-express.aspx>
+
+
+### [Download SQL Server 2014 Express](http://www.microsoft.com/en-us/download/details.aspx?id=42299)
+-   You likely just want SQL Server 2014 Express with Tools. This
+    download includes SQL Management Studio.
+    -   [SQL Server 2014 Express x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2064BIT/SQLEXPRWT_x64_ENU.exe)
+    -   [SQL Server 2014 Express x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2032BIT/SQLEXPRWT_x86_ENU.exe)
+-   Here's just SQL Server 2014 Management Studio
+    -   [SQL Management Studio x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2064BIT/SQLManagementStudio_x64_ENU.exe)
+    -   [SQL Management Studio x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2032BIT/SQLManagementStudio_x86_ENU.exe)
+-   SQL Server 2014 Express with Advanced Services
+    -   [Advanced Services x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe)
+    -   [Advanced Services x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe)
+
+### [Download SQL Server 2012 Express](http://www.microsoft.com/en-us/download/details.aspx?id=29062)
+-   You likely just want SQL Server 2012 Express with Tools. This
+    download includes SQL Management Studio.
+    -   [SQL Server 2012 Express x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPRWT_x64_ENU.exe)
+-   Here's just SQL Server 2012 Management Studio
+    -   [SQL Management Studio x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe)
+    -   [SQL Management Studio
+        x86](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe)
+
+### [Download SQL Server 2008 Express R2 SP2](http://www.microsoft.com/en-us/download/details.aspx?id=30438)
+-   You likely just want SQL Server 2008 Express with Tools. This
+    download includes SQL Management Studio.
+    -   [SQL Server 2008 Express x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x64_ENU.exe)
+    -   [SQL Server 2008 Express x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x86_ENU.exe)
+-   Here's just SQL Server 2008 Management Studio
+    -   [SQL Management Studio x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x64_ENU.exe)
+    -   [SQL Management Studio x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x86_ENU.exe)
+
+### [Download SQL Server 2005 Express](https://www.microsoft.com/en-us/download/details.aspx?id=21844)
+
+
 ## Microsoft Adventure Works Sample Databases download links
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
  - [Adventure Works Sample Databases and Scripts for SQL Server 2016 CTP3](http://www.microsoft.com/en-us/download/details.aspx?id=49502)
