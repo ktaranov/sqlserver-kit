@@ -22,3 +22,20 @@ It provides:
  - Command line utility (how to use command line utility).
  - API for custom tool development (demo projects can be found in SQL Code Guard folder).
 
+
+## [SQL Search](http://www.red-gate.com/products/sql-development/sql-search/) (Written by Red Gate)
+SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.
+
+- Find fragments of SQL in tables, views, stored procedures, functions, views, jobs, and more
+- Quickly navigate to objects wherever they happen to be on a server
+- Search across multiple object types and multiple databases
+- Find all references to an object
+- Search with booleans and wildcards
+
+
+## [SQL Scripts Manager](http://www.red-gate.com/products/dba/sql-scripts-manager/) (Written by Red Gate)
+Powerful and reliable scripts written by SQL Server experts
+
+
+## [Supratimas](http://www.supratimas.com/addin/buy.html)
+SQL Server query execution visulizer
