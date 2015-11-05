@@ -2,13 +2,13 @@
 Complete list of add-in for SQL Server Management Studio
 
 
-| Name                                        | Download page              | Author              | Free version | Price  |
-|---------------------------------------------|----------------------------|---------------------|--------------|--------|
-| [SSMSBoost](#ssmsboost)                     | [SSMSBoost page]           | Solutions Crew GmbH | Yes          | No     |
-| [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard page]      | Oleksii Kovalov     | Yes          | No     |
-| [SQL Search](#sql-search)                   | [SQL Search page]          | Red Gate            | Yes          | No     |
-| [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager page] | Red Gate            | Yes          | No     |
-| [Supratimas](#supratimas)                   | [Supratimas page]          | ?                   | Yes          | $34.99 |
+| Name                                        | Download page         | Author              | Free version | Paid/Price |
+| ------------------------------------------- | --------------------- | ------------------- | ------------ | ---------- |
+| [SSMSBoost](#ssmsboost)                     | [SSMSBoost]           | Solutions Crew GmbH | Yes          | Yes/$150   |
+| [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard]      | Oleksii Kovalov     | Yes          | No         |
+| [SQL Search](#sql-search)                   | [SQL Search]          | Red Gate            | Yes          | No         |
+| [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager] | Red Gate            | Yes          | No         |
+| [Supratimas](#supratimas)                   | [Supratimas]          | ?                   | Yes          | Yes/$34.99 |
 
 
 ## SSMSBoost
@@ -50,8 +50,8 @@ Powerful and reliable scripts written by SQL Server experts
 SQL Server query execution visualizer
 
 
-[SSMSBoost page]:http://www.ssmsboost.com/
-[SQL Code Guard page]:http://sqlcodeguard.com/
-[SQL Search page]:http://www.red-gate.com/products/sql-development/sql-search/
-[SQL Scripts Manager page]:http://www.red-gate.com/products/dba/sql-scripts-manager/
-[Supratimas page]:http://www.supratimas.com/addin/buy.html
+[SSMSBoost]:http://www.ssmsboost.com/
+[SQL Code Guard]:http://sqlcodeguard.com/
+[SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
+[SQL Scripts Manager]:http://www.red-gate.com/products/dba/sql-scripts-manager/
+[Supratimas]:http://www.supratimas.com/addin/buy.html
