@@ -1,9 +1,18 @@
-# SQL Server Managment Studio add-ins
-Add-in for SQL Server Managment Studio
+# SQL Server Management Studio add-ins
+Complete list of add-in for SQL Server Management Studio
 
 
-## [SSMSBoost add-in](http://www.ssmsboost.com/) (Written by Solutions Crew GmbH)
-SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio. The main goal of the project is to speed-up daily tasks of SQL DBA and T-SQL developers and to help you avoid destructive DML executions in production environments.
+| Name                                       | Download page              | Author              | Free | Price  |
+|--------------------------------------------|----------------------------|---------------------|------|--------|
+| [SSMSBoost](SSMSBoost)                     | [SSMSBoost page]           | Solutions Crew GmbH | Yes  | No     |
+| [SQL Code Guard](SQL Code Guard)           | [SQL Code Guard page]      | Oleksii Kovalov     | Yes  | No     |
+| [SQL Search](SQL Search)                   | [SQL Search page]          | Red Gate            | Yes  | No     |
+| [SQL Scripts Manager](SQL Scripts Manager) | [SQL Scripts Manager page] | Red Gate            | Yes  | No     |
+| [Supratimas](Supratimas)                   | [Supratimas page]          | ?                   | Yes  | Donate |
+
+
+## SSMSBoost
+SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio. The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
 You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day !
 
@@ -11,7 +20,7 @@ SQL Server Management Studio versions supported: 2008, 2008/R2, 2012, 2014
 Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version. Currently both versions have the same set of features
 
 
-## [SQL Code Guard](http://sqlcodeguard.com/) (Written by Oleksii Kovalov)
+## SQL Code Guard
 SQL Code Guard is a free solution for SQL Server that provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies.
 
 It provides:
@@ -23,7 +32,7 @@ It provides:
  - API for custom tool development (demo projects can be found in SQL Code Guard folder).
 
 
-## [SQL Search](http://www.red-gate.com/products/sql-development/sql-search/) (Written by Red Gate)
+## SQL Search
 SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.
 
 - Find fragments of SQL in tables, views, stored procedures, functions, views, jobs, and more
@@ -33,9 +42,16 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 - Search with booleans and wildcards
 
 
-## [SQL Scripts Manager](http://www.red-gate.com/products/dba/sql-scripts-manager/) (Written by Red Gate)
+## SQL Scripts Manager
 Powerful and reliable scripts written by SQL Server experts
 
 
-## [Supratimas](http://www.supratimas.com/addin/buy.html)
-SQL Server query execution visulizer
+## Supratimas
+SQL Server query execution visualizer
+
+
+[SSMSBoost page]:http://www.ssmsboost.com/
+[SQL Code Guard page]:http://sqlcodeguard.com/
+[SQL Search page]:http://www.red-gate.com/products/sql-development/sql-search/
+[SQL Scripts Manager page]:http://www.red-gate.com/products/dba/sql-scripts-manager/
+[Supratimas page]:http://www.supratimas.com/addin/buy.html
