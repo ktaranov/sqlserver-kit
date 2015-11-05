@@ -2,13 +2,13 @@
 Complete list of add-in for SQL Server Management Studio
 
 
-| Name                                       | Download page              | Author              | Free | Price  |
-|--------------------------------------------|----------------------------|---------------------|------|--------|
-| [SSMSBoost](SSMSBoost)                     | [SSMSBoost page]           | Solutions Crew GmbH | Yes  | No     |
-| [SQL Code Guard](SQL Code Guard)           | [SQL Code Guard page]      | Oleksii Kovalov     | Yes  | No     |
-| [SQL Search](SQL Search)                   | [SQL Search page]          | Red Gate            | Yes  | No     |
-| [SQL Scripts Manager](SQL Scripts Manager) | [SQL Scripts Manager page] | Red Gate            | Yes  | No     |
-| [Supratimas](Supratimas)                   | [Supratimas page]          | ?                   | Yes  | Donate |
+| Name                                        | Download page              | Author              | Free version | Price  |
+|---------------------------------------------|----------------------------|---------------------|--------------|--------|
+| [SSMSBoost](#ssmsboost)                     | [SSMSBoost page]           | Solutions Crew GmbH | Yes          | No     |
+| [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard page]      | Oleksii Kovalov     | Yes          | No     |
+| [SQL Search](#sql-search)                   | [SQL Search page]          | Red Gate            | Yes          | No     |
+| [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager page] | Red Gate            | Yes          | No     |
+| [Supratimas](#supratimas)                   | [Supratimas page]          | ?                   | Yes          | $34.99 |
 
 
 ## SSMSBoost
