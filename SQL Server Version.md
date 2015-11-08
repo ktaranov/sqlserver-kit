@@ -54,7 +54,7 @@ Legend:
 | SQL Server 2008    | Katmai      | 10.0.1600.22 | [10.0.2531.0]<br/>10.1.2531.0   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
 | SQL Server 2005    | Yukon       | 9.0.1399.06  | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
 | SQL Server 2000    | Shiloh      | 8.0.194      | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623      | [7.0.699]                       | [7.0.842]                       | [7.0.961]                         | [7.0.1063]                      |
+| SQL Server 7.0     | Sphinx      | 7.0.623      | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 | SQL Server 6.5     | Hydra       | ?            |                                 |                                 |                                   |                                 |
 | SQL Server 6.0     | SQL95       | ?            |                                 |                                 |                                   |                                 |
 | SQL Server 4.21    | SQLNT       | ?            |                                 |                                 |                                   |                                 |
@@ -133,8 +133,5 @@ Legend:
 [8.0.532]:http://www.microsoft.com/downloads/details.aspx?FamilyID=75672496-af8e-40dc-853e-ad2c9fe96882
 [8.0.760]:http://www.microsoft.com/downloads/details.aspx?familyid=90DCD52C-0488-4E46-AFBF-ACACE5369FA3
 [8.0.2039]:http://www.microsoft.com/downloads/details.aspx?FamilyId=8E2DFC8D-C20E-4446-99A9-B7F0213F8BC5
-[7.0.699]:http://www.microsoft.com/downloads/details.aspx?familyid=3884A944-3363-43CD-99E9-031A93C04413
-[7.0.842]:http://www.microsoft.com/downloads/details.aspx?FamilyID=C4C935C7-4429-4172-9D54-C8A60927F372
-[7.0.961]:http://www.microsoft.com/downloads/details.aspx?FamilyID=9c71f91c-a88f-4d31-9e8b-9fd63fbdbdcf
-[7.0.1063]:http://www.microsoft.com/technet/prodtechnol/sql/70/downloads/default.mspx
+[7.0.1063]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
 [Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
