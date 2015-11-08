@@ -43,21 +43,21 @@ Legend:
 | SQL Server 4.21                              | ?                         | 60                           |
 
 
-## Quick summary for SP
+## Quick summary for Service Packs
 
-| Version            | Codename    | RTM (no SP)  | SP1                           | SP2                           | SP3                             | SP4                           |
-|:-------------------|:------------|:-------------|:------------------------------|:------------------------------|:------------------------------- | ----------------------------- |
-| SQL Server 2016    | ?           | CTP3.0       |                               |                               |                                 |                               |
-| SQL Server 2014    | SQL14       | 12.0.2000.8  | 12.0.4100.1<br/>12.1.4100.1   |                               |                                 |                               |
-| SQL Server 2012    | Denali      | 11.0.2100.60 | 11.0.3000.0<br/>11.1.3000.0   | 11.0.5058.0                   |                                 |                               |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1 | 10.50.2500.0<br/>10.51.2500.0 | 10.50.4000.0<br/>10.52.4000.0 | 10.50.6000.34<br/>10.53.6000.34 |                               |
-| SQL Server 2008    | Katmai      | 10.0.1600.22 | 10.0.2531.0<br/>10.1.2531.0   | 10.0.4000.0<br/>10.2.4000.0   | 10.0.5500.0<br/>10.3.5500.0     | 10.0.6000.29<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06  | 9.0.2047                      | 9.0.3042                      | 9.0.4035                        | 9.0.5000                      |
-| SQL Server 2000    | Shiloh      | 8.0.194      | 8.0.384                       | 8.0.532                       | 8.0.760                         | 8.0.2039                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623      | 7.0.699                       | 7.0.842                       | 7.0.961                         | 7.0.1063                      |
-| SQL Server 6.5     | Hydra       | ?            |                               |                               |                                 |                               |
-| SQL Server 6.0     | SQL95       | ?            |                               |                               |                                 |                               |
-| SQL Server 4.21    | SQLNT       | ?            |                               |                               |                                 |                               |
+| Version            | Codename    | RTM (no SP)  | SP1                             | SP2                             | SP3                               | SP4                             |
+|:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
+| SQL Server 2016    | ?           | [CTP 3.0]    |                                 |                                 |                                   |                                 |
+| SQL Server 2014    | SQL14       | 12.0.2000.8  | [12.0.4100.1]<br/>12.1.4100.1   |                                 |                                   |                                 |
+| SQL Server 2012    | Denali      | 11.0.2100.60 | [11.0.3000.0]<br/>11.1.3000.0   | [11.0.5058.0]                   |                                   |                                 |
+| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1 | [10.50.2500.0]<br/>10.51.2500.0 | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
+| SQL Server 2008    | Katmai      | 10.0.1600.22 | [10.0.2531.0]<br/>10.1.2531.0   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
+| SQL Server 2005    | Yukon       | 9.0.1399.06  | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
+| SQL Server 2000    | Shiloh      | 8.0.194      | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
+| SQL Server 7.0     | Sphinx      | 7.0.623      | [7.0.699]                       | [7.0.842]                       | [7.0.961]                         | [7.0.1063]                      |
+| SQL Server 6.5     | Hydra       | ?            |                                 |                                 |                                   |                                 |
+| SQL Server 6.0     | SQL95       | ?            |                                 |                                 |                                   |                                 |
+| SQL Server 4.21    | SQLNT       | ?            |                                 |                                 |                                   |                                 |
 
 
 ## Microsoft SQL Server 2016 Builds
@@ -114,4 +114,27 @@ Legend:
 | 11.00.9120 | 2013.110.9120.0  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                  | 2013-06-25   |
 
 
+[CTP 3.0]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016#evaluation_4114
+[12.0.4100.1]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
+[11.0.3000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=35575
+[11.0.5058.0]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
+[10.50.2500.0]:http://www.microsoft.com/en-us/download/details.aspx?id=26727
+[10.50.4000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=30437
+[10.50.6000.34]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
+[10.0.2531.0]:http://www.microsoft.com/downloads/details.aspx?familyid=66AB3DBB-BF3E-4F46-9559-CCC6A4F9DC19
+[10.0.4000.0]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=8FBFC1DE-D25E-4790-88B5-7DDA1F1D4E17
+[10.0.5500.0]:http://www.microsoft.com/download/en/details.aspx?id=27594
+[10.0.6000.29]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
+[9.0.2047]:http://www.microsoft.com/downloads/details.aspx?FamilyID=CB6C71EA-D649-47FF-9176-E7CAC58FD4BC
+[9.0.3042]:http://www.microsoft.com/downloads/details.aspx?FamilyId=d07219b2-1e23-49c8-8f0c-63fa18f26d3a
+[9.0.4035]:http://www.microsoft.com/downloads/details.aspx?FamilyId=ae7387c3-348c-4faa-8ae5-949fdfbe59c4
+[9.0.5000]:http://www.microsoft.com/downloads/details.aspx?FamilyId=b953e84f-9307-405e-bceb-47bd345baece
+[8.0.384]:http://www.microsoft.com/downloads/details.aspx?FamilyID=DFF43C50-51DF-4FE0-9717-DE41FB48556E
+[8.0.532]:http://www.microsoft.com/downloads/details.aspx?FamilyID=75672496-af8e-40dc-853e-ad2c9fe96882
+[8.0.760]:http://www.microsoft.com/downloads/details.aspx?familyid=90DCD52C-0488-4E46-AFBF-ACACE5369FA3
+[8.0.2039]:http://www.microsoft.com/downloads/details.aspx?FamilyId=8E2DFC8D-C20E-4446-99A9-B7F0213F8BC5
+[7.0.699]:http://www.microsoft.com/downloads/details.aspx?familyid=3884A944-3363-43CD-99E9-031A93C04413
+[7.0.842]:http://www.microsoft.com/downloads/details.aspx?FamilyID=C4C935C7-4429-4172-9D54-C8A60927F372
+[7.0.961]:http://www.microsoft.com/downloads/details.aspx?FamilyID=9c71f91c-a88f-4d31-9e8b-9fd63fbdbdcf
+[7.0.1063]:http://www.microsoft.com/technet/prodtechnol/sql/70/downloads/default.mspx
 [Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
