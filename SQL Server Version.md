@@ -23,6 +23,29 @@ Legend:
  - **SP**: Service Pack; much larger collection of hotfixes that have been fully regression tested. In some cases delivers product enhancements.
  - **GDR**: General Distribution Release; GDR fixes should not contain any of the CU updates.
  - **QFE**: Quick Fix Engineering; QFE updates include CU fixes.
+ - **SU**: Security update.
+
+
+## What are the most recent updates for SQL Server? (by Brent Ozar)
+
+| Version | Latest Update                               | Build Number | Support Ends | Other Updates             |
+|---------|---------------------------------------------|--------------|--------------|---------------------------|
+| 2014    | [Download SP1 2014] then [CU3 KB3094221]    | 12.00.4425   | 2024-07-09   | Other SQL 2014 Updates    |
+| 2012    | [Download SP2 2012] then [CU8 KB3082561]    | 11.00.5634   | 2022-07-12   | Other SQL 2012 Updates    |
+| 2008 R2 | [Download SP3 2008 R2] then [SU KB3045311]  | 10.50.6000   | 2019-07-09   | Other SQL 2008 R2 Updates |
+| 2008    | [Download SP4 2008] then [SU KB3045316]     | 10.00.6000   | 2019-07-09   | Other SQL 2008 Updates    |
+| 2005    | [Download SP4 2005] then [CU3 2507769]      | 9.00.5266    | 2016-04-12   |                           |
+
+[Download SP1 2014]:http://www.microsoft.com/en-us/download/details.aspx?id=46694&WT.mc_id=rss_alldownloads_all
+[CU3 KB3094221]:https://support.microsoft.com/en-us/kb/3094221
+[Download SP2 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
+[CU8 KB3082561]:https://support.microsoft.com/en-us/kb/3082561
+[Download SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
+[SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
+[Download SP4 2008]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
+[SU KB3045316]:https://www.microsoft.com/downloads/details.aspx?familyid=40328565-3067-4e36-96ba-26ade333d715
+[Download SP4 2005]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b953e84f-9307-405e-bceb-47bd345baece
+[CU3 2507769]:http://support.microsoft.com/kb/2507769
 
 
 ## Internal Database Version and Compatibility Level
