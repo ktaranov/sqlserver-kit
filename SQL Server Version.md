@@ -2,6 +2,7 @@
 Source link:
  - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
  - SQL Server Updates by Brent Ozar team: <http://sqlserverupdates.com/>
+ - Wikipedia: <https://en.wikipedia.org/wiki/Microsoft_SQL_Server>
 
 Useful articles:
  - [How to identify your SQL Server version and edition](http://support.microsoft.com/kb/321185/en-us)
@@ -50,20 +51,23 @@ Legend:
 
 ## Internal Database Version and Compatibility Level
 
-| SQL Server Version                           | Internal Database Version | Database Compatibility Level |
-|:---------------------------------------------|--------------------------:|-----------------------------:|
-| SQL Server 2014                              | 782                       | 120                          |
-| SQL Server 2012                              | 706                       | 110                          |
-| SQL Server 2012 CTP1                         | 684                       | 110                          |
-| SQL Server 2008 R2                           | 660 / 661                 | 100                          |
-| SQL Server 2008                              | 655                       | 100                          |
-| SQL Server 2005 SP2+ with VarDecimal enabled | 612                       | 90                           |
-| SQL Server 2005                              | 611                       | 90                           |
-| SQL Server 2000                              | 539                       | 80                           |
-| SQL Server 7.0                               | 515                       | 70                           |
-| SQL Server 6.5                               | 408                       | 65                           |
-| SQL Server 6.0                               | ?                         | 60                           |
-| SQL Server 4.21                              | ?                         | 60                           |
+| SQL Server Version                           | Code Name            | Release Year | Internal Database Version | Database Compatibility Level |
+|:---------------------------------------------|:---------------------|-------------:|--------------------------:|-----------------------------:|
+| SQL Server 2016                              | ?                    | 2016         | 782                       | 120                          |
+| SQL Server 2014                              | SQL14                | 2014         | 782                       | 120                          |
+| SQL Server 2012                              | Denali               | 2012         | 706                       | 110                          |
+| SQL Server 2012 CTP1                         |                      |              | 684                       | 110                          |
+| SQL Server 2008 R2                           | Kilimanjaro (aka KJ) | 2010         | 660 / 661                 | 100                          |
+| SQL Server 2008                              | Katmai               | 2008         | 655                       | 100                          |
+| SQL Server 2005 SP2+ with VarDecimal enabled | ?                    | 2005         | 612                       |  90                          |
+| SQL Server 2005                              | Yukon                | 2005         | 611                       |  90                          |
+| SQL Server 2000                              | Shiloh               | 2000         | 539                       |  80                          |
+| SQL Server 7.0                               | Sphinx               | 1998         | 515                       |  70                          |
+| SQL Server 6.5                               | Hydra                | 1996         | 408                       |  65                          |
+| SQL Server 6.0                               | SQL95                | 1995         | ?                         |  60                          |
+| SQL Server 4.21                              | SQLNT                | 1993         | ?                         |  60                          |
+| SQL Server 1.1 (16 bit)                      | ?                    | 1991         | ?                         |  60                          |
+| SQL Server 1.0 (16 bit)                      | Ashton-Tate          | 1989         | ?                         |  60                          |
 
 
 ## Quick summary for Service Packs
