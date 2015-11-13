@@ -1,4 +1,15 @@
 # Microsoft SQL Server version
+Download links and complete information for all Microsoft SQL Server versions
+
+Headers:
+ - [What are the most recent updates for SQL Server? (by Brent Ozar)](#what-are-the-most-recent-updates-for-sql-server-by-brent-ozar)
+ - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
+ - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
+ - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
+ - [Microsoft SQL Server 2014 Builds](#microsoft-sql-server-2014-builds)
+ - [Microsoft SQL Server 2012 Builds](#microsoft-sql-server-2012-builds)
+ - [Microsoft SQL Server 2008 R2 Builds](#microsoft-sql-server-2008-r2-builds)
+
 Source link:
  - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
  - SQL Server Updates by Brent Ozar team: <http://sqlserverupdates.com/>
@@ -70,7 +81,7 @@ Legend:
 | SQL Server 1.0 (16 bit)                      | Ashton-Tate          | 1989         | ?                         |  60                          |
 
 
-## Quick summary for Service Packs
+## Quick summary for SQL Server Service Packs
 
 | Version            | Codename    | RTM (no SP)  | SP1                             | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
