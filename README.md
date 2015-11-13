@@ -1,5 +1,5 @@
 # SQL Server KIT
-Useful links and scripts for Microsoft SQL Server Database above 2005.
+Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 
 ## Repo folders and files
@@ -7,13 +7,16 @@ Useful links and scripts for Microsoft SQL Server Database above 2005.
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever')
  - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
  - [CLR procedures](/CLR)
-    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL in Microsoft SQL Server 2005, 2008(R2), 2012, and 2014
+    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL
     - SplitterB_CLR
  - [Known Errors](/Errors)
  - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (Written by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
-    - SSMSBoost add-in
-    - SQL Code Guard
+    - [SSMSBoost add-in](/SSMS_addons#ssmsboost 'Adds missing features and improves your productivity')
+    - [SQL Code Guard](/SSMS_addons#sql-code-guard 'Provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies')
+    - [SQL Search](/SSMS_addons#sql-search 'Free add-in from Red Gate that lets you quickly search for SQL across your databases')
+    - [SQL Scripts Manager](/SSMS_addons#sql-scripts-manager 'Powerful and reliable scripts written by SQL Server experts')
+    - [Supratimas](/SSMS_addons#supratimas 'SQL Server query execution visualizer')
  - [Useful scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (Written by Glenn Alan Berry)
     - Table count alternative (Written by Jes Schultz Borland)
