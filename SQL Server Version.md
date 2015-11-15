@@ -9,6 +9,7 @@ Headers:
  - [Microsoft SQL Server 2014 Builds](#microsoft-sql-server-2014-builds)
  - [Microsoft SQL Server 2012 Builds](#microsoft-sql-server-2012-builds)
  - [Microsoft SQL Server 2008 R2 Builds](#microsoft-sql-server-2008-r2-builds)
+ - [Microsoft SQL Server 2008 Builds](#microsoft-sql-server-2008-builds)
 
 Source link:
  - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
@@ -40,14 +41,16 @@ Legend:
 
 ## What are the most recent updates for SQL Server? (by Brent Ozar)
 
-| Version | Latest Update                               | Build Number | Support Ends | Other Updates             |
-|---------|---------------------------------------------|--------------|--------------|---------------------------|
-| 2014    | [Download SP1 2014] then [CU3 KB3094221]    | 12.00.4425   | 2024-07-09   | Other SQL 2014 Updates    |
-| 2012    | [Download SP2 2012] then [CU8 KB3082561]    | 11.00.5634   | 2022-07-12   | Other SQL 2012 Updates    |
-| 2008 R2 | [Download SP3 2008 R2] then [SU KB3045311]  | 10.50.6000   | 2019-07-09   | Other SQL 2008 R2 Updates |
-| 2008    | [Download SP4 2008] then [SU KB3045316]     | 10.00.6000   | 2019-07-09   | Other SQL 2008 Updates    |
-| 2005    | [Download SP4 2005] then [CU3 2507769]      | 9.00.5266    | 2016-04-12   |                           |
+| Version | Latest Update                               | Build Number  | Support Ends | Other Updates                                                     |
+|---------|---------------------------------------------|---------------|--------------|-------------------------------------------------------------------|
+| 2016    | [Download CTP3 2016]                        | 13.00.700.139 | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Download SP1 2014] then [CU3 KB3094221]    | 12.00.4425    | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Download SP2 2012] then [CU8 KB3082561]    | 11.00.5634    | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Download SP3 2008 R2] then [SU KB3045311]  | 10.50.6000    | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Download SP4 2008] then [SU KB3045316]     | 10.00.6000    | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)      |
+| 2005    | [Download SP4 2005] then [CU3 2507769]      | 9.00.5266     | 2016-04-12   |                                                                   |
 
+[Download CTP3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:http://www.microsoft.com/en-us/download/details.aspx?id=46694&WT.mc_id=rss_alldownloads_all
 [CU3 KB3094221]:https://support.microsoft.com/en-us/kb/3094221
 [Download SP2 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
@@ -465,3 +468,172 @@ Legend:
 [2072493 Cumulative update package 2 (CU2) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2072493
 [981355 Cumulative update package 1 (CU1) for SQL Server 2008 R2]:http://support.microsoft.com/kb/981355
 [2494088 MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]:http://support.microsoft.com/kb/2494088
+
+
+## Microsoft SQL Server 2008 Builds
+
+| Build        | File version     | KB / Description                                                                                                                                                                                                                                      | Release Date       |
+|--------------|------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| [10.00.6535] | 2007.100.6535.0  | 3045308 MS15-058: Description of the security update for SQL Server 2008 Service Pack 4 QFE: July 14, 2015                                                                                                                                            | July 14, 2015      |
+| [10.00.6526] | 2007.100.6526.0  | 3034373 An on-demand hotfix update package is available for SQL Server 2008 Service Pack 4 (SP4)                                                                                                                                                      | February 9, 2015   |
+| [10.00.6241] | 2007.100.6241.0  | 3045311 MS15-058: Description of the security update for SQL Server 2008 Service Pack 4 GDR: July 14, 2015                                                                                                                                            | July 14, 2015      |
+| [10.00.6000] | 2007.100.6000.0  | SQL Server 2008 Service Pack 4 (SP4)                                                                                                                                                                                                                  | September 30, 2014 |
+| [10.00.5890] | 2007.100.5890.0  | 3045303 MS15-058: Description of the security update for SQL Server 2008 Service Pack 3 QFE: July 14, 2015                                                                                                                                            | July 14, 2015      |
+| [10.00.5869] | 2007.100.5869.0  | 2977322 MS14-044: Description of the security update for SQL Server 2008 SP3 (QFE)                                                                                                                                                                    | August 12, 2014    |
+| [10.00.5867] | 2007.100.5867.0  | 2877204 FIX: Error 8985 when you run the dbcc shrinkfile statement by using the logical name of a file in SQL Server 2008 R2 or SQL Server 2008                                                                                                       | July 2, 2014       |
+| [10.00.5861] | 2007.100.5861.0  | 2958696 Cumulative update package 17 (CU17) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | May 19, 2014       |
+| [10.00.5852] | 2007.100.5852.0  | 2936421 Cumulative update package 16 (CU16) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | March 17, 2014     |
+| [10.00.5850] | 2007.100.5850.0  | 2923520 Cumulative update package 15 (CU15) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | January 20, 2014   |
+| [10.00.5848] | 2007.100.5848.0  | 2893410 Cumulative update package 14 (CU14) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | November 18, 2013  |
+| [10.00.5846] | 2007.100.5846.0  | 2880350 Cumulative update package 13 (CU13) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | September 16, 2013 |
+| [10.00.5844] | 2007.100.5844.0  | 2863205 Cumulative update package 12 (CU12) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | July 16, 2013      |
+| [10.00.5841] | 2007.100.5841.0  | 2834048 Cumulative update package 11 (CU11) for SQL Server 2008 Service Pack 3 (updated)                                                                                                                                                              | June 13, 2013      |
+| 10.00.5840   | 2007.100.5840.0  | 2834048 Cumulative update package 11 (CU11) for SQL Server 2008 Service Pack 3 (replaced)                                                                                                                                                             | May 20, 2013       |
+| [10.00.5835] | 2007.100.5835.0  | 2814783 Cumulative update package 10 (CU10) for SQL Server 2008 Service Pack 3                                                                                                                                                                        | March 18, 2013     |
+| [10.00.5829] | 2007.100.5829.0  | 2799883 Cumulative update package 9 (CU9) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | January 23, 2013   |
+| [10.00.5828] | 2007.100.5828.0  | 2771833 Cumulative update package 8 (CU8) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | November 19, 2012  |
+| [10.00.5826] | 2007.100.5826.0  | 2716435 Microsoft Security Bulletin MS12-070                                                                                                                                                                                                          | October 9, 2012    |
+| [10.00.5794] | 2007.100.5794.0  | 2738350 Cumulative update package 7 (CU7) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | September 21, 2012 |
+| [10.00.5788] | 2007.100.5788.0  | 2715953 Cumulative update package 6 (CU6) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | July 16, 2012      |
+| [10.00.5785] | 2007.100.5785.0  | 2696626 Cumulative update package 5 (CU5) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | May 19, 2012       |
+| [10.00.5775] | 2007.100.5775.0  | 2673383 Cumulative update package 4 (CU4) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | March 20, 2012     |
+| [10.00.5770] | 2007.100.5770.0  | 2648098 Cumulative update package 3 (CU3) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | January 16, 2012   |
+| [10.00.5768] | 2007.100.5768.0  | 2633143 Cumulative update package 2 (CU2) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | November 22, 2011  |
+| [10.00.5766] | 2007.100.5766.0  | 2617146 Cumulative update package 1 (CU1) for SQL Server 2008 Service Pack 3                                                                                                                                                                          | October 18, 2011   |
+| [10.00.5538] | 2007.100.5538.0  | 3045305 MS15-058: Description of the security update for SQL Server 2008 Service Pack 3 GDR: July 14, 2015                                                                                                                                            | July 14, 2015      |
+| [10.00.5520] | 2007.100.5520.0  | 2977321 MS14-044: Description of the security update for SQL Server 2008 SP3 (GDR)                                                                                                                                                                    | August 12, 2014    |
+| [10.00.5512] | 2007.100.5512.0  | Microsoft Security Bulletin MS12-070                                                                                                                                                                                                                  | October 9, 2012    |
+| [10.00.5500] | 2007.100.5500.0  | SQL Server 2008 Service Pack 3 (SP3)                                                                                                                                                                                                                  | October 6, 2011    |
+| 10.00.5416   | 2007.100.5416.0  | SQL Server 2008 Service Pack 3 CTP                                                                                                                                                                                                                    | August 22, 2011    |
+| [10.00.4371] | 2007.100.4371.0  | Microsoft Security Bulletin MS12-070                                                                                                                                                                                                                  | October 9, 2012    |
+| [10.00.4333] | 2007.100.4333.0  | 2715951 Cumulative update package 11 (CU11) for SQL Server 2008 Service Pack 2                                                                                                                                                                        | July 16, 2012      |
+| [10.00.4332] | 2007.100.4332.0  | 2696625 Cumulative update package 10 (CU10) for SQL Server 2008 Service Pack 2                                                                                                                                                                        | May 20, 2012       |
+| [10.00.4330] | 2007.100.4330.0  | 2673382 Cumulative update package 9 (CU9) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | March 19, 2012     |
+| [10.00.4326] | 2007.100.4326.0  | 2648096 Cumulative update package 8 (CU8) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | January 30, 2012   |
+| [10.00.4323] | 2007.100.4323.0  | 2617148 Cumulative update package 7 (CU7) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | November 21, 2011  |
+| [10.00.4321] | 2007.100.4321.0  | 2582285 Cumulative update package 6 (CU6) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | September 20, 2011 |
+| [10.00.4316] | 2007.100.4316.0  | 2555408 Cumulative update package 5 (CU5) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | July 18, 2011      |
+| [10.00.4285] | 2007.100.4285.0  | 2527180 Cumulative update package 4 (CU4) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | May 16, 2011       |
+| [10.00.4279] | 2007.100.4279.0  | 2498535 Cumulative update package 3 (CU3) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | March 11, 2011     |
+| [10.00.4272] | 2007.100.4272.0  | 2467239 Cumulative update package 2 (CU2) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | February 10, 2011  |
+| [10.00.4266] | 2007.100.4266.0  | 2289254 Cumulative update package 1 (CU1) for SQL Server 2008 Service Pack 2                                                                                                                                                                          | November 15, 2010  |
+| [10.00.4067] | 2007.100.4067.0  | Microsoft Security Bulletin MS12-070                                                                                                                                                                                                                  | October 9, 2012    |
+| [10.00.4064] | 2007.100.4064.0  | 2494089 MS11-049: Description of the security update for SQL Server 2008 Service Pack 2 GDR: June 14, 2011                                                                                                                                            | June 14, 2011      |
+| [10.00.4000] | 2007.100.4000.0  | SQL Server 2008 Service Pack 2 (SP2)                                                                                                                                                                                                                  | September 29, 2010 |
+|  10.00.3798  | 2007.100.3798.0  | SQL Server 2008 Service Pack 2 CTP                                                                                                                                                                                                                    | July 7, 2010       |
+| [10.00.2850] | 2007.100.2850.0  | 2582282 Cumulative update package 16 (CU16) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | September 19, 2011 |
+| [10.00.2847] | 2007.100.2847.0  | 2555406 Cumulative update package 15 (CU15) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | July 18, 2011      |
+| [10.00.2821] | 2007.100.2821.0  | 2527187 Cumulative update package 14 (CU14) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | May 16, 2011       |
+| [10.00.2816] | 2007.100.2816.0  | 2497673 Cumulative update package 13 (CU13) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | March 22, 2011     |
+| [10.00.2808] | 2007.100.2808.0  | 2467236 Cumulative update package 12 (CU12) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | February 10, 2011  |
+| [10.00.2804] | 2007.100.2804.0  | 2413738 Cumulative update package 11 (CU11) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | November 15, 2010  |
+| [10.00.2799] | 2007.100.2799.0  | 2279604 Cumulative update package 10 (CU10) for SQL Server 2008 Service Pack 1                                                                                                                                                                        | September 21, 2010 |
+| [10.00.2789] | 2007.100.2789.0  | 2083921 Cumulative update package 9 (CU9) for SQL Server 2008 Service Pack 1                                                                                                                                                                          | July 21, 2010      |
+| [10.00.2787] | 2007.100.2787.0  | 2231277 FIX: The Reporting Services service stops unexpectedly after you apply SQL Server 2008 SP1 CU 7 or CU8                                                                                                                                        | July 30, 2010      |
+| [10.00.2775] | 2007.100.2775.0  | 981702 Cumulative update package 8 (CU8) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | May 17, 2010       |
+| [10.00.2766] | 2007.100.2766.0  | 979065 Cumulative update package 7 (CU7) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | March 26, 2010     |
+| [10.00.2757] | 2007.100.2757.0  | 977443 Cumulative update package 6 (CU6) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | January 18, 2010   |
+| [10.00.2746] | 2007.100.2746.0  | 975977 Cumulative update package 5 (CU5) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | November 16, 2009  |
+| [10.00.2740] | 2007.100.2740.0  | 976761 FIX: Error message when you perform a rolling upgrade in a SQL Server 2008 cluster : 18401, Login failed for user SQLTEST\AgentService. Reason: Server is in script upgrade mode. Only administrator can connect at this time.[SQLState 42000] | November 24, 2009  |
+| [10.00.2734] | 2007.100.2734.0  | 973602 Cumulative update package 4 (CU4) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | September 22, 2009 |
+| [10.00.2723] | 2007.100.2723.0  | 971491 Cumulative update package 3 (CU3) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | July 21, 2009      |
+| [10.00.2714] | 2007.100.2714.0  | 970315 Cumulative update package 2 (CU2) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | May 18, 2009       |
+| [10.00.2712] | 2007.100.2712.0  | 970507 FIX: Error message in SQL Server 2008 when you run an INSERT SELECT statement on a table: Violation of PRIMARY KEY constraint <PrimaryKey>. Cannot insert duplicate key in object <TableName>                                                  | July 21, 2009      |
+| [10.00.2710] | 2007.100.2710.0  | 969099 Cumulative update package 1 (CU1) for SQL Server 2008 Service Pack 1                                                                                                                                                                           | April 16, 2009     |
+| [10.00.2573] | 2007.100.2573.0  | 2494096 MS11-049: Description of the security update for SQL Server 2008 Service Pack 1 GDR: June 14, 2011                                                                                                                                            | June 14, 2011      |
+| [10.00.2531] | 2007.100.2531.0  | SQL Server 2008 Service Pack 1 (SP1)                                                                                                                                                                                                                  | April 7, 2009      |
+|  10.00.2520  | 2007.100.2520.0  | SQL Server 2008 Service Pack 1 - CTP                                                                                                                                                                                                                  | February 23, 2009  |
+| [10.00.1835] | 2007.100.1835.0  | 979064 Cumulative update package 10 (CU10) for SQL Server 2008                                                                                                                                                                                        | March 15, 2010     |
+| [10.00.1828] | 2007.100.1828.0  | 977444 Cumulative update package 9 (CU9) for SQL Server 2008                                                                                                                                                                                          | January 18, 2010   |
+| [10.00.1823] | 2007.100.1823.0  | 975976 Cumulative update package 8 (CU8) for SQL Server 2008                                                                                                                                                                                          | November 16, 2009  |
+| [10.00.1818] | 2007.100.1818.0  | 973601 Cumulative update package 7 (CU7) for SQL Server 2008                                                                                                                                                                                          | September 21, 2009 |
+| [10.00.1812] | 2007.100.1812.0  | 971490 Cumulative update package 6 (CU6) for SQL Server 2008                                                                                                                                                                                          | July 21, 2009      |
+| [10.00.1806] | 2007.100.1806.0  | 969531 Cumulative update package 5 (CU5) for SQL Server 2008                                                                                                                                                                                          | May 18, 2009       |
+| [10.00.1798] | 2007.100.1798.0  | 963036 Cumulative update package 4 (CU4) for SQL Server 2008                                                                                                                                                                                          | March 17, 2009     |
+| [10.00.1787] | 2007.100.1787.0  | 960484 Cumulative update package 3 (CU3) for SQL Server 2008                                                                                                                                                                                          | January 19, 2009   |
+| [10.00.1779] | 2007.100.1779.0  | 958186 Cumulative update package 2 (CU2) for SQL Server 2008                                                                                                                                                                                          | November 19, 2008  |
+| [10.00.1771] | 2007.100.1771.0  | 958611 FIX: You may receive incorrect results when you run a query that references three or more tables in the FROM clause in SQL Server 2008                                                                                                         | October 29, 2008   |
+| [10.00.1763] | 2007.100.1763.0  | 956717 Cumulative update package 1 (CU1) for SQL Server 2008                                                                                                                                                                                          | October 28, 2008   |
+| [10.00.1750] | 2007.100.1750.0  | 956718 FIX: A MERGE statement may not enforce a foreign key constraint when the statement updates a unique key column that is not part of a clustering key that has a single row as the update source in SQL Server 2008                              | August 25, 2008    |
+| 10.00.1600   | 2007.100.1600.22 | SQL Server 2008 RTM                                                                                                                                                                                                                                   | August 7, 2008     |
+| 10.00.1442   | 2007.100.1442.32 | Microsoft SQL Server 2008 RC0                                                                                                                                                                                                                         | June 5, 2008       |
+| 10.00.1300   | 2007.100.1300.13 | Microsoft SQL Server 2008 CTP, February 2008                                                                                                                                                                                                          | February 19, 2008  |
+| 10.00.1075   | 2007.100.1075.23 | Microsoft SQL Server 2008 CTP, November 2007                                                                                                                                                                                                          | November 18, 2007  |
+| 10.00.1049   | 2007.100.1049.14 | SQL Server 2008 CTP, July 2007                                                                                                                                                                                                                        | July 31, 2007      |
+| 10.00.1019   | 2007.100.1019.17 | SQL Server 2008 CTP, June 2007                                                                                                                                                                                                                        | May 21, 2007       |
+
+[10.00.6535]:http://support.microsoft.com/kb/3045308/en-us
+[10.00.6526]:http://support.microsoft.com/kb/3034373/en-us
+[10.00.6241]:https://support.microsoft.com/en-us/kb/3045311
+[10.00.6000]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
+[10.00.5890]:https://support.microsoft.com/en-us/kb/3045303
+[10.00.5869]:http://support.microsoft.com/kb/2977322/en-us
+[10.00.5867]:http://support.microsoft.com/kb/2877204/en-us
+[10.00.5861]:http://support.microsoft.com/kb/2958696/en-us
+[10.00.5852]:http://support.microsoft.com/kb/2936421/en-us
+[10.00.5850]:http://support.microsoft.com/kb/2923520/en-us
+[10.00.5848]:http://support.microsoft.com/kb/2893410/en-us
+[10.00.5846]:http://support.microsoft.com/kb/2880350/en-us
+[10.00.5844]:http://support.microsoft.com/kb/2863205/en-us
+[10.00.5841]:http://support.microsoft.com/kb/2834048/en-us
+[10.00.5835]:http://support.microsoft.com/kb/2814783
+[10.00.5829]:http://support.microsoft.com/kb/2799883
+[10.00.5828]:http://support.microsoft.com/kb/2771833
+[10.00.5826]:http://support.microsoft.com/kb/2716435
+[10.00.5794]:http://support.microsoft.com/kb/2738350
+[10.00.5788]:http://support.microsoft.com/kb/2715953
+[10.00.5785]:http://support.microsoft.com/kb/2696626
+[10.00.5775]:http://support.microsoft.com/kb/2673383
+[10.00.5770]:http://support.microsoft.com/kb/2648098
+[10.00.5768]:http://support.microsoft.com/kb/2633143
+[10.00.5766]:http://support.microsoft.com/kb/2617146
+[10.00.5538]:https://support.microsoft.com/en-us/kb/3045305
+[10.00.5520]:http://support.microsoft.com/kb/2977321/en-us
+[10.00.5512]:http://technet.microsoft.com/en-us/security/bulletin/ms12-070
+[10.00.5500]:http://www.microsoft.com/download/en/details.aspx?id=27594
+[10.00.4333]:http://support.microsoft.com/kb/2715951
+[10.00.4332]:http://support.microsoft.com/kb/2696625
+[10.00.4330]:http://support.microsoft.com/kb/2673382
+[10.00.4326]:http://support.microsoft.com/kb/2648096
+[10.00.4323]:http://support.microsoft.com/kb/2617148
+[10.00.4321]:http://support.microsoft.com/kb/2582285
+[10.00.4316]:http://support.microsoft.com/kb/2555408
+[10.00.4285]:http://support.microsoft.com/kb/2527180
+[10.00.4279]:http://support.microsoft.com/kb/2498535
+[10.00.4272]:http://support.microsoft.com/kb/2467239
+[10.00.4266]:http://support.microsoft.com/kb/2289254
+[10.00.4064]:http://support.microsoft.com/kb/2494089
+[10.00.4000]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=8FBFC1DE-D25E-4790-88B5-7DDA1F1D4E17
+[10.00.2850]:http://support.microsoft.com/kb/2582282
+[10.00.2847]:http://support.microsoft.com/kb/2555406
+[10.00.2821]:http://support.microsoft.com/kb/2527187
+[10.00.2816]:http://support.microsoft.com/kb/2497673
+[10.00.2808]:http://support.microsoft.com/kb/2467236
+[10.00.2804]:http://support.microsoft.com/kb/2413738
+[10.00.2799]:http://support.microsoft.com/kb/2279604
+[10.00.2789]:http://support.microsoft.com/kb/2083921
+[10.00.2787]:http://support.microsoft.com/kb/2231277
+[10.00.2775]:http://support.microsoft.com/kb/981702
+[10.00.2766]:http://support.microsoft.com/kb/979065
+[10.00.2757]:http://support.microsoft.com/kb/977443
+[10.00.2746]:http://support.microsoft.com/kb/975977
+[10.00.2740]:http://support.microsoft.com/kb/976761
+[10.00.2734]:http://support.microsoft.com/kb/973602
+[10.00.2723]:http://support.microsoft.com/kb/971491
+[10.00.2714]:http://support.microsoft.com/kb/970315
+[10.00.2712]:http://support.microsoft.com/kb/970507
+[10.00.2710]:http://support.microsoft.com/kb/969099
+[10.00.2573]:http://support.microsoft.com/kb/2494096
+[10.00.2531]:http://www.microsoft.com/downloads/details.aspx?familyid=66AB3DBB-BF3E-4F46-9559-CCC6A4F9DC19
+[10.00.1835]:http://support.microsoft.com/kb/979064
+[10.00.1828]:http://support.microsoft.com/kb/977444
+[10.00.1823]:http://support.microsoft.com/kb/975976
+[10.00.1818]:http://support.microsoft.com/kb/973601
+[10.00.1812]:http://support.microsoft.com/kb/971490
+[10.00.1806]:http://support.microsoft.com/kb/969531
+[10.00.1798]:http://support.microsoft.com/kb/963036
+[10.00.1787]:http://support.microsoft.com/kb/960484
+[10.00.1779]:http://support.microsoft.com/kb/958186
+[10.00.1771]:http://support.microsoft.com/kb/958611
+[10.00.1763]:http://support.microsoft.com/kb/956717
+[10.00.1750]:http://support.microsoft.com/kb/956718
