@@ -255,8 +255,8 @@ Legend:
 | 11.0.3153 | 2011.110.3153.0  | [2977326 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]                                        | 2014-08-12   |
 | 11.0.3128 | 2011.110.3128.0  | [2793634 Windows Installer starts repeatedly after you install SQL Server 2012 SP1]                                                    | 2013-01-03   |
 | 11.0.3000 | 2011.110.3000.0  | [SQL Server 2012 Service Pack 1 (SP1)]                                                                                                 | 2012-11-06   |
-| 11.0.2845 | 2011.110.2845.0  | [SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                                   | 2012-09-20   |
-| 11.0.2809 | 2011.110.2809.24 | [SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                                   | 2012-07-05   |
+| 11.0.2845 | 2011.110.2845.0  | SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                                    | 2012-09-20   |
+| 11.0.2809 | 2011.110.2809.24 | SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                                    | 2012-07-05   |
 | 11.0.2424 | 2011.110.2424.0  | [2908007 Cumulative update package 11 (CU11) for SQL Server 2012]                                                                      | 2013-12-17   |
 | 11.0.2420 | 2011.110.2420.0  | [2891666 Cumulative update package 10 (CU10) for SQL Server 2012]                                                                      | 2013-10-21   |
 | 11.0.2419 | 2011.110.2419.0  | [2867319 Cumulative update package 9 (CU9) for SQL Server 2012]                                                                        | 2013-08-21   |
@@ -264,7 +264,7 @@ Legend:
 | 11.0.2405 | 2011.110.2405.0  | [2823247 Cumulative update package 7 (CU7) for SQL Server 2012]                                                                        | 2013-04-15   |
 | 11.0.2401 | 2011.110.2401.0  | [2728897 Cumulative update package 6 (CU6) for SQL Server 2012]                                                                        | 2013-02-18   |
 | 11.0.2395 | 2011.110.2395.0  | [2777772 Cumulative update package 5 (CU5) for SQL Server 2012]                                                                        | 2012-12-18   |
-| 11.0.9000 | 2011.110.9000.5  | [Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                              | 2012-11-27   |
+| 11.0.9000 | 2011.110.9000.5  | Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                               | 2012-11-27   |
 | 11.0.2383 | 2011.110.2383.0  | [2758687 Cumulative update package 4 (CU4) for SQL Server 2012]                                                                        | 2012-10-18   |
 | 11.0.2376 | 2011.110.2376.0  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
 | 11.0.2332 | 2011.110.2332.0  | [2723749 Cumulative update package 3 (CU3) for SQL Server 2012]                                                                        | 2012-08-29   |
@@ -384,7 +384,7 @@ Legend:
 | 10.50.2772 | 2009.100.2772.0  | [2567714 Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-08-15   |
 | 10.50.2769 | 2009.100.2769.0  | [2544793 Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-07-18   |
 | 10.50.2550 | 2009.100.2550.0  | [Microsoft Security Bulletin MS12-070]                                                                                                                                                        | 2012-10-09   |
-| 10.50.2500 | 2009.100.2500.0  | [SQL Server 2008 R2 Service Pack 1 (SP1)                                                                                                                                                      | 2011-07-11   |
+| 10.50.2500 | 2009.100.2500.0  | [SQL Server 2008 R2 Service Pack 1 (SP1)]                                                                                                                                                     | 2011-07-11   |
 | 10.50.1817 | 2009.100.1817.0  | [2703280 Cumulative update package 14 (CU14) for SQL Server 2008 R2]                                                                                                                          | 2012-06-18   |
 | 10.50.1815 | 2009.100.1815.0  | [2679366 Cumulative update package 13 (CU13) for SQL Server 2008 R2]                                                                                                                          | 2012-04-17   |
 | 10.50.1810 | 2009.100.1810.0  | [2659692 Cumulative update package 12 (CU12) for SQL Server 2008 R2]                                                                                                                          | 2012-02-21   |
@@ -433,7 +433,6 @@ Legend:
 [2868244 An on-demand hotfix update package for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2868244/en-us
 [2855792 Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2855792/en-us
 [2828727 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (updated)]:http://support.microsoft.com/kb/2828727/en-us
-[Microsoft Security Bulletin MS12-070]:http://technet.microsoft.com/en-us/security/bulletin/ms12-070
 [2812683 Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2812683
 [2783135 Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2783135
 [2756574 Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2756574
@@ -589,7 +588,6 @@ Legend:
 [10.00.5766]:http://support.microsoft.com/kb/2617146
 [10.00.5538]:https://support.microsoft.com/en-us/kb/3045305
 [10.00.5520]:http://support.microsoft.com/kb/2977321/en-us
-[10.00.5512]:http://technet.microsoft.com/en-us/security/bulletin/ms12-070
 [10.00.5500]:http://www.microsoft.com/download/en/details.aspx?id=27594
 [10.00.4333]:http://support.microsoft.com/kb/2715951
 [10.00.4332]:http://support.microsoft.com/kb/2696625
