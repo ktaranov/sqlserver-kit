@@ -1,10 +1,19 @@
 # SQL Server KIT
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
+Headers:
+ - [Repo folders and files](#repo-folders-and-files)
+ - [Web resource](#web-resource)
+ - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
+ - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
+ - [PowerShell and SQL Server](#powershell-and-sql-server)
+ - [TSQL format code](#tsql-format-code)
+ - [Free SQL Server ebooks](#free-sql-server-ebooks)
+
 
 ## Repo folders and files
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 161 Trace Flag')
- - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever')
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 161 Trace Flag') (Complete list - 161 trace flag)
+ - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL
@@ -89,13 +98,9 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
 
 
-## Index option Include
- - http://technet.microsoft.com/en-us/library/jj835095.aspx
- - http://msdn.microsoft.com/en-us/library/ms190806.aspx
-
-
 ## PowerShell and SQL Server
- - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/)
+ - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
+ - [TSQL Code Smells Finder](https://tsqlsmells.codeplex.com/) (by Dave Ballantyne)
 
 
 ## TSQL format code
@@ -108,7 +113,7 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - http://www.devart.com/dbforge/sql/sqlcomplete/
 
 
-## Free ebooks
+## Free SQL Server ebooks
  - http://www.red-gate.com/community/books/
  - http://www.red-gate.com/community/books/#sqldba
  - http://www.red-gate.com/community/books/accidental-dba
