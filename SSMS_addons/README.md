@@ -8,19 +8,21 @@ Complete list of add-in for SQL Server Management Studio
 | [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard]      | Oleksii Kovalov     | Yes          | No         |
 | [SQL Search](#sql-search)                   | [SQL Search]          | Red Gate            | Yes          | No         |
 | [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager] | Red Gate            | Yes          | No         |
-| [Supratimas](#supratimas)                   | [Supratimas]          | ?                   | Yes          | Yes/$34.99 |
+| [Supratimas](#supratimas)                   | [Supratimas]          | TTRider LLC         | Yes          | Yes/$34.99 |
 
 
 ## SSMSBoost
+Download link: [SSMSBoost]<br/>
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio. The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
 You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day !
 
-SQL Server Management Studio versions supported: 2008, 2008/R2, 2012, 2014
+SQL Server Management Studio versions supported: 2008, 2008/R2, 2012, 2014<br/>
 Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version. Currently both versions have the same set of features
 
 
 ## SQL Code Guard
+Download link: [SQL Code Guard]<br/>
 SQL Code Guard is a free solution for SQL Server that provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies.
 
 It provides:
@@ -33,6 +35,7 @@ It provides:
 
 
 ## SQL Search
+Download link: [SQL Search]<br/>
 SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.
 
 - Find fragments of SQL in tables, views, stored procedures, functions, views, jobs, and more
@@ -43,11 +46,14 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 
 
 ## SQL Scripts Manager
+Download link: [SQL Scripts Manager]<br/>
 Powerful and reliable scripts written by SQL Server experts
 
 
+
 ## Supratimas
-SQL Server query execution visualizer
+Download link: [Supratimas]<br/>
+SQL Server query plan execution visualizer
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
