@@ -1,41 +1,54 @@
 # SQL Server Management Studio add-ins
-Complete list of add-in for SQL Server Management Studio
+Complete list of useful add-in for SQL Server Management Studio
 
 
-| Name                                        | Download page         | Author              | Free version | Paid/Price |
-| ------------------------------------------- | --------------------- | ------------------- | ------------ | ---------- |
-| [SSMSBoost](#ssmsboost)                     | [SSMSBoost]           | Solutions Crew GmbH | Yes          | Yes/$150   |
-| [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard]      | Oleksii Kovalov     | Yes          | No         |
-| [SQL Search](#sql-search)                   | [SQL Search]          | Red Gate            | Yes          | No         |
-| [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager] | Red Gate            | Yes          | No         |
-| [Supratimas](#supratimas)                   | [Supratimas]          | TTRider LLC         | Yes          | Yes/$34.99 |
+| Name                                        | Download page         | Release Date | Support Version       | Author              | Free version | Paid/Price |
+|---------------------------------------------|-----------------------|--------------|-----------------------| ------------------- | ------------ | ---------- |
+| [SSMSBoost](#ssmsboost)                     | [SSMSBoost]           | 2015-08-30   | 2008/2008R2/2012/2014 | Solutions Crew GmbH | Yes          | Yes/$150   |
+| [SQL Code Guard](#sql-code-guard)           | [SQL Code Guard]      | 2015-05-04   | 2008/2008R2/2012/2014 | Oleksii Kovalov     | Yes          | No         |
+| [SQL Search](#sql-search)                   | [SQL Search]          | 2015-11-05   | ???                   | Red Gate            | Yes          | No         |
+| [SQL Scripts Manager](#sql-scripts-manager) | [SQL Scripts Manager] | 2015-05-31   | ???                   | Red Gate            | Yes          | No         |
+| [Supratimas](#supratimas)                   | [Supratimas]          | 2015-01-27   | 2008/2008R2/2012/2014 | TTRider LLC         | Yes          | Yes/$34.99 |
 
 
 ## SSMSBoost
-Download link: [SSMSBoost]<br/>
-SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio. The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
+Download page: [SSMSBoost]<br/>
+Release date: 2015-08-30<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
+The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
 You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day !
 
-SQL Server Management Studio versions supported: 2008, 2008/R2, 2012, 2014<br/>
-Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version. Currently both versions have the same set of features
+Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version.<br/>
+Currently both versions have the same set of features.
 
 
 ## SQL Code Guard
 Download link: [SQL Code Guard]<br/>
+Release date: 2015-05-04<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
 SQL Code Guard is a free solution for SQL Server that provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies.
 
 It provides:
- - Integration with SSMS 2008/2008R2/2012/2014.
- - Integration with Visual Studio 2012/2013.
- - Checkin Policy for TFS (how to install & use).
- - Support of msbuild (how to use msbuild).
+ - Integration with SSMS 2008/2008R2/2012/2014
+ - Integration with Visual Studio 2012/2013
+ - Checkin Policy for TFS (how to install & use)
+ - Support of msbuild (how to use msbuild)
  - Command line utility (how to use command line utility).
- - API for custom tool development (demo projects can be found in SQL Code Guard folder).
+ - API for custom tool development (demo projects can be found in SQL Code Guard folder)
 
 
 ## SQL Search
-Download link: [SQL Search]<br/>
+Download page: [SQL Search]<br/>
+Release date: 2015-11-05<br/>
+Support Version: ???<br/>
+Free version: Yes
+
 SQL Search is a free add-in for SQL Server Management Studio that lets you quickly search for SQL across your databases.
 
 - Find fragments of SQL in tables, views, stored procedures, functions, views, jobs, and more
@@ -46,13 +59,20 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 
 
 ## SQL Scripts Manager
-Download link: [SQL Scripts Manager]<br/>
+Download page: [SQL Scripts Manager]<br/>
+Release date: 2015-05-31<br/>
+Support Version: ???<br/>
+Free version: Yes
+
 Powerful and reliable scripts written by SQL Server experts
 
 
-
 ## Supratimas
-Download link: [Supratimas]<br/>
+Download page: [Supratimas]<br/>
+Release date: 2015-01-27<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
 SQL Server query plan execution visualizer
 
 
