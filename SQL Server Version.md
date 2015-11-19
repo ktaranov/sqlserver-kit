@@ -10,6 +10,7 @@ Headers:
  - [Microsoft SQL Server 2012 Builds](#microsoft-sql-server-2012-builds)
  - [Microsoft SQL Server 2008 R2 Builds](#microsoft-sql-server-2008-r2-builds)
  - [Microsoft SQL Server 2008 Builds](#microsoft-sql-server-2008-builds)
+ - [Microsoft SQL Server 2005 Builds](#microsoft-sql-server-2005-builds)
 
 Source link:
  - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
@@ -45,16 +46,16 @@ Legend:
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
 | 2016    | [Download CTP3 2016]                           | 13.00.700.139                | 2015-10-28                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download SP1 2014] then<br/>[CU3 KB3094221]   | 12.0.4100.1<br/>12.0.4427.24 | 2015-05-15<br/>2015-10-19 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Download SP2 2012] then<br/>[CU8 KB3082561]   | 11.0.5058.0<br/>11.0.5641.0  | 2015-11-18<br/>2014-06-10 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2012    | [Download SP2 2012] then<br/>[CU9 KB3098512]   | 11.0.5058.0<br/>11.0.5641.0  | 2014-06-10<br/>2015-11-18 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)      |
-| 2005    | [Download SP4 2005] then<br/>[CU3 2507769]     | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   |                                                                   |
+| 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| 2005    | [Download SP4 2005] then<br/>[CU3 2507769]     | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Download CTP3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:http://www.microsoft.com/en-us/download/details.aspx?id=46694&WT.mc_id=rss_alldownloads_all
 [CU3 KB3094221]:https://support.microsoft.com/en-us/kb/3094221
 [Download SP2 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
-[CU8 KB3082561]:https://support.microsoft.com/en-us/kb/3082561
+[CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
 [Download SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
 [Download SP4 2008]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
@@ -65,23 +66,24 @@ Legend:
 
 ## Internal Database Version and Compatibility Level
 
-| SQL Server Version                           | Code Name            | Release Year | Internal Database Version | Database Compatibility Level |
-|:---------------------------------------------|:---------------------|-------------:|--------------------------:|-----------------------------:|
-| SQL Server 2016                              | ?                    | 2016         | 782                       | 120                          |
-| SQL Server 2014                              | SQL14                | 2014         | 782                       | 120                          |
-| SQL Server 2012                              | Denali               | 2012         | 706                       | 110                          |
-| SQL Server 2012 CTP1                         |                      |              | 684                       | 110                          |
-| SQL Server 2008 R2                           | Kilimanjaro (aka KJ) | 2010         | 660 / 661                 | 100                          |
-| SQL Server 2008                              | Katmai               | 2008         | 655                       | 100                          |
-| SQL Server 2005 SP2+ with VarDecimal enabled | ?                    | 2005         | 612                       |  90                          |
-| SQL Server 2005                              | Yukon                | 2005         | 611                       |  90                          |
-| SQL Server 2000                              | Shiloh               | 2000         | 539                       |  80                          |
-| SQL Server 7.0                               | Sphinx               | 1998         | 515                       |  70                          |
-| SQL Server 6.5                               | Hydra                | 1996         | 408                       |  65                          |
-| SQL Server 6.0                               | SQL95                | 1995         | ?                         |  60                          |
-| SQL Server 4.21                              | SQLNT                | 1993         | ?                         |  60                          |
-| SQL Server 1.1 (16 bit)                      | ?                    | 1991         | ?                         |  60                          |
-| SQL Server 1.0 (16 bit)                      | Ashton-Tate          | 1989         | ?                         |  60                          |
+| SQL Server Version                           | Code Name   | Release Year | Internal Database Version | Database Compatibility Level |
+|:---------------------------------------------|:------------|-------------:|--------------------------:|-----------------------------:|
+| SQL Server 2016                              | ?           | 2016         | 782                       | 120                          |
+| SQL Server 2014                              | SQL14       | 2014         | 782                       | 120                          |
+| SQL Server 2012                              | Denali      | 2012         | 706                       | 110                          |
+| SQL Server 2012 CTP1                         | Denali      | 2010         | 684                       | 110                          |
+| SQL Server 2008 R2                           | Kilimanjaro | 2010         | 660 / 661                 | 100                          |
+| Azure SQL DB                                 | CloudDB     | 2010         | ?                         | ?                          |
+| SQL Server 2008                              | Katmai      | 2008         | 655                       | 100                          |
+| SQL Server 2005 SP2+ with VarDecimal enabled | Yukon       | 2005         | 612                       |  90                          |
+| SQL Server 2005                              | Yukon       | 2005         | 611                       |  90                          |
+| SQL Server 2000                              | Shiloh      | 2000         | 539                       |  80                          |
+| SQL Server 7.0                               | Sphinx      | 1998         | 515                       |  70                          |
+| SQL Server 6.5                               | Hydra       | 1996         | 408                       |  65                          |
+| SQL Server 6.0                               | SQL95       | 1995         | ?                         |  60                          |
+| SQL Server 4.21                              | SQLNT       | 1993         | ?                         |  60                          |
+| SQL Server 1.1 (16 bit)                      | ?           | 1991         | ?                         |  60                          |
+| SQL Server 1.0 (16 bit)                      | Ashton-Tate | 1989         | ?                         |  60                          |
 
 
 ## Quick summary for SQL Server Service Packs
@@ -210,12 +212,11 @@ Legend:
 [2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]:http://support.microsoft.com/kb/2977315/en-us
 
 
-
 ## Microsoft SQL Server 2012 Builds
 
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| [11.0.5641.0] | ?                | 3098512 Cumulative update package 9 for SQL Server 2012 SP2                                                                            | 2015-11-18   |
+| [11.0.5641.0] | 11.2.56.41.0     | 3098512 Cumulative update package 9 for SQL Server 2012 SP2                                                                            | 2015-11-18   |
 | 11.0.5636     | 2011.110.5636.3  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
 | 11.0.5634     | 2011.110.5634.0  | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
 | 11.0.5629     | 2011.110.5629.0  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
@@ -636,3 +637,7 @@ Legend:
 [10.00.1771]:http://support.microsoft.com/kb/958611
 [10.00.1763]:http://support.microsoft.com/kb/956717
 [10.00.1750]:http://support.microsoft.com/kb/956718
+
+
+## Microsoft SQL Server 2005 Builds
+Coming Soon
