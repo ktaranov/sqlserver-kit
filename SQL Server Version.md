@@ -1,5 +1,5 @@
-# Microsoft SQL Server version
-Download links and complete information for all Microsoft SQL Server versions
+# Microsoft SQL Server Version
+Download links and complete information for all Microsoft SQL Server versions and builds
 
 Headers:
  - [What are the most recent updates for SQL Server? (by Brent Ozar)](#what-are-the-most-recent-updates-for-sql-server-by-brent-ozar)
