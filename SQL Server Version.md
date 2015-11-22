@@ -640,4 +640,488 @@ Legend:
 
 
 ## Microsoft SQL Server 2005 Builds
-Coming Soon
+
+| Build       | File version   | KB / Description                                                                                                                                                                                                                                                     | Release Date |
+|-------------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| [9.00.5324] | 2005.90.5324.0 | 2716427 MS12-070: Description of the security update for SQL Server 2005 Service Pack 4 QFE                                                                                                                                                                          | 2012-10-09   |
+| [9.00.5296] | 2005.90.5296.0 | 2615425 FIX: "Msg 7359" error when a view uses another view in SQL Server 2005 if the schema version of a remote table is updated                                                                                                                                    | 2011-10-24   |
+| [9.00.5295] | 2005.90.5295.0 | 2598903 FIX: SQL Server Agent job randomly stops when you schedule the job to run past midnight on specific days in SQL Server 2005, in SQL Server 2008 or in SQL Server 2008 R2                                                                                     | 2012-05-21   |
+| [9.00.5294] | 2005.90.5294.0 | 2572407 FIX: Error 5180 when you use the ONLINE option to rebuild an index in SQL Server 2005                                                                                                                                                                        | 2011-08-10   |
+| [9.00.5292] | 2005.90.5292.0 | 2494123 MS11-049: Description of the security update for SQL Server 2005 Service Pack 4 QFE: June 14, 2011                                                                                                                                                           | 2011-06-14   |
+| [9.00.5266] | 2005.90.5266.0 | 2507769 Cumulative update package 3 (CU3) for SQL Server 2005 Service Pack 4                                                                                                                                                                                         | 2011-03-22   |
+| [9.00.5259] | 2005.90.5259.0 | 2489409 Cumulative update package 2 (CU2) for SQL Server 2005 Service Pack 4                                                                                                                                                                                         | 2011-02-22   |
+| [9.00.5254] | 2005.90.5254.0 | 2464079 Cumulative update package 1 (CU1) for SQL Server 2005 Service Pack 4                                                                                                                                                                                         | 2010-12-24   |
+| [9.00.5069] | 2005.90.5069.0 | Microsoft Security Bulletin MS12-070                                                                                                                                                                                                                                 | 2012-10-09   |
+| [9.00.5057] | 2005.90.5057.0 | 2494120 MS11-049: Description of the security update for SQL Server 2005 Service Pack 4 GDR: June 14, 2011                                                                                                                                                           | 2011-06-14   |
+| [9.00.5000] | 2005.90.5000.0 | SQL Server 2005 Service Pack 4 (SP4)                                                                                                                                                                                                                                 | 2010-12-17   |
+| [9.00.4912] | 2005.90.4912.0 | SQL Server 2005 Service Pack 4 (SP4) - Customer Technology Preview (CTP)                                                                                                                                                                                             | 2010-11-03   |
+| [9.00.4342] | 2005.90.4342.0 | 2598903 FIX: SQL Server Agent job randomly stops when you schedule the job to run past midnight on specific days in SQL Server 2005, in SQL Server 2008 or in SQL Server 2008 R2                                                                                     | 2012-05-21   |
+| [9.00.4340] | 2005.90.4340.0 | 2494112 MS11-049: Description of the security update for SQL Server 2005 Service Pack 3 QFE: June 14, 2011                                                                                                                                                           | 2011-06-14   |
+| [9.00.4325] | 2005.90.4325.0 | 2507766 Cumulative update package 15 (CU15) for SQL Server 2005 Service Pack 3                                                                                                                                                                                       | 2011-03-22   |
+| [9.00.4317] | 2005.90.4317.0 | 2489375 Cumulative update package 14 (CU14) for SQL Server 2005 Service Pack 3                                                                                                                                                                                       | 2011-02-21   |
+| [9.00.4315] | 2005.90.4315.0 | 2438344 Cumulative update package 13 (CU13) for SQL Server 2005 Service Pack 3                                                                                                                                                                                       | 2010-12-23   |
+| [9.00.4311] | 2005.90.4311.0 | 2345449 Cumulative update package 12 (CU12) for SQL Server 2005 Service Pack 3                                                                                                                                                                                       | 2010-10-18   |
+| [9.00.4309] | 2005.90.4309.0 | 2258854 Cumulative update package 11 (CU11) for SQL Server 2005 Service Pack 3                                                                                                                                                                                       | 2010-08-16   |
+| [9.00.4305] | 2005.90.4305.0 | 983329 Cumulative update package 10 (CU10) for SQL Server 2005 Service Pack 3                                                                                                                                                                                        | 2010-06-23   |
+| [9.00.4294] | 2005.90.4294.0 | 980176 Cumulative update package 9 (CU9) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2010-04-19   |
+| [9.00.4285] | 2005.90.4285.0 | 978915 Cumulative update package 8 (CU8) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2010-02-16   |
+| [9.00.4273] | 2005.90.4273.0 | 976951 Cumulative update package 7 (CU7) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-12-21   |
+| [9.00.4268] | 2005.90.4268.0 | 977151 FIX: Error message when you add a subscription to a republisher that is in a merge publication in SQL Server 2005: "Cannot create the subscription because the subscription already exists in the subscription database"                                      | 2009-12-21   |
+| [9.00.4266] | 2005.90.4266.0 | 974648 Cumulative update package 6 (CU6) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-10-19   |
+| [9.00.4262] | 2005.90.4262.0 | 970894 MS09-062: Description of the security update for SQL Server 2005 Service Pack 3 QFE: October 13, 2009                                                                                                                                                         | 2009-10-13   |
+| [9.00.4230] | 2005.90.4230.0 | 972511 Cumulative update package 5 (CU5) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-08-17   |
+| [9.00.4226] | 2005.90.4226.0 | 970279 Cumulative update package 4 (CU4) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-06-16   |
+| [9.00.4224] | 2005.90.4224.0 | 971409 FIX: Error message when you run a query that contains duplicate join conditions in SQL Server 2005: "Internal Query Processor Error: The query processor could not produce a query plan"                                                                      | 2009-06-16   |
+| [9.00.4220] | 2005.90.4220.0 | 967909 Cumulative update package 3 (CU3) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-04-20   |
+| [9.00.4216] | 2005.90.4216.0 | 967101 FIX: The performance of database mirroring decreases when you run a database maintenance job that generates a large number of transaction log activities in SQL Server 2005                                                                                   | 2009-04-20   |
+| [9.00.4211] | 2005.90.4211.0 | 961930 Cumulative update package 2 (CU2) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2009-02-17   |
+| [9.00.4207] | 2005.90.4207.0 | 959195 Cumulative update package 1 (CU1) for SQL Server 2005 Service Pack 3                                                                                                                                                                                          | 2008-12-20   |
+| [9.00.4060] | 2005.90.4060.0 | 2494113 MS11-049: Description of the security update for SQL Server 2005 Service Pack 3 GDR: June 14, 2011                                                                                                                                                           | 2011-06-14   |
+| [9.00.4053] | 2005.90.4053.0 | 970892 MS09-062: Description of the security update for SQL Server 2005 Service Pack 3 GDR: October 13, 2009                                                                                                                                                         | 2009-10-13   |
+| [9.00.4035] | 2005.90.4035.0 | SQL Server 2005 Service Pack 3 (SP3)                                                                                                                                                                                                                                 | 2008-12-15   |
+| [9.00.4028] | 2005.90.4028.0 | SQL Server 2005 Service Pack 3 (SP3) - CTP                                                                                                                                                                                                                           | 2008-10-27   |
+| [9.00.3356] | 2005.90.3356.0 | 976952 Cumulative update package 17 (CU17) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-12-21   |
+| [9.00.3355] | 2005.90.3355.0 | 974647 Cumulative update package 16 (CU16) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-10-19   |
+| [9.00.3353] | 2005.90.3353.0 | 970896 MS09-062: Description of the security update for SQL Server 2005 Service Pack 2 QFE: October 13, 2009                                                                                                                                                         | 2009-10-13   |
+| [9.00.3330] | 2005.90.3330.0 | 972510 Cumulative update package 15 (CU15) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-08-18   |
+| [9.00.3328] | 2005.90.3328.0 | 970278 Cumulative update package 14 (CU14) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-06-16   |
+| [9.00.3325] | 2005.90.3325.0 | 967908 Cumulative update package 13 (CU13) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-04-20   |
+| [9.00.3320] | 2005.90.3320.0 | 969142 FIX: Error message when you run the DBCC CHECKDB statement on a database in SQL Server 2005: "Unable to deallocate a kept page"                                                                                                                               | 2009-04-01   |
+| [9.00.3318] | 2005.90.3318.0 | 967199 FIX: The Wmiprvse.exe host process stops responding when you run a SQL Server 2005-based application that sends a Windows Management Instrumentation (WMI) query to the SQL Server WMI provider                                                               | 2009-04-20   |
+| [9.00.3315] | 2005.90.3315.0 | 962970 Cumulative update package 12 (CU12) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2009-02-17   |
+| [9.00.3310] | 2005.90.3310.0 | 960090 MS09-004: Description of the security update for SQL Server 2005 QFE: February 10, 2009                                                                                                                                                                       | 2009-02-10   |
+| [9.00.3301] | 2005.90.3301.0 | 958735 Cumulative update package 11 (CU11) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2008-12-16   |
+| [9.00.3294] | 2005.90.3294.0 | 956854 Cumulative update package 10 (CU10) for SQL Server 2005 Service Pack 2                                                                                                                                                                                        | 2008-10-20   |
+| [9.00.3282] | 2005.90.3282.0 | 953752 Cumulative update package 9 (CU9) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2008-06-16   |
+| [9.00.3260] | 2005.90.3260.0 | 954950 FIX: Error message when you run a distributed query in SQL Server 2005: "OLE DB provider 'SQLNCLI' for linked server '<Linked Server>' returned message 'No transaction is active'"                                                                           | 2008-07-14   |
+| [9.00.3259] | 2005.90.3259.0 | 954831 FIX: In SQL Server 2005, the session that runs the TRUNCATE TABLE statement may stop responding, and you cannot end the session                                                                                                                               | 2008-08-14   |
+| [9.00.3259] | 2005.90.3259.0 | 954669 FIX: An ongoing MS DTC transaction is orphaned in SQL Server 2005                                                                                                                                                                                             | 2008-07-14   |
+| [9.00.3257] | 2005.90.3257.0 | 951217 Cumulative update package 8 (CU8) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2008-06-18   |
+| [9.00.3246] | 2005.90.3246.0 | 952233 FIX: All the MDX queries that are running on an instance of SQL Server 2005 Analysis Services are canceled when you start or stop a SQL Server Profiler trace for the instance                                                                                | 2008-05-23   |
+| [9.00.3244] | 2005.90.3244.0 | 952330 FIX: The Replication Log Reader Agent may fail intermittently when a transactional replication synchronizes data in SQL Server 2005                                                                                                                           | 2008-06-03   |
+| [9.00.3240] | 2005.90.3240.0 | 951204 FIX: An access violation occurs when you update a table through a view by using a cursor in SQL Server 2005                                                                                                                                                   | 2008-05-21   |
+| [9.00.3239] | 2005.90.3239.0 | 949095 Cumulative update package 7 (CU7) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2008-04-17   |
+| [9.00.3232] | 2005.90.3232.0 | 949959 FIX: Error message when you synchronize the data of a merge replication in SQL Server 2005: "The merge process is retrying a failed operation made to article 'ArticleName' - Reason: 'Invalid input parameter values. Check the status values for detail.'"  | 2008-03-19   |
+| [9.00.3231] | 2005.90.3231.0 | 949595 FIX: Error message when you run a query that uses a join condition in SQL Server 2005: "Non-yielding Scheduler"                                                                                                                                               | 2008-03-18   |
+| [9.00.3231] | 2005.90.3231.0 | 949687 FIX: Error message when you run a transaction from a remote server by using a linked server in SQL Server 2005: "This operation conflicts with another pending operation on this transaction"                                                                 | 2008-03-14   |
+| [9.00.3230] | 2005.90.3230.0 | 949199 FIX: Error message when you run queries on a database that has the SNAPSHOT isolation level enabled in SQL Server 2005: "Unable to deallocate a kept page"                                                                                                    | 2008-03-07   |
+| [9.00.3228] | 2005.90.3228.0 | 946608 Cumulative update package 6 (CU6) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2008-02-19   |
+| [9.00.3224] | 2005.90.3224.0 | 947463 FIX: A stored procedure cannot finish its execution in SQL Server 2005                                                                                                                                                                                        | 2008-02-04   |
+| [9.00.3221] | 2005.90.3221.0 | 942908 FIX: The change may be undone during the later synchronizations when you change an article on the subscriber in SQL Server 2005                                                                                                                               | 2008-01-31   |
+| [9.00.3221] | 2005.90.3221.0 | 945443 FIX: A query takes longer to finish in SQL Server 2005 than in SQL Server 2000 when you open a fast forward-only cursor for the query                                                                                                                         | 2008-01-11   |
+| [9.00.3221] | 2005.90.3221.0 | 945916 FIX: Error messages when you delete some records of a table in a transaction or when you update some records of a table in a transaction in SQL Server 2005: "Msg 9002," "Msg 3314," and "Msg 9001"                                                           | 2008-01-10   |
+| [9.00.3221] | 2005.90.3221.0 | 945442 FIX: You cannot cancel the query execution immediately if you open a fast forward-only cursor for the query in SQL Server 2005                                                                                                                                | 2008-01-09   |
+| [9.00.3215] | 2005.90.3215.0 | 943656 Cumulative update package 5 (CU5) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2007-12-18   |
+| [9.00.3208] | 2005.90.3208.0 | 944902 FIX: A federated database server stops responding when you run parallel queries on a multiprocessor computer that uses NUMA architecture in SQL Server 2005                                                                                                   | 2007-11-21   |
+| [9.00.3206] | 2005.90.3206.0 | 944677 FIX: Conflicts are not logged when you use the Microsoft SQL Server Subscriber Always Wins Conflict Resolver for an article in a merge replication in Microsoft SQL Server 2005                                                                               | 2007-12-11   |
+| [9.00.3200] | 2005.90.3200.0 | 941450 Cumulative update package 4 (CU4) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2007-10-17   |
+| [9.00.3194] | 2005.90.3194.0 | 940933 FIX: Some changes from subscribers who use SQL Server 2005 Compact Edition or Web synchronization are not uploaded to the publisher when you use the republishing model in a merge publication in Microsoft SQL Server 2005                                   | 2007-09-24   |
+| [9.00.3186] | 2005.90.3186.0 | 940943 FIX: The performance of a query that performs an insert operation or an update operation is much slower in SQL Server 2005 SP2 than in earlier versions of SQL Server 2005                                                                                    | 2007-08-29   |
+| [9.00.3186] | 2005.90.3186.0 | 940378 FIX: A cursor uses the incorrect transaction isolation level after you change the transaction isolation level for the cursor in SQL Server 2005                                                                                                               | 2007-08-24   |
+| [9.00.3186] | 2005.90.3186.0 | 940269 FIX: Error message when you try to edit a SQL Server Agent job or a maintenance plan by using SQL Server Management Studio in SQL Server 2005: "String or binary data would be truncated"                                                                     | 2007-08-23   |
+| [9.00.3186] | 2005.90.3186.0 | 940945 FIX: Performance is very slow when the same stored procedure is executed at the same time in many connections on a multiple-processor computer that is running SQL Server 2005                                                                                | 2007-08-22   |
+| [9.00.3186] | 2005.90.3186.0 | 940937 FIX: Error message when you try to update the index key columns of a non-unique clustered index in SQL Server 2005: "Cannot insert duplicate key row in object 'ObjectName' with unique index 'IndexName'"                                                    | 2007-08-21   |
+| [9.00.3186] | 2005.90.3186.0 | 940379 FIX: Error message when you use the UNLOAD and REWIND options to back up a database to a tape device in SQL Server 2005: "Operation on device '<TapeDevice>' exceeded retry count"                                                                            | 2007-08-20   |
+| [9.00.3186] | 2005.90.3186.0 | 940375 FIX: Error message when you use the Copy Database Wizard to move a database from SQL Server 2000 to SQL Server 2005                                                                                                                                           | 2007-08-20   |
+| [9.00.3186] | 2005.90.3186.0 | 937100 FIX: Error message when you run a SQL Server 2005 Integration Services package that contains a Script Component transformation:"Insufficient memory to continue the execution of the program"                                                                 | 2007-08-20   |
+| [9.00.3186] | 2005.90.3186.0 | 940126 FIX: Error 9003 is logged in the SQL Server error log file when you use log shipping in SQL Server 2005                                                                                                                                                       | 2007-08-20   |
+| [9.00.3186] | 2005.90.3186.0 | 938363 FIX: Data is not replicated to a subscriber in a different partition by using parameterized row filters in SQL Server 2005                                                                                                                                    | 2007-08-17   |
+| [9.00.3186] | 2005.90.3186.0 | 940935 FIX: Error message when you run a query that is associated with a parallel execution plan in SQL Server 2005: "SQL Server Assertion: File: <lckmgr.cpp>, line=10850 Failed Assertion = 'GetLocalLockPartition () == xactLockInfo->GetLocalLockPartition ()'"  | 2007-08-17   |
+| [9.00.3186] | 2005.90.3186.0 | 940221 FIX: Error message when you try to create an Oracle publication by using the New Publication Wizard in SQL Server 2005 Service Pack 2: "OLE DB Provider 'OraOLEDB.ORACLE' for Linked server <LinkedServerName> returned message"                              | 2007-08-17   |
+| [9.00.3186] | 2005.90.3186.0 | 940942 FIX: Error message when you run a stored procedure that references tables after you upgrade a database from SQL Server 2000 to SQL Server 2005: "A time-out occurred while waiting for buffer latch"                                                          | 2007-08-17   |
+| [9.00.3186] | 2005.90.3186.0 | 940384 FIX: You receive a System.InvalidCastException exception when you run an application that calls the Server.JobServer.Jobs.Contains method on a computer that has SQL Server 2005 Service Pack 2 installed                                                     | 2007-08-13   |
+| [9.00.3186] | 2005.90.3186.0 | 940281 FIX: An access violation may occur, and you may receive an error message, when you query the sys.dm_exe_sessions dynamic management view in SQL Server 2005                                                                                                   | 2007-08-13   |
+| [9.00.3186] | 2005.90.3186.0 | 940545 FIX: The performance of insert operations against a table that contains an identity column may be slow in SQL Server 2005                                                                                                                                     | 2007-08-10   |
+| [9.00.3186] | 2005.90.3186.0 | 940210 FIX: Error message when you try to insert more than 3 megabytes of data into a distributed partitioned view in SQL Server 2005: "A system assertion check has failed"                                                                                         | 2007-08-08   |
+| [9.00.3186] | 2005.90.3186.0 | 939537 Cumulative update package 3 (CU3) for SQL Server 2005 Service Pack 2                                                                                                                                                                                          | 2007-08-23   |
+| [9.00.3182] | 2005.90.3182.0 | 940128 FIX: You receive error 8623 when you run a complex query in SQL Server 2005                                                                                                                                                                                   | 2007-08-03   |
+| [9.00.3179] | 2005.90.3179.0 | 938243 FIX: Error message when you run a full-text query against a catalog in SQL Server 2005: "The execution of a full-text query failed. The content index is corrupt."                                                                                            | 2007-07-30   |
+| [9.00.3178] | 2005.90.3178.0 | 938086 FIX: A SQL Server Agent job fails when you run the SQL Server Agent job in the context of a proxy account in SQL Server 2005                                                                                                                                  | 2007-08-22   |
+| [9.00.3177] | 2005.90.3177.0 | 939285 FIX: Error message when you run a stored procedure that starts a transaction that contains a Transact-SQL statement in SQL Server 2005: "New request is not allowed to start because it should come with valid transaction descriptor"                        | 2007-08-22   |
+| [9.00.3177] | 2005.90.3177.0 | 939562 FIX: Error message when you run a query that fires an INSTEAD OF trigger in SQL Server 2005 Service Pack 2: "Internal Query Processor Error The query processor could not produce a query plan"                                                               | 2007-08-20   |
+| [9.00.3177] | 2005.90.3177.0 | 939563 FIX: Error message when you synchronize a merge replication in Microsoft SQL Server 2005: "MSmerge_del_<GUID>, Line 42 String or binary data would be truncated"                                                                                              | 2007-08-09   |
+| [9.00.3175] | 2005.90.3175.0 | 936534 FIX: Error message when the Distribution Agent tries to apply the snapshot to the subscriber in SQL Server 2005: "Must declare the scalar variable "@Variable""                                                                                               | 2007-08-20   |
+| [9.00.3175] | 2005.90.3175.0 | 938671 FIX: The Distribution Agent may skip some rows when you configure a transactional replication that uses the "-SkipErrors" parameter in SQL Server 2005                                                                                                        | 2007-08-01   |
+| [9.00.3175] | 2005.90.3175.0 | 936488 The service pack update or hotfix installation stops unexpectedly when you try to install either Microsoft SQL Server 2005 Service Pack 2 or a hotfix for SQL Server 2005 SP2                                                                                 | 2007-07-10   |
+| [9.00.3175] | 2005.90.3175.0 | 938825 FIX: A foreign key constraint that you drop on a table at the publisher is not dropped on the table at the subscriber in a SQL Server 2005 merge replication                                                                                                  | 2007-06-29   |
+| [9.00.3175] | 2005.90.3175.0 | 936305 Cumulative update package 2 (CU2 build 3175) for SQL Server 2005 Service Pack 2 is available                                                                                                                                                                  | 2007-06-28   |
+| [9.00.3171] | 2005.90.3171.0 | 937745 FIX: You may receive error messages when you try to log in to an instance of SQL Server 2005 and SQL Server handles many concurrent connections                                                                                                               | 2007-07-16   |
+| [9.00.3169] | 2005.90.3169.0 | 937033 FIX: Error message when you run a linked server query in SQL Server 2005: "The oledbprovider unisys.dmsII.1 for linkserver '<ServerName>' reported an error the provider ran out of memory"                                                                   | 2007-06-19   |
+| [9.00.3169] | 2005.90.3169.0 | 937041 FIX: Changes in the publisher database are not replicated to the subscribers in a transactional replication if the publisher database runs exposed in a database mirroring session in SQL Server 2005                                                         | 2007-05-25   |
+| [9.00.3166] | 2005.90.3166.0 | 936185 FIX: Blocking and performance problems may occur when you enable trace flag 1118 in SQL Server 2005 if the temporary table creation workload is high                                                                                                          | 2007-06-11   |
+| [9.00.3166] | 2005.90.3166.0 | 934734 FIX: A database is marked as suspect when you update a table that contains a nonclustered index in SQL Server 2005                                                                                                                                            | 2007-07-16   |
+| [9.00.3161] | 2005.90.3161.0 | 935789 FIX: On a computer that is running SQL Server 2005 and that has multiple processors, you may receive incorrect results when you run a query that contains an inner join                                                                                       | 2007-09-24   |
+| [9.00.3161] | 2005.90.3161.0 | 934706 FIX: Error message when you perform a piecemeal restore operation after you enable vardecimal database compression in SQL Server 2005 Service Pack 2: "Piecemeal restore is not supported when an upgrade is involved"                                        | 2007-06-04   |
+| [9.00.3161] | 2005.90.3161.0 | 933724 FIX: The query performance is slow when you run a query that uses a user-defined scalar function against an instance of SQL Server 2005                                                                                                                       | 2007-05-09   |
+| [9.00.3161] | 2005.90.3161.0 | 935356 Cumulative update package (CU1 build 3161) for SQL Server 2005 Service Pack 2 is available                                                                                                                                                                    | 2007-04-16   |
+| [9.00.3159] | 2005.90.3159.0 | 934459 FIX: The Check Database Integrity task and the Execute T-SQL Statement task in a maintenance plan may lose database context in certain circumstances in SQL Server 2005 builds 3150 through 3158                                                              | 2007-04-03   |
+| [9.00.3156] | 2005.90.3156.0 | 934226 FIX: Error message when you try to use Database Mail to send an e-mail message in SQL Server 2005: "profile name is not valid (Microsoft SQL Server, Error 14607)"                                                                                            | 2007-04-25   |
+| [9.00.3155] | 2005.90.3155.0 | 933808 FIX: Error message when you run a query that contains nested FOR XML clauses in SQL Server 2005: "The XML data type is damaged"                                                                                                                               | 2007-06-13   |
+| [9.00.3155] | 2005.90.3155.0 | 933499 FIX: Error message when you use transactional replication to replicate the execution of stored procedures to subscribers in SQL Server 2005: "Insufficient memory to run query"                                                                               | 2007-06-12   |
+| [9.00.3155] | 2005.90.3155.0 | 933766 FIX: Failed assertion message in the Errorlog file when you perform various operations in SQL Server 2005: "Failed Assertion = 'fFalse' Attempt to access expired blob handle (3)"                                                                            | 2007-05-15   |
+| [9.00.3155] | 2005.90.3155.0 | 933549 FIX: You may receive an access violation when you perform a bulk copy operation in SQL Server 2005                                                                                                                                                            | 2007-04-25   |
+| [9.00.3154] | 2005.90.3154.0 | 934188 FIX: The Distribution Agent does not deliver commands to the Subscriber even if the Distribution Agent is running in SQL Server 2005                                                                                                                          | 2007-04-25   |
+| [9.00.3154] | 2005.90.3154.0 | 934109 FIX: The Distribution Agent generates an access violation when you configure a transactional replication publication to run an additional script after the snapshot is applied at the subscriber in SQL Server 2005                                           | 2007-04-25   |
+| [9.00.3154] | 2005.90.3154.0 | 934106 FIX: SQL Server 2005 database engine generates failed assertion errors when you use the Replication Monitor to monitor the distribution database                                                                                                              | 2007-04-25   |
+| [9.00.3153] | 2005.90.3153.0 | 933564 FIX: A gradual increase in memory consumption for the USERSTORE_TOKENPERM cache store occurs in SQL Server 2005                                                                                                                                               | 2007-04-16   |
+| [9.00.3152] | 2005.90.3152.0 | 933097 Cumulative hotfix package (build 3152) for SQL Server 2005 Service Pack 2 is available                                                                                                                                                                        | 2007-03-07   |
+| [9.00.3080] | 2005.90.3080.0 | 970895 MS09-062: Description of the security update for GDI+ for SQL Server 2005 Service Pack 2 GDR: October 13, 2009                                                                                                                                                | 2009-10-13   |
+| [9.00.3077] | 2005.90.3077.0 | 960089 MS09-004: Description of the security update for SQL Server 2005 GDR: February 10, 2009                                                                                                                                                                       | 2009-02-10   |
+| [9.00.3073] | 2005.90.3073.0 | 954606 MS08-052: Description of the security update for GDI+ for SQL Server 2005 Service Pack 2 GDR: September 9, 2008                                                                                                                                               | 2008-09-09   |
+| [9.00.3068] | 2005.90.3068.0 | 941203 MS08-040: Vulnerabilities in Microsoft SQL Server could allow elevation of privilege                                                                                                                                                                          | 2008-08-05   |
+| [9.00.3054] | 2005.90.3054.0 | 934458 FIX: The Check Database Integrity task and the Execute T-SQL Statement task in a maintenance plan may lose database context in certain circumstances in SQL Server 2005 builds 3042 through 3053                                                              | 2008-01-02   |
+| [9.00.3050] | 2005.90.3050.0 | 933508 Microsoft SQL Server 2005 Service Pack 2 issue: Cleanup tasks run at different intervals than intended                                                                                                                                                        | 2007-03-07   |
+| [9.00.3042] | 2005.90.3042.0 | SQL Server 2005 Service Pack 2 (SP2)                                                                                                                                                                                                                                 | 2007-02-19   |
+| [9.00.3033] | 2005.90.3033.0 | SQL Server 2005 Service Pack 2 (SP2) - CTP December 2006                                                                                                                                                                                                             | 2006-12-19   |
+| [9.00.3027] | 2005.90.3027.0 | SQL Server 2005 Service Pack 2 (SP2) - CTP November 2006                                                                                                                                                                                                             | 2006-11-06   |
+| [9.00.3026] | 2005.90.3026.0 | 929376 FIX: A "17187" error message may be logged in the Errorlog file when an instance of SQL Server 2005 is under a heavy load                                                                                                                                     | 2007-02-14   |
+| [9.00.2239] | 2005.90.2239.0 | 940961 FIX: Transactions that are being committed on the principal server may not be copied to the mirror server when a database mirroring failover occurs in SQL Server 2005                                                                                        | 2007-09-24   |
+| [9.00.2237] | 2005.90.2237.0 | 940719 FIX: A memory leak occurs when you call the Initialize method and the Terminate method of the SQLDistribution object in a loop in an application that you develop by using Microsoft ActiveX replication controls in SQL Server 2005                          | 2007-09-24   |
+| [9.00.2236] | 2005.90.2236.0 | 940287 FIX: Error message when you use Service Broker in SQL Server 2005: "An error occurred while receiving data: '64(The specified network name is no longer available.)'"                                                                                         | 2007-07-29   |
+| [9.00.2236] | 2005.90.2236.0 | 940286 FIX: A Service Broker endpoint stops passing messages in a database mirroring session of SQL Server 2005                                                                                                                                                      | 2007-07-26   |
+| [9.00.2234] | 2005.90.2234.0 | 937343 FIX: SQL Server 2005 stops and then restarts unexpectedly and errors occur in the tempdb database                                                                                                                                                             | 2007-06-20   |
+| [9.00.2233] | 2005.90.2233.0 | 937545 FIX: Error message when you use the BULK INSERT statement to import a data file into a table in SQL Server 2005 with SP1: "The OLE DB provider "BULK" for linked server "(null)" reported an error"                                                           | 2007-06-18   |
+| [9.00.2233] | 2005.90.2233.0 | 933499 FIX: Error message when you use transactional replication to replicate the execution of stored procedures to subscribers in SQL Server 2005: "Insufficient memory to run query"                                                                               | 2007-06-12   |
+| [9.00.2233] | 2005.90.2233.0 | 937544 FIX: You may receive error 3456 when you try to restore a transaction log for a SQL Server 2005 database                                                                                                                                                      | 2007-06-05   |
+| [9.00.2232] | 2005.90.2232.0 | 937277 FIX: A memory leak occurs when you use the sp_OAMethod stored procedure to call a method of a COM object in SQL Server 2005                                                                                                                                   | 2007-06-19   |
+| [9.00.2231] | 2005.90.2231.0 | 934812 FIX: You cannot bring the SQL Server group online in a cluster environment after you rename the virtual server name of the default instance of SQL Server 2005                                                                                                | 2007-11-06   |
+| [9.00.2230] | 2005.90.2230.0 | 936179 FIX: Error message when you use SQL Native Client to connect to an instance of a principal server in a database mirroring session: "The connection attempted to fail over to a server that does not have a failover partner"                                  | 2007-09-20   |
+| [9.00.2229] | 2005.90.2229.0 | 935446 FIX: You receive error messages when you use the BULK INSERT statement in SQL Server 2005 to import data in bulk                                                                                                                                              | 2007-06-11   |
+| [9.00.2227] | 2005.90.2227.0 | 933265 FIX: You may receive error 1203 when you run an INSERT statement against a table that has an identity column in SQL Server 2005                                                                                                                               | 2007-06-26   |
+| [9.00.2226] | 2005.90.2226.0 | 934065 FIX: Error message when the Replication Merge Agent runs to synchronize a merge replication subscription in SQL Server 2005: "The merge process failed to execute a query because the query timed out"                                                        | 2007-06-22   |
+| [9.00.2226] | 2005.90.2226.0 | 933762 FIX: You receive error 18815 when the Log Reader Agent runs for a transactional publication in SQL Server 2005                                                                                                                                                | 2007-06-22   |
+| [9.00.2223] | 2005.90.2223.0 | 932393 FIX: You may experience poor performance after you install SQL Server 2005 Service Pack 1                                                                                                                                                                     | 2007-06-18   |
+| [9.00.2221] | 2005.90.2221.0 | 931593 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 2153 and later builds                                                                                                                    | 2007-07-11   |
+| [9.00.2219] | 2005.90.2219.0 | 932115 FIX: The ghost row clean-up thread does not remove ghost rows on some data files of a database in SQL Server 2005                                                                                                                                             | 2007-04-25   |
+| [9.00.2218] | 2005.90.2218.0 | 931843 FIX: SQL Server 2005 does not reclaim the disk space that is allocated to the temporary table if the stored procedure is stopped                                                                                                                              | 2007-04-25   |
+| [9.00.2216] | 2005.90.2216.0 | 931821 FIX: High CPU utilization by SQL Server 2005 may occur when you use NUMA architecture on a computer that has an x64-based version of SQL Server 2005 installed                                                                                                | 2007-05-15   |
+| [9.00.2214] | 2005.90.2214.0 | 930505 FIX: Error message when you run DML statements against a table that is published for merge replication in SQL Server 2005: "Could not find stored procedure"                                                                                                  | 2007-02-19   |
+| [9.00.2214] | 2005.90.2214.0 | 929240 FIX: I/O requests that are generated by the checkpoint process may cause I/O bottlenecks if the I/O subsystem is not fast enough to sustain the IO requests in SQL Server 2005                                                                                | 2007-02-13   |
+| [9.00.2211] | 2005.90.2211.0 | 930284 FIX: You receive error 1456 when you try to add a witness to a DBM session in SQL Server 2005                                                                                                                                                                 | 2007-02-20   |
+| [9.00.2211] | 2005.90.2211.0 | 930283 FIX: You receive error 1456 when you add a witness to a database mirroring session and the database name is the same as an existing database mirroring session in SQL Server 2005                                                                             | 2007-02-14   |
+| [9.00.2209] | 2005.90.2209.0 | 929278 FIX: SQL Server 2005 may not perform histogram amendments when you use trace flags 2389 and 2390                                                                                                                                                              | 2007-02-07   |
+| [9.00.2208] | 2005.90.2208.0 | 929179 FIX: A memory leak may occur every time that you synchronize a SQL Server Mobile subscriber in SQL Server 2005                                                                                                                                                | 2007-01-09   |
+| [9.00.2207] | 2005.90.2207.0 | 928394 FIX: The changes are not reflected in the publication database after you reinitialize the subscriptions in SQL Server 2005                                                                                                                                    | 2006-12-19   |
+| [9.00.2207] | 2005.90.2207.0 | 928372 FIX: Error message when you use a synonym for a stored procedure in SQL Server 2005: "A severe error occurred on the current command"                                                                                                                         | 2006-12-19   |
+| [9.00.2207] | 2005.90.2207.0 | 928789 FIX: Error message in the database mail log when you try to use the sp_send_dbmail stored procedure to send an e-mail in SQL Server 2005: "Invalid XML message format received on the ExternalMailQueue"                                                      | 2007-01-02   |
+| [9.00.2206] | 2005.90.2206.0 | 928083 FIX: You may receive an error message when you run a CLR stored procedure or CLR function that uses a context connection in SQL Server 2005                                                                                                                   | 2007-02-01   |
+| [9.00.2206] | 2005.90.2206.0 | 928537 FIX: The full-text index population for the indexed view is very slow in SQL Server 2005                                                                                                                                                                      | 2007-01-12   |
+| [9.00.2206] | 2005.90.2206.0 | 926493 FIX: Error message when you restore a transaction-log backup that is generated in SQL Server 2000 SP4 to an instance of SQL Server 2005: Msg 3456, Level 16, State 1, Line 1. Could not redo log record"                                                      | 2007-01-02   |
+| [9.00.2206] | 2005.90.2206.0 | 928539 FIX: An access violation is logged in the SQL Server Errorlog file when you run a query that uses a plan guide in SQL Server 2005                                                                                                                             | 2006-12-13   |
+| [9.00.2202] | 2005.90.2202.0 | 927643 FIX: Some search results are missing when you perform a full-text search operation on a Windows SharePoint Services 2.0 site after you upgrade to SQL Server 2005                                                                                             | 2007-02-16   |
+| [9.00.2201] | 2005.90.2201.0 | 927289 FIX: Updates to the SQL Server Mobile subscriber may not be reflected in the SQL Server 2005 merge publication                                                                                                                                                | 2007-01-10   |
+| [9.00.2198] | 2005.90.2198.0 | 926613 FIX: You may receive incorrect results when you query a table that is published in a transactional replication in SQL Server 2005                                                                                                                             | 2007-02-21   |
+| [9.00.2198] | 2005.90.2198.0 | 926106 FIX: You receive an error message when you use the Print Preview option on a large report in SQL Server 2005 Reporting Services                                                                                                                               | 2007-02-20   |
+| [9.00.2198] | 2005.90.2198.0 | 924807 FIX: The restore operation may take a long time to finish when you restore a database in SQL Server 2005                                                                                                                                                      | 2007-02-02   |
+| [9.00.2198] | 2005.90.2198.0 | 924264 FIX: The metadata of the Description object of a Key Performance Indicator appears in the default language after you define a translation for the Description object in SQL Server 2005 Business Intelligence Development Studio                              | 2006-12-13   |
+| [9.00.2198] | 2005.90.2198.0 | 926612 FIX: SQL Server Agent does not send an alert quickly or does not send an alert when you use an alert of the SQL Server event alert type in SQL Server 2005                                                                                                    | 2007-01-04   |
+| [9.00.2198] | 2005.90.2198.0 | 926773 FIX: Error message when you run a query that uses a fast forward-only cursor in SQL Server 2005: "Query processor could not produce a query plan because of the hints defined in this query"                                                                  | 2006-11-16   |
+| [9.00.2198] | 2005.90.2198.0 | 926611 FIX: SQL Server 2005 may not send a message notification that is based on the specific string in the forwarded event when a computer that is running SQL Server 2000 forwards an event to a computer that is running SQL Server 2005                          | 2006-11-28   |
+| [9.00.2198] | 2005.90.2198.0 | 924808 FIX: You receive an error message, or you obtain an incorrect result when you query data in a partitioned table that does not have a clustered index in SQL Server 2005                                                                                       | 2006-12-13   |
+| [9.00.2198] | 2005.90.2198.0 | 925277 FIX: You may experience very large growth increments of a principal database after you manually fail over a database mirroring session in SQL Server 2005                                                                                                     | 2007-01-02   |
+| [9.00.2196] | 2005.90.2196.0 | 926285 Fix: Error message when you convert a column from the varbinary(max) data type to the XML data type in SQL Server 2005: "Msg 6322, Level 16, State 1, Line 2 Too many attributes or namespace definitions"                                                    | 2006-11-10   |
+| [9.00.2196] | 2005.90.2196.0 | 926335 FIX: Error message when you trace the Audit Database Management event and you try to bring a database online in SQL Server 2005: “Msg 942, Level 14, State 4, Line 1”                                                                                         | 2006-12-05   |
+| [9.00.2195] | 2005.90.2195.0 | 926240 FIX: SQL Server 2005 may stop responding when you use the SqlBulkCopy class to import data from another data source                                                                                                                                           | 2006-12-19   |
+| [9.00.2194] | 2005.90.2194.0 | 925744 FIX: Error message when you try to use a SQL Server authenticated login to log on to an instance of SQL Server 2005: "Logon error: 18456"                                                                                                                     | 2006-10-20   |
+| [9.00.2192] | 2005.90.2192.0 | 924954 FIX: Error message when you use a table-valued function (TVF) together with the CROSS APPLY operator in a query in SQL Server 2005: "There is insufficient system memory to run this query"                                                                   | 2006-09-29   |
+| [9.00.2192] | 2005.90.2192.0 | 925335 FIX: Error message when you use a label after a Transact-SQL query in SQL Server 2005: "Incorrect syntax near 'X'"                                                                                                                                            | 2006-10-05   |
+| [9.00.2191] | 2005.90.2191.0 | 925135 FIX: An empty string is replicated as a NULL value when you synchronize a table to a SQL Server 2005 Compact Edition subscriber                                                                                                                               | 2006-12-06   |
+| [9.00.2190] | 2005.90.2190.0 | 925227 FIX: Error message when you call the SQLTables function against an instance of SQL Server 2005: "Invalid cursor state (0)"                                                                                                                                    | 2006-10-16   |
+| [9.00.2189] | 2005.90.2189.0 | 925153 FIX: You may receive different date values for each row when you use the getdate function within a case statement in SQL Server 2005                                                                                                                          | 2006-09-22   |
+| [9.00.2187] | 2005.90.2187.0 | 923849 FIX: When you run a query that references a partitioned table in SQL Server 2005, query performance may decrease                                                                                                                                              | 2006-09-22   |
+| [9.00.2181] | 2005.90.2181.0 | 923605 FIX: A deadlock occurs and a query never finishes when you run the query on a computer that is running SQL Server 2005 and has multiple processors                                                                                                            | 2007-02-19   |
+| [9.00.2181] | 2005.90.2181.0 | 923624 FIX: Error message when you run an application against SQL Server 2005 that uses many unique user logins or performs many user login impersonations: "insufficient system memory to run this query"                                                           | 2006-10-04   |
+| [9.00.2176] | 2005.90.2176.0 | 922594 FIX: Error message when you use SQL Server 2005: "High priority system task thread Operating system error Exception 0xAE encountered"                                                                                                                         | 2007-02-12   |
+| [9.00.2176] | 2005.90.2176.0 | 923296 FIX: Log Reader Agent fails, and an assertion error message is logged when you use transactional replication in SQL Server 2005                                                                                                                               | 2006-09-06   |
+| [9.00.2175] | 2005.90.2175.0 | 921395 FIX: The color and the background image may not appear when you try to display a report in HTML format in Report Manager in SQL Server 2005 Reporting Services                                                                                                | 2006-08-08   |
+| [9.00.2175] | 2005.90.2175.0 | 917905 FIX: SQL Server 2005 performance may be slower than SQL Server 2000 performance when you use an API server cursor                                                                                                                                             | 2006-08-14   |
+| [9.00.2175] | 2005.90.2175.0 | 922578 FIX: In SQL Server 2005, the sp_altermessage stored procedure does not suppress system error messages that are logged in the SQL Server error log and in the Application log                                                                                  | 2006-08-30   |
+| [9.00.2175] | 2005.90.2175.0 | 922438 FIX: A query may take a long time to compile when the query contains several JOIN clauses against a SQL Server 2005 database                                                                                                                                  | 2006-12-14   |
+| [9.00.2175] | 2005.90.2175.0 | 921536 FIX: A handled access violation may occur in the CValSwitch::GetDataX function when you run a complex query in SQL Server 2005                                                                                                                                | 2006-12-18   |
+| [9.00.2174] | 2005.90.2174.0 | 922063 FIX: You may notice a large increase in compile time when you enable trace flags 2389 and 2390 in SQL Server 2005 Service Pack 1                                                                                                                              | 2006-07-25   |
+| [9.00.2167] | 2005.90.2167.0 | 920974 FIX: SQL Server 2005 treats an identity column in a view as an ordinary int column when the compatibility level of the database is set to 80                                                                                                                  | 2006-08-09   |
+| [9.00.2164] | 2005.90.2164.0 | 919243 FIX: Some rows in the Text Data column are always displayed for a trace that you create by using SQL Server Profiler in SQL Server 2005                                                                                                                       | 2007-02-08   |
+| [9.00.2164] | 2005.90.2164.0 | 920346 FIX: SQL Server 2005 may overestimate the cardinality of the JOIN operator when a SQL Server 2005 query contains a join predicate that is a multicolumn predicate                                                                                             | 2006-09-19   |
+| [9.00.2164] | 2005.90.2164.0 | 920347 FIX: The SQL Server 2005 query optimizer may incorrectly estimate the cardinality for a query that has a predicate that contains an index union alternative                                                                                                   | 2006-09-19   |
+| [9.00.2164] | 2005.90.2164.0 | 919929 FIX: Error message when the Replication Merge Agent runs in SQL Server 2005: "Source: MSSQL_REPL, Error number: MSSQL_REPL-2147199402"                                                                                                                        | 2006-10-26   |
+| [9.00.2164] | 2005.90.2164.0 | 921003 FIX: You may receive an error message when you manually define a Back Up Database task in SQL Server 2005 to back up the transaction log                                                                                                                      | 2006-08-29   |
+| [9.00.2164] | 2005.90.2164.0 | 920206 FIX: System performance may be slow when an application submits many queries against a SQL Server 2005 database that uses simple parameterization                                                                                                             | 2006-09-26   |
+| [9.00.2164] | 2005.90.2164.0 | 918882 FIX: A query plan is not cached in SQL Server 2005 when the text of the hint is a large object                                                                                                                                                                | 2006-09-06   |
+| [9.00.2164] | 2005.90.2164.0 | 919636 FIX: Memory usage of the compiled query plan may unexpectedly increase in SQL Server 2005                                                                                                                                                                     | 2006-07-26   |
+| [9.00.2164] | 2005.90.2164.0 | 919775 FIX: The BULK INSERT statement may not return any errors when you try to import data from a text file to a table by using the BULK INSERT statement in Microsoft SQL Server 2005                                                                              | 2006-08-09   |
+| [9.00.2156] | 2005.90.2156.0 | 919611 FIX: The value of the automatic growth increment of a database file may be very large in SQL Server 2005 with Service Pack 1                                                                                                                                  | 2006-07-26   |
+| [9.00.2153] | 2005.90.2153.0 | 918222 Cumulative hotfix package (build 2153) for SQL Server 2005 is available                                                                                                                                                                                       | 2006-09-14   |
+| [9.00.2153] | 2005.90.2153.0 | 919224 FIX: You may receive an error message when you install the cumulative hotfix package (build 2153) for SQL Server 2005                                                                                                                                         | 2006-05-23   |
+| [9.00.2050] | 2005.90.2050.0 | 932555 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 2047                                                                                                                                     | 2007-07-11   |
+| [9.00.2047] | 2005.90.2047.0 | SQL Server 2005 Service Pack 1 (SP1)                                                                                                                                                                                                                                 | 2006-04-18   |
+| [9.00.2040] | 2005.90.2040.0 | SQL Server 2005 Service Pack 1 (SP1) CTP March 2006                                                                                                                                                                                                                  | 2006-03-12   |
+| [9.00.2029] | 2005.90.2029.0 | SLQ Server 2005 Service Pack 1 (SP1) Beta                                                                                                                                                                                                                            | 2005-11-07   |
+| [9.00.1561] | 2005.90.1561.0 | 932556 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1500 and later builds                                                                                                                    | 2007-07-11   |
+| [9.00.1558] | 2005.90.1558.0 | 926493 FIX: Error message when you restore a transaction-log backup that is generated in SQL Server 2000 SP4 to an instance of SQL Server 2005: "Msg 3456, Level 16, State 1, Line 1. Could not redo log record"                                                     | 2007-01-04   |
+| [9.00.1554] | 2005.90.1554.0 | 926292 FIX: When you query through a view that uses the ORDER BY clause in SQL Server 2005, the result is still returned in random order                                                                                                                             | 2007-06-26   |
+| [9.00.1551] | 2005.90.1551.0 | 922527 FIX: Error message when you schedule some SQL Server 2005 Integration Services packages to run as jobs: "Package <PackageName> has been cancelled"                                                                                                            | 2007-01-22   |
+| [9.00.1551] | 2005.90.1551.0 | 922804 FIX: After you detach a Microsoft SQL Server 2005 database that resides on network-attached storage, you cannot reattach the SQL Server database                                                                                                              | 2006-11-22   |
+| [9.00.1550] | 2005.90.1550.0 | 917887 FIX: The value of the automatic growth increment of a database file may be very large in SQL Server 2005                                                                                                                                                      | 2006-07-26   |
+| [9.00.1550] | 2005.90.1550.0 | 921106 FIX: You receive an error message when you try to create a differential database backup in SQL Server 2005                                                                                                                                                    | 2006-11-22   |
+| [9.00.1547] | 2005.90.1547.0 | 918276 FIX: You notice additional random trailing character in values when you retrieve the values from a fixed-size character column or a fixed-size binary column of a table in SQL Server 2005                                                                    | 2006-11-20   |
+| [9.00.1545] | 2005.90.1545.0 | 917905 FIX: SQL Server 2005 performance may be slower than SQL Server 2000 performance when you use an API server cursor                                                                                                                                             | 2006-08-14   |
+| [9.00.1541] | 2005.90.1541.0 | 917888 FIX: Error message when you use a server-side cursor to run a large complex query in SQL Server 2005: "Error: 8623, Severity: 16, State: 1 The query processor ran out of internal resources"                                                                 | 2006-11-22   |
+| [9.00.1541] | 2005.90.1541.0 | 917971 FIX: You may receive more than 100,000 page faults when you try to back up a SQL Server 2005 database that contains hundreds of files and file groups                                                                                                         | 2006-11-22   |
+| [9.00.1539] | 2005.90.1539.0 | 917738 FIX: SQL Server 2005 system performance may be slow when you use a keyset-driven cursor to execute a FETCH statement                                                                                                                                          | 2006-08-11   |
+| [9.00.1538] | 2005.90.1538.0 | 917824 FIX: The SQL Server 2005 SqlCommandBuilder.DeriveParameters method returns an exception when the input parameter is a XML parameter that has an associated XSD from an SQL schema                                                                             | 2006-07-26   |
+| [9.00.1536] | 2005.90.1536.0 | 917016 FIX: The monitor server does not monitor all primary servers and secondary servers when you configure log shipping in SQL Server 2005                                                                                                                         | 2006-07-26   |
+| [9.00.1534] | 2005.90.1534.0 | 916706 FIX: When you run the "dbcc dbreindex" command or the "alter index" command, some transactions are not replicated to the subscribers in a transactional replication in SQL Server 2005                                                                        | 2007-05-15   |
+| [9.00.1533] | 2005.90.1533.0 | 916086 FIX: Errors may be generated in the tempdb database when you create and then drop many temporary tables in SQL Server 2005                                                                                                                                    | 2006-07-26   |
+| [9.00.1532] | 2005.90.1532.0 | 916046 FIX: Indexes may grow very large when you insert a row into a table and then update the same row in SQL Server 2005                                                                                                                                           | 2007-01-09   |
+| [9.00.1531] | 2005.90.1531.0 | 915918 FIX: The internal deadlock monitor may not detect a deadlock between two or more sessions in SQL Server 2005                                                                                                                                                  | 2006-07-26   |
+| [9.00.1528] | 2005.90.1528.0 | 915309 FIX: When you start a merge agent, synchronization between the subscriber and the publisher takes a long time to be completed in SQL Server 2005                                                                                                              | 2007-01-15   |
+| [9.00.1528] | 2005.90.1528.0 | 915308 FIX: The CPU usage of the server reaches 100% when many DML activities occur in SQL Server 2005                                                                                                                                                               | 2007-01-04   |
+| [9.00.1528] | 2005.90.1528.0 | 915307 FIX: You experience a slow uploading process if conflicts occur when many merge agents upload changes to the publishers at the same time in SQL Server 2005                                                                                                   | 2007-01-11   |
+| [9.00.1528] | 2005.90.1528.0 | 915306 FIX: The merge agent fails and a "permission denied" error message is logged when you synchronize a SQL Server 2005-based merge publication                                                                                                                   | 2007-01-08   |
+| [9.00.1528] | 2005.90.1528.0 | 915112 FIX: Error message when an ADO.NET-connected application tries to reuse a connection from the connection pool in SQL Server 2005: "The request failed to run because the batch is aborted"                                                                    | 2006-07-26   |
+| [9.00.1519] | 2005.90.1519.0 | 913494 FIX: The merge agent does not use a specified custom user update to handle conflicting UPDATE statements in SQL Server 2005                                                                                                                                   | 2007-01-20   |
+| [9.00.1518] | 2005.90.1518.0 | 913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005                                                                                                                                                           | 2006-09-22   |
+| [9.00.1518] | 2005.90.1518.0 | 912472 FIX: An incorrect result may appear in the subscribing database when you set database mirroring for a database and database failover occurs in SQL Server 2005                                                                                                | 2006-07-26   |
+| [9.00.1518] | 2005.90.1518.0 | 913371 FIX: You may receive error messages when you use the sp_cursoropen statement to open a cursor on a user-defined stored procedure in SQL Server 2005                                                                                                           | 2006-07-26   |
+| [9.00.1514] | 2005.90.1514.0 | 912471 FIX: The replication on the server does not work any longer when you manually fail over databases in SQL Server 2005                                                                                                                                          | 2006-07-26   |
+| [9.00.1503] | 2005.90.1503.0 | 911662 FIX: You may receive an access violation error message when you run a SELECT query in SQL Server 2005                                                                                                                                                         | 2006-07-26   |
+| [9.00.1502] | 2005.90.1502.0 | 915793 FIX: You cannot restore the log backups on the mirror server after you remove database mirroring for the mirror database in SQL Server 2005                                                                                                                   | 2006-07-26   |
+| [9.00.1500] | 2005.90.1500.0 | 910416 FIX: Error message when you run certain queries or certain stored procedures in SQL Server 2005: "A severe error occurred on the current command"                                                                                                             | 2006-06-01   |
+| [9.00.1406] | 2005.90.1406.0 | 932557 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1399                                                                                                                                     | 2007-07-11   |
+| [9.00.1399] | 2005.90.1399.0 | SQL Server 2005 RTM                                                                                                                                                                                                                                                  | 2005-11-07   |
+
+[9.00.5324]:http://support.microsoft.com/kb/2716427
+[9.00.5296]:http://support.microsoft.com/kb/2615425
+[9.00.5295]:http://support.microsoft.com/kb/2598903
+[9.00.5294]:http://support.microsoft.com/kb/2572407
+[9.00.5292]:http://support.microsoft.com/kb/2494123
+[9.00.5266]:http://support.microsoft.com/kb/2507769
+[9.00.5259]:http://support.microsoft.com/kb/2489409
+[9.00.5254]:http://support.microsoft.com/kb/2464079
+[9.00.5069]:http://technet.microsoft.com/en-us/security/bulletin/ms12-070
+[9.00.5057]:http://support.microsoft.com/kb/2494120
+[9.00.5000]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b953e84f-9307-405e-bceb-47bd345baece
+[9.00.4912]:http://support.microsoft.com/kb/2494112
+[9.00.4342]:http://support.microsoft.com/kb/2507766
+[9.00.4340]:http://support.microsoft.com/kb/2489375
+[9.00.4325]:http://support.microsoft.com/kb/2438344
+[9.00.4317]:http://support.microsoft.com/kb/2345449
+[9.00.4315]:http://support.microsoft.com/kb/2258854
+[9.00.4311]:http://support.microsoft.com/kb/983329
+[9.00.4309]:http://support.microsoft.com/kb/980176
+[9.00.4305]:http://support.microsoft.com/kb/978915
+[9.00.4294]:http://support.microsoft.com/kb/976951
+[9.00.4285]:http://support.microsoft.com/kb/977151
+[9.00.4273]:http://support.microsoft.com/kb/974648
+[9.00.4268]:http://support.microsoft.com/kb/970894
+[9.00.4266]:http://support.microsoft.com/kb/972511
+[9.00.4262]:http://support.microsoft.com/kb/970279
+[9.00.4230]:http://support.microsoft.com/kb/971409
+[9.00.4226]:http://support.microsoft.com/kb/967909
+[9.00.4224]:http://support.microsoft.com/kb/967101
+[9.00.4220]:http://support.microsoft.com/kb/961930
+[9.00.4216]:http://support.microsoft.com/kb/959195
+[9.00.4211]:http://support.microsoft.com/kb/2494113
+[9.00.4207]:http://support.microsoft.com/kb/970892/
+[9.00.4060]:http://www.microsoft.com/downloads/details.aspx?FamilyId=AE7387C3-348C-4FAA-8AE5-949FDFBE59C4
+[9.00.4053]:http://support.microsoft.com/kb/976952
+[9.00.4035]:http://support.microsoft.com/kb/974647
+[9.00.4028]:http://support.microsoft.com/kb/970896
+[9.00.3356]:http://support.microsoft.com/kb/972510
+[9.00.3355]:http://support.microsoft.com/kb/970278
+[9.00.3353]:http://support.microsoft.com/kb/967908
+[9.00.3330]:http://support.microsoft.com/kb/969142
+[9.00.3328]:http://support.microsoft.com/kb/967199
+[9.00.3325]:http://support.microsoft.com/kb/962970
+[9.00.3320]:http://support.microsoft.com/kb/960090
+[9.00.3318]:http://support.microsoft.com/kb/958735
+[9.00.3315]:http://support.microsoft.com/kb/956854
+[9.00.3310]:http://support.microsoft.com/kb/953752
+[9.00.3301]:http://support.microsoft.com/kb/954950
+[9.00.3294]:http://support.microsoft.com/kb/954831
+[9.00.3282]:http://support.microsoft.com/kb/954669
+[9.00.3260]:http://support.microsoft.com/kb/951217
+[9.00.3259]:http://support.microsoft.com/kb/952233
+[9.00.3259]:http://support.microsoft.com/kb/952330
+[9.00.3257]:http://support.microsoft.com/kb/951204
+[9.00.3246]:http://support.microsoft.com/kb/949095
+[9.00.3244]:http://support.microsoft.com/kb/949959
+[9.00.3240]:http://support.microsoft.com/kb/949595
+[9.00.3239]:http://support.microsoft.com/kb/949687
+[9.00.3232]:http://support.microsoft.com/kb/949199
+[9.00.3231]:http://support.microsoft.com/kb/946608
+[9.00.3231]:http://support.microsoft.com/kb/947463
+[9.00.3230]:http://support.microsoft.com/kb/942908
+[9.00.3228]:http://support.microsoft.com/kb/945443
+[9.00.3224]:http://support.microsoft.com/kb/945916
+[9.00.3221]:http://support.microsoft.com/kb/945442
+[9.00.3221]:http://support.microsoft.com/kb/943656
+[9.00.3221]:http://support.microsoft.com/kb/944902
+[9.00.3221]:http://support.microsoft.com/kb/944677
+[9.00.3215]:http://support.microsoft.com/kb/941450
+[9.00.3208]:http://support.microsoft.com/kb/940933
+[9.00.3206]:http://support.microsoft.com/kb/940943
+[9.00.3200]:http://support.microsoft.com/kb/940378
+[9.00.3194]:http://support.microsoft.com/kb/940269
+[9.00.3186]:http://support.microsoft.com/kb/940945
+[9.00.3186]:http://support.microsoft.com/kb/940937
+[9.00.3186]:http://support.microsoft.com/kb/940379
+[9.00.3186]:http://support.microsoft.com/kb/940375
+[9.00.3186]:http://support.microsoft.com/kb/937100
+[9.00.3186]:http://support.microsoft.com/kb/940126
+[9.00.3186]:http://support.microsoft.com/kb/938363
+[9.00.3186]:http://support.microsoft.com/kb/940935
+[9.00.3186]:http://support.microsoft.com/kb/940221
+[9.00.3186]:http://support.microsoft.com/kb/940942
+[9.00.3186]:http://support.microsoft.com/kb/940384
+[9.00.3186]:http://support.microsoft.com/kb/940281
+[9.00.3186]:http://support.microsoft.com/kb/940545
+[9.00.3186]:http://support.microsoft.com/kb/940210
+[9.00.3186]:http://support.microsoft.com/kb/939537
+[9.00.3186]:http://support.microsoft.com/kb/940128
+[9.00.3186]:http://support.microsoft.com/kb/938243
+[9.00.3186]:http://support.microsoft.com/kb/938086
+[9.00.3182]:http://support.microsoft.com/kb/939285
+[9.00.3179]:http://support.microsoft.com/kb/939562
+[9.00.3178]:http://support.microsoft.com/kb/939563
+[9.00.3177]:http://support.microsoft.com/kb/936534
+[9.00.3177]:http://support.microsoft.com/kb/938671
+[9.00.3177]:http://support.microsoft.com/kb/936488
+[9.00.3175]:http://support.microsoft.com/kb/938825
+[9.00.3175]:http://support.microsoft.com/kb/936305
+[9.00.3175]:http://support.microsoft.com/kb/937745
+[9.00.3175]:http://support.microsoft.com/kb/937033
+[9.00.3175]:http://support.microsoft.com/kb/937041
+[9.00.3171]:http://support.microsoft.com/kb/936185
+[9.00.3169]:http://support.microsoft.com/kb/934734
+[9.00.3169]:http://support.microsoft.com/kb/935789
+[9.00.3166]:http://support.microsoft.com/kb/934706
+[9.00.3166]:http://support.microsoft.com/kb/933724
+[9.00.3161]:http://support.microsoft.com/kb/935356
+[9.00.3161]:http://support.microsoft.com/kb/934459
+[9.00.3161]:http://support.microsoft.com/kb/934226
+[9.00.3161]:http://support.microsoft.com/kb/933808
+[9.00.3159]:http://support.microsoft.com/kb/933499
+[9.00.3156]:http://support.microsoft.com/kb/933766
+[9.00.3155]:http://support.microsoft.com/kb/933549
+[9.00.3155]:http://support.microsoft.com/kb/934188
+[9.00.3155]:http://support.microsoft.com/kb/934109
+[9.00.3155]:http://support.microsoft.com/kb/934106
+[9.00.3154]:http://support.microsoft.com/kb/933564
+[9.00.3154]:http://support.microsoft.com/kb/933097
+[9.00.3154]:http://support.microsoft.com/kb/970895
+[9.00.3153]:http://support.microsoft.com/kb/960089
+[9.00.3152]:http://support.microsoft.com/kb/954606
+[9.00.3080]:http://support.microsoft.com/kb/941203
+[9.00.3077]:http://support.microsoft.com/kb/934458
+[9.00.3073]:http://support.microsoft.com/kb/933508
+[9.00.3068]:http://www.microsoft.com/downloads/details.aspx?FamilyId=d07219b2-1e23-49c8-8f0c-63fa18f26d3a
+[9.00.3054]:http://support.microsoft.com/kb/929376
+[9.00.3050]:http://support.microsoft.com/kb/940961
+[9.00.3042]:http://support.microsoft.com/kb/940719
+[9.00.3033]:http://support.microsoft.com/kb/940287
+[9.00.3027]:http://support.microsoft.com/kb/940286
+[9.00.3026]:http://support.microsoft.com/kb/937343
+[9.00.2239]:http://support.microsoft.com/kb/937545
+[9.00.2237]:http://support.microsoft.com/kb/937544
+[9.00.2236]:http://support.microsoft.com/kb/937277
+[9.00.2236]:http://support.microsoft.com/kb/934812
+[9.00.2234]:http://support.microsoft.com/kb/936179
+[9.00.2233]:http://support.microsoft.com/kb/935446
+[9.00.2233]:http://support.microsoft.com/kb/933265
+[9.00.2233]:http://support.microsoft.com/kb/934065
+[9.00.2232]:http://support.microsoft.com/kb/933762
+[9.00.2231]:http://support.microsoft.com/kb/932393
+[9.00.2230]:http://support.microsoft.com/kb/931593
+[9.00.2229]:http://support.microsoft.com/kb/932115
+[9.00.2227]:http://support.microsoft.com/kb/931843
+[9.00.2226]:http://support.microsoft.com/kb/931821
+[9.00.2226]:http://support.microsoft.com/kb/930505
+[9.00.2223]:http://support.microsoft.com/kb/929240
+[9.00.2221]:http://support.microsoft.com/kb/930284
+[9.00.2219]:http://support.microsoft.com/kb/930283
+[9.00.2218]:http://support.microsoft.com/kb/929278
+[9.00.2216]:http://support.microsoft.com/kb/929179
+[9.00.2214]:http://support.microsoft.com/kb/928394
+[9.00.2214]:http://support.microsoft.com/kb/928372
+[9.00.2211]:http://support.microsoft.com/kb/928789
+[9.00.2211]:http://support.microsoft.com/kb/928083
+[9.00.2209]:http://support.microsoft.com/kb/928537
+[9.00.2208]:http://support.microsoft.com/kb/926493
+[9.00.2207]:http://support.microsoft.com/kb/928539
+[9.00.2207]:http://support.microsoft.com/kb/927643
+[9.00.2207]:http://support.microsoft.com/kb/927289
+[9.00.2206]:http://support.microsoft.com/kb/926613
+[9.00.2206]:http://support.microsoft.com/kb/926106
+[9.00.2206]:http://support.microsoft.com/kb/924807
+[9.00.2206]:http://support.microsoft.com/kb/924264
+[9.00.2202]:http://support.microsoft.com/kb/926612
+[9.00.2201]:http://support.microsoft.com/kb/926773
+[9.00.2198]:http://support.microsoft.com/kb/926611
+[9.00.2198]:http://support.microsoft.com/kb/924808
+[9.00.2198]:http://support.microsoft.com/kb/925277
+[9.00.2198]:http://support.microsoft.com/kb/926285
+[9.00.2198]:http://support.microsoft.com/kb/926335
+[9.00.2198]:http://support.microsoft.com/kb/926240
+[9.00.2198]:http://support.microsoft.com/kb/925744
+[9.00.2198]:http://support.microsoft.com/kb/924954
+[9.00.2198]:http://support.microsoft.com/kb/925335
+[9.00.2196]:http://support.microsoft.com/kb/925135
+[9.00.2196]:http://support.microsoft.com/kb/925227
+[9.00.2195]:http://support.microsoft.com/kb/925153
+[9.00.2194]:http://support.microsoft.com/kb/923849
+[9.00.2192]:http://support.microsoft.com/kb/923605
+[9.00.2192]:http://support.microsoft.com/kb/923624
+[9.00.2191]:http://support.microsoft.com/kb/922594
+[9.00.2190]:http://support.microsoft.com/kb/923296
+[9.00.2189]:http://support.microsoft.com/kb/921395
+[9.00.2187]:http://support.microsoft.com/kb/917905
+[9.00.2181]:http://support.microsoft.com/kb/922578
+[9.00.2181]:http://support.microsoft.com/kb/922438
+[9.00.2176]:http://support.microsoft.com/kb/921536
+[9.00.2176]:http://support.microsoft.com/kb/922063
+[9.00.2175]:http://support.microsoft.com/kb/920974
+[9.00.2175]:http://support.microsoft.com/kb/919243
+[9.00.2175]:http://support.microsoft.com/kb/920346
+[9.00.2175]:http://support.microsoft.com/kb/920347
+[9.00.2175]:http://support.microsoft.com/kb/919929
+[9.00.2174]:http://support.microsoft.com/kb/921003
+[9.00.2167]:http://support.microsoft.com/kb/920206
+[9.00.2164]:http://support.microsoft.com/kb/918882
+[9.00.2164]:http://support.microsoft.com/kb/919636
+[9.00.2164]:http://support.microsoft.com/kb/919775
+[9.00.2164]:http://support.microsoft.com/kb/919611
+[9.00.2164]:http://support.microsoft.com/kb/918222
+[9.00.2164]:http://support.microsoft.com/kb/919224
+[9.00.2164]:http://support.microsoft.com/kb/932555
+[9.00.2164]:http://www.microsoft.com/downloads/details.aspx?FamilyID=CB6C71EA-D649-47FF-9176-E7CAC58FD4BC
+[9.00.2164]:http://support.microsoft.com/kb/932556
+[9.00.2156]:http://support.microsoft.com/kb/926292
+[9.00.2153]:http://support.microsoft.com/kb/922527
+[9.00.2153]:http://support.microsoft.com/kb/922804
+[9.00.2050]:http://support.microsoft.com/kb/917887
+[9.00.2047]:http://support.microsoft.com/kb/921106
+[9.00.2040]:http://support.microsoft.com/kb/918276
+[9.00.2029]:http://support.microsoft.com/kb/917888
+[9.00.1561]:http://support.microsoft.com/kb/917971
+[9.00.1558]:http://support.microsoft.com/kb/917738
+[9.00.1554]:http://support.microsoft.com/kb/917824
+[9.00.1551]:http://support.microsoft.com/kb/917016
+[9.00.1551]:http://support.microsoft.com/kb/916706
+[9.00.1550]:http://support.microsoft.com/kb/916086
+[9.00.1550]:http://support.microsoft.com/kb/916046
+[9.00.1547]:http://support.microsoft.com/kb/915918
+[9.00.1545]:http://support.microsoft.com/kb/915309
+[9.00.1541]:http://support.microsoft.com/kb/915308
+[9.00.1541]:http://support.microsoft.com/kb/915307
+[9.00.1539]:http://support.microsoft.com/kb/915306
+[9.00.1538]:http://support.microsoft.com/kb/915112
+[9.00.1536]:http://support.microsoft.com/kb/913494
+[9.00.1534]:http://support.microsoft.com/kb/913941
+[9.00.1533]:http://support.microsoft.com/kb/912472
+[9.00.1532]:http://support.microsoft.com/kb/913371
+[9.00.1531]:http://support.microsoft.com/kb/912471
+[9.00.1528]:http://support.microsoft.com/kb/911662
+[9.00.1528]:http://support.microsoft.com/kb/915793
+[9.00.1528]:http://support.microsoft.com/kb/910416
+[9.00.1528]:http://support.microsoft.com/kb/932557
