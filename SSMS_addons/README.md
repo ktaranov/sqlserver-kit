@@ -116,7 +116,7 @@ With SQL Pretty Printer you can:
 - use automatic formatting eliminates any disagreements
 - embed well formatted and syntax colored SQL into your documents
 - add SQL format feature within 5 minutes
-- Quickly convert between SQL and C#, Java, etc.
+- quickly convert between SQL and C#, Java, etc.
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
