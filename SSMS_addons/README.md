@@ -12,6 +12,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [dbForge SQL Complete](#dbforge-sql-complete) | [dbForge SQL Complete] | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart           | No          | Yes/$119.95 |
 | [SSMS Tools Pack](#ssms-tools-pack)           | [SSMS Tools Pack]      | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić                 | No          | Yes/€30-€5000 |
 | [SQL Pretty Printer](#sql-pretty-printer)     | [SQL Pretty Printer]   | 2015-11-05   | 2005/2008/2012/2014      | Gudu Software                | No          | Yes/$50-$2000 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]   | 2015-09-01   | ???      | SQL Sentry                | Yes          | Yes/$295.00|
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -119,6 +120,15 @@ With SQL Pretty Printer you can:
 - quickly convert between SQL and C#, Java, etc.
 
 
+## SQL Sentry Plan Explorer
+Download page: [SQL Sentry Plan Explorer]<br/>
+Release date: 2015-09-01<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database. 
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -127,3 +137,4 @@ With SQL Pretty Printer you can:
 [dbForge SQL Complete]: https://www.devart.com/dbforge/sql/sqlcomplete/ordering.html
 [SSMS Tools Pack]: http://www.ssmstoolspack.com/Features
 [SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
+[SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
