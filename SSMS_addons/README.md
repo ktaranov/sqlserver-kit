@@ -11,6 +11,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [Supratimas](#supratimas)                     | [Supratimas]           | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC           | Yes          | Yes/$34.99 |
 | [dbForge SQL Complete](#dbforge-sql-complete) | [dbForge SQL Complete] | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart           | No          | Yes/$119.95 |
 | [SSMS Tools Pack](#ssms-tools-pack)           | [SSMS Tools Pack]      | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić                 | No          | Yes/€30-€5000 |
+| [SQL Pretty Printer](#sql-pretty-printer)     | [SQL Pretty Printer]   | 2015-11-05   | 2005/2008/2012/2014      | Gudu Software                | No          | Yes/$50-$2000 |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -103,6 +104,21 @@ Free version: No
 -  ...
 
 
+## SQL Pretty Printer
+Download page: [SQL Pretty Printer]<br/>
+Release date: 2015-11-05<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+
+With SQL Pretty Printer you can:
+- improve SQL readability 
+- use a standard style within your organization
+- use automatic formatting eliminates any disagreements
+- embed well formatted and syntax colored SQL into your documents
+- add SQL format feature within 5 minutes
+- Quickly convert between SQL and C#, Java, etc.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -110,3 +126,4 @@ Free version: No
 [Supratimas]:http://www.supratimas.com/addin/buy.html
 [dbForge SQL Complete]: https://www.devart.com/dbforge/sql/sqlcomplete/ordering.html
 [SSMS Tools Pack]: http://www.ssmstoolspack.com/Features
+[SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
