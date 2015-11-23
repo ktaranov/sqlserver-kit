@@ -13,6 +13,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SSMS Tools Pack](#ssms-tools-pack)           | [SSMS Tools Pack]      | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić                 | No          | Yes/€30-€5000 |
 | [SQL Pretty Printer](#sql-pretty-printer)     | [SQL Pretty Printer]   | 2015-11-05   | 2005/2008/2012/2014      | Gudu Software                | No          | Yes/$50-$2000 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]   | 2015-09-01   | ???      | SQL Sentry                | Yes          | Yes/$295.00|
+| [TSQL Code Smells Finder](#tsql-code-smells-finder) | [TSQL Code Smells Finder]   | 2013-02-15   | ???      | daveballantyne                | Yes          | No|
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -129,6 +130,15 @@ Free version: Yes
 With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database. 
 
 
+## TSQL Code Smells Finder
+Download page: [TSQL Code Smells Finder]<br/>
+Release date: 2013-02-15<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -138,3 +148,4 @@ With both a free and PRO version, Plan Explorer builds upon the graphical plan v
 [SSMS Tools Pack]: http://www.ssmstoolspack.com/Features
 [SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
 [SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
+[TSQL Code Smells Finder]: https://tsqlsmells.codeplex.com/team/view
