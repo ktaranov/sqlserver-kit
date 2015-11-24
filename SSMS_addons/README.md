@@ -11,6 +11,9 @@ Complete list of useful add-in for SQL Server Management Studio
 | [Supratimas](#supratimas)                     | [Supratimas]           | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC           | Yes          | Yes/$34.99 |
 | [dbForge SQL Complete](#dbforge-sql-complete) | [dbForge SQL Complete] | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart           | No          | Yes/$119.95 |
 | [SSMS Tools Pack](#ssms-tools-pack)           | [SSMS Tools Pack]      | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić                 | No          | Yes/€30-€5000 |
+| [SQL Pretty Printer](#sql-pretty-printer)     | [SQL Pretty Printer]   | 2015-11-05   | 2005/2008/2012/2014      | Gudu Software                | No          | Yes/$50-$2000 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]   | 2015-09-01   | ???      | SQL Sentry                | Yes          | Yes/$295.00|
+| [TSQL Code Smells Finder](#tsql-code-smells-finder) | [TSQL Code Smells Finder]   | 2013-02-15   | ???      | daveballantyne                | Yes          | No|
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -103,6 +106,39 @@ Free version: No
 -  ...
 
 
+## SQL Pretty Printer
+Download page: [SQL Pretty Printer]<br/>
+Release date: 2015-11-05<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+
+With SQL Pretty Printer you can:
+- improve SQL readability 
+- use a standard style within your organization
+- use automatic formatting eliminates any disagreements
+- embed well formatted and syntax colored SQL into your documents
+- add SQL format feature within 5 minutes
+- quickly convert between SQL and C#, Java, etc.
+
+
+## SQL Sentry Plan Explorer
+Download page: [SQL Sentry Plan Explorer]<br/>
+Release date: 2015-09-01<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database. 
+
+
+## TSQL Code Smells Finder
+Download page: [TSQL Code Smells Finder]<br/>
+Release date: 2013-02-15<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -110,3 +146,6 @@ Free version: No
 [Supratimas]:http://www.supratimas.com/addin/buy.html
 [dbForge SQL Complete]: https://www.devart.com/dbforge/sql/sqlcomplete/ordering.html
 [SSMS Tools Pack]: http://www.ssmstoolspack.com/Features
+[SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
+[SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
+[TSQL Code Smells Finder]: https://tsqlsmells.codeplex.com/team/view
