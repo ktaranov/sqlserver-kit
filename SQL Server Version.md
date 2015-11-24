@@ -218,7 +218,8 @@ Legend:
 
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| [11.0.5641.0] | 11.2.56.41.0     | 3098512 Cumulative update package 9 for SQL Server 2012 SP2                                                                            | 2015-11-18   |
+| 11.3.6020.0   | 11.3.6020.0      | [Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                                       | 2015-11-21   |
+| 11.0.5641.0   | 11.2.56.41.0     | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-18   |
 | 11.0.5636     | 2011.110.5636.3  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
 | 11.0.5634     | 2011.110.5634.0  | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
 | 11.0.5629     | 2011.110.5629.0  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
@@ -282,7 +283,8 @@ Legend:
 | 11.0.1440     | 2010.110.1440.19 | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
 | 11.0.1103     | 2010.110.1103.9  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
 
-[11.0.5641.0]:https://support.microsoft.com/en-us/kb/3098512
+[Microsoft SQL Server 2012 Service Pack 3 (SP3)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
+[3098512 Cumulative update package 9 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3098512
 [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]:https://support.microsoft.com/en-us/kb/3097636
 [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3082561/en-us
 [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]:https://support.microsoft.com/en-us/kb/3087872
