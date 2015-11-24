@@ -47,7 +47,7 @@ Legend:
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
 | 2016    | [Download CTP3 2016]                           | 13.00.700.139                | 2015-10-28                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download SP1 2014] then<br/>[CU3 KB3094221]   | 12.0.4100.1<br/>12.0.4427.24 | 2015-05-15<br/>2015-10-19 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Download SP2 2012] then<br/>[CU9 KB3098512]   | 11.0.5058.0<br/>11.0.5641.0  | 2014-06-10<br/>2015-11-18 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2012    | [Download SP3 2012]                            | 11.0.6020                    | 2015-11-21                | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Download SP4 2005] then<br/>[CU3 2507769]     | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
@@ -55,7 +55,7 @@ Legend:
 [Download CTP3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:http://www.microsoft.com/en-us/download/details.aspx?id=46694&WT.mc_id=rss_alldownloads_all
 [CU3 KB3094221]:https://support.microsoft.com/en-us/kb/3094221
-[Download SP2 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
+[Download SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
 [Download SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
@@ -93,7 +93,7 @@ Legend:
 |:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
 | SQL Server 2016    | ?           | [CTP 3.0]    |                                 |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8  | [12.0.4100.1]<br/>12.1.4100.1   |                                 |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60 | [11.0.3000.0]<br/>11.1.3000.0   | [11.0.5058.0]                   |                                   |                                 |
+| SQL Server 2012    | Denali      | 11.0.2100.60 | [11.0.3000.0]<br/>11.1.3000.0   | [11.0.5058.0]                   | [11.0.6020]                       |                                 |
 | SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1 | [10.50.2500.0]<br/>10.51.2500.0 | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
 | SQL Server 2008    | Katmai      | 10.0.1600.22 | [10.0.2531.0]<br/>10.1.2531.0   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
 | SQL Server 2005    | Yukon       | 9.0.1399.06  | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
@@ -107,6 +107,7 @@ Legend:
 [12.0.4100.1]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
 [11.0.3000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=35575
 [11.0.5058.0]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
+[11.0.6020]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
 [10.50.2500.0]:http://www.microsoft.com/en-us/download/details.aspx?id=26727
 [10.50.4000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=30437
 [10.50.6000.34]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
