@@ -12,33 +12,39 @@ Headers:
 
 
 ## Repo folders and files
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 161 Trace Flag') (Complete list - 161 trace flag)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
- - [Base line Collector script](/BaselineCollector) (Written by Robert Virag)
+ - [Base line Collector script](/BaselineCollector) (by Robert Virag)
  - [CLR procedures](/CLR)
-    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL
+    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL with C#
     - SplitterB_CLR
  - [Known Errors](/Errors)
- - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (Written by Ola Hallengren)
+ - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
     - [SSMSBoost add-in](/SSMS_addons#ssmsboost 'Adds missing features and improves your productivity')
     - [SQL Code Guard](/SSMS_addons#sql-code-guard 'Provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies')
     - [SQL Search](/SSMS_addons#sql-search 'Free add-in from Red Gate that lets you quickly search for SQL across your databases')
     - [SQL Scripts Manager](/SSMS_addons#sql-scripts-manager 'Powerful and reliable scripts written by SQL Server experts')
     - [Supratimas](/SSMS_addons#supratimas 'SQL Server query execution visualizer')
+    - [dbForge SQL Complete](/SSMS_addons#dbforge-sql-complete)
+    - [SSMS Tools Pack](/SSMS_addons#ssms-tools-pack)
+    - [SQL Pretty Printer](/SSMS_addons#sql-pretty-printer)
+    - [SQL Sentry Plan Explorer](/SSMS_addons#sql-sentry-plan-explorer)
  - [Useful scripts](/Scripts)
-    - **Awesome SQL Server Diagnostic Information Queries** (Written by Glenn Alan Berry)
-    - Table count alternative (Written by Jes Schultz Borland)
-    - Foreign Key batch rename (Written by Wes Henriksen)
+    - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
+    - [Table count alternative](/Scripts/Table Count alternative.sql) (by Jes Schultz Borland)
+    - [Foreign Key batch rename](/Scripts/FK Rename.sql) (by Wes Henriksen)
+    - [Count character matches](/Scripts/Count character matches.sql)
+    - and many others...
  - [SSMS snippets](/Snippets)
  - [Stored Procedure](/Stored_Procedure)
-   - sp_DBPermissions (Written by Kenneth Fisher)
-   - sp_SrvPermissions (Written by Kenneth Fisher)
-   - usp_who5 (Written by Sean Smith)
-   - usp_String_Search (Written by Sean Smith)
+   - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
+   - [sp_SrvPermissions](/Stored_Procedure/sp_SrvPermissions.sql) (by Kenneth Fisher)
+   - [usp_who5](/Stored_Procedure/usp_who5.sql) (by Sean Smith)
+   - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql (by Sean Smith)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
- - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (Written by Stevie Rounds and Michael Rounds)
+ - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (by Stevie Rounds and Michael Rounds)
 
 
 ## Web resource
