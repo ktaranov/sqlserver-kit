@@ -41,7 +41,7 @@ Headers:
    - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
    - [sp_SrvPermissions](/Stored_Procedure/sp_SrvPermissions.sql) (by Kenneth Fisher)
    - [usp_who5](/Stored_Procedure/usp_who5.sql) (by Sean Smith)
-   - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql (by Sean Smith)
+   - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql) (by Sean Smith)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
  - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (by Stevie Rounds and Michael Rounds)
