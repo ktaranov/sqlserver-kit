@@ -1,9 +1,22 @@
 # Microsoft SQL Server Trace Flags
+Compelte list of Microsoft SQL Server trace flags (162 trace flags).
 
+Headers:
+ - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
+ - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
+ - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
+ - [Trace flag list](#trace-flag-list)
 
-## Source links
+Source links
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
+ - SQL Server Central TF List: <http://www.sqlservercentral.com/articles/trace+flags/70131/>
+ - MSDN TF list: <http://sqlserverpedia.com/wiki/Trace_Flags>
+ - Albert van der Sel TF list: <http://antapex.org/traceflags_sqlserver.txt>
+ - Technet Wiki TF list: <http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx>
+ - Amit Banerjee TF list: <http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/>
+ - Paul Randal discussing TF Pro’s and Con’s: <http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/>
+ - **Some trace flags needs to be specified with ”t” rather than with ”T” in startup options!**: <http://technet.microsoft.com/en-us/library/ms190737(v=sql.110).aspx>
 
 
 ## What are Microsoft SQL Server Trace Flags?
@@ -26,19 +39,6 @@ Server Service
 environment first. And consult professionals first if you are the
 slightest uncertain about the effects of your changes.**
 
-
-## General Links:
- - SQL Server Central TF List:
-<http://www.sqlservercentral.com/articles/trace+flags/70131/>
- - MSDN TF list: <http://sqlserverpedia.com/wiki/Trace_Flags>
- - Albert van der Sel TF list: <http://antapex.org/traceflags_sqlserver.txt>
- - Technet Wiki TF list: <http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx>
- - Amit Banerjee TF list: <http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/>
- - Paul Randal discussing TF Pro’s and Con’s:
-<http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/>
- - **Some trace flags needs to be specified with ”t” rather than with ”T” in startup options!**: <http://technet.microsoft.com/en-us/library/ms190737(v=sql.110).aspx>
-
-
 **Thanks to:**
  - Steinar Andersen
  - Yusuf Anis
@@ -52,7 +52,7 @@ slightest uncertain about the effects of your changes.**
 
 
 ## Trace flag list
-Summary: 161 trace flag
+Summary: 162 trace flags
 
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all connections<br />
@@ -299,6 +299,12 @@ Function: Forces the query optimizer to use the SQL Server 2014 version
 of the cardinality estimator when creating the query plan when running
 SQL Server 2014 with database compatibility level 110<br />
 Link: http://support.microsoft.com/kb/2801413
+
+
+**Trace Flag: 2330**<br />
+Function: Query performance decreases when sys.dm_db_index_usage_stats has large number of rows<br />
+Link: <https://support.microsoft.com/en-us/kb/2003031>
+Link: <http://www.brentozar.com/archive/2015/11/trace-flag-2330-who-needs-missing-index-requests/>
 
 
 **Trace Flag: 2335**<br />
