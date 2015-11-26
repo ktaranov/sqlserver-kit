@@ -18,6 +18,18 @@ Source links
  - Paul Randal discussing TF Pro’s and Con’s: <http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/>
  - **Some trace flags needs to be specified with ”t” rather than with ”T” in startup options!**: <http://technet.microsoft.com/en-us/library/ms190737(v=sql.110).aspx>
 
+**Thanks to:**
+ - Steinar Andersen
+ - Brent Ozar
+ - Yusuf Anis
+ - Lars Utterström
+ - Martin Höglund
+ - Håkan Winther
+ - Toine Rozemeijer
+ - Robert L Davis aka @sqlsoldier
+ - sql_handle aka @sql_handle
+ - Andrzej Kukuła
+
 
 ## What are Microsoft SQL Server Trace Flags?
 Trace Flags are settings that in some way or another alters the
@@ -38,17 +50,6 @@ Server Service
 **REMEMBER: Be extremely careful with trace flags, test in your test
 environment first. And consult professionals first if you are the
 slightest uncertain about the effects of your changes.**
-
-**Thanks to:**
- - Steinar Andersen
- - Yusuf Anis
- - Lars Utterström
- - Martin Höglund
- - Håkan Winther
- - Toine Rozemeijer
- - Robert L Davis aka @sqlsoldier
- - sql_handle aka @sql_handle
- - Andrzej Kukuła
 
 
 ## Trace flag list
