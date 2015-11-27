@@ -1796,11 +1796,12 @@ Legend:
 [274330 FIX: Sending Open Files as Attachment in SQL Mail Fails with Error 18025]:http://support.microsoft.com/kb/274330/
 [274329 FIX: Optimizer Slow to Generate Query Plan for Complex Queries that have Many Joins and Semi-Joins]:http://support.microsoft.com/kb/274329/
 
+
 ## Microsoft SQL Server 7.0 Builds
 
 | Build     | KB / Description                                                                                                                                                      | Release Date |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                                | 2012-05-09   |
+| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                                | 2008-07-08   |
 | 7.00.1149 | [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]                         | 2006-06-01   |
 | 7.00.1143 | [830233 New Connection Events Are Not Recorded in SQL Server Traces]                                                                                                  | 2005-10-25   |
 | 7.00.1143 | [829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly] | 2005-10-25   |
@@ -1812,7 +1813,7 @@ Legend:
 | 7.00.1079 | [329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]                                                                                           | 2005-10-11   |
 | 7.00.1078 | [327068 INF: SQL Server 7.0 Security Update for Service Pack 4]                                                                                                       | 2005-09-27   |
 | 7.00.1077 | [316333 SQL Server 2000 Security Update for Service Pack 2]                                                                                                           | 2006-11-24   |
-| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                                 |              |
+| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                                 | 2002-04-26   |
 | 7.00.1033 | [324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]                                                              | 2005-10-12   |
 | 7.00.1026 | [319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]                                                  | 2005-10-18   |
 | 7.00.1004 | [304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]                                                                                          | 2004-08-05   |
@@ -1821,7 +1822,7 @@ Legend:
 | 7.00.977  | [284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]                                                    | 2002-04-25   |
 | 7.00.970  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
 | 7.00.970  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
-| 7.00.961  | [SQL Server 7.0 Service Pack 3 (SP3)]                                                                                                                                 |              |
+| 7.00.961  | [SQL Server 7.0 Service Pack 3 (SP3)]                                                                                                                                 | 2000-12-15   |
 | 7.00.921  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
 | 7.00.919  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
 | 7.00.918  | [280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]                                                                                        | 2004-06-29   |
@@ -1832,14 +1833,14 @@ Legend:
 | 7.00.879  | [281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]                                                                     | 2006-03-14   |
 | 7.00.857  | [260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]                                                                      | 2006-03-14   |
 | 7.00.843  | [266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]                                           | 2006-03-14   |
-| 7.00.842  | [SQL Server 7.0 Service Pack 2 (SP2)]                                                                                                                                 |              |
+| 7.00.842  | [SQL Server 7.0 Service Pack 2 (SP2)]                                                                                                                                 | 2000-03-20   |
 | 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                      |              |
 | 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                              |              |
 | 7.00.776  | [258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]                                                               | 2006-03-14   |
 | 7.00.770  | [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]                                                                                                | 2006-03-14   |
 | 7.00.745  | [253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]                                                         | 2005-10-07   |
 | 7.00.722  | [239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]                                                                                       | 2005-10-05   |
-| 7.00.699  | SQL Server 7.0 Service Pack 1 (SP1)                                                                                                                                   |              |
+| 7.00.699  | [SQL Server 7.0 Service Pack 1 (SP1)]                                                                                                                                 | 1999-07-01   |
 | 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                              |              |
 | 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                             |              |
 | 7.00.662  | [232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]                                                                                                | 2005-10-05   |
@@ -1862,7 +1863,7 @@ Legend:
 [329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]:http://support.microsoft.com/kb/329499/
 [327068 INF: SQL Server 7.0 Security Update for Service Pack 4]:http://support.microsoft.com/kb/327068/
 [316333 SQL Server 2000 Security Update for Service Pack 2]:http://support.microsoft.com/kb/316333/
-[SQL Server 7.0 Service Pack 4 (SP4)]:http://www.microsoft.com/technet/prodtechnol/sql/70/downloads/default.mspx
+[SQL Server 7.0 Service Pack 4 (SP4)]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
 [324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]:http://support.microsoft.com/kb/324469/
 [319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]:http://support.microsoft.com/kb/319851/
 [304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]:http://support.microsoft.com/kb/304851/
@@ -1871,7 +1872,7 @@ Legend:
 [284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]:http://support.microsoft.com/kb/284351/
 [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
 [282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
-[SQL Server 7.0 Service Pack 3 (SP3)]:http://www.microsoft.com/downloads/details.aspx?FamilyID=9c71f91c-a88f-4d31-9e8b-9fd63fbdbdcf
+[SQL Server 7.0 Service Pack 3 (SP3)]:https://support.microsoft.com/en-us/kb/274799
 [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
 [282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
 [280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]:http://support.microsoft.com/kb/280380/
@@ -1882,12 +1883,12 @@ Legend:
 [281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]:http://support.microsoft.com/kb/281185/
 [260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]:http://support.microsoft.com/kb/260346/
 [266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]:http://support.microsoft.com/kb/266766/
-[SQL Server 7.0 Service Pack 2 (SP2)]:http://www.microsoft.com/downloads/details.aspx?FamilyID=C4C935C7-4429-4172-9D54-C8A60927F372
+[SQL Server 7.0 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/254561
 [258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]:http://support.microsoft.com/kb/258087/
 [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]:http://support.microsoft.com/kb/252905/
 [253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]:http://support.microsoft.com/kb/253738/
 [239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]:http://support.microsoft.com/kb/239458/
-[SQL Server 7.0 Service Pack 1 (SP1)]:http://www.microsoft.com/downloads/details.aspx?familyid=3884A944-3363-43CD-99E9-031A93C04413
+[SQL Server 7.0 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/232570
 [232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]:http://support.microsoft.com/kb/232707/
 [244763 FIX: Access Violation Under High Cursor Stress]:http://support.microsoft.com/kb/244763/
 [229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:http://support.microsoft.com/kb/229875/
