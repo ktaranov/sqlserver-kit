@@ -1799,6 +1799,7 @@ Legend:
 ## Microsoft SQL Server 7.0 Builds
 
 | Build     | KB / Description                                                                                                                                                      | Release Date |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                                | 2012-05-09   |
 | 7.00.1149 | [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]                         | 2006-06-01   |
 | 7.00.1143 | [830233 New Connection Events Are Not Recorded in SQL Server Traces]                                                                                                  | 2005-10-25   |
@@ -1832,22 +1833,22 @@ Legend:
 | 7.00.857  | [260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]                                                                      | 2006-03-14   |
 | 7.00.843  | [266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]                                           | 2006-03-14   |
 | 7.00.842  | [SQL Server 7.0 Service Pack 2 (SP2)]                                                                                                                                 |              |
-| 7.00.839  | [SQL Server 7.0 Service Pack 2 (SP2) Unidentified]                                                                                                                    |              |
-| 7.00.835  | [SQL Server 7.0 Service Pack 2 (SP2) Beta]                                                                                                                            |              |
+| 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                      |              |
+| 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                              |              |
 | 7.00.776  | [258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]                                                               | 2006-03-14   |
 | 7.00.770  | [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]                                                                                                | 2006-03-14   |
 | 7.00.745  | [253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]                                                         | 2005-10-07   |
 | 7.00.722  | [239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]                                                                                       | 2005-10-05   |
-| 7.00.699  | [SQL Server 7.0 Service Pack 1 (SP1)]                                                                                                                                 |              |
-| 7.00.689  | [SQL Server 7.0 Service Pack 1 (SP1) Beta]                                                                                                                            |              |
-| 7.00.677  | [SQL Server 7.0 MSDE from Office 2000 disc]                                                                                                                           |              |
+| 7.00.699  | SQL Server 7.0 Service Pack 1 (SP1)                                                                                                                                   |              |
+| 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                              |              |
+| 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                             |              |
 | 7.00.662  | [232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]                                                                                                | 2005-10-05   |
 | 7.00.658  | [244763 FIX: Access Violation Under High Cursor Stress]                                                                                                               | 2006-03-14   |
 | 7.00.657  | [229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]                                                                                   | 2005-10-05   |
 | 7.00.643  | [220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]                                                                                     | 2005-10-05   |
-| 7.00.623  | [SQL Server 7.0 RTM (Gold, no SP)]                                                                                                                                    | 1998-11-27   |
-| 7.00.583  | [SQL Server 7.0 RC1]                                                                                                                                                  |              |
-| 7.00.517  | [SQL Server 7.0 Beta 3]                                                                                                                                               |              |
+| 7.00.623  | SQL Server 7.0 RTM (Gold, no SP)                                                                                                                                      | 1998-11-27   |
+| 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                    |              |
+| 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                                 |              |
 
 [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:http://support.microsoft.com/kb/948113/
 [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]:http://support.microsoft.com/kb/867763/
