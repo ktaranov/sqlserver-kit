@@ -13,6 +13,8 @@ Headers:
  - [Microsoft SQL Server 2005 Builds](#microsoft-sql-server-2005-builds)
  - [Microsoft SQL Server 2000 Builds](#microsoft-sql-server-2000-builds)
  - [Microsoft SQL Server 7.0 Builds](#microsoft-sql-server-70-builds)
+ - [Microsoft SQL Server 6.5 Builds](#microsoft-sql-server-65-builds)
+ - [Microsoft SQL Server 6.0 Builds](#microsoft-sql-server-60-builds)
 
 Source link:
  - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
@@ -75,7 +77,7 @@ Legend:
 | SQL Server 2012                              | Denali      | 2012         | 706                       | 110                          |
 | SQL Server 2012 CTP1                         | Denali      | 2010         | 684                       | 110                          |
 | SQL Server 2008 R2                           | Kilimanjaro | 2010         | 660 / 661                 | 100                          |
-| Azure SQL DB                                 | CloudDB     | 2010         | ?                         | ?                          |
+| Azure SQL DB                                 | CloudDB     | 2010         | ?                         | ?                            |
 | SQL Server 2008                              | Katmai      | 2008         | 655                       | 100                          |
 | SQL Server 2005 SP2+ with VarDecimal enabled | Yukon       | 2005         | 612                       |  90                          |
 | SQL Server 2005                              | Yukon       | 2005         | 611                       |  90                          |
@@ -100,9 +102,6 @@ Legend:
 | SQL Server 2005    | Yukon       | 9.0.1399.06  | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
 | SQL Server 2000    | Shiloh      | 8.0.194      | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
 | SQL Server 7.0     | Sphinx      | 7.0.623      | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
-| SQL Server 6.5     | Hydra       | ?            |                                 |                                 |                                   |                                 |
-| SQL Server 6.0     | SQL95       | ?            |                                 |                                 |                                   |                                 |
-| SQL Server 4.21    | SQLNT       | ?            |                                 |                                 |                                   |                                 |
 
 [CTP 3.0]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016#evaluation_4114
 [12.0.4100.1]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
@@ -1893,3 +1892,55 @@ Legend:
 [244763 FIX: Access Violation Under High Cursor Stress]:http://support.microsoft.com/kb/244763/
 [229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:http://support.microsoft.com/kb/229875/
 [220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:http://support.microsoft.com/kb/220156/
+
+
+## Microsoft SQL Server 6.5 Builds
+
+| Build    | KB / Description                                                                                                    | Release Date |
+|----------|---------------------------------------------------------------------------------------------------------------------|--------------|
+| 6.50.480 | [238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation] | 2005-10-07   |
+| 6.50.479 | [273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]                                                       | 2000-09-12   |
+| 6.50.469 | [249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]                                    |              |
+| 6.50.465 | [250493 FIX: Memory Leak with xp_sendmail Using Attachments]                                                        |              |
+| 6.50.464 | [275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]                                            | 1999-11-08   |
+| 6.50.462 | [238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]                                                   |              |
+| 6.50.451 | [236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]                            |              |
+| 6.50.444 | [240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]                                             |              |
+| 6.50.441 | [234679 FIX: SNMP Extended Stored Procedures May Leak Memory]                                                       |              |
+| 6.50.422 | [187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]                     |              |
+| 6.50.416 | [197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]                                                            | 1998-12-24   |
+| 6.50.415 | Microsoft SQL Server 6.5 Service Pack 5 (SP5)                                                                       |              |
+| 6.50.339 | Y2K hotfix                                                                                                          |              |
+| 6.50.297 | "Site Server 3.0 Commerce Edition" hotfix                                                                           |              |
+| 6.50.281 | 178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)                                                                |              |
+| 6.50.259 | 6.5 as included with "Small Business Server" only                                                                   |              |
+| 6.50.258 | Microsoft SQL Server 6.5 Service Pack 3a (SP3a)                                                                     |              |
+| 6.50.252 | Microsoft SQL Server 6.5 Service Pack 3 (SP3)                                                                       |              |
+| 6.50.240 | [160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]                                                              |              |
+| 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                              |              |
+| 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                        | 1996-06-30   |
+
+[238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation]:http://support.microsoft.com/kb/238621/en-us#
+[273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]:http://support.microsoft.com/kb/273914/en-us#
+[249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]:http://support.microsoft.com/kb/249343/en-us#
+[250493 FIX: Memory Leak with xp_sendmail Using Attachments]:http://support.microsoft.com/kb/250493/en-us#
+[275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]:http://support.microsoft.com/kb/275483/en-us#
+[238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]:http://support.microsoft.com/kb/238620/en-us#
+[236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]:http://support.microsoft.com/kb/236447/en-us#
+[240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]:http://support.microsoft.com/kb/240172/en-us#
+[234679 FIX: SNMP Extended Stored Procedures May Leak Memory]:http://support.microsoft.com/kb/234679/en-us#
+[187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]:http://support.microsoft.com/kb/187278/en-us#
+[197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]:http://support.microsoft.com/kb/197176/en-us#
+[178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)]:http://support.microsoft.com/kb/178295/en-us#
+[160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]:http://support.microsoft.com/kb/160727/en-us#
+[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:http://support.microsoft.com/kb/153096/en-us#
+
+
+## Microsoft SQL Server 6.0 Builds
+
+| Build    | KB / Description                              | Release Date |
+|----------|-----------------------------------------------|--------------|
+| 6.00.151 | Microsoft SQL Server 6.0 Service Pack 3 (SP3) |              |
+| 6.00.139 | Microsoft SQL Server 6.0 Service Pack 2 (SP2) |              |
+| 6.00.124 | Microsoft SQL Server 6.0 Service Pack 1 (SP1) |              |
+| 6.00.121 | Microsoft SQL Server 6.0 RTM                  |              |
