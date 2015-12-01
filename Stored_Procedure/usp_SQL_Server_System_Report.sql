@@ -1,3079 +1,3079 @@
-set transaction isolation level read uncommitted
-set nocount on
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	eRROR tRAPPING: cHECK iF pROCEDURE aLREADY eXISTS aND cREATE sHELL iF aPPLICABLE
+--	Error Trapping: Check If Procedure Already Exists And Create Shell If Applicable
 -----------------------------------------------------------------------------------------------------------------------------
 
-if object_id (n'DBO.USP_sql_sERVER_sYSTEM_rEPORT', n'p') is null
-begin
+IF OBJECT_ID (N'dbo.usp_SQL_Server_System_Report', N'P') IS NULL
+BEGIN
 
-	execute ('create procedure DBO.USP_sql_sERVER_sYSTEM_rEPORT as select 1 as SHELL')
+	EXECUTE ('CREATE PROCEDURE dbo.usp_SQL_Server_System_Report AS SELECT 1 AS shell')
 
-end
-go
-
-
------------------------------------------------------------------------------------------------------------------------------
---	sTORED pROCEDURE dETAILS: lISTING oF sTANDARD dETAILS rELATED tO tHE sTORED pROCEDURE
------------------------------------------------------------------------------------------------------------------------------
-
---	pURPOSE: sql sERVER sYSTEM rEPORT
---	cREATE dATE (mm/dd/yyyy): 05/12/2010
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
+END
+GO
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mODIFICATION hISTORY: lISTING oF aLL mODIFICATIONS sINCE oRIGINAL iMPLEMENTATION
+--	Stored Procedure Details: Listing Of Standard Details Related To The Stored Procedure
 -----------------------------------------------------------------------------------------------------------------------------
 
---	dESCRIPTION: aDDED "@oUTPUT_mODE" aND "@uNUSED_iNDEX_dAYS" iNPUT pARAMETERS
---	           : cODE rESTRUCTURING fOR bETTER qUERY pERFORMANCE
---	           : mINOR cHANGES tO cODE sTYLE
---	           : aDDED "CONNECTIONS""FIRST_DAY_OF_WEEK", "IS_CLUSTERED", aND "WINDOWS_VERSION" tO "iNSTANCE iNFORMATION" sECTION
---	dATE (mm/dd/yyyy): 12/22/2011
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
-
-
---	dESCRIPTION: aDDED "CREATE_DATE" aND "FILE_NAME" tO "dATABASE dETAILS" sECTION
---	           : aDDED "BACKUP_FINISH_DATE", "DATABASE_VERSION", "MACHINE_NAME", aND "SERVER_NAME" tO "lAST bACKUP sET dETAILS" sECTION
---	           : "lAST bACKUP sET dETAILS" sECTION nOW oNLY sHOWS iNFORMATION fOR dATABASES cURRENTLY oN tHE iNSTANCE
---	           : aDDED "SCHEMA_NAME" tO "uNUSED iNDEXES" sECTION
---	           : eXTENDED "convert" cHARACTER lENGTH tO dEAL wITH "mSG 234" eRROR
---	           : rEWROTE tIME cALCULATION lOGIC
---	dATE (mm/dd/yyyy): 01/18/2012
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
-
-
---	dESCRIPTION: aDDED aDDITIONAL iNPUT pARAMETERS
---	           : rEFORMATTED cODE
---	           : bUG fIXES
---	           : aDDED "iNSTANCE sETTINGS", "iNDEX fRAGMENTATION", "mISSING iNDEXES" sECTIONS
---	dATE (mm/dd/yyyy): 09/20/2013
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
-
-
---	dESCRIPTION: rENAMED sOME hEADINGS / vARIABLES / tEMP tABLES
---	           : bUG fIXES
---	           : eNHANCED html oUTPUT
---	           : "iNDEX" oUPUTS nOW iNCLUDE iNDEXED vIEWS
---	           : aDDED "INSTANCE_NAME", "PRODUCT_NAME", aND "SERVER_MEMORY_MB" tO "iNSTANCE iNFORMATION" sECTION
---	           : aDDED "AUTHENTICATION", "DATE_FORMAT", "FILL_FACTOR_PERCENTAGE", "IS_COMPRESSED_BACKUPS_ENABLED", "IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED""IS_SCAN_FOR_STARTUP_PROCS_ENABLED", "IS_SQL_MAIL_ENABLED", "LANGUAGE", aND "LOCALE_ID" tO "iNSTANCE sETTINGS" sECTION
---	           : aDDED "CACHED_MB" tO "dATABASE sUMMARY" sECTION
---	           : aDDED "DATABASE_OWNER", "DRIVE_LETTER", "FILE_NAME", "FILE_PATH", "FILE_READ_MB", "FILE_READS", "FILE_WRITES", "FILE_WRITTEN_MB", "IO_WAIT_TIME_READS", aND "IO_WAIT_TIME_WRITES" tO "dATABASE dETAILS" sECTION
---	           : aDDED "PHYSICAL_DEVICE_NAME" tO "lAST bACKUP sET dETAILS" sECTION
---	           : aDDED "CATEGORY", "CLASS", "DATE_CREATED", "DATE_MODIFIED", "JOB_OWNER", "TYPE", aND "VERSION" tO "sql sERVER aGENT jOBS (lAST 24 hOURS)" sECTION
---	           : aDDED "FILTER_DEFINITION", "INCLUDE_KEY", "OBJECT_TYPE", aND "ROW_COUNT" tO "iNDEX fRAGMENTATION" sECTION
---	           : aDDED "OBJECT_TYPE" aND "ROW_COUNT" tO "mISSING iNDEXES" sECTION
---	           : aDDED "FILTER_DEFINITION", "INCLUDE_KEY", "OBJECT_TYPE", aND "ROW_COUNT" tO "uNUSED iNDEXES" sECTION
---	dATE (mm/dd/yyyy): 12/11/2013
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
-
-
---	dESCRIPTION: mAJOR rEVAMP oF "dATABASE sUMMARY" aND "dATABASE dETAILS" sECTIONS
---	dATE (mm/dd/yyyy): 07/11/2014
---	dEVELOPER: sEAN sMITH (S.SMITH.SQL at GMAIL dot COM)
---	aDDITIONAL nOTES: n/a
+--	Purpose: SQL Server System Report
+--	Create Date (MM/DD/YYYY): 05/12/2010
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY: cREATE pROCEDURE
+--	Modification History: Listing Of All Modifications Since Original Implementation
 -----------------------------------------------------------------------------------------------------------------------------
 
-alter procedure DBO.USP_sql_sERVER_sYSTEM_rEPORT
-
-	 @oUTPUT_mODE as char (1) = null
-	,@uNUSED_iNDEX_dAYS as int = 7
-	,@rECIPIENTS as varchar (max) = null
-	,@cOPY_rECIPIENTS as varchar (max) = null
-	,@iNSTANCE_iNFORMATION as bit = 1
-	,@iNSTANCE_sETTINGS as bit = 1
-	,@dRIVES_sPACE as bit = 1
-	,@dATABASE_sUMMARY as bit = 1
-	,@dATABASE_dETAILS as bit = 1
-	,@lAST_bACKUP as bit = 1
-	,@aGENT_jOBS as bit = 1
-	,@fRAGMENTATION as bit = 1
-	,@mISSING_iNDEXES as bit = 1
-	,@uNUSED_iNDEXES as bit = 1
-
-as
-
-set transaction isolation level read uncommitted
-set nocount on
-set ansi_warnings off
-set arithabort off
-set arithignore on
-set textsize 2147483647
+--	Description: Added "@Output_Mode" And "@Unused_Index_Days" Input Parameters
+--	           : Code Restructuring For Better Query Performance
+--	           : Minor Changes To Code Style
+--	           : Added "connections""first_day_of_week", "is_clustered", And "windows_version" To "Instance Information" Section
+--	Date (MM/DD/YYYY): 12/22/2011
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
 
 
-declare
-	 @aVOID_tRUNCATION as nvarchar (max)
-	,@bODY as nvarchar (max)
-	,@dATABASE_id as int
-	,@dATABASE_nAME_lOOP as nvarchar (500)
-	,@dATE_24_hOURS_aGO as datetime
-	,@dATE_nOW as datetime
-	,@fILTER_dEFINITION_sTRING as nvarchar (50)
-	,@sERVER_mEMORY_mb as bigint
-	,@sql_sERVER_sTART_tIME as datetime
-	,@sql_sTRING as nvarchar (max)
-	,@sUBJECT as nvarchar (255)
-	,@xml_sTRING as nvarchar (max)
+--	Description: Added "create_date" And "file_name" To "Database Details" Section
+--	           : Added "backup_finish_date", "database_version", "machine_name", And "server_name" To "Last Backup Set Details" Section
+--	           : "Last Backup Set Details" Section Now Only Shows Information For Databases Currently On The Instance
+--	           : Added "schema_name" To "Unused Indexes" Section
+--	           : Extended "CONVERT" Character Length To Deal With "Msg 234" Error
+--	           : Rewrote Time Calculation Logic
+--	Date (MM/DD/YYYY): 01/18/2012
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
 
 
-declare @fIXED_dRIVES_fREE_sPACE as table
+--	Description: Added Additional Input Parameters
+--	           : Reformatted Code
+--	           : Bug Fixes
+--	           : Added "Instance Settings", "Index Fragmentation", "Missing Indexes" Sections
+--	Date (MM/DD/YYYY): 09/20/2013
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
+
+
+--	Description: Renamed Some Headings / Variables / Temp Tables
+--	           : Bug Fixes
+--	           : Enhanced HTML Output
+--	           : "Index" Ouputs Now Include Indexed Views
+--	           : Added "instance_name", "product_name", And "server_memory_mb" To "Instance Information" Section
+--	           : Added "authentication", "date_format", "fill_factor_percentage", "is_compressed_backups_enabled", "is_optimize_for_ad_hoc_workloads_enabled""is_scan_for_startup_procs_enabled", "is_sql_mail_enabled", "language", And "locale_id" To "Instance Settings" Section
+--	           : Added "cached_mb" To "Database Summary" Section
+--	           : Added "database_owner", "drive_letter", "file_name", "file_path", "file_read_mb", "file_reads", "file_writes", "file_written_mb", "io_wait_time_reads", And "io_wait_time_writes" To "Database Details" Section
+--	           : Added "physical_device_name" To "Last Backup Set Details" Section
+--	           : Added "category", "class", "date_created", "date_modified", "job_owner", "type", And "version" To "SQL Server Agent Jobs (Last 24 Hours)" Section
+--	           : Added "filter_definition", "include_key", "object_type", And "row_count" To "Index Fragmentation" Section
+--	           : Added "object_type" And "row_count" To "Missing Indexes" Section
+--	           : Added "filter_definition", "include_key", "object_type", And "row_count" To "Unused Indexes" Section
+--	Date (MM/DD/YYYY): 12/11/2013
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
+
+
+--	Description: Major Revamp Of "Database Summary" And "Database Details" Sections
+--	Date (MM/DD/YYYY): 07/11/2014
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+--	Main Query: Create Procedure
+-----------------------------------------------------------------------------------------------------------------------------
+
+ALTER PROCEDURE dbo.usp_SQL_Server_System_Report
+
+	 @Output_Mode AS CHAR (1) = NULL
+	,@Unused_Index_Days AS INT = 7
+	,@Recipients AS VARCHAR (MAX) = NULL
+	,@Copy_Recipients AS VARCHAR (MAX) = NULL
+	,@Instance_Information AS BIT = 1
+	,@Instance_Settings AS BIT = 1
+	,@Drives_Space AS BIT = 1
+	,@Database_Summary AS BIT = 1
+	,@Database_Details AS BIT = 1
+	,@Last_Backup AS BIT = 1
+	,@Agent_Jobs AS BIT = 1
+	,@Fragmentation AS BIT = 1
+	,@Missing_Indexes AS BIT = 1
+	,@Unused_Indexes AS BIT = 1
+
+AS
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
+SET NOCOUNT ON
+SET ANSI_WARNINGS OFF
+SET ARITHABORT OFF
+SET ARITHIGNORE ON
+SET TEXTSIZE 2147483647
+
+
+DECLARE
+	 @Avoid_Truncation AS NVARCHAR (MAX)
+	,@Body AS NVARCHAR (MAX)
+	,@Database_ID AS INT
+	,@Database_Name_Loop AS NVARCHAR (500)
+	,@Date_24_Hours_Ago AS DATETIME
+	,@Date_Now AS DATETIME
+	,@Filter_Definition_String AS NVARCHAR (50)
+	,@Server_Memory_MB AS BIGINT
+	,@SQL_Server_Start_Time AS DATETIME
+	,@SQL_String AS NVARCHAR (MAX)
+	,@Subject AS NVARCHAR (255)
+	,@XML_String AS NVARCHAR (MAX)
+
+
+DECLARE @Fixed_Drives_Free_Space AS TABLE
 
 	(
-		 DRIVE_LETTER varchar (5) primary key clustered
-		,FREE_SPACE_MB bigint
+		 drive_letter VARCHAR (5) PRIMARY KEY CLUSTERED
+		,free_space_mb BIGINT
 	)
 
 
-set @aVOID_tRUNCATION = n''
-set @bODY = n''
-set @dATE_24_hOURS_aGO = getdate () - 1
-set @dATE_nOW = @dATE_24_hOURS_aGO + 1
-set @sUBJECT = n'sql sERVER sYSTEM rEPORT: ' + @@servername
-set @xml_sTRING = n''
+SET @Avoid_Truncation = N''
+SET @Body = N''
+SET @Date_24_Hours_Ago = GETDATE () - 1
+SET @Date_Now = @Date_24_Hours_Ago + 1
+SET @Subject = N'SQL Server System Report: ' + @@SERVERNAME
+SET @XML_String = N''
 
 
-if exists (select * from MASTER.SYS.ALL_COLUMNS ac where ac.[OBJECT_ID] = object_id (n'MASTER.SYS.DM_OS_SYS_INFO', n'v') and ac.NAME = n'SQLSERVER_START_TIME')
-begin
+IF EXISTS (SELECT * FROM master.sys.all_columns AC WHERE AC.[object_id] = OBJECT_ID (N'master.sys.dm_os_sys_info', N'V') AND AC.name = N'sqlserver_start_time')
+BEGIN
 
-	set @sql_sTRING =
+	SET @SQL_String =
 
-		n'
-			select
-				@sql_sERVER_sTART_tIME = dosi.SQLSERVER_START_TIME
-			from
-				MASTER.SYS.DM_OS_SYS_INFO dosi
+		N'
+			SELECT
+				@SQL_Server_Start_Time = DOSI.sqlserver_start_time
+			FROM
+				master.sys.dm_os_sys_info DOSI
 		 '
 
 
-	execute SYS.SP_EXECUTESQL
+	EXECUTE sys.sp_executesql
 
-		 @sql_sTRING
-		,n'
-			@sql_sERVER_sTART_tIME as datetime output
+		 @SQL_String
+		,N'
+			@SQL_Server_Start_Time AS DATETIME OUTPUT
 		  '
-		,@sql_sERVER_sTART_tIME output
+		,@SQL_Server_Start_Time OUTPUT
 
-end
-else begin
+END
+ELSE BEGIN
 
-	set @sql_sERVER_sTART_tIME =
+	SET @SQL_Server_Start_Time =
 
 		(
-			select
-				db.CREATE_DATE
-			from
-				MASTER.SYS.DATABASES db
-			where
-				db.NAME = n'TEMPDB'
+			SELECT
+				DB.create_date
+			FROM
+				master.sys.databases DB
+			WHERE
+				DB.name = N'tempdb'
 		)
 
-end
+END
 
 
-if datediff (second, @sql_sERVER_sTART_tIME, getdate ()) < (@uNUSED_iNDEX_dAYS * 86400)
-begin
+IF DATEDIFF (SECOND, @SQL_Server_Start_Time, GETDATE ()) < (@Unused_Index_Days * 86400)
+BEGIN
 
-	set @uNUSED_iNDEXES = 0
+	SET @Unused_Indexes = 0
 
-end
+END
 
 
-if exists (select * from MASTER.SYS.ALL_COLUMNS ac where ac.[OBJECT_ID] = object_id (n'MASTER.SYS.DM_OS_SYS_INFO', n'v') and ac.NAME = n'PHYSICAL_MEMORY_KB')
-begin
+IF EXISTS (SELECT * FROM master.sys.all_columns AC WHERE AC.[object_id] = OBJECT_ID (N'master.sys.dm_os_sys_info', N'V') AND AC.name = N'physical_memory_kb')
+BEGIN
 
-	set @sql_sTRING =
+	SET @SQL_String =
 
-		n'
-			select
-				@sERVER_mEMORY_mb = dosi.PHYSICAL_MEMORY_KB / 1024
-			from
-				MASTER.SYS.DM_OS_SYS_INFO dosi
+		N'
+			SELECT
+				@Server_Memory_MB = DOSI.physical_memory_kb / 1024
+			FROM
+				master.sys.dm_os_sys_info DOSI
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	set @sql_sTRING =
+	SET @SQL_String =
 
-		n'
-			select
-				@sERVER_mEMORY_mb = dosi.PHYSICAL_MEMORY_IN_BYTES / 1048576
-			from
-				MASTER.SYS.DM_OS_SYS_INFO dosi
+		N'
+			SELECT
+				@Server_Memory_MB = DOSI.physical_memory_in_bytes / 1048576
+			FROM
+				master.sys.dm_os_sys_info DOSI
 		 '
 
-end
+END
 
 
-execute SYS.SP_EXECUTESQL
+EXECUTE sys.sp_executesql
 
-	 @sql_sTRING
-	,n'
-		@sERVER_mEMORY_mb as bigint output
+	 @SQL_String
+	,N'
+		@Server_Memory_MB AS BIGINT OUTPUT
 	  '
-	,@sERVER_mEMORY_mb output
+	,@Server_Memory_MB OUTPUT
 
 
-if exists (select * from MASTER.SYS.ALL_COLUMNS ac where ac.[OBJECT_ID] = object_id (n'MASTER.SYS.INDEXES', n'v') and ac.NAME = n'FILTER_DEFINITION')
-begin
+IF EXISTS (SELECT * FROM master.sys.all_columns AC WHERE AC.[object_id] = OBJECT_ID (N'master.sys.indexes', N'V') AND AC.name = N'filter_definition')
+BEGIN
 
-	set @fILTER_dEFINITION_sTRING = n'isnull (i.FILTER_DEFINITION, n'''')'
+	SET @Filter_Definition_String = N'ISNULL (I.filter_definition, N'''')'
 
-end
-else begin
+END
+ELSE BEGIN
 
-	set @fILTER_dEFINITION_sTRING = n''''''
+	SET @Filter_Definition_String = N''''''
 
-end
-
-
------------------------------------------------------------------------------------------------------------------------------
---	eRROR tRAPPING: cHECK iF tEMP tABLE(S) aLREADY eXIST(S) aND dROP iF aPPLICABLE
------------------------------------------------------------------------------------------------------------------------------
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASES', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_DATABASES
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_ROW_COUNTS', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_ROW_COUNTS
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INSTANCE_INFORMATION', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_INSTANCE_INFORMATION
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INSTANCE_SETTINGS', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_INSTANCE_SETTINGS
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASE_SUMMARY', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_DATABASE_SUMMARY
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASE_DETAILS', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_DATABASE_DETAILS
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_LAST_BACKUP_SET', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_LAST_BACKUP_SET
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_AGENT_JOBS', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_AGENT_JOBS
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INDEX_FRAGMENTATION', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_INDEX_FRAGMENTATION
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_MISSING_INDEXES', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_MISSING_INDEXES
-
-end
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_UNUSED_INDEXES', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_UNUSED_INDEXES
-
-end
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	tEMP tABLE: dATABASE lIST
+--	Error Trapping: Check If Temp Table(s) Already Exist(s) And Drop If Applicable
 -----------------------------------------------------------------------------------------------------------------------------
 
-create table DBO.#TEMP_SSSR_DATABASES
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_databases', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_databases
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_row_counts', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_row_counts
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_instance_information', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_instance_information
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_instance_settings', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_instance_settings
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_database_summary', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_database_summary
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_database_details', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_database_details
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_last_backup_set', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_last_backup_set
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_agent_jobs', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_agent_jobs
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_index_fragmentation', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_index_fragmentation
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_missing_indexes', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_missing_indexes
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_unused_indexes', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_unused_indexes
+
+END
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+--	Temp Table: Database List
+-----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE dbo.#temp_sssr_databases
 
 	(
-		 DATABASE_NAME nvarchar (128) primary key clustered
-		,DATABASE_OWNER nvarchar (128)
-		,RECOVERY_MODEL nvarchar (60)
-		,[COMPATIBILITY_LEVEL] varchar (3)
-		,CREATE_DATE datetime
-		,COLLATION_NAME nvarchar (128)
+		 database_name NVARCHAR (128) PRIMARY KEY CLUSTERED
+		,database_owner NVARCHAR (128)
+		,recovery_model NVARCHAR (60)
+		,[compatibility_level] VARCHAR (3)
+		,create_date DATETIME
+		,collation_name NVARCHAR (128)
 	)
 
 
-insert into DBO.#TEMP_SSSR_DATABASES
+INSERT INTO dbo.#temp_sssr_databases
 
 	(
-		 DATABASE_NAME
-		,DATABASE_OWNER
-		,RECOVERY_MODEL
-		,[COMPATIBILITY_LEVEL]
-		,CREATE_DATE
-		,COLLATION_NAME
+		 database_name
+		,database_owner
+		,recovery_model
+		,[compatibility_level]
+		,create_date
+		,collation_name
 	)
 
-select
-	 db.NAME as DATABASE_NAME
-	,suser_sname (db.OWNER_SID) as DATABASE_OWNER
-	,db.RECOVERY_MODEL_DESC as RECOVERY_MODEL
-	,db.[COMPATIBILITY_LEVEL]
-	,db.CREATE_DATE
-	,db.COLLATION_NAME
-from
-	MASTER.SYS.DATABASES db
-where
-	db.[STATE] = 0
-	and db.IS_READ_ONLY = 0
-	and db.IS_IN_STANDBY = 0
-	and db.SOURCE_DATABASE_ID is null
+SELECT
+	 DB.name AS database_name
+	,SUSER_SNAME (DB.owner_sid) AS database_owner
+	,DB.recovery_model_desc AS recovery_model
+	,DB.[compatibility_level]
+	,DB.create_date
+	,DB.collation_name
+FROM
+	master.sys.databases DB
+WHERE
+	DB.[state] = 0
+	AND DB.is_read_only = 0
+	AND DB.is_in_standby = 0
+	AND DB.source_database_id IS NULL
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	tEMP tABLE: rOW cOUNTS pER tABLE pER dATABASE
+--	Temp Table: Row Counts Per Table Per Database
 -----------------------------------------------------------------------------------------------------------------------------
 
-if (@fRAGMENTATION = 1 or @mISSING_iNDEXES = 1 or @uNUSED_iNDEXES = 1)
-begin
+IF (@Fragmentation = 1 OR @Missing_Indexes = 1 OR @Unused_Indexes = 1)
+BEGIN
 
-	create table DBO.#TEMP_SSSR_ROW_COUNTS
+	CREATE TABLE dbo.#temp_sssr_row_counts
 
 		(
-			 DATABASE_ID int not null
-			,[OBJECT_ID] int not null
-			,[ROWS] bigint
+			 database_id INT NOT NULL
+			,[object_id] INT NOT NULL
+			,[rows] BIGINT
 		)
 
 
-	set @dATABASE_nAME_lOOP =
+	SET @Database_Name_Loop =
 
 		(
-			select top (1)
-				x.DATABASE_NAME
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-			order by
-				x.DATABASE_NAME
+			SELECT TOP (1)
+				X.database_name
+			FROM
+				dbo.#temp_sssr_databases X
+			ORDER BY
+				X.database_name
 		)
 
 
-	while @dATABASE_nAME_lOOP is not null
-	begin
+	WHILE @Database_Name_Loop IS NOT NULL
+	BEGIN
 
-		set @sql_sTRING = @aVOID_tRUNCATION +
+		SET @SQL_String = @Avoid_Truncation +
 
-			n'
-				use [' + @dATABASE_nAME_lOOP + n']
+			N'
+				USE [' + @Database_Name_Loop + N']
 
 
-				insert into DBO.#TEMP_SSSR_ROW_COUNTS
+				INSERT INTO dbo.#temp_sssr_row_counts
 
 					(
-						 DATABASE_ID
-						,[OBJECT_ID]
-						,[ROWS]
+						 database_id
+						,[object_id]
+						,[rows]
 					)
 
-				select
-					 db_id () as DATABASE_ID
-					,p.[OBJECT_ID]
-					,sum (p.[ROWS]) as TOTAL_ROWS
-				from
-					SYS.PARTITIONS p
-				where
-					p.INDEX_ID in (0, 1)
-				group by
-					p.[OBJECT_ID]
+				SELECT
+					 DB_ID () AS database_id
+					,P.[object_id]
+					,SUM (P.[rows]) AS total_rows
+				FROM
+					sys.partitions P
+				WHERE
+					P.index_id IN (0, 1)
+				GROUP BY
+					P.[object_id]
 			 '
 
 
-		execute (@sql_sTRING)
+		EXECUTE (@SQL_String)
 
 
-		set @dATABASE_nAME_lOOP =
+		SET @Database_Name_Loop =
 
 			(
-				select top (1)
-					x.DATABASE_NAME
-				from
-					DBO.#TEMP_SSSR_DATABASES x
-				where
-					x.DATABASE_NAME > @dATABASE_nAME_lOOP
-				order by
-					x.DATABASE_NAME
+				SELECT TOP (1)
+					X.database_name
+				FROM
+					dbo.#temp_sssr_databases X
+				WHERE
+					X.database_name > @Database_Name_Loop
+				ORDER BY
+					X.database_name
 			)
 
-	end
+	END
 
 
-	alter table DBO.#TEMP_SSSR_ROW_COUNTS add primary key clustered (DATABASE_ID, [OBJECT_ID])
+	ALTER TABLE dbo.#temp_sssr_row_counts ADD PRIMARY KEY CLUSTERED (database_id, [object_id])
 
-end
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY i: iNSTANCE iNFORMATION
+--	Main Query I: Instance Information
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @iNSTANCE_iNFORMATION = 0
-begin
+IF @Instance_Information = 0
+BEGIN
 
-	goto sKIP_iNSTANCE_iNFORMATION
+	GOTO Skip_Instance_Information
 
-end
+END
 
 
-select
-	 serverproperty (n'cOMPUTERnAMEpHYSICALnETbios') as NETBIOS_NAME
-	,@@servername as SERVER_NAME
-	,isnull (serverproperty (n'iNSTANCEnAME'), n'dEFAULT iNSTANCE') as INSTANCE_NAME
-	,replace (replace (CJpnl.PRODUCT_NAME, n' (' + CJpnl.[LEVEL] + n')', n''), n'mICROSOFT ', n'') as PRODUCT_NAME
-	,replace (convert (nvarchar (128), serverproperty (n'eDITION')), n' eDITION', n'') as EDITION
-	,serverproperty (n'pRODUCTvERSION') as [VERSION]
-	,CJpnl.[LEVEL]
-	,(case serverproperty (n'iScLUSTERED')
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_CLUSTERED
-	,convert (nvarchar (19), @sql_sERVER_sTART_tIME, 120) as ONLINE_SINCE
-	,(case
-		when OAdsr.TOTAL_DAYS = '0' then '_'
-		else OAdsr.TOTAL_DAYS
-		end) + ' dAY(S) ' + (case
-								when OAdsr.SECONDS_REMAINING = 0 then '__:__:__'
-								when OAdsr.SECONDS_REMAINING < 60 then '__:__:' + right (OAdsr.TOTAL_SECONDS, 2)
-								when OAdsr.SECONDS_REMAINING < 3600 then '__:' + right (OAdsr.TOTAL_SECONDS, 5)
-								else OAdsr.TOTAL_SECONDS
-								end) as UPTIME
-	,serverproperty (n'pROCESSid') as PROCESS_ID
-	,reverse (substring (reverse (convert (varchar (23), convert (money, @@connections), 1)), 4, 23)) as CONNECTIONS
-	,reverse (substring (reverse (convert (varchar (23), convert (money, @@total_read), 1)), 4, 23)) as READS
-	,reverse (substring (reverse (convert (varchar (23), convert (money, @@total_write), 1)), 4, 23)) as WRITES
-	,reverse (substring (reverse (convert (varchar (23), convert (money, dosi.CPU_COUNT), 1)), 4, 23)) as LOGICAL_CPU_COUNT
-	,reverse (substring (reverse (convert (varchar (23), convert (money, dosi.CPU_COUNT / dosi.HYPERTHREAD_RATIO), 1)), 4, 23)) as PHYSICAL_CPU_COUNT
-	,reverse (substring (reverse (convert (varchar (23), convert (money, @sERVER_mEMORY_mb), 1)), 4, 23)) as SERVER_MEMORY_MB
-	,replace (replace (replace (replace (replace (right (@@version, charindex (reverse (n' ON wINDOWS '), reverse (@@version)) - 1), n'sERVICE pACK ', n'sp'), n'(', n''), n')', n''), n'<', n'('), n'>', n')') as WINDOWS_VERSION
-into
-	DBO.#TEMP_SSSR_INSTANCE_INFORMATION
-from
-	MASTER.SYS.DM_OS_SYS_INFO dosi
-	cross join
-
-		(
-			select
-				 left (@@version, charindex (n' - ', @@version) - 1) as PRODUCT_NAME
-				,convert (nvarchar (128), serverproperty (n'pRODUCTlEVEL')) as [LEVEL]
-		) CJpnl
-
-	cross join
+SELECT
+	 SERVERPROPERTY (N'ComputerNamePhysicalNetBIOS') AS netbios_name
+	,@@SERVERNAME AS server_name
+	,ISNULL (SERVERPROPERTY (N'InstanceName'), N'Default Instance') AS instance_name
+	,REPLACE (REPLACE (cjPNL.product_name, N' (' + cjPNL.[level] + N')', N''), N'Microsoft ', N'') AS product_name
+	,REPLACE (CONVERT (NVARCHAR (128), SERVERPROPERTY (N'Edition')), N' Edition', N'') AS edition
+	,SERVERPROPERTY (N'ProductVersion') AS [version]
+	,cjPNL.[level]
+	,(CASE SERVERPROPERTY (N'IsClustered')
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_clustered
+	,CONVERT (NVARCHAR (19), @SQL_Server_Start_Time, 120) AS online_since
+	,(CASE
+		WHEN oaDSR.total_days = '0' THEN '_'
+		ELSE oaDSR.total_days
+		END) + ' Day(s) ' + (CASE
+								WHEN oaDSR.seconds_remaining = 0 THEN '__:__:__'
+								WHEN oaDSR.seconds_remaining < 60 THEN '__:__:' + RIGHT (oaDSR.total_seconds, 2)
+								WHEN oaDSR.seconds_remaining < 3600 THEN '__:' + RIGHT (oaDSR.total_seconds, 5)
+								ELSE oaDSR.total_seconds
+								END) AS uptime
+	,SERVERPROPERTY (N'ProcessID') AS process_id
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, @@CONNECTIONS), 1)), 4, 23)) AS connections
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, @@TOTAL_READ), 1)), 4, 23)) AS reads
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, @@TOTAL_WRITE), 1)), 4, 23)) AS writes
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DOSI.cpu_count), 1)), 4, 23)) AS logical_cpu_count
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DOSI.cpu_count / DOSI.hyperthread_ratio), 1)), 4, 23)) AS physical_cpu_count
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, @Server_Memory_MB), 1)), 4, 23)) AS server_memory_mb
+	,REPLACE (REPLACE (REPLACE (REPLACE (REPLACE (RIGHT (@@VERSION, CHARINDEX (REVERSE (N' on Windows '), REVERSE (@@VERSION)) - 1), N'Service Pack ', N'SP'), N'(', N''), N')', N''), N'<', N'('), N'>', N')') AS windows_version
+INTO
+	dbo.#temp_sssr_instance_information
+FROM
+	master.sys.dm_os_sys_info DOSI
+	CROSS JOIN
 
 		(
-			select
-				datediff (second, @sql_sERVER_sTART_tIME, getdate ()) as UPTIME_SECONDS
-		) SQuts
+			SELECT
+				 LEFT (@@VERSION, CHARINDEX (N' - ', @@VERSION) - 1) AS product_name
+				,CONVERT (NVARCHAR (128), SERVERPROPERTY (N'ProductLevel')) AS [level]
+		) cjPNL
 
-	outer apply
+	CROSS JOIN
 
 		(
-			select
-				 convert (varchar (5), SQuts.UPTIME_SECONDS / 86400) as TOTAL_DAYS
-				,convert (char (8), dateadd (second, SQuts.UPTIME_SECONDS % 86400, 0), 108) as TOTAL_SECONDS
-				,SQuts.UPTIME_SECONDS % 86400 as SECONDS_REMAINING
-		) OAdsr
+			SELECT
+				DATEDIFF (SECOND, @SQL_Server_Start_Time, GETDATE ()) AS uptime_seconds
+		) sqUTS
+
+	OUTER APPLY
+
+		(
+			SELECT
+				 CONVERT (VARCHAR (5), sqUTS.uptime_seconds / 86400) AS total_days
+				,CONVERT (CHAR (8), DATEADD (SECOND, sqUTS.uptime_seconds % 86400, 0), 108) AS total_seconds
+				,sqUTS.uptime_seconds % 86400 AS seconds_remaining
+		) oaDSR
 
 
-if @@rowcount = 0
-begin
+IF @@ROWCOUNT = 0
+BEGIN
 
-	goto sKIP_iNSTANCE_iNFORMATION
+	GOTO Skip_Instance_Information
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.NETBIOS_NAME as 'TD'
-					,'',x.SERVER_NAME as 'TD'
-					,'',x.INSTANCE_NAME as 'TD'
-					,'',x.PRODUCT_NAME as 'TD'
-					,'',x.EDITION as 'TD'
-					,'',x.[VERSION] as 'TD'
-					,'',x.[LEVEL] as 'TD'
-					,'',x.IS_CLUSTERED as 'TD'
-					,'',x.ONLINE_SINCE as 'TD'
-					,'',x.UPTIME as 'TD'
-					,'',x.PROCESS_ID as 'TD'
-					,'','RIGHT_ALIGN' + x.CONNECTIONS as 'TD'
-					,'','RIGHT_ALIGN' + x.READS as 'TD'
-					,'','RIGHT_ALIGN' + x.WRITES as 'TD'
-					,'','RIGHT_ALIGN' + x.LOGICAL_CPU_COUNT as 'TD'
-					,'','RIGHT_ALIGN' + x.PHYSICAL_CPU_COUNT as 'TD'
-					,'','RIGHT_ALIGN' + x.SERVER_MEMORY_MB as 'TD'
-					,'',x.WINDOWS_VERSION as 'TD'
-				from
-					DBO.#TEMP_SSSR_INSTANCE_INFORMATION x
-				for
-					xml path ('TR')
-			)
-		)
-
-
-	set @bODY = @bODY +
-
-		n'
-			<BR>
-			<H3><CENTER>iNSTANCE iNFORMATION</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>nETbios nAME</TH>
-						<TH NOWRAP>sERVER nAME</TH>
-						<TH NOWRAP>iNSTANCE nAME</TH>
-						<TH NOWRAP>pRODUCT nAME</TH>
-						<TH NOWRAP>eDITION</TH>
-						<TH NOWRAP>vERSION</TH>
-						<TH NOWRAP>lEVEL</TH>
-						<TH NOWRAP>cLUSTERED</TH>
-						<TH NOWRAP>oNLINE sINCE</TH>
-						<TH NOWRAP>uPTIME</TH>
-						<TH NOWRAP>pROCESS id</TH>
-						<TH NOWRAP>cONNECTIONS</TH>
-						<TH NOWRAP>rEADS</TH>
-						<TH NOWRAP>wRITES</TH>
-						<TH NOWRAP>lOGICAL cpu cOUNT</TH>
-						<TH NOWRAP>pHYSICAL cpu cOUNT</TH>
-						<TH NOWRAP>sERVER mEMORY (mb)</TH>
-						<TH NOWRAP>wINDOWS vERSION</TH>
-					</TR>
-		 '
-
-
-	set @bODY = @bODY + @xml_sTRING +
-
-		n'
-				</TABLE>
-			</CENTER>
-		 '
-
-end
-else begin
-
-	select
-		 x.NETBIOS_NAME
-		,x.SERVER_NAME
-		,x.INSTANCE_NAME
-		,x.PRODUCT_NAME
-		,x.EDITION
-		,x.[VERSION]
-		,x.[LEVEL]
-		,x.IS_CLUSTERED as [CLUSTERED]
-		,x.ONLINE_SINCE
-		,x.UPTIME
-		,x.PROCESS_ID
-		,x.CONNECTIONS
-		,x.READS
-		,x.WRITES
-		,x.LOGICAL_CPU_COUNT
-		,x.PHYSICAL_CPU_COUNT
-		,x.SERVER_MEMORY_MB
-		,x.WINDOWS_VERSION
-	from
-		DBO.#TEMP_SSSR_INSTANCE_INFORMATION x
-
-end
-
-
-sKIP_iNSTANCE_iNFORMATION:
-
-
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INSTANCE_INFORMATION', n'u') is not null
-begin
-
-	drop table DBO.#TEMP_SSSR_INSTANCE_INFORMATION
-
-end
-
-
------------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY ii: iNSTANCE sETTINGS
------------------------------------------------------------------------------------------------------------------------------
-
-if @iNSTANCE_sETTINGS = 0
-begin
-
-	goto sKIP_iNSTANCE_sETTINGS
-
-end
-
-
-select
-	 (case serverproperty (n'iSiNTEGRATEDsECURITYoNLY')
-		when 0 then 'mIXED mODE'
-		when 1 then 'wINDOWS'
-		else 'n/a'
-		end) as [AUTHENTICATION]
-	,sl.ALIAS + n': ' + sl.NAME as [LANGUAGE]
-	,sl.LCID as LOCALE_ID
-	,serverproperty (n'cOLLATION') as COLLATION
-	,sl.[DATEFORMAT] as DATE_FORMAT
-	,(case sl.[DATEFIRST]
-		when 1 then 'mONDAY'
-		when 2 then 'tUESDAY'
-		when 3 then 'wEDNESDAY'
-		when 4 then 'tHURSDAY'
-		when 5 then 'fRIDAY'
-		when 6 then 'sATURDAY'
-		when 7 then 'sUNDAY'
-		else 'n/a'
-		end) as FIRST_DAY_OF_WEEK
-	,(case serverproperty (n'iSfULLtEXTiNSTALLED')
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_FULL_TEXT_INSTALLED
-	,(case CJcfg.IS_SHOW_ADVANCED_OPTIONS_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_SHOW_ADVANCED_OPTIONS_ENABLED
-	,(case CJcfg.IS_CLR_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_CLR_ENABLED
-	,(case CJcfg.IS_COMPRESSED_BACKUPS_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_COMPRESSED_BACKUPS_ENABLED
-	,(case CJcfg.IS_SCAN_FOR_STARTUP_PROCS_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_SCAN_FOR_STARTUP_PROCS_ENABLED
-	,(case CJcfg.IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED
-	,(case CJcfg.IS_XP_CMDSHELL_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_XP_CMDSHELL_ENABLED
-	,(case CJcfg.IS_SQL_MAIL_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_SQL_MAIL_ENABLED
-	,(case CJcfg.IS_DATABASE_MAIL_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_DATABASE_MAIL_ENABLED
-	,(case CJcfg.IS_DEFAULT_TRACE_ENABLED
-		when 0 then 'nO'
-		when 1 then 'yES'
-		else 'n/a'
-		end) as IS_DEFAULT_TRACE_ENABLED
-	,convert (varchar (3), (case
-								when CJcfg.FILL_FACTOR_PERCENTAGE = 0 then 100
-								else CJcfg.FILL_FACTOR_PERCENTAGE
-								end)) as FILL_FACTOR_PERCENTAGE
-	,reverse (substring (reverse (convert (varchar (23), convert (money, CJcfg.MIN_SERVER_MEMORY_MB), 1)), 4, 23)) as MIN_SERVER_MEMORY_MB
-	,reverse (substring (reverse (convert (varchar (23), convert (money, CJcfg.MAX_SERVER_MEMORY_MB), 1)), 4, 23)) as MAX_SERVER_MEMORY_MB
-into
-	#TEMP_SSSR_INSTANCE_SETTINGS
-from
-	MASTER.SYS.SYSLANGUAGES sl
-	cross join
-
-		(
-			select
-				 max (case
-						when cfg.CONFIGURATION_ID = 518 then cfg.VALUE
-						end) as IS_SHOW_ADVANCED_OPTIONS_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 1562 then cfg.VALUE
-						end) as IS_CLR_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 1579 then cfg.VALUE
-						end) as IS_COMPRESSED_BACKUPS_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 1547 then cfg.VALUE
-						end) as IS_SCAN_FOR_STARTUP_PROCS_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 1581 then cfg.VALUE
-						end) as IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 16390 then cfg.VALUE
-						end) as IS_XP_CMDSHELL_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 16385 then cfg.VALUE
-						end) as IS_SQL_MAIL_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 16386 then cfg.VALUE
-						end) as IS_DATABASE_MAIL_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 1568 then cfg.VALUE
-						end) as IS_DEFAULT_TRACE_ENABLED
-				,max (case
-						when cfg.CONFIGURATION_ID = 109 then cfg.VALUE
-						end) as FILL_FACTOR_PERCENTAGE
-				,max (case
-						when cfg.CONFIGURATION_ID = 1543 then cfg.VALUE
-						end) as MIN_SERVER_MEMORY_MB
-				,max (case
-						when cfg.CONFIGURATION_ID = 1544 then cfg.VALUE
-						end) as MAX_SERVER_MEMORY_MB
-			from
-				MASTER.SYS.CONFIGURATIONS cfg
-			where
-				cfg.CONFIGURATION_ID in (109, 518, 1543, 1544, 1547, 1562, 1568, 1579, 1581, 16385, 16386, 16390)
-		) CJcfg
-
-where
-	sl.LCID = serverproperty (n'lcid')
-
-
-if @@rowcount = 0
-begin
-
-	goto sKIP_iNSTANCE_sETTINGS
-
-end
-
-
-if @oUTPUT_mODE = 'e'
-begin
-
-	set @xml_sTRING =
-
-		convert (nvarchar (max),
-			(
-				select
-					 '',x.[AUTHENTICATION] as 'TD'
-					,'',x.[LANGUAGE] as 'TD'
-					,'',x.LOCALE_ID as 'TD'
-					,'',x.COLLATION as 'TD'
-					,'',x.DATE_FORMAT as 'TD'
-					,'',x.FIRST_DAY_OF_WEEK as 'TD'
-					,'',x.IS_FULL_TEXT_INSTALLED as 'TD'
-					,'',x.IS_SHOW_ADVANCED_OPTIONS_ENABLED as 'TD'
-					,'',x.IS_CLR_ENABLED as 'TD'
-					,'',x.IS_COMPRESSED_BACKUPS_ENABLED as 'TD'
-					,'',x.IS_SCAN_FOR_STARTUP_PROCS_ENABLED as 'TD'
-					,'',x.IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED as 'TD'
-					,'',x.IS_XP_CMDSHELL_ENABLED as 'TD'
-					,'',x.IS_SQL_MAIL_ENABLED as 'TD'
-					,'',x.IS_DATABASE_MAIL_ENABLED as 'TD'
-					,'',x.IS_DEFAULT_TRACE_ENABLED as 'TD'
-					,'','RIGHT_ALIGN' + x.FILL_FACTOR_PERCENTAGE as 'TD'
-					,'','RIGHT_ALIGN' + x.MIN_SERVER_MEMORY_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.MAX_SERVER_MEMORY_MB as 'TD'
-				from
-					DBO.#TEMP_SSSR_INSTANCE_SETTINGS x
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.netbios_name AS 'td'
+					,'',X.server_name AS 'td'
+					,'',X.instance_name AS 'td'
+					,'',X.product_name AS 'td'
+					,'',X.edition AS 'td'
+					,'',X.[version] AS 'td'
+					,'',X.[level] AS 'td'
+					,'',X.is_clustered AS 'td'
+					,'',X.online_since AS 'td'
+					,'',X.uptime AS 'td'
+					,'',X.process_id AS 'td'
+					,'','right_align' + X.connections AS 'td'
+					,'','right_align' + X.reads AS 'td'
+					,'','right_align' + X.writes AS 'td'
+					,'','right_align' + X.logical_cpu_count AS 'td'
+					,'','right_align' + X.physical_cpu_count AS 'td'
+					,'','right_align' + X.server_memory_mb AS 'td'
+					,'',X.windows_version AS 'td'
+				FROM
+					dbo.#temp_sssr_instance_information X
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>iNSTANCE sETTINGS</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>aUTHENTICATION</TH>
-						<TH NOWRAP>lANGUAGE</TH>
-						<TH NOWRAP>lOCALE id</TH>
-						<TH NOWRAP>cOLLATION</TH>
-						<TH NOWRAP>dATE fORMAT</TH>
-						<TH NOWRAP>fIRST dAY oF wEEK</TH>
-						<TH NOWRAP>fULL-tEXT iNSTALLED</TH>
-						<TH NOWRAP>aDVANCED oPTIONS eNABLED</TH>
-						<TH NOWRAP>clr eNABLED</TH>
-						<TH NOWRAP>cOMPRESS bACKUPS</TH>
-						<TH NOWRAP>sCAN fOR sTARTUP pROCS</TH>
-						<TH NOWRAP>oPTIMIZE fOR aD hOCS</TH>
-						<TH NOWRAP>cOMMAND sHELL eNABLED</TH>
-						<TH NOWRAP>sql mAIL eNABLED</TH>
-						<TH NOWRAP>dATABASE mAIL eNABLED</TH>
-						<TH NOWRAP>dEFAULT tRACE eNABLED</TH>
-						<TH NOWRAP>fILL fACTOR %</TH>
-						<TH NOWRAP>mINIMUM mEMORY (mb)</TH>
-						<TH NOWRAP>mAXIMUM mEMORY (mb)</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Instance Information</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>NetBIOS Name</th>
+						<th nowrap>Server Name</th>
+						<th nowrap>Instance Name</th>
+						<th nowrap>Product Name</th>
+						<th nowrap>Edition</th>
+						<th nowrap>Version</th>
+						<th nowrap>Level</th>
+						<th nowrap>Clustered</th>
+						<th nowrap>Online Since</th>
+						<th nowrap>Uptime</th>
+						<th nowrap>Process ID</th>
+						<th nowrap>Connections</th>
+						<th nowrap>Reads</th>
+						<th nowrap>Writes</th>
+						<th nowrap>Logical CPU Count</th>
+						<th nowrap>Physical CPU Count</th>
+						<th nowrap>Server Memory (MB)</th>
+						<th nowrap>Windows Version</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.[AUTHENTICATION]
-		,x.[LANGUAGE]
-		,x.LOCALE_ID
-		,x.COLLATION
-		,x.DATE_FORMAT
-		,x.FIRST_DAY_OF_WEEK
-		,x.IS_FULL_TEXT_INSTALLED as FULL_TEXT_INSTALLED
-		,x.IS_SHOW_ADVANCED_OPTIONS_ENABLED as ADVANCED_OPTIONS_ENABLED
-		,x.IS_CLR_ENABLED as CLR_ENABLED
-		,x.IS_COMPRESSED_BACKUPS_ENABLED as COMPRESS_BACKUPS
-		,x.IS_SCAN_FOR_STARTUP_PROCS_ENABLED as SCAN_FOR_STARTUP_PROCS
-		,x.IS_OPTIMIZE_FOR_AD_HOC_WORKLOADS_ENABLED as OPTIMIZE_FOR_AD_HOCS
-		,x.IS_XP_CMDSHELL_ENABLED as COMMAND_SHELL_ENABLED
-		,x.IS_SQL_MAIL_ENABLED as SQL_MAIL_ENABLED
-		,x.IS_DATABASE_MAIL_ENABLED as DATABASE_MAIL_ENABLED
-		,x.IS_DEFAULT_TRACE_ENABLED as DEFAULT_TRACE_ENABLED
-		,x.FILL_FACTOR_PERCENTAGE as FILL_FACTOR_PCT
-		,x.MIN_SERVER_MEMORY_MB as MINIMUM_MEMORY_MB
-		,x.MAX_SERVER_MEMORY_MB as MAXIMUM_MEMORY_MB
-	from
-		DBO.#TEMP_SSSR_INSTANCE_SETTINGS x
+	SELECT
+		 X.netbios_name
+		,X.server_name
+		,X.instance_name
+		,X.product_name
+		,X.edition
+		,X.[version]
+		,X.[level]
+		,X.is_clustered AS [clustered]
+		,X.online_since
+		,X.uptime
+		,X.process_id
+		,X.connections
+		,X.reads
+		,X.writes
+		,X.logical_cpu_count
+		,X.physical_cpu_count
+		,X.server_memory_mb
+		,X.windows_version
+	FROM
+		dbo.#temp_sssr_instance_information X
 
-end
-
-
-sKIP_iNSTANCE_sETTINGS:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INSTANCE_SETTINGS', n'u') is not null
-begin
+Skip_Instance_Information:
 
-	drop table DBO.#TEMP_SSSR_INSTANCE_SETTINGS
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_instance_information', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_instance_information
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY iii: fIXED dRIVES fREE sPACE
+--	Main Query II: Instance Settings
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @dRIVES_sPACE = 0
-begin
+IF @Instance_Settings = 0
+BEGIN
 
-	goto sKIP_fIXED_dRIVES_fREE_sPACE
+	GOTO Skip_Instance_Settings
 
-end
-
-
-insert into @fIXED_dRIVES_fREE_sPACE
-
-	(
-		 DRIVE_LETTER
-		,FREE_SPACE_MB
-	)
-
-execute MASTER.DBO.XP_FIXEDDRIVES
+END
 
 
-if @@rowcount = 0
-begin
+SELECT
+	 (CASE SERVERPROPERTY (N'IsIntegratedSecurityOnly')
+		WHEN 0 THEN 'Mixed Mode'
+		WHEN 1 THEN 'Windows'
+		ELSE 'N/A'
+		END) AS [authentication]
+	,SL.alias + N': ' + SL.name AS [language]
+	,SL.lcid AS locale_id
+	,SERVERPROPERTY (N'Collation') AS collation
+	,SL.[dateformat] AS date_format
+	,(CASE SL.[datefirst]
+		WHEN 1 THEN 'Monday'
+		WHEN 2 THEN 'Tuesday'
+		WHEN 3 THEN 'Wednesday'
+		WHEN 4 THEN 'Thursday'
+		WHEN 5 THEN 'Friday'
+		WHEN 6 THEN 'Saturday'
+		WHEN 7 THEN 'Sunday'
+		ELSE 'N/A'
+		END) AS first_day_of_week
+	,(CASE SERVERPROPERTY (N'IsFullTextInstalled')
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_full_text_installed
+	,(CASE cjCFG.is_show_advanced_options_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_show_advanced_options_enabled
+	,(CASE cjCFG.is_clr_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_clr_enabled
+	,(CASE cjCFG.is_compressed_backups_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_compressed_backups_enabled
+	,(CASE cjCFG.is_scan_for_startup_procs_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_scan_for_startup_procs_enabled
+	,(CASE cjCFG.is_optimize_for_ad_hoc_workloads_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_optimize_for_ad_hoc_workloads_enabled
+	,(CASE cjCFG.is_xp_cmdshell_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_xp_cmdshell_enabled
+	,(CASE cjCFG.is_sql_mail_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_sql_mail_enabled
+	,(CASE cjCFG.is_database_mail_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_database_mail_enabled
+	,(CASE cjCFG.is_default_trace_enabled
+		WHEN 0 THEN 'No'
+		WHEN 1 THEN 'Yes'
+		ELSE 'N/A'
+		END) AS is_default_trace_enabled
+	,CONVERT (VARCHAR (3), (CASE
+								WHEN cjCFG.fill_factor_percentage = 0 THEN 100
+								ELSE cjCFG.fill_factor_percentage
+								END)) AS fill_factor_percentage
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, cjCFG.min_server_memory_mb), 1)), 4, 23)) AS min_server_memory_mb
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, cjCFG.max_server_memory_mb), 1)), 4, 23)) AS max_server_memory_mb
+INTO
+	#temp_sssr_instance_settings
+FROM
+	master.sys.syslanguages SL
+	CROSS JOIN
 
-	goto sKIP_fIXED_dRIVES_fREE_sPACE
+		(
+			SELECT
+				 MAX (CASE
+						WHEN CFG.configuration_id = 518 THEN CFG.value
+						END) AS is_show_advanced_options_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1562 THEN CFG.value
+						END) AS is_clr_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1579 THEN CFG.value
+						END) AS is_compressed_backups_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1547 THEN CFG.value
+						END) AS is_scan_for_startup_procs_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1581 THEN CFG.value
+						END) AS is_optimize_for_ad_hoc_workloads_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 16390 THEN CFG.value
+						END) AS is_xp_cmdshell_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 16385 THEN CFG.value
+						END) AS is_sql_mail_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 16386 THEN CFG.value
+						END) AS is_database_mail_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1568 THEN CFG.value
+						END) AS is_default_trace_enabled
+				,MAX (CASE
+						WHEN CFG.configuration_id = 109 THEN CFG.value
+						END) AS fill_factor_percentage
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1543 THEN CFG.value
+						END) AS min_server_memory_mb
+				,MAX (CASE
+						WHEN CFG.configuration_id = 1544 THEN CFG.value
+						END) AS max_server_memory_mb
+			FROM
+				master.sys.configurations CFG
+			WHERE
+				CFG.configuration_id IN (109, 518, 1543, 1544, 1547, 1562, 1568, 1579, 1581, 16385, 16386, 16390)
+		) cjCFG
 
-end
+WHERE
+	SL.lcid = SERVERPROPERTY (N'LCID')
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @@ROWCOUNT = 0
+BEGIN
 
-	set @xml_sTRING =
+	GOTO Skip_Instance_Settings
 
-		convert (nvarchar (max),
+END
+
+
+IF @Output_Mode = 'E'
+BEGIN
+
+	SET @XML_String =
+
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.DRIVE_LETTER + ':' as 'TD'
-					,'','RIGHT_ALIGN' + reverse (substring (reverse (convert (varchar (23), convert (money, x.FREE_SPACE_MB), 1)), 4, 23)) as 'TD'
-				from
-					@fIXED_dRIVES_fREE_sPACE x
-				order by
-					x.DRIVE_LETTER
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.[authentication] AS 'td'
+					,'',X.[language] AS 'td'
+					,'',X.locale_id AS 'td'
+					,'',X.collation AS 'td'
+					,'',X.date_format AS 'td'
+					,'',X.first_day_of_week AS 'td'
+					,'',X.is_full_text_installed AS 'td'
+					,'',X.is_show_advanced_options_enabled AS 'td'
+					,'',X.is_clr_enabled AS 'td'
+					,'',X.is_compressed_backups_enabled AS 'td'
+					,'',X.is_scan_for_startup_procs_enabled AS 'td'
+					,'',X.is_optimize_for_ad_hoc_workloads_enabled AS 'td'
+					,'',X.is_xp_cmdshell_enabled AS 'td'
+					,'',X.is_sql_mail_enabled AS 'td'
+					,'',X.is_database_mail_enabled AS 'td'
+					,'',X.is_default_trace_enabled AS 'td'
+					,'','right_align' + X.fill_factor_percentage AS 'td'
+					,'','right_align' + X.min_server_memory_mb AS 'td'
+					,'','right_align' + X.max_server_memory_mb AS 'td'
+				FROM
+					dbo.#temp_sssr_instance_settings X
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>fIXED dRIVES fREE sPACE</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>dRIVE lETTER</TH>
-						<TH NOWRAP>fREE sPACE (mb)</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Instance Settings</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Authentication</th>
+						<th nowrap>Language</th>
+						<th nowrap>Locale ID</th>
+						<th nowrap>Collation</th>
+						<th nowrap>Date Format</th>
+						<th nowrap>First Day Of Week</th>
+						<th nowrap>Full-Text Installed</th>
+						<th nowrap>Advanced Options Enabled</th>
+						<th nowrap>CLR Enabled</th>
+						<th nowrap>Compress Backups</th>
+						<th nowrap>Scan For Startup Procs</th>
+						<th nowrap>Optimize For Ad Hocs</th>
+						<th nowrap>Command Shell Enabled</th>
+						<th nowrap>SQL Mail Enabled</th>
+						<th nowrap>Database Mail Enabled</th>
+						<th nowrap>Default Trace Enabled</th>
+						<th nowrap>Fill Factor %</th>
+						<th nowrap>Minimum Memory (MB)</th>
+						<th nowrap>Maximum Memory (MB)</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.DRIVE_LETTER + ':' as DRIVE_LETTER
-		,reverse (substring (reverse (convert (varchar (23), convert (money, x.FREE_SPACE_MB), 1)), 4, 23)) as FREE_SPACE_MB
-	from
-		@fIXED_dRIVES_fREE_sPACE x
-	order by
-		x.DRIVE_LETTER
+	SELECT
+		 X.[authentication]
+		,X.[language]
+		,X.locale_id
+		,X.collation
+		,X.date_format
+		,X.first_day_of_week
+		,X.is_full_text_installed AS full_text_installed
+		,X.is_show_advanced_options_enabled AS advanced_options_enabled
+		,X.is_clr_enabled AS clr_enabled
+		,X.is_compressed_backups_enabled AS compress_backups
+		,X.is_scan_for_startup_procs_enabled AS scan_for_startup_procs
+		,X.is_optimize_for_ad_hoc_workloads_enabled AS optimize_for_ad_hocs
+		,X.is_xp_cmdshell_enabled AS command_shell_enabled
+		,X.is_sql_mail_enabled AS sql_mail_enabled
+		,X.is_database_mail_enabled AS database_mail_enabled
+		,X.is_default_trace_enabled AS default_trace_enabled
+		,X.fill_factor_percentage AS fill_factor_pct
+		,X.min_server_memory_mb AS minimum_memory_mb
+		,X.max_server_memory_mb AS maximum_memory_mb
+	FROM
+		dbo.#temp_sssr_instance_settings X
 
-end
+END
 
 
-sKIP_fIXED_dRIVES_fREE_sPACE:
+Skip_Instance_Settings:
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_instance_settings', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_instance_settings
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY iv: dATABASE sUMMARY
+--	Main Query III: Fixed Drives Free Space
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @dATABASE_sUMMARY = 0
-begin
+IF @Drives_Space = 0
+BEGIN
 
-	goto sKIP_dATABASE_sUMMARY
+	GOTO Skip_Fixed_Drives_Free_Space
 
-end
+END
 
 
-create table DBO.#TEMP_SSSR_DATABASE_SUMMARY
+INSERT INTO @Fixed_Drives_Free_Space
 
 	(
-		 DATABASE_NAME nvarchar (128)
-		,DATABASE_OWNER nvarchar (128)
-		,RECOVERY_MODEL nvarchar (60)
-		,[COMPATIBILITY_LEVEL] varchar (3)
-		,CREATE_DATE nvarchar (19)
-		,COLLATION_NAME nvarchar (128)
-		,IS_CASE_SENSITIVE varchar (3)
-		,TOTAL_SIZE_MB varchar (23)
-		,UNALLOCATED_MB varchar (23)
-		,RESERVED_MB varchar (23)
-		,DATA_MB varchar (23)
-		,INDEX_MB varchar (23)
-		,UNUSED_MB varchar (23)
-		,CACHED_MB varchar (23)
+		 drive_letter
+		,free_space_mb
+	)
+
+EXECUTE master.dbo.xp_fixeddrives
+
+
+IF @@ROWCOUNT = 0
+BEGIN
+
+	GOTO Skip_Fixed_Drives_Free_Space
+
+END
+
+
+IF @Output_Mode = 'E'
+BEGIN
+
+	SET @XML_String =
+
+		CONVERT (NVARCHAR (MAX),
+			(
+				SELECT
+					 '',X.drive_letter + ':' AS 'td'
+					,'','right_align' + REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, X.free_space_mb), 1)), 4, 23)) AS 'td'
+				FROM
+					@Fixed_Drives_Free_Space X
+				ORDER BY
+					X.drive_letter
+				FOR
+					XML PATH ('tr')
+			)
+		)
+
+
+	SET @Body = @Body +
+
+		N'
+			<br>
+			<h3><center>Fixed Drives Free Space</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Drive Letter</th>
+						<th nowrap>Free Space (MB)</th>
+					</tr>
+		 '
+
+
+	SET @Body = @Body + @XML_String +
+
+		N'
+				</table>
+			</center>
+		 '
+
+END
+ELSE BEGIN
+
+	SELECT
+		 X.drive_letter + ':' AS drive_letter
+		,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, X.free_space_mb), 1)), 4, 23)) AS free_space_mb
+	FROM
+		@Fixed_Drives_Free_Space X
+	ORDER BY
+		X.drive_letter
+
+END
+
+
+Skip_Fixed_Drives_Free_Space:
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+--	Main Query IV: Database Summary
+-----------------------------------------------------------------------------------------------------------------------------
+
+IF @Database_Summary = 0
+BEGIN
+
+	GOTO Skip_Database_Summary
+
+END
+
+
+CREATE TABLE dbo.#temp_sssr_database_summary
+
+	(
+		 database_name NVARCHAR (128)
+		,database_owner NVARCHAR (128)
+		,recovery_model NVARCHAR (60)
+		,[compatibility_level] VARCHAR (3)
+		,create_date NVARCHAR (19)
+		,collation_name NVARCHAR (128)
+		,is_case_sensitive VARCHAR (3)
+		,total_size_mb VARCHAR (23)
+		,unallocated_mb VARCHAR (23)
+		,reserved_mb VARCHAR (23)
+		,data_mb VARCHAR (23)
+		,index_mb VARCHAR (23)
+		,unused_mb VARCHAR (23)
+		,cached_mb VARCHAR (23)
 	)
 
 
-set @dATABASE_nAME_lOOP =
+SET @Database_Name_Loop =
 
 	(
-		select top (1)
-			x.DATABASE_NAME
-		from
-			DBO.#TEMP_SSSR_DATABASES x
-		order by
-			x.DATABASE_NAME
+		SELECT TOP (1)
+			X.database_name
+		FROM
+			dbo.#temp_sssr_databases X
+		ORDER BY
+			X.database_name
 	)
 
 
-while @dATABASE_nAME_lOOP is not null
-begin
+WHILE @Database_Name_Loop IS NOT NULL
+BEGIN
 
-	set @sql_sTRING = @aVOID_tRUNCATION +
+	SET @SQL_String = @Avoid_Truncation +
 
-		n'
-			use [' + @dATABASE_nAME_lOOP + n']
+		N'
+			USE [' + @Database_Name_Loop + N']
 
 
-			insert into DBO.#TEMP_SSSR_DATABASE_SUMMARY
+			INSERT INTO dbo.#temp_sssr_database_summary
 
 				(
-					 DATABASE_NAME
-					,DATABASE_OWNER
-					,RECOVERY_MODEL
-					,[COMPATIBILITY_LEVEL]
-					,CREATE_DATE
-					,COLLATION_NAME
-					,IS_CASE_SENSITIVE
-					,TOTAL_SIZE_MB
-					,UNALLOCATED_MB
-					,RESERVED_MB
-					,DATA_MB
-					,INDEX_MB
-					,UNUSED_MB
+					 database_name
+					,database_owner
+					,recovery_model
+					,[compatibility_level]
+					,create_date
+					,collation_name
+					,is_case_sensitive
+					,total_size_mb
+					,unallocated_mb
+					,reserved_mb
+					,data_mb
+					,index_mb
+					,unused_mb
 				)
 
-			select
-				 x.DATABASE_NAME
-				,isnull (x.DATABASE_OWNER, n''???'') as DATABASE_OWNER
-				,x.RECOVERY_MODEL
-				,isnull (convert (varchar (3), x.[COMPATIBILITY_LEVEL]), ''n/a'') as [COMPATIBILITY_LEVEL]
-				,convert (nvarchar (19), x.CREATE_DATE, 120) as CREATE_DATE
-				,x.COLLATION_NAME
-				,(case
-					when ''A'' = ''a'' then ''nO''
-					else ''yES''
-					end) as IS_CASE_SENSITIVE
-				,reverse (substring (reverse (convert (varchar (23), convert (money, round ((SQdbf.TOTAL_SIZE * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as TOTAL_SIZE_MB
-				,(case
-					when SQdbf.DATABASE_SIZE >= CJpgs.TOTAL_PAGES then reverse (substring (reverse (convert (varchar (23), convert (money, round (((SQdbf.DATABASE_SIZE - CJpgs.TOTAL_PAGES) * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23))
-					else ''0''
-					end) as UNALLOCATED_MB
-				,reverse (substring (reverse (convert (varchar (23), convert (money, round ((CJpgs.TOTAL_PAGES * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as RESERVED_MB
-				,reverse (substring (reverse (convert (varchar (23), convert (money, round ((CJpgs.PAGES * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as DATA_MB
-				,reverse (substring (reverse (convert (varchar (23), convert (money, round (((CJpgs.USED_PAGES - CJpgs.PAGES) * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as INDEX_MB
-				,reverse (substring (reverse (convert (varchar (23), convert (money, round (((CJpgs.TOTAL_PAGES - CJpgs.USED_PAGES) * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as UNUSED_MB
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-				cross join
+			SELECT
+				 X.database_name
+				,ISNULL (X.database_owner, N''???'') AS database_owner
+				,X.recovery_model
+				,ISNULL (CONVERT (VARCHAR (3), X.[compatibility_level]), ''N/A'') AS [compatibility_level]
+				,CONVERT (NVARCHAR (19), X.create_date, 120) AS create_date
+				,X.collation_name
+				,(CASE
+					WHEN ''a'' = ''A'' THEN ''No''
+					ELSE ''Yes''
+					END) AS is_case_sensitive
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((sqDBF.total_size * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS total_size_mb
+				,(CASE
+					WHEN sqDBF.database_size >= cjPGS.total_pages THEN REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (((sqDBF.database_size - cjPGS.total_pages) * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23))
+					ELSE ''0''
+					END) AS unallocated_mb
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((cjPGS.total_pages * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS reserved_mb
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((cjPGS.pages * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS data_mb
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (((cjPGS.used_pages - cjPGS.pages) * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS index_mb
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (((cjPGS.total_pages - cjPGS.used_pages) * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS unused_mb
+			FROM
+				dbo.#temp_sssr_databases X
+				CROSS JOIN
 
 					(
-						select
-							 sum (case
-									when dbf.[TYPE] = 0 then dbf.SIZE
-									else 0
-									end) as DATABASE_SIZE
-							,sum (dbf.SIZE) as TOTAL_SIZE
-						from
-							SYS.DATABASE_FILES as dbf
-						where
-							dbf.[TYPE] in (0, 1)
-					) SQdbf
+						SELECT
+							 SUM (CASE
+									WHEN DBF.[type] = 0 THEN DBF.size
+									ELSE 0
+									END) AS database_size
+							,SUM (DBF.size) AS total_size
+						FROM
+							sys.database_files AS DBF
+						WHERE
+							DBF.[type] IN (0, 1)
+					) sqDBF
 
-				cross join
+				CROSS JOIN
 
 					(
-						select
-							 sum (au.TOTAL_PAGES) as TOTAL_PAGES
-							,sum (au.USED_PAGES) as USED_PAGES
-							,sum (case
-									when it.INTERNAL_TYPE in (202, 204) then 0
-									when au.[TYPE] <> 1 then au.USED_PAGES
-									when p.INDEX_ID <= 1 then au.DATA_PAGES
-									else 0
-									end) as PAGES
-						from
-							SYS.PARTITIONS p
-							inner join SYS.ALLOCATION_UNITS au on au.CONTAINER_ID = p.PARTITION_ID
-							left join SYS.INTERNAL_TABLES it on it.[OBJECT_ID] = p.[OBJECT_ID]
-					) CJpgs
+						SELECT
+							 SUM (AU.total_pages) AS total_pages
+							,SUM (AU.used_pages) AS used_pages
+							,SUM (CASE
+									WHEN IT.internal_type IN (202, 204) THEN 0
+									WHEN AU.[type] <> 1 THEN AU.used_pages
+									WHEN P.index_id <= 1 THEN AU.data_pages
+									ELSE 0
+									END) AS pages
+						FROM
+							sys.partitions P
+							INNER JOIN sys.allocation_units AU ON AU.container_id = P.partition_id
+							LEFT JOIN sys.internal_tables IT ON IT.[object_id] = P.[object_id]
+					) cjPGS
 
-			where
-				x.DATABASE_NAME = ''' + @dATABASE_nAME_lOOP + n'''
+			WHERE
+				X.database_name = ''' + @Database_Name_Loop + N'''
 		 '
 
 
-	execute (@sql_sTRING)
+	EXECUTE (@SQL_String)
 
 
-	set @dATABASE_nAME_lOOP =
+	SET @Database_Name_Loop =
 
 		(
-			select top (1)
-				x.DATABASE_NAME
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-			where
-				x.DATABASE_NAME > @dATABASE_nAME_lOOP
-			order by
-				x.DATABASE_NAME
+			SELECT TOP (1)
+				X.database_name
+			FROM
+				dbo.#temp_sssr_databases X
+			WHERE
+				X.database_name > @Database_Name_Loop
+			ORDER BY
+				X.database_name
 		)
 
-end
+END
 
 
-if not exists (select * from DBO.#TEMP_SSSR_DATABASE_SUMMARY x)
-begin
+IF NOT EXISTS (SELECT * FROM dbo.#temp_sssr_database_summary X)
+BEGIN
 
-	goto sKIP_dATABASE_sUMMARY
+	GOTO Skip_Database_Summary
 
-end
+END
 
 
-update
-	x
-set
-	x.CACHED_MB = SQcm.CACHED_MB
-from
-	DBO.#TEMP_SSSR_DATABASE_SUMMARY x
-	left join
+UPDATE
+	X
+SET
+	X.cached_mb = sqCM.cached_mb
+FROM
+	dbo.#temp_sssr_database_summary X
+	LEFT JOIN
 
 		(
-			select
-				 db_name (dobd.DATABASE_ID) as DATABASE_NAME
-				,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, (count (*) * 8) / 1024.0), 1)), 4, 23)), '0.00') as CACHED_MB
-			from
-				MASTER.SYS.DM_OS_BUFFER_DESCRIPTORS dobd
-			group by
-				db_name (dobd.DATABASE_ID)
-		) SQcm on SQcm.DATABASE_NAME = x.DATABASE_NAME
+			SELECT
+				 DB_NAME (DOBD.database_id) AS database_name
+				,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, (COUNT (*) * 8) / 1024.0), 1)), 4, 23)), '0.00') AS cached_mb
+			FROM
+				master.sys.dm_os_buffer_descriptors DOBD
+			GROUP BY
+				DB_NAME (DOBD.database_id)
+		) sqCM ON sqCM.database_name = X.database_name
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.DATABASE_NAME as 'TD'
-					,'',x.DATABASE_OWNER as 'TD'
-					,'',x.RECOVERY_MODEL as 'TD'
-					,'',x.[COMPATIBILITY_LEVEL] as 'TD'
-					,'',x.CREATE_DATE as 'TD'
-					,'',x.COLLATION_NAME as 'TD'
-					,'',x.IS_CASE_SENSITIVE as 'TD'
-					,'','RIGHT_ALIGN' + x.TOTAL_SIZE_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.UNALLOCATED_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.RESERVED_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.DATA_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.INDEX_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.UNUSED_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.CACHED_MB as 'TD'
-				from
-					DBO.#TEMP_SSSR_DATABASE_SUMMARY x
-				order by
-					x.DATABASE_NAME
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.database_name AS 'td'
+					,'',X.database_owner AS 'td'
+					,'',X.recovery_model AS 'td'
+					,'',X.[compatibility_level] AS 'td'
+					,'',X.create_date AS 'td'
+					,'',X.collation_name AS 'td'
+					,'',X.is_case_sensitive AS 'td'
+					,'','right_align' + X.total_size_mb AS 'td'
+					,'','right_align' + X.unallocated_mb AS 'td'
+					,'','right_align' + X.reserved_mb AS 'td'
+					,'','right_align' + X.data_mb AS 'td'
+					,'','right_align' + X.index_mb AS 'td'
+					,'','right_align' + X.unused_mb AS 'td'
+					,'','right_align' + X.cached_mb AS 'td'
+				FROM
+					dbo.#temp_sssr_database_summary X
+				ORDER BY
+					X.database_name
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>dATABASE sUMMARY</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>dATABASE oWNER</TH>
-						<TH NOWRAP>rECOVERY mODEL</TH>
-						<TH NOWRAP>cOMPATIBILITY</TH>
-						<TH NOWRAP>cREATE dATE</TH>
-						<TH NOWRAP>cOLLATION</TH>
-						<TH NOWRAP>cASE sENSITIVE</TH>
-						<TH NOWRAP>tOTAL sIZE (mb)</TH>
-						<TH NOWRAP>uNALLOCATED (mb)</TH>
-						<TH NOWRAP>rESERVED (mb)</TH>
-						<TH NOWRAP>dATA (mb)</TH>
-						<TH NOWRAP>iNDEX (mb)</TH>
-						<TH NOWRAP>uNUSED (mb)</TH>
-						<TH NOWRAP>cACHED (mb)</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Database Summary</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Database Name</th>
+						<th nowrap>Database Owner</th>
+						<th nowrap>Recovery Model</th>
+						<th nowrap>Compatibility</th>
+						<th nowrap>Create Date</th>
+						<th nowrap>Collation</th>
+						<th nowrap>Case Sensitive</th>
+						<th nowrap>Total Size (MB)</th>
+						<th nowrap>Unallocated (MB)</th>
+						<th nowrap>Reserved (MB)</th>
+						<th nowrap>Data (MB)</th>
+						<th nowrap>Index (MB)</th>
+						<th nowrap>Unused (MB)</th>
+						<th nowrap>Cached (MB)</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.DATABASE_NAME
-		,x.DATABASE_OWNER
-		,x.RECOVERY_MODEL
-		,x.[COMPATIBILITY_LEVEL]
-		,x.CREATE_DATE
-		,x.COLLATION_NAME as COLLATION
-		,x.IS_CASE_SENSITIVE as CASE_SENSITIVE
-		,x.TOTAL_SIZE_MB
-		,x.UNALLOCATED_MB
-		,x.RESERVED_MB
-		,x.DATA_MB
-		,x.INDEX_MB
-		,x.UNUSED_MB
-		,x.CACHED_MB
-	from
-		DBO.#TEMP_SSSR_DATABASE_SUMMARY x
-	order by
-		x.DATABASE_NAME
+	SELECT
+		 X.database_name
+		,X.database_owner
+		,X.recovery_model
+		,X.[compatibility_level]
+		,X.create_date
+		,X.collation_name AS collation
+		,X.is_case_sensitive AS case_sensitive
+		,X.total_size_mb
+		,X.unallocated_mb
+		,X.reserved_mb
+		,X.data_mb
+		,X.index_mb
+		,X.unused_mb
+		,X.cached_mb
+	FROM
+		dbo.#temp_sssr_database_summary X
+	ORDER BY
+		X.database_name
 
-end
-
-
-sKIP_dATABASE_sUMMARY:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASE_SUMMARY', n'u') is not null
-begin
+Skip_Database_Summary:
 
-	drop table DBO.#TEMP_SSSR_DATABASE_SUMMARY
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_database_summary', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_database_summary
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY v: dATABASE dETAILS
+--	Main Query V: Database Details
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @dATABASE_dETAILS = 0
-begin
+IF @Database_Details = 0
+BEGIN
 
-	goto sKIP_dATABASE_dETAILS
+	GOTO Skip_Database_Details
 
-end
+END
 
 
-select
-	 db_name (mf.DATABASE_ID) as DATABASE_NAME
-	,convert (nvarchar (10), left (upper (mf.TYPE_DESC), 1) + lower (substring (mf.TYPE_DESC, 2, 250))) as FILE_TYPE
-	,mf.NAME as LOGICAL_NAME
-	,upper (left (mf.PHYSICAL_NAME, 2)) as DRIVE_LETTER
-	,(case
-		when len (mf.PHYSICAL_NAME) - len (replace (mf.PHYSICAL_NAME, n'\', n'')) < 2 then n'<dRIVE rOOT>'
-		else substring (mf.PHYSICAL_NAME, 4, len (mf.PHYSICAL_NAME) - charindex (n'\', reverse (mf.PHYSICAL_NAME)) - 3)
-		end) as FILE_PATH
-	,right (mf.PHYSICAL_NAME, charindex (n'\', reverse (mf.PHYSICAL_NAME)) - 1) as [FILE_NAME]
-	,reverse (substring (reverse (convert (varchar (23), convert (money, round ((mf.SIZE * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) as FILE_SIZE_MB
-	,right ((case
-				when mf.GROWTH = 0 then 'fIXED sIZE'
-				when mf.MAX_SIZE = -1 then 'uNRESTRICTED'
-				when mf.MAX_SIZE = 0 then 'nONE'
-				when mf.MAX_SIZE = 268435456 then '2 tb'
-				else reverse (substring (reverse (convert (varchar (23), convert (money, round ((mf.MAX_SIZE * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) + ' mb'
-				end), 15) as MAX_SIZE
-	,right ((case
-				when mf.GROWTH = 0 then 'n/a'
-				when mf.IS_PERCENT_GROWTH = 1 then reverse (substring (reverse (convert (varchar (23), convert (money, mf.GROWTH), 1)), 4, 23)) + ' %'
-				else reverse (substring (reverse (convert (varchar (23), convert (money, round ((mf.GROWTH * convert (bigint, 8192)) / 1048576.0, 0)), 1)), 4, 23)) + ' mb'
-				end), 15) as GROWTH_INCREMENT
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, divfs.NUM_OF_READS), 1)), 4, 23)), '0') as FILE_READS
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, divfs.NUM_OF_WRITES), 1)), 4, 23)), '0') as FILE_WRITES
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, round (divfs.NUM_OF_BYTES_READ / 1048576.0, 0)), 1)), 4, 23)), '0.00') as FILE_READ_MB
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, round (divfs.NUM_OF_BYTES_WRITTEN / 1048576.0, 0)), 1)), 4, 23)), '0.00') as FILE_WRITTEN_MB
-	,isnull ((case
-				when OAdsr.TOTAL_DAYS_READS = '0' then replicate ('_', CJdlm.DAY_LENGTH_MAX_READS)
-				else replicate ('0', CJdlm.DAY_LENGTH_MAX_READS - len (OAdsr.TOTAL_DAYS_READS)) + OAdsr.TOTAL_DAYS_READS
-				end) + ' dAY(S) ' + (case
-										when OAdsr.SECONDS_REMAINING_READS = 0 then '__:__:__'
-										when OAdsr.SECONDS_REMAINING_READS < 60 then '__:__:' + right (OAdsr.TOTAL_SECONDS_READS, 2)
-										when OAdsr.SECONDS_REMAINING_READS < 3600 then '__:' + right (OAdsr.TOTAL_SECONDS_READS, 5)
-										else OAdsr.TOTAL_SECONDS_READS
-										end), replicate ('_', CJdlm.DAY_LENGTH_MAX_READS) + ' dAY(S) ' + '__:__:__') as IO_WAIT_TIME_READS
-	,isnull ((case
-				when OAdsr.TOTAL_DAYS_WRITES = '0' then replicate ('_', CJdlm.DAY_LENGTH_MAX_WRITES)
-				else replicate ('0', CJdlm.DAY_LENGTH_MAX_WRITES - len (OAdsr.TOTAL_DAYS_WRITES)) + OAdsr.TOTAL_DAYS_WRITES
-				end) + ' dAY(S) ' + (case
-										when OAdsr.SECONDS_REMAINING_WRITES = 0 then '__:__:__'
-										when OAdsr.SECONDS_REMAINING_WRITES < 60 then '__:__:' + right (OAdsr.TOTAL_SECONDS_WRITES, 2)
-										when OAdsr.SECONDS_REMAINING_WRITES < 3600 then '__:' + right (OAdsr.TOTAL_SECONDS_WRITES, 5)
-										else OAdsr.TOTAL_SECONDS_WRITES
-										end), replicate ('_', CJdlm.DAY_LENGTH_MAX_WRITES) + ' dAY(S) ' + '__:__:__') as IO_WAIT_TIME_WRITES
-	,row_number () over
+SELECT
+	 DB_NAME (MF.database_id) AS database_name
+	,CONVERT (NVARCHAR (10), LEFT (UPPER (MF.type_desc), 1) + LOWER (SUBSTRING (MF.type_desc, 2, 250))) AS file_type
+	,MF.name AS logical_name
+	,UPPER (LEFT (MF.physical_name, 2)) AS drive_letter
+	,(CASE
+		WHEN LEN (MF.physical_name) - LEN (REPLACE (MF.physical_name, N'\', N'')) < 2 THEN N'<Drive Root>'
+		ELSE SUBSTRING (MF.physical_name, 4, LEN (MF.physical_name) - CHARINDEX (N'\', REVERSE (MF.physical_name)) - 3)
+		END) AS file_path
+	,RIGHT (MF.physical_name, CHARINDEX (N'\', REVERSE (MF.physical_name)) - 1) AS [file_name]
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((MF.size * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) AS file_size_mb
+	,RIGHT ((CASE
+				WHEN MF.growth = 0 THEN 'Fixed Size'
+				WHEN MF.max_size = -1 THEN 'Unrestricted'
+				WHEN MF.max_size = 0 THEN 'None'
+				WHEN MF.max_size = 268435456 THEN '2 TB'
+				ELSE REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((MF.max_size * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) + ' MB'
+				END), 15) AS max_size
+	,RIGHT ((CASE
+				WHEN MF.growth = 0 THEN 'N/A'
+				WHEN MF.is_percent_growth = 1 THEN REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, MF.growth), 1)), 4, 23)) + ' %'
+				ELSE REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND ((MF.growth * CONVERT (BIGINT, 8192)) / 1048576.0, 0)), 1)), 4, 23)) + ' MB'
+				END), 15) AS growth_increment
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DIVFS.num_of_reads), 1)), 4, 23)), '0') AS file_reads
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DIVFS.num_of_writes), 1)), 4, 23)), '0') AS file_writes
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (DIVFS.num_of_bytes_read / 1048576.0, 0)), 1)), 4, 23)), '0.00') AS file_read_mb
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (DIVFS.num_of_bytes_written / 1048576.0, 0)), 1)), 4, 23)), '0.00') AS file_written_mb
+	,ISNULL ((CASE
+				WHEN oaDSR.total_days_reads = '0' THEN REPLICATE ('_', cjDLM.day_length_max_reads)
+				ELSE REPLICATE ('0', cjDLM.day_length_max_reads - LEN (oaDSR.total_days_reads)) + oaDSR.total_days_reads
+				END) + ' Day(s) ' + (CASE
+										WHEN oaDSR.seconds_remaining_reads = 0 THEN '__:__:__'
+										WHEN oaDSR.seconds_remaining_reads < 60 THEN '__:__:' + RIGHT (oaDSR.total_seconds_reads, 2)
+										WHEN oaDSR.seconds_remaining_reads < 3600 THEN '__:' + RIGHT (oaDSR.total_seconds_reads, 5)
+										ELSE oaDSR.total_seconds_reads
+										END), REPLICATE ('_', cjDLM.day_length_max_reads) + ' Day(s) ' + '__:__:__') AS io_wait_time_reads
+	,ISNULL ((CASE
+				WHEN oaDSR.total_days_writes = '0' THEN REPLICATE ('_', cjDLM.day_length_max_writes)
+				ELSE REPLICATE ('0', cjDLM.day_length_max_writes - LEN (oaDSR.total_days_writes)) + oaDSR.total_days_writes
+				END) + ' Day(s) ' + (CASE
+										WHEN oaDSR.seconds_remaining_writes = 0 THEN '__:__:__'
+										WHEN oaDSR.seconds_remaining_writes < 60 THEN '__:__:' + RIGHT (oaDSR.total_seconds_writes, 2)
+										WHEN oaDSR.seconds_remaining_writes < 3600 THEN '__:' + RIGHT (oaDSR.total_seconds_writes, 5)
+										ELSE oaDSR.total_seconds_writes
+										END), REPLICATE ('_', cjDLM.day_length_max_writes) + ' Day(s) ' + '__:__:__') AS io_wait_time_writes
+	,ROW_NUMBER () OVER
 						(
-							partition by
-								mf.DATABASE_ID
-							order by
-								 mf.[TYPE]
-								,(case
-									when mf.[FILE_ID] = 1 then 10
-									else 99
-									end)
-								,mf.NAME
-						) as DATABASE_FILTER_ID
-into
-	DBO.#TEMP_SSSR_DATABASE_DETAILS
-from
-	MASTER.SYS.MASTER_FILES mf
-	left join MASTER.SYS.DM_IO_VIRTUAL_FILE_STATS (null, null) divfs on divfs.DATABASE_ID = mf.DATABASE_ID
-		and divfs.[FILE_ID] = mf.[FILE_ID]
-	cross join
+							PARTITION BY
+								MF.database_id
+							ORDER BY
+								 MF.[type]
+								,(CASE
+									WHEN MF.[file_id] = 1 THEN 10
+									ELSE 99
+									END)
+								,MF.name
+						) AS database_filter_id
+INTO
+	dbo.#temp_sssr_database_details
+FROM
+	master.sys.master_files MF
+	LEFT JOIN master.sys.dm_io_virtual_file_stats (NULL, NULL) DIVFS ON DIVFS.database_id = MF.database_id
+		AND DIVFS.[file_id] = MF.[file_id]
+	CROSS JOIN
 
 		(
-			select
-				 max (len ((xdivfs.IO_STALL_READ_MS / 1000) / 86400)) as DAY_LENGTH_MAX_READS
-				,max (len ((xdivfs.IO_STALL_WRITE_MS / 1000) / 86400)) as DAY_LENGTH_MAX_WRITES
-			from
-				MASTER.SYS.DM_IO_VIRTUAL_FILE_STATS (null, null) xdivfs
-		) CJdlm
+			SELECT
+				 MAX (LEN ((XDIVFS.io_stall_read_ms / 1000) / 86400)) AS day_length_max_reads
+				,MAX (LEN ((XDIVFS.io_stall_write_ms / 1000) / 86400)) AS day_length_max_writes
+			FROM
+				master.sys.dm_io_virtual_file_stats (NULL, NULL) XDIVFS
+		) cjDLM
 
-	outer apply
+	OUTER APPLY
 
 		(
-			select
-				 convert (varchar (5), (divfs.IO_STALL_READ_MS / 1000) / 86400) as TOTAL_DAYS_READS
-				,convert (char (8), dateadd (second, (divfs.IO_STALL_READ_MS / 1000) % 86400, 0), 108) as TOTAL_SECONDS_READS
-				,(divfs.IO_STALL_READ_MS / 1000) % 86400 as SECONDS_REMAINING_READS
-				,convert (varchar (5), (divfs.IO_STALL_WRITE_MS / 1000) / 86400) as TOTAL_DAYS_WRITES
-				,convert (char (8), dateadd (second, (divfs.IO_STALL_WRITE_MS / 1000) % 86400, 0), 108) as TOTAL_SECONDS_WRITES
-				,(divfs.IO_STALL_WRITE_MS / 1000) % 86400 as SECONDS_REMAINING_WRITES
-		) OAdsr
+			SELECT
+				 CONVERT (VARCHAR (5), (DIVFS.io_stall_read_ms / 1000) / 86400) AS total_days_reads
+				,CONVERT (CHAR (8), DATEADD (SECOND, (DIVFS.io_stall_read_ms / 1000) % 86400, 0), 108) AS total_seconds_reads
+				,(DIVFS.io_stall_read_ms / 1000) % 86400 AS seconds_remaining_reads
+				,CONVERT (VARCHAR (5), (DIVFS.io_stall_write_ms / 1000) / 86400) AS total_days_writes
+				,CONVERT (CHAR (8), DATEADD (SECOND, (DIVFS.io_stall_write_ms / 1000) % 86400, 0), 108) AS total_seconds_writes
+				,(DIVFS.io_stall_write_ms / 1000) % 86400 AS seconds_remaining_writes
+		) oaDSR
 
 
-if @@rowcount = 0
-begin
+IF @@ROWCOUNT = 0
+BEGIN
 
-	goto sKIP_dATABASE_dETAILS
+	GOTO Skip_Database_Details
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',(case
-							when x.DATABASE_FILTER_ID = 1 then x.DATABASE_NAME
-							else ''
-							end) as 'TD'
-					,'',x.FILE_TYPE as 'TD'
-					,'',x.LOGICAL_NAME as 'TD'
-					,'',x.DRIVE_LETTER as 'TD'
-					,'',x.FILE_PATH as 'TD'
-					,'',x.[FILE_NAME] as 'TD'
-					,'','RIGHT_ALIGN' + x.FILE_SIZE_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.MAX_SIZE as 'TD'
-					,'','RIGHT_ALIGN' + x.GROWTH_INCREMENT as 'TD'
-					,'','RIGHT_ALIGN' + x.FILE_READS as 'TD'
-					,'','RIGHT_ALIGN' + x.FILE_WRITES as 'TD'
-					,'','RIGHT_ALIGN' + x.FILE_READ_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.FILE_WRITTEN_MB as 'TD'
-					,'',x.IO_WAIT_TIME_READS as 'TD'
-					,'',x.IO_WAIT_TIME_WRITES as 'TD'
-				from
-					DBO.#TEMP_SSSR_DATABASE_DETAILS x
-				order by
-					 x.DATABASE_NAME
-					,x.DATABASE_FILTER_ID
-				for
-					xml path ('TR')
+				SELECT
+					 '',(CASE
+							WHEN X.database_filter_id = 1 THEN X.database_name
+							ELSE ''
+							END) AS 'td'
+					,'',X.file_type AS 'td'
+					,'',X.logical_name AS 'td'
+					,'',X.drive_letter AS 'td'
+					,'',X.file_path AS 'td'
+					,'',X.[file_name] AS 'td'
+					,'','right_align' + X.file_size_mb AS 'td'
+					,'','right_align' + X.max_size AS 'td'
+					,'','right_align' + X.growth_increment AS 'td'
+					,'','right_align' + X.file_reads AS 'td'
+					,'','right_align' + X.file_writes AS 'td'
+					,'','right_align' + X.file_read_mb AS 'td'
+					,'','right_align' + X.file_written_mb AS 'td'
+					,'',X.io_wait_time_reads AS 'td'
+					,'',X.io_wait_time_writes AS 'td'
+				FROM
+					dbo.#temp_sssr_database_details X
+				ORDER BY
+					 X.database_name
+					,X.database_filter_id
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>dATABASE dETAILS</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>fILE tYPE</TH>
-						<TH NOWRAP>lOGICAL nAME</TH>
-						<TH NOWRAP>dRIVE lETTER</TH>
-						<TH NOWRAP>fILE pATH</TH>
-						<TH NOWRAP>fILE nAME</TH>
-						<TH NOWRAP>fILE sIZE (mb)</TH>
-						<TH NOWRAP>mAX sIZE</TH>
-						<TH NOWRAP>gROWTH iNCREMENT</TH>
-						<TH NOWRAP>fILE rEADS</TH>
-						<TH NOWRAP>fILE wRITES</TH>
-						<TH NOWRAP>fILE rEAD (mb)</TH>
-						<TH NOWRAP>fILE wRITTEN (mb)</TH>
-						<TH NOWRAP>i/o wAIT tIME rEADS</TH>
-						<TH NOWRAP>i/o wAIT tIME wRITES</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Database Details</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Database Name</th>
+						<th nowrap>File Type</th>
+						<th nowrap>Logical Name</th>
+						<th nowrap>Drive Letter</th>
+						<th nowrap>File Path</th>
+						<th nowrap>File Name</th>
+						<th nowrap>File Size (MB)</th>
+						<th nowrap>Max Size</th>
+						<th nowrap>Growth Increment</th>
+						<th nowrap>File Reads</th>
+						<th nowrap>File Writes</th>
+						<th nowrap>File Read (MB)</th>
+						<th nowrap>File Written (MB)</th>
+						<th nowrap>I/O Wait Time Reads</th>
+						<th nowrap>I/O Wait Time Writes</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 (case
-			when x.DATABASE_FILTER_ID = 1 then x.DATABASE_NAME
-			else ''
-			end) as DATABASE_NAME
-		,x.FILE_TYPE
-		,x.LOGICAL_NAME
-		,x.DRIVE_LETTER
-		,x.FILE_PATH
-		,x.[FILE_NAME]
-		,x.FILE_SIZE_MB
-		,x.MAX_SIZE
-		,x.GROWTH_INCREMENT
-		,x.FILE_READS
-		,x.FILE_WRITES
-		,x.FILE_READ_MB
-		,x.FILE_WRITTEN_MB
-		,x.IO_WAIT_TIME_READS
-		,x.IO_WAIT_TIME_WRITES
-	from
-		DBO.#TEMP_SSSR_DATABASE_DETAILS x
-	order by
-		 x.DATABASE_NAME
-		,x.DATABASE_FILTER_ID
+	SELECT
+		 (CASE
+			WHEN X.database_filter_id = 1 THEN X.database_name
+			ELSE ''
+			END) AS database_name
+		,X.file_type
+		,X.logical_name
+		,X.drive_letter
+		,X.file_path
+		,X.[file_name]
+		,X.file_size_mb
+		,X.max_size
+		,X.growth_increment
+		,X.file_reads
+		,X.file_writes
+		,X.file_read_mb
+		,X.file_written_mb
+		,X.io_wait_time_reads
+		,X.io_wait_time_writes
+	FROM
+		dbo.#temp_sssr_database_details X
+	ORDER BY
+		 X.database_name
+		,X.database_filter_id
 
-end
-
-
-sKIP_dATABASE_dETAILS:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASE_DETAILS', n'u') is not null
-begin
+Skip_Database_Details:
 
-	drop table DBO.#TEMP_SSSR_DATABASE_DETAILS
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_database_details', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_database_details
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY vi: lAST bACKUP sET dETAILS
+--	Main Query VI: Last Backup Set Details
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @lAST_bACKUP = 0
-begin
+IF @Last_Backup = 0
+BEGIN
 
-	goto sKIP_lAST_bACKUP_sET
+	GOTO Skip_Last_Backup_Set
 
-end
+END
 
 
-select
-	 x.DATABASE_NAME
-	,isnull (convert (varchar (10), SQbs.BACKUP_SET_ID), 'none') as BACKUP_SET_ID
-	,(case SQbs.[TYPE]
-		when 'd' then 'dATABASE'
-		when 'f' then 'fILE oR fILEGROUP'
-		when 'g' then 'dIFFERENTIAL fILE'
-		when 'i' then 'dIFFERENTIAL dATABASE'
-		when 'l' then 'lOG'
-		when 'p' then 'pARTIAL'
-		when 'q' then 'dIFFERENTIAL pARTIAL'
-		else 'n/a'
-		end) as BACKUP_TYPE
-	,isnull (convert (varchar (10), SQbs.DATABASE_VERSION), 'n/a') as DATABASE_VERSION
-	,isnull (SQbs.SERVER_NAME, 'n/a') as SERVER_NAME
-	,isnull (SQbs.MACHINE_NAME, 'n/a') as MACHINE_NAME
-	,isnull (SQbs.PHYSICAL_DEVICE_NAME, 'n/a') as PHYSICAL_DEVICE_NAME
-	,isnull (convert (varchar (34), SQbs.BACKUP_START_DATE, 120), 'n/a') as BACKUP_START_DATE
-	,isnull (convert (varchar (34), SQbs.BACKUP_FINISH_DATE, 120), 'n/a') as BACKUP_FINISH_DATE
-	,isnull ((case
-				when SQbs.TOTAL_DAYS = '0' then replicate ('_', SQbs.DAY_LENGTH_MAX)
-				else replicate ('0', SQbs.DAY_LENGTH_MAX - len (SQbs.TOTAL_DAYS)) + SQbs.TOTAL_DAYS
-				end) + ' dAY(S) ' + (case
-										when SQbs.SECONDS_REMAINING = 0 then '__:__:__'
-										when SQbs.SECONDS_REMAINING < 60 then '__:__:' + right (SQbs.TOTAL_SECONDS, 2)
-										when SQbs.SECONDS_REMAINING < 3600 then '__:' + right (SQbs.TOTAL_SECONDS, 5)
-										else SQbs.TOTAL_SECONDS
-										end), 'n/a') as DURATION
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, round (SQbs.BACKUP_SIZE / 1048576.0, 0)), 1)), 4, 23)), 'n/a') as BACKUP_SIZE_MB
-	,isnull (reverse (substring (reverse (convert (varchar (23), convert (money, datediff (day, SQbs.BACKUP_START_DATE, getdate ())), 1)), 4, 23)), 'n/a') as DAYS_AGO
-	,row_number () over
+SELECT
+	 X.database_name
+	,ISNULL (CONVERT (VARCHAR (10), sqBS.backup_set_id), 'NONE') AS backup_set_id
+	,(CASE sqBS.[type]
+		WHEN 'D' THEN 'Database'
+		WHEN 'F' THEN 'File Or Filegroup'
+		WHEN 'G' THEN 'Differential File'
+		WHEN 'I' THEN 'Differential Database'
+		WHEN 'L' THEN 'Log'
+		WHEN 'P' THEN 'Partial'
+		WHEN 'Q' THEN 'Differential Partial'
+		ELSE 'N/A'
+		END) AS backup_type
+	,ISNULL (CONVERT (VARCHAR (10), sqBS.database_version), 'N/A') AS database_version
+	,ISNULL (sqBS.server_name, 'N/A') AS server_name
+	,ISNULL (sqBS.machine_name, 'N/A') AS machine_name
+	,ISNULL (sqBS.physical_device_name, 'N/A') AS physical_device_name
+	,ISNULL (CONVERT (VARCHAR (34), sqBS.backup_start_date, 120), 'N/A') AS backup_start_date
+	,ISNULL (CONVERT (VARCHAR (34), sqBS.backup_finish_date, 120), 'N/A') AS backup_finish_date
+	,ISNULL ((CASE
+				WHEN sqBS.total_days = '0' THEN REPLICATE ('_', sqBS.day_length_max)
+				ELSE REPLICATE ('0', sqBS.day_length_max - LEN (sqBS.total_days)) + sqBS.total_days
+				END) + ' Day(s) ' + (CASE
+										WHEN sqBS.seconds_remaining = 0 THEN '__:__:__'
+										WHEN sqBS.seconds_remaining < 60 THEN '__:__:' + RIGHT (sqBS.total_seconds, 2)
+										WHEN sqBS.seconds_remaining < 3600 THEN '__:' + RIGHT (sqBS.total_seconds, 5)
+										ELSE sqBS.total_seconds
+										END), 'N/A') AS duration
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (sqBS.backup_size / 1048576.0, 0)), 1)), 4, 23)), 'N/A') AS backup_size_mb
+	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DATEDIFF (DAY, sqBS.backup_start_date, GETDATE ())), 1)), 4, 23)), 'N/A') AS days_ago
+	,ROW_NUMBER () OVER
 						(
-							partition by
-								x.DATABASE_NAME
-							order by
-								SQbs.[TYPE]
-						) as DATABASE_FILTER_ID
-into
-	DBO.#TEMP_SSSR_LAST_BACKUP_SET
-from
-	DBO.#TEMP_SSSR_DATABASES x
-	left join
+							PARTITION BY
+								X.database_name
+							ORDER BY
+								sqBS.[type]
+						) AS database_filter_id
+INTO
+	dbo.#temp_sssr_last_backup_set
+FROM
+	dbo.#temp_sssr_databases X
+	LEFT JOIN
 
 		(
-			select
-				 bs.DATABASE_NAME
-				,bs.BACKUP_SET_ID
-				,bs.[TYPE]
-				,bs.DATABASE_VERSION
-				,bs.SERVER_NAME
-				,bs.MACHINE_NAME
-				,bmf.PHYSICAL_DEVICE_NAME
-				,bs.BACKUP_START_DATE
-				,bs.BACKUP_FINISH_DATE
-				,bs.BACKUP_SIZE
-				,CJdlm.DAY_LENGTH_MAX
-				,OAdsr.SECONDS_REMAINING
-				,OAdsr.TOTAL_DAYS
-				,OAdsr.TOTAL_SECONDS
-			from
-				MSDB.DBO.BACKUPSET bs
-				inner join MSDB.DBO.BACKUPMEDIAFAMILY bmf on bmf.MEDIA_SET_ID = bs.MEDIA_SET_ID
-				inner join
+			SELECT
+				 BS.database_name
+				,BS.backup_set_id
+				,BS.[type]
+				,BS.database_version
+				,BS.server_name
+				,BS.machine_name
+				,BMF.physical_device_name
+				,BS.backup_start_date
+				,BS.backup_finish_date
+				,BS.backup_size
+				,cjDLM.day_length_max
+				,oaDSR.seconds_remaining
+				,oaDSR.total_days
+				,oaDSR.total_seconds
+			FROM
+				msdb.dbo.backupset BS
+				INNER JOIN msdb.dbo.backupmediafamily BMF ON BMF.media_set_id = BS.media_set_id
+				INNER JOIN
 
 					(
-						select
-							max (xbs.BACKUP_SET_ID) as BACKUP_SET_ID_MAX
-						from
-							MSDB.DBO.BACKUPSET xbs
-						group by
-							 xbs.DATABASE_NAME
-							,xbs.[TYPE]
-					) SQmbs on SQmbs.BACKUP_SET_ID_MAX = bs.BACKUP_SET_ID
+						SELECT
+							MAX (XBS.backup_set_id) AS backup_set_id_max
+						FROM
+							msdb.dbo.backupset XBS
+						GROUP BY
+							 XBS.database_name
+							,XBS.[type]
+					) sqMBS ON sqMBS.backup_set_id_max = BS.backup_set_id
 
-				cross join
-
-					(
-						select
-							max (len (datediff (day, ybs.BACKUP_START_DATE, ybs.BACKUP_FINISH_DATE))) as DAY_LENGTH_MAX
-						from
-							MSDB.DBO.BACKUPSET ybs
-					) CJdlm
-
-				outer apply
+				CROSS JOIN
 
 					(
-						select
-							datediff (second, bs.BACKUP_START_DATE, bs.BACKUP_FINISH_DATE) as DURATION_SECONDS
-					) OAds
+						SELECT
+							MAX (LEN (DATEDIFF (DAY, YBS.backup_start_date, YBS.backup_finish_date))) AS day_length_max
+						FROM
+							msdb.dbo.backupset YBS
+					) cjDLM
 
-				outer apply
+				OUTER APPLY
 
 					(
-						select
-							 convert (varchar (5), OAds.DURATION_SECONDS / 86400) as TOTAL_DAYS
-							,convert (char (8), dateadd (second, OAds.DURATION_SECONDS % 86400, 0), 108) as TOTAL_SECONDS
-							,OAds.DURATION_SECONDS % 86400 as SECONDS_REMAINING
-					) OAdsr
+						SELECT
+							DATEDIFF (SECOND, BS.backup_start_date, BS.backup_finish_date) AS duration_seconds
+					) oaDS
 
-		) SQbs on SQbs.DATABASE_NAME = x.DATABASE_NAME
+				OUTER APPLY
 
-where
-	x.DATABASE_NAME <> n'TEMPDB'
+					(
+						SELECT
+							 CONVERT (VARCHAR (5), oaDS.duration_seconds / 86400) AS total_days
+							,CONVERT (CHAR (8), DATEADD (SECOND, oaDS.duration_seconds % 86400, 0), 108) AS total_seconds
+							,oaDS.duration_seconds % 86400 AS seconds_remaining
+					) oaDSR
+
+		) sqBS ON sqBS.database_name = X.database_name
+
+WHERE
+	X.database_name <> N'tempdb'
 
 
-if @@rowcount = 0
-begin
+IF @@ROWCOUNT = 0
+BEGIN
 
-	goto sKIP_lAST_bACKUP_sET
+	GOTO Skip_Last_Backup_Set
 
-end
+END
 
 
-if exists (select * from DBO.#TEMP_SSSR_LAST_BACKUP_SET x where x.BACKUP_SET_ID = 'none')
-begin
+IF EXISTS (SELECT * FROM dbo.#temp_sssr_last_backup_set X WHERE X.backup_set_id = 'NONE')
+BEGIN
 
-	update
-		DBO.#TEMP_SSSR_LAST_BACKUP_SET
-	set
-		 BACKUP_TYPE = replicate ('.', BACKUP_TYPE_LENGTH_MAX * 2)
-		,DATABASE_VERSION = replicate ('.', DATABASE_VERSION_LENGTH_MAX * 2)
-		,SERVER_NAME = replicate ('.', SERVER_NAME_LENGTH_MAX * 2)
-		,MACHINE_NAME = replicate ('.', MACHINE_NAME_LENGTH_MAX * 2)
-		,BACKUP_START_DATE = replicate ('.', 34)
-		,BACKUP_FINISH_DATE = replicate ('.', 34)
-		,DURATION = replicate ('.', (DURATION_LENGTH_MAX * 2) - 4)
-		,BACKUP_SIZE_MB = replicate ('.', BACKUP_SIZE_MB_LENGTH_MAX * 2)
-	from
+	UPDATE
+		dbo.#temp_sssr_last_backup_set
+	SET
+		 backup_type = REPLICATE ('.', backup_type_length_max * 2)
+		,database_version = REPLICATE ('.', database_version_length_max * 2)
+		,server_name = REPLICATE ('.', server_name_length_max * 2)
+		,machine_name = REPLICATE ('.', machine_name_length_max * 2)
+		,backup_start_date = REPLICATE ('.', 34)
+		,backup_finish_date = REPLICATE ('.', 34)
+		,duration = REPLICATE ('.', (duration_length_max * 2) - 4)
+		,backup_size_mb = REPLICATE ('.', backup_size_mb_length_max * 2)
+	FROM
 
 		(
-			select
-				 max (len (x.BACKUP_TYPE)) as BACKUP_TYPE_LENGTH_MAX
-				,max (len (x.DATABASE_VERSION)) as DATABASE_VERSION_LENGTH_MAX
-				,max (len (x.SERVER_NAME)) as SERVER_NAME_LENGTH_MAX
-				,max (len (x.MACHINE_NAME)) as MACHINE_NAME_LENGTH_MAX
-				,max (len (x.DURATION)) as DURATION_LENGTH_MAX
-				,max (len (x.BACKUP_SIZE_MB)) as BACKUP_SIZE_MB_LENGTH_MAX
-			from
-				DBO.#TEMP_SSSR_LAST_BACKUP_SET x
-		) SQx
+			SELECT
+				 MAX (LEN (X.backup_type)) AS backup_type_length_max
+				,MAX (LEN (X.database_version)) AS database_version_length_max
+				,MAX (LEN (X.server_name)) AS server_name_length_max
+				,MAX (LEN (X.machine_name)) AS machine_name_length_max
+				,MAX (LEN (X.duration)) AS duration_length_max
+				,MAX (LEN (X.backup_size_mb)) AS backup_size_mb_length_max
+			FROM
+				dbo.#temp_sssr_last_backup_set X
+		) sqX
 
-	where
-		DBO.#TEMP_SSSR_LAST_BACKUP_SET.BACKUP_SET_ID = 'none'
+	WHERE
+		dbo.#temp_sssr_last_backup_set.backup_set_id = 'NONE'
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',(case
-							when x.DATABASE_FILTER_ID = 1 then x.DATABASE_NAME
-							else ''
-							end) as 'TD'
-					,'',x.BACKUP_SET_ID as 'TD'
-					,'',x.BACKUP_TYPE as 'TD'
-					,'',x.DATABASE_VERSION as 'TD'
-					,'',x.SERVER_NAME as 'TD'
-					,'',x.MACHINE_NAME as 'TD'
-					,'',x.PHYSICAL_DEVICE_NAME as 'TD'
-					,'',x.BACKUP_START_DATE as 'TD'
-					,'',x.BACKUP_FINISH_DATE as 'TD'
-					,'',x.DURATION as 'TD'
-					,'','RIGHT_ALIGN' + x.BACKUP_SIZE_MB as 'TD'
-					,'','RIGHT_ALIGN' + x.DAYS_AGO as 'TD'
-				from
-					DBO.#TEMP_SSSR_LAST_BACKUP_SET x
-				order by
-					 x.DATABASE_NAME
-					,x.DATABASE_FILTER_ID
-				for
-					xml path ('TR')
+				SELECT
+					 '',(CASE
+							WHEN X.database_filter_id = 1 THEN X.database_name
+							ELSE ''
+							END) AS 'td'
+					,'',X.backup_set_id AS 'td'
+					,'',X.backup_type AS 'td'
+					,'',X.database_version AS 'td'
+					,'',X.server_name AS 'td'
+					,'',X.machine_name AS 'td'
+					,'',X.physical_device_name AS 'td'
+					,'',X.backup_start_date AS 'td'
+					,'',X.backup_finish_date AS 'td'
+					,'',X.duration AS 'td'
+					,'','right_align' + X.backup_size_mb AS 'td'
+					,'','right_align' + X.days_ago AS 'td'
+				FROM
+					dbo.#temp_sssr_last_backup_set X
+				ORDER BY
+					 X.database_name
+					,X.database_filter_id
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>lAST bACKUP sET dETAILS</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>bACKUP sET id</TH>
-						<TH NOWRAP>bACKUP tYPE</TH>
-						<TH NOWRAP>dATABASE vERSION</TH>
-						<TH NOWRAP>sERVER nAME</TH>
-						<TH NOWRAP>mACHINE nAME</TH>
-						<TH NOWRAP>pHYSICAL dEVICE nAME</TH>
-						<TH NOWRAP>bACKUP sTART dATE</TH>
-						<TH NOWRAP>bACKUP fINISH dATE</TH>
-						<TH NOWRAP>dURATION</TH>
-						<TH NOWRAP>bACKUP sIZE (mb)</TH>
-						<TH NOWRAP>dAYS aGO</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Last Backup Set Details</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Database Name</th>
+						<th nowrap>Backup Set ID</th>
+						<th nowrap>Backup Type</th>
+						<th nowrap>Database Version</th>
+						<th nowrap>Server Name</th>
+						<th nowrap>Machine Name</th>
+						<th nowrap>Physical Device Name</th>
+						<th nowrap>Backup Start Date</th>
+						<th nowrap>Backup Finish Date</th>
+						<th nowrap>Duration</th>
+						<th nowrap>Backup Size (MB)</th>
+						<th nowrap>Days Ago</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 (case
-			when x.DATABASE_FILTER_ID = 1 then x.DATABASE_NAME
-			else ''
-			end) as DATABASE_NAME
-		,x.BACKUP_SET_ID
-		,x.BACKUP_TYPE
-		,x.DATABASE_VERSION
-		,x.SERVER_NAME
-		,x.MACHINE_NAME
-		,x.PHYSICAL_DEVICE_NAME
-		,x.BACKUP_START_DATE
-		,x.BACKUP_FINISH_DATE
-		,x.DURATION
-		,x.BACKUP_SIZE_MB
-		,x.DAYS_AGO
-	from
-		DBO.#TEMP_SSSR_LAST_BACKUP_SET x
-	order by
-		 x.DATABASE_NAME
-		,x.DATABASE_FILTER_ID
+	SELECT
+		 (CASE
+			WHEN X.database_filter_id = 1 THEN X.database_name
+			ELSE ''
+			END) AS database_name
+		,X.backup_set_id
+		,X.backup_type
+		,X.database_version
+		,X.server_name
+		,X.machine_name
+		,X.physical_device_name
+		,X.backup_start_date
+		,X.backup_finish_date
+		,X.duration
+		,X.backup_size_mb
+		,X.days_ago
+	FROM
+		dbo.#temp_sssr_last_backup_set X
+	ORDER BY
+		 X.database_name
+		,X.database_filter_id
 
-end
-
-
-sKIP_lAST_bACKUP_sET:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_LAST_BACKUP_SET', n'u') is not null
-begin
+Skip_Last_Backup_Set:
 
-	drop table DBO.#TEMP_SSSR_LAST_BACKUP_SET
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_last_backup_set', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_last_backup_set
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY vii: sql sERVER aGENT jOBS (lAST 24 hOURS)
+--	Main Query VII: SQL Server Agent Jobs (Last 24 Hours)
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @aGENT_jOBS = 0
-begin
+IF @Agent_Jobs = 0
+BEGIN
 
-	goto sKIP_aGENT_jOBS
+	GOTO Skip_Agent_Jobs
 
-end
+END
 
 
-select
-	 sj.NAME as JOB_NAME
-	,suser_sname (sj.OWNER_SID) as JOB_OWNER
-	,convert (varchar (19), sj.DATE_CREATED, 120) as DATE_CREATED
-	,convert (varchar (19), sj.DATE_MODIFIED, 120) as DATE_MODIFIED
-	,reverse (substring (reverse (convert (varchar (23), convert (money, sj.VERSION_NUMBER), 1)), 4, 23)) as [VERSION]
-	,sc.NAME as CATEGORY
-	,(case sc.CATEGORY_CLASS
-		when 1 then 'jOB'
-		when 2 then 'aLERT'
-		when 3 then 'oPERATOR'
-		else 'n/a'
-		end) as CLASS
-	,(case sc.CATEGORY_TYPE
-		when 1 then 'lOCAL'
-		when 2 then 'mULTISERVER'
-		when 3 then 'nONE'
-		else 'n/a'
-		end) as [TYPE]
-	,convert (varchar (19), CAlrdt.LAST_RUN_DATE_TIME, 120) as LAST_RUN_DATE_TIME
-	,(case sjh.RUN_STATUS
-		when 0 then 'fAILED'
-		when 1 then 'sUCCEEDED'
-		when 2 then 'rETRY'
-		when 3 then 'cANCELED'
-		when 4 then 'iN pROGRESS'
-		end) as LAST_STATUS
-	,(case
-		when sjh.RUN_DURATION = 0 then '__:__:__'
-		when len (sjh.RUN_DURATION) <= 2 then '__:__:' + right ('0' + convert (varchar (2), sjh.RUN_DURATION), 2)
-		when len (sjh.RUN_DURATION) <= 4 then '__:' + stuff (right ('0' + convert (varchar (4), sjh.RUN_DURATION), 4), 3, 0, ':')
-		else stuff (stuff (right ('0' + convert (varchar (6), sjh.RUN_DURATION), 6), 5, 0, ':'), 3, 0, ':')
-		end) as DURATION
-	,isnull ((case
-				when sj.[ENABLED] = 1 then convert (varchar (19), SQnrdt.NEXT_RUN_DATE_TIME, 120)
-				end), '___________________') as NEXT_RUN_DATE_TIME
-	,isnull ((case
-				when sj.[ENABLED] = 1 then reverse (substring (reverse (convert (varchar (23), convert (money, datediff (day, getdate (), SQnrdt.NEXT_RUN_DATE_TIME)), 1)), 4, 23))
-				end), 'n/a') as DAYS_AWAY
-into
-	DBO.#TEMP_SSSR_AGENT_JOBS
-from
-	MSDB.DBO.SYSJOBS sj
-	inner join MSDB.DBO.SYSJOBHISTORY sjh on sjh.JOB_ID = sj.JOB_ID
-	inner join MSDB.DBO.SYSCATEGORIES sc on sc.CATEGORY_ID = sj.CATEGORY_ID
-	inner join
-
-		(
-			select
-				max (xsj.INSTANCE_ID) as INSTANCE_ID_MAX
-			from
-				MSDB.DBO.SYSJOBHISTORY xsj
-			group by
-				xsj.JOB_ID
-		) SQiim on SQiim.INSTANCE_ID_MAX = sjh.INSTANCE_ID
-
-	left join
+SELECT
+	 SJ.name AS job_name
+	,SUSER_SNAME (SJ.owner_sid) AS job_owner
+	,CONVERT (VARCHAR (19), SJ.date_created, 120) AS date_created
+	,CONVERT (VARCHAR (19), SJ.date_modified, 120) AS date_modified
+	,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, SJ.version_number), 1)), 4, 23)) AS [version]
+	,SC.name AS category
+	,(CASE SC.category_class
+		WHEN 1 THEN 'Job'
+		WHEN 2 THEN 'Alert'
+		WHEN 3 THEN 'Operator'
+		ELSE 'N/A'
+		END) AS class
+	,(CASE SC.category_type
+		WHEN 1 THEN 'Local'
+		WHEN 2 THEN 'Multiserver'
+		WHEN 3 THEN 'None'
+		ELSE 'N/A'
+		END) AS [type]
+	,CONVERT (VARCHAR (19), caLRDT.last_run_date_time, 120) AS last_run_date_time
+	,(CASE SJH.run_status
+		WHEN 0 THEN 'Failed'
+		WHEN 1 THEN 'Succeeded'
+		WHEN 2 THEN 'Retry'
+		WHEN 3 THEN 'Canceled'
+		WHEN 4 THEN 'In Progress'
+		END) AS last_status
+	,(CASE
+		WHEN SJH.run_duration = 0 THEN '__:__:__'
+		WHEN LEN (SJH.run_duration) <= 2 THEN '__:__:' + RIGHT ('0' + CONVERT (VARCHAR (2), SJH.run_duration), 2)
+		WHEN LEN (SJH.run_duration) <= 4 THEN '__:' + STUFF (RIGHT ('0' + CONVERT (VARCHAR (4), SJH.run_duration), 4), 3, 0, ':')
+		ELSE STUFF (STUFF (RIGHT ('0' + CONVERT (VARCHAR (6), SJH.run_duration), 6), 5, 0, ':'), 3, 0, ':')
+		END) AS duration
+	,ISNULL ((CASE
+				WHEN SJ.[enabled] = 1 THEN CONVERT (VARCHAR (19), sqNRDT.next_run_date_time, 120)
+				END), '___________________') AS next_run_date_time
+	,ISNULL ((CASE
+				WHEN SJ.[enabled] = 1 THEN REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DATEDIFF (DAY, GETDATE (), sqNRDT.next_run_date_time)), 1)), 4, 23))
+				END), 'N/A') AS days_away
+INTO
+	dbo.#temp_sssr_agent_jobs
+FROM
+	msdb.dbo.sysjobs SJ
+	INNER JOIN msdb.dbo.sysjobhistory SJH ON SJH.job_id = SJ.job_id
+	INNER JOIN msdb.dbo.syscategories SC ON SC.category_id = SJ.category_id
+	INNER JOIN
 
 		(
-			select
-				 sjs.JOB_ID
-				,min (convert (datetime, convert (varchar (8), sjs.NEXT_RUN_DATE) + ' ' + stuff (stuff (right ('000000' + convert (varchar (6), sjs.NEXT_RUN_TIME), 6), 5, 0, ':'), 3, 0, ':'))) as NEXT_RUN_DATE_TIME
-			from
-				MSDB.DBO.SYSJOBSCHEDULES sjs
-				inner join MSDB.DBO.SYSSCHEDULES ss on ss.SCHEDULE_ID = sjs.SCHEDULE_ID
-					and ss.[ENABLED] = 1
-			where
-				sjs.NEXT_RUN_DATE > 0
-			group by
-				sjs.JOB_ID
-		) SQnrdt on SQnrdt.JOB_ID = sj.JOB_ID
+			SELECT
+				MAX (XSJ.instance_id) AS instance_id_max
+			FROM
+				msdb.dbo.sysjobhistory XSJ
+			GROUP BY
+				XSJ.job_id
+		) sqIIM ON sqIIM.instance_id_max = SJH.instance_id
 
-	cross apply
+	LEFT JOIN
 
 		(
-			select
-				convert (datetime, convert (varchar (8), sjh.RUN_DATE) + ' ' + stuff (stuff (right ('000000' + convert (varchar (6), sjh.RUN_TIME), 6), 5, 0, ':'), 3, 0, ':')) as LAST_RUN_DATE_TIME
-		) CAlrdt
+			SELECT
+				 SJS.job_id
+				,MIN (CONVERT (DATETIME, CONVERT (VARCHAR (8), SJS.next_run_date) + ' ' + STUFF (STUFF (RIGHT ('000000' + CONVERT (VARCHAR (6), SJS.next_run_time), 6), 5, 0, ':'), 3, 0, ':'))) AS next_run_date_time
+			FROM
+				msdb.dbo.sysjobschedules SJS
+				INNER JOIN msdb.dbo.sysschedules SS ON SS.schedule_id = SJS.schedule_id
+					AND SS.[enabled] = 1
+			WHERE
+				SJS.next_run_date > 0
+			GROUP BY
+				SJS.job_id
+		) sqNRDT ON sqNRDT.job_id = SJ.job_id
 
-where
-	CAlrdt.LAST_RUN_DATE_TIME >= @dATE_24_hOURS_aGO
+	CROSS APPLY
+
+		(
+			SELECT
+				CONVERT (DATETIME, CONVERT (VARCHAR (8), SJH.run_date) + ' ' + STUFF (STUFF (RIGHT ('000000' + CONVERT (VARCHAR (6), SJH.run_time), 6), 5, 0, ':'), 3, 0, ':')) AS last_run_date_time
+		) caLRDT
+
+WHERE
+	caLRDT.last_run_date_time >= @Date_24_Hours_Ago
 
 
-if @@rowcount = 0
-begin
+IF @@ROWCOUNT = 0
+BEGIN
 
-	goto sKIP_aGENT_jOBS
+	GOTO Skip_Agent_Jobs
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.JOB_NAME as 'TD'
-					,'',x.JOB_OWNER as 'TD'
-					,'',x.DATE_CREATED as 'TD'
-					,'',x.DATE_MODIFIED as 'TD'
-					,'','RIGHT_ALIGN' + x.[VERSION] as 'TD'
-					,'',x.CATEGORY as 'TD'
-					,'',x.CLASS as 'TD'
-					,'',x.[TYPE] as 'TD'
-					,'',x.LAST_RUN_DATE_TIME as 'TD'
-					,'',x.LAST_STATUS as 'TD'
-					,'',x.DURATION as 'TD'
-					,'',x.NEXT_RUN_DATE_TIME as 'TD'
-					,'','RIGHT_ALIGN' + x.DAYS_AWAY as 'TD'
-				from
-					DBO.#TEMP_SSSR_AGENT_JOBS x
-				order by
-					x.JOB_NAME
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.job_name AS 'td'
+					,'',X.job_owner AS 'td'
+					,'',X.date_created AS 'td'
+					,'',X.date_modified AS 'td'
+					,'','right_align' + X.[version] AS 'td'
+					,'',X.category AS 'td'
+					,'',X.class AS 'td'
+					,'',X.[type] AS 'td'
+					,'',X.last_run_date_time AS 'td'
+					,'',X.last_status AS 'td'
+					,'',X.duration AS 'td'
+					,'',X.next_run_date_time AS 'td'
+					,'','right_align' + X.days_away AS 'td'
+				FROM
+					dbo.#temp_sssr_agent_jobs X
+				ORDER BY
+					X.job_name
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>sql sERVER aGENT jOBS (lAST 24 hOURS)</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>jOB nAME</TH>
-						<TH NOWRAP>jOB oWNER</TH>
-						<TH NOWRAP>dATE cREATED</TH>
-						<TH NOWRAP>dATE mODIFIED</TH>
-						<TH NOWRAP>vERSION</TH>
-						<TH NOWRAP>cATEGORY</TH>
-						<TH NOWRAP>cLASS</TH>
-						<TH NOWRAP>tYPE</TH>
-						<TH NOWRAP>lAST rUN dATE / tIME</TH>
-						<TH NOWRAP>lAST sTATUS</TH>
-						<TH NOWRAP>dURATION</TH>
-						<TH NOWRAP>nEXT rUN dATE / tIME</TH>
-						<TH NOWRAP>dAYS aWAY</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>SQL Server Agent Jobs (Last 24 Hours)</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Job Name</th>
+						<th nowrap>Job Owner</th>
+						<th nowrap>Date Created</th>
+						<th nowrap>Date Modified</th>
+						<th nowrap>Version</th>
+						<th nowrap>Category</th>
+						<th nowrap>Class</th>
+						<th nowrap>Type</th>
+						<th nowrap>Last Run Date / Time</th>
+						<th nowrap>Last Status</th>
+						<th nowrap>Duration</th>
+						<th nowrap>Next Run Date / Time</th>
+						<th nowrap>Days Away</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.JOB_NAME
-		,x.JOB_OWNER
-		,x.DATE_CREATED
-		,x.DATE_MODIFIED
-		,x.[VERSION]
-		,x.CATEGORY
-		,x.CLASS
-		,x.[TYPE]
-		,x.LAST_RUN_DATE_TIME
-		,x.LAST_STATUS
-		,x.DURATION
-		,x.NEXT_RUN_DATE_TIME
-		,x.DAYS_AWAY
-	from
-		DBO.#TEMP_SSSR_AGENT_JOBS x
-	order by
-		x.JOB_NAME
+	SELECT
+		 X.job_name
+		,X.job_owner
+		,X.date_created
+		,X.date_modified
+		,X.[version]
+		,X.category
+		,X.class
+		,X.[type]
+		,X.last_run_date_time
+		,X.last_status
+		,X.duration
+		,X.next_run_date_time
+		,X.days_away
+	FROM
+		dbo.#temp_sssr_agent_jobs X
+	ORDER BY
+		X.job_name
 
-end
-
-
-sKIP_aGENT_jOBS:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_AGENT_JOBS', n'u') is not null
-begin
+Skip_Agent_Jobs:
 
-	drop table DBO.#TEMP_SSSR_AGENT_JOBS
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_agent_jobs', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_agent_jobs
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY viii: iNDEX fRAGMENTATION
+--	Main Query VIII: Index Fragmentation
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @fRAGMENTATION = 0
-begin
+IF @Fragmentation = 0
+BEGIN
 
-	goto sKIP_iNDEX_fRAGMENTATION
+	GOTO Skip_Index_Fragmentation
 
-end
+END
 
 
-create table DBO.#TEMP_SSSR_INDEX_FRAGMENTATION
+CREATE TABLE dbo.#temp_sssr_index_fragmentation
 
 	(
-		 OBJECT_TYPE char (2)
-		,DATABASE_NAME nvarchar (128)
-		,[SCHEMA_NAME] sysname
-		,[OBJECT_NAME] sysname
-		,INDEX_NAME sysname
-		,INDEX_KEY nvarchar (max)
-		,INCLUDE_KEY nvarchar (max)
-		,FILTER_DEFINITION nvarchar (max)
-		,FRAGMENTATION varchar (23)
-		,INDEX_TYPE nvarchar (120)
-		,IS_PK varchar (3)
-		,IS_UNIQUE varchar (3)
-		,RECOMMENDATION varchar (10)
-		,ROW_COUNT varchar (23)
-		,ALTER_INDEX_STATEMENT nvarchar (4000)
+		 object_type CHAR (2)
+		,database_name NVARCHAR (128)
+		,[schema_name] SYSNAME
+		,[object_name] SYSNAME
+		,index_name SYSNAME
+		,index_key NVARCHAR (MAX)
+		,include_key NVARCHAR (MAX)
+		,filter_definition NVARCHAR (MAX)
+		,fragmentation VARCHAR (23)
+		,index_type NVARCHAR (120)
+		,is_pk VARCHAR (3)
+		,is_unique VARCHAR (3)
+		,recommendation VARCHAR (10)
+		,row_count VARCHAR (23)
+		,alter_index_statement NVARCHAR (4000)
 	)
 
 
-set @dATABASE_nAME_lOOP =
+SET @Database_Name_Loop =
 
 	(
-		select top (1)
-			x.DATABASE_NAME
-		from
-			DBO.#TEMP_SSSR_DATABASES x
-		where
-			x.DATABASE_NAME <> n'TEMPDB'
-		order by
-			x.DATABASE_NAME
+		SELECT TOP (1)
+			X.database_name
+		FROM
+			dbo.#temp_sssr_databases X
+		WHERE
+			X.database_name <> N'tempdb'
+		ORDER BY
+			X.database_name
 	)
 
 
-while @dATABASE_nAME_lOOP is not null
-begin
+WHILE @Database_Name_Loop IS NOT NULL
+BEGIN
 
-	set @dATABASE_id = db_id (@dATABASE_nAME_lOOP)
-
-
-	set @sql_sTRING = @aVOID_tRUNCATION +
-
-		n'
-			use [' + @dATABASE_nAME_lOOP + n']
+	SET @Database_ID = DB_ID (@Database_Name_Loop)
 
 
-			insert into DBO.#TEMP_SSSR_INDEX_FRAGMENTATION
+	SET @SQL_String = @Avoid_Truncation +
+
+		N'
+			USE [' + @Database_Name_Loop + N']
+
+
+			INSERT INTO dbo.#temp_sssr_index_fragmentation
 
 				(
-					 OBJECT_TYPE
-					,DATABASE_NAME
-					,[SCHEMA_NAME]
-					,[OBJECT_NAME]
-					,INDEX_NAME
-					,INDEX_KEY
-					,INCLUDE_KEY
-					,FILTER_DEFINITION
-					,FRAGMENTATION
-					,INDEX_TYPE
-					,IS_PK
-					,IS_UNIQUE
-					,RECOMMENDATION
-					,ROW_COUNT
-					,ALTER_INDEX_STATEMENT
+					 object_type
+					,database_name
+					,[schema_name]
+					,[object_name]
+					,index_name
+					,index_key
+					,include_key
+					,filter_definition
+					,fragmentation
+					,index_type
+					,is_pk
+					,is_unique
+					,recommendation
+					,row_count
+					,alter_index_statement
 				)
 
-			select
-				 SQif.[TYPE] as OBJECT_TYPE
-				,db_name () as DATABASE_NAME
-				,schema_name (SQif.[SCHEMA_ID]) as [SCHEMA_NAME]
-				,SQif.[OBJECT_NAME]
-				,SQif.INDEX_NAME
-				,SQif.INDEX_KEY
-				,SQif.INCLUDE_KEY
-				,SQif.FILTER_DEFINITION
-				,reverse (substring (reverse (convert (varchar (23), convert (money, SQif.AVG_FRAGMENTATION_IN_PERCENT), 1)), 1, 23)) as FRAGMENTATION
-				,SQif.TYPE_DESC as INDEX_TYPE
-				,(case SQif.IS_PRIMARY_KEY
-					when 0 then ''nO''
-					when 1 then ''yES''
-					else ''n/a''
-					end) as IS_PK
-				,(case SQif.IS_UNIQUE
-					when 0 then ''nO''
-					when 1 then ''yES''
-					else ''n/a''
-					end) as IS_UNIQUE
-				,CArec.RECOMMENDATION
-				,reverse (substring (reverse (convert (varchar (23), convert (money, SQif.[ROWS]), 1)), 4, 23)) as ROW_COUNT
-				,n''use [''
-				 + db_name ()
-				 + n'']; alter index [''
-				 + SQif.INDEX_NAME
-				 + n''] on [''
-				 + schema_name (SQif.[SCHEMA_ID])
-				 + n''].[''
-				 + SQif.[OBJECT_NAME]
-				 + n''] ''
-				 + CArec.RECOMMENDATION
-				 + (case CArec.RECOMMENDATION
-						when ''rebuild'' then n'' with (maxdop = 1)''
-						else n''''
-						end)
-				 + n'';'' as ALTER_INDEX_STATEMENT
-			from
+			SELECT
+				 sqIF.[type] AS object_type
+				,DB_NAME () AS database_name
+				,SCHEMA_NAME (sqIF.[schema_id]) AS [schema_name]
+				,sqIF.[object_name]
+				,sqIF.index_name
+				,sqIF.index_key
+				,sqIF.include_key
+				,sqIF.filter_definition
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, sqIF.avg_fragmentation_in_percent), 1)), 1, 23)) AS fragmentation
+				,sqIF.type_desc AS index_type
+				,(CASE sqIF.is_primary_key
+					WHEN 0 THEN ''No''
+					WHEN 1 THEN ''Yes''
+					ELSE ''N/A''
+					END) AS is_pk
+				,(CASE sqIF.is_unique
+					WHEN 0 THEN ''No''
+					WHEN 1 THEN ''Yes''
+					ELSE ''N/A''
+					END) AS is_unique
+				,caREC.recommendation
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, sqIF.[rows]), 1)), 4, 23)) AS row_count
+				,N''USE [''
+				 + DB_NAME ()
+				 + N'']; ALTER INDEX [''
+				 + sqIF.index_name
+				 + N''] ON [''
+				 + SCHEMA_NAME (sqIF.[schema_id])
+				 + N''].[''
+				 + sqIF.[object_name]
+				 + N''] ''
+				 + caREC.recommendation
+				 + (CASE caREC.recommendation
+						WHEN ''REBUILD'' THEN N'' WITH (MAXDOP = 1)''
+						ELSE N''''
+						END)
+				 + N'';'' AS alter_index_statement
+			FROM
 
 				(
-					select
-						 o.[TYPE]
-						,o.[SCHEMA_ID]
-						,o.NAME as [OBJECT_NAME]
-						,i.NAME as INDEX_NAME
-						,stuff (convert (nvarchar (max), (CAiif.INDEX_KEY)), 1, 2, n'''') as INDEX_KEY
-						,isnull (stuff (convert (nvarchar (max), (CAiif.INCLUDE_KEY)), 1, 2, n''''), n'''') as INCLUDE_KEY
-						,' + @fILTER_dEFINITION_sTRING + n' as FILTER_DEFINITION
-						,ddips.AVG_FRAGMENTATION_IN_PERCENT
-						,i.TYPE_DESC
-						,i.IS_PRIMARY_KEY
-						,i.IS_UNIQUE
-						,TTsrc.[ROWS]
-						,row_number () over
+					SELECT
+						 O.[type]
+						,O.[schema_id]
+						,O.name AS [object_name]
+						,I.name AS index_name
+						,STUFF (CONVERT (NVARCHAR (MAX), (caIIF.index_key)), 1, 2, N'''') AS index_key
+						,ISNULL (STUFF (CONVERT (NVARCHAR (MAX), (caIIF.include_key)), 1, 2, N''''), N'''') AS include_key
+						,' + @Filter_Definition_String + N' AS filter_definition
+						,DDIPS.avg_fragmentation_in_percent
+						,I.type_desc
+						,I.is_primary_key
+						,I.is_unique
+						,ttSRC.[rows]
+						,ROW_NUMBER () OVER
 										(
-											partition by
-												i.NAME
-											order by
-												ddips.AVG_FRAGMENTATION_IN_PERCENT desc
-										) as ROW_NUMBER_ID
-					from
-						SYS.DM_DB_INDEX_PHYSICAL_STATS (' + convert (nvarchar (11), @dATABASE_id) + n', null, null, null, n''limited'') ddips
-						inner join SYS.OBJECTS o on o.[OBJECT_ID] = ddips.[OBJECT_ID]
-							and o.[TYPE] in (''u'', ''v'')
-							and o.IS_MS_SHIPPED = 0
-							and not
+											PARTITION BY
+												I.name
+											ORDER BY
+												DDIPS.avg_fragmentation_in_percent DESC
+										) AS row_number_id
+					FROM
+						sys.dm_db_index_physical_stats (' + CONVERT (NVARCHAR (11), @Database_ID) + N', NULL, NULL, NULL, N''LIMITED'') DDIPS
+						INNER JOIN sys.objects O ON O.[object_id] = DDIPS.[object_id]
+							AND O.[type] IN (''U'', ''V'')
+							AND O.is_ms_shipped = 0
+							AND NOT
 
 								(
-									schema_name (o.[SCHEMA_ID]) = n''DBO''
-									and o.NAME = n''SYSDIAGRAMS''
-									and o.[TYPE] = ''u''
+									SCHEMA_NAME (O.[schema_id]) = N''dbo''
+									AND O.name = N''sysdiagrams''
+									AND O.[type] = ''U''
 								)
 
-						inner join SYS.INDEXES i on i.[OBJECT_ID] = ddips.[OBJECT_ID]
-							and i.INDEX_ID = ddips.INDEX_ID
-							and i.IS_DISABLED <> 1
-							and i.IS_HYPOTHETICAL <> 1
-						inner join DBO.#TEMP_SSSR_ROW_COUNTS TTsrc on TTsrc.[OBJECT_ID] = ddips.[OBJECT_ID]
-							and TTsrc.DATABASE_ID = db_id ()
-						cross apply
+						INNER JOIN sys.indexes I ON I.[object_id] = DDIPS.[object_id]
+							AND I.index_id = DDIPS.index_id
+							AND I.is_disabled <> 1
+							AND I.is_hypothetical <> 1
+						INNER JOIN dbo.#temp_sssr_row_counts ttSRC ON ttSRC.[object_id] = DDIPS.[object_id]
+							AND ttSRC.database_id = DB_ID ()
+						CROSS APPLY
 
 							(
-								select
+								SELECT
 									 (
-										select
-											  n'', ''
-											+ c.NAME as [TEXT()]
-										from
-											SYS.INDEX_COLUMNS ic
-											inner join SYS.COLUMNS c on c.[OBJECT_ID] = ic.[OBJECT_ID]
-												and c.COLUMN_ID = ic.COLUMN_ID
-										where
-											ic.IS_INCLUDED_COLUMN = 0
-											and ic.[OBJECT_ID] = i.[OBJECT_ID]
-											and ic.INDEX_ID = i.INDEX_ID
-										order by
-											ic.KEY_ORDINAL
-										for
-											 xml path ('''')
-											,type
-									 ) as INDEX_KEY
+										SELECT
+											  N'', ''
+											+ C.name AS [text()]
+										FROM
+											sys.index_columns IC
+											INNER JOIN sys.columns C ON C.[object_id] = IC.[object_id]
+												AND C.column_id = IC.column_id
+										WHERE
+											IC.is_included_column = 0
+											AND IC.[object_id] = I.[object_id]
+											AND IC.index_id = I.index_id
+										ORDER BY
+											IC.key_ordinal
+										FOR
+											 XML PATH ('''')
+											,TYPE
+									 ) AS index_key
 									,(
-										select
-											  n'', ''
-											+ c.NAME as [TEXT()]
-										from
-											SYS.INDEX_COLUMNS ic
-											inner join SYS.COLUMNS c on c.[OBJECT_ID] = ic.[OBJECT_ID]
-												and c.COLUMN_ID = ic.COLUMN_ID
-										where
-											ic.IS_INCLUDED_COLUMN = 1
-											and ic.[OBJECT_ID] = i.[OBJECT_ID]
-											and ic.INDEX_ID = i.INDEX_ID
-										order by
-											ic.KEY_ORDINAL
-										for
-											 xml path ('''')
-											,type
-									 ) as INCLUDE_KEY
-							) CAiif
+										SELECT
+											  N'', ''
+											+ C.name AS [text()]
+										FROM
+											sys.index_columns IC
+											INNER JOIN sys.columns C ON C.[object_id] = IC.[object_id]
+												AND C.column_id = IC.column_id
+										WHERE
+											IC.is_included_column = 1
+											AND IC.[object_id] = I.[object_id]
+											AND IC.index_id = I.index_id
+										ORDER BY
+											IC.key_ordinal
+										FOR
+											 XML PATH ('''')
+											,TYPE
+									 ) AS include_key
+							) caIIF
 
-					where
-						ddips.INDEX_ID <> 0
-						and ddips.AVG_FRAGMENTATION_IN_PERCENT > 5
-				) SQif
+					WHERE
+						DDIPS.index_id <> 0
+						AND DDIPS.avg_fragmentation_in_percent > 5
+				) sqIF
 
-				cross apply
+				CROSS APPLY
 
 					(
-						select
-							(case
-								when SQif.AVG_FRAGMENTATION_IN_PERCENT <= 30.0 then ''reorganize''
-								else ''rebuild''
-								end) as RECOMMENDATION
-					) CArec
+						SELECT
+							(CASE
+								WHEN sqIF.avg_fragmentation_in_percent <= 30.0 THEN ''REORGANIZE''
+								ELSE ''REBUILD''
+								END) AS recommendation
+					) caREC
 
-			where
-				SQif.ROW_NUMBER_ID = 1
+			WHERE
+				sqIF.row_number_id = 1
 		 '
 
 
-	execute (@sql_sTRING)
+	EXECUTE (@SQL_String)
 
 
-	set @dATABASE_nAME_lOOP =
+	SET @Database_Name_Loop =
 
 		(
-			select top (1)
-				x.DATABASE_NAME
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-			where
-				x.DATABASE_NAME <> n'TEMPDB'
-				and x.DATABASE_NAME > @dATABASE_nAME_lOOP
-			order by
-				x.DATABASE_NAME
+			SELECT TOP (1)
+				X.database_name
+			FROM
+				dbo.#temp_sssr_databases X
+			WHERE
+				X.database_name <> N'tempdb'
+				AND X.database_name > @Database_Name_Loop
+			ORDER BY
+				X.database_name
 		)
 
-end
+END
 
 
-if not exists (select * from DBO.#TEMP_SSSR_INDEX_FRAGMENTATION x)
-begin
+IF NOT EXISTS (SELECT * FROM dbo.#temp_sssr_index_fragmentation X)
+BEGIN
 
-	goto sKIP_iNDEX_fRAGMENTATION
+	GOTO Skip_Index_Fragmentation
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.OBJECT_TYPE as 'TD'
-					,'',x.DATABASE_NAME as 'TD'
-					,'',x.[SCHEMA_NAME] as 'TD'
-					,'',x.[OBJECT_NAME] as 'TD'
-					,'',x.INDEX_NAME as 'TD'
-					,'',x.INDEX_KEY as 'TD'
-					,'',x.INCLUDE_KEY as 'TD'
-					,'',x.FILTER_DEFINITION as 'TD'
-					,'','RIGHT_ALIGN' + x.FRAGMENTATION as 'TD'
-					,'',x.INDEX_TYPE as 'TD'
-					,'',x.IS_PK as 'TD'
-					,'',x.IS_UNIQUE as 'TD'
-					,'',x.RECOMMENDATION as 'TD'
-					,'','RIGHT_ALIGN' + x.ROW_COUNT as 'TD'
-					,'',x.ALTER_INDEX_STATEMENT as 'TD'
-				from
-					DBO.#TEMP_SSSR_INDEX_FRAGMENTATION x
-				order by
-					 x.OBJECT_TYPE
-					,x.DATABASE_NAME
-					,x.[SCHEMA_NAME]
-					,x.[OBJECT_NAME]
-					,x.INDEX_NAME
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.object_type AS 'td'
+					,'',X.database_name AS 'td'
+					,'',X.[schema_name] AS 'td'
+					,'',X.[object_name] AS 'td'
+					,'',X.index_name AS 'td'
+					,'',X.index_key AS 'td'
+					,'',X.include_key AS 'td'
+					,'',X.filter_definition AS 'td'
+					,'','right_align' + X.fragmentation AS 'td'
+					,'',X.index_type AS 'td'
+					,'',X.is_pk AS 'td'
+					,'',X.is_unique AS 'td'
+					,'',X.recommendation AS 'td'
+					,'','right_align' + X.row_count AS 'td'
+					,'',X.alter_index_statement AS 'td'
+				FROM
+					dbo.#temp_sssr_index_fragmentation X
+				ORDER BY
+					 X.object_type
+					,X.database_name
+					,X.[schema_name]
+					,X.[object_name]
+					,X.index_name
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>iNDEX fRAGMENTATION</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>oBJECT tYPE</TH>
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>sCHEMA nAME</TH>
-						<TH NOWRAP>oBJECT nAME</TH>
-						<TH NOWRAP>iNDEX nAME</TH>
-						<TH NOWRAP>iNDEX kEY</TH>
-						<TH NOWRAP>iNCLUDE kEY</TH>
-						<TH NOWRAP>fILTER dEFINITION</TH>
-						<TH NOWRAP>fRAGMENTATION</TH>
-						<TH NOWRAP>iNDEX tYPE</TH>
-						<TH NOWRAP>pk</TH>
-						<TH NOWRAP>uNIQUE</TH>
-						<TH NOWRAP>rECOMMENDATION</TH>
-						<TH NOWRAP>rOW cOUNT</TH>
-						<TH NOWRAP>aLTER iNDEX sTATEMENT</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Index Fragmentation</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Object Type</th>
+						<th nowrap>Database Name</th>
+						<th nowrap>Schema Name</th>
+						<th nowrap>Object Name</th>
+						<th nowrap>Index Name</th>
+						<th nowrap>Index Key</th>
+						<th nowrap>Include Key</th>
+						<th nowrap>Filter Definition</th>
+						<th nowrap>Fragmentation</th>
+						<th nowrap>Index Type</th>
+						<th nowrap>PK</th>
+						<th nowrap>Unique</th>
+						<th nowrap>Recommendation</th>
+						<th nowrap>Row Count</th>
+						<th nowrap>Alter Index Statement</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.INDEX_NAME
-		,x.INDEX_KEY
-		,x.INCLUDE_KEY
-		,x.FILTER_DEFINITION
-		,x.FRAGMENTATION
-		,x.INDEX_TYPE
-		,x.IS_PK as PK
-		,x.IS_UNIQUE as [UNIQUE]
-		,x.RECOMMENDATION
-		,x.ROW_COUNT
-		,x.ALTER_INDEX_STATEMENT
-	from
-		DBO.#TEMP_SSSR_INDEX_FRAGMENTATION x
-	order by
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.INDEX_NAME
+	SELECT
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.index_name
+		,X.index_key
+		,X.include_key
+		,X.filter_definition
+		,X.fragmentation
+		,X.index_type
+		,X.is_pk AS pk
+		,X.is_unique AS [unique]
+		,X.recommendation
+		,X.row_count
+		,X.alter_index_statement
+	FROM
+		dbo.#temp_sssr_index_fragmentation X
+	ORDER BY
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.index_name
 
-end
-
-
-sKIP_iNDEX_fRAGMENTATION:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_INDEX_FRAGMENTATION', n'u') is not null
-begin
+Skip_Index_Fragmentation:
 
-	drop table DBO.#TEMP_SSSR_INDEX_FRAGMENTATION
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_index_fragmentation', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_index_fragmentation
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY ix: mISSING iNDEXES
+--	Main Query IX: Missing Indexes
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @mISSING_iNDEXES = 0
-begin
+IF @Missing_Indexes = 0
+BEGIN
 
-	goto sKIP_mISSING_iNDEXES
+	GOTO Skip_Missing_Indexes
 
-end
+END
 
 
-create table DBO.#TEMP_SSSR_MISSING_INDEXES
+CREATE TABLE dbo.#temp_sssr_missing_indexes
 
 	(
-		 OBJECT_TYPE char (2)
-		,DATABASE_NAME nvarchar (128)
-		,[SCHEMA_NAME] sysname
-		,[OBJECT_NAME] sysname
-		,UNIQUE_COMPILES varchar (23)
-		,USER_SEEKS varchar (23)
-		,USER_SCANS varchar (23)
-		,AVG_TOTAL_USER_COST varchar (23)
-		,AVG_USER_IMPACT varchar (23)
-		,OVERALL_IMPACT varchar (23)
-		,IMPACT_RANK varchar (23)
-		,INDEX_KEY nvarchar (max)
-		,INCLUDE_KEY nvarchar (max)
-		,TABLE_COLUMN_COUNT varchar (23)
-		,INDEX_COLUMN_COUNT varchar (23)
-		,INCLUDE_COLUMN_COUNT varchar (23)
-		,INDEX_PCT_OF_COLUMNS varchar (23)
-		,INCLUDE_PCT_OF_COLUMNS varchar (23)
-		,TOTAL_PCT_OF_COLUMNS varchar (23)
-		,ROW_COUNT varchar (23)
-		,CREATE_INDEX_STATEMENT nvarchar (max)
+		 object_type CHAR (2)
+		,database_name NVARCHAR (128)
+		,[schema_name] SYSNAME
+		,[object_name] SYSNAME
+		,unique_compiles VARCHAR (23)
+		,user_seeks VARCHAR (23)
+		,user_scans VARCHAR (23)
+		,avg_total_user_cost VARCHAR (23)
+		,avg_user_impact VARCHAR (23)
+		,overall_impact VARCHAR (23)
+		,impact_rank VARCHAR (23)
+		,index_key NVARCHAR (MAX)
+		,include_key NVARCHAR (MAX)
+		,table_column_count VARCHAR (23)
+		,index_column_count VARCHAR (23)
+		,include_column_count VARCHAR (23)
+		,index_pct_of_columns VARCHAR (23)
+		,include_pct_of_columns VARCHAR (23)
+		,total_pct_of_columns VARCHAR (23)
+		,row_count VARCHAR (23)
+		,create_index_statement NVARCHAR (MAX)
 	)
 
 
-set @dATABASE_nAME_lOOP =
+SET @Database_Name_Loop =
 
 	(
-		select top (1)
-			x.DATABASE_NAME
-		from
-			DBO.#TEMP_SSSR_DATABASES x
-		where
-			x.DATABASE_NAME <> n'TEMPDB'
-		order by
-			x.DATABASE_NAME
+		SELECT TOP (1)
+			X.database_name
+		FROM
+			dbo.#temp_sssr_databases X
+		WHERE
+			X.database_name <> N'tempdb'
+		ORDER BY
+			X.database_name
 	)
 
 
-while @dATABASE_nAME_lOOP is not null
-begin
+WHILE @Database_Name_Loop IS NOT NULL
+BEGIN
 
-	set @sql_sTRING = @aVOID_tRUNCATION +
+	SET @SQL_String = @Avoid_Truncation +
 
-		n'
-			use [' + @dATABASE_nAME_lOOP + n']
+		N'
+			USE [' + @Database_Name_Loop + N']
 
 
-			insert into DBO.#TEMP_SSSR_MISSING_INDEXES
+			INSERT INTO dbo.#temp_sssr_missing_indexes
 
 				(
-					 OBJECT_TYPE
-					,DATABASE_NAME
-					,[SCHEMA_NAME]
-					,[OBJECT_NAME]
-					,UNIQUE_COMPILES
-					,USER_SEEKS
-					,USER_SCANS
-					,AVG_TOTAL_USER_COST
-					,AVG_USER_IMPACT
-					,OVERALL_IMPACT
-					,IMPACT_RANK
-					,INDEX_KEY
-					,INCLUDE_KEY
-					,TABLE_COLUMN_COUNT
-					,INDEX_COLUMN_COUNT
-					,INCLUDE_COLUMN_COUNT
-					,INDEX_PCT_OF_COLUMNS
-					,INCLUDE_PCT_OF_COLUMNS
-					,TOTAL_PCT_OF_COLUMNS
-					,ROW_COUNT
-					,CREATE_INDEX_STATEMENT
+					 object_type
+					,database_name
+					,[schema_name]
+					,[object_name]
+					,unique_compiles
+					,user_seeks
+					,user_scans
+					,avg_total_user_cost
+					,avg_user_impact
+					,overall_impact
+					,impact_rank
+					,index_key
+					,include_key
+					,table_column_count
+					,index_column_count
+					,include_column_count
+					,index_pct_of_columns
+					,include_pct_of_columns
+					,total_pct_of_columns
+					,row_count
+					,create_index_statement
 				)
 
 
-			select
-				 o.[TYPE] as OBJECT_TYPE
-				,db_name () as DATABASE_NAME
-				,schema_name (o.[SCHEMA_ID]) as [SCHEMA_NAME]
-				,o.NAME as [OBJECT_NAME]
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ddmigs.UNIQUE_COMPILES), 1)), 4, 23)) as UNIQUE_COMPILES
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ddmigs.USER_SEEKS), 1)), 4, 23)) as USER_SEEKS
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ddmigs.USER_SCANS), 1)), 4, 23)) as USER_SCANS
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ddmigs.AVG_TOTAL_USER_COST), 1)), 1, 23)) as AVG_TOTAL_USER_COST
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ddmigs.AVG_USER_IMPACT), 1)), 1, 23)) as AVG_USER_IMPACT
-				,reverse (substring (reverse (convert (varchar (23), convert (money, CAic.OVERALL_IMPACT), 1)), 1, 23)) as OVERALL_IMPACT
-				,reverse (substring (reverse (convert (varchar (23), convert (money, dense_rank () over
+			SELECT
+				 O.[type] AS object_type
+				,DB_NAME () AS database_name
+				,SCHEMA_NAME (O.[schema_id]) AS [schema_name]
+				,O.name AS [object_name]
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.unique_compiles), 1)), 4, 23)) AS unique_compiles
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.user_seeks), 1)), 4, 23)) AS user_seeks
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.user_scans), 1)), 4, 23)) AS user_scans
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_total_user_cost), 1)), 1, 23)) AS avg_total_user_cost
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_user_impact), 1)), 1, 23)) AS avg_user_impact
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.overall_impact), 1)), 1, 23)) AS overall_impact
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DENSE_RANK () OVER
 																										(
-																											order by
-																												CAic.OVERALL_IMPACT desc
-																										)), 1)), 4, 23)) as IMPACT_RANK
-				,isnull (ddmid.EQUALITY_COLUMNS + CAic.COMMA_OR_NOT, n'''') + isnull (ddmid.INEQUALITY_COLUMNS, n'''') as INDEX_KEY
-				,isnull (ddmid.INCLUDED_COLUMNS, n'''') as INCLUDE_KEY
-				,reverse (substring (reverse (convert (varchar (23), convert (money, SQcc.TABLE_COLUMN_COUNT), 1)), 4, 23)) as TABLE_COLUMN_COUNT
-				,reverse (substring (reverse (convert (varchar (23), convert (money, CAic.INDEX_COLUMN_COUNT), 1)), 4, 23)) as INDEX_COLUMN_COUNT
-				,reverse (substring (reverse (convert (varchar (23), convert (money, CAic.INCLUDE_COLUMN_COUNT), 1)), 4, 23)) as INCLUDE_COLUMN_COUNT
-				,reverse (substring (reverse (convert (varchar (23), convert (money, (CAic.INDEX_COLUMN_COUNT / SQcc.TABLE_COLUMN_COUNT) * 100), 1)), 1, 23)) as INDEX_PCT_OF_COLUMNS
-				,reverse (substring (reverse (convert (varchar (23), convert (money, (CAic.INCLUDE_COLUMN_COUNT / SQcc.TABLE_COLUMN_COUNT) * 100), 1)), 1, 23)) as INCLUDE_PCT_OF_COLUMNS
-				,reverse (substring (reverse (convert (varchar (23), convert (money, ((CAic.INDEX_COLUMN_COUNT + CAic.INCLUDE_COLUMN_COUNT) / SQcc.TABLE_COLUMN_COUNT) * 100), 1)), 1, 23)) as TOTAL_PCT_OF_COLUMNS
-				,reverse (substring (reverse (convert (varchar (23), convert (money, TTsrc.[ROWS]), 1)), 4, 23)) as ROW_COUNT
-				,CAcis.CREATE_INDEX_STATEMENT
-			from
-				SYS.OBJECTS o
-				inner join SYS.DM_DB_MISSING_INDEX_DETAILS ddmid on ddmid.[OBJECT_ID] = o.[OBJECT_ID]
-					and ddmid.DATABASE_ID = db_id ()
-				inner join SYS.DM_DB_MISSING_INDEX_GROUPS ddmig on ddmig.INDEX_HANDLE = ddmid.INDEX_HANDLE
-				inner join SYS.DM_DB_MISSING_INDEX_GROUP_STATS ddmigs on ddmigs.GROUP_HANDLE = ddmig.INDEX_GROUP_HANDLE
-				inner join
+																											ORDER BY
+																												caIC.overall_impact DESC
+																										)), 1)), 4, 23)) AS impact_rank
+				,ISNULL (DDMID.equality_columns + caIC.comma_or_not, N'''') + ISNULL (DDMID.inequality_columns, N'''') AS index_key
+				,ISNULL (DDMID.included_columns, N'''') AS include_key
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, sqCC.table_column_count), 1)), 4, 23)) AS table_column_count
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.index_column_count), 1)), 4, 23)) AS index_column_count
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.include_column_count), 1)), 4, 23)) AS include_column_count
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.index_column_count / sqCC.table_column_count) * 100), 1)), 1, 23)) AS index_pct_of_columns
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.include_column_count / sqCC.table_column_count) * 100), 1)), 1, 23)) AS include_pct_of_columns
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ((caIC.index_column_count + caIC.include_column_count) / sqCC.table_column_count) * 100), 1)), 1, 23)) AS total_pct_of_columns
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ttSRC.[rows]), 1)), 4, 23)) AS row_count
+				,caCIS.create_index_statement
+			FROM
+				sys.objects O
+				INNER JOIN sys.dm_db_missing_index_details DDMID ON DDMID.[object_id] = O.[object_id]
+					AND DDMID.database_id = DB_ID ()
+				INNER JOIN sys.dm_db_missing_index_groups DDMIG ON DDMIG.index_handle = DDMID.index_handle
+				INNER JOIN sys.dm_db_missing_index_group_stats DDMIGS ON DDMIGS.group_handle = DDMIG.index_group_handle
+				INNER JOIN
 
 					(
-						select
-							 c.[OBJECT_ID]
-							,count (*) + .0 as TABLE_COLUMN_COUNT
-						from
-							SYS.COLUMNS c
-						group by
-							c.[OBJECT_ID]
-					) SQcc on SQcc.[OBJECT_ID] = o.[OBJECT_ID]
+						SELECT
+							 C.[object_id]
+							,COUNT (*) + .0 AS table_column_count
+						FROM
+							sys.columns C
+						GROUP BY
+							C.[object_id]
+					) sqCC ON sqCC.[object_id] = O.[object_id]
 
-				inner join DBO.#TEMP_SSSR_ROW_COUNTS TTsrc on TTsrc.[OBJECT_ID] = o.[OBJECT_ID]
-					and TTsrc.DATABASE_ID = db_id ()
-				cross apply
-
-					(
-						select
-							 convert (decimal (18, 2), (ddmigs.USER_SEEKS + ddmigs.USER_SCANS) * (ddmigs.AVG_TOTAL_USER_COST * ddmigs.AVG_USER_IMPACT)) as OVERALL_IMPACT
-							,isnull ((len (ddmid.EQUALITY_COLUMNS) - len (replace (ddmid.EQUALITY_COLUMNS, n'','', n''''))) + 1, 0) + isnull ((len (ddmid.INEQUALITY_COLUMNS) - len (replace (ddmid.INEQUALITY_COLUMNS, n'','', n''''))) + 1, 0) as INDEX_COLUMN_COUNT
-							,isnull ((len (ddmid.INCLUDED_COLUMNS) - len (replace (ddmid.INCLUDED_COLUMNS, n'','', n''''))) + 1, 0) as INCLUDE_COLUMN_COUNT
-							,(case
-								when ddmid.INEQUALITY_COLUMNS is not null then n'', ''
-								else n''''
-								end) as COMMA_OR_NOT
-							,n''ix_''
-							 + o.NAME
-							 + n''_''
-							 + isnull (replace (substring (substring (ddmid.EQUALITY_COLUMNS, 1, len (ddmid.EQUALITY_COLUMNS) - 1), 2, len (ddmid.EQUALITY_COLUMNS) - 1), n''], ['', n''_'')
-							 + (case
-									when ddmid.INEQUALITY_COLUMNS is not null then n''_''
-									else n''''
-									end), n'''')
-							 + isnull (replace (substring (substring (ddmid.INEQUALITY_COLUMNS, 1, len (ddmid.INEQUALITY_COLUMNS) - 1), 2, len (ddmid.INEQUALITY_COLUMNS) - 1), n''], ['', n''_''), n'''')
-							 + isnull (n''_I_'' + replace (substring (substring (ddmid.INCLUDED_COLUMNS, 1, len (ddmid.INCLUDED_COLUMNS) - 1), 2, len (ddmid.INCLUDED_COLUMNS) - 1), n''], ['', n''_''), n'''') as INDEX_BASE_STRING
-					) CAic
-
-				cross apply
+				INNER JOIN dbo.#temp_sssr_row_counts ttSRC ON ttSRC.[object_id] = O.[object_id]
+					AND ttSRC.database_id = DB_ID ()
+				CROSS APPLY
 
 					(
-						select
-							n''create nonclustered index ''
-							+ (case
-									when len (CAic.INDEX_BASE_STRING collate database_default) > 128 then n''<index name>''
-									else n''['' + CAic.INDEX_BASE_STRING + n'']''
-									end)
-							+ n'' on ''
-							+ n''[''
-							+ db_name ()
-							+ n'']''
-							+ n''.''
-							+ n''[''
-							+ schema_name (o.[SCHEMA_ID])
-							+ n'']''
-							+ n''.''
-							+ n''[''
-							+ o.NAME
-							+ n'']''
-							+ n'' (''
-							+ isnull (ddmid.EQUALITY_COLUMNS + CAic.COMMA_OR_NOT, n'''')
-							+ isnull (ddmid.INEQUALITY_COLUMNS, n'''')
-							+ n'')''
-							+ isnull (n'' include ('' + ddmid.INCLUDED_COLUMNS + n'')'', n'''')
-							+ n'';'' as CREATE_INDEX_STATEMENT
-					) CAcis
+						SELECT
+							 CONVERT (DECIMAL (18, 2), (DDMIGS.user_seeks + DDMIGS.user_scans) * (DDMIGS.avg_total_user_cost * DDMIGS.avg_user_impact)) AS overall_impact
+							,ISNULL ((LEN (DDMID.equality_columns) - LEN (REPLACE (DDMID.equality_columns, N'','', N''''))) + 1, 0) + ISNULL ((LEN (DDMID.inequality_columns) - LEN (REPLACE (DDMID.inequality_columns, N'','', N''''))) + 1, 0) AS index_column_count
+							,ISNULL ((LEN (DDMID.included_columns) - LEN (REPLACE (DDMID.included_columns, N'','', N''''))) + 1, 0) AS include_column_count
+							,(CASE
+								WHEN DDMID.inequality_columns IS NOT NULL THEN N'', ''
+								ELSE N''''
+								END) AS comma_or_not
+							,N''IX_''
+							 + O.name
+							 + N''_''
+							 + ISNULL (REPLACE (SUBSTRING (SUBSTRING (DDMID.equality_columns, 1, LEN (DDMID.equality_columns) - 1), 2, LEN (DDMID.equality_columns) - 1), N''], ['', N''_'')
+							 + (CASE
+									WHEN DDMID.inequality_columns IS NOT NULL THEN N''_''
+									ELSE N''''
+									END), N'''')
+							 + ISNULL (REPLACE (SUBSTRING (SUBSTRING (DDMID.inequality_columns, 1, LEN (DDMID.inequality_columns) - 1), 2, LEN (DDMID.inequality_columns) - 1), N''], ['', N''_''), N'''')
+							 + ISNULL (N''_i_'' + REPLACE (SUBSTRING (SUBSTRING (DDMID.included_columns, 1, LEN (DDMID.included_columns) - 1), 2, LEN (DDMID.included_columns) - 1), N''], ['', N''_''), N'''') AS index_base_string
+					) caIC
 
-			where
-				o.[TYPE] in (''u'', ''v'')
-				and o.IS_MS_SHIPPED = 0
-				and not
+				CROSS APPLY
 
 					(
-						schema_name (o.[SCHEMA_ID]) = n''DBO''
-						and o.NAME = n''SYSDIAGRAMS''
-						and o.[TYPE] = ''u''
+						SELECT
+							N''CREATE NONCLUSTERED INDEX ''
+							+ (CASE
+									WHEN LEN (caIC.index_base_string COLLATE DATABASE_DEFAULT) > 128 THEN N''<INDEX NAME>''
+									ELSE N''['' + caIC.index_base_string + N'']''
+									END)
+							+ N'' ON ''
+							+ N''[''
+							+ DB_NAME ()
+							+ N'']''
+							+ N''.''
+							+ N''[''
+							+ SCHEMA_NAME (O.[schema_id])
+							+ N'']''
+							+ N''.''
+							+ N''[''
+							+ O.name
+							+ N'']''
+							+ N'' (''
+							+ ISNULL (DDMID.equality_columns + caIC.comma_or_not, N'''')
+							+ ISNULL (DDMID.inequality_columns, N'''')
+							+ N'')''
+							+ ISNULL (N'' INCLUDE ('' + DDMID.included_columns + N'')'', N'''')
+							+ N'';'' AS create_index_statement
+					) caCIS
+
+			WHERE
+				O.[type] IN (''U'', ''V'')
+				AND O.is_ms_shipped = 0
+				AND NOT
+
+					(
+						SCHEMA_NAME (O.[schema_id]) = N''dbo''
+						AND O.name = N''sysdiagrams''
+						AND O.[type] = ''U''
 					)
 		 '
 
 
-	execute (@sql_sTRING)
+	EXECUTE (@SQL_String)
 
 
-	set @dATABASE_nAME_lOOP =
+	SET @Database_Name_Loop =
 
 		(
-			select top (1)
-				x.DATABASE_NAME
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-			where
-				x.DATABASE_NAME <> n'TEMPDB'
-				and x.DATABASE_NAME > @dATABASE_nAME_lOOP
-			order by
-				x.DATABASE_NAME
+			SELECT TOP (1)
+				X.database_name
+			FROM
+				dbo.#temp_sssr_databases X
+			WHERE
+				X.database_name <> N'tempdb'
+				AND X.database_name > @Database_Name_Loop
+			ORDER BY
+				X.database_name
 		)
 
-end
+END
 
 
-if not exists (select * from DBO.#TEMP_SSSR_MISSING_INDEXES x)
-begin
+IF NOT EXISTS (SELECT * FROM dbo.#temp_sssr_missing_indexes X)
+BEGIN
 
-	goto sKIP_mISSING_iNDEXES
+	GOTO Skip_Missing_Indexes
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.OBJECT_TYPE as 'TD'
-					,'',x.DATABASE_NAME as 'TD'
-					,'',x.[SCHEMA_NAME] as 'TD'
-					,'',x.[OBJECT_NAME] as 'TD'
-					,'','RIGHT_ALIGN' + x.UNIQUE_COMPILES as 'TD'
-					,'','RIGHT_ALIGN' + x.USER_SEEKS as 'TD'
-					,'','RIGHT_ALIGN' + x.USER_SCANS as 'TD'
-					,'','RIGHT_ALIGN' + x.AVG_TOTAL_USER_COST as 'TD'
-					,'','RIGHT_ALIGN' + x.AVG_USER_IMPACT as 'TD'
-					,'','RIGHT_ALIGN' + x.OVERALL_IMPACT as 'TD'
-					,'','RIGHT_ALIGN' + x.IMPACT_RANK as 'TD'
-					,'',x.INDEX_KEY as 'TD'
-					,'',x.INCLUDE_KEY as 'TD'
-					,'','RIGHT_ALIGN' + x.TABLE_COLUMN_COUNT as 'TD'
-					,'','RIGHT_ALIGN' + x.INDEX_COLUMN_COUNT as 'TD'
-					,'','RIGHT_ALIGN' + x.INCLUDE_COLUMN_COUNT as 'TD'
-					,'','RIGHT_ALIGN' + x.INDEX_PCT_OF_COLUMNS as 'TD'
-					,'','RIGHT_ALIGN' + x.INCLUDE_PCT_OF_COLUMNS as 'TD'
-					,'','RIGHT_ALIGN' + x.TOTAL_PCT_OF_COLUMNS as 'TD'
-					,'','RIGHT_ALIGN' + x.ROW_COUNT as 'TD'
-					,'',x.CREATE_INDEX_STATEMENT as 'TD'
-				from
-					DBO.#TEMP_SSSR_MISSING_INDEXES x
-				order by
-					 x.OBJECT_TYPE
-					,x.DATABASE_NAME
-					,x.[SCHEMA_NAME]
-					,x.[OBJECT_NAME]
-					,x.IMPACT_RANK
-					,x.INDEX_KEY
-					,x.INCLUDE_KEY
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.object_type AS 'td'
+					,'',X.database_name AS 'td'
+					,'',X.[schema_name] AS 'td'
+					,'',X.[object_name] AS 'td'
+					,'','right_align' + X.unique_compiles AS 'td'
+					,'','right_align' + X.user_seeks AS 'td'
+					,'','right_align' + X.user_scans AS 'td'
+					,'','right_align' + X.avg_total_user_cost AS 'td'
+					,'','right_align' + X.avg_user_impact AS 'td'
+					,'','right_align' + X.overall_impact AS 'td'
+					,'','right_align' + X.impact_rank AS 'td'
+					,'',X.index_key AS 'td'
+					,'',X.include_key AS 'td'
+					,'','right_align' + X.table_column_count AS 'td'
+					,'','right_align' + X.index_column_count AS 'td'
+					,'','right_align' + X.include_column_count AS 'td'
+					,'','right_align' + X.index_pct_of_columns AS 'td'
+					,'','right_align' + X.include_pct_of_columns AS 'td'
+					,'','right_align' + X.total_pct_of_columns AS 'td'
+					,'','right_align' + X.row_count AS 'td'
+					,'',X.create_index_statement AS 'td'
+				FROM
+					dbo.#temp_sssr_missing_indexes X
+				ORDER BY
+					 X.object_type
+					,X.database_name
+					,X.[schema_name]
+					,X.[object_name]
+					,X.impact_rank
+					,X.index_key
+					,X.include_key
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>mISSING iNDEXES</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>oBJECT tYPE</TH>
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>sCHEMA nAME</TH>
-						<TH NOWRAP>oBJECT nAME</TH>
-						<TH NOWRAP>uNIQUE cOMPILES</TH>
-						<TH NOWRAP>uSER sEEKS</TH>
-						<TH NOWRAP>uSER sCANS</TH>
-						<TH NOWRAP>aVG uSER cOST</TH>
-						<TH NOWRAP>aVG uSER iMPACT</TH>
-						<TH NOWRAP>oVERALL iMPACT</TH>
-						<TH NOWRAP>iMPACT rANK</TH>
-						<TH NOWRAP>iNDEX kEY</TH>
-						<TH NOWRAP>iNCLUDE kEY</TH>
-						<TH NOWRAP>tABLE cOLUMN cOUNT</TH>
-						<TH NOWRAP>iNDEX cOLUMN cOUNT</TH>
-						<TH NOWRAP>iNCLUDE cOLUMN cOUNT</TH>
-						<TH NOWRAP>iNDEX % oF cOLUMNS</TH>
-						<TH NOWRAP>iNCLUDE % oF cOLUMNS</TH>
-						<TH NOWRAP>tOTAL % oF cOLUMNS</TH>
-						<TH NOWRAP>rOW cOUNT</TH>
-						<TH NOWRAP>cREATE iNDEX sTATEMENT</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Missing Indexes</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Object Type</th>
+						<th nowrap>Database Name</th>
+						<th nowrap>Schema Name</th>
+						<th nowrap>Object Name</th>
+						<th nowrap>Unique Compiles</th>
+						<th nowrap>User Seeks</th>
+						<th nowrap>User Scans</th>
+						<th nowrap>Avg User Cost</th>
+						<th nowrap>Avg User Impact</th>
+						<th nowrap>Overall Impact</th>
+						<th nowrap>Impact Rank</th>
+						<th nowrap>Index Key</th>
+						<th nowrap>Include Key</th>
+						<th nowrap>Table Column Count</th>
+						<th nowrap>Index Column Count</th>
+						<th nowrap>Include Column Count</th>
+						<th nowrap>Index % Of Columns</th>
+						<th nowrap>Include % Of Columns</th>
+						<th nowrap>Total % Of Columns</th>
+						<th nowrap>Row Count</th>
+						<th nowrap>Create Index Statement</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.UNIQUE_COMPILES
-		,x.USER_SEEKS
-		,x.USER_SCANS
-		,x.AVG_TOTAL_USER_COST as AVG_USER_COST
-		,x.AVG_USER_IMPACT
-		,x.OVERALL_IMPACT
-		,x.IMPACT_RANK
-		,x.INDEX_KEY
-		,x.INCLUDE_KEY
-		,x.TABLE_COLUMN_COUNT
-		,x.INDEX_COLUMN_COUNT
-		,x.INCLUDE_COLUMN_COUNT
-		,x.INDEX_PCT_OF_COLUMNS
-		,x.INCLUDE_PCT_OF_COLUMNS
-		,x.TOTAL_PCT_OF_COLUMNS
-		,x.ROW_COUNT
-		,x.CREATE_INDEX_STATEMENT
-	from
-		DBO.#TEMP_SSSR_MISSING_INDEXES x
-	order by
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.IMPACT_RANK
-		,x.INDEX_KEY
-		,x.INCLUDE_KEY
+	SELECT
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.unique_compiles
+		,X.user_seeks
+		,X.user_scans
+		,X.avg_total_user_cost AS avg_user_cost
+		,X.avg_user_impact
+		,X.overall_impact
+		,X.impact_rank
+		,X.index_key
+		,X.include_key
+		,X.table_column_count
+		,X.index_column_count
+		,X.include_column_count
+		,X.index_pct_of_columns
+		,X.include_pct_of_columns
+		,X.total_pct_of_columns
+		,X.row_count
+		,X.create_index_statement
+	FROM
+		dbo.#temp_sssr_missing_indexes X
+	ORDER BY
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.impact_rank
+		,X.index_key
+		,X.include_key
 
-end
-
-
-sKIP_mISSING_iNDEXES:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_MISSING_INDEXES', n'u') is not null
-begin
+Skip_Missing_Indexes:
 
-	drop table DBO.#TEMP_SSSR_MISSING_INDEXES
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_missing_indexes', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_missing_indexes
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	mAIN qUERY x: uNUSED iNDEXES
+--	Main Query X: Unused Indexes
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @uNUSED_iNDEXES = 0
-begin
+IF @Unused_Indexes = 0
+BEGIN
 
-	goto sKIP_uNUSED_iNDEXES
+	GOTO Skip_Unused_Indexes
 
-end
+END
 
 
-create table DBO.#TEMP_SSSR_UNUSED_INDEXES
+CREATE TABLE dbo.#temp_sssr_unused_indexes
 
 	(
-		 OBJECT_TYPE char (2)
-		,DATABASE_NAME nvarchar (128)
-		,[SCHEMA_NAME] sysname
-		,[OBJECT_NAME] sysname
-		,INDEX_NAME sysname
-		,INDEX_KEY nvarchar (max)
-		,INCLUDE_KEY nvarchar (max)
-		,FILTER_DEFINITION nvarchar (max)
-		,[DISABLED] varchar (3)
-		,HYPOTHETICAL varchar (3)
-		,ROW_COUNT varchar (23)
-		,DROP_INDEX_STATEMENT nvarchar (4000)
+		 object_type CHAR (2)
+		,database_name NVARCHAR (128)
+		,[schema_name] SYSNAME
+		,[object_name] SYSNAME
+		,index_name SYSNAME
+		,index_key NVARCHAR (MAX)
+		,include_key NVARCHAR (MAX)
+		,filter_definition NVARCHAR (MAX)
+		,[disabled] VARCHAR (3)
+		,hypothetical VARCHAR (3)
+		,row_count VARCHAR (23)
+		,drop_index_statement NVARCHAR (4000)
 	)
 
 
-set @dATABASE_nAME_lOOP =
+SET @Database_Name_Loop =
 
 	(
-		select top (1)
-			x.DATABASE_NAME
-		from
-			DBO.#TEMP_SSSR_DATABASES x
-		where
-			x.DATABASE_NAME <> n'TEMPDB'
-		order by
-			x.DATABASE_NAME
+		SELECT TOP (1)
+			X.database_name
+		FROM
+			dbo.#temp_sssr_databases X
+		WHERE
+			X.database_name <> N'tempdb'
+		ORDER BY
+			X.database_name
 	)
 
 
-while @dATABASE_nAME_lOOP is not null
-begin
+WHILE @Database_Name_Loop IS NOT NULL
+BEGIN
 
-	set @sql_sTRING = @aVOID_tRUNCATION +
+	SET @SQL_String = @Avoid_Truncation +
 
-		n'
-			use [' + @dATABASE_nAME_lOOP + n']
+		N'
+			USE [' + @Database_Name_Loop + N']
 
 
-			insert into DBO.#TEMP_SSSR_UNUSED_INDEXES
+			INSERT INTO dbo.#temp_sssr_unused_indexes
 
 				(
-					 OBJECT_TYPE
-					,DATABASE_NAME
-					,[SCHEMA_NAME]
-					,[OBJECT_NAME]
-					,INDEX_NAME
-					,INDEX_KEY
-					,INCLUDE_KEY
-					,FILTER_DEFINITION
-					,[DISABLED]
-					,HYPOTHETICAL
-					,ROW_COUNT
-					,DROP_INDEX_STATEMENT
+					 object_type
+					,database_name
+					,[schema_name]
+					,[object_name]
+					,index_name
+					,index_key
+					,include_key
+					,filter_definition
+					,[disabled]
+					,hypothetical
+					,row_count
+					,drop_index_statement
 				)
 
-			select
-				 o.[TYPE] as OBJECT_TYPE
-				,db_name () as DATABASE_NAME
-				,schema_name (o.SCHEMA_ID) as [SCHEMA_NAME]
-				,o.NAME as [OBJECT_NAME]
-				,i.NAME as INDEX_NAME
-				,stuff (convert (nvarchar (max), (CAiif.INDEX_KEY)), 1, 2, n'''') as INDEX_KEY
-				,isnull (stuff (convert (nvarchar (max), (CAiif.INCLUDE_KEY)), 1, 2, n''''), n'''') as INCLUDE_KEY
-				,' + @fILTER_dEFINITION_sTRING + n' as FILTER_DEFINITION
-				,(case
-					when i.IS_DISABLED = 1 then ''yES''
-					else ''nO''
-					end) as [DISABLED]
-				,(case
-					when i.IS_HYPOTHETICAL = 1 then ''yES''
-					else ''nO''
-					end) as HYPOTHETICAL
-				,reverse (substring (reverse (convert (varchar (23), convert (money, TTsrc.[ROWS]), 1)), 4, 23)) as ROW_COUNT
-				,n''use [''
-				 + db_name ()
-				 + n'']; if exists (select * from SYS.INDEXES i where i.[OBJECT_ID] = ''
-				 + convert (varchar (11), i.[OBJECT_ID])
-				 + n'' and i.INDEX_ID = ''
-				 + convert (varchar (11), i.INDEX_ID)
-				 + n'') begin drop index [''
-				 + i.NAME
-				 + n''] on [''
-				 + schema_name (o.SCHEMA_ID)
-				 + n''].[''
-				 + o.NAME
-				 + n''] end;'' as DROP_INDEX_STATEMENT
-			from
-				SYS.INDEXES i
-				inner join SYS.OBJECTS o on o.[OBJECT_ID] = i.[OBJECT_ID]
-					and o.[TYPE] in (''u'', ''v'')
-					and o.IS_MS_SHIPPED = 0
-					and not
+			SELECT
+				 O.[type] AS object_type
+				,DB_NAME () AS database_name
+				,SCHEMA_NAME (O.schema_id) AS [schema_name]
+				,O.name AS [object_name]
+				,I.name AS index_name
+				,STUFF (CONVERT (NVARCHAR (MAX), (caIIF.index_key)), 1, 2, N'''') AS index_key
+				,ISNULL (STUFF (CONVERT (NVARCHAR (MAX), (caIIF.include_key)), 1, 2, N''''), N'''') AS include_key
+				,' + @Filter_Definition_String + N' AS filter_definition
+				,(CASE
+					WHEN I.is_disabled = 1 THEN ''Yes''
+					ELSE ''No''
+					END) AS [disabled]
+				,(CASE
+					WHEN I.is_hypothetical = 1 THEN ''Yes''
+					ELSE ''No''
+					END) AS hypothetical
+				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ttSRC.[rows]), 1)), 4, 23)) AS row_count
+				,N''USE [''
+				 + DB_NAME ()
+				 + N'']; IF EXISTS (SELECT * FROM sys.indexes I WHERE I.[object_id] = ''
+				 + CONVERT (VARCHAR (11), I.[object_id])
+				 + N'' AND I.index_id = ''
+				 + CONVERT (VARCHAR (11), I.index_id)
+				 + N'') BEGIN DROP INDEX [''
+				 + I.name
+				 + N''] ON [''
+				 + SCHEMA_NAME (O.schema_id)
+				 + N''].[''
+				 + O.name
+				 + N''] END;'' AS drop_index_statement
+			FROM
+				sys.indexes I
+				INNER JOIN sys.objects O ON O.[object_id] = I.[object_id]
+					AND O.[type] IN (''U'', ''V'')
+					AND O.is_ms_shipped = 0
+					AND NOT
 
 						(
-							schema_name (o.[SCHEMA_ID]) = n''DBO''
-							and o.NAME = n''SYSDIAGRAMS''
-							and o.[TYPE] = ''u''
+							SCHEMA_NAME (O.[schema_id]) = N''dbo''
+							AND O.name = N''sysdiagrams''
+							AND O.[type] = ''U''
 						)
 
-				inner join DBO.#TEMP_SSSR_ROW_COUNTS TTsrc on TTsrc.[OBJECT_ID] = i.[OBJECT_ID]
-					and TTsrc.DATABASE_ID = db_id ()
-				cross apply
+				INNER JOIN dbo.#temp_sssr_row_counts ttSRC ON ttSRC.[object_id] = I.[object_id]
+					AND ttSRC.database_id = DB_ID ()
+				CROSS APPLY
 
 					(
-						select
+						SELECT
 							 (
-								select
-									  n'', ''
-									+ c.NAME as [TEXT()]
-								from
-									SYS.INDEX_COLUMNS ic
-									inner join SYS.COLUMNS c on c.[OBJECT_ID] = ic.[OBJECT_ID]
-										and c.COLUMN_ID = ic.COLUMN_ID
-								where
-									ic.IS_INCLUDED_COLUMN = 0
-									and ic.[OBJECT_ID] = i.[OBJECT_ID]
-									and ic.INDEX_ID = i.INDEX_ID
-								order by
-									ic.KEY_ORDINAL
-								for
-									 xml path ('''')
-									,type
-							 ) as INDEX_KEY
+								SELECT
+									  N'', ''
+									+ C.name AS [text()]
+								FROM
+									sys.index_columns IC
+									INNER JOIN sys.columns C ON C.[object_id] = IC.[object_id]
+										AND C.column_id = IC.column_id
+								WHERE
+									IC.is_included_column = 0
+									AND IC.[object_id] = I.[object_id]
+									AND IC.index_id = I.index_id
+								ORDER BY
+									IC.key_ordinal
+								FOR
+									 XML PATH ('''')
+									,TYPE
+							 ) AS index_key
 							,(
-								select
-									  n'', ''
-									+ c.NAME as [TEXT()]
-								from
-									SYS.INDEX_COLUMNS ic
-									inner join SYS.COLUMNS c on c.[OBJECT_ID] = ic.[OBJECT_ID]
-										and c.COLUMN_ID = ic.COLUMN_ID
-								where
-									ic.IS_INCLUDED_COLUMN = 1
-									and ic.[OBJECT_ID] = i.[OBJECT_ID]
-									and ic.INDEX_ID = i.INDEX_ID
-								order by
-									ic.KEY_ORDINAL
-								for
-									 xml path ('''')
-									,type
-							 ) as INCLUDE_KEY
-					) CAiif
+								SELECT
+									  N'', ''
+									+ C.name AS [text()]
+								FROM
+									sys.index_columns IC
+									INNER JOIN sys.columns C ON C.[object_id] = IC.[object_id]
+										AND C.column_id = IC.column_id
+								WHERE
+									IC.is_included_column = 1
+									AND IC.[object_id] = I.[object_id]
+									AND IC.index_id = I.index_id
+								ORDER BY
+									IC.key_ordinal
+								FOR
+									 XML PATH ('''')
+									,TYPE
+							 ) AS include_key
+					) caIIF
 
-			where
-				i.[TYPE] = 2
-				and i.IS_PRIMARY_KEY = 0
-				and i.IS_UNIQUE = 0
-				and not exists
+			WHERE
+				I.[type] = 2
+				AND I.is_primary_key = 0
+				AND I.is_unique = 0
+				AND NOT EXISTS
 
 					(
-						select
+						SELECT
 							*
-						from
-							SYS.INDEX_COLUMNS xic
-							inner join SYS.FOREIGN_KEY_COLUMNS fkc on fkc.PARENT_OBJECT_ID = xic.[OBJECT_ID]
-								and fkc.PARENT_COLUMN_ID = xic.COLUMN_ID
-						where
-							xic.[OBJECT_ID] = i.[OBJECT_ID]
-							and xic.INDEX_ID = i.INDEX_ID
+						FROM
+							sys.index_columns XIC
+							INNER JOIN sys.foreign_key_columns FKC ON FKC.parent_object_id = XIC.[object_id]
+								AND FKC.parent_column_id = XIC.column_id
+						WHERE
+							XIC.[object_id] = I.[object_id]
+							AND XIC.index_id = I.index_id
 					)
 
-				and not exists
+				AND NOT EXISTS
 
 					(
-						select
+						SELECT
 							*
-						from
-							MASTER.SYS.DM_DB_INDEX_USAGE_STATS ddius
-						where
-							ddius.DATABASE_ID = db_id ()
-							and ddius.[OBJECT_ID] = i.[OBJECT_ID]
-							and ddius.INDEX_ID = i.INDEX_ID
+						FROM
+							master.sys.dm_db_index_usage_stats DDIUS
+						WHERE
+							DDIUS.database_id = DB_ID ()
+							AND DDIUS.[object_id] = I.[object_id]
+							AND DDIUS.index_id = I.index_id
 					)
 		 '
 
 
-	execute (@sql_sTRING)
+	EXECUTE (@SQL_String)
 
 
-	set @dATABASE_nAME_lOOP =
+	SET @Database_Name_Loop =
 
 		(
-			select top (1)
-				x.DATABASE_NAME
-			from
-				DBO.#TEMP_SSSR_DATABASES x
-			where
-				x.DATABASE_NAME <> n'TEMPDB'
-				and x.DATABASE_NAME > @dATABASE_nAME_lOOP
-			order by
-				x.DATABASE_NAME
+			SELECT TOP (1)
+				X.database_name
+			FROM
+				dbo.#temp_sssr_databases X
+			WHERE
+				X.database_name <> N'tempdb'
+				AND X.database_name > @Database_Name_Loop
+			ORDER BY
+				X.database_name
 		)
 
-end
+END
 
 
-if not exists (select * from DBO.#TEMP_SSSR_UNUSED_INDEXES x)
-begin
+IF NOT EXISTS (SELECT * FROM dbo.#temp_sssr_unused_indexes X)
+BEGIN
 
-	goto sKIP_uNUSED_iNDEXES
+	GOTO Skip_Unused_Indexes
 
-end
+END
 
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @xml_sTRING =
+	SET @XML_String =
 
-		convert (nvarchar (max),
+		CONVERT (NVARCHAR (MAX),
 			(
-				select
-					 '',x.OBJECT_TYPE as 'TD'
-					,'',x.DATABASE_NAME as 'TD'
-					,'',x.[SCHEMA_NAME] as 'TD'
-					,'',x.[OBJECT_NAME] as 'TD'
-					,'',x.INDEX_NAME as 'TD'
-					,'',x.INDEX_KEY as 'TD'
-					,'',x.INCLUDE_KEY as 'TD'
-					,'',x.FILTER_DEFINITION as 'TD'
-					,'',x.[DISABLED] as 'TD'
-					,'',x.HYPOTHETICAL as 'TD'
-					,'','RIGHT_ALIGN' + x.ROW_COUNT as 'TD'
-					,'',x.DROP_INDEX_STATEMENT as 'TD'
-				from
-					DBO.#TEMP_SSSR_UNUSED_INDEXES x
-				order by
-					 x.OBJECT_TYPE
-					,x.DATABASE_NAME
-					,x.[SCHEMA_NAME]
-					,x.[OBJECT_NAME]
-					,x.INDEX_NAME
-				for
-					xml path ('TR')
+				SELECT
+					 '',X.object_type AS 'td'
+					,'',X.database_name AS 'td'
+					,'',X.[schema_name] AS 'td'
+					,'',X.[object_name] AS 'td'
+					,'',X.index_name AS 'td'
+					,'',X.index_key AS 'td'
+					,'',X.include_key AS 'td'
+					,'',X.filter_definition AS 'td'
+					,'',X.[disabled] AS 'td'
+					,'',X.hypothetical AS 'td'
+					,'','right_align' + X.row_count AS 'td'
+					,'',X.drop_index_statement AS 'td'
+				FROM
+					dbo.#temp_sssr_unused_indexes X
+				ORDER BY
+					 X.object_type
+					,X.database_name
+					,X.[schema_name]
+					,X.[object_name]
+					,X.index_name
+				FOR
+					XML PATH ('tr')
 			)
 		)
 
 
-	set @bODY = @bODY +
+	SET @Body = @Body +
 
-		n'
-			<BR>
-			<H3><CENTER>uNUSED iNDEXES</CENTER></H3>
-			<CENTER>
-				<TABLE FRAME=BOX BORDER=1 CELLPADDING=2>
-					<TR STYLE="COLOR: WHITE; BACKGROUND-COLOR: BLACK">
-						<TH NOWRAP>oBJECT tYPE</TH>
-						<TH NOWRAP>dATABASE nAME</TH>
-						<TH NOWRAP>sCHEMA nAME</TH>
-						<TH NOWRAP>oBJECT nAME</TH>
-						<TH NOWRAP>iNDEX nAME</TH>
-						<TH NOWRAP>iNDEX kEY</TH>
-						<TH NOWRAP>iNCLUDE kEY</TH>
-						<TH NOWRAP>fILTER dEFINITION</TH>
-						<TH NOWRAP>dISABLED</TH>
-						<TH NOWRAP>hYPOTHETICAL</TH>
-						<TH NOWRAP>rOW cOUNT</TH>
-						<TH NOWRAP>dROP iNDEX sTATEMENT</TH>
-					</TR>
+		N'
+			<br>
+			<h3><center>Unused Indexes</center></h3>
+			<center>
+				<table frame=box border=1 cellpadding=2>
+					<tr style="color: white; background-color: black">
+						<th nowrap>Object Type</th>
+						<th nowrap>Database Name</th>
+						<th nowrap>Schema Name</th>
+						<th nowrap>Object Name</th>
+						<th nowrap>Index Name</th>
+						<th nowrap>Index Key</th>
+						<th nowrap>Include Key</th>
+						<th nowrap>Filter Definition</th>
+						<th nowrap>Disabled</th>
+						<th nowrap>Hypothetical</th>
+						<th nowrap>Row Count</th>
+						<th nowrap>Drop Index Statement</th>
+					</tr>
 		 '
 
 
-	set @bODY = @bODY + @xml_sTRING +
+	SET @Body = @Body + @XML_String +
 
-		n'
-				</TABLE>
-			</CENTER>
+		N'
+				</table>
+			</center>
 		 '
 
-end
-else begin
+END
+ELSE BEGIN
 
-	select
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.INDEX_NAME
-		,x.INDEX_KEY
-		,x.INCLUDE_KEY
-		,x.FILTER_DEFINITION
-		,x.[DISABLED]
-		,x.HYPOTHETICAL
-		,x.ROW_COUNT
-		,x.DROP_INDEX_STATEMENT
-	from
-		DBO.#TEMP_SSSR_UNUSED_INDEXES x
-	order by
-		 x.OBJECT_TYPE
-		,x.DATABASE_NAME
-		,x.[SCHEMA_NAME]
-		,x.[OBJECT_NAME]
-		,x.INDEX_NAME
+	SELECT
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.index_name
+		,X.index_key
+		,X.include_key
+		,X.filter_definition
+		,X.[disabled]
+		,X.hypothetical
+		,X.row_count
+		,X.drop_index_statement
+	FROM
+		dbo.#temp_sssr_unused_indexes X
+	ORDER BY
+		 X.object_type
+		,X.database_name
+		,X.[schema_name]
+		,X.[object_name]
+		,X.index_name
 
-end
-
-
-sKIP_uNUSED_iNDEXES:
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_UNUSED_INDEXES', n'u') is not null
-begin
+Skip_Unused_Indexes:
 
-	drop table DBO.#TEMP_SSSR_UNUSED_INDEXES
 
-end
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_unused_indexes', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_unused_indexes
+
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	vARIABLE uPDATE: fINALIZE "@bODY" vARIABLE cONTENTS
+--	Variable Update: Finalize "@Body" Variable Contents
 -----------------------------------------------------------------------------------------------------------------------------
 
-if @oUTPUT_mODE = 'e'
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	set @bODY =
+	SET @Body =
 
-		n'
-			<HTML>
-				<BODY>
-				<STYLE TYPE="TEXT/CSS">
-					TABLE {FONT-SIZE: 8.0PT; FONT-FAMILY: aRIAL; TEXT-ALIGN: LEFT; WHITE-SPACE: NOWRAP; EMPTY-CELLS: SHOW}
-					TBODY TR:NTH-CHILD(ODD) {BACKGROUND-COLOR: #CCC;}
-					TR {TEXT-ALIGN: LEFT;}
-				</STYLE>
+		N'
+			<html>
+				<body>
+				<style type="text/css">
+					table {font-size: 8.0pt; font-family: Arial; text-align: left; white-space: nowrap; empty-cells: show}
+					tbody tr:nth-child(odd) {background-color: #ccc;}
+					tr {text-align: left;}
+				</style>
 		 '
 
-		+ substring (@bODY, 10, len (@bODY) - 10) +
+		+ SUBSTRING (@Body, 10, LEN (@Body) - 10) +
 
-		n'
-				</BODY>
-			</HTML>
+		N'
+				</body>
+			</html>
 		 '
 
 
-	set @bODY = replace (replace (@bODY, n'<TD>', n'<TD NOWRAP>'), n'<TD NOWRAP>RIGHT_ALIGN', n'<TD NOWRAP ALIGN="RIGHT">')
+	SET @Body = REPLACE (REPLACE (@Body, N'<td>', N'<td nowrap>'), N'<td nowrap>right_align', N'<td nowrap align="right">')
 
-end
-
-
------------------------------------------------------------------------------------------------------------------------------
---	SP_SEND_DBMAIL: dELIVER rESULTS / nOTIFICATION tO eND uSER(S)
------------------------------------------------------------------------------------------------------------------------------
-
-if @oUTPUT_mODE = 'e'
-begin
-
-	execute MSDB.DBO.SP_SEND_DBMAIL
-
-		 @RECIPIENTS = @rECIPIENTS
-		,@COPY_RECIPIENTS = @cOPY_rECIPIENTS
-		,@SUBJECT = @sUBJECT
-		,@BODY = @bODY
-		,@BODY_FORMAT = 'html'
-
-end
+END
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	cLEANUP: dROP aNY rEMAINING tEMP tABLES
+--	sp_send_dbmail: Deliver Results / Notification To End User(s)
 -----------------------------------------------------------------------------------------------------------------------------
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_DATABASES', n'u') is not null
-begin
+IF @Output_Mode = 'E'
+BEGIN
 
-	drop table DBO.#TEMP_SSSR_DATABASES
+	EXECUTE msdb.dbo.sp_send_dbmail
 
-end
+		 @recipients = @Recipients
+		,@copy_recipients = @Copy_Recipients
+		,@subject = @Subject
+		,@body = @Body
+		,@body_format = 'HTML'
+
+END
 
 
-if object_id (n'TEMPDB.DBO.#TEMP_SSSR_ROW_COUNTS', n'u') is not null
-begin
+-----------------------------------------------------------------------------------------------------------------------------
+--	Cleanup: Drop Any Remaining Temp Tables
+-----------------------------------------------------------------------------------------------------------------------------
 
-	drop table DBO.#TEMP_SSSR_ROW_COUNTS
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_databases', N'U') IS NOT NULL
+BEGIN
 
-end
-go
+	DROP TABLE dbo.#temp_sssr_databases
+
+END
+
+
+IF OBJECT_ID (N'tempdb.dbo.#temp_sssr_row_counts', N'U') IS NOT NULL
+BEGIN
+
+	DROP TABLE dbo.#temp_sssr_row_counts
+
+END
+GO
