@@ -17,8 +17,9 @@ Headers:
  - [Microsoft SQL Server 6.0 Builds](#microsoft-sql-server-60-builds)
 
 Source link:
- - Awesome unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
+ - Official Microsoft KB article: <https://support.microsoft.com/en-us/kb/321185>
  - SQL Server Updates by Brent Ozar team: <http://sqlserverupdates.com/>
+ - Unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
  - Wikipedia: <https://en.wikipedia.org/wiki/Microsoft_SQL_Server>
 
 Useful articles:
