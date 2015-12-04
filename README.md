@@ -48,7 +48,6 @@ Headers:
 
 
 ## Web resource
- - [Microsoft SQL Server Version List](http://sqlserverbuilds.blogspot.ru/) 
  - [SQL Central blog Scripts]
  - [SQL Central blog Articles]
  - **Awesome [BRENT OZAR] scripts and articles**
