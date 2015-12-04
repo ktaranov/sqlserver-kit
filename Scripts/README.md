@@ -36,10 +36,19 @@ Original link: https://sqlserverperformance.wordpress.com/<br/>
 Tested on SQL Server version: 2016
 
 
-## Table count alternative (by Jes Schultz Borland)
+## [Table count alternative](Table Count alternative.sql)
+Author: Jes Schultz Borland<br/>
+Original link: http://www.brentozar.com/archive/2014/02/count-number-rows-table-sql-server/<br/>
+Tested on SQL Server version: 2008/2012/2014/2016
 
 
-## Foreign Key batch rename (by Wes Henriksen)
+## [Foreign Key batch rename](Foreign Key batch rename.sql)
+Author: Wes Henriksen<br/>
+Original link: http://www.brentozar.com/archive/2014/02/count-number-rows-table-sql-server/<br/>
+Tested on SQL Server version: 2008/2012/2014
 
 
-## Count character matches
+## [Count character matches](Count character matches.sql)
+Author: Sean Smith<br/>
+Original link: http://www.sqlservercentral.com/scripts/Date/68389/<br/>
+Tested on SQL Server version: 2008/2012/2014
