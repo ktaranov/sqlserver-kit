@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- October 2015
--- Last Modified: October 25, 2015
+-- December 2015
+-- Last Modified: December 1, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -53,7 +53,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.300.44		CTP 2.1				6/14/2015
 -- 13.0.407.1		CTP 2.2				7/28/2015
 -- 13.0.500.53		CTP 2.3				9/4/2015
--- 13.0.600.65		CTP 2.4				9/30/2015 
+-- 13.0.600.65		CTP 2.4				9/30/2015
+-- 13.0.700.242		CTP 3.0				10/29/2015 
 
 
 
@@ -141,8 +142,7 @@ DBCC TRACESTATUS (-1);
 
 -- Common trace flags that should be enabled in most cases
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
--- TF 2371 - Lowers auto update statistics threshold for large tables
---           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
+-- The behavior of TF 1118 and 2371 are enabled in SQL Server 2016 by default
 
 
 -- SQL Server query optimizer hotfix trace flag 4199 servicing model
@@ -218,6 +218,7 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- Cannot distinguish between HT and multi-core
 -- Note: virtual_machine_type_desc of HYPERVISOR does not automatically mean you are running SQL Server inside of a VM
 -- It merely indicates that you have a hypervisor running on your host
+-- Soft NUMA configuration is a new column for SQL Server 2016
 
 -- Configure SQL Server to Use Soft-NUMA (SQL Server)
 -- https://msdn.microsoft.com/en-us/library/ms345357(v=sql.130).aspx
@@ -238,8 +239,12 @@ EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 
 -- This can help you determine the exact core counts used by SQL Server and whether HT is enabled or not
 -- It can also help you confirm your SQL Server licensing model
--- Be on the lookout for this message "using 20 logical processors based on SQL Server licensing" which means grandfathered Server/CAL licensing
+-- Be on the lookout for this message "using 20 logical processors based on SQL Server licensing" 
+-- which means grandfathered Server/CAL licensing
 -- This query will return no results if your error log has been recycled
+
+-- Balancing Your Available SQL Server Core Licenses Evenly Across NUMA Nodes
+-- http://www.sqlskills.com/blogs/glenn/balancing-your-available-sql-server-core-licenses-evenly-across-numa-nodes/
 
 
 -- Get processor description from Windows Registry  (Query 13) (Processor Description)
@@ -301,6 +306,7 @@ FROM sys.configurations WITH (NOLOCK)
 ORDER BY name OPTION (RECOMPILE);
 
 -- Focus on these settings:
+-- automatic soft-NUMA disabled (should be 0 in most cases)
 -- backup checksum default (should be 1)
 -- backup compression default (should be 1 in most cases)
 -- clr enabled (only enable if it is needed)
@@ -919,7 +925,7 @@ qs.min_elapsed_time AS [Min Elapsed Time],
 qs.total_elapsed_time/qs.execution_count AS [Avg Elapsed Time], 
 qs.max_elapsed_time AS [Max Elapsed Time],
 qs.execution_count AS [Execution Count], qs.creation_time AS [Creation Time]
--- ,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
+,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
@@ -1240,7 +1246,7 @@ WHERE r.session_id = t1.request_session_id) AS [waiter_stmt],					-- statement b
 t2.blocking_session_id AS [blocker sid],										-- spid of blocker
 (SELECT [text] FROM sys.sysprocesses AS p										-- get sql for blocker
 CROSS APPLY sys.dm_exec_sql_text(p.[sql_handle]) 
-WHERE p.spid = t2.blocking_session_id) AS [blocker_stmt]
+WHERE p.spid = t2.blocking_session_id) AS [blocker_batch]
 FROM sys.dm_tran_locks AS t1 WITH (NOLOCK)
 INNER JOIN sys.dm_os_waiting_tasks AS t2 WITH (NOLOCK)
 ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
@@ -1305,33 +1311,35 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 
 
 --- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 69) (Overall Index Usage - Reads)
-SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_seeks + s.user_scans + s.user_lookups AS [Reads], s.user_updates AS [Writes],  
-	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition, 
+SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id, 
+       s.user_seeks, s.user_scans, s.user_lookups,
+	   s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
+	   s.user_updates AS [Writes],  
+	   i.type_desc AS [Index Type], i.fill_factor AS [Fill Factor], i.has_filter, i.filter_definition, 
 	   s.last_user_scan, s.last_user_lookup, s.last_user_seek
-FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
-INNER JOIN sys.indexes AS i WITH (NOLOCK)
-ON s.[object_id] = i.[object_id]
-WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+FROM sys.indexes AS i WITH (NOLOCK)
+LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
-ORDER BY user_seeks + user_scans + user_lookups DESC OPTION (RECOMPILE); -- Order by reads
+WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
+ORDER BY s.user_seeks + s.user_scans + s.user_lookups DESC OPTION (RECOMPILE); -- Order by reads
 
 
 -- Show which indexes in the current database are most active for Reads
 
 
 --- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 70) (Overall Index Usage - Writes)
-SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Reads], 
-	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition,
+SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
+	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
+	   i.type_desc AS [Index Type], i.fill_factor AS [Fill Factor], i.has_filter, i.filter_definition,
 	   s.last_system_update, s.last_user_update
-FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
-INNER JOIN sys.indexes AS i WITH (NOLOCK)
-ON s.[object_id] = i.[object_id]
-WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+FROM sys.indexes AS i WITH (NOLOCK)
+LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
+WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
 ORDER BY s.user_updates DESC OPTION (RECOMPILE);						 -- Order by writes
 
 -- Show which indexes in the current database are most active for Writes

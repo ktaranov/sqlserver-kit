@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- October 2015
--- Last Modified: October 22, 2015
+-- December 2015
+-- Last Modified: December 1, 2015
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -45,9 +45,9 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 -- SQL and OS Version information for current instance  (Query 1) (Version Info)
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 
--- SQL Server 2012 RTM Branch Builds						SQL Server 2012 SP1 Branch Builds					SQL Server 2012 SP2 Branch Builds
--- Build			Description			Release Date		Build			Description		Release Date		Build			Description		    Release Date
--- 11.0.2100		RTM					  3/6/2012
+-- SQL Server 2012 RTM Branch Builds						SQL Server 2012 SP1 Branch Builds					SQL Server 2012 SP2 Branch Builds						SQL Server 2012 SP2 Branch Builds
+-- Build			Description			Release Date		Build			Description		Release Date		Build			Description		    Release Date        Build			Description		    Release Date
+-- 11.0.2100		RTM					  3/6/2012  
 -- 11.0.2316		RTM CU1				 4/12/2012
 -- 11.0.2325        RTM CU2				 6/18/2012 -->		11.0.3000		SP1 RTM			11/7/2012
 -- 11.0.2332		RTM CU3				 8/31/2012
@@ -66,11 +66,12 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --                                                          11.0.3470       SP1 CU12        9/15/2014 -->       11.0.5548       SP2 CU2             9/15/2014
 --                                                          11.0.3482		SP1 CU13        11/17/2014-->       11.0.5556		SP2 CU3            11/17/2014
 --                                                          11.0.3486       SP1 CU14        1/19/2015 -->       11.0.5569       SP2 CU4             1/19/2015
---                                                                                                              11.0.5571       SP2 CU4 + COD HF     2/4/2015  (this includes the AlwaysOn AG hotfix that is in SP2 CU5)
+--                                                                                                              11.0.5571       SP2 CU4 + COD HF     2/4/2015  
 --                                                          11.0.3487		SP1 CU15		3/16/2015 -->       11.0.5582       SP2 CU5             3/16/2015
 --															11.0.3492       SP1 CU16        5/18/2015 -->       11.0.5592		SP2 CU6				5/18/2015
 --                                                                                                              11.0.5623       SP2 CU7				7/20/2015
 --                                                                                                              11.0.5634		SP2 CU8				9/21/2015
+--																												11.9.5641		SP2 CU9			   11/16/2015   ---->  11.0.6290		SP3 RTM			11/22/2015				
 
 -- The SQL Server 2012 builds that were released after SQL Server 2012 was released
 -- http://support.microsoft.com/kb/2692828
@@ -835,7 +836,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isnÂ’t what you thinkÂ…
+-- Page Life Expectancy isn’t what you think…
 -- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1213,7 +1214,7 @@ WHERE r.session_id = t1.request_session_id) AS [waiter_stmt],					-- statement b
 t2.blocking_session_id AS [blocker sid],										-- spid of blocker
 (SELECT [text] FROM sys.sysprocesses AS p										-- get sql for blocker
 CROSS APPLY sys.dm_exec_sql_text(p.[sql_handle]) 
-WHERE p.spid = t2.blocking_session_id) AS [blocker_stmt]
+WHERE p.spid = t2.blocking_session_id) AS [blocker_batch]
 FROM sys.dm_tran_locks AS t1 WITH (NOLOCK)
 INNER JOIN sys.dm_os_waiting_tasks AS t2 WITH (NOLOCK)
 ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
@@ -1278,36 +1279,41 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 
 
 --- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 67) (Overall Index Usage - Reads)
-SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_seeks + s.user_scans + s.user_lookups AS [Reads], s.user_updates AS [Writes],  
-	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition, 
+SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id, 
+       s.user_seeks, s.user_scans, s.user_lookups,
+	   s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
+	   s.user_updates AS [Writes],  
+	   i.type_desc AS [Index Type], i.fill_factor AS [Fill Factor], i.has_filter, i.filter_definition, 
 	   s.last_user_scan, s.last_user_lookup, s.last_user_seek
-FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
-INNER JOIN sys.indexes AS i WITH (NOLOCK)
-ON s.[object_id] = i.[object_id]
-WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+FROM sys.indexes AS i WITH (NOLOCK)
+LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
-ORDER BY user_seeks + user_scans + user_lookups DESC OPTION (RECOMPILE); -- Order by reads
-
+WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
+ORDER BY s.user_seeks + s.user_scans + s.user_lookups DESC OPTION (RECOMPILE); -- Order by reads
 
 -- Show which indexes in the current database are most active for Reads
 
 
+
+
 --- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 68) (Overall Index Usage - Writes)
-SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
-	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Reads], 
-	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition,
+SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
+	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
+	   i.type_desc AS [Index Type], i.fill_factor AS [Fill Factor], i.has_filter, i.filter_definition,
 	   s.last_system_update, s.last_user_update
-FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
-INNER JOIN sys.indexes AS i WITH (NOLOCK)
-ON s.[object_id] = i.[object_id]
-WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
+FROM sys.indexes AS i WITH (NOLOCK)
+LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
+ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
+WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
 ORDER BY s.user_updates DESC OPTION (RECOMPILE);						 -- Order by writes
 
 -- Show which indexes in the current database are most active for Writes
+
+
 
 
 -- Get lock waits for current database (Query 69) (Lock Waits)
@@ -1351,13 +1357,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
--- SQL Server 2014 DMV Diagnostic Queries Â– Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries – Part 1 
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
--- SQL Server 2014 DMV Diagnostic Queries Â– Part 2
+-- SQL Server 2014 DMV Diagnostic Queries – Part 2
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
--- SQL Server 2014 DMV Diagnostic Queries Â– Part 3
+-- SQL Server 2014 DMV Diagnostic Queries – Part 3
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
