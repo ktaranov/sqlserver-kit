@@ -1,6 +1,16 @@
 # Microsoft SQL Server Edition
 
-Source links: http://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/
+Source links:
+ - [Official microsoft page](http://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/)
+ - [Features Supported by the Editions of SQL Server 2016](https://msdn.microsoft.com/en-us/library/cc645993.aspx)
+ - [Features Supported by the Editions of SQL Server 2014](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.120%29.aspx)
+ - [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.110%29.aspx)
+ - [Features Supported by the Editions of SQL Server 2008](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.100%29.aspx)
+ - [Features Supported by the Editions of SQL Server 2005](https://technet.microsoft.com/en-us/library/ms143761%28v=sql.90%29.aspx)
+
+
+## Microsoft SQL Server 2016 Edition
+SQL Server 2016 is available in an Evaluation edition for a 180-day trial period. For more information, see the SQL Server [Trial Software Web Site](https://www.microsoft.com/en-us/server-cloud/products/sql-server-2016/default.aspx).
 
 
 ## Microsoft SQL Server 2014 Edition
