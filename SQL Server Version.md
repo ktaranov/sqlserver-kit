@@ -17,10 +17,13 @@ Headers:
  - [Microsoft SQL Server 6.0 Builds](#microsoft-sql-server-60-builds)
 
 Source link:
- - Official Microsoft KB article: <https://support.microsoft.com/en-us/kb/321185>
- - SQL Server Updates by Brent Ozar team: <http://sqlserverupdates.com/>
- - Unofficial build chart lists: <http://sqlserverbuilds.blogspot.ru/>
- - Wikipedia: <https://en.wikipedia.org/wiki/Microsoft_SQL_Server>
+ - Official Microsoft KB article: https://support.microsoft.com/en-us/kb/321185
+ - SQL Server Updates by Brent Ozar team: http://sqlserverupdates.com/
+ - Unofficial build chart lists: http://sqlserverbuilds.blogspot.ru/
+ - Wikipedia: https://en.wikipedia.org/wiki/Microsoft_SQL_Server
+ - SQL Server 2005 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx
+ - SQL Server 2000 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb895925
+ - SQL Server 7.0 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb671066
 
 Useful articles:
  - [How to identify your SQL Server version and edition](http://support.microsoft.com/kb/321185/en-us)
