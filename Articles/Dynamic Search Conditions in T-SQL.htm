@@ -1,0 +1,1156 @@
+﻿<H1>Dynamic Search Conditions in T-SQL</H1>
+<P CLASS="ansqltextby">An SQL text by <A HREF="index.html">Erland Sommarskog</A>, SQL Server
+   MVP. <A HREF="#revision">Most recent update</A> 2015-11-15.</P>
+
+<H2 ID="introduction">Introduction</H2>
+<P>It is very common in information systems to have functions where the users are able to search the data by selecting
+   freely among many possible criterias. When you implement such a function with SQL Server there are two challenges: to produce the correct result and have good performance. </P>
+<P>When it comes to the latter, there is a key theme: there is no single execution plan that is good for all possible search criterias. Rather, you want the query plan to be different depending on user input. There are two ways to achieve this. You can write a static SQL query and add the hint <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> which forces SQL Server to compile the query every time. Or you can use dynamic SQL to build a query string which includes only the search criterias the user  specified. We will look at  both these approaches in this article. They are both viable, and a good SQL programmer should have both in his toolbox since both have their strengths and weaknesses.</P>
+<P>This article assumes that you are on SQL&nbsp;2008 or later. A key feature of this article is <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, a query hint that was introduced already in SQL&nbsp;2005, but which was implemented properly first in SQL&nbsp;2008. And to be precise, you should be on at least Service Pack 2 of SQL&nbsp;2008, or Service Pack 1 for SQL&nbsp;2008 R2 to take benefit of this feature. For a full discussion of how this feature has changed forth and back, see the section <A HREF="#SPandCUs" CLASS="quote">The History of Forced Recompilation</A>, which also discusses a bug with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> fixed in the autumn of 2014. </P>
+<P>If you are still on SQL&nbsp;2005 or SQL&nbsp;2000, there is an <A HREF="dyn-search-2005.html">older version</A> of this article where I cover additional techniques that are not equally interesting on SQL&nbsp;2008 and later, thanks to <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>.</P>
+<P>I begin the article looking at some  methods which are good for very simple cases where you only need to handle a very small set of choices and where the more general methods shoot over the target. The next chapter introduces the task in focus for the rest of the article: the requirement to implement the routine <SPAN CLASS="objectname">search_orders </SPAN>in the <SPAN CLASS="objectname">Northgale</SPAN> database which I introduce this chapter. The two main chapters of this article look at implementing this procedure with static and dynamic SQL.</P>
+<DIV CLASS="toc"><P CLASS="tocheader">Table of Contents</P>
+<P CLASS="toc1"><A HREF="#introduction">Introduction</A></P>
+<P CLASS="toc1"><A HREF="#keylookup">Alternate Key Lookup</A></P>
+<P CLASS="toc1"><A HREF="#casestudy">The Case Study: Searching Orders</A></P>
+<P CLASS="toc2"><A HREF="#Northgale">The Northgale Database</A></P>
+<P CLASS="toc1"><A HREF="#static">Static SQL with OPTION (RECOMPILE)</A></P>
+<P CLASS="toc2"><A HREF="#WhyStatic">Why Static SQL?</A></P>
+<P CLASS="toc2"><A HREF="#BasicStaticSQL">The Basic Technique</A></P>
+<P CLASS="toc2"><A HREF="#coalesce">The Coalesce Trap</A></P>
+<P CLASS="toc2"><A HREF="#multivalued">Handling Multi-valued Parameters</A></P>
+<P CLASS="toc2"><A HREF="#SortOrder">Choice of Sort Order</A></P>
+<P CLASS="toc2"><A HREF="#optionaltables">Optional Tables</A></P>
+<P CLASS="toc2"><A HREF="#StaticAlternate">Alternate Tables</A></P>
+<P CLASS="toc2"><A HREF="#fineprint">When OPTION (RECOMPILE) Hurts You</A></P>
+<P CLASS="toc2"><A HREF="#SPandCUs">The History of Forced Recompilation</A></P>
+<P CLASS="toc1"><A HREF="#dynsql">Dynamic SQL</A></P>
+<P CLASS="toc2"><A HREF="#WhyDynamic">Why Dynamic SQL?</A></P>
+<P CLASS="toc2"><A HREF="#WaysDynamicSQL">The Ways to Do Dynamic SQL</A></P>
+<P CLASS="toc2"><A HREF="#Permissions">Permissions</A></P>
+<P CLASS="toc2"><A HREF="#sp_executesql">Implementing search_orders with a Parameterised Query</A></P>
+<P CLASS="toc2"><A HREF="#cachingdynsql">Compilation and Caching</A></P>
+<P CLASS="toc2"><A HREF="#DynSpecialSearch">Special Search Conditions</A></P>
+<P CLASS="toc2"><A HREF="#CLR">Using the CLR</A></P>
+<P CLASS="toc2"><A HREF="#EXEC">An Example with Unparameterised SQL</A></P>
+<P CLASS="toc2"><A HREF="#badcaching">When Caching Is Not  What You Want</A></P>
+<P CLASS="toc1"><A HREF="#conclusion">Conclusion</A></P>
+<P CLASS="toc2"><A HREF="#feedback">Feedback and Acknowledgements</A></P>
+<P CLASS="toc2"><A HREF="#revision">Revision History</A></P>
+</DIV>
+
+<H2 ID="keylookup">Alternate Key Lookup</H2>
+
+<H4 ID="IF_statements">Using IF statements</H4>
+<P>Problems with dynamic search conditions come in several flavours. In the general case, there is a search form where the user can select between  many search conditions, and this is also the main focus of this article. But
+sometimes you encounter problems with a small number of conditions that are more or less mutually exclusive. A typical example would be a  form where a user can look up a customer by entering one of: 1) The name of the customer. 2) The customer number. 3) The customer&#39;s national registration number. (That is, what is called <I>SSN</I>,
+<I>personnummer</I> etc. depending on where you are.) There are indexes on all three columns.</P>
+<P>None of the solutions in the main body in the article are not really suitable here. Forcing a recompile every time with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> can add too much load to the system, particularly if these lookups are frequent. And dynamic SQL is just too much hassle for a simple problem like this one. </P>
+<P>So let us look at more lightweight solutions that fit this problem. A very simple-minded way is to use <SPAN CLASS="keyword">IF</SPAN>:</P>
+<PRE>IF @custno IS NOT NULL
+   SELECT ... FROM customers WHERE custno = @custno
+ELSE IF @natregno IS NOT NULL
+   SELECT ... FROM customers WHERE natregno = @natregno
+ELSE IF @custname IS NOT NULL
+   SELECT TOP 200 ...
+   FROM   customers
+   WHERE  custname LIKE @custname + &#39;%&#39;
+   ORDER  BY custname
+ELSE
+   RAISERROR(&#39;No search condition given!&#39;, 16, 1)</PRE>
+<P>(The <SPAN CLASS="keyword">TOP</SPAN> 200 for the search on customer name limits the output in case the user would enter a very short search string, so that we don&#39;t return tens of thousands of customers.)</P>
+<P>If you need to return data from other tables as well, and you don&#39;t want to repeat the join, you could enter all matching customer numbers into a table variable or a temp table, and then do your final join:</P>
+<PRE>IF @custno IS NOT NULL
+   INSERT @cust (custno) VALUES (@custno)
+ELSE IF @natregno IS NOT NULL
+   INSERT @cust (custno) SELECT custno FROM customers WHERE natregno = @natregno
+ELSE IF @custname IS NOT NULL
+   INSERT @cust (custno)
+      SELECT TOP (200) custno
+      FROM   customers
+      WHERE  custname LIKE @custname + &#39;%&#39;
+      ORDER  BY custname
+ELSE
+   RAISERROR(&#39;No search condition given!&#39;, 16, 1)
+
+SELECT ...
+FROM   @cust c
+JOIN   customers cst ON cst.custno = c.custno
+JOIN   ...</PRE>
+<P>There is however a potential performance problem here. No matter which choice the user makes, we want the optimizer to use the index on the chosen search column. But the way SQL Server builds query plans, this may not always happen. When the procedure is invoked and there is no plan in the cache, SQL Server builds the plan for the entire stored procedure and &quot;sniffs&quot; the current input values for the parameters. Say that the first user to make the search enters a customer number. This means that the branches for national registration number and customer name are optimised for <SPAN CLASS="keyword">NULL</SPAN> and under unfortunate circumstances this could lead to a plan with a table scan, which is not what you want. (For an in-depth discussion on parameter sniffing, see my article <A HREF="query-plan-mysteries.html" CLASS="quote">Slow in the Application &#8211; Fast in SSMS</A>.)</P>
+<P>To prevent this from happening, there are a couple of precautions you can take. One is to push the three <SPAN CLASS="keyword">SELECT</SPAN> statements down into three subprocedures, but admittedly this is a bit bulky. Another approach is to add explicit index hints, but you should always be restrictive with index hints. For instance, what if someone renames the index? That would cause the query to fail. </P>
+<P>Rather, the best option is probably to use the <SPAN CLASS="keyword">OPTIMIZE FOR</SPAN> hint:</P>
+<PRE>SELECT TOP 200 custno
+FROM   customers
+WHERE  custname LIKE @custname + &#39;%&#39;
+ORDER  BY custname
+OPTION (OPTIMIZE FOR (@custname = N&#39;ZZZZZZZ&#39;)) </PRE>
+<P>This hint causes SQL Server to build the query plan for the value you specify. Obviously you should pick a value which is selective enough.</P>
+<P>Whatever strategy you choose, you should test on production-size data that you get the plans you expect. Due to the sniffing issue, your test should look something like this:</P>
+<PRE>EXEC find_customer @custno = 123
+EXEC find_customer @natregno = &#39;1234567890&#39;
+EXEC find_customer @custname = &#39;ABC&#39;
+EXEC sp_recompile find_customer   -- flush the plan for the procedure
+EXEC find_customer @natregno = &#39;1234567890&#39;
+EXEC find_customer @custno = 123
+EXEC find_customer @custname = &#39;ABC&#39;
+EXEC sp_recompile find_customer
+EXEC find_customer @custname = &#39;ABC&#39;
+EXEC find_customer @custno = 123
+EXEC find_customer @natregno = &#39;1234567890&#39; </PRE>
+<P>That is, you should test with all three parameters as the parameter &quot;sniffed&quot; when the plan is built.</P>
+<P>In this particular example, there is one more issue with the <SPAN CLASS="objectname">@custname</SPAN> parameter that I have ignored so far: the user could add a leading %, in which case a scan would be a better choice. If you need to support searches with a leading %, the best is to split this into two branches:</P>
+<PRE>IF left(@custname, 1) &lt;&gt; &#39;%&#39;
+   -- query as above
+ELSE
+   -- same query, but with different value in OPTIMIZE FOR.</PRE>
+<H4 ID="Using_OR">Using OR</H4>
+<P>If you don&#39;t like the multiple <SPAN CLASS="keyword">IF</SPAN> statements, you may be delighted to know that it is in fact perfectly possible do it all in one query as long as you can ignore leading % in <SPAN CLASS="objectname">@custname</SPAN>:</P>
+<PRE>SELECT TOP 200 ...
+FROM   customers
+WHERE  (custno = @custno AND @custno IS NOT NULL) OR
+       (natregno = @natregno AND @natregno IS NOT NULL) OR
+       (custname LIKE @custname + &#39;%&#39; AND @custname IS NOT NULL)
+ORDER  BY custname</PRE>
+<P>The <SPAN CLASS="keyword">WHERE</SPAN> clause here essentially reads:</P>
+<PRE>custno = @custno OR natregno = @natregno OR custname LIKE @custname + &#39;%&#39;</PRE>
+<P>But the added conditions with IS <SPAN CLASS="keyword">NOT NULL</SPAN> serve a purpose. With them, the chances are good that the optimizer will pick a plan that seeks all three indexes using index concatenation. However, thanks to the IS <SPAN CLASS="keyword">NOT NULL</SPAN> conditions, SQL Server will add  Filter operators with a <I>startup expression</I> so that at run-time, only one index is accessed. (I return to startup expressions in the section <A HREF="#optionaltables" CLASS="quote">Optional Tables</A> later in this article.)</P>
+<P>This strategy usually works well as long as the search terms are all in the same table and all are indexed, but rarely (if ever) if the search terms are in different tables. In any case, you should never use this strategy blindly, but always verify that you get the plan &#8211; and the performance &#8211; you intended.</P>
+<H2 ID="casestudy">The Case Study: Searching Orders</H2>
+
+<P>We will now turn to a more general case with many search terms. We will work with implementing a stored procedure that
+   retrieves information about orders in the  <SPAN CLASS="objectname">Northgale</SPAN> database, which is an inflated version of Microsoft's classic <SPAN CLASS="objectname">Northwind</SPAN> database. See later in this chapter how to install it.</P>
+<P>This is the interface that we expose to
+   the user (well rather to a GUI or middle-layer programmer):</P>
+<PRE>CREATE PROCEDURE search_orders
+                 @orderid     int          = NULL,
+                 @fromdate    datetime     = NULL,
+                 @todate      datetime     = NULL,
+                 @minprice    money        = NULL,
+                 @maxprice    money        = NULL,
+                 @custid      nchar(5)     = NULL,
+                 @custname    nvarchar(40) = NULL,
+                 @city        nvarchar(15) = NULL,
+                 @region      nvarchar(15) = NULL,
+                 @country     nvarchar(15) = NULL,
+                 @prodid      int          = NULL,
+                 @prodname    nvarchar(40) = NULL,
+                 @employeestr varchar(MAX) = NULL,
+                 @employeetbl intlist_tbltype READONLY AS
+
+SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,
+       c.CustomerID, c.CompanyName, c.Address, c.City, c.Region,
+       c.PostalCode, c.Country, c.Phone, p.ProductID,
+       p.ProductName, p.UnitsInStock, p.UnitsOnOrder, o.EmployeeID
+FROM   Orders o
+JOIN   [Order Details] od ON o.OrderID = od.OrderID
+JOIN   Customers c ON o.CustomerID = c.CustomerID
+JOIN   Products p ON p.ProductID = od.ProductID
+WHERE  ???
+ORDER  BY o.OrderID</PRE>
+<P>You see in the <SPAN CLASS="keyword">SELECT</SPAN> list what information the user gets. Here is a
+   specification of the parameters:</P>
+
+<TABLE>
+<TR ALIGN="left"><TH>Parameter</TH><TH>Function</TH></TR>
+<TR><TD><SPAN CLASS="objectname">@orderid</SPAN></TD><TD>Retrieve this order only.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@fromdate</SPAN></TD><TD>Retrieve orders made on <SPAN CLASS="objectname">@fromdate</SPAN>
+   or later.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@todate</SPAN></TD><TD>Retrieve orders made on <SPAN CLASS="objectname">@todate</SPAN>
+   or earlier.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@minprice</SPAN></TD><TD>Retrieve only order details that
+   cost at least <SPAN CLASS="objectname">@minprice</SPAN>.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@maxprice</SPAN></TD><TD>Retrieve only order details that
+   cost at most <SPAN CLASS="objectname">@maxprice</SPAN>.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@custid</SPAN></TD><TD>Retrieve only orders from this
+   customer.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@custname</SPAN></TD><TD>Retrieve only orders from customers whose name starts with <SPAN CLASS="objectname">@custname</SPAN>.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@city</SPAN></TD><TD>Retrieve only orders from customers in this city.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@region</SPAN></TD><TD>Retrieve only orders from customers in this region.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@country</SPAN></TD><TD>Retrieve only orders from customers in this country.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@prodid</SPAN></TD><TD>Retrieve only order details with
+   this product.</TD></TR>
+<TR><TD><SPAN CLASS="objectname">@prodname</SPAN></TD><TD>Retrieve only order details with a
+   product starting with <SPAN CLASS="objectname">@prodname</SPAN>.</TD></TR>
+<TR>
+  <TD><SPAN CLASS="objectname">@employeestr</SPAN><BR />
+    <SPAN CLASS="objectname">@employeetbl</SPAN></TD>
+  <TD><P>These two parameters serve the same purpose: return only orders for the specified employees. <SPAN CLASS="objectname">@employeestr</SPAN> is a comma-separated string with employee IDs, while <SPAN CLASS="objectname">@employeetbl</SPAN> is a table-valued parameter. See further the discussion below.</P></TD></TR>
+</TABLE>
+<P>If the user leaves out a search condition, that search condition should not
+   apply to the search. Thus, a plain <CODE>EXEC search_orders</CODE> should
+   return all orders in the database. In this text I will discuss some different implementations of <SPAN CLASS="objectname">search_orders</SPAN>,
+   unimaginatively named <SPAN CLASS="objectname">search_orders_1</SPAN> etc. Some
+   of them are included in whole in this text, others only in parts. All
+   are available in the <A HREF="dynsearch-2008" TARGET="_blank" TYPE="text/plain">dynsearch-2008</A> directory on my web site. (The numbering of the procedures is
+quite out of order with the text due to the historic evolution of this article.)</P>
+<P>The last two parameters in the parameter list serve the same purpose functionally. I have included both to illustrate two ways how to handle multi-valued parameters. When I see these questions on the forums, people almost always have a comma-separate list. This list must be cracked into a table to be usable in SQL Server, which easily can be done with a table-valued function.  In my article <A HREF="arrays-in-sql-2005.html" CLASS="quote">Arrays and Lists in SQL Server 2005</A> you can find a whole slew of such functions.</P>
+<P>My own preference is to use a table-valued parameter and I discuss this in detail in my article <A HREF="arrays-in-sql-2008.html" CLASS="quote">Arrays and Lists in SQL Server 2008</A>.  I have not included these two parameters in all <SPAN CLASS="objectname">search_orders</SPAN> procedures; they are only present when I want to illustrate a technique to handle them. Some procedures have only one of them. (In case you wonder why <SPAN CLASS="objectname">@employeetbl</SPAN> does not have a default value: Table-valued parameters can never have an explicit default value, but instead they always have the implicit default value of an empty table.) </P>
+<P>The <SPAN CLASS="objectname">search_orders</SPAN> example is not overly complicated; each condition can be implemented with a
+   single condition using <CODE>=,</CODE> <CODE>&lt;=</CODE>, <CODE>&gt;=</CODE> or <SPAN CLASS="keyword">LIKE</SPAN>. In a real-life application you may encounter more complex requirements:</P>
+<UL>
+  <LI>User should be able to select how the output should be sorted.</LI>
+  <LI>Depending on input parameters you may need to access different tables or columns.</LI>
+  <LI>Users should be able to choose the comparison operator, for instance <CODE>@country = 'Germany'</CODE> or <CODE><SPAN CLASS="objectname">@country</SPAN> != 'Germany'</CODE>.</LI>
+  <LI>Users should be able to add or remove columns from the output and for an aggregation query what to aggregate on.</LI>
+  <LI>Anything else you can imagine &#8211; or you were not able to imagine, but the users wanted it anyway.</LI>
+</UL>
+<P>In interest of keeping this article down in size, I have not included such parameters in <SPAN CLASS="objectname">search_orders</SPAN>. Nevertheless, I cover some of these points in the text that follows.</P>
+<H3 ID="Northgale">The Northgale Database</H3>
+<P>I  wrote the first version of this article when SQL Server 2000 ruled the world. I worked from the <SPAN CLASS="objectname">Northwind</SPAN> database, which shipped with SQL&nbsp;2000. However, since that database was so small, it was not possible for me to draw any conclusions at all about performance. For this reason, I composed the <SPAN CLASS="objectname">Northgale</SPAN> database, an inflated version of <SPAN CLASS="objectname">Northwind</SPAN>. Tables and indexes are the same, but I have exploded the data so
+that instead of 830 orders, there are 344035 of them. </P>
+<P>To install <SPAN CLASS="objectname">Northgale</SPAN>, you first need to create the <SPAN CLASS="objectname">Northwind</SPAN> database on your server. Download the script to install it from <A HREF="http://www.microsoft.com/downloads/info.aspx?na=22&p=1&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=&u=/downloads/details.aspx?FamilyID=06616212-0356-46a0-8da2-eebc53a68034&DisplayLang=en" TARGET="_blank"> Microsoft&#39;s web site</A>. (If you are on SQL&nbsp;2012 or later, beware that the script will fail if you have a surrogate-aware collation.  Change the <SPAN CLASS="keyword">CREATE DATABASE</SPAN> statement to force a different collation, if this occurs to you.) Once you have <SPAN CLASS="objectname">Northwind</SPAN> in place, run <A HREF="dynsearch-2008/Northgale.html" TARGET="_blank" CLASS="filepath">Northgale.sql</A>.
+   To install <SPAN CLASS="objectname">Northgale</SPAN>, you need 4.6&nbsp;GB of
+disk space. When the install has completed you can reclaim 4&nbsp;GB by removing the log file <SPAN CLASS="objectname">Northgale_log2</SPAN>. (The script attempts to do this, but it always seems to fail. Rerunning the last statement in the script a little later seems to work.) By default, the
+   database is installed in the same directory as the <SPAN CLASS="builtin">master</SPAN> database,
+but you can edit the script to change that. (There is no issue with surrogate collations for the <SPAN CLASS="objectname">Northgale</SPAN> script.)</P>
+<P>The script for <SPAN CLASS="objectname">Northgale</SPAN> works by cross-joining the tables in <SPAN CLASS="objectname">Northwind</SPAN> and for important entities like IDs and names I have created new ones by combining the existing ids and the same goes for some of the names. I have reused the existing cities, countries and regions together with some extras that I needed for this article, so these columns do not have very good selectivity.</P>
+<P><SPAN CLASS="objectname">Northgale</SPAN> includes the table type <SPAN CLASS="objectname">intlist_tbltype</SPAN> used for the <SPAN CLASS="objectname">@employeetbl</SPAN> parameter as well as the table-valued function <SPAN CLASS="objectname">intlist_to_tbl</SPAN> to crack <SPAN CLASS="objectname">@employeestr</SPAN> into a table. </P>
+<P>Keep in mind that <SPAN CLASS="objectname">Northgale</SPAN> still is a small database. It easily fits entirely into memory on a laptop with 4&nbsp;GB of RAM. A
+   poorly written query that requires a scan of, say, the <SPAN CLASS="objectname">Orders</SPAN> table,
+   still returns within a few seconds. It&#39;s hopefully big enough to give a sense
+   for how good or bad different solutions are, but I would advise you to not
+   draw any far-reaching conclusions. It is also worth pointing out that the way
+the database was composed, the distribution of data is a bit skewed.</P>
+<H2 ID="static">Static SQL with OPTION (RECOMPILE)</H2>
+<H3 ID="WhyStatic">Why Static SQL?</H3>
+<P>Solutions for dynamic search conditions in static SQL almost always include the query hint <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, although there are a few simple cases where the hint is not needed, and we saw an example of this in the introducing chapter <A HREF="#keylookup" CLASS="quote">Alternate Key Lookup</A>.</P>
+<P>The advantages with these solutions are:</P>
+<UL>
+  <LI>As long as the search conditions are moderately complex, the code you get is compact and relatively easy to maintain.</LI>
+  <LI>Since the query is recompiled every time, you get a query plan that is optimised for the exact search conditions at hand.</LI>
+  <LI>You don't have to worry about permissions; it works like it always does for stored procedures. That is, the user only needs to have permission to run the stored procedure; no direct permissions on the tables are needed.</LI>
+</UL>
+<P>But there are also disadvantages:</P>
+<UL>
+  <LI>When requirements grow in complexity, the complexity of the query tends to grow non-linearly, so that what once was a relatively simple query  evolves to a beast that hardly anyone understands, even less wants to touch.</LI>
+  <LI>If the search routine is called with high frequency, the recurring compilation may cause an overload on the server.</LI>
+</UL>
+<P>In the following I will elaborate these points in more detail.</P>
+<P>Note that this section assumes that <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> works like it does in SQL&nbsp;2008 SP2, SQL&nbsp;2008 R2 SP1 and later versions. See the section <A HREF="#SPandCUs"><SPAN CLASS="quote">The History of Forced Recompilation</SPAN></A> for more details how the hint worked in older versions.</P>
+<H3 ID="BasicStaticSQL">The Basic Technique</H3>
+<P>The basic technique for static SQL with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> is  illustrated by <A TARGET="_blank" TYPE="text/plain"  HREF="dynsearch-2008/search_orders_3.sp">
+<SPAN CLASS="objectname">search_orders_3</SPAN></A>, which I initially show in a simplified form without the parameters <SPAN CLASS="objectname">@employeestr</SPAN> and <SPAN CLASS="objectname">@employeetbl</SPAN>.</P>
+<PRE>CREATE PROCEDURE search_orders_3
+                 @orderid   int          = NULL,
+                 @fromdate  datetime     = NULL,
+                 @todate    datetime     = NULL,
+                 @minprice  money        = NULL,
+                 @maxprice  money        = NULL,
+                 @custid    nchar(5)     = NULL,
+                 @custname  nvarchar(40) = NULL,
+                 @city      nvarchar(15) = NULL,
+                 @region    nvarchar(15) = NULL,
+                 @country   nvarchar(15) = NULL,
+                 @prodid    int          = NULL,
+                 @prodname  nvarchar(40) = NULL AS
+
+SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,
+       c.CustomerID, c.CompanyName, c.Address, c.City, c.Region,
+       c.PostalCode, c.Country, c.Phone, p.ProductID,
+       p.ProductName, p.UnitsInStock, p.UnitsOnOrder
+FROM   Orders o
+JOIN   [Order Details] od ON o.OrderID = od.OrderID
+JOIN   Customers c ON o.CustomerID = c.CustomerID
+JOIN   Products p ON p.ProductID = od.ProductID
+WHERE  (o.OrderID = @orderid OR @orderid IS NULL)
+  AND  (o.OrderDate &gt;= @fromdate OR @fromdate IS NULL)
+  AND  (o.OrderDate &lt;= @todate OR @todate IS NULL)
+  AND  (od.UnitPrice &gt;= @minprice OR @minprice IS NULL)
+  AND  (od.UnitPrice &lt;= @maxprice OR @maxprice IS NULL)
+  AND  (o.CustomerID = @custid OR @custid IS NULL)
+  AND  (c.CompanyName LIKE @custname + &#39;%&#39; OR @custname IS NULL)
+  AND  (c.City = @city OR @city IS NULL)
+  AND  (c.Region = @region OR @region IS NULL)
+  AND  (c.Country = @country OR @country IS NULL)
+  AND  (od.ProductID = @prodid OR @prodid IS NULL)
+  AND  (p.ProductName LIKE @prodname + &#39;%&#39; OR @prodname IS NULL)
+ORDER  BY o.OrderID
+OPTION (RECOMPILE)</PRE>
+
+<P>The effect of all the <CODE>@x IS NULL</CODE> clauses is that if an input
+   parameter is <SPAN CLASS="keyword">NULL</SPAN>, then the corresponding <SPAN CLASS="keyword">AND</SPAN>-condition is always true. Thus, the only
+   conditions that are in effect are those where the search parameter has a
+   non-<SPAN CLASS="keyword">NULL</SPAN> value. Sounds simple enough, but there is a very big difference in performance with or without that last line present:</P>
+<PRE>OPTION (RECOMPILE)</PRE>
+<P> The hint instructs SQL Server to recompile the query every  time. <I>Without</I> this hint, SQL Server produces a plan that will be cached and reused. This has a very important implication: the plan must work with all possible input values of the parameters. Due to parameter sniffing, the plan may be optimised for the parameter combination for the first search. That plan is likely to perform poorly with entirely different parameters, while it still would not be perfect for the initial parameter combination. For optimal response times when the user provides a single order ID, we want the optimizer to use the indexes on <SPAN CLASS="objectname">OrderID</SPAN> in <SPAN CLASS="objectname">Orders</SPAN> and <SPAN CLASS="objectname">Order Details</SPAN> and ignore everything else. But if the user performs a search on a product ID or a product name, we want to use the index on <SPAN CLASS="objectname">ProductID</SPAN> in <SPAN CLASS="objectname">Order Details</SPAN> and so on for other search criterias.</P>
+<P>And this is exactly what we achieve with the hint <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. Since SQL Server is instructed to recompile the query every time, there is no need to cache the plan, why SQL Server can handle all the variables as constants. Thus, if the procedure is called like this:</P>
+<PRE>EXEC search_orders_3 @orderid = 11000</PRE>
+<P>SQL Server will in essence optimise this <SPAN CLASS="keyword">WHERE</SPAN> clause:</P>
+<PRE>WHERE  (o.OrderID = 11000 OR 11000 IS NULL)
+  AND  (o.OrderDate &gt;= NULL OR NULL IS NULL)
+  AND  (o.OrderDate &lt;= NULL OR NULL IS NULL)
+  AND  (od.UnitPrice &gt;= NULL OR NULL IS NULL)
+  AND  (od.UnitPrice &lt;= NULL OR NULL IS NULL)
+  AND  (o.CustomerID = NULL OR NULL IS NULL)
+  ...</PRE>
+<P>SQL Server is smart enough to remove all these <SPAN CLASS="keyword">NULL</SPAN> IS <SPAN CLASS="keyword">NULL</SPAN> from the query, so in essence it works with this <SPAN CLASS="keyword">WHERE</SPAN> clause:</P>
+<PRE>WHERE o.OrderID = 11000</PRE>
+<P>The choice of using the indexes on <SPAN CLASS="objectname">OrderID</SPAN> to drive the query becomes a no-brainer. And if you take this call:</P>
+<PRE>EXEC search_orders_3 @custid = &#39;ALFKI&#39;</PRE>
+<P>The effective <SPAN CLASS="keyword">WHERE</SPAN> clause becomes:</P>
+<PRE>WHERE  (o.OrderID = NULL OR NULL IS NULL)
+  AND  (o.OrderDate &gt;= NULL OR NULL IS NULL)
+  AND  (o.OrderDate &lt;= NULL OR NULL IS NULL)
+  AND  (od.UnitPrice &gt;= NULL OR NULL IS NULL)
+  AND  (od.UnitPrice &lt;= NULL OR NULL IS NULL)
+  AND  (o.CustomerID = N&#39;ALFKI&#39; OR N&#39;ALFKI&#39; IS NULL)
+  ...</PRE>
+<P>The optimizer decides that the index on <SPAN CLASS="objectname">CustomerID</SPAN> is good.</P>
+<P>Some more test cases that you can try and look at the query plan:</P>
+<PRE>EXEC search_orders_3 @prodid  = 76
+EXEC search_orders_3 @prodid  = 76, @custid = &#39;RATTC&#39;
+EXEC search_orders_3 @fromdate = &#39;19980205&#39;, @todate = &#39;19980209&#39;
+EXEC search_orders_3 @city = N&#39;Bräcke&#39;, @prodid = 76</PRE>
+<P>These two calls are particularly interesting:</P>
+<PRE>EXEC search_orders_3 @custid = 'ERNTC',
+                     @fromdate = '19980218', @todate = '19980218'
+EXEC search_orders_3 @custid = 'BOLSR',
+                     @fromdate = '19960101', @todate = '19961231'</PRE>
+<P>The two calls have the same set of parameters, but yet they produce different query plans. The first call searches for a single day for a customer with many orders. The second call searches a full year for a customer with a single order.</P>
+<P>To better understand  the benefit of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, you can play with <A HREF="dynsearch-2008/search_orders_3b.sp" TARGET="_blank" TYPE="text/plain"><SPAN CLASS="objectname">search_orders_3b</SPAN></A>, which is identical to <SPAN CLASS="objectname">search_orders_3</SPAN>, except that it does not have the query hint. Run the examples above with <SPAN CLASS="objectname">search_orders_3b</SPAN> and compare with the query plans for <SPAN CLASS="objectname">search_orders_3</SPAN>. Here is an exercise that is particularly illuminating: First run </P>
+<PRE>EXEC sp_recompile search_orders_3b</PRE>
+<P>to make sure that there is no plan in the cache for the procedure. Now run <SPAN CLASS="objectname">search_orders_3b</SPAN> first with <SPAN CLASS="objectname">@orderid</SPAN> = 11000 and then with <SPAN CLASS="objectname">@prodid</SPAN> = 76. You will notice that the latter is search is a tad slow. Flush the query plan with <SPAN CLASS="builtin">sp_recompile</SPAN> again and run these two searches in reverse order. That is, first run with <SPAN CLASS="objectname">@prodid</SPAN> = 76, and then with <SPAN CLASS="objectname">@orderid</SPAN> = 11000. You may find that it takes  20 seconds to retrieve that single order. This happens because the plan was optimised for a search on product ID and that plan did not work well with a search on order ID &#8211; but it did produce the correct result eventually.</P>
+<H3 ID="coalesce">The Coalesce Trap</H3>
+<P>Rather than using <SPAN CLASS="keyword">OR</SPAN> like above,
+  some people write one of:</P>
+<PRE>o.orderID = coalesce(@orderid, o.OrderID)
+o.orderID = isnull(@orderid, o.OrderID)</PRE>
+<P><SPAN CLASS="nowrap"><SPAN CLASS="builtin">coalesce</SPAN>()</SPAN> is a function that takes a list of values as argument, and returns the
+  first non-<SPAN CLASS="keyword">NULL</SPAN> value in the list, or <SPAN CLASS="keyword">NULL</SPAN> if there is no non-<SPAN CLASS="keyword">NULL</SPAN> value in the
+  list. Thus, if <SPAN CLASS="objectname">@orderid</SPAN> is <SPAN CLASS="keyword">NULL</SPAN>, you get <CODE>o.OrderID = o.OrderID</CODE>,
+  a complete no-op &#8211; or so it may seem.
+  You can see a full example of this in <A  TARGET="_blank" TYPE="text/plain"  HREF="dynsearch-2008/search_orders_3a.sp"> <SPAN CLASS="objectname">search_orders_3a</SPAN></A>.</P>
+<P>This yields code that is even more compact than using <SPAN CLASS="keyword">OR</SPAN>, but I strongly recommend that you stay away from this method, because there is a trap. Run this:</P>
+<PRE>EXEC search_orders_3 @orderid = 10654
+EXEC search_orders_3a @orderid = 10654</PRE>
+<P>The first call return nine rows, but the last returns no rows at all!
+  Why? The reason is that for the customer on this order, the column <SPAN CLASS="objectname">Region</SPAN> is <SPAN CLASS="keyword">NULL</SPAN>. When <SPAN CLASS="objectname">@region</SPAN> is <SPAN CLASS="keyword">NULL</SPAN>, the
+  condition</P>
+<PRE>c.Region = coalesce(@region, c.Region)</PRE>
+<P>becomes in essence <CODE>NULL = NULL</CODE>. But in SQL, <SPAN CLASS="keyword">NULL</SPAN> is not equal to <SPAN CLASS="keyword">NULL</SPAN>. <SPAN CLASS="keyword">NULL</SPAN> stands for &quot;unknown value&quot;, and any comparison with <SPAN CLASS="keyword">NULL</SPAN> yields neither <B>true</B> nor <B>false</B> in the three-valued logic of SQL, but <B>unknown</B>. Whence, no rows are returned.</P>
+<P>To avoid this trap, some people write things like:</P>
+<PRE>coalesce(c.Region, '') = coalesce(@region, c.Region, '')</PRE>
+<P> This is not only more kludgy, but since the column is entangled into an expression, this may preclude the use of any index on the column.</P>
+<P>Another &quot;workaround&quot; is to write this particular condition as <CODE>(c.Region = @region OR @region IS NULL)</CODE> like in the original <SPAN CLASS="objectname">search_orders_3</SPAN>. But that begs the question why you should use the construct with <SPAN CLASS="builtin">coalesce</SPAN> or <SPAN CLASS="builtin">isnull</SPAN> at all, when it only works under some conditions. Thus, the simple advice is: stay away from this trap entirely.</P>
+<H3 ID="multivalued">Handling Multi-valued Parameters</H3>
+<P>Let's now look at how the parameters <SPAN CLASS="objectname">@employeestr</SPAN> and <SPAN CLASS="objectname">@employeetbl</SPAN> are handled in <SPAN CLASS="objectname">search_orders_3</SPAN>. Here are the last two conditions in the <SPAN CLASS="keyword">WHERE</SPAN> clause:</P>
+<PRE>AND  (o.EmployeeID IN (SELECT number FROM intlist_to_tbl(@employeestr)) OR
+      @employeestr IS NULL)
+AND  (o.EmployeeID IN (SELECT val FROM @employeetbl) OR @hasemptbl = 0)</PRE>
+<P><SPAN CLASS="objectname">intlist_to_tbl</SPAN> is a function that cracks a comma-separated list into table. This function is included in the <SPAN CLASS="objectname">Northgale</SPAN> database. <SPAN CLASS="objectname">@hasemptbl</SPAN> is a local variable which is defined first in the procedure:</P>
+<PRE> DECLARE @hasemptbl bit = CASE WHEN EXISTS (SELECT * FROM @employeetbl)
+                               THEN 1
+                               ELSE 0
+                          END</PRE>
+<P>This help variable is needed for the optimizer to understand that it can ignore <SPAN CLASS="objectname">@employeetbl</SPAN>  when there are no rows in it. This does not work if the <SPAN CLASS="keyword">EXISTS</SPAN> test is in the main query itself.</P>
+<P>Here are some test cases:</P>
+<PRE>EXEC search_orders_3 @employeestr = '402,109,207', @custid = 'PERTH'
+
+DECLARE @tbl intlist_tbltype 
+INSERT @tbl (val) VALUES(402), (109), (207)
+EXEC search_orders_3 @employeetbl = @tbl, @custid = 'PERTH'</PRE>
+<P>Both should return 53 orders.</P>
+<P>While this works, there is a difference with regards to simple scalar parameters. For the latter, the optimizer knows the exact parameter values and builds the plan accordingly. As we saw in the example with <SPAN CLASS="objectname">@custid</SPAN> and a date interval, different parameter values can yield different plans. But this cannot happen with the multi-valued parameters in <SPAN CLASS="objectname">search_orders_3</SPAN>. All the optimizer knows about <SPAN CLASS="objectname">@employeetbl</SPAN> is the number of rows in the table variable. For <SPAN CLASS="objectname">@employeestr</SPAN>, it does not even know that. As long as the distribution of the values in the search column is fairly even, this may not be much of an issue. But if there are skews, it certainly matters.</P>
+<P>One way to deal with this is to insert the values in a temp table. A temp table has distribution statistics which gives the optimizer  more information. But if there are just a small number of values, you may have to force statistics update yourself, as auto-stats for a temp table happens first when six rows have been inserted/modified. </P>
+<P>A more elaborate method is illustrated in the procedure <SPAN CLASS="objectname"> <A HREF="dynsearch-2008/search_orders_3c.sp" TARGET="_blank" TYPE="text/plain">search_orders_3c</A></SPAN>. The idea is that most of the time the users only want to search for two or three values at a time. Therefore, if there are up to four elements in the list, the procedure uses an <SPAN CLASS="keyword">IN</SPAN> expression, else it uses use a table variable. The procedure has this initial code:</P>
+<PRE>DECLARE @rowc   int,
+        @emp1   int,
+        @emp2   int, 
+        @emp3   int,
+        @emp4   int,
+        @hasemptbl bit = 0
+
+IF @employeestr IS NOT NULL
+BEGIN
+   INSERT @employeetbl (rowno, employeeid)
+      SELECT row_number() OVER(ORDER BY (SELECT 1)), number
+      FROM   intlist_to_tbl(@employeestr)
+   SELECT @rowc = @@rowcount
+
+   IF @rowc BETWEEN 1 AND 4
+   BEGIN
+      SELECT @emp1 = employeeid FROM @employeetbl WHERE rowno = 1
+      SELECT @emp2 = employeeid FROM @employeetbl WHERE rowno = 2
+      SELECT @emp3 = employeeid FROM @employeetbl WHERE rowno = 3
+      SELECT @emp4 = employeeid FROM @employeetbl WHERE rowno = 4
+   END
+   ELSE IF @rowc &gt; 4
+      SELECT @hasemptbl = 1
+END</PRE>
+<P>(For simplicity, <SPAN CLASS="objectname">search_orders_3c</SPAN> only has the parameter <SPAN CLASS="objectname">@employeestr</SPAN>, and <SPAN CLASS="objectname">@employeetbl</SPAN> resurfaces as a local work table.) If <SPAN CLASS="objectname">@employeestr</SPAN> has a value, we unpack the list into a table variable and we number the rows. If there are four values or less, we populate the variables <SPAN CLASS="objectname">@emp1</SPAN> to <SPAN CLASS="objectname">@emp4</SPAN>. The last two conditions in the <SPAN CLASS="keyword">WHERE</SPAN> clause look like this:</P>
+<PRE>AND  (o.EmployeeID IN (@emp1, @emp2, @emp3, @emp4) OR @emp1 IS NULL)
+AND  (o.EmployeeID IN (SELECT employeeid FROM @employeetbl) OR @hasemptbl = 0)</PRE>
+<P>That is, the first condition applies if <SPAN CLASS="objectname">@emp1</SPAN> has a value, which it has if the list had one to four values. The second condition only applies if <SPAN CLASS="objectname">@hasemptbl</SPAN> is 1, which happens if there are five or more values in the list.</P>
+<P>You can compare the query plans for these three cases:</P>
+<PRE>DECLARE @empl intlist_tbltype
+INSERT @empl(val) VALUES(805) --, (304)
+EXEC search_orders_3 @employeetbl = @empl
+EXEC search_orders_3 @employeestr = '805', -- '805,304'
+EXEC search_orders_3c @employeestr = '805', -- '805,304'</PRE>
+<P>When I tested this on SQL&nbsp;2012 with only <SPAN CLASS="objectname">EmployeeID</SPAN> 805 (the employee with the smallest number of orders), the first two calls resulted in a parallel plan which did not use the index on <SPAN CLASS="objectname">EmployeeID</SPAN>, whereas the last call produced  a serial plan that used this index. Interesting enough on SQL&nbsp;2014, where the new Cardinality Estimator comes into play, the first call produced a serial plan fairly similar to the plan for the third call. When I added 304 (the employee with the most number of orders) to the selection, the first call retained the same plan, whereas the call to <SPAN CLASS="objectname">search_orders_3c</SPAN> got a parallel plan. That is, with the strategy in <SPAN CLASS="objectname">search_orders_3c</SPAN>, you can get a plan which is tailored to the selected values.</P>
+<P>I like to point out there is nothing magic with the number 4 here. You could set the limit to from any number from one to ten. Or even higher if you feel like, but I doubt that you will see any actual benefit with that long <SPAN CLASS="keyword">IN</SPAN> list over using a temp table or a table variable.</P>
+<H3 ID="SortOrder">Choice of Sort Order</H3>
+<P>If users need to be able to choose the sort order, this can also easily be handled with static SQL. The basic pattern is:</P>
+<PRE>ORDER BY CASE @sortcol WHEN 'OrderID'      THEN o.OrderID
+                       WHEN 'EmployeeID'   THEN o.EmployeeID
+                       WHEN 'ProductID'    THEN od.ProductID
+         END,
+         CASE @sortcol WHEN 'CustomerName' THEN c.CompanyName
+                       WHEN 'ProductName'  THEN p.ProductName
+         END,
+         CASE @sortcol WHEN 'OrderDate'    THEN o.OrderDate 
+         END</PRE>
+<P>That is, you have a parameter that holds the column to sort by (or some other identifier that maps to the column name) and then you use <SPAN CLASS="keyword">CASE</SPAN> to select that parameter. One very important thing to observe is that all branches in a <SPAN CLASS="keyword">CASE</SPAN> expression must have a similar data type. Recall that a <SPAN CLASS="keyword">CASE</SPAN> expression has a static data type, which is determined according to the rules of data-type <A HREF="http://msdn.microsoft.com/en-us/library/ms190309.aspx" TARGET="_blank">precedence</A> in SQL Server. That is, <SPAN CLASS="keyword">THEN</SPAN>-expressions that are of types with lower precedence will be converted to the type with the highest precedence in the <SPAN CLASS="keyword">CASE</SPAN> expression. If you mix string and numeric columns in the same <SPAN CLASS="keyword">CASE</SPAN> expression, attempts to sort on a string column, will die with a conversion error. Thus, you need to have one <SPAN CLASS="keyword">CASE</SPAN> expression for numeric columns, one for string columns, one for dates etc.</P>
+<P>While this looks a little daunting, the optimizer is able to reduce this to an <SPAN CLASS="keyword">ORDER BY</SPAN> with a single column and build the plan best suited for that sorting &#8211; as long as you use <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> of course.</P>
+<P>If you want to support both ascending and descending sorts, you will need to double everything:</P>
+<PRE>ORDER BY CASE WHEN @isdesc = 1 THEN
+              CASE @sortcol WHEN 'OrderID'    THEN o.OrderID
+                            WHEN 'EmployeeID' THEN o.EmployeeID
+                            WHEN 'ProductID'  THEN od.ProductID
+         END DESC,
+         CASE WHEN @isdesc = 0 THEN
+              CASE @sortcol WHEN 'OrderID'    THEN o.OrderID
+                            WHEN 'EmployeeID' THEN o.EmployeeID
+                            WHEN 'ProductID'  THEN od.ProductID
+         END ASC</PRE>
+<P>For brevity, I included only the numeric columns here, but as you see, it's starting to get a little ugly. Now, imagine that users should be able to select  multiple sort columns with different data types and also ascending/descending for each column. If you would try the above strategy above, it would grow to something completely unmanageable. So while you can do user-selected sorting with static SQL, it is only practical if you only need to support a single column or if all your sort columns have the same data type. If you encounter anything beyond that, it is time to consider a solution with dynamic SQL instead. Or &#8211; this is not an option that should be overlooked &#8211; sort the data client-side.</P>
+<H3 ID="optionaltables">Optional Tables</H3>
+<P>Sometimes you may have a situation that requires you to access a table only if a certain condition is given. Let&#39;s add one more parameter to our procedure:
+   <SPAN CLASS="objectname">@suppl_country</SPAN>. If this parameter is provided, the procedure should only
+   return information about products with a supplier from the given
+   country. You could implement this by joining to the <SPAN CLASS="objectname">Suppliers</SPAN> table,
+   but a suggestion that I originally got from Phillipp Sumi is that you should use an <SPAN CLASS="keyword">EXISTS</SPAN> clause
+   in this way: </P>
+<PRE>@suppl_country IS NULL OR EXISTS (SELECT *
+                                  FROM   Suppliers s
+                                  WHERE  s.SupplierID = p.SupplierID
+                                    AND  s.Country    = @suppl_country)</PRE>
+<P>To illustrate this, I wrote <A  TARGET="_blank" TYPE="text/plain"  HREF="dynsearch-2008/search_orders_9.sp"><SPAN CLASS="objectname">search_orders_9</SPAN></A>, which is the same as <SPAN CLASS="objectname">search_orders_3</SPAN> and with the line above added (and without the parameters for search on employees). If you run
+this:</P>
+<PRE>EXEC search_orders_9 @country = &#39;Sweden&#39;
+EXEC search_orders_9 @suppl_country = &#39;Sweden&#39; </PRE>
+<P>and then look at the query plans, you will see that the first plan does not include <SPAN CLASS="objectname">Suppliers</SPAN>. This should not really come as a surprise, given what you have learnt about <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>.</P>
+<P>However, there is one more revelation to make, and to this end you need to comment out <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> from <SPAN CLASS="objectname">search_orders_9</SPAN> and recreate it. Run the above again preceded by the command <SPAN CLASS="keyword">SET STATISTICS IO ON</SPAN>. If you look at the query plan for the first execution, you will see that <SPAN CLASS="objectname">Suppliers</SPAN> now appears in the plan. However, when you look at the output from <SPAN CLASS="keyword">SET STATISTICS IO ON</SPAN>, you will see something like this:</P>
+<DIV CLASS="output">
+  <P>Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, read-ahead reads 0.</P>
+  <P> Table 'Products'. Scan count 7, logical reads 238, physical reads 1, read-ahead reads 79.</P>
+  <P> Table 'Customers'. Scan count 7, logical reads 661, physical reads 0, read-ahead reads 218.</P>
+  <P> Table 'Orders'. Scan count 214, logical reads 37214, physical reads 6, read-ahead reads 352.</P>
+  <P> Table 'Order Details'. Scan count 7, logical reads 8996, physical reads 1, read-ahead reads 8935.</P>
+  <P> Table 'Workfile'. Scan count 0, logical reads 0, physical reads 0, read-ahead reads 0.</P>
+  <P> Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, read-ahead reads 0.</P>
+</DIV>
+<P>Note that <SPAN CLASS="objectname">Suppliers</SPAN> is not present in this output, whereas the output for the second execution starts off:</P>
+<DIV CLASS="output"><P>Table &#39;Suppliers&#39;. Scan count 0, logical reads 11858, physical reads 0, read-ahead reads 0</P></DIV>
+<P>That is, even without the <SPAN CLASS="keyword">RECOMPILE</SPAN> hint, SQL Server is able to avoid the access to <SPAN CLASS="objectname">Suppliers</SPAN>. If you look in the execution plan, you find a Filter operator above the Clustered Index Seek on <SPAN CLASS="objectname">Suppliers</SPAN>. If you hover over this Filter operator, you find that it has a <I>Startup Expression Predicate</I>. That is, SQL Server decides at run-time whether to access the table. This is nothing  new; we saw the same thing, in the section <A HREF="#Using_OR" CLASS="quote">Using <SPAN CLASS="keyword">OR</SPAN></A> for alternate key lookup. </P>
+<P>This is something which is good to keep in mind if you encounter a situation where your only dynamic search condition is that depending on a parameter you should filter the data depending on rows (not) existing in a certain table. It may be overkill to  use <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> if a filter with a startup expression works. I like to remind you that you should always inspect the query plan and test that performance is acceptable.</P>
+<P CLASS="note"><B>Note</B>: some people with a background in languages like C++ may find this trite and think that this is just a matter of operator shortcutting. However, there is no operator shortcutting in SQL, but in SQL operands can be computed in any order, and the behaviour would be the same if the condition was written as <CODE>EXISTS () OR @suppl_country IS NULL</CODE>.</P>
+<H3 ID="StaticAlternate">Alternate Tables</H3>
+<P>A scenario you may encounter is that depending on a parameter, you should read from different tables. For instance, say that there is a parameter <SPAN CLASS="objectname">@ishistoric</SPAN>. If this parameter is 1, you should read from the tables <SPAN CLASS="objectname">HistoricOrders</SPAN> and <SPAN CLASS="objectname">HistoricOrderDetails</SPAN> instead. There are no such tables in <SPAN CLASS="objectname">Northgale</SPAN> so I cannot show a full-fledged procedure. But here is how the <SPAN CLASS="keyword">FROM</SPAN> clause in <SPAN CLASS="objectname">search_orders_3</SPAN> would be written to accomodate the situation. You replace the join between  <SPAN CLASS="objectname">Orders</SPAN> and <SPAN CLASS="objectname">Order Details</SPAN> with a derived table which is a <SPAN CLASS="keyword">UNION ALL</SPAN> query of two join queries that both have a <SPAN CLASS="keyword">WHERE</SPAN> clause which includes or excludes the query depending on the variable:</P>
+<PRE>FROM  (SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,
+              o.CustomerID, od.ProductID, o.EmployeeID
+       FROM   Orders o
+       JOIN   [Order Details] od ON o.OrderID = od.OrderID
+       WHERE  @ishistoric = 0
+       UNION  ALL
+       SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,
+              o.CustomerID, od.ProductID, o.EmployeeID
+       FROM   HistoricOrders o
+       JOIN   HistoricOrderDetails od ON o.OrderID = od.OrderID
+       WHERE  @ishistoric = 1) AS u
+JOIN   Customers c ON o.CustomerID = u.CustomerID
+JOIN   Products p ON p.ProductID = u.ProductID</PRE>
+<P>With <SPAN CLASS="keyword">OPTION(RECOMPILE)</SPAN> only one set of  order tables will be accessed at run-time. (Even without the hint, you could expect  a plan with a startup expression.)</P>
+<P>It is worth observing, that the query has a certain amount of repetition &#8211; the <SPAN CLASS="keyword">SELECT</SPAN> list and the join conditions. The more alternate tables there are, the case for dynamic SQL grows stronger, as with dynamic SQL you can avoid much of that repetition.</P>
+<H3 ID="fineprint">When OPTION (RECOMPILE) Hurts You</H3>
+<P>We have now seen many of the advantages with using <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, but before you start  to use it all over town, you need to understand that too frivolous use of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> can cause severe pain to your system. There is after all a reason why SQL Server in the normal case caches query plans. Without plan caching there would be many systems crumbling under the load of query compilation.</P>
+<P>You need to understand how often your query will be executed. Say that there are users running <SPAN CLASS="objectname">search_orders</SPAN> once a
+minute in peak activity. In this case, the extra time we spend on compilation is clearly ignorable, not the least if 50&nbsp;ms of compilation can reduce execution time from five minutes to 100&nbsp;ms. But assume instead that there are over 100 calls to the procedure every second. And assume furthermore, that <SPAN CLASS="objectname">@orderID</SPAN> is the only input parameter in the vast majority of these calls. Recompiling the query every time to produce the same plan all over again is a perfect waste of CPU resources.</P>
+<P>One way to alleviate this situation is to introduce an <SPAN CLASS="keyword">IF</SPAN> statement so that you have:</P>
+<PRE>IF @orderid IS NOT NULL
+BEGIN
+   SELECT ...
+   WHERE  O.OrderID = @orderid
+     AND  -- Conditions on Order Details here.
+   -- No OPTION (RECOMPILE) here!
+END
+ELSE
+BEGIN
+   SELECT ...
+   WHERE  -- same conditions as before
+   OPTION (RECOMPILE)
+END</PRE>
+<P>By adding a separate branch for <SPAN CLASS="objectname">@orderid</SPAN> that does not have <SPAN CLASS="keyword">OPTION(RECOMPILE)</SPAN>, the common requests for a single order can be served from a cached plan, whereas other conditions still result in compilation every time. Assume now that once you have this in production, you find that the load from compilation is still a tad high, and you identify that there many are requests with <SPAN CLASS="objectname">@custid</SPAN> and <SPAN CLASS="objectname">@fromdate</SPAN>, with <SPAN CLASS="objectname">@fromdate</SPAN> typically being at most a week ago. </P>
+<P>This calls for one more branch without <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, and you can see a complete solution in
+  <A  TARGET="_blank" TYPE="text/plain"  HREF="dynsearch-2008/search_orders_4.sp"><SPAN CLASS="objectname">search_orders_4</SPAN></A>. However, this procedure is not likely to work out well. You may recall the discussion on <A HREF="#IF_statements">parameter sniffing</A> earlier and this strikes here. Say that the first call to <SPAN CLASS="objectname">search_orders_4</SPAN> happens to be a search on <SPAN CLASS="objectname">@prodid</SPAN>. Now the two branches for order ID and  recent orders for a customer will be optimised for a search on product ID, which will result in catastrophic performance. This can be addressed with index hints, or you can shove the <SPAN CLASS="keyword">SELECT</SPAN> without <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> into subprocedures, and this is what I have done in  <A HREF="dynsearch-2008/search_orders_4a.sp" TARGET="_blank" TYPE="text/plain"><SPAN CLASS="objectname">search_orders_4a</SPAN></A>.</P>
+<P>But this is about as far this path can take you. If you find more common input combinations that cause too much compilation, this gets out of hand, and that&#39;s where you need to look into dynamic SQL as with dynamic SQL, you can get one cached plan for each combination of input parameters. More about that later.</P>
+<H3 ID="SPandCUs">The History of Forced Recompilation</H3>
+<P>The <SPAN CLASS="keyword">RECOMPILE</SPAN> option is somewhat confusing, because through the course of SQL Server, it has  existed in several flavours and with different behaviour. Here is a short history.</P>
+<P>For as long as I have used SQL Server, there has been an option on procedure level to force recompilation:</P>
+<PRE>CREATE PROCEDURE search_orders ... WITH RECOMPILE AS</PRE>
+<P>There is also a similar option on the <SPAN CLASS="keyword">EXEC</SPAN> statement:</P>
+<PRE>EXEC some_other_proc @p1, @p2, ... WITH RECOMPILE</PRE>
+<P> The problem with these options is that SQL Server optimises a stored procedure query by query and performs no flow analysis. Thus, even if the procedure is a single query, SQL Server cannot assume that the input parameters will have the same values when the query is executed as they have at compile time. Therefore it builds a plan which produces the correct results no matter the parameter values. Even if such a one-size-fits-all plan is optimised for the parameter values sniffed, it is not a very efficient plan. Thus, as long as we only had this option, static SQL was not a good solution for dynamic search conditions.</P>
+<P>In SQL&nbsp;2005, Microsoft introduced statement-level recompilation, and that included the hint <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. However, Microsoft had not  drawn the inference that the variables in the query could be handled as constants, but the plan still was compiled to be correct with all possible values of the variables. So also in SQL&nbsp;2005, static SQL was still not a good solution.</P>
+<P>Microsoft addressed this flaw with the release of SQL&nbsp;2008. Now variables were handled as constants when you used <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> and static SQL  became a serious contender as a solution for dynamic search conditions. However, SQL&nbsp;2008 had only been out for a few months when a serious bug was revealed: if two users were both running a query with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> with different parameters in parallel, they could get each other's results. This was not exactly a simple bug to fix, so Microsoft saw no choice but to revert to the old behaviour, which happened in SQL&nbsp;2008 RTM CU4. </P>
+<P>But there was a customer in Bulgaria who had invested heavily in the new behaviour, and they were able to convince Microsoft that they had to fix the bug for real and restore the good behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. This happened in SQL&nbsp;2008 SP1 CU5.</P>
+<P>When it comes to SQL&nbsp;2008 R2, it was released a little too soon after SQL&nbsp;2008 SP1 CU5 to include the fix. As a consequence, SQL&nbsp;2008 R2 RTM shipped  with the old behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> and the bug fix got into SQL&nbsp;2008 R2 RTM CU1.</P>
+<P>Thus, there are some versions of SQL&nbsp;2008 for which <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> does not work as touted in this article. To determine whether your server has a correct implementation of <SPAN CLASS="keyword">OPTION</SPAN>
+(<SPAN CLASS="keyword">RECOMPILE</SPAN>), issue this command:</P>
+<PRE>SELECT serverproperty(&#39;ProductVersion&#39;)</PRE>
+<P>It should return 10.0.2746.0 (SQL&nbsp;2008) or 10.50.1702.0 (SQL&nbsp;2008 R2) or
+  higher. Note that these versions are very old by now, and preferably you should be running the latest and last service pack, which is <A HREF="http://www.microsoft.com/en-us/download/details.aspx?id=44278" TARGET="_blank">Service Pack 4 for SQL&nbsp;2008</A> and <A HREF="http://www.microsoft.com/en-us/download/details.aspx?id=44271" TARGET="_blank">Service Pack 3 for SQL&nbsp;2008 R2</A>. (As SQL&nbsp;2008 and SQL&nbsp;2008 R2 have gone out of mainstream support, there will be no more service packs.)</P>
+<P>If you are on SQL&nbsp;2012 or later, <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> always works in the same way, so you don't have to worry. Well, almost. In the autumn of 2014, a new bug with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> was uncovered. The issue is the same as with the first bug: users running the same query with different parameters can get each other's results. But whereas the first bug was very simple to repro, this bug requires quite specific circumstances to exhibit  as described in <A HREF="http://support.microsoft.com/kb/2965069" TARGET="_blank">KB2965069</A>. I am not going to repeat the KB article here, but I certainly recommend that you read  it and decide whether the scenario could apply to your system. If you think it does, you should certainly apply the applicable cumulative update. (Or any CU released later.) The KB article does not list SQL&nbsp;2008 and SQL&nbsp;2008 R2, but I would assume that this is due to that they have gone out of mainstream support. I have no information on the matter, but my assumption is that the bug is present in these two versions as well. That is, this is a bug has been there since the new behaviour was restored in SQL&nbsp;2008 SP1 CU5, and it took four years before it was observed.</P>
+<H2 ID="dynsql">Dynamic SQL</H2>
+<H3 ID="WhyDynamic">Why Dynamic SQL?</H3>
+<P>It might as well be said directly: solutions with dynamic SQL require more from you as a programmer. Not only in skill, but foremost in discipline and understanding of what you are doing. Dynamic SQL is a wonderful tool when used correctly, but in the hands of the unexperienced it far too often leads to solutions that are flawed and hopeless to maintain.</P>
+<P>That said, the main advantages with dynamic SQL are:</P>
+<UL>
+  <LI>Dynamic SQL gives you a lot more flexibility; as the complexity of the requirements grows, the complexity of the code tends to grow linearly or less than so. </LI>
+  <LI>Query plans are cached by the query string, meaning that commonly recurring search criterias will not cause unnecessary recompilations.</LI>
+</UL>
+<P>The disadvantages with dynamic SQL are:</P>
+<UL>
+  <LI>As I said above, poor coding discipline can lead to code that is difficult to maintain.</LI>
+  <LI>Dynamic SQL introduces a level of difficulty from the start, so for problems of low to moderate complexity, it's a bit of too heavy artillery.</LI>
+  <LI>Because queries are built dynamically, testing is more difficult, and some odd combination of parameters can prove to yield a syntax error when a poor user tries it.</LI>
+  <LI>You need to consider permissions on the tables accessed by the dynamic SQL since users do not get permission just because the code in a stored procedure; it does not work that way.</LI>
+  <LI>Caching is not always what you want; sometimes you want different plans for different values of the same set of input parameters.</LI>
+</UL>
+<P>It may seem from this list that there are more disadvantages with dynamic SQL than advantages, but if you look more closely, you see that the list is more or less complementary with the corresponding list for static SQL. Static SQL with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> is good for many everyday situations, but when the requirements of what the users should be able to do become to complex, or some the searches are too frequent for recurring recompilations to be permissible, this is when you turn to dynamic SQL, fully aware of that it comes with a price.</P>
+<H3 ID="WaysDynamicSQL">The Ways to Do Dynamic SQL</H3>
+<P>Whereas for static SQL, there is a single basic pattern to work from, there is more than way to implement solutions for dynamic SQL. There are three different choices where to construct the SQL code:</P>
+<OL>
+  <LI>In a T&#8209;SQL stored procedure.</LI>
+  <LI>In a CLR stored procedure.</LI>
+  <LI>Client-side.</LI>
+</OL>
+<P>And there are two choices for how to handle the input values from the users:</P>
+<OL>
+  <LI>Inline them into the query string, that is, do something like <CODE>' AND col = ' + convert(varchar, @value)'</CODE>.</LI>
+  <LI>Use parameterised queries with <SPAN CLASS="builtin">sp_executesql</SPAN>, so that the above fragment reads <CODE>' AND col = @value'</CODE>.</LI>
+</OL>
+<P>Let's start with the latter, because this is not a matter of a choice in the normal manner. You don't pick one or the other as a matter of taste, phase of the moon, roll of a dice or the whim of the day. It cannot be enough emphasised: your norm and what you should use in 99.9&nbsp;% of the time is parameterised queries. But there may be an <I>occasional</I> parameter where inlining is required for performance reasons. Once we have looked at the basic examples, we will look at such cases, as well as a discussion of why inlining is unacceptable in the general case.</P>
+<P>On the other hand, the choice of where to construct the SQL code is to a large extent a matter of preference. None of them is intrinsically better than the other. Many people use T&#8209;SQL procedures, and I will show you two implementations of <SPAN CLASS="objectname">search_orders</SPAN> using dynamic SQL in T&#8209;SQL, one with a parameterised query, and one with inlined parameter values.  It may seem natural to use T&#8209;SQL to build a T&#8209;SQL query, but the process of building a query is a matter of scalar logic and string manipulation for which traditional programming languages are better tools, and I will show implementations of <SPAN CLASS="objectname">search_orders</SPAN> as a CLR stored procedure, one in C# and one in VB .NET.</P>
+<P>However, once you have made the realisation that it's better to use a traditional language to build the query string, you might ask yourself why it should be a stored procedure at all, why not do it client-side altogether? You would not be wrong in asking that question. Implementing your dynamic search entirely in client code is a perfectly legit choice as long as it fits in with the general development pattern for your application. That is, if the rule for the application is that all data access should be in stored procedures, you should stick to that pattern.</P>
+<P>That said, you may encounter very complex requirements for your dynamic search. Not only should users be able to select search and sort criterias, but they should also be able to select the exact set of columns to return, they should be able to aggregate the data and freely choose aggregate function (e.g. <SPAN CLASS="keyword">AVG</SPAN>, <SPAN CLASS="keyword">SUM</SPAN>) and what columns to group by. For something as ultra-dynamic like this, there is really only one reasonable choice: build the dynamic query client-side and use the full powers of object-oriented programming. If you were to do this in a stored procedure, you would need umpteen parameters to describe the conditions, and only defining the interface would take a week &#8211; and it would still be a kludge. Because that is the straight-jacket of a stored procedure, be that T&#8209;SQL or a CLR procedure, the parameter list.</P>
+<P>You may think that you could do a hybrid, and build some parts of the query client-side and send for instance the <SPAN CLASS="keyword">WHERE</SPAN> clause as a parameter to a stored procedure. But this is the one thing you should <I><B>never</B></I> do. Either you build the query entirely client-side, or you build it in entirely in a stored procedure. If you mix, you create a strongly coupled dependency between client and stored procedure. In all software systems, you want components to be as loosely coupled as possible. Say that the DBA makes some changes to the data model: columns are renamed or moved to different tables. If you have a stored procedure accepts values for various search conditions, you only have to change the procedure; the client can remain affected and unaware of the change. But if you start to pass <SPAN CLASS="keyword">WHERE</SPAN> clauses, column lists and whatnots, you will  have to change the client as well, and you have gained little with your stored procedure. In that case it's better to have it all in the client, fully aware of that the client code has be modified if the data model is changed.</P>
+<P>I will not show any client-side examples of our order search in this article, since such an implementation should probably have an object-oriented interface with methods and properties quite different from the parameter interface of <SPAN CLASS="objectname">search_orders</SPAN>. Nevertheless, in the examples that follow, there are many points that are applicable also when you work client-side.</P>
+<H3 ID="Permissions">Permissions</H3>
+<P>With stored procedures using static SQL, you don't have to bother about permissions. As long as the procedure and the tables have the same owner, it is sufficient for the users to have rights to run the stored procedure because of a feature known as <I>ownership chaining</I>. But ownership chaining never applies to dynamic SQL. Even if you build the query string inside a stored procedure, the string is never part of the procedure itself, but constitutes its own owner-less scope. </P>
+<P>If you build the query string client-side or in a CLR stored procedure, you will have no choice but to grant the users <SPAN CLASS="keyword">SELECT</SPAN> permissions on the tables and the views that appear in the query. This also includes as any list-to-table functions you may use.</P>
+<P>Depending on your application, and how it is set up, granting <SPAN CLASS="keyword">SELECT</SPAN> permissions may be entirely uncontroversial or absolutely impermissible. Thankfully, in the case you build the query string in a T&#8209;SQL procedure, there are two alternatives to arrange for the permissions:</P>
+<OL>
+  <LI>Create a certificate and sign the procedure with this certificate. Create a user from the certificate, and grant this user the required <SPAN CLASS="keyword">SELECT</SPAN> permissions.</LI>
+  <LI>Add the clause <CODE>EXECUTE AS 'someuser'</CODE> to the procedure. This should be a user created <SPAN CLASS="keyword">WITHOUT LOGIN</SPAN> and which has been granted the required <SPAN CLASS="keyword">SELECT</SPAN> permissions.</LI>
+</OL>
+<P>I will not go into further details on these techniques here. Rather I refer you to my article <A HREF="grantperm.html"><SPAN CLASS="quote">Granting Permissions through Stored Procedures</SPAN></A><SPAN CLASS="quote"></SPAN>, where I discuss these techniques in detail.</P>
+<P>Before you get any funny ideas, permit me to beat the dead horse of the hybrid solution a little more. You may think this sounds excellent, you could build the <SPAN CLASS="keyword">WHERE</SPAN> clause client-side and send it to a stored procedure which handles permissions problem for you. But this is again an awfully bad idea. You expose a stored procedure that accepts a <SPAN CLASS="keyword">WHERE</SPAN> clause. How do you in the stored procedure verify that this <SPAN CLASS="keyword">WHERE</SPAN> clause does not violate any security rules about what the user should see or not?</P>
+<H3 ID="sp_executesql">Implementing search_orders with a Parameterised Query</H3>
+
+<P>After these proceedings, it's time to look at <A TARGET="_blank" TYPE="text/plain"  HREF="dynsearch-2008/search_orders_1.sp"><SPAN CLASS="objectname">search_orders_1</SPAN></A> which is a T&#8209;SQL procedure that builds a parameterised SQL statement. Because of its length, I have numbered the rows in the right margin:</P>
+<PRE>CREATE PROCEDURE search_orders_1                                   --  1
+                 @orderid     int          = NULL,                 --  2
+                 @fromdate    datetime     = NULL,                 --  3
+                 @todate      datetime     = NULL,                 --  4
+                 @minprice    money        = NULL,                 --  5
+                 @maxprice    money        = NULL,                 --  6
+                 @custid      nchar(5)     = NULL,                 --  7
+                 @custname    nvarchar(40) = NULL,                 --  8
+                 @city        nvarchar(15) = NULL,                 --  9
+                 @region      nvarchar(15) = NULL,                 -- 10
+                 @country     nvarchar(15) = NULL,                 -- 11
+                 @prodid      int          = NULL,                 -- 12
+                 @prodname    nvarchar(40) = NULL,                 -- 13
+                 @employeestr varchar(MAX) = NULL,                 -- 14
+                 @employeetbl intlist_tbltype READONLY,            -- 15
+                 @debug       bit          = 0 AS                  -- 16
+                                                                   -- 17
+DECLARE @sql        nvarchar(MAX),                                 -- 18
+        @paramlist  nvarchar(4000),                                -- 19
+        @nl         char(2) = char(13) + char(10)                  -- 20
+                                                                   -- 21
+SELECT @sql =                                                      -- 22
+    'SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,     -- 23
+            c.CustomerID, c.CompanyName, c.Address, c.City,        -- 24
+            c.Region,  c.PostalCode, c.Country, c.Phone,           -- 25
+            p.ProductID, p.ProductName, p.UnitsInStock,            -- 26
+            p.UnitsOnOrder, o.EmployeeID                           -- 27
+     FROM   dbo.Orders o                                           -- 28
+     JOIN   dbo.[Order Details] od ON o.OrderID = od.OrderID       -- 29
+     JOIN   dbo.Customers c ON o.CustomerID = c.CustomerID         -- 30
+     JOIN   dbo.Products p ON p.ProductID = od.ProductID           -- 31
+     WHERE  1 = 1' + @nl                                           -- 32
+                                                                   -- 33
+IF @orderid IS NOT NULL                                            -- 34
+   SELECT @sql += ' AND o.OrderID = @orderid' +                    -- 35
+                  ' AND od.OrderID = @orderid' + @nl               -- 36
+                                                                   -- 37
+IF @fromdate IS NOT NULL                                           -- 38
+   SELECT @sql += ' AND o.OrderDate &gt;= @fromdate' + @nl            -- 39
+                                                                   -- 40
+IF @todate IS NOT NULL                                             -- 41
+   SELECT @sql += ' AND o.OrderDate &lt;= @todate'  + @nl             -- 42
+                                                                   -- 43
+IF @minprice IS NOT NULL                                           -- 44
+   SELECT @sql += ' AND od.UnitPrice &gt;= @minprice'  + @nl          -- 45
+                                                                   -- 46
+IF @maxprice IS NOT NULL                                           -- 47
+   SELECT @sql += ' AND od.UnitPrice &lt;= @maxprice'  + @nl          -- 48
+                                                                   -- 49
+IF @custid IS NOT NULL                                             -- 50
+   SELECT @sql += ' AND o.CustomerID = @custid' +                  -- 51
+                  ' AND c.CustomerID = @custid' + @nl              -- 52
+                                                                   -- 53
+IF @custname IS NOT NULL                                           -- 54
+   SELECT @sql += ' AND c.CompanyName LIKE @custname + ''%''' + @nl -- 55
+                                                                   -- 56
+IF @city IS NOT NULL                                               -- 57
+   SELECT @sql += ' AND c.City = @city' + @nl                      -- 58
+                                                                   -- 59
+IF @region IS NOT NULL                                             -- 60
+   SELECT @sql += ' AND c.Region = @region' + @nl                  -- 61
+                                                                   -- 62
+IF @country IS NOT NULL                                            -- 63
+   SELECT @sql += ' AND c.Country = @country' + @nl                -- 64
+                                                                   -- 65
+IF @prodid IS NOT NULL                                             -- 66
+   SELECT @sql += ' AND od.ProductID = @prodid' +                  -- 67
+                  ' AND p.ProductID = @prodid' + @nl               -- 68
+                                                                   -- 69
+IF @prodname IS NOT NULL                                            --70
+   SELECT @sql += ' AND p.ProductName LIKE @prodname + ''%''' + @nl-- 71
+                                                                   -- 72
+IF @employeestr IS NOT NULL                                        -- 73
+   SELECT @sql += ' AND o.EmployeeID IN' +                         -- 74
+                  ' (SELECT number FROM dbo.intlist_to_tbl(@employeestr))' + @nl
+                                                                   -- 76
+IF EXISTS (SELECT * FROM @employeetbl)                             -- 77
+   SELECT @sql += ' AND o.EmployeeID IN (SELECT val FROM @employeetbl)' + @nl
+                                                                   -- 79
+SELECT @sql += ' ORDER BY o.OrderID' + @nl                         -- 80
+                                                                   -- 81
+IF @debug = 1                                                      -- 82
+   PRINT @sql                                                      -- 83
+                                                                   -- 84
+SELECT @paramlist = '@orderid     int,                             -- 85
+                     @fromdate    datetime,                        -- 86
+                     @todate      datetime,                        -- 87
+                     @minprice    money,                           -- 88
+                     @maxprice    money,                           -- 89
+                     @custid      nchar(5),                        -- 90
+                     @custname    nvarchar(40),                    -- 91
+                     @city        nvarchar(15),                    -- 92
+                     @region      nvarchar(15),                    -- 93
+                     @country     nvarchar(15),                    -- 94
+                     @prodid      int,                             -- 95
+                     @prodname    nvarchar(40),                    -- 96
+                     @employeestr varchar(MAX),                    -- 97
+                     @employeetbl intlist_tbltype READONLY'        -- 98
+                                                                   -- 99
+EXEC sp_executesql @sql, @paramlist,                               -- 100
+                   @orderid, @fromdate, @todate, @minprice,        -- 101
+                   @maxprice,  @custid, @custname, @city, @region, -- 102
+                   @country, @prodid, @prodname, @employeestr, @employeetbl</PRE>
+<H4>Building the Query</H4>
+
+<P>On line 18, I declare the variable <SPAN CLASS="objectname">@sql</SPAN> which will hold my query string. The type should always be <SPAN CLASS="builtin"><SPAN CLASS="nowrap">nvarchar(<SPAN CLASS="keyword">MAX</SPAN>)</SPAN></SPAN>. It should be <SPAN CLASS="keyword">MAX</SPAN>, so that you can fit any query in the variable. As for why it needs to be <SPAN CLASS="builtin">nvarchar</SPAN>, I will return to that. I'm ignoring the variable <SPAN CLASS="objectname">@paramlist</SPAN> for now. On line 20, I define the variable <SPAN CLASS="objectname">@nl</SPAN> which I set to the standard line-ending in Windows, CR-LF. While technically a variable, <SPAN CLASS="objectname">@nl</SPAN> is a constant in this procedure.</P>
+<P>On lines 22-32, I compose the nucleus of the dynamic SQL query. That is, the query we will get when all input parameters are left out. Observe that I use two-part notation for the tables. You should always do this when you work with dynamic SQL for performance reasons. Exactly why, I will return to when I discuss caching and performance.</P>
+<P>The condition <CODE><SPAN CLASS="nowrap">WHERE 1 = 1</SPAN></CODE> on line 32 is there so that all other conditions can be added as &quot;<SPAN CLASS="keyword">AND</SPAN> something&quot;. I add <SPAN CLASS="objectname">@nl</SPAN> to the string, for reasons that will prevail.</P>
+
+<P>On lines 34-72, I check all the single-valued search parameters. If a parameter is  non-<SPAN CLASS="keyword">NULL</SPAN>, I add a condition for the corresponding column to the
+SQL string. I use the <CODE>+=</CODE> operator which is a shortcut for <CODE>@sql = @sql +</CODE>. Note that if I want to include a quote in the query string, I need to double it, see for instance line 71. Again, I concatenate <SPAN CLASS="objectname">@nl</SPAN> after all conditions.</P>
+<P>On lines 73-75, I handle the <SPAN CLASS="objectname">@employeestr</SPAN> parameter in the same manner as I did in <SPAN CLASS="objectname">search_orders_3</SPAN>. That is, I use the function <SPAN CLASS="objectname">intlist_to_tbl</SPAN> to crack the list into table format. You may have other ideas, but this is the way should do it as a first choice. As for alternatives, I will return to that later. Observe that just like the tables, I need to refer to the function with two-part notation.</P>
+<P>On lines 77-79, I handle the parameter <SPAN CLASS="objectname">@employeetbl</SPAN>, and this is perfectly straightforward. The only deviation is that I use <SPAN CLASS="keyword">EXISTS</SPAN> to see whether this parameter was specified rather than checking for <SPAN CLASS="keyword">NULL</SPAN>.</P>
+<P>Finally, on line 80 I add the <SPAN CLASS="keyword">ORDER BY</SPAN> clause.</P>
+<P>You may note that for parameters that match columns that appear in multiple tables (<SPAN CLASS="objectname">@orderid</SPAN>, <SPAN CLASS="objectname">@custid</SPAN>, <SPAN CLASS="objectname">@prodid</SPAN>), I add conditions against both tables. This something I learnt very early in my SQL Server career that you should do to help the optimizer. It mattered more in those days when SQL Server did not have foreign-key constraints. Today, with proper foreign-key constraints (and which have not been applied with <SPAN CLASS="keyword">NOCHECK</SPAN>), the optimizer can move around the condition even if you apply it on the &quot;wrong&quot; table. But I added it nevertheless, and it's not a bad habit, as you may have some denormalised database design with redundant columns without a foreign-key relation between them. Nevertheless, I did not do this in the procedures with static SQL. I felt that in those procedures, the extra conditions add extra noise, but this is a less of an issue in code that builds a query string.</P>
+<H4>The Debug PRINT</H4>
+<P>On line 82-83, I do something very important: if the parameter <SPAN CLASS="objectname">@debug</SPAN> is 1, I print the SQL string. This is one more of these things that cannot be enough emphasised: always include a parameter that permits you to print the SQL string. One of the distinct disadvantages with dynamic SQL is that you can happen to concatenate the strings incorrectly leading to syntax errors, maybe only with some combination of input parameters. Finding this error by looking at the code that generates the dynamic SQL is hard, but once you see the SQL string, the error may be immediately apparent. For instance, a typical
+error is a missing space, leading to code that reads:</P>
+
+<PRE>WHERE  1 = 1 AND o.OrderDate &lt;= <FONT COLOR="#FF0000">@todateAND</FONT> p.ProductName LIKE @xprodname</PRE>
+<P>If you look closely in the procedure code, I have already take precautions to avoid such goofs by having a leading space in most string literals, and also by adding the <SPAN CLASS="objectname">@nl</SPAN> parameter to each condition. However, that is not the main purpose of <SPAN CLASS="objectname">@nl</SPAN>. The reason I add <SPAN CLASS="objectname">@nl</SPAN> is to avoid that the query string becomes one single long line which is very difficult to read when I have to look at it. Thus, not only  should you keep the code that generates the SQL string tidy, you should also produce an SQL string that is reasonably tidy.</P>
+<P>If the query string is very long, it may be appear to be truncated in SQL Server Management Studio because it only prints the first 4000 characters. A workaround is to do:</P>
+<PRE>IF @debug = 1
+   SELECT @sql FOR XML PATH(''), TYPE</PRE>
+<P>By the default, SSMS displays the first 2&nbsp;MB of a returned XML document, which hopefully should be sufficient. You will have to accept that  characters that are special to XML, like <CODE>&lt;</CODE> are replaced by sequences such as <CODE>&amp;lt;</CODE>. </P>
+<H4>Running the Query</H4>
+<P>On lines 84 to 97, I set up the parameter list, and on lines  99 to 102 I execute the query using <SPAN CLASS="builtin">sp_executesql</SPAN>. It is extremely important to understand this system procedure. This is the vehicle to run parameterised queries.</P>
+<P><SPAN CLASS="builtin">sp_executesql</SPAN> is a system procedure that takes two fixed parameters. The first parameter is a batch of SQL statements and the second parameter is a parameter list. These parameters must be  of the type <SPAN CLASS="builtin">nvarchar</SPAN>; you cannot pass <SPAN CLASS="builtin">varchar</SPAN>. (And thus I have declared the parameters <SPAN CLASS="objectname">@sql</SPAN> and <SPAN CLASS="objectname">@paramlist</SPAN> accordingly.) The remaining parameters are the actual parameters passed to the parameters in the parameter list. They must match the data types in the parameter list in the same way as when you call a regular stored procedure. That is, implicit conversion applies.</P>
+<P>The system procedure executes the batch using the parameters values you pass it. If this sounds a little abstract, you can think of <SPAN CLASS="builtin">sp_executesql</SPAN> this way:</P>
+<PRE>CREATE PROCEDURE sp &lt;parameter list&gt; AS
+  &lt;SQL batch&gt;
+go
+EXEC sp &lt;actual parameter values&gt;</PRE>
+<P>That is, you create a nameless stored procedure and execute it in one go.</P>
+<P>In <SPAN CLASS="objectname">search_orders_1</SPAN>, the parameter names in the query string are the same as in the surrounding parameters in the stored procedure. But don't be lured. They are physically separate and I could have used completely different names and the procedure would still have worked. The key is that the dynamic SQL cannot see any variables in the calling procedure; the dynamic SQL is a procedure of its own.</P>
+<P>You may note that the parameter list in <SPAN CLASS="objectname">@paramlist</SPAN> is static. That is, the set of parameters is always the same, despite that some of them may not appear in the actual query string. While it would be possible to extend the parameter list as new non-<SPAN CLASS="keyword">NULL</SPAN> search parameters are encountered, that would only be unnecessarily complicated. There is no law in T&#8209;SQL against having unused parameters.</P>
+<P>For more information and examples with <SPAN CLASS="builtin">sp_executesql</SPAN>, please see the section on <SPAN CLASS="builtin">sp_executesql</SPAN> in my article <A HREF="dynamic_sql.html"><SPAN CLASS="quote">The Curse and Blessings of Dynamic SQL</SPAN></A>.</P>
+<H4>Trying it out</H4>
+<P>Here are some test cases:</P>
+<PRE>EXEC search_orders_1 @orderid = 11000
+EXEC search_orders_1 @custid  = &#39;ALFKI&#39;
+EXEC search_orders_1 @prodid  = 76
+EXEC search_orders_1 @prodid  = 76, @custid = &#39;RATTC&#39;
+EXEC search_orders_1 @fromdate = &#39;19980205&#39;, @todate = &#39;19980209&#39;
+EXEC search_orders_1 @city = &#39;Bräcke&#39;, @prodid = 76
+EXEC search_orders_1 @employeestr = '402,109,207', @custid = 'PERTH'
+
+DECLARE @tbl intlist_tbltype 
+INSERT @tbl (val) VALUES(402), (109), (207)
+EXEC search_orders_1 @employeetbl = @tbl, @custid = 'PERTH'</PRE>
+<P>If you try these and inspect the query plans, you will see that 
+  the available indexes on the search columns are used with two exceptions: The index on <SPAN CLASS="objectname">Orders.EmployeeID</SPAN> is ignored, and on SQL&nbsp;2008 and 2012, the index on <SPAN CLASS="objectname">Customers.City</SPAN> is not used. However, SQL&nbsp;2014 uses this index. If you compare with the plans for <SPAN CLASS="objectname">search_orders_3</SPAN>, you will see that these are identical, except for the search on <SPAN CLASS="objectname">@custid</SPAN> alone.</P>
+<P>I also encourage you to run the procedures with <SPAN CLASS="objectname">@debug</SPAN> = 1 to see the generated SQL.</P>
+<H3 ID="cachingdynsql">Compilation and Caching</H3>
+<P>You have learnt that <SPAN CLASS="builtin">sp_executesql</SPAN> defines a nameless stored procedure and executes it directly. You may ask if this procedure is saved in the database. No, it is not. But, and this is the key, the query plan is saved in the cache. So the next time a user runs your search procedure with exactly the same set of search parameters, SQL Server will reuse the existing plan for that query.</P>
+<P>That is, when you use static SQL, and there are these three calls.</P>
+<PRE>EXEC search_orders_3 @orderid = 11000
+EXEC search_orders_3 @orderid = 11001
+EXEC search_orders_3 @orderid = 11002</PRE>
+<P>There are also three compilations, because nothing is cached and recompilation is forced every time. Whereas with:</P>
+<PRE>EXEC search_orders_1 @orderid = 11000
+EXEC search_orders_1 @orderid = 11001
+EXEC search_orders_1 @orderid = 11002</PRE>
+<P>There is a  compilation the first time, and on the second and third calls, the existing plan is reused. But add one more parameter:</P>
+<PRE>EXEC search_orders_3 @orderid = 11000, @prodid = 76</PRE>
+<P>And this will be a new compilation and a new cache entry. The existing plan for the search on <SPAN CLASS="objectname">OrderID</SPAN> alone is unaffected.</P>
+<P>There is one qualification to make here, and it is one we have already touched: the table names must be specified in two-part notation, that is, with schema and table. If the query has <CODE>FROM Orders</CODE> without schema, SQL Server needs to consider the possibility that there may be an <SPAN CLASS="objectname">Orders</SPAN> table in the default schema of the user. And even if there isn't one right now, it might appear later. Therefore, SQL Server needs to have different cache entries for users with different default schemas. Now, <I>normally</I> users have <SPAN CLASS="builtin">dbo</SPAN> as their default schema, in which case this is a non-issue, but this is nothing you should rely on.</P>
+<H3 ID="DynSpecialSearch">Special Search Conditions</H3>
+<P>For static SQL, we looked at how to implement some special search conditions. Let's review these for dynamic SQL as well.</P>
+<H4>Columns with Filtered Indexes</H4>
+<P>This was nothing I brought up with static SQL, because this is a non-issue with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. But with cached plans, you need to be aware of this. Say that there is a <SPAN CLASS="objectname">Status</SPAN> column in the <SPAN CLASS="objectname">Orders</SPAN> table for which there are four possible values: N &#8211; New order, P &#8211; In process, E &#8211; Error, C &#8211; Processing completed. 99&nbsp;% of the rows have the value C, and there is a filtered index on the <SPAN CLASS="objectname">Status</SPAN> column:</P>
+<PRE>CREATE INDEX status_ix ON Orders(Status) WHERE Status &lt;&gt; 'C'</PRE>
+<P>Say now that the search has a parameter <SPAN CLASS="objectname">@status</SPAN> where the user can search for orders with a specific status. If you simply mimic the code above, and do:</P>
+<PRE>IF @status IS NOT NULL
+   SELECT @sql += ' AND o.Status = @status'</PRE>
+<P>SQL Server will not use the filtered index, no matter what value the user passes, because it has a produce a plan that works with all parameter values, including <SPAN CLASS="objectname">@status</SPAN> = 'C'. You need to add some logic to add an extra condition so that the the filtered index can be used:</P>
+<PRE>IF @status IS NOT NULL
+   SELECT @sql += ' AND o.Status = @status' +
+                  CASE WHEN @status &lt;&gt; 'C' 
+                       THEN ' AND o.Status &lt;&gt; ''C'''
+                       ELSE ''
+                  END</PRE>
+<P>Here I assumed for simplicity that <SPAN CLASS="objectname">@status</SPAN> is a single-valued parameter, but it seems likely that in a real-world application <SPAN CLASS="objectname">@status</SPAN> would be multi-valued; that is, the user is able to select a number of status values he is interested in. You would need to do the same checks and add extra conditions in  the case the user's choice falls entirely within the filtered index (and you want it to be used).</P>
+<H4>Choice of Sort Order</H4>
+<P>It may seem that this could be done as simple as:</P>
+<PRE>@sql += ' ORDER BY ' + @sortcol</PRE>
+<P>This could easily handle multiple sort columns. That is, the client could pass a value like <CODE>'CustomerID, OrderID DESC'</CODE>. This breaks the principle that the client should know nothing about the query. However, it is a little difficult to argue this point very strongly here. The syntax of the string is not very difficult. (And the assumption is that the application builds the string from users choices in a UI; the user does not write the call himself.) At first glance, some readers may think that the string above will result in an error with ambiguous column names. But since <SPAN CLASS="keyword">ORDER BY</SPAN> is evaluated after <SPAN CLASS="keyword">SELECT</SPAN> in an SQL query, you can use the column names defined in the <SPAN CLASS="keyword">SELECT</SPAN> list in the <SPAN CLASS="keyword">ORDER BY</SPAN> clause, and thus <SPAN CLASS="objectname">CustomerID</SPAN> and <SPAN CLASS="objectname">OrderID</SPAN> without prefix are legit here. Another argument against the client forming part of the query is that the data model may change. But these are columns in the result set which the client needs to have knowledge of anyway to be able bind them to columns in an output grid or similar. That is, if the DBA would decide that <SPAN CLASS="objectname">OrderID</SPAN> should now be <SPAN CLASS="objectname">order_id</SPAN>, you would have to change the query to read:</P>
+<PRE>SELECT o.order_id AS OrderID, ...</PRE>
+<P>to avoid breaking the client.</P>
+<P>There is  however the issue of SQL injection. Maybe it is a web application. Maybe the sort parameters are passed in a URL. Maybe the web application connects as <SPAN CLASS="builtin">sa</SPAN>. (Bad! Bad! Bad!). And then some user out on the evil Internet passes <CODE>'1 SHUTDOWN WITH NOWAIT'</CODE>. That is, this use of <SPAN CLASS="objectname">@sortcol</SPAN> opens for SQL injection. You can easily prevent this with <SPAN CLASS="builtin"><SPAN CLASS="nowrap">quotename()</SPAN></SPAN>:</P>
+<PRE>@sql += ' ORDER BY ' + quotename(@sortcol)</PRE>
+<P><SPAN CLASS="builtin">quotename</SPAN> adds brackets around the value, doubling any right brackets there may be in it, so that you still have a legal quoted identifier. But now you can no longer easily accept multi-column sort conditions or <SPAN CLASS="keyword">ASC</SPAN>/<SPAN CLASS="keyword">DESC</SPAN> in a single parameter. You would have to parse <SPAN CLASS="objectname">@sortcol</SPAN> to put in  <SPAN CLASS="builtin">quotename</SPAN> where it's needed. Which is not trivial at all.</P>
+<P>So, after all, I think it is much better to use <SPAN CLASS="keyword">CASE</SPAN> to map the input value to a sort column:</P>
+<PRE>SELECT @sql += ' ORDER BY ' + 
+               CASE @sortcol WHEN 'OrderID'      THEN 'o.OrderID'
+                             WHEN 'EmplyoeeID'   THEN 'o.EmployeeID'
+                             WHEN 'ProductID'    THEN 'od.ProductID'
+                             WHEN 'CustomerName' THEN 'c.CompanyName'
+                             WHEN 'ProductName'  THEN 'p.ProductName'
+                             ELSE 'o.OrderID'
+               END + CASE @isdesc WHEN 0 THEN ' ASC' ELSE ' DESC' END</PRE>
+<P>This is reminiscent of how we did in <SPAN CLASS="objectname">search_orders_3</SPAN>, but it is still a lot simpler, since we don't need to have different <SPAN CLASS="keyword">CASE</SPAN> expressions for different data types, but we can use a single one. And it is also easy to handle a parameter to control <SPAN CLASS="keyword">ASC</SPAN>/<SPAN CLASS="keyword">DESC</SPAN>. If you want multiple sort columns, you will need to repeat the above, but it grows linearly and does not explode like it does for static SQL.</P>
+<P>Observe that in the <SPAN CLASS="keyword">CASE</SPAN> for <SPAN CLASS="objectname">@sortcol</SPAN> I have an <SPAN CLASS="keyword">ELSE</SPAN> with a default sort order. Without the <SPAN CLASS="keyword">ELSE</SPAN>, the entire query string would become <SPAN CLASS="keyword">NULL</SPAN> if the application passes an unexpected value in <SPAN CLASS="objectname">@sortcol</SPAN>.</P>
+<H4>Optional Tables</H4>
+<P>The example with the <A HREF="#optionaltables" CLASS="objectname">@suppl_country</A> parameter is of course trivial to handle with dynamic SQL:</P>
+<PRE>IF @suppl_country IS NULL 
+   SELECT @sql += ' AND EXISTS (SELECT *
+                                FROM   Suppliers s
+                                WHERE  s.SupplierID = p.SupplierID
+                                  AND  s.Country    = @suppl_country)'</PRE>
+<P>It is just another condition to add.</P>
+<H4>Alternate Tables</H4>
+<P>This is also something which is quite simple to handle with dynamic SQL. Say that we have this parameter <A HREF="#StaticAlternate" CLASS="objectname">@ishistoric</A>. In this case, lines 27-28 in <SPAN CLASS="objectname">search_orders_1</SPAN> would read:</P>
+<PRE>FROM dbo.' + CASE @ishistoric
+                  WHEN 0 THEN 'Orders'
+                  WHEN 1 THEN 'HistoricOrders'
+             END + ' o
+JOIN dbo.' + CASE @ishistoric
+                  WHEN 0 THEN '[Order Details]'
+                  WHEN 1 THEN 'HistoricOrderDetails'
+             END + ' od</PRE>
+<P>You may get the idea that you should pass the table name from the application, but while it is almost acceptable for the sort column, it is entirely impermissible for the table names. The DBA should be free to rename a table without affecting an application that only uses stored procedures. And what if the application passes table name with schema and you wrap the full name in <SPAN CLASS="builtin"><SPAN CLASS="nowrap">quotename()</SPAN></SPAN>?</P>
+<P>No, always map the application input to a table name through <SPAN CLASS="keyword">CASE</SPAN>.</P>
+<H3 ID="CLR">Using the CLR</H3>
+<P>Let's now look at how implement <SPAN CLASS="objectname">search_orders</SPAN> in a CLR stored procedure. I&#39;ve written two CLR procedures, 
+   <A HREF="dynsearch-2008/search_orders_vb.vb" TARGET="_blank" TYPE="text/plain"><SPAN CLASS="objectname">search_orders_vb</SPAN></A>
+ and <A HREF="dynsearch-2008/search_orders_cs.cs" TARGET="_blank" TYPE="text/plain"><SPAN CLASS="objectname">search_orders_cs</SPAN></A>,
+   that I will discuss in this section. As the code is fairly repetitive, I&#39;m not including any of
+them in full here, but I only highlight some important points. (These points are also generally applicable for the data-access part of a client-side only implementation.)</P>
+<P>Be aware that I will not go into any details on writing CLR stored procedures as such. If you have never
+   worked with the CLR before, but are curious, I refer you to Books Online. At
+   the end of this section there are instructions on how to create these two
+procedures in SQL Server.</P>
+<H4>The Parameter List</H4>
+<P>There is one deviation in the parameter list: the parameter <SPAN CLASS="objectname">@employeetbl</SPAN> is not there, since you cannot pass table-valued parameters to a CLR stored procedure. Thus, for CLR stored procedures, you will need to pass multi-valued parameters as a comma-separated string (or some other format like XML).</P>
+<H4>Setting up the Statement</H4>
+<P>This is how <SPAN CLASS="objectname">search_orders_cs</SPAN> starts off:</P>
+<PRE>string Query;
+SqlCommand Command = new SqlCommand();
+
+Query = @&quot;SELECT o.OrderID, o.OrderDate, od.UnitPrice, od.Quantity,
+                 c.CustomerID, c.CompanyName, c.Address, c.City,
+                 c.Region, c.PostalCode, c.Country, c.Phone,
+                 p.ProductID, p.ProductName, p.UnitsInStock,
+                 p.UnitsOnOrder
+          FROM   dbo.Orders o
+          JOIN   dbo.[Order Details] od ON o.OrderID = od.OrderID
+          JOIN   dbo.Customers c ON o.CustomerID = c.CustomerID
+          JOIN   dbo.Products p ON p.ProductID = od.ProductID
+          WHERE  1 = 1 &quot;;</PRE>
+<P>As you can see this is very similar to <SPAN CLASS="objectname">search_orders_1</SPAN>, including the <SPAN CLASS="builtin">dbo</SPAN> prefix. The rule that you should use two-part notation to maximise
+   query-plan reuse applies to CLR procedures as well.</P>
+<H4>Defining the Parameters</H4>
+<P>So this should be plain vanilla for anyone who has written the teeniest piece of data-access code with ADO .NET. Except that I have seen so many examples on  forums where people inline the parameter values into the query string. And it is equally impermissible no matter you build the query in T&#8209;SQL or some other language. Your queries should always be parameterised. (Except for the very few cases inlining may be needed for performance.)</P>
+<P>This is however not the place to give a full coverage of the <SPAN CLASS="builtin">SqlParameter</SPAN> class in .NET. If you have never heard of this class before (and you call yourself a .NET programmer), you will have to look at the examples and then study the class further in <A HREF="http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlparameter.aspx" TARGET="_blank">MSDN Library</A>.</P>
+<P>Here is how the <SPAN CLASS="objectname">@custid</SPAN>
+   parameter is added in <SPAN CLASS="objectname">search_orders_cs</SPAN>:</P>
+<PRE>if (! Custid.IsNull) {
+   Query += &quot; AND o.CustomerID = @custid&quot; +
+            &quot; AND c.CustomerID = @custid&quot;;
+   Command.Parameters.Add(&quot;@custid&quot;, SqlDbType.NChar, 5);
+   Command.Parameters[&quot;@custid&quot;].Value = Custid;
+}</PRE>
+<P>As in the T&#8209;SQL example, the query string is extended
+   with the conditions for the
+   parameter in both <SPAN CLASS="objectname">Orders</SPAN> and <SPAN CLASS="objectname">Customers</SPAN>.</P>
+<P>What is different from T&#8209;SQL is how we define the parameter list and supply
+   the value. In T&#8209;SQL the parameter list is a string, which includes all
+   possible parameters. When working with the CLR, we only define the parameters
+   that actually are in use. The reason for this difference is entirely a matter of convenience. We define a parameter by adding it to the <SPAN CLASS="builtin">Parameters</SPAN>
+   collection of the <SPAN CLASS="builtin">Command</SPAN> object. The <SPAN CLASS="builtin">Add</SPAN> method has a number of overloads, but I prefer to use the ones that takes the parameter name and a type indicator from the <SPAN CLASS="builtin">SqlDbType</SPAN> enumeration. For parameters of the variable-length data types &#8211; <SPAN CLASS="builtin">char</SPAN>, <SPAN CLASS="builtin">varchar</SPAN>, 
+   <SPAN CLASS="builtin">nchar</SPAN>, <SPAN CLASS="builtin">nvarchar</SPAN>, <SPAN CLASS="builtin">binary</SPAN> and <SPAN CLASS="builtin">varbinary</SPAN> &#8211; I use an overload where I can also specify the length of the parameter. There is no means to pass precision or scale &#8211; used with the data types <SPAN CLASS="builtin">decimal</SPAN>, <SPAN CLASS="builtin">numeric</SPAN>, <SPAN CLASS="builtin">time</SPAN>, <SPAN CLASS="builtin">datetime2</SPAN> and <SPAN CLASS="builtin">datetimeoffset</SPAN> &#8211; in the <SPAN CLASS="builtin">Add</SPAN> method, but the <SPAN CLASS="builtin">SqlParameter</SPAN> class has <SPAN CLASS="builtin">Precision</SPAN> and <SPAN CLASS="builtin">Scale</SPAN> properties which permits you to set these values after you have created the parameter.</P>
+<P>Once the parameter is defined, I assign the value separately, although you could do all on a single line if you feel like:</P>
+<PRE>Command.Parameters.Add(&quot;@custid&quot;, SqlDbType.NChar, 5).Value = Custid;
+</PRE>
+<P>Here is the above in Visual Basic .NET:</P>
+<PRE>If Not Custid.IsNull Then
+   Query &amp;= &quot; AND o.CustomerID = @custid&quot; &amp; _
+            &quot; AND c.CustomerID = @custid&quot; &amp; VbCrLf
+   Command.Parameters.Add(&quot;@custid&quot;, SqlDbType.NChar, 5)
+   Command.Parameters(&quot;@custid&quot;).Value = Custid
+End If</PRE>
+<P>It&#39;s very similar to the C# example. Different operator for string
+   concatenation, parentheses to address elements in the collection and no
+   semicolons.</P>
+<H4 ID="paramlength">Don&#39;t Forget to Specify the Length!</H4>
+<P>There is one thing about the parameter definition, I like to highlight:</P>
+<PRE>Command.Parameters.Add(&quot;@custname&quot;, SqlDbType.NVarChar, <B>40</B>);</PRE>
+<P>I explicitly specify the length of the string parameter. ADO .NET permits you leave out the length when you add the parameter. ADO .NET also supplies the method <SPAN CLASS="builtin">AddWithValue</SPAN> that permits you to define a parameter and
+provide the value in a single call whereupon ADO .NET guesses the data type. Do not fall into the trap of using these shortcuts! The reason these alternatives are bad is that when ADO .NET constructs the call to <SPAN CLASS="builtin">sp_executesql</SPAN> for you, it will use the length
+of the actual parameter value when it builds the parameter list. Thus, if one user enters <SPAN CLASS="quote">Alfred</SPAN>, the parameter will be declared as:</P>
+<PRE>@custname nvarchar(6)</PRE>
+<P>But if another user enters <SPAN CLASS="quote">Berglund</SPAN>, the parameter will be declared as </P>
+<PRE>@custname nvarchar(8)</PRE>
+<P>When SQL Server looks up a query in the cache, it hashes the query text <I>and the parameter list</I> and performs a lookup on that hash value. That is, differences in the parameter list will result in different cache
+entries and more compilations. Note here the difference to <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. With the latter you get compilation every time, but the plans don't take up space in the cache. This happens here leading to cache bloat, which under extreme circumstances can lead to degraded
+overall performance on the SQL Server instance.</P>
+<P>If you feel that you don&#39;t want to hardcode the length of the column in case it could change in the future, rather than leaving out the length, use the maximum length for the type, that is 8000 for <SPAN CLASS="builtin">char</SPAN>, <SPAN CLASS="builtin">varchar</SPAN>, <SPAN CLASS="builtin">binary</SPAN> and <SPAN CLASS="builtin">varbinary</SPAN> and 4000 for <SPAN CLASS="builtin">nchar</SPAN> and <SPAN CLASS="builtin">nvarchar</SPAN>.</P>
+<H4>Handling the Multi-Valued Parameter</H4>
+<P>I will have to admit that I was lazy and used the list-to-table function:</P>
+<PRE>    if (! Employeestr.IsNull) {
+       Query +=  " AND o.EmployeeID IN" +
+                 " (SELECT number FROM intlist_to_tbl(@employeestr))";
+       Command.Parameters.Add("@employeestr", SqlDbType.NVarChar, -1);
+       Command.Parameters["@employeestr"].Value = Employeestr;
+    }</PRE>
+<P>While this works, the optimizer has no information of how many elements the list will return and it will guess 1. It would be a little prettier to use the <A HREF="http://www.sommarskog.se/arrays-in-sql-2008.html#PassingCSV" TARGET="_blank">CSV_splitter</A> class that I present in my article <SPAN CLASS="quote">Arrays and Lists in SQL Server 2008</SPAN> to pass the value to a table-valued parameter but I leave that as an exercise to the reader. That would permit SQL Server to have knowledge of the number of elements when it builds the plan. As long as the lists are typically short, this is not likely to be any major issue.</P>
+<H4>Running the Query</H4>
+<P>Here is the code to run the query in C#:</P>
+<PRE>using (SqlConnection Connection =
+   new SqlConnection(&quot;context connection=true&quot;))
+{
+  Connection.Open();
+
+  if (Debug) {
+     SqlContext.Pipe.Send(Query);
+  }
+
+  Command.CommandType = CommandType.Text;
+  Command.CommandText = Query;
+  Command.Connection  = Connection;
+  SqlContext.Pipe.ExecuteAndSend(Command);
+}</PRE>
+<P>This is  very much is the standard way to run a query from a CLR procedure. You connect on the context connection, that is, the same connection you are already running on.  <SPAN CLASS="builtin">SqlContext.Pipe.ExecuteAndSend</SPAN> runs the command and returns the result set to the client. <SPAN CLASS="builtin">SqlContext.Pipe.Send</SPAN> is how you do <SPAN CLASS="keyword">PRINT</SPAN> from a CLR procedure.</P>
+<H4>Loading the Examples</H4>
+<P>If you have any flavour of Visual Studio 2005 or later (including the Express
+   editions), you can deploy <SPAN CLASS="objectname">search_orders_cs</SPAN> and <SPAN CLASS="objectname">search_orders_vb</SPAN>
+   from Visual Studio. (But please don&#39;t ask me how to do it, Visual Studio
+   just leaves me in a maze.)</P>
+<P>Since the .NET Framework comes with Windows and includes compilers
+   for the most
+   common .NET languages, you can also load them without Visual Studio. First
+   make sure that <SPAN CLASS="filepath">C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727</SPAN> (or
+   corresponding) is in your path. Then run from a command-line window:</P>
+<PRE>csc /target:library search_orders_cs.cs
+vbc /target:library search_orders_vb.vb</PRE>
+<P>To load the DLLs into SQL Server, you can use 
+   <A HREF="dynsearch-2008/load_clr_sp.sql" TARGET="_blank" TYPE="text/plain">load_clr_sp.sql</A>.
+   You will have to change the path in the <SPAN CLASS="keyword">CREATE ASSEMBLY</SPAN> command to where you placed the
+   DLL. Note that the paths are as seen from SQL Server, so if you don&#39;t have SQL
+   Server on your local machine, you will have to copy the
+   DLLs to the SQL
+   Server box, or specify a UNC path to your machine.</P>
+<H4>Trying it out</H4>
+<P>The same test cases as for <SPAN CLASS="objectname">search_orders_1</SPAN>:</P>
+<PRE>EXEC search_orders_cs @orderid = 11000
+EXEC search_orders_cs @custid  = &#39;ALFKI&#39;
+EXEC search_orders_cs @prodid  = 76
+EXEC search_orders_cs @prodid  = 76, @custid = &#39;RATTC&#39;
+EXEC search_orders_cs @fromdate = &#39;19980205&#39;, @todate = &#39;19980209&#39;
+EXEC search_orders_cs @city = N&#39;Bräcke&#39;, @prodid = 76
+EXEC search_orders_cs @employeestr = '402,109,207', @custid = 'PERTH'</PRE>
+<P>The query plans should be identical to <SPAN CLASS="objectname">search_orders_1</SPAN>, as the queries are the same. Hint: if you want to look at the query plans, you need to use Profiler,
+   and get the Showplan XML event. For some reason, you don&#39;t see query
+   plans for queries submitted from CLR code in Management Studio.</P>
+<H3 ID="EXEC">An Example with Unparameterised SQL</H3>
+
+<P>We will now turn to an example that does the forbidden: it inlines all parameters and does not use parameterised SQL. One reason I show you this is example is pure deterrence: to make you see how much more difficult this is than parameterised SQL. But there are also situations when inlining an <I>occasional</I> parameter may be a good idea to resolve a performance problem. Thus, it may be good to know the technique if you need to do this, but I like to stress that this is not a step that you should take lightly.</P>
+<P>The name of the procedure for this is example is <A  TARGET="_blank" TYPE="text/plain" HREF="dynsearch-2008/search_orders_2.sp"><SPAN CLASS="objectname">search_orders_2</SPAN></A>. I don&#39;t include the procedure in full here, but only comment on certain parts. </P>
+<H4>General Notes</H4>
+<P>
+When building a non-parameterised query with the values inlined, you need to
+be very disciplined when you write your code. It&#39;s very easy to get lost in a maze of
+nested quotes. I often see people in SQL forms posting code like:</P>
+<PRE>EXEC(&#39;SELECT col1, col2, ...
+      FROM   ...
+      WHERE  &#39; + CASE @par1 IS NULL THEN &#39; + col = &#39;&#39;&#39; + @par  + &#39;&#39;&#39; + ...)</PRE>
+<P>
+This is difficult to read and maintain, and if it goes wrong, you have no idea
+what SQL you are actually generating. <SPAN CLASS="objectname">search_orders_2</SPAN> aggregates the SQL
+code into a variable, and there is a <SPAN CLASS="objectname">@debug</SPAN> parameter so I can see the
+generate SQL code if needed. And to make the debug output easier to read I use the variable <SPAN CLASS="objectname">@nl</SPAN> like I did in <SPAN CLASS="objectname">search_orders_1</SPAN>. </P>
+<P>To run the code I use <SPAN CLASS="keyword"><SPAN CLASS="nowrap">EXEC()</SPAN></SPAN>, but it works equally well with <SPAN CLASS="builtin">sp_executesql</SPAN> without any parameter list. Again, keep in mind that the dynamic SQL is a separate scope and cannot refer to variables in the surrounding procedure.</P>
+<H4>Handling String Values</H4>
+<P>To understand the problem, we will start with looking at a parameter in <SPAN CLASS="objectname">search_orders_2</SPAN> which is unique to this procedure: <SPAN CLASS="objectname">@city_bad</SPAN>, which is bad implementation of the <SPAN CLASS="objectname">@city</SPAN>	parameter that reflects what the naïve and inexperienced user may try:</P>
+<PRE>SELECT @sql += @sql AND c.City = ''' + @city_bad + ''''</PRE>
+<P>This has a number of problems. One is the missing N for <SPAN CLASS="builtin">nvarchar</SPAN>. Try this:</P>
+<PRE>EXEC search_orders_2 @city_bad = N'Łódź'
+EXEC search_orders_2 @city_bad = N'Luleå'</PRE>
+<P>While there are orders from customers in both Łódź (a Polish city) and Luleå (in Sweden), at least one of the procedure calls will come back empty-handed, exactly which depends on your collation. String literals preceded by N are <SPAN CLASS="builtin">nvarchar</SPAN>, and those without are <SPAN CLASS="builtin">varchar</SPAN> and can only hold characters for the code page of the collation and other characters are replaced by fallback characters. You can see this by running this <SPAN CLASS="keyword">SELECT</SPAN>:</P>
+<PRE>SELECT 'Łódź', 'Luleå'</PRE>
+<P>Again, exactly what you see depends on your collation, but you may see <SPAN CLASS="quote">Lódz</SPAN>, <SPAN CLASS="quote">Lodz</SPAN>, <SPAN CLASS="quote">Lulea</SPAN>, or even have question marks in some places.</P>
+<P>That is, however, the small problem. Assume instead that we want to search for customers in the capital of Chad, <I>N'Djamena</I>:</P>
+<PRE>EXEC search_orders_2 @city_bad = N'N''Djamena'</PRE>
+<P>This ends with syntax errors:</P>
+<DIV CLASS="output">
+<DIV CLASS="errmsg">  <P>Msg 102, Level 15, State 1, Line 11</P>
+  <P> Incorrect syntax near 'Djamena'.</P>
+  <P> Msg 105, Level 15, State 1, Line 11</P>
+  <P> Unclosed quotation mark after the character string ' ORDER BY o.OrderID'.</P>
+</DIV></DIV>
+<P>Not what you call a good user experience. And there is also, as I said a few times, the issue of SQL injection. Try this:</P>
+<PRE>EXEC search_orders_2 @city_bad = '''SHUTDOWN --'</PRE>
+<P>As it happens this will not shut down you server, but you will get the informational message 
+<SPAN CLASS="quote">The SHUTDOWN statement cannot be executed within a transaction or by a stored procedure.</SPAN> But the important point is: you were able to inject SQL code where there should have been a city name.</P>
+<P>Let us now look at the proper way to inline a string parameter. We have already mentioned the function <SPAN CLASS="builtin"><SPAN CLASS="nowrap">quotename()</SPAN></SPAN>, but it is time to give it a closer look. This built-in function delimits a string with the delimiter(s) you specify, and, this is the important part: if the string includes the closing delimiter, this character is doubled. The default delimiter is <CODE>[]</CODE>, and the main purpose of <SPAN CLASS="builtin">quotename</SPAN> is to quote identifiers when you generate queries from metadata, but you can use other delimiters as seen in these examples:</P>
+<PRE>SELECT quotename(&#39;Order Details&#39;)                     -- =&gt; [Order Details]
+SELECT quotename(&#39;Two o&#39; + char(39) + &#39;clock&#39;, &#39;&#39;&#39;&#39;)  -- =&gt; &#39;Two o&#39;&#39;clock&#39;
+SELECT quotename(&#39;abc{}def&#39;, &#39;{&#39;)                     -- =&gt; {abc{}}def}</PRE>
+<P>And using the second of these examples, we can now see how the <SPAN CLASS="objectname">@city</SPAN> parameter should be implemented:</P>
+<PRE>IF @city IS NOT NULL
+   SELECT @sql += ' AND c.City = N' + quotename(@city, '''') + @nl</PRE>
+<P>Here I have added the N to mark a Unicode literal and there is also <SPAN CLASS="objectname">@nl</SPAN> to make the debug output prettier. And I use <SPAN CLASS="builtin">quotename</SPAN> with single quote(<CODE>'</CODE>) as the delimiter. If you try these searches:</P>
+<PRE>EXEC search_orders_2 @city = N'Łódź'
+EXEC search_orders_2 @city = N'N''Djamena'
+EXEC search_orders_2 @city = '''SHUTDOWN --'</PRE>
+<P>You will find that the first two return lots of rows. The last does not return any rows &#8211; but nor does it attempt to shut down your SQL Server instance. (Credit for the idea of using <SPAN CLASS="builtin"><SPAN CLASS="nowrap">quotename()</SPAN></SPAN> this way goes my MVP colleague Steve Kass.)</P>
+<P>You should always use <SPAN CLASS="builtin">quotename</SPAN> when you inline string parameters in your dynamic searches. There is a caveat, though: <SPAN CLASS="builtin">quotename</SPAN> is designed for quoting object names, and the input parameter is <SPAN CLASS="builtin"><SPAN CLASS="nowrap">nvarchar(128)</SPAN></SPAN>. If the input value is longer, you get <SPAN CLASS="keyword">NULL</SPAN> back. However, I find it extremely unlikely that you can find a good case where it makes sense to inline a string parameter that long. (For a dynamic search, I should hasten to add. There are other situations you may need it, and in such case you can use my function 
+<A HREF="dynamic_sql.html#quotestring" CLASS="objectname"><SPAN CLASS="nowrap">quotestring()</SPAN></A>  from my <SPAN CLASS="quote">Curse and Blessings</SPAN> article.) </P>
+<P>No, we have not said all there is to say about inlining string parameters yet. Let's return to that N. You should include that N <B><I>only</I></B> when the type of the parameter is <SPAN CLASS="builtin">nvarchar</SPAN> or <SPAN CLASS="builtin">nchar</SPAN>. It should <B><I>not</I></B> be there if you are comparing the value with a <SPAN CLASS="builtin">varchar</SPAN> or <SPAN CLASS="builtin">char</SPAN> column. Because of the rules for data-type precedence in SQL Server, the <SPAN CLASS="builtin">(var)char</SPAN> column will be implicitly converted to <SPAN CLASS="builtin">n(var)char</SPAN> and this affects how any index on the column can be used. If the column has a Windows collation, the index can still be used but in a slower way. If the column has an SQL collation, the index is of no use at all, why that N can cause serious performance problems when applied incorrectly.</P>
+<P>So as you see, inlining string parameters is anything but easy.</P>
+<H4>Datetime Parameters</H4>
+<P>Compared to string values, date/time values are easier to deal with, but only in a relative way. People often go wrong with these as well. In <SPAN CLASS="objectname">search_orders_2</SPAN>, I handle the <SPAN CLASS="objectname">@fromdate</SPAN> parameter this way:</P>
+<PRE>SELECT @fromdatestr = convert(char(23), @fromdate, 126)
+...
+IF @fromdate IS NOT NULL
+   SELECT @sql += ' AND o.OrderDate &gt;= ' + quotename(@fromdatestr, '''') + @nl
+</PRE>
+<P>The whole key is the format code 126. The results in a string like this one <I> <SPAN CLASS="nowrap">2003-04-06T21:14:26.627</SPAN></I>. This is the format mandated by the standard ISO 8601, and it is commonly used in XML. More
+importantly, it is one of the three formats for <SPAN CLASS="builtin">datetime</SPAN> literals in SQL Server of
+which the interpretation does not depend on the settings for date format and
+language. If you don&#39;t understand what I&#39;m talking about, try these statements:</P>
+<PRE>SET DATEFORMAT mdy
+SELECT convert(datetime, &#39;02/07/09&#39;)
+SET DATEFORMAT dmy
+SELECT convert(datetime, &#39;02/07/09&#39;)
+go
+SELECT convert(datetime, &#39;2002-12-19&#39;)   -- Fails!
+go
+SET LANGUAGE Swedish
+SELECT convert(datetime, &#39;Oct 12 2003&#39;)  -- Fails! (It&#39;s &quot;Okt&quot; in Swedish.)</PRE>
+<P>If you always use code 126 to produce a <SPAN CLASS="builtin">datetime</SPAN> string for your dynamic SQL, you don't have to worry about this.  (When it comes to the newer date/time data types, there are a few more safe formats, but there is still a lot of <SPAN CLASS="builtin">datetime</SPAN> out there, so stick with code 126.) As for using an extra variable, this is mainly a matter keeping the code that produces the dynamic SQL clean.</P>
+<H4>Numeric Parameters</H4>
+<P>Numeric values are the easiest to inline, as you simply can apply <SPAN CLASS="builtin">convert</SPAN>:</P>
+<PRE>IF @orderid IS NOT NULL
+   SELECT @sql += ' AND o.OrderID = ' + convert(varchar(10), @orderid) +
+                  ' AND od.OrderID = ' + convert(varchar(10), @orderid) + @nl</PRE>
+<P>Although, you have to be careful to make the string long enough to fit all possible values.</P>
+<P>For some numeric parameters in the procedure, I use an intermediate string variable:</P>
+<PRE>SELECT @minpricestr = convert(varchar(25), @minprice)
+...
+IF @minprice IS NOT NULL
+   SELECT @sql += ' AND od.UnitPrice &gt;= ' + @minpricestr + @nl
+</PRE>
+<P>This is purely a matter of aesthetics.</P>
+<P>If you get the idea to inline <SPAN CLASS="builtin">float</SPAN> or <SPAN CLASS="builtin">real</SPAN> values, you will need to be more careful, since with a casual use of <SPAN CLASS="builtin">convert</SPAN> you can lose precision. But it's a little difficult to see a case where you would need to do this in the first place.</P>
+<H4>Multi-valued Parameters</H4>
+<P>Let's now look at how the parameters <SPAN CLASS="objectname">@employeestr</SPAN> and <SPAN CLASS="objectname">@employeetbl</SPAN> should be handled. <SPAN CLASS="objectname">@employeestr</SPAN> is supposed to be a comma-separated string, so it sounds dirt simple:</P>
+<PRE>IF @employeestr IS NOT NULL
+   SELECT @sql += ' AND o.EmployeeID IN (' + @employeestr + ')' + @nl</PRE>
+<P>But this would be bad mistake, as this would open the code for SQL injection. And while it is kind of difficult to make a serious intrusion in the 15-character long <SPAN CLASS="objectname">@city_bad</SPAN>, the data type of <SPAN CLASS="objectname">@employeestr</SPAN> is <SPAN CLASS="builtin"><SPAN CLASS="nowrap">varchar(<SPAN CLASS="keyword">MAX</SPAN>)</SPAN></SPAN>, so there is all the space in the world for an intruder. <SPAN CLASS="quote">But I pass my comma-separated list from SSRS, how could there be SQL injection?</SPAN> Answer: when you write your stored procedure, you should assume the worst. That is, a web application that runs as <SPAN CLASS="builtin">sa</SPAN> and sends data from a URL right into your parameter. Don't laugh, it happens. When you write your stored procedure, you should make your procedure bullet-proof and make no assumptions.</P>
+<P>So here is how I handle the <SPAN CLASS="objectname">@employeestr</SPAN> parameter:</P>
+<PRE>IF @employeestr IS NOT NULL
+BEGIN
+   SELECT @employeestr =
+          (SELECT ltrim(str(number)) + ','
+           FROM intlist_to_tbl(@employeestr)
+           FOR XML PATH(''))
+END
+
+SELECT @employeestr = substring(@employeestr, 1, len(@employeestr) - 1)
+...
+IF @employeestr IS NOT NULL
+   SELECT @sql += ' AND o.EmployeeID IN (' + @employeestr + ')' + @nl</PRE>
+<P>That is, I unpack the string into table format with that list-to-table function. Then I produce a new comma-separated list using the <SPAN CLASS="keyword">FOR XML PATH</SPAN> syntax. The intended purpose of <SPAN CLASS="keyword">FOR XML PATH</SPAN> is to generate an XML document, but Microsoft designed it so that if you don't give any element name (that's what the empty string after PATH means), you get a concatenated list of the values from a single-column query. This results in a list with a trailing comma, and I delete this comma in the subsequent <SPAN CLASS="keyword">SELECT</SPAN>. And then I use my local variable that I can fully trust with <SPAN CLASS="keyword">IN</SPAN> as in the original example. If <SPAN CLASS="objectname">@employeestr</SPAN> does not contain the comma-separated list as expected, it is likely that this will result in a conversion error inside <SPAN CLASS="objectname">intlist_to_tbl</SPAN>. Not very pretty, but it keeps the illegitimate input out.</P>
+<P>The same solution is used for the parameter <SPAN CLASS="objectname">@employeetbl</SPAN> (which is not directly accessible from the SQL string):</P>
+<PRE>IF EXISTS (SELECT * FROM @employeetbl)
+BEGIN
+   SELECT @employeestr =
+          (SELECT ltrim(str(val)) + ','
+           FROM   @employeetbl
+           FOR XML PATH(''))
+END</PRE>
+<H4>Effects on Caching</H4>
+<P>I said previously that an advantage of using dynamic SQL over static SQL with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> is that it reduces the amount of compilation, since the plan is cached. But this applies to parameterised  SQL only. These two calls:</P>
+<PRE>EXEC search_orders_1 @orderid = 11000
+EXEC search_orders_1 @orderid = 21000</PRE>
+<P>Generates <I>one</I> query plan and <I>one</I> compilation. That is, the second call reuses the plan compiled by the first call. Whereas:</P>
+<PRE>EXEC search_orders_2 @orderid = 11000
+EXEC search_orders_2 @orderid = 21000</PRE>
+<P>Generates <I>two</I> query plans and <I>two</I> compilations. This is because when SQL Server caches the plan for a query string it hashes the string, exactly as it stands, so the smallest difference produces a different hash value, why the plan for <CODE>o.OrderID = 11000</CODE> cannot be reused when the query instead reads <CODE>o.OrderID = 21000</CODE>. The only time a plan can be reused is when someone makes a search on exactly the same parameter values.</P>
+<P>That is, if you inline all parameters, the behaviour is quite similar to static SQL with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>. Except that you also litter the cache with all those plans that are rarely reused. That's a serious waste of memory. Although, this is a statement that requires some qualification,  because there are some settings that changes this behaviour.</P>
+<UL>
+  <LI>If the server-level configuration parameter <SPAN CLASS="builtin">optimize for ad hoc workloads</SPAN> is 1, SQL Server does not cache the plan on the first execution, but it only caches a so-called shell query so that it knows that it has seen the query. Only if the exact string reappears, the plan is cached. This configuration parameter, that was introduced in SQL&nbsp;2008, is 0 by default, but the general recommendation is to set it to 1.</LI>
+  <LI>If the query string is very simple, SQL Server may replace a constant with a parameter holder, and thereby create a parameterised query by itself. It is not very likely that you would encounter this with a dynamic search of any complexity.</LI>
+  <LI>There is a database setting, <I>forced parameterization</I>. With this setting in force, SQL Server replaces all constants in a query string with parameter holders. With this setting, <SPAN CLASS="objectname">search_orders_2</SPAN> will use the cache exactly like <SPAN CLASS="objectname">search_orders_1</SPAN>. The reason this setting exists is exactly to save the performance of poorly written applications that inline all parameter values.</LI>
+</UL>
+<H4>Conclusion</H4>
+<P>I have now shown you a bad example, <SPAN CLASS="objectname">search_orders_2</SPAN>, which inlines all parameters and I hope you have gathered why this is a really poor choice as a general solution. But as we shall see in the next section, there are situations where may need to do this for a specific parameter.</P>
+<H3 ID="badcaching">When Caching Is Not  What You Want</H3>
+<P>An advantage with parameterised dynamic SQL is that you get less compilation because plans can be reused. But caching is not always to your advantage. Earlier on in the article, we had this pair:</P>
+<PRE>EXEC search_orders_3 @custid = 'ERNTC',
+                     @fromdate = '19980218', @todate = '19980218'
+EXEC search_orders_3 @custid = 'BOLSR',
+                     @fromdate = '19960101', @todate = '19961231'</PRE>
+<P>The choice of parameters is the same, but the profile is very different. ERNTC is the most active customer in <SPAN CLASS="objectname">Northgale</SPAN> with 591 orders in total, but the date interval is only one day. BOLSR, on the other hand, has only placed a single order, but the interval is the full year. There are indexes on both <SPAN CLASS="objectname">CustomerID</SPAN> and <SPAN CLASS="objectname">OrderDate</SPAN>. For the first call, the index on <SPAN CLASS="objectname">OrderDate</SPAN> looks like the best bet, whereas the index on <SPAN CLASS="objectname">CustomerID</SPAN> sounds more appealing for the second call. And, indeed, if you look at the query plans, this is what we get. (Sort of; the call for ERNTC uses both indexes and joins these.)</P>
+<P>But what happens if we use <SPAN CLASS="objectname">search_orders_1</SPAN> instead?</P>
+<PRE>EXEC search_orders_1 @custid = 'ERNTC',
+                     @fromdate = '19980218', @todate = '19980218'
+EXEC search_orders_1 @custid = 'BOLSR',
+                     @fromdate = '19960101', @todate = '19961231'</PRE>
+<P>The plan is the same for both. When I tested, there was a yellow triangle on a hash match operator in the execution for BOLSR, indicating that the hash table spilled to disk (which certainly is not good for performance).</P>
+<P>In the following, I will discuss some tactics you can use when you work a search that uses dynamic SQL and where the choice of plans is sensitive to the actual values.</P>
+<H4>OPTION (RECOMPILE)</H4>
+<P>For this particular case, <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> could be a simple way out. If the search has both <SPAN CLASS="objectname">@custid</SPAN>, <SPAN CLASS="objectname">@fromdate</SPAN>, and <SPAN CLASS="objectname">@todate</SPAN>, add <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>:</P>
+<PRE>IF @custid IS NOT NULL AND (@fromdate IS NOT NULL OR @todate IS NOT NULL)
+   SELECT @sql += ' OPTION(RECOMPILE)' + @nl</PRE>
+<P>More generally, when you identify that you have search parameters that both relate to indexed columns, and where the selectivity is very dependent on the actual parameter values, add <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, so that you always get the best plan you can get from the statistics.</P>
+<P>Obviously, this strategy will add quite a few unnecessary compilations.</P>
+<H4>Changing the Query Text</H4>
+<P>As I discussed previously, SQL Server looks up queries in the cache by
+  hashing the query text. This means that two queries with different text are
+  different entries in the cache, even if they are logically equivalent. There
+  are many ways to alter the query text, for instance you could do something
+  like:</P>
+<PRE>IF @fromdate IS NOT NULL AND @todate IS NOT NULL
+BEGIN
+   SELECT @sql += CASE WHEN @fromdate = @todate
+                       THEN &#39;&#39;
+                       WHEN datediff(DAY, @fromdate, @todate) &lt;= 7
+                       THEN &#39; AND 2 = 2 &#39;
+                       WHEN datediff(DAY, @fromdate, @todate) &lt;= 30
+                       THEN &#39; AND 3 = 3 &#39;
+                       ...</PRE>
+<P>The advantage with changing the query text depending on the parameter values over <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> is that you will not get as many compilations. But it also means that in some cases you
+  will not run with the best plan, since predicting the exact breakpoint between different plans is hard. With some luck the damage is limited. Even if the plan for a single day is not the best for
+  the span of a week,
+  it may still yield acceptable performance. But you will have to know your data, and
+  possibly tune as time goes.</P>
+<P>Could this technique also be used to deal with the fact that different
+  customers  have a very different number of orders? Probably not. Counting
+  the number of orders for a customer before we construct the query is taking
+  it too far in my opinion, and it could be more expensive than what you save in
+  the other end. If you really wanted to do this, you would probably have to maintain a separate table with  order counts per customer. You would not have to maintain this table in real-time, but it would be sufficient to update it nightly or weekly.</P>
+<H4>Inlining Some Values</H4>
+<P>Sometimes you can resolve this sort of problems by inlining a specific parameter into the query. Typically, this would be a parameter with a very skewed distribution. Say that the search includes a <SPAN CLASS="objectname">@status</SPAN> parameter, and
+   there are only  four possible values for <SPAN CLASS="objectname">Orders.Status</SPAN>, whereof <I>
+   Completed</I> accounts for 95&nbsp;% of the values. A typical search may be for new orders,
+less than 1&nbsp;% of the rows. This is a situation where it could make sense to inline the <SPAN CLASS="objectname">@status</SPAN> parameter. The four different values are really different searches.</P>
+<P>You may recognize the situation from when I discussed <A HREF="#DynSpecialSearch">filtered indexes</A> where I presented a somewhat different approach. I think both approaches are valid. The solution I presented for filtered indexes, assumes that you know that there is a filtered index and that you also have some understanding of the distribution of the values. But maybe you don't know what the distribution between the small of handful of values will be in production, or what indexes a DBA may add in the future. By inlining you keep the doors open, and as long it is only a matter of small number of values, you will not produce that many extra plans.</P>
+<P>What about the case where we had competing indexes like in the example with customer ID and a date interval? In this case, <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> works out better, since you avoid cache littering. Overall, inlining customer IDs on a general basis is likely to be a bad idea. But if you have five big-whiz customers that overtrump everything else, it may make sense to inline these customer IDs and parameterise the rest. The same applies to product IDs, if you have a very small number of huge-selling products and umpteen low-volume products. It's all about knowing your data.</P>
+<P CLASS="note"><B>Note</B>: above I mentioned forced parameterisation. If your database is in this mode, inlining parameters is useless, since SQL Server will replace the constants with parameters anyway.</P>
+<H4>Index Hints and Other Hints</H4>
+<P>Sometimes index hints or  query hints other than <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> can be useful. Returning to our example with ERNTC and BOLSR, we can make the observation that the index on <SPAN CLASS="objectname">CustomerID</SPAN> is always OK. It does not always give the best plan, but it does not give a really bad plan. Whereas, as I noted, the index on <SPAN CLASS="objectname">OrderDate</SPAN>  resulted in hash spills for a long interval. So one strategy could be do:</P>
+<PRE>FROM   dbo.Orders o ' + CASE WHEN @custid IS NOT NULL AND
+                                  (@fromdate IS NOT NULL OR
+                                  @todate IS NOT NULL) 
+                             THEN 'WITH (INDEX = CustomerID) '
+                             ELSE ''
+                         END</PRE>
+<P>I cannot say that this is my favourite strategy. Overall, index hints is something you should use sparingly. Casually used, they can cause performance problems because you force the optimizer to use the completely wrong index.</P>
+<P>A hint that makes a little more sense is the hint <SPAN CLASS="keyword">OPTIMIZE FOR</SPAN>. If you want plans  to always be compiled with the big customers in mind, you could add</P>
+<PRE>IF @custid IS NOT NULL
+   @sql += ' OPTION (OPTIMIZE FOR (@custid = ''ERNTC''))'</PRE>
+<P>Or if you want to discourage the optimizer from producing different plans depending on what it sniffs for the date parameters, you could add:</P>
+<PRE>IF @fromdate IS NOT NULL AND @todate IS NOT NULL
+   @sql += ' OPTION (OPTIMIZE FOR (@fromdate UNKNOWN, @todate UNKNOWN))'</PRE>
+<P>The optimizer will now apply its standard assumption for a closed interval, which is 10&nbsp;% or so, and typically too much to make the index interesting.</P>
+<H2 ID="conclusion">Conclusion</H2>
+<P>You have now learnt that there are two ways to implement dynamic search conditions: static SQL and dynamic SQL. Solutions with static SQL almost always use <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, except in a very simple cases where the optimizer's use of startup filters can be good enough. You have also seen that solutions with static SQL are easy to implement as long as the requirements are moderately complex. Once the requirements increase in complexity, the solutions with static SQL easily becomes unwieldy. A second disadvantage with solutions using <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> is that very frequent searches can incur an unwanted load on the system because of all the compilations.</P>
+<P>More than half of the text in this article was taken up by the discussion on dynamic SQL. This is a good indication of the fact that dynamic SQL is more difficult to work with and requires more understanding from you as a programmer. But dynamic SQL has the advantage that when the requirements for what conditions to handle increase in diversity, the complexity of the code grows more linearly than with static SQL. Correctly used, dynamic SQL reduces the amount of resources needed for query compilation. A special issue with dynamic SQL that you must not forget is that you need to cater for permissions on the tables accessed by the dynamic SQL. <A HREF="grantperm.html">Certificate signing</A> is the best way to resolve this when direct <SPAN CLASS="keyword">SELECT</SPAN> permissions on the tables are not acceptable.</P>
+<P>It is important to stress that you cannot only apply the methods in this article on auto-pilot. You need to make your own judgements. And moreover, you need to test your queries, both for logic and for performance. Since you may have a multitude of parameter combinations, it may not be feasible to test all combinations, but you should at least test all parameters in isolation, as well as combinations you expect to be common. With dynamic SQL, you should be careful to test all parameters in combination with some other parameter, because with dynamic SQL you can easily slip so that a certain combination results in a syntax error.</P>
+<P>Finally, when testing for performance, you need a database of some size. The article was based on <SPAN CLASS="objectname">Northgale</SPAN>, and while larger than its source <SPAN CLASS="objectname">Northwind</SPAN>, it is still a very small database.</P>
+<H3 ID="feedback">Feedback and Acknowledgements</H3>
+<P>All through the years of this article, and its predecessor, a lot of people have given valuable suggestions and input. My fellow SQL Server MVPs: Steve Kass, Marcello Poletti, Simon Sabin, Alejandro Mesa, Adam Machanic, and Umachandar 
+Jaychandran. And all the rest of you: Mark Gordon, Phillipp
+  Sumi, Thomas Joseph Olaes, Simon Hayes, Sloan Holliday, Travis Gan and Eric Garza .
+  I would also like to give a special credit to Tony Rogerson, Steve Kass, Ivan Arjentinski and Graham Kent for their involvement
+  with the bug with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> in SQL&nbsp;2008 RTM. My big thanks to all of you.</P>
+<P>If you have questions or comments on the contents in the article, feel free
+   to mail me at <A HREF="mailto:esquel@sommarskog.se">esquel@sommarskog.se</A>. (And that most emphatically includes any spelling or grammar error that you spot!) If you are working with a specific problem and need help, you can mail me
+   too. However, I would encourage you in such case to post your question on a
+   public forum for SQL Server, as there are more people who can answer your
+   questions. (And you may get your answer more rapidly!)</P>
+<H3 ID="revision">Revision History</H3>
+<DL CLASS="revhist">
+<DT>2015-11-15</DT>
+<DD>Corrected a couple of small errors in code fragments. In <SPAN CLASS="objectname">search_orders_1</SPAN>, I had failed to prefix the call to <SPAN CLASS="objectname">intlist_to_tbl</SPAN> with <SPAN CLASS="builtin">dbo</SPAN>, which is necessary to make sure that the cache entry can be shared among users.</DD>
+<DT>2014-12-27</DT>
+<DD>Not a total makeover, but a general overhaul in an attempt to make the presentation clearer. The introductions for static and dynamic SQL  now both begin with a summary of advantages and disadvantages. Some significant additions to the content:
+  <UL>
+<LI>On popular demand: I'm now giving examples how you should handle multi-choice parameters. To this end there are two new two parameters to <SPAN CLASS="objectname">search_orders</SPAN>. </LI>
+<LI>There is now a deeper discussion on dynamic sort order and alternate tables with more examples.</LI>
+<LI>Reworked the text about the original bug with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, since you should be on a much later service pack by now and added text about the new bug with <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> uncovered in the autumn of 2014. </LI>
+</UL>
+...and then there is a formatting makeover to adapt to my new style sheet.
+</DD>
+<DT>2013-11-02</DT>
+   <DD>Travis Gan pointed out that in the section <A HREF="#fineprint" CLASS="quote">Performance: The Fine Print</A>, there is a risk for parameter sniffing and I've added a short discussion on this. Also, corrected a silly error in the demo procedure <A HREF="dynsearch-2008/search_orders_4.sp" TARGET="_blank" TYPE="text/plain"><SPAN CLASS="objectname">search_orders_4</SPAN></A>. (The arguments to <SPAN CLASS="builtin">datediff</SPAN> were in the wrong order.)</DD>
+<DT>2011-08-26</DT> <DD> Håkan Borneland was kind to point out that my update of 2011-08-01 was not complete, but I still said that there was no service pack for SQL&nbsp;2008 R2 in one place.</DD>
+<DT>2011-08-01</DT> <DD>Updated the article to reflect the release of Service Pack 1 for SQL&nbsp;2008 R2.</DD>
+<DT>2010-10-16</DT> <DD> Service Pack 2 for SQL&nbsp;2008 has now been released, and I have updated the section <A HREF="#SPandCUs" CLASS="quote">A Tale of Service Packs and Cumulative
+  Updates</A> accordingly.</DD>
+<DT>2010-05-23</DT> <DD>There is now a Cumulative Update for SQL&nbsp;2008 R2 with
+the corrected behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>.</DD>
+<DT>2010-05-13</DT> <DD> Updated the article for SQL&nbsp;2008 R2. Note that
+RTM-version of R2 has the old behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>.</DD>
+<DT>2009-11-22</DT> <DD>Republished the article, since CU5 of SQL&nbsp;2008 SP1
+restores the RTM behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN>, but now without the bug.</DD>
+<DT>2009-02-14</DT> <DD> Pulled the article, since Microsoft had reverted to the
+old behaviour of <SPAN CLASS="keyword">OPTION (RECOMPILE)</SPAN> because of a bug.</DD>
+
+<DT>2008-08-03</DT> <DD>The first version of the article for SQL&nbsp;2008. A lot of the material from the older version has been ripped out, and a new section on <A HREF="#keylookup" CLASS="quote">Alternate Key Lookup</A> has been added. Static SQL is now covered before dynamic SQL.</DD>
+</DL>
