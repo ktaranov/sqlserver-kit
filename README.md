@@ -12,6 +12,7 @@ Headers:
 
 
 ## Repo folders and files
+ - [Articles](/Articles)
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
