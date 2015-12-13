@@ -7,7 +7,7 @@ Author: Erland Sommarskog<br />
 Source link: http://sommarskog.se/dyn-search.html
 
 
-## [Slow in the Application, Fast in SSMS](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Slow%20in%20the%20application,%20Fast%20%in%20%SSMS.htm)
+## [Slow in the Application, Fast in SSMS](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Slow%20in%20the%20Application%2C%20Fast%20in%20SSMS.htm)
 
 Author: Erland Sommarskog<br />
 Source link: http://www.sommarskog.se/query-plan-mysteries.html
