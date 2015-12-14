@@ -11,3 +11,9 @@ Source link: http://sommarskog.se/dyn-search.html
 
 Author: Erland Sommarskog<br />
 Source link: http://www.sommarskog.se/query-plan-mysteries.html
+
+
+## [How to share data between stored procedures](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/How%20to%20share%20data%20between%20stored%20procedures.htm)
+
+Author: Erland Sommarskog<br />
+Source link: http://www.sommarskog.se/share_data.html

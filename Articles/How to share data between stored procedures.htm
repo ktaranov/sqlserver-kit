@@ -1,0 +1,1152 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-gb">
+<title>How to share data between stored procedures</title>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+small { font-size: 90%; }
+.tblsublvl { padding-left: 12pt; border-top-style: dotted; }
+h2 { border-top: 2px dashed black; padding-top: 12pt; }
+h3 { border: 1px solid rgb(187, 187, 187); background-color: rgb(224, 224, 224); padding-right: 6pt; display: inline; text-align: left; }
+h4 { margin-bottom: -3pt; }
+.errmsg { color: rgb(255, 0, 0); }
+li { margin-bottom: 3pt; margin-left: -10pt; }
+pre { margin-left: 18pt; }
+.note { font-size: 90%; border: 3px solid rgb(187, 187, 187); display: inline-block; margin-top: 0pt; margin-bottom: 0pt; }
+.nowrap { white-space: nowrap; }
+--></style>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+--></style><style id="lleo_css_enjoyContentControls" type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls, #lleo_enjoyContentControls * { color: rgb(0, 0, 0) ! important; font: 13px/15px Arial,Helvetica ! important; margin: 0px ! important; padding: 0px ! important; background: transparent none repeat scroll 0% 0% ! important; border: 0px none ! important; position: static ! important; vertical-align: baseline ! important; overflow: visible ! important; width: auto ! important; height: auto ! important; max-width: none ! important; max-height: none ! important; float: none ! important; visibility: visible ! important; text-align: left ! important; text-transform: none ! important; border-collapse: separate ! important; border-spacing: 2px ! important; box-sizing: content-box ! important; box-shadow: none ! important; opacity: 1 ! important; text-shadow: none ! important; }
+#lleo_enjoyContentControls { background: rgb(247, 200, 117) none repeat scroll 0% 0% ! important; position: fixed ! important; right: 0px ! important; top: -40px ! important; width: 39px ! important; height: 34px ! important; opacity: 0.85 ! important; border-top-left-radius: 4px ! important; border-bottom-left-radius: 4px ! important; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3) ! important; z-index: 2147483647 ! important; overflow: hidden ! important; }
+#lleo_enjoyContentControls.lleo_show { top: 130px ! important; transition: top 0.8s ease-out 0s ! important; }
+#lleo_enjoyContentControls:hover { opacity: 1 ! important; transition: opacity 0.4s linear 0s, width 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel { white-space: nowrap ! important; margin: 9px 44px 0px 10px ! important; opacity: 0 ! important; transition: all 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls:hover #lleo_enjoyContentPanel { opacity: 1 ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel input { margin-right: 5px ! important; }
+#lleo_enjoyContentButton { background: rgb(255, 255, 255) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAk6AAAJOgHwZJJKAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADBQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL92gewAAAA90Uk5TAA0PEhUcLS9CxszS29z1M86yOAAAAFVJREFUCFtjYIADduMCMGZgvmsAxggGUFgELMXAwDq7AaI8MnULmGY9pTYRzIj5vzIALHD+/1Gw4pj/fwJA2kECYHNkgAJgK/yAAmDA8QasBQgcIRQA12YesqxFXfcAAAAASUVORK5CYII8850aa0afe766ff5b5bb3697b8de32f7") no-repeat scroll center center / 16px 16px ! important; width: 36px ! important; height: 34px ! important; cursor: pointer ! important; position: absolute ! important; right: 0px ! important; top: 0px ! important; }
+@media only screen and (min\2D\2D moz-device-pixel-ratio: 2), not all, not all {
+  #lleo_enjoyContentButton { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAABJ0AAASdAHeZh94AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAD9QTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxQXeHgAAABR0Uk5TAAQFDRkcNz1PcHSIrK6ws7/b8P5ZkzdFAAAAo0lEQVQ4y62RzQ6DMAyDTSkjpfy04Pd/1h12WAtpKk3zzfosJXGAP2l0AODGloc7BJDDtTwgTInS9kAik+W7gd6I7pLFWRK9cuZXgcyT0VjguliJwG1AYPZNvjsAC2OLXzOAYa07LPfj+YLbGJqcPOfd5OTV4WSAVlTNn1Xf+ONZD357t8KrgMbLERovlxSFV2dGhVfy2ebAlG3+SVgc8FHws96B8RE8rjk+bwAAAABJRU5ErkJggga9a50a0b337b82ef5c0bda0f6d6960d3") ! important; }
+}
+--></style><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls:hover { width: 225px ! important; }
+--></style></head>
+
+<body>
+
+<h1>How to Share Data between Stored Procedures</h1>
+<p align="left"><font size="-1">An SQL text by <a href="http://www.sommarskog.se/index.html">Erland
+   Sommarskog</a>, SQL Server MVP. <a href="#revisions">Most recent update</a> 2013-11-02.</font></p>
+<h2>Introduction </h2>
+<p> This article tackles two related questions:</p>
+<ul>
+   <li><i>How can I
+   use the result set from one stored procedure in another</i>, also expressed
+      as<i> How can I
+   use the result set from a stored procedure in a <small>SELECT</small> statement?</i></li>
+   <li><i>How can I pass a table data in a parameter from one stored procedure to
+      another? </i></li>
+</ul>
+<p>In this text I will discuss a number of possible solutions and point out their
+   advantages and drawbacks. Some methods apply only when you want to
+   access the output from a stored procedure, whereas other methods are good for the input scenario, or both input and output. In the case
+   you want to access a result set, most methods require you to rewrite the
+   stored procedure you are calling (the <i>callee</i>) in one way or another, but some solutions  do
+   not.</p>
+<p>Here is a summary of the methods that I will cover. <i>Required version</i> refers to the minimum version of <small>SQL</small> Server where the solution is available. When the column is empty, this means all versions from <small>SQL</small> 2000 and up.</p>
+<table border="3" cellpadding="2" cellspacing="1">
+  <tbody><tr valign="top"><th>Method</th>
+    <th>In/Out</th>
+    <th>Rewrite callee?</th>
+    <th>Required version</th><th>Comment</th></tr>
+<tr valign="top"><td><b><a href="#OUTPUT">
+  <nomeddle>OUTPUT Parameters</nomeddle>
+</a></b></td>
+    <td>Output</td><td>Yes</td><td> </td>
+    <td>Not generally applicable, but sometimes overlooked.</td></tr>
+<tr valign="top"><td><b><a href="#UDF">Table-valued Functions</a></b></td>
+    <td rowspan="3">Output</td>
+    <td rowspan="3">Yes</td>
+    <td rowspan="3"> </td>
+    <td>Often the best choice for output-only, but there are several restrictions.</td></tr>
+<tr valign="top"><td class="tblsublvl">
+    <a href="#inlineUDF">Inline Functions</a></td>
+    <td class="tblsublvl">Use this to reuse a single <small>SELECT</small>.</td></tr>
+<tr valign="top"><td class="tblsublvl">
+    <a href="#multiUDF"><span class="nowrap">Multi-statement Functions</span></a></td>
+    <td class="tblsublvl">When you need to encapsulate more complex
+    logic.</td></tr>
+<tr valign="top"><td><a href="#usingtable"><b>Using a Table</b></a></td>
+    <td rowspan="4">In/Out</td>
+    <td rowspan="4">Yes</td>
+    <td rowspan="4"> </td>
+    <td>The most general solution. My favoured choice for input/output scenarios.</td></tr>
+<tr valign="top"><td class="tblsublvl"><a href="#temptables">Sharing a Temp Table</a></td>
+    <td class="tblsublvl">Mainly for a single pair of caller/callee.</td></tr>
+<tr valign="top"><td class="tblsublvl">
+    <a href="#prockeyed">Process-keyed Table</a></td>
+    <td class="tblsublvl">Best choice for many callers to the same callee.</td></tr>
+<tr valign="top"><td class="tblsublvl">
+    <a href="#globaltemp">Global Temp Tables</a></td>
+    <td class="tblsublvl">A variation of process-keyed.</td></tr>
+<tr valign="top">
+  <td><b><a href="#tableparam">Table-valued Parameters</a></b></td>
+    <td>Input</td><td>Yes</td><td><small>SQL</small> 2008</td>
+    <td>Mainly useful when passing data from a client.</td></tr>
+<tr valign="top"><td><b><a href="#INSERTEXEC">
+  <nomeddle>INSERT-EXEC</nomeddle>
+</a></b></td>
+    <td>Output</td><td><b>No</b></td><td> </td>
+    <td>Deceivingly appealing, but should be used sparingly.</td></tr>
+<tr valign="top"><td><b><a href="#CLR">
+  <nomeddle>Using the CLR</nomeddle>
+</a></b></td>
+    <td>Output</td><td><b>No</b></td><td><small>SQL</small> 2005</td>
+    <td>Complex, but useful as a last resort when <small>INSERT-EXEC</small> does not work.</td></tr>
+<tr valign="top"><td><b><a href="#OPENQUERY">
+  <nomeddle>OPENQUERY</nomeddle>
+</a></b></td>
+    <td>Output</td><td><b>No</b></td><td> </td>
+    <td>Tricky with many pitfalls. Discouraged.</td></tr>
+<tr valign="top"><td><b><a href="#XML">
+  <nomeddle>Using XML</nomeddle>
+</a></b></td>
+    <td>In/Out</td><td>Yes</td><td><small>SQL</small> 2005</td>
+    <td>A bit of a kludge, but not without advantages.</td></tr>
+<tr valign="top"><td><b><a href="#cursor">Using Cursor Variables</a></b></td>
+    <td>Output</td><td>Yes</td><td> </td>
+    <td>Not recommendable.</td></tr>
+</tbody></table>
+<p>At the end of the article, I briefly discuss the particular situation when
+your stored procedures are on <a href="#linkedservers">different servers</a>, which is a quite  challenging situation.</p>
+<p>A related question is how to pass table data
+   from a client, but this is a topic which is outside the scope for this text. Of the methods
+   that I discuss in this article, only table-valued parameters and <small>XML</small> are useful for this case. For
+   a more general discussion on passing structured data from a client to <small>SQL</small>
+   Server, see my article <i><a href="http://www.sommarskog.se/arrays-in-sql.html">Arrays and
+   Lists in <small>SQL</small> Server</a></i>.</p>
+<p>Examples in the article featuring tables such as <i>authors</i>, <i>titles</i>, <i>sales</i> etc run in the old sample database <i>pubs</i>. You can download the script for pubs from <a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=23654">Microsoft's web site</a>. (Some examples use purely fictive tables, and do not run in pubs.)</p>
+<h2><a name="OUTPUT">OUTPUT Parameters</a></h2>
+<p>This method can only be used when the result set is one single row.
+   Nevertheless, this is a method that is sometimes overlooked. Say you have
+   this simple stored procedure:</p>
+<pre>CREATE PROCEDURE insert_customer @name    nvarchar(50),
+                                 @address nvarchar(50),
+                                 @city    nvarchar(50) AS
+DECLARE @cust_id int
+BEGIN TRANSACTION
+SELECT @cust_id = coalesce(MAX(cust_id), 0) + 1 FROM customers (UPDLOCK)
+INSERT customers (cust_id, name, address, city)
+   VALUES (@cust_id, @name, @address, @city)
+COMMIT TRANSACTION
+SELECT @cust_id</pre>
+That is, the procedure inserts a row into a table, and returns the id for the
+row.
+<p>
+Rewrite this procedure as:</p>
+<pre>CREATE PROCEDURE insert_customer @name    nvarchar(50),
+                                 @address nvarchar(50),
+                                 @city    nvarchar(50),
+                                 @cust_id int OUTPUT AS
+BEGIN TRANSACTION
+SELECT @cust_id = coalesce(MAX(cust_id), 0) + 1 FROM customers (UPDLOCK)
+INSERT customers (cust_id, name, address, city)
+   VALUES (@cust_id, @name, @address, @city)
+COMMIT TRANSACTION</pre>
+<p>You can now easily call <b>insert_customer</b> from another stored procedure.
+   Just recall that in <small>T‑SQL</small> you need to specify the <small>OUTPUT</small> keyword also in the
+   call: </p>
+<pre>EXEC insert_customer @name, @address, @city, @cust_id OUTPUT</pre>
+<p class="note"><b>Note</b>: this example has a single output parameter, but a stored procedure can
+   have many output parameters.</p>
+<h2><a name="UDF">Table-valued  Functions</a></h2>
+<p>When all you want to do is to reuse the result set from a stored procedure, the first thing to investigate is whether it is possible to rewrite the stored procedure as a table-valued function. This is far from always possible, because <small>SQL</small> Server is very restrictive with what you can put into a function. But when it is possible, this is often the best choice.</p>
+<p>There are two types of table functions in <small>SQL</small> Server: inline and multi-statement functions. </p>
+<h3><a name="inlineUDF">Inline Functions</a></h3>
+<p>Here is a example of an inline function adapted from Books Online for <small>SQL</small> 2000:</p>
+<pre>CREATE FUNCTION SalesByStore (@storeid varchar(30))
+RETURNS TABLE AS
+RETURN (SELECT t.title, s.qty
+        FROM   sales s
+        JOIN   titles t ON t.title_id = s.title_id
+        WHERE  s.stor_id = @storeid)</pre>
+To use it, you simply say:
+<pre>SELECT * FROM SalesByStore('6380')</pre>
+You can filter the data with <small>WHERE</small> or use it in a bigger query that includes other tables. That is, you use the function just like was a table or a view. You could say that an inline function is a parameterised view, because the query optimizer expands the function
+  as if it was a macro, and generates the plan as if you had provided the expanded
+  query. Thus, there is no performance cost for packaging a <small>SELECT</small> statement into
+  an inline  function. For this reason, when you want to reuse a stored
+  procedure that consists of a single <small>SELECT</small> statement, rewriting it into an
+  inline <small>UDF</small> is without doubt the best choice. (Or instead of rewriting it, move
+  the <small>SELECT</small> into a <small>UDF</small>, and rewrite the existing procedure as a wrapper on the
+  function, so that the client is unaffected.)
+  <p>There are a couple of system functions you cannot use in a <small>UDF</small>, because <small>SQL</small> Server thinks it matters that they are <i>side-effecting</i>. The most  commonly used ones are <b><span class="nowrap">newid()</span></b>,<b> </b>and <b><span class="nowrap">rand()</span></b>. On <small>SQL</small> 2000 this restriction goes further and disallows all system functions that are <i>nondeterministic</i>, that is, functions that do not return the same value for the same
+input parameters on each call. A typical example is <b><span class="nowrap">getdate()</span></b>. </p>
+<h3><a name="multiUDF">Multi-statement Functions</a></h3>
+<p>
+A multi-statement function has a body that can have as many statements as you
+like. You need to declare a return table, and you insert
+the data to return into that table.
+Here is the function above as a multi-statement function:</p>
+<pre>CREATE FUNCTION SalesByStore (@storeid varchar(30))
+   RETURNS @t TABLE (title varchar(80) NOT NULL PRIMARY KEY,
+                     qty   smallint    NOT NULL)  AS
+BEGIN
+   INSERT @t (title, qty)
+      SELECT t.title, s.qty
+      FROM   sales s
+      JOIN   titles t ON t.title_id = s.title_id
+      WHERE  s.stor_id = @storeid
+   RETURN
+END</pre>
+<p>
+You use multi-statement functions in the same way as you use inline functions, but in difference to
+inline functions, they are not expanded in place, but instead it's like you
+would call a stored procedure in the middle of the query and return the data in
+a table variable. This permits you to move the code of a more complex stored procedure into
+a function.</p>
+<p>As you can see in the example, you can define a primary key for your return table. I like to point out that this definitely best practice for two reasons:</p>
+<ol>
+  <li>It states your assumptions of the data. If your assumptions are incorrect, you will be told up front. (Instead of spending time to understand why your application presents incorrect data.)</li>
+  <li>This is information that is valuable to the optimizer when you use the function in a larger query.</li>
+</ol>
+<p>It goes without saying, that this is only meaningful if you define a primary key on the columns you produce in the body of the <small>UDF</small>. Adding an <small>IDENTITY</small> column to the return table only to get a primary key is pointless.</p>
+<p>
+  Compared to inline functions, multi-statement functions
+  incur some overhead due to the return table. More important, though, is that if you use the function in
+  a query where you join with other tables, the optimizer will have no idea of what the function returns, and will
+make standard assumptions. This is far from always an issue, but the more rows the function returns, the higher the risk that the optimizer will make incorrect estimates and produce an inefficient query plan. One way to avoid this is to insert the results from the function into a temp table. Since a temp table has statistics this helps the optimizer to make a better plan. </p>
+<p>It follows from this, that there is not much reason to consider which sort of
+  function to use. If you can express your problem in a single query, use an
+inline function. Only use a multi-statement function when an inline function is not possible. </p>
+<p>User-defined functions are quite restricted in what they can do, because a <small>UDF</small> is not permitted to change the database state. The most important restrictions are:</p>
+<ul>
+   <li>You can only perform <small>INSERT, UPDATE</small> or <small>DELETE</small> statements on table
+      variables local to the function.</li>
+   <li>You cannot call stored procedures (with the exception of extended stored
+      procedures).</li>
+   <li>You cannot invoke dynamic <small>SQL</small>.</li>
+   <li>You cannot create tables, neither permanent tables nor temp tables. You can use table variables.</li>
+   <li>You cannot use <small>RAISERROR, TRY-CATCH</small> or <small>BEGIN/COMMIT/ROLLBACK TRANSACTION</small>.</li>
+   <li>You cannot use "side-effecting" system functions, such as <b><span class="nowrap">newid()</span></b> and <b><span class="nowrap">rand()</span></b>.</li>
+   <li>On <small>SQL</small> 2000, you cannot use non-deterministic system functions.</li>
+</ul>
+<p>Please see the Remarks section in the topic for <small>CREATE FUNCTION</small> in Books Online
+   for a complete list of restrictions.</p>
+<h2><a name="usingtable">Using a Table</a></h2>
+<p>What could be better for passing data in a database than a table? When using a table there are no restrictions, but you have a solution that works in all situations. We will look at two ways to do this, as well as a third way which is a variation of the second. It should be admitted, though, that this is a little more heavy-handed than some of the other solutions in this article. Using tables can also lead to performance issues due to recompilation.</p>
+<h3><a name="temptables">Sharing a Temp Table</a></h3>
+<h4>Introduction</h4>
+<p>The method itself is as simple as this:</p>
+<pre>CREATE PROCEDURE called_procedure @par1 int,
+                                  @par2 bit,
+                                  ... AS
+   ...
+   INSERT/UPDATE/DELETE #tmp
+go
+CREATE PROCEDURE caller AS
+   DECLARE ...
+   CREATE TABLE #mytemp (col1 int     NOT NULL,
+                         col2 char(5) NULL,
+                        ...)
+   ...
+   EXEC called_procedure @par1, @par2 ...
+   SELECT * FROM #mytemp
+go</pre>
+<p>In this example, <b>caller</b> creates the temp table, and <b>called_procedure</b>
+   fills it in, that is, the table is output-only. A different scenario is that <b>caller</b> fills the table
+   with input data whereupon <b>called_procedure</b> performs some general computation, and the caller uses the result from that computation for some purpose. That is, the table is used for both input and output. Yet a scenario is that the caller prepares the temp table with data, and the callee first performs checks to verify that a number of business rules are not violated, and then goes on to update one or more tables. This would be an input-only scenario. </p>
+<h4>Changing Existing Code</h4>
+<p>Say that you have this procedure:</p>
+<pre>CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   SELECT t.title, s.qty
+   FROM   sales s
+   JOIN   titles t ON t.title_id = s.title_id
+   WHERE  s.stor_id = @storeid</pre>
+<p>You want to reuse this result set in a second procedure that returns only titles that have sold above a certain quantity. How would you achieve this by sharing a temp table without affect existing clients? The solution is to move the meat of the procedure into a sub-procedure, and make the original procedure a wrapper on the original like this:</p>
+<pre>CREATE PROCEDURE SalesByStore_core @storeid varchar(30) AS
+   INSERT #SalesByStore (title, qty)
+      SELECT t.title, s.qty
+      FROM   sales s
+      JOIN   titles t ON t.title_id = s.title_id
+      WHERE  s.stor_id = @storeid
+go
+CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   CREATE TABLE #SalesByStore(title varchar(80) NOT NULL PRIMARY KEY,
+                              qty   smallint    NOT NULL)
+   EXEC SalesByStore_core @storeid
+   SELECT * FROM #SalesByStore
+go
+CREATE PROCEDURE BigSalesByStore @storeid varchar(30),
+                                 @qty     smallint AS
+   CREATE TABLE #SalesByStore(title varchar(80) NOT NULL PRIMARY KEY,
+                              qty   smallint    NOT NULL)
+   EXEC SalesByStore_core @storeid
+   SELECT * FROM #SalesByStore WHERE qty &gt;= @qty
+go
+EXEC SalesByStore '7131'
+EXEC BigSalesByStore '7131', 25
+go
+DROP PROCEDURE SalesByStore, BigSalesByStore, SalesByStore_core</pre>
+<p class="note"><b>Note: </b>This script is a complete <i>repro</i> script that creates some objects, tests them, and then drops them, to permit simple resting of variations. We will look at more versions of these procedures later in this text.</p>
+<p>Just like in the example with the multi-statement function, I have defined a primary key for the temp table, and exactly for the same reasons. Speaking of best practices, some readers may wonder about the use of <small>SELECT</small> * here. I think using <small>SELECT</small> * from a temp table created in the same procedure is OK, particularly if the purpose is to return all columns in the temp table. (In difference to using <small>SELECT</small> * from a table created elsewhere, and which may be altered without your knowledge.)</p>
+<p>While this solution is straightforward, you may feel uneasy by the fact that the <small>CREATE TABLE</small> statement for the temp table appears in two places, and there is a third procedure that depends on the definition. Here is a solution which is a little more convoluted   that to some extent alleviates the situation:</p>
+<pre>CREATE PROCEDURE SalesByStore_core @storeid       varchar(30),
+                                   @wantresultset bit = 0 AS
+   IF object_id('tempdb..#SalesByStore') IS  NULL 
+   BEGIN
+      CREATE TABLE #SalesByStore(title varchar(80) NOT NULL PRIMARY KEY,
+                                 qty   smallint    NOT NULL)
+   END
+
+   INSERT #SalesByStore (title, qty)
+      SELECT t.title, s.qty
+      FROM   sales s
+      JOIN   titles t ON t.title_id = s.title_id
+      WHERE  s.stor_id = @storeid
+      
+   IF @wantresultset = 1
+      SELECT * FROM #SalesByStore
+go
+CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   EXEC SalesByStore_core @storeid, 1
+go</pre>
+<p>I've moved the <small>CREATE TABLE</small> statement for the wrapper into the core procedure, which only creates the temp table only if it does not already exist. The wrapper now consists of a single <small>EXEC</small> statement and passes the parameter <b>@wantresultset</b> as 1 to instruct the core procedure to produce the result set. Since this parameter has a default of 0, BigSalesByStore can be left unaffected.</p>
+<h4>A Note on the Virtues of Code Reuse</h4>
+<p>Before we move on, I like to point out that the given example as such is not very good practice. Not because the concept of sharing temp tables as such is bad, but as with all solutions, you need to use them in the right place. As you realise, defining a temp table and creating one extra stored procedure is too heavy artillery for this simple problem.  But  an example where sharing temp tables  would be a good solution would have to consist of many more lines of code, which would have obscured the forest with a number of trees. Thus, I've chosen a very simple example to highlight the technique as such.</p>
+<p>Keep in mind that compared to languages such as C# and Java, Transact-<small>SQL</small> is poorly equipped for code reuse, why solutions in <small>T‑SQL</small> to reuse code are clumsier. For this reason, the bar for reuse is somewhat higher in <small>T‑SQL</small>. It's still a virtue, but not as big virtue as in modern object-oriented languages. In this simple problem, the best would of course be to add @qty as a parameter to SalesByStore. And if that would not be feasible for some  reason, it would still be better to create BigSalesByStore by means of copy-paste than sharing a temp table.</p>
+<p>Beside the poverty of <small>T‑SQL</small> as a language, there is a second reason why code reuse is something that you should be a little careful with. Say that there is a requirement to show the sales for all stores in a certain state. In a pure C# or Java environment, it would be  normal to write a loop that calls SalesByStore for every store. But in a database with several hundred gigabytes of data, the performance penalty for such a solution can be severe. </p>
+<h4><a name="MaintenanceProblem"></a>A Maintenance Problem</h4>
+<p>If the callee is called from many places, and you want to change which
+columns it reads/writes, you need to revisit all calling stored procedures
+   to edit the temp-table definition. For this reason, sharing temp tables
+   is mainly useful when you have a single pair of caller and callee.
+   Then again, if the temp is narrow, maybe only a single column of customer IDs
+to process, the table is likely to be very stable.</p>
+<p>There are some alternatives to overcome the maintenance problem. One is to use a <a href="#prockeyed">process-keyed table</a>, which we will look into in the next section. I have also received some interesting ideas from readers of this article.</p>
+<p>One solution comes from Richard St-Aubin. The callers create the temp table with a single dummy column, and then call a stored procedure that uses <small>ALTER TABLE</small> to add the real columns. It would look something like this:</p>
+<pre>CREATE PROCEDURE called_procedure @par1 int,
+                                  @par2 bit,
+                                  ... AS
+   ...
+   INSERT/UPDATE/DELETE #mytemp
+go
+CREATE PROCEDURE define_temp_table AS
+   ALTER TABLE #mytemp ADD col1 int     NOT NULL,
+                           col2 char(5) NULL,
+                           ...
+go
+CREATE PROCEDURE caller AS
+   DECLARE ...
+   CREATE TABLE #mytemp (dummycol bit)
+   EXEC define_temp_table
+   ...
+   EXEC called_procedure @par1, @par2 ...
+   SELECT * FROM #mytemp
+go</pre>
+<p>You must create the temp table in <b>caller</b>, since if you were to put the <small>CREATE TABLE</small> statement in <b>define_temp_table</b>, the table would be dropped when that procedure exits. This method can definitely be
+   worth exploring, but I like to add a word of caution. Adding columns to a table at run-time can lead to unexpected errors if the procedure is recompiled. If you call the procedure that adds the columns directly after the <small>CREATE TABLE</small> statement, you should be
+fairly safe. But this depends on the fine print in <small>SQL</small> Server, so it could break with a new release. A second issue is that this method prevents <small>SQL</small> Server from caching the temp-table definition. This could have a significant impact if the procedures are called with a high frequency.</p>
+<p>Another solution, which requires <small>SQL</small> 2008, comes from Wayne Bloss. He creates a table type that holds the definition of the temp table. You can only use table types for declaring table variable and table parameters. But Wayne has a cure for this:</p>
+<pre>DECLARE @dummy my_table_type
+SELECT * INTO #mytemp FROM @dummy</pre>
+<p>From this point you work with #mytemp; the sole purpose of @dummy is to be able to create #mytemp from a known and shared definition. (If you are unacquainted with table types, we will take a closer look on them in the section on <a href="#tableparam">table-valued parameters</a>.) A limitation with this method is that  you can only centralise column definitions this way, but not constraints as they are not copied with <small>SELECT INTO</small>. You may think that constraints are odd things you rarely put in a temp table, but I have found that it is often fruitful to add constraints to my temp tables as assertions for my assumptions about the data. This does not the least apply for temp tables that are shared between stored procedures. Also, defining  primary keys for your temp tables can avoid performance issues when you start to join them.</p>
+<p>Let me end this section by pointing out that sharing temp tables opens for an interesting possibility for flexibility. The callee
+  only cares about the columns it reads or writes. This permits a caller
+  to add extra columns for its own usage when it creates the temp table. Thus, two callers to the same callee could have different definitions of the 
+temp table, as long as the columns accessed by the callee are defined consistently.</p>
+<p class="note"><b>Note</b>: A more advanced way to tackle the maintenance problem is to use a
+   pre-processor and put the definition of the temp table in an include-file. If you have a C compiler around, you can use the C pre-processor. My <a href="http://www.sommarskog.se/AbaPerls/index.html">AbaPerls</a> includes a pre-processor, <a href="http://www.sommarskog.se/AbaPerls/doc/preppis.html">Preppis</a>, which we use in the system I spend most of my time with.</p>
+<h4>The Impact of Recompilation</h4>
+<p>One distinct drawback with this method is that it causes a lot of recompilation in the callee. Each time the caller is invoked, a new instance
+of the temp table is created, and for this reason <small>SQL</small> Server must recompile all statements in the callee that refer to the temp table. (Recall what I said about flexibility in the previous paragraph. The definition could really be different.) If the execution time for the callee is expected to be subsecond and there are several complex statements in the procedure, the recompilation may add an overhead of more than 100 %. On the other hand, if the typical execution time of the callee is one minute, the cost of recompilation is likely to be negligible. </p>
+<p>One way to reduce the amount of recompilation is to copy any input data in the shared table to a local table first thing, and then write back the result at the end. This restricts the recompilation to these two statements, but it goes without saying that this adds an overhead in itself, and it's mainly an option when you expect the table to hold a small amount of data.</p>
+<p>I should hasten to add that recompilation can happen for several reasons. It is very common for temp tables to cause recompilation because of changed statistics, a topic I will return to when I discuss process-keyed tables.</p>
+<p class="note"><b>Note</b>: if you are still on <small>SQL</small> 2000, you should be aware of that in this version of <small>SQL</small> Server, recompilation is always on procedure level and  therefore more expensive. Statement-level recompilation was introduced in <small>SQL</small> 2005.</p>
+<h4><a name="SSDT"></a>A Note on SQL Server Data Tools</h4>
+
+<p>Simultaneously with <small>SQL</small> Server 2012, Microsoft released <small>SQL</small> Server Data Tools, <small>SSDT</small>. This is a very versatile environments that gives you many benefits. One benefit is that if you write a stored procedure like:</p>
+<pre>CREATE PROCEDURE example_sp AS
+   CREATE TABLE #temp(a int NOT NULL)
+   SELECT a FROM #temmp</pre>
+<p><small>SSDT</small> will tell you up front of the misspelling about the temp table name, before you try to run the batch to create the procedure. This is certainly a very helpful feature, because a typo can be trapped early. However, <small>SSDT</small> has no notion about sharing temp tables, so <small>SSDT</small> will also give you a warning for a procedure like SalesByStore_core, or more precisely three: one per column. They are only warnings, so you can proceed, but it takes a handful of such procedures to clutter up the Error List window so there is a risk that you miss other and more important issues.</p>
+<p>There is a way to suppress the warning: right-click the file in Solution Explorer and select Properties. There is a property <i>Suppress T-Sql Warning</i> and here you can enter the code for the error. But this means that you lose the checking of all table names in the procedure; there is no means to only suppress the warning only for the shared temp table.</p>
+<p>All and all, if you are using <small>SSDT</small>, you will find an extra resistence barrier against sharing temp tables.</p>
+<h3><a name="prockeyed">Process-Keyed Tables</a></h3>
+<p>This method evades the
+   maintenance problem by using a permanent table instead. There is still a recompilation problem, though, but of a different
+   nature. </p>
+<h4>Outline</h4>
+<p>A process-keyed table is simply a permanent table that serves as a temp
+   table. To permit  processes to use the table simultaneously, the table
+   has an extra column to identify the process. The simplest way to do this is the global
+   variable <b>@@spid</b> (@@spid is the process id in <small>SQL</small> Server). In fact, this is so
+   common, that these tables are often referred to as <i>spid-keyed tables</i>.
+   Here is an outline; I will give you a more complete example later.</p>
+<pre>CREATE TABLE process_keyed (spid  int     NOT NULL,
+                            col1  int     NOT NULL,
+                            col2  char(5) NULL,
+                            ...)
+go
+CREATE CLUSTERED INDEX processkey_ix ON process_keyed (spid)
+-- Add other columns as needed.
+go
+...
+DELETE process_keyed WHERE spid = @@spid
+INSERT process_keyed (spi, col1, col2, ....)
+   VALUES (@@spid, @val1, @val2, ...)
+...
+SELECT col1, col2, ...
+FROM   process_keyed
+WHERE  spid = @@spid
+...
+DELETE process_keyed WHERE spid = @@spid</pre>
+<p>A few things to note here:</p>
+<ol>
+   <li>The table should have a clustered index on the process key (<b>spid</b>
+      in this example), as all queries against the table will include the
+      condition <code>WHERE spid = @@spid</code>.</li>
+   <li>You should delete any existing data for @@spid before you insert any
+      data into the table, as a safety precaution.</li>
+   <li>When you are finished using the data you should delete it, so that it
+      does not occupy any extra space.</li>
+</ol>
+<h4>Choosing the Process-key</h4>
+<p>While it's common to use @@spid as the process key there are two problems with this:</p>
+<ol>
+  <li>If sloppy programmers neglect to clear the spid before and after use, old data may be passed to the callee, causing incorrect results that are difficult to  understand how they arose.</li>
+  <li>If a client needs to pass a process-key around, there is no guarantee that it will have the same spid every time, since modern clients typically connect and disconnect for each call they make.</li>
+</ol>
+<p>One alternative for the process-key is to use a <small>GUID</small> (data type <b>
+uniqueidentifier</b>). If you create the process key in <small>SQL</small> Server, you can use the function <b><span class="nowrap">newid()</span></b>. (You can rely on <b><span class="nowrap">newid()</span></b> to return a unique value, which is why it addresses the first point.) You may have heard that you should not have guids in your clustered index, but that applies  when the guid is the primary key alone, since this can cause fragmentation and a lot of page splits. In a process-keyed table, you will typically have many rows for the same guid, so it is a different situation.</p>
+<p><small>SQL</small> 2012 offers a new alternative: get the process-key from a sequence, which is a new type of object in <small>SQL</small> 2012. A sequence is akin to an <small>IDENTITY</small> column, but it is an object of its own.</p>
+<h4>A Longer Example</h4>
+<p>Let's say that there are several places in the application where you need to compute the total number of sold books for one or more stores. You put this computation in a procedure <b>ComputeTotalStoreQty</b>, which operates on the table <b>stores_aid</b>. In this example, the procedure is nothing more than a simple <small>UPDATE</small> statement that computes the total number of books sold per store. A real-life problem could have a complex computation that runs over several hundred lines of code. There is also  an example procedure <b>TotalStoreQty</b> which returns the returns the total sales for a certain state. It fills stores_aid with all stores in that state, calls ComputeTotalStoreQty and then returns the result to the client. Note that TotalStoreQty is still careful to clear its entry in stores_aid both before and after the call.</p>
+<pre>CREATE TABLE stores_aid 
+      (process_key uniqueidentifier NOT NULL,
+       storeid     char(4)          NOT NULL,
+       totalqty    smallint         NULL,
+       CONSTRAINT pk_stores_aid PRIMARY KEY (process_key, storeid)
+)       
+go
+CREATE PROCEDURE ComputeTotalStoreQty @process_key uniqueidentifier AS
+   UPDATE stores_aid
+   SET    totalqty = s.totalqty
+   FROM   stores_aid sa             
+   JOIN   (SELECT stor_id, SUM(qty) AS totalqty
+           FROM   sales
+           GROUP  BY stor_id) AS s ON s.stor_id = sa.storeid
+   WHERE  sa.process_key = @process_key
+go
+CREATE PROCEDURE TotalStoreQty @state char(2) AS
+   DECLARE @process_key uniqueidentifier
+   SELECT @process_key = newid()
+   
+   DELETE stores_aid WHERE process_key = @process_key
+   INSERT stores_aid(process_key, storeid)
+      SELECT @process_key, stor_id
+      FROM   stores
+      WHERE  state = @state
+      
+   EXEC ComputeTotalStoreQty @process_key
+   
+   SELECT storeid, totalqty 
+   FROM   stores_aid
+   WHERE  process_key = @process_key
+   
+   DELETE stores_aid WHERE process_key = @process_key
+go
+EXEC TotalStoreQty 'CA'
+go
+DROP PROCEDURE TotalStoreQty, ComputeTotalStoreQty
+DROP TABLE stores_aid</pre>
+<p>Please note that I have defined a proper key for stores_aid adhering to best practices.</p>
+<h4>Name Convention and Clean-up</h4>
+<p>You may wonder what that <b>_aid</b> in the table name comes from. In the environment where I do my daily chores, we have quite a few process-keyed tables, and we have adapted the convention that all these tables end in -<b>aid</b>. This way, when you read some code, you know directly that this is not a "real" table with persistent data. (Nevertheless some of our aid tables are very important in our system as they are used by core functions.)</p>
+<p>There is a second point with this name convention. It cannot be denied
+  that a drawback with process-keyed tables is that sloppy programmers could forget to
+delete data when they are done. Not only this wastes space, it can also result in  incorrect row-count estimates leading to poor query plans. For this reason it is a good idea to clean up these tables on a regular basis. For instance,  in our night-job we have a procedure that runs the query below and then executes the generated statements:</p>
+<pre>SELECT 'TRUNCATE TABLE ' + quotename(name)
+FROM   sysobjects
+WHERE  type = 'U'
+  AND  name LIKE '%aid'
+</pre>
+<h4>Issues with Recompilation</h4>
+<p>As we saw, when sharing temp tables, this causes recompilations in the callee, because the temp table is a new table every time. While this issue does not exist with process-keyed tables, you can still get a fair share of recompilation because of auto-statistics, a feature which is enabled in <small>SQL</small> Server by default. For a permanent table, auto-statistics kicks in when the first 500 rows have been added, and then every time 
+  20 % of the rows have changed. (For full details on recompilation, see this <a href="http://www.microsoft.com/technet/prodtechnol/sql/2005/qrystats.mspx">
+  white paper</a> by Eric Hanson and Yavor Angelov.) Since a process-keyed table is typically
+  empty when it is not in use, auto-statistics sets in often. Sometimes this
+  can be a good thing, as the statistics may help the optimizer to find a
+better plan. But as I noted previously,  recompilation may also cause an unacceptable performance overhead. </p>
+<p>As when sharing temp tables, one way to circumvent the recompilation is to copy data to  a local table on input and copy back on output. But for process-keyed tables there are two more options:</p>
+<ol>
+  <li>Disable auto-statistics for the table entirely with <b>sp_autostats</b>.</li>
+  <li>Use the query hint <small>OPTION (KEEPFIXED PLAN)</small> for queries which are costly to recompile, and where the changed statistics are unlikely to affect the outcome of the compilation.</li>
+</ol>
+<h4>The Cost of Logging</h4>
+<p>Compared to sharing temp tables, one disadvantage with process-keyed tables is that you tend to put them
+  in the same database as your other tables. This has two ramifications:</p>
+<ol>
+  <li>The tables are subject to complete logging; temp tables are only logged for rollbacks, not for recovery on start-up, since tempdb is always recreated when <small>SQL</small> Server starts.</li>
+  <li>If the database has full recovery, the process-keyed table will consume extra space in your transaction-log backups.</li>
+</ol>
+<p>The second point can be addressed by putting
+all your process-keyed tables in a separate database with simple recovery. Both points can be addressed by using a global temp table, which I will discuss in the next session.</p>
+<h4><a name="Hekaton"></a>Using Memory-optimised Tables in SQL 2014</h4>
+<p>If you are on SQL 2014 – which of this writing is only available as a CTP and not yet released – there is an excellent solution to this problem. Use a table created with these options:</p>
+<pre>WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_ONLY)</pre>
+<p>This is part of an entirely new feature in SQL 2014, known under the code name <i>Hekaton</i>. Hekaton tables are entirely in memory, and for really blazing performance you access them from stored procedures that have been compiled to C code. You can also access them from traditional T-SQL and still see significant performance improvements compared to traditional tables. Hekaton tables can hold persistent data, just like regular tables, and in such case there is still an overhead of writing to the transaction log. However, when you create a Hekaton table, there is also the option to say you don't want data to be durable. Such tables need very little logging, and this is perfect for process-keyed tables, where you don't want any data to survive a server crash.</p>
+<p>A couple of notes:</p>
+<ol>
+  <li>The database must be configured to permit Hekaton tables. Specifially, you need to add a filegroup for memory-optimized data. (This is a directory, akin to what you have for FILESTREAM data.)</li>
+  <li>The surface area for Hekaton is limited, and currently these data types are <i>not</i> supported: MAX data types, <b>xml</b>, <b>text</b>, <b>ntext</b>, <b>image</b>, <b>sql_variant</b>, <b>datetimeoffset</b> and CLR data types. Furthermore, the maximum data size for a row must not exceed 8060 bytes.</li>
+  <li>You must define a primary key for the table, which must be either nonclustered or a hash (a new index type, specific to Hekaton). This can be a bit of a bummer – some of my process-keyed tables are a bit denormalised as they contain different type of data.</li>
+  <li>While I mentioned natively compiled stored procedured, these have a very limited feature set, and it is not likely that you will have much use for them with your process-keyed tables. For one thing, natively compiled stored procedures cannot access disk-based tables, which you probably want to join your process-keyed table with.</li>
+  <li>At this writing, it is not clear whether Hekaton will be available in all editions of SQL Server.</li>
+</ol>
+<h4>Conclusion</h4>
+<p>While process-keyed tables are not without issues when it comes to performance, and they are certainly  a bit heavy-handed for the simpler cases, I still see this is the best overall solution that I present in this article. It does not come with a ton of restrictions like table-valued functions and it is <i>robust</i>, meaning that code will not break because of simple changes in difference to some of the other methods we will look at later.</p>
+<p>But that does not mean that using a process-keyed table is always the way to go. For instance, if you only need output-only, and your procedure can be written as a table-valued function, that should be your choice.</p>
+<h3><a name="globaltemp">Global Temp Tables</a></h3>
+<p>If you create a table with two leading hash marks (e.g. <b>##temp</b>), this is a global temp
+table. In difference to a regular temp table, a global temp table is visible to
+all processes. However, when the process that created the table goes away, so
+does the table (with some delay if another process is running a query against
+the table in that precise moment). That makes global temp tables difficult to
+use on any real global basis, but only when you have control over all
+involved processes like when spawning a second process through <b>xp_cmdshell</b>.</p>
+<p>Nevertheless, there is a special case that <small>SQL</small> Server <small>MVP</small> Itzik Ben-Gan  made me aware of: if you create a global temp table in a start-up procedure, the global temp
+  table will be around as long as the server is up, unless someone explicitly
+  drops it. This makes it possible to use a global temp table as a process-keyed
+table. This way you can have a fixed and known schema for your process-keyed table but  still get the reduced logging of tempdb.</p>
+<p>Here is a quick sample of how you create a global temp table when <small>SQL</small> Server starts:</p>
+<pre>USE master
+go
+CREATE PROCEDURE create_global_temp AS
+   CREATE TABLE ##global(process_key uniqueidentifier NOT NULL,
+                         -- other columns here
+   )
+go
+EXEC sp_procoption create_global_temp, 'startup', 'true'</pre>
+<p>It cannot be denied that there are some problems with this solution. What
+  if you need to change the definition of the global temp table in way that cannot
+  be handled with <small>ALTER TABLE</small>? Having to restart the server to get the new definition
+  in place may not be acceptable. One way to address is to refer to your
+  process-keyed table through a synonym (a feature added in <small>SQL</small> 2005). In
+  development, you let the synonym point to a local table, and only when you are
+ready for production you change the synonym to refer to the global temp table. If you need to change the table definition while system is live, you create the new version of the table in the local database and change the synonym and run it that way until the server is restarted.</p>
+<h2><a name="tableparam">Table-valued Parameters</a></h2>
+<p>Table-valued parameters (<small>TVP</small>) were introduced in <small>SQL</small> 2008. They permit you to pass a table variable as a parameter to a stored procedure. When you
+  create your procedure, you don't put the table definition directly in the
+  parameter list, instead you first have to create a table type
+  and use that in the procedure definition. At first glance, it may seem like an extra step
+  of work, but when you think of it, it makes very much sense: you will
+need to declare the table in at least two places, in the caller and in the callee. So why not have the definition in one place?</p>
+<p>Here is a quick example of a table-valued parameter in play:</p>
+<pre>CREATE TYPE my_table_type AS TABLE(a int NOT NULL,
+                                   b int NOT NULL)
+go
+CREATE PROCEDURE the_callee @indata my_table_type READONLY AS
+   INSERT targettable (col1, col2)
+      SELECT a, b FROM @indata
+go
+CREATE PROCEDURE the_caller AS
+   DECLARE @data my_table_type
+   INSERT @data (a, b)
+       VALUES (5, 7)
+   EXEC the_callee @data
+go</pre>
+<p>One thing to note is that a table-valued parameter always has an implicit default value of an empty table. So saying <code>EXEC the_callee</code> in this example would not be an error.</p>
+<p>Table-valued parameters certainly seem like the definite solution, don't they? Unfortunately, TVPs have a very limited usage for the problems I'm discussing in this article. If you look closely at the procedure definition, you  find the keyword <small>READONLY</small>. And that is not an optional keyword, but it is compulsory for TVPs. So if you want to use TVPs to pass data between stored procedures, they are  usable solely for input-only scenarios. I don't know about you, but in almost all situations where I <a href="#temptables">share a temp table</a> or use
+  a <a href="#prockeyed">process-keyed table</a> it's for input-output or
+output-only.</p>
+<p>When I first heard that <small>SQL</small> 2008 was to have TVPs, I was really excited. And when I learnt that they were readonly, I was equally disappointed. During the beta of <small>SQL</small> 2008 I wrote an article, <a href="http://www.sommarskog.se/tableparam.html"> <i>Why read-only table parameters is not enough</i></a>, where I tried to whip up
+  support for a <a href="https://connect.microsoft.com/SQLServer/feedback/ViewFeedback.aspx?FeedbackID=299296">Connect item</a> in order to persuade the dev team to permit read-write TVPs when they are passed between stored procedures. The Connect item is still active, but with the release of <small>SQL</small> Server 2012 around the corner, the limitation is still there. Let's really hope that in the next version of <small>SQL</small> Server, we can use table parameters to pass data in all directions! </p>
+<p class="note"><b>Note</b>: While outside the scope for this article, table-valued parameters is still a welcome addition to <small>SQL</small> Server, since it makes it a lot easier to pass a set of data from client to server, and this context the <small>READONLY</small> restriction is not a big deal. I give an introduction how to use TVPs from <small>ADO</small> .Net in my article <a href="http://www.sommarskog.se/arrays-in-sql-2008.html"><i>Arrays and Lists in <small>SQL</small> Server 2008</i></a>.</p>
+<h2><a name="INSERTEXEC"></a>INSERT-EXEC</h2>
+<h4>Overview</h4>
+<p><small>INSERT-EXEC</small> is a method that has been in the product for a long time. It's a method that is seemingly very appealing, because it's very simple to use and understand. Also, it permits you use the result of a stored procedure without any changes to it. Above we had the example with the procedure SalesByStore. Here is a how we can implement BigSalesByStore with <small>INSERT-EXEC</small>:</p>
+<pre>CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   SELECT t.title, s.qty
+   FROM   sales s
+   JOIN   titles t ON t.title_id = s.title_id
+   WHERE  s.stor_id = @storeid
+go
+CREATE PROCEDURE BigSalesByStore @storeid varchar(30),
+                                 @qty     smallint AS
+   
+   CREATE TABLE #SalesByStore(title varchar(80) NOT NULL PRIMARY KEY,
+                              qty   smallint    NOT NULL)
+   
+   INSERT #SalesByStore (title, qty)
+      EXEC SalesByStore @storeid
+
+   SELECT * FROM #SalesByStore WHERE qty &gt;= @qty
+go
+EXEC SalesByStore '7131'
+EXEC BigSalesByStore '7131', 25
+go
+DROP PROCEDURE SalesByStore, BigSalesByStore</pre>
+<p>In this example, I receive the data in a temp table, but it could also be a permanent table or a table variable. (Except on <small>SQL</small> 2000, where you cannot use a table variable.)</p>
+<p>It cannot be denied that this solution is simpler than the solution with sharing a temp table. So why then did I first present a more complex solution? Because when we peel off the surface, we find that this method has a couple of issues that are quite problematic.</p>
+<h4><i>It Can't Nest</i></h4>
+<p>If you for some reason would try:</p>
+<pre>CREATE TABLE #BigSalesByStore(titleid varchar(80) NOT NULL PRIMARY KEY,
+                              qty     smallint    NOT NULL)
+INSERT #BigSalesByStore (titleid, qty)
+   EXEC BigSalesByStore '7131', 25</pre>
+<p><small>SQL</small> Server will tell you:</p>
+<pre class="errmsg">Msg 8164, Level 16, State 1, Procedure BigSalesByStore, Line 8
+An INSERT EXEC statement cannot be nested.</pre>
+<p>This is a restriction in <small>SQL</small> Server and there is not much you can do about it. Except than to save the use of <small>INSERT-EXEC</small> until when you really need it. That is, when rewriting the callee is out of the question, for instance because it is a system stored procedure.</p>
+<h4><i>There is a Serious Maintenance Problem</i></h4>
+<p>Six months later there is a user requirement for the application function that uses the result set from SalesByStore that the column <b>title_id</b> should be displayed. A developer merrily adds the column to the result set. Unfortunately, any attempt to use the function calling BigSalesByStore now ends in tears:</p>
+<pre class="errmsg">Msg 213, Level 16, State 7, Procedure SalesByStore, Line 2
+Column name or number of supplied values does not match table definition.</pre>
+<p>What it says. The result set from the called procedure must match the column list in the <small>INSERT</small> statement exactly. The procedure may produce multiple result sets, and that's alright as long as all of them match the <small>INSERT</small> statement.</p>
+<p>From my perspective, having spent a lot of my professional life with systems development, this is completely unacceptable. Yes, there are many ways to break code in <small>SQL</small> Server. For instance, a developer could add a new mandatory parameter to SalesByStore and that would also break BigSalesByStore. But most developers are aware the risks with such a change to an <small>API</small> and therefore adds a default value for the new parameter. Likewise, most developers  understand that removing a column from a result set could break client code that expects that column and they would not do this without checking all code that uses the procedure. But <i>adding</i> a column to a result set seems so innocent. And what is really bad: there is no way to find out that there is a dependency – save searching through all the database code for calls.</p>
+<p>Provided that you may alter the procedure you are calling, there are two ways to alleviate the problem. One is simply to add a comment in the code of the callee, so that the next developer that comes around is made aware of the dependency and hopefully changes your procedure as well.</p>
+<p>Another way is to use table types (if you are on <small>SQL</small> 2008 or later). 
+  Here is an example:</p>
+<pre>CREATE TYPE SalesByStore_tbl AS TABLE 
+     (titleid varchar(80) NOT NULL PRIMARY KEY,
+      qty     smallint    NOT NULL)
+go
+CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   DECLARE @ret SalesByStore_tbl
+   INSERT @ret (titleid, qty)
+      SELECT t.title, s.qty
+      FROM   sales s
+      JOIN   titles t ON t.title_id = s.title_id
+      WHERE  s.stor_id = @storeid
+   SELECT * FROM @ret
+go
+CREATE PROCEDURE BigSalesByStore @storeid varchar(30),
+                                 @qty     smallint AS
+   DECLARE @data SalesByStore_tbl
+   INSERT @data
+      EXEC SalesByStore @storeid
+   SELECT title, qty FROM @data WHERE qty &gt;= @qty
+go
+EXEC SalesByStore '7131'
+EXEC BigSalesByStore '7131', 25
+go
+DROP PROCEDURE SalesByStore, BigSalesByStore
+DROP TYPE SalesByStore_tbl</pre>
+<p>It is interesting to note that this code makes virtue of two things that  usually are bad practice, to wit <small>SELECT</small> * and <small>INSERT</small> with out an explicit column list. This is not a matter of sloppiness – it is essential here. If someone wants to extend the result set of SalesByStore, the developer has to change the table type, and BigSalesByStore will survive, even if the developer does not know about its existence.</p>
+<p>You could argue that this almost like an output <small>TVP</small>, but don't forget the other problems with <small>INSERT-EXEC</small> – of which there are two more to cover.</p>
+<h4><i>The Procedure is Executed in the Context of a Transaction</i></h4>
+<p>Even if there is no explicit transaction started with <small>BEGIN TRANSACTION</small>, an <small>INSERT</small> statement constitutes a transaction of its own. (So that the statement can be rolled back in case of an error.) That includes any procedure called through <small>INSERT-EXEC</small>. Is this bad or not? In many cases, this is not much of an issue. But there are a couple of situations where this can cause problems:</p>
+<ul>
+  <li>The procedure performs an update intended to be quick. Locks are now held for a longer duration, which may cause contention problems.</li>
+  <li>The isolation level is <small>REPEATABLE READ</small> or <small>SERIALIZABLE</small>, as opposed to the default <small>READ COMMITTED</small>. This  also causes locks to held longer than intended.</li>
+  <li>Some system procedures disagree to be called within a transaction.</li>
+  <li>If the procedure accesses a linked server, you now have a distributed transaction. Distributed transactions are sometimes difficult to get working. See more about this in the closing chapter on <a href="#linkedservers">linked servers</a>.</li>
+</ul>
+<h4><i>Rollback and Error Handling is Difficult</i></h4>
+<p>In my article on <a href="http://www.sommarskog.se/error_handling_2005.html">error handling</a>, I suggest that you should always have an error handler like </p>
+<pre>BEGIN CATCH
+   IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+   EXEC error_handler_sp
+   RETURN 55555
+END CATCH</pre> 
+ <p>The idea is that even if you do not start a transaction in the procedure, you should always include a <small>ROLLBACK</small>, because if you were not able to fulfil your contract, the transaction is not valid.</p>
+<p>Unfortunately, this does not work well with <small>INSERT-EXEC</small>. If the called procedure executes a <small>ROLLBACK</small> statement, this happens:</p>
+<pre><span class="errmsg">Msg 3915, Level 16, State 0, Procedure SalesByStore, Line 9
+Cannot use the ROLLBACK statement within an INSERT-EXEC statement.</span>
+</pre>
+<p>The execution of the stored procedure is aborted. If there is no <small>CATCH</small> handler anywhere, the entire batch is aborted, and the transaction is rolled back. If the <small>INSERT-EXEC</small> is inside <small>TRY-CATCH</small>, that <small>CATCH</small> handler will fire, but the transaction is doomed, that is, you must roll it back. The net effect is that the rollback is achieved as requested, but the original error message that triggered the rollback is lost. That may seem like a small thing, but it makes troubleshooting much more difficult, because when you see this error, all you know is that something went wrong, but you don't know what.</p>
+<p>And, no, before you ask, there is no way to find out at run-time that you are called from <small>INSERT-EXEC</small>.</p>
+<h4>Dynamic SQL</h4>
+<p>You can also use <small>INSERT-EXEC</small> with <a href="http://www.sommarskog.se/dynamic_sql.html">dynamic
+<small>SQL</small></a>:</p>
+<pre>INSERT #tmp (...)
+   EXEC sp_executesql @sql, @params, @par1, ...</pre>
+<p>
+Presumably, you have created the statement in <b>@sql</b> within your stored procedure, so it is unlikely that a change in the result set will go unnoticed. So from this perspective, <small>INSERT-EXEC</small> is fine. But the restriction that <small>INSERT-EXEC</small> can't nest remains, so if you use it, no one can call you with <small>INSERT-EXEC</small>. For this reason, in many cases it is better to put the <small>INSERT</small> statement inside
+the dynamic <small>SQL</small>. </p>
+<p>There is also a performance aspect, that <small>SQL</small>
+  Server <small>MVP</small> Adam Machanic has detailed in a
+  <a href="http://sqlblog.com/blogs/adam_machanic/archive/2009/06/25/the-hidden-costs-of-insert-exec.aspx">blog post</a>. The short
+  summary is that with <small>INSERT-EXEC</small>, data does not go directly to the target table but bounces over a "parameter table",
+  which incurs some overhead. Then again, if your target table is a temp table, and you put the <small>INSERT</small> inside the dynamic <small>SQL</small>, you
+may face a performance issue because of recompilation.</p>
+<p>Occasionally, I see people who use <small>INSERT-EXEC</small> to get back scalar values from their dynamic <small>SQL</small> statement, which they typically invoke with <small><span class="nowrap">EXEC()</span></small>. In this case, you should not use <small>INSERT-EXEC</small> at all, but instead use <b><a href="http://www.sommarskog.se/dynamic_sql.html#sp_executesql">sp_executesql</a></b>
+  which permits you to use <small>OUTPUT</small> parameters.<b> </b>Dynamic <small>SQL</small> is a complex topic, and if you are not acquainted
+  with it, I recommend you to read my article <a href="http://www.sommarskog.se/dynamic_sql.html"><i>The
+    Curse and Blessings of Dynamic <small>SQL</small></i></a>.</p>
+<h4>Conclusion</h4>
+<p><small>INSERT-EXEC</small> is simple to use, and if all you want to do is to grab a big result set from a stored procedure for further analysis ad hoc, it's alright.</p>
+<p>But you should be very restrictive to use it in application code. Only use it when rewriting the procedure you are calling is completely out of the question. That is, the procedure is not part of your application: a system stored procedure or part of a third-party product. And in this case, you should make it a routine to always test your code before you take a new version of the other product in use.</p>
+<h2><a name="CLR">Using the CLR</a></h2>
+<p>If <small>INSERT-EXEC</small> shines in its simplicity, using the <small>CLR</small> is complex and bulky. It is not likely to be
+your first choice, and nor should it. However, if you are in the situation that you cannot change the callee, and  nor it possible for you to use <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a> because of any of its limitations, the <small>CLR</small> can be your last resort. </p>
+<p>As a recap, here are the main situations where <a href="#INSERTEXEC"> <small>INSERT-EXEC</small></a> fails you, and you would want to turn to the <small>CLR</small>:</p>
+<ul>
+  <li>The called procedure returns several result sets with different
+    structures. This is true for many system procedures in <small>SQL</small> Server.</li>
+  <li>The called procedure cannot be called within an active transaction. See
+    the final note in this section for an example.</li>
+  <li>The called procedure already uses <a href="#INSERTEXEC"> <small>INSERT-EXEC</small></a>.</li>
+  <li>The called procedure accesses a linked server, and you cannot get the distributed transaction to work.</li>
+</ul>
+<p>The <small>CLR</small> has one more advantage over <small>INSERT-EXEC</small>: it is less sensitive to
+  changes in the procedure you call. If a column is added to the
+  result set of the procedure, your <small>CLR</small> procedure will not break. </p>
+<p>The idea as such is simple: you write a stored procedure in a <small>CLR</small> language like C# or
+  <small>VB .NET</small> that runs the callee and captures the result set(s) into a <b>DataSet</b> object.
+  Then you write the data from the DataSet back to the table where you want the
+data. While simple, you need to write some code.</p>
+<p>Let's have a look at an example. When you call the system procedure <b>sp_helpdb</b>
+  for a specific database, it produces two result sets, of which the second result set
+  lists the files for the database. Say that you want to gather this output for
+  all databases on the server. You cannot use <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a>
+  due to the multiple result sets. To address this issue, I wrote a stored
+  procedure in C# that you find in the file
+  <a target="_blank" href="http://www.sommarskog.se/sharedata/helpdb.cs" type="text/plain"><b>helpdb.cs</b></a>.
+  In the script
+  <a target="_blank" type="text/plain" href="http://www.sommarskog.se/sharedata/helpdb.sql"><b>helpdb.sql</b></a>
+  you can see how I employ it. The C# procedure first runs <b>sp_helpdb</b> with the
+  <b>DataAdapter.Fill</b> method to get the data into a DataSet. It then iterates over
+  the rows in the second <b>DataTable</b> in the DataSet and inserts these into the temp
+table created by the <small>SQL</small> script.</p>
+<p>On <small>SQL</small> 2008 it is possible to simplify the solution somewhat with help of a <a href="#tableparam">table-valued parameter</a>. I've written a
+  second version of the <b>helpdb</b> procedure, available in the file
+  <a target="_blank" type="text/plain" href="http://www.sommarskog.se/sharedata/helpdb-2008.cs">
+  <b>helpdb-2008.cs</b></a>, where I simply pass the DataTable to the <small>INSERT</small> statement with a <small>TVP</small> and insert all rows in
+  one go. To achieve this, I need to create a table type.
+I like to highlight two more things in <b>helpdb-2008</b>:</p>
+<ul>
+   <li>Since I want the database name in the final output, I pass this as a
+   separate parameter to the <small>INSERT</small> statement, as it is not included in the
+   DataTable.</li>
+   <li>The first column from <b>sp_helpdb</b> is called <b>name</b>, and in the temp table
+     I've changed that to <b>logicalname</b> to make the final output clearer. However, in the table
+     type the column is called <b>name</b>, since it must match the names in the
+   DataTable which gets its names from the output of <b>sp_helpdb</b>.</li>
+</ul>
+<p>Undoubtedly, this solution requires more work. You need to write more code than with most other methods, and you get an assembly that you must somehow deploy. If you already are using the <small>CLR</small> in your database, you probably already have routines for dealing with assemblies. But if you are not, that first assembly you add to the database is quite of a step to take. A further complication is that the <small>CLR</small> in <small>SQL</small> Server is disabled by default. To enabled it, you (or the <small>DBA</small>) need to run:</p>
+<pre>EXEC sp_configure 'clr enabled', 1
+RECONFIGURE</pre>
+<p>Another issue is that this solution goes against best practices for using the <small>CLR</small> in <small>SQL</small> Server. First of all, data access from the <small>CLR</small> should be avoided, simply because <small>T‑SQL</small> is better equipped for this. But here we are talking about situations where we need to circumvent limitations in <small>T‑SQL</small>. Another violation of best practice is the use of the DataAdapter, DataTable and DataSet classes. This is something to be avoided, because it means that you have data in memory in <small>SQL</small> Server outside the buffer pool. Of course, a few megabytes is not an issue, but if you would read several gigabytes of data into a DataSet, this could have quite nasty effects for the stability of the entire <small>SQL</small> Server process.</p>
+<p>The alternative is to use a plain <b>ExecuteReader</b> and insert the rows as they come, possibly buffering them in small sets of say 500 rows to improve performance. This is certainly a viable solution, but it makes deployment even more difficult. To wit, you cannot perform the <small>INSERT</small> statements on the context connection while the DataReader is running, so you would need to open a second connection and this requires that the assembly has the permission <small>EXTERNAL_ACCESS</small>. So for  practical purposes, you would only go this road, if you are anxious that you will read too much data than what is defensible for a DataSet.</p>
+<p class="note"><b>Note</b>: Initially, I got this idea when <small>SQL</small> Server <small>MVP</small> Steve Jones tried to run
+  <small>DBCC SHRINKDATABASE</small> from <small>INSERT-EXEC</small> to 
+  capture the result set that <small>SHRINKDATABASE</small>
+  produces. However, this command cannot be run inside a transaction, so that did not
+  work out. I suggested to him that the <small>CLR</small> could work, and when I tested it I
+  found that it did ... on <small>SQL</small> 2008 only. On <small>SQL</small> 2005, my process was killed
+  with an access violation (which means a bug in <small>SQL</small> Server), so in this particular case not
+even the last resort worked.</p>
+<h2><a name="OPENQUERY">OPENQUERY</a></h2>
+<h4>Introduction</h4>
+<p>Just like <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a> this is a method where you can use the called stored procedure as-is. The purpose of <small>OPENQUERY</small> and its cousin <small>OPENROWSET</small> is to
+   permit you to run pass-through queries on linked servers. It can be very
+useful, not the least if you want to join multiple tables on the remote server and want to be sure that the join is evaluated remotely. Instead of accessing a remote server, you can make a loopback connection to your own server, so you can to say
+things like:</p>
+<pre>SELECT * FROM OPENQUERY(LOCALSERVER, 'EXEC sp_who') WHERE status = 'runnable'</pre>
+<p>If you want to create a table from the output of a stored procedure with <small>SELECT INTO</small> to save typing, this is the only method in the article that fits the bill.
+</p>
+<p>So far, <small>OPENQUERY</small> looks very simple, but as this chapter moves on you will learn that <small>OPENQUERY</small> can be very difficult to use. Moreover, it is not aimed at improving performance. It may save you from rewriting your stored procedure, but most likely you will have to put in more work overall – and in the end you get a poorer solution. While I'm not enthusiastic over <small>INSERT-EXEC</small>, it is still a far better choice than <small>OPENQUERY</small>.</p>
+<h4>Setup</h4>
+<p>In the example, <small>LOCALSERVER</small> may look like a keyword, but it is only name. This is how you define it:</p>
+<pre>EXEC sp_addlinkedserver @server = 'LOCALSERVER',  @srvproduct = '',
+                        @provider = 'SQLOLEDB', @datasrc = @@servername</pre>
+<p>To create a linked server, you must have the permission <small>ALTER ANY SERVER</small>, or 
+  be a member of any of the fixed server roles <b>sysadmin</b> or <b>setupadmin</b>. Instead of <small>SQLOLEDB</small>, you can specify <small>SQLNCLI</small>, <small>SQLNCLI10</small> or <small>SQLNCLI11</small> depending on your version of <small>SQL</small> Server. <small>SQL</small> Server seems to use the most recent version of the provider anyway.</p>
+<h4>Implications of Using a Loopback Connection</h4>
+<p>It's important to understand that <small>OPENQUERY</small> opens a new connection to <small>SQL</small> Server. This has some implications:</p>
+<ul>
+  <li>The procedure that you call with <small>OPENQUERY</small> cannot refer temp tables
+    created in the current connection.</li>
+  <li>The new connection has its own default database (defined with <b>sp_addlinkedserver</b>, default is <i>master</i>), so all object
+    specifications must include a database name. </li>
+  <li>If you have an open transaction and you are holding locks when you call <small>OPENQUERY</small>, the called procedure can not access what you lock. That is, if
+    you are not careful you will block yourself.</li>
+  <li>Connecting is not for free, so there is a performance penalty.</li>
+  <li>There is also a performance penalty for passing the data out from <small>SQL</small> Server and back. Even if there is no network involved, data is copied twice extra compared to a plain <small>SELECT</small> query. This can be costly if the result set is big.</li>
+</ul>
+<h4>ANSI Settings</h4>
+<p>The settings <small>ANSI_NULLS</small> and <small>ANSI_WARNINGS</small> must be <small>ON</small> for queries
+  involving linked servers. Thankfully, these setting are also on by default in most contexts. There are mainly two exceptions: 1) very old client APIs like DB-Library. 2) If you are still on <small>SQL</small> 2000, beware that if you create stored procedures from Enterprise Manager, they will be created with <small>ANSI_NULLS OFF</small>, and this is a setting that is saved with the procedure and overrides the setting for the connection. (If you use Query Analyzer to create your procedures, the issue does not arise.) It's not very likely that you will run into this issue, but if you see the error message</p>
+<pre class="errmsg">Msg 7405, Level 16, State 1, Line 1
+Heterogeneous queries require the ANSI_NULLS and ANSI_WARNINGS options 
+to be set for the connection. This ensures consistent query semantics. 
+Enable these options and then reissue your query.</pre>
+<p>you will need to investigate where the bad setting is coming from. </p>
+<h4>The Query Parameter</h4>
+<p>The second parameter to <small>OPENQUERY</small> is the query to run on the remote server, and you may expect to be able to use a variable here, but you cannot. The query string must be a constant, since <small>SQL</small> Server needs to be able to determine the shape of the result set at compile time. This means that you as soon your query has a parameter value, you need to use dynamic <small>SQL</small>. Here is how to implement BigSalesByStore with <small>OPENQUERY</small>:</p>
+<pre>CREATE FUNCTION quotestring(@str nvarchar(MAX)) RETURNS nvarchar(MAX) AS
+BEGIN
+   DECLARE @ret nvarchar(MAX),
+           @sq  char(1)
+   SELECT @sq = ''''
+   SELECT @ret = replace(@str, @sq, @sq + @sq)
+   RETURN(@sq + @ret + @sq)
+END
+go
+CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   SELECT t.title, s.qty
+   FROM   sales s
+   JOIN   titles t ON t.title_id = s.title_id
+   WHERE  s.stor_id = @storeid
+go
+CREATE PROCEDURE BigSalesByStore @storeid varchar(30),
+                                 @qty     smallint, 
+                                 @debug   bit = 0 AS
+   DECLARE @remotesql nvarchar(MAX),
+           @localsql  nvarchar(MAX)
+   SELECT @remotesql = 'EXEC ' + quotename(db_name()) + '.dbo.SalesByStore ' +
+                                 dbo.quotestring(@storeid)
+   SELECT @localsql = 'SELECT * FROM OPENQUERY(LOCALSERVER, ' + 
+                       dbo.quotestring(@remotesql) + ') WHERE qty &gt;= @qty'
+   IF @debug = 1 PRINT @localsql
+   EXEC sp_executesql @localsql, N'@qty smallint', @qty
+go
+EXEC SalesByStore '7131'
+EXEC BigSalesByStore '7131', 25, 1
+go
+DROP PROCEDURE BigSalesByStore, SalesByStore
+DROP FUNCTION quotestring</pre>
+<p>What initially seemed simple to use, is no longer so simple. What I did not say above is there are <i>two </i> reasons why we need dynamic <small>SQL</small> here. Beside the parameter <b>@storeid,</b> there is also the database name. Since <small>OPENQUERY</small> opens a loopback connection, the <small>EXEC</small> statement must include the database name. Yes, you could hardcode the name, but sooner or later that will bite you, if nothing else the day you want to restore a copy of your database on the same server for test purposes. From this follows that in practice, there are not many situations in application code where you can use <small>OPENQUERY</small> without having to use dynamic <small>SQL</small>.</p>
+<p>The code certainly requires some explanation. The function <b>quotestring</b> is a helper, taken from my article on <a href="http://www.sommarskog.se/dynamic_sql.html#quotestring">dynamic <small>SQL</small></a>. It encloses a string in single quotes, and doubles any quotes within it to conform to the <small>T‑SQL</small> syntax. The problem with writing dynamic <small>SQL</small> which involves <small>OPENQUERY</small> is that you get at least three levels of nested strings, and if you try to do all at once, you will find yourself writing code which has up to eight consecutive single quotes that you or no one else can read. Therefore it is <i>essential</i> to approach the problem in a structured way like I do above. I first form the query on the remote server, and I use quotestring to embed the store id. Then I form the <small>SQL</small> string to execute locally, and again I use quotestring to embed the remote query. I could also have embedded <b>@qty</b> in the string, but I prefer to adhere to best practices and pass it as a parameter to the dynamic <small>SQL</small> string, As always when I use dynamic <small>SQL</small>, I include a <b>@debug</b> parameter, so that I can inspect the statement I've generated.</p>
+<p class="note"> <b>Note</b>: the example is written for <small>SQL</small> 2005 and later. If you are on <small>SQL</small> 2000, you need to replace all occurrences of <small>MAX</small> with 4000.</p>
+<h4>The Battle with FMTONLY ON</h4>
+<p>To be able to compile a query that includes 
+<small>OPENQUERY</small>, <small>SQL</small> Server must retrieve metadata from the linked server to determine the shape of the result set for the pass-through query.   <small>SQL</small> Server 
+  makes all connections to the linked server through <small>OLE DB</small>, and the way <small>OLE DB</small> 
+  determines metadata on <small>SQL</small> Server up to <small>SQL</small> 2008  is to run the command batch preceded by <small>SET FMTONLY ON</small>. 
+  When <small>FMTONLY</small> is <small>ON, SQL</small> 
+  Server does not execute any data-retrieving statements, but only sifts through the statements to return metadata about the 
+  result sets. <small>FMTONLY</small> can be a source for confusion in more than one way. One situation  is a procedure that creates a temp table: you will get an error message,
+since the table never gets created in <small>FMTONLY</small> mode. Here is one example:</p>
+<pre>SELECT * FROM OPENQUERY(LOCALSERVER, 'EXEC msdb..sp_helpindex sysjobs')</pre>
+<p>On <small>SQL</small> 2008, this results in:</p>
+<pre class="errmsg">Msg 208, Level 16, State 1, Procedure sp_helpindex, Line 104
+Invalid object name '#spindtab'.</pre>
+<p>(The actual error message is different on about every version of <small>SQL</small> Server.)</p>
+<p>This happens because the <small>CREATE TABLE</small> statement for the temp table is not executed. (Note that this is different for table variables. Since they are declared entities, they exist from the moment the procedure starts executing, <small>FMTONLY</small> or not.) Now when we know why this error occurs, we can spot a workaround:</p>
+<pre>SELECT * FROM OPENQUERY(LOCALSERVER,
+                        'SET FMTONLY OFF EXEC msdb..sp_helpindex sysjobs')</pre>
+<p>That is, we override the <small>FMTONLY ON</small> setting. But beware! This means that the procedure is  executed twice, so
+   there certainly is a performance cost. Moreover, if the procedure performs updating
+   actions, these are also performed twice which is likely to be the completely wrong thing
+to do. While I mention this trick here, I strongly recommend against using it, particularly in production code. This becomes even more emphasised with the release of <small>SQL</small> Server 2012: on <small>SQL</small> 2012, <small>SET FMTONLY OFF</small> has no effect at all! I will come back to why and what the alternatives are.</p>
+<p>If you absolutely want to use a stored procedure that uses a temp table, here is a different trick. This definitely counts as one of the most obscure pieces of <small>T‑SQL</small> I've ever come up with:</p>
+<pre>CREATE PROCEDURE temp_temp_trick AS
+   DECLARE @fmtonlyon int
+   SELECT @fmtonlyon = 0
+   IF 1 = 0 SELECT @fmtonlyon = 1
+   SET FMTONLY OFF
+   CREATE TABLE #temp(...)
+   IF @fmtonlyon = 1 SET FMTONLY ON
+   -- Rest of the code goes here.</pre>
+<p>The reason that this works is that when <small>FMTONLY</small> is in effect, <small>IF</small> conditions are not evaluated, but both branches of <small>IF ELSE</small> are "executed". And while queries and <small>CREATE TABLE</small> statements are not performed in <small>FMTONLY</small> mode, variable assignments are. This way we lure <small>SQL</small> Server to create the temp table at compile-time, but the full procedure is not executed. This trick is arguably better than putting <small>SET FMTONLY OFF</small> in the call to <small>OPENQUERY</small>. But it still does not work with <small>SQL</small> 2012, so it is nothing you should put in code that is supposed to live for a couple of years. And obviously, this is not an option, if you cannot change the procedure you are calling.</p>
+<p>Another common reason you get problems with <small>FMTONLY</small> is that the result set is produced in dynamic <small>SQL</small>. Again, this prevents <small>SQL</small> Server from determining the metadata. The famous, but undocumented, system stored procedure <b>sp_who2</b> uses dynamic <small>SQL</small> to size the columns of the result set. On <small>SQL</small> 2008 the query</p>
+<pre>SELECT * FROM OPENQUERY(LOCALSERVER, 'EXEC sp_who2')</pre>
+results in:
+<pre class="errmsg">Msg 7357, Level 16, State 2, Line 1
+Cannot process the object "EXEC sp_who2". The OLE DB provider "SQLNCLI10" 
+for linked server "LOCALSERVER" indicates that either the object has no columns 
+or the current user does not have permissions on that object.</pre>
+<p>Again, the workaround with <small>SET FMTONLY OFF</small> can be applied if you are on <small>SQL</small> 2008 or earlier. (Except that in this particular example it still does not work  on <small>SQL</small> 2005 and <small>SQL</small> 2008 because <b>sp_who2</b> returns two columns called <small>SPID</small>.) The same caveats apply: the procedure is executed twice, and it does not work on <small>SQL</small> 2012. So don't go there.</p>
+<h4>Metadata Retrieval in SQL 2012</h4>
+<p>In <small>SQL</small> 2012, Microsoft have scrapped <small>SET FMTONLY ON</small> which never did a good job; there are several other issues with it, that I have not covered here. Instead they  use the new stored procedure <b>sp_describe_first_result_set</b> which is a  more robust way to determine metadata, why the trick with <small>SET FMTONLY OFF</small> is no longer applicable. (To clarify: <small>SET FMTONLY ON</small> still works in <small>SQL</small> 2012 to support calls from legacy clients, and <small>SQL</small> 2012 also uses <small>SET FMTONLY ON</small> for linked servers running earlier versions of <small>SQL</small> Server. But for a loopback connection, <small>SQL</small> 2012 only uses sp_describe_first_result_set.)</p>
+<p>While this procedure avoids many of the problems with <small>SET FMTONLY ON</small>, you will still get an error if your procedure uses a temp table or dynamic <small>SQL</small>. The good news is that Microsoft now offers  a method to describe the result set. You can say:</p>
+<pre>SELECT * FROM OPENQUERY(LOCALSERVER, 
+              'EXEC msdb..sp_helpindex sysjobs
+               WITH RESULT SETS ((index_name        sysname,
+                                  index_description nvarchar(500),
+                                  index_keys        nvarchar(500)))')</pre>
+<p>That is, the new <small>WITH RESULT SETS</small> clause permits you to declare how the result set from the stored procedure looks like. <small>SQL</small> Server validates the actual result set against the description, and if there is an inconsistency, you will get an error. Pay attention to the syntax: the column list is enclosed in <i>two</i> pair of parentheses.</p>
+<p>Rather than specify a list of columns, you can also specify the name of a table, view, table-valued function or a table type. Please refer to the topic on <small>EXECUTE</small> in Books Online for full details on the <small>WITH RESULT SETS</small> clause. </p>
+<p>If you want to know how the result set from the stored procedure you are calling looks like, you can say:</p>
+<pre>EXEC sp_describe_first_result_set N'your_sp'</pre>
+<p>It has to be admitted that it takes some work to translate the output to a column list for <small>WITH RESULT SETS</small>. And obviously, if you wanted to use  <small>SELECT INTO</small> with <small>OPENQUERY</small> to save your from typing a <small>CREATE TABLE</small> statement, this was not what you wanted. </p>
+<h4>The Effect of DML Statements</h4>
+<p>Yet a problem with <small>OPENQUERY</small> is demonstrated by
+this script:</p>
+<pre>CREATE TABLE nisse (a int NOT NULL)
+go
+CREATE PROCEDURE silly_sp @x int AS
+   --SET NOCOUNT ON
+   INSERT nisse VALUES (@x)
+   SELECT @x * @@trancount
+   SELECT @x * 3
+go
+SELECT * FROM OPENQUERY(LOCALSERVER, 'EXEC tempdb.dbo.silly_sp 7')
+go
+SELECT * FROM nisse
+go</pre>
+<p>The script yields the same errors as for <b>sp_who2</b>, saying that there are no columns.
+The reason for this message is that the first "result set"  is the <i>
+rows affected</i>
+message generated by the <small>INSERT</small> statement, and this message lures <small>OPENQUERY</small> to think that there were no columns in the result set. Adding <small>SET NOCOUNT ON</small> to the procedure resolves this
+issue. You could also add <small>SET NOCOUNT ON</small> the command string you pass to <small>OPENQUERY</small>. (And in difference to tricking with <small>SET FMTONLY ON</small>, this is a perfectly valid thing to do.)</p>
+<h4>Implicit Transactions</h4>
+<p>When <small>SQL</small> Server executes the query 
+for real, the <small>OLE DB</small> provider first issues <small>SET IMPLICIT_TRANSACTIONS ON</small>. With this setting
+   <small>SQL</small> Server starts a transaction when an <small>INSERT, UPDATE</small> or <small>DELETE</small> statement is
+   executed. (This also applies to a few more statements, see Books Online for
+   details.) This can give some surprises. For instance, take the script above.
+Once <small>SET NOCOUNT ON</small> is in force, this is the output:</p>
+<pre>-----------
+          7
+
+(1 row(s) affected)
+
+a
+-----------
+
+(0 row(s) affected)</pre>
+<p>We get back '7' from the call to <b>silly_sp</b>, which indicates
+   that <b>@@trancount</b> is 1, and there is thus an open transaction, despite there
+   is no <small>BEGIN TRANSACTION</small> in the procedure. (We don't get the '21' that we get
+   when we execute <b>silly_sp</b> directly, because with <small>OPENQUERY</small>, we only get one
+   result set.) You also see that when we <small>SELECT</small> directly from <b>nisse </b>after
+   the call to <small>OPENQUERY</small>, that the table is empty. This is because the implicit
+   transaction was rolled back.</p>
+<h4>Final Words</h4>
+<p>As you have seen, at first <small>OPENQUERY</small> seems very simple to use, but the stakes  quickly gets higher. If you are still considering to use <small>OPENQUERY</small> after having read this section, I can only wish you good luck and I hope that you really understand what you are doing.  <small>OPENQUERY</small> was not intended for
+   accessing the local server, and you should think twice before you use
+it that way. </p>
+<h2><a name="XML">Using XML</a></h2>
+<h4>Introduction</h4>
+<p><small>XML</small> is a solution that aims at the same spot as <a href="#temptables">sharing a temp table</a> and <a href="#prockeyed">process-keyed tables</a>. That is, the realm of general solutions without restrictions, to the price of a little more work. While <small>SQL</small> 2000 has support for <small>XML</small>, if you want to use <small>XML</small> to pass data between stored procedures, you need to have at least <small>SQL</small> 2005.</p>
+<h4>Constructing the XML</h4>
+<p>We will look at a version of SalesByStore and BigSalesByStore which uses <small>XML</small>, but since this is a little too much to digest in one go, we first only look at SalesByStore_core to see how we construct the <small>XML</small>:</p>
+<pre>CREATE PROCEDURE SalesByStore_core @storeid varchar(30),
+                                   @xmldata xml OUTPUT AS
+   SET @xmldata = (
+      SELECT t.title, s.qty
+      FROM   sales s
+      JOIN   titles t ON t.title_id = s.title_id
+      WHERE  s.stor_id = @storeid
+      FOR XML RAW('SalesByStore'), TYPE)
+go</pre>
+<p> In the previous version of SalesByStore_core, we stored the data from the result in a temp table. Here we use <small>FOR XML RAW</small> to generate an  <small>XML</small> document that we save to the output parameter <b>@xmldata</b>.</p>
+<p>This is how the resulting <small>XML</small> document may look like:</p>
+<pre>&lt;SalesByStore title="Is Anger the Enemy?" qty="20" /&gt;
+&lt;SalesByStore title="The Gourmet Microwave" qty="25" /&gt;
+&lt;SalesByStore title="Computer Phobic AND Non-Phobic Individuals: Behavior Variations" qty="20" /&gt;
+&lt;SalesByStore title="Life Without Fear" qty="25" /&gt;
+&lt;SalesByStore title="Prolonged Data Deprivation: Four Case Studies" qty="15" /&gt;
+&lt;SalesByStore title="Emotional Security: A New Algorithm" qty="25" /&gt; </pre>
+<p><small>FOR XML</small> has three more options beside <small>RAW: AUTO, ELEMENTS</small> and <small>PATH</small>, but for our purposes here, <small>RAW</small> is the simplest to use. You don't have to specify a name for the elements; the default in this case will be <b>row</b>, but I would suggest that using a name is good for clarity.</p>
+<p>The keyword <small>TYPE</small> ensures that the return type of the <small>SELECT</small> query is the <b>xml</b> data type; without <small>TYPE</small> the type would be <b>nvarchar(<small>MAX</small>)</b>. <small>TYPE</small> is not needed here, since there will be an implicit conversion to <b>xml</b> anyway, but it can be considered good practice to include it. Except... there is a <a href="https://connect.microsoft.com/SQLServer/feedback/details/594968/xml-created-from-for-xml-path-type-may-lead-to-bad-performance">bug</a> in <small>SQL</small> 2008 which makes <small>XML</small> documents created with <small>TYPE</small> to be less efficient.</p>
+<h4>Converting the XML Data Back to Tabular Format</h4>
+<p>Since SalesByStore should work like it did originally, it has to convert the data back to tabular format, a process known as <i>shredding</i>. Here is how the <small>XML</small> version looks like:</p>
+<pre>CREATE PROCEDURE SalesByStore @storeid varchar(30) AS
+   DECLARE @xmldata xml
+   EXEC SalesByStore_core @storeid, @xmldata OUTPUT
+
+   SELECT T.c.value('@title', 'varchar(80)') AS title,
+          T.c.value('@qty',   'smallint') AS qty
+   FROM @xmldata.nodes('SalesByStore') AS T(c) 
+go</pre>
+<p>To shred the document, we use two of the <b>xml</b> type methods. The first is <b>nodes</b> which shreds the documents into fragments of a single element. That is, this part:</p>
+<pre>FROM  @xmldata.nodes('SalesByStore') AS T(c)</pre>
+<p>The part <b>T(c)</b> defines as alias for the one-column table as well as an alias for the column. To get the values out of the fragments, we use another <b>xml</b> type 
+  method, <b>value</b>, to get the individual values out of the fragment. The <b>value</b> method 
+  takes two arguments whereof the first addresses the value we want to extract, and the 
+  second specifies the data type. The first parameter is a fairly complex story, but as 
+  long as you follow the example above, you don't really need to know any more. Just keep in mind that you must put an @ before the attribute names, else you would be addressing an element. In the <a href="http://www.sommarskog.se/arrays-in-sql-2005.html#XML"><small>XML</small></a> section of my article <i>Arrays 
+    and Lists in <small>SQL</small> Server 2005 and Beyond</i>, I have some more information about <b>nodes</b> and <b>value</b>.</p>
+<p>To make the example complete, here is  the <small>XML</small> version of BigSalesByStore. To avoid having to repeat the call to <b>value</b> in the <small>WHERE</small> clause, I use a <small>CTE</small> (Common Table Expression).</p>
+<pre>CREATE PROCEDURE BigSalesByStore @storeid varchar(30),
+                                 @qty     smallint AS
+   DECLARE @xmldata xml
+   EXEC SalesByStore_core @storeid, @xmldata OUTPUT
+   
+   ; WITH SalesByStore AS (
+      SELECT T.c.value('@title', 'varchar(80)') AS title,
+             T.c.value('@qty',   'smallint') AS qty
+      FROM  @xmldata.nodes('SalesByStore') AS T(c) 
+   )
+   SELECT title, qty
+   FROM   SalesByStore   
+   WHERE  qty &gt;= @qty
+go</pre>
+<h4>Input and Output</h4>
+<p>In this is example the <small>XML</small> document is output-only, but it's easy to see that the same method can be used for input-only scenarios. The caller builds the <small>XML</small> document and the callee shreds it back to a table.</p>
+<p>What about input-output scenarios like the procedure <a href="#prockeyed">ComputeTotalStoreQty</a>? One possibility is of course that the callee shreds the data into a temp table, performs its operation, and converts the data back to <small>XML</small>. A second alternative is that the callee modifies the <small>XML</small> directly using the <b>xml</b> type method <b>modify</b>. I will  spare you from an example of this, however, as it unlikely that you would try it, unless you already are proficient   in XQuery. A better alternative may be to mix methods: use a table-valued parameter for input and only use <small>XML</small> for output.</p>
+<h4>Parent-child Data</h4>
+<p>The result set in the example is from a single table, but what if we have some form of parent/child-relationship? 
+  Say that we want to return the name of all authors, as well as all the titles they have written. With <a href="#temptables">temp tables</a> or
+  <a href="#prockeyed">process-keyed tables</a>, the natural solution would be to 
+  use two tables (or actually three, since in <i>pubs</i> there is a many-to-many 
+  relationship between titles and authors, but I overlook this here.) But since 
+  <small>XML</small> is hierarchical, it would be more natural to put everything in a single <small>XML</small> 
+  document, and here is a query to do this:</p>
+<pre>SELECT a.au_id  ,  
+       a.au_lname, 
+       a.au_fname ,
+       (SELECT t.title 
+        FROM   pubs..titleauthor ta  
+        JOIN   pubs..titles t ON t.title_id = ta.title_id
+        WHERE  a.au_id = ta.au_id
+        FOR  XML RAW('titles'), TYPE)
+FROM   pubs..authors a
+FOR XML RAW('authors'), TYPE</pre>
+<p>
+Rather than a regular join query, I use a subquery for the titles, because I 
+only want one node per author with all titles. With a join, I get one author 
+node for each title, so that authors with many books appear in multiple nodes. 
+The subquery uses <small>FOR XML</small> to create a nested <small>XML</small> document, and 
+this time the 
+<small>TYPE</small> option is mandatory, since without it the nested <small>XML</small> data would be included as a plain string.</p>
+<p>
+  To retrieve the 
+titles from the <small>XML</small> document, you could use this query:</p>
+<pre>SELECT au_id = A.item.value('@au_id', 'varchar(11)'),
+       title = T.item.value('@title', 'varchar(80)')
+FROM   @x.nodes('/authors') AS A(item) 
+CROSS  APPLY A.item.nodes('titles') AS T(item)</pre>
+<p>The first call to <b>nodes</b> gives you a fragment per <b>authors</b> node, and then you use <small>CROSS APPLY</small> to dig down to the <b>titles</b> node. For a little longer discussion on this way of shredding a hierarchical <small>XML</small> document, see  the <a href="http://www.sommarskog.se/arrays-in-sql-2005.html#XML"><small>XML</small></a> section of my article <i>Arrays 
+and Lists in <small>SQL</small> Server 2005 and Beyond</i>.</p>
+<h4>Assessing the Method</h4>
+<p>So far the technique to use this method. Let's now  assess it. If you have never worked with <small>XML</small> in <small>SQL</small> Server, you are probably saying to yourself <i>I will never use <b>that!</b></i>. And one can hardly blame you. This method is like pushing the table camel through the needles eye of the parameter list of a stored procedure. Personally, I think the method spells k-l-u-d-g-e. But it's certainly a matter of opinion. I got a mail from David Walker, and he 
+went as far as saying this is the <i>only</i> method that really works. </p>
+<p>And, that cannot be denied, there are certainly advantages with <small>XML</small> over about all the other methods I have presented here. It is less contrived than using the <a href="#CLR"><small>CLR</small></a>, and it is definitely a better option than <a href="#OPENQUERY"><small>OPENQUERY</small></a>. You are not caught up with 
+the limitations of <a href="#UDF">table-valued functions</a>. Nor do you have any of the issues with <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a>. Compared to 
+  <a href="#temptables">temp tables</a> and <a href="#prockeyed">process-keyed tables</a>, you don't have to be worried about recompilation or that programmers fail to clean up a process-keyed table after use. </p>
+<p>
+  When it comes to performance, you get some cost for building the <small>XML</small> document 
+and shredding it shortly thereafter. Then again, as long as the amount of data is small, say less than 200 KB, the data will stay in memory and there is no logging involved like when you use a table of any sort. Larger <small>XML</small> documents will spill to disk, though. A general caveat is that inappropriate addressing in a large <small>XML</small> 
+document can be a real performance killer, so if you expect large amounts of data, you have to be careful. (And these issues can appear with sizes  below 200 KB.)</p>
+<p>Besides the daunting complexity, there are  downsides with <small>XML</small> from a robustness perspective. <small>XML</small> is more sensitive to errors. If you make 
+  a spelling mistake in the first argument to <b>value</b>, you will silently get <small>NULL</small> 
+back, and no error message. Likewise, if you get the argument to <b>nodes</b> 
+  wrong, you will simply get no rows back. The same problem arises if you change a 
+  column alias or a node name in the <small>FOR XML</small> query, and forget to update a caller. When you use a process-keyed table or a temp 
+table you will get an error message at some point, either at compile-time or at run-time. </p>
+<p>Another weak point is that you have to specify the data type for each column in the call to <b>value</b>, inviting you to make the mistake to use different data types for the same value in different procedures. This mistake is certainly possible when use temp tables as well, although copy-and-paste are easier to apply on the latter. With a process-keyed table it cannot happen at all.</p>
+<p>One thing I like with tables is that they give you a  description of the data you are passing around; this is not the least important when many procedures are using the same process-keyed table. This is more difficult to achieve with <small>XML</small>. You could use schema collections for the  task, but you will not find very many <small>SQL</small> Server DBAs who speak <small>XSD</small> fluently. Also, schema-bound <small>XML</small> tends to incur a performance penalty in <small>SQL</small> Server.</p>
+<p>For these reasons, I feel that using a temp table or a process-keyed table are better choices than <small>XML</small>. And while I find <small>XML</small> an overall better method than <small>INSERT-EXEC</small> or <small>OPENQUERY</small>, these methods have the advantage that you don't have to change the callee. So that kind of leaves <small>XML</small> in nowhere land. But as they say, your mileage may vary. If you feel that <small>XML</small> is your thing, go for it!</p>
+<h2><a name="cursor">Using Cursor Variables</a></h2>
+<p>This method was suggested to me by Peter Radocchia. Cursor variables were
+   introduced in <small>SQL</small> 7, but I suspect that many <small>SQL</small> developers are at most only
+   dimly aware of their existence. I never use them myself. Here is an example
+of how you use them to bring the result set from one procedure to another:</p>
+<pre>CREATE PROCEDURE get_cursor @cursor CURSOR VARYING OUTPUT AS
+   SET @cursor = CURSOR STATIC FOR
+   SELECT au_id, au_lname, au_fname FROM pubs..authors
+   OPEN @cursor
+go
+CREATE PROCEDURE caller AS
+   DECLARE @cursor CURSOR
+   DECLARE @au_id char(11),
+           @au_fname varchar(40),
+           @au_lname varchar(40)
+   SET NOCOUNT ON
+   EXEC get_cursor @cursor OUTPUT
+   WHILE 1 = 1
+   BEGIN
+      FETCH NEXT FROM @cursor into @au_id, @au_lname, @au_fname
+      IF @@fetch_status &lt;&gt; 0
+         BREAK
+      PRINT 'Au_id: ' + @au_id + ', name: ' + @au_fname + ' ' + @au_lname
+   END
+   DEALLOCATE @cursor
+go
+EXEC caller
+go
+DROP PROCEDURE caller, get_cursor</pre>
+<p>Note that the cursor is <small>STATIC</small>. Static cursors are much preferable   over dynamic cursors, the default cursor type, since the latter essentially evaluates the query for every <small>FETCH</small>. When you use a static cursor, the result set of the <small>SELECT</small> statement is saved into a temp table, from where <small>FETCH</small> retrieves the data.</p>
+<p>I will have to admit that I see little reason to use this method. Just like
+   <small>INSERT-EXEC</small>, this method requires an exact match between the caller and the
+   callee for the column list. And since data is processed row by row,
+   performance is likely to take a serious toll if there are any volumes. </p>
+<h2><a name="linkedservers">The Challenges of Linked Servers</a></h2>
+<p>If your procedures are on different servers, the level of difficulty rises steeply. There are many restrictions with linked servers, and several of the methods I have presented cannot be used at all. Ironically, some of the methods that I have discouraged you from, suddenly step up as the better alternatives. One reason for this is that with linked servers, things are difficult anyway.</p>
+<p>It is somewhat easier to retrieve data from a procedure on a linked server than passing data to it, so let's look at output first. If you have an input-output scenario, you should probably look into mixing methods.</p>
+<h3>Output</h3>
+<p>If all you want to do is to get data back, these methods works:</p>
+<p><a href="#OUTPUT"><small>OUTPUT</small> parameters</a> – but only for data types that
+are 8000 bytes or less. That is, you cannot retrieve the value of output parameters that are <b>
+<span class="nowrap">varchar(<small>MAX</small>)</span></b> etc.</p>
+<p><a href="#INSERTEXEC"><small>INSERT-EXEC</small></a> – <small>INSERT-EXEC</small> works fine with linked servers. Actually even better than with local procedures, since if the procedure you call uses <small>INSERT-EXEC</small>, this will not matter. The only restriction is that the result set must not include types that are not supported in distributed queries, for instance <b>xml</b>. (<b><span class="nowrap">(n)varchar(<small>MAX</small>)</span></b> is OK.) The fact that <small>INSERT-EXEC</small> starts a transaction can cause a real nightmare, since the transaction now will be a distributed transaction and this requires that you configure <small>MSDTC</small> (Microsoft Distributed Transaction Coordinator) correctly. If both servers are in the same domain, it often works out of the box. If they are not, for instance because you only have a workgroup, it may be impossible (at least I have not been able to). On <small>SQL</small> 2008 and later, you may be able to escape the problem by setting the option <b>remote proc transaction promotion</b> for the linked server to <b>false</b>. (Note that this affects all uses of the linked server, and there may be situations where a distributed transaction is desirable.)</p>
+<p><a href="#OPENQUERY"><small>OPENQUERY</small></a> – since <small>OPENQUERY</small> is a feature for linked
+servers in the first place, there is no difference to what I discussed above. It is still difficult with lots of pitfalls, but the land of linked servers is overall difficult. Nevertheless, <small>INSERT-EXEC</small> will in many cases be simpler to use. But with <small>OPENQUERY</small> you don't have to bounce the remote data over a table, and if result set of the remote procedure is extended with more columns, your code will not break.</p>
+<p><a href="#CLR">Using the <small>CLR</small></a> – Using the <small>CLR</small> for linked servers is interesting, because the normal step would be to connect to the remote server directly, and bypass the local definition of linked servers – and thereby bypass all restrictions with regards to data types. When you make a connection to a remote server through the <small>CLR</small>, the default is enlist into the current transaction, which means that you have to battle <small>MSDTC</small>. However, you can easily escape this battle by adding <code>enlist=false</code> in the connection string to the remote server. This works on all versions of <small>SQL</small> Server from <small>SQL</small> 2005 and on. When using the <small>CLR</small> to access a remote server, there are no obstacles with using <b>ExecuteReader</b> and store the data into a local table as they come, since you are using two different connections. For a <small>CLR</small> procedure to be able to access a remote server, the assembly must be installed with the permission <small>EXTERNAL_ACCESS</small>.</p>
+<p><a href="#XML"><small>XML</small></a> – You cannot use the <b>xml</b> data type in a call to a remote stored procedure. However, you can make the <small>OUTPUT</small> parameter to be <b><span class="nowrap">varchar(8000)</span></b> and return the <small>XML</small> document that way – if it fits. </p>
+<p>The other methods do not work, and that includes user-defined functions.
+You cannot call a user-defined function on a linked server.</p>
+<h3>Input</h3>
+<p>If you want to pass a large amount of data for input over a linked server, there are
+three possibilities. Or three kludges if you like.</p>
+<p><a href="#XML"><small>XML</small></a> might be the easiest. The <b>xml</b> data type is not supported in calls to remote procedures, so you need to convert the <small>XML</small> document to 
+<b><span class="nowrap">nvarchar(<small>MAX</small>)</span></b> or <b><span class="nowrap">varbinary(<small>MAX</small>)</span></b>. The parameter on the other side
+can still be <b>xml</b>. </p>
+<p>You cannot pass a table-valued parameter to a remote stored procedure. But you could have a <small>CLR</small> stored procedure that connects to the remote server and passes the <small>TVP</small> directly; as noted above, the assembly needs to have the permission <small>EXTERNAL_ACCESS</small>. You cannot pass a <small>TVP</small> to a <small>CLR</small> stored procedure from <small>T‑SQL</small>, so  you would either have to pass the data as <small>XML</small> to the <small>CLR</small> procedure, or the <small>CLR</small> procedure would have read the data from a (temp) table.</p>
+<p>The last alternative is really messy. The caller stores the data in a
+  <a href="#prockeyed">process-keyed table</a> locally and then calls the remote
+  procedure, passing the process-key. The remote procedure then calls back to the
+  first server and either selects directly from the process-keyed table, or calls a
+procedure on the source server with <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a>. For an input-output scenario, the callee could write data back directly to the process-keyed table.</p>
+<h2><a name="Feedback">Acknowledgments and Feedback</a></h2>
+<p>The issue about using <small>SET FMTONLY ON</small> is something that I learnt from Umachandar Jayachandran
+   at Microsoft. <small>SQL</small> Server <small>MVP</small> Tony Rogerson pointed out
+that a process-keyed table should have a clustered index on the process key. Simon Hayes suggested some clarifications.
+   Peter Radocchia suggested the <a href="#cursor">cursor</a> method. Richard <span class="nowrap">St-Aubin</span> and Wayne Bloss both suggested interesting approaches when <a href="#temptables">sharing temp tables</a>.
+Thanks
+to <small>SQL</small> Server <small>MVP</small> Iztik Ben-Gan for making me aware of global temp tables and
+start-up procedures. Sankar Reddy pointed out to me that my original suggestion
+for <small>XML</small> as a solution for linked servers was flawed. Greg Borota pointed out that 
+an old
+leftover from <small>SQL</small> 2000 still was in the text. <small>SQL</small> Server <small>MVP</small> Adam Machanic made some
+interesting revelations about <small>INSERT-EXEC</small> with dynamic <small>SQL</small>. 
+David Walker encouraged me to write more in depth on <small>XML</small>, 
+and <small>SQL</small> Server <small>MVP</small> 
+Denis Gobo gave me a tip on that part. Jay Michael pointed out an error in the section on table parameters.</p>
+<p>If you have suggestions for improvements, corrections on topic, language or
+  formatting, please mail me at <a href="mailto:esquel@sommarskog.se">
+  esquel@sommarskog.se</a>. If you have technical questions that any knowledgeable
+person could answer, I encourage you to post to the <a href="http://social.msdn.microsoft.com/Forums/en-US/transactsql/threads">Transact-<small>SQL</small> forum</a> on <small>MSDN</small>/Technet or any other <small>SQL</small> forum you frequent.</p>
+<h2><a name="revisions">Revision History</a></h2>
+<p><b>2013-11-02</b> – Added a subsection about process-keyed tables how they could be implemented with <a href="#Hekaton">non-durable Hekaton tables</a> in SQL 2014.</p>
+<p><b>2013-03-24</b> – Modified the subsection <i><a href="#MaintenanceProblem">A Maintenance Problem</a></i> to include a good suggestion from Wayne Bloss about using a table type as the base for a shared temp table.</p>
+<p><b>2012-07-18</b> – There were a few errors and mumblings in the paragraph about using the <small>CLR</small> for <a href="#linkedservers">linked servers</a> that I have corrected. Particularly I incorrectly said that you would not be enlisted in any transaction unless you specify this. The reverse applies: by default you are enlisted, but you can include <code>enlist=true</code> to the connection string.</p>
+<p><b>2012-05-11</b> – Added a <a href="#SSDT">note</a> about <small>SQL</small> Server Data Tools (<small>SSDT</small>) and sharing temp tables.</p>
+<p><b>2011-12-31</b> – I have performed a general overhaul of the article in hope to make things clearer. Particularly, there are now more complete examples for the various techniques. In terms of new technical content I have updated the article for <small>SQL</small> 2012, which mainly affects <a href="#OPENQUERY"><small>OPENQUERY</small></a>, since the trick with <small>SET FMTONLY OFF</small> does not work on <small>SQL</small> 2012. I have also expanded the closing chapter on <a href="#linkedservers">linked servers</a> a bit. </p>
+<p><b>2010-01-10</b> – Extended the <a href="#XML"><small>XML</small></a> section with more 
+  examples and a deeper discussions on pros and cons. Updated the section
+  <a href="#tableparam">table parameters</a> for the fact that <small>SQL</small> 2008 is no 
+  longer in beta, and fixed error in code sample. Modified the section on
+  <a href="#OPENQUERY"><small>OPENQUERY</small></a> to explain why <small>FMTONLY ON</small> exists more 
+  accurately.</p>
+<p><b>2009-06-29</b> – Added a brief discussion on performance about <small>INSERT-EXEC</small> with dynamic <small>SQL</small>, and a reference
+to a <a href="http://sqlblog.com/blogs/adam_machanic/archive/2009/06/25/the-hidden-costs-of-in">blog post</a> from <small>SQL</small>
+Server <small>MVP</small> Adam Machanic.</p>
+<p><b>2009-05-18</b> – The section on <small>INSERT-EXEC</small> said that it does not work with table variables, which is right
+on <small>SQL</small> 2000 only.</p>
+<p><b>2008-08-16</b> – Added a trick for <a href="#temptables">sharing temp tables</a>, suggested by Richard St-Aubin.</p>
+<p><b>2008-06-06</b> – Added a section on <a href="#linkedservers">linked
+servers</a>, and removed the note on linked servers in the <a href="#OPENQUERY">
+<small>XML</small></a> section, since it was not very accurate.</p>
+<p><b>2008-03-03</b> – Added a section on how could use the <a href="#CLR"><small>CLR</small></a>
+when <a href="#INSERTEXEC"><small>INSERT-EXEC</small></a> fails you.
+Reviewed the section on <a href="#XML"><small>XML</small></a> anew, pointing out that it's
+useful when working with linked servers.</p>
+<p><b>2007-09-23</b> – Added sections on <a href="#globaltemp">global temp tables</a> and
+<a href="#tableparam">table
+parameters</a>. Reviewed the section on <small><a href="#XML">XML</a></small>.</p>
+<p><b>2005-12-19</b> – Article revised to cover <small>SQL</small> 2005, and added
+   section on cursor variables.</p>
+<p><b>2005-03-27</b> – Various minor clarifications on suggestion from Simon
+   Hayes. The bug about <small>INSERT-EXEC</small> and <small>IMPLICIT_TRANSACTIONS</small> is now fixed in
+   <small>SQL</small> 2000 SP4 and <small>SQL</small> 2005.</p>
+<p align="right"><a href="http://www.sommarskog.se/index.html">Back to my home page</a>.</p>
+
+
+<div class=" lleo_show" id="lleo_enjoyContentControls">
+    <div id="lleo_enjoyContentPanel">
+        <label id="lleo_enjoyContentLabel"><input id="lleo_enjoyContentCheckbox" checked="checked" type="checkbox">Show this icon if possible</label>
+    </div>
+    <div id="lleo_enjoyContentButton" title="Enjoy Content!"></div>
+</div></body></html>
