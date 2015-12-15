@@ -6,6 +6,7 @@ Headers:
  - [Web resource](#web-resource)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
+ - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL format code](#tsql-format-code)
  - [Free SQL Server ebooks](#free-sql-server-ebooks)
@@ -109,6 +110,12 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
+
+
+## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
+ - [Transact-SQL Join Hints](https://msdn.microsoft.com/en-us/library/ms173815.aspx)
+ - [Transact-SQL Table Hints](https://msdn.microsoft.com/en-us/library/ms187373.aspx)
+ - [Transact-SQL Query Hints](https://msdn.microsoft.com/en-us/library/ms181714.aspx)
 
 
 ## PowerShell and SQL Server
