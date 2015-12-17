@@ -17,3 +17,9 @@ Source link: http://www.sommarskog.se/query-plan-mysteries.html
 
 Author: Erland Sommarskog<br />
 Source link: http://www.sommarskog.se/share_data.html
+
+
+## [Arrays and Lists in SQL Server 2008](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Arrays%20and%20Lists%20in%20SQL%20Server%202008.htm)
+
+Author: Erland Sommarskog<br />
+Source link: http://www.sommarskog.se/arrays-in-sql-2008.html
