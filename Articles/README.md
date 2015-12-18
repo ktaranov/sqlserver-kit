@@ -23,3 +23,9 @@ Source link: http://www.sommarskog.se/share_data.html
 
 Author: Erland Sommarskog<br />
 Source link: http://www.sommarskog.se/arrays-in-sql-2008.html
+
+
+## [Giving Permissions through Stored Procedures](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Giving%20Permissions%20through%20Stored%20Procedures.htm)
+
+Author: Erland Sommarskog<br />
+Source link: http://www.sommarskog.se/grantperm.html

@@ -1,0 +1,2513 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-gb">
+<title>Giving Permissions through Stored Procedures</title>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+small { font-size: 90%; }
+.byline { font-size: 80%; }
+h2 { border-top: 2px dashed black; padding-top: 12pt; }
+h3 { border: 1px solid rgb(187, 187, 187); background-color: rgb(224, 224, 224); padding-right: 6pt; display: inline; text-align: left; }
+tr { vertical-align: text-top; }
+li { margin-bottom: 3pt; margin-left: -10pt; }
+pre { margin-left: 18pt; }
+.errmsg { color: rgb(255, 0, 0); }
+.note { font-size: 90%; border: 3px solid rgb(187, 187, 187); display: inline-block; margin-top: 0pt; margin-bottom: 0pt; }
+.noteh3 { font-size: 90%; border: 3px solid rgb(187, 187, 187); display: inline-block; margin-top: 0pt; margin-bottom: 12pt; }
+--></style>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+--></style></head>
+
+<body>
+
+<h1 align="center">Giving Permissions through Stored Procedures<br>
+<span style="font-size: 70%">Ownership Chaining, Certificates and the Problematic EXECUTE AS</span></h1>
+<p class="byline">
+  <nomeddle>An SQL text by <a href="http://www.sommarskog.se/index.html">Erland
+    Sommarskog</a>, SQL Server MVP. <a href="#revisions">Latest Revision</a>
+    2011-12-31.</nomeddle>
+</p>
+
+<h2><a name="intro">Introduction</a></h2>
+<p>When designing an application for <small>SQL</small> Server, you rarely want users to have
+   full permissions to access the tables in the database. Many applications are
+   designed to perform all database access through stored procedures, and it is
+   through the stored procedures users can access and update data. The
+   procedures perform validations of business rules to protect the integrity of
+   the database. </p>
+<p>In this article I will in depth discuss three different ways to achieve this:</p>
+<ol>
+   <li><a href="#ownershipchaining">Ownership Chaining</a>.</li>
+   <li><a href="#Certificates">Signing Procedures with Certificates</a>.</li>
+   <li><a href="#EXECUTE_AS">Using impersonation with <small>EXECUTE AS</small></a>.</li>
+</ol>
+<p>I will also briefly cover three other ways:</p>
+<ol start="4">
+  <li><a href="#approles">Application roles</a></li>
+  <li><a href="#appproxies">"Application
+    proxies"</a> </li>
+  <li><a href="#terminalserver">Terminal Server</a>.</li>
+</ol>
+<p>This article applies  to <small>SQL</small> 2005 SP2 and later. Particularly, there were
+  some bugs and limitations in the <small>RTM</small> version of <small>SQL</small> 2005, that I don't touch, as
+  there is no reason why you should be running <small>SQL</small> 2005 <small>RTM</small> or SP1. (And for that
+  matter, SP2. You should have installed at least Service Pack 3 by now, if not
+SP4.) If you are using <small>SQL</small> 2000, you should know that this article focuses on features added in <small>SQL</small> 2005.</p>
+<h3>Table of Contents</h3>
+<p><contents>
+   <b><a href="#intro">Introduction</a></b><br>
+      <a href="#overview">Overview</a><br>
+      <a href="#examplescripts">Notes on the Example Scripts</a><br>
+   <b><a href="#philosophy">Some Philosophy on Security</a></b><br>
+   <b><a href="#ownerschema">Owner/Schema Separation</a></b><br>
+      <a href="#newschcommands">Statements</a><br>
+      <a href="#objcreate">Creating Objects in a Schema</a><br>
+   <b><a href="#ownershipchaining">Ownership Chaining</a></b><br>
+      <a href="#chainingworks">How it Works</a><br>
+      <a href="#examplechaining">Example of Ownership Chaining</a><br>
+      <a href="#notallperms">Not All Permissions are Transferable through Ownership Chaining</a><br>
+      <a href="#chaining_dynsql">Dynamic SQL</a><br>
+      <a href="#CLR_Modules">CLR Modules</a><br>
+      <a href="#dbchainging">Cross-Database Access</a><br>
+   <b><a href="#Certificates">Signing Procedures with Certificates</a></b><br>
+      <a href="#fourcertstep">Using Certificates within a Database </a><br>
+      <a href="#certcreate">Creating the Certificate</a><br>
+      <a href="#certuser">Creating the Certificate User</a><br>
+      <a href="#grantrights">Granting Rights to the Certificate User</a><br>
+      <a href="#signing">Signing the Procedure</a><br>
+      <a href="#certexample">Putting it All Together</a><br>
+      <a href="#certwhoswho">Who's Who?</a><br>
+      <a href="#certandbulkcopy">Using Certificates with Bulk Copy</a><br>
+      <a href="#certbulkexample">Full Example for Bulk-load</a><br>
+      <a href="#copycertificate">CREATE CERTIFICATE FROM BINARY in SQL 2012</a><br>
+      <a href="#certcrossdb">Cross-Database Access</a><br>
+      <a href="#countersignatures">Counter Signatures</a><br>
+      <a href="#asymkeys">Using Asymmetric Keys</a><br>
+      <a href="#certfindinfo">Which Procedures are Signed by Which Certificates?</a><br>
+      <a href="#managingdbcert">Managing Certificates and Passwords</a><br>
+   <b><a href="#EXECUTE_AS">Impersonation with EXECUTE AS</a></b><br>
+      <a href="#EXECASstatement">The Statement EXECUTE AS</a><br>
+      <a href="#execasdynsql">Using EXECUTE AS to Grant Permissions within the Database</a><br>
+      <a href="#execas-sideeffects">The Side Effects of EXECUTE AS</a><br>
+      <a href="#execasowner">WITH EXECUTE AS CALLER | SELF | OWNER</a><br>
+      <a href="#execascaller">The EXECUTE AS CALLER statement</a><br>
+      <a href="#original_login">original_login()</a><br>
+      <a href="#context_info">SET CONTEXT_INFO</a><br>
+      <a href="#DDLtriggers">Using DDL Triggers to Stop All This</a><br>
+      <a href="#EXECASMonitoring">EXECUTE AS and Monitoring</a><br>
+      <a href="#execas-crossdb">EXECUTE AS and Access Outside the Database</a><br>
+      <a href="#execasbulkcopy">Using EXECUTE AS to Give Bulk-Copy Permissions</a><br>
+      <a href="#TRUSTWORTHY">Considerations on TRUSTWORTHY</a><br>
+      <a href="#EXECAScrossdb">Cross-Database Access</a><br>
+      <a href="#EXECASstartjob">Starting Jobs</a><br>
+      <a href="#WindowsIdentity">Yet another Side Effect – WindowsIdentity</a><br>
+   <b><a href="#Othermethods">Other Methods</a></b><br>
+      <a href="#approles">Application Roles</a><br>
+      <a href="#appproxies">"Application Proxies"</a><br>
+      <a href="#terminalserver">Terminal Server</a><br>
+   <b><a href="#finalwords">Final Words</a></b><br>
+   <b><a href="#Feedback">Acknowledgments and Feedback</a></b><br>
+   <b><a href="#revisions">Revision History</a></b></contents></p>
+<h3><a name="overview">Overview</a></h3>
+
+<p>The classic method for granting permissions through stored procedures is
+   <a href="#ownershipchaining"><i>
+   ownership chaining</i></a>. This is  the prime method for plain table
+   access, but there are permissions that are not grantable through ownership chaining. Two such cases that we will look at in this
+  article are
+  dynamic <small>SQL</small> and reloading a table through <small>BULK INSERT</small>. Due to its importance, ownership
+  chaining is the first mechanism that I will cover in this article.
+  However, before that I will discuss <a href="#ownerschema">owner/schema-separation</a>,
+  a change in <small>SQL</small> 2005 that may boggle the mind of old-time users of <small>SQL</small> Server and which
+  has some effects on ownership chaining. </p>
+<p>
+  <small>SQL</small> 2005 introduced two new methods to give users access through stored
+   procedures: you can <i><a href="#Certificates">sign procedures with certificates</a></i>,
+   and you can use <i><a href="#EXECUTE_AS">impersonation with the <small>EXECUTE AS</small> clause</a></i>.
+   Both these methods permit you to encapsulate any permission in a stored
+   procedure. Certificates are more complex to use, whereas <small>EXECUTE AS</small> can be
+   deceivingly simple. To wit, <small>EXECUTE AS</small> has some side effects that can be
+   nasty. If you are a developer, this text tries to make you aware of what harm
+   casual use of <small>EXECUTE AS</small> could cause. And if you are a <small>DBA</small>, this
+   article warns you of what creative developers can inflict to your database with <small>EXECUTE AS</small>. </p>
+<p>Whereas the above-mentioned methods can be applied to individual procedures, <i>
+   <a href="#approles">application roles</a></i>,  "<i><a href="#appproxies">application proxies</a></i>"
+and <i><a href="#terminalserver">Terminal Server</a></i> are
+   solutions that you typically use on an application-wide scale. (I have put "application proxy" in
+   quotes throughout the article, as this is a term that I've coined myself and
+   it may not be established terminology.)</p>
+<h3><a name="examplescripts">Notes on the Example Scripts</a></h3>
+<p>This article includes several example scripts that demonstrate the various
+   methods. Before you start to run these scripts all over town, I like to point
+   out a few things.</p>
+<p>All these scripts assume that you are logged in with <b>sysadmin</b> rights,
+   and I strongly recommend that you run the examples on a development machine.
+   Some scripts assume that you have enabled <b>xp_cmdshell</b>, which is
+   disabled by default. Enable it with <b>sp_configure</b>, if this is acceptable with your local security policy.
+   The use of <b>xp_cmdshell</b> is mainly for convenience, and it is not
+   required to demonstrate the essentials of the examples. You can perform
+   those actions manually if needed.</p>
+   <p>
+   Furthermore, all scripts create at least one database and at least one login.
+   Some scripts also create files in the file system. If the scripts run
+   uninterrupted, all objects are dropped at the end; logins,
+   databases and files alike. (So first check that you don't have any database
+   with names that coincide with the databases in the scripts!)</p>
+<p>The reason the scripts create databases is simplicity. That permits me to
+   create objects, users etc in the database, and clean up all by dropping the
+   database. The scripts create logins because it's difficult to
+   demonstrate security features when running as <b>sysadmin</b>.</p>
+<p>To contain everything into one script, I make heavily use of the
+<small>EXECUTE
+   AS</small> and <small>REVERT</small> statements, although it will take until the second half of the
+   article before I discuss them in detail. For now, just think of them as an
+   alternative to open a second query window to run as a test user. If you
+   prefer, you can stop the scripts at <small>EXECUTE AS</small>, log into a second query
+   window as the test user to run the part up to <small>REVERT</small>.</p>
+<h2><a name="philosophy">Some Philosophy on Security</a></h2>
+<p>Before I go on to the main body of this text, I would like to make a short digression
+   about security in general.</p>
+<p>Security is often in
+ conflict with other interests in the programming trade. You have users screaming
+ for a solution, and they want it now. At this point, they don't really care
+ about security, they just want to get their business done. But if you give them a
+ solution that has a hole, and that hole is later exploited, you are the one
+ that will be hung. So as a programmer you
+ always need to have security in mind, and make sure that you play your part right</p>
+<p>One common mistake in security is to think "we have this
+   firewall/encryption/whatever, so we are safe". I like to think of security of
+   something that consists of a number of  defence lines.
+   Anyone who has worked with computer systems knows that there are a lot of changes
+   in them, both in their configuration and in the program code. Your initial design
+   may be sound and safe, but as the system evolves, there might suddenly be a
+   security hole and a serious vulnerability in your system.</p>
+<p>By having multiple lines of defence you can reduce the risk for this to happen.
+   If a hole is opened, you can reduce the impact of what is possible to do
+   through that hole. An integral part of this strategy is to never
+   grant more permissions than is absolutely necessary. Exactly what this means in this
+   context is something I shall return to.</p>
+<h2><a name="ownerschema">Owner/Schema Separation</a></h2>
+<p>Before we look at any of the methods to grant permissions, we need to look at
+   a change in <small>SQL</small> 2005 which can be a bit breath-taking to users coming from
+older versions of <small>SQL</small> Server. </p>
+<p>Since the dawn of time, <small>SQL</small> Server have permitted a four-part notation of
+ objects, and it has usually been presented as </p>
+<pre><i>server</i>.<i>database</i>.<i>owner</i>.<i>object</i></pre>
+<p>But in <small>SQL</small> 2005 this changed to</p>
+<pre><i>server</i>.<i>database</i>.<i>schema</i>.<i>object</i></pre>
+<p>You may ask, what is this <i>schema</i>? The answer is that schema has
+   always been there, but up to <small>SQL</small> 2000, schema and owner was always the same.
+   In <small>SQL</small> 2005 owner and schema are two different entities.</p>
+<p>The purpose of a schema is simple to understand: it permits you to have
+   different namespaces in database. Say that for a larger application, there
+   are several groups that work more or less independently. Each group could
+   have their own schema for their specific objects to avoid name clashes.
+   While you could do this in <small>SQL</small> 2000 as well, the fact that all schemas had
+   different owners, made this unpractical. In <small>SQL</small> 2005 all schemas can have the
+   same owner.</p>
+<p>An example of a database with several schemas is the <b>
+<a href="http://msftdbprodsamples.codeplex.com/">AdventureWorks</a></b>
+   database; the database which Microsoft use for all their samples since <small>SQL</small> 2005.</p>
+<p><small>SQL</small> Server comes with no less than 13 pre-defined schemas. That's a lot, but
+   ten of them exist solely for backwards compatibility, and they are namesakes
+   with predefined users and roles in <small>SQL</small> 2000. (Since users and roles also were
+   schemas in <small>SQL</small> 2000, Microsoft figured that there could be applications using them.) You can drop the nine
+   schemas that stem from roles (<b>db_owner</b> etc)
+   from your database, and if you drop them from the <b>model</b> database, the
+   schemas will not appear in new databases. For some reason you cannot drop the
+   <b>guest</b> schema. </p>
+<p>Two schemas, <b>sys</b> and <b><small>INFORMATION_SCHEMA</small></b>,
+are reserved for system objects, and you cannot create objects in these schemas. </p>
+<p>Finally, there is the <b>dbo</b> schema, which is the only predefined schema
+   you normally create objects in. The tacky name is short for <i>database owner</i>,
+   and is a heritage from the previous days of owner/schema-unification. </p>
+<h3><a name="newschcommands">Statements</a></h3>
+<p>There are several statements related to schemas and users, and I will give a brief
+overview here to point out the differences between the new commands added in <small>SQL</small> 2005, and the older system procedures from previous versions.</p>
+<p>To create a schema, you use not surprisingly <small>CREATE SCHEMA</small>, and most often
+   you just say like:</p>
+<pre>CREATE SCHEMA myschema</pre>
+<p><small>CREATE SCHEMA</small> is one of these statements that must be alone in batch. That is,
+   no statements can precede or follow it. That may seem a little funny for such
+   a simple command, but there is an older form of <small>CREATE SCHEMA</small> which is more
+   complex that was
+   introduced in <small>SQL</small> 6.5 and which serves a different purpose. (Please see Books Online for details, if you really want to know.)</p>
+<p>The preferred way to create a user since <small>SQL</small> 2005 is:</p>
+<pre>CREATE USER newuser [WITH DEFAULT_SCHEMA = someschema]</pre>
+<p>There are two system procedures to create users, <b>sp_adduser</b> and <b>
+sp_grantdbaccess</b>. They are both deprecated and will be removed eventually. There is an important difference between <small>CREATE USER</small> and
+the two system procedures: <small>CREATE USER</small> creates a user whose default schema is <b>dbo</b>,
+   unless you specify otherwise. On the other hand, <b>sp_adduser</b>
+   and <b>sp_grantdbaccess</b>
+   for compatibility reasons
+   perform the corresponding to:</p>
+<pre>CREATE SCHEMA newuser
+go
+CREATE USER newuser WITH DEFAULT_SCHEMA = newuser
+go
+ALTER AUTHORIZATION ON SCHEMA::newuser TO newuser</pre>
+<p>(The last command makes <b>newuser</b> owner of the schema created in his
+   name.) Most likely, you don't need that schema, so there is
+   good reason to avoid these old system procedures entirely.
+<small>CREATE USER</small> also has some
+   options not offered by <b>sp_adduser</b> and <b>sp_grantdbaccess</b>. For
+instance, you can say:</p>
+<pre>CREATE USER thisdbonly WITHOUT LOGIN</pre>
+<p>This creates a database user that is not tied to a login. In some of the the test scripts, I use this option
+to create test users, but you will also see examples where <small>WITHOUT LOGIN</small> can be
+used to create a user that is a container for a certain permission. We will look
+at other options later in this article. </p>
+<p>There is also <small>CREATE ROLE</small> that replaces <b>sp_addrole</b> in the same vein that <small>CREATE USER</small>
+   replaces <b>sp_adduser</b>. That is, <small>CREATE ROLE</small> creates the role only. <b>
+   sp_addrole</b> also creates a schema that you are unlikely to have any need
+   for. And while we are at it, there is a <small>CREATE LOGIN</small>
+which replaces <b>
+   sp_addlogin</b>. As with <small>CREATE USER, CREATE LOGIN</small> has some new options, that we will come back to
+   later in this article.</p>
+<p>Finally, there is <small>DROP USER</small> instead of <b>sp_dropuser</b>
+   etc. A little note here: if you have users created with <b>sp_addlogin</b> or
+<b>sp_grantdbaccess</b>,  <b>sp_dropuser</b> is the most convenient way to drop them, since there is a schema that needs to be dropped before you can drop
+the user, and <small>DROP USER</small> will not do that for you. </p>
+<h3><a name="objcreate">Creating Objects in a Schema</a></h3>
+<p>If you create objects in a schema that is owned by another user, the <i>
+   schema owner</i> will be the owner of the objects you create, <i>not you</i>.
+   Thus, if you give a user permission to create objects in a schema you own,
+   but no other permissions in the schema, he will not be able to access the
+   objects he creates. </p>
+<p>This can be a bit of a surprise, but it's actually logical. Assume that all
+   developers of an application have their own user, while they create objects in a
+   common schema. For ownership chaining to work (which we look at in a second), all objects must have the same
+   owner, so it much simpler if all objects are owned by the schema owner from
+   the start. Else you would constantly have to change the ownership of the procedures.</p>
+<h2><a name="ownershipchaining">Ownership Chaining</a></h2>
+<h3><a name="chainingworks">How it Works</a></h3>
+<p>Ownership chaining is the classical way of giving users access to objects
+   through stored procedures in <small>SQL</small> Server. And while <small>SQL</small> Server provides two
+   other methods, ownership chaining is what you will use 99 % of the time.
+   Certificates and impersonation is something you only have reason to use when
+   ownership chaining does not do the job. </p>
+<p>How does ownership chaining work? Say that you have a procedure <b>sp1</b>
+   owned by user A. <b>sp1</b> performs a <small>SELECT</small> from <b>tbl1</b> and <b>tbl2</b>.
+   <b>tbl1</b> is owned by A, whereas <b>tbl2</b> is owned by user B. User C has
+   permission to execute s<b>p1</b>. To be able run this procedure successfully,
+   C needs <small>SELECT</small> permission on <b>tbl2</b> but not
+   on <b>tbl1</b>. Since
+   <b>sp1</b> and <b>tbl1</b> have the same owner, the permission check is suppressed, and this is ownership
+   chaining. Ownership chaining is also in effect in triggers,
+   user-defined functions and views.</p>
+<p>Now, this may seem a little complex to grasp, but in real life it is often a
+   lot simpler. In my experience, having several object owners in a database is
+   not very common. In very many cases, <b>dbo</b>, the database owner, owns all
+   objects in a database. A common way to implement security in a database
+   application is to perform all access
+   through stored procedures that validates input parameters, enforces business
+   rules etc. When <b>dbo</b> owns all procedures and tables, users only need permissions to execute the
+   stored procedures. Thanks to ownership chaining, they do not need any direct
+   permissions on the tables. But as we will learn soon, there are permissions
+   that cannot be transferred through ownership chaining.</p>
+<p class="noteh3"><b>Note</b>: in older versions of <small>SQL</small> Server, applications might have used different object owners in order to implement different namespaces, that is schemas. But since
+in <small>SQL</small> 2005, <b>dbo</b> can own all schemas, this should no longer be necessary.</p>
+<h3><a name="examplechaining">Example of Ownership Chaining</a></h3>
+<p>Here is an example script that demonstrates ownership chaining. Despite what
+   I said in the previous section about <b>dbo</b> owning everything, the
+   example includes two objects owned by other users, to demonstrate what
+   happens when the ownership chain is broken.</p>
+<p>(Please refer to the <a href="#examplescripts">introductory note</a> about
+   the example scripts in this article.)</p>
+<pre>USE master
+go
+-- Create a test user and a test database.
+CREATE LOGIN testuser WITH PASSWORD = 'TesT=0=UsEr'
+CREATE DATABASE ownershiptest
+go
+-- Move to the test database.
+USE ownershiptest
+go
+-- Create a user to run the tests.
+CREATE USER testuser
+go
+-- Create two database-only users that will own some objects.
+CREATE USER procowner WITHOUT LOGIN
+CREATE USER tableowner WITHOUT LOGIN
+go
+-- Create three test tables. As this is an example to demonstrate
+-- permissions, we don't care about adding any data to them.
+CREATE TABLE tbl1 (a int NOT NULL)
+CREATE TABLE tbl2 (b int NOT NULL)
+CREATE TABLE tbl3 (c int NOT NULL)
+go
+-- Make the user tableowner owner of tbl3.
+ALTER AUTHORIZATION ON tbl3 TO tableowner
+go
+-- Create a couple of stored procedures.
+CREATE PROCEDURE sp1 AS
+   SELECT a FROM tbl1
+go
+CREATE PROCEDURE sp2inner AS
+   SELECT a FROM tbl1
+go
+CREATE PROCEDURE sp2 AS
+   SELECT b FROM tbl2
+   EXEC sp2inner
+go
+CREATE PROCEDURE sp3 AS
+   SELECT c FROM tbl3
+go
+CREATE PROCEDURE sp2procowner AS
+   SELECT b FROM tbl2
+   EXEC sp2inner
+go
+-- Make procowner the owner of sp2procowner.
+ALTER AUTHORIZATION ON sp2procowner TO procowner
+go
+-- Grant permissions to testuser to execute all procedures,
+-- except for sp2inner.
+GRANT EXECUTE ON sp1 TO testuser
+GRANT EXECUTE ON sp2 TO testuser
+GRANT EXECUTE ON sp2procowner TO testuser
+GRANT EXECUTE ON sp3 TO testuser
+go
+-- Run some commands as testuser, with its permissions etc.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- sp1 runs fine, as dbo owns both sp1 and tbl1.
+PRINT 'EXEC sp1, this runs fine'
+EXEC sp1
+go
+-- Also sp2 runs fine. Note that testuser can run sp2inner, when
+-- it's called from sp2. Ownership chaining applies here as well.
+PRINT 'EXEC sp2, this runs fine, despite no priv on sp2inner'
+EXEC sp2
+go
+-- But sp2procowner fails twice. Because sp2procowner has a different
+-- owner than tbl2 and sp2inner, testuser would need direct permission on
+-- these objects, but he hasn't.
+PRINT 'EXEC sp2procowner, two permission errors'
+EXEC sp2procowner
+go
+-- And this fails as well, because while sp3 is owned by dbo, tbl3 is
+-- owned by another user, so ownership chaining is broken.
+PRINT 'EXEC sp3, permission error'
+EXEC sp3
+go
+-- Stop being tester and clean up.
+REVERT
+go
+USE master
+go
+DROP LOGIN testuser
+DROP DATABASE ownershiptest</pre>
+<h3><a name="notallperms">Not All Permissions are Transferable through Ownership Chaining</a></h3>
+<p>Since ownership chaining is so commonly used, and works so smoothly when all
+   objects are owned by <b>dbo</b>, it often comes as a surprise when users get
+   a permission error when they run a stored procedure.</p>
+<p>The story is that ownership chaining does not apply to all statements. Essentially, ownership
+   chaining applies to <small>DML</small> statements (<small>SELECT, INSERT, DELETE</small>, <small>UPDATE</small> and <small>MERGE</small>) and
+  <small>EXECUTE</small> of stored procedures and functions. If you put a statement like
+  <small>CREATE TABLE</small> into a stored procedure, the user must have permissions to
+   create tables (which a plain user rarely has, save for temp tables). Same
+   goes for many other administrative commands. </p>
+<p>A statement that is worth special mention here is <small>TRUNCATE TABLE</small>, which
+   logically is a <small>DML</small> statement; a quicker way to
+   delete all rows in a table. But the permissions for this command are not
+   transferable through ownership chaining, so if you want to write a stored
+   procedure to permits users to empty a table, you may prefer to use <small>DELETE</small>
+   although this is less efficient. </p>
+<p>Another example of a command where ownership chaining does not work is <small>BULK
+   INSERT</small>; this command requires a server-level permission.</p>
+<p>These are situations that can be resolved by signing
+   procedures with  <a href="#Certificates">certificates</a> or by using <a href="#EXECUTE_AS">impersonation</a> with <small>EXECUTE AS</small>, methods that we
+   shall look
+  into later in this article.</p>
+<h3><a name="chaining_dynsql">Dynamic SQL</a></h3>
+<p>Another case where ownership chaining does not work is dynamic <small>SQL</small>. Consider:</p>
+<pre>CREATE PROCEDURE myproc AS
+   EXEC('SELECT a, b FROM tbl')</pre>
+<p>(This is certainly not how you would use dynamic <small>SQL</small> in real life, but I
+   wanted to keep the example short. Please see my article <i>
+   <a href="http://www.sommarskog.se/dynamic_sql.html">The Curse and Blessings of Dynamic <small>SQL</small></a></i> for
+   a longer discussion on dynamic <small>SQL</small>, when to use it – and when to not.)</p>
+<p>To run this procedure, a user needs <small>SELECT</small> permissions on <b>tbl</b>. The
+   reason for this is that the batch of dynamic <small>SQL</small> is a scope of its own that
+   is
+   not part of the stored procedure. And this batch does not really have any
+   owner at all, and thus the ownership chain is broken.</p>
+<p>Since dynamic <small>SQL</small> is very powerful for some tasks – <a href="http://www.sommarskog.se/dyn-search.html">dynamic search conditions</a>
+   being the prime example – it was not uncommon in <small>SQL</small> 2000
+and earlier version to give users
+  <small>SELECT</small> rights, as long as this was compliant with corporate
+   security policy. But since <small>SQL</small> 2005 this is not necessary;
+you can use
+   <a href="#Certificates">procedure signing</a> and <a href="#EXECUTE_AS">
+   impersonation</a>  to give users permission to execute dynamic
+  <small>SQL</small>. </p>
+<h3><a name="CLR_Modules">CLR Modules</a></h3>
+<p>In <small>SQL</small> Server you can write stored procedures,
+   triggers and user-defined functions in a <small>CLR</small> language such as C# or Visual
+   Basic. You can perform data access from a <small>CLR</small> module by running a batch of <small>SQL</small>
+   statements, but ownership chaining does not apply in this case. The reason
+   for this is the same as with dynamic <small>SQL</small>: the <small>SQL</small> batch is a scope of its own that does not have any owner.</p>
+<p>So when you write <small>CLR</small> modules that accesses tables,
+you must either grant the users direct
+   permissions to these tables or employ module signing or impersonation. I am
+not covering how to use these mechanisms with <small>CLR</small> modules in this article, but
+the topic <a href="http://msdn.microsoft.com/en-us/library/ms345102.aspx"><i>Module Signing</i></a> in Books Online includes an example.</p>
+<h3><a name="dbchainging">Cross-Database Access</a></h3>
+<p>If a stored procedure <b>sp1</b> in database A accesses a table <b>
+   tbl2</b> in database B, ownership chaining can apply as
+ well, if the procedure owner also owns <b>tbl2</b>. In
+ the trivial case, the two databases have the same owners and all involved
+ objects are owned by <b>dbo</b>. The user running <b>sp1</b> must also be a
+ user in database B. (Unless you have enabled access for the <b>guest</b> user
+ in database B, something I don't recommend.)</p>
+<p>However, starting with <small>SQL</small> 2000 SP3, ownership
+   chaining across databases is turned off by default. You can enable it on
+   server level, or per database. To enable it on server level, set the configuration option <b>cross db
+ ownership chaining</b> to 1 (with <b>sp_configure</b> or through <small>SQL</small> Server
+   Management Studio). Now all databases on the server will be open for cross-db
+   chaining. </p>
+<p>To open an individual database for cross-db chaining, use the command
+  <small>ALTER DATABASE</small> db <small>SET DB_CHAINING ON</small>. In the example above, both A and B must
+   be enabled for DB chaining for users being able to access <b>B..tbl2</b>
+   through <b>sp1</b> without any own permission on <b>tbl2</b>. To enable a database for
+   chaining, you need <b>sysadmin</b> privileges.</p>
+<p>As you might guess, there is a reason for database chaining being off by
+   default. Assume that Jack and Jill
+   own one database each. Jack is a user in Jill's database, but he only has
+   permissions to run a few stored procedures there. If their databases are
+   enabled for database chaining, Jack can get to Jill's inner secrets, by taking the following
+   steps.</p>
+<ol>
+   <li>Add Jill as a user in his own database.</li>
+   <li>Create a schema in his database owned by Jill.</li>
+   <li>Create stored procedures in the Jill schema that accesses Jill's
+      database. Since Jill owns the schema, she also owns the procedures, as
+      noted <a href="#objcreate">above</a>. (Jack could also create the
+      procedures
+      in the <b>dbo</b> schema, and then make Jill
+   owner of those procedures.)</li>
+</ol>
+<p>Jack can now access all tables in Jill's database as he likes. </p>
+<p>Microsoft are very discouraging about turning on database chaining, but for a
+   server that hosts a single application that uses several databases, turning
+   on database chaining on server level appears uncontroversial. It's a
+   different thing on a consolidated server that hosts databases for many
+   unrelated applications. Here, you should most probably never turn on the
+   configuration option to open DB chaining for all databases. What if a user who owns two databases asks you
+   to turn on
+   chaining on these databases? As long it's only those two, it's fine, but then
+   the next guy comes with his two databases. There is no way to say that <b>
+   db1</b> may chain to <b>db2</b> but not to <b>db3</b> or <b>db4</b>.</p>
+<p>According to Books Online, you cannot enable <b>master</b>, <b>model</b> and
+   <b>tempdb</b> for database chaining with <small>ALTER DATABASE</small>. It does not really
+   say whether chaining is enabled for these databases if you turn on <b>cross db
+   ownership chaining</b>, but some quick tests that I did indicate that even
+   if this option is on, it does not apply to <b>master</b>, <b>model</b>, <b>
+   msdb </b>and <b>tempdb</b>.</p>
+<p>Personally, I recommend that you try to keep cross-database access to stored
+   procedure calls. That is, rather than directly access a table in the other
+   database, call a procedure in that database. In this case, ownership chaining
+   across database is not really needed – instead give the users <small>EXECUTE</small>
+   permission to the procedures in the other database. </p>
+<p>Later in this article we will look at how to implement cross-database through <a href="#certcrossdb">certificate signing</a> and through <a href="#EXECAScrossdb">impersonation</a>.</p>
+<h2><a name="Certificates">Signing Procedures with Certificates</a></h2>
+<p>We will now turn to the first of the two  methods added in <small>SQL</small> 2005 to grant
+   permissions through stored procedures, signing a procedure with a
+   certificate.</p>
+<h3><a name="fourcertstep">Using Certificates within a Database</a> </h3>
+<p>We will first look at using certificates for giving permissions on database level. As an example, I will use dynamic <small>SQL</small>, which probably is the most
+   common situation where you will want to use certificates as a supplement to
+   <a href="#ownershipchaining">ownership chaining</a>.</p>
+<p>Our example setup is this one:</p>
+<pre>CREATE TABLE testtbl (a int NOT NULL,
+                      b int NOT NULL)
+go
+CREATE PROCEDURE example_sp AS
+   EXEC ('SELECT a, b FROM testtbl')
+go
+GRANT EXECUTE ON example_sp TO public
+go</pre>
+<p>As noted <a href="#chaining_dynsql">above</a>, ownership chaining does not
+   work in this case, because the batch of dynamic <small>SQL</small> does not have any real
+   owner, and thus the chain is broken. To make it possible for a user to
+   run this procedure without <small>SELECT</small> permission on <b>testtbl</b>, you need to
+   take these four steps:</p>
+<ol>
+   <li>Create a certificate.</li>
+   <li>Create a user associated with that certificate.</li>
+   <li>Grant that user <small>SELECT</small> rights on <b>
+      testtbl</b>.</li>
+   <li>Sign the procedure with the certificate, <i>each time</i> you have
+      changed the procedure.</li>
+</ol>
+<p>When the procedure is invoked, the rights of the certificate user
+   are
+   added to the rights of the actual user.
+   Technically, we can describe this as the certificate user is added to the
+   current <i>user token</i>. If the procedure invokes another <small>SQL</small> module –
+   stored procedure, trigger, function etc – the certificate user is removed
+   from the user token (unless that  module  is also signed by the
+   certificate). There are two exceptions to this rule: system procedures and
+dynamic <small>SQL</small> invoked through
+  <small><nobr>EXEC()</nobr></small> or <b>sp_executesql</b>.
+In this case the certificate user is still present in the
+   user token, and its rights can apply. </p>
+<p>This example shows the four steps in code.</p>
+<pre>CREATE CERTIFICATE examplecert
+    ENCRYPTION BY PASSWORD = 'All you need is love'
+    WITH SUBJECT = 'Certificate for example_sp',
+    START_DATE = '20020101', EXPIRY_DATE = '21000101'
+go
+CREATE USER examplecertuser FROM CERTIFICATE examplecert
+go
+GRANT SELECT ON testtbl TO examplecertuser
+go
+-- And each time you change the procedure:
+ADD SIGNATURE TO example_sp BY CERTIFICATE examplecert
+    WITH PASSWORD = 'All you need is love'</pre>
+<p>In the following sections, we will look closer at each of these statements.</p>
+<h3><a name="certcreate">Creating the Certificate</a></h3>
+<pre>CREATE CERTIFICATE examplecert
+    ENCRYPTION BY PASSWORD = 'All you need is love'
+    WITH SUBJECT = 'Certificate for example_sp',
+    START_DATE = '20020101', EXPIRY_DATE = '21000101'</pre>
+<p>The statement <small>CREATE CERTIFICATE</small> has several options, but for our purposes
+   the form above suffices. Here we create a new <i>self-signed </i>
+   certificate which is protected by a password. The password is not awfully strong; I will return to the topic of passwords in the section <i><a href="#managingdbcert">Managing Certificates and Passwords</a></i>.</p>
+<p>The <small>WITH SUBJECT</small> clause is part of the metadata for the certificate; in
+   the catalog view <b>sys.certificates </b>the subject appears in the column <b>
+   issuer_name</b>.</p>
+<p>There is no requirement to enter a start date and an expiry date for the
+   certificate, but for practical reasons you may want to enter both. If you enter neither, the certificate is valid one year
+   from now. Since it is likely that your procedure will be in use for more than
+   one year, it's recommendable to give an expiry date far into the future.
+   If you leave out the start date, <small>SQL</small> 2005
+   may produce this message:</p>
+<pre>Warning: The certificate you created is not yet valid; its start
+date is in the future.</pre>
+<p>The message is bogus since the default for the start date is the same second as you issue the command.
+ The message is not an error, but informational only. If you don't want to see it, specify a
+   start date. This issue has been fixed in <small>SQL</small> 2008.</p>
+<h3><a name="certuser">Creating the Certificate User</a></h3>
+<pre>CREATE USER examplecertuser FROM CERTIFICATE examplecert</pre>
+<p>We see here one more option for <small>CREATE USER</small>: we create a user from a certificate. Such a user exists in the database only and is not associated
+with any login. You can only create one user for each certificate.</p>
+<h3><a name="grantrights">Granting Rights to the Certificate User</a></h3>
+<pre>GRANT SELECT ON testtbl TO examplecertuser</pre>
+<p>Here's the beauty of it: we grant <b>examplecertuser</b>
+   exactly
+   the rights it
+   needs for our stored procedure to work. Of course, if you use a lot of dynamic <small>SQL</small>, you may prefer to grant
+   the cert<small>ificate user SELECT</small> on the <b>dbo</b> schema or add it to <b>db_datareader</b>. You might even consider to add it to <b>db_owner</b> to relieve you from any further hassle, as you add more dynamic
+  <small>SQL</small> to other stored procedures. </p>
+<p>But stop there! Recall that <a href="#philosophy">discussion on philosophy</a> in the beginning
+   of the article and
+   that one line of defence is to not grant more rights than necessary. This very much applies when you work with
+   dynamic <small>SQL</small>. You know about <small>SQL</small> injection, don't you?
+   If not, a quick
+   recap: if you build <small>SQL</small> strings from input data, a malicious user might be
+   able to inject <small>SQL</small> commands you did not intend
+   your code to execute by including a single quote (') in the input data. For a longer recap, see the section on
+   <a href="http://www.sommarskog.se/dynamic_sql.html#Security2"><small>SQL</small> injection</a> in my article on
+   dynamic <small>SQL</small>.</p>
+<p>You may already be aware of the risk of <small>SQL</small> injection, and you have taken
+   the steps necessary  to protect your procedure against this attack. But that is today. Code changes throughout the life-time of an
+   application, and one day there is a need for an enhancement of the procedure,
+   and the task is given to an inexperienced programmer who, unaware of the dangers of <small>SQL</small> injection, breaks that line of defence. By giving the certificate user exactly the rights
+   needed for the stored procedure, you have set up a second line of defence
+   that reduces the potential damage significantly.</p>
+<h3><a name="signing">Signing the Procedure</a></h3>
+<p>This is the syntax to sign a procedure:</p>
+<pre>ADD SIGNATURE TO example_sp BY CERTIFICATE examplecert
+    WITH PASSWORD = 'All you need is love'</pre>
+<p>To use the certificate, you need to specify its password. You can sign a
+procedure with more than one certificate to add permissions from several
+certificate users.</p>
+<p>If you change the procedure, the signature is lost, and you need to resign
+the procedure. Given for what we want to use certificates for, this may seem impractical. When we grant someone execution rights on a stored procedure, these permissions are retained when we alter the procedure. So why do we need to resign a procedure when we change it? Isn't that a shortcoming? It may seem so, but it is worth to understand the general purpose of signing things with certificates, which extends far beyond stored procedures in <small>SQL</small> Server. Say that you have a important message you want to pass to someone else, for instance over e-mail. You want to make it possible for the receiver to verify that he got exactly the message you sent him. Therefore you sign your message, which requires both a public and a private key. You make your public key available, and the receiver can then apply that key to message and the signature to verify that they agree. If someone has altered the text or the signature, the validation will fail.</p>
+<p>That is, every time you change the stored procedure, the signature will change, and this is why you must resign the procedure. It could seem that for the particular purpose that we are using certificates for here, that this is just hassle. But as I discuss in the section <i><a href="#managingdbcert">Managing Certificates and Passwords</a></i>, the fact that the procedure must be resigned can in fact be a considerable security advantage.</p>
+<h3><a name="certexample">Putting it All Together</a></h3>
+<p>Here is a full-fledged example that you can play with. To show the
+   difference, there are two procedures, of which only one is signed. (Please
+   refer to the <a href="#examplescripts">introductory note</a> on the examples
+   in this article.)</p>
+<pre>USE master
+go
+-- Create a test login and test database
+CREATE LOGIN testuser WITH PASSWORD = 'CeRT=0=TeST'
+CREATE DATABASE certtest
+go
+-- Move to the test database.
+USE certtest
+go
+-- Create the test user.
+CREATE USER testuser
+go
+-- Create the test table and add some data.
+CREATE TABLE testtbl (a int NOT NULL,
+                      b int NOT NULL)
+INSERT testtbl (a, b) VALUES (47, 11)
+go
+-- Create two test stored procedures, and grant permission.
+CREATE PROCEDURE unsigned_sp AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   EXEC ('SELECT a, b FROM testtbl')
+go
+CREATE PROCEDURE example_sp AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   EXEC ('SELECT a, b FROM testtbl')
+   -- EXEC unsigned_sp
+go
+GRANT EXECUTE ON example_sp TO public
+GRANT EXECUTE ON unsigned_sp TO public
+go
+-- Create the certificate.
+CREATE CERTIFICATE examplecert
+   ENCRYPTION BY PASSWORD = 'All you need is love'
+   WITH SUBJECT = 'Certificate for example_sp',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+-- Create the certificate user and give it rights to access the test table.
+CREATE USER examplecertuser FROM CERTIFICATE examplecert
+GRANT SELECT ON testtbl TO examplecertuser
+go
+-- Sign the procedure.
+ADD SIGNATURE TO example_sp BY CERTIFICATE examplecert
+    WITH PASSWORD = 'All you need is love'
+go
+-- Run as the test user, to actually see that this works.
+EXECUTE AS USER = 'testuser'
+go
+-- First run the unsigned procedure. This gives a permission error.
+EXEC unsigned_sp
+go
+-- Then run the signed procedure. Now we get the data back.
+EXEC example_sp
+go
+-- Become ourselves again.
+REVERT
+go
+-- Clean up
+USE master
+DROP DATABASE certtest
+DROP LOGIN testuser</pre>
+<h3><a name="certwhoswho">Who's Who?</a></h3>
+<p>As you can see, I added this statement to the two test procedures in the
+   example:</p>
+<pre>SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token</pre>
+<p>When we run <b>unsigned_sp</b>, this returns</p>
+<pre>SYSTEM_USER  USER       name      type      usage
+------------ ---------- --------- --------- --------------
+testuser     testuser   testuser  SQL USER  GRANT OR DENY
+testuser     testuser   public    ROLE      GRANT OR DENY</pre>
+<p>What this tells us is that we are logged in as <b>testuser</b>, and this is also the
+   name of the user in the database. There are two rows in <b>sys.user_token</b>, one
+   for the user, and one for the single role that <b>testuser</b> is a member of.</p>
+<p>But when we run <b>example_sp</b>, which is signed, there is an extra line:</p>
+<pre>SYSTEM_USER USER     name            type                        usage
+----------  -------- -----------     --------------------------- ---------------
+testuser    testuser testuser        SQL USER                    GRANT OR DENY
+testuser    testuser public          ROLE                        GRANT OR DENY
+testuser    testuser examplecertuser USER MAPPED TO CERTIFICATE  GRANT OR DENY</pre>
+<p>We see here that the user for the certificate has been added
+   to the user token, so its permissions can apply as well. We can also see that we still
+   are <b>testuser</b>, and no one else. This may seem like a pointless thing to
+   mention, but as we shall see later, this is not the case when you use
+  <small>EXECUTE AS</small>.</p>
+<p>As you see, <b>example_sp</b> includes a call to <b>unsigned_sp</b> that has been
+   commented out. If you remove that comment, and run the script again,  when you call <b>unsigned_sp</b> from <b>example_sp</b>, you  get a permission error just like when <b>unsigned_sp</b> is called directly.
+  You will also see in the output from <b>sys.user_token</b>, that <b>
+  examplecertuser</b> is not there.</p>
+<p>There is one situation where certificate signing does not work. If the user has explicitly been denied access to one or more of the tables in the query with the <small>DENY</small> command, this takes precedence over the permissions granted to the certificate user.  This is different from ownership chaining, where <small>DENY</small> never interferes with the permissions given through the stored procedure. (This is because ownership chaining suppresses the permission check altogether.) As will see later, this obstacle does not exist when you use <a href="#EXECUTE_AS">impersonation with <small>EXECUTE AS</small></a>.</p>
+<h3><a name="certandbulkcopy">Using Certificates with Bulk Copy</a></h3>
+<p>Another common situation where ownership chaining does not suffice is when
+   you need to give users permissions to empty a table and reload it with <small>BULK INSERT</small>
+   from a file. Here is a very simple procedure for this task:</p>
+<pre>CREATE PROCEDURE reload_sp AS
+   TRUNCATE TABLE reloadable
+   BULK INSERT reloadable FROM 'E:\temp\reloadable.csv'
+      WITH (FIELDTERMINATOR=',', ROWTERMINATOR='\n')</pre>
+<p>Ownership chaining fails here for two reasons: 1) it does not apply to
+  <small>TRUNCATE TABLE</small>. 2) to perform bulk operations, you need the
+   server-level permission <small>ADMINISTER BULK OPERATIONS</small> or membership in the fixed server role <b>bulkadmin</b>. </p>
+<p>You can address this by signing <b>reload_sp</b>, but this is more
+   complicated than in the previous example, because you can only add server permissions when you are in the <b>master</b> database.
+   Therefore, to set up <b>reload_sp</b> so it can be executed by an
+   unprivileged user, there are no less than ten steps to go through:</p>
+<ol>
+   <li>Create a certificate in the <b>master</b> database.</li>
+   <li>Create a login for that certificate.</li>
+   <li>Grant that login rights to perform bulk operations.</li>
+   <li>Export the certificate to file.</li>
+   <li>Switch to the application database.</li>
+   <li>Import the certificate from the file.</li>
+   <li>Delete the file from disk.</li>
+   <li>Create a user for the certificate.</li>
+   <li>Grant the certificate user rights to truncate the target table and insert into it.</li>
+   <li>Sign the stored procedure with the certificate, each time you have
+      changed the procedure.</li>
+</ol>
+<p>In <small>SQL</small> Server 2012 the steps 4, 6 and 7 can be carried out in a different way. Since <small>SQL</small> 2012 at this writing still is in beta, I put the focus on the steps that works in all versions from <small>SQL</small> 2005 and on, and cover the new features in <small>SQL</small> 2012 later.</p>
+<p>First some example code for the bit in <b>master</b>.</p>
+<pre>USE master
+go
+CREATE CERTIFICATE reloadcert
+   ENCRYPTION BY PASSWORD = 'All you need is love'
+   WITH SUBJECT = 'For bulk-load privileges',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+CREATE LOGIN reloadcert_login FROM CERTIFICATE reloadcert
+go
+GRANT ADMINISTER BULK OPERATIONS TO reloadcert_login
+go
+BACKUP CERTIFICATE reloadcert TO FILE = 'C:\temp\reloadcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\reloadcert.pvk' ,
+                  ENCRYPTION BY PASSWORD = 'Tomorrow never knows',
+                  DECRYPTION BY PASSWORD = 'All you need is love')
+go</pre>
+<p>The creation of the certificate is the same as in the example with dynamic
+  <small>SQL</small>. Since we need to grant a server
+   permission, a mere certificate user won't do, but we must associate the
+   certificate with a login. (Or more in line with the lingo introduced in <small>SQL</small> 2005, a
+   <i>server principal</i>. "Login" is a misnomer here, as the login created for a
+   certificate cannot actually log in.) Next we grant the certificate login
+   the rights to run bulk load.</p>
+<p>Finally we export the certificate to disk with the command<small> BACKUP CERTIFICATE</small>. The certificate consists of two parts: a public key which goes into
+   the first file, and a private key. The private key requires a password on its
+   own, <i>Tomorrow never knows</i>, in this example. The path where to write the files is a small complication that I will come back to. In this example I use C:\temp to keep the script simple. However, you may find that C:\temp does not work for you, because it does not exist at all, or the service account for <small>SQL</small> Server does not have permission to this directory.</p>
+<p>Here are the parts you would run in the application database:</p>
+<pre>CREATE CERTIFICATE reloadcert FROM FILE = 'C:\temp\reloadcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\reloadcert.pvk',
+                  DECRYPTION BY PASSWORD = 'Tomorrow never knows',
+                  ENCRYPTION BY PASSWORD = 'A day in life')
+go
+EXEC xp_cmdshell 'DEL C:\temp\reloadcert.*'
+go
+CREATE USER reloadcert_user FOR CERTIFICATE reloadcert
+go
+GRANT ALTER, INSERT ON reloadable TO reloadcert_user
+go
+-- Sign the test procedure each time you have changed it.
+ADD SIGNATURE TO reload_sp BY CERTIFICATE reloadcert
+    WITH PASSWORD = 'A day in life'
+go</pre>
+<p>Here we use <small>CREATE CERTIFICATE</small> in a different way
+   than before. Instead of creating
+   a new certificate, we import the certificate
+   that we exported from <b>master</b>. We need to specify the password for the
+   private key to be able to access the file. We must also define a password for the certificate in this
+   database. In this example, I'm using different passwords for the certificate
+   in <b>master</b> and in the application database just to show you that this is
+   possible. It's
+   probably more practical to use the same password in both databases, though.</p>
+<p>We delete the files with the certificate from disk. This is a security precaution, since any database
+owner on the machine could load the certificate into his database. But it is also a matter of convenience; if you re-run the script and the certificate files are already on disk, <small>BACKUP CERTIFICATE</small> will fail. </p>
+<p class="note"><b>Note</b>: <b>xp_cmdshell</b>
+  is disabled by default. An alternative is to delete the file directly from Windows manually.</p>
+<p>Next, we create the certificate user. This user is not related to the
+   login for the certificate, and I've stressed this by giving them different names.
+   Again, in practice, you may prefer to use the same name for both. We grant the
+   certificate user the database permissions that are needed:
+  <small>ALTER</small> permission for <small>TRUNCATE TABLE</small>, and <small>INSERT</small> permission for <small>BULK INSERT</small>.
+   Finally, we sign the procedure, using the password for the certificate in this
+   database.</p>
+<p>We are almost done, but if you do all this and try to run the procedure <b>reload_sp</b>
+   as a non-privileged user, you will nevertheless get an error message that you don't have
+   permissions to do bulk load. Because of a
+   <a href="http://connect.microsoft.com/SQLServer/feedback/details/125602/">bug</a> in <small>SQL</small>
+   Server, we need to modify the procedure:</p>
+<pre>CREATE PROCEDURE reload_sp AS
+    TRUNCATE TABLE reloadable
+    EXEC('BULK INSERT reloadable FROM ''C:\temp\reloadtest.csv''
+          WITH (FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')')</pre>
+<p>This bug is specific to bulk-load permissions, and I have not found any other
+   server-level permission that has the same issue. (The specifics of the bug
+   are
+   that <small>SQL</small> Server checks the permissions for <small>BULK INSERT</small>
+   before the certificate has been added to the user token. By putting <small>BULK INSERT</small> in an inner scope with dynamic <small>SQL</small>, we can work around the bug.)</p>
+<h3><a name="certbulkexample">Full Example for Bulk-load</a></h3>
+<p>As in the previous example there are two procedures, one signed and one
+   unsigned, and I've
+   added <small>SELECT</small> from <b>sys.login_token</b> and <b>sys.user_token</b>, so
+   that you
+   can see how the certificate login and the certificate user are added and deleted. (Again, please refer to
+   the <a href="#examplescripts">introductory note</a> for general notes on the
+   examples.) If you get errors when you run the script that C:\temp does not exist, or you get permissions errors with C:\temp, see below.</p>
+<pre>USE master
+go
+-- Create a test file for bulk load.
+EXEC xp_cmdshell 'ECHO 978,123,234 &gt; C:\temp\reloadtest.csv', no_output
+EXEC xp_cmdshell 'ECHO -98,13,85 &gt;&gt; C:\temp\reloadtest.csv', no_output
+go
+-- Create a test login.
+CREATE LOGIN testuser WITH PASSWORD = 'CeRT=0=TeST'
+go
+-- Create test database.
+CREATE DATABASE bulkcerttest
+go
+-- Create certificate in master.
+CREATE CERTIFICATE reloadcert
+   ENCRYPTION BY PASSWORD = 'All you need is love'
+   WITH SUBJECT = 'For bulk-load privileges',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+-- Create a login for the certificate.
+CREATE LOGIN reloadcert_login FROM CERTIFICATE reloadcert
+go
+-- Grant rights for the certificate login.
+GRANT ADMINISTER BULK OPERATIONS TO reloadcert_login
+go
+-- Save the certificate to disk.
+BACKUP CERTIFICATE reloadcert TO FILE = 'C:\temp\reloadcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\reloadcert.pvk' ,
+                  ENCRYPTION BY PASSWORD = 'Tomorrow never knows',
+                  DECRYPTION BY PASSWORD = 'All you need is love')
+go
+-- Move to test database.
+USE bulkcerttest
+go
+-- Create the non-priv user.
+CREATE USER testuser
+go
+-- A test table.
+CREATE TABLE reloadable (a int NOT NULL,
+                         b int NOT NULL,
+                         c int NOT NULL)
+go
+-- Insert some test data. If test succeeds, this data should disappear.
+INSERT reloadable (a, b, c) VALUES (12, 23, 34)
+go
+-- Test procedure with BULK INSERT. BULK INSERT needs to be in
+-- EXEC() because of a bug in SQL Server.
+CREATE PROCEDURE reload_sp AS
+    SELECT name, type, usage FROM sys.login_token
+    SELECT name, type, usage FROM sys.user_token
+    TRUNCATE TABLE reloadable
+    EXEC('BULK INSERT reloadable FROM ''C:\temp\reloadtest.csv''
+          WITH (FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')')
+go
+-- The same code, but this procedure we will not sign.
+CREATE PROCEDURE unsigned_sp AS
+    SELECT name, type, usage FROM sys.login_token
+    SELECT name, type, usage FROM sys.user_token
+    --TRUNCATE TABLE reloadable
+    EXEC('BULK INSERT reloadable FROM ''C:\temp\reloadtest.csv''
+          WITH (FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')')
+go
+-- Give test user right to execute the procedures.
+GRANT EXECUTE ON reload_sp TO testuser
+GRANT EXECUTE ON unsigned_sp TO testuser
+go
+-- Import the certificate we created in master into the test database.
+CREATE CERTIFICATE reloadcert FROM FILE = 'C:\temp\reloadcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\reloadcert.pvk',
+                  DECRYPTION BY PASSWORD = 'Tomorrow never knows',
+                  ENCRYPTION BY PASSWORD = 'A day in life')
+go
+-- Delete the files.
+EXEC master..xp_cmdshell 'DEL C:\temp\reloadcert.*', 'no_output'
+go
+-- And create a user for the certificate.
+CREATE USER reloadcert_user FOR CERTIFICATE reloadcert
+go
+-- Grant this user rights to truncate and insert to the test table.
+GRANT ALTER, INSERT ON reloadable TO reloadcert_user
+go
+-- Sign the test procedures.
+ADD SIGNATURE TO reload_sp BY CERTIFICATE reloadcert
+    WITH PASSWORD = 'A day in life'
+go
+-- Switch to the test user.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- Run the unsigned procedure. You will get a permission error.
+EXEC unsigned_sp
+go
+-- Run the real reload procedure.
+EXEC reload_sp
+go
+-- Back to ourselves.
+REVERT
+go
+-- The data in the table has been replaced.
+SELECT a, b, c FROM reloadable
+go
+-- Clean up.
+USE master
+go
+DROP DATABASE bulkcerttest
+DROP LOGIN reloadcert_login
+DROP CERTIFICATE reloadcert
+DROP LOGIN testuser
+EXEC xp_cmdshell 'DEL C:\temp\reloadtest.csv', 'no_output'</pre>
+<p>In <b>unsigned_sp</b> I have commented <small>TRUNCATE TABLE</small>, in order to
+   demonstrate the error you get because lack of bulk permissions. If you
+   uncomment <small>TRUNCATE TABLE</small>, you will get a different permission error from <b>
+   unsigned_sp</b>.</p>
+<p>One problem here is that we need to bounce the certificate over disk. To do this, you need to determine a directory where you can write the certificate. This can be particularly difficult if you need to do this in a deployment script to be run on servers you never have seen. In this example, I used C:\temp for the sake of simplicity, but C:\temp does not exist on all servers. Even if it does, the service account for <small>SQL</small> Server may not have write access to that folder. If you leave out the path entirely, <small>BACKUP CERTIFICATE</small> will write the files to the default directory for new databases and likewise <small>CREATE CERTIFICATE</small> will read from this directory. It's reasonable to expect that <small>SQL</small> Server has write access to this folder, so far so good. Unfortunately, this path is not easily determined from within  <small>SQL</small> Server, so there is a challenge if you want to delete the files programmatically from your deployment script. One way to get a path that is known to be writeable is this <small>SELECT</small>:</p>
+<pre>SELECT substring(physical_name, 1, len(physical_name) -<br>                                   charindex('\', reverse(physical_name)) + 1)<br>FROM   sys.database_files<br>WHERE  file_id = 1</pre>
+<p>This retrieves the path to the directory where the first file for the current database resides. You would use this path throughout the script, which means that <small>BACKUP/CREATE CERTIFICATE</small> has to be embedded in dynamic <small>SQL</small>, as they don't accept variables for the file name.</p>
+<h3><a name="copycertificate"></a>CREATE CERTIFICATE FROM BINARY in SQL 2012</h3>
+<p>It would certainly be convenient, if you could copy a certificate directly from one database to another without bouncing it over disk, and there is a new feature in <small>SQL</small> Server 2012 that permits you to do this. There is a new clause to <small>CREATE CERTIFICATE: FROM BINARY</small> which permits you to specify the certificate as a binary constant. <small>SQL</small> 2012 also offers two new functions <b>certencoded</b> and <b>certprivatekey</b> which permits you to retrieve the public and the private keys of the certificate. Thus, you can say:</p>
+<pre>DECLARE @public_key varbinary(MAX) = certencoded(my_cert),
+        @private_key varbinary(MAX) = 
+            certprivatekey(my_cert, 'private_key_password', 'public_key_password')
+CREATE CERTIFICATE newcert
+FROM BINARY = @public_key
+WITH PRIVATE KEY (BINARY = @private_key,
+                  DECRYPTION BY PASSWORD = 'private_key_password',
+                  ENCRYPTION BY PASSWORD = 'new_public_key_password')</pre>
+<p>  Almost. The functions do not accept the name for the certificate, but they want the the certificate id in <b>sys.certificates</b>. You can retrieve it with the <b>cert_id</b> function, see example below for how to use it. Furthermore, <small>CREATE CERTIFICATE</small> does not accept variables for the binary value, but you must provide a constant, which means that you are in for some dynamic <small>SQL</small>.</p>
+<p>To use this new functionality to copy a certificate between databases, we replace the steps 4-7 above to read:</p>
+<ol start="4">
+  <li>Save the keys of the certificae to a temp table.</li>
+  <li>Switch to the application database. </li>
+  <li>Create the certificate from the data in the temp table.</li>
+  <li>Drop the temp table.</li>
+</ol>
+<p>The reason we like to use a temp table is that our example script is split into a number of batches. We cannot use variables, as they exist only for the duration of a batch. Whence the temp table. This is how step 4 looks like:</p>
+<pre>CREATE TABLE #keys (pubkey varbinary (MAX) NOT NULL,
+                    privkey varbinary(MAX) NOT NULL)
+INSERT #keys (pubkey, privkey)
+SELECT certencoded(cert_id('reloadcert')),
+       certprivatekey(cert_id('reloadcert'), 'Tomorrow never knows',
+                                             'All you need is love')</pre>
+<p>The passwords you pass to <b>certprivatekey</b> correspond to the passwords we used with <small>BACKUP CERTIFICATE</small> above. That is, the first password is the password for the private key, which you have to make up at this point. The second password is the password for the public key that you used when you created the certificate in <b>master</b>.</p>
+<p>Since we need to use dynamic <small>SQL</small> to create the certificate from the data in the temp table, this part gets a little more complicated than it would have to be. Here is how it looks with our bulk-copy example:</p>
+<pre>DECLARE @sql nvarchar(MAX)
+SELECT @sql = 
+   'CREATE CERTIFICATE reloadcert 
+    FROM BINARY = ' + convert(nvarchar(MAX), pubkey, 1) + '
+    WITH PRIVATE KEY (BINARY = ' + convert(nvarchar(MAX), privkey, 1) + ',
+                      DECRYPTION BY PASSWORD = ''Tomorrow never knows'',
+                      ENCRYPTION BY PASSWORD = ''A day in life'')'
+FROM #keys</pre>
+<pre>PRINT @sql
+EXEC (@sql)
+DROP TABLE #keys </pre>
+<p>A key here is the third argument to the <b>convert</b> function; this converts the binary value to a hex-string with a leading 0x. This style to <b>convert</b> was added in <small>SQL</small> 2008, in case you are not familiar with it. If you compare with the <small>CREATE CERTIFICATE</small> command when we imported the certificate from a file, this is very similar; all that has changed is that <small>FILE</small> is now <small>BINARY</small> and the extra syntactical fireworks imposed to us because we have to use dynamic <small>SQL</small>.</p>
+<p>Before we execute the command, we print it, so we can understand what is going on if there is a syntax error in our dynamic <small>SQL</small>. Finally, we drop the temp table as a safety precaution. If we would leave it around, we could run into problems later if we would re-run the script or run a similar script from the same query window. </p>
+<p>The script <a href="http://www.sommarskog.se/grantperm/bulkcopy-2012.sql" target="_blank">bulkcopy-2012.sql</a> has the full example for bulk-load for <small>SQL</small> 2012, using <small>CREATE CERTIFICATE FROM BINARY</small>. </p>
+<p>All and all, this is a welcome addition to <small>SQL</small> 2012, since it makes it easier to copy certificates between databases. Not so much for the different syntax, but you don't have to worry about disk paths in your scripts.  </p>
+<h3><a name="certcrossdb">Cross-Database Access</a></h3>
+<p>When you need to write a stored procedure that accesses data in another
+   database, you can arrange permissions by signing your procedure with a
+   certificate that exists in both databases. The steps are similar to the
+   bulk-copy case, so I will go directly to an example
+   script. </p>
+<p>There are two things to note with this script: 1) <b>testuser</b> is never
+   granted access to <b>db1</b>. That is, by signing your procedures with a
+   certificate, you can give users access to data in a database they do not have
+   access to themselves. This is different from ownership chaining, where the user must
+   have been granted access to the target database. 2) I don't create
+   any user for the certificate in <b>db2</b>, simply because in this example no permissions are
+   needed to be granted through the certificate in <b>db2</b>.</p>
+<p>Here is the script (please see the <a href="#examplescripts">introductory
+   note</a> for general notes on the example scripts):</p>
+<pre>USE master
+go
+-- Create a test login.
+CREATE LOGIN testuser WITH PASSWORD = 'CeRT=0=TeST'
+go
+-- Create test two databases
+CREATE DATABASE db1
+CREATE DATABASE db2
+go
+-- Move to first test database.
+USE db1
+go
+-- Create certificate in db1
+CREATE CERTIFICATE crossdbcert
+   ENCRYPTION BY PASSWORD = 'Lucy in the Skies with Diamonds'
+   WITH SUBJECT = 'Cross-db test',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+-- Save the certificate to disk.
+BACKUP CERTIFICATE crossdbcert TO FILE = 'C:\temp\crossdbcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\crossdbcert.pvk' ,
+                  ENCRYPTION BY PASSWORD = 'She said She said',
+                  DECRYPTION BY PASSWORD = 'Lucy in the Skies with Diamonds')
+go
+-- Create the certificate user. Note that we do not grant access to
+-- testuser.
+CREATE USER certuser FROM CERTIFICATE crossdbcert
+go
+-- A test table.
+CREATE TABLE testtbl (a int NOT NULL,
+                      b int NOT NULL,
+                      c int NOT NULL)
+go
+-- Insert some test data.
+INSERT testtbl (a, b, c) VALUES (12, 23, 34)
+go
+-- The certificate user needs to access this table.
+GRANT SELECT ON testtbl TO certuser
+go
+-- Switch to the second database.
+USE db2
+go
+-- Welcome the test user to this database.
+CREATE USER testuser
+go
+-- Signed test procedure.
+CREATE PROCEDURE signed_sp AS
+    SELECT a, b, c FROM db1..testtbl
+go
+-- Same code, but we will leave this one unsigned.
+CREATE PROCEDURE unsigned_sp AS
+    SELECT a, b, c FROM db1..testtbl
+go
+-- Give test user right to execute the procedures.
+GRANT EXECUTE ON signed_sp TO testuser
+GRANT EXECUTE ON unsigned_sp TO testuser
+go
+-- Import the certificate we created in the first test database into the second.
+CREATE CERTIFICATE crossdbcert FROM FILE = 'C:\temp\crossdbcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\crossdbcert.pvk',
+                  DECRYPTION BY PASSWORD = 'She said She said',
+                  ENCRYPTION BY PASSWORD = 'Helter Skelter')
+go
+-- Delete the file with the certificate.
+EXEC master..xp_cmdshell 'DEL C:\temp\crossdbcert.*', 'no_output'
+go
+-- Sign the test procedures.
+ADD SIGNATURE TO signed_sp BY CERTIFICATE crossdbcert
+    WITH PASSWORD = 'Helter Skelter'
+go
+-- Switch to the test login.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- Run the unsigned procedure. You will get a permission error.
+EXEC unsigned_sp
+go
+-- Run the signed procedure. testuser can now access testdbl, even though
+-- he is not a user of db1.
+EXEC signed_sp
+go
+-- Back to ourselves.
+REVERT
+go
+-- Clean up.
+USE master
+go
+DROP DATABASE db1
+DROP DATABASE db2
+DROP LOGIN testuser</pre>
+<p>See the file <a href="http://www.sommarskog.se/grantperm/crossdb-2012.sql" target="_blank">crossdb-2012.sql</a> for a version that uses the new <a href="#copycertificate"><small>FROM BINARY</small></a> clause on <small>SQL</small> Server 2012 to copy the certificate.</p>
+<h3> </h3>
+<h3><a name="countersignatures"></a>Counter Signatures</h3>
+<p>If you look up the command <small>ADD SIGNATURE</small> in Books Online, you will find that there is an optional keyword <small>COUNTER</small> which you can put before <small>SIGNATURE</small>, but in Books Online for <small>SQL</small> 2005 and <small>SQL</small> 2008 there is no information what this keyword means. It was added to Books Online first with <small>SQL</small> 2008 R2. Before that, the only place to learn about counter signatures was a a <a href="http://blogs.msdn.com/b/lcris/archive/2006/10/19/sql-server-2005-an-example-for-how-to-use-counter-signatures.aspx">blog post from Laurenţiu Cristofor</a>. He was one of the Program Managers for the security enhancements in <small>SQL</small> 2005.</p>
+<p>When you counter-sign a procedure P1 with a certificate C, this has in itself no effect at all, even if permissions has been granted to a user for that certificate. But assume that there is also a procedure P2 that has been signed (and not counter-signed) with C, and that P2 calls P1. Normally, when you call an inner procedure from a signed procedure, the certificate user is removed from the user token. But when P1 is counter-signed with C, the certificate user remains in the user token. The net effect of this is that you can get the powers of P1 only if you call it through P2.</p>
+<p>How could we use this? Here is one example. Assume that we have generic search procedure  that in itself permits users to search all data. However, there are business rules that say that users may only see customers (or products or whatever) they have access to according to some scheme. These rules are enforced by an outer procedure that computes the values for some of the parameters to the inner procedure, thereby constraining the search. In the example below, this is extremely simple:  the user may only see rows he owns. In a real-world scenario, both procedures would be far more elaborate. (Please see the <a href="#examplescripts">introductory
+note</a> for general notes on the example scripts).</p>
+<pre>USE master
+go
+-- Create a test login and test database.
+CREATE LOGIN testuser WITH PASSWORD = 'CeRT=0=TeST'
+CREATE DATABASE certtest
+go
+-- Move to the test database.
+USE certtest
+go
+-- Create the test user, and grant him permission to execute any
+-- stored procedure.
+CREATE USER testuser
+GRANT EXECUTE TO testuser
+go
+-- Create a test table and add some data.
+CREATE TABLE testtbl (a     int     NOT NULL,
+                      b     int     NOT NULL,
+                      owner sysname NOT NULL)
+INSERT testtbl (a, b, owner) VALUES (47, 11, 'testuser')
+INSERT testtbl (a, b, owner) VALUES (17, 89, 'someotheruser')
+go
+-- This is the inner procedure that permits you to view all data,
+-- but the selection could be constrained to a certain owner.
+CREATE PROCEDURE inner_sp @owner sysname = NULL AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   DECLARE @sql nvarchar(MAX)
+   SELECT @sql = N'SELECT a, b FROM testtbl WHERE 1 = 1 '
+   IF @owner IS NOT NULL
+      SELECT @sql = @sql + ' AND owner = @owner'
+   EXEC sp_executesql @sql, N'@owner sysname', @owner
+go
+-- The outer procedure which forces the owner to be the current user.
+CREATE PROCEDURE outer_sp AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   DECLARE @owner sysname
+   SELECT @owner = SYSTEM_USER
+   EXEC inner_sp @owner
+go
+-- Create the certificate.
+CREATE CERTIFICATE examplecert
+   ENCRYPTION BY PASSWORD = 'Being for the benefit of Mr Kite'
+   WITH SUBJECT = 'Certificate for counter-sign example',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+-- Create the certificate user and grant access the test table.
+CREATE USER examplecertuser FROM CERTIFICATE examplecert
+GRANT SELECT ON testtbl TO examplecertuser
+go
+-- Sign the outer procedure.
+ADD SIGNATURE TO outer_sp BY CERTIFICATE examplecert
+    WITH PASSWORD = 'Being for the benefit of Mr Kite'
+go
+-- And counter-sign the inner procedure.
+ADD COUNTER SIGNATURE TO inner_sp BY CERTIFICATE examplecert
+    WITH PASSWORD = 'Being for the benefit of Mr Kite'
+go
+-- Run as the test user, to actually see that this works.
+EXECUTE AS USER = 'testuser'
+go
+-- First run the inner procedure directly. This gives a permission
+-- error.
+EXEC inner_sp
+go
+-- Then run the outer procedure. Now we get the data back, but
+-- only what we are permitted to see.
+EXEC outer_sp
+go
+-- Become ourselves again.
+REVERT
+go
+-- Clean up.
+USE master
+DROP DATABASE certtest
+DROP LOGIN testuser</pre>
+<p>True, this could also be implemented by signing <b>inner_sp</b> with the certificate directly, and then make sure that users does not have <small>EXECUTE</small> permission on this procedure, for instance with an explicit <small>DENY</small>. Thanks to ownership signing, users would still be able to call the inner procedure if they come from the outer procedure. But this would require you to manage two security mechanisms to achieve your goal, whereas with counter-signing you only need one.</p>
+<p>Here is a second example, inspired by  a newsgroup question. A poster wanted users of an application to be able to start a certain job with <b>sp_start_job</b>. To be able to start a job owned by someone else, you need to be member of the fixed role <b>SQLAgentOperatorRole</b> in <b>msdb</b>. A start is to write a stored procedure that calls <b>sp_start_job</b> for this specific job, sign that procedure with a certificate, and then create a user from the certificate and make that user a member of <b>SQLAgentOperatorRole</b>. </p>
+<p>We have learnt previously that when you call a system procedure, the certificate user remains in the user token, and thus you can take benefit of the permissions granted to the certificate user. But it turns out that the procedures in <b>msdb</b> are not system procedures in that sense. So we need to sign <b>sp_start_job</b> as well, but a normal signature is not a very good idea since this would permit users to start any job. Instead we counter-sign <b>sp_start_job</b> with the same certificate that we sign the wrapper procedure with, and we are almost there. I found by testing that <b>sp_start_job</b> calls two other procedures, <b>sp_sqlagent_notify</b> and <b>sp_verify_job_identifiers</b>, and they must be counter-signed as well.</p>
+<p>I should hasten to add, that this solution is not unquestionable. Does Microsoft support signing of <b>msdb</b> procedures? If you install a service pack or a hotfix, you will need to reapply the signatures if Microsoft replaces the procedures with updated versions. They may also restructure the code, requiring you to counter-sign a different set of procedures.</p>
+<p>Nevertheless, here is a complete script that demonstrates this technique. Note that to run it successfully, you need to have <small>SQL</small> Server Agent running, and you need to create a job called <b>Testjob</b> (which can do <code>PRINT 'Hello world!'</code> or whatever.) As always, please see the <a href="#examplescripts">introductory
+note</a> for general notes on the example scripts. For the <small>SQL</small> 2012 version, please see the file <a href="http://www.sommarskog.se/grantperm/jobstart-2012.sql" target="_blank">jobstart-2012.sql</a>.</p>
+<pre>USE master
+go
+-- Create a test login.
+CREATE LOGIN testuser WITH PASSWORD = 'CeRT=0=TeST'
+go
+-- Create test database.
+CREATE DATABASE jobstarttest
+go
+USE msdb
+-- Create certificate in msdb.
+CREATE CERTIFICATE jobstartcert
+   ENCRYPTION BY PASSWORD = 'Strawberry Fields Forever'
+   WITH SUBJECT = 'To permit starting the Testjob',
+   START_DATE = '20020101', EXPIRY_DATE = '20200101'
+go
+-- Create a user for the certificate.
+CREATE USER jobstartcert_user FROM CERTIFICATE jobstartcert
+go
+-- Grant rights for the certificate login to run jobs.
+EXEC sp_addrolemember SQLAgentOperatorRole, jobstartcert_user
+go
+-- Counter-sign sp_start_job and its subprocedures.
+ADD COUNTER SIGNATURE TO sp_start_job BY CERTIFICATE jobstartcert
+    WITH PASSWORD = 'Strawberry Fields Forever'
+ADD COUNTER SIGNATURE TO sp_verify_job_identifiers BY CERTIFICATE jobstartcert
+    WITH PASSWORD = 'Strawberry Fields Forever'
+ADD COUNTER SIGNATURE TO sp_sqlagent_notify BY CERTIFICATE jobstartcert
+    WITH PASSWORD = 'Strawberry Fields Forever'
+go
+-- Save the certificate to disk.
+BACKUP CERTIFICATE jobstartcert TO FILE = 'C:\temp\jobstartcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\jobstartcert.pvk' ,
+                  ENCRYPTION BY PASSWORD = 'Looking through a Glass Onion',
+                  DECRYPTION BY PASSWORD = 'Strawberry Fields Forever')
+go
+-- Move to test database.
+USE jobstarttest
+go
+-- Create a database user for the test login.
+CREATE USER testuser
+go
+-- Create a procedure that starts a certain job.
+CREATE PROCEDURE start_this_job AS
+   EXEC msdb..sp_start_job 'Testjob'
+go
+-- Give test user right to execute the procedure.
+GRANT EXECUTE ON start_this_job TO testuser
+go
+-- Import the certificate we created in msdb into the test database.
+CREATE CERTIFICATE jobstartcert FROM FILE = 'C:\temp\jobstartcert.cer'
+WITH PRIVATE KEY (FILE = 'C:\temp\jobstartcert.pvk',
+                  DECRYPTION BY PASSWORD = 'Looking through a Glass Onion',
+                  ENCRYPTION BY PASSWORD = 'Fixing a Hole')
+go
+-- Delete the files.
+EXEC master..xp_cmdshell 'DEL C:\temp\jobstartcert.*', 'no_output'
+go
+-- Sign the test procedures.
+ADD SIGNATURE TO start_this_job BY CERTIFICATE jobstartcert
+    WITH PASSWORD = 'Fixing a Hole'
+go
+-- Switch to the test user.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- Start the job, this succeeds.
+EXEC start_this_job
+go
+-- Back to ourselves.
+REVERT
+go
+-- Clean up.
+USE msdb
+go
+DROP COUNTER SIGNATURE FROM sp_sqlagent_notify
+   BY CERTIFICATE jobstartcert
+DROP COUNTER SIGNATURE FROM sp_verify_job_identifiers
+   BY CERTIFICATE jobstartcert
+DROP COUNTER SIGNATURE from sp_start_job
+   BY CERTIFICATE jobstartcert
+DROP USER jobstartcert_user
+DROP CERTIFICATE jobstartcert
+go
+USE master
+go
+DROP DATABASE jobstarttest
+DROP LOGIN testuser</pre>
+
+<h3><a name="asymkeys">Using Asymmetric Keys</a></h3>
+<p>Instead of signing your procedure with certificate, you can use asymmetric keys.
+   You create an asymmetric key in <small>SQL</small> Server
+   with the command <small>CREATE ASYMMETRIC KEY</small>. The
+   syntax is similar, but not identical, to <small>CREATE
+   CERTIFICATE</small>. Please see Books Online for details.</p>
+<p>From a cryptographic point of view, a certificate is an asymmetric key that has
+   an issuer and an expiration date. Since it has an issuer, a certificate can
+   participate in a chain of trust, which is important in for instance Service
+   Broker dialogues. When it comes to signing stored procedures, I have (with
+   quite some help from Razvan Socol) identified the following practical
+   differences:</p>
+<ul>
+   <li>An asymmetric key never expires, which  for procedure-signing purposes is a
+     slight advantage.</li>
+   <li>You don't have to specify a subject for an asymmetric key.</li>
+   <li>You cannot export an asymmetric key from a database. If you want to sign
+      procedures in two databases with the same key, you could create an
+      asymmetric key outside <small>SQL</small> Server and
+      import it into the databases. (This is possible.) I will need to add the
+      disclaimer that I have not tested whether this actually works.</li>
+   <li>The fact that an asymmetric key cannot be exported, can on the other hand
+      be seen as a security advantage, as someone cannot take your key into another
+     database without your knowing. </li>
+   <li>The key for a certificate in <small>SQL</small> Server is
+      always 1024 bits, where as for an asymmetric key you can choose between
+      512, 1024 and 2048 bits. It's possible that there is a performance gain by
+      using a shorter key for signing your procedures. However, I have not
+      tested this, nor have I had it confirmed, so it's pure speculation on my
+      part. </li>
+</ul>
+<p>All and all, I can't find any of these points convincing enough to mandate
+   any over the other. I have preferred to talk only about certificates in the
+   main part of this text to simplify the presentation.</p>
+<h3><a name="certfindinfo">Which Procedures are Signed by Which Certificates?</a></h3>
+<p>To see which procedures that have been signed in a database, you can run
+   this query. <b>crypt_type_desc</b> will tell you whether the procedure is signed with a certificate or an asymmetric key, and whether it's regularly signed or counter-signed.</p>
+<pre>SELECT Module = object_name(cp.major_id),
+       [Cert/Key] = coalesce(c.name, a.name),
+       cp.crypt_type_desc
+FROM   sys.crypt_properties cp
+LEFT   JOIN sys.certificates c    ON c.thumbprint = cp.thumbprint
+LEFT   JOIN sys.asymmetric_keys a ON a.thumbprint = cp.thumbprint</pre>
+<p>To find the users mapped to certificates, you can use this query:</p>
+<pre>SELECT certname = c.name, "username" = dp.name
+FROM   sys.certificates c
+JOIN   sys.database_principals dp ON c.sid = dp.sid</pre>
+<p>In the same vein, to find logins mapped to certificates:</p>
+<pre>SELECT certname = c.name, loginname = sp.name
+FROM   master.sys.certificates c
+JOIN   sys.server_principals sp ON c.sid = sp.sid</pre>
+<p>(Queries for users/logins mapped to asymmetric keys are similar.)</p>
+<p>If you want to find all databases where a certificate has
+   been used, you will need to query them all, using the thumbprint and/or the
+   subject as the key. </p>
+<h3><a name="managingdbcert">Managing Certificates and Passwords</a></h3>
+<p>Normally passwords should be strong and kept secret, but I have already
+   hinted that for procedure signing this may not always be necessary.</p>
+<p>Let's first consider the case when you use a certificate to grant permissions on database level. What if an unauthorised user learns the password for a certificate that is used to sign one or more procedures?  To be able to use the password for some evil, he would first need to have the rights to create procedures in some schema. Furthermore, to use <small>ADD SIGNATURE</small> he needs <small>CONTROL</small> permission on the certificate. In practice you would only have that permission if you are member of the <b>db_owner</b> role, in which case you can create  your own certificates and sign procedures with them all day long. The potential threat I can see is that another database owner could borrow your keyboard while you are away, and export a certificate that gives access to some sensitive table. He could  import the certificate into his database and sign a procedure that reads this data. Of course, he could just as well create a new certificate when he uses your keyboard, but if he uses an existing certificate the data theft is more likely to go unnoticed.</p>
+<p>All and all, for certificates used for procedure signing on database level, the password is not your biggest secret. Nevertheless, below I present an approach that permits throw away the password altogether so that no one knows it, not even you.</p>
+<p>Let's now look at using certificates to grant server-level permissions. (I am not discussing cross-database access specifically, but what I say here can be applied to cross-database access as well.) There is the plain and simple case where everyone who has <b>db_owner</b> rights in the user databases also are members of <b>sysadmin</b> or have <small>CONTROL SERVER</small>. This scenario is no different from database permissions: there isn't really anyone to hide the password for. All examples presented this far have been written under this assumption, since I wanted to focus on the mechanism as such. But if there are users who have <b>db_owner</b> rights in a database without being <b>sysadmin</b>, it's a different story. Here you need to apply care. </p>
+<p>Say that you are the <small>DBA</small> on a consolidated server and you are approached by an application admin, let's call her Anna DeMin who has <b>db_owner</b> rights in the database for her application. Anna has written the procedure <b>reload_sp</b> and wants you to sign it. To this end, you first review her code to ensure that she reads from the directory allotted for her application. You can then follow the steps outlined in the example script we saw previously. </p>
+<p>In this situation, you need to make sure that Anna's does not learn the password for the certificate that you create in her database, since else she could change the procedure to read from somewhere else. You also need to hide the password for the private key, or  delete it from disk directly so she cannot import it. Here is much of the beauty with certificates: as a server <small>DBA</small>, you can have full control over what permissions you have granted to user databases and to what code. To do that, you need to be able to manage your passwords.</p>
+<p>Now, if you are a server <small>DBA</small>, I can hear you say that you don't have the time for all this, and you trust your application admins, so you will give Anna the cert and the password, and that's that. Of course, if you trust your colleagues that's great, but no matter whether you do or not, I have a script for you that permits you to automate most of this process. The one step I cannot automate for you is the code review.</p>
+<p>The key points of the script.</p>
+<ol>
+  <li>There is one certificate for each procedure you sign. Every time you need to re-sign a procedure after a change, the script throws the old certificate away and creates a new one. All certificates have names that start with <small>SIGN</small> followed by the fully qualified name of the signed procedure. The subject also includes the permissions granted. Thus, you can easily review which permissions you have granted by querying <b>sys.certificates</b> in <b>master</b>. Logins have the same names as the certificates.</li>
+  <li>The password are GUIDs (with some extra characters to make sure that they pass the complexity rules enforced by Windows), and they are used only for the duration of the script and not saved.</li>
+  <li>When the procedure has been signed,  the private key is removed from the certificate with  <code>ALTER CERTIFICATE <i>cert</i> REMOVE PRIVATE KEY</code>. Once the private key has been removed, the certificate is only good for validation, but cannot be used to sign any new procedures.</li>
+  <li>The script does not  grant database-level permissions. In the bulk-load example, we granted <small>INSERT</small> and <small>ALTER</small> permissions on the target table. The application admin needs to create a separate certificate for this. Keep in mind that a procedure can be signed by more than one certificate.</li>
+</ol>
+<p>The script does have any support for counter-signatures, but if you need this, you could extend the script for this purpose.</p>
+<p>The script consists of two parts. The first part is the setup part, where you need define three things: 1) The target database. 2) The stored procedure (or function or trigger) to sign. 3) The server-level permission(s) to grant. Everything below the line with <code>======</code> is the fixed part that you normally don't have to change. (Why is this a script and not a stored procedure? I wrote it as a script, because I figure that if you administer many servers, it is better to have as script on disk than installing a stored procedure on every server. Particularly, if you change the script by time, it's good to have a single copy of it.)</p>
+<p>Here are all the steps the script takes. Note that if there is an error, the script aborts on the spot.</p>
+<ol>
+  <li>Validate and normalise database and procedure names. This is to make sure that the script always generates the same name for the certificate, even if you use different case or is inconsistent with specifying the schema.</li>
+  <li>Generate the name, subject and password for the certificate.</li>
+  <li>If a login with the certificate name exists, drop it.</li>
+  <li>Drop any old certificate in <b>master</b>.</li>
+  <li>If the procedure is signed with the old certificate, remove the signature.</li>
+  <li>As a safety precaution, remove any user created from the certificate in the target database.</li>
+  <li>Drop the certificate in the target database, if it exists there.</li>
+  <li>Create the new certificate in <b>master</b>.</li>
+  <li>Create a login from the certificate.</li>
+  <li>Grant permissions to the login.</li>
+  <li>Export the certificate.</li>
+  <li>Import the certificate in the target database.</li>
+  <li>If <b>xp_cmdshell</b> is enabled, delete the certificate files. (Else you will need to delete them manually; they are located in the same directory as the <b>master</b> database.)</li>
+  <li>Sign the procedure.</li>
+  <li>Remove the private key from the certificate, both in the target database and in <b>master</b>. </li>
+</ol>
+<p>If you want to test the script, you can use the bulk-load example above with some modifications: remove the certificate handling in <b>master</b>, and change <small>CREATE CERTIFICATE</small> in the user database to create a local certificate. Keep in mind that you still need to sign the procedure to grant <small>ALTER</small> and <small>INSERT</small> permissions on the table. Once you have run the script below, you can run the <small>EXECUTE AS</small> part in the bulk-load script to verify that the test user have all permissions. You find such a prepared version of the bulk-load example in the file <a href="http://www.sommarskog.se/grantperm/grantrights-test.sql" target="_blank">grantrights-test.sql</a>, instructions are included.</p>
+<pre>-- This script takes it base in the master database.
+USE master
+go
+DECLARE @procname      nvarchar(260),
+        @database      sysname,
+        @perms         nvarchar(4000),
+        @sp_executesql nvarchar(150),
+        @certname      sysname,
+        @username      sysname,
+        @subject       nvarchar(4000),
+        @pwd           char(39),
+        @sql           nvarchar(MAX),
+        @filename      nvarchar(1024),
+        @cmd           varchar(1024),
+        @debug         bit
+
+-- Set up parameters: the procedure to sign and the database it belongs to.
+SELECT @procname = 'reload_sp',
+       @database = 'bulkcerttest'
+
+-- The permissions to grant through the certificate. Set NULL if you only
+-- want to remove current signature.
+SELECT @perms = 'ADMINISTER BULK OPERATIONS'
+
+-- Run with debug or not?
+SELECT @debug = 1
+
+--============================ END OF SETUP ==========================
+
+-- A big TRY-CATCH block around everything to abort on first error.
+BEGIN TRY
+
+-- First verify that the database exists.
+IF db_id(@database) IS NULL
+   RAISERROR('Database %s does not exist', 16, 1, @database)
+
+-- Make sure that database name is quoted and appears exactly as in sys.databases.
+SELECT @database = quotename(name) FROM sys.databases WHERE name = @database
+
+-- We will call sp_executesql a number of times in the target database.
+SELECT @sp_executesql = @database + '.sys.sp_executesql'
+
+-- Next we verify that the procedure exists and make sure that
+-- we have a normalised quoted name. We need to run a query in the
+-- target database.
+SELECT @sql =
+   'SELECT @procname = MIN(quotename(s.name) + ''.'' + quotename(o.name))
+    FROM   sys.objects o
+    JOIN   sys.schemas s ON o.schema_id = s.schema_id
+    WHERE  o.object_id = object_id(@procname)'
+IF @debug = 1 PRINT @sql
+EXEC @sp_executesql @sql, N'@procname nvarchar(260) OUTPUT', @procname OUTPUT
+
+IF @procname IS NULL
+   RAISERROR('No procedure with the given name in database %s', 16, 1, @database)
+
+-- Construct name, subject and password for the certificate.
+SELECT @certname = 'SIGN ' + @database + '.' + @procname,
+       @subject  = 'Signing ' + @database + '.' + @procname + ' for ' + @perms,
+       @pwd      = convert(char(36), newid()) + 'Aa0'
+
+-- If a login exists for the cerficiate, we drop it
+IF EXISTS (SELECT *
+           FROM   sys.server_principals
+           WHERE  name = @certname
+             AND  type = 'C')
+BEGIN
+   SELECT @sql = 'DROP LOGIN ' + quotename(@certname)
+   IF @debug = 1 PRINT @sql
+   EXEC (@sql)
+END
+
+-- And drop the certificate itself.
+IF EXISTS (SELECT * FROM sys.certificates WHERE name = @certname)
+BEGIN
+   SELECT @sql = 'DROP CERTIFICATE ' + quotename(@certname)
+   IF @debug = 1 PRINT @sql
+   EXEC(@sql)
+END
+
+-- In the target database, we must remove the signature from the procedure,
+-- so that we can drop the certificate.
+SELECT @sql = '
+   IF EXISTS (SELECT *
+              FROM   sys.crypt_properties cp
+              JOIN   sys.certificates c ON cp.thumbprint = c.thumbprint
+              WHERE  cp.major_id = object_id(@procname)
+                AND  c.name = @certname)
+      DROP SIGNATURE FROM ' + @procname + ' BY CERTIFICATE ' + quotename(@certname)
+IF @debug = 1 PRINT @sql
+EXEC @sp_executesql @sql, N'@certname sysname, @procname nvarchar(260)',
+                    @certname, @procname
+
+-- No user should have been created from the cert, but if so, we drop it.
+-- Since this may been performed by some else, we cannot trust the username
+-- to be the same as the certificate name.
+SELECT @sql = '
+   SELECT @username = NULL
+   SELECT @username = dp.name
+   FROM   sys.database_principals dp
+   JOIN   sys.certificates c ON dp.sid = c.sid
+   WHERE  c.name = @certname'
+IF @debug = 1 PRINT @sql
+EXEC @sp_executesql @sql, N'@certname  sysname, @username sysname OUTPUT',
+                          @certname, @username OUTPUT
+
+IF @username IS NOT NULL
+BEGIN
+   SELECT @sql = 'DROP USER ' + quotename(@username)
+   IF @debug = 1 PRINT @sql
+   EXEC @sp_executesql @sql
+END
+
+-- And here goes the old cert.
+SELECT @sql = '
+   IF EXISTS (SELECT * FROM sys.certificates WHERE name = @certname)
+      DROP CERTIFICATE ' + quotename(@certname)
+IF @debug = 1 PRINT @sql
+EXEC @sp_executesql @sql, N'@certname  sysname', @certname
+
+IF @perms IS NULL
+   PRINT 'No new permissions set, cleanup completed.'
+ELSE
+BEGIN
+   -- Now we start to (re)create things. First create the certificate in master.
+   SELECT @sql = 'CREATE CERTIFICATE ' + quotename(@certname) + '
+      ENCRYPTION BY PASSWORD = ''' + @pwd + '''
+      WITH SUBJECT = ''' + @subject + ''',
+      START_DATE = ''20020101'', EXPIRY_DATE = ''20200101'''
+   IF @debug = 1 PRINT @sql
+   EXEC(@sql)
+
+   -- And the login for the certificate.
+   SELECT @sql = 'CREATE LOGIN ' + quotename(@certname) +
+                 ' FROM CERTIFICATE ' + quotename(@certname)
+   IF @debug = 1 PRINT @sql
+   EXEC(@sql)
+
+   -- Grant the permissions.
+   SELECT @sql = 'GRANT ' + @perms + ' TO ' + quotename(@certname)
+   IF @debug = 1 PRINT @sql
+   EXEC(@sql)
+
+   -- Determine a path to where we can write the files for the certs.
+   SELECT @filename = substring(physical_name, 1, len(physical_name) -
+                                charindex('\', reverse(physical_name)) + 1) +
+                      convert(char(36), newid())
+   FROM   sys.database_files
+   WHERE  file_id = 1
+
+   -- And backup up the certificate to disk.
+   SELECT @sql = '
+      BACKUP CERTIFICATE ' + quotename(@certname) + '
+      TO FILE = ''' + @filename + '.cer' + '''
+      WITH PRIVATE KEY (FILE = ''' + @filename + '.pvk' + ''',
+           ENCRYPTION BY PASSWORD = ''' + @pwd + ''',
+           DECRYPTION BY PASSWORD = ''' + @pwd + ''')'
+   IF @debug = 1 PRINT @sql
+   EXEC(@sql)
+
+   -- And then restore in the target database.
+   SELECT @sql = '
+      CREATE CERTIFICATE ' + quotename(@certname) + '
+      FROM FILE = ''' + @filename + '.cer' + '''
+      WITH PRIVATE KEY (FILE = ''' + @filename + '.pvk' + ''',
+           ENCRYPTION BY PASSWORD = ''' + @pwd + ''',
+           DECRYPTION BY PASSWORD = ''' + @pwd + ''')'
+   IF @debug = 1 PRINT @sql
+   EXEC @sp_executesql @sql
+
+   -- If possible, delete the certs from disk.
+   SELECT @cmd = 'DEL "' + @filename + '.*"'
+   IF (SELECT value_in_use
+       FROM   sys.configurations
+       WHERE  name = 'xp_cmdshell') = 1
+   BEGIN
+      IF @debug = 1 PRINT @cmd
+      EXEC xp_cmdshell @cmd
+   END
+   ELSE
+   BEGIN
+      PRINT '******** xp_cmdshell disabled, you need run this command manually'
+      PRINT @cmd
+   END
+
+   -- We can now sign the procedure.
+   SELECT @sql = 'ADD SIGNATURE TO ' + @procname + ' BY CERTIFICATE ' +
+                  quotename(@certname) + ' WITH PASSWORD = ''' + @pwd + ''''
+   IF @debug = 1 PRINT @sql
+   EXEC @sp_executesql @sql
+
+   -- Finally, drop the private key of the cert from the databases.
+   SELECT @sql = 'ALTER CERTIFICATE ' + quotename(@certname) + ' REMOVE PRIVATE KEY'
+   IF @debug = 1 PRINT @sql
+   EXEC (@sql)
+
+   SELECT @sql = 'ALTER CERTIFICATE ' + quotename(@certname) + ' REMOVE PRIVATE KEY'
+   IF @debug = 1 PRINT @sql
+   EXEC @sp_executesql @sql
+END
+END TRY
+BEGIN CATCH
+   DECLARE @msg nvarchar(4000)
+   SELECT @msg = error_message()
+   RAISERROR(@msg, 16, 1)
+END CATCH</pre>
+<p>Before we move on, I like to point out a few virtues for dynamic <small>SQL</small>, even if they are not directly related to the topic of this article:</p>
+<ul>
+  <li>Before all execution of dynamic <small>SQL</small>, I have a debug <small>PRINT</small>, so I can inspect the statement in case of an error.</li>
+  <li>To run dynamic <small>SQL</small> in the target database, I make use of that you can run a system procedure in a different database by using three-part notation, and that <small>EXEC</small> accepts a variable for the procedure name.</li>
+  <li>I consistently use <b><nobr>quotename()</nobr></b> to avoid syntax errors if there is a special character in an object name. For the database and procedure I apply the brackets once for all, whereas for the certificate name I do it every time I need to. (Since I also use the cert name in queries.)</li>
+  <li>I fail on one point though: if the database or procedure name would include a a single quote, there would be a syntax error when creating the certificate because of the subject.</li>
+</ul>
+<p>There is a version for <small>SQL</small> 2012 of this script in the file <a href="http://www.sommarskog.se/grantperm/grantrights-2012.sql" target="_blank">grantrights-2012.sql</a>. It is worth dwelling on the piece where the certificate is copied for a second:</p>
+<pre>-- Copy the certificate to the target database.
+SELECT @sql = '
+   CREATE CERTIFICATE ' + quotename(@certname) + '
+   FROM BINARY = ' + convert(varchar(MAX), 
+                         certencoded(cert_id(quotename(@certname))), 1) + '
+   WITH PRIVATE KEY (BINARY = ' + convert(varchar(MAX),
+               certprivatekey(cert_id(quotename(@certname)), @pwd, @pwd), 1) + ',
+        ENCRYPTION BY PASSWORD = ''' + @pwd + ''',
+        DECRYPTION BY PASSWORD = ''' + @pwd + ''')'
+IF @debug = 1 PRINT @sql
+EXEC @sp_executesql @sql</pre>
+<p>Since the script is a single batch, there is no need for temp tables. Instead, I copy the certificate in a single group of statements. The above three statements replaces no less than four groups of statements in the script above. Observe also that in the call to <b>cert_id</b>, I apply <b>qoutename</b> on @certname. This is required, since the name of the certificates includes brackets.</p>
+<h2><a name="EXECUTE_AS">Impersonation with EXECUTE AS</a></h2>
+<p>We will now turn to the third method in <small>SQL</small> Server to provide
+   permission through stored procedures: the <small>EXECUTE AS</small> clause. On
+   the surface, <small>EXECUTE AS</small> is much simpler to use than certificates, but as it
+   works through impersonation, there are side effects which may be
+   unacceptable. We will also see that for granting server-level permissions, <small>EXECUTE AS</small> is inappropriate in environments where there are users who have full permissions on database level, but not on server-level.</p>
+<h3><a name="EXECASstatement">The Statement EXECUTE AS</a></h3>
+<p><small>EXECUTE AS</small> is  two things. It is a <i>clause</i> that you can add to a stored
+   procedure or any other <small>SQL</small> module, and that is
+   what you can use to grant
+   permissions to non-privileged users. There is also a <i>statement</i>
+  <small>EXECUTE AS</small>, and we will look at the statement before we turn to the clause.</p>
+<p>The statement <small>EXECUTE AS</small> permits you to switch your execution context to
+   impersonate another login or user. Here are
+   examples of the two possibilities:</p>
+<pre>EXECUTE AS LOGIN = 'somelogin'
+EXECUTE AS USER = 'someuser'</pre>
+<p>Once you want to become your original self,
+   you use the <small>REVERT</small> statement. (If you have changed databases, you will first
+   need to return to the database where you issued the <small>EXECUTE AS</small> statement.)
+   If the <small>EXECUTE AS</small> statement is executed in a lower-level scope – that is, in a
+   stored procedure or a batch of dynamic <small>SQL</small> – there is an implicit <small>REVERT</small> when
+   the scope exits. Thus if you run:</p>
+<pre>EXEC('EXECUTE AS LOGIN = ''frits''; SELECT SYSTEM_USER')
+SELECT SYSTEM_USER</pre>
+<p>the second <small>SELECT</small> will not return <b>frits</b>, but your own login name.</p>
+<p>To perform <small>EXECUTE AS</small> you need <small>IMPERSONATE</small> rights on the login/user
+   in question. (This permission is implied on all logins if you have <b>sysadmin</b>
+   rights
+   and on all users in a database where you have <b>db_owner</b> rights.) </p>
+<p>As an extra thrill, you can stack <small>EXECUTE AS</small>,
+   so you could first become <b>login1</b>, then <b>user2</b> etc. Each <small>REVERT</small> would take you
+   back to the previous context. This would require each login/user to have
+   impersonation rights on the next login/user in the chain.</p>
+<p>There are two apparent uses for the <small>EXECUTE AS</small> statement:</p>
+<ul>
+   <li>A privileged user can use <small>EXECUTE AS</small> to
+      test queries and procedures as another user, without having to open a new
+      query window. This can be very handy, and all example scripts in this
+      article use <small>EXECUTE AS</small> for this purpose.</li>
+   <li>To implement "application proxies". In this case, the application authenticates
+      the users outside the server. The
+      application connects to the server with a proxy login that has
+     <small>IMPERSONATE</small>
+      rights on the real users and then issues <small>EXECUTE AS</small>
+      to run as them. When you create a user in <small>SQL</small> 2005, you can specify the
+      clause <small>WITHOUT LOGIN</small> to create a user that exists in the database only. Thus, you can implement a
+      solution where the real users do
+      not need any sort of direct access to <small>SQL</small> server.</li>
+</ul>
+<p>In the latter case, the application should add the clause <small>WITH NO REVERT</small> or
+  <small>WITH COOKIE to the EXECUTE AS statement. Else a
+   malicious user could </small>inject a <small>REVERT</small>
+   statement and gain the rights of the proxy login. (As this goes a little beyond the
+   scope for this article, I refer you to Books Online for further details.) </p>
+<p>If you use <small>EXECUTE AS LOGIN</small> this is exactly the same as if you had logged into <small>SQL</small> Server as that user directly. You will have the permissions of that login, you can access the databases that login can access and so on. I have not been able to detect any difference at all, save for the function <b><nobr>original_login()</nobr></b> that I will return to. </p>
+<p>If you use <small>EXECUTE AS USER</small> it is a little different. As long as you only run commands within the database, it is just as if you had logged in as that user. But if you try to access another user database you will get an error message, and if you try to perform some server-level action like <b>sp_who</b> you will only get back a minimum of data, even if this user maps to a login in the <b>sysadmin</b> role. When you impersonate a database user you are by default sandboxed into that database. We will look more into this later. For now, I say that if you use <small>EXECUTE AS</small> to test permissions, you should in most cases use <small>EXECUTE AS LOGIN</small>. The exception is when you are testing access rights for users that are purposely created <small>WITHOUT LOGIN</small>.</p>
+<p>I should also mention that there is an impersonation shortcut for the <nobr>
+<small>EXECUTE()</small></nobr> command, so that you can say:</p>
+<pre>EXECUTE(@somesql) AS LOGIN = 'somelogin'
+EXECUTE(@somesql) AS USER = 'someuser'</pre>
+<p>The purpose of this is the same as for the <small>EXECUTE AS
+   </small>statement; for a high-privileged user to impersonate a low-privileged
+   user.</p>
+<p>Before I move on, I should mention that there is an older command <small>SETUSER</small> which also can be used for impersonation. The semantics for <small>SETUSER</small> are less clear than for <small>EXECUTE AS</small>, and <small>SETUSER</small> is deprecated. If you are still using <small>SETUSER</small>, there is all reason to change to <small>EXECUTE AS</small>.</p>
+<p class="noteh3"><b>Note</b>: When impersonating a Windows user, it's a common mistake to put the name in brackets, but this does not work  and results in somewhat cryptic error message. That is, it should be <code>EXECUTE AS 'Domain\User'</code>, not <code class="errmsg">EXECUTE AS '[Domain\User]'</code>.</p>
+<h3><a name="execasdynsql">Using EXECUTE AS to Grant Permissions within the Database</a></h3>
+<p>So far the statement <small>EXECUTE AS</small>. We will now look at the clause <small>WITH EXECUTE AS</small> you can add to your stored procedure. As for certificates, we will first look at using the <small>EXECUTE AS</small> clause to
+   give users rights for actions within the database, and as with certificates
+we will use dynamic <small>SQL</small> as our example. </p>
+<p>To repeat, these were the presumptions for the dynamic <small>SQL</small> example:</p>
+<pre>CREATE TABLE testtbl (a int NOT NULL,
+                      b int NOT NULL)
+go
+CREATE PROCEDURE example_sp AS
+   EXEC ('SELECT a, b FROM testtbl')
+go
+GRANT EXECUTE ON example_sp TO public
+go</pre>
+<p>As we saw <a href="#chaining_dynsql">earlier</a>, ownership chaining does not
+   work here. To use <small>EXECUTE AS</small> to make it possible for users to run
+   <b>example_sp</b>
+   without <small>SELECT</small> permission on <b>testtbl</b>, the steps to take are:</p>
+<ol>
+   <li>Create a proxy user.</li>
+   <li>Grant the proxy user the necessary permissions.</li>
+   <li>Add the <small>EXECUTE AS</small> clause to the stored procedure.</li>
+</ol>
+<p>In code, it looks like this:</p>
+<pre>-- Create a proxy user.
+CREATE USER exampleproxy WITHOUT LOGIN
+-- Give it permissions on the table.
+GRANT SELECT ON testtbl TO exampleproxy
+go
+-- Add EXECUTE AS to the procedure.
+CREATE PROCEDURE example_sp WITH EXECUTE AS 'exampleproxy' AS
+EXEC ('SELECT a, b FROM testtbl')
+go</pre>
+<p>Since the sole purpose for this user is to carry permissions, we create the user
+  <small>WITHOUT LOGIN</small>. As for what rights to grant to
+   the proxy user, the discussion in the section <i><a href="#grantrights">Granting
+   Rights to the Certificate User</a></i> applies here as well: only grant the
+   permissions needed.</p>
+<p>The effect of the <small>EXECUTE AS</small> clause is the same as of the <small>EXECUTE AS
+   USER</small> statement: that is, impersonation. As with certificates, the
+   user gets the rights of <b>exampleproxy</b>, but there are two important
+   differences: 1) It's not that the rights of the proxy user are added to your rights, but you <b>are</b> John
+   Malkovich. 2) If there is a call to an inner stored procedure or
+  a trigger fires, you are not reverted back to your original self;
+  you continue to execute in the context of the proxy user. It is not until you exit the
+  stored procedure with the <small>EXECUTE AS</small> clause that you return to your true self.</p>
+<p>This can have drastic and far-reaching consequences, which we shall look into
+   in a moment. First though, a complete script that shows the use <small>EXECUTE AS
+   to grant permissions for dynamic <small>SQL</small></small>.
+   (Again, please refer to the <a href="#examplescripts">introductory note</a>
+   about the example scripts in this article):</p>
+<pre>USE master
+go
+-- Create a test login.
+CREATE LOGIN testuser WITH PASSWORD = 'ExECaS=0=TeST'
+go
+-- Create the database to run the test in.
+CREATE DATABASE execastest
+go
+USE execastest
+go
+-- Create the test user.
+CREATE USER testuser
+go
+-- Create the test table.
+CREATE TABLE testtbl (a int NOT NULL,
+                      b int NOT NULL)
+INSERT testtbl (a, b) VALUES (47, 11)
+go
+-- Create a proxy user and give it rights to access the test table.
+CREATE USER exampleproxy WITHOUT LOGIN
+GRANT SELECT ON testtbl TO exampleproxy
+go
+-- Create two test stored procedures, one with EXECUTE AS and one
+-- without, and grant permission.
+CREATE PROCEDURE noexecas_sp AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   EXEC ('SELECT a, b FROM testtbl')
+go
+CREATE PROCEDURE example_sp WITH EXECUTE AS 'exampleproxy' AS
+   SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   EXEC ('SELECT a, b FROM testtbl')
+   EXEC noexecas_sp
+go
+GRANT EXECUTE ON example_sp TO public
+GRANT EXECUTE ON noexecas_sp TO public
+go
+-- Switch to the test user.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- First run the procedure without EXECUTE AS. This gives a permission
+-- error.
+EXEC noexecas_sp
+go
+-- Then the signed procedure with EXECUTE AS. Now get the data back.
+EXEC example_sp
+go
+-- Become ourselves again.
+REVERT
+go
+-- Clean up
+USE master
+DROP DATABASE execastest
+DROP LOGIN testuser</pre>
+<p>This is similar to the script for certificates, but you will notice that the
+   outcome is different. When the test user runs <b>noexecas_sp</b> directly, he gets a
+   permission error as expected. But when <b>example_sp</b> calls <b>noexecas_sp</b>,
+   there is no permission error, as was the case when we used a certificate. And when we
+   look at the output from <b>sys.user_token</b> we see why. When <b>noexecas_sp</b>
+   is called directly, we get:</p>
+<pre>SYSTEM_USER     USER         name       type      usage
+-------------   ------------ ---------- --------- --------------
+testuser        testuser     testuser   SQL USER  GRANT OR DENY
+testuser        testuser     public     ROLE      GRANT OR DENY</pre>
+
+<p>But when <b>noexecas_sp</b> is called from <b>example_sp</b>, we see this:</p>
+<pre>SYSTEM_USER     USER         name         type      usage
+--------------- -----------  -----------  --------- --------------
+S-1-9-3-2024... exampleproxy exampleproxy SQL USER  GRANT OR DENY
+S-1-9-3-2024... exampleproxy public       ROLE      GRANT OR DENY</pre>
+
+<p>As you see, there is no trace of <b>testuser</b>. (The data in the column
+   for <small>SYSTEM_USER</small> is due to that <b>
+   exampleproxy</b>
+   was created <small>WITHOUT LOGIN</small>. In lieu of a login name, <small>SYSTEM_USER</small> returns the <small>SID</small>.)</p>
+<p>With certificates, the permissions of the certificate user are added to the rights of the current user. This means that if there is some basic permission granted to everyone, say <small>SELECT</small> permission in a certain schema, you don't have to grant that permission to the certificate user. For a proxy user for <small>EXECUTE AS</small> you must grant all permissions needed. But this cuts both ways. Recall that certificates do not help when users have been explicitly denied permission, since <small>DENY</small> takes precedence over <small>GRANT</small>. This limitation does not exist with <small>EXECUTE AS</small>, since it's only the permissions of the proxy user that count.</p>
+<h3><a name="execas-sideeffects">The Side Effects of EXECUTE AS</a></h3>
+<p><small>SQL</small> Server has a couple of functions that returns the
+   current login or user: <small>SYSTEM_USER, SESSION_USER, USER</small>, <b><nobr>user_name()</nobr></b>,
+   <b><nobr>suser_sname()</nobr></b> and a few more. All these are affected by the <small>EXECUTE AS</small>
+   clause: instead of returning the current login/user, they return the login or user of the identity in the <small>EXECUTE AS</small>
+   clause.</p>
+<p>Now, where do you use these functions? I can think of two of very typical
+   cases.</p>
+<ul>
+   <li>In the <small>WHERE</small> clause of a view or stored procedure for row-level security. </li>
+   <li>To fill in the values of auditing columns, through a <small>DEFAULT</small> constraint
+      or a trigger or directly in a stored procedure.</li>
+</ul>
+<p>When you use <small>EXECUTE AS</small> both these schemes break. Code that implements
+   row-level security will return no data, or even worse, data that the
+   real user does not have permission to see. Auditing will be useless, as
+   all updates will appear to come from the same user.</p>
+<p>Had the effect been
+   constrained only to the very procedure with the <small>EXECUTE AS</small> clause, it could
+   have been somewhat manageable. But since the impersonation lingers when
+   other <small>SQL</small> modules are invoked, for instance triggers, this means that code
+   that are not aware of the <small>EXECUTE AS</small> clause, will cease to work. Now, how is
+   that for backwards compatibility?</p>
+<p>Another side effect concerns existing code. Say that a procedure with <small>
+   EXECUTE AS</small> calls an existing stored procedure <b>old_sp</b>, and this procedure
+   makes some assumptions of what rights the current user <nobr>(= the</nobr> user behind the
+   keyboard) has. For instance, it could use the built-in functions <b><nobr>is_member()</nobr></b> or <b><nobr>
+   permissions()</nobr></b> to determine whether a user is entitled to see some
+   data or whether some special action should be taken. When called from a procedure with <small>EXECUTE AS</small>,
+<b>old_sp</b> will draw the wrong conclusions.</p>
+<p>There are also concerns for the <small>DBA</small> who likes to monitor his system with help of Profiler and various DMVs, that I will look into separately a little later.<b></b></p>
+<p>What can you do to mitigate these consequences? We will look at four
+   different possibilities: 1) <small>EXECUTE AS CALLER</small>, 2) <b><nobr>original_login()</nobr>,</b> 3) <small>SET
+   CONTEXT_INFO</small> and 4) <small>DDL</small> triggers. You
+   will find none of these measures address the issues very satisfactorily. The first
+   only solves a minor part of the problem and the next two require you to
+   rewrite existing code. The last method performs
+   a solid job – by outlawing the feature altogether.</p>
+<p>Before looking into the methods above, we need to look at the <small>EXECUTE AS</small> clause in
+   full, to see its full powers – or I am tempted to say its full horrors.</p>
+<h3><a name="execasowner">WITH EXECUTE AS CALLER | SELF | OWNER</a></h3>
+<p>Rather than specifying an explicit user in the <small>EXECUTE AS</small> clause, you can specify any
+   of the keywords <small>CALLER, OWNER</small> and <small>SELF</small>.</p>
+<p><small>CALLER</small> is innocent. This means that the procedure should execute in the
+   context of the calling user. That is, how stored procedures how normally work, so <small>EXECUTE AS CALLER</small> is merely a way of explicitly expressing
+   the default.</p>
+<p><small>EXECUTE AS SELF</small> is short for <small>EXECUTE AS</small> 'yourusername'. That is, if you
+   create a procedure and add <small>WITH EXECUTE AS SELF</small> to it, anyone who runs the
+   procedure will execute with your permissions. (And anything they update, you
+   will be held accountable for.)</p>
+<p><small>EXECUTE AS OWNER</small>, finally, means that the procedure executes in the context
+   of the procedure owner. As I discussed in the <a href="#objcreate">
+   beginning of the article</a> this is normally the schema owner. Thus, if the procedure is created in the <b>dbo</b>
+   schema, or any other schema owned by the database owner, the procedure will
+   execute with permissions to do anything in the database! </p>
+<p>Here are some serious implications. If all you care about is
+   simplicity, then you can ignore all about creating proxy users and granting them
+   permissions. All you need to do is:</p>
+<pre>CREATE PROCEDURE example_sp WITH EXECUTE AS OWNER AS
+   --SELECT SYSTEM_USER, USER, name, type, usage FROM sys.user_token
+   EXEC ('SELECT a, b FROM testtbl')
+go</pre>
+<p>And no more permissions problems!</p>
+<p>But remember that <a href="#philosophy">philosophy</a> about multiple lines
+   of defence in the beginning of
+   this text. As we discussed for certificates, by using a dedicated proxy user you add one more line of defence,
+   so if your procedure would be open for <a href="http://www.sommarskog.se/dynamic_sql.html#Security2">
+   <small>SQL</small> injection</a>, an exploiter can only do a limited amount of harm.
+   On the other hand, if you use <small>EXECUTE AS OWNER</small>, the database will be wide open to an
+   intruder. (Access outside the database is another matter, that we will come
+   back to.) Again, keep in mind that even if your use of dynamic <small>SQL</small> is tight
+   and free from injection vulnerabilities, someone who modifies the procedure
+   tomorrow may make a blunder and change that.</p>
+<p>Note here also a possible fatal consequence for a row-level security scheme.
+   It is not unlikely that such scheme is set up so that <b>dbo</b>
+   is permitted see all rows. This means that casual use of <small>EXECUTE AS</small> can result int users having access to data they don't have permission
+   to see.</p>
+<p>If you are the <small>DBA</small> (or at least the database owner) and are fortunate to have
+   full control of all code that is added to the database (because you write all
+   the code, or at least review all of it), it is only up to you. But if you are
+   responsible for a larger application with many stored procedures, contributed
+   by many developers, be afraid, be very afraid. One day you find that your auditing
+   records say that a lot of data was changed by <b>dbo</b>, instead of the
+   actual user. Some developer ran into an urgent problem with his dynamic <small>SQL</small>,
+   posted a question on the forums and quickly learnt the four magic words <small>WITH EXECUTE AS OWNER</small>.
+   His problems were solved, but yours had only just begun.</p>
+<p>We will now look into what methods you can use to reduce the impact
+   of the <small>EXECUTE AS</small> clause.</p>
+<h3><a name="execascaller">The EXECUTE AS CALLER statement</a></h3>
+<p>It's possible to do this in a procedure with an <small>EXECUTE AS</small> clause:</p>
+<pre>CREATE PROCEDURE some_sp WITH EXECUTE AS 'proxyuser' AS
+   DECLARE @realuser sysname
+   EXECUTE AS CALLER
+   SELECT @realuser = SYSTEM_USER
+   REVERT
+   -- Do whatever requires extra privileges
+go</pre>
+<p>That is, with the <small>EXECUTE AS CALLER</small> statement, you revert
+   to the context of the
+   caller, and you can find out who actually
+   called the procedure. Provided, that is, there were no impersonation on upper
+   levels.</p>
+<p>
+   If the procedure is a longer one, and there is only one action that needs
+   special privileges, for instance dynamic <small>SQL</small>, you can even do:</p>
+<pre>CREATE PROCEDURE someother_sp WITH EXECUTE AS 'proxyuser' AS
+   DECLARE ...
+   EXECUTE AS CALLER
+   ...
+   -- Here we need the powers of the proxy user
+   REVERT
+   EXEC sp_executesql @sql, ...   -- Or something else which needs privs.
+   EXECUTE AS CALLER
+   -- Rest of the procedure</pre>
+<p>While this certainly is recommendable from the philosophy of not using more
+   permissions than necessary, it takes more effort than just adding the <small>EXECUTE
+   AS</small> clause in the beginning and run with it. It would be more reasonable to
+   write:</p>
+<pre>CREATE PROCEDURE someother_sp AS
+   DECLARE ...
+   ...
+   -- Here we need the powers of the proxy user
+   EXECUTE AS USER = 'proxyuser'
+   EXEC sp_executesql @sql, ...   -- Or something else which needs privs.
+   REVERT
+   -- Rest of the procedure</pre>
+<p>Alas, this does not work An unprivileged user will get a permission error,
+   as the
+   rights to impersonate someone can not be given to a user through the body of
+   a stored procedure, only the header. (Of course, by signing the procedure with a certificate you can
+   grant that permission, but if you use certificates, you don't really need
+  <small>EXECUTE AS</small> at all.)</p>
+<p>There are many situations where <small>EXECUTE AS CALLER</small> does not help. If that
+   dynamic <small>SQL</small> accesses a view with row-level security, it does not help to save
+   the real user's name into a variable, as the call to <small>SYSTEM_USER</small> (or
+   similar) is in the text of the view itself. The same applies if the dynamic <small>SQL</small>
+   performs an update, and the auditing is based on a trigger or a default
+   constraint. Furthermore, if a procedure <small><b>sp1</b> with
+   an EXECUTE AS</small> clause calls <b>sp2</b>, <b>sp2</b> cannot use
+  <small>EXECUTE AS CALLER</small> to set its context to the
+   caller of <b>sp1</b>, as the caller to <b>sp2</b> is the user in the
+  <small>EXECUTE AS</small> clause in <b>sp1</b>. </p>
+<p>On top of that, <small>EXECUTE AS CALLER</small> requires a conscious action
+   from the
+   programmer. Someone who just heard about <small>EXECUTE AS OWNER</small> on the forums
+   is not going to get through that extra hoop. </p>
+<h3><a name="original_login">original_login()</a></h3>
+<p>While <small>SYSTEM_USER, USER</small>, <b><nobr>user_name()</nobr></b> etc
+   all are affected by <small>EXECUTE AS</small>,
+   there is one function that returns the login that originally
+   connected to <small>SQL</small> Server: <b><nobr>original_login()</nobr></b>.</p>
+<p>Thus, anywhere you have schemes for row-level security or code for auditing it's better to use <b><nobr>original_login()</nobr></b> rather than
+<small>SYSTEM_USER</small> to be protected against the risk that <small>EXECUTE AS</small> leads to incorrect auditing or users getting access to data they are not entitled to see. At least as long as you
+   are not using "application proxies",
+   something I will return to in
+the next section.</p>
+<p>If your row-level security and auditing schemes are based on the username in the database rather than the server-level login name, you are likely
+   to ask for an <b><nobr>original_user()</nobr> </b>
+   only to find that there isn't such a function. In this case you will have to rework your
+scheme to use logins instead.</p>
+<p class="note">Why  isn't there any <nobr><b>original_user()</b>?</nobr> Actually, there is a good reason.
+   Things get complicated with cross-database access. Say that a
+   procedure <b>sp1</b> in database <b>A</b> has an <small>EXECUTE AS</small> clause for <b>
+   user1</b>, and <b>sp1</b> invokes <b>sp2</b> in database <b>B</b> to which <b>
+   user1</b> has access. <b>sp1</b> is invoked by <b>user2</b> that maps to <b>
+   login2</b>, but <b>login2</b> has no access to database <b>B</b>. Say now
+   that <b>sp2</b> calls this fictive <b><nobr>original_user()</nobr></b>, what should it return? <b>
+   user2</b> is flat wrong in the given context. <small>NULL</small>? Are your auditing columns
+   nullable? Mine aren't.</p>
+<p>If you are really paranoid and want to make sure that your procedure are not
+   run with elevated privileges because the calling procedure has an <small>EXECUTE AS</small>
+   clause, you could add this test to the beginning of your procedure:</p>
+<pre>IF SYSTEM_USER &lt;&gt; original_login()
+BEGIN
+   RAISERROR('This procedure does not support impersonated users', 16, 1)
+   RETURN 1
+END</pre>
+<h3><a name="context_info">SET CONTEXT_INFO</a></h3>
+<p><b><nobr>original_login()</nobr></b> works as long as the users themselves log into <small>SQL</small> Server
+   with their personal login. But consider the case of an "application proxy". That is, the application authenticates users outside <small>SQL</small> Server, and the proxy login issues <small>EXECUTE AS</small> (or <small>SETUSER</small> for a legacy application) on the behalf of the
+   actual user. Guess what <b><nobr>original_login()</nobr></b> will return in this case? That's
+   right, the name for the application's proxy login. Not a very useful
+   piece of information. While <small>SQL</small> 2005 was still in beta, I submitted a <a href="http://connect.microsoft.com/SQLServer/feedback/details/238908/entire-impersonation-stack-should-be-retrievable">Connect item</a> that asked for a way to retrieve the full impersonation stack to address this situation. It hasn't happened yet.</p>
+<p>One possible way out here is the command <small>SET CONTEXT_INFO</small> and the
+   <b><nobr>context_info()</nobr></b> function. <small>SET CONTEXT_INFO</small> was added already in <small>SQL</small> 2000, but
+   it may not be widely known. It sets a binary value of 128 bytes that you can retrieve with the
+   <b><nobr>context_info()</nobr></b> function.</p>
+<p>Here is how you would use it. When connecting for a user, the application
+   would do something like:</p>
+<pre>DECLARE @contextinfo varbinary(128)
+SELECT @contextinfo = convert(varbinary(128), N'JoeCool')
+SET CONTEXT_INFO @contextinfo</pre>
+<p>A table with an auditing column could look like this:</p>
+<pre>CREATE TABLE audited
+   (somedata int NOT NULL,
+    moduser  sysname NOT NULL
+       CONSTRAINT def_moduser DEFAULT
+          coalesce(convert(nvarchar(64),
+                      substring(context_info(), 1, charindex(0x0000, context_info()) - 1)),
+                   original_login())
+)
+go</pre>
+<p>The expression to get data from <b><nobr>context_info()</nobr></b> is
+surprisingly complex; this is because <b><nobr>context_info()</nobr></b> returns
+<b><nobr>binary(128)</nobr></b>, so we need to strip the trailing zeroes.
+Despite the name, <b><nobr>charindex()</nobr></b> works on binary data too. We
+must specify 0x0000 to find where the zeroes start, since with <b>nvarchar</b>,
+every second byte is often 0 for data using the Latin alphabet.</p>
+<p>On top of that, we use <b><nobr>coalesce()</nobr></b> with <b><nobr>original_login()</nobr></b> as a second argument to have a
+   fallback alternative, in case <small>SET CONTEXT_INFO</small> never was issued, for instance
+   because the action was performed by an administrator who logged in directly to <small>SQL</small>
+   Server from <small>SQL</small> Server Management Studio.</p>
+<p>I feel obliged to point out that the solution with <small>SET CONTEXT_INFO</small> is not entirely
+   secure.
+   If there are <a href="http://www.sommarskog.se/dynamic_sql.html#Security2"><small>SQL</small> injection</a> holes in
+   the application, a malicious user could inject a <small>SET CONTEXT_INFO</small> command to
+   hide his identity. This could permit him to do actions anonymously, and
+   to access data from row-level security schemes that he should not see. </p>
+<p>One more thing to add about <small>SET CONTEXT_INFO</small>: normally the effect of a <small>SET</small>
+   statement issued in a stored procedure is reverted when the procedure exits.
+<small>SET CONTEXT_INFO</small> is an exception to this rule, and the effect of <small>SET CONTEXT_INFO</small> is always global to the connection.</p>
+<h3><a name="DDLtriggers">Using DDL Triggers to Stop All This</a></h3>
+<p>If you are <small>a DBA</small> who is not in the position that you can review all code that
+   is deployed into the database (or a lead programmer/database architect who
+   cannot review all code that is checked into the version-control system) and
+   you are scared of the damage <small>that EXECUTE AS</small> could cause to your application, you may ask: is there a
+   way to stop all this? After all, there is no need to use <small>EXECUTE AS</small>
+   to grant permissions, when you can use certificates without side
+   effects.</p>
+<p>Microsoft touts <small>SQL</small> Server as "secure by default", so you
+   would expect a knob to control whether the <small>EXECUTE AS</small> clause is available, and you would
+   expect that knob to be in the <small>OFF</small> position by default. Not so. There is no
+   knob at all. But you can implement your own.</p>
+<p>If you are the permissive sort of person, you may be content to every once in
+   a while run:</p>
+<pre>SELECT module = object_name(object_id),
+       execute_as = CASE m.execute_as_principal_id
+                         WHEN -2 THEN 'OWNER'
+                         ELSE d.name
+                    END
+FROM   sys.sql_modules m
+LEFT   JOIN sys.database_principals d
+          ON m.execute_as_principal_id = d.principal_id
+WHERE  m.execute_as_principal_id IS NOT NULL</pre>
+<p>This displays which modules have been decorated with the <small>EXECUTE AS</small>
+   clause and with
+   which user name.</p>
+<p>If you are the more evil sort of person, then you can put this <small>DDL</small>
+   trigger in place: </p>
+<pre>CREATE TRIGGER stop_execute_as ON DATABASE
+  FOR CREATE_PROCEDURE, ALTER_PROCEDURE,
+      CREATE_FUNCTION, ALTER_FUNCTION,
+      CREATE_TRIGGER, ALTER_TRIGGER AS
+DECLARE @eventdata   xml,
+        @schema      sysname,
+        @object_name sysname,
+        @object_id   int,
+        @msg         nvarchar(255)</pre>
+<pre>-- Get the schema and name for the object created/altered.
+SELECT @eventdata = eventdata()
+SELECT @schema = C.value(N'SchemaName[1]', 'nvarchar(128)'),
+       @object_name = C.value(N'ObjectName[1]', 'nvarchar(128)')
+FROM   @eventdata.nodes('/EVENT_INSTANCE') AS E(C)</pre>
+<pre>-- Find its object id.
+SELECT @object_id = o.object_id
+FROM   sys.objects o
+JOIN   sys.schemas s ON o.schema_id = s.schema_id
+WHERE  o.name = @object_name
+  AND  s.name = @schema</pre>
+<pre>-- If we don't find it, it may be because the creator does not have
+-- have permission on the object. (Yes, this can happen.)
+IF @object_id IS NULL
+BEGIN
+   SELECT @msg = 'Could not retrieve object id for [%s].[%s], operation aborted'
+   RAISERROR(@msg, 16, 1, @schema, @object_name)
+   ROLLBACK TRANSACTION
+   RETURN
+END</pre>
+<pre>-- Finally check that the catalog views whether the module has any
+-- EXECUTE AS clause.
+IF EXISTS (SELECT *
+           FROM   sys.sql_modules
+           WHERE  object_id = @object_id
+             AND  execute_as_principal_id IS NOT NULL)
+BEGIN
+   ROLLBACK TRANSACTION
+   SELECT @msg = 'Module [%s].[%s] has an EXECUTE AS clause. ' +
+                 'This is not permitted in this database.'
+   RAISERROR (@msg, 16, 1, @schema, @object_name)
+   RETURN
+END
+go</pre>
+<p>The trigger first retrieves the schema and object names for the created
+   object from the <b><nobr>eventdata()</nobr></b> function. This function returns an <small>XML</small>
+   document, and we use XQuery to extract the data we need. Next we translate
+   the object name to an id. We check that we are actually able to do this. (Since the owner of a procedure is the schema owner, it is possible to have a user that is permitted to create
+   a procedure without being permitted to see the definition of it.)  Finally there is the check that the
+   module does not have any <small>EXECUTE AS</small>.</p>
+<p>Variations of this theme include checking <b>execute_as_principal_id</b> for
+   -2 (<small>OWNER</small>) and power users, or permit
+  <small>EXECUTE AS</small> if the proxy user does not map to
+   a login. (That is, a user created <small>WITHOUT LOGIN</small>.)</p>
+<p>Would anyone be this evil? Well, if you have an auditing scheme that relies
+   on <small>SYSTEM_USER</small> or similar function, and you don't want to rewrite your code
+   right now, do you have any choice? </p>
+<p class="noteh3"><b>Note</b>: If you are on <small>SQL</small> 2008, you may ask if this could be implemented with Policy-Based Management. It probably can, but I would not recommend that use you the <b>On Prevent</b> option in <small>PBM</small>, as <small>PBM</small> may silently decide to turn off checking if it deems your conditions to be too complex. (See this <a href="https://connect.microsoft.com/SQLServer/feedback/details/377980/pbm-inconsistent-handling-of-conditions-for-databases-to-enforce-policies-in">Connect bug</a> for details.) Possibly you could use <small>PBM</small> to monitor the use of <small>EXECUTE AS</small>.</p>
+<h3><a name="EXECASMonitoring"></a>EXECUTE AS and Monitoring</h3>
+<p>As I mentioned, <small>EXECUTE AS</small> also has implications for the <small>DBA</small> who likes to monitor his system. Say that there is a procedure which has the heading:</p>
+<pre>CREATE PROCEDURE some_sp WITH EXECUTE AS 'proxyuser' AS</pre>
+<p>Say that the user <b>Nisse</b> runs this procedure, and there is a trace with captures the statements in this procedure. What will the column <b>LoginName</b> display? That depends. If <b>proxyuser</b> was created from a login with the same name, the value in <b>LoginName</b> will be <b>proxyuser</b>. If <b>proxyuser</b> was created <small>WITHOUT LOGIN</small>, the value will be a <small>SID</small>, that is, a value starts like S-1-9-3-913356... But in no case the name <b>Nisse</b> will be displayed.</p>
+<p>This has some ugly ramifications. If you commonly apply filters on <b>LoginName</b>,  <small>EXECUTE AS</small>  can cause users to fall off the radar for the duration of the procedure with the clause. If you rely on tracing for auditing, <small>EXECUTE AS</small> can also result in the wrong person being credited/blamed for a certain action.</p>
+<p><b>LoginName</b> is not the only column that is affected, but also the column <b>NTUserName</b>, although this column does not always change. It changes if the impersonated user is a Windows user or a user created <small>WITHOUT LOGIN</small>, but not if the user is created from an <small>SQL</small> Server login. At least, that is what my quick testing indicates.</p>
+<p>This also extends do DMVs like <b>sys.dm_exec_sessions</b>. The columns <b>login_name</b> and <b>nt_user_name</b> behaves like <b>LoginName</b> and <b>NTUserName</b> in Profiler and reflect the name of the impersonated user. The same is true for <b>sysprocesses</b> etc.</p>
+<p>Thankfully, there are alternatives. In Profiler you can use the column <b>SessionLoginName</b>. The value in this column corresponds to the value returned by the function <b><nobr>original_login()</nobr></b> and thus it will  never change during the lifetime of the connection. The column is not visible by default, but you have to check the box <b>Show all columns</b> to find it.  (Why <b>SessionLoginName</b> is not visible by default, while <b>LoginName</b> is? As I recall, <b>SessionLoginName</b> was added in SP2 of <small>SQL</small> 2005, and I guess Microsoft did not want to meddle with the existing templates.) You could define your own template, so that you don't have to remember to add it every time.</p>
+<p>Likewise, in <b>sys.dm_exec_sessions</b> there is the column <b>original_login_name</b>, which is one of the columns at end of the table; it was added in SP2 of <small>SQL</small> 2005. In <b>sysprocesses</b>, there is no value corresponding to <b><nobr>original_login()</nobr></b>, but <b>sysprocesses</b> is a compatibility view, which Microsoft prefers us not to use.</p>
+<h3><a name="execas-crossdb">EXECUTE AS and Access Outside the Database</a></h3>
+<p>So far we have looked at using <small>EXECUTE AS</small> to give permissions within a single database. What happens if you try to access other databases or perform an action that requires a server-level permission?</p>
+<p>Answer: you run into a roadblock. Consider this procedure created in some
+other database than <b>AdventureWorks</b>:</p>
+<pre>CREATE PROCEDURE crossdb WITH EXECUTE AS OWNER AS
+   SELECT COUNT(*) FROM AdventureWorks.Person.Address
+go
+EXEC crossdb</pre>
+<p>If you run this logged in as <b>sa</b> you get:</p>
+<pre class="errmsg">Server: Msg 916, Level 14, State 1, Procedure crossdb, Line 2
+The server principal "sa" is not able to access the database "AdventureWorks"
+under the current security context.</pre>
+<p>Since <b>sa</b> usually can access everything, this comes as quite unexpected. But
+  this is because there is a safeguard here. The <small>EXECUTE AS</small> clause always impersonates a database user, never a server login. And when you impersonate a user, you are sandboxed into the current database,
+and you are denied any access outside that database. This applies to the <small>EXECUTE AS</small> clause in a procedure  as well as the statement <small>EXECUTE AS USER</small>. (But not to <small>EXECUTE AS LOGIN</small>.) </p>
+<p>The same is true for server-level permissions. If you try:</p>
+<pre>CREATE PROCEDURE reload_sp WITH EXECUTE AS OWNER AS
+   TRUNCATE TABLE reloadable
+   EXEC('BULK INSERT reloadable FROM ''C:\temp\reloadtest.csv''
+         WITH (FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')')
+go
+EXEC reload_sp</pre>
+<p>Even if you are logged with <b>sysadmin</b> rights, you will get this error message:</p>
+<pre class="errmsg">Msg 4834, Level 16, State 4, Line 2
+You do not have permission to use the bulk load statement.</pre>
+<p>To open the sandbox, you must open two doors. If the database is owned by a user with <b>sysadmin</b> permission, one of the doors are already open. The other door is this statement:</p>
+<pre>ALTER DATABASE db SET TRUSTWORTHY ON</pre>
+<p>If the database is trustworthy, and you impersonate <b>user1</b> with the statement <code>EXECUTE AS USER = 'user1'</code> or the clause <code>EXECUTE AS 'user1'</code> in a stored procedure, you will be able to exercise any rights that <b>user1</b> may have in other databases or on server level.</p>
+<p>To set a database as trustworthy you need <b>sysadmin</b> rights. And this is by no means a step you should take casually. There are some scenarios where this setting is safe play, but there are also many where it opens a glaring hole in your server security. I will discuss this in detail, but to keep the focus of the main topic – granting permissions to stored procedures – I will first show how to use <small>EXECUTE AS</small> to grant bulk-copy permissions.</p>
+<h3><a name="execasbulkcopy">Using EXECUTE AS to Give Bulk-Copy Permissions</a></h3>
+<p>As with certificates, using <small>EXECUTE AS</small> to give bulk-copy permissions takes
+ a little more work. The steps are:</p>
+<ol>
+   <li>Create a proxy login, in the <b>master</b> database.</li>
+   <li>Grant the proxy login <small>ADMINISTER BULK OPERATIONS</small>. Again in <b>master</b>.</li>
+   <li>Mark the target database as trustworthy.</li>
+   <li>Switch to the application database.</li>
+   <li>Create a user for the proxy login.</li>
+   <li>Grant the proxy user <small>ALTER</small> and <small>INSERT</small> on the target table.</li>
+   <li>Add an <small>EXECUTE AS</small> clause to the procedure.</li>
+</ol>
+<p>As there is not much new here, I will just make a few comments, before I give
+ you a complete script with all steps and a test case.</p>
+<p>Since <small>ADMINISTER BULK OPERATIONS</small> is a server-level permission, we need to create a
+   full login in this case. It's a good idea to revoke the proxy login the
+   right to connect to <small>SQL</small>, and I do this in the test script below.</p>
+<p>As discussed in the previous section, we need to mark the database as trustworthy to break out from the sandbox.</p>
+<p>Just like we did with certificates, we must put the <small>BULK INSERT</small> statement in dynamic <small>SQL</small>,
+   because of a
+   <a href="http://lab.msdn.microsoft.com/productfeedback/viewfeedback.aspx?feedbackid=59c25821-29ec-4102-bef7-7f05c75464ee">bug</a> in <small>SQL</small> Server.</p>
+<p>So here is the test script for using <small>BULK INSERT</small> with <small>EXECUTE AS.
+   (And as always, the <a href="#examplescripts">introductory note</a> on the
+   examples applies):</small></p>
+<pre>USE master
+go
+-- Create a test file for bulkload.
+EXEC xp_cmdshell 'ECHO 978,123,234 &gt; C:\temp\reloadtest.csv', no_output
+EXEC xp_cmdshell 'ECHO -98,13,85 &gt;&gt; C:\temp\reloadtest.csv', no_output
+go
+CREATE LOGIN testuser WITH PASSWORD = 'ExECaS=0=TeST'
+go
+-- Create the database to run the test in.
+CREATE DATABASE bulkcopytest
+go
+-- Mark the database as trustworthy.
+ALTER DATABASE bulkcopytest SET TRUSTWORTHY ON
+go
+-- Create a proxy login, which is to have the bulk-copy rights.
+CREATE LOGIN bulkproxy WITH PASSWORD = 'lkjSeF&amp;hskldjh?löKDdf/jlk98sdfjälksdjg'
+go
+-- Grant rights for the proxy login and make it unable to login.
+GRANT ADMINISTER BULK OPERATIONS TO bulkproxy
+REVOKE CONNECT SQL FROM bulkproxy
+go
+-- Move to test database.
+USE bulkcopytest
+go
+-- Create the non-priv user and the proxy user.
+CREATE USER testuser
+CREATE USER bulkproxy
+go
+-- A test table.
+CREATE TABLE reloadable (a int NOT NULL,
+                         b int NOT NULL,
+                         c int NOT NULL)
+go
+-- Test procedure with BULK INSERT.
+CREATE PROCEDURE reload_sp WITH EXECUTE AS 'bulkproxy' AS
+   TRUNCATE TABLE reloadable
+   EXEC('BULK INSERT reloadable FROM ''C:\temp\reloadtest.csv''
+         WITH (FIELDTERMINATOR='','', ROWTERMINATOR=''\n'')')
+go
+-- Give test user right to execute them.
+GRANT EXECUTE ON reload_sp TO public
+go
+-- Grant the proxy user rights to truncate and insert to the test table.
+GRANT ALTER, INSERT ON reloadable TO bulkproxy
+go
+-- Insert some test data. If test succeeds, this data should disappear.
+INSERT reloadable (a, b, c) VALUES (12, 23, 34)
+go
+-- Switch to the test user.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- Run the bulk load.
+EXEC reload_sp
+go
+-- Back to ourselves.
+REVERT
+go
+-- Verify that bulk load succeeded.
+SELECT a, b, c FROM reloadable
+go
+REVERT
+go
+-- Clean up.
+USE master
+DROP DATABASE bulkcopytest
+DROP LOGIN bulkproxy
+DROP LOGIN testuser
+EXEC xp_cmdshell 'DEL C:\temp\reloadtest.csv', no_output
+</pre>
+<h3><a name="TRUSTWORTHY"></a>Considerations on TRUSTWORTHY</h3>
+<p>Exactly how dangerous is <small>TRUSTWORTHY</small>? Permit me to approach this question in a somewhat roundabout way. For many years, this article just said that you should think twice before turning on <small>TRUSTWORTHY</small>, but did not go into details. Then one day, I got a mail from a reader who asked a question that got me thinking.</p>
+<p>My correspondent had a problem. He wanted to grant access to <small>BULK INSERT</small>, and used my example for <small>EXECUTE AS</small> as a template, but he could not get it to work. There was a twist in his case, he wanted the database owner to be a plain server login, and not a member of <b>sysadmin</b>.</p>
+<p>I sat down and played with my bulk-copy example and I was able to confirm his findings. I read  through the topic
+<i> <a href="http://msdn.microsoft.com/en-us/library/ms188304.aspx"> Extending Database Impersonation by Using <small>EXECUTE AS</small></a></i> in Books Online and this was when I learnt that the sandbox has two doors that both must be open. Say there is a database A, and in this database we impersonate a user U – with the statement <small>EXECUTE AS USER</small> or the <small>EXECUTE AS</small> clause in a stored procedure. To be able to exercise the rights that the user  U may have outside the database, the following conditions must be true.</p>
+<table border="0">
+  <tbody><tr><td>1.</td><td>The database A must be <small>TRUSTWORTHY</small>.</td></tr>
+  <tr><td>2a.</td>
+  <td>
+   For access to another database B, the <i>owner</i> of A must have been granted the permission <small>AUTHENTICATE</small> in the database B.</td></tr>
+  <tr><td>2b.</td>
+  <td>For actions that require server-level permissions, the owner of A must have been granted the permission <small>AUTHENTICATE SERVER</small>.</td></tr>
+</tbody></table>
+<p>So did I answer to my correspondent that he should grant his database owner <small>AUTHENTICATE SERVER</small>? No. I had a nagging feeling that there was something hiding here, and after some thinking, I came to the realisation that this was just a different way to give the DB owner the possibility to do everything on the server – that is, the rights of <b>sysadmin</b>. How can it be? Consider this scenario:</p>
+<p>Say that you are <small>DBA</small> for a server that hosts many databases, owned by various people in your organisation. One database owner, let's call him David B Owner, comes to you with this stored procedure  to perform <small>BULK INSERT</small>. He now needs your help to get the server-level permissions for the procedure to work. We have already looked at how do this with certificates, and you have learnt that this way you can have full control what permissions you have granted to what code. If David changes his code, he has to come to you again so you can sign it anew.</p>
+<p>But assume that David B Owner persuades you to instead take the route with <small>EXECUTE AS</small>. David has already written a procedure and tested it out on his personal server, and you are swamped with other things. And maybe you don't want David come to you again and again, every time he changes the procedure. After all, what damage can you do with <small>ADMINISTER BULK OPERATIONS</small> alone? Following the example in the previous section, you create the proxy login which you grant <small>ADMINISTER BULK OPERATIONS</small>, you make David's database trustworthy, and you grant David <small>AUTHENTICATE SERVER</small>. David merrily leaves your office. But what exactly did you do now? Did you in any way ensure that all David's database can do on server level is <small>BULK INSERT</small>?</p>
+<p>Back at his desk, David runs this in his database:</p>
+<pre>CREATE USER [Domain\ServerDBA]        -- That's you!
+go
+EXECUTE AS USER = 'Domain\ServerDBA'</pre>
+<p>That is, David creates a user for you in his database, and then he impersonates that user. Since he owns the database, he has full permissions to do anything in the database, including these two actions. As long as at least one of the two doors in the sandbox are closed, David can only play that he is you inside in his own database. But you were kind to open both doors to him, and now he has all powers on the server that you have. On top of all, auditing will give you the blame for what he is doing, unless auditing is based on <b><nobr>original_login()</nobr></b> and the similar columns in Profiler and the DMVs. When David is done, he can drop you as a user from the database to cover his tracks.</p>
+<p>This is a classical example of privilege elevation, and the sandbox exists precisely to prevent this from happening by default. </p>
+<p>In this last example, a non-privileged user was the database owner, but in many shops is customary to have <b>sa</b> or some dedicated <small>SQL</small> login as the database owner for all databases. (The problem with having individuals as database owners is that when people leave the company the <small>DBA</small> is not always informed when the user is dropped from the Active Directory, leaving the <small>DBA</small> with a database owned by an orphaned user.) But there are still people like Anna DeMin and David B Owner who are application admins or whatever, and they are member of <b>db_owner</b> in that database. In this scenario, what does it mean to set the database as trustworthy?</p>
+<p>If the database is owned by <b>sa</b> (or some other user with <b>sysadmin</b> rights) the situation is just like above. Since <b>sa</b> is the owner, one of the doors of the sandbox is open from the start. If you make the database trustworthy, any person with <b>db_owner</b> rights can impersonate a server login with <b>sysadmin</b> rights just and do whatever he likes. What if the databases are owned by a generic login which has no other server permissions than owning all the databases? In this case, the door to server-level permission is closed, but the doors to all user databases are open. A malicious user with <b>db_owner</b> rights can do</p>
+<pre>EXECUTE AS USER = 'dbo'</pre>
+<p>and if the database is trustworthy, he can access all databases on the server owned by that login with full permission, which means that the user can read and write data he is not authorised to access.</p>
+<p>In these examples I have assumed that the evil user is in the <b>db_owner</b> role. But <b>db_owner</b> is not required. More precisely, it's sufficient to have permission create users in the database and and have permission to impersonate users. Being member of <b>db_securityadmin</b> and <b>db_accessadmin</b> is sufficient. You should also not overlook the possibility that two users with supplementing permissions can work together.</p>
+<p>You have now seen that <small>TRUSTWORTHY</small> is a switch that applied casually that can be utilised by malicious persons. But is this switch ever secure?</p>
+<p>Certainly. When it comes to give plain users server-level permission through stored procedures, <small>EXECUTE AS + TRUSTWORTHY</small> is safe if all persons who have elevated permissions in the database also are members of <b>sysadmin</b> or have <small>CONTROL SERVER</small>. In this trivial case, there is no person who can use impersonation to elevate his permissions. This scenario is not unlikely on a server that is dedicated to a single application. However, keep in mind that one day you may be oblivious and grant a person you don't trust <b>sysadmin</b> rights to  have <b>db_owner</b> permissions in that database. Maybe a support person for a vendor application. Maybe a junior <small>DBA</small> (who may prove to be less than junior when it comes to exploit security holes!) So while <small>EXECUTE AS</small> may seem simpler, I would say that for server-level access, you should always use certificates. Keep in mind that with certificates you have full control over what permissions you grant. Even if you don't want to review Anna's and David's bulk-insert procedures over and over again but instead give them the password to the certificate, the only permission they can ever abuse is <small>ADMINISTER BULK OPERATIONS</small>. Whereas with <small>EXECUTE AS</small> and a trustworthy database, there are no restrictions at all.</p>
+<h3><a name="EXECAScrossdb"></a>Cross-Database Access</h3>
+<p>In the previous section I showed that it is dangerous to make a database trustworthy, if all databases are owned by the same generic user. But if all databases have individual owners, it's a different matter. Note here that individual owners do not have to be physical persons, but it could be a generic login for each database. If this is the situation, there are a few scenarios for cross-database access where <small>EXECUTE AS + TRUSTWORTHY</small> may be perfectly acceptable.</p>
+<p>Consider an application that consists of several databases all with the same owner, and there is a need for stored procedures to access data in more than one database. In this article we have looked three alternatives to address this situation: 1) <a href="#dbchainging">Database chaining</a> and the database option <small>DB_CHAINING</small>. 2) Certificates. 3) <small>EXCUTE AS</small> + Trustworthy. If the requirement is that every application database should be able to access all the other databases, then database chaining may be the simplest solution. </p>
+<p>But say that there is only one database where there are stored procedures with cross-database access, and you don't want to permit access from the other databases. Since <small>DB_CHAINING</small> must be enabled for all databases, this rules out this option. The advantage with <small>EXECUTE AS + TRUSTWORTHY</small> over database chaining is that you can select which databases you make trustworthy. Of course, if you decide to use <small>EXECUTE AS</small> for cross-database access, you need to make sure that you can handle the consequences of impersonation and make sure that you don't rely on <small>SYSTEM_USER</small> et al, but only use <b><nobr>original_login()</nobr></b> or <b><nobr>context_info()</nobr></b>. If not, certificates are, as always, an option. </p>
+<p>Here is a second scenario: there are two databases,  A and B, which are part of different, but related, applications, and the databases have different owners. There is a need to access data in database B from A. To do this with <small>EXECUTE AS</small>, database A must be <small>TRUSTWORTHY</small>, and furthermore the database owner of A must be granted the permission <small>AUTHENTICATE</small> in database B. For this to be permissible, all users with <b>db_owner</b> or similar rights in database A must be entitled to see all data in database B, since they now can do:</p>
+<pre>CREATE USER owner_of_database_B
+go
+EXECUTE AS USER = 'owner_of_database_B'</pre>
+<p>They can now do whatever they want in database B. To some extent this is a matter about trust. If the owner of database B trusts all users in database B not to mess up his database, he can grant <small>AUTHENTICATE</small> to the owner of database A. After all, having indirect permission through <small>AUTHENTICATE</small> is from a legal point of view not the same as being added to the <b>db_owner</b> role in the database. Still owner of B is taking a risk, and personally, I say if there is sensitive data in the database he should not accept to grant <small>AUTHENTICATE</small> to the owner of A, but insist on certificate signing, and review all code that accesses his database.</p>
+<p class="note">Obviously, the point about trust can be made about server permissions as well. If you trust Anna DeMin and David B Owner, you can grant them <small>AUTHENTICATE SERVER</small>. But in my opinion, there is too much at stake here to even consider this.</p>
+<p>I like to stress again, that a presumption for it to be acceptable to make a database <small>TRUSTWORTHY</small> is that the database is owned by a user specific to that database, or group of databases. As soon there is a generic owner who owns unrelated databases, <small>TRUSTWORTHY</small> cannot be considered permissible. (Unless there never are any users who are only <b>db_owner</b> in a subset of the databases.)</p>
+<h3><a name="EXECASstartjob"></a>Starting Jobs</h3>
+<p>We looked previously at how we could make it possible for users of an application to start a certain job with help of certificates. The solution is somewhat dubious, since it requires you to counter-sign three procedures in <b>msdb</b>. Could this be done better with <small>EXECUTE AS</small> without compromising security? I think so. Here are the steps for a possible solution.</p>
+<ol>
+  <li>The source database must have an individual owner. </li>
+  <li>The source database must be <small>TRUSTWORTHY</small>.</li>
+  <li>The database owner is added to<b> msdb</b> and granted <small>AUTHENTICATE</small> in that database.</li>
+  <li>Create a login-less user <b>jobstartuser</b> in <b>msdb</b> and add this user to <b>SQLAgentOperatorRole</b>.</li>
+  <li>You create a stored procedure in<b> msdb</b> to start the job in question. The procedure should have <code>EXECUTE AS  'jobstartuser'</code>. </li>
+  <li>The database owner is granted <small>EXECUTE</small> permission on this procedure.</li>
+  <li>The database owner creates a stored procedure in his database with <code>EXECUTE AS 'dbo'</code> that calls the procedure in <b>msdb</b>.</li>
+</ol>
+<p>The reader may be shocked here, since we have learnt that if you own a trustworthy database and have <small>AUTHENTICATE</small> permission in another database, then you can get the power of the owner of that database by creating a user for him in your own database and then impersonate him. And yet I'm suggesting this? And with <b>msdb</b>, a system database?</p>
+<p>Yes. You see, there is a special case. The owner of <b>msdb</b> is, by default, <b>sa</b>. And if you try any of:</p>
+<pre>CREATE USER sa
+CREATE USER Nisse FROM LOGIN sa</pre>
+<p>You will be told:</p>
+<pre class="errmsg">Msg 15405, Level 16, State 1, Line 1
+Cannot use the special principal 'sa'.</pre>
+<p>You may ask: what happens if I create a user for someone I know is member of <b>sysadmin</b> and impersonate that user? The answer is that in this case, you will access <b>msdb</b> as <b>guest</b>. As long as that person is not an explicit member of <b>msdb</b>, that is. And there is a weakness with this solution. There is maybe little reason to add members of <b>sysadmin</b> to <b>msdb</b>. But what if there are operators or junior DBAs who are not <b>sysadmin</b>, but who are entitled to administer jobs? They have to be users in <b>msdb</b>, so they can be added to the various <small>SQL</small> Server Agent roles. And with <small>AUTHENTICATE</small> permission in <b>msdb</b>, the owner of database A can impersonate these guys and do things he should not be permitted to.</p>
+<p>There is potentially a second problem with this solution. Who says that it is supported to put user procedures in <b>msdb</b>? Maybe it is, but I have not been able to find an answer in either direction. When I asked in our internal <small>MVP</small> forum, the only reply I got was <i>Why don't you create the procedure in <b>master</b>?</i> At first I did not see the point, as it would only serve to make the solution to be more complicated. Sure, no risk that the database owner would be able to impersonate operators in <b>msdb</b>, but instead he would have to be granted <small>AUTHENTICATE</small> in <b>master</b>. </p>
+<p>But after some more thinking I realised that using an intermediate database was the right thing, but it should not be <b>master</b>, but a dedicated database. So here is the modified list of steps:</p>
+<ol>
+  <li>The source database must have an individual owner. </li>
+  <li>The source database must be <small>TRUSTWORTHY</small>.</li>
+  <li>Create an intermediate database, call it <b>jobstarter</b>. This database
+    <nomeddle>MUST</nomeddle>
+be owned by <b>sa</b>.</li>
+  <li>Make <b>jobstarter</b> <small>TRUSTWORTHY</small>.</li>
+  <li>Create a login<b> jobstartuser</b> who is to be the proxy user to start jobs. Deny this login the <small>CONNECT SQL</small>, that is, the right to log in to <small>SQL</small> Server.</li>
+  <li>Add <b>jobstartuser </b>to <b>msdb</b> and make it member of the <b>SQLAgentOperatorRole</b>.</li>
+  <li>Add <b>jobstartuser</b> to the <b>jobstarter</b> database.</li>
+  <li>Add the owner of the source database to <b>jobstarter</b>, and grant him <small>AUTHENTICATE</small>.</li>
+  <li>In <b>jobstarter</b> create a procedure that calls <b>sp_start_job</b> for the specific job. The procedure should have <code>EXECUTE AS 'jobstartuser'</code>. </li>
+  <li>Grant the database owner <small>EXECUTE</small> permission on the procedure.</li>
+  <li>The database owner adds a procedure to his database with <code>EXECUTE AS 'dbo'</code> that calls the procedure in <b>jobstarter</b>.</li>
+</ol>
+<p>When I devised this solution, I debated with myself whether I should really have this <b>jobstartuser</b>. If you instead use <small>EXECUTE AS OWNER</small> in the procedure that calls <b>sp_start_job</b>, there is no need to create this extra login. Since I have advocated that you should never grant more permissions than needed, I chose to follow this line. But in this particular case, I cannot really blame you if you prefer <small>EXECUTE AS OWNER</small>. And you could argue that this is safer, since if <b>jobstartuser</b> is mistakenly granted permissions in <b>jobstarter</b> it should not have, this could lead to a security hole.</p>
+<p>Before I show you an example script, I like to point out an important difference to the solution with certificates. In that solution, there is no code in <b>msdb</b>, nor is there any intermediate database. Instead the procedure that calls <b>sp_start_job</b> is in the source database. This is possible with certificates, since the <small>DBA</small> can have full control over what can be done with the ceritificate, for instance by dropping the private key. But when we use <small>EXECUTE AS</small>, the call to <b>sp_start_job</b> must be outside of reach for the database owner.</p>
+<p>Here is a complete script that demonstrates the solution (the <a href="#examplescripts">introductory remark</a> on the example scripts applies as always). If you want to run this, you need to create a job called <b>Testjob</b>. It does not have to do anything particularly meaningful.</p>
+<pre>USE master
+go
+-- Create a login for a database owner as well plain test user.
+CREATE LOGIN databaseowner WITH PASSWORD = 'JoBS=tA7RTte5t'
+CREATE LOGIN testuser WITH PASSWORD = 'eXEc=a$=TeST'
+CREATE LOGIN jobstartuser WITH PASSWORD = 'No login !!'
+DENY CONNECT SQL TO jobstartuser
+go
+-- Create test database and set owner. We set the database trustworthy.
+CREATE DATABASE jobstarttest
+ALTER AUTHORIZATION ON DATABASE::jobstarttest TO databaseowner
+ALTER DATABASE jobstarttest SET TRUSTWORTHY ON
+go
+-- Create an intermediate database. This database *must* be owned by sa.
+-- This database should never have any non-sysadmin privileged users.
+CREATE DATABASE jobstarter
+ALTER AUTHORIZATION ON DATABASE::jobstarter TO sa
+ALTER DATABASE jobstarter SET TRUSTWORTHY ON
+go
+-- Next stop is msdb.
+go
+USE msdb
+go
+-- Create a user for jobstartuser and give permissions.
+CREATE USER jobstartuser
+EXEC sp_addrolemember SQLAgentOperatorRole, jobstartuser
+go
+-- Set up things the intermediate database.
+USE jobstarter
+go
+-- Create a user for the jobstartuser.
+CREATE USER jobstartuser
+go
+-- We add the database owner as a user and grant him AUTHENTICATE.
+CREATE USER databaseowner
+GRANT AUTHENTICATE TO databaseowner
+go
+-- Create a procedure to start a certain job.
+CREATE PROCEDURE start_this_job WITH EXECUTE AS 'jobstartuser' AS
+   EXEC msdb..sp_start_job 'Testjob'
+go
+-- Permit the databaseowner to run this procedure.
+GRANT EXECUTE ON start_this_job TO databaseowner
+go
+-- Move to test database.
+USE jobstarttest
+go
+-- Create a database user for the test login as well as the proxyuser.
+CREATE USER testuser
+go
+-- Create a procedure that calls our start procedure in msdb.
+CREATE PROCEDURE start_our_job WITH EXECUTE AS 'dbo' AS
+   EXEC jobstarter..start_this_job
+go
+-- Give test user right to execute the procedure.
+GRANT EXECUTE ON start_our_job TO testuser
+go
+-- Switch to the test user.
+EXECUTE AS LOGIN = 'testuser'
+go
+-- Start the job, this succeeds.
+EXEC start_our_job
+go
+-- Back to ourselves.
+REVERT
+go
+-- Clean up.
+go
+USE msdb
+go
+DROP USER jobstartuser
+go
+USE master
+go
+DROP DATABASE jobstarttest
+DROP DATABASE jobstarter
+DROP LOGIN testuser
+DROP LOGIN databaseowner
+DROP LOGIN jobstartuser</pre>
+<p>You may find this solution a bit too elaborate, and I can certainly agree. A better solution may to be use a mix of impersonation and certificate signing. Put the procedure <b>start_this_job</b> in <b>msdb</b> and use <small>EXECUTE AS</small> to get access to <b>sp_start_job</b>. But instead of making the source database <small>TRUSTWORTHY</small>, you use certificate signing to give permission to run <b>start_this_job</b>. This also relieves you of the requirement that the database must not have an individual owner.</p>
+<p>As a final note: if you want to see which user in the source database that actually started the job, counter-signing the system procedures is the only choice. The auditing in <b>msdb</b> is performed through <small>SYSTEM_USER</small> so any impersonation breaks that.</p>
+<h3><a name="WindowsIdentity">Yet another Side Effect – WindowsIdentity</a></h3>
+<p>Before we leave <small>EXECUTE AS</small>, there is one more side effect I have yet to discuss. This is a little more on the advanced side, and something I learnt from <small>SQL</small> Server <small>MVP</small> Adam Machanic.</p>
+<p>In a <small>CLR</small> module, you can access the <b>WindowsIdentity</b> object. The main
+  purpose for this is in assemblies that have been marked as <small>EXTERNAL_ACCESS</small> or <small>UNSAFE</small> where you want to access resources outside <small>SQL</small> Server with the Windows
+  permissions of the actual user. To do this, you need to impersonate that user,
+  or else the access will be through the service account for <small>SQL</small> Server.</p>
+<p>As long as there has not been any impersonation through <small>EXECUTE AS</small>, <b> SqlContext.WindowsIdentity.Name</b> will return the domain and the Windows user name,
+  if the user logged in through Windows authentication. For an <small>SQL</small> login, <b> WindowsIdentity</b> is Null, so access to <b>SqlContext.WindowsIdentity.Name</b> yields a Null exception.</p>
+<p>But if there is an <small>EXECUTE AS</small> clause somewhere on the call stack, you can no
+  longer retrieve the user name for the Windows user. In most cases, <b> WindowsIdentity</b> is Null. But, if the database was set as trustworthy, and
+  the <small>EXECUTE AS</small> is for a user with <b>sysadmin</b> privileges, then <b> WindowsIdentity.Name</b> will return the name of the service account for <small>SQL</small> Server.</p>
+<h2><a name="Othermethods"></a>Other Methods</h2>
+<p>In this section I will cover three other methods to secure <small>SQL</small> Server.
+Sometimes I see people ask on the newsgroups and forums <i>How can I grant
+access to an application?</i> That is, they don't want the users to be able to
+access the tables directly from <small>SSMS</small> or Excel, but only from the application. The regular approach to achieve this is
+to use stored procedures, and we have already looked what possibilities they offer. But not all applications use stored procedures. In this section, I will
+  briefly look at three solutions you can employ regardless whether you use
+stored procedures or not. </p>
+<h3><a name="approles">Application Roles</a></h3>
+<p>Application roles were added in <small>SQL</small> 7. The idea is that you
+ create a role to which you assign the necessary privileges to run the
+ application. The users have no permissions at all beyond the database access. The application calls the system procedure <b>
+ sp_setapprole</b> to activate the role. To do this, the application must pass a password
+   that can be obfuscated when sent over the wire. </p>
+<p>Application roles may seem what you are looking for, but the password is a
+weak point. If you have a two-tier application, you can <i>never</i> achieve
+a secure solution with application roles. The password has to be embedded in the
+application, or stored somewhere the user has read access. You can chop it into
+pieces and store the pieces in the four corners of the application, but at best
+that is security by obscurity. It's a different matter if you have a three-tier
+application. Then you can store the password on the middle tier somewhere the
+users do not have read access. You should still need to beware that anyone who can get
+access to the network wire to <small>SQL</small> Server may be able to eavesdrop and crack the
+password.</p>
+<p>By default, when you activate an application role, you cannot back out of it.
+This has an effect on connection pooling; if you try to reuse a connection where
+an application role has been active, you will get an error. But you can get a
+cookie back from <b>sp_setapprole</b>, which you then can pass to <b>
+sp_unsetapprole</b> before you disconnect.(Please see
+ <b>sp_setapprole</b> in Books Online for the exact syntax.) </p>
+<p>This also makes it possible for having several application roles with
+ custom permissions for various tasks, similar to what we have discussed for
+ certificates and <small>EXECUTE AS</small>. That is, you would set the application role, perform the <small>SQL</small> that needs special permissions, and then unset the role.
+ (Note that you cannot call <b>sp_setapprole</b> from within a stored procedure;
+ it must be called from the top-level scope.) But due to the password issue, it
+ is not a solution that I recommend.</p>
+<p>Since application roles are database entities, you cannot use them for things
+ that require server-level permissions, for instance bulk load.</p>
+<p>When you use application roles, functions that return login names – <small>SYSTEM_USER</small>, <b><nobr>suser_sname()</nobr></b> etc – still return the login name of the
+ actual user. However, functions that return the database-level user name –
+ <small>USER</small>, <b><nobr>user_name()</nobr></b> – return the name of the application role.</p>
+<h3><a name="appproxies">"Application Proxies"</a></h3>
+<p>I have already touched at application proxies in several places, mainly in
+   the sections on the <a href="#EXECASstatement"><small>EXECUTE AS</small> statement</a> and
+   <a href="#context_info"><small>SET CONTEXT_INFO</small></a>. Here I like
+ to give just a few more remarks. </p>
+<p>For an "application proxy" to be meaningful, the application must have at
+ least three tiers. The middle tier authenticates the user and then connects to
+ <small>SQL</small> Server. The same arrangement can be achieved with application roles, but
+ with one difference: the application proxy can be a Windows login, so there is
+ no password crossing the wire.</p>
+<p>An interesting observation on <small>SET CONTEXT_INFO</small>
+   is that it
+   could serve as a full alternative to <small>EXECUTE AS</small> to impersonate the real user. All checks and auditing in the application that require knowledge about the real user would use <b><nobr>context_info()</nobr></b> to get this information. But as I discussed earlier, if there are holes in the application that permits for <a href="http://www.sommarskog.se/dynamic_sql.html#Security2"><small>SQL</small> injection</a>, a malicious user could inject a <small>SET CONTEXT_INFO</small> to change his identity. For this reason, the <small>EXECUTE AS</small> statement
+  with its <small>NO REVERT</small> and <small>WITH COOKIE</small>
+  clauses appears as safer. </p>
+<h3><a name="terminalserver">Terminal Server</a></h3>
+<p>It is possible to set up a Remote Desktop connection so that a specific application is started, when the user
+connects. Furthermore, on Windows 2008, it is
+possible to set this up so that the user arrives directly to the login screen of
+the application, and the application appears as if it executes from his
+computer. That is, there is no desktop from the computer running Terminal
+Server. Please don't ask me how you do to set this up; I'm an <small>SQL</small> Server <small>MVP</small>,
+not a Windows <small>MVP</small>. But I've seen a demo of it.</p>
+<p>If you have a two-tier application, you can use this to ensure that users can
+connect only through the application, and not through Access, Excel, Management
+Studio or whatever. You need to configure the network so that the <small>SQL</small> Server
+machine is not directly accessible from the users' computers, only from the
+computer running Terminal Server. One way to do this is to configure the firewall
+on the <small>SQL</small> Server machine to only accept connections from certain IP addresses.</p>
+<p>Since this solution builds on things outside my realm, I cannot fully asses
+how secure it is. For instance, I don't know if there is any possibility for
+users to intercept the login process in Terminal Server. Nevertheless, it is an interesting option. Not the least if you have a two-tier application, you don't want to re-architect.</p>
+<h2><a name="finalwords"></a>Final Words</h2>
+<p>Security is always a challenge. One aspect is that security and convenience rarely goes hand in hand. Better security often means more hassle.</p>
+<p>But security is also a challenge, because the holes in your security scheme may not always be apparent. To work with security means that you constantly have to think around corners. Can this permission be exploited by a malicious user? Could there be privilege elevation? You cannot only consider the current situation, but you must also try to see into the future. Maybe your current setup is secure because of some assumptions that are true now. But what if those assumptions are not true to tomorrow?</p>
+<p>In this article I have presented a number of solutions and suggestions, which I believe to be secure. But I cannot rule out that I've made a shortcut too many somewhere. By all means, if you apply any of my solutions in an area where security is top priority, you should make your own evaluation of the solution to assess whether there is a hole somewhere.</p>
+<p>In this article we have looked at three different solutions to grant permissions through stored procedures: ownership chaining, certificates and <small>EXECUTE AS</small>.</p>
+<p>Of these, ownership signing only works in a limited scenario, but a very common one, and ownership signing is what you will use 99 % of the time or even more.</p>
+<p>In the situations where ownership signing is not sufficient, you can  always use certificate signing to grant other permissions. With certificates you can have very tight control over what permissions you grant. Not the least is this important if you are a server <small>DBA</small> who needs to grant server-level permission to users in application databases.</p>
+<p>And then there is <small>EXECUTE AS</small>... As you have realised from this article, I am less than enthusiastic over <small>EXECUTE AS</small>. Everything you can do with <small>EXECUTE AS</small> you can do with certificates. (Save to cover up for an explicit <small>DENY</small>.) But it has to be admitted that <small>EXECUTE AS</small> is simpler. So I think that <small>EXECUTE AS</small> is OK to grant database permissions under these circumstances:</p>
+<ol>
+  <li>The application was designed with <small>EXECUTE AS</small> in mind. That is row-level security and auditing is based on <b><nobr>original_login()</nobr></b> or <b><nobr>context_info()</nobr></b>.</li>
+  <li>You use proxy users with specific permissions and don't descend to <small>EXECUTE AS OWNER</small> as the miracle cure.</li>
+</ol>
+<p>From this follows that if you are a plain developer and need a solution to grant permissions beyond what is possible with ownership chaining, you cannot start using <small>EXECUTE AS</small> on your own initiative. You first need to discuss with your <small>DBA</small> or the chief designer of the application, so that you don't wreak havoc of something.</p>
+<p>There are also some situations where <small>EXECUTE AS</small> is meaningful for cross-database access, and we have looked at some examples. The presumption is that the database has an individual owner, so that the effect of making it trustworthy is limited.</p>
+<p>But when it comes to server-level permissions, you should be extremely conservative with using <small>EXECUTE AS</small>, since this requires the database to be trustworthy and the database owner to be granted <small>AUTHENTICATE SERVER</small>. Any user in that database with sufficient permission will be able to elevate his permission to the <b>sysadmin</b> role. You should have very good reasons not to use certificates here.</p>
+<h2><a name="Feedback">Acknowledgments and Feedback</a></h2>
+I like to thank <small>SQL</small>
+Server MVPs Dan Guzman, Martin Bell, Adam Machanic, Hugo Kornelis, Razvan Socol, Kent
+Tegels and Victor Isakov as well as Imran Mohamed and Jerry Horochowianka for submitting valuable
+suggestions for this article.
+<p>If you have suggestions for improvements, corrections on
+   contents, language or
+formatting, please mail me at <a href="mailto:esquel@sommarskog.se">
+esquel@sommarskog.se</a>. If you have technical questions that any knowledgeable
+person could answer, I encourage you to post a question to the <a href="http://social.msdn.microsoft.com/Forums/en-US/sqlsecurity/threads"><small>SQL</small> Server Security</a> forum on <small>MSDN</small>/Technet.</p>
+
+<h2><a name="revisions">Revision History</a></h2>
+<p><b>2011-12-31</b> – Added text about a new feature in <small>SQL</small> Server 2012, that makes it easier to copy a certificate from one database to another, including the new section <i><a href="#copycertificate"><small>CREATE CERTIFICATE FROM BINARY</small> in <small>SQL</small> 2012</a></i>.</p>
+<p><b>2011-07-13</b> – A major overhaul of the article to reflect that five years had passed since the original publication. I have also added some quite important new material. Changes in summary:</p>
+<ul>
+  <li>I wrote the original article when <small>SQL</small> 2005 was brand-new, it is no longer. I've revised the article to change that perspective a bit.</li>
+  <li>Added a section on <a href="#countersignatures">counter-signing</a> stored procedures and added an example how to use this for starting jobs.</li>
+  <li>Replaced the old section <i>What About the Password?</i> with a new section, <a href="#managingdbcert"><i>Managing Certificates and Passwords</i></a> for a better and deeper discussion on the security around certificates. There is also a script to show how you can use throw-away passwords when you deploy signed stored procedures for server-level permissions.</li>
+  <li>Revised the section on the statement <a href="#EXECASstatement"><small>EXECUTE AS</small></a>.</li>
+  <li>Added a section about the implications on <a href="#EXECASMonitoring">Profiler and the DMVs</a> when you use <small>EXECUTE AS</small>.</li>
+  <li>Added three new sections in the chapter on <small>EXECUTE AS</small>: One that discusses the risks with making a <a href="#TRUSTWORTHY">database trustworthy</a>. There is a new section on <a href="#EXECAScrossdb">cross-database access</a>, and there is also an example how to use <small>EXECUTE AS</small> to <a href="#EXECASstartjob">start jobs</a>.</li>
+  <li>Added a brief description of one more method – using <a href="#terminalserver">Terminal Server</a>.</li>
+  <li>Added a closing section <a href="#finalwords"><i>Final Words</i></a>. </li>
+</ul>
+<p><b>2011-01-11</b> – Corrected the expression to decode <b><nobr>
+  <a href="#context_info">context_info()</a></nobr></b>. The old expression would
+  result in a number trailing <small>NUL</small> characters in the character data. Thanks to
+Imran Mohamed for pointing out the error.</p>
+<p><b>2006-03-28 –</b> Rewrote the section on asymmetric keys on suggestions
+   from Razvan Socol.</p>
+<p><b>2006-02-19</b> – Original version.</p>
+<p align="right"><a href="http://www.sommarskog.se/index.html">Back to my home page</a>.</p>
+
+
+
+</body></html>
