@@ -29,3 +29,9 @@ Source link: http://www.sommarskog.se/arrays-in-sql-2008.html
 
 Author: Erland Sommarskog<br />
 Source link: http://www.sommarskog.se/grantperm.html
+
+
+## [Error and Transaction Handling in SQL Server](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Error%20and%20Transaction%20Handling%20in%20SQL%20Serverhtm)
+
+Author: Erland Sommarskog<br />
+Source link: http://www.sommarskog.se/error_handling/Part1.html

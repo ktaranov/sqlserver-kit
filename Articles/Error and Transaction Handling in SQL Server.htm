@@ -1,0 +1,342 @@
+<!DOCTYPE html><html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="en-gb">
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+@import url("Error%20and%20Transaction%20Handling%20in%20SQL%20Server_files/sommarskog.css");
+--></style>
+<title>Error and Transaction Handling in SQL Server</title>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+--></style></head>
+<body>
+<header>
+<h1>Error and Transaction Handling in SQL Server
+<p>Part One – Jumpstart Error Handling</p></h1>
+</header>
+<p class="ansqltextby">An SQL text by <a href="http://www.sommarskog.se/index.html">Erland Sommarskog</a>, SQL Server MVP. <a href="#revisionhistory">Latest revision</a>: 2015-05-03.  <a href="http://www.sommarskog.se/copyright.html">Copyright</a> applies to this text.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This article is the first in a series of three about error and transaction handling in SQL Server. The aim of this first article is to give you a jumpstart with error handling by  showing you a basic pattern which is good for the main bulk of your code. This part is written with the innocent and inexperienced reader in mind, why I am intentionally silent on many details. The purpose here is to tell you <i>how</i> without dwelling  much on <i>why</i>. If you take my words for your truth, you may prefer to only read this part and save the other two  for a later point in your career. </p>
+<p>On the other hand, if you question my guidelines, you certainly need to read the other two parts, where I go into much deeper detail exploring the very confusing world of error and transaction handling in SQL Server. Parts Two and Three, as well as  the three appendixes, are directed towards  readers with a more general programming experience, although necessarily not with SQL Server. This first article is short; Parts Two and Three are considerably longer.</p>
+<div class="toc"><p class="tocheader">Table of Contents</p>
+<p class="toc1"><a href="#introduction">Introduction</a></p>
+<p class="toc2"><a href="#indexofall">Index of All Error-Handling Articles</a></p>
+<p class="toc2"><a href="#Whyerrorhandling2">Why Error Handling?</a></p>
+<p class="toc1"><a href="#essentialcommands">Essential Commands</a></p>
+<p class="toc2"><a href="#jumptrycatch">TRY-CATCH</a></p>
+<p class="toc2"><a href="#jumpXACT_ABORT">SET XACT_ABORT ON</a></p>
+<p class="toc1"><a href="#jumpgeneralpattern">General Pattern for Error Handling</a></p>
+<p class="toc1"><a href="#reraise">Three Ways to Reraise the Error</a></p>
+<p class="toc2"><a href="#error_handler_sp">Using error_handler_sp</a></p>
+<p class="toc2"><a href="#jumpTHROW">Using ;THROW</a></p>
+<p class="toc2"><a href="#jumpSqlEventLog">Using SqlEventLog</a></p>
+<p class="toc1"><a href="#FinalRemarks">Final Remarks</a></p>
+<p class="toc1"><a href="#TheEnd">End of Part One</a></p>
+<p class="toc2"><a href="#revisionhistory">Revision History</a></p>
+</div>
+
+<h3 id="indexofall">Index of All Error-Handling Articles</h3>
+<p>Here follows a list of all articles in this series:</p>
+<div class="articlelist">
+<p><span class="quote">Part One – Jumpstart Error Handling</span> (this article).</p>
+<p><a href="http://www.sommarskog.se/error_handling/Part2.html" class="quote">Part Two – Commands and Mechanisms</a>.</p>
+<p><a href="http://www.sommarskog.se/error_handling/Part3.html" class="quote">Part Three – Implementation</a>.</p>
+<p><a href="http://www.sommarskog.se/error_handling/Appendix1.html" class="quote">Appendix 1 – Linked Servers</a>. (Extends Part Two.)</p>
+<p><a href="http://www.sommarskog.se/error_handling/Appendix2.html" class="quote">Appendix 2 – CLR</a>. (Extends both Parts Two and Three.)</p>
+<p><a href="http://www.sommarskog.se/error_handling/Appendix3.html" class="quote">Appendix 3 – Service Broker</a>. (Extends Part Three.)</p>
+</div>
+<p>All the articles above are for SQL 2005 and later. For those who still are on SQL 2000, there are two older articles:</p>
+<div class="articlelist">
+  <p><a href="http://www.sommarskog.se/error_handling/SQL2000-I.html" class="quote">Error Handling in SQL Server 2000 – a 
+Background</a>. </p>
+<p><a href="http://www.sommarskog.se/error_handling/SQL2000-II.html" class="quote">Implementing Error Handling with Stored Procedures in SQL 2000</a>.</p>
+</div>
+<h3 id="Whyerrorhandling2">Why Error Handling?</h3>
+<p>Why do we have error handling in our code? There are many reasons. In a forms application we validate the user input and inform the users of their mistakes. These user mistakes are <i>anticipated</i> errors. But we also need to handle <i>unanticipated</i> errors. That is, errors that occur because we overlooked something when we wrote our code. A simple strategy is to abort execution or at least revert to a point where we know that we have full control. Whatever we do, simply ignoring an unanticipated error is something we should never permit us. This can have grave consequences and cause the application to present incorrect information to the user or even worse to persist incorrect data in the database. It is also important to communicate that an error has occurred, lest that the user thinks that the operation went fine, when your code in fact performed nothing at all.</p>
+<p>In a database system, we often want updates to be atomic. For instance, say that the task is to transfer money from one account to another. To this end, we need to update two rows in the <span class="objectname">CashHoldings</span> table and add two rows to the <span class="objectname">Transactions</span> table. It's absolutely impermissible that an error or an interruption would result in money being deposited into the receiving account without it being withdrawn  from the other. For this reason, in a database application, error handling is also about transaction handling. In this example, we need to wrap the operation in <span class="keyword">BEGIN TRANSACTION</span> and <span class="keyword">COMMIT TRANSACTION</span>, but not only that: in case of an error, we must make sure that the transaction is rolled back.</p>
+<h2 id="essentialcommands">Essential Commands</h2>
+<p>We will start by looking at the most important commands that are needed for error handling. In Part Two, I cover all commands related to error and transaction handling.</p>
+<h3 id="jumptrycatch">TRY-CATCH</h3>
+<p>The main vehicle for error handling is <span class="keyword">TRY-CATCH</span>, very reminiscent of similar constructs in other languages. The structure is:</p>
+<pre>BEGIN TRY
+   &lt;regular code&gt;
+END TRY
+BEGIN CATCH
+   &lt;error handling&gt;
+END CATCH</pre>
+<p>If any error occurs in <code>&lt;regular code&gt;</code>, execution is transferred to the <span class="keyword">CATCH</span> block, and the error-handling code 
+  is executed. Typically, your <span class="keyword">CATCH</span> rolls back any open transaction and reraises the error, so that the calling client program understand that something went wrong. As for how to reraise the error, we will come to this later in this article.</p>
+<p>Here is a very quick example:</p>
+<pre>BEGIN TRY
+   DECLARE @x int
+   SELECT @x = 1/0
+   PRINT 'Not reached'
+END TRY
+BEGIN CATCH 
+   PRINT 'This is the error: ' + error_message()
+END CATCH</pre>
+<p>The output:</p>
+<p class="output">This is the error: Divide by zero error encountered.
+</p>
+<p>We will return to the function <span class="builtin"><span class="nowrap">error_message()</span></span> later. It is worth noting that using <span class="keyword">PRINT</span> in your <span class="keyword">CATCH</span> handler is something you only would do when experimenting. You should never do so in real application code.</p>
+<p>If <code>&lt;regular code&gt;</code> calls stored procedures or invokes triggers, any error that occurs in these will also transfer execution to the <span class="keyword">CATCH</span> block. More exactly, when an error occurs, SQL Server unwinds the stack until it finds a <span class="keyword">CATCH</span> handler, and if there isn't any, SQL Server sends the error message to the client.</p>
+<p>There is one very important limitation with <span class="keyword">TRY-CATCH</span> you need to be aware of: it does not catch compilation errors that occur in the same scope. Consider:</p>
+<pre>CREATE PROCEDURE inner_sp AS
+   BEGIN TRY
+      PRINT 'This prints'
+      SELECT * FROM NoSuchTable
+      PRINT 'This does not print'
+   END TRY
+   BEGIN CATCH
+      PRINT 'And nor does this print'
+   END CATCH
+go
+EXEC inner_sp</pre>
+<p>The output is:</p>
+<div class="output">
+  <p>This prints</p>
+  <div class="errmsg">
+    <p>Msg 208, Level 16, State 1, Procedure inner_sp, Line 4</p>
+    <p>Invalid object name 'NoSuchTable'.</p>
+  </div>
+</div>
+<p>As you see the <span class="keyword">TRY</span> block is entered, but when the error occurs, execution is not transferred to the  <span class="keyword">CATCH</span> block as expected. This is true for all compilation errors such as missing columns, incorrect aliases etc that occur at run-time. (Compilation errors can occur at run-time in SQL Server due to deferred name resolution, a (mis)feature where SQL Server permits you to create a procedure that refers to non-existing tables.) </p>
+<p>These errors are not entirely uncatchable; you  cannot catch them in the scope they occur, but you can catch them in outer scopes. Add this code to the example above:</p>
+<pre>CREATE PROCEDURE outer_sp AS
+   BEGIN TRY
+      EXEC inner_sp
+   END TRY
+   BEGIN CATCH
+      PRINT 'The error message is: ' + error_message()
+   END CATCH
+go
+EXEC outer_sp</pre>
+<p>Now we get this output:</p>
+<div class="output"><p>This prints
+</p>
+<p>The error message is: Invalid object name 'NoSuchTable'.</p>
+</div>
+<p>This time the error is caught because there is an outer <span class="keyword">CATCH</span> handler.</p>
+<h3 id="jumpXACT_ABORT">SET XACT_ABORT ON</h3>
+<p>Your stored procedures should always include this statement in the beginning:</p>
+<pre>SET XACT_ABORT, NOCOUNT ON</pre>
+<p>This turns on two session options that are off by default for legacy reasons, but experience has proven that best practice is to always have them on. The default behaviour in SQL Server when there is no surrounding <span class="keyword">TRY-CATCH</span> is that <i>some</i> errors abort execution and roll back any open transaction, whereas with other errors execution continues on the next statement. When you activate <span class="keyword">XACT_ABORT ON</span>, almost all errors have the same effect: any open transaction is rolled back and execution is aborted. There are a few exceptions of which the most prominent  is the <span class="keyword">RAISERROR</span> statement. </p>
+<p>The option <span class="keyword">XACT_ABORT</span> is essential for a more reliable error and transaction handling. Particularly, with the default behaviour there are several situations where execution can be aborted without any open transaction being rolled back, even if you have <span class="keyword">TRY-CATCH</span>. We saw one such example in the previous section where we learnt that <span class="keyword">TRY-CATCH</span> does not catch compilations errors in the same scope. An open transaction which is not rolled back in case of an error can cause major problems if the application jogs along without committing or rolling back.</p>
+<p>For good error handling in SQL Server, you need both <span class="keyword">TRY-CATCH</span> and <span class="keyword">SET XACT_ABORT ON</span>. Of these two, <span class="keyword">SET XACT_ABORT ON</span> is the most important. For production-grade code it's not really sufficient to rely on <span class="keyword">XACT_ABORT</span>, but for quick and simple stuff it can do.</p>
+<p>The option <span class="keyword">NOCOUNT</span> has nothing to do with error handling, but I included in order to show best practice. The effect of <span class="keyword">NOCOUNT</span> is that it suppresses messages like <span class="quote">(1 row(s) affected)</span> that you can see in the <b>Message</b> tab in SQL Server Management Studio. While these row counts can be useful when you work interactively in SSMS, they can degrade performance in an application because of the increased network traffic. The row counts can also confuse poorly written clients that think they are real result sets.</p>
+<p>Above, I've used a syntax that is a little uncommon. Most people would probably write two separate statements:</p>
+<pre>SET NOCOUNT ON
+SET XACT_ABORT ON</pre>
+<p>There is no difference between this and the above. I prefer the version with one <span class="keyword">SET</span> and a comma since it reduces the amount of noise in the code. As these statements should appear in all your stored procedures, they should take up as little space as possible.</p>
+<h2 id="jumpgeneralpattern">General Pattern for Error Handling</h2>
+<p>Having looked at <span class="keyword">TRY-CATCH</span> and <span class="keyword">SET XACT_ABORT ON</span>, let's piece it together to a pattern that we can use in all our stored procedures. To take it slow and gentle, I will first show an example where I reraise the error in a simple-minded way, and in the next section I will look into better solutions.</p>
+<p>For the example, I will use this simple table.</p>
+<pre>CREATE TABLE sometable(a int NOT NULL,
+                       b int NOT NULL,
+                       CONSTRAINT pk_sometable PRIMARY KEY(a, b))</pre>
+<p>Here is a stored procedure that showcases how you should work with errors and transactions. </p>
+<pre>CREATE PROCEDURE insert_data @a int, @b int AS 
+   SET XACT_ABORT, NOCOUNT ON
+   BEGIN TRY
+      BEGIN TRANSACTION
+      INSERT sometable(a, b) VALUES (@a, @b)
+      INSERT sometable(a, b) VALUES (@b, @a)
+      COMMIT TRANSACTION
+   END TRY
+   BEGIN CATCH
+      IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+      DECLARE @msg nvarchar(2048) = error_message()  
+      RAISERROR (@msg, 16, 1)
+      RETURN 55555
+   END CATCH</pre>
+<p>The first line in the procedure turns on <span class="keyword">XACT_ABORT</span> and <span class="keyword">NOCOUNT</span> in single statement as I showed above. This line is the <b><i>only</i></b> line to come before <span class="keyword">BEGIN TRY</span>. Everything else in the procedure should come after <span class="keyword">BEGIN TRY</span>: variable declarations, creation of temp tables, table variables, everything. Even if you have other <span class="keyword">SET</span> commands in the procedure (there is rarely a reason for this, though), they should come after <span class="keyword">BEGIN TRY</span>. </p>
+<p>The reason I prefer to have <span class="keyword">SET XACT_ABORT</span>, <span class="keyword">NOCOUNT ON</span> before <span class="keyword">BEGIN TRY</span> is that I see this as one line of noise: it should always be there, but that I don't want it to strain my eyes. This is certainly a matter of preference, and if you prefer to put the <span class="keyword">SET</span> commands after <span class="keyword">BEGIN TRY</span>, that's alright. What is important is that you should never put anything else before <span class="keyword">BEGIN TRY</span>.</p>
+<p>The part between <span class="keyword">BEGIN TRY</span> and <span class="keyword">END TRY</span> is the main meat of the procedure. Because I wanted to include a user-defined transaction, I introduced a fairly contrived business rule which says that when you insert a pair, the reverse pair should also be inserted. The two <span class="keyword">INSERT</span> statements are inside <span class="keyword">BEGIN</span> and <span class="keyword">COMMIT TRANSACTION</span>. In many cases you will have some lines code between <span class="keyword">BEGIN TRY</span> and <span class="keyword">BEGIN TRANSACTION</span>. Sometimes you will also have code between <span class="keyword">COMMIT TRANSACTION</span> and <span class="keyword">END TRY</span>, although that is typically only a final <span class="keyword">SELECT</span> to return data  or assign values to output parameters. If your procedure does not perform any updates or only has a single <span class="keyword">INSERT</span>/<span class="keyword">UPDATE</span>/<span class="keyword">DELETE</span>/<span class="keyword">MERGE</span> statement, you typically don't have an explicit transaction at all.</p>
+<p>Whereas the <span class="keyword">TRY</span> block will look different from procedure to procedure, the same is not true for the <span class="keyword">CATCH</span> block. Your <span class="keyword">CATCH</span> blocks should more or less be a matter of copy and paste. That is, you settle on something short and simple and then use it all over the place without giving it much thinking. The <span class="keyword">CATCH</span> handler above performs three actions:</p>
+<ol>
+  <li>Rolls back any open transaction.</li>
+  <li>Reraises the error.</li>
+  <li>Makes sure that the return value from the stored procedure is non-zero.</li>
+</ol>
+<p>These actions should always be there. Always. You may argue that the line</p>
+<pre>IF @@trancount &gt; 0 ROLLBACK TRANSACTION</pre>
+<p>is not needed if there no explicit transaction in the procedure, but nothing could be more wrong. Maybe you call a stored procedure which  starts a transaction, but which is not able to roll it back because of the limitations of <span class="keyword">TRY-CATCH</span>. Maybe you or someone else adds an explicit transaction to the procedure two years from now. Will you remember to add the line to roll back then? Don't count on it. I can also hear readers that object <span class="quote">if the caller started the transaction we should not roll back...</span>. Yes, we should, and if you want to know why you need to read Parts Two and Three. Always rolling back the transaction in the <span class="keyword">CATCH</span> handler is a categorical imperative that knows of no exceptions.</p>
+<p>The code for reraising the error includes this line:</p>
+<pre>DECLARE @msg nvarchar(2048) = error_message()</pre>
+<p>The built-in function <span class="builtin"><span class="nowrap">error_message()</span></span> returns the text for the error that was raised.  On the next line, the error is reraised with the <span class="keyword">RAISERROR</span> statement. This is an unsophisticated way to do it, but it does the job. We will look at alternatives in the next chapter.</p>
+<p class="note"><b>Note</b>: the syntax to give variables an initial value with DECLARE was introduced in SQL 2008. If you are on SQL 2005, you will need to split the line in one DECLARE and one SELECT statement.</p>
+<p>Always reraise? What if you only want to update a row in a table with the error message? Yes, that is a situation that occurs occasionally, although you would typically do that in an inner <span class="keyword">CATCH</span> block which is part of a loop. (I have a longer example demonstrating this in Part Three.) The outer <span class="keyword">CATCH</span> block in a procedure is exactly for catching and reraising  unexpected errors you did not foresee. Dropping these errors on the floor is a criminal sin. They must be reraised.</p>
+<p>The final <span class="keyword">RETURN</span> statement is a safeguard. Recall that <span class="keyword">RAISERROR</span> never aborts execution, so execution will continue with the next statement. As long as all procedures are using <span class="keyword">TRY-CATCH</span> and likewise all client code is using exception handling this is no cause for concern. But your procedure may be called from legacy code that was written before SQL 2005 and the introduction of <span class="keyword">TRY-CATCH</span>. In those days, the best we could do was to look at return values. What you return does not really matter, as long as it's a non-zero value. (Zero is usually understood as success.)</p>
+<p>The last statement in the procedure is <span class="keyword">END CATCH</span>. You should <b><i>never</i></b> have any code after <span class="keyword">END CATCH</span> for the outermost <span class="keyword">TRY-CATCH</span> of your procedure. For one thing, anyone who is reading the procedure will never see that piece of code.</p>
+<p>Having read all the theory, let's try a test case:</p>
+<pre>EXEC insert_data 9, NULL</pre>
+<p>The output is: </p>
+<div class="output"><div class="errmsg">
+<p>Msg 50000, Level 16, State 1, Procedure insert_data, Line 12</p>
+<p>
+  Cannot insert the value NULL into column 'b', table 'tempdb.dbo.sometable'; column does not allow nulls. INSERT fails.</p>
+</div></div>
+<p>Let's add an outer procedure to see what happens when an error is reraised repeatedly:</p>
+<pre>CREATE PROCEDURE outer_sp @a int, @b int AS
+   SET XACT_ABORT, NOCOUNT ON
+   BEGIN TRY
+      EXEC insert_data @a, @b
+   END TRY
+   BEGIN CATCH
+      IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+      DECLARE @msg nvarchar(2048) = error_message()
+      RAISERROR (@msg, 16, 1)
+      RETURN 55555
+   END CATCH
+go
+EXEC outer_sp 8, 8</pre>
+<p>The output is:</p>
+<div class="output"><div class="errmsg">
+<p>Msg 50000, Level 16, State 1, Procedure outer_sp, Line 9</p>
+<p>Violation of PRIMARY KEY constraint 'pk_sometable'. Cannot insert duplicate key in object 'dbo.sometable'. The duplicate key value is (8, 8).</p>
+</div></div>
+<p>We get the correct error message, but if you look closer at the headers of this message and the previous, you may note a problem:</p>
+<div class="output"><div class="errmsg">
+  <p>Msg 50000, Level 16, State 1, Procedure insert_data, <b><i>Line 12</i></b></p>
+  <p>Msg 50000, Level 16, State 1, Procedure <b><i>outer_sp</i></b>, Line 9</p>
+</div></div>
+<p>The error messages give the location of the final <span class="keyword">RAISERROR</span> statement that was executed. In the first case, only the line number is wrong. In the second case, the procedure name is incorrect as well. For simple procedures like our test procedures, this is not a much of an issue, but if you have several layers of nested complex stored procedures, only having an error message but not knowing where it occurred makes your troubleshooting a lot more difficult. For this reason, it is desirable to reraise the error in such a way that you can locate the failing piece of code quickly, and this is what we will look at in the next chapter.</p>
+<h2 id="reraise">Three Ways to Reraise the Error</h2>
+<h3 id="error_handler_sp">Using error_handler_sp</h3>
+<p>We have  seen <span class="builtin"><span class="nowrap">error_message()</span></span>, which returns the text for an error message. An error message consists of several components, and there is one <span class="builtin"><span class="nowrap">error_xxx()</span></span> function for each one of them. We can use this to reraise a complete message that retains all the original information, albeit with a different format. Doing this in each and every <span class="keyword">CATCH</span> handler would be a gross sin of code duplication, and there is no reason to. You don't have to be in the <span class="keyword">CATCH</span> block to call <span class="builtin"><span class="nowrap">error_message()</span></span> <span class="nowrap"> &amp; co,</span> but they will return exactly the same information if they are invoked from a stored procedures that your <span class="keyword">CATCH</span> block calls. </p>
+<p>Let me introduce to you <span class="objectname">error_handler_sp</span>:</p>
+<pre>CREATE PROCEDURE error_handler_sp AS
+ 
+   DECLARE @errmsg   nvarchar(2048),
+           @severity tinyint,
+           @state    tinyint,
+           @errno    int,
+           @proc     sysname,
+           @lineno   int
+           
+   SELECT @errmsg = error_message(), @severity = error_severity(),
+          @state  = error_state(), @errno = error_number(),
+          @proc   = error_procedure(), @lineno = error_line()
+       
+   IF @errmsg NOT LIKE '***%'
+   BEGIN
+      SELECT @errmsg = '*** ' + coalesce(quotename(@proc), '&lt;dynamic SQL&gt;') + 
+                       ', Line ' + ltrim(str(@lineno)) + '. Errno ' + 
+                       ltrim(str(@errno)) + ': ' + @errmsg
+   END
+   RAISERROR('%s', @severity, @state, @errmsg)</pre>
+<p>The first thing <span class="objectname">error_handler_sp</span> does is to capture the value of all the <span class="builtin"><span class="nowrap">error_xxx()</span></span> functions into local variables. (Exactly what all these mean, is something I am not covering in this introductory article, but I leave that for Part Two.) I will return to the <span class="keyword">IF</span> statement in a second. Instead let's first look at the <span class="keyword">SELECT</span> statement inside of it: </p>
+<pre>SELECT @errmsg = '*** ' + coalesce(quotename(@proc), '&lt;dynamic SQL&gt;') + 
+                 ', Line ' + ltrim(str(@lineno)) + '. Errno ' + 
+                 ltrim(str(@errno)) + ': ' + @errmsg</pre>
+<p>The purpose of this <span class="keyword">SELECT</span> statement is to format an error message that we pass to <span class="keyword">RAISERROR</span>, and which includes all information in the original error message which we cannot inject directly into <span class="keyword">RAISERROR</span>. We need to give special treatment to the procedure name, since it will be <span class="keyword">NULL</span> for errors that occur in ad-hoc batches or in dynamic SQL. Whence the use of the <span class="builtin"><span class="nowrap">coalesce()</span></span> function. (If you don't really understand   the form of the <span class="keyword">RAISERROR</span> statement, I discuss this in more detail in <a href="http://www.sommarskog.se/error_handling/Part2.html#RAISERROR">Part Two</a>.)</p>
+<p>The formatted error message starts with three asterisks. This serves two purposes: 1) We can directly see that this is a message reraised from a <span class="keyword">CATCH</span> handler. 2) This makes it possible for <span class="objectname">error_handler_sp</span> to filter out errors it has reraised once or more already with the condition <code>NOT LIKE '***%'</code> to avoid that error messages get modified a second time.</p>
+<p>Here is how a <span class="keyword">CATCH</span> handler should look like when you use <span class="objectname">error_handler_sp</span>:</p>
+<pre>BEGIN CATCH
+   IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+   EXEC error_handler_sp
+   RETURN 55555
+END CATCH</pre>
+<p>Let's try some test cases.</p>
+<pre>EXEC insert_data 8, NULL
+EXEC outer_sp 8, 8</pre>
+<p>This results in:</p>
+<div class="output"><div class="errmsg">
+<p>Msg 50000, Level 16, State 2, Procedure error_handler_sp, Line 20</p>
+<p>*** [insert_data], Line 5. Errno 515: Cannot insert the value NULL into column 'b', table 'tempdb.dbo.sometable'; column does not allow nulls. INSERT fails.</p>
+<p>Msg 50000, Level 14, State 1, Procedure error_handler_sp, Line 20</p>
+<p>*** [insert_data], Line 6. Errno 2627: Violation of PRIMARY KEY constraint 'pk_sometable'. Cannot insert duplicate key in object 'dbo.sometable'. The duplicate key value is (8, 8).</p>
+</div></div>
+<p>The header of the messages say that the error occurred in <span class="objectname">error_handler_sp</span>, but the texts of the error messages give the original location,  both procedure name and line number.</p>
+<p>I will present two more methods to reraise errors. However, <span class="objectname">error_handler_sp</span> is my main recommendation for readers who only read this part. It's simple and it works on all versions of SQL Server from SQL 2005 and up. There is really only one  drawback: in some situations SQL Server raises two error messages, but the <span class="builtin"><span class="nowrap">error_xxx()</span></span> functions return only information about one of them, why one of the error messages is lost. This can be quite difficult with administrative commands like <span class="keyword">BACKUP</span>/<span class="keyword">RESTORE</span>, but it is rarely an issue in pure application code.</p>
+<h3 id="jumpTHROW">Using ;THROW</h3>
+<p>In SQL 2012, Microsoft introduced the ;<span class="keyword">THROW</span> statement to make it easier to reraise errors. Unfortunately, Microsoft made a serious design error with this command and introduced a dangerous pitfall.</p>
+<p>With ;<span class="keyword">THROW</span> you don't need any stored procedure to help you. Your <span class="keyword">CATCH</span> handler  becomes as simple as this:</p>
+<pre>BEGIN CATCH
+   IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+   ;THROW
+   RETURN 55555
+END CATCH</pre>
+<p>The nice thing with ;<span class="keyword">THROW</span> is that it reraises the error message exactly as the original message. If there were two error messages originally, both are reraised which makes it even better. As with all other errors, the errors reraised by ;<span class="keyword">THROW</span> can be caught in an outer <span class="keyword">CATCH</span> handler and reraised. If there is no outer <span class="keyword">CATCH</span> handler, execution is aborted, so that <span class="keyword">RETURN</span> statement is actually superfluous. (I still recommend that you keep it, in case you change your mind on ;<span class="keyword">THROW</span> later.) </p>
+<p>If you have SQL 2012 or later, change the definition of <span class="objectname">insert_data</span> and <span class="objectname">outer_sp</span>, and try the tests cases again. The output this time:</p>
+<div class="output">
+<div class="errmsg">
+<p>Msg 515, Level 16, State 2, Procedure insert_data, Line 5</p>
+<p>Cannot insert the value NULL into column 'b', table 'tempdb.dbo.sometable'; column does not allow nulls. INSERT fails.</p>
+<p>Msg 2627, Level 14, State 1, Procedure insert_data, Line 6</p>
+<p>Violation of PRIMARY KEY constraint 'pk_sometable'. Cannot insert duplicate key in object 'dbo.sometable'. The duplicate key value is (8, 8).</p>
+</div></div>
+<p>The procedure name and line number are accurate and there is no other procedure name to confuse us. Also, the original error numbers are retained.</p>
+<p> At this point you might be saying to yourself: <span class="quote">he must be pulling my legs, did Microsoft really call the command ;THROW? Isn't it just THROW?</span> True, if you look it up in Books Online, there is no leading semicolon. But the semicolon must be there. Officially, it is a terminator for the previous statement, but it is optional, and far from everyone uses  semicolons to terminate their T‑SQL statements. More importantly, if you leave out the semicolon before <span class="keyword">THROW</span> this does not result in a syntax error, but in a run-time behaviour which is mysterious for the uninitiated. If there is an active transaction you will get an error message  – but a completely different one from the original. Even worse, if there is no active transaction, the error will silently be dropped on the floor. Something like mistakenly leaving out a semicolon should not have such absurd consequences. To reduce the risk for this accident, always think of the command as ;<span class="keyword">THROW</span>.</p>
+<p>It should not be denied that  ;<span class="keyword">THROW</span> has its points, but the semicolon is not the only pitfall with this command. If you want to use it, I encourage you to read at least Part Two in this series, where I cover more details on ;<span class="keyword">THROW</span>. Until then, stick to <span class="objectname">error_handler_sp</span>.</p>
+<h3 id="jumpSqlEventLog">Using SqlEventLog</h3>
+<p>The third way to reraise an error is to use SqlEventLog, which is a facility that I present in great detail in Part Three. Here I will only give you a teaser. </p>
+<p>SqlEventLog offers a stored procedure <span class="objectname">slog.catchhandler_sp</span> that works similar to <span class="objectname">error_handler_sp</span>: it uses the <span class="builtin"><span class="nowrap">error_xxx()</span></span> functions to collect the information and reraises the error message retaining all information about it. In addition, it logs the error to the table <span class="objectname">slog.sqleventlog</span>. Depending on the type of application you have, such a table can be a great asset. </p>
+<p>To use SqlEventLog, your <span class="keyword">CATCH</span> hander would look like this:</p>
+<pre>BEGIN CATCH
+   IF @@trancount &gt; 0 ROLLBACK TRANSACTION
+   EXEC slog.catchhandler_sp @@procid
+   RETURN 55555
+END CATCH</pre>
+<p><span class="builtin">@@procid</span> returns the object id of the current stored procedure, something that SqlEventLog uses when it writes the log information to the table. Using the same test cases, this is the output with <span class="objectname">catchhandler_sp</span>:</p>
+<div class="output">
+  <div class="errmsg">
+    <p>Msg 50000, Level 16, State 2, Procedure catchhandler_sp, Line 125</p>
+<p>{515} Procedure insert_data, Line 5</p>
+<p>Cannot insert the value NULL into column 'b', table 'tempdb.dbo.sometable'; column does not allow nulls. INSERT fails.</p>
+  <p>Msg 50000, Level 14, State 1, Procedure catchhandler_sp, Line 125</p>
+  <p>{2627} Procedure insert_data, Line 6</p>
+  <p>Violation of PRIMARY KEY constraint 'pk_sometable'. Cannot insert duplicate key in object 'dbo.sometable'. The duplicate key value is (8, 8).
+  </p>
+</div></div>
+<p>As you see, the error messages from SqlEventLog are formatted somewhat differently from  <span class="objectname">error_handler_sp</span>, but the basic idea is the same. Here is a sample of what is logged to the table <span class="objectname">slog.sqleventlog</span>:</p>
+<div class="output">
+  <p>logid logdate                 errno  severity logproc     linenum msgtext</p>
+  <p> ----- ----------------------- ------ -------- ----------- ------- -----------------</p>
+  <p> 1           2015-01-25 22:40:24.393  515       16             insert_data   5              Cannot insert ...</p>
+  <p> 2           2015-01-25 22:40:24.395  2627     14             insert_data   6              Violation of ...</p>
+</div>
+<p>If you want to play with SqlEventLog right on the spot, you can download the file <a href="http://www.sommarskog.se/error_handling/sqleventlog.zip" class="filepath" target="_blank" type="text/plain">sqleventlog.zip</a>. For installation instructions, see the section <a href="http://www.sommarskog.se/error_handling/Part3.html#InstallingSqlEventLog" class="quote">Installing SqlEventLog</a> in Part Three.</p>
+<h2 id="FinalRemarks">Final Remarks</h2>
+<p>You have now learnt a general pattern for  error and transaction handling in stored procedures. It is not perfect, but it should work well for 90-95 % of your code. There are a couple of limitations you should be aware of:</p>
+<ol>
+  <li>As we have seen, compilation errors such as missing tables or missing columns cannot be trapped in the procedure where they occur, only in outer procedures.</li>
+  <li>The pattern does not work for user-defined functions, since neither <span class="keyword">TRY-CATCH</span> nor <span class="keyword">RAISERROR</span> are permitted there.</li>
+  <li>When you call a stored procedure on a linked server that raises 
+    an error, this error may bypass the error handler in the procedure on the 
+    local server and go to directly to the client. </li>
+  <li>When a procedure is called by <span class="keyword">INSERT-EXEC</span>, you will get an ugly error, because <span class="keyword">ROLLBACK TRANSACTION</span> is 
+    not permitted in this case.</li>
+  <li>As noted above, if you use <span class="objectname">error_handler_sp</span> or SqlEventLog, you will lose one error message when SQL Server raises two error messages for the same error. This is not an issue with ;<span class="keyword">THROW</span>.</li>
+</ol>
+<p>I cover these situations in more detail in the other articles in the series.</p>
+<p>Before I close this off, I like to briefly cover triggers and client code.</p>
+<h4>Triggers</h4>
+<p>The pattern for error handling in triggers is not any different from error handling in stored procedures, except in one small detail: you should not include that <span class="keyword">RETURN</span> statement. (Because <span class="keyword">RETURN</span> with a value is not permitted in triggers.)</p>
+<p>What is important to understand about triggers is that they are part of the command that fired the trigger, and in a trigger you are always in a transaction, even if you did not use <span class="keyword">BEGIN TRANSACTION</span>. Sometimes I see people in SQL Server forums ask if they can write a trigger that does not roll back the command that fired the trigger if the trigger fails. The answer is that there is no way that you can do this reliably, so you better not even try. If you have this type of requirement, you should probably not use a trigger at all, but use some other solution. In Parts Two and Three, I discuss error handling in triggers in more detail.
+</p>
+<h4>Client Code</h4>
+<p>Yes, you should have error handling in  client code that accesses the database. That is, you should always assume that any call you make to the database can go wrong. Exactly how to implement error handling depends on your environment, and to cover all possible environments out there, I would have to write a couple of more articles. And learn all those environments.</p>
+<p>Here, I will only point out one important thing: your reaction to an error raised from SQL Server should always be to submit this batch to avoid orphaned transactions:</p>
+<pre>IF @@trancount &gt; 0 ROLLBACK TRANSACTION</pre>
+<p>This also applies to the famous message <span class="quote">Timeout expired</span> (which is not a message from SQL Server, but the client API).</p>
+<p>I cover error handling in ADO .NET in the <a href="http://www.sommarskog.se/error_handling/Part3.html#clientcode">last chapter of Part 3</a>. If you use old ADO, I cover this in my old article on <a href="http://www.sommarskog.se/error_handling/SQL2000-I.html#ADO">error handling in SQL 2000</a>.</p>
+<h2 id="TheEnd">End of Part One</h2>
+<p>This is the end of Part One of this series of articles. If you just wanted to learn the pattern quickly, you have completed your reading at this point. If your intention is to read it all, you should continue with <a href="http://www.sommarskog.se/error_handling/Part2.html">Part Two</a> which is where your journey into the confusing jungle of error and transaction handling in SQL Server will begin for real.</p>
+<p>If you have questions, comments or suggestions specific to this article, please feel free to contact me at <a href="mailto:esquel@sommarskog.se">esquel@sommarskog.se</a>. This includes small things like spelling errors, bad grammar, errors in code samples etc. Since I don't have a publisher, I need to trust my readership to be my tech editors and proof-readers. :-) If you have questions relating to a problem you are working with, I recommend that you ask that question in a public forum, as this is more likely to give you a quick  response.</p>
+<p>For a list of acknowledgements, please see <a href="http://www.sommarskog.se/error_handling/Part3.html#Acknowledgements">the end of Part Three</a>. Below is a revision history for Part One.</p>
+<p>...and don't forget to add this line first in your stored procedures:</p>
+<pre>SET XACT_ABORT, NOCOUNT ON</pre>
+<h3 id="revisionhistory">Revision History</h3>
+<dl class="revhist">
+<dt>2015-05-03</dt>
+<dd>First version.</dd>
+</dl>
+<p align="right"><i><a href="http://www.sommarskog.se/index.html">Back to my home page</a></i>.</p>
+
+
+</body></html>
