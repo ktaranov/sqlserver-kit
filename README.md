@@ -122,6 +122,7 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
  - [TSQL Code Smells Finder](https://tsqlsmells.codeplex.com/) (by Dave Ballantyne)
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
+ - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul_Kapoor)
 
 
 ## TSQL format code
@@ -132,6 +133,7 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - http://www.architectshack.com/PoorMansTSqlFormatter.ashx
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
+ - http://www.sql-format.com/
 
 
 ## Free SQL Server ebooks
