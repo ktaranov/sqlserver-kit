@@ -3,7 +3,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 Headers:
  - [Repo folders and files](#repo-folders-and-files)
- - [Web resource](#web-resource)
+ - [SQL Server Web Resources](#sql-server-web-resources)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
@@ -13,9 +13,10 @@ Headers:
 
 
 ## Repo folders and files
- - [Articles](/Articles)
+ - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
+ - [Articles](/Articles)
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL with C#
@@ -56,14 +57,27 @@ Headers:
  - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (by Stevie Rounds and Michael Rounds)
 
 
-## Web resource
- - [SQL Central blog Scripts]
- - [SQL Central blog Articles]
- - **Awesome [BRENT OZAR] scripts and articles**
+## SQL Server Web Resources
+ - [SQL Central Blog Scripts](http://www.sqlservercentral.com/Scripts/)
+ - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
+ - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
+ - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
+ - **Awesome [BRENT OZAR] scripts, videos and articles**
  - [Glenn Berry's SQL Server Performance]
+ - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
  - Best backup and index maintenance solution [Ola Hallengren]
  - [SQL Server Management Studio] installation download link
  - [SQL# CLR functions](http://www.sqlsharp.com/)
+ - Free Videos
+   - [IDERA Resource Center](https://www.idera.com/resourcecentral)
+   - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
+   - [SQL Server Videos](http://www.sqlservervideos.com/)
+   - [TECHNET How do I Videos](https://technet.microsoft.com/en-us/library/dd353197.aspx)
+   - [Veeam Learn Microsoft SQL Server](http://go.veeam.com/learn-microsoft-sql-server-free-video-tutorial-course.html)
+ - Free Database Podcasts
+   - [SQL Server Radio](http://www.sqlserverradio.com/)
+   - [SQL Data Partners](http://sqldatapartners.com/podcast/)
+   - [Away from the Keyboard](http://awayfromthekeyboard.com/)
 
 
 ## SQL Server Express direct download links
@@ -143,8 +157,6 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
  - http://www.red-gate.com/products/dba/dba-bundle/
 
 
-[SQL Central blog Scripts]:http://www.sqlservercentral.com/Scripts/
-[SQL Central blog Articles]:http://www.sqlservercentral.com/Articles/
 [BRENT OZAR]:http://www.brentozar.com/
 [Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
 [Ola Hallengren]:http://ola.hallengren.com/
