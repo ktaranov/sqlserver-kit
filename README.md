@@ -151,10 +151,12 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
 
 
 ## Free SQL Server ebooks
- - http://www.red-gate.com/community/books/
- - http://www.red-gate.com/community/books/#sqldba
- - http://www.red-gate.com/community/books/accidental-dba
- - http://www.red-gate.com/products/dba/dba-bundle/
+ - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
+ - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
+ - [OnlineVideoLectures ebooks](http://onlinevideolecture.com/ebooks/?subject=SQL-Server)
+ - [Brent Ozar ebooks](http://www.brentozar.com/first-aid/free-database-books-pdfs-download/)
+ - [E-books Directory](http://www.e-booksdirectory.com/listing.php?category=569)
+ - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
 
 
 [BRENT OZAR]:http://www.brentozar.com/
