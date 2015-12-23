@@ -1,6 +1,10 @@
 # Must read Microsoft SQL Server articles
 
 
+## MSDN and TECHNET articles
+ - [SQL Server Index Design Guide](https://technet.microsoft.com/en-us/library/jj835095.aspx)
+ - [Create Indexes with Included Columns](https://msdn.microsoft.com/en-us/library/ms190806.aspx)
+
 ## [Dynamic Search Conditions  in T-SQL](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Dynamic%20Search%20Conditions%20in%20T-SQL.htm)
 
 Author: Erland Sommarskog<br />
