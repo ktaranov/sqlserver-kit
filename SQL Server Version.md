@@ -165,7 +165,7 @@ contains all the fixes that are included with previous service packs and any new
 | 12.0.4213.0  | 2014.120.4213.0  | [MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                            | 2015-07-14   |
 | 12.0.4100.1  | 2014.120.4100.1  | [SQL Server 2014 Service Pack 1 (SP1)]                                                                                             | 2015-05-14   |
 | 12.0.4050.0  | 2014.120.4050.0  | SQL Server 2014 Service Pack 1 (SP1) [withdrawn]                                                                                   | 2015-04-15   |
-| 12.0.2560.0  | 2014.120.2550.0  | [3094220 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |
+| 12.0.2560.0  | 2014.120.2550.0  | [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |
 | 12.0.2556.4  | 2014.120.2556.4  | [3094220 Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |
 | 12.0.2553    | 2014.120.2553.0  | [3075949 Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |
 | 12.0.2548    | 2014.120.2548.0  | [MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]                                              | 2015-07-14   |
