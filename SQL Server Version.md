@@ -17,7 +17,10 @@ Headers:
  - [Microsoft SQL Server 6.0 Builds](#microsoft-sql-server-60-builds)
 
 Source link:
- - Official Microsoft KB article: https://support.microsoft.com/en-us/kb/321185
+ - **Awesome official Microsoft article** - How to determine the version, edition and update level of SQL Server and its components: [KB321185](https://support.microsoft.com/en-us/kb/321185)
+ - Naming schema for Microsoft SQL Server software update packages: [KB822499](https://support.microsoft.com/en-us/kb/822499)
+ - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
+ - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - SQL Server Updates by Brent Ozar team: http://sqlserverupdates.com/
  - Unofficial build chart lists: http://sqlserverbuilds.blogspot.ru/
  - Wikipedia: https://en.wikipedia.org/wiki/Microsoft_SQL_Server
@@ -37,15 +40,17 @@ Useful articles:
 
 All SQLServer service packs are cumulative, meaning that each new service pack contains all the fixes that are included with previous service packs and any new fixes.
 
-Legend:
+## Frequently used terms and acronyms
  - **CTP**: Community Technology Preview (beta release)
  - **RC**:  Release Candidate
  - **RTM**: Released To Manufacturing; It is the original, released build version of the product, i.e. what you get on the DVD or when you download the ISO file from MSDN.
+ - **RTW**:  Usually means "release to web." It indicates a package that was released to the web and made available to customers for downloading.
  - **CU**:  Cumulative Update; Cumulative updates contain the bug fixes and enhancements–up to that point in time–that have been added since the previous Service Pack release and will be contained in the next service pack release. Installation of the Cumulative Update is similar to the installation of a Service Pack. Cumulative Updates are not fully regression tested.
- - **SP**: Service Pack; much larger collection of hotfixes that have been fully regression tested. In some cases delivers product enhancements.
+ - **SP**: A tested, cumulative set of all hotfixes, security updates, critical updates, and updates. Service packs may also contain additional fixes for problems that are found internally since the release of the product and a limited number of customer-requested design changes or features.
  - **GDR**: General Distribution Release; GDR fixes should not contain any of the CU updates.
  - **QFE**: Quick Fix Engineering; QFE updates include CU fixes.
  - **SU**: Security update.
+ - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customer's organization.
 
 
 ## What are the most recent updates for SQL Server? (by Brent Ozar)
