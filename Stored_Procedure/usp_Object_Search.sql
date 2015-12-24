@@ -29,14 +29,26 @@ GO
 --	Modification History: Listing Of All Modifications Since Original Implementation
 -----------------------------------------------------------------------------------------------------------------------------
 
---	Description: Added Schema Name To "object_name" field, Added "data_type" and "data_length" fields, Bug Fix For Available Database(s) Listing, Minor Changes To Code Style
+--	Description: Added Schema Name To "object_name" Field
+--	           : Added "data_type" And "data_length" Fields
+--	           : Bug Fix For Available Database(s) Listing
+--	           : Minor Changes To Code Style
 --	Date (MM/DD/YYYY): 09/22/2011
 --	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
 --	Additional Notes: N/A
 
 
---	Description: Reformatted Code, Bug Fixes, Replaced Deprecated System Tables
+--	Description: Reformatted Code
+--	           : Bug Fixes
+--	           : Replaced Deprecated System Tables
 --	Date (MM/DD/YYYY): 09/24/2013
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
+--	Additional Notes: N/A
+
+
+--	Description: Added Support For Searching A Synonym's Base Object Name
+--	           : Added Option To Include System Objects In Search
+--	Date (MM/DD/YYYY): 05/23/2015
 --	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
 --	Additional Notes: N/A
 
@@ -53,6 +65,7 @@ ALTER PROCEDURE dbo.usp_Object_Search
 	,@Object_Type AS SYSNAME = NULL
 	,@Exclude_String AS SYSNAME = NULL
 	,@Hit_Limit AS SYSNAME = NULL
+	,@Creation_Source AS NVARCHAR (1) = N'U'
 
 AS
 
@@ -65,8 +78,10 @@ SET TEXTSIZE 2147483647
 
 
 DECLARE
-	 @Database_Search_Type AS INT
+	 @Creation_Filter AS NVARCHAR (30)
+	,@Database_Search_Type AS INT
 	,@Message AS NVARCHAR (MAX)
+	,@Object_Prefix AS NVARCHAR (4)
 	,@SQL_Reusable AS VARCHAR (8000)
 	,@SQL_Start_Code AS VARCHAR (8000)
 	,@SQL_String AS VARCHAR (MAX)
@@ -82,25 +97,58 @@ DECLARE @Database_Names AS TABLE
 	)
 
 
+SET @Creation_Filter = (CASE @Creation_Source
+							WHEN N'S' THEN N'AND O.is_ms_shipped = 1'
+							WHEN N'U' THEN N'AND O.is_ms_shipped = 0'
+							ELSE N''
+							END)
+
+
 SET @Database_Name = ISNULL (@Database_Name, '')
+
+
 SET @Database_Search_Type = 0
+
+
 SET @Exclude_String = ISNULL (REPLACE (REPLACE (REPLACE (REPLACE (@Exclude_String, '[', '[[]'), '%', '[%]'), '_', '[_]'), '''', ''''''), '')
+
+
 SET @Hit_Limit = NULLIF (@Hit_Limit, '')
+
+
+SET @Object_Prefix = (CASE
+						WHEN @Creation_Source IN (N'B', N'S') THEN N'all_'
+						ELSE N''
+						END)
+
+
 SET @Object_Type = ISNULL (REPLACE (REPLACE (@Object_Type, ' ', ''), ',', ''', '''), '')
+
+
 SET @Search_Against = ISNULL (@Search_Against, '')
+
+
 SET @Search_Against_Column_Names = (CASE
 										WHEN ISNULL (NULLIF (@Search_Against, ''), 'C') LIKE '%C%' THEN 1
 										ELSE 0
 										END)
+
+
 SET @Search_Against_Object_Definitions = (CASE
 											WHEN ISNULL (NULLIF (@Search_Against, ''), 'D') LIKE '%D%' THEN 1
 											ELSE 0
 											END)
+
+
 SET @Search_Against_Object_Names = (CASE
 										WHEN ISNULL (NULLIF (@Search_Against, ''), 'N') LIKE '%N%' THEN 1
 										ELSE 0
 										END)
+
+
 SET @Search_String = ISNULL (REPLACE (REPLACE (REPLACE (REPLACE (@Search_String, '[', '[[]'), '%', '[%]'), '_', '[_]'), '''', ''''''), '')
+
+
 SET @SQL_Reusable =
 
 	'
@@ -135,6 +183,10 @@ SET @SQL_Reusable =
 			WHEN O.[type] = ''V'' THEN ''View''
 			WHEN O.[type] = ''X'' THEN ''Extended Stored Procedure''
 			END) AS object_description
+		,(CASE
+			WHEN O.is_ms_shipped = 1 THEN ''X''
+			ELSE ''''
+			END) AS is_ms_shipped
 		,SCHEMA_NAME (O.[schema_id]) + N''.'' + O.name AS [object_name]
 	'
 
@@ -239,40 +291,42 @@ BEGIN
 	RAISERROR
 
 		(
-			 'ERROR: Search string is NULL or empty.
+			 'Search string is NULL or empty.
 
-Correct Syntax:
+Usage:
 
-	dbo.usp_Object_Search @Search_String, @Database_Name, @Search_Against, @Object_Type, @Exclude_String, @Hit_Limit
+	EXECUTE dbo.usp_Object_Search @Search_String, @Database_Name, @Search_Against, @Object_Type, @Exclude_String, @Hit_Limit, @Creation_Source
 
 
-Input Parameters (pass ''?'' as a parameter for extended details):
+Input parameters (pass ''?'' for extended details):
 
-	@Search_String (Mandatory) : Search string value
-	@Database_Name (Mandatory) : Database(s) to search
-	@Search_Against (Optional) : Search Object Name, Column Name, and / or Object Definition
-	@Object_Type (Optional)    : Search Object Type(s)
-	@Exclude_String (Optional) : Exclude results which contain @Exclude_String value
-	@Hit_Limit (Optional)      : Limit the rows returned
+	@Search_String (Mandatory)   : Search value
+	@Database_Name (Mandatory)   : Database(s) to search
+	@Search_Against (Optional)   : Search Object Name, Column Name, and / or Object Definition
+	@Object_Type (Optional)      : Search Object Type(s)
+	@Exclude_String (Optional)   : Exclude results which contain "@Exclude_String" value
+	@Hit_Limit (Optional)        : Limit the rows returned
+	@Creation_Source (Defaulted) : Search objects created by users, SQL Server, or both
 
 
 Output (certain columns, indicated by an asterisk, will not be returned in the result set if they are not queried / matched against):
 
-	database_name              : Name of the database in which the matched object was found
+	database_name              : Database in which the matched object was found
 	object_type                : Object type
-	object_description         : Description of the object type
+	object_description         : Description of the object
+	is_ms_shipped              : Indicates if the object was created by SQL Server
 	object_name                : Name of the object in which the match was found
-	column_name *              : Name of the column in which the match was found (when applicable)
+	column_name *              : Name of the column in which the match was found (if applicable)
 	data_type *                : Data type of the "column_name" field
 	data_length *              : Data length of the "data_type" field
-	definition *               : Definition details in which the match was found (when applicable)
-	search_criteria_matched_on : Indicates type of match (Object, Column, Definition, etc.)
-	row_count *                : Total records in a table object
-	total_space *              : Total disk space allocated to a table object
-	space_used *               : Total space used by a table object (of the space allocated)
-	space_data *               : Total space used by a table object attributed to data
-	space_index *              : Total space used by a table object attributed to indexes
-	space_unused *             : Total space unused by a table object (of the space allocated)'
+	definition *               : Definition details in which the match was found (if applicable)
+	search_criteria_matched_on : Type of match (Object, Column, Definition)
+	row_count *                : Total rows (when a table object)
+	total_space *              : Disk space allocated to the table object
+	space_used *               : Space used by the table object (of the space allocated)
+	space_data *               : Data space used by the table
+	space_index *              : Index space used by the table
+	space_unused *             : Unused space by the table object (of the space allocated)'
 			,16
 			,1
 		)
@@ -318,7 +372,7 @@ BEGIN
 		RETURN
 
 	END
-	ELSE IF (SELECT TOP (1) 1 FROM master.sys.databases DB WHERE DB.[state] = 0 AND DB.name = @Database_Name) IS NULL
+	ELSE IF NOT EXISTS (SELECT * FROM master.sys.databases DB WHERE DB.[state] = 0 AND DB.name = @Database_Name)
 	BEGIN
 
 		SELECT
@@ -460,6 +514,30 @@ BEGIN
 END
 
 
+IF @Creation_Source NOT IN (N'B', N'S', N'U')
+BEGIN
+
+	RAISERROR
+
+		(
+			 'ERROR: ''%s'' is not a valid creation source.
+
+Valid Creation Sources:
+
+B : Both (User and System created objects)
+S : System created objects only
+U : User created objects only (Default)'
+			,16
+			,1
+			,@Creation_Source
+		)
+
+
+	RETURN
+
+END
+
+
 -----------------------------------------------------------------------------------------------------------------------------
 --	Error Trapping II: Check If Temp Table(s) Already Exist(s) And Drop If Applicable
 -----------------------------------------------------------------------------------------------------------------------------
@@ -482,6 +560,7 @@ CREATE TABLE dbo.#temp_object_search
 		 database_name NVARCHAR (1000) NOT NULL
 		,object_type VARCHAR (10) NOT NULL
 		,object_description VARCHAR (500) NULL
+		,is_ms_shipped VARCHAR (1) NULL
 		,[object_name] NVARCHAR (2000) NULL
 		,column_name NVARCHAR (1000) NULL
 		,data_type VARCHAR (250) NULL
@@ -587,7 +666,7 @@ BEGIN
 		SET @SQL_String = @SQL_String +
 
 			'
-				,ISNULL (SQLM.[definition], '''') AS [definition]
+				,ISNULL (ISNULL (SQLM.[definition], SYN.base_object_name), '''') AS [definition]
 			'
 
 	END
@@ -603,10 +682,10 @@ BEGIN
 							WHEN O.name LIKE ' + '''%' + @Search_String + '%''' + ' THEN ''Object Name''
 							END), '''')
 				 + ISNULL ((CASE
-								WHEN O.name LIKE ' + '''%' + @Search_String + '%''' + ' AND SQLM.[definition] LIKE ' + '''%' + @Search_String + '%''' + ' THEN '' / ''
+								WHEN O.name LIKE ' + '''%' + @Search_String + '%''' + ' AND ISNULL (SQLM.[definition], SYN.base_object_name) LIKE ' + '''%' + @Search_String + '%''' + ' THEN '' / ''
 								END), '''')
 				 + ISNULL ((CASE
-								WHEN SQLM.[definition] LIKE ' + '''%' + @Search_String + '%''' + ' THEN ''Definition''
+								WHEN ISNULL (SQLM.[definition], SYN.base_object_name) LIKE ' + '''%' + @Search_String + '%''' + ' THEN ''Definition''
 								END), '''') AS search_criteria_matched_on
 			'
 
@@ -670,7 +749,7 @@ BEGIN
 
 		'
 			FROM
-				sys.objects O
+				sys.' + @Object_Prefix + 'objects O
 		'
 
 
@@ -680,7 +759,8 @@ BEGIN
 		SET @SQL_String = @SQL_String +
 
 			'
-				LEFT JOIN sys.sql_modules SQLM ON SQLM.[object_id] = O.[object_id]
+				LEFT JOIN sys.' + @Object_Prefix + 'sql_modules SQLM ON SQLM.[object_id] = O.[object_id]
+				LEFT JOIN sys.synonyms SYN ON SYN.[object_id] = O.[object_id]
 			'
 
 	END
@@ -724,7 +804,7 @@ BEGIN
 			'
 				WHERE
 					(
-						SQLM.[definition] LIKE ' + '''%' + @Search_String + '%''' + '
+						ISNULL (SQLM.[definition], SYN.base_object_name) LIKE ' + '''%' + @Search_String + '%''' + '
 						OR O.name LIKE ' + '''%' + @Search_String + '%''' + '
 					)
 			'
@@ -739,7 +819,7 @@ BEGIN
 
 				'
 					WHERE
-						SQLM.[definition] LIKE ' + '''%' + @Search_String + '%''' + '
+						ISNULL (SQLM.[definition], SYN.base_object_name) LIKE ' + '''%' + @Search_String + '%''' + '
 				'
 
 		END
@@ -760,6 +840,9 @@ BEGIN
 		END
 
 	END
+
+
+	SET @SQL_String = @SQL_String + @Creation_Filter
 
 
 	IF @Object_Type <> ''
@@ -783,7 +866,7 @@ BEGIN
 			SET @SQL_String = @SQL_String +
 
 				'
-					AND ISNULL (SQLM.[definition], '''') NOT LIKE ' + '''%' + @Exclude_String + '%''' + '
+					AND ISNULL (ISNULL (SQLM.[definition], SYN.base_object_name), '''') NOT LIKE ' + '''%' + @Exclude_String + '%''' + '
 				'
 
 		END
@@ -840,12 +923,13 @@ BEGIN
 
 		'
 			,C.name AS column_name
-			,TYPE_NAME (C.user_type_id) + ISNULL (('': [ '' + (CASE
-																	WHEN C.system_type_id <> C.user_type_id THEN LOWER (TYPE_NAME (C.system_type_id))
-																	END) + '' ]''), '''') AS data_type
+			,LOWER (TYPE_NAME (C.user_type_id) + ISNULL ((N'': [ '' + (CASE
+																			WHEN C.system_type_id <> C.user_type_id THEN TYPE_NAME (C.system_type_id)
+																			END) + N'' ]''), N'''')) AS data_type
 			,(CASE
-				WHEN T.name NOT IN (N''bigint'', N''bit'', N''date'', N''datetime'', N''datetime2'', N''datetimeoffset'', N''decimal'', N''float'', N''int'', N''money'', N''numeric'', N''real'', N''smalldatetime'', N''smallint'', N''smallmoney'', N''time'', N''tinyint'') THEN CONVERT (NVARCHAR (30), C.max_length)
-				ELSE CONVERT (NVARCHAR (30), C.max_length) + N'' ('' + CONVERT (NVARCHAR (30), COLUMNPROPERTY (C.[object_id], C.name, ''Precision'')) + N'','' + ISNULL (CONVERT (NVARCHAR (30), COLUMNPROPERTY (C.[object_id], C.name, ''Scale'')), 0) + N'')''
+				WHEN LOWER (TYPE_NAME (C.system_type_id)) IN (N''nchar'', N''ntext'', N''nvarchar'') THEN CONVERT (VARCHAR (6), C.max_length / 2)
+				WHEN LOWER (TYPE_NAME (C.system_type_id)) NOT IN (N''bigint'', N''bit'', N''date'', N''datetime'', N''datetime2'', N''datetimeoffset'', N''decimal'', N''float'', N''int'', N''money'', N''numeric'', N''real'', N''smalldatetime'', N''smallint'', N''smallmoney'', N''time'', N''tinyint'') THEN CONVERT (VARCHAR (6), C.max_length)
+				ELSE CONVERT (VARCHAR (6), C.max_length) + '' ('' + CONVERT (VARCHAR (11), COLUMNPROPERTY (C.[object_id], C.name, ''Precision'')) + '','' + ISNULL (CONVERT (VARCHAR (11), COLUMNPROPERTY (C.[object_id], C.name, ''Scale'')), 0) + '')''
 				END) AS data_length
 		'
 
@@ -890,12 +974,14 @@ BEGIN
 
 		'
 			FROM
-				sys.objects O
-				INNER JOIN sys.columns C ON C.[object_id] = O.[object_id]
+				sys.' + @Object_Prefix + 'objects O
+				INNER JOIN sys.' + @Object_Prefix + 'columns C ON C.[object_id] = O.[object_id]
 				INNER JOIN sys.types T ON T.user_type_id = C.user_type_id
 			WHERE
 				C.name LIKE ' + '''%' + @Search_String + '%''' + '
 		'
+
+		+ @Creation_Filter
 
 
 	IF @Object_Type <> ''
@@ -956,6 +1042,7 @@ SET @SQL_String =
 			dbo.#temp_object_search UT
 		ORDER BY
 			 UT.database_name
+			,UT.is_ms_shipped
 			,UT.object_type
 			,UT.[object_name]
 			,UT.search_criteria_matched_on
