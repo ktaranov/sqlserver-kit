@@ -29,9 +29,10 @@ GO
 --	Modification History: Listing Of All Modifications Since Original Implementation
 -----------------------------------------------------------------------------------------------------------------------------
 
---	Description: No Modifications To Date
---	Date (MM/DD/YYYY): N/A
---	Developer: N/A
+--	Description: Added "is_ms_shipped" Field
+--	           : Added Option To Include System Objects In Search
+--	Date (MM/DD/YYYY): 12/06/2015
+--	Developer: Sean Smith (s.smith.sql AT gmail DOT com)
 --	Additional Notes: N/A
 
 
@@ -47,6 +48,7 @@ ALTER PROCEDURE dbo.usp_String_Search
 	,@Data_Types AS NVARCHAR (100) = NULL
 	,@Table_Max_Rows AS BIGINT = NULL
 	,@Column_Max_Length AS SMALLINT = NULL
+	,@Creation_Source AS NVARCHAR (1) = N'U'
 
 WITH RECOMPILE
 
@@ -61,15 +63,30 @@ SET TEXTSIZE 2147483647
 
 
 DECLARE
-	 @Loop_Column_Number AS BIGINT
+	 @Creation_Filter AS NVARCHAR (30)
+	,@Loop_Column_Number AS BIGINT
 	,@Loop_Column_Number_First AS BIGINT
 	,@Loop_Object_Number AS BIGINT
 	,@Object_Name AS SYSNAME
+	,@Object_Prefix AS NVARCHAR (4)
 	,@Schema_Name AS SYSNAME
 	,@SQL_String_Full AS NVARCHAR (MAX)
 	,@SQL_String_IN_Column_Name AS NVARCHAR (MAX)
 	,@SQL_String_SELECT AS NVARCHAR (MAX)
 	,@SQL_String_WHERE AS NVARCHAR (MAX)
+
+
+SET @Creation_Filter = (CASE @Creation_Source
+							WHEN N'S' THEN N'AND O.is_ms_shipped = 1'
+							WHEN N'U' THEN N'AND O.is_ms_shipped = 0'
+							ELSE N''
+							END)
+
+
+SET @Object_Prefix = (CASE
+						WHEN @Creation_Source IN (N'B', N'S') THEN N'all_'
+						ELSE N''
+						END)
 
 
 SET @Object_Types = N'''' + REPLACE (REPLACE (NULLIF (@Object_Types, N''), N' ', N''), N',', N''',''') + N''''
@@ -79,23 +96,25 @@ SET @Data_Types = N'''' + REPLACE (REPLACE (NULLIF (@Data_Types, N''), N' ', N''
 
 
 -----------------------------------------------------------------------------------------------------------------------------
---	Error Trapping I: Validate "@Search_String" And "@Database_Name" Input Parameter Values
+--	Error Trapping I: Validate "@Creation_Source", "@Database_Name", And "@Search_String" Input Parameter Values
 -----------------------------------------------------------------------------------------------------------------------------
 
-IF NULLIF (@Search_String, N'') IS NOT NULL
+IF @Creation_Source NOT IN (N'B', N'S', N'U')
 BEGIN
-
-	SET @Search_String = REPLACE (REPLACE (REPLACE (REPLACE (@Search_String, N'[', N'[[]'), N'%', N'[%]'), N'_', N'[_]'), N'''', N'''''')
-
-END
-ELSE BEGIN
 
 	RAISERROR
 
 		(
-			 N'ERROR: @Search_String input parameter cannot be blank or NULL.'
+			 'ERROR: ''%s'' is not a valid creation source.
+
+Valid Creation Sources:
+
+B : Both (User and System created objects)
+S : System created objects only
+U : User created objects only'
 			,16
 			,1
+			,@Creation_Source
 		)
 
 
@@ -134,6 +153,28 @@ BEGIN
 END
 
 
+IF NULLIF (@Search_String, N'') IS NOT NULL
+BEGIN
+
+	SET @Search_String = REPLACE (REPLACE (REPLACE (REPLACE (@Search_String, N'[', N'[[]'), N'%', N'[%]'), N'_', N'[_]'), N'''', N'''''')
+
+END
+ELSE BEGIN
+
+	RAISERROR
+
+		(
+			 N'ERROR: @Search_String input parameter cannot be blank or NULL.'
+			,16
+			,1
+		)
+
+
+	RETURN
+
+END
+
+
 -----------------------------------------------------------------------------------------------------------------------------
 --	Error Trapping II: Check If Temp Table(s) Already Exist(s) And Drop If Applicable
 -----------------------------------------------------------------------------------------------------------------------------
@@ -162,8 +203,9 @@ CREATE TABLE dbo.#temp_string_search_objects_columns
 
 	(
 		 object_type VARCHAR (2) NOT NULL
+		,is_ms_shipped BIT NOT NULL
 		,data_type SYSNAME NOT NULL
-		,max_length SMALLINT NOT NULL
+		,data_length SMALLINT NOT NULL
 		,[schema_name] SYSNAME NOT NULL
 		,[object_name] SYSNAME NOT NULL
 		,column_name SYSNAME NOT NULL
@@ -197,8 +239,15 @@ SET @SQL_String_Full =
 	N'
 		SELECT
 			 O.[type] AS object_type
-			,T.name AS data_type
-			,C.max_length
+			,O.is_ms_shipped
+			,LOWER (TYPE_NAME (C.user_type_id) + ISNULL ((N'': [ '' + (CASE
+																			WHEN C.system_type_id <> C.user_type_id THEN TYPE_NAME (C.system_type_id)
+																			END) + N'' ]''), N'''')) AS data_type
+			,(CASE
+				WHEN LOWER (TYPE_NAME (C.system_type_id)) IN (N''nchar'', N''ntext'', N''nvarchar'') THEN CONVERT (VARCHAR (6), C.max_length / 2)
+				WHEN LOWER (TYPE_NAME (C.system_type_id)) NOT IN (N''bigint'', N''bit'', N''date'', N''datetime'', N''datetime2'', N''datetimeoffset'', N''decimal'', N''float'', N''int'', N''money'', N''numeric'', N''real'', N''smalldatetime'', N''smallint'', N''smallmoney'', N''time'', N''tinyint'') THEN CONVERT (VARCHAR (6), C.max_length)
+				ELSE CONVERT (VARCHAR (6), C.max_length) + '' ('' + CONVERT (VARCHAR (11), COLUMNPROPERTY (C.[object_id], C.name, ''Precision'')) + '','' + ISNULL (CONVERT (VARCHAR (11), COLUMNPROPERTY (C.[object_id], C.name, ''Scale'')), 0) + '')''
+				END) AS data_length
 			,S.name AS [schema_name]
 			,O.name AS [object_name]
 			,C.name AS column_name
@@ -215,12 +264,17 @@ SET @SQL_String_Full =
 							) AS column_row_number
 		FROM
 			' + @Database_Name + N'.sys.schemas S
-			INNER JOIN ' + @Database_Name + N'.sys.objects O ON O.[schema_id] = S.[schema_id]
+			INNER JOIN ' + @Database_Name + N'.sys.' + @Object_Prefix + N'objects O ON O.[schema_id] = S.[schema_id]
 				AND O.[type] IN (' + (CASE
 										WHEN @Object_Types IS NOT NULL THEN @Object_Types
 										ELSE N'''U'', ''V'''
 										END) + N')
-			INNER JOIN ' + @Database_Name + N'.sys.columns C ON C.[object_id] = O.[object_id]
+	 '
+
+	 + @Creation_Filter +
+
+	N'
+			INNER JOIN ' + @Database_Name + N'.sys.' + @Object_Prefix + N'columns C ON C.[object_id] = O.[object_id]
 	 '
 
 
@@ -231,7 +285,10 @@ BEGIN
 
 		N'
 			' + NCHAR (9) + N'AND C.system_type_id IN (167, 175, 231, 239)
-			' + NCHAR (9) + N'AND C.max_length BETWEEN 1 AND ' + CONVERT (NVARCHAR (6), @Column_Max_Length) + N'
+			' + NCHAR (9) + N'AND (CASE
+										WHEN TYPE_NAME (C.system_type_id) IN (N''nchar'', N''ntext'', N''nvarchar'') THEN C.max_length / 2
+										ELSE C.max_length
+										END) BETWEEN 1 AND ' + CONVERT (NVARCHAR (6), @Column_Max_Length) + N'
 		 '
 
 END
@@ -286,8 +343,9 @@ INSERT INTO dbo.#temp_string_search_objects_columns
 
 	(
 		 object_type
+		,is_ms_shipped
 		,data_type
-		,max_length
+		,data_length
 		,[schema_name]
 		,[object_name]
 		,column_name
@@ -464,19 +522,23 @@ END
 
 SELECT
 	 (CASE Y.object_type
-		WHEN 'U' THEN 'TABLE'
-		WHEN 'V' THEN 'VIEW'
+		WHEN 'U' THEN 'Table'
+		WHEN 'V' THEN 'View'
 		ELSE 'ERROR'
 		END) AS object_type
-	,UPPER (Y.data_type) AS data_type
-	,Y.max_length AS data_length
+	,(CASE
+		WHEN Y.is_ms_shipped = 1 THEN 'Yes'
+		ELSE 'No'
+		END) AS is_ms_shipped
+	,Y.data_type
+	,Y.data_length
 	,DB_NAME (DB_ID (SUBSTRING (@Database_Name, 2, LEN (@Database_Name) - 2))) AS database_name
 	,Y.[schema_name]
 	,Y.[object_name]
 	,Y.column_name
 	,Z.column_data
-	,CONVERT (XML, (CASE Y.data_type
-						WHEN N'XML' THEN Z.column_data
+	,CONVERT (XML, (CASE
+						WHEN Y.data_type = N'XML' THEN Z.column_data
 						ELSE N''
 						END)) AS column_data_xml
 	,Z.occurrences
@@ -486,7 +548,9 @@ FROM
 		AND Z.[object_name] = Y.[object_name]
 		AND Z.column_name = Y.column_name
 ORDER BY
-	 Y.[schema_name]
+	 Y.object_type
+	,Y.is_ms_shipped
+	,Y.[schema_name]
 	,Y.[object_name]
 	,Y.column_name
 	,Z.column_data
