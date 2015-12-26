@@ -2,24 +2,26 @@
 Complete list of useful add-in for SQL Server Management Studio
 
 
-| Name                                          | Download page          | Release Date | Support Version            | Author              | Free version | Paid/Price |
-|-----------------------------------------------|------------------------|--------------|----------------------------| ------------------- | ------------ | ---------- |
-| [SSMSBoost](#ssmsboost)                       | [SSMSBoost]            | 2015-08-30   | 2008/2008R2/2012/2014      | Solutions Crew GmbH | Yes          | Yes/$150   |
-| [SQL Code Guard](#sql-code-guard)             | [SQL Code Guard]       | 2015-05-04   | 2008/2008R2/2012/2014      | Oleksii Kovalov   | Yes          | No         |
-| [SQL Search](#sql-search)                     | [SQL Search]           | 2015-11-05   | ???                        | Red Gate             | Yes          | No         |
-| [SQL Scripts Manager](#sql-scripts-manager)   | [SQL Scripts Manager]  | 2015-05-31   | ???                        | Red Gate             | Yes          | No         |
-| [Supratimas](#supratimas)                     | [Supratimas]           | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC           | Yes          | Yes/$34.99 |
-| [dbForge SQL Complete](#dbforge-sql-complete) | [dbForge SQL Complete] | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart           | No          | Yes/$119.95 |
-| [SSMS Tools Pack](#ssms-tools-pack)           | [SSMS Tools Pack]      | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić                 | No          | Yes/€30-€5000 |
-| [SQL Pretty Printer](#sql-pretty-printer)     | [SQL Pretty Printer]   | 2015-11-05   | 2005/2008/2012/2014      | Gudu Software                | No          | Yes/$50-$2000 |
-| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]   | 2015-09-01   | ???      | SQL Sentry                | Yes          | Yes/$295.00|
-| [TSQL Code Smells Finder](#tsql-code-smells-finder) | [TSQL Code Smells Finder]   | 2013-02-15   | ???      | daveballantyne                | Yes          | No|
+| Name                                                  | Download page               | Release Date | Support Version            | Author              | Free version | Paid/Price    |
+|-------------------------------------------------------|-----------------------------|--------------|----------------------------| ------------------- | ------------ | ------------- |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                 | 2015-08-30   | 2008/2008R2/2012/2014      | Solutions Crew GmbH | Yes          | Yes/$150      |
+| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]            | 2015-05-04   | 2008/2008R2/2012/2014      | Oleksii Kovalov     | Yes          | No            |
+| [SQL Search](#sql-search)                             | [SQL Search]                | 2015-11-05   | ???                        | Red Gate            | Yes          | No            |
+| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]       | 2015-05-31   | ???                        | Red Gate            | Yes          | No            |
+| [Supratimas](#supratimas)                             | [Supratimas]                | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC         | Yes          | Yes/$34.99    |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]      | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]           | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić      | No           | Yes/€30-€5000 |
+| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]        | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]  | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
+| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]   | 2013-02-15   | ???                        | daveballantyne      | Yes          | No            |
+
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
 Release date: 2015-08-30<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
+
 
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
