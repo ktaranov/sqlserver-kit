@@ -13,16 +13,18 @@ Headers:
 
 
 ## Repo folders and files
+ - [SQL Server Name Convention](/SQL Server Name Convention.md)
  - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Articles](/Articles)
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
  - [CLR procedures](/CLR)
-    - [SQL#](/CLR/SQLsharp_SETUP.sql) free - QUICKEST and EASIEST way to extending the power of T-SQL with C#
-    - SplitterB_CLR
+    - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
+    - SplitterB_CLR 
+ - [dbWarden](/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
  - [Known Errors](/Errors)
- - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (by Ola Hallengren)
+ - [Ola Maintenance Solution] (by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
     - [SSMSBoost add-in](/SSMS_addons#ssmsboost 'Adds missing features and improves your productivity')
     - [SQL Code Guard](/SSMS_addons#sql-code-guard 'Provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies')
@@ -54,7 +56,7 @@ Headers:
    - [usp_TableUnpivot](/Stored_Procedure/ usp_TableUnpivot.sql)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
- - [dbWarden - A Free SQL Server Monitoring Package](/dbWarden) (by Stevie Rounds and Michael Rounds)
+ - [Utilities](/Utilities)
 
 
 ## SQL Server Web Resources
@@ -65,7 +67,7 @@ Headers:
  - **Awesome [BRENT OZAR] scripts, videos and articles**
  - [Glenn Berry's SQL Server Performance]
  - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
- - Best backup and index maintenance solution [Ola Hallengren]
+ - Best backup and index maintenance solution [Ola Maintenance Solution]
  - [SQL Server Management Studio] installation download link
  - [SQL# CLR functions](http://www.sqlsharp.com/)
  - Free Videos
@@ -161,5 +163,5 @@ Official Microsoft SQL Server Express page: <https://www.microsoft.com/en-us/ser
 
 [BRENT OZAR]:http://www.brentozar.com/
 [Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
-[Ola Hallengren]:http://ola.hallengren.com/
+[Ola Maintenance Solution]:http://ola.hallengren.com/
 [SQL Server Management Studio]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
