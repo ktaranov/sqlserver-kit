@@ -43,7 +43,7 @@ Headers:
       - [SQL Server 2008 R2 Diagnostic Information Queries](/Scripts/SQL Server 2008 R2 Diagnostic Information Queries.sql)
       - [SQL Server 2008 Diagnostic Information Queries](/Scripts/SQL Server 2008 Diagnostic Information Queries.sql)
     - [Table count alternative](/Scripts/Table Count alternative.sql) (by Jes Schultz Borland)
-    - [Foreign Key batch rename](/Scripts/FK Rename.sql) (by Wes Henriksen)
+    - [Foreign Key batch rename](/Scripts/Foreign Key batch rename.sql) (by Wes Henriksen)
     - [Count character matches](/Scripts/Count character matches.sql)
     - and many others...
  - [SSMS snippets](/Snippets)
@@ -57,6 +57,20 @@ Headers:
    - and many others...
  - [User Defined Function](/User_Defined_Function)
  - [Utilities](/Utilities)
+    - [tablediff Utility](/Utilities#tablediff-utility)
+    - [Microsoft Log Parser](/Utilities#Microsoft-log-parser)
+    - [Diskspd](/Utilities#diskspd)
+    - [HammerDB](/Utilities#hammerdb)
+    - [dta Utility](/Utilities#dta-utility)
+    - [osql Utility](/Utilities#osql-utility)
+    - [sqldiag Utility](/Utilities#sqldiag-utility)
+    - [sqldumper Utility](/Utilities#sqldumper-utility)
+    - [SqlLocalDB Utility](/Utilities#sqlLocaldb-utility)
+    - [sqllogship Utility](/Utilities#sqllogship-utility)
+    - [sqlservr Application](/Utilities#sqlservr-application)
+    - [SQL XEvent Profiler](/Utilities#sql-xevent-profiler)
+    - [DLM Dashboard](/Utilities#dlm-dashboard)
+    - [SQL DBA Bundle](/Utilities#sql-dba-bundle)
 
 
 ## SQL Server Web Resources
