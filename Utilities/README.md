@@ -32,7 +32,7 @@ To Add:
 | [osql Utility](#osql-utility)                 | [osql Utility]         | -            | Microsoft   | Yes          | No         |
 | [sqldiag Utility](#sqldiag-utility)           | [sqldiag Utility]      | -            | Microsoft   | Yes          | No         |
 | [sqldumper Utility](#sqldumper-utility)       | [sqldumper Utility]    | -            | Microsoft   | Yes          | No         |
-| [SqlLocalDB Utility](#sqlLocaldb-utility)     | [SqlLocalDB Utility]   | -            | Microsoft   | Yes          | No         |
+| [SqlLocalDB Utility](#sqllocaldb-utility)     | [SqlLocalDB Utility]   | -            | Microsoft   | Yes          | No         |
 | [sqllogship Utility](#sqllogship-utility)     | [sqllogship Utility]   | -            | Microsoft   | Yes          | No         |
 | [sqlservr Application](#sqlservr-application) | [sqlservr Application] | -            | Microsoft   | Yes          | No         |
 | [SQL XEvent Profiler](#sql-xevent-profiler)   | [SQL XEvent Profiler]  | 2014-03-14   | Idera       | Yes          | No         |
