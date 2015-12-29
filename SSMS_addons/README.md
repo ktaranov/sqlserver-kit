@@ -18,7 +18,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]          | 2015-09-04   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
-| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | ???          | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | 2015-12-21   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
