@@ -14,7 +14,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]        | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]  | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]   | 2013-02-15   | ???                        | daveballantyne      | Yes          | No            |
-
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                  | ???          | 2005/2008/2008R2/2012/2014 | Jakub Dvorak        | No           | Yes/€50       |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -141,6 +141,15 @@ Free version: Yes
 TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
 
 
+## SQLTreeo
+Download page: [SQLTreeo]<br/>
+Release date: ???<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables. You can organize your SQL objects in logical modules which are aligned with your project structure and forget of having hundreds of them within one Management Studio node.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -151,3 +160,4 @@ TSQL Code can smell, it may work just fine but there can be hidden dangers held 
 [SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
 [SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
 [TSQL Code Smells Finder]: https://tsqlsmells.codeplex.com/team/view
+[SQLTreeo]: http://www.sqltreeo.com/wp/
