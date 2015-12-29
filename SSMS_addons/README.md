@@ -18,6 +18,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]          | 2015-09-04   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | ???          | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -202,6 +203,18 @@ With ApexSQL Search you can:
  - Rename SQL objects safely
 
 
+## Spotlight Developer
+Download page: [Spotlight Developer]<br/>
+Release date: ???<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+Users of SQL Server Management Studio can monitor all their connections via a heatmap, alarms list and realtime diagnostics for FREE.
+Once installed and configured, users can monitor their connections immediately. The powerful monitoring features communicate important information regarding the status of connections. Severity is color coded so it’s easy to see at a glance what needs your attention.
+It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagnostic Server. This makes it possible for you to take advantage of data collections for all your connections in Spotlight on SQL Server. 
+You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -216,3 +229,4 @@ With ApexSQL Search you can:
 [ApexSQL Complete]: http://www.apexsql.com/sql_tools_complete.aspx
 [ApexSQL Refactor]: https://www.apexsql.com/sql_tools_refactor.aspx
 [ApexSQL Search]: https://www.apexsql.com/sql_tools_search.aspx
+[Spotlight Developer]: https://www.spotlightessentials.com/spotlight-developer
