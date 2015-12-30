@@ -6,38 +6,36 @@ Source link:
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
  - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
 
-To Add:
- - [Idera SQL Check]: https://www.idera.com/productssolutions/freetools/sqlcheck
- - Idera SQL Fragmentation Analyzer
- - Idera SQL Heat Map
- - Idera SQL Hekaton Memory Check
- - Idera SQL Page Viewer
- - Idera SQL Update Statistics
- - Idera SQL Statistics Aggregator
- - Idera SQL Backup Status Reporter
- - Idera SQL Integrity Check
- - Idera SQL Job Manager
- - Idera Azure SQL Database Backup
- - Idera SQL Column Search
- - Idera SQL Permissions Extractor
 
-
-| Name                                          | Official/Download page | Release Date | Author      | Free version | Paid/Price |
-|-----------------------------------------------|------------------------|------------- | ------------| ------------ | -----------|
-| [tablediff Utility](#tablediff-utility)       | [tablediff Utility]    | -            | Microsoft   | Yes          | No         |
-| [Microsoft Log Parser](#microsoft-log-parser) | [Microsoft Log Parser] | -            | Microsoft   | Yes          | No         |
-| [Diskspd](#diskspd)                           | [Diskspd]              | 2015-12-14   | Microsoft   | Yes          | No         |
-| [HammerDB](#hammerdb)                         | [HammerDB]             | 2015-05-04   | Open Source | Yes          | No         |
-| [dta Utility](#dta-utility)                   | [dta Utility]          | -            | Microsoft   | Yes          | No         |
-| [osql Utility](#osql-utility)                 | [osql Utility]         | -            | Microsoft   | Yes          | No         |
-| [sqldiag Utility](#sqldiag-utility)           | [sqldiag Utility]      | -            | Microsoft   | Yes          | No         |
-| [sqldumper Utility](#sqldumper-utility)       | [sqldumper Utility]    | -            | Microsoft   | Yes          | No         |
-| [SqlLocalDB Utility](#sqllocaldb-utility)     | [SqlLocalDB Utility]   | -            | Microsoft   | Yes          | No         |
-| [sqllogship Utility](#sqllogship-utility)     | [sqllogship Utility]   | -            | Microsoft   | Yes          | No         |
-| [sqlservr Application](#sqlservr-application) | [sqlservr Application] | -            | Microsoft   | Yes          | No         |
-| [SQL XEvent Profiler](#sql-xevent-profiler)   | [SQL XEvent Profiler]  | 2014-03-14   | Idera       | Yes          | No         |
-| [DLM Dashboard](#dlm-dashboard)               | [DLM Dashboard]        | 2015-16-12   | Red Gate    | Yes          | No         |
-| [SQL DBA Bundle](#sql-dba-bundle)             | [SQL DBA Bundle]       | 2015-16-12   | Red Gate    | No           | Yes/$2640  |
+| Name                                                      | Official/Download page       | Release Date | Author      | Free version | Paid/Price |
+|-----------------------------------------------------------|------------------------------|------------- | ------------| ------------ | -----------|
+| [tablediff Utility](#tablediff-utility)                   | [tablediff Utility]          | -            | Microsoft   | Yes          | No         |
+| [Microsoft Log Parser](#microsoft-log-parser)             | [Microsoft Log Parser]       | -            | Microsoft   | Yes          | No         |
+| [Diskspd](#diskspd)                                       | [Diskspd]                    | 2015-12-14   | Microsoft   | Yes          | No         |
+| [HammerDB](#hammerdb)                                     | [HammerDB]                   | 2015-05-04   | Open Source | Yes          | No         |
+| [dta Utility](#dta-utility)                               | [dta Utility]                | -            | Microsoft   | Yes          | No         |
+| [osql Utility](#osql-utility)                             | [osql Utility]               | -            | Microsoft   | Yes          | No         |
+| [sqldiag Utility](#sqldiag-utility)                       | [sqldiag Utility]            | -            | Microsoft   | Yes          | No         |
+| [sqldumper Utility](#sqldumper-utility)                   | [sqldumper Utility]          | -            | Microsoft   | Yes          | No         |
+| [SqlLocalDB Utility](#sqllocaldb-utility)                 | [SqlLocalDB Utility]         | -            | Microsoft   | Yes          | No         |
+| [sqllogship Utility](#sqllogship-utility)                 | [sqllogship Utility]         | -            | Microsoft   | Yes          | No         |
+| [sqlservr Application](#sqlservr-application)             | [sqlservr Application]       | -            | Microsoft   | Yes          | No         |
+| [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No         |
+| [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No         |
+| [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640  |
+| [SQL Check](#sql-check)                                   | [SQL Check]                  | 2015-09-24   | Idera       | Yes          | No         |
+| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer) | [SQL Fragmentation Analyzer] | 2015-06-24   | Idera       | Yes          | No         |
+| [SQL Heat Map](#sql-heat-map)                             | [SQL Heat Map]               | 2015-12-07   | Idera       | Yes          | No         |
+| [SQL Hekaton Memory Check](#sql-hecaton-memory-check)     | [SQL Hekaton Memory Check]   | 2015-06-10   | Idera       | Yes          | No         |
+| [SQL Page Viewer](#sql-page-viewer)                       | [SQL Page Viewer]            | 2014-08-25   | Idera       | Yes          | No         |
+| [SQL Update Statistics](#sql-update-statistics)           | [SQL Update Statistics]      | 2015-12-14   | Idera       | Yes          | No         |
+| [SQL Statistics Aggregator](#sql-statistics-aggregator)   | [SQL Statistics Aggregator]  | 2015-05-18   | Idera       | Yes          | No         |
+| [SQL Backup Status Reporter](#sql-backup-status-reporter) | [SQL Backup Status Reporter] | 2015-08-07   | Idera       | Yes          | No         |
+| [SQL Integrity Check](#sql-integrity-check)               | [SQL Integrity Check]        | 2013-08-26   | Idera       | Yes          | No         |
+| [SQL Job Manager](#sql-job-manager)                       | [SQL Job Manager]            | 2012-03-19   | Idera       | Yes          | No         |
+| [Azure SQL Database Backup](#azure-sql-database-backup)   | [Azure SQL Database Backup]  | 2012-10-02   | Idera       | Yes          | No         |
+| [SQL Column Search](#sql-column-search)                   | [SQL Column Search]          | 2015-11-17   | Idera       | Yes          | No         |
+| [SQL Permissions Extractor](#sql-permissions-extractor)   | [SQL Permissions Extractor]  | 2015-08-07   | Idera       | Yes          | No         |
 
 
 ## Microsoft Log Parser
@@ -127,6 +125,176 @@ Red Gate 7 products for DBA:
  - SQL Doc: Automatically generate database documentation
 
 
+## SQL Check
+Download page: [SQL Check]<br/>
+Release date: 2015-09-24<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Check you can:
+ - check out what happens in batches, compilations, recompilations, and transactions throughout the SQL Server environment so you don’t experience any surprises and know where to direct your attention to prevent potential issues.
+ - monitor some of the most important metrics in SQL Server including wait stats, reads, writes, session details, and cache hits.
+ - see SQL operations as they occur for the latest information; consider it a heart rate monitor for your SQL Server environment providing instant feedback and results. Customize the refresh rate and amount of historical data for each SQL server.
+ - install easily without agents
+
+
+## SQL Fragmentation Analyzer
+Download page: [SQL Fragmentation Analyzer]<br/>
+Release date: 2015-06-24<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Fragmentation Analyzer you can:
+ - analyze fragmentation by one table or an entire database
+ - identify databases in need of defragmentation
+ - set fragmentation thresholds: normal, warning, critical
+
+
+## SQL Heat Map
+Download page: [SQL Heat Map]<br/>
+Release date: 2015-12-07<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Heat Map you can:
+ - get one visual view of storage in all tables of a database
+ - see storage allocation, utilization, and type of data
+ - quickly locate tables and indexes that need more allocated storage
+
+
+## SQL Hekaton Memory Check
+Download page: [SQL Hekaton Memory Check]<br/>
+Release date: 2015-12-07<br/>
+Support Version: 2014<br/>
+Free version: Yes
+
+With SQL Hekaton Memory Check you can:
+ - monitor the impact of memory optimized tables on server memory
+ - identify high memory utilizing tables
+ - assess server memory capacity
+ - simulate moving to In-Memory OLTP
+
+
+## SQL Page Viewer
+Download page: [SQL Page Viewer]<br/>
+Release date: 2014-08-25<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+SQL Page Viewer:
+ - displays page level data summary and detail information
+ - has elegant GUI design for fast access in 1 click
+ - can select any SQL server and database table
+ - can navigate to any page data quickly in a tree view
+ - can launch directly within SSMS for optimal usability
+
+
+## SQL Update Statistics
+Download page: [SQL Update Statistics]<br/>
+Release date: 2015-12-14<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Update Statistics you can:
+ - launch directly within SSMS for optimal usability
+ - identify out-of-date SQL Server table and index statistics
+ - view and change database statistics options
+ - create graphical histograms for each column’s statistics
+
+
+## SQL Statistics Aggregator
+Download page: [SQL Statistics Aggregator]<br/>
+Release date: 2015-05-18<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Statistics Aggregator you can:
+ - aggregate IO statistics to identify problem tables
+ - correlate disk activity with query plan nodes
+ - compare runs of a query over time
+ - export and import results for easy collaboration
+
+
+## SQL Backup Status Reporter
+Download page: [SQL Backup Status Reporter]<br/>
+Release date: 2015-08-07<br/>
+Support Version: 2000/2005/2008/2008R2/2012<br/>
+Free version: Yes
+
+With SQL Backup Status Reporter you can:
+ - quickly identify databases which have not had backups
+ - view backup history including the backup date and type
+ - have simplified grid view for easy sorting and navigation
+ - identify full and differential backups for many databases
+
+
+## SQL Integrity Check
+Download page: [SQL Integrity Check]<br/>
+Release date: 2013-08-26<br/>
+Support Version: 2000/2005/2008/2008R2/2012<br/>
+Free version: Yes
+
+With SQL Integrity Check you can:
+ - easily run a CHECKDB for any database on-demand
+ - view integrity check results to identify corruption
+ - routinely verifies when last check was performed
+ - receive alerts when databases are due for checks
+ - don't need to write and maintain scripts
+
+
+## SQL Job Manager
+Download page: [SQL Job Manager]<br/>
+Release date: 2012-03-19<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+With SQL Job Manager you:
+ - have management console to easily view past and current jobs
+ - can identify and correct job contention
+ - can drag and drop jobs across servers to level workloads
+ - can “at a glance” view to see failed or runaway jobs
+ - have customizable calendar view
+
+
+## Azure SQL Database Backup
+Download page: [Azure SQL Database Backup]<br/>
+Release date: 2015-08-07<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+Azure SQL Database Backup allows/gives you:
+ - to save time and storage space with up to 95% compression
+ - backup on-premise or to Azure BLOB storage
+ - central data storage to prevent data loss
+ - view historical backup and restore operations
+ - restore with transaction consistency to and from the cloud
+
+
+## SQL Column Search
+Download page: [SQL Column Search]<br/>
+Release date: 2015-11-17<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With SQL Column Search you can:
+ - find potentially sensitive data
+ - search an entire instance or a specific table
+ - export results to CSV format for easy analysis and reporting
+
+
+## SQL Permissions Extractor
+Download page: [SQL Permissions Extractor]<br/>
+Release date: 2015-08-07<br/>
+Support Version: 2000/2005/2008/2008R2/2012<br/>
+Free version: Yes
+
+With SQL Permissions Extractor you can:
+ - Generate T-SQL scripts for copying of user permissions
+ - edit, save, and execute permissions scripts
+ - include object level permissions for selected databases
+ - copy, extract, modify and apply changes in four steps
+
+
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
 [Diskspd]:https://github.com/microsoft/diskspd
@@ -141,3 +309,16 @@ Red Gate 7 products for DBA:
 [SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [SQL DBA Bundle]:http://www.red-gate.com/products/dba/dba-bundle/
+[SQL Check]: https://www.idera.com/productssolutions/freetools/sqlcheck
+[SQL Fragmentation Analyzer]: https://www.idera.com/productssolutions/freetools/sqlfragmentationanalyzer/overview
+[SQL Heat Map]: https://www.idera.com/productssolutions/freetools/sql-storage
+[SQL Hekaton Memory Check]: https://www.idera.com/productssolutions/freetools/hekaton-memory-check-for-sql-memory-optimized-tables
+[SQL Page Viewer]: https://www.idera.com/productssolutions/freetools/sql-server-page
+[SQL Update Statistics]: https://www.idera.com/productssolutions/freetools/sql-server-statistics/overview
+[SQL Statistics Aggregator]: https://www.idera.com/productssolutions/freetools/statistics-aggregator-for-performance-tuning-in-sql
+[SQL Backup Status Reporter]: https://www.idera.com/productssolutions/freetools/sqlbackupstatusreporter/overview
+[SQL Integrity Check]: https://www.idera.com/productssolutions/freetools/sqlintegritycheck/overview
+[SQL Job Manager]: https://www.idera.com/productssolutions/freetools/sqljobmanager
+[Azure SQL Database Backup]: https://www.idera.com/productssolutions/freetools/azuresqldatabasebackup
+[SQL Column Search]: https://www.idera.com/productssolutions/freetools/sql-column-search
+[SQL Permissions Extractor]: https://www.idera.com/productssolutions/freetools/sqlpermissionsextractor
