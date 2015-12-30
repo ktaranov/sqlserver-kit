@@ -14,7 +14,11 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]        | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]  | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]   | 2013-02-15   | ???                        | daveballantyne      | Yes          | No            |
-
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                  | ???          | 2005/2008/2008R2/2012/2014 | Jakub Dvorak        | No           | Yes/€50       |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]          | 2015-09-04   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | 2015-12-21   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -141,6 +145,76 @@ Free version: Yes
 TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
 
 
+## SQLTreeo
+Download page: [SQLTreeo]<br/>
+Release date: ???<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables. You can organize your SQL objects in logical modules which are aligned with your project structure and forget of having hundreds of them within one Management Studio node.
+
+
+## ApexSQL Complete
+Download page: [ApexSQL Complete]<br/>
+Release date: 2015-09-04<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Free version: Yes
+
+With ApexSQL Complete you can:
+ - Automatically complete SQL statements
+ - Review an object's script and description
+ - Improve productivity with snippets
+ - Identify the structure of complex SQL queries
+ - Keep track of all your tabs
+ - Log every executed query
+ - Easily navigate to SQL objects
+ - Check queries in test mode
+
+
+## ApexSQL Refactor
+Download page: [ApexSQL Refactor]<br/>
+Release date: 2015-12-11<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Free version: Yes
+
+With ApexSQL Refactor you can:
+ - Format SQL with over 160 options
+ - Qualify objects and expand wildcards
+ - Encapsulate SQL into procedures
+ - Add surrogate keys
+ - Replace one-to-many relationships
+ - Change procedure parameters
+ - Safely rename SQL objects
+ - Locate & highlight unused variables
+
+
+## ApexSQL Search
+Download page: [ApexSQL Search]<br/>
+Release date: 2015-09-04<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: Yes
+
+With ApexSQL Search you can:
+ - Search for SQL objects
+ - Quickly find data in SQL tables
+ - Visualize relationships between objects
+ - Edit extended properties
+ - Easily navigate to result objects
+ - Rename SQL objects safely
+
+
+## Spotlight Developer
+Download page: [Spotlight Developer]<br/>
+Release date: ???<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+Users of SQL Server Management Studio can monitor all their connections via a heatmap, alarms list and realtime diagnostics for FREE.
+Once installed and configured, users can monitor their connections immediately. The powerful monitoring features communicate important information regarding the status of connections. Severity is color coded so it’s easy to see at a glance what needs your attention.
+It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagnostic Server. This makes it possible for you to take advantage of data collections for all your connections in Spotlight on SQL Server. 
+You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -151,3 +225,8 @@ TSQL Code can smell, it may work just fine but there can be hidden dangers held 
 [SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
 [SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
 [TSQL Code Smells Finder]: https://tsqlsmells.codeplex.com/team/view
+[SQLTreeo]: http://www.sqltreeo.com/wp/
+[ApexSQL Complete]: http://www.apexsql.com/sql_tools_complete.aspx
+[ApexSQL Refactor]: https://www.apexsql.com/sql_tools_refactor.aspx
+[ApexSQL Search]: https://www.apexsql.com/sql_tools_search.aspx
+[Spotlight Developer]: https://www.spotlightessentials.com/spotlight-developer
