@@ -21,7 +21,7 @@ Headers:
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
-    - SplitterB_CLR 
+    - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
  - [dbWarden](/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
  - [Known Errors](/Errors)
  - [Ola Maintenance Solution] (by Ola Hallengren)
@@ -53,9 +53,15 @@ Headers:
    - [usp_who5](/Stored_Procedure/usp_who5.sql) (by Sean Smith)
    - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql) (by Sean Smith)
    - [usp_BulkUpload](/Stored_Procedure/usp_BulkUpload.sql)
-   - [usp_TableUnpivot](/Stored_Procedure/ usp_TableUnpivot.sql)
+   - [usp_TableUnpivot](/Stored_Procedure/usp_TableUnpivot.sql)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
+    - [udf_parseJSON](/User_Defined_Function/udf_parseJSON.sql)
+    - [udf_RenderXMLToString](/User_Defined_Function/udf_RenderXMLToString.sql)
+    - [udf_RTF2Text](/User_Defined_Function/udf_RTF2Text.sql)
+    - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
+    - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
+    - and many others...
  - [Utilities](/Utilities)
     - [tablediff Utility](/Utilities#tablediff-utility)
     - [Microsoft Log Parser](/Utilities#microsoft-log-parser)
@@ -74,17 +80,17 @@ Headers:
 
 
 ## SQL Server Web Resources
- - [SQL Central Blog Scripts](http://www.sqlservercentral.com/Scripts/)
- - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
- - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
- - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
- - **Awesome [BRENT OZAR] scripts, videos and articles**
- - [Glenn Berry's SQL Server Performance]
- - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
- - Best backup and index maintenance solution [Ola Maintenance Solution]
- - [SSIS Performance Benchmarks](http://ssisperformance.com/)
- - [SQL Server Management Studio] installation download link
- - [SQL# CLR functions](http://www.sqlsharp.com/)
+ - Blogs
+    - [SQL Central Blog Scripts](http://www.sqlservercentral.com/Scripts/)
+    - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
+    - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
+    - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
+    - Awesome [BRENT OZAR] scripts, videos and articles
+    - [Glenn Berry's SQL Server Performance]
+    - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
+    - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
+    - Best backup and index maintenance solution [Ola Maintenance Solution]
+    - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -95,6 +101,10 @@ Headers:
    - [SQL Server Radio](http://www.sqlserverradio.com/)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/)
    - [Away from the Keyboard](http://awayfromthekeyboard.com/)
+ - Other
+    - [SQL Server Management Studio] installation download link
+    - [SQL# CLR functions](http://www.sqlsharp.com/)
+    - [SSIS Performance Benchmarks](http://ssisperformance.com/)
 
 
 ## SQL Server Express direct download links
