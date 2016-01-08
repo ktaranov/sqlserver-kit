@@ -18,20 +18,20 @@ To do:
  - Kevin Kline http://sqlperformance.com/author/kkline
 
 
-[Brent Ozar Blog]:(http://www.brentozar.com/)
-[SQLBlog]:(http://sqlblog.com)
-[Ola Maintenance Solution]:(https://ola.hallengren.com/)
-[Sommarskog Blog]:(http://www.sommarskog.se/)
-[Phill Simple-Talk]:(https://www.simple-talk.com/author/phil-factor/)
-[Robert Simple-Talk]:(https://www.simple-talk.com/author/robert-sheldon/)
+[Brent Ozar Blog]:http://www.brentozar.com/
+[SQLBlog]:http://sqlblog.com
+[Ola Maintenance Solution]:https://ola.hallengren.com/
+[Sommarskog Blog]:http://www.sommarskog.se/
+[Phill Simple-Talk]:https://www.simple-talk.com/author/phil-factor/
+[Robert Simple-Talk]:https://www.simple-talk.com/author/robert-sheldon/
 
-[@BrentO]:(https://twitter.com/BrentO)
-[@AdamMachanic]:(https://twitter.com/AdamMachanic)
-[@olahallengren]:(https://twitter.com/olahallengren)
-[@phil_factor]:(https://twitter.com/phil_factor)
+[@BrentO]:https://twitter.com/BrentO
+[@AdamMachanic]:https://twitter.com/AdamMachanic
+[@olahallengren]:https://twitter.com/olahallengren
+[@phil_factor]:https://twitter.com/phil_factor
 
 
-[Ozar MVP]:(https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar)
-[Machanic MVP]:(https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic)
-[Hallengren MVP]:(https://mvp.microsoft.com/en-us/PublicProfile/5000459?fullName=Ola%20%20Hallengren)
-[Sommarskog MVP]:(https://mvp.microsoft.com/en-us/PublicProfile/5440?fullName=erland%20sommarskog)
+[Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
+[Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
+[Hallengren MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000459?fullName=Ola%20%20Hallengren
+[Sommarskog MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5440?fullName=erland%20sommarskog
