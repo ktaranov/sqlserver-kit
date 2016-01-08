@@ -15,6 +15,7 @@ Headers:
 ## Repo folders and files
  - [SQL Server Name Convention](/SQL Server Name Convention.md)
  - [SQL Server Edition](/SQL Server Edition.md)
+ - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Articles](/Articles)
