@@ -1520,7 +1520,9 @@ SELECT
 		WHEN 'Q' THEN 'Differential Partial'
 		ELSE 'N/A'
 		END) AS backup_type
+	,ISNULL (CONVERT (VARCHAR (3), sqBS.software_major_version) + '.' + CONVERT (VARCHAR (3), sqBS.software_minor_version) + '.' + CONVERT (VARCHAR (6), sqBS.software_build_version), 'N/A') AS software_version
 	,ISNULL (CONVERT (VARCHAR (10), sqBS.database_version), 'N/A') AS database_version
+	,ISNULL (CONVERT (VARCHAR (3), sqBS.[compatibility_level]), 'N/A') AS [compatibility_level]
 	,ISNULL (sqBS.server_name, 'N/A') AS server_name
 	,ISNULL (sqBS.machine_name, 'N/A') AS machine_name
 	,ISNULL (sqBS.physical_device_name, 'N/A') AS physical_device_name
@@ -1536,6 +1538,8 @@ SELECT
 										ELSE sqBS.total_seconds
 										END), 'N/A') AS duration
 	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (sqBS.backup_size / 1048576.0, 0)), 1)), 4, 23)), 'N/A') AS backup_size_mb
+	,CONVERT (VARCHAR (23), 'N/A') AS compressed_size_mb
+	,CONVERT (VARCHAR (23), 'N/A') AS compression_pct
 	,ISNULL (REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DATEDIFF (DAY, sqBS.backup_start_date, GETDATE ())), 1)), 4, 23)), 'N/A') AS days_ago
 	,ROW_NUMBER () OVER
 						(
@@ -1555,7 +1559,11 @@ FROM
 				 BS.database_name
 				,BS.backup_set_id
 				,BS.[type]
+				,BS.software_major_version
+				,BS.software_minor_version
+				,BS.software_build_version
 				,BS.database_version
+				,BS.[compatibility_level]
 				,BS.server_name
 				,BS.machine_name
 				,BMF.physical_device_name
@@ -1620,6 +1628,30 @@ BEGIN
 END
 
 
+IF EXISTS (SELECT * FROM msdb.sys.all_columns AC WHERE AC.[object_id] = OBJECT_ID (N'msdb.dbo.backupset', N'U') AND AC.name = N'compressed_backup_size')
+BEGIN
+
+	EXECUTE
+
+		(
+			N'
+				UPDATE
+					X
+				SET
+					 X.compressed_size_mb = REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (BS.compressed_backup_size / 1048576.0, 0)), 1)), 4, 23))
+					,X.compression_pct = CONVERT (VARCHAR (23), CONVERT (MONEY, ROUND (((BS.backup_size - BS.compressed_backup_size + .0) / BS.backup_size) * 100, 2)), 1)
+				FROM
+					dbo.#temp_sssr_last_backup_set X
+					INNER JOIN msdb.dbo.backupset BS ON BS.backup_set_id = X.backup_set_id
+						AND BS.compressed_backup_size < BS.backup_size
+				WHERE
+					X.backup_set_id <> ''NONE''
+			 '
+		)
+
+END
+
+
 IF EXISTS (SELECT * FROM dbo.#temp_sssr_last_backup_set X WHERE X.backup_set_id = 'NONE')
 BEGIN
 
@@ -1627,23 +1659,35 @@ BEGIN
 		dbo.#temp_sssr_last_backup_set
 	SET
 		 backup_type = REPLICATE ('.', backup_type_length_max * 2)
+		,software_version = REPLICATE ('.', software_version_length_max * 2)
 		,database_version = REPLICATE ('.', database_version_length_max * 2)
+		,[compatibility_level] = REPLICATE ('.', compatibility_level_length_max * 2)
 		,server_name = REPLICATE ('.', server_name_length_max * 2)
 		,machine_name = REPLICATE ('.', machine_name_length_max * 2)
+		,physical_device_name = REPLICATE ('.', physical_device_name_length_max * 2)
 		,backup_start_date = REPLICATE ('.', 34)
 		,backup_finish_date = REPLICATE ('.', 34)
 		,duration = REPLICATE ('.', (duration_length_max * 2) - 4)
 		,backup_size_mb = REPLICATE ('.', backup_size_mb_length_max * 2)
+		,compressed_size_mb = REPLICATE ('.', compressed_size_mb_length_max * 2)
+		,compression_pct = REPLICATE ('.', compression_pct_length_max * 2)
+		,days_ago = REPLICATE ('.', days_ago_length_max * 2)
 	FROM
 
 		(
 			SELECT
 				 MAX (LEN (X.backup_type)) AS backup_type_length_max
+				,MAX (LEN (X.software_version)) AS software_version_length_max
 				,MAX (LEN (X.database_version)) AS database_version_length_max
+				,MAX (LEN (X.[compatibility_level])) AS compatibility_level_length_max
 				,MAX (LEN (X.server_name)) AS server_name_length_max
 				,MAX (LEN (X.machine_name)) AS machine_name_length_max
+				,MAX (LEN (X.physical_device_name)) AS physical_device_name_length_max
 				,MAX (LEN (X.duration)) AS duration_length_max
 				,MAX (LEN (X.backup_size_mb)) AS backup_size_mb_length_max
+				,MAX (LEN (X.compressed_size_mb)) AS compressed_size_mb_length_max
+				,MAX (LEN (X.compression_pct)) AS compression_pct_length_max
+				,MAX (LEN (X.days_ago)) AS days_ago_length_max
 			FROM
 				dbo.#temp_sssr_last_backup_set X
 		) sqX
@@ -1668,7 +1712,9 @@ BEGIN
 							END) AS 'td'
 					,'',X.backup_set_id AS 'td'
 					,'',X.backup_type AS 'td'
+					,'',X.software_version AS 'td'
 					,'',X.database_version AS 'td'
+					,'',X.[compatibility_level] AS 'td'
 					,'',X.server_name AS 'td'
 					,'',X.machine_name AS 'td'
 					,'',X.physical_device_name AS 'td'
@@ -1676,6 +1722,8 @@ BEGIN
 					,'',X.backup_finish_date AS 'td'
 					,'',X.duration AS 'td'
 					,'','right_align' + X.backup_size_mb AS 'td'
+					,'','right_align' + X.compressed_size_mb AS 'td'
+					,'','right_align' + X.compression_pct AS 'td'
 					,'','right_align' + X.days_ago AS 'td'
 				FROM
 					dbo.#temp_sssr_last_backup_set X
@@ -1699,7 +1747,9 @@ BEGIN
 						<th nowrap>Database Name</th>
 						<th nowrap>Backup Set ID</th>
 						<th nowrap>Backup Type</th>
+						<th nowrap>Software Version</th>
 						<th nowrap>Database Version</th>
+						<th nowrap>Compatibility</th>
 						<th nowrap>Server Name</th>
 						<th nowrap>Machine Name</th>
 						<th nowrap>Physical Device Name</th>
@@ -1707,6 +1757,8 @@ BEGIN
 						<th nowrap>Backup Finish Date</th>
 						<th nowrap>Duration</th>
 						<th nowrap>Backup Size (MB)</th>
+						<th nowrap>Compressed Size (MB)</th>
+						<th nowrap>Compression %</th>
 						<th nowrap>Days Ago</th>
 					</tr>
 		 '
@@ -1729,7 +1781,9 @@ ELSE BEGIN
 			END) AS database_name
 		,X.backup_set_id
 		,X.backup_type
+		,X.software_version
 		,X.database_version
+		,X.[compatibility_level]
 		,X.server_name
 		,X.machine_name
 		,X.physical_device_name
@@ -1737,6 +1791,8 @@ ELSE BEGIN
 		,X.backup_finish_date
 		,X.duration
 		,X.backup_size_mb
+		,X.compressed_size_mb
+		,X.compression_pct
 		,X.days_ago
 	FROM
 		dbo.#temp_sssr_last_backup_set X
@@ -2048,7 +2104,7 @@ BEGIN
 				,sqIF.index_key
 				,sqIF.include_key
 				,sqIF.filter_definition
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, sqIF.avg_fragmentation_in_percent), 1)), 1, 23)) AS fragmentation
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, sqIF.avg_fragmentation_in_percent), 1) AS fragmentation
 				,sqIF.type_desc AS index_type
 				,(CASE sqIF.is_primary_key
 					WHEN 0 THEN ''No''
@@ -2419,9 +2475,9 @@ BEGIN
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.unique_compiles), 1)), 4, 23)) AS unique_compiles
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.user_seeks), 1)), 4, 23)) AS user_seeks
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.user_scans), 1)), 4, 23)) AS user_scans
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_total_user_cost), 1)), 1, 23)) AS avg_total_user_cost
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_user_impact), 1)), 1, 23)) AS avg_user_impact
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.overall_impact), 1)), 1, 23)) AS overall_impact
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_total_user_cost), 1) AS avg_total_user_cost
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, DDMIGS.avg_user_impact), 1) AS avg_user_impact
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.overall_impact), 1) AS overall_impact
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, DENSE_RANK () OVER
 																										(
 																											ORDER BY
@@ -2432,9 +2488,9 @@ BEGIN
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, sqCC.table_column_count), 1)), 4, 23)) AS table_column_count
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.index_column_count), 1)), 4, 23)) AS index_column_count
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, caIC.include_column_count), 1)), 4, 23)) AS include_column_count
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.index_column_count / sqCC.table_column_count) * 100), 1)), 1, 23)) AS index_pct_of_columns
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.include_column_count / sqCC.table_column_count) * 100), 1)), 1, 23)) AS include_pct_of_columns
-				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ((caIC.index_column_count + caIC.include_column_count) / sqCC.table_column_count) * 100), 1)), 1, 23)) AS total_pct_of_columns
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.index_column_count / sqCC.table_column_count) * 100), 1) AS index_pct_of_columns
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, (caIC.include_column_count / sqCC.table_column_count) * 100), 1) AS include_pct_of_columns
+				,CONVERT (VARCHAR (23), CONVERT (MONEY, ((caIC.index_column_count + caIC.include_column_count) / sqCC.table_column_count) * 100), 1) AS total_pct_of_columns
 				,REVERSE (SUBSTRING (REVERSE (CONVERT (VARCHAR (23), CONVERT (MONEY, ttSRC.[rows]), 1)), 4, 23)) AS row_count
 				,caCIS.create_index_statement
 			FROM
