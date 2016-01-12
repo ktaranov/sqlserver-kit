@@ -19,6 +19,11 @@ Complete list of useful add-in for SQL Server Management Studio
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | 2015-12-21   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
+| [dbForge Source Control](#dbforge-source-control)     | [[dbForge Source Control]   | 2015-12-22   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$249.95   |
+| [dbForge Unit Test](#dbforge-unit-test)               | [[dbForge Unit Test]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$199.95   |
+| [dbForge Data Pump](#dbforge-data-pump)               | [[dbForge Data Pump]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$149.95   |
+| [dbForge Index Manager](#dbforge-index-manager)       | [[dbForge Index Manager]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$99.95    |
+| [dbForge Object Search](#dbforge-object-search)       | [[dbForge Object Search]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | Yes          | No            |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -215,6 +220,53 @@ It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagno
 You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
 
 
+## dbForge Source Control
+Download page: [dbForge Source Control]<br/>
+Release date: 2015-12-22<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL Server database changes in source control. The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
+
+
+## dbForge Unit Test
+Download page: [dbForge Unit Test]<br/>
+Release date: 2015-12-04<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+An intuitive and convenient GUI for implementing automated unit testing in SQL Server Management Studio. The tool is based on the open-source tSQLt framework, so SQL developers can now benefit from writing unit tests in regular T-SQL. dbForge Unit Test for SQL Server functionality allows you to develop stable and reliable code that can be properly regression tested at the unit level.
+
+
+## dbForge Data Pump
+Download page: [dbForge Data Pump]<br/>
+Release date: 2015-12-04<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems. The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
+
+
+## dbForge Index Manager
+Download page: [dbForge Index Manager]<br/>
+Release date: 2015-11-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the status of SQL indexes and fixing issues with index fragmentation. 
+The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance. You can instantly rebuild and reorganize SQL indexes in visual mode or generate SQL script for the future use. dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort!
+
+
+## dbForge Object Search
+Download page: [dbForge Object Search]<br/>
+Release date: 2015-11-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+dbForge Object Search for SQL Server is a FREE add-in for SQL Server Management Studio that allows you to search SQL objects and data in your databases.
+It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects. With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -230,3 +282,8 @@ You also get a FREE System health Check, Performance Health Analysis and compreh
 [ApexSQL Refactor]: https://www.apexsql.com/sql_tools_refactor.aspx
 [ApexSQL Search]: https://www.apexsql.com/sql_tools_search.aspx
 [Spotlight Developer]: https://www.spotlightessentials.com/spotlight-developer
+[dbForge Source Control]: https://www.devart.com/dbforge/sql/source-control/
+[dbForge Unit Test]: https://www.devart.com/dbforge/sql/unit-test/
+[dbForge Data Pump]: https://www.devart.com/dbforge/sql/data-pump/
+[dbForge Index Manager]: https://www.devart.com/dbforge/sql/index-manager/
+[dbForge Object Search]: https://www.devart.com/dbforge/sql/search/
