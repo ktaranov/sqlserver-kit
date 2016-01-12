@@ -26,7 +26,7 @@ Source link:
 | [SQL Check](#sql-check)                                   | [SQL Check]                  | 2015-09-24   | Idera       | Yes          | No         |
 | [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer) | [SQL Fragmentation Analyzer] | 2015-06-24   | Idera       | Yes          | No         |
 | [SQL Heat Map](#sql-heat-map)                             | [SQL Heat Map]               | 2015-12-07   | Idera       | Yes          | No         |
-| [SQL Hekaton Memory Check](#sql-hecaton-memory-check)     | [SQL Hekaton Memory Check]   | 2015-06-10   | Idera       | Yes          | No         |
+| [SQL Hekaton Memory Check](#sql-hekaton-memory-check)     | [SQL Hekaton Memory Check]   | 2015-06-10   | Idera       | Yes          | No         |
 | [SQL Page Viewer](#sql-page-viewer)                       | [SQL Page Viewer]            | 2014-08-25   | Idera       | Yes          | No         |
 | [SQL Update Statistics](#sql-update-statistics)           | [SQL Update Statistics]      | 2015-12-14   | Idera       | Yes          | No         |
 | [SQL Statistics Aggregator](#sql-statistics-aggregator)   | [SQL Statistics Aggregator]  | 2015-05-18   | Idera       | Yes          | No         |
