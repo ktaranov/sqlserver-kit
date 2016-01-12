@@ -36,7 +36,12 @@ Source link:
 | [Azure SQL Database Backup](#azure-sql-database-backup)   | [Azure SQL Database Backup]  | 2012-10-02   | Idera       | Yes          | No         |
 | [SQL Column Search](#sql-column-search)                   | [SQL Column Search]          | 2015-11-17   | Idera       | Yes          | No         |
 | [SQL Permissions Extractor](#sql-permissions-extractor)   | [SQL Permissions Extractor]  | 2015-08-07   | Idera       | Yes          | No         |
-
+| [dbForge Schema Compare](#dbforge-schema-compare)         | [dbForge Schema Compare]     | 2015-12-22   | Devart      | No           | Yes/$149.95  |
+| [dbForge Data Compare](#dbforge-data-compare)             | [dbForge Data Compare]       | 2015-11-30   | Devart      | No           | Yes/$149.95  |
+| [dbForge Data Generator](#dbforge-data-generator)         | [dbForge Data Generator]     | 2015-12-30   | Devart      | No           | Yes/$249.95  |
+| [dbForge Query Builder](#dbforge-query-builder)           | [dbForge Query Builder]      | 2015-06-03   | Devart      | No           | Yes/$99.95   |
+| [dbForge Event Profiler](#dbforge-event-profiler)         | [dbForge Event Profiler]     | 2015-04-08   | Devart      | Yes          | No           |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)           | [dbForge SQL Decryptor]      | 2013-11-07   | Devart      | Yes          | No           |
 
 ## Microsoft Log Parser
 Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
@@ -295,6 +300,63 @@ With SQL Permissions Extractor you can:
  - copy, extract, modify and apply changes in four steps
 
 
+## dbForge Schema Compare
+Download page: [dbForge Schema Compare]<br/>
+Release date: 2015-12-22<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server. The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups. 
+You can compare your SQL Server databases, analyze differences and synchronize your schemas using generated SQL script in a well-designed user interface quickly and without errors.
+
+
+## dbForge Data Compare
+Download page: [dbForge Schema Compare]<br/>
+Release date: 2015-11-30<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Data Compare for SQL Server is a powerful, fast and easy to use SQL comparison tool, capable of using native SQL Server backups as metadata source. With dbForge Data Compare you can tune your SQL database comparison, quickly analyze differences in a well-designed user interface and effortlessly synchronize data via a convenient wizard with additional options.
+
+
+## dbForge Data Generator
+Download page: [dbForge Data Generator]<br/>
+Release date: 2015-12-30<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation of meaningful test data. The tool includes 190+ predefined generators with sensible configuration options, that allow emulating column-intelligent real-world data. dbForge Data Generator for SQL Server can save your time and effort by populating SQL Server tables with millions of rows of test data that looks just like real data.
+
+
+## dbForge Query Builder
+Download page: [dbForge Query Builder]<br/>
+Release date: 2015-06-03<br/>
+Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge Query Builder for SQL Server allows users to build complex SQL queries via an intuitive visual query building interface easily and without manual code writing. Our visual SQL query tool is destined for simplification of developing SQL queries for SQL Server. This SQL query designer will be useful to those, who often create queries to databases. 
+Visual features to create queries, usage of graphical SQL query creator to interactively build queries, would be most appreciated by users who have no experience in writing queries manually. But
+ even experienced users can save a lot of time on routine work.
+
+
+## dbForge Event Profiler
+Download page: [dbForge Event Profiler]<br/>
+Release date: 2015-04-08<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+dbForge Event Profiler for SQL Server is a FREE tool that allows you to capture and analyze SQL Server events. The events and data columns are stored in a physical trace file for later examination. You can use this information to identify and troubleshoot many SQL Server-related problems.
+
+
+## dbForge SQL Decryptor
+Download page: [dbForge SQL Decryptor]<br/>
+Release date: 2013-11-07<br/>
+Support Version: 2000/2005/2008/2008R2/2012<br/>
+Free version: No
+
+If you have encrypted an object definition in your database by specifying WITH ENCRYPTION option, and by some reason you cannot restore its original T-SQL body, the  dbForge SQL Decryptor  will easily do it for you absolutely free. Save your time and funds on restoring lost definitions and stay happy with our products.
+
+
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
 [Diskspd]:https://github.com/microsoft/diskspd
@@ -322,3 +384,9 @@ With SQL Permissions Extractor you can:
 [Azure SQL Database Backup]: https://www.idera.com/productssolutions/freetools/azuresqldatabasebackup
 [SQL Column Search]: https://www.idera.com/productssolutions/freetools/sql-column-search
 [SQL Permissions Extractor]: https://www.idera.com/productssolutions/freetools/sqlpermissionsextractor
+[dbForge Schema Compare]: https://www.devart.com/dbforge/sql/schemacompare/
+[dbForge Data Compare]: https://www.devart.com/dbforge/sql/datacompare/
+[dbForge Data Generator]: https://www.devart.com/dbforge/sql/data-generator/
+[dbForge Query Builder]: https://www.devart.com/dbforge/sql/querybuilder/
+[dbForge Event Profiler]: https://www.devart.com/dbforge/sql/event-profiler/
+[dbForge SQL Decryptor]: https://www.devart.com/dbforge/sql/sqldecryptor/
