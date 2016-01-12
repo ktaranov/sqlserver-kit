@@ -92,7 +92,7 @@ Headers:
     - [SQL Check](/Utilities#sql-check)
     - [SQL Fragmentation Analyzer](/Utilities#sql-fragmentation-analyzer)
     - [SQL Heat Map](/Utilities#sql-heat-map)
-    - [SQL Hekaton Memory Check](/Utilities#sql-hecaton-memory-check)
+    - [SQL Hekaton Memory Check](/Utilities#sql-hekaton-memory-check)
     - [SQL Page Viewer](/Utilities#sql-page-viewer)
     - [SQL Update Statistics](/Utilities#sql-update-statistics)
     - [SQL Statistics Aggregator](/Utilities#sql-statistics-aggregator)
@@ -102,6 +102,12 @@ Headers:
     - [Azure SQL Database Backup](/Utilities#azure-sql-database-backup)
     - [SQL Column Search](/Utilities#sql-column-search)
     - [SQL Permissions Extractor](/Utilities#sql-permissions-extractor)
+    - [dbForge Schema Compare](/Utilities#dbforge-schema-compare)
+    - [dbForge Data Compare](/Utilities#dbforge-data-compare)    
+    - [dbForge Data Generator](/Utilities#dbforge-data-generator)
+    - [dbForge Query Builder](/Utilities#dbforge-query-builder)  
+    - [dbForge Event Profiler](/Utilities#dbforge-event-profiler)
+    - [dbForge SQL Decryptor](/Utilities#dbforge-SQL-decryptor)  
 
 
 ## SQL Server Web Resources
