@@ -89,6 +89,19 @@ Headers:
     - [SQL XEvent Profiler](/Utilities#sql-xevent-profiler)
     - [DLM Dashboard](/Utilities#dlm-dashboard)
     - [SQL DBA Bundle](/Utilities#sql-dba-bundle)
+    - [SQL Check](/Utilities#sql-check)
+    - [SQL Fragmentation Analyzer](/Utilities#sql-fragmentation-analyzer)
+    - [SQL Heat Map](/Utilities#sql-heat-map)
+    - [SQL Hekaton Memory Check](/Utilities#sql-hecaton-memory-check)
+    - [SQL Page Viewer](/Utilities#sql-page-viewer)
+    - [SQL Update Statistics](/Utilities#sql-update-statistics)
+    - [SQL Statistics Aggregator](/Utilities#sql-statistics-aggregator)
+    - [SQL Backup Status Reporter](/Utilities#sql-backup-status-reporter)
+    - [SQL Integrity Check](/Utilities#sql-integrity-check)
+    - [SQL Job Manager](/Utilities#sql-job-manager)
+    - [Azure SQL Database Backup](/Utilities#azure-sql-database-backup)
+    - [SQL Column Search](/Utilities#sql-column-search)
+    - [SQL Permissions Extractor](/Utilities#sql-permissions-extractor)
 
 
 ## SQL Server Web Resources
