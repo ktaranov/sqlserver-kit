@@ -44,11 +44,21 @@ Source link:
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)           | [dbForge SQL Decryptor]      | 2013-11-07   | Devart      | Yes          | No           |
 
 ## Microsoft Log Parser
+Download page: [Microsoft Log Parser]<br/>
+Release date: -<br/>
+Support Version: ???<br/>
+Free version: Yes
+
 Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
 XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory. 
 
 
 ## tablediff Utility
+Download page: [tablediff Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 The tablediff utility is used to compare the data in two tables for non-convergence, and is particularly useful for troubleshooting non-convergence<br />
 in a replication topology. This utility can be used from the command prompt or in a batch file to perform the following tasks:
  - A row by row comparison between a source table in an instance of Microsoft SQL Server acting as a replication Publisher and the destination table at one or more instances of SQL Server acting as replication Subscribers.
@@ -59,27 +69,52 @@ in a replication topology. This utility can be used from the command prompt or i
 
 
 ## Diskspd
+Download page: [Diskspd]<br/>
+Release date: 2015-12-14<br/>
+Support Version: ???<br/>
+Free version: Yes
+
 DISKSPD is a storage load generator / performance test tool from the Windows/Windows Server and Cloud Server Infrastructure Engineering teams.
 
 Compilation is supported with Visual Studio and Visual Studio Express. Use the Visual Studio solution file inside the diskspd_vs2013 directory.
 
 
 ## HammerDB
+Download page: [HammerDB]<br/>
+Release date: 2015-05-04<br/>
+Support Version: ???<br/>
+Free version: Yes
+
 HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
 ## dta Utility
+Download page: [dta Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting.
 
 Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
 
 ## osql Utility
+Download page: [osql Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 The osql utility allows you to enter Transact-SQL statements, system procedures, and script files.<br />
 This utility uses ODBC to communicate with the server.
 
 
 ## sqldiag Utility
+Download page: [sqldiag Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 The SQLdiag utility is a general purpose diagnostics collection utility that can be run as a console application or as a service.<br />
 You can use SQLdiag to collect logs and data files from SQL Server and other types of servers, and use it to monitor your servers over time<br />
 or troubleshoot specific problems with your servers.<br />
@@ -87,6 +122,11 @@ SQLdiag is intended to expedite and simplify diagnostic information gathering fo
 
 
 ## sqldumper Utility
+Download page: [sqldumper Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Free version: Yes
+
 ou can use the Sqldumper.exe utility to generate a dump file on demand for any Microsoft Windows application.<br />
 For example, you can generate a dump file for debugging an application problem when a computer that is running SQL Server 2005,<br />
 Microsoft SQL Server 2008, Microsoft SQL Server 2008 R2, or Microsoft SQL Server 2012 is not responding to user requests.<br />
@@ -94,20 +134,40 @@ A dump file can be a mini-dump file, a full dump file, or a filtered dump file.
 
 
 ## SqlLocalDB Utility
+Download page: [SqlLocalDB Utility]<br/>
+Release date: -<br/>
+Support Version: 2012/2014/2016<br/>
+Free version: Yes
+
 SqlLocalDB lets you create, delete, start, stop, and perform a number of other related tasks on an instance of SQL Server 2012 Express LocalDB,<br />
 an execution mode of SQL Server Express that’s targeted at developers. A LocalDB instance uses a minimal set of files to start the database engine.
 
 
 ## sqllogship Utility
+Download page: [sqllogship Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 The sqllogship application performs a backup, copy, or restore operation and associated clean-up tasks for a log shipping configuration.<br />
 The operation is performed on a specific instance of Microsoft SQL Server for a specific database.
 
 
 ## sqlservr Application
+Download page: [sqlservr Application]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
 The sqlservr application starts, stops, pauses, and continues an instance of Microsoft SQL Server from a command prompt.
 
 
 ## SQL XEvent Profiler
+Download page: [SQL XEvent Profiler]<br/>
+Release date: 2014-03-14<br/>
+Support Version: 2012/2014<br/>
+Free version: Yes
+
 Idera’s SQL XEvent Profiler emulates the functionality and simplicity of SQL Server Profiler, letting you quickly view data from SQL events<br />
 and see what's happening on the server. Plus, it leverages SQL Extended Events (XEvents) as the backing technology — making it more efficient than SQL Trace.
 
