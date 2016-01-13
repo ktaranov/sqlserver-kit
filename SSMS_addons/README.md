@@ -9,7 +9,6 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SQL Search](#sql-search)                             | [SQL Search]                | 2015-11-05   | ???                        | Red Gate            | Yes          | No            |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]       | 2015-05-31   | ???                        | Red Gate            | Yes          | No            |
 | [Supratimas](#supratimas)                             | [Supratimas]                | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC         | Yes          | Yes/$34.99    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]      | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
 | [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]           | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić      | No           | Yes/€30-€5000 |
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]        | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]  | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
@@ -19,11 +18,12 @@ Complete list of useful add-in for SQL Server Management Studio
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | 2015-12-21   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
-| [dbForge Source Control](#dbforge-source-control)     | [[dbForge Source Control]   | 2015-12-22   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$249.95   |
-| [dbForge Unit Test](#dbforge-unit-test)               | [[dbForge Unit Test]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$199.95   |
-| [dbForge Data Pump](#dbforge-data-pump)               | [[dbForge Data Pump]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$149.95   |
-| [dbForge Index Manager](#dbforge-index-manager)       | [[dbForge Index Manager]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$99.95    |
-| [dbForge Object Search](#dbforge-object-search)       | [[dbForge Object Search]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | Yes          | No            |
+| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]   | 2015-12-22   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$249.95   |
+| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$199.95   |
+| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$149.95   |
+| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$99.95    |
+| [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | Yes          | No            |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]      | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
 
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
@@ -89,15 +89,6 @@ Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
 
 SQL Server query plan execution visualizer
-
-
-## dbForge SQL Complete
-Download page: [dbForge SQL Complete]<br/>
-Release date: 2015-09-16<br/>
-Support Version: 2005/2008/2008R2/2012/2014<br/>
-Free version: No
-
-dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names, column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
 
 
 ## SSMS Tools Pack
@@ -265,6 +256,15 @@ Free version: Yes
 
 dbForge Object Search for SQL Server is a FREE add-in for SQL Server Management Studio that allows you to search SQL objects and data in your databases.
 It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects. With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
+
+
+## dbForge SQL Complete
+Download page: [dbForge SQL Complete]<br/>
+Release date: 2015-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No
+
+dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names, column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
