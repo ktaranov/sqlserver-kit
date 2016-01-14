@@ -53,3 +53,9 @@ Tested on SQL Server version: 2008/2012/2014
 Author: Sean Smith<br/>
 Original link: http://www.sqlservercentral.com/scripts/Date/68389/<br/>
 Tested on SQL Server version: 2008/2012/2014
+
+
+## [Index Breakdown](Index Breakdown.sql)
+Author: Sean Smith<br/>
+Original link: http://www.sqlservercentral.com/scripts/Indexing/104395/<br/>
+Tested on SQL Server version: 2014
