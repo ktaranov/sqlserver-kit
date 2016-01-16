@@ -75,6 +75,7 @@ Headers:
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
  - [Utilities](/Utilities)
+    - [GraphView](/Utilities#graphview)
     - [tablediff Utility](/Utilities#tablediff-utility)
     - [Microsoft Log Parser](/Utilities#microsoft-log-parser)
     - [Diskspd](/Utilities#diskspd)
