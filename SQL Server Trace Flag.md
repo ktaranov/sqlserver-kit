@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (161 trace flags).
+Complete list of Microsoft SQL Server trace flags (162 trace flags).
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -50,7 +50,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## Trace flag list
-Summary: 161 trace flags
+Summary: 162 trace flags
 
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all connections<br />
@@ -854,6 +854,14 @@ optimization<br />
 Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 
 
+**Trace Flag: 8690**<br />
+**Undocumented trace flag**<br />
+Function: Disable the spool on the inner side of nested loop.<br />
+Spools improve performance in majority of the cases. But it’s based on estimates. Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance. But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/
+Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
+
+
 **Trace Flag: 8722**<br />
 Function: Disable all hints except locking hints<br />
 Link: http://sqlmag.com/sql-server/investigating-trace-flags
@@ -961,3 +969,9 @@ Link: None
 **Trace Flag: 9808**<br />
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
 Link: None
+
+
+**Trace Flag: 9830**<br />
+**Undocumented trace flag**<br />
+Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
+Link: http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/#more-1216
