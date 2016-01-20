@@ -1,4 +1,4 @@
-Enter file contents hereIF OBJECT_ID('dbo.usp_PrintString', 'P') IS NULL
+IF OBJECT_ID('dbo.usp_PrintString', 'P') IS NULL
 	EXECUTE ('CREATE PROCEDURE dbo.usp_PrintString AS SELECT 1');
 GO
 
