@@ -21,6 +21,10 @@ Source link:
 | [SqlLocalDB Utility](#sqllocaldb-utility)                 | [SqlLocalDB Utility]         | -            | Microsoft   | Yes          | No          |
 | [sqllogship Utility](#sqllogship-utility)                 | [sqllogship Utility]         | -            | Microsoft   | Yes          | No          |
 | [sqlservr Application](#sqlservr-application)             | [sqlservr Application]       | -            | Microsoft   | Yes          | No          |
+| [sqlps Utility](#sqlps-utility)                           | [sqlps Utility]              | -            | Microsoft   | Yes          | No          |
+| [sqlmaint Utility](#sqlmaint-utility)                     | [sqlmaint Utility]           | -            | Microsoft   | Yes          | No          |
+| [Ssms Utility](#ssms-utility)                             | [Ssms Utility]               | -            | Microsoft   | Yes          | No          |
+| [dtexec Utility](#dtexec-utility)                         | [dtexec Utility]             | -            | Microsoft   | Yes          | No          |
 | [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
 | [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No          |
 | [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640   |
@@ -171,6 +175,45 @@ Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Free version: Yes
 
 The sqlservr application starts, stops, pauses, and continues an instance of Microsoft SQL Server from a command prompt.
+
+
+## sqlps Utility
+Download page: [sqlps Utility]<br/>
+Release date: -<br/>
+Support Version: 2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
+The sqlps utility starts a Windows PowerShell 2.0 session with the SQL Server PowerShell provider and cmdlets loaded and registered. You can enter PowerShell commands or scripts that use the SQL Server PowerShell components to work with instances of SQL Server and their objects.
+This feature will be removed in a future version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use the sqlps PowerShell module instead.
+
+
+## sqlmaint Utility
+Download page: [sqlmaint Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
+The sqlmaint utility performs a specified set of maintenance operations on one or more databases. Use sqlmaint to run DBCC checks, back up a database and its transaction log, update statistics, and rebuild indexes. All database maintenance activities generate a report that can be sent to a designated text file, HTML file, or e-mail account. sqlmaint executes database maintenance plans created with previous versions of SQL Server. To run SQL Server maintenance plans from the command prompt, use the dtexec Utility.
+This feature will be removed in the next version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use SQL Server maintenance plan feature instead.
+
+
+## Ssms Utility
+Download page: [Ssms Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Free version: Yes
+
+The Ssms utility opens SQL Server Management Studio. If specified, Ssms also establishes a connection to a server, and opens queries, scripts, files, projects, and solutions.
+You can specify files that contain queries, projects, or solutions. Files that contain queries are automatically connected to a server if connection information is provided and the file type is associated with that type of server. For instance, .sql files will open a SQL Query Editor window in SQL Server Management Studio, and .mdx files will open an MDX Query Editor window in SQL Server Management Studio. SQL Server Solutions and Projects will open in SQL Server Management Studio.
+
+
+## dtexec Utility
+Download page: [dtexec Utility]<br/>
+Release date: -<br/>
+Support Version: 2012/2014/2016<br/>
+Free version: Yes
+
+The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages. The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators. The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
 
 
 ## SQL XEvent Profiler
@@ -462,3 +505,7 @@ If you have encrypted an object definition in your database by specifying WITH E
 [dbForge Query Builder]: https://www.devart.com/dbforge/sql/querybuilder/
 [dbForge Event Profiler]: https://www.devart.com/dbforge/sql/event-profiler/
 [dbForge SQL Decryptor]: https://www.devart.com/dbforge/sql/sqldecryptor/
+[sqlps Utility]: https://msdn.microsoft.com/en-us/library/cc280450.aspx
+[sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
+[Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
+[dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
