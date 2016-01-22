@@ -62,7 +62,7 @@ contains all the fixes that are included with previous service packs and any new
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
 | 2016    | [Download CTP3.1 2016]                         | 13.00.801.12                 | 2015-12-01                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download SP1 2014] then<br/>[CU4 KB3106660]   | 12.0.4100.1<br/>12.0.4427.24 | 2015-05-15<br/>2015-12-21 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Download SP3 2012]                            | 11.0.6020.0                  | 2015-11-21                | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2012    | [Download SP3 2012] then<br/>[CU1 KB3123299]   | 11.0.6020.0<br/>11.0.6518.0  | 2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Download SP4 2005] then<br/>[CU3 2507769]     | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
@@ -71,6 +71,7 @@ contains all the fixes that are included with previous service packs and any new
 [Download SP1 2014]:https://support.microsoft.com/en-us/kb/3058865
 [CU4 KB3106660]:https://support.microsoft.com/en-us/kb/3106660
 [Download SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
+[CU1 KB3123299]:https://support.microsoft.com/en-us/kb/3123299
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
 [Download SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
@@ -235,8 +236,11 @@ contains all the fixes that are included with previous service packs and any new
 
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 11.0.6518.0   | 11.3.6518.0      | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
+| 11.0.6518.0   | 11.0.6518.0      | [3072779 SQL Server 2012 Service Pack 3 release information]                                                                           | 2015-11-20   |
+| 11.0.5644.2   | 11.0.5644.2      | [3120313 Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
 | 11.3.6020.0   | 11.3.6020.0      | [Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                                       | 2015-11-21   |
-| 11.0.5641.0   | 11.2.56.41.0     | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-18   |
+| 11.0.5641.0   | 11.2.56.41.0     | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-16   |
 | 11.0.5636     | 2011.110.5636.3  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
 | 11.0.5634     | 2011.110.5634.0  | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
 | 11.0.5629     | 2011.110.5629.0  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
@@ -300,6 +304,9 @@ contains all the fixes that are included with previous service packs and any new
 | 11.0.1440     | 2010.110.1440.19 | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
 | 11.0.1103     | 2010.110.1103.9  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
 
+[3123299 Cumulative update package 1 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3123299
+[3072779 SQL Server 2012 Service Pack 3 release information]:https://support.microsoft.com/en-us/kb/3072779
+[3120313 Cumulative update package 10 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3120313
 [Microsoft SQL Server 2012 Service Pack 3 (SP3)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [3098512 Cumulative update package 9 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3098512
 [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]:https://support.microsoft.com/en-us/kb/3097636
