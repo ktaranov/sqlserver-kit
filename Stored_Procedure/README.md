@@ -128,7 +128,14 @@ Author: Sean Smith<br/>
 Original link: <http://wwwservercentral.com/scripts/sp_who/68607/><br/>
 Tested on SQL Server version: 2012/2014
 
+
 ## [usp_PrintString](usp_PrintString.sql)
 Author: John Huang<br/>
-Original link: <http://www.sqlservercentral.com/blogs/john-huangs-blog/2015/11/19/print-long-string/><br/>
+Original link: http://www.sqlservercentral.com/blogs/john-huangs-blog/2015/11/19/print-long-string/<br/>
 Tested on SQL Server version: 2014
+
+
+## [usp_Generate_Merge](usp_Generate_Merge.sql)
+Author: Narayana Vyas Kondreddi<br/>
+Original link: https://github.com/SQLauto/generate-sql-merge/blob/master/master.dbo.sp_generate_merge.sql<br/>
+Tested on SQL Server version: 2008/2012/2014
