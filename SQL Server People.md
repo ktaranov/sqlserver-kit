@@ -11,6 +11,7 @@ Most valuable professionals in SQL Server Database world
 | Robert Sheldon    | [Robert Simple-Talk]       | Unknown           | Unknown                 | -         | -                |
 | Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com     | 9         | [Berry MVP]      |
 | Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com | -         | -                |
+| Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                 | 4         | [Little MVP]     |
 
 
 To do:
@@ -22,7 +23,7 @@ To do:
  - [x] Kenneth Fisher
  - [x] Glenn Alan Berry
  - [ ] Sean Smith
- - [ ] Kendra Little
+ - [x] Kendra Little
  - [ ] Jeremiah Peschka
  - [ ] Jes Borland
 
@@ -35,6 +36,7 @@ To do:
 [Robert Simple-Talk]:https://www.simple-talk.com/author/robert-sheldon/
 [Glenn Blog]:https://sqlserverperformance.wordpress.com/
 [Kenneth Blog]:http://sqlstudies.com/
+[Kendra Blog]:http://www.littlekendra.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -42,9 +44,11 @@ To do:
 [@phil_factor]:https://twitter.com/phil_factor
 [@GlennAlanBerry]:https://twitter.com/GlennAlanBerry
 [@sqlstudent144]:https://twitter.com/sqlstudent144
+[@Kendra_Little]:https://twitter.com/Kendra_Little
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
 [Hallengren MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000459?fullName=Ola%20%20Hallengren
 [Sommarskog MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5440?fullName=erland%20sommarskog
 [Berry MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4000600?fullName=Glenn%20Alan%20Berry
+[Little MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039606?fullName=Kendra%20%20Little
