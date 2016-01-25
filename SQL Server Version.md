@@ -60,14 +60,14 @@ contains all the fixes that are included with previous service packs and any new
 
 | Version | Latest Update                                  | Build Number                 | Release Date              | Support Ends | Other Updates                                                     |
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Download CTP3.1 2016]                         | 13.00.801.12                 | 2015-12-01                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Download CTP3.2 2016]                         | 13.0.900.73                  | 2015-12-11                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download SP1 2014] then<br/>[CU4 KB3106660]   | 12.0.4100.1<br/>12.0.4427.24 | 2015-05-15<br/>2015-12-21 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download SP3 2012] then<br/>[CU1 KB3123299]   | 11.0.6020.0<br/>11.0.6518.0  | 2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Download SP4 2005] then<br/>[CU3 2507769]     | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
-[Download CTP3.1 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
+[Download CTP3.2 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:https://support.microsoft.com/en-us/kb/3058865
 [CU4 KB3106660]:https://support.microsoft.com/en-us/kb/3106660
 [Download SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
@@ -107,7 +107,7 @@ contains all the fixes that are included with previous service packs and any new
 
 | Version            | Codename    | RTM (no SP)  | SP1                             | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2016    | ?           | [CTP 3.1]    |                                 |                                 |                                   |                                 |
+| SQL Server 2016    | ?           | [CTP 3.2]    |                                 |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8  | [12.0.4100.1]<br/>12.1.4100.1   |                                 |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60 | [11.0.3000.0]<br/>11.1.3000.0   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
 | SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1 | [10.50.2500.0]<br/>10.51.2500.0 | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
@@ -116,7 +116,7 @@ contains all the fixes that are included with previous service packs and any new
 | SQL Server 2000    | Shiloh      | 8.0.194      | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
 | SQL Server 7.0     | Sphinx      | 7.0.623      | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[CTP 3.1]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
+[CTP 3.2]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [12.0.4100.1]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
 [11.0.3000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=35575
 [11.0.5058.0]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
@@ -143,7 +143,8 @@ contains all the fixes that are included with previous service packs and any new
 
 | Build        | File version     | KB / Description                                                                | Release Date |
 |--------------|------------------|---------------------------------------------------------------------------------|--------------|
-| 13.0.801.12  | 2015.130.801.12  | [Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)]           | 2015-12-01   |
+| 13.0.900.73  | 2015.130.900.73  | [Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)]           | 2015-12-11   |
+| 13.0.801.12  | 2015.130.801.12  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-12-01   |
 | 13.0.700.242 | 2015.130.700.242 | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)             | 2015-10-28   |
 | 13.0.600.65  | 2015.130.600.65  | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)             | 2015-09-30   |
 | 13.0.500.53  | 2015.130.500.53  | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)             | 2015-08-28   |
@@ -152,7 +153,7 @@ contains all the fixes that are included with previous service packs and any new
 | 13.0.300.44  | 2015.130.300.444 | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-24   |
 | 13.0.200.172 | 2015.130.200.172 | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-27   |
 
-[Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
+[Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 
 
 ## Microsoft SQL Server 2014 Builds
