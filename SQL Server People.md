@@ -12,6 +12,7 @@ Most valuable professionals in SQL Server Database world
 | Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com     | 9         | [Berry MVP]      |
 | Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com | -         | -                |
 | Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                 | 4         | [Little MVP]     |
+| Jeff Moden        | [Jeff Articles]            | Unknown           | Unknown                 | 8         | [Moden MVP]      |
 
 
 To do:
@@ -26,6 +27,7 @@ To do:
  - [x] Kendra Little
  - [ ] Jeremiah Peschka
  - [ ] Jes Borland
+ - [ ] Paul White
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -37,6 +39,7 @@ To do:
 [Glenn Blog]:https://sqlserverperformance.wordpress.com/
 [Kenneth Blog]:http://sqlstudies.com/
 [Kendra Blog]:http://www.littlekendra.com/
+[Jeff Articles]:http://www.sqlservercentral.com/Authors/Articles/Jeff_Moden/80567/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -52,3 +55,4 @@ To do:
 [Sommarskog MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5440?fullName=erland%20sommarskog
 [Berry MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4000600?fullName=Glenn%20Alan%20Berry
 [Little MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039606?fullName=Kendra%20%20Little
+[Moden MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4020758?fullName=jeff%20moden
