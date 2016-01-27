@@ -139,3 +139,9 @@ Tested on SQL Server version: 2014
 Author: Narayana Vyas Kondreddi<br/>
 Original link: https://github.com/SQLauto/generate-sql-merge/blob/master/master.dbo.sp_generate_merge.sql<br/>
 Tested on SQL Server version: 2008/2012/2014
+
+
+## [usp_Generate_Merge](usp_SSIS_ScriptEnvironment.sql)
+Author: Jeff Jordan<br/>
+Original link: http://www.sqlservercentral.com/articles/Integration+Services+%28SSIS%29/135173/<br/>
+Tested on SQL Server version: 2012/2014
