@@ -3,28 +3,28 @@ GO
 
 
 ALTER PROCEDURE dbo.usp_BulkUpload (
-     @path                 NVARCHAR(900)  --  add a slash (\) at the end of a variable @path
-    ,@fileName             NVARCHAR(200) = ''
-    ,@fileExtension        NVARCHAR(10) = N'txt'
-    ,@databaseName         SYSNAME
-    ,@schemaName           SYSNAME = N'dbo'
-    ,@tableName            SYSNAME
-    ,@useIdentity          TINYINT    = 1
-    ,@identityColumnName   SYSNAME = ''
-    ,@CODEPAGE             NVARCHAR(30) = N'1251'
-    ,@DATAFILETYPE         NVARCHAR(30) = N'char'
-    ,@FIELDTERMINATOR      NVARCHAR(10) = N'\t'
-    ,@FIRSTROW             INTEGER = 1
-    ,@KEEPNULLS            BIT = 0
-    ,@LASTROW              INTEGER = 0
-    ,@ROWTERMINATOR        NVARCHAR(10) = N'\n'
-    ,@TABLOCK              BIT = 1
-    ,@ERRORFILE            NVARCHAR(300) = ''
-    ,@excludeColumns       NVARCHAR(MAX) = ''''''
-    ,@rowOrder             NVARCHAR(MAX) = ''
-    ,@orderColumnName      BIT = 1
-    ,@databaseRecoveryMode NVARCHAR(30) = ''  --  FULL, BULK_LOGGED, SIMPLE
-    ,@debug                BIT = 0  --  0, 1
+                @path                 NVARCHAR(900)  -- add a slash (\) at the end of a variable @path
+              , @fileName             NVARCHAR(200) = ''
+              , @fileExtension        NVARCHAR(10)  = N'txt'
+              , @databaseName         SYSNAME
+              , @schemaName           SYSNAME       = N'dbo'
+              , @tableName            SYSNAME
+              , @useIdentity          TINYINT       = 1  -- 1 - table with identity and identity column exists in file; 2 - table with identity and identity column not exists in file; 0 - table without identity
+              , @identityColumnName   SYSNAME       = ''
+              , @CODEPAGE             NVARCHAR(30)  = N'1251'
+              , @DATAFILETYPE         NVARCHAR(30)  = N'char'
+              , @FIELDTERMINATOR      NVARCHAR(10)  = N'\t'
+              , @FIRSTROW             INTEGER       = 1
+              , @KEEPNULLS            BIT           = 0
+              , @LASTROW              INTEGER       = 0
+              , @ROWTERMINATOR        NVARCHAR(10)  = N'\n'
+              , @TABLOCK              BIT           = 1
+              , @ERRORFILE            NVARCHAR(300) = N''
+              , @excludeColumns       NVARCHAR(MAX) = N''''''
+              , @rowOrder             NVARCHAR(MAX) = N''
+              , @orderColumnName      BIT           = 1    -- 0 - physical column order; 1 - alphabetical
+              , @databaseRecoveryMode NVARCHAR(15)  = N''  -- FULL; BULK_LOGGED; SIMPLE
+              , @debug                BIT           = 0    -- 0 - only print tsql statement; 1 - exec tsql statement
 )
 AS
 /*
@@ -58,54 +58,54 @@ BULK INSERT
     )]
 
 -- For table with Identity Column ID with SET IDENTITY_INSERT ON @useIdentity  = 1 and KEEPIDENTITY property
-EXECUTE [dbo].[usp_BulkUpload] @path         = 'd:\GIT\GazEco\NIIGAZ\TXT\',
-                               @databaseName = 'DatabaseName',
-                               @tableName    = 'TableName',
+EXECUTE [dbo].[usp_BulkUpload] @path         = N'd:\',
+                               @databaseName = N'DatabaseName',
+                               @tableName    = N'TableName',
                                @useIdentity  = 1,
                                @debug        = 0;
 
 -- For table with Identity Column ID without SET IDENTITY_INSERT ON @useIdentity  = 2
-EXECUTE [dbo].[usp_BulkUpload] @path         = 'd:\GIT\GazEco\NIIGAZ\TXT\',
-                               @databaseName = 'DatabaseName',
-                               @tableName    = 'TableName',
+EXECUTE [dbo].[usp_BulkUpload] @path         = N'd:\',
+                               @databaseName = N'DatabaseName',
+                               @tableName    = N'TableName',
                                @useIdentity  = 2,
                                @debug        = O;
 -- For table without Identity Column @useIdentity  = 0
-EXECUTE [dbo].[usp_BulkUpload] @path         = 'd:\GIT\GazEco\NIIGAZ\TXT\', @useIdentity  = 0
-                               @databaseName = 'DatabaseName',
-                               @tableName    = 'TableName',
+EXECUTE [dbo].[usp_BulkUpload] @path         = N'd:\',
+                               @databaseName = N'DatabaseName',
+                               @tableName    = N'TableName',
                                @useIdentity  = 0,
                                @debug        = 0;
 */
 BEGIN
     BEGIN TRY
-        DECLARE @databaseRecoveryModeCurrent VARCHAR(20);
-        DECLARE @tsqlCommand    NVARCHAR(MAX)  = '';
-        DECLARE @ParamDefinitionIndentity NVARCHAR(500)  = N'@identityColumnNameIN NVARCHAR(200), @ColumnsOUT VARCHAR(MAX) OUTPUT';
-        DECLARE @tableFullName  NVARCHAR(600)  = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
-        DECLARE @#tableName     NVARCHAR(600)  = QUOTENAME('#' + @tableName);
-        DECLARE @OBJECT_ID      INTEGER        = OBJECT_ID(@tableFullName);
-        DECLARE @Columns        NVARCHAR(MAX) = '';
-        DECLARE @filePath       NVARCHAR(MAX)  = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
-        DECLARE @CrLf           NVARCHAR(10)   = CHAR(13);
-        DECLARE @TROW50000      NVARCHAR(MAX) = '';
+        DECLARE @databaseRecoveryModeCurrent NVARCHAR(15);
+        DECLARE @tsqlCommand    NVARCHAR(MAX) = '';
+        DECLARE @ParamDefinitionIndentity NVARCHAR(500) = N'@identityColumnNameIN NVARCHAR(200), @ColumnsOUT VARCHAR(MAX) OUTPUT';
+        DECLARE @tableFullName  NVARCHAR(600) = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+        DECLARE @#tableName     NVARCHAR(600) = QUOTENAME('#' + @tableName);
+        DECLARE @OBJECT_ID      INTEGER       = OBJECT_ID(@tableFullName);
+        DECLARE @Columns        NVARCHAR(MAX) = N'';
+        DECLARE @filePath       NVARCHAR(MAX) = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
+        DECLARE @CrLf           NVARCHAR(10)  = CHAR(13);
+        DECLARE @TROW50000      NVARCHAR(MAX) = N'';
 
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @Crlf;
 
-        SET @TROW50000 = 'Table ' + @tableFullName + ' is not exists in database ' + QUOTENAME(@databaseName) + '!!!';
+        SET @TROW50000 = N'Table ' + @tableFullName + N' is not exists in database ' + QUOTENAME(@databaseName) + N'!!!';
         IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
 
         IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
-        IF @debug = 1 PRINT ISNULL(N'@filePath = {' + @filePath + N'}', '@filePath = Null');
+        IF @debug = 1 PRINT ISNULL(N'@filePath = {' + @filePath + N'}', N'@filePath = Null');
 
         IF @ERRORFILE = '' SET @ERRORFILE = @path + @tableFullName + N'_error_' + REPLACE(CONVERT(NCHAR(23), GETDATE(), 126), ':', '_') + N'.txt';
 
         IF @databaseRecoveryMode <> ''
         BEGIN
             SELECT @databaseRecoveryModeCurrent = recovery_model_desc
-             FROM sys.databases
+            FROM   sys.databases
             WHERE name = @databaseName;
             IF @debug = 1 PRINT ISNULL('@databaseRecoveryModeCurrent = {' + @databaseRecoveryModeCurrent + '}', '@databaseRecoveryModeCurrent = Null');
 
