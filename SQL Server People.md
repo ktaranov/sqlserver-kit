@@ -1,21 +1,21 @@
 # Microsoft SQL Server People
 Most valuable professionals in SQL Server Database world
 
-| Name              | Site/Blog                  | Twitter           | Email                   | MVP Count | MVP page         |
-|-------------------|----------------------------|-------------------|----------------------   |----------:|------------------|
-| Brent Ozar        | [Brent Ozar Blog]          | [@BrentO]         | help@brentozar.com      | 7         | [Ozar MVP]       |
-| Adam Machanic     | [SQLBlog]                  | [@AdamMachanic]   | Unknown                 | 12        | [Machanic MVP]   |
-| Ola Hallengren    | [Ola Maintenance Solution] | [@olahallengren]  | ola@hallengren.com      | 3         | [Hallengren MVP] |
-| Erland Sommarskog | [Sommarskog Blog]          | Unknown           | esquel@sommarskog.se    | 13        | [Sommarskog MVP] |
-| Phil Factor       | [Phil Simple-Talk]         | [@phil_factor]    | Unknown                 | -         | -                |
-| Robert Sheldon    | [Robert Simple-Talk]       | Unknown           | Unknown                 | -         | -                |
-| Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com     | 9         | [Berry MVP]      |
-| Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com | -         | -                |
-| Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                 | 4         | [Little MVP]     |
-| Jeff Moden        | [Jeff Articles]            | Unknown           | Unknown                 | 8         | [Moden MVP]      |
-| Paul White        | [Paul SQLBlog]             | [@SQL_Kiwi]       | Unknown                 | 5         | [White MVP]      |
-| Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                 | 7         | [Strate MVP]     |
-| Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | Unknown                 | 5         | [Peschka MVP]    |
+| Name              | Site/Blog                  | Twitter           | Email                      | MVP Count | MVP page         |
+|-------------------|----------------------------|-------------------|-------------------------   |----------:|------------------|
+| Brent Ozar        | [Brent Ozar Blog]          | [@BrentO]         | help@brentozar.com         | 7         | [Ozar MVP]       |
+| Adam Machanic     | [SQLBlog]                  | [@AdamMachanic]   | Unknown                    | 12        | [Machanic MVP]   |
+| Ola Hallengren    | [Ola Maintenance Solution] | [@olahallengren]  | ola@hallengren.com         | 3         | [Hallengren MVP] |
+| Erland Sommarskog | [Sommarskog Blog]          | Unknown           | esquel@sommarskog.se       | 13        | [Sommarskog MVP] |
+| Phil Factor       | [Phil Simple-Talk]         | [@phil_factor]    | Unknown                    | -         | -                |
+| Robert Sheldon    | [Robert Simple-Talk]       | Unknown           | Unknown                    | -         | -                |
+| Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com        | 9         | [Berry MVP]      |
+| Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com    | -         | -                |
+| Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                    | 4         | [Little MVP]     |
+| Jeff Moden        | [Jeff Articles]            | Unknown           | Unknown                    | 8         | [Moden MVP]      |
+| Paul White        | [Paul SQLBlog]             | [@SQL_Kiwi]       | Unknown                    | 5         | [White MVP]      |
+| Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                    | 7         | [Strate MVP]     |
+| Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | jeremiah.peschka@gmail.com | 5         | [Peschka MVP]    |
 
 
 To do:
