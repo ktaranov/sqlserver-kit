@@ -24,13 +24,8 @@ To do:
  - [ ] Aaron Bertrand http://sqlperformance.com/author/abertrand
  - [ ] Kevin Kline http://sqlperformance.com/author/kkline
  - [ ] John Sansom
- - [x] Kenneth Fisher
- - [x] Glenn Alan Berry
  - [ ] Sean Smith
- - [x] Kendra Little
- - [x] Jeremiah Peschka
  - [ ] Jes Borland
- - [x] Paul White
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -45,7 +40,7 @@ To do:
 [Jeff Articles]:http://www.sqlservercentral.com/Authors/Articles/Jeff_Moden/80567/
 [Paul SQLBlog]:http://sqlblog.com/blogs/paul_white/
 [Jason Blog]:http://www.jasonstrate.com/
-[Jeremiah Blog]:https://jeremiahpeschka.com/
+[Jeremiah Blog]:http://facility9.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
