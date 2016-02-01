@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (162 trace flags).
+Complete list of Microsoft SQL Server trace flags (180 trace flags).
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -50,7 +50,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## Trace flag list
-Summary: 162 trace flags
+Summary: 180 trace flags
 
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all connections<br />
@@ -75,16 +75,25 @@ Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Serv
 
 
 **Trace Flag: 106**<br />
-Function: This enables you to see the messages that are sent to and from
-the Publisher, if you are using Web Synchronization<br />
+Function: This enables you to see the messages that are sent to and from the Publisher, if you are using Web Synchronization<br />
 Link: http://technet.microsoft.com/en-us/library/ms151872(v=sql.105).aspx
 
 
 **Trace Flag: 107**<br />
-Function: Alter input rules for decimal numbers<br />
-Link: http://support.microsoft.com/kb/203787
-
+Function: SQL 6.5/7/8 – Interprets numbers with a decimal point as float instead of decimal<br />
+Link: http://support.microsoft.com/kb/203787<br />
+Link: https://support.microsoft.com/en-us/kb/155714<br />
 *Thanks to: http://www.sqlservercentral.com*
+
+
+**Trace Flag: 110**<br />
+Function: SQL 6.5 – Turns off ANSI select characteristics<br />
+Link: https://support.microsoft.com/en-us/kb/152032
+
+
+**Trace Flag: 146**<br />
+Function: Consider using when replaying against SQL 8.0, to avoid an attempt to set an encrypted connection.<br />
+Link: None
 
 
 **Trace Flag: 168**<br />
@@ -92,20 +101,80 @@ Function: Bugfix in ORDER BY<br />
 Link: http://support.microsoft.com/kb/926292
 
 
+**Trace Flag: 204**<br />
+Function: SQL 6.5 – Backward compatibility switch that enables non-ansi standard behavior. E.g. previously SQL server ignored trailing blanks in the like statement and allowed queries that contained aggregated functions to have items in the group by clause that were not in the select list.<br />
+Link: None
+
+
 **Trace Flag: 205**<br />
 Function: Log usage of AutoStat/Auto Update Statistics<br />
 Link: http://support.microsoft.com/kb/195565
 
 
+**Trace Flag: 206**<br />
+Function: SQL 6.5 – Provides backward compatibility for the set user statement. KB 160732<br />
+Link: None
+
+
+**Trace Flag: 208**<br />
+Function: SET QUOTED IDENTIFIER ON<br />
+Link: None
+
+
+**Trace Flag: 210**<br />
+Function: SQL 9 – Error when you run a query against a view: "An error occurred while executing batch"<br />
+Link: https://support.microsoft.com/en-us/kb/945892
+
+
+**Trace Flag: 212**<br />
+Function: SQL 9 – Query may run much slower when compared to SQL 8 when you use a cursor to run the query<br />
+Link: https://support.microsoft.com/en-us/kb/951184
+
+
+**Trace Flag: 237**<br />
+Function: Tells SQL Server to use correlated sub-queries in Non-ANSI standard backward compatibility mode<br />
+Link: None
+
+
+**Trace Flag: 242**<br />
+Function: Provides backward compatibility for correlated subqueries where non-ANSI-standard results are desired<br />
+Link: None
+
+
+**Trace Flag: 243**<br />
+Function: Provides backward compatibility for nullability behavior. When set, SQL Server has the same nullability violation behavior as that of a ver 4.2: Processing of the entire batch is terminated if the nullability error (inserting NULL into a NOT NULL field) can be detected at compile time; Processing of offending row is skipped, but the command continues if the nullability violation is detected at run time.Behavior of SQL Server is now more consistent because nullability checks are made at run time and a nullability violation results in the command terminating and the batch or transaction process continuing.<br />
+Link: None
+
+
+**Trace Flag: 244**<br />
+Function: Disables checking for allowed interim constraint violations. By default, SQL Server checks for and allows interim constraint violations. An interim constraint violation is caused by a change that removes the violation such that the constraint is met, all within a single statement and transaction. SQL Server checks for interim constraint violations for self-referencing DELETE statements, INSERT, and multi-row UPDATE statements. This checking requires more work tables. With this trace flag you can disallow interim constraint violations, thus requiring fewer work tables.<br />
+Link: None
+
+
+**Trace Flag: 246**<br />
+Function: Derived or NULL columns must be explicitly named in a select…INTO or create view statement when not done they raise an error. This flag avoids that.<br />
+Link: None
+
+
 **Trace Flag: 253**<br />
-Function: Prevent adhoc query plans from staying in cache (SQL 2005)<br />
+Function: Prevents ad-hoc query plans to stay in cache<br />
 Link: http://www.sqlservercentral.com/Forums/Topic837613-146-1.aspx
+
+
+**Trace Flag: 257**<br />
+Function: Will invoke a print algorithm on the XML output before returning it to make the XML result more readable<br />
+Link: None
 
 
 **Trace Flag: 260**<br />
 Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). Scope: global or session<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx
+
+
+**Trace Flag: 262**<br />
+Function: SQL 7 – Trailing spaces are no longer truncated from literal strings in CASE statements<br />
+Link: https://support.microsoft.com/en-us/kb/891116
 
 
 **Trace Flag: 272**<br />
@@ -125,9 +194,19 @@ Function: Outputs info about actual join order<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
+**Trace Flag: 320**<br />
+Function: Disables join-order heuristics used in ANSI joins. To see join-order heuristics use flag 310. SQL Server uses join-order heuristics to reduce of permutations when using the best join order. <br />
+Link: None
+
+
 **Trace Flag: 323**<br />
 Function: Outputs detailed info about updates<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+
+
+**Trace Flag: 325**<br />
+Function: Prints information about the cost of using a non-clustered index or a sort to process an ORDER BY clause<br />
+Link: None
 
 
 **Trace Flag: 345**<br />
