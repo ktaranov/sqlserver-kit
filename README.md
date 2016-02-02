@@ -10,6 +10,7 @@ Headers:
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL format code](#tsql-format-code)
  - [Free SQL Server ebooks](#free-sql-server-ebooks)
+ - [License](#license)
 
 
 ## Repo folders and files
@@ -226,6 +227,11 @@ Here's just SQL Server 2008 Management Studio:
  - [E-books Directory](http://www.e-booksdirectory.com/listing.php?category=569)
  - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
 
+
+## License
+[MIT](/LICENSE.md)
+
+If some procedures or scripts are restricted due to **ELUA** (or we can't find original author), please email or add issue - we remove/update it immediately. Thanks for understanding and patience.
 
 [BRENT OZAR]:http://www.brentozar.com/
 [Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
