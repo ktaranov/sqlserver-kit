@@ -10,7 +10,6 @@ Headers:
 Source links:
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
- - SQL Server Central TF List: http://www.sqlservercentral.com/articles/trace+flags/70131/
  - MSDN TF list: http://sqlserverpedia.com/wiki/Trace_Flags
  - Albert van der Sel TF list: http://antapex.org/traceflags_sqlserver.txt
  - Technet Wiki TF list: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
@@ -169,7 +168,8 @@ Link: None
 **Trace Flag: 260**<br />
 Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). Scope: global or session<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
-Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx<br />
+Scope: global
 
 
 **Trace Flag: 262**<br />
@@ -223,6 +223,12 @@ Link: None
 **Trace Flag: 610**<br />
 Function: Minimally logged inserts to indexed tables<br />
 Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx
+
+
+**Trace Flag: 634**<br />
+Function: Disables the background columnstore compression task<br />
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 652**<br />
@@ -283,12 +289,18 @@ Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_pe
 **Trace Flag: 1118**<br />
 Function: Force Uniform Extent Allocation<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
-Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx
+Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx<br />
+Scope: global
 
 
 **Trace Flag: 1119**<br />
 Function: Turns of mixed extent allocation (Similar to 1118?)<br />
 Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+
+
+**Trace Flag: 1124**<br />
+Function: Unknown. Has been reportedly found turned on in some SQL Server instances running Dynamics AX. Also rumored to be invalid in public builds of SQL Server<br />
+Link: None
 
 
 **Trace Flag: 1140**<br />
@@ -301,31 +313,28 @@ Function: Prints detailed lock information as every request for a lock is made (
 Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
 
 
-**Trace Flag: 1124**<br />
-Function: Unknown. Has been reportedly found turned on in some SQL
-Server instances running Dynamics AX. Also rumored to be invalid in
-public builds of SQL Server<br />
-Link: None
-
-
 **Trace Flag: 1204**<br />
 Function: Returns info about deadlocks<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 1211**<br />
 Function: Disables Lock escalation caused by memory pressure<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global or session
 
 
 **Trace Flag: 1222**<br />
 Function: Returns Deadlock info in XML format<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 1224**<br />
 Function: Disables lock escalation based on number of locks<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global or session
 
 
 **Trace Flag: 1236**<br />
@@ -456,7 +465,8 @@ Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-record
 
 **Trace Flag: 2528**<br />
 Function: Disables parallelism in CHECKDB etc<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 2529**<br />
@@ -633,7 +643,8 @@ Link: http://support.microsoft.com/kb/2567366/en-us
 
 **Trace Flag: 3205**<br />
 Function: Disable HW compression for backup to tape drives<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 3213**<br />
@@ -692,7 +703,8 @@ Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-deb
 
 **Trace Flag: 3625**<br />
 Function: Masks some error messages<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 3656**<br />
@@ -765,7 +777,8 @@ Link: http://support.microsoft.com/kb/2667211
 
 **Trace Flag: 4199**<br />
 Function: Turn on all optimizations<br />
-Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx
+Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx<br />
+Scope: global or session
 
 
 **Trace Flag: 4606**<br />
@@ -775,7 +788,8 @@ Link: None
 
 **Trace Flag: 4616**<br />
 Function: Alters server-level meta data visibility<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 6527**<br />
@@ -783,8 +797,8 @@ Function: Disables generation of a memory dump on the first occurrence of an out
 The behaviour of the trace flag is as follows:
 If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used.
 If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
-Scope: global <br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 7300**<br />
@@ -799,7 +813,8 @@ Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-deb
 
 **Trace Flag: 7806**<br />
 Function: Enables DAC on SQL Server Express<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 
 **Trace Flag: 7826**<br />
@@ -868,6 +883,7 @@ Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2005-slowing-down-after
 
 **Trace Flag: 8032**<br />
 Function: Alters cache limit settings<br />
+Warning: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
