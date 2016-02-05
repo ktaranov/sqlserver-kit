@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (180 trace flags).
+Complete list of Microsoft SQL Server trace flags (214 trace flags).
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -49,7 +49,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## Trace flag list
-Summary: 180 trace flags
+Summary: 214 trace flags
 
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all connections<br />
@@ -209,20 +209,44 @@ Function: Prints information about the cost of using a non-clustered index or a 
 Link: None
 
 
+**Trace Flag: 326**<br />
+Function: Prints information about estimated & actual costs of sorts. Instructs server to use arithmetic averaging when calculating density instead of a geometric weighted average when updating statistics. Useful for building better stats when an index has skew on the leading column. Use only for updating the stats of a table/index with known skewed data.<br />
+Link: None
+
+
+**Trace Flag: 330**<br />
+Function: Enables full output when using the SET SHOWPLAN_ALL option, which gives detailed information about joins<br />
+Link: None
+
+
+**Trace Flag: 342**<br />
+Function: Disables the costing of pseudo-merge joins, thus significantly reducing time spent on the parse for certain types of large, multi-table joins. One can also use SET FORCEPLAN ON to disable the costing of pseudo-merge joins because the query is forced to use the order specified in the FROM clause. <br />
+Link: None
+
+
 **Trace Flag: 345**<br />
 Function: Changes join order selection logic in SQL Server 6.5<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
 **Trace Flag: 445**<br />
-Function: Prints ”compile issued” message in the errorlog for each
-compiled statement, when used together with 3605<br />
+Function: Prints ”compile issued” message in the errorlog for each compiled statement, when used together with 3605<br />
+Link: None
+
+
+**Trace Flag: 506**<br />
+Function: Enforces SQL-92 standards regarding null values for comparisons between variables and parameters. Any comparison of variables and parameters that contain a NULL always results in a NULL.<br />
 Link: None
 
 
 **Trace Flag: 610**<br />
 Function: Minimally logged inserts to indexed tables<br />
 Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx
+
+
+**Trace Flag: 611**<br />
+Function: SQL 9 – When turned on, each lock escalation is recorded in the error log along with the SQL Server handle number<br />
+Link: None
 
 
 **Trace Flag: 634**<br />
@@ -234,6 +258,11 @@ Scope: global
 **Trace Flag: 652**<br />
 Function: Disable page pre-fetching scans<br />
 Link: http://support.microsoft.com/kb/920093
+
+
+**Trace Flag: 653**<br />
+Function: Disables read ahead for the current connection<br />
+Link: None
 
 
 **Trace Flag: 661**<br />
@@ -248,9 +277,29 @@ errorlog<br />
 Link: http://blogs.msdn.com/b/sqljourney/archive/2012/07/28/an-in-depth-look-at-ghost-records-in-sql-server.aspx
 
 
+**Trace Flag: 698**<br />
+Function: SQL 9 – Performance of INSERT operations against a table with an identity column may be slow when compared to SQL 8<br />
+Link: https://support.microsoft.com/en-gb/kb/940545
+
+
+**Trace Flag: 699**<br />
+Function: Turn off transaction logging for the entire SQL dataserver<br />
+Link: None
+
+
 **Trace Flag: 806**<br />
 Function: Turn on Page Audit functionality, to verify page validity<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
+
+
+**Trace Flag: 809**<br />
+Function: SQL 8 – Limits the amount of Lazy write activity<br />
+Link: None
+
+
+**Trace Flag: 815**<br />
+Function: SQL 8/9 – Enables latch enforcement. SQL Server 8 (with service pack 4) and SQL Server 9 can perform latch enforcement for data pages found in the buffer pool cache. Latch enforcement changes the virtual memory protection state while database page status changes from "clean" to "dirty" ("dirty" means modified through INSERT, UPDATE or DELETE operation). If an attempt is made to modify a data page while latch enforcement is set, it causes an exception and creates a mini-dump in SQL Server installation's LOG directory. Microsoft support can examine the contents of such mini-dump to determine the cause of the exception. In order to modify the data page the connection must first acquire a modification latch. Once the data modification latch is acquired the page protection is changed to read-write. Once the modification latch is released the page protection changes back to read-only.<br />
+Link: None
 
 
 **Trace Flag: 818**<br />
@@ -259,10 +308,30 @@ Used to troubleshoot IO problems<br />
 Link: http://support.microsoft.com/kb/826433
 
 
+**Trace Flag: 828**<br />
+Function: SQL 8 - When enabled checkpoint ignores the recovery interval target and keeps steady I/O otherwise it uses recovery interval setting as a target for the length of time that checkpoint will take<br />
+Link: https://support.microsoft.com/en-gb/kb/906121
+
+
+**Trace Flag: 830**<br />
+Function: SQL 9 – Disable the reporting of CPU Drift errors in the SQL Server errorlog like SQL Server has encountered 2 occurrence(s) of I/O requests taking longer than 15 seconds to complete<br />
+Link: None
+
+
+**Trace Flag: 831**<br />
+Function: Protect unchanged pages in the buffer pool to catch memory corruptions<br />
+Link: None
+
+
 **Trace Flag: 834**<br />
 Function: Large Page Allocations<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: http://support.microsoft.com/kb/920093
+
+
+**Trace Flag: 835**<br />
+Function: SQL 9 / 10 – On 64 bit SQL Server it turns off Lock pages in memory<br />
+Link: None
 
 
 **Trace Flag: 836**<br />
@@ -270,14 +339,31 @@ Function: Use the max server memory option for the buffer pool<br />
 Link: http://support.microsoft.com/kb/920093
 
 
+**Trace Flag: 840**<br />
+Function: SQL 9 – When trace turned on, SQL Server can perform larger I/O extent reads to populate the buffer pool when SQL Server starts this populates the buffer pool faster. Additionally, the larger I/O extent reads improve the initial query compilation and the response time when SQL Server starts.<br />
+Link: https://support.microsoft.com/en-gb/kb/912322
+
+
+**Trace Flag: 842**<br />
+Function: Use sys.dm_os_memory_node_access_stats to verify local vs. foreign memory under NUMA configurations after turning on this flag<br />
+Link: None
+
+
 **Trace Flag: 845**<br />
 Function: Enable Lock pages in Memory on Standard Edition<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-performance-with-dynamics-axapta.aspx
+Link: http://www.sqlservice.se/sv/start/blogg/sql-server-performance-with-dynamics-axapta.aspx<br />
+Link: https://support.microsoft.com/en-gb/kb/970070
 
 
 **Trace Flag: 902**<br />
 Function: Bypass Upgrade Scripts<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx
+Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx<br />
+Link: https://support.microsoft.com/en-gb/kb/2163980
+
+
+**Trace Flag: 1106**<br />
+Function: SQL 9 - Used space in tempdb increases continuously when you run a query that creates internal objects in tempdb<br />
+Link: https://support.microsoft.com/en-gb/kb/947204
 
 
 **Trace Flag: 1117**<br />
@@ -308,9 +394,24 @@ Function: Fix for growing tempdb in special cases<br />
 Link: http://support.microsoft.com/kb/2000471
 
 
+**Trace Flag: 1180**<br />
+Function: SQL 7 - Forces allocation to use free pages for text or image data and maintain efficiency of storage.  Helpful in case when DBCC SHRINKFILE and SHRINKDATABASE commands may not work because of sparsely populated text, ntext, or image columns.<br />
+Link: None
+
+
+**Trace Flag: 1197**<br />
+Function: Applies only in the case of SQL 7 – SP3, similar with trace flag 1180<br />
+Link: None
+
+
 **Trace Flag: 1200**<br />
 Function: Prints detailed lock information as every request for a lock is made (the process ID and type of lock requested)<br />
 Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+
+
+**Trace Flag: 1202**<br />
+Function: Insert blocked lock requests into syslocks<br />
+Link: None
 
 
 **Trace Flag: 1204**<br />
@@ -319,10 +420,25 @@ Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
 
 
+**Trace Flag: 1205**<br />
+Function: More detailed information about the command being executed at the time of a deadlock. Documented in SQL 7 BOL.<br />
+Link: None
+
+
+**Trace Flag: 1206**<br />
+Function: Used to complement flag 1204 by displaying other locks held by deadlock parties<br />
+Link: None
+
+
 **Trace Flag: 1211**<br />
 Function: Disables Lock escalation caused by memory pressure<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global or session
+
+
+**Trace Flag: 1216**<br />
+Function:  SQL 7 - Disables Health reporting. Lock monitor when detects a (worker thread) resource level blocking scenario. If a SPID that owns a lock is currently queued to the scheduler, because all the assigned worker threads have been created and all the assigned worker threads are in an un-resolvable wait state, the following error message is written to the SQL Server error log: Error 1223: Process ID %d:%d cannot acquire lock "%s" on resource %s because a potential deadlock exists on Scheduler %d for the resource. Process ID %d:% d holds a lock "%h" on this resource.<br />
+Link: None
 
 
 **Trace Flag: 1222**<br />
@@ -343,9 +459,19 @@ in SQL 2012 and SQL 2014<br />
 Link: http://support.microsoft.com/kb/2926217
 
 
+**Trace Flag: 1261**<br />
+Function: SQL 8 - Disables Health reporting. Lock monitor when detects a (worker thread) resource level blocking scenario. If a SPID that owns a lock is currently queued to the scheduler, because all the assigned worker threads have been created and all the assigned worker threads are in an un-resolvable wait state, the following error message is written to the SQL Server error log: Error 1229: Process ID %d:%d owns resources that are blocking processes on scheduler %d.<br />
+Link: None
+
+
 **Trace Flag: 1264**<br />
 Function: Collect process names in non-yielding scenario memory dumps<br />
 Link: http://support.microsoft.com/kb/2630458/en-us
+
+
+**Trace Flag: 1400**<br />
+Function: SQL 9 RTM – Enables creation of database mirroring endpoint, which is required for setting up and using database mirroring<br />
+Link: None
 
 
 **Trace Flag: 1448**<br />
@@ -353,14 +479,53 @@ Function: Alters replication log reader functionality<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
+**Trace Flag: 1449**<br />
+Function: When you use SNAC to connect to an instance of a principal server in a database mirroring session: "The connection attempted to fail over to a server that does not have a failover partner".<br />
+Link: https://support.microsoft.com/en-gb/kb/936179
+
+
 **Trace Flag: 1462**<br />
 Function: Disable Mirroring Log compression<br />
 Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2007/09/17/database-mirroring-log-compression-in-sql-server-2008-improves-throughput.aspx
 
 
+**Trace Flag: 1603**<br />
+Function: Use standard disk I/O (i.e. turn off asynchronous I/O)<br />
+Link: None
+
+
+**Trace Flag: 1604**<br />
+Function: Once enabled at start up makes SQL Server output information regarding memory allocation requests<br />
+Link: None
+
+
+**Trace Flag: 1609**<br />
+Function: Turns on the unpacking and checking of RPC information in Open Data Services. Used only when applications depend on the old behavior.<br />
+Link: None
+
+
+**Trace Flag: 1610**<br />
+Function: Boot the SQL dataserver with TCP_NODELAY enabled<br />
+Link: None
+
+
+**Trace Flag: 1611**<br />
+Function: If possible, pin shared memory -- check errorlog for success/failure<br />
+Link: None
+
+
+**Trace Flag: 1613**<br />
+Function: Set affinity of the SQL data server engine's onto particular CPUs -- usually pins engine 0 to processor 0, engine 1 to processor 1...<br />
+Link: None
+
+
+**Trace Flag: 1704**<br />
+Function: Prints information when a temporary table is created or dropped<br />
+Link: None
+
+
 **Trace Flag: 1717**<br />
-Function: MSShipped bit will be set automatically at Create time when
-creating stored procedures<br />
+Function: MSShipped bit will be set automatically at Create time when creating stored procedures<br />
 Link: None
 
 
