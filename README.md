@@ -17,7 +17,7 @@ Headers:
  - [SQL Server Name Convention](/SQL Server Name Convention.md)
  - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 162 Trace Flags') (Complete list - 162 trace flags)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 214 Trace Flags') (Complete list - 214 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Articles](/Articles)
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
@@ -128,6 +128,7 @@ Headers:
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
     - Best backup and index maintenance solution [Ola Maintenance Solution]
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
+    - [SQLMag](http://sqlmag.com/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -221,7 +222,9 @@ Here's just SQL Server 2008 Management Studio:
 
 ## Free SQL Server ebooks
  - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
+ - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
+ - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
  - [OnlineVideoLectures ebooks](http://onlinevideolecture.com/ebooks/?subject=SQL-Server)
  - [Brent Ozar ebooks](http://www.brentozar.com/first-aid/free-database-books-pdfs-download/)
  - [E-books Directory](http://www.e-booksdirectory.com/listing.php?category=569)
