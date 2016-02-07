@@ -16,6 +16,7 @@ Most valuable professionals in SQL Server Database world
 | Paul White        | [Paul SQLBlog]             | [@SQL_Kiwi]       | Unknown                    | 5         | [White MVP]      |
 | Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                    | 7         | [Strate MVP]     |
 | Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | jeremiah.peschka@gmail.com | 5         | [Peschka MVP]    |
+| Gail Shaw         | [Gail Blog]                | [@SQLintheWild]   | Unknown                    | 8         | [Shaw MVP]       |
 
 
 To do:
@@ -41,6 +42,7 @@ To do:
 [Paul SQLBlog]:http://sqlblog.com/blogs/paul_white/
 [Jason Blog]:http://www.jasonstrate.com/
 [Jeremiah Blog]:http://facility9.com/
+[Gail Blog]:http://sqlinthewild.co.za
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -52,6 +54,7 @@ To do:
 [@SQL_Kiwi]:https://twitter.com/SQL_Kiwi
 [@StrateSQL]:https://twitter.com/StrateSQL
 [@peschkaj]:https://twitter.com/peschkaj
+[@SQLintheWild]:https://twitter.com/SQLintheWild
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -63,3 +66,4 @@ To do:
 [White MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032572?fullName=Paul%20%20White
 [Strate MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025370?fullName=Jason%20%20Strate
 [Peschka MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025617?fullName=Jeremiah%20%20Peschka
+[Shaw MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4020752?fullName=gail%20shaw
