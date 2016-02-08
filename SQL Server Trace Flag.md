@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (214 trace flags).
+Complete list of Microsoft SQL Server trace flags (231 trace flags).
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -49,7 +49,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## Trace flag list
-Summary: 214 trace flags
+Summary: 231 trace flags
 
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all connections<br />
@@ -529,15 +529,24 @@ Function: MSShipped bit will be set automatically at Create time when creating s
 Link: None
 
 
+**Trace Flag: 1802**<br />
+Function: SQL 9 - After detaching a database that resides on network-attached storage, you cannot reattach the SQL Server database<br />
+Link: https://support.microsoft.com/en-us/kb/922804
+
+
 **Trace Flag: 1806**<br />
 Function: Disable Instant File Initialization<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
 
 
 **Trace Flag: 1807**<br />
-Function: Enable option to have database files on SMB share for SQL
-Server 2008 and 2008R2<br />
+Function: Enable option to have database files on SMB share for SQL Server 2008 and 2008R2<br />
 Link: http://blogs.msdn.com/b/varund/archive/2010/09/02/create-a-sql-server-database-on-a-network-shared-drive.aspx
+
+
+**Trace Flag: 1903**<br />
+Function: SQL 8 - When you capture a SQL Profiler trace in a file and then you try to import the trace files into tables by using the fn_trace_gettable function no rows may be returned<br />
+Link: https://support.microsoft.com/en-us/kb/911678
 
 
 **Trace Flag: 2301**<br />
@@ -550,6 +559,11 @@ Function: Forces the query optimizer to use the SQL Server 2014 version
 of the cardinality estimator when creating the query plan when running
 SQL Server 2014 with database compatibility level 110<br />
 Link: http://support.microsoft.com/kb/2801413
+
+
+**Trace Flag: 2328**<br />
+Function: SQL 9+ - Makes cardinality estimates upon resulting selectivity.  The reasoning for this is that one or more of the constants may be statement parameters, which would change from one execution of the statement to the next.<br />
+Link: None
 
 
 **Trace Flag: 2330**<br />
@@ -608,24 +622,50 @@ Function: Fixes performance problem when using large numbers of locks<br />
 Link: http://support.microsoft.com/kb/2754301/en-us
 
 
+**Trace Flag: 2440**<br />
+Function: SQL 10 - Parallel query execution strategy on partitioned tables. SQL 9 used single thread per partition parallel query execution strategy. In SQL 10, multiple threads can be allocated to a single partition by turning on this flag.<br />
+Link: None
+
+
 **Trace Flag: 2453**<br />
-Function: Allow a table variable to trigger recompile when enough number
-of rows are changed with may allow the query optimizer to choose a more
-efficient plan.<br />
+Function: Allow a table variable to trigger recompile when enough number of rows are changed with may allow the query optimizer to choose a more efficient plan.<br />
 Link: http://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br />
 Link: http://http//support.microsoft.com/kb/2952444
 
 
 **Trace Flag: 2470**<br />
-Function: Fixes performance problem when using AFTER triggers on
-partitioned tables<br />
+Function: Fixes performance problem when using AFTER triggers on partitioned tables<br />
 Link: http://support.microsoft.com/kb/2606883/en-us
 
 
+**Trace Flag: 2505**<br />
+Function: SQL 7 - Prevents DBCC TRACEON 208, SPID 10 errors from appearing in the error log<br />
+Link: https://support.microsoft.com/en-us/kb/243352
+
+
+**Trace Flag: 2508**<br />
+Function: Disables parallel non-clustered index checking for DBCC CHECKTABLE<br />
+Link: None
+
+
+**Trace Flag: 2509**<br />
+Function: Used with DBCC CHECKTABLE to see the total count of forward records in a table<br />
+Link: None
+
+
 **Trace Flag : 2514**<br />
-Function: Verbose Merge Replication logging to msmerge\_history table
-for troubleshooting Merger repl performance<br />
+Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
 Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-records-backups-and-database-compression-with-a-pinch-of-security-considerations.aspx
+
+
+**Trace Flag: 2520**<br />
+Function: Forces DBCC HELP to return syntax of undocumented DBCC statements. If 2520 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC statement 'undocumented statement'". dbcc help ('?')<br />
+Link: None
+
+
+**Trace Flag: 2521**<br />
+Function: SQL 7 SP2 - Facilitates capturing a Sqlservr.exe user-mode crash dump for postmortem analysis<br />
+Link: None
 
 
 **Trace Flag: 2528**<br />
@@ -647,26 +687,22 @@ Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowm
 
 
 **Trace Flag: 2540**<br />
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: http://support.microsoft.com/kb/917825/en-us
 
 
 **Trace Flag: 2541**<br />
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: http://support.microsoft.com/kb/917825/en-us
 
 
 **Trace Flag: 2542**<br />
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: http://support.microsoft.com/kb/917825/en-us
 
 
 **Trace Flag: 2543**<br />
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: http://support.microsoft.com/kb/917825/en-us
 
 
@@ -693,9 +729,7 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 
 **Trace Flag: 2548**<br />
-Function: Shrink will run faster with this trace flag if there are LOB
-pages that need conversion and/or compaction, because that actions will
-be skipped.<br />
+Function: Shrink will run faster with this trace flag if there are LOB pages that need conversion and/or compaction, because that actions will be skipped.<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2008/03/28/how-it-works-sql-server-2005-dbcc-shrink-may-take-longer-than-sql-server-2000.aspx
 
 *Thanks to: Andrzej Kukula*
@@ -781,19 +815,40 @@ Function: Get more information about undocumented DBCC commands<br />
 Link: http://www.sqlservice.se/sv/start/blogg/trace-flag--undocumented-commands.aspx
 
 
+**Trace Flag: 2701**<br />
+Function: SQL 6.5 - Sets the @@ERROR system function to 50000 for RAISERROR messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
+Link: None
+
+
 **Trace Flag: 2861**<br />
-Function: Keep zero cost plans in cache<br />
-Link: http://support.microsoft.com/kb/325607
+Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cache Zero-Cost Query Plan<br />
+Link: http://support.microsoft.com/kb/325607<br />
+
+
+**Trace Flag: 3001**<br />
+Function: Stops sending backup entries into MSDB<br />
+Link: None
 
 
 **Trace Flag: 3004**<br />
-Function: Returns more info about Instant File Initialization<br />
+Function: Returns more info about Instant File Initialization. Shows information about backups and file creations use with 3605 to direct to error log.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-restorebackup-doing/<br />
 Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
 
 
 **Trace Flag: 3014**<br />
 Function: Returns more info about backups to the errorlog<br />
 Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
+
+
+**Trace Flag: 3023**<br />
+Function: How to enable the CHECKSUM option if backup utilities do not expose the option<br />
+Link: https://support.microsoft.com/kb/2656988
+
+
+**Trace Flag: 3031**<br />
+Function: SQL 9 - Will turn the NO_LOG and TRUNCATE_ONLY options into checkpoints in all recovery modes<br />
+Link: None
 
 
 **Trace Flag: 3042**<br />
@@ -803,7 +858,27 @@ Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 **Trace Flag: 3101**<br />
 Function: Fix performance problems when restoring database with CDC<br />
-Link: http://support.microsoft.com/kb/2567366/en-us
+Link: http://support.microsoft.com/kb/2567366/
+
+
+**Trace Flag: 3104**<br />
+Function: Causes SQL Server to bypass checking for free space<br />
+Link: None
+
+
+**Trace Flag: 3106**<br />
+Function: Required to move sys databases<br />
+Link: None
+
+
+**Trace Flag: 3111**<br />
+Function: Cause LogMgr::ValidateBackedupBlock to be skipped during backup and restore operation<br />
+Link: None
+
+
+**Trace Flag: 3117**<br />
+Function: QL 9 - SQL Server 2005 tries to restore the log files and the data files in a single step which some third-party snapshot backup utilities do not support. Turing on 3117 does things the SQL 8 way multiple-step restore process.<br />
+Link: https://support.microsoft.com/en-us/kb/915385
 
 
 **Trace Flag: 3205**<br />
