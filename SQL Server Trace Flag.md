@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (231 trace flags).
+Complete list of Microsoft SQL Server trace flags (300 trace flags).
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -49,11 +49,11 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## Trace flag list
-Summary: 231 trace flags
+Summary: 300 trace flags
 
 **Trace Flag: -1**<br />
-Function: Sets trace flags for all connections<br />
-Link:  None (Yusuf Anis)
+Function: Sets trace flags for all client connections, rather than for a single client connection. Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using DBCC TRACEON and DBCC TRACEOFF.<br />
+Link: http://www.sql-server-performance.com/2002/traceflags/
 
 
 **Trace Flag: 101**<br />
@@ -888,14 +888,14 @@ Scope: global
 
 
 **Trace Flag: 3213**<br />
-Function: Output buffer info for backups to ERRORLOG
-<br />
+Function: Output buffer info for backups to ERRORLOG<br />
 Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-performance-of-backup-compression-in-sql-server-2008.aspx
 
 
 **Trace Flag: 3226**<br />
 Function: Turns off ”Backup Successful” messages in errorlog<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Scope: global
 
 *Thanks to: @lwiederstein (https://twitter.com/lwiederstein)*
 
@@ -905,14 +905,54 @@ Function: Log record auditing<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
 
 
+**Trace Flag: 3231**<br />
+Function: SQL 8/9 - Will turn the NO_LOG and TRUNCATE_ONLY options into no-ops in FULL/BULK_LOGGED recovery mode, and will clear the log in SIMPLE recovery mode. When set, BACKUP LOG with TRUNCATE_ONLY and BACKUP LOG with NO_LOG do not allow a log backup to run if the database's recovery model is FULL or BULK_LOGGED.<br />
+Link: None
+
+
+**Trace Flag: 3282**<br />
+Function: SQL 6.5 - Used after backup restoration fails<br />
+Link: https://support.microsoft.com/en-us/kb/215458
+
+
+**Trace Flag: 3422**<br />
+Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery). This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose. Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
+Link: https://support.microsoft.com/en-us/kb/215458
+
+
 **Trace Flag: 3502**<br />
 Function: Writes info about checkpoints to teh errorlog<br />
 Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
 
 
+**Trace Flag: 3503**<br />
+Function: Indicates whether the checkpoint at the end of automatic recovery was skipped for a database (this applies only to read-only databases)<br />
+Link: http://www.sql-server-performance.com/2002/traceflags/
+
+
+**Trace Flag: 3504**<br />
+Function: For internal testing. Will raise a bogus log-out-of-space condition from checkpoint<br />
+Link: None
+
+
 **Trace Flag: 3505**<br />
 Function: Disables automatic checkpointing<br />
 Link: http://support.microsoft.com/kb/815436
+
+
+**Trace Flag: 3601**<br />
+Function: Stack trace when error raised. Also see 3603.<br />
+Link: None
+
+
+**Trace Flag: 3602**<br />
+Function: Records all error and warning messages sent to the client<br />
+Link: None
+
+
+**Trace Flag: 3603**<br />
+Function: SQL Server fails to install on tricore, Bypass SMT check is enabled, flags are added via registry. Also see 3601.<br />
+Link: None
 
 
 **Trace Flag: 3604**<br />
@@ -941,10 +981,35 @@ Function: Do not create tempdb at startup<br />
 Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/
 
 
+**Trace Flag: 3610**<br />
+Function: SQL 9 - Divide by zero to result in NULL instead of error<br />
+Link: None
+
+
 **Trace Flag: 3625**<br />
 Function: Masks some error messages<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
+
+
+**Trace Flag: 3626**<br />
+Function: Turns on tracking of the CPU data for the sysprocesses table.<br />
+Link: None
+
+
+**Trace Flag: 3635**<br />
+Function: Print diagnostic information. Trace Flag 3635 Diagnostics are written to the console that started it. There are not written to the errorlog, even if 3605 is turned on.<br />
+Link: None
+
+
+**Trace Flag: 3640**<br />
+Function: Eliminates sending DONE_IN_PROC messages to client for each statement in stored procedure. This is similar to the session setting of SET NOCOUNT ON, but when set as a trace flag, every client session is handled this way.<br />
+Link: None
+
+
+**Trace Flag: 3654**<br />
+Function:Allocations to stack<br />
+Link: None
 
 
 **Trace Flag: 3656**<br />
@@ -962,14 +1027,34 @@ Function: Removes messages to error log about traces started and stopped<br />
 Link: http://support.microsoft.com/kb/922578/en-us
 
 
+**Trace Flag: 3689**<br />
+Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default. Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
+Link: http://support.microsoft.com/kb/922578/en-us
+
+
 **Trace Flag: 3801**<br />
 Function: Prohibits use of USE DB statement<br />
 Link: None
 
 
- **Trace Flag: 3923**<br />
-Function: Let SQL Server throw an exception to the application when the 3303 warning message is raised.<br />
+**Trace Flag: 3913**<br />
+Function: SQL 7/8 - SQL Server does not update the rowcnt column of the sysindexes system table until the transaction is committed. When turned on the optimizer gets row count information from in-memory metadata that is saved to sysindexes system table when the transaction commits.<br />
+Link: None
+
+
+**Trace Flag: 3923**<br />
+Function: Let SQL Server throw an exception to the application when the 3303 warning message is raised<br />
 Link: https://support.microsoft.com/kb/3014867/en-us
+
+
+**Trace Flag: 4001**<br />
+Function: Very verbose logging of each login attempt to the error log. Includes tons of information<br />
+Link: None
+
+
+**Trace Flag: 4010**<br />
+Function: Allows only shared memory connections to the SQL Server. Meaning, you will only be able to connect from the server machine itself. Client connections over TCP/IP or named pipes will not happen.<br />
+Link: None
 
 
 **Trace Flag: 4013**<br />
@@ -977,9 +1062,89 @@ Function: Log each new connection the error log<br />
 Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html
 
 
+**Trace Flag: 4020**<br />
+Function: Boot without recover<br />
+Link: None
+
+
 **Trace Flag: 4022**<br />
 Function: Bypass Startup procedures<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx
+
+
+**Trace Flag: 4029**<br />
+Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default. Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
+Link: None
+
+
+**Trace Flag: 4030**<br />
+Function: Prints both a byte and ASCII representation of the receive buffer. Used when you want to see what queries a client is sending to SQL Server. You can use this trace flag if you experience a protection violation and want to determine which statement caused it. Typically, you can set this flag globally or use SQL Server Enterprise Manager. You can also use DBCC INPUTBUFFER.<br />
+Link: None
+
+
+**Trace Flag: 4031**<br />
+Function: Prints both a byte and ASCII representation of the send buffers (what SQL Server sends back to the client). You can also use DBCC OUTPUTBUFFER.<br />
+Link: None
+
+
+**Trace Flag: 4032**<br />
+Function: Traces the SQL commands coming in from the client. When enabled with 3605 it will direct those all to the error log.<br />
+Link: None
+
+
+**Trace Flag: 4044**<br />
+Function: SA account can be unlocked by rebooting server with trace flag. If sa (or sso_role) password is lost, add this to your RUN_serverfile. This will generate new password when server started.<br />
+Link: None
+
+
+**Trace Flag: 4052**<br />
+Function: SQL 9+ Prints TDS packets sent to the client (output) to console. Startup only.<br />
+Link: None
+
+
+**Trace Flag: 4055**<br />
+Function: SQL 9+ Prints TDS packets received from the client to console. Startup only.<br />
+Link: None
+
+
+**Trace Flag: 4102**<br />
+Function: SQL 9 - Query performance is slow if the execution plan of the query contains semi join operators Typically, semi join operators are generated when the query contains the IN keyword or the EXISTS keyword. Enable flag 4102 and 4118 to overcome this.<br />
+Link: https://support.microsoft.com/en-us/kb/940128
+
+
+**Trace Flag: 4104**<br />
+Function: SQL 9 - Overestimating cardinality of JOIN operator. When additional join predicates are involved, this problem may increase the estimated cost of the JOIN operator to the point where the query optimizer chooses a different join order. When the query optimizer chooses a different join order, SQL 9 system performance may be slow.<br />
+Link: https://support.microsoft.com/en-us/kb/920346
+
+
+**Trace Flag: 4107**<br />
+Function: SQL 9 - When you run a query that references a partitioned table, query performance may decrease<br />
+Link: https://support.microsoft.com/en-us/kb/923849
+
+
+**Trace Flag: 4116**<br />
+Function: SQL 9 - Query runs slowly when using joins between a local and a remote table<br />
+Link: https://support.microsoft.com/en-us/kb/950880
+
+
+**Trace Flag: 4121**<br />
+Function: SQL 9 - Query that involves an outer join operation runs very slowly. However, if you use the FORCE ORDER query hint in the query, the query runs much faster. Additionally, the execution plan of the query contains the following text in the Warnings column: NO JOIN PREDICATE.<br />
+Link: None
+
+
+**Trace Flag: 4123**<br />
+Function: Query that has many outer joins takes a long time to compile in SQL Server 2005<br />
+Link: https://support.microsoft.com/en-us/kb/943060
+
+
+**Trace Flag: 4125**<br />
+Function: SQL 9 - Query may take more time to finish if using an inner join to join a derived table that uses DISTINCT keyword<br />
+Link: https://support.microsoft.com/en-us/kb/949854
+
+
+**Trace Flag: 4127**<br />
+Function: SQL 9 - Compilation time of some queries is very long in an x64-based version. Basically its more than execution time because more memory allocations are necessary in the compilation process.<br />
+Link: https://support.microsoft.com/en-us/kb/953569
 
 
 **Trace Flag: 4130**<br />
@@ -1022,23 +1187,70 @@ Scope: global or session
 
 
 **Trace Flag: 4606**<br />
-Function: Ignore domain policy about weak password<br />
+Function: Over comes SA password by startup. Disables password policy check during server startup.<br />
+Link: https://support.microsoft.com/en-us/kb/936892
+
+
+**Trace Flag: 4610**<br />
+Function: When you use trace flag 4618 together with trace flag 4610, the number of entries in the cache store is limited to 8,192. When the limit is reached, SQL 2005 removes some entries from the TokenAndPermUserStore cache store.<br />
+Link: https://support.microsoft.com/en-us/kb/959823
+
+
+**Trace Flag: 4612**<br />
+Function: Disable the ring buffer logging - no new entries will be made into the ring buffer<br />
 Link: None
 
 
+**Trace Flag: 4613**<br />
+Function: Generate a minidump file whenever an entry is logged into the ring buffer<br />
+Link: None
+
+
+**Trace Flag: 4614**<br />
+Function: Enables SQL Server authenticated logins that use Windows domain password policy enforcement to log on to the instance even though the SQL Server service account is locked out or disabled on the Windows domain controller.<br />
+Link: https://support.microsoft.com/en-us/kb/925744
+
+
 **Trace Flag: 4616**<br />
-Function: Alters server-level meta data visibility<br />
+Function: Makes server-level metadata visible to application roles. In SQL Server, an application role cannot access metadata outside its own database because application roles are not associated with a server-level principal. This is a change of behavior from earlier versions of SQL Server. Setting this global flag disables the new restrictions, and allows for application roles to access server-level metadata.<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
+
+
+**Trace Flag: 4618**<br />
+Function: Limits number of entries per user cache store to 1024. It may incur a small CPU overhead as when removing old cache entries when new entries are inserted. It performs this action to limit the size of the cache store growth. However, the CPU overhead is spread over time.<br />
+Link: https://support.microsoft.com/en-us/kb/933564
+
+
+**Trace Flag: 4621**<br />
+Function: SQL 9 – After 4610 & 4618 you can still customize the quota for TokenAndPermUserStore cache store that is based on the current workload<br />
+Link: https://support.microsoft.com/en-us/kb/959823
+
+
+**Trace Flag: 5101**<br />
+Function: Forces all I/O requests to go through engine 0. This removes the contention between processors but could create a bottleneck if engine 0 becomes busy with non-I/O tasks.<br />
+Link: None
+
+
+**Trace Flag: 5102**<br />
+Function: Prevents engine 0 from running any non-affinitied tasks.<br />
+Link: None
+
+
+**Trace Flag: 5302**<br />
+Function: Alters default behavior of select…INTO (and other processes) that lock system tables for the duration of the transaction. This trace flag disables such locking during an implicit transaction.<br />
+Link: None
 
 
 **Trace Flag: 6527**<br />
-Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration. By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR.
-The behaviour of the trace flag is as follows:
-If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used.
-If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
+Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration. By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR. The behaviour of the trace flag is as follows: If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used. If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
+
+
+**Trace Flag: 7103**<br />
+Function: Disable table lock promotion for text columns<br />
+Link: https://support.microsoft.com/en-us/kb/230044
 
 
 **Trace Flag: 7300**<br />
@@ -1051,8 +1263,43 @@ Function: Disable cursor plan caching for extended stored procedures<br />
 Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/
 
 
+**Trace Flag: 7505**<br />
+Function: Enables version 6.x handling of return codes when calling dbcursorfetchex and the resulting cursor position follows the end of the cursor result set<br />
+Link: None
+
+
+**Trace Flag: 7525**<br />
+Function: SQL 8 - Reverts to ver 7 behavior of closing nonstatic cursors regardless of the SET CURSOR_CLOSE_ON_COMMIT state<br />
+Link: None
+
+
+**Trace Flag: 7601**<br />
+Function: Helps in gathering more information in full text search by turning on full text tracing which gathers information on indexing process using the error log. Also 7603, 7604, 7605 trace flags.<br />
+Link: None
+
+
+**Trace Flag: 7608**<br />
+Function: Performance fix for slow full text population with a composite clustered index<br />
+Link: https://support.microsoft.com/en-us/kb/938672
+
+
+**Trace Flag: 7613**<br />
+Function: SQL 9 - Search results are missing when performing a full-text search operation on Win SharePoint Services 2.0 site after upgrading<br />
+Link: https://support.microsoft.com/en-us/kb/927643
+
+
+**Trace Flag: 7614**<br />
+Function: SQL 9 - Full-text index population for the indexed view is very slow<br />
+Link: https://support.microsoft.com/en-us/kb/928537
+
+
+**Trace Flag: 7646**<br />
+Function: SQL 10 - Avoids blocking when using full text indexing. An issue we experienced that full text can be slow when there is a high number of updates to the index and is caused by blocking on the docidfilter internal table.<br />
+Link: None
+
+
 **Trace Flag: 7806**<br />
-Function: Enables DAC on SQL Server Express<br />
+Function: SQL 9 - Enables a dedicated administrator connection on SQL Express, DAC resources are not reserved by default<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
 
@@ -1073,6 +1320,11 @@ Function: Changes CPU Affinity behaviour<br />
 Link: http://support.microsoft.com/kb/818769
 
 
+**Trace Flag: 8004**<br />
+Function: SQL server to create a mini-dump once you enable 2551 and a out of memory condition is hit<br />
+Link: None
+
+
 **Trace Flag: 8010**<br />
 Function: Fixes problem that SQL Server services can not be stopped<br />
 Link: http://support.microsoft.com/kb/2633271/en-us
@@ -1080,7 +1332,8 @@ Link: http://support.microsoft.com/kb/2633271/en-us
 
 **Trace Flag: 8011**<br />
 Function: Disable the ring buffer for Resource Monitor<br />
-Link: http://support.microsoft.com/kb/920093
+Link: http://support.microsoft.com/kb/920093<br />
+Scope: global
 
 
 **Trace Flag: 8012**<br />
@@ -1090,8 +1343,16 @@ Link: http://support.microsoft.com/kb/920093
 
 **Trace Flag: 8015**<br />
 Function: Ignore NUMA functionality<br />
+Link: https://support.microsoft.com/en-us/kb/948450<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html
+
 *Thanks to: @sql\_handle (https://twitter.com/sql_handle)*
+
+
+**Trace Flag: 8017**<br />
+Function: Upgrade version conflict<br />
+Link: http://social.msdn.microsoft.com/Forums/eu/sqlexpress/thread/dd6fdc16-9d8d-4186-9549-85ba4c322d10<br />
+Link: http://connect.microsoft.com/SQLServer/feedback/details/407692/indicateur-de-trace-8017-reported-while-upgrading-from-ssee2005-to-ssee2008
 
 
 **Trace Flag: 8018**<br />
@@ -1127,9 +1388,15 @@ Warning: Trace flag 8032 can cause poor performance if large caches make less me
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
+**Trace Flag: 8033**<br />
+Function: Alters cache limit settings<br />
+Warning: SQL 9 - Disable the reporting of CPU Drift errors in the SQL Server error log like time stamp counter of CPU on scheduler id 1 is not synchronized with other CPUs.<br />
+Link: None
+
+
 **Trace Flag: 8038**<br />
-Function: will drastically reduce the number of context switches when
-running SQL 2005 or 2008<br />
+Function: Will drastically reduce the number of context switches when running SQL 2005 or 2008<br />
+Link: https://support.microsoft.com/en-us/kb/972767<br />
 Link: http://forum.proxmox.com/threads/15844-Win7-x64-guest-with-SQLServer-2012-High-CPU-usage<br />
 Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
 
@@ -1149,20 +1416,54 @@ Link: http://blogs.msdn.com/b/psssql/archive/2011/09/01/sql-server-2008-2008-r2-
 Related to: 8015, 9024
 
 
+**Trace Flag: 8049**<br />
+Function: SQL 9+ Startup only – Allows use of 1ms times even when patched. Check 8038 for details.<br />
+Link: https://support.microsoft.com/en-us/kb/972767
+
+
+**Trace Flag: 8202**<br />
+Function: Used to replicate UPDATE as DELETE/INSERT pair at the publisher. i.e. UPDATE commands at the publisher can be run as an "on-page DELETE/INSERT" or a "full DELETE/INSERT". If the UPDATE command is run as an "on-page DELETE/INSERT," the Logreader send UDPATE command to the subscriber, If the UPDATE command is run as a "full DELETE/INSERT," the Logreader send UPDATE as DELETE/INSERT Pair. If you turn on trace flag 8202, then UPDATE commands at the publisher will be always send to the subscriber as DELETE/INSERT pair.<br />
+Link: None
+
+
+**Trace Flag: 8203**<br />
+Function: Display statement and transaction locks on a deadlock error<br />
+Link: None
+
+
+**Trace Flag: 8206**<br />
+Function: SQL 8 - Supports stored procedure execution with a user specified owner name for SQL Server subscribers or without owner qualification for heterogeneous subscribers<br />
+Link: None
+
+
 **Trace Flag: 8207**<br />
 Function: Alters Transactional Replication behaviour of UPDATE statement<br />
+Link: https://support.microsoft.com/en-us/kb/302341<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
 **Trace Flag: 8209**<br />
-Function: Output extra information to error log regarding replication of
-schema changes in SQL Server Replication<br />
+Function: Output extra information to error log regarding replication of schema changes in SQL Server Replication<br />
 Link: http://support.microsoft.com/kb/916706/en-us
 
 
+**Trace Flag: 8446**<br />
+Function: Databases in SQL 8 do not have a Service Broker ID. If you restore these databases on SQL 9 by using the WITH NORECOVERY option, these databases will not be upgraded causing mirroring & log-shipping configurations to fail.<br />
+Link: https://support.microsoft.com/en-us/kb/959008
+
+
+**Trace Flag: 8501**<br />
+Function: Writes detailed information about Ms-DTC context & state changes to the log<br />
+Link: None
+
+
+**Trace Flag: 8599**<br />
+Function: Allows you to use a save-point within a distributed transaction<br />
+Link: None
+
+
 **Trace Flag: 8602**<br />
-Function: Disable Query Hints
-<br />
+Function: Disable Query Hints<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-trace-flag-8602.aspx
 
 
@@ -1179,14 +1480,23 @@ Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-t
 
 
 **Trace Flag: 8649**<br />
-Function: Set Cost Threshold for parallelism to 0<br />
+Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx
 
 
 **Trace Flag: 8675**<br />
-Function: Displays the query optimization phases for a specific
-optimization<br />
+Function: Displays the query optimization phases for a specific optimization<br />
 Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
+
+
+**Trace Flag: 8679**<br />
+Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
+Link: None
+
+
+**Trace Flag: 8687**<br />
+Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
+Link: None
 
 
 **Trace Flag: 8690**<br />
@@ -1195,6 +1505,11 @@ Function: Disable the spool on the inner side of nested loop.<br />
 Spools improve performance in majority of the cases. But it’s based on estimates. Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance. But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/
 Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
+
+
+**Trace Flag: 8721**<br />
+Function: Dumps information into the error log when AutoStat has been run<br />
+Link: None
 
 
 **Trace Flag: 8722**<br />
@@ -1217,9 +1532,45 @@ Function: Skip trivial plan optimization and force a full optimization<br />
 Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 
 
+**Trace Flag: 8765**<br />
+Function: Allows use of variable length data, from ODBC driver; fixes the issue of a field returning the wrong data length<br />
+Link: None
+
+
 **Trace Flag: 8780**<br />
 Function: Give the optimizer more time to find a better plan<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-trace-flag--8780.aspx
+
+
+**Trace Flag: 8783**<br />
+Function: Allows DELETE, INSERT, and UPDATE statements to honor the SET ROWCOUNT ON setting when enabled<br />
+Link: None
+
+
+**Trace Flag: 8816**<br />
+Function: Logs every two-digit year conversion to a four-digit year<br />
+Link: None
+
+
+**Trace Flag: 9024**<br />
+Function: Performance fix for AlwaysON log replication<br />
+Link: http://support.microsoft.com/kb/2809338/en-us
+Related to: 8048
+
+
+**Trace Flag: 9059**<br />
+Function: SQL 8 - Turns back behavior to SP3 after a SP4 installation, this allows to choose an index seek when comparing numeric columns or numeric constants that are of different precision or scale; else would have to change schema/code.<br />
+Link: None
+
+
+**Trace Flag: 9082**<br />
+Function: SQL 9 - Stored procedure using views, perform slow compared to ver 8 if views use JOIN operator and contain sub queries<br />
+Link: https://support.microsoft.com/en-us/kb/942906
+
+
+**Trace Flag: 9134**<br />
+Function: SQL 8 - Does additional reads to test if the page is allocated & linked correctly this checks IAM & PFS. Fixes error 601 for queries under Isolation level read uncommitted. In case performance is affected (because of a bug) apply SP4.<br />
+Link: None
 
 
 **Trace Flag: 9185**<br />
@@ -1229,15 +1580,8 @@ Link: https://support.microsoft.com/en-us/kb/kbview/833406
 Related to: 9205
 
 
-**Trace Flag: 9024**<br />
-Function: Performance fix for AlwaysON log replication<br />
-Link: http://support.microsoft.com/kb/2809338/en-us
-Related to: 8048
-
-
 **Trace Flag: 9204**<br />
-Function: Output Statistics used by Query Optimizer
-When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other<br />
+Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx
 Related to: 9292
 
@@ -1255,16 +1599,12 @@ Link: https://support.microsoft.com/en-us/kb/831302
 
 
 **Trace flag: 9259**<br />
-Function: SQL 9/10 - An access violation occurs on running a query marked by the following message and a dump in the log folder: KB 970279 / 971490
-Msg 0, Level 11, State 0, Line 0 - A severe error occurred on the current command. The results, if any, should be discarded.
-Msg 0, Level 20, State 0, Line 0 - A severe error occurred on the current command. The results, if any, should be discarded.<br />
+Function: SQL 9/10 - An access violation occurs on running a query marked by the following message and a dump in the log folder: KB 970279 / 971490. Msg 0, Level 11, State 0, Line 0 - A severe error occurred on the current command. The results, if any, should be discarded.<br />
 Link: None
 
 
 **Trace flag: 9268**<br />
-Function: SQL 8 - When SQL Server runs a parameterized query that contains several IN clauses, each with a large number of values, SQL Server may return the following error message after a minute or more of high CPU utilization: KB 325658
-Server: Msg 8623, Level 16, State 1
-Internal Query Processor Error: The query processor could not produce a query plan. Contact your primary support provider for more information.<br />
+Function: SQL 8 - When SQL Server runs a parameterized query that contains several IN clauses, each with a large number of values, SQL Server may return the following error message after a minute or more of high CPU utilization: KB 325658. Server: Msg 8623, Level 16, State 1. Internal Query Processor Error: The query processor could not produce a query plan. Contact your primary support provider for more information.<br />
 Link: None
 
 
@@ -1283,6 +1623,7 @@ Link: http://support.microsoft.com/kb/2801413
 
 **Trace Flag: 9485**<br />
 Function: Disables SELECT permission for DBCC SHOW\_STATISTICS<br />
+Link: https://support.microsoft.com/en-us/kb/2683304<br />
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
