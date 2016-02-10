@@ -26,7 +26,7 @@ Headers:
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
  - [dbWarden](/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
  - [Known Errors](/Errors)
- - [Ola Maintenance Solution] (by Ola Hallengren)
+ - [Ola Maintenance Solution](/Ola_Maintenance_Solution) (by Ola Hallengren)
  - [SSMS addons](/SSMS_addons)
     - [SSMSBoost add-in](/SSMS_addons#ssmsboost 'Adds missing features and improves your productivity')
     - [SQL Code Guard](/SSMS_addons#sql-code-guard 'Provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies')
@@ -122,11 +122,11 @@ Headers:
     - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
     - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
-    - Awesome [BRENT OZAR] scripts, videos and articles
-    - [Glenn Berry's SQL Server Performance]
+    - Awesome [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
+    - [Glenn Berry's SQL Server Performance](http://sqlserverperformance.wordpress.com/)
     - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
-    - Best backup and index maintenance solution [Ola Maintenance Solution]
+    - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
     - [SQLMag](http://sqlmag.com/)
  - Free Videos
@@ -140,7 +140,7 @@ Headers:
    - [SQL Data Partners](http://sqldatapartners.com/podcast/)
    - [Away from the Keyboard](http://awayfromthekeyboard.com/)
  - Other
-    - [SQL Server Management Studio] installation download link
+    - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [SQL# CLR functions](http://www.sqlsharp.com/)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
 
@@ -207,6 +207,7 @@ Here's just SQL Server 2008 Management Studio:
  - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul_Kapoor)
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)
  - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom)
+ - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
 
 
 ## TSQL format code
@@ -235,8 +236,3 @@ Here's just SQL Server 2008 Management Studio:
 [MIT](/LICENSE.md)
 
 If some procedures or scripts are restricted due to **ELUA** (or we can't find original author), please email or add issue - we remove/update it immediately. Thanks for understanding and patience.
-
-[BRENT OZAR]:http://www.brentozar.com/
-[Glenn Berry's SQL Server Performance]:http://sqlserverperformance.wordpress.com/
-[Ola Maintenance Solution]:http://ola.hallengren.com/
-[SQL Server Management Studio]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
