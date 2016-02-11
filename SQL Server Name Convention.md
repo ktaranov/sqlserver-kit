@@ -1,4 +1,4 @@
-# SQL Server Name Convention
+# SQL Server Name Convention and T-SQL Script Formatting
 
 
 ## SQL Server Object Name
@@ -36,6 +36,53 @@
 | CLR  User-Defined Types          |      | PascalCase |     50 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |     50 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
+##T-SQL Script Formatting
+
+###General script formatting
+ - No tabs are allowed
+ - No square brackets [ ] are allowed in object names
+ - All finished expressions should have ; at the end
+ - All scripts should end with GO and line break
+ - The first argument in SELECT expression should be on the same line with it
+ - Arguments are divided by line breaks, commas should be placed before an argument
+ - FROM, WHERE, INTO expressions should be aligned so, that all their arguments are placed under each other
+
+Example:
+<pre><code>SELECT Table1.Value1
+     , Table1.Value2
+     , Table1.Value3
+INTO   #Table2
+FROM   Table1
+WHERE  Value1 = 1
+ORDER BY Value2;
+</code></pre>
+
+###Stored procedures and functions formatting
+ - All stored procedures and functions should use ALTER statement and start with the object presence check
+ - ALTER statement should be preceded by 2 line breaks
+ - Parameters should be placed under procedure name divided by line breaks
+ - After the ALTER statement  should be placed a comment with execution example
+ - The procedure or function should begin with parameter check
+
+Example:
+<pre><code>IF OBJECT_ID('usp_StoredProcedure', 'P') IS NULL
+EXECUTE('CREATE PROCEDURE usp_StoredProcedure as SELECT 1');
+GO
+
+
+ALTER PROCEDURE usp_StoredProcedure (
+                @parameter1 BIT
+              , @parameter2 BIT
+)
+/*
+EXECUTE usp_StoredProcedure
+        @parameter1 = 0
+      , @parameter2 = 1
+*/
+AS
+BEGIN
+    IF (@parameter1 < 0 OR @parameter2 > 2) RAISERROR('Not valid data parameter!', 16, 1);
+...</code></pre>
 
 ## Offical Reference
  - [Database object TECHNET] (Limitations)
