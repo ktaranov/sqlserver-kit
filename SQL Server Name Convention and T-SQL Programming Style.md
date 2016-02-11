@@ -36,53 +36,85 @@
 | CLR  User-Defined Types          |      | PascalCase |     50 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |     50 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
-##T-SQL Programming Style
+## T-SQL Programming Style
 
-###General programming style
- - No tabs are allowed
- - No square brackets [ ] are allowed in object names
+### General programming style
+ - Delimiters: spaces (not tabs)
+ - No square brackets [] are allowed in object names and alias, use only symbols [a-z] and numeric [0-9]
  - All finished expressions should have ; at the end
- - All scripts should end with GO and line break
- - The first argument in SELECT expression should be on the same line with it
- - Arguments are divided by line breaks, commas should be placed before an argument
- - FROM, WHERE, INTO expressions should be aligned so, that all their arguments are placed under each other
+ - All scripts should end with `GO` and line break
+ - The first argument in SELECT expression should be on the same line with it: `SELECT LastName ...`
+ - Arguments are divided by line breaks, commas should be placed before an argument:
+   ```
+   SELECT FirstName
+        , LastName
+   ```
+ - Keywords and data types declaration should be in **UPPERCASE**
+ - `FROM, WHERE, INTO, JOIN, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
 
 Example:
-<pre><code>SELECT Table1.Value1
-     , Table1.Value2
-     , Table1.Value3
-INTO   #Table2
-FROM   Table1
-WHERE  Value1 = 1
-ORDER BY Value2;
-</code></pre>
 
-###Stored procedures and functions programming style
+```sql
+SELECT t1.Value1 AS Val1
+     , t1.Value2 AS Val2
+     , t2.Value3 AS Val3
+  INTO #Table3
+  FROM Table1 AS t1
+ INNER JOIN Table3 AS t2
+         ON t1.Value1 = t2.Value1
+ WHERE t1.Value1 > 1
+   AND t2.Value2 >= 101
+ ORDER BY t2.Value2;
+```
+
+### Stored procedures and functions programming style
  - All stored procedures and functions should use ALTER statement and start with the object presence check
  - ALTER statement should be preceded by 2 line breaks
+ - Parameters name should be in **camelCase**
  - Parameters should be placed under procedure name divided by line breaks
- - After the ALTER statement  should be placed a comment with execution example
+ - After the ALTER statement and before AS keyword should be placed a comment with execution example
  - The procedure or function should begin with parameter check
+ - Always use `BEGIN TRY` and `BEGIN CATCH`
+ - Use `SET NOCOUNT ON` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
 
 Example:
-<pre><code>IF OBJECT_ID('usp_StoredProcedure', 'P') IS NULL
+
+```sql
+IF OBJECT_ID('usp_StoredProcedure', 'P') IS NULL
 EXECUTE('CREATE PROCEDURE usp_StoredProcedure as SELECT 1');
 GO
 
 
 ALTER PROCEDURE usp_StoredProcedure (
-                @parameter1 BIT
-              , @parameter2 BIT
+                @parameterValue1 SMALLINT
+              , @parameterValue2 NVARCHAR(300)
 )
 /*
 EXECUTE usp_StoredProcedure
-        @parameter1 = 0
-      , @parameter2 = 1
+        @parameterValue1 = 0
+      , @parameterValue2 = N'BULK'
 */
 AS
-BEGIN
-    IF (@parameter1 < 0 OR @parameter2 > 2) RAISERROR('Not valid data parameter!', 16, 1);
-...</code></pre>
+SET NOCOUNT ON;
+BEGIN TRY
+    IF (@parameterValue1 < 0 OR @parameterValue2 NOT IN ('SIMPLE', 'BULK', 'FULL'))
+    RAISERROR('Not valid data parameter!', 16, 1);
+    PRINT @parameterValue2;
+END TRY
+
+BEGIN CATCH
+    -- Print error information. 
+    PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER())   +
+          ', Severity: '  + CONVERT(varchar(5),  ERROR_SEVERITY()) +
+          ', State: '     + CONVERT(varchar(5),  ERROR_STATE())    +
+          ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-')         +
+          ', Line: '      + CONVERT(varchar(5),  ERROR_LINE())     +
+          ', User name: ' + CONVERT(sysname,     CURRENT_USER);
+    PRINT ERROR_MESSAGE();
+END CATCH;
+GO
+
+```
 
 ## Offical Reference
  - [Database object TECHNET] (Limitations)
@@ -95,6 +127,7 @@ BEGIN
  - [SQL Server CLR Integration MSDN]
  - [CLR Databse Objects MSDN]
  - [User-defined Functions]
+ - [MSDN SET NOCOUNT ON](https://msdn.microsoft.com/en-us/library/ms189837.aspx)
  
 [Database object TECHNET]:http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx
 [User-Defined Functions MSDN]:http://msdn.microsoft.com/en-us/library/ms191007.aspx
