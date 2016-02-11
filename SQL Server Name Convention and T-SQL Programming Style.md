@@ -1,4 +1,4 @@
-# SQL Server Name Convention and T-SQL Script Formatting
+# SQL Server Name Convention and T-SQL Programming Style
 
 
 ## SQL Server Object Name
@@ -36,9 +36,9 @@
 | CLR  User-Defined Types          |      | PascalCase |     50 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |     50 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
-##T-SQL Script Formatting
+##T-SQL Programming Style
 
-###General script formatting
+###General programming style
  - No tabs are allowed
  - No square brackets [ ] are allowed in object names
  - All finished expressions should have ; at the end
@@ -57,7 +57,7 @@ WHERE  Value1 = 1
 ORDER BY Value2;
 </code></pre>
 
-###Stored procedures and functions formatting
+###Stored procedures and functions programming style
  - All stored procedures and functions should use ALTER statement and start with the object presence check
  - ALTER statement should be preceded by 2 line breaks
  - Parameters should be placed under procedure name divided by line breaks
