@@ -36,15 +36,17 @@
 | CLR  User-Defined Types          |      | PascalCase |     50 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |     50 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
+
 ## T-SQL Programming Style
 
 ### General programming style
  - Delimiters: spaces (not tabs)
- - No square brackets [] are allowed in object names and alias, use only symbols [a-z] and numeric [0-9]
+ - No square brackets [] are allowed in object names and alias, use only symbols [A-z] and numeric [0-9]
  - All finished expressions should have ; at the end
  - All scripts should end with `GO` and line break
  - The first argument in SELECT expression should be on the same line with it: `SELECT LastName ...`
  - Arguments are divided by line breaks, commas should be placed before an argument:
+   
    ```
    SELECT FirstName
         , LastName
