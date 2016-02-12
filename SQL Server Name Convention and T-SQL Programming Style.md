@@ -49,7 +49,7 @@
    
    ```
    SELECT FirstName
-        , LastName
+         , LastName
    ```
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
