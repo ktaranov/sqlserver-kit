@@ -14,6 +14,7 @@ Headers:
 
 
 ## Repo folders and files
+ - [SQL Server Data Types](/SQL Server Data Types.md)
  - [SQL Server Name Convention](/SQL Server Name Convention.md)
  - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
@@ -211,6 +212,7 @@ Here's just SQL Server 2008 Management Studio:
 
 
 ## TSQL format code
+ - http://sqlinform.com/
  - http://www.dpriver.com/pp/sqlformat.htm
  - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
  - http://www.apexsql.com/sql_tools_refactor.aspx
