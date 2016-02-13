@@ -4,15 +4,21 @@ Start all procedure from if exist statement:
 IF OBJECT_ID('dbo.ProcedureName', 'P') IS NULL
 EXECUTE ('CREATE PROCEDURE dbo.ProcedureName AS SELECT 1');
 GO
-ALTER PROCEDURE dbo.usp_ProcedureName...
+ALTER PROCEDURE dbo.usp_ProcedureName(
 ```
 It helps to save all grants for procedure (analog `CREATE OR REPLACE PROCEDURE` in [Oracle](http://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_6009.htm 'Offical Oracle Documentation')).
 
 
 ## [sp_IndexAnalysis-v11](sp_IndexAnalysis-v11.sql)
 Author: Jason Strate<br/>
-Original link: <http://www.jasonstrate.com/2013/05/index-analysis-may-update/><br/>
+Original link: http://www.jasonstrate.com/2013/05/index-analysis-may-update/<br/>
 Tested on SQL Server version: 2012/2014
+
+
+## [sp_RestoreGene](sp_RestoreGene.sql)
+Author: Paul Brewer<br/>
+Original link: https://paulbrewer.wordpress.com/sp_restoregene/<br/>
+Tested on SQL Server version: 2008/2012/2014
 
 
 ## [sp_SrvPermissions](sp_SrvPermissions.sql)
@@ -53,7 +59,7 @@ Tested on SQL Server version: 2008/2012/2014
 
 ## [usp_Object_Search](usp_Object_Search.sql)
 Author: Sean Smith<br/>
-Original link: <http://www.sqlservercentral.com/scripts/object/66798/><br/>
+Original link: http://www.sqlservercentral.com/scripts/object/66798/<br/>
 Tested on SQL Server version: 2008/2012/2014
 
 
@@ -76,20 +82,20 @@ Tested on SQL Server version: 2008/2012/2014
 
 
 ## [usp_SQL_Server_System_Report](usp_SQL_Server_System_Report.sql)
-Author: Sean Smith<br/>
-Original link: <http://www.sqlservercentral.com/scripts/Administration/70243/><br/>
+Author: Sean Smith<br />
+Original link: <http://www.sqlservercentral.com/scripts/Administration/70243/><br />
 Tested on SQL Server version: 2008/2012/2014
 
 
 ## [usp_SearchOnAllDB](usp_SearchOnAllDB.sql)
-Author: David Musgrave<br/>
-Original link: None<br/>
+Author: David Musgrave<br />
+Original link: None<br />
 Tested on SQL Server version: 2008/2012/2014
 
 
 ## [usp_String_Search](usp_String_Search.sql)
-Author: Sean Smith<br/>
-Original link: None<br/>
+Author: Sean Smith<br />
+Original link: None<br />
 Tested on SQL Server version: 2008/2012/2014
 
 
@@ -124,24 +130,24 @@ Tested on SQL Server version: 2012/2014
 
 
 ## [usp_who5](usp_who5.sql)
-Author: Sean Smith<br/>
-Original link: <http://wwwservercentral.com/scripts/sp_who/68607/><br/>
+Author: Sean Smith<br />
+Original link: http://wwwservercentral.com/scripts/sp_who/68607/<br />
 Tested on SQL Server version: 2012/2014
 
 
 ## [usp_PrintString](usp_PrintString.sql)
-Author: John Huang<br/>
-Original link: http://www.sqlservercentral.com/blogs/john-huangs-blog/2015/11/19/print-long-string/<br/>
+Author: John Huang<br />
+Original link: http://www.sqlservercentral.com/blogs/john-huangs-blog/2015/11/19/print-long-string/<br />
 Tested on SQL Server version: 2014
 
 
 ## [usp_Generate_Merge](usp_Generate_Merge.sql)
 Author: Narayana Vyas Kondreddi<br/>
-Original link: https://github.com/SQLauto/generate-sql-merge/blob/master/master.dbo.sp_generate_merge.sql<br/>
+Original link: https://github.com/SQLauto/generate-sql-merge/blob/master/master.dbo.sp_generate_merge.sql<br />
 Tested on SQL Server version: 2008/2012/2014
 
 
 ## [usp_Generate_Merge](usp_SSIS_ScriptEnvironment.sql)
 Author: Jeff Jordan<br/>
-Original link: http://www.sqlservercentral.com/articles/Integration+Services+%28SSIS%29/135173/<br/>
+Original link: http://www.sqlservercentral.com/articles/Integration+Services+%28SSIS%29/135173/<br />
 Tested on SQL Server version: 2012/2014
