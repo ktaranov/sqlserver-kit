@@ -64,6 +64,7 @@ Headers:
  - [Stored Procedure](/Stored_Procedure)
    - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
    - [sp_SrvPermissions](/Stored_Procedure/sp_SrvPermissions.sql) (by Kenneth Fisher)
+   - [sp_RestoreGene](/Stored_Procedure/sp_RestoreGene.sql) (by Paul Brewer)
    - [usp_who5](/Stored_Procedure/usp_who5.sql) (by Sean Smith)
    - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql) (by Sean Smith)
    - [usp_BulkUpload](/Stored_Procedure/usp_BulkUpload.sql)
@@ -144,6 +145,8 @@ Headers:
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [SQL# CLR functions](http://www.sqlsharp.com/)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
+    - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
+    - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump)
 
 
 ## SQL Server Express direct download links
