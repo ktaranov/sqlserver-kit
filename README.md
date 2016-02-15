@@ -18,7 +18,7 @@ Headers:
  - [SQL Server Name Convention](/SQL Server Name Convention.md)
  - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 214 Trace Flags') (Complete list - 214 trace flags)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 300 Trace Flags') (Complete list - 300 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Articles](/Articles)
  - [Base line Collector script](/BaselineCollector) (by Robert Virag)
@@ -143,10 +143,11 @@ Headers:
    - [Away from the Keyboard](http://awayfromthekeyboard.com/)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
-    - [SQL# CLR functions](http://www.sqlsharp.com/)
+    - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump)
+    - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer)
 
 
 ## SQL Server Express direct download links
@@ -212,6 +213,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)
  - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom)
  - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
+ - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists)
 
 
 ## TSQL format code
