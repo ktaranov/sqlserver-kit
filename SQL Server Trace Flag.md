@@ -30,25 +30,25 @@ Source links:
  - Andrzej Kukuła
 
 
-## What are Microsoft SQL Server Trace Flags?
+## What are Microsoft SQL Server Trace Flags? <a id="what-are-microsoft-sql-server-trace-flags"></a>
 Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: https://msdn.microsoft.com/en-us/library/ms188396.aspx
 
 
-## How do I turn Trace Flags on and off?
+## How do I turn Trace Flags on and off? <a id="how-do-i-turn-trace-flags-on-and-off"></a>
  - You can use the [DBCC TRACEON](https://msdn.microsoft.com/en-us/library/ms187329.aspx "Official MSDN DBCC TRACEON Article") and [DBCC TRACEOFF](https://msdn.microsoft.com/en-us/library/ms174401.aspx "Official MSDN DBCC TRACEOFF Article") commands
  - You can use the [-T option](https://technet.microsoft.com/en-us/library/ms190737%28v=sql.120%29.aspx "Official TECHNET Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
    **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number. A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
  - You can also use the hint [QUERYTRACEON](https://support.microsoft.com/en-us/kb/2801413 "Official QUERYTRACEON KB Article") in your queries: **&lt;querytraceon_hint ::= {QUERYTRACEON trace_flag_number}>**
 
 
-## How do I know what Trace Flags are turned on at the moment?
+## How do I know what Trace Flags are turned on at the moment? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
  - You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
 
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
 
-## Trace flag list
+## Trace flag list <a id="trace-flag-list"></a>
 Summary: 300 trace flags
 
 **Trace Flag: -1**<br />
