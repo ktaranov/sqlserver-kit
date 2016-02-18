@@ -2,7 +2,7 @@
 Most valuable professionals in SQL Server Database world
 
 | Name              | Site/Blog                  | Twitter           | Email                      | MVP Count | MVP page         |
-|-------------------|----------------------------|-------------------|-------------------------   |----------:|------------------|
+|-------------------|----------------------------|-------------------|----------------------------|----------:|------------------|
 | Brent Ozar        | [Brent Ozar Blog]          | [@BrentO]         | help@brentozar.com         | 7         | [Ozar MVP]       |
 | Adam Machanic     | [SQLBlog]                  | [@AdamMachanic]   | Unknown                    | 12        | [Machanic MVP]   |
 | Ola Hallengren    | [Ola Maintenance Solution] | [@olahallengren]  | ola@hallengren.com         | 3         | [Hallengren MVP] |
@@ -17,16 +17,12 @@ Most valuable professionals in SQL Server Database world
 | Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                    | 7         | [Strate MVP]     |
 | Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | jeremiah.peschka@gmail.com | 5         | [Peschka MVP]    |
 | Gail Shaw         | [Gail Blog]                | [@SQLintheWild]   | Unknown                    | 8         | [Shaw MVP]       |
-
-
-To do:
-
- - [ ] Robert Virag
- - [ ] Aaron Bertrand http://sqlperformance.com/author/abertrand
- - [ ] Kevin Kline http://sqlperformance.com/author/kkline
- - [ ] John Sansom
- - [ ] Sean Smith
- - [ ] Jes Borland
+| Aaron Bertrand    | [Aaron Articles]           | [@AaronBertrand]  | Unknown                    | 19        | [Bertrand MVP]   |
+| Kevin Kline       | [Kevin Blog]               | [@kekline]        | kevin_e_kline@yahoo.com    | 13        | [Kline MVP]      |
+| Robert Virag      | [Robert Blog]              | Unknown           | Unknown                    | -         | -                |
+| John Sansom       | [John Blog]                | [@SqlBrit]        | Unknown                    | -         | -                |
+| Jes Borland       | [Jes Articles]             | [@grrl_geek]      | Unknown                    | 4         | [Borland MVP]    |
+| Sean Smith        | [Sean Scripts]             | Unknown           | Unknown                    | -         | -                |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -43,6 +39,12 @@ To do:
 [Jason Blog]:http://www.jasonstrate.com/
 [Jeremiah Blog]:http://facility9.com/
 [Gail Blog]:http://sqlinthewild.co.za
+[Aaron Articles]:http://sqlperformance.com/author/abertrand
+[Kevin Blog]:http://kevinekline.com/
+[Robert Blog]:http://www.sqlapprentice.net/
+[John Blog]:http://www.johnsansom.com/
+[Jes Articles]:http://blogs.lessthandot.com/index.php/author/grrlgeek/
+[Sean Scripts]:http://www.sqlservercentral.com/Authors/Scripts/Sean_Smith/776614/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -55,6 +57,10 @@ To do:
 [@StrateSQL]:https://twitter.com/StrateSQL
 [@peschkaj]:https://twitter.com/peschkaj
 [@SQLintheWild]:https://twitter.com/SQLintheWild
+[@AaronBertrand]:https://twitter.com/AaronBertrand
+[@kekline]:https://twitter.com/kekline
+[@SqlBrit]:https://twitter.com/SqlBrit
+[@grrl_geek]:https://twitter.com/grrl_geek
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -67,3 +73,6 @@ To do:
 [Strate MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025370?fullName=Jason%20%20Strate
 [Peschka MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025617?fullName=Jeremiah%20%20Peschka
 [Shaw MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4020752?fullName=gail%20shaw
+[Bertrand MVP]:https://mvp.microsoft.com/en-us/PublicProfile/8140?fullName=Aaron%20%20Bertrand
+[Kline MVP]:https://mvp.microsoft.com/en-us/PublicProfile/9508?fullName=Kevin%20E%20Kline
+[Borland MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039609?fullName=Jes%20%20Borland
