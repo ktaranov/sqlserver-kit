@@ -4,7 +4,7 @@
 ## SQL Server Object Name
 
 | Object                           | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                            |
-| -------------------------------- | ---- | ---------- | ------ | ------ | ------ | ------ | ------------ | ------------ | --------------------------------   |
+| -------------------------------- | ---- | ---------- | ------ | ------ | ------ | ------ | ------------ | -------------| -----------------------------------|
 | Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | MYDATABASE                         |
 | Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | DTR_CheckLogin                     |
 | Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | myschema                           |
