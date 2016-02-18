@@ -2,8 +2,8 @@
 Download links and complete information for all Microsoft SQL Server versions and builds
 
 Headers:
- - [What are the most recent updates for SQL Server? (by Brent Ozar)](#what-are-the-most-recent-updates-for-sql-server-by-brent-ozar)
  - [Frequently used terms and acronyms](#frequently-used-terms-and-acronyms)
+ - [What are the most recent updates for SQL Server? (by Brent Ozar)](#what-are-the-most-recent-updates-for-sql-server-by-brent-ozar)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
  - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
@@ -43,7 +43,7 @@ Useful articles:
 contains all the fixes that are included with previous service packs and any new fixes.**
 
 
-## Frequently used terms and acronyms
+## Frequently used terms and acronyms <a id="frequently-used-terms-and-acronyms"></a>
  - **CTP**: Community Technology Preview (beta release)
  - **RC**:  Release Candidate
  - **RTM**: Released To Manufacturing; It is the original, released build version of the product, i.e. what you get on the DVD or when you download the ISO file from MSDN.
@@ -56,7 +56,7 @@ contains all the fixes that are included with previous service packs and any new
  - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customer's organization.
 
 
-## What are the most recent updates for SQL Server? (by Brent Ozar)
+## What are the most recent updates for SQL Server? (by Brent Ozar) <a id="what-are-the-most-recent-updates-for-sql-server-by-brent-ozar"></a>
 
 | Version | Latest Update                                  | Build Number                 | Release Date              | Support Ends | Other Updates                                                     |
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
@@ -81,7 +81,7 @@ contains all the fixes that are included with previous service packs and any new
 [CU3 2507769]:http://support.microsoft.com/kb/2507769
 
 
-## Internal Database Version and Compatibility Level
+## Internal Database Version and Compatibility Level <a id="internal-database-version-and-compatibility-level"></a>
 
 | SQL Server Version                           | Code Name   | Release Year | Internal Database Version | Database Compatibility Level |
 |:---------------------------------------------|:------------|-------------:|--------------------------:|-----------------------------:|
@@ -103,7 +103,7 @@ contains all the fixes that are included with previous service packs and any new
 | SQL Server 1.0 (16 bit)                      | Ashton-Tate | 1989         | ?                         |  60                          |
 
 
-## Quick summary for SQL Server Service Packs
+## Quick summary for SQL Server Service Packs <a id="quick-summary-for-sql-server-service-packs"></a>
 
 | Version            | Codename    | RTM (no SP)  | SP1                             | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
@@ -139,7 +139,7 @@ contains all the fixes that are included with previous service packs and any new
 [7.0.1063]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
 
 
-## Microsoft SQL Server 2016 Builds
+## Microsoft SQL Server 2016 Builds <a id="microsoft-sql-server-2016-builds"></a>
 
 | Build         | File version      | KB / Description                                                                | Release Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|
@@ -157,7 +157,7 @@ contains all the fixes that are included with previous service packs and any new
 [Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
 
 
-## Microsoft SQL Server 2014 Builds
+## Microsoft SQL Server 2014 Builds <a id="microsoft-sql-server-2014-builds"></a>
 
 | Build        | File version     | KB / Description                                                                                                                   | Release Date |
 |--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -234,7 +234,7 @@ contains all the fixes that are included with previous service packs and any new
 [2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]:http://support.microsoft.com/kb/2977315
 
 
-## Microsoft SQL Server 2012 Builds
+## Microsoft SQL Server 2012 Builds <a id="microsoft-sql-server-2012-builds"></a>
 
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -366,7 +366,7 @@ contains all the fixes that are included with previous service packs and any new
 [2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence]:http://support.microsoft.com/kb/2685308
 
 
-## Microsoft SQL Server 2008 R2 Builds
+## Microsoft SQL Server 2008 R2 Builds <a id="microsoft-sql-server-2008-r2-builds"></a>
 
 | Build      | File version     | KB / Description                                                                                                                                                                              | Release Date |
 |------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -501,7 +501,7 @@ contains all the fixes that are included with previous service packs and any new
 [2494088 MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]:http://support.microsoft.com/kb/2494088
 
 
-## Microsoft SQL Server 2008 Builds
+## Microsoft SQL Server 2008 Builds <a id="microsoft-sql-server-2008-builds"></a>
 
 | Build      | File version     | KB / Description                                                                                                                                                                                                                                          | Release Date |
 |------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -673,7 +673,7 @@ contains all the fixes that are included with previous service packs and any new
 [SQL Server 2008 RTM]:http://msdn.microsoft.com/en-us/subscriptions/downloads/details/default.aspx?pm=pid%3a334
 
 
-## Microsoft SQL Server 2005 Builds
+## Microsoft SQL Server 2005 Builds <a id="microsoft-sql-server-2005-builds"></a>
 
 | Build     | File version   | KB / Description                                                                                                                                                                                                                                                     | Release Date |
 |-----------|----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -1165,7 +1165,7 @@ contains all the fixes that are included with previous service packs and any new
 [932557 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1399]:http://support.microsoft.com/kb/932557
 
 
-## Microsoft SQL Server 2000 Builds
+## Microsoft SQL Server 2000 Builds <a id="microsoft-sql-server-2000-builds"></a>
 
 | Build     | File version   | KB / Description                                                                                                                                                                                                                                              | Release Date |
 |-----------|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -1826,7 +1826,7 @@ contains all the fixes that are included with previous service packs and any new
 [274329 FIX: Optimizer Slow to Generate Query Plan for Complex Queries that have Many Joins and Semi-Joins]:http://support.microsoft.com/kb/274329/
 
 
-## Microsoft SQL Server 7.0 Builds
+## Microsoft SQL Server 7.0 Builds <a id="microsoft-sql-server-70-builds"></a>
 
 | Build     | KB / Description                                                                                                                                                      | Release Date |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -1924,7 +1924,7 @@ contains all the fixes that are included with previous service packs and any new
 [220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:http://support.microsoft.com/kb/220156/
 
 
-## Microsoft SQL Server 6.5 Builds
+## Microsoft SQL Server 6.5 Builds <a id="microsoft-sql-server-65-builds"></a>
 
 | Build    | KB / Description                                                                                                    | Release Date |
 |----------|---------------------------------------------------------------------------------------------------------------------|--------------|
@@ -1966,7 +1966,7 @@ contains all the fixes that are included with previous service packs and any new
 [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:http://support.microsoft.com/kb/153096/en-us#
 
 
-## Microsoft SQL Server 6.0 Builds
+## Microsoft SQL Server 6.0 Builds <a id="microsoft-sql-server-60-builds"></a>
 
 | Build    | KB / Description                              | Release Date |
 |----------|-----------------------------------------------|--------------|
