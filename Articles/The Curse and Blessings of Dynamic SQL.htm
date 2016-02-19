@@ -1,0 +1,2111 @@
+<html class="gr__sommarskog_se" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252" lang="en-gb">
+<title>The Curse and Blessings of Dynamic SQL</title>
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+small { font-size: 90%; }
+h2 { border-top: 2px dashed black; padding-top: 12pt; }
+li { margin-left: -10pt; }
+pre { margin-left: 18pt; }
+.nowrap { white-space: nowrap; }
+--></style>
+
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+--></style><style id="lleo_css_enjoyContentControls" type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls, #lleo_enjoyContentControls * { color: rgb(0, 0, 0) ! important; font: 13px/15px Arial,Helvetica ! important; margin: 0px ! important; padding: 0px ! important; background: transparent none repeat scroll 0% 0% ! important; border: 0px none ! important; position: static ! important; vertical-align: baseline ! important; overflow: visible ! important; width: auto ! important; height: auto ! important; max-width: none ! important; max-height: none ! important; float: none ! important; visibility: visible ! important; text-align: left ! important; text-transform: none ! important; border-collapse: separate ! important; border-spacing: 2px ! important; box-sizing: content-box ! important; box-shadow: none ! important; opacity: 1 ! important; text-shadow: none ! important; }
+#lleo_enjoyContentControls { background: rgb(247, 200, 117) none repeat scroll 0% 0% ! important; position: fixed ! important; right: 0px ! important; top: -40px ! important; width: 39px ! important; height: 34px ! important; opacity: 0.85 ! important; border-top-left-radius: 4px ! important; border-bottom-left-radius: 4px ! important; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3) ! important; z-index: 2147483647 ! important; overflow: hidden ! important; }
+#lleo_enjoyContentControls.lleo_show { top: 130px ! important; transition: top 0.8s ease-out 0s ! important; }
+#lleo_enjoyContentControls:hover { opacity: 1 ! important; transition: opacity 0.4s linear 0s, width 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel { white-space: nowrap ! important; margin: 9px 44px 0px 10px ! important; opacity: 0 ! important; transition: all 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls:hover #lleo_enjoyContentPanel { opacity: 1 ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel input { margin-right: 5px ! important; }
+#lleo_enjoyContentButton { background: rgb(255, 255, 255) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAk6AAAJOgHwZJJKAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADBQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL92gewAAAA90Uk5TAA0PEhUcLS9CxszS29z1M86yOAAAAFVJREFUCFtjYIADduMCMGZgvmsAxggGUFgELMXAwDq7AaI8MnULmGY9pTYRzIj5vzIALHD+/1Gw4pj/fwJA2kECYHNkgAJgK/yAAmDA8QasBQgcIRQA12YesqxFXfcAAAAASUVORK5CYII8850aa0afe766ff5b5bb3697b8de32f7") no-repeat scroll center center / 16px 16px ! important; width: 36px ! important; height: 34px ! important; cursor: pointer ! important; position: absolute ! important; right: 0px ! important; top: 0px ! important; }
+@media only screen and (min\2D\2D moz-device-pixel-ratio: 2), not all, not all {
+  #lleo_enjoyContentButton { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAABJ0AAASdAHeZh94AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAD9QTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxQXeHgAAABR0Uk5TAAQFDRkcNz1PcHSIrK6ws7/b8P5ZkzdFAAAAo0lEQVQ4y62RzQ6DMAyDTSkjpfy04Pd/1h12WAtpKk3zzfosJXGAP2l0AODGloc7BJDDtTwgTInS9kAik+W7gd6I7pLFWRK9cuZXgcyT0VjguliJwG1AYPZNvjsAC2OLXzOAYa07LPfj+YLbGJqcPOfd5OTV4WSAVlTNn1Xf+ONZD357t8KrgMbLERovlxSFV2dGhVfy2ebAlG3+SVgc8FHws96B8RE8rjk+bwAAAABJRU5ErkJggga9a50a0b337b82ef5c0bda0f6d6960d3") ! important; }
+}
+--></style><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls:hover { width: 225px ! important; }
+--></style></head>
+
+<body>
+
+<h1 align="center">The Curse and Blessings of Dynamic SQL</h1>
+<p align="left"><font size="-1">An SQL text by <a href="http://www.sommarskog.se/index.html">Erland Sommarskog</a>,
+SQL Server MVP. <a href="#revisions">Latest revision</a>: 2015-04-14.</font></p>
+<p align="left"><font size="-1">An earlier version of this article is
+   also available in
+   <a href="http://www.insidesql.org/beitraege/entwicklung/dynamisches-sql-fluch-und-segen">German</a>. Translations
+   provided by SQL Server MVP Frank Kalis.</font></p>
+<h2 align="left">Introduction</h2>
+<p align="left">If you follow the various newsgroups on Microsoft <small>SQL</small> Server,
+you often see people asking why they can't do:</p>
+<pre>SELECT * FROM @tablename
+SELECT @colname FROM tbl
+SELECT * FROM tbl WHERE x IN (@list)</pre>
+<p>For all three examples you can expect someone to answer <i>Use dynamic <small>SQL</small></i>
+   and give a quick example on how to do it. Unfortunately, for all three examples
+   above, dynamic <small>SQL</small> is a poor solution.
+   On the other hand, there are situations where dynamic <small>SQL</small>
+   is the best or only way to go. </p>
+<p align="left">In this article I will discuss the use of dynamic <small>SQL</small>
+   in stored procedures and to a minor extent from client languages. To set the
+   scene, I start with a very quick overview on application
+   architecture for data access. I then proceed to describe the feature dynamic
+   <small>SQL</small> as such,
+   with a quick introduction followed by the gory syntax details. Next, I continue with a discussion on <small>SQL</small> injection, a
+   security issue that it is essential to have good understanding of when
+   you work with dynamic <small>SQL</small>. This is followed by a section where I discuss why
+   we use stored procedures, and how that is affected by the use of dynamic <small>SQL</small>.
+   I carry on with a section on good practices and tips for writing
+   dynamic <small>SQL</small>. I conclude by reviewing a number of
+   situations where you could use dynamic <small>SQL</small> and
+   whether it is a good or bad idea to do it.</p>
+<p align="left">The article covers all versions of <small>SQL</small> Server from <small>SQL</small> 6.5 to
+   <small>SQL</small> 2008, with emphasis on <small>SQL</small> 2000 and later
+versions. </p>
+
+<h4>Contents:</h4>
+<contents>
+   <b><a href="#forks">Accessing Data from an Application</a></b><br>
+   <b><a href="#Introducing">Introducing Dynamic <small>SQL</small></a></b><br>
+<small style="font-size: 90%">
+      <a href="#FirstEncounter">A First Encounter</a><br>
+      <a href="#sp_executesql">sp_executesql</a><br>
+      <a href="#EXEC4"><span class="nowrap">EXEC()</span></a><br>
+</small>
+   <b><a href="#SQL_injection"><small>SQL</small> Injection – a Serious Security Issue</a></b><br>
+   <b><a href="#storedprocedures">Dynamic <small>SQL</small> and Stored Procedures</a></b><br>
+<small style="font-size: 90%">
+      <a href="#permissions">The Permission System</a><br>
+      <a href="#queryplans">Caching Query Plans</a><br>
+      <a href="#networktraffic">Reducing Network Traffic</a><br>
+      <a href="#encapsulation">Encapsulating Logic</a><br>
+      <a href="#trackability">Keeping Track of what Is Used</a><br>
+      <a href="#easiness">Ease of Writing SQL Code</a><br>
+      <a href="#supportability">Addressing Bugs and Problems</a><br>
+</small>
+   <b><a href="#good_practices">Good Coding Practices and Tips for Dynamic <small>SQL</small></a></b><br>
+<small style="font-size: 90%">
+      <a href="#debugprints">Use Debug Prints!</a><br>
+      <a href="#nestedstrings">Nested Strings</a><br>
+      <a href="#formatting">Spacing and Formatting</a><br>
+      <a href="#objectnames">Dealing with Dynamic Table and Column Names</a><br>
+      <a href="#quotestring">Quotename, Nested Strings and Quotestring</a><br>
+      <a href="#QUOTED_IDENTIFIER">QUOTED_IDENTIFIER</a><br>
+      <a href="#sp_executesqlong">sp_executesql and Long SQL Strings in SQL 2000</a><br>
+      <a href="#UDF">Dynamic SQL in User-Defined Functions</a><br>
+      <a href="#cursor0">Cursors and Dynamic SQL</a><br>
+</small>
+   <b><a href="#EXECatlinked"><small><span class="nowrap">EXEC()</span></small> at Linked Server</a></b><br>
+   <b><a href="#Common_cases">Common Cases when to (Not) Use Dynamic <small>SQL</small></a></b><br>
+<small style="font-size: 90%">
+      <a href="#Dyn_table">SELECT * FROM @tablename</a><br>
+      <a href="#Sales_yymm">SELECT * FROM sales + @yymm</a><br>
+      <a href="#Dyn_update">UPDATE tbl SET @colname = @value WHERE keycol = @keyval</a><br>
+      <a href="#columnalias">SELECT col AS @myname</a><br>
+      <a href="#Dyn_DB">SELECT * FROM @dbname + '..tbl'</a><br>
+      <a href="#List">SELECT * FROM tbl WHERE col IN (@list)</a><br>
+      <a href="#Condition">SELECT * FROM tbl WHERE @condition</a><br>
+      <a href="#Dyn_search">Dynamic Search Conditions</a><br>
+      <a href="#Crosstab">Dynamic Crosstab</a><br>
+      <a href="#Order_by">SELECT * FROM tbl ORDER BY @col</a><br>
+      <a href="#Top">SELECT TOP @n FROM tbl</a><br>
+      <a href="#Cre_tbl">CREATE TABLE @tbl</a><br>
+      <a href="#unknowncolumns">CREATE TABLE with Unknown Columns</a><br>
+      <a href="#linkservers">Linked Servers</a><br>
+      <a href="#OPENQUERY">OPENQUERY</a><br>
+      <a href="#Col_width">Dynamic Column Widths</a><br>
+      <a href="#maintenancetasks">Dynamic SQL and Maintenance Tasks</a><br>
+</small>
+   <b><a href="#Feedback">Acknowledgements and Feedback</a></b><br>
+   <b><a href="#revisions">Revision History</a></b>
+</contents>
+<p>Note: many of
+   the code samples in this text works against the <b>pubs</b> and <b>Northwind</b> databases
+   that ship with <small>SQL</small> 2000 and <small>SQL</small> 7, but not with <small>SQL</small> 2005
+and later. You can download
+   these databases from
+   <a href="http://www.microsoft.com/downloads/info.aspx?na=22&amp;p=1&amp;SrcDisplayLang=en&amp;SrcCategoryId=&amp;SrcFamilyId=&amp;u=/downloads/details.aspx?FamilyID=06616212-0356-46a0-8da2-eebc53a68034&amp;DisplayLang=en">
+   Microsoft's web site</a>. <br>
+
+</p>
+
+<h2><a name="forks">Accessing Data from an Application</a></h2>
+<p>Before I describe dynamic <small>SQL, I</small> like to briefly discuss the various ways you can
+   access data from an application to give an overview of what I'll be
+   talking about in this article.</p>
+<p>(<b>Note</b>: all through this text I will
+   refer to <i>client</i> as anything that accesses <small>SQL</small> Server from the outside.
+   In the overall application architecture that may in fact be a middle tier or
+   a business layer, but as that is of little interest to this article, I use <i>
+   client</i> in the sake of brevity.) </p>
+<p>There are two main roads to go, and then there are forks and sub-forks.</p>
+<ol type="1">
+   <li>Send <small>SQL</small> statements from the client to <small>SQL</small>
+      Server.
+   <ol type="a">
+       <li>Rely on <small>SQL</small> generated by the client <small>API</small>, using options like
+          <b>CommandType</b>.<b>TableDirect</b> and methods like .<b>Update</b>. <small>LINQ</small> falls into this group as well.</li>
+       <li>Compose the <small>SQL</small> strings in the client code.
+       <ol type="i">
+          <li>Build the entire <small>SQL</small> string with parameter values expanded.</li>
+          <li>Use parameterised queries.</li>
+       </ol></li>
+   </ol></li>
+   <li>Perform access through stored procedures.</li>
+   <ol type="a">
+       <li>Stored procedures in <small><span class="nowrap">T-SQL</span></small></li>
+       <ol type="i">
+         <li>Use static <small>SQL</small> only.</li>
+         <li>Use dynamic <small>SQL</small> together with static <small>SQL</small>.</li>
+       </ol>
+       <li>Stored procedures in a <small>CLR</small> language such as C# or VB .Net. (<small>SQL</small> 2005
+          and later.)</li>
+   </ol>
+</ol>
+<p>Fork <span class="nowrap">1-a</span> may be good for simple tasks, but you are likely to
+   find that you outgrow it as the complexity of your application increases.
+   In any case, this approach falls entirely outside the scope of this article.</p>
+<p>Many applications are built along the principles of fork <span class="nowrap">1-b</span>,
+   and as long as you take the sub-fork <span class="nowrap">1-b-ii</span>, it does not have to
+   be bad. (Why <span class="nowrap">1-b-i</span> is bad, is
+   something I will come back to. Here I will just drop two keywords:
+   <a href="#SQL_injection"><small>SQL</small>
+   Injection</a> and <a href="#queryplans">Query-Plan Reuse</a>.) Nonetheless, in many shops the mandate is
+   that you should use stored procedures. When you use stored procedures with
+   only static <small>SQL</small>, users do
+   not need direct permissions to access the tables, only permissions to execute the stored
+   procedures, and thus you can use the stored procedure to control what users
+   may and may not do.</p>
+<p>The main focus for this text is sub-fork <span class="nowrap">2-a-ii</span>. When used
+   appropriately, dynamic <small>SQL</small> in stored
+   procedures can be a powerful addition to static <small>SQL</small>. But some of the questions on the newsgroups leads to
+   dynamic <small>SQL</small> in stored procedures that are so meaningless, that these people
+   would be better off with fork <span class="nowrap">1-b</span> instead.</p>
+<p>Finally, fork <span class="nowrap">2-b</span>, stored procedures in the <small>CLR</small>, is in many
+   regards very similar to fork <span class="nowrap">1-b</span>, since all data access from <small>CLR</small>
+   procedures is through generated <small>SQL</small> strings, parameterised or unparameterised. If you have settled on <small>SQL</small>
+   procedures for your application, there is little point in rewriting them into
+   the <small>CLR</small>. However, <small>CLR</small> code can be a valuable supplement for tasks that are
+   difficult to perform in <small><span class="nowrap">T-SQL</span></small>, but you yet want to perform server-side. </p>
+<h2><a name="Introducing">Introducing Dynamic SQL</a></h2>
+<p>In this chapter I will first look at some quick examples of dynamic <small>SQL</small> and
+   point out some very important implications of using dynamic <small>SQL</small>. I will then
+   describe <b>sp_executesql</b> and <small><span class="nowrap">EXEC()</span></small> in detail, the two commands you can use to
+   invoke dynamic <small>SQL</small> from <small><span class="nowrap">T-SQL</span></small>.</p>
+<h3><a name="FirstEncounter">A First Encounter</a></h3>
+<p>Understanding dynamic <small>SQL</small> itself is not difficult. Au contraire, it's rather
+   too easy to use. Understanding the fine details, though, takes a little
+   longer time. If you start out using dynamic <small>SQL</small> casually, you are bound to face
+   accidents when things do not work as you have anticipated.</p>
+<p>One of the problems
+ listed in the introduction was how to write a stored procedure that takes a
+   table name as its input. Here are two examples, based on the two ways to do dynamic <small>SQL</small> in
+   Transact-<small>SQL</small>:</p>
+<pre>CREATE PROCEDURE general_select1 @tblname sysname,
+                                 @key     varchar(10) AS
+DECLARE @sql nvarchar(4000)
+SELECT @sql = ' SELECT col1, col2, col3 ' +
+              ' FROM dbo.' + quotename(@tblname) +
+              ' WHERE keycol = @key'
+EXEC sp_executesql @sql, N'@key varchar(10)', @key</pre>
+<pre>CREATE PROCEDURE general_select2 @tblname nvarchar(127),
+                                 @key     varchar(10) AS
+EXEC('SELECT col1, col2, col3
+      FROM ' + @tblname + '
+      WHERE keycol = ''' + @key + '''')</pre>
+<p>Before I say anything else, permit me to point out that these are examples of
+   <i><b>bad</b></i> usage of dynamic <small>SQL</small>.
+   Passing a table name as a parameter
+   is not how you should write stored procedures, and one aim of this article is
+   to explain this in detail. Also, the two examples are not equivalent. While
+   both examples are bad, the second
+   example has several problems that the first does not have. What these
+   problems are will be apparent as you read this text.</p>
+<p>Whereas the above looks very simple and easy, there are some very important things
+   to observe. The first thing is permissions. You may know that when you
+   use stored procedures, users do not need permissions to access the tables accessed by the stored procedure. <b><i>This does not apply when
+   you use dynamic <small>SQL</small>!</i></b> For the procedures above to execute
+   successfully, the users must have <small>SELECT</small> permission on the table in @tblname. In <small>SQL</small> 2000 and earlier this is an absolute rule with no
+   way around it. <small>Starting with SQL</small> 2005, there are alternatives, something I will
+   come
+   back to in the section <i><a href="#permissions">The Permission System</a></i>.</p>
+<p>Next thing to observe is that the dynamic <small>SQL</small> <b><i>is not part of
+   the stored procedure</i></b>, but constitutes <i><b>its own scope</b></i>. Invoking a block
+   of dynamic <small>SQL</small> is akin to call a nameless stored procedure created ad-hoc. This
+   has a number of consequences:</p>
+<ul>
+  <li>Within the block of dynamic <small>SQL</small>, you cannot access local variables
+     (including table variables) or parameters of the calling stored procedure.
+     But you can pass parameters – in and out – to a block of dynamic <small>SQL</small> if you
+     use <b>sp_executesql</b>.</li>
+  <li>Any <small>USE</small> statement in the dynamic <small>SQL</small> will not affect the calling stored procedure.</li>
+  <li>Temp tables created in the dynamic <small>SQL</small> will not be accessible from the
+    calling procedure since they are dropped when the dynamic <small>SQL</small> exits.
+     (Compare to how temp tables created in a stored procedure go away when you
+     exit the procedure.) The block of
+     dynamic <small>SQL</small> can however access temp tables created
+     by the calling procedure.</li>
+  <li>If you issue a <small>SET</small> command in the dynamic <small>SQL</small>, the effect of the <small>SET</small>
+     command lasts for the duration of the block of dynamic <small>SQL</small>
+     only and does not affect the caller.</li>
+  <li> The query plan for the stored procedure does not include the dynamic <small>SQL.
+     T</small>he block of dynamic <small>SQL</small> has a query plan of its own.</li>
+</ul>
+<p>As you've seen there are two ways to invoke dynamic <small>SQL</small>, <b>sp_executesql</b> and
+   <small><span class="nowrap">EXEC()</span></small>. <b>sp_executesql</b> was added in <small>SQL</small> 7, whereas <small><span class="nowrap">EXEC()</span></small> has been around
+   since <small>SQL</small> 6.0. In application code, <b>sp_executesql</b> should be your choice 95%
+   of the time for reasons that will prevail. For now I will only give two
+   keywords: <a href="#SQL_injection"><small>SQL</small> Injection</a> and
+   <a href="#queryplans">Query-Plan Reuse</a>. <small><span class="nowrap">EXEC()</span></small> is mainly useful for quick throw-away things and <small>DBA</small> tasks, but also
+   comes to the rescue in <small>SQL</small> 2000 and <small>SQL</small> 7
+   when the <small>SQL</small> string exceeds 4000 characters. And, obviously, in <small>SQL</small> 6.5, <small><span class="nowrap">EXEC()</span></small> is the sole choice. In the next
+   two sections we will look at these two commands in detail.</p>
+
+<h3><a name="sp_executesql">sp_executesql</a></h3>
+<p><b>sp_executesql</b> is a built-in stored procedure that takes two
+   pre-defined parameters and any number of user-defined parameters. </p>
+<p>The first parameter <b>@stmt</b> is mandatory, and contains a batch of one or
+ more <small>SQL</small> statements. The data type of @stmt is <b>ntext</b> in <small>SQL</small> 7 and <small>SQL</small> 2000,
+ and <b>nvarchar(<small>MAX</small>)</b> in <small>SQL</small> 2005 and later. Beware that you must pass an <b>nvarchar</b>/<b>ntext</b>
+ value (that is, a Unicode value). A <b>varchar</b> value won't do. </p>
+<p>The second parameter <b>@params</b> is optional, but you will use it 90% of the
+ time. @params declares the parameters that you refer to in @stmt. The syntax
+ of @params is exactly the same as for the parameter list of a stored procedure. The
+   parameters can
+ have default values and they can have the <small>OUTPUT</small> marker. Not all parameters you declare must actually
+   appear in the <small>SQL</small> string. (Whereas all variables that appear in the <small>SQL</small>
+   string must be declared, either with a <small>DECLARE</small> inside @stmt, or in
+   @params.) Just like @stmt, the data
+ type of @params is <b>ntext</b> <small>SQL</small> 2000 and earlier and <b>nvarchar(<small>MAX</small>)</b>
+since <small>SQL</small> 2005.</p>
+<p>The rest of the parameters are simply the parameters that you declared in
+ @params, and you pass them as you pass parameters to a stored procedure, either
+ positional or named. To get a value back from your output parameter, you must
+   specify <small>OUTPUT</small> with the parameter, just like when you call a stored
+   procedure. Note that the first two parameters, @stmt and @params, must be specified positionally. You
+   can provide the parameter names for them, but these names are blissfully ignored.</p>
+<p>Let's look at an example. Say that in your database, many tables
+ have a column <i>LastUpdated</i>, which holds the time a row last was
+ updated. You want to be able to find out how many rows in each table that were modified at
+ least once during a period. This is not something you run as part of the application, but
+   something you run as a <small>DBA</small> from time to time, so you just keep it as a script
+   that you have a around. Here is what it could look like:</p>
+<pre>DECLARE @tbl    sysname,
+        <b>@sql    nvarchar(4000),
+        @params nvarchar(4000)</b>,
+        @count  int
+
+DECLARE tblcur CURSOR STATIC LOCAL FOR
+   SELECT object_name(id) FROM syscolumns WHERE name = 'LastUpdated'
+   ORDER  BY 1
+OPEN tblcur
+
+WHILE 1 = 1
+BEGIN
+   FETCH tblcur INTO @tbl
+   IF @@fetch_status &lt;&gt; 0
+      BREAK
+
+   <b>SELECT @sql =
+   N' SELECT @cnt = COUNT(*) FROM dbo.' + quotename(@tbl) +
+   N' WHERE LastUpdated BETWEEN @fromdate AND ' +
+   N'                           coalesce(@todate, ''99991231'')'
+   SELECT @params = N'@fromdate datetime, ' +
+                    N'@todate   datetime = NULL, ' +
+                    N'@cnt      int      OUTPUT'
+   EXEC sp_executesql @sql, @params, '20060101', @cnt = @count OUTPUT
+</b>
+   PRINT @tbl + ': ' + convert(varchar(10), @count) + ' modified rows.'
+END
+
+DEALLOCATE tblcur</pre>
+<p>I've put the lines that pertain directly to the dynamic <small>SQL</small> in bold face. You
+   can see that I have declared the @sql and @params variables to be of the maximum
+   length for <b>nvarchar</b> variables in <small>SQL</small> 2000. In <small>SQL</small> 2005
+and later, you may want to make it a routine to
+   declare @sql as <b>nvarchar(<small>MAX</small>)</b>, more about this just below. </p>
+<p>When I assign the @sql variable, I am careful to format the statement so that
+   it is easy to read, and I leave in spaces to avoid that two concatenated
+   parts are glued together without space in between, which could cause a syntax
+   error. I put the table name in
+   <a href="#objectnames"><span class="nowrap"><b>quotename()</b></span></a> in case a table name has any special
+   characters in it. I also prefix the table name with "<b>dbo</b>.", which is a good habit, as we will see when we look at dynamic <small>SQL</small> and
+   <a href="#queryplans">query plans</a>. Overall, I will cover this sort of
+   <a href="#good_practices">good practices</a> more in detail later in the text. Note also the appearance of <b>
+   <code>''</code></b> around the date literal – the rule in <small><span class="nowrap">T-SQL</span></small> is that to include the string
+   delimiter in a string, you must double it.</p>
+<p>In this example, the dynamic <small>SQL</small> has three parameters: one mandatory input
+   parameter, one optional input parameter, and one
+   output parameter. I've assumed that this time the <small>DBA</small> wanted to see
+   all changes made after 2006-01-01, which is why I've left out @todate in the call
+   to <b>sp_executesql</b>. Since I left out one variable, I must specify the last,
+   @cnt by name – the same rules as when you call a stored procedure. Note also
+   that the variable is called @cnt in the dynamic <small>SQL</small>, but @count in the
+   surrounding script. Normally, you might want to use the same name, but I
+   wanted to stress that the @cnt in the dynamic <small>SQL</small> is only visible within the
+   dynamic <small>SQL</small>, whereas @count is <b><i>not</i></b> visible there.</p>
+<p>You may note that I've prefix the string literals with <b>N</b> to denote that
+   they are Unicode strings. As @sql and @params are declared as <b>nvarchar</b>,
+   technically this is not necessary (as long as you stick to your 8-bit character
+   set). However, when you provide any of the strings directly in the call to
+   <b>sp_executesql</b>, you must specify the N, as in this fairly silly example:</p>
+<pre>EXEC sp_executesql N'SELECT @x', N'@x int', @x = 2</pre>
+<p>If you remove any of the <b>N</b>s, you will get an error message. Since <b>sp_executesql</b> is a built-in stored procedure, there is no implicit
+   conversion from <b>varchar</b>.</p>
+<p>You may wonder why I do not pass @tbl as a parameter as well. The answer is
+   that you can't. Dynamic <small>SQL</small> is just like any other <small>SQL</small>. You can't specify a
+   table name through a variable in <small><span class="nowrap">T-SQL</span></small>, that's the whole story. Thus, when you
+   need to specify things like table names, column names etc dynamically,
+   you must interpolate them into the string.</p>
+<p>If you are on <small>SQL</small> 2000 or <small>SQL</small> 7, there is a limitation with <b>sp_executesql</b>
+   when it comes to the length of the <small>SQL</small> string. While the parameter is <b>ntext</b>,
+   you cannot use this data type for local variables. Thus, you will have to
+   stick to <b>nvarchar(4000)</b>. In many cases this will do fine, but it is not
+   uncommon to exceed that limit. In this case, you will need to use <small><span class="nowrap">EXEC()</span></small>,
+   described just below.</p>
+<p>Since <small>SQL</small> 2005, this is not an issue. Here you can use the new data type
+ <b>nvarchar(<small>MAX</small>)</b> which can hold as much data as <b>ntext</b>,
+   but without the many restrictions of <b>ntext</b>.</p>
+<h3><a name="EXEC4"><span class="nowrap">EXEC()</span></a></h3>
+
+<p><small><span class="nowrap">EXEC()</span></small> takes one parameter which is an <small>SQL</small> statement to
+   execute. The parameter can be a concatenation of
+   string variables and string literals, but cannot include calls to functions
+   or other operators. For very simple
+   cases, <small><span class="nowrap">EXEC()</span></small> is less hassle than <b>sp_executesql</b>. For instance, say that you
+   want to run <small>UPDATE STATISTICS WITH FULLSCAN</small> on some selected tables. It could
+   look like this:</p>
+<pre>FETCH tblcur INTO @tbl
+IF @@fetch_status &lt;&gt; 0 BREAK
+EXEC('UPDATE STATISTICS [' + @tbl + '] WITH FULLSCAN')</pre>
+<p>In the example with <b>sp_executesql</b>, I used <span class="nowrap"><b>quotename()</b></span>, but here I've let it
+   suffice with adding brackets, in case there is a table named <b>Order
+   Details</b> (which there is in the <b>Northwind</b> database). Since <small>EXEC</small> only permits
+   string literals and string variables to be concatenated and not arbitrary
+   expressions, this is not legal:</p>
+<pre>EXEC('UPDATE STATISTICS ' + <font color="#FF0000">quotename(@tbl)</font> + ' WITH FULLSCAN')</pre>
+<p>Best practice is to always use a variable to hold the <small>SQL</small> statement, so the
+   example would better read:</p>
+<pre>FETCH tblcur INTO @tbl
+IF @@fetch_status &lt;&gt; 0 BREAK
+SELECT @sql = 'UPDATE STATISTICS ' + quotename(@tbl) + ' WITH FULLSCAN'
+EXEC(@sql)</pre>
+<p>The fact that you can concatenate strings within <small><span class="nowrap">EXEC()</span></small> permits you to
+   make very quick things, which can be convenient at times, but it can lead to
+   poor habits in application code. However, there are situations where this is an
+   enormous blessing. As I mentioned, in <small>SQL</small> 7 and <small>SQL</small> 2000, you can in practice
+   only use 4000 characters in your <small>SQL</small> string with <b>sp_executesql</b>. <small>EXEC</small> does
+   not have this limitation, since you can say:</p>
+<pre>EXEC(@sql1 + @sql2 + @sql3)</pre>
+<p>Where all of @sql1, @sql2 and @sql3 can be 4000 characters long – or even
+   8000 characters as <small><span class="nowrap">EXEC()</span></small> permits you to use <b>varchar</b>.</p>
+<p>Since you cannot use parameters, you cannot as easily get values out from
+   <small><span class="nowrap">EXEC()</span></small> as you can with <b>sp_executesql</b>. You can, however, use <small>INSERT-EXEC</small>
+   to insert the result set from <small><span class="nowrap">EXEC()</span></small> into a table. I will show you an example
+   <a href="#sp_executesqlong">later on</a>, when I also show you how you can
+   use <small><span class="nowrap">EXEC()</span></small> to pass longer strings than 4000 characters to <b>sp_executesql</b>.</p>
+<p>In <small>SQL</small> 2005 and later, <small><span class="nowrap">EXEC()</span></small> permits impersonation so that you can say:</p>
+<pre>EXEC(@sql) AS USER = 'mitchell'
+EXEC(@sql) AS LOGIN = 'CORDOBA\Miguel'</pre>
+<p>This is mainly a syntactical shortcut that saves you from embedding the
+   invocation of dynamic <small>SQL</small> in <small>EXECUTE AS</small> and <small>REVERT. (I</small> discuss these
+   statements more in detail in my article <i>
+   <a href="http://www.sommarskog.se/grantperm.html#EXECASstatement">Granting Permissions Through Stored
+   Procedures</a></i>.)</p>
+<p><small>SQL</small> 2005 adds a valuable extension to <small><span class="nowrap">EXEC()</span></small>: you can use
+   it to execute
+   strings on <a href="#EXECatlinked">linked servers</a>. I will cover this form
+   of <small><span class="nowrap">EXEC()</span></small> in a separate section
+   later in this text. </p>
+<h2><a name="Security2"></a><a name="SQL_injection">SQL Injection – a Serious Security Issue</a></h2>
+<p>Before you start to use dynamic <small>SQL</small> all over town, you need to learn about <i>
+   <small>SQL</small> injection </i>and how you protect your application against it. <small>SQL</small>
+   injection is a technique whereby an intruder enters data that causes your application
+   to execute <small>SQL</small> statements you did not intend it to. <small>SQL</small> injection is possible as soon there is dynamic <small>SQL</small> which is
+   handled carelessly, be that <small>SQL</small> statements sent from the client, dynamic <small>SQL</small>
+   generated in <small><span class="nowrap">T-SQL</span></small> stored procedures, or <small>SQL</small> batches executed from <small>CLR</small> stored
+   procedures. This is not a line of attack that is unique to
+   <small>MS SQL</small> Server, but all <small>RDBMS</small> are open to it.</p>
+<p>Here is an example. The purpose of the procedure below is to permit users to
+   search for orders by various conditions. A real-life example of such a
+   procedure would have many more parameters, but I've cut it down to two to be
+   brief. (This is, by the way, a problem for which dynamic <small>SQL</small> is a very good
+   solution.) As the procedure is written, it is open for <small>SQL</small> injection:</p>
+<pre>CREATE PROCEDURE search_orders @custid   nchar(5)     = NULL,
+                               @shipname nvarchar(40) = NULL AS
+DECLARE @sql nvarchar(4000)
+SELECT @sql = ' SELECT OrderID, OrderDate, CustomerID, ShipName ' +
+              ' FROM dbo.Orders WHERE 1 = 1 '
+IF @custid IS NOT NULL
+   SELECT @sql = @sql + ' AND CustomerID LIKE ''' + @custid + ''''
+IF @shipname IS NOT NULL
+   SELECT @sql = @sql + ' AND ShipName LIKE ''' + @shipname + ''''
+EXEC(@sql)</pre>
+<p>Before we look at a real attack, let's just discuss this from the point of view
+   of user-friendliness. Assume that the input for the parameters @custid and @shipname comes directly
+   from the user and a naïve and innocent user wants to look for orders where <b>ShipName</b> is <i>Let's Stop N Shop</i>, so he enters <i>Let's</i>. Do you see
+   what will happen? Because @shipname includes a single quote, he will get a
+   syntax error. So even if you think that <small>SQL</small> injection is no issue to you,
+   because you trust your users, you still need to read this section, so that they
+   can search for Brian O'Brien and Samuel Eto'o. </p>
+<p>So this is the starting point. A delimiter, usually a single quote, affects your dynamic <small>SQL</small>, and
+   a malicious user
+   can take benefit of this. For
+   instance, consider this input for @shipname:</p>
+<pre>' DROP TABLE Orders --</pre>
+<p>The resulting <small>SQL</small> becomes:</p>
+<pre>SELECT * FROM dbo.Orders WHERE 1 = 1  AND ShipName LIKE '' <font color="#FF0000">DROP TABLE orders</font> --'</pre>
+ <p>This is a perfectly legal batch of <small><span class="nowrap">T-SQL</span></small>, including the text in red. Since there is something called permissions in <small>SQL</small> Server, this
+    attack may or may not succeed. A plain
+    user who runs a Windows application and who logs into <small>SQL</small> Server with his
+    own login, is not likely to have
+    permissions to drop a table. But it is not uncommon for web applications to
+    have a general login that runs <small>SQL</small> queries on behalf of the users. And if this web app logs into <small>SQL</small> Server with <b>sysadmin</b> or <b>db_owner</b>
+    privileges, the attack succeeds. Mind you, with <b>sysadmin</b> rights, the
+    attacker can add users and logins as he pleases. And if the service account
+    for <small>SQL</small> Server has admin privileges in Windows, the attacker has access into
+    your network far beyond <small>SQL</small> Server through <b>xp_cmdshell</b>. (Which is
+    disabled by default on <small>SQL</small> 2005 and later, but if the attacker has achieved
+    <b>sysadmin</b> rights on the server, he can change that.)</p>
+<p>Typically, an attacker first tests what happens
+   if he enters a single quote (<code>'</code>) in an input field or a <small>URL</small>. If this
+   yields a syntax error, the attacker knows that there is a vulnerability. He
+   then finds out if he needs any extra tokens to terminate the query, and then
+   he can add his own <small>SQL</small> statement. Finally he adds a comment character to kill
+   the rest of the <small>SQL</small> string to avoid syntax errors. Single quote is the most
+   common character to reveal openings for <small>SQL</small> injection, but if you have
+   dynamic table and column names, there are more options an attacker could
+   succeed with.
+   Take this dreadful version of <b>general_select</b>:</p>
+<pre>CREATE PROCEDURE general_select2 @tblname nvarchar(127),
+                                 @key     varchar(10) AS
+EXEC('SELECT col1, col2, col3
+      FROM ' + @tblname + '
+      WHERE keycol = ''' + @key + '''')</pre>
+<p>and assume that @tblname comes from a <small>URL</small>. There are quite some options that
+   an attacker could use to take benefit of this hole. </p>
+<p>And don't overlook numeric values: they can very well be used for <small>SQL</small>
+   injection. Of course, in a <small><span class="nowrap">T-SQL</span></small> procedure where the value is passed as an
+   <b>int</b> parameter there is no risk, but if a supposedly numeric value is directly
+   interpolated into an <small>SQL</small> string in client code, there is a huge potential for
+   <small>SQL</small> injection.</p>
+<p>Keep in mind that user input comes from more places than just input fields on
+   a form. The most commonly used area for injection attacks on the Internet is
+   probably parameters in URLs and cookies. Thus, be very careful how you handle
+   anything that comes into  your application from the outside.</p>
+<p>You may think that it takes not only skill, but also luck for someone to find
+   and exploit a hole for <small>SQL</small> injection. But remember that there are too many hackers out there
+   with too much time on their hands. <small>SQL</small> injection is a serious security issue, and you
+   must take precautions to protect your applications against it.</p>
+<p>One approach I seen mentioned from time to time, is to validate input data in some way, but in my opinion that is not
+the right way to go. Here are are the three steadfast
+   principles you need to follow:</p>
+<ul>
+   <li>Never run with more privileges than necessary. Users that log into an
+      application with their own login should normally only have <small>EXEC</small>
+      permissions on stored procedures. If you use dynamic <small>SQL</small>, it should be
+      confined to reading operations so that users only need <small>SELECT</small> permissions.
+      A web site that logs into a database should not have any elevated
+      privileges, preferably only <small>EXEC</small> and
+      (maybe) <small>SELECT</small> permissions. Never let the web site log in as <b>sa</b>!</li>
+   <li>For web applications: never expose error messages from <small>SQL</small> Server to the
+      end user.</li>
+   <li><i><b>Always used
+      parameterised statements.</b></i> That is, in a <small><span class="nowrap">T-SQL</span></small> procedure use <b>sp_executesql</b>,
+      not <small><span class="nowrap">EXEC()</span></small>. </li>
+</ul>
+<p>The first point is mainly a safeguard, so that if there is a injection hole,
+   the intruder will not be able to do that much harm. The second point makes
+   the task for the attacker more difficult as he cannot get feedback from his
+   attempts.</p>
+<p>But it is the third point that is the
+   actual protection, and that we will look a little closer at. The procedure <b>search_orders</b> above should be coded as:</p>
+<pre>CREATE PROCEDURE search_orders @custid   nchar(5) = NULL,
+                               @shipname nvarchar(40) = NULL AS
+DECLARE @sql nvarchar(4000)
+SELECT @sql = ' SELECT OrderID, OrderDate, CustomerID, ShipName ' +
+              ' FROM dbo.Orders WHERE 1 = 1 '
+IF @custid IS NOT NULL
+   SELECT @sql = @sql + ' AND CustomerID LIKE @custid '
+IF @shipname IS NOT NULL
+   SELECT @sql = @sql + ' AND ShipName LIKE @shipname '
+EXEC sp_executesql @sql, N'@custid nchar(5), @shipname nvarchar(40)',
+                   @custid, @shipname</pre>
+<p>Since the <small>SQL</small> string does not include any user input, there is
+   <i><b>no</b></i> opening for <small>SQL</small>
+   injection. It's as simple as that. By the way, note that since we can include
+   parameters in the parameter list, even if they don't actually appear in the
+   <small>SQL</small> string, we don't need any complicated logic to build the parameter list,
+   but can keep it static. In the same vein, we can always pass all input
+   parameters to the <small>SQL</small> string.</p>
+<p>As you may recall, you cannot pass everything as parameters to dynamic <small>SQL</small>,
+   for instance table and column names. In this case you must enclose all such
+   object names in <span class="nowrap"><b>quotename()</b></span>, that I will return to in the section <i>
+   <a href="#good_practices">Good Coding Practices and Tips for Dynamic <small>SQL</small></a></i>.</p>
+<p>The example above was for dynamic <small>SQL</small> in a <small><span class="nowrap">T-SQL</span></small> stored procedure. The same advice
+   applies to <small>SQL</small> generated in client code or in a <small>CLR</small> stored procedure. Since
+   this is so important, here is an example of coding the above in VB6 and <small>ADO</small>:</p>
+<pre>Set cmd = CreateObject("ADODB.Command")
+Set cmd.ActiveConnection = cnn
+
+cmd.CommandType = adCmdText
+cmd.CommandText = " SELECT OrderID, OrderDate, CustomerID, ShipName " &amp; _
+                  " FROM dbo.Orders WHERE 1 = 1 "
+If custid &lt;&gt; "" Then
+   cmd.CommandText = cmd.CommandText &amp; " AND CustomerID LIKE ? "
+   cmd.Parameters.Append
+      cmd.CreateParameter("@custid", adWChar, adParamInput, 5, custid)
+End If
+
+If shipname &lt;&gt; "" Then
+   cmd.CommandText = cmd.CommandText &amp; " AND ShipName LIKE ? "
+   cmd.Parameters.Append cmd.CreateParameter("@shipname", _
+                         adVarWChar, adParamInput, 40, shipname)
+End If
+
+Set rs = cmd.Execute</pre>
+<p>Since the main focus of this text is dynamic <small>SQL</small> in <small><span class="nowrap">T-SQL</span></small> procedures, I will
+   explain this example only briefly. In <small>ADO</small> you use <code>?</code> as a parameter
+   marker, and you can only pass parameters that
+   actually appear in the <small>SQL</small> string. (If you
+   specify too many parameters, you will get a completely incomprehensible error
+   message.) If you use the <small>SQL</small> Profiler to see what <small>ADO</small>
+   sends to <small>SQL</small> Server, you will find that it invokes – <b>sp_executesql</b>.</p>
+<p>Protection against <small>SQL</small> injection is not the only advantage of using
+   parameterised queries. In the section <i><a href="#queryplans">Caching Query
+   Plans</a></i>, we will look more in detail on parameterised queries and at a
+   second very important reason to use them. This section also includes an example of composing and sending a parameterised <small>SQL</small> statement for SqlClient
+   in VB .Net.</p>
+<p>You may think that an even better protection against <small>SQL</small> injection is to use
+   stored procedures with static <small>SQL</small> only. Yes, this is true, <b>
+   <i>but</i>!</b> It
+   depends on how you call your stored procedures from the client. If you
+   compose an <small>EXEC</small> command into which you interpolate the input values, you are
+   back on square one and you are as open to <small>SQL</small> injection as ever.
+   In <small>ADO</small>, you need to call
+   your procedure with the command type <b>adCmdStoredProc</b> and use <b>.CreateParameter</b> to specify the parameters. By specifying <b>adCmdStoredProc</b>, you call the stored procedure through <small>RPC</small>, <i>
+   Remote Procedure Call</i>, which not only protects you against <small>SQL</small>
+   injection, but it is also more efficient. Similar measures apply to other client APIs;
+   all APIs I know of supply a way to call a stored procedure through <small>RPC</small>.</p>
+<h2><a name="storedprocedures">Dynamic SQL and Stored Procedures</a></h2>
+<p>In the <a href="#forks">introduction</a>, I presented various strategies for
+   data-access for an application, and I said that in many shops all data access
+   is through stored procedures. In this section, I will look a little closer at
+   the advantages with using stored procedures over sending <small>SQL</small> statements from
+   the client. I will also look at what happens when you use dynamic <small>SQL</small> in a
+   stored procedure, and show that you lose some of the advantages with stored
+   procedures, whereas other are unaffected.</p>
+<h3><a name="permissions">The Permission System</a></h3>
+<p>Historically, using stored procedures has been <b>the</b> way to give users
+   access to data. In a locked-down database, users do not have permissions to
+   access tables directly. Instead, the application performs all
+   access through stored procedures that retrieve and update data in a
+   controlled way, so that users only get to see data they have access to, and
+   they cannot perform updates that violate business rules. This works as long as the
+   procedure and the tables have the same owner, typically <b>dbo</b> (the
+   database owner), through a mechanism known as <i>ownership chaining</i>.</p>
+<p>As I have already mentioned, <i><b>ownership chaining does not work when you
+   use dynamic <small>SQL</small></b></i>. The reason for this is very simple: the block of
+   dynamic <small>SQL</small> is not a procedure and does not have any owner.
+   Thus the chain
+   is broken.</p>
+<h4>SQL 2005 and later</h4>
+<p>In <small>SQL</small> 2005 and later versions of <small>SQL</small> Server, this can be addressed by signing a procedure that uses dynamic
+   <small>SQL</small> with a certificate. You associate the certificate with a user, and grant
+   that user (which is a user that cannot log in) the rights needed for the
+   dynamic <small>SQL</small> to execute successfully. A second method is to use
+   the <small>EXECUTE AS</small> clause to impersonate a user that has been granted the
+   necessary permissions. This method is easier to use, but has side effects
+   that can have unacceptable consequences for auditing, row-level security
+   schemes and system monitoring. For this reason, my strong recommendation is
+   to use certificates.</p>
+<p>Describing these methods more closely, would take up too much space here.
+   Instead I've written a separate article about them, <a href="http://www.sommarskog.se/grantperm.html"><i>Giving Permissions through Stored
+   Procedures</i></a>, where I discusses both certificates and impersonation in
+   detail, and I also take a closer look on ownership chaining. </p>
+<p>If you write <small>CLR</small> procedures that perform data access, the same is true
+   for them.
+   Ownership chaining never applies since all data access in a <small>CLR</small> procedure is
+   through dynamic <small>SQL.</small> But you can use certificates or
+   impersonation to avoid having to give users direct permissions on the
+   tables.</p>
+<h4>SQL 2000 and earlier</h4>
+<p>On <small>SQL</small> 2000 there is <i><b>no way</b></i>
+   to combine dynamic <small>SQL</small> with the encapsulation of permissions that you can get
+   through stored procedures. Any use of dynamic
+   <small>SQL</small> requires that the users have direct permissions on the accessed tables. If your security
+   scheme precludes giving users permissions to access tables directly, <i><b>you cannot
+   use dynamic <small>SQL</small></b></i>. It is that plain and simple. Depending on the
+   sensitivity of the data in the application, it may be acceptable to give the
+   users <small>SELECT</small> permissions on the tables (or on some tables) to permit the use
+   of dynamic <small>SQL</small>. I strongly recommend against granting users <small>INSERT, UPDATE</small>
+   and <small>DELETE</small> rights on tables only to permit dynamic <small>SQL
+   in some occasional procedure.</small></p>
+<p>There are however, some ways to arrange so that users only have access to the data through the application. All and
+all, there are three alternatives, application roles, "application
+   proxies" and Terminal Server. All require you to change the application architecture or infrastructure, so it
+   is nothing you introduce at whim.</p>
+<p>Application roles were introduced in <small>SQL</small> 7. Users log into <small>SQL</small> Server but have no permissions on their own beyond
+   the database access. Instead, the application activates the application role by
+   sending a password somehow embedded into it, and this application
+   role has the permissions needed. With "application proxies", the application authenticates the users outside <small>SQL</small> Server and logs into <small>SQL</small>
+   Server on their behalf with a proxy login. This proxy login impersonates the users in <small>SQL</small> Server, and
+   thus their permissions apply. However, since the users do not have any login on their own, they cannot
+   log into <small>SQL</small> Server outside the application. In <i><a href="http://www.sommarskog.se/grantperm.html">Giving Permissions...</a></i>,
+   I discuss these two methods a little further. </p>
+<p>The final possibility is to put the application on Terminal Server. Users log into the terminal server which is set
+up so that all they can do is to run this application. Furthermore, the network is configured so that they cannot access <small>SQL</small> Server from their regular
+computers. Thus, the application is their only way to the data. </p>
+<p>For all these methods, keep in mind about <small>SQL</small> injection, and do not grant more
+permissions than needed.</p>
+<h3><a name="queryplans">Caching Query Plans</a></h3>
+<p>Every query you run in <small>SQL</small> Server requires a query plan. When you run a query
+   the first time, <small>SQL</small> Server builds a query plan for it – or as the terminology
+   goes – it <i>compiles</i> the query. <small>SQL</small> Server saves the plan in cache, and next time you run
+   the query, the plan is reused. The query plan stays in cache
+   until it's aged out because it has not been used for a while, or it is
+   invalidated for some reason. (Why this happens falls outside the scope of
+   this article.)</p>
+<p>The reuse of cached query plans is very important for the performance
+   of queries where the compilation time is in par with the execution time or
+   exceeds it. If
+   a query needs to run for four minutes, it does not matter much if the query
+   is recompiled for an extra second each time. On the other hand, if the execution time of the
+   query is 40 ms but it takes one second to compile the query, there is a
+   huge gain with the cached plan, particularly if the query is executed over and
+   over again.</p>
+<p>Up to <small>SQL</small> 6.5 the only plans there were put
+   into the cache were plans for stored
+   procedures. Loose batches of <small>SQL</small> were compiled each time. And since the
+   query plan for dynamic <small>SQL</small> is not part of the stored procedure, that included
+   dynamic <small>SQL</small> as well. Thus in <small>SQL</small> 6.5, the use of dynamic <small>SQL</small> nullified the
+   benefit with stored procedures in this regard.</p>
+<p>Starting with <small>SQL</small> 7, <small>SQL</small> Server also caches the plans for bare statements
+   sent from a client or generated through dynamic <small>SQL</small>. Say that you send this
+   query from the client, or execute it with <small><span class="nowrap">EXEC()</span></small>:</p>
+<pre>SELECT O.OrderID, SUM(OD.UnitPrice * OD.Quantity)
+FROM   Orders O
+JOIN   [Order Details] OD ON O.OrderID = OD.OrderID
+WHERE  O.OrderDate BETWEEN '19980201' AND '19980228'
+  AND  EXISTS (SELECT *
+               FROM   [Order Details] OD2
+               WHERE  O.OrderID = OD2.OrderID
+                  AND OD2.ProductID = 76)
+GROUP  BY O.OrderID</pre>
+<p>The query returns the total order amount for the orders in February 1998 that
+   contained the product <i>Lakkalikööri.</i> <small>SQL</small> Server will put
+   the plan into the cache,
+   and next time you run this query, the plan will be reused. But only if it is exactly the same query.
+   Since the cache lookup is by a hash value computed from the query text, the cache is space- and case-sensitive.
+   Thus, if you add a
+   single space somewhere, the plan is not reused. More importantly, it is not
+   unlikely that next time you want to run the query for a different product, or a
+   different period.</p>
+<p>All this changes, if you instead use <b>sp_executesql</b> to run your query
+   with parameters:</p>
+<pre>DECLARE @sql nvarchar(2000)
+SELECT @sql = 'SELECT O.OrderID, SUM(OD.UnitPrice * OD.Quantity)
+               FROM   <b>dbo</b>.Orders O
+               JOIN   <b>dbo</b>.[Order Details] OD ON O.OrderID = OD.OrderID
+               WHERE  O.OrderDate BETWEEN @from AND @to
+                 AND  EXISTS (SELECT *
+                              FROM   <b>dbo</b>.[Order Details] OD2
+                              WHERE  O.OrderID = OD2.OrderID
+                                AND  OD2.ProductID = @prodid)
+                GROUP  BY O.OrderID'
+EXEC sp_executesql @sql, N'@from datetime, @to datetime, @prodid int',
+                   '19980201', '19980228', 76</pre>
+<p>The principle for cache lookup is the same as for a non-parameterised query:
+   <small>SQL</small> Server hashes the query text and looks up the hash value in the cache,
+   still in a case- and space-sensitive fashion. But since the parameter values
+   are
+   not part of the query text, the same plan can be reused even when the input
+   changes.</p>
+<p>To make this really efficient there is one more thing you need to observe.
+   Do you see that I've prefixed all tables in the query with <b>dbo</b>? There
+   is a very important reason for this. Users can have different default schema, and up to <small>SQL</small> 2000, all users had a
+default schema equal to their username. Thus, if default schema for <b>user1</b> is <b>user1</b>, and this users runs a query that goes "<small>SELECT ... FROM</small>
+   Orders", <small>SQL</small> Server must first check if there is a table <b>user1.Orders</b>,
+   before it looks for <b>dbo.Orders</b>. Since <b>user1.Orders</b> could appear
+   on the scene at any time, <b>user1</b> cannot share cache entry with a user different default schema. Yes, in <small>SQL</small> 2005, it is perfectly possible that all users have <b>dbo</b> as their default schema, but it seems to be a bad idea to
+rely on it.</p>
+<p>If you instead use stored procedures, it is not equally important to prefix
+   tables with <b>dbo</b>. Microsoft still recommends that you do, but even if
+   you don't, users with different default schema can share the same query
+   plan.</p>
+<p>From what I have said here, it follows that if you use dynamic <small>SQL</small> with
+   <small><span class="nowrap">EXEC()</span></small> you lose an important benefit of stored procedures
+   whereas with <b>sp_executesql</b> you don't. At least in
+   theory. It's easy to forget that <b>dbo</b>, and if you leave it out in just a
+   single place in the query, you will get as
+   many entries in the cache for the query as there are users running it. Recall
+   also that the cache is space-
+   and case-sensitive, so if you generate the same query in several places, you
+   may inadvertently have different spacing or inconsistent use of case.
+   And this is not restricted to the <small>SQL</small> statement, the parameter list is as much part of the cache entry. Furthermore, since the cache lookup is by a hash value computed from the query text, I
+   would assume that this is somewhat more expensive than looking up a stored
+   procedure. In fact, under extreme circumstances, heavy use of dynamic <small>SQL</small>, can lead to serious
+   performance degradation. Some of my <small>MVP</small> colleagues have observed systems with
+   lots of memory (&gt; 20 GB) when the plan cache has been so filled with plans
+   for <small>SQL</small> statements, that there have been hash collisions galore, and the
+   cache lookup alone could take several seconds. Presumably, the applications in
+   question either did not use parameterised queries at all, or they failed to
+   prefix tables with <b>dbo</b>.</p>
+<p>So far, I've only talked about dynamic <small>SQL</small> in stored procedures. But in this
+   regard there is very little difference to <small>SQL</small> statements sent from
+   the client, or <small>SQL</small> statements generated in <small>CLR</small> procedures. The same rules
+   apply: unparameterised statements are cached but with little probability for
+   reuse, whereas parameterised queries can be as efficient as stored
+   procedures if you remember to always prefix the tables with <b>dbo</b>. (And still
+   with the caveat that the cache lookup is space- and case-sensitive.) Most client APIs implement
+   parameterised queries by calling <b>sp_executesql</b> under the covers.</p>
+<p>In the section on <a href="#SQL_injection"> <small>SQL</small> Injection</a>, I included an example on how to do
+   parameterised queries with <small>ADO</small> and VB6.
+   Here is an example with VB .Net and SqlClient:</p>
+<pre>cmd.CommandType = System.Data.CommandType.Text
+cmd.CommandText = _
+    " SELECT O.OrderID, SUM(OD.UnitPrice * OD.Quantity)" &amp; _
+    " FROM   dbo.Orders O " &amp; _
+    " JOIN   dbo.[Order Details] OD ON O.OrderID = OD.OrderID" &amp; _
+    " WHERE  O.OrderDate BETWEEN @from AND @to" &amp; _
+    "   AND  EXISTS (SELECT *" &amp; _
+    "                FROM   dbo.[Order Details] OD2" &amp; _
+    "                WHERE  O.OrderID = OD2.OrderID" &amp; _
+    "                  AND  OD2.ProductID = @prodid)" &amp; _
+    " GROUP  BY O.OrderID"
+
+cmd.Parameters.Add("@from", SqlDbType.Datetime)
+cmd.Parameters("@from").Value = "1998-02-01"
+
+cmd.Parameters.Add("@to", SqlDbType.Datetime)
+cmd.Parameters("@to").Value = "1998-02-28"
+
+cmd.Parameters.Add("@prodid", SqlDbType.Int)
+cmd.Parameters("@prodid").Value = 76</pre>
+<p>In contrast to <small>ADO</small>, SqlClient uses names with @ for parameters. The syntax
+   for defining parameters is similar to <small>ADO</small>, but not identical. This article is
+   long enough, so I will not go into details on how the <b>Parameters</b>
+   collection works. Instead, I refer you to <small>MSDN</small> where both SqlClient and <small>ADO</small>
+   are documented in detail. Whatever client <small>API</small> you are using,
+   <i><b>please</b></i>
+   learn how to use parameterised commands with it. Yes, there is a tone of
+   desperation in my voice. I don't know how many posts I've seen on the
+   newsgroups over the years where people build their <small>SQL</small> strings by
+   interpolating the values from input fields into the <small>SQL</small> string, and thereby
+   degrading the performance of their application, and worst of all opening
+   their database to <small>SQL</small> injection.</p>
+<p>... and just when you thought you were safe, I need to turn this upside down. Recall what I said in the beginning of
+this section, that if the query is going to run for four minutes, one second extra for compilation is not a big deal.
+And if that recompilation slashes the execution time from forty minutes to four, there is a huge gain. Most queries
+benefit from cached parameterised plans, but not all do. Say that you have a query where the user can ask for data for
+some time span. If the user asks for a summary for a single day, there is a good non-clustered index that can be used
+for a sub-second response time. But if the request is for the entire year, the same index would be a disaster, and a
+table scan is better. Starting with <small>SQL</small> 2005 you can force a
+   query to be recompiled each
+   time it is executed by adding <small>OPTION (RECOMPILE)</small>
+   to the end of the query, and thus you can still use <b>sp_executesql</b> to get the
+   best protection against <small>SQL</small> injection. On <small>SQL</small> 2000
+   and earlier, it may in fact be better to interpolate critical parameters into the
+   query string when you need to force recompilation each time. </p>
+<p>For the sake of completeness, I should mention that <small>SQL</small>
+   Server is able to auto-parameterise queries. If you submit:</p>
+<pre>SELECT OrderID, OrderDate FROM dbo.Orders WHERE CustomerID = N'ALFKI'</pre>
+<p><small>SQL</small> Server may recast this as </p>
+<pre>SELECT OrderID, OrderDate FROM dbo.Orders WHERE CustomerID = @P1</pre>
+<p>so if next time you submit <small>BERGS</small> instead of <small>ALFKI</small>, the query plan will be reused.
+   Auto-parameterisation comes in two flavours: simple and forced. Simple is the
+   default and is the only option on <small>SQL</small> 2000 and
+   earlier. With simple parameterisation, auto-parameterisation happens only with very simple
+   queries, and, it seems, with some inconsistency. With forced
+   parameterisation, <small>SQL</small> Server parameterises all queries that comes its way
+   (with some exceptions documented in Books Online). Forced parameterisation
+   is, in my opinion, mainly a setting to cover up for poorly designed
+   third-party application that uses unparameterised dynamic
+   <small>SQL</small>. For your own development you should not
+   rely on any form of auto-parameterisation. (But in the situation you really a want a new query
+   plan each time, you may have to verify that it doesn't happen when you don't
+   want to.)</p>
+<p>They say seeing is believing. Here is a demo that you can try on yourself, if
+   you have <small>SQL</small> 2005. First create this database:</p>
+<pre>CREATE DATABASE many_sps
+go
+USE many_sps
+go
+DECLARE @sql nvarchar(4000),
+        @x   int
+SELECT @x = 200
+WHILE @x &gt; 0
+BEGIN
+   SELECT @sql = 'CREATE PROCEDURE abc_' + ltrim(str(@x)) +
+                 '_sp @orderid int AS
+   SELECT O.OrderID, O.OrderDate, O.CustomerID, C.CompanyName,
+          Prodcnt = OD.cnt, Totalsum = OD.total
+   FROM   Northwind..Orders O
+   JOIN   Northwind..Customers C ON O.CustomerID = C.CustomerID
+   JOIN   (SELECT OrderID, cnt = COUNT(*), total = SUM(Quantity * UnitPrice)
+           FROM   Northwind..[Order Details]
+           GROUP  BY OrderID) AS OD ON OD.OrderID = O.OrderID
+   WHERE  O.OrderID = @orderid'
+   EXEC(@sql)
+   SELECT @x = @x - 1
+END </pre>
+<p>Then in <small>SQL</small> Server Management Studio 2005, press F7
+   navigate down to the list of stored procedures. Select all procedures. Then
+   from the context menu select to script them as <small>CREATE
+   TO</small> to a new query window. How long time this takes depends on your
+   hardware, but on my machine it took 90 seconds and at the same time <small>SQL</small>
+   Server grabbed over 250 <small>MB</small> of memory. If you
+   use the Profiler to see what Mgmt Studio is up to, you will see that for each
+   procedure, Mgmt Studio emits a couple of queries with the procedure name
+   embedded. That is, no parameterised statements. Once scripting is complete,
+   issue this command:</p>
+<pre>ALTER DATABASE many_sps SET PARAMETERIZATION FORCED</pre>
+<p>and redo the operation. On my machine scripting now completed in five
+   seconds!. This demonstrates that the difference between parameterised and
+   unparameterised can be dramatic. (And that Microsoft can not use their own
+   products properly.) If you run <small>SQL</small> Server on
+   your local machine, you can see this from one more angle, you can stop and restart
+   <small>SQL</small> Server before the two scripting operations, and then use Task Manager to
+   see how much physical memory <small>SQL</small> Server uses
+   in the two cases. That difference lies entirely in the plan cache.</p>
+<p>This particular issue have been addressed in <small>SQL</small> Server Management Studio 2008. <small>SSMS</small> 2008 has its own scripting
+issues, but they have nothing to do with the topic of this article.</p>
+<h3><a name="networktraffic">Reducing Network Traffic</a></h3>
+
+<p>Another advantage with stored procedures over <small>SQL</small> sent from the client is that less bytes travel the network. Rather than sending a
+   50-line query over the network, you only need to pass the name of a stored procedure
+   and a few parameters. This gets more significant if the computation requires
+   several queries, possibly with logic in between. If all logic is outside the
+   database, this could mean that data has to travel up to the client, only to travel back in the next moment. With stored procedures you can
+   use temp tables to hold intermediate results. (You can use temp tables
+   from outer layers as well, although it may require some careful use of your
+   client <small>API</small>.)</p>
+<p>In this case, the dividing line goes between sending <small>SQL</small> from the client or
+   running stored procedures. If the stored procedures use static <small>SQL</small> only, or
+   invoke dynamic <small>SQL</small> does not matter, nor does it matter if it is a <small>CLR</small> procedure.
+   You still get the gains of reduced network traffic.</p>
+<h3><a name="encapsulation">Encapsulating Logic</a></h3>
+
+<p>This is not a question of security or performance, but one of
+   good programming practice and modularising your code. By using stored procedures, you don't have to bog down
+your client code with the construction of <small>SQL</small> statements. Then again, it depends
+   a little on what you put into those stored procedure. Myself, I am of the
+   school that the business logic should be where the data is, and in this case
+   there is no dispute that you should use stored procedures to encapsulate your
+   logic.</p>
+<p>But there are also people
+   who like to see the database as a unintelligent container of data, and who
+   prefer to have the business logic
+   elsewhere. In this case, the arguments for using stored procedures
+   for encapsulation may not be equally compelling. You could just as well employ careful programming practices in
+   your client language and send <small>SQL</small> strings.</p>
+<p>Nothing of this changes if you use dynamic <small>SQL</small> in your stored procedures. The
+   stored procedure is still a container for some piece of logic, and how it
+   looks on the inside does not matter. I'm here assuming that most of your
+   procedures use static <small>SQL</small> only. If all your stored procedures
+   generate dynamic <small>SQL</small>, then you are probably better off in this regard to do it all in client code. Then again, sometimes there is no other application
+   than Query Analyzer or <small>SQL</small> Server Management Studio. (Typically this would be
+   tasks that are run by an admin.) In this case, the only container of logic
+   available is stored procedures, and it's immaterial whether they use dynamic
+   <small>SQL</small> or not.</p>
+<h3><a name="trackability">Keeping Track of what Is Used</a></h3>
+
+<p>In a complex system with hundreds of tables, you may need to know where a
+   certain table or column is referenced, because you are considering changing
+   or dropping it. If all access to tables is from static <small>SQL</small> in stored
+   procedures, you may be able find all references by using the system
+   stored procedure <b>sp_depends</b> or query a system table directly. (<b>sysdepends</b>
+   in <small>SQL</small> 2000, <b>sys.sql_dependencies</b> in <small>SQL</small> 2005
+and later. In <small>SQL</small> 2008 there is also <strong>sys.sql_expression_dependencies</strong>.) I say may, because it is very difficult to maintain complete dependency
+   information in <small>SQL</small> Server. If you drop and recreate a table, all dependency
+   information for the table is lost. What I do myself is to regularly build an empty database
+   from our version-control system, and since our build tool
+   loads all tables before any stored procedure or trigger, I know that I can
+   trust the dependency information in that database.</p>
+<p>If you throw dynamic <small>SQL</small> into the mix – be that <small>SQL</small> sent from client,
+   dynamic <small>SQL</small> in <small><span class="nowrap">T-SQL</span></small> procedures, or <small>SQL</small> generated by <small>CLR</small> stored procedures
+   - you lose this opportunity. The alternative is to employ brute-force search,
+   and if the construction of dynamic <small>SQL</small> is confined to some well-defined set
+   of modules, this may work. If not, you may end up with a database where no
+   one ever dares to drop or change a column or a table, and which eventually
+   becomes unbearable complex and inefficient because of all the legacy baggage
+   it's carrying around.</p>
+<p>While the main dividing line here is between static <small>SQL</small> and any form of
+   dynamic <small>SQL</small>, dynamic <small>SQL</small> in <small><span class="nowrap">T-SQL</span></small>
+stored procedures is probably the least harmful, as there is less code to search. You can even search
+   the column <b>sys.sql_modules.definition</b> using <small>SQL</small>. Available since <small>SQL</small> 2005. In <small>SQL</small> 2000 you
+   can search <b>syscomments</b>, but as the procedure text there is chopped into 4000-char slices, this is less
+reliable.</p>
+<p>In any case, an occasional stored procedure that uses dynamic <small>SQL</small> is not
+   likely cause the Armageddon I pictured above. But it is
+   a good argument for being restrictive with dynamic <small>SQL</small> in any form.</p>
+<h3><a name="easiness">Ease of Writing SQL Code</a></h3>
+<p>One distinct advantage of writing stored <small><span class="nowrap">T-SQL</span></small> procedures is that you get a
+   syntax check directly. With dynamic <small>SQL</small>, a trivial syntax error may not show up
+   until run time. Even if you test your code carefully, there may be some query, or
+   some variation of a query, that is only run in odd cases and not covered in
+   your test suite. </p>
+<p>It has to be admitted that the strength of this argument is somewhat reduced by the fact
+   that <small><span class="nowrap">T-SQL</span></small> is not too industrious on reporting semantic errors.
+   Because of deferred name resolution, <small>SQL</small> Server will not examine queries in
+   stored procedures, where one or more tables are missing, be that misspellings
+   or temp tables created within the procedure. Nevertheless, <small>SQL</small> Server
+   does report sufficiently many errors, for this to be a very important reason
+   to use stored procedures.</p>
+<p>Another side of this coin is that when you write dynamic <small>SQL</small>, you embed the
+   <small>SQL</small> code into strings, which makes programming far more complex. Your <small>SQL</small>
+   code is a string delimited by single quotes(<code>'</code>), and this string
+   may include strings itself, and to include a single quote into the string you
+   need to double it. You can easily get lost in a maze of quotes if you don't
+   watch out. (In the section <i><a href="#good_practices">Good Coding Practices
+   and Tips for Dynamic <small>SQL</small></a></i>, we will look a little closer
+   on how to deal
+   with this problem.) The most commonly used client languages with <small><span class="nowrap">T-SQL</span></small> -
+   Visual Basic, <small>C#, C</small>++, VBScript – all use the double quote (<code>"</code>)
+   as their string delimiter, so dynamic <small>SQL</small> in client code or <small>CLR</small> stored
+   procedures is less prone to that particular problem. Then again, in VB you
+   don't have multi-line strings, so at the end of each line you have to have a double
+   quote, an ampersand and an underscore for continuation. It sure does not
+   serve to make coding easier. You are relieved from all this hassle, if you
+   use stored procedures with static <small>SQL</small> only.</p>
+<h3><a name="supportability">Addressing Bugs and Problems</a></h3>
+<p>Somewhat surprisingly, one of the strongest arguments for stored procedures today may
+   be
+ that they permit you to quickly address bugs and performance problems in the
+ application.</p>
+<p>Say that you generate <small>SQL</small> statements in your application, and that there is
+ an error in it. Or that it simply performs unbearably slow. To fix it, you need to
+ build a new executable or <small>DLL</small>, which is likely to contain other code that also
+   has changed since the module was shipped. This
+ means that before the fix can be put into production, the module will have to go
+ through QA and testing.</p>
+<p>On the other hand, if the problem is in a stored procedure, and the fix is
+ trivial, you may be able to deploy a fix into production within an hour after
+ the problem was reported. </p>
+<p>This difference is even more emphasised, if you are an <small>ISV</small> and you ship a
+   product that the customer is supposed administer himself. If your application
+   uses stored procedures, a <small>DBA</small> may be able to address problems directly
+   without opening a support case. For instance, if a procedure runs unacceptably
+   slow, he may be able to fix that by adding an index hint. In contrast,
+   with an application that generates <small>SQL</small> in the
+ client, his hands will be tied. Of course, as an <small>ISV</small> you may not want your
+ customers to poke around in your code, even less to change it. You may also prefer
+   to ship your procedures <small>WITH ENCRYPTION</small> to protect
+   your intellectual property, but this is best controlled
+ through license agreements. (If you encrypt your procedures, the <small>DBA</small> can still
+   change them, as long as he is able to find a way to decrypt them. Which any
+   <small>DBA</small> that knows how to use Google can do.) </p>
+<p>In this case, it does not matter whether the stored procedure uses static <small>SQL</small>
+   only, or if it also uses dynamic <small>SQL</small>. For <small>CLR</small> procedures it depends on many objects
+   you have in your assemblies. If you have one assembly per object, installing a new version of a <small>CLR</small> procedure
+   is as simple as replacing a <small><span class="nowrap">T-SQL</span></small> procedure.</p>
+<p>(I should add that <small>SQL</small> 2005 offers a new feature that permits the <small>DBA</small> to
+   change the plan for a query without altering the code, by adding a <i>plan guide</i>.
+   This feature has been further enhanced in <small>SQL</small> 2008. This is quite an advanced feature, and I refer to Books Online for details.)</p>
+<h2><a name="good_practices">Good Coding Practices and Tips for Dynamic SQL</a></h2>
+<p>Writing
+ dynamic <small>SQL</small> is a task that requires discipline to
+avoid losing control
+   over your code. If you
+   just go ahead, your code can become very messy, and be difficult to read, troubleshoot
+   and maintain. In this section, we will look at how to avoid this. I will also
+   discuss some special cases: how you can use <b>sp_executesql</b> for input longer
+   than 4000 chars in <small>SQL</small> 2000, and how to use dynamic <small>SQL</small> with cursors, and the
+   combination of dynamic <small>SQL</small> and user-defined functions.</p>
+<h3><a name="debugprints">Use Debug Prints!</a></h3>
+<p>When you write a stored procedure that generates dynamic <small>SQL</small>, you should
+   always include a @debug parameter:</p>
+<pre>CREATE PROCEDURE dynsql_sp @par1 int,
+                           ...
+                           @debug bit = 0 AS
+...
+IF @debug = 1 PRINT @sql</pre>
+<p>When you get a syntax error from the dynamic <small>SQL</small>, it can be very confusing, and
+   you may not even discern where it comes from. And even when you do, it can be
+   very difficult to spot the error only by looking at the code that constructs the <small>SQL</small>.
+   Once the <small>SQL</small> code is slapped in your face, the error is much more likely to be apparent to you.
+   So always include a @debug parameter and a <small>PRINT</small>!</p>
+<h3><a name="nestedstrings">Nested Strings</a></h3>
+<p>As I've already mentioned, one problem with dynamic <small>SQL</small> is that you often need to deal with nested
+   string delimiters. For instance, in the beginning of this article, I showed
+   you the procedure <b>general_select2</b>. Here it is again:</p>
+<pre>CREATE PROCEDURE general_select2 @tblname nvarchar(127),
+                                 @key     varchar(10) AS
+EXEC('SELECT col1, col2, col3
+      FROM ' + @tblname + '
+      WHERE keycol = ''' + @key + '''')</pre>
+<p>(Again, I like to emphasise that this sort of procedure is poor use of
+   dynamic <small>SQL</small>.)</p>
+<p>
+<small>SQL</small> is one of those language where the method to include a string
+delimiter itself in a string literal is to double it. So those four consecutive
+single quotes <code>('''')</code> is a string literal with the value of a one
+single quote (<code>'</code>).
+This is a fairly simple example; it can get a lot worse. If you work with
+dynamic <small>SQL</small>, you must learn to master nested strings. Obviously, in this case you
+can easily escape the mess by using <b>sp_executesql</b> instead – yet another reason
+to use parameterised statements. However, there are situations when you need to
+deal with nested quotes even with <b>sp_executesql</b>. For instance, earlier in this
+article, I had this code:</p>
+<pre>N' WHERE LastUpdated BETWEEN @fromdate AND '
+N'                           coalesce(@todate, ''99991231'')'</pre>
+<p>We will look at some tips of dealing with nested strings later in this
+   section.</p>
+<h3><a name="formatting">Spacing and Formatting</a></h3>
+<p>Another thing to be careful with is the spacing as you concatenate the parts
+   of a query.
+   Here is an example where it goes wrong:</p>
+<pre>EXEC('SELECT col1, col2, col3
+      FROM' + @tblname + '
+      WHERE keycol = ''' + @key + '''')</pre>
+<p>
+See that there is a space missing after <small>FROM</small>? When you compile the stored procedure
+you will get no error, but when you run it, you will be told that the columns <i>
+keycol</i>, <i>col1, col2, col3</i> are missing. And since you know that the
+table you passed to the procedure has these columns you will be mighty confused. But this is
+the actual code generated, assuming the parameters <b>foo</b> and <b>abc</b>:</p>
+<pre>SELECT col1, col2, col3
+    FROMfoo
+    WHERE keycol = 'abc'</pre>
+This is not a syntax error, because <code>FROMfoo</code> is a column alias to <i>col3</i>.
+And, yes, it's legal to use a <small>WHERE</small> clause, even if there is no <small>FROM</small> clause. But
+since the columns cannot exist out of the blue, you get an error for that.<p>
+   This is also a good example why you should use debug prints. If the code
+   looks like this:</p>
+<pre>SELECT @sql =' SELECT col1, col2, col3
+               FROM' + @tblname + '
+               WHERE keycol = ''' + @key + ''''
+IF @debug = 1 PRINT @sql
+EXEC(@sql)</pre>
+<p>It would be much easier to find the error by running the procedure with
+   @debug = 1. (Obviously, had we included the <b>dbo</b> prefix, this error
+   could not occur at all.)</p>
+<p>Overall, good formatting is essential when working with dynamic <small>SQL</small>. Try to
+   write the query as you would have written it in static <small>SQL</small>, and then add the
+   string delimiters outside of that. <small><span class="nowrap">T-SQL</span></small> permits you to embed newlines in
+   string literals (as testified by the example above), so in contrast to VB,
+   you don't need a string delimiter on each line. An advantage of this is that
+   your debug <small>PRINT</small> is easier to read, and in the case of a syntax error the line
+   number in the error message may guide you.</p>
+<p>You may prefer, though, to
+   have a string terminator on each line. A tip in such case is to do something
+   like this:</p>
+<pre>EXEC(' SELECT col1, col2, col3 ' +
+     ' FROM ' + @tblname +
+     ' WHERE keycol = ''' + @key + '''')</pre>
+<p>As you see, I have a space after the opening single quote on each line to avoid syntax problems due to missing spaces.</p>
+<h3><a name="objectnames">Dealing with Dynamic Table and Column Names</a></h3>
+<p>Passing table and column names as parameters to a procedure with dynamic <small>SQL</small>
+   is rarely a good idea for application code. (It can make perfectly sense for
+   admin tasks). As I've said, you cannot pass a table or a column name as a
+   parameter to <b>sp_executesql</b>, but you must interpolate it into the <small>SQL</small> string.
+   Still you should protect it against <small>SQL</small>
+   injection, as a matter of routine. It could be that bad it comes from user
+   input. </p>
+<p>To this end, you should use the built-in function <b><span class="nowrap">quotename()</span></b> (added in
+   <small>SQL</small> 7). <span class="nowrap"><b>quotename()</b></span> takes two parameters: the first is a string, and the second
+   is a pair of delimiters to wrap the string in. The default for the second
+   parameter is []. Thus, <code><span class="nowrap">quotename('Orders')</span></code> returns <code>
+   [Orders]</code>. <span class="nowrap"><b>quotename()</b></span> takes care of nested delimiters, so if you have
+   a really crazy table name like <b>Left]Bracket</b>, <span class="nowrap"><b>quotename()</b></span> will
+   return <code><span class="nowrap">[Left]]Bracket]</span></code>.</p>
+<p>Note that when you work with names with several components, each component
+   should be quoted separately. <code><span class="nowrap">quotename('dbo.Orders')</span></code> returns
+   <code><span class="nowrap">[dbo.Orders]</span></code>, but that is a table in an unknown
+   schema of which the first four characters are <b>d</b>, <b>b</b>, <b>o</b> and
+   a dot. As long as you only work with the <b>dbo</b> schema, best practice is to
+   add <b>dbo</b> in the dynamic <small>SQL</small> and only pass the table name. If you work
+   with different schemas, pass the schema as a separate parameter. (Although
+   you could use the built-in function <span class="nowrap"><b>parsename()</b></span> to split up a
+   @tblname
+   parameter in parts.)</p>
+<p>While <b>general_select</b> still is a poor idea as a stored procedure, here
+   is nevertheless a version that summarises some good coding
+   virtues for dynamic <small>SQL</small>:</p>
+<pre>CREATE PROCEDURE general_select @tblname nvarchar(128),
+                                @key     varchar(10),
+                                @debug   bit = 0 AS
+DECLARE @sql nvarchar(4000)
+SET @sql = 'SELECT col1, col2, col3
+            FROM dbo.' + quotename(@tblname) + '
+            WHERE keycol = @key'
+IF @debug = 1 PRINT @sql
+EXEC sp_executesql @sql, N'@key varchar(10)', @key = @key</pre>
+<ul>
+   <li>I'm using <b>sp_executesql</b> rather than <small><span class="nowrap">EXEC()</span></small>.</li>
+   <li>I'm prefixing the table name with <b>dbo</b>.</li>
+   <li>I'm wrapping @tblname in <b><span class="nowrap">quotename()</span></b>.</li>
+   <li>There is a @debug parameter.</li>
+</ul>
+<h3><a name="quotestring">Quotename, Nested Strings and Quotestring</a></h3>
+<p>
+The main purpose of <span class="nowrap"><b>quotename()</b></span> is to quote object names, which is why the
+default for the second parameter is brackets. But you can specify other
+delimiters as well, including single quotes, which means that any single quote
+in the input is doubled. Thus, if you for some reason prefer to use
+     <small><span class="nowrap">EXEC()</span></small>, you can use <b><span class="nowrap">quotename()</span></b> to protect yourself against <small>SQL</small>
+     injection by help of this function. Here is an example.</p>
+<pre>IF @custname IS NOT NULL
+   SELECT @sql = @sql + ' AND custname = ' + quotename(@custname, '''')</pre>
+<p>Say that @custname has the value <i>D'Artagnan</i>. This part of the dynamic <small>SQL</small>
+   becomes:</p>
+<pre>AND custname = 'D''Artagnan'</pre>
+<p>There is a limitation with <b><span class="nowrap">quotename()</span></b>: its input parameter
+     is <b>nvarchar(128)</b>, so it does not handle long strings. A remedy is this user-defined function: </p>
+<pre>CREATE FUNCTION quotestring(@str nvarchar(1998)) RETURNS nvarchar(4000) AS
+BEGIN
+   DECLARE @ret nvarchar(4000),
+           @sq  char(1)
+   SELECT @sq = ''''
+   SELECT @ret = replace(@str, @sq, @sq + @sq)
+   RETURN(@sq + @ret + @sq)
+END</pre>
+<p>This version is for <small>SQL</small> 2000. On <small>SQL</small> 2005 and
+later, replace 1998 and 4000 with <small>MAX,
+   to make it work for any string length. </small>Here is an example of using this function:</p>
+<pre>IF @custname IS NOT NULL
+   SELECT @sql = @sql + ' AND custname = ' + dbo.quotestring(@custname)</pre>
+<p>
+The result is the same as above.</p>
+<p>
+On <small>SQL</small> 7, you would have to implement <b>quotestring</b> as a stored procedure.
+<small>SQL</small> 6.5 does not have <b><span class="nowrap">replace()</span></b>, so you are a bit out of luck there. </p>
+<p>
+So with <span class="nowrap"><b>quotename()</b></span> and <span class="nowrap"><b>quotestring()</b></span>,
+do we have as good protection against <small>SQL</small>
+injection as we have with parameterised commands? Maybe. I don't know of any way to
+inject <small>SQL</small> that slips through <span class="nowrap"><b>quotename()</b></span> or <span class="nowrap"><b>quotestring()</b></span>. Nevertheless, you
+are interpolating user input into the <small>SQL</small> string, whereas with parameterised
+commands, you don't.</p>
+<p>
+(I
+should add that I got the suggestion to use <b><span class="nowrap">quotename()</span></b> or a user-defined
+function from <small>SQL</small> Server <small>MVP</small> Steve Kass.)</p>
+<h3><a name="QUOTED_IDENTIFIER">QUOTED_IDENTIFIER</a></h3>
+<p>Another alternative to
+   escape the mess of nested quotes, is make use
+   of the fact that <small><span class="nowrap">T-SQL</span></small> actually has two string delimiters. To wit, if the
+   setting <small>QUOTED_IDENTIFIER</small> is <small>OFF</small>, you can also use double quotes(<code>"</code>)
+   as a string delimiter. The default
+   for this setting depends on context, but the preferred setting is
+   <small>ON</small>, and it
+   must be <small>ON</small> in order to use XQuery, indexed views and indexes on computed columns.
+   Thus, this is not a first-rate alternative, but if you are aware of the caveats,
+   you can do this:</p>
+<pre>CREATE PROCEDURE general_select @tblname nvarchar(127),
+                                @key     key_type,
+                                @debug   bit = 0 AS
+DECLARE @sql nvarchar(4000)
+
+SET @sql = 'SET QUOTED_IDENTIFIER OFF
+            SELECT col1, col2, col3
+            FROM dbo.' + quotename(@tblname) + '
+            WHERE keycol = "' + @key + '"'
+IF @debug = 1 PRINT @sql
+EXEC(@sql)</pre>
+
+<p>Since there are two different quote characters, the code is much easier to
+   read. The single quotes are for the <small>SQL</small> string and the double quotes
+   are for
+   the embedded string literals. </p>
+<p>All and all, this is an inferior method to both <b>sp_executesql</b> and <b><span class="nowrap">quotestring()</span></b>, since you are not protected against <small>SQL</small> injection
+   (what if @key includes a double quote?). But it
+   would be OK to do for some sysadmin task (where <small>SQL</small> injection is not likely
+   to be an issue), and it may be the best way to go on <small>SQL</small> 6.5. </p>
+<h3><a name="sp_executesqlong">sp_executesql and Long SQL Strings in SQL 2000</a></h3>
+<p>There is a limitation with <b>sp_executesql</b> on <small>SQL</small> 2000
+   and <small>SQL</small> 7, since you cannot use longer <small>SQL</small>
+   strings than 4000 characters. (On <small>SQL</small> 2005 and later,
+   you should use <b>nvarchar(<small>MAX</small>)</b> to avoid this
+   problem.) If you
+   want to use <b>sp_executesql</b> when your query string exceeds this limit to make use of parameterised query plans, there is actually a
+   workaround. To wit, you can wrap <b>sp_executesql</b> in <small><span class="nowrap">EXEC()</span></small>:</p>
+<pre>DECLARE @sql1 nvarchar(4000),
+        @sql2 nvarchar(4000),
+        @state char(2)
+SELECT @state = 'CA'
+SELECT @sql1 = N'SELECT COUNT(*)'
+SELECT @sql2 = N'FROM dbo.authors WHERE state = @state'
+EXEC('EXEC sp_executesql N''' + @sql1 + @sql2 + ''',
+                         N''@state char(2)'',
+                         @state = ''' + @state + '''')</pre>
+<p>This works, because the @stmt parameter to <b>sp_executesql</b> is <b>ntext</b>, so by
+   itself, it does not have any limitation in size.</p>
+<p>You can even use output parameters by using
+   <a href="http://www.sommarskog.se/share_data.html#INSERTEXEC"><small>INSERT-EXEC</small></a>, as
+   in this example:</p>
+<pre>CREATE TABLE #result (cnt int NOT NULL)
+DECLARE @sql1  nvarchar(4000),
+        @sql2  nvarchar(4000),
+        @state char(2),
+        @mycnt int
+SELECT @state = 'CA'
+SELECT @sql1 = N'SELECT @cnt = COUNT(*)'
+SELECT @sql2 = N'FROM dbo.authors WHERE state = @state'
+INSERT #result (cnt)
+   EXEC('DECLARE @cnt int
+         EXEC sp_executesql N''' + @sql1 + @sql2 + ''',
+                            N''@state char(2),
+                               @cnt   int OUTPUT'',
+                            @state = ''' + @state + ''',
+                            @cnt = @cnt OUTPUT
+         SELECT @cnt')
+SELECT @mycnt = cnt FROM #result</pre>
+<p>You have my understanding if you think this is too messy to be worth it.</p>
+<h3><a name="UDF">Dynamic SQL in User-Defined Functions</a></h3>
+<p>This very simple: you <i><b>cannot</b></i> use dynamic <small>SQL</small> from used-defined functions
+   written in <small><span class="nowrap">T-SQL</span></small>. This is because you are not permitted do anything in a <small>UDF</small>
+   that could change the database state (as the <small>UDF</small> may be invoked as part of a
+ query). Since you can do anything from dynamic <small>SQL</small>, including updates, it is
+ obvious why dynamic <small>SQL</small> is not permitted.</p>
+<p>I've seen more than one post on the newsgroups where people have
+   been banging their head against this. But if you want to use dynamic <small>SQL</small> in a
+ <small>UDF</small>, back out
+   and redo your design. You have hit a roadblock, and in <small>SQL</small> 2000 there is no
+   way out.</p>
+<p>In <small>SQL</small> 2005 and later, you could implement your function as a <small>CLR</small> function. Recall that
+   all data access from the <small>CLR</small> is dynamic <small>SQL.</small> (You are safe-guarded, so that if
+   you perform an update operation from your function, you will get caught.) A
+   word of warning though: data access from scalar UDFs can often give performance
+   problems. If you say </p>
+<pre>SELECT ... FROM tbl WHERE dbo.MyUdf(somecol) = @value</pre>
+<p>and <b>MyUdf</b> performs data access, you have more or less created a hidden
+   cursor. </p>
+<h3><a name="cursor0">Cursors and Dynamic SQL</a></h3>
+<p>Not that cursors are something you should use very frequently, but people often
+ask about using dynamic <small>SQL</small> with cursors, so I give an example for the sake
+   of completeness. You cannot say <kbd>DECLARE CURSOR <span class="nowrap">EXEC()</span></kbd>; you have to put the
+entire <small>DECLARE CURSOR</small> statement in dynamic <small>SQL</small>:</p>
+<pre>SELECT @sql = 'DECLARE my_cur INSENSITIVE CURSOR FOR ' +
+              'SELECT col1, col2, col3 FROM ' + @table
+EXEC sp_executesql @sql</pre>
+<p>You may be used to using the <small>LOCAL</small> keyword with your cursors. However, it is
+   important to understand that you must use a global cursor, as a local cursor
+   will disappear when the dynamic <small>SQL</small> exits. (Because, as you know by now, the
+   dynamic <small>SQL</small> is its own scope.) Once you have declared the
+   cursor in this way, you can use the cursor in a normal fashion. You must be
+   extra careful with error-handling though, so that you don't exit the
+   procedure without deallocating the cursor. </p>
+<p>There is however a way to use locally-scoped cursors with dynamic <small>SQL</small>.
+   Anthony Faull pointed out to me that you can achieve this with cursor variables, as in this example:</p>
+<pre>DECLARE @my_cur CURSOR
+EXEC sp_executesql
+     N'SET @my_cur = CURSOR STATIC FOR
+       SELECT name FROM dbo.sysobjects;
+       OPEN @my_cur',
+     N'@my_cur cursor OUTPUT', @my_cur OUTPUT
+FETCH NEXT FROM @my_cur</pre>
+<p>
+You refer to a cursor variable, just like named cursors, but there is an @ in front,
+and, as you see from the example, you can pass them as a parameters. (I have to confess
+I have never seen any use for cursor variables until Anthony Faull was kind to send
+me this example.)</p>
+<h2><a name="EXECatlinked"><span class="nowrap">EXEC()</span> at Linked Server</a></h2>
+<p>A special feature added in <small>SQL</small> 2005 is that you can use <small><span class="nowrap">EXEC()</span></small> to run
+   pass-through queries on a linked server. This could be another instance of
+   <small>SQL</small> Server, but it could also be an Oracle server, an Access database, Active
+   directory or whatever. The <small>SQL</small> could be a single query or a sequence of
+   statements, and could it be composed dynamically or be entirely static. The syntax
+   is simple, as seen by this example:</p>
+<pre>EXEC('SELECT COUNT(*) FROM ' + @db + '.dbo.sysobjects') AT SQL2K</pre>
+<p><small>SQL2K</small> is here a linked server that has been defined with <b>
+   sp_addlinkedserver</b>.</p>
+<p>There is one thing that you can do with <small><span class="nowrap">EXEC()</span></small> at a linked server, that you
+   cannot do with <small><span class="nowrap">EXEC()</span></small> on a local server: you can use parameters, both for
+   input and output. The confuse matters, you don't use parameters with names
+   starting with @, instead you use question marks (<code>?</code>) as parameter
+   holders. Say that you are on an <small>SQL</small> 2005 box, and you are dying to know how
+   many orders <small>VINET</small> had in the <b>Northwind</b> database. Unfortunately, <small>SQL</small> 2005 does
+   not ship with <b>Northwind</b>, but you have a linked server set up to an instance
+   of <small>SQL</small> 2000 with <b>Northwind</b>. You can run this:</p>
+<pre>DECLARE @cnt int
+EXEC('SELECT ? = COUNT(*) FROM Northwind.dbo.Orders WHERE CustomerID = ?',
+      @cnt OUTPUT, N'VINET') AT SQL2K
+SELECT @cnt</pre>
+<p>Note here that the parameter values must appear in the order the parameter
+   markers appear in the query. When passing a parameter, you can either specify a
+   constant value or a variable. </p>
+<p>You may ask why the inconsistency with a different parameter marker from
+   <b>sp_executesql</b>? Recall that linked servers in <small>SQL</small> Server are always accessed
+   through an <small>OLE DB</small> provider, and <small>OLE DB</small> uses <code>?</code> as
+   the parameter marker, a convention inherited from <small>ODBC. OLE DB</small> translates
+   that parameter marker as is appropriate for the data source on the other end.
+   (Not all <small>RDBMS</small> use @ for variables.) </p>
+<p>As with regular <small><span class="nowrap">EXEC()</span></small>, you can specify <small>AS USER/LOGIN</small> to use impersonation:</p>
+<pre>EXEC('SELECT COUNT(*) FROM ' + @db + '.dbo.sysobjects')
+    AS USER = 'davidson' AT SQL2K</pre>
+<p>This begs the question: is <b>davidson</b> here a local user or a remote
+   user at <small>SQL2K</small>? Books Online is not very clear
+   about this, but I did some
+   quick experimenting, and found that what you are impersonating is a local user or login,
+   not a login on the remote server. (The login to use on the remote server can be
+   defined with <b>sp_addlinkedsrvlogin</b>.)</p>
+<h2><a name="Common_cases">Common Cases when to (Not) Use Dynamic SQL</a></h2>
+<p>When you read the various newsgroups on <small>SQL</small> Server, there is almost every day
+   someone who asks a question that is answered with <i>use dynamic <small>SQL</small></i> with a quick example
+   to illustrate, but ever so often the person answering forgets to tell
+about the implications on permissions or <small>SQL</small> injection. On top of that, far too many
+examples use <small><span class="nowrap">EXEC()</span></small> without any thought of query plans. And while many of these
+   questions taken by the letter have no other answer than dynamic <small>SQL</small>, there is
+   often a real business problem which has a completely different solution
+   without dynamic <small>SQL</small> – and
+   a much better one.</p>
+<p>So, in this section I will explore some situations where you <i>could</i> use dynamic
+<small>SQL</small>. You will see that sometimes dynamic <small>SQL</small> is a
+   good choice, but also that in many cases that it is an outright bad idea. </p>
+<h3><a name="Dyn_table">SELECT * FROM @tablename</a></h3>
+<p>A common question is why the following does not work: </p>
+<pre>CREATE PROCEDURE my_proc @tablename sysname AS
+   SELECT * FROM @tablename</pre>
+
+<p>As we have seen, we can make this procedure work with help of dynamic <small>SQL</small>, but
+   it should also be clear that we gain none of the advantages with generating
+   that dynamic <small>SQL</small> in a stored procedure. You could just as well send the
+   dynamic <small>SQL</small> from the client. So, OK: 1) if the
+   <small>SQL</small> statement is very complex, you save some network traffic and you do encapsulation.
+2) As we have seen, starting with<small> SQL</small> 2005 there are methods to deal with
+   permissions. Nevertheless, this<b> is</b> a bad idea.<b> </b> </p>
+<p> There seems to be several reasons why people want to parameterise the table
+   name. One camp
+   appears to be people who are new to <small>SQL</small> programming, but have experience
+   from other
+languages such as <small>C++, VB</small> etc where parameterisation is a good thing. Parameterising
+the table name to achieve generic code and to increase
+maintainability seems like good programmer virtue. </p>
+<p>But it is just that when it comes to database objects, the old truth does not
+hold. In a proper database design, each table is unique, as it describes a
+   unique entity. (Or at least it should!) Of course, it is not uncommon to end
+   up with a dozen or more look-up tables that all have an id, a name
+   column and some auditing columns. But they do describe different entities,
+   and their semblance should be regarded as mere chance, and future
+   requirements may make the tables more dissimilar.</p>
+<p>Furthermore, when it comes to building a query plan, each table has its set
+   of statistics and
+   presumptions that are by no means interchangeable, as far as <small>SQL</small> Server is
+   concerned. Finally, in
+   a complex data model, it is important to get a grip of what's being used. When you start to pass table and column names as parameters, you definitely
+   lose control.</p>
+<p>So if you want to do the above (save the fact that <small>SELECT</small> * should not be
+   used in production code), to save some typing, you are on the wrong path. It is
+much better to write ten or twenty stored procedures, even if they are similar
+to each other. </p>
+<p>(If your <small>SQL</small> statements are complex, so that there actually is a considerable
+   gain in maintainability to only have them in one place, despite different
+   tables being used, you could consider using a
+   pre-processor like the one in <small>C/C++</small>. You would still have one set of
+   procedures per table, but the code would be in one single include file.)</p>
+<h3><a name="Sales_yymm">SELECT * FROM sales + @yymm</a></h3>
+<p>This is a variation of the previous case, where there is a suite of tables
+   that actually do describe the same entity. All tables have the same columns, and the name includes some partitioning
+   component, typically year and sometimes also month. New tables are created as
+   a new year/month begins.</p>
+<p>In this case, writing one stored procedure per table is not really feasible.
+   Not the least, because the user may want to specify a date range for a search, so even
+   with one procedure per table you would still need a dynamic dispatcher.</p>
+<p>Now, let's make this very clear: this is a flawed
+   table design. You should not have one <b>sales</b> table per month, you should
+   have one single <b>sales</b> table, and the month that appear in the table
+   name, should be the first column of the primary key in the united <b>sales</b> table. But you may be stuck with a legacy
+application where you cannot easily change the table design. And, admittedly, there are situations where partitioning
+makes sense. The table may be <b><i>huge</i></b> (say over 10 GB
+   in size), or you want to be able age to out old data quickly. But in such case you should do partitioning properly.</p>
+<p>In the following, I will look at three approaches to deal with partitioning without using dynamic <small>SQL</small>.</p>
+<h4>Partitioned Tables</h4>
+<p>Partitioned tables were added in <small>SQL</small> 2005. You can divide a table in up to 999 partition according to a partition
+function. These partitions can be split up over different filegroups to spread out the load. Another important benefit
+of partitioned tables is that deleting a partition is a pure meta-data operation, which means that if you want to throw
+away all orders that are more than, say, 12 months old, you can do this with the wink of an eye.</p>
+<p>Table partitioning is only available in Enterprise and Developer Edition, not in Standard. For this reason, I'm not
+going into further details, but refer you to Books Online.</p>
+<h4>Views and Partitioned Views</h4>
+<p>If you have an old application, where you cannot easily merge the umpteen sales tables into one, because it would break
+other parts of the application, a simple approach is
+   to define a view like this:</p>
+<pre>CREATE VIEW sales AS
+   SELECT year = '2006', col1, col2, ... FROM dbo.sales2006
+   UNION ALL
+   SELECT year = '2005', col1, col2, ... FROM dbo.sales2005
+   UNION ALL
+   ...  </pre>
+<p> Instead of composing
+   the table name dynamically, you can now say:</p>
+<pre>SELECT ... FROM sales WHERE year = '2006' AND ...</pre>
+<p>Also, it's easy to add new tables to the view or remove old tables as the data is aged out. Unfortunately, this view is not terribly efficient, as the query will access
+   all tables in the view. Furthermore, the view is not updateable. But with a few more steps, you could make it into what <small>SQL</small> Server
+knows as a <em>partitioned view</em>,
+a feature added in <small>SQL</small> 2000 (and available in all editions of <small>SQL</small> Server). A true partitioned view can be very efficient, because for
+   queries that include the partitioning column in the <small>WHERE</small> clause, <small>SQL</small> Server
+   will only access the relevant table(s). And such a view is updatable, so you
+   can insert data into it, and the data will end up in the right table. </p>
+<p>Here is a
+   quick example/demo on how to properly set up a partitioned view. Assume that
+   as legacy of a poor design we have these three tables: </p>
+<pre>SELECT OrderID + 0 AS OrderID, OrderDate, CustomerID, EmployeeID
+INTO Orders96 FROM Northwind..Orders WHERE year(OrderDate) = 1996
+ALTER TABLE Orders96 ALTER COLUMN OrderID int NOT NULL
+
+SELECT OrderID + 0 AS OrderID, OrderDate, CustomerID, EmployeeID
+INTO Orders97 FROM Northwind..Orders WHERE year(OrderDate) = 1997
+ALTER TABLE Orders97 ALTER COLUMN OrderID int NOT NULL
+
+SELECT OrderID + 0 AS OrderID, OrderDate, CustomerID, EmployeeID
+INTO Orders98 FROM Northwind..Orders WHERE year(OrderDate) = 1998
+ALTER TABLE Orders98 ALTER COLUMN OrderID int NOT NULL
+go
+ALTER TABLE Orders97 ADD CONSTRAINT pk97 PRIMARY KEY (OrderID)
+ALTER TABLE Orders96 ADD CONSTRAINT pk96 PRIMARY KEY (OrderID)
+ALTER TABLE Orders98 ADD CONSTRAINT pk98 PRIMARY KEY (OrderID)</pre>
+<p>First step is to a add <b>Year</b> column to each table. These columns need a
+   default (so that processes that insert directly into these tables are
+   unaffected) and a <small>CHECK</small> constraint. Here is how it looks for <b>Orders96</b>:</p>
+<pre>ALTER TABLE Orders96 ADD Year char(4) NOT NULL
+   CONSTRAINT def96 DEFAULT '1996'
+   CONSTRAINT check96 CHECK (Year = '1996')</pre>
+<p>This column must be the first column in the primary key, so we need to drop
+   the current primary key and recreate it:</p>
+<pre>ALTER TABLE Orders96 DROP CONSTRAINT pk96
+ALTER TABLE Orders96 ADD CONSTRAINT pk96 PRIMARY KEY (Year, OrderID)</pre>
+<p>Again, this must be performed for all three tables. Finally, you can create
+   the view:</p>
+<pre>CREATE VIEW Orders AS
+   SELECT * FROM dbo.Orders96
+   UNION ALL
+   SELECT * FROM dbo.Orders97
+   UNION ALL
+   SELECT * FROM dbo.Orders98</pre>
+<p><b>Note</b>: I have here use <code><span class="nowrap">SELECT *</span></code> to save some space in the article, but when you 
+define your real view, you should list the colunms explicitly. There is a risk that columns could come in different 
+order in the tables.</p>
+<p>You now have a proper partitioned view that you can perform inserts and updates through. For instance you can run:</p>
+<pre>INSERT Orders(Year, OrderID, OrderDate, CustomerID, EmployeeID)
+   VALUES ('1997', 12000, '19970101', 'BERGS', 2)</pre>
+<p>And if you run a query like:</p>
+<pre>SELECT OrderID, OrderDate, EmployeeID
+FROM   Orders
+WHERE  Year = @year
+  AND  CustomerID = N'BERGS'</pre>
+<p><small>SQL</small> Server will at run-time only access the OrdersNN table that maps to
+   @year. If you look at the query plan casually, it may seem that all three
+   tables are
+   accessed, but if you check the <b>Filter</b> operators you will find something
+   called <small>STARTUP EXPR</small>. This means that <small>SQL</small> Server determines at
+   <i>run-time</i>
+   whether to access the table or not. (In fact, when I tested this, I only got this result on <small>SQL</small> 2005 and <small>SQL</small> 2008. On
+<small>SQL</small> 2000, the start-up expression was not included for some reason I have not been able to understand.)</p>
+<p>For your real-world case you may find it prohibitive to change the primary
+   key. In this case you could add a <small>UNIQUE</small> constraint with the partitioning
+   column + the real primary key. This will not be a proper partitioned view,
+   and the view will not be updatable,
+   but with some luck <small>SQL</small> Server may still apply start-up expressions, and access only one of the base tables.
+   At least I got it to work, when I ran a quick test. You
+   should verify that it works for your situation.</p>
+<p>When a new table is added with a new year, the view needs to be redefined. If
+   this happens frequently, for instance by each month, you should probably set
+   up a job for this. I leave out example code, but it requires running
+   a cursor over <b>sysobjects</b> to compose a <small>CREATE VIEW</small> statement that you then
+   execute with <b>sp_executesql</b> or <small><span class="nowrap">EXEC()</span></small>. That would be an example of good use of
+   dynamic <small>SQL</small>.</p>
+<p>This was a concentrated introduction to partitioned views. You can find the full rules for
+   partitioned views under the topic for <small>CREATE VIEW</small> in Books Online. Good
+   reading is also Stefan
+   Delmarco's detailed article <i>
+   <a href="http://www.fotia.co.uk/FA.02.Sql2KPartitionedViews.01.aspx"><small>SQL</small>
+   Server 2000 Partitioned Views</a></i>. </p>
+<h4>Compatibility Views</h4>
+<p>If you have very many tables, there is a risk that you will hit a roadblock with a partitioned view: <small>SQL</small> Server only
+permits 256 tables in a query. Henrik Staun Poulsen suggested an alternate solution that evades this restriction. You first create that new table, with
+all the data in it. Then you drop the old tables, but replace them with views:</p>
+<pre>CREATE VIEW sales200612 AS
+   SELECT col1, col2, col3
+   FROM   sales
+   WHERE  yearmonth = '200612'</pre>
+<p>Old functions that uses dynamic <small>SQL</small> or whatever they do, can continue to do so. If they perform <small>INSERT, UPDATE</small> or
+<small>DELETE</small> operations, you need to implement <small>INSTEAD OF</small> triggers to support this.</p>
+<p>Obviously, this solution requires you to produce a lot of code, but you don't have to write it by hand; you can
+easily write a program in the language of your choice to generate the views and triggers.</p>
+<h3><a name="Dyn_update">UPDATE tbl SET @colname = @value WHERE keycol = @keyval</a></h3>
+<p>In this case people want to update a column which they select at run time.
+The above is actually legal in <small><span class="nowrap">T-SQL</span></small>, but what happens is simply that the
+   variable @colname
+is assigned the value in @value for each affected row in the table. </p>
+<p>In this case dynamic <small>SQL</small> would call for the user to have <small>UPDATE</small> permissions
+on the table, something not to take lightly. So there is all reason to
+avoid it. Here is a fairly simple workaround: </p>
+<pre>UPDATE tbl
+SET    col1 = CASE @colname WHEN 'col1' THEN @value ELSE col1 END,
+       col2 = CASE @colname WHEN 'col2' THEN @value ELSE col2 END,
+       ...</pre>
+<p>
+If you don't know about the <small>CASE</small> expression, please look it up in Books Online.
+It's a very powerful <small>SQL</small> feature.</p>
+<p>Then again, one would wonder why people want to do this. Maybe it's because their
+tables look like this:</p>
+<pre>CREATE TABLE products (prodid   prodid_type NOT NULL,
+                       prodname name_type   NOT NULL,
+                       ...
+                       sales_1  money       NULL,
+                       sales_2  money       NULL,
+                       ...
+                       sales_12 money       NULL,
+                       PRIMARY KEY (prodid))</pre>
+<p>
+It could make more sense to move these <i>sales_n</i> columns to a second table: </p>
+<pre>CREATE TABLE product_sales (prodid prodid_type NOT NULL,
+                            month  tinyint     NOT NULL,
+                            sales  money       NOT NULL,
+                            PRIMARY KEY (prodid, month))</pre>
+<h3><a name="columnalias">SELECT col AS @myname</a></h3>
+<p>The request here is to determine the name for a column in a result set at
+run-time. My gut reaction, is that this should be handled
+client-side. But if your client is a query window is Management Studio or
+similar, this is kind of difficult. In any case, this is simple to do without any
+dynamic <small>SQL</small> on <small>SQL</small> 2005 and later:</p>
+<pre>DECLARE @mycolalias sysname
+SELECT @mycolalias = 'This week''s alias'
+
+CREATE TABLE #temp (a int NOT NULL,
+                    b int NOT NULL)
+
+INSERT #temp(a, b) SELECT 12, 17
+
+EXEC tempdb..sp_rename '#temp.b', @mycolalias, 'COLUMN'
+
+SELECT * FROM #temp</pre>
+<p>That is, you first get the data into a temp table, and then you use <b>
+sp_rename</b> to rename the column along your needs. (You need to qualify <strong>sp_rename</strong> with tempdb to have
+it to operate in that database.) You will get
+an informational message <i>Caution: Changing any part of an object name could
+break scripts and stored procedures</i>, but you may be able to live with that.
+</p>
+<p>This trick works on <small>SQL</small> 2000 too, although not entirely without dynamic
+<small>SQL</small>:
+you need put the <small>SELECT</small> from the temp table in
+<small><span class="nowrap">EXEC()</span></small>:</p>
+<pre>EXEC('SELECT * FROM #temp')</pre>
+<p>This is because on <small>SQL </small>2000, sp_rename apparently does not trigger a recompile,
+so if the the <small>SELECT</small> is in the same batch, the statement fails with <i>Invalid
+column name 'b'</i>. There is yet one thing to be aware of on <small>SQL</small> 2000: you
+cannot use sp_rename in a stored procedure that is to be run by plain users, as sp_rename thinks
+you need to be a member of the <b>db_owner</b> or <b>db_ddladmin</b> database roles,
+even if this is only a temp table. This issue has been addressed in
+<small>SQL</small> 2005.</p>
+<h3><a name="Dyn_DB">SELECT * FROM @dbname + '..tbl'</a></h3>
+<p>In this case the table is in another database which is somehow determined
+dynamically. There seems to be several reasons why people want to do this, and
+   depending on your underlying reason, the solution is different.</p>
+<h4><a name="otherdb">Get Data from another Database</a></h4>
+<p>If you for some reason have your
+   application spread over two databases, what you absolutely not should do is
+   to have code that says:</p>
+<pre>SELECT ... FROM <font color="#FF0000">otherdb</font>.dbo.tbl JOIN ...</pre>
+<p>This is bad, because if someone asks for a second environment on the same
+   server, you have a lot of code to change. </p>
+<p>The best solution for this particular problem is to use synonyms, added in <small>SQL</small> 2005:</p>
+<pre>CREATE SYNONYM otherdbtbl FOR otherdb.dbo.tbl</pre>
+<p>You can then refer to <b>otherdb.dbo.tbl</b> as just <b>otherdbtbl</b>. If
+   there is a need for a second set of databases, you only have to update the
+   synonyms, and there is no need to use dynamic <small>SQL</small>.</p>
+<p>Yet a way to avoid dynamic <small>SQL</small> is to use stored procedures for all
+   inter-database communication. That is, if you are in <b>db1</b> and need to get data from <b>
+   db2</b>, you call a stored procedure in <b>db2</b>. This can be dynamic,
+   because <small>EXEC</small> permits you to specify a variable that holds the name of the
+   procedure to execute.</p>
+<pre>SELECT @dbname = quotename(dbname) FROM ...
+SELECT @sp = @dbname + '..some_sp'
+EXEC @ret = @sp @par1, @par2...</pre>
+<p>If you want to get result sets back from <b>db2</b>, look at my article <i>
+   <a href="http://www.sommarskog.se/share_data.html">How to Share Data between Stored Procedures</a></i>
+   for suggestions.</p>
+<p>There may still be cases you may find that dynamic <small>SQL</small> is the only feasible
+   situation. This can be done in two ways. The most obvious
+   is:</p>
+<pre>SELECT @dbname = quotename(dbname) FROM ...
+SELECT @sql = ' SELECT ... FROM ' + @dbname + ' .dbo.otherdbtbl ' +
+              ' JOIN dbo.localtbl ... '
+EXEC sp_executesql @sql, @params, ...</pre>
+<p>But, if the query is complex, and most of the tables are in the remote
+   database you can also do:</p>
+<pre>SELECT @sql = ' SELECT ... FROM dbo.othertbl ' +
+              ' JOIN ' + quotename(db_name()) + '.dbo.localtbl ... '
+SELECT @dbname = quotename(dbname) FROM ...
+SELECT @sp_executesql = @dbname + '..sp_executesql'
+EXEC @sp_executesql @sql, @params, ...</pre>
+<p>As above, I make use of that you can specify the procedure name dynamically
+   with <small>EXEC</small>. The trick here is that when you specify a system stored procedure
+   in three-part notation with the database name, the procedure executes in the
+   context of that database. Thus, the dynamic <small>SQL</small> in this example runs in
+   @dbname, not the current database.</p>
+<h4><a name="everydb">Do Something in Every Database</a></h4>
+<p>This sounds to me like some sysadmin
+   venture, and for sysadmin tasks dynamic <small>SQL</small> is
+   usually a fair game, because neither caching nor permissions are issues.
+   Nevertheless there is an kind of alternative: <b>sp_MSforeachdb</b>, demonstrated by this example: </p>
+<pre>sp_MSforeachdb 'SELECT ''?'', COUNT(*) FROM sysobjects'</pre>
+<p>As you might guess, <b>sp_MSforeachdb</b> uses dynamic <small>SQL</small> internally, so
+   what you win is that you don't have to write the control loop yourself. I should
+   hasten to add that <b>sp_MSforeachdb</b> is not documented in Books Online,
+   which also means that use of it is not supported by Microsoft and it could be
+   changed or withdrawn from <small>SQL</small> Server without notice.</p>
+<h4><a name="masterdb">A "Master" Database</a></h4>
+<p>The scenario here is that you have a suite of databases with identical
+   schema. The typical reason they are different databases and not one, is that every
+   database serves a different customer, and each customer can access his
+   database (but of course no one else's). Some people
+   see a problem with the same stored procedures in fifty databases,
+   and believe that they face a maintenance nightmare. So they get the idea
+   that they should put the procedures in a "master" database. Yes, you can do that. It
+   will give you a much bigger maintenance problem, because your code will
+   entirely littered with dynamic <small>SQL</small>.
+   In fact, if you feel that this is the only alternative, you are better off
+   skipping stored procedures altogether and do all access from client code
+   instead. In such case there is only one place you need to specify the
+   database: the connection string.</p>
+<p>What else can you do? Some people might suggest that you should collapse the
+   databases into one, and employ a strict
+   row-level security scheme. Personally, I would never accept such a solution
+   as a potential customer. In a complex application, bugs can easily lead to
+   that information is exposed to people who should not see it. Besides,
+   row-level security cannot be implemented entirely waterproof in <small>SQL</small> Server.
+   Whereas queries only would return the data they should, query plans and error
+   messages may indirectly disclose information to users who are not authorised
+   to see it.</p>
+<p>Another wild approach is to use <small>SQL</small> Server's own <b>master</b> database and install the application procedures
+   as system procedures. I have not played with this for a long time, but I am told that it still works in <small>SQL</small> 2008. In any case, this is entirely
+   unsupported. So while I mention the possibility, I don't give you the details
+   on how to do it and I strongly recommend that you don't go there.</p>
+<p>What then is the real solution? Install the stored procedures in each database and develop
+   rollout routines for your <small>SQL</small> objects. You need this anyway, the day you want
+   to update the table definitions. This also permits you to have some
+   flexibility. Some customers may prefer to skip an upgrade. Other customers
+   may be prepared to pay for extra functions that only they have access to. Even more importantly, it permits you to easily scale out and move some
+   databases to a second server. I mentioned that as a customer, I would not
+   accept to share database with other customers. In fact, a security-aware
+   customer would not even accept to share the same instance of <small>SQL</small> Server, but
+   require his own instance.</p>
+<p>(You may ask whether not synonyms could be used to implement the "master"
+   database. I have not been able to think of anything useful, but if you find
+   out something, please drop me a line.)</p>
+<h3><a name="createotherdb">Creating an Object in Another Database</a></h3>
+<p>This question sometimes comes up. Most often people have problems with the
+   <small>USE</small> command. The correct solution is to avoid <small>USE</small> altogether in this case. In
+   fact, we have already seen how to do this:</p>
+<pre>SELECT @sql = 'CREATE VIEW ...'
+SELECT @sp_executesql = quotename(@dbname) + '..sp_executesql'
+EXEC @sp_executesql @sql</pre>
+<p>That is, make use of that you can set the database context by calling <b>sp_executesql</b> with three-part notation.</p>
+<h3><a name="List">SELECT * FROM tbl WHERE col IN (@list)</a></h3>
+<p>It is fascinating how may people who put '1,2,3,4' in @list, and then are
+   puzzled why the query above does not return any rows. Well, if there is a row
+   where <b>col</b> has the value '1,2,3,4', you will get a match. These two
+   conditions are the same:</p>
+<pre>col IN (@list)
+col = @list</pre>
+<p><small>IN</small> does <i><b>not</b></i> mean "parse whatever data there is at runtime as a
+   comma-separated list". It's a <i><b>compile-time </b></i>shortcut for
+   <code>col =
+   @a OR col = @b OR</code> ...</p>
+<p>This is a very common question on the newsgroups, and <i>Use dynamic <small>SQL</small></i> is a far too common answer.
+   Yes, you can do this with dynamic <small>SQL</small>, but it is an extremely poor solution.
+   You cannot pass the list as a parameter to <b>sp_executesql</b>, so you would have
+   to use <small><span class="nowrap">EXEC()</span></small> and be open to <a href="#SQL_injection"><small>SQL</small> injection</a>. On
+   top of that, for long lists, <small>IN</small> has extremely poor performance – in some
+   tests I did, it took <small>SQL</small> Server 15 seconds to build the query plan for a list
+   with 10000 elements.</p>
+<p>The correct method is to unpack the list into a table with a user-defined
+   function or a stored procedure. In my article, <i><a href="http://www.sommarskog.se/arrays-in-sql.html">Arrays and Lists in
+ <small>SQL</small> Server</a></i>, I describe a whole range of ways to do this. I also present performance data for the various methods. (Dynamic <small>SQL</small> is at
+ the bottom of that list!) This is a long article, but there are jump-start
+   links in the beginning of the article, depending on which version of <small>SQL</small>
+   Server you are using.</p>
+<h3><a name="Condition">SELECT * FROM tbl WHERE @condition</a></h3>
+<p>If you are considering to write the procedure</p>
+<pre>CREATE PROCEDURE search_sp @condition varchar(8000) AS
+   SELECT * FROM tbl WHERE @condition</pre>
+<p>Just forget it. If you are doing this, you have not completed the transition
+   to use stored procedure and you are still assembling your <small>SQL</small> code in the client.
+But this example lapses into</p>
+<h3><a name="Dyn_search">Dynamic Search Conditions</a></h3>
+<p>A not too uncommon case is that the users should be able to select data from a broad set of
+parameters. The procedure <b>search_orders</b> in the section on
+   <a href="#SQL_injection"><small>SQL</small> injection</a>
+   is a very simple example of this.</p>
+<p>Any programmer that tackles this realises that writing a static solution
+   with a tailor-made query for each combination of input parameters is
+   impossible. It most cases, it's simple to write a single static query with conditions like:</p>
+<pre>AND (CustomerID = @custid OR @custid IS NULL)</pre>
+<p>But in <span class="allcaps">SQL </span>2005 and earlier if is not possible to get good performance from such a query, but the only option for good
+  performance is to use dynamic <small>SQL</small>. This changed in <span class="allcaps">SQL </span>2008, provided that you use the <span class="allcaps">RECOMPILE</span> hint. However that is a bit complicated, because the original implementation had a serious bug, so Microsoft reverted on that change for a while. Rather than going into details here, I refer you to my article, <i><a href="http://www.sommarskog.se/dyn-search.html">Dynamic Search Conditions</a>,</i> where I
+   discuss this type of searches in more detail and where I present several methods, both with dynamic <small>SQL</small> and
+   static <small>SQL. </small>This article exists in two versions, one for
+  <a href="http://www.sommarskog.se/dyn-search-2008.html"><small>SQL</small> 2008 and later</a>, and one <a href="http://www.sommarskog.se/dyn-search-2005.html">for earlier versions</a>.</p>
+<h3><a name="Crosstab">Dynamic Crosstab</a></h3>
+<p>Another common request is to make a dynamic crosstab query, where you transform rows into columns. For instance, say
+that you want to display the number of orders handled by each employee in Northwind with one column per year. This query
+works well:</p>
+<pre>SELECT E.LastName,
+       [1996] = SUM(CASE Year(OrderDate) WHEN '1996' THEN 1 ELSE 0 END),
+       [1997] = SUM(CASE Year(OrderDate) WHEN '1997' THEN 1 ELSE 0 END),
+       [1998] = SUM(CASE Year(OrderDate) WHEN '1998' THEN 1 ELSE 0 END)
+FROM   Orders O
+JOIN   Employees E ON O.EmployeeID = E.EmployeeID
+GROUP  BY E.LastName</pre>
+<p>But in many situations you don't exactly which columns you will have in the data, or even how many there will be. For
+instance, in this example, we may not know beforehand for which years there are orders. </p>
+<p>One approach is to set an upper limit of how many output columns you support and use dummy names for the columns.
+Once you have run the query, you use the technique I described in the section <a href="#columnalias"><small>SELECT</small> col AS @myname</a>.
+</p>
+<p>However, in the very most cases, you will want to employ dynamic <small>SQL</small> for this. And there is not really any
+alternative. A <small>SELECT</small> statement returns a table, and a table has a known number of columns with known names, so there is
+no way you can write a static <small>SELECT</small> statement to achieve this. </p>
+<p>The general technique is a two-step operation: 1) Get the unique values to pivot on. 2) with those values, generate a query like the one above. While it's a short description, it
+takes some time to get everything in place. You can make a shortcut with the stored procedure 
+<a target="_blank" type="text/plain" href="http://www.sommarskog.se/pivot_sp.sp">pivot_sp</a>, something I have adapted from a procedure 
+originally written by <small>SQL</small>
+Server <small>MVP</small> Itzik Ben-Gan. The procedure takes a number of parameters permitting you to specify the query, the rows to group
+by and to pivot by, and which aggregation operation you want. </p>
+<p>As this article is already long enough, I don't go into details to try to explain how it works, but leave it to you 
+to explore it on your own. I like to stress one thing though: The way <b>pivot_sp</b> is written, it is wide-open to
+<small>SQL</small> injection, and it is very difficult, not to say impossible to make the procedure 
+fool-proof since it accepts query text as parameter. This is no problem as long as you use it as your own utility 
+procedure and have full control over the input, but you should not make a procedure like this one accessible to anyone. 
+Rather I recommend that you do </p>
+<pre>DENY EXECUTE ON pivot_sp TO public</pre>
+<p>To make sure that plain users cannot run it. If you make a call to <b>pivot_sp</b> in a stored procedure, this call 
+will succeed as ownership chaining applies. The file for <a target="_blank" type="text/plain" href="http://www.sommarskog.se/pivot_sp.sp">
+pivot_sp</a> includes an example to demonstrate this.</p>
+<p>Another option for dynamic crosstab is <a href="http://www.rac4sql.net/"><small>RAC</small></a>, which is a third-party tool. I have never used it
+myself, but I have heard several good comments about it.</p>
+<h3><a name="Order_by">SELECT * FROM tbl ORDER BY @col</a></h3>
+<p>This can easily be handled without dynamic <small>SQL</small> in this way:</p>
+<pre>SELECT col1, col2, col3
+FROM   dbo.tbl
+ORDER  BY CASE @col1
+               WHEN 'col1' THEN col1
+               WHEN 'col2' THEN col2
+               WHEN 'col3' THEN col3
+           END</pre>
+<p>Again, review the <small>CASE</small> expression in Books Online, if you are not acquainted
+with it. </p>
+<p>Note that if the columns have different data types you cannot lump them into
+   the same <small>CASE</small> expression, as the data type of a <small>CASE</small>
+   expression is always one and the same. Instead, you can do this:</p>
+<pre>SELECT col1, col2, col3
+FROM   dbo.tbl
+ORDER  BY CASE @col1 WHEN 'col1' THEN col1 ELSE NULL END,
+          CASE @col1 WHEN 'col2' THEN col2 ELSE NULL END,
+          CASE @col1 WHEN 'col3' THEN col3 ELSE NULL END</pre>
+<p>
+If you also want to make it dynamic whether the order should be ascending or
+descending, add one more <small>CASE</small>:</p>
+<pre>SELECT col1, col2, col3
+FROM   dbo.tbl
+ORDER  BY CASE @sortorder
+               WHEN 'ASC' THEN CASE @col1
+                                    WHEN 'col1' THEN col1
+                                    WHEN 'col2' THEN col2
+                                    WHEN 'col3' THEN col3
+                                END
+               ELSE NULL
+           END ASC,
+           CASE @sortorder
+               WHEN 'DESC' THEN CASE @col1
+                                     WHEN 'col1' THEN col1
+                                     WHEN 'col2' THEN col2
+                                     WHEN 'col3' THEN col3
+                                 END
+               ELSE NULL
+           END </pre>
+<p>Or use the form in the second example to deal with different data types.</p>
+<p><small>SQL</small> Server <small>MVP</small> Itzik Ben-Gan had a good article on this topic in the March
+2001 issue of <a href="http://www.sqlmag.com/"><small>SQL</small> Server Magazine</a>,
+where he offers other suggestions.</p>
+<p>It should be added that these solutions has the disadvantage that they will always cause a sort which for a large
+data set could be expensive. If you add an <small>ORDER BY</small> clause in dynamic <small>SQL</small>, the optimizer may avoid the sort if there is
+a suitable index.</p>
+<h3><a name="Top">SELECT TOP @n FROM tbl</a></h3>
+<p>This is no longer an issue, since <small>SQL</small> 2005 added new syntax that permits a variable:</p>
+<pre>SELECT TOP(@n) col1, col2 FROM tbl</pre>
+<p>On <small>SQL</small> 2000, <small>TOP</small> does not accept variables, so you need to use dynamic <small>SQL</small> to use
+<small>TOP</small>. But there is an alternative:</p>
+<pre>CREATE PROCEDURE get_first_n @n int AS
+SET ROWCOUNT @n
+SELECT au_id, au_lname, au_fname
+FROM   authors
+ORDER  BY au_id
+SET ROWCOUNT 0</pre>
+<p>It can be disputed whether <small>SET ROWCOUNT</small> @n is really a better solution than
+   running a dynamic <small>SQL</small> statement with <small>TOP. A</small> dynamic <small>TOP</small> is probably a
+   better choice, as long as you can accept the security implications. (But it's
+   not worth to change the permissions only for this.)</p>
+<p>I guess a common reason for wanting to do this is to implement paging in web
+   applications. <small>SQL</small> Server <small>MVP</small> Aaron Bertrand has an article which is the
+   <a href="http://www.aspfaq.com/show.asp?id=2120">standard reference</a> on
+   this topic. </p>
+<h3><a name="Cre_tbl">CREATE TABLE @tbl</a></h3>
+<p>The desire here is to create a table of which the name is determined at
+   run-time.</p>
+<p>If we just look at the arguments against using dynamic <small>SQL</small> in stored
+   procedures, few of them are really applicable here. If a stored procedure has a
+   static <small>CREATE TABLE</small> in it, the user who runs the procedure must have
+   permissions to create tables, so dynamic <small>SQL</small>
+   will not change anything. Plan caching obviously has nothing to do with
+   it. Etc.</p>
+<p>Nevertheless: <i> <b>Why? Why would you want to do this?</b></i> If you are creating tables on the fly in your
+   application, you have missed some fundamentals about database design. In a
+   relational database, the set of tables and columns are supposed to be
+   constant. They may change with the installation of new versions, but not during
+   run-time. </p>
+<p>Sometimes when people are doing this, it appears that they want to construct
+unique names for temporary tables. This is completely unnecessary, as this is a
+built-in feature in <small>SQL</small> Server. If you say:</p>
+<pre>CREATE TABLE #nisse (a int NOT NULL)</pre>
+<p>then the actual name behind the scenes will be something much longer, and no
+other connections will be able to see this instance of <b>#nisse</b>.</p>
+<p>If you want to create a permanent table which is unique to a user, but you
+   don't want to stay connected and therefore cannot use temp tables, it may be
+better to create one table that all clients can share, but where the first
+column is a key which is private to the client. I discuss this method a little
+   more closely in my article <i><a href="http://www.sommarskog.se/share_data.html#prockeyed">How to
+   Share Data between Stored Procedures</a></i>.</p>
+<h3><a name="unknowncolumns">CREATE TABLE with Unknown Columns</a></h3>
+<p>Sometimes I see persons on the newsgroups that are unhappy, because they
+ create a temp table from dynamic <small>SQL</small>, and then they can't access it, because it
+ disappeared when the dynamic <small>SQL</small> exited. When told that they have to create the
+ table outside the dynamic <small>SQL</small>, they respond that they can't, because they don't
+ know the structure of the table until run-time.</p>
+<p>One solution is to create a global temp table, one with two # in the name,
+ for instance <b>##temp</b>. Such a table is visible to all processes (so you may have
+ to take precautions to make the name unique), and unless you explicitly drop it, it exists
+ until your process exits.</p>
+<p>But the real question is: <i> <b>what are these guys up to?</b></i> If you are
+   working with a relational database, and you don't know the structure of your
+   data until run-time, then there is something fundamentally wrong. As I have
+   never been able to fully understand what the underlying business requirements
+   are, I can't really provide any alternatives. But I would suggest that if you
+   need to go this road, you should seriously consider to run your <small>SQL</small> from a client
+   program. Because, all access
+   to that table would have to be through dynamic <small>SQL</small>, and composing
+   dynamic <small>SQL</small> strings is easier in languages with better string capabilities,
+   be that <small>C#, VB</small> or Perl. </p>
+<h3><a name="linkservers">Linked Servers</a></h3>
+<p>This is similar to parameterising the <a href="#Dyn_DB">database name</a>,
+   but in this case we want to access a linked server of which the name is
+   determined at run-time.</p>
+<p> Two of the solutions for dynamic database names apply here as well:</p>
+<ul>
+   <li>On <small>SQL</small> 2005 and later, the best solution is probably to use synonyms:
+      <pre>CREATE SYNONYM myremotetbl FOR Server.db.dbo.remotetbl</pre></li>
+   <li>If you can confine the access to the linked server to a stored procedure
+      call, you can build the SP name dynamically:
+<pre>SET @sp = @server + '.db.dbo.some_sp'
+EXEC @ret = @sp @par1, @par2...</pre></li>
+</ul>
+<p>
+If you want to join a local table with a remote table on some remote server,
+determined in the flux of the moment, dynamic <small>SQL</small> is probably the best way if
+you are on <small>SQL</small> 2000.
+There exists however an alternative, although it's only usable in some
+situations. You can use <b>sp_addlinkedserver</b> to define the linked server at
+run-time,
+as demonstrated by this snippet:</p>
+<pre>EXEC sp_addlinkedserver MYSRV, @srvproduct='Any',
+                               @provider='SQLOLEDB', @datasrc=@@SERVERNAME
+go
+CREATE PROCEDURE linksrv_demo_inner WITH RECOMPILE AS
+   SELECT * FROM MYSRV.master.dbo.sysdatabases
+go
+EXEC sp_dropserver MYSRV
+go
+CREATE PROCEDURE linksrv_demo @server sysname AS
+   IF EXISTS (SELECT * FROM master..sysservers WHERE srvname = 'MYSRV')
+      EXEC sp_dropserver MYSRV
+   EXEC sp_addlinkedserver MYSRV, @srvproduct='Any',
+                           @provider='SQLOLEDB', @datasrc=@server
+   EXEC linksrv_demo_inner
+   EXEC sp_dropserver MYSRV
+go
+EXEC linksrv_demo 'Server1'
+EXEC linksrv_demo 'Server2'</pre>
+<p>
+There are two procedures. <b>linksrv_demo_inner</b> is the procedure where we
+actually access the linked server. As the linked server must exist when the
+procedure is created, I first create a dummy entry for <small>MYSRV</small>, which I subsequently
+drop once the procedure has been created. (Not only must the linked server exist, it must also have the database and
+tables that you access.) <b>linksrv_demo</b> is the outside interface which takes a
+server name as a parameter, and then at run-time defines <small>MYSRV</small> to point to
+@server.</p>
+<p>
+The above is only possible under certain conditions:</p>
+<ul>
+   <li>The procedure must be run by someone who has privileges to set up
+    linked servers, normally only the roles <b>sysadmin</b> and <b>setupadmin</b>
+    have these permissions. Thus, plain users do not apply.</li>
+    <li>Since you change a
+     server-wide definition, you cannot have several instances of the procedure
+     running. (It goes without saying, that you should use the alias in this
+       procedure only.)</li>
+</ul>
+<p>
+As you can see in the example, I've added <small>WITH RECOMPILE</small> to <b>linksrv_demo_inner</b>.
+This is a safety precaution, to prevent that a cached plan does not access a
+different server. I don't think this is really necessary, as <small>SQL</small> Server should sense the
+changed definition. In fact, you may not even have to split the code over two
+procedures, but as they say, better safe than sorry.</p>
+<h3><a name="OPENQUERY">OPENQUERY</a></h3>
+<p>The rowset functions <small>OPENQUERY</small> and <small>OPENROWSET</small> often calls for dynamic <small>SQL</small>. Their second argument
+    is an <small>SQL</small> string, and they do no accept variables.
+   (This is because the optimizer builds a plan for the distributed query when
+   the procedure is compiled.) So any single parameter you want to pass to the
+   <small>SQL</small> statement for that remote server requires you to use dynamic <small>SQL</small>. Since the
+   remote <small>SQL</small> string can include string literals, you
+   may have to deal with up to three
+   levels of nested quotes. If you don't watch out, you can spend a full day
+   looking at things like:</p>
+<pre>DECLARE @sql varchar(8000)
+SELECT @sql = 'SELECT * FROM OPENQUERY(MYSRV, ' +
+              '''SELECT * FROM Northwind.dbo.Orders ' +
+              'WHERE CustomerID = N''''VINET'''''')'
+PRINT @sql
+EXEC(@sql)</pre>
+<p>to try to find out if you might you have one <code>'</code> too many or too
+   few. </p>
+<p>Strict discipline is absolutely necessary when working with dynamic <small>SQL</small> for
+   <small>OPENQUERY</small>. The function <a href="#quotestring"><b><span class="nowrap">quotestring()</span></b></a>
+   that I showed you earlier can be of great help:
+</p>
+<pre>DECLARE @remotesql nvarchar(4000),
+        @localsql  nvarchar(4000),
+        @state     char(2)
+
+SELECT @state = 'CA'
+SELECT @remotesql = 'SELECT * FROM pubs.dbo.authors WHERE state = ' +
+                     dbo.quotestring(@state)
+SELECT @localsql  = 'SELECT * FROM OPENQUERY(MYSRV, ' +
+                     dbo.quotestring(@remotesql) + ')'
+
+PRINT @localsql
+EXEC (@localsql)</pre>
+<p>The built-in function <b><span class="nowrap">quotename()</span></b> is usually not useful here, as the <small>SQL</small> statement easily
+   can exceed the limit of 129 characters for the input parameter to <b>
+   <span class="nowrap">quotename()</span></b>.
+</p>
+<p>On <small>SQL</small> 2005 and later, you can use <small><span class="nowrap">EXEC()</span></small> to run an <small>SQL</small> statement on a
+   <a href="#EXECatlinked">linked
+   server</a>. Since <small><span class="nowrap">EXEC()</span></small> at linked servers can take parameters, this can make
+   things considerably easier. Then again, you can join <small>OPENQUERY</small> with local
+   tables, so that only rows of interest are brought across the wire. This you
+   cannot do with <small><span class="nowrap">EXEC()</span></small>.</p>
+<h3><a name="Col_width">Dynamic Column Widths</a></h3>
+<p>Say that you write a stored
+   procedure that is to present some data, and the <small>GUI</small> it is to be run from is
+   Query Analyzer or <small>SQL</small> Server Management Studio (presumably because it is a sysadmin procedure). To make the
+   output easy to digest, you want the column width to be so wide that no data
+   is truncated, but neither do you want any extraneous spaces. This is
+   something you can achieve with dynamic <small>SQL</small>. Typically you would use a temp table
+   to hold the data, in which case there are no permission issues. </p>
+<p>Rather than giving an example, I refer you to the source code for the popular (but undocumented)
+   system procedure <b>sp_who2</b>. You can find the code by entering <b>exec
+   master..sp_helptext sp_who2</b>.</p>
+<h3><a name="maintenancetasks">Dynamic SQL and Maintenance Tasks</a></h3>
+<p>I've written this text with a main focus on application code, because it is
+   mainly in application tasks, bad usage of dynamic <small>SQL</small> can cause serious harm
+   by opening for <a href="#SQL_injection"><small>SQL</small> injection</a>, poor
+   <a href="#queryplans">query-plan reuse</a>, and result in code that is
+   difficult to read and maintain.</p>
+<p>Here, I like to briefly discuss code is for maintenance jobs, code that
+   runs once a
+   night or once a week or even less frequently. Generally, for this sort of
+   code, dynamic <small>SQL</small> is almost always a fair game. Query
+   plans are rarely an issue. And if the code is to be run by users with <b>
+   sysadmin</b> privileges, there are no permissions issues. The same applies to
+   code that does not require permissions outside the database, and is to be run
+   by users with <b>db_owner</b> privileges.</p>
+<p>There are however, two points about <small>SQL</small> injection I like to make.</p>
+<ol>
+   <li>If you are a <small>DBA</small> that writes some stored procedure to be run by junior
+   operators that do not have <b>sysadmin</b> privilege themselves, you must of
+   course take precaution against <small>SQL</small> injection, so that they don't outsmart
+   you.</li>
+   <li>If you write a job that performs operations on tables in
+   every database, be careful to use <span class="nowrap"><b>quotename()</b></span> when you build the <small>SQL</small> strings.
+   This is particularly important if there are non-sysadmin users that own
+   databases. A user could create a table with a name that injects an <small>SQL</small> command
+      into
+   your maintenance script when you run it. If you are the <small>DBA</small> at a hosting
+   company, this is a risk that you definitely should not neglect.</li>
+</ol>
+<h2><a name="Feedback">Acknowledgements and Feedback</a></h2>
+<p>I like to thank the following persons who have provided valuable suggestions
+   and input for this article: <small>SQL</small> Server MVPs Tibor Karaszi, Keith Kratochvil,
+   Steve Kass, Umachandar Jaychandran, Hal Berenson and Aaron Bertrand, as well as Pankul Verma,
+   Anthony Faull, Henrik Staun Poulsen, Karl Jones, Jim Higgins, Marcus
+   Hansfeldt, Gennadi Gretchkosiy, Jeremy Lubich and Simon Hayes. I also like to thank Frank Kalis for providing the
+<a href="http://www.insidesql.org/beitraege/entwicklung/dynamisches-sql-fluch-und-segen">German</a>
+   translation.</p>
+<p>Not the least I like to thank all you people who have pointed out typos
+and spelling errors. Just keep those letters and cards coming!</p>
+<p>If you have suggestions for improvements or corrections on contents, language or
+formatting, please mail me at <a href="mailto:esquel@sommarskog.se">
+   esquel@sommarskog.se</a>.
+If you have technical questions that any knowledgeable person could answer, I encourage you to
+post to any of the newsgroups <a href="news:microsoft.public.sqlserver.programming">microsoft.public.sqlserver.programming</a> or <a href="news:comp.databases.ms-sqlserver">comp.databases.ms-sqlserver</a>.</p>
+<h2><a name="revisions">Revision History</a></h2>
+<p><b>2015-04-14</b> – A very small change, in fact the addition of a single dot that was missing in <code>SET @sp</code> in the section <a href="#linkservers">linked servers</a>. Thanks to Jim Higgins for pointing out this error.</p>
+<p><b>2011-06-23</b> – Updated the text in the section on <a href="#Dyn_search">Dynamic Search Conditions</a> to mention the RECOMPILE hint, since the bug mentioned in the entry from 2009-02-14 has been fixed.</p>
+<p><b>2009-09-12</b> – Gennadi Gretchkosiy pointed out using that <code><span class="nowrap">SELECT *</span></code> in a 
+  partitioned view is not OK. If the columns come in different order in the underlying tables, you will get a mess.</p>
+<p><b>2009-02-14</b> - Removed text in the section on <a href="#Dyn_search">Dynamic Search Conditions</a> that referred 
+to the new behaviour of <small>OPTION (RECOMPILE)</small> in SQL 2008, that Microsoft is now reverting 
+on because of a <a href="https://connect.microsoft.com/SQLServer/feedback/ViewFeedback.aspx?FeedbackID=386810">serious 
+bug</a>.</p>
+<p><b>2008-12-06</b> – Modified the section on <a href="#Crosstab">dynamic crosstab</a> to stress that pivot_sp is 
+open to <small>SQL</small> injection.</p>
+<p><b>2008-12-02</b> – Updated the article for <small>SQL</small> 2008. Rewrote the section on <a href="#Sales_yymm">Sales + @yymm
+tables</a> and added one more approach. Added a section on <a href="#Crosstab">dynamic crosstab</a>. Various other minor
+changes. </p>
+<p><b>2008-06-06</b> – Added an example on how to deal with dynamic sort
+order in the section on <small><a href="#Order_by">ORDER BY</a></small>.</p>
+<p><b>2008-03-18</b> – Added a section on how to handle a
+<a href="#columnalias">dynamic column alias</a>.</p>
+<p><b>2006-12-27</b> – In the section <i><a href="#queryplans">Caching
+   Query Plans</a></i>, added a note
+   on forced parameterisation and a demo of the performance penalty for failing
+   to use parameterised queries.</p>
+<p><b>2006-07-25</b> – Corrected syntax in example with <a href="#cursor0">
+   cursor variable</a> after comment from Anthony Faull.</p>
+<p><b>2006-04-23</b> – Thoroughly reworked the article to cover <small>SQL</small> 2005 in
+   full, resulting in lots of new text, lots of old text dropped, and many
+   sections rearranged. I'm now
+   more strongly favouring <b>sp_executesql</b> over <small><span class="nowrap">EXEC()</span></small>, and
+   I put more stress on <small>SQL</small>
+   injection. I also stress the importance of using parameterised statements for
+   query-plan reuse, and I note that prefixing with <b>dbo</b> is essential for
+   query-plan reuse. The examples of cases where (not) to use dynamic <small>SQL</small> have
+   had an overhaul as well, if not equally drastic. I'm now giving a very quick
+   example of partitioned views for the sales + @yymm case. The article now also
+   includes snippets for
+   parameterised commands from VB6 and VB .Net.</p>
+<p><b>2005-04-17</b> – Added <a href="#sp_executesqlong">example</a> of <small>EXEC</small> + <b>
+   sp_executesql</b> with <small>OUTPUT</small> parameter. Added use of <b>nvarchar(max) </b>on
+   <small>SQL</small> 2005 for <a href="#quotestring">quotestring</a> and elsewhere.</p>
+<p><b>2004-02-08</b> –
+   <a href="http://www.insidesql.org/beitraege/entwicklung/dynamisches-sql-fluch-und-segen">German</a> translation now available. Minor language corrections.</p>
+<p><b>2003-12-02</b> – Added example of using
+   <a href="#cursor0">cursor</a> variable with dynamic <small>SQL</small>. Modified description
+   of first parameter to <a href="#sp_executesql"><b>sp_executesql</b></a>.</p>
+<p align="right"><a href="http://www.sommarskog.se/index.html">Back to my home page</a>.</p>
+
+
+
+<div class=" lleo_show" id="lleo_enjoyContentControls">
+    <div id="lleo_enjoyContentPanel">
+        <label id="lleo_enjoyContentLabel"><input id="lleo_enjoyContentCheckbox" checked="checked" type="checkbox">Show this icon if possible</label>
+    </div>
+    <div id="lleo_enjoyContentButton" title="Enjoy Content!"></div>
+</div></body><span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span></html>
