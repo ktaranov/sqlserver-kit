@@ -23,6 +23,8 @@ Most valuable professionals in SQL Server Database world
 | John Sansom       | [John Blog]                | [@SqlBrit]        | Unknown                    | -         | -                |
 | Jes Borland       | [Jes Articles]             | [@grrl_geek]      | Unknown                    | 4         | [Borland MVP]    |
 | Sean Smith        | [Sean Scripts]             | Unknown           | Unknown                    | -         | -                |
+| Richie Rump       | [Richie Blog]              | [@Jorriss]        | Unknown                    | -         | -                |
+| Tara Kizer        | [Tara Articles]            | [@TaraKizer]      | Unknown                    | 9         | [Kizer MVP]      |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -45,6 +47,8 @@ Most valuable professionals in SQL Server Database world
 [John Blog]:http://www.johnsansom.com/
 [Jes Articles]:http://blogs.lessthandot.com/index.php/author/grrlgeek/
 [Sean Scripts]:http://www.sqlservercentral.com/Authors/Scripts/Sean_Smith/776614/
+[Richie Blog]:http://www.jorriss.net/
+[Tara Articles]:https://www.brentozar.com/archive/author/tara/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -61,6 +65,8 @@ Most valuable professionals in SQL Server Database world
 [@kekline]:https://twitter.com/kekline
 [@SqlBrit]:https://twitter.com/SqlBrit
 [@grrl_geek]:https://twitter.com/grrl_geek
+[@Jorriss]:https://twitter.com/Jorriss
+[@TaraKizer]:https://twitter.com/TaraKizer
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -76,3 +82,4 @@ Most valuable professionals in SQL Server Database world
 [Bertrand MVP]:https://mvp.microsoft.com/en-us/PublicProfile/8140?fullName=Aaron%20%20Bertrand
 [Kline MVP]:https://mvp.microsoft.com/en-us/PublicProfile/9508?fullName=Kevin%20E%20Kline
 [Borland MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039609?fullName=Jes%20%20Borland
+[Kizer MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4000602?fullName=Tara%20Lyn%20Kizer
