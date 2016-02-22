@@ -1,30 +1,31 @@
 # Microsoft SQL Server People
-Most valuable professionals in SQL Server Database world
+Most valuable professionals in Microsoft SQL Server Database world
 
-| Name              | Site/Blog                  | Twitter           | Email                      | MVP Count | MVP page         |
-|-------------------|----------------------------|-------------------|----------------------------|----------:|------------------|
-| Brent Ozar        | [Brent Ozar Blog]          | [@BrentO]         | help@brentozar.com         | 7         | [Ozar MVP]       |
-| Adam Machanic     | [SQLBlog]                  | [@AdamMachanic]   | Unknown                    | 12        | [Machanic MVP]   |
-| Ola Hallengren    | [Ola Maintenance Solution] | [@olahallengren]  | ola@hallengren.com         | 3         | [Hallengren MVP] |
-| Erland Sommarskog | [Sommarskog Blog]          | Unknown           | esquel@sommarskog.se       | 13        | [Sommarskog MVP] |
-| Phil Factor       | [Phil Simple-Talk]         | [@phil_factor]    | Unknown                    | -         | -                |
-| Robert Sheldon    | [Robert Simple-Talk]       | Unknown           | Unknown                    | -         | -                |
-| Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com        | 9         | [Berry MVP]      |
-| Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com    | -         | -                |
-| Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                    | 4         | [Little MVP]     |
-| Jeff Moden        | [Jeff Articles]            | Unknown           | Unknown                    | 8         | [Moden MVP]      |
-| Paul White        | [Paul SQLBlog]             | [@SQL_Kiwi]       | Unknown                    | 5         | [White MVP]      |
-| Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                    | 7         | [Strate MVP]     |
-| Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | jeremiah.peschka@gmail.com | 5         | [Peschka MVP]    |
-| Gail Shaw         | [Gail Blog]                | [@SQLintheWild]   | Unknown                    | 8         | [Shaw MVP]       |
-| Aaron Bertrand    | [Aaron Articles]           | [@AaronBertrand]  | Unknown                    | 19        | [Bertrand MVP]   |
-| Kevin Kline       | [Kevin Blog]               | [@kekline]        | kevin_e_kline@yahoo.com    | 13        | [Kline MVP]      |
-| Robert Virag      | [Robert Blog]              | Unknown           | Unknown                    | -         | -                |
-| John Sansom       | [John Blog]                | [@SqlBrit]        | Unknown                    | -         | -                |
-| Jes Borland       | [Jes Articles]             | [@grrl_geek]      | Unknown                    | 4         | [Borland MVP]    |
-| Sean Smith        | [Sean Scripts]             | Unknown           | Unknown                    | -         | -                |
-| Richie Rump       | [Richie Blog]              | [@Jorriss]        | Unknown                    | -         | -                |
-| Tara Kizer        | [Tara Articles]            | [@TaraKizer]      | Unknown                    | 9         | [Kizer MVP]      |
+| Name              | Site/Blog                  | Twitter           | Email                      | MVP | MVP page         |
+|-------------------|----------------------------|-------------------|----------------------------|----:|------------------|
+| Brent Ozar        | [Brent Ozar Blog]          | [@BrentO]         | help@brentozar.com         | 7   | [Ozar MVP]       |
+| Adam Machanic     | [SQLBlog]                  | [@AdamMachanic]   | Unknown                    | 12  | [Machanic MVP]   |
+| Ola Hallengren    | [Ola Maintenance Solution] | [@olahallengren]  | ola@hallengren.com         | 3   | [Hallengren MVP] |
+| Erland Sommarskog | [Sommarskog Blog]          | Unknown           | esquel@sommarskog.se       | 13  | [Sommarskog MVP] |
+| Phil Factor       | [Phil Simple-Talk]         | [@phil_factor]    | Unknown                    | -   | -                |
+| Robert Sheldon    | [Robert Simple-Talk]       | Unknown           | Unknown                    | -   | -                |
+| Glenn Alan Berry  | [Glenn Blog]               | [@GlennAlanBerry] | glenn@SQLskills.com        | 9   | [Berry MVP]      |
+| Kenneth Fisher    | [Kenneth Blog]             | [@sqlstudent144]  | sqlstudent144@gmail.com    | -   | -                |
+| Kendra Little     | [Kendra Blog]              | [@Kendra_Little]  | Unknown                    | 4   | [Little MVP]     |
+| Jeff Moden        | [Jeff Articles]            | Unknown           | Unknown                    | 8   | [Moden MVP]      |
+| Paul White        | [Paul SQLBlog]             | [@SQL_Kiwi]       | Unknown                    | 5   | [White MVP]      |
+| Jason Strate      | [Jason Blog]               | [@StrateSQL]      | Unknown                    | 7   | [Strate MVP]     |
+| Jeremiah Peschka  | [Jeremiah Blog]            | [@peschkaj]       | jeremiah.peschka@gmail.com | 5   | [Peschka MVP]    |
+| Gail Shaw         | [Gail Blog]                | [@SQLintheWild]   | Unknown                    | 8   | [Shaw MVP]       |
+| Aaron Bertrand    | [Aaron Articles]           | [@AaronBertrand]  | Unknown                    | 19  | [Bertrand MVP]   |
+| Kevin Kline       | [Kevin Blog]               | [@kekline]        | kevin_e_kline@yahoo.com    | 13  | [Kline MVP]      |
+| Robert Virag      | [Robert Blog]              | Unknown           | Unknown                    | -   | -                |
+| John Sansom       | [John Blog]                | [@SqlBrit]        | Unknown                    | -   | -                |
+| Jes Borland       | [Jes Articles]             | [@grrl_geek]      | Unknown                    | 4   | [Borland MVP]    |
+| Sean Smith        | [Sean Scripts]             | Unknown           | Unknown                    | -   | -                |
+| Richie Rump       | [Richie Blog]              | [@Jorriss]        | Unknown                    | -   | -                |
+| Tara Kizer        | [Tara Articles]            | [@TaraKizer]      | Unknown                    | 9   | [Kizer MVP]      |
+| Paul S. Randal    | [Paul Articles]            | [@PaulRandal]     | Unknown                    | 8   | [Randal MVP]     |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -49,6 +50,7 @@ Most valuable professionals in SQL Server Database world
 [Sean Scripts]:http://www.sqlservercentral.com/Authors/Scripts/Sean_Smith/776614/
 [Richie Blog]:http://www.jorriss.net/
 [Tara Articles]:https://www.brentozar.com/archive/author/tara/
+[Paul Articles]:http://www.sqlskills.com/blogs/paul/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -67,6 +69,7 @@ Most valuable professionals in SQL Server Database world
 [@grrl_geek]:https://twitter.com/grrl_geek
 [@Jorriss]:https://twitter.com/Jorriss
 [@TaraKizer]:https://twitter.com/TaraKizer
+[@PaulRandal]:https://twitter.com/PaulRandal
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -83,3 +86,4 @@ Most valuable professionals in SQL Server Database world
 [Kline MVP]:https://mvp.microsoft.com/en-us/PublicProfile/9508?fullName=Kevin%20E%20Kline
 [Borland MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039609?fullName=Jes%20%20Borland
 [Kizer MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4000602?fullName=Tara%20Lyn%20Kizer
+[Randal MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4015673?fullName=Paul%20S.%20Randal
