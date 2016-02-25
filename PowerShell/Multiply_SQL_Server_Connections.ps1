@@ -12,19 +12,19 @@
     Server to connect to
 .PARAMETER WaitType
     Type of wait.  DELAY or TIME
-.PARAMETER WaitLength
-    Length of wait. Format is HH:MM:SS
     If DELAY then wait for the amount of time.
     If TIME then wait until the time specified.
     Note: Connections are only exist until the wait is over.
     They are active the whole time.
+.PARAMETER WaitLength
+    Length of wait. Format is HH:MM:SS
 .EXAMPLE
     C:\PS>
     <Description of example>
 .NOTES
     Author: Kenneth Fisher
-    OriginalLink: http://sqlstudies.com/2016/02/24/powershell-script-to-create-multiple-sql-server-connections/
-    CreatedDate: 2016-02-24
+    Original Link: http://sqlstudies.com/2016/02/24/powershell-script-to-create-multiple-sql-server-connections/
+    Created Date: 2016-02-24
 #>
 $MaxConnections = 2;          #Number of parallel connections
 $Server= "(local)\sql2014cs"; #Server to connect to
