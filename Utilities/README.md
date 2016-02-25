@@ -49,7 +49,7 @@ Source link:
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)           | [dbForge SQL Decryptor]      | 2013-11-07   | Devart      | Yes          | No          |
 
 
-## GraphView
+## GraphView <a id="graphview"></a>
 Download page: [GraphView]<br/>
 Release date: -<br/>
 Support Version: ???<br/>
@@ -58,17 +58,7 @@ Free version: Yes
 GraphView is a DLL library that enables users to use SQL Server or Azure SQL Database to manage graphs. It connects to a SQL database locally or in the cloud, stores graph data in tables and queries graphs through a SQL-extended language.
 
 
-## Microsoft Log Parser
-Download page: [Microsoft Log Parser]<br/>
-Release date: -<br/>
-Support Version: ???<br/>
-Free version: Yes
-
-Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
-XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory. 
-
-
-## tablediff Utility
+## tablediff Utility <a id="tablediff-utility"></a>
 Download page: [tablediff Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -83,7 +73,17 @@ in a replication topology. This utility can be used from the command prompt or i
  - Log results to an output file or into a table in the destination database.
 
 
-## Diskspd
+## Microsoft Log Parser <a id="microsoft-log-parser"></a>
+Download page: [Microsoft Log Parser]<br/>
+Release date: -<br/>
+Support Version: ???<br/>
+Free version: Yes
+
+Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
+XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory. 
+
+
+## Diskspd <a id="diskspd"></a>
 Download page: [Diskspd]<br/>
 Release date: 2015-12-14<br/>
 Support Version: ???<br/>
@@ -94,7 +94,7 @@ DISKSPD is a storage load generator / performance test tool from the Windows/Win
 Compilation is supported with Visual Studio and Visual Studio Express. Use the Visual Studio solution file inside the diskspd_vs2013 directory.
 
 
-## HammerDB
+## HammerDB <a id="hammerdb"></a>
 Download page: [HammerDB]<br/>
 Release date: 2015-05-04<br/>
 Support Version: ???<br/>
@@ -103,7 +103,7 @@ Free version: Yes
 HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
-## dta Utility
+## dta Utility <a id="dba-utility"></a>
 Download page: [dta Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -114,7 +114,7 @@ Capture performance and usage data about your Microsoft SQL Server 2005+ databas
 Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
 
-## osql Utility
+## osql Utility <a id="osql-utility"></a>
 Download page: [osql Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -124,7 +124,7 @@ The osql utility allows you to enter Transact-SQL statements, system procedures,
 This utility uses ODBC to communicate with the server.
 
 
-## sqldiag Utility
+## sqldiag Utility <a id="sqldiag-utility"></a>
 Download page: [sqldiag Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -136,19 +136,19 @@ or troubleshoot specific problems with your servers.<br />
 SQLdiag is intended to expedite and simplify diagnostic information gathering for Microsoft Customer Support Services.
 
 
-## sqldumper Utility
+## sqldumper Utility <a id="sqldumper-utility"></a>
 Download page: [sqldumper Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
 Free version: Yes
 
-ou can use the Sqldumper.exe utility to generate a dump file on demand for any Microsoft Windows application.<br />
+You can use the Sqldumper.exe utility to generate a dump file on demand for any Microsoft Windows application.<br />
 For example, you can generate a dump file for debugging an application problem when a computer that is running SQL Server 2005,<br />
 Microsoft SQL Server 2008, Microsoft SQL Server 2008 R2, or Microsoft SQL Server 2012 is not responding to user requests.<br />
 A dump file can be a mini-dump file, a full dump file, or a filtered dump file.
 
 
-## SqlLocalDB Utility
+## SqlLocalDB Utility <a id="sqllocaldb-utility"></a>
 Download page: [SqlLocalDB Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
@@ -158,7 +158,7 @@ SqlLocalDB lets you create, delete, start, stop, and perform a number of other r
 an execution mode of SQL Server Express that’s targeted at developers. A LocalDB instance uses a minimal set of files to start the database engine.
 
 
-## sqllogship Utility
+## sqllogship Utility <a id="sqllogship-utility"></a>
 Download page: [sqllogship Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -168,7 +168,7 @@ The sqllogship application performs a backup, copy, or restore operation and ass
 The operation is performed on a specific instance of Microsoft SQL Server for a specific database.
 
 
-## sqlservr Application
+## sqlservr Application <a id="sqlservr-application"></a>
 Download page: [sqlservr Application]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -177,7 +177,7 @@ Free version: Yes
 The sqlservr application starts, stops, pauses, and continues an instance of Microsoft SQL Server from a command prompt.
 
 
-## sqlps Utility
+## sqlps Utility <a id="sqlps-utility"></a>
 Download page: [sqlps Utility]<br/>
 Release date: -<br/>
 Support Version: 2008/2008R2/2012/2014/2016<br/>
@@ -187,7 +187,7 @@ The sqlps utility starts a Windows PowerShell 2.0 session with the SQL Server Po
 This feature will be removed in a future version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use the sqlps PowerShell module instead.
 
 
-## sqlmaint Utility
+## sqlmaint Utility <a id="sqlmaint-utility"></a>
 Download page: [sqlmaint Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -197,7 +197,7 @@ The sqlmaint utility performs a specified set of maintenance operations on one o
 This feature will be removed in the next version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use SQL Server maintenance plan feature instead.
 
 
-## Ssms Utility
+## Ssms Utility <a id="ssms-utility"></a>
 Download page: [Ssms Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -207,7 +207,7 @@ The Ssms utility opens SQL Server Management Studio. If specified, Ssms also est
 You can specify files that contain queries, projects, or solutions. Files that contain queries are automatically connected to a server if connection information is provided and the file type is associated with that type of server. For instance, .sql files will open a SQL Query Editor window in SQL Server Management Studio, and .mdx files will open an MDX Query Editor window in SQL Server Management Studio. SQL Server Solutions and Projects will open in SQL Server Management Studio.
 
 
-## dtexec Utility
+## dtexec Utility <a id="dtexec-utility"></a>
 Download page: [dtexec Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
@@ -216,7 +216,7 @@ Free version: Yes
 The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages. The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators. The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
 
 
-## SQL XEvent Profiler
+## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
 Download page: [SQL XEvent Profiler]<br/>
 Release date: 2014-03-14<br/>
 Support Version: 2012/2014<br/>
@@ -226,14 +226,14 @@ Idera’s SQL XEvent Profiler emulates the functionality and simplicity of SQL S
 and see what's happening on the server. Plus, it leverages SQL Extended Events (XEvents) as the backing technology — making it more efficient than SQL Trace.
 
 
-## DLM Dashboard
+## DLM Dashboard <a id="dlm-dashboard"></a>
 DLM Dashboard tracks your database schemas and alerts you when they change.<br />
 As a SQL Server user, you want to make sure all your databases are in the right state.<br />
 DLM Dashboard monitors up to 50 of your databases, and sends you an email alert as soon as your databases start to drift,<br />
 or change from their expected state. On the web dashboard, you can see exactly what changed, who made the changes, and when.
 
 
-## SQL DBA Bundle
+## SQL DBA Bundle <a id="sql-dba-bundle"></a>
 Red Gate 7 products for DBA:
  - SQL Backup Pro: Compress, securely encrypt, and strengthen your backups
  - SQL Monitor: Monitor your SQL Server performance and be alerted to problems
@@ -244,7 +244,7 @@ Red Gate 7 products for DBA:
  - SQL Doc: Automatically generate database documentation
 
 
-## SQL Check
+## SQL Check <a id="sql-check"></a>
 Download page: [SQL Check]<br/>
 Release date: 2015-09-24<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -257,7 +257,7 @@ With SQL Check you can:
  - install easily without agents
 
 
-## SQL Fragmentation Analyzer
+## SQL Fragmentation Analyzer <a id="sql-fragmentation-analyzer"></a>
 Download page: [SQL Fragmentation Analyzer]<br/>
 Release date: 2015-06-24<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -269,7 +269,7 @@ With SQL Fragmentation Analyzer you can:
  - set fragmentation thresholds: normal, warning, critical
 
 
-## SQL Heat Map
+## SQL Heat Map <a id="sql-heat-map"></a>
 Download page: [SQL Heat Map]<br/>
 Release date: 2015-12-07<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -281,7 +281,7 @@ With SQL Heat Map you can:
  - quickly locate tables and indexes that need more allocated storage
 
 
-## SQL Hekaton Memory Check
+## SQL Hekaton Memory Check <a id="sql-hekaton-memory-check"></a>
 Download page: [SQL Hekaton Memory Check]<br/>
 Release date: 2015-12-07<br/>
 Support Version: 2014<br/>
@@ -294,7 +294,7 @@ With SQL Hekaton Memory Check you can:
  - simulate moving to In-Memory OLTP
 
 
-## SQL Page Viewer
+## SQL Page Viewer <a id="sql-page-viewer"></a>
 Download page: [SQL Page Viewer]<br/>
 Release date: 2014-08-25<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -308,7 +308,7 @@ SQL Page Viewer:
  - can launch directly within SSMS for optimal usability
 
 
-## SQL Update Statistics
+## SQL Update Statistics <a id="sql-update-statistics"></a>
 Download page: [SQL Update Statistics]<br/>
 Release date: 2015-12-14<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -321,7 +321,7 @@ With SQL Update Statistics you can:
  - create graphical histograms for each column’s statistics
 
 
-## SQL Statistics Aggregator
+## SQL Statistics Aggregator <a id="sql-statistics-aggregator"></a>
 Download page: [SQL Statistics Aggregator]<br/>
 Release date: 2015-05-18<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -334,7 +334,7 @@ With SQL Statistics Aggregator you can:
  - export and import results for easy collaboration
 
 
-## SQL Backup Status Reporter
+## SQL Backup Status Reporter <a id="sql-backup-status-reporter"></a>
 Download page: [SQL Backup Status Reporter]<br/>
 Release date: 2015-08-07<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
@@ -347,7 +347,7 @@ With SQL Backup Status Reporter you can:
  - identify full and differential backups for many databases
 
 
-## SQL Integrity Check
+## SQL Integrity Check <a id="sql-integritu-check"></a>
 Download page: [SQL Integrity Check]<br/>
 Release date: 2013-08-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
@@ -361,7 +361,7 @@ With SQL Integrity Check you can:
  - don't need to write and maintain scripts
 
 
-## SQL Job Manager
+## SQL Job Manager <a id="sql-job-manager"></a>
 Download page: [SQL Job Manager]<br/>
 Release date: 2012-03-19<br/>
 Support Version: ???<br/>
@@ -375,7 +375,7 @@ With SQL Job Manager you:
  - have customizable calendar view
 
 
-## Azure SQL Database Backup
+## Azure SQL Database Backup <a id="azure-sql-database-backup"></a>
 Download page: [Azure SQL Database Backup]<br/>
 Release date: 2015-08-07<br/>
 Support Version: ???<br/>
@@ -389,7 +389,7 @@ Azure SQL Database Backup allows/gives you:
  - restore with transaction consistency to and from the cloud
 
 
-## SQL Column Search
+## SQL Column Search <a id="sql-column-search"></a>
 Download page: [SQL Column Search]<br/>
 Release date: 2015-11-17<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -401,7 +401,7 @@ With SQL Column Search you can:
  - export results to CSV format for easy analysis and reporting
 
 
-## SQL Permissions Extractor
+## SQL Permissions Extractor <a id="sql-permissions-extractor"></a>
 Download page: [SQL Permissions Extractor]<br/>
 Release date: 2015-08-07<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
@@ -414,7 +414,7 @@ With SQL Permissions Extractor you can:
  - copy, extract, modify and apply changes in four steps
 
 
-## dbForge Schema Compare
+## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-12-22<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -424,7 +424,7 @@ dbForge Schema Compare for SQL Server is a reliable tool that will save you time
 You can compare your SQL Server databases, analyze differences and synchronize your schemas using generated SQL script in a well-designed user interface quickly and without errors.
 
 
-## dbForge Data Compare
+## dbForge Data Compare <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-11-30<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -433,7 +433,7 @@ Free version: No
 dbForge Data Compare for SQL Server is a powerful, fast and easy to use SQL comparison tool, capable of using native SQL Server backups as metadata source. With dbForge Data Compare you can tune your SQL database comparison, quickly analyze differences in a well-designed user interface and effortlessly synchronize data via a convenient wizard with additional options.
 
 
-## dbForge Data Generator
+## dbForge Data Generator <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
 Release date: 2015-12-30<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -442,7 +442,7 @@ Free version: No
 dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation of meaningful test data. The tool includes 190+ predefined generators with sensible configuration options, that allow emulating column-intelligent real-world data. dbForge Data Generator for SQL Server can save your time and effort by populating SQL Server tables with millions of rows of test data that looks just like real data.
 
 
-## dbForge Query Builder
+## dbForge Query Builder <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
 Release date: 2015-06-03<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -453,7 +453,7 @@ Visual features to create queries, usage of graphical SQL query creator to inter
  even experienced users can save a lot of time on routine work.
 
 
-## dbForge Event Profiler
+## dbForge Event Profiler <a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
 Release date: 2015-04-08<br/>
 Support Version: 2008/2012/2014<br/>
@@ -462,7 +462,7 @@ Free version: No
 dbForge Event Profiler for SQL Server is a FREE tool that allows you to capture and analyze SQL Server events. The events and data columns are stored in a physical trace file for later examination. You can use this information to identify and troubleshoot many SQL Server-related problems.
 
 
-## dbForge SQL Decryptor
+## dbForge SQL Decryptor <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
 Release date: 2013-11-07<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
