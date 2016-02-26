@@ -275,7 +275,7 @@ dbForge SQL Complete provides a wide range of code completion features that reli
 [SQL Pretty Printer]: http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
 [SQL Sentry Plan Explorer]: https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
 [TSQL Code Smells Finder]: https://tsqlsmells.codeplex.com/team/view
-[SQLTreeo]: http://www.sqltreeo.com/wp/
+[SQLTreeo]: http://www.sqltreeo.com/
 [ApexSQL Complete]: http://www.apexsql.com/sql_tools_complete.aspx
 [ApexSQL Refactor]: https://www.apexsql.com/sql_tools_refactor.aspx
 [ApexSQL Search]: https://www.apexsql.com/sql_tools_search.aspx
