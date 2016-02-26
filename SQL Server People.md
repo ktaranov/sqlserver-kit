@@ -27,6 +27,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Tara Kizer          | [Tara Articles]            | [@TaraKizer]      | Unknown                           | 9   | [Kizer MVP]      |
 | Paul S. Randal      | [Paul Articles]            | [@PaulRandal]     | Unknown                           | 8   | [Randal MVP]     |
 | Klaus Aschenbrenner | [Klaus Blog]               | [@Aschenbrenner]  | klaus.aschenbrenner@sqlpassion.at | -   | -                |
+| Grant Fritchey      | [Grant Blog]               | [@GFritchey]      | Unknown                           | 7   | [Fritchey MVP]   |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -53,6 +54,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Tara Articles]:https://www.brentozar.com/archive/author/tara/
 [Paul Articles]:http://www.sqlskills.com/blogs/paul/
 [Klaus Blog]:https://www.sqlpassion.at
+[Grant Blog]:http://www.scarydba.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -73,6 +75,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@TaraKizer]:https://twitter.com/TaraKizer
 [@PaulRandal]:https://twitter.com/PaulRandal
 [@Aschenbrenner]:https://twitter.com/Aschenbrenner
+[@GFritchey]:https://twitter.com/GFritchey
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -90,3 +93,4 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Borland MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039609?fullName=Jes%20%20Borland
 [Kizer MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4000602?fullName=Tara%20Lyn%20Kizer
 [Randal MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4015673?fullName=Paul%20S.%20Randal
+[Fritchey MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025126?fullName=Grant%20%20Fritchey
