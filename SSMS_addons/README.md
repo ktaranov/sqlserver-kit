@@ -2,35 +2,34 @@
 Complete list of useful add-in for SQL Server Management Studio
 
 
-| Name                                                  | Download page               | Release Date | Support Version            | Author              | Free version | Paid/Price    |
-|-------------------------------------------------------|-----------------------------|--------------|----------------------------| ------------------- | ------------ | ------------- |
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                 | 2015-08-30   | 2008/2008R2/2012/2014      | Solutions Crew GmbH | Yes          | Yes/$150      |
-| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]            | 2015-05-04   | 2008/2008R2/2012/2014      | Oleksii Kovalov     | Yes          | No            |
-| [SQL Search](#sql-search)                             | [SQL Search]                | 2015-11-05   | ???                        | Red Gate            | Yes          | No            |
-| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]       | 2015-05-31   | ???                        | Red Gate            | Yes          | No            |
-| [Supratimas](#supratimas)                             | [Supratimas]                | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC         | Yes          | Yes/$34.99    |
-| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]           | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić      | No           | Yes/€30-€5000 |
-| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]        | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
-| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]  | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
-| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]   | 2013-02-15   | ???                        | daveballantyne      | Yes          | No            |
-| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                  | ???          | 2005/2008/2008R2/2012/2014 | Jakub Dvorak        | No           | Yes/€50       |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]          | 2015-09-04   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]          | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]            | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
-| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]       | 2015-12-21   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
+| Name                                                  | Download page              | Release Date | Support Version            | Author              | Free version | Paid/Price    |
+|-------------------------------------------------------|----------------------------|--------------|----------------------------| ------------------- | ------------ | ------------- |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                | 2015-08-30   | 2008/2008R2/2012/2014      | Solutions Crew GmbH | Yes          | Yes/$150      |
+| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]           | 2015-05-04   | 2008/2008R2/2012/2014      | Oleksii Kovalov     | Yes          | No            |
+| [SQL Search](#sql-search)                             | [SQL Search]               | 2015-11-05   | 2008/2008R2/2012/2014      | Red Gate            | Yes          | No            |
+| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]      | 2015-05-31   | ???                        | Red Gate            | Yes          | No            |
+| [Supratimas](#supratimas)                             | [Supratimas]               | 2015-01-27   | 2008/2008R2/2012/2014      | TTRider LLC         | Yes          | Yes/$34.99    |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]          | 2015-10-07   | 2008/2008R2/2012/2014      | Mladen Prajdić      | No           | Yes/€30-€5000 |
+| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]       | 2015-11-05   | 2005/2008/2012/2014        | Gudu Software       | No           | Yes/$50-$2000 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer] | 2015-09-01   | ???                        | SQL Sentry          | Yes          | Yes/$295.00   |
+| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]  | 2013-02-15   | ???                        | daveballantyne      | Yes          | No            |
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                 | 2014-05-18   | 2005/2008/2008R2/2012/2014 | Jakub Dvorak        | No           | Yes/€50       |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]         | 2015-09-04   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]         | 2015-12-11   | 2005/2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]           | 2015-09-04   | 2005/2008/2012/2014        | ApexSQL tools       | Yes          | No            |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]      | 2016-02-04   | 2008/2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]   | 2015-12-22   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$249.95   |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$199.95   |
 | [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]        | 2015-12-04   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$149.95   |
 | [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$99.95    |
 | [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]    | 2015-11-30   | 2005/2008/2008R2/2012/2014 | Devart              | Yes          | No            |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]      | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]     | 2015-09-16   | 2005/2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
 
-## SSMSBoost
+## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
 Release date: 2015-08-30<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
-
 
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
@@ -41,7 +40,7 @@ Licensing options: after 30 day trial period register and get fully-functional f
 Currently both versions have the same set of features.
 
 
-## SQL Code Guard
+## SQL Code Guard <a id="sql-code-guard"></a>
 Download link: [SQL Code Guard]<br/>
 Release date: 2015-05-04<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -58,7 +57,7 @@ It provides:
  - API for custom tool development (demo projects can be found in SQL Code Guard folder)
 
 
-## SQL Search
+## SQL Search <a id="sql-search"></a>
 Download page: [SQL Search]<br/>
 Release date: 2015-11-05<br/>
 Support Version: ???<br/>
@@ -73,7 +72,7 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 - Search with booleans and wildcards
 
 
-## SQL Scripts Manager
+## SQL Scripts Manager  <a id="sql-scripts-manager"></a>
 Download page: [SQL Scripts Manager]<br/>
 Release date: 2015-05-31<br/>
 Support Version: ???<br/>
@@ -82,7 +81,7 @@ Free version: Yes
 Powerful and reliable scripts written by SQL Server experts
 
 
-## Supratimas
+## Supratimas <a id="supratimas"></a>
 Download page: [Supratimas]<br/>
 Release date: 2015-01-27<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -91,7 +90,7 @@ Free version: Yes
 SQL Server query plan execution visualizer
 
 
-## SSMS Tools Pack
+## SSMS Tools Pack <a id="ssms-tools-pack"></a>
 Download page: [SSMS Tools Pack]<br/>
 Release date: 2015-10-07<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -105,10 +104,9 @@ Free version: No
 - Add custom replacement texts to your scripts in four different features.
 - Modifies New Query windows with a template of your choice.
 - Run custom scripts from a chosen node in Object Explorer.
--  ...
 
 
-## SQL Pretty Printer
+## SQL Pretty Printer <a id="sql-pretty-printer"></a>
 Download page: [SQL Pretty Printer]<br/>
 Release date: 2015-11-05<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -123,7 +121,7 @@ With SQL Pretty Printer you can:
 - quickly convert between SQL and C#, Java, etc.
 
 
-## SQL Sentry Plan Explorer
+## SQL Sentry Plan Explorer <a id="sql-sentry-plan-explorer"></a>
 Download page: [SQL Sentry Plan Explorer]<br/>
 Release date: 2015-09-01<br/>
 Support Version: ???<br/>
@@ -132,7 +130,7 @@ Free version: Yes
 With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database. 
 
 
-## TSQL Code Smells Finder
+## TSQL Code Smells Finder <a id="tsql-code-smells-finder"></a>
 Download page: [TSQL Code Smells Finder]<br/>
 Release date: 2013-02-15<br/>
 Support Version: ???<br/>
@@ -141,16 +139,16 @@ Free version: Yes
 TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
 
 
-## SQLTreeo
+## SQLTreeo <a id="sqltreeo"></a>
 Download page: [SQLTreeo]<br/>
-Release date: ???<br/>
+Release date: 2014-05-18<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
 SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables. You can organize your SQL objects in logical modules which are aligned with your project structure and forget of having hundreds of them within one Management Studio node.
 
 
-## ApexSQL Complete
+## ApexSQL Complete <a id="apexsql-complete"></a>
 Download page: [ApexSQL Complete]<br/>
 Release date: 2015-09-04<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -167,7 +165,7 @@ With ApexSQL Complete you can:
  - Check queries in test mode
 
 
-## ApexSQL Refactor
+## ApexSQL Refactor <a id="apexsql-refactor"></a>
 Download page: [ApexSQL Refactor]<br/>
 Release date: 2015-12-11<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -184,7 +182,7 @@ With ApexSQL Refactor you can:
  - Locate & highlight unused variables
 
 
-## ApexSQL Search
+## ApexSQL Search <a id="apexsql-search"></a>
 Download page: [ApexSQL Search]<br/>
 Release date: 2015-09-04<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -199,9 +197,9 @@ With ApexSQL Search you can:
  - Rename SQL objects safely
 
 
-## Spotlight Developer
+## Spotlight Developer <a id="spotlight-developer"></a>
 Download page: [Spotlight Developer]<br/>
-Release date: ???<br/>
+Release date: 2016-02-14<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
 
@@ -211,7 +209,7 @@ It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagno
 You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
 
 
-## dbForge Source Control
+## dbForge Source Control <a id="dbforge-source-control"></a>
 Download page: [dbForge Source Control]<br/>
 Release date: 2015-12-22<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -220,7 +218,7 @@ Free version: No
 dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL Server database changes in source control. The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
 
 
-## dbForge Unit Test
+## dbForge Unit Test <a id="dbforge-unit-test"></a>
 Download page: [dbForge Unit Test]<br/>
 Release date: 2015-12-04<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -229,7 +227,7 @@ Free version: No
 An intuitive and convenient GUI for implementing automated unit testing in SQL Server Management Studio. The tool is based on the open-source tSQLt framework, so SQL developers can now benefit from writing unit tests in regular T-SQL. dbForge Unit Test for SQL Server functionality allows you to develop stable and reliable code that can be properly regression tested at the unit level.
 
 
-## dbForge Data Pump
+## dbForge Data Pump <a id="dbforge-data-pump"></a>
 Download page: [dbForge Data Pump]<br/>
 Release date: 2015-12-04<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -238,7 +236,7 @@ Free version: No
 dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems. The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
 
 
-## dbForge Index Manager
+## dbForge Index Manager <a id="dbforge-index-manager"></a>
 Download page: [dbForge Index Manager]<br/>
 Release date: 2015-11-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -248,7 +246,7 @@ dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the st
 The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance. You can instantly rebuild and reorganize SQL indexes in visual mode or generate SQL script for the future use. dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort!
 
 
-## dbForge Object Search
+## dbForge Object Search <a id="dbforge-object-search"></a>
 Download page: [dbForge Object Search]<br/>
 Release date: 2015-11-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -258,7 +256,7 @@ dbForge Object Search for SQL Server is a FREE add-in for SQL Server Management 
 It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects. With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
 
 
-## dbForge SQL Complete
+## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
 Download page: [dbForge SQL Complete]<br/>
 Release date: 2015-09-16<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
