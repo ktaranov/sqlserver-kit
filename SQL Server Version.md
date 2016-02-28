@@ -61,7 +61,7 @@ contains all the fixes that are included with previous service packs and any new
 | Version | Latest Update                                  | Build Number                 | Release Date              | Support Ends | Other Updates                                                     |
 |---------|------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
 | 2016    | [Download CTP3.3 2016]                         | 13.0.1000.281                | 2016-02-01                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Download SP1 2014] then<br/>[CU4 KB3106660]   | 12.0.4100.1<br/>12.0.4427.24 | 2015-05-15<br/>2015-12-21 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Download SP1 2014] then<br/>[CU5 KB3130926]   | 12.0.4100.1<br/>12.0.4439.1  | 2015-05-15<br/>2016-02-22 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download SP3 2012] then<br/>[CU1 KB3123299]   | 11.0.6020.0<br/>11.0.6518.0  | 2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download SP4 2008] then<br/>[SU KB3045316]    | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -69,7 +69,7 @@ contains all the fixes that are included with previous service packs and any new
 
 [Download CTP3.3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:https://support.microsoft.com/en-us/kb/3058865
-[CU4 KB3106660]:https://support.microsoft.com/en-us/kb/3106660
+[CU5 KB3130926]https://support.microsoft.com/en-us/kb/3130926
 [Download SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
 [CU1 KB3123299]:https://support.microsoft.com/en-us/kb/3123299
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
@@ -161,6 +161,7 @@ contains all the fixes that are included with previous service packs and any new
 
 | Build        | File version     | KB / Description                                                                                                                   | Release Date |
 |--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 12.0.4439.1  | 2014.120.4439.1  | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |
 | 12.0.4436.0  | 2014.120.4436.0  | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |
 | 12.0.4427.24 | 2014.120.4427.24 | [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |
 | 12.0.4422.0  | 2014.120.4422.0  | [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |
@@ -199,6 +200,7 @@ contains all the fixes that are included with previous service packs and any new
 | 12.0.1524    | 2014.120.1524.0  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |
 | 11.0.9120    | 2013.110.9120.0  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |
 
+[3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3130926
 [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3106660
 [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3094221
 [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3075950
