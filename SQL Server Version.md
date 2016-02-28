@@ -69,7 +69,7 @@ contains all the fixes that are included with previous service packs and any new
 
 [Download CTP3.3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download SP1 2014]:https://support.microsoft.com/en-us/kb/3058865
-[CU5 KB3130926]https://support.microsoft.com/en-us/kb/3130926
+[CU5 KB3130926]:https://support.microsoft.com/en-us/kb/3130926
 [Download SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
 [CU1 KB3123299]:https://support.microsoft.com/en-us/kb/3123299
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
