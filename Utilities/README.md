@@ -25,6 +25,10 @@ Source link:
 | [sqlmaint Utility](#sqlmaint-utility)                     | [sqlmaint Utility]           | -            | Microsoft   | Yes          | No          |
 | [Ssms Utility](#ssms-utility)                             | [Ssms Utility]               | -            | Microsoft   | Yes          | No          |
 | [dtexec Utility](#dtexec-utility)                         | [dtexec Utility]             | -            | Microsoft   | Yes          | No          |
+| [SQL Server 2005 Best Practices Analyzer](#bpa-2005)      | [BPA 2005]                   | 2008-08-13   | Microsoft   | Yes          | No          |
+| [SQL Server 2000 Best Practices Analyzer](#bpa-2000)      | [BPA 2000]                   | 2010-04-26   | Microsoft   | Yes          | No          |
+| [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)   | [BPA 2008]                   | 2010-06-18   | Microsoft   | Yes          | No          |
+| [SQL Server 2012 Best Practices Analyzer](#bpa-2012)      | [BPA 2012]                   | 2012-06-04   | Microsoft   | Yes          | No          |
 | [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
 | [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No          |
 | [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640   |
@@ -214,6 +218,52 @@ Support Version: 2012/2014/2016<br/>
 Free version: Yes
 
 The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages. The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators. The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
+
+
+## SQL Server 2005 Best Practices Analyzer <a id="bpa-2005"></a>
+Download page: [BPA 2005]<br/>
+Release date: 2008-08-13<br/>
+Support Version: 2005<br/>
+Free version: Yes
+
+The SQL Server 2005 Best Practices Analyzer (BPA) gathers data from Microsoft Windows and SQL Server configuration settings. BPA uses a predefined list of SQL Server 2005 recommendations and best practices to determine if there are potential issues in the database environment.
+
+
+## SQL Server 2000 Best Practices Analyzer <a id="bpa-2000"></a>
+Download page: [BPA 2000]<br/>
+Release date: 2010-04-26<br/>
+Support Version: 2000<br/>
+Free version: Yes
+
+SQL Server 2000 Best Practices Analyzer is a database management tool that lets you verify the implementation of common Best Practices on your servers.
+
+
+## SQL Server 2008 R2 Best Practices Analyzer <a id="bpa-2008"></a>
+Download page: [BPA 2008]<br/>
+Release date: 2010-06-18<br/>
+Support Version: 2008/2008R2<br/>
+Free version: Yes
+
+The Microsoft SQL Server 2008 R2 BPA is a diagnostic tool that performs the following functions:
+ - Gathers information about a Server and a Microsoft SQL Server 2008 or 2008 R2 instance installed on that Server
+ - Determines if the configurations are set according to the recommended best practices
+ - Reports on all configurations, indicating settings that differ from recommendations
+ - Indicates potential problems in the installed instance of SQL Server
+ - Recommends solutions to potential problems
+
+
+## SQL Server 2012 Best Practices Analyzer <a id="bpa-2012"></a>
+Download page: [BPA 2012]<br/>
+Release date: 2012-04-06<br/>
+Support Version: 2012<br/>
+Free version: Yes
+
+The Microsoft SQL Server 2012 BPA is a diagnostic tool that performs the following functions:
+ - Gathers information about a Server and a Microsoft SQL Server 2012 instance installed on that Server
+ - Determines if the configurations are set according to the recommended best practices
+ - Reports on all configurations, indicating settings that differ from recommendations
+ - Indicates potential problems in the installed instance of SQL Server
+ - Recommends solutions to potential problems
 
 
 ## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
@@ -509,3 +559,7 @@ If you have encrypted an object definition in your database by specifying WITH E
 [sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
 [Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
 [dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
+[BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
+[BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
+[BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
+[BPA 2012]: https://www.microsoft.com/en-us/download/details.aspx?id=29302
