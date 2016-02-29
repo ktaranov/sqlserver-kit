@@ -72,6 +72,7 @@ Headers:
    - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql) (by Sean Smith)
    - [usp_BulkUpload](/Stored_Procedure/usp_BulkUpload.sql)
    - [usp_TableUnpivot](/Stored_Procedure/usp_TableUnpivot.sql)
+   - [usp_SSIS_ScriptEnvironment](/Stored_Procedure/usp_SSIS_ScriptEnvironment.sql)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
     - [udf_parseJSON](/User_Defined_Function/udf_parseJSON.sql)
