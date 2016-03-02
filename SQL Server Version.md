@@ -59,14 +59,14 @@ contains all the fixes that are included with previous service packs and any new
 
 ## What are the most recent updates for SQL Server? <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                      | Build Number                 | Release Date              | Support Ends | Other Updates                                                     |
-|---------|--------------------------------------------------------------------|------------------------------|---------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Download CTP3.3 2016]                                             | 13.0.1000.281                | 2016-02-01                | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Download 2014] then<br/>[SP1 2014] then<br/>[CU5 KB3130926]       | 12.0.4100.1<br/>12.0.4439.1  | 2015-05-15<br/>2016-02-22 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU1 KB3123299]       | 11.0.6020.0<br/>11.0.6518.0  | 2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 10.50.6000<br/>10.50.6220.0  | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Download 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]        | 10.00.6000<br/>10.0.6241.0   | 2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
-| 2005    | [Download SP4 2005] then<br/>[CU3 KB2507769]                       | 9.00.5000.00<br/>9.00.5266   | 2010-12-17<br/>2011-03-17 | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
+| Version | Latest Update                                                      | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
+|---------|--------------------------------------------------------------------|------------------------------------------------|---------------------------               |--------------|-------------------------------------------------------------------|
+| 2016    | [Download CTP3.3 2016]                                             | 13.0.1000.281                                  | 2016-02-01                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Download 2014] then<br/>[SP1 2014] then<br/>[CU5 KB3130926]       | 12.0.2000.8<br/>12.0.4100.1<br/>12.0.4439.1    | 2014-02-23<br/>2015-05-15<br/>2016-02-22 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU1 KB3123299]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6518.0   | 2012-02-14<br/>2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Download 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]        | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| 2005    | [Download SP4 2005] then<br/>[CU3 KB2507769]                       | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Download CTP3.3 2016]:https://technet.microsoft.com/en-in/evalcenter/mt130694.aspx
 [Download 2014]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
@@ -88,7 +88,7 @@ contains all the fixes that are included with previous service packs and any new
 
 ## Microsoft SQL Server installation files hash <a id="microsoft-sql-server-installation-files-hash"></a>
 
-|Download Link             | File Name                                                            | SHA1                                                        |
+|Direct Download Link      | File Name                                                            | SHA1                                                        |
 |--------------------------|----------------------------------------------------------------------|-------------------------------------------------------------|
 | [SQL Server 2016 CTP3.3] | SQLServer2016CTP3.3-x64-ENU.iso                                      | 6c b7 ae f1 e0 b0 d5 e5 ae 10 90 74 16 20 e6 7f 77 f3 6b 8e |
 | [SQL Server 2014]        | SQLServer2014-x64-ENU.iso                                            | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
@@ -97,9 +97,12 @@ contains all the fixes that are included with previous service packs and any new
 | [SQL Server 2012]        | SQLFULL_ENU.iso                                                      | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
 | [SQL Server 2012 SP3]    | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
 | [SQL Server 2012 CU1]    | SQLServer2012-KB3123299-x64.exe                                      | 6e 6c 4a a8 bf ca 24 2c 28 70 66 a9 a9 43 4e 3a 00 94 3e 94 |
-| [SQL Server 2008 R2]     | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | ?                                                           |
+| [SQL Server 2008 R2]     | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
 | [SQL Server 2008 R2 SP3] | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
 | [SQL Server 2008 R2 SU]  | SQLServer2008R2-KB3045316-x64.exe                                    | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
+| [SQL Server 2008]        | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
+| [SQL Server 2008 SP4]    | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
+| [SQL Server 2008 SU]     | SQLServer2008-KB3045311-x64.exe                                      | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
 [SQL Server 2016 CTP3.3]:http://care.dlservice.microsoft.com/dl/download/F/A/F/FAF43C03-51BB-43F2-9ECD-406CE3230CCF/SQLServer2016CTP3.3-x64-ENU.iso
 [SQL Server 2014]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
@@ -111,7 +114,9 @@ contains all the fixes that are included with previous service packs and any new
 [SQL Server 2008 R2]:https://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
-
+[SQL Server 2008]:https://download.microsoft.com/download/D/D/B/DDB17DC1-A879-44DD-BD11-C0991D292AD7/6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe
+[SQL Server 2008 SP4]:https://download.microsoft.com/download/5/E/7/5E7A89F7-C013-4090-901E-1A0F86B6A94C/ENU/SQLServer2008SP4-KB2979596-x64-ENU.exe
+[SQL Server 2008 SU]:https://download.microsoft.com/download/E/C/0/EC0A7C15-9A6D-4F41-9B9F-BCA10CC3937C/SQLServer2008-KB3045311-x64.exe
 
 ## Internal Database Version and Compatibility Level <a id="internal-database-version-and-compatibility-level"></a>
 
