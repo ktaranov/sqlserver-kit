@@ -7,6 +7,12 @@ Original link: http://www.sqlteam.com/article/fast-csv-import-in-powershell-to-s
 Description: Fast export sql query to csv file
 
 
+## [Get Machine Information to Excel](Get-MachineInformationExcel)
+Author: Sander Stad<br />
+Original link: https://www.simple-talk.com/sql/database-administration/documenting-sql-server-with-powershell/<br />
+Description: Get machine information like memory, CPU and disk configuration and output it to Excel
+
+
 ## [Multiply SQL Server Connections](Multiply_SQL_Server_Connections.ps1)
 Author: Kenneth Fisher<br />
 Original link: http://sqlstudies.com/2016/02/24/powershell-script-to-create-multiple-sql-server-connections/<br />
