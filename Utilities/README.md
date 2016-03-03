@@ -1,15 +1,10 @@
 # SQL Server Utilities
 Useful SQL Server utilities
 
-Source link:
- - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
- - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
- - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
-
 
 | Name                                                      | Official/Download page       | Release Date | Author      | Free version | Paid/Price  |
 |-----------------------------------------------------------|------------------------------|------------- | ------------| ------------ | ------------|
-| [GraphView](#graphview)                                   | [GraphView]                  | -            | Microsoft   | Yes          | No          |
+| [GraphView](#graphview)                                   | [GraphView]                  | 2016-02-23   | Microsoft   | Yes          | No          |
 | [tablediff Utility](#tablediff-utility)                   | [tablediff Utility]          | -            | Microsoft   | Yes          | No          |
 | [Microsoft Log Parser](#microsoft-log-parser)             | [Microsoft Log Parser]       | -            | Microsoft   | Yes          | No          |
 | [Diskspd](#diskspd)                                       | [Diskspd]                    | 2015-12-14   | Microsoft   | Yes          | No          |
@@ -32,6 +27,7 @@ Source link:
 | [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
 | [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No          |
 | [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640   |
+| [ReadyRoll](#readyroll)                                   | [ReadyRoll]                  | 2016-01-03   | Red Gate    | No           | Yes/$345    |
 | [SQL Check](#sql-check)                                   | [SQL Check]                  | 2015-09-24   | Idera       | Yes          | No          |
 | [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer) | [SQL Fragmentation Analyzer] | 2015-06-24   | Idera       | Yes          | No          |
 | [SQL Heat Map](#sql-heat-map)                             | [SQL Heat Map]               | 2015-12-07   | Idera       | Yes          | No          |
@@ -55,7 +51,7 @@ Source link:
 
 ## GraphView <a id="graphview"></a>
 Download page: [GraphView]<br/>
-Release date: -<br/>
+Release date: 2016-02-23<br/>
 Support Version: ???<br/>
 Free version: Yes
 
@@ -107,7 +103,7 @@ Free version: Yes
 HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
-## dta Utility <a id="dba-utility"></a>
+## dta Utility <a id="dta-utility"></a>
 Download page: [dta Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -294,6 +290,17 @@ Red Gate 7 products for DBA:
  - SQL Doc: Automatically generate database documentation
 
 
+## ReadyRoll <a id="readyroll"></a>
+Download page: [ReadyRoll]<br/>
+Release date: 2016-03-01<br/>
+Support Version: 2012/2014<br/>
+Free version: No/$345
+
+Want to work on databases in Visual Studio alongside your application? Feeling the pain of managing and deploying database changes manually? Then ReadyRoll's the tool for you.
+It generates numerically ordered SQL migration scripts that sit inside your project and take your schema from one version to the next.
+You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
+
+
 ## SQL Check <a id="sql-check"></a>
 Download page: [SQL Check]<br/>
 Release date: 2015-09-24<br/>
@@ -397,7 +404,7 @@ With SQL Backup Status Reporter you can:
  - identify full and differential backups for many databases
 
 
-## SQL Integrity Check <a id="sql-integritu-check"></a>
+## SQL Integrity Check <a id="sql-integrity-check"></a>
 Download page: [SQL Integrity Check]<br/>
 Release date: 2013-08-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
@@ -521,6 +528,12 @@ Free version: No
 If you have encrypted an object definition in your database by specifying WITH ENCRYPTION option, and by some reason you cannot restore its original T-SQL body, the  dbForge SQL Decryptor  will easily do it for you absolutely free. Save your time and funds on restoring lost definitions and stay happy with our products.
 
 
+Useful link:
+ - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
+ - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
+ - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
+
+
 [GraphView]:https://github.com/Microsoft/GraphView
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
@@ -536,6 +549,7 @@ If you have encrypted an object definition in your database by specifying WITH E
 [SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [SQL DBA Bundle]:http://www.red-gate.com/products/dba/dba-bundle/
+[ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
 [SQL Check]: https://www.idera.com/productssolutions/freetools/sqlcheck
 [SQL Fragmentation Analyzer]: https://www.idera.com/productssolutions/freetools/sqlfragmentationanalyzer/overview
 [SQL Heat Map]: https://www.idera.com/productssolutions/freetools/sql-storage
