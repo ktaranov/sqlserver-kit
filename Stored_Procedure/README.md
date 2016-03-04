@@ -1,4 +1,6 @@
 # Microsoft SQL Server Stored Procedure
+[SQL Server Name Convention and T-SQL Programming Style](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
+
 Start all procedure from if exist statement:
 ```sql
 IF OBJECT_ID('dbo.ProcedureName', 'P') IS NULL
@@ -30,6 +32,12 @@ Tested on SQL Server version: 2012
 ## [sp_capture_login_auth](sp_capture_login_auth.sql)
 Author: Unknown<br/>
 Original link: Unknown<br/>
+Tested on SQL Server version: 2012/2014
+
+
+## [sp_Blocked_Process_Report_Viewer](sp_blocked_process_report_viewer.sql)
+Author: Michael J. Swart<br/>
+Original link: https://sqlblockedprocesses.codeplex.com/<br/>
 Tested on SQL Server version: 2012/2014
 
 
