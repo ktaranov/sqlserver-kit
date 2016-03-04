@@ -105,6 +105,7 @@ Headers:
     - [SQL XEvent Profiler](/Utilities#sql-xevent-profiler)
     - [DLM Dashboard](/Utilities#dlm-dashboard)
     - [SQL DBA Bundle](/Utilities#sql-dba-bundle)
+    - [ReadyRoll](/Utilities#readyroll)
     - [SQL Check](/Utilities#sql-check)
     - [SQL Fragmentation Analyzer](/Utilities#sql-fragmentation-analyzer)
     - [SQL Heat Map](/Utilities#sql-heat-map)
@@ -246,6 +247,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Brent Ozar ebooks](http://www.brentozar.com/first-aid/free-database-books-pdfs-download/)
  - [E-books Directory](http://www.e-booksdirectory.com/listing.php?category=569)
  - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
+ - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
 
 
 ## License
