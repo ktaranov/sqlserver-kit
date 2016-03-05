@@ -584,7 +584,8 @@ Link: http://support.microsoft.com/kb/2009160
 
 **Trace Flag: 2371**<br />
 Function: Change threshold for auto update stats<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx
+Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx<br />
+Link: https://support.microsoft.com/en-us/kb/2754171
 
 
 **Trace Flag: 2372**<br />
@@ -1183,6 +1184,7 @@ Link: http://support.microsoft.com/kb/2667211
 **Trace Flag: 4199**<br />
 Function: Turn on all optimizations<br />
 Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx<br />
+Link: https://msdn.microsoft.com/en-us/library/bb510411.aspx#TraceFlag<br />
 Scope: global or session
 
 
