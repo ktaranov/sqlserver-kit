@@ -47,6 +47,7 @@ Useful SQL Server utilities
 | [dbForge Query Builder](#dbforge-query-builder)           | [dbForge Query Builder]      | 2015-06-03   | Devart      | No           | Yes/$99.95  |
 | [dbForge Event Profiler](#dbforge-event-profiler)         | [dbForge Event Profiler]     | 2015-04-08   | Devart      | Yes          | No          |
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)           | [dbForge SQL Decryptor]      | 2013-11-07   | Devart      | Yes          | No          |
+| [Minion Enterprise](#minion-enterprise)                   | [Minion Enterprise]          | -            | MinionWare  | No           | Yea/$1500   |
 
 
 ## GraphView <a id="graphview"></a>
@@ -525,6 +526,13 @@ Release date: 2013-11-07<br/>
 Support Version: 2000/2005/2008/2008R2/2012<br/>
 Free version: No
 
+
+## Minion Enterprise <a id="minion-enterprise"></a>
+Download page: [Minion Enterprise]<br/>
+Release date: ?<br/>
+Support Version: 2008/2008R2/2012<br/>
+Free version: No/$1500
+
 If you have encrypted an object definition in your database by specifying WITH ENCRYPTION option, and by some reason you cannot restore its original T-SQL body, the  dbForge SQL Decryptor  will easily do it for you absolutely free. Save your time and funds on restoring lost definitions and stay happy with our products.
 
 
@@ -577,3 +585,4 @@ Useful link:
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
 [BPA 2012]: https://www.microsoft.com/en-us/download/details.aspx?id=29302
+[Minion Enterprise]:http://minionware.net/enterprise/
