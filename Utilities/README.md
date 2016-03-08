@@ -533,7 +533,7 @@ Release date: ?<br/>
 Support Version: 2008/2008R2/2012<br/>
 Free version: No/$1500
 
-If you have encrypted an object definition in your database by specifying WITH ENCRYPTION option, and by some reason you cannot restore its original T-SQL body, the  dbForge SQL Decryptor  will easily do it for you absolutely free. Save your time and funds on restoring lost definitions and stay happy with our products.
+Minion Enterprise was designed by database administrators (DBAs) specifically to address the issues that waste the most time and cause the most problems. Minion shrinks dozens of those one-at-a-time tasks down to a central process. And, it does this without the usual overhead of monitoring software. When you install Minion Enterprise, it automatically begins gathering data from instances across your enterprise. That single repository of data allows you to centrally audit, alert, report, and investigate your entire environment. Even better, it opens up a new world of central management: audit SQL and AD security, clone user permissions across servers, standardize and enforce SQL Server settings, automate error log searches, and so very much more.
 
 
 Useful link:
