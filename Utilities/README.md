@@ -24,10 +24,10 @@ Useful SQL Server utilities
 | [SQL Server 2000 Best Practices Analyzer](#bpa-2000)      | [BPA 2000]                   | 2010-04-26   | Microsoft   | Yes          | No          |
 | [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)   | [BPA 2008]                   | 2010-06-18   | Microsoft   | Yes          | No          |
 | [SQL Server 2012 Best Practices Analyzer](#bpa-2012)      | [BPA 2012]                   | 2012-06-04   | Microsoft   | Yes          | No          |
-| [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
 | [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No          |
 | [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640   |
 | [ReadyRoll](#readyroll)                                   | [ReadyRoll]                  | 2016-01-03   | Red Gate    | No           | Yes/$345    |
+| [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
 | [SQL Check](#sql-check)                                   | [SQL Check]                  | 2015-09-24   | Idera       | Yes          | No          |
 | [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer) | [SQL Fragmentation Analyzer] | 2015-06-24   | Idera       | Yes          | No          |
 | [SQL Heat Map](#sql-heat-map)                             | [SQL Heat Map]               | 2015-12-07   | Idera       | Yes          | No          |
@@ -263,16 +263,6 @@ The Microsoft SQL Server 2012 BPA is a diagnostic tool that performs the followi
  - Recommends solutions to potential problems
 
 
-## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
-Download page: [SQL XEvent Profiler]<br/>
-Release date: 2014-03-14<br/>
-Support Version: 2012/2014<br/>
-Free version: Yes
-
-Idera’s SQL XEvent Profiler emulates the functionality and simplicity of SQL Server Profiler, letting you quickly view data from SQL events<br />
-and see what's happening on the server. Plus, it leverages SQL Extended Events (XEvents) as the backing technology — making it more efficient than SQL Trace.
-
-
 ## DLM Dashboard <a id="dlm-dashboard"></a>
 DLM Dashboard tracks your database schemas and alerts you when they change.<br />
 As a SQL Server user, you want to make sure all your databases are in the right state.<br />
@@ -300,6 +290,16 @@ Free version: No/$345
 Want to work on databases in Visual Studio alongside your application? Feeling the pain of managing and deploying database changes manually? Then ReadyRoll's the tool for you.
 It generates numerically ordered SQL migration scripts that sit inside your project and take your schema from one version to the next.
 You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
+
+
+## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
+Download page: [SQL XEvent Profiler]<br/>
+Release date: 2014-03-14<br/>
+Support Version: 2012/2014<br/>
+Free version: Yes
+
+Idera’s SQL XEvent Profiler emulates the functionality and simplicity of SQL Server Profiler, letting you quickly view data from SQL events<br />
+and see what's happening on the server. Plus, it leverages SQL Extended Events (XEvents) as the backing technology — making it more efficient than SQL Trace.
 
 
 ## SQL Check <a id="sql-check"></a>
