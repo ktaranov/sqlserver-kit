@@ -1,7 +1,7 @@
 # Microsoft SQL Server functions
 Start all functions from if exist statement:
 ```sql
-IF OBJECT_ID('dbo.udf_FunctionName', 'P') IS NULL
+IF OBJECT_ID('dbo.udf_FunctionName', 'FN') IS NULL
 EXECUTE ('CREATE FUNCTION dbo.udf_FunctionName() RETURNS INT AS BEGIN RETURN 1 END;');
 GO
 
@@ -10,6 +10,32 @@ ALTER FUNCTION dbo.udf_FunctionName(
 ```
 
 It helps to save all grants for function (analog `CREATE OR REPLACE PROCEDURE` in [Oracle](http://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_6009.htm 'Offical Oracle Documentation')).
+
+
+## [udf_PatExclude8K](udf_PatExclude8K.sql)
+Author: Alan Burstein<br/>
+Original link: http://www.sqlservercentral.com/scripts/T-SQL/117890/<br />
+Tested on SQL Server version: 2008/2012/2014/2016<br />
+ Purpose:
+ Given a string (@String) and a pattern (@Pattern) of characters to remove,
+ remove the patterned characters from the string.
+
+Usage:
+```sql
+--===== Basic Syntax Example
+ SELECT CleanedString 
+ FROM dbo.udf_PatExclude8K(@String, @Pattern);
+
+--===== Remove all but Alpha characters
+ SELECT CleanedString
+ FROM dbo.SomeTable st
+ CROSS APPLY dbo.udf_PatExclude8K(st.SomeString,'%[^A-Za-z]%');
+
+--===== Remove all but Numeric digits
+ SELECT CleanedString
+ FROM dbo.SomeTable st
+ CROSS APPLY dbo.udf_PatExclude8K(st.SomeString,'%[^0-9]%');
+```
 
 
 ## [udf_Is16digitValidCard](udf_Is16digitValidCard.sql)
