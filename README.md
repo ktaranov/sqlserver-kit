@@ -125,7 +125,7 @@ Headers:
     - [dbForge Query Builder](/Utilities#dbforge-query-builder) (Devart)
     - [dbForge Event Profiler](/Utilities#dbforge-event-profiler) (Devart)
     - [dbForge SQL Decryptor](/Utilities#dbforge-SQL-decryptor) (Devart)
-    - [Minion Enterprise](/Utilities#minion-enterprise)
+    - [Minion Enterprise](/Utilities#minion-enterprise) (MinionWare)
 
 
 ## SQL Server Web Resources
@@ -151,6 +151,8 @@ Headers:
    - [SQL Server Radio](http://www.sqlserverradio.com/)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/)
    - [Away from the Keyboard](http://awayfromthekeyboard.com/)
+ - Courses
+   - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
@@ -158,6 +160,8 @@ Headers:
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump)
     - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer)
+    - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
+    - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
 
 
 ## SQL Server Express direct download links
