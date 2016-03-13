@@ -153,6 +153,11 @@ Headers:
    - [Away from the Keyboard](http://awayfromthekeyboard.com/)
  - Courses
    - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
+   - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
+   - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
+   - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
+   - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
+   - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
