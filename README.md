@@ -15,8 +15,9 @@ Headers:
 
 ## Repo folders and files
  - [SQL Server Data Types](/SQL Server Data Types.md)
- - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Edition](/SQL Server Edition.md)
+ - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
+ - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 300 Trace Flags') (Complete list - 300 trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
