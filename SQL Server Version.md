@@ -61,7 +61,7 @@ contains all the fixes that are included with previous service packs and any new
 
 | Version | Latest Update                                                      | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|--------------------------------------------------------------------|------------------------------------------------|---------------------------               |--------------|-------------------------------------------------------------------|
-| 2016    | [Download RC0 2016]                                                | 13.0.1100.288                                  | 2016-03-01                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Download RC0 2016]                                                | 13.0.1100.288                                  | 2016-03-07                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download 2014] then<br/>[SP1 2014] then<br/>[CU5 KB3130926]       | 12.0.2000.8<br/>12.0.4100.1<br/>12.0.4439.1    | 2014-02-23<br/>2015-05-15<br/>2016-02-22 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU1 KB3123299]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6518.0   | 2012-02-14<br/>2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
@@ -180,7 +180,7 @@ contains all the fixes that are included with previous service packs and any new
 
 | Build         | File version      | KB / Description                                                                | Release Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|
-| 13.0.1100.288 | 2015.130.1100.288 | [Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)]      | 2016-03-01   |
+| 13.0.1100.288 | 2015.130.1100.288 | [Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)]      | 2016-03-07   |
 | 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-01   |
 | 13.0.900.73   | 2015.130.900.73   | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-11   |
 | 13.0.801.12   | 2015.130.801.12   | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-12-01   |
