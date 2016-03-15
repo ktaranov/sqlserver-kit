@@ -41,6 +41,12 @@ Original link: https://sqlblockedprocesses.codeplex.com/<br/>
 Tested on SQL Server version: 2012/2014
 
 
+## [sp_sqltrace](sp_sqltrace.sql)
+Author:  Erland Sommarskog<br/>
+Original link: http://www.sommarskog.se/sqlutil/sqltrace.html<br/>
+Tested on SQL Server version: 2005/2008/2012/2014
+
+
 ## [usp_BulkUpload](usp_BulkUpload.sql)
 Author: Konstantin Taranov<br/>
 Original link: None<br/>
