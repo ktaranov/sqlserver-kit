@@ -8,7 +8,7 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]           | 2015-05-04   | 2008/2008R2/2012/2014 | Oleksii Kovalov     | Yes          | No            |
 | [SQL Search](#sql-search)                             | [SQL Search]               | 2015-11-05   | 2008/2008R2/2012/2014 | Red Gate            | Yes          | No            |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]      | 2015-05-31   | 2008/2012/2014        | Red Gate            | Yes          | No            |
-| [Supratimas](#supratimas)                             | [Supratimas]               | 2015-11-25   | 2008/2008R2/2012/2014 | TTRider LLC         | Yes          | Yes/$34.99    |
+| [Supratimas](#supratimas)                             | [Supratimas]               | 2015-01-27   | 2008/2008R2/2012/2014 | TTRider LLC         | Yes          | Yes/$34.99    |
 | [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]          | 2015-10-07   | 2008/2008R2/2012/2014 | Mladen Prajdić      | No           | Yes/€30-€5000 |
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]       | 2015-11-05   | 2005/2008/2012/2014   | Gudu Software       | No           | Yes/$50-$2000 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer] | 2015-09-01   | 2008/2012/2014        | SQL Sentry          | Yes          | Yes/$295.00   |
@@ -83,7 +83,7 @@ Powerful and reliable scripts written by SQL Server experts
 
 ## Supratimas <a id="supratimas"></a>
 Download page: [Supratimas]<br/>
-Release date: 2015-11-25<br/>
+Release date: 2015-01-27<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
 
