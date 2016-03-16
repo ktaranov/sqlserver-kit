@@ -19,8 +19,8 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list from many resources - 300 Trace Flags') (Complete list - 300 trace flags)
- - [SQL Server Version](/SQL Server Version.md 'List of all version Microsoft SQL Sever') (Complete list - from SQL Server 1.0 to SQL Server 2016)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 300 Trace Flags') (Complete list - 300 trace flags)
+ - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (Complete list - from SQL Server 1.0 to SQL Server 2016)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
@@ -53,7 +53,7 @@ Headers:
     - [dbForge Data Pump](/SSMS_addons#dbforge-data-pump)
     - [dbForge Index Manager](/SSMS_addons#dbforge-index-manager)
     - [dbForge Object Search](/SSMS_addons#dbforge-object-search)
- - [Useful scripts](/Scripts)
+ - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
       - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL Server 2016 Diagnostic Information Queries.sql)
       - [SQL Server 2014 Diagnostic Information Queries](/Scripts/SQL Server 2014 Diagnostic Information Queries.sql)
@@ -148,6 +148,7 @@ Headers:
    - [SQL Server Videos](http://www.sqlservervideos.com/)
    - [TECHNET How do I Videos](https://technet.microsoft.com/en-us/library/dd353197.aspx)
    - [Veeam Learn Microsoft SQL Server](http://go.veeam.com/learn-microsoft-sql-server-free-video-tutorial-course.html)
+   - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/)
