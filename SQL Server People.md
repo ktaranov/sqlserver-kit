@@ -30,7 +30,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Grant Fritchey      | [Grant Blog]               | [@GFritchey]      | Unknown                           | 7   | [Fritchey MVP]   |
 | Kendal Van Dyke     | [KendaL Blog]              | [@SQLDBA]         | Unknown                           | -   | -                |
 | Tim Ford            | [Tim Blog]                 | [@sqlagentman]    | Unknown                           | 7   | [Ford MVP]       |
-
+| Steve Jones         | [Steve Jones Blog]         | [@way0utwest]     | Unknown                           | 9   | [Jones MVP]      |
+| Thomas Larock       | [Thomas Larock Blog]       | [@sqlrockstar]    | Unknown                           | 7   | [LaRock MVP]     |
+| Mike Fal            | [Mike Fal Blog]            | [@Mike_Fal]       | Unknown                           | -   | -                |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -59,6 +61,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Grant Blog]:http://www.scarydba.com/
 [Kendal Blog]:http://www.kendalvandyke.com/
 [Tim Blog]:http://thesqlagentman.com/
+[Steve Jones Blog]:https://voiceofthedba.wordpress.com/
+[Thomas Larock Blog]:http://thomaslarock.com/
+[Mike Fal Blog]:http://www.mikefal.net
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -82,6 +87,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@GFritchey]:https://twitter.com/GFritchey
 [@SQLDBA]:https://twitter.com/SQLDBA
 [@sqlagentman]:https://twitter.com/sqlagentman
+[@way0utwest]:https://twitter.com/way0utwest
+[@sqlrockstar]:https://twitter.com/sqlrockstar
+[@Mike_Fal]:https://twitter.com/Mike_Fal
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -101,3 +109,5 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Randal MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4015673?fullName=Paul%20S.%20Randal
 [Fritchey MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025126?fullName=Grant%20%20Fritchey
 [Ford MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025585?fullName=Timothy%20%20Ford
+[Jones MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4014238?fullName=Steve%20%20Jones
+[LaRock MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025219?fullName=Thomas%20%20LaRock
