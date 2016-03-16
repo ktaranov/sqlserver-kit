@@ -1,4 +1,4 @@
-SQL Server Management Studio add-ins
+# SQL Server Management Studio add-ins
 Complete list of useful add-in for SQL Server Management Studio
 
 
