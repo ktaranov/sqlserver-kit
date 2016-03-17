@@ -19,6 +19,12 @@ Original link: http://sqlstudies.com/2016/02/24/powershell-script-to-create-mult
 Description: This script creates a number of connections ($MaxConnections) to a SQL Server instance ($Server) that connect to a random database and exist/run for a certain amount of time ($WaitType/$WaitTime)
 
 
+## [SQL_Server_linked_server_connection_check](SQL_Server_linked_server_connection_check.ps1)
+Author: Thomas LaRock<br />
+Original link: http://thomaslarock.com/2016/03/sql-server-linked-server-connection-test<br />
+Description: Test the connection for each linked server defined in a SQL Server
+
+
 ## [WOX Permissions](WOX_Permissions.ps1)
 Author: Chris Bell<br />
 Original link: https://wateroxconsulting.com/archives/sql-server-access/<br />
