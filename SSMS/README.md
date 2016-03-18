@@ -1,7 +1,8 @@
 # SQL Server Management Studio
 SQL Server Management Studio is an integrated environment for managing your SQL Server infrastructure and Azure SQL Database. Management Studio provides tools to configure, monitor, and administer instances of SQL Server. It also provides tools to deploy, monitor, and upgrade the data-tier components, such as databases and data warehouses used by your applications, and to build queries and scripts.
 
- - [SSMS addins](/SSMS_addins.md)
+ - [SSMS Addins](/SSMS_Addins.md)
+ - [SSMS Snippets](/SSMS_Snippets.md)
  - [SSMS shortcuts](/SSMS_Shortcuts.md)
  - [MSDN Dwonload link](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
  - [MSDN Official page](https://msdn.microsoft.com/en-us/library/hh213248.aspx)
