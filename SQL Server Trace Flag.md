@@ -5,8 +5,8 @@ Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
  - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
- - [What Are the Optimizer Rules?](what-are-the-optimizer-rules)
- - [Trace flag list](#trace-flag-list)
+ - [What Are the Optimizer Rules?](#what-are-the-optimizer-rules)
+ - [Trace flags list](#trace-flags-list)
 
 Source links:
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
@@ -48,7 +48,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
  - You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
 
 
-## What Are the Optimizer Rules? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
+## What Are the Optimizer Rules? <a id="what-are-the-optimizer-rules"></a>
 We all know that every time SQL Server executes a query it builds an execution plan that translates the logical operations like joins and predicates into physical operations that are implemented in the SQL Server source code. That conversion is based on certain rules known as the Optimizer Rules. They define for example how to perform an INNER JOIN. When we write a simple select statement with an inner join, the query optimizer chooses based on statistics, indexes and enabled rules if the join is executed as a Merge Join, Nested Loop or a Hash Join and also if the join can use the commutative property of joins. Mathematically A join B is equal to B join A, but the computational cost generally is not the same.
 
 ### Getting the List of Available Rules
@@ -81,7 +81,7 @@ GO
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
 
-## Trace flag list <a id="trace-flag-list"></a>
+## Trace flags list <a id="trace-flags-list"></a>
 Summary: 300 trace flags
 
 **Trace Flag: -1**<br />
