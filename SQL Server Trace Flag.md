@@ -45,7 +45,31 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 
 ## How do I know what Trace Flags are turned on at the moment? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
- - You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
+You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
+
+The following example displays the status of all trace flags that are currently enabled globally:
+```sql
+DBCC TRACESTATUS(-1);
+GO
+```
+
+The following example displays the status of trace flags 2528 and 3205:
+```sql
+DBCC TRACESTATUS (2528, 3205);
+GO
+```
+
+The following example displays whether trace flag 3205 is enabled globally:
+```sql
+DBCC TRACESTATUS (3205, -1);
+GO
+```
+
+The following example lists all the trace flags that are enabled for the current session:
+```sql
+DBCC TRACESTATUS ();
+GO
+```
 
 
 ## What Are the Optimizer Rules? <a id="what-are-the-optimizer-rules"></a>
