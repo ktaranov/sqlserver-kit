@@ -5,6 +5,7 @@ Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
  - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
+ - [What Are the Optimizer Rules?](what-are-the-optimizer-rules)
  - [Trace flag list](#trace-flag-list)
 
 Source links:
@@ -16,6 +17,8 @@ Source links:
  - Amit Banerjee TF list: http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/
  - Paul Randal discussing TF Pro’s and Con’s: http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/
  - **Some trace flags needs to be specified with "t" rather than with "T" in startup options!**: http://technet.microsoft.com/en-us/library/ms190737(v=sql.110).aspx
+ - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
+ - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
 
 **Thanks to:**
  - Steinar Andersen
@@ -43,6 +46,36 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 ## How do I know what Trace Flags are turned on at the moment? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
  - You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
+
+
+## What Are the Optimizer Rules? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
+We all know that every time SQL Server executes a query it builds an execution plan that translates the logical operations like joins and predicates into physical operations that are implemented in the SQL Server source code. That conversion is based on certain rules known as the Optimizer Rules. They define for example how to perform an INNER JOIN. When we write a simple select statement with an inner join, the query optimizer chooses based on statistics, indexes and enabled rules if the join is executed as a Merge Join, Nested Loop or a Hash Join and also if the join can use the commutative property of joins. Mathematically A join B is equal to B join A, but the computational cost generally is not the same.
+
+### Getting the List of Available Rules
+To obtain the list of rules of your version of SQL Server we must use the undocumented DBCC commands SHOWONRULES and SHOWOFFRULES. Those commands display the enabled and disabled rules for the whole instance respectively. As you may guess, the number of rules varies amongst versions.
+
+```sql
+USE master
+GO
+
+DBCC TRACEON(3604)
+GO
+
+DBCC SHOWONRULES
+GO
+
+DBCC SHOWOFFRULES
+GO
+```
+
+| Rule Name | Description                       |
+|-----------|-----------------------------------|
+| JNtoNL    | Join to Nested Loop               |
+| JNtoHS    | Join to Hash                      |
+| JNtoSM    | Join to Sort Merge                |
+| LOJNtoNL  | Left Outer Join to Nested Loop    |
+| LSJNtoHS  | Left Semi Join to Hash            |
+| LASJNtoSM | Left Anti Semi Join to Sort Merge |
 
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
