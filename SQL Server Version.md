@@ -180,7 +180,7 @@ contains all the fixes that are included with previous service packs and any new
 
 | Build         | File version      | KB / Description                                                                | Release Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|
-| 13.0.1200.242 | 2015.130.1200.242 | [Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC1)]      | 2016-03-18   |
+| 13.0.1200.242 | 2015.130.1200.242 | [Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)]      | 2016-03-18   |
 | 13.0.1100.288 | 2015.130.1100.288 | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   |
 | 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-01   |
 | 13.0.900.73   | 2015.130.900.73   | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-11   |
