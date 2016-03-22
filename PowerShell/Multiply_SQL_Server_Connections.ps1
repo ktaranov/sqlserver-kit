@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    .
+    Creates multiply connections to a SQL Server
 .DESCRIPTION
     This script creates a number of connections ($MaxConnections)
     to a SQL Server instance ($Server) that connect to a random database and exist/run for
@@ -19,17 +19,16 @@
 .PARAMETER WaitLength
     Length of wait. Format is HH:MM:SS
 .EXAMPLE
-    C:\PS>
-    <Description of example>
+    C:\PS>Multiply_SQL_Server_Connections.ps1
 .NOTES
     Author: Kenneth Fisher
     Original Link: http://sqlstudies.com/2016/02/24/powershell-script-to-create-multiple-sql-server-connections/
     Created Date: 2016-02-24
 #>
-$MaxConnections = 2;          #Number of parallel connections
-$Server= "(local)\sql2014cs"; #Server to connect to
-$WaitType="DELAY";            #Type of wait.  DELAY or TIME
-$WaitLength="00:00:10";       #Length of wait. Format is HH:MM:SS
+$MaxConnections = 2;          # Number of parallel connections
+$Server= "(local)\sql2014cs"; # Server to connect to
+$WaitType="DELAY";            # Type of wait: DELAY or TIME
+$WaitLength="00:00:10";       # Length of wait. Format is HH:MM:SS
                               #  If DELAY then wait for the amount of time.
                               #  If TIME then wait until the time specified.
                               # Note: Connections are only exist until the wait is over.
