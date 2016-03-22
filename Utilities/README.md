@@ -1,53 +1,55 @@
-# SQL Server Utilities
-Useful SQL Server utilities
+# Microsoft SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities
 
 
-| Name                                                      | Official/Download page       | Release Date | Author      | Free version | Paid/Price  |
-|-----------------------------------------------------------|------------------------------|------------- | ------------| ------------ | ------------|
-| [GraphView](#graphview)                                   | [GraphView]                  | 2016-02-23   | Microsoft   | Yes          | No          |
-| [tablediff Utility](#tablediff-utility)                   | [tablediff Utility]          | -            | Microsoft   | Yes          | No          |
-| [Microsoft Log Parser](#microsoft-log-parser)             | [Microsoft Log Parser]       | -            | Microsoft   | Yes          | No          |
-| [Diskspd](#diskspd)                                       | [Diskspd]                    | 2015-12-14   | Microsoft   | Yes          | No          |
-| [HammerDB](#hammerdb)                                     | [HammerDB]                   | 2015-05-04   | Open Source | Yes          | No          |
-| [dta Utility](#dta-utility)                               | [dta Utility]                | -            | Microsoft   | Yes          | No          |
-| [osql Utility](#osql-utility)                             | [osql Utility]               | -            | Microsoft   | Yes          | No          |
-| [sqldiag Utility](#sqldiag-utility)                       | [sqldiag Utility]            | -            | Microsoft   | Yes          | No          |
-| [sqldumper Utility](#sqldumper-utility)                   | [sqldumper Utility]          | -            | Microsoft   | Yes          | No          |
-| [SqlLocalDB Utility](#sqllocaldb-utility)                 | [SqlLocalDB Utility]         | -            | Microsoft   | Yes          | No          |
-| [sqllogship Utility](#sqllogship-utility)                 | [sqllogship Utility]         | -            | Microsoft   | Yes          | No          |
-| [sqlservr Application](#sqlservr-application)             | [sqlservr Application]       | -            | Microsoft   | Yes          | No          |
-| [sqlps Utility](#sqlps-utility)                           | [sqlps Utility]              | -            | Microsoft   | Yes          | No          |
-| [sqlmaint Utility](#sqlmaint-utility)                     | [sqlmaint Utility]           | -            | Microsoft   | Yes          | No          |
-| [Ssms Utility](#ssms-utility)                             | [Ssms Utility]               | -            | Microsoft   | Yes          | No          |
-| [dtexec Utility](#dtexec-utility)                         | [dtexec Utility]             | -            | Microsoft   | Yes          | No          |
-| [SQL Server 2005 Best Practices Analyzer](#bpa-2005)      | [BPA 2005]                   | 2008-08-13   | Microsoft   | Yes          | No          |
-| [SQL Server 2000 Best Practices Analyzer](#bpa-2000)      | [BPA 2000]                   | 2010-04-26   | Microsoft   | Yes          | No          |
-| [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)   | [BPA 2008]                   | 2010-06-18   | Microsoft   | Yes          | No          |
-| [SQL Server 2012 Best Practices Analyzer](#bpa-2012)      | [BPA 2012]                   | 2012-06-04   | Microsoft   | Yes          | No          |
-| [DLM Dashboard](#dlm-dashboard)                           | [DLM Dashboard]              | 2015-12-16   | Red Gate    | Yes          | No          |
-| [SQL DBA Bundle](#sql-dba-bundle)                         | [SQL DBA Bundle]             | 2015-12-16   | Red Gate    | No           | Yes/$2640   |
-| [ReadyRoll](#readyroll)                                   | [ReadyRoll]                  | 2016-01-03   | Red Gate    | No           | Yes/$345    |
-| [SQL XEvent Profiler](#sql-xevent-profiler)               | [SQL XEvent Profiler]        | 2014-03-14   | Idera       | Yes          | No          |
-| [SQL Check](#sql-check)                                   | [SQL Check]                  | 2015-09-24   | Idera       | Yes          | No          |
-| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer) | [SQL Fragmentation Analyzer] | 2015-06-24   | Idera       | Yes          | No          |
-| [SQL Heat Map](#sql-heat-map)                             | [SQL Heat Map]               | 2015-12-07   | Idera       | Yes          | No          |
-| [SQL Hekaton Memory Check](#sql-hekaton-memory-check)     | [SQL Hekaton Memory Check]   | 2015-06-10   | Idera       | Yes          | No          |
-| [SQL Page Viewer](#sql-page-viewer)                       | [SQL Page Viewer]            | 2014-08-25   | Idera       | Yes          | No          |
-| [SQL Update Statistics](#sql-update-statistics)           | [SQL Update Statistics]      | 2015-12-14   | Idera       | Yes          | No          |
-| [SQL Statistics Aggregator](#sql-statistics-aggregator)   | [SQL Statistics Aggregator]  | 2015-05-18   | Idera       | Yes          | No          |
-| [SQL Backup Status Reporter](#sql-backup-status-reporter) | [SQL Backup Status Reporter] | 2015-08-07   | Idera       | Yes          | No          |
-| [SQL Integrity Check](#sql-integrity-check)               | [SQL Integrity Check]        | 2013-08-26   | Idera       | Yes          | No          |
-| [SQL Job Manager](#sql-job-manager)                       | [SQL Job Manager]            | 2012-03-19   | Idera       | Yes          | No          |
-| [Azure SQL Database Backup](#azure-sql-database-backup)   | [Azure SQL Database Backup]  | 2012-10-02   | Idera       | Yes          | No          |
-| [SQL Column Search](#sql-column-search)                   | [SQL Column Search]          | 2015-11-17   | Idera       | Yes          | No          |
-| [SQL Permissions Extractor](#sql-permissions-extractor)   | [SQL Permissions Extractor]  | 2015-08-07   | Idera       | Yes          | No          |
-| [dbForge Schema Compare](#dbforge-schema-compare)         | [dbForge Schema Compare]     | 2015-12-22   | Devart      | No           | Yes/$149.95 |
-| [dbForge Data Compare](#dbforge-data-compare)             | [dbForge Data Compare]       | 2015-11-30   | Devart      | No           | Yes/$149.95 |
-| [dbForge Data Generator](#dbforge-data-generator)         | [dbForge Data Generator]     | 2015-12-30   | Devart      | No           | Yes/$249.95 |
-| [dbForge Query Builder](#dbforge-query-builder)           | [dbForge Query Builder]      | 2015-06-03   | Devart      | No           | Yes/$99.95  |
-| [dbForge Event Profiler](#dbforge-event-profiler)         | [dbForge Event Profiler]     | 2015-04-08   | Devart      | Yes          | No          |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)           | [dbForge SQL Decryptor]      | 2013-11-07   | Devart      | Yes          | No          |
-| [Minion Enterprise](#minion-enterprise)                   | [Minion Enterprise]          | -            | MinionWare  | No           | Yea/$1500   |
+| Name                                                                  | Official/Download page             | Release Date | Author        | Free version | Paid/Price  |
+|-----------------------------------------------------------------------|------------------------------------|------------- | --------------| ------------ | ------------|
+| [GraphView](#graphview)                                               | [GraphView]                        | 2016-02-23   | Microsoft     | Yes          | No          |
+| [tablediff Utility](#tablediff-utility)                               | [tablediff Utility]                | -            | Microsoft     | Yes          | No          |
+| [Microsoft Log Parser](#microsoft-log-parser)                         | [Microsoft Log Parser]             | -            | Microsoft     | Yes          | No          |
+| [Diskspd](#diskspd)                                                   | [Diskspd]                          | 2015-12-14   | Microsoft     | Yes          | No          |
+| [HammerDB](#hammerdb)                                                 | [HammerDB]                         | 2015-05-04   | Open Source   | Yes          | No          |
+| [dta Utility](#dta-utility)                                           | [dta Utility]                      | -            | Microsoft     | Yes          | No          |
+| [osql Utility](#osql-utility)                                         | [osql Utility]                     | -            | Microsoft     | Yes          | No          |
+| [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                  | -            | Microsoft     | Yes          | No          |
+| [sqldumper Utility](#sqldumper-utility)                               | [sqldumper Utility]                | -            | Microsoft     | Yes          | No          |
+| [SqlLocalDB Utility](#sqllocaldb-utility)                             | [SqlLocalDB Utility]               | -            | Microsoft     | Yes          | No          |
+| [sqllogship Utility](#sqllogship-utility)                             | [sqllogship Utility]               | -            | Microsoft     | Yes          | No          |
+| [sqlservr Application](#sqlservr-application)                         | [sqlservr Application]             | -            | Microsoft     | Yes          | No          |
+| [sqlps Utility](#sqlps-utility)                                       | [sqlps Utility]                    | -            | Microsoft     | Yes          | No          |
+| [sqlmaint Utility](#sqlmaint-utility)                                 | [sqlmaint Utility]                 | -            | Microsoft     | Yes          | No          |
+| [Ssms Utility](#ssms-utility)                                         | [Ssms Utility]                     | -            | Microsoft     | Yes          | No          |
+| [dtexec Utility](#dtexec-utility)                                     | [dtexec Utility]                   | -            | Microsoft     | Yes          | No          |
+| [SQL Server 2005 Best Practices Analyzer](#bpa-2005)                  | [BPA 2005]                         | 2008-08-13   | Microsoft     | Yes          | No          |
+| [SQL Server 2000 Best Practices Analyzer](#bpa-2000)                  | [BPA 2000]                         | 2010-04-26   | Microsoft     | Yes          | No          |
+| [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | [BPA 2008]                         | 2010-06-18   | Microsoft     | Yes          | No          |
+| [SQL Server 2012 Best Practices Analyzer](#bpa-2012)                  | [BPA 2012]                         | 2012-06-04   | Microsoft     | Yes          | No          |
+| [DLM Dashboard](#dlm-dashboard)                                       | [DLM Dashboard]                    | 2015-12-16   | Red Gate      | Yes          | No          |
+| [SQL DBA Bundle](#sql-dba-bundle)                                     | [SQL DBA Bundle]                   | 2015-12-16   | Red Gate      | No           | Yes/$2640   |
+| [ReadyRoll](#readyroll)                                               | [ReadyRoll]                        | 2016-01-03   | Red Gate      | No           | Yes/$345    |
+| [SQL XEvent Profiler](#sql-xevent-profiler)                           | [SQL XEvent Profiler]              | 2014-03-14   | Idera         | Yes          | No          |
+| [SQL Check](#sql-check)                                               | [SQL Check]                        | 2015-09-24   | Idera         | Yes          | No          |
+| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | [SQL Fragmentation Analyzer]       | 2015-06-24   | Idera         | Yes          | No          |
+| [SQL Heat Map](#sql-heat-map)                                         | [SQL Heat Map]                     | 2015-12-07   | Idera         | Yes          | No          |
+| [SQL Hekaton Memory Check](#sql-hekaton-memory-check)                 | [SQL Hekaton Memory Check]         | 2015-06-10   | Idera         | Yes          | No          |
+| [SQL Page Viewer](#sql-page-viewer)                                   | [SQL Page Viewer]                  | 2014-08-25   | Idera         | Yes          | No          |
+| [SQL Update Statistics](#sql-update-statistics)                       | [SQL Update Statistics]            | 2015-12-14   | Idera         | Yes          | No          |
+| [SQL Statistics Aggregator](#sql-statistics-aggregator)               | [SQL Statistics Aggregator]        | 2015-05-18   | Idera         | Yes          | No          |
+| [SQL Backup Status Reporter](#sql-backup-status-reporter)             | [SQL Backup Status Reporter]       | 2015-08-07   | Idera         | Yes          | No          |
+| [SQL Integrity Check](#sql-integrity-check)                           | [SQL Integrity Check]              | 2013-08-26   | Idera         | Yes          | No          |
+| [SQL Job Manager](#sql-job-manager)                                   | [SQL Job Manager]                  | 2012-03-19   | Idera         | Yes          | No          |
+| [Azure SQL Database Backup](#azure-sql-database-backup)               | [Azure SQL Database Backup]        | 2012-10-02   | Idera         | Yes          | No          |
+| [SQL Column Search](#sql-column-search)                               | [SQL Column Search]                | 2015-11-17   | Idera         | Yes          | No          |
+| [SQL Permissions Extractor](#sql-permissions-extractor)               | [SQL Permissions Extractor]        | 2015-08-07   | Idera         | Yes          | No          |
+| [dbForge Schema Compare](#dbforge-schema-compare)                     | [dbForge Schema Compare]           | 2015-12-22   | Devart        | No           | Yes/$149.95 |
+| [dbForge Data Compare](#dbforge-data-compare)                         | [dbForge Data Compare]             | 2015-11-30   | Devart        | No           | Yes/$149.95 |
+| [dbForge Data Generator](#dbforge-data-generator)                     | [dbForge Data Generator]           | 2015-12-30   | Devart        | No           | Yes/$249.95 |
+| [dbForge Query Builder](#dbforge-query-builder)                       | [dbForge Query Builder]            | 2015-06-03   | Devart        | No           | Yes/$99.95  |
+| [dbForge Event Profiler](#dbforge-event-profiler)                     | [dbForge Event Profiler]           | 2015-04-08   | Devart        | Yes          | No          |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | [dbForge SQL Decryptor]            | 2013-11-07   | Devart        | Yes          | No          |
+| [Minion Enterprise](#minion-enterprise)                               | [Minion Enterprise]                | -            | MinionWare    | No           | Yes/$1500   |
+| [SQL Server Compression Estimator](#sql-server-compression-estimator) | [SQL Server Compression Estimator] | 2011-06-02   | Bob Tavlor    | Yes          | No          |
+| [ClearTrace ](#cleartrace)                                            | [ClearTrace]                       | 2015-07-04   | Bill Graziano | Yes          | No          |
 
 
 ## GraphView <a id="graphview"></a>
@@ -536,6 +538,26 @@ Free version: No/$1500
 Minion Enterprise was designed by database administrators (DBAs) specifically to address the issues that waste the most time and cause the most problems. Minion shrinks dozens of those one-at-a-time tasks down to a central process. And, it does this without the usual overhead of monitoring software. When you install Minion Enterprise, it automatically begins gathering data from instances across your enterprise. That single repository of data allows you to centrally audit, alert, report, and investigate your entire environment. Even better, it opens up a new world of central management: audit SQL and AD security, clone user permissions across servers, standardize and enforce SQL Server settings, automate error log searches, and so very much more.
 
 
+## SQL Server Compression Estimator <a id="sql-server-compression-estimator"></a>
+Download page: [SQL Server Compression Estimator]<br/>
+Release date: 2011-06-02<br/>
+Support Version: 2008/2008R2/2012<br/>
+Free version: Yes
+
+SQL Server Compression Estimator (SSCE) will allow you to estimate the best compression for your objects. It will estimate both ROW and PAGE compression, and will optionally report the Index Maintenance Ratio (a ratio that indicates how often an index is updated versus how often it is used to satisfy queries). You can then use that information to perhaps choose a less aggresive compression algorithm for heavily updated indexes.
+
+
+## ClearTrace <a id="cleartrace"></a>
+Download page: [ClearTrace]<br/>
+Release date: 2015-07-04<br/>
+Support Version: 2008/2008R2/2012<br/>
+Free version: Yes
+
+ClearTrace imports SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace and Profiler files into SQL Server and displays summary performance information.
+
+Summarize SQL Server Query Performance and Enhance SQL Server Performance Tuning.
+
+
 Useful link:
  - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
@@ -586,3 +608,5 @@ Useful link:
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
 [BPA 2012]: https://www.microsoft.com/en-us/download/details.aspx?id=29302
 [Minion Enterprise]:http://minionware.net/enterprise/
+[SQL Server Compression Estimator]:http://ssce.codeplex.com
+[ClearTrace]:http://www.scalesql.com/cleartrace/download.html
