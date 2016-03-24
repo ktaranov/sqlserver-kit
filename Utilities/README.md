@@ -50,6 +50,10 @@ Useful free and paid Microsoft SQL Server utilities
 | [Minion Enterprise](#minion-enterprise)                               | [Minion Enterprise]                | -            | MinionWare    | No           | Yes/$1500   |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | [SQL Server Compression Estimator] | 2011-06-02   | Bob Tavlor    | Yes          | No          |
 | [ClearTrace ](#cleartrace)                                            | [ClearTrace]                       | 2015-07-04   | Bill Graziano | Yes          | No          |
+| [SQLSentry Fragmentation Manager](#sqlsentry-fragmentation-manager)   | [SQLSentry Fragmentation Manager]  | 2016-03-08   | SQLSentry     | No           | $795        |
+| [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | [SQLSentry Plan Explorer]          | 2016-01-28   | SQLSentry     | Yes          | Yes/$295    |
+| [SQLSentry Event Manager](#sqlsentry-event-manager)                   | [SQLSentry Event Manager]          | 2016-03-08   | SQLSentry     | No           | Yes/$995    |
+| [SQLSentry Performance Advisor](#sqlsentry-performance-advisor)       | [SQLSentry Performance Advisor]    | 2016-03-08   | SQLSentry     | No           | Yes/?       |
 
 
 ## GraphView <a id="graphview"></a>
@@ -558,6 +562,44 @@ ClearTrace imports SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server
 Summarize SQL Server Query Performance and Enhance SQL Server Performance Tuning.
 
 
+## SQLSentry Fragmentation Manager <a id="sqlsentry-fragmentation-manager"></a>
+Download page: [SQLSentry Fragmentation Manager]<br/>
+Release date: 2016-08-03<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+Dramatically improves the manageability and visibility of SQL Server index fragmentation across the enterprise
+
+Fragmentation Manager helps you make good decisions about how and when to defragment. You can easily set up an environment-wide schedule to automate index analysis and defragmentation operations, while allowing the flexibility to customize the schedule and other specific instances, databases, tables, and even individual indexes. Fragmentation Manager will also allow you to perform index defragmentation faster than ever before via support for multiple concurrent operations.
+
+
+## SQLSentry Plan Explorer <a id="sqlsentry-plan-explorer"></a>
+Download page: [SQLSentry Plan Explore]<br/>
+Release date: 2016-01-28<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: Yes
+
+With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
+
+
+## SQLSentry Event Manager <a id="sqlsentry-event-manager"></a>
+Download page: [SQLSentry Event Manager]<br/>
+Release date: 2016-03-08<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+With specific products for SQL Server, Windows, SharePoint and Oracle, Event Manager provides DBAs with "Outlook-style" visibility and functionality for managing SQL Agent jobs, Windows Tasks, and Oracle jobs in increasingly complex cross-platform environments. Unlike most other scheduling products, Event Manager does not require an agent to be installed and managed on each server.
+
+
+## SQLSentry Performance Advisor <a id="sqlsentry-performance-advisor"></a>
+Download page: [SQLSentry Performance Advisor]<br/>
+Release date: 2016-03-08<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+Performance Advisor is the unmatched solution for monitoring and managing all aspects of your SQL Server infrastructure. Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Support for Microsoft Analytics Platform System (APS), Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
+
+
 Useful link:
  - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
@@ -610,3 +652,7 @@ Useful link:
 [Minion Enterprise]:http://minionware.net/enterprise/
 [SQL Server Compression Estimator]:http://ssce.codeplex.com
 [ClearTrace]:http://www.scalesql.com/cleartrace/download.html
+[SQLSentry Fragmentation Manager]:http://www.sqlsentry.com/products/fragmentation-manager/sql-server-index-analysis-and-defrag
+[SQLSentry Plan Explorer]:http://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
+[SQLSentry Event Manager]:http://www.sqlsentry.com/products/event-manager/sql-server-job-schedule-alert-management
+[SQLSentry Performance Advisor]:http://www.sqlsentry.com/products/performance-advisor/sql-server-performance
