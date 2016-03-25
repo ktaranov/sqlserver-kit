@@ -60,17 +60,16 @@ contains all the fixes that are included with previous service packs and any new
 ## What are the most recent updates for SQL Server? <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
 | Version | Latest Update                                                      | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
-|---------|--------------------------------------------------------------------|------------------------------------------------|---------------------------               |--------------|-------------------------------------------------------------------|
+|---------|--------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
 | 2016    | [Download RC1 2016]                                                | 13.0.1200.242                                  | 2016-03-18                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Download 2014] then<br/>[SP1 2014] then<br/>[CU5 KB3130926]       | 12.0.2000.8<br/>12.0.4100.1<br/>12.0.4439.1    | 2014-02-23<br/>2015-05-15<br/>2016-02-22 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Download 2014 SP1] then<br/>[CU5 KB3130926]                       | 12.0.4100.1<br/>12.0.4439.1                    | 2015-05-15<br/>2016-02-22                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU1 KB3123299]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6518.0   | 2012-02-14<br/>2015-11-21<br/>2016-01-19 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]        | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Download SP4 2005] then<br/>[CU3 KB2507769]                       | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Download RC1 2016]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
-[Download 2014]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
-[SP1 2014]:https://support.microsoft.com/en-us/kb/3058865
+[Download 2014 SP1]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
 [CU5 KB3130926]:https://support.microsoft.com/en-us/kb/3130926
 [Download 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
@@ -99,25 +98,23 @@ Or for all files with .exe extensions in folder:
 FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 ```
 
-| Direct x64 Download Link | File Name                                                            | File Size, MB| SHA1                                                        |
-|--------------------------|----------------------------------------------------------------------|-------------:|-------------------------------------------------------------|
-| [SQL Server 2016 RC1]    | SQLServer2016RC1-x64-ENU.iso                                         | 2083 MB      | dc f3 8d e0 a5 4d 86 2c d3 33 3b b8 4c 62 d5 92 4a ab 08 41 |
-| [SQL Server 2014]        | SQLServer2014-x64-ENU.iso                                            | 2486 MB      | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
-| [SQL Server 2014 SP1]    | SQLServer2014SP1-KB3058865-x64-ENU.exe                               |  639 MB      | 2c 84 e2 eb d0 d3 cb 49 80 a3 a1 a8 0d 79 fd 75 20 40 56 26 |
-| [SQL Server 2014 CU5]    | SQLServer2014-KB3130926-x64.exe                                      |  577 MB      | 9a ea 16 d5 1a 0c d4 5f 05 67 57 6d 18 85 5f 3e 7e 1d 7c 5c |
-| [SQL Server 2012]        | SQLFULL_ENU.iso                                                      | 4300 MB      | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
-| [SQL Server 2012 SP3]    | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 1017 MB      | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
-| [SQL Server 2012 CU1]    | SQLServer2012-KB3123299-x64.exe                                      |  585 MB      | 6e 6c 4a a8 bf ca 24 2c 28 70 66 a9 a9 43 4e 3a 00 94 3e 94 |
-| [SQL Server 2008 R2]     | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 3020 MB      | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
-| [SQL Server 2008 R2 SP3] | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             |  358 MB      | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
-| [SQL Server 2008 R2 SU]  | SQLServer2008R2-KB3045316-x64.exe                                    |   58 MB      | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
-| [SQL Server 2008]        | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 2269 MB      | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
-| [SQL Server 2008 SP4]    | SQLServer2008SP4-KB2979596-x64-ENU.exe                               |  378 MB      | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
-| [SQL Server 2008 SU]     | SQLServer2008-KB3045311-x64.exe                                      |   61 MB      | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
+| Direct x64 Download Link | File Name                                                            | Build Number   | Size, MB | SHA1                                                        |
+|--------------------------|----------------------------------------------------------------------|---------------:|---------:|-------------------------------------------------------------|
+| [SQL Server 2016 RC1]    | SQLServer2016RC1-x64-ENU.iso                                         | 13.0.1200.242  | 2083 MB  | d5 fd 3d ab d8 a6 6a 7e a6 61 d7 fb 1a f4 44 bf aa cb 22 e3 |
+| [SQL Server 2014 SP1]    | SQLServer2014SP1-FullSlipstream-x64-ENU.iso                          | 12.0.4100.1    | 3035 MB  | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
+| [SQL Server 2014 CU5]    | SQLServer2014-KB3130926-x64.exe                                      | 12.0.4439.1    |  577 MB  | 9a ea 16 d5 1a 0c d4 5f 05 67 57 6d 18 85 5f 3e 7e 1d 7c 5c |
+| [SQL Server 2012]        | SQLFULL_ENU.iso                                                      | 11.0.2100.60   | 4300 MB  | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
+| [SQL Server 2012 SP3]    | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 11.0.6518.0    | 1017 MB  | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
+| [SQL Server 2012 CU1]    | SQLServer2012-KB3123299-x64.exe                                      | 11.0.6020.0    |  585 MB  | 6e 6c 4a a8 bf ca 24 2c 28 70 66 a9 a9 43 4e 3a 00 94 3e 94 |
+| [SQL Server 2008 R2]     | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 6.1.7601.17514 | 3020 MB  | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
+| [SQL Server 2008 R2 SP3] | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 10.50.6220.0   |  358 MB  | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
+| [SQL Server 2008 R2 SU]  | SQLServer2008R2-KB3045316-x64.exe                                    | 10.50.6000     |   58 MB  | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
+| [SQL Server 2008]        | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 6.0.6001.18000 | 2269 MB  | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
+| [SQL Server 2008 SP4]    | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 10.0.6241.0    |  378 MB  | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
+| [SQL Server 2008 SU]     | SQLServer2008-KB3045311-x64.exe                                      | 10.00.6000     |   61 MB  | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
 [SQL Server 2016 RC1]:http://care.dlservice.microsoft.com/dl/download/3/8/5/38569922-4349-4943-98A4-BF9D63D404B9/SQLServer2016RC1-x64-ENU.iso
-[SQL Server 2014]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP1]:https://download.microsoft.com/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-KB3058865-x64-ENU.exe
+[SQL Server 2014 SP1]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 CU5]:https://download.microsoft.com/download/9/5/3/953C5CEC-69F1-4B43-8226-44504C55199D/SQL2014SP1CU5/x64/SQLServer2014-KB3130926-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
