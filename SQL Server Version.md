@@ -4,7 +4,7 @@ Download links and complete information for all Microsoft SQL Server versions an
 Headers:
  - [Frequently used terms and acronyms](#frequently-used-terms-and-acronyms)
  - [What are the most recent updates for SQL Server?](#what-are-the-most-recent-updates-for-sql-server)
- - [Microsoft SQL Server installation files hash](#microsoft-sql-server-installation-files-hash)
+ - [Microsoft SQL Server installation files info](#microsoft-sql-server-installation-files-info)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
  - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
@@ -86,9 +86,20 @@ contains all the fixes that are included with previous service packs and any new
 [CU3 KB2507769]:http://support.microsoft.com/kb/2507769
 
 
-## Microsoft SQL Server installation files hash <a id="microsoft-sql-server-installation-files-hash"></a>
+## Microsoft SQL Server installation files info <a id="microsoft-sql-server-installation-files-info"></a>
+SHA1 hash you can easy get with default Windows utility [certutil](https://technet.microsoft.com/en-us/library/cc732443.aspx 'certutil TECHNET description').
 
-|Direct Download Link      | File Name                                                            | File Size, MB| SHA1                                                        |
+For example, for single file:
+```bat
+certUtil -hashfile "d:\SQL Server\SQLServer2014SP1-KB3058865-x64-ENU.exe" sha1
+```
+
+Or for all files with .exe extensions in folder:
+```bat
+FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
+```
+
+| Direct x64 Download Link | File Name                                                            | File Size, MB| SHA1                                                        |
 |--------------------------|----------------------------------------------------------------------|-------------:|-------------------------------------------------------------|
 | [SQL Server 2016 RC1]    | SQLServer2016RC1-x64-ENU.iso                                         | 2083 MB      | dc f3 8d e0 a5 4d 86 2c d3 33 3b b8 4c 62 d5 92 4a ab 08 41 |
 | [SQL Server 2014]        | SQLServer2014-x64-ENU.iso                                            | 2486 MB      | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
