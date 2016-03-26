@@ -54,6 +54,9 @@ Useful free and paid Microsoft SQL Server utilities
 | [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | [SQLSentry Plan Explorer]          | 2016-01-28   | SQLSentry     | Yes          | Yes/$295    |
 | [SQLSentry Event Manager](#sqlsentry-event-manager)                   | [SQLSentry Event Manager]          | 2016-03-08   | SQLSentry     | No           | Yes/$995    |
 | [SQLSentry Performance Advisor](#sqlsentry-performance-advisor)       | [SQLSentry Performance Advisor]    | 2016-03-08   | SQLSentry     | No           | Yes/?       |
+| [Dell Security Explorer](#dell-security-explorer)                     | [Dell Security Explorer]           | 2015-06-25   | Dell          | No           | Yes/$850    |
+| [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)       | [Dell LiteSpeed for SQL Server]    | 2015-07-31   | Dell          | No           | Yes/?       |
+| [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | [Dell Toad for SQL Server]         | 2015-05-12   | Dell          | No           | Yes/?       |
 
 
 ## GraphView <a id="graphview"></a>
@@ -600,6 +603,33 @@ Free version: No
 Performance Advisor is the unmatched solution for monitoring and managing all aspects of your SQL Server infrastructure. Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Support for Microsoft Analytics Platform System (APS), Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
 
 
+## Dell Security Explorer <a id="dell-security-explorer"></a>
+Download page: [Dell Security Explorer]<br/>
+Release date: 2015-06-25<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+This single toolset maximizes productivity through extensive automation, intuitive workflows and built-in expertise. Plus, it complements Microsoft tools by solving key SQL Server challenges, so you can proactively manage large numbers of databases. It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
+
+
+## Dell LiteSpeed for SQL Server <a id="dell-litespeed-for-sql-server"></a>
+Download page: [Dell Security Explorer]<br/>
+Release date: 2015-07-31<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+Dramatically reduce backup and restore times and minimize storage costs while increasing the reliability of SQL Server data protection operations across the entire enterprise. Easily manage and monitor SQL Server protection while delivering a wide array of recovery capabilities. With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
+
+
+## Dell Toad for SQL Server <a id="dell-toad-for-sql-server"></a>
+Download page: [Dell Toad for SQL Server]<br/>
+Release date: 2015-05-12<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+Use a single console to manage access controls, permissions and security across Microsoft platforms that span multiple servers. Security Explorer provides an array of security enhancements, including the ability to identify who has rights to resources across the entire organization. You can also grant, revoke, clone, modify and overwrite permissions quickly and from a central location. Unlike native tools, Security Explorer provides the ability to back up and restore permissions only, ensuring the integrity of data. Security Explorer provides on-the-fly reports to help meet auditing requirements.
+
+
 Useful link:
  - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
@@ -656,3 +686,6 @@ Useful link:
 [SQLSentry Plan Explorer]:http://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
 [SQLSentry Event Manager]:http://www.sqlsentry.com/products/event-manager/sql-server-job-schedule-alert-management
 [SQLSentry Performance Advisor]:http://www.sqlsentry.com/products/performance-advisor/sql-server-performance
+[Dell Security Explorer]:http://software.dell.com/products/security-explorer/
+[Dell LiteSpeed for SQL Server]:http://software.dell.com/products/litespeed-for-sql-server/
+[Dell Toad for SQL Server]:http://software.dell.com/products/toad-for-sql-server/
