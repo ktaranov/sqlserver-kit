@@ -167,6 +167,7 @@ Headers:
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
+    - [Using Excel to parse Set Statistics IO output](http://vickyharp.com/2012/03/using-excel-to-parse-set-statistics-io-output/) (by Vicky Harp)
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump)
     - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer)
     - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
