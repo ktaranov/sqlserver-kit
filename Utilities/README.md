@@ -57,6 +57,8 @@ Useful free and paid Microsoft SQL Server utilities
 | [Dell Security Explorer](#dell-security-explorer)                     | [Dell Security Explorer]           | 2015-06-25   | Dell          | No           | Yes/$850    |
 | [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)       | [Dell LiteSpeed for SQL Server]    | 2015-07-31   | Dell          | No           | Yes/?       |
 | [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | [Dell Toad for SQL Server]         | 2015-05-12   | Dell          | No           | Yes/?       |
+| [Dell Spotlight on SQL Server Enterprise](#dell-spotlight)            | [Dell Spotlight]                   | 2016-03-10   | Dell          | No           | Yes/$2561   |
+| [Dell Foglight](#dell-foglight)                                       | [Dell Foglight]                    | 2015-09-22   | Dell          | No           | Yes/?       |
 
 
 ## GraphView <a id="graphview"></a>
@@ -630,6 +632,24 @@ Free version: No
 Use a single console to manage access controls, permissions and security across Microsoft platforms that span multiple servers. Security Explorer provides an array of security enhancements, including the ability to identify who has rights to resources across the entire organization. You can also grant, revoke, clone, modify and overwrite permissions quickly and from a central location. Unlike native tools, Security Explorer provides the ability to back up and restore permissions only, ensuring the integrity of data. Security Explorer provides on-the-fly reports to help meet auditing requirements.
 
 
+## Dell Spotlight <a id="dell-spotlight"></a>
+Download page: [Dell Spotlight]<br/>
+Release date: 2016-03-10<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+When you can diagnose SQL Server performance issues quickly and accurately, ensuring a healthy database infrastructure is not just possible, but easy.  Spotlight on SQL Server Enterprise delivers simplicity without compromise by providing unmatched monitoring, diagnosis and optimization of your SQL Server environments, ensuring peak performance around the clock.  With intuitive overviews of enterprise health and performance, automated alerts and actions, an integrated Xpert tuning module and mobile device support, Spotlight on SQL Server Enterprise makes it easier than ever to obtain the data you need to ensure the health of your SQL Server databases
+
+
+## Dell Foglight <a id="dell-foglight"></a>
+Download page: [Dell Foglight]<br/>
+Release date: 2015-09-22<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Free version: No
+
+Ensure optimal database performance with comprehensive database, storage and virtualization monitoring and advanced workload analytics. Foglight for Databases enables you to consolidate and standardize database performance management across your diverse multi-platform environments – even when you use native or third-party tools — to promote collaboration, improve service levels and reduce costs. Get a wealth of information at a fraction of the impact of conventional collection methods.
+
+
 Useful link:
  - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
@@ -689,3 +709,5 @@ Useful link:
 [Dell Security Explorer]:http://software.dell.com/products/security-explorer/
 [Dell LiteSpeed for SQL Server]:http://software.dell.com/products/litespeed-for-sql-server/
 [Dell Toad for SQL Server]:http://software.dell.com/products/toad-for-sql-server/
+[Dell Spotlight]:http://software.dell.com/products/spotlight-on-sql-server-enterprise/
+[Dell Foglight]:http://software.dell.com/products/foglight-for-cross-platform-databases/
