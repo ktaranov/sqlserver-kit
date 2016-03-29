@@ -250,6 +250,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
  - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists)
  - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi)
+ - [SQLPSX](https://github.com/MikeShepard/SQLPSX) (by Mike Shepard)
 
 
 ## TSQL format code
