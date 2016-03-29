@@ -24,6 +24,7 @@ Source link:
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - SQL Server Updates by Brent Ozar team: http://sqlserverupdates.com/
+ - SQL Server Builds by SQLSentry: http://blogs.sqlsentry.com/category/sql-server-builds/
  - Unofficial build chart lists: http://sqlserverbuilds.blogspot.ru/
  - Wikipedia: https://en.wikipedia.org/wiki/Microsoft_SQL_Server
  - SQL Server 2005 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx
@@ -186,20 +187,21 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 ## Microsoft SQL Server 2016 Builds <a id="microsoft-sql-server-2016-builds"></a>
 
-| Build         | File version      | KB / Description                                                                | Release Date |
-|---------------|-------------------|---------------------------------------------------------------------------------|--------------|
-| 13.0.1200.242 | 2015.130.1200.242 | [Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)]      | 2016-03-18   |
-| 13.0.1100.288 | 2015.130.1100.288 | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   |
-| 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-01   |
-| 13.0.900.73   | 2015.130.900.73   | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-11   |
-| 13.0.801.12   | 2015.130.801.12   | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-12-01   |
-| 13.0.700.242  | 2015.130.700.242  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)             | 2015-10-28   |
-| 13.0.600.65   | 2015.130.600.65   | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)             | 2015-09-30   |
-| 13.0.500.53   | 2015.130.500.53   | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)             | 2015-08-28   |
-| 13.0.407.1    | 2015.130.407.1    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)             | 2015-07-23   |
-| 13.0.400.91   | 2015.130.400.91   | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) [withdrawn] | 2015-07-22   |
-| 13.0.300.44   | 2015.130.300.444  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-24   |
-| 13.0.200.172  | 2015.130.200.172  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-27   |
+| Build         | File version      | KB / Description                                                                | Release Date | Build Date |
+|---------------|-------------------|---------------------------------------------------------------------------------|--------------|------------|
+| 13.0.1200.242 | 2015.130.1200.242 | [Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)]      | 2016-03-18   | 2016-03-10 |
+| 13.0.1100.288 | 2015.130.1100.288 | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   | 2016-02-29 |
+| 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-03   | 2016-01-28 |
+| 13.0.900.73   | 2015.130.900.73   | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-17   | 2015-12-10 |
+| 13.0.801.12   | 2015.130.801.12   | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)     | 2015-12-05   | 2015-12-01 |
+| 13.0.801.111  | 2015.130.801.111  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-11-30   | 2015-11-21 |
+| 13.0.700.242  | 2015.130.700.242  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)             | 2015-10-29   | 2015-10-26 |
+| 13.0.600.65   | 2015.130.600.65   | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)             | 2015-09-30   | 2015-09-20 |
+| 13.0.500.53   | 2015.130.500.53   | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)             | 2015-08-28   | 2015-08-24 |
+| 13.0.407.1    | 2015.130.407.1    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)             | 2015-07-29   | 2015-07-22 |
+| 13.0.400.91   | 2015.130.400.91   | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) [withdrawn] | 2015-07-22   | 2015-07-16 |
+| 13.0.300.44   | 2015.130.300.444  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-14   | 2015-06-12 |
+| 13.0.200.172  | 2015.130.200.172  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-26   | 2015-05-21 |
 
 [Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
 
