@@ -49,7 +49,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | [dbForge SQL Decryptor]            | 2013-11-07   | Devart        | Yes          | No          |
 | [Minion Enterprise](#minion-enterprise)                               | [Minion Enterprise]                | -            | MinionWare    | No           | Yes/$1500   |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | [SQL Server Compression Estimator] | 2011-06-02   | Bob Tavlor    | Yes          | No          |
-| [ClearTrace ](#cleartrace)                                            | [ClearTrace]                       | 2015-07-04   | Bill Graziano | Yes          | No          |
+| [ClearTrace](#cleartrace)                                             | [ClearTrace]                       | 2015-07-04   | Bill Graziano | Yes          | No          |
 | [SQLSentry Fragmentation Manager](#sqlsentry-fragmentation-manager)   | [SQLSentry Fragmentation Manager]  | 2016-03-08   | SQLSentry     | No           | $795        |
 | [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | [SQLSentry Plan Explorer]          | 2016-01-28   | SQLSentry     | Yes          | Yes/$295    |
 | [SQLSentry Event Manager](#sqlsentry-event-manager)                   | [SQLSentry Event Manager]          | 2016-03-08   | SQLSentry     | No           | Yes/$995    |

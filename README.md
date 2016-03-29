@@ -129,6 +129,17 @@ Headers:
     - [dbForge Event Profiler](/Utilities#dbforge-event-profiler) (Devart)
     - [dbForge SQL Decryptor](/Utilities#dbforge-SQL-decryptor) (Devart)
     - [Minion Enterprise](/Utilities#minion-enterprise) (MinionWare)
+    - [SQL Server Compression Estimator](/Utilities#sql-server-compression-estimator) (Bob Tavlor)
+    - [ClearTrace](/Utilities#cleartrace) (Bill Graziano)
+    - [SQLSentry Fragmentation Manager](/Utilities#sqlsentry-fragmentation-manager) (SQLSentry)
+    - [SQLSentry Plan Explorer](/Utilities#sqlsentry-plan-explorer) (SQLSentry)
+    - [SQLSentry Event Manager](/Utilities#sqlsentry-event-manager) (SQLSentry)
+    - [SQLSentry Performance Advisor](/Utilities#sqlsentry-performance-advisor) (SQLSentry)
+    - [Dell Security Explorer](/Utilities#dell-security-explorer) (Dell)
+    - [Dell LiteSpeed for SQL Server](/Utilities#dell-litespeed-for-sql-server) (Dell)
+    - [Dell Toad for SQL Server](/Utilities#dell-toad-for-sql-server) (Dell)
+    - [Dell Spotlight on SQL Server Enterprise](/Utilities#dell-spotlight) (Dell)
+    - [Dell Foglight](/Utilities#dell-foglight) (Dell)
 
 
 ## SQL Server Web Resources
@@ -251,6 +262,16 @@ Here's just SQL Server 2008 Management Studio:
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
+
+
+## SQL Server Test Data Generation
+ - https://www.simple-talk.com/sql/t-sql-programming/generating-test-data-in-tsql/
+ - http://www.yandataellan.com/
+ - https://github.com/benkeen/generatedata
+ - https://sourceforge.net/projects/dbmonster/
+ - https://sourceforge.net/projects/spawner/
+ - http://databene.org/databene-benerator
+ - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
 
 
 ## Free SQL Server ebooks
