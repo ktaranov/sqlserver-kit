@@ -19,6 +19,12 @@ Original link: http://sqlstudies.com/2016/02/24/powershell-script-to-create-mult
 Description: This script creates a number of connections ($MaxConnections) to a SQL Server instance ($Server) that connect to a random database and exist/run for a certain amount of time ($WaitType/$WaitTime)
 
 
+## [Reset SQL Server Sa Password](ResetSqlSaPassword.psm1)
+Author: Chrissy LeMaire<br />
+Original link: https://gallery.technet.microsoft.com/scriptcenter/Reset-SQL-SA-Password-15fb488d<br />
+Description: This function allows administrators to regain access to local or remote SQL Servers by either resetting the sa password, adding sysadmin role to existing login, or adding a new login (SQL or Windows) and granting it sysadmin privileges.
+
+
 ## [SQL_Server_linked_server_connection_check](SQL_Server_linked_server_connection_check.ps1)
 Author: Thomas LaRock<br />
 Original link: http://thomaslarock.com/2016/03/sql-server-linked-server-connection-test<br />
