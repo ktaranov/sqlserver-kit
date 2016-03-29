@@ -31,6 +31,12 @@ Original link: http://thomaslarock.com/2016/03/sql-server-linked-server-connecti
 Description: Test the connection for each linked server defined in a SQL Server
 
 
+## [SQL Server Test Backups Script](SQL_Server_Test_backups.ps1)
+Author: Derik Hammer<br />
+Original link: http://www.sqlshack.com/backup-testing-powershell-part-1-test/<br />
+Description: Script will reach out to a sql server central management server, derive a server list and database backup list. Then asynchronously restore them to a test server followed by integrity checks.
+
+
 ## [WOX Permissions](WOX_Permissions.ps1)
 Author: Chris Bell<br />
 Original link: https://wateroxconsulting.com/archives/sql-server-access/<br />

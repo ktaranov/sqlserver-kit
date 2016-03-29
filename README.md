@@ -155,6 +155,7 @@ Headers:
     - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
     - [SQLMag](http://sqlmag.com/)
+    - [SQLShack](http://www.sqlshack.com/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -251,6 +252,10 @@ Here's just SQL Server 2008 Management Studio:
  - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists)
  - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi)
  - [SQLPSX](https://github.com/MikeShepard/SQLPSX) (by Mike Shepard)
+ - [PowerShell dbatools for SQL Server](https://github.com/ctrlbold/dbatools) (by Chrissy LeMaire)
+ - [Create a Monitoring Server for SQL Server with PowerShell](https://www.simple-talk.com/sql/database-administration/create-a-monitoring-server-for-sql-server-with-powershell/) (by Laerte Junior)
+ - [PowerShell SQLPass articles and video](http://powershell.sqlpass.org/default.aspx)
+ - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
 
 
 ## TSQL format code
