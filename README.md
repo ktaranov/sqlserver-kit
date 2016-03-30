@@ -163,6 +163,7 @@ Headers:
    - [TECHNET How do I Videos](https://technet.microsoft.com/en-us/library/dd353197.aspx)
    - [Veeam Learn Microsoft SQL Server](http://go.veeam.com/learn-microsoft-sql-server-free-video-tutorial-course.html)
    - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/)
+   - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/)
@@ -184,6 +185,8 @@ Headers:
     - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer)
     - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
     - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
+    - [BIMLScript Learn resource](http://www.bimlscript.com/)
+    - [SQL Server Connection Strings](http://www.connectionstrings.com/sql-server/)
 
 
 ## SQL Server Express direct download links
