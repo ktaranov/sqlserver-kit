@@ -175,6 +175,12 @@ Headers:
    - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
    - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
    - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
+ - SQL Server Backwards Compatibility
+   - [2014 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787.aspx)
+   - [2012 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
+   - [2008 R2 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
+   - [2008 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.100).aspx)
+   - [2005 Backwards Compatibility](http://technet.microsoft.com/en-us/library/ms143532(v=sql.90).aspx)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
