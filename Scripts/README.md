@@ -37,6 +37,12 @@ Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-inform
 Tested on SQL Server version: 2005
 
 
+## [Auto generate SQL Server restore script from backup files in a directory](Generate_Restore_Script_From_Backup_Folder.sql)
+Author: Greg Robidoux<br/>
+Original link: https://www.mssqltips.com/sqlservertip/1584/auto-generate-sql-server-restore-script-from-backup-files-in-a-directory/
+Tested on SQL Server version: 2008/2012/2014/2016
+
+
 ## [Table count alternative](Table Count alternative.sql)
 Author: Jes Schultz Borland<br/>
 Original link: http://www.brentozar.com/archive/2014/02/count-number-rows-table-sql-server/<br/>
