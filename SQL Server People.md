@@ -33,6 +33,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Steve Jones         | [Steve Jones Blog]         | [@way0utwest]     | Unknown                           | 9   | [Jones MVP]      |
 | Thomas Larock       | [Thomas Larock Blog]       | [@sqlrockstar]    | Unknown                           | 7   | [LaRock MVP]     |
 | Mike Fal            | [Mike Fal Blog]            | [@Mike_Fal]       | Unknown                           | -   | -                |
+| Derik Hammer        | [Derik Hammer Blog]        | [@drayhammer]     | Unknown                           | -   | -                |
+| Chrissy LeMaire     | [Chrissy LeMaire Blog]     | [@cl]             | Unknown                           | 1   | [LeMaire MVP]    |
+| Tim Mitchell        | [Tim Mitchell Blog]        | [@Tim_Mitchell]   | Unknown                           | 7   | [Mitchell MVP]   |
+
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -64,6 +68,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Steve Jones Blog]:https://voiceofthedba.wordpress.com/
 [Thomas Larock Blog]:http://thomaslarock.com/
 [Mike Fal Blog]:http://www.mikefal.net
+[Derik Hammer Blog]:http://www.sqlhammer.com/
+[Chrissy LeMaire Blog]:https://blog.netnerds.net/author/chrissy/
+[Tim Mitchell Blog]:https://www.timmitchell.net
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -90,6 +97,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@way0utwest]:https://twitter.com/way0utwest
 [@sqlrockstar]:https://twitter.com/sqlrockstar
 [@Mike_Fal]:https://twitter.com/Mike_Fal
+[@drayhammer]:https://twitter.com/drayhammer
+[@cl]:https://twitter.com/cl
+[@Tim_Mitchell]:https://twitter.com/Tim_Mitchell
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -111,3 +121,5 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Ford MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025585?fullName=Timothy%20%20Ford
 [Jones MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4014238?fullName=Steve%20%20Jones
 [LaRock MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025219?fullName=Thomas%20%20LaRock
+[LeMaire MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001321?fullName=Chrissy%20%20LeMaire
+[Mitchell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4027186?fullName=Tim%20%20Mitchell
