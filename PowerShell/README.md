@@ -1,6 +1,12 @@
 # PowerShell Scripts for Microsoft SQL Server Database
 
 
+## [Csv Sql import](CsvSqlimport.ps1)
+Author: Chrissy LeMaire<br />
+Original link: https://github.com/ctrlbold/dbatools/blob/master/Functions/CsvSqlimport.ps1<br />
+Description: Efficiently imports very large (and small) CSV files into SQL Server using only the .NET Framework and PowerShell
+
+
 ## [Fast table export to csv](Fast_table_to_csv.ps1)
 Author: Bill Graziano<br />
 Original link: http://www.sqlteam.com/article/fast-csv-import-in-powershell-to-sql-server<br />
