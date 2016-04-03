@@ -6,6 +6,10 @@ Complete list of all  Microsoft SQL Server Data Types
  - [MSDN Data Type Precedence](https://msdn.microsoft.com/en-us/library/ms190309.aspx)
  - [MSDN Data Type Synonyms](https://msdn.microsoft.com/en-us/library/ms177566.aspx)
  - [MSDN Precision, Scale, and Length](https://msdn.microsoft.com/en-us/library/ms190476.aspx)
+ - [Integration Services Data Types](https://msdn.microsoft.com/en-us/library/ms141036.aspx)
+ - [DbType Enumeration](https://msdn.microsoft.com/en-us/library/System.Data.DbType.aspx)
+ - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
+ - [SQL Server Integration Services, Data Type Mapping ](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
 
 ## Data Type Precedence (Transact-SQL)
 When an operator combines two expressions of different data types, the rules for data type precedence specify that the data type with the lower precedence is converted to the data type with the higher precedence.
@@ -104,3 +108,50 @@ The operand expressions are denoted as expression e1, with precision p1 and scal
 | e1 { UNION \| EXCEPT \| INTERSECT } e2 | max(s1, s2) + max(p1-s1, p2-s2)     | max(s1, s2)         |
 | e1 % e2                                | min(p1-s1, p2 -s2) + max( s1,s2 )   | max(s1, s2)         |
 \* The result precision and scale have an absolute maximum of 38. When a result precision is greater than 38, the corresponding scale is reduced to prevent the integral part of a result from being truncated.
+
+
+## SQL Server, SSIS and Biml Data Types
+The table below shows a simplified mapping between SQL Server, SSIS and Biml data types. The table does not include all possible mappings or all data types, but is meant as a quick reference while developing and learning Biml.
+
+| SQL Server       | SSIS                 | Biml                  |
+|------------------|----------------------|-----------------------|
+| bigint           | DT_I8                | Int64                 |
+| binary           | DT_BYTES             | Binary                |
+| bit              | DT_BOOL              | Boolean               |
+| char             | DT_STR               | AnsiStringFixedLength |
+| date             | DT_DBDATE            | Date                  |
+| datetime         | DT_DBTIMESTAMP       | DateTime              |
+| datetime2        | DT_DBTIMESTAMP2      | DateTime2             |
+| datetimeoffset   | DT_DBTIMESTAMPOFFSET | DateTimeOffset        |
+| decimal          | DT_NUMERIC           | Decimal               |
+| float            | DT_R8                | Double                |
+| geography        | DT_IMAGE             | Object                |
+| geometry         | DT_IMAGE             | Object                |
+| hierarchyid      | DT_BYTES             | Object                |
+| image (*)        | DT_IMAGE             | Binary                |
+| int              | DT_I4                | Int32                 |
+| money            | DT_CY                | Currency              |
+| nchar            | DT_WSTR              | StringFixedLength     |
+| ntext (*)        | DT_NTEXT             | String                |
+| numeric          | DT_NUMERIC           | Decimal               |
+| nvarchar         | DT_WSTR              | String                |
+| nvarchar(max)    | DT_NTEXT             | String                |
+| real             | DT_R4                | Single                |
+| rowversion       | DT_BYTES             | Binary                |
+| smalldatetime    | DT_DBTIMESTAMP       | DateTime              |
+| smallint         | DT_I2                | Int16                 |
+| smallmoney       | DT_CY                | Currency              |
+| sql_variant      | DT_WSTR              | Object                |
+| text (*)         | DT_TEXT              | AnsiString            |
+| time             | DT_DBTIME2           | Time                  |
+| timestamp (*)    | DT_BYTES             | Binary                |
+| tinyint          | DT_UI1               | Byte                  |
+| uniqueidentifier | DT_GUID              | Guid                  |
+| varbinary        | DT_BYTES             | Binary                |
+| varbinary(max)   | DT_IMAGE             | Binary                |
+| varchar          | DT_STR               | AnsiString            |
+| varchar(max)     | DT_TEXT              | AnsiString            |
+| xml              | DT_NTEXT             | Xml                   |
+
+(\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
+
