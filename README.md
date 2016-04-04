@@ -193,6 +193,7 @@ Headers:
     - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
     - [BIMLScript Learn resource](http://www.bimlscript.com/)
     - [SQL Server Connection Strings](http://www.connectionstrings.com/sql-server/)
+    - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
 
 
 ## SQL Server Express direct download links
