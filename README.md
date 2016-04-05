@@ -195,6 +195,7 @@ Headers:
     - [SQL Server Connection Strings](http://www.connectionstrings.com/sql-server/)
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
     - [RSS Most Recent SQL Server KBs](https://support.microsoft.com/en-us/rss?rssid=1044)
+    - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
 
 
 ## SQL Server Express direct download links
