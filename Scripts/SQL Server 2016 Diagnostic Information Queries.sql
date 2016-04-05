@@ -2,7 +2,7 @@
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
 -- January 2016
--- Last Modified: January 2, 2016
+-- Last Modified: February 3, 2016
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -54,7 +54,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.500.53		CTP 2.3				9/4/2015
 -- 13.0.600.65		CTP 2.4				9/30/2015
 -- 13.0.700.242		CTP 3.0				10/29/2015
--- 13.0.900.73		CTP 3.2				12/12/2015 
+-- 13.0.900.73		CTP 3.2				12/12/2015
+-- 13.0.1000.276	CTP 3.3				1/27/2016 
 
 
 
@@ -407,8 +408,8 @@ ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
 -- Volume info for all LUNS that have database files on the current instance (Query 23) (Volume Info)
 SELECT DISTINCT vs.volume_mount_point, vs.file_system_type, 
 vs.logical_volume_name, CONVERT(DECIMAL(18,2),vs.total_bytes/1073741824.0) AS [Total Size (GB)],
-CONVERT(DECIMAL(18,2),vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
-CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL(18,2)) * 100 AS [Space Free %] 
+CONVERT(DECIMAL(18,2), vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
+CONVERT(DECIMAL(18,2), vs.available_bytes * 1. / vs.total_bytes * 100.) AS [Space Free %]
 FROM sys.master_files AS f WITH (NOLOCK)
 CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs 
 ORDER BY vs.volume_mount_point OPTION (RECOMPILE);
@@ -840,7 +841,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnâ€™t what you thinkâ€¦
 -- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1315,6 +1316,8 @@ ORDER BY OBJECT_NAME(i.[object_id]) OPTION (RECOMPILE);
 -- This gives you some index usage statistics for in-memory OLTP
 -- Returns no data if you are not using in-memory OLTP
 
+-- Guidelines for Using Indexes on Memory-Optimized Tables
+-- https://msdn.microsoft.com/en-us/library/dn133166.aspx
 
 
 -- Get lock waits for current database (Query 66) (Lock Waits)
@@ -1426,16 +1429,11 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 1 
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 2
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 3
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
-
-
-
-
-
