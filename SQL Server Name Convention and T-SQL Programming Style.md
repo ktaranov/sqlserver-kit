@@ -4,7 +4,7 @@
 ## SQL Server Object Name
 
 | Object                           | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                            |
-| -------------------------------- | ---- | ---------- | ------ | ------ | ------ | ------ | ------------ | -------------| -----------------------------------|
+|----------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|------------------------------------|
 | Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | MYDATABASE                         |
 | Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | DTR_CheckLogin                     |
 | Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | myschema                           |
@@ -26,9 +26,9 @@
 | Stored Procedure                 |P     | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | usp_LogicalName                    |
 | Scalar User-Defined Function     |FN    | PascalCase |     50 | No     | udf_   | No     | No           | [A-z][0-9]   | udf_FunctionLogicalName            |
 | Table-Valued Function            |FN    | PascalCase |     50 | No     | tvf_   | No     | No           | [A-z][0-9]   | tvf_FunctionLogicalName            |
-| Synonim                          |SN    | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | sy_logicalName                     |
+| Synonym                          |SN    | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | sy_logicalName                     |
 | Sequence                         |SO    | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | sq_TableName                       |
-| CLR Assembley                    |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | CALogicalName                      |
+| CLR Assembly                     |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | CALogicalName                      |
 | CLR Stored Procedures            |PC    | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | pc_CAName_LogicalName              |
 | CLR Scalar User-Defined Function |      | PascalCase |     50 | No     | cudf_  | No     | No           | [A-z][0-9]   | cudf_CAName_LogicalName            |
 | CLR Table-Valued Function        |      | PascalCase |     50 | No     | ctvf_  | No     | No           | [A-z][0-9]   | ctvf_CAName_LogicalName            |
@@ -47,12 +47,13 @@
  - The first argument in SELECT expression should be on the same line with it: `SELECT LastName ...`
  - Arguments are divided by line breaks, commas should be placed before an argument:
    
-   ```
+   ```sql
    SELECT FirstName
          , LastName
    ```
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
+ - All objects must used with schema names `FROM dbo.Table`
 
 Example:
 
@@ -61,8 +62,8 @@ SELECT t1.Value1 AS Val1
      , t1.Value2 AS Val2
      , t2.Value3 AS Val3
   INTO #Table3
-  FROM Table1 AS t1
- INNER JOIN Table3 AS t2
+  FROM dbo.Table1 AS t1
+ INNER JOIN dbo.Table3 AS t2
          ON t1.Value1 = t2.Value1
  WHERE t1.Value1 > 1
    AND t2.Value2 >= 101
@@ -70,6 +71,7 @@ SELECT t1.Value1 AS Val1
 ```
 
 ### Stored procedures and functions programming style
+
  - All stored procedures and functions should use ALTER statement and start with the object presence check
  - ALTER statement should be preceded by 2 line breaks
  - Parameters name should be in **camelCase**
@@ -82,17 +84,17 @@ SELECT t1.Value1 AS Val1
 Example:
 
 ```sql
-IF OBJECT_ID('usp_StoredProcedure', 'P') IS NULL
-EXECUTE('CREATE PROCEDURE usp_StoredProcedure as SELECT 1');
+IF OBJECT_ID('dbo.usp_StoredProcedure', 'P') IS NULL
+EXECUTE('CREATE PROCEDURE dbo.usp_StoredProcedure as SELECT 1');
 GO
 
 
-ALTER PROCEDURE usp_StoredProcedure (
+ALTER PROCEDURE dbo.usp_StoredProcedure (
                 @parameterValue1 SMALLINT
               , @parameterValue2 NVARCHAR(300)
 )
 /*
-EXECUTE usp_StoredProcedure
+EXECUTE dbo.usp_StoredProcedure
         @parameterValue1 = 0
       , @parameterValue2 = N'BULK'
 */
@@ -130,7 +132,7 @@ GO
  - [CLR Databse Objects MSDN]
  - [User-defined Functions]
  - [MSDN SET NOCOUNT ON](https://msdn.microsoft.com/en-us/library/ms189837.aspx)
- 
+
 [Database object TECHNET]:http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx
 [User-Defined Functions MSDN]:http://msdn.microsoft.com/en-us/library/ms191007.aspx
 [Synonim TECHNET]:http://technet.microsoft.com/en-us/library/ms187552(v=sql.110).aspx
