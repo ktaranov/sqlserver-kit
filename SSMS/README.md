@@ -6,6 +6,8 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
  - [MSDN Download link](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
  - [MSDN Official page](https://msdn.microsoft.com/en-us/library/hh213248.aspx)
+ - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
+ - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
 
 
 ## SQL Server 2014 Management Studio download links
