@@ -3,6 +3,7 @@ Download links and complete information for all Microsoft SQL Server versions an
 
 Headers:
  - [Frequently used terms and acronyms](#frequently-used-terms-and-acronyms)
+ - [SQL Server Patching Shortcut](#sql-server-patching-shortcut)
  - [What are the most recent updates for SQL Server?](#what-are-the-most-recent-updates-for-sql-server)
  - [Microsoft SQL Server installation files info](#microsoft-sql-server-installation-files-info)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
@@ -40,6 +41,7 @@ Useful articles:
  - [Microsoft TechNet: Microsoft SQL Server](http://technet.microsoft.com/en-us/sqlserver)
  - [Microsoft Knowledge Base](http://kbupdate.info/)
  - [Sqlservr.exe versions](http://www.mskbfiles.com/sqlservr.exe.php)
+ - [SQL Server Patching Shortcut](http://www.sqlservercentral.com/articles/SQL+Server+patching/138693/)
 
 **All SQL Server service packs are cumulative, meaning that each new service pack<br />
 contains all the fixes that are included with previous service packs and any new fixes.**
@@ -56,6 +58,22 @@ contains all the fixes that are included with previous service packs and any new
  - **QFE**: Quick Fix Engineering; QFE updates include CU fixes.
  - **SU**: Security update.
  - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customer's organization.
+
+
+## SQL Server Patching Shortcut
+
+Step 1. After the CU file has been downloaded, open a DOS prompt and launch it with the /extract option with a path of your choice appended to this option. For example:
+```bat
+SQLServer2014-KB3130926-x64.exe /extract C:\CU5
+```
+After a few moments you should see the progress bar dialog pop up. The target directory will be created if it does not exist, so this is also a great option for automating patch installs.
+
+That's all there is to it. No step 2 required. The patch has been extracted to a location of your choice, which means there's one less thing to worry about when it's time to carry out the actual patching.
+
+Profits:
+ - This saves time as the install files can be extracted in advance, and if you have to patch a lot of servers this saving is multiplied as the files are extracted once, instead of every time on every server.
+ - This time saving also serves to reduces risk as it is one less thing that could go wrong during patching. The last thing you want to be doing during a patching window is scrambling around on a server clearing space in temp folders because there was not enough space free on e.g. the C: drive for the patch to extract itself. We've all been there.
+ - This is also a great way of retrieving just an individual msi file (e.g. sqlncli.msi)
 
 
 ## What are the most recent updates for SQL Server? <a id="what-are-the-most-recent-updates-for-sql-server"></a>
