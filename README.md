@@ -149,13 +149,14 @@ Headers:
     - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
     - Awesome [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
+    - [Simple-talk Articles](https://www.simple-talk.com/)
     - [Glenn Berry's SQL Server Performance](http://sqlserverperformance.wordpress.com/)
     - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
-    - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
     - [SQLMag](http://sqlmag.com/)
     - [SQLShack](http://www.sqlshack.com/)
+    - [Vertabelo Blog](http://www.vertabelo.com/blog)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -183,6 +184,7 @@ Headers:
    - [2005 Backwards Compatibility](http://technet.microsoft.com/en-us/library/ms143532(v=sql.90).aspx)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
+    - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
