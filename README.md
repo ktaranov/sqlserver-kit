@@ -157,6 +157,7 @@ Headers:
     - [SQLMag](http://sqlmag.com/)
     - [SQLShack](http://www.sqlshack.com/)
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
+    - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
