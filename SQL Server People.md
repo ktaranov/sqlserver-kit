@@ -38,7 +38,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Tim Mitchell        | [Tim Mitchell Blog]        | [@Tim_Mitchell]   | Unknown                           | 7   | [Mitchell MVP]   |
 | Melissa Connors     | [Melissa Connors Articles] | [@MelikaNoKaOi]   | Unknown                           | -   | -                |
 | Ken Van Hyning      | -                          | [@sqltoolsguy]    | Unknown                           | -   | -                |
-| Itzik Ben-Gan       | [Itzik Ben-Gan Blog]       | [@sqltoolsguy]    | Unknown                           | 17  | [Ben-Gan MVP]    |
+| Itzik Ben-Gan       | [Itzik Ben-Gan Blog]       | [@ItzikBenGan]    | Unknown                           | 17  | [Ben-Gan MVP]    |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
