@@ -150,6 +150,7 @@ Headers:
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
     - Awesome [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
     - [Simple-talk Articles](https://www.simple-talk.com/)
+    - [SQLSentry Blog](http://blogs.sqlsentry.com)
     - [Glenn Berry's SQL Server Performance](http://sqlserverperformance.wordpress.com/)
     - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
@@ -158,6 +159,7 @@ Headers:
     - [SQLShack](http://www.sqlshack.com/)
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
     - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
+    - [SQL and more with KRUTI Blog](http://sqlandmorewithkruti.blogspot.ru/search/label/SQL%20Server)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
