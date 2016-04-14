@@ -43,6 +43,12 @@ Original link: https://www.mssqltips.com/sqlservertip/1584/auto-generate-sql-ser
 Tested on SQL Server version: 2008/2012/2014/2016
 
 
+## [CPU Utilization Graphical form](CPU_Utilization_Graphical_form.sql)
+Author: Slava Murygin<br/>
+Original link: http://slavasql.blogspot.ru/2016/03/sql-server-cpu-utilization-in-graphical.html<br/>
+Tested on SQL Server version: 2008/2012/2014/2016
+
+
 ## [Table count alternative](Table Count alternative.sql)
 Author: Jes Schultz Borland<br/>
 Original link: http://www.brentozar.com/archive/2014/02/count-number-rows-table-sql-server/<br/>
