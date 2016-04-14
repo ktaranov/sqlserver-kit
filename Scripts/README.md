@@ -46,7 +46,13 @@ Tested on SQL Server version: 2008/2012/2014/2016
 ## [CPU Utilization Graphical form](CPU_Utilization_Graphical_form.sql)
 Author: Slava Murygin<br/>
 Original link: http://slavasql.blogspot.ru/2016/03/sql-server-cpu-utilization-in-graphical.html<br/>
-Tested on SQL Server version: 2008/2012/2014/2016
+Tested on SQL Server version: 2012/2014
+
+
+## [CPU Utilization](CPU_Utilization.sql)
+Author: Benjamin Nevarez<br/>
+Original link: http://sqlblog.com/blogs/ben_nevarez/archive/2009/07/26/getting-cpu-utilization-data-from-sql-server.aspx<br/>
+Tested on SQL Server version: 2014
 
 
 ## [Table count alternative](Table Count alternative.sql)
