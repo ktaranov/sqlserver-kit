@@ -24,13 +24,14 @@ Source link:
  - Naming schema for Microsoft SQL Server software update packages: [KB822499](https://support.microsoft.com/en-us/kb/822499)
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
- - SQL Server Updates by Brent Ozar team: http://sqlserverupdates.com/
- - SQL Server Builds by SQLSentry: http://blogs.sqlsentry.com/category/sql-server-builds/
- - Unofficial build chart lists: http://sqlserverbuilds.blogspot.ru/
- - Wikipedia: https://en.wikipedia.org/wiki/Microsoft_SQL_Server
- - SQL Server 2005 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx
- - SQL Server 2000 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb895925
- - SQL Server 7.0 Downloads: https://msdn.microsoft.com/en-us/sqlserver/bb671066
+ - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
+ - [SQL Server Builds by SQLSentry]( http://blogs.sqlsentry.com/category/sql-server-builds/)
+ - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
+ - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
+ - [Wikipedia Microsoft_SQL_Server]: https://en.wikipedia.org/wiki/Microsoft_SQL_Server
+ - [SQL Server 2005 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx)
+ - [SQL Server 2000 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb895925)
+ - [SQL Server 7.0 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671066)
 
 Useful articles:
  - [How to identify your SQL Server version and edition](http://support.microsoft.com/kb/321185/en-us)
@@ -58,6 +59,7 @@ contains all the fixes that are included with previous service packs and any new
  - **QFE**: Quick Fix Engineering; QFE updates include CU fixes.
  - **SU**: Security update.
  - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customer's organization.
+ - **COD**: This critical on-demand hotfix addresses on a specific issue
 
 
 ## SQL Server Patching Shortcut
@@ -80,14 +82,14 @@ Profits:
 
 | Version | Latest Update                                                      | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|--------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Download RC2 2016]                                                | 13.0.1300.275                                  | 2016-04-01                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Download RC3 2016]                                                | 13.0.1400.371                                  | 2016-04-15                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download 2014 SP1] then<br/>[CU5 KB3130926]                       | 12.0.4100.1<br/>12.0.4439.1                    | 2015-05-15<br/>2016-02-22                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU2 KB3137746]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6523.0   | 2012-02-14<br/>2015-11-21<br/>2016-03-21 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Download 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]        | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Download SP4 2005] then<br/>[CU3 KB2507769]                       | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
-[Download RC2 2016]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
+[Download RC3 2016]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [Download 2014 SP1]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
 [CU5 KB3130926]:https://support.microsoft.com/en-us/kb/3130926
 [Download 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
@@ -119,7 +121,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 | Direct x64 Download Link | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
 |--------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
-| [SQL Server 2016 RC2]    | SQLServer2016RC2-x64-ENU.iso                                         | 2016-04-01   | 13.0.1300.275  | 2101 MB  | 6d 00 e1 7c a1 c1 c0 2e 23 58 49 7d 40 d2 78 7d ac cc d6 21 |
+| [SQL Server 2016 RC3]    | SQLServer2016RC3-x64-ENU.iso                                         | 2016-04-15   | 13.0.1400.371  | 2114 MB  | 10 f3 5f 9d 34 2a fd 27 b9 1a bf 19 97 9c b2 12 16 b9 f6 ba |
 | [SQL Server 2014 SP1]    | SQLServer2014SP1-FullSlipstream-x64-ENU.iso                          | 2015-05-15   | 12.0.4100.1    | 3035 MB  | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
 | [SQL Server 2014 CU5]    | SQLServer2014-KB3130926-x64.exe                                      | 2016-02-22   | 12.0.4439.1    |  577 MB  | 9a ea 16 d5 1a 0c d4 5f 05 67 57 6d 18 85 5f 3e 7e 1d 7c 5c |
 | [SQL Server 2012]        | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   | 4300 MB  | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
@@ -132,7 +134,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | [SQL Server 2008 SP4]    | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 2014-09-30   | 10.0.6241.0    |  378 MB  | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
 | [SQL Server 2008 SU]     | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |   61 MB  | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
-[SQL Server 2016 RC2]:http://care.dlservice.microsoft.com/dl/download/E/0/0/E0088C51-F792-4772-B0BF-107DD472E245/SQLServer2016RC2-x64-ENU.iso
+[SQL Server 2016 RC3]:http://care.dlservice.microsoft.com/dl/download/E/0/0/E0088C51-F792-4772-B0BF-107DD472E245/SQLServer2016RC2-x64-ENU.iso
 [SQL Server 2014 SP1]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 CU5]:https://download.microsoft.com/download/9/5/3/953C5CEC-69F1-4B43-8226-44504C55199D/SQL2014SP1CU5/x64/SQLServer2014-KB3130926-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
@@ -172,7 +174,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 | Version            | Codename    | RTM (no SP)  | SP1                             | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:-------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2016    | ?           | [RC2]        |                                 |                                 |                                   |                                 |
+| SQL Server 2016    | ?           | [RC3]        |                                 |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8  | [12.0.4100.1]<br/>12.1.4100.1   |                                 |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60 | [11.0.3000.0]<br/>11.1.3000.0   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
 | SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1 | [10.50.2500.0]<br/>10.51.2500.0 | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
@@ -181,7 +183,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | SQL Server 2000    | Shiloh      | 8.0.194      | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
 | SQL Server 7.0     | Sphinx      | 7.0.623      | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[RC2]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
+[RC3]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [12.0.4100.1]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
 [11.0.3000.0]:http://www.microsoft.com/en-us/download/details.aspx?id=35575
 [11.0.5058.0]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
@@ -205,10 +207,18 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 
 ## Microsoft SQL Server 2016 Builds <a id="microsoft-sql-server-2016-builds"></a>
+Here is the latest output from `SELECT @@VERSION`:
+```
+Microsoft SQL Server 2016 (RC3) - 13.0.1400.361 (X64) 
+	Apr  9 2016 01:59:22 
+	Copyright (c) Microsoft Corporation
+	Developer Edition (64-bit) on ...
+```
 
 | Build         | File version      | KB / Description                                                                | Release Date | Build Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|------------|
-| 13.0.1300.275 | 2015.130.1300.275 | [Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)]      | 2016-04-01   | 2016-03-26 |
+| 13.0.1400.361 | 2015.130.1400.361 | [Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)]      | 2016-04-15   | 2016-04-09 |
+| 13.0.1300.275 | 2015.130.1300.275 | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)        | 2016-04-01   | 2016-03-26 |
 | 13.0.1200.242 | 2015.130.1200.242 | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)        | 2016-03-18   | 2016-03-10 |
 | 13.0.1100.288 | 2015.130.1100.288 | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   | 2016-02-29 |
 | 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-03   | 2016-01-28 |
@@ -223,7 +233,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | 13.0.300.44   | 2015.130.300.444  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-14   | 2015-06-12 |
 | 13.0.200.172  | 2015.130.200.172  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-26   | 2015-05-21 |
 
-[Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
+[Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
 
 
 ## Microsoft SQL Server 2014 Builds <a id="microsoft-sql-server-2014-builds"></a>
