@@ -62,7 +62,7 @@ contains all the fixes that are included with previous service packs and any new
  - **COD**: This critical on-demand hotfix addresses on a specific issue
 
 
-## SQL Server Patching Shortcut
+## SQL Server Patching Shortcut <a id="#sql-server-patching-shortcut"></a>
 
 Step 1. After the CU file has been downloaded, open a DOS prompt and launch it with the /extract option with a path of your choice appended to this option. For example:
 ```bat
