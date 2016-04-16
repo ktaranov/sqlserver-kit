@@ -55,6 +55,12 @@ Original link: http://sqlblog.com/blogs/ben_nevarez/archive/2009/07/26/getting-c
 Tested on SQL Server version: 2014
 
 
+## [Search Script](Search_Script.sql)
+Author: Ed Pollack<br/>
+Original link: http://www.sqlshack.com/searching-sql-server-made-easy-building-the-perfect-search-script/<br/>
+Tested on SQL Server version: 2014
+
+
 ## [Table count alternative](Table Count alternative.sql)
 Author: Jes Schultz Borland<br/>
 Original link: http://www.brentozar.com/archive/2014/02/count-number-rows-table-sql-server/<br/>
