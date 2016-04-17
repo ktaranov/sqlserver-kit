@@ -6,6 +6,8 @@ Start all procedure from if exist statement:
 IF OBJECT_ID('dbo.ProcedureName', 'P') IS NULL
 EXECUTE ('CREATE PROCEDURE dbo.ProcedureName AS SELECT 1');
 GO
+
+
 ALTER PROCEDURE dbo.usp_ProcedureName(
 ```
 It helps to save all grants for procedure (analog `CREATE OR REPLACE PROCEDURE` in [Oracle](http://docs.oracle.com/cd/B19306_01/server.102/b14200/statements_6009.htm 'Offical Oracle Documentation')).
@@ -20,6 +22,18 @@ Tested on SQL Server version: 2012/2014
 ## [sp_RestoreGene](sp_RestoreGene.sql)
 Author: Paul Brewer<br/>
 Original link: https://paulbrewer.wordpress.com/sp_restoregene/<br/>
+Tested on SQL Server version: 2008/2012/2014
+
+
+## [usp_GetUntrustedForeignKeys](usp_GetUntrustedForeignKeys.sql)
+Author: Jefferson Elias<br/>
+Original link: http://www.sqlshack.com/managing-untrusted-foreign-keys/<br/>
+Tested on SQL Server version: 2008/2012/2014
+
+
+## [usp_RunCheckAllUntrustedForeignKeys](usp_RunCheckAllUntrustedForeignKeys.sql)
+Author: Jefferson Elias<br/>
+Original link: http://www.sqlshack.com/managing-untrusted-foreign-keys/<br/>
 Tested on SQL Server version: 2008/2012/2014
 
 
