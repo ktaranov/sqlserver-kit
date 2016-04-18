@@ -5,10 +5,12 @@ Useful free and paid Microsoft SQL Server utilities
 | Name                                                                  | Official/Download page               | Release Date | Author            | Free version | Paid/Price  |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | ------------------| ------------ | ------------|
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft         | Yes          | No          |
+| [Baseline Security Analyze](#baseline-security-analyze)               | [Baseline Security Analyze]          | 2015-01-09   | Microsoft         | Yes          | No          |
 | [tablediff Utility](#tablediff-utility)                               | [tablediff Utility]                  | -            | Microsoft         | Yes          | No          |
 | [Microsoft Log Parser](#microsoft-log-parser)                         | [Microsoft Log Parser]               | -            | Microsoft         | Yes          | No          |
 | [Diskspd](#diskspd)                                                   | [Diskspd]                            | 2015-12-14   | Microsoft         | Yes          | No          |
 | [HammerDB](#hammerdb)                                                 | [HammerDB]                           | 2015-05-04   | Open Source       | Yes          | No          |
+| [Exchange Server Error Code Look-up](#error-code-look-up)             | [Exchange Server Error Code Look-up] | 2004-05-10   | Microsoft         | Yes          | No          |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft         | Yes          | No          |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft         | Yes          | No          |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft         | Yes          | No          |
@@ -69,16 +71,28 @@ Useful free and paid Microsoft SQL Server utilities
 ## GraphView <a id="graphview"></a>
 Download page: [GraphView]<br/>
 Release date: 2016-02-23<br/>
-Support Version: ???<br/>
+Support Version: -<br/>
+Author: Microsoft
 Free version: Yes
 
 GraphView is a DLL library that enables users to use SQL Server or Azure SQL Database to manage graphs. It connects to a SQL database locally or in the cloud, stores graph data in tables and queries graphs through a SQL-extended language.
+
+
+## Microsoft Baseline Security Analyze <a id="baseline-security-analyze"></a>
+Download page: [Baseline Security Analyze]<br/>
+Release date: 2015-01-09<br/>
+Support Version: -<br/>
+Author: Microsoft
+Free version: Yes
+
+The Microsoft Baseline Security Analyzer provides a streamlined method to identify missing security updates and common security misconfigurations. MBSA 2.3 release adds support for Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012. Windows 2000 will no longer be supported with this release.
 
 
 ## tablediff Utility <a id="tablediff-utility"></a>
 Download page: [tablediff Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 The tablediff utility is used to compare the data in two tables for non-convergence, and is particularly useful for troubleshooting non-convergence<br />
@@ -93,7 +107,8 @@ in a replication topology. This utility can be used from the command prompt or i
 ## Microsoft Log Parser <a id="microsoft-log-parser"></a>
 Download page: [Microsoft Log Parser]<br/>
 Release date: -<br/>
-Support Version: ???<br/>
+Support Version: -<br/>
+Author: Microsoft
 Free version: Yes
 
 Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
@@ -103,7 +118,8 @@ XML files and CSV files, as well as key data sources on the Windows operating sy
 ## Diskspd <a id="diskspd"></a>
 Download page: [Diskspd]<br/>
 Release date: 2015-12-14<br/>
-Support Version: ???<br/>
+Support Version: -<br/>
+Author: Microsoft
 Free version: Yes
 
 DISKSPD is a storage load generator / performance test tool from the Windows/Windows Server and Cloud Server Infrastructure Engineering teams.
@@ -115,6 +131,7 @@ Compilation is supported with Visual Studio and Visual Studio Express. Use the V
 Download page: [HammerDB]<br/>
 Release date: 2015-05-04<br/>
 Support Version: ???<br/>
+Author: Open Source
 Free version: Yes
 
 HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
@@ -124,11 +141,21 @@ HammerDB is an open source database load testing and benchmarking tool for Oracl
 Download page: [dta Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
-Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting.
+Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting. Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
-Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
+
+## Microsoft Exchange Server Error Code Look-up <a id="error-code-look-up"></a>
+Download page: [Exchange Server Error Code Look-up]<br/>
+Release date: 2004-05-10<br/>
+Support Version: -<br/>
+Author: Microsoft
+Free version: Yes
+Useful link: http://www.sqlshack.com/how-to-install-and-use-microsoft-baseline-security-analyzer-mbsa/
+
+Determine error values from decimal and hexadecimal error codes in Microsoft Windows operating systems.
 
 
 ## osql Utility <a id="osql-utility"></a>
@@ -144,6 +171,7 @@ This utility uses ODBC to communicate with the server.
 ## sqldiag Utility <a id="sqldiag-utility"></a>
 Download page: [sqldiag Utility]<br/>
 Release date: -<br/>
+Author: Microsoft
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Free version: Yes
 
@@ -157,6 +185,7 @@ SQLdiag is intended to expedite and simplify diagnostic information gathering fo
 Download page: [sqldumper Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
+Author: Microsoft
 Free version: Yes
 
 You can use the Sqldumper.exe utility to generate a dump file on demand for any Microsoft Windows application.<br />
@@ -169,6 +198,7 @@ A dump file can be a mini-dump file, a full dump file, or a filtered dump file.
 Download page: [SqlLocalDB Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 SqlLocalDB lets you create, delete, start, stop, and perform a number of other related tasks on an instance of SQL Server 2012 Express LocalDB,<br />
@@ -189,6 +219,7 @@ The operation is performed on a specific instance of Microsoft SQL Server for a 
 Download page: [sqlservr Application]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 The sqlservr application starts, stops, pauses, and continues an instance of Microsoft SQL Server from a command prompt.
@@ -208,6 +239,7 @@ This feature will be removed in a future version of Microsoft SQL Server. Avoid 
 Download page: [sqlmaint Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 The sqlmaint utility performs a specified set of maintenance operations on one or more databases. Use sqlmaint to run DBCC checks, back up a database and its transaction log, update statistics, and rebuild indexes. All database maintenance activities generate a report that can be sent to a designated text file, HTML file, or e-mail account. sqlmaint executes database maintenance plans created with previous versions of SQL Server. To run SQL Server maintenance plans from the command prompt, use the dtexec Utility.
@@ -218,6 +250,7 @@ This feature will be removed in the next version of Microsoft SQL Server. Avoid 
 Download page: [Ssms Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 The Ssms utility opens SQL Server Management Studio. If specified, Ssms also establishes a connection to a server, and opens queries, scripts, files, projects, and solutions.
@@ -228,6 +261,7 @@ You can specify files that contain queries, projects, or solutions. Files that c
 Download page: [dtexec Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
+Author: Microsoft
 Free version: Yes
 
 The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages. The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators. The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
@@ -237,6 +271,7 @@ The dtexec command prompt utility is used to configure and execute SQL Server In
 Download page: [BPA 2005]<br/>
 Release date: 2008-08-13<br/>
 Support Version: 2005<br/>
+Author: Microsoft
 Free version: Yes
 
 The SQL Server 2005 Best Practices Analyzer (BPA) gathers data from Microsoft Windows and SQL Server configuration settings. BPA uses a predefined list of SQL Server 2005 recommendations and best practices to determine if there are potential issues in the database environment.
@@ -255,6 +290,7 @@ SQL Server 2000 Best Practices Analyzer is a database management tool that lets 
 Download page: [BPA 2008]<br/>
 Release date: 2010-06-18<br/>
 Support Version: 2008/2008R2<br/>
+Author: Microsoft
 Free version: Yes
 
 The Microsoft SQL Server 2008 R2 BPA is a diagnostic tool that performs the following functions:
@@ -269,6 +305,7 @@ The Microsoft SQL Server 2008 R2 BPA is a diagnostic tool that performs the foll
 Download page: [BPA 2012]<br/>
 Release date: 2012-04-06<br/>
 Support Version: 2012<br/>
+Author: Microsoft
 Free version: Yes
 
 The Microsoft SQL Server 2012 BPA is a diagnostic tool that performs the following functions:
@@ -707,10 +744,12 @@ Useful link:
 
 
 [GraphView]:https://github.com/Microsoft/GraphView
+[Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
 [Diskspd]:https://github.com/microsoft/diskspd
 [HammerDB]:http://www.hammerdb.com/
+[Exchange Server Error Code Look-up]:https://www.microsoft.com/en-us/download/details.aspx?id=985
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx

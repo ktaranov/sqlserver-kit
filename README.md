@@ -273,6 +273,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Create a Monitoring Server for SQL Server with PowerShell](https://www.simple-talk.com/sql/database-administration/create-a-monitoring-server-for-sql-server-with-powershell/) (by Laerte Junior)
  - [PowerShell SQLPass articles and video](http://powershell.sqlpass.org/default.aspx)
  - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
+ - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
 
 
 ## TSQL format code
