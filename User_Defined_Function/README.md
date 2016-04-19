@@ -16,10 +16,7 @@ It helps to save all grants for function (analog `CREATE OR REPLACE PROCEDURE` i
 Author: Alan Burstein<br/>
 Original link: http://www.sqlservercentral.com/scripts/T-SQL/117890/<br />
 Tested on SQL Server version: 2008/2012/2014/2016<br />
- Purpose:
- Given a string (@String) and a pattern (@Pattern) of characters to remove,
- remove the patterned characters from the string.
-
+Purpose: Given a string (@String) and a pattern (@Pattern) of characters to remove, remove the patterned characters from the string.<br />
 Usage:
 ```sql
 --===== Basic Syntax Example
@@ -38,16 +35,11 @@ Usage:
 ```
 
 
-## [udf_PatExclude8K](udf_PatExclude8K.sql)
+## [udf_GetNumsAB](udf_GetNumsAB.sql)
 Author: Alan Burstein<br/>
-Original link: http://www.sqlservercentral.com/scripts/T-SQL/117890/<br />
+Original link: http://www.sqlservercentral.com/scripts/Set+Based/139370/<br />
 Tested on SQL Server version: 2008/2012/2014/2016<br />
-Purpose:
- Creates up to 100,544,625 sequential numbers beginning with @low and ending with @high.
- Used to replace iterative methods such as loops, cursors and recursive CTEs to solve SQL
- problems. Based on Itzik Ben-Gan's getnums function with some tweeks and enhancements 
- and added functionality. The logic for getting rn to begin at 0 or 1 is based comes from 
- Jeff Moden's fnTally function.
+Purpose: Creates up to 100,544,625 sequential numbers beginning with @low and ending with @high. Used to replace iterative methods such as loops, cursors and recursive CTEs to solve SQL problems. Based on Itzik Ben-Gan's getnums function with some tweeks and enhancements and added functionality. The logic for getting rn to begin at 0 or 1 is based comes from Jeff Moden's fnTally function.<br />
 Usage:
 ```sql
 --===== 1. Using RN (rownumber)
