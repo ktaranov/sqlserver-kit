@@ -37,6 +37,12 @@ Original link: http://thomaslarock.com/2016/03/sql-server-linked-server-connecti
 Description: Test the connection for each linked server defined in a SQL Server
 
 
+## [Set Extended Events Sessions to AutoStart](Set_Extended_Events_Sessions_to_AutoStart.ps1)
+Author: Rob Sewell<br />
+Original link: https://sqldbawithabeard.com/2016/03/28/using-powershell-to-set-extended-events-sessions-to-autostart/#comments<br />
+Sets Extended Events Sessions to Auto-Start and starts it if it is not running
+
+
 ## [SQL Server Test Backups Script](SQL_Server_Test_backups.ps1)
 Author: Derik Hammer<br />
 Original link: http://www.sqlshack.com/backup-testing-powershell-part-1-test/<br />
