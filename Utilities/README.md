@@ -2,7 +2,7 @@
 Useful free and paid Microsoft SQL Server utilities
 
 
-| Name                                                                  | Official/Download page               | Release Date | Author            | Free version | Paid/Price  |
+| Name/Description                                                      | Official/Download page               | Release Date | Author            | Free version | Paid/Price  |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | ------------------| ------------ | ------------|
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft         | Yes          | No          |
 | [Baseline Security Analyze](#baseline-security-analyze)               | [Baseline Security Analyze]          | 2015-01-09   | Microsoft         | Yes          | No          |
@@ -83,6 +83,7 @@ Download page: [Baseline Security Analyze]<br/>
 Release date: 2015-01-09<br/>
 Support Version: -<br/>
 Author: Microsoft<br/>
+Instruction: http://www.sqlshack.com/how-to-install-and-use-microsoft-baseline-security-analyzer-mbsa/<br/>
 Free version: Yes
 
 The Microsoft Baseline Security Analyzer provides a streamlined method to identify missing security updates and common security misconfigurations. MBSA 2.3 release adds support for Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012. Windows 2000 will no longer be supported with this release.
