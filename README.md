@@ -157,6 +157,7 @@ Headers:
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
     - [SQLMag](http://sqlmag.com/)
     - [SQLShack](http://www.sqlshack.com/)
+    - [SQLPass](http://www.sqlpass.org/Home.aspx)
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
     - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
     - [SQL and more with KRUTI Blog](http://sqlandmorewithkruti.blogspot.ru/search/label/SQL%20Server)
