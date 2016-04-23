@@ -161,6 +161,10 @@ Headers:
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
     - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
     - [SQL and more with KRUTI Blog](http://sqlandmorewithkruti.blogspot.ru/search/label/SQL%20Server)
+    - [SQL Authority](http://blog.sqlauthority.com/)
+    - [TECHNET SQL Server Blog](https://blogs.technet.microsoft.com/dataplatforminsider/)
+    - [SQL Server Database Engine Blog](https://blogs.msdn.microsoft.com/sqlserverstorageengine/)
+    - [SQL Server BI Blog](https://sqlserverbiblog.wordpress.com/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
