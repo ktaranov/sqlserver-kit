@@ -20,6 +20,12 @@ Tested on SQL Server version: 2012/2014
 
 
 ## [sp_RestoreGene](sp_RestoreGene.sql)
+Author: Andy Yun<br/>
+Original link: https://sqlbek.wordpress.com/2015/03/04/sp_helpexpandview-well-i-didnt-expect-that/<br/>
+Tested on SQL Server version: 2008/2012/2014
+
+
+## [sp_RestoreGene](sp_RestoreGene.sql)
 Author: Paul Brewer<br/>
 Original link: https://paulbrewer.wordpress.com/sp_restoregene/<br/>
 Tested on SQL Server version: 2008/2012/2014
