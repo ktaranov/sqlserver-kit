@@ -6,6 +6,11 @@
  - [Create Indexes with Included Columns](https://msdn.microsoft.com/en-us/library/ms190806.aspx)
  - [SQL Server 2012 Security Best Practices - Microsoft](http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx)
 
+## Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables
+Author: Paul Randal<br />
+Modified date: 2016-04-06<br />
+Source link: http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
+
 
 ## [The Curse and Blessings of Dynamic SQL](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/The%20Curse%20and%20Blessings%20of%20Dynamic%20SQL.htm)
 Author: Erland Sommarskog<br />
