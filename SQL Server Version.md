@@ -25,6 +25,7 @@ Source link:
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads: [KB2964518](https://support.microsoft.com/en-us/kb/2964518)
+ - [Testing and Developing Supportability Roadmaps for ISV Applications (PDF)](http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-00-85-48-files/0827.testing-and-developing-supportability-roadmaps-for-isv-applications.pdf)
  - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
  - [SQL Server Builds by SQLSentry](http://blogs.sqlsentry.com/category/sql-server-builds/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
