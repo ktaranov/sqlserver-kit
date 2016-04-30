@@ -161,6 +161,7 @@ Headers:
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
     - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
     - [Madeiradata Blog](http://www.madeiradata.com/blog/)
+    - [SQL Server Performance Articles](http://www.sql-server-performance.com/category/articles/)
     - [SQL and more with KRUTI Blog](http://sqlandmorewithkruti.blogspot.ru/search/label/SQL%20Server)
     - [SQL Authority](http://blog.sqlauthority.com/)
     - [TECHNET SQL Server Blog](https://blogs.technet.microsoft.com/dataplatforminsider/)
@@ -183,6 +184,7 @@ Headers:
    - [People Talking Tech](http://peopletalkingtech.com/) (by Denny Cherry)
    - [NET Rocks!](http://www.dotnetrocks.com/) (by Richard Campbell and Carl Franklin)
    - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
+   - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
  - Courses
    - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
    - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
