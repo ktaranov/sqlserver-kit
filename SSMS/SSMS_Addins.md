@@ -24,6 +24,8 @@ Complete list of useful add-in for SQL Server Management Studio
 | [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]    | 2015-11-30   | 2008/2008R2/2012/2014 | Devart              | No           | Yes/$99.95    |
 | [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]    | 2015-11-30   | 2008/2008R2/2012/2014 | Devart              | Yes          | No            |
 | [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]     | 2015-09-16   | 2008/2008R2/2012/2014 | Devart              | No           | Yes/$119.95   |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]   | 2016-03-18   | 2008/2008R2/2012/2014 | SoftTree            | No           | Yes/$178.80   |
+
 
 ## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
@@ -265,6 +267,15 @@ Free version: No
 dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names, column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
 
 
+## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
+Download page: [SoftTree SQL Assistant]<br/>
+Release date: 2016-03-18<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Free version: No/$178.80
+
+SQL Assistant equips database developers and DBAs with the productivity tools they need to speed up the database development process, improve code quality and accuracy.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -285,3 +296,4 @@ dbForge SQL Complete provides a wide range of code completion features that reli
 [dbForge Data Pump]:https://www.devart.com/dbforge/sql/data-pump/
 [dbForge Index Manager]:https://www.devart.com/dbforge/sql/index-manager/
 [dbForge Object Search]:https://www.devart.com/dbforge/sql/search/
+[SoftTree SQL Assistant]:http://www.softtreetech.com/isql.htm
