@@ -2,7 +2,7 @@
 -- SQL Server 2008 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2016
--- Last Modified: December 30, 2015
+-- Last Modified: April 23, 2016
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -69,7 +69,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --								    10.0.2821		SP1 CU14	-->  10.0.4285	   SP2 CU4	-->				10.0.5500		SP3 RTM
 --								    10.0.2847		SP1 CU15	-->  10.0.4316	   SP2 CU5  
 --								    10.0.2850		SP1 CU16	-->  10.0.4321	   SP2 CU6	-->				10.0.5766		SP3 CU1	      10/17/2011
---                                  SP1 Branch Retired          -->  10.0,4323     SP2 CU7  -->             10.0.5768       SP3 CU2       11/21/2011
+--                                  SP1 Branch Retired          -->  10.0.4323     SP2 CU7  -->             10.0.5768       SP3 CU2       11/21/2011
 --                                                                   10.0.4326	   SP2 CU8  -->             10.0.5770		SP3 CU3       1/16/2012
 --														             10.0.4330	   SP2 CU9  -->				10.0.5775		SP3 CU4       3/19/2012
 --															         10.0.4332	   SP2 CU10 -->             10.0.5785       SP3 CU5		  5/21/2012
@@ -296,13 +296,13 @@ DROP TABLE #IOWarningResults;
 
 -- Drive level latency information (Query 15) (Drive Level Latency)
 -- Based on code from Jimmy May
-SELECT [Drive],
+SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point], 
 	CASE 
 		WHEN num_of_reads = 0 THEN 0 
 		ELSE (io_stall_read_ms/num_of_reads) 
 	END AS [Read Latency],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (io_stall_write_ms/num_of_writes) 
 	END AS [Write Latency],
 	CASE 
@@ -314,7 +314,7 @@ SELECT [Drive],
 		ELSE (num_of_bytes_read/num_of_reads) 
 	END AS [Avg Bytes/Read],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (num_of_bytes_written/num_of_writes) 
 	END AS [Avg Bytes/Write],
 	CASE 
@@ -324,11 +324,12 @@ SELECT [Drive],
 FROM (SELECT LEFT(UPPER(mf.physical_name), 2) AS Drive, SUM(num_of_reads) AS num_of_reads,
 	         SUM(io_stall_read_ms) AS io_stall_read_ms, SUM(num_of_writes) AS num_of_writes,
 	         SUM(io_stall_write_ms) AS io_stall_write_ms, SUM(num_of_bytes_read) AS num_of_bytes_read,
-	         SUM(num_of_bytes_written) AS num_of_bytes_written, SUM(io_stall) AS io_stall
+	         SUM(num_of_bytes_written) AS num_of_bytes_written, SUM(io_stall) AS io_stall, vs.volume_mount_point 
       FROM sys.dm_io_virtual_file_stats(NULL, NULL) AS vfs
       INNER JOIN sys.master_files AS mf WITH (NOLOCK)
       ON vfs.database_id = mf.database_id AND vfs.file_id = mf.file_id
-      GROUP BY LEFT(UPPER(mf.physical_name), 2)) AS tab
+	  CROSS APPLY sys.dm_os_volume_stats(mf.database_id, mf.[file_id]) AS vs 
+      GROUP BY LEFT(UPPER(mf.physical_name), 2), vs.volume_mount_point) AS tab
 ORDER BY [Overall Latency] OPTION (RECOMPILE);
 
 -- Shows you the drive-level latency for reads and writes, in milliseconds

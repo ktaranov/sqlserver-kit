@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- January 2016
--- Last Modified: December 30, 2015
+-- April 2016
+-- Last Modified: April 25, 2016
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -40,6 +40,7 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 	ELSE
 		PRINT N'You have the correct major version of SQL Server for this diagnostic information script';
 
+
 -- Instance level queries *******************************
 
 -- SQL and OS Version information for current instance  (Query 1) (Version Info)
@@ -71,7 +72,12 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --															11.0.3492       SP1 CU16        5/18/2015 -->       11.0.5592		SP2 CU6				5/18/2015
 --                                                                                                              11.0.5623       SP2 CU7				7/20/2015
 --                                                                                                              11.0.5634		SP2 CU8				9/21/2015
---																												11.9.5641		SP2 CU9			   11/16/2015   ---->  11.0.6290		SP3 RTM			11/22/2015				
+--																												11.0.5641		SP2 CU9			   11/16/2015   ---->  11.0.6290		SP3 RTM			11/22/2015
+--																												11.0.5644		SP2 CU10			1/18/2016   ---->  11.0.6518		SP3 CU1			 1/18/2016
+--																												11.0.5646		SP2 CU11			3/21/2016	---->  11.0.6523		SP3 CU2			 3/21/2016                                                                                                                				
+
+-- How to determine the version, edition and update level of SQL Server and its components 
+-- https://support.microsoft.com/en-us/kb/321185
 
 -- The SQL Server 2012 builds that were released after SQL Server 2012 was released
 -- http://support.microsoft.com/kb/2692828
@@ -79,26 +85,26 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- The SQL Server 2012 builds that were released after SQL Server 2012 Service Pack 1 was released
 -- http://support.microsoft.com/kb/2772858
 
--- SQL Server 2012 SP2 build versions (new format for the build list KB article)
+-- SQL Server 2012 SP2 build versions 
 -- http://support.microsoft.com/kb/2983249
+
+-- SQL Server 2012 SP3 build versions
+-- https://support.microsoft.com/en-us/kb/3133750 
 
 -- Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 used with high-performance workloads
 -- http://support.microsoft.com/kb/2964518/EN-US
 
--- Performance and Stability Related Fixes in Post-SQL Server 2012 SP2 Builds
--- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp2-builds/
-
 -- Performance and Stability Related Fixes in Post-SQL Server 2012 SP1 Builds
 -- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp1-builds-2/
 
--- How to determine the version, edition and update level of SQL Server and its components 
--- https://support.microsoft.com/en-us/kb/321185
+-- Performance and Stability Related Fixes in Post-SQL Server 2012 SP2 Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp2-builds/
 
 
 
--- Get socket, physical core and logical core count from (Query 2) (Core Counts)
--- SQL Server Error log. This query might take a few seconds 
--- if you have not recycled your error log recently
+
+-- Get socket, physical core and logical core count from the SQL Server Error log. (Query 2) (Core Counts)
+-- This query might take a few seconds if you have not recycled your error log recently
 EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 
 -- This can help you determine the exact core counts used by SQL Server and whether HT is enabled or not
@@ -131,7 +137,8 @@ SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly],
 SERVERPROPERTY('FilestreamConfiguredLevel') AS [FilestreamConfiguredLevel],
 SERVERPROPERTY('IsHadrEnabled') AS [IsHadrEnabled], 
 SERVERPROPERTY('HadrManagerStatus') AS [HadrManagerStatus],
-SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
+SERVERPROPERTY('InstanceDefaultDataPath') AS [InstanceDefaultDataPath],
+SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version];
 
 -- This gives you a lot of useful information about your instance of SQL Server,
@@ -146,8 +153,6 @@ FROM sys.configurations WITH (NOLOCK)
 ORDER BY name OPTION (RECOMPILE);
 
 -- Focus on these settings:
--- automatic soft-NUMA disabled (should be 0 in most cases)
--- backup checksum default (should be 1)
 -- backup compression default (should be 1 in most cases)
 -- clr enabled (only enable if it is needed)
 -- cost threshold for parallelism (depends on your workload)
@@ -194,7 +199,7 @@ FROM sys.dm_os_process_memory WITH (NOLOCK) OPTION (RECOMPILE);
 
 
 
--- SQL Server Services information (SQL Server 2016) (Query 7) (SQL Server Services Info)
+-- SQL Server Services information (Query 7) (SQL Server Services Info)
 SELECT servicename, process_id, startup_type_desc, status_desc, 
 last_startup_time, service_account, is_clustered, cluster_nodename, [filename]
 FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
@@ -202,7 +207,6 @@ FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
 -- Tells you the account being used for the SQL Server Service and the SQL Agent Service
 -- Shows the process_id, when they were last started, and their current status
 -- Shows whether you are running on a failover cluster instance
-
 
 
 -- Get SQL Server Agent jobs and Category information (Query 8) (SQL Server Agent Jobs)
@@ -396,8 +400,8 @@ ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
 -- Volume info for all LUNS that have database files on the current instance (Query 21) (Volume Info)
 SELECT DISTINCT vs.volume_mount_point, vs.file_system_type, 
 vs.logical_volume_name, CONVERT(DECIMAL(18,2),vs.total_bytes/1073741824.0) AS [Total Size (GB)],
-CONVERT(DECIMAL(18,2),vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
-CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL(18,2)) * 100 AS [Space Free %] 
+CONVERT(DECIMAL(18,2), vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
+CONVERT(DECIMAL(18,2), vs.available_bytes * 1. / vs.total_bytes * 100.) AS [Space Free %]
 FROM sys.master_files AS f WITH (NOLOCK)
 CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs 
 ORDER BY vs.volume_mount_point OPTION (RECOMPILE);
@@ -415,7 +419,7 @@ SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point],
 		ELSE (io_stall_read_ms/num_of_reads) 
 	END AS [Read Latency],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (io_stall_write_ms/num_of_writes) 
 	END AS [Write Latency],
 	CASE 
@@ -427,7 +431,7 @@ SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point],
 		ELSE (num_of_bytes_read/num_of_reads) 
 	END AS [Avg Bytes/Read],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (num_of_bytes_written/num_of_writes) 
 	END AS [Avg Bytes/Write],
 	CASE 
@@ -908,11 +912,13 @@ GO
 SELECT f.name AS [File Name] , f.physical_name AS [Physical Name], 
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
-AS [Available Space In MB], [file_id], fg.name AS [Filegroup Name],
-f.is_percent_growth, f.growth
+AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
+f.is_percent_growth, f.growth, 
+fg.is_default, fg.is_read_only
 FROM sys.database_files AS f WITH (NOLOCK) 
-LEFT OUTER JOIN sys.data_spaces AS fg WITH (NOLOCK) 
-ON f.data_space_id = fg.data_space_id OPTION (RECOMPILE);
+LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
+ON f.data_space_id = fg.data_space_id
+ORDER BY f.[file_id] OPTION (RECOMPILE);
 
 -- Look at how large and how full the files are and where they are located
 -- Make sure the transaction log is not full!!

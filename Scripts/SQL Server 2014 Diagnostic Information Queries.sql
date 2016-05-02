@@ -1,8 +1,8 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- January 2016
--- Last Modified: December 30, 2015
+-- April 2016
+-- Last Modified: April 26, 2016
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -63,7 +63,11 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 12.0.2553		CU9					8/17/2015			12.0.4422		SP1 CU2			8/17/2015
 -- 12.0.2556		CU10				10/19/2015          12.0.4427		SP1 CU3			10/19/2015
 -- 12.0.2560		CU11				12/21/2015			12.0.4436		SP1 CU4			12/21/2015
+-- 12.0.2564		CU12				2/22/2016			12.0.4439		SP1 CU5			2/22/2016
+-- 12.0.2568		CU13				4/18/2016			12.0.4449		SP1 CU6			4/18/2016
 
+-- How to determine the version, edition and update level of SQL Server and its components 
+-- https://support.microsoft.com/en-us/kb/321185
 
 -- SQL Server 2014 build versions
 -- http://support.microsoft.com/kb/2936603
@@ -74,14 +78,15 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- Performance and Stability Related Fixes in Post-SQL Server 2014 RTM Builds
 -- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2014-rtm-builds/
 
--- How to determine the version, edition and update level of SQL Server and its components 
--- https://support.microsoft.com/en-us/kb/321185
+-- Performance and Stability Related Fixes in Post-SQL Server 2014 SP1 Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2014-sp1-builds/
+
+-- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
+-- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 
 
-
--- Get socket, physical core and logical core count from (Query 2) (Core Counts)
--- SQL Server Error log. This query might take a few seconds 
--- if you have not recycled your error log recently
+-- Get socket, physical core and logical core count from the SQL Server Error log. (Query 2) (Core Counts)
+-- This query might take a few seconds if you have not recycled your error log recently
 EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 
 -- This can help you determine the exact core counts used by SQL Server and whether HT is enabled or not
@@ -89,6 +94,7 @@ EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 -- Be on the lookout for this message "using 20 logical processors based on SQL Server licensing" 
 -- which means grandfathered Server/CAL licensing
 -- This query will return no results if your error log has been recycled since the instance was last started
+
 
 
 -- Get selected server properties (Query 3) (Server Properties)
@@ -114,6 +120,8 @@ SERVERPROPERTY('FilestreamConfiguredLevel') AS [FilestreamConfiguredLevel],
 SERVERPROPERTY('IsHadrEnabled') AS [IsHadrEnabled], 
 SERVERPROPERTY('HadrManagerStatus') AS [HadrManagerStatus],
 SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
+SERVERPROPERTY('InstanceDefaultDataPath') AS [InstanceDefaultDataPath],
+SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version];
 
 -- This gives you a lot of useful information about your instance of SQL Server,
@@ -127,7 +135,6 @@ FROM sys.configurations WITH (NOLOCK)
 ORDER BY name OPTION (RECOMPILE);
 
 -- Focus on these settings:
--- automatic soft-NUMA disabled (should be 0 in most cases)
 -- backup checksum default (should be 1)
 -- backup compression default (should be 1 in most cases)
 -- clr enabled (only enable if it is needed)
@@ -222,8 +229,7 @@ SELECT windows_release, windows_service_pack_level,
 FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- Gives you major OS version, Service Pack, Edition, and language info for the operating system
--- 10.0 is either Windows 10 or Windows Server 2016
--- 6.3 is either Windows 8.1 or Windows Server 2012 R2 
+-- 6.3 is either Windows 8.1, Windows 10 or Windows Server 2012 R2 
 -- 6.2 is either Windows 8 or Windows Server 2012
 -- 6.1 is either Windows 7 or Windows Server 2008 R2
 -- 6.0 is either Windows Vista or Windows Server 2008
@@ -322,7 +328,6 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- It merely indicates that you have a hypervisor running on your host
 
 
-
 -- Get System Manufacturer and model number from SQL Server Error log (Query 17) (System Manufacturer)
 EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer'; 
 
@@ -404,8 +409,8 @@ ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
 -- Volume info for all LUNS that have database files on the current instance (Query 23) (Volume Info)
 SELECT DISTINCT vs.volume_mount_point, vs.file_system_type, 
 vs.logical_volume_name, CONVERT(DECIMAL(18,2),vs.total_bytes/1073741824.0) AS [Total Size (GB)],
-CONVERT(DECIMAL(18,2),vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
-CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL(18,2)) * 100 AS [Space Free %] 
+CONVERT(DECIMAL(18,2), vs.available_bytes/1073741824.0) AS [Available Size (GB)],  
+CONVERT(DECIMAL(18,2), vs.available_bytes * 1. / vs.total_bytes * 100.) AS [Space Free %]
 FROM sys.master_files AS f WITH (NOLOCK)
 CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs 
 ORDER BY vs.volume_mount_point OPTION (RECOMPILE);
@@ -423,7 +428,7 @@ SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point],
 		ELSE (io_stall_read_ms/num_of_reads) 
 	END AS [Read Latency],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (io_stall_write_ms/num_of_writes) 
 	END AS [Write Latency],
 	CASE 
@@ -435,7 +440,7 @@ SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point],
 		ELSE (num_of_bytes_read/num_of_reads) 
 	END AS [Avg Bytes/Read],
 	CASE 
-		WHEN io_stall_write_ms = 0 THEN 0 
+		WHEN num_of_writes = 0 THEN 0 
 		ELSE (num_of_bytes_written/num_of_writes) 
 	END AS [Avg Bytes/Write],
 	CASE 
@@ -808,7 +813,7 @@ qs.min_logical_reads AS [Min Logical Reads],
 qs.total_logical_reads/qs.execution_count AS [Avg Logical Reads],
 qs.max_logical_reads AS [Max Logical Reads], 
 qs.execution_count AS [Execution Count], qs.creation_time AS [Creation Time]
---,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
+,t.[text] AS [Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
@@ -893,7 +898,7 @@ qs.min_elapsed_time AS [Min Elapsed Time],
 qs.total_elapsed_time/qs.execution_count AS [Avg Elapsed Time], 
 qs.max_elapsed_time AS [Max Elapsed Time],
 qs.execution_count AS [Execution Count], qs.creation_time AS [Creation Time]
---,t.[text] AS [Complete Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
+,t.[text] AS [Complete Query Text], qp.query_plan AS [Query Plan] -- uncomment out these columns if not copying results to Excel
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
@@ -921,11 +926,13 @@ GO
 SELECT f.name AS [File Name] , f.physical_name AS [Physical Name], 
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
-AS [Available Space In MB], [file_id], fg.name AS [Filegroup Name],
-f.is_percent_growth, f.growth
+AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
+f.is_percent_growth, f.growth, 
+fg.is_default, fg.is_read_only
 FROM sys.database_files AS f WITH (NOLOCK) 
-LEFT OUTER JOIN sys.data_spaces AS fg WITH (NOLOCK) 
-ON f.data_space_id = fg.data_space_id OPTION (RECOMPILE);
+LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
+ON f.data_space_id = fg.data_space_id
+ORDER BY f.[file_id] OPTION (RECOMPILE);
 
 -- Look at how large and how full the files are and where they are located
 -- Make sure the transaction log is not full!!
@@ -1302,6 +1309,9 @@ ORDER BY OBJECT_NAME(i.[object_id]) OPTION (RECOMPILE);
 -- This gives you some index usage statistics for in-memory OLTP
 -- Returns no data if you are not using in-memory OLTP
 
+-- Guidelines for Using Indexes on Memory-Optimized Tables
+-- https://msdn.microsoft.com/en-us/library/dn133166.aspx
+
 
 
 -- Get lock waits for current database (Query 66) (Lock Waits)
@@ -1355,6 +1365,10 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
+-- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month or 6 month pass tp Pluralsight
+
+-- Microsoft Visual Studio Dev Essentials
+-- https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL
 
 
 
