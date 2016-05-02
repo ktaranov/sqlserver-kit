@@ -11,7 +11,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [Diskspd](#diskspd)                                                   | [Diskspd]                            | 2015-12-14   | Microsoft         | Yes          | No          |
 | [HammerDB](#hammerdb)                                                 | [HammerDB]                           | 2015-05-04   | Open Source       | Yes          | No          |
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | [Exchange Server Error Code Look-up] | 2004-05-10   | Microsoft         | Yes          | No          |
-| [LINQPad](#linqpad)                                                   | [LINQPad]                            | 2016-01-02   | Joseph Albahari   | Yes          | Yes/$45    |
+| [LINQPad](#linqpad)                                                   | [LINQPad]                            | 2016-01-02   | Joseph Albahari   | Yes          | Yes/$45     |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft         | Yes          | No          |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft         | Yes          | No          |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft         | Yes          | No          |
