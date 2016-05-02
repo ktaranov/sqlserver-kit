@@ -11,6 +11,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [Diskspd](#diskspd)                                                   | [Diskspd]                            | 2015-12-14   | Microsoft         | Yes          | No          |
 | [HammerDB](#hammerdb)                                                 | [HammerDB]                           | 2015-05-04   | Open Source       | Yes          | No          |
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | [Exchange Server Error Code Look-up] | 2004-05-10   | Microsoft         | Yes          | No          |
+| [LINQPad](#linqpad)                                                   | [LINQPad]                            | 2016-01-02   | Joseph Albahari   | Yes          | Yes/$45    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft         | Yes          | No          |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft         | Yes          | No          |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft         | Yes          | No          |
@@ -138,16 +139,6 @@ Free version: Yes
 HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
-## dta Utility <a id="dta-utility"></a>
-Download page: [dta Utility]<br/>
-Release date: -<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
-Author: Microsoft<br/>
-Free version: Yes
-
-Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting. Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
-
-
 ## Microsoft Exchange Server Error Code Look-up <a id="error-code-look-up"></a>
 Download page: [Exchange Server Error Code Look-up]<br/>
 Release date: 2004-05-10<br/>
@@ -157,6 +148,27 @@ Free version: Yes<br/>
 Useful link: http://www.sqlshack.com/how-to-install-and-use-microsoft-baseline-security-analyzer-mbsa/
 
 Determine error values from decimal and hexadecimal error codes in Microsoft Windows operating systems.
+
+
+## LINQPad <a id="linqpad"></a>
+Download page: [LINQPad]<br/>
+Release date: 2016-02-01<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Joseph Albahari<br/>
+Free version: Yes<br/>
+
+Instantly test any C#/F#/VB snippet or program, Query databases in LINQ (or SQL) — SQL/CE/Azure, Oracle, SQLite & MySQL. Standard edition free, with no expiry.
+Enjoy rich output formatting, optional autocompletion and integrated debugging, Script and automate in your favorite .NET language, Super lightweight — single 15MB executable!
+
+
+## dta Utility <a id="dta-utility"></a>
+Download page: [dta Utility]<br/>
+Release date: -<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes
+
+Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting. Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
 
 ## osql Utility <a id="osql-utility"></a>
@@ -810,3 +822,4 @@ Useful link:
 [SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
 [SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
 [SQLScripter]:http://www.sqlscripter.com/
+[LINQPad]:https://www.linqpad.net/
