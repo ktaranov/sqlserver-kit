@@ -67,6 +67,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [SQL Trace Analyzer](#sqlsolutions-sql-trace-analyzer)                | [SQLSolutions SQL Trace Analyzer]    | 2013-12-09   | SQLSolutions      | No           | Yes/$495    |
 | [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | [SQLSolutions SQL Ultimate Debugger] | -            | SQLSolutions      | No           | Yes/$295    |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2013-02-24   | Thomas Hinsenkamp | No           | Yes/€99     |
+| [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | [Simple Dynamic Scheduler]           | 2016-05-02   | Miljan Radovic    | Yes          | No          |
 
 
 ## GraphView <a id="graphview"></a>
@@ -754,6 +755,16 @@ Free version: No
 Generate T-SQL data scripts quick and easy.
 
 
+## Simple Dynamic Scheduler <a id="simple-dynamic-scheduler"></a>
+Download page: [Simple Dynamic Scheduler]<br/>
+Release date: 2016-05-02<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server to store all configurations and logic. Main characteristics of Simple Dynamic Scheduler are:
+Simple - Easy to manage (once you finish reading this page), Dynamic - Not static, Purely T-SQL - says it all, Open source - Adoptable code to suit your business needs, Light-weight - Provides only decision machanism (Run or Hold) without actually executing anything.
+
+
 Useful link:
  - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
  - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
@@ -767,6 +778,7 @@ Useful link:
 [Diskspd]:https://github.com/microsoft/diskspd
 [HammerDB]:http://www.hammerdb.com/
 [Exchange Server Error Code Look-up]:https://www.microsoft.com/en-us/download/details.aspx?id=985
+[LINQPad]:https://www.linqpad.net/
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
@@ -822,4 +834,4 @@ Useful link:
 [SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
 [SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
 [SQLScripter]:http://www.sqlscripter.com/
-[LINQPad]:https://www.linqpad.net/
+[Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
