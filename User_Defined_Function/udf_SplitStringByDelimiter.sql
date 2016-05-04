@@ -1,5 +1,9 @@
-CREATE FUNCTION [dbo].[udf_SplitStringByDelimiter]
-(
+IF OBJECT_ID('dbo.udf_SplitStringByDelimiter', 'IF') IS NULL
+EXECUTE('CREATE FUNCTION dbo.udf_SplitStringByDelimiter() RETURNS TABLE WITH SCHEMABINDING AS RETURN SELECT 1 AS A;');
+GO
+
+
+ALTER FUNCTION dbo.udf_SplitStringByDelimiter(
    @List NVARCHAR(MAX),
    @Delimiter NVARCHAR(MAX)
 )
@@ -18,5 +22,4 @@ RETURN
                          WHERE (SUBSTRING(@List,t.N,1) = @Delimiter OR t.N = 0))
   SELECT Item = SUBSTRING(@List, s.N1, ISNULL(NULLIF(CHARINDEX(@Delimiter,@List,s.N1),0)-s.N1,8000))
     FROM cteStart s;
-
 GO
