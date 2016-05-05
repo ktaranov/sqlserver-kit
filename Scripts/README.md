@@ -55,6 +55,12 @@ Original link: http://sqlblog.com/blogs/ben_nevarez/archive/2009/07/26/getting-c
 Tested on SQL Server version: 2014
 
 
+## [Restore script for Ola Hallengren backup](Restore_script_for_Ola_Hallengren_backup.sql)
+Author: Joe O'Connor<br/>
+Original link: http://www.sqlservercentral.com/scripts/Restore/140540/<br/>
+Tested on SQL Server version: 2014
+
+
 ## [Search Script](Search_Script.sql)
 Author: Ed Pollack<br/>
 Original link: http://www.sqlshack.com/searching-sql-server-made-easy-building-the-perfect-search-script/<br/>
