@@ -191,3 +191,9 @@ Tested on SQL Server version: 2012/2014
 Author: Paul S. Randal<br/>
 Original link: http://www.sqlskills.com/blogs/paul/code-to-analyze-the-transaction-hierarchy-in-the-log/<br />
 Tested on SQL Server version: 2012/2014
+
+
+## [usp_CreatePlantUMLCode](usp_CreatePlantUMLCode.sql)
+Author: Phil Factor<br/>
+Original link: https://www.simple-talk.com/sql/sql-tools/automatically-creating-uml-database-diagrams-for-sql-server/<br />
+Tested on SQL Server version: 2012/2014
