@@ -91,6 +91,12 @@ Original link: http://www.sqlservercentral.com/scripts/Indexing/104395/<br/>
 Tested on SQL Server version: 2014
 
 
+## [Indexes Script Out](Indexes_Script_Out.sql)
+Author: Kendra Little<br/>
+Original link: http://www.littlekendra.com/2016/05/05/how-to-script-out-indexes-from-sql-server/<br/>
+Tested on SQL Server version: 2012/2014
+
+
 ## [Query Active Directory](QueryActiveDirectory.sql)
 Author: Ryan Adams<br/>
 Original link: http://www.ryanjadams.com/2016/03/query-active-directory-sql-server/<br/>
