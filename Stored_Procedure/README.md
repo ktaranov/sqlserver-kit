@@ -185,3 +185,9 @@ Tested on SQL Server version: 2008/2012/2014
 Author: Jeff Jordan<br/>
 Original link: http://www.sqlservercentral.com/articles/Integration+Services+%28SSIS%29/135173/<br />
 Tested on SQL Server version: 2012/2014
+
+
+## [usp_SQLskillsAnalyzeLog](usp_SQLskillsAnalyzeLog.sql)
+Author: Paul S. Randal<br/>
+Original link: http://www.sqlskills.com/blogs/paul/code-to-analyze-the-transaction-hierarchy-in-the-log/<br />
+Tested on SQL Server version: 2012/2014
