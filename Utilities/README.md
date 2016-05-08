@@ -2,6 +2,12 @@
 Useful free and paid Microsoft SQL Server utilities
 
 
+Useful link:
+ - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
+ - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
+ - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
+
+
 | Name/Description                                                      | Official/Download page               | Release Date | Author            | Free version | Paid/Price  |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | ------------------| ------------ | ------------|
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft         | Yes          | No          |
@@ -68,6 +74,21 @@ Useful free and paid Microsoft SQL Server utilities
 | [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | [SQLSolutions SQL Ultimate Debugger] | -            | SQLSolutions      | No           | Yes/$295    |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2013-02-24   | Thomas Hinsenkamp | No           | Yes/€99     |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | [Simple Dynamic Scheduler]           | 2016-05-02   | Miljan Radovic    | Yes          | No          |
+| [ApexSQL Audit](#apexsql-audit)                                       | [ApexSQL Audit]                      | 2016-04-08   | Apex              | No           | Yes/$1699   |
+| [ApexSQL Backup](#apexsql-backup)                                     | [ApexSQL Backup]                     | 2015-12-30   | Apex              | No           | Yes/$499    |
+| [ApexSQL Log](#apexsql-log)                                           | [ApexSQL Log]                        | 2015-11-23   | Apex              | No           | Yes/$1999   |
+| [ApexSQL Monitor](#apexsql-monitor)                                   | [ApexSQL Monitor]                    | 2015-12-29   | Apex              | No           | Yes/$499    |
+| [ApexSQL Recover](#apexsql-recover)                                   | [ApexSQL Recover]                    | 2015-01-21   | Apex              | No           | Yes/$1999   |
+| [ApexSQL Restore](#apexsql-restore)                                   | [ApexSQL Restore]                    | 2014-08-12   | Apex              | No           | Yes/$399    |
+| [ApexSQL Build](#apexsql-build)                                       | [ApexSQL Build]                      | 2015-12-22   | Apex              | No           | Yes/$399    |
+| [ApexSQL Clean](#apexsql-clean)                                       | [ApexSQL Clean]                      | 2015-09-04   | Apex              | No           | Yes/$399    |
+| [ApexSQL Data Diff](#apexsql-data-diff)                               | [ApexSQL Data Diff]                  | 2015-12-11   | Apex              | No           | Yes/$399    |
+| [ApexSQL Diff](#apexsql-diff)                                         | [ApexSQL Diff]                       | 2016-03-23   | Apex              | No           | Yes/$399    |
+| [ApexSQL Doc](#apexsql-doc)                                           | [ApexSQL Doc]                        | 2015-04-19   | Apex              | No           | Yes/$299    |
+| [ApexSQL Generate](#apexsql-generate)                                 | [ApexSQL Generate]                   | 2016-03-15   | Apex              | No           | Yes/$499    |
+| [ApexSQL Script](#apexsql-script)                                     | [ApexSQL Script]                     | 2015-09-11   | Apex              | No           | Yes/$249    |
+| [ApexSQL Trigger](#apexsql-trigger)                                   | [ApexSQL Trigger]                    | 2015-09-04   | Apex              | No           | Yes/$1999   |
+| [ApexSQL Source Control](#apexsql-source-control)                     | [ApexSQL Source Control]             | 2015-04-27   | Apex              | No           | Yes/$299    |
 
 
 ## GraphView <a id="graphview"></a>
@@ -765,10 +786,139 @@ Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server
 Simple - Easy to manage (once you finish reading this page), Dynamic - Not static, Purely T-SQL - says it all, Open source - Adoptable code to suit your business needs, Light-weight - Provides only decision machanism (Run or Hold) without actually executing anything.
 
 
-Useful link:
- - [Microsoft's Log Parser Utility: Swell ETL](https://www.simple-talk.com/sql/sql-tools/microsofts-log-parser-utility-swell-etl/) by Robert Sheldon
- - [SQL Server tablediff utility](https://www.simple-talk.com/sql/sql-tools/sql-server-tablediff-utility/) by Robert Sheldon
- - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
+## ApexSQL Audit <a id="apexsql-audit"></a>
+Download page: [ApexSQL Audit]<br/>
+Release date: 2016-04-08<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Audit all SQL database and security activities, Meet compliance requirements e.g. HIPAA, PCI, Out-of-the-box and custom Win and Web reporting, Securely store audit data in a tamper-evident repository, Fully customize all auditing, alerts, and reporting, Who, what, where, and when type auditing, Deploy on SQL Server Failover Clusters, Easily manage auditing on multiple servers
+
+
+## ApexSQL Backup <a id="apexsql-backup"></a>
+Download page: [ApexSQL Backup]<br/>
+Release date: 2015-12-30<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Manage SQL backups across multiple servers, Configure SQL backup plans with advanced scheduling, Increase productivity with backup templates, Automatic SQL backup naming using variables, Restore to a point in time directly from timeline, Schedule and execute index maintenance tasks, Log shipping to multiple destinations, Cleanup SQL backup and restore history
+
+
+## ApexSQL Log <a id="apexsql-log"></a>
+Download page: [ApexSQL Log]<br/>
+Release date: 2015-11-23<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Audit data, schema, and permission changes, Gain full visibility into your transaction logs, Rollback or replay any database transaction, Forensically investigate who changed what and when, Implement before and after auditing, View a complete history of row changes, Reverse inadvertent or malicious database transactions, Avoid performance overhead and data storage
+
+
+## ApexSQL Monitor <a id="apexsql-monitor"></a>
+Download page: [ApexSQL Monitor]<br/>
+Release date: 2015-12-29<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Monitor multiple SQL Server instances, View system performance metrics, Identify performance issues and deadlocks, Use comprehensive dashboard for viewing metrics, Analyze query waits, Review query execution plans, Calculate baselines and thresholds, Visualize data with logarithmic scaling
+
+
+## ApexSQL Recover <a id="apexsql-recover"></a>
+Download page: [ApexSQL Recover]<br/>
+Release date: 2015-01-21<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Recover deleted, dropped and truncated data, Reverse inadvertent or malicious database changes, Extract data directly from backup files, Recover deleted data and files from SharePoint, Recover deleted BLOBs, Extract BLOBs stored as files
+
+
+## ApexSQL Restore <a id="apexsql-restore"></a>
+Download page: [ApexSQL Restore]<br/>
+Release date: 2014-12-08<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Work with backups just like with live databases, Mount backups to a specific point in time, Speed up SQL database restores, Access data and objects directly inside backups, Attach backups directly from network drives, Modify data without altering backup files
+
+
+## ApexSQL Build <a id="apexsql-build"></a>
+Download page: [ApexSQL Build]<br/>
+Release date: 2015-12-22<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Run scripts on multiple databases at once, Create C# executables / .NET deployment packages, Deploy databases directly from SQL source control, Consolidate multiple SQL scripts, Build databases from scripts, source control, etc, Ensure error free deployments, Preview the script impact by action or SQL object, Execute scripts on saved list of servers/databases
+
+
+## ApexSQL Clean <a id="apexsql-clean"></a>
+Download page: [ApexSQL Clean]<br/>
+Release date: 2015-09-04<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+View and analyze SQL and client code dependencies, Perform impact analysis on potential changes, Remove unwanted objects risk free, Map dependencies down to the column level, Analyze external databases for dependencies, View object dependencies graphically, Design the appearance of the dependency diagram, Create and export reports from object dependencies
+
+
+## ApexSQL Data Diff <a id="apexsql-data-diff"></a>
+Download page: [ApexSQL Data Diff]<br/>
+Release date: 2015-12-11<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Compare data in live databases and backups, Perform row level recovery without restoring, Community, Standard, and Professional editions, Compare huge databases quickly and without errors, Automate and schedule data migrations, Initiate database compares directly from SSMS, Export results to HTML, XML and Excel, Create executable .NET packages
+
+
+## ApexSQL Diff <a id="apexsql-diff"></a>
+Download page: [ApexSQL Diff]<br/>
+Release date: 2016-03-23<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Compare live DBs, backups, scripts and SC projects, Deploy a database directly from source control, Community, Standard, and Professional editions, Integrate with all popular SC systems e.g. Git, SVN, Automate and schedule database synchronizations, Initiate database compares directly from SSMS, Report results to HTML, XML and Excel, Create executable .NET packages
+
+
+## ApexSQL Doc <a id="apexsql-doc"></a>
+Download page: [ApexSQL Doc]<br/>
+Release date: 2015-04-19<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Document SQL Server databases and SSIS packages, Generate documentation in CHM, HTML, Word, and PDF, Automate and schedule the documenting process, Display graphical relationship diagrams, Document SSAS Multidimensional and Tabular models, Document SSIS Control flow and Data flow diagrams, Fully customize the documentation output, Include Data model diagrams
+
+
+## ApexSQL Generate <a id="apexsql-generate"></a>
+Download page: [ApexSQL Generate]<br/>
+Release date: 2016-03-15<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Generate SQL test data for specified tables, Export test data to SQL, XML, CSV, JSON, Excel, Generate millions of rows quickly, Customize test data plan with detailed options, Support a full range of SQL data types, Choose from multiple generators (Random, List, etc), Retain data consistency with foreign key support, Emulate real-world test data
+
+
+## ApexSQL Script <a id="apexsql-script"></a>
+Download page: [ApexSQL Script]<br/>
+Release date: 2015-09-11<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Script both SQL database objects and data, Create executable .NET packages, Script objects directly to Source Control, Automate SQL database scripting and migrations, Integrate with popular source control systems, Script an entire server down to individual columns, Save customized scripting profiles as projects, Easily decrypt some/all encrypted database objects
+
+
+## ApexSQL Trigger <a id="apexsql-trigger"></a>
+Download page: [ApexSQL Trigger]<br/>
+Release date: 2015-09-04<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Track data / DML changes in SQL Server databases, Integrate royalty free auditing into your apps, Translate data into information with lookups, Create reports and exports from audited data, Customize trigger templates with a built-in IDE, Add additional data to audit trail with watches, Track schema / DDL changes in audited database, Audit who, what, and when for all changes
+
+
+## ApexSQL Source Control <a id="apexsql-source-control"></a>
+Download page: [ApexSQL Source Control]<br/>
+Release date: 2015-04-27<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+Integrate SQL source control directly into SSMS, Use dedicated or shared development models, View conflicts and resolve directly in the UI, View a detailed history of changes, Lock objects to prevent overwrites, Set team policies for check outs and locks, Apply changes with dependency aware scripts, Create and apply label from source control
 
 
 [GraphView]:https://github.com/Microsoft/GraphView
@@ -835,3 +985,18 @@ Useful link:
 [SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
 [SQLScripter]:http://www.sqlscripter.com/
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
+[ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx
+[ApexSQL Backup]:https://www.apexsql.com/sql_tools_backup.aspx
+[ApexSQL Log]:https://www.apexsql.com/sql_tools_log.aspx
+[ApexSQL Monitor]:https://www.apexsql.com/sql_tools_monitor.aspx
+[ApexSQL Recover]:https://www.apexsql.com/sql_tools_recover.aspx
+[ApexSQL Restore]:https://www.apexsql.com/sql_tools_restore.aspx
+[ApexSQL Build]:https://www.apexsql.com/sql_tools_build.aspx
+[ApexSQL Clean]:https://www.apexsql.com/sql_tools_clean.aspx
+[ApexSQL Data Diff]:https://www.apexsql.com/sql_tools_datadiff.aspx
+[ApexSQL Diff]:https://www.apexsql.com/sql_tools_diff.aspx
+[ApexSQL Doc]:https://www.apexsql.com/sql_tools_doc.aspx
+[ApexSQL Generate]:https://www.apexsql.com/sql_tools_generate.aspx
+[ApexSQL Script]:https://www.apexsql.com/sql_tools_script.aspx
+[ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
+[ApexSQL Source Control]:https://www.apexsql.com/sql_tools_source_control.aspx
