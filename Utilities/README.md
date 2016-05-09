@@ -97,7 +97,8 @@ Support Version: -<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-GraphView is a DLL library that enables users to use SQL Server or Azure SQL Database to manage graphs. It connects to a SQL database locally or in the cloud, stores graph data in tables and queries graphs through a SQL-extended language.
+GraphView is a DLL library that enables users to use SQL Server or Azure SQL Database to manage graphs.
+It connects to a SQL database locally or in the cloud, stores graph data in tables and queries graphs through a SQL-extended language.
 
 
 ## Microsoft Baseline Security Analyze <a id="baseline-security-analyze"></a>
@@ -108,7 +109,8 @@ Author: Microsoft<br/>
 Instruction: http://www.sqlshack.com/how-to-install-and-use-microsoft-baseline-security-analyzer-mbsa/<br/>
 Free version: Yes
 
-The Microsoft Baseline Security Analyzer provides a streamlined method to identify missing security updates and common security misconfigurations. MBSA 2.3 release adds support for Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012. Windows 2000 will no longer be supported with this release.
+The Microsoft Baseline Security Analyzer provides a streamlined method to identify missing security updates and common security misconfigurations.
+MBSA 2.3 release adds support for Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012. Windows 2000 will no longer be supported with this release.
 
 
 ## tablediff Utility <a id="tablediff-utility"></a>
@@ -118,9 +120,9 @@ Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The tablediff utility is used to compare the data in two tables for non-convergence, and is particularly useful for troubleshooting non-convergence<br />
-in a replication topology. This utility can be used from the command prompt or in a batch file to perform the following tasks:
- - A row by row comparison between a source table in an instance of Microsoft SQL Server acting as a replication Publisher and the destination table at one or more instances of SQL Server acting as replication Subscribers.
+The tablediff utility is used to compare the data in two tables for non-convergence, and is particularly useful for troubleshooting non-convergence in a replication topology.
+This utility can be used from the command prompt or in a batch file to perform the following tasks:
+ - A row by row comparison between a source table in an instance of SQL Server acting as a replication Publisher and the destination table at one or more instances
  - Perform a fast comparison by only comparing row counts and schema.
  - Perform column-level comparisons.
  - Generate a Transact-SQL script to fix discrepancies at the destination server to bring the source and destination tables into convergence.
@@ -135,7 +137,7 @@ Author: Microsoft<br/>
 Free version: Yes
 
 Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
-XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory. 
+XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory.
 
 
 ## Diskspd <a id="diskspd"></a>
@@ -157,7 +159,8 @@ Support Version: -<br/>
 Author: Open Source<br/>
 Free version: Yes
 
-HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum, Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
+HammerDB is an open source database load testing and benchmarking tool for Oracle, SQL Server, DB2, TimesTen, PostgreSQL, Greenplum,
+Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
 ## Microsoft Exchange Server Error Code Look-up <a id="error-code-look-up"></a>
@@ -179,7 +182,8 @@ Author: Joseph Albahari<br/>
 Free version: Yes<br/>
 
 Instantly test any C#/F#/VB snippet or program, Query databases in LINQ (or SQL) — SQL/CE/Azure, Oracle, SQLite & MySQL. Standard edition free, with no expiry.
-Enjoy rich output formatting, optional autocompletion and integrated debugging, Script and automate in your favorite .NET language, Super lightweight — single 15MB executable!
+Enjoy rich output formatting, optional autocompletion and integrated debugging, Script and automate in your favorite .NET language,
+Super lightweight — single 15MB executable!
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -189,7 +193,8 @@ Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting. Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
+Capture performance and usage data about your Microsoft SQL Server 2005+ databases to inform insights and improve troubleshooting.
+Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
 
 ## osql Utility <a id="osql-utility"></a>
@@ -268,8 +273,10 @@ Support Version: 2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The sqlps utility starts a Windows PowerShell 2.0 session with the SQL Server PowerShell provider and cmdlets loaded and registered. You can enter PowerShell commands or scripts that use the SQL Server PowerShell components to work with instances of SQL Server and their objects.
-This feature will be removed in a future version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use the sqlps PowerShell module instead.
+The sqlps utility starts a Windows PowerShell 2.0 session with the SQL Server PowerShell provider and cmdlets loaded and registered.
+You can enter PowerShell commands or scripts that use the SQL Server PowerShell components to work with instances of SQL Server and their objects.
+This feature will be removed in a future version of Microsoft SQL Server.
+Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use the sqlps PowerShell module instead.
 
 
 ## sqlmaint Utility <a id="sqlmaint-utility"></a>
@@ -279,8 +286,13 @@ Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The sqlmaint utility performs a specified set of maintenance operations on one or more databases. Use sqlmaint to run DBCC checks, back up a database and its transaction log, update statistics, and rebuild indexes. All database maintenance activities generate a report that can be sent to a designated text file, HTML file, or e-mail account. sqlmaint executes database maintenance plans created with previous versions of SQL Server. To run SQL Server maintenance plans from the command prompt, use the dtexec Utility.
-This feature will be removed in the next version of Microsoft SQL Server. Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use SQL Server maintenance plan feature instead.
+The sqlmaint utility performs a specified set of maintenance operations on one or more databases.
+Use sqlmaint to run DBCC checks, back up a database and its transaction log, update statistics, and rebuild indexes.
+All database maintenance activities generate a report that can be sent to a designated text file, HTML file, or e-mail account.
+sqlmaint executes database maintenance plans created with previous versions of SQL Server.
+To run SQL Server maintenance plans from the command prompt, use the dtexec Utility.
+This feature will be removed in the next version of Microsoft SQL Server.
+Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use SQL Server maintenance plan feature instead.
 
 
 ## Ssms Utility <a id="ssms-utility"></a>
@@ -290,8 +302,12 @@ Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The Ssms utility opens SQL Server Management Studio. If specified, Ssms also establishes a connection to a server, and opens queries, scripts, files, projects, and solutions.
-You can specify files that contain queries, projects, or solutions. Files that contain queries are automatically connected to a server if connection information is provided and the file type is associated with that type of server. For instance, .sql files will open a SQL Query Editor window in SQL Server Management Studio, and .mdx files will open an MDX Query Editor window in SQL Server Management Studio. SQL Server Solutions and Projects will open in SQL Server Management Studio.
+The Ssms utility opens SQL Server Management Studio.
+If specified, Ssms also establishes a connection to a server, and opens queries, scripts, files, projects, and solutions.
+You can specify files that contain queries, projects, or solutions.
+Files that contain queries are automatically connected to a server if connection information is provided and the file type is associated with that type of server.
+For instance, .sql files will open a SQL Query Editor window in SQL Server Management Studio, and .mdx files will open an MDX Query Editor window
+in SQL Server Management Studio. SQL Server Solutions and Projects will open in SQL Server Management Studio.
 
 
 ## dtexec Utility <a id="dtexec-utility"></a>
@@ -301,7 +317,9 @@ Support Version: 2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages. The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators. The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
+The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages.
+The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators.
+The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
 
 
 ## SQL Server 2005 Best Practices Analyzer <a id="bpa-2005"></a>
@@ -311,7 +329,8 @@ Support Version: 2005<br/>
 Author: Microsoft<br/>
 Free version: Yes
 
-The SQL Server 2005 Best Practices Analyzer (BPA) gathers data from Microsoft Windows and SQL Server configuration settings. BPA uses a predefined list of SQL Server 2005 recommendations and best practices to determine if there are potential issues in the database environment.
+The SQL Server 2005 Best Practices Analyzer (BPA) gathers data from Microsoft Windows and SQL Server configuration settings.
+BPA uses a predefined list of SQL Server 2005 recommendations and best practices to determine if there are potential issues in the database environment.
 
 
 ## SQL Server 2000 Best Practices Analyzer <a id="bpa-2000"></a>
@@ -378,7 +397,6 @@ Release date: 2016-03-01<br/>
 Support Version: 2012/2014<br/>
 Free version: No/$345
 
-Want to work on databases in Visual Studio alongside your application? Feeling the pain of managing and deploying database changes manually? Then ReadyRoll's the tool for you.
 It generates numerically ordered SQL migration scripts that sit inside your project and take your schema from one version to the next.
 You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
 
@@ -399,7 +417,6 @@ Release date: 2015-09-24<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
 Free version: Yes
 
-With SQL Check you can:
  - check out what happens in batches, compilations, recompilations, and transactions throughout the SQL Server environment so you don’t experience any surprises and know where to direct your attention to prevent potential issues.
  - monitor some of the most important metrics in SQL Server including wait stats, reads, writes, session details, and cache hits.
  - see SQL operations as they occur for the latest information; consider it a heart rate monitor for your SQL Server environment providing instant feedback and results. Customize the refresh rate and amount of historical data for each SQL server.
@@ -569,7 +586,8 @@ Release date: 2015-12-22<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server. The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups. 
+dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server.
+The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups.
 You can compare your SQL Server databases, analyze differences and synchronize your schemas using generated SQL script in a well-designed user interface quickly and without errors.
 
 
@@ -579,7 +597,8 @@ Release date: 2015-11-30<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge Data Compare for SQL Server is a powerful, fast and easy to use SQL comparison tool, capable of using native SQL Server backups as metadata source. With dbForge Data Compare you can tune your SQL database comparison, quickly analyze differences in a well-designed user interface and effortlessly synchronize data via a convenient wizard with additional options.
+dbForge Data Compare for SQL Server is a powerful, fast and easy to use SQL comparison tool, capable of using native SQL Server backups as metadata source.
+With dbForge Data Compare you can tune your SQL database comparison, quickly analyze differences in a well-designed user interface and effortlessly synchronize data via a convenient wizard with additional options.
 
 
 ## dbForge Data Generator <a id="dbforge-data-generator"></a>
@@ -597,9 +616,10 @@ Release date: 2015-06-03<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge Query Builder for SQL Server allows users to build complex SQL queries via an intuitive visual query building interface easily and without manual code writing. Our visual SQL query tool is destined for simplification of developing SQL queries for SQL Server. This SQL query designer will be useful to those, who often create queries to databases. 
-Visual features to create queries, usage of graphical SQL query creator to interactively build queries, would be most appreciated by users who have no experience in writing queries manually. But
- even experienced users can save a lot of time on routine work.
+dbForge Query Builder for SQL Server allows users to build complex SQL queries via an intuitive visual query building interface easily and without manual code writing.
+This SQL query designer will be useful to those, who often create queries to databases.
+Visual features to create queries, usage of graphical SQL query creator to interactively build queries, would be most appreciated by users who have no experience in writing queries manually.
+But even experienced users can save a lot of time on routine work.
 
 
 ## dbForge Event Profiler <a id="dbforge-event-profiler"></a>
@@ -608,7 +628,9 @@ Release date: 2015-04-08<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-dbForge Event Profiler for SQL Server is a FREE tool that allows you to capture and analyze SQL Server events. The events and data columns are stored in a physical trace file for later examination. You can use this information to identify and troubleshoot many SQL Server-related problems.
+dbForge Event Profiler for SQL Server is a FREE tool that allows you to capture and analyze SQL Server events.
+The events and data columns are stored in a physical trace file for later examination.
+You can use this information to identify and troubleshoot many SQL Server-related problems.
 
 
 ## dbForge SQL Decryptor <a id="dbforge-sql-decryptor"></a>
@@ -624,7 +646,12 @@ Release date: ?<br/>
 Support Version: 2008/2008R2/2012<br/>
 Free version: No/$1500
 
-Minion Enterprise was designed by database administrators (DBAs) specifically to address the issues that waste the most time and cause the most problems. Minion shrinks dozens of those one-at-a-time tasks down to a central process. And, it does this without the usual overhead of monitoring software. When you install Minion Enterprise, it automatically begins gathering data from instances across your enterprise. That single repository of data allows you to centrally audit, alert, report, and investigate your entire environment. Even better, it opens up a new world of central management: audit SQL and AD security, clone user permissions across servers, standardize and enforce SQL Server settings, automate error log searches, and so very much more.
+Minion Enterprise was designed by database administrators (DBAs) specifically to address the issues that waste the most time and cause the most problems.
+Minion shrinks dozens of those one-at-a-time tasks down to a central process. And, it does this without the usual overhead of monitoring software.
+When you install Minion Enterprise, it automatically begins gathering data from instances across your enterprise.
+That single repository of data allows you to centrally audit, alert, report, and investigate your entire environment.
+Even better, it opens up a new world of central management: audit SQL and AD security, clone user permissions across servers,
+standardize and enforce SQL Server settings, automate error log searches, and so very much more.
 
 
 ## SQL Server Compression Estimator <a id="sql-server-compression-estimator"></a>
@@ -633,7 +660,10 @@ Release date: 2011-06-02<br/>
 Support Version: 2008/2008R2/2012<br/>
 Free version: Yes
 
-SQL Server Compression Estimator (SSCE) will allow you to estimate the best compression for your objects. It will estimate both ROW and PAGE compression, and will optionally report the Index Maintenance Ratio (a ratio that indicates how often an index is updated versus how often it is used to satisfy queries). You can then use that information to perhaps choose a less aggresive compression algorithm for heavily updated indexes.
+SQL Server Compression Estimator (SSCE) will allow you to estimate the best compression for your objects.
+It will estimate both ROW and PAGE compression, and will optionally report the Index Maintenance Ratio
+(a ratio that indicates how often an index is updated versus how often it is used to satisfy queries).
+You can then use that information to perhaps choose a less aggresive compression algorithm for heavily updated indexes.
 
 
 ## ClearTrace <a id="cleartrace"></a>
@@ -642,9 +672,8 @@ Release date: 2015-07-04<br/>
 Support Version: 2008/2008R2/2012<br/>
 Free version: Yes
 
-ClearTrace imports SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace and Profiler files into SQL Server and displays summary performance information.
-
-Summarize SQL Server Query Performance and Enhance SQL Server Performance Tuning.
+ClearTrace imports SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace
+and Profiler files into SQL Server and displays summary performance information.
 
 
 ## SQLSentry Fragmentation Manager <a id="sqlsentry-fragmentation-manager"></a>
@@ -655,7 +684,10 @@ Free version: No
 
 Dramatically improves the manageability and visibility of SQL Server index fragmentation across the enterprise
 
-Fragmentation Manager helps you make good decisions about how and when to defragment. You can easily set up an environment-wide schedule to automate index analysis and defragmentation operations, while allowing the flexibility to customize the schedule and other specific instances, databases, tables, and even individual indexes. Fragmentation Manager will also allow you to perform index defragmentation faster than ever before via support for multiple concurrent operations.
+Fragmentation Manager helps you make good decisions about how and when to defragment.
+You can easily set up an environment-wide schedule to automate index analysis and defragmentation operations,
+while allowing the flexibility to customize the schedule and other specific instances, databases, tables, and even individual indexes.
+Fragmentation Manager will also allow you to perform index defragmentation faster than ever before via support for multiple concurrent operations.
 
 
 ## SQLSentry Plan Explorer <a id="sqlsentry-plan-explorer"></a>
@@ -664,7 +696,9 @@ Release date: 2016-01-28<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
 
-With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
+With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS)
+to make query plan optimization more efficient.
+It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
 
 
 ## SQLSentry Event Manager <a id="sqlsentry-event-manager"></a>
@@ -673,7 +707,9 @@ Release date: 2016-03-08<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-With specific products for SQL Server, Windows, SharePoint and Oracle, Event Manager provides DBAs with "Outlook-style" visibility and functionality for managing SQL Agent jobs, Windows Tasks, and Oracle jobs in increasingly complex cross-platform environments. Unlike most other scheduling products, Event Manager does not require an agent to be installed and managed on each server.
+With specific products for SQL Server, Windows, SharePoint and Oracle, Event Manager provides DBAs with "Outlook-style" visibility
+and functionality for managing SQL Agent jobs, Windows Tasks, and Oracle jobs in increasingly complex cross-platform environments.
+Unlike most other scheduling products, Event Manager does not require an agent to be installed and managed on each server.
 
 
 ## SQLSentry Performance Advisor <a id="sqlsentry-performance-advisor"></a>
@@ -682,7 +718,9 @@ Release date: 2016-03-08<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-Performance Advisor is the unmatched solution for monitoring and managing all aspects of your SQL Server infrastructure. Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Support for Microsoft Analytics Platform System (APS), Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
+Performance Advisor is the unmatched solution for monitoring and managing all aspects of your SQL Server infrastructure.
+Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Support for Microsoft Analytics Platform System (APS),
+Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
 
 
 ## Dell Security Explorer <a id="dell-security-explorer"></a>
@@ -691,7 +729,9 @@ Release date: 2015-06-25<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-This single toolset maximizes productivity through extensive automation, intuitive workflows and built-in expertise. Plus, it complements Microsoft tools by solving key SQL Server challenges, so you can proactively manage large numbers of databases. It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
+This single toolset maximizes productivity through extensive automation, intuitive workflows and built-in expertise.
+Plus, it complements Microsoft tools by solving key SQL Server challenges, so you can proactively manage large numbers of databases.
+It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
 
 
 ## Dell LiteSpeed for SQL Server <a id="dell-litespeed-for-sql-server"></a>
@@ -700,7 +740,9 @@ Release date: 2015-07-31<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-Dramatically reduce backup and restore times and minimize storage costs while increasing the reliability of SQL Server data protection operations across the entire enterprise. Easily manage and monitor SQL Server protection while delivering a wide array of recovery capabilities. With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
+Dramatically reduce backup and restore times and minimize storage costs while increasing the reliability of SQL Server data protection
+operations across the entire enterprise. Easily manage and monitor SQL Server protection while delivering a wide array of recovery capabilities.
+With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
 
 
 ## Dell Toad for SQL Server <a id="dell-toad-for-sql-server"></a>
@@ -709,7 +751,11 @@ Release date: 2015-05-12<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-Use a single console to manage access controls, permissions and security across Microsoft platforms that span multiple servers. Security Explorer provides an array of security enhancements, including the ability to identify who has rights to resources across the entire organization. You can also grant, revoke, clone, modify and overwrite permissions quickly and from a central location. Unlike native tools, Security Explorer provides the ability to back up and restore permissions only, ensuring the integrity of data. Security Explorer provides on-the-fly reports to help meet auditing requirements.
+Use a single console to manage access controls, permissions and security across Microsoft platforms that span multiple servers.
+Security Explorer provides an array of security enhancements, including the ability to identify who has rights to resources across the entire organization.
+You can also grant, revoke, clone, modify and overwrite permissions quickly and from a central location.
+Unlike native tools, Security Explorer provides the ability to back up and restore permissions only, ensuring the integrity of data.
+Security Explorer provides on-the-fly reports to help meet auditing requirements.
 
 
 ## Dell Spotlight <a id="dell-spotlight"></a>
@@ -718,7 +764,12 @@ Release date: 2016-03-10<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-When you can diagnose SQL Server performance issues quickly and accurately, ensuring a healthy database infrastructure is not just possible, but easy.  Spotlight on SQL Server Enterprise delivers simplicity without compromise by providing unmatched monitoring, diagnosis and optimization of your SQL Server environments, ensuring peak performance around the clock.  With intuitive overviews of enterprise health and performance, automated alerts and actions, an integrated Xpert tuning module and mobile device support, Spotlight on SQL Server Enterprise makes it easier than ever to obtain the data you need to ensure the health of your SQL Server databases
+When you can diagnose SQL Server performance issues quickly and accurately, ensuring a healthy database infrastructure is not just possible, but easy.
+Spotlight on SQL Server Enterprise delivers simplicity without compromise by providing unmatched monitoring,
+diagnosis and optimization of your SQL Server environments, ensuring peak performance around the clock.
+With intuitive overviews of enterprise health and performance, automated alerts and actions,
+an integrated Xpert tuning module and mobile device support,
+Spotlight on SQL Server Enterprise makes it easier than ever to obtain the data you need to ensure the health of your SQL Server databases.
 
 
 ## Dell Foglight <a id="dell-foglight"></a>
@@ -727,7 +778,10 @@ Release date: 2015-09-22<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Free version: No
 
-Ensure optimal database performance with comprehensive database, storage and virtualization monitoring and advanced workload analytics. Foglight for Databases enables you to consolidate and standardize database performance management across your diverse multi-platform environments – even when you use native or third-party tools — to promote collaboration, improve service levels and reduce costs. Get a wealth of information at a fraction of the impact of conventional collection methods.
+Ensure optimal database performance with comprehensive database, storage and virtualization monitoring and advanced workload analytics.
+Foglight for Databases enables you to consolidate and standardize database performance management across your diverse
+multi-platform environments – even when you use native or third-party tools — to promote collaboration, improve service levels and reduce costs.
+Get a wealth of information at a fraction of the impact of conventional collection methods.
 
 
 ## SQLSolutions SQL Deadlock Detector <a id="sqlsolutions-sql-deadlock-detector"></a>
@@ -736,7 +790,9 @@ Release date: 2013-05-16<br/>
 Support Version: ?<br/>
 Free version: No
 
-Monitor and detect long-running locks and deadlocks 24/7, Identify blocking SQL code, locked objects and deadlock victims with pinpoint accuracy, Accelerate system response time by reducing long lock waits.
+ - Monitor and detect long-running locks and deadlocks 24/7
+ - Identify blocking SQL code, locked objects and deadlock victims with pinpoint accuracy
+ - Accelerate system response time by reducing long lock waits
 
 
 ## SQLSolutions SQL Heartbeat <a id="sqlsolutions-sql-heartbeat"></a>
@@ -745,7 +801,10 @@ Release date: 2013-03-03<br/>
 Support Version: ?<br/>
 Free version: No
 
-Unlock the value of a full SQL Server trace, Quickly diagnose and identify all performance bottlenecks, Locate within minutes specific SQL statements responsible for each bottleneck, Proactively and constantly monitor performance through scheduled traces.
+ - Unlock the value of a full SQL Server trace
+ - Quickly diagnose and identify all performance bottlenecks
+ - Locate within minutes specific SQL statements responsible for each bottleneck
+ - Proactively and constantly monitor performance through scheduled traces
 
 
 ## SQLSolutions SQL Trace Analyzer <a id="sqlsolutions-sql-trace-analyzer"></a>
@@ -754,7 +813,12 @@ Release date: 2009-12-09<br/>
 Support Version: ?<br/>
 Free version: No
 
-Monitor your SQL Server 24 x 7 to remedy performance bottlenecks and maintain server health. SQL Heartbeat monitors all of your SQL Servers in a way that allows you to identify and prevent SQL Server problems before they happen. SQL Heartbeat allows for an unlimited number of custom counters to be defined. Important metrics often include: logins per second, lack waits per second, total latch wait time, deadlocks per second, errors per second, buffer cache hits ratio, page life expectancy, percent CPU utilization and average disk queue lengths. As default metrics have been set up by SQL Server experts, the initial setup step is minimal.
+Monitor your SQL Server 24 x 7 to remedy performance bottlenecks and maintain server health.
+SQL Heartbeat monitors all of your SQL Servers in a way that allows you to identify and prevent SQL Server problems before they happen.
+SQL Heartbeat allows for an unlimited number of custom counters to be defined.
+Important metrics often include: logins per second, lack waits per second, total latch wait time, deadlocks per second, errors per second,
+buffer cache hits ratio, page life expectancy, percent CPU utilization and average disk queue lengths.
+As default metrics have been set up by SQL Server experts, the initial setup step is minimal.
 
 
 ## SQLSolutions SQL Ultimate Debugger <a id="sqlsolutions-sql-ultimate-debugger"></a>
@@ -763,7 +827,8 @@ Release date: ?<br/>
 Support Version: ?<br/>
 Free version: No
 
-The sql server tool for developers who debug SQL server stored procedures, functions (UDFs) and triggers. This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
+The sql server tool for developers who debug SQL server stored procedures, functions (UDFs) and triggers.
+This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
 
 
 ## SQLScripter <a id="sqlscripter"></a>
@@ -781,8 +846,12 @@ Release date: 2016-05-02<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server to store all configurations and logic. Main characteristics of Simple Dynamic Scheduler are:
-Simple - Easy to manage (once you finish reading this page), Dynamic - Not static, Purely T-SQL - says it all, Open source - Adoptable code to suit your business needs, Light-weight - Provides only decision machanism (Run or Hold) without actually executing anything.
+Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server to store all configurations and logic.
+ - Simple - Easy to manage (once you finish reading this page)
+ - Dynamic - Not static
+ - Purely T-SQL - says it all
+ - Open source - Adoptable code to suit your business needs
+ - Light-weight - Provides only decision machanism (Run or Hold) without actually executing anything
 
 
 ## ApexSQL Audit <a id="apexsql-audit"></a>
@@ -791,7 +860,14 @@ Release date: 2016-04-08<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Audit all SQL database and security activities, Meet compliance requirements e.g. HIPAA, PCI, Out-of-the-box and custom Win and Web reporting, Securely store audit data in a tamper-evident repository, Fully customize all auditing, alerts, and reporting, Who, what, where, and when type auditing, Deploy on SQL Server Failover Clusters, Easily manage auditing on multiple servers
+ - Audit all SQL database and security activities
+ - Meet compliance requirements e.g. HIPAA, PCI
+ - Out-of-the-box and custom Win and Web reporting
+ - Securely store audit data in a tamper-evident repository
+ - Fully customize all auditing, alerts, and reporting
+ - Who, what, where, and when type auditing
+ - Deploy on SQL Server Failover Clusters
+ - Easily manage auditing on multiple servers
 
 
 ## ApexSQL Backup <a id="apexsql-backup"></a>
@@ -800,7 +876,14 @@ Release date: 2015-12-30<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Manage SQL backups across multiple servers, Configure SQL backup plans with advanced scheduling, Increase productivity with backup templates, Automatic SQL backup naming using variables, Restore to a point in time directly from timeline, Schedule and execute index maintenance tasks, Log shipping to multiple destinations, Cleanup SQL backup and restore history
+ - Manage SQL backups across multiple servers
+ - Configure SQL backup plans with advanced scheduling
+ - Increase productivity with backup templates
+ - Automatic SQL backup naming using variables
+ - Restore to a point in time directly from timeline
+ - Schedule and execute index maintenance tasks
+ - Log shipping to multiple destinations
+ - Cleanup SQL backup and restore history
 
 
 ## ApexSQL Log <a id="apexsql-log"></a>
@@ -809,7 +892,14 @@ Release date: 2015-11-23<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Audit data, schema, and permission changes, Gain full visibility into your transaction logs, Rollback or replay any database transaction, Forensically investigate who changed what and when, Implement before and after auditing, View a complete history of row changes, Reverse inadvertent or malicious database transactions, Avoid performance overhead and data storage
+ - Audit data, schema, and permission changes
+ - Gain full visibility into your transaction logs
+ - Rollback or replay any database transaction
+ - Forensically investigate who changed what and when
+ - Implement before and after auditing
+ - View a complete history of row changes
+ - Reverse inadvertent or malicious database transactions
+ - Avoid performance overhead and data storage
 
 
 ## ApexSQL Monitor <a id="apexsql-monitor"></a>
@@ -818,7 +908,14 @@ Release date: 2015-12-29<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Monitor multiple SQL Server instances, View system performance metrics, Identify performance issues and deadlocks, Use comprehensive dashboard for viewing metrics, Analyze query waits, Review query execution plans, Calculate baselines and thresholds, Visualize data with logarithmic scaling
+ - Monitor multiple SQL Server instances
+ - View system performance metrics
+ - Identify performance issues and deadlocks
+ - Use comprehensive dashboard for viewing metrics
+ - Analyze query waits
+ - Review query execution plans
+ - Calculate baselines and thresholds
+ - Visualize data with logarithmic scaling
 
 
 ## ApexSQL Recover <a id="apexsql-recover"></a>
@@ -827,7 +924,12 @@ Release date: 2015-01-21<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Recover deleted, dropped and truncated data, Reverse inadvertent or malicious database changes, Extract data directly from backup files, Recover deleted data and files from SharePoint, Recover deleted BLOBs, Extract BLOBs stored as files
+ - Recover deleted, dropped and truncated data
+ - Reverse inadvertent or malicious database changes
+ - Extract data directly from backup files
+ - Recover deleted data and files from SharePoint
+ - Recover deleted BLOBs
+ - Extract BLOBs stored as files
 
 
 ## ApexSQL Restore <a id="apexsql-restore"></a>
@@ -836,7 +938,12 @@ Release date: 2014-12-08<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Work with backups just like with live databases, Mount backups to a specific point in time, Speed up SQL database restores, Access data and objects directly inside backups, Attach backups directly from network drives, Modify data without altering backup files
+ - Work with backups just like with live databases
+ - Mount backups to a specific point in time
+ - Speed up SQL database restores
+ - Access data and objects directly inside backups
+ - Attach backups directly from network drives
+ - Modify data without altering backup files
 
 
 ## ApexSQL Build <a id="apexsql-build"></a>
@@ -845,7 +952,16 @@ Release date: 2015-12-22<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Run scripts on multiple databases at once, Create C# executables / .NET deployment packages, Deploy databases directly from SQL source control, Consolidate multiple SQL scripts, Build databases from scripts, source control, etc, Ensure error free deployments, Preview the script impact by action or SQL object, Execute scripts on saved list of servers/databases
+Run scripts on multiple databases at once
+ - Create C# executables / .NET deployment packages
+ - Deploy databases directly from SQL source control
+ - Consolidate multiple SQL scripts
+ - Build databases from scripts
+ - source control
+ - etc
+ - Ensure error free deployments
+ - Preview the script impact by action or SQL object
+ - Execute scripts on saved list of servers/databases
 
 
 ## ApexSQL Clean <a id="apexsql-clean"></a>
@@ -854,7 +970,14 @@ Release date: 2015-09-04<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-View and analyze SQL and client code dependencies, Perform impact analysis on potential changes, Remove unwanted objects risk free, Map dependencies down to the column level, Analyze external databases for dependencies, View object dependencies graphically, Design the appearance of the dependency diagram, Create and export reports from object dependencies
+ - View and analyze SQL and client code dependencies
+ - Perform impact analysis on potential changes
+ - Remove unwanted objects risk free
+ - Map dependencies down to the column level
+ - Analyze external databases for dependencies
+ - View object dependencies graphically
+ - Design the appearance of the dependency diagram
+ - Create and export reports from object dependencies
 
 
 ## ApexSQL Data Diff <a id="apexsql-data-diff"></a>
@@ -863,7 +986,17 @@ Release date: 2015-12-11<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Compare data in live databases and backups, Perform row level recovery without restoring, Community, Standard, and Professional editions, Compare huge databases quickly and without errors, Automate and schedule data migrations, Initiate database compares directly from SSMS, Export results to HTML, XML and Excel, Create executable .NET packages
+Compare data in live databases and backups
+ - Perform row level recovery without restoring
+ - Community
+ - Standard
+ - and Professional editions
+ - Compare huge databases quickly and without errors
+ - Automate and schedule data migrations
+ - Initiate database compares directly from SSMS
+ - Export results to HTML
+ - XML and Excel
+ - Create executable .NET packages
 
 
 ## ApexSQL Diff <a id="apexsql-diff"></a>
@@ -872,7 +1005,13 @@ Release date: 2016-03-23<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Compare live DBs, backups, scripts and SC projects, Deploy a database directly from source control, Community, Standard, and Professional editions, Integrate with all popular SC systems e.g. Git, SVN, Automate and schedule database synchronizations, Initiate database compares directly from SSMS, Report results to HTML, XML and Excel, Create executable .NET packages
+ - Compare live DBs, backups, scripts and SC projects
+ - Deploy a database directly from source control
+ - Integrate with all popular SC systems e.g. Git, SVN
+ - Automate and schedule database synchronizations
+ - Initiate database compares directly from SSMS
+ - Report results to HTML, XML and Excel
+ - Create executable .NET packages
 
 
 ## ApexSQL Doc <a id="apexsql-doc"></a>
@@ -881,7 +1020,14 @@ Release date: 2015-04-19<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Document SQL Server databases and SSIS packages, Generate documentation in CHM, HTML, Word, and PDF, Automate and schedule the documenting process, Display graphical relationship diagrams, Document SSAS Multidimensional and Tabular models, Document SSIS Control flow and Data flow diagrams, Fully customize the documentation output, Include Data model diagrams
+Document SQL Server databases and SSIS packages
+ - Generate documentation in CHM, HTML, Word and PDF
+ - Automate and schedule the documenting process
+ - Display graphical relationship diagrams
+ - Document SSAS Multidimensional and Tabular models
+ - Document SSIS Control flow and Data flow diagrams
+ - Fully customize the documentation output
+ - Include Data model diagrams
 
 
 ## ApexSQL Generate <a id="apexsql-generate"></a>
@@ -890,7 +1036,14 @@ Release date: 2016-03-15<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Generate SQL test data for specified tables, Export test data to SQL, XML, CSV, JSON, Excel, Generate millions of rows quickly, Customize test data plan with detailed options, Support a full range of SQL data types, Choose from multiple generators (Random, List, etc), Retain data consistency with foreign key support, Emulate real-world test data
+ - Generate SQL test data for specified tables
+ - Export test data to SQL, XML, CSV, JSON, Excel
+ - Generate millions of rows quickly
+ - Customize test data plan with detailed options
+ - Support a full range of SQL data types
+ - Choose from multiple generators (Random List etc)
+ - Retain data consistency with foreign key support
+ - Emulate real-world test data
 
 
 ## ApexSQL Script <a id="apexsql-script"></a>
@@ -899,7 +1052,14 @@ Release date: 2015-09-11<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Script both SQL database objects and data, Create executable .NET packages, Script objects directly to Source Control, Automate SQL database scripting and migrations, Integrate with popular source control systems, Script an entire server down to individual columns, Save customized scripting profiles as projects, Easily decrypt some/all encrypted database objects
+ - Script both SQL database objects and data
+ - Create executable .NET packages
+ - Script objects directly to Source Control
+ - Automate SQL database scripting and migrations
+ - Integrate with popular source control systems
+ - Script an entire server down to individual columns
+ - Save customized scripting profiles as projects
+ - Easily decrypt some/all encrypted database objects
 
 
 ## ApexSQL Trigger <a id="apexsql-trigger"></a>
@@ -908,7 +1068,14 @@ Release date: 2015-09-04<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: No
 
-Track data / DML changes in SQL Server databases, Integrate royalty free auditing into your apps, Translate data into information with lookups, Create reports and exports from audited data, Customize trigger templates with a built-in IDE, Add additional data to audit trail with watches, Track schema / DDL changes in audited database, Audit who, what, and when for all changes
+ - Track data / DML changes in SQL Server databases
+ - Integrate royalty free auditing into your apps
+ - Translate data into information with lookups
+ - Create reports and exports from audited data
+ - Customize trigger templates with a built-in IDE
+ - Add additional data to audit trail with watches
+ - Track schema / DDL changes in audited database
+ - Audit who, what, and when for all changes
 
 
 [GraphView]:https://github.com/Microsoft/GraphView
