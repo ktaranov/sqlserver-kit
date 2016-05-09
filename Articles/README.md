@@ -7,55 +7,27 @@
  - [SQL Server 2012 Security Best Practices - Microsoft](http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx)
 
 
-## Help, my database is corrupt. Now what?
-Author: Gail Shaw<br />
-Modified date: 2010-04-23<br />
-Source link: http://www.sqlservercentral.com/articles/Corruption/65804/
+| Title                                                              | Author            | Modified Date |
+|--------------------------------------------------------------------|-------------------|---------------|
+| [Help, my database is corrupt. Now what?]                          | Gail Shaw         | 2010-04-23    |
+| [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables] | Paul Randal       | 2016-04-06    |
+| [The Curse and Blessings of Dynamic SQL]                           | Erland Sommarskog | 2015-04-14    |
+| [Dynamic Search Conditions in T-SQL]                               | Erland Sommarskog | 2015-11-15    |
+| [Slow in the Application, Fast in SSMS]                            | Erland Sommarskog | 2013-08-30    |
+| [How to share data between stored procedures]                      | Erland Sommarskog | 2013-11-02    |
+| [Arrays and Lists in SQL Server 2008]                              | Erland Sommarskog | 2012-07-01    |
+| [Giving Permissions through Stored Procedures]                     | Erland Sommarskog | 2011-12-31    |
+| [Error and Transaction Handling in SQL Server]                     | Erland Sommarskog | 2015-05-03    |
+| [SQL Server Columnstore Articles]                                  | Niko Neugebauer   | 2016-05-09    |
 
 
-## Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables
-Author: Paul Randal<br />
-Modified date: 2016-04-06<br />
-Source link: http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
-
-
-## [The Curse and Blessings of Dynamic SQL](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/The%20Curse%20and%20Blessings%20of%20Dynamic%20SQL.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2015-04-14<br />
-Source link: http://www.sommarskog.se/dynamic_sql.html
-
-
-## [Dynamic Search Conditions  in T-SQL](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Dynamic%20Search%20Conditions%20in%20T-SQL.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2015-11-15<br />
-Source link: http://sommarskog.se/dyn-search.html
-
-
-## [Slow in the Application, Fast in SSMS](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Slow%20in%20the%20Application%2C%20Fast%20in%20SSMS.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2013-08-30<br />
-Source link: http://www.sommarskog.se/query-plan-mysteries.html
-
-
-## [How to share data between stored procedures](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/How%20to%20share%20data%20between%20stored%20procedures.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2013-11-02<br />
-Source link: http://www.sommarskog.se/share_data.html
-
-
-## [Arrays and Lists in SQL Server 2008](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Arrays%20and%20Lists%20in%20SQL%20Server%202008.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2012-07-01<br />
-Source link: http://www.sommarskog.se/arrays-in-sql-2008.html
-
-
-## [Giving Permissions through Stored Procedures](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Giving%20Permissions%20through%20Stored%20Procedures.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2011-12-31<br />
-Source link: http://www.sommarskog.se/grantperm.html
-
-
-## [Error and Transaction Handling in SQL Server](http://htmlpreview.github.io/?https://github.com/ktaranov/sqlserver-kit/blob/master/Articles/Error%20and%20Transaction%20Handling%20in%20SQL%20Server.htm)
-Author: Erland Sommarskog<br />
-Modified date: 2015-05-03<br />
-Source link: http://www.sommarskog.se/error_handling/Part1.html
+[Help, my database is corrupt. Now what?]:http://www.sqlservercentral.com/articles/Corruption/65804/
+[Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]:http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
+[The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dyn-search.html
+[Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dynamic_sql.html
+[Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
+[How to share data between stored procedures]:http://www.sommarskog.se/share_data.html
+[Arrays and Lists in SQL Server 2008]:http://www.sommarskog.se/arrays-in-sql-2008.html
+[Giving Permissions through Stored Procedures]:http://www.sommarskog.se/grantperm.html
+[Error and Transaction Handling in SQL Server]:http://www.sommarskog.se/error_handling/Part1.html
+[SQL Server Columnstore Articles]:http://www.nikoport.com/columnstore/
