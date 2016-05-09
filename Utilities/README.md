@@ -88,7 +88,6 @@ Useful link:
 | [ApexSQL Generate](#apexsql-generate)                                 | [ApexSQL Generate]                   | 2016-03-15   | Apex              | No           | Yes/$499    |
 | [ApexSQL Script](#apexsql-script)                                     | [ApexSQL Script]                     | 2015-09-11   | Apex              | No           | Yes/$249    |
 | [ApexSQL Trigger](#apexsql-trigger)                                   | [ApexSQL Trigger]                    | 2015-09-04   | Apex              | No           | Yes/$1999   |
-| [ApexSQL Source Control](#apexsql-source-control)                     | [ApexSQL Source Control]             | 2015-04-27   | Apex              | No           | Yes/$299    |
 
 
 ## GraphView <a id="graphview"></a>
@@ -912,15 +911,6 @@ Free version: No
 Track data / DML changes in SQL Server databases, Integrate royalty free auditing into your apps, Translate data into information with lookups, Create reports and exports from audited data, Customize trigger templates with a built-in IDE, Add additional data to audit trail with watches, Track schema / DDL changes in audited database, Audit who, what, and when for all changes
 
 
-## ApexSQL Source Control <a id="apexsql-source-control"></a>
-Download page: [ApexSQL Source Control]<br/>
-Release date: 2015-04-27<br/>
-Support Version: 2008/2012/2014<br/>
-Free version: No
-
-Integrate SQL source control directly into SSMS, Use dedicated or shared development models, View conflicts and resolve directly in the UI, View a detailed history of changes, Lock objects to prevent overwrites, Set team policies for check outs and locks, Apply changes with dependency aware scripts, Create and apply label from source control
-
-
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
@@ -999,4 +989,3 @@ Integrate SQL source control directly into SSMS, Use dedicated or shared develop
 [ApexSQL Generate]:https://www.apexsql.com/sql_tools_generate.aspx
 [ApexSQL Script]:https://www.apexsql.com/sql_tools_script.aspx
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
-[ApexSQL Source Control]:https://www.apexsql.com/sql_tools_source_control.aspx

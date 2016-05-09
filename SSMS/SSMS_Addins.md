@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful add-in for SQL Server Management Studio
+Complete list of useful and must have add-ins for SQL Server Management Studio
 
 
 | Name                                                  | Download page              | Release Date | Support Version       | Developer           | Free version | Paid/Price    |
@@ -14,9 +14,10 @@ Complete list of useful add-in for SQL Server Management Studio
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer] | 2015-09-01   | 2008/2012/2014        | SQL Sentry          | Yes          | Yes/$295.00   |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]  | 2013-02-15   | 2008/2012/2014        | Dave ballantyne     | Yes          | No            |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                 | 2014-05-18   | 2008/2008R2/2012/2014 | Jakub Dvorak        | No           | Yes/€50       |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]         | 2015-09-04   | 2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]         | 2015-12-11   | 2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]         | 2016-04-01   | 2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]         | 2016-02-11   | 2008/2012/2014/2016   | ApexSQL tools       | Yes          | No            |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]           | 2015-09-04   | 2008/2012/2014        | ApexSQL tools       | Yes          | No            |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]   | 2015-04-27   | 2008/2008R2/2012/2014 | Apex                | No           | Yes/$299      |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]      | 2016-02-04   | 2008R2/2012/2014      | Spotlight Essentials| Yes          | No            |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]   | 2015-12-22   | 2008/2008R2/2012/2014 | Devart              | No           | Yes/$249.95   |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]        | 2015-12-04   | 2008/2008R2/2012/2014 | Devart              | No           | Yes/$199.95   |
@@ -129,7 +130,8 @@ Release date: 2015-09-01<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: Yes
 
-With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient. It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database. 
+With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS) to make query plan optimization more efficient.
+It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
 
 
 ## TSQL Code Smells Finder <a id="tsql-code-smells-finder"></a>
@@ -138,7 +140,8 @@ Release date: 2013-02-15<br/>
 Support Version: 2008/2012/2014<br/>
 Free version: Yes
 
-TSQL Code can smell, it may work just fine but there can be hidden dangers held within. This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
+TSQL Code can smell, it may work just fine but there can be hidden dangers held within.
+This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
 
 
 ## SQLTreeo <a id="sqltreeo"></a>
@@ -147,7 +150,8 @@ Release date: 2014-05-18<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables. You can organize your SQL objects in logical modules which are aligned with your project structure and forget of having hundreds of them within one Management Studio node.
+SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables.
+You can organize your SQL objects in logical modules which are aligned with your project structure and forget of having hundreds of them within one Management Studio node.
 
 
 ## ApexSQL Complete <a id="apexsql-complete"></a>
@@ -199,6 +203,22 @@ With ApexSQL Search you can:
  - Rename SQL objects safely
 
 
+## ApexSQL Source Control <a id="apexsql-source-control"></a>
+Download page: [ApexSQL Source Control]<br/>
+Release date: 2015-04-27<br/>
+Support Version: 2008/2012/2014<br/>
+Free version: No
+
+ - Integrate SQL source control directly into SSMS
+ - Use dedicated or shared development models
+ - View conflicts and resolve directly in the UI
+ - View a detailed history of changes
+ - Lock objects to prevent overwrites
+ - Set team policies for check outs and locks
+ - Apply changes with dependency aware scripts
+ - Create and apply label from source control
+
+
 ## Spotlight Developer <a id="spotlight-developer"></a>
 Download page: [Spotlight Developer]<br/>
 Release date: 2016-02-14<br/>
@@ -206,8 +226,11 @@ Support Version: 2008/2008R2/2012/2014<br/>
 Free version: Yes
 
 Users of SQL Server Management Studio can monitor all their connections via a heatmap, alarms list and realtime diagnostics for FREE.
-Once installed and configured, users can monitor their connections immediately. The powerful monitoring features communicate important information regarding the status of connections. Severity is color coded so it’s easy to see at a glance what needs your attention.
-It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagnostic Server. This makes it possible for you to take advantage of data collections for all your connections in Spotlight on SQL Server. 
+Once installed and configured, users can monitor their connections immediately.
+The powerful monitoring features communicate important information regarding the status of connections.
+Severity is color coded so it’s easy to see at a glance what needs your attention.
+It is easy to connect Spotlight Developer to your Spotlight on SQL Server Diagnostic Server.
+This makes it possible for you to take advantage of data collections for all your connections in Spotlight on SQL Server. 
 You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
 
 
@@ -217,7 +240,8 @@ Release date: 2015-12-22<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL Server database changes in source control. The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
+dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL Server database changes in source control.
+The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
 
 
 ## dbForge Unit Test <a id="dbforge-unit-test"></a>
@@ -226,7 +250,9 @@ Release date: 2015-12-04<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-An intuitive and convenient GUI for implementing automated unit testing in SQL Server Management Studio. The tool is based on the open-source tSQLt framework, so SQL developers can now benefit from writing unit tests in regular T-SQL. dbForge Unit Test for SQL Server functionality allows you to develop stable and reliable code that can be properly regression tested at the unit level.
+An intuitive and convenient GUI for implementing automated unit testing in SQL Server Management Studio.
+The tool is based on the open-source tSQLt framework, so SQL developers can now benefit from writing unit tests in regular T-SQL.
+dbForge Unit Test for SQL Server functionality allows you to develop stable and reliable code that can be properly regression tested at the unit level.
 
 
 ## dbForge Data Pump <a id="dbforge-data-pump"></a>
@@ -235,7 +261,8 @@ Release date: 2015-12-04<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems. The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
+dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems.
+The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
 
 
 ## dbForge Index Manager <a id="dbforge-index-manager"></a>
@@ -245,7 +272,9 @@ Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
 dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the status of SQL indexes and fixing issues with index fragmentation. 
-The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance. You can instantly rebuild and reorganize SQL indexes in visual mode or generate SQL script for the future use. dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort!
+The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance.
+You can instantly rebuild and reorganize SQL indexes in visual mode or generate SQL script for the future use.
+dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort.
 
 
 ## dbForge Object Search <a id="dbforge-object-search"></a>
@@ -255,7 +284,8 @@ Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: Yes
 
 dbForge Object Search for SQL Server is a FREE add-in for SQL Server Management Studio that allows you to search SQL objects and data in your databases.
-It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects. With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
+It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects.
+With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
 
 
 ## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
@@ -264,7 +294,8 @@ Release date: 2015-09-16<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Free version: No
 
-dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names, column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
+dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names,
+column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
 
 
 ## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
@@ -297,3 +328,4 @@ SQL Assistant equips database developers and DBAs with the productivity tools th
 [dbForge Index Manager]:https://www.devart.com/dbforge/sql/index-manager/
 [dbForge Object Search]:https://www.devart.com/dbforge/sql/search/
 [SoftTree SQL Assistant]:http://www.softtreetech.com/isql.htm
+[ApexSQL Source Control]:https://www.apexsql.com/sql_tools_source_control.aspx
