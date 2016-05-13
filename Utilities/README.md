@@ -33,9 +33,14 @@ Useful link:
 | [SQL Server 2000 Best Practices Analyzer](#bpa-2000)                  | [BPA 2000]                           | 2010-04-26   | Microsoft         | Yes          | No          |
 | [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | [BPA 2008]                           | 2010-06-18   | Microsoft         | Yes          | No          |
 | [SQL Server 2012 Best Practices Analyzer](#bpa-2012)                  | [BPA 2012]                           | 2012-06-04   | Microsoft         | Yes          | No          |
-| [DLM Dashboard](#dlm-dashboard)                                       | [DLM Dashboard]                      | 2015-12-16   | Red Gate          | Yes          | No          |
-| [SQL DBA Bundle](#sql-dba-bundle)                                     | [SQL DBA Bundle]                     | 2015-12-16   | Red Gate          | No           | Yes/$2640   |
-| [ReadyRoll](#readyroll)                                               | [ReadyRoll]                          | 2016-01-03   | Red Gate          | No           | Yes/$345    |
+| [DLM Dashboard](#dlm-dashboard)                                       | [DLM Dashboard]                      | 2016-04-27   | Red Gate          | Yes          | No          |
+| [Red Gate SQL Compare](#red-gate-sql-compare)                         | [Red Gate SQL Compare]               | 2016-05-09   | Red Gate          | No           | $495        |
+| [Red Gate SQL Data Compare](#red-gate-sql-data-compare)               | [Red Gate SQL Data Compare]          | 2016-05-09   | Red Gate          | No           | $495        |
+| [Red Gate SQL Source Control](#red-gate-sql-source-control)           | [Red Gate SQL Source Control]        | 2016-02-03   | Red Gate          | No           | $495        |
+| [Red Gate SQL Prompt](#red-gate-sql-prompt)                           | [Red Gate SQL Prompt]                | 2016-04-28   | Red Gate          | No           | $369        |
+| [Red Gate SQL Monitor](#red-gate-sql-monitor)                         | [Red Gate SQL Monitor]               | 2015-10-15   | Red Gate          | No           | $1495       |
+| [Red Gate SQL Backup Pro](#red-gate-sql-backup-pro)                   | [Red Gate SQL Backup Pro]            | 2014-07-08   | Red Gate          | No           | $995       |
+| [ReadyRoll](#readyroll)                                               | [ReadyRoll]                          | 2016-01-03   | Red Gate          | No           | $345        |
 | [SQL XEvent Profiler](#sql-xevent-profiler)                           | [SQL XEvent Profiler]                | 2014-03-14   | Idera             | Yes          | No          |
 | [SQL Check](#sql-check)                                               | [SQL Check]                          | 2015-09-24   | Idera             | Yes          | No          |
 | [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | [SQL Fragmentation Analyzer]         | 2015-06-24   | Idera             | Yes          | No          |
@@ -374,28 +379,83 @@ The Microsoft SQL Server 2012 BPA is a diagnostic tool that performs the followi
 
 
 ## DLM Dashboard <a id="dlm-dashboard"></a>
-DLM Dashboard tracks your database schemas and alerts you when they change.<br />
-As a SQL Server user, you want to make sure all your databases are in the right state.<br />
+Download page: [DLM Dashboard]<br/>
+Release date: 2016-04-27<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: Yes
+Price: No
+
+DLM Dashboard tracks your database schemas and alerts you when they change.
 DLM Dashboard monitors up to 50 of your databases, and sends you an email alert as soon as your databases start to drift,<br />
 or change from their expected state. On the web dashboard, you can see exactly what changed, who made the changes, and when.
 
 
-## SQL DBA Bundle <a id="sql-dba-bundle"></a>
-Red Gate 7 products for DBA:
- - SQL Backup Pro: Compress, securely encrypt, and strengthen your backups
- - SQL Monitor: Monitor your SQL Server performance and be alerted to problems
- - SQL Multi Script Unlimited: Deploy multiple scripts to multiple servers with just one click
- - SQL Compare: Compare and synchronize database schemas
- - SQL Data Compare: Compare and synchronize database contents
- - SQL Prompt: Write, format, and refactor SQL effortlessly
- - SQL Doc: Automatically generate database documentation
+## Red Gate SQL Compare <a id="red-gate-sql-compare"></a>
+Download page: [Red Gate SQL Compare]<br/>
+Release date: 2016-05-09<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $495
+
+Compares and synchronizes SQL Server database schemas
+
+
+## Red Gate SQL Data Compare <a id="red-gate-sql-data-compare"></a>
+Download page: [Red Gate SQL Data Compare]<br/>
+Release date: 2016-05-09<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $495
+
+SQL Data Compare is the industry-standard tool for comparing and deploying SQL Server database contents
+
+
+## Red Gate SQL Source Control <a id="red-gate-sql-source-control"></a>
+Download page: [Red Gate SQL Source Control]<br/>
+Release date: 2016-02-03<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $495
+
+Connect your databases to your source control system
+
+
+## Red Gate SQL Prompt <a id="red-gate-sql-prompt"></a>
+Download page: [Red Gate SQL Prompt]<br/>
+Release date: 2016-04-28<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $369
+
+Write, format and refactor SQL effortlessly
+
+
+## Red Gate SQL Monitor <a id="red-gate-sql-monitor"></a>
+Download page: [Red Gate SQL Monitor]<br/>
+Release date: 2015-10-15<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $1495
+
+Real-time SQL Server performance monitoring, with alerts and diagnostics
+
+
+## Red Gate SQL Backup Pro <a id="red-gate-sql-backup-pro"></a>
+Download page: [Red Gate SQL Backup Pro]<br/>
+Release date: 2014-07-08<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Free version: No
+Price: $995
+
+Compress, verify, and encrypt SQL Server backups
 
 
 ## ReadyRoll <a id="readyroll"></a>
 Download page: [ReadyRoll]<br/>
 Release date: 2016-03-01<br/>
 Support Version: 2012/2014<br/>
-Free version: No/$345
+Free version: No
+Price: $345
 
 It generates numerically ordered SQL migration scripts that sit inside your project and take your schema from one version to the next.
 You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
@@ -1095,7 +1155,12 @@ Free version: No
 [sqlservr Application]:https://msdn.microsoft.com/en-us/library/ms162819.aspx
 [SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
-[SQL DBA Bundle]:http://www.red-gate.com/products/dba/dba-bundle/
+[Red Gate SQL Compare]:http://www.red-gate.com/products/sql-development/sql-compare/
+[Red Gate SQL Data Compare]:http://www.red-gate.com/products/sql-development/sql-data-compare/
+[Red Gate SQL Source Control]:http://www.red-gate.com/products/sql-development/sql-source-control/
+[Red Gate SQL Prompt]:http://www.red-gate.com/products/sql-development/sql-prompt/
+[Red Gate SQL Monitor]:http://www.red-gate.com/products/dba/sql-monitor/
+[Red Gate SQL Backup Pro]:http://www.red-gate.com/products/dba/sql-backup/
 [ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
 [SQL Check]: https://www.idera.com/productssolutions/freetools/sqlcheck
 [SQL Fragmentation Analyzer]: https://www.idera.com/productssolutions/freetools/sqlfragmentationanalyzer/overview
