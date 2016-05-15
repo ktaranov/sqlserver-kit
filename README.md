@@ -33,27 +33,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addons](/SSMS/SSMS_Addins.md)
-       - [SSMSBoost add-in](/SSMS/SSMS_Addins.md#ssmsboost 'Adds missing features and improves your productivity')
-       - [SQL Code Guard](/SSMS/SSMS_Addins.md#sql-code-guard 'Provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies')
-       - [SQL Search](/SSMS/SSMS_Addins.md#sql-search 'Free add-in from Red Gate that lets you quickly search for SQL across your databases')
-       - [SQL Scripts Manager](/SSMS/SSMS_Addins.md#sql-scripts-manager 'Powerful and reliable scripts written by SQL Server experts')
-       - [Supratimas](/SSMS/SSMS_Addins.md#supratimas 'SQL Server query execution visualizer')
-       - [dbForge SQL Complete](/SSMS/SSMS_Addins.md#dbforge-sql-complete)
-       - [SSMS Tools Pack](/SSMS/SSMS_Addins.md#ssms-tools-pack)
-       - [SQL Pretty Printer](/SSMS/SSMS_Addins.md#sql-pretty-printer)
-       - [SQL Sentry Plan Explorer](/SSMS/SSMS_Addins.md#sql-sentry-plan-explorer)
-       - [TSQL Code Smells Finder](/SSMS/SSMS_Addins.md#tsql-code-smells-finder)
-       - [SQLTreeo](/SSMS/SSMS_Addins.md#sqltreeo)
-       - [ApexSQL Complete](/SSMS/SSMS_Addins.md#apexsql-complete)
-       - [ApexSQL Refactor](/SSMS/SSMS_Addins.md#apexsql-refactor)
-       - [ApexSQL Search](/SSMS/SSMS_Addins.md#apexsql-search)
-       - [Spotlight Developer](/SSMS/SSMS_Addins.md#spotlight-developer)
-       - [dbForge Source Control](/SSMS/SSMS_Addins.md#dbforge-source-control)
-       - [dbForge Unit Test](/SSMS/SSMS_Addins.md#dbforge-unit-test)
-       - [dbForge Data Pump](/SSMS/SSMS_Addins.md#dbforge-data-pump)
-       - [dbForge Index Manager](/SSMS/SSMS_Addins.md#dbforge-index-manager)
-       - [dbForge Object Search](/SSMS/SSMS_Addins.md#dbforge-object-search)
+    - [SSMS addons](/SSMS/SSMS_Addins.md) (28 useful free and paid SSMS Addins)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
@@ -84,62 +64,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities)
-    - [GraphView](/Utilities#graphview) (Microsoft)
-    - [tablediff Utility](/Utilities#tablediff-utility) (Microsoft)
-    - [Microsoft Log Parser](/Utilities#microsoft-log-parser) (Microsoft)
-    - [Diskspd](/Utilities#diskspd) (Microsoft)
-    - [HammerDB](/Utilities#hammerdb) (Open Source)
-    - [dta Utility](/Utilities#dta-utility) (Microsoft)
-    - [osql Utility](/Utilities#osql-utility) (Microsoft)
-    - [sqldiag Utility](/Utilities#sqldiag-utility) (Microsoft)
-    - [sqldumper Utility](/Utilities#sqldumper-utility) (Microsoft)
-    - [SqlLocalDB Utility](/Utilities#sqllocaldb-utility) (Microsoft)
-    - [sqllogship Utility](/Utilities#sqllogship-utility) (Microsoft)
-    - [sqlservr Application](/Utilities#sqlservr-application) (Microsoft)
-    - [sqlps Utility](/Utilities#sqlps-utility) (Microsoft)
-    - [sqlmaint Utility](/Utilities#sqlmaint-utility) (Microsoft)
-    - [Ssms Utility](/Utilities#ssms-utility) (Microsoft)
-    - [dtexec Utility](/Utilities#dtexec-utility) (Microsoft)
-    - [SQL Server 2000 Best Practices Analyzer](/Utilities#bpa-2000) (Microsoft)
-    - [SQL Server 2005 Best Practices Analyzer](/Utilities#bpa-2005) (Microsoft)
-    - [SQL Server 2008 R2 Best Practices Analyzer](/Utilities#bpa-2008) (Microsoft)
-    - [SQL Server 2012 Best Practices Analyzer](/Utilities#bpa-2012) (Microsoft)
-    - [DLM Dashboard](/Utilities#dlm-dashboard) (Red Gate)
-    - [SQL DBA Bundle](/Utilities#sql-dba-bundle) (Red Gate)
-    - [ReadyRoll](/Utilities#readyroll) (Red Gate)
-    - [SQL XEvent Profiler](/Utilities#sql-xevent-profiler) (Idera)
-    - [SQL Check](/Utilities#sql-check) (Idera)
-    - [SQL Fragmentation Analyzer](/Utilities#sql-fragmentation-analyzer) (Idera)
-    - [SQL Heat Map](/Utilities#sql-heat-map) (Idera)
-    - [SQL Hekaton Memory Check](/Utilities#sql-hekaton-memory-check) (Idera)
-    - [SQL Page Viewer](/Utilities#sql-page-viewer) (Idera)
-    - [SQL Update Statistics](/Utilities#sql-update-statistics) (Idera)
-    - [SQL Statistics Aggregator](/Utilities#sql-statistics-aggregator) (Idera)
-    - [SQL Backup Status Reporter](/Utilities#sql-backup-status-reporter) (Idera)
-    - [SQL Integrity Check](/Utilities#sql-integrity-check) (Idera)
-    - [SQL Job Manager](/Utilities#sql-job-manager) (Idera)
-    - [Azure SQL Database Backup](/Utilities#azure-sql-database-backup) (Idera)
-    - [SQL Column Search](/Utilities#sql-column-search) (Idera)
-    - [SQL Permissions Extractor](/Utilities#sql-permissions-extractor) (Idera)
-    - [dbForge Schema Compare](/Utilities#dbforge-schema-compare) (Devart)
-    - [dbForge Data Compare](/Utilities#dbforge-data-compare) (Devart)
-    - [dbForge Data Generator](/Utilities#dbforge-data-generator) (Devart)
-    - [dbForge Query Builder](/Utilities#dbforge-query-builder) (Devart)
-    - [dbForge Event Profiler](/Utilities#dbforge-event-profiler) (Devart)
-    - [dbForge SQL Decryptor](/Utilities#dbforge-SQL-decryptor) (Devart)
-    - [Minion Enterprise](/Utilities#minion-enterprise) (MinionWare)
-    - [SQL Server Compression Estimator](/Utilities#sql-server-compression-estimator) (Bob Tavlor)
-    - [ClearTrace](/Utilities#cleartrace) (Bill Graziano)
-    - [SQLSentry Fragmentation Manager](/Utilities#sqlsentry-fragmentation-manager) (SQLSentry)
-    - [SQLSentry Plan Explorer](/Utilities#sqlsentry-plan-explorer) (SQLSentry)
-    - [SQLSentry Event Manager](/Utilities#sqlsentry-event-manager) (SQLSentry)
-    - [SQLSentry Performance Advisor](/Utilities#sqlsentry-performance-advisor) (SQLSentry)
-    - [Dell Security Explorer](/Utilities#dell-security-explorer) (Dell)
-    - [Dell LiteSpeed for SQL Server](/Utilities#dell-litespeed-for-sql-server) (Dell)
-    - [Dell Toad for SQL Server](/Utilities#dell-toad-for-sql-server) (Dell)
-    - [Dell Spotlight on SQL Server Enterprise](/Utilities#dell-spotlight) (Dell)
-    - [Dell Foglight](/Utilities#dell-foglight) (Dell)
+ - [Utilities](/Utilities) (complete list of 90 SQL Server Utilities and Tools)
 
 
 ## SQL Server Web Resources
@@ -168,6 +93,7 @@ Headers:
     - [SQL Server Database Engine Blog](https://blogs.msdn.microsoft.com/sqlserverstorageengine/)
     - [SQL Server BI Blog](https://sqlserverbiblog.wordpress.com/)
     - [Andy Yun SQLBeck Blog](https://sqlbek.wordpress.com/)
+    - [Curated SQL](http://curatedsql.com/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -287,6 +213,7 @@ Here's just SQL Server 2008 Management Studio:
  - [PowerShell SQLPass articles and video](http://powershell.sqlpass.org/default.aspx)
  - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
  - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
+ - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
 
 
 ## TSQL format code
@@ -311,7 +238,7 @@ Here's just SQL Server 2008 Management Studio:
  - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
 
 
-## Free SQL Server ebooks
+## Free SQL Server and R ebooks
  - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
@@ -321,9 +248,12 @@ Here's just SQL Server 2008 Management Studio:
  - [E-books Directory](http://www.e-booksdirectory.com/listing.php?category=569)
  - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
+ - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
+ - [Effective Graphs with Microsoft R Open](http://blog.revolutionanalytics.com/2016/05/e-book-effective-graphs.html)
 
 
 ## License
 [MIT](/LICENSE.md)
 
-If some procedures or scripts are restricted due to **ELUA** (or we can't find original author), please email or add issue - we remove/update it immediately. Thanks for understanding and patience.
+If some procedures or scripts are restricted due to **ELUA** (or we can't find original author), please email or add issue - we remove/update it immediately.
+Thanks for understanding and patience.

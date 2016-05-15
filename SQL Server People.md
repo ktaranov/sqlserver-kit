@@ -25,7 +25,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Sean Smith          | [Sean Scripts]             | NULL      | NULL              | NULL                              | -   | -                |
 | Richie Rump         | [Richie Blog]              | NULL      | [@Jorriss]        | NULL                              | -   | -                |
 | Tara Kizer          | [Tara Articles]            | NULL      | [@TaraKizer]      | NULL                              | 9   | [Kizer MVP]      |
-| Paul S. Randal      | [Paul Articles]            | NULL      | [@PaulRandal]     | NULL                              | 8   | [Randal MVP]     |
+| Paul S. Randal      | [Paul Articles]            | NULL      | [@PaulRandal]     | paul@sqlskills.com                | 8   | [Randal MVP]     |
 | Klaus Aschenbrenner | [Klaus Blog]               | NULL      | [@Aschenbrenner]  | klaus.aschenbrenner@sqlpassion.at | -   | -                |
 | Grant Fritchey      | [Grant Blog]               | NULL      | [@GFritchey]      | NULL                              | 7   | [Fritchey MVP]   |
 | Kendal Van Dyke     | [KendaL Blog]              | NULL      | [@SQLDBA]         | NULL                              | -   | -                |
