@@ -44,8 +44,8 @@ Useful free and paid Microsoft SQL Server utilities
 | [ReadyRoll](#readyroll)                                               | [ReadyRoll]                          | 2016-01-03   | Red Gate          | No           |  $345 |
 | [SQL XEvent Profiler](#sql-xevent-profiler)                           | [SQL XEvent Profiler]                | 2014-03-14   | Idera             | Yes          | No    |
 | [SQL Check](#sql-check)                                               | [SQL Check]                          | 2015-09-24   | Idera             | Yes          | No    |
-| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | [SQL Fragmentation Analyzer]         | 2015-06-24   | Idera             | Yes          | No    |
-| [SQL Heat Map](#sql-heat-map)                                         | [SQL Heat Map]                       | 2015-12-07   | Idera             | Yes          | No    |
+| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | [SQL Fragmentation Analyzer]         | 2012-11-16   | Idera             | Yes          | No    |
+| [SQL Heat Map](#sql-heat-map)                                         | [SQL Heat Map]                       | 2016-01-27   | Idera             | Yes          | No    |
 | [SQL Hekaton Memory Check](#sql-hekaton-memory-check)                 | [SQL Hekaton Memory Check]           | 2015-06-10   | Idera             | Yes          | No    |
 | [SQL Page Viewer](#sql-page-viewer)                                   | [SQL Page Viewer]                    | 2014-08-25   | Idera             | Yes          | No    |
 | [SQL Update Statistics](#sql-update-statistics)                       | [SQL Update Statistics]              | 2015-12-14   | Idera             | Yes          | No    |
@@ -56,6 +56,8 @@ Useful free and paid Microsoft SQL Server utilities
 | [Azure SQL Database Backup](#azure-sql-database-backup)               | [Azure SQL Database Backup]          | 2012-10-02   | Idera             | Yes          | No    |
 | [SQL Column Search](#sql-column-search)                               | [SQL Column Search]                  | 2015-11-17   | Idera             | Yes          | No    |
 | [SQL Permissions Extractor](#sql-permissions-extractor)               | [SQL Permissions Extractor]          | 2015-08-07   | Idera             | Yes          | No    |
+| [SQL BI Check](#sql-bi-check)                                         | [SQL BI Check]                       | 2016-04-13   | Idera             | Yes          | No    |
+| [SQL Inventory Check](#sql-inventory-check)                           | [SQL Inventory Check]                | 2016-03-24   | Idera             | Yes          | No    |
 | [dbForge Schema Compare](#dbforge-schema-compare)                     | [dbForge Schema Compare]             | 2015-12-22   | Devart            | No           |  $149 |
 | [dbForge Data Compare](#dbforge-data-compare)                         | [dbForge Data Compare]               | 2015-11-30   | Devart            | No           |  $149 |
 | [dbForge Data Generator](#dbforge-data-generator)                     | [dbForge Data Generator]             | 2015-12-30   | Devart            | No           |  $249 |
@@ -592,53 +594,50 @@ Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
- - check out what happens in batches, compilations, recompilations, and transactions throughout the SQL Server environment
- - monitor some of the most important metrics in SQL Server including wait stats, reads, writes, session details, and cache hits
- - see SQL operations as they occur for the latest information; consider it a heart rate monitor for your SQL Server environment
- - install easily without agents
+ - Check out what happens in batches, compilations, recompilations, and transactions throughout the SQL Server environment
+ - Monitor some of the most important metrics in SQL Server including wait stats, reads, writes, session details, and cache hits
+ - See SQL operations as they occur for the latest information; consider it a heart rate monitor for your SQL Server environment
+ - Install easily without agents
 
 
 ## SQL Fragmentation Analyzer <a id="sql-fragmentation-analyzer"></a>
 Download page: [SQL Fragmentation Analyzer]<br/>
-Release date: 2015-06-24<br/>
+Release date: 2012-11-16<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Fragmentation Analyzer you can:
- - analyze fragmentation by one table or an entire database
- - identify databases in need of defragmentation
- - set fragmentation thresholds: normal, warning, critical
+ - Analyze fragmentation by one table or an entire database
+ - Identify databases in need of defragmentation
+ - Set fragmentation thresholds: normal, warning, critical
 
 
 ## SQL Heat Map <a id="sql-heat-map"></a>
 Download page: [SQL Heat Map]<br/>
-Release date: 2015-12-07<br/>
+Release date: 2016-01-27<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Heat Map you can:
- - get one visual view of storage in all tables of a database
- - see storage allocation, utilization, and type of data
- - quickly locate tables and indexes that need more allocated storage
+ - Get one visual view of storage in all tables of a database
+ - See storage allocation, utilization, and type of data
+ - Quickly locate tables and indexes that need more allocated storage
 
 
 ## SQL Hekaton Memory Check <a id="sql-hekaton-memory-check"></a>
 Download page: [SQL Hekaton Memory Check]<br/>
-Release date: 2015-12-07<br/>
+Release date: 2015-06-10<br/>
 Support Version: 2014<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Hekaton Memory Check you can:
- - monitor the impact of memory optimized tables on server memory
- - identify high memory utilizing tables
- - assess server memory capacity
- - simulate moving to In-Memory OLTP
+ - Monitor the impact of memory optimized tables on server memory
+ - Identify high memory utilizing tables
+ - Assess server memory capacity
+ - Simulate moving to In-Memory OLTP
 
 
 ## SQL Page Viewer <a id="sql-page-viewer"></a>
@@ -649,12 +648,11 @@ Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-SQL Page Viewer:
- - displays page level data summary and detail information
- - has elegant GUI design for fast access in 1 click
- - can select any SQL server and database table
- - can navigate to any page data quickly in a tree view
- - can launch directly within SSMS for optimal usability
+ - Displays page level data summary and detail information
+ - Has elegant GUI design for fast access in 1 click
+ - Can select any SQL server and database table
+ - Can navigate to any page data quickly in a tree view
+ - Can launch directly within SSMS for optimal usability
 
 
 ## SQL Update Statistics <a id="sql-update-statistics"></a>
@@ -665,11 +663,10 @@ Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Update Statistics you can:
- - launch directly within SSMS for optimal usability
- - identify out-of-date SQL Server table and index statistics
- - view and change database statistics options
- - create graphical histograms for each column’s statistics
+ - Launch directly within SSMS for optimal usability
+ - Identify out-of-date SQL Server table and index statistics
+ - View and change database statistics options
+ - Create graphical histograms for each column’s statistics
 
 
 ## SQL Statistics Aggregator <a id="sql-statistics-aggregator"></a>
@@ -680,47 +677,45 @@ Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Statistics Aggregator you can:
- - aggregate IO statistics to identify problem tables
- - correlate disk activity with query plan nodes
- - compare runs of a query over time
- - export and import results for easy collaboration
+ - Aggregate IO statistics to identify problem tables
+ - Correlate disk activity with query plan nodes
+ - Compare runs of a query over time
+ - Export and import results for easy collaboration
 
 
 ## SQL Backup Status Reporter <a id="sql-backup-status-reporter"></a>
 Download page: [SQL Backup Status Reporter]<br/>
 Release date: 2015-08-07<br/>
-Support Version: 2000/2005/2008/2008R2/2012<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Backup Status Reporter you can:
- - quickly identify databases which have not had backups
- - view backup history including the backup date and type
- - have simplified grid view for easy sorting and navigation
- - identify full and differential backups for many databases
+ - Quickly identify databases which have not had backups
+ - View backup history including the backup date and type
+ - Have simplified grid view for easy sorting and navigation
+ - Identify full and differential backups for many databases
 
 
 ## SQL Integrity Check <a id="sql-integrity-check"></a>
 Download page: [SQL Integrity Check]<br/>
 Release date: 2013-08-26<br/>
-Support Version: 2000/2005/2008/2008R2/2012<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
- - easily run a CHECKDB for any database on-demand
- - view integrity check results to identify corruption
- - routinely verifies when last check was performed
- - receive alerts when databases are due for checks
- - do not need to write and maintain scripts
+ - Easily run a CHECKDB for any database on-demand
+ - View integrity check results to identify corruption
+ - Routinely verifies when last check was performed
+ - Receive alerts when databases are due for checks
+ - Do not need to write and maintain scripts
 
 
 ## SQL Job Manager <a id="sql-job-manager"></a>
 Download page: [SQL Job Manager]<br/>
 Release date: 2012-03-19<br/>
-Support Version: ???<br/>
+Support Version: ?<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
@@ -734,8 +729,8 @@ Price: No
 
 ## Azure SQL Database Backup <a id="azure-sql-database-backup"></a>
 Download page: [Azure SQL Database Backup]<br/>
-Release date: 2015-08-07<br/>
-Support Version: ???<br/>
+Release date: 2012-10-02<br/>
+Support Version: ?<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
@@ -763,22 +758,48 @@ Price: No
 ## SQL Permissions Extractor <a id="sql-permissions-extractor"></a>
 Download page: [SQL Permissions Extractor]<br/>
 Release date: 2015-08-07<br/>
-Support Version: 2000/2005/2008/2008R2/2012<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
 Author: Idera<br/>
 Free version: Yes<br/>
 Price: No
 
-With SQL Permissions Extractor you can:
  - Generate T-SQL scripts for copying of user permissions
- - edit, save, and execute permissions scripts
- - include object level permissions for selected databases
- - copy, extract, modify and apply changes in four steps
+ - Edit, save, and execute permissions scripts
+ - Include object level permissions for selected databases
+ - Copy, extract, modify and apply changes in four steps
+
+
+## SQL BI Check <a id="sql-bi-check"></a>
+Download page: [SQL BI Check]<br/>
+Release date: 2016-04-13<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Real-time performance monitoring for SQL Server Analysis Services (SSAS)
+ - See physical server metrics for CPU, disk, and storage
+ - View analysis metrics for SSAS processing, memory, and cache
+ - Get up and running in minutes, no agents required
+
+
+## SQL Inventory Check <a id="sql-bi-check"></a>
+Download page: [SQL Inventory Check]<br/>
+Release date: 2016-03-24<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Discover unknown and forgotten instances posing security and performance risks
+ - Track SQL Servers to manage license and support costs
+ - Stay on top of important SQL Server updates and patches
 
 
 ## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-12-22<br/>
-Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
 Price: $150
@@ -791,7 +812,7 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 ## dbForge Data Compare <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-11-30<br/>
-Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
 Price: $150
@@ -804,7 +825,7 @@ and effortlessly synchronize data via a convenient wizard with additional option
 ## dbForge Data Generator <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
 Release date: 2015-12-30<br/>
-Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
 Price: $250
@@ -815,7 +836,7 @@ dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation
 ## dbForge Query Builder <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
 Release date: 2015-06-03<br/>
-Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
 Price: $100
@@ -842,7 +863,7 @@ You can use this information to identify and troubleshoot many SQL Server-relate
 ## dbForge SQL Decryptor <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
 Release date: 2013-11-07<br/>
-Support Version: 2000/2005/2008/2008R2/2012<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -1417,6 +1438,8 @@ Comparing two production databases for migrating or upgrading
 [Azure SQL Database Backup]: https://www.idera.com/productssolutions/freetools/azuresqldatabasebackup
 [SQL Column Search]: https://www.idera.com/productssolutions/freetools/sql-column-search
 [SQL Permissions Extractor]: https://www.idera.com/productssolutions/freetools/sqlpermissionsextractor
+[SQL BI Check]:https://www.idera.com/productssolutions/freetools/sql-bi-check
+[SQL Inventory Check]:https://www.idera.com/productssolutions/freetools/sql-inventory-check
 [dbForge Schema Compare]: https://www.devart.com/dbforge/sql/schemacompare/
 [dbForge Data Compare]: https://www.devart.com/dbforge/sql/datacompare/
 [dbForge Data Generator]: https://www.devart.com/dbforge/sql/data-generator/
