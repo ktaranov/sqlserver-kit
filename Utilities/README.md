@@ -2,10 +2,6 @@
 Useful free and paid Microsoft SQL Server utilities
 
 
-Useful link:
- - [Seven SQL Server Under-Used](https://www.simple-talk.com/sql/database-administration/seven-sql-server-under-used-utilities/) by Robert Sheldon
-
-
 | Name/Description                                                      | Official/Download page               | Release Date | Author            | Free version | Price |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | ------------------|--------------|------:|
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft         | Yes          | No    |
@@ -84,20 +80,20 @@ Useful link:
 | [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | [SQLSolutions SQL Ultimate Debugger] | -            | SQLSolutions      | No           |  $295 |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2013-02-24   | Thomas Hinsenkamp | No           |   €99 |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | [Simple Dynamic Scheduler]           | 2016-05-02   | Miljan Radovic    | Yes          | No    |
-| [ApexSQL Audit](#apexsql-audit)                                       | [ApexSQL Audit]                      | 2016-04-08   | Apex              | No           | $1699 |
-| [ApexSQL Backup](#apexsql-backup)                                     | [ApexSQL Backup]                     | 2015-12-30   | Apex              | No           |  $499 |
-| [ApexSQL Log](#apexsql-log)                                           | [ApexSQL Log]                        | 2015-11-23   | Apex              | No           | $1999 |
-| [ApexSQL Monitor](#apexsql-monitor)                                   | [ApexSQL Monitor]                    | 2015-12-29   | Apex              | No           |  $499 |
-| [ApexSQL Recover](#apexsql-recover)                                   | [ApexSQL Recover]                    | 2015-01-21   | Apex              | No           | $1999 |
-| [ApexSQL Restore](#apexsql-restore)                                   | [ApexSQL Restore]                    | 2014-08-12   | Apex              | No           |  $399 |
-| [ApexSQL Build](#apexsql-build)                                       | [ApexSQL Build]                      | 2015-12-22   | Apex              | No           |  $399 |
-| [ApexSQL Clean](#apexsql-clean)                                       | [ApexSQL Clean]                      | 2015-09-04   | Apex              | No           |  $399 |
-| [ApexSQL Data Diff](#apexsql-data-diff)                               | [ApexSQL Data Diff]                  | 2015-12-11   | Apex              | No           |  $399 |
-| [ApexSQL Diff](#apexsql-diff)                                         | [ApexSQL Diff]                       | 2016-03-23   | Apex              | No           |  $399 |
-| [ApexSQL Doc](#apexsql-doc)                                           | [ApexSQL Doc]                        | 2015-04-19   | Apex              | No           |  $299 |
-| [ApexSQL Generate](#apexsql-generate)                                 | [ApexSQL Generate]                   | 2016-03-15   | Apex              | No           |  $499 |
-| [ApexSQL Script](#apexsql-script)                                     | [ApexSQL Script]                     | 2015-09-11   | Apex              | No           |  $249 |
-| [ApexSQL Trigger](#apexsql-trigger)                                   | [ApexSQL Trigger]                    | 2015-09-04   | Apex              | No           | $1999 |
+| [ApexSQL Audit](#apexsql-audit)                                       | [ApexSQL Audit]                      | 2016-04-08   | ApexSQL           | No           | $1699 |
+| [ApexSQL Backup](#apexsql-backup)                                     | [ApexSQL Backup]                     | 2015-12-30   | ApexSQL           | No           |  $499 |
+| [ApexSQL Log](#apexsql-log)                                           | [ApexSQL Log]                        | 2015-11-23   | ApexSQL           | No           | $1999 |
+| [ApexSQL Monitor](#apexsql-monitor)                                   | [ApexSQL Monitor]                    | 2015-12-29   | ApexSQL           | No           |  $499 |
+| [ApexSQL Recover](#apexsql-recover)                                   | [ApexSQL Recover]                    | 2015-01-21   | ApexSQL           | No           | $1999 |
+| [ApexSQL Restore](#apexsql-restore)                                   | [ApexSQL Restore]                    | 2014-08-12   | ApexSQL           | No           |  $399 |
+| [ApexSQL Build](#apexsql-build)                                       | [ApexSQL Build]                      | 2015-12-22   | ApexSQL           | No           |  $399 |
+| [ApexSQL Clean](#apexsql-clean)                                       | [ApexSQL Clean]                      | 2015-09-04   | ApexSQL           | No           |  $399 |
+| [ApexSQL Data Diff](#apexsql-data-diff)                               | [ApexSQL Data Diff]                  | 2015-12-11   | ApexSQL           | No           |  $399 |
+| [ApexSQL Diff](#apexsql-diff)                                         | [ApexSQL Diff]                       | 2016-03-23   | ApexSQL           | No           |  $399 |
+| [ApexSQL Doc](#apexsql-doc)                                           | [ApexSQL Doc]                        | 2015-04-19   | ApexSQL           | No           |  $299 |
+| [ApexSQL Generate](#apexsql-generate)                                 | [ApexSQL Generate]                   | 2016-03-15   | ApexSQL           | No           |  $499 |
+| [ApexSQL Script](#apexsql-script)                                     | [ApexSQL Script]                     | 2015-09-11   | ApexSQL           | No           |  $249 |
+| [ApexSQL Trigger](#apexsql-trigger)                                   | [ApexSQL Trigger]                    | 2015-09-04   | ApexSQL           | No           | $1999 |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | [DBBest T-SQL Analyzer]              | 2015-03-13   | DBBest            | No           |   $89 |
 | [DBBest Database Compare Suite](dbbest-database-compare-suite)        | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest            | No           |  $349 |
 
