@@ -13,7 +13,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | [Exchange Server Error Code Look-up] | 2004-05-10   | Microsoft          | Yes          | No    |
 | [LINQPad](#linqpad)                                                   | [LINQPad]                            | 2016-01-02   | Joseph Albahari    | Yes          |   $45 |
 | [SqlDynamite](#sqldynamite)                                           | [SqlDynamite]                        | 2016-04-06   | Anatoly Sova       | Yes          | No    |
-| [SQL Server Data Tools](#ssdt)                                        | [SQL Server Data Tools]              | ?            | Microsoft          | Yes          | No    |
+| [SQL Server Data Tools](#ssdt)                                        | [SQL Server Data Tools]              | 2016-04-14   | Microsoft          | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -220,7 +220,7 @@ Supports MSSQL, Oracle, SAP, Firebird, Mysql, PostgreSQL, DB2, Informix, SQLite,
 
 ## SQL Server Data Tools <a id="ssdt"></a>
 Download page: [SQL Server Data Tools]<br/>
-Release date: ?<br/>
+Release date: 2016-04-14<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
