@@ -141,6 +141,7 @@ Headers:
     - [RSS Most Recent SQL Server KBs](https://support.microsoft.com/en-us/rss?rssid=1044)
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
+    - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
 
 
 ## SQL Server Express direct download links
