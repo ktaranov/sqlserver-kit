@@ -62,7 +62,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [SQL Inventory Check](#sql-inventory-check)                           | [SQL Inventory Check]                | 2016-03-24   | Idera              | Yes          | No    |
 | [SQL Diagnostic Manager](#sql-diagnostic-manager)                     | [SQL Diagnostic Manager]             | ?            | Idera              | No           | $1747 |
 | [SQL Safe Backup](#sql-safe-backup)                                   | [SQL Safe Backup]                    | 2016-09-08   | Idera              | No           |  $907 |
-| [SQL Compliance Manager](#SQL Compliance Manager)                     | [SQL Compliance Manager]             | 2015-09-08   | Idera              | No           | $2657 |
+| [SQL Compliance Manager](#sql-compliance-manager)                     | [SQL Compliance Manager]             | 2015-09-08   | Idera              | No           | $2657 |
 | [SQL Inventory Manager](#sql-inventory-manager)                       | [SQL Inventory Manager]              | 2016-04-22   | Idera              | No           | $3195 |
 | [SQL Virtual Database](#sql-virtual-database)                         | [SQL Virtual Database]               | 2016-03-24   | Idera              | No           |  $625 |
 | [SQL Secure](#sql-secure)                                             | [SQL Secure]                         | 2016-04-19   | Idera              | No           |  $907 |
