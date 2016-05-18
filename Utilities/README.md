@@ -112,9 +112,9 @@ Useful free and paid Microsoft SQL Server utilities
 | [ApexSQL Script](#apexsql-script)                                     | [ApexSQL Script]                     | 2015-09-11   | ApexSQL            | No           |  $249 |
 | [ApexSQL Trigger](#apexsql-trigger)                                   | [ApexSQL Trigger]                    | 2015-09-04   | ApexSQL            | No           | $1999 |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | [DBBest T-SQL Analyzer]              | 2015-03-13   | DBBest             | No           |   $89 |
-| [DBBest Database Compare Suite](dbbest-database-compare-suite)        | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
-| [Advanced Query Tool](advanced-query-tool)                            | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
-| [SqlDiffFramework](sqldiffframework)                                  | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
+| [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
+| [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
+| [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
 
 
 ## GraphView <a id="graphview"></a>
