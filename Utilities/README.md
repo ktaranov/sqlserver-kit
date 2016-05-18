@@ -60,6 +60,19 @@ Useful free and paid Microsoft SQL Server utilities
 | [SQL Permissions Extractor](#sql-permissions-extractor)               | [SQL Permissions Extractor]          | 2015-08-07   | Idera              | Yes          | No    |
 | [SQL BI Check](#sql-bi-check)                                         | [SQL BI Check]                       | 2016-04-13   | Idera              | Yes          | No    |
 | [SQL Inventory Check](#sql-inventory-check)                           | [SQL Inventory Check]                | 2016-03-24   | Idera              | Yes          | No    |
+| [SQL Diagnostic Manager](#sql-diagnostic-manager)                     | [SQL Diagnostic Manager]             | ?            | Idera              | No           | $1747 |
+| [SQL Safe Backup](#sql-safe-backup)                                   | [SQL Safe Backup]                    | 2016-09-08   | Idera              | No           |  $907 |
+| [SQL Compliance Manager](#SQL Compliance Manager)                     | [SQL Compliance Manager]             | 2015-09-08   | Idera              | No           | $2657 |
+| [SQL Inventory Manager](#sql-inventory-manager)                       | [SQL Inventory Manager]              | 2016-04-22   | Idera              | No           | $3195 |
+| [SQL Virtual Database](#sql-virtual-database)                         | [SQL Virtual Database]               | 2016-03-24   | Idera              | No           |  $625 |
+| [SQL Secure](#sql-secure)                                             | [SQL Secure]                         | 2016-04-19   | Idera              | No           |  $907 |
+| [SQL Doctor](#sql-doctor)                                             | [SQL Doctor]                         | 2015-12-17   | Idera              | No           |  $625 |
+| [SQL Admin Toolset](#sql-admin-toolset)                               | [SQL Admin Toolset]                  | 2016-01-13   | Idera              | No           |  $395 |
+| [SQL Defrag Manager](#sql-defrag-manager)                             | [SQL Defrag Manager]                 | 2016-03-10   | Idera              | No           | $1495 |
+| [DBArtisan](#dbartisan)                                               | [DBArtisan]                          | ?            | Idera              | No           | $3122 |
+| [SQL BI Manager](#sql-bi-manager)                                     | [SQL BI Manager]                     | 2015-09-08   | Idera              | No           |  $697 |
+| [SQL Enterprise Job Manager](#sql-enterprise-job-manager)             | [SQL Enterprise Job Manager]         | 2015-09-08   | Idera              | No           |  $697 |
+| [DB Optimizer](#db-optimizer)                                         | [DB Optimizer]                       | ?            | Idera              | No           | $1420 |
 | [dbForge Schema Compare](#dbforge-schema-compare)                     | [dbForge Schema Compare]             | 2015-12-22   | Devart             | No           |  $149 |
 | [dbForge Data Compare](#dbforge-data-compare)                         | [dbForge Data Compare]               | 2015-11-30   | Devart             | No           |  $149 |
 | [dbForge Data Generator](#dbforge-data-generator)                     | [dbForge Data Generator]             | 2015-12-30   | Devart             | No           |  $249 |
@@ -101,6 +114,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | [DBBest T-SQL Analyzer]              | 2015-03-13   | DBBest             | No           |   $89 |
 | [DBBest Database Compare Suite](dbbest-database-compare-suite)        | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
 | [Advanced Query Tool](advanced-query-tool)                            | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
+| [SqlDiffFramework](sqldiffframework)                                  | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
 
 
 ## GraphView <a id="graphview"></a>
@@ -823,6 +837,203 @@ Price: No
  - Stay on top of important SQL Server updates and patches
 
 
+## SQL Diagnostic Manager <a id="sql-diagnostic-manager"></a>
+Download page: [SQL Diagnostic Manager]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $1747
+
+ - Performance monitoring for physical and virtual environments
+ - Query plan monitoring to see the causes of blocks and deadlocks
+ - Integrated SQL Doctor expert recommendations
+ - Easy integration with Microsoft SCOM
+ - Predictive alerting with settings to avoid false alerts
+ - Web-based dashboard with at-a-glance views of top issues and alert
+
+
+## SQL Safe Backup <a id="sql-safe-backup"></a>
+Download page: [SQL Safe Backup]<br/>
+Release date: 2016-03-24<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $907
+
+ - Backup faster than native SQL and save space with dynamic compression
+ - Reduce failures due to network problems
+ - Automate full, differential, and transaction log backups
+ - Integrated cloud backup support for Amazon S3
+ - Instant Restore provides immediate access to backup data
+ - Web-based dashboard provides at-a-glance views of top issues and alerts
+
+
+## SQL Compliance Manager <a id="sql-compliance-manager"></a>
+Download page: [SQL Compliance Manager]<br/>
+Release date: 2015-09-08<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $2657
+
+ - Audit Sensitive Data - see who did what, when, where, and how
+ - Track and Detect - monitor and alert on suspicious activity
+ - Satisfy Audits - for PCI, HIPAA, FERPA and SOX requirements
+ - Generate Reports - 25 built-in reports to validate SQL Server audit trails
+ - Minimize Overhead - light data collection agent minimizes server imp
+
+
+## SQL Inventory Manager <a id="sql-inventory-manager"></a>
+Download page: [SQL Inventory Manager]<br/>
+Release date: 2016-04-22<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $3195
+
+ - View your SQL Server inventory - know what you have where & who owns it
+ - Auto-discover any new servers installed, to better manage server sprawl
+ - Get alerts when a server goes down, or space is running low
+ - Set tags to better organize servers and databases across the enterprise
+ - Quickly deploy and access from anywhere via web-based and agentless UI
+
+
+## SQL Virtual Database <a id="sql-virtual-database"></a>
+Download page: [SQL Virtual Database]<br/>
+Release date: 2016-03-24<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $625
+
+ - Immediate access - get data from backup files instantly
+ - Acts like a real database - Use 3rd party and native tools
+ - OLR replacement - better solution to object level recovery
+ - Multiple Uses - reporting, data extraction, analysis, etc.
+ - Read/Write support - inserts, updates, DBCC commands
+
+
+## SQL Secure <a id="sql-secure"></a>
+Download page: [SQL Secure]<br/>
+Release date: 2016-04-19<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $907
+
+ - Identify existing vulnerabilities in your SQL Servers
+ - Harden security policies across SQL Servers
+ - Rank security levels with the security report card
+ - Analyze and report user permissions across SQL Servers
+ - Customizable templates for PCI, HIPAA and more
+
+
+## SQL Doctor <a id="sql-doctor"></a>
+Download page: [SQL Doctor]<br/>
+Release date: 2015-12-17<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $625
+
+ - New and enhanced Expert Recommendations to help improve performance
+ - Dashboard exposes performance metrics in real-time
+ - "Quick Findings" instantly locates SQL performance issues
+ - Executable scripts are generated to optimize performance
+ - Stored history of analysis recommendations for trending
+
+
+## SQL Admin Toolset <a id="sql-admin-toolset"></a>
+Download page: [SQL Admin Toolset]<br/>
+Release date: 2016-01-13<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $325
+
+ - 24 essential desktop tools for your everyday SQL Server needs
+ - Run every day diagnostics across multiple SQL servers
+ - Complete administrative tasks in minutes, not hours
+ - Perform analysis on your SQL data
+
+
+## SQL Defrag Manager <a id="sql-defrag-manager"></a>
+Download page: [SQL Defrag Manager]<br/>
+Release date: 2016-03-10<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $1495
+
+ - Automate identification of index fragmentation "hot spots"
+ - Schedule index defragmentation jobs
+ - Avoid database contention with system resource pre-checks
+ - Reduce page splits with index fill factor settings control
+ - Centrally manage, report and notify instantly
+
+
+## DBArtisan <a id="dbartisan"></a>
+Download page: [DBArtisan]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $3122
+
+ - Manage multiple platforms (Oracle, SQL Server, DB2, Sybase) from one UI
+ - Proactively manage space, data and performance with built-in analytics
+ - Easily find and fix performance issues using intelligent diagnostics
+ - Move schema and table data across different platforms with ease
+ - Protect data security with view, grant and revoke of permissions
+
+
+## SQL BI Manager <a id="sql-bi-manager"></a>
+Download page: [SQL BI Manager]<br/>
+Release date: 2015-09-08<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $697
+
+ - Monitor SSAS, SSRS, & SSIS health with agentless monitoring
+ - View active sessions, workload, and report generation performance
+ - Identify issues with access to data including cube size and resource utilization
+ - Set up alerts with configurable thresholds
+ - Log in from anywhere for at-a-glance views of top issues and alerts
+
+
+## SQL Enterprise Job Manager <a id="sql-enterprise-job-manager"></a>
+Download page: [SQL Enterprise Job Manager]<br/>
+Release date: 2015-09-08<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $697
+
+ - Monitor SQL Server agent jobs across the enterprise
+ - Easily view job status and details with familiar calendar layout
+ - Chain jobs together and build automated workflows
+ - Configure and manage jobs that run over multiple instances
+ - Set alerts to be notified of potential issues
+ - Web-based architecture simplifies deployment
+
+
+## DB Optimizer <a id="db optimizer"></a>
+Download page: [DB Optimizer]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $1420
+
+ - Streamline tuning of SQL code on major DBMSs from one interface
+ - Tune SQL like a pro with automated performance optimization suggestions
+ - Tackle complex SQL queries with visual SQL tuning diagrams
+ - Pinpoint problem SQL with database profiling of wait-time analysis
+ - Load test alternative SQL queries in simulated production environment
+
+
 ## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-12-22<br/>
@@ -1433,6 +1644,21 @@ AQT provides a simple and easy-to-use interface to your many different databases
 Oracle, DB2 for LUW, DB2 for z/OS, DB2 for iSeries, Sybase ASE, **SQL Server**, Informix, MySQL, MS Access, SQLite, Other.
 
 
+## SqlDiffFramework <a id="sqldiffframework"></a>
+Download page: [SqlDiffFramework]<br/>
+Release date: 2012-04-17<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Michael Sorens<br/>
+Free version: Yes<br/>
+Price: No
+
+SqlDiffFramework compares two data sources and highlights both row and column differences for just the columns you want.
+ - Compare the same data over time (either current data vs. prior data or two snapshots of prior data)
+ - Compare the same data on two different servers
+ - Compare data from different systems (e.g. SQL Server vs. Oracle)
+ - Verify two systems have synchronized data
+
+
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
@@ -1481,6 +1707,19 @@ Oracle, DB2 for LUW, DB2 for z/OS, DB2 for iSeries, Sybase ASE, **SQL Server**, 
 [SQL Permissions Extractor]: https://www.idera.com/productssolutions/freetools/sqlpermissionsextractor
 [SQL BI Check]:https://www.idera.com/productssolutions/freetools/sql-bi-check
 [SQL Inventory Check]:https://www.idera.com/productssolutions/freetools/sql-inventory-check
+[SQL Diagnostic Manager]:https://www.idera.com/productssolutions/sqlserver/sqldiagnosticmanager
+[SQL Safe Backup]:https://www.idera.com/productssolutions/sqlserver/sqlsafebackup
+[SQL Compliance Manager]:https://www.idera.com/productssolutions/sqlserver/sqlcompliancemanager
+[SQL Inventory Manager]:https://www.idera.com/productssolutions/sqlserver/sql-elements
+[SQL Virtual Database]:https://www.idera.com/productssolutions/sqlserver/sqlvirtualdatabase
+[SQL Secure]:https://www.idera.com/productssolutions/sqlserver/sqlsecure
+[SQL Doctor]:https://www.idera.com/productssolutions/sqlserver/sqldoctor
+[SQL Admin Toolset]:https://www.idera.com/productssolutions/sqlserver/sqladmintoolset
+[SQL Defrag Manager]:https://www.idera.com/productssolutions/sqlserver/sqldefragmanager
+[DBArtisan]:https://www.idera.com/dbartisan-database-administration-solution
+[SQL BI Manager]:https://www.idera.com/productssolutions/sqlserver/sql-server-business-intelligence
+[SQL Enterprise Job Manager]:https://www.idera.com/productssolutions/sqlserver/sql-server-agent-job
+[DB Optimizer]:https://www.idera.com/dboptimizer-sql-database-optimization
 [dbForge Schema Compare]: https://www.devart.com/dbforge/sql/schemacompare/
 [dbForge Data Compare]: https://www.devart.com/dbforge/sql/datacompare/
 [dbForge Data Generator]: https://www.devart.com/dbforge/sql/data-generator/
@@ -1530,3 +1769,4 @@ Oracle, DB2 for LUW, DB2 for z/OS, DB2 for iSeries, Sybase ASE, **SQL Server**, 
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
+[SqlDiffFramework]:https://sqldiffframework.codeplex.com/Wikipage?ProjectName=sqldiffframework
