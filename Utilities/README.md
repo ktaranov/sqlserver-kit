@@ -79,6 +79,8 @@ Useful free and paid Microsoft SQL Server utilities
 | [dbForge Query Builder](#dbforge-query-builder)                       | [dbForge Query Builder]              | 2015-06-03   | Devart             | No           |  $100 |
 | [dbForge Event Profiler](#dbforge-event-profiler)                     | [dbForge Event Profiler]             | 2015-04-08   | Devart             | Yes          | No    |
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | [dbForge SQL Decryptor]              | 2013-11-07   | Devart             | Yes          | No    |
+| [dbForge Studio](#dbforge-studio)                                     | [dbForge Studio]                     | 2015-12-18   | Devart             | Yes          |  $250 |
+| [dbForge Fusion](#dbforge-fusion)                                     | [dbForge Fusion]                     | 2016-03-03   | Devart             | No           |  $150 |
 | [Minion Enterprise](#minion-enterprise)                               | [Minion Enterprise]                  | ?            | MinionWare         | No           | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | [SQL Server Compression Estimator]   | 2011-06-02   | Bob Tavlor         | Yes          | No    |
 | [ClearTrace](#cleartrace)                                             | [ClearTrace]                         | 2015-07-04   | Bill Graziano      | Yes          | No    |
@@ -115,6 +117,7 @@ Useful free and paid Microsoft SQL Server utilities
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
+| [DataGrip](#datagrip)                                                 | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
 
 
 ## GraphView <a id="graphview"></a>
@@ -1106,6 +1109,36 @@ Author: Devart<br/>
 Free version: Yes<br/>
 Price: No
 
+Decrypt SQL Server Procedures, Functions, Triggers, and Views
+
+
+## dbForge Studio <a id="dbforge-studio"></a>
+Download page: [dbForge Studio]<br/>
+Release date: 2015-12-18<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Devart<br/>
+Free version: Yes<br/>
+Price: $250
+
+ - Code completion — to create whole SQL statement in a few keystrokes
+ - SQL formatting — to follow common coding style (standard)
+ - SQL snippets — to save time storing and reusing repeated code fragments
+ - Quick object information — to show hints with info on database objects
+ - Code navigation — quick jump by F12 to variable declaration, object editor, etc.
+
+
+## dbForge Fusion <a id="dbforge-fusion"></a>
+Download page: [dbForge Fusion]<br/>
+Release date: 2016-03-03<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $150
+
+dbForge Fusion for SQL Server is a powerful Visual Fusion plugin designed to simplify SQL database development and enhance data management capabilities.
+When you integrate dbForge Fusion for SQL Server into Microsoft Visual Fusion, all database development and administration tasks become available from your IDE.
+It provides an easier way to explore and maintain existing databases, design compound SQL statements and queries, and manipulate data in different way.
+
 
 ## Minion Enterprise <a id="minion-enterprise"></a>
 Download page: [Minion Enterprise]<br/>
@@ -1659,6 +1692,20 @@ SqlDiffFramework compares two data sources and highlights both row and column di
  - Verify two systems have synchronized data
 
 
+## DataGrip <a id="datagrip"></a>
+Download page: [DataGrip]<br/>
+Release date: 2016-05-06<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Jet Brains<br/>
+Free version: No<br/>
+Price: $199
+
+ - Exploring your databases
+ - Intelligent coding assistance
+ - Executing queries
+ - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
+
+
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
@@ -1726,6 +1773,8 @@ SqlDiffFramework compares two data sources and highlights both row and column di
 [dbForge Query Builder]: https://www.devart.com/dbforge/sql/querybuilder/
 [dbForge Event Profiler]: https://www.devart.com/dbforge/sql/event-profiler/
 [dbForge SQL Decryptor]: https://www.devart.com/dbforge/sql/sqldecryptor/
+[dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
+[dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [sqlps Utility]: https://msdn.microsoft.com/en-us/library/cc280450.aspx
 [sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
 [Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
@@ -1770,3 +1819,4 @@ SqlDiffFramework compares two data sources and highlights both row and column di
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
 [SqlDiffFramework]:https://sqldiffframework.codeplex.com/Wikipage?ProjectName=sqldiffframework
+[DataGrip]:https://www.jetbrains.com/datagrip/
