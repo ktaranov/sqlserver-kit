@@ -23,7 +23,7 @@
 | [Introduction to the Index Operational Statistics Dynamic Management Function]    | Tim Ford                                 | 2016-04-26    |
 | [Updating Statistics in SQL Server: Maintenance Questions & Answers]              | Kendra Little                            | 2016-04-18    |
 | [Overcoming Variable Limitations in SQLCmd Mode]                                  | Robert L Davis                           | 2015-11-23    |
-| [Contents of a Run Book ]                                                         | Microsoft                                | 2002-11-12    |
+| [Contents of a Run Book]                                                          | Microsoft                                | 2002-11-12    |
 | [Compressed and Encrypted Backups on the Cheap]                                   | Randolph West                            | 2002-11-12    |
 
 
