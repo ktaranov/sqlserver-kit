@@ -15,7 +15,7 @@
 | [Giving Permissions through Stored Procedures]                                    | Erland Sommarskog                        | 2011-12-31    |
 | [Error and Transaction Handling in SQL Server]                                    | Erland Sommarskog                        | 2015-05-03    |
 | [SQL Server Columnstore Articles]                                                 | Niko Neugebauer                          | 2016-05-09    |
-| [Documentation: It Doesn’t Suck!]                                                 | Jes Schultz Borland                      | 2013-01-15    |
+| [Documentation: It Does not Suck!]                                                | Jes Schultz Borland                      | 2013-01-15    |
 | [The Data Loading Performance Guide]                                              | Thomas Kejser, Peter Carlin, Stuart Ozer | 2009-01-15    |
 | [Required Testing for Installing SQL Server Cumulative Updates and Service Packs] | Kendra Little                            | 2016-04-28    |
 | [Stop Shrinking Your Database Files. Seriously. Now.]                             | Brent Ozar                               | 2009-08-19    |
@@ -39,7 +39,7 @@
 [Giving Permissions through Stored Procedures]:http://www.sommarskog.se/grantperm.html
 [Error and Transaction Handling in SQL Server]:http://www.sommarskog.se/error_handling/Part1.html
 [SQL Server Columnstore Articles]:http://www.nikoport.com/columnstore/
-[Documentation: It Doesn’t Suck!]:https://www.brentozar.com/archive/2013/01/documentation-it-doesnt-suck/
+[Documentation: It Does not Suck!]:https://www.brentozar.com/archive/2013/01/documentation-it-doesnt-suck/
 [The Data Loading Performance Guide]:https://msdn.microsoft.com/en-us/library/dd425070%28v=sql.100%29.aspx
 [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]:http://www.littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/
 [Stop Shrinking Your Database Files. Seriously. Now.]:https://www.brentozar.com/archive/2009/08/stop-shrinking-your-database-files-seriously-now/
