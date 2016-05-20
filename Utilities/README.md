@@ -1,5 +1,5 @@
-# Microsoft SQL Server Utilities
-Useful free and paid Microsoft SQL Server utilities
+# Microsoft SQL Server Utilities and Tools
+Useful free and paid Microsoft SQL Server utilities and tools
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -14,6 +14,8 @@ Useful free and paid Microsoft SQL Server utilities
 | [LINQPad](#linqpad)                                                   | [LINQPad]                            | 2016-01-02   | Joseph Albahari    | Yes          |   $45 |
 | [SqlDynamite](#sqldynamite)                                           | [SqlDynamite]                        | 2016-04-06   | Anatoly Sova       | Yes          | No    |
 | [SQL Server Data Tools](#ssdt)                                        | [SQL Server Data Tools]              | 2016-04-14   | Microsoft          | Yes          | No    |
+| [Database Health Monitor](#database-health-monitor)                   | [Database Health Monitor]            | 2016-03-20   | Steve Stedman      | Yes          | No    |
+| [SchemaDrift](#schemadrift)                                           | [SchemaDrift]                        | 2016-02-28   | Steve Stedman      | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -246,6 +248,29 @@ Price: No
 QL Server Data Tools (SSDT) is a modern development tool that you can download for free to build SQL Server relational databases,
 Azure SQL databases, Integration Services packages, Analysis Services data models, and Reporting Services reports.
 With SSDT, you can design and deploy any SQL Server content type with the same ease as you would develop an application in Visual Studio.
+
+
+## Database Health Monitor <a id="database-health-monitor"></a>
+Download page: [Database Health Monitor]<br/>
+Release date: 2016-03-20<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Steve Stedman<br/>
+Free version: Yes<br/>
+Price: No
+
+Database Health Monitor is a powerful performance monitoring and diagnostics solution that alerts administrators to server health,
+performance or availability problems within their SQL Server environment, all from a central console.
+
+
+## SchemaDrift <a id="schemadrift"></a>
+Download page: [SchemaDrift]<br/>
+Release date: 2016-02-28<br/>
+Support Version: 2008/2012/2014<br/>
+Author: Steve Stedman<br/>
+Free version: Yes<br/>
+Price: No
+
+SchemaDrift is a SQL Server database comparison tool that allows you to compare the schema, the tables, indexes, stored procedures, functions, and much more between SQL Server databases
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -1716,6 +1741,8 @@ Price: $199
 [LINQPad]:https://www.linqpad.net/
 [SqlDynamite]:http://www.host-tracker.com/SqlDynamite
 [SQL Server Data Tools]:https://msdn.microsoft.com/en-us/en-en/library/mt204009.aspx
+[Database Health Monitor]:http://databasehealth.com/download/
+[SchemaDrift]:http://databasehealth.com/schemadrift/
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
