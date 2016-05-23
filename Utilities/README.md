@@ -4,6 +4,7 @@ Useful free and paid Microsoft SQL Server utilities and tools
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | -------------------|--------------|------:|
+| [bcp Utility](#bcp)                                                   | [bcp Utility]                        | 2012-02-11   | Microsoft          | Yes          | No    |
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft          | Yes          | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)               | [Baseline Security Analyze]          | 2015-01-09   | Microsoft          | Yes          | No    |
 | [tablediff Utility](#tablediff-utility)                               | [tablediff Utility]                  | -            | Microsoft          | Yes          | No    |
@@ -120,6 +121,20 @@ Useful free and paid Microsoft SQL Server utilities and tools
 | [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
 | [DataGrip](#datagrip)                                                 | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
+
+
+## bcp Utility <a id="bcp"></a>
+Download page: [Grapbcp Utility]<br/>
+Release date: 2012-02-11<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The bcp utility bulk copies data between an instance of MicrosoftSQL Server and a data file in a user-specified format.
+The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
+Except when used with the queryout option, the utility requires no knowledge of Transact-SQL.
+To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
 
 
 ## GraphView <a id="graphview"></a>
@@ -1731,6 +1746,7 @@ Price: $199
  - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
 
 
+[bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
