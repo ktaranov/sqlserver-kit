@@ -94,6 +94,7 @@ Headers:
     - [SQL Server BI Blog](https://sqlserverbiblog.wordpress.com/)
     - [Andy Yun SQLBeck Blog](https://sqlbek.wordpress.com/)
     - [Curated SQL](http://curatedsql.com/)
+    - [Blog do Ezequiel](https://blogs.msdn.microsoft.com/blogdoezequiel/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
