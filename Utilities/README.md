@@ -1836,7 +1836,7 @@ SQLScripter is a powerful command line utility that scripts SQL Server objects. 
 
 
 ## SQLC <a id="sqlc"></a>
-Download page: [SQLC ]<br/>
+Download page: [SQLC]<br/>
 Release date: 2016-05-23<br/>
 Support Version: ?<br/>
 Author: David Ingleton<br/>
