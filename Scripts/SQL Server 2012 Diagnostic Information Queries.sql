@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- April 2016
--- Last Modified: April 25, 2016
+-- May 2016
+-- Last Modified: May 19, 2016
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -74,31 +74,39 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --                                                                                                              11.0.5634		SP2 CU8				9/21/2015
 --																												11.0.5641		SP2 CU9			   11/16/2015   ---->  11.0.6290		SP3 RTM			11/22/2015
 --																												11.0.5644		SP2 CU10			1/18/2016   ---->  11.0.6518		SP3 CU1			 1/18/2016
---																												11.0.5646		SP2 CU11			3/21/2016	---->  11.0.6523		SP3 CU2			 3/21/2016                                                                                                                				
+--																												11.0.5646		SP2 CU11			3/21/2016	---->  11.0.6523		SP3 CU2			 3/21/2016
+--																												11.0.5649		SP2 CU12			5/16/2016	---->  11.0.6537		SP3 CU3			 5/16/2016                                                                                                                				
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://support.microsoft.com/en-us/kb/321185
 
--- The SQL Server 2012 builds that were released after SQL Server 2012 was released
--- http://support.microsoft.com/kb/2692828
-
--- The SQL Server 2012 builds that were released after SQL Server 2012 Service Pack 1 was released
--- http://support.microsoft.com/kb/2772858
+-- SQL Server 2012 SP3 build versions
+-- https://support.microsoft.com/en-us/kb/3133750 
 
 -- SQL Server 2012 SP2 build versions 
 -- http://support.microsoft.com/kb/2983249
 
--- SQL Server 2012 SP3 build versions
--- https://support.microsoft.com/en-us/kb/3133750 
+-- The SQL Server 2012 builds that were released after SQL Server 2012 Service Pack 1 was released
+-- http://support.microsoft.com/kb/2772858
+
+-- The SQL Server 2012 builds that were released after SQL Server 2012 was released
+-- http://support.microsoft.com/kb/2692828
+
 
 -- Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 used with high-performance workloads
 -- http://support.microsoft.com/kb/2964518/EN-US
 
--- Performance and Stability Related Fixes in Post-SQL Server 2012 SP1 Builds
--- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp1-builds-2/
+-- Performance and Stability Related Fixes in Post-SQL Server 2012 SP3 Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp3-builds/
 
 -- Performance and Stability Related Fixes in Post-SQL Server 2012 SP2 Builds
 -- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp2-builds/
+
+-- Performance and Stability Related Fixes in Post-SQL Server 2012 SP1 Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2012-sp1-builds-2/
+
+-- Performance Related Fixes in Post-SQL Server 2012 RTM Builds
+-- http://www.sqlskills.com/blogs/glenn/performance-related-fixes-in-post-sql-server-2012-rtm-builds/
 
 
 
@@ -246,8 +254,7 @@ SELECT windows_release, windows_service_pack_level,
 FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- Gives you major OS version, Service Pack, Edition, and language info for the operating system
--- 10.0 is either Windows 10 or Windows Server 2016 
--- 6.3 is either Windows 8.1 or Windows Server 2012 R2
+-- 6.3 is either Windows 10, 8.1 or Windows Server 2012 R2
 -- 6.2 is either Windows 8 or Windows Server 2012
 -- 6.1 is either Windows 7 or Windows Server 2008 R2
 -- 6.0 is either Windows Vista or Windows Server 2008
@@ -691,6 +698,9 @@ HAVING SUM (W2.Percentage) - MAX (W1.Percentage) < 99 -- percentage threshold
 OPTION (RECOMPILE);
 
 -- Cumulative wait stats are not as useful on an idle instance that is not under load or performance pressure
+
+-- SQL Server Wait Types Library (Paul Randal)
+-- https://www.sqlskills.com/help/waits/
 
 -- The SQL Server Wait Type Repository
 -- http://blogs.msdn.com/b/psssql/archive/2009/11/03/the-sql-server-wait-type-repository.aspx
