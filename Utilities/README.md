@@ -121,6 +121,13 @@ Useful free and paid Microsoft SQL Server utilities and tools
 | [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
 | [DataGrip](#datagrip)                                                 | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
+| [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li            | Yes          |  No   |
+| [SQL Nexus Tool](#sql-nexus-tool)                                     | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li            | Yes          |  No   |
+| [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | [DBSophic Qure Profiler]             | ?            | DBSophic           | No           |  $300 |
+| [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | [DBSophic Qure Optimizer]            | ?            | DBSophic           | No           |  ?    |
+| [RestoreChecker](#restorechecker)                                     | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
+| [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
+| [SQLC](#sqlc)                                                         | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          |  No   |
 
 
 ## bcp Utility <a id="bcp"></a>
@@ -1746,6 +1753,99 @@ Price: $199
  - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
 
 
+## Pssdiag and Sqldiag Manager <a id="pssdiag-and-sqldiag-manager"></a>
+Download page: [SQL Nexus Tool]<br/>
+Release date: 2015-04-17<br/>
+Support Version: 2012/2014<br/>
+Author: Jack Li<br/>
+Free version: Yes<br/>
+Price: No
+
+PSSDIAG is a diagnostics utility used to collect profiler trace, perfmon data for SQL Server. PSSDAIG was created to troubleshoot SQL Server 7.0 and 2000 issues.
+It was evolved and shipped with SQL Server 2005 and beyond. But the shipped product only has a data collector engine called sqldiag.exe.
+Microsoft Product support continues to maintain a configuration tool that allows engineers to dynamically configure on what to collect.
+
+
+## SQL Nexus Tool <a id="sql-nexus-tool"></a>
+Download page: [SQL Nexus Tool]<br/>
+Release date: 2014-05-06<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Jack Li<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Nexus is a tool that helps you identify the root cause of SQL Server performance issues.
+It loads and analyzes performance data collected by [SQLDiag](#sqldiag-utility) and [PSSDiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager).
+It can dramatically reduce the amount of time you spend manually analyzing data
+
+ - Fast, easy data loading: You can quickly and easily load SQL Trace files;
+ - Visualize loaded data via reports
+ - Executing queries
+ - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
+
+
+## DBSophic Qure Profiler <a id="dbsophic-qure-profiler"></a>
+Download page: [DBSophic Qure Profiler]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012<br/>
+Author: DBSophic<br/>
+Free version: No<br/>
+Price: $300
+
+SQL server trace analysis tool
+
+ - View SQL activity in real-time
+ - Group, sort and export batches
+ - Real time index recommendations
+ - Compare SQL traces
+ - No limitations on the number of SQL servers, databases, processors etc.
+
+
+## DBSophic Qure Profiler <a id="dbsophic-qure-profiler"></a>
+Download page: [DBSophic Qure Profiler]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012<br/>
+Author: DBSophic<br/>
+Free version: No<br/>
+Price: ?
+
+The workload tuning solution that automatically optimizes millions of queries in one go
+
+
+## RestoreChecker <a id="restorechecker"></a>
+Download page: [DBSophic Qure Profiler]<br/>
+Release date: 2015-01-15<br/>
+Support Version: ?<br/>
+Author: SQLServerUtilities<br/>
+Free version: No<br/>
+Price: $99
+
+RestoreChecker is a utility that restores SQL Server backup files in order to verify that the backup files can be successfully restored
+and in addition perform data integrity checks on the backups restored while offloading the intensive IO activity from your production servers.
+
+
+## SQLScripter <a id="sqlscripter"></a>
+Download page: [DBSophic Qure Profiler]<br/>
+Release date: 2009-08-24<br/>
+Support Version: ?<br/>
+Author: SQLServerUtilities<br/>
+Free version: No<br/>
+Price: $99
+
+SQLScripter is a powerful command line utility that scripts SQL Server objects. The utility is designed to automate the process of schema generation.
+
+
+## SQLC <a id="sqlc"></a>
+Download page: [SQLC ]<br/>
+Release date: 2016-05-23<br/>
+Support Version: ?<br/>
+Author: David Ingleton<br/>
+Free version: Yes<br/>
+Price: No
+
+SQLC is a software tool for comparing two SQL Server databases. With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
+
+
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
@@ -1863,3 +1963,10 @@ Price: $199
 [Advanced Query Tool]:http://www.querytool.com/
 [SqlDiffFramework]:https://sqldiffframework.codeplex.com/Wikipage?ProjectName=sqldiffframework
 [DataGrip]:https://www.jetbrains.com/datagrip/
+[Pssdiag and Sqldiag Manager]:http://diagmanager.codeplex.com/
+[SQL Nexus Tool]:http://sqlnexus.codeplex.com/
+[DBSophic Qure Profiler]:http://www.dbsophic.com/products/qure-profiler
+[DBSophic Qure Optimizer]:http://www.dbsophic.com/products/qure-optimizer
+[RestoreChecker]:http://sqlserverutilities.com/products/restorechecker/
+[SQLScripter]:http://sqlserverutilities.com/products/sqlscripter/
+[SQLC]:http://sqlc.azurewebsites.net/
