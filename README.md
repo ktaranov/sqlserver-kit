@@ -193,6 +193,7 @@ Here's just SQL Server 2008 Management Studio:
 
 
 ## Microsoft Adventure Works Sample Databases download links
+ - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
  - [Adventure Works Sample Databases and Scripts for SQL Server 2016 CTP3](http://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
