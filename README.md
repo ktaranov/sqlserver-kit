@@ -1,4 +1,9 @@
 # SQL Server KIT
+[![licence badge]][licence]
+[![stars badge]][stars]
+[![forks badge]][forks]
+[![issues badge]][issues]
+
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 Headers:
@@ -261,3 +266,14 @@ Here's just SQL Server 2008 Management Studio:
 
 If some procedures or scripts are restricted due to **ELUA** (or we can't find original author), please email or add issue - we remove/update it immediately.
 Thanks for understanding and patience.
+
+
+[licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
+[stars badge]:https://img.shields.io/github/stars/ktaranov/sqlserver-kit.svg
+[forks badge]:https://img.shields.io/github/forks/ktaranov/sqlserver-kit.svg
+[issues badge]:https://img.shields.io/github/issues/ktaranov/sqlserver-kit.svg
+
+[licence]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
+[stars]:https://github.com/ktaranov/sqlserver-kit/stargazers
+[forks]:https://github.com/ktaranov/sqlserver-kit/network
+[issues]:https://github.com/ktaranov/sqlserver-kit/issues
