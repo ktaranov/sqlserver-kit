@@ -69,7 +69,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (complete list of 90 SQL Server Utilities and Tools)
+ - [Utilities](/Utilities) (complete list of 124 SQL Server paid and free Utilities and Tools)
 
 
 ## SQL Server Web Resources
@@ -78,7 +78,7 @@ Headers:
     - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
     - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
-    - Awesome [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
+    - [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
     - [Simple-talk Articles](https://www.simple-talk.com/)
     - [SQLSentry Blog](http://blogs.sqlsentry.com)
     - [Glenn Berry's SQL Server Performance](http://sqlserverperformance.wordpress.com/)
@@ -100,6 +100,7 @@ Headers:
     - [Andy Yun SQLBeck Blog](https://sqlbek.wordpress.com/)
     - [Curated SQL](http://curatedsql.com/)
     - [Blog do Ezequiel](https://blogs.msdn.microsoft.com/blogdoezequiel/)
+    - [SQLHA Blog](http://sqlha.com/blog/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -112,7 +113,7 @@ Headers:
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
    - [Away from the Keyboard](http://awayfromthekeyboard.com/) (by Cecil Phillip and Richie Rump)
-   - [RunAs Radio](http://runasradio.com/) (by Richard Campbell and Greg Hughes, focusing on infrastructure stuff – SQL Server, Sharepoint, security, Exchange and so on)
+   - [RunAs Radio](http://runasradio.com/) (by Richard Campbell and Greg Hughes)
    - [People Talking Tech](http://peopletalkingtech.com/) (by Denny Cherry)
    - [NET Rocks!](http://www.dotnetrocks.com/) (by Richard Campbell and Carl Franklin)
    - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
