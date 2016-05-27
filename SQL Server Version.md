@@ -94,7 +94,7 @@ Like Cumulative Updates, Service Packs are cumulative. If you are applying SP3, 
  - [What is Microsoft TAP and RDP?](http://www.jamesserra.com/archive/2011/10/what-is-microsoft-tap-and-rdp/)
 
 
-## SQL Server Patching Shortcut <a id="#sql-server-patching-shortcut"></a>
+## SQL Server Patching Shortcut <a id="sql-server-patching-shortcut"></a>
 
 Step 1. After the CU file has been downloaded, open a DOS prompt and launch it with the /extract option with a path of your choice appended to this option. For example:
 ```bat
