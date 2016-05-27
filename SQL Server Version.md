@@ -50,18 +50,7 @@ Useful articles:
 
 
 ## Frequently used terms and acronyms <a id="frequently-used-terms-and-acronyms"></a>
-**Great thanks to  Aaron Bertrand for awesome article**: [Definitions of SQL Server release acronyms](http://blogs.sqlsentry.com/aaronbertrand/back-to-basics-release-acronyms/)
-
-### References
-]
- - [KB #824684 : Description of the standard terminology that is used to describe Microsoft software updates](https://support.microsoft.com/en-us/kb/824684)
- - [KB #935897 : An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems](https://support.microsoft.com/en-us/kb/935897)
- - [QFE vs GDR/LDR hotfixes](https://blogs.technet.microsoft.com/instan/2009/03/04/qfe-vs-gdrldr-hotfixes/)
- - [GDR, QFE, LDR… WTH?](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
- - [GDR & LDR : The Next Generation](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
- - [Terms used by Microsoft to describe the various software updates released by it](http://www.thewindowsclub.com/terms-used-by-microsoft-to-describe-the-various-software-updates-released-by-it)
- - [What is Microsoft TAP and RDP?](http://www.jamesserra.com/archive/2011/10/what-is-microsoft-tap-and-rdp/)
-
+**Great thanks to Aaron Bertrand for awesome article**: [Definitions of SQL Server release acronyms](http://blogs.sqlsentry.com/aaronbertrand/back-to-basics-release-acronyms/)
 
  - **COD** *Critical On-Demand*: This is a fix for an issue that is deemed "critical" because of the severity of the issue, the number of customers it affects,
 or the lack of a feasible workaround (usually a combination of two or all three).
@@ -94,6 +83,15 @@ It is a roll-up of updates (including bug fixes and security updates) and someti
 Like Cumulative Updates, Service Packs are cumulative. If you are applying SP3, you do not need to first deploy SP1 and SP2.
  - **SU**: Security update.
  - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customers organization.
+
+### References
+ - [KB #824684 : Description of the standard terminology that is used to describe Microsoft software updates](https://support.microsoft.com/en-us/kb/824684)
+ - [KB #935897 : An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems](https://support.microsoft.com/en-us/kb/935897)
+ - [QFE vs GDR/LDR hotfixes](https://blogs.technet.microsoft.com/instan/2009/03/04/qfe-vs-gdrldr-hotfixes/)
+ - [GDR, QFE, LDR… WTH?](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
+ - [GDR & LDR : The Next Generation](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
+ - [Terms used by Microsoft to describe the various software updates released by it](http://www.thewindowsclub.com/terms-used-by-microsoft-to-describe-the-various-software-updates-released-by-it)
+ - [What is Microsoft TAP and RDP?](http://www.jamesserra.com/archive/2011/10/what-is-microsoft-tap-and-rdp/)
 
 
 ## SQL Server Patching Shortcut <a id="#sql-server-patching-shortcut"></a>
