@@ -7,18 +7,18 @@
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 Headers:
- - [Repo folders and files](#repo-folders-and-files)
+ - [Repo Folders and Fles](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
- - [TSQL format code](#tsql-format-code)
- - [Free SQL Server ebooks](#free-sql-server-ebooks)
+ - [TSQL Format Code](#tsql-format-code)
+ - [Free SQL Server Ebooks](#free-sql-server-ebooks)
  - [License](#license)
 
 
-## Repo folders and files
+## Repo Folders and Files
  - [SQL Server Data Types](/SQL Server Data Types.md)
  - [SQL Server Edition](/SQL Server Edition.md)
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
@@ -195,7 +195,6 @@ Here's just SQL Server 2008 Management Studio:
 ## Microsoft Adventure Works Sample Databases download links
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
- - [Adventure Works Sample Databases and Scripts for SQL Server 2016 CTP3](http://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
@@ -211,7 +210,7 @@ Here's just SQL Server 2008 Management Studio:
  - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
  - [TSQL Code Smells Finder](https://tsqlsmells.codeplex.com/) (by Dave Ballantyne)
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
- - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul_Kapoor)
+ - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul Kapoor)
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)
  - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom)
  - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
@@ -227,7 +226,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/)
 
 
-## TSQL format code
+## TSQL Format Code
  - http://sqlinform.com/
  - http://www.dpriver.com/pp/sqlformat.htm
  - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
