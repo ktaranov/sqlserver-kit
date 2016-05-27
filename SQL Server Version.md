@@ -50,17 +50,50 @@ Useful articles:
 
 
 ## Frequently used terms and acronyms <a id="frequently-used-terms-and-acronyms"></a>
- - **CTP**: Community Technology Preview (beta release)
- - **RC**:  Release Candidate
- - **RTM**: Released To Manufacturing; It is the original, released build version of the product, i.e. what you get on the DVD or when you download the ISO file from MSDN.
- - **RTW**:  Usually means "release to web." It indicates a package that was released to the web and made available to customers for downloading.
- - **CU**:  Cumulative Update; Cumulative updates contain the bug fixes and enhancements–up to that point in time–that have been added since the previous Service Pack release and will be contained in the next service pack release. Installation of the Cumulative Update is similar to the installation of a Service Pack. Cumulative Updates are not fully regression tested.
- - **SP**: A tested, cumulative set of all hotfixes, security updates, critical updates, and updates. Service packs may also contain additional fixes for problems that are found internally since the release of the product and a limited number of customer-requested design changes or features.
- - **GDR**: General Distribution Release; GDR fixes should not contain any of the CU updates.
- - **QFE**: Quick Fix Engineering; QFE updates include CU fixes.
+**Great thanks to  Aaron Bertrand for awesome article**: [Definitions of SQL Server release acronyms](http://blogs.sqlsentry.com/aaronbertrand/back-to-basics-release-acronyms/)
+
+### References
+]
+ - [KB #824684 : Description of the standard terminology that is used to describe Microsoft software updates](https://support.microsoft.com/en-us/kb/824684)
+ - [KB #935897 : An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems](https://support.microsoft.com/en-us/kb/935897)
+ - [QFE vs GDR/LDR hotfixes](https://blogs.technet.microsoft.com/instan/2009/03/04/qfe-vs-gdrldr-hotfixes/)
+ - [GDR, QFE, LDR… WTH?](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
+ - [GDR & LDR : The Next Generation](http://blogs.technet.com/b/mrsnrub/archive/2009/05/14/gdr-qfe-ldr-wth.aspx)
+ - [Terms used by Microsoft to describe the various software updates released by it](http://www.thewindowsclub.com/terms-used-by-microsoft-to-describe-the-various-software-updates-released-by-it)
+ - [What is Microsoft TAP and RDP?](http://www.jamesserra.com/archive/2011/10/what-is-microsoft-tap-and-rdp/)
+
+
+ - **COD** *Critical On-Demand*: This is a fix for an issue that is deemed "critical" because of the severity of the issue, the number of customers it affects,
+or the lack of a feasible workaround (usually a combination of two or all three).
+The fix is released out-of-band from the usual Cumulative Update / Service Pack release cycle, and then rolled into the next Cumulative Update (or, depending on timing, the one after that).
+A COD can sometimes contain more than one QFE (defined below).
+ - **CU** *Cumulative Update*:  This is a roll-up of multiple fixes that occurs between Service Packs, usually on a 60-day cycle (though that is subject to change).
+It used to require an e-mail and password to download and extract the files, because they were "less tested" than service packs, but [this is no longer the case](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/).
+Functionality can also be added in Cumulative Updates (previously, this would only happen in Service Packs, and before that, only in major releases).
+Kendra Little just published [a fantastic blog post about this](http://www.littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/).
+You should feel comfortable applying Cumulative Updates as quickly as your regression and other test processes allow.
+ - **CTP** *Community Technology Preview*:  This is a build of the "next" version of SQL Server (or sometimes a Service Pack) that can be used for testing new features and reporting bugs.
+With few exceptions, CTPs cannot be used in a production scenario, and they are usually limited to Express / Evaluation Editions.
+ - **GA** *General Availability*: For the traditional SQL Server product, this usually means that you can download the ISO from the usual sources (MSDN downloads, the TechNet Evaluation Center, or your volume licensing servers).
+For Azure SQL Database, this usually means that you can go and turn on the functionality without first agreeing to a waiver about preview functionality.
+ - **GDR** *General Distribution Release*: A GDR fix contains issues that are security-related and/or have a wide impact, and are released without any other critical updates that have been released for the specific branch.
+These are typically used by customers who need the fixes they contain, but do not have the resources to test all of the other fixes that come with Cumulative Updates.
+ - **QFE** *Quick Fix Engineering*: This is a potentially less-tested fix (also sometimes called a hotfix) that gets distributed to a small number of customers for a very specific issue, through a COD or CU.
+(In the Windows world, this is called an LDR – Limited Distribution Release – but that nomenclature has not caught on in the SQL Server team.)
+ - **RC** *Release Candidate*: This is a build that is almost ready for final release (RTM / GA). Usually it is feature complete, with the only remaining work comprised of minor bug fixes and fit & finish.
+However, this is not always strictly the case, as a few behavior changes were introduced in RCs for SQL Server 2016.
+ - **RDP** *Rapid Deployment Program*: No, this has nothing to do with remote desktop; it refers to a set of "early adopter" customers, usually used to help market the launch of a new version or feature.
+These are almost always a subset of TAP, and are almost always running the new version in production months before it is available to the public. James Serra goes into more detail [here](http://www.jamesserra.com/archive/2011/10/what-is-microsoft-tap-and-rdp/).
+ - **RTM** *Released To Manufacturing*: This means that the release is ready. Back when Microsoft shipped software on CDs and later DVDs, this represented the point in time when the discs could be printed.
+Not to be confused with launch (which is a marketing thing only) or General Availability (which means you can actually get the code).
+The delay between RTM and GA is much shorter now that software is generally distributed online instead of on physical media.
+ - **RTW** *Release to Web*:  It indicates a package that was released to the web and made available to customers for downloading.
+ - **TAP** *Technology Adoption Program*: This describes a set of customers that help Microsoft shape and test specific features for a new release (or help shape and test new features individually).
+ - **SP** *Service Pack*: A Service Pack is, now, essentially a Cumulative Update with slightly different labeling.
+It is a roll-up of updates (including bug fixes and security updates) and sometimes contains new features.
+Like Cumulative Updates, Service Packs are cumulative. If you are applying SP3, you do not need to first deploy SP1 and SP2.
  - **SU**: Security update.
- - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customer's organization.
- - **COD**: This critical on-demand hotfix addresses on a specific issue
+ - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customers organization.
 
 
 ## SQL Server Patching Shortcut <a id="#sql-server-patching-shortcut"></a>
