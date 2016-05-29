@@ -224,6 +224,7 @@ Here's just SQL Server 2008 Management Studio:
  - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
  - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
  - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/)
+ - [Powershell SQL Server Library](https://github.com/sanderstad/PSSQLLib) (by Sander Stad)
 
 
 ## TSQL Format Code
