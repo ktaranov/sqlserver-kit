@@ -249,7 +249,7 @@ Microsoft SQL Server 2016 - 13.0.1601.5 (X64)
 
 | Build         | File version      | KB / Description                                                                | Release Date | Build Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|------------|
-| 13.0.1400.361 | 2015.130.1601.5   | [Microsoft SQL Server 2016 RTM]                                                 | 2016-06-01   | 2016-06-01 |
+| 13.0.1601.5   | 2015.130.1601.5   | [Microsoft SQL Server 2016 RTM]                                                 | 2016-06-01   | 2016-06-01 |
 | 13.0.1400.361 | 2015.130.1400.361 | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)        | 2016-04-15   | 2016-04-09 |
 | 13.0.1300.275 | 2015.130.1300.275 | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)        | 2016-04-01   | 2016-03-26 |
 | 13.0.1200.242 | 2015.130.1200.242 | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)        | 2016-03-18   | 2016-03-10 |
