@@ -283,14 +283,20 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 |--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | 12.0.4457.0  | 2014.120.4457.0  | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |
 | 12.0.4449.0  | 2014.120.4449.0  | [3144524 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Deprecated**                                                    | 2016-04-18   |
+| 12.0.4452.0  | 2014.120.4452.0  | 3147825 COD Hotfix **Deprecated**                                                                                                  | 2016-04-05   |
 | 12.0.4439.1  | 2014.120.4439.1  | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |
+| 12.0.4437.0  | 2014.120.4437.0  | [3130999 COD Hotfix]                                                                                                               | 2016-02-05   |
 | 12.0.4436.0  | 2014.120.4436.0  | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |
+| 12.0.4433.0  | 2014.120.4433.0  | [3119148 COD Hotfix]                                                                                                               | 2015-12-09   |
+| 12.0.4432.0  | 2014.120.4432.0  | [3097972 COD Hotfix]                                                                                                               | 2015-11-19   |
 | 12.0.4427.24 | 2014.120.4427.24 | [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |
 | 12.0.4422.0  | 2014.120.4422.0  | [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |
+| 12.0.4419.0  | 2014.120.4419.0  | [3078973 COD Hotfix]                                                                                                               | 2015-07-24   |
 | 12.0.4416.0  | 2014.120.4416.0  | [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]                                                     | 2015-06-22   |
+| 12.0.4219.0  | 2014.120.4219.0  | [3098852 SP1 GDR TLS 1.2 Update]                                                                                                   | 2016-01-29   |
 | 12.0.4213.0  | 2014.120.4213.0  | [MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                            | 2015-07-14   |
 | 12.0.4100.1  | 2014.120.4100.1  | [SQL Server 2014 Service Pack 1 (SP1)]                                                                                             | 2015-05-14   |
-| 12.0.4050.0  | 2014.120.4050.0  | SQL Server 2014 Service Pack 1 (SP1) [withdrawn]                                                                                   | 2015-04-15   |
+| 12.0.4050.0  | 2014.120.4050.0  | SQL Server 2014 Service Pack 1 (SP1) (initial)                                                                                     | 2015-04-15   |
 | 12.0.2560.0  | 2014.120.2550.0  | [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |
 | 12.0.2556.4  | 2014.120.2556.4  | [3094220 Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |
 | 12.0.2553    | 2014.120.2553.0  | [3075949 Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |
@@ -325,10 +331,15 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3167392
 [3144524 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3144524
 [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3130926
+[3130999 COD Hotfix]:https://support.microsoft.com/en-us/kb/3147825
 [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3106660
+[3119148 COD Hotfix]:http://support.microsoft.com/kb/3119148
+[3097972 COD Hotfix]:http://support.microsoft.com/kb/3097972
 [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3094221
 [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3075950
+[3078973 COD Hotfix]:http://support.microsoft.com/kb/3078973
 [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3067839
+[3098852 SP1 GDR TLS 1.2 Update]:https://support.microsoft.com/en-us/hotfix/kbhotfix?kbnum=3098852&kbln=en-us
 [MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]:https://support.microsoft.com/en-us/kb/3070446
 [SQL Server 2014 Service Pack 1 (SP1)]:http://www.microsoft.com/en-us/download/details.aspx?id=46694
 [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]:http://support.microsoft.com/kb/3106659
@@ -2082,20 +2093,20 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                              |              |
 | 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                        | 1996-06-30   |
 
-[238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation]:http://support.microsoft.com/kb/238621/en-us#
-[273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]:http://support.microsoft.com/kb/273914/en-us#
-[249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]:http://support.microsoft.com/kb/249343/en-us#
-[250493 FIX: Memory Leak with xp_sendmail Using Attachments]:http://support.microsoft.com/kb/250493/en-us#
-[275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]:http://support.microsoft.com/kb/275483/en-us#
-[238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]:http://support.microsoft.com/kb/238620/en-us#
-[236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]:http://support.microsoft.com/kb/236447/en-us#
-[240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]:http://support.microsoft.com/kb/240172/en-us#
-[234679 FIX: SNMP Extended Stored Procedures May Leak Memory]:http://support.microsoft.com/kb/234679/en-us#
-[187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]:http://support.microsoft.com/kb/187278/en-us#
-[197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]:http://support.microsoft.com/kb/197176/en-us#
-[178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)]:http://support.microsoft.com/kb/178295/en-us#
-[160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]:http://support.microsoft.com/kb/160727/en-us#
-[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:http://support.microsoft.com/kb/153096/en-us#
+[238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation]:https://support.microsoft.com/en-us/kb/238621
+[273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]:https://support.microsoft.com/en-us/kb/273914
+[249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]:https://support.microsoft.com/en-us/kb/249343
+[250493 FIX: Memory Leak with xp_sendmail Using Attachments]:https://support.microsoft.com/en-us/kb/250493
+[275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]:https://support.microsoft.com/en-us/kb/275483
+[238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]:https://support.microsoft.com/en-us/kb/238620
+[236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]:https://support.microsoft.com/en-us/kb/236447
+[240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]:https://support.microsoft.com/en-us/kb/240172
+[234679 FIX: SNMP Extended Stored Procedures May Leak Memory]:https://support.microsoft.com/en-us/kb/234679
+[187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]:https://support.microsoft.com/en-us/kb/187278
+[197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]:https://support.microsoft.com/en-us/kb/197176
+[178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)]:https://support.microsoft.com/en-us/kb/178295
+[160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/160727
+[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/153096
 
 
 ## Microsoft SQL Server 6.0 Builds <a id="microsoft-sql-server-60-builds"></a>
