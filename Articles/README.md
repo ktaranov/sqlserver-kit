@@ -31,6 +31,10 @@
 | [Understanding GRANT, DENY, and REVOKE in SQL Server]                             | K. Brian Kelley                          | 2013-02-27 |
 | [Monitor SQL Server Transaction Log File Free Space]                              | Mike Eastland                            | 2015-05-12 |
 | [Dynamically Query a 100 Million Row Table-Efficiently]                           | Gary Strange                             | 2016-05-27 |
+| [Updating Statistics in SQL Server: Maintenance Questions & Answers]              | Kendra Little                            | 2016-04-18 |
+| [Understanding and Using Parallelism in SQL Server]                               | Paul White                               | 2011-03-03 |
+| [Diagnosing and Resolving Latch Contention on SQL Server]                         | Microsoft                                | 2014-02-28 |
+| [Parallel Execution Plans – Branches and Threads]                                 | Paul White                               | 2013-10-07 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -61,3 +65,7 @@
 [Understanding GRANT, DENY, and REVOKE in SQL Server]:https://www.mssqltips.com/sqlservertip/2894/understanding-grant-deny-and-revoke-in-sql-server/
 [Monitor SQL Server Transaction Log File Free Space]:https://www.mssqltips.com/sqlservertip/3617/monitor-sql-server-transaction-log-file-free-space/
 [Dynamically Query a 100 Million Row Table-Efficiently]:http://www.sqlservercentral.com/articles/T-SQL/121906/
+[Updating Statistics in SQL Server: Maintenance Questions & Answers]:http://www.littlekendra.com/2016/04/18/updating-statistics-in-sql-server-maintenance-answers
+[Understanding and Using Parallelism in SQL Server]:https://www.simple-talk.com/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
+[Diagnosing and Resolving Latch Contention on SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=26665
+[Parallel Execution Plans – Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
