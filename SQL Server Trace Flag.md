@@ -11,12 +11,14 @@ Headers:
 Source links:
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
- - MSDN TF list: http://sqlserverpedia.com/wiki/Trace_Flags
- - Albert van der Sel TF list: http://antapex.org/traceflags_sqlserver.txt
- - Technet Wiki TF list: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
- - Amit Banerjee TF list: http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/
- - Paul Randal discussing TF Pro’s and Con’s: http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/
- - **Some trace flags needs to be specified with "t" rather than with "T" in startup options!**: http://technet.microsoft.com/en-us/library/ms190737(v=sql.110).aspx
+ - [MSDN TF list](http://sqlserverpedia.com/wiki/Trace_Flags)
+ - [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
+ - [Technet Wiki TF list](http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx)
+ - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
+ - [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
+ - **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number.
+A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers.
+(Parameters specified in the Control Panel startup window are not read.)**: https://technet.microsoft.com/en-us/en-en/library/ms190737%28v=sql.120%29.aspx
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
 
