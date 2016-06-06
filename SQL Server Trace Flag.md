@@ -108,6 +108,7 @@ GO
 ## Trace flags list <a id="trace-flags-list"></a>
 Summary: 300 trace flags
 
+
 **Trace Flag: -1**<br />
 Function: Sets trace flags for all client connections, rather than for a single client connection. Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using DBCC TRACEON and DBCC TRACEOFF.<br />
 Link: http://www.sql-server-performance.com/2002/traceflags/
@@ -656,8 +657,7 @@ Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-t
 
 
 **Trace Flag: 2388**<br />
-Function: Change DBCC SHOW\_STATISTICS output to show stats history and
-lead key type such as known ascending keys<br />
+Function: Change DBCC SHOW\_STATISTICS output to show stats history and lead key type such as known ascending keys<br />
 Link: http://www.benjaminnevarez.com/2013/02/statistics-on-ascending-keys
 
 
@@ -1315,6 +1315,12 @@ Link: https://support.microsoft.com/en-us/kb/230044
 **Trace Flag: 7300**<br />
 Function: Outputs extra info about linked server errors<br />
 Link: http://support.microsoft.com/kb/314530
+
+
+**Trace Flag: 7471**<br />
+Function: Running multiple UPDATE STATISTICS for different statistics on a single table concurrently<br />
+Link: https://support.microsoft.com/en-us/kb/3156157<br />
+Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds
 
 
 **Trace Flag: 7502**<br />
