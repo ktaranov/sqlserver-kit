@@ -128,6 +128,7 @@ Useful free and paid Microsoft SQL Server utilities and tools
 | [RestoreChecker](#restorechecker)                                     | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
 | [SQLC](#sqlc)                                                         | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          |  No   |
+| [Database Performance Analyzer](#dpa-solarwinds)                      | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
 
 
 ## bcp Utility <a id="bcp"></a>
@@ -1846,6 +1847,17 @@ Price: No
 SQLC is a software tool for comparing two SQL Server databases. With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
 
 
+## Database Performance Analyzer <a id="dpa-solarwinds"></a>
+Download page: [Database Performance Analyzer]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SolarWinds<br/>
+Free version: No<br/>
+Price: $1995
+
+Monitor across your entire environment: physical servers, virtualized, and in the Cloud
+
+
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
@@ -1970,3 +1982,4 @@ SQLC is a software tool for comparing two SQL Server databases. With SQLC you ca
 [RestoreChecker]:http://sqlserverutilities.com/products/restorechecker/
 [SQLScripter]:http://sqlserverutilities.com/products/sqlscripter/
 [SQLC]:http://sqlc.azurewebsites.net/
+[Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer-sql-server
