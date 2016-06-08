@@ -101,6 +101,8 @@ Headers:
     - [Curated SQL](http://curatedsql.com/)
     - [Blog do Ezequiel](https://blogs.msdn.microsoft.com/blogdoezequiel/)
     - [SQLHA Blog](http://sqlha.com/blog/)
+    - [SQLSecurity Blog](http://www.sqlsecurity.com/home)
+    - [T-SQL.ru](http://www.t-sql.ru/)
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
