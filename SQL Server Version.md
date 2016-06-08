@@ -22,6 +22,7 @@ Headers:
 Source link:
  - **Awesome official Microsoft article** - How to determine the version, edition and update level of SQL Server and its components: [KB321185](https://support.microsoft.com/en-us/kb/321185)
  - Naming schema for Microsoft SQL Server software update packages: [KB822499](https://support.microsoft.com/en-us/kb/822499)
+ - [Microsoft SQL Server Support Lifecycle](https://support.microsoft.com/en-us/lifecycle?x=5&y=11&c2=1044)
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads: [KB2964518](https://support.microsoft.com/en-us/kb/2964518)
