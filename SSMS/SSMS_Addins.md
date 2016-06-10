@@ -27,7 +27,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio
 | [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]    | 2015-11-30   | 2008/2012/2014  | Devart               | Yes          | No      |
 | [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]     | 2015-09-16   | 2008/2012/2014  | Devart               | No           |    $120 |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]   | 2016-03-18   | 2008/2012/2014  | SoftTree             | No           |    $179 |
-| [SQL Enlight For SSMS](#sql-enlight-for-sms)          | [SQL Enlight For SSMS]     | 2016-04-25   | 2008/2012/2014  | UbitSoft             | No           |    $195 |
+| [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]     | 2016-04-25   | 2008/2012/2014  | UbitSoft             | No           |    $195 |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -172,7 +172,7 @@ Free version: Yes
 
 With ApexSQL Complete you can:
  - Automatically complete SQL statements
- - Review an object's script and description
+ - Review an objects script and description
  - Improve productivity with snippets
  - Identify the structure of complex SQL queries
  - Keep track of all your tabs
