@@ -121,18 +121,21 @@ Useful free and paid Microsoft SQL Server utilities and tools
 | [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
 | [DataGrip](#datagrip)                                                 | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
-| [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li            | Yes          |  No   |
-| [SQL Nexus Tool](#sql-nexus-tool)                                     | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li            | Yes          |  No   |
+| [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li            | Yes          | No    |
+| [SQL Nexus Tool](#sql-nexus-tool)                                     | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li            | Yes          | No    |
 | [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | [DBSophic Qure Profiler]             | ?            | DBSophic           | No           |  $300 |
-| [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | [DBSophic Qure Optimizer]            | ?            | DBSophic           | No           |  ?    |
+| [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | [DBSophic Qure Optimizer]            | ?            | DBSophic           | No           | ?     |
 | [RestoreChecker](#restorechecker)                                     | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
 | [SQLC](#sqlc)                                                         | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          |  No   |
 | [Database Performance Analyzer](#dpa-solarwinds)                      | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
+| [SQL Enlight](#sql-enlight)                                           | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
+| [OmniCompare](#omnicompare)                                           | [OmniCompare]                        | 2016-06-03   | AireForge          | Yes          | No    |
+| [HexaTier](#hexatier)                                                 | [HexaTier]                           | ?            | HexaTier           |  No          | ?     |
 
 
 ## bcp Utility <a id="bcp"></a>
-Download page: [Grapbcp Utility]<br/>
+Download page: [bcp Utility]<br/>
 Release date: 2012-02-11<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Microsoft<br/>
@@ -1070,7 +1073,7 @@ Price: $697
  - Web-based architecture simplifies deployment
 
 
-## DB Optimizer <a id="db optimizer"></a>
+## DB Optimizer <a id="db-optimizer"></a>
 Download page: [DB Optimizer]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1247,7 +1250,7 @@ Fragmentation Manager will also allow you to perform index defragmentation faste
 
 
 ## SQLSentry Plan Explorer <a id="sqlsentry-plan-explorer"></a>
-Download page: [SQLSentry Plan Explore]<br/>
+Download page: [SQLSentry Plan Explorer]<br/>
 Release date: 2016-01-28<br/>
 Support Version: 2008/2012/2014<br/>
 Author: SQLSentry<br/>
@@ -1858,6 +1861,47 @@ Price: $1995
 Monitor across your entire environment: physical servers, virtualized, and in the Cloud
 
 
+## SQL Enlight <a id="sql-enlight"></a>
+Download page: [SQL Enlight]<br/>
+Release date: 2016-04-25<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Author: UbitSoft<br/>
+Free version: No<br/>
+Price: $295
+
+ - Advanced static analysis
+ - T-SQL code formatting
+ - Statements history
+ - Validate T-SQL code for syntax errors
+ - Script Summary
+ - Refactoring
+ - Continuous integration support
+
+
+## OmniCompare <a id="omnicompare"></a>
+Download page: [OmniCompare]<br/>
+Release date: 2016-06-03<br/>
+Support Version: ?<br/>
+Author: AireForge<br/>
+Free version: Yes<br/>
+Price: No
+
+**The first Aireforge product is now in beta.**
+OmniCompare is a SQL Server configuration comparison tool which compares instance settings, users, permissions, jobs, linked servers and more.
+
+
+## HexaTier <a id="hexatier"></a>
+Download page: [HexaTier]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: HexaTier<br/>
+Free version: No<br/>
+Price: ?
+
+Providing an all-in-one solution to protect your data from internal and external attacks with four key elements, including:
+Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Database Activity Monitoring to comply with regulatory requirements.
+
+
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
@@ -1983,3 +2027,6 @@ Monitor across your entire environment: physical servers, virtualized, and in th
 [SQLScripter]:http://sqlserverutilities.com/products/sqlscripter/
 [SQLC]:http://sqlc.azurewebsites.net/
 [Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer-sql-server
+[SQL Enlight]:http://www.ubitsoft.com/products/sqlenlight/index.php
+[OmniCompare]:http://aireforge.com/download/OmniCompare.html
+[HexaTier]:http://www.hexatier.com/
