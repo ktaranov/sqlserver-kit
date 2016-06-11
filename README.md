@@ -9,6 +9,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 Headers:
  - [Repo Folders and Fles](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
+ - [SQL Server Developer Edition Links](#sql-server-developer-edition-links)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
@@ -153,6 +154,27 @@ Headers:
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
 
 
+## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
+**Now it is free!!!** [SQL Server Developer Edition Ddwnload page](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads?q=SQL%20Server%20Developer)
+
+**Important Note**: SQL Server 2016 has a critical pre-requisite for updated Visual Studio VC++ 2013 Runtime Libraries.
+To install or check if this update is required on your system, please see [KB316398](http://go.microsoft.com/fwlink/?LinkID=798747).
+
+| Edition\Direct Download Link                                                  | Release Date | File name                                                                    | Size, Mb | SHA1                                     |
+|-------------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------|---------:|------------------------------------------|
+| [SQL Server 2016 Developer (x64) - DVD (English)]                             | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             | 2103     | 1B23982FE56DF3BFE0456BDF0702612EB72ABF75 |
+| [SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English)] | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso | 3025     | BFEE1F300C39638DA0D2CD594636698C6207C852 |
+| [SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English)] | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso | 2462     | ED3C70507A73BCC63D67CFA272CD849B9418A18E |
+| [SQL Server 2014 Developer Edition (x64) - DVD (English)]                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     | 2486     | F73F430F55A71DA219FC7257A3A28E8FC142530F |
+| [SQL Server 2014 Developer Edition (x86) - DVD (English)]                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     | 2039     | 395B35FD80AA959B02B0C399DA1BB0C020DB6310 |
+
+[SQL Server 2016 Developer (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2016_developer_x64_dvd_8777069.iso?t=1e25859a-e553-4d4b-94ed-57eb1f3ca358&e=1465518402&h=acb056d271b5edad9dfc32d316b4ccae&su=1
+[SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso?t=46b5d967-a660-42ed-be20-84513865d17c&e=1465518673&h=2b52107d8b47de28940f3056a4f5096a&su=1
+[SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso?t=8afae12e-4b87-442e-a079-8dd65f0678fb&e=1465518953&h=cdbc71d521e33a34ce37dd8a94ea8d2e&su=1
+[SQL Server 2014 Developer Edition (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2014_developer_edition_x64_dvd_3940406.iso?t=6ee13aba-8e34-4e00-be3f-efb1ae8f77c6&e=1465519076&h=ac96944a075388b4532004e47779db7a&su=1
+[SQL Server 2014 Developer Edition (x86) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2014_developer_edition_x86_dvd_3938200.iso?t=01e596a3-88b7-4c14-8321-ac092eed84c2&e=1465519020&h=a5a11777c435910b516bc62ed1c9121a&su=1
+
+
 ## SQL Server Express direct download links
 Original post written by Scott Hanselman: http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx<br />
 Official Microsoft SQL Server Express page: https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/sql-server-express.aspx
@@ -263,6 +285,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Effective Graphs with Microsoft R Open](http://blog.revolutionanalytics.com/2016/05/e-book-effective-graphs.html)
+ - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
 
 
 ## License
