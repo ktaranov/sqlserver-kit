@@ -6,6 +6,7 @@
 | [SQL Server Index Design Guide]                                                   | Microsoft                                | ?          |
 | [SQL Server 2012 Security Best Practices - Microsoft]                             | Bob Beauchemin                           | 2012-01-15 |
 | [Help, my database is corrupt. Now what?]                                         | Gail Shaw                                | 2010-04-23 |
+| [Understanding how SQL Server executes a query]                                   | Remus Rusanu                             | 2016-04-15 |
 | [What to Do When DBCC CHECKDB Reports Corruption]                                 | Brent Ozar                               | 2016-05-19 |
 | [Troubleshooting SQL Server CPU Performance Issues]                               | Joe Sack                                 | 2013-05-28 |
 | [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                | Paul Randal                              | 2016-04-06 |
@@ -41,6 +42,7 @@
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
 [Help, my database is corrupt. Now what?]:http://www.sqlservercentral.com/articles/Corruption/65804/
 [What to Do When DBCC CHECKDB Reports Corruption]:https://www.brentozar.com/archive/2016/05/dbcc-checkdb-reports-corruption/
+[Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [Troubleshooting SQL Server CPU Performance Issues]:http://sqlperformance.com/2013/05/io-subsystem/cpu-troubleshooting
 [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]:http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
 [The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dyn-search.html
