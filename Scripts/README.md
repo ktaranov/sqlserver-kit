@@ -3,37 +3,37 @@
 
 ## [SQL Server 2016 Diagnostic Information Queries](SQL Server 2016 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2016
 
 
 ## [SQL Server 2012 Diagnostic Information Queries](SQL Server 2012 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2012
 
 
 ## [SQL Server 2008 R2 Diagnostic Information Queries](SQL Server 2008 R2 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2008
 
 
 ## [SQL Server 2008 Diagnostic Information Queries](SQL Server 2008 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2008
 
 
 ## [SQL Server 2014 Diagnostic Information Queries](SQL Server 2014 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2014
 
 
 ## [SQL Server 2005 Diagnostic Information Queries](SQL Server 2005 Diagnostic Information Queries.sql)
 Author: Glenn Alan Berry<br/>
-Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-april-2016/<br/>
+Original link: http://www.sqlskills.com/blogs/glenn/sql-server-diagnostic-information-queries-for-june-2016/<br/>
 Tested on SQL Server version: 2005
 
 
