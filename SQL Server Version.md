@@ -47,7 +47,7 @@ Useful articles:
  - [Sqlservr.exe versions](http://www.mskbfiles.com/sqlservr.exe.php)
  - [SQL Server Patching Shortcut](http://www.sqlservercentral.com/articles/SQL+Server+patching/138693/)
 
-**All SQL Server service packs are cumulative, meaning that each new service pack contains all the fixes that are included with previous service packs and any new fixes.**
+**All SQL Server service packs and Cumulative Updates are cumulative, meaning that each new service pack and cumulative update contains all the fixes that are included with previous service packs and any new fixes.**
 
 
 ## Frequently used terms and acronyms <a id="frequently-used-terms-and-acronyms"></a>
@@ -115,7 +115,7 @@ Profits:
 
 | Version | Latest Update                                                      | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|--------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Download 2016 RTM]                                                | 13.0.1601.5                                    | 2016-06-01                               | ?            | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Download 2016 RTM]                                                | 13.0.1601.5                                    | 2016-06-01                               | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Download 2014 SP1] then<br/>[CU6 KB3167392]                       | 12.0.4100.1<br/>12.0.4457.0                    | 2015-05-15<br/>2016-04-31                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Download 2012] then<br/>[SP3 2012] then<br/>[CU3 KB3152635]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6537.0   | 2012-02-14<br/>2015-11-21<br/>2016-05-16 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Download 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
@@ -2053,19 +2053,19 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 [275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221]:http://support.microsoft.com/kb/275901/
 [274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624]:http://support.microsoft.com/kb/274266/
 [243741 FIX: Replication Initialize Method Causes Handle Leak on Failure]:http://support.microsoft.com/kb/243741/
-[281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]:http://support.microsoft.com/kb/281185/
-[260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]:http://support.microsoft.com/kb/260346/
-[266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]:http://support.microsoft.com/kb/266766/
+[281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]:https://support.microsoft.com/en-us/kb/281185
+[260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]:https://support.microsoft.com/en-us/kb/260346
+[266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]:https://support.microsoft.com/en-us/kb/266766
 [SQL Server 7.0 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/254561
-[258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]:http://support.microsoft.com/kb/258087/
+[258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]:https://support.microsoft.com/en-us/kb/258087
 [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]:http://support.microsoft.com/kb/252905/
-[253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]:http://support.microsoft.com/kb/253738/
-[239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]:http://support.microsoft.com/kb/239458/
+[253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]:https://support.microsoft.com/en-us/kb/253738
+[239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]:https://support.microsoft.com/en-us/kb/239458
 [SQL Server 7.0 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/232570
-[232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]:http://support.microsoft.com/kb/232707/
-[244763 FIX: Access Violation Under High Cursor Stress]:http://support.microsoft.com/kb/244763/
-[229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:http://support.microsoft.com/kb/229875/
-[220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:http://support.microsoft.com/kb/220156/
+[232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]:https://support.microsoft.com/en-us/kb/232707
+[244763 FIX: Access Violation Under High Cursor Stress]:https://support.microsoft.com/en-us/kb/244763/
+[229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:https://support.microsoft.com/en-us/kb/229875/
+[220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:https://support.microsoft.com/en-us/kb/220156
 
 
 ## Microsoft SQL Server 6.5 Builds <a id="microsoft-sql-server-65-builds"></a>
