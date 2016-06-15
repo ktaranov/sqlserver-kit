@@ -1,5 +1,8 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (300 trace flags).
+Complete list of Microsoft SQL Server trace flags (303 trace flags)
+
+**REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
+
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -104,11 +107,8 @@ GO
 | LASJNtoSM | Left Anti Semi Join to Sort Merge |
 
 
-**REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
-
-
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: 300 trace flags
+Summary: 303 trace flags
 
 
 **Trace Flag: -1**<br />
@@ -375,7 +375,7 @@ Link: https://support.microsoft.com/en-gb/kb/906121
 
 **Trace Flag: 830**<br />
 Function: SQL 9 – Disable the reporting of CPU Drift errors in the SQL Server errorlog like SQL Server has encountered 2 occurrence(s) of I/O requests taking longer than 15 seconds to complete<br />
-Link: None
+Link: https://support.microsoft.com/en-us/kb/897284
 
 
 **Trace Flag: 831**<br />
@@ -1203,7 +1203,8 @@ Link: https://support.microsoft.com/en-us/kb/949854
 
 
 **Trace Flag: 4127**<br />
-Function: SQL 9 - Compilation time of some queries is very long in an x64-based version. Basically its more than execution time because more memory allocations are necessary in the compilation process.<br />
+Function: SQL 9 - Compilation time of some queries is very long in an x64-based version.
+Basically its more than execution time because more memory allocations are necessary in the compilation process.<br />
 Link: https://support.microsoft.com/en-us/kb/953569
 
 
@@ -1235,15 +1236,20 @@ Link: http://support.microsoft.com/kb/2658214
 
 
 **Trace Flag: 4138**<br />
-Function: Fixes performance problems with certain queries that use TOP
-statement<br />
+Function: Fixes performance problems with certain queries that use TOP statement<br />
 Link: http://support.microsoft.com/kb/2667211
+
+
+**Trace Flag : 4139**<br />
+Function: Fix for poor cardinality estimation when the ascending key column is branded as stationary<br />
+Link : https://support.microsoft.com/en-us/kb/2952101
 
 
 **Trace Flag: 4199**<br />
 Function: Turn on all optimizations<br />
 Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx<br />
 Link: https://msdn.microsoft.com/en-us/library/bb510411.aspx#TraceFlag<br />
+Link: https://support.microsoft.com/en-us/kb/974006<br />
 Scope: global or session
 
 
@@ -1303,10 +1309,21 @@ Function: Alters default behavior of select…INTO (and other processes) that lo
 Link: None
 
 
+**Trace Flag: 6498**<br />
+Function: Increased query compilation scalability in SQL Server 2014<br />
+Link: https://support.microsoft.com/en-us/kb/3024815<br />
+Link: http://blogs.msdn.com/b/sql_server_team/archive/2015/10/09/query-compile-big-gateway-policy-changes-in-sql-server.aspx
+
+
 **Trace Flag: 6527**<br />
 Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration. By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR. The behaviour of the trace flag is as follows: If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used. If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
 Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
 Scope: global
+
+
+**Trace Flag: 6534**<br />
+Function: This fix updates the sorting algorithm to include angular vectorization techniques that significantly improve the LineString performance
+Link: https://support.microsoft.com/en-us/kb/3054180
 
 
 **Trace Flag: 7103**<br />
@@ -1317,6 +1334,11 @@ Link: https://support.microsoft.com/en-us/kb/230044
 **Trace Flag: 7300**<br />
 Function: Outputs extra info about linked server errors<br />
 Link: http://support.microsoft.com/kb/314530
+
+
+**Trace Flag: 7470**<br />
+Function: Fix for sort operator spills to tempdb in SQL Server 2012 or SQL Server 2014 when estimated number of rows and row size are correct<br />
+Link: https://support.microsoft.com/en-us/kb/3088480
 
 
 **Trace Flag: 7471**<br />
@@ -1512,6 +1534,12 @@ Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
 **Trace Flag: 8209**<br />
 Function: Output extra information to error log regarding replication of schema changes in SQL Server Replication<br />
 Link: http://support.microsoft.com/kb/916706/en-us
+
+
+**Trace Flag : 8295**<br />
+Function: Creates a secondary index on the identifying columns on the change tracking side table at enable time<br />
+Link : https://social.msdn.microsoft.com/forums/sqlserver/en-US/00250311-7991-47b0-b788-7fae2e102254/trace-flag-8295<br />
+Thanks to: Wilfred van Dijk
 
 
 **Trace Flag: 8446**<br />
