@@ -29,8 +29,7 @@ DBCC addinstance (objectname, instancename)
 
 DBCC adduserobject (name)
 
-DBCC auditevent (eventclass, eventsubclass, success, loginname
-, rolename, dbusername, loginid)
+DBCC auditevent (eventclass, eventsubclass, success, loginname, rolename, dbusername, loginid)
 
 DBCC autopilot (typeid, dbid, tabid, indid, pages [,flag])
 
@@ -56,8 +55,7 @@ DBCC checkdb [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_ERR
 
 DBCC checkdbts (dbid, newTimestamp)]
 
-DBCC checkfilegroup [( [ {'filegroup_name' | filegroup_id} ] [, NOINDEX] )] [WITH NO_INFOMSGS
-[, ALL_ERRORMSGS][, PHYSICAL_ONLY][, ESTIMATEONLY][, TABLOCK]]
+DBCC checkfilegroup [( [ {'filegroup_name' | filegroup_id} ] [, NOINDEX] )] [WITH NO_INFOMSGS[, ALL_ERRORMSGS][, PHYSICAL_ONLY][, ESTIMATEONLY][, TABLOCK]]
 
 DBCC checkident ('table_name'[, { NORESEED | {RESEED [, new_reseed_value] } } ] )
 
@@ -107,8 +105,7 @@ DBCC dropextendedproc (function_name)
 
 DBCC dropuserobject ('object_name')
 
-DBCC dumptrigger ({'BREAK', {0 | 1}} | 'DISPLAY' | {'SET', exception_number}
-| {'CLEAR', exception_number})
+DBCC dumptrigger ({'BREAK', {0 | 1}} | 'DISPLAY' | {'SET', exception_number} | {'CLEAR', exception_number})
 
 DBCC errorlog
 
@@ -161,8 +158,7 @@ DBCC lock ([{'DUMPTABLE' | 'DUMPSTATS' | 'RESETSTATS' | 'HASH'}] |
 
 DBCC lockobjectschema ('object_name')
 
-DBCC log ([dbid[,{0|1|2|3|4}[,['lsn','[0x]x:y:z']|['numrecs',num]|['xdesid','x:y'] |['extent','x:y']|['pageid','x:y']|['objid',{x,'y'}]|['logrecs',
-{'lop'|op}…]|['output',x,['filename','x']]…]]])
+DBCC log ([dbid[,{0|1|2|3|4}[,['lsn','[0x]x:y:z']|['numrecs',num]|['xdesid','x:y'] |['extent','x:y']|['pageid','x:y']|['objid',{x,'y'}]|['logrecs', {'lop'|op}…]|['output',x,['filename','x']]…]]])
 
 DBCC loginfo [({'database_name' | dbid})]
 
@@ -195,18 +191,15 @@ DBCC perflog
 
 DBCC perfmon
 
-DBCC pglinkage (dbid, startfile, startpg, number, printopt={0|1|2}
-, targetfile, targetpg, order={1|0})
+DBCC pglinkage (dbid, startfile, startpg, number, printopt={0|1|2}, targetfile, targetpg, order={1|0})
 
 DBCC pintable (database_id, table_id)
 
-DBCC procbuf [({'dbname' | dbid}[, {'objname' | objid}
-[, nbufs[, printopt = { 0 | 1 } ]]] )]
+DBCC procbuf [({'dbname' | dbid}[, {'objname' | objid}[, nbufs[, printopt = { 0 | 1 } ]]] )]
 
 DBCC proccache
 
-DBCC prtipage (dbid, objid, indexid [, [{{level, 0}
-| {filenum, pagenum}}] [,printopt]])
+DBCC prtipage (dbid, objid, indexid [, [{{level, 0} | {filenum, pagenum}}] [,printopt]])
 
 DBCC pss [(uid[, spid[, printopt = { 1 | 0 }]] )]
 
@@ -252,13 +245,11 @@ DBCC showweights
 DBCC shrinkdatabase ({dbid | 'dbname'}, [freespace_percentage
 [, {NOTRUNCATE | TRUNCATEONLY}]])
 
-DBCC shrinkfile ({fileid | 'filename'}, [compress_size
-[, {NOTRUNCATE | TRUNCATEONLY | EMPTYFILE}]])
+DBCC shrinkfile ({fileid | 'filename'}, [compress_size[, {NOTRUNCATE | TRUNCATEONLY | EMPTYFILE}]])
 
 DBCC sqlmgrstats
 
-DBCC sqlperf (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]}
-| {THREADS} | {LOGSPACE})
+DBCC sqlperf (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]} | {THREADS} | {LOGSPACE})
 
 DBCC stackdump [( {uid[, spid[, ecid]} | {threadId, 'THREADID'}] )]
 
