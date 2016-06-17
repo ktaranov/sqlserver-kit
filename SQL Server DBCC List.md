@@ -3,19 +3,24 @@
 Source links:
  - [MSDN DBCC (Transact-SQL)](https://msdn.microsoft.com/en-us/library/ms188796.aspx)
  - [SQL SERVER – DBCC commands List – documented and undocumented](http://blog.sqlauthority.com/2007/05/15/sql-server-dbcc-commands-list-documented-and-undocumented/) (by Pinal Dave)
+ - [Microsoft SQL Server DBCC Commands list](http://www.sqlservice.se/microsoft-sql-server-dbcc-commands/) (by Steinar Andersen)
 
 
-To learn about all the DBCC commands run following script in query analyzer.
-DBCC TRACEON(2520)
-DBCC HELP ('?')
+To learn about all the DBCC commands run following script in query analyzer:
+```
+DBCC TRACEON(2520);
+DBCC HELP ('?');
 GO
+```
 
-To learn about syntax of an individual DBCC command run following script in query analyzer.
-DBCC HELP(<command>)
+To learn about syntax of an individual DBCC command run following script in query analyzer:
+```
+DBCC HELP(<command>);
 GO
+```
 
 Following is the list of all the DBCC commands and their syntax. List contains documented and undocumented DBCC commands.
-
+```
 DBCC activecursors [(spid)]
 
 DBCC addextendedproc (function_name, dll_name)
@@ -288,4 +293,4 @@ DBCC useplan [(number_of_plan)]
 DBCC useroptions DBCC wakeup (spid)
 
 DBCC writepage ({ dbid, 'dbname' }, fileid, pageid, offset, length, data)
-
+```
