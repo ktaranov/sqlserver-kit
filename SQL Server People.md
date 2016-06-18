@@ -41,6 +41,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Itzik Ben-Gan       | [Itzik Ben-Gan Blog]       | NULL      | [@ItzikBenGan]    | NULL                              | 17  | [Ben-Gan MVP]    |
 | Ed Elliott          | [Ed Elliott Blog]          | London    | [@EdDebug]        | ed.elliott@outlook.com            | -   | -                |
 | Andy Yun            | [Andy Yun Blog]            | NULL      | [@SQLBek]         | NULL                              | -   | -                |
+| Sander Stad         | [Sander Stad Blog]         | NULL      | [@SQLStad]        | NULL                              | -   | -                |
 
 
 [Brent Ozar Blog]:http://www.brentozar.com/
@@ -80,6 +81,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Itzik Ben-Gan Blog]:http://tsql.solidq.com/
 [Ed Elliott Blog]:https://the.agilesql.club/Blogs/Ed-Elliott/About
 [Andy Yun Blog]:https://sqlbek.wordpress.com
+[Sander Stad Blog]:http://www.sqlstad.nl
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -113,6 +115,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@sqltoolsguy]:https://twitter.com/sqltoolsguy
 [@ItzikBenGan]:https://twitter.com/ItzikBenGan
 [@EdDebug]:https://twitter.com/EdDebug
+[@SQLStad]:https://twitter.com/SQLStad
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
