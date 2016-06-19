@@ -104,6 +104,17 @@ Headers:
     - [SQLHA Blog](http://sqlha.com/blog/)
     - [SQLSecurity Blog](http://www.sqlsecurity.com/home)
     - [T-SQL.ru](http://www.t-sql.ru/)
+ - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
+   - SQL injection
+     - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
+     - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you’re owned)
+     - [Ethical Hacking: SQL Injection](http://www.pluralsight.com/courses/ethical-hacking-sql-injection) – If you really want to go deep, here’s five and a half hours worth of Pluralsight content
+   - Exploit databases and breach coverage
+     - [seclists.org](http://seclists.org) – Heaps of exploits consolidated from various bug tracking lists
+     - [Exploit Database](https://www.exploit-db.com/) – Very comprehensive list of vulnerabilities
+     - [PunkSPIDER](https://www.punkspider.org/) – Lots of vulnerabilities of all kinds all over the web (about 90M sites scanned with over 3M vulns at present)
+     - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
+     - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
  - Free Videos
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
