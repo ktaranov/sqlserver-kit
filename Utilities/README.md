@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of 130 SQL Server Utilities
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -96,6 +96,8 @@ Useful free and paid Microsoft SQL Server utilities and tools
 | [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | [Dell Toad for SQL Server]           | 2015-05-12   | Dell               | No           | ?     |
 | [Dell Spotlight on SQL Server Enterprise](#dell-spotlight)            | [Dell Spotlight]                     | 2016-03-10   | Dell               | No           | $2561 |
 | [Dell Foglight](#dell-foglight)                                       | [Dell Foglight]                      | 2015-09-22   | Dell               | No           | ?     |
+| [Dell Discovery Wizard](#dell-discovery-wizard)                       | [Dell Discovery Wizard]              | 2011-09-22   | Dell               | Yes          | No    |
+| [Dell Enterprise Reporter](#dell-enterprise-reporter)                 | [Dell Enterprise Reporter]           | ?            | Dell               | No           | $511  |
 | [SQL Deadlock Detector](#sqlsolutions-sql-deadlock-detector)          | [SQLSolutions SQL Deadlock Detector] | 2013-05-16   | SQLSolutions       | No           |  $295 |
 | [SQL Heartbeat](#sqlsolutions-sql-heartbeat)                          | [SQLSolutions SQL Heartbeat]         | 2013-03-03   | SQLSolutions       | No           |  $295 |
 | [SQL Trace Analyzer](#sqlsolutions-sql-trace-analyzer)                | [SQLSolutions SQL Trace Analyzer]    | 2013-12-09   | SQLSolutions       | No           |  $495 |
@@ -1359,6 +1361,34 @@ multi-platform environments â€“ even when you use native or third-party tools â€
 Get a wealth of information at a fraction of the impact of conventional collection methods.
 
 
+## Dell Discovery Wizard <a id="dell-discovery-wizard"></a>
+Download page: [Dell Foglight]<br/>
+Release date: 2011-09-22<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Dell<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Take inventory of your network databases, including data amounts
+ - Choose the databases you want to consolidate
+ - Review database history, including installation and creation dates
+ - Find the SQL Server versions and service packs currently deployed
+ - Identify names of servers, instances and operating systems
+ - Learn the identity of your end users
+
+
+## Dell Enterprise Reporter <a id="dell-enterprise-reporter"></a>
+Download page: [Dell Enterprise Reporter]<br/>
+Release date: ?<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Dell<br/>
+Free version: No<br/>
+Price: $511
+
+Dell Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility database security configuration,
+including users and logins, roles and database permissions
+
+
 ## SQLSolutions SQL Deadlock Detector <a id="sqlsolutions-sql-deadlock-detector"></a>
 Download page: [SQLSolutions SQL Deadlock Detector]<br/>
 Release date: 2013-05-16<br/>
@@ -1994,6 +2024,8 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 [Dell Toad for SQL Server]:http://software.dell.com/products/toad-for-sql-server/
 [Dell Spotlight]:http://software.dell.com/products/spotlight-on-sql-server-enterprise/
 [Dell Foglight]:http://software.dell.com/products/foglight-for-cross-platform-databases/
+[Dell Discovery Wizard]:http://software.dell.com/products/discovery-wizard-for-sql-server/
+[Dell Enterprise Reporter]:http://software.dell.com/products/enterprise-reporter-for-sql-server/
 [SQLSolutions SQL Deadlock Detector]:http://sqlsolutions.com/products/sql-deadlock-detector/index.html
 [SQLSolutions SQL Heartbeat]:http://www.sqlsolutions.com/products/sql-server-monitor/sql-monitor.html
 [SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
