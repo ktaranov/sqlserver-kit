@@ -121,7 +121,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | [DBBest T-SQL Analyzer]              | 2015-03-13   | DBBest             | No           |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
-| [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          |  No   |
+| [SqlDiffFramework](#sqldiffframework)                                 | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          | No    |
 | [DataGrip](#datagrip)                                                 | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
 | [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li            | Yes          | No    |
 | [SQL Nexus Tool](#sql-nexus-tool)                                     | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li            | Yes          | No    |
@@ -129,11 +129,12 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | [DBSophic Qure Optimizer]            | ?            | DBSophic           | No           | ?     |
 | [RestoreChecker](#restorechecker)                                     | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
 | [SQLScripter](#sqlscripter)                                           | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
-| [SQLC](#sqlc)                                                         | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          |  No   |
+| [SQLC](#sqlc)                                                         | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          | No    |
 | [Database Performance Analyzer](#dpa-solarwinds)                      | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
 | [SQL Enlight](#sql-enlight)                                           | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
 | [OmniCompare](#omnicompare)                                           | [OmniCompare]                        | 2016-06-03   | AireForge          | Yes          | No    |
-| [HexaTier](#hexatier)                                                 | [HexaTier]                           | ?            | HexaTier           |  No          | ?     |
+| [HexaTier](#hexatier)                                                 | [HexaTier]                           | ?            | HexaTier           | No           | ?     |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | [SoftTree SQL Assistant]             | 2016-03-18   | SoftTree           | No           | $270  |
 
 
 ## bcp Utility <a id="bcp"></a>
@@ -1932,6 +1933,21 @@ Providing an all-in-one solution to protect your data from internal and external
 Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Database Activity Monitoring to comply with regulatory requirements.
 
 
+## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
+Download page: [SoftTree SQL Assistant]<br/>
+Release date: 2016-03-18<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: SoftTree<br/>
+Free version: No<br/>
+Price: $270
+
+ - Triples SQL developer productivity
+ - Improves code quality and accuracy
+ - Provides unmatched intelligent SQL code intellisense features
+ - Provides interactive SQL reference and SQL code assistance systems
+ - Provides advanced SQL code formatters and beautifiers; SQL syntax validation, code structure views for fast code navigation, and more...
+
+
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
@@ -2062,3 +2078,4 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 [SQL Enlight]:http://www.ubitsoft.com/products/sqlenlight/index.php
 [OmniCompare]:http://aireforge.com/download/OmniCompare.html
 [HexaTier]:http://www.hexatier.com/
+[SoftTree SQL Assistant]:https://www.softtreetech.com/sqlassist/
