@@ -1,4 +1,4 @@
-# Microsoft SQL Server Utilities and Tools
+ # Microsoft SQL Server Utilities and Tools
 Useful free and paid Microsoft SQL Server utilities and tools - complete list of 131 SQL Server Utilities
 
 
@@ -17,6 +17,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [SQL Server Data Tools](#ssdt)                                        | [SQL Server Data Tools]              | 2016-04-14   | Microsoft          | Yes          | No    |
 | [Database Health Monitor](#database-health-monitor)                   | [Database Health Monitor]            | 2016-03-20   | Steve Stedman      | Yes          | No    |
 | [SchemaDrift](#schemadrift)                                           | [SchemaDrift]                        | 2016-02-28   | Steve Stedman      | Yes          | No    |
+| [Dbeaver](#dbeaver)                                                   | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -300,6 +301,18 @@ Free version: Yes<br/>
 Price: No
 
 SchemaDrift is a SQL Server database comparison tool that allows you to compare the schema, the tables, indexes, stored procedures, functions, and much more between SQL Server databases
+
+
+## DBeaver <a id="dbeaver"></a>
+Download page: [DBeaver]<br/>
+Release date: 2016-06-06<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Open Source<br/>
+Free version: Yes<br/>
+Price: No
+
+Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.
+Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, Cassandra, etc
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -1961,6 +1974,7 @@ Price: $270
 [SQL Server Data Tools]:https://msdn.microsoft.com/en-us/en-en/library/mt204009.aspx
 [Database Health Monitor]:http://databasehealth.com/download/
 [SchemaDrift]:http://databasehealth.com/schemadrift/
+[Dbeaver]:http://dbeaver.jkiss.org/
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
