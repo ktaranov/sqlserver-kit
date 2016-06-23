@@ -1,5 +1,5 @@
- # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of 143 SQL Server Utilities
+# Microsoft SQL Server Utilities and Tools
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **143** SQL Server Utilities
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -36,7 +36,6 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [DLM Dashboard](#dlm-dashboard)                                       | [DLM Dashboard]                      | 2016-04-27   | Red Gate           | Yes          | No    |
 | [Red Gate SQL Compare](#red-gate-sql-compare)                         | [Red Gate SQL Compare]               | 2016-05-09   | Red Gate           | No           |  $495 |
 | [Red Gate SQL Data Compare](#red-gate-sql-data-compare)               | [Red Gate SQL Data Compare]          | 2016-05-09   | Red Gate           | No           |  $495 |
-| [Red Gate SQL Source Control](#red-gate-sql-source-control)           | [Red Gate SQL Source Control]        | 2016-02-03   | Red Gate           | No           |  $495 |
 | [Red Gate SQL Prompt](#red-gate-sql-prompt)                           | [Red Gate SQL Prompt]                | 2016-04-28   | Red Gate           | No           |  $369 |
 | [Red Gate SQL Monitor](#red-gate-sql-monitor)                         | [Red Gate SQL Monitor]               | 2015-10-15   | Red Gate           | No           | $1495 |
 | [Red Gate SQL Backup Pro](#red-gate-sql-backup-pro)                   | [Red Gate SQL Backup Pro]            | 2014-07-08   | Red Gate           | No           |  $995 |
@@ -135,19 +134,20 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [SQL Enlight](#sql-enlight)                                           | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
 | [OmniCompare](#omnicompare)                                           | [OmniCompare]                        | 2016-06-03   | AireForge          | Yes          | No    |
 | [HexaTier](#hexatier)                                                 | [HexaTier]                           | ?            | HexaTier           | No           | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | [SoftTree SQL Assistant]             | 2016-03-18   | SoftTree           | No           | $270  |
-| [EMS SQL Management Studio](#ems-management-studio)                   | [EMS SQL Management Studio]          | 2016-05-26   | EMS                | No           | $257  |
-| [EMS SQL Backup](#ems-sql-backup)                                     | [EMS SQL Backup]                     | 2016-04-13   | EMS                | No           | $82   |
-| [EMS SQL Administrator](#ems-sql-administrator)                       | [EMS SQL Administrator]              | 2015-04-14   | EMS                | No           | $135  |
-| [EMS SQL Manager](#ems-sql-manager)                                   | [EMS SQL Manager]                    | 2016-05-26   | EMS                | No           | $135  |
-| [EMS Data Export](#ems-data-export)                                   | [EMS Data Export]                    | 2016-04-29   | EMS                | No           | $47   |
-| [EMS Data Import](#ems-data-import)                                   | [EMS Data Import]                    | 2016-04-14   | EMS                | No           | $47   |
-| [EMS Data Pump](#ems-data-pump)                                       | [EMS Data Pump]                      | 2016-11-03   | EMS                | No           | $47   |
-| [EMS Data Generator](#ems-generator)                                  | [EMS Data Generator]                 | 2010-07-10   | EMS                | No           | $47   |
-| [EMS DB Comparer](#ems-bd-comparer)                                   | [EMS DB Comparer]                    | 2015-07-24   | EMS                | No           | $47   |
-| [EMS DB Extract](#ems-bd-extract)                                     | [EMS DB Extract]                     | 2008-10-16   | EMS                | No           | $47   |
-| [EMS SQL Query](#ems-sql-query)                                       | [EMS SQL Query]                      | 2012-03-29   | EMS                | No           | $47   |
-| [EMS Data Comparer](#ems-data-comparer)                               | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           | $47   |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | [SoftTree SQL Assistant]             | 2016-03-18   | SoftTree           | No           |  $270 |
+| [EMS SQL Management Studio](#ems-management-studio)                   | [EMS SQL Management Studio]          | 2016-05-26   | EMS                | No           |  $257 |
+| [EMS SQL Backup](#ems-sql-backup)                                     | [EMS SQL Backup]                     | 2016-04-13   | EMS                | Yes          |  $82  |
+| [EMS SQL Administrator](#ems-sql-administrator)                       | [EMS SQL Administrator]              | 2015-04-14   | EMS                | Yes          |  $135 |
+| [EMS SQL Manager](#ems-sql-manager)                                   | [EMS SQL Manager]                    | 2016-05-26   | EMS                | Yes          |  $135 |
+| [EMS Data Export](#ems-data-export)                                   | [EMS Data Export]                    | 2016-04-29   | EMS                | No           |   $47 |
+| [EMS Data Import](#ems-data-import)                                   | [EMS Data Import]                    | 2016-04-14   | EMS                | No           |   $47 |
+| [EMS Data Pump](#ems-data-pump)                                       | [EMS Data Pump]                      | 2016-11-03   | EMS                | No           |   $47 |
+| [EMS Data Generator](#ems-generator)                                  | [EMS Data Generator]                 | 2010-07-10   | EMS                | No           |   $47 |
+| [EMS DB Comparer](#ems-bd-comparer)                                   | [EMS DB Comparer]                    | 2015-07-24   | EMS                | No           |   $47 |
+| [EMS DB Extract](#ems-bd-extract)                                     | [EMS DB Extract]                     | 2008-10-16   | EMS                | No           |   $47 |
+| [EMS SQL Query](#ems-sql-query)                                       | [EMS SQL Query]                      | 2012-03-29   | EMS                | No           |   $47 |
+| [EMS Data Comparer](#ems-data-comparer)                               | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
+
 
 ## bcp Utility <a id="bcp"></a>
 Download page: [bcp Utility]<br/>
@@ -561,17 +561,6 @@ Free version: No<br/>
 Price: $495
 
 SQL Data Compare is the industry-standard tool for comparing and deploying SQL Server database contents
-
-
-## Red Gate SQL Source Control <a id="red-gate-sql-source-control"></a>
-Download page: [Red Gate SQL Source Control]<br/>
-Release date: 2016-02-03<br/>
-Support Version: 2005/2008/2012/2014<br/>
-Author: Red Gate<br/>
-Free version: No<br/>
-Price: $495
-
-Connect your databases to your source control system
 
 
 ## Red Gate SQL Prompt <a id="red-gate-sql-prompt"></a>
@@ -1976,73 +1965,81 @@ Price: $270
 Download page: [EMS SQL Management Studio]<br/>
 Release date: 2016-05-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $257
 
-EMS SQL Management Studio for SQL Server is a complete solution for Microsoft SQL Server database administration and development. With components that focus on all critical MS SQL Server database management tasks, SQL Studio is a single workbench that provides you with must-have tools for administering SQL Server databases, managing database schema and objects as well as for SQL Server database design, migration, extraction, SQL Server query building, data import, export and database comparison. SQL Studio unites these database tools for MSSQL Server in one powerful and easy-to-use environment that can work round the clock. Whether you are a database or application developer, DBA or business analyst, SQL Studio for SQL Server offers all essential SQL Server tools to make you more productive than ever before!
+EMS SQL Management Studio for SQL Server is a complete solution for Microsoft SQL Server database administration and development.
+With components that focus on all critical MS SQL Server database management tasks, SQL Studio is a single workbench that provides
+you with must-have tools for administering SQL Server databases, managing database schema and objects as well as for SQL Server database design, migration, extraction, SQL Server query building, data import, export and database comparison. SQL Studio unites these database tools for MSSQL Server in one powerful and easy-to-use environment that can work round the clock. Whether you are a database or application developer, DBA or business analyst, SQL Studio for SQL Server offers all essential SQL Server tools to make you more productive than ever before!
 
 
 ## EMS SQL Backup <a id="ems-sql-backup"></a>
 Download page: [EMS SQL Backup]<br/>
 Release date: 2016-04-13<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
-Author: EMS Database Management Solutions<br/>
-Free version: No<br/>
+Author: EMS<br/>
+Free version: Yes<br/>
 Price: $82
 
-EMS SQL Backup for SQL Server is an effective tool for automating backup, restore and log shipping tasks on all SQL Servers in your company. In addition, SQL Backup allows you to update statistics, perform re-indexing, truncate database, check database integrity and perform many other tasks that can be united into policies and deployed to SQL Servers in a few clicks. SQL Backup monitors the maintenance task execution, quickly investigates and resolves issues.
+EMS SQL Backup for SQL Server is an effective tool for automating backup, restore and log shipping tasks on all SQL Servers in your company.
+In addition, SQL Backup allows you to update statistics, perform re-indexing, truncate database, check database integrity and perform many other tasks that can be united into policies and deployed to SQL Servers in a few clicks. SQL Backup monitors the maintenance task execution, quickly investigates and resolves issues.
 
 
 ## EMS SQL Administrator <a id="ems-sql-administrator"></a>
 Download page: [EMS SQL Administrator]<br/>
 Release date: 2015-04-14<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
-Author: EMS Database Management Solutions<br/>
-Free version: No<br/>
+Author: EMS<br/>
+Free version: Yes<br/>
 Price: $135
 
-EMS SQL Administrator for SQL Server is a toolset for efficient SQL Server administration. It provides a complete and easy-to-use set of tools for administering SQL Server. SQL Administrator is designed specifically for database administrators and allows you to perform administrative tasks in the fastest, easiest and most efficient way.
+EMS SQL Administrator for SQL Server is a toolset for efficient SQL Server administration.
+It provides a complete and easy-to-use set of tools for administering SQL Server.
+SQL Administrator is designed specifically for database administrators and allows you to perform administrative tasks in the fastest, easiest and most efficient way.
 
 
 ## EMS SQL Manager <a id="ems-sql-manager"></a>
 Download page: [EMS SQL Manager]<br/>
 Release date: 2016-05-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
-Author: EMS Database Management Solutions<br/>
-Free version: No<br/>
+Author: EMS<br/>
+Free version: Yes<br/>
 Price: $135
 
-EMS SQL Manager for SQL Server is a high performance graphical tool for Microsoft SQL Server database development and administration. It makes creating and editing MS SQL Server database objects easy and fast, and allows you to run SQL scripts, manage SQL server users and their privileges, build SQL queries visually, work with metadata, export and import SQL Server database data and much more.
+EMS SQL Manager for SQL Server is a high performance graphical tool for Microsoft SQL Server database development and administration.
+It makes creating and editing MS SQL Server database objects easy and fast, and allows you to run SQL scripts, manage SQL server users and their privileges, build SQL queries visually, work with metadata, export and import SQL Server database data and much more.
 
 
 ## EMS Data Export <a id="ems-data-export"></a>
 Download page: [EMS Data Export]<br/>
 Release date: 2016-04-29<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
-EMS Data Export for SQL Server is a powerful tool to export SQL Server database data quickly to any of 20 available formats, including MS Access, MS Excel, MS Word, RTF, HTML, TXT, ODF and more. Data Export for SQL Server has a friendly wizard, which allows you to set various options of SQL Server export process visually and a command-line utility to automate your SQL Server export jobs using the configuration file.
+EMS Data Export for SQL Server is a powerful tool to export SQL Server database data quickly to any of 20 available formats,
+including MS Access, MS Excel, MS Word, RTF, HTML, TXT, ODF and more.
+Data Export for SQL Server has a friendly wizard, which allows you to set various options of SQL Server export process visually and a command-line utility to automate your SQL Server export jobs using the configuration file.
 
 
 ## EMS Data Import <a id="ems-data-import"></a>
 Download page: [EMS Data Import]<br/>
 Release date: 2016-04-14<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No
 Price: $47
 
 EMS Data Import for SQL Server is a powerful tool to import data to SQL Server tables from MS Excel 97-2007, MS Access, DBF, TXT, CSV, MS Word, RTF, ODF and HTML files. This utility allows you to quickly import data to one or several SQL Server tables or views at once, save all SQL Server import parameters set on current wizard session, use special batch insert mode to import SQL Server data at the maximum possible speed and much more.
 
 
-### EMS Data Pump <a id="ems-data-pump"></a>
+## EMS Data Pump <a id="ems-data-pump"></a>
 Download page: [EMS Data Pump]<br/>
 Release date: 2016-11-03<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
@@ -2053,39 +2050,43 @@ EMS Data Pump for SQL Server is an excellent migration tool for converting datab
 Download page: [EMS Data Generator]<br/>
 Release date: 2010-07-10<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
-EMS Data Generator for SQL Server is an impressive tool for generating test data to SQL Server database tables. The utility can help you to simulate the database production environment and allows you to populate several SQL Server database tables with test data simultaneously, define tables for generating data, set value ranges, control a wide variety of generation parameters for each field type and much more. It has plenty of powerful functionalities to generate SQL Server test data in a simple and direct way.
+EMS Data Generator for SQL Server is an impressive tool for generating test data to SQL Server database tables.
+The utility can help you to simulate the database production environment and allows you to populate several SQL Server database tables with test data simultaneously, define tables for generating data, set value ranges, control a wide variety of generation parameters for each field type and much more. It has plenty of powerful functionalities to generate SQL Server test data in a simple and direct way.
 
 
 ## EMS DB Comparer <a id="ems-bd-comparer"></a>
 Download page: [EMS DB Comparer]<br/>
 Release date: 2015-07-24<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
-EMS DB Comparer for SQL Server is an excellent tool for comparing SQL Server database schemas and discovering differences in their structures. You can view all the differences in compared database objects and execute an automatically generated script to synchronize structure of SQL Server databases and eliminate these differences. Define comparison parameters and many other features make your work with our tool for SQL Server database synchronization easy and fast.
+EMS DB Comparer for SQL Server is an excellent tool for comparing SQL Server database schemas and discovering differences in their structures.
+You can view all the differences in compared database objects and execute an automatically generated script to synchronize structure of SQL Server databases and eliminate these differences. Define comparison parameters and many other features make your work with our tool for SQL Server database synchronization easy and fast.
 
 ## EMS DB Extract <a id="ems-bd-extract"></a>
 Download page: [EMS DB Extract]<br/>
 Release date: 2008-10-16<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
-EMS DB Extract for SQL Server is an impressive and easy-to-use tool for creating SQL Server database backups in a form of SQL scripts. This database script utility allows you to save metadata of all SQL Server database objects as well as SQL Server table data as database snapshots. Flexible customization of the extract process enables you to select objects and data tables for SQL Server database dump and tune many other extract options.
+EMS DB Extract for SQL Server is an impressive and easy-to-use tool for creating SQL Server database backups in a form of SQL scripts.
+This database script utility allows you to save metadata of all SQL Server database objects as well as SQL Server table data as database snapshots.
+Flexible customization of the extract process enables you to select objects and data tables for SQL Server database dump and tune many other extract options.
 
 
 ## EMS SQL Query <a id="ems-sql-query"></a>
 Download page: [EMS SQL Query]<br/>
 Release date: 2012-03-29<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
@@ -2096,11 +2097,12 @@ EMS SQL Query for SQL Server is a useful tool that lets you quickly and simply b
 Download page: [EMS Data Comparer]<br/>
 Release date: 2012-11-16<br/>
 Support Version: -<br/>
-Author: EMS Database Management Solutions<br/>
+Author: EMS<br/>
 Free version: No<br/>
 Price: $47
 
-EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Server data comparison and synchronization. Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
+EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Server data comparison and synchronization.
+Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
 
 
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
@@ -2128,7 +2130,6 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [Red Gate SQL Compare]:http://www.red-gate.com/products/sql-development/sql-compare/
 [Red Gate SQL Data Compare]:http://www.red-gate.com/products/sql-development/sql-data-compare/
-[Red Gate SQL Source Control]:http://www.red-gate.com/products/sql-development/sql-source-control/
 [Red Gate SQL Prompt]:http://www.red-gate.com/products/sql-development/sql-prompt/
 [Red Gate SQL Monitor]:http://www.red-gate.com/products/dba/sql-monitor/
 [Red Gate SQL Backup Pro]:http://www.red-gate.com/products/dba/sql-backup/
@@ -2242,7 +2243,7 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 [EMS Data Export]:http://www.sqlmanager.net/en/products/mssql/dataexport
 [EMS Data Import]:http://www.sqlmanager.net/en/products/mssql/dataimport
 [EMS Data Pump]:http://www.sqlmanager.net/en/products/mssql/datapump
-[EMS Data Generator]://www.sqlmanager.net/en/products/mssql/datagenerator
+[EMS Data Generator]:http://www.sqlmanager.net/en/products/mssql/datagenerator
 [EMS DB Comparer]:http://www.sqlmanager.net/en/products/mssql/dbcomparer
 [EMS DB Extract]:http://www.sqlmanager.net/en/products/mssql/extract
 [EMS SQL Query]:http://www.sqlmanager.net/en/products/mssql/query
