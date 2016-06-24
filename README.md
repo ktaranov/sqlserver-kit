@@ -39,7 +39,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addons](/SSMS/SSMS_Addins.md) (24 useful free and paid SSMS Addins)
+    - [SSMS addons](/SSMS/SSMS_Addins.md) (25 useful free and paid SSMS Addins)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
@@ -70,7 +70,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (complete list of 124 SQL Server paid and free Utilities and Tools)
+ - [Utilities](/Utilities) (complete list of 144 SQL Server paid and free Utilities and Tools)
 
 
 ## SQL Server Web Resources

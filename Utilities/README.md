@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **143** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **144** SQL Server Utilities
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -18,6 +18,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [Database Health Monitor](#database-health-monitor)                   | [Database Health Monitor]            | 2016-03-20   | Steve Stedman      | Yes          | No    |
 | [SchemaDrift](#schemadrift)                                           | [SchemaDrift]                        | 2016-02-28   | Steve Stedman      | Yes          | No    |
 | [Dbeaver](#dbeaver)                                                   | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
+| [HeidiSQL](#heidisql)                                                 | [HeidiSQL]                           | 2016-06-19   | Open Source        | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -324,6 +325,19 @@ Price: No
 
 Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.
 Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, Cassandra, etc
+
+
+## HeidiSQL <a id="heidisql"></a>
+Download page: [HeidiSQL]<br/>
+Release date: 2016-06-19<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Open Source<br/>
+Free version: Yes<br/>
+Price: No
+
+HeidiSQL is a useful and reliable tool designed for web developers using the popular MySQL server, Microsoft SQL databases and PostgreSQL.
+It enables you to browse and edit data, create and edit tables, views, procedures, triggers and scheduled events.
+Also, you can export structure and data either to SQL file, clipboard or to other servers.
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -2119,6 +2133,7 @@ Using this utility you can view all the differences in compared SQL Server table
 [Database Health Monitor]:http://databasehealth.com/download/
 [SchemaDrift]:http://databasehealth.com/schemadrift/
 [Dbeaver]:http://dbeaver.jkiss.org/
+[HeidiSQL]:http://www.heidisql.com
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
