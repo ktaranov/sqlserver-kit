@@ -148,6 +148,7 @@ Headers:
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
+    - [SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
