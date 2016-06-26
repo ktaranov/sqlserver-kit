@@ -10,6 +10,7 @@
 | [What to Do When DBCC CHECKDB Reports Corruption]                                 | Brent Ozar                               | 2016-05-19 |
 | [Troubleshooting SQL Server CPU Performance Issues]                               | Joe Sack                                 | 2013-05-28 |
 | [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                | Paul Randal                              | 2016-04-06 |
+| [High Performance T-SQL using Code Patterns]                                      | Dwain Camps                              | 2015-05-27 |
 | [The Curse and Blessings of Dynamic SQL]                                          | Erland Sommarskog                        | 2015-04-14 |
 | [Dynamic Search Conditions in T-SQL]                                              | Erland Sommarskog                        | 2015-11-15 |
 | [Slow in the Application, Fast in SSMS]                                           | Erland Sommarskog                        | 2013-08-30 |
@@ -36,6 +37,8 @@
 | [Understanding and Using Parallelism in SQL Server]                               | Paul White                               | 2011-03-03 |
 | [Diagnosing and Resolving Latch Contention on SQL Server]                         | Microsoft                                | 2014-02-28 |
 | [Parallel Execution Plans – Branches and Threads]                                 | Paul White                               | 2013-10-07 |
+| [Nasty Fast PERCENT_RANK]                                                         | Alan Burstein                            | 2016-06-07 |
+| [Looking at VIEWs, Close Up]                                                      | Joe Celko                                | 2016-05-10 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -45,6 +48,7 @@
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [Troubleshooting SQL Server CPU Performance Issues]:http://sqlperformance.com/2013/05/io-subsystem/cpu-troubleshooting
 [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]:http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
+[High Performance T-SQL using Code Patterns]:https://dwaincsql.com/2015/05/27/high-performance-t-sql-using-code-patterns/
 [The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dyn-search.html
 [Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dynamic_sql.html
 [Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
@@ -71,3 +75,5 @@
 [Understanding and Using Parallelism in SQL Server]:https://www.simple-talk.com/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
 [Diagnosing and Resolving Latch Contention on SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=26665
 [Parallel Execution Plans – Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
+[Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
+[Looking at VIEWs, Close Up]:https://www.simple-talk.com/sql/t-sql-programming/looking-at-views,-close-up/
