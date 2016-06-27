@@ -11,6 +11,8 @@
 | [Troubleshooting SQL Server CPU Performance Issues]                               | Joe Sack                                 | 2013-05-28 |
 | [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                | Paul Randal                              | 2016-04-06 |
 | [High Performance T-SQL using Code Patterns]                                      | Dwain Camps                              | 2015-05-27 |
+| [SQL Server Database Corruption Repair]                                           | Steve Stedman                            | 2015-08-26 |
+| [Basic SQL Server Performance Troubleshooting For Developers]                     | Tony Davis                               | 2015-08-14 |
 | [The Curse and Blessings of Dynamic SQL]                                          | Erland Sommarskog                        | 2015-04-14 |
 | [Dynamic Search Conditions in T-SQL]                                              | Erland Sommarskog                        | 2015-11-15 |
 | [Slow in the Application, Fast in SSMS]                                           | Erland Sommarskog                        | 2013-08-30 |
@@ -39,6 +41,7 @@
 | [Parallel Execution Plans – Branches and Threads]                                 | Paul White                               | 2013-10-07 |
 | [Nasty Fast PERCENT_RANK]                                                         | Alan Burstein                            | 2016-06-07 |
 | [Looking at VIEWs, Close Up]                                                      | Joe Celko                                | 2016-05-10 |
+| [SQL Server 2016: It Just Runs Faster]                                            | Thomas LaRock                            | 2016-06-01 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -49,6 +52,8 @@
 [Troubleshooting SQL Server CPU Performance Issues]:http://sqlperformance.com/2013/05/io-subsystem/cpu-troubleshooting
 [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]:http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
 [High Performance T-SQL using Code Patterns]:https://dwaincsql.com/2015/05/27/high-performance-t-sql-using-code-patterns/
+[SQL Server Database Corruption Repair]:http://stevestedman.com/2015/08/sql-server-database-corruption-repair/
+[Basic SQL Server Performance Troubleshooting For Developers]:https://www.simple-talk.com/sql/performance/basic-sql-server-performance-troubleshooting-for-developers/
 [The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dyn-search.html
 [Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dynamic_sql.html
 [Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
@@ -77,3 +82,4 @@
 [Parallel Execution Plans – Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
 [Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
 [Looking at VIEWs, Close Up]:https://www.simple-talk.com/sql/t-sql-programming/looking-at-views,-close-up/
+[SQL Server 2016: It Just Runs Faster]:http://thomaslarock.com/2016/06/sql-server-2016-just-runs-faster/
