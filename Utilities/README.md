@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **144** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **145** SQL Server Utilities
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -19,6 +19,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [SchemaDrift](#schemadrift)                                           | [SchemaDrift]                        | 2016-02-28   | Steve Stedman      | Yes          | No    |
 | [Dbeaver](#dbeaver)                                                   | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
 | [HeidiSQL](#heidisql)                                                 | [HeidiSQL]                           | 2016-06-19   | Open Source        | Yes          | No    |
+| [SQLExecStats](#sqlexecstats)                                         | [SQLExecStats]                       | 2016-02-08   | Joe Chang          | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -338,6 +339,21 @@ Price: No
 HeidiSQL is a useful and reliable tool designed for web developers using the popular MySQL server, Microsoft SQL databases and PostgreSQL.
 It enables you to browse and edit data, create and edit tables, views, procedures, triggers and scheduled events.
 Also, you can export structure and data either to SQL file, clipboard or to other servers.
+
+
+## SQLExecStats <a id="sqlexecstats"></a>
+Download page: [SQLExecStats]<br/>
+Release date: 2016-02-08<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Joe Chang<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Automate collection of key DMVs for query tuning.
+ - Collates query exec stats with execution plan details.
+ - Cross reference index usage by execution plan, what plans reference infrequently used indexes.
+ - Saves XML plan for top queries.
+ - Save information directly to Microsoft Excel 2003 file format and in binary.
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -2134,6 +2150,7 @@ Using this utility you can view all the differences in compared SQL Server table
 [SchemaDrift]:http://databasehealth.com/schemadrift/
 [Dbeaver]:http://dbeaver.jkiss.org/
 [HeidiSQL]:http://www.heidisql.com
+[SQLExecStats]:http://www.qdpma.com/ExecStats/SQLExecStats.html
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
