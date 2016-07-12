@@ -11,7 +11,7 @@ Headers:
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [SQL Server Developer Edition Links](#sql-server-developer-edition-links)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
- - [Microsoft Adventure Works Sample Databases download links](#microsoft-adventure-works-sample-databases-download-links)
+ - [SQL Server Sample Databases download links](#sql-server-sample-databases-download-links)
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
@@ -227,12 +227,16 @@ Here's just SQL Server 2008 Management Studio:
 ### [Download SQL Server 2005 Express](https://www.microsoft.com/en-us/download/details.aspx?id=21844)
 
 
-## Microsoft Adventure Works Sample Databases download links
+## SQL Server Sample Databases download links
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
  - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
+ - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
+ - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers)
+ - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse)
+ - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Bren Ozar)
 
 
 ## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
