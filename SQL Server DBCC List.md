@@ -68,8 +68,9 @@ DBCC cleantable ('database_name'|database_id, 'table_name'|table_id,[batch_size]
 
 DBCC cacheprofile [( {actionid} [, bucketid])
 
-DBCC clearspacecaches ('database_name'|database_id,
-'table_name'|table_id, 'index_name'|index_id)
+DBCC clearspacecaches ('database_name'|database_id, 'table_name'|table_id, 'index_name'|index_id)
+
+DBCC CLONEDATABASE -- https://support.microsoft.com/en-us/kb/3177838
 
 DBCC collectstats (on | off)
 
