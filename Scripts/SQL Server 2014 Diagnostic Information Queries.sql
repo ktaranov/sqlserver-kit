@@ -1,14 +1,21 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- June 2016
--- Last Modified: June 9, 2016
--- http://sqlserverperformance.wordpress.com/
+-- July 2016
+-- Last Modified: July 12, 2016
 -- http://sqlskills.com/blogs/glenn/
+-- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
 -- http://www.pluralsight.com/author/glenn-berry
+
+
+-- The best way to learn how to interpret the results of all of these queries is to 
+-- attend my all-day PASS 2016 Pre-Conference Session on Monday, October 24, 2016
+-- Dr. DMV: How to Use DMVs to Diagnose Performance Problems
+-- http://www.sqlpass.org/summit/2016/Sessions/Details.aspx?sid=47985
+
 
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
@@ -47,8 +54,8 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 ------
 
--- SQL Server 2014 RTM Branch Builds						SQL Server 2014 SP1 Branch Builds					
--- Build			Description			Release Date		Build			Description		Release Date		
+-- SQL Server 2014 RTM Branch Builds						SQL Server 2014 SP1 Branch Builds						SQL Server 2014 SP2 Branch Builds					
+-- Build			Description			Release Date		Build			Description		Release Date			Build			Description		Release Date		
 -- 11.0.9120        CTP1				6/2/2013
 -- 12.0.1524		CTP2				10/15/2013
 -- 12.0.2000        RTM					4/1/2014
@@ -66,7 +73,11 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 12.0.2560		CU11				12/21/2015			12.0.4436		SP1 CU4			12/21/2015
 -- 12.0.2564		CU12				2/22/2016			12.0.4439		SP1 CU5			2/22/2016
 -- 12.0.2568		CU13				4/18/2016			12.0.4449		SP1 CU6			4/18/2016 (Deprecated)
---															12.0.4457		SP1 CU6 *		5/30/2016 (Re-release)
+--															12.0.4457		SP1 CU6 		5/30/2016 (Re-release)
+-- 12.0.2569		CU14				6/20/2016			12.0.4459		SP1 CU7			6/20/2016 ----------->	12.0.5000		SP2 RTM			7/11/2016
+
+-- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
+-- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://support.microsoft.com/en-us/kb/321185
@@ -95,7 +106,7 @@ EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 -- This can help you determine the exact core counts used by SQL Server and whether HT is enabled or not
 -- It can also help you confirm your SQL Server licensing model
 -- Be on the lookout for this message "using 20 logical processors based on SQL Server licensing" 
--- which means grandfathered Server/CAL licensing
+-- (when you have more than 20 logical cores) which means grandfathered Server/CAL licensing
 -- This query will return no results if your error log has been recycled since the instance was last started
 
 

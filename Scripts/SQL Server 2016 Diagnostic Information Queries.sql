@@ -1,14 +1,21 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- June 2016
--- Last Modified: June 9, 2016
--- http://sqlserverperformance.wordpress.com/
+-- July 2016
+-- Last Modified: July 5, 2016
 -- http://sqlskills.com/blogs/glenn/
+-- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
 -- http://www.pluralsight.com/author/glenn-berry
+
+
+-- The best way to learn how to interpret the results of all of these queries is to 
+-- attend my all-day PASS 2016 Pre-Conference Session on Monday, October 24, 2016
+-- Dr. DMV: How to Use DMVs to Diagnose Performance Problems
+-- http://www.sqlpass.org/summit/2016/Sessions/Details.aspx?sid=47985
+
 
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
@@ -63,6 +70,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.1400.361	RC3					4/11/2016
 -- 13.0.1601.5		RTM					6/1/2016					
 
+-- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
+-- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://support.microsoft.com/en-us/kb/321185
@@ -79,7 +88,7 @@ EXEC sys.xp_readerrorlog 0, 1, N'detected', N'socket';
 -- This can help you determine the exact core counts used by SQL Server and whether HT is enabled or not
 -- It can also help you confirm your SQL Server licensing model
 -- Be on the lookout for this message "using 20 logical processors based on SQL Server licensing" 
--- which means grandfathered Server/CAL licensing
+-- (when you have more than 20 logical cores) which means grandfathered Server/CAL licensing
 -- This query will return no results if your error log has been recycled since the instance was last started
 
 
@@ -996,7 +1005,7 @@ ORDER BY qs.total_logical_reads DESC OPTION (RECOMPILE);
 
 -- Database specific queries *****************************************************************
 
--- **** Switch to a user database that you are interested in *****
+-- **** Please switch to a user database that you are interested in! *****
 USE YourDatabaseName; -- make sure to change to an actual database on your instance, not the master system database
 GO
 
@@ -1565,9 +1574,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- Are your backup sizes and times changing over time?
 -- Are you using backup compression?
 -- Have you done any backup tuning with striped backups, or changing the parameters of the backup command?
+-- In SQL Server 2016, native SQL Server backup compression actually works much better with databases that are using TDE than in previous versions
 
 
-
+-- The best way to learn how to interpret the results of all of these queries is to 
+-- attend my all-day PASS 2016 Pre-Conference Session on Monday, October 24, 2016
+-- Dr. DMV: How to Use DMVs to Diagnose Performance Problems
+-- http://www.sqlpass.org/summit/2016/Sessions/Details.aspx?sid=47985
 
 
 
