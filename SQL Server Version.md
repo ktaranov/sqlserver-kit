@@ -190,16 +190,16 @@ This functionality is not all encompassing as only certain aspects (i.e. certain
 You can see what compatibility level a database is at by using the SSMS or via code.
 
 Via SSMS:
- 1 Right click the database
- 2 Select Properties.
- 3 Go to the Options tab
+ 1. Right click the database
+ 2. Select Properties
+ 3. Go to the Options tab
 
 Via T-SQL:
 ```sql
--- For SQL 2005 and newer
+-- For SQL Serever 2005 and newer
 SELECT name, compatibility_level FROM sys.databases WHERE name = 'DatabaseNameHere';
 
--- For SQL 2000
+-- For SQL Serever 2000
 SELECT name, cmptlevel FROM sysdatabases WHERE name = 'DatabaseNameHere';
 ```
 
@@ -245,7 +245,7 @@ GO
 
 You will note that for each DBCC command we have to turn on trace flag 3604 so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
 
-If you are still on SQL 2000, you can see this information with a simple query:
+If you are still on SQL Serever 2000, you can see this information with a simple query:
 ```sql
 SELECT name, version FROM master.dbo.sysdatabases;
 ```
