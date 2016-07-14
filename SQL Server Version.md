@@ -183,24 +183,105 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 ## Internal Database Version and Compatibility Level <a id="internal-database-version-and-compatibility-level"></a>
 
-| SQL Server Version                           | Code Name   | Release Year | Internal Database Version | Database Compatibility Level |
-|:---------------------------------------------|:------------|-------------:|--------------------------:|-----------------------------:|
-| SQL Server 2016                              | ?           | 2016         | 782                       | 130                          |
-| SQL Server 2014                              | SQL14       | 2014         | 782                       | 120                          |
-| SQL Server 2012                              | Denali      | 2012         | 706                       | 110                          |
-| SQL Server 2012 CTP1                         | Denali      | 2010         | 684                       | 110                          |
-| SQL Server 2008 R2                           | Kilimanjaro | 2010         | 660 / 661                 | 100                          |
-| Azure SQL DB                                 | CloudDB     | 2010         | ?                         | ?                            |
-| SQL Server 2008                              | Katmai      | 2008         | 655                       | 100                          |
-| SQL Server 2005 SP2+ with VarDecimal enabled | Yukon       | 2005         | 612                       |  90                          |
-| SQL Server 2005                              | Yukon       | 2005         | 611                       |  90                          |
-| SQL Server 2000                              | Shiloh      | 2000         | 539                       |  80                          |
-| SQL Server 7.0                               | Sphinx      | 1998         | 515                       |  70                          |
-| SQL Server 6.5                               | Hydra       | 1996         | 408                       |  65                          |
-| SQL Server 6.0                               | SQL95       | 1995         | ?                         |  60                          |
-| SQL Server 4.21                              | SQLNT       | 1993         | ?                         |  60                          |
-| SQL Server 1.1 (16 bit)                      | ?           | 1991         | ?                         |  60                          |
-| SQL Server 1.0 (16 bit)                      | Ashton-Tate | 1989         | ?                         |  60                          |
+### Database Compatibility Level
+The compatibility level of a database dictates how certain language elements of the database function as it relates to an earlier version of SQL Server.  In a nutshell, this offers up partial “backward compatibility” to an earlier version.
+This functionality is not all encompassing as only certain aspects (i.e. certain syntax) of the database would pertain to this setting.
+
+You can see what compatibility level a database is at by using the SSMS or via code.
+
+Via SSMS:
+ 1 Right click the database
+ 2 Select Properties.
+ 3 Go to the Options tab
+
+Via T-SQL:
+```sql
+-- For SQL 2005 and newer
+SELECT name, compatibility_level FROM sys.databases WHERE name = 'DatabaseNameHere';
+
+-- For SQL 2000
+SELECT name, cmptlevel FROM sysdatabases WHERE name = 'DatabaseNameHere';
+```
+
+
+To ALTER DATABASE Compatibility Level use simple command:
+```sql
+ALTER DATABASE database_name SET COMPATIBILITY_LEVEL = { 130 | 120 | 110 | 100 | 90 }
+```
+
+### Internal Database Version
+The database version is a number stamped in the boot page of a database that indicates the SQL Server version of the most recent SQL Server instance the database was attached to.
+**The database version number does not equal the SQL Server version and does not equal the compatibility level should be considered as a completely different attribute of the database.**
+
+The database version is an internal versioning system that defines what version of SQL Server the database was a recent resident of.
+If you migrate a database from an older version to a newer version, the database version value will be increased to reflect the version number of the new server’s model database.
+
+When you create a database, the database version is “stamped” with the same version as the Model database.
+It is worth noting that if the Model database was originally created on a different server edition and then subsequently upgraded, you potentially could end up
+with slightly different numbers than what you might expect.  As you upgrade the database to new SQL Server edition (you can not go backward) the version of the database increases.
+This is done automatically regardless of what method you use to upgrade the database to the new version of SQL Server.
+
+```sql
+-- 1 using DBCC PAGE to look at the boot page (9) of the database
+DBCC TRACEON(3604);
+DBCC PAGE('DatabaseName', 1, 9, 3);
+DBCC TRACEOFF(3604);
+GO
+
+-- 2 using DBCC DBINFO
+DBCC TRACEON(3604);
+DBCC DBINFO;
+DBCC TRACEOFF(3604);
+GO
+
+-- 3 using database property
+SELECT DatabaseProperty('DatabaseNameHere','version');
+GO
+
+-- 4 using RESTORE HEADERONLY for backup files, field DatabaseVersion
+RESTORE HEADERONLY FROM DISK=N'd:\DatabseBackupFile.bak' WITH NOUNLOAD;
+GO
+```
+
+You will note that for each DBCC command we have to turn on trace flag 3604 so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
+
+If you are still on SQL 2000, you can see this information with a simple query:
+```sql
+SELECT name, version FROM master.dbo.sysdatabases;
+```
+
+| SQL Server Version                           | Database Engine Version |  Code Name   | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
+|:---------------------------------------------|------------------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
+| SQL Server 2016                              | 13                      |  ?           | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 12                      |  CloudDB     | 2010 (2016)  | 841                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2014                              | 12                      |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
+| SQL Server 2012                              | 11                      |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
+| SQL Server 2012 CTP1                         | 11                      |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
+| SQL Server 2008 R2                           | 10.5                    |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
+| SQL Server 2008                              | 10                      |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
+| SQL Server 2005 SP2+ with VarDecimal enabled |  9                      |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
+| SQL Server 2005                              |  9                      |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
+| SQL Server 2000                              |  8                      |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
+| SQL Server 7.0                               |  ?                      |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
+| SQL Server 6.5                               |  ?                      |  Hydra       | 1996         | 408                       |  65                             | 65                            |
+| SQL Server 6.0                               |  ?                      |  SQL95       | 1995         | ?                         |  60                             | ?                             |
+| SQL Server 4.21                              |  ?                      |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
+| SQL Server 1.1 (16 bit)                      |  ?                      |  ?           | 1991         | ?                         |  60                             | ?                             |
+| SQL Server 1.0 (16 bit)                      |  ?                      |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
+
+**Azure SQL Database V12** was released in December 2014. One aspect of that release was that newly created databases had their compatibility level set to 120. In 2015 SQL Database began support for level 130, although the default remained 120.
+
+Starting in mid-June 2016, in Azure SQL Database, the default compatibility level will be 130 instead of 120 for newly created databases. Existing databases created before mid-June 2016 will not be affected, and will maintain their current compatibility level (100, 110, or 120).
+
+If you want level 130 for your database generally, but you have reason to prefer the level 110 cardinality estimation algorithm, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx), and in particular its keyword LEGACY_CARDINALITY_ESTIMATION =ON.
+
+For details about how to assess the performance differences of your most important queries, between two compatibility levels on Azure SQL Database, see [Improved Query Performance with Compatibility Level 130 in Azure SQL Database](http://azure.microsoft.com/documentation/articles/sql-database-compatibility-level-query-performance-130/).
+
+### References
+ - [Compatibility Level vs Database Version](http://sqlrus.com/2014/10/compatibility-level-vs-database-version/) (by John Morehouse)
+ - [What’s the difference between database version and database compatibility level?](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/04/26/whats-the-difference-between-database-version-and-database-compatibility-level/) (by Paul Randal)
+ - [ALTER DATABASE Compatibility Level (Transact-SQL)](https://msdn.microsoft.com/library/bb510680(SQL.130).aspx)
+ - [Database Version vs Database Compatibility Level](http://sqlblog.com/blogs/jonathan_kehayias/archive/2009/07/28/database-version-vs-database-compatibility-level.aspx) (by Jonathan Kehayias)
 
 
 ## Quick summary for SQL Server Service Packs <a id="quick-summary-for-sql-server-service-packs"></a>
