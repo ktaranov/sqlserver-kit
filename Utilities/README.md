@@ -4,7 +4,9 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
 |-----------------------------------------------------------------------|--------------------------------------|------------- | -------------------|--------------|------:|
+| [SSMS](#ssms)                                                         | [SSMS]                               | 2016-07-13   | Microsoft          | Yes          | No    |
 | [bcp Utility](#bcp)                                                   | [bcp Utility]                        | 2012-02-11   | Microsoft          | Yes          | No    |
+| [RML Utilities for SQL Server](#rml)                                  | [RML Utilities for SQL Server]       | 2014-12-12   | Microsoft          | Yes          | No    |
 | [GraphView](#graphview)                                               | [GraphView]                          | 2016-02-23   | Microsoft          | Yes          | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)               | [Baseline Security Analyze]          | 2015-01-09   | Microsoft          | Yes          | No    |
 | [tablediff Utility](#tablediff-utility)                               | [tablediff Utility]                  | -            | Microsoft          | Yes          | No    |
@@ -151,6 +153,19 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [EMS Data Comparer](#ems-data-comparer)                               | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
 
 
+## SSMS <a id="ssms"></a>
+Download page: [SSMS]<br/>
+Release date: 2016-07-13<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server.
+SSMS combines a broad group of graphical tools with a number of rich script editors to provide developers and administrators of all skill levels access to SQL Server.
+This release features improved compatibility with previous versions of SQL Server, a stand-alone web installer, and toast notifications within SSMS when new releases become available.
+
+
 ## bcp Utility <a id="bcp"></a>
 Download page: [bcp Utility]<br/>
 Release date: 2012-02-11<br/>
@@ -163,6 +178,20 @@ The bcp utility bulk copies data between an instance of MicrosoftSQL Server and 
 The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
 Except when used with the queryout option, the utility requires no knowledge of Transact-SQL.
 To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
+
+
+## RML Utilities for SQL Server <a id="rml"></a>
+Download page: [RML Utilities for SQL Server]<br/>
+Release date: 2014-12-12<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The RML utilities allow you to process SQL Server trace files and view reports showing how SQL Server is performing. For example, you can quickly see:
+ - Which application, database or login is using the most resources, and which queries are responsible for that
+ - Whether there were any plan changes for a batch during the time when the trace was captured and how each of those plans performed
+ - What queries are running slower in todays data compared to a previous set of data
 
 
 ## GraphView <a id="graphview"></a>
@@ -2135,7 +2164,9 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
 
 
+[SSMS]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
+[RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
