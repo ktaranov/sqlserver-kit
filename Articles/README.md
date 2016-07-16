@@ -42,6 +42,10 @@
 | [Nasty Fast PERCENT_RANK]                                                         | Alan Burstein                            | 2016-06-07 |
 | [Looking at VIEWs, Close Up]                                                      | Joe Celko                                | 2016-05-10 |
 | [SQL Server 2016: It Just Runs Faster]                                            | Thomas LaRock                            | 2016-06-01 |
+| [TSQL JOIN Types Poster]                                                          | Steve Stedman                            | 2015-05-28 |
+| [It is Hard To Destroy Data]                                                      | Michael J Swart                          | 2015-05-20 |
+| [How to transfer logins and passwords between instances of SQL Server]            | Microsoft                                | 2013-12-07 |
+| [Finding File Growths with Extended Events]                                       | Andy Galbraith                           | 2016-06-13 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -83,3 +87,7 @@
 [Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
 [Looking at VIEWs, Close Up]:https://www.simple-talk.com/sql/t-sql-programming/looking-at-views,-close-up/
 [SQL Server 2016: It Just Runs Faster]:http://thomaslarock.com/2016/06/sql-server-2016-just-runs-faster/
+[TSQL JOIN Types Poster](http://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/)
+[It is Hard To Destroy Data](http://michaeljswart.com/2015/05/its-hard-to-destroy-data/)
+[How to transfer logins and passwords between instances of SQL Server](https://support.microsoft.com/en-us/kb/918992)
+[Finding File Growths with Extended Events](http://nebraskasql.blogspot.ru/2016/06/finding-file-growths-with-extended.html)
