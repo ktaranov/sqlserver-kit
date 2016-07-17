@@ -46,6 +46,12 @@
 | [It is Hard To Destroy Data]                                                      | Michael J Swart                          | 2015-05-20 |
 | [How to transfer logins and passwords between instances of SQL Server]            | Microsoft                                | 2013-12-07 |
 | [Finding File Growths with Extended Events]                                       | Andy Galbraith                           | 2016-06-13 |
+| [Questions You Should Ask About the Databases You Manage]                         | Brent Ozar                               | 2016-06-16 |
+| [Clustered Indexes in SQL Server]                                                 | Derik Hammer                             | 2016-06-22 |
+| [Triage Quiz: Is Your SQL Server Safe?]                                           | Angie Rudduck                            | 2016-06-15 |
+| [Why Not Just Create Statistics?]                                                 | Erik Darling                             | 2016-07-14 |
+| [Understanding the SQL Server NOLOCK hint]                                        | Greg Robidoux                            | 2011-08-16 |
+| [Recover access to a SQL Server instance]                                         | Aaron Bertrand                           | 2012-08-30 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -91,3 +97,9 @@
 [It is Hard To Destroy Data](http://michaeljswart.com/2015/05/its-hard-to-destroy-data/)
 [How to transfer logins and passwords between instances of SQL Server](https://support.microsoft.com/en-us/kb/918992)
 [Finding File Growths with Extended Events](http://nebraskasql.blogspot.ru/2016/06/finding-file-growths-with-extended.html)
+[Questions You Should Ask About the Databases You Manage](https://www.brentozar.com/archive/2016/06/questions-ask-databases-manage/)
+[Clustered Indexes in SQL Server](http://www.sqlhammer.com/clustered-indexes-sql-server/)
+[Triage Quiz: Is Your SQL Server Safe?](https://www.brentozar.com/archive/2016/06/triage-quiz-sql-server-safe/)
+[Why Not Just Create Statistics?](https://www.brentozar.com/archive/2016/07/not-just-create-statistics/)
+[Understanding the SQL Server NOLOCK hint](https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/)
+[Recover access to a SQL Server instance](https://www.mssqltips.com/sqlservertip/2682/recover-access-to-a-sql-server-instance/)
