@@ -7,6 +7,7 @@
  - [Integration Services Error and Message Reference](https://msdn.microsoft.com/en-us/library/ms345164.aspx)
  - [View and Read SQL Server Setup Log Files](https://msdn.microsoft.com/en-us/library/ms143702.aspx)
  - [Troubleshoot the SQL Server Utility](https://msdn.microsoft.com/en-us/library/ee210592.aspx)
+ - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
 
 
 ## SQL Server Common Errors
