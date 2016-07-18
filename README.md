@@ -133,12 +133,17 @@ Headers:
    - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
  - Courses
-   - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
-   - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
-   - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
-   - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
-   - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
-   - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
+   - Free
+     - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql) (Free)
+     - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation) (Free)
+     - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics) (Free)
+     - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server) (Free)
+   - Paid
+     - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html) (Paid)
+     - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html) (Paid)
+     - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/) (Paid)
+     - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/) (Paid)
+     - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all) (Paid)
  - SQL Server Backwards Compatibility
    - [2014 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787.aspx)
    - [2012 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
@@ -302,6 +307,8 @@ SQL Server:
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
+ - [SQL Sentry Free Books](www.sqlsentry.com/sql-server-books)
+ - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
