@@ -38,7 +38,7 @@
 | [Updating Statistics in SQL Server: Maintenance Questions & Answers]              | Kendra Little                            | 2016-04-18 |
 | [Understanding and Using Parallelism in SQL Server]                               | Paul White                               | 2011-03-03 |
 | [Diagnosing and Resolving Latch Contention on SQL Server]                         | Microsoft                                | 2014-02-28 |
-| [Parallel Execution Plans – Branches and Threads]                                 | Paul White                               | 2013-10-07 |
+| [Parallel Execution Plans â€“ Branches and Threads]                                 | Paul White                               | 2013-10-07 |
 | [Nasty Fast PERCENT_RANK]                                                         | Alan Burstein                            | 2016-06-07 |
 | [Looking at VIEWs, Close Up]                                                      | Joe Celko                                | 2016-05-10 |
 | [SQL Server 2016: It Just Runs Faster]                                            | Thomas LaRock                            | 2016-06-01 |
@@ -89,17 +89,17 @@
 [Updating Statistics in SQL Server: Maintenance Questions & Answers]:http://www.littlekendra.com/2016/04/18/updating-statistics-in-sql-server-maintenance-answers
 [Understanding and Using Parallelism in SQL Server]:https://www.simple-talk.com/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
 [Diagnosing and Resolving Latch Contention on SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=26665
-[Parallel Execution Plans – Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
+[Parallel Execution Plans â€“ Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
 [Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
 [Looking at VIEWs, Close Up]:https://www.simple-talk.com/sql/t-sql-programming/looking-at-views,-close-up/
 [SQL Server 2016: It Just Runs Faster]:http://thomaslarock.com/2016/06/sql-server-2016-just-runs-faster/
-[TSQL JOIN Types Poster](http://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/)
-[It is Hard To Destroy Data](http://michaeljswart.com/2015/05/its-hard-to-destroy-data/)
-[How to transfer logins and passwords between instances of SQL Server](https://support.microsoft.com/en-us/kb/918992)
-[Finding File Growths with Extended Events](http://nebraskasql.blogspot.ru/2016/06/finding-file-growths-with-extended.html)
-[Questions You Should Ask About the Databases You Manage](https://www.brentozar.com/archive/2016/06/questions-ask-databases-manage/)
-[Clustered Indexes in SQL Server](http://www.sqlhammer.com/clustered-indexes-sql-server/)
-[Triage Quiz: Is Your SQL Server Safe?](https://www.brentozar.com/archive/2016/06/triage-quiz-sql-server-safe/)
-[Why Not Just Create Statistics?](https://www.brentozar.com/archive/2016/07/not-just-create-statistics/)
-[Understanding the SQL Server NOLOCK hint](https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/)
-[Recover access to a SQL Server instance](https://www.mssqltips.com/sqlservertip/2682/recover-access-to-a-sql-server-instance/)
+[TSQL JOIN Types Poster]:http://stevestedman.com/2015/05/tsql-join-types-poster-version-4-1/
+[It is Hard To Destroy Data]:http://michaeljswart.com/2015/05/its-hard-to-destroy-data/
+[How to transfer logins and passwords between instances of SQL Server]:https://support.microsoft.com/en-us/kb/918992
+[Finding File Growths with Extended Events]:http://nebraskasql.blogspot.ru/2016/06/finding-file-growths-with-extended.html
+[Questions You Should Ask About the Databases You Manage]:https://www.brentozar.com/archive/2016/06/questions-ask-databases-manage/
+[Clustered Indexes in SQL Server]:http://www.sqlhammer.com/clustered-indexes-sql-server/
+[Triage Quiz: Is Your SQL Server Safe?]:https://www.brentozar.com/archive/2016/06/triage-quiz-sql-server-safe/
+[Why Not Just Create Statistics?]:https://www.brentozar.com/archive/2016/07/not-just-create-statistics/
+[Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
+[Recover access to a SQL Server instance]:https://www.mssqltips.com/sqlservertip/2682/recover-access-to-a-sql-server-instance/
