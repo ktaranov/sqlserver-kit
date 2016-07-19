@@ -145,10 +145,11 @@ Headers:
      - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/) (Paid)
      - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all) (Paid)
  - SQL Server Backwards Compatibility
-   - [2014 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787.aspx)
-   - [2012 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
-   - [2008 R2 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
-   - [2008 Backwards Compatibility](http://msdn.microsoft.com/en-us/library/cc707787(v=sql.100).aspx)
+   - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
+   - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
+   - [2012 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
+   - [2008 R2 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
+   - [2008 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.100).aspx)
    - [2005 Backwards Compatibility](http://technet.microsoft.com/en-us/library/ms143532(v=sql.90).aspx)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
@@ -307,8 +308,7 @@ SQL Server:
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
- - [SQL Sentry Free Books](www.sqlsentry.com/sql-server-books)
- - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
+  - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
