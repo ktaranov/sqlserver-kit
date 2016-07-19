@@ -29,6 +29,7 @@ Source link:
  - [Testing and Developing Supportability Roadmaps for ISV Applications (PDF)](http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-00-85-48-files/0827.testing-and-developing-supportability-roadmaps-for-isv-applications.pdf)
  - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
  - [SQL Server Builds by SQLSentry](http://blogs.sqlsentry.com/category/sql-server-builds/)
+ - [SQL Server Release Services](https://blogs.msdn.microsoft.com/sqlreleaseservices/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
  - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
  - [Wikipedia Microsoft_SQL_Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
