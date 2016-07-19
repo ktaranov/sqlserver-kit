@@ -103,7 +103,7 @@ Headers:
     - [Blog do Ezequiel](https://blogs.msdn.microsoft.com/blogdoezequiel/)
     - [SQLHA Blog](http://sqlha.com/blog/)
     - [SQLSecurity Blog](http://www.sqlsecurity.com/home)
-    - [T-SQL.ru](http://www.t-sql.ru/)
+    - [T-SQL.ru](http://www.t-sql.ru/) (Russian)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -123,6 +123,7 @@ Headers:
    - [Veeam Learn Microsoft SQL Server](http://go.veeam.com/learn-microsoft-sql-server-free-video-tutorial-course.html)
    - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/)
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
+   - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
