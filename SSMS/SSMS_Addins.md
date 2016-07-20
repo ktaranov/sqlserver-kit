@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **25** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **26** SSMS add-ins
 
 
 | Name                                                  | Download page                 | Release Date | Support Version | Developer            | Free version | Price   |
@@ -26,9 +26,10 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2015-12-04   | 2008/2012/2014  | Devart               | No           |    $150 |
 | [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2015-11-30   | 2008/2012/2014  | Devart               | No           |    $100 |
 | [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]       | 2015-11-30   | 2008/2012/2014  | Devart               | Yes          | No      |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2015-09-16   | 2008/2012/2014  | Devart               | No           |    $120 |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2016-07-20   | 2008/2012/2014  | Devart               | Yes          |    $120 |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008/2012/2014  | SoftTree             | No           |    $179 |
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014  | UbitSoft             | No           |    $195 |
+| [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014  | Alex Maslyukov       | Yes          | No      |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -312,9 +313,9 @@ With dbForge Object Search for SQL Server you no longer need to look through the
 
 ## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
 Download page: [dbForge SQL Complete]<br/>
-Release date: 2015-09-16<br/>
+Release date: | 2016-07-20<br/>
 Support Version: 2008/2012/2014<br/>
-Free version: No
+Free version: Yes
 
 dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names,
 column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
@@ -346,6 +347,20 @@ Price: $195
  - Continuous integration support
 
 
+## SQL Hunting Dog <a id="sql-hunting-dog"></a>
+Download page: [SQL Hunting Dog]<br/>
+Release date: 2016-03-03<br/>
+Support Version: 2008/2012/2014<br/>
+Developer: Alex Maslyukov
+Free version: Yes
+Price: No
+
+ - Quickly find tables, stored procedure, functions and views
+ - Completely removes the pain of clunky Object Explorer
+ - Switch between different servers and databases
+ - Perform common operation (select data, modify table, design table, etc.) with ease
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
@@ -371,3 +386,4 @@ Price: $195
 [dbForge Object Search]:https://www.devart.com/dbforge/sql/search/
 [SoftTree SQL Assistant]:http://www.softtreetech.com/isql.htm
 [SQL Enlight for SSMS]:http://www.ubitsoft.com/products/sqlenlight-for-ssms/index.php
+[SQL Hunting Dog]:http://sql-hunting-dog.com/
