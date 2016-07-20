@@ -25,8 +25,8 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 303 Trace Flags') (Complete list - 303 trace flags)
- - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (Complete list - from SQL Server 1.0 to SQL Server 2016)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 303 Trace Flags') (Complete list - **303** trace flags)
+ - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2016**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
@@ -39,7 +39,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addons](/SSMS/SSMS_Addins.md) (25 useful free and paid SSMS Addins)
+    - [SSMS addons](/SSMS/SSMS_Addins.md) (**25** useful free and paid SSMS Addins)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
@@ -70,7 +70,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (complete list of 147 SQL Server paid and free Utilities and Tools)
+ - [Utilities](/Utilities) (complete list of **147** SQL Server paid and free Utilities and Tools)
 
 
 ## SQL Server Web Resources
@@ -271,6 +271,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
  - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/) (by Clint Huffman)
  - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad)
+ - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
 
 
 ## TSQL Format Code
@@ -309,7 +310,7 @@ SQL Server:
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
-  - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
+ - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
