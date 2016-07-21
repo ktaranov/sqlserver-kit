@@ -103,7 +103,7 @@ Headers:
     - [Blog do Ezequiel](https://blogs.msdn.microsoft.com/blogdoezequiel/)
     - [SQLHA Blog](http://sqlha.com/blog/)
     - [SQLSecurity Blog](http://www.sqlsecurity.com/home)
-    - [T-SQL.ru](http://www.t-sql.ru/) (Russian)
+    - [SQL.ru SQL Server](http://www.sql.ru/blogs/t-sql) (Russian)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -171,6 +171,8 @@ Headers:
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
+    - [SQLFiddle](http://sqlfiddle.com)
+    - [Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
 
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
