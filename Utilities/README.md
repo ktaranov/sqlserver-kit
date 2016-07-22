@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **147** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **149** SQL Server Utilities
 
 
 | Name/Description                                                      | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -22,6 +22,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [Dbeaver](#dbeaver)                                                   | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
 | [HeidiSQL](#heidisql)                                                 | [HeidiSQL]                           | 2016-06-19   | Open Source        | Yes          | No    |
 | [SQLExecStats](#sqlexecstats)                                         | [SQLExecStats]                       | 2016-02-08   | Joe Chang          | Yes          | No    |
+| [ExpressProfiler](#expressprofiler)                                   | [ExpressProfiler]                    | 2016-02-15   | Chris Moore        | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
 | [osql Utility](#osql-utility)                                         | [osql Utility]                       | -            | Microsoft          | Yes          | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | [sqldiag Utility]                    | -            | Microsoft          | Yes          | No    |
@@ -151,6 +152,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 | [EMS DB Extract](#ems-bd-extract)                                     | [EMS DB Extract]                     | 2008-10-16   | EMS                | No           |   $47 |
 | [EMS SQL Query](#ems-sql-query)                                       | [EMS SQL Query]                      | 2012-03-29   | EMS                | No           |   $47 |
 | [EMS Data Comparer](#ems-data-comparer)                               | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
+| [NitroAccelerator](#nitroaccelerator  )                               | [NitroAccelerator]                   | 2016-07-10   | Nitrosphere        | No           | ?     |
 
 
 ## SSMS <a id="ssms"></a>
@@ -383,6 +385,17 @@ Price: No
  - Cross reference index usage by execution plan, what plans reference infrequently used indexes.
  - Saves XML plan for top queries.
  - Save information directly to Microsoft Excel 2003 file format and in binary.
+
+
+## ExpressProfiler <a id="expressprofiler"></a>
+Download page: [ExpressProfiler]<br/>
+Release date: 2016-02-15<br/>
+Support Version: 2008/2008R2/2012/2014<br/>
+Author: Chris Moore<br/>
+Free version: Yes<br/>
+Price: No
+
+ExpressProfiler (aka **SqlExpress Profiler**) is a simple and fast replacement for SQL Server Profiler with basic GUI and integration with Red Gate Ecosystem project.
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -2164,6 +2177,17 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
 
 
+## NitroAccelerator <a id="nitroaccelerator"</a>
+Download page: [NitroAccelerator]<br/>
+Release date: 2016-07-10<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Nitrosphere<br/>
+Free version: No<br/>
+Price: ?
+
+Accelerates and Secures SQL Server network traffic resulting in orders of magnitude performance improvement while securing the data across the network.
+
+
 [SSMS]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -2182,6 +2206,7 @@ Using this utility you can view all the differences in compared SQL Server table
 [Dbeaver]:http://dbeaver.jkiss.org/
 [HeidiSQL]:http://www.heidisql.com
 [SQLExecStats]:http://www.qdpma.com/ExecStats/SQLExecStats.html
+[ExpressProfiler]:https://expressprofiler.codeplex.com/
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
@@ -2311,3 +2336,4 @@ Using this utility you can view all the differences in compared SQL Server table
 [EMS DB Extract]:http://www.sqlmanager.net/en/products/mssql/extract
 [EMS SQL Query]:http://www.sqlmanager.net/en/products/mssql/query
 [EMS Data Comparer]:http://www.sqlmanager.net/en/products/mssql/datacomparer
+[NitroAccelerator]:http://nitrosphere.com/nitroaccelerator/

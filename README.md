@@ -70,7 +70,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (complete list of **147** SQL Server paid and free Utilities and Tools)
+ - [Utilities](/Utilities) (complete list of **149** SQL Server paid and free Utilities and Tools)
 
 
 ## SQL Server Web Resources
@@ -274,6 +274,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/) (by Clint Huffman)
  - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad)
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
+ - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL)
 
 
 ## TSQL Format Code
