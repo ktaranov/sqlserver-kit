@@ -42,7 +42,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Ed Elliott          | [Ed Elliott Blog]          | London    | [@EdDebug]        | ed.elliott@outlook.com            | -   | -                |
 | Andy Yun            | [Andy Yun Blog]            | NULL      | [@SQLBek]         | NULL                              | -   | -                |
 | Sander Stad         | [Sander Stad Blog]         | NULL      | [@SQLStad]        | NULL                              | -   | -                |
-
+| Guy Glantser        | -                          | NULL      | [@guy_glantser]   | NULL                              | 2   | [Glantser MVP]   |
+| Matan Yungman       | -                          | Tel Aviv  | [@MatanYungman]   | NULL                              | -   | [Yungman MVP]    |
+| Julie Koesmarno     | [July Blog]                | Redmond   | [@MsSQLGirl]      | NULL                              | -   | -                |
+| Michael J Swart     | [Michael Blog]             | Waterloo  | [@MJSwart]        | NULL                              | 5   | [Swart MVP]      |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -82,6 +85,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Ed Elliott Blog]:https://the.agilesql.club/Blogs/Ed-Elliott/About
 [Andy Yun Blog]:https://sqlbek.wordpress.com
 [Sander Stad Blog]:http://www.sqlstad.nl
+[July Blog]:http://www.mssqlgirl.com/
+[Michael Blog]:http://michaeljswart.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -116,6 +121,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@ItzikBenGan]:https://twitter.com/ItzikBenGan
 [@EdDebug]:https://twitter.com/EdDebug
 [@SQLStad]:https://twitter.com/SQLStad
+[@guy_glantser]:https://twitter.com/guy_glantser
+[@MatanYungman]:https://twitter.com/MatanYungman
+[@MsSQLGirl]:https://twitter.com/MsSQLGirl
+[@MJSwart]:https://twitter.com/MJSwart
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -140,3 +149,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 [LeMaire MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001321?fullName=Chrissy%20%20LeMaire
 [Mitchell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4027186?fullName=Tim%20%20Mitchell
 [Ben-Gan MVP]:https://mvp.microsoft.com/en-us/PublicProfile/6819?fullName=Itzik%20%20Ben-Gan
+[Glantser MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001253?fullName=Guy%20%20Glantser
+[Yungman MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001675?fullName=Matan%20%20Yungman
+[Swart MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4038219?fullName=Michael%20J%20Swart
