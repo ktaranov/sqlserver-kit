@@ -1,5 +1,5 @@
 /*
-Author: Benjamin Nevarez
+Author: Buck Woody
 Original link: https://thelonedba.wordpress.com/2016/07/18/which-databases-were-backed-up-in-which-backup-task/
 */
 
