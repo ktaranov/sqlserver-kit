@@ -78,6 +78,7 @@ Headers:
     - [SQL Central Blog Scripts](http://www.sqlservercentral.com/Scripts/)
     - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
     - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
+    - [DatabaseWeekly](http://www.databaseweekly.com/)
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
     - [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
     - [Simple-talk Articles](https://www.simple-talk.com/)
@@ -104,6 +105,8 @@ Headers:
     - [SQLHA Blog](http://sqlha.com/blog/)
     - [SQLSecurity Blog](http://www.sqlsecurity.com/home)
     - [SQL.ru SQL Server](http://www.sql.ru/blogs/t-sql) (Russian)
+    - [C# Corner SQL Server Articles](http://www.c-sharpcorner.com/technologies/sql-server)
+    - [TechTarget Blog](http://searchsqlserver.techtarget.com/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -124,6 +127,7 @@ Headers:
    - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/)
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
    - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
+   - [Youtube Redgate Videos](https://www.youtube.com/redgate)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
@@ -155,13 +159,13 @@ Headers:
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
-    - [SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit)
+    - [SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
-    - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump)
+    - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump) (Github)
     - [Using Excel to parse Set Statistics IO output](http://vickyharp.com/2012/03/using-excel-to-parse-set-statistics-io-output/) (by Vicky Harp)
-    - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump)
-    - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer)
+    - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump) (Github)
+    - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer) (Github)
     - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
     - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
     - [BIMLScript Learn resource](http://www.bimlscript.com/)
@@ -173,6 +177,8 @@ Headers:
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
     - [SQLFiddle](http://sqlfiddle.com)
     - [Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
+    - [tSQLt testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
+    - [T-SQL SimMetrics string matching algorithms](https://github.com/GuerrillaAnalytics/similarity) (Github)
 
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
@@ -243,8 +249,8 @@ Here's just SQL Server 2008 Management Studio:
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
  - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
- - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers)
- - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse)
+ - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers) (Github)
+ - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse) (Github)
  - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Bren Ozar)
 
 
@@ -259,22 +265,22 @@ Here's just SQL Server 2008 Management Studio:
  - [TSQL Code Smells Finder](https://tsqlsmells.codeplex.com/) (by Dave Ballantyne)
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
  - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul Kapoor)
- - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)
- - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom)
+ - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)  (Github)
+ - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom) (Github)
  - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
- - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists)
- - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi)
- - [SQL Server PowerShell Extensions (SQLPSX)](https://github.com/MikeShepard/SQLPSX) (by Mike Shepard)
- - [PowerShell dbatools for SQL Server](https://github.com/ctrlbold/dbatools) (by Chrissy LeMaire)
+ - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists) (Github)
+ - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi) (Github)
+ - [SQL Server PowerShell Extensions (SQLPSX)](https://github.com/MikeShepard/SQLPSX) (by Mike Shepard) (Github)
+ - [PowerShell dbatools for SQL Server](https://github.com/ctrlbold/dbatools) (by Chrissy LeMaire) (Github)
  - [Create a Monitoring Server for SQL Server with PowerShell](https://www.simple-talk.com/sql/database-administration/create-a-monitoring-server-for-sql-server-with-powershell/) (by Laerte Junior)
  - [PowerShell SQLPass articles and video](http://powershell.sqlpass.org/default.aspx)
  - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
  - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
  - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
  - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/) (by Clint Huffman)
- - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad)
+ - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad) (Github)
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
- - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL)
+ - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
 
 
 ## TSQL Format Code
