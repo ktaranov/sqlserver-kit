@@ -116,7 +116,7 @@ Profits:
 
 | Version | Latest Update                                                     | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|-------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Install 2016 RTM]                                                | 13.0.1601.5                                    | 2016-06-01                               | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Install 2016 RTM] then<br/>[CU1 KB3164674]                       | 13.0.1601.5<br/>13.0.2149.0                    | 2016-06-01<br/>2016-07-25                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP1] then<br/>[SP2 KB3171021]                       | 12.0.4100.1<br/>12.0.5000.0                    | 2015-05-15<br/>2016-07-11                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP3 2012] then<br/>[CU4 KB3165264]       | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6540.0   | 2012-02-14<br/>2015-11-21<br/>2016-07-18 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311] | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
@@ -124,6 +124,7 @@ Profits:
 | 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                       | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
+[CU1 KB3164674]:https://support.microsoft.com/en-us/kb/3164674
 [Install 2014 SP1]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
 [SP2 KB3171021]:https://support.microsoft.com/en-us/kb/3171021
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
@@ -156,6 +157,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | Direct x64 Download Link | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
 |--------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
 | [SQL Server 2016]        | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    | 2050 MB  | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
+| [SQL Server 2016 CU1]    | SQLServer2016-KB3164674-x64.exe                                      | 2016-07-25   | 13.0.2149.0    |  664 MB  | 19 d1 8e 6f af 23 5e 8a e2 20 e9 f3 59 07 34 51 47 ff 20 91 |
 | [SQL Server 2014 SP1]    | SQLServer2014SP1-FullSlipstream-x64-ENU.iso                          | 2015-05-15   | 12.0.4100.1    | 3035 MB  | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
 | [SQL Server 2014 SP2]    | SQLServer2014SP2-KB3171021-x64-ENU.exe                               | 2016-07-11   | 12.0.5000.0    |  681 MB  | 4e de a4 a1 bf 97 53 17 61 38 65 70 fd df 67 7c 73 32 f3 a5 |
 | [SQL Server 2012]        | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   | 4300 MB  | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
@@ -169,6 +171,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | [SQL Server 2008 SU]     | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |   61 MB  | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
+[SQL Server 2016 CU1]:https://download.microsoft.com/download/1/E/F/1EF6D06B-D1D3-4E98-A727-00D9787AE572/SQL16RTMCU1/x64/SQLServer2016-KB3164674-x64.exe
 [SQL Server 2014 SP1]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP2]:https://download.microsoft.com/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-KB3171021-x64-ENU.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
@@ -325,14 +328,15 @@ For details about how to assess the performance differences of your most importa
 ## Microsoft SQL Server 2016 Builds <a id="microsoft-sql-server-2016-builds"></a>
 Here is the latest output from `SELECT @@VERSION`:
 ```
-Microsoft SQL Server 2016 (RTM-GDR) (KB3164398) – 13.0.1708.0 (X64)
-  Jun 2 2016 07:18:56
-  Copyright (c) Microsoft Corporation
-  Developer Edition (64-bit) on Windows …
+Microsoft SQL Server 2016 (RTM-CU1) (KB3164674) – 13.0.2149.0 (X64)
+    Jul 11 2016 22:05:22
+    Copyright (c) Microsoft Corporation
+    Developer Edition (64-bit) on Windows…
 ```
 
 | Build         | File version      | KB / Description                                                                | Release Date | Build Date |
 |---------------|-------------------|---------------------------------------------------------------------------------|--------------|------------|
+| 13.0.2149.0   | 2015.130.2149.0   | [3164674 Cumulative Update 1 for SQL Server 2016]                               | 2016-07-25   | 2016-07-11 |
 | 13.0.1708.0   | 2015.130.1708.0   | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]              | 2016-06-04   | 2016-06-02 |
 | 13.0.1601.5   | 2015.130.1601.5   | [Microsoft SQL Server 2016 RTM]                                                 | 2016-06-01   | 2016-04-29 |
 | 13.0.1400.361 | 2015.130.1400.361 | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)        | 2016-04-15   | 2016-04-09 |
@@ -351,6 +355,7 @@ Microsoft SQL Server 2016 (RTM-GDR) (KB3164398) – 13.0.1708.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-14   | 2015-06-12 |
 | 13.0.200.172  | 2015.130.200.172  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-26   | 2015-05-21 |
 
+[3164674 Cumulative Update 1 for SQL Server 2016]:https://support.microsoft.com/en-us/kb/3164674
 [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]:https://support.microsoft.com/en-us/kb/3164398
 [Microsoft SQL Server 2016 RTM]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
 
