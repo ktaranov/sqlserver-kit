@@ -84,16 +84,16 @@ We all know that every time SQL Server executes a query it builds an execution p
 To obtain the list of rules of your version of SQL Server we must use the undocumented DBCC commands SHOWONRULES and SHOWOFFRULES. Those commands display the enabled and disabled rules for the whole instance respectively. As you may guess, the number of rules varies amongst versions.
 
 ```sql
-USE master
+USE master;
 GO
 
-DBCC TRACEON(3604)
+DBCC TRACEON(3604);
 GO
 
-DBCC SHOWONRULES
+DBCC SHOWONRULES;
 GO
 
-DBCC SHOWOFFRULES
+DBCC SHOWOFFRULES;
 GO
 ```
 
@@ -735,8 +735,7 @@ Scope: global
 
 
 **Trace Flag: 2529**<br />
-Function: Displays memory usage for DBCC commands when used with TF
-3604S<br />
+Function: Displays memory usage for DBCC commands when used with TF 3604<br />
 Link: None
 
 

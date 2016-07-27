@@ -250,7 +250,7 @@ RESTORE HEADERONLY FROM DISK=N'd:\DatabseBackupFile.bak' WITH NOUNLOAD;
 GO
 ```
 
-You will note that for each DBCC command we have to turn on trace flag 3604 so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
+You will note that for each DBCC command we have to turn on trace [flag 3604](http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx) so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
 
 If you are still on SQL Serever 2000, you can see this information with a simple query:
 ```sql

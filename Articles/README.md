@@ -1,4 +1,4 @@
-# Must read Microsoft SQL Server articles
+# Microsoft SQL Server Articles
 
 
 | Title                                                                             | Author                                   | Modified   |
