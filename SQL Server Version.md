@@ -188,25 +188,27 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 ## Internal Database Version and Compatibility Level <a id="internal-database-version-and-compatibility-level"></a>
 
 ### Database Compatibility Level
-The compatibility level of a database dictates how certain language elements of the database function as it relates to an earlier version of SQL Server.  In a nutshell, this offers up partial “backward compatibility” to an earlier version.
+The compatibility level of a database dictates how certain language elements of the database function as it relates to an earlier version of SQL Server. 
+In a nutshell, this offers up partial “backward compatibility” to an earlier version.
 This functionality is not all encompassing as only certain aspects (i.e. certain syntax) of the database would pertain to this setting.
 
 You can see what compatibility level a database is at by using the SSMS or via code.
 
 Via SSMS:
- 1. Right click the database
- 2. Select Properties
- 3. Go to the Options tab
+ 1. After connecting to the appropriate instance of the SQL Server Database Engine, in Object Explorer, click the server name.
+ 2. Expand **Databases**, and, depending on the database, either select a user database or expand **System Databases** and select a system database.
+ 3. Right-click the database, and then click **Properties**. The **Database Properties** dialog box opens.
+ 4. In the **Select a page** pane, click **Options**. The current compatibility level is displayed in the **Compatibility level** list box.
+ 5. To change the compatibility level, select a different option from the list. The choices are **SQL Server 2008 (100)**, **SQL Server 2012 (110)** or **SQL Server 2014 (120)**.
 
 Via T-SQL:
 ```sql
--- For SQL Serever 2005 and newer
+-- For SQL Server 2005 and newer
 SELECT name, compatibility_level FROM sys.databases WHERE name = 'DatabaseNameHere';
 
--- For SQL Serever 2000
+-- For SQL Server 2000
 SELECT name, cmptlevel FROM sysdatabases WHERE name = 'DatabaseNameHere';
 ```
-
 
 To ALTER DATABASE Compatibility Level use simple command:
 ```sql
@@ -220,9 +222,10 @@ The database version is a number stamped in the boot page of a database that ind
 The database version is an internal versioning system that defines what version of SQL Server the database was a recent resident of.
 If you migrate a database from an older version to a newer version, the database version value will be increased to reflect the version number of the new server’s model database.
 
-When you create a database, the database version is “stamped” with the same version as the Model database.
-It is worth noting that if the Model database was originally created on a different server edition and then subsequently upgraded, you potentially could end up
-with slightly different numbers than what you might expect.  As you upgrade the database to new SQL Server edition (you can not go backward) the version of the database increases.
+When you create a database, the database version is “stamped” with the same version as the **Model** database.
+It is worth noting that if the **Model** database was originally created on a different server edition and then subsequently upgraded, you potentially could end up
+with slightly different numbers than what you might expect. 
+As you upgrade the database to new SQL Server edition (you can not go backward) the version of the database increases.
 This is done automatically regardless of what method you use to upgrade the database to the new version of SQL Server.
 
 ```sql
@@ -252,6 +255,11 @@ You will note that for each DBCC command we have to turn on trace flag 3604 so t
 If you are still on SQL Serever 2000, you can see this information with a simple query:
 ```sql
 SELECT name, version FROM master.dbo.sysdatabases;
+```
+
+Execute the following query to determine the version of the Database Engine that you are connected to:
+```sql
+SELECT SERVERPROPERTY('ProductVersion');
 ```
 
 | SQL Server Version                           | Database Engine Version |  Code Name   | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
@@ -285,6 +293,7 @@ For details about how to assess the performance differences of your most importa
  - [Compatibility Level vs Database Version](http://sqlrus.com/2014/10/compatibility-level-vs-database-version/) (by John Morehouse)
  - [What’s the difference between database version and database compatibility level?](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/04/26/whats-the-difference-between-database-version-and-database-compatibility-level/) (by Paul Randal)
  - [ALTER DATABASE Compatibility Level (Transact-SQL)](https://msdn.microsoft.com/library/bb510680(SQL.130).aspx)
+ - [View or Change the Compatibility Level of a Database](https://msdn.microsoft.com/library/bb933794.aspx)
  - [Database Version vs Database Compatibility Level](http://sqlblog.com/blogs/jonathan_kehayias/archive/2009/07/28/database-version-vs-database-compatibility-level.aspx) (by Jonathan Kehayias)
 
 
