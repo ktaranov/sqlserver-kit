@@ -89,6 +89,9 @@ Headers:
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
     - [SQLMag](http://sqlmag.com/)
     - [SQLShack](http://www.sqlshack.com/)
+    - [LessThanDot SQL Server Blog](http://blogs.lessthandot.com/index.php/category/datamgmt/dbprogramming/mssqlserver/)
+    - [SQLBlog](http://sqlblog.com)
+    - [DatabseJournal SQL Server Blog](http://www.databasejournal.com/features/mssql/)
     - [SQLPass](http://www.sqlpass.org/Home.aspx)
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
     - [Midnightdba Blog](http://www.midnightdba.com/Jen/)
@@ -107,6 +110,7 @@ Headers:
     - [SQL.ru SQL Server](http://www.sql.ru/blogs/t-sql) (Russian)
     - [C# Corner SQL Server Articles](http://www.c-sharpcorner.com/technologies/sql-server)
     - [TechTarget Blog](http://searchsqlserver.techtarget.com/)
+    - [Toad SQL Server Blog](http://www.toadworld.com/platforms/sql-server/b/weblog)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
