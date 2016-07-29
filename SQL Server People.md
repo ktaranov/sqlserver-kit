@@ -47,6 +47,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Julie Koesmarno     | [July Blog]                | Redmond   | [@MsSQLGirl]       | NULL                              | -   | -                |
 | Michael J Swart     | [Michael Blog]             | Waterloo  | [@MJSwart]         | NULL                              | 5   | [Swart MVP]      |
 | Dmitry Piliugin     | [Dmitry Blog]              | Moscow    | [@SomewereSomehow] | NULL                              | 3   | [Pilugin MVP]    |
+| Buck Woody          | [Buck Blog]                | NULL      | [@buckwoodymsft]   | NULL                              | -   | -                |
+| Steve Stedman       | [Steve Stedman Blog]       | Austin    | [@stedman]         | NULL                              | -   | -                |
+| Daniel Hutmacher    | [Daniel Hutmacher Blog]    | Austin    | [@dhmacher]        | NULL                              | -   | -                |
+| DNiko Neugebauer    | [Niko Blog]                | Austin    | NULL               | NULL                              | -   | -                |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -89,6 +93,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [July Blog]:http://www.mssqlgirl.com/
 [Michael Blog]:http://michaeljswart.com/
 [Dmitry Blog]:http://www.queryprocessor.com/
+[Buck Blog]:https://thelonedba.wordpress.com/
+[Steve Stedman]:http://stevestedman.com
+[Daniel Hutmacher]:https://sqlsunday.com
+[Niko Blog]:http://www.nikoport.com
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -128,6 +136,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@MsSQLGirl]:https://twitter.com/MsSQLGirl
 [@MJSwart]:https://twitter.com/MJSwart
 [@SomewereSomehow]:https://twitter.com/SomewereSomehow
+[@buckwoodymsft]:https://twitter.com/buckwoodymsft
+[@stedman]:https://twitter.com/stedman
+[@dhmacher]:https://twitter.com/dhmacher
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
