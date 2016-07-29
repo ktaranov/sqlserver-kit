@@ -94,8 +94,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Michael Blog]:http://michaeljswart.com/
 [Dmitry Blog]:http://www.queryprocessor.com/
 [Buck Blog]:https://thelonedba.wordpress.com/
-[Steve Stedman]:http://stevestedman.com
-[Daniel Hutmacher]:https://sqlsunday.com
+[Steve Stedman Blog]:http://stevestedman.com
+[Daniel Hutmacher Blog]:https://sqlsunday.com
 [Niko Blog]:http://www.nikoport.com
 
 [@BrentO]:https://twitter.com/BrentO
@@ -130,6 +130,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@sqltoolsguy]:https://twitter.com/sqltoolsguy
 [@ItzikBenGan]:https://twitter.com/ItzikBenGan
 [@EdDebug]:https://twitter.com/EdDebug
+[@SQLBek]:https://twitter.com/SQLBek
 [@SQLStad]:https://twitter.com/SQLStad
 [@guy_glantser]:https://twitter.com/guy_glantser
 [@MatanYungman]:https://twitter.com/MatanYungman
