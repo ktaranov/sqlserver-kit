@@ -51,6 +51,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Steve Stedman       | [Steve Stedman Blog]       | Austin    | [@stedman]         | NULL                              | -   | -                |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]    | Austin    | [@dhmacher]        | NULL                              | -   | -                |
 | DNiko Neugebauer    | [Niko Blog]                | Austin    | NULL               | NULL                              | -   | -                |
+| Mike Fal            | [Mike Fal Blog]            | Denver    | [@Mike_Fal]        | NULL                              | -   | -                |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -97,6 +98,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Steve Stedman Blog]:http://stevestedman.com
 [Daniel Hutmacher Blog]:https://sqlsunday.com
 [Niko Blog]:http://www.nikoport.com
+[Mike Fal Blog]:http://www.mikefal.net/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -140,6 +142,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@buckwoodymsft]:https://twitter.com/buckwoodymsft
 [@stedman]:https://twitter.com/stedman
 [@dhmacher]:https://twitter.com/dhmacher
+[@Mike_Fal]:https://twitter.com/Mike_Fal
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
