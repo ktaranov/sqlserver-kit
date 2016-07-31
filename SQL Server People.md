@@ -52,6 +52,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]    | Austin    | [@dhmacher]        | NULL                              | -   | -                |
 | DNiko Neugebauer    | [Niko Blog]                | Austin    | NULL               | NULL                              | -   | -                |
 | Mike Fal            | [Mike Fal Blog]            | Denver    | [@Mike_Fal]        | NULL                              | -   | -                |
+| Robert L Davis      | [Robert Blog]              | New York  | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]      |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -99,6 +100,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Daniel Hutmacher Blog]:https://sqlsunday.com
 [Niko Blog]:http://www.nikoport.com
 [Mike Fal Blog]:http://www.mikefal.net/
+[Robert Blog]:http://www.sqlsoldier.com/wp/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -143,6 +145,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@stedman]:https://twitter.com/stedman
 [@dhmacher]:https://twitter.com/dhmacher
 [@Mike_Fal]:https://twitter.com/Mike_Fal
+[@SQLSoldier]:https://twitter.com/SQLSoldier
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -171,3 +174,4 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Yungman MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001675?fullName=Matan%20%20Yungman
 [Swart MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4038219?fullName=Michael%20J%20Swart
 [Pilugin MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000995?fullName=Dmitry%20%20Pilugin
+[Davis MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000945?fullName=Robert%20L%20Davis
