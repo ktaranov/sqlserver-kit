@@ -1682,19 +1682,18 @@ Related to: 9205
 
 **Trace Flag: 9204**<br />
 Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx
+Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx<br />
 Related to: 9292
 
 
 **Trace Flag: 9205**<br />
 Function: Cardinality estimates for literals that are outside the histogram range are very low for tables that have parent-child relationships<br />
-Link: https://support.microsoft.com/en-us/kb/kbview/833406
+Link: https://support.microsoft.com/en-us/kb/kbview/833406<br />
 Related to: 9185
 
 
 **Trace Flag: 9207**<br />
-Function: Fixes that SQL Server underestimates the cardinality of a
-query expression and query performance may be slow<br />
+Function: Fixes that SQL Server underestimates the cardinality of a query expression and query performance may be slow<br />
 Link: https://support.microsoft.com/en-us/kb/831302
 
 
@@ -1710,7 +1709,7 @@ Link: None
 
 **Trace Flag: 9292**<br />
 Function: Output Statistics considered to be used by Query Optimizer<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx
+Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx<br />
 Related to: 9204
 
 
