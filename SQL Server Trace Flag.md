@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (303 trace flags)
+Complete list of Microsoft SQL Server trace flags (312 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -39,7 +39,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
 
 
 ## What are Microsoft SQL Server Trace Flags? <a id="what-are-microsoft-sql-server-trace-flags"></a>
-Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: https://msdn.microsoft.com/en-us/library/ms188396.aspx
+Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: [MSDN ms188396]
 
 
 ## How do I turn Trace Flags on and off? <a id="how-do-i-turn-trace-flags-on-and-off"></a>
@@ -108,7 +108,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: 303 trace flags
+Summary: 312 trace flags
 
 
 **Trace Flag: -1**<br />
@@ -227,7 +227,7 @@ Link: None
 
 **Trace Flag: 260**<br />
 Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). Scope: global or session<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx<br />
 Scope: global
 
@@ -311,8 +311,14 @@ Link: None
 
 **Trace Flag: 634**<br />
 Function: Disables the background columnstore compression task<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
 Scope: global
+
+
+**Trace Flag: 646**<br />
+Function: Serves for getting detailed information on which Columnstore were eliminated by the Query Optimiser right into the error log.<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 35]
 
 
 **Trace Flag: 652**<br />
@@ -476,7 +482,7 @@ Link: None
 
 **Trace Flag: 1204**<br />
 Function: Returns info about deadlocks<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -492,7 +498,7 @@ Link: None
 
 **Trace Flag: 1211**<br />
 Function: Disables Lock escalation caused by memory pressure<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global or session
 
 
@@ -503,13 +509,13 @@ Link: None
 
 **Trace Flag: 1222**<br />
 Function: Returns Deadlock info in XML format<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
 **Trace Flag: 1224**<br />
 Function: Disables lock escalation based on number of locks<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global or session
 
 
@@ -536,7 +542,7 @@ Link: None
 
 **Trace Flag: 1448**<br />
 Function: Alters replication log reader functionality<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 1449**<br />
@@ -730,7 +736,7 @@ Link: None
 
 **Trace Flag: 2528**<br />
 Function: Disables parallelism in CHECKDB etc<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -912,7 +918,7 @@ Link: None
 
 **Trace Flag: 3042**<br />
 Function: Alters backup compression functionality<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 3101**<br />
@@ -942,7 +948,7 @@ Link: https://support.microsoft.com/en-us/kb/915385
 
 **Trace Flag: 3205**<br />
 Function: Disable HW compression for backup to tape drives<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -953,7 +959,7 @@ Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-pe
 
 **Trace Flag: 3226**<br />
 Function: Turns off ”Backup Successful” messages in errorlog<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 *Thanks to: @lwiederstein (https://twitter.com/lwiederstein)*
@@ -1032,7 +1038,7 @@ Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html
 
 **Trace Flag: 3608**<br />
 Function: Recover only Master db at startup<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 3609**<br />
@@ -1047,7 +1053,7 @@ Link: None
 
 **Trace Flag: 3625**<br />
 Function: Masks some error messages<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -1279,7 +1285,7 @@ Link: https://support.microsoft.com/en-us/kb/925744
 
 **Trace Flag: 4616**<br />
 Function: Makes server-level metadata visible to application roles. In SQL Server, an application role cannot access metadata outside its own database because application roles are not associated with a server-level principal. This is a change of behavior from earlier versions of SQL Server. Setting this global flag disables the new restrictions, and allows for application roles to access server-level metadata.<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -1316,7 +1322,7 @@ Link: http://blogs.msdn.com/b/sql_server_team/archive/2015/10/09/query-compile-b
 
 **Trace Flag: 6527**<br />
 Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration. By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR. The behaviour of the trace flag is as follows: If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used. If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -1388,7 +1394,7 @@ Link: None
 
 **Trace Flag: 7806**<br />
 Function: SQL 9 - Enables a dedicated administrator connection on SQL Express, DAC resources are not reserved by default<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx<br />
+Link: [MSDN ms188396]<br />
 Scope: global
 
 
@@ -1473,7 +1479,7 @@ Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2005-slowing-down-after
 **Trace Flag: 8032**<br />
 Function: Alters cache limit settings<br />
 Warning: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 8033**<br />
@@ -1527,7 +1533,7 @@ Link: None
 **Trace Flag: 8207**<br />
 Function: Alters Transactional Replication behaviour of UPDATE statement<br />
 Link: https://support.microsoft.com/en-us/kb/302341<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 8209**<br />
@@ -1708,22 +1714,64 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-sta
 Related to: 9204
 
 
+**Trace Flag: 9347**<br />
+Function: Disable batch mode sorted by session<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
+Link: https://support.microsoft.com/en-us/kb/3172787
+
+
+**Trace Flag: 9349**<br />
+Function: Disables batch mode top sort operator. SQL Server 2016 introduces a new batch mode top sort operator that boosts performance for many analytical queries.<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
+Link: [MSDN ms188396]
+
+
+**Trace Flag: 9358**<br />
+Function: Disable batch mode sort operations in a complex parallel query. For example, this flag could apply if the query contains merge join operations.<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
+Link: https://support.microsoft.com/en-us/kb/3171555
+
+
+**Trace Flag: 9389**<br />
+Function: Enables dynamic memory grant for batch mode operators. If a query does not get all the memory it needs, it spills data to tempdb, incurring additional I/O and potentially impacting query performance.
+If the dynamic memory grant trace flag is enabled, a batch mode operator may ask for additional memory and avoid spilling to tempdb if additional memory is available.<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
+Link: [MSDN ms188396]
+
+
+**Trace Flag: 9453**<br />
+Function: If, when querying TransactionsCS or TransactionsDCS, for troubleshooting purposes you want SQL Server to not consider using batch processing, you can use query trace flag 9453 by adding the following at the end of the query: OPTION (QUERYTRACEON 9453).<br />
+Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
+Link: http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
+
+
 **Trace Flag: 9481**<br />
-Function: Forces the query optimizer to use the SQL Server 2012 version
-of the cardinality estimator when creating the query plan when running
-SQL Server 2014 with the default database compatibility level 120<br />
+Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database. For more information, see Microsoft Support article. To accomplish this at the database level, see ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL). To accomplish this at the query level, add the QUERYTRACEONquery hint<br />
 Link: http://support.microsoft.com/kb/2801413
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 9485**<br />
 Function: Disables SELECT permission for DBCC SHOW\_STATISTICS<br />
 Link: https://support.microsoft.com/en-us/kb/2683304<br />
-Link: http://msdn.microsoft.com/en-us/library/ms188396.aspx
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 9532**<br />
 Function: SQL 11 CTP3 - to get more than 1 availability group replica in CTP3 Scope Startup<br />
 Link: http://connect.microsoft.com/SQLServer/feedback/details/682581/denali-hadron-read-only-routing-url-is-not-yet-implemente
+
+
+**Trace Flag: 9567**<br />
+Function: Enables compression of the data stream for availability groups during automatic seeding.
+Compression can significantly reduce the transfer time during automatic seeding and will increase the load on the processor.<br />
+Link: [MSDN ms188396]
+
+
+**Trace Flag: 9592**<br />
+Function: Enables log stream compression for synchronous availability groups.
+This feature is disabled by default on synchronous availability groups because compression adds latency.<br />
+Link: [MSDN ms188396]
 
 
 **Trace Flag: 9806**<br />
@@ -1745,3 +1793,14 @@ Link: None
 **Undocumented trace flag**<br />
 Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
 Link: http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/#more-1216
+
+
+**Trace Flag: 10204**<br />
+Function: Disables merge/recompress during columnstore index reorganization. In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
+Note: Trace flag 10204 does not apply to column store indexes which are created on memory-optimized tables.<br />
+Link: [MSDN ms188396]
+
+
+[MSDN ms188396]:https://msdn.microsoft.com/en-us/library/ms188396.aspx
+[Niko Neugebauer Columnstore Indexes – part 86]:http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
+[Niko Neugebauer Columnstore Indexes – part 35]:http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
