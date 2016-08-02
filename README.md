@@ -324,6 +324,7 @@ SQL Server:
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
  - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
+ - [Microsoft Cloud Security for Enterprise Architects (PDF)](http://download.microsoft.com/download/6/d/f/6dfd7614-bbcf-4572-a871-e446b8cf5d79/msft_cloud_architecture_security.pdf)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
