@@ -211,7 +211,7 @@ Official Microsoft SQL Server Express page: https://www.microsoft.com/en-us/serv
 
 
 ### [Download SQL Server 2014 Express](http://www.microsoft.com/en-us/download/details.aspx?id=42299)
-[Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express ](https://www.microsoft.com/en-us/download/details.aspx?id=46697)
+[Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express ](https://www.microsoft.com/en-us/download/details.aspx?id=46697)<br />
 You likely just want SQL Server 2014 Express with Tools. This download includes SQL Management Studio:
  - [SQL Server 2014 Express x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2064BIT/SQLEXPRWT_x64_ENU.exe)
  - [SQL Server 2014 Express x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2032BIT/SQLEXPRWT_x86_ENU.exe)
@@ -226,7 +226,7 @@ SQL Server 2014 Express with Advanced Services:
 
 
 ### [Download SQL Server 2012 Express](http://www.microsoft.com/en-us/download/details.aspx?id=29062)
-[Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/en-us/download/details.aspx?id=35579)
+[Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/en-us/download/details.aspx?id=35579)<br />
 You likely just want SQL Server 2012 Express with Tools. This download includes SQL Management Studio:
  - [SQL Server 2012 Express x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPRWT_x64_ENU.exe)
 
