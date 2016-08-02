@@ -673,7 +673,8 @@ Link: http://www.benjaminnevarez.com/2013/02/statistics-on-ascending-keys
 Function: Enable auto-quick-statistics update for known ascending keys<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-2389--2390.aspx<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
-Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767
+Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
+Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator
 
 
 **Trace Flag: 2390**<br />
