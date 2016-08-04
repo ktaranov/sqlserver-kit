@@ -167,7 +167,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [EMS DB Extract](#ems-bd-extract)                                     |            | [EMS DB Extract]                     | 2008-10-16   | EMS                | No           |   $47 |
 | [EMS SQL Query](#ems-sql-query)                                       |            | [EMS SQL Query]                      | 2012-03-29   | EMS                | No           |   $47 |
 | [EMS Data Comparer](#ems-data-comparer)                               | [SC]       | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
-| [NitroAccelerator](#nitroaccelerator  )                               |            | [NitroAccelerator]                   | 2016-07-10   | Nitrosphere        | No           | ?     |
+| [NitroAccelerator](#nitroaccelerator)                                 |            | [NitroAccelerator]                   | 2016-07-10   | Nitrosphere        | No           | $1265 |
 
 
 ## SSMS <a id="ssms"></a>
@@ -2180,7 +2180,7 @@ Price: $47
 EMS SQL Query for SQL Server is a useful tool that lets you quickly and simply build SQL queries to SQL Server databases. Visual SQL Server query building as well as direct editing of a query text is available. User-friendly graphical interface allows you to connect to SQL Server databases, select tables and fields for a query to SQL Server, set the selection criteria and many more.
 
 
-## EMS Data Comparer <a id="ems-data-comparer"</a>
+## EMS Data Comparer <a id="ems-data-comparer"></a>
 Download page: [EMS Data Comparer]<br/>
 Release date: 2012-11-16<br/>
 Support Version: -<br/>
@@ -2192,13 +2192,13 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
 
 
-## NitroAccelerator <a id="nitroaccelerator"</a>
+## NitroAccelerator <a id="nitroaccelerator"></a>
 Download page: [NitroAccelerator]<br/>
 Release date: 2016-07-10<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Nitrosphere<br/>
 Free version: No<br/>
-Price: ?
+Price: $1265
 
 Accelerates and Secures SQL Server network traffic resulting in orders of magnitude performance improvement while securing the data across the network.
 
