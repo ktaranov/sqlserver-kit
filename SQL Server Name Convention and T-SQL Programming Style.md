@@ -19,6 +19,8 @@ Official Reference and useful links
  - [CLR Stored Procedures](http://msdn.microsoft.com/en-us/library/ms131094%28v=sql.100%29.aspx)
  - [User-defined Functions](http://msdn.microsoft.com/en-us/library/ms191320.aspx)
  - [MSDN SET NOCOUNT ON](https://msdn.microsoft.com/en-us/library/ms189837.aspx)
+ - [T-SQL Coding Guidelines Presentation](http://www.slideshare.net/chris1adkin/t-sql-coding-guidelines) (by Chris Adkin)
+ - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
 
 
 ## SQL Server Object Name Convention
@@ -62,9 +64,10 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
  - Delimiters: spaces (not tabs)
- - No square brackets [] are allowed in object names and alias, use only Latin symbols [A-z] and numeric [0-9]
+ - No square brackets [] and reserved words in object names and alias, use only Latin symbols **[A-z]** and numeric **[0-9]**
+ - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
  - All finished expressions should have `;` at the end
- - All scripts should end with `GO` and line break
+ - All script files should end with `GO` and line break
  - The first argument in SELECT expression should be on the same line with it: `SELECT LastName`
  - Arguments are divided by line breaks, commas should be placed before an argument:
    
@@ -74,7 +77,7 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    ```
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
- - All objects must used with schema names: `FROM dbo.Table`
+ - All objects must used with schema names but without database and server name: `FROM dbo.Table`
 
 Example:
 
