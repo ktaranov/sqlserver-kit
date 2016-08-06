@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **149** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **154** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
- - **[MS]**: Management Studio (alternative for SSMS) {9}
+ - **[MS]**: Management Studio (alternative for SSMS) {11}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {5}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
@@ -15,7 +15,9 @@ Utility types (main purpose) in braces `{}` current counts:
  - **[J]**: Job managers {2}
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {86}
+ - **[MD]**: Multi DB support {6}
+ - **[DA]**: Database Architecture {1}
+ - **[?]**: Not yet classified {88}
 
 
 | Name/Description                                                      | Type       | Official/Download page               | Release Date | Author             | Free version | Price |
@@ -35,8 +37,8 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Server Data Tools](#ssdt)                                        | [MS]       | [SQL Server Data Tools]              | 2016-04-14   | Microsoft          | Yes          | No    |
 | [Database Health Monitor](#database-health-monitor)                   | [M]        | [Database Health Monitor]            | 2016-03-20   | Steve Stedman      | Yes          | No    |
 | [SchemaDrift](#schemadrift)                                           | [SC]       | [SchemaDrift]                        | 2016-02-28   | Steve Stedman      | Yes          | No    |
-| [Dbeaver](#dbeaver)                                                   | [MS]       | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
-| [HeidiSQL](#heidisql)                                                 | [MS]       | [HeidiSQL]                           | 2016-06-19   | Open Source        | Yes          | No    |
+| [Dbeaver](#dbeaver)                                                   | [MS], [MD] | [Dbeaver]                            | 2016-06-06   | Open Source        | Yes          | No    |
+| [HeidiSQL](#heidisql)                                                 | [MS], [MD] | [HeidiSQL]                           | 2016-06-19   | Open Source        | Yes          | No    |
 | [SQLExecStats](#sqlexecstats)                                         | [ST]       | [SQLExecStats]                       | 2016-02-08   | Joe Chang          | Yes          | No    |
 | [ExpressProfiler](#expressprofiler)                                   | [?]        | [ExpressProfiler]                    | 2016-02-15   | Chris Moore        | Yes          | No    |
 | [dta Utility](#dta-utility)                                           | [I]        | [dta Utility]                        | -            | Microsoft          | Yes          | No    |
@@ -97,6 +99,11 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL BI Manager](#sql-bi-manager)                                     | [?]        | [SQL BI Manager]                     | 2015-09-08   | Idera              | No           |  $697 |
 | [SQL Enterprise Job Manager](#sql-enterprise-job-manager)             | [J]        | [SQL Enterprise Job Manager]         | 2015-09-08   | Idera              | No           |  $697 |
 | [DB Optimizer](#db-optimizer)                                         | [?]        | [DB Optimizer]                       | ?            | Idera              | No           | $1420 |
+| [SQL Query Store Optimizer](#sql-query-store-optimizer)               | [?]        | [SQL Query Store Optimizer]          | 2016-07-01   | Idera              | Yes          | No    |
+| [Rapid SQL](#rapid-sql)                                               | [MS], [MD] | [Rapid SQL]                          | ?            | Idera              | No           |  $710 |
+| [SQL Comparison Toolset](#sql-comparison-toolset)                     | [DC], [SC] | [SQL Comparison Toolset]             | ?            | Idera              | No           |  $745 |
+| [ER/Studio Data Architect](#erstudio-data-architect)                  | [DA], [MD] | [ER/Studio Data Architect]           |              | Idera              | No           | $1287 |
+| [DB Change Manager](#db-change-manager)                               | [SC], [MD] | [DB Change Manager]                  | ?            | Idera              | No           | $1420 |
 | [dbForge Schema Compare](#dbforge-schema-compare)                     | [SC]       | [dbForge Schema Compare]             | 2015-12-22   | Devart             | No           |  $149 |
 | [dbForge Data Compare](#dbforge-data-compare)                         | [DC]       | [dbForge Data Compare]               | 2015-11-30   | Devart             | No           |  $149 |
 | [dbForge Data Generator](#dbforge-data-generator)                     | [G]        | [dbForge Data Generator]             | 2015-12-30   | Devart             | No           |  $249 |
@@ -123,7 +130,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Heartbeat](#sqlsolutions-sql-heartbeat)                          | [?]        | [SQLSolutions SQL Heartbeat]         | 2013-03-03   | SQLSolutions       | No           |  $295 |
 | [SQL Trace Analyzer](#sqlsolutions-sql-trace-analyzer)                | [?]        | [SQLSolutions SQL Trace Analyzer]    | 2013-12-09   | SQLSolutions       | No           |  $495 |
 | [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | [?]        | [SQLSolutions SQL Ultimate Debugger] | -            | SQLSolutions       | No           |  $295 |
-| [SQLScripter](#sqlscripter)                                           | [?]        | [SQLScripter]                        | 2013-02-24   | Thomas Hinsenkamp  | No           |   €99 |
+| [SQL Scripter](#sql-scripter)                                         | [?]        | [SQL Scripter]                       | 2013-02-24   | Thomas Hinsenkamp  | No           |   €99 |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | [?]        | [Simple Dynamic Scheduler]           | 2016-05-02   | Miljan Radovic     | Yes          | No    |
 | [ApexSQL Audit](#apexsql-audit)                                       | [?]        | [ApexSQL Audit]                      | 2016-04-08   | ApexSQL            | No           | $1699 |
 | [ApexSQL Backup](#apexsql-backup)                                     | [B]        | [ApexSQL Backup]                     | 2015-12-30   | ApexSQL            | No           |  $499 |
@@ -143,16 +150,16 @@ Utility types (main purpose) in braces `{}` current counts:
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | [SC], [DC] | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest             | No           |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | [?]        | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | [SC]       | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens     | Yes          | No    |
-| [DataGrip](#datagrip)                                                 | [MS]       | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
+| [DataGrip](#datagrip)                                                 | [MS], [MD] | [DataGrip]                           | 2016-05-06   | Jet Brains         | No           |  $199 |
 | [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | [?]        | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li            | Yes          | No    |
 | [SQL Nexus Tool](#sql-nexus-tool)                                     | [?]        | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li            | Yes          | No    |
 | [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | [?]        | [DBSophic Qure Profiler]             | ?            | DBSophic           | No           |  $300 |
 | [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | [?]        | [DBSophic Qure Optimizer]            | ?            | DBSophic           | No           | ?     |
 | [RestoreChecker](#restorechecker)                                     | [?]        | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
 | [SQLScripter](#sqlscripter)                                           | [?]        | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
-| [SQLC](#sqlc)                                                         | [?]        | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          | No    |
+| [SQLC](#sqlc)                                                         | [DC], [SC] | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          | No    |
 | [Database Performance Analyzer](#dpa-solarwinds)                      | [?]        | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
-| [SQL Enlight](#sql-enlight)                                           | [?]        | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
+| [SQL Enlight](#sql-enlight)                                           | [MS]       | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
 | [OmniCompare](#omnicompare)                                           | [SC]       | [OmniCompare]                        | 2016-06-03   | AireForge          | Yes          | No    |
 | [HexaTier](#hexatier)                                                 | [?]        | [HexaTier]                           | ?            | HexaTier           | No           | ?     |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)                     | [?]        | [SoftTree SQL Assistant]             | 2016-03-18   | SoftTree           | No           |  $270 |
@@ -164,10 +171,10 @@ Utility types (main purpose) in braces `{}` current counts:
 | [EMS Data Import](#ems-data-import)                                   | [?]        | [EMS Data Import]                    | 2016-04-14   | EMS                | No           |   $47 |
 | [EMS Data Pump](#ems-data-pump)                                       | [?]        | [EMS Data Pump]                      | 2016-11-03   | EMS                | No           |   $47 |
 | [EMS Data Generator](#ems-generator)                                  | [G]        | [EMS Data Generator]                 | 2010-07-10   | EMS                | No           |   $47 |
-| [EMS DB Comparer](#ems-bd-comparer)                                   | [DC]       | [EMS DB Comparer]                    | 2015-07-24   | EMS                | No           |   $47 |
+| [EMS DB Comparer](#ems-bd-comparer)                                   | [SC]       | [EMS DB Comparer]                    | 2015-07-24   | EMS                | No           |   $47 |
 | [EMS DB Extract](#ems-bd-extract)                                     | [?]        | [EMS DB Extract]                     | 2008-10-16   | EMS                | No           |   $47 |
 | [EMS SQL Query](#ems-sql-query)                                       | [?]        | [EMS SQL Query]                      | 2012-03-29   | EMS                | No           |   $47 |
-| [EMS Data Comparer](#ems-data-comparer)                               | [SC]       | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
+| [EMS Data Comparer](#ems-data-comparer)                               | [DC]       | [EMS Data Comparer]                  | 2012-11-16   | EMS                | No           |   $47 |
 | [NitroAccelerator](#nitroaccelerator)                                 | [?]        | [NitroAccelerator]                   | 2016-07-10   | Nitrosphere        | No           | $1265 |
 
 
@@ -625,7 +632,7 @@ Free version: Yes<br/>
 Price: No
 
 DLM Dashboard tracks your database schemas and alerts you when they change.
-DLM Dashboard monitors up to 50 of your databases, and sends you an email alert as soon as your databases start to drift,<br />
+DLM Dashboard monitors up to 50 of your databases, and sends you an email alert as soon as your databases start to drift,
 or change from their expected state. On the web dashboard, you can see exactly what changed, who made the changes, and when.
 
 
@@ -1192,6 +1199,81 @@ Price: $1420
  - Load test alternative SQL queries in simulated production environment
 
 
+## SQL Query Store Optimizer <a id="sql-query-store-optimizer"></a>
+Download page: [SQL Query Store Optimizer]<br/>
+Release date: 2016-07-01<br/>
+Support Version: 2016<br/>
+Author: Idera<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Improve SQL Server 2016 Query Store performance
+ - See all Query Store properties in single summary table
+ - Execute predefined actions that modify Query Store properties and contents
+ - Edit all modifiable Query Store properties in single overview panel
+ - Get up and running in minutes with no agents
+
+
+## Rapid SQL <a id="rapid-sql"></a>
+Download page: [Rapid SQL]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $710
+
+ - Create high-performing SQL code on major DBMSs from one interface
+ - Easily build complex SQL statements with visual query builder
+ - Quickly construct, analyze and execute SQL code with code analyst
+ - Simplify debugging SQL code, functions, and stored procedures
+ - Collaborate effectively across development teams with version control
+
+
+## SQL Comparison Toolset <a id="sql-comparison-toolset"></a>
+Download page: [SQL Comparison Toolset]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $745
+
+ - Compare and synchronize SQL Server data and schema objects
+ - Easy navigation of user interface improves efficiency
+ - Automate comparison and synchronization operations
+ - Customize schema compare and synchronization sessions
+ - Generate ready-to-use database synchronization scripts
+
+
+## ER/Studio Data Architect <a id="erstudio-data-architect"></a>
+Download page: [ER/Studio Data Architect]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012/2014<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $1287
+
+ - Create effective models to build a business-driven data architecture
+ - Document and enhance existing databases to reduce redundancy
+ - Implement naming standards to improve data consistency and quality
+ - Effectively share and communicate models across the enterprise
+ - Map data sources and trace origins to enhance data lineage
+
+
+## DB Change Manager <a id="db-change-manager"></a>
+Download page: [DB Change Manager]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: $1420
+
+ - Quickly roll out and reconcile database changes
+ - Reveal, track, and report on database changes
+ - Comply with database audit and reporting requirements
+ - Protect data privacy within the database environment
+ - Track changes from multiple major database platforms
+
+
 ## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2015-12-22<br/>
@@ -1546,15 +1628,15 @@ The sql server tool for developers who debug SQL server stored procedures, funct
 This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
 
 
-## SQLScripter <a id="sqlscripter"></a>
-Download page: [SQLScripter]<br/>
+## SQL Scripter <a id="sql-scripter"></a>
+Download page: [SQL Scripter]<br/>
 Release date: 2013-02-24<br/>
 Support Version: ?<br/>
 Author: Thomas Hinsenkamp<br/>
 Free version: No<br/>
 Price: €99
 
-Generate T-SQL data scripts quick and easy.
+SQL Scripter is a powerful tool for Microsoft SQL Server database administrators and developers to generate data scripts in a readable and executable T-SQL format.
 
 
 ## Simple Dynamic Scheduler <a id="simple-dynamic-scheduler"></a>
@@ -1937,8 +2019,8 @@ SQL server trace analysis tool
  - No limitations on the number of SQL servers, databases, processors etc.
 
 
-## DBSophic Qure Profiler <a id="dbsophic-qure-profiler"></a>
-Download page: [DBSophic Qure Profiler]<br/>
+## DBSophic Qure Optimizer <a id="dbsophic-qure-optimizer"></a>
+Download page: [DBSophic Qure Optimizer]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012<br/>
 Author: DBSophic<br/>
@@ -1949,7 +2031,7 @@ The workload tuning solution that automatically optimizes millions of queries in
 
 
 ## RestoreChecker <a id="restorechecker"></a>
-Download page: [DBSophic Qure Profiler]<br/>
+Download page: [RestoreChecker]<br/>
 Release date: 2015-01-15<br/>
 Support Version: ?<br/>
 Author: SQLServerUtilities<br/>
@@ -1961,7 +2043,7 @@ and in addition perform data integrity checks on the backups restored while offl
 
 
 ## SQLScripter <a id="sqlscripter"></a>
-Download page: [DBSophic Qure Profiler]<br/>
+Download page: [SQLScripter]<br/>
 Release date: 2009-08-24<br/>
 Support Version: ?<br/>
 Author: SQLServerUtilities<br/>
@@ -2273,6 +2355,11 @@ Accelerates and Secures SQL Server network traffic resulting in orders of magnit
 [SQL BI Manager]:https://www.idera.com/productssolutions/sqlserver/sql-server-business-intelligence
 [SQL Enterprise Job Manager]:https://www.idera.com/productssolutions/sqlserver/sql-server-agent-job
 [DB Optimizer]:https://www.idera.com/dboptimizer-sql-database-optimization
+[SQL Query Store Optimizer]:https://www.idera.com/productssolutions/freetools/sql-query-store-optimizer
+[Rapid SQL]:https://www.idera.com/rapid-sql-ide/overview
+[SQL Comparison Toolset]:https://www.idera.com/productssolutions/sqlserver/sqlcomparisontoolset
+[ER/Studio Data Architect]:https://www.idera.com/er-studio-data-architect-software
+[DB Change Manager]:https://www.idera.com/database-change-management
 [dbForge Schema Compare]: https://www.devart.com/dbforge/sql/schemacompare/
 [dbForge Data Compare]: https://www.devart.com/dbforge/sql/datacompare/
 [dbForge Data Generator]: https://www.devart.com/dbforge/sql/data-generator/
@@ -2307,7 +2394,7 @@ Accelerates and Secures SQL Server network traffic resulting in orders of magnit
 [SQLSolutions SQL Heartbeat]:http://www.sqlsolutions.com/products/sql-server-monitor/sql-monitor.html
 [SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
 [SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
-[SQLScripter]:http://www.sqlscripter.com/
+[SQL Scripter]:http://www.sqlscripter.com/
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
 [ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx
 [ApexSQL Backup]:https://www.apexsql.com/sql_tools_backup.aspx
