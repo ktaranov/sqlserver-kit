@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **154** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **161** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {11}
