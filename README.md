@@ -132,6 +132,8 @@ Headers:
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
    - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
    - [Youtube Redgate Videos](https://www.youtube.com/redgate)
+   - [Dell DBA days the Brent Ozar Unlimited 2015](https://software.dell.com/event/webcast-series-dell-dba-days-the-brent-ozar-unlimited-show890450)
+   - [Dell DBA days the Brent Ozar Unlimited 2016](https://software.dell.com/event/live-webcast-series-dell-dba-days-the-brent-ozar-unlimited-show-the-se8112821)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
@@ -143,16 +145,16 @@ Headers:
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
  - Courses
    - Free
-     - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql) (Free)
-     - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation) (Free)
-     - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics) (Free)
-     - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server) (Free)
+     - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
+     - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
+     - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
+     - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
    - Paid
-     - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html) (Paid)
-     - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html) (Paid)
-     - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/) (Paid)
-     - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/) (Paid)
-     - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all) (Paid)
+     - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
+     - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
+     - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
+     - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
+     - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
  - SQL Server Backwards Compatibility
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
@@ -163,7 +165,7 @@ Headers:
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
-    - [SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
+    - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump) (Github)
@@ -257,7 +259,8 @@ Here's just SQL Server 2008 Management Studio:
  - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
  - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers) (Github)
  - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse) (Github)
- - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Bren Ozar)
+ - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Brent Ozar)
+ - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
 
 
 ## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
@@ -327,7 +330,7 @@ SQL Server:
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
  - [SQL Sentry Free eBooks](www.sqlsentry.com/sql-server-books)
  - [Microsoft Cloud Security for Enterprise Architects (PDF)](http://download.microsoft.com/download/6/d/f/6dfd7614-bbcf-4572-a871-e446b8cf5d79/msft_cloud_architecture_security.pdf)
-
+ - [Brent Ozar SQL Server Setup Checklist eBook](http://u.brentozar.com/eBook_SQL_Server_Setup_Checklist.pdf)
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
  - [Effective Graphs with Microsoft R Open](http://blog.revolutionanalytics.com/2016/05/e-book-effective-graphs.html)
