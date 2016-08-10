@@ -2590,5 +2590,5 @@ It supports all major database vendors, works on all major operating systems and
 [ERDesigner NG]:http://mogwai.sourceforge.net/erdesignerng.html
 [Vertabelo]:http://www.vertabelo.com/
 [dbDiffo]:https://dbdiffo.com/
-[SQL DXP]http://www.sqldelta.com/index?page=dxp
+[SQL DXP]:http://www.sqldelta.com/index?page=dxp
 [Aqua Data Studio]:http://www.aquafold.com/aquadatastudio.html
