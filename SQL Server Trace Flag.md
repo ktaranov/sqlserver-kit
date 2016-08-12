@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (312 trace flags)
+Complete list of Microsoft SQL Server trace flags (313 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -108,7 +108,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: 312 trace flags
+Summary: **313 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -652,6 +652,7 @@ Link: http://support.microsoft.com/kb/2009160
 Function: Change threshold for auto update stats<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx<br />
 Link: https://support.microsoft.com/en-us/kb/2754171
+Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
 
 
 **Trace Flag: 2372**<br />
@@ -1327,9 +1328,15 @@ Link: [MSDN ms188396]<br />
 Scope: global
 
 
+**Trace Flag: 6533**<br />
+Function: Spatial performance improvements in SQL Server 2012 and 2014
+Link: https://support.microsoft.com/en-us/kb/3107399
+
+
 **Trace Flag: 6534**<br />
 Function: This fix updates the sorting algorithm to include angular vectorization techniques that significantly improve the LineString performance
 Link: https://support.microsoft.com/en-us/kb/3054180
+Link: https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
 
 
 **Trace Flag: 7103**<br />
