@@ -1286,13 +1286,16 @@ Link: https://support.microsoft.com/en-us/kb/925744
 
 
 **Trace Flag: 4616**<br />
-Function: Makes server-level metadata visible to application roles. In SQL Server, an application role cannot access metadata outside its own database because application roles are not associated with a server-level principal. This is a change of behavior from earlier versions of SQL Server. Setting this global flag disables the new restrictions, and allows for application roles to access server-level metadata.<br />
+Function: Makes server-level metadata visible to application roles.
+In SQL Server, an application role cannot access metadata outside its own database because application roles are not associated with a server-level principal. This is a change of behavior from earlier versions of SQL Server. Setting this global flag disables the new restrictions, and allows for application roles to access server-level metadata.<br />
 Link: [MSDN ms188396]<br />
 Scope: global
 
 
 **Trace Flag: 4618**<br />
-Function: Limits number of entries per user cache store to 1024. It may incur a small CPU overhead as when removing old cache entries when new entries are inserted. It performs this action to limit the size of the cache store growth. However, the CPU overhead is spread over time.<br />
+Function: Limits number of entries per user cache store to 1024.
+It may incur a small CPU overhead as when removing old cache entries when new entries are inserted.
+It performs this action to limit the size of the cache store growth. However, the CPU overhead is spread over time.<br />
 Link: https://support.microsoft.com/en-us/kb/933564
 
 
@@ -1302,7 +1305,8 @@ Link: https://support.microsoft.com/en-us/kb/959823
 
 
 **Trace Flag: 5101**<br />
-Function: Forces all I/O requests to go through engine 0. This removes the contention between processors but could create a bottleneck if engine 0 becomes busy with non-I/O tasks.<br />
+Function: Forces all I/O requests to go through engine 0.
+This removes the contention between processors but could create a bottleneck if engine 0 becomes busy with non-I/O tasks.<br />
 Link: None
 
 
@@ -1312,7 +1316,8 @@ Link: None
 
 
 **Trace Flag: 5302**<br />
-Function: Alters default behavior of select…INTO (and other processes) that lock system tables for the duration of the transaction. This trace flag disables such locking during an implicit transaction.<br />
+Function: Alters default behavior of select…INTO (and other processes) that lock system tables for the duration of the transaction.
+This trace flag disables such locking during an implicit transaction.<br />
 Link: None
 
 
@@ -1323,19 +1328,24 @@ Link: http://blogs.msdn.com/b/sql_server_team/archive/2015/10/09/query-compile-b
 
 
 **Trace Flag: 6527**<br />
-Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration. By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR. The behaviour of the trace flag is as follows: If this is used as a startup trace flag, a memory dump is never generated. However, a memory dump may be generated if other trace flags are used. If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on. However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.
+Function: Disables generation of a memory dump on the first occurrence of an out-of-memory exception in CLR integration.
+By default, SQL Server generates a small memory dump on the first occurrence of an out-of-memory exception in the CLR.
+The behaviour of the trace flag is as follows: If this is used as a startup trace flag, a memory dump is never generated.
+However, a memory dump may be generated if other trace flags are used.
+If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on.
+However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.<br />
 Link: [MSDN ms188396]<br />
 Scope: global
 
 
 **Trace Flag: 6533**<br />
-Function: Spatial performance improvements in SQL Server 2012 and 2014
+Function: Spatial performance improvements in SQL Server 2012 and 2014<br />
 Link: https://support.microsoft.com/en-us/kb/3107399
 
 
 **Trace Flag: 6534**<br />
-Function: This fix updates the sorting algorithm to include angular vectorization techniques that significantly improve the LineString performance
-Link: https://support.microsoft.com/en-us/kb/3054180
+Function: This fix updates the sorting algorithm to include angular vectorization techniques that significantly improve the LineString performance<br />
+Link: https://support.microsoft.com/en-us/kb/3054180<br />
 Link: https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
 
 
@@ -1609,8 +1619,10 @@ Link: None
 
 **Trace Flag: 8690**<br />
 **Undocumented trace flag**<br />
-Function: Disable the spool on the inner side of nested loop.<br />
-Spools improve performance in majority of the cases. But it’s based on estimates. Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance. But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
+Function: Disable the spool on the inner side of nested loop.
+Spools improve performance in majority of the cases. But it’s based on estimates.
+Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance.
+But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/
 Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
 
@@ -1799,11 +1811,12 @@ Link: None
 **Trace Flag: 9830**<br />
 **Undocumented trace flag**<br />
 Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
-Link: http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/#more-1216
+Link: http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
 
 
 **Trace Flag: 10204**<br />
-Function: Disables merge/recompress during columnstore index reorganization. In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
+Function: Disables merge/recompress during columnstore index reorganization.
+In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
 Note: Trace flag 10204 does not apply to column store indexes which are created on memory-optimized tables.<br />
 Link: [MSDN ms188396]
 
