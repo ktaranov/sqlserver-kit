@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2016
--- Last Modified: July 5, 2016
+-- August 2016
+-- Last Modified: August 1, 2016
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -83,7 +83,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																												11.0.5641		SP2 CU9			   11/16/2015   ---->  11.0.6290		SP3 RTM			11/22/2015
 --																												11.0.5644		SP2 CU10			1/18/2016   ---->  11.0.6518		SP3 CU1			 1/18/2016
 --																												11.0.5646		SP2 CU11			3/21/2016	---->  11.0.6523		SP3 CU2			 3/21/2016
---																												11.0.5649		SP2 CU12			5/16/2016	---->  11.0.6537		SP3 CU3			 5/16/2016                                                                                                                				
+--																												11.0.5649		SP2 CU12			5/16/2016	---->  11.0.6537		SP3 CU3			 5/16/2016
+--																												11.0.5655		SP2 CU13			7/18/2016	---->  11.0.6540		SP3 CU4			 7/18/2016		                                                                                                                				
 
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
@@ -198,9 +199,16 @@ DBCC TRACESTATUS (-1);
 --           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
 --           Recommendations to reduce allocation contention in SQL Server tempdb database
 --           http://support2.microsoft.com/kb/2154845
+
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
 -- TF 2371 - Lowers auto update statistics threshold for large tables
 --           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
+
+-- TF 6533 - Spatial performance improvements in SQL Server 2012 and 2014
+--         https://support.microsoft.com/en-us/kb/3107399
+
+-- TF 6534 - Enables use of native code to improve performance with spatial data
+--         https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
 
 
 -- SQL Server query optimizer hotfix trace flag 4199 servicing model
