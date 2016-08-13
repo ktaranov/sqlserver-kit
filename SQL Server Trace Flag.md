@@ -302,6 +302,7 @@ Link: None
 **Trace Flag: 610**<br />
 Function: Minimally logged inserts to indexed tables<br />
 Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx
+Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/
 
 
 **Trace Flag: 611**<br />
