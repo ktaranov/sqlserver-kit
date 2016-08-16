@@ -10,6 +10,7 @@ Complete list of all  Microsoft SQL Server Data Types
  - [DbType Enumeration](https://msdn.microsoft.com/en-us/library/System.Data.DbType.aspx)
  - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
  - [SQL Server Integration Services, Data Type Mapping ](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
+ - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
 
 ## Data Type Precedence (Transact-SQL)
 When an operator combines two expressions of different data types, the rules for data type precedence specify that the data type with the lower precedence is converted to the data type with the higher precedence.
