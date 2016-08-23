@@ -26,6 +26,7 @@ Source link:
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads: [KB2964518](https://support.microsoft.com/en-us/kb/2964518)
+ - [Most Recent KBs for Microsoft SQL Server RSS](https://support.microsoft.com/en-us/rss?rssid=1044)
  - [Testing and Developing Supportability Roadmaps for ISV Applications (PDF)](http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-00-85-48-files/0827.testing-and-developing-supportability-roadmaps-for-isv-applications.pdf)
  - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
  - [SQL Server Builds by SQLSentry](http://blogs.sqlsentry.com/category/sql-server-builds/)
@@ -381,6 +382,8 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 
 | Build        | File version     | KB / Description                                                                                                                   | Release Date |
 |--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 12.0.4468.0  | 2014.120.4468.0  | [3174038 Cumulative update 8 for SQL Server 2014 SP1]                                                                              | 2016-08-16   |
+| 12.0.4463.0  | 2014.120.4463.0  | [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |
 | 12.0.5000.0  | 2014.120.5000.0  | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |
 | 12.0.4459.0  | 2014.120.4459.0  | [3167392 Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |
 | 12.0.4457.0  | 2014.120.4457.0  | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |
@@ -430,6 +433,8 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 12.0.1524    | 2014.120.1524.0  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |
 | 11.0.9120    | 2013.110.9120.0  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |
 
+[3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3174038
+[3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/en-us/kb/3174370
 [3171021 SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/en-us/kb/3171021
 [3167392 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3162659
 [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3167392
