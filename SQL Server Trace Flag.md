@@ -984,7 +984,8 @@ Link: https://support.microsoft.com/en-us/kb/215458
 
 
 **Trace Flag: 3422**<br />
-Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery). This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose. Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
+Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery).
+This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose. Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
 Link: https://support.microsoft.com/en-us/kb/215458
 
 
@@ -1066,7 +1067,8 @@ Link: None
 
 
 **Trace Flag: 3635**<br />
-Function: Print diagnostic information. Trace Flag 3635 Diagnostics are written to the console that started it. There are not written to the errorlog, even if 3605 is turned on.<br />
+Function: Print diagnostic information. Trace Flag 3635 Diagnostics are written to the console that started it.
+There are not written to the errorlog, even if 3605 is turned on.<br />
 Link: None
 
 
@@ -1484,8 +1486,7 @@ Link: http://support.microsoft.com/kb/920093
 
 
 **Trace Flag: 8026**<br />
-Function: SQL Server will clear a dump trigger after generating the dump
-once<br />
+Function: SQL Server will clear a dump trigger after generating the dump once<br />
 Link: http://support.microsoft.com/kb/917825/en-us
 
 
@@ -1624,7 +1625,7 @@ Function: Disable the spool on the inner side of nested loop.
 Spools improve performance in majority of the cases. But it’s based on estimates.
 Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance.
 But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/
+Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/<br />
 Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
 
 
@@ -1812,7 +1813,7 @@ Link: None
 **Trace Flag: 9830**<br />
 **Undocumented trace flag**<br />
 Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
-Link: http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
+Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
 
 
 **Trace Flag: 10204**<br />
