@@ -336,6 +336,7 @@ SQL Server:
  - [Microsoft Cloud Security for Enterprise Architects (PDF)](http://download.microsoft.com/download/6/d/f/6dfd7614-bbcf-4572-a871-e446b8cf5d79/msft_cloud_architecture_security.pdf)
  - [Brent Ozar SQL Server Setup Checklist eBook](http://u.brentozar.com/eBook_SQL_Server_Setup_Checklist.pdf)
  - [Introducing Microsoft SQL Server 2016](https://info.microsoft.com/Introducing-SQL-Server-2016-eBook.html)
+
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
  - [Effective Graphs with Microsoft R Open](http://blog.revolutionanalytics.com/2016/05/e-book-effective-graphs.html)
