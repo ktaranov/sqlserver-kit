@@ -294,6 +294,7 @@ Here's just SQL Server 2008 Management Studio:
  - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad) (Github)
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
  - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
+ - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
 
 
 ## TSQL Format Code
