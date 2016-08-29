@@ -4,11 +4,33 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
  - [SSMS Addins](SSMS_Addins.md)
  - [SSMS Snippets](SSMS_Snippets)
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
+ - [MSDN Previous SQL Server Management Studio Releases](https://msdn.microsoft.com/en-us/library/mt238488.aspx)
+ - [SQLSentry Latest Builds of Management Studio](http://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
  - [MSDN SQL Server Tools](https://msdn.microsoft.com/en-us/library/mt238365.aspx)
  - [MSDN Download link](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
  - [MSDN Official page](https://msdn.microsoft.com/en-us/library/hh213248.aspx)
  - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
  - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
+
+
+# SQL Server Management Studio Download Links and Release Info
+
+| Version/Download Link     | Service Pack | Build         | Release Date |
+|---------------------------|--------------|---------------|--------------|
+| [16.3 Release] **Latest** |              | 13.0.15700.28 | 2016-08-15   |
+| [July 2016 Hotfix Update] |              | 13.0.15600.2  | 2016-07-13   |
+| July 2016 Release         |              | 13.0.15500.91 | 2016-07-01   |
+| [June 2016 Release]       |              | 13.0.15000.23 | 2016-06-01   |
+| [SQL Server 2014]         |  SP1         | 12.0.4100.1   | 2015-05-14   |
+| [SQL Server 2012]         |  SP3         | 11.0.6020.0   | 2015-11-21   |
+| [SQL Server 2008 R2]      |  SP2         | 10.50.4000    | 2012-07-02   |
+
+[16.3 Release]:http://go.microsoft.com/fwlink/?LinkID=824938
+[July 2016 Hotfix Update]:http://go.microsoft.com/fwlink/?LinkID=822301
+[June 2016 Release]:http://go.microsoft.com/fwlink/?LinkID=799832
+[SQL Server 2014]:https://msdn.microsoft.com/en-us/library/mt238488.aspx
+[SQL Server 2012]:https://msdn.microsoft.com/en-us/library/mt238488.aspx
+[SQL Server 2008 R2]:https://www.microsoft.com/en-us/download/details.aspx?id=30438
 
 
 ## SQL Server 2014 Management Studio download links
