@@ -111,6 +111,7 @@ Headers:
     - [C# Corner SQL Server Articles](http://www.c-sharpcorner.com/technologies/sql-server)
     - [TechTarget Blog](http://searchsqlserver.techtarget.com/)
     - [Toad SQL Server Blog](http://www.toadworld.com/platforms/sql-server/b/weblog)
+    - [SQL-Articles](http://sql-articles.com/articles/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -185,6 +186,7 @@ Headers:
     - [Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
     - [tSQLt testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
     - [T-SQL SimMetrics string matching algorithms](https://github.com/GuerrillaAnalytics/similarity) (Github)
+    - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
 
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
