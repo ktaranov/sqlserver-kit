@@ -52,6 +52,9 @@
 *.MDF  BINARY
 *.LDF  BINARY
 
+*.HTM eol=lf merge=union
+*.HTML eol=lf merge=union
+
 # T-SQL files
 *.sql eol=crlf merge=union
 /*.sql diff

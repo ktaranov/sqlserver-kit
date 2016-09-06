@@ -2,30 +2,30 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Language" content="en-gb">
-<style type="text/css"><!--
-/* Effective stylesheet produced by snapshot save */
-@import url("Dynamic%20Search%20Conditions%20in%20T-SQL_files/sommarskog.css");
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+@import url("Dynamic%20Search%20Conditions%20in%20T-SQL_files/sommarskog.css");
 --></style>
 <title>Dynamic Search Conditions in T-SQL</title>
-<style type="text/css"><!--
-/* Effective stylesheet produced by snapshot save */
-#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
---></style><style id="lleo_css_enjoyContentControls" type="text/css"><!--
-/* Effective stylesheet produced by snapshot save */
-#lleo_enjoyContentControls, #lleo_enjoyContentControls * { color: rgb(0, 0, 0) ! important; font: 13px/15px Arial,Helvetica ! important; margin: 0px ! important; padding: 0px ! important; background: transparent none repeat scroll 0% 0% ! important; border: 0px none ! important; position: static ! important; vertical-align: baseline ! important; overflow: visible ! important; width: auto ! important; height: auto ! important; max-width: none ! important; max-height: none ! important; float: none ! important; visibility: visible ! important; text-align: left ! important; text-transform: none ! important; border-collapse: separate ! important; border-spacing: 2px ! important; box-sizing: content-box ! important; box-shadow: none ! important; opacity: 1 ! important; text-shadow: none ! important; }
-#lleo_enjoyContentControls { background: rgb(247, 200, 117) none repeat scroll 0% 0% ! important; position: fixed ! important; right: 0px ! important; top: -40px ! important; width: 39px ! important; height: 34px ! important; opacity: 0.85 ! important; border-top-left-radius: 4px ! important; border-bottom-left-radius: 4px ! important; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3) ! important; z-index: 2147483647 ! important; overflow: hidden ! important; }
-#lleo_enjoyContentControls.lleo_show { top: 130px ! important; transition: top 0.8s ease-out 0s ! important; }
-#lleo_enjoyContentControls:hover { opacity: 1 ! important; transition: opacity 0.4s linear 0s, width 0.4s linear 1.2s ! important; }
-#lleo_enjoyContentControls #lleo_enjoyContentPanel { white-space: nowrap ! important; margin: 9px 44px 0px 10px ! important; opacity: 0 ! important; transition: all 0.4s linear 1.2s ! important; }
-#lleo_enjoyContentControls:hover #lleo_enjoyContentPanel { opacity: 1 ! important; }
-#lleo_enjoyContentControls #lleo_enjoyContentPanel input { margin-right: 5px ! important; }
-#lleo_enjoyContentButton { background: rgb(255, 255, 255) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAk6AAAJOgHwZJJKAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADBQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL92gewAAAA90Uk5TAA0PEhUcLS9CxszS29z1M86yOAAAAFVJREFUCFtjYIADduMCMGZgvmsAxggGUFgELMXAwDq7AaI8MnULmGY9pTYRzIj5vzIALHD+/1Gw4pj/fwJA2kECYHNkgAJgK/yAAmDA8QasBQgcIRQA12YesqxFXfcAAAAASUVORK5CYII8850aa0afe766ff5b5bb3697b8de32f7") no-repeat scroll center center / 16px 16px ! important; width: 36px ! important; height: 34px ! important; cursor: pointer ! important; position: absolute ! important; right: 0px ! important; top: 0px ! important; }
-@media only screen and (min\2D\2D moz-device-pixel-ratio: 2), not all, not all {
-  #lleo_enjoyContentButton { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAABJ0AAASdAHeZh94AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAD9QTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxQXeHgAAABR0Uk5TAAQFDRkcNz1PcHSIrK6ws7/b8P5ZkzdFAAAAo0lEQVQ4y62RzQ6DMAyDTSkjpfy04Pd/1h12WAtpKk3zzfosJXGAP2l0AODGloc7BJDDtTwgTInS9kAik+W7gd6I7pLFWRK9cuZXgcyT0VjguliJwG1AYPZNvjsAC2OLXzOAYa07LPfj+YLbGJqcPOfd5OTV4WSAVlTNn1Xf+ONZD357t8KrgMbLERovlxSFV2dGhVfy2ebAlG3+SVgc8FHws96B8RE8rjk+bwAAAABJRU5ErkJggga9a50a0b337b82ef5c0bda0f6d6960d3") ! important; }
-}
---></style><style type="text/css"><!--
-/* Effective stylesheet produced by snapshot save */
-#lleo_enjoyContentControls:hover { width: 225px ! important; }
+<style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+--></style><style id="lleo_css_enjoyContentControls" type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls, #lleo_enjoyContentControls * { color: rgb(0, 0, 0) ! important; font: 13px/15px Arial,Helvetica ! important; margin: 0px ! important; padding: 0px ! important; background: transparent none repeat scroll 0% 0% ! important; border: 0px none ! important; position: static ! important; vertical-align: baseline ! important; overflow: visible ! important; width: auto ! important; height: auto ! important; max-width: none ! important; max-height: none ! important; float: none ! important; visibility: visible ! important; text-align: left ! important; text-transform: none ! important; border-collapse: separate ! important; border-spacing: 2px ! important; box-sizing: content-box ! important; box-shadow: none ! important; opacity: 1 ! important; text-shadow: none ! important; }
+#lleo_enjoyContentControls { background: rgb(247, 200, 117) none repeat scroll 0% 0% ! important; position: fixed ! important; right: 0px ! important; top: -40px ! important; width: 39px ! important; height: 34px ! important; opacity: 0.85 ! important; border-top-left-radius: 4px ! important; border-bottom-left-radius: 4px ! important; box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3) ! important; z-index: 2147483647 ! important; overflow: hidden ! important; }
+#lleo_enjoyContentControls.lleo_show { top: 130px ! important; transition: top 0.8s ease-out 0s ! important; }
+#lleo_enjoyContentControls:hover { opacity: 1 ! important; transition: opacity 0.4s linear 0s, width 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel { white-space: nowrap ! important; margin: 9px 44px 0px 10px ! important; opacity: 0 ! important; transition: all 0.4s linear 1.2s ! important; }
+#lleo_enjoyContentControls:hover #lleo_enjoyContentPanel { opacity: 1 ! important; }
+#lleo_enjoyContentControls #lleo_enjoyContentPanel input { margin-right: 5px ! important; }
+#lleo_enjoyContentButton { background: rgb(255, 255, 255) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAk6AAAJOgHwZJJKAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADBQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL92gewAAAA90Uk5TAA0PEhUcLS9CxszS29z1M86yOAAAAFVJREFUCFtjYIADduMCMGZgvmsAxggGUFgELMXAwDq7AaI8MnULmGY9pTYRzIj5vzIALHD+/1Gw4pj/fwJA2kECYHNkgAJgK/yAAmDA8QasBQgcIRQA12YesqxFXfcAAAAASUVORK5CYII8850aa0afe766ff5b5bb3697b8de32f7") no-repeat scroll center center / 16px 16px ! important; width: 36px ! important; height: 34px ! important; cursor: pointer ! important; position: absolute ! important; right: 0px ! important; top: 0px ! important; }
+@media only screen and (min\2D\2D moz-device-pixel-ratio: 2), not all, not all {
+  #lleo_enjoyContentButton { background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAABJ0AAASdAHeZh94AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAD9QTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxQXeHgAAABR0Uk5TAAQFDRkcNz1PcHSIrK6ws7/b8P5ZkzdFAAAAo0lEQVQ4y62RzQ6DMAyDTSkjpfy04Pd/1h12WAtpKk3zzfosJXGAP2l0AODGloc7BJDDtTwgTInS9kAik+W7gd6I7pLFWRK9cuZXgcyT0VjguliJwG1AYPZNvjsAC2OLXzOAYa07LPfj+YLbGJqcPOfd5OTV4WSAVlTNn1Xf+ONZD357t8KrgMbLERovlxSFV2dGhVfy2ebAlG3+SVgc8FHws96B8RE8rjk+bwAAAABJRU5ErkJggga9a50a0b337b82ef5c0bda0f6d6960d3") ! important; }
+}
+--></style><style type="text/css"><!--
+/* Effective stylesheet produced by snapshot save */
+#lleo_enjoyContentControls:hover { width: 225px ! important; }
 --></style></head>
 <body>
 <h1>Dynamic Search Conditions in T‑SQL</h1>
