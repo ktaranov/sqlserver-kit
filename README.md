@@ -39,7 +39,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addons](/SSMS/SSMS_Addins.md) (**26** useful free and paid SSMS Addins)
+    - [SSMS addons](/SSMS/SSMS_Addins.md) (**28** useful free and paid SSMS Addins)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
@@ -135,6 +135,7 @@ Headers:
    - [Youtube Redgate Videos](https://www.youtube.com/redgate)
    - [Dell DBA days the Brent Ozar Unlimited 2015](https://software.dell.com/event/webcast-series-dell-dba-days-the-brent-ozar-unlimited-show890450)
    - [Dell DBA days the Brent Ozar Unlimited 2016](https://software.dell.com/event/live-webcast-series-dell-dba-days-the-brent-ozar-unlimited-show-the-se8112821)
+   - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
