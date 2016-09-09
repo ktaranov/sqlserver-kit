@@ -25,7 +25,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 313 Trace Flags') (Complete list - **313** trace flags)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 314 Trace Flags') (Complete list - **314** trace flags)
  - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2016**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)

@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (313 trace flags)
+Complete list of Microsoft SQL Server trace flags (314 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -108,7 +108,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **313 trace flags**
+Summary: **314 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -1814,6 +1814,14 @@ Link: None
 **Undocumented trace flag**<br />
 Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
 Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
+
+
+**Trace Flag: 9851**<br />
+**Undocumented trace flag**<br />
+Function: For testing purposes, you might want to turn off automatic merging of files, so that you can more readily
+explore this metadata. You can do that by turning on the undocumented trace flag 9851. And of course,
+be sure to turn off the trace flag when done testing.<br/>
+Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePaper.pdf
 
 
 **Trace Flag: 10204**<br />
