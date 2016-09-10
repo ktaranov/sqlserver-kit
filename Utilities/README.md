@@ -115,7 +115,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]   | 2011-06-02   | Bob Tavlor         | Yes          | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                         | 2015-07-04   | Bill Graziano      | Yes          | No    |
 | [SQLSentry Fragmentation Manager](#sqlsentry-fragmentation-manager)   | No                               | No             | [?]        | [SQLSentry Fragmentation Manager]    | 2016-03-08   | SQLSentry          | No           |  $795 |
-| [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]            | 2016-01-28   | SQLSentry          | Yes          |  $295 |
+| [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]            | 2016-09-07   | SQLSentry          | Yes          | No    |
 | [SQLSentry Event Manager](#sqlsentry-event-manager)                   | No                               | No             | [M]        | [SQLSentry Event Manager]            | 2016-03-08   | SQLSentry          | No           |  $995 |
 | [SQLSentry Performance Advisor](#sqlsentry-performance-advisor)       | No                               | No             | [?]        | [SQLSentry Performance Advisor]      | 2016-03-08   | SQLSentry          | No           | ?     |
 | [Dell Security Explorer](#dell-security-explorer)                     | No                               | No             | [?]        | [Dell Security Explorer]             | 2015-06-25   | Dell               | No           |  $850 |
@@ -157,7 +157,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities | No           |   $99 |
 | [SQLScripter](#sqlscripter)                                           | No                               | No             | [?]        | [SQLScripter]                        | 2009-08-24   | SQLServerUtilities | No           |   $99 |
 | [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                               | 2016-05-23   | David Ingleton     | Yes          | No    |
-| [Database Performance Analyzer](#dpa-solarwinds)                      | No                               | No             | [?]        | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
+| [Database Performance Analyzer](#dpa-solarwinds)                      | No                               | No             | [M]        | [Database Performance Analyzer]      | ?            | SolarWinds         | No           | $1995 |
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                        | 2016-04-25   | UbitSoft           | No           |  $295 |
 | [OmniCompare](#omnicompare)                                           | No                               | No             | [SC]       | [OmniCompare]                        | 2016-06-03   | AireForge          | Yes          | No    |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                           | ?            | HexaTier           | No           | ?     |
@@ -1447,11 +1447,11 @@ Fragmentation Manager will also allow you to perform index defragmentation faste
 
 ## SQLSentry Plan Explorer <a id="sqlsentry-plan-explorer"></a>
 Download page: [SQLSentry Plan Explorer]<br/>
-Release date: 2016-01-28<br/>
+Release date: 2016-09-07<br/>
 Support Version: 2008/2012/2014<br/>
 Author: SQLSentry<br/>
 Free version: Yes<br/>
-Price: $295
+Price: No
 
 With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS)
 to make query plan optimization more efficient.
