@@ -51,6 +51,9 @@
 | [Why Not Just Create Statistics?]                                                 | Erik Darling                             | 2016-07-14 |
 | [Understanding the SQL Server NOLOCK hint]                                        | Greg Robidoux                            | 2011-08-16 |
 | [Recover access to a SQL Server instance]                                         | Aaron Bertrand                           | 2012-08-30 |
+| [Dynamically Query a 100 Million Row Table-Efficiently]                           | Gary Strange                             | 2016-05-27 |
+| [SQL Server 2016 Upgrade Planning]                                                | Jen Underwood                            | 2016-06-28 |
+| [Graphs and Graph Algorithms in T-SQL]                                            | Hans Olav Norheim                        | 2010-05-22 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -101,3 +104,6 @@
 [Why Not Just Create Statistics?]:https://www.brentozar.com/archive/2016/07/not-just-create-statistics/
 [Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [Recover access to a SQL Server instance]:https://www.mssqltips.com/sqlservertip/2682/recover-access-to-a-sql-server-instance/
+[Dynamically Query a 100 Million Row Table-Efficiently]:http://www.sqlservercentral.com/articles/T-SQL/121906/
+[SQL Server 2016 Upgrade Planning]:http://sqlmag.com/sql-server/sql-server-2016-upgrade-planning-0
+[Graphs and Graph Algorithms in T-SQL]:http://www.hansolav.net/sql/graphs.html
