@@ -1,0 +1,1 @@
+Psst - sp_AskBrent is now sp_BlitzFirst.
