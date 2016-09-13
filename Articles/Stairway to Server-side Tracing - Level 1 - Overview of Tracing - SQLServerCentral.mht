@@ -1,0 +1,2793 @@
+From: <Saved by Mozilla 5.0 (Windows)>
+Subject: Stairway to Server-side Tracing - Level 1 - Overview of Tracing -
+ SQLServerCentral
+Date: Mon, 12 Sep 2016 22:35:08 +0300
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_2A429B38.87024AC4"
+X-MAF-Information: Produced By MAF V4.0.1
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.sqlservercentral.com/articles/SQL+Trace/71693/
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:fb=3D"htt=
+p://www.facebook.com/2008/fbml" xmlns:og=3D"http://opengraph.org/schema/"><=
+head>
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8">
+   =20
+ =20
+    <title>Stairway to Server-side Tracing - Level 1 - Overview of Tracing=
+ - SQLServerCentral</title>
+
+
+<meta name=3D"Robots" content=3D"NOARCHIVE">
+<meta name=3D"GOOGLEBOT" content=3D"NOARCHIVE">
+<meta name=3D"msvalidate.01" content=3D"9C05A0BBFB5A166A5C1C7202D4E5D72B">
+<meta name=3D"MS.LOCALE" content=3D"en-US">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"content-language" content=3D"en-us">
+<link rel=3D"stylesheet" href=3D"urn:snapshot-FE5DDB82:http://www.sqlserver=
+central.com/Resources/Public.css?v=3D17">
+
+<!--[if lt IE 7]><link rel=3D"stylesheet" href=3D"/Resources/Public-IE6orbe=
+low.css?v=3D2" /><![endif]-->
+<!--[if gt IE 6]><style type=3D"text/css">.code, pre { overflow-x:scroll;=
+ overflow-y:visible; }</style><![endif]-->
+	<script src=3D"urn:snapshot-6BE57877:http://www.sqlservercentral.com/sqlse=
+rvercentral2/Resources/WideImageHandler.js" language=3D"javascript"></scrip=
+t>
+	<script type=3D"text/javascript" src=3D"urn:snapshot-7BF443ED:http://code.=
+jquery.com/jquery-1.3.2.min.js"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-312A9935:http://www.sq=
+lservercentral.com/shared/jquery/jquery.corners.js"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-8238A240:http://www.sq=
+lservercentral.com/shared/jquery/jquery.hint.js"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-865AD68C:http://www.sq=
+lservercentral.com/shared/jquery/jquery-ui-1.8.11.autocomplete.min.js"></sc=
+ript>
+
+<link type=3D"text/css" href=3D"urn:snapshot-F7A235C1:http://www.sqlserverc=
+entral.com/shared/google-prettify/prettify.css?v=3D2" rel=3D"stylesheet">
+<script type=3D"text/javascript" src=3D"urn:snapshot-8B55EB0E:http://www.sq=
+lservercentral.com/shared/google-prettify/prettify.js?v=3D2"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-C44B5D55:http://www.sq=
+lservercentral.com/shared/google-prettify/lang-sql.js?v=3D2"></script>
+<script type=3D"text/javascript" src=3D"urn:snapshot-900DBE49:http://www.sq=
+lservercentral.com/shared/google-prettify/lang-vb.js?v=3D2"></script>
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+
+	<link rel=3D"SHORTCUT ICON" href=3D"http://www.sqlservercentral.com/favico=
+n.ico">
+<style type=3D"text/css"><!--
+
+/* Effective stylesheet produced by snapshot save */
+
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+
+--></style><style><!--
+
+/* Effective stylesheet produced by snapshot save */
+
+--></style><style id=3D"lleo_css_enjoyContentControls" type=3D"text/css"><!=
+--
+
+/* Effective stylesheet produced by snapshot save */
+
+#lleo_enjoyContentControls, #lleo_enjoyContentControls * { color: rgb(0, 0,=
+ 0) ! important; font: 13px/15px Arial,Helvetica ! important; margin: 0px=
+ ! important; padding: 0px ! important; background: transparent none repeat=
+ scroll 0% 0% ! important; border: 0px none ! important; position: static=
+ ! important; vertical-align: baseline ! important; overflow: visible ! imp=
+ortant; width: auto ! important; height: auto ! important; max-width: none=
+ ! important; max-height: none ! important; float: none ! important; visibi=
+lity: visible ! important; text-align: left ! important; text-transform: no=
+ne ! important; border-collapse: separate ! important; border-spacing: 2px=
+ ! important; box-sizing: content-box ! important; box-shadow: none ! impor=
+tant; opacity: 1 ! important; text-shadow: none ! important; }
+
+#lleo_enjoyContentControls { background: rgb(247, 200, 117) none repeat scr=
+oll 0% 0% ! important; position: fixed ! important; right: 0px ! important;=
+ top: -40px ! important; width: 39px ! important; height: 34px ! important;=
+ opacity: 0.85 ! important; border-top-left-radius: 4px ! important; border=
+-bottom-left-radius: 4px ! important; box-shadow: 2px 4px 12px rgba(0, 0,=
+ 0, 0.3) ! important; z-index: 2147483647 ! important; overflow: hidden !=
+ important; }
+
+#lleo_enjoyContentControls.lleo_show { top: 130px ! important; transition:=
+ top 0.8s ease-out 0s ! important; }
+
+#lleo_enjoyContentControls:hover { opacity: 1 ! important; transition: opac=
+ity 0.4s linear 0s, width 0.4s linear 1.2s ! important; }
+
+#lleo_enjoyContentControls #lleo_enjoyContentPanel { white-space: nowrap !=
+ important; margin: 9px 44px 0px 10px ! important; opacity: 0 ! important;=
+ transition: all 0.4s linear 1.2s ! important; }
+
+#lleo_enjoyContentControls:hover #lleo_enjoyContentPanel { opacity: 1 ! imp=
+ortant; }
+
+#lleo_enjoyContentControls #lleo_enjoyContentPanel input { margin-right: 5p=
+x ! important; }
+
+#lleo_enjoyContentButton { background: rgb(255, 255, 255) url("data:image/p=
+ng;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAA3NCSVQICAjb4U/gA=
+AAACXBIWXMAAAk6AAAJOgHwZJJKAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48=
+GgAAADBQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+AL92gewAAAA90Uk5TAA0PEhUcLS9CxszS29z1M86yOAAAAFVJREFUCFtjYIADduMCMGZgvmsAxg=
+gGUFgELMXAwDq7AaI8MnULmGY9pTYRzIj5vzIALHD+/1Gw4pj/fwJA2kECYHNkgAJgK/yAAmDA8=
+QasBQgcIRQA12YesqxFXfcAAAAASUVORK5CYII8850aa0afe766ff5b5bb3697b8de32f7") no=
+-repeat scroll center center / 16px 16px ! important; width: 36px ! importa=
+nt; height: 34px ! important; cursor: pointer ! important; position: absolu=
+te ! important; right: 0px ! important; top: 0px ! important; }
+
+@media only screen and (min\2D\2D moz-device-pixel-ratio: 2), not all, not=
+ all {
+
+  #lleo_enjoyContentButton { background-image: url("data:image/png;base64,i=
+VBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMA=
+ABJ0AAASdAHeZh94AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAD9QTFR=
+F////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+AAAAAAAAAAxQXeHgAAABR0Uk5TAAQFDRkcNz1PcHSIrK6ws7/b8P5ZkzdFAAAAo0lEQVQ4y62Rz=
+Q6DMAyDTSkjpfy04Pd/1h12WAtpKk3zzfosJXGAP2l0AODGloc7BJDDtTwgTInS9kAik+W7gd6I=
+7pLFWRK9cuZXgcyT0VjguliJwG1AYPZNvjsAC2OLXzOAYa07LPfj+YLbGJqcPOfd5OTV4WSAVlT=
+Nn1Xf+ONZD357t8KrgMbLERovlxSFV2dGhVfy2ebAlG3+SVgc8FHws96B8RE8rjk+bwAAAABJRU=
+5ErkJggga9a50a0b337b82ef5c0bda0f6d6960d3") ! important; }
+
+}
+
+--></style><style type=3D"text/css"><!--
+
+/* Effective stylesheet produced by snapshot save */
+
+#lleo_enjoyContentControls:hover { width: 225px ! important; }
+
+--></style></head>
+
+<!--[if lte IE 8]><body class=3D"lte-ie-8" onload=3D"WideImageHandler.AddSu=
+pportForWideImages()"><![endif]-->
+<!--[if gt IE 8]><!--><body onload=3D""><div style=3D"display: none;" id=3D=
+"cboxOverlay"></div><div class=3D"" style=3D"padding-bottom: 0px; padding-r=
+ight: 0px; display: none;" id=3D"colorbox"><div style=3D"" id=3D"cboxWrappe=
+r"><div style=3D"" id=3D"false"><div style=3D"float: left;" id=3D"cboxTopLe=
+ft"></div><div style=3D"float: left;" id=3D"cboxTopCenter"></div><div style=
+=3D"float: left;" id=3D"cboxTopRight"></div></div><div style=3D"clear: left=
+;" id=3D"false"><div style=3D"float: left;" id=3D"cboxMiddleLeft"></div><di=
+v style=3D"float: left;" id=3D"cboxContent"><div class=3D"" style=3D"width:=
+ 0px; height: 0px; overflow: hidden;" id=3D"cboxLoadedContent"></div><div=
+ class=3D"" style=3D"" id=3D"cboxLoadingOverlay"></div><div class=3D"" styl=
+e=3D"" id=3D"cboxLoadingGraphic"></div><div class=3D"" style=3D"" id=3D"cbo=
+xTitle"></div><div class=3D"" style=3D"" id=3D"cboxCurrent"></div><div clas=
+s=3D"" style=3D"" id=3D"cboxNext"></div><div class=3D"" style=3D"" id=3D"cb=
+oxPrevious"></div><div class=3D"" style=3D"" id=3D"cboxSlideshow"></div><di=
+v class=3D"" style=3D"" id=3D"cboxClose"></div></div><div style=3D"float:=
+ left;" id=3D"cboxMiddleRight"></div></div><div style=3D"clear: left;" id=
+=3D"false"><div style=3D"float: left;" id=3D"cboxBottomLeft"></div><div sty=
+le=3D"float: left;" id=3D"cboxBottomCenter"></div><div style=3D"float: left=
+;" id=3D"cboxBottomRight"></div></div></div><div style=3D"position: absolut=
+e; width: 9999px; visibility: hidden; display: none;" id=3D"false"></div></=
+div><!--<![endif]-->
+   =20
+    <!-- The SiteTemplate comments are very important! used by the forums=
+ to delimit the content template -->
+    <!--SiteTemplateBegins-->
+    <script><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<!-- Google Tag Manager -->
+<noscript><iframe src=3D"//www.googletagmanager.com/ns.html?id=3DGTM-P7SP4V"
+height=3D"0" width=3D"0" style=3D"display:none;visibility:hidden"></iframe>=
+</noscript>
+<script><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<!-- End Google Tag Manager -->
+<!-- Start of Async HubSpot Analytics Code -->
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<!-- End of Async HubSpot Analytics Code -->
+<!-- Hubspot cross-site -->
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<!-- End Hubspot cross-site -->
+	<script src=3D"urn:snapshot-9EC963C4:http://www.sqlservercentral.com/Resou=
+rces/global.js?cache-buster=3D2"></script> <!-- Script needed in forums too=
+ -->
+	<script src=3D"urn:snapshot-CE816CBF:http://www.sqlservercentral.com/Resou=
+rces/js/ext/jquery.colorbox-min.js"></script>
+	<script src=3D"urn:snapshot-E2C84D0D:http://www.sqlservercentral.com/Resou=
+rces/js/ssc.js?v=3D2"></script>
+	<script src=3D"urn:snapshot-70EC6610:http://www.sqlservercentral.com/Resou=
+rces/js/Controls/Briefcase.js"></script>
+   =20
+    <div id=3D"SignupTopTextFragmentWrapper" class=3D"text-fragment-wrapper=
+">
+       =20
+   =20
+
+    </div>
+
+    <div id=3D"corner-peel">
+		<a href=3D"http://www.red-gate.com/sqlmonitor-ssc" rel=3D"nofollow">
+      <img src=3D"http://www.sqlservercentral.com/Resources/Images/advertis=
+ing/corner-peel.png" alt=3D"Click here to monitor SSC">
+    </a>
+		<div id=3D"corner-peel-behind"></div>
+	</div>
+
+    <div id=3D"whole-site-wrapper">
+	    <table class=3D"MainLayoutContainer" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"100%">
+		   =20
+
+<tbody><tr>
+	<td colspan=3D"2">
+		<table class=3D"SiteTitleBar" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">
+			<tbody><tr>
+				<td align=3D"left" valign=3D"bottom"><a href=3D"http://www.sqlservercen=
+tral.com/"><img src=3D"http://www.sqlservercentral.com/Resources/Images/sql=
+servercentral_logo.gif" alt=3D"SQLServerCentral logo" class=3D"SiteLogo"></=
+a></td>
+				<td align=3D"center" height=3D"75" valign=3D"middle">
+					<!-- AdSpeed.com Serving Code 7.9.5 for [Zone] SSCtop 468x60 -->
+
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<noscript><iframe width=3D"468" height=3D"60" src=3D"//g.adspeed.net/ad.php=
+?do=3Dhtml&zid=3D15220&wd=3D468&ht=3D60&target=3D_blank" frameborder=3D"0"=
+ scrolling=3D"no" allowtransparency=3D"true" hspace=3D"0" vspace=3D"0"><a=
+ href=3D"//g.adspeed.net/ad.php?do=3Dclk&zid=3D15220&wd=3D468&ht=3D60&pair=
+=3Das" target=3D"_blank"><img style=3D"border:0px;" src=3D"//g.adspeed.net/=
+ad.php?do=3Dimg&zid=3D15220&wd=3D468&ht=3D60&pair=3Das" alt=3D"i" width=3D"=
+468" height=3D"60"/></a></iframe>
+
+</noscript><!-- AdSpeed.com End -->
+				</td>
+				<td align=3D"right" valign=3D"bottom"><a rel=3D"nofollow" href=3D"http:=
+//www.red-gate.com/about/welcomesscvisitors.htm?utm_source=3Dssc&amp;utm_me=
+dium=3Dtextad&amp;utm_campaign=3Dssclandingpage"><img src=3D"http://www.sql=
+servercentral.com/Resources/Images/ssc-red-gate-logo.png" alt=3D"SQLServerC=
+entral is supported by Redgate"></a></td>
+			</tr>
+		</tbody></table>
+	</td>
+	<td></td>
+</tr>
+<tr class=3D"BodyRow">
+	<td class=3D"TopLeft">=C2=A0</td>
+	<td class=3D"HeaderBar">
+		<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"><t=
+body><tr valign=3D"middle">
+			<td>
+				<span class=3D"LoginControls">
+				=09
+							Welcome,=20
+							kast218
+							=C2=A0=C2=A0
+							<a href=3D"http://www.sqlservercentral.com/MyAccount">My Account</a>
+							=C2=A0::=C2=A0
+							<a href=3D"http://www.sqlservercentral.com/briefcase">Briefcase</a>
+							=C2=A0::=C2=A0
+							<a href=3D"http://www.sqlservercentral.com/Logout">Logout</a>
+					=09
+				</span>
+			</td>
+            <td align=3D"right">
+			 =20
+			  <!-- Search -->
+			    <form action=3D"http://www.sqlservercentral.com/search/">
+                  <input value=3D"Search" class=3D"SearchBox SearchHint" na=
+me=3D"q" maxlength=3D"1000" size=3D"34" title=3D"Search" type=3D"text">
+                   =C2=A0<input class=3D"SearchGo" value=3D"Go" type=3D"sub=
+mit">
+                 </form>
+              <script type=3D"text/javascript" language=3D"javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+           =20
+		  </td>
+		</tr>
+      </tbody></table>
+	</td>
+	<td class=3D"TopRight">=C2=A0</td>
+</tr>
+
+	    </tbody></table>
+	    <table class=3D"MainLayoutContainer" cellpadding=3D"0" cellspacing=3D"=
+0" width=3D"100%">
+		    <tbody><tr class=3D"BodyRow" valign=3D"top">
+			    <td class=3D"MainMenuCell">
+				    <div class=3D"MainMenuCellMenuItems">
+					   =20
+<div class=3D"MainMenu">
+  <ul>
+	 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/" data-event-category=3D"MainMenu: Home">
+				    Home
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Tags" data-event-category=3D"MainMenu: Tags">
+				    Tags
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  CurrentNode" href=3D"http://www.s=
+qlservercentral.com/Articles/" data-event-category=3D"MainMenu: Articles">
+				    Articles
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Articles/Editorial" data-event-category=3D"MainMenu: Editorials">
+				    Editorials
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/stairway/" data-event-category=3D"MainMenu: Stairways">
+				    Stairways
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Forums" data-event-category=3D"MainMenu: Forums">
+				    Forums
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Scripts/" data-event-category=3D"MainMenu: Scripts">
+				    Scripts
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Articles/Video" data-event-category=3D"MainMenu: Videos">
+				    Videos
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/blogs/" data-event-category=3D"MainMenu: Blogs">
+				    Blogs
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Questions" data-event-category=3D"MainMenu: QotD">
+				    QotD
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Books/" data-event-category=3D"MainMenu: Books">
+				    Books
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://ask.sqlservercent=
+ral.com/" data-event-category=3D"MainMenu: Ask SSC">
+				    Ask SSC
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://jobs.sqlservercen=
+tral.com/" data-event-category=3D"MainMenu: SQL Jobs">
+				    SQL Jobs
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Training/" data-event-category=3D"MainMenu: Training">
+				    Training
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem " href=3D"http://www.sqlservercent=
+ral.com/Authors/Articles/" data-event-category=3D"MainMenu: Authors">
+				    Authors
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  Minor" href=3D"javascript:void(0)=
+;" data-event-category=3D"MainMenu: Active Threads">
+				    Active Threads
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  Minor" href=3D"http://www.sqlserv=
+ercentral.com/About/AboutUs/" data-event-category=3D"MainMenu: About us">
+				    About us
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  Minor" href=3D"http://www.sqlserv=
+ercentral.com/About/ContactUs/" data-event-category=3D"MainMenu: Contact us=
+">
+				    Contact us
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  Minor" href=3D"http://www.sqlserv=
+ercentral.com/NewsletterArchive" data-event-category=3D"MainMenu: Newslette=
+rs">
+				    Newsletters
+			    </a>
+			  </li>
+		 =20
+		    <li>
+			    <a class=3D"track-clicks MenuItem  Minor" href=3D"http://www.sqlserv=
+ercentral.com/Contributions/Home" data-event-category=3D"MainMenu: Write fo=
+r us">
+				    Write for us
+			    </a>
+			  </li>
+		 =20
+	</ul>
+</div>
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+
+                        <div id=3D"LeftSidebarSignupWrapper" class=3D"text-=
+fragment-wrapper">
+                           =20
+                           =20
+                           =20
+                        </div>
+				    </div>
+				    <!-- Skyscraper advert -->
+				    <div style=3D"margin-top:0.75em;" align=3D"center"><table cellpaddi=
+ng=3D"0" cellspacing=3D"0"><tbody><tr><td align=3D"left">
+					    <a href=3D"http://www.sqlservercentral.com/Contributions/Home" bor=
+der=3D"0"><img src=3D"http://www.sqlservercentral.com/Resources/Images/Writ=
+eforus_M1.gif" alt=3D"Write for us"></a><br><br>
+
+<div style=3D"margin-left:5px">
+<!-- AdSpeed.com Serving Code 7.9.5 for [Zone] SSCskyscraper 120x300 -->
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<noscript><iframe width=3D"120" height=3D"300" src=3D"//g.adspeed.net/ad.ph=
+p?do=3Dhtml&amp;zid=3D15491&amp;wd=3D120&amp;ht=3D300&amp;target=3D_top" fr=
+ameborder=3D"0" scrolling=3D"no"   ><a href=3D"//g.adspeed.net/ad.php?do=3D=
+clk&amp;zid=3D15491&amp;wd=3D120&amp;ht=3D300&amp;pair=3Das" target=3D"_top=
+"><img style=3D"border:0px;" src=3D"//g.adspeed.net/ad.php?do=3Dimg&amp;zid=
+=3D15491&amp;wd=3D120&amp;ht=3D300&amp;pair=3Das" alt=3D"i" width=3D"120"=
+ height=3D"300"/></a></iframe>
+</noscript><!-- AdSpeed.com End -->
+</div>
+				    </td></tr></tbody></table></div>
+			    </td>
+			    <td class=3D"MainContentLeftPadding">=C2=A0</td>
+			    <td class=3D"MainContentCell">
+				    <!-- [content_start] -->
+					   =20
+    <form name=3D"aspnetForm" method=3D"post" id=3D"aspnetForm">
+<div>
+<input name=3D"__EVENTTARGET" id=3D"__EVENTTARGET" value=3D"" type=3D"hidde=
+n">
+<input name=3D"__EVENTARGUMENT" id=3D"__EVENTARGUMENT" value=3D"" type=3D"h=
+idden">
+<input name=3D"__VIEWSTATE" id=3D"__VIEWSTATE" value=3D"ixk+poW76ZH6MV3MWi+=
+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" ty=
+pe=3D"hidden">
+</div>
+
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+
+
+<script src=3D"urn:snapshot-A3198DA5:http://www.sqlservercentral.com/sqlser=
+vercentral2/WebResource.axd?d=3D55u9VXyuKJvSGOO0bukMA4XOeFV0Yf23HdzNlbB1DjA=
+oR-QvoDde7RSPG5Eakq-7BNwEoFpeKKl8YTSk0&amp;t=3D635588366811475957" type=3D"=
+text/javascript"></script>
+
+
+<script src=3D"urn:snapshot-BC653FAD:http://www.sqlservercentral.com/Resour=
+ces/js/Controls/HelpTooltip.js" type=3D"text/javascript"></script>
+<script src=3D"urn:snapshot-15975CD9:http://www.sqlservercentral.com/sqlser=
+vercentral2/Controls/IFramePopupExtender/IFramePopupController.js" type=3D"=
+text/javascript"></script>
+<script src=3D"urn:snapshot-DE322075:http://www.sqlservercentral.com/sqlser=
+vercentral2/ScriptResource.axd?d=3DkZ6V7uZAgzQ_kK_nArZitODdSa24fKrkrNHB5nek=
+XA2S-WNH0kRE_nN-curNa9MG3yYWuM5zOSCZuBM8Mu2SHGWCtV7c0wsuQCanuSQPMnaqARpOOHB=
+mSIMclb06UxfmPZiYavK01eI6ktPH6-TfxPIh7n81&amp;t=3Dfffffffff98cfb72" type=3D=
+"text/javascript"></script>
+<script src=3D"urn:snapshot-7239EFDE:http://www.sqlservercentral.com/sqlser=
+vercentral2/ScriptResource.axd?d=3DnFjxI3nGwslifW_-CUmTxjUWQv50JU8plNxHbwie=
+J7yk7oCoQOom46Tn3aQ-_-HuGxZ6JP6qWHJBy--8cUYNnmS8Z5NWYWU_jHTB_Pil9MtADoymnqK=
+rGHbuN8x7mV425ii1Cayp9v7IsBGlh1IQhs656ydvzG8uIFL8YQ2&amp;t=3Dfffffffff98cfb=
+72" type=3D"text/javascript"></script>
+<div>
+
+	<input name=3D"__VIEWSTATEGENERATOR" id=3D"__VIEWSTATEGENERATOR" value=3D"=
+75E296DF" type=3D"hidden">
+</div>
+       =20
+
+   =20
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+
+
+    <table class=3D"DynamicContent" border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%">
+        <tbody><tr valign=3D"top">
+            <td itemscope=3D"" itemtype=3D"http://schema.org/TechArticle"=
+ rowspan=3D"2">
+                <div id=3D"ArticlePageSignupTopWrapper" class=3D"text-fragm=
+ent-wrapper">
+                       =20
+                   =20
+                       =20
+                   =20
+                   =20
+                </div>
+               =20
+
+<div class=3D"content-meta">
+ =20
+
+<div class=3D"share-tools">
+  <div class=3D"addthis_toolbox addthis_default_style ">
+    <p>Thank this author by sharing:</p>
+    <a class=3D"addthis_button_google_plusone" g:plusone:annotation=3D"none=
+"></a>
+    <a class=3D"addthis_button_linkedin"></a>
+    <a class=3D"addthis_button_facebook"></a>
+    <a class=3D"addthis_button_twitter"></a>
+    <a class=3D"addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+</div>
+  <ul>
+	  <li><span isratingcontrol=3D"true"><img src=3D"http://www.sqlservercentr=
+al.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlserverce=
+ntral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlserve=
+rcentral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlse=
+rvercentral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sq=
+lservercentral.com/Resources/Images/HalfFilledStar.png">  <a id=3D"ctl00_ct=
+l00_MainContent_MainContent_ContentMetadata1_RateThisLink" onclick=3D"" hre=
+f=3D"javascript:void(0);">=C2=A0Rate this</a></span></li>
+    <li>
+      <img src=3D"http://www.sqlservercentral.com/Resources/Images/Discuss.=
+gif">=C2=A0
+	    <a href=3D"http://www.sqlservercentral.com/Forums/FindPost1063673.aspx=
+">Join the discussion</a>
+    </li>
+    <li>
+  <a href=3D"javascript:void(0);" class=3D"add-to-briefcase" data-content-i=
+tem-id=3D"71693">
+    <img src=3D"http://www.sqlservercentral.com/Resources/Images/briefcase.=
+gif" align=3D"bottom">=C2=A0
+    Add to briefcase
+  </a>
+</li>
+	 =20
+      <li>
+       =20
+
+<a href=3D"http://www.sqlservercentral.com/articles/SQL+Trace/71693/Printab=
+le" onclick=3D"">
+  <img src=3D"http://www.sqlservercentral.com/Resources/Images/print.gif"=
+ alt=3D"">=C2=A0
+  Print
+</a>
+      </li>
+	 =20
+  </ul>
+</div>
+
+                    <div style=3D"float: right;">
+                    <a href=3D"http://www.sqlservercentral.com/stairway/723=
+63/">
+                        <img src=3D"urn:download-error:http://www.sqlserver=
+central.com/Images/8549.png" alt=3D"Stairway to Server-side Tracing">
+                    </a>
+                    <br>
+                    </div>
+               =20
+                <h1 itemprop=3D"name" class=3D"article-title">Stairway to=
+ Server-side Tracing - Level 1 - Overview of Tracing</h1>
+               =20
+
+<p>
+  <strong>
+   =20
+	    By <a href=3D"http://www.sqlservercentral.com/Authors/Articles/Dan_Guz=
+man/481633/">Dan Guzman</a>,=20
+    <span itemprop=3D"datePublished" content=3D"2013-02-15">2013/02/15</spa=
+n> (first published: 2011/02/23)
+  </strong>
+</p><div id=3D"ctl00_ctl00_MainContent_MainContent_StairwayIntroDiv" style=
+=3D"border-bottom: solid 1px #ccc">
+                    <h3>The Series</h3>
+                    <p>This article is part of the Stairway Series: <a href=
+=3D"http://www.sqlservercentral.com/stairway/72363/">Stairway to Server-sid=
+e Tracing</a></p>
+                    <p>Learn how to use the SQL Trace subsystem in SQL Serv=
+er to audit your instances. This series will examine the basics of SQL Trac=
+e and teach you how to set up, schedule, and manage traces and the data gen=
+erated.</p>
+                </div>
+                                   =20
+                <div itemprop=3D"articleBody" class=3D"content-text"><p>
+  Traces are defined and managed using <strong>sp_trace*</strong> stored pr=
+ocedures, regardless of whether one uses the Profiler graphical interface=
+ or a T-SQL script to accomplish the task. The same trace system stored pro=
+cedures that Profiler calls internally can be executed directly from a T-SQ=
+L script to create a server-side trace that runs independently of Profiler.
+</p>
+<p>
+  SQL Trace is one of my favorite SQL Server features. Tracing in SQL serve=
+r allows one to selectively capture and record valuable details of SQL Serv=
+er Database Engine events that would otherwise be discarded. Information ca=
+ptured with these events is useful for a variety of purposes, such as perfo=
+rmance analysis, troubleshooting, forensics, establishing baselines and pro=
+actively identifying problem areas.
+</p>
+<p>
+  Tracing is a powerful tool but must be used prudently, in order to avoid=
+ burdening SQL Server with unnecessary work and degrading database server=
+ performance. In this Stairway, I=E2=80=99ll show how to create server-side=
+ traces to gather useful information while minimizing tracing overhead, and=
+ how to manage those traces efficiently. This first level reviews SQL Serve=
+r Tracing architecture, concepts, and terminology and illustrates important=
+ differences between Profiler and server-side tracing.
+</p>
+<p>
+  For this Stairway Series, I=E2=80=99ll assume that you are at least famil=
+iar with SQL Server Profiler, and perhaps have even used it extensively. Se=
+e Brad McGehee=E2=80=99s book, <a href=3D"http://www.sqlservercentral.com/a=
+rticles/books/65797/"><em>Mastering SQL Server Profiler</em></a>, for a det=
+ailed discussion of Profiler features and usage.
+</p>
+<p>
+  Let me first make it clear that Profiler is just a client tool that provi=
+des a graphical interface for setting up, managing and monitoring traces;=
+ tracing itself always occurs on the back end, i.e. inside of the database=
+ engine, regardless of whether you run the trace directly from Profiler or=
+ use a T-SQL script. I will show why server-side tracing incurs much less=
+ overhead and is a better method than tracing through the Profiler GUI, in=
+ many situations. This Stairway series, as a whole, will explore details of=
+ what happens with tracing <em>inside</em> of the database engine, and desc=
+ribe the differences between how trace data are processed with either clien=
+t or server tracing, so that you can choose the right tool for the task at=
+ hand.
+</p>
+<h2>
+  SQL Trace Overview
+</h2>
+<p>
+  The SQL Server Database Engine performs many actions while processing you=
+r data, such as acquiring locks, executing batches and so on. Many of these=
+ actions can be captured as <strong>events</strong>, which SQL Trace can re=
+cord directly to a file, or return to a client application like Profiler,=
+ for subsequent processing. Note that no special action is needed to genera=
+te Database Engine events; these events occur naturally, and simply reflect=
+ the actions SQL Server performs during processing. Although events provide=
+ important insight into SQL Server operation, this event data it is not vis=
+ible unless explicitly collected. In short, the SQL Trace facility provides=
+ infrastructure that allows you to capture and record event information tha=
+t would otherwise be lost.
+</p>
+<p>
+  A trace <strong>event class</strong> is an event plus all of its availabl=
+e data columns. When defining a trace, you'll need to specify each desired=
+ event class plus the specific data columns you want to collect =E2=80=93=
+ in effect, defining specific instances of each event class.
+</p>
+<p>
+  The data columns available with an event vary depending on the event that=
+ occurred. For example, when you execute a simple query from SQL Server Man=
+agement Studio (SSMS), the Database Engine generates several events of vari=
+ous classes, such as <strong>SQL:BatchStarting</strong>, <strong>SQL:StmtSt=
+arting</strong>, <strong>Lock:Acquired</strong>, <strong>Lock:Released</str=
+ong>, <strong>SQL:StmtCompleted</strong> and <strong>SQL:BatchCompleted</st=
+rong>. The <strong>SQL:BatchCompleted</strong> event will include a <strong=
+>Duration</strong> value, indicating how long the batch ran, but <strong>SQ=
+L:BatchStarting</strong> will not include <strong>Duration</strong> because=
+ it not applicable to that event class. Both of these events will however=
+ include a <strong>StartTime</strong> value, which is common to all events,=
+ indicating the time the event occurred.
+</p>
+<p>
+  Related event classes are organized by <strong>event category</strong>,=
+ to facilitate locating specific events in Profiler and T-SQL, and the easi=
+est way to see the relationship between trace event categories, classes and=
+ columns is via the Events Selection tab in the SQL Server Profiler GUI.
+</p>
+<p>
+  Figure 1.1 shows the Events Selection tab in SQL Server Profiler for the=
+ standard template trace. Event Columns with no checkbox (e.g. the <strong>=
+CPU</strong> column of Security Audit category, Audit Login class) indicate=
+ that the column is not applicable to that event class while checkboxes (e.=
+g. the <strong>Duration</strong> column of Security Audit category, Audit=
+ Logout class) indicate that the column may be included.
+</p>
+<p>
+  <img alt=3D"SQL Trace Properties" src=3D"urn:download-error:http://www.sq=
+lservercentral.com/images/7680.jpg" height=3D"394" width=3D"624">
+</p>
+<p>
+  <strong>Figure 1.1: Event Selection tab of Trace Properties dialog in Pro=
+filer</strong>
+</p>
+<p>
+  You might be surprised to learn that you have a trace running on all of=
+ your SQL Servers right now, which collects interesting events like <strong=
+>Object Deletedand Data/Log File Auto Grow</strong>. SQL Server ships with=
+ a default server-side trace that is enabled unless you explicitly disable=
+ it using <em>sp_configure</em>.
+</p>
+<p>
+  Run the query in code listing 1.1 on any server with a default trace enab=
+led to list all of the event classes and columns collected by the trace, as=
+ well as the current file destination. I will discuss the default trace and=
+ trace catalog views and functions in detail in a later level.
+</p>
+<pre style=3D"" class=3D"prettyprint lang-sql prettyprinted"><span class=3D=
+"pln"> </span><span class=3D"com">--list current file path, events and colu=
+mns of the default trace</span><span class=3D"pln">
+ </span><span class=3D"kwd">SELECT</span><span class=3D"pln">  t</span><spa=
+n class=3D"pun">.</span><span class=3D"pln">id </span><span class=3D"kwd">A=
+S</span><span class=3D"pln"> TraceId </span><span class=3D"pun">,</span><sp=
+an class=3D"pln">
+        path </span><span class=3D"kwd">AS</span><span class=3D"pln"> Trace=
+FilePath </span><span class=3D"pun">,</span><span class=3D"pln">
+        tcat</span><span class=3D"pun">.</span><span class=3D"pln">name </s=
+pan><span class=3D"kwd">AS</span><span class=3D"pln"> EventCategory </span>=
+<span class=3D"pun">,</span><span class=3D"pln">
+        tevent</span><span class=3D"pun">.</span><span class=3D"pln">name=
+ </span><span class=3D"kwd">AS</span><span class=3D"pln"> EventClassName </=
+span><span class=3D"pun">,</span><span class=3D"pln">
+        tcolumn</span><span class=3D"pun">.</span><span class=3D"pln">name=
+ </span><span class=3D"kwd">AS</span><span class=3D"pln"> ColumnName
+ </span><span class=3D"kwd">FROM</span><span class=3D"pln">   sys</span><sp=
+an class=3D"pun">.</span><span class=3D"pln">tracesAS t
+        </span><span class=3D"kwd3">CROSS</span><span class=3D"pln"> APPLYF=
+N_TRACE_GETEVENTINFO</span><span class=3D"pun">(</span><span class=3D"pln">=
+t</span><span class=3D"pun">.</span><span class=3D"pln">id</span><span clas=
+s=3D"pun">)</span><span class=3D"pln"> </span><span class=3D"kwd">AS</span>=
+<span class=3D"pln"> tdef
+        </span><span class=3D"kwd3">JOIN</span><span class=3D"pln"> sys</sp=
+an><span class=3D"pun">.</span><span class=3D"pln">trace_events </span><spa=
+n class=3D"kwd">AS</span><span class=3D"pln"> tevent </span><span class=3D"=
+kwd">ON</span><span class=3D"pln"> tdef</span><span class=3D"pun">.</span><=
+span class=3D"pln">eventid </span><span class=3D"pun">=3D</span><span class=
+=3D"pln"> tevent</span><span class=3D"pun">.</span><span class=3D"pln">trac=
+e_event_id
+        </span><span class=3D"kwd3">JOIN</span><span class=3D"pln"> sys</sp=
+an><span class=3D"pun">.</span><span class=3D"pln">trace_categories </span>=
+<span class=3D"kwd">AS</span><span class=3D"pln"> tcat </span><span class=
+=3D"kwd">ON</span><span class=3D"pln"> tcat</span><span class=3D"pun">.</sp=
+an><span class=3D"pln">category_id </span><span class=3D"pun">=3D</span><sp=
+an class=3D"pln"> tevent</span><span class=3D"pun">.</span><span class=3D"p=
+ln">category_id
+        </span><span class=3D"kwd3">JOIN</span><span class=3D"pln"> sys</sp=
+an><span class=3D"pun">.</span><span class=3D"pln">trace_columns </span><sp=
+an class=3D"kwd">AS</span><span class=3D"pln"> tcolumn </span><span class=
+=3D"kwd">ON</span><span class=3D"pln"> tcolumn</span><span class=3D"pun">.<=
+/span><span class=3D"pln">trace_column_id </span><span class=3D"pun">=3D</s=
+pan><span class=3D"pln"> tdef</span><span class=3D"pun">.</span><span class=
+=3D"pln">columnid
+ </span><span class=3D"kwd">WHERE</span><span class=3D"pln">   t</span><spa=
+n class=3D"pun">.</span><span class=3D"pln">is_default </span><span class=
+=3D"pun">=3D</span><span class=3D"pln"> </span><span class=3D"lit">1</span>=
+<span class=3D"pln"> </span><span class=3D"com">--default trace</span><span=
+ class=3D"pln">
+        </span><span class=3D"kwd3">AND</span><span class=3D"pln"> t</span>=
+<span class=3D"pun">.</span><span class=3D"pln">status</span><span class=3D=
+"pun">=3D</span><span class=3D"pln"> </span><span class=3D"lit">1</span><sp=
+an class=3D"pln"> </span><span class=3D"com">--running</span><span class=3D=
+"pln">
+ </span><span class=3D"kwd">ORDER</span><span class=3D"pln"> </span><span=
+ class=3D"kwd">BY</span><span class=3D"pln"> TraceFilePath </span><span cla=
+ss=3D"pun">,</span><span class=3D"pln">
+        EventCategory </span><span class=3D"pun">,</span><span class=3D"pln=
+">
+        EventClassName </span><span class=3D"pun">,</span><span class=3D"pl=
+n">
+        ColumnName </span><span class=3D"pun">;</span></pre>
+<p>
+  <strong>Code Listing 1.1: List default trace event classes and columns</s=
+trong>
+</p>
+<h2>
+  Architecture
+</h2>
+<p>
+  SQL Trace architecture is fairly straightforward. As illustrated in figur=
+e 1.2, instances of a Database Engine event class are captured only when on=
+e or more running traces include the event class; other event classes are=
+ ignored by SQL Trace and not captured. SQL Trace passes the captured event=
+ to each running trace that includes the event class.
+</p>
+<p>
+  The event is then filtered according to the trace definition to include=
+ only the specified records and data columns. A <strong>filter</strong> is=
+ a simple condition applied to a trace data column that must be satisfied=
+ in order for the event to be included. For example, a filter might specify=
+ a particular SPID in order to eliminate noise of other database server act=
+ivity.
+</p>
+<p>
+  These filtered events are <strong>queued</strong> in an in-memory buffer=
+ for delivery. Finally, the trace process either writes event data directly=
+ to a file (server-side trace) or returns event data back to an external cl=
+ient application (client-side trace). Client-side trace applications, like=
+ Profiler, interact with SQL Trace through the SMO (SQL Server Management=
+ Objects) API classes.
+</p>
+<p>
+  <img alt=3D"" src=3D"urn:download-error:http://www.sqlservercentral.com/I=
+mages/7681.png" border=3D"0">
+</p>
+<p>
+  <strong>Figure 1.2 - SQL Server with 3 running traces</strong>
+</p>
+<p>
+  A trace definition specifies which event classes and data columns are col=
+lected, the trace data destination and optional event data filter(s). Defin=
+ing traces with only pertinent columns helps improve performance and reduce=
+ storage requirements. Filters similarly lessen overhead by reducing the nu=
+mber of events that are collected and stored.
+</p>
+<h2>
+  Server-Side Tracing versus Profiler
+</h2>
+<p>
+  Traces are defined and managed using a set of <em>sp_trace</em>* stored=
+ procedures regardless of whether one uses the Profiler graphical interface=
+ or a T-SQL script to accomplish the task. The same trace system stored pro=
+cedures that Profiler calls internally can be executed directly from a T-SQ=
+L script to create a server-side trace that runs independently of Profiler.=
+ I will discuss these SQL Trace stored procedures in detail in the next lev=
+el.
+</p>
+<p>
+  Client-side and server-side trace definitions are essentially the same wi=
+thin the database engine, except for the trace data destination. As figure=
+ 1.2 shows, a server-side trace always includes a file destination that SQL=
+ Server writes to directly. In contrast, a client-side trace definition doe=
+s not specify a file destination because SQL Server returns filtered trace=
+ data back to the client on the same database connection that started the=
+ trace; it is up to the client application (e.g. Profiler) to process, disp=
+lay and record data as desired. Profiler extends trace data collection by=
+ adding the functionality to display trace data in near real-time and optio=
+nally write data to a SQL Server table during collection.
+</p>
+<p>
+  Profiler can also write trace data to a file like a server-side trace but=
+, again, this is done by the Profiler application rather than the database=
+ engine in a client-side trace. Table 1.1 summarizes differences between se=
+rver-side and Profiler client-side tracing functionality.
+</p>
+<table border=3D"1" cellpadding=3D"0" cellspacing=3D"0">
+  <tbody>
+    <tr>
+      <td>
+      </td>
+      <td>
+        <strong>Server Side Trace</strong></td>
+      <td>
+        <strong>Profiler Trace</strong></td>
+    </tr>
+    <tr>
+      <td>
+        <strong>File destination</strong></td>
+      <td>
+        <p>
+          Yes (required)
+        </p>
+        <p>
+          Written to by database engine
+        </p>
+      </td>
+      <td>
+        <p>
+          Yes (optional)
+        </p>
+        <p>
+          Written to by client application
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Display data during collection in near real time</strong></=
+td>
+      <td>
+        No</td>
+      <td>
+        Yes (required)</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Table destination</strong></td>
+      <td>
+        No</td>
+      <td>
+        <p>
+          Yes (optional)
+        </p>
+        <p>
+          Written to by client application
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Unattended collection</strong></td>
+      <td>
+        Yes</td>
+      <td>
+        No</td>
+    </tr>
+    <tr>
+      <td>
+        <strong>Trace Definition</strong></td>
+      <td>
+        T-SQL (sp_trace* stored procedures)</td>
+      <td>
+        SMO (executes sp_trace* stored procedures internally)</td>
+    </tr>
+  </tbody>
+</table>
+<p>
+  <strong>Table 1.1 - Server-side versus Profiler summary</strong>
+</p>
+<p>
+  I should add that you can write a custom SMO SQL Trace application that=
+ can do virtually anything with collected trace data. For example, Profiler=
+ requires you to display data during collection but your custom SMO app doe=
+s not need to do so. You could even implement a custom SMO application as=
+ a Windows service so that it can run unattended but, like all client-side=
+ trace applications, the application must run continuously to process trace=
+ data. Such a custom SMO application can process and deliver trace data by=
+ any means. The example in Figure 1.2 indicates that Trace 3 sends an email=
+ alert when a login failed event occurs.
+</p>
+<h2>
+  Tracing Performance
+</h2>
+<p>
+  Although server-side and client-side trace definitions are roughly the sa=
+me, what happens during trace execution has significant performance ramific=
+ations. SQL Trace returns data directly to the client application with a cl=
+ient-side trace. Not only must Profiler run continuously in order to proces=
+s trace data, Profiler incurs the additional overhead of a graphical interf=
+ace, client-side processing, and streaming trace data across processes or=
+ the network. Furthermore, Profiler processes one row at a time on the clie=
+nt side. In contrast, a server-side trace writes large blocks of data direc=
+tly to a file. The performance differential between client-side and server-=
+side traces can be profound as I will illustrate in a subsequent level.
+</p>
+<p>
+  I often run ad-hoc traces directly from Profiler in development and QA en=
+vironments where performance isn=E2=80=99t normally a major concern. But I=
+ never run Profiler traces against a busy production OLTP server unless I=
+=E2=80=99m certain the impact will be negligible. In fact, I=E2=80=99ve see=
+n DBAs inadvertently cause SQL Server to become completely unresponsive by=
+ running a Profiler trace against a busy OLTP database server without adequ=
+ate attention to event classes and filters. I=E2=80=99ve never seen a serve=
+r-side trace cause such a problem, though. See <a href=3D"http://support.mi=
+crosoft.com/kb/929728">http://support.microsoft.com/kb/929728</a> for a det=
+ailed description of this behavior.
+</p>
+<h2>
+  Summary
+</h2>
+<p>
+  SQL Trace is an invaluable SQL Server feature that provides indispensible=
+ information about query execution and database engine events. Server-side=
+ SQL Traces are especially useful for traces that run continuously or that=
+ might affect database performance when run from Profiler. Profiler is an=
+ excellent tool with features not available in server-side traces but is no=
+t always the right tool for the job.
+</p>
+<p>
+  In the next topic, How to Create a SQL Trace Using T-SQL, I=E2=80=99ll pr=
+ovide an introduction to the core SQL Server trace stored procedures and ca=
+talog views. The topic includes a walkthrough of creating and managing a se=
+rver-side trace using stored procedures while discussing key parameters.
+</p>
+<h3>
+  The Series
+</h3>
+<p>
+</p>
+</div>
+               =20
+                <div style=3D"clear: both">=C2=A0</div>
+
+                <p id=3D"ctl00_ctl00_MainContent_MainContent_StairwayFooter=
+">
+                    <strong>
+                    This article is part of the
+                    <a href=3D"http://www.sqlservercentral.com/stairway/723=
+63/">Stairway to Server-side Tracing</a> Stairway
+                    </strong>
+                    </p><div class=3D"stairway-rss-feed" style=3D"padding-b=
+ottom: 10px;">
+                    <i>Sign up to our RSS feed and get notified as soon as=
+ we publish a new level in the Stairway!</i>
+                    <a id=3D"ctl00_ctl00_MainContent_MainContent_RssLink"=
+ title=3D"RSS feed" onclick=3D"" href=3D"http://www.sqlservercentral.com/Xm=
+l/Rss/stairways"><img title=3D"RSS feed" src=3D"http://www.sqlservercentral=
+.com/Resources/Images/feed.gif" alt=3D"Rss" style=3D"border-width:0px;"></a>
+                    </div>
+                <p></p>
+                   =20
+                <div id=3D"ArticlePageSignupBottomWrapper" class=3D"text-fr=
+agment-wrapper">
+                       =20
+                   =20
+                       =20
+                   =20
+                   =20
+                </div>
+                   =20
+               =20
+
+<div class=3D"content-meta">
+ =20
+
+<div class=3D"share-tools">
+  <div class=3D"addthis_toolbox addthis_default_style ">
+    <p>Thank this author by sharing:</p>
+    <a class=3D"addthis_button_google_plusone" g:plusone:annotation=3D"none=
+"></a>
+    <a class=3D"addthis_button_linkedin"></a>
+    <a class=3D"addthis_button_facebook"></a>
+    <a class=3D"addthis_button_twitter"></a>
+    <a class=3D"addthis_counter addthis_bubble_style"></a>
+  </div>
+  <script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+</div>
+  <ul>
+	  <li><span isratingcontrol=3D"true"><img src=3D"http://www.sqlservercentr=
+al.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlserverce=
+ntral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlserve=
+rcentral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sqlse=
+rvercentral.com/Resources/Images/FilledStar.png"> <img src=3D"http://www.sq=
+lservercentral.com/Resources/Images/HalfFilledStar.png">  <a id=3D"ctl00_ct=
+l00_MainContent_MainContent_ContentMetadata2_RateThisLink" onclick=3D"" hre=
+f=3D"javascript:void(0);">=C2=A0Rate this</a></span></li>
+    <li>
+      <img src=3D"http://www.sqlservercentral.com/Resources/Images/Discuss.=
+gif">=C2=A0
+	    <a href=3D"http://www.sqlservercentral.com/Forums/FindPost1063673.aspx=
+">Join the discussion</a>
+    </li>
+    <li>
+  <a href=3D"javascript:void(0);" class=3D"add-to-briefcase" data-content-i=
+tem-id=3D"71693">
+    <img src=3D"http://www.sqlservercentral.com/Resources/Images/briefcase.=
+gif" align=3D"bottom">=C2=A0
+    Add to briefcase
+  </a>
+</li>
+	 =20
+      <li>
+       =20
+
+<a href=3D"http://www.sqlservercentral.com/articles/SQL+Trace/71693/Printab=
+le" onclick=3D"">
+  <img src=3D"http://www.sqlservercentral.com/Resources/Images/print.gif"=
+ alt=3D"">=C2=A0
+  Print
+</a>
+      </li>
+	 =20
+  </ul>
+</div>
+
+
+<div class=3D"content-views">
+	Total article views: 21164
+	<span class=3D"Separator">|</span>
+	Views in the last 30 days: 19
+</div>
+
+            </td>
+            <td rowspan=3D"2" width=3D"20">=C2=A0</td>
+           =20
+                <td width=3D"315">
+                       =20
+                   =20
+                        <div class=3D"BarSpacer"></div>
+                        <div>
+                            <div class=3D"BarLeft"></div>
+                            <div class=3D"Bar">
+                                <div class=3D"Subheading"></div>
+                                Related Articles
+                            </div>
+                           =20
+
+<div class=3D"IndentedColumn">
+    <div class=3D"contentSummary">
+   =20
+       =20
+       =20
+            <div class=3D"SearchResult" id=3D"a72469">
+                <div class=3D"SearchType article"><div>ARTICLE</div></div>
+                <div class=3D"SearchDetails">
+                    <h3>
+                        <a href=3D"http://www.sqlservercentral.com/articles=
+/72469/">Stairway to Server-side Tracing - Level 10: Profiler versus Server=
+-Side tracing</a>
+                    </h3>
+                    <ul class=3D"byline">
+                      <li>2012/11/26</li>
+                     =20
+                    </ul>
+                   =20
+                        <p>Compares and contrasts tracing using Profiler wi=
+th server-side tracing, illustrating important perfo...</p>
+                   =20
+                </div>
+            </div>
+       =20
+       =20
+       =20
+            <div class=3D"SearchResult" id=3D"f875825">
+                <div class=3D"SearchType forum"><div>FORUM</div></div>
+                <div class=3D"SearchDetails">
+                    <h3>
+                        <a href=3D"http://www.sqlservercentral.com/Forums/F=
+indPost875825.aspx">Question: Profiler trace!!!</a>
+                    </h3>
+                    <ul class=3D"byline">
+                      <li>2010/03/05</li>
+                     =20
+                    </ul>
+                   =20
+                        <p>Question: Profiler trace!!!</p>
+                   =20
+                </div>
+            </div>
+       =20
+       =20
+       =20
+            <div class=3D"SearchResult" id=3D"a71839">
+                <div class=3D"SearchType article"><div>ARTICLE</div></div>
+                <div class=3D"SearchDetails">
+                    <h3>
+                        <a href=3D"http://www.sqlservercentral.com/articles=
+/71839/">Stairway to Server-side Tracing - Level 3: Creating a SQL Trace Us=
+ing SQL Server Profiler</a>
+                    </h3>
+                    <ul class=3D"byline">
+                      <li>2013/09/13</li>
+                     =20
+                    </ul>
+                   =20
+                        <p>In this third article of our Stairway Series on=
+ tracing, Dan Guzman goes into the method of using Pr...</p>
+                   =20
+                </div>
+            </div>
+       =20
+       =20
+       =20
+            <div class=3D"SearchResult" id=3D"f1007382">
+                <div class=3D"SearchType forum"><div>FORUM</div></div>
+                <div class=3D"SearchDetails">
+                    <h3>
+                        <a href=3D"http://www.sqlservercentral.com/Forums/F=
+indPost1007382.aspx">sql profiler trace</a>
+                    </h3>
+                    <ul class=3D"byline">
+                      <li>2010/10/28</li>
+                     =20
+                    </ul>
+                   =20
+                        <p>sql profiler trace on production database can ca=
+use performance overheads</p>
+                   =20
+                </div>
+            </div>
+       =20
+       =20
+       =20
+            <div class=3D"SearchResult" id=3D"f600748">
+                <div class=3D"SearchType forum"><div>FORUM</div></div>
+                <div class=3D"SearchDetails">
+                    <h3>
+                        <a href=3D"http://www.sqlservercentral.com/Forums/F=
+indPost600748.aspx">Some trace events have not been reported to SQL Server=
+ Profiler because the server has reached its maximum available memory for=
+ the process</a>
+                    </h3>
+                    <ul class=3D"byline">
+                      <li>2008/11/13</li>
+                     =20
+                    </ul>
+                   =20
+                        <p>Some trace events have not been reported to SQL=
+ Server Profiler because the server has reached its m...</p>
+                   =20
+                </div>
+            </div>
+       =20
+       =20
+   =20
+    </div>
+</div>
+
+                        </div>
+                   =20
+
+<div id=3D"tagCloud">
+    <div class=3D"BarLeft"></div><div class=3D"Bar">Tags</div>
+
+    <div class=3D"IndentedColumn">
+        <div class=3D"IndentedTagColumn">
+           <table id=3D"ctl00_ctl00_MainContent_MainContent_TagCloud1_TagsL=
+ist" style=3D"border-collapse:collapse;" border=3D"0" cellspacing=3D"0">
+	<tbody><tr>
+		<td valign=3D"top">
+			        <a href=3D"http://www.sqlservercentral.com/articles/SQL+Trace/">=
+sql trace</a>=20
+			       =20
+			        =C2=A0=C2=A0=C2=A0
+		        </td>
+	</tr><tr>
+		<td valign=3D"top">
+			        <a href=3D"http://www.sqlservercentral.com/articles/Stairway+Ser=
+ies/">stairway series</a>=20
+			       =20
+			        =C2=A0=C2=A0=C2=A0
+		        </td>
+	</tr>
+</tbody></table>
+        </div>
+    </div>
+</div>
+<!-- -->
+                       =20
+                    <div class=3D"BarSpacer">=C2=A0</div>
+                    <div class=3D"IndentedColumn">
+                        <div class=3D"IndentedTagColumn">
+                            <a href=3D"http://www.sqlservercentral.com/Cont=
+ributions/Home"><img src=3D"http://www.sqlservercentral.com/Resources/Image=
+s/Writeforus_M1.gif" alt=3D"Contribute"></a>
+                        </div>
+                    </div>
+                   =20
+               =20
+            </td>
+        </tr>
+    </tbody></table>
+
+
+
+   =20
+
+<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+</form>
+
+				    <!-- [content_end] -->
+			    </td>
+			   =20
+		    </tr>
+	    </tbody></table>
+	    <table class=3D"MainLayoutContainer MainLayoutContainerBottom" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+
+		=09
+   =20
+
+
+		    <tbody><tr class=3D"BodyRow">
+			    <td class=3D"BottomLeft">=C2=A0</td>
+			    <td>
+				    <div class=3D"Footer">
+					    Copyright =C2=A9 2002-2016 Simple Talk Publishing. All Rights Rese=
+rved. <a href=3D"http://www.sqlservercentral.com/About/Privacy/">Privacy Po=
+licy.</a> <a href=3D"http://www.sqlservercentral.com/About/Terms">Terms of=
+ Use.</a> <a href=3D"mailto:abuse@sqlservercentral.com">Report Abuse.</a>
+				    </div>
+			    </td>
+			    <td class=3D"BottomRight">=C2=A0</td>
+		    </tr>
+	    </tbody></table>
+    </div>
+	<script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+<!--SiteTemplateEnds-->
+
+
+<iframe src=3D"urn:snapshot-9A12E15A:http://www.red-gate.com/tracking/hubsp=
+ot?url=3Dhttp%3A%2F%2Fwww.sqlservercentral.com%2Farticles%2FSQL%2BTrace%2F7=
+1693%2F" class=3D"hubspot-tracking-iframe" frameborder=3D"0" height=3D"1"=
+ width=3D"1"></iframe><div class=3D" lleo_show" id=3D"lleo_enjoyContentCont=
+rols">
+    <div id=3D"lleo_enjoyContentPanel">
+        <label id=3D"lleo_enjoyContentLabel"><input id=3D"lleo_enjoyContent=
+Checkbox" checked=3D"checked" type=3D"checkbox">Show this icon if possible<=
+/label>
+    </div>
+    <div id=3D"lleo_enjoyContentButton" title=3D"Enjoy Content!"></div>
+</div></body></html>
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/advertising/corner-peel.png
+
+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
+yqlnqwAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/sqlservercentral_logo.gif
+
+R0lGODlh6wBGAPcAAAAzZg8+Ygo9axRFbR5JYBBAcDBWVCNOZCBNeSlSYilaeTdcYVBtSURmZzBZ
+gzdpgUBmjE97glBzlnaIOW+PakyAkleIk2aCiWWMkmmVg2GWnnaPknCUmWCAoGudpHCNqX2coXWj
+qo2aMbO1HaiwN42mWsHCHt3SDM7LI+3cA+vnFPnlAP/yAICZs4ukqIWttI+lvJuusJy1uai4up+y
+xa+/z6LAxbPJzL/M2cvW2c/Z4t/l7O/y9fT29////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAADrAEYA
+AAj/AAEIHEiwoEEJNHT4WMgQRwsEBiMCKPChxg6GDT8UkAgAQouPIFtwHEmypMmTKFOqXMmy5cAW
+PDDKZChyZAEYM2fykCARp8wdLoMKHUq0qNGIDhTmzEmDo4OLS2fyNKgUY9OjJBVYqDAAq9evYCU6
+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
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/ssc-red-gate-logo.png
+
+iVBORw0KGgoAAAANSUhEUgAAAFgAAABCCAYAAADT2BHJAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAu
+OWwzfk4AAArpSURBVHhe7Zp7yGZVFcadS2njOJNRFjiVWpSixog0ZImEpZQXEoch0C5/qJNaWdnF
+vBVkghRBEUZSQeUfOtoN6o/AErGQyIFsslRKSemmUWpesot9Pb/9rrW/9e6zz3nf7/N8876D54GH
+vdaz1j5773XO2ee85/v2WlhYGLiCrIoD+2NVHNgfq+LA/lgVB/bHqvgs55tFQIu/3VjmTcWq+Czn
+IeJF1uLfZCzzpmJVDOTM+QAMur9Yy4NlblssXg2+mKPFa0Ti28y/IfhLzYXk+lUIGdfHdpt8+tGf
+4xCLBSbnXiMa+bR+TOh61DKropGO4CojYGG1XI/HXNpJMb8dfQE7k9f0WexScjk2QPc5Ukjo9t+t
+JQeb48Q50TJPYp5LwYGPQQv8xDVYFY1+lt1nAT7BSK5qEBeDTW5bDBDzxfg47vsVERe7lFx8EMdl
+Pj5/Wi8o9BOPXR4n9oMU248b1+LxMVZFI2fHb0UOCuJAznJCk2JRK+Ndfles5oOuAse1eKGwy+OU
+uZwMLjZs2ra7OrEqGjnDHICBKHY5kNMnFPchNCbNvgZiDBsQKxfT5XfFaj5YiQLHNXnrsQarohGw
++WNTYN+HyjzoJ4NbhVx87xtjENtvz3IxXX5XrObH+XpR3C+LNqnAzNd9yBo4vq+jlVXR6PsS8MmC
+eFU4WYBvI4CB0TyG74ixcjFdfles5nvRAAWByykwe77D813zh3Urq2IghfCBIHbrhi4Sj/nTxlaK
+3E0rMaafEI5fi2dWxYGt5ILzO9m3wE5WxYGt5Irl6oVdd3JmVRzYH6vibiYPiokPi2WSVyhu6alu
+55VgVdzNXMkC88bC2wO3dC2+4qyKgf4U9teqkpPeDOg38UlbIftb17j+djNpHwS14jKneGxfZ9dc
+y/n4HGJOg1XRyE/AiPjeyES4Mhzx3dZfYby/+/G7hr9HUqDynZSrOYJYLCS3u4N373hcJwuP4Biu
++bz8uPF4AN/HI8ffoR30L9feemKqouiT8bPvvi/GB2YiEBuNmBc0ThQbYpc+/bxvOS4njSL67310
+fD+Z6Pg+jhM/FtSvNhAL4nMlhl+Oz7yAx933uP9cdr/BqigyAUAR/OBljIMSgz5RFuJ2PKvxioUg
+niwvMMWgAN4PckwvKDFyfNxJCwQeIx/EKz6ePKefNOw4N+hrcx+CtvE7twgmz4IcDBSvhBpiseOx
+YlFjsYnFRZQLKtmGpRSYthZ3xvmX86mtDbSN31pgv8X8iqPYbAN+ewK0Wn5tEtC3hbg9wLgI9PIK
+9pOCzfjlGwfjtu2BwBdfK/DMrmDfBnxwCsfifWCKHfdgj3UV2K9c8rxgMC7Cc8qiuE9x6e9bho8V
+ixYJymPF3LJ/Od6KFRj6wRyxMCwwbh/EfJK1STjJA5wI18pF1N4iPEY//IjWxYnA47UC+8URge/z
+K+dWWxtonUNVDGQgJhQnFdkVeybkDuK4bbe+PwviiXomnDTeslkVB/bHqjiwP1bFgf2xKg7sj1Vx
+YH+sigP7Y1OYATTu/v8T1C6oud7kPRZeSzjmJGEG0Li8zzp2mrzHQmtYrGd0kjADaNxcYF3Bd5m8
+26AxN4ina/htag8wednQcRbrGZ0kzAAad9YFfpcNz/hnmrxs6DCL9YxOEmYAjTvrAl9sw+++Aste
+JR4knqZBzxPPl73ZwgnSDmZC4sXiJeLZyuE7wWpLaUA5rxTfYX0g/V+tPgmyGwWWvF76CeIHxMvF
+D0vjdt5kKQ0ovkrxw8R3i8ztEmnb1b5O7VpLS5B2pbQE2Z0FVpzt5CTxQpG5XCC+RV3XW0quJRxz
+jOvU4SPi3WJ6sgdcxQEkny7+rBJPkPxL8TVpNEHSavlniXeMMsYh/Z9mjhVY9uHiN2I8QvrT4rUy
+4+KeK40TcXdKqkCx+8TjrUtZ4MfFh43ftxSOe6h85vLUKLOBR8Ttlps55kAd4AK1VSh2pppDR94i
+pCeYmyD3z2o2MqBsrpoxpA6CuRmSYoFvNzkhdRDMzZC0w7qwBv8zUsaoV2N+T4qvoo/aXOAI6Xem
+gwqyGxeHtPKY+KeJuZ7ZcCrne2oTZH9HPFnmQWoPVrtW7YUpOMIt8rldXmw8VbzPYvQ/h8nJ/PhI
+SdpnxKNkPh/KPlL8ZAoKslOBZW6U/fRIXdgp+xS1L1HLLbpJNlvEPQTV/pcY/WRfbdq/xI+Kh8nd
+KPKuvUX8CnEg+3PWJ17BPxG/abzI4geKqZhqHhTPk3mI2heIR4k3EgOyf6wm1zMbTiX8Tm2C7Jcz
+QITk/IFa8WNMzpC21cLEP28at3GC7A0pMUAy+32C4qnAal9rEtonUmIB6V+yFHJOQJN5i/l/SUkF
+pB9BHMj+oWmde7A0XuESZH/B5AzJ+0h/wuIPqkm1hNlwKiHtMWofV7PKjpEh/dcW54yuMzlD8nHE
+gewvoslMiwbSpi1wXNQ0BT7JtPvNn6bAPzJtUoEvtTDxs0weg/SHLP5XNbme2QhMUOID1jdDMg+r
+Ry3OLfhO8RjxSEmbxTfKTrcokH0p/dTuMglt2gLzRpIge6oCq4nz67PAX7Yw8avF42VuVsv2xvrP
+ENmmiP9KTa5nNgITlPgbO36GZJ7Q6UDTQLlb6ac2bjuTCrwLTW1+2MqetsA8I540v88C77DwRCiX
+/TjXMxuBCUq8w46fIW1vCxPnCr5ffELMT1OZT4kPib8QX2T9llLg29DU5oep7GkLzAXwH/P7LPC3
+LEz8ATWPqM0Xmtlo94hnyM71zEZgghInFThtITJXi2vF9eI+4pqUHKDcpRT4B2hq57LAwrEi82XN
+PNz2NTs/r2RnjjnGBHVsFFjyc6T7Ah4T97ZQJ5SXXqeA7EkFvgZN7ftNQpu2wGvU8nDGbyvwicSB
+bC/wFSaB9GMhQvHrLAa2mdwK5WSOOcYEHbRRYCD9LksBN8jnAbdOXCPybsvmz6+2D1oX+uR3a4H/
+eyCH99n9xCPEy0ahNO6HrM+bTEL7uUgBeQ9+nsh76VYx/1ojTj+Z/poGeI9nLvzMJv9r4r+JA9k3
+2VjxgfpTNfmXIZAW53evyE9j1soJ3Vd8hfg28bPiftJzPbMRmKDEtgK/x1I6oTweNmm7kH2iOPar
+pw1K20IfmTyw7hypk6Hct9pYFNN/oDRATPQfDd+1PgeI/0gJguxHxdtk8kPqHHFTjHdBefwOyPXM
+hlMJj6klsVpghfiIwseTdCvWoNifxMtl5n1J/tmi/2dPA4r9XmRbiH34mMRCG5BOofIcZB9n3ejH
+1foHC2VI2yVysvkZj/9V60Kfk8WHU2KAtGuJyzxW9m9HahOK8XC/Tnyp3FzPbDiVcKDao9W2fqkC
+im9QHl/aPiZeKX5KPF/ku0PjQQek8yHpFJGPSfS5QnyvuEWx6hc46ezPbCnniozxaZFx+Cr3bcUS
+ZB9uXRIkcQe8XuT7Cd8n+IaSTp7alxFT+8KUbJDPT3fe7S8TmeOp0vKPKdlsCW8Q3ycyF9bAz3E+
+EeRni/Iyx5wk7EHQotgvKS63fPqwNA/wWsIxJwlzBNWNjzq8Fo19vwXSeMjwiZAC/01N42f9rKC5
+LNYzOkmYI2g+XxcBheSBs0Nkn7tVzN9lZd9sXeYCmtJiPaOThDmB5sLD9I9qO6Ecnvhvt25zAU1r
+sZ7RScIcQYXjXZk/+fBt9naRd1D+GsHbwI3iuZrz3Oy9jrF6Rmdg/6yKA/tjVRzYH6viwP5YFQf2
+x6o4sC8u7PV/1Ey6XCLbQFQAAAAASUVORK5CYII=
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/Writeforus_M1.gif
+
+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
+Ow==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/FilledStar.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAIAAAA21aCOAAAABGdBTUEAALGPC/xhBQAAAP5JREFU
+KFN9j81KAlEcxetNeoJ/MD5BK7cViG/gW/gO0QuEi0ZBFILZtRrBxRAEgdqYxm0mRSkCFxLzgYy/
+6wx6bdHlLM4X9557mmXZiXE+uueos+sX09Sc3v6EwfvCvQIQ09d3mfrtsf777QDIfz3fLiepAMjf
+nrKt1fhWtS3VtJSjSwCiZXsX2ZZ+d/xQmzYkitwk9ZJ0Y8DDJKJQ7FOv3qhxMXEkjiX50oAgMYny
+AYd/TJqleCbx0w4zQZoTi17g91VHor6snzUgSMx9tej5rctoID+uDO/KAILEPOp9zpfsXSkZ3lfy
+AILEJDrsC8Ng1KpOezfmICQmUW5uAeljZ40yQ/d2AAAAAElFTkSuQmCC
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/HalfFilledStar.png
+
+iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAABGdBTUEAALGPC/xhBQAAABh0RVh0
+U29mdHdhcmUAUGFpbnQuTkVUIHYzLjA1G8PgXAAAATtJREFUKFONkUFKw0AUhnOiWdQTuOpWF6IH
+EG/hwht4AynBNERCMLizhkboQgJuorHahrTRGFOQWAgyNWl+JyOM1kRw4G3mzTfv//8noeEEOoGm
+aU0tfif97oRTH7G9iV6vB9/3G8Ea9HC+D5rtYrl8h2VZ/4OGShsfOUFRFFBVtRkKlBaeL3YQnLQQ
+dFmdEQE5jsO9VdXv9+G6Lv9Muj/dw7hD+OOqsusKOmATKMqyRJZlSNMUsizDNM3vIIK7K3iddYwY
+tFgwaEaQ5znztYRhGBzwPE9IXQli1F3D4omBDsF8Pv/Tl4CmwwGq/dDBl8QkSfgkXdd5/D+PgIbq
+BugNwatNcHvU5pKiKEIcx1xiDXqMXngYbwEDjrdEv4qcUgpFURCG4aqnMJzCU7cxvjys7cW2bR75
+ZDIRvU91pCwnG5/LygAAAABJRU5ErkJggg==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/Discuss.gif
+
+R0lGODlhCQAJAJEAAP///9ra2gAzZgAAACH5BAAAAAAALAAAAAAJAAkAAAIUhI5iwR33UnQNykmf
+SQd4332f8hUAOw==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/briefcase.gif
+
+R0lGODlhCgAJAJEAAP///wAzZtra2gAAACH5BAAAAAAALAAAAAAKAAkAAAIUhBFxm8kNkZh0plov
+tmFzLyhQVAAAOw==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/print.gif
+
+R0lGODlhCgAJAJEAAP///wAzZtra2gAAACH5BAAAAAAALAAAAAAKAAkAAAIWBIJpFnveVmRQpnuE
+3hrxLnhfd1xKAQA7
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/feed.gif
+
+R0lGODlhEAAQAPcAAAAAANpeKtxhK95lLN1uL95wMOBqLeNuLuV0LuZ0L+d4L+JwNuF0MOJ2MeJ4
+MeN5MuR7MuV8MuZ/M+h5Mep9Met/Mul+OeB1ReR8R+eBM+iCNOiFNeqHNeyBMu6FM+6FNOuJNemI
+NuyKNvCJNPGLNfKNNfSRNvWSN/aUN/eXOPiZOfmaOfqcOfudOu+NQeqJSeiJVe6RTPKTQvabRPmd
+QfieRPmfReaLYOyWY+6aZO+dZPqiRvehUPmlUvupUvqsXvuvXvKjZvOkZ/SmZ/WpaPetafivafSs
+c/qzavi0dfu5d+6rie6ylfSygPq+g/i/jvG3l/S9mPW/mfzChPrDj/XAmPfDmfnIm/rOp/fUvvrT
+s/nXv/zZtf3atf3fwfzjzf3lzf7mzvvm2P7s2v3x5v7y5v738v748v/58////wAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAQABAA
+AAj4AP/9c+AAQgQJGTRs4ABCRAiB/ywgUEChg4cRJUygSLGCBY2BCF5EqRIEo0aOLFqo2OBAgY40
+MM9cmYFS5YkNECjEsKKFDEw0SlKqOEFCQwSLJo2MgTllKIkPEiR4GHLmC5UaK7rATPK0QoQMI4jA
+TIMGSAsuac64qDDhgYaMPJyUIfvjhE8pExI02HByxQ6tZGQcSWMmwQEGHDZ6CTPFxtwmFcykgWGg
+AIgUSGCCOfEkzZYJWdIsGUBAxAofaNJgISEkjZgEUNIwEUAgRMoeRbrmwHEAw40LAQr8o+H0A1vD
+BgYICLAA4oYNGiREeNCAQQECBIT/CwgAOw==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-FE5DDB82:http://www.sqlservercentral.com/Resources/Public.css?v=17
+
+/* Effective stylesheet produced by snapshot save */
+@import url("urn:snapshot-584A6D86:http://www.sqlservercentral.com/Resource=
+s/AutoCompleteDropdown.css");
+@import url("urn:snapshot-D7298B4F:http://www.sqlservercentral.com/Resource=
+s/ExSimpleTalk.css");
+body { font-size: 80%; }
+body, td { font-family: Arial,Helvetica,sans-serif; color: rgb(42, 42, 42);=
+ }
+h1, h2, h3 { color: rgb(0, 51, 102); font-weight: bold; }
+h1 { font-size: 160%; margin: 1em 0px 0.2em; padding: 0px; }
+h2 { font-size: 150%; margin: 1em 0px 0.2em; padding: 0px; }
+h3 { font-size: 120%; margin: 1em 0px 0.2em; padding: 0px; }
+a, .action-text { text-decoration: none; color: rgb(34, 85, 136); cursor:=
+ pointer; }
+a:hover, .action-text:hover { color: rgb(85, 119, 170); }
+h1 a, h2 a, h3 a { color: rgb(36, 52, 136); }
+p { padding: 0px; margin: 0.6em 0px; }
+.code, pre { font-size: 110%; color: black; font-family: "Courier New"; bac=
+kground-color: rgb(240, 240, 255); border: 1px dotted rgb(153, 177, 255);=
+ overflow: auto; max-height: 400px; width: 98%; }
+TABLE.DynamicContent { table-layout: fixed; }
+.content-text { line-height: 1.5; }
+img { border: medium none; }
+form { margin: 0px; padding: 0px; }
+img.SiteLogo { margin-left: 5px; }
+ul { margin: 0px; padding-left: 1.3em; list-style-position: outside; }
+body { background-color: rgb(0, 51, 102); margin: 0.8em 1.3em 0px; }
+table.MainLayoutContainer tr.BodyRow { background-color: White; }
+table.MainLayoutContainer td.TopLeft, table.MainLayoutContainer td.TopRight=
+ { background-repeat: no-repeat; border-bottom: 1px solid rgb(204, 204, 204=
+); width: 1.6em; }
+table.MainLayoutContainer td.TopLeft { background-image: url("http://www.sq=
+lservercentral.com/Resources/Images/topleftround.gif"); background-position=
+: left top; }
+table.MainLayoutContainer td.TopRight { background-image: url("http://www.s=
+qlservercentral.com/Resources/Images/toprightround.gif"); background-positi=
+on: right top; }
+table.MainLayoutContainer td.BottomLeft, table.MainLayoutContainer td.Botto=
+mRight { background-repeat: no-repeat; width: 1.6em; }
+table.MainLayoutContainer td.BottomLeft { background-image: url("http://www=
+.sqlservercentral.com/Resources/Images/botleftround.jpg"); background-posit=
+ion: left bottom; }
+table.MainLayoutContainer td.BottomRight { background-image: url("http://ww=
+w.sqlservercentral.com/Resources/Images/botrightround.jpg"); background-pos=
+ition: right bottom; }
+table.MainLayoutContainerBottom { margin-bottom: 1em; border-top: 1px solid=
+ rgb(204, 204, 204); }
+table.SiteTitleBar { padding-right: 80px; }
+TABLE.SiteTitleBar IMG { display: block; }
+TD.HeaderBar { padding: 0.9em 0px 0.4em; border-bottom: 1px solid rgb(204,=
+ 204, 204); }
+TD.HeaderBar TD { color: Black; font-family: Arial; font-weight: bolder; fo=
+nt-size: 120%; }
+TD.HeaderBar A { color: rgb(0, 51, 102); }
+TD.HeaderBar A:hover { color: rgb(34, 51, 170); text-decoration: underline;=
+ }
+DIV.Footer { color: rgb(68, 68, 68); text-align: center; margin: 10px; }
+TD.MainMenuCell { border-right: 1px solid rgb(204, 204, 204); padding-top:=
+ 1em; width: 11em; }
+DIV.MainMenu { margin-right: 1em; }
+TD.MainContentCell { padding-top: 1em; }
+TD.MainContentLeftPadding { width: 1.2em; }
+.MainMenu ul { list-style-type: none; padding: 0px; margin: 0px; }
+DIV.MainMenu A { display: block; color: rgb(0, 51, 102); font-family: Arial=
+; font-weight: bolder; font-size: 120%; margin-bottom: 0.15em; padding-left=
+: 1.5em; }
+DIV.MainMenu A.CurrentNode { background-color: rgb(0, 51, 102); color: Whit=
+e; background-image: url("http://www.sqlservercentral.com/Resources/Images/=
+barendright.gif"); background-position: right center; background-repeat: no=
+-repeat; height: 17px; }
+* > DIV.MainMenu A.CurrentNode { padding-top: 1px; }
+DIV.MainMenu A.Minor { font-weight: normal; }
+DIV.contentSummary { clear: left; margin-top: 0.7em; margin-bottom: 1.2em; }
+SPAN.Separator { margin: 0px 0.5em; color: rgb(136, 136, 136); }
+DIV.BarSpacer { height: 0.77em; clear: left; }
+DIV.Bar, DIV.BarLeft, DIV.BarRight { background-color: rgb(0, 51, 102); bac=
+kground-repeat: no-repeat; }
+DIV.Bar { font-family: Arial; font-weight: bolder; font-size: 120%; color:=
+ White; padding-right: 0.5em; }
+* > DIV.Bar { padding-top: 1px; height: 17px; }
+DIV.BarLeft, DIV.BarRight { width: 9px; height: 18px; }
+DIV.BarLeft { float: left; background-image: url("http://www.sqlservercentr=
+al.com/Resources/Images/barendleft.gif"); background-position: left top; }
+DIV.Bar DIV.Subheading, DIV.Bar SPAN.SubheadingLeft { font-weight: normal;=
+ color: rgb(168, 183, 255); }
+DIV.Bar DIV.Subheading { float: right; }
+DIV.IndentedColumn { padding: 0px 5px; }
+.SearchResult { padding-bottom: 0.7em; }
+.SearchResult .SearchType { float: left; color: rgb(0, 0, 0); border: 1px=
+ solid rgb(0, 0, 0); border-radius: 3px; font-size: 70%; }
+.SearchResult .SearchType.article { background-color: rgb(153, 153, 255);=
+ }
+.SearchResult .SearchType.forum { background-color: rgb(255, 238, 102); }
+.SearchResult .SearchType div { padding: 1px 0px 0px; margin: -1px 0px 0px;=
+ background-color: transparent; background-position: 0px 1px; background-re=
+peat: repeat-x; width: 5em; font-size: 120%; font-weight: bold; text-align:=
+ center; }
+html > body .SearchResult .SearchType div { background-image: url("http://w=
+ww.sqlservercentral.com/Resources/Images/taggradient.png"); }
+.SearchResult .SearchDetails, .IndentedTagColumn { padding-left: 5em; }
+.SearchResult .SearchDetails h3 { margin: 0px; }
+.SearchDetails ul.byline { overflow: auto; margin: 0px 0px 0.5em; padding:=
+ 0px; list-style-type: none; color: rgb(102, 102, 102); }
+.SearchDetails ul.byline li { display: block; float: left; margin: 0px 1em=
+ 0px 0px; padding: 0px; }
+.SearchHint { color: rgb(153, 153, 153); }
+.content-meta { padding: 8px 0px 0px; border-bottom: 1px solid rgb(221, 221=
+, 221); margin-bottom: 20px; font-size: 0.9em; }
+.content-meta ul, .content-meta ul li { margin: 0px; padding: 0px; list-sty=
+le-type: none; }
+.content-meta ul { padding-bottom: 5px; }
+.content-meta ul li { display: inline; padding-left: 5px; border-left: 1px=
+ solid rgb(204, 204, 204); margin-right: 5px; }
+.content-meta ul li:first-child { padding-left: 0px; border-left: medium no=
+ne; }
+.content-meta .share-tools { float: right; margin: 0px; }
+div.addthis_toolbox p { float: left; margin: 0px; padding: 0px 3px 5px 0px;=
+ font-weight: bold; }
+.content-views { clear: both; position: relative; top: -10px; text-align:=
+ right; font-size: 0.85em; padding: 0px 20px 10px 0px; }
+#colorbox, #cboxOverlay, #cboxWrapper { position: absolute; top: 0px; left:=
+ 0px; z-index: 9999; overflow: hidden; }
+#cboxOverlay { position: fixed; width: 100%; height: 100%; left: 0px; right=
+: 0px; }
+#cboxMiddleLeft, #cboxBottomLeft { clear: left; }
+#cboxContent { position: relative; }
+#cboxLoadedContent { overflow: auto; }
+#cboxTitle { margin: 0px; }
+#cboxLoadingOverlay, #cboxLoadingGraphic { position: absolute; top: 0px; le=
+ft: 0px; width: 0px; }
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow { cursor: pointer; }
+#cboxOverlay { background-color: rgb(0, 0, 0); }
+#cboxLoadedContent { margin-bottom: 2em; }
+#cboxClose { position: absolute; bottom: 0px; display: block; color: rgb(34=
+, 85, 136); width: 100%; text-align: center; padding: 0.5em; }
+#colorbox { border: 3px solid rgb(221, 221, 221); background-color: rgb(255=
+, 255, 255); display: inline; }
+.add-to-briefcase-div::before { content: ""; display: block; position: abso=
+lute; top: -15px; left: 50px; width: 0px; height: 0px; border-width: 0px 15=
+px 15px; border-style: solid; border-color: rgb(153, 153, 153) transparent;=
+ z-index: 10000; }
+.add-to-briefcase-div::after { content: ""; display: block; position: absol=
+ute; top: -14px; left: 50px; width: 0px; height: 0px; border-width: 0px 15p=
+x 15px; border-style: solid; border-color: rgb(243, 243, 243) transparent;=
+ z-index: 10001; }
+#corner-peel { position: relative; top: 0px; right: 0px; }
+#corner-peel img { z-index: 99; position: absolute; right: 0px; top: 0px;=
+ width: 82px; height: 82px; overflow: hidden; }
+#corner-peel-behind { position: absolute; z-index: 50; right: 0px; top: 0px=
+; background: transparent url("http://www.sqlservercentral.com/Resources/Im=
+ages/advertising/corner-peel-behind.gif") no-repeat scroll right top; text-=
+indent: -9999px; width: 80px; height: 80px; overflow: hidden; }
+body { margin: 0px; background-color: rgb(0, 51, 102); padding-top: 0px; }
+#whole-site-wrapper { padding: 0.8em 1.3em 0px; }
+.text-fragment-wrapper { overflow: hidden; }
+#LeftSidebarSignupWrapper { margin-top: 0.75em; width: 10em; overflow: hidd=
+en; }
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-584A6D86:http://www.sqlservercentral.com/Resources/AutoCompleteDropdown.css
+
+/* Effective stylesheet produced by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-D7298B4F:http://www.sqlservercentral.com/Resources/ExSimpleTalk.css
+
+/* Effective stylesheet produced by snapshot save */
+DIV.SimpleTalk #pretty P.start::first-letter { font-size: 280%; float: left=
+; line-height: 100%; }
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/topleftround.gif
+
+R0lGODlhFAAUAMQAAAM1aKi5yxJBcbHB0O3x9JCmvPn6+3iTrgk6a1d5mlR2mDZehpOpvszW4OHn
+7YGas3uVsAw9bXWRrB5LeISdtdLb5Ofs8dXd5vz9/fP1+BtJdgAzZv///wAAAAAAAAAAACH5BAAA
+AAAALAAAAAAUABQAAAVM4CaOJDlJQYNxZSs8FSfP7RhB2ayztWLtuxagAASWEIOicQRIKoMj4hO6
+SUyXAsIVytgGNQavbkMR6wAO82yhnh3asgCcc5lr4WF4CAA7
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/toprightround.gif
+
+R0lGODlhFAAUAMQAAAM1aJCmvLHB0O3x9Pn6+xJBcXWRrAw9bai5y+fs8dXd5vP1+Ku8zTZehszW
+4IGas3iTrnuVsJOpvuHn7fz9/Qk6a1R2mISdtRtJdtLb5Fd5mh5LeAAzZv///wAAAAAAACH5BAAA
+AAAALAAAAAAUABQAAAVQYEc5jLFxaKqqXetmT7HObt0t0TGntp1YO06vFwDQhjZBZYXsCYy8pi3A
+kto0UatrIBNqaxLUt0bAeMetyxk9AaBrjbcLIm8h6h0FfoAnhAAAOw==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/botleftround.jpg
+
+/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/b
+AIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxsc
+Hx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f
+Hx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgAFAAUAwERAAIRAQMRAf/EAHoAAAIDAAAAAAAAAAAAAAAA
+AAAIBQcJAQADAQEAAAAAAAAAAAAAAAAAAgUGBBAAAQEGAgUNAAAAAAAAAAAAAQIAERIDBAUTFEFR
+IgYHIXEyYpIjQ2QVJRYIGBEAAQMDBAMAAAAAAAAAAAAAAAECBBEhYRIiAxNRgWL/2gAMAwEAAhED
+EQA/AGV3WvMm97t2u7yVBUuvpZU940FaAVDnBeCz8jdLlTwKx2pqKSjIMDACzfW3i/R26Wncu/Tx
+IplzCqzVcwuQlcwvVTqJ5EhSjEg6yRpDVZsZV3t9k2Hzom1RmWlFIGAM4205nRlOCf6DyFO7B+O7
+OB69iR4fl4O/dD0YtjU0uV01+sFKN3Uxkv8A9zyPg593XwYn9pzmm2rg770P/9k=
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/botrightround.jpg
+
+/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAPAAA/+4ADkFkb2JlAGTAAAAAAf/b
+AIQABgQEBAUEBgUFBgkGBQYJCwgGBggLDAoKCwoKDBAMDAwMDAwQDA4PEA8ODBMTFBQTExwbGxsc
+Hx8fHx8fHx8fHwEHBwcNDA0YEBAYGhURFRofHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8f
+Hx8fHx8fHx8fHx8fHx8fHx8f/8AAEQgAFAAUAwERAAIRAQMRAf/EAHQAAQEBAAAAAAAAAAAAAAAA
+AAYIAAEBAQEAAAAAAAAAAAAAAAAAAwUAEAAAAwMKBAcBAAAAAAAAAAABERIAExQhUQIiAwUVBhYX
+MUEjBGEyYnJDU0QHEQABBAEFAQAAAAAAAAAAAAAAARESAxMxQWECIkL/2gAMAwEAAhEDEQA/AKpb
+GM2MF9ZdluRpF4ERhccXqfJR7kVimZcS45chZEnHgUMQoezznm4cmXDbXve9sFGjRAQ7btgEHtva
+lJZ2YcxHmPAAlFlqqXurIHbanRHUjDcvMe4mulhisTEOzFDskOJ0OunOXi1zB1hDYjZlnPcsfO25
+UJT0dhb4v3vlkUqE1FHwVI0SrG/pyxZP5Yjb+kbh6hp65isVIURPkQfwI6Ts/rqtbohHxoR7pv61
+CrMEf//Z
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/barendright.gif
+
+R0lGODlhCAASAPcAAAAsWAAvXAAvXQUuWAAwYQAyYwAzZhA5YRE6YhA9ahE+ayNHaiRIazJbhDNc
+hTthhzxiiGmEn2WEomaFo2qFoLfF0rnG07rI1bvJ1r/L2MHN2dne5dvg5v3+/v///wAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAIABIA
+AAhfAB1MsOChYMECBQhA4GDQAEICCjQUNOCQgAAEDCkmtAjBg0YCFgFg+BiSwkcBAgAwOJlywMkA
+AFxWRAlgAcmUEW4CuHDzQYeTBzb8fJggQ4cODx8I7eChgYQKR5l6CAgAOw==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/barendleft.gif
+
+R0lGODlhCAASAPcAAAAsWAAvXAAvXQUuWAAwYQAyYwAzZhA5YRE6YhA9ahE+ayNHaiRIazJbhDNc
+hTthhzxiiGmEn2WEomaFo2qFoLfF0rnG07rI1bvJ1r/L2MHN2dne5dvg5v3+/v///wAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAIABIA
+AAhgAD0IFGhhgoOBHCAQKFBAoAYFCwsY8MABgYCFBiZCuIjRAAYAHCUaoACSQEcGIC+KHJCyI8sA
+KjMuaCkyQsmOF26K7PAgZMYOGw7ENNChQ4YEEScW3fAgosCiHSpIaBAQADs=
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/taggradient.png
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAAKCAYAAAB10jRKAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABd0RVh0
+U29mdHdhcmUAUGFpbnQuTkVUIHYzLjW9RaPJAAAAJElEQVQYV2P4DwQMQPwKRFwFEQdAxCoQMRVE
+NICIbBARCiIcAK82JCB94w8qAAAAAElFTkSuQmCC
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/Resources/Images/advertising/corner-peel-behind.gif
+
+R0lGODlhMwE0Aff/AOrx/+7u7tjY2Ofn5/zT039/f9QoKPzc3M3Nze8REWmb/9/f3+ygoMTY/+Df
+3/u7u/vKyvvDw+N1ddEYGP7+/uaCgtbW1nWj/+Hh4dnm/zV5/vmjo8vLy+Pi4vq0tPmpqdzm5vmd
+nRZk//74+PDw8HBwcJq8/uLr/0mG/v709PAiIvEtLfAbG/RiYvNRUf7x8feCgvVsbPJDQ/iUlPZ1
+dfb29qXD//Z8fPLy8tzc3P7t7dLS0vE0NPNKSurq6vI7O/T4/+8NDfj4+PRdXfr6+vLAwOFpaf32
+6FSN/9pERfeIiN9fX+4BAfTLy/K7u95WVv3l5f7p6f3g4Ozs7O8WFr3T/vD1/+mSkveMjCxy/8XF
+xdTU1M/Pz//7+yFr/12T/rLL/oCr//XS0sTU1Ork13l5eQlb/+Tk5P/87Iyz/9y5ufiRkXR0dKG6
+6qm03sDAwPAnJ9g2NvvX1+LLy+8ICNPb21Nk1NjUy//+9udBQetWVvn7/8zc/vr8/9rY09fKyu/v
+7/Ls3+yxsdfJ4uW+vvnh4f+GhlOI8m6Y67vK6dHU29zv7+Ld0+Hp6e3f3/zPz5Gp2NzV1fVwcPz9
+/+zp5fXl5fn///Wnp+Lm5oGk6tva2viYmODZ2fXw6M7X1/T4+D9/////+/f39+/t6MLFzK6/4srN
+zfZ4eOHR0fg0NOfk3+Tg3fb18N3i5PVUVOzv79HR0ev29tXV1dTU1v9EO/X19ejo6OUKCqioqPz8
+/F9fX01NTY2NjZubm+bl5f39/fT09Orp6bS0tOnp6ePj4+no6Pz9/e3t7fHx8enq6ufm5vf29t/d
+1/n5+WVbvuPl6fgqKuS3xvb19YyH0omV47GazOXl5f+wqv+rmu3r593d3d/e3uvY2MrLztGdnbbB
+1dDi4tHg/8XIzszKxvmursDH1uzv9c8yS9fe4f9hUpKt4vTy8fj28vAfH8Ncf/+LgNPT0/RXV9fV
+0tXW1+vr6+nt7f/Etf81J/P8/PRaWuQFBfVnZzc3N8wAAP///////yH/C05FVFNDQVBFMi4wAwEA
+AAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVT
+ek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9
+IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAg
+ICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIy
+LXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1w
+TU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8v
+bnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6
+Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRp
+ZDozMjA1MzIwOC03YTk4LTRmNzgtYjY4OS0xYjllZDc4OGJlZjkiIHhtcE1NOkRvY3VtZW50SUQ9
+InhtcC5kaWQ6QTNDOTEzNzA4NjE0MTFFNUEwNjZENkUwNUQ2RkVDQ0QiIHhtcE1NOkluc3RhbmNl
+SUQ9InhtcC5paWQ6QTNDOTEzNkY4NjE0MTFFNUEwNjZENkUwNUQ2RkVDQ0QiIHhtcDpDcmVhdG9y
+VG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZl
+ZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyMDU1OTYzMi03NWIyLTQ3YjItOWVhMC02
+OTZhZGFjN2UwZmYiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDplN2Q5
+YjdhNS1jZTdkLTExNzgtYTA5ZS1lZGRkNThjYjRjMDciLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwv
+cmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4B//79/Pv6+fj39vX08/Lx
+8O/u7ezr6uno5+bl5OPi4eDf3t3c29rZ2NfW1dTT0tHQz87NzMvKycjHxsXEw8LBwL++vby7urm4
+t7a1tLOysbCvrq2sq6qpqKempaSjoqGgn56dnJuamZiXlpWUk5KRkI+OjYyLiomIh4aFhIOCgYB/
+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
+AAEC4EINEAKIDuQ6JBb4hwOG0eaAAAA7
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-F7A235C1:http://www.sqlservercentral.com/shared/google-prettify/prettify.css?v=2
+
+/* Effective stylesheet produced by snapshot save */
+.pln { color: rgb(0, 0, 0); }
+.kwd { color: rgb(0, 0, 255); }
+.kwd3 { color: rgb(128, 128, 128); }
+.com { color: rgb(0, 128, 0); }
+.lit { color: rgb(0, 0, 0); }
+.pun, .opn, .clo { color: rgb(128, 128, 128); }
+@media print {
+  .kwd { color: rgb(0, 0, 102); font-weight: bold; }
+  .com { color: rgb(102, 0, 0); font-style: italic; }
+  .lit { color: rgb(0, 68, 68); }
+  .pun { color: rgb(68, 68, 0); }
+  .pln { color: rgb(0, 0, 0); }
+}
+pre.prettyprint { padding: 2px; border: 1px solid rgb(136, 136, 136); min-h=
+eight: 35px; height: auto; }
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: image/x-icon
+Content-Transfer-Encoding: base64
+Content-Location: http://www.sqlservercentral.com/favicon.ico
+
+AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8AMy4AMjUxAH1KQQBuS0AALP///wD/
+//8A////AP///wD///8A////AADd73AA3+9A////AP///wA7OwANNi8AiTYvAMg2MACWSUAAhEpA
+ALBKPwB5RkYAC////wD///8AAO//QADx/3AA3O7/AOH0/wDl+a8ALABMNS4AuzYvAMg2LwDINjAA
+lklAAIRKQACwSkAAsEo/AKUPPQBDAOX5rwDr/P8A8v//AN/zQADl+c8A5fn/ANvt+QB8bMg2LwDI
+Ni8AyDYwAJZJQACESkAAsEpAALAAh3C2AN3t9wDl+f8A5fnPAOv7QP///wA2LgBkAIuAzgDb7fkA
+5fn/AEortjYvAMg2MACWSUAAhEpAALAAVCedAOX5/wDd7fcAlYW+SEAAWP///wD///8ANi4AZDYv
+AMgJKwCwAIuAziEuALw1LgC7NjAAS0lCAEJKPwClMT4ApQCVhb4XOwCbSkAAsEhAAFj///8A////
+ADYuAGQ2LwDINi8AyDYvAMg2MACWSkQALWFUAHZhVAB2VUkAKklAAIRKQACwSkAAsEpAALBIQABY
+////AP///wA2LgBkNi8AyDUuALs8NQBIYlUAY2JWAJ5iVgCeYlYAnmJWAJ5iVQBjTkMAQUo/AKVK
+QACwSEAAWP///wD///8ANi4AZDQvAIlcTgBbYlYAlGJWAJ5iVgCeYlYAnmJWAJ5iVgCeYlYAnmJW
+AJRgUgBaSj8AeUhAAFj///8A////AACvrFBDUwCBYlYAnmJWAJ5iVgCeYlYAnmJWAJ5iVgCeYlYA
+nmJWAJ5iVgCeYlYAnkJUAIAAw7lN////AP///wAA3O7/ANbk9T1SAGRiVgCeYlYAnmJWAJ5iVgCe
+YlYAnmJWAJ5iVgCeYlYAnjtSAGMA6/X1APL//////wD///8AAN3vcADf7yD///8AZlUAHmFUAHZi
+VgCeYlYAnmJWAJ5iVgCeYVQAdmZVAB7///8AAO//IADx/3D///8A////AP///wD///8A////AP//
+/wD///8AZlcAMmJVAIpiVQCKZlcAMv///wD///8A////AP///wD///8A////AP///wD///8A////
+AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A
+////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/
+//8A//8AAP//AAD4PwAAEAgAAIABAADAAwAAwYMAAMPDAADMMwAA0A8AAMADAACQCQAA/D8AAP5/
+AAD//wAA//8AAA==
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-9A12E15A:http://www.red-gate.com/tracking/hubspot?url=http%3A%2F%2Fwww.sqlservercentral.com%2Farticles%2FSQL%2BTrace%2F71693%2F
+
+<!DOCTYPE html><html><head>
+<meta http-equiv=3D"content-type" content=3D"text/html; charset=3DUTF-8">
+    <title>HubSpot tracking on Redgate.com</title>
+    <meta name=3D"robots" content=3D"noindex">
+<style type=3D"text/css"><!--
+
+/* Effective stylesheet produced by snapshot save */
+
+#lleo_dialog *::before, #lleo_dialog *::after { content: ""; }
+
+--></style></head>
+<body>
+
+    <script type=3D"text/javascript"><!--
+
+/* Script removed by snapshot save */
+
+--></script>
+
+
+</body></html>
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-6BE57877:http://www.sqlservercentral.com/sqlservercentral2/Resources/WideImageHandler.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-7BF443ED:http://code.jquery.com/jquery-1.3.2.min.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-312A9935:http://www.sqlservercentral.com/shared/jquery/jquery.corners.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-8238A240:http://www.sqlservercentral.com/shared/jquery/jquery.hint.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-865AD68C:http://www.sqlservercentral.com/shared/jquery/jquery-ui-1.8.11.autocomplete.min.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-8B55EB0E:http://www.sqlservercentral.com/shared/google-prettify/prettify.js?v=2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-C44B5D55:http://www.sqlservercentral.com/shared/google-prettify/lang-sql.js?v=2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-900DBE49:http://www.sqlservercentral.com/shared/google-prettify/lang-vb.js?v=2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-9EC963C4:http://www.sqlservercentral.com/Resources/global.js?cache-buster=2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-CE816CBF:http://www.sqlservercentral.com/Resources/js/ext/jquery.colorbox-min.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-E2C84D0D:http://www.sqlservercentral.com/Resources/js/ssc.js?v=2
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: application/x-javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-70EC6610:http://www.sqlservercentral.com/Resources/js/Controls/Briefcase.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-A3198DA5:http://www.sqlservercentral.com/sqlservercentral2/WebResource.axd?d=55u9VXyuKJvSGOO0bukMA4XOeFV0Yf23HdzNlbB1DjAoR-QvoDde7RSPG5Eakq-7BNwEoFpeKKl8YTSk0&t=635588366811475957
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-BC653FAD:http://www.sqlservercentral.com/Resources/js/Controls/HelpTooltip.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-15975CD9:http://www.sqlservercentral.com/sqlservercentral2/Controls/IFramePopupExtender/IFramePopupController.js
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-DE322075:http://www.sqlservercentral.com/sqlservercentral2/ScriptResource.axd?d=kZ6V7uZAgzQ_kK_nArZitODdSa24fKrkrNHB5nekXA2S-WNH0kRE_nN-curNa9MG3yYWuM5zOSCZuBM8Mu2SHGWCtV7c0wsuQCanuSQPMnaqARpOOHBmSIMclb06UxfmPZiYavK01eI6ktPH6-TfxPIh7n81&t=fffffffff98cfb72
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4
+Content-Type: text/javascript
+Content-Transfer-Encoding: quoted-printable
+Content-Location: urn:snapshot-7239EFDE:http://www.sqlservercentral.com/sqlservercentral2/ScriptResource.axd?d=nFjxI3nGwslifW_-CUmTxjUWQv50JU8plNxHbwieJ7yk7oCoQOom46Tn3aQ-_-HuGxZ6JP6qWHJBy--8cUYNnmS8Z5NWYWU_jHTB_Pil9MtADoymnqKrGHbuN8x7mV425ii1Cayp9v7IsBGlh1IQhs656ydvzG8uIFL8YQ2&t=fffffffff98cfb72
+
+/* Script removed by snapshot save */
+
+------=_NextPart_000_0000_2A429B38.87024AC4--
