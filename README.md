@@ -124,6 +124,7 @@ Headers:
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
  - Free Videos
+   - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
    - [SQL Server Videos](http://www.sqlservervideos.com/)
@@ -188,6 +189,8 @@ Headers:
     - [tSQLt testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
     - [T-SQL SimMetrics string matching algorithms](https://github.com/GuerrillaAnalytics/similarity) (Github)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
+    - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
+    - [Azure Blob Storage Backup](https://github.com/bornsql/azureblobstoragesync) (by Randolph West) (Github)
 
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
