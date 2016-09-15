@@ -2,9 +2,10 @@
 
 Official Reference and useful links
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
+ - [Subjectivity : Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
- - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL)
- - [SQL Style Guide](http://www.sqlstyle.guide/) (Simon Holywell)
+ - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
+ - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
  - [SQL Code Layout and Beautification](https://www.simple-talk.com/sql/t-sql-programming/sql-code-layout-and-beautification/) (by William Brewer)
  - [TSQL Coding Style](http://www.databasejournal.com/features/mssql/tsql-coding-style.html) (by Gregory Larsen)
  - [Database object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
