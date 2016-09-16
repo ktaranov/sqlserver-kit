@@ -165,6 +165,13 @@ Headers:
    - [2008 R2 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
    - [2008 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.100).aspx)
    - [2005 Backwards Compatibility](http://technet.microsoft.com/en-us/library/ms143532(v=sql.90).aspx)
+ - Social, Forum and Messenger SQL Server Groups
+   - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
+   - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 700 People)
+   - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 70 People)
+   - [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
+   - [SQL.ru SQL Server Forum](http://www.sql.ru/forum/microsoft-sql-server) (more than 10^5 People, Russian)
+   - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - Best backup and index maintenance solution [Ola Maintenance Solution](https://ola.hallengren.com/)
