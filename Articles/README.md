@@ -54,6 +54,9 @@
 | [Dynamically Query a 100 Million Row Table-Efficiently]                           | Gary Strange                             | 2016-05-27 |
 | [SQL Server 2016 Upgrade Planning]                                                | Jen Underwood                            | 2016-06-28 |
 | [Graphs and Graph Algorithms in T-SQL]                                            | Hans Olav Norheim                        | 2010-05-22 |
+| [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]            | Sanjay Mishra                            | 2016-07-12 |
+| [How to Set Max Degree of Parallelism in SQL Server]                              | Kendra Little                            | 2016-07-14 |
+| [Undocumented Query Plans: Equality Comparisons]                                  |  Paul White                              | 2016-06-22 |
 
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -107,3 +110,6 @@
 [Dynamically Query a 100 Million Row Table-Efficiently]:http://www.sqlservercentral.com/articles/T-SQL/121906/
 [SQL Server 2016 Upgrade Planning]:http://sqlmag.com/sql-server/sql-server-2016-upgrade-planning-0
 [Graphs and Graph Algorithms in T-SQL]:http://www.hansolav.net/sql/graphs.html
+[Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]:https://blogs.msdn.microsoft.com/sqlcat/2016/07/12/sqlsweet16-episode-4-sql-server-r-services-makes-you-a-smarter-t-sql-developer/
+[How to Set Max Degree of Parallelism in SQL Server]:http://www.littlekendra.com/2016/07/14/max-degree-of-parallelism-cost-threshold-for-parallelism/
+[Undocumented Query Plans: Equality Comparisons]:http://sqlblog.com/blogs/paul_white/archive/2011/06/22/undocumented-query-plans-equality-comparisons.aspx
