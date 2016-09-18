@@ -1,63 +1,65 @@
 # Microsoft SQL Server Articles
 
 
-| Title                                                                             | Author                                   | Modified   |
-|-----------------------------------------------------------------------------------|------------------------------------------|------------|
-| [SQL Server Index Design Guide]                                                   | Microsoft                                | ?          |
-| [SQL Server 2012 Security Best Practices - Microsoft]                             | Bob Beauchemin                           | 2012-01-15 |
-| [Help, my database is corrupt. Now what?]                                         | Gail Shaw                                | 2010-04-23 |
-| [Understanding how SQL Server executes a query]                                   | Remus Rusanu                             | 2016-04-15 |
-| [What to Do When DBCC CHECKDB Reports Corruption]                                 | Brent Ozar                               | 2016-05-19 |
-| [Troubleshooting SQL Server CPU Performance Issues]                               | Joe Sack                                 | 2013-05-28 |
-| [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                | Paul Randal                              | 2016-04-06 |
-| [High Performance T-SQL using Code Patterns]                                      | Dwain Camps                              | 2015-05-27 |
-| [SQL Server Database Corruption Repair]                                           | Steve Stedman                            | 2015-08-26 |
-| [Basic SQL Server Performance Troubleshooting For Developers]                     | Tony Davis                               | 2015-08-14 |
-| [The Curse and Blessings of Dynamic SQL]                                          | Erland Sommarskog                        | 2015-04-14 |
-| [Dynamic Search Conditions in T-SQL]                                              | Erland Sommarskog                        | 2015-11-15 |
-| [Slow in the Application, Fast in SSMS]                                           | Erland Sommarskog                        | 2013-08-30 |
-| [How to share data between stored procedures]                                     | Erland Sommarskog                        | 2013-11-02 |
-| [Arrays and Lists in SQL Server 2008]                                             | Erland Sommarskog                        | 2012-07-01 |
-| [Giving Permissions through Stored Procedures]                                    | Erland Sommarskog                        | 2011-12-31 |
-| [Error and Transaction Handling in SQL Server]                                    | Erland Sommarskog                        | 2015-05-03 |
-| [SQL Server Columnstore Articles]                                                 | Niko Neugebauer                          | 2016-05-09 |
-| [Documentation: It Does not Suck!]                                                | Jes Schultz Borland                      | 2013-01-15 |
-| [The Data Loading Performance Guide]                                              | Thomas Kejser, Peter Carlin, Stuart Ozer | 2009-01-15 |
-| [Required Testing for Installing SQL Server Cumulative Updates and Service Packs] | Kendra Little                            | 2016-04-28 |
-| [Stop Shrinking Your Database Files. Seriously. Now.]                             | Brent Ozar                               | 2009-08-19 |
-| [How to shrink a database in 4 easy steps]                                        | Andy Mallon                              | 2016-04-28 |
-| [Introduction to the Index Operational Statistics Dynamic Management Function]    | Tim Ford                                 | 2016-04-26 |
-| [Updating Statistics in SQL Server: Maintenance Questions & Answers]              | Kendra Little                            | 2016-04-18 |
-| [Overcoming Variable Limitations in SQLCmd Mode]                                  | Robert L Davis                           | 2015-11-23 |
-| [Contents of a Run Book]                                                          | Microsoft                                | 2002-11-12 |
-| [Compressed and Encrypted Backups on the Cheap]                                   | Randolph West                            | 2015-04-19 |
-| [Curing Data-Obesity in OLTP Databases]                                           | Feodor Georgiev                          | 2015-02-06 |
-| [Understanding GRANT, DENY, and REVOKE in SQL Server]                             | K. Brian Kelley                          | 2013-02-27 |
-| [Monitor SQL Server Transaction Log File Free Space]                              | Mike Eastland                            | 2015-05-12 |
-| [Dynamically Query a 100 Million Row Table-Efficiently]                           | Gary Strange                             | 2016-05-27 |
-| [Understanding and Using Parallelism in SQL Server]                               | Paul White                               | 2011-03-03 |
-| [Diagnosing and Resolving Latch Contention on SQL Server]                         | Microsoft                                | 2014-02-28 |
-| [Parallel Execution Plans – Branches and Threads]                                 | Paul White                               | 2013-10-07 |
-| [Nasty Fast PERCENT_RANK]                                                         | Alan Burstein                            | 2016-06-07 |
-| [Looking at VIEWs, Close Up]                                                      | Joe Celko                                | 2016-05-10 |
-| [SQL Server 2016: It Just Runs Faster]                                            | Thomas LaRock                            | 2016-06-01 |
-| [TSQL JOIN Types Poster]                                                          | Steve Stedman                            | 2015-05-28 |
-| [It is Hard To Destroy Data]                                                      | Michael J Swart                          | 2015-05-20 |
-| [How to transfer logins and passwords between instances of SQL Server]            | Microsoft                                | 2013-12-07 |
-| [Finding File Growths with Extended Events]                                       | Andy Galbraith                           | 2016-06-13 |
-| [Questions You Should Ask About the Databases You Manage]                         | Brent Ozar                               | 2016-06-16 |
-| [Clustered Indexes in SQL Server]                                                 | Derik Hammer                             | 2016-06-22 |
-| [Triage Quiz: Is Your SQL Server Safe?]                                           | Angie Rudduck                            | 2016-06-15 |
-| [Why Not Just Create Statistics?]                                                 | Erik Darling                             | 2016-07-14 |
-| [Understanding the SQL Server NOLOCK hint]                                        | Greg Robidoux                            | 2011-08-16 |
-| [Recover access to a SQL Server instance]                                         | Aaron Bertrand                           | 2012-08-30 |
-| [Dynamically Query a 100 Million Row Table-Efficiently]                           | Gary Strange                             | 2016-05-27 |
-| [SQL Server 2016 Upgrade Planning]                                                | Jen Underwood                            | 2016-06-28 |
-| [Graphs and Graph Algorithms in T-SQL]                                            | Hans Olav Norheim                        | 2010-05-22 |
-| [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]            | Sanjay Mishra                            | 2016-07-12 |
-| [How to Set Max Degree of Parallelism in SQL Server]                              | Kendra Little                            | 2016-07-14 |
-| [Undocumented Query Plans: Equality Comparisons]                                  |  Paul White                              | 2016-06-22 |
-
+| Title                                                                                               | Author                                   | Modified   |
+|-----------------------------------------------------------------------------------------------------|------------------------------------------|------------|
+| [SQL Server Index Design Guide]                                                                     | Microsoft                                | ?          |
+| [SQL Server 2012 Security Best Practices - Microsoft]                                               | Bob Beauchemin                           | 2012-01-15 |
+| [Help, my database is corrupt. Now what?]                                                           | Gail Shaw                                | 2010-04-23 |
+| [Understanding how SQL Server executes a query]                                                     | Remus Rusanu                             | 2016-04-15 |
+| [What to Do When DBCC CHECKDB Reports Corruption]                                                   | Brent Ozar                               | 2016-05-19 |
+| [Troubleshooting SQL Server CPU Performance Issues]                                                 | Joe Sack                                 | 2013-05-28 |
+| [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                                  | Paul Randal                              | 2016-04-06 |
+| [High Performance T-SQL using Code Patterns]                                                        | Dwain Camps                              | 2015-05-27 |
+| [SQL Server Database Corruption Repair]                                                             | Steve Stedman                            | 2015-08-26 |
+| [Basic SQL Server Performance Troubleshooting For Developers]                                       | Tony Davis                               | 2015-08-14 |
+| [The Curse and Blessings of Dynamic SQL]                                                            | Erland Sommarskog                        | 2015-04-14 |
+| [Dynamic Search Conditions in T-SQL]                                                                | Erland Sommarskog                        | 2015-11-15 |
+| [Slow in the Application, Fast in SSMS]                                                             | Erland Sommarskog                        | 2013-08-30 |
+| [How to share data between stored procedures]                                                       | Erland Sommarskog                        | 2013-11-02 |
+| [Arrays and Lists in SQL Server 2008]                                                               | Erland Sommarskog                        | 2012-07-01 |
+| [Giving Permissions through Stored Procedures]                                                      | Erland Sommarskog                        | 2011-12-31 |
+| [Error and Transaction Handling in SQL Server]                                                      | Erland Sommarskog                        | 2015-05-03 |
+| [SQL Server Columnstore Articles]                                                                   | Niko Neugebauer                          | 2016-05-09 |
+| [Documentation: It Does not Suck!]                                                                  | Jes Schultz Borland                      | 2013-01-15 |
+| [The Data Loading Performance Guide]                                                                | Thomas Kejser, Peter Carlin, Stuart Ozer | 2009-01-15 |
+| [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                   | Kendra Little                            | 2016-04-28 |
+| [Stop Shrinking Your Database Files. Seriously. Now.]                                               | Brent Ozar                               | 2009-08-19 |
+| [How to shrink a database in 4 easy steps]                                                          | Andy Mallon                              | 2016-04-28 |
+| [Introduction to the Index Operational Statistics Dynamic Management Function]                      | Tim Ford                                 | 2016-04-26 |
+| [Updating Statistics in SQL Server: Maintenance Questions & Answers]                                | Kendra Little                            | 2016-04-18 |
+| [Overcoming Variable Limitations in SQLCmd Mode]                                                    | Robert L Davis                           | 2015-11-23 |
+| [Contents of a Run Book]                                                                            | Microsoft                                | 2002-11-12 |
+| [Compressed and Encrypted Backups on the Cheap]                                                     | Randolph West                            | 2015-04-19 |
+| [Curing Data-Obesity in OLTP Databases]                                                             | Feodor Georgiev                          | 2015-02-06 |
+| [Understanding GRANT, DENY, and REVOKE in SQL Server]                                               | K. Brian Kelley                          | 2013-02-27 |
+| [Monitor SQL Server Transaction Log File Free Space]                                                | Mike Eastland                            | 2015-05-12 |
+| [Dynamically Query a 100 Million Row Table-Efficiently]                                             | Gary Strange                             | 2016-05-27 |
+| [Understanding and Using Parallelism in SQL Server]                                                 | Paul White                               | 2011-03-03 |
+| [Diagnosing and Resolving Latch Contention on SQL Server]                                           | Microsoft                                | 2014-02-28 |
+| [Parallel Execution Plans – Branches and Threads]                                                   | Paul White                               | 2013-10-07 |
+| [Nasty Fast PERCENT_RANK]                                                                           | Alan Burstein                            | 2016-06-07 |
+| [Looking at VIEWs, Close Up]                                                                        | Joe Celko                                | 2016-05-10 |
+| [SQL Server 2016: It Just Runs Faster]                                                              | Thomas LaRock                            | 2016-06-01 |
+| [TSQL JOIN Types Poster]                                                                            | Steve Stedman                            | 2015-05-28 |
+| [It is Hard To Destroy Data]                                                                        | Michael J Swart                          | 2015-05-20 |
+| [How to transfer logins and passwords between instances of SQL Server]                              | Microsoft                                | 2013-12-07 |
+| [Finding File Growths with Extended Events]                                                         | Andy Galbraith                           | 2016-06-13 |
+| [Questions You Should Ask About the Databases You Manage]                                           | Brent Ozar                               | 2016-06-16 |
+| [Clustered Indexes in SQL Server]                                                                   | Derik Hammer                             | 2016-06-22 |
+| [Triage Quiz: Is Your SQL Server Safe?]                                                             | Angie Rudduck                            | 2016-06-15 |
+| [Why Not Just Create Statistics?]                                                                   | Erik Darling                             | 2016-07-14 |
+| [Understanding the SQL Server NOLOCK hint]                                                          | Greg Robidoux                            | 2011-08-16 |
+| [Recover access to a SQL Server instance]                                                           | Aaron Bertrand                           | 2012-08-30 |
+| [Dynamically Query a 100 Million Row Table-Efficiently]                                             | Gary Strange                             | 2016-05-27 |
+| [SQL Server 2016 Upgrade Planning]                                                                  | Jen Underwood                            | 2016-06-28 |
+| [Graphs and Graph Algorithms in T-SQL]                                                              | Hans Olav Norheim                        | 2010-05-22 |
+| [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]                              | Sanjay Mishra                            | 2016-07-12 |
+| [How to Set Max Degree of Parallelism in SQL Server]                                                | Kendra Little                            | 2016-07-14 |
+| [Undocumented Query Plans: Equality Comparisons]                                                    | Paul White                               | 2016-06-22 |
+| [Simplified Order Of Operations]                                                                    | Michael J. Swart                         | 2016-07-20 |
+| [SQL Server Statistics Basics]                                                                      | Robert Sheldon                           | 2016-07-22 |
+| [Learn to Use sp_Blitz, sp_BlitzCache, sp_BlitzFirst, and sp_BlitzIndex with These Tutorial Videos] | Brent Ozar                               | 2016-09-12 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -113,3 +115,6 @@
 [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]:https://blogs.msdn.microsoft.com/sqlcat/2016/07/12/sqlsweet16-episode-4-sql-server-r-services-makes-you-a-smarter-t-sql-developer/
 [How to Set Max Degree of Parallelism in SQL Server]:http://www.littlekendra.com/2016/07/14/max-degree-of-parallelism-cost-threshold-for-parallelism/
 [Undocumented Query Plans: Equality Comparisons]:http://sqlblog.com/blogs/paul_white/archive/2011/06/22/undocumented-query-plans-equality-comparisons.aspx
+[Simplified Order Of Operations]:http://michaeljswart.com/2016/07/simplified-order-of-operations/
+[SQL Server Statistics Basics]:https://www.simple-talk.com/sql/performance/sql-server-statistics-basics/
+[Learn to Use sp_Blitz, sp_BlitzCache, sp_BlitzFirst, and sp_BlitzIndex with These Tutorial Videos]:https://www.brentozar.com/archive/2016/09/learn-use-sp_blitz-sp_blitzcache-sp_blitzfirst-sp_blitzindex-tutorial-videos/
