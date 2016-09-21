@@ -1,36 +1,35 @@
-IF OBJECT_ID('dbo.sp_blocked_process_report_viewer') IS NULL
-EXECUTE ('CREATE PROCEDURE dbo.sp_blocked_process_report_viewer AS SELECT 1');
+USE master
 GO
 
-ALTER PROCEDURE dbo.sp_blocked_process_report_viewer(
-                @Source NVARCHAR(MAX)
-              , @Type varchar(10) = 'FILE'
+IF OBJECT_ID('sp_blocked_process_report_viewer') IS NULL
+    EXEC ('
+    CREATE PROCEDURE dbo.sp_blocked_process_report_viewer 
+    AS 
+    SELECT ''Replace Me''')
+GO
+
+ALTER PROCEDURE dbo.sp_blocked_process_report_viewer
+(
+    @Source nvarchar(max),
+    @Type varchar(10) = 'FILE'
 )
-/*
-Autor:  Michael J. Swart
-Source Link: https://sqlblockedprocesses.codeplex.com/
 
-@Source:
-If the blocked process reports you'd like to examine came from a trace file, then this parameter specifies the name of the trace table or trace file that holds the blocked process reports. 
-If the blocked process reports you'd like to examine are in an extended events session, then this parameter specifies the name of the session (not the session target).
-If you are using extended events as a source, the target must either be a ring_buffer or an event_file.
-
-@Type:
-Is the type of file referenced by SourceOfTraceOrSessionTarget. Values can be TABLE, FILE, XMLFILE or XESESSION. The default is FILE
-*/
 AS
-BEGIN
-SET NOCOUNT ON;
+/*
+Original link: http://michaeljswart.com/2011/04/a-new-way-to-examine-blocked-process-reports/
+Author: Michael J. Swart
+*/
+SET NOCOUNT ON
 
 -- Validate @Type
 IF (@Type NOT IN ('FILE', 'TABLE', 'XMLFILE', 'XESESSION'))
-    RAISERROR ('The @Type parameter must be ''FILE'', ''TABLE'' or ''XMLFILE''', 11, 1);
+    RAISERROR ('The @Type parameter must be ''FILE'', ''TABLE'' or ''XMLFILE''', 11, 1)
 
 IF (@Source LIKE '%.trc' AND @Type <> 'FILE')
-    RAISERROR ('Warning: You specified a .trc trace. You should also specify @Type = ''FILE''', 10, 1);
+    RAISERROR ('Warning: You specified a .trc trace. You should also specify @Type = ''FILE''', 10, 1)
 
 IF (@Source LIKE '%.xml' AND @Type <> 'XMLFILE')
-    RAISERROR ('Warning: You specified a .xml trace. You should also specify @Type = ''XMLFILE''', 10, 1);
+    RAISERROR ('Warning: You specified a .xml trace. You should also specify @Type = ''XMLFILE''', 10, 1)
 
 IF (@Type = 'XESESSION' AND NOT EXISTS (
     SELECT * 
@@ -58,8 +57,8 @@ CREATE TABLE #ReportsXML
     unique nonclustered (monitorloop, blocking_spid, blocking_ecid, blocked_spid, blocked_ecid)
 );
 
-DECLARE @SQL NVARCHAR(MAX);
-DECLARE @TableSource NVARCHAR(MAX);
+DECLARE @SQL NVARCHAR(max);
+DECLARE @TableSource nvarchar(max);
 
 -- define source for table
 IF (@Type = 'TABLE')
@@ -80,7 +79,7 @@ END
 -- load table or file
 IF (@Type IN ('TABLE', 'FILE' ))
 BEGIN
-    SET @SQL = N'       
+    SET @SQL = N'
         INSERT #ReportsXML(blocked_ecid,blocked_spid,blocking_ecid,blocking_spid,
             monitorloop,bpReportXml,endTime)
         SELECT blocked_ecid,blocked_spid,blocking_ecid,blocking_spid,
@@ -126,12 +125,15 @@ BEGIN
 
     IF (@SessionType = 'event_file')
     BEGIN
-         
+
         SELECT @filenamePattern = REPLACE( CAST([value] AS sysname), '.xel', '*xel' )
         FROM sys.server_event_session_fields
         WHERE event_session_id = @SessionId
           AND [object_id] = @SessionTargetId
           AND name = 'filename'
+
+        IF (@filenamePattern not like '%xel')
+            set @filenamePattern += '*xel';
 
         INSERT #ReportsXML(blocked_ecid,blocked_spid,blocking_ecid,blocking_spid,
             monitorloop,bpReportXml,endTime)
@@ -279,9 +281,9 @@ Hierarchy AS
         cast('/' + blocking_hierarchy_string as varchar(max)) as chain,
         0 as level
     FROM Blockheads
-    
+
     UNION ALL
-    
+
     SELECT irx.monitorloop, irx.blocked_spid, irx.blocked_ecid,
         cast(h.chain + irx.blocked_hierarchy_string as varchar(max)),
         h.level+1
@@ -301,12 +303,12 @@ SELECT
             ELSE '(' + CAST(h.ecid as varchar(20)) + ')' 
         END AS blockingTree,
     irx.bpReportXml
-from Hierarchy h
-left join #ReportsXML irx
-    on irx.monitorloop = h.monitorloop
-    and irx.blocked_spid = h.spid
-    and irx.blocked_ecid = h.ecid
-order by h.monitorloop, h.chain;
+FROM Hierarchy h
+LEFT JOIN #ReportsXML irx
+    ON irx.monitorloop = h.monitorloop
+    AND irx.blocked_spid = h.spid
+    AND irx.blocked_ecid = h.ecid
+ORDER BY h.monitorloop, h.chain;
 
 DROP TABLE #ReportsXML;
 
