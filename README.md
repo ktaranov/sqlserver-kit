@@ -198,6 +198,8 @@ Headers:
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
     - [Azure Blob Storage Backup](https://github.com/bornsql/azureblobstoragesync) (by Randolph West) (Github)
+    - [StackExchange.DataExplorer -  is a free tool for executing SQL queries against  Stack Exchange databases](https://github.com/StackExchange/StackExchange.DataExplorer) (Github)
+    - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
 
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
