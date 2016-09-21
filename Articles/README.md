@@ -60,6 +60,9 @@
 | [Simplified Order Of Operations]                                                                    | Michael J. Swart                         | 2016-07-20 |
 | [SQL Server Statistics Basics]                                                                      | Robert Sheldon                           | 2016-07-22 |
 | [Learn to Use sp_Blitz, sp_BlitzCache, sp_BlitzFirst, and sp_BlitzIndex with These Tutorial Videos] | Brent Ozar                               | 2016-09-12 |
+| [Where is a record really located?]                                                                 | Tim Chapman                              | 2016-09-15 |
+| [Instant File Initialization (IFI)]                                                                 | Steve Stedman                            | 2016-09-19 |
+| [How to Query the StackExchange Databases]                                                          | Brent Ozar                               | 2014-01-17 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -118,3 +121,6 @@
 [Simplified Order Of Operations]:http://michaeljswart.com/2016/07/simplified-order-of-operations/
 [SQL Server Statistics Basics]:https://www.simple-talk.com/sql/performance/sql-server-statistics-basics/
 [Learn to Use sp_Blitz, sp_BlitzCache, sp_BlitzFirst, and sp_BlitzIndex with These Tutorial Videos]:https://www.brentozar.com/archive/2016/09/learn-use-sp_blitz-sp_blitzcache-sp_blitzfirst-sp_blitzindex-tutorial-videos/
+[Where is a record really located?]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/09/15/where-is-a-record-really-located/
+[Instant File Initialization (IFI)]:http://stevestedman.com/2016/09/instant-file-initialization-ifi/
+[How to Query the StackExchange Databases]:https://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/
