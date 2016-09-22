@@ -492,6 +492,7 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | 11.0.6540.0   | 2011.110.6544.0  | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
+| 11.0.6540.0   | 2011.110.5657.0  | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
 | 11.0.6540.0   | 2011.110.6540.0  | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
 | 11.0.5655.0   | 2011.110.5655.0  | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
 | 11.0.6537.0   | 2011.110.6537.0  | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
@@ -565,6 +566,7 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 11.0.1440     | 2010.110.1440.19 | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
 | 11.0.1103     | 2010.110.1103.9  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
 
+[3180914 Cumulative Update 14 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3180914
 [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]:https://support.microsoft.com/en-us/kb/3180915
 [3165264 Cumulative Update 4 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3165264
 [3165266 Cumulative Update 13 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3165266
