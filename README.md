@@ -15,7 +15,7 @@ Headers:
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
- - [Free SQL Server Ebooks](#free-sql-server-ebooks)
+ - [Free SQL Server and R ebooks](#free-sql-server-and-r-ebooks)
  - [License](#license)
 
 

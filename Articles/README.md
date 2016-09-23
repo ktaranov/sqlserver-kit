@@ -63,6 +63,7 @@
 | [Where is a record really located?]                                                                 | Tim Chapman                              | 2016-09-15 |
 | [Instant File Initialization (IFI)]                                                                 | Steve Stedman                            | 2016-09-19 |
 | [How to Query the StackExchange Databases]                                                          | Brent Ozar                               | 2014-01-17 |
+| [How to Troubleshoot Performance in SQL Server (Dear SQL DBA)]                                      | Kendra Little                            | 2016-06-02 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -124,3 +125,4 @@
 [Where is a record really located?]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/09/15/where-is-a-record-really-located/
 [Instant File Initialization (IFI)]:http://stevestedman.com/2016/09/instant-file-initialization-ifi/
 [How to Query the StackExchange Databases]:https://www.brentozar.com/archive/2014/01/how-to-query-the-stackexchange-databases/
+[How to Troubleshoot Performance in SQL Server (Dear SQL DBA)]:http://www.littlekendra.com/2016/06/02/dear-sql-dba-lost-in-performance-troubleshooting/
