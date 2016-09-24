@@ -11,20 +11,25 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
  - [MSDN Official page](https://msdn.microsoft.com/en-us/library/hh213248.aspx)
  - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
  - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
+ - [SSMS Version by SQLSentry](https://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
 
 
 # SQL Server Management Studio Download Links and Release Info
 
-| Version/Download Link     | Service Pack | Build         | Release Date |
-|---------------------------|--------------|---------------|--------------|
-| [16.3 Release] **Latest** |              | 13.0.15700.28 | 2016-08-15   |
-| [July 2016 Hotfix Update] |              | 13.0.15600.2  | 2016-07-13   |
-| July 2016 Release         |              | 13.0.15500.91 | 2016-07-01   |
-| [June 2016 Release]       |              | 13.0.15000.23 | 2016-06-01   |
-| [SQL Server 2014]         |  SP1         | 12.0.4100.1   | 2015-05-14   |
-| [SQL Server 2012]         |  SP3         | 11.0.6020.0   | 2015-11-21   |
-| [SQL Server 2008 R2]      |  SP2         | 10.50.4000    | 2012-07-02   |
+| Version/Download Link       | Service Pack | Build         | Release Date |
+|-----------------------------|--------------|---------------|--------------|
+| [16.4.1 Release] **Latest** |              | 13.0.15900.1  | 2016-09-23   |
+| 16.4 Release **Deprecated** |              | 13.0.15800.18 | 2016-09-20   |
+| [16.3 Release]              |              | 13.0.15700.28 | 2016-08-15   |
+| [July 2016 Hotfix Update]   |              | 13.0.15600.2  | 2016-07-13   |
+| July 2016 Release           |              | 13.0.15500.91 | 2016-07-01   |
+| [June 2016 Release]         |              | 13.0.15000.23 | 2016-06-01   |
+| [SQL Server 2014]           |  SP1         | 12.0.4100.1   | 2015-05-14   |
+| [SQL Server 2012]           |  SP3         | 11.0.6020.0   | 2015-11-21   |
+| [SQL Server 2008 R2]        |  SP2         | 10.50.4000    | 2012-07-02   |
 
+
+[16.4.1 Release]:http://go.microsoft.com/fwlink/?LinkID=828615
 [16.3 Release]:http://go.microsoft.com/fwlink/?LinkID=824938
 [July 2016 Hotfix Update]:http://go.microsoft.com/fwlink/?LinkID=822301
 [June 2016 Release]:http://go.microsoft.com/fwlink/?LinkID=799832
