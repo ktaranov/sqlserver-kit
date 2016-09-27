@@ -68,6 +68,8 @@
 | [Logging Activity Using sp_WhoIsActive – Take 2]                                                    | Tara Kizer                               | 2016-07-26 |
 | [How To Fix Forwarded Records]                                                                      | Tara Kizer                               | 2016-07-29 |
 | [Should I Automate my Windows Updates for SQL Server?]                                              | Kendra Little                            | 2016-07-28 |
+| [Finding the Right Path]                                                                            | Jason Brimhall                           | 2016-08-24 |
+| [#BackToBasics : An Updated "Kitchen Sink" Example]                                                 | Aaron Bertrand                           | 2016-06-01 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -134,3 +136,5 @@
 [Logging Activity Using sp_WhoIsActive – Take 2]:https://www.brentozar.com/archive/2016/07/logging-activity-using-sp_whoisactive-take-2/
 [How To Fix Forwarded Records]:https://www.brentozar.com/archive/2016/07/fix-forwarded-records/
 [Should I Automate my Windows Updates for SQL Server?]:http://www.littlekendra.com/2016/07/28/should-i-automate-my-windows-updates-for-sql-server-dear-sql-dba-episode-10/
+[Finding the Right Path]:http://jasonbrimhall.info/2016/08/24/finding-the-right-path/
+[#BackToBasics : An Updated "Kitchen Sink" Example]:https://blogs.sqlsentry.com/aaronbertrand/backtobasics-updated-kitchen-sink-example/
