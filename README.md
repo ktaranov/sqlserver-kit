@@ -137,6 +137,11 @@ Headers:
    - [Dell DBA days the Brent Ozar Unlimited 2015](https://software.dell.com/event/webcast-series-dell-dba-days-the-brent-ozar-unlimited-show890450)
    - [Dell DBA days the Brent Ozar Unlimited 2016](https://software.dell.com/event/live-webcast-series-dell-dba-days-the-brent-ozar-unlimited-show-the-se8112821)
    - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
+   - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
+   - [Youtube SQLpassion](https://www.youtube.com/channel/UCkrUQVPrv36Musorn0K4KoA)
+   - [SQLBits Video](http://sqlbits.com/)
+   - [Business Intelligence Videos](http://www.bidn.com/Videos/Videos)
+   - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
@@ -146,6 +151,7 @@ Headers:
    - [NET Rocks!](http://www.dotnetrocks.com/) (by Richard Campbell and Carl Franklin)
    - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
+   - [Midnight DBA Podcast](http://midnightdba.itbookworm.com/Show) (by Sean and Jen McCown)
  - Courses
    - Free
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
