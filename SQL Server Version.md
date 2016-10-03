@@ -117,17 +117,17 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Install 2016 RTM] then<br/>[CU2 KB3182270]                          | 13.0.1601.5<br/>13.0.2164.0                    | 2016-06-01<br/>2016-09-22                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP1] then<br/>[SP2 KB3171021] then<br/>[CU1 KB3178925] | 12.0.4100.1<br/>12.0.5000.0<br/>12.0.5511.0    | 2015-05-15<br/>2016-07-11<br/>2016-08-24 | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[CU2 KB3182270]      | 13.0.1601.5<br/>13.0.2164.0                    | 2016-06-01<br/>2016-09-22                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[CU1 KB3178925]      | 12.0.5000.0<br/>12.0.5511.0                    | 2016-07-11<br/>2016-08-24                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP3 2012] then<br/>[CU5 KB3180915]          | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6544.0   | 2012-02-14<br/>2015-11-21<br/>2016-09-20 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]    | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]           | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                          | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
+[Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
 [CU2 KB3182270]:https://support.microsoft.com/en-us/kb/3182270
-[Install 2014 SP1]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
-[SP2 KB3171021]:https://support.microsoft.com/en-us/kb/3171021
+[Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
 [CU1 KB3178925]:https://support.microsoft.com/en-us/kb/3178925
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
@@ -160,8 +160,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 |---------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
 | [SQL Server 2016]         | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    | 2050 MB  | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
 | [SQL Server 2016 CU2]     | SQLServer2016-KB3182270-x64.exe                                      | 2016-09-22   | 13.0.2164.0    |  689 MB  | 74 25 99 b3 bc a4 1d 58 7d 2e f9 31 3c 7b 0e 08 ca 59 dd 5f |
-| [SQL Server 2014 SP1]     | SQLServer2014SP1-FullSlipstream-x64-ENU.iso                          | 2015-05-15   | 12.0.4100.1    | 3035 MB  | 9e d2 f6 40 d7 3b 78 ed 51 20 f6 9a ba b4 9b ec ff 5b 00 60 |
-| [SQL Server 2014 SP2]     | SQLServer2014SP2-KB3171021-x64-ENU.exe                               | 2016-07-11   | 12.0.5000.0    |  681 MB  | 4e de a4 a1 bf 97 53 17 61 38 65 70 fd df 67 7c 73 32 f3 a5 |
+| [SQL Server 2014 SP2]     | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                          | 2016-07-11   | 12.0.5000.0    | 3010 MB  | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
 | [SQL Server 2014 SP2 CU1] | SQLServer2014-KB3178925-x64.exe                                      | 2016-08-24   | 12.0.5511.0    |  556 MB  | bd c3 42 1f af 43 9d 86 04 cf 9c e5 df 13 c3 2c 61 c7 d5 35 |
 | [SQL Server 2012]         | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   | 4300 MB  | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
 | [SQL Server 2012 SP3]     | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 2015-11-21   | 11.0.6020.0    | 1017 MB  | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
@@ -175,8 +174,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 CU2]:https://download.microsoft.com/download/1/E/F/1EF6D06B-D1D3-4E98-A727-00D9787AE572/SQL16RTMCU2/x64/SQLServer2016-KB3182270-x64.exe
-[SQL Server 2014 SP1]:http://care.dlservice.microsoft.com/dl/download/2/F/8/2F8F7165-BB21-4D1E-B5D8-3BD3CE73C77D/SQLServer2014SP1-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP2]:https://download.microsoft.com/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-KB3171021-x64-ENU.exe
+[SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP2 CU1]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/SQL14SP2CU1/x64/SQLServer2014-KB3178925-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
