@@ -33,7 +33,7 @@ Source link:
  - [SQL Server Release Services](https://blogs.msdn.microsoft.com/sqlreleaseservices/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
  - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
- - [Wikipedia Microsoft_SQL_Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
+ - [Wikipedia Microsoft SQL Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
  - [SQL Server 2005 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx)
  - [SQL Server 2000 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb895925)
  - [SQL Server 7.0 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671066)
