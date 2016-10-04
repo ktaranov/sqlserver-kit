@@ -1,5 +1,13 @@
 # SQL Server KIT
-<a name="header01"></a><a name="header02"></a><a name="header03"></a><a name="header04"></a><a name="header05"></a><a name="header06"></a><a name="header07"></a><a name="header08"></a><a name="header09"></a>
+<a name="header01"></a>
+<a name="header02"></a>
+<a name="header03"></a>
+<a name="header04"></a>
+<a name="header05"></a>
+<a name="header06"></a>
+<a name="header07"></a>
+<a name="header08"></a>
+<a name="header09"></a>
 [![licence badge]][licence]
 [![stars badge]][stars]
 [![forks badge]][forks]
