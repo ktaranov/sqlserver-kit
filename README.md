@@ -1,6 +1,7 @@
 # SQL Server KIT
 <a name="header01"></a>
 <a name="header02"></a>
+<a name="header020"></a>
 <a name="header03"></a>
 <a name="header04"></a>
 <a name="header05"></a>
@@ -28,6 +29,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 Headers:
  - [Repo Folders and Fles](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
+ - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
  - [SQL Server Sample Databases and Datasets](#sql-server-sample-databases-and-datasets)
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
@@ -227,6 +229,50 @@ Headers:
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
 
 [*Back to top*](#header02)
+
+
+## BIML Resources and Bloggers
+BIML - [Business Intelligence Markup Language](https://varigence.com/biml)
+
+BIML Resources
+- [BimlScript.com](http://bimlscript.com/)
+- [Varigence](https://varigence.com/Biml)
+- [Biml Forum at Varigence](https://varigence.com/Forums?forumName=Biml)
+- [SQLServerCentral.com](http://www.sqlservercentral.com/search/?q=Biml)
+- [Stairway to Biml](http://www.sqlservercentral.com/stairway/100550/)
+- [Biml User Group at LinkedIn](https://www.linkedin.com/groups/4640985)
+- [Building Blocks of Biml (Pluralsight course by Stacia Misner Varga)](https://app.pluralsight.com/library/courses/building-blocks-biml/table-of-contents)
+- [Biml-tagged posts on this blog](http://sqlblog.com/blogs/andy_leonard/archive/tags/BIML/default.aspx)
+
+BIML Bloggers
+- [Ben Weissman](https://www.solisyon.de/biml-blog-de/)
+- [Bill Fellows](http://billfellows.blogspot.com/search/label/Biml)
+- [Boris Hristov](http://borishristov.com/biml/)
+- [Brian Bønk](http://www.bonk.dk/biml/)
+- [Cathrine Wilhelmsen](http://www.cathrinewilhelmsen.net/biml/)
+- [Datachix: Julie Smith and Audrey Hammonds](http://datachix.com/)
+- [David Stein](http://www.made2mentor.com/category/biml/)
+- [Davide Mauri](http://sqlblog.com/blogs/davide_mauri/archive/tags/BIML/default.aspx)
+- [Erik Hudzik](http://www.anexinet.com/blog/author/ehudzik/)
+- [Hennie de Nooijer](http://bifuture.blogspot.com/search/label/BIML)
+- [John Welch](http://agilebi.com/jwelch/tag/biml/)
+- [Joost van Rossum](http://microsoft-ssis.blogspot.com/search/label/BIML)
+- [Koen Verbeeck](http://blogs.lessthandot.com/index.php/tag/biml/)
+- [Marco Schreuder](http://blog.in2bi.eu/biml/)
+- [Martin Andersson](http://www.frysdisken.net/)
+- [Meagan Longoria](https://datasavvy.wordpress.com/category/biml/)
+- [Nicholas Sorrell](http://sorrell.github.io/)
+- [Paul Te Braak](https://paultebraak.wordpress.com/tag/biml/)
+- [Peter Schott](http://schottsql.blogspot.com/search/label/BIML)
+- [Reeves Smith](https://reevessmith.wordpress.com/category/biml/)
+- [Roelant Vos](http://roelantvos.com/blog/?tag=biml)
+- [Rui Custódio](http://www.bi4all.pt/taxonomy/term/75)
+- [Samuel Vanga](http://samuelvanga.com/category/biml/)
+- [Stephen Leach](http://www.imgroup.com/author/stephen-leach/)
+- [Tim Mitchell](https://www.timmitchell.net/post/tag/biml/)
+- [Warwick Rudd](http://www.sqlmastersconsulting.com.au/SQL-Server-Blog/PID/1675/mcat/1682/evl/0/nsw/t/EDNSearch/Biml)
+
+[*Back to top*](#header020)
 
 
 ## SQL Server Sample Databases and Datasets
