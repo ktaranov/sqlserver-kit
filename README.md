@@ -1,4 +1,5 @@
 # SQL Server KIT
+<a name="header1"></a>
 [![licence badge]][licence]
 [![stars badge]][stars]
 [![forks badge]][forks]
@@ -71,6 +72,8 @@ Headers:
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
  - [Utilities](/Utilities) (complete list of **165** SQL Server paid and free Utilities and Tools)
+
+[*Back to top*](#header1)
 
 
 ## SQL Server Web Resources
@@ -207,6 +210,8 @@ Headers:
     - [StackExchange.DataExplorer -  is a free tool for executing SQL queries against  Stack Exchange databases](https://github.com/StackExchange/StackExchange.DataExplorer) (Github)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
 
+[*Back to top*](#header1)
+
 
 ## SQL Server Developer Edition Links <a id="sql-server-developer-edition-links"></a>
 **Now it is free!!!** [SQL Server Developer Edition Download page](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads?q=SQL%20Server%20Developer)
@@ -287,6 +292,8 @@ Here's just SQL Server 2008 Management Studio:
  - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
  - [SQLIndexWorkbook Sample Database](http://www.littlekendra.com/downloads/get-the-sqlindexworkbook-database/) (by Little Kendra)
 
+[*Back to top*](#header1)
+
 
 ## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
  - [Transact-SQL Join Hints](https://msdn.microsoft.com/en-us/library/ms173815.aspx)
@@ -316,6 +323,8 @@ Here's just SQL Server 2008 Management Studio:
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
  - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
  - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
+
+[*Back to top*](#header1)
 
 
 ## TSQL Format Code
