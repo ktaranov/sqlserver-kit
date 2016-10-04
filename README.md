@@ -5,6 +5,16 @@
 [![forks badge]][forks]
 [![issues badge]][issues]
 
+[licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
+[stars badge]:https://img.shields.io/github/stars/ktaranov/sqlserver-kit.svg
+[forks badge]:https://img.shields.io/github/forks/ktaranov/sqlserver-kit.svg
+[issues badge]:https://img.shields.io/github/issues/ktaranov/sqlserver-kit.svg
+
+[licence]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
+[stars]:https://github.com/ktaranov/sqlserver-kit/stargazers
+[forks]:https://github.com/ktaranov/sqlserver-kit/network
+[issues]:https://github.com/ktaranov/sqlserver-kit/issues
+
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 Headers:
@@ -300,6 +310,8 @@ Here's just SQL Server 2008 Management Studio:
  - [Transact-SQL Table Hints](https://msdn.microsoft.com/en-us/library/ms187373.aspx)
  - [Transact-SQL Query Hints](https://msdn.microsoft.com/en-us/library/ms181714.aspx)
 
+[*Back to top*](#header1)
+
 
 ## PowerShell and SQL Server
  - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
@@ -338,6 +350,8 @@ Here's just SQL Server 2008 Management Studio:
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
 
+[*Back to top*](#header1)
+
 
 ## SQL Server Test Data Generation
  - https://www.simple-talk.com/sql/t-sql-programming/generating-test-data-in-tsql/
@@ -347,6 +361,8 @@ Here's just SQL Server 2008 Management Studio:
  - https://sourceforge.net/projects/spawner/
  - http://databene.org/databene-benerator
  - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
+
+[*Back to top*](#header1)
 
 
 ## Free SQL Server and R ebooks
@@ -375,6 +391,8 @@ R:
  - [Little Book of R for Biomedical Statistics](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Little Book of R for Multivariate Analysis](http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
 
+[*Back to top*](#header1)
+
 
 ## License
 [MIT](/LICENSE.md)
@@ -382,13 +400,4 @@ R:
 If some procedures or scripts are restricted due to **ELUA** (or we can not find original author), please email or add issue - we remove/update it immediately.
 Thanks for understanding and patience.
 
-
-[licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
-[stars badge]:https://img.shields.io/github/stars/ktaranov/sqlserver-kit.svg
-[forks badge]:https://img.shields.io/github/forks/ktaranov/sqlserver-kit.svg
-[issues badge]:https://img.shields.io/github/issues/ktaranov/sqlserver-kit.svg
-
-[licence]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
-[stars]:https://github.com/ktaranov/sqlserver-kit/stargazers
-[forks]:https://github.com/ktaranov/sqlserver-kit/network
-[issues]:https://github.com/ktaranov/sqlserver-kit/issues
+<a name="header1"></a>
