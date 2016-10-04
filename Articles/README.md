@@ -77,6 +77,7 @@
 | [How to move data between File Groups in SQL Server]                                                | Klaus Aschenbrenner                      | 2016-09-26 |
 | [Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]                        | Joseph Sack                              | 2014-06-24 |
 | [Parallelism in SQL Server Query Tuning]                                                            | Itzik Ben-Gan                            | 2011-03-14 |
+| What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]    | Itzik Ben-Gan                            | 2016-05-31 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -152,3 +153,4 @@
 [How to move data between File Groups in SQL Server]:http://www.sqlpassion.at/archive/2016/09/26/how-to-move-data-between-file-groups-in-sql-server/
 [Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]:https://msdn.microsoft.com/en-us/library/dn673537.aspx
 [Parallelism in SQL Server Query Tuning]:http://sqlmag.com/sql-server/parallelism-sql-server-query-tuning
+[What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
