@@ -1,5 +1,5 @@
 # SQL Server KIT
-<a name="header1"></a>
+<a name="header01"></a><a name="header02"></a><a name="header03"></a><a name="header04"></a><a name="header05"></a><a name="header06"></a><a name="header07"></a><a name="header08"></a><a name="header09"></a>
 [![licence badge]][licence]
 [![stars badge]][stars]
 [![forks badge]][forks]
@@ -81,7 +81,7 @@ Headers:
     - and many others...
  - [Utilities](/Utilities) (complete list of **165** SQL Server paid and free Utilities and Tools)
 
-[*Back to top*](#header1)
+[*Back to top*](#header01)
 
 
 ## SQL Server Web Resources
@@ -218,7 +218,7 @@ Headers:
     - [StackExchange.DataExplorer -  is a free tool for executing SQL queries against  Stack Exchange databases](https://github.com/StackExchange/StackExchange.DataExplorer) (Github)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
 
-[*Back to top*](#header1)
+[*Back to top*](#header02)
 
 
 ## SQL Server Sample Databases and Datasets
@@ -237,7 +237,7 @@ Headers:
  - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
  - [SQLIndexWorkbook Sample Database](http://www.littlekendra.com/downloads/get-the-sqlindexworkbook-database/) (by Little Kendra)
 
-[*Back to top*](#header1)
+[*Back to top*](#header03)
 
 
 ## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
@@ -245,7 +245,7 @@ Headers:
  - [Transact-SQL Table Hints](https://msdn.microsoft.com/en-us/library/ms187373.aspx)
  - [Transact-SQL Query Hints](https://msdn.microsoft.com/en-us/library/ms181714.aspx)
 
-[*Back to top*](#header1)
+[*Back to top*](#header04)
 
 
 ## PowerShell and SQL Server
@@ -272,7 +272,7 @@ Headers:
  - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
  - [PowerShell sqlCheck](https://bitbucket.org/yardbirdsax/sqlcheck/src) (Bitbucket) (by Josh Feierman)
 
-[*Back to top*](#header1)
+[*Back to top*](#header05)
 
 
 ## TSQL Format Code
@@ -286,7 +286,7 @@ Headers:
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
 
-[*Back to top*](#header1)
+[*Back to top*](#header06)
 
 
 ## SQL Server Test Data Generation
@@ -298,7 +298,7 @@ Headers:
  - http://databene.org/databene-benerator
  - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
 
-[*Back to top*](#header1)
+[*Back to top*](#header07)
 
 
 ## Free SQL Server and R ebooks
@@ -327,7 +327,7 @@ R:
  - [Little Book of R for Biomedical Statistics](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Little Book of R for Multivariate Analysis](http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
 
-[*Back to top*](#header1)
+[*Back to top*](#header08)
 
 
 ## License
@@ -336,4 +336,4 @@ R:
 If some procedures or scripts are restricted due to **ELUA** (or we can not find original author), please email or add issue - we remove/update it immediately.
 Thanks for understanding and patience.
 
-<a name="header1"></a>
+<a name="header09"></a>
