@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **165** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **167** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
- - **[MS]**: Management Studio (alternative for SSMS) {12}
+ - **[MS]**: Management Studio (alternative for SSMS) {14}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {5}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
@@ -16,7 +16,7 @@ Utility types (main purpose) in braces `{}` current counts:
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {86}
+ - **[?]**: Not yet classified {87}
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version | Price |
@@ -51,6 +51,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [sqlmaint Utility](#sqlmaint-utility)                                 | No                               | No             | [I]        | [sqlmaint Utility]                   | -            | Microsoft           | Yes          | No    |
 | [Ssms Utility](#ssms-utility)                                         | No                               | No             | [I]        | [Ssms Utility]                       | -            | Microsoft           | Yes          | No    |
 | [dtexec Utility](#dtexec-utility)                                     | No                               | No             | [I]        | [dtexec Utility]                     | -            | Microsoft           | Yes          | No    |
+| [SQL Server 2016 Report Builder](#report-builder-2016)                | No                               | No             | [?]        | [SQL Server 2016 Report Builder]     | 2016-09-16   | Microsoft           | Yes          | No    |
 | [SQL Server 2005 Best Practices Analyzer](#bpa-2005)                  | No                               | No             | [?]        | [BPA 2005]                           | 2008-08-13   | Microsoft           | Yes          | No    |
 | [SQL Server 2000 Best Practices Analyzer](#bpa-2000)                  | No                               | No             | [?]        | [BPA 2000]                           | 2010-04-26   | Microsoft           | Yes          | No    |
 | [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | No                               | No             | [?]        | [BPA 2008]                           | 2010-06-18   | Microsoft           | Yes          | No    |
@@ -576,6 +577,21 @@ Price: No
 The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages.
 The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators.
 The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
+
+
+## SQL Server 2016 Report Builder <a id="report-builder-2016"></a>
+Download page: [SQL Server 2016 Report Builder]<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Report Builder provides a productive report-authoring environment for IT professionals and power users. The download provides a stand-alone installer for Report Builder.
+
+Report Builder provides data visualizations that include charts, maps, sparklines, and data bars that can help produce new insights well beyond what can be achieved with standard tables and charts.
+Use Report Builder to create reports and shared datasets.
+Publish report parts, and then browse the Report Part Gallery to reuse existing report parts as building blocks for creating new reports quickly with a “grab and go” experience.
 
 
 ## SQL Server 2005 Best Practices Analyzer <a id="bpa-2005"></a>
@@ -2466,6 +2482,11 @@ and SQL Server specific database administration tools.
 [SqlLocalDB Utility]:https://msdn.microsoft.com/en-us/library/hh212961.aspx
 [sqllogship Utility]:https://msdn.microsoft.com/en-us/library/bb283327.aspx
 [sqlservr Application]:https://msdn.microsoft.com/en-us/library/ms162819.aspx
+[sqlps Utility]: https://msdn.microsoft.com/en-us/library/cc280450.aspx
+[sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
+[Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
+[dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
+[SQL Server 2016 Report Builder]:https://www.microsoft.com/en-us/download/details.aspx?id=53613
 [SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [Red Gate SQL Compare]:http://www.red-gate.com/products/sql-development/sql-compare/
@@ -2522,10 +2543,6 @@ and SQL Server specific database administration tools.
 [dbForge SQL Decryptor]: https://www.devart.com/dbforge/sql/sqldecryptor/
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
-[sqlps Utility]: https://msdn.microsoft.com/en-us/library/cc280450.aspx
-[sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
-[Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
-[dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
