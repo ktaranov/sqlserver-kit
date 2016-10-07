@@ -1,4 +1,4 @@
-<
+<#
 .Synopsis
     Connects to the servers in the DBA Database and for Servers above 2012 sets alwayson_health Extended Events Sessions to Auto-Start and starts it if it is not running
 .DESCRIPTION
@@ -9,7 +9,7 @@
     Author: Rob Sewell
     Original Link: https://sqldbawithabeard.com/2016/03/28/using-powershell-to-set-extended-events-sessions-to-autostart/#comments
     Created Date: 2016-03-20
->
+#>
 $DBADatabaseServer 
 $XEName = 'AlwaysOn_health'
 ## Query to gather the servers required
