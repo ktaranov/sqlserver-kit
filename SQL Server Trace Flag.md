@@ -443,6 +443,7 @@ Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_pe
 Function: Force Uniform Extent Allocation<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx<br />
+Link: http://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br />
 Scope: global
 
 
