@@ -49,12 +49,14 @@ SELECT message_id, severity, text
 
 | Error Code | Description                                                         | Article                                                    |
 |-----------:|---------------------------------------------------------------------|------------------------------------------------------------|
-|       3154 | The backup set holds a backup of a database other than the existing | [Database Restore Fails with Msg 3154]                     |
-|       3013 | RESTORE DATABASE is terminating abnormally                          | [KB290787]                                                 |
 |        824 | SQL Server detected a logical consistency-based I/O error           | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
+|       3013 | RESTORE DATABASE is terminating abnormally                          | [KB290787]                                                 |
+|       3154 | The backup set holds a backup of a database other than the existing | [Database Restore Fails with Msg 3154]                     |
+|      17182 | Tcp port is already in use                                          | [TCP Port Is Already In Use]                               |
 
 
-[Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
-[KB290787]:https://support.microsoft.com/en-us/kb/290787
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
+[Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
+[KB290787]:https://support.microsoft.com/en-us/kb/290787
+[TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
