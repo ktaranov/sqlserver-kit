@@ -9,6 +9,7 @@ Source links:
  - [Features Supported by the Editions of SQL Server 2005](https://technet.microsoft.com/en-us/library/ms143761%28v=sql.90%29.aspx)
  - [SQL Server Pricing](https://www.microsoft.com/en-us/server-cloud/products/sql-server/purchasing.aspx)
  - [An Overview of SQL Server 2016 Licensing](http://sqlmag.com/scaling-success-sql-server-2016/overview-sql-server-2016-licensing)
+ - [Which Edition of SQL Server is Best for Development Work?](https://www.simple-talk.com/sql/sql-development/edition-sql-server-best-development-work/)
 
 
 ## Microsoft SQL Server 2016 Edition
