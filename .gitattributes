@@ -1,6 +1,8 @@
 # Custom for Visual Studio
 *.ascx text
 *.cmd text
+*.ps1 text
+*.psm1 text
 *.coffee text
 *.config text
 *.cs text diff=csharp 
@@ -51,9 +53,12 @@
 *.BMP  BINARY
 *.MDF  BINARY
 *.LDF  BINARY
+*.MAFF BINARY
 
-*.HTM eol=lf merge=union
+# EOL = lf
+*.HTM  eol=lf merge=union
 *.HTML eol=lf merge=union
+*.MD   eol=lf merge=union
 
 # T-SQL files
 *.sql eol=crlf merge=union
