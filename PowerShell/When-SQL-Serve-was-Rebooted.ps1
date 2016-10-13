@@ -1,5 +1,5 @@
 <#
-.Synopsis
+.SYNOPSIS
     When SQL Server was rebooted
 .DESCRIPTION
     Sets Extended Events Sessions to Auto-Start and starts it if it is not running
