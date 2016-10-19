@@ -20,7 +20,7 @@ Utility types (main purpose) in braces `{}` current counts:
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version | Price |
-|-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------|------------- | --------------------|--------------|------:|
+|-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------|--------------|---------------------|--------------|------:|
 | [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                               | 2016-07-13   | Microsoft           | Yes          | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                        | 2012-02-11   | Microsoft           | Yes          | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]       | 2014-12-12   | Microsoft           | Yes          | No    |
