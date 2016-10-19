@@ -133,6 +133,7 @@ Headers:
     - [TechTarget Blog](http://searchsqlserver.techtarget.com/)
     - [Toad SQL Server Blog](http://www.toadworld.com/platforms/sql-server/b/weblog)
     - [SQL-Articles](http://sql-articles.com/articles/)
+    - [DallasDBAs Blog](http://dallasdbas.com/blog/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
