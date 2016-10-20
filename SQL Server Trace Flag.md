@@ -1692,7 +1692,7 @@ Link: https://support.microsoft.com/en-us/kb/942906
 
 
 **Trace Flag: 9130**<br />
-Function: When you performing tuning or execution plan analysis if things are a little unclear as it might just help
+Function: When you performing tuning or execution plan analysis if things are a little unclear as it might just help<br />
 Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in-Execution-Plans-(TF-9130).aspx
 
 
