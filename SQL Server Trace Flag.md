@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (314 trace flags)
+Complete list of Microsoft SQL Server trace flags (318 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -108,7 +108,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **314 trace flags**
+Summary: **318 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -723,7 +723,7 @@ Function: Used with DBCC CHECKTABLE to see the total count of forward records in
 Link: None
 
 
-**Trace Flag : 2514**<br />
+**Trace Flag: 2514**<br />
 Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
 Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-records-backups-and-database-compression-with-a-pinch-of-security-considerations.aspx
 
@@ -1251,7 +1251,7 @@ Function: Fixes performance problems with certain queries that use TOP statement
 Link: http://support.microsoft.com/kb/2667211
 
 
-**Trace Flag : 4139**<br />
+**Trace Flag: 4139**<br />
 Function: Fix for poor cardinality estimation when the ascending key column is branded as stationary<br />
 Link : https://support.microsoft.com/en-us/kb/2952101
 
@@ -1562,7 +1562,7 @@ Function: Output extra information to error log regarding replication of schema 
 Link: http://support.microsoft.com/kb/916706/en-us
 
 
-**Trace Flag : 8295**<br />
+**Trace Flag: 8295**<br />
 Function: Creates a secondary index on the identifying columns on the change tracking side table at enable time<br />
 Link : https://social.msdn.microsoft.com/forums/sqlserver/en-US/00250311-7991-47b0-b788-7fae2e102254/trace-flag-8295<br />
 Thanks to: Wilfred van Dijk
@@ -1689,6 +1689,11 @@ Link: None
 **Trace Flag: 9082**<br />
 Function: SQL 9 - Stored procedure using views, perform slow compared to ver 8 if views use JOIN operator and contain sub queries<br />
 Link: https://support.microsoft.com/en-us/kb/942906
+
+
+**Trace Flag: 9130**<br />
+Function: When you performing tuning or execution plan analysis if things are a little unclear as it might just help
+Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in-Execution-Plans-(TF-9130).aspx
 
 
 **Trace Flag: 9134**<br />
