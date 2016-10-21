@@ -504,7 +504,7 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 12.0.1524    | 2014.120.1524.0  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |
 | 11.0.9120    | 2013.110.9120.0  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |
 
-[3188778 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3188778
+[3188778 Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3188778
 [3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3186964
 [3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3178925
 [3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3174038
