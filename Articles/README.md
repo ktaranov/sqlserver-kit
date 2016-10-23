@@ -81,6 +81,13 @@
 | [What To Do If sp_BlitzFirst Warns About High Compilations]                                         | Erik Darling                             | 2016-09-27 |
 | [Questions You Should Be Asking About Your Backups]                                                 | Erik Darling                             | 2016-10-13 |
 | [Evolutionary Database Design]                                                                      | Martin Fowler                            | 2016-05-01 |
+| [Implementing a custom sort]                                                                        | Rob Farley                               | 2016-10-17 |
+| [Deletes that Split Pages and Forwarded Ghosts]                                                     | Paul White                               | 2012-08-31 |
+| [Query Optimizer Deep Dive - Part 1]                                                                | Paul White                               | 2012-04-28 |
+| [Query Optimizer Deep Dive - Part 2]                                                                | Paul White                               | 2012-04-28 |
+| [Query Optimizer Deep Dive - Part 3]                                                                | Paul White                               | 2012-04-29 |
+| [Query Optimizer Deep Dive - Part 4]                                                                | Paul White                               | 2012-05-01 |
+| [Should You Rebuild or Reorganize Indexes on Large Tables?]                                         | Kendra Little                            | 2016-10-13 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -160,3 +167,10 @@
 [What To Do If sp_BlitzFirst Warns About High Compilations]:https://www.brentozar.com/archive/2016/09/what-to-do-if-sp_blitzfirst-warns-about-high-compilations/
 [Questions You Should Be Asking About Your Backups]:https://www.brentozar.com/archive/2016/10/questions-asking-backups/
 [Evolutionary Database Design]:http://martinfowler.com/articles/evodb.html
+[Implementing a custom sort]:https://sqlperformance.com/2016/10/sql-plan/implementing-custom-sort
+[Deletes that Split Pages and Forwarded Ghosts]:http://sqlblog.com/blogs/paul_white/archive/2012/08/31/deletes-that-split-pages-and-forwarded-ghosts.aspx
+[Query Optimizer Deep Dive - Part 1]:http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-1.aspx
+[Query Optimizer Deep Dive - Part 2]:http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-2.aspx
+[Query Optimizer Deep Dive - Part 3]:http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx
+[Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
+[Should You Rebuild or Reorganize Indexes on Large Tables?]:https://www.littlekendra.com/2016/10/13/should-you-rebuild-or-reorganize-indexes-on-large-tables-dear-sql-dba-episode-19/
