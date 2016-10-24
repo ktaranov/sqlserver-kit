@@ -88,6 +88,12 @@
 | [Query Optimizer Deep Dive - Part 3]                                                                | Paul White                               | 2012-04-29 |
 | [Query Optimizer Deep Dive - Part 4]                                                                | Paul White                               | 2012-05-01 |
 | [Should You Rebuild or Reorganize Indexes on Large Tables?]                                         | Kendra Little                            | 2016-10-13 |
+| [Retrieving SQL Server Query Execution Plans]                                                       | Robert Sheldon                           | 2016-10-18 |
+| [Introduction to Latches in SQL Server]                                                             | Klaus Aschenbrenner                      | 2014-06-23 |
+| [Latch Coupling in SQL Server]                                                                      | Klaus Aschenbrenner                      | 2016-10-24 |
+| [Partitioned Views? A How-To Guide]                                                                 | Erik Darling                             | 2016-09-22 |
+| [How to Choose Between RCSI and Snapshot Isolation Levels]                                          | Kendra Little                            | 2016-02-18 |
+| [TroubleShooting SQL Server Memory Consumption]                                                     | Satnam Singh                             | 2012-09-28 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -174,3 +180,9 @@
 [Query Optimizer Deep Dive - Part 3]:http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx
 [Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
 [Should You Rebuild or Reorganize Indexes on Large Tables?]:https://www.littlekendra.com/2016/10/13/should-you-rebuild-or-reorganize-indexes-on-large-tables-dear-sql-dba-episode-19/
+[Retrieving SQL Server Query Execution Plans]:https://www.simple-talk.com/sql/database-administration/retrieving-sql-server-query-execution-plans/ 
+[Introduction to Latches in SQL Server]:http://www.sqlpassion.at/archive/2014/06/23/introduction-to-latches-in-sql-server/
+[Latch Coupling in SQL Server]:https://www.sqlpassion.at/archive/2016/10/24/latch-coupling-in-sql-server/
+[Partitioned Views? A How-To Guide]:https://www.brentozar.com/archive/2016/09/partitioned-views-guide/
+[How to Choose Between RCSI and Snapshot Isolation Levels]:https://www.littlekendra.com/2016/02/18/how-to-choose-rcsi-snapshot-isolation-levels/
+[TroubleShooting SQL Server Memory Consumption]:http://www.sql-server-performance.com/2016/trouble-shooting-sql-server-ra-memory-consumption/

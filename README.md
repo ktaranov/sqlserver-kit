@@ -214,6 +214,7 @@ Headers:
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
+    - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
     - [SSIS Performance Benchmarks](http://ssisperformance.com/)
