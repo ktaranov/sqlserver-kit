@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (318 trace flags)
+Complete list of Microsoft SQL Server trace flags (344 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -16,9 +16,10 @@ Source links:
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
  - [MSDN TF list](http://sqlserverpedia.com/wiki/Trace_Flags)
  - [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
- - [Technet Wiki TF list](http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx)
+ - [TECHNET List Of SQL Server Trace Flags]
  - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
  - [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
+ - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/)
  - **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number.
 A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers.
 (Parameters specified in the Control Panel startup window are not read.)**: https://technet.microsoft.com/en-us/en-en/library/ms190737%28v=sql.120%29.aspx
@@ -108,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **318 trace flags**
+Summary: **344 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -148,6 +149,13 @@ Link: https://support.microsoft.com/en-us/kb/155714<br />
 **Trace Flag: 110**<br />
 Function: SQL 6.5 – Turns off ANSI select characteristics<br />
 Link: https://support.microsoft.com/en-us/kb/152032
+
+
+**Trace Flag: 144**<br />
+Function: Force server side bucketization.
+For legacy applications where change to client side code is not an option and
+when the application has queries that are improperly parameterized, this trace flag forces server side bucketization.<br />
+Link: http://blogs.msdn.microsoft.com/sqlprogrammability/2007/01/13/6-0-best-programming-practices
 
 
 **Trace Flag: 146**<br />
@@ -306,8 +314,23 @@ Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/
 
 
 **Trace Flag: 611**<br />
-Function: SQL 9 – When turned on, each lock escalation is recorded in the error log along with the SQL Server handle number<br />
+Function: SQL 9 – When turned on, each lock escalation is recorded in the error log along with the SQL Server handle number.
+Aaron confirmed this still works in SQL 2014. Outputs info of the form: "Escalated
+locks - Reason: LOCK_THRESHOLD, Mode: S, Granularity: TABLE, Table: 222623836,
+HoBt: 150:256, HoBt Lock Count: 6248, Escalated Lock Count: 6249, Line Number: 1,
+Start Offset: 0, SQL Statement: select count(*) from dbo.BigTable"<br />
 Link: None
+
+
+**Trace Flag: 617**<br />
+Function: SQL 9 – When turned on, each lock escalation is recorded in the error log along with the SQL Server handle number.
+As long as there are no SCH_M lock requests waiting in the ‘lock wait list’,
+the ‘lock wait list’ will be bypassed by statements issued in uncommitted read transaction isolation level.
+If there is a SCH_M lock request in the ‘lock wait list’, a query in uncommitted read transaction isolation level
+will not bypass the ‘lock wait list’, but the SCH_S lock request will go into the ‘lock wait list’.
+In order behind the SCH_M lock waiting in the same list. As a result the grant of the SCH_S request for such a query
+is dependent on the grant and release of the SCH_M lock request entering the ‘lock wait list’ earlier.<br />
+Link: https://blogs.msdn.microsoft.com/saponsqlserver/2014/01/17/new-functionality-in-sql-server-2014-part-3-low-priority-wait/
 
 
 **Trace Flag: 634**<br />
@@ -449,7 +472,7 @@ Scope: global
 
 **Trace Flag: 1119**<br />
 Function: Turns of mixed extent allocation (Similar to 1118?)<br />
-Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+Link: [TECHNET List Of SQL Server Trace Flags]
 
 
 **Trace Flag: 1124**<br />
@@ -474,7 +497,7 @@ Link: None
 
 **Trace Flag: 1200**<br />
 Function: Prints detailed lock information as every request for a lock is made (the process ID and type of lock requested)<br />
-Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+Link: [TECHNET List Of SQL Server Trace Flags]
 
 
 **Trace Flag: 1202**<br />
@@ -521,10 +544,41 @@ Link: [MSDN ms188396]<br />
 Scope: global or session
 
 
+**Trace Flag: 1228**<br />
+Function: Enable lock partitioning.
+By default, lock partitioning is enabled when a server has 16 or more CPUs. Otherwise, lock partitioning is disabled.
+Trace flag 1228 enables lock partitioning for 2 or more CPUs. Trace flag 1229 disables lock partitioning.
+Trace flag 1229 overrides trace flag 1228 if trace flag 1228 is also set.
+Lock partitioning is useful on multiple-CPU servers where some tables have very high lock rates.
+You can turn on trace flag 1228 and trace flag 1229 only at startup.<br />
+Link: [Trace Flag 1228 and 1229]<br />
+Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]
+
+
+**Trace Flag: 1229**<br />
+Function: Enable lock partitioning.
+By default, lock partitioning is enabled when a server has 16 or more CPUs. Otherwise, lock partitioning is disabled.
+Trace flag 1228 enables lock partitioning for 2 or more CPUs. Trace flag 1229 disables lock partitioning.
+Trace flag 1229 overrides trace flag 1228 if trace flag 1228 is also set.
+Lock partitioning is useful on multiple-CPU servers where some tables have very high lock rates.
+You can turn on trace flag 1228 and trace flag 1229 only at startup.<br />
+Link: [Trace Flag 1228 and 1229]<br />
+Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]
+
+
 **Trace Flag: 1236**<br />
 Function: Fixes performance problem in scenarios with high lock activity
 in SQL 2012 and SQL 2014<br />
 Link: http://support.microsoft.com/kb/2926217
+
+
+**Trace Flag: 1260**<br />
+Function: Disabled mini-dump for non-yield condition.
+Disables mini-dump generation for "any of the 17883, 17884, 17887, or 17888 errors.
+The trace flag can be used in conjunction with trace flag –T1262. For example, you
+could enable –T1262 to get 10- and a 60-second interval reporting and also enable – T1260 to avoid getting mini-dumps."<br />
+Link: [A Topical Collection of SQL Server Flags v6]<br />
+Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
 
 
 **Trace Flag: 1261**<br />
@@ -532,14 +586,32 @@ Function: SQL 8 - Disables Health reporting. Lock monitor when detects a (worker
 Link: None
 
 
+**Trace Flag: 1262**<br />
+Function: The default behavior (for 1788* errors) is for SQL to generate a mini-dump on the first
+occurrence, but never after. 1262 changes the behavior: “When –T1262 is enabled, a
+mini-dump is generated when the non-yielding condition is declared (15 seconds) and
+at subsequent 60-second intervals for the same non-yield occurrence. A new nonDiagCorrect17883etc;
+yielding occurrence causes dump captures to occur again.”
+In SQL 2000 this was a startup-only flag; in 2005+ it can be enabled via TRACEON.
+Note that the flag is also covered in Khen2005, p400, but with no new information.<br />
+Link: [A Topical Collection of SQL Server Flags v6]<br />
+Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
+
+
 **Trace Flag: 1264**<br />
 Function: Collect process names in non-yielding scenario memory dumps<br />
+Link: [A Topical Collection of SQL Server Flags v6]<br />
 Link: http://support.microsoft.com/kb/2630458/en-us
 
 
 **Trace Flag: 1400**<br />
 Function: SQL 9 RTM – Enables creation of database mirroring endpoint, which is required for setting up and using database mirroring<br />
 Link: None
+
+
+**Trace Flag: 1439**<br />
+Function: Trace database restart and failover messages to SQL Errorlog for mirrored databases<br />
+Link: [Trace flags in sql server from trace flag 902 to trace flag 1462]
 
 
 **Trace Flag: 1448**<br />
@@ -612,6 +684,11 @@ Function: Enable option to have database files on SMB share for SQL Server 2008 
 Link: http://blogs.msdn.com/b/varund/archive/2010/09/02/create-a-sql-server-database-on-a-network-shared-drive.aspx
 
 
+**Trace Flag: 1810**<br />
+Function: Prints the file create/open/close timings<br />
+Link: None
+
+
 **Trace Flag: 1903**<br />
 Function: SQL 8 - When you capture a SQL Profiler trace in a file and then you try to import the trace files into tables by using the fn_trace_gettable function no rows may be returned<br />
 Link: https://support.microsoft.com/en-us/kb/911678
@@ -650,6 +727,11 @@ Function: Disable specific SORT optimization in Query Plan<br />
 Link: http://support.microsoft.com/kb/2009160
 
 
+**Trace Flag: 2363**<br />
+Function: TF Selectivity<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
+
+
 **Trace Flag: 2371**<br />
 Function: Change threshold for auto update stats<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx<br />
@@ -658,13 +740,15 @@ Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-autom
 
 
 **Trace Flag: 2372**<br />
-Function: Displays memory utilization during the optimization process<br />
-Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
+Function: Displays memory utilization during the optimization process. Memory for Phases.<br />
+Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
 
 
 **Trace Flag: 2373**<br />
-Function: Displays memory utilization during the optimization process<br />
-Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
+Function: Displays memory utilization during the optimization process. Memory for Deriving Properties.<br />
+Link: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
 
 
 **Trace Flag: 2388**<br />
@@ -749,9 +833,14 @@ Function: Displays memory usage for DBCC commands when used with TF 3604<br />
 Link: None
 
 
+**Trace Flag: 2536**<br />
+Function: Allows you to see inactive records in transaction log using fn\_dblog.
+Similar to trace flag 2537 for older version than SQL Server 2008.<br />
+Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog
+
+
 **Trace Flag: 2537**<br />
-Function: Allows you to see inactive records in transaction log using
-fn\_dblog<br />
+Function: Allows you to see inactive records in transaction log using fn\_dblog<br />
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog
 
 
@@ -961,6 +1050,11 @@ Function: Output buffer info for backups to ERRORLOG<br />
 Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-performance-of-backup-compression-in-sql-server-2008.aspx
 
 
+**Trace Flag: 3222**<br />
+Function: Disables the read ahead that is used by the recovery operation during roll forward operations<br />
+Link: [TECHNET List Of SQL Server Trace Flags]
+
+
 **Trace Flag: 3226**<br />
 Function: Turns off ”Backup Successful” messages in errorlog<br />
 Link: [MSDN ms188396]<br />
@@ -982,6 +1076,11 @@ Link: None
 **Trace Flag: 3282**<br />
 Function: SQL 6.5 - Used after backup restoration fails<br />
 Link: https://support.microsoft.com/en-us/kb/215458
+
+
+**Trace Flag: 3400**<br />
+Function: Prints the recovery timings<br />
+Link: None
 
 
 **Trace Flag: 3422**<br />
@@ -1374,6 +1473,13 @@ Link: https://support.microsoft.com/en-us/kb/3156157<br />
 Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds
 
 
+**Trace Flag: 7501**<br />
+Function: Dynamic cursors are used by default on forward-only cursors.
+Dynamic cursors are faster than in earlier versions and no longer require unique indexes.
+This flag disables the dynamic cursor enhancements and reverts to version 6.0 behavior.<br />
+Link: https://support.microsoft.com/en-us/kb/152032
+
+
 **Trace Flag: 7502**<br />
 Function: Disable cursor plan caching for extended stored procedures<br />
 Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/
@@ -1486,6 +1592,23 @@ Function: Disable working set monitoring<br />
 Link: http://support.microsoft.com/kb/920093
 
 
+**Trace Flag: 8021**<br />
+Function: On some lower end hardware we used to get reported that each CPU has its own NUMA node.
+This was usually incorrect and when we detected only a single CPU per NODE we would assume NO NUMA.
+Trace flag 8021 disables this override.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-the-numa-configuration-information/
+
+
+**Trace Flag: 8024**<br />
+Function: When this TF is on, it affects the mini-dump generation logic for the 1788* errors:
+"To capture a mini-dump, one of the following checks must also be met.
+1. The non-yielding workers CPU utilization must be > 40 percent.
+2. The SQL Server process is not starved for overall CPU resource utilization.
+Additional check #1 is targeted at runaway CPU users. Additional check #2 is targeted
+at workers with lower utilizations that are probably stuck in an API call or similar activity."<br />
+Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
+
+
 **Trace Flag: 8026**<br />
 Function: SQL Server will clear a dump trigger after generating the dump once<br />
 Link: http://support.microsoft.com/kb/917825/en-us
@@ -1513,7 +1636,7 @@ Link: None
 Function: Will drastically reduce the number of context switches when running SQL 2005 or 2008<br />
 Link: https://support.microsoft.com/en-us/kb/972767<br />
 Link: http://forum.proxmox.com/threads/15844-Win7-x64-guest-with-SQLServer-2012-High-CPU-usage<br />
-Link: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+Link: [TECHNET List Of SQL Server Trace Flags]
 
 
 **Trace Flag: 8040**<br />
@@ -1536,8 +1659,55 @@ Function: SQL 9+ Startup only – Allows use of 1ms times even when patched. Che
 Link: https://support.microsoft.com/en-us/kb/972767
 
 
+**Trace Flag: 8050**<br />
+Function: Causes "optional" wait types (see the CSS article) to be excluded when querying sys.dm_os_wait_stats<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/02/the-sql-server-wait-type-repository/
+
+
+**Trace Flag: 8606**<br />
+Function: Show LogOp Trees<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
+
+
+**Trace Flag: 8612**<br />
+Function: Add Extra Info to the Trees Output<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
+
+
+**Trace Flag: 8615**<br />
+Function: Display the final memo structure<br />
+Link: http://www.benjaminnevarez.com/2012/04/inside-the-query-optimizer-memo-structure/<br />
+Link: http://www.somewheresomehow.ru/optimizer-part-3-full-optimiztion-optimization-search0/
+
+
+**Trace Flag: 8619**<br />
+Function: Show Applied Transformation Rules<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/02/06/incorrect-results-with-indexed-views.aspx<br />
+Link: [Cardinality Estimation Framework 2014 First Look]
+
+
+**Trace Flag: 8620**<br />
+Function: Add memo arguments to trace flag 8619<br />
+Link: [Query Optimizer Deep Dive - Part 4]
+
+
+**Trace Flag: 8621**<br />
+Function: Rule with resulting tree<br />
+Link: [Query Optimizer Deep Dive - Part 4]
+
+
+**Trace Flag: 8628**<br />
+Function: When used with TF 8666, causes extra information about the transformation rules
+applied to be put into the XML showplan.<br />
+Link: http://www.queryprocessor.com/tf_8628/
+
+
 **Trace Flag: 8202**<br />
-Function: Used to replicate UPDATE as DELETE/INSERT pair at the publisher. i.e. UPDATE commands at the publisher can be run as an "on-page DELETE/INSERT" or a "full DELETE/INSERT". If the UPDATE command is run as an "on-page DELETE/INSERT," the Logreader send UDPATE command to the subscriber, If the UPDATE command is run as a "full DELETE/INSERT," the Logreader send UPDATE as DELETE/INSERT Pair. If you turn on trace flag 8202, then UPDATE commands at the publisher will be always send to the subscriber as DELETE/INSERT pair.<br />
+Function: Used to replicate UPDATE as DELETE/INSERT pair at the publisher. i.e.
+UPDATE commands at the publisher can be run as an "on-page DELETE/INSERT" or a "full DELETE/INSERT".
+If the UPDATE command is run as an "on-page DELETE/INSERT," the Logreader send UDPATE command to the subscriber,
+If the UPDATE command is run as a "full DELETE/INSERT," the Logreader send UPDATE as DELETE/INSERT Pair.
+If you turn on trace flag 8202, then UPDATE commands at the publisher will be always send to the subscriber as DELETE/INSERT pair.<br />
 Link: None
 
 
@@ -1670,6 +1840,12 @@ Function: Allows DELETE, INSERT, and UPDATE statements to honor the SET ROWCOUNT
 Link: None
 
 
+**Trace Flag: 8809**<br />
+Function: Extended Page Heap Activities.
+Referenced in passing in the CSS article in relation to debugging memory scribbler problems.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-counting-be-a-leading-memory-scribbler-cause/
+
+
 **Trace Flag: 8816**<br />
 Function: Logs every two-digit year conversion to a four-digit year<br />
 Link: None
@@ -1679,6 +1855,22 @@ Link: None
 Function: Performance fix for AlwaysON log replication<br />
 Link: http://support.microsoft.com/kb/2809338/en-us
 Related to: 8048
+
+
+**Trace Flag: 9130**<br />
+Function: Disables the particular copy out stage rewrite from Filter + (Scan or Seek) to (Scan or Seek) + Residual Predicate.
+Enabling this flag retains the Filter in the final execution plan, resulting in a SQL Server 2008+ plan that mirrors the 2005 version.<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/10/15/cardinality-estimation-bug-with-lookups-in-sql-server-2008-onward.aspx<br />
+Link: http://sqlblogcasts.com/blogs/sqlandthelike/archive/2012/12/06/my-new-favourite-traceflag.aspx<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/06/11/hello-operator-my-switch-is-bored.aspx<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/767395/cardinality-estimation-error-with-pushed-predicate-on-a-lookup
+
+
+**Trace Flag: 9453**<br />
+Function: Disables Batch Mode in Parallel Columnstore query plans.
+(Note that a plan using batch mode appears to require a recompile before the TF takes effect)
+Sunil Agarwal also used this trace flag in demo scripts for a PASS 2014 session on column store indexing<br />
+Link: http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
 
 
 **Trace Flag: 9059**<br />
@@ -1840,3 +2032,11 @@ Link: [MSDN ms188396]
 [MSDN ms188396]:https://msdn.microsoft.com/en-us/library/ms188396.aspx
 [Niko Neugebauer Columnstore Indexes – part 86]:http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
 [Niko Neugebauer Columnstore Indexes – part 35]:http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
+[Microsoft SQL Server 2005 TPC-C Trace Flags]:http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
+[Trace Flag 1228 and 1229]:http://www.sqlservercentral.com/Forums/Topic741825-146-1.aspx
+[A Topical Collection of SQL Server Flags v6]:https://sqlcrossjoin.files.wordpress.com/2016/04/sqlcrossjoin_traceflagrepository_v6.pdf
+[How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]:https://msdn.microsoft.com/en-us/library/cc917684.aspx
+[Trace flags in sql server from trace flag 902 to trace flag 1462]:http://www.sqlserverf1.com/tag/sql-server-trace-flag-1448/
+[TECHNET List Of SQL Server Trace Flags]:http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+[Cardinality Estimation Framework 2014 First Look]:http://www.somewheresomehow.ru/cardinality-estimation-framework-2014-first-look/
+[Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
