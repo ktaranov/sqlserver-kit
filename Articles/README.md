@@ -94,6 +94,13 @@
 | [Partitioned Views? A How-To Guide]                                                                 | Erik Darling                             | 2016-09-22 |
 | [How to Choose Between RCSI and Snapshot Isolation Levels]                                          | Kendra Little                            | 2016-02-18 |
 | [TroubleShooting SQL Server Memory Consumption]                                                     | Satnam Singh                             | 2012-09-28 |
+| [Time Series Algorithms in SQL Server]                                                              | Dinesh Asanka                            | 2015-06-01 |
+| [Heap Tables in SQL Server]                                                                         | Klaus Aschenbrenner                      | 2015-10-19 |
+| [Internals of the Seven SQL Server Sorts – Part 1]                                                  | Paul White                               | 2015-04-29 |
+| [Internals of the Seven SQL Server Sorts – Part 2]                                                  | Paul White                               | 2015-05-07 |
+| [The 9 Letters That Get DBAs Fired]                                                                 | Brent Ozar                               | 2011-12-22 |
+| [Restarting SQL Server – always a good idea?]                                                       | Klaus Aschenbrenner                      | 2016-08-08 |
+| [Don’t believe everything you read: Reconfigure flushes the plan cache]                             | Matt Bowler                              | 2012-06-25 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -186,3 +193,10 @@
 [Partitioned Views? A How-To Guide]:https://www.brentozar.com/archive/2016/09/partitioned-views-guide/
 [How to Choose Between RCSI and Snapshot Isolation Levels]:https://www.littlekendra.com/2016/02/18/how-to-choose-rcsi-snapshot-isolation-levels/
 [TroubleShooting SQL Server Memory Consumption]:http://www.sql-server-performance.com/2016/trouble-shooting-sql-server-ra-memory-consumption/
+[Time Series Algorithms in SQL Server]:http://www.sql-server-performance.com/2015/time-series-algorithms-sql-server/
+[Heap Tables in SQL Server]:http://www.sqlpassion.at/archive/2015/10/19/heap-tables-in-sql-server/
+[Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
+[Internals of the Seven SQL Server Sorts – Part 2]:https://sqlperformance.com/2015/05/sql-plan/internals-of-the-seven-sql-server-sorts-part-2
+[The 9 Letters That Get DBAs Fired]:https://www.brentozar.com/archive/2011/12/letters-that-get-dbas-fired/
+[Restarting SQL Server – always a good idea?]:https://www.sqlpassion.at/archive/2016/08/08/restarting-sql-server-always-a-good-idea/
+[Don’t believe everything you read: Reconfigure flushes the plan cache]:https://mattsql.wordpress.com/2012/06/25/dont-believe-everything-you-read-reconfigure-flushes-the-plan-cache/
