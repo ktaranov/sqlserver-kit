@@ -180,6 +180,8 @@ Headers:
      - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
      - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
      - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
+     - [How to Think Like the SQL Server Engine](https://learnfrom.brentozar.com/courses/how-to-think-like-the-engine-an-introduction-to-sql-server-internals/)
+     - [Number and Date Tables](https://www.brentozar.com/archive/2016/01/video-free-training-of-the-week-number-and-date-tables/)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
