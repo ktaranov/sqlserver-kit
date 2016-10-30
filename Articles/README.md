@@ -101,6 +101,13 @@
 | [The 9 Letters That Get DBAs Fired]                                                                 | Brent Ozar                               | 2011-12-22 |
 | [Restarting SQL Server – always a good idea?]                                                       | Klaus Aschenbrenner                      | 2016-08-08 |
 | [Don’t believe everything you read: Reconfigure flushes the plan cache]                             | Matt Bowler                              | 2012-06-25 |
+| [How-to load data fast into SQL Server 2016]                                                        | Henk                                     | 2016-10-24 |
+| [Database Design Matters, RTO and Filegroups]                                                       | Raul Gonzalez                            | 2016-10-28 |
+| [Automate Alerting for SQL Server Suspect Database Pages]                                           | Ben Snaidero                             | 2016-01-25 |
+| [Successful Anti-Patterns, Storage Requirements]                                                    | Raul Gonzalez                            | 2016-10-19 |
+| [SQL Server table columns under the hood]                                                           | Remus Rusanu                             | 2011-10-20 |
+| [How to analyse SQL Server performance]                                                             | Remus Rusanu                             | 2014-02-24 |
+| [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                       | Jim Gray                                 | 2006-04-01 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -200,3 +207,10 @@
 [The 9 Letters That Get DBAs Fired]:https://www.brentozar.com/archive/2011/12/letters-that-get-dbas-fired/
 [Restarting SQL Server – always a good idea?]:https://www.sqlpassion.at/archive/2016/08/08/restarting-sql-server-always-a-good-idea/
 [Don’t believe everything you read: Reconfigure flushes the plan cache]:https://mattsql.wordpress.com/2012/06/25/dont-believe-everything-you-read-reconfigure-flushes-the-plan-cache/
+[How-to load data fast into SQL Server 2016]:http://henkvandervalk.com/how-to-load-data-fast-into-sql-server-2016
+[Database Design Matters, RTO and Filegroups]:http://www.sqldoubleg.com/2016/10/28/database-design-matters-rto-and-filegroups/
+[Automate Alerting for SQL Server Suspect Database Pages]:https://www.mssqltips.com/sqlservertip/4166/automate-alerting-for-sql-server-suspect-database-pages/
+[Successful Anti-Patterns, Storage Requirements]:http://www.sqldoubleg.com/2016/10/19/successful-anti-patterns-storage-requirements/
+[SQL Server table columns under the hood]:http://rusanu.com/2011/10/20/sql-server-table-columns-under-the-hood/
+[How to analyse SQL Server performance]:http://rusanu.com/2014/02/24/how-to-analyse-sql-server-performance/
+[To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]:https://www.microsoft.com/en-us/research/publication/to-blob-or-not-to-blob-large-object-storage-in-a-database-or-a-filesystem/
