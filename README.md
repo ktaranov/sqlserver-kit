@@ -1,4 +1,6 @@
 # SQL Server KIT
+
+[![Join the chat at https://gitter.im/sqlserver-kit/Lobby](https://badges.gitter.im/sqlserver-kit/Lobby.svg)](https://gitter.im/sqlserver-kit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <a name="header01"></a>
 <a name="header02"></a>
 <a name="header020"></a>
