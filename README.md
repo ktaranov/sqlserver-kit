@@ -1,6 +1,5 @@
 # SQL Server KIT
 
-[![Join the chat at https://gitter.im/sqlserver-kit/Lobby](https://badges.gitter.im/sqlserver-kit/Lobby.svg)](https://gitter.im/sqlserver-kit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <a name="header01"></a>
 <a name="header02"></a>
 <a name="header020"></a>
@@ -15,6 +14,7 @@
 [![stars badge]][stars]
 [![forks badge]][forks]
 [![issues badge]][issues]
+[![Join the chat at https://gitter.im/sqlserver-kit/Lobby](https://badges.gitter.im/sqlserver-kit/Lobby.svg)](https://gitter.im/sqlserver-kit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
 [stars badge]:https://img.shields.io/github/stars/ktaranov/sqlserver-kit.svg
@@ -29,7 +29,7 @@
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
 Headers:
- - [Repo Folders and Fles](#repo-folders-and-files)
+ - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
  - [SQL Server Sample Databases and Datasets](#sql-server-sample-databases-and-datasets)
@@ -60,7 +60,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addons](/SSMS/SSMS_Addins.md) (**28** useful free and paid SSMS Addins)
+    - [SSMS addins](/SSMS/SSMS_Addins.md) (**28** useful free and paid SSMS Addins)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
