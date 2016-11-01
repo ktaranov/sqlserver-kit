@@ -47,12 +47,14 @@ SELECT message_id, severity, text
 
 ## SQL Server Common Errors
 
-| Error Code | Description                                                         | Article                                                    |
-|-----------:|---------------------------------------------------------------------|------------------------------------------------------------|
-|        824 | SQL Server detected a logical consistency-based I/O error           | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
-|       3013 | RESTORE DATABASE is terminating abnormally                          | [KB290787]                                                 |
-|       3154 | The backup set holds a backup of a database other than the existing | [Database Restore Fails with Msg 3154]                     |
-|      17182 | Tcp port is already in use                                          | [TCP Port Is Already In Use]                               |
+| Error Code | Description                                                                           | Article                                                    |
+|-----------:|---------------------------------------------------------------------------------------|------------------------------------------------------------|
+|        824 | SQL Server detected a logical consistency-based I/O error                             | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
+|       1904 | The statistics on table has 65 columns in the key list                                | [SQL SERVER - Fix: Error: Msg 1904]                        |
+|       3013 | RESTORE DATABASE is terminating abnormally                                            | [KB290787]                                                 |
+|       3154 | The backup set holds a backup of a database other than the existing                   | [Database Restore Fails with Msg 3154]                     |
+|       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)" | [SQL SERVER - FIX Error 5120]                              |
+|      17182 | Tcp port is already in use                                                            | [TCP Port Is Already In Use]                               |
 
 
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
@@ -60,3 +62,5 @@ SELECT message_id, severity, text
 [Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
+[SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
+[SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
