@@ -108,6 +108,12 @@
 | [SQL Server table columns under the hood]                                                           | Remus Rusanu                             | 2011-10-20 |
 | [How to analyse SQL Server performance]                                                             | Remus Rusanu                             | 2014-02-24 |
 | [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                       | Jim Gray                                 | 2006-04-01 |
+| [Asynchronous procedure execution]                                                                  | Remus Rusanu                             | 2009-08-05 |
+| [What is the CXPACKET Wait Type, and How Do You Reduce It?]                                         | Brent Ozar                               | 2013-08-27 |
+| [New indexes, hypothetically]                                                                       | Kenneth Fisher                           | 2016-11-02 |
+| [Indexing Wide Keys in SQL Server]                                                                  | Brent Ozar                               | 2013-05-08 |
+| [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]            | Simon McAuliffe                          | 2016-03-31 |
+| [Correctly adding data files to tempdb]                                                             | Paul Randal                              | 2014-10-14 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -214,3 +220,9 @@
 [SQL Server table columns under the hood]:http://rusanu.com/2011/10/20/sql-server-table-columns-under-the-hood/
 [How to analyse SQL Server performance]:http://rusanu.com/2014/02/24/how-to-analyse-sql-server-performance/
 [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]:https://www.microsoft.com/en-us/research/publication/to-blob-or-not-to-blob-large-object-storage-in-a-database-or-a-filesystem/
+[Asynchronous procedure execution]:http://rusanu.com/2009/08/05/asynchronous-procedure-execution/
+[What is the CXPACKET Wait Type, and How Do You Reduce It?]:https://www.brentozar.com/archive/2013/08/what-is-the-cxpacket-wait-type-and-how-do-you-reduce-it/
+[New indexes, hypothetically]:https://sqlstudies.com/2016/11/02/new-indexes-hypothetically/
+[Indexing Wide Keys in SQL Server]:https://www.brentozar.com/archive/2013/05/indexing-wide-keys-in-sql-server/
+[The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]:http://simonmcauliffe.com/technology/tde/
+[Correctly adding data files to tempdb]:http://www.sqlskills.com/blogs/paul/correctly-adding-data-files-tempdb/
