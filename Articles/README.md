@@ -114,6 +114,13 @@
 | [Indexing Wide Keys in SQL Server]                                                                  | Brent Ozar                               | 2013-05-08 |
 | [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]            | Simon McAuliffe                          | 2016-03-31 |
 | [Correctly adding data files to tempdb]                                                             | Paul Randal                              | 2014-10-14 |
+| [Why You Should Test Your Queries Against Bigger Data]                                              | Erik Darling                             | 2016-11-01 |
+| [Tally OH! An Improved SQL 8K “CSV Splitter” Function]                                              | Jeff Moden                               | 2012-12-28 |
+| [Set Statistics… Profile?]                                                                          | Erik Darling                             | 2016-10-11 |
+| [Hierarchies on Steroids #1: Convert an Adjacency List to Nested Sets]                              | Jeff Moden                               | 2014-09-19 |
+| [Optimizing T-SQL queries that change data]                                                         | Paul White                               | 2013-01-26 |
+| [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]                                        | Kendra Little                            | 2016-09-27 |
+| [Inside the Statistics Histogram & Density Vector]                                                  | Klaus Aschenbrenner                      | 2014-01-28 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -226,3 +233,10 @@
 [Indexing Wide Keys in SQL Server]:https://www.brentozar.com/archive/2013/05/indexing-wide-keys-in-sql-server/
 [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]:http://simonmcauliffe.com/technology/tde/
 [Correctly adding data files to tempdb]:http://www.sqlskills.com/blogs/paul/correctly-adding-data-files-tempdb/
+[Why You Should Test Your Queries Against Bigger Data]:https://www.brentozar.com/archive/2016/11/why-you-should-test-your-queries-against-bigger-data/
+[Tally OH! An Improved SQL 8K “CSV Splitter” Function]:http://www.sqlservercentral.com/articles/Tally+Table/72993/
+[Set Statistics… Profile?]:https://www.brentozar.com/archive/2016/10/set-statistics-profile/
+[Hierarchies on Steroids #1: Convert an Adjacency List to Nested Sets]:http://www.sqlservercentral.com/articles/Hierarchy/94040/
+[Optimizing T-SQL queries that change data]:http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+[Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]:https://www.littlekendra.com/2016/09/27/measuring-query-duration-ssms-vs-sql-sentry-plan-explorer/
+[Inside the Statistics Histogram & Density Vector]:http://www.sqlpassion.at/archive/2014/01/28/inside-the-statistics-histogram-density-vector/
