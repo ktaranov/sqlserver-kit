@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **167** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **169** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
- - **[MS]**: Management Studio (alternative for SSMS) {14}
+ - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {5}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
@@ -16,7 +16,7 @@ Utility types (main purpose) in braces `{}` current counts:
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {87}
+ - **[?]**: Not yet classified {88}
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version | Price |
@@ -57,7 +57,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | No                               | No             | [?]        | [BPA 2008]                           | 2010-06-18   | Microsoft           | Yes          | No    |
 | [SQL Server 2012 Best Practices Analyzer](#bpa-2012)                  | No                               | No             | [?]        | [BPA 2012]                           | 2012-06-04   | Microsoft           | Yes          | No    |
 | [DLM Dashboard](#dlm-dashboard)                                       | No                               | No             | [M]        | [DLM Dashboard]                      | 2016-04-27   | Red Gate            | Yes          | No    |
-| [Red Gate SQL Compare](#red-gate-sql-compare)                         | No                               | No             | [DC]       | [Red Gate SQL Compare]               | 2016-05-09   | Red Gate            | No           |  $495 |
+| [Red Gate SQL Compare](#red-gate-sql-compare)                         | No                               | No             | [DC]       | [Red Gate SQL Compare]               | 2016-10-31   | Red Gate            | No           |  $495 |
 | [Red Gate SQL Data Compare](#red-gate-sql-data-compare)               | No                               | No             | [SC]       | [Red Gate SQL Data Compare]          | 2016-05-09   | Red Gate            | No           |  $495 |
 | [Red Gate SQL Prompt](#red-gate-sql-prompt)                           | No                               | No             | [MS]       | [Red Gate SQL Prompt]                | 2016-04-28   | Red Gate            | No           |  $369 |
 | [Red Gate SQL Monitor](#red-gate-sql-monitor)                         | No                               | No             | [M]        | [Red Gate SQL Monitor]               | 2015-10-15   | Red Gate            | No           | $1495 |
@@ -114,7 +114,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                     | 2016-03-03   | Devart              | No           |  $150 |
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                  | ?            | MinionWare          | No           | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]   | 2011-06-02   | Bob Tavlor          | Yes          | No    |
-| [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                         | 2015-07-04   | Bill Graziano       | Yes          | No    |
+| [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                         | 2016-07-07   | Bill Graziano       | Yes          | No    |
 | [SQLSentry Fragmentation Manager](#sqlsentry-fragmentation-manager)   | No                               | No             | [?]        | [SQLSentry Fragmentation Manager]    | 2016-03-08   | SQLSentry           | No           |  $795 |
 | [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]            | 2016-09-07   | SQLSentry           | Yes          | No    |
 | [SQLSentry Event Manager](#sqlsentry-event-manager)                   | No                               | No             | [M]        | [SQLSentry Event Manager]            | 2016-03-08   | SQLSentry           | No           |  $995 |
@@ -162,7 +162,8 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                        | 2016-04-25   | UbitSoft            | No           |  $295 |
 | [OmniCompare](#omnicompare)                                           | No                               | No             | [SC]       | [OmniCompare]                        | 2016-06-03   | AireForge           | Yes          | No    |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                           | ?            | HexaTier            | No           | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | No                               | No             | [?]        | [SoftTree SQL Assistant]             | 2016-03-18   | SoftTree            | No           |  $270 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]             | 2016-10-26   | SoftTree            | No           |  $215 |
+| [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]          | 2015-02-07   | SoftTree            | No           |  $499 |
 | [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]          | 2016-05-26   | EMS                 | No           |  $257 |
 | [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                     | 2016-04-13   | EMS                 | Yes          |  $82  |
 | [EMS SQL Administrator](#ems-sql-administrator)                       | No                               | No             | [?]        | [EMS SQL Administrator]              | 2015-04-14   | EMS                 | Yes          |  $135 |
@@ -188,6 +189,8 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL DXP](#sql-dxp)                                                   | Oracle, MySQL                    | No             | [DC], [SC] | [SQL DXP]                            | 2016-06-20   | SQL Delta           | No           |  $530 |
 | [Aqua Data Studio](#aqua-data-studio)                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Aqua Data Studio]                   | 2016-07-06   | AquaFold            | No           |  $499 |
 | [RazorSQL](#razorsql)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [RazorSQL]                           | 2016-09-29   | Richardson Software | No           |  $100 |
+| [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                 | 2016-02-19   | Gudu Software       | No           |   $50 |
+
 
 ## SSMS <a id="ssms"></a>
 Download page: [SSMS]<br/>
@@ -664,8 +667,8 @@ or change from their expected state. On the web dashboard, you can see exactly w
 
 ## Red Gate SQL Compare <a id="red-gate-sql-compare"></a>
 Download page: [Red Gate SQL Compare]<br/>
-Release date: 2016-05-09<br/>
-Support Version: 2005/2008/2012/2014<br/>
+Release date: 2016-10-31<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
 Author: Red Gate<br/>
 Free version: No<br/>
 Price: $495
@@ -1435,13 +1438,13 @@ You can then use that information to perhaps choose a less aggresive compression
 
 ## ClearTrace <a id="cleartrace"></a>
 Download page: [ClearTrace]<br/>
-Release date: 2015-07-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-07-07<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: Bill Graziano<br/>
 Free version: Yes<br/>
 Price: No
 
-ClearTrace imports SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace
+ClearTrace imports SQL Server 2016, SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace
 and Profiler files into SQL Server and displays summary performance information.
 
 
@@ -2144,17 +2147,31 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 
 ## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
-Release date: 2016-03-18<br/>
+Release date: 2016-10-26<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: SoftTree<br/>
 Free version: No<br/>
-Price: $270
+Price: $215
 
  - Triples SQL developer productivity
  - Improves code quality and accuracy
  - Provides unmatched intelligent SQL code intellisense features
  - Provides interactive SQL reference and SQL code assistance systems
  - Provides advanced SQL code formatters and beautifiers; SQL syntax validation, code structure views for fast code navigation, and more...
+
+
+## [DB Audit and Security 360] <a id="db-audit-and-security-360"></a>
+Download page: [DB Audit and Security 360]<br/>
+Release date: 2015-02-07<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: SoftTree<br/>
+Free version: No<br/>
+Price: $499
+
+DB Audit and Security 360 is a professional all-in-one database security and auditing solution for Oracle, Sybase, DB2, MySQL and Microsoft SQL Server. 
+DB Audit and Security 360 enables database and system administrators, security administrators, auditors and operators to track and analyze any database activity
+including database security, access and usage, data creation, change or deletion.
+What makes this solution really unique is its built-in support for multiple auditing methods giving you the flexibility to choose the best fit for your database security requirements.
 
 
 ## EMS SQL Management Studio <a id="ems-management-studio"></a>
@@ -2456,6 +2473,20 @@ a Transact-SQL SQL editor with Transact SQL and SQL Server specific features and
 and SQL Server specific database administration tools.
 
 
+## SQL Pretty Printer <a id="sql-pretty-printer"></a>
+Download page: [SQL Pretty Printer]<br/>
+Release date: 2016-02-19<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Gudu Software<br/>
+Free version: No<br/>
+Price: $50
+
+SQL Pretty Printer Desktop Version allows you to format your SQL wherever you are regardless of your Internet connection.
+It generates various output formats, including text, colorful html (Used in web, blog, wiki, forums) and RTF.
+Batch mode enables you to clean up SQL in multifiles under a nested directory.
+While sitting in the tray, you can format SQL in any editor like Microsoft Query Analyzer, UltraEditor or notepad with just one hotkey.
+
+
 [SSMS]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -2598,6 +2629,7 @@ and SQL Server specific database administration tools.
 [OmniCompare]:http://aireforge.com/download/OmniCompare.html
 [HexaTier]:http://www.hexatier.com/
 [SoftTree SQL Assistant]:https://www.softtreetech.com/sqlassist/
+[DB Audit and Security 360]:http://softtreetech.com/dbaudit/index.htm
 [EMS SQL Management Studio]:http://www.sqlmanager.net/en/products/studio/mssql
 [EMS SQL Backup]:http://www.sqlmanager.net/en/products/mssql/sqlbackup
 [EMS SQL Administrator]:http://www.sqlmanager.net/en/products/mssql/sqladmin
@@ -2623,3 +2655,4 @@ and SQL Server specific database administration tools.
 [SQL DXP]:http://www.sqldelta.com/index?page=dxp
 [Aqua Data Studio]:http://www.aquafold.com/aquadatastudio.html
 [RazorSQL]:https://www.razorsql.com/
+[SQL Pretty Printer]:http://www.dpriver.com/products/sqlpp/desktop_index.php

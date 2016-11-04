@@ -46,7 +46,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 344 Trace Flags') (Complete list - **344** trace flags)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 344 Trace Flags') (**Complete list - 344 trace flags**
  - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2016**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -91,7 +91,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (complete list of **167** SQL Server paid and free Utilities and Tools)
+ - [Utilities](/Utilities) (**complete list of 169 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -235,6 +235,7 @@ Headers:
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
+    - [SQL Server FineBuild - makes it easy for anyone to produce a best-practice installation and configuration of SQL Server](https://sqlserverfinebuild.codeplex.com/) (by Brian Davis)
 
 [*Back to top*](#header02)
 
@@ -333,6 +334,7 @@ BIML Bloggers
  - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
  - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
  - [PowerShell sqlCheck](https://bitbucket.org/yardbirdsax/sqlcheck/src) (Bitbucket) (by Josh Feierman)
+ - [PowerShell Enterprise Policy Management Framework](https://epmframework.codeplex.com/)
 
 [*Back to top*](#header05)
 
