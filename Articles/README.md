@@ -121,6 +121,9 @@
 | [Optimizing T-SQL queries that change data]                                                         | Paul White                               | 2013-01-26 |
 | [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]                                        | Kendra Little                            | 2016-09-27 |
 | [Inside the Statistics Histogram & Density Vector]                                                  | Klaus Aschenbrenner                      | 2014-01-28 |
+| [Misconceptions on parameter sniffing]                                                              | Hugo Kornelis                            | 2016-11-03 |
+| [CAST vs. CONVERT]                                                                                  | Aaron Bertrand                           | 2016-11-02 |
+| [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                               | Tim Ford                                 | 2016-10-03 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -240,3 +243,6 @@
 [Optimizing T-SQL queries that change data]:http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
 [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]:https://www.littlekendra.com/2016/09/27/measuring-query-duration-ssms-vs-sql-sentry-plan-explorer/
 [Inside the Statistics Histogram & Density Vector]:http://www.sqlpassion.at/archive/2014/01/28/inside-the-statistics-histogram-density-vector/
+[Misconceptions on parameter sniffing]:http://sqlblog.com/blogs/hugo_kornelis/archive/2016/11/03/misconceptions-on-parameter-sniffing.aspx
+[CAST vs. CONVERT]:https://blogs.sentryone.com/aaronbertrand/backtobasics-cast-vs-convert/
+[What Every Accidental DBA Needs to Know Now: Basics of SQL Security]:http://sqlmag.com/database-security/what-every-accidental-dba-needs-know-now-basics-sql-security
