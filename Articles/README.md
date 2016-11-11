@@ -124,6 +124,11 @@
 | [Misconceptions on parameter sniffing]                                                              | Hugo Kornelis                            | 2016-11-03 |
 | [CAST vs. CONVERT]                                                                                  | Aaron Bertrand                           | 2016-11-02 |
 | [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                               | Tim Ford                                 | 2016-10-03 |
+| [SQL Server Perfmon (Performance Monitor) Best Practices]                                           | Brent Ozar                               | 2006-12-30 |
+| [Top 5 Overlooked Index Features]                                                                   | Erik Darling                             | 2016-11-10 |
+| [A Sysadmin’s Guide to Microsoft SQL Server Memory]                                                 | Brent Ozar                               | 2016-09-15 |
+| [Searching Strings in SQL Server is Expensive]                                                      | Brent Ozar                               | 2016-10-18 |
+| [Altering an INT Column to a BIGINT]                                                                | Kendra Little                            | 2016-08-04 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -246,3 +251,8 @@
 [Misconceptions on parameter sniffing]:http://sqlblog.com/blogs/hugo_kornelis/archive/2016/11/03/misconceptions-on-parameter-sniffing.aspx
 [CAST vs. CONVERT]:https://blogs.sentryone.com/aaronbertrand/backtobasics-cast-vs-convert/
 [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]:http://sqlmag.com/database-security/what-every-accidental-dba-needs-know-now-basics-sql-security
+[SQL Server Perfmon (Performance Monitor) Best Practices]:https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/
+[Top 5 Overlooked Index Features]:https://www.brentozar.com/archive/2016/11/top-5-overlooked-index-features/
+[A Sysadmin’s Guide to Microsoft SQL Server Memory]:https://www.brentozar.com/archive/2011/09/sysadmins-guide-microsoft-sql-server-memory/
+[Searching Strings in SQL Server is Expensive]:https://www.brentozar.com/archive/2016/10/searching-strings-sql-server-expensive/
+[Altering an INT Column to a BIGINT]:https://www.littlekendra.com/2016/08/04/altering-an-int-column-to-a-bigint-dear-sql-dba-episode-11/
