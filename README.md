@@ -176,6 +176,7 @@ Headers:
    - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
    - [Midnight DBA Podcast](http://midnightdba.itbookworm.com/Show) (by Sean and Jen McCown)
+   - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
  - Courses
    - Free
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
