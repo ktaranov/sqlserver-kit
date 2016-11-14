@@ -129,6 +129,14 @@
 | [A Sysadmin’s Guide to Microsoft SQL Server Memory]                                                 | Brent Ozar                               | 2016-09-15 |
 | [Searching Strings in SQL Server is Expensive]                                                      | Brent Ozar                               | 2016-10-18 |
 | [Altering an INT Column to a BIGINT]                                                                | Kendra Little                            | 2016-08-04 |
+| [Query tuning 101: Problems with IN ()]                                                             | Daniel Janik                             | 2016-11-10 |
+| [Admin: Bulkadmin vs ADMINISTER BULK OPERATIONS]                                                    | Richard A Brown                          | 2012-01-31 |
+| [Can Indexes My Query Doesn’t Use Help My Query?]                                                   | Erik Darling                             | 2016-11-09 |
+| [SQL Server Audit Walkthrough]                                                                      | Sadequl Hussain                          | 2016-01-01 |
+| [The SQL Server 2016 Query Store: Overview and Architecture]                                        | Enrico van de Laar                       | 2015-11-16 |
+| [Reading, Writing, and Creating SQL Server Extended Properties]                                     | Phil Factor                              | 2015-10-21 |
+| [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                    | William Brewer                           | 2016-11-04 |
+| [The Ten Commandments of SQL Server Monitoring]                                                     | Adam Machanic                            | 2013-04-09 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -256,3 +264,11 @@
 [A Sysadmin’s Guide to Microsoft SQL Server Memory]:https://www.brentozar.com/archive/2011/09/sysadmins-guide-microsoft-sql-server-memory/
 [Searching Strings in SQL Server is Expensive]:https://www.brentozar.com/archive/2016/10/searching-strings-sql-server-expensive/
 [Altering an INT Column to a BIGINT]:https://www.littlekendra.com/2016/08/04/altering-an-int-column-to-a-bigint-dear-sql-dba-episode-11/
+[Query tuning 101: Problems with IN ()]:http://www.sqlservercentral.com/blogs/confessions-of-a-microsoft-addict/2016/11/10/query-tuning-101-problems-with-in-/
+[Admin: Bulkadmin vs ADMINISTER BULK OPERATIONS]:http://richbrownesq-sqlserver.blogspot.ru/2012/01/admin-bulkadmin-vs-administer-bulk.html
+[Can Indexes My Query Doesn’t Use Help My Query?]:https://www.brentozar.com/archive/2016/11/can-indexes-query-doesnt-use-help-query/
+[SQL Server Audit Walkthrough]:http://www.sql-server-performance.com/2016/walkthrough-sql-server-audit/
+[The SQL Server 2016 Query Store: Overview and Architecture]:https://www.simple-talk.com/sql/database-administration/the-sql-server-2016-query-store-overview-and-architecture/
+[Reading, Writing, and Creating SQL Server Extended Properties]:https://www.simple-talk.com/sql/database-delivery/reading-writing-creating-sql-server-extended-properties/
+[Questions About SQL Server Security and Access Control You Were Too Shy to Ask]:https://www.simple-talk.com/sql/database-delivery/questions-sql-server-security-access-control-shy-ask/
+[The Ten Commandments of SQL Server Monitoring]:https://www.simple-talk.com/sql/database-administration/the-ten-commandments-of-sql-server-monitoring/
