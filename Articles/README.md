@@ -137,6 +137,9 @@
 | [Reading, Writing, and Creating SQL Server Extended Properties]                                     | Phil Factor                              | 2015-10-21 |
 | [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                    | William Brewer                           | 2016-11-04 |
 | [The Ten Commandments of SQL Server Monitoring]                                                     | Adam Machanic                            | 2013-04-09 |
+| [Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]                         | Adam Machanic                            | 2012-12-27 |
+| [Parameter Sniffing, Embedding, and the RECOMPILE Options]                                          | Paul White                               | 2013-08-28 |
+| [Can comments hamper stored procedure performance?]                                                 | Aaron Bertrand                           | 2016-11-09 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -272,3 +275,6 @@
 [Reading, Writing, and Creating SQL Server Extended Properties]:https://www.simple-talk.com/sql/database-delivery/reading-writing-creating-sql-server-extended-properties/
 [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]:https://www.simple-talk.com/sql/database-delivery/questions-sql-server-security-access-control-shy-ask/
 [The Ten Commandments of SQL Server Monitoring]:https://www.simple-talk.com/sql/database-administration/the-ten-commandments-of-sql-server-monitoring/
+[Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]:https://sqlperformance.com/2012/12/t-sql-queries/left-anti-semi-join
+[Parameter Sniffing, Embedding, and the RECOMPILE Options]:https://sqlperformance.com/2013/08/t-sql-queries/parameter-sniffing-embedding-and-the-recompile-options
+[Can comments hamper stored procedure performance?]:https://sqlperformance.com/2016/11/sql-performance/comments-hamper-performance
