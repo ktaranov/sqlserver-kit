@@ -46,21 +46,30 @@ SELECT message_id, severity, text
 
 
 ## SQL Server Common Errors
+Error code equal `message_id` from `sys.messages`
 
-| Error Code | Description                                                                           | Article                                                    |
-|-----------:|---------------------------------------------------------------------------------------|------------------------------------------------------------|
-|        824 | SQL Server detected a logical consistency-based I/O error                             | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
-|       1904 | The statistics on table has 65 columns in the key list                                | [SQL SERVER - Fix: Error: Msg 1904]                        |
-|       3013 | RESTORE DATABASE is terminating abnormally                                            | [KB290787]                                                 |
-|       3154 | The backup set holds a backup of a database other than the existing                   | [Database Restore Fails with Msg 3154]                     |
-|       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)" | [SQL SERVER - FIX Error 5120]                              |
-|      17182 | Tcp port is already in use                                                            | [TCP Port Is Already In Use]                               |
-
+| Error Code | Description                                                                                        | Article                                                    |
+|-----------:|----------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|        824 | SQL Server detected a logical consistency-based I/O error                                          | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
+|       1904 | The statistics on table has 65 columns in the key list                                             | [SQL SERVER - Fix: Error: Msg 1904]                        |
+|       3013 | RESTORE DATABASE is terminating abnormally                                                         | [KB290787]                                                 |
+|       3154 | The backup set holds a backup of a database other than the existing                                | [Database Restore Fails with Msg 3154]                     |
+|       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"              | [SQL SERVER - FIX Error 5120]                              |
+|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)   | [When SQL Server fails to create a secondary data file]    |
+|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...             | [Discuss Execute(SQL) At LinkedServer]                     |
+|       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...     | [Discuss Execute(SQL) At LinkedServer]                     |
+|      15136 | The database principal is set as the execution context of one or more procedures, functions, ...   | [Unable to drop a user in a database]                      |
+|      17182 | Tcp port is already in use                                                                         | [TCP Port Is Already In Use]                               |
+|      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication | [Login from an Untrusted Domain]                           |
 
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
-[Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
-[KB290787]:https://support.microsoft.com/en-us/kb/290787
-[TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
-[SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
+[KB290787]:https://support.microsoft.com/en-us/kb/290787
+[Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
+[SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
+[When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
+[Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
+[TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
+[Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
