@@ -285,4 +285,6 @@ DBCC useplan [(number_of_plan)]
 DBCC useroptions DBCC wakeup (spid)
 
 DBCC writepage ({ dbid, 'dbname' }, fileid, pageid, offset, length, data)
+
+DBCC OPTIMIZER_WHATIF ({property/cost_number | property_name} [, {integer_value | string_value} ]) http://www.sqlhammer.com/dbcc-optimizer_whatif-spoofing-production-hardware
 ```
