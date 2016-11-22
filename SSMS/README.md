@@ -14,9 +14,16 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
 
 
 # SQL Server Management Studio Download Links and Release Info
+SQL Server Management Studio (17.0 RC1) notes:
+
+ 1. **Not recommended for production use**.
+ 2. Works with CTPs of v.Next on both Windows and Linux.
+ 3. Fixes an issue with ShowPlan (if you use earlier versions of SSMS against a newer version of SQL Server (2016 SP1 or CTP1 of v.Next), and pull plans from the plan cache, clicking on that XML in grid results will yield an XML document, not a graphical plan).
+ 4. You can run 16.x and 17.x side-by-side, but some settings (like Tools/Options) are shared.
 
 | Version/Download Link       | Build         | Release Date | Size, Mb |
 |-----------------------------|---------------|--------------|---------:|
+| [17.0 RC1 Release]          | 14.0.16000.64 | 2016-11-16   |      687 |
 | [16.5 Release] **Latest**   | 13.0.16000.28 | 2016-10-26   |      894 |
 | [16.4.1 Release]            | 13.0.15900.1  | 2016-09-23   |      894 |
 | 16.4 Release **Deprecated** | 13.0.15800.18 | 2016-09-20   |          |
@@ -28,6 +35,7 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
 | [SQL Server 2012]           | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]        | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
 [16.5 Release]:http://go.microsoft.com/fwlink/?linkid=832812
 [16.4.1 Release]:http://go.microsoft.com/fwlink/?LinkID=828615
 [16.3 Release]:http://go.microsoft.com/fwlink/?LinkID=824938
