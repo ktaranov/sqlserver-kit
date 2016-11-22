@@ -773,7 +773,7 @@ Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistic
 
 **Trace Flag: 2430**<br />
 Function: Fixes performance problem when using large numbers of locks<br />
-Link: http://support.microsoft.com/kb/2754301/en-us
+Link: https://support.microsoft.com/en-us/kb/2754301
 
 
 **Trace Flag: 2440**<br />
@@ -784,12 +784,12 @@ Link: None
 **Trace Flag: 2453**<br />
 Function: Allow a table variable to trigger recompile when enough number of rows are changed with may allow the query optimizer to choose a more efficient plan.<br />
 Link: http://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br />
-Link: http://http//support.microsoft.com/kb/2952444
+Link: https://support.microsoft.com/en-us/kb/2952444
 
 
 **Trace Flag: 2470**<br />
 Function: Fixes performance problem when using AFTER triggers on partitioned tables<br />
-Link: http://support.microsoft.com/kb/2606883/en-us
+Link: https://support.microsoft.com/en-us/kb/2606883
 
 
 **Trace Flag: 2505**<br />

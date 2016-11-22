@@ -10,6 +10,7 @@ Source links:
  - [SQL Server Pricing](https://www.microsoft.com/en-us/server-cloud/products/sql-server/purchasing.aspx)
  - [An Overview of SQL Server 2016 Licensing](http://sqlmag.com/scaling-success-sql-server-2016/overview-sql-server-2016-licensing)
  - [Which Edition of SQL Server is Best for Development Work?](https://www.simple-talk.com/sql/sql-development/edition-sql-server-best-development-work/)
+ - [Supported Version and Edition Upgrades](https://msdn.microsoft.com/en-us/library/ms143393.aspx)
 
 
 ## Microsoft SQL Server 2016 Edition
