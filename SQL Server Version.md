@@ -120,23 +120,23 @@ Profits:
 ## What are the most recent updates for SQL Server?
 <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                                   | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
-|---------|---------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545]                 | 13.0.1601.5<br/>13.0.4001.0                    | 2016-06-01<br/>2016-11-16                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[CU2 KB3188778]                 | 12.0.5000.0<br/>12.0.5522.0                    | 2016-07-11<br/>2016-10-18                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[CU5 KB3180915] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6544.0   | 2012-02-14<br/>2015-11-21<br/>2016-09-20 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]               | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                      | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
-| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                     | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
+| Version | Latest Update                                                                       | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
+|---------|-------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
+| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545]                     | 13.0.1601.5<br/>13.0.4001.0                    | 2016-06-01<br/>2016-11-16                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[MS16-36 KB3194718]                 | 12.0.5000.0<br/>12.0.5532.0                    | 2016-07-11<br/>2016-11-08                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[MS16-36 KB3194724] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6567.0   | 2012-02-14<br/>2015-11-21<br/>2016-11-17 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]                   | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                          | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                         | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
 [SP1 KB3182545]:https://support.microsoft.com/en-us/kb/3182545
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
-[CU2 KB3188778]:https://support.microsoft.com/en-us/kb/3188778
+[MS16-36 KB3194718]:https://support.microsoft.com/en-us/kb/3194718
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
-[CU5 KB3180915]:https://support.microsoft.com/en-us/kb/3180915
+[MS16-36 KB3194724]:https://support.microsoft.com/en-us/kb/3194724
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
 [Install 2008 R2]:https://www.microsoft.com/en-us/download/details.aspx?id=11093
 [SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
@@ -162,29 +162,29 @@ Or for all files with .exe extensions in folder:
 FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 ```
 
-| Direct x64 Download Link             | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
-|--------------------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
-| [SQL Server 2016]                    | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
-| [SQL Server 2016 SP1]                | SQLServer2016SP1-KB3182545-x64-ENU.exe                               | 2016-11-16   | 13.0.4001.0    |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
-| [SQL Server 2014 SP2]                | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                          | 2016-07-11   | 12.0.5000.0    |     3010 | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
-| [SQL Server 2014 SP2 CU2]            | SQLServer2014-KB3188778-x64.exe                                      | 2016-08-24   | 12.0.5522.0    |      550 | ad 6a 53 15 33 17 db fa fc 4c 34 52 9e ca a3 61 35 a5 b0 d1 |
-| [SQL Server 2012]                    | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
-| [SQL Server 2012 SP3]                | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 2015-11-21   | 11.0.6020.0    |     1017 | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
-| [SQL Server 2012 CU5]                | SQLServer2012-KB3180915-x64.exe                                      | 2016-09-20   | 11.0.6544.0    |      591 | 7b 95 a3 6b 8a 2e 31 fa fc 26 8b 75 e5 b9 71 d6 8c 79 fc 6c |
-| [SQL Server 2008 R2]                 | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 2010-11-21   | 6.1.7601.17514 |     3020 | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
-| [SQL Server 2008 R2 SP3]             | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 2014-09-30   | 10.50.6220.0   |      358 | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
-| [SQL Server 2008 R2 SU]              | SQLServer2008R2-KB3045316-x64.exe                                    | 2015-07-14   | 10.50.6000     |       58 | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
-| [SQL Server 2008]                    | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 2008-01-19   | 6.0.6001.18000 |     2269 | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
-| [SQL Server 2008 SP4]                | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 2014-09-30   | 10.0.6241.0    |      378 | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
-| [SQL Server 2008 SU]                 | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |       61 | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
+| Direct x64 Download Link       | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
+|--------------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
+| [SQL Server 2016]              | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
+| [SQL Server 2016 SP1]          | SQLServer2016SP1-KB3182545-x64-ENU.exe                               | 2016-11-16   | 13.0.4001.0    |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
+| [SQL Server 2014 SP2]          | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                          | 2016-07-11   | 12.0.5000.0    |     3010 | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
+| [SQL Server 2014 SP2 MS16-36]  | SQLServer2014-KB3194718-x64.exe                                      | 2016-11-08   | 12.0.5532.0    |      550 | b9 ef c6 fb 55 c7 49 ac c2 3f c4 0f a4 b1 b7 9c 5e cc 97 c8 |
+| [SQL Server 2012]              | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
+| [SQL Server 2012 SP3]          | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 2015-11-21   | 11.0.6020.0    |     1017 | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
+| [SQL Server 2012 SP3 MS16-136] | SQLServer2012-KB3194724-x64.exe                                      | 2016-11-17   | 11.0.6567.0    |      594 | ed d4 6e a0 de 5c 75 39 c5 fa cd 73 5b 50 33 47 19 b3 26 8f |
+| [SQL Server 2008 R2]           | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 2010-11-21   | 6.1.7601.17514 |     3020 | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
+| [SQL Server 2008 R2 SP3]       | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 2014-09-30   | 10.50.6220.0   |      358 | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
+| [SQL Server 2008 R2 SU]        | SQLServer2008R2-KB3045316-x64.exe                                    | 2015-07-14   | 10.50.6000     |       58 | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
+| [SQL Server 2008]              | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 2008-01-19   | 6.0.6001.18000 |     2269 | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
+| [SQL Server 2008 SP4]          | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 2014-09-30   | 10.0.6241.0    |      378 | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
+| [SQL Server 2008 SU]           | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |       61 | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP2 CU2]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/SQL14SP2CU2/x64/SQLServer2014-KB3188778-x64.exe
+[SQL Server 2014 SP2 MS16-36]:https://download.microsoft.com/download/7/A/0/7A0B547F-C9B3-488D-BC1F-AAC64F976A29/SQL2014SP2CU2/x64/SQLServer2014-KB3194718-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
-[SQL Server 2012 CU5]:https://download.microsoft.com/download/3/0/D/30D98783-31D6-4123-9F87-5058BA9FC977/SQL11SP3CU5/x64/SQLServer2012-KB3180915-x64.exe
+[SQL Server 2012 SP3 MS16-136]:https://download.microsoft.com/download/8/2/8/8285F27D-697D-4953-84FA-8B432AC8E858/SQL2012SP3CU6/x64/SQLServer2012-KB3194724-x64.exe
 [SQL Server 2008 R2]:https://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
@@ -464,6 +464,8 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 
 | Build        | File version     | KB / Description                                                                                                                   | Release Date |
 |--------------|------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 12.0.5532.0  | 2014.120.5532.0  | [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |
+| 12.0.4487.0  | 2014.120.4487.0  | [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]                     | 2016-11-08   |
 | 12.0.5522.0  | 2014.120.5522.0  | [3188778 Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |
 | 12.0.4474.0  | 2014.120.4474.0  | [3186964 Cumulative update 9 for SQL Server 2014 SP1]                                                                              | 2016-10-18   |
 | 12.0.5511.0  | 2014.120.5511.0  | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |
@@ -518,6 +520,8 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 12.0.1524    | 2014.120.1524.0  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |
 | 11.0.9120    | 2013.110.9120.0  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |
 
+[3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194718
+[3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194722
 [3188778 Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3188778
 [3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3186964
 [3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3178925
@@ -573,14 +577,16 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 
 | Build         | File version     | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 11.0.6540.0   | 2011.110.6544.0  | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
-| 11.0.6540.0   | 2011.110.5657.0  | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
+| 11.0.6567.0   | 2011.110.6567.0  | [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.5676.0   | 2011.110.5676.0  | [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.6544.0   | 2011.110.6544.0  | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
+| 11.0.5657.0   | 2011.110.5657.0  | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
 | 11.0.6540.0   | 2011.110.6540.0  | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
 | 11.0.5655.0   | 2011.110.5655.0  | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
 | 11.0.6537.0   | 2011.110.6537.0  | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
 | 11.0.5649.0   | 2011.110.5649.0  | [3152637 Cumulative update package 12 for SQL Server 2012 SP2]                                                                         | 2016-05-16   |
 | 11.0.6523.0   | 2011.110.6523.0  | [3137746 Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
-| 11.0.5646.0   | 2011.110.5646.2  | [3137745 Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
+| 11.0.5646.2   | 2011.110.5646.2  | [3137745 Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
 | 11.0.6518.0   | 2011.110.6518.0  | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
 | 11.0.5644.2   | 2011.110.5644.2  | [3120313 Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
 | 11.3.6020.0   | 2011.110.6020.0  | [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
@@ -648,6 +654,8 @@ Service Pack 1 includes a number of enhancements; these were the most interestin
 | 11.0.1440     | 2010.110.1440.19 | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
 | 11.0.1103     | 2010.110.1103.9  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
 
+[3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194724
+[3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194725
 [3180914 Cumulative Update 14 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3180914
 [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]:https://support.microsoft.com/en-us/kb/3180915
 [3165264 Cumulative Update 4 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3165264
