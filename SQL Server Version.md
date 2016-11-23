@@ -420,32 +420,36 @@ Microsoft SQL Server 2016 (SP1) (KB3182545) – 13.0.4001.0 (X64)
     Developer Edition (64-bit) on Windows …
 ```
 
-| Build         | File version      | KB / Description                                                                | Release Date | Build Date |
-|---------------|-------------------|---------------------------------------------------------------------------------|--------------|------------|
-| 13.0.4001.0   | 2015.130.4001.0   | [3182545 SQL Server 2016 Service Pack 1 release information]                    | 2016-11-16   | 2016-10-29 |
-| 13.0.2149.0   | 2015.130.2149.0   | [On-demand hotfix update package for SQL Server 2016 CU2]                       | 2016-11-01   | 2016-10-11 |
-| 13.0.2164.0   | 2015.130.2164.0   | [3182270 Cumulative Update 2 for SQL Server 2016]                               | 2016-09-22   | 2016-09-09 |
-| 13.0.2149.0   | 2015.130.2149.0   | [3164674 Cumulative Update 1 for SQL Server 2016]                               | 2016-07-25   | 2016-07-11 |
-| 13.0.1708.0   | 2015.130.1708.0   | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]              | 2016-06-04   | 2016-06-02 |
-| 13.0.1601.5   | 2015.130.1601.5   | [Microsoft SQL Server 2016 RTM]                                                 | 2016-06-01   | 2016-04-29 |
-| 13.0.1400.361 | 2015.130.1400.361 | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)        | 2016-04-15   | 2016-04-09 |
-| 13.0.1300.275 | 2015.130.1300.275 | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)        | 2016-04-01   | 2016-03-26 |
-| 13.0.1200.242 | 2015.130.1200.242 | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)        | 2016-03-18   | 2016-03-10 |
-| 13.0.1100.288 | 2015.130.1100.288 | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   | 2016-02-29 |
-| 13.0.1000.281 | 2015.130.1000.281 | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-03   | 2016-01-28 |
-| 13.0.900.73   | 2015.130.900.73   | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-17   | 2015-12-10 |
-| 13.0.801.12   | 2015.130.801.12   | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)     | 2015-12-05   | 2015-12-01 |
-| 13.0.801.111  | 2015.130.801.111  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-11-30   | 2015-11-21 |
-| 13.0.700.242  | 2015.130.700.242  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)             | 2015-10-29   | 2015-10-26 |
-| 13.0.600.65   | 2015.130.600.65   | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)             | 2015-09-30   | 2015-09-20 |
-| 13.0.500.53   | 2015.130.500.53   | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)             | 2015-08-28   | 2015-08-24 |
-| 13.0.407.1    | 2015.130.407.1    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)             | 2015-07-29   | 2015-07-22 |
-| 13.0.400.91   | 2015.130.400.91   | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) [withdrawn] | 2015-07-22   | 2015-07-16 |
-| 13.0.300.44   | 2015.130.300.444  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-14   | 2015-06-12 |
-| 13.0.200.172  | 2015.130.200.172  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-26   | 2015-05-21 |
+| Build         | File version      | Branch | KB / Description                                                                | Release Date | Build Date |
+|---------------|-------------------|--------|---------------------------------------------------------------------------------|--------------|------------|
+| 13.0.4001.0   | 2015.130.4001.0   | SP1    | [3182545 SQL Server 2016 Service Pack 1 release information]                    | 2016-11-16   | 2016-10-29 |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]   | 2016-11-08   | 2016-10-31 |
+| 13.0.2170.0   | 2015.130.2170.0   | RTM    | [3199171 COD Hotfix]                                                            | 2016-11-01   | 2016-10-11 |
+| 13.0.2169.0   | 2015.130.2169.0   | RTM    | [3195813 COD Hotfix]                                                            | 2016-10-26   | 2016-10-05 |
+| 13.0.2164.0   | 2015.130.2164.0   | RTM    | [3182270 Cumulative Update 2 for SQL Server 2016]                               | 2016-09-22   | 2016-09-09 |
+| 13.0.2149.0   | 2015.130.2149.0   | RTM    | [3164674 Cumulative Update 1 for SQL Server 2016]                               | 2016-07-25   | 2016-07-11 |
+| 13.0.1708.0   | 2015.130.1708.0   | RTM    | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]              | 2016-06-04   | 2016-06-02 |
+| 13.0.1601.5   | 2015.130.1601.5   | RTM    | [Microsoft SQL Server 2016 RTM]                                                 | 2016-06-01   | 2016-04-29 |
+| 13.0.1400.361 | 2015.130.1400.361 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)        | 2016-04-15   | 2016-04-09 |
+| 13.0.1300.275 | 2015.130.1300.275 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)        | 2016-04-01   | 2016-03-26 |
+| 13.0.1200.242 | 2015.130.1200.242 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)        | 2016-03-18   | 2016-03-10 |
+| 13.0.1100.288 | 2015.130.1100.288 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)        | 2016-03-07   | 2016-02-29 |
+| 13.0.1000.281 | 2015.130.1000.281 | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)             | 2016-02-03   | 2016-01-28 |
+| 13.0.900.73   | 2015.130.900.73   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)             | 2015-12-17   | 2015-12-10 |
+| 13.0.801.12   | 2015.130.801.12   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)     | 2015-12-05   | 2015-12-01 |
+| 13.0.801.111  | 2015.130.801.111  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)             | 2015-11-30   | 2015-11-21 |
+| 13.0.700.242  | 2015.130.700.242  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)             | 2015-10-29   | 2015-10-26 |
+| 13.0.600.65   | 2015.130.600.65   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)             | 2015-09-30   | 2015-09-20 |
+| 13.0.500.53   | 2015.130.500.53   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)             | 2015-08-28   | 2015-08-24 |
+| 13.0.407.1    | 2015.130.407.1    | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)             | 2015-07-29   | 2015-07-22 |
+| 13.0.400.91   | 2015.130.400.91   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) [withdrawn] | 2015-07-22   | 2015-07-16 |
+| 13.0.300.44   | 2015.130.300.444  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)             | 2015-06-14   | 2015-06-12 |
+| 13.0.200.172  | 2015.130.200.172  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                 | 2015-05-26   | 2015-05-21 |
 
 [3182545 SQL Server 2016 Service Pack 1 release information]:https://support.microsoft.com/en-us/kb/3182545
-[On-demand hotfix update package for SQL Server 2016 CU2]:https://support.microsoft.com/en-us/kb/3199171
+[3194717 MS16-136: Description of the security update for SQL Server 2016 CU]:https://support.microsoft.com/en-us/kb/3194717
+[3199171 COD Hotfix]:https://support.microsoft.com/en-us/kb/3199171
+[3195813 COD Hotfix]:https://support.microsoft.com/en-us/kb/3195813
 [3182270 Cumulative Update 2 for SQL Server 2016]:https://support.microsoft.com/en-us/kb/3182270
 [3164674 Cumulative Update 1 for SQL Server 2016]:https://support.microsoft.com/en-us/kb/3164674
 [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]:https://support.microsoft.com/en-us/kb/3164398
