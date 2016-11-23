@@ -120,14 +120,14 @@ Profits:
 ## What are the most recent updates for SQL Server?
 <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                                             | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
-|---------|-------------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545]                           | 13.0.1601.5<br/>13.0.4001.0                    | 2016-06-01<br/>2016-11-16                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[CU2 KB3188778]                           | 12.0.5000.0<br/>12.0.5522.0                    | 2016-07-11<br/>2016-10-18                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[CU5 KB3180915]           | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6544.0   | 2012-02-14<br/>2015-11-21<br/>2016-09-20 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]                         | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                                | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
-| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                               | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
+| Version | Latest Update                                                                   | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
+|---------|---------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
+| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545]                 | 13.0.1601.5<br/>13.0.4001.0                    | 2016-06-01<br/>2016-11-16                | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[CU2 KB3188778]                 | 12.0.5000.0<br/>12.0.5522.0                    | 2016-07-11<br/>2016-10-18                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[CU5 KB3180915] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6544.0   | 2012-02-14<br/>2015-11-21<br/>2016-09-20 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]               | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                      | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                     | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
@@ -143,7 +143,7 @@ Profits:
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
 [Install 2008]:https://www.microsoft.com/en-us/download/details.aspx?id=5023
 [SP4 2008]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
-[SU KB3045316]:https://www.microsoft.com/downloads/details.aspx?familyid=40328565-3067-4e36-96ba-26ade333d715
+[SU KB3045316]:https://support.microsoft.com/en-us/kb/3045311
 [Install SP4 2005]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b953e84f-9307-405e-bceb-47bd345baece
 [CU3 KB2507769]:http://support.microsoft.com/kb/2507769
 
