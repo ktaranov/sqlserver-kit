@@ -10,6 +10,7 @@ Headers:
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
  - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
+ - [Microsoft SQL Server VNext Builds](#microsoft-sql-server-vnext-builds)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
  - [Microsoft SQL Server 2014 Builds](#microsoft-sql-server-2014-builds)
  - [Microsoft SQL Server 2012 Builds](#microsoft-sql-server-2012-builds)
@@ -195,12 +196,9 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 ## SQL Server Developer Edition Info
 <a id="sql-server-developer-edition-info"></a>
-**Now it is free!!!** [SQL Server Developer Edition Download page](https://myprodscussu1.app.vssubscriptions.visualstudio.com/Downloads?q=SQL%20Server%20Developer)
+**Now it is free!!!** [SQL Server Developer Edition Download page](https://my.visualstudio.com/downloads?q=sql%20server%20developer)
 
 For downloading your copy SQL Server Developer Edition you just need to join the [Visual Studio Dev Essentials program](https://www.visualstudio.com/en-us/products/visual-studio-dev-essentials-vs.aspx)
-
-**Important Note**: SQL Server 2016 has a critical pre-requisite for updated Visual Studio VC++ 2013 Runtime Libraries.
-To install or check if this update is required on your system, please see [KB316398](http://go.microsoft.com/fwlink/?LinkID=798747).
 
 | Edition\Direct Download Link                                                | Release Date | File name                                                                    | Size, Mb | SHA1                                     |
 |-----------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------|---------:|------------------------------------------|
@@ -408,6 +406,16 @@ For details about how to assess the performance differences of your most importa
 [8.0.760]:http://www.microsoft.com/downloads/details.aspx?familyid=90DCD52C-0488-4E46-AFBF-ACACE5369FA3
 [8.0.2039]:http://www.microsoft.com/downloads/details.aspx?FamilyId=8E2DFC8D-C20E-4446-99A9-B7F0213F8BC5
 [7.0.1063]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
+
+
+## Microsoft SQL Server VNext Builds
+<a id="microsoft-sql-server-vnext-builds"></a>
+
+| Build      | File version   | Branch | KB / Description                                                                   | Release Date |
+|------------|----------------|--------|------------------------------------------------------------------------------------|--------------|
+| 14.0.1.246 | 2016.140.1.246 | CTP    | [Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)] | 2016-11-16   |
+
+[Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
 
 
 ## Microsoft SQL Server 2016 Builds
