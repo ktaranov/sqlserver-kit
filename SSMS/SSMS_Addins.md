@@ -4,7 +4,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 | Name                                                  | Download page                 | Release Date | Support Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:--------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2015-12-21   | 2008/2012/2014      | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2016-11-17   | 2008/2012/2014/2016 | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-07-31   | 2008/2012/2014/2016 | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2015-05-04   | 2008/2012/2014      | Oleksii Kovalov      | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2015-11-05   | 2008/2012           | Red Gate             | Yes          | No    |
@@ -16,7 +16,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014      | Gudu Software        | No           |   $50 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016 | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014      | Dave ballantyne      | Yes          | No    |
-| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2014-05-18   | 2008/2012/2014      | Jakub Dvorak         | No           |   €50 |
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2016-11-16   | 2008/2012/2014/2016 | Jakub Dvorak         | No           |   €50 |
 | [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2016-04-01   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2016-02-11   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2015-09-04   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
@@ -36,8 +36,8 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 ## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
-Release date: 2015-12-21<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-11-17<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
 Price: $150
@@ -163,14 +163,14 @@ Developer: Mladen Prajdić<br/>
 Free version: No<br/>
 Price: €30
 
-- Keeps your query or window history safe in local files or database
-- Run script at cursor location and an Accidental data destruction protector
-- Keep your favorite statements accessible with a shortcut of your choice
-- Format SQL
-- Color the query windows based on the server/database name or a regex
-- Add custom replacement texts to your scripts in four different features
-- Modifies New Query windows with a template of your choice
-- Run custom scripts from a chosen node in Object Explorer
+ - Keeps your query or window history safe in local files or database
+ - Run script at cursor location and an Accidental data destruction protector
+ - Keep your favorite statements accessible with a shortcut of your choice
+ - Format SQL
+ - Color the query windows based on the server/database name or a regex
+ - Add custom replacement texts to your scripts in four different features
+ - Modifies New Query windows with a template of your choice
+ - Run custom scripts from a chosen node in Object Explorer
 
 
 ## SQL Pretty Printer <a id="sql-pretty-printer"></a>
@@ -181,12 +181,12 @@ Developer: Gudu Software<br/>
 Free version: No<br/>
 Price: No
 
-- improve SQL readability
-- use a standard style within your organization
-- use automatic formatting eliminates any disagreements
-- embed well formatted and syntax colored SQL into your documents
-- add SQL format feature within 5 minutes
-- quickly convert between SQL and C#, Java, etc.
+ - improve SQL readability
+ - use a standard style within your organization
+ - use automatic formatting eliminates any disagreements
+ - embed well formatted and syntax colored SQL into your documents
+ - add SQL format feature within 5 minutes
+ - quickly convert between SQL and C#, Java, etc.
 
 
 ## SQL Sentry Plan Explorer <a id="sql-sentry-plan-explorer"></a>
@@ -215,14 +215,22 @@ This is a proof of concept work which will analyze TSQL scripts in an attempt to
 
 ## SQLTreeo <a id="sqltreeo"></a>
 Download page: [SQLTreeo]<br/>
-Release date: 2014-05-18<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-11-16<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Developer: Jakub Dvorak<br/>
 Free version: No<br/>
 Price: €50
 
-SQL Treeo enables users to create custom folders for databases, stored procedures, views, functions and tables.
-You can organize your SQL objects in logical modules which are aligned with your project structure.
+
+ - Integration with SSMS 2016
+ - Create custom folders for databases, stored procedures, tables, views and user defined functions
+ - Drag&Drop objects in folders
+ - Management interface for bulk folder operations
+ - Ctrl+click command to alter SQL object
+ - Seamless sharing with other team members
+ - Bulk folders creation
+ - Dynamic folders
+
 
 
 ## ApexSQL Complete <a id="apexsql-complete"></a>
