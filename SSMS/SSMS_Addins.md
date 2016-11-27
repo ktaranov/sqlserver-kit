@@ -1,13 +1,13 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **28** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **29** SSMS add-ins
 
 
 | Name                                                  | Download page                 | Release Date | Support Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:--------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2016-11-17   | 2008/2012/2014/2016 | Solutions Crew GmbH  | Yes          |  $150 |
-| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-07-31   | 2008/2012/2014/2016 | Smashing Jedis LLC   | Yes          |   $99 |
+| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016 | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2015-05-04   | 2008/2012/2014      | Oleksii Kovalov      | Yes          | No    |
-| [SQL Search](#sql-search)                             | [SQL Search]                  | 2015-11-05   | 2008/2012           | Red Gate             | Yes          | No    |
+| [SQL Search](#sql-search)                             | [SQL Search]                  | 2016-05-04   | 2008/2012/2014/2016 | Red Gate             | Yes          | No    |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014      | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2015-11-17   | 2008/2012/2014      | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014      | Red Gate             | No           |  $495 |
@@ -32,6 +32,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014      | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014      | Alex Maslyukov       | Yes          | No    |
 | [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012           | Tao Klerks           | Yes          | No    |
+| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016      | 	Vlasov Studio       | No           |   $49 |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -45,7 +46,7 @@ Price: $150
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
-You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day !
+You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day!
 
 Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version.<br/>
 Currently both versions have the same set of features.
@@ -53,7 +54,7 @@ Currently both versions have the same set of features.
 
 ## SqlSmash <a id="sqlsmash"></a>
 Download page: [SqlSmash]<br/>
-Release date: 2016-07-31<br/>
+Release date: 2016-10-15<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Developer: Smashing Jedis LLC<br/>
 Free version: Yes<br/>
@@ -96,8 +97,8 @@ SQL Code Guard is a free solution for SQL Server that provides fast and comprehe
 
 ## SQL Search <a id="sql-search"></a>
 Download page: [SQL Search]<br/>
-Release date: 2015-11-05<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-05-04<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Developer: Red Gate<br/>
 Free version: Yes<br/>
 Price: No
@@ -453,6 +454,26 @@ This formatter does implement a high-level SQL tokenizer and parser, but the gra
 It does not distinguish between different types of DML, it does not parse full expression trees, etc - there's a lot it doesn't do, it just does the bare minimum to support the target formatting.
 
 
+## Tabs Studio <a id="tabs-studio"></a>
+Download page: [Tabs Studio]<br/>
+Release date: 2016-08-01<br/>
+Support Version: 2012/2014/2016<br/>
+Developer: Vlasov Studio<br/>
+Free version: No<br/>
+Price: $49
+
+Tabs Studio is a Visual Studio and SSMS extension empowering you to work comfortably with any number of open documents.
+
+ - Multiple rows of tabs
+ - Tab grouping
+ - Tab coloring
+ - Title transformation
+ - Keyboard navigation
+ - Flexible behavior
+ - Customizable presentation
+ - Extensibility API
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
@@ -481,3 +502,4 @@ It does not distinguish between different types of DML, it does not parse full e
 [SQL Enlight for SSMS]:http://www.ubitsoft.com/products/sqlenlight-for-ssms/index.php
 [SQL Hunting Dog]:http://sql-hunting-dog.com/
 [Poor Mans T-SQL Formatter]:http://architectshack.com/PoorMansTSqlFormatter.ashx
+[Tabs Studio]:https://tabsstudio.com
