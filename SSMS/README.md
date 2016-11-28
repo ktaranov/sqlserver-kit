@@ -13,7 +13,7 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
  - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
 
 
-# SQL Server Management Studio Download Links and Release Info
+## SQL Server Management Studio Download Links and Release Info
 SQL Server Management Studio (17.0 RC1) notes:
 
  1. **Not recommended for production use**.

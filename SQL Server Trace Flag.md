@@ -1966,7 +1966,7 @@ Link: http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-ag
 
 **Trace Flag: 9481**<br />
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database. For more information, see Microsoft Support article. To accomplish this at the database level, see ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL). To accomplish this at the query level, add the QUERYTRACEONquery hint<br />
-Link: http://support.microsoft.com/kb/2801413
+Link: http://support.microsoft.com/kb/2801413<br />
 Link: [MSDN ms188396]
 
 
@@ -1984,7 +1984,8 @@ Link: http://connect.microsoft.com/SQLServer/feedback/details/682581/denali-hadr
 **Trace Flag: 9567**<br />
 Function: Enables compression of the data stream for availability groups during automatic seeding.
 Compression can significantly reduce the transfer time during automatic seeding and will increase the load on the processor.<br />
-Link: [MSDN ms188396]
+Link: [MSDN ms188396]<br />
+Link: https://www.mssqltips.com/sqlservertip/4537/sql-server-2016-availability-group-automatic-seeding/
 
 
 **Trace Flag: 9592**<br />
