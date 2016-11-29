@@ -87,11 +87,11 @@ BEGIN
         DECLARE @OBJECT_ID      INTEGER       = OBJECT_ID(@tableFullName);
         DECLARE @Columns        NVARCHAR(MAX) = N'';
         DECLARE @filePath       NVARCHAR(MAX) = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
-        DECLARE @CrLf           NVARCHAR(10)  = CHAR(13);
+        DECLARE @crlf          NVARCHAR(10)  = CHAR(13);
         DECLARE @TROW50000      NVARCHAR(MAX) = N'';
 
 
-        IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @Crlf;
+        IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
 
         SET @TROW50000 = N'Table ' + @tableFullName + N' is not exists in database ' + QUOTENAME(@databaseName) + N'!!!';
         IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
@@ -113,7 +113,7 @@ BEGIN
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryMode)
 
-            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @Crlf + @tsqlCommand + @Crlf + '}', '@tsqlCommand = {Null}')
+            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}')
 
             IF @databaseRecoveryMode IN ('FULL', 'BULK_LOGGED', 'SIMPLE')
                AND @debug = 0
@@ -124,17 +124,17 @@ BEGIN
         IF @useIdentity = 2 AND @identityColumnName = '' SET @identityColumnName = @tableName + 'ID';
         IF @debug = 1 PRINT ISNULL('@identityColumnName = {' + @identityColumnName + '}', '@identityColumnName = Null');
 
-        SET @tsqlCommand = N'USE ' + @databaseName + ';'                                          + @CrLf +
-                           N'SELECT @ColumnsOUT  = @ColumnsOUT + QUOTENAME(Name) + '','''         + @CrLf +
-                           N'FROM sys.columns sac '                                               + @CrLf +
-                           N'WHERE sac.object_id = ' + CAST(@OBJECT_ID AS NVARCHAR)               + @CrLf +
-                           N'      AND sac.name NOT LIKE ISNULL(@identityColumnNameIN, ''Null'')' + @CrLf +
+        SET @tsqlCommand = N'USE ' + @databaseName + ';'                                          + @crlf +
+                           N'SELECT @ColumnsOUT  = @ColumnsOUT + QUOTENAME(Name) + '','''         + @crlf +
+                           N'FROM sys.columns sac '                                               + @crlf +
+                           N'WHERE sac.object_id = ' + CAST(@OBJECT_ID AS NVARCHAR)               + @crlf +
+                           N'      AND sac.name NOT LIKE ISNULL(@identityColumnNameIN, ''Null'')' + @crlf +
                            N'      AND QUOTENAME(Name) NOT IN (''' + REPLACE(@excludeColumns, ',', ''',''') + ''')' + @crlf +
                            CASE WHEN @orderColumnName = 1 THEN N'ORDER BY Name;' ELSE N'ORDER BY column_id;' END
                           ;
 
         IF @debug = 1 PRINT ISNULL('@OBJECT_ID = {' + CAST(@OBJECT_ID AS NVARCHAR) + '}', '@OBJECT_ID = Null');
-        IF @debug = 1 PRINT ISNULL(N'@tsqlCommand = {' + @CrLf + @tsqlCommand + @CrLf + N'}', N'@tsqlCommand = Null');
+        IF @debug = 1 PRINT ISNULL(N'@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + N'}', N'@tsqlCommand = Null');
 
         EXECUTE sp_executesql @tsqlCommand, @ParamDefinitionIndentity,
                               @identityColumnNameIN = @identityColumnName,
@@ -142,7 +142,7 @@ BEGIN
 
         SET @Columns = CASE WHEN LEN(@Columns) > 0 THEN LEFT(@Columns, LEN(@Columns) - 1) END;
 
-        IF @debug = 1 PRINT ISNULL('@Columns = {' + @CrLf + @Columns + @CrLf + '}', '@Columns = {Null}');
+        IF @debug = 1 PRINT ISNULL('@Columns = {' + @crlf + @Columns + @crlf + '}', '@Columns = {Null}');
 
         SET @tsqlCommand =
 'IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
@@ -197,7 +197,7 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',        CASE WHEN @rowOrder <> '' THEN 'ORDER BY ' + @rowOrder ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityOFF__',  CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' OFF;' ELSE '' END);
 
-        IF @debug = 1 PRINT ISNULL(CAST('@tsqlCommand = {' + @Crlf + @tsqlCommand + @Crlf + '}'  AS NTEXT), '@tsqlCommand = {Null}' + @Crlf + '--End Deubg*********/')
+        IF @debug = 1 PRINT ISNULL(CAST('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}'  AS NTEXT), '@tsqlCommand = {Null}' + @crlf + '--End Deubg*********/')
         ELSE
         EXECUTE sp_executesql @tsqlCommand;
 
@@ -207,12 +207,12 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
 
-            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @Crlf + @tsqlCommand + @Crlf + '}', '@tsqlCommand = {Null}')
+            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}')
 
             IF @debug = 0 EXECUTE sp_executesql @tsqlCommand;
         END
 
-        IF @debug = 0 SET NOCOUNT OFF ELSE PRINT @Crlf + '--End Deubg*********/';
+        IF @debug = 0 SET NOCOUNT OFF ELSE PRINT @crlf + '--End Deubg*********/';
     END TRY
 
     BEGIN CATCH

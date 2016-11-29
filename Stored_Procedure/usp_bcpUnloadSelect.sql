@@ -1,7 +1,7 @@
-IF OBJECT_ID('usp_bcpUnloadSelect', 'P') IS NULL EXECUTE('CREATE PROCEDURE usp_bcpUnloadSelect AS SELECT 1');
+IF OBJECT_ID('dbo.usp_bcpUnloadSelect', 'P') IS NULL EXECUTE('CREATE PROCEDURE dbo.usp_bcpUnloadSelect AS SELECT 1');
 GO
 
-ALTER PROCEDURE usp_bcpUnloadSelect(
+ALTER PROCEDURE dbo.usp_bcpUnloadSelect(
       @outputFilePath  VARCHAR(255)  -- The path can have from 1 through 255 characters, see documentation
     , @serverName      SYSNAME      = @@SERVERNAME
     , @sqlCommand      VARCHAR(MAX)
