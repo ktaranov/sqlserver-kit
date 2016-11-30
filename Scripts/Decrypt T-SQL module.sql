@@ -1,3 +1,29 @@
+/*
+Author: Daniel Hutmacher
+Original link: https://sqlsunday.com/2013/03/24/decrypting-sql-objects/
+
+-- Enable Dedicated Administrator Connection
+EXEC sp_configure 'remote admin connections', 1;
+GO
+RECONFIGURE
+GO
+
+-- Who using the Dedicated Admin Connection
+SELECT
+    CASE
+    WHEN ses.session_id= @@SPID THEN 'It''s me! '
+    ELSE '' END
+    + coalesce(ses.login_name,'???') as WhosGotTheDAC,
+    ses.session_id,
+    ses.login_time,
+    ses.status,
+    ses.original_login_name
+FROM sys.endpoints as en
+INNER JOIN sys.dm_exec_sessions ses ON en.endpoint_id=ses.endpoint_id
+WHERE en.name='Dedicated Admin Connection';
+*/
+
+
 SET NOCOUNT ON
 DECLARE @owner sysname='dbo', @name sysname='sp_someprocedure';
 
@@ -44,6 +70,7 @@ WHERE [objid]=@object_id AND valclass=1 and subobjid=1;
 
 SET @datalength=DATALENGTH(@encrypted_object)/2;
 
+
 --- We're going to ALTER the existing object to a "known plaintext"
 --- with encryption. That way, we can reverse-engineer the encryption
 --- key, using the new encrypted object.
@@ -76,6 +103,7 @@ BEGIN TRANSACTION;
     --- the transaction, so we don't break the original object.
 ROLLBACK TRANSACTION;
 
+
 --- Change the @fake_object from ALTER to CREATE (because this is
 --- how the encrypted objects are stored in the database!)
 SET @fake_object='CREATE'+SUBSTRING(@fake_object, 6, LEN(@fake_object));
@@ -95,6 +123,7 @@ WHILE (@offset<=@datalength) BEGIN;
         @offset=@offset+1;
 END;
 
+
 -----------------------------------------------------------
 --- Print the results:
 
@@ -107,4 +136,4 @@ WHILE (@decrypted_object IS NOT NULL) BEGIN;
         CHARINDEX(@lf, @decrypted_object+@lf)+LEN(@lf),
             LEN(@decrypted_object)), '');
 END;
-
+GO
