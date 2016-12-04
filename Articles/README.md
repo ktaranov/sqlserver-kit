@@ -140,6 +140,14 @@
 | [Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]                         | Adam Machanic                            | 2012-12-27 |
 | [Parameter Sniffing, Embedding, and the RECOMPILE Options]                                          | Paul White                               | 2013-08-28 |
 | [Can comments hamper stored procedure performance?]                                                 | Aaron Bertrand                           | 2016-11-09 |
+| [SQL Server Temporary Table Caching]                                                                | Simon Liew                               | 2016-08-12 |
+| [Techniques to Monitor SQL Server memory usage]                                                     | Basit Farooq                             | 2016-08-01 |
+| [Troubleshooting Query Regressions Caused By The New Cardinality Estimator]                         | SQL Scotsman                             | 2016-11-28 |
+| [Migrating Databases to Azure SQL Database]                                                         | Tim Radney                               | 2016-10-25 |
+| [Solve Common SQL Server Restore Issues]                                                            | Sergey Gigoyan                           | 2015-04-12 |
+| [Spills SQL Server Doesn’t Warn You About]                                                          | Erik Darling                             | 2016-11-30 |
+| [How often should I run DBCC CHECKDB?]                                                              | Erik Darling                             | 2016-02-25 |
+| [Why is My Query Faster the Second Time it Runs?]                                                   | Kendra Little                            | 2016-11-25 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -278,3 +286,11 @@
 [Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]:https://sqlperformance.com/2012/12/t-sql-queries/left-anti-semi-join
 [Parameter Sniffing, Embedding, and the RECOMPILE Options]:https://sqlperformance.com/2013/08/t-sql-queries/parameter-sniffing-embedding-and-the-recompile-options
 [Can comments hamper stored procedure performance?]:https://sqlperformance.com/2016/11/sql-performance/comments-hamper-performance
+[SQL Server Temporary Table Caching]:https://www.mssqltips.com/sqlservertip/4406/sql-server-temporary-table-caching/
+[Techniques to Monitor SQL Server memory usage]:http://www.sql-server-performance.com/2016/monitor-sql-server-memory-usage/
+[Troubleshooting Query Regressions Caused By The New Cardinality Estimator]:https://sqlserverscotsman.wordpress.com/2016/11/24/troubleshooting-query-regressions-caused-by-the-new-cardinality-estimator/
+[Migrating Databases to Azure SQL Database]:https://sqlperformance.com/2016/10/sql-performance/migrating-to-azure-sql-database
+[Solve Common SQL Server Restore Issues]:https://www.mssqltips.com/sqlservertip/4110/solve-common-sql-server-restore-issues/
+[Spills SQL Server Doesn’t Warn You About]:https://www.brentozar.com/archive/2016/11/spills-sql-server-doesnt-warn/
+[How often should I run DBCC CHECKDB?]:https://www.brentozar.com/archive/2016/02/how-often-should-i-run-dbcc-checkdb/
+[Why is My Query Faster the Second Time it Runs?]:https://www.littlekendra.com/2016/11/25/why-is-my-query-faster-the-second-time-it-runs-dear-sql-dba-episode-23/
