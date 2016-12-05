@@ -46,7 +46,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 344 Trace Flags') (**Complete list - 344 trace flags**)
+ - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 352 Trace Flags') (**Complete list - 352 trace flags**)
  - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2016**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -136,6 +136,7 @@ Headers:
     - [Toad SQL Server Blog](http://www.toadworld.com/platforms/sql-server/b/weblog)
     - [SQL-Articles](http://sql-articles.com/articles/)
     - [DallasDBAs Blog](http://dallasdbas.com/blog/)
+    - [UpSearch Blog](https://upsearch.com/blog/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -177,6 +178,7 @@ Headers:
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
    - [Midnight DBA Podcast](http://midnightdba.itbookworm.com/Show) (by Sean and Jen McCown)
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
+   - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
  - Courses
    - Free
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
