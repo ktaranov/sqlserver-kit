@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (352 trace flags)
+Complete list of Microsoft SQL Server trace flags (356 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -14,7 +14,7 @@ Headers:
 Source links:
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
- - [MSDN TF list](http://sqlserverpedia.com/wiki/Trace_Flags)
+ - [MSDN ms188396]
  - [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
  - [TECHNET List Of SQL Server Trace Flags]
  - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **352 trace flags**
+Summary: **356 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -143,7 +143,6 @@ Link: http://technet.microsoft.com/en-us/library/ms151872(v=sql.105).aspx
 Function: SQL 6.5/7/8 – Interprets numbers with a decimal point as float instead of decimal<br />
 Link: http://support.microsoft.com/kb/203787<br />
 Link: https://support.microsoft.com/en-us/kb/155714<br />
-*Thanks to: http://www.sqlservercentral.com*
 
 
 **Trace Flag: 110**<br />
@@ -168,14 +167,24 @@ Function: Bugfix in ORDER BY<br />
 Link: http://support.microsoft.com/kb/926292
 
 
+**Trace Flag: 174**<br />
+Function: Increases the SQL Server Database Engine plan cache bucket count from 40,009 to 160,001 on 64-bit systems.<br />
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: https://support.microsoft.com/en-us/kb/3026083<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
 **Trace Flag: 204**<br />
 Function: SQL 6.5 – Backward compatibility switch that enables non-ansi standard behavior. E.g. previously SQL server ignored trailing blanks in the like statement and allowed queries that contained aggregated functions to have items in the group by clause that were not in the select list.<br />
 Link: None
 
 
 **Trace Flag: 205**<br />
-Function: Log usage of AutoStat/Auto Update Statistics<br />
-Link: http://support.microsoft.com/kb/195565
+Function: Reports to the error log when a statistics-dependent stored procedure is being recompiled as a result of auto-update statistics.<br />
+Link: https://support.microsoft.com/en-us/kb/195565<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 206**<br />
@@ -234,10 +243,11 @@ Link: None
 
 
 **Trace Flag: 260**<br />
-Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). Scope: global or session<br />
-Link: [MSDN ms188396]<br />
+Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs).
+For more information about GetXpVersion(), see [Creating Extended Stored Procedures](https://msdn.microsoft.com/en-us/library/ms164627.aspx).<br />
 Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx<br />
-Scope: global
+Link: [MSDN ms188396]<br />
+Scope: global or session
 
 
 **Trace Flag: 262**<br />
@@ -308,9 +318,12 @@ Link: None
 
 
 **Trace Flag: 610**<br />
-Function: Minimally logged inserts to indexed tables<br />
-Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx
-Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/
+Function: Controls minimally logged inserts into indexed tables.<br />
+Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx<br />
+Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/<br />
+Link: https://msdn.microsoft.com/library/dd425070.aspx<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session
 
 
 **Trace Flag: 611**<br />
@@ -334,10 +347,12 @@ Link: https://blogs.msdn.microsoft.com/saponsqlserver/2014/01/17/new-functionali
 
 
 **Trace Flag: 634**<br />
-Function: Disables the background columnstore compression task<br />
-Link: [MSDN ms188396]<br />
+Function: Disables the background columnstore compression task. SQL Server periodically runs the Tuple Mover background task that compresses columnstore index rowgroups with uncompressed data, one such rowgroup at a time.
+Columnstore compression improves query performance but also consumes system resources.
+You can control the timing of columnstore compression manually, by disabling the background compression task with trace flag 634, and then explicitly invoking ALTER INDEX REORGANIZE or ALTER INDEX REBUILD at the time of your choice.<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
-Scope: global
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 646**<br />
@@ -347,7 +362,9 @@ Link: [Niko Neugebauer Columnstore Indexes – part 35]
 
 **Trace Flag: 652**<br />
 Function: Disable page pre-fetching scans<br />
-Link: [KB920093]
+Link: [KB920093]]<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 653**<br />
@@ -356,8 +373,10 @@ Link: None
 
 
 **Trace Flag: 661**<br />
-Function: Disable the ghost record removal process<br />
-Link: [KB920093]
+Function: Disables the ghost record removal process.<br />
+Link: [KB920093]<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 662**<br />
@@ -375,6 +394,16 @@ Link: https://support.microsoft.com/en-gb/kb/940545
 **Trace Flag: 699**<br />
 Function: Turn off transaction logging for the entire SQL dataserver<br />
 Link: None
+
+
+**Trace Flag: 715**<br />
+Function: Enables table lock for bulk load operations into a heap with no non-clustered indexes.
+When this trace flag is enabled, bulk load operations acquire bulk update (BU) locks when bulk copying data into a table.
+Bulk update (BU) locks allow multiple threads to bulk load data concurrently into the same table, while preventing other processes that are not bulk loading data from accessing the table.
+The behavior is similar to when the user explicitly specifies TABLOCK hint while performing bulk load, or when the sp_tableoption table lock on bulk load is enabled for a given table.
+However, when this trace flag is enabled, this behavior becomes default without any query or database changes.<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session
 
 
 **Trace Flag: 806**<br />
@@ -415,10 +444,12 @@ Link: None
 
 **Trace Flag: 834**<br />
 Function: Uses Microsoft Windows large-page allocations for the buffer pool.<br />
-Note: **If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**See https://support.microsoft.com/en-us/kb/3210239<br />
+**Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: https://support.microsoft.com/en-us/kb/920093<br />
-Link: [MSDN ms188396]
+Link: https://support.microsoft.com/en-us/kb/3210239<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 835**<br />
@@ -448,9 +479,15 @@ Link: https://support.microsoft.com/en-gb/kb/970070
 
 
 **Trace Flag: 902**<br />
-Function: Bypass Upgrade Scripts<br />
+Function: Bypasses execution of database upgrade script when installing a Cumulative Update or Service Pack.
+If you encounter an error during script upgrade mode, it is recommended to contact Microsoft SQL Customer Service and Support (CSS) for further guidance.<br />
+**WARNING: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously
+in a production environment. Database upgrade scripts needs to execute successfully for a complete install of Cumulative Updates and Service Packs.
+Not doing so can cause unexpected issues with your SQL Server instance.**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx<br />
-Link: https://support.microsoft.com/en-gb/kb/2163980
+Link: https://support.microsoft.com/en-us/kb/2163980<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1106**<br />
@@ -459,17 +496,27 @@ Link: https://support.microsoft.com/en-gb/kb/947204
 
 
 **Trace Flag: 1117**<br />
-Function: Simultaneous Autogrowth in Multiple-file database<br />
+Function: When a file in the filegroup meets the autogrow threshold, all files in the filegroup grow.br />
+**Note: Beginning with SQL Server 2016 this behavior is controlled by the AUTOGROW_SINGLE_FILE and AUTOGROW_ALL_FILES option of ALTER DATABASE, and trace flag 1117 has no affect. For more information, see ALTER DATABASE File and Filegroup Options (Transact-SQL).**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
-Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_performance_hints/archive/2012/02/09/sql-server-2008-trace-flag-t-1117.aspx
+Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_performance_hints/archive/2012/02/09/sql-server-2008-trace-flag-t-1117.aspx<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1118**<br />
-Function: Force Uniform Extent Allocation<br />
+Function: Removes most single page allocations on the server, reducing contention on the SGAM page.
+When a new object is created, by default, the first eight pages are allocated from different extents (mixed extents).
+Afterwards, when more pages are needed, those are allocated from that same extent (uniform extent).
+The SGAM page is used to track these mixed extents, so can quickly become a bottleneck when numerous mixed page allocations are occurring.
+This trace flag allocates all eight pages from the same extent when creating new objects, minimizing the need to scan the SGAM page.<br />
+**Note: Beginning with SQL Server 2016 this behavior is controlled by the SET MIXED_PAGE_ALLOCATION option of ALTER DATABASE, and trace flag 1118 has no affect. For more information, see ALTER DATABASE SET Options (Transact-SQL).**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br />
-Scope: global
+Link: https://support.microsoft.com/en-us/kb/328551<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1119**<br />
@@ -508,9 +555,10 @@ Link: None
 
 
 **Trace Flag: 1204**<br />
-Function: Returns info about deadlocks<br />
+Function: Returns the resources and types of locks participating in a deadlock and also the current command affected.<br />
+Link: https://support.microsoft.com/en-us/kb/832524<br />
 Link: [MSDN ms188396]<br />
-Scope: global
+Scope: global only
 
 
 **Trace Flag: 1205**<br />
@@ -524,7 +572,11 @@ Link: None
 
 
 **Trace Flag: 1211**<br />
-Function: Disables Lock escalation caused by memory pressure<br />
+Function: Disables lock escalation based on memory pressure, or based on number of locks. The SQL Server Database Engine will not escalate row or page locks to table locks.
+Using this trace flag can generate excessive numbers of locks. This can slow the performance of the Database Engine, or cause 1204 errors (unable to allocate lock resource) because of insufficient memory.
+If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
+However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
+This helps avoid "out-of-locks" errors when many locks are being used.<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
 
@@ -535,13 +587,21 @@ Link: None
 
 
 **Trace Flag: 1222**<br />
-Function: Returns Deadlock info in XML format<br />
+Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.<br />
 Link: [MSDN ms188396]<br />
-Scope: global
+Scope: global only
 
 
 **Trace Flag: 1224**<br />
-Function: Disables lock escalation based on number of locks<br />
+Function: Disables lock escalation based on the number of locks. However, memory pressure can still activate lock escalation.
+The Database Engine escalates row or page locks to table (or partition) locks if the amount of memory used by lock objects exceeds one of the following conditions:
+- Forty percent of the memory that is used by Database Engine. This is applicable only when the locks parameter of sp_configure is set to 0.
+- Forty percent of the lock memory that is configured by using the locks parameter of sp_configure.
+For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx).
+If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
+However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
+This helps avoid "out-of-locks" errors when many locks are being used.<br />
+**Note: Lock escalation to the table- or HoBT-level granularity can also be controlled by using the LOCK_ESCALATION option of the ALTER TABLE statement.**<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
 
@@ -569,9 +629,11 @@ Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]
 
 
 **Trace Flag: 1236**<br />
-Function: Fixes performance problem in scenarios with high lock activity
-in SQL 2012 and SQL 2014<br />
-Link: http://support.microsoft.com/kb/2926217
+Function: Enables database lock partitioning. Fixes performance problem in scenarios with high lock activity in SQL 2012 and SQL 2014.<br />
+**Note: Beginning with SQL Server 2012 SP3 and SQL Server 2014 SP1 this behavior is controlled by the engine and trace flag 1236 has no effect.**<br />
+Link: https://support.microsoft.com/en-us/kb/2926217<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1260**<br />
@@ -580,7 +642,9 @@ Disables mini-dump generation for "any of the 17883, 17884, 17887, or 17888 erro
 The trace flag can be used in conjunction with trace flag –T1262. For example, you
 could enable –T1262 to get 10- and a 60-second interval reporting and also enable – T1260 to avoid getting mini-dumps."<br />
 Link: [A Topical Collection of SQL Server Flags v6]<br />
-Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
+Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1261**<br />
@@ -617,8 +681,13 @@ Link: [Trace flags in sql server from trace flag 902 to trace flag 1462]
 
 
 **Trace Flag: 1448**<br />
-Function: Alters replication log reader functionality<br />
-Link: [MSDN ms188396]
+Function: Enables the replication log reader to move forward even if the async secondaries have not acknowledged the reception of a change.
+Even with this trace flag enabled the log reader always waits for the sync secondaries. The log reader will not go beyond the min ack of the sync secondaries.
+This trace flag applies to the instance of SQL Server, not just an availability group, an availability database, or a log reader instance.
+Takes effect immediately without a restart. This trace flag can be activated ahead of time or when an async secondary fails.<br />
+Link: https://support.microsoft.com/en-us/kb/937041<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 1449**<br />
@@ -627,9 +696,11 @@ Link: https://support.microsoft.com/en-gb/kb/936179
 
 
 **Trace Flag: 1462**<br />
-Function: Disable Mirroring Log compression<br />
+Function: Disables log stream compression for asynchronous availability groups.
+This feature is enabled by default on asynchronous availability groups in order to optimize network bandwidth.<br />
 Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2007/09/17/database-mirroring-log-compression-in-sql-server-2008-improves-throughput.aspx<br />
 Link: [MSDN mt736907]<br />
+Link: [MSDN ms188396]<br />
 Scope: global only
 
 
@@ -673,6 +744,13 @@ Function: MSShipped bit will be set automatically at Create time when creating s
 Link: None
 
 
+**Trace Flag: 1800**<br />
+Function: Enables SQL Server optimization when disks of different sector sizes are used for primary and secondary replica log files, in SQL Server AG and Log Shipping environments.<br />
+Link: https://support.microsoft.com/en-us/kb/3009974<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
 **Trace Flag: 1802**<br />
 Function: SQL 9 - After detaching a database that resides on network-attached storage, you cannot reattach the SQL Server database<br />
 Link: https://support.microsoft.com/en-us/kb/922804
@@ -700,14 +778,17 @@ Link: https://support.microsoft.com/en-us/kb/911678
 
 **Trace Flag: 2301**<br />
 Function: Enable advanced decision support optimizations<br />
-Link: [KB920093]
+Link: [KB920093]<br />
+Link: [MSDN ms188396]<br />
+Scope: global and session and query
 
 
 **Trace Flag: 2312**<br />
-Function: Forces the query optimizer to use the SQL Server 2014 version
-of the cardinality estimator when creating the query plan when running
-SQL Server 2014 with database compatibility level 110<br />
-Link: http://support.microsoft.com/kb/2801413
+Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2014 through SQL Server 2016 versions,
+dependent of the compatibility level of the database.<br />
+Link: [KB2801413]<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session or query
 
 
 **Trace Flag: 2328**<br />
@@ -722,13 +803,21 @@ Link: http://www.brentozar.com/archive/2015/11/trace-flag-2330-who-needs-missing
 
 
 **Trace Flag: 2335**<br />
-Function: Generates Query Plans optimized for less memory<br />
-Link: http://support.microsoft.com/kb/2413549
+Function: Causes SQL Server to assume a fixed amount of memory is available during query optimization. It does not limit the memory SQL Server grants to execute the query.
+The memory configured for SQL Server will still be used by data cache, query execution and other consumers.<br />
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: https://support.microsoft.com/en-us/kb/2413549<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session or query
 
 
 **Trace Flag: 2340**<br />
-Function: Disable specific SORT optimization in Query Plan<br />
-Link: http://support.microsoft.com/kb/2009160
+Function: Causes SQL Server not to use a sort operation (batch sort) for optimized nested loop joins when generating a plan.
+Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: https://support.microsoft.com/en-us/kb/2009160<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session or query
 
 
 **Trace Flag: 2363**<br />
@@ -737,10 +826,13 @@ Link: [Cardinality Estimation Framework 2014 First Look]
 
 
 **Trace Flag: 2371**<br />
-Function: Change threshold for auto update stats<br />
+Function: Changes the fixed auto update statistics threshold to dynamic auto update statistics threshold.<br />
+**Note: Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 2371 has no effect.**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx<br />
-Link: https://support.microsoft.com/en-us/kb/2754171
-Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
+Link: https://support.microsoft.com/en-us/kb/2754171<br />
+Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
 
 
 **Trace Flag: 2372**<br />
@@ -761,11 +853,15 @@ Link: http://www.benjaminnevarez.com/2013/02/statistics-on-ascending-keys
 
 
 **Trace Flag: 2389**<br />
-Function: Enable auto-quick-statistics update for known ascending keys<br />
+Function: Enable automatically generated quick statistics for ascending keys (histogram amendment).
+If trace flag 2389 is set, and a leading statistics column is marked as ascending, then the histogram used to estimate cardinality will be adjusted at query compile time.<br />
+Link: [KB2801413]<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-2389--2390.aspx<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
-Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator
+Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session or query
 
 
 **Trace Flag: 2390**<br />
@@ -773,7 +869,7 @@ Function: Enable automatically generated quick statistics for ascending or unkno
 If trace flag 2390 is set, and a leading statistics column is marked as ascending or unknown, then the histogram used to estimate cardinality will be adjusted at query compile time<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-2389--2390.aspx<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
-Link: https://support.microsoft.com/en-us/kb/2801413<br />
+Link: [KB2801413]<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
@@ -2210,7 +2306,9 @@ Link: None
 
 **Trace Flag: 9830**<br />
 **Undocumented trace flag**<br />
-Function: Activate the trace flag before creating a natively compiled procedure. If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure. This is an undocumented trace flag so please don’t use this on a production system.<br />
+Function: Activate the trace flag before creating a natively compiled procedure.
+If you now open up the SQL Server error log you should see the compilation process for the natively compiled procedure.
+This is an undocumented trace flag so please don’t use this on a production system.<br />
 Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
 
 
@@ -2224,10 +2322,17 @@ Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePape
 
 **Trace Flag: 10204**<br />
 Function: Disables merge/recompress during columnstore index reorganization.
-In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
+In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups
+into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
 **Note: Trace flag 10204 does not apply to column store indexes which are created on memory-optimized tables.**<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
+
+
+**Trace Flag: 10213**<br />
+Function: Enables the option to configure compression delay in columnstore indexes in SQL Server 2016<br />
+Link: http://www.nikoport.com/2016/02/04/columnstore-indexes-part-76-compression-delay/<br />
+Scope: session
 
 
 **Trace Flag: 10306**<br />
@@ -2256,3 +2361,4 @@ Scope: global or session
 [MSDN mt736907]:https://msdn.microsoft.com/en-us/library/mt736907.aspx
 [More Undocumented Query Optimizer Trace Flags]:http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 [KB3107399]:https://support.microsoft.com/en-us/kb/3107399
+[KB2801413]:https://support.microsoft.com/en-us/kb/2801413
