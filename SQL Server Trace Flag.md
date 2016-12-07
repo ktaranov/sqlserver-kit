@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (356 trace flags)
+Complete list of Microsoft SQL Server trace flags (359 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **356 trace flags**
+Summary: **359 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -704,6 +704,15 @@ Link: [MSDN ms188396]<br />
 Scope: global only
 
 
+**Trace Flag: 1504**<br />
+Function: Dynamic memory grant expansion can also help with parallel index build plans where the distribution of rows across threads is uneven.
+The amount of memory that can be consumed this way is not unlimited, however.
+SQL Server checks each time an expansion is needed to see if the request is reasonable given the resources available at that time.
+Some insight to this process can be obtained by enabling undocumented trace flag 1504, together with 3604 (for message output to the console)
+or 3605 (output to the SQL Server error log). If the index build plan is parallel, only 3605 is effective because parallel workers cannot send trace messages cross-thread to the console.<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]
+
+
 **Trace Flag: 1603**<br />
 Function: Use standard disk I/O (i.e. turn off asynchronous I/O)<br />
 Link: None
@@ -787,6 +796,7 @@ Scope: global and session and query
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2014 through SQL Server 2016 versions,
 dependent of the compatibility level of the database.<br />
 Link: [KB2801413]<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -816,6 +826,7 @@ Function: Causes SQL Server not to use a sort operation (batch sort) for optimiz
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/en-us/kb/2009160<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -860,6 +871,8 @@ Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator<br />
+Link: https://www.sswug.org/sswugresearch/community/trace-flag-2389-and-the-new-cardinality-estimator/<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -1282,11 +1295,13 @@ Link: None
 **Trace Flag: 3604**<br />
 Function: Redirect DBCC command output to query window<br />
 Link: http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: http://www.sqlservice.se/sv/start/blogg/querytraceon.aspx
 
 
 **Trace Flag: 3605**<br />
 Function: Directs the output of some Trace Flags to the Errorlog<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-performance-of-backup-compression-in-sql-server-2008.aspx
 
 
@@ -1503,6 +1518,7 @@ Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add t
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: http://blogs.msdn.com/b/axinthefield/archive/2010/11/04/sql-server-trace-flags-for-dynamics-ax.aspx<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -1512,6 +1528,7 @@ Function: Causes SQL Server to generate a plan using minimum selectivity when es
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: http://support.microsoft.com/kb/2658214<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -1521,6 +1538,7 @@ Function: Causes SQL Server to generate a plan that does not use row goal adjust
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: http://support.microsoft.com/kb/2667211<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -1545,6 +1563,7 @@ This means that different trace flag 4199 changes are enabled for each compatibi
 Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx<br />
 Link: https://msdn.microsoft.com/en-us/library/bb510411.aspx#TraceFlag<br />
 Link: https://support.microsoft.com/en-us/kb/974006<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
 
@@ -1680,6 +1699,11 @@ Function: Forces NUMBER values with unknown precision/scale to be treated as dou
 Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/kb/3051993<br />
 Scope: global and session
+
+
+**Trace Flag: 7352**<br />
+Function: Show the optimizer output and the post-optimization rewrite in action<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]
 
 
 **Trace Flag: 7412**<br />
@@ -1979,20 +2003,22 @@ Link: http://www.sqlservice.se/sv/start/blogg/sql-server-trace-flag-8602.aspx
 
 
 **Trace Flag: 8605**<br />
-Function: Displays logical and physical trees used during the
-optimization process<br />
-Link: [More Undocumented Query Optimizer Trace Flags]
+Function: Displays logical and physical trees used during the optimization process<br />
+Link: [More Undocumented Query Optimizer Trace Flags]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8606**<br />
 Function: Show LogOp Trees<br />
-Link: [Cardinality Estimation Framework 2014 First Look]
+Link: [Cardinality Estimation Framework 2014 First Look]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8607**<br />
-Function: Displays the optimization output tree during the optimization
-process<br />
-Link: [More Undocumented Query Optimizer Trace Flags]
+Function: Displays the optimization output tree during the optimization process<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
+Link: [More Undocumented Query Optimizer Trace Flags]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8612**<br />
@@ -2009,28 +2035,36 @@ Link: http://www.somewheresomehow.ru/optimizer-part-3-full-optimiztion-optimizat
 **Trace Flag: 8619**<br />
 Function: Show Applied Transformation Rules<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/02/06/incorrect-results-with-indexed-views.aspx<br />
-Link: [Cardinality Estimation Framework 2014 First Look]
+Link: [Cardinality Estimation Framework 2014 First Look]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8620**<br />
 Function: Add memo arguments to trace flag 8619<br />
-Link: [Query Optimizer Deep Dive - Part 4]
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8621**<br />
 Function: Rule with resulting tree<br />
-Link: [Query Optimizer Deep Dive - Part 4]
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8628**<br />
-Function: When used with TF 8666, causes extra information about the transformation rules
-applied to be put into the XML showplan.<br />
-Link: http://www.queryprocessor.com/tf_8628/
+Function: When used with TF 8666, causes extra information about the transformation rules applied to be put into the XML showplan.<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8649**<br />
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx
+
+
+**Trace Flag: 8666**<br />
+Function: CQScanPartitionSortNew is one of only two sort classes that sets the Soft Sort property exposed when Sort operator execution plan properties are generated with undocumented trace flag 8666 enabled<br />
+Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
+Link: [Yet another X-Ray for the QP]
 
 
 **Trace Flag: 8675**<br />
@@ -2229,6 +2263,7 @@ Link: http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-ag
 Function: Causes SQL Server to generate a plan using minimum selectivity for single-table filters, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
@@ -2237,8 +2272,9 @@ Scope: global or session or query
 Function: Causes SQL Server to generate a plan using the Simple Containment assumption instead of the default Base Containment assumption, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/kb/3189675<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
+Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
@@ -2247,8 +2283,9 @@ Function: Enables you to set the query optimizer cardinality estimation model to
 To accomplish this at the database level, see ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL).
 To accomplish this at the query level, add the QUERYTRACEONquery hint<br />
 Link: http://support.microsoft.com/kb/2801413<br />
-Link: [MSDN ms188396]<br />
+Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-legacy-ce/<br />
+Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
@@ -2362,3 +2399,6 @@ Scope: global or session
 [More Undocumented Query Optimizer Trace Flags]:http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 [KB3107399]:https://support.microsoft.com/en-us/kb/3107399
 [KB2801413]:https://support.microsoft.com/en-us/kb/2801413
+[New Features in SQL Server 2016 Service Pack 1]:https://www.mssqltips.com/sqlservertip/4574/new-features-in-sql-server-2016-service-pack-1/
+[Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
+[Yet another X-Ray for the QP]:http://www.queryprocessor.com/tf_8628/
