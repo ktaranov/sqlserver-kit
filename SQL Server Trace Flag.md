@@ -595,8 +595,9 @@ Scope: global only
 **Trace Flag: 1224**<br />
 Function: Disables lock escalation based on the number of locks. However, memory pressure can still activate lock escalation.
 The Database Engine escalates row or page locks to table (or partition) locks if the amount of memory used by lock objects exceeds one of the following conditions:
-- Forty percent of the memory that is used by Database Engine. This is applicable only when the locks parameter of sp_configure is set to 0.
-- Forty percent of the lock memory that is configured by using the locks parameter of sp_configure.
+ - Forty percent of the memory that is used by Database Engine. This is applicable only when the locks parameter of sp_configure is set to 0.
+ - Forty percent of the lock memory that is configured by using the locks parameter of sp_configure.
+
 For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx).
 If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
 However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
@@ -2360,7 +2361,7 @@ Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePape
 **Trace Flag: 10204**<br />
 Function: Disables merge/recompress during columnstore index reorganization.
 In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups
-into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
+into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.<br />
 **Note: Trace flag 10204 does not apply to column store indexes which are created on memory-optimized tables.**<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
