@@ -148,6 +148,9 @@
 | [Spills SQL Server Doesn’t Warn You About]                                                          | Erik Darling                             | 2016-11-30 |
 | [How often should I run DBCC CHECKDB?]                                                              | Erik Darling                             | 2016-02-25 |
 | [Why is My Query Faster the Second Time it Runs?]                                                   | Kendra Little                            | 2016-11-25 |
+| [Downgrading the SQL Server Edition of a Dev Environment]                                           | Kendra Little                            | 2016-11-15 |
+| [Date Math In The WHERE Clause]                                                                     | Erik Darling                             | 2016-12-01 |
+| [Why is This Partitioned Query Slower?]                                                             | Kendra Little                            | 2015-09-01 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -294,3 +297,6 @@
 [Spills SQL Server Doesn’t Warn You About]:https://www.brentozar.com/archive/2016/11/spills-sql-server-doesnt-warn/
 [How often should I run DBCC CHECKDB?]:https://www.brentozar.com/archive/2016/02/how-often-should-i-run-dbcc-checkdb/
 [Why is My Query Faster the Second Time it Runs?]:https://www.littlekendra.com/2016/11/25/why-is-my-query-faster-the-second-time-it-runs-dear-sql-dba-episode-23/
+[Downgrading the SQL Server Edition of a Dev Environment]:https://www.littlekendra.com/2016/11/15/downgrading-the-sql-server-edition-of-a-dev-environment/
+[Date Math In The WHERE Clause]:https://www.brentozar.com/archive/2016/12/date-math-clause/
+[Why is This Partitioned Query Slower?]:https://www.brentozar.com/archive/2015/09/why-is-this-partitioned-query-slower/
