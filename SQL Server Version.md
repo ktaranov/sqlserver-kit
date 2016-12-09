@@ -432,7 +432,7 @@ Microsoft SQL Server 2016 (SP1) (KB3182545) – 13.0.4199.0 (X64)
 ```
 
 | Build         | File version      | Branch | KB / Description                                                                                                               | Release Date | Build Date |
-|---------------|-------------------|--------|---------------------------------------------------------------------------------                                               |--------------|------------|
+|---------------|-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|
 | 13.0.4199.0   | 2015.130.4199.0   | SP1    | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |
 | 13.0.4001.0   | 2015.130.4001.0   | SP1    | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |
 | 13.0.2186.6   | 2015.130.2186.6   | RTM    | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |
@@ -442,7 +442,7 @@ Microsoft SQL Server 2016 (SP1) (KB3182545) – 13.0.4199.0 (X64)
 | 13.0.2164.0   | 2015.130.2164.0   | RTM    | [3182270 Cumulative Update 2 for SQL Server 2016]                                                                              | 2016-09-22   | 2016-09-09 |
 | 13.0.2149.0   | 2015.130.2149.0   | RTM    | [3164674 Cumulative Update 1 for SQL Server 2016]                                                                              | 2016-07-25   | 2016-07-11 |
 | 13.0.1722.0   | 2015.130.1722.0   | RTM    | [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]                                                 | 2016-11-08   | 2016-10-31 |
-| 13.0.1711.0   | 2015.130.1711.0   | RTM    | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-08-31 |
+| 13.0.1711.0   | 2015.130.1711.0   | RTM    | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-07-30 |
 | 13.0.1708.0   | 2015.130.1708.0   | RTM    | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]                                                             | 2016-06-04   | 2016-06-02 |
 | 13.0.1601.5   | 2015.130.1601.5   | RTM    | [Microsoft SQL Server 2016 RTM]                                                                                                | 2016-06-01   | 2016-04-29 |
 | 13.0.1400.361 | 2015.130.1400.361 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)                                                       | 2016-04-15   | 2016-04-09 |

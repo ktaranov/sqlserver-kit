@@ -1,5 +1,5 @@
 # Microsoft SQL Server Data Types
-Complete list of all  Microsoft SQL Server Data Types
+Complete list of all Microsoft SQL Server Data Types
 
 ## Source link
  - [MSDN Data Types](https://msdn.microsoft.com/en-us/library/ms187752.aspx)
@@ -9,7 +9,7 @@ Complete list of all  Microsoft SQL Server Data Types
  - [Integration Services Data Types](https://msdn.microsoft.com/en-us/library/ms141036.aspx)
  - [DbType Enumeration](https://msdn.microsoft.com/en-us/library/System.Data.DbType.aspx)
  - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
- - [SQL Server Integration Services, Data Type Mapping ](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
+ - [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
  - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
 
 ## Data Type Precedence (Transact-SQL)
@@ -108,6 +108,7 @@ The operand expressions are denoted as expression e1, with precision p1 and scal
 | e1 / e2                                | p1 - s1 + s2 + max(6, s1 + p2 + 1)  | max(6, s1 + p2 + 1) |
 | e1 { UNION \| EXCEPT \| INTERSECT } e2 | max(s1, s2) + max(p1-s1, p2-s2)     | max(s1, s2)         |
 | e1 % e2                                | min(p1-s1, p2 -s2) + max( s1,s2 )   | max(s1, s2)         |
+
 \* The result precision and scale have an absolute maximum of 38. When a result precision is greater than 38, the corresponding scale is reduced to prevent the integral part of a result from being truncated.
 
 

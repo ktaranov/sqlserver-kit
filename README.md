@@ -179,6 +179,7 @@ Headers:
    - [Midnight DBA Podcast](http://midnightdba.itbookworm.com/Show) (by Sean and Jen McCown)
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
+   - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
  - Courses
    - Free
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
@@ -219,7 +220,8 @@ Headers:
     - [Azure Blob Storage Backup](https://github.com/bornsql/azureblobstoragesync) (by Randolph West) (Github)
     - [StackExchange.DataExplorer - free tool for executing SQL queries against Stack Exchange databases](https://github.com/StackExchange/StackExchange.DataExplorer) (Github)
     - [Machine Learning Templates with SQL Server 2016 R Services](https://github.com/Microsoft/SQL-Server-R-Services-Samples) (by Sheri Gilley) (Github)
-    - [Campaign Optimization - Predicting How and When to Contact Leads Implemented on SQL Server 2016 R Services] (by Sheri Gilley)  (Github)
+    - [Campaign Optimization - Predicting How and When to Contact Leads Implemented on SQL Server 2016 R Services] (by Sheri Gilley) (Github)
+    - [SQL Server Performance Dashboards - contains all Microsoft based reports, custom built reports, modified reports and the TSQL setup](http://sqldashboards.codeplex.com/) (by Arun Sirpal)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
