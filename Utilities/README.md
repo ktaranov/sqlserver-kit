@@ -150,9 +150,9 @@ Utility types (main purpose) in braces `{}` current counts:
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | No                               | No             | [SC], [DC] | [DBBest Database Compare Suite]      | 2015-09-04   | DBBest              | No           |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | No                               | No             | [?]        | [Advanced Query Tool]                | 2015-03-18   | Cardett Associates  | No           |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | No                               | No             | [SC]       | [SqlDiffFramework]                   | 2012-04-17   | Michael Sorens      | Yes          | No    |
-| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                           | 2016-05-06   | Jet Brains          | No           |  $199 |
+| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                           | 2016-11-23   | Jet Brains          | No           |  $199 |
 | [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | No                               | No             | [?]        | [Pssdiag and Sqldiag Manager]        | 2015-04-17   | Jack Li             | Yes          | No    |
-| [SQL Nexus Tool](#sql-nexus-tool)                                     | No                               | No             | [?]        | [SQL Nexus Tool]                     | 2014-03-11   | Jack Li             | Yes          | No    |
+| [SQL Nexus Tool](#sql-nexus-tool)                                     | No                               | No             | [?]        | [SQL Nexus Tool]                     | 2016-11-20   | Jack Li             | Yes          | No    |
 | [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | No                               | No             | [?]        | [DBSophic Qure Profiler]             | ?            | DBSophic            | No           |  $300 |
 | [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | No                               | No             | [?]        | [DBSophic Qure Optimizer]            | ?            | DBSophic            | No           | ?     |
 | [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                     | 2015-01-15   | SQLServerUtilities  | No           |   $99 |
@@ -1988,7 +1988,7 @@ SqlDiffFramework compares two data sources and highlights both row and column di
 
 ## DataGrip <a id="datagrip"></a>
 Download page: [DataGrip]<br/>
-Release date: 2016-05-06<br/>
+Release date: 2016-11-23<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Jet Brains<br/>
 Free version: No<br/>
@@ -2001,7 +2001,7 @@ Price: $199
 
 
 ## Pssdiag and Sqldiag Manager <a id="pssdiag-and-sqldiag-manager"></a>
-Download page: [SQL Nexus Tool]<br/>
+Download page: [Pssdiag and Sqldiag Manager]<br/>
 Release date: 2015-04-17<br/>
 Support Version: 2012/2014<br/>
 Author: Jack Li<br/>
@@ -2015,7 +2015,7 @@ Microsoft Product support continues to maintain a configuration tool that allows
 
 ## SQL Nexus Tool <a id="sql-nexus-tool"></a>
 Download page: [SQL Nexus Tool]<br/>
-Release date: 2014-05-06<br/>
+Release date: 2016-11-20<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Jack Li<br/>
 Free version: Yes<br/>
