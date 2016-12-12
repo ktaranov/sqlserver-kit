@@ -21,7 +21,7 @@ Utility types (main purpose) in braces `{}` current counts:
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------|--------------|---------------------|--------------|------:|
-| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                               | 2016-07-13   | Microsoft           | Yes          | No    |
+| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                               | 2016-12-05   | Microsoft           | Yes          | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                        | 2012-02-11   | Microsoft           | Yes          | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]       | 2014-12-12   | Microsoft           | Yes          | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                          | 2016-02-23   | Microsoft           | Yes          | No    |
@@ -194,8 +194,8 @@ Utility types (main purpose) in braces `{}` current counts:
 
 ## SSMS <a id="ssms"></a>
 Download page: [SSMS]<br/>
-Release date: 2016-07-13<br/>
-Support Version: 2005/2008/2012/2014/2016<br/>
+Release date: 2016-12-05<br/>
+Support Version: 2005/2008/2012/2014/2016/vNext<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
