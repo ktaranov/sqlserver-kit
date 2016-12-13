@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- November 2016
--- Last Modified: November 14, 2016
+-- December 2016
+-- Last Modified: December 6, 2016
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -80,8 +80,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																												11.0.5649		SP2 CU12			5/16/2016	---->  11.0.6537		SP3 CU3			 5/16/2016
 --																												11.0.5655		SP2 CU13			7/18/2016	---->  11.0.6540		SP3 CU4			 7/18/2016	
 --																												11.0.5657		SP2 CU14		    9/19/2016   ---->  11.0.6544		SP3 CU5			 9/20/2016
---																												11.9.5676		SP2 CU14 + HF 	    11/8/2016   ---->  11.0.6567		SP3 CU5 + HF	 11/8/2016   https://technet.microsoft.com/library/security/MS16-136                                                          				
-
+--																												11.0.5676		SP2 CU15 			11/16/2016  ---->  11.0.6567		SP3 CU6 		11/16/2016                                                             				
+--																												
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 

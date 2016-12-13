@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- November 2016
--- Last Modified: November 14, 2016
+-- December 2016
+-- Last Modified: December 7, 2016
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -48,8 +48,8 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 ------
 
--- SQL Server 2016 RTM Branch Builds											
--- Build			Description			Release Date				
+-- SQL Server 2016 RTM Branch Builds								-- SQL Server 2016 SP1 Branch Builds										
+-- Build			Description			Release Date				Build			Description			Release Date				
 -- 13.0.200.172		CTP 2.0				5/26/2015
 -- 13.0.300.44		CTP 2.1				6/14/2015
 -- 13.0.407.1		CTP 2.2				7/28/2015
@@ -66,8 +66,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.1708.0		RTM-GDR				6/12/2016
 -- 13.0.2149.0		RTM CU1				7/25/2016
 -- 13.0.2164.0		RTM CU2				9/22/2016
--- 13.0.2186.0		RTM CU2 + HF		11/8/2016	https://technet.microsoft.com/library/security/MS16-136
-
+-- 13.0.2186.0		RTM CU3				11/16/2016	---->			13.0.4001.0		SP1 RTM				11/16/2016
+															
 
 -- How to obtain the latest Service Pack for SQL Server 2016
 -- https://support.microsoft.com/en-us/kb/3177534
@@ -232,7 +232,8 @@ FROM sys.dm_os_process_memory WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- SQL Server Services information (Query 8) (SQL Server Services Info)
 SELECT servicename, process_id, startup_type_desc, status_desc, 
-last_startup_time, service_account, is_clustered, cluster_nodename, [filename]
+last_startup_time, service_account, is_clustered, cluster_nodename, [filename], 
+instant_file_initialization_enabled -- New in SQL Server 2016 SP1
 FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -411,7 +412,8 @@ physical_memory_kb/1024 AS [Physical Memory (MB)], committed_kb/1024 AS [Committ
 committed_target_kb/1024 AS [Committed Target Memory (MB)],
 max_workers_count AS [Max Workers Count], affinity_type_desc AS [Affinity Type], 
 sqlserver_start_time AS [SQL Server Start Time], virtual_machine_type_desc AS [Virtual Machine Type], 
-softnuma_configuration_desc AS [Soft NUMA Configuration]
+softnuma_configuration_desc AS [Soft NUMA Configuration],
+sql_memory_model_desc -- New in SQL Server 2016 SP1
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -428,6 +430,11 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- Configure SQL Server to Use Soft-NUMA (SQL Server)
 -- https://msdn.microsoft.com/en-us/library/ms345357(v=sql.130).aspx
 
+-- sql_memory_model_desc values (New in SQL Server 2016 SP1)
+-- CONVENTIONAL
+-- LOCK_PAGES
+-- LARGE_PAGES
+   
 
 -- Get System Manufacturer and model number from SQL Server Error log (Query 19) (System Manufacturer)
 EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
