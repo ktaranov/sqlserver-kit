@@ -481,7 +481,7 @@ Link: https://support.microsoft.com/en-gb/kb/970070
 **Trace Flag: 902**<br />
 Function: Bypasses execution of database upgrade script when installing a Cumulative Update or Service Pack.
 If you encounter an error during script upgrade mode, it is recommended to contact Microsoft SQL Customer Service and Support (CSS) for further guidance.<br />
-**WARNING: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously
+**Warning: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously
 in a production environment. Database upgrade scripts needs to execute successfully for a complete install of Cumulative Updates and Service Packs.
 Not doing so can cause unexpected issues with your SQL Server instance.**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx<br />
@@ -1886,14 +1886,14 @@ Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2005-slowing-down-after
 
 **Trace Flag: 8032**<br />
 Function: Alters cache limit settings<br />
-**WARNING: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.**<br />
+**Warning: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.**<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
 
 
 **Trace Flag: 8033**<br />
 Function: Alters cache limit settings<br />
-Warning: SQL 9 - Disable the reporting of CPU Drift errors in the SQL Server error log like time stamp counter of CPU on scheduler id 1 is not synchronized with other CPUs.<br />
+**Warning: SQL 9 - Disable the reporting of CPU Drift errors in the SQL Server error log like time stamp counter of CPU on scheduler id 1 is not synchronized with other CPUs.**<br />
 Link: None
 
 
@@ -2373,13 +2373,15 @@ Link: http://www.nikoport.com/2016/02/04/columnstore-indexes-part-76-compression
 Scope: session
 
 
-**Trace Flag: 10306**<br />
+**Trace Flag: 10316**<br />
 Function: Enables creation of additional indexes on internal memory-optimized staging temporal table, beside the default one.
 If you have specific query pattern that includes columns which are not covered by the default index you may consider adding additional ones.<br />
 **Note: System-versioned temporal tables for Memory-Optimized Tables are designed to provide high transactional throughput.
 Please be aware that creating additional indexes may introduce overhead for DML operations that update or delete rows in the current table.
 With the additional indexes you should aim to find the right balance between performance of temporal queries and additional DML overhead.**<br />
 Link: [MSDN ms188396]<br />
+Link: https://support.microsoft.com/en-us/kb/3198846<br />
+Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performance-on-memory-optimized-tables-with-temporal-using-new-index-creation-enhancement-in-sp1/
 Scope: global or session
 
 
