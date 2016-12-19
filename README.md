@@ -167,6 +167,8 @@ Headers:
    - [SQLBits Video](http://sqlbits.com/)
    - [Business Intelligence Videos](http://www.bidn.com/Videos/Videos)
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
+   - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
+   - [MVP: Data Platform](https://channel9.msdn.com/Blogs/MVP-Data-Platform)
  - Free Database Podcasts
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
@@ -194,6 +196,8 @@ Headers:
      - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
      - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
      - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
+     - [SolidQ Classes](https://training.solidq.com/classes/)
+     - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
  - SQL Server Backwards Compatibility
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
@@ -325,7 +329,7 @@ BIML Bloggers
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
  - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul Kapoor)
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)  (Github)
- - [Powershell SQL Server Performance Health Check ](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom) (Github)
+ - [Powershell SQL Server Performance Health Check](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom) (Github)
  - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
  - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists) (Github)
  - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi) (Github)
@@ -343,6 +347,7 @@ BIML Bloggers
  - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
  - [PowerShell sqlCheck](https://bitbucket.org/yardbirdsax/sqlcheck/src) (Bitbucket) (by Josh Feierman)
  - [PowerShell Enterprise Policy Management Framework](https://epmframework.codeplex.com/)
+ - [ReportingServicesTools - Reporting Services Powershell Tools](https://github.com/Microsoft/ReportingServicesTools) (by Microsoft)
 
 [*Back to top*](#header05)
 
