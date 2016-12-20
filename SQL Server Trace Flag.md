@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (359 trace flags)
+Complete list of Microsoft SQL Server trace flags (361 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **359 trace flags**
+Summary: **361 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -834,7 +834,8 @@ Scope: global or session or query
 
 **Trace Flag: 2363**<br />
 Function: TF Selectivity<br />
-Link: [Cardinality Estimation Framework 2014 First Look]
+Link: [Cardinality Estimation Framework 2014 First Look]<br />
+Link: http://www.queryprocessor.com/ce-process/
 
 
 **Trace Flag: 2371**<br />
@@ -1800,6 +1801,13 @@ Function: SQL server to create a mini-dump once you enable 2551 and a out of mem
 Link: None
 
 
+**Trace Flag: 8008**<br />
+**Undocumented trace flag**<br />
+Function: Force the scheduler hint to be ignored.
+Always assign to the scheduler with the least load (pool based on SQL 2012 EE SKU or Load Factor for previous versions and SKUs.)<br />
+Link: [How It Works: SQL Server 2012 Database Engine Task Scheduling]
+
+
 **Trace Flag: 8010**<br />
 Function: Fixes problem that SQL Server services can not be stopped<br />
 Link: http://support.microsoft.com/kb/2633271/en-us
@@ -1826,7 +1834,11 @@ Link: [MSDN ms188396]<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html<br />
 Scope: global only
 
-*Thanks to: @sql\_handle (https://twitter.com/sql_handle)*
+
+**Trace Flag: 8016**<br />
+**Undocumented trace flag**<br />
+Function: Force load balancing to be ignored. Always assign to the preferred scheduler.<br />
+Link: [How It Works: SQL Server 2012 Database Engine Task Scheduling]
 
 
 **Trace Flag: 8017**<br />
@@ -2281,12 +2293,13 @@ Scope: global or session or query
 
 **Trace Flag: 9481**<br />
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database.
-To accomplish this at the database level, see ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL).
-To accomplish this at the query level, add the QUERYTRACEONquery hint<br />
+To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).
+To accomplish this at the query level, add the QUERYTRACEON query hint<br />
 Link: http://support.microsoft.com/kb/2801413<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-legacy-ce/<br />
 Link: [MSDN ms188396]<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -2405,3 +2418,4 @@ Scope: global or session
 [New Features in SQL Server 2016 Service Pack 1]:https://www.mssqltips.com/sqlservertip/4574/new-features-in-sql-server-2016-service-pack-1/
 [Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
 [Yet another X-Ray for the QP]:http://www.queryprocessor.com/tf_8628/
+[How It Works: SQL Server 2012 Database Engine Task Scheduling]:https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
