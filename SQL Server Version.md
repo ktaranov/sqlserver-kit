@@ -123,7 +123,7 @@ Profits:
 
 | Version | Latest Update                                                                                    | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
 |---------|--------------------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| vNext   | [Install vNext]                                                                                  | 14.0.1.246                                     | 2016-11-16                               | ?            | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| vNext   | [Install vNext]                                                                                  | 14.0.100.187                                   | 2016-12-16                               | ?            | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
 | 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545] then <br/>[COD Hotfix KB3207512] | 13.0.1601.5<br/>13.0.4001.0<br>13.0.4199.0     | 2016-06-01<br/>2016-11-16<br/>2016-11-23 | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[MS16-36 KB3194718]                              | 12.0.5000.0<br/>12.0.5532.0                    | 2016-07-11<br/>2016-11-08                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[MS16-36 KB3194724]              | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6567.0   | 2012-02-14<br/>2015-11-21<br/>2016-11-17 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -168,7 +168,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 
 | Direct x64 Download Link       | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
 |--------------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
-| [SQL Server vNext]             | SQLServerVnextCTP1-x64-ENU.iso                                       | 2016-11-16   | 14.0.1.246     |     1983 | 95 1d de a6 84 1b fe e5 b1 9a e7 6b f3 81 b1 9c b8 8b af 5f |
+| [SQL Server vNext]             | SQLServerVnextCTP1-x64-ENU.iso                                       | 2016-12-16   | 14.0.100.87    |     1975 | 67 61 1f 3c 36 82 18 78 0c 39 27 65 a0 8c 18 a3 b5 1a 70 02 |
 | [SQL Server 2016]              | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
 | [SQL Server 2016 SP1]          | SQLServer2016SP1-KB3182545-x64-ENU.exe                               | 2016-11-16   | 13.0.4001.0    |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
 | [SQL Server 2016 KB3207512]    | SQLServer2016-KB3207512-x64.exe                                      | 2016-11-23   | 13.0.4199.0    |      521 | 37 2b 23 7b 1d 07 34 fd ff 2b 9d 45 2d 58 24 b8 c1 70 c6 db |
@@ -184,7 +184,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | [SQL Server 2008 SP4]          | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 2014-09-30   | 10.0.6241.0    |      378 | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
 | [SQL Server 2008 SU]           | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |       61 | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
 
-[SQL Server vNext]:http://care.dlservice.microsoft.com/dl/download/F/6/0/F607E0C4-43B2-4170-A2A3-9823132B2DDC/SQLServerVnextCTP1-x64-ENU.iso
+[SQL Server vNext]:http://care.dlservice.microsoft.com/dl/download/2/F/2/2F2C8D73-6BA9-41BF-9CF6-1337D367C0ED/ENU/SQLServerVnextCTP1-x64-ENU.iso
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 KB3207512]:https://download.microsoft.com/download/8/4/F/84F6571D-8763-4446-9148-75E4BDA103CC/SQL16SP1GDR/x64/SQLServer2016-KB3207512-x64.exe
@@ -380,19 +380,19 @@ For details about how to assess the performance differences of your most importa
 ## Quick summary for SQL Server Service Packs
 <a id="quick-summary-for-sql-server-service-packs"></a>
 
-| Version            | Codename    | RTM (no SP)   | SP1                             | SP2                             | SP3                               | SP4                             |
-|:-------------------|:------------|:--------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server vNext   | vNext       | [14.0.1.246]  |                                 |                                 |                                   |                                 |
-| SQL Server 2016    | ?           | [13.0.1601.5] | [13.0.4001.0]                   |                                 |                                   |                                 |
-| SQL Server 2014    | SQL14       | 12.0.2000.8   | [12.0.4100.1]                   | [12.0.5000.0]                   |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60  | [11.0.3000.0]                   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1  | [10.50.2500.0]                  | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
-| SQL Server 2008    | Katmai      | 10.0.1600.22  | [10.0.2531.0]                   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06   | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
-| SQL Server 2000    | Shiloh      | 8.0.194       | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623       | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
+| Version            | Codename    | RTM (no SP)    | SP1                             | SP2                             | SP3                               | SP4                             |
+|:-------------------|:------------|:---------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
+| SQL Server vNext   | vNext       | [14.0.100.187] |                                 |                                 |                                   |                                 |
+| SQL Server 2016    | ?           | [13.0.1601.5]  | [13.0.4001.0]                   |                                 |                                   |                                 |
+| SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]                   | [12.0.5000.0]                   |                                   |                                 |
+| SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]                   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
+| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0]                  | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
+| SQL Server 2008    | Katmai      | 10.0.1600.22   | [10.0.2531.0]                   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
+| SQL Server 2005    | Yukon       | 9.0.1399.06    | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
+| SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
+| SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[14.0.1.246]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
+[14.0.100.187]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [13.0.4001.0]:https://support.microsoft.com/en-us/kb/3182545
 [12.0.5000.0]:https://support.microsoft.com/en-us/kb/3171021
@@ -422,17 +422,18 @@ For details about how to assess the performance differences of your most importa
 <a id="microsoft-sql-server-vnext-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server vNext Developer Edition:
 ```
-Microsoft SQL Server vNext (CTP1) - 14.0.1.246 (X64)
+Microsoft SQL Server vNext (CTP1) - 14.0.100.187 (X64)
     Nov  1 2016 23:24:39 
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
-| Build      | File version   | Branch | Type | KB / Description                                                                    | Release Date |
-|------------|----------------|--------|------|-------------------------------------------------------------------------------------|--------------|
-| 14.0.1.246 | 2016.140.1.246 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)]  | 2016-11-16   |
+| Build        | File version     | Branch | Type | KB / Description                                                                       | Release Date | Build Date |
+|--------------|------------------|--------|------|----------------------------------------------------------------------------------------|--------------|------------|
+| 14.0.100.187 | 2016.140.100.187 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) (Linux support)] | 2016-12-16   | 2016-12-11 |
+| 14.0.1.246   | 2016.140.1.246   | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)]     | 2016-11-16   | 2016-11-02 |
 
-[Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
+[Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) (Linux support)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
 
 
 ## Microsoft SQL Server 2016 Builds
