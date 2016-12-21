@@ -2252,11 +2252,10 @@ Scope: global or session or query
 
 **Trace Flag: 9354**<br />
 **Undocumented trace flag**<br />
-Function: Disable aggregate pushdown operations for columnstore indexes.
-The number of rows aggregated at the level of the scan is displayed in the new property plan Actual Number Of Locally Aggregated Rows.
+Function: Disable [aggregate pushdown](http://www.nikoport.com/2015/07/11/columnstore-indexes-part-59-aggregate-pushdown/) operations for columnstore indexes.
+The number of rows aggregated at the level of the scan is displayed in the new property plan [Actual Number Of Locally Aggregated Rows](http://www.nikoport.com/2016/03/21/clustered-columnstore-indexes-part-80-local-aggregation/).
 TF 9354 can be used to disable the push of aggregation, the difference can be observed by the runtime, according to the number of rows in the plan Actual Number Of Locally Aggregated Rows and number Actual Number Of Rows output from the scan operator.<br />
-Link: http://www.nikoport.com/2015/07/11/columnstore-indexes-part-59-aggregate-pushdown/
-Link: http://www.nikoport.com/2016/03/21/clustered-columnstore-indexes-part-80-local-aggregation/<br />
+Example:
 ```
 use AdventureworksDW2016CTP3;
 set nocount on;
