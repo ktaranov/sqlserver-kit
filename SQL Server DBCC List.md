@@ -142,7 +142,7 @@ dbcc ind ( { 'dbname' | dbid }, { 'objname' | objid }, { indid | 0 | -1 | -2 } )
 
 DBCC indexdefrag ({dbid | dbname | 0}, {tableid | tablename}, {indid |indname})
 
-DBCC inputbuffer (spid)
+DBCC INPUTBUFFER ( session_id [ , request_id ]) [WITH NO_INFOMSGS ] https://msdn.microsoft.com/en-us/library/ms187730.aspx
 
 DBCC invalidate_textptr (textptr)
 
@@ -270,7 +270,7 @@ DBCC traceoff [( tracenum [, tracenum … ] )]
 
 DBCC traceon [( tracenum [, tracenum … ] )]
 
-DBCC tracestatus (trace# [, …trace#])
+DBCC TRACESTATUS ( [ [ trace# [ ,...n ] ] [ , ] [ -1 ] ] ) [ WITH NO_INFOMSGS ] https://msdn.microsoft.com/en-us/library/ms187809.aspx
 
 DBCC unpintable (dbid, table_id)
 
