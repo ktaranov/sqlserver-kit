@@ -2071,6 +2071,7 @@ Link: [Yet another X-Ray for the QP]
 
 **Trace Flag: 8649**<br />
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
 Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx
 
 

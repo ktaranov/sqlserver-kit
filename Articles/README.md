@@ -14,12 +14,14 @@
 | [SQL Server Database Corruption Repair]                                                             | Steve Stedman                            | 2015-08-26 |
 | [Basic SQL Server Performance Troubleshooting For Developers]                                       | Tony Davis                               | 2015-08-14 |
 | [The Curse and Blessings of Dynamic SQL]                                                            | Erland Sommarskog                        | 2015-04-14 |
-| [Dynamic Search Conditions in T-SQL]                                                                | Erland Sommarskog                        | 2015-11-15 |
-| [Slow in the Application, Fast in SSMS]                                                             | Erland Sommarskog                        | 2013-08-30 |
+| [Dynamic Search Conditions in T-SQL]                                                                | Erland Sommarskog                        | 2016-10-29 |
+| [Slow in the Application, Fast in SSMS]                                                             | Erland Sommarskog                        | 2013-12-18 |
 | [How to share data between stored procedures]                                                       | Erland Sommarskog                        | 2013-11-02 |
-| [Arrays and Lists in SQL Server 2008]                                                               | Erland Sommarskog                        | 2012-07-01 |
+| [Arrays and Lists in SQL Server 2008]                                                               | Erland Sommarskog                        | 2016-08-21 |
 | [Giving Permissions through Stored Procedures]                                                      | Erland Sommarskog                        | 2011-12-31 |
 | [Error and Transaction Handling in SQL Server]                                                      | Erland Sommarskog                        | 2015-05-03 |
+| [Using the Bulk-Load Tools in SQL Server]                                                           | Erland Sommarskog                        | 2016-12-08 |
+| [Using Table-Valued Parameters in SQL Server and .NET]                                              | Erland Sommarskog                        | 2016-12-08 |
 | [SQL Server Columnstore Articles]                                                                   | Niko Neugebauer                          | 2016-05-09 |
 | [Documentation: It Does not Suck!]                                                                  | Jes Schultz Borland                      | 2013-01-15 |
 | [The Data Loading Performance Guide]                                                                | Thomas Kejser, Peter Carlin, Stuart Ozer | 2009-01-15 |
@@ -151,6 +153,9 @@
 | [Downgrading the SQL Server Edition of a Dev Environment]                                           | Kendra Little                            | 2016-11-15 |
 | [Date Math In The WHERE Clause]                                                                     | Erik Darling                             | 2016-12-01 |
 | [Why is This Partitioned Query Slower?]                                                             | Kendra Little                            | 2015-09-01 |
+| [A Beginner’s Guide to the True Order of SQL Operations]                                            | JOOQ                                     | 2016-12-09 |
+| [Logical Query Processing: What It Is And What It Means to You]                                     | Itzik Ben-Gan                            | 2016-01-15 |
+| [Forcing a Parallel Query Execution Plan]                                                           | Paul White                               | 2011-12-23 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -169,6 +174,8 @@
 [Arrays and Lists in SQL Server 2008]:http://www.sommarskog.se/arrays-in-sql-2008.html
 [Giving Permissions through Stored Procedures]:http://www.sommarskog.se/grantperm.html
 [Error and Transaction Handling in SQL Server]:http://www.sommarskog.se/error_handling/Part1.html
+[Using the Bulk-Load Tools in SQL Server]:http://www.sommarskog.se/bulkload.html
+[Using Table-Valued Parameters in SQL Server and .NET]:
 [SQL Server Columnstore Articles]:http://www.nikoport.com/columnstore/
 [Documentation: It Does not Suck!]:https://www.brentozar.com/archive/2013/01/documentation-it-doesnt-suck/
 [The Data Loading Performance Guide]:https://msdn.microsoft.com/en-us/library/dd425070%28v=sql.100%29.aspx
@@ -300,3 +307,6 @@
 [Downgrading the SQL Server Edition of a Dev Environment]:https://www.littlekendra.com/2016/11/15/downgrading-the-sql-server-edition-of-a-dev-environment/
 [Date Math In The WHERE Clause]:https://www.brentozar.com/archive/2016/12/date-math-clause/
 [Why is This Partitioned Query Slower?]:https://www.brentozar.com/archive/2015/09/why-is-this-partitioned-query-slower/
+[A Beginner’s Guide to the True Order of SQL Operations]:https://blog.jooq.org/2016/12/09/a-beginners-guide-to-the-true-order-of-sql-operations/
+[Logical Query Processing: What It Is And What It Means to You]:http://sqlmag.com/sql-server/logical-query-processing-what-it-and-what-it-means-you
+[Forcing a Parallel Query Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx
