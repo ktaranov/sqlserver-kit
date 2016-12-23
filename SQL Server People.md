@@ -46,7 +46,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Matan Yungman       | -                          | ISR     | Tel Aviv    | [@MatanYungman]    | NULL                              | -   | [Yungman MVP]    |
 | Julie Koesmarno     | [July Blog]                | USA     | Redmond     | [@MsSQLGirl]       | NULL                              | -   | -                |
 | Michael J Swart     | [Michael Blog]             | CAN     | Waterloo    | [@MJSwart]         | NULL                              | 5   | [Swart MVP]      |
-| Dmitry Piliugin     | [Dmitry Blog]              | RUS     | Moscow      | [@SomewereSomehow] | NULL                              | 3   | [Pilugin MVP]    |
+| Dmitry Pilugin      | [Dmitry Blog]              | RUS     | Moscow      | [@SomewereSomehow] | pilugin@inbox.ru                  | 3   | [Pilugin MVP]    |
 | Buck Woody          | [Buck Blog]                |         | NULL        | [@buckwoodymsft]   | NULL                              | -   | -                |
 | Steve Stedman       | [Steve Stedman Blog]       | USA     | Austin      | [@stedman]         | NULL                              | -   | -                |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]    | USA     | Austin      | [@dhmacher]        | NULL                              | -   | -                |

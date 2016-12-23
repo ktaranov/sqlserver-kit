@@ -21,20 +21,20 @@ SQL Server Management Studio (17.0 RC1) notes:
  3. Fixes an issue with ShowPlan (if you use earlier versions of SSMS against a newer version of SQL Server (2016 SP1 or CTP1 of v.Next), and pull plans from the plan cache, clicking on that XML in grid results will yield an XML document, not a graphical plan).
  4. You can run 16.x and 17.x side-by-side, but some settings (like Tools/Options) are shared.
 
-| Version/Download Link       | Build         | Release Date | Size, Mb |
-|-----------------------------|---------------|--------------|---------:|
-| [17.0 RC1 Release]          | 14.0.16000.64 | 2016-11-16   |      687 |
-| [16.5.1 Release]**Latest**  | 13.0.16100.1  | 2016-12-05   |      894 |
-| [16.5 Release]              | 13.0.16000.28 | 2016-10-26   |      894 |
-| [16.4.1 Release]            | 13.0.15900.1  | 2016-09-23   |      894 |
-| 16.4 Release **Deprecated** | 13.0.15800.18 | 2016-09-20   |          |
-| [16.3 Release]              | 13.0.15700.28 | 2016-08-15   |      806 |
-| [July 2016 Hotfix Update]   | 13.0.15600.2  | 2016-07-13   |      825 |
-| July 2016 Release           | 13.0.15500.91 | 2016-07-01   |          |
-| [June 2016 Release]         | 13.0.15000.23 | 2016-06-01   |      825 |
-| [SQL Server 2014]           | 12.0.4100.1   | 2015-05-14   |      815 |
-| [SQL Server 2012]           | 11.0.6020.0   | 2015-11-21   |      964 |
-| [SQL Server 2008 R2]        | 10.50.4000    | 2012-07-02   |      161 |
+| Version/Download Link            | Build         | Release Date | Size, Mb |
+|----------------------------------|---------------|--------------|---------:|
+| [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
+| [16.5.1 Release] **Latest**      | 13.0.16100.1  | 2016-12-05   |      894 |
+| [16.5 Release]                   | 13.0.16000.28 | 2016-10-26   |      894 |
+| [16.4.1 Release]                 | 13.0.15900.1  | 2016-09-23   |      894 |
+| 16.4 Release **Deprecated**      | 13.0.15800.18 | 2016-09-20   |          |
+| [16.3 Release]                   | 13.0.15700.28 | 2016-08-15   |      806 |
+| [July 2016 Hotfix Update]        | 13.0.15600.2  | 2016-07-13   |      825 |
+| July 2016 Release **Deprecated** | 13.0.15500.91 | 2016-07-01   |          |
+| [June 2016 Release]              | 13.0.15000.23 | 2016-06-01   |      825 |
+| [SQL Server 2014]                | 12.0.4100.1   | 2015-05-14   |      815 |
+| [SQL Server 2012]                | 11.0.6020.0   | 2015-11-21   |      964 |
+| [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
 [17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
 [16.5.1 Release]:https://go.microsoft.com/fwlink/?linkid=837453
