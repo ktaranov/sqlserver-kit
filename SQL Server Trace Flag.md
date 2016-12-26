@@ -2072,7 +2072,8 @@ Link: [Yet another X-Ray for the QP]
 **Trace Flag: 8649**<br />
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
-Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx
+Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx<br />
+Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
 
 
 **Trace Flag: 8666**<br />
@@ -2288,7 +2289,7 @@ Function: Disables Batch Mode in Parallel Columnstore query plans.
 (Note that a plan using batch mode appears to require a recompile before the TF takes effect)
 Sunil Agarwal also used this trace flag in demo scripts for a PASS 2014 session on column store indexing<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
-Link: http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
+Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
 
 
 **Trace Flag: 9471**<br />
@@ -2438,3 +2439,4 @@ Scope: global or session
 [Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
 [Yet another X-Ray for the QP]:http://www.queryprocessor.com/tf_8628/
 [How It Works: SQL Server 2012 Database Engine Task Scheduling]:https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
+[What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
