@@ -635,9 +635,10 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 | 11.0.6537.0   | 2011.110.6537.0  | SP3    | CU   | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
 | 11.0.6523.0   | 2011.110.6523.0  | SP3    | CU   | [3137746 Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
 | 11.0.6518.0   | 2011.110.6518.0  | SP3    | CU   | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
-| 11.00.6248    | 2011.110.6248.0  | SP3    | COD  | [3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]                        | 2016-11-08   |
-| 11.00.6216    | 2011.110.6216.27 | SP3    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]                                                                                  | 2016-01-27   |
+| 11.0.6248.0   | 2011.110.6248.0  | SP3    | COD  | [3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.6216.27  | 2011.110.6216.27 | SP3    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]                                                                                  | 2016-01-27   |
 | 11.3.6020.0   | 2011.110.6020.0  | SP3    | SP   | [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
+| 11.0.5676.0   | 2011.110.5676.0  | SP2    | CU   | [3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]                                                       | 2016-11-17   |
 | 11.0.5676.0   | 2011.110.5676.0  | SP2    | COD  | [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
 | 11.0.5657.0   | 2011.110.5657.0  | SP2    | CU   | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
 | 11.0.5655.0   | 2011.110.5655.0  | SP2    | CU   | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
@@ -658,6 +659,8 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 | 11.0.5548     | 2011.110.5548.0  | SP2    | CU   | [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]                                                         | 2014-09-15   |
 | 11.0.5532     | 2011.110.5532.0  | SP2    | CU   | [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]                                                         | 2014-07-24   |
 | 11.0.5522     | 2011.110.5522.0  | SP2    | COD  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]         | 2014-06-20   |
+| 11.0.5388     | 2012.110.5388.0  | SP2    | COD  | [3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.5352     | 2012.110.5352.0  | SP2    | COD  | [3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]                                                                                  | 2016-01-27   |
 | 11.0.5343     | 2011.110.5343.0  | SP2    | COD  | [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]                           | 2015-07-14   |
 | 11.0.5058     | 2011.110.5058.0  | SP2    | SP   | [SQL Server 2012 Service Pack 2 (SP2)]                                                                                                 | 2014-06-10   |
 | 11.0.3513     | 2011.110.3513.0  | SP1    | COD  | [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]                                      | 2015-07-14   |
@@ -719,6 +722,7 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 [3137746 Cumulative update package 2 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3137746
 [3137745 Cumulative update package 11 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3137745
 [3123299 Cumulative update package 1 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3123299
+[3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]:https://support.microsoft.com/en-us/kb/3205416
 [3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194721
 [3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]:https://support.microsoft.com/en-us/kb/3135244
 [3120313 Cumulative update package 10 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3120313
@@ -737,6 +741,8 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2983175
 [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2976982
 [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]:http://support.microsoft.com/kb/2969896
+[3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194719
+[3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]:https://support.microsoft.com/en-us/kb/3135244
 [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]:https://support.microsoft.com/en-us/kb/3045321
 [SQL Server 2012 Service Pack 2 (SP2)]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
 [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]:https://support.microsoft.com/en-us/kb/3045317
