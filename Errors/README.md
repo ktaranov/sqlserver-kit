@@ -58,6 +58,7 @@ Error code equal `message_id` from `sys.messages`
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)   | [When SQL Server fails to create a secondary data file]    |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...             | [Discuss Execute(SQL) At LinkedServer]                     |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...     | [Discuss Execute(SQL) At LinkedServer]                     |
+|       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                | [Query Processor Error with ColumnStore Indexes]           |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...   | [Unable to drop a user in a database]                      |
 |      17182 | Tcp port is already in use                                                                         | [TCP Port Is Already In Use]                               |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication | [Login from an Untrusted Domain]                           |
@@ -70,6 +71,7 @@ Error code equal `message_id` from `sys.messages`
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
+[Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
