@@ -156,6 +156,10 @@
 | [A Beginner’s Guide to the True Order of SQL Operations]                                            | JOOQ                                     | 2016-12-09 |
 | [Logical Query Processing: What It Is And What It Means to You]                                     | Itzik Ben-Gan                            | 2016-01-15 |
 | [Forcing a Parallel Query Execution Plan]                                                           | Paul White                               | 2011-12-23 |
+| [Join Containment Assumption and CE Model Variation]                                                | Dmitri Pilugin                           | 2014-05-04 |
+| [Table Variable Tip]                                                                                | Itzik Ben-Gan                            | 2015-02-08 |
+| [Heap tables in SQL Server]                                                                         | Derik Hammer                             | 2016-04-13 |
+| [The ‘B’ in B-Tree – Indexing in SQL Server]                                                        | Derik Hammer                             | 2016-04-04 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -310,3 +314,7 @@
 [A Beginner’s Guide to the True Order of SQL Operations]:https://blog.jooq.org/2016/12/09/a-beginners-guide-to-the-true-order-of-sql-operations/
 [Logical Query Processing: What It Is And What It Means to You]:http://sqlmag.com/sql-server/logical-query-processing-what-it-and-what-it-means-you
 [Forcing a Parallel Query Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx
+[Join Containment Assumption and CE Model Variation]:http://www.queryprocessor.com/ce_join_base_containment_assumption/
+[Table Variable Tip]:http://sqlmag.com/t-sql/table-variable-tip
+[Heap tables in SQL Server]:http://www.sqlhammer.com/heaps-in-microsoft-sql-server/
+[The ‘B’ in B-Tree – Indexing in SQL Server]:http://www.sqlhammer.com/the-b-in-b-tree-indexing-sql-server/
