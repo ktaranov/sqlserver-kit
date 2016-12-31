@@ -148,6 +148,7 @@ Headers:
      - [PunkSPIDER](https://www.punkspider.org/) – Lots of vulnerabilities of all kinds all over the web (about 90M sites scanned with over 3M vulns at present)
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
+   - [SQL Server Database Engine Permission Posters](http://social.technet.microsoft.com/wiki/contents/articles/11842.sql-server-database-engine-permission-posters.aspx)
  - Free Videos
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)

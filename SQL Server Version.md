@@ -36,6 +36,7 @@ Useful links:
  - [SQL Server Release Services](https://blogs.msdn.microsoft.com/sqlreleaseservices/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
  - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
+ - [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/en-us//library/ms143506.aspx)
  - [Wikipedia Microsoft SQL Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
  - [SQL Server 2005 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx)
  - [SQL Server 2000 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb895925)
