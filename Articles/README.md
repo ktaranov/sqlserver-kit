@@ -160,6 +160,10 @@
 | [Table Variable Tip]                                                                                | Itzik Ben-Gan                            | 2015-02-08 |
 | [Heap tables in SQL Server]                                                                         | Derik Hammer                             | 2016-04-13 |
 | [The ‘B’ in B-Tree – Indexing in SQL Server]                                                        | Derik Hammer                             | 2016-04-04 |
+| [How to read the SQL Server Database Transaction Log]                                               | Manvendra Singh                          | 2013-10-31 |
+| [Filtered Statistics Follow-up]                                                                     | Erik Darling                             | 2016-12-22 |
+| [SQL Server Query Optimization: No Unknown Unknowns]                                                | Itzik Ben-Gan                            | 2015-10-13 |
+| [Sync Vs Async Statistics: The Old Debate]                                                          | SQL Scotsman                             | 2016-12-10 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -318,3 +322,7 @@
 [Table Variable Tip]:http://sqlmag.com/t-sql/table-variable-tip
 [Heap tables in SQL Server]:http://www.sqlhammer.com/heaps-in-microsoft-sql-server/
 [The ‘B’ in B-Tree – Indexing in SQL Server]:http://www.sqlhammer.com/the-b-in-b-tree-indexing-sql-server/
+[How to read the SQL Server Database Transaction Log]:https://www.mssqltips.com/sqlservertip/3076/how-to-read-the-sql-server-database-transaction-log/
+[Filtered Statistics Follow-up]:https://www.brentozar.com/archive/2016/12/filtered-statistics-follow/
+[SQL Server Query Optimization: No Unknown Unknowns]:http://sqlmag.com/sql-server/sql-server-query-optimization-no-unknown-unknowns
+[Sync Vs Async Statistics: The Old Debate]:https://sqlserverscotsman.wordpress.com/2016/12/10/sync-vs-async-statistics-the-old-debate/
