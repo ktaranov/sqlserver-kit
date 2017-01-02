@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **169** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **170** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
@@ -16,7 +16,7 @@ Utility types (main purpose) in braces `{}` current counts:
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {88}
+ - **[?]**: Not yet classified {89}
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version | Price |
@@ -33,7 +33,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | No                               | No             | [?]        | [Exchange Server Error Code Look-up] | 2004-05-10   | Microsoft           | Yes          | No    |
 | [LINQPad](#linqpad)                                                   | No                               | No             | [?]        | [LINQPad]                            | 2016-01-02   | Joseph Albahari     | Yes          |   $45 |
 | [SqlDynamite](#sqldynamite)                                           | No                               | No             | [S]        | [SqlDynamite]                        | 2016-04-06   | Anatoly Sova        | Yes          | No    |
-| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]              | 2016-04-14   | Microsoft           | Yes          | No    |
+| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]              | 2016-10-26   | Microsoft           | Yes          | No    |
 | [Database Health Monitor](#database-health-monitor)                   | No                               | No             | [M]        | [Database Health Monitor]            | 2016-03-20   | Steve Stedman       | Yes          | No    |
 | [SchemaDrift](#schemadrift)                                           | No                               | No             | [SC]       | [SchemaDrift]                        | 2016-02-28   | Steve Stedman       | Yes          | No    |
 | [Dbeaver](#dbeaver)                                                   | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Dbeaver]                            | 2016-06-06   | Open Source         | Yes          | No    |
@@ -70,6 +70,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Red Gate SQL Comparison SDK](#red-gate-sql-comparison-sdk)           | No                               | No             | [DC], [SC] | [Red Gate SQL Comparison SDK]        | 2016-02-22   | Red Gate            | No           |  $895 |
 | [DLM Automation](#dlm-automation)                                     | No                               | No             | [?]        | [DLM Automation]                     | ?            | Red Gate            | No           | ?     |
 | [ReadyRoll](#readyroll)                                               | No                               | No             | [?]        | [ReadyRoll]                          | 2016-01-03   | Red Gate            | No           |  $345 |
+| [Rapid Database Extractor](#rapid-database-extractor)                 | Oracle                           | No             | [?]        | [Rapid Database Extractor]           | 2016-11-03   | Idera               | Yes          | No    |
 | [SQL XEvent Profiler](#sql-xevent-profiler)                           | No                               | No             | [?]        | [SQL XEvent Profiler]                | 2014-03-14   | Idera               | Yes          | No    |
 | [SQL Check](#sql-check)                                               | No                               | No             | [?]        | [SQL Check]                          | 2015-09-24   | Idera               | Yes          | No    |
 | [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | No                               | No             | [?]        | [SQL Fragmentation Analyzer]         | 2012-11-16   | Idera               | Yes          | No    |
@@ -348,15 +349,16 @@ Easy text search in stored procedures, functions, tables, views and triggers.
 Supports MSSQL, Oracle, SAP, Firebird, Mysql, PostgreSQL, DB2, Informix, SQLite, Ingres, SQL Azure, Interbase.
 
 
-## SQL Server Data Tools <a id="ssdt"></a>
+## SQL Server Data Tools
+<a id="ssdt"></a>
 Download page: [SQL Server Data Tools]<br/>
-Release date: 2016-04-14<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2016-10-26<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
 
-QL Server Data Tools (SSDT) is a modern development tool that you can download for free to build SQL Server relational databases,
+SQL Server Data Tools (SSDT) is a modern development tool that you can download for free to build SQL Server relational databases,
 Azure SQL databases, Integration Services packages, Analysis Services data models, and Reporting Services reports.
 With SSDT, you can design and deploy any SQL Server content type with the same ease as you would develop an application in Visual Studio.
 
@@ -807,6 +809,23 @@ Price: $345
 
 It generates numerically ordered SQL migration scripts that sit inside your project and take your schema from one version to the next.
 You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
+
+
+## Rapid Database Extractor
+<a id="rapid-database-extractor"></a>
+Download page: [Rapid Database Extractor]<br/>
+Release date: 2016-11-03<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
+Author: Idera<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Manage SQL Server and Oracle data sources
+ - Manipulate database objects
+ - Interactively edit SQL code
+ - Selectively execute SQL queries to retrieve data
+ - Export data to common file formats
+ - Connect to cloud and run in cloud (provisional)
 
 
 ## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
@@ -2518,7 +2537,6 @@ While sitting in the tray, you can format SQL in any editor like Microsoft Query
 [Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
 [dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
 [SQL Server 2016 Report Builder]:https://www.microsoft.com/en-us/download/details.aspx?id=53613
-[SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [Red Gate SQL Compare]:http://www.red-gate.com/products/sql-development/sql-compare/
 [Red Gate SQL Data Compare]:http://www.red-gate.com/products/sql-development/sql-data-compare/
@@ -2533,6 +2551,8 @@ While sitting in the tray, you can format SQL in any editor like Microsoft Query
 [Red Gate SQL Comparison SDK]:http://www.red-gate.com/products/sql-development/sql-comparison-sdk/
 [DLM Automation]:http://www.red-gate.com/products/dlm/dlm-automation/
 [ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
+[Rapid Database Extractor]:https://www.idera.com/productssolutions/freetools/rapid-database-extractor
+[SQL XEvent Profiler]:https://www.idera.com/productssolutions/freetools/sqlxeventprofiler
 [SQL Check]: https://www.idera.com/productssolutions/freetools/sqlcheck
 [SQL Fragmentation Analyzer]: https://www.idera.com/productssolutions/freetools/sqlfragmentationanalyzer/overview
 [SQL Heat Map]: https://www.idera.com/productssolutions/freetools/sql-storage
