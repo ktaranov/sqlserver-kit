@@ -496,10 +496,12 @@ Link: https://support.microsoft.com/en-gb/kb/947204
 
 
 **Trace Flag: 1117**<br />
-Function: When a file in the filegroup meets the autogrow threshold, all files in the filegroup grow.br />
+Function: When a file in the filegroup meets the autogrow threshold, all files in the filegroup grow.<br />
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the AUTOGROW_SINGLE_FILE and AUTOGROW_ALL_FILES option of ALTER DATABASE, and trace flag 1117 has no affect. For more information, see ALTER DATABASE File and Filegroup Options (Transact-SQL).**<br />
 Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_performance_hints/archive/2012/02/09/sql-server-2008-trace-flag-t-1117.aspx<br />
+Link: https://www.littlekendra.com/2017/01/03/parallelism-and-tempdb-data-file-usage-in-sql-server/<br />
+Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
 
@@ -515,6 +517,7 @@ Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.a
 Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br />
 Link: https://support.microsoft.com/en-us/kb/328551<br />
+Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
 
@@ -2073,6 +2076,7 @@ Link: [Yet another X-Ray for the QP]
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
 Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx<br />
+Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
 
 
@@ -2315,7 +2319,6 @@ Scope: global or session or query
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database.
 To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).
 To accomplish this at the query level, add the QUERYTRACEON query hint<br />
-Link: http://support.microsoft.com/kb/2801413<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-legacy-ce/<br />
 Link: [MSDN ms188396]<br />
@@ -2440,3 +2443,4 @@ Scope: global or session
 [Yet another X-Ray for the QP]:http://www.queryprocessor.com/tf_8628/
 [How It Works: SQL Server 2012 Database Engine Task Scheduling]:https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
 [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
+[SQL Server 2016 : Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
