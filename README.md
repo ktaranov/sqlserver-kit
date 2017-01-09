@@ -183,6 +183,7 @@ Headers:
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
+   - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
  - Courses
    - Free
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
@@ -199,6 +200,7 @@ Headers:
      - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
      - [SolidQ Classes](https://training.solidq.com/classes/)
      - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
+     - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
  - SQL Server Backwards Compatibility
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
@@ -227,6 +229,7 @@ Headers:
     - [Machine Learning Templates with SQL Server 2016 R Services](https://github.com/Microsoft/SQL-Server-R-Services-Samples) (by Sheri Gilley) (Github)
     - [Campaign Optimization - Predicting How and When to Contact Leads Implemented on SQL Server 2016 R Services] (by Sheri Gilley) (Github)
     - [SQL Server Performance Dashboards - contains all Microsoft based reports, custom built reports, modified reports and the TSQL setup](http://sqldashboards.codeplex.com/) (by Arun Sirpal)
+    - [tigertoolbox - Repository for Tiger team for "as-is" solutions and tools/scripts that the team publishes for SQL Server](https://github.com/Microsoft/tigertoolbox)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
