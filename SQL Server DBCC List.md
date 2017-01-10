@@ -125,7 +125,7 @@ DBCC flushprocindb (database)
 
 DBCC free dll_name (FREE)
 
-DBCC freeproccache
+DBCC FREEPROCCACHE [ ( { plan_handle | sql_handle | pool_name } ) ] [ WITH NO_INFOMSGS ] https://www.brentozar.com/archive/2016/02/when-shrinking-tempdb-just-wont-shrink/ https://msdn.microsoft.com/en-us/library/ms174283.aspx
 
 dbcc freeze_io (db)
 

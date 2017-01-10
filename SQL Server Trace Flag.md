@@ -2417,7 +2417,7 @@ Please be aware that creating additional indexes may introduce overhead for DML 
 With the additional indexes you should aim to find the right balance between performance of temporal queries and additional DML overhead.**<br />
 Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/kb/3198846<br />
-Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performance-on-memory-optimized-tables-with-temporal-using-new-index-creation-enhancement-in-sp1/
+Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performance-on-memory-optimized-tables-with-temporal-using-new-index-creation-enhancement-in-sp1/<br />
 Scope: global or session
 
 
