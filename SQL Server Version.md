@@ -519,8 +519,8 @@ Microsoft SQL Server 2014 (SP2-CU3) (KB3204388) - 12.0.5538.0 (X64)
 | 12.0.4463.0  | 2014.120.4463.0  | SP1    | COD  | [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |
 | 12.0.4459.0  | 2014.120.4459.0  | SP1    | CU   | [3167392 Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |
 | 12.0.4457.0  | 2014.120.4457.0  | SP1    | CU   | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |
-| 12.0.4449.0  | 2014.120.4449.0  | SP1    | CU   | [3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)] **Deprecated**                                                  | 2016-04-18   |
 | 12.0.4452.0  | 2014.120.4452.0  | SP1    | COD  | 3147825 COD Hotfix **Deprecated**                                                                                                  | 2016-04-05   |
+| 12.0.4449.0  | 2014.120.4449.0  | SP1    | CU   | [3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)] **Deprecated**                                                  | 2016-04-18   |
 | 12.0.4439.1  | 2014.120.4439.1  | SP1    | CU   | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |
 | 12.0.4437.0  | 2014.120.4437.0  | SP1    | COD  | [3130999 On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]                                   | 2016-02-05   |
 | 12.0.4436.0  | 2014.120.4436.0  | SP1    | CU   | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |
