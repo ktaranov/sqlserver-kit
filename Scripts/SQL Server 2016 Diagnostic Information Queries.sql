@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- December 2016
--- Last Modified: December 7, 2016
+-- January 2017
+-- Last Modified: January 8, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -15,7 +15,7 @@
 
 
 --******************************************************************************
---*   Copyright (C) 2016 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2017 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -182,13 +182,14 @@ DBCC TRACESTATUS (-1);
 
 -- Common trace flags that should be enabled in most cases
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+--           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 -- TF 6534 - Enables use of native code to improve performance with spatial data
--- https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
+--           https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
 
 -- The behavior of TF 1117, 1118 are enabled for tempdb in SQL Server 2016 by default
 -- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
--- https://blogs.msdn.microsoft.com/psssql/2016/03/15/sql-2016-it-just-runs-faster-t1117-and-t1118-changes-for-tempdb-and-user-databases/
+--           https://blogs.msdn.microsoft.com/psssql/2016/03/15/sql-2016-it-just-runs-faster-t1117-and-t1118-changes-for-tempdb-and-user-databases/
 
 -- The behavior of TF 2371 is enabled by default in SQL Server 2016 (in compat level 130)
 
@@ -1165,10 +1166,10 @@ ORDER BY f.[file_id] OPTION (RECOMPILE);
 
 -- Log space usage for current database  (Query 50) (Log Space Usage)
 SELECT DB_NAME(lsu.database_id) AS [Database Name], db.recovery_model_desc AS [Recovery Model],
-		CAST(total_log_size_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Total Log Space (MB)],
-		CAST(used_log_space_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space (MB)], 
-		CAST(used_log_space_in_percent AS DECIMAL(10, 2)) AS [Used Log Space %],
-		CAST(log_space_in_bytes_since_last_backup/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space Since Last Backup (MB)],
+		CAST(lsu.total_log_size_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Total Log Space (MB)],
+		CAST(lsu.used_log_space_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space (MB)], 
+		CAST(lsu.used_log_space_in_percent AS DECIMAL(10, 2)) AS [Used Log Space %],
+		CAST(lsu.log_space_in_bytes_since_last_backup/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space Since Last Backup (MB)],
 		db.log_reuse_wait_desc		 
 FROM sys.dm_db_log_space_usage AS lsu WITH (NOLOCK)
 INNER JOIN sys.databases AS db WITH (NOLOCK)

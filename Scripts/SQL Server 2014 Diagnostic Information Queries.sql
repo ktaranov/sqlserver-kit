@@ -1,8 +1,8 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- December 2016
--- Last Modified: December 6, 2016
+-- January 2017
+-- Last Modified: January 8, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -15,7 +15,7 @@
 
 
 --******************************************************************************
---*   Copyright (C) 2016 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2017 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -72,6 +72,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --															12.0.4468		SP1 CU8			8/15/2016				12.0.5511		SP2 CU1			8/25/2016
 --                                                          12.0.4474		SP1 CU9		    10/17/2016				12.0.5522		SP2 CU2			10/17/2016
 --															12.0.4487		SP1 CU9 + HF	11/8/2016				12.0.5532		SP2 CU2 + HF    11/8/2016  https://technet.microsoft.com/library/security/MS16-136
+--                                                          12.0.4491       SP1 CU10		12/28/2016				12.0.5537		SP2 CU3			12/28/2016
 
 
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
@@ -173,6 +174,7 @@ DBCC TRACESTATUS (-1);
 
 -- Common trace flags that should be enabled in most cases
 -- TF 1117 - When growing a data file, grow all files at the same time so they remain the same size, reducing allocation contention points
+--           http://support2.microsoft.com/kb/2154845
 -- 
 -- TF 1118 - Helps alleviate allocation contention in tempdb, SQL Server allocates full extents to each database object, 
 --           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
@@ -183,6 +185,7 @@ DBCC TRACESTATUS (-1);
 --           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
 
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+--           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 
 -- TF 6533 - Spatial performance improvements in SQL Server 2012 and 2014
@@ -636,7 +639,8 @@ LEFT OUTER JOIN sys.dm_database_encryption_keys AS de WITH (NOLOCK)
 ON db.database_id = de.database_id
 WHERE lu.counter_name LIKE N'Log File(s) Used Size (KB)%' 
 AND ls.counter_name LIKE N'Log File(s) Size (KB)%'
-AND ls.cntr_value > 0 OPTION (RECOMPILE);
+AND ls.cntr_value > 0 
+ORDER BY db.[name] OPTION (RECOMPILE);
 ------
 
 -- Things to look at:
@@ -649,7 +653,7 @@ AND ls.cntr_value > 0 OPTION (RECOMPILE);
 -- Is Auto Update Statistics Asynchronously enabled?
 -- Make sure auto_shrink and auto_close are not enabled!
 
-
+ 
 
 -- Missing Indexes for all databases by Index Advantage  (Query 31) (Missing Indexes All Databases)
 SELECT CONVERT(decimal(18,2), user_seeks * avg_total_user_cost * (avg_user_impact * 0.01)) AS [index_advantage], 
@@ -1092,10 +1096,10 @@ ORDER BY f.[file_id] OPTION (RECOMPILE);
 
 -- Log space usage for current database  (Query 49) (Log Space Usage)
 SELECT DB_NAME(lsu.database_id) AS [Database Name], db.recovery_model_desc AS [Recovery Model],
-		CAST(total_log_size_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Total Log Space (MB)],
-		CAST(used_log_space_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space (MB)], 
-		CAST(used_log_space_in_percent AS DECIMAL(10, 2)) AS [Used Log Space %],
-		CAST(log_space_in_bytes_since_last_backup/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space Since Last Backup (MB)],
+		CAST(lsu.total_log_size_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Total Log Space (MB)],
+		CAST(lsu.used_log_space_in_bytes/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space (MB)], 
+		CAST(lsu.used_log_space_in_percent AS DECIMAL(10, 2)) AS [Used Log Space %],
+		CAST(lsu.log_space_in_bytes_since_last_backup/1048576.0 AS DECIMAL(10, 2)) AS [Used Log Space Since Last Backup (MB)],
 		db.log_reuse_wait_desc		 
 FROM sys.dm_db_log_space_usage AS lsu WITH (NOLOCK)
 INNER JOIN sys.databases AS db WITH (NOLOCK)

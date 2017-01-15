@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- December 2016
--- Last Modified: December 6, 2016
+-- January 2017
+-- Last Modified: January 8, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -15,7 +15,7 @@
 -- Many of these queries will not work if you have databases in 80 compatibility mode
 
 --******************************************************************************
---*   Copyright (C) 2016 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2017 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -194,6 +194,7 @@ DBCC TRACESTATUS (-1);
 
 -- Common trace flags that should be enabled in most cases
 -- TF 1117 - When growing a data file, grow all files at the same time so they remain the same size, reducing allocation contention points
+--           http://support2.microsoft.com/kb/2154845
 -- 
 -- TF 1118 - Helps alleviate allocation contention in tempdb, SQL Server allocates full extents to each database object, 
 --           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
@@ -204,7 +205,7 @@ DBCC TRACESTATUS (-1);
 --           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
 
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
-
+--           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 -- TF 6533 - Spatial performance improvements in SQL Server 2012 and 2014
 --           https://support.microsoft.com/en-us/kb/3107399
@@ -593,7 +594,8 @@ LEFT OUTER JOIN sys.dm_database_encryption_keys AS de WITH (NOLOCK)
 ON db.database_id = de.database_id
 WHERE lu.counter_name LIKE N'Log File(s) Used Size (KB)%' 
 AND ls.counter_name LIKE N'Log File(s) Size (KB)%'
-AND ls.cntr_value > 0 OPTION (RECOMPILE);
+AND ls.cntr_value > 0 
+ORDER BY db.[name] OPTION (RECOMPILE);
 ------
 
 -- Things to look at:
