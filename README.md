@@ -91,7 +91,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 170 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 172 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -229,7 +229,9 @@ Headers:
     - [Machine Learning Templates with SQL Server 2016 R Services](https://github.com/Microsoft/SQL-Server-R-Services-Samples) (by Sheri Gilley) (Github)
     - [Campaign Optimization - Predicting How and When to Contact Leads Implemented on SQL Server 2016 R Services] (by Sheri Gilley) (Github)
     - [SQL Server Performance Dashboards - contains all Microsoft based reports, custom built reports, modified reports and the TSQL setup](http://sqldashboards.codeplex.com/) (by Arun Sirpal)
-    - [tigertoolbox - Repository for Tiger team for "as-is" solutions and tools/scripts that the team publishes for SQL Server](https://github.com/Microsoft/tigertoolbox)
+    - [tigertoolbox - Repository for Tiger team for "as-is" solutions and tools/scripts that the team publishes for SQL Server](https://github.com/Microsoft/tigertoolbox) (Github)
+    - [SQL Server FineBuild - makes it easy for anyone to produce a best-practice installation and configuration of SQL Server](https://sqlserverfinebuild.codeplex.com/) (by Brian Davis)
+    - [Pssdiag/Sqldiag Manager - is a graphic interface that provides customization capabilities to collect data for SQL Server using sqldiag collector engine](https://github.com/Microsoft/DiagManager) (Github)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
@@ -251,7 +253,6 @@ Headers:
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
-    - [SQL Server FineBuild - makes it easy for anyone to produce a best-practice installation and configuration of SQL Server](https://sqlserverfinebuild.codeplex.com/) (by Brian Davis)
 
 [*Back to top*](#header02)
 
@@ -334,7 +335,6 @@ BIML Bloggers
  - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul Kapoor)
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)  (Github)
  - [Powershell SQL Server Performance Health Check](https://github.com/SpeedySQL/HealthCheck) (by Omid Afzalalghom) (Github)
- - [Performance Analysis of Logs (PAL) Tool](http://pal.codeplex.com/) (by svenhau and mikelag)
  - [PSCI - Powershell Continuous Integration](https://github.com/ObjectivityBSS/PSCI) (by Objectivity Bespoke Software Specialists) (Github)
  - [SQLTranscriptase - SQL Server Documentation in Powershell](https://github.com/vijaybandi/SQLTranscriptase) (by Vijay Bandi) (Github)
  - [SQL Server PowerShell Extensions (SQLPSX)](https://github.com/MikeShepard/SQLPSX) (by Mike Shepard) (Github)
