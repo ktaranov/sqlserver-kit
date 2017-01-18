@@ -166,7 +166,8 @@
 | [Sync Vs Async Statistics: The Old Debate]                                                                              | SQL Scotsman                             | 2016-12-10 |
 | [Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads] | Microsoft                                | 2016-03-08 |
 | [Troubleshooting SQL Server backup and restore operations]                                                              | Microsoft                                | 2016-07-23 |
-| [SQL Server 2016: Getting tempdb a little more right]                                                                   | Aaron Bertrand                           | 2015-09-30s |
+| [SQL Server 2016: Getting tempdb a little more right]                                                                   | Aaron Bertrand                           | 2015-09-30 |
+| [Practical uses of binary types]                                                                                        | Daniel Hutmacher                         | 2017-01-09 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -332,3 +333,4 @@
 [Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads]:https://support.microsoft.com/en-gb/kb/2964518
 [Troubleshooting SQL Server backup and restore operations]:https://support.microsoft.com/en-us/kb/224071
 [SQL Server 2016: Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
+[Practical uses of binary types]:https://sqlsunday.com/2017/01/09/binary-types/
