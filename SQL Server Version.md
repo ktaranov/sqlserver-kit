@@ -29,6 +29,7 @@ Useful links:
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads: [KB2964518](https://support.microsoft.com/en-us/kb/2964518)
+ - [Azure SQL Server Updates](https://azure.microsoft.com/en-us/updates/?product=sql-database&update-type=general-availability)
  - [Most Recent KBs for Microsoft SQL Server RSS](https://support.microsoft.com/en-us/rss?rssid=1044)
  - [Testing and Developing Supportability Roadmaps for ISV Applications (PDF)](http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-00-85-48-files/0827.testing-and-developing-supportability-roadmaps-for-isv-applications.pdf)
  - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
@@ -122,22 +123,20 @@ Profits:
 ## What are the most recent updates for SQL Server?
 <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                                         | Build Number                                   | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
-|---------|---------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| vNext   | [Install vNext]                                                                       | 14.0.100.187                                   | 2016-12-16                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
-| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545] then <br/>[KB3207512] | 13.0.1601.5<br/>13.0.4001.0<br>13.0.4199.0     | 2016-06-01<br/>2016-11-16<br/>2016-11-23 | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB3204388]                           | 12.0.5000.0<br/>12.0.5538.0                    | 2016-07-11<br/>2016-12-28                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[MS16-36 KB3194724]   | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6567.0   | 2012-02-14<br/>2015-11-21<br/>2016-11-17 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]                     | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                            | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
-| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                           | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2010-12-13      | 2011-04-12         | 2016-04-12       | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
+| Version | Latest Update                                                                       | Build Number                                   | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
+|---------|-------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
+| vNext   | [Install vNext]                                                                     | 14.0.100.187                                   | 2016-12-16                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| 2016    | [Install 2016 SP1] then <br/>[SP1 CU1 KB3208177]                                    | 13.0.4001.0<br>13.0.4199.0                     | 2016-11-16<br/>2017-01-18                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB3204388]                         | 12.0.5000.0<br/>12.0.5538.0                    | 2016-07-11<br/>2016-12-28                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[MS16-36 KB3194724] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6567.0   | 2012-02-14<br/>2015-11-21<br/>2016-11-17 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]                   | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                          | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                         | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2010-12-13      | 2011-04-12         | 2016-04-12       | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
 [Install vNext]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
-[Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
-[Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
-[SP1 KB3182545]:https://support.microsoft.com/en-us/kb/3182545
-[KB3207512]:https://support.microsoft.com/en-us/kb/3207512
-[Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
+[Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
+[SP1 CU1 KB3208177]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
+[Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
 [KB3204388]:https://support.microsoft.com/en-us/kb/3204388
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
@@ -151,6 +150,7 @@ Profits:
 [SU KB3045316]:https://support.microsoft.com/en-us/kb/3045311
 [Install SP4 2005]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b953e84f-9307-405e-bceb-47bd345baece
 [CU3 KB2507769]:http://support.microsoft.com/kb/2507769
+[Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
 
 
 ## Microsoft SQL Server installation files info
@@ -172,7 +172,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | [SQL Server vNext]              | SQLServerVnextCTP1-x64-ENU.iso                                       | 2016-12-16   | 14.0.100.87    |     1975 | 67 61 1f 3c 36 82 18 78 0c 39 27 65 a0 8c 18 a3 b5 1a 70 02 |
 | [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                               | 2016-11-16   | 13.0.4001.0    |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
-| [SQL Server 2016 KB3207512]     | SQLServer2016-KB3207512-x64.exe                                      | 2016-11-23   | 13.0.4199.0    |      521 | 37 2b 23 7b 1d 07 34 fd ff 2b 9d 45 2d 58 24 b8 c1 70 c6 db |
+| [SQL Server 2016 SP1 KB3208177] | SQLServer2016-KB3208177-x64.exe                                      | 2017-01-18   | 13.0.4411.0    |      439 | fb d9 69 dd b8 34 07 77 ff ad 7a 39 b5 d3 27 d2 5a 10 a7 43 |
 | [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                          | 2016-07-11   | 12.0.5000.0    |     3010 | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
 | [SQL Server 2014 SP2 KB3204388] | SQLServer2014-KB3204388-x64.exe                                      | 2016-12-28   | 12.0.5538.0    |      555 | 6f 76 bf 1a 04 58 6e e9 b7 a9 1c 77 98 23 90 4c 13 00 b7 bc |
 | [SQL Server 2012]               | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
@@ -188,7 +188,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 [SQL Server vNext]:http://care.dlservice.microsoft.com/dl/download/2/F/2/2F2C8D73-6BA9-41BF-9CF6-1337D367C0ED/ENU/SQLServerVnextCTP1-x64-ENU.iso
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
-[SQL Server 2016 KB3207512]:https://download.microsoft.com/download/8/4/F/84F6571D-8763-4446-9148-75E4BDA103CC/SQL16SP1GDR/x64/SQLServer2016-KB3207512-x64.exe
+[SQL Server 2016 SP1 KB3208177]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/SQL16SP1CU1/x64/SQLServer2016-KB3208177-x64.exe
 [SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP2 KB3204388]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/SQL14SP2CU3/x64/SQLServer2014-KB3204388-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
@@ -345,7 +345,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 | SQL Server Version                           | Database Engine Version |  Code Name   | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|------------------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
 | SQL Server vNext                             | 14                      |  vNext       | 2016         | 856                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2016                              | 13                      |  ?           | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2016                              | 13                      |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 12                      |  CloudDB     | 2010 (2016)  | 841                       | 130                             | 130, 120, 110, 100            |
 | SQL Server 2014                              | 12                      |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
 | SQL Server 2012                              | 11                      |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
@@ -384,7 +384,7 @@ For details about how to assess the performance differences of your most importa
 | Version            | Codename    | RTM (no SP)    | SP1                             | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:---------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
 | SQL Server vNext   | vNext       | [14.0.100.187] |                                 |                                 |                                   |                                 |
-| SQL Server 2016    | ?           | [13.0.1601.5]  | [13.0.4001.0]                   |                                 |                                   |                                 |
+| SQL Server 2016    | SQL16       | [13.0.1601.5]  | [13.0.4001.0]                   |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]                   | [12.0.5000.0]                   |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]                   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
 | SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0]                  | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
@@ -441,47 +441,51 @@ Microsoft SQL Server vNext (CTP1) - 14.0.100.187 (X64)
 <a id="microsoft-sql-server-2016-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition:
 ```
-Microsoft SQL Server 2016 (SP1-GDR) (KB3210089) – 13.0.4202.2 (X64)
-    Dec 13 2016 05:22:44
+Microsoft SQL Server 2016 (SP1-CU1) (KB3208177) – 13.0.4411.0 (X64)
+    Jan 6 2017 14:24:37
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
-| Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date |
-|---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|
-| 13.0.4202.0   | 2015.130.4202.0   | SP1    | COD  | [3210089 GDR update package for SQL Server 2016 SP1]                                                                           | 2016-12-16   | 2016-12-13 |
-| 13.0.4199.0   | 2015.130.4199.0   | SP1    | COD  | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |
-| 13.0.4001.0   | 2015.130.4001.0   | SP1    | SP   | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |
-| 13.0.2190.2   | 2015.130.2190.2   | RTM    | COD  | [3210110 On-demand hotfix update package for SQL Server 2016 CU3]                                                              | 2016-12-16   | 2016-12-13 |
-| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |
-| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3205413 Cumulative update 3 for SQL Server 2016] **Duplicate KB3194717**                                                      | 2016-11-08   | 2016-10-31 |
-| 13.0.2170.0   | 2015.130.2170.0   | RTM    | COD  | [3199171 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-11-01   | 2016-10-11 |
-| 13.0.2169.0   | 2015.130.2169.0   | RTM    | COD  | [3195813 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-10-26   | 2016-10-05 |
-| 13.0.2164.0   | 2015.130.2164.0   | RTM    | CU   | [3182270 Cumulative Update 2 for SQL Server 2016]                                                                              | 2016-09-22   | 2016-09-09 |
-| 13.0.2149.0   | 2015.130.2149.0   | RTM    | CU   | [3164674 Cumulative Update 1 for SQL Server 2016]                                                                              | 2016-07-25   | 2016-07-11 |
-| 13.0.1722.0   | 2015.130.1722.0   | RTM    | COD  | [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]                                                 | 2016-11-08   | 2016-10-31 |
-| 13.0.1711.0   | 2015.130.1711.0   | RTM    | COD  | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-07-30 |
-| 13.0.1708.0   | 2015.130.1708.0   | RTM    | COD  | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]                                                             | 2016-06-04   | 2016-06-02 |
-| 13.0.1601.5   | 2015.130.1601.5   | RTM    | RTM  | [Microsoft SQL Server 2016 RTM]                                                                                                | 2016-06-01   | 2016-04-29 |
-| 13.0.1400.361 | 2015.130.1400.361 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)                                                       | 2016-04-15   | 2016-04-09 |
-| 13.0.1300.275 | 2015.130.1300.275 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)                                                       | 2016-04-01   | 2016-03-26 |
-| 13.0.1200.242 | 2015.130.1200.242 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)                                                       | 2016-03-18   | 2016-03-10 |
-| 13.0.1100.288 | 2015.130.1100.288 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)                                                       | 2016-03-07   | 2016-02-29 |
-| 13.0.1000.281 | 2015.130.1000.281 | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)                                                            | 2016-02-03   | 2016-01-28 |
-| 13.0.900.73   | 2015.130.900.73   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)                                                            | 2015-12-17   | 2015-12-10 |
-| 13.0.801.12   | 2015.130.801.12   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)                                                    | 2015-12-05   | 2015-12-01 |
-| 13.0.801.111  | 2015.130.801.111  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)                                                            | 2015-11-30   | 2015-11-21 |
-| 13.0.700.242  | 2015.130.700.242  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)                                                            | 2015-10-29   | 2015-10-26 |
-| 13.0.600.65   | 2015.130.600.65   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)                                                            | 2015-09-30   | 2015-09-20 |
-| 13.0.500.53   | 2015.130.500.53   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)                                                            | 2015-08-28   | 2015-08-24 |
-| 13.0.407.1    | 2015.130.407.1    | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)                                                            | 2015-07-29   | 2015-07-22 |
-| 13.0.400.91   | 2015.130.400.91   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) (withdrawn)                                                | 2015-07-22   | 2015-07-16 |
-| 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |
-| 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |
+| Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Size, Mb | 
+|---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|---------:|
+| 13.0.4411.0   | 2015.130.4411.0   | SP1    | CU   | [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]                                                               | 2017-01-18   | 2017-01-06 |      439 |
+| 13.0.4202.0   | 2015.130.4202.0   | SP1    | COD  | [3210089 GDR update package for SQL Server 2016 SP1]                                                                           | 2016-12-16   | 2016-12-13 |          |
+| 13.0.4199.0   | 2015.130.4199.0   | SP1    | COD  | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |          |
+| 13.0.4001.0   | 2015.130.4001.0   | SP1    | SP   | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |          |
+| 13.0.2193.0   | 2015.130.2193.0   | RTM    | CU   | [3205052 Cumulative update 4 for SQL Server 2016]                                                                              | 2017-01-18   | 2017-01-06 |      699 |
+| 13.0.2190.2   | 2015.130.2190.2   | RTM    | COD  | [3210110 On-demand hotfix update package for SQL Server 2016 CU3]                                                              | 2016-12-16   | 2016-12-13 |          |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |          |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3205413 Cumulative update 3 for SQL Server 2016] **Duplicate KB3194717**                                                      | 2016-11-08   | 2016-10-31 |          |
+| 13.0.2170.0   | 2015.130.2170.0   | RTM    | COD  | [3199171 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-11-01   | 2016-10-11 |          |
+| 13.0.2169.0   | 2015.130.2169.0   | RTM    | COD  | [3195813 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-10-26   | 2016-10-05 |          |
+| 13.0.2164.0   | 2015.130.2164.0   | RTM    | CU   | [3182270 Cumulative Update 2 for SQL Server 2016]                                                                              | 2016-09-22   | 2016-09-09 |          |
+| 13.0.2149.0   | 2015.130.2149.0   | RTM    | CU   | [3164674 Cumulative Update 1 for SQL Server 2016]                                                                              | 2016-07-25   | 2016-07-11 |          |
+| 13.0.1722.0   | 2015.130.1722.0   | RTM    | COD  | [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]                                                 | 2016-11-08   | 2016-10-31 |          |
+| 13.0.1711.0   | 2015.130.1711.0   | RTM    | COD  | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-07-30 |          |
+| 13.0.1708.0   | 2015.130.1708.0   | RTM    | COD  | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]                                                             | 2016-06-04   | 2016-06-02 |          |
+| 13.0.1601.5   | 2015.130.1601.5   | RTM    | RTM  | [Microsoft SQL Server 2016 RTM]                                                                                                | 2016-06-01   | 2016-04-29 |          |
+| 13.0.1400.361 | 2015.130.1400.361 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)                                                       | 2016-04-15   | 2016-04-09 |          |
+| 13.0.1300.275 | 2015.130.1300.275 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)                                                       | 2016-04-01   | 2016-03-26 |          |
+| 13.0.1200.242 | 2015.130.1200.242 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)                                                       | 2016-03-18   | 2016-03-10 |          |
+| 13.0.1100.288 | 2015.130.1100.288 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)                                                       | 2016-03-07   | 2016-02-29 |          |
+| 13.0.1000.281 | 2015.130.1000.281 | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)                                                            | 2016-02-03   | 2016-01-28 |          |
+| 13.0.900.73   | 2015.130.900.73   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)                                                            | 2015-12-17   | 2015-12-10 |          |
+| 13.0.801.12   | 2015.130.801.12   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)                                                    | 2015-12-05   | 2015-12-01 |          |
+| 13.0.801.111  | 2015.130.801.111  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)                                                            | 2015-11-30   | 2015-11-21 |          |
+| 13.0.700.242  | 2015.130.700.242  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)                                                            | 2015-10-29   | 2015-10-26 |          |
+| 13.0.600.65   | 2015.130.600.65   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)                                                            | 2015-09-30   | 2015-09-20 |          |
+| 13.0.500.53   | 2015.130.500.53   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)                                                            | 2015-08-28   | 2015-08-24 |          |
+| 13.0.407.1    | 2015.130.407.1    | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)                                                            | 2015-07-29   | 2015-07-22 |          |
+| 13.0.400.91   | 2015.130.400.91   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) (withdrawn)                                                | 2015-07-22   | 2015-07-16 |          |
+| 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |          |
+| 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |          |
 
+[3208177 Cumulative update 1 (for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
 [3210089 GDR update package for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/kb/3210089
 [3207512 Important update for SQL Server 2016 SP1 Reporting Services]:https://support.microsoft.com/en-us/kb/3207512
 [3182545 SQL Server 2016 Service Pack 1 release information]:https://support.microsoft.com/en-us/kb/3182545
+[3205052 Cumulative update 4 for SQL Server 2016]:https://support.microsoft.com/en-us/help/3205052/cumulative-update-4-for-sql-server-2016
 [3210110 On-demand hotfix update package for SQL Server 2016 CU3]:https://support.microsoft.com/en-us/kb/3210110
 [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]:https://support.microsoft.com/en-us/kb/3194717
 [3205413 Cumulative update 3 for SQL Server 2016]:https://support.microsoft.com/en-us/kb/3205413
