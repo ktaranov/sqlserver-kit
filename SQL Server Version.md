@@ -634,6 +634,7 @@ Microsoft SQL Server 2014 (SP2-CU3) (KB3204388) - 12.0.5538.0 (X64)
 
 | Build         | File version     | Branch | Type | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|--------|------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 11.0.6579.0   | 2011.110.6579.0  | SP3    | CU   | [3205051 Cumulative Update Package 7 for SQL Server 2012 SP3]                                                                          | 2017-01-18   |
 | 11.0.6567.0   | 2011.110.6567.0  | SP3    | COD  | [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
 | 11.0.6544.0   | 2011.110.6544.0  | SP3    | CU   | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
 | 11.0.6540.0   | 2011.110.6540.0  | SP3    | CU   | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
