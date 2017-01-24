@@ -491,7 +491,7 @@ Microsoft SQL Server 2016 (SP1-CU1) (KB3208177) – 13.0.4411.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |          |
 
-[3208177 Cumulative update 1 (for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
+[3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
 [3210089 GDR update package for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/kb/3210089
 [3207512 Important update for SQL Server 2016 SP1 Reporting Services]:https://support.microsoft.com/en-us/kb/3207512
 [3182545 SQL Server 2016 Service Pack 1 release information]:https://support.microsoft.com/en-us/kb/3182545
