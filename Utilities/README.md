@@ -105,14 +105,19 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Comparison Toolset](#sql-comparison-toolset)                     | No                               | No             | [DC], [SC] | [SQL Comparison Toolset]             | ?            | Idera               | No             |  $745 |
 | [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]           |              | Idera               | No             | $1287 |
 | [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                  | ?            | Idera               | No             | $1420 |
-| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]             | 2015-12-22   | Devart              | No             |  $149 |
-| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]               | 2015-11-30   | Devart              | No             |  $149 |
+| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]             | 2016-09-16   | Devart              | No             |  $149 |
+| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]               | 2016-09-28   | Devart              | No             |  $149 |
 | [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]             | 2015-12-30   | Devart              | No             |  $249 |
-| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]              | 2015-06-03   | Devart              | No             |  $100 |
-| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]             | 2015-04-08   | Devart              | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]              | 2013-11-07   | Devart              | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                     | 2015-12-18   | Devart              | Yes            |  $250 |
-| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                     | 2016-03-03   | Devart              | No             |  $150 |
+| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]              | 2016-08-17   | Devart              | No             |  $99  |
+| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]             | 2016-09-16   | Devart              | Yes            | No    |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]              | 2016-01-22   | Devart              | Yes            | No    |
+| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                     | 2016-09-22   | Devart              | Yes            |  $249 |
+| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                     | 2016-12-27   | Devart              | No             |  $149 |
+| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                 | 2016-09-16   | Devart              | No             |  $149 |
+| [dbForge Search](#dbforge-search)                                     | No                               | No             | [S]        | [dbForge Search]                     | 2016-09-16   | Devart              | Yes            | No    |
+| [dbForge Index Manager](#dbforge-index-manager)                       | No                               | No             | [?]        | [Index Manager]                      | ?            | Devart              | No             |  $99  |
+| [dbForge SQL Complete](#dbforge-sql-complete)                         | No                               | No             | [?]        | [dbForge SQL Complete]               | 2016-12-05   | Devart              | Yes            |  $119 |
+| [dbForge Data Pump](#dbforge-data-pump)                               | No                               | No             | [?]        | [dbForge Data Pump]                  | 2016-09-16   | Devart              | No             |  $149 |
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                  | ?            | MinionWare          | No             | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]   | 2011-06-02   | Bob Tavlor          | Yes            | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                         | 2016-07-07   | Bill Graziano       | Yes            | No    |
@@ -1326,11 +1331,11 @@ Price: $1420
 
 ## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2015-12-22<br/>
-Support Version: 2005/2008/2008R2/2012/2014<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $150
+Price: $149
 
 dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server.
 The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups.
@@ -1339,11 +1344,11 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 
 ## dbForge Data Compare <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2015-11-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014<br/>
+Release date: 2016-09-28<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $150
+Price: $149
 
 dbForge Data Compare for SQL Server is a powerful, fast and easy to use SQL comparison tool, capable of using native SQL Server backups as metadata source.
 With dbForge Data Compare you can tune your SQL database comparison, quickly analyze differences in a well-designed user interface
@@ -1353,21 +1358,21 @@ and effortlessly synchronize data via a convenient wizard with additional option
 ## dbForge Data Generator <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
 Release date: 2015-12-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $250
+Price: $249
 
 dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation of meaningful test data. The tool includes 190+ predefined generators with sensible configuration options, that allow emulating column-intelligent real-world data. dbForge Data Generator for SQL Server can save your time and effort by populating SQL Server tables with millions of rows of test data that looks just like real data.
 
 
 ## dbForge Query Builder <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
-Release date: 2015-06-03<br/>
+Release date: 2016-08-17<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $100
+Price: $99
 
 dbForge Query Builder for SQL Server allows users to build complex SQL queries via an intuitive visual query building interface easily and without manual code writing.
 This SQL query designer will be useful to those, who often create queries to databases.
@@ -1377,8 +1382,8 @@ But even experienced users can save a lot of time on routine work.
 
 ## dbForge Event Profiler <a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
-Release date: 2015-04-08<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -1390,7 +1395,7 @@ You can use this information to identify and troubleshoot many SQL Server-relate
 
 ## dbForge SQL Decryptor <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
-Release date: 2013-11-07<br/>
+Release date: 2016-01-22<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1401,11 +1406,11 @@ Decrypt SQL Server Procedures, Functions, Triggers, and Views
 
 ## dbForge Studio <a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
-Release date: 2015-12-18<br/>
+Release date: 2016-09-22<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
-Price: $250
+Price: $249
 
  - Code completion — to create whole SQL statement in a few keystrokes
  - SQL formatting — to follow common coding style (standard)
@@ -1416,15 +1421,78 @@ Price: $250
 
 ## dbForge Fusion <a id="dbforge-fusion"></a>
 Download page: [dbForge Fusion]<br/>
-Release date: 2016-03-03<br/>
+Release date: 2016-12-27<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $150
+Price: $149
 
 dbForge Fusion for SQL Server is a powerful Visual Fusion plugin designed to simplify SQL database development and enhance data management capabilities.
 When you integrate dbForge Fusion for SQL Server into Microsoft Visual Fusion, all database development and administration tasks become available from your IDE.
 It provides an easier way to explore and maintain existing databases, design compound SQL statements and queries, and manipulate data in different way.
+
+
+## dbForge Documenter <a id="dbforge-documenter"></a>
+Download page: [dbForge Documenter]<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $149
+
+dbForge Documenter for SQL Server is a big time saver when it comes to documentation of SQL Server databases.
+This tool automatically generates documentation of an entire SQL Server database in a few clicks.
+The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
+
+
+## dbForge Search <a id="dbforge-search"></a>
+Download page: [dbForge Search]<br/>
+Release date: 2016-09-28<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: Yes<br/>
+Price: No
+
+dbForge Search for SQL Server is a FREE add-in for SQL Server Management Studio that allows you to search SQL objects and data in your databases.
+It can be very difficult to find a required table or to remember names of your stored routines, when a database contains lots of objects.
+With dbForge Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object. 
+
+
+## dbForge Index Manager <a id="dbforge-index-manager"></a>
+Download page: [dbForge Index Manager]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $99
+
+dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the status of SQL indexes and fixing issues with index fragmentation. 
+The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance.
+You can instantly rebuild and reorganize SQL indexes in visual mode or generate SQL script for the future use.
+
+
+## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
+Download page: [dbForge SQL Complete]<br/>
+Release date: 2016-12-05<br/>
+Support Version: 2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: Yes<br/>
+Price: $119
+
+dbForge SQL Complete is an add-in for SQL Server Management Studio and Visual Studio that speeds up SQL code writing, offers context-based smart suggestions,
+performs automatic formatting, refactoring and a lot of other things that save your time and effort in the database development process.
+
+
+## dbForge Data Pump <a id="dbforge-data-pump"></a>
+Download page: [dbForge Data Pump]<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $149
+
+dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems.
+The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios. 
 
 
 ## Minion Enterprise <a id="minion-enterprise"></a>
@@ -2620,6 +2688,11 @@ With it you can easily migrate schema and data between different databases witho
 [dbForge SQL Decryptor]: https://www.devart.com/dbforge/sql/sqldecryptor/
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
+[dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[dbForge Search]:https://www.devart.com/dbforge/sql/search/
+[dbForge Index Manager]:https://www.devart.com/dbforge/sql/index-manager/
+[dbForge SQL Complete]:https://www.devart.com/dbforge/sql/sqlcomplete/
+[dbForge Data Pump]:https://www.devart.com/dbforge/sql/data-pump/
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
