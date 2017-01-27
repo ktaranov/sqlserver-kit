@@ -91,7 +91,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 172 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 175 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -254,6 +254,7 @@ Headers:
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
+    - [Dell Databases Wiki](http://en.community.dell.com/techcenter/storage/w/wiki/5018.sc-series-technical-documents) (by Doug Bernhardt)
 
 [*Back to top*](#header02)
 

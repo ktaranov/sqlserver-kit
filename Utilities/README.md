@@ -1,22 +1,23 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **172** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **175** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
- - **[MS]**: Management Studio (alternative for SSMS) {16}
+ - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[B]**: Backup solutions {5}
- - **[M]**: Monitoring and alerting Tools {5}
+ - **[M]**: Monitoring and alerting Tools {6}
+ - **[MG]**: Migration tool {3}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[T]**: Testing tools {3}
  - **[G]**: Data generation {4}
- - **[D]**: Documentation solutions {2}
+ - **[D]**: Documentation solutions {3}
  - **[S]**: Search tools {2}
- - **[DC]**: Data compare {11}
- - **[SC]**: Structure compare {14}
+ - **[DC]**: Data compare {10}
+ - **[SC]**: Structure compare {15}
  - **[J]**: Job managers {2}
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {89}
+ - **[?]**: Not yet classified {88}
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page               | Release Date | Author              | Free version   | Price |
@@ -40,6 +41,8 @@ Utility types (main purpose) in braces `{}` current counts:
 | [HeidiSQL](#heidisql)                                                 | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [HeidiSQL]                           | 2016-06-19   | Open Source         | Yes            | No    |
 | [SQLExecStats](#sqlexecstats)                                         | No                               | No             | [ST]       | [SQLExecStats]                       | 2016-02-08   | Joe Chang           | Yes            | No    |
 | [ExpressProfiler](#expressprofiler)                                   | No                               | No             | [?]        | [ExpressProfiler]                    | 2016-02-15   | Chris Moore         | Yes            | No    |
+| [Data Migration Assistant](#data-migration-assistant)                 | No                               | No             | [MG]       | [Data Migration Assistant]           | 2017-01-25   | Microsoft           | Yes            | No    |
+| [SQL Server Migration Assistant for Sybase](#sybasetosql)             | No                               | No             | [MG]       | [Migration Assistant for Sybase]     | 2016-12-22   | Microsoft           | Yes            | No    |
 | [dta Utility](#dta-utility)                                           | No                               | No             | [I]        | [dta Utility]                        | -            | Microsoft           | Yes            | No    |
 | [osql Utility](#osql-utility)                                         | No                               | No             | [I]        | [osql Utility]                       | -            | Microsoft           | Yes            | No    |
 | [sqldiag Utility](#sqldiag-utility)                                   | No                               | No             | [I]        | [sqldiag Utility]                    | -            | Microsoft           | Yes            | No    |
@@ -192,7 +195,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Aqua Data Studio](#aqua-data-studio)                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Aqua Data Studio]                   | 2016-07-06   | AquaFold            | No             |  $499 |
 | [RazorSQL](#razorsql)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [RazorSQL]                           | 2016-09-29   | Richardson Software | No             |  $100 |
 | [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                 | 2016-02-19   | Gudu Software       | No             |   $50 |
-| [Databse .NET](#databse-net)                                          | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Databse .NET]                       | 2017-01-13   | fish's dotNET       | Non-commercial |   $69 |
+| [Database .NET](#database-net)                                        | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Database .NET]                      | 2017-01-13   | fish's dotNET       | Non-commercial |   $69 |
 | [dbMigration .NET](#dbmegration-net)                                  | Oracle, MySQL, PostgreSQL, Other | No             | [DC], [SC] | [dbMigration .NET]                   | 2017-01-13   | fish's dotNET       | Non-commercial |   $49 |
 
 
@@ -438,6 +441,32 @@ Free version: Yes<br/>
 Price: No
 
 ExpressProfiler (aka **SqlExpress Profiler**) is a simple and fast replacement for SQL Server Profiler with basic GUI and integration with Red Gate Ecosystem project.
+
+
+## Data Migration Assistant
+<a id="data-migration-assistant"></a>
+Download page: [Data Migration Assistant]<br/>
+Release date: 2017-01-25<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Data Migration Assistant (DMA) enables you to upgrade to a modern data platform by detecting compatibility issues that can impact database functionality on your new version of SQL Server.
+It recommends performance and reliability improvements for your target environment.
+It allows you to not only move your schema and data, but also uncontained objects from your source server to your target server.
+
+
+## SQL Server Migration Assistant for Sybase
+<a id="sybasetosql"></a>
+Download page: [Migration Assistant for Sybase]<br/>
+Release date: 2016-12-22<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft SQL Server Migration Assistant (SSMA) for Sybase is a tool to automate migration from MySQL database(s) to SQL Server and Azure SQL DB.
 
 
 ## dta Utility <a id="dta-utility"></a>
@@ -2565,6 +2594,8 @@ With it you can easily migrate schema and data between different databases witho
 [HeidiSQL]:http://www.heidisql.com
 [SQLExecStats]:http://www.qdpma.com/ExecStats/SQLExecStats.html
 [ExpressProfiler]:https://expressprofiler.codeplex.com/
+[Migration Assistant for Sybase]:https://msdn.microsoft.com/en-us/library/hh302795(v=sql.130).aspx
+[Data Migration Assistant]:https://blogs.msdn.microsoft.com/datamigration/dma/
 [dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
 [osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
 [sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
