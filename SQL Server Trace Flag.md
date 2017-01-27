@@ -1561,7 +1561,7 @@ Scope: global or session or query
 **Trace Flag: 4199**<br />
 Function: Controls query optimizer changes released in SQL Server Cumulative Updates and Service Packs.
 Starting with SQL Server 2016, trace flag 4199 changes that are made to previous releases of SQL Server will become enabled under database compatibility level 130 without trace flag 4199 enabled<br />
-To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).
+To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).<br />
 **Note: Starting with SQL Server 2016, customers are advised to remove trace flag 4199 after they migrate their databases to the latest compatibility level
 because trace flag 4199 will be reused for future query optimizer changes that may not apply to your application and could cause unexpected plan performance changes on a production system.
 This means that different trace flag 4199 changes are enabled for each compatibility level that is supported in a given product release.**
@@ -2225,8 +2225,9 @@ Link: https://support.microsoft.com/en-us/kb/831302
 
 
 **Trace flag: 9259**<br />
-Function: SQL 9/10 - An access violation occurs on running a query marked by the following message and a dump in the log folder: KB 970279 / 971490. Msg 0, Level 11, State 0, Line 0 - A severe error occurred on the current command. The results, if any, should be discarded.<br />
-Link: None
+Function: Disables Project Normalization step<br />
+**Note: Please, don’t use TF 9259 that disables Project Normalization step in a real production system, besides it is undocumented and unsupported, it may hurt your performance.**<br />
+Link: http://www.queryprocessor.com/sudf-ce/
 
 
 **Trace flag: 9268**<br />
@@ -2262,7 +2263,8 @@ Function: Disable [aggregate pushdown](http://www.nikoport.com/2015/07/11/column
 The number of rows aggregated at the level of the scan is displayed in the new property plan [Actual Number Of Locally Aggregated Rows](http://www.nikoport.com/2016/03/21/clustered-columnstore-indexes-part-80-local-aggregation/).
 TF 9354 can be used to disable the push of aggregation, the difference can be observed by the runtime, according to the number of rows in the plan Actual Number Of Locally Aggregated Rows and number Actual Number Of Rows output from the scan operator.<br />
 Example:
-```
+
+```sql
 use AdventureworksDW2016CTP3;
 set nocount on;
 go
