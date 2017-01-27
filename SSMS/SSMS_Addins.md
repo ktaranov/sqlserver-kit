@@ -2,37 +2,37 @@
 Complete list of useful and must have add-ins for SQL Server Management Studio - **29** SSMS add-ins
 
 
-| Name                                                  | Download page                 | Release Date | Support Version     | Developer            | Free version | Price |
-|-------------------------------------------------------|-------------------------------|--------------|:--------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2016-11-17   | 2008/2012/2014/2016 | Solutions Crew GmbH  | Yes          |  $150 |
-| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016 | Smashing Jedis LLC   | Yes          |   $99 |
-| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2015-05-04   | 2008/2012/2014      | Oleksii Kovalov      | Yes          | No    |
-| [SQL Search](#sql-search)                             | [SQL Search]                  | 2016-05-04   | 2008/2012/2014/2016 | Red Gate             | Yes          | No    |
-| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014      | Red Gate             | Yes          | No    |
-| [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2015-11-17   | 2008/2012/2014      | Red Gate             | No           |  $369 |
-| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014      | Red Gate             | No           |  $495 |
-| [Supratimas](#supratimas)                             | [Supratimas]                  | 2015-01-27   | 2008/2012/2014      | TTRider LLC          | Yes          |   $35 |
-| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2015-10-07   | 2008/2012/2014      | Mladen Prajdić       | No           |   €30 |
-| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014      | Gudu Software        | No           |   $50 |
-| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016 | SQL Sentry           | Yes          | No    |
-| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014      | Dave ballantyne      | Yes          | No    |
-| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2016-11-16   | 2008/2012/2014/2016 | Jakub Dvorak         | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2016-04-01   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2016-02-11   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2015-09-04   | 2008/2012/2014      | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2015-04-27   | 2008/2012/2014      | ApexSQL tools        | No           |  $299 |
-| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014      | Spotlight Essentials | Yes          | No    |
-| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2015-12-22   | 2008/2012/2014      | Devart               | No           |  $250 |
-| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2015-12-04   | 2008/2012/2014      | Devart               | No           |  $200 |
-| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2015-12-04   | 2008/2012/2014      | Devart               | No           |  $150 |
-| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2015-11-30   | 2008/2012/2014      | Devart               | No           |  $100 |
-| [dbForge Object Search](#dbforge-object-search)       | [dbForge Object Search]       | 2015-11-30   | 2008/2012/2014      | Devart               | Yes          | No    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2016-07-20   | 2008/2012/2014      | Devart               | Yes          |  $120 |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008/2012/2014      | SoftTree             | No           |  $179 |
-| [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014      | UbitSoft             | No           |  $195 |
-| [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014      | Alex Maslyukov       | Yes          | No    |
-| [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012           | Tao Klerks           | Yes          | No    |
-| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016      | 	Vlasov Studio       | No           |   $49 |
+| Name                                                  | Download page                 | Release Date | Support Version                                                   | Developer            | Free version | Price |
+|-------------------------------------------------------|-------------------------------|--------------|:------------------------------------------------------------------|----------------------|--------------|------:|
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2016-11-17   | 2008/2012/2014/2016                                               | Solutions Crew GmbH  | Yes          |  $150 |
+| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016                                               | Smashing Jedis LLC   | Yes          |   $99 |
+| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2015-05-04   | 2008/2012/2014                                                    | Oleksii Kovalov      | Yes          | No    |
+| [SQL Search](#sql-search)                             | [SQL Search]                  | 2016-05-04   | 2008/2012/2014/2016                                               | Red Gate             | Yes          | No    |
+| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014                                                    | Red Gate             | Yes          | No    |
+| [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2015-11-17   | 2008/2012/2014                                                    | Red Gate             | No           |  $369 |
+| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014                                                    | Red Gate             | No           |  $495 |
+| [Supratimas](#supratimas)                             | [Supratimas]                  | 2015-01-27   | 2008/2012/2014                                                    | TTRider LLC          | Yes          |   $35 |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2015-10-07   | 2008/2012/2014                                                    | Mladen Prajdić       | No           |   €30 |
+| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014                                                    | Gudu Software        | No           |   $50 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016                                               | SQL Sentry           | Yes          | No    |
+| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                                                    | Dave ballantyne      | Yes          | No    |
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2016-11-16   | 2008/2012/2014/2016                                               | Jakub Dvorak         | No           |   €50 |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2016-04-01   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2016-02-11   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2015-09-04   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2015-04-27   | 2008/2012/2014                                                    | ApexSQL tools        | No           |  $299 |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014                                                    | Spotlight Essentials | Yes          | No    |
+| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2016-09-28   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $249 |
+| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2016-09-09   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $199 |
+| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2016-09-16   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $149 |
+| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2015-11-30   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $99  |
+| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2016-09-16   | SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016 | Devart               | Yes          | No    |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2016-12-05   | SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016 | Devart               | Yes          |  $119 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008/2012/2014                                                    | SoftTree             | No           |  $179 |
+| [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014                                                    | UbitSoft             | No           |  $195 |
+| [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014                                                    | Alex Maslyukov       | Yes          | No    |
+| [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012                                                         | Tao Klerks           | Yes          | No    |
+| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016                                                    | 	Vlasov Studio     | No           |   $49 |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -326,11 +326,11 @@ You also get a FREE System health Check, Performance Health Analysis and compreh
 
 ## dbForge Source Control <a id="dbforge-source-control"></a>
 Download page: [dbForge Source Control]<br/>
-Release date: 2015-12-22<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-09-28<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: No<br/>
-Price: $250
+Price: $249
 
 dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL Server database changes in source control.
 The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
@@ -338,11 +338,11 @@ The tool can link your databases to all popular source control systems, and deli
 
 ## dbForge Unit Test <a id="dbforge-unit-test"></a>
 Download page: [dbForge Unit Test]<br/>
-Release date: 2015-12-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-09-09<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: No<br/>
-Price: $200
+Price: $199
 
 An intuitive and convenient GUI for implementing automated unit testing in SQL Server Management Studio.
 The tool is based on the open-source tSQLt framework, so SQL developers can now benefit from writing unit tests in regular T-SQL.
@@ -351,11 +351,11 @@ dbForge Unit Test for SQL Server functionality allows you to develop stable and 
 
 ## dbForge Data Pump <a id="dbforge-data-pump"></a>
 Download page: [dbForge Data Pump]<br/>
-Release date: 2015-12-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: No<br/>
-Price: $150
+Price: $149
 
 dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases with external source data and migrating data between systems.
 The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
@@ -363,11 +363,11 @@ The tool supports 10+ widely used data formats and includes a number of advanced
 
 ## dbForge Index Manager <a id="dbforge-index-manager"></a>
 Download page: [dbForge Index Manager]<br/>
-Release date: 2015-11-30<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-09-16<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: No<br/>
-Price: $100
+Price: $99
 
 dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the status of SQL indexes and fixing issues with index fragmentation.
 The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance.
@@ -375,10 +375,10 @@ You can instantly rebuild and reorganize SQL indexes in visual mode or generate 
 dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort.
 
 
-## dbForge Object Search <a id="dbforge-object-search"></a>
-Download page: [dbForge Object Search]<br/>
-Release date: 2015-11-30<br/>
-Support Version: 2008/2012/2014<br/>
+## dbForge Search <a id="dbforge-search"></a>
+Download page: [dbForge Search]<br/>
+Release date: 2016-09-16<br/>
+Support Version: SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -390,11 +390,11 @@ With dbForge Object Search for SQL Server you no longer need to look through the
 
 ## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
 Download page: [dbForge SQL Complete]<br/>
-Release date: 2016-07-20<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-12-05<br/>
+Support Version: SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
-Price: $120
+Price: $119
 
 dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names,
 column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
@@ -497,7 +497,8 @@ Tabs Studio is a Visual Studio and SSMS extension empowering you to work comfort
 [dbForge Unit Test]:https://www.devart.com/dbforge/sql/unit-test/
 [dbForge Data Pump]:https://www.devart.com/dbforge/sql/data-pump/
 [dbForge Index Manager]:https://www.devart.com/dbforge/sql/index-manager/
-[dbForge Object Search]:https://www.devart.com/dbforge/sql/search/
+[dbForge Search]:https://www.devart.com/dbforge/sql/search/
+[dbForge SQL Complete]:https://www.devart.com/dbforge/sql/sqlcomplete/
 [SoftTree SQL Assistant]:http://www.softtreetech.com/isql.htm
 [SQL Enlight for SSMS]:http://www.ubitsoft.com/products/sqlenlight-for-ssms/index.php
 [SQL Hunting Dog]:http://sql-hunting-dog.com/
