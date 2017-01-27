@@ -342,25 +342,25 @@ Execute the following query to determine the version of the Database Engine that
 SELECT SERVERPROPERTY('ProductVersion');
 ```
 
-| SQL Server Version                           | Database Engine Version |  Code Name   | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
-|:---------------------------------------------|------------------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server vNext                             | 14                      |  vNext       | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2016                              | 13                      |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
-| Azure SQL Database                           | 12                      |  CloudDB     | 2010 (2016)  | 841                       | 130                             | 130, 120, 110, 100            |
-| SQL Server 2014                              | 12                      |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
-| SQL Server 2012                              | 11                      |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
-| SQL Server 2012 CTP1                         | 11                      |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
-| SQL Server 2008 R2                           | 10.5                    |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
-| SQL Server 2008                              | 10                      |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
-| SQL Server 2005 SP2+ with VarDecimal enabled |  9                      |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
-| SQL Server 2005                              |  9                      |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
-| SQL Server 2000                              |  8                      |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
-| SQL Server 7.0                               |  ?                      |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
-| SQL Server 6.5                               |  ?                      |  Hydra       | 1996         | 408                       |  65                             | 65                            |
-| SQL Server 6.0                               |  ?                      |  SQL95       | 1995         | ?                         |  60                             | ?                             |
-| SQL Server 4.21                              |  ?                      |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
-| SQL Server 1.1 (16 bit)                      |  ?                      |  ?           | 1991         | ?                         |  60                             | ?                             |
-| SQL Server 1.0 (16 bit)                      |  ?                      |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
+| SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
+|:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
+| SQL Server vNext                             | 14              |  vNext       | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2016                              | 13              |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 12              |  CloudDB     | 2010 (2017)  | 841                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
+| SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
+| SQL Server 2012 CTP1                         | 11              |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
+| SQL Server 2008 R2                           | 10.5            |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
+| SQL Server 2008                              | 10              |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
+| SQL Server 2005 SP2+ with VarDecimal enabled |  9              |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
+| SQL Server 2005                              |  9              |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
+| SQL Server 2000                              |  8              |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
+| SQL Server 7.0                               |  ?              |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
+| SQL Server 6.5                               |  ?              |  Hydra       | 1996         | 408                       |  65                             | 65                            |
+| SQL Server 6.0                               |  ?              |  SQL95       | 1995         | ?                         |  60                             | ?                             |
+| SQL Server 4.21                              |  ?              |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
+| SQL Server 1.1 (16 bit)                      |  ?              |  ?           | 1991         | ?                         |  60                             | ?                             |
+| SQL Server 1.0 (16 bit)                      |  ?              |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
 
 **Azure SQL Database V12** was released in December 2014. One aspect of that release was that newly created databases had their compatibility level set to 120. In 2015 SQL Database began support for level 130, although the default remained 120.
 
@@ -381,17 +381,17 @@ For details about how to assess the performance differences of your most importa
 ## Quick summary for SQL Server Service Packs
 <a id="quick-summary-for-sql-server-service-packs"></a>
 
-| Version            | Codename    | RTM (no SP)    | SP1                             | SP2                             | SP3                               | SP4                             |
-|:-------------------|:------------|:---------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server vNext   | vNext       | [14.0.200.24]  |                                 |                                 |                                   |                                 |
-| SQL Server 2016    | SQL16       | [13.0.1601.5]  | [13.0.4001.0]                   |                                 |                                   |                                 |
-| SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]                   | [12.0.5000.0]                   |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]                   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0]                  | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
-| SQL Server 2008    | Katmai      | 10.0.1600.22   | [10.0.2531.0]                   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06    | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
-| SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
+| Version            | Codename    | RTM (no SP)   | SP1            | SP2                             | SP3                               | SP4                             |
+|:-------------------|:------------|:--------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
+| SQL Server vNext   | vNext       | [14.0.200.24] |                |                                 |                                   |                                 |
+| SQL Server 2016    | SQL16       | [13.0.1601.5] | [13.0.4001.0]  |                                 |                                   |                                 |
+| SQL Server 2014    | SQL14       | 12.0.2000.8   | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
+| SQL Server 2012    | Denali      | 11.0.2100.60  | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
+| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1  | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
+| SQL Server 2008    | Katmai      | 10.0.1600.22  | [10.0.2531.0]  | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
+| SQL Server 2005    | Yukon       | 9.0.1399.06   | [9.0.2047]     | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
+| SQL Server 2000    | Shiloh      | 8.0.194       | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
+| SQL Server 7.0     | Sphinx      | 7.0.623       | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
 [14.0.200.24]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
@@ -450,6 +450,7 @@ Useful articles:
 ## Microsoft SQL Server 2016 Builds
 <a id="microsoft-sql-server-2016-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition:
+
 ```
 Microsoft SQL Server 2016 (SP1-CU1) (KB3208177) – 13.0.4411.0 (X64)
     Jan 6 2017 14:24:37
@@ -512,6 +513,7 @@ Microsoft SQL Server 2016 (SP1-CU1) (KB3208177) – 13.0.4411.0 (X64)
 ## Microsoft SQL Server 2014 Builds
 <a id="microsoft-sql-server-2014-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition:
+
 ```
 Microsoft SQL Server 2014 (SP2-CU3) (KB3204388) - 12.0.5538.0 (X64)
     Dec 15 2016 17:52:48

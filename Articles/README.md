@@ -53,7 +53,6 @@
 | [Why Not Just Create Statistics?]                                                                                       | Erik Darling                             | 2016-07-14 |
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2011-08-16 |
 | [Recover access to a SQL Server instance]                                                                               | Aaron Bertrand                           | 2012-08-30 |
-| [Dynamically Query a 100 Million Row Table-Efficiently]                                                                 | Gary Strange                             | 2016-05-27 |
 | [SQL Server 2016 Upgrade Planning]                                                                                      | Jen Underwood                            | 2016-06-28 |
 | [Graphs and Graph Algorithms in T-SQL]                                                                                  | Hans Olav Norheim                        | 2010-05-22 |
 | [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]                                                  | Sanjay Mishra                            | 2016-07-12 |
@@ -188,7 +187,7 @@
 [Giving Permissions through Stored Procedures]:http://www.sommarskog.se/grantperm.html
 [Error and Transaction Handling in SQL Server]:http://www.sommarskog.se/error_handling/Part1.html
 [Using the Bulk-Load Tools in SQL Server]:http://www.sommarskog.se/bulkload.html
-[Using Table-Valued Parameters in SQL Server and .NET]:
+[Using Table-Valued Parameters in SQL Server and .NET]:http://www.sommarskog.se/arrays-in-sql-2008.html
 [SQL Server Columnstore Articles]:http://www.nikoport.com/columnstore/
 [Documentation: It Does not Suck!]:https://www.brentozar.com/archive/2013/01/documentation-it-doesnt-suck/
 [The Data Loading Performance Guide]:https://msdn.microsoft.com/en-us/library/dd425070%28v=sql.100%29.aspx
@@ -220,7 +219,6 @@
 [Why Not Just Create Statistics?]:https://www.brentozar.com/archive/2016/07/not-just-create-statistics/
 [Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [Recover access to a SQL Server instance]:https://www.mssqltips.com/sqlservertip/2682/recover-access-to-a-sql-server-instance/
-[Dynamically Query a 100 Million Row Table-Efficiently]:http://www.sqlservercentral.com/articles/T-SQL/121906/
 [SQL Server 2016 Upgrade Planning]:http://sqlmag.com/sql-server/sql-server-2016-upgrade-planning-0
 [Graphs and Graph Algorithms in T-SQL]:http://www.hansolav.net/sql/graphs.html
 [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]:https://blogs.msdn.microsoft.com/sqlcat/2016/07/12/sqlsweet16-episode-4-sql-server-r-services-makes-you-a-smarter-t-sql-developer/
