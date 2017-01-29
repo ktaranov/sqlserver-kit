@@ -26,7 +26,7 @@ SQL Server Management Studio (17.0 RC1) notes:
 |----------------------------------|---------------|--------------|---------:|
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
 | [16.5.3 Release] **Latest**      | 13.0.16106.4  | 2017-01-26   |      898 |
-| [16.5.2 Release]                 | 13.0.16105.4  | 2017-01-18   |      898 |
+| 16.5.2 Release **Deprecated**    | 13.0.16105.4  | 2017-01-18   |      898 |
 | [16.5.1 Release]                 | 13.0.16100.1  | 2016-12-05   |      894 |
 | [16.5 Release]                   | 13.0.16000.28 | 2016-10-26   |      894 |
 | [16.4.1 Release]                 | 13.0.15900.1  | 2016-09-23   |      894 |
@@ -41,7 +41,6 @@ SQL Server Management Studio (17.0 RC1) notes:
 
 [17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
 [16.5.3 Release]:https://go.microsoft.com/fwlink/?LinkID=840946
-[16.5.2 Release]:https://go.microsoft.com/fwlink/?linkid=839337
 [16.5.1 Release]:https://go.microsoft.com/fwlink/?linkid=837453
 [16.5 Release]:http://go.microsoft.com/fwlink/?linkid=832812
 [16.4.1 Release]:http://go.microsoft.com/fwlink/?LinkID=828615

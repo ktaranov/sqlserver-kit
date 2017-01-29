@@ -410,6 +410,7 @@ R:
  - [Little Book of R for Time Series](http://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Little Book of R for Biomedical Statistics](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Little Book of R for Multivariate Analysis](http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
+ - [Text Mining with R](http://tidytextmining.com/) (by Julia Silge and David Robinson)
 
 [*Back to top*](#header08)
 

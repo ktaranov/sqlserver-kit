@@ -1322,12 +1322,15 @@ Some features, such as snapshot isolation and read committed snapshot, might not
 Use for Move System Databases and Move User Databases.<br />
 **Note: Do not use during normal operation.**<br />
 Link: [MSDN ms188396]<br />
+Link: [Importance of Performing DBCC CHECKDB on all SQL Server Databases]<br />
 Scope: global only
 
 
 **Trace Flag: 3609**<br />
-Function: Do not create tempdb at startup<br />
-Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/
+Function: Recovering all databases, but not clearing tempdb<br />
+Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/<br />
+Link: [Importance of Performing DBCC CHECKDB on all SQL Server Databases]<br />
+Scope: global only
 
 
 **Trace Flag: 3610**<br />
@@ -2446,3 +2449,4 @@ Scope: global or session
 [How It Works: SQL Server 2012 Database Engine Task Scheduling]:https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
 [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
 [SQL Server 2016 : Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
+[Importance of Performing DBCC CHECKDB on all SQL Server Databases]:https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
