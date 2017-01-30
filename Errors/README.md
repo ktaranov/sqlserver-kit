@@ -51,6 +51,7 @@ Error code equal `message_id` from `sys.messages`
 | Error Code | Description                                                                                                                      | Article                                                    |
 |-----------:|----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 |        824 | SQL Server detected a logical consistency-based I/O error                                                                        | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
+|       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                  | [CREATE DATABASE – I’ve not seen that before.]             |
 |       1904 | The statistics on table has 65 columns in the key list                                                                           | [SQL SERVER - Fix: Error: Msg 1904]                        |
 |       3013 | RESTORE DATABASE is terminating abnormally                                                                                       | [KB290787]                                                 |
 |       3154 | The backup set holds a backup of a database other than the existing                                                              | [Database Restore Fails with Msg 3154]                     |
@@ -67,6 +68,7 @@ Error code equal `message_id` from `sys.messages`
 
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
+[CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
