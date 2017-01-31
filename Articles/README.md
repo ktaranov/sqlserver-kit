@@ -168,6 +168,12 @@
 | [SQL Server 2016: Getting tempdb a little more right]                                                                   | Aaron Bertrand                           | 2015-09-30 |
 | [Practical uses of binary types]                                                                                        | Daniel Hutmacher                         | 2017-01-09 |
 | [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]                                                    | Aaron Nelson                             | 2017-01-12 |
+| [Creating, detaching, re-attaching, and fixing a SUSPECT database]                                                      | Paul Randal                              | 2008-08-29 |
+| [Modifying Tables Online – Part 1: Migration Strategy]                                                                  | Michael J Swart                          | 2012-04-16 |
+| [Modifying Tables Online – Part 2: Implementation Example]                                                              | Michael J Swart                          | 2012-04-17 |
+| [Modifying Tables Online – Part 3: Example With Error Handling]                                                         | Michael J Swart                          | 2012-04-20 |
+| [Modifying Tables Online – Part 4: Testing]                                                                             | Michael J Swart                          | 2012-04-26 |
+| [Modifying Tables Online – Part 5: Just One More Thing]                                                                 | Michael J Swart                          | 2012-04-27 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -334,3 +340,9 @@
 [SQL Server 2016: Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
 [Practical uses of binary types]:https://sqlsunday.com/2017/01/09/binary-types/
 [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]:http://www.sqlservercentral.com/articles/PowerShell/151510/
+[Creating, detaching, re-attaching, and fixing a SUSPECT database]:http://www.sqlskills.com/blogs/paul/creating-detaching-re-attaching-and-fixing-a-suspect-database/
+[Modifying Tables Online – Part 1: Migration Strategy]:http://michaeljswart.com/2012/04/modifying-tables-online-part-1-migration-strategy/
+[Modifying Tables Online – Part 2: Implementation Example]:http://michaeljswart.com/2012/04/modifying-tables-online-part-2-implementation-example/
+[Modifying Tables Online – Part 3: Example With Error Handling]:http://michaeljswart.com/2012/04/modifying-tables-online-part-3-example-with-error-handling/
+[Modifying Tables Online – Part 4: Testing]:http://michaeljswart.com/2012/04/modifying-tables-online-part-4-testing/
+[Modifying Tables Online – Part 5: Just One More Thing]:http://michaeljswart.com/2012/04/modifying-tables-online-part-5-just-one-more-thing/
