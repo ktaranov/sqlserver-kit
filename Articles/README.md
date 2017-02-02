@@ -174,6 +174,11 @@
 | [Modifying Tables Online – Part 3: Example With Error Handling]                                                         | Michael J Swart                          | 2012-04-20 |
 | [Modifying Tables Online – Part 4: Testing]                                                                             | Michael J Swart                          | 2012-04-26 |
 | [Modifying Tables Online – Part 5: Just One More Thing]                                                                 | Michael J Swart                          | 2012-04-27 |
+| [DATEDIFF vs. DATEADD]                                                                                                  | Guy Glanster                             | 2017-01-25 |
+| [Disaster recovery 101: hack-attach a damaged database]                                                                 | Paul Randal                              | 2010-06-18 |
+| [Bones of SQL - The Calendar Table]                                                                                     | Bob Hovious                              | 2016-09-08 |
+| [SQL Server 2016, Double or Nothing, Always Encrypted with temporal tables]                                             | Raul Gonzalez                            | 2016-07-27 |
+| [Reclaiming Space After Column Data Type Change]                                                                        |David Fundakowski                         | 2016-08-09 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -346,3 +351,8 @@
 [Modifying Tables Online – Part 3: Example With Error Handling]:http://michaeljswart.com/2012/04/modifying-tables-online-part-3-example-with-error-handling/
 [Modifying Tables Online – Part 4: Testing]:http://michaeljswart.com/2012/04/modifying-tables-online-part-4-testing/
 [Modifying Tables Online – Part 5: Just One More Thing]:http://michaeljswart.com/2012/04/modifying-tables-online-part-5-just-one-more-thing/
+[DATEDIFF vs. DATEADD]:http://www.madeiradata.com/datediff-vs-dateadd/
+[Disaster recovery 101: hack-attach a damaged database]:http://www.sqlskills.com/blogs/paul/disaster-recovery-101-hack-attach-a-damaged-database/
+[Bones of SQL - The Calendar Table]:http://www.sqlservercentral.com/articles/calendar/145206/
+[SQL Server 2016, Double or Nothing, Always Encrypted with temporal tables]:http://www.sqldoubleg.com/2016/07/27/sql-server-2016-double-or-nothing-always-encrypted-with-temporal-tables/
+[Reclaiming Space After Column Data Type Change]:http://www.sqlservercentral.com/articles/data+type/144308/
