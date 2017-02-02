@@ -243,8 +243,7 @@ Link: None
 
 
 **Trace Flag: 260**<br />
-Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs).
-For more information about GetXpVersion(), see [Creating Extended Stored Procedures](https://msdn.microsoft.com/en-us/library/ms164627.aspx).<br />
+Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). For more information about GetXpVersion(), see [Creating Extended Stored Procedures](https://msdn.microsoft.com/en-us/library/ms164627.aspx).<br />
 Link: http://msdn.microsoft.com/en-us/library/ms164627.aspx<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session
@@ -484,7 +483,6 @@ If you encounter an error during script upgrade mode, it is recommended to conta
 **Warning: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously
 in a production environment. Database upgrade scripts needs to execute successfully for a complete install of Cumulative Updates and Service Packs.
 Not doing so can cause unexpected issues with your SQL Server instance.**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx<br />
 Link: https://support.microsoft.com/en-us/kb/2163980<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
@@ -918,8 +916,8 @@ Link: https://support.microsoft.com/en-us/kb/2606883
 
 
 **Trace Flag: 2505**<br />
-Function: SQL 7 - Prevents DBCC TRACEON 208, SPID 10 errors from appearing in the error log<br />
-Link: https://support.microsoft.com/en-us/kb/243352
+Function: SQL 7 - Prevents DBCC TRACEON 208, SPID 10 errors from appearing in the error log (Note: DBCC TRACEON(208) just means “SET QUOTED IDENTIFIER ON”)<br />
+Link: None
 
 
 **Trace Flag: 2508**<br />
@@ -937,9 +935,9 @@ Function: Verbose Merge Replication logging to msmerge\_history table for troubl
 Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-records-backups-and-database-compression-with-a-pinch-of-security-considerations.aspx
 
 
-**Trace Flag: 2520**<br />
-Function: Forces DBCC HELP to return syntax of undocumented DBCC statements. If 2520 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC statement 'undocumented statement'". dbcc help ('?')<br />
-Link: None
+**Trace Flag: 2520, 2588**<br />
+Function: Forces DBCC HELP to return syntax of undocumented DBCC statements. If 2520/2588 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC state ment 'undocumented statement'". Also affects dbcc help ('?')<br />
+Link: http://www.sqlskills.com/blogs/paul/dbcc-writepage/
 
 
 **Trace Flag: 2521**<br />
@@ -1126,11 +1124,6 @@ Link: [MSDN ms188396]<br />
 Scope: global only
 
 
-**Trace Flag: 2588**<br />
-Function: Get more information about undocumented DBCC commands<br />
-Link: http://www.sqlservice.se/sv/start/blogg/trace-flag--undocumented-commands.aspx
-
-
 **Trace Flag: 2701**<br />
 Function: SQL 6.5 - Sets the @@ERROR system function to 50000 for RAISERROR messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
 Link: None
@@ -1255,6 +1248,9 @@ Link: https://support.microsoft.com/en-us/kb/215458
 Function: Prints the recovery timings<br />
 Link: None
 
+**Trace Flag: 3408**<br />
+Function: This forces SQL Server startup to use a single thread when recovering all DBs at SQL Server startup, instead of running through its algorithm for determining how many threads to allocate to DB recovery<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/08/how-much-is-crash-recovery-parallelized-in-which-order-are-databases-recovered/
 
 **Trace Flag: 3422**<br />
 Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery).
@@ -1298,10 +1294,10 @@ Link: None
 
 
 **Trace Flag: 3604**<br />
-Function: Redirect DBCC command output to query window<br />
+Function: Enables the output from a large number of trace flags and DBCC commands to be sent back to the client. The Connect issue notes that problems can occur when using 3604 with a query that executes across a linked server. [This CSS page](https://blogs.msdn.microsoft.com/psssql/2009/05/11/how-do-i-determine-which-dump-triggers-are-enabled/) points out that 3604 is necessary for DBCC DumpTrigger(‘display’)<br />
 Link: http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
-Link: http://www.sqlservice.se/sv/start/blogg/querytraceon.aspx
+Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604
 
 
 **Trace Flag: 3605**<br />
@@ -1376,6 +1372,11 @@ Function: Enables logging all errors to error log during server startup<br />
 Link: http://spaghettidba.com/2011/05/20/trace-flag-3659/
 
 
+**Trace Flag: 3663**<br />
+Function: CSS: “By default [SQL Server] allows system cache involvement [with writing to the SQL Error log] to avoid some of the performance issues you might be suspecting, but you can force it to use FILE_FLAG_WRITE_THROUGH” with TF 3663<br />
+Link: http://blogs.msdn.com/b/psssql/archive/2011/01/07/discussion-about-sql-server-i-o.aspx
+
+
 **Trace Flag: 3688**<br />
 Function: Removes messages to error log about traces started and stopped<br />
 Link: http://support.microsoft.com/kb/922578/en-us
@@ -1422,8 +1423,8 @@ Link: None
 
 
 **Trace Flag: 4022**<br />
-Function: Bypass Startup procedures<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2012-cu1-upgrade-step--msdb110_upgrade-sql--encountered-error-547.aspx
+Function: Directs the SQL instance to ignore stored procedures that have been configured as “auto-start” procedures. Their auto-start configuration is not affected, so the next time the instance is started w/o this flag they will return to their normal behavior.<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do/
 
 
 **Trace Flag: 4029**<br />
@@ -1814,9 +1815,16 @@ Always assign to the scheduler with the least load (pool based on SQL 2012 EE SK
 Link: [How It Works: SQL Server 2012 Database Engine Task Scheduling]
 
 
+**Trace Flag: 8009**<br />
+**Undocumented trace flag**<br />
+Function: Enables the “idle state behavior” (see IO Basics, Chapter 2 document) that a SQL instance can enter under certain conditions.<br />
+Link: https://technet.microsoft.com/en-us/library/cc917726.aspx
+
+
 **Trace Flag: 8010**<br />
-Function: Fixes problem that SQL Server services can not be stopped<br />
+Function: Disables the “idle state” behavior that a SQL instance can enter (see TF 8009). Fixes problem that SQL Server services can not be stopped<br />
 Link: http://support.microsoft.com/kb/2633271/en-us
+Link: https://technet.microsoft.com/en-us/library/cc917726.aspx
 
 
 **Trace Flag: 8011**<br />
