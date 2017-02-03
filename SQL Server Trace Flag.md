@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (362 trace flags)
+Complete list of Microsoft SQL Server trace flags (374 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **362 trace flags**
+Summary: **374 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -359,6 +359,12 @@ Function: Serves for getting detailed information on which Columnstore were elim
 Link: [Niko Neugebauer Columnstore Indexes – part 35]
 
 
+**Trace Flag: 647**<br />
+Function: Avoids a new-in-SQL 2012 data check (done when adding a column to a table) that can cause ALTER TABLE... ADD <column> operations to take a very long time.
+The KB has a useful query for determining the row size for a table.<br />
+Link: https://support.microsoft.com/en-us/help/2986423/fix-it-takes-a-long-time-to-add-new-columns-to-a-table-when-the-row-size-exceeds-the-maximum-allowed-size<br />
+
+
 **Trace Flag: 652**<br />
 Function: Disable page pre-fetching scans<br />
 Link: [KB920093]]<br />
@@ -385,6 +391,11 @@ errorlog<br />
 Link: http://blogs.msdn.com/b/sqljourney/archive/2012/07/28/an-in-depth-look-at-ghost-records-in-sql-server.aspx
 
 
+**Trace Flag: 669**<br />
+Function: “...prevents user queries from queuing requests to the ghost cleanup process”. This flag is a workaround for stack dumps occurring right after SQL Server startup, where user queries (that queue pages for ghost cleanup) were running so quickly after SQL startup that they were queuing pages before the ghost cleanup process had actually initialized.<br />
+Link: https://support.microsoft.com/en-us/help/3027860/error-17066-or-17310-during-sql-server-startup
+
+
 **Trace Flag: 698**<br />
 Function: SQL 9 – Performance of INSERT operations against a table with an identity column may be slow when compared to SQL 8<br />
 Link: https://support.microsoft.com/en-gb/kb/940545
@@ -393,6 +404,11 @@ Link: https://support.microsoft.com/en-gb/kb/940545
 **Trace Flag: 699**<br />
 Function: Turn off transaction logging for the entire SQL dataserver<br />
 Link: None
+
+
+**Trace Flag: 670, 671**<br />
+Function: Disables deferred deallocation. But note Paul White’s comment on the post! The flag # may actuall by 671.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps/
 
 
 **Trace Flag: 715**<br />
@@ -429,6 +445,7 @@ Link: http://support.microsoft.com/kb/826433
 **Trace Flag: 828**<br />
 Function: SQL 8 - When enabled checkpoint ignores the recovery interval target and keeps steady I/O otherwise it uses recovery interval setting as a target for the length of time that checkpoint will take<br />
 Link: https://support.microsoft.com/en-gb/kb/906121
+Link: https://blogs.msdn.microsoft.com/psssql/2008/04/11/how-it-works-sql-server-checkpoint-flushcache-outstanding-io-target/
 
 
 **Trace Flag: 830**<br />
@@ -490,17 +507,19 @@ Scope: global only
 
 **Trace Flag: 1106**<br />
 Function: SQL 9 - Used space in tempdb increases continuously when you run a query that creates internal objects in tempdb<br />
-Link: https://support.microsoft.com/en-gb/kb/947204
+Link: https://support.microsoft.com/en-gb/kb/947204<br />
+Link: https://blogs.msdn.microsoft.com/arvindsh/2014/02/24/tracking-tempdb-internal-object-space-usage-in-sql-2012
 
 
 **Trace Flag: 1117**<br />
 Function: When a file in the filegroup meets the autogrow threshold, all files in the filegroup grow.<br />
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the AUTOGROW_SINGLE_FILE and AUTOGROW_ALL_FILES option of ALTER DATABASE, and trace flag 1117 has no affect. For more information, see ALTER DATABASE File and Filegroup Options (Transact-SQL).**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
-Link: http://blogs.technet.com/technet_blog_images/b/sql_server_sizing_ha_and_performance_hints/archive/2012/02/09/sql-server-2008-trace-flag-t-1117.aspx<br />
 Link: https://www.littlekendra.com/2017/01/03/parallelism-and-tempdb-data-file-usage-in-sql-server/<br />
 Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.sqlskills.com/blogs/paul/tempdb-configuration-survey-results-and-advice
+Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/01/attempt-to-grow-all-files-in-one-filegroup-and-not-just-the-one-next-in-the-autogrowth-chain-using-trace-flag-1117
+Link: http://sql-articles.com/articles/general/day-6trace-flag-1117-auto-grow-equally-in-all-data-file
 Scope: global only
 
 
@@ -511,12 +530,12 @@ Afterwards, when more pages are needed, those are allocated from that same exten
 The SGAM page is used to track these mixed extents, so can quickly become a bottleneck when numerous mixed page allocations are occurring.
 This trace flag allocates all eight pages from the same extent when creating new objects, minimizing the need to scan the SGAM page.<br />
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the SET MIXED_PAGE_ALLOCATION option of ALTER DATABASE, and trace flag 1118 has no affect. For more information, see ALTER DATABASE SET Options (Transact-SQL).**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2008/12/17/sql-server-2005-and-2008-trace-flag-1118-t1118-usage.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br />
 Link: https://support.microsoft.com/en-us/kb/328551<br />
 Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [MSDN ms188396]<br />
+Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches<br />
 Scope: global only
 
 
@@ -531,8 +550,13 @@ Link: None
 
 
 **Trace Flag: 1140**<br />
-Function: Fix for growing tempdb in special cases<br />
-Link: http://support.microsoft.com/kb/2000471
+Function: A workaround for a bug in SQL 2005 SP2, SP3, and SQL 2008, where mixed page allocations climb continually, due to a change in the way that mixed-page allocations are done.<br />
+Link: None
+
+
+**Trace Flag: 1165**<br />
+Function: This [presentation](http://www.youtube.com/watch?v=SvseGMobe2w&feature=youtu.be) by Bob Ward says that this TF outputs the recalculated #’s (every 8192 allocations) for the proportional fill algorithm in database allocation when multiple files are present..<br />
+Link: None
 
 
 **Trace Flag: 1180**<br />
@@ -706,6 +730,11 @@ Link: [MSDN ms188396]<br />
 Scope: global only
 
 
+**Trace Flag: 1482**<br />
+Function: Prints information to the Error Log (3605 is not necessary) for a variety of transaction log operations are done, including when the MinLSN value is reset, when a VLF is formatted, etc.<br />
+Link: None
+
+
 **Trace Flag: 1504**<br />
 Function: Dynamic memory grant expansion can also help with parallel index build plans where the distribution of rows across threads is uneven.
 The amount of memory that can be consumed this way is not unlimited, however.
@@ -770,15 +799,29 @@ Link: https://support.microsoft.com/en-us/kb/922804
 **Trace Flag: 1806**<br />
 Function: Disable Instant File Initialization<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
+Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-330-instant-file-initialization-can-be-controlled-from-within-sql-server
+Link: https://support.microsoft.com/en-us/help/2574695/file-initialization-takes-a-long-time-for-sql-server-database-related-operations
 
 
 **Trace Flag: 1807**<br />
 Function: Enable option to have database files on SMB share for SQL Server 2008 and 2008R2<br />
 Link: http://blogs.msdn.com/b/varund/archive/2010/09/02/create-a-sql-server-database-on-a-network-shared-drive.aspx
+Link: https://support.microsoft.com/en-us/help/304261/description-of-support-for-network-database-files-in-sql-server
+
+
+**Trace Flag: 1808**<br />
+Function: Directs SQL Server to ignore auto-closing databases even if the Auto-close property is set to ON. Must be set globally. Present in Yukon forward<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/04/11/want-your-sql-server-to-simply-ignore-the-auto_close-setting-for-all-open-databases-for-which-it-has-been-enabled
 
 
 **Trace Flag: 1810**<br />
 Function: Prints the file create/open/close timings<br />
+Link: None
+
+
+**Trace Flag: 1816**<br />
+Function: Bob Ward briefly references this flag in his PASS 2014 SQL Server IO talk, saying that it “could provide more details around errors” that occur with IO done to SQL data files in Azure Storage.<br />
 Link: None
 
 
@@ -810,8 +853,8 @@ Link: None
 
 **Trace Flag: 2330**<br />
 Function: Query performance decreases when sys.dm_db_index_usage_stats has large number of rows<br />
-Link: https://support.microsoft.com/en-us/kb/2003031
 Link: http://www.brentozar.com/archive/2015/11/trace-flag-2330-who-needs-missing-index-requests/
+Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches/
 
 
 **Trace Flag: 2335**<br />
@@ -1259,8 +1302,10 @@ Link: https://support.microsoft.com/en-us/kb/215458
 
 
 **Trace Flag: 3502**<br />
-Function: Writes info about checkpoints to teh errorlog<br />
+Function: Writes info about checkpoints to tech error    log<br />
 Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
+Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
 
 
 **Trace Flag: 3503**<br />
@@ -1270,12 +1315,14 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 
 **Trace Flag: 3504**<br />
 Function: For internal testing. Will raise a bogus log-out-of-space condition from checkpoint<br />
-Link: None
+Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
 
 
 **Trace Flag: 3505**<br />
 Function: Disables automatic checkpointing<br />
 Link: http://support.microsoft.com/kb/815436
+Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
 
 
 **Trace Flag: 3601**<br />
@@ -1301,9 +1348,8 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag
 
 
 **Trace Flag: 3605**<br />
-Function: Directs the output of some Trace Flags to the Errorlog<br />
-Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
-Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-performance-of-backup-compression-in-sql-server-2008.aspx
+Function: Sends a variety of types of information to the SQL Server error log instead of to the user console. Often referenced in KB and blog articles in the context of other trace flags (e.g. 3604). <br />
+Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements/
 
 
 **Trace Flag: 3607**<br />
@@ -1390,6 +1436,11 @@ Link: http://support.microsoft.com/kb/922578/en-us
 **Trace Flag: 3801**<br />
 Function: Prohibits use of USE DB statement<br />
 Link: None
+
+
+**Trace Flag: 3861**<br />
+Function: This flag allows the SQL Server DB startup code to move system tables to the primary filegroup. Introduced due to behavior in the SQL 2014 upgrade process, where system tables could be created in a secondary filegroup (if that FG was the default).<br />
+Link: https://support.microsoft.com/en-us/help/3003760/fix-cannot-remove-the-secondary-filegroup-after-you-upgrade-the-database-to-sql-server-2014
 
 
 **Trace Flag: 3913**<br />
