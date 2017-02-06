@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (374 trace flags)
+Complete list of Microsoft SQL Server trace flags (389 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **374 trace flags**
+Summary: **389 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -451,6 +451,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2008/04/11/how-it-works-sql-server
 **Trace Flag: 830**<br />
 Function: SQL 9 – Disable the reporting of CPU Drift errors in the SQL Server errorlog like SQL Server has encountered 2 occurrence(s) of I/O requests taking longer than 15 seconds to complete<br />
 Link: https://support.microsoft.com/en-us/kb/897284
+Link: https://technet.microsoft.com/en-us/library/aa175396(v=SQL.80).aspx
 
 
 **Trace Flag: 831**<br />
@@ -461,7 +462,6 @@ Link: None
 **Trace Flag: 834**<br />
 Function: Uses Microsoft Windows large-page allocations for the buffer pool.<br />
 **Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: https://support.microsoft.com/en-us/kb/920093<br />
 Link: https://support.microsoft.com/en-us/kb/3210239<br />
 Link: [MSDN ms188396]<br />
@@ -476,11 +476,17 @@ Link: None
 **Trace Flag: 836**<br />
 Function: Use the max server memory option for the buffer pool<br />
 Link: [KB920093]
+Link: https://blogs.msdn.microsoft.com/psssql/2012/12/11/how-it-works-sql-server-32-bit-paeawe-on-sql-2005-2008-and-2008-r2-not-using-as-much-ram-as-expected/<br />
+
+
+**Trace Flag: 839**<br />
+Function: (Apparently) forces SQL Server to treate all NUMA memory as “flat”, as if it was SMP.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2010/04/02/how-it-works-soft-numa-io-completion-thread-lazy-writer-workers-and-memory-nodes
 
 
 **Trace Flag: 840**<br />
 Function: SQL 9 – When trace turned on, SQL Server can perform larger I/O extent reads to populate the buffer pool when SQL Server starts this populates the buffer pool faster. Additionally, the larger I/O extent reads improve the initial query compilation and the response time when SQL Server starts.<br />
-Link: https://support.microsoft.com/en-gb/kb/912322
+Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/09/the-read-ahead-that-doesnt-count-as-read-ahead
 
 
 **Trace Flag: 842**<br />
@@ -490,8 +496,13 @@ Link: None
 
 **Trace Flag: 845**<br />
 Function: Enable Lock pages in Memory on Standard Edition<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-performance-with-dynamics-axapta.aspx<br />
 Link: https://support.microsoft.com/en-gb/kb/970070
+Link: https://support.microsoft.com/en-us/help/2708594/fix-locked-page-allocations-are-enabled-without-any-warning-after-you-upgrade-to-sql-server-2012
+
+
+**Trace Flag: 851**<br />
+Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, “disable[s] BPE even if enabled via ALTER SERVER”<br />
+Link: None
 
 
 **Trace Flag: 902**<br />
@@ -771,6 +782,10 @@ Link: None
 
 **Trace Flag: 1613**<br />
 Function: Set affinity of the SQL data server engine's onto particular CPUs -- usually pins engine 0 to processor 0, engine 1 to processor 1...<br />
+Link: None
+
+**Trace Flag: 1615**<br />
+Function: Khen2005, page 385 (paraphrased): directs SQL to use threads instead of fiber even if the “lightweight pooling” config option is on. (Apparently, sometimes SQL wouldn’t start successfully when using lightweight pooling, and so this lets you get SQL up and running, so that you can turn the config option off)<br />
 Link: None
 
 
@@ -1326,8 +1341,8 @@ Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-par
 
 
 **Trace Flag: 3601**<br />
-Function: Stack trace when error raised. Also see 3603.<br />
-Link: None
+Function: Appears to disable CPU instruction prefetching. The Blog post to the right uses it, in concert with 3603, to enable SQL 2000 to run on a machine with a # of processors that is *not* a power of 2<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msde-installation-will-fail-if-you-have-number-of-cpus-on-a-box-which-is-not-in-power-of-2
 
 
 **Trace Flag: 3602**<br />
@@ -1336,8 +1351,8 @@ Link: None
 
 
 **Trace Flag: 3603**<br />
-Function: SQL Server fails to install on tricore, Bypass SMT check is enabled, flags are added via registry. Also see 3601.<br />
-Link: None
+Function: Disables “Simultaneous Multithreading Processor check”. Used in concern with TF 3601 in the blog post to the right to enable SQL 2000 to run on a machine with a # of processors that is *not* a power of 2<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msde-installation-will-fail-if-you-have-number-of-cpus-on-a-box-which-is-not-in-power-of-2
 
 
 **Trace Flag: 3604**<br />
@@ -1404,8 +1419,10 @@ Link: None
 
 
 **Trace Flag: 3654**<br />
-Function:Allocations to stack<br />
-Link: None
+Function: Apparently increases info found in the sys.dm_os_memory_allocations DMV (which appears to have replaced the DBCC MEMOBJLIST command) Bob Ward also discusses it in his PASS 2013 session, saying that it turns on tracing for all memory allocations done by “Memory Objects” (a specific SQLOS memory term). This flag will have a significant impact on system performance.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-counting-be-a-leading-memory-scribbler-cause<br />
+Link: https://blogs.msdn.microsoft.com/slavao/2005/08/30/talking-points-around-memory-manager-in-sql-server-2005<br />
+Link: https://support.microsoft.com/en-us/help/2888658/an-access-violation-occurs-when-the-sys.dm-db-index-physical-stats-function-is-used-in-an-if-exists-statement-in-an-sql-query-in-sql-server-2012
 
 
 **Trace Flag: 3656**<br />
@@ -1448,9 +1465,19 @@ Function: SQL 7/8 - SQL Server does not update the rowcnt column of the sysindex
 Link: None
 
 
+**Trace Flag: 3917**<br />
+Function: According to Bob Ward’s PASS 2014 SQL Server IO talk, enables trace output (3605 is required) for the Eager Write functionality that is used with bulk logged operations (such as SELECT INTO)<br />
+Link: None
+
+
 **Trace Flag: 3923**<br />
 Function: Let SQL Server throw an exception to the application when the 3303 warning message is raised<br />
 Link: https://support.microsoft.com/kb/3014867/en-us
+
+
+**Trace Flag: 3940**<br />
+Function: According to Bob Ward’s PASS 2014 SQL Server IO talk, forces the Eager Write functionality to throttle at 1024 outstanding eager writes.<br />
+Link: None
 
 
 **Trace Flag: 4001**<br />
@@ -1635,10 +1662,10 @@ Link: https://support.microsoft.com/en-us/kb/936892
 
 **Trace Flag: 4610**<br />
 Function: When you use trace flag 4618 together with trace flag 4610, the number of entries in the cache store is limited to 8,192. When the limit is reached, SQL 2005 removes some entries from the TokenAndPermUserStore cache store.<br />
-Link: https://support.microsoft.com/en-us/kb/959823
+Link: https://support.microsoft.com/en-us/kb/959823<br />
 Link: [MSDN ms188396]<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/06/16/query-performance-issues-associated-with-a-large-sized-security-cache/<br />
 Scope: global only
-
 
 
 **Trace Flag: 4612**<br />
@@ -1672,7 +1699,14 @@ It performs this action to limit the size of the cache store growth. However, th
 When used together with trace flag 4610 increases the number of entries in the TokenAndPermUserStore cache store to 8192<br />
 Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/kb/933564<br />
+Link: https://support.microsoft.com/en-us/help/959823/how-to-customize-the-quota-for-the-tokenandpermuserstore-cache-store-in-sql-server-2005-service-pack-3<br />
 Scope: global only
+
+
+**Trace Flag: 4620**<br />
+Function: According to the Connect item, causes permission checking to be done on a global cache instead of the per-user caches that were introduced in SQL 2008. The thread 
+includes some interesting information on the cache stores, especially as they relate to TokenPermAndUserStore.<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/467661/sql-server-2008-has-incorrect-cache-names-in-sys-dm-os-memory-cache-counters
 
 
 **Trace Flag: 4621**<br />
@@ -1716,6 +1750,14 @@ If this trace flag is enabled on a running server, a memory dump will not be aut
 However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.<br />
 Link: [MSDN ms188396]<br />
 Scope: global
+
+
+**Trace Flag: 6531**<br />
+Function: Enables adjustment in the SQLOS scheduling layer to handle queries that issue many short-duration calls to spatial data (which is implemented via CLR functions): “
+This fix introduces the trace flag 6531 to indicate to the SQLOS hosting layer that the spatial data type should avoid preemptive protections. This can reduce the CPU consumption 
+and improve the overall performance for spatial activities. Only use this trace flag if the individual, spatial method invocations (per row and column) take less than ~4ms. 
+Longer invocations without preemptive protection could lead to scheduler concurrency issues and SQLCLR punishment messages logged to the error log.”<br />
+Link: https://support.microsoft.com/en-us/help/3005300/fix-high-cpu-consumption-when-you-use-spatial-data-type-and-associated-methods-in-sql-server-2012-or-sql-server-2014
 
 
 **Trace Flag: 6532**<br />
@@ -1851,7 +1893,7 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/518158/-packet-er
 
 **Trace Flag: 8002**<br />
 Function: Changes CPU Affinity behaviour<br />
-Link: http://support.microsoft.com/kb/818769
+Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-the-numa-configuration-information
 
 
 **Trace Flag: 8004**<br />
@@ -1864,6 +1906,8 @@ Link: None
 Function: Force the scheduler hint to be ignored.
 Always assign to the scheduler with the least load (pool based on SQL 2012 EE SKU or Load Factor for previous versions and SKUs.)<br />
 Link: [How It Works: SQL Server 2012 Database Engine Task Scheduling]
+Link: https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling
+Link: http://www.stillhq.com/sqldownunder/archives/msg05089.html
 
 
 **Trace Flag: 8009**<br />
@@ -1894,7 +1938,6 @@ Scope: global only
 
 **Trace Flag: 8015**<br />
 Function: Disable auto-detection and NUMA setup<br />
-Link: https://support.microsoft.com/en-us/kb/948450<br />
 Link: [MSDN ms188396]<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html<br />
 Scope: global only
@@ -1910,7 +1953,7 @@ Link: [How It Works: SQL Server 2012 Database Engine Task Scheduling]
 Function: Upgrade version conflict<br />
 Link: http://social.msdn.microsoft.com/Forums/eu/sqlexpress/thread/dd6fdc16-9d8d-4186-9549-85ba4c322d10<br />
 Link: http://connect.microsoft.com/SQLServer/feedback/details/407692/indicateur-de-trace-8017-reported-while-upgrading-from-ssee2005-to-ssee2008
-
+Link: http://dba.stackexchange.com/questions/48580/trace-flag-and-which-need-to-be-turned-off-and-why
 
 **Trace Flag: 8018**<br />
 Function: Disable the exception ring buffer<br />
@@ -1940,6 +1983,11 @@ Trace flag 8021 disables this override.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-the-numa-configuration-information/
 
 
+**Trace Flag: 8022**<br />
+Function: This flag gives more information about the conditions when a non-yielding scheduler/situation was encountered. The whitepaper linked to on the right gives example output for this flag<br />
+Link: None
+    
+
 **Trace Flag: 8024**<br />
 Function: When this TF is on, it affects the mini-dump generation logic for the 1788* errors:
 "To capture a mini-dump, one of the following checks must also be met.
@@ -1950,6 +1998,12 @@ at workers with lower utilizations that are probably stuck in an API call or sim
 Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
 
 
+**Trace Flag: 8025**<br />
+Function: SQL on NUMA normally does most of its allocation on Node 1, because usually Windows and other programs will allocate from Node 0. However, if 
+you want SQL to do its resource allocation on the default node (node 0), turn on this flag.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-the-numa-configuration-information
+
+
 **Trace Flag: 8026**<br />
 Function: SQL Server will clear a dump trigger after generating the dump once<br />
 Link: http://support.microsoft.com/kb/917825/en-us
@@ -1958,7 +2012,6 @@ Link: http://support.microsoft.com/kb/917825/en-us
 **Trace Flag: 8030**<br />
 Function: Fix for performance bug<br />
 Link: http://support.microsoft.com/kb/917035<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-2005-slowing-down-after-a-while.aspx
 
 
 **Trace Flag: 8032**<br />
@@ -1969,9 +2022,10 @@ Scope: global only
 
 
 **Trace Flag: 8033**<br />
-Function: Alters cache limit settings<br />
+Function: Suppresses messages of the form “The time stamp counter of CPU on scheduler id 1 is not synchronized with other CPUs” from being placed in the SQL Error log when CPU drift is noticed<br />
 **Warning: SQL 9 - Disable the reporting of CPU Drift errors in the SQL Server error log like time stamp counter of CPU on scheduler id 1 is not synchronized with other CPUs.**<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/931279/sql-server-timing-values-may-be-incorrect-when-you-use-utilities-or-technologies-that-change-cpu-frequencies
+Link: https://blogs.msdn.microsoft.com/psssql/2007/08/19/sql-server-2005-rdtsc-truths-and-myths-discussed
 
 
 **Trace Flag: 8038**<br />
@@ -2002,12 +2056,18 @@ Related to: 8015, 9024
 
 **Trace Flag: 8049**<br />
 Function: SQL 9+ Startup only – Allows use of 1ms times even when patched. Check 8038 for details.<br />
-Link: [KB972767]
+Link: [KB972767]<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2010/08/18/how-it-works-timer-outputs-in-sql-server-2008-r2-invariant-tsc
 
 
 **Trace Flag: 8050**<br />
 Function: Causes "optional" wait types (see the CSS article) to be excluded when querying sys.dm_os_wait_stats<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/02/the-sql-server-wait-type-repository/
+
+
+**Trace Flag: 8075**<br />
+Function: Enables a fix (after applying the appropriate CU) for x64 VAS exhaustion.<br />
+Link: https://support.microsoft.com/en-us/help/3074434/fix-out-of-memory-error-when-the-virtual-address-space-of-the-sql-server-process-is-very-low-on-available-memory
 
 
 **Trace Flag: 8079**<br />
@@ -2228,6 +2288,13 @@ Function: Logs every two-digit year conversion to a four-digit year<br />
 Link: None
 
 
+**Trace Flag: 8903**<br />
+Function: Allows SQL Server to use a specific  API (SetFileIoOverlappedRange) when Locked Pages in Memory is enabled.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2012/03/20/setfileiooverlappedrange-can-lead-to-unexpected-behavior-for-sql-server-2008-r2-or-sql-server-2012-denali
+Link: https://support.microsoft.com/en-us/help/2679255/sql-server-data-corruption-when-a-memory-range-is-accessed-by-the-setfileiooverlappedrange-function-and-an-i-o-operation-in-windows-vista,-in-windows-server-2008,-in-windows-7,-or-in-windows-server-2008-r2
+Link: https://blogs.msdn.microsoft.com/psssql/2013/10/16/every-time-i-attach-database-sql-logs-error-1314-for-setfileiooverlappedrange
+
+
 **Trace Flag: 9024**<br />
 Function: Converts a global log pool memory object into NUMA node partitioned memory object<br />
 **Note: Beginning with SQL Server 2012 SP3 and SQL Server 2014 SP1 this behavior is controlled by the engine and trace flag 9024 has no effect.**<br />
@@ -2352,6 +2419,11 @@ Link: [MSDN ms188396]<br />
 Scope: global or session
 
 
+**Trace Flag: 9394**<br />
+Function: Apparently enables a fix for an access violation when a table with Japanese characters has an indexed changed.<br />
+Link: https://support.microsoft.com/en-us/help/3142595/fix-an-access-violation-occurs-when-a-database-table-name-contains-japanese-characters-in-sql-server-2012-or-sql-server-2014<br />
+
+
 **Trace Flag: 9453**<br />
 Function: Disables Batch Mode in Parallel Columnstore query plans.
 (Note that a plan using batch mode appears to require a recompile before the TF takes effect)
@@ -2456,6 +2528,22 @@ Function: For testing purposes, you might want to turn off automatic merging of 
 explore this metadata. You can do that by turning on the undocumented trace flag 9851. And of course,
 be sure to turn off the trace flag when done testing.<br/>
 Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePaper.pdf
+
+
+**Trace Flag: 9929**<br />
+Function: Enables an update that reduces the “disk footprint [of In-Memory OLTP] by reducing the In-Memory checkpoint files to 1 MB (megabytes) each.”<br/>
+Link: https://support.microsoft.com/en-us/help/3147012/fix-large-disk-checkpoint-usage-occurs-for-an-in-memory-optimized-filegroup-during-heavy-non-in-memory-workloads
+
+
+**Trace Flag: 10202**<br />
+Function: According to demo scripts from a Sunil Agarwal session at PASS 2014, enables a new DMV named sys.dm_db_column_store_row_group_physical_stats. This DMV is not in SQL 2014 RTM and Sunil did not perform this demo during the session, so this DMV appears to be in a future (or internal) version of SQL Server.<br/>
+Link: None
+
+
+**Trace Flag: 10207**<br />
+Function: When a Clustered Columnstore index has corrupted segments, turning on this flag suppresses errors 5288 and 5289 and allows a scan of a clustered columns store to skip corrupt segments and complete (though with results that do not include the corrupted segment(s)). This flag is helpful when attempting to copy-out data in a corrupt CCI.<br/>
+Link: https://support.microsoft.com/en-us/help/3067257/fix-partial-results-in-a-query-of-a-clustered-columnstore-index-in-sql-server-2014
+Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/partial-results-in-a-query-of-a-clustered-columnstore-index-in-sql-server-2014
 
 
 **Trace Flag: 10204**<br />
