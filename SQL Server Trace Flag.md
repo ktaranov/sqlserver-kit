@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (389 trace flags)
+Complete list of Microsoft SQL Server trace flags (407 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **389 trace flags**
+Summary: **407 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -583,6 +583,8 @@ Link: None
 **Trace Flag: 1200**<br />
 Function: Prints detailed lock information as every request for a lock is made (the process ID and type of lock requested)<br />
 Link: [TECHNET List Of SQL Server Trace Flags]
+Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2008/03/30/tempdb-table-variable-vs-local-temporary-table<br />
+Link: https://support.microsoft.com/en-us/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
 
 
 **Trace Flag: 1202**<br />
@@ -599,12 +601,17 @@ Scope: global only
 
 **Trace Flag: 1205**<br />
 Function: More detailed information about the command being executed at the time of a deadlock. Documented in SQL 7 BOL.<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/832524/sql-server-technical-bulletin---how-to-resolve-a-deadlock
 
 
 **Trace Flag: 1206**<br />
 Function: Used to complement flag 1204 by displaying other locks held by deadlock parties<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
+
+
+**Trace Flag: 1208**<br />
+Function: KB: “Prints the host name and program name supplied by the client. This can help identify a client involved in a deadlock, assuming the client specifies a unique value for each connection.”<br />
+Link: https://support.microsoft.com/en-us/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
 
 
 **Trace Flag: 1211**<br />
@@ -614,6 +621,7 @@ If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
 However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
 This helps avoid "out-of-locks" errors when many locks are being used.<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2330-lock-escalation<br />
 Scope: global or session
 
 
@@ -968,6 +976,11 @@ Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
+**Trace Flag: 2456**<br />
+Function: Relieves RESOURCE_SEMAPHORE_MUTEX contention, which may be primarily due to a bug in SQL 2005.<br />
+Link: None
+
+
 **Trace Flag: 2470**<br />
 Function: Fixes performance problem when using AFTER triggers on partitioned tables<br />
 Link: https://support.microsoft.com/en-us/kb/2606883
@@ -1030,7 +1043,8 @@ Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowm
 
 **Trace Flag: 2537**<br />
 Function: Allows you to see inactive records in transaction log using fn\_dblog<br />
-Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog
+Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog<br />
+Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log
 
 
 **Trace Flag: 2540**<br />
@@ -1194,18 +1208,20 @@ Link: http://support.microsoft.com/kb/325607<br />
 
 **Trace Flag: 3001**<br />
 Function: Stops sending backup entries into MSDB<br />
-Link: None
+Link: https://bytes.com/topic/sql-server/answers/162385-how-do-i-prevent-sql-2000-posting-message-event-viewer-application-log
 
 
 **Trace Flag: 3004**<br />
 Function: Returns more info about Instant File Initialization. Shows information about backups and file creations use with 3605 to direct to error log.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-restorebackup-doing/<br />
-Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
+Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf<br />
+Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/
 
 
 **Trace Flag: 3014**<br />
 Function: Returns more info about backups to the errorlog<br />
-Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
+Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes
 
 
 **Trace Flag: 3023**<br />
@@ -1217,15 +1233,38 @@ Link: [MSDN ms188396]<br />
 Scope: global and session
 
 
-**Trace Flag: 3031**<br />
-Function: SQL 9 - Will turn the NO_LOG and TRUNCATE_ONLY options into checkpoints in all recovery modes<br />
+**Trace Flag: 3028**<br />
+Function: Enables a hotfix for a problem encountered when backing up to tape with specific backup options<br />
 Link: None
 
+
+**Trace Flag: 3031**<br />
+Function: SQL 9 - Will turn the NO_LOG and TRUNCATE_ONLY options into checkpoints in all recovery modes<br />
+Link: http://www.sqlskills.com/blogs/paul/backup-log-with-no_log-use-abuse-and-undocumented-trace-flags-to-stop-it
+
+
+**Trace Flag: 3034**<br />
+Function: Overrides the server default, and thus always forces backup compression unless the backup command had the no_compression clause explicitly present.<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup-compression-default
+
+
+**Trace Flag: 3035**<br />
+Function: Overrides the server default to always avoid compression, unless the backup command explicitly uses the compression clause. If both 3034 and 3035 are enabled, 3035 takes precedence<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup-compression-default
+    
+    
+**Trace Flag: 3039**<br />
+Function: As long as the SQL edition supports backup compression, this will allow VDI backups to be affected by the default compression setting just as non-VDI BACKUP commands are affected.<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup-compression-default
+    
 
 **Trace Flag: 3042**<br />
 Function: Bypasses the default backup compression pre-allocation algorithm to allow the backup file to grow only as needed to reach its final size. This trace flag is useful if you need to save on space by allocating only the actual size required for the compressed backup. Using this trace flag might cause a slight performance penalty (a possible increase in the duration of the backup operation).
 For more information about the pre-allocation algorithm, see [Backup Compression (SQL Server)](https://msdn.microsoft.com/en-us/library/bb964719.aspx).<br />
 Link: [MSDN ms188396]<br />
+Link: https://support.microsoft.com/en-us/help/2001026/inf-space-requirements-for-backup-devices-in-sql-server<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2011/08/11/how-compressed-is-your-backup/<br />
+Link: https://technet.microsoft.com/en-us/library/bb964719.aspx<br />
 Scope: global only
 
 
@@ -1234,6 +1273,11 @@ Function: Enables SQL Server Backup to URL logging to a specific error log file.
 Link: [MSDN ms188396]<br />
 Link: https://msdn.microsoft.com/en-us/library/jj919149.aspx<br />
 Scope: global only
+
+
+**Trace Flag: 3057**<br />
+Function: Enables functionality after a hotfix that allows a log backup that was taken on a t-logfile hosted on a drive with “Bytes per physical sector”=512 to be restored onto a log file/drive that has “Bytes per physical sector”=4096<br />
+Link: https://support.microsoft.com/en-us/help/2987585/restore-log-with-standby-mode-on-an-advanced-format-disk-may-cause-a-9004-error-in-sql-server-2008-r2-or-sql-server-2012
 
 
 **Trace Flag: 3101**<br />
@@ -1252,13 +1296,13 @@ Link: None
 
 
 **Trace Flag: 3111**<br />
-Function: Cause LogMgr::ValidateBackedupBlock to be skipped during backup and restore operation<br />
+Function: “FIX: Backup or Restore Using Large Transaction Logs May Return Error 3241” Causes LogMgr::ValidateBackedupBlock to be skipped during backup and restore operations, allowing backups of very large T-logs to succeed.<br />
 Link: None
 
 
 **Trace Flag: 3117**<br />
 Function: QL 9 - SQL Server 2005 tries to restore the log files and the data files in a single step which some third-party snapshot backup utilities do not support. Turing on 3117 does things the SQL 8 way multiple-step restore process.<br />
-Link: https://support.microsoft.com/en-us/kb/915385
+Link: None
 
 
 **Trace Flag: 3205**<br />
@@ -1267,9 +1311,25 @@ Link: [MSDN ms188396]<br />
 Scope: global
 
 
+**Trace Flag: 3210**<br />
+Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, prints information about “collisions and wait times” that occur between the various “Asynchronous Disk Pool” threads during BACKUP (what about RESTORE?) operations.<br />
+Link: None
+
+
+**Trace Flag: 3212**<br />
+Function: Prints “Backup stats” to the SQL log<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb
+
+
 **Trace Flag: 3213**<br />
 Function: Output buffer info for backups to ERRORLOG<br />
-Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2008/04/21/tuning-the-performance-of-backup-compression-in-sql-server-2008.aspx
+Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/01/28/how-it-works-sql-server-backup-buffer-exchange-a-vdi-focus/
+
+
+**Trace Flag: 3216**<br />
+Function: Prints quite a lot of info about RESTORE internals. Only seems to print to the error log (TF 3605 is required).<br />
+Link: http://jamessql.blogspot.ru/2013/07/trace-flag-for-backup-and-restore.html
 
 
 **Trace Flag: 3222**<br />
@@ -1282,6 +1342,8 @@ Function: By default, every successful backup operation adds an entry in the SQL
 If you create very frequent log backups, these success messages accumulate quickly, resulting in huge error logs in which finding other messages is problematic.
 With this trace flag, you can suppress these log entries. This is useful if you are running frequent log backups and if none of your scripts depend on those entries.<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/10/30/when-is-too-much-success-a-bad-thing<br />
 Scope: global only
 
 *Thanks to: @lwiederstein (https://twitter.com/lwiederstein)*
@@ -1294,7 +1356,8 @@ Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
 
 **Trace Flag: 3231**<br />
 Function: SQL 8/9 - Will turn the NO_LOG and TRUNCATE_ONLY options into no-ops in FULL/BULK_LOGGED recovery mode, and will clear the log in SIMPLE recovery mode. When set, BACKUP LOG with TRUNCATE_ONLY and BACKUP LOG with NO_LOG do not allow a log backup to run if the database's recovery model is FULL or BULK_LOGGED.<br />
-Link: None
+Link: http://www.sqlskills.com/blogs/paul/backup-log-with-no_log-use-abuse-and-undocumented-trace-flags-to-stop-it<br />
+Link: http://www.sqlskills.com/blogs/kimberly/understanding-backups-and-log-related-trace-flags-in-sql-server-20002005-and-2008
 
 
 **Trace Flag: 3282**<br />
@@ -1304,16 +1367,33 @@ Link: https://support.microsoft.com/en-us/kb/215458
 
 **Trace Flag: 3400**<br />
 Function: Prints the recovery timings<br />
-Link: None
+Link: https://connect.microsoft.com/SQLServer/feedback/details/392158/recovery-portion-of-sql-2008-restore-takes-much-longer-than-normal-when-restoring-from-sql-2005-backup
+
 
 **Trace Flag: 3408**<br />
 Function: This forces SQL Server startup to use a single thread when recovering all DBs at SQL Server startup, instead of running through its algorithm for determining how many threads to allocate to DB recovery<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/08/how-much-is-crash-recovery-parallelized-in-which-order-are-databases-recovered/
 
+
+**Trace Flag: 3412**<br />
+Function: The KB article refers to SQL 6.5, but it is possible that the TF still prints out info to the SQL error log, so leaving it here for now. KB: “...reports when each transaction
+is rolled forward or back [examine the error log for progress]. However, you will not see any progress if SQL Server is rolling a large transaction forward or back. Additionally, this trace flag duplicates 
+the sp_configure setting Recovery flags..."<br />
+Link: None
+
+
 **Trace Flag: 3422**<br />
 Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery).
 This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose. Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
-Link: https://support.microsoft.com/en-us/kb/215458
+Link: https://support.microsoft.com/en-us/kb/215458<br />
+Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
+
+
+**Trace Flag: 3448**<br />
+Function: Introduced in the KB to fix a race condition leading to a hung database in mirroring failover situations. “ This trace flag forces new connections to keep checking for 
+database state every two seconds instead of waiting for a lock for infinite time. It helps ending the connection tasks faster as the mirroring reac
+hes the start of the recovery phase and releasing more worker threads to be used by database mirroring.”<br />
+Link: https://support.microsoft.com/en-us/help/2970421/fix-the-database-sticks-in-role-configuration-phase-when-you-perform-a-manual-failover-of-a-mirrored-database
 
 
 **Trace Flag: 3502**<br />
@@ -1369,8 +1449,8 @@ Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-fl
 
 **Trace Flag: 3607**<br />
 Function: Skip recovery on startup<br />
-Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html
-
+Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb/
 
 **Trace Flag: 3608**<br />
 Function: Prevents SQL Server from automatically starting and recovering any database except the master database.
@@ -1380,6 +1460,7 @@ Use for Move System Databases and Move User Databases.<br />
 **Note: Do not use during normal operation.**<br />
 Link: [MSDN ms188396]<br />
 Link: [Importance of Performing DBCC CHECKDB on all SQL Server Databases]<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb<br />
 Scope: global only
 
 
@@ -1387,6 +1468,7 @@ Scope: global only
 Function: Recovering all databases, but not clearing tempdb<br />
 Link: http://basitaalishan.com/2012/02/20/essential-trace-flags-for-recovery-debugging/<br />
 Link: [Importance of Performing DBCC CHECKDB on all SQL Server Databases]<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb<br />
 Scope: global only
 
 
@@ -1435,6 +1517,12 @@ Function: Enables logging all errors to error log during server startup<br />
 Link: http://spaghettidba.com/2011/05/20/trace-flag-3659/
 
 
+**Trace Flag: 3660**<br />
+Function: W/o this flag, for DBs that have Auto_Close=true and for DBs on Express Edition, DB recovery is normally deferred until first user access when SQL starts up. This TF forces 
+DB recovery to always run (well, only for DBs that actually need recovery done) at SQL Server startup.<br />
+Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/08/how-much-is-crash-recovery-parallelized-in-which-order-are-databases-recovered
+
+
 **Trace Flag: 3663**<br />
 Function: CSS: “By default [SQL Server] allows system cache involvement [with writing to the SQL Error log] to avoid some of the performance issues you might be suspecting, but you can force it to use FILE_FLAG_WRITE_THROUGH” with TF 3663<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2011/01/07/discussion-about-sql-server-i-o.aspx
@@ -1475,6 +1563,11 @@ Function: Let SQL Server throw an exception to the application when the 3303 war
 Link: https://support.microsoft.com/kb/3014867/en-us
 
 
+**Trace Flag: 3924**<br />
+Function: Enables a fix where “XA” transactions started within a JDBC-connected Java app are not closed properly and stay open indefinitely.<br />
+Link: https://support.microsoft.com/en-us/help/3145492/fix-xa-transactions-aren-t-cleaned-when-you-exit-a-java-application-in-an-instance-of-sql-server
+
+
 **Trace Flag: 3940**<br />
 Function: According to Bob Ward’s PASS 2014 SQL Server IO talk, forces the Eager Write functionality to throttle at 1024 outstanding eager writes.<br />
 Link: None
@@ -1487,7 +1580,8 @@ Link: None
 
 **Trace Flag: 4010**<br />
 Function: Allows only shared memory connections to the SQL Server. Meaning, you will only be able to connect from the server machine itself. Client connections over TCP/IP or named pipes will not happen.<br />
-Link: None
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do
+Link: https://blogs.msdn.microsoft.com/psssql/2008/09/05/sql-server-2005-setup-fails-in-wow-x86-on-computer-with-more-than-32-cpus
 
 
 **Trace Flag: 4013**<br />
@@ -1507,7 +1601,7 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-se
 
 **Trace Flag: 4029**<br />
 Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default. Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
-Link: None
+Link: https://blogs.msdn.microsoft.com/sql_protocols/2005/12/19/vss-sql-server-does-not-exist-or-access-denied
 
 
 **Trace Flag: 4030**<br />
@@ -1553,6 +1647,14 @@ Link: https://support.microsoft.com/en-us/kb/920346
 **Trace Flag: 4107**<br />
 Function: SQL 9 - When you run a query that references a partitioned table, query performance may decrease<br />
 Link: https://support.microsoft.com/en-us/kb/923849
+
+
+**Trace Flag: 4112**<br />
+Function: Enables a fix for a problem that occurs when a linked server from 2005 or 2008 targets SQL 2000: “This problem occurs because SQL Server 2005 generates an 
+execution plan that has a remote query. SQL Server 2005 must execute the remote query against SQL Server 2000 to retrieve the required data. SQL Server 2000 cannot 
+handle the remote query. Therefore, error 107 occurs in SQL Server 2000. Then, error 107 is propagated back to SQL Server 2005. Therefore, error 107 occurs in SQL Server 
+2005, and error 8180 occurs in SQL Server 2005.”<br />
+Link: https://support.microsoft.com/en-us/help/936223/fix-error-messages-when-you-run-a-query-against-a-linked-server-that-you-create-in-sql-server-2005-statement-s-could-not-be-prepared-and-the-column-prefix-column-prefix-name-does-not-match-with-a-table-name-or-alias-name-...
 
 
 **Trace Flag: 4116**<br />
@@ -1793,7 +1895,15 @@ Link: https://support.microsoft.com/en-us/kb/230044
 
 **Trace Flag: 7300**<br />
 Function: Outputs extra info about linked server errors<br />
-Link: http://support.microsoft.com/kb/314530
+Link: http://support.microsoft.com/kb/314530<br />
+Link: https://support.microsoft.com/en-us/help/280106/how-to-set-up-and-troubleshoot-a-linked-server-to-an-oracle-database-in-sql-server<br />
+Link: https://support.microsoft.com/en-us/help/280102/how-to-set-up-a-linked-server-to-a-sybase-database-server-and-troubleshoot-problems-that-may-occur<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604
+
+
+**Trace Flag: 7311**<br />
+Function: Offers a new alternative to handling the tricky problem of converting Oracle NUMBER types (across OLEDB linked server queries) with unknown precision/scale to a valid SQL Server data type, by treating all such types as NUMERIC(38,10).<br />
+Link: https://support.microsoft.com/en-us/help/3051993/fix-the-value-of-number-type-is-truncated-when-you-select-data-from-an-oracle-linked-server-by-using-ole-db-provider
 
 
 **Trace Flag: 7314**<br />
@@ -1877,6 +1987,7 @@ Link: None
 Function: SQL 9 - Enables a dedicated administrator connection on SQL Express, DAC resources are not reserved by default<br />
 Link: [MSDN ms188396]<br />
 Link: https://msdn.microsoft.com/en-us/library/ms189595.aspx<br />
+Link: https://sqlperformance.com/2012/08/sql-memory/test-your-dac-connection<br />
 Scope: global only
 
 
@@ -1889,6 +2000,20 @@ Link: http://blogs.msdn.com/b/sql_protocols/archive/2008/05/20/connectivity-trou
 Function: Record connection closure info in ring buffer<br />
 Link: http://blogs.msdn.com/b/sql_protocols/archive/2008/05/20/connectivity-troubleshooting-in-sql-server-2008-with-the-connectivity-ring-buffer.aspx<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/518158/-packet-error-a-fatal-error-occurred-while-reading-the-input-stream-from-the-network
+
+
+**Trace Flag: 7833**<br />
+Function: SQL 2012 SP2 CU8 introduced a fix for a “silent error” condition in the sqlcmd tool. The CU also included this flag to allow customers to revert to pre-CU fix behavior.<br />
+Link: https://support.microsoft.com/en-us/help/3082877/fix-no-error-is-prompted-when-connection-is-terminated-in-sqlcmd
+
+
+**Trace Flag: 8001**<br />
+Function: Khen2005, p2: “For SQL Server 2005, the SQL Server product team opted not to include some wait types that fall under one of the following three categories:
+- Wait types that are never used in SQL Server 2005; note that some wait types not excluded are also never used.
+- Wait types that can occur only at times when they do not affect user activity, such as during initial server startup and shutdown, and are not visible to users.
+- Wait types that are innocuous but have caused concern among users because of their high occurrence or duration
+The complete list of wait types is available by enabling trace flag 8001. The only effect of this trace flag is to force sys.dm_os_wait_stats to display all wait types.”<br />
+Link: None
 
 
 **Trace Flag: 8002**<br />
@@ -2264,7 +2389,8 @@ Link: [More Undocumented Query Optimizer Trace Flags]
 
 **Trace Flag: 8765**<br />
 Function: Allows use of variable length data, from ODBC driver; fixes the issue of a field returning the wrong data length<br />
-Link: None
+Link: http://jacob.steelsmith.org/content/sql-server-and-ole-db<br />
+Link: https://bugs.mysql.com/bug.php?id=46857
 
 
 **Trace Flag: 8780**<br />
@@ -2312,6 +2438,11 @@ Link: None
 **Trace Flag: 9082**<br />
 Function: SQL 9 - Stored procedure using views, perform slow compared to ver 8 if views use JOIN operator and contain sub queries<br />
 Link: https://support.microsoft.com/en-us/kb/942906
+
+
+**Trace Flag: 9109**<br />
+Function: Used to workaround a problem with query notifications and restoring a DB with the NEW_BROKER option enabled.<br />
+Link: https://support.microsoft.com/en-us/help/2483090/restore-or-recovery-may-fail-or-take-a-long-time-if-query-notification-is-used-in-a-database
 
 
 **Trace Flag: 9130**<br />
@@ -2422,6 +2553,7 @@ Scope: global or session
 **Trace Flag: 9394**<br />
 Function: Apparently enables a fix for an access violation when a table with Japanese characters has an indexed changed.<br />
 Link: https://support.microsoft.com/en-us/help/3142595/fix-an-access-violation-occurs-when-a-database-table-name-contains-japanese-characters-in-sql-server-2012-or-sql-server-2014<br />
+Link: https://support.microsoft.com/en-us/help/3138659/fix-slow-performance-when-you-query-numeric-data-types-from-an-oracle-database
 
 
 **Trace Flag: 9453**<br />
