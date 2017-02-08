@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (407 trace flags)
+Complete list of Microsoft SQL Server trace flags (441 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **407 trace flags**
+Summary: **441 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -204,7 +204,7 @@ Link: https://support.microsoft.com/en-us/kb/945892
 
 **Trace Flag: 212**<br />
 Function: SQL 9 – Query may run much slower when compared to SQL 8 when you use a cursor to run the query<br />
-Link: https://support.microsoft.com/en-us/kb/951184
+Link: None
 
 
 **Trace Flag: 237**<br />
@@ -259,6 +259,11 @@ Function: Generates a log record per identity increment. Can be users
 to convert SQL 2012 back to old style Identity behaviour<br />
 Link: http://www.big.info/2013/01/how-to-solve-sql-server-2012-identity.html<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity
+
+
+**Trace Flag: 274**<br />
+Function: “FIX: Error message when you insert a new row into a view in SQL Server 2005: Cannot insert explicit value for identity column in table <TableName> when IDENTITY_INSERT is set to OFF”<br />
+Link: None
 
 
 **Trace Flag: 302**<br />
@@ -398,7 +403,7 @@ Link: https://support.microsoft.com/en-us/help/3027860/error-17066-or-17310-duri
 
 **Trace Flag: 698**<br />
 Function: SQL 9 – Performance of INSERT operations against a table with an identity column may be slow when compared to SQL 8<br />
-Link: https://support.microsoft.com/en-gb/kb/940545
+Link: None
 
 
 **Trace Flag: 699**<br />
@@ -423,8 +428,8 @@ Scope: global or session
 
 **Trace Flag: 806**<br />
 Function: Turn on Page Audit functionality, to verify page validity<br />
-Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
-
+Link: http://technet.microsoft.com/en-au/library/cc917726.aspx<br />
+Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
 
 **Trace Flag: 809**<br />
 Function: SQL 8 – Limits the amount of Lazy write activity<br />
@@ -433,14 +438,16 @@ Link: None
 
 **Trace Flag: 815**<br />
 Function: SQL 8/9 – Enables latch enforcement. SQL Server 8 (with service pack 4) and SQL Server 9 can perform latch enforcement for data pages found in the buffer pool cache. Latch enforcement changes the virtual memory protection state while database page status changes from "clean" to "dirty" ("dirty" means modified through INSERT, UPDATE or DELETE operation). If an attempt is made to modify a data page while latch enforcement is set, it causes an exception and creates a mini-dump in SQL Server installation's LOG directory. Microsoft support can examine the contents of such mini-dump to determine the cause of the exception. In order to modify the data page the connection must first acquire a modification latch. Once the data modification latch is acquired the page protection is changed to read-write. Once the modification latch is released the page protection changes back to read-only.<br />
-Link: None
+Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-counting-be-a-leading-memory-scribbler-cause
 
 
 **Trace Flag: 818**<br />
 Function: Turn on ringbuffer to store info about IO write operations.
 Used to troubleshoot IO problems<br />
-Link: http://support.microsoft.com/kb/826433
-
+Link: http://support.microsoft.com/kb/826433<br />
+Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
+Link: https://support.microsoft.com/en-us/help/828339/error-message-823-may-indicate-hardware-problems-or-system-problems-in-sql-server
 
 **Trace Flag: 828**<br />
 Function: SQL 8 - When enabled checkpoint ignores the recovery interval target and keeps steady I/O otherwise it uses recovery interval setting as a target for the length of time that checkpoint will take<br />
@@ -857,7 +864,15 @@ Link: https://support.microsoft.com/en-us/kb/911678
 Function: Enable advanced decision support optimizations<br />
 Link: [KB920093]<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.queryprocessor.com/ce_join_base_containment_assumption<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/772232/make-optimizer-estimations-more-accurate-by-using-metadata<br />
 Scope: global and session and query
+
+
+**Trace Flag: 2309**<br />
+Function: In SQL 2014, enables output from a 3rd parameter for DBCC SHOW_STATISTICS such that the partial statistics histogram (for just one partition) is shown. <br />
+Link: https://sqlperformance.com/2015/05/sql-statistics/incremental-statistics-are-not-used-by-the-query-optimizer<br />
+Link: http://blog.dbi-services.com/sql-server-2014-new-incremental-statistics
 
 
 **Trace Flag: 2312**<br />
@@ -869,9 +884,22 @@ Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
+**Trace Flag: 2315**<br />
+Function: Aaron: I stumbled onto this one. Seems to output memory allocations taken during 
+the compilation process (and maybe the plan as well? “PROCHDR”), as well as 
+memory broker states & values at the beginning and end of compilation.<br />
+Link: None
+
+
+**Trace Flag: 2318**<br />
+Function: Aaron: stumbled onto this one as well. I’ve only seen one type of output so far: “Optimization Stage: HEURISTICJOINREORDER”. Maybe useful in combo with other compilation trace flags to see the timing of join reordering?<br />
+Link: None
+
+
 **Trace Flag: 2328**<br />
 Function: SQL 9+ - Makes cardinality estimates upon resulting selectivity.  The reasoning for this is that one or more of the constants may be statement parameters, which would change from one execution of the statement to the next.<br />
-Link: None
+Link: https://blogs.msdn.microsoft.com/ianjo/2006/03/28/disabling-constant-constant-comparison-estimation<br />
+Link: http://www.queryprocessor.ru/isnumeric_ce_bug_eng
 
 
 **Trace Flag: 2330**<br />
@@ -889,6 +917,11 @@ Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
+**Trace Flag: 2336**<br />
+Function: Aaron: Another one that I stumbled onto. Appears to tie memory info and cached page likelihoods with costing<br />
+Link: None
+
+
 **Trace Flag: 2340**<br />
 Function: Causes SQL Server not to use a sort operation (batch sort) for optimized nested loop joins when generating a plan.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
@@ -902,13 +935,13 @@ Scope: global or session or query
 **Trace Flag: 2363**<br />
 Function: TF Selectivity<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
-Link: http://www.queryprocessor.com/ce-process/
+Link: http://www.queryprocessor.com/ce-process<br />
+Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
 
 
 **Trace Flag: 2371**<br />
 Function: Changes the fixed auto update statistics threshold to dynamic auto update statistics threshold.<br />
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 2371 has no effect.**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server--auto-update-stats-part-2.aspx<br />
 Link: https://support.microsoft.com/en-us/kb/2754171<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx<br />
 Link: [MSDN ms188396]<br />
@@ -928,15 +961,14 @@ Link: [Cardinality Estimation Framework 2014 First Look]
 
 
 **Trace Flag: 2388**<br />
-Function: Change DBCC SHOW\_STATISTICS output to show stats history and lead key type such as known ascending keys<br />
-Link: http://www.benjaminnevarez.com/2013/02/statistics-on-ascending-keys
+Function: Changes the output of DBCC SHOW_STATISTICS. Instead of the normal Header/Vector/Histogram output, instead we get a single row that gives information related to whether the lead column of the stat object is considered to be ascending or not. This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).<br />
+Link: None
 
 
 **Trace Flag: 2389**<br />
 Function: Enable automatically generated quick statistics for ascending keys (histogram amendment).
 If trace flag 2389 is set, and a leading statistics column is marked as ascending, then the histogram used to estimate cardinality will be adjusted at query compile time.<br />
 Link: [KB2801413]<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-2389--2390.aspx<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator<br />
@@ -949,17 +981,23 @@ Scope: global or session or query
 **Trace Flag: 2390**<br />
 Function: Enable automatically generated quick statistics for ascending or unknown keys (histogram amendment).
 If trace flag 2390 is set, and a leading statistics column is marked as ascending or unknown, then the histogram used to estimate cardinality will be adjusted at query compile time<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-statistics--traceflags-2389--2390.aspx<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: [KB2801413]<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: [MSDN ms188396]<br />
+Link: https://blogs.msdn.microsoft.com/ianjo/2006/04/24/ascending-keys-and-auto-quick-corrected-statistics<br />
 Scope: global or session or query
+
+
+**Trace Flag: 2398**<br />
+Function: Another one I stumbled upon myself...outputs info about “Smart Seek costing”: e.g.: “Smart seek costing (75.2) :: 1.34078e+154 , 1”<br />
+Link: None
 
 
 **Trace Flag: 2430**<br />
 Function: Fixes performance problem when using large numbers of locks<br />
 Link: https://support.microsoft.com/en-us/kb/2754301
+Link: https://support.microsoft.com/en-us/help/2746341/fix-high-cpu-usage-when-you-execute-an-update-statement-that-includes-a-where-current-of-cursor-clause-in-sql-server-2008
 
 
 **Trace Flag: 2440**<br />
@@ -1027,6 +1065,8 @@ Sometimes, checking may start when the server is almost idle.
 An administrator who knows that the load will increase before checking is complete may want to manually decrease or disable parallelism.
 Disabling parallel checking of DBCC can cause DBCC to take much longer to complete and if DBCC is run with the TABLOCK feature enabled and parallelism set off, tables may be locked for longer periods of time.<br />
 Link: [MSDN ms188396]<br />
+Link: https://technet.microsoft.com/en-us/library/ms189094.aspx<br />
+Link: http://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run<br />
 Scope: global or session
 
 
@@ -1103,7 +1143,6 @@ This logic determines unique disk drives based on the drive letter of the physic
 **Note: Do not use this trace flag unless you know that each file is based on a unique physical disk.
 Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/faster-dbcc-checkdb-by-using-trace-flag-2562-and-2549.aspx<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
 Link: http://support.microsoft.com/kb/2634571<br />
 Link: https://support.microsoft.com/en-us/kb/2732669<br />
@@ -1159,9 +1198,9 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 
 **Trace Flag: 2558**<br />
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Function: Disables integration between CHECKDB and Watson<br />
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
 **Trace Flag: 2559**<br />
@@ -1178,7 +1217,6 @@ One effect of using this trace flag is that the space requirements for tempdb ma
 Tempdb may grow to as much as 5% or more of the user database that is being processed by the DBCC CHECKDB command.<br />
 **Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
-Link: http://www.sqlservice.se/sv/start/blogg/faster-dbcc-checkdb-by-using-trace-flag-2562-and-2549.aspx<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
 Link: http://support.microsoft.com/kb/2634571<br />
 Link: http://support.microsoft.com/kb/2732669/en-us<br />
@@ -1191,8 +1229,9 @@ Function: Runs the DBCC CHECKDB command without data purity check unless DATA_PU
 **Note: Column-value integrity checks are enabled by default and do not require the DATA_PURITY option.
 For databases upgraded from earlier versions of SQL Server, column-value checks are not enabled by default until DBCC CHECKDB WITH DATA_PURITY has been run error free on the database at least once.
 After this, DBCC CHECKDB checks column-value integrity by default.**<br />
-Link: https://support.microsoft.com/en-us/kb/945770<br />
 Link: [MSDN ms188396]<br />
+Link: https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb<br />
+Link: https://support.microsoft.com/en-us/help/2888996/fix-data-purity-corruption-in-sys.sysbinobjs-table-in-master-database-when-you-log-on-to-sql-server-by-using-the-sa-account-and-then-run-dbcc-checkdb<br />
 Scope: global only
 
 
@@ -1634,19 +1673,61 @@ Function: SQL 9+ Prints TDS packets received from the client to console. Startup
 Link: None
 
 
+**Trace Flag: 4101**<br />
+Function: “FIX: Reorder outer joins with filter criteria before non-selective joins and outer joins” Enabling this flag may increase the chance that selective filter criteria on an OUTER 
+JOIN will influence the OJ earlier in the plan, rather than the more typical behavior of INNER JOINs being prioritized before OJs. Note that 4101 is also required to enable KB942444.<br />
+Link: https://support.microsoft.com/en-us/help/318530/fix-reorder-outer-joins-with-filter-criteria-before-non-selective-joins-and-outer-joins
+
+
 **Trace Flag: 4102**<br />
 Function: SQL 9 - Query performance is slow if the execution plan of the query contains semi join operators Typically, semi join operators are generated when the query contains the IN keyword or the EXISTS keyword. Enable flag 4102 and 4118 to overcome this.<br />
-Link: https://support.microsoft.com/en-us/kb/940128
+Link: https://support.microsoft.com/en-us/help/946020/fix-error-message-when-you-run-a-complex-query-after-you-install-cumulative-update-3-or-cumulative-update-4-for-sql-server-2005-service-pack-2-the-query-processor-ran-out-of-internal-resources-and-could-not-produce-a-query-plan
+
+
+**Trace Flag: 4103**<br />
+Function: “FIX: A query may take longer to run in SQL Server 2005 SP1 than it takes to run in the original release version of SQL Server 2005 or in SQL 
+Server 2000” Applies particularly to queries that contain subqueries with “many column joins”.<br />
+Link: None
 
 
 **Trace Flag: 4104**<br />
 Function: SQL 9 - Overestimating cardinality of JOIN operator. When additional join predicates are involved, this problem may increase the estimated cost of the JOIN operator to the point where the query optimizer chooses a different join order. When the query optimizer chooses a different join order, SQL 9 system performance may be slow.<br />
-Link: https://support.microsoft.com/en-us/kb/920346
+Link: None
+
+
+**Trace Flag: 4105**<br />
+Function: “FIX: The SQL Server 2005 query optimizer may incorrectly estimate the cardinality for a query that has a predicate that contains an index union alternative”<br />
+Link: None
+
+
+**Trace Flag: 4106**<br />
+Function: “FIX: A query may take a long time to compile when the query contains several JOIN clauses against a SQL Server 2005 database”<br />
+Link: None
 
 
 **Trace Flag: 4107**<br />
 Function: SQL 9 - When you run a query that references a partitioned table, query performance may decrease<br />
-Link: https://support.microsoft.com/en-us/kb/923849
+Link: None
+
+
+**Trace Flag: 4108**<br />
+Function: “FIX: The query performance is very slow when you use a fast forward-only cursor to run a query in SQL Server 2005”<br />
+Link: None
+
+
+**Trace Flag: 4109**<br />
+Function: “FIX: Error message when you run a query that uses a fast forward-only cursor in SQL Server 2005: "Query processor could not produce a query plan because of the hints defined in this query”<br />
+Link: https://support.microsoft.com/en-us/help/926773/fix-error-message-when-you-run-a-query-that-uses-a-fast-forward-only-cursor-in-sql-server-2005-query-processor-could-not-produce-a-query-plan-because-of-the-hints-defined-in-this-query
+
+
+**Trace Flag: 4110**<br />
+Function: “FIX: The query performance is slow when you run a query that uses a user-defined scalar function against an instance of SQL Server 2005”<br />
+Link: None
+
+
+**Trace Flag: 4111**<br />
+Function: Fixes a cardinality estimate issue with an unnamed builtin function. The KB article title shows that the issue was initially hit due to timeouts with the Replication Merge agent, but the problem was ultimately a poor query plan.<br />
+Link: None
 
 
 **Trace Flag: 4112**<br />
@@ -1657,9 +1738,29 @@ handle the remote query. Therefore, error 107 occurs in SQL Server 2000. Then, e
 Link: https://support.microsoft.com/en-us/help/936223/fix-error-messages-when-you-run-a-query-against-a-linked-server-that-you-create-in-sql-server-2005-statement-s-could-not-be-prepared-and-the-column-prefix-column-prefix-name-does-not-match-with-a-table-name-or-alias-name-...
 
 
+**Trace Flag: 4115**<br />
+Function: “FIX: A query that you run by using a FORWARD_ONLY cursor takes alonger time to run in Microsoft SQL Server 2005 than in SQL Server 2000 ”The fix apparently increases the likelihood that a certain type of cursor will use an index seek (as it did in SQL 2000) rather than regressing to a scan for each Fetch. The notes also contain some interesting info about sp_cursoropen<br />
+Link: None
+
+
 **Trace Flag: 4116**<br />
 Function: SQL 9 - Query runs slowly when using joins between a local and a remote table<br />
-Link: https://support.microsoft.com/en-us/kb/950880
+Link: None
+
+
+**Trace Flag: 4117**<br />
+Function: “FIX: A blocking issue occurs when you update rows in a table in SQL Server 2005...[A] problem occurs because the positioned update in a transaction performs a table scan on all involved tables. This behavior causes many update locks to be generated on many rows in the table. Additionally, SQL Server tries to add an update lock on the ow that has already been granted an exclusive lock by another transaction. Therefore, a blocking issue occurs.”<br />
+Link: None
+
+
+**Trace Flag: 4119**<br />
+Function: “FIX: The query performance is slower when you run the query in SQL Server 2005 than when you run the query in SQL Server 2000” The example given in the KB article indicates that selective LIKE predicates may not be considered fully when less-selective “comparison” (e.g. =, >, etc) predicates are done on the same parameter (or variable?) value as the LIKE predicate.<br />
+Link: None
+
+
+**Trace Flag: 4120**<br />
+Function: “FIX: Error message when you perform an update operation by using a cursor in SQL Server 2005: Transaction (Process ID <SPID>) was deadlocked on lock resources with another process and has been chosen as the deadlock victim” This issue is apparently due to deadlock issues related to upgrading a U lock to an X lock.<br />
+Link: https://support.microsoft.com/en-us/help/953948/fix-error-message-when-you-perform-an-update-operation-by-using-a-cursor-in-sql-server-2005-transaction-process-id-spid-was-deadlocked-on-lock-resources-with-another-process-and-has-been-chosen-as-the-deadlock-victim
 
 
 **Trace Flag: 4121**<br />
@@ -1669,23 +1770,53 @@ Link: None
 
 **Trace Flag: 4123**<br />
 Function: Query that has many outer joins takes a long time to compile in SQL Server 2005<br />
-Link: https://support.microsoft.com/en-us/kb/943060
+Link: None
+
+
+**Trace Flag: 4124**<br />
+Function: “FIX: A query performance issue occurs when you run a query against a column of the bigint data type in SQL Server 2005... If the All Density column [of SHOW_STATISTICS] displays incorrect values of 1, you are encountering this problem”<br />
+Link: None
 
 
 **Trace Flag: 4125**<br />
 Function: SQL 9 - Query may take more time to finish if using an inner join to join a derived table that uses DISTINCT keyword<br />
-Link: https://support.microsoft.com/en-us/kb/949854
+Link: None
+
+
+**Trace Flag: 4126**<br />
+Function: “FIX: The synchronization process is slow, and the CPU usage is high on the computer that is configured as the Distributor in SQL Server 2005” The problem manifested as a replication performance issue, but the following phrase found in the KB article indicates that it is a query processor issue: “the query that performs poorly shows that a join predicate is not pushed down to a Clustered Index Seek operator.”<br />
+Link: https://support.microsoft.com/en-us/help/959013/fix-the-synchronization-process-is-slow,-and-the-cpu-usage-is-high-on-the-computer-that-is-configured-as-the-distributor-in-sql-server-2005
 
 
 **Trace Flag: 4127**<br />
 Function: SQL 9 - Compilation time of some queries is very long in an x64-based version.
 Basically its more than execution time because more memory allocations are necessary in the compilation process.<br />
-Link: https://support.microsoft.com/en-us/kb/953569
+Link: Note
+
+
+**Trace Flag: 4128**<br />
+Function: “FIX: When you update rows by using a cursor in SQL Server 2005, the update may take a long time to finish”<br />
+Link: https://support.microsoft.com/en-us/help/957872/fix-when-you-update-rows-by-using-a-cursor-in-sql-server-2008,-the-update-may-take-a-long-time-to-finish
+
+
+**Trace Flag: 4129**<br />
+Function: “FIX: The values of the datetime column are not same for the rows that are copied when you copy data to a table by using the GETDATE() function in Microsoft SQL Server 2005”<br />
+Link: None
 
 
 **Trace Flag: 4130**<br />
 Function: XML performance fix<br />
-Link: http://support.microsoft.com/kb/957205
+Link: None
+
+
+**Trace Flag: 4131**<br />
+Function: “FIX: When you run a query that contains a JOIN operation in SQL Server 2005 or SQL Server 2008, and the ON clause of the JOIN operator contains a LIKE predicate, the query runs slower than in SQL Server 2000”<br />
+Link: None
+
+
+**Trace Flag: 4133**<br />
+Function: “FIX: The size of the SQL Server 2005 error log file or of the SQL Server 2008 error log file grows very quickly when query notifications are created and destroyed in a high ratio” & “FIX: The restore operation takes a long time when you restore a database that has query notification enabled in SQL Server 2005 or in SQL Server 2008”<br />
+Link: https://support.microsoft.com/en-us/help/958006/fix-the-size-of-the-sql-server-2005-error-log-file-or-of-the-sql-server-2008-error-log-file-grows-very-quickly-when-query-notifications-are-created-and-destroyed-in-a-high-ratio
 
 
 **Trace Flag: 4134**<br />
@@ -1696,7 +1827,8 @@ Link: http://sql-sasquatch.blogspot.se/2014/04/whaddayaknow-bout-sqlserver-trace
 
 **Trace Flag: 4135**<br />
 Function: Bugfix for error inserting to temp table<br />
-Link: http://support.microsoft.com/kb/960770
+Link: http://support.microsoft.com/kb/960770<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/541352/tempdb-errors-during-statistics-auto-update
 
 
 **Trace Flag: 4136**<br />
@@ -1749,11 +1881,10 @@ To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (
 **Note: Starting with SQL Server 2016, customers are advised to remove trace flag 4199 after they migrate their databases to the latest compatibility level
 because trace flag 4199 will be reused for future query optimizer changes that may not apply to your application and could cause unexpected plan performance changes on a production system.
 This means that different trace flag 4199 changes are enabled for each compatibility level that is supported in a given product release.**
-Link: http://www.sqlservice.se/sv/start/blogg/one-trace-flag-to-rule-them-all.aspx<br />
-Link: https://msdn.microsoft.com/en-us/library/bb510411.aspx#TraceFlag<br />
 Link: https://support.microsoft.com/en-us/kb/974006<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
+Link: https://support.microsoft.com/en-us/help/974006/sql-server-query-optimizer-hotfix-trace-flag-4199-servicing-model<br />
 Scope: global or session
 
 
@@ -1854,6 +1985,12 @@ Link: [MSDN ms188396]<br />
 Scope: global
 
 
+**Trace Flag: 6530**<br />
+Function: Enables a hotfix for “
+FIX: Slow performance in SQL Server 2012 or SQL Server 2014 when you build an index on a spatial data type of a large table”<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2013/11/19/spatial-indexing-from-4-days-to-4-hours
+
+
 **Trace Flag: 6531**<br />
 Function: Enables adjustment in the SQLOS scheduling layer to handle queries that issue many short-duration calls to spatial data (which is implemented via CLR functions): “
 This fix introduces the trace flag 6531 to indicate to the SQLOS hosting layer that the spatial data type should avoid preemptive protections. This can reduce the CPU consumption 
@@ -1915,7 +2052,15 @@ Scope: global and session
 
 **Trace Flag: 7352**<br />
 Function: Show the optimizer output and the post-optimization rewrite in action<br />
-Link: [Internals of the Seven SQL Server Sorts – Part 1]
+Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internals-nested-loops-prefetching.aspx<br />
+Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
+
+
+**Trace Flag: 7357**<br />
+Function: Outputs info re: hashing operators, including role reversal, recursion levels, whether the Unique Hash optimization could be used, info about the hash-related bitmap, etc. Dima’s article is a must-read. For parallel query plans, 7357 does NOT send output to the console window. However, output to the SQL Server error log can be enabled by enabling 3605.<br />
+Link: http://www.queryprocessor.com/hash-join-execution-internals<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
 
 
 **Trace Flag: 7412**<br />
@@ -2284,9 +2429,23 @@ Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: [Yet another X-Ray for the QP]
 
 
+**Trace Flag: 8608**<br />
+Function: Shows the initial Memo structure<br />
+Link: http://www.queryprocessor.ru/optimizer-part-3-full-optimiztion-optimization-search0<br />
+Link: http://www.benjaminnevarez.com/2012/04/inside-the-query-optimizer-memo-structure<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx
+
+
+**Trace Flag: 8609**<br />
+Function: PWhite: “Task and operation type counts”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx<br />
+Link: http://www.queryprocessor.ru/good-enough-plan
+
+
 **Trace Flag: 8612**<br />
 Function: Add Extra Info to the Trees Output<br />
-Link: [Cardinality Estimation Framework 2014 First Look]
+Link: [Cardinality Estimation Framework 2014 First Look]<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/06/11/hello-operator-my-switch-is-bored.aspx
 
 
 **Trace Flag: 8615**<br />
@@ -2330,12 +2489,16 @@ Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in S
 **Trace Flag: 8666**<br />
 Function: CQScanPartitionSortNew is one of only two sort classes that sets the Soft Sort property exposed when Sort operator execution plan properties are generated with undocumented trace flag 8666 enabled<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<br />
+Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536
 
 
 **Trace Flag: 8675**<br />
 Function: Displays the query optimization phases for a specific optimization<br />
-Link: [More Undocumented Query Optimizer Trace Flags]
+Link: [More Undocumented Query Optimizer Trace Flags]<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx<br />
+Link: https://sqlperformance.com/2013/06/sql-indexes/recognizing-missed-optimizations
 
 
 **Trace Flag: 8679**<br />
@@ -2358,6 +2521,11 @@ Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trac
 Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
 
 
+**Trace Flag: 8719**<br />
+Function: In SQL 2000, apparently would show IO prefetch on loop joins and bookmarks. I (Aaron) was unable to replicate the query plan behavior on SQL 2012 using the same test, so this flag may be obsolete.<br />
+Link: http://www.hanlincrest.com/SQLServerLockEscalation.htm
+
+
 **Trace Flag: 8721**<br />
 Function: Reports to the error log when auto-update statistics executes<br />
 Link: https://support.microsoft.com/en-us/kb/195565<br />
@@ -2368,6 +2536,11 @@ Scope: global only
 **Trace Flag: 8722**<br />
 Function: Disable all hints except locking hints<br />
 Link: http://sqlmag.com/sql-server/investigating-trace-flags
+
+
+**Trace Flag: 8739**<br />
+Function: Dima: “Group Optimization Info”<br />
+Link: http://www.queryprocessor.ru/good-enough-plan
 
 
 **Trace Flag: 8744**<br />
@@ -2437,8 +2610,7 @@ Link: None
 
 **Trace Flag: 9082**<br />
 Function: SQL 9 - Stored procedure using views, perform slow compared to ver 8 if views use JOIN operator and contain sub queries<br />
-Link: https://support.microsoft.com/en-us/kb/942906
-
+Link: None
 
 **Trace Flag: 9109**<br />
 Function: Used to workaround a problem with query notifications and restoring a DB with the NEW_BROKER option enabled.<br />
@@ -2509,6 +2681,11 @@ Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
 Scope: global only
 
 
+**Trace Flag: 9348**<br />
+Function: Sets a row limit (based on cardinality estimates) that controls whether a bulk insert is attempted or not (assuming conditions are met for a bulk insert). Introduced as a workaround for memory errors encountered with bulk insert.<br />
+Link: https://support.microsoft.com/en-us/help/2998301/fix-error-8654-when-you-run-insert-into-select-on-a-table-with-clustered-columnstore-index-in-sql-server-2014
+
+
 **Trace Flag: 9349**<br />
 Link: https://support.microsoft.com/en-us/kb/3172787<br />
 Function: Disables batch mode for top N sort operator. SQL Server 2016 introduces a new batch mode top sort operator that boosts performance for many analytical queries.<br />
@@ -2573,6 +2750,12 @@ Link: [MSDN ms188396]<br />
 Scope: global or session or query
 
 
+**Trace Flag: 9472**<br />
+Function: Assumes independence for multiple WHERE predicates in the SQL 2014 cardinality estimation model. Predicate independence was the default for versions prior to SQL Server 2014, and thus this flag can be used to more closely emulate pre-SQL 2014 cardinality estimate behavior in a more specific fashion than TF 9481.<br />
+Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression
+
+
 **Trace Flag: 9476**<br />
 Function: Causes SQL Server to generate a plan using the Simple Containment assumption instead of the default Base Containment assumption, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
@@ -2592,6 +2775,13 @@ Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-
 Link: [MSDN ms188396]<br />
 Link: [KB2801413]<br />
 Scope: global or session or query
+
+
+**Trace Flag: 9482**<br />
+Function: Implements a “model variation” in the SQL 2014 cardinality estimator. The flag turns off the “overpopulated primary key” adjustment that the optimizer might use when determining that a “dimension” table (the schema could be OLTP as well) has many 
+more distinct values than the “fact” table. (The seminal example is where a Date dimension is populated out into the future, but the fact table only has rows up to the current date). Since join cardinality estimation occurs based on the contents of the 
+histograms of the joined columns, an “overpopulated primary key” can result in higher selectivity estimates, causing rowcount estimates to be too low.<br />
+Link: http://www.queryprocessor.com/ce_opk
 
 
 **Trace Flag: 9485**<br />
