@@ -178,7 +178,11 @@
 | [Disaster recovery 101: hack-attach a damaged database]                                                                 | Paul Randal                              | 2010-06-18 |
 | [Bones of SQL - The Calendar Table]                                                                                     | Bob Hovious                              | 2016-09-08 |
 | [SQL Server 2016, Double or Nothing, Always Encrypted with temporal tables]                                             | Raul Gonzalez                            | 2016-07-27 |
-| [Reclaiming Space After Column Data Type Change]                                                                        |David Fundakowski                         | 2016-08-09 |
+| [Reclaiming Space After Column Data Type Change]                                                                        | David Fundakowski                        | 2016-08-09 |
+| [Packing Intervals with Priorities]                                                                                     | Itzik Ben-Gan                            | 2015-11-10 |
+| [Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]                                                            | Itzik Ben-Gan                            | 2014-12-11 |
+| [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]                                                | Alex Grinberg                            | 2017-02-26 |
+| [SQL Server Performance SQL Server Hardware Optimization]                                                               | Basit Farooq                             | 2016-06-01 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -356,3 +360,7 @@
 [Bones of SQL - The Calendar Table]:http://www.sqlservercentral.com/articles/calendar/145206/
 [SQL Server 2016, Double or Nothing, Always Encrypted with temporal tables]:http://www.sqldoubleg.com/2016/07/27/sql-server-2016-double-or-nothing-always-encrypted-with-temporal-tables/
 [Reclaiming Space After Column Data Type Change]:http://www.sqlservercentral.com/articles/data+type/144308/
+[Packing Intervals with Priorities]:http://sqlmag.com/sql-server/packing-intervals-priorities
+[Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]:http://sqlmag.com/t-sql/avoid-unnecessary-lookups-when-using-rownumber-paging
+[Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]:https://www.simple-talk.com/sql/database-administration/migrating-disk-based-table-memory-optimized-table-sql-server/
+[SQL Server Performance SQL Server Hardware Optimization]:http://www.sql-server-performance.com/2016/sql-server-hardware-optimization/
