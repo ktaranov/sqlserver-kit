@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (441 trace flags)
+Complete list of Microsoft SQL Server trace flags (477 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **441 trace flags**
+Summary: **477 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -148,6 +148,11 @@ Link: https://support.microsoft.com/en-us/kb/155714<br />
 **Trace Flag: 110**<br />
 Function: SQL 6.5 – Turns off ANSI select characteristics<br />
 Link: https://support.microsoft.com/en-us/kb/152032
+
+
+**Trace Flag: 120**<br />
+Function: FIX: Error message when you schedule a Replication Merge Agent job to run after you install SQL Server 2000 Service Pack 4: "The process could not enumerate changes at the 'Subscriber'"<br />
+Link: None
 
 
 **Trace Flag: 144**<br />
@@ -251,8 +256,7 @@ Scope: global or session
 
 **Trace Flag: 262**<br />
 Function: SQL 7 – Trailing spaces are no longer truncated from literal strings in CASE statements<br />
-Link: https://support.microsoft.com/en-us/kb/891116
-
+Link: None
 
 **Trace Flag: 272**<br />
 Function: Generates a log record per identity increment. Can be users
@@ -361,7 +365,8 @@ Scope: global only
 
 **Trace Flag: 646**<br />
 Function: Serves for getting detailed information on which Columnstore were eliminated by the Query Optimiser right into the error log.<br />
-Link: [Niko Neugebauer Columnstore Indexes – part 35]
+Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
+Link: http://www.sqlskills.com/blogs/joe/exploring-columnstore-index-metadata-segment-distribution-and-elimination-behaviors
 
 
 **Trace Flag: 647**<br />
@@ -737,7 +742,6 @@ Function: Enables the replication log reader to move forward even if the async s
 Even with this trace flag enabled the log reader always waits for the sync secondaries. The log reader will not go beyond the min ack of the sync secondaries.
 This trace flag applies to the instance of SQL Server, not just an availability group, an availability database, or a log reader instance.
 Takes effect immediately without a restart. This trace flag can be activated ahead of time or when an async secondary fails.<br />
-Link: https://support.microsoft.com/en-us/kb/937041<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
 
@@ -750,9 +754,11 @@ Link: https://support.microsoft.com/en-gb/kb/936179
 **Trace Flag: 1462**<br />
 Function: Disables log stream compression for asynchronous availability groups.
 This feature is enabled by default on asynchronous availability groups in order to optimize network bandwidth.<br />
-Link: http://sqlcat.com/sqlcat/b/technicalnotes/archive/2007/09/17/database-mirroring-log-compression-in-sql-server-2008-improves-throughput.aspx<br />
 Link: [MSDN mt736907]<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.sqlskills.com/blogs/paul/sql-server-2008-performance-boost-for-database-mirroring<br />
+Link: http://sqlblog.com/blogs/joe_chang/archive/2014/03/13/hekaton-and-benchmarks.aspx<br />
+Link: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CCYQFjAB&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F0%2FF%2FB%2F0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D%2FSQLCAT%27s%2520Guide%2520to%2520High%2520Availability%2520Disaster%2520Recovery.pdf&ei=4eGJVfzVHI35oASj25ygBg&usg=AFQjCNHWYH0t3bF8HqBuNuutrielPX3hJg&sig2=xno-YS7agP9DRG-CzNe0Ug&bvm=bv.96339352,bs.1,d.b2w<br />
 Scope: global only
 
 
@@ -855,6 +861,11 @@ Function: Bob Ward briefly references this flag in his PASS 2014 SQL Server IO t
 Link: None
 
 
+**Trace Flag: 1851**<br />
+Function: Anecdotally, from a JustDave’s notes on an Amanda Ford talk at SQL Relay Reading 2014: “...disables the automerge functionality for in-memory oltp”<br />
+Link: https://justdaveinfo.wordpress.com/2014/10/16/october-13-microsoft-sql-relay-reading
+
+
 **Trace Flag: 1903**<br />
 Function: SQL 8 - When you capture a SQL Profiler trace in a file and then you try to import the trace files into tables by using the fn_trace_gettable function no rows may be returned<br />
 Link: https://support.microsoft.com/en-us/kb/911678
@@ -896,10 +907,20 @@ Function: Aaron: stumbled onto this one as well. I’ve only seen one type of ou
 Link: None
 
 
+**Trace Flag: 2324**<br />
+Function: Disables Implied Predicates<br />
+Link: https://answers.sqlperformance.com/questions/2299/why-not-seek-predicate.html?utm_content=buffer9bed5&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+
 **Trace Flag: 2328**<br />
 Function: SQL 9+ - Makes cardinality estimates upon resulting selectivity.  The reasoning for this is that one or more of the constants may be statement parameters, which would change from one execution of the statement to the next.<br />
 Link: https://blogs.msdn.microsoft.com/ianjo/2006/03/28/disabling-constant-constant-comparison-estimation<br />
 Link: http://www.queryprocessor.ru/isnumeric_ce_bug_eng
+
+
+**Trace Flag: 2329**<br />
+Function: Disables “Few Outer Rows” optimization<br />
+Link: http://www.queryprocessor.com/few-outer-rows-optimization
 
 
 **Trace Flag: 2330**<br />
@@ -908,12 +929,18 @@ Link: http://www.brentozar.com/archive/2015/11/trace-flag-2330-who-needs-missing
 Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches/
 
 
+**Trace Flag: 2332**<br />
+Function: PWhite: “Force DML Request Sort (CUpdUtil::FDemandRowsSortedForPerformance)”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+
+
 **Trace Flag: 2335**<br />
 Function: Causes SQL Server to assume a fixed amount of memory is available during query optimization. It does not limit the memory SQL Server grants to execute the query.
 The memory configured for SQL Server will still be used by data cache, query execution and other consumers.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/en-us/kb/2413549<br />
 Link: [MSDN ms188396]<br />
+Link: http://dba.stackexchange.com/questions/53726/difference-in-execution-plans-on-uat-and-prod-server<br />
 Scope: global or session or query
 
 
@@ -926,10 +953,16 @@ Link: None
 Function: Causes SQL Server not to use a sort operation (batch sort) for optimized nested loop joins when generating a plan.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: https://support.microsoft.com/en-us/kb/2009160<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2010/01/11/high-cpu-after-upgrading-to-sql-server-2005-from-2000-due-to-batch-sort<br />
+Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
 Scope: global or session or query
+
+
+**Trace Flag: 2341**<br />
+Function: Enables the use of a hash join for joins to column store indexes even when the join clause would normally be removed “during query normalization”. <br />
+Link: https://support.microsoft.com/en-us/help/3146123/query-plan-generation-improvement-for-some-columnstore-queries-in-sql-server-2014-or-2016
 
 
 **Trace Flag: 2363**<br />
@@ -1019,9 +1052,38 @@ Function: Relieves RESOURCE_SEMAPHORE_MUTEX contention, which may be primarily d
 Link: None
 
 
+**Trace Flag: 2466**<br />
+Function: When SQL Server is determining the runtime DOP for a parallel plan, this flag directs it to use logic found in “older versions” (the post doesn’t say which versions) to 
+determine which NUMA node to place the parallel plan on. This older logic relies on a polling mechanism (roughly every 1 second), and can result in race conditions where 2 
+parallel plans end up on the same node. The newer logic “significantly reduces” the likelihood of this happening.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing-max-degree-of-parallelism-maxdop
+
+
+**Trace Flag: 2467**<br />
+Function: “If target MAXDOP target is less than a single node can provide and if trace flag 2467 is enabled attempt to locate least loaded node”<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing-max-degree-of-parallelism-maxdop<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/?utm_content=buffer547d7&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+
+**Trace Flag: 2468**<br />
+Function: “Find the next node that can service the DOP request. Unlike full mode, the global, resource manager keeps track of the last node used. Starting from the last position, and moving to the next node, SQL Server checks for query placement opportunities. If a node can’t support the request SQL Server continues advancing nodes and searching.”<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/?utm_content=buffer547d7&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+
 **Trace Flag: 2470**<br />
 Function: Fixes performance problem when using AFTER triggers on partitioned tables<br />
 Link: https://support.microsoft.com/en-us/kb/2606883
+
+
+**Trace Flag: 2479**<br />
+Function: When SQL Server is determining the runtime DOP for a parallel plan, this flag directs it to limit the NUMA Node placement for the query to the node that the connection is associated with.<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing-max-degree-of-parallelism-maxdop
+Link: https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/?utm_content=buffer547d7&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+
+
+**Trace Flag: 2486**<br />
+Function: In SQL 2016 (CTP 3.0 at least), enables output for the “query_trace_column_values” Extended Event, allowing the value of output columns from individual plan iterators to be traced.<br />
+Link: http://www.queryprocessor.com/query-trace-column-values
 
 
 **Trace Flag: 2505**<br />
@@ -1242,7 +1304,7 @@ Link: None
 
 **Trace Flag: 2861**<br />
 Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cache Zero-Cost Query Plan<br />
-Link: http://support.microsoft.com/kb/325607<br />
+Link: None
 
 
 **Trace Flag: 3001**<br />
@@ -1435,6 +1497,11 @@ hes the start of the recovery phase and releasing more worker threads to be used
 Link: https://support.microsoft.com/en-us/help/2970421/fix-the-database-sticks-in-role-configuration-phase-when-you-perform-a-manual-failover-of-a-mirrored-database
 
 
+**Trace Flag: 3499**<br />
+Function: Provides a workaround for doing a rolling upgrade from SQL 2005 to SQL 2008 with a DB that has a full-text index<br />
+Link: None
+
+
 **Trace Flag: 3502**<br />
 Function: Writes info about checkpoints to tech error    log<br />
 Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
@@ -1536,7 +1603,7 @@ Link: None
 
 **Trace Flag: 3640**<br />
 Function: Eliminates sending DONE_IN_PROC messages to client for each statement in stored procedure. This is similar to the session setting of SET NOCOUNT ON, but when set as a trace flag, every client session is handled this way.<br />
-Link: None
+Link: https://blogs.msdn.microsoft.com/selvar/2010/07/13/delete-operation-from-a-reporting-service-2005-report-manager-fails-with-internalcatalogexception-and-throws-watson-mini-dump
 
 
 **Trace Flag: 3654**<br />
@@ -1838,7 +1905,6 @@ To accomplish this at the query level, add the OPTIMIZE FOR UNKNOWN query hint.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: http://blogs.msdn.com/b/axinthefield/archive/2010/11/04/sql-server-trace-flags-for-dynamics-ax.aspx<br />
-Link: http://www.sqlservice.se/sv/start/blogg/nagra-trace-flags-for-sql-server.aspx<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Scope: global or session or query
@@ -1861,6 +1927,8 @@ Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add t
 Link: http://support.microsoft.com/kb/2667211<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
+Link: https://answers.sqlperformance.com/questions/1609/trying-to-figure-out-how-to-resolve-the-data-skew.html<br />
+Link: http://dba.stackexchange.com/questions/55198/huge-slowdown-to-sql-server-query-on-adding-wildcard-or-top<br />
 Scope: global or session or query
 
 
@@ -1890,7 +1958,8 @@ Scope: global or session
 
 **Trace Flag: 4606**<br />
 Function: Over comes SA password by startup. Disables password policy check during server startup.<br />
-Link: https://support.microsoft.com/en-us/kb/936892
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2008/07/31/upgrade-of-sql-server-2000-instance-to-sql-server-2005-fails-with-error-similar-to-enforce-password-policy
 
 
 **Trace Flag: 4610**<br />
@@ -1903,12 +1972,12 @@ Scope: global only
 
 **Trace Flag: 4612**<br />
 Function: Disable the ring buffer logging - no new entries will be made into the ring buffer<br />
-Link: None
+Link: http://blogs.msdn.com/b/lcris/archive/2007/02/19/sql-server-2005-some-new-security-features-in-sp2.aspx
 
 
 **Trace Flag: 4613**<br />
 Function: Generate a minidump file whenever an entry is logged into the ring buffer<br />
-Link: None
+Link: http://blogs.msdn.com/b/lcris/archive/2007/02/19/sql-server-2005-some-new-security-features-in-sp2.aspx
 
 
 **Trace Flag: 4614**<br />
@@ -1922,6 +1991,7 @@ In SQL Server, an application role cannot access metadata outside its own databa
 This is a change of behavior from earlier versions of SQL Server.
 Setting this global flag disables the new restrictions, and allows for application roles to access server-level metadata.<br />
 Link: [MSDN ms188396]<br />
+Link: https://support.microsoft.com/en-us/help/906549/you-may-receive-a-permission-denied-error-message-when-an-application-role-based-application-tries-to-select-records-from-any-one-of-the-system-tables-in-a-sql-server-2005-master-database<br />
 Scope: global only
 
 
@@ -1989,7 +2059,7 @@ Scope: global
 Function: Enables a hotfix for “
 FIX: Slow performance in SQL Server 2012 or SQL Server 2014 when you build an index on a spatial data type of a large table”<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2013/11/19/spatial-indexing-from-4-days-to-4-hours
-
+Link: https://support.microsoft.com/en-us/help/2896720/fix-slow-performance-in-sql-server-2012-or-sql-server-2014-when-you-build-an-index-on-a-spatial-data-type-of-a-large-table
 
 **Trace Flag: 6531**<br />
 Function: Enables adjustment in the SQLOS scheduling layer to handle queries that issue many short-duration calls to spatial data (which is implemented via CLR functions): “
@@ -2063,6 +2133,16 @@ Link: http://www.queryprocessor.com/hash-join-execution-internals<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
 
 
+**Trace Flag: 7359**<br />
+Function: Disables the bitmap associated with hash matching. This bitmap is used for “bit-vector filtering” and can reduce the amount of data written to TempDB during hash spills.<br />
+Link: www.queryprocessor.com/hash-join-execution-internals
+
+
+**Trace Flag: 7470**<br />
+Function: Fixes a problem where under certain (unknown) conditions, a sort spill occurs for large sorts<br />
+Link: https://support.microsoft.com/en-us/help/3088480/fix-sort-operator-spills-to-tempdb-in-sql-server-2012-or-sql-server-2014-when-estimated-number-of-rows-and-row-size-are-correct
+
+
 **Trace Flag: 7412**<br />
 Function: Enables the lightweight query execution statistics profiling infrastructure<br />
 Link: [MSDN ms188396]<br />
@@ -2079,6 +2159,16 @@ Link: https://support.microsoft.com/en-us/kb/3088480
 Function: Running multiple UPDATE STATISTICS for different statistics on a single table concurrently<br />
 Link: https://support.microsoft.com/en-us/kb/3156157<br />
 Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds
+
+
+**Trace Flag: 7497**<br />
+Function: Behavior and intended purpose unknown, but in this post Paul White uses it in concert with 7498 to disable “optimized bitmaps”.<br />
+Link: https://sqlperformance.com/2015/11/sql-plan/hash-joins-on-nullable-columns
+
+
+**Trace Flag: 7498**<br />
+Function: Behavior and intended purpose unknown, but in this post Paul White uses it in concert with 7497 to disable “optimized bitmaps”.<br />
+Link: https://sqlperformance.com/2015/11/sql-plan/hash-joins-on-nullable-columns
 
 
 **Trace Flag: 7501**<br />
@@ -2103,9 +2193,9 @@ Function: SQL 8 - Reverts to ver 7 behavior of closing nonstatic cursors regardl
 Link: None
 
 
-**Trace Flag: 7601**<br />
+**Trace Flag: 7601, 7603, 7604, 7605**<br />
 Function: Helps in gathering more information in full text search by turning on full text tracing which gathers information on indexing process using the error log. Also 7603, 7604, 7605 trace flags.<br />
-Link: None
+Link: https://connect.microsoft.com/SQLServer/feedback/details/526343/looking-for-documentation-on-trace-flags-7601-7603-7604-and-7605
 
 
 **Trace Flag: 7608**<br />
@@ -2375,18 +2465,20 @@ This might not meet business rules, such as firing an UPDATE trigger. With trace
 If the update affects a column on which has a unique constraint or if the update affects multiple rows, the update is still replicated as a DELETE or INSERT pair.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/02/the-sql-server-wait-type-repository/<br />
 Link: [MSDN ms188396]<br />
-Link: https://support.microsoft.com/en-us/kb/302341
 Scope: global only
 
 
 **Trace Flag: 8209**<br />
 Function: Output extra information to error log regarding replication of schema changes in SQL Server Replication<br />
-Link: http://support.microsoft.com/kb/916706/en-us
+Link: None
 
 
 **Trace Flag: 8295**<br />
 Function: Creates a secondary index on the identifying columns on the change tracking side table at enable time<br />
-Link : https://social.msdn.microsoft.com/forums/sqlserver/en-US/00250311-7991-47b0-b788-7fae2e102254/trace-flag-8295<br />
+Link: https://social.msdn.microsoft.com/forums/sqlserver/en-US/00250311-7991-47b0-b788-7fae2e102254/trace-flag-8295<br />
+Link: https://support.microsoft.com/en-us/help/2476322/fix-a-common-table-expression-based-query-that-uses-the-changetable-function-runs-very-slowly-in-sql-server-2008-service-pack-1-or-sql-server-2008-r2<br />
+Link: https://www.brentozar.com/archive/2014/06/performance-tuning-sql-server-change-tracking<br />
+Link: https://blogs.technet.microsoft.com/smartinez/2013/03/06/sql-server-for-configmgr-2012-ebook-and-top-10-database-issues<br />
 Thanks to: Wilfred van Dijk
 
 
@@ -2406,8 +2498,9 @@ Link: None
 
 
 **Trace Flag: 8602**<br />
-Function: Disable Query Hints<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-trace-flag-8602.aspx
+Function: Ignore index hints that are specified in query/procedure.<br />
+Link: download.microsoft.com/download/6/e/5/6e52bf39-0519-42b7-b806-c32905f4a066/eim_perf_flowchart_final.pdf<br />
+Link: http://sqlblog.com/blogs/kalen_delaney/archive/2008/02/26/lost-without-a-trace.aspx<br />
 
 
 **Trace Flag: 8605**<br />
@@ -2478,10 +2571,14 @@ Function: When used with TF 8666, causes extra information about the transformat
 Link: [Yet another X-Ray for the QP]
 
 
+**Trace Flag: 8633**<br />
+Function: PWhite: “Enable prefetch (CUpdUtil::FPrefetchAllowedForDML and CPhyOp_StreamUpdate::FDoNotPrefetch)”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+
+
 **Trace Flag: 8649**<br />
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
-Link: http://www.sqlservice.se/sv/start/blogg/enable-parallellism-for-specific-query.aspx<br />
 Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
 
@@ -2494,11 +2591,21 @@ Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<
 Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536
 
 
+**Trace Flag: 8671**<br />
+Function: According to Dima, disables the logic that prunes the memo and prevents the optimization process from stopping due to “Good Enough Plan found”. Can significantly increase the amount of time, CPU, and memory used in the compilation process<br />
+Link: http://www.queryprocessor.ru/optimizer_unleashed_2
+
+
 **Trace Flag: 8675**<br />
 Function: Displays the query optimization phases for a specific optimization<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx<br />
 Link: https://sqlperformance.com/2013/06/sql-indexes/recognizing-missed-optimizations
+
+
+**Trace Flag: 8677**<br />
+Function: Skips “Search 1” phase of query optimization, and only Search 0 and Search 2 execute.<br />
+Link: https://sqlbits.com/Sessions/Event12/Query_Optimizer_Internals_Traceflag_fun
 
 
 **Trace Flag: 8679**<br />
@@ -2518,12 +2625,24 @@ Spools improve performance in majority of the cases. But it’s based on estimat
 Sometimes, this can be incorrect due to unevenly distributed or skewed data, causing slow performance.
 But in vast majority of situations, you don’t need to manually disable spool with this trace flag.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/<br />
-Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query
+Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query<br />
+Link: http://connect.microsoft.com/SQL/feedback/ViewFeedback.aspx?FeedbackID=453982
+
+
+**Trace Flag: 8692**<br />
+Function: Force optimizer to use an Eager Spool for Halloween Protection<br />
+Link: http://www.sqlperformance.com/2013/02/sql-plan/halloween-problem-part-4<br />
+Link: https://sqlperformance.com/2016/03/sql-plan/changes-to-a-writable-partition-may-fail
 
 
 **Trace Flag: 8719**<br />
 Function: In SQL 2000, apparently would show IO prefetch on loop joins and bookmarks. I (Aaron) was unable to replicate the query plan behavior on SQL 2012 using the same test, so this flag may be obsolete.<br />
 Link: http://www.hanlincrest.com/SQLServerLockEscalation.htm
+
+
+**Trace Flag: 8720**<br />
+Function: In SQL 2000, apparently would have the same effect as OPTION(KEEPFIXED PLAN)<br />
+Link: http://www.hanlincrest.com/SQLserverStoredProcRecompiles.htm
 
 
 **Trace Flag: 8721**<br />
@@ -2538,6 +2657,12 @@ Function: Disable all hints except locking hints<br />
 Link: http://sqlmag.com/sql-server/investigating-trace-flags
 
 
+**Trace Flag: 8738**<br />
+Function: (Apparently) disables an optimization where rows are sorted before a Key Lookup operator. (The optimization is meant to promote Sequential IO rather than the random nature of IO from Key Lookups). 
+Note that the context in which this flag is described means that the above description may not be very precise, or even the only use of this flag.<br />
+Link: https://answers.sqlperformance.com/questions/603/why-is-the-sort-operator-needed-in-this-plan.html
+
+
 **Trace Flag: 8739**<br />
 Function: Dima: “Group Optimization Info”<br />
 Link: http://www.queryprocessor.ru/good-enough-plan
@@ -2547,7 +2672,14 @@ Link: http://www.queryprocessor.ru/good-enough-plan
 Function: Disable pre-fetching for the Nested Loop operator<br />
 Link: [KB920093]<br />
 Link: [MSDN ms188396]<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/03/08/execution-plan-analysis-the-mystery-work-table.aspx<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/780194/make-dbcc-trace-flags-available-as-option-querytraceon<br />
 Scope: global only
+
+
+**Trace Flag: 8746**<br />
+Function: Whatever else it does, one effect is to disable the “rowset sharing” optimization described in the 2 PWhite posts.<br />
+Link: https://sqlperformance.com/2016/03/sql-plan/changes-to-a-writable-partition-may-fail
 
 
 **Trace Flag: 8755**<br />
@@ -2557,7 +2689,15 @@ Link: http://sqlmag.com/sql-server/investigating-trace-flags
 
 **Trace Flag: 8757**<br />
 Function: Skip trivial plan optimization and force a full optimization<br />
-Link: [More Undocumented Query Optimizer Trace Flags]
+Link: [More Undocumented Query Optimizer Trace Flags]<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-1.aspx
+
+
+**Trace Flag: 8758**<br />
+Function: “A [workaround to the MERGE bug described] is to apply Trace Flag 8758 –unfortunately this disables a number of optimisations, not just the one 
+above, so it’s not really recommended for long term use.” “Disable rewrite to a single operator plan (CPhyOp_StreamUpdate::PqteConvert)”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2010/08/04/another-interesting-merge-bug.aspx<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
 
 
 **Trace Flag: 8765**<br />
@@ -2568,12 +2708,25 @@ Link: https://bugs.mysql.com/bug.php?id=46857
 
 **Trace Flag: 8780**<br />
 Function: Give the optimizer more time to find a better plan<br />
-Link: http://www.sqlservice.se/sv/start/blogg/sql-server-trace-flag--8780.aspx
+Link: http://www.queryprocessor.ru/optimizer_unleashed_1
 
 
 **Trace Flag: 8783**<br />
 Function: Allows DELETE, INSERT, and UPDATE statements to honor the SET ROWCOUNT ON setting when enabled<br />
 Link: None
+
+
+**Trace Flag: 8790**<br />
+Function: PWhite: “Undocumented trace flag 8790 forces a wide update plan for any data-changing query (remember that a wide update plan is always possible)”<br />
+Link: https://support.microsoft.com/en-us/help/956718/fix-a-merge-statement-may-not-enforce-a-foreign-key-constraint-when-the-statement-updates-a-unique-key-column-that-is-not-part-of-a-clustering-key-and-there-is-a-single-row-as-the-update-source-in-sql-server-2008<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/12/10/merge-bug-with-filtered-indexes.aspx<br />
+Link: https://sqlperformance.com/2014/06/sql-plan/filtered-index-side-effect
+
+
+**Trace Flag: 8795**<br />
+Function: PWhite: “Disable DML Request Sort (CUpdUtil::FDemandRowsSortedForPerformance)”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
+Link: https://sqlperformance.com/2014/10/t-sql-queries/performance-tuning-whole-plan
 
 
 **Trace Flag: 8809**<br />
@@ -2615,6 +2768,13 @@ Link: None
 **Trace Flag: 9109**<br />
 Function: Used to workaround a problem with query notifications and restoring a DB with the NEW_BROKER option enabled.<br />
 Link: https://support.microsoft.com/en-us/help/2483090/restore-or-recovery-may-fail-or-take-a-long-time-if-query-notification-is-used-in-a-database
+
+
+**Trace Flag: 9115**<br />
+Function: PWhite: “Disable prefetch (CUpdUtil::FPrefetchAllowedForDML)” Dima: “Disables both [NLoop Implicit Batch Sort {TF 2340} and NL Prefetching {TF 8744}], and not only on the Post Optimization, but the explicit Sort also”<br />
+Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
+Link: http://www.hanlincrest.com/SQLServerLockEscalation.htm<br />
+Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
 
 
 **Trace Flag: 9130**<br />
@@ -2784,11 +2944,29 @@ histograms of the joined columns, an “overpopulated primary key” can result 
 Link: http://www.queryprocessor.com/ce_opk
 
 
+**Trace Flag: 9483**<br />
+Function: Implements a “model variation” in the SQL 2014 cardinality estimator. The flag will force the optimizer to create (if possible) a filtered statistics object based on a predicate in 
+the query. This filtered stat object is not persisted and thus would be extremely resource intensive for frequent compilations. In Dima’s example, the filtered stat object 
+is actually created on the join column...i.e. “CREATE STATISTICS [filtered stat obj] ON [table] (Join column) WHERE (predicate column = ‘literal’)”<br />
+Link: http://www.queryprocessor.com/ce_filteredstats
+
+
 **Trace Flag: 9485**<br />
 Function: Disables SELECT permission for DBCC SHOW\_STATISTICS<br />
 Link: https://support.microsoft.com/en-us/kb/2683304<br />
 Link: [MSDN ms188396]<br />
+Link: http://www.benjaminnevarez.com/2013/02/dbcc-show_statistics-works-with-select-permission<br />
 Scope: global only
+
+
+**Trace Flag: 9488**<br />
+Function: Implements a “model variation” in the SQL 2014 cardinality estimator. This flag reverts the estimation behavior for multi-statement TVFs back to 1 row (instead of the 100-row estimate behavior that was adopted in SQL 2014).<br />
+Link: http://www.queryprocessor.com/ce_mtvf
+
+
+**Trace Flag: 9489**<br />
+Function: Implements a “model variation” in the SQL 2014 cardinality estimator and turns off the new logic that handles ascending keys. <br />
+Link: http://www.queryprocessor.com/ce_asckey
 
 
 **Trace Flag: 9495**<br />
@@ -2801,6 +2979,11 @@ Scope: global or session
 **Trace Flag: 9532**<br />
 Function: SQL 11 CTP3 - to get more than 1 availability group replica in CTP3 Scope Startup<br />
 Link: http://connect.microsoft.com/SQLServer/feedback/details/682581/denali-hadron-read-only-routing-url-is-not-yet-implemente
+
+
+**Trace Flag: 9559**<br />
+Function: For AGs, “when enabled on the secondary ignores the redo target provided from the primary progress message and always set the redo target at the Max LSN value.”<br />
+Link: https://blogs.msdn.microsoft.com/alwaysonpro/2013/12/04/recovery-on-secondary-lagging-shared-redo-target
 
 
 **Trace Flag: 9567**<br />
@@ -2844,6 +3027,11 @@ This is an undocumented trace flag so please don’t use this on a production sy
 Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28/new-trace-flag-for-in-memory-oltp-hekaton/
 
 
+**Trace Flag: 9837**<br />
+Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, enables “extra tracing but massive output” for Hekaton checkpoint files.<br />
+Link: None
+
+
 **Trace Flag: 9851**<br />
 **Undocumented trace flag**<br />
 Function: For testing purposes, you might want to turn off automatic merging of files, so that you can more readily
@@ -2855,6 +3043,11 @@ Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePape
 **Trace Flag: 9929**<br />
 Function: Enables an update that reduces the “disk footprint [of In-Memory OLTP] by reducing the In-Memory checkpoint files to 1 MB (megabytes) each.”<br/>
 Link: https://support.microsoft.com/en-us/help/3147012/fix-large-disk-checkpoint-usage-occurs-for-an-in-memory-optimized-filegroup-during-heavy-non-in-memory-workloads
+
+
+**Trace Flag: 9989**<br />
+Function: In CTP2, enabled functionality for reading in-memory tables on a readable secondary<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-db-gets-suspect-when-i-add-in-memory-table-to-db-which-is-part-of-alwayson-availability-group
 
 
 **Trace Flag: 10202**<br />
