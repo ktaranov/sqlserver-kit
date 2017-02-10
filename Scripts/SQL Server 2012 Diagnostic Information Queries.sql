@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- January 2017
--- Last Modified: January 8, 2017
+-- February 2017
+-- Last Modified: February 9, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -80,7 +80,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																												11.0.5649		SP2 CU12			5/16/2016	---->  11.0.6537		SP3 CU3			 5/16/2016
 --																												11.0.5655		SP2 CU13			7/18/2016	---->  11.0.6540		SP3 CU4			 7/18/2016	
 --																												11.0.5657		SP2 CU14		    9/19/2016   ---->  11.0.6544		SP3 CU5			 9/20/2016
---																												11.0.5676		SP2 CU15 			11/16/2016  ---->  11.0.6567		SP3 CU6 		11/16/2016                                                             				
+--																												11.0.5676		SP2 CU15 		   11/16/2016   ---->  11.0.6567		SP3 CU6 		11/16/2016
+--																												11.0.5678		SP2 CU16			1/17/2017   ---->  11.0.6579		SP3 CU7			 1/17/2017																											                                                            				
 --																												
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
@@ -352,17 +353,11 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Physical memory state is transitioning
 
 
--- Get SQL Server Error Log count and sizes (Query 13) (Error Log Count)
-EXEC sp_enumerrorlogs;
-------
-
--- This gives you the count of your SQL Server Error Logs, and shows you how large each one is
-
 
 -- You can skip the next two queries if you know you don't have a clustered instance
 
 
--- Get information about your cluster nodes and their status  (Query 14) (Cluster Node Properties)
+-- Get information about your cluster nodes and their status  (Query 13) (Cluster Node Properties)
 -- (if your database server is in a failover cluster)
 SELECT NodeName, status_description, is_current_owner
 FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
@@ -376,7 +371,7 @@ FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
 -- http://support.microsoft.com/kb/2920151
 
 
--- Get information about any AlwaysOn AG cluster this instance is a part of (Query 15) (AlwaysOn AG Cluster)
+-- Get information about any AlwaysOn AG cluster this instance is a part of (Query 14) (AlwaysOn AG Cluster)
 SELECT cluster_name, quorum_type_desc, quorum_state_desc
 FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);
 ------
@@ -385,7 +380,7 @@ FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);
 
 
 
--- Hardware information from SQL Server 2012  (Query 16) (Hardware Info)
+-- Hardware information from SQL Server 2012  (Query 15) (Hardware Info)
 SELECT cpu_count AS [Logical CPU Count], scheduler_count, hyperthread_ratio AS [Hyperthread Ratio],
 cpu_count/hyperthread_ratio AS [Physical CPU Count], 
 physical_memory_kb/1024 AS [Physical Memory (MB)], committed_kb/1024 AS [Committed Memory (MB)],
@@ -401,7 +396,7 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- It merely indicates that you have a hypervisor running on your host
 
 
--- Get System Manufacturer and model number from SQL Server Error log (Query 17) (System Manufacturer)
+-- Get System Manufacturer and model number from SQL Server Error log (Query 16) (System Manufacturer)
 EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
 ------ 
 
@@ -409,6 +404,15 @@ EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
 -- Can also be used to confirm if you are running in a VM
 -- This query might take a few seconds if you have not recycled your error log recently
 -- This query will return no results if your error log has been recycled since the instance was started
+
+
+-- Get BIOS date from Windows Registry (Query 17) (BIOS Date)
+EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\System\BIOS', N'BiosReleaseDate';
+------
+
+-- Helps you understand whether the main system BIOS is up to date, and the possible age of the hardware
+-- Not as useful for virtualization
+
 
 
 -- Get processor description from Windows Registry  (Query 18) (Processor Description)
@@ -1498,4 +1502,4 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month pass to Pluralsight
 
 -- Microsoft Visual Studio Dev Essentials
--- https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL
+-- https://www.visualstudio.com/dev-essentials/

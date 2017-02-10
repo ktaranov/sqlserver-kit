@@ -1,8 +1,8 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- January 2017
--- Last Modified: January 8, 2017
+-- February 2017
+-- Last Modified: February 9, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -338,17 +338,12 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Physical memory state is transitioning
 
 
--- Get SQL Server Error Log count and sizes (Query 14) (Error Log Count)
-EXEC sp_enumerrorlogs;
-------
-
--- This gives you the count of your SQL Server Error Logs, and shows you how large each one is
 
 
 -- You can skip the next two queries if you know you don't have a clustered instance
 
 
--- Get information about your cluster nodes and their status  (Query 15) (Cluster Node Properties)
+-- Get information about your cluster nodes and their status  (Query 14) (Cluster Node Properties)
 -- (if your database server is in a failover cluster)
 SELECT NodeName, status_description, is_current_owner
 FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
@@ -362,7 +357,7 @@ FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
 -- http://support.microsoft.com/kb/2920151
 
 
--- Get information about any AlwaysOn AG cluster this instance is a part of (Query 16) (AlwaysOn AG Cluster)
+-- Get information about any AlwaysOn AG cluster this instance is a part of (Query 15) (AlwaysOn AG Cluster)
 SELECT cluster_name, quorum_type_desc, quorum_state_desc
 FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);
 ------
@@ -370,7 +365,7 @@ FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);
 -- You will see no results if your instance is not using AlwaysOn AGs
 
 
--- Good overview of AG health and status (Query 17) (AlwaysOn AG Status)
+-- Good overview of AG health and status (Query 16) (AlwaysOn AG Status)
 SELECT ag.name AS [AG Name], ar.replica_server_name, ar.availability_mode_desc, adc.[database_name], 
        drs.is_local, drs.is_primary_replica, drs.synchronization_state_desc, drs.is_commit_participant, 
 	   drs.synchronization_health_desc, drs.recovery_lsn, drs.truncation_lsn, drs.last_sent_lsn, 
@@ -392,7 +387,7 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 -- You will see no results if your instance is not using AlwaysOn AGs
 
 
--- Hardware information from SQL Server 2014  (Query 18) (Hardware Info)
+-- Hardware information from SQL Server 2014  (Query 17) (Hardware Info)
 SELECT cpu_count AS [Logical CPU Count], scheduler_count, hyperthread_ratio AS [Hyperthread Ratio],
 cpu_count/hyperthread_ratio AS [Physical CPU Count], 
 physical_memory_kb/1024 AS [Physical Memory (MB)], committed_kb/1024 AS [Committed Memory (MB)],
@@ -408,7 +403,7 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- It merely indicates that you have a hypervisor running on your host
 
 
--- Get System Manufacturer and model number from SQL Server Error log (Query 19) (System Manufacturer)
+-- Get System Manufacturer and model number from SQL Server Error log (Query 18) (System Manufacturer)
 EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
 ------ 
 
@@ -416,6 +411,14 @@ EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
 -- Can also be used to confirm if you are running in a VM
 -- This query might take a few seconds if you have not recycled your error log recently
 -- This query will return no results if your error log has been recycled since the instance was started
+
+
+-- Get BIOS date from Windows Registry (Query 19) (BIOS Date)
+EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\System\BIOS', N'BiosReleaseDate';
+------
+
+-- Helps you understand whether the main system BIOS is up to date, and the possible age of the hardware
+-- Not as useful for virtualization
 
 
 -- Get processor description from Windows Registry  (Query 20) (Processor Description)
@@ -1602,7 +1605,7 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month pass to Pluralsight
 
 -- Microsoft Visual Studio Dev Essentials
--- https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL
+-- https://www.visualstudio.com/dev-essentials/
 
 
 
