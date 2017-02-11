@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (477 trace flags)
+Complete list of Microsoft SQL Server trace flags (510 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -109,7 +109,7 @@ GO
 
 
 ## Trace flags list <a id="trace-flags-list"></a>
-Summary: **477 trace flags**
+Summary: **510 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -141,13 +141,12 @@ Link: http://technet.microsoft.com/en-us/library/ms151872(v=sql.105).aspx
 
 **Trace Flag: 107**<br />
 Function: SQL 6.5/7/8 – Interprets numbers with a decimal point as float instead of decimal<br />
-Link: http://support.microsoft.com/kb/203787<br />
-Link: https://support.microsoft.com/en-us/kb/155714<br />
+Link: None
 
 
 **Trace Flag: 110**<br />
 Function: SQL 6.5 – Turns off ANSI select characteristics<br />
-Link: https://support.microsoft.com/en-us/kb/152032
+Link: None
 
 
 **Trace Flag: 120**<br />
@@ -182,7 +181,7 @@ Scope: global only
 
 **Trace Flag: 204**<br />
 Function: SQL 6.5 – Backward compatibility switch that enables non-ansi standard behavior. E.g. previously SQL server ignored trailing blanks in the like statement and allowed queries that contained aggregated functions to have items in the group by clause that were not in the select list.<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 
 **Trace Flag: 205**<br />
@@ -209,6 +208,21 @@ Link: https://support.microsoft.com/en-us/kb/945892
 
 **Trace Flag: 212**<br />
 Function: SQL 9 – Query may run much slower when compared to SQL 8 when you use a cursor to run the query<br />
+Link: None
+
+
+**Trace Flag: 220**<br />
+Function: “FIX: Error Message: "Insufficient key column information for updating" Occurs in SQL Server 2000 SP3”<br />
+Link: None
+
+
+**Trace Flag: 221**<br />
+Function: “FIX: The query runs slower than you expected when you try to parse a query in SQL Server 2000”<br />
+Link: None
+
+
+**Trace Flag: 222**<br />
+Function: “FIX: Each query takes a long time to compile when you execute a single query or when you execute multiple concurrent queries in SQL Server 2000”<br />
 Link: None
 
 
@@ -287,8 +301,8 @@ Link: None
 
 **Trace Flag: 323**<br />
 Function: Outputs detailed info about updates<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
-
+Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm<br />
+Link: https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 **Trace Flag: 325**<br />
 Function: Prints information about the cost of using a non-clustered index or a sort to process an ORDER BY clause<br />
@@ -406,6 +420,11 @@ Function: “...prevents user queries from queuing requests to the ghost cleanup
 Link: https://support.microsoft.com/en-us/help/3027860/error-17066-or-17310-during-sql-server-startup
 
 
+**Trace Flag: 683**<br />
+Function: According to the KB, used to workaround a bug in SQL 2000 SP3 by reverting to pre-SP3 parallel-scan behavior in parallel queries. Database-Wiki.com: “Disallow row counter and column mod counters to be partitioned”<br />
+Link: None
+
+
 **Trace Flag: 698**<br />
 Function: SQL 9 – Performance of INSERT operations against a table with an identity column may be slow when compared to SQL 8<br />
 Link: None
@@ -453,6 +472,17 @@ Used to troubleshoot IO problems<br />
 Link: http://support.microsoft.com/kb/826433<br />
 Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
 Link: https://support.microsoft.com/en-us/help/828339/error-message-823-may-indicate-hardware-problems-or-system-problems-in-sql-server
+
+
+**Trace Flag: 822**<br />
+Function: A workaround for SQL 2000 over-committing memory on the machine<br />
+Link: None
+
+
+**Trace Flag: 825**<br />
+Function: In SQL 2000, enables Buffer Pool support for NUMA. TF 888 must be used.<br />
+Link: None
+
 
 **Trace Flag: 828**<br />
 Function: SQL 8 - When enabled checkpoint ignores the recovery interval target and keeps steady I/O otherwise it uses recovery interval setting as a target for the length of time that checkpoint will take<br />
@@ -517,6 +547,11 @@ Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, “disable[
 Link: None
 
 
+**Trace Flag: 888**<br />
+Function: Enables support for locked pages for SQL 2000<br />
+Link: None
+
+
 **Trace Flag: 902**<br />
 Function: Bypasses execution of database upgrade script when installing a Cumulative Update or Service Pack.
 If you encounter an error during script upgrade mode, it is recommended to contact Microsoft SQL Customer Service and Support (CSS) for further guidance.<br />
@@ -526,6 +561,11 @@ Not doing so can cause unexpected issues with your SQL Server instance.**<br />
 Link: https://support.microsoft.com/en-us/kb/2163980<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
+
+
+**Trace Flag: 916**<br />
+Function: The KB article references the flag in the context of seeing a Profiler dump<br />
+Link: None
 
 
 **Trace Flag: 1106**<br />
@@ -563,9 +603,9 @@ Scope: global only
 
 
 **Trace Flag: 1119**<br />
-Function: Turns of mixed extent allocation (Similar to 1118?)<br />
+Function: Turns off mixed extent allocation (Similar to 1118?)<br />
 Link: [TECHNET List Of SQL Server Trace Flags]
-
+    
 
 **Trace Flag: 1124**<br />
 Function: Unknown. Has been reportedly found turned on in some SQL Server instances running Dynamics AX. Also rumored to be invalid in public builds of SQL Server<br />
@@ -642,9 +682,15 @@ Function:  SQL 7 - Disables Health reporting. Lock monitor when detects a (worke
 Link: None
 
 
+**Trace Flag: 1217**<br />
+Function: Disables (for 7.0) the “UMS Health” reporting messages described in the KB article.<br />
+Link: None
+
+
 **Trace Flag: 1222**<br />
 Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.<br />
 Link: [MSDN ms188396]<br />
+Link: https://blog.sqlauthority.com/2017/01/09/sql-server-get-historical-deadlock-information-system-health-extended-events<br />
 Scope: global only
 
 
@@ -868,7 +914,7 @@ Link: https://justdaveinfo.wordpress.com/2014/10/16/october-13-microsoft-sql-rel
 
 **Trace Flag: 1903**<br />
 Function: SQL 8 - When you capture a SQL Profiler trace in a file and then you try to import the trace files into tables by using the fn_trace_gettable function no rows may be returned<br />
-Link: https://support.microsoft.com/en-us/kb/911678
+Link: Note
 
 
 **Trace Flag: 2301**<br />
@@ -993,6 +1039,11 @@ Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: [Cardinality Estimation Framework 2014 First Look]
 
 
+**Trace Flag: 2382**<br />
+Function: SSC: “SQL 8 -Statistics collected for system tables.”<br />
+Link: None
+
+
 **Trace Flag: 2388**<br />
 Function: Changes the output of DBCC SHOW_STATISTICS. Instead of the normal Header/Vector/Histogram output, instead we get a single row that gives information related to whether the lead column of the stat object is considered to be ascending or not. This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).<br />
 Link: None
@@ -1035,7 +1086,7 @@ Link: https://support.microsoft.com/en-us/help/2746341/fix-high-cpu-usage-when-y
 
 **Trace Flag: 2440**<br />
 Function: SQL 10 - Parallel query execution strategy on partitioned tables. SQL 9 used single thread per partition parallel query execution strategy. In SQL 10, multiple threads can be allocated to a single partition by turning on this flag.<br />
-Link: None
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/dc010af9-afa0-4c87-937c-4343b4e1119a/trace-flag-2440
 
 
 **Trace Flag: 2453**<br />
@@ -1044,6 +1095,7 @@ Function: Allow a table variable to trigger recompile when enough number of rows
 Link: http://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br />
 Link: https://support.microsoft.com/en-us/kb/2952444<br />
 Link: [MSDN ms188396]<br />
+Link: https://www.brentozar.com/archive/2017/02/using-trace-flag-2453-improve-table-variable-performance<br />
 Scope: global or session or query
 
 
@@ -1161,7 +1213,8 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 **Trace Flag: 2542**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
 **Trace Flag: 2543**<br />
@@ -1171,7 +1224,9 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 **Trace Flag: 2544**<br />
 Function: Produces a full memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery
 
 
 **Trace Flag: 2545**<br />
@@ -1182,7 +1237,10 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 **Trace Flag: 2546**<br />
 Function: Dumps all threads for SQL Server in the dump file<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/09/12/sql-server-2000-2005-2008-recoveryrollback-taking-longer-than-expected
 
 
 **Trace Flag: 2547**<br />
@@ -1220,7 +1278,8 @@ Link: http://support.microsoft.com/kb/917825/en-us
 
 **Trace Flag: 2551**<br />
 Function: Produces a filtered memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server-is-terminating-because-of-fatal-exception-c0150014
 
 
 **Trace Flag: 2552**<br />
@@ -1307,6 +1366,11 @@ Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cac
 Link: None
 
 
+**Trace Flag: 2880, 2881**<br />
+Function: Both 2880 and 2881 are related to a SQL 2000 hotfix introduced to solve problems where ad-hoc queries would cause the procedure cache to get too big<br />
+Link: None
+
+
 **Trace Flag: 3001**<br />
 Function: Stops sending backup entries into MSDB<br />
 Link: https://bytes.com/topic/sql-server/answers/162385-how-do-i-prevent-sql-2000-posting-message-event-viewer-application-log
@@ -1388,7 +1452,8 @@ Link: http://support.microsoft.com/kb/2567366/
 
 **Trace Flag: 3104**<br />
 Function: Causes SQL Server to bypass checking for free space<br />
-Link: None
+Link: http://sqlblogcasts.com/blogs/martinbell/archive/2011/07/06/Mount-point-Permission-Issues.aspx
+Link: http://www.databasejournal.com/features/mssql/article.php/1547551/Troubleshooting-SQL-Server-BackupRestore-Problems.htm
 
 
 **Trace Flag: 3106**<br />
@@ -1410,6 +1475,11 @@ Link: None
 Function: Disable HW compression for backup to tape drives<br />
 Link: [MSDN ms188396]<br />
 Scope: global
+
+
+**Trace Flag: 3207**<br />
+Function: Fixes SQL 6.5 so that tape drives work correctly with DUMP and LOAD statements<br />
+Link: None
 
 
 **Trace Flag: 3210**<br />
@@ -1533,7 +1603,7 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msd
 
 **Trace Flag: 3602**<br />
 Function: Records all error and warning messages sent to the client<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/199037/how-to-capture-error-messages-that-are-sent-to-clients-from-an-instance-of-sql-server
 
 
 **Trace Flag: 3603**<br />
@@ -1583,6 +1653,11 @@ Function: SQL 9 - Divide by zero to result in NULL instead of error<br />
 Link: None
 
 
+**Trace Flag: 3614**<br />
+Function: Modifies the order of startup operations so that SQL Server can successfully start up even if many user connections are being attempted during SQL startup<br />
+Link: None
+
+
 **Trace Flag: 3625**<br />
 Function: Limits the amount of information returned to users who are not members of the sysadmin fixed server role, by masking the parameters of some error messages using '******'.
 This can help prevent disclosure of sensitive information.<br />
@@ -1593,6 +1668,16 @@ Scope: global only
 **Trace Flag: 3626**<br />
 Function: Turns on tracking of the CPU data for the sysprocesses table.<br />
 Link: None
+
+
+**Trace Flag: 3628**<br />
+Function: CSS’s mysterious description: “Includes ‘other errors’ in the dump based on a severity.”<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+
+
+**Trace Flag: 3629**<br />
+Function: CSS: A memory dump will “include messages marked to include with this trace flag enabled.”<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
 **Trace Flag: 3635**<br />
@@ -1615,7 +1700,9 @@ Link: https://support.microsoft.com/en-us/help/2888658/an-access-violation-occur
 
 **Trace Flag: 3656**<br />
 Function: Enables resolve of all call stacks in extended events<br />
-Link: http://sqlcat.com/sqlcat/b/msdnmirror/archive/2010/05/11/resolving-dtc-related-waits-and-tuning-scalability-of-dtc.aspx
+Link: http://sqlcat.com/sqlcat/b/msdnmirror/archive/2010/05/11/resolving-dtc-related-waits-and-tuning-scalability-of-dtc.aspx<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps<br />
+Link: http://www.sqlskills.com/blogs/paul/determine-causes-particular-wait-type
 
 
 **Trace Flag: 3659**<br />
@@ -1722,7 +1809,8 @@ Link: None
 
 **Trace Flag: 4032**<br />
 Function: Traces the SQL commands coming in from the client. When enabled with 3605 it will direct those all to the error log.<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/199037/how-to-capture-error-messages-that-are-sent-to-clients-from-an-instance-of-sql-server<br />
+Link: https://support.microsoft.com/en-us/help/140895/inf-diagnostic-tips-for-the-microsoft-sql-server-odbc-driver
 
 
 **Trace Flag: 4044**<br />
@@ -2020,18 +2108,18 @@ Link: https://support.microsoft.com/en-us/kb/959823
 **Trace Flag: 5101**<br />
 Function: Forces all I/O requests to go through engine 0.
 This removes the contention between processors but could create a bottleneck if engine 0 becomes busy with non-I/O tasks.<br />
-Link: None
+Link: http://dba.fyicenter.com/Interview-Questions/SYBASE/What_is_Trace_Flag_Definitions_in_Sybase.html#1.3.4#1.3.4
 
 
 **Trace Flag: 5102**<br />
 Function: Prevents engine 0 from running any non-affinitied tasks.<br />
-Link: None
+Link: http://dba.fyicenter.com/Interview-Questions/SYBASE/What_is_Trace_Flag_Definitions_in_Sybase.html#1.3.4#1.3.4
 
 
 **Trace Flag: 5302**<br />
 Function: Alters default behavior of select…INTO (and other processes) that lock system tables for the duration of the transaction.
 This trace flag disables such locking during an implicit transaction.<br />
-Link: None
+Link: https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 
 **Trace Flag: 6498**<br />
@@ -2108,6 +2196,11 @@ Link: https://support.microsoft.com/en-us/help/280102/how-to-set-up-a-linked-ser
 Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604
 
 
+**Trace Flag: 7301**<br />
+Function: Fixes a problem in SQL 6.5 where SELECT INTO queries with text/image types were not bulk-logged.<br />
+Link: None
+
+
 **Trace Flag: 7311**<br />
 Function: Offers a new alternative to handling the tricky problem of converting Oracle NUMBER types (across OLEDB linked server queries) with unknown precision/scale to a valid SQL Server data type, by treating all such types as NUMERIC(38,10).<br />
 Link: https://support.microsoft.com/en-us/help/3051993/fix-the-value-of-number-type-is-truncated-when-you-select-data-from-an-oracle-linked-server-by-using-ole-db-provider
@@ -2175,7 +2268,7 @@ Link: https://sqlperformance.com/2015/11/sql-plan/hash-joins-on-nullable-columns
 Function: Dynamic cursors are used by default on forward-only cursors.
 Dynamic cursors are faster than in earlier versions and no longer require unique indexes.
 This flag disables the dynamic cursor enhancements and reverts to version 6.0 behavior.<br />
-Link: https://support.microsoft.com/en-us/kb/152032
+Link: None
 
 
 **Trace Flag: 7502**<br />
@@ -2200,17 +2293,17 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/526343/looking-fo
 
 **Trace Flag: 7608**<br />
 Function: Performance fix for slow full text population with a composite clustered index<br />
-Link: https://support.microsoft.com/en-us/kb/938672
+Link: None
 
 
 **Trace Flag: 7613**<br />
 Function: SQL 9 - Search results are missing when performing a full-text search operation on Win SharePoint Services 2.0 site after upgrading<br />
-Link: https://support.microsoft.com/en-us/kb/927643
+Link: None
 
 
 **Trace Flag: 7614**<br />
 Function: SQL 9 - Full-text index population for the indexed view is very slow<br />
-Link: https://support.microsoft.com/en-us/kb/928537
+Link: None
 
 
 **Trace Flag: 7646**<br />
@@ -2258,7 +2351,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-t
 
 **Trace Flag: 8004**<br />
 Function: SQL server to create a mini-dump once you enable 2551 and a out of memory condition is hit<br />
-Link: None
+Link: https://connect.microsoft.com/SQLServer/feedback/details/342691/not-enough-memory-was-available-for-trace-error-when-attempting-to-profile-sql-2008
 
 
 **Trace Flag: 8008**<br />
@@ -2366,7 +2459,8 @@ Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-t
 
 **Trace Flag: 8026**<br />
 Function: SQL Server will clear a dump trigger after generating the dump once<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
 **Trace Flag: 8030**<br />
@@ -2740,6 +2834,11 @@ Function: Logs every two-digit year conversion to a four-digit year<br />
 Link: None
 
 
+**Trace Flag: 8901**<br />
+Function: Enables new (in 7.0) code to correct a problem with the SHRINK command and empty text or image extents<br />
+Link: None
+
+
 **Trace Flag: 8903**<br />
 Function: Allows SQL Server to use a specific  API (SetFileIoOverlappedRange) when Locked Pages in Memory is enabled.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2012/03/20/setfileiooverlappedrange-can-lead-to-unexpected-behavior-for-sql-server-2008-r2-or-sql-server-2012-denali
@@ -2756,8 +2855,63 @@ Scope: global only<br />
 Related to: 8048
 
 
+**Trace Flag: 9050**<br />
+Function: “FIX: The compile time for a query that uses at least one outer join may be greater for SQL Server post-SP3 builds”<br />
+Link: None
+
+
+**Trace Flag: 9052**<br />
+Function: “FIX: Queries that join a view may run slowly if the view contains outer joins”<br />
+Link: None
+
+
+**Trace Flag: 9054**<br />
+Function: “FIX: SQL Server 2000 Service Pack 1 (SP1) and later builds may not generate an execution plan for a query, and you receive error message 8623”<br />
+Link: None
+
+
+**Trace Flag: 9055**<br />
+Function: “FIX: The performance of a DML operation that fires a trigger may decrease when the trigger execution plan recompiles repeatedly”<br />
+Link: None
+
+
+**Trace Flag: 9056**<br />
+Function: “FIX: A user-defined function returns results that are not correct for a query”<br />
+Link: None
+
+
 **Trace Flag: 9059**<br />
 Function: SQL 8 - Turns back behavior to SP3 after a SP4 installation, this allows to choose an index seek when comparing numeric columns or numeric constants that are of different precision or scale; else would have to change schema/code.<br />
+Link: None
+
+
+**Trace Flag: 9061**<br />
+Function: “FIX: Build 8.00.0837: A query that contains a correlated subquery runs slowly”<br />
+Link: None
+
+
+**Trace Flag: 9062**<br />
+Function: “FIX: Some complex queries are slower after you install SQL Server 2000 Service Pack 2 or SQL Server 2000 Service Pack 3”<br />
+Link: None
+
+
+**Trace Flag: 9063**<br />
+Function: “FIX: Query performance may be slower if the query contains both a GROUP BY clause and a DISTINCT keyword on the same column”<br />
+Link: None
+
+
+**Trace Flag: 9065**<br />
+Function: “FIX: The query plan may take longer than expected to compile, and you may receive error message 701, error message 8623, or error message 8651 in SQL Server 2000”<br />
+Link: None
+
+
+**Trace Flag: 9068**<br />
+Function: “FIX: A query may run more slowly against SQL Server 2000 post-SP3 hotfix build 8.00.0988 than a query that you run against SQL Server 2000 post-SP3 hotfix builds that are earlier than build 8.00.0988”<br />
+Link: None
+
+
+**Trace Flag: 9079**<br />
+Function: “FIX: The query performance may be slow when you query data from a view in SQL Server 2000”<br />
 Link: None
 
 
@@ -2789,13 +2943,18 @@ Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in
 
 **Trace Flag: 9134**<br />
 Function: SQL 8 - Does additional reads to test if the page is allocated & linked correctly this checks IAM & PFS. Fixes error 601 for queries under Isolation level read uncommitted. In case performance is affected (because of a bug) apply SP4.<br />
+Link: https://support.microsoft.com/en-us/help/815008/fix-query-with-transaction-isolation-level-set-to-read-uncommitted-fails-with-error-601
+
+
+**Trace Flag: 9136**<br />
+Function: “PRB: You receive error message 8623 when you try to run a query that joins multiple tables”<br />
 Link: None
 
 
 **Trace Flag: 9185**<br />
 Function: Cardinality estimates for literals that are outside the
 histogram range are very low<br />
-Link: https://support.microsoft.com/en-us/kb/kbview/833406
+Link: None
 Related to: 9205
 
 
@@ -2807,13 +2966,23 @@ Related to: 9292
 
 **Trace Flag: 9205**<br />
 Function: Cardinality estimates for literals that are outside the histogram range are very low for tables that have parent-child relationships<br />
-Link: https://support.microsoft.com/en-us/kb/kbview/833406<br />
+Link: None
 Related to: 9185
 
 
 **Trace Flag: 9207**<br />
 Function: Fixes that SQL Server underestimates the cardinality of a query expression and query performance may be slow<br />
-Link: https://support.microsoft.com/en-us/kb/831302
+Link: None
+
+
+**Trace Flag: 9209**<br />
+Function: “FIX: Some queries that have a left outer join and an IS NULL filter run slower after you install SQL Server 2000 post-SP3 hotfix”<br />
+Link: None
+
+
+**Trace Flag: 9210**<br />
+Function: “FIX: A query filter condition that has a LEFT OUTER JOIN clause may cause an incorrect row count estimate in the query execution plan”<br />
+Link: None
 
 
 **Trace flag: 9259**<br />
@@ -2914,6 +3083,11 @@ Scope: global or session or query
 Function: Assumes independence for multiple WHERE predicates in the SQL 2014 cardinality estimation model. Predicate independence was the default for versions prior to SQL Server 2014, and thus this flag can be used to more closely emulate pre-SQL 2014 cardinality estimate behavior in a more specific fashion than TF 9481.<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression
+
+
+**Trace Flag: 9275**<br />
+Function: “FIX: A DML Operation on a Large Table Can Cause Performance Problems” Enables SQL 2000 optimizations that sort data in DML statements before the changes are applied to a clustered index<br />
+Link: None
 
 
 **Trace Flag: 9476**<br />
