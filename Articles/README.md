@@ -182,7 +182,11 @@
 | [Packing Intervals with Priorities]                                                                                     | Itzik Ben-Gan                            | 2015-11-10 |
 | [Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]                                                            | Itzik Ben-Gan                            | 2014-12-11 |
 | [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]                                                | Alex Grinberg                            | 2017-02-26 |
-| [SQL Server Performance SQL Server Hardware Optimization]                                                               | Basit Farooq                             | 2016-06-01 |
+| [SQL Server Hardware Optimization]                                                                                      | Basit Farooq                             | 2016-06-01 |
+| [Index Types  Heaps, Primary Keys, Clustered and Nonclustered Indexes]                                                  | Kendra Little                            | 2017-02-02 |
+| [Identifying Existence of Intersections in Intervals]                                                                   | Itzik Ben-Gan                            | 2017-02-08 |
+| [Cheat Sheet  How to Configure TempDB for Microsoft SQL Server]                                                         | Brent Ozar                               | 2016-01-14 |
+| [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -363,4 +367,8 @@
 [Packing Intervals with Priorities]:http://sqlmag.com/sql-server/packing-intervals-priorities
 [Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]:http://sqlmag.com/t-sql/avoid-unnecessary-lookups-when-using-rownumber-paging
 [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]:https://www.simple-talk.com/sql/database-administration/migrating-disk-based-table-memory-optimized-table-sql-server/
-[SQL Server Performance SQL Server Hardware Optimization]:http://www.sql-server-performance.com/2016/sql-server-hardware-optimization/
+[SQL Server Hardware Optimization]:http://www.sql-server-performance.com/2016/sql-server-hardware-optimization/
+[Index Types  Heaps, Primary Keys, Clustered and Nonclustered Indexes]:https://www.littlekendra.com/2017/02/02/index-types-heaps-primary-keys-clustered-and-nonclustered-indexes-dear-sql-dba-episode-28/
+[Identifying Existence of Intersections in Intervals]:http://sqlmag.com/sql-server/identifying-existence-intersections-intervals
+[Cheat Sheet  How to Configure TempDB for Microsoft SQL Server]:https://www.brentozar.com/archive/2016/01/cheat-sheet-how-to-configure-tempdb-for-microsoft-sql-server/
+[A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]:https://www.brentozar.com/archive/2017/02/tourists-guide-sp_blitz-source-code-part-1-big-picture/
