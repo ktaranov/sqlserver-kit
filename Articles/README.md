@@ -187,6 +187,8 @@
 | [Identifying Existence of Intersections in Intervals]                                                                   | Itzik Ben-Gan                            | 2017-02-08 |
 | [Cheat Sheet  How to Configure TempDB for Microsoft SQL Server]                                                         | Brent Ozar                               | 2016-01-14 |
 | [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |
+| [SQL Server Default Configurations That You Should Change]                                                              | Pio Balistoy                             | 2017-02-06 |
+| [Decoding Key and Page WaitResource for Deadlocks and Blocking]                                                         | Kendra Little                            | 2016-10-17 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -372,3 +374,5 @@
 [Identifying Existence of Intersections in Intervals]:http://sqlmag.com/sql-server/identifying-existence-intersections-intervals
 [Cheat Sheet  How to Configure TempDB for Microsoft SQL Server]:https://www.brentozar.com/archive/2016/01/cheat-sheet-how-to-configure-tempdb-for-microsoft-sql-server/
 [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]:https://www.brentozar.com/archive/2017/02/tourists-guide-sp_blitz-source-code-part-1-big-picture/
+[SQL Server Default Configurations That You Should Change]:https://www.pythian.com/blog/sql-server-default-configurations-change/
+[Decoding Key and Page WaitResource for Deadlocks and Blocking]:https://www.littlekendra.com/2016/10/17/decoding-key-and-page-waitresource-for-deadlocks-and-blocking/
