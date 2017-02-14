@@ -4,11 +4,12 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
  - [SSMS Addins](SSMS_Addins.md)
  - [SSMS Snippets](SSMS_Snippets)
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
- - [MSDN Previous SQL Server Management Studio Releases](https://msdn.microsoft.com/en-us/library/mt238488.aspx)
+ - [Previous SQL Server Management Studio Releases](https://docs.microsoft.com/en-us/sql/ssms/previous-sql-server-management-studio-releases)
  - [SQLSentry Latest Builds of Management Studio](http://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
- - [MSDN SQL Server Tools](https://msdn.microsoft.com/en-us/library/mt238365.aspx)
- - [MSDN Download link](https://msdn.microsoft.com/en-us/library/mt238290.aspx)
- - [MSDN Official page](https://msdn.microsoft.com/en-us/library/hh213248.aspx)
+ - [SQL Server Tools](https://docs.microsoft.com/en-us/sql/ssdt/sql-server-tools)
+ - [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+ - [SQL Server Management Studio (SSMS) - Release Candidate](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms-release-candidate)
+ - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
  - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)
  - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
  - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
@@ -24,6 +25,7 @@ SQL Server Management Studio (17.0 RC1) notes:
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
+| [17.0 RC2 Release]               | 14.0.16150.00 | 2017-01-26   |      682 |
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
 | [16.5.3 Release] **Latest**      | 13.0.16106.4  | 2017-01-26   |      898 |
 | 16.5.2 Release **Deprecated**    | 13.0.16105.4  | 2017-01-18   |      898 |
@@ -39,6 +41,7 @@ SQL Server Management Studio (17.0 RC1) notes:
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.0 RC2 Release]:https://go.microsoft.com/fwlink/?linkid=840957
 [17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
 [16.5.3 Release]:https://go.microsoft.com/fwlink/?LinkID=840946
 [16.5.1 Release]:https://go.microsoft.com/fwlink/?linkid=837453
