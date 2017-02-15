@@ -259,6 +259,8 @@ Headers:
     - [Paste The Plan](https://www.brentozar.com/pastetheplan/)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
     - [Dell Databases Wiki](http://en.community.dell.com/techcenter/storage/w/wiki/5018.sc-series-technical-documents) (by Doug Bernhardt)
+    - [SDUTools - Free Tools for DBAs and Developers on pure TSQL](http://sqldownunder.azurewebsites.net/Resources/SDUTools) (by SQL Down Under)
+    - [SqlServerSearcher - open source C# tool for searching SQL Server objects](https://github.com/CoderAllan/SqlServerSearcher) (by Allan Simonsen)
 
 [*Back to top*](#header02)
 
