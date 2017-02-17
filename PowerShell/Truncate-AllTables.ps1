@@ -10,7 +10,7 @@
 .PARAMETR
     DBname <String> - specify database name
 .EXAMPLE
-Truncate-AllTables -Machine "nl-04"
+Truncate-AllTables -Machine "hostname"
 .NOTES
     Requires: Powershell version 3 or higher, sqlps module
     Tested on: SQL Server 2014/2016
@@ -31,7 +31,7 @@ function Truncate-AllTables {
         [String]$SqlInstance = 'default',
         #Specify database name
         [Parameter(Mandatory=$false)]
-        [String]$DBname = 'NIIGAZ'   
+        [String]$DBname = 'DBName'   
     )
 import-module sqlps -DisableNameChecking;
 set-location c:\;
@@ -42,7 +42,7 @@ $svr = get-item "sqlserver:\sql\$mach\$sql_instance"
 
 [String]$FT_index='';
 
-[Microsoft.SqlServer.Management.Smo.Database]$db = get-item "sqlserver:\sql\$Machine\$SqlInstance\databases\$($DBname)"; # AW2012 
+[Microsoft.SqlServer.Management.Smo.Database]$db = get-item "sqlserver:\sql\$Machine\$SqlInstance\databases\$($DBname)";
 $db.tables.Refresh(); 
 
 #script out FKs and save it to variable $fk_script
