@@ -36,6 +36,7 @@ Headers:
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
+ - [SQL Server Test Data Generation](#sql-server-test data generation)
  - [Free SQL Server and R ebooks](#free-sql-server-and-r-ebooks)
  - [License](#license)
 
@@ -52,6 +53,7 @@ Headers:
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
+ - [Extended Events](/Extended_Events)
  - [Known Errors](/Errors)
  - [Solution](/Solution)
     - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
@@ -65,6 +67,7 @@ Headers:
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
+      - [SQL Server vNext Diagnostic Information Queries](/Scripts/SQL Server vNext Diagnostic Information Queries.sql)
       - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL Server 2016 Diagnostic Information Queries.sql)
       - [SQL Server 2014 Diagnostic Information Queries](/Scripts/SQL Server 2014 Diagnostic Information Queries.sql)
       - [SQL Server 2012 Diagnostic Information Queries](/Scripts/SQL Server 2012 Diagnostic Information Queries.sql)
@@ -82,7 +85,6 @@ Headers:
    - [usp_String_Search](/Stored_Procedure/usp_String_Search.sql) (by Sean Smith)
    - [usp_BulkUpload](/Stored_Procedure/usp_BulkUpload.sql)
    - [usp_TableUnpivot](/Stored_Procedure/usp_TableUnpivot.sql)
-   - [usp_SSIS_ScriptEnvironment](/Stored_Procedure/usp_SSIS_ScriptEnvironment.sql)
    - and many others...
  - [User Defined Function](/User_Defined_Function)
     - [udf_parseJSON](/User_Defined_Function/udf_parseJSON.sql)
@@ -263,7 +265,7 @@ Headers:
     - [SqlServerSearcher - open source C# tool for searching SQL Server objects](https://github.com/CoderAllan/SqlServerSearcher) (by Allan Simonsen)
     - [DbUp is a .NET library that helps you to deploy changes to SQL Server databases](https://github.com/DbUp/DbUp)
     - [SQL Server monitor, manages sql server performance, monitor sql server processes and jobs, analyze performance](https://github.com/unruledboy/SQLMonitor) (by Wilson Chen)
-    
+
 [*Back to top*](#header02)
 
 
@@ -415,6 +417,7 @@ SQL Server:
  - [Brent Ozar SQL Server Setup Checklist eBook](http://u.brentozar.com/eBook_SQL_Server_Setup_Checklist.pdf)
  - [Introducing Microsoft SQL Server 2016](https://info.microsoft.com/Introducing-SQL-Server-2016-eBook.html)
  - [Giving away millions of free Microsoft Ebooks](https://blogs.msdn.microsoft.com/mssmallbiz/2016/07/10/free-thats-right-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepoint-2016-sha/) (by Eric Ligman)
+ - [Free Phil Factor eBook: Confessions of an IT Manager](https://www.simple-talk.com/opinion/opinion-pieces/free-phil-factor-ebook-confessions-of-an-it-manager/) (by Phil Factor)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
