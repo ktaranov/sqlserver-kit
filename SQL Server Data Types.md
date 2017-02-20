@@ -115,45 +115,46 @@ The operand expressions are denoted as expression e1, with precision p1 and scal
 ## SQL Server, SSIS and Biml Data Types
 The table below shows a simplified mapping between SQL Server, SSIS and Biml data types. The table does not include all possible mappings or all data types, but is meant as a quick reference while developing and learning Biml.
 
-| SQL Server       | SSIS                 | Biml                  |
-|------------------|----------------------|-----------------------|
-| bigint           | DT_I8                | Int64                 |
-| binary           | DT_BYTES             | Binary                |
-| bit              | DT_BOOL              | Boolean               |
-| char             | DT_STR               | AnsiStringFixedLength |
-| date             | DT_DBDATE            | Date                  |
-| datetime         | DT_DBTIMESTAMP       | DateTime              |
-| datetime2        | DT_DBTIMESTAMP2      | DateTime2             |
-| datetimeoffset   | DT_DBTIMESTAMPOFFSET | DateTimeOffset        |
-| decimal          | DT_NUMERIC           | Decimal               |
-| float            | DT_R8                | Double                |
-| geography        | DT_IMAGE             | Object                |
-| geometry         | DT_IMAGE             | Object                |
-| hierarchyid      | DT_BYTES             | Object                |
-| image (*)        | DT_IMAGE             | Binary                |
-| int              | DT_I4                | Int32                 |
-| money            | DT_CY                | Currency              |
-| nchar            | DT_WSTR              | StringFixedLength     |
-| ntext (*)        | DT_NTEXT             | String                |
-| numeric          | DT_NUMERIC           | Decimal               |
-| nvarchar         | DT_WSTR              | String                |
-| nvarchar(max)    | DT_NTEXT             | String                |
-| real             | DT_R4                | Single                |
-| rowversion       | DT_BYTES             | Binary                |
-| smalldatetime    | DT_DBTIMESTAMP       | DateTime              |
-| smallint         | DT_I2                | Int16                 |
-| smallmoney       | DT_CY                | Currency              |
-| sql_variant      | DT_WSTR              | Object                |
-| text (*)         | DT_TEXT              | AnsiString            |
-| time             | DT_DBTIME2           | Time                  |
-| timestamp (*)    | DT_BYTES             | Binary                |
-| tinyint          | DT_UI1               | Byte                  |
-| uniqueidentifier | DT_GUID              | Guid                  |
-| varbinary        | DT_BYTES             | Binary                |
-| varbinary(max)   | DT_IMAGE             | Binary                |
-| varchar          | DT_STR               | AnsiString            |
-| varchar(max)     | DT_TEXT              | AnsiString            |
-| xml              | DT_NTEXT             | Xml                   |
+| SQL Server       | SSIS Variables | SSIS Pipeline Buffer | OLE DB            | ADO.NET           | Biml                  |
+|------------------|----------------|----------------------|-------------------|-------------------|-----------------------|
+| bigint           | Int64          | DT_I8                | LARGE_INTEGER     | Int64             | Int64                 |
+| binary           | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| bit              | Boolean        | DT_BOOL              | VARIANT_BOOL      | Boolean           | Boolean               |
+| char             | String         | DT_STR               | VARCHAR           | StringFixedLength | AnsiStringFixedLength |
+| date             | Object         | DT_DBDATE            | DBDATE            | Date              | Date                  |
+| datetime         | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
+| datetime2        | Object         | DT_DBTIMESTAMP2      | DBTIME2           | DateTime2         | DateTime2             |
+| datetimeoffset   | Object         | DT_DBTIMESTAMPOFFSET | DBTIMESTAMPOFFSET | DateTimeOffset    | DateTimeOffset        |
+| decimal          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
+| float            | Double         | DT_R8                | FLOAT             | Double            | Double                |
+| geography        | -              | DT_IMAGE             | -                 | Object            | Object                |
+| geometry         | -              | DT_IMAGE             | -                 | Object            | Object                |
+| hierarchyid      | -              | DT_BYTES             | -                 | Object            | Object                |
+| image (*)        | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
+| int              | Int32          | DT_I4                | LONG              | Int32             | Int32                 |
+| money            | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
+| nchar            | String         | DT_WSTR              | NVARCHAR          | StringFixedLength | StringFixedLength     |
+| ntext (*)        | String         | DT_NTEXT             | -                 | String            | String                |
+| numeric          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
+| nvarchar         | String         | DT_WSTR              | NVARCHAR          | String            | String                |
+| nvarchar(max)    | Object         | DT_NTEXT             | -                 | -                 | String                |
+| real             | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
+| rowversion       | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| smalldatetime    | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
+| smallint         | Int16          | DT_I2                | SHORT             | Int16             | Int16                 |
+| smallmoney       | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
+| sql_variant      | Object         | DT_WSTR, DT_NTEXT    | -                 | Object            | Object                |
+| table            | Object         | -                    | -                 | -                 | -                     |
+| text (*)         | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| time             | Object         | DT_DBTIME2           | DBTIME2           | Time              | Time                  |
+| timestamp (*)    | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| tinyint          | Byte           | DT_UI1               | BYTE              | Byte              | Byte                  |
+| uniqueidentifier | String, Object | DT_GUID              | GUID              | Guid              | Guid                  |
+| varbinary        | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| varbinary(max)   | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
+| varchar          | String         | DT_STR               | VARCHAR           | String            | AnsiString            |
+| varchar(max)     | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| xml              | Object         | DT_NTEXT             | -                 | -                 | Xml                   |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
 
