@@ -193,6 +193,10 @@
 | [On the Advantages of DateTime2(n) over DateTime]                                                                       | William Assaf                            | 2012-12-04 |
 | [Build Your Own Tools]                                                                                                  | Michael J. Swart                         | 2016-09-23 |
 | [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 |
+| [Compression and its Effects on Performance]                                                                            | Erin Stellato                            | 2017-01-20 |
+| [Does Truncate Table Reset Statistics]                                                                                  | Kendra Little                            | 2016-12-08 |
+| [SQL Server Database Decommissioning Check List]                                                                        | Svetlana Golovko                         | 2016-06-23 |
+| [New SQL Server Database Request Questionnaire and Checklist]                                                           | Svetlana Golovko                         | 2015-02-24 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -384,3 +388,7 @@
 [On the Advantages of DateTime2(n) over DateTime]:http://www.sqltact.com/2012/12/on-advantages-of-datetime2n-over.html
 [Build Your Own Tools]:http://michaeljswart.com/2016/09/build-your-own-tools/
 [Enhanced T-SQL Error Handling With Extended Events]:http://itsalljustelectrons.blogspot.ru/2016/09/Enhanced-TSQL-Error-Handling-With-Extended-Events.html
+[Compression and its Effects on Performance]:https://sqlperformance.com/2017/01/sql-performance/compression-effect-on-performance
+[Does Truncate Table Reset Statistics]:https://www.littlekendra.com/2016/12/08/does-truncate-table-reset-statistics/
+[SQL Server Database Decommissioning Check List]:https://www.mssqltips.com/sqlservertip/4333/sql-server-database-decommissioning-check-list/
+[New SQL Server Database Request Questionnaire and Checklist]:https://www.mssqltips.com/sqlservertip/3523/new-sql-server-database-request-questionnaire-and-checklist/
