@@ -38,8 +38,6 @@ set-location c:\;
 Write-Host "[*] Start at $(Get-Date -Format 'HH.mm.ss')" -foreground:yellow
 $sw = [Diagnostics.Stopwatch]::StartNew()
 
-$svr = get-item "sqlserver:\sql\$mach\$sql_instance"
-
 [String]$FT_index='';
 
 [Microsoft.SqlServer.Management.Smo.Database]$db = get-item "sqlserver:\sql\$Machine\$SqlInstance\databases\$($DBname)";
