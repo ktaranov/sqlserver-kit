@@ -2681,11 +2681,15 @@ Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in S
 
 
 **Trace Flag: 8666**<br />
-Function: CQScanPartitionSortNew is one of only two sort classes that sets the Soft Sort property exposed when Sort operator execution plan properties are generated with undocumented trace flag 8666 enabled<br />
+**Undocumented trace flag**<br />
+Function: Included in execution plans are the names of the stats it used to come up with the plan.
+Using a bit o' XML magic and over time, it allows you to clearly identify which stats are actually in use so that you can delete unused stats.
+CQScanPartitionSortNew is one of only two sort classes that sets the Soft Sort property exposed when Sort operator execution plan properties are generated with undocumented trace flag 8666 enabled<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: [Yet another X-Ray for the QP]<br />
 Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<br />
-Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536
+Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536<br />
+Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-server-table-statistics/
 
 
 **Trace Flag: 8671**<br />
