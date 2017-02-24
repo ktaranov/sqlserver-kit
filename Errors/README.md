@@ -50,6 +50,8 @@ Error code equal `message_id` from `sys.messages`
 
 | Error Code | Description                                                                                                                      | Article                                                    |
 |-----------:|----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|        657 | Could not disable support for increased partitions in database ...                                                             | [SQL SERVER – Disabling 15000 Partitions (15k)]            |
+|        703 | There is insufficient system memory in resource pool 'default' to run this query.                                                | [703_link1]                                                |
 |        824 | SQL Server detected a logical consistency-based I/O error                                                                        | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                  | [CREATE DATABASE – I’ve not seen that before.]             |
 |       1904 | The statistics on table has 65 columns in the key list                                                                           | [SQL SERVER - Fix: Error: Msg 1904]                        |
@@ -60,12 +62,15 @@ Error code equal `message_id` from `sys.messages`
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                 | [When SQL Server fails to create a secondary data file]    |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                                           | [Discuss Execute(SQL) At LinkedServer]                     |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...                                   | [Discuss Execute(SQL) At LinkedServer]                     |
+|       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.                                        | [SQL SERVER – Disabling 15000 Partitions (15k)]            |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                                              | [Query Processor Error with ColumnStore Indexes]           |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                 | [Unable to drop a user in a database]                      |
 |      17182 | Tcp port is already in use                                                                                                       | [TCP Port Is Already In Use]                               |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                               | [Login from an Untrusted Domain]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                         | [Why won’t my SQL Logins work?]                            |
 
+[SQL SERVER – Disabling 15000 Partitions (15k)]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
+[703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
