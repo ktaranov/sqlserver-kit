@@ -197,6 +197,11 @@
 | [Does Truncate Table Reset Statistics]                                                                                  | Kendra Little                            | 2016-12-08 |
 | [SQL Server Database Decommissioning Check List]                                                                        | Svetlana Golovko                         | 2016-06-23 |
 | [New SQL Server Database Request Questionnaire and Checklist]                                                           | Svetlana Golovko                         | 2015-02-24 |
+| [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 |
+| [Adding Partitions to the Lower End of a Left Based Partition Function]                                                 | Kendra Little                            | 2017-02-21 |
+| [Don't Panic  Busting a File Space Myth]                                                                                | Tim Ford                                 | 2016-11-14 |
+| [#BackToBasics : Dating Responsibly]                                                                                    | Aaron Bertrand                           | 2016-04-06 |
+| [#BackToBasics : Common Table Expressions (CTEs)]                                                                       | Aaron Bertrand                           | 2016-01-06 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -392,3 +397,8 @@
 [Does Truncate Table Reset Statistics]:https://www.littlekendra.com/2016/12/08/does-truncate-table-reset-statistics/
 [SQL Server Database Decommissioning Check List]:https://www.mssqltips.com/sqlservertip/4333/sql-server-database-decommissioning-check-list/
 [New SQL Server Database Request Questionnaire and Checklist]:https://www.mssqltips.com/sqlservertip/3523/new-sql-server-database-request-questionnaire-and-checklist/
+[Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]:https://www.brentozar.com/archive/2017/02/lets-corrupt-sql-server-database-together/
+[Adding Partitions to the Lower End of a Left Based Partition Function]:https://www.littlekendra.com/2017/02/21/adding-partitions-to-the-lower-end-of-a-left-based-partition-function/
+[Don't Panic  Busting a File Space Myth]:http://sqlmag.com/database-administration/dont-panic-busting-file-space-myth
+[#BackToBasics : Dating Responsibly]:https://blogs.sentryone.com/aaronbertrand/backtobasics-dating-responsibly/
+[#BackToBasics : Common Table Expressions (CTEs)]:https://blogs.sentryone.com/aaronbertrand/backtobasics-ctes/
