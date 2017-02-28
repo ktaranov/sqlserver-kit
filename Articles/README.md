@@ -202,6 +202,9 @@
 | [Don't Panic  Busting a File Space Myth]                                                                                | Tim Ford                                 | 2016-11-14 |
 | [#BackToBasics : Dating Responsibly]                                                                                    | Aaron Bertrand                           | 2016-04-06 |
 | [#BackToBasics : Common Table Expressions (CTEs)]                                                                       | Aaron Bertrand                           | 2016-01-06 |
+| [How to Establish Dedicated Admin Connection (DAC) to SQL Server]                                                       | Mika Wendelius                           | 2016-10-05 |
+| [SQL and SQL only Best Practice]                                                                                        | Nagaraj Venkatesan                       | 2013-05-27 |
+| [There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]                        | Grant Fritchey                           | 2016-08-04 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -402,3 +405,6 @@
 [Don't Panic  Busting a File Space Myth]:http://sqlmag.com/database-administration/dont-panic-busting-file-space-myth
 [#BackToBasics : Dating Responsibly]:https://blogs.sentryone.com/aaronbertrand/backtobasics-dating-responsibly/
 [#BackToBasics : Common Table Expressions (CTEs)]:https://blogs.sentryone.com/aaronbertrand/backtobasics-ctes/
+[How to Establish Dedicated Admin Connection (DAC) to SQL Server]:https://www.codeproject.com/tips/1136361/how-to-establish-dedicated-admin-connection-dac-to
+[SQL and SQL only Best Practice]:http://strictlysql.blogspot.ru/search/label/Best%20Practices
+[There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]:https://dzone.com/articles/there-is-no-difference-between-table-variables-tem
