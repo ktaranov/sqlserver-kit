@@ -12,7 +12,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2015-11-17   | 2008/2012/2014                                                    | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014                                                    | Red Gate             | No           |  $495 |
 | [Supratimas](#supratimas)                             | [Supratimas]                  | 2015-01-27   | 2008/2012/2014                                                    | TTRider LLC          | Yes          |   $35 |
-| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2015-10-07   | 2008/2012/2014                                                    | Mladen Prajdić       | No           |   €30 |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2008/2012/2014/2016                                               | Mladen Prajdić       | No           |   €30 |
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014                                                    | Gudu Software        | No           |   $50 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016                                               | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                                                    | Dave ballantyne      | Yes          | No    |
@@ -158,8 +158,8 @@ SQL Server query plan execution visualizer
 
 ## SSMS Tools Pack <a id="ssms-tools-pack"></a>
 Download page: [SSMS Tools Pack]<br/>
-Release date: 2015-10-07<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-11-28<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Developer: Mladen Prajdić<br/>
 Free version: No<br/>
 Price: €30
