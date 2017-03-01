@@ -197,6 +197,11 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                 | 2016-02-19   | Gudu Software       | No             |   $50 |
 | [Database .NET](#database-net)                                        | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Database .NET]                      | 2017-01-13   | fish's dotNET       | Non-commercial |   $69 |
 | [dbMigration .NET](#dbmegration-net)                                  | Oracle, MySQL, PostgreSQL, Other | No             | [DC], [SC] | [dbMigration .NET]                   | 2017-01-13   | fish's dotNET       | Non-commercial |   $49 |
+| [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                          | 2016-12-13   | Bill Graziano       | Non-commercial | No    |
+| [Database Experimentation Assistant](#dea)                            | No                               | No             | [T]        | [Database Experimentation Assistant] | 2016-11-21   | Microsoft           | Yes            | No    |
+| [Data Platform Studio](#dps)                                          | SQL Azure                        | No             | [MG]       | [Data Platform Studio]               | ?            | Red Gate Software   | Yes            | ?     |
+| [Flyway](#flyway)                                                     | Oracle, SQL Azure, MySQL, Other  | No             | [MG]       | [Flyway]                             | ?            | boxfuse             | Open Source    | No    |
+| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [DC]       | [Liquibase]                          | 2016-10-13   | Liquibase           | Open Source    | No    |
 
 
 ## SSMS <a id="ssms"></a>
@@ -2575,6 +2580,76 @@ dbMigration .NET is a simple, easy and intuitive multiple database migration and
 With it you can easily migrate schema and data between different databases without complicated procedures.
 
 
+## Is It SQL <a id="is-it-sql"></a>
+Download page: [Is It SQL]<br/>
+Release date: 2016-12-13<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Author: Bill Graziano<br/>
+Free version: Non-commercial<br/>
+Price: No
+
+This started as a simple SQL Server monitoring solution for my clients. The first question I get when applications 
+have issues is "Is It SQL Server?" I wanted a simple monitoring service I could run onsite that would answer that question. 
+It had to be simple enough that a non-DBA could look at it and decide whether to call me.
+
+
+## Database Experimentation Assistant <a id="dea"></a>
+Download page: [Database Experimentation Assistant]<br/>
+Release date: 2016-11-21<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Database Experimentation Assistant is the new A/B testing solution for SQL Server upgrades, enables customers to gather performance 
+insights for upgrades by conducting experiments across two SQL Server versions using production workloads enabling customers to conduct 
+experiments on database workloads across two versions of SQL Server. 
+
+
+## Data Platform Studio <a id="dps"></a>
+Download page: [Data Platform Studio]<br/>
+Release date: ?<br/>
+Support Version: SQL Server, SQL Azure<br/>
+Author: Red Gate Software<br/>
+Free version: Yes<br/>
+Price: ?
+
+Simplify the process of migrating data from your on-premise SQL Server to Azure SQL Data Warehouse with the Data Platform Studio importer. 
+Automatically, and in far less time than it takes to handle migrations manually, it:
+ - Makes schema compatibility fixes to prepare your Azure SQL Data Warehouse for your database
+ - Compresses your data so it uploads to Azure efficiently
+ - Utilizes the MPP power of Azure SQL Data Warehouse to ingest the data quickly
+
+
+## Flyway <a id="flyway"></a>
+Download page: [Data Platform Studio]<br/>
+Release date: ?<br/>
+Support Version: Oracle, SQL Server, SQL Azure, MySQL, Other<br/>
+Author: boxfuse<br/>
+Free version: Open Source<br/>
+Price: No
+
+Flyway is an open-source database migration tool. It strongly favors simplicity and convention over configuration.
+It is based around just 6 basic commands: Migrate, Clean, Info, Validate, Baseline and Repair.
+Migrations can be written in SQL (database-specific syntax (such as PL/SQL, T-SQL, ...) is supported) or Java (for advanced data transformations or dealing with LOBs).
+It has a Command-line client. If you are on the JVM, we recommend using the Java API (also works on Android) for migrating the database on application startup. Alternatively, you can also use the Maven plugin, Gradle plugin, SBT plugin or the Ant tasks.
+
+
+## Liquibase <a id="liquibase"></a>
+Download page: [Liquibase]<br/>
+Release date: 2016-10-13<br/>
+Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
+Author: Liquibase<br/>
+Free version: Open Source<br/>
+Price: No
+
+Changelog files can be be arbitrarily nested for better management. Change Sets are uniquely identified by the "author" and "id" 
+attribute along with with the location of the changelog file and are the units Liquibase tracks execution of. 
+Each changeset generally contains a change which describes the change/refactoring to apply to the database.
+Preconditions can be applied to either the changelog as a whole or individual change sets. 
+Contexts can be applied to changesets to control which are ran in different environments.
+
+
 [SSMS]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -2750,3 +2825,8 @@ With it you can easily migrate schema and data between different databases witho
 [SQL Pretty Printer]:http://www.dpriver.com/products/sqlpp/desktop_index.php
 [Database .NET]:http://fishcodelib.com/Database.htm
 [dbMigration .NET]:http://fishcodelib.com/dbMigration.htm
+[Is It SQL]:http://www.scalesql.com/isitsql
+[Database Experimentation Assistant]:https://blogs.technet.microsoft.com/dataplatforminsider/2016/11/22/technical-preview-database-experimentation-assistant
+[Data Platform Studio]:http://www.red-gate.com/products/azure-development/data-platform-studio
+[Flyway]:https://flywaydb.org
+[Liquibase]:http://www.liquibase.org
