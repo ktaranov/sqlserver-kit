@@ -205,6 +205,11 @@
 | [How to Establish Dedicated Admin Connection (DAC) to SQL Server]                                                       | Mika Wendelius                           | 2016-10-05 |
 | [SQL and SQL only Best Practice]                                                                                        | Nagaraj Venkatesan                       | 2013-05-27 |
 | [There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]                        | Grant Fritchey                           | 2016-08-04 |
+| [Availability Group on SQL Server 2016]                                                                                 | Guy Glantser                             | 2017-02-01 |
+| [Using SQL Server and R Services for analyzing DBA Tasks]                                                               | Tomaž Kaštrun                            | 2017-02-17 |
+| [SQLskills SQL101: Dealing with SQL Server corruption]                                                                  | Paul Randal                              | 2017-02-28 |
+| [Advanced Analytics with R & SQL: Part I - R Distributions]                                                             | Frank A. Banin                           | 2016-10-31 |
+| [T-SQL Tuesday #85  STOP! Restore Time!]                                                                                |  Derik Hammer                            | 2016-12-13 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -408,3 +413,8 @@
 [How to Establish Dedicated Admin Connection (DAC) to SQL Server]:https://www.codeproject.com/tips/1136361/how-to-establish-dedicated-admin-connection-dac-to
 [SQL and SQL only Best Practice]:http://strictlysql.blogspot.ru/search/label/Best%20Practices
 [There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]:https://dzone.com/articles/there-is-no-difference-between-table-variables-tem
+[Availability Group on SQL Server 2016]:http://www.madeiradata.com/availability-group-sql-server-2016/
+[Using SQL Server and R Services for analyzing DBA Tasks]:http://www.sqlservercentral.com/articles/R+Language/151405/
+[SQLskills SQL101: Dealing with SQL Server corruption]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-dealing-with-sql-server-corruption/
+[Advanced Analytics with R & SQL: Part I - R Distributions]:http://www.sqlservercentral.com/articles/Data+Science/146555/
+[T-SQL Tuesday #85  STOP! Restore Time!]:http://www.sqlhammer.com/t-sql-tuesday-85-stop-restore-time
