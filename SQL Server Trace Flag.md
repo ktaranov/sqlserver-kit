@@ -38,6 +38,9 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Robert L Davis ([blog](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
  - Lonny Niederstadt ([blog](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
  - Andrzej Kukuła
+ - Alexander Titenko ([gtihub](https://github.com/AlexTitenko))
+ - Albert van der Sel
+ - Amit Banerjee
 
 
 ## What are Microsoft SQL Server Trace Flags? <a id="what-are-microsoft-sql-server-trace-flags"></a>
