@@ -27,16 +27,16 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
 
 **Great thanks to:**
- - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com)|[t](https://twitter.com/sqlcrossjoin))
- - Steinar Andersen ([b](http://www.sqlservice.se/)|[t](https://twitter.com/SQLSteinar))
- - Brent Ozar ([b](https://www.brentozar.com/)|[t](https://twitter.com/BrentO))
+ - Aaron Morelli ([blog](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
+ - Steinar Andersen ([blog](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
+ - Brent Ozar ([blog](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
  - Yusuf Anis
  - Lars Utterström
  - Martin Höglund
  - Håkan Winther
  - Toine Rozemeijer
- - Robert L Davis ([b](http://www.sqlsoldier.com/wp/)|[t](https://twitter.com/SQLSoldier))
- - sql_handle aka @sql_handle
+ - Robert L Davis ([blog](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
+ - Lonny Niederstadt ([blog](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
  - Andrzej Kukuła
 
 
