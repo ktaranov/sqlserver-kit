@@ -12,6 +12,7 @@ Headers:
  - [Trace flags list](#trace-flags-list)
 
 Source links:
+ - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/) (by Aaron Morelli)
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
  - [MSDN ms188396]
@@ -19,22 +20,22 @@ Source links:
  - [TECHNET List Of SQL Server Trace Flags]
  - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
  - [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
- - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/)
  - **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number.
 A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers.
 (Parameters specified in the Control Panel startup window are not read.)**: https://technet.microsoft.com/en-us/en-en/library/ms190737%28v=sql.120%29.aspx
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
 
-**Thanks to:**
- - Steinar Andersen
- - Brent Ozar
+**Great thanks to:**
+ - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com)|[t](https://twitter.com/sqlcrossjoin))
+ - Steinar Andersen ([b](http://www.sqlservice.se/)|[t](https://twitter.com/SQLSteinar))
+ - Brent Ozar ([b](https://www.brentozar.com/)|[t](https://twitter.com/BrentO))
  - Yusuf Anis
  - Lars Utterström
  - Martin Höglund
  - Håkan Winther
  - Toine Rozemeijer
- - Robert L Davis aka @sqlsoldier
+ - Robert L Davis ([b](http://www.sqlsoldier.com/wp/)|[t](https://twitter.com/SQLSoldier))
  - sql_handle aka @sql_handle
  - Andrzej Kukuła
 
@@ -3079,7 +3080,7 @@ Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in S
 
 **Trace Flag: 9471**<br />
 Function: Causes SQL Server to generate a plan using minimum selectivity for single-table filters, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
-Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
+Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />

@@ -48,7 +48,7 @@ Headers:
  - [SQL Server Licensing](/SQL Server Licensing.md)
  - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
  - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 510 Trace Flags') (**Complete list - 510 trace flags**)
- - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2016**)
+ - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
@@ -93,7 +93,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 175 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 180 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 

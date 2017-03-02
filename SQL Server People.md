@@ -19,7 +19,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Gail Shaw           | [Gail Blog]                | ZAF     | Johannesburg     | [@SQLintheWild]    | NULL                              | 8   | [Shaw MVP]       |
 | Aaron Bertrand      | [Aaron Articles]           |         | NULL             | [@AaronBertrand]   | NULL                              | 19  | [Bertrand MVP]   |
 | Kevin Kline         | [Kevin Blog]               |         | NULL             | [@kekline]         | kevin_e_kline@yahoo.com           | 13  | [Kline MVP]      |
-| Robert Virag        | [Robert Blog]              |         | NULL             | NULL               | NULL                              | 0   | -                |
 | John Sansom         | [John Blog]                |         | NULL             | [@SqlBrit]         | NULL                              | 0   | -                |
 | Jes Borland         | [Jes Articles]             |         | NULL             | [@grrl_geek]       | NULL                              | 4   | [Borland MVP]    |
 | Sean Smith          | [Sean Scripts]             |         | NULL             | NULL               | NULL                              | 0   | -                |
