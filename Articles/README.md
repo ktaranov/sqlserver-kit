@@ -209,7 +209,12 @@
 | [Using SQL Server and R Services for analyzing DBA Tasks]                                                               | Tomaž Kaštrun                            | 2017-02-17 |
 | [SQLskills SQL101: Dealing with SQL Server corruption]                                                                  | Paul Randal                              | 2017-02-28 |
 | [Advanced Analytics with R & SQL: Part I - R Distributions]                                                             | Frank A. Banin                           | 2016-10-31 |
-| [T-SQL Tuesday #85  STOP! Restore Time!]                                                                                |  Derik Hammer                            | 2016-12-13 |
+| [T-SQL Tuesday #85  STOP! Restore Time!]                                                                                | Derik Hammer                             | 2016-12-13 |
+| [Filtered Indexes: Rowstore vs Nonclustered Columnstore]                                                                | Kendra Little                            | 2016-11-10 |
+| [ALTER SCHEMA TRANSFER for Zero Downtime Database Upgrades]                                                             | Dave Wentzel                             | 2013-05-21 |
+| [Delayed Durability in SQL Server 2014]                                                                                 | Aaron Bertrand                           | 2014-04-28 |
+| [Daylight Savings end affects not only you, but your SQL Server too]                                                    | Aaron Bertrand                           | 2014-04-28 |
+| [Searching Strings in SQL Server is Expensive]                                                                          | Brent Ozar                               | 2016-10-18 |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -418,3 +423,8 @@
 [SQLskills SQL101: Dealing with SQL Server corruption]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-dealing-with-sql-server-corruption/
 [Advanced Analytics with R & SQL: Part I - R Distributions]:http://www.sqlservercentral.com/articles/Data+Science/146555/
 [T-SQL Tuesday #85  STOP! Restore Time!]:http://www.sqlhammer.com/t-sql-tuesday-85-stop-restore-time
+[Filtered Indexes: Rowstore vs Nonclustered Columnstore]:https://www.littlekendra.com/2016/11/10/filtered-indexes-rowstore-vs-nonclustered-columnstore/
+[ALTER SCHEMA TRANSFER for Zero Downtime Database Upgrades]:http://www.davewentzel.com/content/alter-schema-transfer-zero-downtime-database-upgrades
+[Delayed Durability in SQL Server 2014]:https://sqlperformance.com/2014/04/io-subsystem/delayed-durability-in-sql-server-2014
+[Daylight Savings end affects not only you, but your SQL Server too]:http://www.sqldoubleg.com/2015/10/28/daylight-savings-end-affects-not-only-you-but-your-sql-server-too/
+[Searching Strings in SQL Server is Expensive]:https://www.brentozar.com/archive/2016/10/searching-strings-sql-server-expensive/
