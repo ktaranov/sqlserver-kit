@@ -9,6 +9,7 @@ Headers:
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
  - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
  - [What Are the Optimizer Rules?](#what-are-the-optimizer-rules)
+ - [Recommended Trace Flags](#recommended-trace-flags)
  - [Trace flags list](#trace-flags-list)
 
 Source links:
@@ -25,6 +26,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
 (Parameters specified in the Control Panel startup window are not read.)**: https://technet.microsoft.com/en-us/en-en/library/ms190737%28v=sql.120%29.aspx
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
+ - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
 
 **Great thanks to:**
  - Aaron Morelli ([blog](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
@@ -41,6 +43,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Alexander Titenko ([gtihub](https://github.com/AlexTitenko))
  - Albert van der Sel
  - Amit Banerjee
+ - Erin Stellato ([blog](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
 
 
 ## What are Microsoft SQL Server Trace Flags? <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -112,7 +115,27 @@ GO
 | LASJNtoSM | Left Anti Semi Join to Sort Merge |
 
 
-## Trace flags list <a id="trace-flags-list"></a>
+## Recommended Trace Flags
+<a id="recommended-trace-flags"></a>
+
+ - [Trace Flag 1118](#1118) (for versions prior to SQL Server 2016)
+ - [Trace Flag 3023](#3023) (for versions prior to SQL Server 2014)
+ - [Trace Flag 3226](#3226)
+
+Trace flag 1118 addresses contention that can exist on a particular type of page in a database, the SGAM page.
+This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
+In SQL Server 2016, you change this behavior using the MIXED_PAGE_ALLOCATION database option, and there is no need for TF 1118.
+
+Trace flag 3023 is used to enable the CHECKSUM option, by default, for all backups taken on an instance.
+With this option enabled, page checksums are validated during a backup, and a checksum for the entire backup is generated.
+Starting in SQL Server 2014, this option can be set instance-wide through sp_configure (‘backup checksum default’).
+
+The last trace flag, 3226, prevents the writing of successful backup messages to the SQL Server ERRORLOG.
+Information about successful backups is still written to msdb and can be queried using T-SQL.
+For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.  As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+
+## Trace Flags List
+<a id="trace-flags-list"></a>
 Summary: **510 trace flags**
 
 
@@ -591,6 +614,7 @@ Scope: global only
 
 
 **Trace Flag: 1118**<br />
+<a id="1118"></a>
 Function: Removes most single page allocations on the server, reducing contention on the SGAM page.
 When a new object is created, by default, the first eight pages are allocated from different extents (mixed extents).
 Afterwards, when more pages are needed, those are allocated from that same extent (uniform extent).
@@ -1396,6 +1420,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-s
 
 
 **Trace Flag: 3023**<br />
+<a id="3023"></a>
 Function: Enables CHECKSUM option as default for BACKUP command<br />
 **Note: Beginning with SQL Server 2014 this behavior is controlled by setting the backup checksum default configuration option.
 For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx)**.<br />
@@ -1515,6 +1540,7 @@ Link: [TECHNET List Of SQL Server Trace Flags]
 
 
 **Trace Flag: 3226**<br />
+<a id="3226"></a>
 Function: By default, every successful backup operation adds an entry in the SQL Server error log and in the system event log.
 If you create very frequent log backups, these success messages accumulate quickly, resulting in huge error logs in which finding other messages is problematic.
 With this trace flag, you can suppress these log entries. This is useful if you are running frequent log backups and if none of your scripts depend on those entries.<br />
@@ -1522,8 +1548,6 @@ Link: [MSDN ms188396]<br />
 Link: http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/10/30/when-is-too-much-success-a-bad-thing<br />
 Scope: global only
-
-*Thanks to: @lwiederstein (https://twitter.com/lwiederstein)*
 
 
 **Trace Flag: 3422**<br />
