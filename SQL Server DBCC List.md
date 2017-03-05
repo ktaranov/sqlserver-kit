@@ -49,9 +49,9 @@ DBCC checkalloc [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_
 
 DBCC checkcatalog [('database_name')] [WITH NO_INFOMSGS]
 
-DBCC checkconstraints [( 'tab_name' | tab_id | 'constraint_name' | constraint_id )] [WITH ALL_CONSTRAINTS | ALL_ERRORMSGS]
+DBCC CHECKCONSTRAINTS [( 'tab_name' | tab_id | 'constraint_name' | constraint_id )] [WITH ALL_CONSTRAINTS | ALL_ERRORMSGS] https://msdn.microsoft.com/en-us/library/ms189496.aspx
 
-DBCC checkdb [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_ERRORMSGS] [, PHYSICAL_ONLY][, ESTIMATEONLY][,DBCC TABLOCK]
+DBCC CHECKDB [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_ERRORMSGS] [, PHYSICAL_ONLY][, ESTIMATEONLY][,DBCC TABLOCK] https://msdn.microsoft.com/en-us/library/ms176064.aspx
 
 DBCC checkdbts (dbid, newTimestamp)]
 
@@ -61,8 +61,7 @@ DBCC checkident ('table_name'[, { NORESEED | {RESEED [, new_reseed_value] } } ] 
 
 DBCC checkprimaryfile ( {'FileName'} [, opt={0|1|2|3} ])
 
-DBCC checktable ('table_name'[, {NOINDEX | index_id | REPAIR}])
-[WITH NO_INFOMSGS[, ALL_ERRORMSGS] [, PHYSICAL_ONLY][, ESTIMATEONLY][, TABLOCK]]
+DBCC CHECKTABLE ('table_name'[, {NOINDEX | index_id | REPAIR}]) [WITH NO_INFOMSGS[, ALL_ERRORMSGS] [, PHYSICAL_ONLY][, ESTIMATEONLY][, TABLOCK]] https://msdn.microsoft.com/en-us/library/ms174338.aspx
 
 DBCC cleantable ('database_name'|database_id, 'table_name'|table_id,[batch_size])
 
@@ -70,7 +69,7 @@ DBCC cacheprofile [( {actionid} [, bucketid])
 
 DBCC clearspacecaches ('database_name'|database_id, 'table_name'|table_id, 'index_name'|index_id)
 
-DBCC CLONEDATABASE -- https://support.microsoft.com/en-us/kb/3177838
+DBCC CLONEDATABASE https://support.microsoft.com/en-us/kb/3177838
 
 DBCC collectstats (on | off)
 

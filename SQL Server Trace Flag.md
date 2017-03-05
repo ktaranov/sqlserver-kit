@@ -181,6 +181,16 @@ Function: FIX: Error message when you schedule a Replication Merge Agent job to 
 Link: None
 
 
+**Trace Flag: 139**<br />
+Function: Forces correct conversion semantics in the scope of DBCC check commands like [DBCC CHECKDB], [DBCC CHECKTABLE] and [DBCC CHECKCONSTRAINTS], when analyzing the improved precision and conversion logic introduced with compatibility level 130 for specific data types, on a database that has a lower compatibility level.
+**Note: This trace flag applies to SQL Server 2016 RTM CU3, SQL Server 2016 SP1 and higher builds.**<br />
+**WARNING: Trace flag 139 is not meant to be enabled continuously in a production environment, and should be used for the sole purpose of performing database validation checks described in this Microsoft Support article.
+It should be immediately disabled after validation checks are completed.**<br />
+Link: http://support.microsoft.com/help/4010261<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
 **Trace Flag: 144**<br />
 Function: Force server side bucketization.
 For legacy applications where change to client side code is not an option and
@@ -199,7 +209,7 @@ Link: http://support.microsoft.com/kb/926292
 
 
 **Trace Flag: 174**<br />
-Function: Increases the SQL Server Database Engine plan cache bucket count from 40,009 to 160,001 on 64-bit systems.<br />
+Function: Increases the SQL Server Database Engine plan cache bucket count from 40009 to 160001 on 64-bit systems.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/en-us/kb/3026083<br />
 Link: [MSDN ms188396]<br />
@@ -3298,6 +3308,9 @@ Scope: global or session
 
 
 [MSDN ms188396]:https://msdn.microsoft.com/en-us/library/ms188396.aspx
+[DBCC CHECKDB]:https://msdn.microsoft.com/en-us/library/ms176064.aspx
+[DBCC CHECKTABLE]:https://msdn.microsoft.com/en-us/library/ms174338.aspx
+[DBCC CHECKCONSTRAINTS]:https://msdn.microsoft.com/en-us/library/ms189496.aspx
 [Niko Neugebauer Columnstore Indexes – part 86]:http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
 [Niko Neugebauer Columnstore Indexes – part 35]:http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
 [Microsoft SQL Server 2005 TPC-C Trace Flags]:http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
