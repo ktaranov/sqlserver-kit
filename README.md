@@ -140,6 +140,7 @@ Headers:
     - [DallasDBAs Blog](http://dallasdbas.com/blog/)
     - [UpSearch Blog](https://upsearch.com/blog/)
     - [ProData Blog](http://blogs.prodata.ie/)
+    - [Red9 SQL Server Performance Blog](https://red9.com/blog/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -195,6 +196,7 @@ Headers:
      - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
      - [How to Think Like the SQL Server Engine](https://learnfrom.brentozar.com/courses/how-to-think-like-the-engine-an-introduction-to-sql-server-internals/)
      - [Number and Date Tables](https://www.brentozar.com/archive/2016/01/video-free-training-of-the-week-number-and-date-tables/)
+     - [Free SQL Tutorials](http://www.guru99.com/sql.html)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
@@ -205,6 +207,7 @@ Headers:
      - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
      - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
  - SQL Server Backwards Compatibility
+   - [VNext Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.140).aspx)
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
    - [2012 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
@@ -426,6 +429,7 @@ R:
  - [Little Book of R for Biomedical Statistics](http://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Little Book of R for Multivariate Analysis](http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Text Mining with R](http://tidytextmining.com/) (by Julia Silge and David Robinson)
+ - [An Introduction to Statistical Learning with Applications in R](http://www-bcf.usc.edu/~gareth/ISL/) (by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani)
 
 [*Back to top*](#header08)
 
