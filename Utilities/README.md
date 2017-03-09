@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **197** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **198** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
@@ -219,6 +219,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            | $698  |
 | [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            | No    |
 | [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [Ssqlcmd for Mac and Linux]                | 2017-01-26   | Soheil Rashidi       | Open Source    | No    |
+| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                             | ?            | Datamate Technology  | ?              | ?     |
 
 
 ## SSMS
@@ -3081,6 +3082,18 @@ Price: No
 sqlcmd for Mac and Linux
 
 
+## SQL Migrator
+<a id="sql-migrator"></a>
+Download page: [SQL Migrator]<br/>
+Release date: ?<br/>
+Support Version: 2005/2008/2012/2014/2016<br/>
+Author: Datamate Technology<br/>
+Free version: ?<br/>
+Price: ?
+
+Automatically upgrade objects within a SQL Server Instance from lower to higher versions or just refresh Objects between the same Versions
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3277,3 +3290,4 @@ sqlcmd for Mac and Linux
 [Uptime Infrastructure Monitor]:https://www.idera.com/it-infrastructure-management-and-monitoring
 [SQL Server Migration Assistant for MySQL]:https://msdn.microsoft.com/en-us/library/hh313109%28v=sql.110%29.aspx?f=255&MSPPError=-2147217396
 [sqlcmd for Mac and Linux]:https://github.com/soheilpro/sqlcmd
+[SQL Migrator]:http://www.datamatetechnology.com/sqlmigrator.html
