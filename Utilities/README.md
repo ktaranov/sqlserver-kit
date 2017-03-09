@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **198** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **197** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
@@ -17,12 +17,12 @@ Utility types (main purpose) in braces `{}` current counts:
  - **[IDX]**: Index manager {1}
  - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {88}
+ - **[?]**: Not yet classified {99}
 
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
-| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                     | 2016-12-05   | Microsoft            | Yes            | No    |
+| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                     | 2017-01-26   | Microsoft            | Yes            | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                              | 2012-02-11   | Microsoft            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]             | 2014-12-12   | Microsoft            | Yes            | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                | 2016-02-23   | Microsoft            | Yes            | No    |
@@ -108,6 +108,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Comparison Toolset](#sql-comparison-toolset)                     | No                               | No             | [DC], [SC] | [SQL Comparison Toolset]                   | ?            | Idera                | No             |  $745 |
 | [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]                 |              | Idera                | No             | $1287 |
 | [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                        | ?            | Idera                | No             | $1420 |
+| [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]            | ?            | Idera                | No             | ?     |
 | [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                   | 2016-09-16   | Devart               | No             |  $149 |
 | [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                     | 2016-09-28   | Devart               | No             |  $149 |
 | [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                   | 2016-09-16   | Devart               | No             |  $249 |
@@ -216,14 +217,15 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                | ?            | Quest Software       | Yes            | ?     |
 | [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [DBConvert Studio]                         | 2017-03-01   | DMSoft Technologies  | No             | $499  |
 | [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            | $698  |
-| [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]            | ?            | Idera                | No             | ?     |
 | [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            | No    |
+| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [Ssqlcmd for Mac and Linux]                | 2017-01-26   | Soheil Rashidi       | Open Source    | No    |
 
 
-## SSMS <a id="ssms"></a>
+## SSMS
+<a id="ssms"></a>
 Download page: [SSMS]<br/>
-Release date: 2016-12-05<br/>
-Support Version: 2005/2008/2012/2014/2016/vNext<br/>
+Release date: 2017-01-26<br/>
+Support Version: 2005/2008/2012/2014/2016/vNext/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -233,7 +235,8 @@ SSMS combines a broad group of graphical tools with a number of rich script edit
 This release features improved compatibility with previous versions of SQL Server, a stand-alone web installer, and toast notifications within SSMS when new releases become available.
 
 
-## bcp Utility <a id="bcp"></a>
+## bcp Utility
+<a id="bcp"></a>
 Download page: [bcp Utility]<br/>
 Release date: 2012-02-11<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -247,7 +250,8 @@ Except when used with the queryout option, the utility requires no knowledge of 
 To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
 
 
-## RML Utilities for SQL Server <a id="rml"></a>
+## RML Utilities for SQL Server
+<a id="rml"></a>
 Download page: [RML Utilities for SQL Server]<br/>
 Release date: 2014-12-12<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -261,7 +265,8 @@ The RML utilities allow you to process SQL Server trace files and view reports s
  - What queries are running slower in todays data compared to a previous set of data
 
 
-## GraphView <a id="graphview"></a>
+## GraphView
+<a id="graphview"></a>
 Download page: [GraphView]<br/>
 Release date: 2016-02-23<br/>
 Support Version: -<br/>
@@ -273,7 +278,8 @@ GraphView is a DLL library that enables users to use SQL Server or Azure SQL Dat
 It connects to a SQL database locally or in the cloud, stores graph data in tables and queries graphs through a SQL-extended language.
 
 
-## Microsoft Baseline Security Analyze <a id="baseline-security-analyze"></a>
+## Microsoft Baseline Security Analyze
+<a id="baseline-security-analyze"></a>
 Download page: [Baseline Security Analyze]<br/>
 Release date: 2015-01-09<br/>
 Support Version: -<br/>
@@ -286,7 +292,8 @@ The Microsoft Baseline Security Analyzer provides a streamlined method to identi
 MBSA 2.3 release adds support for Windows 8.1, Windows 8, Windows Server 2012 R2, and Windows Server 2012. Windows 2000 will no longer be supported with this release.
 
 
-## tablediff Utility <a id="tablediff-utility"></a>
+## tablediff Utility
+<a id="tablediff-utility"></a>
 Download page: [tablediff Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -304,7 +311,8 @@ This utility can be used from the command prompt or in a batch file to perform t
  - Log results to an output file or into a table in the destination database.
 
 
-## Microsoft Log Parser <a id="microsoft-log-parser"></a>
+## Microsoft Log Parser
+<a id="microsoft-log-parser"></a>
 Download page: [Microsoft Log Parser]<br/>
 Release date: -<br/>
 Support Version: -<br/>
@@ -317,7 +325,8 @@ Log parser is a powerful, versatile tool that provides universal query access to
 XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory.
 
 
-## Diskspd <a id="diskspd"></a>
+## Diskspd
+<a id="diskspd"></a>
 Download page: [Diskspd]<br/>
 Release date: 2015-12-14<br/>
 Support Version: -<br/>
@@ -328,7 +337,8 @@ DISKSPD is a storage load generator / performance test tool from the Windows/Win
 Compilation is supported with Visual Studio and Visual Studio Express. Use the Visual Studio solution file inside the diskspd_vs2013 directory.
 
 
-## HammerDB <a id="hammerdb"></a>
+## HammerDB
+<a id="hammerdb"></a>
 Download page: [HammerDB]<br/>
 Release date: 2015-05-04<br/>
 Support Version: -<br/>
@@ -340,7 +350,8 @@ HammerDB is an open source database load testing and benchmarking tool for Oracl
 Postgres Plus Advanced Server, MySQL,  Redis and Trafodion SQL on Hadoop.
 
 
-## Microsoft Exchange Server Error Code Look-up <a id="error-code-look-up"></a>
+## Microsoft Exchange Server Error Code Look-up
+<a id="error-code-look-up"></a>
 Download page: [Exchange Server Error Code Look-up]<br/>
 Release date: 2004-05-10<br/>
 Support Version: -<br/>
@@ -351,7 +362,8 @@ Useful link: http://www.sqlshack.com/how-to-install-and-use-microsoft-baseline-s
 Determine error values from decimal and hexadecimal error codes in Microsoft Windows operating systems.
 
 
-## LINQPad <a id="linqpad"></a>
+## LINQPad
+<a id="linqpad"></a>
 Download page: [LINQPad]<br/>
 Release date: 2016-02-01<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -364,7 +376,8 @@ Enjoy rich output formatting, optional autocompletion and integrated debugging, 
 Super lightweight — single 15MB executable!
 
 
-## SqlDynamite <a id="sqldynamite"></a>
+## SqlDynamite
+<a id="sqldynamite"></a>
 Download page: [SqlDynamite]<br/>
 Release date: 2016-04-06<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -390,7 +403,8 @@ Azure SQL databases, Integration Services packages, Analysis Services data model
 With SSDT, you can design and deploy any SQL Server content type with the same ease as you would develop an application in Visual Studio.
 
 
-## Database Health Monitor <a id="database-health-monitor"></a>
+## Database Health Monitor
+<a id="database-health-monitor"></a>
 Download page: [Database Health Monitor]<br/>
 Release date: 2016-03-20<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -402,7 +416,8 @@ Database Health Monitor is a powerful performance monitoring and diagnostics sol
 performance or availability problems within their SQL Server environment, all from a central console.
 
 
-## SchemaDrift <a id="schemadrift"></a>
+## SchemaDrift
+<a id="schemadrift"></a>
 Download page: [SchemaDrift]<br/>
 Release date: 2016-02-28<br/>
 Support Version: 2008/2012/2014<br/>
@@ -413,7 +428,8 @@ Price: No
 SchemaDrift is a SQL Server database comparison tool that allows you to compare the schema, the tables, indexes, stored procedures, functions, and much more between SQL Server databases
 
 
-## DBeaver <a id="dbeaver"></a>
+## DBeaver
+<a id="dbeaver"></a>
 Download page: [DBeaver]<br/>
 Release date: 2016-06-06<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -425,7 +441,8 @@ Free multi-platform database tool for developers, SQL programmers, database admi
 Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, Cassandra, etc
 
 
-## HeidiSQL <a id="heidisql"></a>
+## HeidiSQL
+<a id="heidisql"></a>
 Download page: [HeidiSQL]<br/>
 Release date: 2016-06-19<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -438,7 +455,8 @@ It enables you to browse and edit data, create and edit tables, views, procedure
 Also, you can export structure and data either to SQL file, clipboard or to other servers.
 
 
-## SQLExecStats <a id="sqlexecstats"></a>
+## SQLExecStats
+<a id="sqlexecstats"></a>
 Download page: [SQLExecStats]<br/>
 Release date: 2016-02-08<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -453,7 +471,8 @@ Price: No
  - Save information directly to Microsoft Excel 2003 file format and in binary.
 
 
-## ExpressProfiler <a id="expressprofiler"></a>
+## ExpressProfiler
+<a id="expressprofiler"></a>
 Download page: [ExpressProfiler]<br/>
 Release date: 2016-02-15<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -490,7 +509,8 @@ Price: No
 Microsoft SQL Server Migration Assistant (SSMA) for Sybase is a tool to automate migration from MySQL database(s) to SQL Server and Azure SQL DB.
 
 
-## dta Utility <a id="dta-utility"></a>
+## dta Utility
+<a id="dta-utility"></a>
 Download page: [dta Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -502,7 +522,8 @@ Capture performance and usage data about your Microsoft SQL Server 2005+ databas
 Key real-time metrics provide an overview of your databases and detailed measurements about memory usage, connections, network I/O, and file I/O.
 
 
-## osql Utility <a id="osql-utility"></a>
+## osql Utility
+<a id="osql-utility"></a>
 Download page: [osql Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -514,7 +535,8 @@ The osql utility allows you to enter Transact-SQL statements, system procedures,
 This utility uses ODBC to communicate with the server.
 
 
-## sqldiag Utility <a id="sqldiag-utility"></a>
+## sqldiag Utility
+<a id="sqldiag-utility"></a>
 Download page: [sqldiag Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -528,7 +550,8 @@ or troubleshoot specific problems with your servers.<br />
 SQLdiag is intended to expedite and simplify diagnostic information gathering for Microsoft Customer Support Services.
 
 
-## sqldumper Utility <a id="sqldumper-utility"></a>
+## sqldumper Utility
+<a id="sqldumper-utility"></a>
 Download page: [sqldumper Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -542,7 +565,8 @@ Microsoft SQL Server 2008, Microsoft SQL Server 2008 R2, or Microsoft SQL Server
 A dump file can be a mini-dump file, a full dump file, or a filtered dump file.
 
 
-## SqlLocalDB Utility <a id="sqllocaldb-utility"></a>
+## SqlLocalDB Utility
+<a id="sqllocaldb-utility"></a>
 Download page: [SqlLocalDB Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
@@ -554,7 +578,8 @@ SqlLocalDB lets you create, delete, start, stop, and perform a number of other r
 an execution mode of SQL Server Express that’s targeted at developers. A LocalDB instance uses a minimal set of files to start the database engine.
 
 
-## sqllogship Utility <a id="sqllogship-utility"></a>
+## sqllogship Utility
+<a id="sqllogship-utility"></a>
 Download page: [sqllogship Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -566,7 +591,8 @@ The sqllogship application performs a backup, copy, or restore operation and ass
 The operation is performed on a specific instance of Microsoft SQL Server for a specific database.
 
 
-## sqlservr Application <a id="sqlservr-application"></a>
+## sqlservr Application
+<a id="sqlservr-application"></a>
 Download page: [sqlservr Application]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -577,7 +603,8 @@ Price: No
 The sqlservr application starts, stops, pauses, and continues an instance of Microsoft SQL Server from a command prompt.
 
 
-## sqlps Utility <a id="sqlps-utility"></a>
+## sqlps Utility
+<a id="sqlps-utility"></a>
 Download page: [sqlps Utility]<br/>
 Release date: -<br/>
 Support Version: 2008/2008R2/2012/2014/2016<br/>
@@ -591,7 +618,8 @@ This feature will be removed in a future version of Microsoft SQL Server.
 Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use the sqlps PowerShell module instead.
 
 
-## sqlmaint Utility <a id="sqlmaint-utility"></a>
+## sqlmaint Utility
+<a id="sqlmaint-utility"></a>
 Download page: [sqlmaint Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -608,7 +636,8 @@ This feature will be removed in the next version of Microsoft SQL Server.
 Avoid using this feature in new development work, and plan to modify applications that currently use this feature. Use SQL Server maintenance plan feature instead.
 
 
-## Ssms Utility <a id="ssms-utility"></a>
+## Ssms Utility
+<a id="ssms-utility"></a>
 Download page: [Ssms Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -624,7 +653,8 @@ For instance, .sql files will open a SQL Query Editor window in SQL Server Manag
 in SQL Server Management Studio. SQL Server Solutions and Projects will open in SQL Server Management Studio.
 
 
-## dtexec Utility <a id="dtexec-utility"></a>
+## dtexec Utility
+<a id="dtexec-utility"></a>
 Download page: [dtexec Utility]<br/>
 Release date: -<br/>
 Support Version: 2012/2014/2016<br/>
@@ -637,7 +667,8 @@ The dtexec utility provides access to all the package configuration and executio
 The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
 
 
-## SQL Server 2016 Report Builder <a id="report-builder-2016"></a>
+## SQL Server 2016 Report Builder
+<a id="report-builder-2016"></a>
 Download page: [SQL Server 2016 Report Builder]<br/>
 Release date: 2016-09-16<br/>
 Support Version: 2016<br/>
@@ -652,7 +683,8 @@ Use Report Builder to create reports and shared datasets.
 Publish report parts, and then browse the Report Part Gallery to reuse existing report parts as building blocks for creating new reports quickly with a “grab and go” experience.
 
 
-## SQL Server 2005 Best Practices Analyzer <a id="bpa-2005"></a>
+## SQL Server 2005 Best Practices Analyzer
+<a id="bpa-2005"></a>
 Download page: [BPA 2005]<br/>
 Release date: 2008-08-13<br/>
 Support Version: 2005<br/>
@@ -664,7 +696,8 @@ The SQL Server 2005 Best Practices Analyzer (BPA) gathers data from Microsoft Wi
 BPA uses a predefined list of SQL Server 2005 recommendations and best practices to determine if there are potential issues in the database environment.
 
 
-## SQL Server 2000 Best Practices Analyzer <a id="bpa-2000"></a>
+## SQL Server 2000 Best Practices Analyzer
+<a id="bpa-2000"></a>
 Download page: [BPA 2000]<br/>
 Release date: 2010-04-26<br/>
 Support Version: 2000<br/>
@@ -675,7 +708,8 @@ Price: No
 SQL Server 2000 Best Practices Analyzer is a database management tool that lets you verify the implementation of common Best Practices on your servers.
 
 
-## SQL Server 2008 R2 Best Practices Analyzer <a id="bpa-2008"></a>
+## SQL Server 2008 R2 Best Practices Analyzer
+<a id="bpa-2008"></a>
 Download page: [BPA 2008]<br/>
 Release date: 2010-06-18<br/>
 Support Version: 2008/2008R2<br/>
@@ -691,7 +725,8 @@ The Microsoft SQL Server 2008 R2 BPA is a diagnostic tool that performs the foll
  - Recommends solutions to potential problems
 
 
-## SQL Server 2012 Best Practices Analyzer <a id="bpa-2012"></a>
+## SQL Server 2012 Best Practices Analyzer
+<a id="bpa-2012"></a>
 Download page: [BPA 2012]<br/>
 Release date: 2012-04-06<br/>
 Support Version: 2012<br/>
@@ -707,7 +742,8 @@ The Microsoft SQL Server 2012 BPA is a diagnostic tool that performs the followi
  - Recommends solutions to potential problems
 
 
-## DLM Dashboard <a id="dlm-dashboard"></a>
+## DLM Dashboard
+<a id="dlm-dashboard"></a>
 Download page: [DLM Dashboard]<br/>
 Release date: 2016-04-27<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -720,7 +756,8 @@ DLM Dashboard monitors up to 50 of your databases, and sends you an email alert 
 or change from their expected state. On the web dashboard, you can see exactly what changed, who made the changes, and when.
 
 
-## Red Gate SQL Compare <a id="red-gate-sql-compare"></a>
+## Red Gate SQL Compare
+<a id="red-gate-sql-compare"></a>
 Download page: [Red Gate SQL Compare]<br/>
 Release date: 2016-10-31<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -731,7 +768,8 @@ Price: $495
 Compares and synchronizes SQL Server database schemas
 
 
-## Red Gate SQL Data Compare <a id="red-gate-sql-data-compare"></a>
+## Red Gate SQL Data Compare
+<a id="red-gate-sql-data-compare"></a>
 Download page: [Red Gate SQL Data Compare]<br/>
 Release date: 2016-05-09<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -742,7 +780,8 @@ Price: $495
 SQL Data Compare is the industry-standard tool for comparing and deploying SQL Server database contents
 
 
-## Red Gate SQL Prompt <a id="red-gate-sql-prompt"></a>
+## Red Gate SQL Prompt
+<a id="red-gate-sql-prompt"></a>
 Download page: [Red Gate SQL Prompt]<br/>
 Release date: 2016-04-28<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -753,7 +792,8 @@ Price: $369
 Write, format and refactor SQL effortlessly
 
 
-## Red Gate SQL Monitor <a id="red-gate-sql-monitor"></a>
+## Red Gate SQL Monitor
+<a id="red-gate-sql-monitor"></a>
 Download page: [Red Gate SQL Monitor]<br/>
 Release date: 2015-10-15<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -764,7 +804,8 @@ Price: $1495
 Real-time SQL Server performance monitoring, with alerts and diagnostics
 
 
-## Red Gate SQL Backup Pro <a id="red-gate-sql-backup-pro"></a>
+## Red Gate SQL Backup Pro
+<a id="red-gate-sql-backup-pro"></a>
 Download page: [Red Gate SQL Backup Pro]<br/>
 Release date: 2014-07-08<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -775,7 +816,8 @@ Price: $995
 Compress, verify, and encrypt SQL Server backups
 
 
-## Red Gate SQL Doc <a id="red-gate-sql-doc"></a>
+## Red Gate SQL Doc
+<a id="red-gate-sql-doc"></a>
 Download page: [Red Gate SQL Doc]<br/>
 Release date: 2016-04-26<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -786,7 +828,8 @@ Price: $369
 Document your databases automatically, create documents as HTML, PDF, Microsoft Word or Compiled HTML Help files
 
 
-## Red Gate SQL Data Generator <a id="red-gate-sql-data-generator"></a>
+## Red Gate SQL Data Generator
+<a id="red-gate-sql-data-generator"></a>
 Download page: [Red Gate SQL Data Generator]<br/>
 Release date: 2016-04-26<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -797,7 +840,8 @@ Price: $369
 Generate realistic test data fast
 
 
-## Red Gate SQL Dependency Tracker <a id="red-gate-sql-dependency-tracker"></a>
+## Red Gate SQL Dependency Tracker
+<a id="red-gate-sql-dependency-tracker"></a>
 Download page: [Red Gate SQL Dependency Tracker]<br/>
 Release date: 2016-04-26<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -808,7 +852,8 @@ Price: $369
 Visualize complex databases simply
 
 
-## Red Gate SQL Multi Script <a id="red-gate-sql-multi-script"></a>
+## Red Gate SQL Multi Script
+<a id="red-gate-sql-multi-script"></a>
 Download page: [Red Gate SQL Dependency Tracker]<br/>
 Release date: 2016-04-15<br/>
 Support Version: 2005/2008/2012/2014<br/>
@@ -819,7 +864,8 @@ Price: $245
 Deploy multiple scripts to multiple servers with just one click
 
 
-## Red Gate SQL Index Manager <a id="red-gate-sql-index-manager"></a>
+## Red Gate SQL Index Manager
+<a id="red-gate-sql-index-manager"></a>
 Download page: [Red Gate SQL Index Manager]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012/2014<br/>
@@ -830,7 +876,8 @@ Price: $149
 Analyze, manage, and fix database index fragmentation
 
 
-## Red Gate SQL Comparison SDK <a id="red-gate-sql-comparison-sdk"></a>
+## Red Gate SQL Comparison SDK
+<a id="red-gate-sql-comparison-sdk"></a>
 Download page: [Red Gate SQL Comparison SDK]<br/>
 Release date: 2016-02-22<br/>
 Support Version: 2008/2012/2014<br/>
@@ -841,7 +888,8 @@ Price: $895
 Compare and synchronize automatically database schemas and data
 
 
-## DLM Automation <a id="dlm-automation"></a>
+## DLM Automation
+<a id="dlm-automation"></a>
 Download page: [DLM Automation]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012/2014<br/>
@@ -852,7 +900,8 @@ Price: ?
 Automate your database changes with continuous integration and automated deployment
 
 
-## ReadyRoll <a id="readyroll"></a>
+## ReadyRoll
+<a id="readyroll"></a>
 Download page: [ReadyRoll]<br/>
 Release date: 2016-03-01<br/>
 Support Version: 2012/2014<br/>
@@ -881,7 +930,8 @@ Price: No
  - Connect to cloud and run in cloud (provisional)
 
 
-## SQL XEvent Profiler <a id="sql-xevent-profiler"></a>
+## SQL XEvent Profiler
+<a id="sql-xevent-profiler"></a>
 Download page: [SQL XEvent Profiler]<br/>
 Release date: 2014-03-14<br/>
 Support Version: 2012/2014<br/>
@@ -893,7 +943,8 @@ Idera’s SQL XEvent Profiler emulates the functionality and simplicity of SQL S
 and see whats happening on the server. Plus, it leverages SQL Extended Events (XEvents) as the backing technology — making it more efficient than SQL Trace.
 
 
-## SQL Check <a id="sql-check"></a>
+## SQL Check
+<a id="sql-check"></a>
 Download page: [SQL Check]<br/>
 Release date: 2015-09-24<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -907,7 +958,8 @@ Price: No
  - Install easily without agents
 
 
-## SQL Fragmentation Analyzer <a id="sql-fragmentation-analyzer"></a>
+## SQL Fragmentation Analyzer
+<a id="sql-fragmentation-analyzer"></a>
 Download page: [SQL Fragmentation Analyzer]<br/>
 Release date: 2012-11-16<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -920,7 +972,8 @@ Price: No
  - Set fragmentation thresholds: normal, warning, critical
 
 
-## SQL Heat Map <a id="sql-heat-map"></a>
+## SQL Heat Map
+<a id="sql-heat-map"></a>
 Download page: [SQL Heat Map]<br/>
 Release date: 2016-01-27<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -933,7 +986,8 @@ Price: No
  - Quickly locate tables and indexes that need more allocated storage
 
 
-## SQL Hekaton Memory Check <a id="sql-hekaton-memory-check"></a>
+## SQL Hekaton Memory Check
+<a id="sql-hekaton-memory-check"></a>
 Download page: [SQL Hekaton Memory Check]<br/>
 Release date: 2015-06-10<br/>
 Support Version: 2014<br/>
@@ -947,7 +1001,8 @@ Price: No
  - Simulate moving to In-Memory OLTP
 
 
-## SQL Page Viewer <a id="sql-page-viewer"></a>
+## SQL Page Viewer
+<a id="sql-page-viewer"></a>
 Download page: [SQL Page Viewer]<br/>
 Release date: 2014-08-25<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -962,7 +1017,8 @@ Price: No
  - Can launch directly within SSMS for optimal usability
 
 
-## SQL Update Statistics <a id="sql-update-statistics"></a>
+## SQL Update Statistics
+<a id="sql-update-statistics"></a>
 Download page: [SQL Update Statistics]<br/>
 Release date: 2015-12-14<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -976,7 +1032,8 @@ Price: No
  - Create graphical histograms for each column’s statistics
 
 
-## SQL Statistics Aggregator <a id="sql-statistics-aggregator"></a>
+## SQL Statistics Aggregator
+<a id="sql-statistics-aggregator"></a>
 Download page: [SQL Statistics Aggregator]<br/>
 Release date: 2015-05-18<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -990,7 +1047,8 @@ Price: No
  - Export and import results for easy collaboration
 
 
-## SQL Backup Status Reporter <a id="sql-backup-status-reporter"></a>
+## SQL Backup Status Reporter
+<a id="sql-backup-status-reporter"></a>
 Download page: [SQL Backup Status Reporter]<br/>
 Release date: 2015-08-07<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1004,7 +1062,8 @@ Price: No
  - Identify full and differential backups for many databases
 
 
-## SQL Integrity Check <a id="sql-integrity-check"></a>
+## SQL Integrity Check
+<a id="sql-integrity-check"></a>
 Download page: [SQL Integrity Check]<br/>
 Release date: 2013-08-26<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1019,7 +1078,8 @@ Price: No
  - Do not need to write and maintain scripts
 
 
-## SQL Job Manager <a id="sql-job-manager"></a>
+## SQL Job Manager
+<a id="sql-job-manager"></a>
 Download page: [SQL Job Manager]<br/>
 Release date: 2012-03-19<br/>
 Support Version: ?<br/>
@@ -1034,7 +1094,8 @@ Price: No
  - Have customizable calendar view
 
 
-## Azure SQL Database Backup <a id="azure-sql-database-backup"></a>
+## Azure SQL Database Backup
+<a id="azure-sql-database-backup"></a>
 Download page: [Azure SQL Database Backup]<br/>
 Release date: 2012-10-02<br/>
 Support Version: ?<br/>
@@ -1049,7 +1110,8 @@ Price: No
  - Restore with transaction consistency to and from the cloud
 
 
-## SQL Column Search <a id="sql-column-search"></a>
+## SQL Column Search
+<a id="sql-column-search"></a>
 Download page: [SQL Column Search]<br/>
 Release date: 2015-11-17<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -1062,7 +1124,8 @@ Price: No
  - Export results to CSV format for easy analysis and reporting
 
 
-## SQL Permissions Extractor <a id="sql-permissions-extractor"></a>
+## SQL Permissions Extractor
+<a id="sql-permissions-extractor"></a>
 Download page: [SQL Permissions Extractor]<br/>
 Release date: 2015-08-07<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1076,7 +1139,8 @@ Price: No
  - Copy, extract, modify and apply changes in four steps
 
 
-## SQL BI Check <a id="sql-bi-check"></a>
+## SQL BI Check
+<a id="sql-bi-check"></a>
 Download page: [SQL BI Check]<br/>
 Release date: 2016-04-13<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1090,7 +1154,8 @@ Price: No
  - Get up and running in minutes, no agents required
 
 
-## SQL Inventory Check <a id="sql-bi-check"></a>
+## SQL Inventory Check
+<a id="sql-bi-check"></a>
 Download page: [SQL Inventory Check]<br/>
 Release date: 2016-03-24<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1103,7 +1168,8 @@ Price: No
  - Stay on top of important SQL Server updates and patches
 
 
-## SQL Diagnostic Manager <a id="sql-diagnostic-manager"></a>
+## SQL Diagnostic Manager
+<a id="sql-diagnostic-manager"></a>
 Download page: [SQL Diagnostic Manager]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1119,7 +1185,8 @@ Price: $1747
  - Web-based dashboard with at-a-glance views of top issues and alert
 
 
-## SQL Safe Backup <a id="sql-safe-backup"></a>
+## SQL Safe Backup
+<a id="sql-safe-backup"></a>
 Download page: [SQL Safe Backup]<br/>
 Release date: 2016-03-24<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1135,7 +1202,8 @@ Price: $907
  - Web-based dashboard provides at-a-glance views of top issues and alerts
 
 
-## SQL Compliance Manager <a id="sql-compliance-manager"></a>
+## SQL Compliance Manager
+<a id="sql-compliance-manager"></a>
 Download page: [SQL Compliance Manager]<br/>
 Release date: 2015-09-08<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1150,7 +1218,8 @@ Price: $2657
  - Minimize Overhead - light data collection agent minimizes server imp
 
 
-## SQL Inventory Manager <a id="sql-inventory-manager"></a>
+## SQL Inventory Manager
+<a id="sql-inventory-manager"></a>
 Download page: [SQL Inventory Manager]<br/>
 Release date: 2016-04-22<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1165,7 +1234,8 @@ Price: $3195
  - Quickly deploy and access from anywhere via web-based and agentless UI
 
 
-## SQL Virtual Database <a id="sql-virtual-database"></a>
+## SQL Virtual Database
+<a id="sql-virtual-database"></a>
 Download page: [SQL Virtual Database]<br/>
 Release date: 2016-03-24<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1180,7 +1250,8 @@ Price: $625
  - Read/Write support - inserts, updates, DBCC commands
 
 
-## SQL Secure <a id="sql-secure"></a>
+## SQL Secure
+<a id="sql-secure"></a>
 Download page: [SQL Secure]<br/>
 Release date: 2016-04-19<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1195,7 +1266,8 @@ Price: $907
  - Customizable templates for PCI, HIPAA and more
 
 
-## SQL Doctor <a id="sql-doctor"></a>
+## SQL Doctor
+<a id="sql-doctor"></a>
 Download page: [SQL Doctor]<br/>
 Release date: 2015-12-17<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1210,7 +1282,8 @@ Price: $625
  - Stored history of analysis recommendations for trending
 
 
-## SQL Admin Toolset <a id="sql-admin-toolset"></a>
+## SQL Admin Toolset
+<a id="sql-admin-toolset"></a>
 Download page: [SQL Admin Toolset]<br/>
 Release date: 2016-01-13<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1224,7 +1297,8 @@ Price: $325
  - Perform analysis on your SQL data
 
 
-## SQL Defrag Manager <a id="sql-defrag-manager"></a>
+## SQL Defrag Manager
+<a id="sql-defrag-manager"></a>
 Download page: [SQL Defrag Manager]<br/>
 Release date: 2016-03-10<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1239,7 +1313,8 @@ Price: $1495
  - Centrally manage, report and notify instantly
 
 
-## DBArtisan <a id="dbartisan"></a>
+## DBArtisan
+<a id="dbartisan"></a>
 Download page: [DBArtisan]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1254,7 +1329,8 @@ Price: $3122
  - Protect data security with view, grant and revoke of permissions
 
 
-## SQL BI Manager <a id="sql-bi-manager"></a>
+## SQL BI Manager
+<a id="sql-bi-manager"></a>
 Download page: [SQL BI Manager]<br/>
 Release date: 2015-09-08<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1269,7 +1345,8 @@ Price: $697
  - Log in from anywhere for at-a-glance views of top issues and alerts
 
 
-## SQL Enterprise Job Manager <a id="sql-enterprise-job-manager"></a>
+## SQL Enterprise Job Manager
+<a id="sql-enterprise-job-manager"></a>
 Download page: [SQL Enterprise Job Manager]<br/>
 Release date: 2015-09-08<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1285,7 +1362,8 @@ Price: $697
  - Web-based architecture simplifies deployment
 
 
-## DB Optimizer <a id="db-optimizer"></a>
+## DB Optimizer
+<a id="db-optimizer"></a>
 Download page: [DB Optimizer]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012<br/>
@@ -1300,7 +1378,8 @@ Price: $1420
  - Load test alternative SQL queries in simulated production environment
 
 
-## SQL Query Store Optimizer <a id="sql-query-store-optimizer"></a>
+## SQL Query Store Optimizer
+<a id="sql-query-store-optimizer"></a>
 Download page: [SQL Query Store Optimizer]<br/>
 Release date: 2016-07-01<br/>
 Support Version: 2016<br/>
@@ -1315,7 +1394,8 @@ Price: No
  - Get up and running in minutes with no agents
 
 
-## Rapid SQL <a id="rapid-sql"></a>
+## Rapid SQL
+<a id="rapid-sql"></a>
 Download page: [Rapid SQL]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -1330,7 +1410,8 @@ Price: $710
  - Collaborate effectively across development teams with version control
 
 
-## SQL Comparison Toolset <a id="sql-comparison-toolset"></a>
+## SQL Comparison Toolset
+<a id="sql-comparison-toolset"></a>
 Download page: [SQL Comparison Toolset]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -1345,7 +1426,8 @@ Price: $745
  - Generate ready-to-use database synchronization scripts
 
 
-## ER/Studio Data Architect <a id="erstudio-data-architect"></a>
+## ER/Studio Data Architect
+<a id="erstudio-data-architect"></a>
 Download page: [ER/Studio Data Architect]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -1360,7 +1442,8 @@ Price: $1287
  - Map data sources and trace origins to enhance data lineage
 
 
-## DB Change Manager <a id="db-change-manager"></a>
+## DB Change Manager
+<a id="db-change-manager"></a>
 Download page: [DB Change Manager]<br/>
 Release date: ?<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -1375,7 +1458,24 @@ Price: $1420
  - Track changes from multiple major database platforms
 
 
-## dbForge Schema Compare <a id="dbforge-schema-compare"></a>
+## Uptime Infrastructure Monitor
+<a id="uim"></a>
+Download page: [Uptime Infrastructure Monitor]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: ?
+
+ - Monitor servers, VMs, network devices, and applications from a unified dashboard
+ - Use historic data to plan for future server capacity needs
+ - Track service-level performance trends for SLA compliance and reporting
+ - Monitor virtually anything via a multitude of pre-built plug-ins or custom scripts
+ - Streamline incident management with native ServiceNow integration
+
+
+## dbForge Schema Compare
+<a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2016-09-16<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1388,7 +1488,8 @@ The relentlessly tested compare tool allows working with live SQL Server databas
 You can compare your SQL Server databases, analyze differences and synchronize your schemas using generated SQL script in a well-designed user interface quickly and without errors.
 
 
-## dbForge Data Compare <a id="dbforge-data-compare"></a>
+## dbForge Data Compare
+<a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2016-09-28<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1401,7 +1502,8 @@ With dbForge Data Compare you can tune your SQL database comparison, quickly ana
 and effortlessly synchronize data via a convenient wizard with additional options.
 
 
-## dbForge Data Generator <a id="dbforge-data-generator"></a>
+## dbForge Data Generator
+<a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
 Release date: 2016-09-16<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1412,7 +1514,8 @@ Price: $249
 dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation of meaningful test data. The tool includes 190+ predefined generators with sensible configuration options, that allow emulating column-intelligent real-world data. dbForge Data Generator for SQL Server can save your time and effort by populating SQL Server tables with millions of rows of test data that looks just like real data.
 
 
-## dbForge Query Builder <a id="dbforge-query-builder"></a>
+## dbForge Query Builder
+<a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
 Release date: 2016-08-17<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1426,7 +1529,8 @@ Visual features to create queries, usage of graphical SQL query creator to inter
 But even experienced users can save a lot of time on routine work.
 
 
-## dbForge Event Profiler <a id="dbforge-event-profiler"></a>
+## dbForge Event Profiler
+<a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
 Release date: 2016-09-16<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -1439,7 +1543,8 @@ The events and data columns are stored in a physical trace file for later examin
 You can use this information to identify and troubleshoot many SQL Server-related problems.
 
 
-## dbForge SQL Decryptor <a id="dbforge-sql-decryptor"></a>
+## dbForge SQL Decryptor
+<a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
 Release date: 2016-01-22<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1450,7 +1555,8 @@ Price: No
 Decrypt SQL Server Procedures, Functions, Triggers, and Views
 
 
-## dbForge Studio <a id="dbforge-studio"></a>
+## dbForge Studio
+<a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
 Release date: 2016-09-22<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -1465,7 +1571,8 @@ Price: $249
  - Code navigation — quick jump by F12 to variable declaration, object editor, etc.
 
 
-## dbForge Fusion <a id="dbforge-fusion"></a>
+## dbForge Fusion
+<a id="dbforge-fusion"></a>
 Download page: [dbForge Fusion]<br/>
 Release date: 2016-12-27<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014<br/>
@@ -1478,7 +1585,8 @@ When you integrate dbForge Fusion for SQL Server into Microsoft Visual Fusion, a
 It provides an easier way to explore and maintain existing databases, design compound SQL statements and queries, and manipulate data in different way.
 
 
-## dbForge Documenter <a id="dbforge-documenter"></a>
+## dbForge Documenter
+<a id="dbforge-documenter"></a>
 Download page: [dbForge Documenter]<br/>
 Release date: 2016-09-16<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -1491,7 +1599,8 @@ This tool automatically generates documentation of an entire SQL Server database
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
 
 
-## Minion Enterprise <a id="minion-enterprise"></a>
+## Minion Enterprise
+<a id="minion-enterprise"></a>
 Download page: [Minion Enterprise]<br/>
 Release date: ?<br/>
 Support Version: 2008/2008R2/2012<br/>
@@ -1507,7 +1616,8 @@ Even better, it opens up a new world of central management: audit SQL and AD sec
 standardize and enforce SQL Server settings, automate error log searches, and so very much more.
 
 
-## SQL Server Compression Estimator <a id="sql-server-compression-estimator"></a>
+## SQL Server Compression Estimator
+<a id="sql-server-compression-estimator"></a>
 Download page: [SQL Server Compression Estimator]<br/>
 Release date: 2011-06-02<br/>
 Support Version: 2008/2008R2/2012<br/>
@@ -1521,7 +1631,8 @@ It will estimate both ROW and PAGE compression, and will optionally report the I
 You can then use that information to perhaps choose a less aggresive compression algorithm for heavily updated indexes.
 
 
-## ClearTrace <a id="cleartrace"></a>
+## ClearTrace
+<a id="cleartrace"></a>
 Download page: [ClearTrace]<br/>
 Release date: 2016-07-07<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -1533,7 +1644,8 @@ ClearTrace imports SQL Server 2016, SQL Server 2014, SQL Server 2012, SQL Server
 and Profiler files into SQL Server and displays summary performance information.
 
 
-## SQLSentry Fragmentation Manager <a id="sqlsentry-fragmentation-manager"></a>
+## SQLSentry Fragmentation Manager
+<a id="sqlsentry-fragmentation-manager"></a>
 Download page: [SQLSentry Fragmentation Manager]<br/>
 Release date: 2016-08-03<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1549,7 +1661,8 @@ while allowing the flexibility to customize the schedule and other specific inst
 Fragmentation Manager will also allow you to perform index defragmentation faster than ever before via support for multiple concurrent operations.
 
 
-## SQLSentry Plan Explorer <a id="sqlsentry-plan-explorer"></a>
+## SQLSentry Plan Explorer
+<a id="sqlsentry-plan-explorer"></a>
 Download page: [SQLSentry Plan Explorer]<br/>
 Release date: 2016-09-07<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1562,7 +1675,8 @@ to make query plan optimization more efficient.
 It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
 
 
-## SQLSentry Event Manager <a id="sqlsentry-event-manager"></a>
+## SQLSentry Event Manager
+<a id="sqlsentry-event-manager"></a>
 Download page: [SQLSentry Event Manager]<br/>
 Release date: 2016-03-08<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1575,7 +1689,8 @@ and functionality for managing SQL Agent jobs, Windows Tasks, and Oracle jobs in
 Unlike most other scheduling products, Event Manager does not require an agent to be installed and managed on each server.
 
 
-## SQLSentry Performance Advisor <a id="sqlsentry-performance-advisor"></a>
+## SQLSentry Performance Advisor
+<a id="sqlsentry-performance-advisor"></a>
 Download page: [SQLSentry Performance Advisor]<br/>
 Release date: 2016-03-08<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1588,7 +1703,8 @@ Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Supp
 Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
 
 
-## Dell Security Explorer <a id="dell-security-explorer"></a>
+## Dell Security Explorer
+<a id="dell-security-explorer"></a>
 Download page: [Dell Security Explorer]<br/>
 Release date: 2015-06-25<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1601,7 +1717,8 @@ Plus, it complements Microsoft tools by solving key SQL Server challenges, so yo
 It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
 
 
-## Dell LiteSpeed for SQL Server <a id="dell-litespeed-for-sql-server"></a>
+## Dell LiteSpeed for SQL Server
+<a id="dell-litespeed-for-sql-server"></a>
 Download page: [Dell Security Explorer]<br/>
 Release date: 2015-07-31<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1614,7 +1731,8 @@ operations across the entire enterprise. Easily manage and monitor SQL Server pr
 With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
 
 
-## Dell Toad for SQL Server <a id="dell-toad-for-sql-server"></a>
+## Dell Toad for SQL Server
+<a id="dell-toad-for-sql-server"></a>
 Download page: [Dell Toad for SQL Server]<br/>
 Release date: 2015-05-12<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -1629,7 +1747,8 @@ Unlike native tools, Security Explorer provides the ability to back up and resto
 Security Explorer provides on-the-fly reports to help meet auditing requirements.
 
 
-## Dell Spotlight <a id="dell-spotlight"></a>
+## Dell Spotlight
+<a id="dell-spotlight"></a>
 Download page: [Dell Spotlight]<br/>
 Release date: 2016-03-10<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -1645,7 +1764,8 @@ an integrated Xpert tuning module and mobile device support,
 Spotlight on SQL Server Enterprise makes it easier than ever to obtain the data you need to ensure the health of your SQL Server databases.
 
 
-## Dell Foglight <a id="dell-foglight"></a>
+## Dell Foglight
+<a id="dell-foglight"></a>
 Download page: [Dell Foglight]<br/>
 Release date: 2015-09-22<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -1659,7 +1779,8 @@ multi-platform environments – even when you use native or third-party tools �
 Get a wealth of information at a fraction of the impact of conventional collection methods.
 
 
-## Dell Discovery Wizard <a id="dell-discovery-wizard"></a>
+## Dell Discovery Wizard
+<a id="dell-discovery-wizard"></a>
 Download page: [Dell Foglight]<br/>
 Release date: 2011-09-22<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -1675,7 +1796,8 @@ Price: No
  - Learn the identity of your end users
 
 
-## Dell Enterprise Reporter <a id="dell-enterprise-reporter"></a>
+## Dell Enterprise Reporter
+<a id="dell-enterprise-reporter"></a>
 Download page: [Dell Enterprise Reporter]<br/>
 Release date: ?<br/>
 Support Version: 2008/2008R2/2012/2014<br/>
@@ -1687,7 +1809,8 @@ Dell Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility
 including users and logins, roles and database permissions
 
 
-## SQLSolutions SQL Deadlock Detector <a id="sqlsolutions-sql-deadlock-detector"></a>
+## SQLSolutions SQL Deadlock Detector
+<a id="sqlsolutions-sql-deadlock-detector"></a>
 Download page: [SQLSolutions SQL Deadlock Detector]<br/>
 Release date: 2013-05-16<br/>
 Support Version: ?<br/>
@@ -1700,7 +1823,8 @@ Price: $295
  - Accelerate system response time by reducing long lock waits
 
 
-## SQLSolutions SQL Heartbeat <a id="sqlsolutions-sql-heartbeat"></a>
+## SQLSolutions SQL Heartbeat
+<a id="sqlsolutions-sql-heartbeat"></a>
 Download page: [SQLSolutions SQL Heartbeat]<br/>
 Release date: 2013-03-03<br/>
 Support Version: ?<br/>
@@ -1714,7 +1838,8 @@ Price: $295
  - Proactively and constantly monitor performance through scheduled traces
 
 
-## SQLSolutions SQL Trace Analyzer <a id="sqlsolutions-sql-trace-analyzer"></a>
+## SQLSolutions SQL Trace Analyzer
+<a id="sqlsolutions-sql-trace-analyzer"></a>
 Download page: [SQLSolutions SQL Trace Analyzer]<br/>
 Release date: 2009-12-09<br/>
 Support Version: ?<br/>
@@ -1730,7 +1855,8 @@ buffer cache hits ratio, page life expectancy, percent CPU utilization and avera
 As default metrics have been set up by SQL Server experts, the initial setup step is minimal.
 
 
-## SQLSolutions SQL Ultimate Debugger <a id="sqlsolutions-sql-ultimate-debugger"></a>
+## SQLSolutions SQL Ultimate Debugger
+<a id="sqlsolutions-sql-ultimate-debugger"></a>
 Download page: [SQLSolutions SQL Ultimate Debugger]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -1742,7 +1868,8 @@ The sql server tool for developers who debug SQL server stored procedures, funct
 This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
 
 
-## SQL Scripter <a id="sql-scripter"></a>
+## SQL Scripter
+<a id="sql-scripter"></a>
 Download page: [SQL Scripter]<br/>
 Release date: 2013-02-24<br/>
 Support Version: ?<br/>
@@ -1753,7 +1880,8 @@ Price: €99
 SQL Scripter is a powerful tool for Microsoft SQL Server database administrators and developers to generate data scripts in a readable and executable T-SQL format.
 
 
-## Simple Dynamic Scheduler <a id="simple-dynamic-scheduler"></a>
+## Simple Dynamic Scheduler
+<a id="simple-dynamic-scheduler"></a>
 Download page: [Simple Dynamic Scheduler]<br/>
 Release date: 2016-05-02<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1769,7 +1897,8 @@ Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server
  - Light-weight - Provides only decision machanism (Run or Hold) without actually executing anything
 
 
-## ApexSQL Audit <a id="apexsql-audit"></a>
+## ApexSQL Audit
+<a id="apexsql-audit"></a>
 Download page: [ApexSQL Audit]<br/>
 Release date: 2016-04-08<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1787,7 +1916,8 @@ Price: $1699
  - Easily manage auditing on multiple servers
 
 
-## ApexSQL Backup <a id="apexsql-backup"></a>
+## ApexSQL Backup
+<a id="apexsql-backup"></a>
 Download page: [ApexSQL Backup]<br/>
 Release date: 2015-12-30<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1805,7 +1935,8 @@ Price: $499
  - Cleanup SQL backup and restore history
 
 
-## ApexSQL Log <a id="apexsql-log"></a>
+## ApexSQL Log
+<a id="apexsql-log"></a>
 Download page: [ApexSQL Log]<br/>
 Release date: 2015-11-23<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1823,7 +1954,8 @@ Price: $1999
  - Avoid performance overhead and data storage
 
 
-## ApexSQL Monitor <a id="apexsql-monitor"></a>
+## ApexSQL Monitor
+<a id="apexsql-monitor"></a>
 Download page: [ApexSQL Monitor]<br/>
 Release date: 2015-12-29<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1841,7 +1973,8 @@ Price: $499
  - Visualize data with logarithmic scaling
 
 
-## ApexSQL Recover <a id="apexsql-recover"></a>
+## ApexSQL Recover
+<a id="apexsql-recover"></a>
 Download page: [ApexSQL Recover]<br/>
 Release date: 2015-01-21<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1857,7 +1990,8 @@ Price: $1999
  - Extract BLOBs stored as files
 
 
-## ApexSQL Restore <a id="apexsql-restore"></a>
+## ApexSQL Restore
+<a id="apexsql-restore"></a>
 Download page: [ApexSQL Restore]<br/>
 Release date: 2014-12-08<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1873,7 +2007,8 @@ Price: $399
  - Modify data without altering backup files
 
 
-## ApexSQL Build <a id="apexsql-build"></a>
+## ApexSQL Build
+<a id="apexsql-build"></a>
 Download page: [ApexSQL Build]<br/>
 Release date: 2015-12-22<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1893,7 +2028,8 @@ Run scripts on multiple databases at once
  - Execute scripts on saved list of servers/databases
 
 
-## ApexSQL Clean <a id="apexsql-clean"></a>
+## ApexSQL Clean
+<a id="apexsql-clean"></a>
 Download page: [ApexSQL Clean]<br/>
 Release date: 2015-09-04<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1911,7 +2047,8 @@ Price: $399
  - Create and export reports from object dependencies
 
 
-## ApexSQL Data Diff <a id="apexsql-data-diff"></a>
+## ApexSQL Data Diff
+<a id="apexsql-data-diff"></a>
 Download page: [ApexSQL Data Diff]<br/>
 Release date: 2015-12-11<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1932,7 +2069,8 @@ Compare data in live databases and backups
  - Create executable .NET packages
 
 
-## ApexSQL Diff <a id="apexsql-diff"></a>
+## ApexSQL Diff
+<a id="apexsql-diff"></a>
 Download page: [ApexSQL Diff]<br/>
 Release date: 2016-03-23<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1949,7 +2087,8 @@ Price: $399
  - Create executable .NET packages
 
 
-## ApexSQL Doc <a id="apexsql-doc"></a>
+## ApexSQL Doc
+<a id="apexsql-doc"></a>
 Download page: [ApexSQL Doc]<br/>
 Release date: 2015-04-19<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1967,7 +2106,8 @@ Document SQL Server databases and SSIS packages
  - Include Data model diagrams
 
 
-## ApexSQL Generate <a id="apexsql-generate"></a>
+## ApexSQL Generate
+<a id="apexsql-generate"></a>
 Download page: [ApexSQL Generate]<br/>
 Release date: 2016-03-15<br/>
 Support Version: 2008/2012/2014<br/>
@@ -1985,7 +2125,8 @@ Price: $499
  - Emulate real-world test data
 
 
-## ApexSQL Script <a id="apexsql-script"></a>
+## ApexSQL Script
+<a id="apexsql-script"></a>
 Download page: [ApexSQL Script]<br/>
 Release date: 2015-09-11<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2003,7 +2144,8 @@ Price: $249
  - Easily decrypt some/all encrypted database objects
 
 
-## ApexSQL Trigger <a id="apexsql-trigger"></a>
+## ApexSQL Trigger
+<a id="apexsql-trigger"></a>
 Download page: [ApexSQL Trigger]<br/>
 Release date: 2015-09-04<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2021,7 +2163,8 @@ Price: $1999
  - Audit who, what, and when for all changes
 
 
-## DBBest T-SQL Analyzer <a id="dbbest-t-sql-analyzer"></a>
+## DBBest T-SQL Analyzer
+<a id="dbbest-t-sql-analyzer"></a>
 Download page: [DBBest T-SQL Analyzer]<br/>
 Release date: 2015-03-13<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2033,7 +2176,8 @@ T-SQL Analyzer is a code analyzing tool for finding problematic spots in your Tr
 The tool analyzes stored procedures and user-defined functions in your SQL Server database against a predefined set of best practice rules.
 
 
-## DBBest Database Compare Suite <a id="dbbest-database-compare-suite"></a>
+## DBBest Database Compare Suite
+<a id="dbbest-database-compare-suite"></a>
 Download page: [DBBest Database Compare Suite]<br/>
 Release date: 2015-09-04<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2044,7 +2188,8 @@ Price: $349
 Comparing two production databases for migrating or upgrading
 
 
-## Advanced Query Tool <a id="advanced-query-tool"></a>
+## Advanced Query Tool
+<a id="advanced-query-tool"></a>
 Download page: [Advanced Query Tool]<br/>
 Release date: 2015-03-18<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2056,7 +2201,8 @@ AQT provides a simple and easy-to-use interface to your many different databases
 Oracle, DB2 for LUW, DB2 for z/OS, DB2 for iSeries, Sybase ASE, **SQL Server**, Informix, MySQL, MS Access, SQLite, Other.
 
 
-## SqlDiffFramework <a id="sqldiffframework"></a>
+## SqlDiffFramework
+<a id="sqldiffframework"></a>
 Download page: [SqlDiffFramework]<br/>
 Release date: 2012-04-17<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2071,7 +2217,8 @@ SqlDiffFramework compares two data sources and highlights both row and column di
  - Verify two systems have synchronized data
 
 
-## DataGrip <a id="datagrip"></a>
+## DataGrip
+<a id="datagrip"></a>
 Download page: [DataGrip]<br/>
 Release date: 2016-11-23<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2085,7 +2232,8 @@ Price: $199
  - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
 
 
-## Pssdiag and Sqldiag Manager <a id="pssdiag-and-sqldiag-manager"></a>
+## Pssdiag and Sqldiag Manager
+<a id="pssdiag-and-sqldiag-manager"></a>
 Download page: [Pssdiag and Sqldiag Manager]<br/>
 Release date: 2015-04-17<br/>
 Support Version: 2012/2014<br/>
@@ -2098,7 +2246,8 @@ It was evolved and shipped with SQL Server 2005 and beyond. But the shipped prod
 Microsoft Product support continues to maintain a configuration tool that allows engineers to dynamically configure on what to collect.
 
 
-## SQL Nexus Tool <a id="sql-nexus-tool"></a>
+## SQL Nexus Tool
+<a id="sql-nexus-tool"></a>
 Download page: [SQL Nexus Tool]<br/>
 Release date: 2016-11-20<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2116,7 +2265,8 @@ It can dramatically reduce the amount of time you spend manually analyzing data
  - Among other things, DataGrip comes with user parameters support, CSV editor, diagram builder, version control support and many other features
 
 
-## DBSophic Qure Profiler <a id="dbsophic-qure-profiler"></a>
+## DBSophic Qure Profiler
+<a id="dbsophic-qure-profiler"></a>
 Download page: [DBSophic Qure Profiler]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012<br/>
@@ -2133,7 +2283,8 @@ SQL server trace analysis tool
  - No limitations on the number of SQL servers, databases, processors etc.
 
 
-## DBSophic Qure Optimizer <a id="dbsophic-qure-optimizer"></a>
+## DBSophic Qure Optimizer
+<a id="dbsophic-qure-optimizer"></a>
 Download page: [DBSophic Qure Optimizer]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012<br/>
@@ -2144,7 +2295,8 @@ Price: ?
 The workload tuning solution that automatically optimizes millions of queries in one go
 
 
-## RestoreChecker <a id="restorechecker"></a>
+## RestoreChecker
+<a id="restorechecker"></a>
 Download page: [RestoreChecker]<br/>
 Release date: 2015-01-15<br/>
 Support Version: ?<br/>
@@ -2156,7 +2308,8 @@ RestoreChecker is a utility that restores SQL Server backup files in order to ve
 and in addition perform data integrity checks on the backups restored while offloading the intensive IO activity from your production servers.
 
 
-## SQLScripter <a id="sqlscripter"></a>
+## SQLScripter
+<a id="sqlscripter"></a>
 Download page: [SQLScripter]<br/>
 Release date: 2009-08-24<br/>
 Support Version: ?<br/>
@@ -2167,7 +2320,8 @@ Price: $99
 SQLScripter is a powerful command line utility that scripts SQL Server objects. The utility is designed to automate the process of schema generation.
 
 
-## SQLC <a id="sqlc"></a>
+## SQLC
+<a id="sqlc"></a>
 Download page: [SQLC]<br/>
 Release date: 2016-05-23<br/>
 Support Version: ?<br/>
@@ -2178,7 +2332,8 @@ Price: No
 SQLC is a software tool for comparing two SQL Server databases. With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
 
 
-## Database Performance Analyzer <a id="dpa-solarwinds"></a>
+## Database Performance Analyzer
+<a id="dpa-solarwinds"></a>
 Download page: [Database Performance Analyzer]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2189,7 +2344,8 @@ Price: $1995
 Monitor across your entire environment: physical servers, virtualized, and in the Cloud
 
 
-## SQL Enlight <a id="sql-enlight"></a>
+## SQL Enlight
+<a id="sql-enlight"></a>
 Download page: [SQL Enlight]<br/>
 Release date: 2016-04-25<br/>
 Support Version: 2005/2008/2008R2/2012/2014<br/>
@@ -2206,7 +2362,8 @@ Price: $295
  - Continuous integration support
 
 
-## OmniCompare <a id="omnicompare"></a>
+## OmniCompare
+<a id="omnicompare"></a>
 Download page: [OmniCompare]<br/>
 Release date: 2016-06-03<br/>
 Support Version: ?<br/>
@@ -2218,7 +2375,8 @@ Price: No
 OmniCompare is a SQL Server configuration comparison tool which compares instance settings, users, permissions, jobs, linked servers and more.
 
 
-## HexaTier <a id="hexatier"></a>
+## HexaTier
+<a id="hexatier"></a>
 Download page: [HexaTier]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2230,7 +2388,8 @@ Providing an all-in-one solution to protect your data from internal and external
 Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Database Activity Monitoring to comply with regulatory requirements.
 
 
-## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
+## SoftTree SQL Assistant
+<a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
 Release date: 2016-10-26<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -2245,7 +2404,8 @@ Price: $215
  - Provides advanced SQL code formatters and beautifiers; SQL syntax validation, code structure views for fast code navigation, and more...
 
 
-## [DB Audit and Security 360] <a id="db-audit-and-security-360"></a>
+## [DB Audit and Security 360]
+<a id="db-audit-and-security-360"></a>
 Download page: [DB Audit and Security 360]<br/>
 Release date: 2015-02-07<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -2259,7 +2419,8 @@ including database security, access and usage, data creation, change or deletion
 What makes this solution really unique is its built-in support for multiple auditing methods giving you the flexibility to choose the best fit for your database security requirements.
 
 
-## EMS SQL Management Studio <a id="ems-management-studio"></a>
+## EMS SQL Management Studio
+<a id="ems-management-studio"></a>
 Download page: [EMS SQL Management Studio]<br/>
 Release date: 2016-05-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -2272,7 +2433,8 @@ With components that focus on all critical MS SQL Server database management tas
 you with must-have tools for administering SQL Server databases, managing database schema and objects as well as for SQL Server database design, migration, extraction, SQL Server query building, data import, export and database comparison. SQL Studio unites these database tools for MSSQL Server in one powerful and easy-to-use environment that can work round the clock. Whether you are a database or application developer, DBA or business analyst, SQL Studio for SQL Server offers all essential SQL Server tools to make you more productive than ever before!
 
 
-## EMS SQL Backup <a id="ems-sql-backup"></a>
+## EMS SQL Backup
+<a id="ems-sql-backup"></a>
 Download page: [EMS SQL Backup]<br/>
 Release date: 2016-04-13<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -2284,7 +2446,8 @@ EMS SQL Backup for SQL Server is an effective tool for automating backup, restor
 In addition, SQL Backup allows you to update statistics, perform re-indexing, truncate database, check database integrity and perform many other tasks that can be united into policies and deployed to SQL Servers in a few clicks. SQL Backup monitors the maintenance task execution, quickly investigates and resolves issues.
 
 
-## EMS SQL Administrator <a id="ems-sql-administrator"></a>
+## EMS SQL Administrator
+<a id="ems-sql-administrator"></a>
 Download page: [EMS SQL Administrator]<br/>
 Release date: 2015-04-14<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -2297,7 +2460,8 @@ It provides a complete and easy-to-use set of tools for administering SQL Server
 SQL Administrator is designed specifically for database administrators and allows you to perform administrative tasks in the fastest, easiest and most efficient way.
 
 
-## EMS SQL Manager <a id="ems-sql-manager"></a>
+## EMS SQL Manager
+<a id="ems-sql-manager"></a>
 Download page: [EMS SQL Manager]<br/>
 Release date: 2016-05-26<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014<br/>
@@ -2309,7 +2473,8 @@ EMS SQL Manager for SQL Server is a high performance graphical tool for Microsof
 It makes creating and editing MS SQL Server database objects easy and fast, and allows you to run SQL scripts, manage SQL server users and their privileges, build SQL queries visually, work with metadata, export and import SQL Server database data and much more.
 
 
-## EMS Data Export <a id="ems-data-export"></a>
+## EMS Data Export
+<a id="ems-data-export"></a>
 Download page: [EMS Data Export]<br/>
 Release date: 2016-04-29<br/>
 Support Version: -<br/>
@@ -2322,7 +2487,8 @@ including MS Access, MS Excel, MS Word, RTF, HTML, TXT, ODF and more.
 Data Export for SQL Server has a friendly wizard, which allows you to set various options of SQL Server export process visually and a command-line utility to automate your SQL Server export jobs using the configuration file.
 
 
-## EMS Data Import <a id="ems-data-import"></a>
+## EMS Data Import
+<a id="ems-data-import"></a>
 Download page: [EMS Data Import]<br/>
 Release date: 2016-04-14<br/>
 Support Version: -<br/>
@@ -2333,7 +2499,8 @@ Price: $47
 EMS Data Import for SQL Server is a powerful tool to import data to SQL Server tables from MS Excel 97-2007, MS Access, DBF, TXT, CSV, MS Word, RTF, ODF and HTML files. This utility allows you to quickly import data to one or several SQL Server tables or views at once, save all SQL Server import parameters set on current wizard session, use special batch insert mode to import SQL Server data at the maximum possible speed and much more.
 
 
-## EMS Data Pump <a id="ems-data-pump"></a>
+## EMS Data Pump
+<a id="ems-data-pump"></a>
 Download page: [EMS Data Pump]<br/>
 Release date: 2016-11-03<br/>
 Support Version: -<br/>
@@ -2344,7 +2511,8 @@ Price: $47
 EMS Data Pump for SQL Server is an excellent migration tool for converting databases and importing table data from an ADO-compatible source (e.g. MS Access, MySQL or any other database with ADO support) to SQL Server databases. Database conversion and migration become as easy as possible with Data Pump for SQL Server!
 
 
-## EMS Data Generator <a id="ems-generator"></a>
+## EMS Data Generator
+<a id="ems-generator"></a>
 Download page: [EMS Data Generator]<br/>
 Release date: 2010-07-10<br/>
 Support Version: -<br/>
@@ -2356,7 +2524,8 @@ EMS Data Generator for SQL Server is an impressive tool for generating test data
 The utility can help you to simulate the database production environment and allows you to populate several SQL Server database tables with test data simultaneously, define tables for generating data, set value ranges, control a wide variety of generation parameters for each field type and much more. It has plenty of powerful functionalities to generate SQL Server test data in a simple and direct way.
 
 
-## EMS DB Comparer <a id="ems-bd-comparer"></a>
+## EMS DB Comparer
+<a id="ems-bd-comparer"></a>
 Download page: [EMS DB Comparer]<br/>
 Release date: 2015-07-24<br/>
 Support Version: -<br/>
@@ -2367,7 +2536,8 @@ Price: $47
 EMS DB Comparer for SQL Server is an excellent tool for comparing SQL Server database schemas and discovering differences in their structures.
 You can view all the differences in compared database objects and execute an automatically generated script to synchronize structure of SQL Server databases and eliminate these differences. Define comparison parameters and many other features make your work with our tool for SQL Server database synchronization easy and fast.
 
-## EMS DB Extract <a id="ems-bd-extract"></a>
+## EMS DB Extract
+<a id="ems-bd-extract"></a>
 Download page: [EMS DB Extract]<br/>
 Release date: 2008-10-16<br/>
 Support Version: -<br/>
@@ -2380,7 +2550,8 @@ This database script utility allows you to save metadata of all SQL Server datab
 Flexible customization of the extract process enables you to select objects and data tables for SQL Server database dump and tune many other extract options.
 
 
-## EMS SQL Query <a id="ems-sql-query"></a>
+## EMS SQL Query
+<a id="ems-sql-query"></a>
 Download page: [EMS SQL Query]<br/>
 Release date: 2012-03-29<br/>
 Support Version: -<br/>
@@ -2391,7 +2562,8 @@ Price: $47
 EMS SQL Query for SQL Server is a useful tool that lets you quickly and simply build SQL queries to SQL Server databases. Visual SQL Server query building as well as direct editing of a query text is available. User-friendly graphical interface allows you to connect to SQL Server databases, select tables and fields for a query to SQL Server, set the selection criteria and many more.
 
 
-## EMS Data Comparer <a id="ems-data-comparer"></a>
+## EMS Data Comparer
+<a id="ems-data-comparer"></a>
 Download page: [EMS Data Comparer]<br/>
 Release date: 2012-11-16<br/>
 Support Version: -<br/>
@@ -2403,7 +2575,8 @@ EMS Data Comparer for SQL Server is a powerful and easy-to-use tool for SQL Serv
 Using this utility you can view all the differences in compared SQL Server tables and execute an automatically generated script to eliminate these differences. Data Comparer for SQL Server provides a wide range of configuration parameters for fast and effective data comparison and synchronization of SQL Server databases.
 
 
-## NitroAccelerator <a id="nitroaccelerator"></a>
+## NitroAccelerator
+<a id="nitroaccelerator"></a>
 Download page: [NitroAccelerator]<br/>
 Release date: 2016-07-10<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2414,7 +2587,8 @@ Price: $1265
 Accelerates and Secures SQL Server network traffic resulting in orders of magnitude performance improvement while securing the data across the network.
 
 
-## ERwin Data Modeler <a id="erwin-data-modeler"></a>
+## ERwin Data Modeler
+<a id="erwin-data-modeler"></a>
 Download page: [ERwin Data Modeler]<br/>
 Release date: 2016-06-03<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2425,7 +2599,8 @@ Price: $810
 ERwin Data Modeler is an industry-leading data modeling solution that provides a simple, visual interface to manage your complex data environment
 
 
-## Toad Data Modeler <a id="toad-data-modeler"></a>
+## Toad Data Modeler
+<a id="toad-data-modeler"></a>
 Download page: [Toad Data Modeler]<br/>
 Release date: 2016-06-16<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2437,7 +2612,8 @@ Easily create high-quality data models. Toad Data Modeler enables you to rapidly
 It allows you to construct logical and physical data models, compare and synchronize models, quickly generate complex SQL/DDL, create and modify scripts, as well as reverse and forward engineer both databases and data warehouse systems
 
 
-## SQL Power Architect <a id="toad-data-modeler"></a>
+## SQL Power Architect
+<a id="toad-data-modeler"></a>
 Download page: [SQL Power Architect]<br/>
 Release date: 2016-02-11<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2449,7 +2625,8 @@ The SQL Power Architect data modeling tool was created by data warehouse designe
 It allows users to reverse-engineer existing databases, perform data profiling on source databases, and auto-generate ETL metadata.
 
 
-## DbWrench <a id="dbwrench"></a>
+## DbWrench
+<a id="dbwrench"></a>
 Download page: [DbWrench]<br/>
 Release date: 2016-07-06<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2462,7 +2639,8 @@ Price: $99
  - supports many operating systems and databases in a single license
 
 
-## Navicat Data Modeler <a id="navicat-data-modeler"></a>
+## Navicat Data Modeler
+<a id="navicat-data-modeler"></a>
 Download page: [Navicat Data Modeler]<br/>
 Release date: 2016-08-01<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2474,7 +2652,8 @@ Navicat Data Modeler is a powerful and cost-effective database design tool which
 It allows you to visually design database structures, perform reverse/forward engineering processes, import models from ODBC data sources, generate complex SQL/DDL, print models to files, and much more.
 
 
-## DeZign for Databases <a id="dezign-for-databases"></a>
+## DeZign for Databases
+<a id="dezign-for-databases"></a>
 Download page: [DeZign for Databases]<br/>
 Release date: 2016-04-25<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2486,7 +2665,8 @@ DeZign for Databases is an intuitive database design and modeling tool for devel
 The software uses entity relationship diagrams (ERDs, data models) to graphically design databases and automatically generates the most popular SQL and desktop database.
 
 
-## ERDesigner NG <a id="erdesigner-ng"></a>
+## ERDesigner NG
+<a id="erdesigner-ng"></a>
 Download page: [ERDesigner NG]<br/>
 Release date: 2013-04-10<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2498,7 +2678,8 @@ The Mogwai ERDesigner is an entity relationship modeling/design tool(ERD) such a
 It was designed to make database modeling as easy as it can be and to support the developer in the whole development process, from database design to schema and code generation.
 
 
-## Vertabelo <a id="vertabelo"></a>
+## Vertabelo
+<a id="vertabelo"></a>
 Download page: [Vertabelo]<br/>
 Release date: ?<br/>
 Support Version: 2012<br/>
@@ -2509,7 +2690,8 @@ Price: $948
 Design your database online but very expensive
 
 
-## dbDiffo <a id="dbdiffo"></a>
+## dbDiffo
+<a id="dbdiffo"></a>
 Download page: [dbDiffo]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2520,7 +2702,8 @@ Price: No
 dbDiffo - The free online database schema designer
 
 
-## SQL DXP <a id="sql-dxp"></a>
+## SQL DXP
+<a id="sql-dxp"></a>
 Download page: [SQL DXP]<br/>
 Release date: 2016-06-20<br/>
 Support Version: 2008/2012/2014/Azure<br/>
@@ -2531,7 +2714,8 @@ Price: $530
 SQL DXP compares databases on different server platforms and can generate scripts to make the source database generally the same as the target database regardless of platform.
 
 
-## Aqua Data Studio <a id="aqua-data-studio"></a>
+## Aqua Data Studio
+<a id="aqua-data-studio"></a>
 Download page: [Aqua Data Studio]<br/>
 Release date: 2016-07-06<br/>
 Support Version: 2008/2012/2014<br/>
@@ -2545,7 +2729,8 @@ Whether you are working with relational, nosql or cloud databases, your data is 
 It supports all major database vendors, works on all major operating systems and is localized to 9 languages.
 
 
-## RazorSQL <a id="razorsql"></a>
+## RazorSQL
+<a id="razorsql"></a>
 Download page: [RazorSQL]<br/>
 Release date: 2016-09-29<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2558,7 +2743,8 @@ a Transact-SQL SQL editor with Transact SQL and SQL Server specific features and
 and SQL Server specific database administration tools.
 
 
-## SQL Pretty Printer <a id="sql-pretty-printer"></a>
+## SQL Pretty Printer
+<a id="sql-pretty-printer"></a>
 Download page: [SQL Pretty Printer]<br/>
 Release date: 2016-02-19<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2572,7 +2758,8 @@ Batch mode enables you to clean up SQL in multifiles under a nested directory.
 While sitting in the tray, you can format SQL in any editor like Microsoft Query Analyzer, UltraEditor or notepad with just one hotkey.
 
 
-## Databse .NET <a id="database-net"></a>
+## Databse .NET
+<a id="database-net"></a>
 Download page: [Databse .NET]<br/>
 Release date: 2017-01-13<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2584,7 +2771,8 @@ Database .NET is an innovative, powerful and intuitive multiple database managem
 You can browse/grant objects, design tables, edit rows, run queries, generate scripts, analyze/monitor SQL and import/export/migrate/sync data with a consistent interface.
 
 
-## dbMigration .NET <a id="dbMigration-net"></a>
+## dbMigration .NET
+<a id="dbMigration-net"></a>
 Download page: [dbMigration .NET]<br/>
 Release date: 2017-01-13<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2596,7 +2784,8 @@ dbMigration .NET is a simple, easy and intuitive multiple database migration and
 With it you can easily migrate schema and data between different databases without complicated procedures.
 
 
-## Is It SQL <a id="is-it-sql"></a>
+## Is It SQL
+<a id="is-it-sql"></a>
 Download page: [Is It SQL]<br/>
 Release date: 2016-12-13<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -2609,7 +2798,8 @@ have issues is "Is It SQL Server?" I wanted a simple monitoring service I could 
 It had to be simple enough that a non-DBA could look at it and decide whether to call me.
 
 
-## Database Experimentation Assistant <a id="dea"></a>
+## Database Experimentation Assistant
+<a id="dea"></a>
 Download page: [Database Experimentation Assistant]<br/>
 Release date: 2016-11-21<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -2622,7 +2812,8 @@ insights for upgrades by conducting experiments across two SQL Server versions u
 experiments on database workloads across two versions of SQL Server. 
 
 
-## Data Platform Studio <a id="dps"></a>
+## Data Platform Studio
+<a id="dps"></a>
 Download page: [Data Platform Studio]<br/>
 Release date: ?<br/>
 Support Version: SQL Server, SQL Azure<br/>
@@ -2637,7 +2828,8 @@ Automatically, and in far less time than it takes to handle migrations manually,
  - Utilizes the MPP power of Azure SQL Data Warehouse to ingest the data quickly
 
 
-## Flyway <a id="flyway"></a>
+## Flyway
+<a id="flyway"></a>
 Download page: [Data Platform Studio]<br/>
 Release date: ?<br/>
 Support Version: Oracle, SQL Server, SQL Azure, MySQL, Other<br/>
@@ -2651,7 +2843,8 @@ Migrations can be written in SQL (database-specific syntax (such as PL/SQL, T-SQ
 It has a Command-line client. If you are on the JVM, we recommend using the Java API (also works on Android) for migrating the database on application startup. Alternatively, you can also use the Maven plugin, Gradle plugin, SBT plugin or the Ant tasks.
 
 
-## Liquibase <a id="liquibase"></a>
+## Liquibase
+<a id="liquibase"></a>
 Download page: [Liquibase]<br/>
 Release date: 2016-10-13<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
@@ -2666,7 +2859,8 @@ Preconditions can be applied to either the changelog as a whole or individual ch
 Contexts can be applied to changesets to control which are ran in different environments.
 
 
-## My Batis <a id="my-batis"></a>
+## My Batis
+<a id="my-batis"></a>
 Download page: [My Batis]<br/>
 Release date: 2016-06-22<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
@@ -2686,7 +2880,8 @@ MyBatis Schema Migration System (or MyBatis Migrations for short) seeks to:
  - Encourages good, consistent practices
 
 
-## SentryOne <a id="sentryone"></a>
+## SentryOne
+<a id="sentryone"></a>
 Download page: [SentryOne]<br/>
 Release date: 2016-12-07<br/>
 Support Version: ?<br/>
@@ -2699,7 +2894,8 @@ We have combined all the great SQL Sentry tools into a single unified solution t
 Everything you need for: SQL Server and Windows Performance Monitoring, Event Management, Index Defragmentation and Query Plan Analysis, with Desktop, Web, and Mobile UIs. 
 
 
-## dbMonitor <a id="dbmonitor"></a>
+## dbMonitor
+<a id="dbmonitor"></a>
 Download page: [dbMonitor]<br/>
 Release date: 2012-11-01<br/>
 Support Version: ?<br/>
@@ -2712,7 +2908,8 @@ To extend monitoring capabilities of our data access products there is an additi
 dbMonitor performs per-component tracing of database events such as commit, rollback, SQL statement execute, creating and destroying components, connection pooling events etc. 
 
 
-## DBmaestro TeamWork <a id="dbmaestro-teamwork"></a>
+## DBmaestro TeamWork
+<a id="dbmaestro-teamwork"></a>
 Download page: [DBmaestro TeamWork]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2727,7 +2924,8 @@ DBmaestro is bringing the agility of Automation and DevOps, with an innovative s
  - Database Enhanced Security and Regulatory Compliance
 
 
-## xSQL Schema Compare <a id="xsql-schema-compare"></a>
+## xSQL Schema Compare
+<a id="xsql-schema-compare"></a>
 Download page: [xSQL Schema Compare]<br/>
 Release date: 2017-03-01<br/>
 Support Version: 2005/2008/2012/2014/2016, Azure<br/>
@@ -2739,7 +2937,8 @@ Price: $399
 Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it - xSQL Schema Compare makes database change management easy.
  
  
-## Cloud-based DB Monitoring Platform <a id="cbmp"></a>
+## Cloud-based DB Monitoring Platform
+<a id="cbmp"></a>
 Download page: [Cloud-based DB Monitoring Platform]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2750,7 +2949,8 @@ Price: €180
 Charts-on-charts technology, 24/7/365. Intuïtive ease of use. Alerting via Windows, Android and iOS. Drill down into detailed history charts. Send instant messages within your secured network.
 
 
-## SchemaCrowler <a id="schema-crowler"></a>
+## SchemaCrowler
+<a id="schema-crowler"></a>
 Download page: [SchemaCrowler]<br/>
 Release date: 2017-02-27<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
@@ -2764,7 +2964,8 @@ database documentation, and is designed to be diff-ed against other database sch
 SchemaCrawler supports almost any database that has a JDBC driver, but for convenience is bundled with drivers for some commonly used RDBMS systems. SchemaCrawler works with any operating system that supports Java SE 8, Compact Profile 2 or better.
 
 
-## SA MaaS Microsoft SQL Server <a id="sa-maas"></a>
+## SA MaaS Microsoft SQL Server
+<a id="sa-maas"></a>
 Download page: [SA MaaS Microsoft SQL Server]<br/>
 Release date: ?<br/>
 Support Version: ?<br/>
@@ -2776,7 +2977,8 @@ SA MaaS Microsoft SQL Server for on-premise and virtual Microsoft SQL servers ga
 diagnostics to help network admins and DBAs keep SQL servers running at peak performance and find the logs they need.
 
 
-## CatCompare v2 <a id="cat-compare"></a>
+## CatCompare v2
+<a id="cat-compare"></a>
 Download page: [CatCompare v2]<br/>
 Release date: 2017-01-07<br/>
 Support Version: ?<br/>
@@ -2787,7 +2989,8 @@ Price: $295
 CatCompare provides automate-able command-line management of SSIS Catalog project configuration, deployment, migration, code promotion, and comparison.
 
 
-## SSIS Catalog Compare v2.0 Bundle <a id="catalog-compare-bundle"></a>
+## SSIS Catalog Compare v2.0 Bundle
+<a id="catalog-compare-bundle"></a>
 Download page: [SSIS Catalog Compare v2.0 Bundle]<br/>
 Release date: 2017-01-06<br/>
 Support Version: ?<br/>
@@ -2799,7 +3002,8 @@ Deploying SSIS Catalog Projects help deploying environments, references, mapping
 The SSIS Catalog Compare Version 2.0 Bundle includes SSIS Catalog Compare and CatCompare, a CLI (Command-Line Interface) utility.
 
 
-## MS Kerberos Configuration Manager <a id="mkcm"></a>
+## MS Kerberos Configuration Manager
+<a id="mkcm"></a>
 Download page: [MS Kerberos Configuration Manager]<br/>
 Release date: 2017-01-31<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2810,7 +3014,8 @@ Price: No
 Microsoft Kerberos Configuration Manager for SQL Server is a diagnostic tool that helps troubleshoot Kerberos related connectivity issues with SQL Server, SQL Server Reporting Services, and SQL Server Analysis Services.
 
 
-## Spotligh <a id="spotlight"></a>
+## Spotligh
+<a id="spotlight"></a>
 Download page: [Spotligh]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -2821,7 +3026,8 @@ Price: ?
 Can diagnose SQL Server performance issues quickly and accurately, ensuring a healthy database infrastructure.
 
 
-## DBConvert Studio <a id="dbconvert-studio"></a>
+## DBConvert Studio
+<a id="dbconvert-studio"></a>
 Download page: [DBConvert Studio]<br/>
 Release date: 2017-03-01<br/>
 Support Version: ?<br/>
@@ -2837,7 +3043,8 @@ The following scenarios are available:
  - Data distribution (data flows from one source database to multiple destinations)
 
 
-## DbDefence <a id="dbdefence"></a>
+## DbDefence
+<a id="dbdefence"></a>
 Download page: [DbDefence]<br/>
 Release date: 2017-03-01<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
@@ -2850,33 +3057,31 @@ With DbDefence you can hide table structure and data from prying eyes, even from
 Free version for databases less than 200 MB.
 
 
-## Uptime Infrastructure Monitor <a id="uim"></a>
-Download page: [Uptime Infrastructure Monitor]<br/>
-Release date: ?<br/>
-Support Version: ?<br/>
-Author: Idera<br/>
-Free version: No<br/>
-Price: ?
-
- - Monitor servers, VMs, network devices, and applications from a unified dashboard
- - Use historic data to plan for future server capacity needs
- - Track service-level performance trends for SLA compliance and reporting
- - Monitor virtually anything via a multitude of pre-built plug-ins or custom scripts
- - Streamline incident management with native ServiceNow integration
-
-
-## SQL Server Migration Assistant for MySQL <a id="ssma-mysql"></a>
+## SQL Server Migration Assistant for MySQL
+<a id="ssma-mysql"></a>
 Download page: [SQL Server Migration Assistant for MySQL]<br/>
 Release date: 2017-02-17<br/>
-Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Support Version: 2005/2008/2012/2014/2016/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
 
 Microsoft SQL Server Migration Assistant (SSMA) for MySQL is a tool to automate migration from MySQL database(s) to SQL Server and Azure SQL DB.
 
- 
-[SSMS]:https://msdn.microsoft.com/en-us/library/mt238290.aspx
+
+## sqlcmd for Mac and Linux
+<a id="ssma-mysql"></a>
+Download page: [sqlcmd for Mac and Linux]<br/>
+Release date: 2017-01-26<br/>
+Support Version: 2005/2008/2012/2014/2016/Azure<br/>
+Author: Soheil Rashidi<br/>
+Free version: Open Source<br/>
+Price: No
+
+sqlcmd for Mac and Linux
+
+
+[SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
@@ -3071,3 +3276,4 @@ Microsoft SQL Server Migration Assistant (SSMA) for MySQL is a tool to automate 
 [DbDefence]:https://www.database-encryption.com
 [Uptime Infrastructure Monitor]:https://www.idera.com/it-infrastructure-management-and-monitoring
 [SQL Server Migration Assistant for MySQL]:https://msdn.microsoft.com/en-us/library/hh313109%28v=sql.110%29.aspx?f=255&MSPPError=-2147217396
+[sqlcmd for Mac and Linux]:https://github.com/soheilpro/sqlcmd
