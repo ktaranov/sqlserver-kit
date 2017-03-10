@@ -1,11 +1,14 @@
 # Microsoft SQL Server Articles
 
 Articles types:
+ - [AZ]: Azure
  - [B]: Backup
+ - [COR]: Corruption
  - [DEV]: Development
  - [DM]: Database Mail
  - [DBCC]: DBCC commands
  - [DS]: Dynamic SQL
+ - [MG]: Migration
  - [J]: Jobs
  - [P]: Performance
  - [PS]: Powershell
@@ -15,13 +18,13 @@ Articles types:
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-----------|
 | [SQL Server Index Design Guide]                                                                                         | Microsoft                                | ?          |           |
 | [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 |           |
-| [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 |           |
+| [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 | [COR]     |
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |           |
-| [What to Do When DBCC CHECKDB Reports Corruption]                                                                       | Brent Ozar                               | 2016-05-19 |           |
+| [What to Do When DBCC CHECKDB Reports Corruption]                                                                       | Brent Ozar                               | 2016-05-19 | [COR]     |
 | [Troubleshooting SQL Server CPU Performance Issues]                                                                     | Joe Sack                                 | 2013-05-28 | [P]       |
 | [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                                                      | Paul Randal                              | 2016-04-06 | [P]       |
 | [High Performance T-SQL using Code Patterns]                                                                            | Dwain Camps                              | 2015-05-27 |           |
-| [SQL Server Database Corruption Repair]                                                                                 | Steve Stedman                            | 2015-08-26 |           |
+| [SQL Server Database Corruption Repair]                                                                                 | Steve Stedman                            | 2015-08-26 | [COR]     |
 | [Basic SQL Server Performance Troubleshooting For Developers]                                                           | Tony Davis                               | 2015-08-14 | [P]       |
 | [The Curse and Blessings of Dynamic SQL]                                                                                | Erland Sommarskog                        | 2015-04-14 | [DS]      |
 | [Dynamic Search Conditions in T-SQL]                                                                                    | Erland Sommarskog                        | 2016-10-29 |           |
@@ -154,7 +157,7 @@ Articles types:
 | [SQL Server Temporary Table Caching]                                                                                    | Simon Liew                               | 2016-08-12 |           |
 | [Techniques to Monitor SQL Server memory usage]                                                                         | Basit Farooq                             | 2016-08-01 |           |
 | [Troubleshooting Query Regressions Caused By The New Cardinality Estimator]                                             | SQL Scotsman                             | 2016-11-28 |           |
-| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 |           |
+| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 | [MG],[AZ] |
 | [Solve Common SQL Server Restore Issues]                                                                                | Sergey Gigoyan                           | 2015-04-12 |           |
 | [Spills SQL Server Doesn’t Warn You About]                                                                              | Erik Darling                             | 2016-11-30 |           |
 | [How often should I run DBCC CHECKDB?]                                                                                  | Erik Darling                             | 2016-02-25 |           |
@@ -179,10 +182,10 @@ Articles types:
 | [Practical uses of binary types]                                                                                        | Daniel Hutmacher                         | 2017-01-09 |           |
 | [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]                                                    | Aaron Nelson                             | 2017-01-12 |           |
 | [Creating, detaching, re-attaching, and fixing a SUSPECT database]                                                      | Paul Randal                              | 2008-08-29 |           |
-| [Modifying Tables Online – Part 1: Migration Strategy]                                                                  | Michael J Swart                          | 2012-04-16 |           |
-| [Modifying Tables Online – Part 2: Implementation Example]                                                              | Michael J Swart                          | 2012-04-17 |           |
-| [Modifying Tables Online – Part 3: Example With Error Handling]                                                         | Michael J Swart                          | 2012-04-20 |           |
-| [Modifying Tables Online – Part 4: Testing]                                                                             | Michael J Swart                          | 2012-04-26 |           |
+| [Modifying Tables Online – Part 1: Migration Strategy]                                                                  | Michael J Swart                          | 2012-04-16 | [MG]      |
+| [Modifying Tables Online – Part 2: Implementation Example]                                                              | Michael J Swart                          | 2012-04-17 | [MG]      |
+| [Modifying Tables Online – Part 3: Example With Error Handling]                                                         | Michael J Swart                          | 2012-04-20 | [MG]      |
+| [Modifying Tables Online – Part 4: Testing]                                                                             | Michael J Swart                          | 2012-04-26 | [MG]      |
 | [Modifying Tables Online – Part 5: Just One More Thing]                                                                 | Michael J Swart                          | 2012-04-27 |           |
 | [DATEDIFF vs. DATEADD]                                                                                                  | Guy Glanster                             | 2017-01-25 |           |
 | [Disaster recovery 101: hack-attach a damaged database]                                                                 | Paul Randal                              | 2010-06-18 |           |
@@ -191,7 +194,7 @@ Articles types:
 | [Reclaiming Space After Column Data Type Change]                                                                        | David Fundakowski                        | 2016-08-09 |           |
 | [Packing Intervals with Priorities]                                                                                     | Itzik Ben-Gan                            | 2015-11-10 |           |
 | [Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]                                                            | Itzik Ben-Gan                            | 2014-12-11 |           |
-| [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]                                                | Alex Grinberg                            | 2017-02-26 |           |
+| [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]                                                | Alex Grinberg                            | 2017-02-26 | [MG]      |
 | [SQL Server Hardware Optimization]                                                                                      | Basit Farooq                             | 2016-06-01 |           |
 | [Index Types  Heaps, Primary Keys, Clustered and Nonclustered Indexes]                                                  | Kendra Little                            | 2017-02-02 |           |
 | [Identifying Existence of Intersections in Intervals]                                                                   | Itzik Ben-Gan                            | 2017-02-08 |           |
@@ -223,8 +226,8 @@ Articles types:
 | [Delayed Durability in SQL Server 2014]                                                                                 | Aaron Bertrand                           | 2014-04-28 |           |
 | [Daylight Savings end affects not only you, but your SQL Server too]                                                    | Aaron Bertrand                           | 2014-04-28 |           |
 | [Searching Strings in SQL Server is Expensive]                                                                          | Brent Ozar                               | 2016-10-18 |           |
-| [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 |           |
-| [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]                                                       | Brent Ozar                               | 2017-02-28 |           |
+| [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 | [COR]     |
+| [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]                                                       | Brent Ozar                               | 2017-02-28 | [COR]     |
 | [The Guide  SQL Server Installation Checklist (settings that increase SQL Server Performance)]                          | Mark Varnas                              | 2017-03-03 |           |
 | [SQL Browser, what is it good for? Absolutely something!]                                                               | Chris Sommer                             | 2017-03-01 |           |
 | [PowerShell Getting More From Generic Error Messages]                                                                   | Shane O'Neill                            | 2017-03-02 | [PS]      |
@@ -235,6 +238,10 @@ Articles types:
 | [Using DBCC CLONEDATABASE and Query Store for Testing]                                                                  | Erin Stellato                            | 2017-02-22 | [DBCC]    |
 | [Getting Started with Natural Earth — A SQL Server Shapefile Alternative (Geospatial Resource)]                         | Jeff Pries                               | 2017-02-17 | [V]       |
 | [SQL Server Temporal Tables: How-To Recipes]                                                                            | Alex Grinberg                            | 2017-02-10 | [DEV]     |
+| [The Migration Checklist]                                                                                               | Steve Jones                              | 2017-03-08 | [MG]      |
+| [Upgrading to SQL Server 2014: A Dozen Things to Check]                                                                 | Steve Jones                              | 2014-06-03 | [MG]      |
+| [Introducing the Set-based Loop]                                                                                        | Luis Cazares                             | 2015-07-27 | [DEV]     |
+| [Representing Hierarchical Data for Mere Mortals]                                                                       | Phil Factor                              | 2016-10-06 | [DEV]     |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -458,3 +465,8 @@ Articles types:
 [Using DBCC CLONEDATABASE and Query Store for Testing]:https://sqlperformance.com/2017/02/sql-performance/clonedatabase-query-store-testing
 [Getting Started with Natural Earth — A SQL Server Shapefile Alternative (Geospatial Resource)]:http://blog.jpries.com/2017/02/17/getting-started-with-natural-earth-sql-server/
 [SQL Server Temporal Tables: How-To Recipes]:https://www.simple-talk.com/sql/sql-training/sql-server-temporal-tables-recipes/
+[The Migration Checklist]:http://www.sqlservercentral.com/articles/Editorial/154033/
+[Upgrading to SQL Server 2014: A Dozen Things to Check]:https://thomaslarock.com/2014/06/upgrading-to-sql-server-2014-a-dozen-things-to-check/
+[Number of Rows Read / Actual Rows Read warnings in Plan Explorer]:https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer
+[Introducing the Set-based Loop]:http://www.sqlservercentral.com/articles/set-based+loop/127670/
+[Representing Hierarchical Data for Mere Mortals]:https://www.simple-talk.com/sql/database-administration/representing-hierarchical-data-for-mere-mortals/
