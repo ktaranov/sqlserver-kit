@@ -93,7 +93,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 197 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 201 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -197,6 +197,7 @@ Headers:
      - [How to Think Like the SQL Server Engine](https://learnfrom.brentozar.com/courses/how-to-think-like-the-engine-an-introduction-to-sql-server-internals/)
      - [Number and Date Tables](https://www.brentozar.com/archive/2016/01/video-free-training-of-the-week-number-and-date-tables/)
      - [Free SQL Tutorials](http://www.guru99.com/sql.html)
+     - [OpenedX Microsoft Courses](https://openedx.microsoft.com/)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)

@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **198** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **201** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {6}
- - **[MG]**: Migration tool {3}
+ - **[MG]**: Migration tool {10}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[T]**: Testing tools {3}
  - **[G]**: Data generation {4}
@@ -168,7 +168,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                              | 2016-04-25   | UbitSoft             | No             |  $295 |
 | [OmniCompare](#omnicompare)                                           | No                               | No             | [SC]       | [OmniCompare]                              | 2016-06-03   | AireForge            | Yes            | No    |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                 | ?            | HexaTier             | No             | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                   | 2016-10-26   | SoftTree             | No             |  $215 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                   | 2017-03-09   | SoftTree             | No             |  $215 |
 | [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                | 2015-02-07   | SoftTree             | No             |  $499 |
 | [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]                | 2016-05-26   | EMS                  | No             |  $257 |
 | [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                           | 2016-04-13   | EMS                  | Yes            |  $82  |
@@ -218,8 +218,11 @@ Utility types (main purpose) in braces `{}` current counts:
 | [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [DBConvert Studio]                         | 2017-03-01   | DMSoft Technologies  | No             | $499  |
 | [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            | $698  |
 | [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            | No    |
-| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [Ssqlcmd for Mac and Linux]                | 2017-01-26   | Soheil Rashidi       | Open Source    | No    |
+| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                 | 2017-01-26   | Soheil Rashidi       | Open Source    | No    |
 | [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                             | ?            | Datamate Technology  | ?              | ?     |
+| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
+| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             | $149  |
+| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             | $149  |
 
 
 ## SSMS
@@ -2392,7 +2395,7 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 ## SoftTree SQL Assistant
 <a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
-Release date: 2016-10-26<br/>
+Release date: 2017-03-09<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: SoftTree<br/>
 Free version: No<br/>
@@ -3094,6 +3097,55 @@ Price: ?
 Automatically upgrade objects within a SQL Server Instance from lower to higher versions or just refresh Objects between the same Versions
 
 
+## MS FoxPro to MS SQL Migration and Sync
+<a id="foxpro-sqlserver"></a>
+Download page: [MS FoxPro to MS SQL Migration and Sync]<br/>
+Release date: 2013-10-08<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Our software helps to migrate and synchronize MS Visual FoxPro databases .DBC or MS Visual FoxPro free tables .DBF to MS SQL Server.
+It combines an easy-to-use interface with bunch of customization options, so your migration and replication of data can be fulfilled smoothly and rapidly.
+
+Approximately 1 Million of records from FoxPro to MSSQL Server with "Bulk" option activated can be converted in 8 minutes.
+
+
+## MySQL to MS SQL Migration and Sync
+<a id="mysql-sqlserver"></a>
+Download page: [MySQL to MS SQL Migration and Sync]<br/>
+Release date: 2013-10-08<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Our software automates conversion and synchronization of your databases from MySQL to MS SQL Server.
+Transfer the entire database or select only needed dataset at customization stage in easy-to-use wizard style GUI.
+
+Views migration between MS SQL and MySQL in both directions is available. You don’t need to know any differences in SQL syntax.
+Every view will be converted from source db to target automatically.
+
+Integrated Data Types Mapping feature helps to find and map similar data types between MySQL and MS SQL Server to make cross database conversion more flexible.
+
+
+## Oracle to MS SQL Migration and Sync
+<a id="oracle-sqlserver"></a>
+Download page: [Oracle to MS SQL Migration and Sync]<br/>
+Release date: 2013-10-09<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Convert and synchronize databases from Oracle to MS SQL Server efficiently and fast.
+Automatic views conversion from Oracle to MS SQL is easily performed with our software even with no any knowledge in differences between SQL dialects.
+Besides, any server access restrictions may be overcome by creating dump files instead of direct connection to a target database.
+
+Our tool easily handles huge databases and tables. A clear easy-to-use wizard interface helps you to move the whole database or only selected tables, indexes and foreign keys effortlessly.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3284,6 +3336,7 @@ Automatically upgrade objects within a SQL Server Instance from lower to higher 
 [SA MaaS Microsoft SQL Server]:http://sentinelagent.com/maas/microsoft-sql-server
 [CatCompare v2]:https://dilmsuite.com/downloads/cat-compare-v2
 [SSIS Catalog Compare v2.0 Bundle]:https://dilmsuite.com/downloads/ssis-catalog-compare-v2-bundle
+[MS Kerberos Configuration Manager]:https://www.microsoft.com/en-us/download/details.aspx?id=39046
 [Spotlight]:https://www.spotlightessentials.com/home/Console
 [DBConvert Studio]:https://dbconvert.com/dbconvert-studio
 [DbDefence]:https://www.database-encryption.com
@@ -3291,3 +3344,6 @@ Automatically upgrade objects within a SQL Server Instance from lower to higher 
 [SQL Server Migration Assistant for MySQL]:https://msdn.microsoft.com/en-us/library/hh313109%28v=sql.110%29.aspx?f=255&MSPPError=-2147217396
 [sqlcmd for Mac and Linux]:https://github.com/soheilpro/sqlcmd
 [SQL Migrator]:http://www.datamatetechnology.com/sqlmigrator.html
+[MS FoxPro to MS SQL Migration and Sync]:https://convertdb.com/foxpro/mssql
+[MySQL to MS SQL Migration and Sync]:https://convertdb.com/mysql/mssql
+[Oracle to MS SQL Migration and Sync]:https://convertdb.com/oracle/mssql
