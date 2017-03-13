@@ -93,7 +93,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 201 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 203 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 

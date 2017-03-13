@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **201** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **203** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {6}
- - **[MG]**: Migration tool {10}
+ - **[MG]**: Migration tool {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[T]**: Testing tools {3}
  - **[G]**: Data generation {4}
@@ -71,6 +71,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Red Gate SQL Multi Script](#red-gate-sql-multi-script)               | No                               | No             | [?]        | [Red Gate SQL Multi Script]                | 2016-04-15   | Red Gate             | No             |  $245 |
 | [Red Gate SQL Index Manager](#red-gate-sql-index-manager)             | No                               | No             | [IDX]      | [Red Gate SQL Index Manager]               | ?            | Red Gate             | No             |  $149 |
 | [Red Gate SQL Comparison SDK](#red-gate-sql-comparison-sdk)           | No                               | No             | [DC], [SC] | [Red Gate SQL Comparison SDK]              | 2016-02-22   | Red Gate             | No             |  $895 |
+| [Red Gate SQL Clone](#red-gate-sql-clone)                             | No                               | No             | [?]        | [Red Gate SQL Clone]                       | 2017-02-27   | Red Gate             | No             | $6955 |
 | [DLM Automation](#dlm-automation)                                     | No                               | No             | [?]        | [DLM Automation]                           | ?            | Red Gate             | No             | ?     |
 | [ReadyRoll](#readyroll)                                               | No                               | No             | [?]        | [ReadyRoll]                                | 2016-01-03   | Red Gate             | No             |  $345 |
 | [Rapid Database Extractor](#rapid-database-extractor)                 | Oracle                           | No             | [?]        | [Rapid Database Extractor]                 | 2016-11-03   | Idera                | Yes            | No    |
@@ -223,6 +224,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 | [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 | [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             | $149  |
+| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver       | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 
 
 ## SSMS
@@ -881,7 +883,7 @@ Analyze, manage, and fix database index fragmentation
 
 
 ## Red Gate SQL Comparison SDK
-<a id="red-gate-sql-comparison-sdk"></a>
+<a id="red-gate-sql-comparison-clone"></a>
 Download page: [Red Gate SQL Comparison SDK]<br/>
 Release date: 2016-02-22<br/>
 Support Version: 2008/2012/2014<br/>
@@ -891,6 +893,20 @@ Price: $895
 
 Compare and synchronize automatically database schemas and data
 
+
+## Red Gate SQL Clone
+<a id="red-gate-sql-clone"></a>
+Download page: [Red Gate SQL Clone]<br/>
+Release date: 2017-02-27<br/>
+Support Version: 2008/2012/2014/2016/VNext<br/>
+Author: Red Gate<br/>
+Free version: No<br/>
+Price: $6955
+
+ - SQL Clone is a database provisioning tool that lets you create full copies of SQL Server databases and backups in seconds, using around 40MB of disk space per clone.
+ - Instead of spending hours provisioning copies of your database for development, testing, or diagnostics, SQL Clone creates one data image of a SQL Server database or backup, which you use as the source for clones.
+ - Clones work just like normal databases. You can connect to them and edit them using any program. SQL Clone's web app provides an easy central place to create and manage clones.
+ - With SQL Clone, your team can work locally on up-to-date, isolated copies of the database to speed up development, accurately test code, and fix issues faster.
 
 ## DLM Automation
 <a id="dlm-automation"></a>
@@ -3146,6 +3162,23 @@ Besides, any server access restrictions may be overcome by creating dump files i
 Our tool easily handles huge databases and tables. A clear easy-to-use wizard interface helps you to move the whole database or only selected tables, indexes and foreign keys effortlessly.
 
 
+## PostgreSQL to MS SQL Migration and Sync
+<a id="postgresql-sqlserver"></a>
+Download page: [PostgreSQL to MS SQL Migration and Sync]<br/>
+Release date: 2013-10-08<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Convert and synchronize your databases from PostgreSQL to MS SQL server or to SQL Azure databases using our powerful software.
+Wizard style interface will guide you through several steps performing migration and replication jobs easily and effectively.
+
+In case you have any server restrictions, you can stuff MS SQL Dump file with all data out of the PostgreSQL database.
+
+Our software will save you hours of learning SQL commands as any large PostgreSQL db can be converted and synchronized approximately in 5-10 min.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3191,6 +3224,7 @@ Our tool easily handles huge databases and tables. A clear easy-to-use wizard in
 [Red Gate SQL Multi Script]:http://www.red-gate.com/products/dba/sql-multi-script/
 [Red Gate SQL Index Manager]:http://www.red-gate.com/products/dba/sql-index-manager/
 [Red Gate SQL Comparison SDK]:http://www.red-gate.com/products/sql-development/sql-comparison-sdk/
+[Red Gate SQL Clone]:http://www.red-gate.com/products/dba/sql-clone/
 [DLM Automation]:http://www.red-gate.com/products/dlm/dlm-automation/
 [ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
 [Rapid Database Extractor]:https://www.idera.com/productssolutions/freetools/rapid-database-extractor
@@ -3347,3 +3381,4 @@ Our tool easily handles huge databases and tables. A clear easy-to-use wizard in
 [MS FoxPro to MS SQL Migration and Sync]:https://convertdb.com/foxpro/mssql
 [MySQL to MS SQL Migration and Sync]:https://convertdb.com/mysql/mssql
 [Oracle to MS SQL Migration and Sync]:https://convertdb.com/oracle/mssql
+[PostgreSQL to MS SQL Migration and Sync]:https://convertdb.com/postgresql/mssql
