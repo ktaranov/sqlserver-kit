@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **203** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **208** SQL Server Utilities
 
 Utility types (main purpose) in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[B]**: Backup solutions {5}
  - **[M]**: Monitoring and alerting Tools {6}
- - **[MG]**: Migration tool {11}
+ - **[MG]**: Migration tool {16}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[T]**: Testing tools {3}
  - **[G]**: Data generation {4}
@@ -225,6 +225,11 @@ Utility types (main purpose) in braces `{}` current counts:
 | [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 | [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             | $149  |
 | [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             | $149  |
+| [MS Excel to MS SQL Migration](#msexcel-sqlserver)                    | No                               | No             | [MG]       | [MS Excel to MS SQL Migration]             | 2013-09-23   | DMSoft Technologies  | No             | $149  |
+| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)             | No                               | No             | [MG]       | [SQLite to MS SQL Migration and Sync]      | 2014-05-08   | DMSoft Technologies  | No             | $149  |
+| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]     | 2013-09-09   | DMSoft Technologies  | No             | $149  |
+| [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
+| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]    | 2013-09-11   | DMSoft Technologies  | No             | $149  |
 
 
 ## SSMS
@@ -3179,6 +3184,81 @@ In case you have any server restrictions, you can stuff MS SQL Dump file with al
 Our software will save you hours of learning SQL commands as any large PostgreSQL db can be converted and synchronized approximately in 5-10 min.
 
 
+## MS Excel to MS SQL Migration
+<a id="msexcel-sqlserver"></a>
+Download page: [MS Excel to MS SQL Migration]<br/>
+Release date: 2013-09-23<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Ability to create tables from MS Excel file with Integrated Data Selector
+Microsoft Excel 2000 or higher 2003/2007/2010
+Views conversion from MS SQL to MySQL and Oracle and back support
+Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
+Saving data into a MS SQL Dump for export to MS SQL database
+
+
+## SQLite to MS SQL Migration and Sync
+<a id="sqllite-sqlserver"></a>
+Download page: [SQLite to MS SQL Migration and Sync]<br/>
+Release date: 2014-05-08<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Conversion Tool for data migration and synchronization between SQLite and MS SQL databases in both directions.
+One of the main benefit of this converter is the range of effective features that help you to transfer all database objects together or each individually, 
+skipping unnecessary tables, fields, indexes, foreign keys and constrains; change data types for various fields; rename each database element and many other options.
+
+If you have any restrictions on direct access to MS SQL server our product provides you with the opportunity to create Dump files for further data uploading to MS SQL server.
+
+
+## IBM DB2 to MS SQL Migration and Sync
+<a id="db2-sqlserver"></a>
+Download page: [IBM DB2 to MS SQL Migration and Sync]<br/>
+Release date: 2013-09-09<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Our robust and cost-effective solution is a key for successful conversion and synchronization from IBM DB2 to MS SQL server.  
+Software is able to connect to source and destination databases directly without any other additional software installed. 
+Optionally target SQL Dump file may be generated if you haven’t a direct access to the MS SQL server.
+
+
+## MS Access to MS SQL Migration and Sync
+<a id="access-sqlserver"></a>
+Download page: [IBM DB2 to MS SQL Migration and Sync]<br/>
+Release date: 2013-10-08<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+Powerful cross database software that will upsize and synchronize Access data into MS SQL database.
+
+The program allows migrating MS Access queries to MSSQL views automatically with no need to know about the differences between SQL dialects.
+
+
+## Firebird to MS SQL Migration and Sync
+<a id="firebird-sqlserver"></a>
+Download page: [Firebird to MS SQL Migration and Sync]<br/>
+Release date: 2013-09-11<br/>
+Support Version: 2005/2008/2012/Azure<br/>
+Author: DMSoft Technologies<br/>
+Free version: No<br/>
+Price: $149
+
+All Firebird / InterBase versions support
+Saving data into a Firebird Dump
+Views conversion from MS SQL to MySQL and Oracle and back support
+Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3382,3 +3462,8 @@ Our software will save you hours of learning SQL commands as any large PostgreSQ
 [MySQL to MS SQL Migration and Sync]:https://convertdb.com/mysql/mssql
 [Oracle to MS SQL Migration and Sync]:https://convertdb.com/oracle/mssql
 [PostgreSQL to MS SQL Migration and Sync]:https://convertdb.com/postgresql/mssql
+[MS Excel to MS SQL Migration]:https://convertdb.com/excel/mssql
+[SQLite to MS SQL Migration and Sync]:https://convertdb.com/sqlite/mssql
+[IBM DB2 to MS SQL Migration and Sync]:https://convertdb.com/db2/mssql
+[MS Access to MS SQL Migration and Sync]:https://convertdb.com/access/mssql
+[Firebird to MS SQL Migration and Sync]:https://convertdb.com/firebird/mssql
