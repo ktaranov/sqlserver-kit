@@ -224,7 +224,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 | [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 | [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             | $149  |
-| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver       | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             | $149  |
+| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             | $149  |
 
 
 ## SSMS
@@ -2778,9 +2778,9 @@ Batch mode enables you to clean up SQL in multifiles under a nested directory.
 While sitting in the tray, you can format SQL in any editor like Microsoft Query Analyzer, UltraEditor or notepad with just one hotkey.
 
 
-## Databse .NET
+## Database .NET
 <a id="database-net"></a>
-Download page: [Databse .NET]<br/>
+Download page: [Database .NET]<br/>
 Release date: 2017-01-13<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: fish's dotNET<br/>
@@ -2969,9 +2969,9 @@ Price: €180
 Charts-on-charts technology, 24/7/365. Intuïtive ease of use. Alerting via Windows, Android and iOS. Drill down into detailed history charts. Send instant messages within your secured network.
 
 
-## SchemaCrowler
-<a id="schema-crowler"></a>
-Download page: [SchemaCrowler]<br/>
+## SchemaCrawler
+<a id="schema-crawler"></a>
+Download page: [SchemaCrawler]<br/>
 Release date: 2017-02-27<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
 Author:  Sualeh Fatehi<br/>
@@ -3034,7 +3034,7 @@ Price: No
 Microsoft Kerberos Configuration Manager for SQL Server is a diagnostic tool that helps troubleshoot Kerberos related connectivity issues with SQL Server, SQL Server Reporting Services, and SQL Server Analysis Services.
 
 
-## Spotligh
+## Spotlight
 <a id="spotlight"></a>
 Download page: [Spotligh]<br/>
 Release date: ?<br/>
