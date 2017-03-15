@@ -133,6 +133,8 @@ Profits:
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                  | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 | 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                 | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2010-12-13      | 2011-04-12         | 2016-04-12       | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
 
+Remark: for downloading distributive for SQL Server 2008 R2 you must have MSDN subscription, see [Install 2008 R2].
+
 [Install vNext]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU1 KB3208177]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
@@ -142,7 +144,7 @@ Profits:
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
 [KB3205051]:https://support.microsoft.com/en-us/help/3205051/cumulative-update-7-for-sql-server-2012-sp3
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
-[Install 2008 R2]:https://www.microsoft.com/en-us/download/details.aspx?id=11093
+[Install 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
 [Install 2008]:https://www.microsoft.com/en-us/download/details.aspx?id=5023
@@ -178,7 +180,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 | [SQL Server 2012]               | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
 | [SQL Server 2012 SP3]           | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 2015-11-21   | 11.0.6020.0    |     1017 | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
 | [SQL Server 2012 SP3 KB3205051] | SQLServer2012-KB3205051-x64.exe                                      | 2017-01-18   | 11.0.6579.0    |      614 | 43 46 74 9c 43 90 b4 5b 6e d2 34 fc 95 23 d3 e5 91 46 ce 6b |
-| [SQL Server 2008 R2]            | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 2010-11-21   | 6.1.7601.17514 |     3020 | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
+| [SQL Server 2008 R2]            | ???                                                                  | ???          | 6.1.7601.17514 |      ??? |                                                             |
 | [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 2014-09-30   | 10.50.6220.0   |      358 | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
 | [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                    | 2015-07-14   | 10.50.6000     |       58 | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
 | [SQL Server 2008]               | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 2008-01-19   | 6.0.6001.18000 |     2269 | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
@@ -194,7 +196,7 @@ FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
 [[SQL Server 2012 SP3 KB3205051]:https://download.microsoft.com/download/3/0/D/30D98783-31D6-4123-9F87-5058BA9FC977/sqL11sP3cu7/X64/SQLServer2012-KB3205051-x64.exe
-[SQL Server 2008 R2]:https://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso
+[SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
 [SQL Server 2008]:https://download.microsoft.com/download/D/D/B/DDB17DC1-A879-44DD-BD11-C0991D292AD7/6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe
