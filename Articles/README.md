@@ -1,21 +1,21 @@
 # Microsoft SQL Server Articles
 
 Articles types:
- - [AZ]: Azure
- - [B]: Backup
- - [COR]: Corruption
- - [DBA]: DBA Articles
- - [DEV]: Developers Articles 
- - [DM]: Database Mail
- - [DBCC]: DBCC commands
- - [DS]: Dynamic SQL
- - [MG]: Migration
- - [J]: Jobs
- - [P]: Performance
- - [PS]: Powershell
- - [R]: R Language
- - [SSIS]: [SQL Server Integration Services](https://msdn.microsoft.com/en-us/library/ms141026.aspx)
- - [V]: Visualization
+ - **[AZ]** Azure Articles
+ - **[B]** Backup Articles
+ - **[COR]** Corruption Articles
+ - **[DBA]** DBA Articles
+ - **[DEV]** Developers Articles
+ - **[DM]** Database Mail
+ - **[DBCC]** DBCC commands
+ - **[DS]** Dynamic SQL
+ - **[MG]** Migration Articles
+ - **[J]** Jobs Articles
+ - **[P]** Performance Articles
+ - **[PS]** Powershell Articles
+ - **[R]** R Language
+ - **[SSIS]** [SQL Server Integration Services](https://msdn.microsoft.com/en-us/library/ms141026.aspx)
+ - **[V]** Visualization Articles
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
@@ -260,7 +260,7 @@ Articles types:
 | [How to Build a SQL Server Disaster Recovery Plan with Google Compute Engine]                                           | Tara Kizer                               | 2017-03-10 | [DBA]       |
 | [SQL Server Performance Tuning in Google Compute Engine]                                                                | Erik Darling                             | 2017-03-09 | [DBA],[P]   |
 | [Configuring R on SQL Server 2016]                                                                                      | Ginger Grant                             | 2016-12-06 | [DBA],[R]   |
-| [Knee-Jerk PerfMon Counters : Page Life Expectancy]                                                                     | Paul Randal                              | 2014-10-20 | [DBA],[P]   |
+| [Knee-Jerk PerfMon Counters: Page Life Expectancy]                                                                      | Paul Randal                              | 2014-10-20 | [DBA],[P]   |
 | [Change Management Template for SQL Server DBAs and Developers]                                                         | Kendra Little                            | 2016-04-12 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -505,5 +505,5 @@ Articles types:
 [How to Build a SQL Server Disaster Recovery Plan with Google Compute Engine]:https://www.brentozar.com/archive/2017/03/new-white-paper-build-sql-server-disaster-recovery-plan-google-compute-engine/
 [SQL Server Performance Tuning in Google Compute Engine]:https://www.brentozar.com/archive/2017/03/new-white-paper-sql-server-performance-tuning-google-compute-engine/
 [Configuring R on SQL Server 2016]:http://sqlmag.com/sql-server/configuring-r-sql-server-2016
-[Knee-Jerk PerfMon Counters : Page Life Expectancy]:https://sqlperformance.com/2014/10/sql-performance/knee-jerk-page-life-expectancy
+[Knee-Jerk PerfMon Counters: Page Life Expectancy]:https://sqlperformance.com/2014/10/sql-performance/knee-jerk-page-life-expectancy
 [Change Management Template for SQL Server DBAs and Developers]:https://www.littlekendra.com/2016/04/12/change-management-template-for-sql-server-dbas-and-deveopers/
