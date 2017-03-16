@@ -1,24 +1,23 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **208** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **205** SQL Server Utilities
 
-Utility types (main purpose) in braces `{}` current counts:
- - **[MS]**: Management Studio (alternative for SSMS) {15}
- - **[B]**: Backup solutions {5}
- - **[M]**: Monitoring and alerting Tools {6}
- - **[MG]**: Migration tool {16}
- - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
- - **[T]**: Testing tools {3}
- - **[G]**: Data generation {4}
+Utility types (main purpose), in braces `{}` current counts:
+ - **[B]**: Backup solutions {6}
  - **[D]**: Documentation solutions {3}
- - **[S]**: Search tools {2}
- - **[DC]**: Data compare {10}
- - **[SC]**: Structure compare {15}
- - **[J]**: Job managers {2}
- - **[IDX]**: Index manager {1}
- - **[ST]**: Statistics utilities {3}
  - **[DA]**: Database Architecture {10}
- - **[?]**: Not yet classified {99}
-
+ - **[DC]**: Data compare {10}
+ - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
+ - **[IDX]**: Index manager {1}
+ - **[G]**: Data generation {4}
+ - **[J]**: Job managers {2}
+ - **[M]**: Monitoring and alerting Tools {12}
+ - **[MG]**: Migration tool {17}
+ - **[MS]**: Management Studio (alternative for SSMS) {15}
+ - **[S]**: Search tools {2}
+ - **[SC]**: Structure compare {15}
+ - **[T]**: Testing tools {3}
+ - **[ST]**: Statistics utilities {3}
+ - **[?]**: Not yet classified {94}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
@@ -86,7 +85,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [SQL Backup Status Reporter](#sql-backup-status-reporter)             | No                               | No             | [B]        | [SQL Backup Status Reporter]               | 2015-08-07   | Idera                | Yes            | No    |
 | [SQL Integrity Check](#sql-integrity-check)                           | No                               | No             | [?]        | [SQL Integrity Check]                      | 2013-08-26   | Idera                | Yes            | No    |
 | [SQL Job Manager](#sql-job-manager)                                   | No                               | No             | [J]        | [SQL Job Manager]                          | 2012-03-19   | Idera                | Yes            | No    |
-| [Azure SQL Database Backup](#azure-sql-database-backup)               | No                               | No             | [?]        | [Azure SQL Database Backup]                | 2012-10-02   | Idera                | Yes            | No    |
+| [Azure SQL Database Backup](#azure-sql-database-backup)               | No                               | No             | [B]        | [Azure SQL Database Backup]                | 2012-10-02   | Idera                | Yes            | No    |
 | [SQL Column Search](#sql-column-search)                               | No                               | No             | [S]        | [SQL Column Search]                        | 2015-11-17   | Idera                | Yes            | No    |
 | [SQL Permissions Extractor](#sql-permissions-extractor)               | No                               | No             | [?]        | [SQL Permissions Extractor]                | 2015-08-07   | Idera                | Yes            | No    |
 | [SQL BI Check](#sql-bi-check)                                         | No                               | No             | [?]        | [SQL BI Check]                             | 2016-04-13   | Idera                | Yes            | No    |
@@ -122,10 +121,6 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                        | ?            | MinionWare           | No             | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]         | 2011-06-02   | Bob Tavlor           | Yes            | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                               | 2016-07-07   | Bill Graziano        | Yes            | No    |
-| [SQLSentry Fragmentation Manager](#sqlsentry-fragmentation-manager)   | No                               | No             | [?]        | [SQLSentry Fragmentation Manager]          | 2016-03-08   | SQLSentry            | No             |  $795 |
-| [SQLSentry Plan Explorer](#sqlsentry-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]                  | 2016-09-07   | SQLSentry            | Yes            | No    |
-| [SQLSentry Event Manager](#sqlsentry-event-manager)                   | No                               | No             | [M]        | [SQLSentry Event Manager]                  | 2016-03-08   | SQLSentry            | No             |  $995 |
-| [SQLSentry Performance Advisor](#sqlsentry-performance-advisor)       | No                               | No             | [?]        | [SQLSentry Performance Advisor]            | 2016-03-08   | SQLSentry            | No             | ?     |
 | [Dell Security Explorer](#dell-security-explorer)                     | No                               | No             | [?]        | [Dell Security Explorer]                   | 2015-06-25   | Dell                 | No             |  $850 |
 | [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)       | No                               | No             | [?]        | [Dell LiteSpeed for SQL Server]            | 2015-07-31   | Dell                 | No             | ?     |
 | [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | No                               | No             | [MS]       | [Dell Toad for SQL Server]                 | 2015-05-12   | Dell                 | No             | ?     |
@@ -157,7 +152,7 @@ Utility types (main purpose) in braces `{}` current counts:
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | No                               | No             | [SC], [DC] | [DBBest Database Compare Suite]            | 2015-09-04   | DBBest               | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | No                               | No             | [?]        | [Advanced Query Tool]                      | 2015-03-18   | Cardett Associates   | No             |  $180 |
 | [SqlDiffFramework](#sqldiffframework)                                 | No                               | No             | [SC]       | [SqlDiffFramework]                         | 2012-04-17   | Michael Sorens       | Yes            | No    |
-| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                                 | 2016-11-23   | Jet Brains           | No             |  $199 |
+| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                                 | 2017-02-21   | Jet Brains           | No             |   $89 |
 | [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | No                               | No             | [?]        | [Pssdiag and Sqldiag Manager]              | 2017-01-06   | Jack Li              | Yes            | No    |
 | [SQL Nexus Tool](#sql-nexus-tool)                                     | No                               | No             | [?]        | [SQL Nexus Tool]                           | 2016-11-20   | Jack Li              | Yes            | No    |
 | [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | No                               | No             | [?]        | [DBSophic Qure Profiler]                   | ?            | DBSophic             | No             |  $300 |
@@ -203,33 +198,34 @@ Utility types (main purpose) in braces `{}` current counts:
 | [Database Experimentation Assistant](#dea)                            | No                               | No             | [T]        | [Database Experimentation Assistant]       | 2016-11-21   | Microsoft            | Yes            | No    |
 | [Data Platform Studio](#dps)                                          | No                               | No             | [MG]       | [Data Platform Studio]                     | ?            | Red Gate Software    | Yes            | ?     |
 | [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                   | ?            | boxfuse              | Open Source    | No    |
-| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                | 2016-10-13   | Liquibase            | Open Source    | No    |
+| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                | 2016-10-24   | Liquibase            | Open Source    | No    |
 | [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                 | 2016-06-22   | My Batis             | Open Source    | No    |
-| [SentryOne](#sentryone)                                               | No                               | No             | [?]        | [SentryOne]                                | 2016-12-07   | SentryOne            | No             | ?     |
+| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]                  | 2017-01-16   | SentryOne            | Yes            | No    |
+| [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                               | 2016-12-07   | SentryOne            | No             | ?     |
 | [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                | 2012-11-01   | Devart               | Yes            | No    |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                       | ?            | DBmaestro            | No             | ?     |
-| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                      | 2017-03-01   | xSQL Software        | Yes            | $399  |
-| [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]       | ?            | SQLTreeo             | No             | €180  |
-| [SchemaCrawler](#schema-crawler)                                      |Oracle, PostgreSQL, MySQL, Other  | Yes            | [D], [SC]  | [SchemaCrawler]                            | 2017-02-27   | Sualeh Fatehi        | Open Source    | No    |
-| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]             | ?            | SENTINELAGENT        | No             | ?     |
-| [CatCompare v2](#cat-compare)                                         | No                               | No             | [?]        | [CatCompare v2]                            | 2017-01-07   | Andy Leonard         | No             | $295  |
-| [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)           | No                               | No             | [?]        | [SSIS Catalog Compare v2.0 Bundle]         | 2017-01-06   | Andy Leonard         | No             | $495  |
-| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]        | 2017-01-31   | Microsoft            | Yes            | No    |
-| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                | ?            | Quest Software       | Yes            | ?     |
-| [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [DBConvert Studio]                         | 2017-03-01   | DMSoft Technologies  | No             | $499  |
-| [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            | $698  |
-| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            | No    |
-| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                 | 2017-01-26   | Soheil Rashidi       | Open Source    | No    |
-| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                             | ?            | Datamate Technology  | ?              | ?     |
-| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
-| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             | $149  |
-| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             | $149  |
-| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             | $149  |
-| [MS Excel to MS SQL Migration](#msexcel-sqlserver)                    | No                               | No             | [MG]       | [MS Excel to MS SQL Migration]             | 2013-09-23   | DMSoft Technologies  | No             | $149  |
-| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)             | No                               | No             | [MG]       | [SQLite to MS SQL Migration and Sync]      | 2014-05-08   | DMSoft Technologies  | No             | $149  |
-| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]     | 2013-09-09   | DMSoft Technologies  | No             | $149  |
-| [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             | $149  |
-| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]    | 2013-09-11   | DMSoft Technologies  | No             | $149  |
+| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                      | 2017-03-01   | xSQL Software        | Yes            |  $399 |
+| [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]       | ?            | SQLTreeo             | No             |  €180 |
+| [SchemaCrawler](#schema-crawler)                                      |Oracle, PostgreSQL, MySQL, Other  | Yes            | [D], [SC]  | [SchemaCrawler]                            | 2017-02-27   | Sualeh Fatehi        | Open Source    |  No   |
+| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]             | ?            | SENTINELAGENT        | No             |  ?    |
+| [CatCompare v2](#cat-compare)                                         | No                               | No             | [?]        | [CatCompare v2]                            | 2017-01-07   | Andy Leonard         | No             |  $295 |
+| [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)           | No                               | No             | [?]        | [SSIS Catalog Compare v2.0 Bundle]         | 2017-01-06   | Andy Leonard         | No             |  $495 |
+| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]        | 2017-01-31   | Microsoft            | Yes            |  No   |
+| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                | ?            | Quest Software       | Yes            |  ?    |
+| [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [DBConvert Studio]                         | 2017-03-01   | DMSoft Technologies  | No             |  $499 |
+| [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            |  $698 |
+| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            |  No   |
+| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                 | 2017-01-26   | Soheil Rashidi       | Open Source    |  No   |
+| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                             | ?            | Datamate Technology  | ?              |  ?    |
+| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
+| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
+| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             |  $149 |
+| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
+| [MS Excel to MS SQL Migration](#msexcel-sqlserver)                    | No                               | No             | [MG]       | [MS Excel to MS SQL Migration]             | 2013-09-23   | DMSoft Technologies  | No             |  $149 |
+| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)             | No                               | No             | [MG]       | [SQLite to MS SQL Migration and Sync]      | 2014-05-08   | DMSoft Technologies  | No             |  $149 |
+| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]     | 2013-09-09   | DMSoft Technologies  | No             |  $149 |
+| [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
+| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]    | 2013-09-11   | DMSoft Technologies  | No             |  $149 |
 
 
 ## SSMS
@@ -1669,65 +1665,6 @@ ClearTrace imports SQL Server 2016, SQL Server 2014, SQL Server 2012, SQL Server
 and Profiler files into SQL Server and displays summary performance information.
 
 
-## SQLSentry Fragmentation Manager
-<a id="sqlsentry-fragmentation-manager"></a>
-Download page: [SQLSentry Fragmentation Manager]<br/>
-Release date: 2016-08-03<br/>
-Support Version: 2008/2012/2014<br/>
-Author: SQLSentry<br/>
-Free version: No<br/>
-Price: $795
-
-Dramatically improves the manageability and visibility of SQL Server index fragmentation across the enterprise
-
-Fragmentation Manager helps you make good decisions about how and when to defragment.
-You can easily set up an environment-wide schedule to automate index analysis and defragmentation operations,
-while allowing the flexibility to customize the schedule and other specific instances, databases, tables, and even individual indexes.
-Fragmentation Manager will also allow you to perform index defragmentation faster than ever before via support for multiple concurrent operations.
-
-
-## SQLSentry Plan Explorer
-<a id="sqlsentry-plan-explorer"></a>
-Download page: [SQLSentry Plan Explorer]<br/>
-Release date: 2016-09-07<br/>
-Support Version: 2008/2012/2014<br/>
-Author: SQLSentry<br/>
-Free version: Yes<br/>
-Price: No
-
-With both a free and PRO version, Plan Explorer builds upon the graphical plan view in SQL Server Management Studio (SSMS)
-to make query plan optimization more efficient.
-It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
-
-
-## SQLSentry Event Manager
-<a id="sqlsentry-event-manager"></a>
-Download page: [SQLSentry Event Manager]<br/>
-Release date: 2016-03-08<br/>
-Support Version: 2008/2012/2014<br/>
-Author: SQLSentry<br/>
-Free version: No<br/>
-Price: $995
-
-With specific products for SQL Server, Windows, SharePoint and Oracle, Event Manager provides DBAs with "Outlook-style" visibility
-and functionality for managing SQL Agent jobs, Windows Tasks, and Oracle jobs in increasingly complex cross-platform environments.
-Unlike most other scheduling products, Event Manager does not require an agent to be installed and managed on each server.
-
-
-## SQLSentry Performance Advisor
-<a id="sqlsentry-performance-advisor"></a>
-Download page: [SQLSentry Performance Advisor]<br/>
-Release date: 2016-03-08<br/>
-Support Version: 2008/2012/2014<br/>
-Author: SQLSentry<br/>
-Free version: No<br/>
-Price: ?
-
-Performance Advisor is the unmatched solution for monitoring and managing all aspects of your SQL Server infrastructure.
-Monitor SQL Server and Analysis Services, Windows servers and VMware hosts. Support for Microsoft Analytics Platform System (APS),
-Azure SQL Data Warehouse, Azure SQL Database, and Amazon EC2 allows you to monitor your environment on every platform.
-
-
 ## Dell Security Explorer
 <a id="dell-security-explorer"></a>
 Download page: [Dell Security Explorer]<br/>
@@ -2245,11 +2182,11 @@ SqlDiffFramework compares two data sources and highlights both row and column di
 ## DataGrip
 <a id="datagrip"></a>
 Download page: [DataGrip]<br/>
-Release date: 2016-11-23<br/>
+Release date: 2017-02-21<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Jet Brains<br/>
 Free version: No<br/>
-Price: $199
+Price: $89
 
  - Exploring your databases
  - Intelligent coding assistance
@@ -2871,17 +2808,19 @@ It has a Command-line client. If you are on the JVM, we recommend using the Java
 ## Liquibase
 <a id="liquibase"></a>
 Download page: [Liquibase]<br/>
-Release date: 2016-10-13<br/>
+Release date: 2016-10-24<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
 Author: Liquibase<br/>
 Free version: Open Source<br/>
 Price: No
 
-Changelog files can be be arbitrarily nested for better management. Change Sets are uniquely identified by the "author" and "id" 
-attribute along with with the location of the changelog file and are the units Liquibase tracks execution of. 
-Each changeset generally contains a change which describes the change/refactoring to apply to the database.
-Preconditions can be applied to either the changelog as a whole or individual change sets. 
-Contexts can be applied to changesets to control which are ran in different environments.
+Liquibase is an open source database-independent library for tracking, managing and applying database schema changes.
+It was started in 2006 to allow easier tracking of database changes, especially in an agile software development environment.
+
+All changes to the database are stored in text files (XML, YAML, JSON or SQL) and identified by a combination of an "id" and "author" tag as well as the name of the file itself.
+A list of all applied changes is stored in each database which is consulted on all database updates to determine what new changes need to be applied.
+As a result, there is no database version number but this approach allows it to work in environments with multiple developers and code branches.
+Liquibase automatically creates DatabaseChangeLog Table and DatabaseChangeLogLock Table when you first execute a changeLog File.
 
 
 ## My Batis
@@ -2905,14 +2844,33 @@ MyBatis Schema Migration System (or MyBatis Migrations for short) seeks to:
  - Encourages good, consistent practices
 
 
-## SentryOne
-<a id="sentryone"></a>
-Download page: [SentryOne]<br/>
+## SentryOne Plan Explorer
+<a id="sentryone-plan-explorer"></a>
+Download page: [SentryOne Plan Explorer]<br/>
+Release date: 2017-01-16<br/>
+Support Version: 2008/2012/2014/2016/<br/>
+Author: SentryOne<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Index Analysis: Discover a new, easy way to gauge the impact of potential index changes.
+ - Statistics Analysis with Histogram
+ - Query Performance Profiling and Playback
+ - Actual Plan Recosting
+ - Plan Diagram
+ - Management Studio Add-In
+ - Tuning History and Comments
+ - Multiple Documents
+
+
+## SQL Sentry
+<a id="sql-sentry"></a>
+Download page: [SQL Sentry]<br/>
 Release date: 2016-12-07<br/>
 Support Version: ?<br/>
-Author:  SQL Sentry<br/>
-Free version: Open Source<br/>
-Price: No
+Author: SentryOne<br/>
+Free version: No<br/>
+Price: ?
 
 Get the most complete coverage for SQL Server and Windows. Simplify performance tuning by visualizing where problems exist for faster resolution. Streamline your defragmentation process and query tuning all in one place.
 We have combined all the great SQL Sentry tools into a single unified solution to help you monitor and optimize the Microsoft data platform.
@@ -3075,11 +3033,10 @@ Release date: 2017-03-01<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
 Author: ActiveCrypt Software<br/>
 Free version: Yes<br/>
-Price: 698
+Price: $698
 
 DbDefence for Microsoft SQL Server implements server-side encryption and additional level of protection for databases.
-With DbDefence you can hide table structure and data from prying eyes, even from DBA.
-Free version for databases less than 200 MB.
+With DbDefence you can hide table structure and data from prying eyes, even from DBA. Free version for databases less than 200 MB.
 
 
 ## SQL Server Migration Assistant for MySQL
@@ -3358,10 +3315,6 @@ Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
 [Minion Enterprise]:http://minionware.net/enterprise/
 [SQL Server Compression Estimator]:http://ssce.codeplex.com
 [ClearTrace]:http://www.scalesql.com/cleartrace/download.html
-[SQLSentry Fragmentation Manager]:http://www.sqlsentry.com/products/fragmentation-manager/sql-server-index-analysis-and-defrag
-[SQLSentry Plan Explorer]:http://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
-[SQLSentry Event Manager]:http://www.sqlsentry.com/products/event-manager/sql-server-job-schedule-alert-management
-[SQLSentry Performance Advisor]:http://www.sqlsentry.com/products/performance-advisor/sql-server-performance
 [Dell Security Explorer]:http://software.dell.com/products/security-explorer/
 [Dell LiteSpeed for SQL Server]:http://software.dell.com/products/litespeed-for-sql-server/
 [Dell Toad for SQL Server]:http://software.dell.com/products/toad-for-sql-server/
@@ -3441,7 +3394,8 @@ Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
 [Flyway]:https://flywaydb.org
 [Liquibase]:http://www.liquibase.org
 [My Batis]:http://www.mybatis.org/migrations
-[SentryOne]:https://sentryone.com/platform/sql-server-performance-monitoring
+[SentryOne Plan Explorer]:https://www.sentryone.com/plan-explorer
+[SQL Sentry]:https://sentryone.com/platform/sql-server-performance-monitoring
 [dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [DBmaestro TeamWork]:http://www.dbmaestro.com/product/devops-for-database
 [xSQL Schema Compare]:http://www.xsql.com/products/sql_server_schema_compare
