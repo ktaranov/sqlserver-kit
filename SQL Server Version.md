@@ -50,8 +50,6 @@ Useful articles:
  - [Microsoft SQL Server Home](http://www.microsoft.com/sql)
  - [Microsoft SQL Server Developer Center](http://msdn.microsoft.com/sqlserver)
  - [Microsoft TechNet: Microsoft SQL Server](http://technet.microsoft.com/en-us/sqlserver)
- - [Microsoft Knowledge Base](http://kbupdate.info/)
- - [Sqlservr.exe versions](http://www.mskbfiles.com/sqlservr.exe.php)
  - [SQL Server Patching Shortcut](http://www.sqlservercentral.com/articles/SQL+Server+patching/138693/)
 
 **All SQL Server service packs and Cumulative Updates are cumulative, meaning that each new service pack and cumulative update contains all the fixes that are included with previous service packs and any new fixes.**
@@ -2397,44 +2395,31 @@ Microsoft SQL Server 2014 (SP2-CU4) (KB4010394) - 12.0.5540.0 (X64)
 ## Microsoft SQL Server 6.5 Builds
 <a id="microsoft-sql-server-65-builds"></a>
 
-| Build    | KB / Description                                                                                                    | Release Date |
-|----------|---------------------------------------------------------------------------------------------------------------------|--------------|
-| 6.50.480 | [238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation] | 2005-10-07   |
-| 6.50.479 | [273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]                                                       | 2000-09-12   |
-| 6.50.469 | [249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]                                    |              |
-| 6.50.465 | [250493 FIX: Memory Leak with xp_sendmail Using Attachments]                                                        |              |
-| 6.50.464 | [275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]                                            | 1999-11-08   |
-| 6.50.462 | [238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]                                                   |              |
-| 6.50.451 | [236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]                            |              |
-| 6.50.444 | [240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]                                             |              |
-| 6.50.441 | [234679 FIX: SNMP Extended Stored Procedures May Leak Memory]                                                       |              |
-| 6.50.422 | [187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]                     |              |
-| 6.50.416 | [197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]                                                            | 1998-12-24   |
-| 6.50.415 | Microsoft SQL Server 6.5 Service Pack 5 (SP5)                                                                       |              |
-| 6.50.339 | Y2K hotfix                                                                                                          |              |
-| 6.50.297 | "Site Server 3.0 Commerce Edition" hotfix                                                                           |              |
-| 6.50.281 | 178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)                                                                |              |
-| 6.50.259 | 6.5 as included with "Small Business Server" only                                                                   |              |
-| 6.50.258 | Microsoft SQL Server 6.5 Service Pack 3a (SP3a)                                                                     |              |
-| 6.50.252 | Microsoft SQL Server 6.5 Service Pack 3 (SP3)                                                                       |              |
-| 6.50.240 | [160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]                                                              |              |
-| 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                              |              |
-| 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                        | 1996-06-30   |
+| Build    | KB / Description                                                                                                  | Release Date |
+|----------|-------------------------------------------------------------------------------------------------------------------|--------------|
+| 6.50.480 | 238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation | 2005-10-07   |
+| 6.50.479 | 273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update                                                       | 2000-09-12   |
+| 6.50.469 | 249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process                                    |              |
+| 6.50.465 | 250493 FIX: Memory Leak with xp_sendmail Using Attachments                                                        |              |
+| 6.50.464 | 275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC                                            | 1999-11-08   |
+| 6.50.462 | 238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV                                                   |              |
+| 6.50.451 | 236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding                            |              |
+| 6.50.444 | 240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail                                             |              |
+| 6.50.441 | 234679 FIX: SNMP Extended Stored Procedures May Leak Memory                                                       |              |
+| 6.50.422 | 187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation                     |              |
+| 6.50.416 | 197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)                                                            | 1998-12-24   |
+| 6.50.415 | Microsoft SQL Server 6.5 Service Pack 5 (SP5)                                                                     |              |
+| 6.50.339 | Y2K hotfix                                                                                                        |              |
+| 6.50.297 | "Site Server 3.0 Commerce Edition" hotfix                                                                         |              |
+| 6.50.281 | 178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)                                                              |              |
+| 6.50.259 | 6.5 as included with "Small Business Server" only                                                                 |              |
+| 6.50.258 | Microsoft SQL Server 6.5 Service Pack 3a (SP3a)                                                                   |              |
+| 6.50.252 | Microsoft SQL Server 6.5 Service Pack 3 (SP3)                                                                     |              |
+| 6.50.240 | 160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)                                                              |              |
+| 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                            |              |
+| 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                      | 1996-06-30   |
 
-[238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation]:https://support.microsoft.com/en-us/kb/238621
-[273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]:https://support.microsoft.com/en-us/kb/273914
-[249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]:https://support.microsoft.com/en-us/kb/249343
-[250493 FIX: Memory Leak with xp_sendmail Using Attachments]:https://support.microsoft.com/en-us/kb/250493
-[275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]:https://support.microsoft.com/en-us/kb/275483
-[238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]:https://support.microsoft.com/en-us/kb/238620
-[236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]:https://support.microsoft.com/en-us/kb/236447
-[240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]:https://support.microsoft.com/en-us/kb/240172
-[234679 FIX: SNMP Extended Stored Procedures May Leak Memory]:https://support.microsoft.com/en-us/kb/234679
-[187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]:https://support.microsoft.com/en-us/kb/187278
-[197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]:https://support.microsoft.com/en-us/kb/197176
-[178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)]:https://support.microsoft.com/en-us/kb/178295
-[160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/160727
-[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/153096
+[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 
 ## Microsoft SQL Server 6.0 Builds
