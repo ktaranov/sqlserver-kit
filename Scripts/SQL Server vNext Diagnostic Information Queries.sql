@@ -1,8 +1,8 @@
 
 -- SQL Server vNext Diagnostic Information Queries
 -- Glenn Berry 
--- February 2017
--- Last Modified: February 9, 2017
+-- March 2017
+-- Last Modified: March 15, 2017
 -- http://sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -53,6 +53,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 14.0.1.246		CTP 1.0				11/30/2016
 -- 14.0.100.187		CTP 1.1				12/16/2016
 -- 14.0.200.24		CTP 1.2				1/19/2017
+-- 14.0.304.138		CTP 1.3				2/17/2017
 		
 															
 
