@@ -1,14 +1,16 @@
 # SQL Server Management Studio
-SQL Server Management Studio is an integrated environment for managing your SQL Server infrastructure and Azure SQL Database. Management Studio provides tools to configure, monitor, and administer instances of SQL Server. It also provides tools to deploy, monitor, and upgrade the data-tier components, such as databases and data warehouses used by your applications, and to build queries and scripts.
+SQL Server Management Studio is an integrated environment for managing your SQL Server infrastructure and Azure SQL Database.
+Management Studio provides tools to configure, monitor, and administer instances of SQL Server.
+It also provides tools to deploy, monitor, and upgrade the data-tier components, such as databases and data warehouses used by your applications, and to build queries and scripts.
 
  - [SSMS Addins](SSMS_Addins.md)
  - [SSMS Snippets](SSMS_Snippets)
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
+ - [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+ - [SQL Server Management Studio (SSMS) - Release Candidate](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms-release-candidate)
  - [Previous SQL Server Management Studio Releases](https://docs.microsoft.com/en-us/sql/ssms/previous-sql-server-management-studio-releases)
  - [SQLSentry Latest Builds of Management Studio](http://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
  - [SQL Server Tools](https://docs.microsoft.com/en-us/sql/ssdt/sql-server-tools)
- - [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
- - [SQL Server Management Studio (SSMS) - Release Candidate](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms-release-candidate)
  - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
  - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)
  - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
@@ -16,16 +18,15 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
 
 
 ## SQL Server Management Studio Download Links and Release Info
-SQL Server Management Studio (17.0 RC1) notes:
+SQL Server Management Studio (17.0 RC3) notes:
 
  1. **Not recommended for production use**.
- 2. Works with CTPs of v.Next on both Windows and Linux.
- 3. Fixes an issue with ShowPlan (if you use earlier versions of SSMS against a newer version of SQL Server (2016 SP1 or CTP1 of v.Next), and pull plans from the plan cache, clicking on that XML in grid results will yield an XML document, not a graphical plan).
- 4. You can run 16.x and 17.x side-by-side, but some settings (like Tools/Options) are shared.
+ 2. Works with CTPs of v.Next (both Windows and Linux).
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.0 RC2 Release]               | 14.0.16150.00 | 2017-01-26   |      682 |
+| [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
+| [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
 | [16.5.3 Release] **Latest**      | 13.0.16106.4  | 2017-01-26   |      898 |
 | 16.5.2 Release **Deprecated**    | 13.0.16105.4  | 2017-01-18   |      898 |
@@ -41,6 +42,7 @@ SQL Server Management Studio (17.0 RC1) notes:
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.0 RC3 Release]:https://go.microsoft.com/fwlink/?linkid=844503
 [17.0 RC2 Release]:https://go.microsoft.com/fwlink/?linkid=840957
 [17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
 [16.5.3 Release]:https://go.microsoft.com/fwlink/?LinkID=840946
