@@ -39,19 +39,19 @@ Headers:
  - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
- - [SQL Server Test Data Generation](#sql-server-test data generation)
+ - [SQL Server Test Data Generation](#sql-server-test-data-generation)
  - [Free SQL Server and R ebooks](#free-sql-server-and-r-ebooks)
  - [License](#license)
 
 
 ## Repo Folders and Files
- - [SQL Server Data Types](/SQL Server Data Types.md)
- - [SQL Server Edition](/SQL Server Edition.md)
- - [SQL Server Name Convention and T-SQL Programming Style](/SQL Server Name Convention and T-SQL Programming Style.md)
- - [SQL Server Licensing](/SQL Server Licensing.md)
- - [SQL Server People](/SQL Server People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL Server Trace Flag.md 'Complete list - 510 Trace Flags') (**Complete list - 510 trace flags**)
- - [SQL Server Version](/SQL Server Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
+ - [SQL Server Data Types](/SQL%20Server%20Data%20Types.md)
+ - [SQL Server Edition](/SQL%20Server%20Edition.md)
+ - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
+ - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
+ - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 510 Trace Flags') (**Complete list - 510 trace flags**)
+ - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
@@ -70,15 +70,15 @@ Headers:
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
-      - [SQL Server vNext Diagnostic Information Queries](/Scripts/SQL Server vNext Diagnostic Information Queries.sql)
-      - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL Server 2016 Diagnostic Information Queries.sql)
-      - [SQL Server 2014 Diagnostic Information Queries](/Scripts/SQL Server 2014 Diagnostic Information Queries.sql)
-      - [SQL Server 2012 Diagnostic Information Queries](/Scripts/SQL Server 2012 Diagnostic Information Queries.sql)
-      - [SQL Server 2008 R2 Diagnostic Information Queries](/Scripts/SQL Server 2008 R2 Diagnostic Information Queries.sql)
-      - [SQL Server 2008 Diagnostic Information Queries](/Scripts/SQL Server 2008 Diagnostic Information Queries.sql)
-    - [Table count alternative](/Scripts/Table Count alternative.sql) (by Jes Schultz Borland)
-    - [Foreign Key batch rename](/Scripts/Foreign Key batch rename.sql) (by Wes Henriksen)
-    - [Count character matches](/Scripts/Count character matches.sql)
+      - [SQL Server vNext Diagnostic Information Queries](/Scripts/SQL%20Server%20vNext%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL%20Server%202016%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2014 Diagnostic Information Queries](Scripts/SQL%20Server%202014%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2012 Diagnostic Information Queries](/Scripts/SQL%20Server%202012%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2008 R2 Diagnostic Information Queries](/Scripts/SQL%20Server%202008%20R2%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2008 Diagnostic Information Queries](/Scripts/SQL%20Server%202008%20Diagnostic%20Information%20Queries.sql)
+    - [Table count alternative](/Scripts/Table%20Count%20alternative.sql) (by Jes Schultz Borland)
+    - [Foreign Key batch rename](/Scripts/Foreign%20Key%20batch%20rename.sql) (by Wes Henriksen)
+    - [Count character matches](/Scripts/Count%20character%20matches.sql)
     - and many others...
  - [Stored Procedure](/Stored_Procedure)
    - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
@@ -193,6 +193,7 @@ Headers:
    - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
  - Courses
    - Free
+     - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
      - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
      - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
@@ -210,6 +211,7 @@ Headers:
      - [SolidQ Classes](https://training.solidq.com/classes/)
      - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
      - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
+     - [Madeira Data Solutions Academy](http://madeira-data-solutions.teachable.com/)
  - SQL Server Backwards Compatibility
    - [VNext Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.140).aspx)
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
@@ -340,6 +342,7 @@ BIML Bloggers
  - [Data.gov](https://www.data.gov/)
  - [Itzik Ben-Gan Sample Databases](http://tsql.solidq.com/books/source_code/) (by Itzik Ben-Gan)
  - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
+ - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
 
 [*Back to top*](#header03)
 
