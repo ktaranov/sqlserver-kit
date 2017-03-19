@@ -121,14 +121,14 @@ Profits:
 ## What are the most recent updates for SQL Server?
 <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                               | Build Number                                   | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
-|---------|-----------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| vNext   | [Install vNext]                                                             | 14.0.405.198                                   | 2017-03-17                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
-| 2016    | [Install 2016 SP1] then <br/>[SP1 CU1 KB3208177]                            | 13.0.4001.0<br>13.0.4199.0                     | 2016-11-16<br/>2017-01-18                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB4010394]                 | 12.0.5000.0<br/>12.0.5540.0                    | 2016-07-11<br/>2017-02-21                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[KB3205051] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6579.0   | 2012-02-14<br/>2015-11-21<br/>2017-01-18 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]           | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0     | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                  | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0      | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
+| Version | Latest Update                                                               | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
+|---------|-----------------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
+| vNext   | [Install vNext]                                                             | 14.0.405.198                                 | 2017-03-17                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| 2016    | [Install 2016 SP1] then <br/>[SP1 CU1 KB3208177]                            | 13.0.4001.0<br>13.0.4199.0                   | 2016-11-16<br/>2017-01-18                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB4010394]                 | 12.0.5000.0<br/>12.0.5540.0                  | 2016-07-11<br/>2017-02-21                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[KB3205051] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6579.0 | 2012-02-14<br/>2015-11-21<br/>2017-01-18 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]           | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                  | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
@@ -426,7 +426,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server vNext Developer
 Microsoft SQL Server vNext (CTP1.4) – 14.0.405.198 (X64)
   Mar 11 2017 01:54:12
   Copyright (C) 2016 Microsoft Corporation. All rights reserved.
-  Developer Edition (64-bit) …
+  Developer Edition (64-bit) on Windows …
 ```
 
 There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://msdn.microsoft.com/en-us/library/mt775028.aspx)

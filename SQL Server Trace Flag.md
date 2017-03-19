@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (510 trace flags)
+Complete list of Microsoft SQL Server trace flags (511 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -46,18 +46,21 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Erin Stellato ([blog](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
 
 
-## What are Microsoft SQL Server Trace Flags? <a id="what-are-microsoft-sql-server-trace-flags"></a>
+## What are Microsoft SQL Server Trace Flags?
+<a id="what-are-microsoft-sql-server-trace-flags"></a>
 Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: [MSDN ms188396]
 
 
-## How do I turn Trace Flags on and off? <a id="how-do-i-turn-trace-flags-on-and-off"></a>
+## How do I turn Trace Flags on and off?
+<a id="how-do-i-turn-trace-flags-on-and-off"></a>
  - You can use the [DBCC TRACEON](https://msdn.microsoft.com/en-us/library/ms187329.aspx "Official MSDN DBCC TRACEON Article") and [DBCC TRACEOFF](https://msdn.microsoft.com/en-us/library/ms174401.aspx "Official MSDN DBCC TRACEOFF Article") commands
  - You can use the [-T option](https://technet.microsoft.com/en-us/library/ms190737%28v=sql.120%29.aspx "Official TECHNET Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
    **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number. A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
  - You can also use the hint [QUERYTRACEON](https://support.microsoft.com/en-us/kb/2801413 "Official QUERYTRACEON KB Article") in your queries: **&lt;querytraceon_hint ::= {QUERYTRACEON trace_flag_number}>**
 
 
-## How do I know what Trace Flags are turned on at the moment? <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
+## How do I know what Trace Flags are turned on at the moment?
+<a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
 You can use the [DBCC TRACESTATUS](https://msdn.microsoft.com/en-us/library/ms187809.aspx "Official MSDN link") command
 
 The following example displays the status of all trace flags that are currently enabled globally:
@@ -85,11 +88,15 @@ GO
 ```
 
 
-## What Are the Optimizer Rules? <a id="what-are-the-optimizer-rules"></a>
-We all know that every time SQL Server executes a query it builds an execution plan that translates the logical operations like joins and predicates into physical operations that are implemented in the SQL Server source code. That conversion is based on certain rules known as the Optimizer Rules. They define for example how to perform an INNER JOIN. When we write a simple select statement with an inner join, the query optimizer chooses based on statistics, indexes and enabled rules if the join is executed as a Merge Join, Nested Loop or a Hash Join and also if the join can use the commutative property of joins. Mathematically A join B is equal to B join A, but the computational cost generally is not the same.
+## What Are the Optimizer Rules?
+<a id="what-are-the-optimizer-rules"></a>
+We all know that every time SQL Server executes a query it builds an execution plan that translates the logical operations like joins and predicates into physical operations that are implemented in the SQL Server source code.
+That conversion is based on certain rules known as the Optimizer Rules. They define for example how to perform an INNER JOIN.
+When we write a simple select statement with an inner join, the query optimizer chooses based on statistics, indexes and enabled rules if the join is executed as a Merge Join, Nested Loop or a Hash Join and also if the join can use the commutative property of joins. Mathematically A join B is equal to B join A, but the computational cost generally is not the same.
 
 ### Getting the List of Available Rules
-To obtain the list of rules of your version of SQL Server we must use the undocumented DBCC commands SHOWONRULES and SHOWOFFRULES. Those commands display the enabled and disabled rules for the whole instance respectively. As you may guess, the number of rules varies amongst versions.
+To obtain the list of rules of your version of SQL Server we must use the undocumented DBCC commands SHOWONRULES and SHOWOFFRULES.
+Those commands display the enabled and disabled rules for the whole instance respectively. As you may guess, the number of rules varies amongst versions.
 
 ```sql
 USE master;
@@ -118,9 +125,13 @@ GO
 ## Recommended Trace Flags
 <a id="recommended-trace-flags"></a>
 
+ - [Trace Flag 272](#272) (for SQL Server 2012)
  - [Trace Flag 1118](#1118) (for versions prior to SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions prior to SQL Server 2014)
  - [Trace Flag 3226](#3226)
+
+Trace Flag 272 prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.
+(Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
 
 Trace flag 1118 addresses contention that can exist on a particular type of page in a database, the SGAM page.
 This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
@@ -128,15 +139,17 @@ In SQL Server 2016, you change this behavior using the MIXED_PAGE_ALLOCATION dat
 
 Trace flag 3023 is used to enable the CHECKSUM option, by default, for all backups taken on an instance.
 With this option enabled, page checksums are validated during a backup, and a checksum for the entire backup is generated.
-Starting in SQL Server 2014, this option can be set instance-wide through sp_configure (‘backup checksum default’).
+Starting in SQL Server 2014, this option can be set instance-wide through `sp_configure ('backup checksum default')`.
 
-The last trace flag, 3226, prevents the writing of successful backup messages to the SQL Server ERRORLOG.
+Trace flag 3226 prevents the writing of successful backup messages to the SQL Server ERRORLOG.
 Information about successful backups is still written to msdb and can be queried using T-SQL.
-For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.  As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
+As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+
 
 ## Trace Flags List
 <a id="trace-flags-list"></a>
-Summary: **510 trace flags**
+Summary: **511 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -151,8 +164,7 @@ Link: http://support.microsoft.com/kb/2892633
 
 
 **Trace Flag: 102**<br />
-Function: Verbose Merge Replication logging to msmerge\_history table
-for troubleshooting Merger repl performance<br />
+Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
 Link: http://support.microsoft.com/kb/2892633
 
 
@@ -309,11 +321,14 @@ Scope: global or session
 Function: SQL 7 – Trailing spaces are no longer truncated from literal strings in CASE statements<br />
 Link: None
 
+
 **Trace Flag: 272**<br />
-Function: Generates a log record per identity increment. Can be users
-to convert SQL 2012 back to old style Identity behaviour<br />
+<a id="272"></a>
+**Note: Only for SQL Server 2012**
+Function: It prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.<br />
 Link: http://www.big.info/2013/01/how-to-solve-sql-server-2012-identity.html<br />
-Link: https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity
+Link: https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity<br />
+Link: [Demo](https://github.com/ktaranov/sqlserver-kit/blob/master/Errors/Identity_gap_sql_server_2012.sql)
 
 
 **Trace Flag: 274**<br />
