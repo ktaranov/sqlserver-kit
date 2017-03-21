@@ -22,6 +22,10 @@ Headers:
  - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
  - [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
  - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
+ - [SQL Server to MySQL Data Type Conversion](https://convertdb.com/mysql_mssql_mapping)
+ - [SQL Server to Oracle Data Type Conversion](https://docs.oracle.com/cd/B19306_01/gateways.102/b14270/apa.htm)
+ - [SQL Server to PostgreSQL Data Type Conversion](http://www.sqlines.com/sql-server-to-postgresql)
+ - [SQL Server to SQLite Data Type Conversion](http://ericsink.com/mssql_mobile/data_types.html)
 
 
 ## Data Type Precedence (Transact-SQL)
@@ -132,46 +136,46 @@ The operand expressions are denoted as expression e1, with precision p1 and scal
 The table below shows a simplified mapping between SQL Server, SSIS and Biml data types.
 The table does not include all possible mappings or all data types, but is meant as a quick reference while developing and learning Biml.
 
-| SQL Server       | SSIS Variables | SSIS Pipeline Buffer | OLE DB            | ADO.NET           | Biml                  |
-|------------------|----------------|----------------------|-------------------|-------------------|-----------------------|
-| bigint           | Int64          | DT_I8                | LARGE_INTEGER     | Int64             | Int64                 |
-| binary           | Object         | DT_BYTES             | -                 | Binary            | Binary                |
-| bit              | Boolean        | DT_BOOL              | VARIANT_BOOL      | Boolean           | Boolean               |
-| char             | String         | DT_STR               | VARCHAR           | StringFixedLength | AnsiStringFixedLength |
-| date             | Object         | DT_DBDATE            | DBDATE            | Date              | Date                  |
-| datetime         | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
-| datetime2        | Object         | DT_DBTIMESTAMP2      | DBTIME2           | DateTime2         | DateTime2             |
-| datetimeoffset   | Object         | DT_DBTIMESTAMPOFFSET | DBTIMESTAMPOFFSET | DateTimeOffset    | DateTimeOffset        |
-| decimal          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
-| float            | Double         | DT_R8                | FLOAT             | Double            | Double                |
-| geography        | -              | DT_IMAGE             | -                 | Object            | Object                |
-| geometry         | -              | DT_IMAGE             | -                 | Object            | Object                |
-| hierarchyid      | -              | DT_BYTES             | -                 | Object            | Object                |
-| image (*)        | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
-| int              | Int32          | DT_I4                | LONG              | Int32             | Int32                 |
-| money            | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
-| nchar            | String         | DT_WSTR              | NVARCHAR          | StringFixedLength | StringFixedLength     |
-| ntext (*)        | String         | DT_NTEXT             | -                 | String            | String                |
-| numeric          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
-| nvarchar         | String         | DT_WSTR              | NVARCHAR          | String            | String                |
-| nvarchar(max)    | Object         | DT_NTEXT             | -                 | -                 | String                |
-| real             | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
-| rowversion       | Object         | DT_BYTES             | -                 | Binary            | Binary                |
-| smalldatetime    | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
-| smallint         | Int16          | DT_I2                | SHORT             | Int16             | Int16                 |
-| smallmoney       | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
-| sql_variant      | Object         | DT_WSTR, DT_NTEXT    | -                 | Object            | Object                |
-| table            | Object         | -                    | -                 | -                 | -                     |
-| text (*)         | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
-| time             | Object         | DT_DBTIME2           | DBTIME2           | Time              | Time                  |
-| timestamp (*)    | Object         | DT_BYTES             | -                 | Binary            | Binary                |
-| tinyint          | Byte           | DT_UI1               | BYTE              | Byte              | Byte                  |
-| uniqueidentifier | String, Object | DT_GUID              | GUID              | Guid              | Guid                  |
-| varbinary        | Object         | DT_BYTES             | -                 | Binary            | Binary                |
-| varbinary(max)   | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
-| varchar          | String         | DT_STR               | VARCHAR           | String            | AnsiString            |
-| varchar(max)     | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
-| xml              | Object         | DT_NTEXT             | -                 | -                 | Xml                   |
+| SQL Server         | SSIS Variables | SSIS Pipeline Buffer | OLE DB            | ADO.NET           | Biml                  |
+|--------------------|----------------|----------------------|-------------------|-------------------|-----------------------|
+| [bigint]           | Int64          | DT_I8                | LARGE_INTEGER     | Int64             | Int64                 |
+| [binary]           | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| [bit]              | Boolean        | DT_BOOL              | VARIANT_BOOL      | Boolean           | Boolean               |
+| [char]             | String         | DT_STR               | VARCHAR           | StringFixedLength | AnsiStringFixedLength |
+| [date]             | Object         | DT_DBDATE            | DBDATE            | Date              | Date                  |
+| [datetime]         | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
+| [datetime2]        | Object         | DT_DBTIMESTAMP2      | DBTIME2           | DateTime2         | DateTime2             |
+| [datetimeoffset]   | Object         | DT_DBTIMESTAMPOFFSET | DBTIMESTAMPOFFSET | DateTimeOffset    | DateTimeOffset        |
+| [decimal]          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
+| [float]            | Double         | DT_R8                | FLOAT             | Double            | Double                |
+| [geography]        | -              | DT_IMAGE             | -                 | Object            | Object                |
+| [geometry]         | -              | DT_IMAGE             | -                 | Object            | Object                |
+| [hierarchyid]      | -              | DT_BYTES             | -                 | Object            | Object                |
+| [image] (*)        | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
+| [int]              | Int32          | DT_I4                | LONG              | Int32             | Int32                 |
+| [money]            | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
+| [nchar]            | String         | DT_WSTR              | NVARCHAR          | StringFixedLength | StringFixedLength     |
+| [ntext] (*)        | String         | DT_NTEXT             | -                 | String            | String                |
+| [numeric]          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
+| [nvarchar]         | String         | DT_WSTR              | NVARCHAR          | String            | String                |
+| [nvarchar](max)    | Object         | DT_NTEXT             | -                 | -                 | String                |
+| [real]             | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
+| [rowversion]       | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| [smalldatetime]    | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
+| [smallint]         | Int16          | DT_I2                | SHORT             | Int16             | Int16                 |
+| [smallmoney]       | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
+| [sql_variant]      | Object         | DT_WSTR, DT_NTEXT    | -                 | Object            | Object                |
+| [table]            | Object         | -                    | -                 | -                 | -                     |
+| [text] (*)         | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| [time]             | Object         | DT_DBTIME2           | DBTIME2           | Time              | Time                  |
+| [timestamp] (*)    | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| [tinyint]          | Byte           | DT_UI1               | BYTE              | Byte              | Byte                  |
+| [uniqueidentifier] | String, Object | DT_GUID              | GUID              | Guid              | Guid                  |
+| [varbinary]        | Object         | DT_BYTES             | -                 | Binary            | Binary                |
+| [varbinary](max)   | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
+| [varchar]          | String         | DT_STR               | VARCHAR           | String            | AnsiString            |
+| [varchar](max)     | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| [xml]              | Object         | DT_NTEXT             | -                 | -                 | Xml                   |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
 
@@ -179,89 +183,126 @@ The table does not include all possible mappings or all data types, but is meant
 ## SQL Server Data Types Length
 <a id="sql-server-data-types-length"></a>
 
-| General Type         | Type             | N value        | Precision                         | Storage size, bytes   | Range (in SQL Server)                                                                                                                          |
-|----------------------|------------------|----------------|-----------------------------------|----------------------:|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Exact Numerics       | bit              |                |                                   | 1                     | 1, 0                                                                                                                                           |
-| Exact Numerics       | tinyint          |                |                                   | 1                     | 0 to 255                                                                                                                                       |
-| Exact Numerics       | smallint         |                |                                   | 2                     | -2^15(-32768) to 2^15(32767)                                                                                                                   |
-| Exact Numerics       | int              |                |                                   | 4                     | -2^31(-2 147 483 648) to (2^31(2 147 483 647)                                                                                                  |
-| Exact Numerics       | bigint           |                |                                   | 8                     | -2^63(-9 233 372 036 854 775 808) to 2^63(9 233 372 036 854 775 807)                                                                           |
-| Exact Numerics       | decimal          |                | 1-9<br/>10-19<br/>20-28<br/>29-38 | 5<br/>9<br/>13<br/>17 | from -10^38 +1 through 10^38 -1                                                                                                                |
-| Exact Numerics       | smallmoney       |                |                                   | 4                     | -214 748.3648 to 214 748.3647                                                                                                                  |
-| Exact Numerics       | money            |                |                                   | 8                     | -922 337 203 685 477.5808 to 922 337 203 685 477.5807                                                                                         |
-| Approximate Numerics | float            | 1-24<br/>25-53 | 7<br/>15                          | 4<br/>8               | -3.40E+38 to -1.18E-38, 0 and 1.18E-38 to 3.40E+38<br/>-1.79E+308 to -2.23E-308, 0 and 2.23E-308 to 1.79E+308                                  |
-| Date and Time        | date             |                |                                   | 3                     | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE                                                                 |
-| Date and Time        | smalldatetime    |                |                                   | 4                     | 1900-01-01 through 2079-06-06<br/>January 1, 1900 through June 6, 2079<br/>00:00:00 through 23:59:59                                           |
-| Date and Time        | time             |                | 8-11<br/>12-13<br/>14-16          | 3<br/>4<br/>5         | 00:00:00.0000000 through 23:59:59.9999999                                                                                                      |
-| Date and Time        | datetime2        |                | 1-2<br/>3-4<br/>5-7               | 6<br/>7<br/>8         | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE<br/>00:00:00 through 23:59:59.9999999                           |
-| Date and Time        | datetime         |                |                                   | 8                     | anuary 1, 1753 through December 31, 9999<br/>00:00:00 through 23:59:59.997                                                                     |
-| Date and time        | datetimeoffset   |                | 26-29<br/>30-34                   | 8<br/>10              | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE<br/>00:00:00 through 23:59:59.9999999<br/>-14:00 throuth +14:00 |
-| Caracter Strings     | char             | 1-8000         |                                   | n                     |                                                                                                                                                |
-| Caracter Strings     | varchar          | 1-8000         |                                   | n + 2                 |                                                                                                                                                |
-| Caracter Strings     | varchar(max)     | 1-(2^31 - 1)   |                                   | 2^31 - 1 + 2          |                                                                                                                                                |
-| Caracter Strings     | nchar            | 1-4000         |                                   |                       |                                                                                                                                                |
-| Caracter Strings     | nvarchar         | 1-4000         |                                   |                       |                                                                                                                                                |
-| Caracter Strings     | nvarchar(max)    | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
-| Caracter Strings     | ntext(*)         | 1-(2^30 - 1)   |                                   | n + n                 |                                                                                                                                                |
-| Caracter Strings     | text(*)          | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
-| Binary Strings       | image(*)         | 1-(2^31 - 1)   |                                   | n                     |                                                                                                                                                |
-| Binary Strings       | binary           | 1-8000         |                                   | n                     |                                                                                                                                                |
-| Binary Strings       | varbinary        | 1-8000         |                                   | n                     |                                                                                                                                                |
-| Binary Strings       | varbinary(max)   | 1-(2^31 - 1)   |                                   | n + 2                 |                                                                                                                                                |
-| Other Data Types     | cursor           |                |                                   |                       |                                                                                                                                                |
-| Other Data Types     | sql_variant      |                |                                   | max 8016              |                                                                                                                                                |
-| Other Data Types     | hierarchyid      |                |                                   | max 892               |                                                                                                                                                |
-| Other Data Types     | rowversion       |                |                                   | 8                     |                                                                                                                                                |
-| Other Data Types     | timestamp(*)     |                |                                   |                       |                                                                                                                                                |
-| Other Data Types     | uniqueidentifier |                |                                   | 16                    |                                                                                                                                                |
-| Other Data Types     | xml              |                |                                   | max 2Gb               |                                                                                                                                                |
-| Other Data Types     | table            |                |                                   |                       |                                                                                                                                                |
-| Spatial Data Types   | geometry         |                |                                   |                       |                                                                                                                                                |
-| Spatial Data Types   | geography        |                |                                   |                       |                                                                                                                                                |
+| General Type         | Type               | N value        | Precision                         | Storage size, bytes   | Range (in SQL Server)                                                                                                                          |
+|----------------------|--------------------|----------------|-----------------------------------|----------------------:|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Exact Numerics       | [bit]              |                |                                   | 1                     | 1, 0                                                                                                                                           |
+| Exact Numerics       | [tinyint]          |                |                                   | 1                     | 0 to 255                                                                                                                                       |
+| Exact Numerics       | [smallint]         |                |                                   | 2                     | -2^15(-32768) to 2^15(32767)                                                                                                                   |
+| Exact Numerics       | [int]              |                |                                   | 4                     | -2^31(-2 147 483 648) to (2^31(2 147 483 647)                                                                                                  |
+| Exact Numerics       | [bigint]           |                |                                   | 8                     | -2^63(-9 233 372 036 854 775 808) to 2^63(9 233 372 036 854 775 807)                                                                           |
+| Exact Numerics       | [decimal]          |                | 1-9<br/>10-19<br/>20-28<br/>29-38 | 5<br/>9<br/>13<br/>17 | from -10^38 +1 through 10^38 -1                                                                                                                |
+| Exact Numerics       | [smallmoney]       |                |                                   | 4                     | -214 748.3648 to 214 748.3647                                                                                                                  |
+| Exact Numerics       | [money]            |                |                                   | 8                     | -922 337 203 685 477.5808 to 922 337 203 685 477.5807                                                                                          |
+| Approximate Numerics | [float]            | 1-24<br/>25-53 | 7<br/>15                          | 4<br/>8               | -3.40E+38 to -1.18E-38, 0 and 1.18E-38 to 3.40E+38<br/>-1.79E+308 to -2.23E-308, 0 and 2.23E-308 to 1.79E+308                                  |
+| Date and Time        | [date]             |                |                                   | 3                     | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE                                                                 |
+| Date and Time        | [smalldatetime]    |                |                                   | 4                     | 1900-01-01 through 2079-06-06<br/>January 1, 1900 through June 6, 2079<br/>00:00:00 through 23:59:59                                           |
+| Date and Time        | [time]             |                | 8-11<br/>12-13<br/>14-16          | 3<br/>4<br/>5         | 00:00:00.0000000 through 23:59:59.9999999                                                                                                      |
+| Date and Time        | [datetime2]        |                | 1-2<br/>3-4<br/>5-7               | 6<br/>7<br/>8         | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE<br/>00:00:00 through 23:59:59.9999999                           |
+| Date and Time        | [datetime]         |                |                                   | 8                     | anuary 1, 1753 through December 31, 9999<br/>00:00:00 through 23:59:59.997                                                                     |
+| Date and time        | [datetimeoffset]   |                | 26-29<br/>30-34                   | 8<br/>10              | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE<br/>00:00:00 through 23:59:59.9999999<br/>-14:00 throuth +14:00 |
+| Caracter Strings     | [char]             | 1-8000         |                                   | n                     |                                                                                                                                                |
+| Caracter Strings     | [varchar]          | 1-8000         |                                   | n + 2                 |                                                                                                                                                |
+| Caracter Strings     | [varchar](max)     | 1-(2^31 - 1)   |                                   | 2^31 - 1 + 2          |                                                                                                                                                |
+| Caracter Strings     | [nchar]            | 1-4000         |                                   |                       |                                                                                                                                                |
+| Caracter Strings     | [nvarchar]         | 1-4000         |                                   |                       |                                                                                                                                                |
+| Caracter Strings     | [nvarchar](max)    | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
+| Caracter Strings     | [ntext](*)         | 1-(2^30 - 1)   |                                   | n + n                 |                                                                                                                                                |
+| Caracter Strings     | [text](*)          | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
+| Binary Strings       | [image](*)         | 1-(2^31 - 1)   |                                   | n                     |                                                                                                                                                |
+| Binary Strings       | [binary]           | 1-8000         |                                   | n                     |                                                                                                                                                |
+| Binary Strings       | [varbinary]        | 1-8000         |                                   | n                     |                                                                                                                                                |
+| Binary Strings       | [varbinary](max)   | 1-(2^31 - 1)   |                                   | n + 2                 |                                                                                                                                                |
+| Other Data Types     | [cursor]           |                |                                   |                       |                                                                                                                                                |
+| Other Data Types     | [sql_variant]      |                |                                   | max 8016              |                                                                                                                                                |
+| Other Data Types     | [hierarchyid]      |                |                                   | max 892               |                                                                                                                                                |
+| Other Data Types     | [rowversion]       |                |                                   | 8                     |                                                                                                                                                |
+| Other Data Types     | [timestamp](*)     |                |                                   |                       |                                                                                                                                                |
+| Other Data Types     | [uniqueidentifier] |                |                                   | 16                    |                                                                                                                                                |
+| Other Data Types     | [xml]              |                |                                   | max 2Gb               |                                                                                                                                                |
+| Other Data Types     | [table]            |                |                                   |                       |                                                                                                                                                |
+| Spatial Data Types   | [geometry]         |                |                                   |                       |                                                                                                                                                |
+| Spatial Data Types   | [geography]        |                |                                   |                       |                                                                                                                                                |
 
 
 
 ## SQL Server to MySQL, Oracle, PostgreSQL, SQLite Data Type Mapping
 <a id="sql-server-to-mysql-oracle-postgresql-sqlite"></a>
 
-| General Type         | Type             | MySQL                                                          | Oracle        | PostgreSQL                  | SQLite  |
-|----------------------|------------------|----------------------------------------------------------------|---------------|-----------------------------|--------:|
-| Exact Numerics       | bit              | TINYINT(1)                                                     | NUMBER(3)     | BOOLEAN                     | INTEGER |
-| Exact Numerics       | tinyint          | TINYINT(signed)                                                | NUMBER(3)     | SMALLINT                    | INTEGER |
-| Exact Numerics       | smallint         | SMALLINT                                                       | NUMBER(5)     | SMALLINT                    | INTEGER |
-| Exact Numerics       | int              | MEDIUMINT, INT                                                 | NUMBER(10)    | INT                         | INTEGER |
-| Exact Numerics       | bigint           | BIGINT                                                         | NUMBER(19)    | BIGINT                      | INTEGER |
-| Exact Numerics       | decimal          | DECIMAL                                                        | NUMBER(p[,s]) | DECIMAL(p,s)                | REAL    |
-| Exact Numerics       | smallmoney       | DOUBLE                                                         | NUMBER(10,4)  | MONEY                       | REAL    |
-| Exact Numerics       | money            | DOUBLE                                                         | NUMBER(19,4)  | MONEY                       | REAL    |
-| Approximate Numerics | float            | FLOAT<br/>DOUBLE; REAL                                         | FLOAT(49)     | DOUBLE PRECISION            | REAL    |
-| Date and Time        | date             | DATE                                                           |               | DATE                        | TEXT    |
-| Date and Time        | smalldatetime    | TIMESTAMP                                                      | DATE          | TIMESTAMP(0)                | TEXT    |
-| Date and Time        | time             | TIME                                                           |               | TIME                        | TEXT    |
-| Date and Time        | datetime2        | DDATETIME                                                      |               | TIMESTAMP                   | TEXT    |
-| Date and Time        | datetime         |                                                                | DATE          | TIMESTAMP(3)                | TEXT    |
-| Date and time        | datetimeoffset   |                                                                |               | TIMESTAMP<br/>with time zone| TEXT    |
-| Caracter Strings     | char             | CHAR                                                           | CHAR          | CHAR                        | TEXT    |
-| Caracter Strings     | varchar          | VARCHAR                                                        | VARCHAR2      | VARCHAR                     | TEXT    |
-| Caracter Strings     | varchar(max)     |                                                                | VARCHAR2      | TEXT                        | TEXT    |
-| Caracter Strings     | nchar            | NCHAR                                                          |               | NCHAR                       | TEXT    |
-| Caracter Strings     | nvarchar         |                                                                | NCHAR         | VARCHAR                     | TEXT    |
-| Caracter Strings     | nvarchar(max)    | VARCHAR<br/>TINYTEXT<br/>TEXT(M)<br/>MEDIUMTEXT<br/>LONGTEXT   | NCHAR         | TEXT                        | TEXT    |
-| Caracter Strings     | ntext(*)         |                                                                | LONG          | TEXT                        | TEXT    |
-| Caracter Strings     | text(*)          |                                                                | LONG          | TEXT                        | TEXT    |
-| Binary Strings       | image(*)         | LONGBLOB                                                       | LONG RAW      | BYTEA                       | BLOB    |
-| Binary Strings       | binary           | BINARY                                                         | RAW           | BYTEA                       | BLOB    |
-| Binary Strings       | varbinary        |                                                                | RAW           | BYTEA                       | BLOB    |
-| Binary Strings       | varbinary(max)   | VARBINARY(M)<br/>TINYBLOB<br/>BLOB<br/>MEDIUMBLOB<br/>LONGBLOB | RAW           | BYTEA                       | BLOB    |
-| Other Data Types     | cursor           |                                                                |               |                             | TEXT    |
-| Other Data Types     | sql_variant      | BLOB                                                           |               |                             | TEXT    |
-| Other Data Types     | hierarchyid      |                                                                |               |                             | TEXT    |
-| Other Data Types     | rowversion       |                                                                |               | BYTEA                       | TEXT    |
-| Other Data Types     | timestamp(*)     |                                                                | RAW           | BYTEA                       | TEXT    |
-| Other Data Types     | uniqueidentifier | CHAR                                                           | CHAR(36)      | CHAR(16)                    | TEXT    |
-| Other Data Types     | xml              |                                                                |               | XML                         | TEXT    |
-| Other Data Types     | table            |                                                                |               |                             | -       |
-| Spatial Data Types   | geometry         |                                                                |               | VARCHAR                     | TEXT    |
-| Spatial Data Types   | geography        |                                                                |               | VARCHAR                     | TEXT    |
+| General Type         | Type               | MySQL                                                          | Oracle        | PostgreSQL                  | SQLite  |
+|----------------------|--------------------|----------------------------------------------------------------|---------------|-----------------------------|--------:|
+| Exact Numerics       | [bit]              | TINYINT(1)                                                     | NUMBER(3)     | BOOLEAN                     | INTEGER |
+| Exact Numerics       | [tinyint]          | TINYINT(signed)                                                | NUMBER(3)     | SMALLINT                    | INTEGER |
+| Exact Numerics       | [smallint]         | SMALLINT                                                       | NUMBER(5)     | SMALLINT                    | INTEGER |
+| Exact Numerics       | [int]              | MEDIUMINT, INT                                                 | NUMBER(10)    | INT                         | INTEGER |
+| Exact Numerics       | [bigint]           | BIGINT                                                         | NUMBER(19)    | BIGINT                      | INTEGER |
+| Exact Numerics       | [decimal]          | DECIMAL                                                        | NUMBER(p[,s]) | DECIMAL(p,s)                | REAL    |
+| Exact Numerics       | [smallmoney]       | DOUBLE                                                         | NUMBER(10,4)  | MONEY                       | REAL    |
+| Exact Numerics       | [money]            | DOUBLE                                                         | NUMBER(19,4)  | MONEY                       | REAL    |
+| Approximate Numerics | [float]            | FLOAT<br/>DOUBLE; REAL                                         | FLOAT(49)     | DOUBLE PRECISION            | REAL    |
+| Date and Time        | [date]             | DATE                                                           |               | DATE                        | TEXT    |
+| Date and Time        | [smalldatetime]    | TIMESTAMP                                                      | DATE          | TIMESTAMP(0)                | TEXT    |
+| Date and Time        | [time]             | TIME                                                           |               | TIME                        | TEXT    |
+| Date and Time        | [datetime2]        | DDATETIME                                                      |               | TIMESTAMP                   | TEXT    |
+| Date and Time        | [datetime]         |                                                                | DATE          | TIMESTAMP(3)                | TEXT    |
+| Date and time        | [datetimeoffset]   |                                                                |               | TIMESTAMP<br/>with time zone| TEXT    |
+| Caracter Strings     | [char]             | CHAR                                                           | CHAR          | CHAR                        | TEXT    |
+| Caracter Strings     | [varchar]          | VARCHAR                                                        | VARCHAR2      | VARCHAR                     | TEXT    |
+| Caracter Strings     | [varchar](max)     |                                                                | VARCHAR2      | TEXT                        | TEXT    |
+| Caracter Strings     | [nchar]            | NCHAR                                                          |               | NCHAR                       | TEXT    |
+| Caracter Strings     | [nvarchar]         |                                                                | NCHAR         | VARCHAR                     | TEXT    |
+| Caracter Strings     | [nvarchar](max)    | VARCHAR<br/>TINYTEXT<br/>TEXT(M)<br/>MEDIUMTEXT<br/>LONGTEXT   | NCHAR         | TEXT                        | TEXT    |
+| Caracter Strings     | [ntext](*)         |                                                                | LONG          | TEXT                        | TEXT    |
+| Caracter Strings     | [text](*)          |                                                                | LONG          | TEXT                        | TEXT    |
+| Binary Strings       | [image](*)         | LONGBLOB                                                       | LONG RAW      | BYTEA                       | BLOB    |
+| Binary Strings       | [binary]           | BINARY                                                         | RAW           | BYTEA                       | BLOB    |
+| Binary Strings       | [varbinary]        |                                                                | RAW           | BYTEA                       | BLOB    |
+| Binary Strings       | [varbinary](max)   | VARBINARY(M)<br/>TINYBLOB<br/>BLOB<br/>MEDIUMBLOB<br/>LONGBLOB | RAW           | BYTEA                       | BLOB    |
+| Other Data Types     | [cursor]           |                                                                |               |                             | TEXT    |
+| Other Data Types     | [sql_variant]      | BLOB                                                           |               |                             | TEXT    |
+| Other Data Types     | [hierarchyid]      |                                                                |               |                             | TEXT    |
+| Other Data Types     | [rowversion]       |                                                                |               | BYTEA                       | TEXT    |
+| Other Data Types     | [timestamp](*)     |                                                                | RAW           | BYTEA                       | TEXT    |
+| Other Data Types     | [uniqueidentifier] | CHAR                                                           | CHAR(36)      | CHAR(16)                    | TEXT    |
+| Other Data Types     | [xml]              |                                                                |               | XML                         | TEXT    |
+| Other Data Types     | [table]            |                                                                |               |                             | -       |
+| Spatial Data Types   | [geometry]         |                                                                |               | VARCHAR                     | TEXT    |
+| Spatial Data Types   | [geography]        |                                                                |               | VARCHAR                     | TEXT    |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
+
+[bit]:https://msdn.microsoft.com/en-us/library/ms177603.aspx
+[tinyint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[smallint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[int]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[bigint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[decimal]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
+[numeric]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
+[smallmoney]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
+[money]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
+[float]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
+[real]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
+[date]:https://msdn.microsoft.com/en-us/library/bb630352.aspx
+[smalldatetime]:https://msdn.microsoft.com/en-us/library/ms182418.aspx
+[time]:https://msdn.microsoft.com/en-us/library/bb677243.aspx
+[datetime2]:https://msdn.microsoft.com/en-us/library/bb677335.aspx
+[datetime]:https://msdn.microsoft.com/en-us/library/ms187819.aspx
+[datetimeoffset]:https://msdn.microsoft.com/en-us/library/bb630289.aspx
+[char]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
+[varchar]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
+[nchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
+[nvarchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
+[ntext]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[text]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[image]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[binary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
+[varbinary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
+[cursor]:https://msdn.microsoft.com/en-us/library/ms190498.aspx
+[sql_variant]:https://msdn.microsoft.com/en-us/library/ms173829.aspx
+[hierarchyid]:https://msdn.microsoft.com/en-us/library/bb677290.aspx
+[rowversion]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
+[timestamp]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
+[uniqueidentifier]:https://msdn.microsoft.com/en-us/library/ms187942.aspx
+[xml]:https://msdn.microsoft.com/en-us/library/ms187339.aspx
+[table]:https://msdn.microsoft.com/en-us/library/ms175010.aspx
+[geometry]:https://msdn.microsoft.com/en-us/library/cc280487.aspx
+[geography]:https://msdn.microsoft.com/en-us/library/cc280766.aspx
