@@ -45,9 +45,9 @@ DBCC cachestats
 
 DBCC callfulltext
 
-DBCC checkalloc [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_ERRORMSGS][, ESTIMATEONLY]]
+DBCC CHECKALLOC [('database_name'[, NOINDEX | REPAIR])] [WITH NO_INFOMSGS[, ALL_ERRORMSGS][, ESTIMATEONLY]] https://msdn.microsoft.com/en-us/library/ms188422.aspx
 
-DBCC checkcatalog [('database_name')] [WITH NO_INFOMSGS]
+DBCC CHECKCATALOG [('database_name')] [WITH NO_INFOMSGS] https://msdn.microsoft.com/en-us/library/ms186720.aspx
 
 DBCC CHECKCONSTRAINTS [( 'tab_name' | tab_id | 'constraint_name' | constraint_id )] [WITH ALL_CONSTRAINTS | ALL_ERRORMSGS] https://msdn.microsoft.com/en-us/library/ms189496.aspx
 

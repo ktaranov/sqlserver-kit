@@ -3,7 +3,7 @@ Complete list of all Microsoft SQL Server Data Types
 
 Headers:
  - [Source link](#source-link)
- - [Data Type Precedence (Transact-SQL)](#data type-precedence)
+ - [Data Type Precedence (Transact-SQL)](#data-type-precedence)
  - [Data Type Synonyms (Transact-SQL)](#data-type-synonyms)
  - [Precision, Scale, and Length (Transact-SQL)](#precision-scale-and-length)
  - [SQL Server, SSIS and Biml Data Types](#sql-server-ssis-and-biml-data-types)
@@ -25,7 +25,7 @@ Headers:
 
 
 ## Data Type Precedence (Transact-SQL)
-<a id="data type-precedence"></a>
+<a id="data-type-precedence"></a>
 When an operator combines two expressions of different data types, the rules for data type precedence specify that the data type with the lower precedence is converted to the data type with the higher precedence.
 If the conversion is not a supported implicit conversion, an error is returned.
 When both operand expressions have the same data type, the result of the operation has that data type.
