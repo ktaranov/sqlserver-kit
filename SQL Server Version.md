@@ -2348,7 +2348,7 @@ Microsoft SQL Server 2014 (SP2-CU4) (KB4010394) - 12.0.5540.0 (X64)
 | 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                    |              |
 | 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                                 |              |
 
-[948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:http://support.microsoft.com/kb/948113/
+[948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:https://support.microsoft.com/ru-ru/help/941203/ms08-040-vulnerabilities-in-microsoft-sql-server-could-allow-elevation-of-privilege
 [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]:http://support.microsoft.com/kb/867763/
 [830233 New Connection Events Are Not Recorded in SQL Server Traces]:http://support.microsoft.com/kb/830233/
 [829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly]:http://support.microsoft.com/kb/829015/
