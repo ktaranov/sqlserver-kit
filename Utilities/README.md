@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **205** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **210** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -11,13 +11,13 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {12}
- - **[MG]**: Migration tool {17}
+ - **[MG]**: Migration tool {18}
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {3}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {94}
+ - **[?]**: Not yet classified {98}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
@@ -226,6 +226,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]     | 2013-09-09   | DMSoft Technologies  | No             |  $149 |
 | [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
 | [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]    | 2013-09-11   | DMSoft Technologies  | No             |  $149 |
+| [SQLines SQL Converter](#sqllines-converter)                          | No                               | No             | [MG]       | [SQLines SQL Converter]                    | ?            | Dmtolpeko            | Open Source    |  No   |
+| [SQLite & SQL Server Compact Toolbox](#sqlite-and-sqlserver-toolbox)  | No                               | No             | [?]        | [SQLite & SQL Server Compact Toolbox]      | ?            | ErikEJ               | Open Source    |  No   |
+| [SqlPad](#sqlpad)                                                     | Postgres, MySQL, Crate, Vertica  | No             | [?]        | [SqlPad]                                   | ?            | Rickbergfalk         | Open Source    |  No   |
+| [Html-query-plan](#html-query-plan)                                   | No                               | No             | [?]        | [SqlPad]                                   | ?            | JustinPealing        | Open Source    |  No   |
+| [SqlQueryStress](#sql-query-stress)                                   | No                               | No             | [?]        | [SqlQueryStress]                           | ?            | Adam Machanic        | Open Source    |  No   |
 
 
 ## SSMS
@@ -381,6 +386,7 @@ Price: $45
 Instantly test any C#/F#/VB snippet or program, Query databases in LINQ (or SQL) — SQL/CE/Azure, Oracle, SQLite & MySQL. Standard edition free, with no expiry.
 Enjoy rich output formatting, optional autocompletion and integrated debugging, Script and automate in your favorite .NET language,
 Super lightweight — single 15MB executable!
+SQL Server query execution plan visualizer for LINQPad http://bit.ly/QueryPlanVisualizer
 
 
 ## SqlDynamite
@@ -3216,6 +3222,68 @@ Views conversion from MS SQL to MySQL and Oracle and back support
 Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
 
 
+## SQLines SQL Converter
+<a id="sqllines-converter"></a>
+Download page: [SQLines SQL Converter]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Dmtolpeko<br/>
+Free version: Open Source<br/>
+Price: No
+
+SQLines SQL Converter is an open source tool (Apache License 2.0) that allows you to convert database schema (DDL), 
+queries and DML statements, views, stored procedures, packages, functions and triggers between Microsoft SQL Server, 
+Oracle, MariaDB, MySQL, PostgreSQL, IBM DB2, Sybase, Informix, Teradata, Greenplum and Netezza.
+
+
+## SQLite & SQL Server Compact Toolbox
+<a id="sqlite-and-sqlserver-toolbox"></a>
+Download page: [SQLite & SQL Server Compact Toolbox]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: ErikEJ<br/>
+Free version: Open Source<br/>
+Price: No
+
+Visual Studio & SSMS 2016 extension, standalone app and command line tools, for managing all aspects of your SQL Server Compact/SQLite database files' data and schema, including generation of code, database diagrams and database documentation.
+
+
+## SqlPad
+<a id="sqlpad"></a>
+Download page: [SqlPad]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Rickbergfalk<br/>
+Free version: Open Source<br/>
+Price: No
+
+A web app for writing and running SQL queries and visualizing the results. Supports Postgres, MySQL, SQL Server, Crate, Vertica, and Presto. Written in Node.js.
+
+
+## Html-query-plan
+<a id="html-query-plan"></a>
+Download page: [Html-query-plan]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: JustinPealing<br/>
+Free version: Open Source<br/>
+Price: No
+
+Html-query-plan is a JavaScript library for showing Microsoft SQL Server execution plans in HTML.
+
+
+## SqlQueryStress
+<a id="sql-query-stress"></a>
+Download page: [SqlQueryStress]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Adam Machanic<br/>
+Free version: Open Source<br/>
+Price: No
+
+SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/adam_machanic/archive/2016/01/04/sqlquerystress-the-source-code.aspx
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3421,3 +3489,8 @@ Bi-directional synchronization between MS SQL, MySQL, Oracle and PostgreSQL
 [IBM DB2 to MS SQL Migration and Sync]:https://convertdb.com/db2/mssql
 [MS Access to MS SQL Migration and Sync]:https://convertdb.com/access/mssql
 [Firebird to MS SQL Migration and Sync]:https://convertdb.com/firebird/mssql
+[SQLines SQL Converter]:https://github.com/dmtolpeko/sqlines
+[SQLite & SQL Server Compact Toolbox]:https://github.com/ErikEJ/SqlCeToolbox
+[SqlPad]:https://github.com/rickbergfalk/sqlpad
+[Html-query-plan]:https://github.com/JustinPealing/html-query-plan
+[SqlQueryStress]:https://github.com/ErikEJ/SqlQueryStress
