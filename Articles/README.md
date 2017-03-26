@@ -278,6 +278,14 @@ Articles types:
 | [SQL Server Installation Checklist]                                                                                     | Jonathan Kehayias                        | 2010-03-22 | [DBA]       |
 | [Indexed Views And Data Modifications]                                                                                  | Erik Darling                             | 2017-03-16 | [DEV]       |
 | [Deployment Automation for SQL Server Integration Services (SSIS)]                                                      | Nat Sundar                               | 2017-01-12 | [DEV]       |
+| [Why Developers Should Consider Microsoft SQL Server]                                                                   | Brent Ozar                               | 2017-03-22 | [DEV]       |
+| [SQLskills SQL101: Indexes on Foreign Keys]                                                                             | Kimberly Tripp                           | 2017-03-21 | [DEV]       |
+| [SQLskills SQL101: Updating SQL Server Statistics Part I – Automatic Updates]                                           | Erin Stellato                            | 2017-03-23 | [DBA]       |
+| [Processing Loops in SQL Server]                                                                                        | CHill60                                  | 2017-03-23 | [DEV]       |
+| [The Mysterious Case of the Missing Default Value]                                                                      | Raul Gonzalez                            | 2017-03-24 | [DEV]       |
+| [Plan Caching]                                                                                                          | Klaus Aschenbrenner                      | 2017-03-20 | [DEV]       |
+| [sp_executesql Is Not Faster Than an Ad Hoc Query]                                                                      | Grant Fritchey                           | 2016-11-07 | [DEV]       |
+| [Backing up SQL Server on Linux using Ola Hallengrens Maintenance Solution]                                             | Rob Sewell                               | 2017-03-22 | [B]         |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -538,3 +546,11 @@ Articles types:
 [SQL Server Installation Checklist]:https://www.sqlskills.com/blogs/jonathan/sql-server-installation-checklist/
 [Indexed Views And Data Modifications]:https://www.brentozar.com/archive/2017/03/indexed-views-data-modifications/
 [Deployment Automation for SQL Server Integration Services (SSIS)]:https://www.simple-talk.com/sql/ssis/deployment-automation-for-sql-server-integration-services-ssis/
+[Why Developers Should Consider Microsoft SQL Server]:https://www.brentozar.com/archive/2017/03/developers-consider-microsoft-sql-server/
+[SQLskills SQL101: Indexes on Foreign Keys]:https://www.sqlskills.com/blogs/kimberly/sqlskills-sql101-indexes-foreign-keys/
+[SQLskills SQL101: Updating SQL Server Statistics Part I – Automatic Updates]:https://www.sqlskills.com/blogs/erin/sqlskills-sql101-updating-sql-server-statistics-part-i-automatic-updates/
+[Processing Loops in SQL Server]:https://www.codeproject.com/Articles/1177788/Processing-Loops-in-SQL-Server
+[The Mysterious Case of the Missing Default Value]:http://www.sqlservercentral.com/articles/SQL+Server+internal+storage/132990/
+[Plan Caching]:https://www.sqlpassion.at/archive/2017/03/20/plan-caching/
+[sp_executesql Is Not Faster Than an Ad Hoc Query]:http://www.sqlservercentral.com/blogs/scarydba/2016/11/07/sp_executesql-is-not-faster-than-an-ad-hoc-query/
+[Backing up SQL Server on Linux using Ola Hallengrens Maintenance Solution]:https://sqldbawithabeard.com/2017/03/22/backing-up-sql-server-on-linux-using-ola-hallengrens-maintenance-solution/
