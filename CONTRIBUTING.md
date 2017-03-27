@@ -1,70 +1,111 @@
 # Contributing to the SQL Server Kit
-First of all, welcome! We're excited that you'd like to contribute. How would you like to help?
+Please take a moment to review this document in order to make the contribution
+process easy and effective for everyone involved.
 
-* [I'd like to report a bug or request an enhancement](#how-to-report-bugs-or-request-enhancements)
+Following these guidelines will help us get back to you more quickly, and will
+show that you care about making MySQLTuner better just like we do. In return, we'll
+do our best to respond to your issue or pull request as soon as possible with
+the same respect.
 
-Everyone here is expected to abide by the [Contributor Covenant Code of Conduct](#the-contributor-covenant-code-of-conduct).
-
-Wanna do something else, or have a question not answered here? Email to kast218@gmail.com
-
-
-## How to Report Bugs or Request Enhancements
-Check out the [Github issues list]. Search for what you're interested in - there may already be an issue for it. Make sure to search through closed issues, too, because we often decline things that aren't a good fit for these tools.
-
-If you can't find a similar issue, go ahead and open your own. Include as much detail as you can - what you're seeing now, and what you'd like to see.
-
-When requesting new checks, keep in mind that we want to focus on:
-
-* Actionable warnings - SQL Server folks are usually overwhelmed with data, and we only want to report on things they can actually do something about
-* Performance issues or reliability risks - if it's just a setting we don't agree with, let's set that aside
-* Things that end users or managers will notice - if we're going to have someone change a setting on their system, we want it to be worth their time
-
-Now head on over to the [Github issues list] and get started.
+_**Please Note:** These guidelines are adapted from [@necolas](https://github.com/necolas)'s
+[issue-guidelines](https://github.com/necolas/issue-guidelines) and serve as
+an excellent starting point for contributing to any open source project._
 
 
-## The Contributor Covenant Code of Conduct
+## Feature requests
+<a name="features"></a>
 
-### Our Pledge
-In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Feature requests are welcome. But take a moment to find out whether your idea
+fits with the scope and aims of the project. It's up to *you* to make a strong
+case to convince the project's developers of the merits of this feature. Please
+provide as much detail and context as possible.
 
-### Our Standards
-Examples of behavior that contributes to creating a positive environment
-include:
+Building something great means choosing features carefully especially because it
+is much, much easier to add features than it is to take them away. Additions
+to MySQLTuner will be evaluated on a combination of scope (how well it fits into the
+project), maintenance burden and general usefulness.
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+Creating something great often means saying no to seemingly good ideas. Don't
+dispair if your feature request isn't accepted, take action! Fork the
+repository, build your idea and share it with others. We released MySQLTuner under
+the MIT License for this purpose precisely. Open source works best when smart
+and dedicated people riff off of each others' ideas to make even greater things.
 
-Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+## Pull requests
+<a name="pull-requests"></a>
 
-### Our Responsibilities
-Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+Good pull requests &mdash; patches, improvements, new features &mdash; are a fantastic help.
+They should remain focused in scope and avoid containing unrelated commits.
 
-Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+**Please ask first** before embarking on any significant pull request (e.g.
+implementing features, refactoring code, porting to a different language),
+otherwise you risk spending a lot of time working on something that the
+project's developers might not want to merge into the project. You can solicit
+feedback and opinions in an open feature request thread or create a new one.
 
-### Scope
-This Code of Conduct applies both within project spaces and in public spaces when an individual is representing the project or its community. Examples of representing a project or community include using an official project e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event. Representation of a project may be further defined and clarified by project maintainers.
+Please use the [git flow for pull requests](#git-flow) and follow SQL Server KIT
+[code conventions](#code-conventions) before submitting your work.
 
-### Enforcement
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the project team at kast218@gmail.com. All complaints will be reviewed and investigated and will result in a response that is deemed necessary and appropriate to the circumstances. The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 
-Project maintainers who do not follow or enforce the Code of Conduct in good faith may face temporary or permanent repercussions as determined by other members of the project's leadership.
+## Git Flow for pull requests
+<a name="git-flow"></a>
 
-### Attribution
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
+1. [Fork] the project, clone your fork, and configure the remotes:
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
-[Github issues list]:https://github.com/ktaranov/sqlserver-kit/issues
+   ```bash
+   # Clone your fork of the repo into the current directory
+   git clone git@github.com:<YOUR_USERNAME>/sqlserver-kit.git
+   # Navigate to the newly cloned directory
+   cd sqlserver-kit
+   # Assign the original repo to a remote called "upstream"
+   git remote add upstream https://github.com/ktaranov/sqlserver-kit
+   ```
+
+2. If you cloned a while ago, get the latest changes from upstream:
+
+   ```bash
+   git checkout master
+   git pull upstream master
+   ```
+
+3. Create a new topic branch (off the main project development branch) to
+   contain your feature, change, or fix:
+
+   ```bash
+   git checkout -b <topic-branch-name>
+   ```
+
+4. Commit your changes in logical chunks. Please adhere to these [git commit message guidelines]
+   or your code is unlikely be merged into the main project. Use Git's [interactive rebase]
+   feature to tidy up your commits before making them public.
+
+5. Locally merge (or rebase) the upstream development branch into your topic branch:
+
+   ```bash
+   git pull [--rebase] upstream master
+   ```
+
+6. Push your topic branch up to your fork:
+
+   ```bash
+   git push origin <topic-branch-name>
+   ```
+
+7. [Open a Pull Request] with a clear title and description.
+
+**IMPORTANT**: By submitting a patch, you agree to allow the project owner to license your work under the MIT [LICENSE]
+
+
+## SQL Server KIT Code Conventions
+<a name="code-conventions"></a>
+
+Check [code convention]
+
+
+[Fork]:https://help.github.com/articles/fork-a-repo/
+[git commit message guidelines]:http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[interactive rebase]:https://help.github.com/articles/about-git-rebase/
+[Open a Pull Request]:https://help.github.com/articles/about-pull-requests/
+[LICENSE]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
+[code convention]:https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md

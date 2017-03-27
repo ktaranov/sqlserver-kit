@@ -14,6 +14,7 @@
 [![stars badge]][stars]
 [![forks badge]][forks]
 [![issues badge]][issues]
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/ktaranov/sqlserver-kit.svg)](http://isitmaintained.com/project/ktaranov/sqlserver-kit "Average time to resolve an issue")
 [![Join the chat at https://gitter.im/sqlserver-kit/Lobby](https://badges.gitter.im/sqlserver-kit/Lobby.svg)](https://gitter.im/sqlserver-kit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![contributors_badge]][contributors]
 
@@ -50,7 +51,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 510 Trace Flags') (**Complete list - 510 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 511 Trace Flags') (**Complete list - 511 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -96,7 +97,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 205 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 210 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -212,6 +213,7 @@ Headers:
      - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
      - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
      - [Madeira Data Solutions Academy](http://madeira-data-solutions.teachable.com/)
+     - [SQLpassion Online Academy](http://www.sqlpassion.at/online-training/index.html) (by Klaus Aschenbrenner)
  - SQL Server Backwards Compatibility
    - [VNext Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.140).aspx)
    - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
