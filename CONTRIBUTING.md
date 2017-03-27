@@ -22,13 +22,13 @@ provide as much detail and context as possible.
 
 Building something great means choosing features carefully especially because it
 is much, much easier to add features than it is to take them away. Additions
-to MySQLTuner will be evaluated on a combination of scope (how well it fits into the
+ will be evaluated on a combination of scope (how well it fits into the
 project), maintenance burden and general usefulness.
 
 Creating something great often means saying no to seemingly good ideas. Don't
-dispair if your feature request isn't accepted, take action! Fork the
-repository, build your idea and share it with others. We released MySQLTuner under
-the MIT License for this purpose precisely. Open source works best when smart
+despair if your feature request isn't accepted, take action! Fork the
+repository, build your idea and share it with others. We released this project under
+the [LICENSE] for this purpose precisely. Open source works best when smart
 and dedicated people riff off of each others' ideas to make even greater things.
 
 
