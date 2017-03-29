@@ -57,6 +57,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Remus Rusanu        | [Remus Rusanu Blog]        | USA     | Seattle          | [@rusanu]          | NULL                              | 0   | -                |
 | Dan Guzman          | [Dan Guzman Blog]          | USA     | St. Louis        | NULL               | NULL                              | 15  | [Guzman MVP]     |
 | Frank Gill          | [Frank Gill Blog]          | USA     | Chicago          | [@skreebydba]      | NULL                              | 0   | -                |
+| Mohammad Darab      | [Mohammad Darab Blog]      | USA     | Washington       | [@mwdarab]         | NULL                              | 0   | -                |
+| Kimberly Tripp      | [Kimberly Tripp Articles]  | USA     | Redmond          | [@KimberlyLTripp]  | NULL                              | 13  | [Kimberly MVP]   |
+| Raul Gonzalez       | [Raul Gonzalez Blog]       |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   | -                |
+| Rob Sewell          | [Rob Sewell Blog]          | USA     | Somerset         | [@sqldbawithbeard] | NULL                              | 0   | -                |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -110,6 +114,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Remus Rusanu Blog]:http://rusanu.com/
 [Dan Guzman Blog]:http://www.dbdelta.com/
 [Frank Gill Blog]:https://skreebydba.com/
+[Mohammad Darab Blog]:https://mohammaddarab.com/blog/
+[Kimberly Tripp Articles]:https://www.sqlskills.com/blogs/kimberly/
+[Raul Gonzalez Blog]:http://www.sqldoubleg.com
+[Rob Sewell Blog]:https://sqldbawithabeard.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -159,6 +167,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@AMtwo]:https://twitter.com/AMtwo
 [@rusanu]:https://twitter.com/rusanu
 [@skreebydba]:https://twitter.com/skreebydba
+[@mwdarab]:https://twitter.com/
+[@KimberlyLTripp]:https://twitter.com/KimberlyLTripp
+[@SQLDoubleG]:https://twitter.com/SQLDoubleG
+[@sqldbawithbeard]:https://twitter.com/@sqldbawithbeard
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -190,3 +202,4 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Davis MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000945?fullName=Robert%20L%20Davis
 [Shaw MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025121?fullName=Chris%20%20Shaw
 [Guzman MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5439?fullName=Dan%20%20Guzman
+[Kimberly MVP]:https://mvp.microsoft.com/en-us/PublicProfile/8566?fullName=Kimberly%20L.%20Tripp
