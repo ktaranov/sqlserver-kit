@@ -286,6 +286,14 @@ Articles types:
 | [Plan Caching]                                                                                                          | Klaus Aschenbrenner                      | 2017-03-20 | [DEV]       |
 | [sp_executesql Is Not Faster Than an Ad Hoc Query]                                                                      | Grant Fritchey                           | 2016-11-07 | [DEV]       |
 | [Backing up SQL Server on Linux using Ola Hallengrens Maintenance Solution]                                             | Rob Sewell                               | 2017-03-22 | [B]         |
+| [Delayed Durability in SQL Server 2014 Paul Randal]                                                                     | Paul Randal                              | 2014-11-20 | [DBA]       |
+| [Why Is This Query Sometimes Fast and Sometimes Slow]                                                                   | Brent Ozar                               | 2016-11-16 | [DEV]       |
+| [Using Plan Guides to Remove OPTIMIZE FOR UNKNOWN Hints]                                                                | Brent Ozar                               | 2016-11-17 | [DEV]       |
+| [ETL Best Practices]                                                                                                    | Tim Mitchel                              | 2017-01-01 | [DEV]       |
+| [Resolving Key Lookup Deadlocks with Plan Explorer]                                                                     | Greg Gonzalez                            | 2017-03-21 | [DEV]       |
+| [Why ROWLOCK Hints Can Make Queries Slower and Blocking Worse in SQL Server]                                            | Kendra Little                            | 2016-02-04 | [DEV]       |
+| [Does a Clustered Index really physically store the rows in key order]                                                  | Wayne Sheffield                          | 2012-10-21 | [DEV]       |
+| [Ugly Pragmatism For The Win]                                                                                           | Michael J. Swart                         | 2016-02-11 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -554,3 +562,11 @@ Articles types:
 [Plan Caching]:https://www.sqlpassion.at/archive/2017/03/20/plan-caching/
 [sp_executesql Is Not Faster Than an Ad Hoc Query]:http://www.sqlservercentral.com/blogs/scarydba/2016/11/07/sp_executesql-is-not-faster-than-an-ad-hoc-query/
 [Backing up SQL Server on Linux using Ola Hallengrens Maintenance Solution]:https://sqldbawithabeard.com/2017/03/22/backing-up-sql-server-on-linux-using-ola-hallengrens-maintenance-solution/
+[Delayed Durability in SQL Server 2014 Paul Randal]:http://www.sqlskills.com/blogs/paul/delayed-durability-sql-server-2014/
+[Why Is This Query Sometimes Fast and Sometimes Slow]:https://www.brentozar.com/archive/2016/11/query-sometimes-fast-sometimes-slow/
+[Using Plan Guides to Remove OPTIMIZE FOR UNKNOWN Hints]:https://www.brentozar.com/archive/2016/11/using-plan-guides-remove-optimize-unknown-hints/
+[ETL Best Practices]:https://www.timmitchell.net/etl-best-practices/
+[Resolving Key Lookup Deadlocks with Plan Explorer]:https://blogs.sentryone.com/greggonzalez/key-lookup-deadlocks-plan-explorer/
+[Why ROWLOCK Hints Can Make Queries Slower and Blocking Worse in SQL Server]:https://www.littlekendra.com/2016/02/04/why-rowlock-hints-can-make-queries-slower-and-blocking-worse-in-sql-server/
+[Does a Clustered Index really physically store the rows in key order]:http://www.sqlservercentral.com/blogs/discussionofsqlserver/2012/10/21/does-a-clustered-index-really-physically-store-the-rows-in-key-order/
+[Ugly Pragmatism For The Win]:http://michaeljswart.com/2016/02/ugly-pragmatism-for-the-win/
