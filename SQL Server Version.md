@@ -453,8 +453,8 @@ Useful articles:
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition:
 
 ```
-Microsoft SQL Server 2016 (SP1-CU1) (KB3208177) – 13.0.4411.0 (X64)
-    Jan 6 2017 14:24:37
+Microsoft SQL Server 2016 (SP1-CU2) (KB4013106) – 13.0.4422.0 (X64)
+    Mar 6 2017 14:18:16
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
