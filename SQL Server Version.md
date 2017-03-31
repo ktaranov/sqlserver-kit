@@ -161,8 +161,10 @@ certUtil -hashfile "d:\SQL Server\SQLServer2014SP1-KB3058865-x64-ENU.exe" sha1
 
 Or for all files with .exe extensions in folder:
 ```bat
-FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
+FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 ```
+
+Alternative download link for English x64 distributive: http://bit.ly/ya-ssk
 
 | Direct x64 Download Link        | File Name                                                         | Release Date | Build Number | Size, MB | SHA1                                                        |
 |---------------------------------|-------------------------------------------------------------------|--------------| ------------:|---------:|-------------------------------------------------------------|
