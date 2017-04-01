@@ -2,7 +2,7 @@
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: January 19, 2017
+-- Last Modified: March 23, 2017
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -1335,10 +1335,12 @@ SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database N
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
 CONVERT (NUMERIC (20,2), (CONVERT (FLOAT, bs.backup_size) /
-CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], bs.has_backup_checksums, bs.is_copy_only,
+CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], 
 DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) AS [Backup Elapsed Time (sec)],
-bs.backup_finish_date AS [Backup Finish Date]
+bs.backup_finish_date AS [Backup Finish Date], bmf.physical_device_name AS [Backup Location], bmf.physical_block_size
 FROM msdb.dbo.backupset AS bs WITH (NOLOCK)
+INNER JOIN msdb.dbo.backupmediafamily AS bmf WITH (NOLOCK)
+ON bs.media_set_id = bmf.media_set_id  
 WHERE DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) > 0 
 AND bs.backup_size > 0
 AND bs.type = 'D' -- Change to L if you want Log backups
