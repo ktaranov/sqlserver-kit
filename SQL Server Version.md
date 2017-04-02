@@ -465,13 +465,13 @@ Microsoft SQL Server 2016 (SP1-CU2) (KB4013106) – 13.0.4422.0 (X64)
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
 | 13.0.4422.0   | 2015.130.4422.0   | SP1    | CU   | [4013106 Cumulative Update 2 for SQL Server 2016 SP1]                                                                          | 2017-03-20   | 2017-03-06 |   117 |    100 |      415 |
 | 13.0.4411.0   | 2015.130.4411.0   | SP1    | CU   | [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]                                                               | 2017-01-18   | 2017-01-06 |    63 |     55 |      439 |
-| 13.0.4202.0   | 2015.130.4202.0   | SP1    | COD  | [3210089 GDR update package for SQL Server 2016 SP1]                                                                           | 2016-12-16   | 2016-12-13 |     3 |      3 |          |
-| 13.0.4199.0   | 2015.130.4199.0   | SP1    | COD  | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |     2 |      2 |          |
-| 13.0.4001.0   | 2015.130.4001.0   | SP1    | SP   | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |    33 |     33 |          |
+| 13.0.4202.0   | 2015.130.4202.0   | SP1    | COD  | [3210089 GDR update package for SQL Server 2016 SP1]                                                                           | 2016-12-16   | 2016-12-13 |     3 |      3 |      378 |
+| 13.0.4199.0   | 2015.130.4199.0   | SP1    | COD  | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |     2 |      2 |      521 |
+| 13.0.4001.0   | 2015.130.4001.0   | SP1    | SP   | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |    33 |     33 |      552 |
 | 13.0.2197.0   | 2015.130.2197.0   | RTM    | CU   | [4013105 Cumulative Update 5 for SQL Server 2016]                                                                              | 2017-03-20   | 2017-02-25 |    56 |     47 |      700 |
 | 13.0.2193.0   | 2015.130.2193.0   | RTM    | CU   | [3205052 Cumulative update 4 for SQL Server 2016]                                                                              | 2017-01-18   | 2017-01-06 |    65 |     57 |      699 |
-| 13.0.2190.2   | 2015.130.2190.2   | RTM    | COD  | [3210110 On-demand hotfix update package for SQL Server 2016 CU3]                                                              | 2016-12-16   | 2016-12-13 |     3 |      3 |          |
-| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |    31 |     31 |          |
+| 13.0.2190.2   | 2015.130.2190.2   | RTM    | COD  | [3210110 On-demand hotfix update package for SQL Server 2016 CU3]                                                              | 2016-12-16   | 2016-12-13 |     3 |      3 |      691 |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |    31 |     31 |      691 |
 | 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3205413 Cumulative update 3 for SQL Server 2016] **Duplicate KB3194717**                                                      | 2016-11-08   | 2016-10-31 |       |        |          |
 | 13.0.2170.0   | 2015.130.2170.0   | RTM    | COD  | [3199171 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-11-01   | 2016-10-11 |     4 |      4 |          |
 | 13.0.2169.0   | 2015.130.2169.0   | RTM    | COD  | [3195813 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-10-26   | 2016-10-05 |     4 |      4 |          |
@@ -502,6 +502,7 @@ Microsoft SQL Server 2016 (SP1-CU2) (KB4013106) – 13.0.4422.0 (X64)
 [3210089 GDR update package for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/kb/3210089
 [3207512 Important update for SQL Server 2016 SP1 Reporting Services]:https://support.microsoft.com/en-us/kb/3207512
 [3182545 SQL Server 2016 Service Pack 1 release information]:https://support.microsoft.com/en-us/kb/3182545
+[4013105 Cumulative Update 5 for SQL Server 2016]:https://support.microsoft.com/en-us/help/4013105/cumulative-update-5-for-sql-server-2016
 [3205052 Cumulative update 4 for SQL Server 2016]:https://support.microsoft.com/en-us/help/3205052/cumulative-update-4-for-sql-server-2016
 [3210110 On-demand hotfix update package for SQL Server 2016 CU3]:https://support.microsoft.com/en-us/kb/3210110
 [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]:https://support.microsoft.com/en-us/kb/3194717
