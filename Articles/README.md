@@ -294,6 +294,11 @@ Articles types:
 | [Why ROWLOCK Hints Can Make Queries Slower and Blocking Worse in SQL Server]                                            | Kendra Little                            | 2016-02-04 | [DEV]       |
 | [Does a Clustered Index really physically store the rows in key order]                                                  | Wayne Sheffield                          | 2012-10-21 | [DEV]       |
 | [Ugly Pragmatism For The Win]                                                                                           | Michael J. Swart                         | 2016-02-11 | [DEV]       |
+| [Architecting Microsoft SQL Server on VMware vSphere]                                                                   | Niran Even-Chen                          | 2017-03-15 | [DBA]       |
+| [Hiding tables in SSMS Object Explorer]                                                                                 | Kenneth Fisher                           | 2017-04-03 | [DEV]       |
+| [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-03-21 | [DBA]       |
+| [Generating Plots Automatically From PowerShell and SQL Server Using Gnuplot]                                           | Phil Factor                              | 2017-03-27 | [DEV]       |
+| [How to Benchmark Alternative SQL Queries to Find the Fastest Query]                                                    | Luka Seder                               | 2017-03-29 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -570,3 +575,8 @@ Articles types:
 [Why ROWLOCK Hints Can Make Queries Slower and Blocking Worse in SQL Server]:https://www.littlekendra.com/2016/02/04/why-rowlock-hints-can-make-queries-slower-and-blocking-worse-in-sql-server/
 [Does a Clustered Index really physically store the rows in key order]:http://www.sqlservercentral.com/blogs/discussionofsqlserver/2012/10/21/does-a-clustered-index-really-physically-store-the-rows-in-key-order/
 [Ugly Pragmatism For The Win]:http://michaeljswart.com/2016/02/ugly-pragmatism-for-the-win/
+[Architecting Microsoft SQL Server on VMware vSphere]:http://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/solutions/sql-server-on-vmware-best-practices-guide.pdf
+[Hiding tables in SSMS Object Explorer]:https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/
+[Clustered columnstore: on-disk vs. in-mem]:http://nedotter.com/archive/2017/03/clustered-columnstore-on-disk-vs-in-mem/
+[Generating Plots Automatically From PowerShell and SQL Server Using Gnuplot]:https://www.simple-talk.com/sql/database-delivery/generating-plots-automatically-powershell-sql-server-using-gnuplot/
+[How to Benchmark Alternative SQL Queries to Find the Fastest Query]:https://blog.jooq.org/2017/03/29/how-to-benchmark-alternative-sql-queries-to-find-the-fastest-query/
