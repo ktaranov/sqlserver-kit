@@ -32,7 +32,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Steve Jones         | [Steve Jones Blog]         |         | NULL             | [@way0utwest]      | NULL                              | 9   | [Jones MVP]      |
 | Thomas Larock       | [Thomas Larock Blog]       |         | NULL             | [@sqlrockstar]     | NULL                              | 7   | [LaRock MVP]     |
 | Mike Fal            | [Mike Fal Blog]            |         | NULL             | [@Mike_Fal]        | NULL                              | 0   | -                |
-| Derik Hammer        | [Derik Hammer Blog]        |         | NULL             | [@drayhammer]      | NULL                              | 0   | -                |
+| Derik Hammer        | [Derik Hammer Blog]        | USA     | Oklahoma         | [@drayhammer]      | NULL                              | 1   | [Derik MVP]      |
 | Chrissy LeMaire     | [Chrissy LeMaire Blog]     |         | NULL             | [@cl]              | NULL                              | 1   | [LeMaire MVP]    |
 | Tim Mitchell        | [Tim Mitchell Blog]        |         | NULL             | [@Tim_Mitchell]    | NULL                              | 7   | [Mitchell MVP]   |
 | Melissa Connors     | [Melissa Connors Articles] |         | NULL             | [@MelikaNoKaOi]    | NULL                              | 0   | -                |
@@ -49,7 +49,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Buck Woody          | [Buck Blog]                |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                |
 | Steve Stedman       | [Steve Stedman Blog]       | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]    | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                |
-| DNiko Neugebauer    | [Niko Blog]                | USA     | Austin           | NULL               | NULL                              | 0   | -                |
+| Niko Neugebauer     | [Niko Blog]                | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 0   | -                |
 | Mike Fal            | [Mike Fal Blog]            | USA     | Denver           | [@Mike_Fal]        | NULL                              | 0   | -                |
 | Robert L Davis      | [Robert Blog]              | USA     | New York         | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]      |
 | Chris Shaw          | [Chris Shaw Blog]          | USA     | Colorado         | [@SQLShaw]         | NULL                              | 8   | [Shaw MVP]       |
@@ -161,6 +161,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@buckwoodymsft]:https://twitter.com/buckwoodymsft
 [@stedman]:https://twitter.com/stedman
 [@dhmacher]:https://twitter.com/dhmacher
+[@NikoNeugebauer]:https://twitter.com/NikoNeugebauer
 [@Mike_Fal]:https://twitter.com/Mike_Fal
 [@SQLSoldier]:https://twitter.com/SQLSoldier
 [@SQLShaw]:https://twitter.com/SQLShaw
@@ -191,6 +192,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Fritchey MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025126?fullName=Grant%20%20Fritchey
 [Ford MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025585?fullName=Timothy%20%20Ford
 [Jones MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4014238?fullName=Steve%20%20Jones
+[Derik MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002574?fullName=Derik%20%20Hammer
 [LaRock MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025219?fullName=Thomas%20%20LaRock
 [LeMaire MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001321?fullName=Chrissy%20%20LeMaire
 [Mitchell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4027186?fullName=Tim%20%20Mitchell
