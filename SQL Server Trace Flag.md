@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (511 trace flags)
+Complete list of Microsoft SQL Server trace flags (512 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -27,6 +27,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
  - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
+ - [Derik Hammer Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
 
 **Great thanks to:**
  - Aaron Morelli ([blog](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
@@ -44,6 +45,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Albert van der Sel
  - Amit Banerjee
  - Erin Stellato ([blog](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
+ - Darik Hammer ([blog](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
 
 
 ## What are Microsoft SQL Server Trace Flags?
@@ -149,7 +151,7 @@ As a DBA, this is a good thing because when I look in my ERRORLOG, I really only
 
 ## Trace Flags List
 <a id="trace-flags-list"></a>
-Summary: **511 trace flags**
+Summary: **512 trace flags**
 
 
 **Trace Flag: -1**<br />
@@ -1076,6 +1078,7 @@ Function: Changes the fixed auto update statistics threshold to dynamic auto upd
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 2371 has no effect.**<br />
 Link: https://support.microsoft.com/en-us/kb/2754171<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx<br />
+Link: https://blogs.msdn.microsoft.com/axinthefield/sql-server-trace-flag-2371-for-dynamics-ax/<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
 
@@ -3056,6 +3059,11 @@ Function: SQL 8 - When SQL Server runs a parameterized query that contains sever
 Link: None
 
 
+**Trace Flag: 9275**<br />
+Function: “FIX: A DML Operation on a Large Table Can Cause Performance Problems” Enables SQL 2000 optimizations that sort data in DML statements before the changes are applied to a clustered index<br />
+Link: None
+
+
 **Trace Flag: 9292**<br />
 Function: Output Statistics considered to be used by Query Optimizer<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx<br />
@@ -3143,11 +3151,6 @@ Scope: global or session or query
 Function: Assumes independence for multiple WHERE predicates in the SQL 2014 cardinality estimation model. Predicate independence was the default for versions prior to SQL Server 2014, and thus this flag can be used to more closely emulate pre-SQL 2014 cardinality estimate behavior in a more specific fashion than TF 9481.<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression
-
-
-**Trace Flag: 9275**<br />
-Function: “FIX: A DML Operation on a Large Table Can Cause Performance Problems” Enables SQL 2000 optimizations that sort data in DML statements before the changes are applied to a clustered index<br />
-Link: None
 
 
 **Trace Flag: 9476**<br />
@@ -3279,6 +3282,13 @@ Function: Enables an update that reduces the “disk footprint [of In-Memory OLT
 Link: https://support.microsoft.com/en-us/help/3147012/fix-large-disk-checkpoint-usage-occurs-for-an-in-memory-optimized-filegroup-during-heavy-non-in-memory-workloads
 
 
+**Trace Flag: 9939**<br />
+Function: Disables merge/recompress during columnstore index reorganization.
+In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
+**Note: Trace flag 10204 does not apply to columnstore indexes which are created on memory-optimized tables.**
+Link: [MSDN ms188396]
+Scope: global or session
+
 **Trace Flag: 9989**<br />
 Function: In CTP2, enabled functionality for reading in-memory tables on a readable secondary<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-db-gets-suspect-when-i-add-in-memory-table-to-db-which-is-part-of-alwayson-availability-group
@@ -3322,7 +3332,7 @@ Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performan
 Scope: global or session
 
 
-[MSDN ms188396]:https://msdn.microsoft.com/en-us/library/ms188396.aspx
+[MSDN ms188396]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [DBCC CHECKDB]:https://msdn.microsoft.com/en-us/library/ms176064.aspx
 [DBCC CHECKTABLE]:https://msdn.microsoft.com/en-us/library/ms174338.aspx
 [DBCC CHECKCONSTRAINTS]:https://msdn.microsoft.com/en-us/library/ms189496.aspx
