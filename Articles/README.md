@@ -299,6 +299,12 @@ Articles types:
 | [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-03-21 | [DBA]       |
 | [Generating Plots Automatically From PowerShell and SQL Server Using Gnuplot]                                           | Phil Factor                              | 2017-03-27 | [DEV]       |
 | [How to Benchmark Alternative SQL Queries to Find the Fastest Query]                                                    | Luka Seder                               | 2017-03-29 | [DEV]       |
+| [Checking for Strange Client Settings with sys.dm_exec_sessions]                                                        | Brent Ozar                               | 2017-03-31 | [DEV]       |
+| [Decrypting Insert Query Plans]                                                                                         | Eric Darling                             | 2017-03-30 | [DEV]       |
+| [SQLskills SQL101: Partitioning]                                                                                       | Kimberly Tripp                           | 2017-03-27 | [DBA]       |
+| [SQLskills SQL101: Switching recovery models]                                                                          | Paul Randal                              | 2017-03-29 | [DBA]       |
+| [Using AT TIME ZONE to fix an old report]                                                                               | Rob Farley                               | 2017-02-14 | [DEV]       |
+| [What the heck is a DTU]                                                                                                | Andy Mallon                              | 2017-03-30 | [AZ]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -580,3 +586,9 @@ Articles types:
 [Clustered columnstore: on-disk vs. in-mem]:http://nedotter.com/archive/2017/03/clustered-columnstore-on-disk-vs-in-mem/
 [Generating Plots Automatically From PowerShell and SQL Server Using Gnuplot]:https://www.simple-talk.com/sql/database-delivery/generating-plots-automatically-powershell-sql-server-using-gnuplot/
 [How to Benchmark Alternative SQL Queries to Find the Fastest Query]:https://blog.jooq.org/2017/03/29/how-to-benchmark-alternative-sql-queries-to-find-the-fastest-query/
+[Checking for Strange Client Settings with sys.dm_exec_sessions]:https://www.brentozar.com/archive/2017/03/checking-strange-client-settings-sys-dm_exec_sessions/
+[Decrypting Insert Query Plans]:https://www.brentozar.com/archive/2017/03/decrypting-insert-query-plans/
+[SQLskills SQL101: Partitioning]:https://www.sqlskills.com/blogs/kimberly/sqlskills-sql101-partitioning/
+[SQLskills SQL101: Switching recovery models]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-switching-recovery-models/
+[Using AT TIME ZONE to fix an old report]:https://sqlperformance.com/2017/02/t-sql-queries/using-at-time-zone-to-fix-an-old-report
+[What the heck is a DTU]:https://sqlperformance.com/2017/03/azure/what-the-heck-is-a-dtu
