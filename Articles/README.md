@@ -301,10 +301,13 @@ Articles types:
 | [How to Benchmark Alternative SQL Queries to Find the Fastest Query]                                                    | Luka Seder                               | 2017-03-29 | [DEV]       |
 | [Checking for Strange Client Settings with sys.dm_exec_sessions]                                                        | Brent Ozar                               | 2017-03-31 | [DEV]       |
 | [Decrypting Insert Query Plans]                                                                                         | Eric Darling                             | 2017-03-30 | [DEV]       |
-| [SQLskills SQL101: Partitioning]                                                                                       | Kimberly Tripp                           | 2017-03-27 | [DBA]       |
-| [SQLskills SQL101: Switching recovery models]                                                                          | Paul Randal                              | 2017-03-29 | [DBA]       |
+| [SQLskills SQL101: Partitioning]                                                                                        | Kimberly Tripp                           | 2017-03-27 | [DBA]       |
+| [SQLskills SQL101: Switching recovery models]                                                                           | Paul Randal                              | 2017-03-29 | [DBA]       |
 | [Using AT TIME ZONE to fix an old report]                                                                               | Rob Farley                               | 2017-02-14 | [DEV]       |
 | [What the heck is a DTU]                                                                                                | Andy Mallon                              | 2017-03-30 | [AZ]        |
+| [Hack-Attaching a SQL Server database with NORECOVERY]                                                                  | Argenis Fernandez                        | 2016-01-24 | [DBA]       |
+| [Switch in Staging Tables Instead of sp_rename]                                                                         | Kendra Little                            | 2017-01-19 | [DBA]       |
+| [Performance Myths: Table variables are always in-memory]                                                               | Derik Hammer                             | 2017-04-04 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -592,3 +595,6 @@ Articles types:
 [SQLskills SQL101: Switching recovery models]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-switching-recovery-models/
 [Using AT TIME ZONE to fix an old report]:https://sqlperformance.com/2017/02/t-sql-queries/using-at-time-zone-to-fix-an-old-report
 [What the heck is a DTU]:https://sqlperformance.com/2017/03/azure/what-the-heck-is-a-dtu
+[Hack-Attaching a SQL Server database with NORECOVERY]:http://sqlblog.com/blogs/argenis_fernandez/archive/2017/01/24/hack-attaching-a-sql-server-database-with-norecovery.aspx
+[Switch in Staging Tables Instead of sp_rename]:https://www.littlekendra.com/2017/01/19/why-you-should-switch-in-staging-tables-instead-of-renaming/
+[Performance Myths: Table variables are always in-memory]:https://sqlperformance.com/2017/04/performance-myths/table-variables-in-memory
