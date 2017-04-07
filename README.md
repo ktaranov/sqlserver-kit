@@ -236,6 +236,8 @@ Headers:
    - [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
    - [SQL.ru SQL Server Forum](http://www.sql.ru/forum/microsoft-sql-server) (more than 10^5 People, Russian)
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
+   - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
+   - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
  - Open Source Projects
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump) (Github)
@@ -389,6 +391,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
  - [PowerShell sqlCheck](https://bitbucket.org/yardbirdsax/sqlcheck/src) (Bitbucket) (by Josh Feierman)
  - [PowerShell Enterprise Policy Management Framework](https://epmframework.codeplex.com/)
  - [ReportingServicesTools - Reporting Services Powershell Tools](https://github.com/Microsoft/ReportingServicesTools) (by Microsoft)
+ - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
 
 [*Back to top*](#header05)
 
@@ -423,6 +426,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
 SQL Server:
  - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
+    - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
  - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
