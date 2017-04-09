@@ -2,8 +2,28 @@
 
 
 ## SSMS Shortcuts
-All shortcuts you can find [here]()
-Most useful 
+All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
+
+Most useful are:
+
+| Shortcut              | Description                            |
+|-----------------------|----------------------------------------|
+| `Ctrl + U`            | Change Selected Database               |
+| `Ctrl + R`            | Toggle Results Pane                    |
+| `Ctrl + Space`        | Activate Autocomplete                  |
+| `Ctrl + Shift + V`    | [Cycle through clipboard ring]         |
+| `Ctrl + ]`            | Navigate to matching parenthesis       |
+| `Ctrl + –`            | Navigate to last cursor location       |
+| `Ctrl + Shift + –`    | Navigate forward to cursor location    |
+| `Ctrl + K, Ctrl + C`  | Comments selected text                 |
+| `Ctrl + K, Ctrl + U`  | Uncomments selected text               |
+| `Ctrl + K, Ctrl + K`  | Toggle Bookmark                        |
+| `Ctrl + K, Ctrl + N`  | Go to Next Bookmark                    |
+| `Ctrl + L`            | Display Estimated Query Execution plan |
+| `Shift + Alt + Enter` | View Code Editor in Full Screen        |
+
+
+[Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 
 
 ## Set Keyboard Shortcuts for Favorite Stored Procedures
@@ -45,11 +65,6 @@ The Time Statistics additionally shows you the following information:
  - Client Processing Time
  - Total Execution Time
  - Wait Time on Server Replies
-
-
-## Moving columns in the results pane
-It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
-This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your resultset.
 
 
 ## Using GO X to Execute a Batch or Statement Multiple Times
@@ -116,11 +131,27 @@ Central Management Server are similar to Registered Servers but with some differ
 A significant limitation with CMS is that the CMS server itself can’t be included in the list of servers.
 
 
+## Splitting the Query Window
+The query window in SSMS can be split into two so that you can look at two parts of the same query simultaneously.
+Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
+To split the window simply drag the bar to the top right hand side of the window as shown below.
+[img1]
+
+
+## Moving columns in the results pane
+It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
+This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your resultset.
+
+
+## Dragging a comma separated list of all Columns in a Table from Object Explorer window to the Query Window
+If you want to list all the columns in a table as a comma separated list (perhaps as the starting point for a SELECT clause) simply drag the ‘Columns’ item in Object Explorer and drop it onto to a query window
+
+
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
  - [SSMS Tips and Tricks](http://www.ssmstipsandtricks.com/) (by Latish Sehgal)
  - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by  Klaus Aschenbrenner)
- - [](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by )
+ - [Top 10 SQL Server Management Studio (SSMS) Tips and Tricks](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by )
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
  - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/)

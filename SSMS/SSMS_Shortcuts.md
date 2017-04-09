@@ -1,8 +1,8 @@
 # SQL Server Management Studio Keyboard Shortcuts
 
 Source Links:
- - [MSDN SQL Server Management Studio Keyboard Shortcuts](https://msdn.microsoft.com/en-us/library/ms174205.aspx)
- - [MSDN Customize Menus and Shortcut Keys](https://msdn.microsoft.com/en-us/library/ms174178.aspx)
+ - [SQL Server Management Studio Keyboard Shortcuts](https://docs.microsoft.com/en-us/sql/tools/sql-server-management-studio/sql-server-management-studio-keyboard-shortcuts#document-window-and-browser-keyboard-shortcuts)
+ - [Customize Menus and Shortcut Keys](https://docs.microsoft.com/en-us/sql/ssms/customize-menus-and-shortcut-keys)
 
 SQL Server Management Studio offers users two keyboard schemes. By default, it uses the SQL Server 2016 scheme, with keyboard shortcuts based on Microsoft Visual Studio 2010. Management Studio also offers a keyboard scheme similar to the standard scheme from SQL Server 2008 R2. To change the keyboard scheme or add additional keyboard shortcuts, on the **Tools** menu, click **Options**. Select the desired keyboard scheme on the Environment, Keyboard page.
 
