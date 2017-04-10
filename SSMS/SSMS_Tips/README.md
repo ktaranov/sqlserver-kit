@@ -21,12 +21,33 @@ Most useful are:
 | `Ctrl + K, Ctrl + N`  | Go to Next Bookmark                    |
 | `Ctrl + L`            | Display Estimated Query Execution plan |
 | `Shift + Alt + Enter` | View Code Editor in Full Screen        |
+| `Ctrl + I`            | Quick Search                           |
+| `Ctrl + F5`           | Parse query  to check for errors       |
+| `Shift + F10`         | Simulate right mouse button            |
 
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 
 
-## Set Keyboard Shortcuts for Favorite Stored Procedures
+## Keyboard Shortcuts for Favorite Stored Procedures
+Tools > Options > Environment > Keyboard > Query Shortcuts
+
+My recommendation:
+
+| Query Shortcut | Stored Procedure   |
+|----------------|--------------------|
+| `Alt + F1`     | sp_help            |
+| `Ctrl + F1`    | sp_WhoIsActive     |
+| `Ctrl + 1`     | sp_who             |
+| `Ctrl + 2`     | sp_lock            |
+| `Ctrl + 3`     | sp_Blitz           |
+| `Ctrl + 4`     | sp_BlitzCache      |
+| `Ctrl + 5`     | sp_BlitzWho        |
+| `Ctrl + 6`     |                    |
+| `Ctrl + 7`     |                    |
+| `Ctrl + 8`     |                    |
+| `Ctrl + 9`     | sp_BlitzTrace      |
+| `Ctrl + 0`     | sp_DatabaseRestore |
 
 
 ## Selecting a block of text using the ALT Key
@@ -65,6 +86,20 @@ The Time Statistics additionally shows you the following information:
  - Client Processing Time
  - Total Execution Time
  - Wait Time on Server Replies
+
+
+## Configure Object Explorer to Script Compression and Partition Schemes for Indexes
+Is this index compressed or partitioned?
+
+By default, you wouldn’t know just by scripting out the index from Object Explorer. If you script out indexes this way to check them into source code, or to tweak the definition slightly, this can lead you to make mistakes.
+
+You can make sure you’re aware when indexes have compression or are partitioned by changing your scripting settings:
+- Click Tools – > Options
+- Go to SQL Server Object Explorer -> Scripting
+- Scroll down in the right pane of options and set both of these to ‘True’
+  - Script Data Compression Options
+  - Script Partition Schemes
+- Click OK
 
 
 ## Using GO X to Execute a Batch or Statement Multiple Times
@@ -135,12 +170,13 @@ A significant limitation with CMS is that the CMS server itself can’t be inclu
 The query window in SSMS can be split into two so that you can look at two parts of the same query simultaneously.
 Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
 To split the window simply drag the bar to the top right hand side of the window as shown below.
-[img1]
+
+The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane
 
 
 ## Moving columns in the results pane
 It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
-This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your resultset.
+This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your result set.
 
 
 ## Dragging a comma separated list of all Columns in a Table from Object Explorer window to the Query Window
@@ -151,7 +187,7 @@ Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
  - [SSMS Tips and Tricks](http://www.ssmstipsandtricks.com/) (by Latish Sehgal)
- - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by  Klaus Aschenbrenner)
- - [Top 10 SQL Server Management Studio (SSMS) Tips and Tricks](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by )
+ - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by Klaus Aschenbrenner)
+ - [Top 10 SQL Server Management Studio (SSMS) Tips and Tricks](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by SQLMatters)
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
- - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/)
+ - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/) (by MSSQLTips)
