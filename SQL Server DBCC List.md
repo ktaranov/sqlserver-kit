@@ -257,7 +257,7 @@ DBCC tab ( dbid, objid )
 
 DBCC tape_control {'query' | 'release'}[,('.tape')]
 
-DBCC tec [( uid[, spid[, ecid]] )]
+DBCC TEC [( uid[, spid[, ecid]] )] http://sqlonice.com/context-in-perspective-6-taking-sessions-to-task/
 
 DBCC textall [({'database_name'|database_id}[, 'FULL' | FAST] )]
 
