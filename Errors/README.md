@@ -59,6 +59,7 @@ Error code equal `message_id` from `sys.messages`
 |       3013 | RESTORE DATABASE is terminating abnormally                                                                                                              | [KB290787]                                                 |
 |       3154 | The backup set holds a backup of a database other than the existing                                                                                     | [Database Restore Fails with Msg 3154]                     |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log file. Roll back the transaction.                        | [Case study: Troubleshooting Doomed Transactions]          |
+|       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]            |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                                                                   | [SQL SERVER - FIX Error 5120]                              |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [When SQL Server fails to create a secondary data file]    |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                                                                  | [Discuss Execute(SQL) At LinkedServer]                     |
@@ -80,6 +81,7 @@ Error code equal `message_id` from `sys.messages`
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
+[SQL Server 2016 Online ALTER COLUMN Operation]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
