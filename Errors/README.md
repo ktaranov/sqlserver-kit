@@ -51,6 +51,7 @@ Error code equal `message_id` from `sys.messages`
 |-----------:|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
 |          ? | The operating system returned the error ????? while attempting SetEndOfFile' on '\\SQLBackups\database.bak'. BACKUP DATABASE is terminating abnormally. | [Compressed backup errors and TF 3042]                     |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                                                                   | [Who owns your availability groups?]                       |
+|        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time instances is too large...                               | [Nuance of datetime data type in SQL Server]               |
 |        657 | Could not disable support for increased partitions in database ...                                                                                      | [SQL SERVER – Disabling 15000 Partitions (15k)]            |
 |        703 | There is insufficient system memory in resource pool 'default' to run this query.                                                                       | [703_link1]                                                |
 |        824 | SQL Server detected a logical consistency-based I/O error                                                                                               | [Resolve Microsoft SQL Server Error Code 824], [KB2152734] |
@@ -75,6 +76,7 @@ Error code equal `message_id` from `sys.messages`
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [SQL SERVER – Disabling 15000 Partitions (15k)]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
+[Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
