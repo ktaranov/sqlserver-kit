@@ -313,6 +313,11 @@ Articles types:
 | [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]                     | Paul Randal                              | 2007-10-01 | [DEV]       |
 | [Inside the Storage Engine: Anatomy of a page]                                                                          | Paul Randal                              | 2007-10-03 | [DEV]       |
 | [For The Better Developer: SQL Server Indexes]                                                                          | Davide Mauri                             | 2017-04-02 | [DEV]       |
+| [#EntryLevel: Compression & Data Types]                                                                                 | Melissa Connors                          | 2016-04-17 | [DEV]       |
+| [Cardinality Estimation for a Predicate on a COUNT Expression]                                                          | Paul White                               | 2017-04-12 | [DEV]       |
+| [Changing SQL Server Collation After Installation]                                                                      | Douglas P. Castilho                      | 2015-02-19 | [DBA]       |
+| [Does a TempDB spill mean statistics are out of date?]                                                                  | Brent Ozar                               | 2017-04-12 | [DEV]       |
+| [Transaction log growth during BACKUP]                                                                                  | Andy Mallon                              | 2017-04-10 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -608,3 +613,8 @@ Articles types:
 [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-using-dbcc-page-and-dbcc-ind-to-find-out-if-page-splits-ever-roll-back/
 [Inside the Storage Engine: Anatomy of a page]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
 [For The Better Developer: SQL Server Indexes]:http://sqlblog.com/blogs/davide_mauri/archive/2017/04/02/for-the-better-developer-sql-server-indexes.aspx
+[#EntryLevel: Compression & Data Types]:https://blogs.sentryone.com/melissaconnors/entry-level-compression/
+[Cardinality Estimation for a Predicate on a COUNT Expression]:https://sqlperformance.com/2017/04/sql-optimizer/cardinality-count
+[Changing SQL Server Collation After Installation]:https://www.mssqltips.com/sqlservertip/3519/changing-sql-server-collation-after-installation/
+[Does a TempDB spill mean statistics are out of date?]:https://www.brentozar.com/archive/2017/04/tempdb-spill-mean-statistics-date/
+[Transaction log growth during BACKUP]:https://www.am2.co/2017/04/transaction-log-growth-backup/
