@@ -32,22 +32,34 @@ Most useful are:
 ## Keyboard Shortcuts for Favorite Stored Procedures
 Tools > Options > Environment > Keyboard > Query Shortcuts
 
-My recommendation:
+![Keyboard Shortcuts for Favorite Stored Procedures](/keyboard_shortcuts_for_stored_procedures.png)
 
-| Query Shortcut | Stored Procedure   |
-|----------------|--------------------|
-| `Alt + F1`     | sp_help            |
-| `Ctrl + F1`    | sp_WhoIsActive     |
-| `Ctrl + 1`     | sp_who             |
-| `Ctrl + 2`     | sp_lock            |
-| `Ctrl + 3`     | sp_Blitz           |
-| `Ctrl + 4`     | sp_BlitzCache      |
-| `Ctrl + 5`     | sp_BlitzWho        |
-| `Ctrl + 6`     |                    |
-| `Ctrl + 7`     |                    |
-| `Ctrl + 8`     |                    |
-| `Ctrl + 9`     | sp_BlitzTrace      |
-| `Ctrl + 0`     | sp_DatabaseRestore |
+My recommendation (awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `sp_WhoIsActive`):
+
+| Query Shortcut | Stored Procedure     |
+|----------------|----------------------|
+| `Alt + F1`     | [sp_help]            |
+| `Ctrl + F1`    | [sp_WhoIsActive]     |
+| `Ctrl + 1`     | [sp_who]             |
+| `Ctrl + 2`     | [sp_lock]            |
+| `Ctrl + 3`     | [sp_Blitz]           |
+| `Ctrl + 4`     | [sp_BlitzCache]      |
+| `Ctrl + 5`     | [sp_BlitzWho]        |
+| `Ctrl + 6`     |                      |
+| `Ctrl + 7`     |                      |
+| `Ctrl + 8`     |                      |
+| `Ctrl + 9`     | [sp_BlitzTrace]      |
+| `Ctrl + 0`     | [sp_DatabaseRestore] |
+
+[sp_help]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-transact-sql
+[sp_who]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
+[sp_lock]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-lock-transact-sql
+[sp_WhoIsActive]:http://whoisactive.com
+[sp_Blitz]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_Blitz.sql
+[sp_BlitzCache]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzCache.sql
+[sp_BlitzWho]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzWho.sql
+[sp_BlitzTrace]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzTrace.sql
+[sp_DatabaseRestore]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_DatabaseRestore.sql
 
 
 ## Selecting a block of text using the ALT Key
@@ -183,6 +195,13 @@ This can be useful if you want to rearrange how the results are displayed withou
 If you want to list all the columns in a table as a comma separated list (perhaps as the starting point for a SELECT clause) simply drag the ‘Columns’ item in Object Explorer and drop it onto to a query window
 
 
+## Generating Charts and Drawings in SQL Server Management Studio
+You don't have to settle for T-SQL's monochrome text output. These stored procedures let you quickly and easily turn your SELECT queries' output into colorized charts and even computer-generated art.
+To turn your own data into a line, column, area, or bar chart using the Chart stored procedure, you need to design a SELECT query that serves as the first parameter in the stored procedure call.
+
+Detailed Article and code here: [Generating Charts and Drawings in SQL Server Management Studio]
+
+
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
@@ -191,3 +210,6 @@ Reference:
  - [Top 10 SQL Server Management Studio (SSMS) Tips and Tricks](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by SQLMatters)
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
  - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/) (by MSSQLTips)
+ - [Generating Charts and Drawings in SQL Server Management Studio]
+
+[Generating Charts and Drawings in SQL Server Management Studio]:(http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio)

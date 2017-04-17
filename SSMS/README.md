@@ -3,6 +3,7 @@ SQL Server Management Studio is an integrated environment for managing your SQL 
 Management Studio provides tools to configure, monitor, and administer instances of SQL Server.
 It also provides tools to deploy, monitor, and upgrade the data-tier components, such as databases and data warehouses used by your applications, and to build queries and scripts.
 
+ - [SSMS Tips](/SSMS_Tips)
  - [SSMS Addins](SSMS_Addins.md)
  - [SSMS Snippets](SSMS_Snippets)
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
