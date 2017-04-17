@@ -32,7 +32,7 @@ Most useful are:
 ## Keyboard Shortcuts for Favorite Stored Procedures
 Tools > Options > Environment > Keyboard > Query Shortcuts
 
-![Keyboard Shortcuts for Favorite Stored Procedures](/keyboard_shortcuts_for_stored_procedures.png)
+![Keyboard Shortcuts for Favorite Stored Procedures](keyboard_shortcuts_for_stored_procedures.png)
 
 My recommendation (awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `sp_WhoIsActive`):
 
