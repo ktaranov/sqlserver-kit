@@ -62,6 +62,12 @@ My recommendation (awesome open source Brent Ozar teams procedures and with some
 [sp_DatabaseRestore]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_DatabaseRestore.sql
 
 
+## Script any object with data
+Right click on database name > Tasks > Generate Scripts …
+
+![Script any object with data](ssms_script_objects.gif)
+
+
 ## Selecting a block of text using the ALT Key
 By holding down the ALT key as you select a block of text you can control the width of the selection region as well as the number of rows.
 
