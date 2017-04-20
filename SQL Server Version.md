@@ -124,7 +124,7 @@ Profits:
 
 | Version | Latest Update                                                               | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| vNext   | [Install vNext]                                                             | 14.0.405.198                                 | 2017-03-17                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| 2017    | [Install CTP]                                                               | 14.0.500.272                                 | 2017-04-19                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
 | 2016    | [Install 2016 SP1] then <br/>[SP1 CU2 KB4013106]                            | 13.0.4001.0<br>13.0.4422.0                   | 2016-11-16<br/>2017-03-20                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB4013098]                 | 12.0.5000.0<br/>12.0.5546.0                  | 2016-07-11<br/>2017-04-18                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[KB4013104] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6594.0 | 2012-02-14<br/>2015-11-21<br/>2017-03-21 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -133,7 +133,7 @@ Profits:
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[Install vNext]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
+[Install CTP]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU1 KB4013106]:https://support.microsoft.com/en-us/help/4013106/cumulative-update-2-for-sql-server-2016-sp1
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
@@ -165,11 +165,11 @@ Or for all files with .exe extensions in folder:
 FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 ```
 
-Alternative download link for English x64 distributive: http://bit.ly/ya-ssk
+Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
 | Direct x64 Download Link        | File Name                                                         | Release Date | Build Number | Size, MB | SHA1                                                        |
 |---------------------------------|-------------------------------------------------------------------|--------------| ------------:|---------:|-------------------------------------------------------------|
-| [SQL Server vNext]              | SQLServerVnextCTP1.4-x64-ENU.iso                                  | 2017-03-17   | 14.0.405.198 |     2001 | 07 7d 25 df 76 44 59 1d ed 06 c9 83 ae 34 d0 63 2c dd 74 95 |
+| [SQL Server 2017]               | SQLServerVnextCTP2.0-x64-ENU.iso                                  | 2017-04-19   | 14.0.500.272 |     1721 | 1e 7d 9f b8 d7 90 8a 0f 6d 77 80 11 e5 7d 20 4a 9e 11 89 8b |
 | [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5  |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0  |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
 | [SQL Server 2016 SP1 KB4013106] | SQLServer2016-KB4013106-x64.exe                                   | 2017-03-20   | 13.0.4422.0  |      415 | 94 6c db 15 41 7a 18 4a ab 4d d2 4d 93 7c 3d 1c fb 1c 86 62 |
@@ -187,7 +187,7 @@ Alternative download link for English x64 distributive: http://bit.ly/ya-ssk
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[SQL Server vNext]:http://care.dlservice.microsoft.com/dl/download/5/2/F/52F641F6-D997-437E-9E80-502D71B221A0/SQLServerVnextCTP1.4-x64-ENU.iso
+[SQL Server vNext]:http://care.dlservice.microsoft.com/dl/download/F/4/3/F43E1CD6-4FAB-4E23-9019-5D72D7FA9BEA/SQLServerVnextCTP2.0-x64-ENU.iso
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4013106]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/x64/SQLServer2016-KB4013106-x64.exe
@@ -346,7 +346,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 
 | SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server vNext                             | 14              |  vNext       | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2017                              | 14              |  2017        | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 12              |  CloudDB     | 2010 (2017)  | 841                       | 130                             | 130, 120, 110, 100            |
 | SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
@@ -385,7 +385,7 @@ For details about how to assess the performance differences of your most importa
 
 | Version            | Codename    | RTM (no SP)    | SP1            | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:---------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server vNext   | vNext       | [14.0.405.198] |                |                                 |                                   |                                 |
+| SQL Server vNext   | vNext       | [14.0.500.272] |                |                                 |                                   |                                 |
 | SQL Server 2016    | SQL16       | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
@@ -395,7 +395,7 @@ For details about how to assess the performance differences of your most importa
 | SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
 | SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[14.0.405.198]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
+[14.0.500.272]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [13.0.4001.0]:https://support.microsoft.com/en-us/kb/3182545
 [12.0.5000.0]:https://support.microsoft.com/en-us/kb/3171021
@@ -426,13 +426,13 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server vNext Developer Edition:
 
 ```
-Microsoft SQL Server vNext (CTP1.4) – 14.0.405.198 (X64)
-  Mar 11 2017 01:54:12
-  Copyright (C) 2016 Microsoft Corporation. All rights reserved.
+Microsoft SQL Server vNext (CTP2.0) – 14.0.500.272 (X64)
+  Apr 13 2017 11:44:40
+  Copyright (C) 2017 Microsoft Corporation. All rights reserved.
   Developer Edition (64-bit) on Windows …
 ```
 
-There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://msdn.microsoft.com/en-us/library/mt775028.aspx)
+There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/what-s-new-in-sql-server-vnext-database-engine)
 
 There is also a Linux version: [What's new for SQL Server vNext on Linux](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-whats-new)
 
@@ -442,13 +442,14 @@ Useful articles:
 
 | Build        | File version     | Branch | Type | KB / Description                                                       | Release Date | Build Date | Size, Mb |
 |--------------|------------------|--------|------|------------------------------------------------------------------------|--------------|------------|---------:|
-| 14.0.405.198 | 2017.140.405.198 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)] | 2017-03-17   | 2017-03-11 |     2001 |
+| 14.0.500.272 | 2017.140.500.272 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)] | 2017-04-19   | 2017-04-13 |     1721 |
+| 14.0.405.198 | 2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)   | 2017-03-17   | 2017-03-11 |     2001 |
 | 14.0.304.138 | 2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3)   | 2017-02-17   | 2017-02-14 |     1978 |
 | 14.0.200.24  | 2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2)   | 2017-01-18   | 2017-01-11 |     1975 |
 | 14.0.100.187 | 2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)   | 2016-12-16   | 2016-12-11 |     1975 |
 | 14.0.1.246   | 2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)       | 2016-11-16   | 2016-11-02 |     1983 |
 
-[Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
+[Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
 
 
 ## Microsoft SQL Server 2016 Builds
@@ -2309,100 +2310,61 @@ Microsoft SQL Server 2014 (SP2-CU4) (KB4010394) - 12.0.5540.0 (X64)
 ## Microsoft SQL Server 7.0 Builds
 <a id="microsoft-sql-server-70-builds"></a>
 
-| Build     | KB / Description                                                                                                                                                      | Release Date |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                                | 2008-07-08   |
-| 7.00.1149 | [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]                         | 2006-06-01   |
-| 7.00.1143 | [830233 New Connection Events Are Not Recorded in SQL Server Traces]                                                                                                  | 2005-10-25   |
-| 7.00.1143 | [829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly] | 2005-10-25   |
-| 7.00.1097 | [822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion]                                                                         | 2005-10-25   |
-| 7.00.1094 | [821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4]                                                                                                   | 2006-05-11   |
-| 7.00.1094 | [815495 MS03-031: Cumulative security patch for SQL Server]                                                                                                           | 2006-05-10   |
-| 7.00.1092 | [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]                                                                                   | 2005-10-25   |
-| 7.00.1087 | [814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation]                                                                   | 2005-09-27   |
-| 7.00.1079 | [329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]                                                                                           | 2005-10-11   |
-| 7.00.1078 | [327068 INF: SQL Server 7.0 Security Update for Service Pack 4]                                                                                                       | 2005-09-27   |
-| 7.00.1077 | [316333 SQL Server 2000 Security Update for Service Pack 2]                                                                                                           | 2006-11-24   |
-| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                                 | 2002-04-26   |
-| 7.00.1033 | [324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]                                                              | 2005-10-12   |
-| 7.00.1026 | [319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]                                                  | 2005-10-18   |
-| 7.00.1004 | [304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]                                                                                          | 2004-08-05   |
-| 7.00.996  | [299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have]                                                                | 2004-08-09   |
-| 7.00.978  | [285870 FIX: Update With Self Join May Update Incorrect Number Of Rows]                                                                                               | 2003-10-28   |
-| 7.00.977  | [284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]                                                    | 2002-04-25   |
-| 7.00.970  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
-| 7.00.970  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
-| 7.00.961  | [SQL Server 7.0 Service Pack 3 (SP3)]                                                                                                                                 | 2000-12-15   |
-| 7.00.921  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
-| 7.00.919  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
-| 7.00.918  | [280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]                                                                                        | 2004-06-29   |
-| 7.00.917  | [279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure]                                                                                          | 2005-09-26   |
-| 7.00.910  | [275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221]                                                                                               | 2003-10-31   |
-| 7.00.905  | [274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624]                                                                         | 2004-07-15   |
-| 7.00.889  | [243741 FIX: Replication Initialize Method Causes Handle Leak on Failure]                                                                                             | 2005-10-05   |
-| 7.00.879  | [281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]                                                                     | 2006-03-14   |
-| 7.00.857  | [260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]                                                                      | 2006-03-14   |
-| 7.00.843  | [266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]                                           | 2006-03-14   |
-| 7.00.842  | [SQL Server 7.0 Service Pack 2 (SP2)]                                                                                                                                 | 2000-03-20   |
-| 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                      |              |
-| 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                              |              |
-| 7.00.776  | [258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]                                                               | 2006-03-14   |
-| 7.00.770  | [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]                                                                                                | 2006-03-14   |
-| 7.00.745  | [253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]                                                         | 2005-10-07   |
-| 7.00.722  | [239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]                                                                                       | 2005-10-05   |
-| 7.00.699  | [SQL Server 7.0 Service Pack 1 (SP1)]                                                                                                                                 | 1999-07-01   |
-| 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                              |              |
-| 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                             |              |
-| 7.00.662  | [232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]                                                                                                | 2005-10-05   |
-| 7.00.658  | [244763 FIX: Access Violation Under High Cursor Stress]                                                                                                               | 2006-03-14   |
-| 7.00.657  | [229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]                                                                                   | 2005-10-05   |
-| 7.00.643  | [220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]                                                                                     | 2005-10-05   |
-| 7.00.623  | SQL Server 7.0 RTM (Gold, no SP)                                                                                                                                      | 1998-11-27   |
-| 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                    |              |
-| 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                                 |              |
+| Build     | KB / Description                                                                                                                                                    | Release Date |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                              | 2008-07-08   |
+| 7.00.1149 | 867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0                         | 2006-06-01   |
+| 7.00.1143 | 830233 New Connection Events Are Not Recorded in SQL Server Traces                                                                                                  | 2005-10-25   |
+| 7.00.1143 | 829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly | 2005-10-25   |
+| 7.00.1097 | 822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion                                                                         | 2005-10-25   |
+| 7.00.1094 | 821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4                                                                                                   | 2006-05-11   |
+| 7.00.1094 | 815495 MS03-031: Cumulative security patch for SQL Server                                                                                                           | 2006-05-10   |
+| 7.00.1092 | [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]                                                                                 | 2005-10-25   |
+| 7.00.1087 | 814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation                                                                   | 2005-09-27   |
+| 7.00.1079 | 329499 FIX: Replication Removed from Database After Restore WITH RECOVERY                                                                                           | 2005-10-11   |
+| 7.00.1078 | 327068 INF: SQL Server 7.0 Security Update for Service Pack 4                                                                                                       | 2005-09-27   |
+| 7.00.1077 | 316333 SQL Server 2000 Security Update for Service Pack 2                                                                                                           | 2006-11-24   |
+| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                               | 2002-04-26   |
+| 7.00.1033 | 324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions                                                              | 2005-10-12   |
+| 7.00.1026 | 319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED                                                  | 2005-10-18   |
+| 7.00.1004 | 304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers                                                                                          | 2004-08-05   |
+| 7.00.996  | 299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have                                                                | 2004-08-09   |
+| 7.00.978  | 285870 FIX: Update With Self Join May Update Incorrect Number Of Rows                                                                                               | 2003-10-28   |
+| 7.00.977  | 284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3                                                    | 2002-04-25   |
+| 7.00.970  | 283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled                                                                          | 2002-10-15   |
+| 7.00.970  | 282243 FIX: Incorrect Results with Join of Column Converted to Binary                                                                                               | 2003-10-29   |
+| 7.00.961  | SQL Server 7.0 Service Pack 3 (SP3)                                                                                                                                 | 2000-12-15   |
+| 7.00.921  | 283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled                                                                          | 2002-10-15   |
+| 7.00.919  | 282243 FIX: Incorrect Results with Join of Column Converted to Binary                                                                                               | 2003-10-29   |
+| 7.00.918  | 280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures                                                                                        | 2004-06-29   |
+| 7.00.917  | 279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure                                                                                          | 2005-09-26   |
+| 7.00.910  | 275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221                                                                                               | 2003-10-31   |
+| 7.00.905  | 274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624                                                                         | 2004-07-15   |
+| 7.00.889  | 243741 FIX: Replication Initialize Method Causes Handle Leak on Failure                                                                                             | 2005-10-05   |
+| 7.00.879  | 281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349                                                                     | 2006-03-14   |
+| 7.00.857  | 260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data                                                                      | 2006-03-14   |
+| 7.00.843  | 266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures                                           | 2006-03-14   |
+| 7.00.842  | SQL Server 7.0 Service Pack 2 (SP2)                                                                                                                                 | 2000-03-20   |
+| 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                    |              |
+| 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                            |              |
+| 7.00.776  | 258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion                                                               | 2006-03-14   |
+| 7.00.770  | 252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table                                                                                                | 2006-03-14   |
+| 7.00.745  | 253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak                                                         | 2005-10-07   |
+| 7.00.722  | 239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers                                                                                       | 2005-10-05   |
+| 7.00.699  | SQL Server 7.0 Service Pack 1 (SP1)                                                                                                                                 | 1999-07-01   |
+| 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                            |              |
+| 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                           |              |
+| 7.00.662  | 232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile                                                                                                | 2005-10-05   |
+| 7.00.658  | 244763 FIX: Access Violation Under High Cursor Stress                                                                                                               | 2006-03-14   |
+| 7.00.657  | 229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images                                                                                   | 2005-10-05   |
+| 7.00.643  | 220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters                                                                                     | 2005-10-05   |
+| 7.00.623  | SQL Server 7.0 RTM (Gold, no SP)                                                                                                                                    | 1998-11-27   |
+| 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                  |              |
+| 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                               |              |
 
 [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:https://support.microsoft.com/ru-ru/help/941203/ms08-040-vulnerabilities-in-microsoft-sql-server-could-allow-elevation-of-privilege
-[867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]:http://support.microsoft.com/kb/867763/
-[830233 New Connection Events Are Not Recorded in SQL Server Traces]:http://support.microsoft.com/kb/830233/
-[829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly]:http://support.microsoft.com/kb/829015/
-[822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion]:http://support.microsoft.com/kb/822756/
-[821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4]:http://support.microsoft.com/kb/821279/
-[815495 MS03-031: Cumulative security patch for SQL Server]:http://support.microsoft.com/kb/815495/
 [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]:http://support.microsoft.com/kb/820788/
-[814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation]:http://support.microsoft.com/kb/814693/
-[329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]:http://support.microsoft.com/kb/329499/
-[327068 INF: SQL Server 7.0 Security Update for Service Pack 4]:http://support.microsoft.com/kb/327068/
-[316333 SQL Server 2000 Security Update for Service Pack 2]:http://support.microsoft.com/kb/316333/
 [SQL Server 7.0 Service Pack 4 (SP4)]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
-[324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]:http://support.microsoft.com/kb/324469/
-[319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]:http://support.microsoft.com/kb/319851/
-[304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]:http://support.microsoft.com/kb/304851/
-[299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have]:http://support.microsoft.com/kb/299717/
-[285870 FIX: Update With Self Join May Update Incorrect Number Of Rows]:http://support.microsoft.com/kb/285870/
-[284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]:http://support.microsoft.com/kb/284351/
-[283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
-[282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
-[SQL Server 7.0 Service Pack 3 (SP3)]:https://support.microsoft.com/en-us/kb/274799
-[283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
-[282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
-[280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]:http://support.microsoft.com/kb/280380/
-[279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure]:http://support.microsoft.com/kb/279180/
-[275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221]:http://support.microsoft.com/kb/275901/
-[274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624]:http://support.microsoft.com/kb/274266/
-[243741 FIX: Replication Initialize Method Causes Handle Leak on Failure]:http://support.microsoft.com/kb/243741/
-[281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]:https://support.microsoft.com/en-us/kb/281185
-[260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]:https://support.microsoft.com/en-us/kb/260346
-[266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]:https://support.microsoft.com/en-us/kb/266766
-[SQL Server 7.0 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/254561
-[258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]:https://support.microsoft.com/en-us/kb/258087
-[252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]:http://support.microsoft.com/kb/252905/
-[253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]:https://support.microsoft.com/en-us/kb/253738
-[239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]:https://support.microsoft.com/en-us/kb/239458
-[SQL Server 7.0 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/232570
-[232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]:https://support.microsoft.com/en-us/kb/232707
-[244763 FIX: Access Violation Under High Cursor Stress]:https://support.microsoft.com/en-us/kb/244763/
-[229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:https://support.microsoft.com/en-us/kb/229875/
-[220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:https://support.microsoft.com/en-us/kb/220156
 
 
 ## Microsoft SQL Server 6.5 Builds
