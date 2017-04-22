@@ -105,6 +105,12 @@ SELECT t1.Value1 AS Val1
  - The procedure or function should begin with parameter check
  - Always use `BEGIN TRY` and `BEGIN CATCH`
  - Use `SET NOCOUNT ON` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
+ - Use TOP expression with `()`:
+```
+-- Not working without ()
+DECLARE @n int = 1;
+SELECT TOP@n name FROM sys.objects;
+```
 
 Stored Procedure Example:
 

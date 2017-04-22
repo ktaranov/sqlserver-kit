@@ -1,60 +1,66 @@
 # Microsoft SQL Server People
 Most valuable professionals in Microsoft SQL Server Database world
 
-| Name                | Site/Blog                  | Country | City        | Twitter            | Email                             | MVP | MVP page         |
-|---------------------|----------------------------|---------|-------------|--------------------|-----------------------------------|----:|------------------|
-| Brent Ozar          | [Brent Ozar Blog]          | USA     | Chicago     | [@BrentO]          | help@brentozar.com                | 7   | [Ozar MVP]       |
-| Adam Machanic       | [SQLBlog]                  | USA     | Boston      | [@AdamMachanic]    | NULL                              | 12  | [Machanic MVP]   |
-| Ola Hallengren      | [Ola Maintenance Solution] | SWE     | NULL        | [@olahallengren]   | ola@hallengren.com                | 3   | [Hallengren MVP] |
-| Erland Sommarskog   | [Sommarskog Blog]          | SWE     | Stockholm   | NULL               | esquel@sommarskog.se              | 13  | [Sommarskog MVP] |
-| Phil Factor         | [Phil Simple-Talk]         |         | NULL        | [@phil_factor]     | NULL                              | -   | -                |
-| Robert Sheldon      | [Robert Simple-Talk]       |         | NULL        | NULL               | NULL                              | -   | -                |
-| Glenn Alan Berry    | [Glenn Blog]               |         | NULL        | [@GlennAlanBerry]  | glenn@SQLskills.com               | 9   | [Berry MVP]      |
-| Kenneth Fisher      | [Kenneth Blog]             |         | NULL        | [@sqlstudent144]   | sqlstudent144@gmail.com           | -   | -                |
-| Kendra Little       | [Kendra Blog]              |         | NULL        | [@Kendra_Little]   | NULL                              | 4   | [Little MVP]     |
-| Jeff Moden          | [Jeff Articles]            |         | NULL        | NULL               | NULL                              | 8   | [Moden MVP]      |
-| Paul White          | [Paul SQLBlog]             | NZL     | Paraparaumu | [@SQL_Kiwi]        | SQLkiwi@gmail.com                 | 5   | [White MVP]      |
-| Jason Strate        | [Jason Blog]               |         | NULL        | [@StrateSQL]       | NULL                              | 7   | [Strate MVP]     |
-| Jeremiah Peschka    | [Jeremiah Blog]            |         | NULL        | [@peschkaj]        | jeremiah.peschka@gmail.com        | 5   | [Peschka MVP]    |
-| Gail Shaw           | [Gail Blog]                |         | NULL        | [@SQLintheWild]    | NULL                              | 8   | [Shaw MVP]       |
-| Aaron Bertrand      | [Aaron Articles]           |         | NULL        | [@AaronBertrand]   | NULL                              | 19  | [Bertrand MVP]   |
-| Kevin Kline         | [Kevin Blog]               |         | NULL        | [@kekline]         | kevin_e_kline@yahoo.com           | 13  | [Kline MVP]      |
-| Robert Virag        | [Robert Blog]              |         | NULL        | NULL               | NULL                              | -   | -                |
-| John Sansom         | [John Blog]                |         | NULL        | [@SqlBrit]         | NULL                              | -   | -                |
-| Jes Borland         | [Jes Articles]             |         | NULL        | [@grrl_geek]       | NULL                              | 4   | [Borland MVP]    |
-| Sean Smith          | [Sean Scripts]             |         | NULL        | NULL               | NULL                              | -   | -                |
-| Richie Rump         | [Richie Blog]              |         | NULL        | [@Jorriss]         | NULL                              | -   | -                |
-| Tara Kizer          | [Tara Articles]            | USA     | San Diego   | [@TaraKizer]       | NULL                              | 9   | [Kizer MVP]      |
-| Paul S. Randal      | [Paul Articles]            |         | NULL        | [@PaulRandal]      | paul@sqlskills.com                | 8   | [Randal MVP]     |
-| Klaus Aschenbrenner | [Klaus Blog]               |         | NULL        | [@Aschenbrenner]   | klaus.aschenbrenner@sqlpassion.at | -   | -                |
-| Grant Fritchey      | [Grant Blog]               |         | NULL        | [@GFritchey]       | NULL                              | 7   | [Fritchey MVP]   |
-| Kendal Van Dyke     | [KendaL Blog]              |         | NULL        | [@SQLDBA]          | NULL                              | -   | -                |
-| Tim Ford            | [Tim Blog]                 |         | NULL        | [@sqlagentman]     | NULL                              | 7   | [Ford MVP]       |
-| Steve Jones         | [Steve Jones Blog]         |         | NULL        | [@way0utwest]      | NULL                              | 9   | [Jones MVP]      |
-| Thomas Larock       | [Thomas Larock Blog]       |         | NULL        | [@sqlrockstar]     | NULL                              | 7   | [LaRock MVP]     |
-| Mike Fal            | [Mike Fal Blog]            |         | NULL        | [@Mike_Fal]        | NULL                              | -   | -                |
-| Derik Hammer        | [Derik Hammer Blog]        |         | NULL        | [@drayhammer]      | NULL                              | -   | -                |
-| Chrissy LeMaire     | [Chrissy LeMaire Blog]     |         | NULL        | [@cl]              | NULL                              | 1   | [LeMaire MVP]    |
-| Tim Mitchell        | [Tim Mitchell Blog]        |         | NULL        | [@Tim_Mitchell]    | NULL                              | 7   | [Mitchell MVP]   |
-| Melissa Connors     | [Melissa Connors Articles] |         | NULL        | [@MelikaNoKaOi]    | NULL                              | -   | -                |
-| Ken Van Hyning      | -                          |         | NULL        | [@sqltoolsguy]     | NULL                              | -   | -                |
-| Itzik Ben-Gan       | [Itzik Ben-Gan Blog]       |         | NULL        | [@ItzikBenGan]     | NULL                              | 17  | [Ben-Gan MVP]    |
-| Ed Elliott          | [Ed Elliott Blog]          | ENG     | London      | [@EdDebug]         | ed.elliott@outlook.com            | -   | -                |
-| Andy Yun            | [Andy Yun Blog]            |         | NULL        | [@SQLBek]          | NULL                              | -   | -                |
-| Sander Stad         | [Sander Stad Blog]         |         | NULL        | [@SQLStad]         | NULL                              | -   | -                |
-| Guy Glantser        | -                          |         | NULL        | [@guy_glantser]    | NULL                              | 2   | [Glantser MVP]   |
-| Matan Yungman       | -                          | ISR     | Tel Aviv    | [@MatanYungman]    | NULL                              | -   | [Yungman MVP]    |
-| Julie Koesmarno     | [July Blog]                | USA     | Redmond     | [@MsSQLGirl]       | NULL                              | -   | -                |
-| Michael J Swart     | [Michael Blog]             | CAN     | Waterloo    | [@MJSwart]         | NULL                              | 5   | [Swart MVP]      |
-| Dmitry Piliugin     | [Dmitry Blog]              | RUS     | Moscow      | [@SomewereSomehow] | NULL                              | 3   | [Pilugin MVP]    |
-| Buck Woody          | [Buck Blog]                |         | NULL        | [@buckwoodymsft]   | NULL                              | -   | -                |
-| Steve Stedman       | [Steve Stedman Blog]       | USA     | Austin      | [@stedman]         | NULL                              | -   | -                |
-| Daniel Hutmacher    | [Daniel Hutmacher Blog]    | USA     | Austin      | [@dhmacher]        | NULL                              | -   | -                |
-| DNiko Neugebauer    | [Niko Blog]                | USA     | Austin      | NULL               | NULL                              | -   | -                |
-| Mike Fal            | [Mike Fal Blog]            | USA     | Denver      | [@Mike_Fal]        | NULL                              | -   | -                |
-| Robert L Davis      | [Robert Blog]              | USA     | New York    | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]      |
-| Chris Shaw          | [Chris Shaw Blog]          | USA     | Colorado    | Null               | NULL                              | 8   | [Shaw MVP]       |
-
+| Name                | Site/Blog                  | Country | City             | Twitter            | Email                             | MVP | MVP page         |
+|---------------------|----------------------------|---------|------------------|--------------------|-----------------------------------|----:|------------------|
+| Brent Ozar          | [Brent Ozar Blog]          | USA     | Chicago          | [@BrentO]          | help@brentozar.com                | 7   | [Ozar MVP]       |
+| Adam Machanic       | [SQLBlog]                  | USA     | Boston           | [@AdamMachanic]    | NULL                              | 12  | [Machanic MVP]   |
+| Ola Hallengren      | [Ola Maintenance Solution] | SWE     | NULL             | [@olahallengren]   | ola@hallengren.com                | 3   | [Hallengren MVP] |
+| Erland Sommarskog   | [Sommarskog Blog]          | SWE     | Stockholm        | NULL               | esquel@sommarskog.se              | 13  | [Sommarskog MVP] |
+| Phil Factor         | [Phil Simple-Talk]         |         | NULL             | [@phil_factor]     | NULL                              | 0   | -                |
+| Robert Sheldon      | [Robert Simple-Talk]       |         | NULL             | NULL               | NULL                              | 0   | -                |
+| Glenn Alan Berry    | [Glenn Blog]               | USA     | Denwer           | [@GlennAlanBerry]  | glenn@SQLskills.com               | 10  | [Berry MVP]      |
+| Kenneth Fisher      | [Kenneth Blog]             |         | NULL             | [@sqlstudent144]   | sqlstudent144@gmail.com           | 0   | -                |
+| Kendra Little       | [Kendra Blog]              |         | NULL             | [@Kendra_Little]   | NULL                              | 4   | [Little MVP]     |
+| Jeff Moden          | [Jeff Articles]            |         | NULL             | NULL               | NULL                              | 8   | [Moden MVP]      |
+| Paul White          | [Paul SQLBlog]             | NZL     | Paraparaumu      | [@SQL_Kiwi]        | SQLkiwi@gmail.com                 | 5   | [White MVP]      |
+| Jason Strate        | [Jason Blog]               |         | NULL             | [@StrateSQL]       | NULL                              | 7   | [Strate MVP]     |
+| Jeremiah Peschka    | [Jeremiah Blog]            |         | NULL             | [@peschkaj]        | jeremiah.peschka@gmail.com        | 5   | [Peschka MVP]    |
+| Gail Shaw           | [Gail Blog]                | ZAF     | Johannesburg     | [@SQLintheWild]    | NULL                              | 8   | [Shaw MVP]       |
+| Aaron Bertrand      | [Aaron Articles]           |         | NULL             | [@AaronBertrand]   | NULL                              | 19  | [Bertrand MVP]   |
+| Kevin Kline         | [Kevin Blog]               |         | NULL             | [@kekline]         | kevin_e_kline@yahoo.com           | 13  | [Kline MVP]      |
+| John Sansom         | [John Blog]                |         | NULL             | [@SqlBrit]         | NULL                              | 0   | -                |
+| Jes Borland         | [Jes Articles]             |         | NULL             | [@grrl_geek]       | NULL                              | 4   | [Borland MVP]    |
+| Sean Smith          | [Sean Scripts]             |         | NULL             | NULL               | NULL                              | 0   | -                |
+| Richie Rump         | [Richie Blog]              |         | NULL             | [@Jorriss]         | NULL                              | 0   | -                |
+| Tara Kizer          | [Tara Articles]            | USA     | San Diego        | [@TaraKizer]       | NULL                              | 9   | [Kizer MVP]      |
+| Paul S. Randal      | [Paul Articles]            |         | NULL             | [@PaulRandal]      | paul@sqlskills.com                | 8   | [Randal MVP]     |
+| Klaus Aschenbrenner | [Klaus Blog]               |         | NULL             | [@Aschenbrenner]   | klaus.aschenbrenner@sqlpassion.at | 0   | -                |
+| Grant Fritchey      | [Grant Blog]               |         | NULL             | [@GFritchey]       | NULL                              | 7   | [Fritchey MVP]   |
+| Kendal Van Dyke     | [KendaL Blog]              |         | NULL             | [@SQLDBA]          | NULL                              | 0   | -                |
+| Tim Ford            | [Tim Blog]                 |         | NULL             | [@sqlagentman]     | NULL                              | 7   | [Ford MVP]       |
+| Steve Jones         | [Steve Jones Blog]         |         | NULL             | [@way0utwest]      | NULL                              | 9   | [Jones MVP]      |
+| Thomas Larock       | [Thomas Larock Blog]       |         | NULL             | [@sqlrockstar]     | NULL                              | 7   | [LaRock MVP]     |
+| Mike Fal            | [Mike Fal Blog]            |         | NULL             | [@Mike_Fal]        | NULL                              | 0   | -                |
+| Derik Hammer        | [Derik Hammer Blog]        | USA     | Oklahoma         | [@drayhammer]      | NULL                              | 1   | [Derik MVP]      |
+| Chrissy LeMaire     | [Chrissy LeMaire Blog]     |         | NULL             | [@cl]              | NULL                              | 1   | [LeMaire MVP]    |
+| Tim Mitchell        | [Tim Mitchell Blog]        |         | NULL             | [@Tim_Mitchell]    | NULL                              | 7   | [Mitchell MVP]   |
+| Melissa Connors     | [Melissa Connors Articles] |         | NULL             | [@MelikaNoKaOi]    | NULL                              | 0   | -                |
+| Ken Van Hyning      | -                          |         | NULL             | [@sqltoolsguy]     | NULL                              | 0   | -                |
+| Itzik Ben-Gan       | [Itzik Ben-Gan Blog]       |         | NULL             | [@ItzikBenGan]     | NULL                              | 17  | [Ben-Gan MVP]    |
+| Ed Elliott          | [Ed Elliott Blog]          | ENG     | London           | [@EdDebug]         | ed.elliott@outlook.com            | 0   | -                |
+| Andy Yun            | [Andy Yun Blog]            |         | NULL             | [@SQLBek]          | NULL                              | 0   | -                |
+| Sander Stad         | [Sander Stad Blog]         |         | NULL             | [@SQLStad]         | NULL                              | 0   | -                |
+| Guy Glantser        | -                          |         | NULL             | [@guy_glantser]    | NULL                              | 2   | [Glantser MVP]   |
+| Matan Yungman       | -                          | ISR     | Tel Aviv         | [@MatanYungman]    | NULL                              | 0   | [Yungman MVP]    |
+| Julie Koesmarno     | [July Blog]                | USA     | Redmond          | [@MsSQLGirl]       | NULL                              | 0   | -                |
+| Michael J Swart     | [Michael Blog]             | CAN     | Waterloo         | [@MJSwart]         | NULL                              | 5   | [Swart MVP]      |
+| Dmitry Pilugin      | [Dmitry Blog]              | RUS     | Moscow           | [@SomewereSomehow] | pilugin@inbox.ru                  | 3   | [Pilugin MVP]    |
+| Buck Woody          | [Buck Blog]                |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                |
+| Steve Stedman       | [Steve Stedman Blog]       | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                |
+| Daniel Hutmacher    | [Daniel Hutmacher Blog]    | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                |
+| Niko Neugebauer     | [Niko Blog]                | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 0   | -                |
+| Mike Fal            | [Mike Fal Blog]            | USA     | Denver           | [@Mike_Fal]        | NULL                              | 0   | -                |
+| Robert L Davis      | [Robert Blog]              | USA     | New York         | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]      |
+| Chris Shaw          | [Chris Shaw Blog]          | USA     | Colorado         | [@SQLShaw]         | NULL                              | 8   | [Shaw MVP]       |
+| Andy Mallon         | [Andy Mallon Blog]         | USA     | Boston           | [@AMtwo]           | NULL                              | 0   | -                |
+| Remus Rusanu        | [Remus Rusanu Blog]        | USA     | Seattle          | [@rusanu]          | NULL                              | 0   | -                |
+| Dan Guzman          | [Dan Guzman Blog]          | USA     | St. Louis        | NULL               | NULL                              | 15  | [Guzman MVP]     |
+| Frank Gill          | [Frank Gill Blog]          | USA     | Chicago          | [@skreebydba]      | NULL                              | 0   | -                |
+| Mohammad Darab      | [Mohammad Darab Blog]      | USA     | Washington       | [@mwdarab]         | NULL                              | 0   | -                |
+| Kimberly Tripp      | [Kimberly Tripp Articles]  | USA     | Redmond          | [@KimberlyLTripp]  | NULL                              | 13  | [Kimberly MVP]   |
+| Raul Gonzalez       | [Raul Gonzalez Blog]       |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   | -                |
+| Rob Sewell          | [Rob Sewell Blog]          | USA     | Somerset         | [@sqldbawithbeard] | NULL                              | 0   | -                |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -91,7 +97,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Tim Mitchell Blog]:https://www.timmitchell.net
 [Melissa Connors Articles]:http://blogs.sqlsentry.com/author/melissaconnors/
 [Itzik Ben-Gan Blog]:http://tsql.solidq.com/
-[Ed Elliott Blog]:https://the.agilesql.club/Blogs/Ed-Elliott/About
+[Ed Elliott Blog]:https://the.agilesql.club/Blogs/Ed-Elliott/
 [Andy Yun Blog]:https://sqlbek.wordpress.com
 [Sander Stad Blog]:http://www.sqlstad.nl
 [July Blog]:http://www.mssqlgirl.com/
@@ -103,7 +109,15 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Niko Blog]:http://www.nikoport.com
 [Mike Fal Blog]:http://www.mikefal.net/
 [Robert Blog]:http://www.sqlsoldier.com/wp/
-[Chris Shaw Blog]:https://chrisshaw.wordpress.com/
+[Chris Shaw Blog]:https://chrisshaw.wordpress.com
+[Andy Mallon Blog]:http://www.am2.co/
+[Remus Rusanu Blog]:http://rusanu.com/
+[Dan Guzman Blog]:http://www.dbdelta.com/
+[Frank Gill Blog]:https://skreebydba.com/
+[Mohammad Darab Blog]:https://mohammaddarab.com/blog/
+[Kimberly Tripp Articles]:https://www.sqlskills.com/blogs/kimberly/
+[Raul Gonzalez Blog]:http://www.sqldoubleg.com
+[Rob Sewell Blog]:https://sqldbawithabeard.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -147,8 +161,17 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@buckwoodymsft]:https://twitter.com/buckwoodymsft
 [@stedman]:https://twitter.com/stedman
 [@dhmacher]:https://twitter.com/dhmacher
+[@NikoNeugebauer]:https://twitter.com/NikoNeugebauer
 [@Mike_Fal]:https://twitter.com/Mike_Fal
 [@SQLSoldier]:https://twitter.com/SQLSoldier
+[@SQLShaw]:https://twitter.com/SQLShaw
+[@AMtwo]:https://twitter.com/AMtwo
+[@rusanu]:https://twitter.com/rusanu
+[@skreebydba]:https://twitter.com/skreebydba
+[@mwdarab]:https://twitter.com/
+[@KimberlyLTripp]:https://twitter.com/KimberlyLTripp
+[@SQLDoubleG]:https://twitter.com/SQLDoubleG
+[@sqldbawithbeard]:https://twitter.com/@sqldbawithbeard
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -169,6 +192,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Fritchey MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025126?fullName=Grant%20%20Fritchey
 [Ford MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025585?fullName=Timothy%20%20Ford
 [Jones MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4014238?fullName=Steve%20%20Jones
+[Derik MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002574?fullName=Derik%20%20Hammer
 [LaRock MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025219?fullName=Thomas%20%20LaRock
 [LeMaire MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001321?fullName=Chrissy%20%20LeMaire
 [Mitchell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4027186?fullName=Tim%20%20Mitchell
@@ -179,3 +203,5 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Pilugin MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000995?fullName=Dmitry%20%20Pilugin
 [Davis MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000945?fullName=Robert%20L%20Davis
 [Shaw MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025121?fullName=Chris%20%20Shaw
+[Guzman MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5439?fullName=Dan%20%20Guzman
+[Kimberly MVP]:https://mvp.microsoft.com/en-us/PublicProfile/8566?fullName=Kimberly%20L.%20Tripp

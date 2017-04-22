@@ -1,8 +1,8 @@
 
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
--- CY 2016
--- Last Modified: May 27, 2016
+-- CY 2017
+-- Last Modified: March 23, 2017
 -- http://sqlserverperformance.wordpress.com/
 -- http://sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -14,7 +14,7 @@
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
 --******************************************************************************
---*   Copyright (C) 2016 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2017 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -48,6 +48,7 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 
 -- SQL and OS Version information for current instance  (Query 1) (Version Info)
 SELECT SERVERPROPERTY ('MachineName') AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
+------
 
 
 -- SQL Server 2008 R2 Builds				SQL Server 2008 R2 SP1 Builds			SQL Server 2008 R2 SP2 Builds							SQL Server 2008 R2 SP3 Builds
@@ -114,12 +115,13 @@ SELECT @@SERVERNAME AS [Server Name], create_date AS [SQL Server Install Date]
 FROM sys.server_principals WITH (NOLOCK)
 WHERE name = N'NT AUTHORITY\SYSTEM'
 OR name = N'NT AUTHORITY\NETWORK SERVICE' OPTION (RECOMPILE);
+------
 
 -- Tells you the date and time that SQL Server was installed
 -- It is a good idea to know how old your instance is
 
 
--- Get selected server properties (SQL Server 2008 R2)  (Query 3) (Server Properties)
+-- Get selected server properties (Query 3) (Server Properties)
 SELECT SERVERPROPERTY('MachineName') AS [MachineName], SERVERPROPERTY('ServerName') AS [ServerName],  
 SERVERPROPERTY('InstanceName') AS [Instance], SERVERPROPERTY('IsClustered') AS [IsClustered], 
 SERVERPROPERTY('ComputerNamePhysicalNetBIOS') AS [ComputerNamePhysicalNetBIOS], 
@@ -127,6 +129,7 @@ SERVERPROPERTY('Edition') AS [Edition], SERVERPROPERTY('ProductLevel') AS [Produ
 SERVERPROPERTY('ProductVersion') AS [ProductVersion], SERVERPROPERTY('ProcessID') AS [ProcessID],
 SERVERPROPERTY('Collation') AS [Collation], SERVERPROPERTY('IsFullTextInstalled') AS [IsFullTextInstalled], 
 SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly];
+------
 
 -- This gives you a lot of useful information about your instance of SQL Server,
 -- such as the ProcessID for SQL Server and your collation
@@ -142,6 +145,7 @@ ON sj.category_id = sc.category_id
 LEFT OUTER JOIN msdb.dbo.sysjobschedules AS js WITH (NOLOCK)
 ON sj.job_id = js.job_id
 ORDER BY sj.name OPTION (RECOMPILE);
+------
 
 -- Gives you some basic information about your SQL Server Agent jobs, who owns them and how they are configured
 -- Look for Agent jobs that are not owned by sa
@@ -157,6 +161,7 @@ SELECT name, event_source, message_id, severity, [enabled], has_notification,
        delay_between_responses, occurrence_count, last_occurrence_date, last_occurrence_time
 FROM msdb.dbo.sysalerts WITH (NOLOCK)
 ORDER BY name OPTION (RECOMPILE);
+------
 
 -- Gives you some basic information about your SQL Server Agent Alerts (which are different from SQL Server Agent jobs)
 -- Read more about Agent Alerts here: http://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
@@ -164,22 +169,32 @@ ORDER BY name OPTION (RECOMPILE);
 
 -- Returns a list of all global trace flags that are enabled (Query 6) (Global Trace Flags)
 DBCC TRACESTATUS (-1);
+------
 
 -- If no global trace flags are enabled, no results will be returned.
 -- It is very useful to know what global trace flags are currently enabled as part of the diagnostic process.
 
 -- Common trace flags that should be enabled in most cases
--- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+-- TF 1117 - When growing a data file, grow all files at the same time so they remain the same size, reducing allocation contention points
+--           http://support2.microsoft.com/kb/2154845
+-- 
 -- TF 1118 - Helps alleviate allocation contention in tempdb, SQL Server allocates full extents to each database object, 
 --           thereby eliminating the contention on SGAM pages (more important with older versions of SQL Server)
 --           Recommendations to reduce allocation contention in SQL Server tempdb database
 --           http://support2.microsoft.com/kb/2154845
+
+-- TF 2371 - Lowers auto update statistics threshold for large tables
+--           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
+
+-- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
+--           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 
 -- Windows information (SQL Server 2008 R2 SP1 or greater)  (Query 7) (Windows Info)
 SELECT windows_release, windows_service_pack_level, 
        windows_sku, os_language_version
 FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- Gives you major OS version, Service Pack, Edition, and language info for the operating system 
 -- 6.3 is either Windows 8.1 or Windows Server 2012 R2
@@ -208,6 +223,7 @@ FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
 SELECT servicename, process_id, startup_type_desc, status_desc, 
 last_startup_time, service_account, is_clustered, cluster_nodename, [filename]
 FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- Tells you the account being used for the SQL Server Service and the SQL Agent Service
 -- Shows the processid, when they were last started, and their current status
@@ -219,6 +235,7 @@ SELECT node_id, node_state_desc, memory_node_id, processor_group, online_schedul
        active_worker_count, avg_load_balance, resource_monitor_state
 FROM sys.dm_os_nodes WITH (NOLOCK) 
 WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
+------
 
 -- Gives you some useful information about the composition 
 -- and relative load on your NUMA nodes
@@ -231,6 +248,7 @@ cpu_count/hyperthread_ratio AS [Physical CPU Count],
 physical_memory_in_bytes/1048576 AS [Physical Memory (MB)], 
 sqlserver_start_time, affinity_type_desc 
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- Gives you some good basic hardware information about your database server
 
@@ -238,7 +256,8 @@ FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 -- Get System Manufacturer and model number from  (Query 11) (System Manufacturer)
 -- SQL Server Error log. This query might take a few seconds 
 -- if you have not recycled your error log recently
-EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer'; 
+EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
+------ 
 
 -- This can help you determine the capabilities
 -- and capacities of your database server
@@ -246,16 +265,25 @@ EXEC sys.xp_readerrorlog 0, 1, N'Manufacturer';
 
 -- Get processor description from Windows Registry  (Query 12) (Processor Description)
 EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\System\CentralProcessor\0', N'ProcessorNameString';
+------
 
 -- Gives you the model number and rated clock speed of your processor(s)
--- Your processors may be running at less that the rated clock speed due
+-- Your processors may be running at less than the rated clock speed due
 -- to the Windows Power Plan or hardware power management
+
+-- You can use CPU-Z to get your actual CPU core speed and a lot of other useful information
+-- http://www.cpuid.com/softwares/cpu-z.html
+
+-- You can learn more about processor selection for SQL Server by following this link
+-- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
+
 
 
 -- Get the current node name from your cluster nodes  (Query 13) (Cluster Node Properties)
 -- (if your database server is in a failover cluster)
 SELECT NodeName
 FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- Knowing which node owns the cluster resources is critical
 -- Especially when you are installing Windows or SQL Server updates
@@ -266,6 +294,7 @@ FROM sys.dm_os_cluster_nodes WITH (NOLOCK) OPTION (RECOMPILE);
 SELECT name, value, value_in_use, minimum, maximum, [description], is_dynamic, is_advanced
 FROM sys.configurations WITH (NOLOCK)
 ORDER BY name OPTION (RECOMPILE);
+------
 
 -- Focus on these settings:
 -- backup compression default (should be 1 in most cases)
@@ -285,6 +314,7 @@ ORDER BY name OPTION (RECOMPILE);
 SELECT [filename], creation_time, size_in_bytes/1048576.0 AS [Size (MB)]
 FROM sys.dm_server_memory_dumps WITH (NOLOCK) 
 ORDER BY creation_time DESC OPTION (RECOMPILE);
+------
 
 -- This will not return any rows if you have 
 -- not had any memory dumps (which is a good thing)
@@ -301,6 +331,7 @@ WHERE [database_id] > 4
 AND [database_id] <> 32767
 OR [database_id] = 2
 ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
+------
 
 -- Things to look at:
 -- Are data files and log files on different drives?
@@ -319,6 +350,7 @@ CONVERT(DECIMAL(18,2),vs.available_bytes/1073741824.0) AS [Available Size (GB)],
 CAST(CAST(vs.available_bytes AS FLOAT)/ CAST(vs.total_bytes AS FLOAT) AS DECIMAL(18,2)) * 100 AS [Space Free %] 
 FROM sys.master_files AS f WITH (NOLOCK)
 CROSS APPLY sys.dm_os_volume_stats(f.database_id, f.[file_id]) AS vs OPTION (RECOMPILE);
+------
 
 --Shows you the total and free space on the LUNs where you have database files
 
@@ -345,10 +377,16 @@ SELECT LogDate, ProcessInfo, LogText
 FROM #IOWarningResults
 ORDER BY LogDate DESC;
 
-DROP TABLE #IOWarningResults;  
+DROP TABLE #IOWarningResults;
+------  
 
 -- Finding 15 second I/O warnings in the SQL Server Error Log is useful evidence of
 -- poor I/O performance (which might have many different causes)
+-- Look to see if you see any patterns in the results (same files, same drives, same time of day, etc.)
+
+-- Diagnostics in SQL Server help detect stalled and stuck I/O operations
+-- https://support.microsoft.com/en-us/kb/897284
+
 
 
 -- Drive level latency information (Query 19) (Drive Level Latency)
@@ -388,6 +426,7 @@ FROM (SELECT LEFT(UPPER(mf.physical_name), 2) AS Drive, SUM(num_of_reads) AS num
 	  CROSS APPLY sys.dm_os_volume_stats(mf.database_id, mf.[file_id]) AS vs 
       GROUP BY LEFT(UPPER(mf.physical_name), 2), vs.volume_mount_point) AS tab
 ORDER BY [Overall Latency] OPTION (RECOMPILE);
+------
 
 -- Shows you the drive-level latency for reads and writes, in milliseconds
 -- Latency above 20-25ms is usually a problem
@@ -404,6 +443,7 @@ INNER JOIN sys.master_files AS mf WITH (NOLOCK)
 ON fs.database_id = mf.database_id
 AND fs.[file_id] = mf.[file_id]
 ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
+------
 
 -- Helps determine which database files on the entire instance have the most I/O bottlenecks
 -- This can help you decide whether certain LUNs are overloaded and whether you might
@@ -420,7 +460,7 @@ db.[compatibility_level] AS [DB Compatibility Level],
 db.page_verify_option_desc AS [Page Verify Option], db.is_auto_create_stats_on, db.is_auto_update_stats_on,
 db.is_auto_update_stats_async_on, db.is_parameterization_forced, 
 db.snapshot_isolation_state_desc, db.is_read_committed_snapshot_on,
-db.is_auto_close_on, db.is_auto_shrink_on, db.is_cdc_enabled
+db.is_auto_close_on, db.is_auto_shrink_on, db.is_cdc_enabled, db.is_published
 FROM sys.databases AS db WITH (NOLOCK)
 INNER JOIN sys.dm_os_performance_counters AS lu WITH (NOLOCK)
 ON db.name = lu.instance_name
@@ -430,6 +470,7 @@ WHERE lu.counter_name LIKE N'Log File(s) Used Size (KB)%'
 AND ls.counter_name LIKE N'Log File(s) Size (KB)%'
 AND ls.cntr_value > 0
 ORDER BY db.[name] OPTION (RECOMPILE);
+------
 
 -- Things to look at:
 -- How many databases are on the instance?
@@ -454,6 +495,7 @@ ON migs.group_handle = mig.index_group_handle
 INNER JOIN sys.dm_db_missing_index_details AS mid WITH (NOLOCK)
 ON mig.index_handle = mid.index_handle
 ORDER BY index_advantage DESC OPTION (RECOMPILE);
+------
 
 -- Getting missing index information for all of the databases on the instance is very useful
 -- Look at last user seek time, number of user seeks to help determine source and importance
@@ -489,11 +531,11 @@ ORDER BY VLFCount DESC;
 	 
 DROP TABLE #VLFInfo;
 DROP TABLE #VLFCountResults;
+------
 
 -- High VLF counts can affect write performance 
 -- and they can make full database restores and crash recovery take much longer
 -- Try to keep your VLF counts under 200 in most cases (depending on log file size)
-
 
 
 
@@ -512,6 +554,7 @@ SELECT ROW_NUMBER() OVER(ORDER BY [CPU_Time_Ms] DESC) AS [CPU Rank],
 FROM DB_CPU_Stats
 WHERE DatabaseID <> 32767 -- ResourceDB
 ORDER BY [CPU Rank] OPTION (RECOMPILE);
+------
 
 -- Helps determine which database is using the most CPU resources on the instance
 
@@ -527,6 +570,7 @@ SELECT ROW_NUMBER() OVER(ORDER BY io_in_mb DESC) AS [I/O Rank], [Database Name],
        CAST(io_in_mb/ SUM(io_in_mb) OVER() * 100.0 AS DECIMAL(5,2)) AS [I/O Percent]
 FROM Aggregate_IO_Statistics
 ORDER BY [I/O Rank] OPTION (RECOMPILE);
+------
 
 -- Helps determine which database is using the most I/O resources on the instance
 
@@ -544,6 +588,7 @@ SELECT ROW_NUMBER() OVER(ORDER BY CachedSize DESC) AS [Buffer Pool Rank], [Datab
        CAST(CachedSize / SUM(CachedSize) OVER() * 100.0 AS DECIMAL(5,2)) AS [Buffer Pool Percent]
 FROM AggregateBufferPoolUsage
 ORDER BY [Buffer Pool Rank] OPTION (RECOMPILE);
+------
 
 -- Tells you how much memory (in the buffer pool) 
 -- is being used by each database on the instance
@@ -552,7 +597,7 @@ ORDER BY [Buffer Pool Rank] OPTION (RECOMPILE);
 -- Clear Wait Stats with this command
 -- DBCC SQLPERF('sys.dm_os_wait_stats', CLEAR);
 
--- Isolate top waits for server instance since last restart or wait statistics clear  (Query 27) (Top Waits)
+-- Isolate top waits for server instance since last restart or wait statistics clear (Query 27) (Top Waits)
 WITH [Waits] 
 AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
           (wait_time_ms - signal_wait_time_ms) / 1000.0 AS [ResourceS],
@@ -598,6 +643,12 @@ ON W2.RowNum <= W1.RowNum
 GROUP BY W1.RowNum
 HAVING SUM (W2.Percentage) - MAX (W1.Percentage) < 99 -- percentage threshold
 OPTION (RECOMPILE);
+------
+
+-- Cumulative wait stats are not as useful on an idle instance that is not under load or performance pressure
+
+-- SQL Server Wait Types Library (Paul Randal)
+-- https://www.sqlskills.com/help/waits/
 
 -- The SQL Server Wait Type Repository
 -- http://blogs.msdn.com/b/psssql/archive/2009/11/03/the-sql-server-wait-type-repository.aspx
@@ -638,11 +689,11 @@ WHERE wait_type NOT IN (
 		N'WAIT_FOR_RESULTS', N'WAITFOR', N'WAITFOR_TASKSHUTDOWN', N'WAIT_XTP_HOST_WAIT',
 		N'WAIT_XTP_OFFLINE_CKPT_NEW_LOG', N'WAIT_XTP_CKPT_CLOSE', N'XE_DISPATCHER_JOIN',
         N'XE_DISPATCHER_WAIT', N'XE_TIMER_EVENT') OPTION (RECOMPILE);
+------
 
 -- Signal Waits above 10-15% is usually a confirming sign of CPU pressure
 -- Cumulative wait stats are not as useful on an idle instance that is not under load or performance pressure
 -- Resource waits are non-CPU related waits
-
 
 
 --  Get logins that are connected and how many sessions they have (Query 29) (Connection Counts)
@@ -650,6 +701,7 @@ SELECT login_name, [program_name], COUNT(session_id) AS [session_count]
 FROM sys.dm_exec_sessions WITH (NOLOCK)
 GROUP BY login_name, [program_name]
 ORDER BY COUNT(session_id) DESC OPTION (RECOMPILE);
+------
 
 -- This can help characterize your workload and
 -- determine whether you are seeing a normal level of activity
@@ -663,17 +715,19 @@ INNER JOIN sys.dm_exec_connections AS ec WITH (NOLOCK)
 ON es.session_id = ec.session_id 
 GROUP BY ec.client_net_address, es.[program_name], es.[host_name], es.login_name  
 ORDER BY ec.client_net_address, es.[program_name] OPTION (RECOMPILE);
+------
 
 -- This helps you figure where your database load is coming from
 -- and verifies connectivity from other machines
 
 
--- Get Average Task Counts (run multiple times)  (Query 31) (Avg Task Counts)
+-- Get Average Task Counts (run multiple times) (Query 31) (Avg Task Counts)
 SELECT AVG(current_tasks_count) AS [Avg Task Count], 
 AVG(runnable_tasks_count) AS [Avg Runnable Task Count],
 AVG(pending_disk_io_count) AS [Avg Pending DiskIO Count]
 FROM sys.dm_os_schedulers WITH (NOLOCK)
 WHERE scheduler_id < 255 OPTION (RECOMPILE);
+------
 
 -- Sustained values above 10 suggest further investigation in that area
 -- High Avg Task Counts are often caused by blocking/deadlocking or other resource contention
@@ -681,6 +735,10 @@ WHERE scheduler_id < 255 OPTION (RECOMPILE);
 -- Sustained values above 1 suggest further investigation in that area
 -- High Avg Runnable Task Counts are a good sign of CPU pressure
 -- High Avg Pending DiskIO Counts are a sign of disk pressure
+
+-- How to Do Some Very Basic SQL Server Monitoring
+-- http://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
+
 
 
 -- Get CPU Utilization History for last 256 minutes (in one minute intervals)  (Query 32) (CPU Utilization History)
@@ -705,6 +763,7 @@ FROM (
 			AND record LIKE N'%<SystemHealth>%') AS x 
 	  ) AS y 
 ORDER BY record_id DESC OPTION (RECOMPILE);
+------
 
 -- Look at the trend over the entire period. 
 -- Also look at high sustained Other Process CPU Utilization values
@@ -723,6 +782,7 @@ FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t 
 CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp 
 ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
+------
 
 
 -- Helps you find the most expensive queries from a CPU perspective across the entire instance
@@ -737,6 +797,7 @@ SELECT total_physical_memory_kb/1024 AS [Physical Memory (MB)],
 	   system_cache_kb/1024 AS [System Cache (MB)],
        system_memory_state_desc AS [System Memory State]
 FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- You want to see "Available physical memory is high"
 -- This indicates that you are not under external memory pressure
@@ -749,6 +810,7 @@ SELECT physical_memory_in_use_kb/1024 AS [SQL Server Memory Usage (MB)],
 	   memory_utilization_percentage, available_commit_limit_kb, 
 	   process_physical_memory_low, process_virtual_memory_low
 FROM sys.dm_os_process_memory WITH (NOLOCK) OPTION (RECOMPILE);
+------
 
 -- You want to see 0 for process_physical_memory_low
 -- You want to see 0 for process_virtual_memory_low
@@ -760,10 +822,15 @@ SELECT @@SERVERNAME AS [Server Name], [object_name], instance_name, cntr_value A
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
+------
 
 -- PLE is a good measurement of memory pressure.
 -- Higher PLE is better. Watch the trend over time, not the absolute value.
 -- This will only return one row for non-NUMA systems.
+
+-- Page Life Expectancy isn’t what you think…
+-- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
+
 
 
 -- Memory Grants Pending value for current instance  (Query 37) (Memory Grants Pending)
@@ -771,6 +838,7 @@ SELECT @@SERVERNAME AS [Server Name], [object_name], cntr_value AS [Memory Grant
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Memory Manager%' -- Handles named instances
 AND counter_name = N'Memory Grants Pending' OPTION (RECOMPILE);
+------
 
 -- Memory Grants Pending above zero for a sustained period is a very strong indicator of memory pressure
 
@@ -781,6 +849,7 @@ SELECT TOP(10) [type] AS [Memory Clerk Type], SUM(single_pages_kb)/1024 AS [SPA 
 FROM sys.dm_os_memory_clerks WITH (NOLOCK)
 GROUP BY [type]  
 ORDER BY SUM(single_pages_kb) DESC OPTION (RECOMPILE);
+------
 
 -- CACHESTORE_SQLCP  SQL Plans         
 -- These are cached SQL statements or batches that aren't in stored procedures, functions and triggers
@@ -790,21 +859,8 @@ ORDER BY SUM(single_pages_kb) DESC OPTION (RECOMPILE);
 -- These are compiled plans for stored procedures, functions and triggers
 
 
--- Memory Object Usage for instance (Query 39) (Memory Object Usage)
-SELECT TOP(20) mo.[type] AS [Memory Object Type], 
-COUNT(*) AS [Memory Object Count],
-CAST((SUM (mo.page_size_in_bytes) / 1048576.0) AS DECIMAL (15,2)) AS [Memory Usage (MB)], 
-mc.[type] AS [Memory Clerk Type]
-FROM sys.dm_os_memory_objects AS mo WITH (NOLOCK)
-INNER JOIN sys.dm_os_memory_clerks AS mc WITH (NOLOCK)
-ON mo.page_allocator_address = mc.page_allocator_address
-GROUP BY mc.type, mo.[type]
-ORDER BY [Memory Usage (MB)] DESC OPTION (RECOMPILE);
 
--- This query gives you more insight about your memory usage by object
-
-
--- Find single-use, ad-hoc and prepared queries that are bloating the plan cache  (Query 40) (Ad hoc Queries)
+-- Find single-use, ad-hoc and prepared queries that are bloating the plan cache  (Query 39) (Ad hoc Queries)
 SELECT TOP(50) [text] AS [QueryText], cp.cacheobjtype, cp.objtype, cp.size_in_bytes/1024 AS [Plan Size in KB]
 FROM sys.dm_exec_cached_plans AS cp WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(plan_handle) 
@@ -812,20 +868,25 @@ WHERE cp.cacheobjtype = N'Compiled Plan'
 AND cp.objtype IN (N'Adhoc', N'Prepared') 
 AND cp.usecounts = 1
 ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
+------
 
 -- Gives you the text, type and size of single-use ad-hoc and prepared queries that waste space in the plan cache
 -- Enabling 'optimize for ad hoc workloads' for the instance can help (SQL Server 2008 and above only)
 -- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this.
 -- Enabling forced parameterization for the database can help, but test first!
 
+-- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
+-- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
+
+
 
 -- Database specific queries *****************************************************************
 
--- **** Switch to a user database *****
-USE YourDatabaseName;
+-- **** Please switch to a user database that you are interested in! *****
+USE YourDatabaseName; -- make sure to change to an actual database on your instance, not the master system database
 GO
 
--- Individual File Sizes and space available for current database  (Query 41) (File Sizes and Space)
+-- Individual File Sizes and space available for current database  (Query 40) (File Sizes and Space)
 SELECT f.name AS [File Name] , f.physical_name AS [Physical Name], 
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
@@ -833,13 +894,14 @@ AS [Available Space In MB], [file_id], fg.name AS [Filegroup Name]
 FROM sys.database_files AS f WITH (NOLOCK) 
 LEFT OUTER JOIN sys.data_spaces AS fg WITH (NOLOCK) 
 ON f.data_space_id = fg.data_space_id OPTION (RECOMPILE);
+------
 
 -- Look at how large and how full the files are and where they are located
 -- Make sure the transaction log is not full!!
 
 
 
--- I/O Statistics by file for the current database  (Query 42) (IO Stats By File)
+-- I/O Statistics by file for the current database  (Query 41) (IO Stats By File)
 SELECT DB_NAME(DB_ID()) AS [Database Name], df.name AS [Logical Name], vfs.[file_id], 
 df.physical_name AS [Physical Name], vfs.num_of_reads, vfs.num_of_writes, vfs.io_stall_read_ms, vfs.io_stall_write_ms,
 CAST(100. * vfs.io_stall_read_ms/(vfs.io_stall_read_ms + vfs.io_stall_write_ms) AS DECIMAL(10,1)) AS [IO Stall Reads Pct],
@@ -854,13 +916,14 @@ CAST(100. * vfs.num_of_bytes_written/(vfs.num_of_bytes_read + vfs.num_of_bytes_w
 FROM sys.dm_io_virtual_file_stats(DB_ID(), NULL) AS vfs
 INNER JOIN sys.database_files AS df WITH (NOLOCK)
 ON vfs.[file_id]= df.[file_id] OPTION (RECOMPILE);
+------
 
 -- This helps you characterize your workload better from an I/O perspective for this database
 -- It helps you determine whether you has an OLTP or DW/DSS type of workload
 
 
 
--- Top cached queries by Execution Count (SQL Server 2008 R2)  (Query 43) (Query Execution Counts)
+-- Top cached queries by Execution Count (SQL Server 2008 R2)  (Query 42) (Query Execution Counts)
 -- SQL Server 2008 R2 SP1 and greater only
 SELECT TOP (100) qs.execution_count, qs.total_rows, qs.last_rows, qs.min_rows, qs.max_rows,
 qs.last_elapsed_time, qs.min_elapsed_time, qs.max_elapsed_time,
@@ -872,11 +935,12 @@ SUBSTRING(qt.TEXT,qs.statement_start_offset/2 +1,
 FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) AS qt
 ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
+------
 
 -- Uses several new rows returned columns to help troubleshoot performance problems
 
 
--- Top Cached SPs By Execution Count (SQL 2008 R2) (Query 44) (SP Execution Counts)
+-- Top Cached SPs By Execution Count (SQL 2008 R2) (Query 43) (SP Execution Counts)
 SELECT TOP(100) p.name AS [SP Name], qs.execution_count,
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute],
 qs.total_worker_time/qs.execution_count AS [AvgWorkerTime], qs.total_worker_time AS [TotalWorkerTime],  
@@ -887,12 +951,13 @@ INNER JOIN sys.dm_exec_procedure_stats AS qs WITH (NOLOCK)
 ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
+------
 
 -- Tells you which cached stored procedures are called the most often
 -- This helps you characterize and baseline your workload
 
 
--- Top Cached SPs By Avg Elapsed Time (SQL 2008 R2)  (Query 45) (SP Avg Elapsed Time) 
+-- Top Cached SPs By Avg Elapsed Time (SQL 2008 R2)  (Query 44) (SP Avg Elapsed Time) 
 SELECT TOP(25) p.name AS [SP Name], qs.total_elapsed_time/qs.execution_count AS [avg_elapsed_time], 
 qs.total_elapsed_time, qs.execution_count, ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, 
 GETDATE()), 0) AS [Calls/Minute], qs.total_worker_time/qs.execution_count AS [AvgWorkerTime], 
@@ -902,12 +967,13 @@ INNER JOIN sys.dm_exec_procedure_stats AS qs WITH (NOLOCK)
 ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 ORDER BY avg_elapsed_time DESC OPTION (RECOMPILE);
+------
 
 -- This helps you find long-running cached stored procedures that
 -- may be easy to optimize with standard query tuning techniques
 
 
--- Top Cached SPs By Avg Elapsed Time with execution time variability   (Query 46) (SP Avg Elapsed Variable Time)
+-- Top Cached SPs By Avg Elapsed Time with execution time variability   (Query 45) (SP Avg Elapsed Variable Time)
 SELECT TOP(25) p.name AS [SP Name], qs.execution_count, qs.min_elapsed_time,
 qs.total_elapsed_time/qs.execution_count AS [avg_elapsed_time],
 qs.max_elapsed_time, qs.last_elapsed_time,  qs.cached_time
@@ -916,12 +982,13 @@ INNER JOIN sys.dm_exec_procedure_stats AS qs WITH (NOLOCK)
 ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 ORDER BY avg_elapsed_time DESC OPTION (RECOMPILE);
+------
 
 -- This gives you some interesting information about the variability in the
 -- execution time of your cached stored procedures, which is useful for tuning
 
 
--- Top Cached SPs By Total Worker time (SQL 2008 R2). Worker time relates to CPU cost  (Query 47) (SP Worker Time)
+-- Top Cached SPs By Total Worker time (SQL 2008 R2). Worker time relates to CPU cost  (Query 46) (SP Worker Time)
 SELECT TOP(25) p.name AS [SP Name], qs.total_worker_time AS [TotalWorkerTime], 
 qs.total_worker_time/qs.execution_count AS [AvgWorkerTime], qs.execution_count, 
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute],
@@ -937,7 +1004,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 -- You should look at this if you see signs of CPU pressure
 
 
--- Top Cached SPs By Total Logical Reads (SQL 2008 R2). Logical reads relate to memory pressure  (Query 48) (SP Logical Reads)
+-- Top Cached SPs By Total Logical Reads (SQL 2008 R2). Logical reads relate to memory pressure  (Query 47) (SP Logical Reads)
 SELECT TOP(25) p.name AS [SP Name], qs.total_logical_reads AS [TotalLogicalReads], 
 qs.total_logical_reads/qs.execution_count AS [AvgLogicalReads],qs.execution_count, 
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute], 
@@ -948,12 +1015,13 @@ INNER JOIN sys.dm_exec_procedure_stats AS qs WITH (NOLOCK)
 ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 ORDER BY qs.total_logical_reads DESC OPTION (RECOMPILE);
+------
 
 -- This helps you find the most expensive cached stored procedures from a memory perspective
 -- You should look at this if you see signs of memory pressure
 
 
--- Top Cached SPs By Total Physical Reads (SQL 2008 R2). Physical reads relate to disk I/O pressure  (Query 49) (SP Physical Reads)
+-- Top Cached SPs By Total Physical Reads (SQL 2008 R2). Physical reads relate to disk I/O pressure  (Query 48) (SP Physical Reads)
 SELECT TOP(25) p.name AS [SP Name],qs.total_physical_reads AS [TotalPhysicalReads], 
 qs.total_physical_reads/qs.execution_count AS [AvgPhysicalReads], qs.execution_count, 
 qs.total_logical_reads,qs.total_elapsed_time, qs.total_elapsed_time/qs.execution_count 
@@ -964,11 +1032,12 @@ ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 AND qs.total_physical_reads > 0
 ORDER BY qs.total_physical_reads DESC, qs.total_logical_reads DESC OPTION (RECOMPILE);
+------
 
 -- This helps you find the most expensive cached stored procedures from a read I/O perspective
 -- You should look at this if you see signs of I/O pressure or of memory pressure
        
--- Top Cached SPs By Total Logical Writes (SQL 2008 R2)  (Query 50) (SP Logical Writes)
+-- Top Cached SPs By Total Logical Writes (SQL 2008 R2)  (Query 49) (SP Logical Writes)
 -- Logical writes relate to both memory and disk I/O pressure 
 SELECT TOP(25) p.name AS [SP Name], qs.total_logical_writes AS [TotalLogicalWrites], 
 qs.total_logical_writes/qs.execution_count AS [AvgLogicalWrites], qs.execution_count,
@@ -981,12 +1050,13 @@ ON p.[object_id] = qs.[object_id]
 WHERE qs.database_id = DB_ID()
 AND qs.total_logical_writes > 0
 ORDER BY qs.total_logical_writes DESC OPTION (RECOMPILE);
+------
 
 -- This helps you find the most expensive cached stored procedures from a write I/O perspective
 -- You should look at this if you see signs of I/O pressure or of memory pressure
 
 
--- Lists the top statements by average input/output usage for the current database  (Query 51) (Top IO Statements)
+-- Lists the top statements by average input/output usage for the current database  (Query 50) (Top IO Statements)
 SELECT TOP(50) OBJECT_NAME(qt.objectid, dbid) AS [SP Name],
 (qs.total_logical_reads + qs.total_logical_writes) /qs.execution_count AS [Avg IO], qs.execution_count AS [Execution Count],
 SUBSTRING(qt.[text],qs.statement_start_offset/2, 
@@ -999,12 +1069,13 @@ FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) AS qt
 WHERE qt.[dbid] = DB_ID()
 ORDER BY [Avg IO] DESC OPTION (RECOMPILE);
+------
 
 -- Helps you find the most expensive statements for I/O by SP
 
 
 
--- Possible Bad NC Indexes (writes > reads)  (Query 52) (Bad NC Indexes)
+-- Possible Bad NC Indexes (writes > reads)  (Query 51) (Bad NC Indexes)
 SELECT OBJECT_NAME(s.[object_id]) AS [Table Name], i.name AS [Index Name], i.index_id, 
 i.is_disabled, i.is_hypothetical, i.has_filter, i.fill_factor,
 user_updates AS [Total Writes], user_seeks + user_scans + user_lookups AS [Total Reads],
@@ -1018,13 +1089,14 @@ AND s.database_id = DB_ID()
 AND user_updates > (user_seeks + user_scans + user_lookups)
 AND i.index_id > 1
 ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOMPILE);
+------
 
 -- Look for indexes with high numbers of writes and zero or very low numbers of reads
 -- Consider your complete workload, and how long your instance has been running
 -- Investigate further before dropping an index!
 
 
--- Missing Indexes for current database by Index Advantage  (Query 53) (Missing Indexes)
+-- Missing Indexes for current database by Index Advantage  (Query 52) (Missing Indexes)
 SELECT DISTINCT CONVERT(decimal(18,2), user_seeks * avg_total_user_cost * (avg_user_impact * 0.01)) AS [index_advantage], 
 migs.last_user_seek, mid.[statement] AS [Database.Schema.Table],
 mid.equality_columns, mid.inequality_columns, mid.included_columns,
@@ -1039,13 +1111,14 @@ INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON p.[object_id] = mid.[object_id]
 WHERE mid.database_id = DB_ID() 
 ORDER BY index_advantage DESC OPTION (RECOMPILE);
+------
 
 -- Look at index advantage, last user seek time, number of user seeks to help determine source and importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
 
 
--- Find missing index warnings for cached plans in the current database  (Query 54) (Missing Index Warnings)
+-- Find missing index warnings for cached plans in the current database  (Query 53) (Missing Index Warnings)
 -- Note: This query could take some time on a busy instance
 SELECT TOP(25) OBJECT_NAME(objectid) AS [ObjectName], 
                query_plan, cp.objtype, cp.usecounts
@@ -1054,12 +1127,13 @@ CROSS APPLY sys.dm_exec_query_plan(cp.plan_handle) AS qp
 WHERE CAST(query_plan AS NVARCHAR(MAX)) LIKE N'%MissingIndex%'
 AND dbid = DB_ID()
 ORDER BY cp.usecounts DESC OPTION (RECOMPILE);
+------
 
 -- Helps you connect missing indexes to specific stored procedures
 -- This can help you decide whether to add them or not
 
 
--- Breaks down buffers used by current database by object (table, index) in the buffer cache  (Query 55) (Buffer Usage)
+-- Breaks down buffers used by current database by object (table, index) in the buffer cache  (Query 54) (Buffer Usage)
 -- Note: This query could take some time on a busy instance
 SELECT OBJECT_NAME(p.[object_id]) AS [Object Name], p.index_id, 
 CAST(COUNT(*)/128.0 AS DECIMAL(10, 2)) AS [Buffer size(MB)],  
@@ -1072,14 +1146,18 @@ INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON a.container_id = p.hobt_id
 WHERE b.database_id = CONVERT(int,DB_ID())
 AND p.[object_id] > 100
+AND OBJECT_NAME(p.[object_id]) NOT LIKE N'plan_%'
+AND OBJECT_NAME(p.[object_id]) NOT LIKE N'sys%'
+AND OBJECT_NAME(p.[object_id]) NOT LIKE N'xml_index_nodes%'
 GROUP BY p.[object_id], p.index_id, p.data_compression_desc, p.[Rows]
 ORDER BY [BufferCount] DESC OPTION (RECOMPILE);
+------
 
 -- Tells you what tables and indexes are using the most memory in the buffer cache
 -- It can help identify possible candidates for data compression
 
 
--- Get Table names, row counts, and compression status for clustered index or heap  (Query 56) (Table Sizes)
+-- Get Table names, row counts, and compression status for clustered index or heap  (Query 55) (Table Sizes)
 SELECT OBJECT_NAME(object_id) AS [ObjectName], 
 SUM(Rows) AS [RowCount], data_compression_desc AS [CompressionType]
 FROM sys.partitions WITH (NOLOCK)
@@ -1092,21 +1170,23 @@ AND OBJECT_NAME(object_id) NOT LIKE N'ifts_comp_fragment%'
 AND OBJECT_NAME(object_id) NOT LIKE N'xml_index_nodes%'
 GROUP BY object_id, data_compression_desc
 ORDER BY SUM(Rows) DESC OPTION (RECOMPILE);
+------
 
 -- Gives you an idea of table sizes, and possible data compression opportunities
 
 
 
--- Get some key table properties (Query 57) (Table Properties)
+-- Get some key table properties (Query 56) (Table Properties)
 SELECT [name], create_date, lock_on_bulk_load, is_replicated, has_replication_filter, 
        is_tracked_by_cdc, lock_escalation_desc
 FROM sys.tables WITH (NOLOCK) 
 ORDER BY [name] OPTION (RECOMPILE);
+------
 
 -- Gives you some good information about your tables
 
 
--- Detect blocking (run multiple times)  (Query 58) (Detect Blocking)
+-- Detect blocking (run multiple times)  (Query 57) (Detect Blocking)
 SELECT t1.resource_type AS [lock type], DB_NAME(resource_database_id) AS [database],
 t1.resource_associated_entity_id AS [blk object],t1.request_mode AS [lock req],  --- lock requested
 t1.request_session_id AS [waiter sid], t2.wait_duration_ms AS [wait time],       -- spid of waiter  
@@ -1127,6 +1207,7 @@ WHERE p.spid = t2.blocking_session_id) AS [blocker_stmt]
 FROM sys.dm_tran_locks AS t1 WITH (NOLOCK)
 INNER JOIN sys.dm_os_waiting_tasks AS t2 WITH (NOLOCK)
 ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
+------
 
 -- Helps troubleshoot blocking and deadlocking issues
 -- The results will change from second to second on a busy system
@@ -1134,7 +1215,7 @@ ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
 
 
 
--- When were Statistics last updated on all indexes?  (Query 59) (Statistics Update)
+-- When were Statistics last updated on all indexes?  (Query 58) (Statistics Update)
 SELECT SCHEMA_NAME(o.Schema_ID) + N'.' + o.NAME AS [Object Name], o.type_desc AS [Object Type],
       i.name AS [Index Name], STATS_DATE(i.[object_id], i.index_id) AS [Statistics Date], 
       s.auto_created, s.no_recompute, s.user_created, st.row_count, st.used_page_count
@@ -1149,13 +1230,14 @@ ON o.[object_id] = st.[object_id]
 AND i.[index_id] = st.[index_id]
 WHERE o.[type] IN ('U', 'V')
 AND st.row_count > 0
-ORDER BY STATS_DATE(i.[object_id], i.index_id) DESC OPTION (RECOMPILE);  
+ORDER BY STATS_DATE(i.[object_id], i.index_id) DESC OPTION (RECOMPILE);
+------  
 
 -- Helps discover possible problems with out-of-date statistics
 -- Also gives you an idea which indexes are the most active
 
 
--- Look at most frequently modified indexes and statistics (Query 60) (Volatile Indexes)
+-- Look at most frequently modified indexes and statistics (Query 59) (Volatile Indexes)
 -- Requires SQL Server 2008 R2 SP2 or newer
 SELECT o.name AS [Object Name], o.[object_id], o.type_desc, s.name AS [Statistics Name], 
        s.stats_id, s.no_recompute, s.auto_created, 
@@ -1167,9 +1249,10 @@ CROSS APPLY sys.dm_db_stats_properties(s.object_id, s.stats_id) AS sp
 WHERE o.type_desc NOT IN (N'SYSTEM_TABLE', N'INTERNAL_TABLE')
 AND sp.modification_counter > 0
 ORDER BY sp.modification_counter DESC, o.name OPTION (RECOMPILE);
+------
 
 
--- Get fragmentation info for all indexes above a certain size in the current database  (Query 61) (Index Fragmentation)
+-- Get fragmentation info for all indexes above a certain size in the current database  (Query 60) (Index Fragmentation)
 -- Note: This query could take some time on a very large database
 SELECT DB_NAME(ps.database_id) AS [Database Name], SCHEMA_NAME(o.[schema_id]) AS [Schema Name],
 OBJECT_NAME(ps.OBJECT_ID) AS [Object Name], 
@@ -1184,12 +1267,13 @@ ON i.[object_id] = o.[object_id]
 WHERE ps.database_id = DB_ID()
 AND ps.page_count > 2500
 ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
+------
 
 -- Helps determine whether you have framentation in your relational indexes
 -- and how effective your index maintenance strategy is
 
 
---- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 62) (Overall Index Usage - Reads)
+--- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 61) (Overall Index Usage - Reads)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
 	   user_seeks + user_scans + user_lookups AS [Reads], s.user_updates AS [Writes],  
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition, 
@@ -1201,12 +1285,13 @@ WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
 ORDER BY user_seeks + user_scans + user_lookups DESC OPTION (RECOMPILE); -- Order by reads
+------
 
 
 -- Show which indexes in the current database are most active for Reads
 
 
---- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 63) (Overall Index Usage - Writes)
+--- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 62) (Overall Index Usage - Writes)
 SELECT OBJECT_NAME(s.[object_id]) AS [ObjectName], i.name AS [IndexName], i.index_id,
 	   s.user_updates AS [Writes], user_seeks + user_scans + user_lookups AS [Reads], 
 	   i.type_desc AS [IndexType], i.fill_factor AS [FillFactor], i.has_filter, i.filter_definition,
@@ -1218,11 +1303,12 @@ WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
 ORDER BY s.user_updates DESC OPTION (RECOMPILE);						 -- Order by writes
+------
 
 -- Show which indexes in the current database are most active for Writes
 
 
--- Get lock waits for current database (Query 64) (Lock Waits)
+-- Get lock waits for current database (Query 63) (Lock Waits)
 SELECT o.name AS [table_name], i.name AS [index_name], ios.index_id, ios.partition_number,
 		SUM(ios.row_lock_wait_count) AS [total_row_lock_waits], 
 		SUM(ios.row_lock_wait_in_ms) AS [total_row_lock_wait_in_ms],
@@ -1239,27 +1325,34 @@ WHERE o.[object_id] > 100
 GROUP BY o.name, i.name, ios.index_id, ios.partition_number
 HAVING SUM(ios.page_lock_wait_in_ms)+ SUM(row_lock_wait_in_ms) > 0
 ORDER BY total_lock_wait_in_ms DESC OPTION (RECOMPILE);
+------
 
 -- This query is helpful for troubleshooting blocking and deadlocking issues
 
 
--- Look at recent Full backups for the current database (Query 65) (Recent Full Backups)
+-- Look at recent Full backups for the current database (Query 64) (Recent Full Backups)
 SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database Name], bs.recovery_model,
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
 CONVERT (NUMERIC (20,2), (CONVERT (FLOAT, bs.backup_size) /
 CONVERT (FLOAT, bs.compressed_backup_size))) AS [Compression Ratio], 
 DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) AS [Backup Elapsed Time (sec)],
-bs.backup_finish_date AS [Backup Finish Date]
+bs.backup_finish_date AS [Backup Finish Date], bmf.physical_device_name AS [Backup Location], bmf.physical_block_size
 FROM msdb.dbo.backupset AS bs WITH (NOLOCK)
+INNER JOIN msdb.dbo.backupmediafamily AS bmf WITH (NOLOCK)
+ON bs.media_set_id = bmf.media_set_id  
 WHERE DATEDIFF (SECOND, bs.backup_start_date, bs.backup_finish_date) > 0 
 AND bs.backup_size > 0
 AND bs.type = 'D' -- Change to L if you want Log backups
 AND database_name = DB_NAME(DB_ID())
 ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
+------
 
 -- Are your backup sizes and times changing over time?
 -- Are you using backup compression?
+-- Are you using backup checksums?
+-- Are you doing copy_only backups?
+-- Have you done any backup tuning with striped backups, or changing the parameters of the backup command?
 
 
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
@@ -1274,3 +1367,7 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
+-- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month pass to Pluralsight
+
+-- Microsoft Visual Studio Dev Essentials
+-- https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL

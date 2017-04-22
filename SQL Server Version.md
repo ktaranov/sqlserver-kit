@@ -10,7 +10,7 @@ Headers:
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
  - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
- - [Microsoft SQL Server VNext Builds](#microsoft-sql-server-vnext-builds)
+ - [Microsoft SQL Server 2017 Builds](#microsoft-sql-server-2017-builds)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
  - [Microsoft SQL Server 2014 Builds](#microsoft-sql-server-2014-builds)
  - [Microsoft SQL Server 2012 Builds](#microsoft-sql-server-2012-builds)
@@ -26,9 +26,11 @@ Useful links:
  - **Awesome official Microsoft article** - How to determine the version, edition and update level of SQL Server and its components: [KB321185](https://support.microsoft.com/en-us/kb/321185)
  - Naming schema for Microsoft SQL Server software update packages: [KB822499](https://support.microsoft.com/en-us/kb/822499)
  - [Microsoft SQL Server Support Lifecycle](https://support.microsoft.com/en-us/lifecycle?x=5&y=11&c2=1044)
+ - [Microsoft Update Catalog](http://www.catalog.update.microsoft.com)
  - Description of the standard terminology that is used to describe Microsoft software updates: [KB824684](https://support.microsoft.com/en-us/kb/824684)
  - An Incremental Servicing Model is available from the SQL Server team to deliver hotfixes for reported problems: [KB935897](https://support.microsoft.com/en-us/kb/935897)
  - Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads: [KB2964518](https://support.microsoft.com/en-us/kb/2964518)
+ - [Azure SQL Server Updates](https://azure.microsoft.com/en-us/updates/?product=sql-database&update-type=general-availability)
  - [Most Recent KBs for Microsoft SQL Server RSS](https://support.microsoft.com/en-us/rss?rssid=1044)
  - [Testing and Developing Supportability Roadmaps for ISV Applications (PDF)](http://blogs.technet.com/cfs-file.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-00-85-48-files/0827.testing-and-developing-supportability-roadmaps-for-isv-applications.pdf)
  - [SQL Server Updates by Brent Ozar team](http://sqlserverupdates.com/)
@@ -36,6 +38,7 @@ Useful links:
  - [SQL Server Release Services](https://blogs.msdn.microsoft.com/sqlreleaseservices/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
  - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
+ - [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/en-us//library/ms143506.aspx)
  - [Wikipedia Microsoft SQL Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
  - [SQL Server 2005 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx)
  - [SQL Server 2000 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb895925)
@@ -44,12 +47,10 @@ Useful links:
 Useful articles:
  - [How to identify your SQL Server version and edition](http://support.microsoft.com/kb/321185/en-us)
  - [SQL Server Internal Database Versions](http://sqlserverbuilds.blogspot.ru/2014/01/sql-server-internal-database-versions.html)
- - [Microsoft SQL Server Support Lifecycle](http://support2.microsoft.com/lifecycle/?LN=en-us&c2=1044)
+ - [Microsoft SQL Server Support Lifecycle](https://support.microsoft.com/en-us/lifecycle/)
  - [Microsoft SQL Server Home](http://www.microsoft.com/sql)
  - [Microsoft SQL Server Developer Center](http://msdn.microsoft.com/sqlserver)
  - [Microsoft TechNet: Microsoft SQL Server](http://technet.microsoft.com/en-us/sqlserver)
- - [Microsoft Knowledge Base](http://kbupdate.info/)
- - [Sqlservr.exe versions](http://www.mskbfiles.com/sqlservr.exe.php)
  - [SQL Server Patching Shortcut](http://www.sqlservercentral.com/articles/SQL+Server+patching/138693/)
 
 **All SQL Server service packs and Cumulative Updates are cumulative, meaning that each new service pack and cumulative update contains all the fixes that are included with previous service packs and any new fixes.**
@@ -63,12 +64,12 @@ Useful articles:
 or the lack of a feasible workaround (usually a combination of two or all three).
 The fix is released out-of-band from the usual Cumulative Update / Service Pack release cycle, and then rolled into the next Cumulative Update (or, depending on timing, the one after that).
 A COD can sometimes contain more than one QFE (defined below).
- - **CU** *Cumulative Update*:  This is a roll-up of multiple fixes that occurs between Service Packs, usually on a 60-day cycle (though that is subject to change).
+ - **CU** *Cumulative Update*: This is a roll-up of multiple fixes that occurs between Service Packs, usually on a 60-day cycle (though that is subject to change).
 It used to require an e-mail and password to download and extract the files, because they were "less tested" than service packs, but [this is no longer the case](https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/).
 Functionality can also be added in Cumulative Updates (previously, this would only happen in Service Packs, and before that, only in major releases).
 Kendra Little just published [a fantastic blog post about this](http://www.littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/).
 You should feel comfortable applying Cumulative Updates as quickly as your regression and other test processes allow.
- - **CTP** *Community Technology Preview*:  This is a build of the "next" version of SQL Server (or sometimes a Service Pack) that can be used for testing new features and reporting bugs.
+ - **CTP** *Community Technology Preview*: This is a build of the "next" version of SQL Server (or sometimes a Service Pack) that can be used for testing new features and reporting bugs.
 With few exceptions, CTPs cannot be used in a production scenario, and they are usually limited to Express / Evaluation Editions.
  - **GA** *General Availability*: For the traditional SQL Server product, this usually means that you can download the ISO from the usual sources (MSDN downloads, the TechNet Evaluation Center, or your volume licensing servers).
 For Azure SQL Database, this usually means that you can go and turn on the functionality without first agreeing to a waiver about preview functionality.
@@ -83,7 +84,7 @@ These are almost always a subset of TAP, and are almost always running the new v
  - **RTM** *Released To Manufacturing*: This means that the release is ready. Back when Microsoft shipped software on CDs and later DVDs, this represented the point in time when the discs could be printed.
 Not to be confused with launch (which is a marketing thing only) or General Availability (which means you can actually get the code).
 The delay between RTM and GA is much shorter now that software is generally distributed online instead of on physical media.
- - **RTW** *Release to Web*:  It indicates a package that was released to the web and made available to customers for downloading.
+ - **RTW** *Release to Web*: It indicates a package that was released to the web and made available to customers for downloading.
  - **TAP** *Technology Adoption Program*: This describes a set of customers that help Microsoft shape and test specific features for a new release (or help shape and test new features individually).
  - **SP** *Service Pack*: A Service Pack is, now, essentially a Cumulative Update with slightly different labeling.
 It is a roll-up of updates (including bug fixes and security updates) and sometimes contains new features.
@@ -121,33 +122,33 @@ Profits:
 ## What are the most recent updates for SQL Server?
 <a id="what-are-the-most-recent-updates-for-sql-server"></a>
 
-| Version | Latest Update                                                                                    | Build Number                                   | Release Date                             | Support Ends | Other Updates                                                     |
-|---------|--------------------------------------------------------------------------------------------------|------------------------------------------------|------------------------------------------|--------------|-------------------------------------------------------------------|
-| 2016    | [Install 2016 RTM] Or [Developer Free] then<br/>[SP1 KB3182545] then <br/>[COD Hotfix KB3207512] | 13.0.1601.5<br/>13.0.4001.0<br>13.0.4199.0     | 2016-06-01<br/>2016-11-16<br/>2016-11-23 | 2026-07-14   | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[MS16-36 KB3194718]                              | 12.0.5000.0<br/>12.0.5532.0                    | 2016-07-11<br/>2016-11-08                | 2024-07-09   | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[MS16-36 KB3194724]              | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6567.0   | 2012-02-14<br/>2015-11-21<br/>2016-11-17 | 2022-07-12   | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
-| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]                                | 6.1.7601.17514<br/>10.50.6000<br/>10.50.6220.0 | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
-| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                                       | 6.0.6001.18000<br/>10.00.6000<br/>10.0.6241.0  | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2019-07-09   | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
-| 2005    | [Install SP4 2005] then<br/>[CU3 KB2507769]                                                      | 9.00.5000.00<br/>9.00.5266                     | 2010-12-17<br/>2011-03-17                | 2016-04-12   | [Other SQL 2005 Updates](#microsoft-sql-server-2005-builds)       |
+| Version | Latest Update                                                               | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
+|---------|-----------------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
+| 2017    | [Install CTP]                                                               | 14.0.500.272                                 | 2017-04-19                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| 2016    | [Install 2016 SP1] then <br/>[SP1 CU2 KB4013106]                            | 13.0.4001.0<br>13.0.4422.0                   | 2016-11-16<br/>2017-03-20                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[KB4013098]                 | 12.0.5000.0<br/>12.0.5546.0                  | 2016-07-11<br/>2017-04-18                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2012    | [Install 2012] Or [Developer Free] then<br/>[SP3 2012] then<br/>[KB4013104] | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6594.0 | 2012-02-14<br/>2015-11-21<br/>2017-03-21 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]           | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
+| 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]                  | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
-[Install 2016 RTM]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
-[Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
-[SP1 KB3182545]:https://support.microsoft.com/en-us/kb/3182545
-[KB3207512]:https://support.microsoft.com/en-us/kb/3207512
-[Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014
-[MS16-36 KB3194718]:https://support.microsoft.com/en-us/kb/3194718
+**For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
+
+[Install CTP]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
+[Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
+[SP1 CU2 KB4013106]:https://support.microsoft.com/en-us/help/4013106/cumulative-update-2-for-sql-server-2016-sp1
+[Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
+[KB4013098]:https://support.microsoft.com/en-us/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:http://www.microsoft.com/en-us/download/details.aspx?id=49996
-[MS16-36 KB3194724]:https://support.microsoft.com/en-us/kb/3194724
+[KB4013104]:https://support.microsoft.com/en-us/help/4013104/cumulative-update-8-for-sql-server-2012-sp3
 [CU9 KB3098512]:https://support.microsoft.com/en-us/kb/3098512
-[Install 2008 R2]:https://www.microsoft.com/en-us/download/details.aspx?id=11093
+[Install 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SP3 2008 R2]:http://www.microsoft.com/en-us/download/details.aspx?id=44271
 [SU KB3045311]:https://www.microsoft.com/downloads/details.aspx?familyid=7af16cb8-c944-41cb-a897-c6fc373869cd
-[Install 2008]:https://www.microsoft.com/en-us/download/details.aspx?id=5023
+[Install 2008]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SP4 2008]:http://www.microsoft.com/en-us/download/details.aspx?id=44278
 [SU KB3045316]:https://support.microsoft.com/en-us/kb/3045311
-[Install SP4 2005]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=b953e84f-9307-405e-bceb-47bd345baece
-[CU3 KB2507769]:http://support.microsoft.com/kb/2507769
+[Developer Free]:https://www.microsoft.com/en-us/cloud-platform/sql-server-editions-developers
 
 
 ## Microsoft SQL Server installation files info
@@ -161,35 +162,41 @@ certUtil -hashfile "d:\SQL Server\SQLServer2014SP1-KB3058865-x64-ENU.exe" sha1
 
 Or for all files with .exe extensions in folder:
 ```bat
-FOR /R "d:\YaDsik\Backup\Distrib\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
+FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 ```
 
-| Direct x64 Download Link       | File Name                                                            | Release Date | Build Number   | Size, MB | SHA1                                                        |
-|--------------------------------|----------------------------------------------------------------------|--------------| --------------:|---------:|-------------------------------------------------------------|
-| [SQL Server 2016]              | SQLServer2016-x64-ENU.iso                                            | 2016-06-01   | 13.0.1601.5    |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
-| [SQL Server 2016 SP1]          | SQLServer2016SP1-KB3182545-x64-ENU.exe                               | 2016-11-16   | 13.0.4001.0    |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
-| [SQL Server 2016 KB3207512]    | SQLServer2016-KB3207512-x64.exe                                      | 2016-11-23   | 13.0.4199.0    |      521 | 37 2b 23 7b 1d 07 34 fd ff 2b 9d 45 2d 58 24 b8 c1 70 c6 db |
-| [SQL Server 2014 SP2]          | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                          | 2016-07-11   | 12.0.5000.0    |     3010 | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
-| [SQL Server 2014 SP2 MS16-36]  | SQLServer2014-KB3194718-x64.exe                                      | 2016-11-08   | 12.0.5532.0    |      550 | b9 ef c6 fb 55 c7 49 ac c2 3f c4 0f a4 b1 b7 9c 5e cc 97 c8 |
-| [SQL Server 2012]              | SQLFULL_ENU.iso                                                      | 2012-02-14   | 11.0.2100.60   |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
-| [SQL Server 2012 SP3]          | SQLServer2012SP3-KB3072779-x64-ENU.exe                               | 2015-11-21   | 11.0.6020.0    |     1017 | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
-| [SQL Server 2012 SP3 MS16-136] | SQLServer2012-KB3194724-x64.exe                                      | 2016-11-17   | 11.0.6567.0    |      594 | ed d4 6e a0 de 5c 75 39 c5 fa cd 73 5b 50 33 47 19 b3 26 8f |
-| [SQL Server 2008 R2]           | 7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso | 2010-11-21   | 6.1.7601.17514 |     3020 | e1 f1 12 e3 b0 b3 03 a0 67 6f 70 dc 35 85 4b d7 6c d2 54 50 |
-| [SQL Server 2008 R2 SP3]       | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                             | 2014-09-30   | 10.50.6220.0   |      358 | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
-| [SQL Server 2008 R2 SU]        | SQLServer2008R2-KB3045316-x64.exe                                    | 2015-07-14   | 10.50.6000     |       58 | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
-| [SQL Server 2008]              | 6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe     | 2008-01-19   | 6.0.6001.18000 |     2269 | e4 d6 29 00 0f c2 3d a9 f9 e0 77 4b 79 69 80 ff 7f 71 f7 48 |
-| [SQL Server 2008 SP4]          | SQLServer2008SP4-KB2979596-x64-ENU.exe                               | 2014-09-30   | 10.0.6241.0    |      378 | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
-| [SQL Server 2008 SU]           | SQLServer2008-KB3045311-x64.exe                                      | 2015-07-14   | 10.00.6000     |       61 | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
+Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
+| Direct x64 Download Link        | File Name                                                         | Release Date | Build Number | Size, MB | SHA1                                                        |
+|---------------------------------|-------------------------------------------------------------------|--------------| ------------:|---------:|-------------------------------------------------------------|
+| [SQL Server 2017]               | SQLServerVnextCTP2.0-x64-ENU.iso                                  | 2017-04-19   | 14.0.500.272 |     1721 | 1e 7d 9f b8 d7 90 8a 0f 6d 77 80 11 e5 7d 20 4a 9e 11 89 8b |
+| [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5  |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
+| [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0  |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
+| [SQL Server 2016 SP1 KB4013106] | SQLServer2016-KB4013106-x64.exe                                   | 2017-03-20   | 13.0.4422.0  |      415 | 94 6c db 15 41 7a 18 4a ab 4d d2 4d 93 7c 3d 1c fb 1c 86 62 |
+| [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0  |     3010 | 16 f1 93 4d c1 f4 79 94 cd 92 44 39 f8 84 a0 5c 6a d4 d1 73 |
+| [SQL Server 2014 SP2 KB4013098] | SQLServer2014-KB4013098-x64.exe                                   | 2017-04-18   | 12.0.5546.0  |      557 | b5 9f a6 9d 10 9a fa 9f 83 3d 52 15 e3 45 b1 3b 6f 2f a5 0a |
+| [SQL Server 2012]               | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60 |     4300 | be 00 94 2c c5 6d 03 3e 2c 9d ce 8a 17 a6 f2 65 4f 51 84 a3 |
+| [SQL Server 2012 SP3]           | SQLServer2012SP3-KB3072779-x64-ENU.exe                            | 2015-11-21   | 11.0.6020.0  |     1017 | db f0 1b 6d c6 d6 0c 2b 04 5c 92 d9 18 62 e6 08 7a d7 2a 0a |
+| [SQL Server 2012 SP3 KB4013104] | SQLServer2012-KB4013104-x64.exe                                   | 2017-03-21   | 11.0.6594.0  |      614 | 04 42 5d c2 b0 d3 cd 5b 79 0c 84 e4 e3 09 33 e7 f4 e6 94 b8 |
+| SQL Server 2008 R2 RTM          | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1 |     4177 | 18 10 5d b7 0f 0f 0b 23 41 8f 50 05 a6 ce 4b 25 31 7c 6d 03 |
+| [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0 |      358 | 19 4c d7 40 d5 81 2b 12 63 9b 47 88 6e bd e0 d0 47 74 b4 ec |
+| [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000   |       58 | 3a a4 d8 20 55 3b 1e 5d 96 73 55 41 cb b5 5d 97 32 2c 28 6e |
+| [SQL Server 2008]               | ?                                                                 | 2008-01-19   | 10.0.1600.0  |        ? | ?                                                           |
+| [SQL Server 2008 SP4]           | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   | 10.0.6241.0  |      378 | 13 61 0d 6c b3 9e 37 fc d4 a3 33 82 44 a3 ca 2a 8a 40 4c d8 |
+| [SQL Server 2008 SU]            | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   | 10.00.6000   |       61 | 37 a1 97 c6 09 90 d2 e8 3e 98 d1 09 01 09 a4 ab 3f 2a be 4b |
+
+**For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
+
+[SQL Server 2017]:http://care.dlservice.microsoft.com/dl/download/F/4/3/F43E1CD6-4FAB-4E23-9019-5D72D7FA9BEA/SQLServerVnextCTP2.0-x64-ENU.iso
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
-[SQL Server 2016 KB3207512]:https://download.microsoft.com/download/8/4/F/84F6571D-8763-4446-9148-75E4BDA103CC/SQL16SP1GDR/x64/SQLServer2016-KB3207512-x64.exe
+[SQL Server 2016 SP1 KB4013106]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/x64/SQLServer2016-KB4013106-x64.exe
 [SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP2 MS16-36]:https://download.microsoft.com/download/7/A/0/7A0B547F-C9B3-488D-BC1F-AAC64F976A29/SQL2014SP2CU2/x64/SQLServer2014-KB3194718-x64.exe
+[SQL Server 2014 SP2 KB4013098]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/SQL14SP2CU5/x64/SQLServer2014-KB4013098-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
-[SQL Server 2012 SP3 MS16-136]:https://download.microsoft.com/download/8/2/8/8285F27D-697D-4953-84FA-8B432AC8E858/SQL2012SP3CU6/x64/SQLServer2012-KB3194724-x64.exe
-[SQL Server 2008 R2]:https://download.microsoft.com/download/7/5/E/75EC4E54-5B02-42D6-8879-D8D3A25FBEF7/7601.17514.101119-1850_x64fre_server_eval_en-us-GRMSXEVAL_EN_DVD.iso
+[SQL Server 2012 SP3 KB4013104]:https://download.microsoft.com/download/3/0/D/30D98783-31D6-4123-9F87-5058BA9FC977/11Sp3Cu8/x64/SQLServer2012-KB4013104-x64.exe
+[SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
 [SQL Server 2008]:https://download.microsoft.com/download/D/D/B/DDB17DC1-A879-44DD-BD11-C0991D292AD7/6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe
@@ -287,7 +294,7 @@ SELECT name, cmptlevel FROM sysdatabases WHERE name = 'DatabaseNameHere';
 
 To ALTER DATABASE Compatibility Level use simple command:
 ```sql
-ALTER DATABASE database_name SET COMPATIBILITY_LEVEL = { 130 | 120 | 110 | 100 | 90 }
+ALTER DATABASE database_name SET COMPATIBILITY_LEVEL = { 140 | 130 | 120 | 110 | 100 | 90 }
 ```
 
 ### Internal Database Version
@@ -299,7 +306,7 @@ If you migrate a database from an older version to a newer version, the database
 
 When you create a database, the database version is “stamped” with the same version as the **Model** database.
 It is worth noting that if the **Model** database was originally created on a different server edition and then subsequently upgraded, you potentially could end up
-with slightly different numbers than what you might expect. 
+with slightly different numbers than what you might expect.
 As you upgrade the database to new SQL Server edition (you can not go backward) the version of the database increases.
 This is done automatically regardless of what method you use to upgrade the database to the new version of SQL Server.
 
@@ -337,24 +344,25 @@ Execute the following query to determine the version of the Database Engine that
 SELECT SERVERPROPERTY('ProductVersion');
 ```
 
-| SQL Server Version                           | Database Engine Version |  Code Name   | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
-|:---------------------------------------------|------------------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server 2016                              | 13                      |  ?           | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
-| Azure SQL Database                           | 12                      |  CloudDB     | 2010 (2016)  | 841                       | 130                             | 130, 120, 110, 100            |
-| SQL Server 2014                              | 12                      |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
-| SQL Server 2012                              | 11                      |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
-| SQL Server 2012 CTP1                         | 11                      |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
-| SQL Server 2008 R2                           | 10.5                    |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
-| SQL Server 2008                              | 10                      |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
-| SQL Server 2005 SP2+ with VarDecimal enabled |  9                      |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
-| SQL Server 2005                              |  9                      |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
-| SQL Server 2000                              |  8                      |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
-| SQL Server 7.0                               |  ?                      |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
-| SQL Server 6.5                               |  ?                      |  Hydra       | 1996         | 408                       |  65                             | 65                            |
-| SQL Server 6.0                               |  ?                      |  SQL95       | 1995         | ?                         |  60                             | ?                             |
-| SQL Server 4.21                              |  ?                      |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
-| SQL Server 1.1 (16 bit)                      |  ?                      |  ?           | 1991         | ?                         |  60                             | ?                             |
-| SQL Server 1.0 (16 bit)                      |  ?                      |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
+| SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
+|:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
+| SQL Server 2017                              | 14              |  2017        | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2016                              | 13              |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 12              |  CloudDB     | 2010 (2017)  | 841                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
+| SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
+| SQL Server 2012 CTP1                         | 11              |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
+| SQL Server 2008 R2                           | 10.5            |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
+| SQL Server 2008                              | 10              |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
+| SQL Server 2005 SP2+ with VarDecimal enabled |  9              |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
+| SQL Server 2005                              |  9              |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
+| SQL Server 2000                              |  8              |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
+| SQL Server 7.0                               |  ?              |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
+| SQL Server 6.5                               |  ?              |  Hydra       | 1996         | 408                       |  65                             | 65                            |
+| SQL Server 6.0                               |  ?              |  SQL95       | 1995         | ?                         |  60                             | ?                             |
+| SQL Server 4.21                              |  ?              |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
+| SQL Server 1.1 (16 bit)                      |  ?              |  ?           | 1991         | ?                         |  60                             | ?                             |
+| SQL Server 1.0 (16 bit)                      |  ?              |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
 
 **Azure SQL Database V12** was released in December 2014. One aspect of that release was that newly created databases had their compatibility level set to 120. In 2015 SQL Database began support for level 130, although the default remained 120.
 
@@ -375,17 +383,19 @@ For details about how to assess the performance differences of your most importa
 ## Quick summary for SQL Server Service Packs
 <a id="quick-summary-for-sql-server-service-packs"></a>
 
-| Version            | Codename    | RTM (no SP)   | SP1                             | SP2                             | SP3                               | SP4                             |
-|:-------------------|:------------|:--------------|:--------------------------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2016    | ?           | [13.0.1601.5] | [13.0.4001.0]                   |                                 |                                   |                                 |
-| SQL Server 2014    | SQL14       | 12.0.2000.8   | [12.0.4100.1]                   | [12.0.5000.0]                   |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60  | [11.0.3000.0]                   | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1  | [10.50.2500.0]                  | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
-| SQL Server 2008    | Katmai      | 10.0.1600.22  | [10.0.2531.0]                   | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06   | [9.0.2047]                      | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
-| SQL Server 2000    | Shiloh      | 8.0.194       | [8.0.384]                       | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623       | 7.0.699                         | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
+| Version            | Codename    | RTM (no SP)    | SP1            | SP2                             | SP3                               | SP4                             |
+|:-------------------|:------------|:---------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
+| SQL Server vNext   | vNext       | [14.0.500.272] |                |                                 |                                   |                                 |
+| SQL Server 2016    | SQL16       | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
+| SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
+| SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
+| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
+| SQL Server 2008    | Katmai      | 10.0.1600.22   | [10.0.2531.0]  | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
+| SQL Server 2005    | Yukon       | 9.0.1399.06    | [9.0.2047]     | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
+| SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
+| SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
+[14.0.500.272]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [13.0.4001.0]:https://support.microsoft.com/en-us/kb/3182545
 [12.0.5000.0]:https://support.microsoft.com/en-us/kb/3171021
@@ -411,58 +421,92 @@ For details about how to assess the performance differences of your most importa
 [7.0.1063]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
 
 
-## Microsoft SQL Server VNext Builds
-<a id="microsoft-sql-server-vnext-builds"></a>
+## Microsoft SQL Server 2017 Builds
+<a id="microsoft-sql-server-2017-builds"></a>
+Here is the latest output from `SELECT @@VERSION` for SQL Server vNext Developer Edition:
 
-| Build      | File version   | Branch | KB / Description                                                                   | Release Date |
-|------------|----------------|--------|------------------------------------------------------------------------------------|--------------|
-| 14.0.1.246 | 2016.140.1.246 | CTP    | [Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)] | 2016-11-16   |
+```
+Microsoft SQL Server vNext (CTP2.0) – 14.0.500.272 (X64)
+  Apr 13 2017 11:44:40
+  Copyright (C) 2017 Microsoft Corporation. All rights reserved.
+  Developer Edition (64-bit) on Windows …
+```
 
-[Microsoft SQL Server vNext Community Technology Preview 1 (CTP1) (Linux support)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
+There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/what-s-new-in-sql-server-vnext-database-engine)
+
+There is also a Linux version: [What's new for SQL Server vNext on Linux](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-whats-new)
+
+Useful articles:
+ - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
+ - [More ways to discover changes in new versions of SQL Server](https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/)
+
+| Build        | File version     | Branch | Type | KB / Description                                                       | Release Date | Build Date | Size, Mb |
+|--------------|------------------|--------|------|------------------------------------------------------------------------|--------------|------------|---------:|
+| 14.0.500.272 | 2017.140.500.272 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)] | 2017-04-19   | 2017-04-13 |     1721 |
+| 14.0.405.198 | 2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)   | 2017-03-17   | 2017-03-11 |     2001 |
+| 14.0.304.138 | 2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3)   | 2017-02-17   | 2017-02-14 |     1978 |
+| 14.0.200.24  | 2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2)   | 2017-01-18   | 2017-01-11 |     1975 |
+| 14.0.100.187 | 2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)   | 2016-12-16   | 2016-12-11 |     1975 |
+| 14.0.1.246   | 2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)       | 2016-11-16   | 2016-11-02 |     1983 |
+
+[Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
 
 
 ## Microsoft SQL Server 2016 Builds
 <a id="microsoft-sql-server-2016-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition:
+
 ```
-Microsoft SQL Server 2016 (SP1) (KB3182545) – 13.0.4199.0 (X64)
-    Nov 18 2016 15:56:54
+Microsoft SQL Server 2016 (SP1-CU2) (KB4013106) – 13.0.4422.0 (X64)
+    Mar 6 2017 14:18:16
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
-| Build         | File version      | Branch | KB / Description                                                                                                               | Release Date | Build Date |
-|---------------|-------------------|--------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|
-| 13.0.4199.0   | 2015.130.4199.0   | SP1    | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |
-| 13.0.4001.0   | 2015.130.4001.0   | SP1    | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |
-| 13.0.2186.6   | 2015.130.2186.6   | RTM    | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |
-| 13.0.2186.6   | 2015.130.2186.6   | RTM    | [3205413 Cumulative update 3 for SQL Server 2016] **Duplicate KB3194717**                                                      | 2016-11-08   | 2016-10-31 |
-| 13.0.2170.0   | 2015.130.2170.0   | RTM    | [3199171 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-11-01   | 2016-10-11 |
-| 13.0.2169.0   | 2015.130.2169.0   | RTM    | [3195813 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-10-26   | 2016-10-05 |
-| 13.0.2164.0   | 2015.130.2164.0   | RTM    | [3182270 Cumulative Update 2 for SQL Server 2016]                                                                              | 2016-09-22   | 2016-09-09 |
-| 13.0.2149.0   | 2015.130.2149.0   | RTM    | [3164674 Cumulative Update 1 for SQL Server 2016]                                                                              | 2016-07-25   | 2016-07-11 |
-| 13.0.1722.0   | 2015.130.1722.0   | RTM    | [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]                                                 | 2016-11-08   | 2016-10-31 |
-| 13.0.1711.0   | 2015.130.1711.0   | RTM    | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-07-30 |
-| 13.0.1708.0   | 2015.130.1708.0   | RTM    | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]                                                             | 2016-06-04   | 2016-06-02 |
-| 13.0.1601.5   | 2015.130.1601.5   | RTM    | [Microsoft SQL Server 2016 RTM]                                                                                                | 2016-06-01   | 2016-04-29 |
-| 13.0.1400.361 | 2015.130.1400.361 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)                                                       | 2016-04-15   | 2016-04-09 |
-| 13.0.1300.275 | 2015.130.1300.275 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)                                                       | 2016-04-01   | 2016-03-26 |
-| 13.0.1200.242 | 2015.130.1200.242 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)                                                       | 2016-03-18   | 2016-03-10 |
-| 13.0.1100.288 | 2015.130.1100.288 | RC     | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)                                                       | 2016-03-07   | 2016-02-29 |
-| 13.0.1000.281 | 2015.130.1000.281 | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)                                                            | 2016-02-03   | 2016-01-28 |
-| 13.0.900.73   | 2015.130.900.73   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)                                                            | 2015-12-17   | 2015-12-10 |
-| 13.0.801.12   | 2015.130.801.12   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)                                                    | 2015-12-05   | 2015-12-01 |
-| 13.0.801.111  | 2015.130.801.111  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)                                                            | 2015-11-30   | 2015-11-21 |
-| 13.0.700.242  | 2015.130.700.242  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)                                                            | 2015-10-29   | 2015-10-26 |
-| 13.0.600.65   | 2015.130.600.65   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)                                                            | 2015-09-30   | 2015-09-20 |
-| 13.0.500.53   | 2015.130.500.53   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)                                                            | 2015-08-28   | 2015-08-24 |
-| 13.0.407.1    | 2015.130.407.1    | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)                                                            | 2015-07-29   | 2015-07-22 |
-| 13.0.400.91   | 2015.130.400.91   | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) [withdrawn]                                                | 2015-07-22   | 2015-07-16 |
-| 13.0.300.44   | 2015.130.300.444  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |
-| 13.0.200.172  | 2015.130.200.172  | CTP    | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |
+| Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
+|---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.4422.0   | 2015.130.4422.0   | SP1    | CU   | [4013106 Cumulative Update 2 for SQL Server 2016 SP1]                                                                          | 2017-03-20   | 2017-03-06 |   117 |    100 |      415 |
+| 13.0.4411.0   | 2015.130.4411.0   | SP1    | CU   | [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]                                                               | 2017-01-18   | 2017-01-06 |    63 |     55 |      439 |
+| 13.0.4202.0   | 2015.130.4202.0   | SP1    | COD  | [3210089 GDR update package for SQL Server 2016 SP1]                                                                           | 2016-12-16   | 2016-12-13 |     3 |      3 |      378 |
+| 13.0.4199.0   | 2015.130.4199.0   | SP1    | COD  | [3207512 Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |     2 |      2 |      521 |
+| 13.0.4001.0   | 2015.130.4001.0   | SP1    | SP   | [3182545 SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |    33 |     33 |      552 |
+| 13.0.2197.0   | 2015.130.2197.0   | RTM    | CU   | [4013105 Cumulative Update 5 for SQL Server 2016]                                                                              | 2017-03-20   | 2017-02-25 |    56 |     47 |      700 |
+| 13.0.2193.0   | 2015.130.2193.0   | RTM    | CU   | [3205052 Cumulative update 4 for SQL Server 2016]                                                                              | 2017-01-18   | 2017-01-06 |    65 |     57 |      699 |
+| 13.0.2190.2   | 2015.130.2190.2   | RTM    | COD  | [3210110 On-demand hotfix update package for SQL Server 2016 CU3]                                                              | 2016-12-16   | 2016-12-13 |     3 |      3 |      691 |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]                                                  | 2016-11-08   | 2016-10-31 |    31 |     31 |      691 |
+| 13.0.2186.6   | 2015.130.2186.6   | RTM    | CU   | [3205413 Cumulative update 3 for SQL Server 2016] **Duplicate KB3194717**                                                      | 2016-11-08   | 2016-10-31 |       |        |      691 |
+| 13.0.2170.0   | 2015.130.2170.0   | RTM    | COD  | [3199171 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-11-01   | 2016-10-11 |     4 |      4 |      689 |
+| 13.0.2169.0   | 2015.130.2169.0   | RTM    | COD  | [3195813 On-demand hotfix update package for SQL Server 2016 CU2]                                                              | 2016-10-26   | 2016-10-05 |     4 |      4 |      689 |
+| 13.0.2164.0   | 2015.130.2164.0   | RTM    | CU   | [3182270 Cumulative Update 2 for SQL Server 2016]                                                                              | 2016-09-22   | 2016-09-09 |    68 |     64 |      689 |
+| 13.0.2149.0   | 2015.130.2149.0   | RTM    | CU   | [3164674 Cumulative Update 1 for SQL Server 2016]                                                                              | 2016-07-25   | 2016-07-11 |   192 |    146 |      665 |
+| 13.0.1722.0   | 2015.130.1722.0   | RTM    | COD  | [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]                                                 | 2016-11-08   | 2016-10-31 |     3 |      3 |      342 |
+| 13.0.1711.0   | 2015.130.1711.0   | RTM    | COD  | [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)] | 2016-08-17   | 2016-07-30 |       |        |      282 |
+| 13.0.1708.0   | 2015.130.1708.0   | RTM    | COD  | [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]                                                             | 2016-06-04   | 2016-06-02 |       |        |      265 |
+| 13.0.1601.5   | 2015.130.1601.5   | RTM    | RTM  | [Microsoft SQL Server 2016 RTM]                                                                                                | 2016-06-01   | 2016-04-29 |       |        |     2050 |
+| 13.0.1400.361 | 2015.130.1400.361 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 3 (RC3)                                                       | 2016-04-15   | 2016-04-09 |       |        |     2114 |
+| 13.0.1300.275 | 2015.130.1300.275 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 2 (RC2)                                                       | 2016-04-01   | 2016-03-26 |       |        |     2101 |
+| 13.0.1200.242 | 2015.130.1200.242 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 1 (RC1)                                                       | 2016-03-18   | 2016-03-10 |       |        |     2083 |
+| 13.0.1100.288 | 2015.130.1100.288 | RC     | RC   | Microsoft SQL Server 2016 Community Technology Release Candidate 0 (RC0)                                                       | 2016-03-07   | 2016-02-29 |       |        |          |
+| 13.0.1000.281 | 2015.130.1000.281 | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.3 (CTP3.3)                                                            | 2016-02-03   | 2016-01-28 |       |        |          |
+| 13.0.900.73   | 2015.130.900.73   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.2 (CTP3.2)                                                            | 2015-12-17   | 2015-12-10 |       |        |          |
+| 13.0.801.12   | 2015.130.801.12   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1 refresh)                                                    | 2015-12-05   | 2015-12-01 |       |        |          |
+| 13.0.801.111  | 2015.130.801.111  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.1 (CTP3.1)                                                            | 2015-11-30   | 2015-11-21 |       |        |          |
+| 13.0.700.242  | 2015.130.700.242  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 3.0 (CTP3.0)                                                            | 2015-10-29   | 2015-10-26 |       |        |          |
+| 13.0.600.65   | 2015.130.600.65   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.4 (CTP2.4)                                                            | 2015-09-30   | 2015-09-20 |       |        |          |
+| 13.0.500.53   | 2015.130.500.53   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.3 (CTP2.3)                                                            | 2015-08-28   | 2015-08-24 |       |        |          |
+| 13.0.407.1    | 2015.130.407.1    | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2)                                                            | 2015-07-29   | 2015-07-22 |       |        |          |
+| 13.0.400.91   | 2015.130.400.91   | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.2 (CTP2.2) (withdrawn)                                                | 2015-07-22   | 2015-07-16 |       |        |          |
+| 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
+| 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[4013106 Cumulative Update 2 for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/help/4013106/cumulative-update-2-for-sql-server-2016-sp1
+[3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
+[3210089 GDR update package for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/kb/3210089
 [3207512 Important update for SQL Server 2016 SP1 Reporting Services]:https://support.microsoft.com/en-us/kb/3207512
 [3182545 SQL Server 2016 Service Pack 1 release information]:https://support.microsoft.com/en-us/kb/3182545
+[4013105 Cumulative Update 5 for SQL Server 2016]:https://support.microsoft.com/en-us/help/4013105/cumulative-update-5-for-sql-server-2016
+[3205052 Cumulative update 4 for SQL Server 2016]:https://support.microsoft.com/en-us/help/3205052/cumulative-update-4-for-sql-server-2016
+[3210110 On-demand hotfix update package for SQL Server 2016 CU3]:https://support.microsoft.com/en-us/kb/3210110
 [3194717 MS16-136: Description of the security update for SQL Server 2016 CU]:https://support.microsoft.com/en-us/kb/3194717
 [3205413 Cumulative update 3 for SQL Server 2016]:https://support.microsoft.com/en-us/kb/3205413
 [3199171 On-demand hotfix update package for SQL Server 2016 CU2]:https://support.microsoft.com/en-us/kb/3199171
@@ -478,95 +522,110 @@ Microsoft SQL Server 2016 (SP1) (KB3182545) – 13.0.4199.0 (X64)
 ## Microsoft SQL Server 2014 Builds
 <a id="microsoft-sql-server-2014-builds"></a>
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition:
+
 ```
-Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
-    Oct 5 2016 20:28:25
+Microsoft SQL Server 2014 (SP2-CU4) (KB4010394) - 12.0.5540.0 (X64)
+    Feb 15 2017 17:52:48
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
-| Build        | File version     | Branch | KB / Description                                                                                                                   | Release Date |
-|--------------|------------------|--------|------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 12.0.5532.0  | 2014.120.5532.0  | SP2    | [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |
-| 12.0.5522.0  | 2014.120.5522.0  | SP2    | [3188778 Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |
-| 12.0.5511.0  | 2014.120.5511.0  | SP2    | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |
-| 12.0.5000.0  | 2014.120.5000.0  | SP2    | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |
-| 12.0.4487.0  | 2014.120.4487.0  | SP1    | [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]                     | 2016-11-08   |
-| 12.0.4474.0  | 2014.120.4474.0  | SP1    | [3186964 Cumulative update 9 for SQL Server 2014 SP1]                                                                              | 2016-10-18   |
-| 12.0.4468.0  | 2014.120.4468.0  | SP1    | [3174038 Cumulative update 8 for SQL Server 2014 SP1]                                                                              | 2016-08-16   |
-| 12.0.4463.0  | 2014.120.4463.0  | SP1    | [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |
-| 12.0.4459.0  | 2014.120.4459.0  | SP1    | [3167392 Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |
-| 12.0.4457.0  | 2014.120.4457.0  | SP1    | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |
-| 12.0.4449.0  | 2014.120.4449.0  | SP1    | [3144524 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Deprecated**                                                    | 2016-04-18   |
-| 12.0.4452.0  | 2014.120.4452.0  | SP1    | 3147825 COD Hotfix **Deprecated**                                                                                                  | 2016-04-05   |
-| 12.0.4439.1  | 2014.120.4439.1  | SP1    | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |
-| 12.0.4437.0  | 2014.120.4437.0  | SP1    | [3130999 COD Hotfix]                                                                                                               | 2016-02-05   |
-| 12.0.4436.0  | 2014.120.4436.0  | SP1    | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |
-| 12.0.4433.0  | 2014.120.4433.0  | SP1    | [3119148 COD Hotfix]                                                                                                               | 2015-12-09   |
-| 12.0.4432.0  | 2014.120.4432.0  | SP1    | [3097972 COD Hotfix]                                                                                                               | 2015-11-19   |
-| 12.0.4427.24 | 2014.120.4427.24 | SP1    | [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |
-| 12.0.4422.0  | 2014.120.4422.0  | SP1    | [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |
-| 12.0.4419.0  | 2014.120.4419.0  | SP1    | [3078973 COD Hotfix]                                                                                                               | 2015-07-24   |
-| 12.0.4416.0  | 2014.120.4416.0  | SP1    | [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]                                                     | 2015-06-22   |
-| 12.0.4232.0  | 2014.120.4232.0  | SP1    | [3194720 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]                    | 2016-11-08   |
-| 12.0.4219.0  | 2014.120.4219.0  | SP1    | [3098852 SP1 GDR TLS 1.2 Update]                                                                                                   | 2016-01-29   |
-| 12.0.4213.0  | 2014.120.4213.0  | SP1    | [3070446 MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                    | 2015-07-14   |
-| 12.0.4100.1  | 2014.120.4100.1  | SP1    | [3058865 SQL Server 2014 Service Pack 1 release information]                                                                       | 2015-05-14   |
-| 12.0.4050.0  | 2014.120.4050.0  | SP1    | SQL Server 2014 Service Pack 1 (SP1) (initial)                                                                                     | 2015-04-15   |
-| 12.0.2569.0  | 2014.120.2569.0  | RTM    | [3158271 Cumulative update package 14 (CU14) for SQL Server 2014]                                                                  | 2016-06-20   |
-| 12.0.2568.0  | 2014.120.2568.0  | RTM    | [3144517 Cumulative update package 13 (CU13) for SQL Server 2014]                                                                  | 2016-04-18   |
-| 12.0.2564.0  | 2014.120.2564.0  | RTM    | [3130923 Cumulative update package 12 (CU12) for SQL Server 2014]                                                                  | 2016-02-22   |
-| 12.0.2560.0  | 2014.120.2550.0  | RTM    | [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |
-| 12.0.2556.4  | 2014.120.2556.4  | RTM    | [3094220 Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |
-| 12.0.2553    | 2014.120.2553.0  | RTM    | [3075949 Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |
-| 12.0.2548    | 2014.120.2548.0  | RTM    | [3045323 MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]                                      | 2015-07-14   |
-| 12.0.2546    | 2014.120.2546.0  | RTM    | [3067836 Cumulative update package 8 (CU8) for SQL Server 2014]                                                                    | 2015-06-22   |
-| 12.0.2506    | 2014.120.2506.0  | RTM    | [3063054 Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]                      | 2015-05-19   |
-| 12.0.2505    | 2014.120.2505.0  | RTM    | [3052167 FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]                    | 2015-05-19   |
-| 12.0.2504    | 2014.120.2504.0  | RTM    | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2015-05-05   |
-| 12.0.2504    | 2014.120.2504.0  | RTM    | [3058512 FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]                                      | 2015-05-05   |
-| 12.0.2495    | 2014.120.2495.0  | RTM    | [3046038 Cumulative update package 7 (CU7) for SQL Server 2014]                                                                    | 2015-04-23   |
-| 12.0.2488    | 2014.120.2488.0  | RTM    | [3048751 FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan] | 2015-04-01   |
-| 12.0.2485    | 2014.120.2485.0  | RTM    | [3043788 An on-demand hotfix update package is available for SQL Server 2014]                                                      | 2015-03-16   |
-| 12.0.2480    | 2014.120.2480.0  | RTM    | [3031047 Cumulative update package 6 (CU6) for SQL Server 2014]                                                                    | 2015-02-16   |
-| 12.0.2474    | 2014.120.2474.0  | RTM    | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                      | 2015-05-15   |
-| 12.0.2472    | 2014.120.2472.0  | RTM    | [3032087 FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014] | 2015-01-28   |
-| 12.0.2464    | 2014.120.2464.0  | RTM    | [3024815 Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]                                     | 2015-01-05   |
-| 12.0.2456    | 2014.120.2456.0  | RTM    | [3011055 Cumulative update package 5 (CU5) for SQL Server 2014]                                                                    | 2014-12-18   |
-| 12.0.2436    | 2014.120.2436.0  | RTM    | [3014867 FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]        | 2014-11-27   |
-| 12.0.2430    | 2014.120.2430.0  | RTM    | [2999197 Cumulative update package 4 (CU4) for SQL Server 2014]                                                                    | 2014-10-21   |
-| 12.0.2423    | 2014.120.2423.0  | RTM    | [3007050 FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]       | 2014-10-22   |
-| 12.0.2405    | 2014.120.2405.0  | RTM    | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2014-09-25   |
-| 12.0.2402    | 2014.120.2402.0  | RTM    | [2984923 Cumulative update package 3 (CU3) for SQL Server 2014]                                                                    | 2014-08-18   |
-| 12.0.2381    | 2014.120.2381.0  | RTM    | [2977316 MS14-044: Description of the security update for SQL Server 2014 (QFE)]                                                   | 2014-08-12   |
-| 12.0.2370    | 2014.120.2370.0  | RTM    | [2967546 Cumulative update package 2 (CU2) for SQL Server 2014]                                                                    | 2014-06-27   |
-| 12.0.2342    | 2014.120.2342.0  | RTM    | [2931693 Cumulative update package 1 (CU1) for SQL Server 2014]                                                                    | 2014-04-21   |
-| 12.0.2271.0  | 2014.120.2271.0  | RTM    | [TLS 1.2 support for SQL Server 2014 RTM]                                                                                          | 2015-12-11   |
-| 12.0.2269    | 2014.120.2269.0  | RTM    | [3045324 MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]                                      | 2015-07-14   |
-| 12.0.2254    | 2014.120.2254.0  | RTM    | [2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]                                                   | 2014-08-12   |
-| 12.0.2000    | 2014.120.2000.8  | RTM    | SQL Server 2014 RTM                                                                                                                | 2014-04-01   |
-| 12.0.1524    | 2014.120.1524.0  | CTP    | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |
-| 11.0.9120    | 2013.110.9120.0  | CTP    | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |
+| Build        | File version     | Branch | Type | KB / Description                                                                                                                   | Release Date | Fixes | Public | Size, Mb |
+|--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.5546.0  | 2014.120.5546.0  | SP2    | CU   | [4013098 Cumulative Update 5 for SQL Server 2014 SP2]                                                                              | 2017-04-18   |    24 |     21 |      557 |
+| 12.0.5540.0  | 2014.120.5540.0  | SP2    | CU   | [4010394 Cumulative Update 4 for SQL Server 2014 SP2]                                                                              | 2017-02-21   |    30 |     27 |      555 |
+| 12.0.5538.0  | 2014.120.5538.0  | SP2    | CU   | [3204388 Cumulative update 3 for SQL Server 2014 SP2]                                                                              | 2016-12-28   |    44 |     39 |      555 |
+| 12.0.5532.0  | 2014.120.5532.0  | SP2    | CU   | [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      551 |
+| 12.0.5522.0  | 2014.120.5522.0  | SP2    | CU   | [3188778 Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |    18 |     18 |      550 |
+| 12.0.5511.0  | 2014.120.5511.0  | SP2    | CU   | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |    45 |     36 |      556 |
+| 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  | [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
+| 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
+| 12.0.4511.0  | 2014.120.4511.0  | SP1    | CU   | [4017793 Cumulative Update 12 for SQL Server 2014 SP1]                                                                             | 2017-04-17   |    12 |     11 |      573 |
+| 12.0.4502.0  | 2014.120.4502.0  | SP1    | CU   | [4010392 Cumulative Update 11 for SQL Server 2014 SP1]                                                                             | 2017-02-21   |    15 |     15 |      571 |
+| 12.0.4491.0  | 2014.120.4491.0  | SP1    | CU   | [3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]                                                          | 2016-12-28   |    33 |     27 |      571 |
+| 12.0.4487.0  | 2014.120.4487.0  | SP1    | CU   | [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      569 |
+| 12.0.4474.0  | 2014.120.4474.0  | SP1    | CU   | [3186964 Cumulative update 9 for SQL Server 2014 SP1]                                                                              | 2016-10-18   |    14 |     14 |          |
+| 12.0.4468.0  | 2014.120.4468.0  | SP1    | CU   | [3174038 Cumulative update 8 for SQL Server 2014 SP1]                                                                              | 2016-08-16   |    38 |     38 |          |
+| 12.0.4463.0  | 2014.120.4463.0  | SP1    | COD  | [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |     1 |      1 |          |
+| 12.0.4459.0  | 2014.120.4459.0  | SP1    | CU   | [3167392 Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |    35 |     33 |          |
+| 12.0.4457.0  | 2014.120.4457.0  | SP1    | CU   | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |    44 |     43 |          |
+| 12.0.4452.0  | 2014.120.4452.0  | SP1    | COD  | 3147825 COD Hotfix **Deprecated**                                                                                                  | 2016-04-05   |     1 |      1 |          |
+| 12.0.4449.0  | 2014.120.4449.0  | SP1    | CU   | [3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)] **Deprecated**                                                  | 2016-04-18   |   N/A |    N/A |          |
+| 12.0.4439.1  | 2014.120.4439.1  | SP1    | CU   | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |    20 |     20 |          |
+| 12.0.4437.0  | 2014.120.4437.0  | SP1    | COD  | [3130999 On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]                                   | 2016-02-05   |     2 |      2 |          |
+| 12.0.4436.0  | 2014.120.4436.0  | SP1    | CU   | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |    34 |     34 |          |
+| 12.0.4433.0  | 2014.120.4433.0  | SP1    | COD  | [3119148 FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]                            | 2015-12-09   |     1 |      1 |          |
+| 12.0.4432.0  | 2014.120.4432.0  | SP1    | COD  | [3097972 FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]               | 2015-11-19   |     3 |      3 |          |
+| 12.0.4427.24 | 2014.120.4427.24 | SP1    | CU   | [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |    40 |     36 |          |
+| 12.0.4422.0  | 2014.120.4422.0  | SP1    | CU   | [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |    51 |     46 |          |
+| 12.0.4419.0  | 2014.120.4419.0  | SP1    | COD  | [3078973 An on-demand hotfix update package is available for SQL Server 2014 SP1]                                                  | 2015-07-24   |    13 |     13 |          |
+| 12.0.4416.0  | 2014.120.4416.0  | SP1    | CU   | [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]                                                     | 2015-06-22   |   141 |    121 |          |
+| 12.0.4232.0  | 2014.120.4232.0  | SP1    | CU   | [3194720 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |          |
+| 12.0.4219.0  | 2014.120.4219.0  | SP1    | GDR  | [3098852 SP1 GDR TLS 1.2 Update]                                                                                                   | 2016-01-29   |       |        |          |
+| 12.0.4213.0  | 2014.120.4213.0  | SP1    | GDR  | [3070446 MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                    | 2015-07-14   |       |        |          |
+| 12.0.4100.1  | 2014.120.4100.1  | SP1    | SP   | [3058865 SQL Server 2014 Service Pack 1 release information]                                                                       | 2015-05-14   |    29 |     29 |          |
+| 12.0.4050.0  | 2014.120.4050.0  | SP1    | SP   | SQL Server 2014 Service Pack 1 (SP1) (initial)                                                                                     | 2015-04-15   |       |        |          |
+| 12.0.2569.0  | 2014.120.2569.0  | RTM    | CU   | [3158271 Cumulative update package 14 (CU14) for SQL Server 2014]                                                                  | 2016-06-20   |    21 |     20 |          |
+| 12.0.2568.0  | 2014.120.2568.0  | RTM    | CU   | [3144517 Cumulative update package 13 (CU13) for SQL Server 2014]                                                                  | 2016-04-18   |    30 |     30 |          |
+| 12.0.2564.0  | 2014.120.2564.0  | RTM    | CU   | [3130923 Cumulative update package 12 (CU12) for SQL Server 2014]                                                                  | 2016-02-22   |     7 |      7 |          |
+| 12.0.2560.0  | 2014.120.2550.0  | RTM    | CU   | [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |    19 |     19 |          |
+| 12.0.2556.4  | 2014.120.2556.4  | RTM    | CU   | [3094220 Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |    33 |     30 |          |
+| 12.0.2553    | 2014.120.2553.0  | RTM    | CU   | [3075949 Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |    31 |     30 |          |
+| 12.0.2548    | 2014.120.2548.0  | RTM    | CU   | [3045323 MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]                                      | 2015-07-14   |     1 |      1 |          |
+| 12.0.2546    | 2014.120.2546.0  | RTM    | CU   | [3067836 Cumulative update package 8 (CU8) for SQL Server 2014]                                                                    | 2015-06-22   |    40 |     38 |          |
+| 12.0.2506    | 2014.120.2506.0  | RTM    | COD  | [3063054 Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]                      | 2015-05-19   |     1 |      1 |          |
+| 12.0.2505    | 2014.120.2505.0  | RTM    | COD  | [3052167 FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]                    | 2015-05-19   |     1 |      1 |          |
+| 12.0.2504    | 2014.120.2504.0  | RTM    | COD  | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2015-05-05   |     2 |      2 |          |
+| 12.0.2504    | 2014.120.2504.0  | RTM    | COD  | [3058512 FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]                                      | 2015-05-05   |       |        |          |
+| 12.0.2495    | 2014.120.2495.0  | RTM    | CU   | [3046038 Cumulative update package 7 (CU7) for SQL Server 2014]                                                                    | 2015-04-23   |    47 |     41 |          |
+| 12.0.2488    | 2014.120.2488.0  | RTM    | COD  | [3048751 FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan] | 2015-04-01   |     1 |      1 |          |
+| 12.0.2485    | 2014.120.2485.0  | RTM    | COD  | [3043788 An on-demand hotfix update package is available for SQL Server 2014]                                                      | 2015-03-16   |     1 |      1 |          |
+| 12.0.2480    | 2014.120.2480.0  | RTM    | CU   | [3031047 Cumulative update package 6 (CU6) for SQL Server 2014]                                                                    | 2015-02-16   |    64 |     55 |          |
+| 12.0.2474    | 2014.120.2474.0  | RTM    | COD  | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                      | 2015-02-04   |     1 |      1 |          |
+| 12.0.2472    | 2014.120.2472.0  | RTM    | COD  | [3032087 FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014] | 2015-01-28   |     1 |      1 |          |
+| 12.0.2464    | 2014.120.2464.0  | RTM    | COD  | [3024815 Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]                                     | 2015-01-05   |     1 |      1 |          |
+| 12.0.2456    | 2014.120.2456.0  | RTM    | CU   | [3011055 Cumulative update package 5 (CU5) for SQL Server 2014]                                                                    | 2014-12-18   |    54 |     48 |          |
+| 12.0.2436    | 2014.120.2436.0  | RTM    | COD  | [3014867 FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]        | 2014-11-27   |     1 |      1 |          |
+| 12.0.2430    | 2014.120.2430.0  | RTM    | CU   | [2999197 Cumulative update package 4 (CU4) for SQL Server 2014]                                                                    | 2014-10-21   |    66 |     54 |          |
+| 12.0.2423    | 2014.120.2423.0  | RTM    | COD  | [3007050 FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]       | 2014-10-22   |       |        |          |
+| 12.0.2405    | 2014.120.2405.0  | RTM    | COD  | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2014-09-25   |       |        |          |
+| 12.0.2402    | 2014.120.2402.0  | RTM    | CU   | [2984923 Cumulative update package 3 (CU3) for SQL Server 2014]                                                                    | 2014-08-18   |    40 |     32 |          |
+| 12.0.2381    | 2014.120.2381.0  | RTM    | QFE  | [2977316 MS14-044: Description of the security update for SQL Server 2014 (QFE)]                                                   | 2014-08-12   |     1 |      1 |          |
+| 12.0.2370    | 2014.120.2370.0  | RTM    | CU   | [2967546 Cumulative update package 2 (CU2) for SQL Server 2014]                                                                    | 2014-06-27   |    52 |     48 |          |
+| 12.0.2342    | 2014.120.2342.0  | RTM    | CU   | [2931693 Cumulative update package 1 (CU1) for SQL Server 2014]                                                                    | 2014-04-21   |   121 |    114 |          |
+| 12.0.2271.0  | 2014.120.2271.0  | RTM    | GDR  | [TLS 1.2 support for SQL Server 2014 RTM]                                                                                          | 2016-01-29   |     3 |      3 |          |
+| 12.0.2269    | 2014.120.2269.0  | RTM    | GDR  | [3045324 MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]                                      | 2015-07-14   |     2 |      2 |          |
+| 12.0.2254    | 2014.120.2254.0  | RTM    | GDR  | [2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]                                                   | 2014-08-12   |     1 |      1 |          |
+| 12.0.2000    | 2014.120.2000.8  | RTM    | RTM  | SQL Server 2014 RTM                                                                                                                | 2014-04-01   |     - |      - |          |
+| 12.0.1524    | 2014.120.1524.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |       |        |          |
+| 11.0.9120    | 2013.110.9120.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |       |        |          |
 
+[4013098 Cumulative Update 5 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
+[4010394 Cumulative Update 4 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4010394/cumulative-update-4-for-sql-server-2014-sp2
+[3204388 Cumulative update 3 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3204388
 [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194718
 [3188778 Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3188778
 [3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3178925
+[3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/help/3194714/ms16-136-description-of-the-security-update-for-sql-server-2014-service-pack-2-gdr-november-8,-2016
 [3171021 SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/en-us/kb/3171021
+[4017793 Cumulative Update 12 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/help/4017793/cumulative-update-12-for-sql-server-2014-sp1
+[4010392 Cumulative Update 11 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/help/4010392/cumulative-update-11-for-sql-server-2014-sp1
+[3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3204399
 [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194722
 [3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3186964
 [3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3174038
 [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/en-us/kb/3174370
 [3167392 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3162659
 [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3167392
-[3144524 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3144524
+[3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)]:https://support.microsoft.com/en-us/kb/3144524
 [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3130926
-[3130999 COD Hotfix]:https://support.microsoft.com/en-us/kb/3147825
+[3130999 On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]:https://support.microsoft.com/en-us/kb/3130999
 [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3106660
-[3119148 COD Hotfix]:http://support.microsoft.com/kb/3119148
-[3097972 COD Hotfix]:http://support.microsoft.com/kb/3097972
+[3119148 FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]:http://support.microsoft.com/kb/3119148
+[3097972 FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]:http://support.microsoft.com/kb/3097972
 [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3094221
 [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3075950
-[3078973 COD Hotfix]:http://support.microsoft.com/kb/3078973
+[3078973 An on-demand hotfix update package is available for SQL Server 2014 SP1]:http://support.microsoft.com/kb/3078973
 [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3067839
 [3194720 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194720
 [3098852 SP1 GDR TLS 1.2 Update]:https://support.microsoft.com/en-us/hotfix/kbhotfix?kbnum=3098852&kbln=en-us
@@ -608,85 +667,95 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 ## Microsoft SQL Server 2012 Builds
 <a id="microsoft-sql-server-2012-builds"></a>
 
-| Build         | File version     | KB / Description                                                                                                                       | Release Date |
-|---------------|------------------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 11.0.6567.0   | 2011.110.6567.0  | [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
-| 11.0.5676.0   | 2011.110.5676.0  | [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
-| 11.0.6544.0   | 2011.110.6544.0  | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
-| 11.0.5657.0   | 2011.110.5657.0  | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
-| 11.0.6540.0   | 2011.110.6540.0  | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
-| 11.0.5655.0   | 2011.110.5655.0  | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
-| 11.0.6537.0   | 2011.110.6537.0  | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
-| 11.0.5649.0   | 2011.110.5649.0  | [3152637 Cumulative update package 12 for SQL Server 2012 SP2]                                                                         | 2016-05-16   |
-| 11.0.6523.0   | 2011.110.6523.0  | [3137746 Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
-| 11.0.5646.2   | 2011.110.5646.2  | [3137745 Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
-| 11.0.6518.0   | 2011.110.6518.0  | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
-| 11.0.5644.2   | 2011.110.5644.2  | [3120313 Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
-| 11.3.6020.0   | 2011.110.6020.0  | [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
-| 11.0.5641.0   | 2011.110.5641.0  | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-16   |
-| 11.0.5636     | 2011.110.5636.3  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
-| 11.0.5634     | 2011.110.5634.0  | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
-| 11.0.5629     | 2011.110.5629.0  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
-| 11.0.5623     | 2011.110.5623.0  | [3072100 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]                                                         | 2015-07-20   |
-| 11.0.5613     | 2011.110.5613.0  | [3045319 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]                           | 2015-07-14   |
-| 11.0.5592     | 2011.110.5592.0  | [3052468 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]                                                         | 2015-05-19   |
-| 11.0.5582     | 2011.110.5582.0  | [3037255 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]                                                         | 2015-03-16   |
-| 11.0.5571     | 2011.110.5571.0  | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                          | 2015-05-15   |
-| 11.0.5569     | 2011.110.5569.0  | [3007556 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]                                                         | 2015-01-20   |
-| 11.0.5556     | 2011.110.5556.0  | [3002049 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]                                                         | 2014-11-17   |
-| 11.0.5548     | 2011.110.5548.0  | [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]                                                         | 2014-09-15   |
-| 11.0.5532     | 2011.110.5532.0  | [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]                                                         | 2014-07-24   |
-| 11.0.5522     | 2011.110.5522.0  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]         | 2014-06-20   |
-| 11.0.5343     | 2011.110.5343.0  | [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]                           | 2015-07-14   |
-| 11.0.5058     | 2011.110.5058.0  | [SQL Server 2012 Service Pack 2 (SP2)]                                                                                                 | 2014-06-10   |
-| 11.0.3513     | 2011.110.3513.0  | [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]                                      | 2015-07-14   |
-| 11.0.3492     | 2011.110.3492.0  | [3052476 Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]                                                       | 2015-05-18   |
-| 11.0.3487     | 2011.110.3487.0  | [3038001 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]                                                       | 2015-03-16   |
-| 11.0.3486     | 2011.110.3486.0  | [3023636 Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]                                                       | 2015-01-19   |
-| 11.0.3460     | 2011.110.3460.0  | [2977325 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]                                        | 2014-08-12   |
-| 11.0.3482     | 2011.110.3482.0  | [3002044 Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]                                                       | 2014-11-17   |
-| 11.0.3470     | 2011.110.3470.0  | [2991533 Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]                                                       | 2014-09-15   |
-| 11.0.3449     | 2011.110.3449.0  | [2975396 Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]                                                       | 2014-07-21   |
-| 11.0.3437     | 2011.110.3437.0  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]         | 2014-06-10   |
-| 11.0.3431     | 2011.110.3431.0  | [2954099 Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]                                                       | 2014-05-19   |
-| 11.0.3412     | 2011.110.3412.0  | [2931078 Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]                                                         | 2014-03-18   |
-| 11.0.3401     | 2011.110.3401.0  | [2917531 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]                                                         | 2014-01-20   |
-| 11.0.3393     | 2011.110.3393.0  | [2894115 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]                                                         | 2013-11-18   |
-| 11.0.3381     | 2011.110.3381.0  | [2874879 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]                                                         | 2013-09-16   |
-| 11.0.3373     | 2011.110.3373.0  | [2861107 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]                                                         | 2013-07-16   |
-| 11.0.3368     | 2011.110.3368.0  | [2833645 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]                                                         | 2013-05-31   |
-| 11.0.3350     | 2011.110.3350.0  | [2832017 FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1] | 2013-04-17   |
-| 11.0.3349     | 2011.110.3349.0  | [2812412 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]                                                         | 2013-03-18   |
-| 11.0.3339     | 2011.110.3339.0  | [2790947 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]                                                         | 2013-01-25   |
-| 11.0.3335     | 2011.110.3335.0  | [2800050 FIX: Component installation process fails after you install SQL Server 2012 SP1]                                              | 2013-01-14   |
-| 11.0.3321     | 2011.110.3321.0  | [2765331 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]                                                         | 2012-11-20   |
-| 11.0.3156     | 2011.110.3156.0  | [3045318 MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]                                      | 2015-07-14   |
-| 11.0.3153     | 2011.110.3153.0  | [2977326 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]                                        | 2014-08-12   |
-| 11.0.3128     | 2011.110.3128.0  | [2793634 Windows Installer starts repeatedly after you install SQL Server 2012 SP1]                                                    | 2013-01-03   |
-| 11.0.3000     | 2011.110.3000.0  | [SQL Server 2012 Service Pack 1 (SP1)]                                                                                                 | 2012-11-06   |
-| 11.0.2845     | 2011.110.2845.0  | SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                                    | 2012-09-20   |
-| 11.0.2809     | 2011.110.2809.24 | SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                                    | 2012-07-05   |
-| 11.0.2424     | 2011.110.2424.0  | [2908007 Cumulative update package 11 (CU11) for SQL Server 2012]                                                                      | 2013-12-17   |
-| 11.0.2420     | 2011.110.2420.0  | [2891666 Cumulative update package 10 (CU10) for SQL Server 2012]                                                                      | 2013-10-21   |
-| 11.0.2419     | 2011.110.2419.0  | [2867319 Cumulative update package 9 (CU9) for SQL Server 2012]                                                                        | 2013-08-21   |
-| 11.0.2410     | 2011.110.2410.0  | [2844205 Cumulative update package 8 (CU8) for SQL Server 2012]                                                                        | 2013-06-18   |
-| 11.0.2405     | 2011.110.2405.0  | [2823247 Cumulative update package 7 (CU7) for SQL Server 2012]                                                                        | 2013-04-15   |
-| 11.0.2401     | 2011.110.2401.0  | [2728897 Cumulative update package 6 (CU6) for SQL Server 2012]                                                                        | 2013-02-18   |
-| 11.0.2395     | 2011.110.2395.0  | [2777772 Cumulative update package 5 (CU5) for SQL Server 2012]                                                                        | 2012-12-18   |
-| 11.0.9000     | 2011.110.9000.5  | Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                               | 2012-11-27   |
-| 11.0.2383     | 2011.110.2383.0  | [2758687 Cumulative update package 4 (CU4) for SQL Server 2012]                                                                        | 2012-10-18   |
-| 11.0.2376     | 2011.110.2376.0  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
-| 11.0.2332     | 2011.110.2332.0  | [2723749 Cumulative update package 3 (CU3) for SQL Server 2012]                                                                        | 2012-08-29   |
-| 11.0.2325     | 2011.110.2325.0  | [2703275 Cumulative update package 2 (CU2) for SQL Server 2012]                                                                        | 2012-06-18   |
-| 11.0.2316     | 2011.110.2316.0  | [2679368 Cumulative update package 1 (CU1) for SQL Server 2012]                                                                        | 2012-04-12   |
-| 11.0.2218     | 2011.110.2218.0  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
-| 11.0.2214     | 2011.110.2214.0  | 2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence                                                          | 2012-04-06   |
-| 11.0.2100     | 2011.110.2100.60 | SQL Server 2012 RTM                                                                                                                    | 2012-03-06   |
-| 11.0.1913     | 2011.110.1913.37 | Microsoft SQL Server 2012 Release Candidate 1 (RC1)                                                                                    | 2011-12-16   |
-| 11.0.1750     | 2011.110.1750.32 | Microsoft SQL Server 2012 Release Candidate 0 (RC0)                                                                                    | 2011-11-17   |
-| 11.0.1440     | 2010.110.1440.19 | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
-| 11.0.1103     | 2010.110.1103.9  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
+| Build         | File version     | Branch | Type | KB / Description                                                                                                                       | Release Date |
+|---------------|------------------|--------|------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 11.0.6594.0   | 2011.110.6594.0  | SP3    | CU   | [4013104 Cumulative Update 8 for SQL Server 2012 SP3]                                                                                  | 2017-03-21   |
+| 11.0.6579.0   | 2011.110.6579.0  | SP3    | CU   | [3205051 Cumulative Update Package 7 for SQL Server 2012 SP3]                                                                          | 2017-01-18   |
+| 11.0.6567.0   | 2011.110.6567.0  | SP3    | COD  | [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.6544.0   | 2011.110.6544.0  | SP3    | CU   | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
+| 11.0.6540.0   | 2011.110.6540.0  | SP3    | CU   | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
+| 11.0.6537.0   | 2011.110.6537.0  | SP3    | CU   | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
+| 11.0.6523.0   | 2011.110.6523.0  | SP3    | CU   | [3137746 Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
+| 11.0.6518.0   | 2011.110.6518.0  | SP3    | CU   | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
+| 11.0.6248.0   | 2011.110.6248.0  | SP3    | GDR  | [3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.6216.27  | 2011.110.6216.27 | SP3    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]                                                                                  | 2016-01-27   |
+| 11.3.6020.0   | 2011.110.6020.0  | SP3    | SP   | [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
+| 11.0.5678.0   | 2011.110.5678.0  | SP2    | CU   | [3205054 Cumulative Update 16 for SQL Server 2012 SP2]                                                                                 | 2017-01-18   |
+| 11.0.5676.0   | 2011.110.5676.0  | SP2    | CU   | [3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]                                                       | 2016-11-17   |
+| 11.0.5676.0   | 2011.110.5676.0  | SP2    | COD  | [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.5657.0   | 2011.110.5657.0  | SP2    | CU   | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
+| 11.0.5655.0   | 2011.110.5655.0  | SP2    | CU   | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
+| 11.0.5649.0   | 2011.110.5649.0  | SP2    | CU   | [3152637 Cumulative update package 12 for SQL Server 2012 SP2]                                                                         | 2016-05-16   |
+| 11.0.5646.2   | 2011.110.5646.2  | SP2    | CU   | [3137745 Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
+| 11.0.5644.2   | 2011.110.5644.2  | SP2    | CU   | [3120313 Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
+| 11.0.5641.0   | 2011.110.5641.0  | SP2    | CU   | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-16   |
+| 11.0.5636     | 2011.110.5636.3  | SP2    | COD  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
+| 11.0.5634     | 2011.110.5634.0  | SP2    | CU   | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
+| 11.0.5629     | 2011.110.5629.0  | SP2    | COD  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
+| 11.0.5623     | 2011.110.5623.0  | SP2    | CU   | [3072100 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]                                                         | 2015-07-20   |
+| 11.0.5613     | 2011.110.5613.0  | SP2    | COD  | [3045319 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]                           | 2015-07-14   |
+| 11.0.5592     | 2011.110.5592.0  | SP2    | CU   | [3052468 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]                                                         | 2015-05-19   |
+| 11.0.5582     | 2011.110.5582.0  | SP2    | CU   | [3037255 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]                                                         | 2015-03-16   |
+| 11.0.5571     | 2011.110.5571.0  | SP2    | COD  | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                          | 2015-05-15   |
+| 11.0.5569     | 2011.110.5569.0  | SP2    | CU   | [3007556 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]                                                         | 2015-01-20   |
+| 11.0.5556     | 2011.110.5556.0  | SP2    | CU   | [3002049 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]                                                         | 2014-11-17   |
+| 11.0.5548     | 2011.110.5548.0  | SP2    | CU   | [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]                                                         | 2014-09-15   |
+| 11.0.5532     | 2011.110.5532.0  | SP2    | CU   | [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]                                                         | 2014-07-24   |
+| 11.0.5522     | 2011.110.5522.0  | SP2    | COD  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]         | 2014-06-20   |
+| 11.0.5388     | 2012.110.5388.0  | SP2    | GDR  | [3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.5352     | 2012.110.5352.0  | SP2    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]                                                                                  | 2016-01-27   |
+| 11.0.5343     | 2011.110.5343.0  | SP2    | GDR  | [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]                           | 2015-07-14   |
+| 11.0.5058     | 2011.110.5058.0  | SP2    | SP   | [SQL Server 2012 Service Pack 2 (SP2)]                                                                                                 | 2014-06-10   |
+| 11.0.3513     | 2011.110.3513.0  | SP1    | QFE  | [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]                                      | 2015-07-14   |
+| 11.0.3492     | 2011.110.3492.0  | SP1    | CU   | [3052476 Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]                                                       | 2015-05-18   |
+| 11.0.3487     | 2011.110.3487.0  | SP1    | CU   | [3038001 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]                                                       | 2015-03-16   |
+| 11.0.3486     | 2011.110.3486.0  | SP1    | QFE  | [3023636 Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]                                                       | 2015-01-19   |
+| 11.0.3460     | 2011.110.3460.0  | SP1    | COD  | [2977325 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]                                        | 2014-08-12   |
+| 11.0.3482     | 2011.110.3482.0  | SP1    | CU   | [3002044 Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]                                                       | 2014-11-17   |
+| 11.0.3470     | 2011.110.3470.0  | SP1    | CU   | [2991533 Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]                                                       | 2014-09-15   |
+| 11.0.3449     | 2011.110.3449.0  | SP1    | CU   | [2975396 Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]                                                       | 2014-07-21   |
+| 11.0.3437     | 2011.110.3437.0  | SP1    | COD  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]         | 2014-06-10   |
+| 11.0.3431     | 2011.110.3431.0  | SP1    | CU   | [2954099 Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]                                                       | 2014-05-19   |
+| 11.0.3412     | 2011.110.3412.0  | SP1    | CU   | [2931078 Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]                                                         | 2014-03-18   |
+| 11.0.3401     | 2011.110.3401.0  | SP1    | CU   | [2917531 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]                                                         | 2014-01-20   |
+| 11.0.3393     | 2011.110.3393.0  | SP1    | CU   | [2894115 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]                                                         | 2013-11-18   |
+| 11.0.3381     | 2011.110.3381.0  | SP1    | CU   | [2874879 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]                                                         | 2013-09-16   |
+| 11.0.3373     | 2011.110.3373.0  | SP1    | CU   | [2861107 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]                                                         | 2013-07-16   |
+| 11.0.3368     | 2011.110.3368.0  | SP1    | CU   | [2833645 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]                                                         | 2013-05-31   |
+| 11.0.3350     | 2011.110.3350.0  | SP1    | COD  | [2832017 FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1] | 2013-04-17   |
+| 11.0.3349     | 2011.110.3349.0  | SP1    | CU   | [2812412 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]                                                         | 2013-03-18   |
+| 11.0.3339     | 2011.110.3339.0  | SP1    | CU   | [2790947 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]                                                         | 2013-01-25   |
+| 11.0.3335     | 2011.110.3335.0  | SP1    | COD  | [2800050 FIX: Component installation process fails after you install SQL Server 2012 SP1]                                              | 2013-01-14   |
+| 11.0.3321     | 2011.110.3321.0  | SP1    | CU   | [2765331 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]                                                         | 2012-11-20   |
+| 11.0.3156     | 2011.110.3156.0  | SP1    | COD  | [3045318 MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]                                      | 2015-07-14   |
+| 11.0.3153     | 2011.110.3153.0  | SP1    | GDR  | [2977326 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]                                        | 2014-08-12   |
+| 11.0.3128     | 2011.110.3128.0  | SP1    | COD  | [2793634 Windows Installer starts repeatedly after you install SQL Server 2012 SP1]                                                    | 2013-01-03   |
+| 11.0.3000     | 2011.110.3000.0  | SP1    | SP   | [SQL Server 2012 Service Pack 1 (SP1)]                                                                                                 | 2012-11-06   |
+| 11.0.2845     | 2011.110.2845.0  | SP1    | CTP  | SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                                    | 2012-09-20   |
+| 11.0.2809     | 2011.110.2809.24 | SP1    | CTP  | SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                                    | 2012-07-05   |
+| 11.0.2424     | 2011.110.2424.0  | RTM    | CU   | [2908007 Cumulative update package 11 (CU11) for SQL Server 2012]                                                                      | 2013-12-17   |
+| 11.0.2420     | 2011.110.2420.0  | RTM    | CU   | [2891666 Cumulative update package 10 (CU10) for SQL Server 2012]                                                                      | 2013-10-21   |
+| 11.0.2419     | 2011.110.2419.0  | RTM    | CU   | [2867319 Cumulative update package 9 (CU9) for SQL Server 2012]                                                                        | 2013-08-21   |
+| 11.0.2410     | 2011.110.2410.0  | RTM    | CU   | [2844205 Cumulative update package 8 (CU8) for SQL Server 2012]                                                                        | 2013-06-18   |
+| 11.0.2405     | 2011.110.2405.0  | RTM    | CU   | [2823247 Cumulative update package 7 (CU7) for SQL Server 2012]                                                                        | 2013-04-15   |
+| 11.0.2401     | 2011.110.2401.0  | RTM    | CU   | [2728897 Cumulative update package 6 (CU6) for SQL Server 2012]                                                                        | 2013-02-18   |
+| 11.0.2395     | 2011.110.2395.0  | RTM    | CU   | [2777772 Cumulative update package 5 (CU5) for SQL Server 2012]                                                                        | 2012-12-18   |
+| 11.0.9000     | 2011.110.9000.5  | RTM    | CTP  | Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                               | 2012-11-27   |
+| 11.0.2383     | 2011.110.2383.0  | RTM    | CU   | [2758687 Cumulative update package 4 (CU4) for SQL Server 2012]                                                                        | 2012-10-18   |
+| 11.0.2376     | 2011.110.2376.0  | RTM    | COD  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
+| 11.0.2332     | 2011.110.2332.0  | RTM    | CU   | [2723749 Cumulative update package 3 (CU3) for SQL Server 2012]                                                                        | 2012-08-29   |
+| 11.0.2325     | 2011.110.2325.0  | RTM    | CU   | [2703275 Cumulative update package 2 (CU2) for SQL Server 2012]                                                                        | 2012-06-18   |
+| 11.0.2316     | 2011.110.2316.0  | RTM    | CU   | [2679368 Cumulative update package 1 (CU1) for SQL Server 2012]                                                                        | 2012-04-12   |
+| 11.0.2218     | 2011.110.2218.0  | RTM    | COD  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
+| 11.0.2214     | 2011.110.2214.0  | RTM    | COD  | 2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence                                                          | 2012-04-06   |
+| 11.0.2100     | 2011.110.2100.60 | RTM    | RTM  | SQL Server 2012 RTM                                                                                                                    | 2012-03-06   |
+| 11.0.1913     | 2011.110.1913.37 | RC     | RC   | Microsoft SQL Server 2012 Release Candidate 1 (RC1)                                                                                    | 2011-12-16   |
+| 11.0.1750     | 2011.110.1750.32 | RC     | RC   | Microsoft SQL Server 2012 Release Candidate 0 (RC0)                                                                                    | 2011-11-17   |
+| 11.0.1440     | 2010.110.1440.19 | CTP    | CTP  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
+| 11.0.1103     | 2010.110.1103.9  | CTP    | CTP  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
 
+[4013104 Cumulative Update 8 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/help/4013104/cumulative-update-8-for-sql-server-2012-sp3
+[3205051 Cumulative Update Package 7 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/help/3205051/cumulative-update-7-for-sql-server-2012-sp3
 [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194724
 [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194725
 [3180914 Cumulative Update 14 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3180914
@@ -698,8 +767,12 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 [3137746 Cumulative update package 2 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3137746
 [3137745 Cumulative update package 11 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3137745
 [3123299 Cumulative update package 1 for SQL Server 2012 SP3]:https://support.microsoft.com/en-us/kb/3123299
+[3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]:https://support.microsoft.com/en-us/kb/3205416
+[3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194721
+[3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]:https://support.microsoft.com/en-us/kb/3135244
 [3120313 Cumulative update package 10 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3120313
 [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]:https://support.microsoft.com/en-us/kb/3072779
+[3205054 Cumulative Update 16 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/help/3205054/cumulative-update-16-for-sql-server-2012-sp2
 [3098512 Cumulative update package 9 for SQL Server 2012 SP2]:https://support.microsoft.com/en-us/kb/3098512
 [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]:https://support.microsoft.com/en-us/kb/3097636
 [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3082561
@@ -714,6 +787,8 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2983175
 [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2976982
 [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]:http://support.microsoft.com/kb/2969896
+[3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194719
+[3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]:https://support.microsoft.com/en-us/kb/3135244
 [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]:https://support.microsoft.com/en-us/kb/3045321
 [SQL Server 2012 Service Pack 2 (SP2)]:http://www.microsoft.com/en-us/download/details.aspx?id=43340
 [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]:https://support.microsoft.com/en-us/kb/3045317
@@ -829,7 +904,7 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 | 10.50.1720    | 2009.100.1720.0  | [2072493 Cumulative update package 2 (CU2) for SQL Server 2008 R2]                                                                                                                            | 2010-06-25   |
 | 10.50.1702    | 2009.100.1702.0  | [981355 Cumulative update package 1 (CU1) for SQL Server 2008 R2]                                                                                                                             | 2010-05-18   |
 | 10.50.1617    | 2009.100.1617.0  | [2494088 MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]                                                                                              | 2011-06-14   |
-| 10.50.1600    | 2009.100.1600.1  | SQL Server 2008 R2 RTM                                                                                                                                                                        | 2010-04-21   |
+| 10.50.1600.1  | 2009.100.1600.1  | SQL Server 2008 R2 RTM                                                                                                                                                                        | 2010-04-21   |
 | 10.50.1352    | 2009.100.1352.12 | Microsoft SQL Server 2008 R2 November Community Technology Preview (CTP)                                                                                                                      | 2009-11-12   |
 | 10.50.1092    | 2009.100.1092.20 | Microsoft SQL Server 2008 R2 August Community Technology Preview (CTP)                                                                                                                        | 2009-06-30   |
 
@@ -2235,143 +2310,91 @@ Microsoft SQL Server 2014 (SP2-CU2-GDR) (KB3194718) – 12.0.5532.0 (X64)
 ## Microsoft SQL Server 7.0 Builds
 <a id="microsoft-sql-server-70-builds"></a>
 
-| Build     | KB / Description                                                                                                                                                      | Release Date |
-|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                                | 2008-07-08   |
-| 7.00.1149 | [867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]                         | 2006-06-01   |
-| 7.00.1143 | [830233 New Connection Events Are Not Recorded in SQL Server Traces]                                                                                                  | 2005-10-25   |
-| 7.00.1143 | [829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly] | 2005-10-25   |
-| 7.00.1097 | [822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion]                                                                         | 2005-10-25   |
-| 7.00.1094 | [821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4]                                                                                                   | 2006-05-11   |
-| 7.00.1094 | [815495 MS03-031: Cumulative security patch for SQL Server]                                                                                                           | 2006-05-10   |
-| 7.00.1092 | [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]                                                                                   | 2005-10-25   |
-| 7.00.1087 | [814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation]                                                                   | 2005-09-27   |
-| 7.00.1079 | [329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]                                                                                           | 2005-10-11   |
-| 7.00.1078 | [327068 INF: SQL Server 7.0 Security Update for Service Pack 4]                                                                                                       | 2005-09-27   |
-| 7.00.1077 | [316333 SQL Server 2000 Security Update for Service Pack 2]                                                                                                           | 2006-11-24   |
-| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                                 | 2002-04-26   |
-| 7.00.1033 | [324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]                                                              | 2005-10-12   |
-| 7.00.1026 | [319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]                                                  | 2005-10-18   |
-| 7.00.1004 | [304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]                                                                                          | 2004-08-05   |
-| 7.00.996  | [299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have]                                                                | 2004-08-09   |
-| 7.00.978  | [285870 FIX: Update With Self Join May Update Incorrect Number Of Rows]                                                                                               | 2003-10-28   |
-| 7.00.977  | [284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]                                                    | 2002-04-25   |
-| 7.00.970  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
-| 7.00.970  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
-| 7.00.961  | [SQL Server 7.0 Service Pack 3 (SP3)]                                                                                                                                 | 2000-12-15   |
-| 7.00.921  | [283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]                                                                          | 2002-10-15   |
-| 7.00.919  | [282243 FIX: Incorrect Results with Join of Column Converted to Binary]                                                                                               | 2003-10-29   |
-| 7.00.918  | [280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]                                                                                        | 2004-06-29   |
-| 7.00.917  | [279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure]                                                                                          | 2005-09-26   |
-| 7.00.910  | [275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221]                                                                                               | 2003-10-31   |
-| 7.00.905  | [274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624]                                                                         | 2004-07-15   |
-| 7.00.889  | [243741 FIX: Replication Initialize Method Causes Handle Leak on Failure]                                                                                             | 2005-10-05   |
-| 7.00.879  | [281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]                                                                     | 2006-03-14   |
-| 7.00.857  | [260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]                                                                      | 2006-03-14   |
-| 7.00.843  | [266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]                                           | 2006-03-14   |
-| 7.00.842  | [SQL Server 7.0 Service Pack 2 (SP2)]                                                                                                                                 | 2000-03-20   |
-| 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                      |              |
-| 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                              |              |
-| 7.00.776  | [258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]                                                               | 2006-03-14   |
-| 7.00.770  | [252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]                                                                                                | 2006-03-14   |
-| 7.00.745  | [253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]                                                         | 2005-10-07   |
-| 7.00.722  | [239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]                                                                                       | 2005-10-05   |
-| 7.00.699  | [SQL Server 7.0 Service Pack 1 (SP1)]                                                                                                                                 | 1999-07-01   |
-| 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                              |              |
-| 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                             |              |
-| 7.00.662  | [232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]                                                                                                | 2005-10-05   |
-| 7.00.658  | [244763 FIX: Access Violation Under High Cursor Stress]                                                                                                               | 2006-03-14   |
-| 7.00.657  | [229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]                                                                                   | 2005-10-05   |
-| 7.00.643  | [220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]                                                                                     | 2005-10-05   |
-| 7.00.623  | SQL Server 7.0 RTM (Gold, no SP)                                                                                                                                      | 1998-11-27   |
-| 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                    |              |
-| 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                                 |              |
+| Build     | KB / Description                                                                                                                                                    | Release Date |
+|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 7.00.1152 | [948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]                                                                              | 2008-07-08   |
+| 7.00.1149 | 867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0                         | 2006-06-01   |
+| 7.00.1143 | 830233 New Connection Events Are Not Recorded in SQL Server Traces                                                                                                  | 2005-10-25   |
+| 7.00.1143 | 829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly | 2005-10-25   |
+| 7.00.1097 | 822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion                                                                         | 2005-10-25   |
+| 7.00.1094 | 821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4                                                                                                   | 2006-05-11   |
+| 7.00.1094 | 815495 MS03-031: Cumulative security patch for SQL Server                                                                                                           | 2006-05-10   |
+| 7.00.1092 | [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]                                                                                 | 2005-10-25   |
+| 7.00.1087 | 814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation                                                                   | 2005-09-27   |
+| 7.00.1079 | 329499 FIX: Replication Removed from Database After Restore WITH RECOVERY                                                                                           | 2005-10-11   |
+| 7.00.1078 | 327068 INF: SQL Server 7.0 Security Update for Service Pack 4                                                                                                       | 2005-09-27   |
+| 7.00.1077 | 316333 SQL Server 2000 Security Update for Service Pack 2                                                                                                           | 2006-11-24   |
+| 7.00.1063 | [SQL Server 7.0 Service Pack 4 (SP4)]                                                                                                                               | 2002-04-26   |
+| 7.00.1033 | 324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions                                                              | 2005-10-12   |
+| 7.00.1026 | 319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED                                                  | 2005-10-18   |
+| 7.00.1004 | 304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers                                                                                          | 2004-08-05   |
+| 7.00.996  | 299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have                                                                | 2004-08-09   |
+| 7.00.978  | 285870 FIX: Update With Self Join May Update Incorrect Number Of Rows                                                                                               | 2003-10-28   |
+| 7.00.977  | 284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3                                                    | 2002-04-25   |
+| 7.00.970  | 283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled                                                                          | 2002-10-15   |
+| 7.00.970  | 282243 FIX: Incorrect Results with Join of Column Converted to Binary                                                                                               | 2003-10-29   |
+| 7.00.961  | SQL Server 7.0 Service Pack 3 (SP3)                                                                                                                                 | 2000-12-15   |
+| 7.00.921  | 283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled                                                                          | 2002-10-15   |
+| 7.00.919  | 282243 FIX: Incorrect Results with Join of Column Converted to Binary                                                                                               | 2003-10-29   |
+| 7.00.918  | 280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures                                                                                        | 2004-06-29   |
+| 7.00.917  | 279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure                                                                                          | 2005-09-26   |
+| 7.00.910  | 275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221                                                                                               | 2003-10-31   |
+| 7.00.905  | 274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624                                                                         | 2004-07-15   |
+| 7.00.889  | 243741 FIX: Replication Initialize Method Causes Handle Leak on Failure                                                                                             | 2005-10-05   |
+| 7.00.879  | 281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349                                                                     | 2006-03-14   |
+| 7.00.857  | 260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data                                                                      | 2006-03-14   |
+| 7.00.843  | 266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures                                           | 2006-03-14   |
+| 7.00.842  | SQL Server 7.0 Service Pack 2 (SP2)                                                                                                                                 | 2000-03-20   |
+| 7.00.839  | SQL Server 7.0 Service Pack 2 (SP2) Unidentified                                                                                                                    |              |
+| 7.00.835  | SQL Server 7.0 Service Pack 2 (SP2) Beta                                                                                                                            |              |
+| 7.00.776  | 258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion                                                               | 2006-03-14   |
+| 7.00.770  | 252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table                                                                                                | 2006-03-14   |
+| 7.00.745  | 253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak                                                         | 2005-10-07   |
+| 7.00.722  | 239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers                                                                                       | 2005-10-05   |
+| 7.00.699  | SQL Server 7.0 Service Pack 1 (SP1)                                                                                                                                 | 1999-07-01   |
+| 7.00.689  | SQL Server 7.0 Service Pack 1 (SP1) Beta                                                                                                                            |              |
+| 7.00.677  | SQL Server 7.0 MSDE from Office 2000 disc                                                                                                                           |              |
+| 7.00.662  | 232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile                                                                                                | 2005-10-05   |
+| 7.00.658  | 244763 FIX: Access Violation Under High Cursor Stress                                                                                                               | 2006-03-14   |
+| 7.00.657  | 229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images                                                                                   | 2005-10-05   |
+| 7.00.643  | 220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters                                                                                     | 2005-10-05   |
+| 7.00.623  | SQL Server 7.0 RTM (Gold, no SP)                                                                                                                                    | 1998-11-27   |
+| 7.00.583  | SQL Server 7.0 RC1                                                                                                                                                  |              |
+| 7.00.517  | SQL Server 7.0 Beta 3                                                                                                                                               |              |
 
-[948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:http://support.microsoft.com/kb/948113/
-[867763 FIX: An access violation exception may occur when you run a SELECT statement that contains complex JOIN operations in SQL Server 7.0]:http://support.microsoft.com/kb/867763/
-[830233 New Connection Events Are Not Recorded in SQL Server Traces]:http://support.microsoft.com/kb/830233/
-[829015 FIX: An attention signal that is sent from a SQL Server client application because of a query time-out may cause the SQL Server service to quit unexpectedly]:http://support.microsoft.com/kb/829015/
-[822756 A Complex UPDATE Statement That Uses an Index Spool Operation May Cause an Assertion]:http://support.microsoft.com/kb/822756/
-[821279 MS03-031: Security patch for SQL Server 7.0 Service Pack 4]:http://support.microsoft.com/kb/821279/
-[815495 MS03-031: Cumulative security patch for SQL Server]:http://support.microsoft.com/kb/815495/
+[948113 MS08-040: Description of the security update for SQL Server 7.0: July 8, 2008]:https://support.microsoft.com/ru-ru/help/941203/ms08-040-vulnerabilities-in-microsoft-sql-server-could-allow-elevation-of-privilege
 [820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]:http://support.microsoft.com/kb/820788/
-[814693 FIX: SQL Server 7.0 Scheduler May Periodically Stop Responding During Large Sort Operation]:http://support.microsoft.com/kb/814693/
-[329499 FIX: Replication Removed from Database After Restore WITH RECOVERY]:http://support.microsoft.com/kb/329499/
-[327068 INF: SQL Server 7.0 Security Update for Service Pack 4]:http://support.microsoft.com/kb/327068/
-[316333 SQL Server 2000 Security Update for Service Pack 2]:http://support.microsoft.com/kb/316333/
 [SQL Server 7.0 Service Pack 4 (SP4)]:https://www.microsoft.com/en-us/download/details.aspx?id=7959
-[324469 FIX: Error message 9004 may occur when you restore a log that does not contain any transactions]:http://support.microsoft.com/kb/324469/
-[319851 FIX: Assertion and Error Message 3314 Occurs If You Try to Roll Back a Text Operation with READ UNCOMMITTED]:http://support.microsoft.com/kb/319851/
-[304851 FIX: SQL Server Text Formatting Functions Contain Unchecked Buffers]:http://support.microsoft.com/kb/304851/
-[299717 FIX: Query Method Used to Access Data May Allow Rights that the Login Might Not Normally Have]:http://support.microsoft.com/kb/299717/
-[285870 FIX: Update With Self Join May Update Incorrect Number Of Rows]:http://support.microsoft.com/kb/285870/
-[284351 FIX: SQL Server Profiler and SQL Server Agent Alerts May Fail to Work After Installing SQL Server 7.0 SP3]:http://support.microsoft.com/kb/284351/
-[283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
-[282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
-[SQL Server 7.0 Service Pack 3 (SP3)]:https://support.microsoft.com/en-us/kb/274799
-[283837 FIX: SQL Server May Generate Nested Query For Linked Server When Option Is Disabled]:http://support.microsoft.com/kb/283837/
-[282243 FIX: Incorrect Results with Join of Column Converted to Binary]:http://support.microsoft.com/kb/282243/
-[280380 FIX: Buffer Overflow Exploit Possible with Extended Stored Procedures]:http://support.microsoft.com/kb/280380/
-[279180 FIX: Bcp.exe with Long Query String Can Result in Assertion Failure]:http://support.microsoft.com/kb/279180/
-[275901 FIX: SQL RPC That Raises Error Will Mask @@ERROR with Msg 7221]:http://support.microsoft.com/kb/275901/
-[274266 FIX: Data Modification Query with a Distinct Subquery on a View May Cause Error 3624]:http://support.microsoft.com/kb/274266/
-[243741 FIX: Replication Initialize Method Causes Handle Leak on Failure]:http://support.microsoft.com/kb/243741/
-[281185 FIX: Linked Index Server Query Through OLE DB Provider with OR Clause Reports Error 7349]:https://support.microsoft.com/en-us/kb/281185
-[260346 FIX: Transactional Publications with a Filter on Numeric Columns Fail to Replicate Data]:https://support.microsoft.com/en-us/kb/260346
-[266766 FIX: Temporary Stored Procedures in SA Owned Databases May Bypass Permission Checks When You Run Stored Procedures]:https://support.microsoft.com/en-us/kb/266766
-[SQL Server 7.0 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/254561
-[258087 FIX: Non-Admin User That Executes Batch While Server Shuts Down May Encounter Retail Assertion]:https://support.microsoft.com/en-us/kb/258087
-[252905 FIX: Slow Compile Time on Complex Joins with Unfiltered Table]:http://support.microsoft.com/kb/252905/
-[253738 FIX: SQL Server Components that Access the Registry in a Cluster Environment May Cause a Memory Leak]:https://support.microsoft.com/en-us/kb/253738
-[239458 FIX: Replication: Problems Mapping Characters to DB2 OLEDB Subscribers]:https://support.microsoft.com/en-us/kb/239458
-[SQL Server 7.0 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/232570
-[232707 FIX: Query with Complex View Hierarchy May Be Slow to Compile]:https://support.microsoft.com/en-us/kb/232707
-[244763 FIX: Access Violation Under High Cursor Stress]:https://support.microsoft.com/en-us/kb/244763/
-[229875 FIX: Unable to Perform Automated Installation of SQL 7.0 Using File Images]:https://support.microsoft.com/en-us/kb/229875/
-[220156 FIX: SQL Cluster Install Fails When SVS Name Contains Special Characters]:https://support.microsoft.com/en-us/kb/220156
 
 
 ## Microsoft SQL Server 6.5 Builds
 <a id="microsoft-sql-server-65-builds"></a>
 
-| Build    | KB / Description                                                                                                    | Release Date |
-|----------|---------------------------------------------------------------------------------------------------------------------|--------------|
-| 6.50.480 | [238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation] | 2005-10-07   |
-| 6.50.479 | [273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]                                                       | 2000-09-12   |
-| 6.50.469 | [249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]                                    |              |
-| 6.50.465 | [250493 FIX: Memory Leak with xp_sendmail Using Attachments]                                                        |              |
-| 6.50.464 | [275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]                                            | 1999-11-08   |
-| 6.50.462 | [238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]                                                   |              |
-| 6.50.451 | [236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]                            |              |
-| 6.50.444 | [240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]                                             |              |
-| 6.50.441 | [234679 FIX: SNMP Extended Stored Procedures May Leak Memory]                                                       |              |
-| 6.50.422 | [187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]                     |              |
-| 6.50.416 | [197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]                                                            | 1998-12-24   |
-| 6.50.415 | Microsoft SQL Server 6.5 Service Pack 5 (SP5)                                                                       |              |
-| 6.50.339 | Y2K hotfix                                                                                                          |              |
-| 6.50.297 | "Site Server 3.0 Commerce Edition" hotfix                                                                           |              |
-| 6.50.281 | 178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)                                                                |              |
-| 6.50.259 | 6.5 as included with "Small Business Server" only                                                                   |              |
-| 6.50.258 | Microsoft SQL Server 6.5 Service Pack 3a (SP3a)                                                                     |              |
-| 6.50.252 | Microsoft SQL Server 6.5 Service Pack 3 (SP3)                                                                       |              |
-| 6.50.240 | [160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]                                                              |              |
-| 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                              |              |
-| 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                        | 1996-06-30   |
+| Build    | KB / Description                                                                                                  | Release Date |
+|----------|-------------------------------------------------------------------------------------------------------------------|--------------|
+| 6.50.480 | 238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation | 2005-10-07   |
+| 6.50.479 | 273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update                                                       | 2000-09-12   |
+| 6.50.469 | 249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process                                    |              |
+| 6.50.465 | 250493 FIX: Memory Leak with xp_sendmail Using Attachments                                                        |              |
+| 6.50.464 | 275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC                                            | 1999-11-08   |
+| 6.50.462 | 238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV                                                   |              |
+| 6.50.451 | 236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding                            |              |
+| 6.50.444 | 240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail                                             |              |
+| 6.50.441 | 234679 FIX: SNMP Extended Stored Procedures May Leak Memory                                                       |              |
+| 6.50.422 | 187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation                     |              |
+| 6.50.416 | 197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)                                                            | 1998-12-24   |
+| 6.50.415 | Microsoft SQL Server 6.5 Service Pack 5 (SP5)                                                                     |              |
+| 6.50.339 | Y2K hotfix                                                                                                        |              |
+| 6.50.297 | "Site Server 3.0 Commerce Edition" hotfix                                                                         |              |
+| 6.50.281 | 178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)                                                              |              |
+| 6.50.259 | 6.5 as included with "Small Business Server" only                                                                 |              |
+| 6.50.258 | Microsoft SQL Server 6.5 Service Pack 3a (SP3a)                                                                   |              |
+| 6.50.252 | Microsoft SQL Server 6.5 Service Pack 3 (SP3)                                                                     |              |
+| 6.50.240 | 160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)                                                              |              |
+| 6.50.213 | [153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]                                                            |              |
+| 6.50.201 | Microsoft SQL Server 6.5 RTM                                                                                      | 1996-06-30   |
 
-[238621 FIX: Integrated Security Sprocs Have Race Condition Between Threads That Can Result in an Access Violation]:https://support.microsoft.com/en-us/kb/238621
-[273914 Microsoft SQL Server 6.5 Post Service Pack 5a Update]:https://support.microsoft.com/en-us/kb/273914
-[249343 FIX: SQL Performance Counters May Cause Handle Leak in WinLogon Process]:https://support.microsoft.com/en-us/kb/249343
-[250493 FIX: Memory Leak with xp_sendmail Using Attachments]:https://support.microsoft.com/en-us/kb/250493
-[275483 FIX: Insert Error (Msg 213) with NO_BROWSETABLE and INSERT EXEC]:https://support.microsoft.com/en-us/kb/275483
-[238620 FIX: Terminating Clients with TSQL KILL May Cause ODS AV]:https://support.microsoft.com/en-us/kb/238620
-[236447 FIX: ODS Errors During Attention Signal May Cause SQL Server to Stop Responding]:https://support.microsoft.com/en-us/kb/236447
-[240172 FIX: Multiple Attachments not Sent Correctly Using xp_sendmail]:https://support.microsoft.com/en-us/kb/240172
-[234679 FIX: SNMP Extended Stored Procedures May Leak Memory]:https://support.microsoft.com/en-us/kb/234679
-[187278 FIX: Large Query Text from Socket Client May Cause Open Data Services Access Violation]:https://support.microsoft.com/en-us/kb/187278
-[197176 Microsoft SQL Server 6.5 Service Pack 5a (SP5a)]:https://support.microsoft.com/en-us/kb/197176
-[178295 Microsoft SQL Server 6.5 Service Pack 4 (SP4)]:https://support.microsoft.com/en-us/kb/178295
-[160727 Microsoft SQL Server 6.5 Service Pack 2 (SP2)]:https://support.microsoft.com/en-us/kb/160727
-[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/kb/153096
+[153096 Microsoft SQL Server 6.5 Service Pack 1 (SP1)]:https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 
 ## Microsoft SQL Server 6.0 Builds
