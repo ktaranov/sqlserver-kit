@@ -22,6 +22,7 @@ Most useful are:
 | `Ctrl + L`            | Display Estimated Query Execution plan |
 | `Shift + Alt + Enter` | View Code Editor in Full Screen        |
 | `Ctrl + I`            | Quick Search                           |
+| `Ctrl + F4`           | Close the current MDI child window     |
 | `Ctrl + F5`           | Parse query  to check for errors       |
 | `Shift + F10`         | Simulate right mouse button            |
 
@@ -30,7 +31,7 @@ Most useful are:
 
 
 ## Keyboard Shortcuts for Favorite Stored Procedures
-Tools > Options > Environment > Keyboard > Query Shortcuts
+`Tools > Options > Environment > Keyboard > Query Shortcuts`
 
 ![Keyboard Shortcuts for Favorite Stored Procedures](keyboard_shortcuts_for_stored_procedures.png)
 
@@ -49,7 +50,9 @@ My recommendation (awesome open source Brent Ozar teams procedures and with some
 | `Ctrl + 7`     |                      |
 | `Ctrl + 8`     |                      |
 | `Ctrl + 9`     | [sp_BlitzTrace]      |
-| `Ctrl + 0`     | [sp_DatabaseRestore] |
+| `Ctrl + 0`     |                      |
+
+Also recommended [sp_DatabaseRestore]
 
 [sp_help]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-transact-sql
 [sp_who]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
@@ -63,20 +66,21 @@ My recommendation (awesome open source Brent Ozar teams procedures and with some
 
 
 ## Script any object with data
-Right click on database name > Tasks > Generate Scripts …
+`Right click on database name > Tasks > Generate Scripts …`
 
 ![Script any object with data](ssms_script_objects.gif)
 
 
 ## Selecting a block of text using the ALT Key
 By holding down the ALT key as you select a block of text you can control the width of the selection region as well as the number of rows.
+Also you can activate multi line mode with `Shift + Alt` keys and using keyboard arrows to format multi line code.
 
 
 ## Script Table and Column Names by Dragging from Object Explorer
 Save keystrokes by dragging
-Drag the ‘Columns’ folder for a table in to auto-type all column names in the table in a single line.
-- Warning: this doesn’t include [brackets] around the column names, so if your columns contain spaces or special characters at the beginning, this shortcut isn’t for you
- -  Dragging the table name over will auto-type the schema and table name, with brackets.
+Drag the `Columns` folder for a table in to auto-type all column names in the table in a single line.
+ - Warning: this doesn’t include [brackets] around the column names, so if your columns contain spaces or special characters at the beginning, this shortcut isn’t for you
+ - Dragging the table name over will auto-type the schema and table name, with brackets.
 
 
 ## Disable Copy of Empty Text
@@ -87,7 +91,7 @@ Drag the ‘Columns’ folder for a table in to auto-type all column names in th
  - Accidentally press `Ctrl+C` again instead of `Ctrl+V`;
  - Block of copied text is replaced by an empty block;
 
-This behavior can be disabled in SSMS: go to Tools > Options > Text Editor > All Languages > General > ‘Apply Cut or Copy Commands to blank lines when there is no selection’ and uncheck the checkbox.
+This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > All Languages > General > 'Apply Cut or Copy Commands to blank lines when there is no selection'` and uncheck the checkbox.
 
 
 ## Client Statistics
@@ -112,11 +116,10 @@ Is this index compressed or partitioned?
 By default, you wouldn’t know just by scripting out the index from Object Explorer. If you script out indexes this way to check them into source code, or to tweak the definition slightly, this can lead you to make mistakes.
 
 You can make sure you’re aware when indexes have compression or are partitioned by changing your scripting settings:
-- Click Tools – > Options
-- Go to SQL Server Object Explorer -> Scripting
+- Click `Tools – > Options -> SQL Server Object Explorer -> Scripting`
 - Scroll down in the right pane of options and set both of these to ‘True’
-  - Script Data Compression Options
-  - Script Partition Schemes
+  - *Script Data Compression Options*
+  - *Script Partition Schemes*
 - Click OK
 
 
@@ -141,7 +144,7 @@ One under-used feature of Management Studio is the template replacement feature.
 
 In your saved .sql script, just use the magic incantation to denote the parameters for replacement. The format is simple: `<label, datatype, default value>`
 
-Then, when you open the .sql script, you hit CTRL + Shift + M, and SSMS will give you a pop-up to enter your replacement values
+Then, when you open the `.sql` script, you hit `CTRL + Shift + M`, and SSMS will give you a pop-up to enter your replacement values
 
 
 ## Color coding of connections
@@ -195,10 +198,7 @@ The splitter bar allows you to view one session with two panes. You can scroll i
 ## Moving columns in the results pane
 It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
 This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your result set.
-
-
-## Dragging a comma separated list of all Columns in a Table from Object Explorer window to the Query Window
-If you want to list all the columns in a table as a comma separated list (perhaps as the starting point for a SELECT clause) simply drag the ‘Columns’ item in Object Explorer and drop it onto to a query window
+This works only for one column.
 
 
 ## Generating Charts and Drawings in SQL Server Management Studio
@@ -216,6 +216,6 @@ Reference:
  - [Top 10 SQL Server Management Studio (SSMS) Tips and Tricks](http://www.sqlmatters.com/Articles/Top%2010%20SQL%20Server%20Management%20Studio%20(SSMS)%20Tips%20and%20Tricks.aspx) (by SQLMatters)
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
  - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/) (by MSSQLTips)
- - [Generating Charts and Drawings in SQL Server Management Studio]
+ - [Generating Charts and Drawings in SQL Server Management Studio] (by Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky)
 
-[Generating Charts and Drawings in SQL Server Management Studio]:(http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio)
+[Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
