@@ -332,7 +332,7 @@ RESTORE HEADERONLY FROM DISK=N'd:\DatabseBackupFile.bak' WITH NOUNLOAD;
 GO
 ```
 
-You will note that for each DBCC command we have to turn on trace [flag 3604](http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx) so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
+You will note that for each DBCC command we have to turn on [trace flag 3604](https://rebrand.ly/gh-sqlserver-trace-flags#3604) so that the output of the DBCC command is sent to the SSMS window rather than the default location, the SQL Server log.
 
 If you are still on SQL Serever 2000, you can see this information with a simple query:
 ```sql
@@ -347,8 +347,8 @@ SELECT SERVERPROPERTY('ProductVersion');
 | SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
 | SQL Server 2017                              | 14              |  2017        | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2016                              | 13              |  SQL16       | 2016         | 841                       | 130                             | 130, 120, 110, 100            |
-| Azure SQL Database                           | 12              |  CloudDB     | 2010 (2017)  | 841                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2016                              | 13              |  2016        | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 12              |  CloudDB     | 2010 (2017)  | 862                       | 130                             | 130, 120, 110, 100            |
 | SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
 | SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
 | SQL Server 2012 CTP1                         | 11              |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
@@ -385,8 +385,8 @@ For details about how to assess the performance differences of your most importa
 
 | Version            | Codename    | RTM (no SP)    | SP1            | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:---------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server vNext   | vNext       | [14.0.500.272] |                |                                 |                                   |                                 |
-| SQL Server 2016    | SQL16       | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
+| SQL Server 2017    | 2017        | [14.0.500.272] |                |                                 |                                   |                                 |
+| SQL Server 2016    | 2016        | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
 | SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
