@@ -2413,6 +2413,7 @@ Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/help/974006/sql-server-query-optimizer-hotfix-trace-flag-4199-servicing-model<br />
 Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-query_optimizer_hotfixes-in-sql-server-2016/<br />
+Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
 Scope: global or session
 
 
