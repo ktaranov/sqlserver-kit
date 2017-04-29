@@ -41,7 +41,7 @@ Support will then work with customers to determine if the issue is with SSMS or 
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.0 Release] **Latest**        | 14.0.17099.0  | 2017-04-25   |      765 |
+| [17.0 Release] **Latest**        | 14.0.17099.0  | 2017-04-25   |      729 |
 | [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
 | [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
