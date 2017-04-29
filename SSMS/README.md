@@ -8,6 +8,7 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
  - [SSMS Snippets](SSMS_Snippets)
  - [SSMS Shortcuts](SSMS_Shortcuts.md)
  - [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
+ - [SQL Server Management Studio - Changelog (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-changelog-ssms)
  - [SQL Server Management Studio (SSMS) - Release Candidate](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms-release-candidate)
  - [Previous SQL Server Management Studio Releases](https://docs.microsoft.com/en-us/sql/ssms/previous-sql-server-management-studio-releases)
  - [SQLSentry Latest Builds of Management Studio](http://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
@@ -18,18 +19,33 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
  - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
 
 
-## SQL Server Management Studio Download Links and Release Info
-SQL Server Management Studio (17.0 RC3) notes:
+## Supported SQL Server versions
+This version of SSMS works with all supported versions of SQL Server (SQL Server 2008 - SQL Server 2017), and provides the greatest level of support for working with the latest cloud features in Azure SQL Database, and Azure SQL Data Warehouse.
+There is no explicit block for SQL Server 2000 or SQL Server 2005, but some features may not work properly.
+Additionally, SSMS 17.x can be installed side-by-side with SSMS 16.X or SQL Server 2014 SSMS and earlier.
 
- 1. **Not recommended for production use**.
- 2. Works with CTPs of v.Next (both Windows and Linux).
+
+## Supported Operating systems
+This release of SSMS supports the following platforms when used with the latest available service pack:
+Windows 10, Windows 8, Windows 8.1, Windows 7 (SP1), Windows Server 2016, Windows Server 2012 (64-bit), Windows Server 2012 R2 (64-bit), Windows Server 2008 R2 (64-bit)
+
+Note
+SSMS 17.0 is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
+Microsoft takes app compatibility very seriously and ensures that already-shipped applications continue to run on the latest Windows releases.
+Because of this, we do not anticipate that SSMS with all latest updates applied) will encounter issues when running on Windows Server 2016.
+Customers are advised to contact support, should they encounter any issues with SSMS on Windows Server 2016.
+Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
+
+
+## SQL Server Management Studio Download Links and Release Info
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
+| [17.0 Release] **Latest**        | 14.0.17099.0  | 2017-04-25   |      765 |
 | [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
 | [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
-| [16.5.3 Release] **Latest**      | 13.0.16106.4  | 2017-01-26   |      898 |
+| [16.5.3 Release]                 | 13.0.16106.4  | 2017-01-26   |      898 |
 | 16.5.2 Release **Deprecated**    | 13.0.16105.4  | 2017-01-18   |      898 |
 | [16.5.1 Release]                 | 13.0.16100.1  | 2016-12-05   |      894 |
 | [16.5 Release]                   | 13.0.16000.28 | 2016-10-26   |      894 |
@@ -43,6 +59,7 @@ SQL Server Management Studio (17.0 RC3) notes:
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.0 Release]:https://go.microsoft.com/fwlink/?linkid=847722
 [17.0 RC3 Release]:https://go.microsoft.com/fwlink/?linkid=844503
 [17.0 RC2 Release]:https://go.microsoft.com/fwlink/?linkid=840957
 [17.0 RC1 Release]:https://go.microsoft.com/fwlink/?LinkID=835608
