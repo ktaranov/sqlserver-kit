@@ -21,7 +21,7 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
-| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                     | 2017-01-26   | Microsoft            | Yes            | No    |
+| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                     | 2017-04-25   | Microsoft            | Yes            | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                              | 2012-02-11   | Microsoft            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]             | 2014-12-12   | Microsoft            | Yes            | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                | 2016-02-23   | Microsoft            | Yes            | No    |
@@ -33,7 +33,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | No                               | No             | [?]        | [Exchange Server Error Code Look-up]       | 2004-05-10   | Microsoft            | Yes            | No    |
 | [LINQPad](#linqpad)                                                   | No                               | No             | [?]        | [LINQPad]                                  | 2016-01-02   | Joseph Albahari      | Non-commercial |   $45 |
 | [SqlDynamite](#sqldynamite)                                           | No                               | No             | [S]        | [SqlDynamite]                              | 2016-04-06   | Anatoly Sova         | Yes            | No    |
-| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]                    | 2016-10-26   | Microsoft            | Yes            | No    |
+| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]                    | 2017-04-15   | Microsoft            | Yes            | No    |
 | [Database Health Monitor](#database-health-monitor)                   | No                               | No             | [M]        | [Database Health Monitor]                  | 2016-03-20   | Steve Stedman        | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                           | No                               | No             | [SC]       | [SchemaDrift]                              | 2016-02-28   | Steve Stedman        | Yes            | No    |
 | [Dbeaver](#dbeaver)                                                   | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Dbeaver]                                  | 2016-06-06   | Open Source          | Yes            | No    |
@@ -194,7 +194,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                       | 2016-02-19   | Gudu Software        | No             |   $50 |
 | [Database .NET](#database-net)                                        | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Database .NET]                            | 2017-01-13   | fish's dotNET        | Non-commercial |   $69 |
 | [dbMigration .NET](#dbmegration-net)                                  | Oracle, MySQL, PostgreSQL, Other | No             | [DC], [SC] | [dbMigration .NET]                         | 2017-01-13   | fish's dotNET        | Non-commercial |   $49 |
-| [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                                | 2016-12-13   | Bill Graziano        | Non-commercial | No    |
+| [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                                | 2017-04-06   | Bill Graziano        | Non-commercial | No    |
 | [Database Experimentation Assistant](#dea)                            | No                               | No             | [T]        | [Database Experimentation Assistant]       | 2016-11-21   | Microsoft            | Yes            | No    |
 | [Data Platform Studio](#dps)                                          | No                               | No             | [MG]       | [Data Platform Studio]                     | ?            | Red Gate Software    | Yes            | ?     |
 | [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                   | ?            | boxfuse              | Open Source    | No    |
@@ -236,8 +236,8 @@ Utility types (main purpose), in braces `{}` current counts:
 ## SSMS
 <a id="ssms"></a>
 Download page: [SSMS]<br/>
-Release date: 2017-01-26<br/>
-Support Version: 2005/2008/2012/2014/2016/vNext/Azure<br/>
+Release date: 2017-04-25<br/>
+Support Version: 2005/2008/2012/2014/2016/2017/vNext/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -405,8 +405,8 @@ Supports MSSQL, Oracle, SAP, Firebird, Mysql, PostgreSQL, DB2, Informix, SQLite,
 ## SQL Server Data Tools
 <a id="ssdt"></a>
 Download page: [SQL Server Data Tools]<br/>
-Release date: 2016-10-26<br/>
-Support Version: 2008/2012/2014/2016/Azure<br/>
+Release date: 2017-04-15<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -2755,15 +2755,20 @@ With it you can easily migrate schema and data between different databases witho
 ## Is It SQL
 <a id="is-it-sql"></a>
 Download page: [Is It SQL]<br/>
-Release date: 2016-12-13<br/>
+Release date: 2017-04-06<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
 Author: Bill Graziano<br/>
 Free version: Non-commercial<br/>
 Price: No
 
-This started as a simple SQL Server monitoring solution for my clients. The first question I get when applications 
-have issues is "Is It SQL Server?" I wanted a simple monitoring service I could run onsite that would answer that question. 
-It had to be simple enough that a non-DBA could look at it and decide whether to call me.
+ - Supports SQL Server 2005 through SQL Server 2016
+ - Monitor CPU usage for SQL Server and non-SQL Server tasks
+ - Capture batch requests per second
+ - Monitor Disk I/onsite
+ - Monitor waits
+ - Show actively running queries
+ - Capture basic demographic information including version, start time, database sizes, etc.
+ - Can run with no installation or it can be run as a service
 
 
 ## Database Experimentation Assistant
