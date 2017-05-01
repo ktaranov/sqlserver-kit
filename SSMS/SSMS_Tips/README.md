@@ -208,6 +208,52 @@ To turn your own data into a line, column, area, or bar chart using the Chart st
 Detailed Article and code here: [Generating Charts and Drawings in SQL Server Management Studio]
 
 
+## Additional Connection Parameters
+One such change SSMS got for free is the connection resiliency logic within the SqlConnection.Open() method.
+To improve the default experience for clients which connect to Azure SQL Database, the above method will (in the case of initial connection errors / timeouts) now retry 1 time after sleeping for 10 seconds. These numbers are configurable by properties called ConnectRetryCount (default value 1) and ConnectRetryInterval (default value 10 seconds.)
+The previous versions of the SqlConnection class would not automatically retry in cases of connection failure.
+
+There is a simple workaround for this situation. It is to add the following parameter string into the `Additional Connection Parameters` tab within the SSMS connection window. The good news is that you only need to do this once, as the property is saved for future sessions for that SQL Server (until of course it is removed by you later.)
+```
+ConnectRetryCount=0
+```
+
+
+## Working with tabs headers
+You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly script open containing folder or copy script file path.
+
+
+## Hiding tables in SSMS Object Explorer
+1. You can actually hide an object from object explorer by assigning a specific extended property:
+```
+EXEC sp_addextendedproperty
+@name = N'microsoft_database_tools_support',
+@value = 'Hide',
+@level0type = N'Schema', @level0name = 'Person',
+@level1type = N'Table', @level1name = 'Address';
+GO
+```
+
+You can then remove the propert (and the object will show back up) like so:
+```
+EXEC sp_dropextendedproperty
+@name = N'microsoft_database_tools_support',
+@level0type = N'Schema', @level0name = 'Person',
+@level1type = N'Table', @level1name = 'Address';
+GO
+```
+
+2. DENY VIEW DEFINITION
+```
+DENY VIEW DEFINITION ON Schema.Table TO UserName;
+```
+
+Now UserName won’t be able to see Table in Object Explorer.
+In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_SCHEMA.TABLES`
+
+`VIEW DEFINITION` is the ability to see the definition of the object (duh). In the case of SPs the code, same with Views and in the case of Tables it’s the columns definitions etc.
+
+
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
@@ -217,5 +263,8 @@ Reference:
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
  - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/) (by MSSQLTips)
  - [Generating Charts and Drawings in SQL Server Management Studio] (by Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky)
+ - [Try and try again: not always a good idea (at least not for SSMS!)](https://blogs.msdn.microsoft.com/sqlcat/2017/04/06/try-and-try-again-not-always-a-good-idea-at-least-not-for-ssms/)
+ - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/)
+ - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/)
 
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
