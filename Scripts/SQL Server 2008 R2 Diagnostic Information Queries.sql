@@ -2,13 +2,15 @@
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: March 23, 2017
--- http://sqlserverperformance.wordpress.com/
--- http://sqlskills.com/blogs/glenn/
+-- Last Modified: April 25, 2017
+-- https://www.sqlserverperformance.wordpress.com/
+-- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
--- http://www.pluralsight.com/author/glenn-berry
+-- https://www.pluralsight.com/author/glenn-berry
+
+-- If you want to find all of our SQLskills SQL101 blog posts, check out https://www.sqlskills.com/help/sql101/
 
 -- Many of these queries will not work if you have databases in 80 compatibility mode
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
@@ -18,7 +20,7 @@
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
---*      http://sqlskills.com/blogs/glenn
+--*      https://www.sqlskills.com/blogs/glenn
 --*
 --*   You may alter this code for your own *non-commercial* purposes. You may
 --*   republish altered code as long as you include this copyright and give due credit. 
@@ -136,14 +138,17 @@ SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly];
 
 
 -- Get SQL Server Agent jobs and Category information (Query 4) (SQL Server Agent Jobs)
-SELECT sj.name AS [JobName], sj.[description] AS [JobDescription], SUSER_SNAME(sj.owner_sid) AS [JobOwner],
-sj.date_created, sj.[enabled], sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
-js.next_run_date, js.next_run_time
+SELECT sj.name AS [Job Name], sj.[description] AS [Job Description], SUSER_SNAME(sj.owner_sid) AS [Job Owner],
+sj.date_created AS [Date Created], sj.[enabled] AS [Job Enabled], 
+sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
+s.[enabled] AS [Sched Enabled], js.next_run_date, js.next_run_time
 FROM msdb.dbo.sysjobs AS sj WITH (NOLOCK)
 INNER JOIN msdb.dbo.syscategories AS sc WITH (NOLOCK)
 ON sj.category_id = sc.category_id
 LEFT OUTER JOIN msdb.dbo.sysjobschedules AS js WITH (NOLOCK)
 ON sj.job_id = js.job_id
+LEFT OUTER JOIN msdb.dbo.sysschedules AS s WITH (NOLOCK)
+ON js.schedule_id = s.schedule_id
 ORDER BY sj.name OPTION (RECOMPILE);
 ------
 
@@ -164,7 +169,7 @@ ORDER BY name OPTION (RECOMPILE);
 ------
 
 -- Gives you some basic information about your SQL Server Agent Alerts (which are different from SQL Server Agent jobs)
--- Read more about Agent Alerts here: http://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
+-- Read more about Agent Alerts here: https://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
 
 
 -- Returns a list of all global trace flags that are enabled (Query 6) (Global Trace Flags)
@@ -187,7 +192,7 @@ DBCC TRACESTATUS (-1);
 --           http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx
 
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
---           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
+--           https://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 
 -- Windows information (SQL Server 2008 R2 SP1 or greater)  (Query 7) (Windows Info)
@@ -275,7 +280,7 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\Syste
 -- http://www.cpuid.com/softwares/cpu-z.html
 
 -- You can learn more about processor selection for SQL Server by following this link
--- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
+-- https://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
 
 
 
@@ -654,7 +659,7 @@ OPTION (RECOMPILE);
 -- http://blogs.msdn.com/b/psssql/archive/2009/11/03/the-sql-server-wait-type-repository.aspx
 
 -- Wait statistics, or please tell me where it hurts
--- http://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
+-- https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
 
 -- SQL Server 2005 Performance Tuning using the Waits and Queues
 -- http://technet.microsoft.com/en-us/library/cc966413.aspx
@@ -737,7 +742,7 @@ WHERE scheduler_id < 255 OPTION (RECOMPILE);
 -- High Avg Pending DiskIO Counts are a sign of disk pressure
 
 -- How to Do Some Very Basic SQL Server Monitoring
--- http://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
+-- https://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
 
 
 
@@ -818,7 +823,7 @@ FROM sys.dm_os_process_memory WITH (NOLOCK) OPTION (RECOMPILE);
 
 
 -- Page Life Expectancy (PLE) value for each NUMA node in current instance  (Query 36) (PLE by NUMA Node)
-SELECT @@SERVERNAME AS [Server Name], [object_name], instance_name, cntr_value AS [Page Life Expectancy]
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], instance_name, cntr_value AS [Page Life Expectancy]
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
@@ -829,12 +834,12 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- This will only return one row for non-NUMA systems.
 
 -- Page Life Expectancy isn’t what you think…
--- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
+-- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
 
 -- Memory Grants Pending value for current instance  (Query 37) (Memory Grants Pending)
-SELECT @@SERVERNAME AS [Server Name], [object_name], cntr_value AS [Memory Grants Pending]                                                                                                       
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], cntr_value AS [Memory Grants Pending]                                                                                                       
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Memory Manager%' -- Handles named instances
 AND counter_name = N'Memory Grants Pending' OPTION (RECOMPILE);
@@ -876,7 +881,7 @@ ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
 -- Enabling forced parameterization for the database can help, but test first!
 
 -- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
--- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
+-- https://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
 
 
 
@@ -1358,16 +1363,22 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 2
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 3
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
--- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month pass to Pluralsight
+-- Sign up for Microsoft Visual Studio Dev Essentials and get a free three month pass to Pluralsight
 
 -- Microsoft Visual Studio Dev Essentials
--- https://www.visualstudio.com/products/visual-studio-dev-essentials-vs?wt.mc_id=WW_CE_BD_OO_SCL_TW_DESQLBenefitAnnouncement_SQL
+-- http://bit.ly/1q6xbDL
+
+
+-- Sign up for Microsoft IT Pro Cloud Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
+
+-- Microsoft IT Pro Cloud Essentials
+-- http://bit.ly/2443SAd

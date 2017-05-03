@@ -1,14 +1,16 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- April 2017
--- Last Modified: March 31, 2017
--- http://sqlskills.com/blogs/glenn/
+-- May 2017
+-- Last Modified: May 1, 2017
+-- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
--- http://www.pluralsight.com/author/glenn-berry
+-- https://www.pluralsight.com/author/glenn-berry
+
+-- If you want to find all of our SQLskills SQL101 blog posts, check out https://www.sqlskills.com/help/sql101/
 
 
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
@@ -19,7 +21,7 @@
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
---*      http://sqlskills.com/blogs/glenn
+--*      https://www.sqlskills.com/blogs/glenn
 --*
 --*   You may alter this code for your own *non-commercial* purposes. You may
 --*   republish altered code as long as you include this copyright and give due credit. 
@@ -190,7 +192,7 @@ DBCC TRACESTATUS (-1);
 
 -- Common trace flags that should be enabled in most cases
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
---           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
+--           https://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 -- TF 6534 - Enables use of native code to improve performance with spatial data
 --           https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/
@@ -216,7 +218,7 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 -- SQL Server 2016 lets you enable this during the SQL server installation process
 
 -- Misconceptions around instant file initialization
--- http://www.sqlskills.com/blogs/paul/misconceptions-around-instant-file-initialization/
+-- https://www.sqlskills.com/blogs/paul/misconceptions-around-instant-file-initialization/
 
 
 
@@ -252,14 +254,17 @@ FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
 
 
 -- Get SQL Server Agent jobs and Category information (Query 9) (SQL Server Agent Jobs)
-SELECT sj.name AS [JobName], sj.[description] AS [JobDescription], SUSER_SNAME(sj.owner_sid) AS [JobOwner],
-sj.date_created, sj.[enabled], sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
-js.next_run_date, js.next_run_time
+SELECT sj.name AS [Job Name], sj.[description] AS [Job Description], SUSER_SNAME(sj.owner_sid) AS [Job Owner],
+sj.date_created AS [Date Created], sj.[enabled] AS [Job Enabled], 
+sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
+s.[enabled] AS [Sched Enabled], js.next_run_date, js.next_run_time
 FROM msdb.dbo.sysjobs AS sj WITH (NOLOCK)
 INNER JOIN msdb.dbo.syscategories AS sc WITH (NOLOCK)
 ON sj.category_id = sc.category_id
 LEFT OUTER JOIN msdb.dbo.sysjobschedules AS js WITH (NOLOCK)
 ON sj.job_id = js.job_id
+LEFT OUTER JOIN msdb.dbo.sysschedules AS s WITH (NOLOCK)
+ON js.schedule_id = s.schedule_id
 ORDER BY sj.name OPTION (RECOMPILE);
 ------
 
@@ -269,7 +274,7 @@ ORDER BY sj.name OPTION (RECOMPILE);
 -- Look for jobs that have a notify_level_email set to 0 (meaning no e-mail is ever sent)
 --
 -- MSDN sysjobs documentation
--- http://msdn.microsoft.com/en-us/library/ms189817.aspx
+-- https://msdn.microsoft.com/en-us/library/ms189817.aspx
 
 -- SQL Server Maintenance Solution
 -- https://ola.hallengren.com/
@@ -283,7 +288,7 @@ ORDER BY name OPTION (RECOMPILE);
 ------
 
 -- Gives you some basic information about your SQL Server Agent Alerts (which are different from SQL Server Agent jobs)
--- Read more about Agent Alerts here: http://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
+-- Read more about Agent Alerts here: https://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
 
 
 
@@ -333,7 +338,7 @@ WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 -- Watch out if you have a VM with more than 4 NUMA nodes with SQL Server Standard Edition, since there is a four-socket license limit
 
 -- Balancing Your Available SQL Server Core Licenses Evenly Across NUMA Nodes
--- http://www.sqlskills.com/blogs/glenn/balancing-your-available-sql-server-core-licenses-evenly-across-numa-nodes/
+-- https://www.sqlskills.com/blogs/glenn/balancing-your-available-sql-server-core-licenses-evenly-across-numa-nodes/
 
 
 
@@ -355,10 +360,6 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Physical memory usage is steady
 -- Available physical memory is low
 -- Physical memory state is transitioning
-
-
-
--- This gives you the count of your SQL Server Error Logs, and shows you how large each one is
 
 
 -- You can skip the next two queries if you know you don't have a clustered instance
@@ -472,7 +473,7 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\Syste
 -- http://www.cpuid.com/softwares/cpu-z.html
 
 -- You can learn more about processor selection for SQL Server by following this link
--- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
+-- https://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
 
 
 
@@ -488,6 +489,8 @@ FROM sys.dm_os_buffer_pool_extension_configuration WITH (NOLOCK) OPTION (RECOMPI
 -- Buffer Pool Extension to SSDs in SQL Server 2014
 -- http://blogs.technet.com/b/dataplatforminsider/archive/2013/07/25/buffer-pool-extension-to-ssds-in-sql-server-2014.aspx
 
+-- Buffer Pool Extension
+-- https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/buffer-pool-extension
 
 
 -- Look at buffer descriptors to see BPE usage by database (Query 22) (BPE Usage) 
@@ -788,7 +791,7 @@ DROP TABLE #VLFCountResults;
 -- Try to keep your VLF counts under 200 in most cases (depending on log file size)
 
 -- Important change to VLF creation algorithm in SQL Server 2014
--- http://www.sqlskills.com/blogs/paul/important-change-vlf-creation-algorithm-sql-server-2014/
+-- https://www.sqlskills.com/blogs/paul/important-change-vlf-creation-algorithm-sql-server-2014/
 
 
 
@@ -919,7 +922,7 @@ OPTION (RECOMPILE);
 -- http://blogs.msdn.com/b/psssql/archive/2009/11/03/the-sql-server-wait-type-repository.aspx
 
 -- Wait statistics, or please tell me where it hurts
--- http://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
+-- https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
 
 -- SQL Server 2005 Performance Tuning using the Waits and Queues
 -- http://technet.microsoft.com/en-us/library/cc966413.aspx
@@ -960,7 +963,7 @@ WHERE scheduler_id < 255 OPTION (RECOMPILE);
 -- High Avg Pending DiskIO Counts are a sign of disk pressure
 
 -- How to Do Some Very Basic SQL Server Monitoring
--- http://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
+-- https://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
 
 
 
@@ -1045,7 +1048,7 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 
 -- Page Life Expectancy (PLE) value for each NUMA node in current instance  (Query 43) (PLE by NUMA Node)
-SELECT @@SERVERNAME AS [Server Name], [object_name], instance_name, cntr_value AS [Page Life Expectancy]
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], instance_name, cntr_value AS [Page Life Expectancy]
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
@@ -1056,11 +1059,11 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- This will only return one row for non-NUMA systems
 
 -- Page Life Expectancy isn’t what you think…
--- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
+-- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
 -- Memory Grants Pending value for current instance  (Query 44) (Memory Grants Pending)
-SELECT @@SERVERNAME AS [Server Name], [object_name], cntr_value AS [Memory Grants Pending]                                                                                                       
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], cntr_value AS [Memory Grants Pending]                                                                                                       
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Memory Manager%' -- Handles named instances
 AND counter_name = N'Memory Grants Pending' OPTION (RECOMPILE);
@@ -1107,7 +1110,7 @@ ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
 -- Enabling forced parameterization for the database can help, but test first!
 
 -- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
--- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
+-- https://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
 
 
 -- Get top total logical reads queries for entire instance (Query 47) (Top Logical Reads Queries)
@@ -1813,13 +1816,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 2
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 3
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
 
