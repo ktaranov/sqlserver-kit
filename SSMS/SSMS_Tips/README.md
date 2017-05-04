@@ -1,6 +1,39 @@
 # SQL Server Management Studio Tips
+Main tips works for SSMS higher 2008 but some of them only for SSMS 2016 and above
+
+Content:
+1. [Import and Export Settings](1#)
+2. [SSMS Shortcuts](2#)
+3. [Keyboard Shortcuts for Favorite Stored Procedures](3#)
+4. [Script any object with data](4#)
+5. [Selecting a block of text using the ALT Key](5#)
+6. [Script Table and Column Names by Dragging from Object Explorer](6#)
+7. [Disable Copy of Empty Text](7#)
+8. [Client Statistics](8#)
+9. [Configure Object Explorer to Script Compression and Partition Schemes for Indexes](#9)
+10. [Using GO X to Execute a Batch or Statement Multiple Times](#10)
+11. [SSMS Template Replacement](#11)
+12. [Color coding of connections](#12)
+13. [SQLCMD mode](#13)
+14. [Script multiple objects using the Object Explorer Details Windows](#14)
+15. [Registered Servers / Central Management Server](#15)
+16. [Splitting the Query Window](#16)
+17. [Moving columns in the results pane](#17)
+18. [Generating Charts and Drawings in SQL Server Management Studio](#18)
+19. [Additional Connection Parameters](#19)
+20. [Working with tabs headers](#20)
+21. [Hiding tables in SSMS Object Explorer](#21)
 
 
+<a id="1"></a>
+## Import and Export Settings
+`Tools > Options > Environment > Import and Export Settings`
+
+You can configure so many settings in SSMS and then export it and use on all your computers.
+Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
+
+
+<a id="2"></a>
 ## SSMS Shortcuts
 All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
 
@@ -25,11 +58,11 @@ Most useful are:
 | `Ctrl + F4`           | Close the current MDI child window     |
 | `Ctrl + F5`           | Parse query  to check for errors       |
 | `Shift + F10`         | Simulate right mouse button            |
+| `Ctrl + Alt + T`      | Display Template Explorer              |
+| `Ctrl + Shift + M`    | Specify values for template parameters |
 
 
-[Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
-
-
+<a id="3"></a>
 ## Keyboard Shortcuts for Favorite Stored Procedures
 `Tools > Options > Environment > Keyboard > Query Shortcuts`
 
@@ -65,17 +98,21 @@ Also recommended [sp_DatabaseRestore]
 [sp_DatabaseRestore]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_DatabaseRestore.sql
 
 
+<a id="4"></a>
 ## Script any object with data
 `Right click on database name > Tasks > Generate Scripts …`
 
 ![Script any object with data](ssms_script_objects.gif)
 
 
+<a id="5"></a>
 ## Selecting a block of text using the ALT Key
 By holding down the ALT key as you select a block of text you can control the width of the selection region as well as the number of rows.
 Also you can activate multi line mode with `Shift + Alt` keys and using keyboard arrows to format multi line code.
 
 
+<a id="6"></a>
+a>
 ## Script Table and Column Names by Dragging from Object Explorer
 Save keystrokes by dragging
 Drag the `Columns` folder for a table in to auto-type all column names in the table in a single line.
@@ -83,8 +120,9 @@ Drag the `Columns` folder for a table in to auto-type all column names in the ta
  - Dragging the table name over will auto-type the schema and table name, with brackets.
 
 
+<a id="7"></a>
 ## Disable Copy of Empty Text
-<a id="disable-copy-of-empty-text"></a>
+<a id="8"></a>
 
  - Select a block of text to copy;
  - Move the cursor the place where you want to paste the code;
@@ -94,6 +132,7 @@ Drag the `Columns` folder for a table in to auto-type all column names in the ta
 This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > All Languages > General > 'Apply Cut or Copy Commands to blank lines when there is no selection'` and uncheck the checkbox.
 
 
+<a id="9"></a>
 ## Client Statistics
 When you enable that option for your session, SQL Server Management Studio will give you more information about the client side processing of your query.
 
@@ -110,6 +149,7 @@ The Time Statistics additionally shows you the following information:
  - Wait Time on Server Replies
 
 
+<a id="10"></a>
 ## Configure Object Explorer to Script Compression and Partition Schemes for Indexes
 Is this index compressed or partitioned?
 
@@ -123,6 +163,7 @@ You can make sure you’re aware when indexes have compression or are partitione
 - Click OK
 
 
+<a id="11"></a>
 ## Using GO X to Execute a Batch or Statement Multiple Times
 The `GO` command marks the end of a batch of statements that should be sent to SQL Server for processing, and then compiled into a single execution plan. 
 By specifying a number after the ‘GO’ the batch can be run specified number of times. This can be useful if, for instance, you want to create test data by running an insert statement a number of times. Note that this is not a Transact SQL statement and will only work in Management Studio (and also SQLCMD or OSQL). For instance the following SQL can be run in SSMS :
@@ -139,6 +180,7 @@ This will run the insert statement 10 times and therefore insert 10 rows into th
 In this case this is a simpler alternative than creating a cursor or while loop. 
 
 
+<a id="12"></a>
 ## SSMS Template Replacement
 One under-used feature of Management Studio is the template replacement feature. SSMS comes with a library of templates, but you can also make your own templates for reusable scripts.
 
@@ -147,6 +189,7 @@ In your saved .sql script, just use the magic incantation to denote the paramete
 Then, when you open the `.sql` script, you hit `CTRL + Shift + M`, and SSMS will give you a pop-up to enter your replacement values
 
 
+<a id="13"></a>
 ## Color coding of connections
 SQL Server Management Studio has the capability of coloring the bar at the bottom of each query window, with the color dependent on which server is connected.
 This can be useful in order to provide a visual check of the server that a query is to be run against, for instance to color code production instances as red, development as green and amber as test.
@@ -155,11 +198,13 @@ To add a color bar when connecting to the server click on the Options button in 
 Select the check box towards the bottom of the window and use the ‘Select…’ button to choose a color.
 
 
+<a id="14"></a>
 ## SQLCMD mode
 Switching on SQLCMD mode enables a number of useful extra scripting style commands in SSMS.In particular you can use it to change to the connection credentials within the query window, so that you can run a query against multiple servers from the same query window.
 There are more details of how to do this here: [Changing the SQL Server connection within an SSMS Query Windows using SQLCMD Mode](http://www.sqlmatters.com/Articles/Changing%20the%20SQL%20Server%20connection%20within%20an%20SSMS%20Query%20Windows%20using%20SQLCMD%20Mode.aspx)
 
 
+<a id="15"></a>
 ## Script multiple objects using the Object Explorer Details Windows
 Individual database objects, such as a table or stored procedure, can be scripted within SSMS by right clicking on the object within Object Explorer and selecting the appropriate item in the drop down menu.
 However if you have a lot of objects to script that can quickly become time consuming.
@@ -170,6 +215,7 @@ A list of all tables appears in the Object Explorer Details window.
 Select the tables you want to script (using the Control key if necessary) and then right click and select which script option you want – e.g. to create a table create script for all tables
 
 
+<a id="16"></a>
 ## Registered Servers / Central Management Server
 If you have a lot of servers then re-entering the details in Object Explorer every time you start SSMS can be frustrating and time consuming.
 Fortunately there are two facilities within SSMS that enable these details to be entered just once and “remembered” each time you open up SSMS.
@@ -187,6 +233,7 @@ Central Management Server are similar to Registered Servers but with some differ
 A significant limitation with CMS is that the CMS server itself can’t be included in the list of servers.
 
 
+<a id="17"></a>
 ## Splitting the Query Window
 The query window in SSMS can be split into two so that you can look at two parts of the same query simultaneously.
 Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
@@ -195,12 +242,14 @@ To split the window simply drag the bar to the top right hand side of the window
 The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane
 
 
+<a id="18"></a>
 ## Moving columns in the results pane
 It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
 This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your result set.
 This works only for one column.
 
 
+<a id="19"></a>
 ## Generating Charts and Drawings in SQL Server Management Studio
 You don't have to settle for T-SQL's monochrome text output. These stored procedures let you quickly and easily turn your SELECT queries' output into colorized charts and even computer-generated art.
 To turn your own data into a line, column, area, or bar chart using the Chart stored procedure, you need to design a SELECT query that serves as the first parameter in the stored procedure call.
@@ -208,6 +257,7 @@ To turn your own data into a line, column, area, or bar chart using the Chart st
 Detailed Article and code here: [Generating Charts and Drawings in SQL Server Management Studio]
 
 
+<a id="20"></a>
 ## Additional Connection Parameters
 One such change SSMS got for free is the connection resiliency logic within the SqlConnection.Open() method.
 To improve the default experience for clients which connect to Azure SQL Database, the above method will (in the case of initial connection errors / timeouts) now retry 1 time after sleeping for 10 seconds. These numbers are configurable by properties called ConnectRetryCount (default value 1) and ConnectRetryInterval (default value 10 seconds.)
@@ -219,10 +269,12 @@ ConnectRetryCount=0
 ```
 
 
+<a id="21"></a>
 ## Working with tabs headers
 You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly script open containing folder or copy script file path.
 
 
+<a id="22"></a>
 ## Hiding tables in SSMS Object Explorer
 1. You can actually hide an object from object explorer by assigning a specific extended property:
 ```
@@ -234,7 +286,7 @@ EXEC sp_addextendedproperty
 GO
 ```
 
-You can then remove the propert (and the object will show back up) like so:
+You can then remove the property (and the object will show back up) like so:
 ```
 EXEC sp_dropextendedproperty
 @name = N'microsoft_database_tools_support',
@@ -256,6 +308,7 @@ In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_S
 
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
+ - [SSMS Tips: Templates and Control+Shift+M]
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
  - [SSMS Tips and Tricks](http://www.ssmstipsandtricks.com/) (by Latish Sehgal)
  - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by Klaus Aschenbrenner)
@@ -267,4 +320,7 @@ Reference:
  - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/)
  - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/)
 
+
+[Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
+[SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
