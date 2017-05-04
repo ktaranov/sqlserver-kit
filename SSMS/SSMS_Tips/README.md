@@ -2,14 +2,14 @@
 Main tips works for SSMS higher 2008 but some of them only for SSMS 2016 and above
 
 Content:
-1. [Import and Export Settings](1#)
-2. [SSMS Shortcuts](2#)
-3. [Keyboard Shortcuts for Favorite Stored Procedures](3#)
-4. [Script any object with data](4#)
-5. [Selecting a block of text using the ALT Key](5#)
-6. [Script Table and Column Names by Dragging from Object Explorer](6#)
-7. [Disable Copy of Empty Text](7#)
-8. [Client Statistics](8#)
+1. [Import and Export Settings](#1)
+2. [SSMS Shortcuts](#2)
+3. [Keyboard Shortcuts for Favorite Stored Procedures](#3)
+4. [Script any object with data](#4)
+5. [Selecting a block of text using the ALT Key](#5)
+6. [Script Table and Column Names by Dragging from Object Explorer](#6)
+7. [Disable Copy of Empty Text](#7)
+8. [Client Statistics](#8)
 9. [Configure Object Explorer to Script Compression and Partition Schemes for Indexes](#9)
 10. [Using GO X to Execute a Batch or Statement Multiple Times](#10)
 11. [SSMS Template Replacement](#11)
