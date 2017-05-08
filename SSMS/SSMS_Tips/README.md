@@ -23,6 +23,7 @@ Content:
 19. [Additional Connection Parameters](#19)
 20. [Working with tabs headers](#20)
 21. [Hiding tables in SSMS Object Explorer](#21)
+22. [UnDock Tabs and Windows for Multi Monitor Support](#22)
 
 
 <a id="1"></a>
@@ -266,10 +267,14 @@ There is a simple workaround for this situation. It is to add the following para
 ConnectRetryCount=0
 ```
 
+![Additional Connection Parameters](additional_connection_parameters.png)
+
 
 <a id="20"></a>
 ## Working with tabs headers
 You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly script open containing folder or copy script file path.
+
+![Working with tabs headers](working_with_tabs_headers.png)
 
 
 <a id="21"></a>
@@ -304,9 +309,16 @@ In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_S
 `VIEW DEFINITION` is the ability to see the definition of the object (duh). In the case of SPs the code, same with Views and in the case of Tables it’s the columns definitions etc.
 
 
+<a id="22"></a>
+## UnDock Tabs and Windows for Multi Monitor Support
+From SSMS 2012 and onwards, you can easily dock/undock the query tabs as well as different object windows inside SSMS to make better use of the screen real estate and multiple monitors you have.
+
+![UnDock Tabs and Windows for Multi Monitor Support](undock_tabs_and_windows_for_multi_monitor_support.gif)
+
+
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
- - [SSMS Tips: Templates and Control+Shift+M]
+ - [SSMS Tips: Templates and Control+Shift+M] (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
  - [SSMS Tips and Tricks](http://www.ssmstipsandtricks.com/) (by Latish Sehgal)
  - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by Klaus Aschenbrenner)
@@ -314,9 +326,9 @@ Reference:
  - [Keyboard shortcut to close a query tab in SSMS](https://www.am2.co/2017/01/close-ssms-tab/) (by Andy Mallon)
  - [SQL Server Management Studio Tips](https://www.mssqltips.com/sql-server-tip-category/52/sql-server-management-studio/) (by MSSQLTips)
  - [Generating Charts and Drawings in SQL Server Management Studio] (by Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky)
- - [Try and try again: not always a good idea (at least not for SSMS!)](https://blogs.msdn.microsoft.com/sqlcat/2017/04/06/try-and-try-again-not-always-a-good-idea-at-least-not-for-ssms/)
- - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/)
- - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/)
+ - [Try and try again: not always a good idea (at least not for SSMS!)](https://blogs.msdn.microsoft.com/sqlcat/2017/04/06/try-and-try-again-not-always-a-good-idea-at-least-not-for-ssms/) (by Arvind Shyamsundar)
+ - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/) (by Kenneth Fisher)
+ - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/) (by Kenneth Fisher)
 
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
