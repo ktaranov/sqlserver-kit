@@ -87,8 +87,8 @@ BEGIN
         DECLARE @OBJECT_ID      INTEGER       = OBJECT_ID(@tableFullName);
         DECLARE @Columns        NVARCHAR(MAX) = N'';
         DECLARE @filePath       NVARCHAR(MAX) = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
-        DECLARE @crlf          NVARCHAR(10)  = CHAR(13);
-        DECLARE @TROW50000      NVARCHAR(MAX) = N'';
+        DECLARE @crlf           NVARCHAR(10)  = CHAR(13);
+        DECLARE @TROW50000      NVARCHAR(1000) = N'';
 
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
