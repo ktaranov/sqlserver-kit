@@ -24,6 +24,7 @@ Content:
 20. [Working with tabs headers](#20)
 21. [Hiding tables in SSMS Object Explorer](#21)
 22. [UnDock Tabs and Windows for Multi Monitor Support](#22)
+23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 
 
 <a id="1"></a>
@@ -33,10 +34,14 @@ Content:
 You can configure so many settings in SSMS and then export it and use on all your computers.
 Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
 
+Also you can create shared team settings file and use it from network location.
+
+![Import and Export Settings](import_and_export_settings.png)
+
 
 <a id="2"></a>
 ## SSMS Shortcuts
-All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
+All 957 shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
 
 Most useful are:
 
@@ -238,7 +243,9 @@ The query window in SSMS can be split into two so that you can look at two parts
 Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
 To split the window simply drag the bar to the top right hand side of the window as shown below.
 
-The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane
+The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane.
+
+![Splitting the Query Window](splitting_the_query_window.gif)
 
 
 <a id="17"></a>
@@ -303,7 +310,7 @@ GO
 DENY VIEW DEFINITION ON Schema.Table TO UserName;
 ```
 
-Now UserName won’t be able to see Table in Object Explorer.
+Now UserName won’t be able to see Table in `Object Explorer`.
 In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_SCHEMA.TABLES`
 
 `VIEW DEFINITION` is the ability to see the definition of the object (duh). In the case of SPs the code, same with Views and in the case of Tables it’s the columns definitions etc.
@@ -314,6 +321,16 @@ In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_S
 From SSMS 2012 and onwards, you can easily dock/undock the query tabs as well as different object windows inside SSMS to make better use of the screen real estate and multiple monitors you have.
 
 ![UnDock Tabs and Windows for Multi Monitor Support](undock_tabs_and_windows_for_multi_monitor_support.gif)
+
+
+<a id="23"></a>
+## RegEx-Based Finding and Replacing of Text in SSMS
+So often, one sees developers doing repetitive coding in SSMS or Visual Studio that would be much quicker and easier by using the built-in Regular-Expression-based Find/Replace functionality.
+It is understandable, since the syntax is odd and some features are missing, but it is still well-worth knowing about.
+
+More details and examples you can find here [RegEx-Based Finding and Replacing of Text in SSMS].
+
+My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have column names copied from, for example, Excel and need quickly get sql query.
 
 
 Reference:
@@ -329,8 +346,10 @@ Reference:
  - [Try and try again: not always a good idea (at least not for SSMS!)](https://blogs.msdn.microsoft.com/sqlcat/2017/04/06/try-and-try-again-not-always-a-good-idea-at-least-not-for-ssms/) (by Arvind Shyamsundar)
  - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/) (by Kenneth Fisher)
  - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/) (by Kenneth Fisher)
-
+ - [Presenting: Presentation Mode!](http://www.williamdurkin.com/2017/03/presenting-presentation-mode/) (by William Durkin)
+ - [RegEx-Based Finding and Replacing of Text in SSMS] (by Phil Factor)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
+[RegEx-Based Finding and Replacing of Text in SSMS]:https://www.simple-talk.com/sql/sql-training/regex-based-finding-and-replacing-of-text-in-ssms/
