@@ -135,6 +135,8 @@ Drag the `Columns` folder for a table in to auto-type all column names in the ta
 
 This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > All Languages > General > 'Apply Cut or Copy Commands to blank lines when there is no selection'` and uncheck the checkbox.
 
+![Disable Copy of Empty Text](disable_copy_of_empty_text.png)
+
 
 <a id="8"></a>
 ## Client Statistics
@@ -161,7 +163,7 @@ By default, you wouldn’t know just by scripting out the index from Object Expl
 
 You can make sure you’re aware when indexes have compression or are partitioned by changing your scripting settings:
 - Click `Tools – > Options -> SQL Server Object Explorer -> Scripting`
-- Scroll down in the right pane of options and set both of these to ‘True’
+- Scroll down in the right pane of options and set both of these to `True`
   - *Script Data Compression Options*
   - *Script Partition Schemes*
 - Click OK
@@ -181,7 +183,7 @@ GO 10
 ```
 
 This will run the insert statement 10 times and therefore insert 10 rows into the TestData table.
-In this case this is a simpler alternative than creating a cursor or while loop. 
+In this case this is a simpler alternative than creating a cursor or while loop.
 
 
 <a id="11"></a>
@@ -190,7 +192,7 @@ One under-used feature of Management Studio is the template replacement feature.
 
 In your saved .sql script, just use the magic incantation to denote the parameters for replacement. The format is simple: `<label, datatype, default value>`
 
-Then, when you open the `.sql` script, you hit `CTRL + Shift + M`, and SSMS will give you a pop-up to enter your replacement values
+Then, when you open the `.sql` script, you hit `CTRL + Shift + M`, and SSMS will give you a pop-up to enter your replacement values.
 
 
 <a id="12"></a>
@@ -204,7 +206,8 @@ Select the check box towards the bottom of the window and use the ‘Select…�
 
 <a id="13"></a>
 ## SQLCMD mode
-Switching on SQLCMD mode enables a number of useful extra scripting style commands in SSMS.In particular you can use it to change to the connection credentials within the query window, so that you can run a query against multiple servers from the same query window.
+Switching on SQLCMD mode enables a number of useful extra scripting style commands in SSMS.
+In particular you can use it to change to the connection credentials within the query window, so that you can run a query against multiple servers from the same query window.
 There are more details of how to do this here: [Changing the SQL Server connection within an SSMS Query Windows using SQLCMD Mode](http://www.sqlmatters.com/Articles/Changing%20the%20SQL%20Server%20connection%20within%20an%20SSMS%20Query%20Windows%20using%20SQLCMD%20Mode.aspx)
 
 
@@ -222,11 +225,11 @@ Select the tables you want to script (using the Control key if necessary) and th
 <a id="15"></a>
 ## Registered Servers / Central Management Server
 If you have a lot of servers then re-entering the details in Object Explorer every time you start SSMS can be frustrating and time consuming.
-Fortunately there are two facilities within SSMS that enable these details to be entered just once and “remembered” each time you open up SSMS.
-These two facilities are Registered Servers and Central Management Servers.
+Fortunately there are two facilities within SSMS that enable these details to be entered just once and "remembered" each time you open up SSMS.
+These two facilities are **Registered Servers** and **Central Management Servers**.
 These were introduced in different versions of SQL Server and work in different ways, each has its own advantages and disadvantages so you may want to use both.
 
-To add a registered server open the Registered Servers window from the View menu (or click CTRL + ALT + G), the window should appear in the top left corner of SSMS.
+To add a registered server open the Registered Servers window from the View menu (or click `CTRL + ALT + G`), the window should appear in the top left corner of SSMS.
 Right click on the Local Server Groups folder and select ‘New Server Registration…’. Enter the server details and close the window.
 This new server should then appear under Local Server Groups, you can then right click and open up the server in Object Explorer or open a new query window.
 The server details are stored locally in an XML file and so will appear next time you open SSMS.
