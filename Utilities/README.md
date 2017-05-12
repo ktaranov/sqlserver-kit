@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **210** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **206** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -17,7 +17,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {3}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {98}
+ - **[?]**: Not yet classified {94}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
@@ -128,10 +128,6 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Dell Foglight](#dell-foglight)                                       | No                               | No             | [?]        | [Dell Foglight]                            | 2015-09-22   | Dell                 | No             | ?     |
 | [Dell Discovery Wizard](#dell-discovery-wizard)                       | No                               | No             | [?]        | [Dell Discovery Wizard]                    | 2011-09-22   | Dell                 | Yes            | No    |
 | [Dell Enterprise Reporter](#dell-enterprise-reporter)                 | No                               | No             | [?]        | [Dell Enterprise Reporter]                 | ?            | Dell                 | No             | $511  |
-| [SQL Deadlock Detector](#sqlsolutions-sql-deadlock-detector)          | No                               | No             | [?]        | [SQLSolutions SQL Deadlock Detector]       | 2013-05-16   | SQLSolutions         | No             |  $295 |
-| [SQL Heartbeat](#sqlsolutions-sql-heartbeat)                          | No                               | No             | [?]        | [SQLSolutions SQL Heartbeat]               | 2013-03-03   | SQLSolutions         | No             |  $295 |
-| [SQL Trace Analyzer](#sqlsolutions-sql-trace-analyzer)                | No                               | No             | [?]        | [SQLSolutions SQL Trace Analyzer]          | 2013-12-09   | SQLSolutions         | No             |  $495 |
-| [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | No                               | No             | [?]        | [SQLSolutions SQL Ultimate Debugger]       | -            | SQLSolutions         | No             |  $295 |
 | [SQL Scripter](#sql-scripter)                                         | No                               | No             | [?]        | [SQL Scripter]                             | 2013-02-24   | Thomas Hinsenkamp    | No             |   €99 |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | No                               | No             | [?]        | [Simple Dynamic Scheduler]                 | 2016-05-02   | Miljan Radovic       | Yes            | No    |
 | [ApexSQL Audit](#apexsql-audit)                                       | No                               | No             | [?]        | [ApexSQL Audit]                            | 2016-04-08   | ApexSQL              | No             | $1699 |
@@ -1777,65 +1773,6 @@ Dell Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility
 including users and logins, roles and database permissions
 
 
-## SQLSolutions SQL Deadlock Detector
-<a id="sqlsolutions-sql-deadlock-detector"></a>
-Download page: [SQLSolutions SQL Deadlock Detector]<br/>
-Release date: 2013-05-16<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
- - Monitor and detect long-running locks and deadlocks 24/7
- - Identify blocking SQL code, locked objects and deadlock victims with pinpoint accuracy
- - Accelerate system response time by reducing long lock waits
-
-
-## SQLSolutions SQL Heartbeat
-<a id="sqlsolutions-sql-heartbeat"></a>
-Download page: [SQLSolutions SQL Heartbeat]<br/>
-Release date: 2013-03-03<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
- - Unlock the value of a full SQL Server trace
- - Quickly diagnose and identify all performance bottlenecks
- - Locate within minutes specific SQL statements responsible for each bottleneck
- - Proactively and constantly monitor performance through scheduled traces
-
-
-## SQLSolutions SQL Trace Analyzer
-<a id="sqlsolutions-sql-trace-analyzer"></a>
-Download page: [SQLSolutions SQL Trace Analyzer]<br/>
-Release date: 2009-12-09<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $495
-
-Monitor your SQL Server 24 x 7 to remedy performance bottlenecks and maintain server health.
-SQL Heartbeat monitors all of your SQL Servers in a way that allows you to identify and prevent SQL Server problems before they happen.
-SQL Heartbeat allows for an unlimited number of custom counters to be defined.
-Important metrics often include: logins per second, lack waits per second, total latch wait time, deadlocks per second, errors per second,
-buffer cache hits ratio, page life expectancy, percent CPU utilization and average disk queue lengths.
-As default metrics have been set up by SQL Server experts, the initial setup step is minimal.
-
-
-## SQLSolutions SQL Ultimate Debugger
-<a id="sqlsolutions-sql-ultimate-debugger"></a>
-Download page: [SQLSolutions SQL Ultimate Debugger]<br/>
-Release date: ?<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
-The sql server tool for developers who debug SQL server stored procedures, functions (UDFs) and triggers.
-This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
-
-
 ## SQL Scripter
 <a id="sql-scripter"></a>
 Download page: [SQL Scripter]<br/>
@@ -3395,10 +3332,6 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [Dell Foglight]:http://software.dell.com/products/foglight-for-cross-platform-databases/
 [Dell Discovery Wizard]:http://software.dell.com/products/discovery-wizard-for-sql-server/
 [Dell Enterprise Reporter]:http://software.dell.com/products/enterprise-reporter-for-sql-server/
-[SQLSolutions SQL Deadlock Detector]:http://sqlsolutions.com/products/sql-deadlock-detector/index.html
-[SQLSolutions SQL Heartbeat]:http://www.sqlsolutions.com/products/sql-server-monitor/sql-monitor.html
-[SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
-[SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
 [SQL Scripter]:http://www.sqlscripter.com/
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
 [ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx

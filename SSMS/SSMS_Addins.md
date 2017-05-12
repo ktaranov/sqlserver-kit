@@ -17,17 +17,17 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016                                               | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                                                    | Dave ballantyne      | Yes          | No    |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2016-11-16   | 2008/2012/2014/2016                                               | Jakub Dvorak         | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2016-04-01   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2016-02-11   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2015-09-04   | 2008/2012/2014                                                    | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2015-04-27   | 2008/2012/2014                                                    | ApexSQL tools        | No           |  $299 |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-04-13   | 2008/2012/2014/2016/2017                                          | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-05-08   | 2008/2012/2014/2016/2017                                          | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-04-13   | 2008/2012/2014/2016/2017                                          | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-03-30   | 2008/2012/2014/2016                                               | ApexSQL tools        | No           |  $299 |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014                                                    | Spotlight Essentials | Yes          | No    |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2016-09-28   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $249 |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2016-09-09   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $199 |
 | [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2016-09-16   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $149 |
 | [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2015-11-30   | 2005/2008/2008R2/2012/2014/2016                                   | Devart               | No           |  $99  |
-| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2016-09-16   | SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016 | Devart               | Yes          | No    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2016-12-05   | SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016 | Devart               | Yes          |  $119 |
+| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2017-04-20   | SQL Azure/2000/2005/2008/2008R2/2012/2014/2016/2017               | Devart               | Yes          | No    |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2016-12-05   | SQL Azure/2000/2005/2008/2008R2/2012/2014/2016/2017               | Devart               | Yes          |  $119 |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008/2012/2014                                                    | SoftTree             | No           |  $179 |
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014                                                    | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014                                                    | Alex Maslyukov       | Yes          | No    |
@@ -222,8 +222,6 @@ Developer: Jakub Dvorak<br/>
 Free version: No<br/>
 Price: €50
 
-
- - Integration with SSMS 2016
  - Create custom folders for databases, stored procedures, tables, views and user defined functions
  - Drag&Drop objects in folders
  - Management interface for bulk folder operations
@@ -233,16 +231,14 @@ Price: €50
  - Dynamic folders
 
 
-
 ## ApexSQL Complete <a id="apexsql-complete"></a>
 Download page: [ApexSQL Complete]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-04-13<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
 
-With ApexSQL Complete you can:
  - Automatically complete SQL statements
  - Review an objects script and description
  - Improve productivity with snippets
@@ -255,8 +251,8 @@ With ApexSQL Complete you can:
 
 ## ApexSQL Refactor <a id="apexsql-refactor"></a>
 Download page: [ApexSQL Refactor]<br/>
-Release date: 2015-12-11<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-05-08<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
@@ -274,8 +270,8 @@ With ApexSQL Refactor you can:
 
 ## ApexSQL Search <a id="apexsql-search"></a>
 Download page: [ApexSQL Search]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-04-13<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
@@ -291,8 +287,8 @@ With ApexSQL Search you can:
 
 ## ApexSQL Source Control <a id="apexsql-source-control"></a>
 Download page: [ApexSQL Source Control]<br/>
-Release date: 2015-04-27<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-03-30<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
 Price: $299
@@ -377,8 +373,8 @@ dbForge Index Manager for SQL Server will significantly boost SQL Server perform
 
 ## dbForge Search <a id="dbforge-search"></a>
 Download page: [dbForge Search]<br/>
-Release date: 2016-09-16<br/>
-Support Version: SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-04-20<br/>
+Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016/2017<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: No
