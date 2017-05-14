@@ -4,10 +4,10 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version                 | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2016-11-17   | 2008/2012/2014/2016                  | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-03-14   | 2008/2012/2014/2016                  | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016                  | Smashing Jedis LLC   | Yes          |   $99 |
-| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2015-05-04   | 2008/2012/2014                       | Oleksii Kovalov      | Yes          | No    |
-| [SQL Search](#sql-search)                             | [SQL Search]                  | 2016-05-04   | 2008/2012/2014/2016/2017             | Red Gate             | Yes          | No    |
+| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2017-02-27   | 2008/2012/2014                       | Oleksii Kovalov      | Yes          | No    |
+| [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017             | Red Gate             | Yes          | No    |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014                       | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2015-11-17   | 2008/2012/2014                       | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014                       | Red Gate             | No           |  $495 |
@@ -37,7 +37,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 ## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
-Release date: 2016-11-17<br/>
+Release date: 2017-03-14<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
@@ -79,7 +79,7 @@ Write maintainable SQL scripts, Understand code better and Navigate faster with 
 
 ## SQL Code Guard <a id="sql-code-guard"></a>
 Download link: [SQL Code Guard]<br/>
-Release date: 2015-05-04<br/>
+Release date: 2017-02-17<br/>
 Support Version: 2008/2012/2014<br/>
 Developer: Oleksii Kovalov<br/>
 Free version: Yes<br/>
@@ -97,8 +97,8 @@ SQL Code Guard is a free solution for SQL Server that provides fast and comprehe
 
 ## SQL Search <a id="sql-search"></a>
 Download page: [SQL Search]<br/>
-Release date: 2016-05-04<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-02-27<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: Red Gate<br/>
 Free version: Yes<br/>
 Price: No
