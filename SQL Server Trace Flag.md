@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (512 trace flags)
+Complete list of Microsoft SQL Server trace flags (517 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -151,7 +151,7 @@ As a DBA, this is a good thing because when I look in my ERRORLOG, I really only
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **512 trace flags**
+Summary: **517 trace flags**
 
 
 <a id="-1"></a>
@@ -236,11 +236,19 @@ Link: http://support.microsoft.com/kb/926292
 
 <a id="174"></a>
 **Trace Flag: 174**<br />
+Function: Enables a fix to address errors when rebuilding partitions online for tables that contain a computed partitioning column.<br />
+Link: https://support.microsoft.com/en-us/help/3213683/<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
+<a id="176"></a>
+**Trace Flag: 176**<br />
 Function: Increases the SQL Server Database Engine plan cache bucket count from 40009 to 160001 on 64-bit systems.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/en-us/kb/3026083<br />
 Link: [MSDN ms188396]<br />
-Scope: global only
+Scope: global or session
 
 
 <a id="204"></a>
@@ -2487,6 +2495,15 @@ Function: SQL 9 – After 4610 & 4618 you can still customize the quota for Toke
 Link: https://support.microsoft.com/en-us/kb/959823
 
 
+<a id="5004"></a>
+**Trace Flag: 5004**<br />
+Function: Pauses TDE encryption scan and causes encryption scan worker to exit without doing any work.
+The database will continue to be in encrypting state (encryption in progress).
+To resume re-encryption scan, disable trace flag 5004 and run ALTER DATABASE SET ENCRYPTION ON.<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
 <a id="5101"></a>
 **Trace Flag: 5101**<br />
 Function: Forces all I/O requests to go through engine 0.
@@ -2725,9 +2742,26 @@ Function: SQL 10 - Avoids blocking when using full text indexing. An issue we ex
 Link: None
 
 
+<a id="7745"></a>
+**Trace Flag: 7646**<br />
+Function: Forces Query Store to not flush data to disk on database shutdown.<br />
+Note: Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
+For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
+<a id="7752"></a>
+**Trace Flag: 7752**<br />
+Function: Enables asynchcronous load of Query Store.<br />
+Note: Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).<br />
+Link: [MSDN ms188396]<br />
+Scope: global only
+
+
 <a id="7806"></a>
 **Trace Flag: 7806**<br />
-Function: SQL 9 - Enables a dedicated administrator connection on SQL Express, DAC resources are not reserved by default<br />
+Function: Enables a dedicated administrator connection (DAC) on SQL Server Express. By default, no DAC resources are reserved on SQL Server Express.<br />
 Link: [MSDN ms188396]<br />
 Link: https://msdn.microsoft.com/en-us/library/ms189595.aspx<br />
 Link: https://sqlperformance.com/2012/08/sql-memory/test-your-dac-connection<br />
@@ -3719,6 +3753,15 @@ Link: [MSDN ms188396]<br />
 Link: https://www.mssqltips.com/sqlservertip/4537/sql-server-2016-availability-group-automatic-seeding/<br />
 Link: https://msdn.microsoft.com/en-us/library/mt735149.aspx<br />
 Link: [MSDN mt736907]<br />
+Scope: global or session
+
+
+<a id="9591"></a>
+**Trace Flag: 9591**<br />
+Function: Disables log block compression in Always On Availability Groups.
+Log block compression is the default behavior used with both synchronous and asynchronous replicas in SQL Server 2012 and SQL Server 2014.
+In SQL Server 2016, compression is only used with asynchronous replica.<br />
+Link: [MSDN ms188396]<br />
 Scope: global or session
 
 
