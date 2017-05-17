@@ -2738,12 +2738,13 @@ Link: None
 
 <a id="7646"></a>
 **Trace Flag: 7646**<br />
-Function: SQL 10 - Avoids blocking when using full text indexing. An issue we experienced that full text can be slow when there is a high number of updates to the index and is caused by blocking on the docidfilter internal table.<br />
+Function: SQL 10 - Avoids blocking when using full text indexing.
+An issue we experienced that full text can be slow when there is a high number of updates to the index and is caused by blocking on the docidfilter internal table.<br />
 Link: None
 
 
 <a id="7745"></a>
-**Trace Flag: 7646**<br />
+**Trace Flag: 7745**<br />
 Function: Forces Query Store to not flush data to disk on database shutdown.<br />
 Note: Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
 For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.<br />
