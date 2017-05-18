@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (517 trace flags)
+Complete list of Microsoft SQL Server trace flags (518 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -151,7 +151,7 @@ As a DBA, this is a good thing because when I look in my ERRORLOG, I really only
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **517 trace flags**
+Summary: **518 trace flags**
 
 
 <a id="-1"></a>
@@ -1392,9 +1392,13 @@ Function: Verbose Merge Replication logging to msmerge\_history table for troubl
 Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-records-backups-and-database-compression-with-a-pinch-of-security-considerations.aspx
 
 
-**Trace Flag: 2520, 2588**<br />
-Function: Forces DBCC HELP to return syntax of undocumented DBCC statements. If 2520/2588 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC state ment 'undocumented statement'". Also affects dbcc help ('?')<br />
-Link: http://www.sqlskills.com/blogs/paul/dbcc-writepage/
+<a id="2520"></a>
+**Trace Flag: 2520**<br />
+Function: For SQL Server prior 2005. Forces DBCC HELP to return syntax of undocumented DBCC statements.
+If 2520/2588 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC statement 'undocumented statement'".
+Also affects dbcc help ('?')<br />
+Link: http://www.sqlskills.com/blogs/paul/dbcc-writepage/<br />
+Scope: session only
 
 
 <a id="2521"></a>
@@ -1615,6 +1619,15 @@ Link: [MSDN ms188396]<br />
 Link: https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb<br />
 Link: https://support.microsoft.com/en-us/help/2888996/fix-data-purity-corruption-in-sys.sysbinobjs-table-in-master-database-when-you-log-on-to-sql-server-by-using-the-sa-account-and-then-run-dbcc-checkdb<br />
 Scope: global only
+
+
+<a id="2588"></a>
+**Trace Flag: 2588**<br />
+Function: For SQL Server since 2005. Forces DBCC HELP to return syntax of undocumented DBCC statements.
+If 2520/2588 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC statement 'undocumented statement'".
+Also affects dbcc help ('?')<br />
+Link: http://www.sqlskills.com/blogs/paul/dbcc-writepage/<br />
+Scope: session only
 
 
 <a id="2701"></a>
@@ -3051,6 +3064,12 @@ Scope: global only
 <a id="8209"></a>
 **Trace Flag: 8209**<br />
 Function: Output extra information to error log regarding replication of schema changes in SQL Server Replication<br />
+Link: None
+
+
+Trace Flag : 8218
+Function: Determine whether trace flag to bypass proc generation has been set.
+Referenced in the system procedure `[master].[sys].[sp_cdc_vupgrade]`<br />
 Link: None
 
 
