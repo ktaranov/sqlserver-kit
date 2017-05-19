@@ -124,7 +124,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install CTP]                                                        | 14.0.500.272                                 | 2017-04-19                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
+| 2017    | [Install CTP]                                                        | 14.0.600.250                                 | 2017-05-17                               | ?               | ?                  | ?                | [Other SQL vNext Updates](#microsoft-sql-server-vnext-builds)     |
 | 2016    | [Install 2016 SP1] Or [Developer Free] then <br/>[SP1 CU2 KB4013106] | 13.0.4001.0<br>13.0.4422.0                   | 2016-11-16<br/>2017-03-20                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU5 KB4013098]  | 12.0.5000.0<br/>12.0.5546.0                  | 2016-07-11<br/>2017-04-18                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP3 2012] then<br/>[KB4013104]              | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6594.0 | 2012-02-14<br/>2015-11-21<br/>2017-03-21 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -169,7 +169,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link        | File Name                                                         | Release Date | Build Number | Size, MB | SHA1                                                        |
 |---------------------------------|-------------------------------------------------------------------|--------------| ------------:|---------:|-------------------------------------------------------------|
-| [SQL Server 2017]               | SQLServerVnextCTP2.0-x64-ENU.iso                                  | 2017-04-19   | 14.0.500.272 |     1721 | 1e 7d 9f b8 d7 90 8a 0f 6d 77 80 11 e5 7d 20 4a 9e 11 89 8b |
+| [SQL Server 2017]               | SQLServer2017CTP2.1-x64-ENU.iso                                   | 2017-05-17   | 14.0.600.250 |     1606 | 55 59 1d 3c d9 d8 81 aa 54 47 4a bf 70 1d ed e0 c1 34 f2 9e |
 | [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5  |     2050 | ce 21 bf 1c 08 ec 1a c4 8e bb 49 88 a8 60 2c 78 13 03 4e a3 |
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0  |      552 | 8c 6c f1 88 78 93 1d 8e fd 44 b9 52 e7 94 20 00 2b 8a 48 85 |
 | [SQL Server 2016 SP1 KB4013106] | SQLServer2016-KB4013106-x64.exe                                   | 2017-03-20   | 13.0.4422.0  |      415 | 94 6c db 15 41 7a 18 4a ab 4d d2 4d 93 7c 3d 1c fb 1c 86 62 |
@@ -187,7 +187,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[SQL Server 2017]:http://care.dlservice.microsoft.com/dl/download/F/4/3/F43E1CD6-4FAB-4E23-9019-5D72D7FA9BEA/SQLServerVnextCTP2.0-x64-ENU.iso
+[SQL Server 2017]:http://care.dlservice.microsoft.com/dl/download/6/2/1/621495E3-D833-48E9-B107-E3983C59F53B/SQLServer2017CTP2.1-x64-ENU.iso
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4013106]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/x64/SQLServer2016-KB4013106-x64.exe
@@ -385,7 +385,7 @@ For details about how to assess the performance differences of your most importa
 
 | Version            | Codename    | RTM (no SP)    | SP1            | SP2                             | SP3                               | SP4                             |
 |:-------------------|:------------|:---------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2017    | 2017        | [14.0.500.272] |                |                                 |                                   |                                 |
+| SQL Server 2017    | 2017        | [14.0.600.250] |                |                                 |                                   |                                 |
 | SQL Server 2016    | 2016        | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
 | SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
 | SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
@@ -395,7 +395,7 @@ For details about how to assess the performance differences of your most importa
 | SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
 | SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[14.0.500.272]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
+[14.0.600.250]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [13.0.4001.0]:https://support.microsoft.com/en-us/kb/3182545
 [12.0.5000.0]:https://support.microsoft.com/en-us/kb/3171021
@@ -426,10 +426,10 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server vNext Developer Edition:
 
 ```
-Microsoft SQL Server vNext (CTP2.0) – 14.0.500.272 (X64)
-  Apr 13 2017 11:44:40
+Microsoft SQL Server 2017 (CTP2.1) – 14.0.600.250 (X64)
+  May 10 2017 12:21:23
   Copyright (C) 2017 Microsoft Corporation. All rights reserved.
-  Developer Edition (64-bit) on Windows …
+  Developer Edition (64-bit) on …
 ```
 
 There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/what-s-new-in-sql-server-vnext-database-engine)
@@ -442,14 +442,15 @@ Useful articles:
 
 | Build        | File version     | Branch | Type | KB / Description                                                       | Release Date | Build Date | Size, Mb |
 |--------------|------------------|--------|------|------------------------------------------------------------------------|--------------|------------|---------:|
-| 14.0.500.272 | 2017.140.500.272 | CTP    | CTP  | [Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)] | 2017-04-19   | 2017-04-13 |     1721 |
+| 14.0.600.250 | 2017.140.600.250 | CTP    | CTP  | [Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)]  | 2017-05-17   | 2017-05-10 |     1606 |
+| 14.0.500.272 | 2017.140.500.272 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)   | 2017-04-19   | 2017-04-13 |     1721 |
 | 14.0.405.198 | 2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)   | 2017-03-17   | 2017-03-11 |     2001 |
 | 14.0.304.138 | 2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3)   | 2017-02-17   | 2017-02-14 |     1978 |
 | 14.0.200.24  | 2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2)   | 2017-01-18   | 2017-01-11 |     1975 |
 | 14.0.100.187 | 2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)   | 2016-12-16   | 2016-12-11 |     1975 |
 | 14.0.1.246   | 2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)       | 2016-11-16   | 2016-11-02 |     1983 |
 
-[Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-vnext-ctp
+[Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)]:https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux#resources
 
 
 ## Microsoft SQL Server 2016 Builds
