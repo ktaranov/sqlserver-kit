@@ -700,6 +700,7 @@ in a production environment. Database upgrade scripts needs to execute successfu
 Not doing so can cause unexpected issues with your SQL Server instance.**<br />
 Link: https://support.microsoft.com/en-us/kb/2163980<br />
 Link: [MSDN ms188396]<br />
+Link: https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/<br />
 Scope: global only
 
 
@@ -726,6 +727,7 @@ Link: [MSDN ms188396]<br />
 Link: http://www.sqlskills.com/blogs/paul/tempdb-configuration-survey-results-and-advice<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/01/attempt-to-grow-all-files-in-one-filegroup-and-not-just-the-one-next-in-the-autogrowth-chain-using-trace-flag-1117<br />
 Link: http://sql-articles.com/articles/general/day-6trace-flag-1117-auto-grow-equally-in-all-data-file<br />
+Link: http://www.ryanjadams.com/2017/05/trace-flag-1117-growth-contention/<br />
 Scope: global only
 
 

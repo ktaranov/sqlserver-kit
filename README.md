@@ -145,6 +145,7 @@ Headers:
     - [UpSearch Blog](https://upsearch.com/blog/)
     - [ProData Blog](http://blogs.prodata.ie/)
     - [Red9 SQL Server Performance Blog](https://red9.com/blog/)
+    - [DallasDBAs.com Blog](http://dallasdbas.com/blog/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -255,6 +256,8 @@ Headers:
     - [tigertoolbox - Repository for Tiger team for "as-is" solutions and tools/scripts that the team publishes for SQL Server](https://github.com/Microsoft/tigertoolbox) (Github)
     - [SQL Server FineBuild - makes it easy for anyone to produce a best-practice installation and configuration of SQL Server](https://sqlserverfinebuild.codeplex.com/) (by Brian Davis)
     - [Pssdiag/Sqldiag Manager - is a graphic interface that provides customization capabilities to collect data for SQL Server using sqldiag collector engine](https://github.com/Microsoft/DiagManager) (Github)
+    - [sql-xplat-cli - Repository for the new SQL cross-platform command line tools](https://github.com/Microsoft/sql-xplat-cli) (by Microsoft)
+    - [dbfs - A tool for mounting MS SQL Server DMVs using FUSE](https://github.com/Microsoft/dbfs) (by Microsoft)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
