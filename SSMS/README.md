@@ -41,7 +41,8 @@ Support will then work with customers to determine if the issue is with SSMS or 
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.0 Release] **Latest**        | 14.0.17099.0  | 2017-04-25   |      729 |
+| [17.1 Release] **Latest**        | 14.0.17119.0  | 2017-05-24   |      784 |
+| [17.0 Release]                   | 14.0.17099.0  | 2017-04-25   |      729 |
 | [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
 | [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
 | [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
@@ -59,6 +60,7 @@ Support will then work with customers to determine if the issue is with SSMS or 
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.1 Release]:http://go.microsoft.com/fwlink/?linkid=849819
 [17.0 Release]:https://go.microsoft.com/fwlink/?linkid=847722
 [17.0 RC3 Release]:https://go.microsoft.com/fwlink/?linkid=844503
 [17.0 RC2 Release]:https://go.microsoft.com/fwlink/?linkid=840957
