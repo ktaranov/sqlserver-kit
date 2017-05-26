@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **214** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **213** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -10,14 +10,14 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[IDX]**: Index manager {1}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
- - **[M]**: Monitoring and alerting Tools {12}
+ - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {21}
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {4}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {98}
+ - **[?]**: Not yet classified {97}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|----------------------|----------------|------:|
@@ -196,7 +196,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                    | ?            | boxfuse              | Open Source    | No    |
 | [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                 | 2016-10-24   | Liquibase            | Open Source    | No    |
 | [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis             | Open Source    | No    |
-| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]                   | 2017-01-16   | SentryOne            | Yes            | No    |
+| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-01-16   | SentryOne            | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne            | No             | ?     |
 | [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart               | Yes            | No    |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro            | No             | ?     |
@@ -232,10 +232,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft            | Yes            |  No   |
 | [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | No             | [?]        | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft            | Open Source    |  No   |
 | [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft            | Yes            |  No   |
-| [mssql-scripter](#mssql-scripter)                                     | No                               | No             | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
-| [DBFS](#dbfs)                                                         | No                               | No             | [?]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
-| [SQL Test](#sql-test)                                                 | No                               | No             | [T]        | [SQL Test]                                  | 2017-03-21   | Red Gate             | No             |  $369 |
-
+| [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
+| [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
 
 ## SSMS
 <a id="ssms"></a>
@@ -2784,7 +2782,7 @@ Liquibase automatically creates DatabaseChangeLog Table and DatabaseChangeLogLoc
 Download page: [My Batis]<br/>
 Release date: 2016-06-22<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
-Author: Liquibase<br/>
+Author: My Batis<br/>
 Free version: Open Source<br/>
 Price: No
 
@@ -3549,4 +3547,3 @@ Write unit tests for SQL Server databases in SQL Server Management Studio
 [Microsoft Assessment and Planning]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server
 [mssql-scripter]:https://github.com/Microsoft/sql-xplat-cli
 [DBFS]:https://github.com/Microsoft/dbfs
-[SQL Test]:http://www.red-gate.com/products/sql-development/sql-test
