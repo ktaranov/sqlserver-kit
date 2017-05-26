@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **209** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **214** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -15,9 +15,9 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {15}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
- - **[T]**: Testing tools {3}
+ - **[T]**: Testing tools {4}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {94}
+ - **[?]**: Not yet classified {98}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author               | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|----------------------|----------------|------:|
@@ -230,6 +230,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Migration Assistant for DB2](#ssma-db2)                   | DB2                              | No             | [MG]       | [SQL Server Migration Assistant for DB2]    | 2017-02-17   | Microsoft            | Yes            |  No   |
 | [SQL Server Migration Assistant for Oracle](#ssma-oracle)             | Oracle                           | No             | [MG]       | [SQL Server Migration Assistant for Oracle] | 2017-02-17   | Microsoft            | Yes            |  No   |
 | [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft            | Yes            |  No   |
+| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | No             | [?]        | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft            | Open Source    |  No   |
+| [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft            | Yes            |  No   |
+| [mssql-scripter](#mssql-scripter)                                     | No                               | No             | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
+| [DBFS](#dbfs)                                                         | No                               | No             | [?]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
+| [SQL Test](#sql-test)                                                 | No                               | No             | [T]        | [SQL Test]                                  | 2017-03-21   | Red Gate             | No             |  $369 |
 
 
 ## SSMS
@@ -3265,6 +3270,72 @@ Price: No
 Microsoft SQL Server Migration Assistant (SSMA) for Access is a tool to automate migration from Access database(s) to SQL Server and Azure SQL DB.
 
 
+## mssql for Visual Studio Code
+<a id="mssql-for-vs-code"></a>
+Download page: [mssql for Visual Studio Code]<br/>
+Release date: 2017-02-02<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+mssql for Visual Studio Code an extension for developing Microsoft SQL Server, Azure SQL Database and SQL Data Warehouse everywhere with a rich set of functionalities, including:
+ - Connect to Microsoft SQL Server, Azure SQL Database and SQL Data Warehouses
+ - Create and manage connection profiles and most recently used connections
+ - Write T-SQL script with IntelliSense, Go to Definition, T-SQL snippets, syntax colorizations, T-SQL error validations and GO batch separator
+ - Execute your scripts and view results in a simple to use grid
+ - Save the result to json or csv file format and view in the editor
+ - Customizable extension options including command shortcuts and more
+
+
+## Microsoft Assessment and Planning
+<a id="map"></a>
+Download page: [Microsoft Assessment and Planning]<br/>
+Release date: 2017-02-10<br/>
+Support Version: 2008/2008R2/2012<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The Microsoft Assessment and Planning Toolkit makes it easy to assess your current IT infrastructure for a variety of technology migration projects. This Solution Accelerator provides a powerful inventory, assessment, and reporting tool to simplify the migration planning process.
+
+
+## mssql-scripter
+<a id="mssql-scripter"></a>
+Download page: [mssql-scripter]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+mssql-scripter is the multiplatform command line equivalent of the widely used Generate Scripts Wizard experience in SSMS. You can use mssql-scripter on Linux, macOS, and Windows to generate data definition language (DDL) and data manipulation language (DML) T-SQL scripts for database objects in SQL Server running anywhere, Azure SQL Database, and Azure SQL Data Warehouse.
+
+
+## DBFS
+<a id="dbfs"></a>
+Download page: [DBFS]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system. This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
+
+
+## SQL Test
+<a id="sql-test"></a>
+Download page: [SQL Test]<br/>
+Release date: 2017-03-21<br/>
+Support Version: 2005/2008/2012/2014/2016/Amazon RDS<br/>
+Author: Red Gate<br/>
+Free version: No<br/>
+Price: $369
+
+Write unit tests for SQL Server databases in SQL Server Management Studio
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3474,3 +3545,8 @@ Microsoft SQL Server Migration Assistant (SSMA) for Access is a tool to automate
 [SQL Server Migration Assistant for DB2]:https://www.microsoft.com/en-us/download/details.aspx?id=54254
 [SQL Server Migration Assistant for Oracle]:https://www.microsoft.com/en-us/download/details.aspx?id=54258
 [SQL Server Migration Assistant for Access]:https://www.microsoft.com/en-us/download/details.aspx?id=54255
+[mssql for Visual Studio Code]:https://github.com/Microsoft/vscode-mssql
+[Microsoft Assessment and Planning]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server
+[mssql-scripter]:https://github.com/Microsoft/sql-xplat-cli
+[DBFS]:https://github.com/Microsoft/dbfs
+[SQL Test]:http://www.red-gate.com/products/sql-development/sql-test
