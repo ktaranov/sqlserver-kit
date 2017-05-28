@@ -146,6 +146,7 @@ Headers:
     - [ProData Blog](http://blogs.prodata.ie/)
     - [Red9 SQL Server Performance Blog](https://red9.com/blog/)
     - [DallasDBAs.com Blog](http://dallasdbas.com/blog/)
+    - [SQLBI Blog](http://www.sqlbi.com)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -226,10 +227,11 @@ Headers:
  - SQL Server System Views Map
    - [SQL Server 2008 System Views Map](https://www.microsoft.com/en-us/download/details.aspx?id=9301)
    - [SQL Server 2012 System Views Map](https://www.microsoft.com/en-us/download/details.aspx?id=39083)
- - Microsoft Troubleshooting guides
+ - Microsoft Troubleshooting and security guides
    - [Solving Connectivity errors to SQL Server](https://support.microsoft.com/en-us/help/4009936/solving-connectivity-errors-to-sql-server)
    - [Troubleshooting connectivity issues with Microsoft Azure SQL Database](https://support.microsoft.com/en-in/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database)
    - [Troubleshooting Always On Issues](https://support.microsoft.com/en-us/help/10179/troubleshooting-alwayson-issues)
+   - [Guide for enhancing privacy and addressing GDPR requirements with the Microsoft SQL platform](https://aka.ms/gdprsqlwhitepaper)
  - Social, Forum and Messenger SQL Server Groups
    - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
    - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 700 People)
@@ -258,6 +260,8 @@ Headers:
     - [Pssdiag/Sqldiag Manager - is a graphic interface that provides customization capabilities to collect data for SQL Server using sqldiag collector engine](https://github.com/Microsoft/DiagManager) (Github)
     - [sql-xplat-cli - Repository for the new SQL cross-platform command line tools](https://github.com/Microsoft/sql-xplat-cli) (by Microsoft)
     - [dbfs - A tool for mounting MS SQL Server DMVs using FUSE](https://github.com/Microsoft/dbfs) (by Microsoft)
+    - [Opserver - Stack Exchange's Monitoring System](https://github.com/opserver/Opserver) (by Stack Exchange)
+    - [Bosum - Time Series Alerting Framework](https://github.com/bosun-monitor/bosun) (by Stack Exchange)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)
