@@ -3459,7 +3459,7 @@ Write unit tests for SQL Server databases in SQL Server Management Studio
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
-[SqlDiffFramework]:https://sqldiffframework.codeplex.com/Wikipage?ProjectName=sqldiffframework
+[SqlDiffFramework]:https://github.com/msorens/SqlDiffFramework/
 [DataGrip]:https://www.jetbrains.com/datagrip/
 [Pssdiag and Sqldiag Manager]:https://github.com/Microsoft/DiagManager
 [SQL Nexus Tool]:http://sqlnexus.codeplex.com/

@@ -93,10 +93,15 @@ BEGIN
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
 
+        IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
+
+        IF LEFT(@databaseName, 1) =N'[' OR LEFT (@tableName, 1) = N'[' OR @schemaName = N'['
+        THROW 50002, 'Please do not use quotes in Database, Table or Schema names! In the procedure it is already done with QUOTENAME function.', 1;
+
+        SET @tableFullName = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+
         SET @TROW50000 = N'Table ' + @tableFullName + N' is not exists in database ' + QUOTENAME(@databaseName) + N'!!!';
         IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
-
-        IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
         IF @debug = 1 PRINT ISNULL(N'@filePath = {' + @filePath + N'}', N'@filePath = Null');
 
