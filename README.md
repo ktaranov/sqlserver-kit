@@ -232,7 +232,7 @@ Headers:
    - [Troubleshooting connectivity issues with Microsoft Azure SQL Database](https://support.microsoft.com/en-in/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database)
    - [Troubleshooting Always On Issues](https://support.microsoft.com/en-us/help/10179/troubleshooting-alwayson-issues)
    - [Guide for enhancing privacy and addressing GDPR requirements with the Microsoft SQL platform](https://aka.ms/gdprsqlwhitepaper)
- - Social, Forum and Messenger SQL Server Groups
+ - Social, Forum and Messenger SQL Server Groups <a id="sql-social"></a>
    - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
    - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 700 People)
    - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 70 People)
@@ -241,7 +241,7 @@ Headers:
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
- - Open Source Projects
+ - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump) (Github)
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump) (Github)

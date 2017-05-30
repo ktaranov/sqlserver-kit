@@ -3307,7 +3307,8 @@ Author: Microsoft<br/>
 Free version: Open Source<br/>
 Price: No
 
-mssql-scripter is the multiplatform command line equivalent of the widely used Generate Scripts Wizard experience in SSMS. You can use mssql-scripter on Linux, macOS, and Windows to generate data definition language (DDL) and data manipulation language (DML) T-SQL scripts for database objects in SQL Server running anywhere, Azure SQL Database, and Azure SQL Data Warehouse.
+mssql-scripter is the multiplatform command line equivalent of the widely used Generate Scripts Wizard experience in SSMS.
+You can use mssql-scripter on Linux, macOS, and Windows to generate data definition language (DDL) and data manipulation language (DML) T-SQL scripts for database objects in SQL Server running anywhere, Azure SQL Database, and Azure SQL Data Warehouse.
 
 
 ## DBFS
@@ -3319,19 +3320,8 @@ Author: Microsoft<br/>
 Free version: Open Source<br/>
 Price: No
 
-DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system. This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
-
-
-## SQL Test
-<a id="sql-test"></a>
-Download page: [SQL Test]<br/>
-Release date: 2017-03-21<br/>
-Support Version: 2005/2008/2012/2014/2016/Amazon RDS<br/>
-Author: Red Gate<br/>
-Free version: No<br/>
-Price: $369
-
-Write unit tests for SQL Server databases in SQL Server Management Studio
+DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system.
+This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
