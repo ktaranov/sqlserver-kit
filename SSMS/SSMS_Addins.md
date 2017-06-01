@@ -1,9 +1,9 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **29** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **30** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-03-14   | 2008/2012/2014/2016      | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-05-18   | 2008/2012/2014/2016/2017 | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016      | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2017-02-27   | 2008/2012/2014           | Oleksii Kovalov      | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017 | Red Gate             | Yes          | No    |
@@ -31,12 +31,13 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014           | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014           | Alex Maslyukov       | Yes          | No    |
 | [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012                | Tao Klerks           | Yes          | No    |
-| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016           | Vlasov Studio        | No           |   $49 |
+| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016/2017      | Vlasov Studio        | No           |   $49 |
+| [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                | Tomáš Bauer          | Yes          | No    |
 
 ## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
-Release date: 2017-03-14<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-05-18<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
 Price: $150
@@ -453,7 +454,7 @@ It does not distinguish between different types of DML, it does not parse full e
 ## Tabs Studio <a id="tabs-studio"></a>
 Download page: [Tabs Studio]<br/>
 Release date: 2016-08-01<br/>
-Support Version: 2012/2014/2016<br/>
+Support Version: 2012/2014/2016/2017<br/>
 Developer: Vlasov Studio<br/>
 Free version: No<br/>
 Price: $49
@@ -468,6 +469,22 @@ Tabs Studio is a Visual Studio and SSMS extension empowering you to work comfort
  - Flexible behavior
  - Customizable presentation
  - Extensibility API
+
+
+<a id="workload-addin"></a>
+## Workload Addin
+Download page: [Workload Addin]<br/>
+Release date: 2017-02-07<br/>
+Support Version: 2008/2012<br/>
+Developer: Tomáš Bauer<br/>
+Free version: Yes<br/>
+Price: No
+
+There are tools in SQL Server that allow to collect SQL statements for a certain period.
+The problem of these tools is that the amount of data recorded in this way may not be small and that the recorded data requires further processing.
+Also, work with these tools may not be easy.
+This article describes a tool that solves the problem described above.
+This tool can automatically collect information about executed SQL statements and it does their analysis and stores the required information in a custom SQL database, avoiding unnecessary or duplicate SQL statements being stored.
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
@@ -500,3 +517,4 @@ Tabs Studio is a Visual Studio and SSMS extension empowering you to work comfort
 [SQL Hunting Dog]:http://sql-hunting-dog.com/
 [Poor Mans T-SQL Formatter]:http://architectshack.com/PoorMansTSqlFormatter.ashx
 [Tabs Studio]:https://tabsstudio.com
+[Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload

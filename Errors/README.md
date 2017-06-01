@@ -14,8 +14,8 @@
 
 ```sql
 SELECT message_id, severity, text
-  FROM sys.messages 
-  WHERE language_id = 1033; -- assuming US English
+  FROM sys.messages
+ WHERE language_id = 1033; -- assuming US English
 ```
 
 
@@ -70,6 +70,7 @@ Error code equal `message_id` from `sys.messages`
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...                                                          | [Discuss Execute(SQL) At LinkedServer]                       |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.                                                               | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                                                                     | [Internal Query Processor Error with ColumnStore Indexes]    |
+|       8651 |Could not perform the operation because the requested memory grant was not available in resource pool '%ls' (%ld).                                       | [8651_link1]                                                 |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                                                                        | [8672_link1]                                                 |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
@@ -97,6 +98,7 @@ Error code equal `message_id` from `sys.messages`
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
+[8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
