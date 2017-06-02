@@ -25,6 +25,8 @@ Content:
 21. [Hiding tables in SSMS Object Explorer](#21)
 22. [UnDock Tabs and Windows for Multi Monitor Support](#22)
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
+24. [Changing what SSMS opens on startup](#24)
+25. [Query Execution Options](#25)
 
 
 <a id="1"></a>
@@ -35,6 +37,7 @@ You can configure so many settings in SSMS and then export it and use on all you
 Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
 
 Also you can create shared team settings file and use it from network location.
+Detailed information you can find in this article [Symbolic Links for Sharing Template Files or "How I Broke Management Studio with Symbolic Links"](http://sqlmag.com/sql-server/symbolic-links-sharing-template-files-or-how-i-broke-management-studio-symbolic-links)
 
 ![Import and Export Settings](import_and_export_settings.png)
 
@@ -263,7 +266,9 @@ This works only for one column.
 You don't have to settle for T-SQL's monochrome text output. These stored procedures let you quickly and easily turn your SELECT queries' output into colorized charts and even computer-generated art.
 To turn your own data into a line, column, area, or bar chart using the Chart stored procedure, you need to design a SELECT query that serves as the first parameter in the stored procedure call.
 
-Detailed Article and code here: [Generating Charts and Drawings in SQL Server Management Studio]
+Detailed article and code here: [Generating Charts and Drawings in SQL Server Management Studio]
+
+Also you can generate amazing chart using awesome R libraries, detailed article: [View R Plots from within SQL Server Management Studio]
 
 
 <a id="19"></a>
@@ -336,6 +341,66 @@ More details and examples you can find here [RegEx-Based Finding and Replacing o
 My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have column names copied from, for example, Excel and need quickly get sql query.
 
 
+<a id="24"></a>
+## Changing what SSMS opens on startup
+
+![Changing what SSMS opens on startup](24_changing_what_ssms_opens_on_startup.gif)
+
+Also you can disable the splash screen - this cuts the time it takes SSMS to load for versions before SSMS 17.
+Right click your shortcut to SSMS and select properties.
+Enter the text `-nosplash` right after the ending quote in the path.
+
+
+<a id="25"></a>
+## Query Execution Options
+More detailed article here: [Knowing the Options]
+
+The options represent the SET values of the current session.
+`SET options` can affect how the query is execute thus having a different execution plan.
+You can find these options in two places within SSMS under `Tools -> Options -> Query Execution -> SQL Server -> Advanced`:
+
+![Query Execution Options Advanced](25_query_execution_options.png)
+
+As well as `Tools -> Options -> Query Execution -> SQL Server -> ANSI`:
+
+![Query Execution Options ANSI(25_query_execution_options_ansi.png)
+
+Using the interface to check what is set can get tiresome. Instead, you can use the system function `@@OPTIONS`.
+Each option shown above has a BIT value for all 15 options indicating whether or not it is enabled.
+
+`@@OPTIONS` takes the binary representation and does a BITWISE operation on it to produce an integer value based on the sum of which BITS are enabled.
+
+Default value for `SELECT @@OPTIONS` is 5496.
+Let’s assume for a moment that the only two options that are enabled on my machine are ANSI_PADDING and ANSI_WARNINGS.
+The values for these two options are 8 and 16, respectively speaking. The sum of the two is 24.
+
+```sql
+/***************************************************************
+  Author: John Morehouse
+  Summary: This script display what SET options are enabled for the current session.
+ 
+  You may alter this code for your own purposes. You may republish altered code as long as you give due credit.
+ 
+  THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
+***************************************************************/
+SELECT 'Disable_Def_Cnst_Chk'    AS 'Option', CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'IMPLICIT_TRANSACTIONS'   AS 'Option', CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'CURSOR_CLOSE_ON_COMMIT'  AS 'Option', CASE @@options & 4     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ANSI_WARNINGS'           AS 'Option', CASE @@options & 8     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ANSI_PADDING'            AS 'Option', CASE @@options & 16    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ANSI_NULLS'              AS 'Option', CASE @@options & 32    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ARITHABORT'              AS 'Option', CASE @@options & 64    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ARITHIGNORE'             AS 'Option', CASE @@options & 128   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'QUOTED_IDENTIFIER'       AS 'Option', CASE @@options & 256   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'NOCOUNT'                 AS 'Option', CASE @@options & 512   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ANSI_NULL_DFLT_ON'       AS 'Option', CASE @@options & 1024  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'ANSI_NULL_DFLT_OFF'      AS 'Option', CASE @@options & 2048  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'CONCAT_NULL_YIELDS_NULL' AS 'Option', CASE @@options & 4096  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'NUMERIC_ROUNDABORT'      AS 'Option', CASE @@options & 8192  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled';
+```
+
+
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [SSMS Tips: Templates and Control+Shift+M] (by Kendra Little)
@@ -349,10 +414,16 @@ Reference:
  - [Try and try again: not always a good idea (at least not for SSMS!)](https://blogs.msdn.microsoft.com/sqlcat/2017/04/06/try-and-try-again-not-always-a-good-idea-at-least-not-for-ssms/) (by Arvind Shyamsundar)
  - [SSMS Tips: Copy Full Path](https://sqlstudies.com/2017/04/24/ssms-tips-copy-full-path/) (by Kenneth Fisher)
  - [Hiding tables in SSMS Object Explorer](https://sqlstudies.com/2017/04/03/hiding-tables-in-ssms-object-explorer-using-extended-properties/) (by Kenneth Fisher)
+ - [Changing what SSMS opens on startup](https://sqlstudies.com/2017/02/01/changing-what-ssms-opens-on-startup/) (by Kenneth Fisher)
  - [Presenting: Presentation Mode!](http://www.williamdurkin.com/2017/03/presenting-presentation-mode/) (by William Durkin)
  - [RegEx-Based Finding and Replacing of Text in SSMS] (by Phil Factor)
+ - [SQL Server Management Studio (SSMS) Tips and Tricks] (by Mike Milligan)
+ - [Knowing the Options] (by John Morehouse)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
+[View R Plots from within SQL Server Management Studio]:http://www.sqlservercentral.com/articles/R+Services/156107/
 [RegEx-Based Finding and Replacing of Text in SSMS]:https://www.simple-talk.com/sql/sql-training/regex-based-finding-and-replacing-of-text-in-ssms/
+[SQL Server Management Studio (SSMS) Tips and Tricks]:http://www.bidn.com/blogs/MMilligan/bidn-blog/3326/sql-server-management-studio-ssms-tips-and-tricks
+[Knowing the Options]:http://sqlrus.com/2017/05/knowing-the-options/
