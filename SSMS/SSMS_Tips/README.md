@@ -1,5 +1,5 @@
 # SQL Server Management Studio Tips
-Main tips works for SSMS higher 2008 but some of them only for SSMS 2016 and above
+Most tips works for SSMS higher 2008 but some of them only for SSMS 2016 and above
 
 Content:
 1. [Import and Export Settings](#1)
@@ -27,6 +27,7 @@ Content:
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 24. [Changing what SSMS opens on startup](#24)
 25. [Query Execution Options](#25)
+26. [Reference](#reference)
 
 
 <a id="1"></a>
@@ -343,12 +344,31 @@ My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have
 
 <a id="24"></a>
 ## Changing what SSMS opens on startup
+You can customize SSMS startup behavior in `Tools -> Options -> Environment -> Startup` and hide system objects in Object Explore:
 
 ![Changing what SSMS opens on startup](24_changing_what_ssms_opens_on_startup.gif)
 
 Also you can disable the splash screen - this cuts the time it takes SSMS to load for versions before SSMS 17.
 Right click your shortcut to SSMS and select properties.
 Enter the text `-nosplash` right after the ending quote in the path.
+
+![Create a solution of commonly used SQL scripts](24_changing_what_ssms_opens_on_startup_nosplash.png.png)
+
+It is useful to create a solution of commonly used SQL scripts to always load at start-up.
+1. Display the Solution Explorer by pressing `Ctrl+Alt+L` or clicking `View -> Solution Explorer`.
+2. Then right click the `Solution "Solution1" (0 projects)` text and select `Add -> New Project`.
+3. Use the default `SQL Server Scripts` template and give your solution a clever name.
+4. Rename all of your SQL Code Snippets so the extension is .SQL. Drag them into the queries folder within the Solution Explorer.
+5. Open Windows explorer and browse to the location of your solution. Copy file location address to your clipboard. 
+Go back to your SSMS shortcut properties and add within double quotes the location and file name of your solution before the "-nosplash".
+
+This is the complete text within my shortcut properties:
+
+```
+"C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe" "C:\Users\taranov\Documents\SQL Server Management Studio\Projects\MySQLServerScripts.ssmssln" -nosplash
+```
+
+![Create a solution of commonly used SQL scripts](24_create_solution_commonly_used_sql_scripts.gif)
 
 
 <a id="25"></a>
@@ -363,7 +383,7 @@ You can find these options in two places within SSMS under `Tools -> Options -> 
 
 As well as `Tools -> Options -> Query Execution -> SQL Server -> ANSI`:
 
-![Query Execution Options ANSI(25_query_execution_options_ansi.png)
+![Query Execution Options ANSI](25_query_execution_options_ansi.png)
 
 Using the interface to check what is set can get tiresome. Instead, you can use the system function `@@OPTIONS`.
 Each option shown above has a BIT value for all 15 options indicating whether or not it is enabled.
@@ -401,6 +421,7 @@ SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN
 ```
 
 
+<a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
  - [SSMS Tips: Templates and Control+Shift+M] (by Kendra Little)
