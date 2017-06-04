@@ -288,7 +288,7 @@ ConnectRetryCount=0
 
 <a id="20"></a>
 ## Working with tabs headers
-You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly script open containing folder or copy script file path.
+You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly open script containing folder or copy script file path.
 
 ![Working with tabs headers](working_with_tabs_headers.png)
 
@@ -322,7 +322,8 @@ DENY VIEW DEFINITION ON Schema.Table TO UserName;
 Now UserName won’t be able to see Table in `Object Explorer`.
 In Fact, they won’t be able to see the table in `sys.tables` or `INFORMATION_SCHEMA.TABLES`
 
-`VIEW DEFINITION` is the ability to see the definition of the object (duh). In the case of SPs the code, same with Views and in the case of Tables it’s the columns definitions etc.
+`VIEW DEFINITION` is the ability to see the definition of the object.
+In the case of SPs the code, same with Views and in the case of Tables it’s the columns definitions etc.
 
 
 <a id="22"></a>
@@ -350,9 +351,9 @@ You can customize SSMS startup behavior in `Tools -> Options -> Environment -> S
 
 Also you can disable the splash screen - this cuts the time it takes SSMS to load for versions before SSMS 17.
 Right click your shortcut to SSMS and select properties.
-Enter the text `-nosplash` right after the ending quote in the path.
+Enter the text `-nosplash` right after the ending quote in the path:
 
-![Create a solution of commonly used SQL scripts](24_changing_what_ssms_opens_on_startup_nosplash.png.png)
+![SSMS link nosplash option](24_changing_what_ssms_opens_on_startup_nosplash.png)
 
 It is useful to create a solution of commonly used SQL scripts to always load at start-up.
 1. Display the Solution Explorer by pressing `Ctrl+Alt+L` or clicking `View -> Solution Explorer`.
@@ -390,7 +391,7 @@ Each option shown above has a BIT value for all 15 options indicating whether or
 
 `@@OPTIONS` takes the binary representation and does a BITWISE operation on it to produce an integer value based on the sum of which BITS are enabled.
 
-Default value for `SELECT @@OPTIONS` is 5496.
+Default value for `SELECT @@OPTIONS` is **5496**.
 Let’s assume for a moment that the only two options that are enabled on my machine are ANSI_PADDING and ANSI_WARNINGS.
 The values for these two options are 8 and 16, respectively speaking. The sum of the two is 24.
 
