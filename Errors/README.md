@@ -3,14 +3,14 @@
 
 ## Useful links
  - [System Error Messages](https://technet.microsoft.com/en-us/library/cc645603%28v=sql.105%29.aspx)
- - [Database Engine Error Severities](https://msdn.microsoft.com/en-us/library/ms164086.aspx)
- - [Integration Services Error and Message Reference](https://msdn.microsoft.com/en-us/library/ms345164.aspx)
- - [View and Read SQL Server Setup Log Files](https://msdn.microsoft.com/en-us/library/ms143702.aspx)
+ - [Database Engine Error Severities](https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities)
+ - [Integration Services Error and Message Reference](https://docs.microsoft.com/en-us/sql/integration-services/integration-services-error-and-message-reference)
+ - [View and Read SQL Server Setup Log Files](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/view-and-read-sql-server-setup-log-files)
  - [Troubleshoot the SQL Server Utility](https://msdn.microsoft.com/en-us/library/ee210592.aspx)
  - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
 
 
-## SQL Server all Errors List
+## SQL Server All Errors List
 
 ```sql
 SELECT message_id, severity, text
@@ -66,6 +66,7 @@ Error code equal `message_id` from `sys.messages`
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]              |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                                                                   | [SQL SERVER - FIX Error 5120]                                |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [When SQL Server fails to create a secondary data file]      |
+|       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.                                                         | [6335_link1]                                                 |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                                                                  | [Discuss Execute(SQL) At LinkedServer]                       |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...                                                          | [Discuss Execute(SQL) At LinkedServer]                       |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.                                                               | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
@@ -75,6 +76,7 @@ Error code equal `message_id` from `sys.messages`
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
 |      17182 | Tcp port is already in use                                                                                                                              | [TCP Port Is Already In Use]                                 |
+|      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.                                                         | [17190_link1]                                                |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                                                      | [Login from an Untrusted Domain]                             |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [Why won’t my SQL Logins work?]                              |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                                                                   | [35250_link1]                                                |
@@ -97,6 +99,7 @@ Error code equal `message_id` from `sys.messages`
 [Unable to restore a backup – Msg 3241]:https://blogs.msdn.microsoft.com/psssql/2017/04/12/unable-to-restore-a-backup-msg-3241/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
@@ -104,6 +107,7 @@ Error code equal `message_id` from `sys.messages`
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
+[17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [Why won’t my SQL Logins work?]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/
