@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **213** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **214** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -12,7 +12,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {21}
- - **[MS]**: Management Studio (alternative for SSMS) {15}
+ - **[MS]**: Management Studio (alternative for SSMS) {16}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {4}
@@ -28,6 +28,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Baseline Security Analyze](#baseline-security-analyze)               | No                               | No             | [?]        | [Baseline Security Analyze]                 | 2015-01-09   | Microsoft            | Yes            | No    |
 | [tablediff Utility](#tablediff-utility)                               | No                               | No             | [I]        | [tablediff Utility]                         | -            | Microsoft            | Yes            | No    |
 | [Microsoft Log Parser](#microsoft-log-parser)                         | No                               | No             | [?]        | [Microsoft Log Parser]                      | -            | Microsoft            | Yes            | No    |
+| [Log Parser Lizard GUI](#log-parser-lizard-gui)                       | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [Log Parser Lizard GUI]                     | 2017-06-01   | Lizard Labs          | Yes            | $59   |
 | [Diskspd](#diskspd)                                                   | No                               | No             | [T]        | [Diskspd]                                   | 2015-12-14   | Microsoft            | Yes            | No    |
 | [HammerDB](#hammerdb)                                                 | No                               | No             | [T]        | [HammerDB]                                  | 2015-05-04   | Open Source          | Yes            | No    |
 | [Exchange Server Error Code Look-up](#error-code-look-up)             | No                               | No             | [?]        | [Exchange Server Error Code Look-up]        | 2004-05-10   | Microsoft            | Yes            | No    |
@@ -196,7 +197,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                    | ?            | boxfuse              | Open Source    | No    |
 | [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                 | 2016-10-24   | Liquibase            | Open Source    | No    |
 | [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis             | Open Source    | No    |
-| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-01-16   | SentryOne            | Yes            | No    |
+| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne            | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne            | No             | ?     |
 | [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart               | Yes            | No    |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro            | No             | ?     |
@@ -337,6 +338,19 @@ Instruction: [Microsoft Log Parser Utility: Swell ETL](https://www.simple-talk.c
 
 Log parser is a powerful, versatile tool that provides universal query access to text-based data such as log files,<br />
 XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory.
+
+
+## Log Parser Lizard GUI
+<a id="log-parser-lizard-gui"></a>
+Download page: [Log Parser Lizard GUI]<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Lizard Labs<br/>
+Free version: Yes<br/>
+Price: $59<br/>
+
+Log Parser Lizard is a GUI for Microsoft Logparser, definitely the best one available on the market today.
+Log Parser is a very powerful and versatile query software tool that provides universal query access (using SQL) to text-based data, such as log files, XML files, and TSV/CSV text files, as well as key data sources on the Microsoft Windows operating system, such as the Windows Event Log, IIS log, the registry, the File System, the Active Directory services and much more.
 
 
 ## Diskspd
@@ -2801,8 +2815,8 @@ MyBatis Schema Migration System (or MyBatis Migrations for short) seeks to:
 ## SentryOne Plan Explorer
 <a id="sentryone-plan-explorer"></a>
 Download page: [SentryOne Plan Explorer]<br/>
-Release date: 2017-01-16<br/>
-Support Version: 2008/2012/2014/2016/<br/>
+Release date: 2017-05-25<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: SentryOne<br/>
 Free version: Yes<br/>
 Price: No
@@ -3330,6 +3344,7 @@ This gives you the ability to explore information about your database (Dynamic M
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
+[Log Parser Lizard GUI]:http://lizard-labs.com/log_parser_lizard.aspx
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
 [Diskspd]:https://github.com/microsoft/diskspd
 [HammerDB]:http://www.hammerdb.com/
