@@ -3,9 +3,9 @@ Author: Alan Burstein
 Original link: http://www.sqlservercentral.com/scripts/String+Function/141686
 */
 
-IF OBJECT_ID('dbo.DigitsOnlyEE') IS NOT NULL DROP FUNCTION dbo.DigitsOnlyEE;
+IF OBJECT_ID('dbo.udf_DigitsOnlyEE') IS NOT NULL DROP FUNCTION dbo.udf_DigitsOnlyEE;
 GO
-CREATE FUNCTION dbo.DigitsOnlyEE (@pString VARCHAR(8000))
+CREATE FUNCTION dbo.udf_DigitsOnlyEE (@pString VARCHAR(8000))
 /****************************************************************************************
 Purpose:
  Given a VARCHAR(8000) or less string, return only the numeric digits from the string.
@@ -63,12 +63,12 @@ Programmer's Notes:
     comparison using the high speed ASCII function convert characters to their numeric
     equivalent.  ASCII characters 48 through 57 are the digit characters of 0 through 9.
 
- 7. Keep in mind that DigitsOnlyEE returns an nvarchar(max) value. If you are returning
+ 7. Keep in mind that udf_DigitsOnlyEE returns an nvarchar(max) value. If you are returning
     small numbers consider casting or converting yout values to a numeric data type if 
     you are inserting the return value into a new table or using it for joins or comparison
     purposes. 
 
- 8. DigitsOnlyEE is deterministic; for more about deterministic and nondeterministic 
+ 8. udf_DigitsOnlyEE is deterministic; for more about deterministic and nondeterministic 
     functions see https://msdn.microsoft.com/en-us/library/ms178091.aspx
 
 Kudos:
@@ -85,7 +85,7 @@ Kudos:
 Usage Examples:
 --===== 1. Basic use against a literal
  SELECT DigitsOnly 
- FROM dbo.DigitsOnlyEE('xxx123abc999!!!');
+ FROM dbo.udf_DigitsOnlyEE('xxx123abc999!!!');
 
 --===== 2. Against a table 
  DECLARE @sampleTxt TABLE (txtID int identity, txt varchar(100));
@@ -93,7 +93,7 @@ Usage Examples:
 
  SELECT txtID, OldTxt = txt, DigitsOnly
  FROM @sampleTxt st
- CROSS APPLY dbo.DigitsOnlyEE(st.txt);
+ CROSS APPLY dbo.udf_DigitsOnlyEE(st.txt);
 
 ---------------------------------------------------------------------------------------
 Revision History:
