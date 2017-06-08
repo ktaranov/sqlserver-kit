@@ -250,7 +250,7 @@ DBCC shrinkfile ({fileid | 'filename'}, [compress_size[, {NOTRUNCATE | TRUNCATEO
 
 DBCC sqlmgrstats
 
-DBCC sqlperf (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]} | {THREADS} | {LOGSPACE})
+DBCC SQLPERF (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]} | {THREADS} | {LOGSPACE}) https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-sqlperf-transact-sql
 
 DBCC stackdump [( {uid[, spid[, ecid]} | {threadId, 'THREADID'}] )]
 

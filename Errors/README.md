@@ -8,6 +8,7 @@
  - [View and Read SQL Server Setup Log Files](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/view-and-read-sql-server-setup-log-files)
  - [Troubleshoot the SQL Server Utility](https://msdn.microsoft.com/en-us/library/ee210592.aspx)
  - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
+ - [SQL Server 2016 Distributed Replay Errors](https://www.sqlskills.com/blogs/jonathan/sql-server-2016-distributed-replay-errors/)
 
 
 ## SQL Server All Errors List
