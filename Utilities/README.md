@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **214** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **215** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[D]**: Documentation solutions {3}
  - **[DA]**: Database Architecture {10}
- - **[DC]**: Data compare {10}
+ - **[DC]**: Data compare {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[IDX]**: Index manager {1}
  - **[G]**: Data generation {4}
@@ -235,6 +235,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft            | Yes            |  No   |
 | [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
 | [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
+| [comparator](#pumpet-comparator)                                      | No                               | No             | [DC]       | [comparator]                                | ?            | Pumpet               | Open Source    |  No   |
 
 ## SSMS
 <a id="ssms"></a>
@@ -3338,6 +3339,18 @@ DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system.
 This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
 
 
+## comparator
+<a id="pumpet-comparator"></a>
+Download page: [comparator]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Pumpet<br/>
+Free version: Open Source<br/>
+Price: No
+
+Simple application for compare data
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3552,3 +3565,4 @@ This gives you the ability to explore information about your database (Dynamic M
 [Microsoft Assessment and Planning]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server
 [mssql-scripter]:https://github.com/Microsoft/sql-xplat-cli
 [DBFS]:https://github.com/Microsoft/dbfs
+[comparator]:https://github.com/Pumpet/comparator
