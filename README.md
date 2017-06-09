@@ -71,7 +71,7 @@ Headers:
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
-      - [SQL Server vNext Diagnostic Information Queries](/Scripts/SQL%20Server%20vNext%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL%20Server%202016%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2014 Diagnostic Information Queries](Scripts/SQL%20Server%202014%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2012 Diagnostic Information Queries](/Scripts/SQL%20Server%202012%20Diagnostic%20Information%20Queries.sql)
@@ -97,7 +97,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 214 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 215 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -262,6 +262,7 @@ Headers:
     - [dbfs - A tool for mounting MS SQL Server DMVs using FUSE](https://github.com/Microsoft/dbfs) (by Microsoft)
     - [Opserver - Stack Exchange's Monitoring System](https://github.com/opserver/Opserver) (by Stack Exchange)
     - [Bosum - Time Series Alerting Framework](https://github.com/bosun-monitor/bosun) (by Stack Exchange)
+    - [BismNormalizer - is a free and open-source tool to manage Microsoft Analysis Services tabular models](https://github.com/christianwade/BismNormalizer) (by Christian Wade)
  - Other
     - [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/mt238290.aspx) installation download link
     - [Ola Maintenance Solution - Best free backup and index maintenance solution for SQL Server](https://ola.hallengren.com/) (by Ola Hallengren)

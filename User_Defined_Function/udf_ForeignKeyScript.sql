@@ -1,30 +1,24 @@
 /*
+Author: Louis Davidson
 Original link: http://sqlblog.com/blogs/louis_davidson/archive/2017/05/24/utility-to-script-a-foreign-key-constraint.aspx
 */
 
-CREATE SCHEMA utility
-GO
- 
-CREATE OR ALTER FUNCTION utility.foreign_key$script(
+
+CREATE FUNCTION udf_ForeignKeyScript(
     @schema_name sysname,
     @foreign_key_name sysname,
-    @constraint_status VARCHAR(20) = 'AS_WAS' --ENABLED, UNTRUSTED, DISABLED 
+    @constraint_status VARCHAR(20) = 'AS_WAS' --ENABLED, UNTRUSTED, DISABLED
                                               --ANY OTHER VALUES RETURN NULL
 )
--------------------------------------------------- 
--- Use to script a foreign key constraint 
--- 
--- 2017  Louis Davidson  drsql.org 
---   Thanks to Aaron Bertrand and John Paul Cook's code 
--------------------------------------------------- 
+
 RETURNS NVARCHAR(MAX)
 AS
 BEGIN
     --based on code to gen list of FK constraints from this article by Aaron Bertrand 
-    --https://www.mssqltips.com/sqlservertip/3347/drop-and-recreate-all-foreign-key-constraints-in-sql-server/ 
- 
+    --https://www.mssqltips.com/sqlservertip/3347/drop-and-recreate-all-foreign-key-constraints-in-sql-server/
+
     --and code from John Paul Cook:
-    --https://social.technet.microsoft.com/wiki/contents/articles/2958.script-to-create-all-foreign-keys.aspx 
+    --https://social.technet.microsoft.com/wiki/contents/articles/2958.script-to-create-all-foreign-keys.aspx
  
     DECLARE @script NVARCHAR(MAX);
  
@@ -87,7 +81,7 @@ BEGIN
           + CASE
                 WHEN(fk.is_disabled = 1 AND @constraint_status IN ( 'DISABLED', 'AS_WAS' ))
                      OR @constraint_status = 'DISABLED'
-                     THEN CHAR(13) + CHAR(10)+  CHAR(13) + CHAR(10)+   'ALTER TABLE ' + QUOTENAME(cs.name) + '.' + QUOTENAME(ct.name) + CHAR(13) + CHAR(10) 
+                     THEN CHAR(13) + CHAR(10)+  CHAR(13) + CHAR(10)+   'ALTER TABLE ' + QUOTENAME(cs.name) + '.' + QUOTENAME(ct.name) + CHAR(13) + CHAR(10)
                                    + '   NOCHECK CONSTRAINT ' + QUOTENAME(fk.name) + ';'
                 ELSE
                     ''
