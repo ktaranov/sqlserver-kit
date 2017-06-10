@@ -40,7 +40,7 @@ Below link provide detailed instruction and awesome Dark theme configuration: [M
 Also you can create shared team settings file and use it from network location.
 Detailed information you can find in this article [Symbolic Links for Sharing Template Files or "How I Broke Management Studio with Symbolic Links"](http://sqlmag.com/sql-server/symbolic-links-sharing-template-files-or-how-i-broke-management-studio-symbolic-links)
 
-![Import and Export Settings](/SSMS_Tips/import_and_export_settings.png)
+![Import and Export Settings](/SSMS/SSMS_Tips/import_and_export_settings.png)
 
 
 <a id="2"></a>
@@ -76,9 +76,10 @@ Most useful are:
 ## Keyboard Shortcuts for Favorite Stored Procedures
 `Tools > Options > Environment > Keyboard > Query Shortcuts`
 
-![Keyboard Shortcuts for Favorite Stored Procedures](/SSMS_Tips/keyboard_shortcuts_for_stored_procedures.png)
+![Keyboard Shortcuts for Favorite Stored Procedures](/SSMS/SSMS_Tips/keyboard_shortcuts_for_stored_procedures.png)
 
-My recommendation (awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `sp_WhoIsActive`):
+3 Shortcuts can not be changed: `Alt + F1`, `Ctrl + 1` and `Ctrl + 2`.
+For another 9 shortcuts my recommendation awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `sp_WhoIsActive`:
 
 | Query Shortcut | Stored Procedure     |
 |----------------|----------------------|
@@ -89,30 +90,40 @@ My recommendation (awesome open source Brent Ozar teams procedures and with some
 | `Ctrl + 3`     | [sp_Blitz]           |
 | `Ctrl + 4`     | [sp_BlitzCache]      |
 | `Ctrl + 5`     | [sp_BlitzWho]        |
-| `Ctrl + 6`     |                      |
-| `Ctrl + 7`     |                      |
-| `Ctrl + 8`     |                      |
+| `Ctrl + 6`     | [sp_BlitzQueryStore] |
+| `Ctrl + 7`     | [sp_BlitzFirst]      |
+| `Ctrl + 8`     | [usp_BulkUpload]     |
 | `Ctrl + 9`     | [sp_BlitzTrace]      |
-| `Ctrl + 0`     |                      |
+| `Ctrl + 0`     | [sp_foreachdb]       |
 
-Also recommended [sp_DatabaseRestore]
+Also recommended:
+ - [sp_BlitzRS]
+ - [sp_DatabaseRestore]
+ - [usp_BulkUpload]
 
 [sp_help]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-transact-sql
 [sp_who]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
 [sp_lock]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-lock-transact-sql
 [sp_WhoIsActive]:http://whoisactive.com
 [sp_Blitz]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_Blitz.sql
+[sp_BlitzBackups]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzBackups.sql
 [sp_BlitzCache]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzCache.sql
-[sp_BlitzWho]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzWho.sql
+[sp_BlitzFirst]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzFirst.sql
+[sp_BlitzIndex]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzIndex.sql
+[sp_BlitzQueryStore]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzQueryStore.sql
+[sp_BlitzRS]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzRS.sql
 [sp_BlitzTrace]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzTrace.sql
+[sp_BlitzWho]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzWho.sql
 [sp_DatabaseRestore]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_DatabaseRestore.sql
+[sp_foreachdb]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_foreachdb.sql
+[usp_BulkUpload]:https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/usp_BulkUpload.sql
 
 
 <a id="4"></a>
 ## Script any object with data
 `Right click on database name > Tasks > Generate Scripts …`
 
-![Script any object with data](/SSMS_Tips/ssms_script_objects.gif)
+![Script any object with data](/SSMS/SSMS_Tips/ssms_script_objects.gif)
 
 
 <a id="5"></a>
@@ -139,7 +150,7 @@ Drag the `Columns` folder for a table in to auto-type all column names in the ta
 
 This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > All Languages > General > 'Apply Cut or Copy Commands to blank lines when there is no selection'` and uncheck the checkbox.
 
-![Disable Copy of Empty Text](/SSMS_Tips/disable_copy_of_empty_text.png)
+![Disable Copy of Empty Text](/SSMS/SSMS_Tips/disable_copy_of_empty_text.png)
 
 
 <a id="8"></a>
@@ -252,7 +263,7 @@ To split the window simply drag the bar to the top right hand side of the window
 
 The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane.
 
-![Splitting the Query Window](/SSMS_Tips/splitting_the_query_window.gif)
+![Splitting the Query Window](/SSMS/SSMS_Tips/splitting_the_query_window.gif)
 
 
 <a id="17"></a>
@@ -283,14 +294,14 @@ There is a simple workaround for this situation. It is to add the following para
 ConnectRetryCount=0
 ```
 
-![Additional Connection Parameters](/SSMS_Tips/additional_connection_parameters.png)
+![Additional Connection Parameters](/SSMS/SSMS_Tips/additional_connection_parameters.png)
 
 
 <a id="20"></a>
 ## Working with tabs headers
 You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly open script containing folder or copy script file path.
 
-![Working with tabs headers](/SSMS_Tips/working_with_tabs_headers.png)
+![Working with tabs headers](/SSMS/SSMS_Tips/working_with_tabs_headers.png)
 
 
 <a id="21"></a>
@@ -330,7 +341,7 @@ In the case of SPs the code, same with Views and in the case of Tables it’s th
 ## UnDock Tabs and Windows for Multi Monitor Support
 From SSMS 2012 and onwards, you can easily dock/undock the query tabs as well as different object windows inside SSMS to make better use of the screen real estate and multiple monitors you have.
 
-![UnDock Tabs and Windows for Multi Monitor Support](/SSMS_Tips/undock_tabs_and_windows_for_multi_monitor_support.gif)
+![UnDock Tabs and Windows for Multi Monitor Support](/SSMS/SSMS_Tips/undock_tabs_and_windows_for_multi_monitor_support.gif)
 
 
 <a id="23"></a>
@@ -347,13 +358,13 @@ My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have
 ## Changing what SSMS opens on startup
 You can customize SSMS startup behavior in `Tools -> Options -> Environment -> Startup` and hide system objects in Object Explore:
 
-![Changing what SSMS opens on startup](/SSMS_Tips/24_changing_what_ssms_opens_on_startup.gif)
+![Changing what SSMS opens on startup](/SSMS/SSMS_Tips/24_changing_what_ssms_opens_on_startup.gif)
 
 Also you can disable the splash screen - this cuts the time it takes SSMS to load for versions before SSMS 17.
 Right click your shortcut to SSMS and select properties.
 Enter the text `-nosplash` right after the ending quote in the path:
 
-![SSMS link nosplash option](/SSMS_Tips/24_changing_what_ssms_opens_on_startup_nosplash.png)
+![SSMS link nosplash option](/SSMS/SSMS_Tips/24_changing_what_ssms_opens_on_startup_nosplash.png)
 
 It is useful to create a solution of commonly used SQL scripts to always load at start-up.
 1. Display the Solution Explorer by pressing `Ctrl+Alt+L` or clicking `View -> Solution Explorer`.
@@ -369,7 +380,7 @@ This is the complete text within my shortcut properties:
 "C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe" "C:\Users\taranov\Documents\SQL Server Management Studio\Projects\MySQLServerScripts.ssmssln" -nosplash
 ```
 
-![Create a solution of commonly used SQL scripts](/SSMS_Tips/24_create_solution_commonly_used_sql_scripts.gif)
+![Create a solution of commonly used SQL scripts](/SSMS/SSMS_Tips/24_create_solution_commonly_used_sql_scripts.gif)
 
 
 <a id="25"></a>
@@ -380,11 +391,11 @@ The options represent the SET values of the current session.
 `SET options` can affect how the query is execute thus having a different execution plan.
 You can find these options in two places within SSMS under `Tools -> Options -> Query Execution -> SQL Server -> Advanced`:
 
-![Query Execution Options Advanced](/SSMS_Tips/25_query_execution_options.png)
+![Query Execution Options Advanced](/SSMS/SSMS_Tips/25_query_execution_options.png)
 
 As well as `Tools -> Options -> Query Execution -> SQL Server -> ANSI`:
 
-![Query Execution Options ANSI](/SSMS_Tips/25_query_execution_options_ansi.png)
+![Query Execution Options ANSI](/SSMS/SSMS_Tips/25_query_execution_options_ansi.png)
 
 Using the interface to check what is set can get tiresome. Instead, you can use the system function `@@OPTIONS`.
 Each option shown above has a BIT value for all 15 options indicating whether or not it is enabled.
