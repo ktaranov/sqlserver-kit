@@ -320,7 +320,8 @@ Articles types:
 | [Transaction log growth during BACKUP]                                                                                  | Andy Mallon                              | 2017-04-10 | [DBA]       |
 | [When is a SQL function not a function?]                                                                                | Rob Farley                               | 2011-11-08 | [DEV]       |
 | [Introducing Batch Mode Adaptive Joins]                                                                                 | Joseph Sack                              | 2017-04-19 | [DEV]       |
-| [Investigating the proportional fill algorithm]                                                                         | Paul Randal                              | 2016-10-04 | [DEV]       |
+| [Investigating the proportional fill algorithm]                                                                         | Paul Randal                              | 2016-10-04 | [DBA]       |
+| [Understanding Logging and Recovery in SQL Server]                                                                      | Paul Randal                              | 2009-02-01 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -624,3 +625,4 @@ Articles types:
 [When is a SQL function not a function?]:http://sqlblog.com/blogs/rob_farley/archive/2011/11/08/when-is-a-sql-function-not-a-function.aspx
 [Introducing Batch Mode Adaptive Joins]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/04/19/introducing-batch-mode-adaptive-joins/
 [Investigating the proportional fill algorithm]:https://www.sqlskills.com/blogs/paul/investigating-the-proportional-fill-algorithm/
+[Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx

@@ -50,6 +50,7 @@ Error code equal `message_id` from `sys.messages`
 
 | Error Code | Description                                                                                                                                             | Article                                                      |
 |-----------:|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------|
+|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature                                                          | [Out of user memory quota]                                   |
 |          ? | The operating system returned the error ????? while attempting SetEndOfFile' on '\\SQLBackups\database.bak'. BACKUP DATABASE is terminating abnormally. | [Compressed backup errors and TF 3042]                       |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently configured password due to the following error: ...      | [Logon Failure: The User has not Been Granted]               |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                                                                   | [Who owns your availability groups?]                         |
@@ -82,6 +83,7 @@ Error code equal `message_id` from `sys.messages`
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [Why won’t my SQL Logins work?]                              |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                                                                   | [35250_link1]                                                |
 
+[Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
