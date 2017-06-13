@@ -147,6 +147,7 @@ Headers:
     - [Red9 SQL Server Performance Blog](https://red9.com/blog/)
     - [DallasDBAs.com Blog](http://dallasdbas.com/blog/)
     - [SQLBI Blog](http://www.sqlbi.com)
+    - [RDX Blog](http://blog.rdx.com)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -291,6 +292,9 @@ Headers:
     - [DbUp is a .NET library that helps you to deploy changes to SQL Server databases](https://github.com/DbUp/DbUp)
     - [SQL Server monitor - manages sql server performance](https://github.com/unruledboy/SQLMonitor) (by Wilson Chen)
     - [How's My Plan? - .SQLPLAN analyzer](http://www.howsmyplan.com/) (by Daniel Janik)
+    - [Minion Backup - The new standard in SQL Server backups](http://minionware.net/backup/) (by Minionware)
+    - [Minion CheckDB - completes the MinionWare maintenance and backups suite](http://minionware.net/checkdb/) (by Minionware)
+    - [Minion Reindex - Index maintenance that is fully automated](http://minionware.net/reindex/) (by Minionware)
 
 [*Back to top*](#header02)
 

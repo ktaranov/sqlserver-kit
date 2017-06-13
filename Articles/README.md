@@ -322,6 +322,9 @@ Articles types:
 | [Introducing Batch Mode Adaptive Joins]                                                                                 | Joseph Sack                              | 2017-04-19 | [DEV]       |
 | [Investigating the proportional fill algorithm]                                                                         | Paul Randal                              | 2016-10-04 | [DBA]       |
 | [Understanding Logging and Recovery in SQL Server]                                                                      | Paul Randal                              | 2009-02-01 | [DBA]       |
+| [Bad Habits to Kick: Using shorthand with date/time operations]                                                         | Aaron Bertrand                           | 2011-09-20 | [DEV]       |
+| [Generating Charts and Drawings in SQL Server Management Studio]                                                        | Zanevsky                                 | 2012-03-26 | [DEV]       |
+| [How expensive are column-side Implicit Conversions?]                                                                   | Jonathan Kehayias                        | 2013-04-15 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -626,3 +629,6 @@ Articles types:
 [Introducing Batch Mode Adaptive Joins]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/04/19/introducing-batch-mode-adaptive-joins/
 [Investigating the proportional fill algorithm]:https://www.sqlskills.com/blogs/paul/investigating-the-proportional-fill-algorithm/
 [Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx
+[Bad Habits to Kick: Using shorthand with date/time operations]:http://sqlblog.com/blogs/aaron_bertrand/archive/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations.aspx
+[Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
+[How expensive are column-side Implicit Conversions?]:https://sqlperformance.com/2013/04/t-sql-queries/implicit-conversion-costs
