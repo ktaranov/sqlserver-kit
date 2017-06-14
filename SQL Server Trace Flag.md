@@ -128,25 +128,34 @@ GO
 ## Recommended Trace Flags
 
  - [Trace Flag 272](#272) (for SQL Server 2012)
- - [Trace Flag 1118](#1118) (for versions prior to SQL Server 2016)
- - [Trace Flag 3023](#3023) (for versions prior to SQL Server 2014)
+ - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
+ - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
+ - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
+ - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
 
-Trace Flag 272 prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.
+**Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
 
-Trace flag 1118 addresses contention that can exist on a particular type of page in a database, the SGAM page.
+**Trace flag 1118** addresses contention that can exist on a particular type of page in a database, the SGAM page.
 This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
 In SQL Server 2016, you change this behavior using the MIXED_PAGE_ALLOCATION database option, and there is no need for TF 1118.
 
-Trace flag 3023 is used to enable the CHECKSUM option, by default, for all backups taken on an instance.
+**Trace flag 3023** is used to enable the CHECKSUM option, by default, for all backups taken on an instance.
 With this option enabled, page checksums are validated during a backup, and a checksum for the entire backup is generated.
 Starting in SQL Server 2014, this option can be set instance-wide through `sp_configure ('backup checksum default')`.
 
-Trace flag 3226 prevents the writing of successful backup messages to the SQL Server ERRORLOG.
+**Trace flag 3226** prevents the writing of successful backup messages to the SQL Server ERRORLOG.
 Information about successful backups is still written to msdb and can be queried using T-SQL.
 For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
 As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+
+**Trace flag 7745** forces Query Store to not flush data to disk on database shutdown.
+Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
+For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.
+
+**Trace Flag: 7752** enables asynchronous load of Query Store.
+Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).
 
 
 <a id="trace-flags-list"></a>
@@ -2764,14 +2773,16 @@ Function: Forces Query Store to not flush data to disk on database shutdown.<br 
 Note: Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
 For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.<br />
 Link: [MSDN ms188396]<br />
+Link: [Query Store Trace Flags]<br />
 Scope: global only
 
 
 <a id="7752"></a>
 **Trace Flag: 7752**<br />
-Function: Enables asynchcronous load of Query Store.<br />
+Function: Enables asynchronous load of Query Store.<br />
 Note: Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).<br />
 Link: [MSDN ms188396]<br />
+Link: [Query Store Trace Flags]<br />
 Scope: global only
 
 
@@ -3901,6 +3912,7 @@ Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performan
 Scope: global or session
 
 
+[Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
 [MSDN ms188396]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [DBCC CHECKDB]:https://msdn.microsoft.com/en-us/library/ms176064.aspx
 [DBCC CHECKTABLE]:https://msdn.microsoft.com/en-us/library/ms174338.aspx
