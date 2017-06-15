@@ -325,6 +325,10 @@ Articles types:
 | [Bad Habits to Kick: Using shorthand with date/time operations]                                                         | Aaron Bertrand                           | 2011-09-20 | [DEV]       |
 | [Generating Charts and Drawings in SQL Server Management Studio]                                                        | Zanevsky                                 | 2012-03-26 | [DEV]       |
 | [How expensive are column-side Implicit Conversions?]                                                                   | Jonathan Kehayias                        | 2013-04-15 | [DEV]       |
+| [Execution Plan Basics]                                                                                                 | Grant Fritchey                           | 2008-05-11 | [DEV]       |
+| [Disabling ROW and PAGE Level Locks in SQL Server]                                                                      | Klaus Aschenbrenner                      | 2016-10-31 | [DEV]       |
+| [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DEV]       |
+| [Cardinality Estimation for Multiple Predicates]                                                                        | Paul Randal                              | 2014-01-15 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -632,3 +636,7 @@ Articles types:
 [Bad Habits to Kick: Using shorthand with date/time operations]:http://sqlblog.com/blogs/aaron_bertrand/archive/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations.aspx
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
 [How expensive are column-side Implicit Conversions?]:https://sqlperformance.com/2013/04/t-sql-queries/implicit-conversion-costs
+[Execution Plan Basics]:https://www.simple-talk.com/sql/performance/execution-plan-basics/
+[Disabling ROW and PAGE Level Locks in SQL Server]:http://www.sqlpassion.at/archive/2016/10/31/disabling-row-and-page-level-locks-in-sql-server/
+[Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/
+[Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
