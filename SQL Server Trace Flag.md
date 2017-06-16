@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (518 trace flags)
+Complete list of Microsoft SQL Server trace flags (520 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -160,7 +160,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **518 trace flags**
+Summary: **520 trace flags**
 
 
 <a id="-1"></a>
@@ -375,10 +375,11 @@ Link: None
 <a id="272"></a>
 **Trace Flag: 272**<br />
 <a id="272"></a>
-**Note: Only for SQL Server 2012**
-Function: It prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.<br />
+**Note: Critical only for SQL Server 2012**
+Function: Disabling the identity cache. It prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.<br />
 Link: http://www.big.info/2013/01/how-to-solve-sql-server-2012-identity.html<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity<br />
+Link: https://dbafromthecold.com/2017/05/24/disabling-the-identity-cache-in-sql-server-2017/<br />
 Link: [Demo](https://github.com/ktaranov/sqlserver-kit/blob/master/Errors/Identity_gap_sql_server_2012.sql)
 
 
@@ -913,6 +914,15 @@ Function: Enables database lock partitioning. Fixes performance problem in scena
 Link: https://support.microsoft.com/en-us/kb/2926217<br />
 Link: [MSDN ms188396]<br />
 Scope: global only
+
+
+<a id="1237"></a>
+**Trace Flag: 1237**<br />
+Function: Allows the `ALTER PARTITION FUNCTION` statement to honor the current user-defined session deadlock priority instead of being the likely deadlock victim by default.<br />
+**Note: Starting with SQL Server 2017 and database [compatibility level] 140 this is the default behavior and trace flag 1237 has no effect.**
+Link: http://support.microsoft.com/help/4025261<br />
+Link: [MSDN ms188396]<br />
+Scope: global or session or query
 
 
 <a id="1260"></a>
@@ -1879,6 +1889,14 @@ Link: https://support.microsoft.com/en-us/kb/215458<br />
 Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
 
 
+<a id="3427"></a>
+**Trace Flag: 3427**<br />
+Function: Enables fix for issue when many consecutive transactions inserting data into temp table in SQL Server 2016 consume more CPU than in SQL Server 2014.<br />
+Link: [MSDN ms188396]<br />
+Link: http://support.microsoft.com/help/3216543<br />
+Scope: global only
+
+
 <a id="3448"></a>
 **Trace Flag: 3448**<br />
 Function: Introduced in the KB to fix a race condition leading to a hung database in mirroring failover situations. “ This trace flag forces new connections to keep checking for 
@@ -2434,19 +2452,25 @@ Scope: global or session or query
 
 <a id="4199"></a>
 **Trace Flag: 4199**<br />
-Function: Controls query optimizer changes released in SQL Server Cumulative Updates and Service Packs.
-Starting with SQL Server 2016, trace flag 4199 changes that are made to previous releases of SQL Server will become enabled under database compatibility level 130 without trace flag 4199 enabled<br />
+Function: Enables query optimizer (QO) changes released in SQL Server Cumulative Updates and Service Packs.
+QO changes that are made to previous releases of SQL Server are enabled by default under the latest database compatibility level in a given product release, without trace flag 4199 enabled.<br />
+The following table summarizes the behavior when using specific database compatibility levels and trace flag 4199:
+
+| Database compatibility level | TF 4199     | QO changes from previous database compatibility levels | QO changes for current version post-RTM |
+|------------------------------|-------------|--------------------------------------------------------|-----------------------------------------|
+| 100 to 120                   | Off<br />On | Disabled<br />Enabled                                  | Disabled<br />Enabled                   |
+| 130                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
+| 140                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
+
 To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).<br />
-**Note: Starting with SQL Server 2016, customers are advised to remove trace flag 4199 after they migrate their databases to the latest compatibility level
-because trace flag 4199 will be reused for future query optimizer changes that may not apply to your application and could cause unexpected plan performance changes on a production system.
-This means that different trace flag 4199 changes are enabled for each compatibility level that is supported in a given product release.**<br />
+**Note: Starting with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT [query hint](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query) instead of using this trace flag.**<br />
 Link: https://support.microsoft.com/en-us/kb/974006<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [MSDN ms188396]<br />
 Link: https://support.microsoft.com/en-us/help/974006/sql-server-query-optimizer-hotfix-trace-flag-4199-servicing-model<br />
 Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-query_optimizer_hotfixes-in-sql-server-2016/<br />
 Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
-Scope: global or session
+Scope: global or session or query
 
 
 <a id="4606"></a>
@@ -3080,7 +3104,8 @@ Function: Output extra information to error log regarding replication of schema 
 Link: None
 
 
-Trace Flag : 8218
+<a id="8218"></a>
+**Trace Flag: 8218**
 Function: Determine whether trace flag to bypass proc generation has been set.
 Referenced in the system procedure `[master].[sys].[sp_cdc_vupgrade]`<br />
 Link: None
@@ -3941,3 +3966,4 @@ Scope: global or session
 [SQL Server 2016 : Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
 [Importance of Performing DBCC CHECKDB on all SQL Server Databases]:https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
 [SQL Server Parallel Query Placement Decision Logic]:https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
+[compatibility level]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
