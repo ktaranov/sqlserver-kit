@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **215** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **217** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -12,7 +12,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {21}
- - **[MS]**: Management Studio (alternative for SSMS) {16}
+ - **[MS]**: Management Studio (alternative for SSMS) {18}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {4}
@@ -236,6 +236,9 @@ Utility types (main purpose), in braces `{}` current counts:
 | [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
 | [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
 | [comparator](#pumpet-comparator)                                      | No                               | No             | [DC]       | [comparator]                                | ?            | Pumpet               | Open Source    |  No   |
+| [Navicat for SQL Server](#navicat-for-sql-server)                     | No                               | Mac            | [MS]       | [Navicat for SQL Server]                    | 2017-06-14   | PremiumSoft          | No             |  $699 |
+| [Navicat Premium](#navicat-premium)                                   | Oracle, PostgreSQL, MySQL, Other | Mac            | [MS]       | [Navicat Premium]                           | 2017-06-14   | PremiumSoft          | No             | $1299 |
+
 
 ## SSMS
 <a id="ssms"></a>
@@ -3351,6 +3354,34 @@ Price: No
 Simple application for compare data
 
 
+<a id="navicat-for-sql-server"></a>
+## Navicat for SQL Server
+Download page: [Navicat for SQL Server]<br/>
+Release date: 2017-06-14<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/AmazonRDS<br/>
+Author: PremiumSoft<br/>
+Free version: No<br/>
+Price: $699
+
+Navicat for SQL Server gives you a fully graphical approach to database management and development.
+Quickly and easily create, edit, and delete all database objects, or execute SQL queries and scripts.
+Connect to any local/remote SQL Server, and compatible with cloud databases like Amazon RDS and SQL Azure.
+
+
+<a id="navicat-premium"></a>
+## Navicat Premium
+Download page: [Navicat Premium]<br/>
+Release date: 2017-06-14<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/AmazonRDS<br/>
+Author: PremiumSoft<br/>
+Free version: No<br/>
+Price: $1299
+
+Navicat Premium is a database development tool that allows you to simultaneously connect to MySQL, MariaDB, SQL Server, Oracle, PostgreSQL, and SQLite databases from a single application.
+Compatible with cloud databases like Amazon RDS, Amazon Aurora, Amazon Redshift, SQL Azure, Oracle Cloud and Google Cloud.
+You can quickly and easily build, manage and maintain your databases.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3566,3 +3597,5 @@ Simple application for compare data
 [mssql-scripter]:https://github.com/Microsoft/sql-xplat-cli
 [DBFS]:https://github.com/Microsoft/dbfs
 [comparator]:https://github.com/Pumpet/comparator
+[Navicat for SQL Server]:https://www.navicat.com/en/products/navicat-for-sqlserver
+[Navicat Premium]:https://www.navicat.com/en/products/navicat-premium
