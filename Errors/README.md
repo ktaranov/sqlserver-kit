@@ -65,6 +65,7 @@ Error code equal `message_id` from `sys.messages`
 |       3154 | The backup set holds a backup of a database other than the existing                                                                                     | [Database Restore Fails with Msg 3154]                       |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media family.                                                    | [Unable to restore a backup – Msg 3241]                      |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log file. Roll back the transaction.                        | [Case study: Troubleshooting Doomed Transactions]            |
+|       4064 | Cannot open user default database. Login failed.Login failed.                                                                                           | [4064_link1]                                                 |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]              |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                                                                   | [SQL SERVER - FIX Error 5120]                                |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [When SQL Server fails to create a secondary data file]      |
@@ -96,6 +97,7 @@ Error code equal `message_id` from `sys.messages`
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
+[4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
 [SQL Server 2016 Online ALTER COLUMN Operation]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
