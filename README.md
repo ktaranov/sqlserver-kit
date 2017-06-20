@@ -249,6 +249,7 @@ Headers:
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump) (Github)
     - [Columnstore Indexes Scripts Library](https://github.com/NikoNeugebauer/CISL) (by Niko Neugebauer) (Github)
     - [MOSL - Memory Optimized Script Library](https://github.com/NikoNeugebauer/MOSL) (by Niko Neugebauer) (Github)
+    - [mssql-docker - Official Microsoft repository for SQL Server in Docker resources](https://github.com/ktaranov/mssql-docker) (by Microsoft) (Github)
     - [SQLCover - TSQL code coverage tool for SQL Server 2008+](https://github.com/GoEddie/SQLCover) (by Ed Elliott) (Github)
     - [tSQLt testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
     - [T-SQL SimMetrics string matching algorithms](https://github.com/GuerrillaAnalytics/similarity) (Github)
