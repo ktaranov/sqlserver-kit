@@ -2,7 +2,7 @@
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: April 25, 2017
+-- Last Modified: June 19, 2017
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -229,17 +229,14 @@ ORDER BY name OPTION (RECOMPILE);
 -- remote admin connections (should be 1)
 
 
--- File Names and Paths for TempDB and all user databases in instance (Query 11) (Database Filenames and Paths)
+-- File names and paths for all user and system databases on instance  (Query 11) (Database Filenames and Paths)
 SELECT DB_NAME([database_id]) AS [Database Name], 
-       [file_id], name, physical_name, type_desc, state_desc,
+       [file_id], [name], physical_name, [type_desc], state_desc,
 	   is_percent_growth, growth,
 	   CONVERT(bigint, growth/128.0) AS [Growth in MB], 
        CONVERT(bigint, size/128.0) AS [Total Size in MB]
 FROM sys.master_files WITH (NOLOCK)
-WHERE [database_id] > 4 
-AND [database_id] <> 32767
-OR [database_id] = 2
-ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
+ORDER BY DB_NAME([database_id]), [file_id] OPTION (RECOMPILE);
 ------
 
 -- Things to look at:
@@ -348,7 +345,7 @@ ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
 
 -- Recovery model, log reuse wait description, log file size, log usage size (Query 15) (Database Properties)
 -- and compatibility level for all databases on instance
-SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], 
+SELECT db.[name] AS [Database Name], SUSER_SNAME(db.owner_sid) AS [Database Owner], db.recovery_model_desc AS [Recovery Model], 
 db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
 ls.cntr_value AS [Log Size (KB)], lu.cntr_value AS [Log Used (KB)],
 CAST(CAST(lu.cntr_value AS FLOAT) / CAST(ls.cntr_value AS FLOAT)AS DECIMAL(18,2)) * 100 AS [Log Used %], 

@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- May 2017
--- Last Modified: May 1, 2017
+-- June 2017
+-- Last Modified: June 13, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -84,7 +84,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																												11.0.5657		SP2 CU14		    9/19/2016   ---->  11.0.6544		SP3 CU5			 9/20/2016
 --																												11.0.5676		SP2 CU15 		   11/16/2016   ---->  11.0.6567		SP3 CU6 		11/16/2016
 --																												11.0.5678		SP2 CU16			1/17/2017   ---->  11.0.6579		SP3 CU7			 1/17/2017
---																																									   11.0.6594		SP3 CU8			 3/20/2017																											                                                            				
+--																																									   11.0.6594		SP3 CU8			 3/20/2017
+--																																									   11.0.6598		SP3 CU9			 5/15/2017																											                                                            				
 --																												
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
@@ -609,8 +610,8 @@ DROP TABLE #IOWarningResults;
 
 -- Recovery model, log reuse wait description, log file size, log usage size  (Query 26) (Database Properties)
 -- and compatibility level for all databases on instance
-SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], db.state_desc, db.containment_desc,
-db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
+SELECT db.[name] AS [Database Name], SUSER_SNAME(db.owner_sid) AS [Database Owner], db.recovery_model_desc AS [Recovery Model], 
+db.state_desc, db.containment_desc, db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
 CONVERT(DECIMAL(18,2), ls.cntr_value/1024.0) AS [Log Size (MB)], CONVERT(DECIMAL(18,2), lu.cntr_value/1024.0) AS [Log Used (MB)],
 CAST(CAST(lu.cntr_value AS FLOAT) / CAST(ls.cntr_value AS FLOAT)AS DECIMAL(18,2)) * 100 AS [Log Used %], 
 db.[compatibility_level] AS [DB Compatibility Level], 
@@ -778,6 +779,7 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
 		N'HADR_NOTIFICATION_DEQUEUE', N'HADR_TIMER_TASK', N'HADR_WORK_QUEUE',
         N'KSOURCE_WAKEUP', N'LAZYWRITER_SLEEP', N'LOGMGR_QUEUE', N'ONDEMAND_TASK_QUEUE',
         N'PREEMPTIVE_OS_QUERYREGISTRY', 
+		N'PREEMPTIVE_HADR_LEASE_MECHANISM', N'PREEMPTIVE_SP_SERVER_DIAGNOSTICS',
 		N'PWAIT_ALL_COMPONENTS_INITIALIZED', 
 		N'QDS_PERSIST_TASK_MAIN_LOOP_SLEEP',
         N'QDS_CLEANUP_STALE_QUERIES_TASK_MAIN_LOOP_SLEEP', N'REQUEST_FOR_DEADLOCK_SEARCH',
@@ -839,6 +841,10 @@ ORDER BY ec.client_net_address, es.[program_name] OPTION (RECOMPILE);
 
 -- This helps you figure where your database load is coming from
 -- and verifies connectivity from other machines
+
+-- Solving Connectivity errors to SQL Server
+-- https://support.microsoft.com/en-us/help/4009936/solving-connectivity-errors-to-sql-server
+
 
 
 -- Get Average Task Counts (run multiple times)  (Query 34) (Avg Task Counts)
