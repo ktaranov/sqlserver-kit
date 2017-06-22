@@ -329,6 +329,7 @@ Articles types:
 | [Disabling ROW and PAGE Level Locks in SQL Server]                                                                      | Klaus Aschenbrenner                      | 2016-10-31 | [DEV]       |
 | [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DEV]       |
 | [Cardinality Estimation for Multiple Predicates]                                                                        | Paul Randal                              | 2014-01-15 | [DEV]       |
+| [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -640,3 +641,4 @@ Articles types:
 [Disabling ROW and PAGE Level Locks in SQL Server]:http://www.sqlpassion.at/archive/2016/10/31/disabling-row-and-page-level-locks-in-sql-server/
 [Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/
 [Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
+[Weaning yourself off of SQL Profiler (Part 1)]:http://blog.waynesheffield.com/wayne/archive/2017/04/weaning-yourself-off-sql-profiler/
