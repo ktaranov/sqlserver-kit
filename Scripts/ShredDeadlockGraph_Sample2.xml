@@ -1,0 +1,335 @@
+<deadlock>
+ <victim-list>
+  <victimProcess id="process3749e50c8" />
+  <victimProcess id="process3749e4928" />
+  <victimProcess id="process3749e5c38" />
+  <victimProcess id="process37797c928" />
+  <victimProcess id="process3749e4558" />
+  <victimProcess id="process3747e70c8" />
+  <victimProcess id="process378639c38" />
+  <victimProcess id="process375a72558" />
+  <victimProcess id="process3786390c8" />
+ </victim-list>
+ <process-list>
+  <process id="process3749e50c8" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4486" ownerId="2903582" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x377ea23a8" lockMode="IX" schedulerid="1" kpid="38928" status="suspended" spid="55" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.633" lastattention="1900-01-01T00:00:00.633" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903582" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3749e4928" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4486" ownerId="2903586" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x37e04f078" lockMode="IX" schedulerid="1" kpid="4244" status="suspended" spid="64" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.637" lastattention="1900-01-01T00:00:00.637" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903586" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3749e5c38" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903585" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x37ab7cd28" lockMode="IX" schedulerid="1" kpid="38892" status="suspended" spid="61" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.637" lastattention="1900-01-01T00:00:00.637" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903585" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process37797c928" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903584" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x3754e8d28" lockMode="IX" schedulerid="1" kpid="32072" status="suspended" spid="59" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.637" lastattention="1900-01-01T00:00:00.637" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903584" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3749e4558" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903583" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x377ea2d28" lockMode="IX" schedulerid="1" kpid="36388" status="suspended" spid="57" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.637" lastattention="1900-01-01T00:00:00.637" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903583" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3747e70c8" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903581" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x37ab7c3a8" lockMode="IX" schedulerid="2" kpid="37560" status="suspended" spid="63" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.627" lastattention="1900-01-01T00:00:00.627" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903581" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process378639c38" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903580" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x377b60d28" lockMode="IX" schedulerid="2" kpid="22656" status="suspended" spid="62" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.627" lastattention="1900-01-01T00:00:00.627" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903580" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process375a72558" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903579" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x377b616a8" lockMode="IX" schedulerid="2" kpid="22960" status="suspended" spid="60" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.623" lastattention="1900-01-01T00:00:00.623" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903579" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3786390c8" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903578" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x377b603a8" lockMode="IX" schedulerid="2" kpid="30268" status="suspended" spid="58" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.623" lastattention="1900-01-01T00:00:00.623" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903578" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+  <process id="process3747e7868" taskpriority="0" logused="0" waitresource="OBJECT: 2:264388011:0 " waittime="4487" ownerId="2903577" transactionname="user_transaction" lasttranstarted="2012-10-25T20:49:28.517" XDES="0x37ab7d6a8" lockMode="IX" schedulerid="2" kpid="37880" status="suspended" spid="56" sbid="0" ecid="0" priority="0" trancount="3" lastbatchstarted="2012-10-25T20:49:56.640" lastbatchcompleted="2012-10-25T20:49:56.623" lastattention="1900-01-01T00:00:00.623" clientapp=".Net SqlClient Data Provider" hostname="WS-HPDV7" hostpid="17052" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="2903577" currentdb="2" lockTimeout="4294967295" clientoption1="673187936" clientoption2="390200">
+   <executionStack>
+    <frame procname="adhoc" line="6" stmtstart="16" sqlhandle="0x02000000eeda9d033f24084ed8191c2cee06a6148f7ea6240000000000000000000000000000000000000000">
+UPDATE [dbo].[junk] set [i] = @1    </frame>
+    <frame procname="adhoc" line="6" stmtstart="142" sqlhandle="0x0200000095ebf5346d60a6b12dbee5fd29e4a7e173e769f80000000000000000000000000000000000000000">
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK    </frame>
+   </executionStack>
+   <inputbuf>
+ 
+BEGIN TRANSACTION
+ 
+SELECT * FROM junk WITH (TABLOCK, HOLDLOCK);
+ 
+UPDATE dbo.junk SET i=1;
+ 
+--ROLLBACK   </inputbuf>
+  </process>
+ </process-list>
+ <resource-list>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e4558" mode="S" />
+    <owner id="process3747e70c8" mode="S" />
+    <owner id="process3747e70c8" mode="IX" requestType="convert" />
+    <owner id="process3749e4558" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3749e50c8" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e4558" mode="S" />
+    <owner id="process3747e70c8" mode="S" />
+    <owner id="process3747e70c8" mode="IX" requestType="convert" />
+    <owner id="process3749e4558" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3749e4928" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e4558" mode="S" />
+    <owner id="process3747e70c8" mode="S" />
+    <owner id="process3747e70c8" mode="IX" requestType="convert" />
+    <owner id="process3749e4558" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3749e5c38" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process3749e5c38" mode="S" />
+    <owner id="process3749e4558" mode="S" />
+    <owner id="process3747e70c8" mode="S" />
+    <owner id="process3747e70c8" mode="IX" requestType="convert" />
+    <owner id="process3749e4558" mode="IX" requestType="convert" />
+    <owner id="process3749e5c38" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process37797c928" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3747e70c8" mode="S" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process3747e70c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3749e4558" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3747e7868" mode="S" />
+    <owner id="process3747e7868" mode="IX" requestType="convert" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3747e70c8" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3747e7868" mode="S" />
+    <owner id="process3747e7868" mode="IX" requestType="convert" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process378639c38" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3747e7868" mode="S" />
+    <owner id="process3747e7868" mode="IX" requestType="convert" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process375a72558" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3747e7868" mode="S" />
+    <owner id="process3747e7868" mode="IX" requestType="convert" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3786390c8" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+  <objectlock lockPartition="0" objid="264388011" subresource="FULL" dbid="2" objectname="tempdb.dbo.junk" id="lock37a897b00" mode="S" associatedObjectId="264388011">
+   <owner-list>
+    <owner id="process37797c928" mode="S" />
+    <owner id="process3749e50c8" mode="S" />
+    <owner id="process3749e50c8" mode="IX" requestType="convert" />
+    <owner id="process37797c928" mode="IX" requestType="convert" />
+   </owner-list>
+   <waiter-list>
+    <waiter id="process3747e7868" mode="IX" requestType="convert" />
+   </waiter-list>
+  </objectlock>
+ </resource-list>
+</deadlock>
