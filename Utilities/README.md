@@ -159,7 +159,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                      | 2016-05-23   | David Ingleton       | Yes            | No    |
 | [Database Performance Analyzer](#dpa-solarwinds)                      | No                               | No             | [M]        | [Database Performance Analyzer]             | ?            | SolarWinds           | No             | $1995 |
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft             | No             |  $295 |
-| [OmniCompare](#omnicompare)                                           | No                               | No             | [SC]       | [OmniCompare]                               | 2016-06-03   | AireForge            | Yes            | No    |
+| [Aireforge Studio](#aireforge-studio)                                 | No                               | No             | [MG], [SC] | [Aireforge Studio]                          | 2017-06-21   | AireForge            | Yes            |  $299 |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                  | ?            | HexaTier             | No             | ?     |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-03-09   | SoftTree             | No             |  $215 |
 | [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                 | 2015-02-07   | SoftTree             | No             |  $499 |
@@ -231,7 +231,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Migration Assistant for DB2](#ssma-db2)                   | DB2                              | No             | [MG]       | [SQL Server Migration Assistant for DB2]    | 2017-02-17   | Microsoft            | Yes            |  No   |
 | [SQL Server Migration Assistant for Oracle](#ssma-oracle)             | Oracle                           | No             | [MG]       | [SQL Server Migration Assistant for Oracle] | 2017-02-17   | Microsoft            | Yes            |  No   |
 | [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft            | Yes            |  No   |
-| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | No             | [?]        | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft            | Open Source    |  No   |
+| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | Linux, Mac     | [MS]       | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft            | Open Source    |  No   |
 | [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft            | Yes            |  No   |
 | [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft            | Open Source    |  No   |
 | [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft            | Open Source    |  No   |
@@ -2291,17 +2291,17 @@ Price: $295
  - Continuous integration support
 
 
-## OmniCompare
-<a id="omnicompare"></a>
-Download page: [OmniCompare]<br/>
-Release date: 2016-06-03<br/>
-Support Version: ?<br/>
+## Aireforge Studio
+<a id="aireforge-studio"></a>
+Download page: [Aireforge Studio]<br/>
+Release date: 2017-06-21<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
 Author: AireForge<br/>
 Free version: Yes<br/>
-Price: No
+Price: $299
 
-**The first Aireforge product is now in beta.**
-OmniCompare is a SQL Server configuration comparison tool which compares instance settings, users, permissions, jobs, linked servers and more.
+Aireforge Studio contains a growing suite of tools that help administrators to stabilize, optimize & secure multiple database instances with ease.
+Be it, keeping two instances in sync for recovery purposes or synchronizing the settings of over 200 replication subscribers; our tools will help.
 
 
 ## HexaTier
@@ -3519,7 +3519,7 @@ You can quickly and easily build, manage and maintain your databases.
 [SQLC]:http://sqlc.azurewebsites.net/
 [Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer-sql-server
 [SQL Enlight]:http://www.ubitsoft.com/products/sqlenlight/index.php
-[OmniCompare]:http://aireforge.com/download/OmniCompare.html
+[Aireforge Studio]:https://aireforge.com/studio/
 [HexaTier]:http://www.hexatier.com/
 [SoftTree SQL Assistant]:https://www.softtreetech.com/sqlassist/
 [DB Audit and Security 360]:http://softtreetech.com/dbaudit/index.htm
