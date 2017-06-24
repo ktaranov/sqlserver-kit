@@ -1,0 +1,53 @@
+<deadlock-list>
+<deadlock victim="process181735b88">
+<process-list>
+<process id="process181735b88" taskpriority="0" logused="352" waitresource="KEY: 21:72057594049658880 (010008207756)" waittime="9564" ownerId="181040" transactionname="user_transaction" lasttranstarted="2011-05-15T00:12:52.523" XDES="0x19208ce90" lockMode="X" schedulerid="2" kpid="4380" status="suspended" spid="60" sbid="0" ecid="0" priority="0" trancount="2" lastbatchstarted="2011-05-15T00:12:52.523" lastbatchcompleted="2011-05-15T00:12:28.323" clientapp="Microsoft SQL Server Management Studio - Query" hostname="WS-HPDV7" hostpid="4636" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="181040" currentdb="21" lockTimeout="4294967295" clientoption1="671090784" clientoption2="390200">
+<executionStack>
+<frame procname="adhoc" line="5" stmtstart="38" sqlhandle="0x0200000071e4b91c182ff5918af8199d2b19e9fb930172bc">
+UPDATE [dbo].[Tally] set [N] = [N]-@1  WHERE [N]=@2     </frame>
+<frame procname="adhoc" line="5" stmtstart="136" sqlhandle="0x02000000c2adc438b1f60f3b4049de8c294e3acf4c0113c0">
+UPDATE dbo.Tally SET N = N-1 WHERE N = 1
+ 
+--ROLLBACK TRANSACTION     </frame>
+</executionStack>
+<inputbuf>
+BEGIN TRANSACTION
+ 
+UPDATE dbo.Tally_sm SET N = N-2 WHERE N = 1
+ 
+UPDATE dbo.Tally SET N = N-1 WHERE N = 1
+ 
+--ROLLBACK TRANSACTION    </inputbuf>
+</process>
+<process id="process181734bc8" taskpriority="0" logused="360" waitresource="KEY: 21:72057594038976512 (010086470766)" waittime="4208" ownerId="181034" transactionname="user_transaction" lasttranstarted="2011-05-15T00:12:46.773" XDES="0x18f0c9970" lockMode="X" schedulerid="2" kpid="4388" status="suspended" spid="56" sbid="0" ecid="0" priority="0" trancount="2" lastbatchstarted="2011-05-15T00:12:57.880" lastbatchcompleted="2011-05-15T00:12:46.773" clientapp="Microsoft SQL Server Management Studio - Query" hostname="WS-HPDV7" hostpid="4636" loginname="WS-HPDV7\wgshef" isolationlevel="read committed (2)" xactid="181034" currentdb="21" lockTimeout="4294967295" clientoption1="671090784" clientoption2="390200">
+<executionStack>
+<frame procname="adhoc" line="1" stmtstart="38" sqlhandle="0x02000000c556121369885d6117621bc2f0e2091c81bf6e70">
+UPDATE [dbo].[Tally_sm] set [N] = [N]-@1  WHERE [N]=@2     </frame>
+<frame procname="adhoc" line="1" sqlhandle="0x02000000b8cc250508388dfe00dcef08bfd27496a9da3b34">
+UPDATE dbo.Tally_sm SET N = N-2 WHERE N = 1     </frame>
+</executionStack>
+<inputbuf>
+UPDATE dbo.Tally_sm SET N = N-2 WHERE N = 1
+</inputbuf>
+</process>
+</process-list>
+<resource-list>
+<keylock hobtid="72057594049658880" dbid="21" objectname="Sandbox.dbo.Tally" indexname="PK_Tally" id="lock1852e8700" mode="X" associatedObjectId="72057594049658880">
+<owner-list>
+<owner id="process181734bc8" mode="X"/>
+</owner-list>
+<waiter-list>
+<waiter id="process181735b88" mode="X" requestType="wait"/>
+</waiter-list>
+</keylock>
+<keylock hobtid="72057594038976512" dbid="21" objectname="Sandbox.dbo.Tally_sm" indexname="PK_Tally_sm" id="lock184e54080" mode="X" associatedObjectId="72057594038976512">
+<owner-list>
+<owner id="process181735b88" mode="X"/>
+</owner-list>
+<waiter-list>
+<waiter id="process181734bc8" mode="X" requestType="wait"/>
+</waiter-list>
+</keylock>
+</resource-list>
+</deadlock>
+</deadlock-list>
