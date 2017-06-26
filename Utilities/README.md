@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **219** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **220** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -157,7 +157,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                            | 2015-01-15   | SQLServerUtilities    | No             |   $99 |
 | [SQLScripter](#sqlscripter)                                           | No                               | No             | [?]        | [SQLScripter]                               | 2009-08-24   | SQLServerUtilities    | No             |   $99 |
 | [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                      | 2016-05-23   | David Ingleton        | Yes            | No    |
-| [Database Performance Analyzer](#dpa-solarwinds)                      | No                               | No             | [M]        | [Database Performance Analyzer]             | ?            | SolarWinds            | No             | $1995 |
+| [Database Performance Analyzer](#dpa-solarwinds)                      | Oracle, MySQL, Other             | Linux          | [M]        | [Database Performance Analyzer]             | ?            | SolarWinds            | No             | $1995 |
+| [Database Performance Analyzer for MSSQL](#dpa-solarwinds-mssql)      | No                               | No             | [M]        | [Database Performance Analyzer for MSSQL]   | ?            | SolarWinds            | No             | $1995 |
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft              | No             |  $295 |
 | [Aireforge Studio](#aireforge-studio)                                 | No                               | No             | [MG], [SC] | [Aireforge Studio]                          | 2017-06-21   | AireForge             | Yes            |  $299 |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                  | ?            | HexaTier              | No             | ?     |
@@ -2267,12 +2268,25 @@ SQLC is a software tool for comparing two SQL Server databases. With SQLC you ca
 <a id="dpa-solarwinds"></a>
 Download page: [Database Performance Analyzer]<br/>
 Release date: ?<br/>
-Support Version: ?<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/Amazon<br/>
 Author: SolarWinds<br/>
 Free version: No<br/>
 Price: $1995
 
 Monitor across your entire environment: physical servers, virtualized, and in the Cloud
+
+
+## Database Performance Analyzer for MSSQL
+<a id="dpa-solarwinds-mssql"></a>
+Download page: [Database Performance Analyzer for MSSQL]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/Amazon<br/>
+Author: SolarWinds<br/>
+Free version: No<br/>
+Price: $1995
+
+Optimize and tune SQL Server deployed anywhere - physical, virtual, or cloud based.
+Includes Azure SQL database, Azure virtual machines, and Amazon RDS.
 
 
 ## SQL Enlight
@@ -3547,7 +3561,8 @@ This are possible as DbSchema is using its own image of the schema and saves it 
 [RestoreChecker]:http://sqlserverutilities.com/products/restorechecker/
 [SQLScripter]:http://sqlserverutilities.com/products/sqlscripter/
 [SQLC]:http://sqlc.azurewebsites.net/
-[Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer-sql-server
+[Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer
+[Database Performance Analyzer for MSSQL]:http://www.solarwinds.com/database-performance-analyzer-sql-server
 [SQL Enlight]:http://www.ubitsoft.com/products/sqlenlight/index.php
 [Aireforge Studio]:https://aireforge.com/studio/
 [HexaTier]:http://www.hexatier.com/
