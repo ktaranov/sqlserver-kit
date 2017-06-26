@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **220** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **221** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -241,6 +241,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Navicat Premium](#navicat-premium)                                   | Oracle, PostgreSQL, MySQL, Other | Mac            | [MS]       | [Navicat Premium]                           | 2017-06-14   | PremiumSoft           | No             | $1299 |
 | [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-04-12   | DbVis Software AB.    | Yes            |  $179 |
 | [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions | Yes            |  $127 |
+| [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        | No             |  £430 |
 
 
 ## SSMS
@@ -3426,6 +3427,18 @@ Price: $127
 This are possible as DbSchema is using its own image of the schema and saves it to XML file.
 
 
+<a id="dbghost"></a>
+## DBGhost
+Download page: [DBGhost]<br/>
+Release date: 2017-01-31<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Innovartis Ltd<br/>
+Free version: No<br/>
+Price: £430
+
+The Change Manager gives you all the tools to implement the full DB Ghost Process enabling you to script out your databases into individual DROP/CREATE scripts, place those scripts under source control, modify them there and then build and deploy from those scripts.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3646,3 +3659,4 @@ This are possible as DbSchema is using its own image of the schema and saves it 
 [Navicat Premium]:https://www.navicat.com/en/products/navicat-premium
 [DbVisualizer]:http://www.dbvis.com/
 [DbSchema]:http://www.dbschema.com
+[DBGhost]:http://www.dbghost.com
