@@ -55,7 +55,6 @@ Headers:
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
-    - [SQL#](/CLR/SQLsharp_SETUP.sql) free version - QUICKEST and EASIEST way to extending the power of T-SQL with C#
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
  - [Extended Events](/Extended_Events)
  - [Known Errors](/Errors)
@@ -266,9 +265,10 @@ Headers:
     - [Opserver - Stack Exchange's Monitoring System](https://github.com/opserver/Opserver) (by Stack Exchange)
     - [Bosum - Time Series Alerting Framework](https://github.com/bosun-monitor/bosun) (by Stack Exchange)
     - [BismNormalizer - is a free and open-source tool to manage Microsoft Analysis Services tabular models](https://github.com/christianwade/BismNormalizer) (by Christian Wade)
+    - [DbSharp - is a DAL Generator](https://www.codeproject.com/Articles/776811/DbSharp-DAL-generator-tool) (by Higty)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
-    - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Leap)
+    - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
     - [SQL Server Wait Types Library](https://www.sqlskills.com/help/waits/) (by Paul S. Randal)
     - [Waitopedia - is a comprehensive resource of information about SQL Server waits](https://www.spotlightessentials.com/waitopedia) (by Spotlight Essentials)
