@@ -7,7 +7,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
- - **[IDX]**: Index manager {1}
+ - **[IDX]**: Index manager {2}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
@@ -16,8 +16,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {4}
- - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {98}
+ - **[ST]**: Statistics utilities {4}
+ - **[?]**: Not yet classified {99}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|----------------|------:|
@@ -242,8 +242,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-04-12   | DbVis Software AB.    | Yes            |  $179 |
 | [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions | Yes            |  $127 |
 | [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        | No             |  £430 |
-| [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | ?            | OnLine ToolWorks      | No             |   $99 |
-
+| [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | ?            | OnLine ToolWorks      | No             |   $99 |
+| [AdaptiveIndexDefrag](#adaptive-index-defrag)                         | No                               | No             | [IDX], [ST]| [Adaptive Index Defrag]                     | 2011-02-08   | Pedro Lopes           | Yes            | No    || [SQL Best Practices and Performance checks](#bp-check)                | No                               | No             | [?]        | [BP Check]                                  | 2011-07-28   | Pedro Lopes           | Yes            | No    |
 
 ## SSMS
 <a id="ssms"></a>
@@ -3454,6 +3454,35 @@ It provides the ability to manage the necessary repetitive DBMS maintenance to h
 SQLAutomate makes it easy to manage a single database server instance, hundreds or even thousands of instances.
 
 
+## SQL Best Practices and Performance checks
+<a id="bp-check"></a>
+Download page: [BPCheck]<br/>
+Release date: 2011-07-28<br/>
+Support Version: 2005/2008/2012/2014/2016/2017<br/>
+Author: Pedro Lopes<br/>
+Free version: Yes<br/>
+Price: No
+
+Checks SQL Server in scope for some of most common skewed Best Practices and performance issues. 
+By default all databases in the SQL Server instance are eligible for the several database specific checks, and you may use the optional parameter to narrow these checks to specific databases.
+More information about all the checks included and pre-requisites in the download page.
+
+
+## AdaptiveIndexDefrag
+<a id="adaptive-index-defrag"></a>
+Download page: [AdaptiveIndexDefrag]<br/>
+Release date: 2011-02-08<br/>
+Support Version: 2005/2008/2012/2014/2016/2017<br/>
+Author: Pedro Lopes<br/>
+Free version: Yes<br/>
+Price: No
+
+The purpose is to perform an intelligent defrag on one or more indexes and statistics for one or more databases. 
+Automatically chooses whether to rebuild or reorganize an index according to its fragmentation level, amongst other parameters, like if page locks are allowed or the existence of LOBs, while keeping statistics updated with a linear threshold. All within a specified time frame you choose, defaulting to 8 hours. 
+The defrag priority can also be set, either on size, fragmentation level or index usage (based on range scan count), which is the default. It also handles partitioned indexes, columnstore indexes, in-memory indexes, statistics update (table-wide or only those related to indexes), rebuilding with the original fill factor or index padding and online operations, to name a few options.
+More information on all the options available in the download page.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3676,3 +3705,5 @@ SQLAutomate makes it easy to manage a single database server instance, hundreds 
 [DbSchema]:http://www.dbschema.com
 [DBGhost]:http://www.dbghost.com
 [SQLAutomate]:http://www.sqlautomate.com
+[BPCheck]:http://aka.ms/BPCheck
+[AdaptiveIndexDefrag]:http://aka.ms/AID
