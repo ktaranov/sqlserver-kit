@@ -205,6 +205,10 @@ Headers:
      - [Number and Date Tables](https://www.brentozar.com/archive/2016/01/video-free-training-of-the-week-number-and-date-tables/)
      - [Free SQL Tutorials](http://www.guru99.com/sql.html)
      - [OpenedX Microsoft Courses](https://openedx.microsoft.com/)
+     - [SQLBolt - Learn SQL with simple, interactive exercises](https://sqlbolt.com/)
+     - [SQL Tutorial](https://sqlzoo.net)
+     - [HackerRank.com - SQL interactive exercises and many others languages](https://www.hackerrank.com/domains/sql)
+     - [SQL-EX.ru - Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
@@ -283,7 +287,6 @@ Headers:
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
     - [SQLFiddle](http://sqlfiddle.com)
-    - [Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
