@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **30** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **31** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------|----------------------|--------------|------:|
@@ -33,6 +33,8 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012                | Tao Klerks           | Yes          | No    |
 | [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016/2017      | Vlasov Studio        | No           |   $49 |
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                | Tomáš Bauer          | Yes          | No    |
+| [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                | Microsoft            | Yes          | No    |
+
 
 ## SSMSBoost <a id="ssmsboost"></a>
 Download page: [SSMSBoost]<br/>
@@ -487,6 +489,18 @@ This article describes a tool that solves the problem described above.
 This tool can automatically collect information about executed SQL statements and it does their analysis and stores the required information in a custom SQL database, avoiding unnecessary or duplicate SQL statements being stored.
 
 
+<a id="sql-server-diagnostics"></a>
+## SQL Server Diagnostics
+Download page: [SQL Server Diagnostics]<br/>
+Release date: 2017-06-22<br/>
+Support Version: 2016/2017<br/>
+Developer: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Server Diagnostics is a collection of micro-services which enables SQL Server customers to self-help and debug SQL Server issues related to memory dumps and receive recommended fixes for their issues. 
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [SQL Code Guard]:http://sqlcodeguard.com/
@@ -518,3 +532,4 @@ This tool can automatically collect information about executed SQL statements an
 [Poor Mans T-SQL Formatter]:http://architectshack.com/PoorMansTSqlFormatter.ashx
 [Tabs Studio]:https://tabsstudio.com
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
+[SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
