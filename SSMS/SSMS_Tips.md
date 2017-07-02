@@ -31,7 +31,7 @@ Content:
 27. [Reference](#reference)
 
 
-Thanks to:
+Great thanks to:
  - Kendra Little
  - Slava Murygin
  - Mike Milligan
@@ -43,6 +43,9 @@ Thanks to:
  - Latish Sehgal
  - Arvind Shyamsundar
  - SQLMatters
+ - MSSQLTips
+ - Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
+ - Andy Mallon
 
 
 <a id="1"></a>
@@ -482,7 +485,7 @@ Reference:
  - [SQL Server Management Studio (SSMS) Tips and Tricks] (by Mike Milligan)
  - [Knowing the Options] (by John Morehouse)
  - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
- - [SQL Server Diagnostics Extension for SSMS](https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/)
+ - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -491,3 +494,4 @@ Reference:
 [RegEx-Based Finding and Replacing of Text in SSMS]:https://www.simple-talk.com/sql/sql-training/regex-based-finding-and-replacing-of-text-in-ssms/
 [SQL Server Management Studio (SSMS) Tips and Tricks]:http://www.bidn.com/blogs/MMilligan/bidn-blog/3326/sql-server-management-studio-ssms-tips-and-tricks
 [Knowing the Options]:http://sqlrus.com/2017/05/knowing-the-options/
+[SQL Server Diagnostics Extension for SSMS]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/

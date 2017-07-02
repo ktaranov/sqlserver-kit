@@ -68,6 +68,7 @@ Headers:
     - [SSMS addins](/SSMS/SSMS_Addins.md) (**31 useful free and paid SSMS Addins**)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md)
+    - [SSMS Tips](/SSMS/SSMS_Tips.md)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
