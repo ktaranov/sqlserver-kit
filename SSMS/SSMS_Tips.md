@@ -27,7 +27,22 @@ Content:
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 24. [Changing what SSMS opens on startup](#24)
 25. [Query Execution Options](#25)
-26. [Reference](#reference)
+26. [SQL Server Diagnostics Extension](#26)
+27. [Reference](#reference)
+
+
+Thanks to:
+ - Kendra Little
+ - Slava Murygin
+ - Mike Milligan
+ - Kenneth Fisher
+ - William Durkin
+ - John Morehouse
+ - Phil Factor
+ - Klaus Aschenbrenner
+ - Latish Sehgal
+ - Arvind Shyamsundar
+ - SQLMatters
 
 
 <a id="1"></a>
@@ -433,6 +448,20 @@ SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN
 ```
 
 
+<a id="26"></a>
+## SQL Server Diagnostics Extension
+
+Analyze Dumps – Customers using this extension will be able to debug and self-resolve memory dump issues from their SQL Server instances and receive recommended Knowledge Base (KB) article(s) from Microsoft, which may be applicable for the fix.
+The memory dumps are stored in a secured and compliant manner as governed by the [Microsoft Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement).
+
+For example, Joe, a DBA from Contoso, Ltd., finds that SQL Server has generated a memory dump while running a workload, and he would like to debug the issue.
+Using this feature, John can upload the dump and receive recommended KB articles from Microsoft, which can help him fix the issue.
+
+![SQL Server Diagnostics Extension](/SSMS/SSMS_Tips/26_sql_server_diagnostics_extension.png)
+
+More details here: [SQL Server Diagnostics Extension for SSMS]
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -452,6 +481,8 @@ Reference:
  - [RegEx-Based Finding and Replacing of Text in SSMS] (by Phil Factor)
  - [SQL Server Management Studio (SSMS) Tips and Tricks] (by Mike Milligan)
  - [Knowing the Options] (by John Morehouse)
+ - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
+ - [SQL Server Diagnostics Extension for SSMS](https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
