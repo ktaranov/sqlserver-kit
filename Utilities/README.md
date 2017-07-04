@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **222** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **223** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -115,10 +115,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2016-09-16   | Devart                | No             |  $249 |
 | [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2016-08-17   | Devart                | No             |  $99  |
 | [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2016-09-16   | Devart                | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2016-01-22   | Devart                | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2016-09-22   | Devart                | Yes            |  $249 |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2017-04-20   | Devart                | Yes            | No    |
+| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-03-12   | Devart                | Yes            |  $249 |
 | [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                            | 2016-12-27   | Devart                | No             |  $149 |
 | [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2016-09-16   | Devart                | No             |  $149 |
+| [Devart Excel Add-in for SQL Server](#devart-excel)                   | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-05-18   | Devart                | No             |  $100 |
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                         | ?            | MinionWare            | No             | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]          | 2011-06-02   | Bob Tavlor            | Yes            | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                                | 2016-07-07   | Bill Graziano         | Yes            | No    |
@@ -1598,7 +1599,7 @@ You can use this information to identify and troubleshoot many SQL Server-relate
 ## dbForge SQL Decryptor
 <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
-Release date: 2016-01-22<br/>
+Release date: 2017-04-20<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1610,8 +1611,8 @@ Decrypt SQL Server Procedures, Functions, Triggers, and Views
 ## dbForge Studio
 <a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
-Release date: 2016-09-22<br/>
-Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-03-12<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/2017/Amazon RDS/SQL Azure<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
 Price: $249
@@ -1649,6 +1650,18 @@ Price: $149
 dbForge Documenter for SQL Server is a big time saver when it comes to documentation of SQL Server databases.
 This tool automatically generates documentation of an entire SQL Server database in a few clicks.
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
+
+
+## Devart Excel Add-in for SQL Server
+<a id="devart-excel"></a>
+Download page: [Devart Excel Add-in for SQL Server]<br/>
+Release date: 2017-05-18<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $100
+
+Devart Excel Add-ins allow you to work with database and cloud data in Microsoft Excel as with usual Excel spreadsheets.
 
 
 ## Minion Enterprise
@@ -3547,6 +3560,7 @@ SQLAutomate makes it easy to manage a single database server instance, hundreds 
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
