@@ -271,6 +271,7 @@ Headers:
     - [Bosum - Time Series Alerting Framework](https://github.com/bosun-monitor/bosun) (by Stack Exchange)
     - [BismNormalizer - is a free and open-source tool to manage Microsoft Analysis Services tabular models](https://github.com/christianwade/BismNormalizer) (by Christian Wade)
     - [DbSharp - is a DAL Generator](https://www.codeproject.com/Articles/776811/DbSharp-DAL-generator-tool) (by Higty)
+    - [YourSqlDba - Database maintenance solution as a single SQL script](https://github.com/pelsql/YourSqlDba) (by Maurice Pelchat)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Lift)
