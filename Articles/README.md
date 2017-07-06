@@ -330,6 +330,10 @@ Articles types:
 | [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DEV]       |
 | [Cardinality Estimation for Multiple Predicates]                                                                        | Paul Randal                              | 2014-01-15 | [DEV]       |
 | [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DBA],[DEV] |
+| [Properly Persisted Computed Columns]                                                                                   | Paul White                               | 2017-05-25 | [DEV]       |
+| [A SQL Server DBA myth a day: (17/30) page checksums]                                                                   | Paul Randal                              | 2010-04-17 | [DBA]       |
+| [What are different ways to replace ISNULL() in a WHERE clause that uses only literal values?]                          | Eric Darling                             | 2017-05-27 | [DEV]       |
+| [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -641,4 +645,8 @@ Articles types:
 [Disabling ROW and PAGE Level Locks in SQL Server]:http://www.sqlpassion.at/archive/2016/10/31/disabling-row-and-page-level-locks-in-sql-server/
 [Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/
 [Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
+[Weaning yourself off of SQL Profiler (Part 1)]:http://blog.waynesheffield.com/wayne/archive/2017/04/weaning-yourself-off-sql-profiler/
+[Properly Persisted Computed Columns]:https://sqlperformance.com/2017/05/sql-plan/properly-persisted-computed-columns
+[A SQL Server DBA myth a day: (17/30) page checksums]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1730-page-checksums/
+[What are different ways to replace ISNULL() in a WHERE clause that uses only literal values?]:https://dba.stackexchange.com/questions/168276/what-are-different-ways-to-replace-isnull-in-a-where-clause-that-uses-only-lit
 [Weaning yourself off of SQL Profiler (Part 1)]:http://blog.waynesheffield.com/wayne/archive/2017/04/weaning-yourself-off-sql-profiler/
