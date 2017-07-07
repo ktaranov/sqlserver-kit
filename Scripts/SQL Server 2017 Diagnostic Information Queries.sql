@@ -1,8 +1,8 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- June 2017
--- Last Modified: June 20, 2017
+-- July 2017
+-- Last Modified: July 6, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
