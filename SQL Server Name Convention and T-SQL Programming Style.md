@@ -2,7 +2,7 @@
 
 Official Reference and useful links
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
- - [Subjectivity : Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
+ - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
  - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
  - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
@@ -24,6 +24,7 @@ Official Reference and useful links
  - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
  - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
  - [SQL Formatting standards – Capitalization, Indentation, Comments, Parenthesis](https://solutioncenter.apexsql.com/sql-formatting-standards-capitalization-indentation-comments-parenthesis/) (by ApexSQL)
+ - [In The Cloud: The Importance of Being Organized]:http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx
 
 
 ## SQL Server Object Name Convention
@@ -81,6 +82,7 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
  - All objects must used with schema names but without database and server name: `FROM dbo.Table`
+ - All system database and tables must be in lower case for properly working in Case Sensitive instance
 
 Example:
 
@@ -105,13 +107,34 @@ SELECT t1.Value1 AS Val1
  - Parameters should be placed under procedure name divided by line breaks
  - After the ALTER statement and before AS keyword should be placed a comment with execution example
  - The procedure or function should begin with parameter check
+ - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
+ - Always use `/* */` instead inline comment `--`
  - Use `SET NOCOUNT ON` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
  - Use TOP expression with `()`:
-```
+```tsql
 -- Not working without ()
 DECLARE @n int = 1;
 SELECT TOP@n name FROM sys.objects;
+```
+ - All code should be self documenting
+ - TSQL code, triggers, stored procedures, functions, should have a standard comment banner:
+```tsql
+summary:   >
+ This procedure returns an object build script as a single-row, single column
+ result.
+Revisions: 
+ - Author: Bill Gates
+   Version: 1.1
+   Modification: dealt properly with heaps
+   date: 2017-07-15
+ - version: 1.2
+   modification: Removed several bugs and got column-level constraints working
+   date: 2017-06-30
+example:
+     - code: udf_MyFunction 'testValsue';
+returns:   >
+ single row, single column result Build_Script.
 ```
 
 Stored Procedure Example:
