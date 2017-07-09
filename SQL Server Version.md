@@ -38,6 +38,7 @@ Useful links:
  - [SQL Server Release Services](https://blogs.msdn.microsoft.com/sqlreleaseservices/)
  - [Why I have high hopes for the quality of SQL Server 2016 release by Remus Rusanu](https://medium.com/@rusanu/why-i-have-high-hopes-for-the-quality-of-sql-server-2016-release-6173bc1fbc82#.44kg2ktmg)
  - [Unofficial SQL Server build chart lists](http://sqlserverbuilds.blogspot.ru/)
+ - [Unofficial SQL Server build chart lists in table representation](http://sqlbuilds.ekelmans.com/)
  - [Hardware and Software Requirements for Installing SQL Server](https://msdn.microsoft.com/en-us//library/ms143506.aspx)
  - [Wikipedia Microsoft SQL Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server)
  - [SQL Server 2005 Downloads](https://msdn.microsoft.com/en-us/sqlserver/bb671254.aspx)
@@ -502,7 +503,7 @@ Microsoft SQL Server 2016 (SP1-CU3) (KB4019916) - 13.0.4435.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
-[4019916 Cumulative Update 3 for SQL Server 2016 SP1]:
+[4019916 Cumulative Update 3 for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/help/4019916/cumulative-update-3-for-sql-server-2016-sp1
 [4013106 Cumulative Update 2 for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/help/4013106/cumulative-update-2-for-sql-server-2016-sp1
 [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/en-us/help/3208177/cumulative-update-1-for-sql-server-2016-sp1
 [3210089 GDR update package for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/kb/3210089
