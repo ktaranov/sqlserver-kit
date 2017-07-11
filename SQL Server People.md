@@ -65,6 +65,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | NULL                              | 6   | [Neugebauer MVP] |
 | Thomas Kejser       | [Thomas Kejser Blog]         | DNK     | NULL             | NULL               | thomas@kejser.org                 | 0   | -                |
 | Patrick Keisler     | [Patrick Keisler Blog]       | USA     | New York         | [@patrickkeisler]  | NULL                              | 0   | -                |
+| Markus Winand       | [Markus Winand Blog]         | AUT     | Vienna           | [@MarkusWinand]    | NULL                              | 0   | -                |
+| Kevin Feasel        | [Kevin Feasel Blog]          | USA     | Durham           | [@feaselkl]        | NULL                              | 2   | [Feasel MVP]     |
 
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com
@@ -126,6 +128,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Niko Blog]:http://www.nikoport.com
 [Thomas Kejser Blog]:http://kejser.org/
 [Patrick Keisler Blog]:http://www.patrickkeisler.com
+[Markus Winand Blog]:http://use-the-index-luke.com
+[Kevin Feasel Blog]:https://36chambers.wordpress.com/
 
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
@@ -183,6 +187,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@SQLPoolBoy]:https://twitter.com/SQLPoolBoy
 [@NikoNeugebauer]:https://twitter.com/NikoNeugebauer
 [@patrickkeisler]:https://twitter.com/patrickkeisler
+[@MarkusWinand]:https://twitter.com/MarkusWinand
+[@feaselkl]:https://twitter.com/feaselkl
 
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
@@ -218,3 +224,4 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Kimberly MVP]:https://mvp.microsoft.com/en-us/PublicProfile/8566?fullName=Kimberly%20L.%20Tripp
 [Kehayias MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4021854?fullName=Jonathan%20Matthew%20Kehayias
 [Neugebauer MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4033494?fullName=Niko%20%20Neugebauer
+[Feasel MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001922?fullName=Kevin%20%20Feasel
