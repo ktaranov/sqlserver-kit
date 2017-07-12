@@ -195,6 +195,7 @@ Headers:
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
    - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
+   - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
  - Courses
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
@@ -445,7 +446,14 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
 SQL Server:
  - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
-    - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
+   - SQL Developers
+     - [Defensive Database Programming](http://assets.red-gate.com/community/books/defensive-database-programming.pdf) (by Alex Kuznetsov)
+     - [Inside the SQL Server Query Optimizer](http://assets.red-gate.com/community/books/inside-the-sql-server-query-optimizer.pdf) (by Benjamin Nevarez)
+     - [SQL Server Execution Plans, 2nd Edition](http://assets.red-gate.com/community/books/sql-server-execution-plans-book.zip) (by Grant Fritchey)
+     - [SQL Server Source Control Basics](http://www.red-gate.com/products/sql-development/sql-source-control/entrypage/sql-server-source-control-basics) (by Robert Sheldon, Rob Richardson & Tony Davis)
+     - [The Art of XSD](http://assets.red-gate.com/community/books/the-art-of-xsd.pdf) (by Jacob Sebastian)
+     - [The Redgate Guide to SQL Server Team-based Development](http://assets.red-gate.com/products/sql-development/sql-source-control/entrypage/assets/RG_Guide_to_SQL_Server_Dev.pdf) (by Phil Factor, Grant Fritchey, Alex Kuznetsov, and Mladen Prajdić)
+     - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
  - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
