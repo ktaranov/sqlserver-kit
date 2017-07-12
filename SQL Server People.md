@@ -3,6 +3,19 @@ Most valuable professionals in Microsoft SQL Server Database world
 
 | Name                | Site/Blog                    | Country | City             | Twitter            | Email                             | MVP | MVP page         |
 |---------------------|------------------------------|---------|------------------|--------------------|-----------------------------------|----:|------------------|
+| Lori Edwards        | [Lori Edwards Blog]          | USA     | Tucson           | [@loriedwards]     | NULL                              | 0   | -                |
+| Dave Ballantyne     | [Dave Ballantyne]            | UK      | England          | [@davebally]       | NULL                              | 0   | -                |
+| Randolph West       | [Randolph West Blog]         | CAN     | Calgary          | [@rabryst]         | NULL                              | 1   | [Randolph MVP]   |
+| Andrea Allred       | [Andrea Allred Blog]         | USA     | Utah             | [@royalsql]        | NULL                              | 0   | -                |
+| John Morehouse      | [John Morehouse Blog]        | KY      | Louisville       | [@SqlrUs]          | NULL                              | 0   | -                |
+| Ginger Grant        | [Ginger Grant Blog]          | USA     | NULL             | [@DesertIsleSQL]   | NULL                              | 2   | [Grant MVP]      |
+| Mike Walsh          | [Straight Path Solutions]    | USA     | New Hamphire     | [@mike_walsh]      | NULL                              | 7   | [Walsh MVP]      |
+| James Anderson      | [James Anderson Blog]        | UK      | Southampton      | [@DatabaseAvenger] | NULL                              | 0   | -                |
+| James Serra         | [James Serra Blog]           | USA     | Texas            | [@JamesSerra]      | NULL                              | 0   | -                |
+| Doug Lane           | [Doug Lane Blog]             | USA     | Eastern Iowa     | [@thedouglane]     | NULL                              | 0   | -                |
+| Drew Furgiuele      | [Drew Furgiuele Blog]        | USA     | Dublin           | [@Pittfurg]        | NULL                              | 0   | -                |
+| Cody Konior         | [Cody Konior Blog]           | AUS     | Perth            | [@codykonior]      | NULL                              | 0   | -                |
+| Stephen Wynkoop     | [Stephen Wynkoop Site]       | USA     | Tucson           | [@swynk]           | NULL                              | 0   | -                |
 | Brent Ozar          | [Brent Ozar Blog]            | USA     | Chicago          | [@BrentO]          | help@brentozar.com                | 7   | [Ozar MVP]       |
 | Adam Machanic       | [SQLBlog]                    | USA     | Boston           | [@AdamMachanic]    | NULL                              | 12  | [Machanic MVP]   |
 | Ola Hallengren      | [Ola Maintenance Solution]   | SWE     | NULL             | [@olahallengren]   | ola@hallengren.com                | 3   | [Hallengren MVP] |
@@ -31,7 +44,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Tim Ford            | [Tim Blog]                   |         | NULL             | [@sqlagentman]     | NULL                              | 7   | [Ford MVP]       |
 | Steve Jones         | [Steve Jones Blog]           |         | NULL             | [@way0utwest]      | NULL                              | 9   | [Jones MVP]      |
 | Thomas Larock       | [Thomas Larock Blog]         |         | NULL             | [@sqlrockstar]     | NULL                              | 7   | [LaRock MVP]     |
-| Mike Fal            | [Mike Fal Blog]              |         | NULL             | [@Mike_Fal]        | NULL                              | 0   | -                |
 | Derik Hammer        | [Derik Hammer Blog]          | USA     | Oklahoma         | [@drayhammer]      | NULL                              | 1   | [Derik MVP]      |
 | Chrissy LeMaire     | [Chrissy LeMaire Blog]       |         | NULL             | [@cl]              | NULL                              | 1   | [LeMaire MVP]    |
 | Tim Mitchell        | [Tim Mitchell Blog]          |         | NULL             | [@Tim_Mitchell]    | NULL                              | 7   | [Mitchell MVP]   |
@@ -60,7 +72,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Mohammad Darab      | [Mohammad Darab Blog]        | USA     | Washington       | [@mwdarab]         | NULL                              | 0   | -                |
 | Kimberly Tripp      | [Kimberly Tripp Articles]    | USA     | Redmond          | [@KimberlyLTripp]  | NULL                              | 13  | [Kimberly MVP]   |
 | Raul Gonzalez       | [Raul Gonzalez Blog]         |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   | -                |
-| Rob Sewell          | [Rob Sewell Blog]            | USA     | Somerset         | [@sqldbawithbeard] | NULL                              | 0   | -                |
+| Rob Sewell          | [Rob Sewell Blog]            | UK      | Somerset         | [@sqldbawithbeard] | NULL                              | 1   | [Swell MVP]      |
 | Jonathan Kehayias   | [Jonathan Kehayias Articles] | USA     | Tampa            | [@SQLPoolBoy]      | NULL                              | 9   | [Kehayias MVP]   |
 | Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | NULL                              | 6   | [Neugebauer MVP] |
 | Thomas Kejser       | [Thomas Kejser Blog]         | DNK     | NULL             | NULL               | thomas@kejser.org                 | 0   | -                |
@@ -68,8 +80,21 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Markus Winand       | [Markus Winand Blog]         | AUT     | Vienna           | [@MarkusWinand]    | NULL                              | 0   | -                |
 | Kevin Feasel        | [Kevin Feasel Blog]          | USA     | Durham           | [@feaselkl]        | NULL                              | 2   | [Feasel MVP]     |
 
+[Stephen Wynkoop Site]:https://www.sswug.org/
+[Cody Konior Blog]:https://www.codykonior.com/categories/#sql
+[Drew Furgiuele Blog]:http://port1433.com/
+[Doug Lane Blog]:http://www.douglane.net/blog/
+[James Serra Blog]:http://www.jamesserra.com/
+[James Anderson Blog]:http://thedatabaseavenger.com/
+[Straight Path Solutions]:https://straightpathsql.com/
+[Ginger Grant Blog]:http://www.desertislesql.com/wordpress1/
+[John Morehouse Blog]:http://sqlrus.com/
+[Andrea Allred Blog]:https://royalsql.com/
+[Randolph West Blog]:https://rabryst.ca/
+[Dave Ballantyne]:clearskysql.co.uk/
+[Lori Edwards Blog]:https://blogs.sentryone.com/author/LoriEdwards/
 [Brent Ozar Blog]:http://www.brentozar.com/
-[SQLBlog]:http://sqlblog.com
+[SQLBlog]:http://sqlblog.com/
 [Ola Maintenance Solution]:https://ola.hallengren.com/
 [Sommarskog Blog]:http://www.sommarskog.se/
 [Phil Simple-Talk]:https://www.simple-talk.com/author/phil-factor/
@@ -131,6 +156,19 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Markus Winand Blog]:http://use-the-index-luke.com
 [Kevin Feasel Blog]:https://36chambers.wordpress.com/
 
+[@swynk]:https://twitter.com/swynk
+[@codykonior]:https://twitter.com/codykonior
+[@Pittfurg]:https://twitter.com/pittfurg
+[@thedouglane]:https://twitter.com/thedouglane
+[@JamesSerra]:https://twitter.com/jamesserra
+[@DatabaseAvenger]:https://twitter.com/databaseavenger
+[@mike_walsh]:https://twitter.com/mike_walsh
+[@DesertIsleSQL]:https://twitter.com/desertislesql
+[@SqlrUs]:https://twitter.com/sqlrus
+[@RoyalSQL]:https://twitter.com/royalsql
+[@rabryst]:https://twitter.com/rabryst
+[@davebally]:https://twitter.com/davebally
+[@loriedwards]:https://twitter.com/loriedwards
 [@BrentO]:https://twitter.com/BrentO
 [@AdamMachanic]:https://twitter.com/AdamMachanic
 [@olahallengren]:https://twitter.com/olahallengren
@@ -190,6 +228,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@MarkusWinand]:https://twitter.com/MarkusWinand
 [@feaselkl]:https://twitter.com/feaselkl
 
+[Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
+[Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
+[Grant MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001878?fullName=Ginger%20%20Grant
+[Randolph MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002351?fullName=Randolph%20%20West
 [Ozar MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4025575?fullName=Brent%20%20Ozar
 [Machanic MVP]:https://mvp.microsoft.com/en-us/PublicProfile/10761?fullName=Adam%20%20Machanic
 [Hallengren MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5000459?fullName=Ola%20%20Hallengren
