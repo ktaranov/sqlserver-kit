@@ -76,6 +76,7 @@ Error code equal `message_id` from `sys.messages`
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                                                                     | [Internal Query Processor Error with ColumnStore Indexes]    |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource pool '%ls' (%ld).                                       | [8651_link1]                                                 |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                                                                        | [8672_link1]                                                 |
+|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                                                                            | [9002_link1]                                                 |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
 |      17182 | Tcp port is already in use                                                                                                                              | [TCP Port Is Already In Use]                                 |
@@ -108,6 +109,7 @@ Error code equal `message_id` from `sys.messages`
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
+[9002_link1]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
