@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **223** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **225** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -17,7 +17,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {4}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {99}
+ - **[?]**: Not yet classified {101}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|----------------|------:|
@@ -244,6 +244,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions | Yes            |  $127 |
 | [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        | No             |  £430 |
 | [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      | No             |   $99 |
+| [BimlExpress](#bimlexpress)                                           | No                               | No             | [?]        | [BimlExpress]                               | ?            | Varigence             | No             |  No   |
+| [BIDS Helper](#bidshelper)                                            | No                               | No             | [?]        | [BIDS Helper]                               | 2015-03-17   | Microsoft             | Open Source    |  No   |
 
 
 ## SSMS
@@ -3467,6 +3469,33 @@ It provides the ability to manage the necessary repetitive DBMS maintenance to h
 SQLAutomate makes it easy to manage a single database server instance, hundreds or even thousands of instances.
 
 
+## BimlExpress
+<a id="bimlexpress"></a>
+Download page: [BimlExpress]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Varigence<br/>
+Free version: No<br/>
+Price: No
+
+BimlExpress Visual Studio Add-in built specifically to work with SQL Server 2016.
+- Generate packages within Visual Studio and avoid slow, repetitive, "drag 'n drop" workflow.
+- Write Biml code with syntax highlighting, making it easier to read and write Biml.
+- Updates are released more rapidly to work with the most current versions of SQL Server.
+
+
+## BIDS Helper
+<a id="bidshelper"></a>
+Download page: [BIDS Helper]<br/>
+Release date: 2015-03-17<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+A Visual Studio add-in that enhances development functionality in Business Intelligence Development Studio (BIDS) and SQL Server Data Tools (SSDTBI). 
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3690,3 +3719,5 @@ SQLAutomate makes it easy to manage a single database server instance, hundreds 
 [DbSchema]:http://www.dbschema.com
 [DBGhost]:http://www.dbghost.com
 [SQLAutomate]:http://www.sqlautomate.com
+[BimlExpress]:https://www.varigence.com/BimlExpress
+[BIDS Helper]:https://bidshelper.codeplex.com
