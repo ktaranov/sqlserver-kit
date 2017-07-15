@@ -159,6 +159,7 @@ Headers:
      - [PunkSPIDER](https://www.punkspider.org/) – Lots of vulnerabilities of all kinds all over the web (about 90M sites scanned with over 3M vulns at present)
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
+     - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [SQL Server Database Engine Permission Posters](http://social.technet.microsoft.com/wiki/contents/articles/11842.sql-server-database-engine-permission-posters.aspx)
  - Free Videos
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
@@ -454,6 +455,14 @@ SQL Server:
      - [The Art of XSD](http://assets.red-gate.com/community/books/the-art-of-xsd.pdf) (by Jacob Sebastian)
      - [The Redgate Guide to SQL Server Team-based Development](http://assets.red-gate.com/products/sql-development/sql-source-control/entrypage/assets/RG_Guide_to_SQL_Server_Dev.pdf) (by Phil Factor, Grant Fritchey, Alex Kuznetsov, and Mladen Prajdić)
      - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
+   - SQL DBA
+     - [SQL Server Internals: In-Memory OLTP](http://www.red-gate.com/library/sql-server-internals-in-memory-oltp) (by Kalen Delaney)
+     - [Fundamentals Of SQL Server 2012 Replication](http://assets.red-gate.com/community/books/fundamentals-of-sql-server-2012-replication.pdf) (by Sebastian Meine)
+     - [Tribal SQL](http://www.red-gate.com/library/tribal-sql)
+     - [SQL Server Transaction Log Management](http://assets.red-gate.com/offerings/transaction-log-management.pdf) (by Tony Davis and Gail Shaw)
+     - [The Art of SQL Server FILESTREAM](http://assets.red-gate.com/community/books/art-of-ss-filestream.pdf) (by Jacob Sebastian and Sven Aelterman)
+     - [SQL Server Concurrency: Locking, Blocking and Row Versioning](http://www.red-gate.com/library/sql-server-concurrency-locking-blocking-and-row-versioning) (by Kalen Delaney)
+     - [SQL Server Backup and Restore](http://assets.red-gate.com/community/books/sql-server-backup-and-restore.pdf) (by Shawn McGehee)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
  - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
