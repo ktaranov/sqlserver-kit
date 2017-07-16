@@ -337,6 +337,11 @@ Articles types:
 | [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]                                                  | Prashanth Jayaram                        | 2017-04-18 | [DBA],[DEV] |
 | [SQL Server Mysteries: The Case of the Not 100% RESTORE…]                                                               | Bob Ward                                 | 2017-04-21 | [DBA]       |
 | [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]                               | Drew Furgiuele                           | 2017-04-11 | [DBA]       |
+| [STOPAT And Date Formats]                                                                                               | Dave Mason                               | 2017-07-12 | [DBA]       |
+| [Row-count Estimates when there are no Statistics]                                                                      | Matthew McGiffen                         | 2017-06-28 | [DEV]       |
+| [SQL Server DBA On-Boarding Checklist]                                                                                  | Svetlana Golovko                         | 2017-06-20 | [DBA]       |
+| [Be Wary of Date Formatting in T-SQL]                                                                                   | Randolph West                            | 2017-07-12 | [DEV]       |
+| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi                            | 2010-01-01 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -656,3 +661,8 @@ Articles types:
 [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]:https://www.sqlshack.com/sql-server-2016-enhancements-truncate-table-table-partitioning
 [SQL Server Mysteries: The Case of the Not 100% RESTORE…]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-mysteries-the-case-of-the-not-100-restore/
 [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]:http://port1433.com/2017/04/11/transactional-replication-and-stored-procedure-execution-silver-bullet-or-poison-pill/
+[STOPAT And Date Formats]:https://itsalljustelectrons.blogspot.ru/2017/07/STOPAT-And-Date-Formats.html
+[Row-count Estimates when there are no Statistics]:http://www.sqlservercentral.com/blogs/matthew-mcgiffen-dba/2017/06/28/row-count-estimates-when-there-are-no-statistics/
+[SQL Server DBA On-Boarding Checklist]:https://www.mssqltips.com/sqlservertip/4871/sql-server-dba-onboarding-checklist/
+[Be Wary of Date Formatting in T-SQL]:https://bornsql.ca/2017/07/wary-date-formatting-t-sql/
+[The ultimate guide to the datetime datatypes]:http://www.karaszi.com/SQLServer/info_datetime.asp
