@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **31** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **32** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------|----------------------|--------------|------:|
@@ -34,6 +34,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016/2017      | Vlasov Studio        | No           |   $49 |
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                | Microsoft            | Yes          | No    |
+| [VersionSQL](#versionsql)     | [VersionSQL]      | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL            | Yes          | $149    |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -500,6 +501,17 @@ Price: No
 
 SQL Server Diagnostics is a collection of micro-services which enables SQL Server customers to self-help and debug SQL Server issues related to memory dumps and receive recommended fixes for their issues. 
 
+<a id="versionsql"></a>
+## VersionSQL
+Download page: [VersionSQL]<br/>
+Release date: 2017-02-16<br/>
+Support Version: 2012/2014/2016/2017<br/>
+Developer: VersionSQL<br/>
+Free version: Yes<br/>
+Price: $149
+
+Lightweight add-in to connect your databases to your source control system
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
@@ -533,3 +545,4 @@ SQL Server Diagnostics is a collection of micro-services which enables SQL Serve
 [Tabs Studio]:https://tabsstudio.com
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
+[VersionSQL]:https://www.versionsql.com/
