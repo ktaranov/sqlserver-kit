@@ -508,7 +508,7 @@ SQL Server Diagnostics is a collection of micro-services which enables SQL Serve
 [SQL Scripts Manager]:http://www.red-gate.com/products/dba/sql-scripts-manager/
 [Red Gate SQL Test]:http://www.red-gate.com/products/sql-development/sql-test/
 [Red Gate SQL Source Control]:http://www.red-gate.com/products/sql-development/sql-source-control/
-[Supratimas]:http://www.supratimas.com/addin/buy.html
+[Supratimas]:http://www.supratimas.com/Home/Downloads
 [dbForge SQL Complete]:https://www.devart.com/dbforge/sql/sqlcomplete/ordering.html
 [SSMS Tools Pack]:http://www.ssmstoolspack.com/Features
 [SQL Pretty Printer]:http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
