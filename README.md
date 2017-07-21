@@ -446,7 +446,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 ## Free SQL Server and R ebooks
 
 SQL Server:
- - [Avesome Red Gate ebooks](http://www.red-gate.com/community/books/)
+ - [Awesome Red Gate ebooks](http://www.red-gate.com/community/books/)
    - SQL Developers
      - [Defensive Database Programming](http://assets.red-gate.com/community/books/defensive-database-programming.pdf) (by Alex Kuznetsov)
      - [Inside the SQL Server Query Optimizer](http://assets.red-gate.com/community/books/inside-the-sql-server-query-optimizer.pdf) (by Benjamin Nevarez)
@@ -455,6 +455,7 @@ SQL Server:
      - [The Art of XSD](http://assets.red-gate.com/community/books/the-art-of-xsd.pdf) (by Jacob Sebastian)
      - [The Redgate Guide to SQL Server Team-based Development](http://assets.red-gate.com/products/sql-development/sql-source-control/entrypage/assets/RG_Guide_to_SQL_Server_Dev.pdf) (by Phil Factor, Grant Fritchey, Alex Kuznetsov, and Mladen Prajdić)
      - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
+     - [119 SQL Code Smells](http://assets.red-gate.com/community/books/sql-code-smells.pdf)
    - SQL DBA
      - [SQL Server Internals: In-Memory OLTP](http://www.red-gate.com/library/sql-server-internals-in-memory-oltp) (by Kalen Delaney)
      - [Fundamentals Of SQL Server 2012 Replication](http://assets.red-gate.com/community/books/fundamentals-of-sql-server-2012-replication.pdf) (by Sebastian Meine)
@@ -463,6 +464,8 @@ SQL Server:
      - [The Art of SQL Server FILESTREAM](http://assets.red-gate.com/community/books/art-of-ss-filestream.pdf) (by Jacob Sebastian and Sven Aelterman)
      - [SQL Server Concurrency: Locking, Blocking and Row Versioning](http://www.red-gate.com/library/sql-server-concurrency-locking-blocking-and-row-versioning) (by Kalen Delaney)
      - [SQL Server Backup and Restore](http://assets.red-gate.com/community/books/sql-server-backup-and-restore.pdf) (by Shawn McGehee)
+     - [Troubleshooting SQL Server: A Guide for the Accidental DBA](http://assets.red-gate.com/products/dba/assets/Accidental_DBA_EBook.zip) (by Jonathan Kehayias and Ted Krueger )
+     - [SQL Server Hardware](http://assets.red-gate.com/community/books/sql-server-hardware-ebook.pdf) (by Glen Berry)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
  - [Largest FREE Microsoft eBook Giveaway!](https://blogs.msdn.microsoft.com/mssmallbiz/2017/07/11/largest-free-microsoft-ebook-giveaway-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepo/)
@@ -481,6 +484,7 @@ SQL Server:
  - [Giving away millions of free Microsoft Ebooks](https://blogs.msdn.microsoft.com/mssmallbiz/2016/07/10/free-thats-right-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepoint-2016-sha/) (by Eric Ligman)
  - [Free Phil Factor eBook: Confessions of an IT Manager](https://www.simple-talk.com/opinion/opinion-pieces/free-phil-factor-ebook-confessions-of-an-it-manager/) (by Phil Factor)
  - [Power BI from Rookie to Rock Star book](http://radacad.com/download-free-power-bi-book-pdf-format) (by Reza Rad)
+ - [Architecture of a Database System](http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf) (by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton)
 
 R:
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
