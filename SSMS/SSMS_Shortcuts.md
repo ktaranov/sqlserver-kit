@@ -9,7 +9,7 @@ Source Links:
 SQL Server Management Studio offers users two keyboard schemes. By default, it uses the SQL Server 2016 scheme, with keyboard shortcuts based on Microsoft Visual Studio 2010. Management Studio also offers a keyboard scheme similar to the standard scheme from SQL Server 2008 R2. To change the keyboard scheme or add additional keyboard shortcuts, on the **Tools** menu, click **Options**. Select the desired keyboard scheme on the Environment, Keyboard page.
 
 
-## Menu Activation Keyboard Shortcuts <a id=""></a>
+## Menu Activation Keyboard Shortcuts
 
 | Action                                                                                  | SQL Server 2016        | SQL Server 2008 R2 |
 |-----------------------------------------------------------------------------------------|------------------------|--------------------|

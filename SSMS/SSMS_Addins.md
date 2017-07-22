@@ -3,9 +3,9 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-05-18   | 2008/2012/2014/2016/2017 | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-07-07   | 2008/2012/2014/2016/2017 | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016      | Smashing Jedis LLC   | Yes          |   $99 |
-| [SQL Code Guard](#sql-code-guard)                     | [SQL Code Guard]              | 2017-02-27   | 2008/2012/2014           | Oleksii Kovalov      | Yes          | No    |
+| [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                     | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017 | Red Gate             | Yes          | No    |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014           | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008/2012/2014/2016/2017 | Red Gate             | No           |  $369 |
@@ -34,7 +34,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016/2017      | Vlasov Studio        | No           |   $49 |
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                | Microsoft            | Yes          | No    |
-| [VersionSQL](#versionsql)     | [VersionSQL]      | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL            | Yes          | $149    |
+| [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017      | VersionSQL           | Yes          |  $149 |
 
 
 ## SSMSBoost <a id="ssmsboost"></a>
@@ -80,16 +80,16 @@ Write maintainable SQL scripts, Understand code better and Navigate faster with 
 
 
 ## SQL Code Guard <a id="sql-code-guard"></a>
-Download link: [SQL Code Guard]<br/>
+Download link: [Red Gate SQL Code Guard]<br/>
 Release date: 2017-02-17<br/>
-Support Version: 2008/2012/2014<br/>
-Developer: Oleksii Kovalov<br/>
+Support Version: 2016<br/>
+Developer: Red Gate<br/>
 Free version: Yes<br/>
 Price: No
 
 SQL Code Guard is a free solution for SQL Server that provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies.
 
- - Integration with SSMS 2008/2012/2014
+ - Integration with SSMS 2016
  - Integration with Visual Studio 2012/2013
  - Checkin Policy for TFS (how to install & use)
  - Support of msbuild (how to use msbuild)
@@ -501,6 +501,7 @@ Price: No
 
 SQL Server Diagnostics is a collection of micro-services which enables SQL Server customers to self-help and debug SQL Server issues related to memory dumps and receive recommended fixes for their issues. 
 
+
 <a id="versionsql"></a>
 ## VersionSQL
 Download page: [VersionSQL]<br/>
@@ -515,7 +516,7 @@ Lightweight add-in to connect your databases to your source control system
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
-[SQL Code Guard]:http://sqlcodeguard.com/
+[Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
 [SQL Scripts Manager]:http://www.red-gate.com/products/dba/sql-scripts-manager/
 [Red Gate SQL Test]:http://www.red-gate.com/products/sql-development/sql-test/
