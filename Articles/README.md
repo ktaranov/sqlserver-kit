@@ -342,6 +342,13 @@ Articles types:
 | [SQL Server DBA On-Boarding Checklist]                                                                                  | Svetlana Golovko                         | 2017-06-20 | [DBA]       |
 | [Be Wary of Date Formatting in T-SQL]                                                                                   | Randolph West                            | 2017-07-12 | [DEV]       |
 | [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi                            | 2010-01-01 | [DEV]       |
+| [Statistics and Cardinality Estimation]                                                                                 | Matthew McGiffen                         | 2017-06-20 | [DEV]       |
+| [Message queues for the DBA: sending data out into the world]                                                           | Drew Furgiuele                           | 2017-07-21 | [DBA]       |
+| [Schema-Based Access Control for SQL Server Databases]                                                                  | Phil Factor                              | 2017-04-09 | [DBA]       |
+| [SQL Server: large RAM and DB Checkpointing]                                                                            | Guillaume Fourrat                        | 2017-06-29 | [DBA]       |
+| [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R]         |
+| [SQL Server R Services: Digging into the R Language]                                                                    | Robert Sheldon                           | 2017-06-29 | [DBA],[DEV] |
+| [Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]                                       | Laerte Junior                            | 2017-07-17 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -666,3 +673,10 @@ Articles types:
 [SQL Server DBA On-Boarding Checklist]:https://www.mssqltips.com/sqlservertip/4871/sql-server-dba-onboarding-checklist/
 [Be Wary of Date Formatting in T-SQL]:https://bornsql.ca/2017/07/wary-date-formatting-t-sql/
 [The ultimate guide to the datetime datatypes]:http://www.karaszi.com/SQLServer/info_datetime.asp
+[Statistics and Cardinality Estimation]:http://www.sqlservercentral.com/blogs/matthew-mcgiffen-dba/2017/06/20/statistics-and-cardinality-estimation/
+[Message queues for the DBA: sending data out into the world]:http://port1433.com/2017/07/21/messaging-queuing-for-the-dba-sending-data-out-into-the-world/
+[Schema-Based Access Control for SQL Server Databases]:https://www.red-gate.com/simple-talk/sql/sql-training/schema-based-access-control-for-sql-server-databases/
+[SQL Server: large RAM and DB Checkpointing]:https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/
+[Handling SQL Server Deadlocks With Event Notifications]:https://itsalljustelectrons.blogspot.ru/2017/06/Handling-SQL-Server-Deadlocks-With-Event-Notifications.html
+[SQL Server R Services: Digging into the R Language]:https://www.red-gate.com/simple-talk/sql/bi/sql-server-r-services-digging-r-language/
+[Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]:https://www.red-gate.com/simple-talk/sql/database-administration/investigating-cause-sql-server-high-cpu-load-conditions-happen/
