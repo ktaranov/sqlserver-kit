@@ -4,16 +4,16 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | Name                                                  | Download page                 | Release Date | Support SSMS Version     | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-------------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-07-07   | 2008/2012/2014/2016/2017 | Solutions Crew GmbH  | Yes          |  $150 |
-| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2016-10-15   | 2008/2012/2014/2016      | Smashing Jedis LLC   | Yes          |   $99 |
+| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008/2012/2014/2016/2017 | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                     | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017 | Red Gate             | Yes          | No    |
 | [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014           | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008/2012/2014/2016/2017 | Red Gate             | No           |  $369 |
-| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2016-02-03   | 2008/2012/2014           | Red Gate             | No           |  $495 |
-| [Supratimas](#supratimas)                             | [Supratimas]                  | 2015-01-27   | 2008/2012/2014           | TTRider LLC          | Yes          |   $35 |
+| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012/2014/2016/2017      | Red Gate             | No           |  $495 |
+| [Supratimas](#supratimas)                             | [Supratimas]                  | 2017-07-11   | 2008/2012/2014/2016/2017 | TTRider LLC          | Yes          | No    |
 | [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2008/2012/2014/2016      | Mladen Prajdić       | No           |   €30 |
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014           | Gudu Software        | No           |   $50 |
-| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2016-09-07   | 2008/2012/2014/2016      | SQL Sentry           | Yes          | No    |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008/2012/2014/2016/2017 | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014           | Dave ballantyne      | Yes          | No    |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008/2012/2014/2016/2017 | Jakub Dvorak         | No           |   €50 |
 | [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-04-13   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
@@ -56,8 +56,8 @@ Currently both versions have the same set of features.
 
 ## SqlSmash <a id="sqlsmash"></a>
 Download page: [SqlSmash]<br/>
-Release date: 2016-10-15<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-06-10<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: Smashing Jedis LLC<br/>
 Free version: Yes<br/>
 Price: $99
@@ -79,7 +79,8 @@ Write maintainable SQL scripts, Understand code better and Navigate faster with 
  - Go To Definition
 
 
-## SQL Code Guard <a id="sql-code-guard"></a>
+<a id="sql-code-guard"></a>
+## SQL Code Guard
 Download link: [Red Gate SQL Code Guard]<br/>
 Release date: 2017-02-17<br/>
 Support Version: 2016<br/>
@@ -140,27 +141,38 @@ Write unit tests (using the open-source [tSQLt framework](https://github.com/tSQ
 
 ## Red Gate SQL Source Control <a id="red-gate-control"></a>
 Download page: [Red Gate SQL Source Control]<br/>
-Release date: 2016-02-03<br/>
-Support Version: 2005/2008/2012/2014<br/>
+Release date: 2017-06-30<br/>
+Support Version: 2012/2014/2016/2017<br/>
 Developer: Red Gate<br/>
 Free version: No<br/>
 Price: $495
 
 Connect your databases to your source control system
+ - Version control your schemas and reference data
+ - Version control your schemas and reference data
+ - Handles referential integrity for you
+ - Push and pull Git repos (Synchronize your local and remote Git repositories inside Management Studio)
+ - Roll back any changes you don't want
+ - Lock objects you're working on
+ - Work on a central database or your own local copy
+ - Exclude objects with filters
+ - Deploy your changes without data loss (Avoid losing data during complex deployments with migration scripts)
 
 
-## Supratimas <a id="supratimas"></a>
+<a id="supratimas"></a>
+## Supratimas
 Download page: [Supratimas]<br/>
-Release date: 2015-01-27<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-11<br/>
+Support Version: 2008/2012/2014/2017<br/>
 Developer: TTRider LLC<br/>
 Free version: Yes<br/>
-Price: $35
+Price: No
 
 SQL Server query plan execution visualizer
 
 
-## SSMS Tools Pack <a id="ssms-tools-pack"></a>
+<a id="ssms-tools-pack"></a>
+## SSMS Tools Pack
 Download page: [SSMS Tools Pack]<br/>
 Release date: 2016-11-28<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -196,8 +208,8 @@ Price: No
 
 ## SQL Sentry Plan Explorer <a id="sql-sentry-plan-explorer"></a>
 Download page: [SQL Sentry Plan Explorer]<br/>
-Release date: 2016-09-07<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-05-25<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: SQL Sentry<br/>
 Free version: Yes<br/>
 Price: No
