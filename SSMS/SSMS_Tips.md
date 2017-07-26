@@ -26,7 +26,7 @@ Content:
 22. [UnDock Tabs and Windows for Multi Monitor Support](#22)
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 24. [Changing what SSMS opens on startup](#24)
-25. [Modifying New Query Template](25)
+25. [Modifying New Query Template](#25)
 25. [Query Execution Options](#26)
 26. [SQL Server Diagnostics Extension](#27)
 28. [Reference](#reference)
