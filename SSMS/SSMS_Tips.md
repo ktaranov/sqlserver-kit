@@ -26,9 +26,10 @@ Content:
 22. [UnDock Tabs and Windows for Multi Monitor Support](#22)
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 24. [Changing what SSMS opens on startup](#24)
-25. [Query Execution Options](#25)
-26. [SQL Server Diagnostics Extension](#26)
-27. [Reference](#reference)
+25. [Modifying New Query Template](25)
+25. [Query Execution Options](#26)
+26. [SQL Server Diagnostics Extension](#27)
+28. [Reference](#reference)
 
 
 Great thanks to:
@@ -46,6 +47,7 @@ Great thanks to:
  - MSSQLTips
  - Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
  - Andy Mallon
+ - Aaron Bertrand
 
 
 <a id="1"></a>
@@ -402,6 +404,25 @@ This is the complete text within my shortcut properties:
 
 
 <a id="25"></a>
+## Modifying New Query Template
+You can modified New Query template for any instance SQL Server:
+```
+C:\Program Files (x86)\Microsoft SQL Server\[140|130|120|110]\Tools\Binn\ ManagementStudio\SqlWorkbenchProjectItems\Sql\SQLFile.sql
+```
+
+For example, you can add begin transaction statement for preventing ups queries:
+```sql
+BEGIN TRANSACTION;
+ 
+ 
+-- COMMIT   TRANSACTION;
+-- ROLLBACK TRANSACTION;
+```
+
+Thanks for this tip Aaron Bertrand: [T-SQL Tuesday #92: Lessons Learned the Hard Way]
+
+
+<a id="26"></a>
 ## Query Execution Options
 More detailed article here: [Knowing the Options]
 
@@ -451,7 +472,7 @@ SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN
 ```
 
 
-<a id="26"></a>
+<a id="27"></a>
 ## SQL Server Diagnostics Extension
 
 Analyze Dumps – Customers using this extension will be able to debug and self-resolve memory dump issues from their SQL Server instances and receive recommended Knowledge Base (KB) article(s) from Microsoft, which may be applicable for the fix.
@@ -486,6 +507,7 @@ Reference:
  - [Knowing the Options] (by John Morehouse)
  - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
+ - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand )
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -495,3 +517,4 @@ Reference:
 [SQL Server Management Studio (SSMS) Tips and Tricks]:http://www.bidn.com/blogs/MMilligan/bidn-blog/3326/sql-server-management-studio-ssms-tips-and-tricks
 [Knowing the Options]:http://sqlrus.com/2017/05/knowing-the-options/
 [SQL Server Diagnostics Extension for SSMS]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
+[T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://blogs.sentryone.com/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
