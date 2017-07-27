@@ -507,7 +507,7 @@ Reference:
  - [Knowing the Options] (by John Morehouse)
  - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
- - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand )
+ - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/

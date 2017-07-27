@@ -349,6 +349,10 @@ Articles types:
 | [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R]         |
 | [SQL Server R Services: Digging into the R Language]                                                                    | Robert Sheldon                           | 2017-06-29 | [DBA],[DEV] |
 | [Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]                                       | Laerte Junior                            | 2017-07-17 | [DBA]       |
+| [In-Memory Engine DURABILITY = SCHEMA_ONLY And Transaction Rollback]                                                    | Chris Adkin                              | 2017-07-17 | [DEV]       |
+| [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]                                                            | Brent Ozar                               | 2017-06-20 | [DBA],[AZ]  |
+| [Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]                                   | Chris Adkin                              | 2017-07-18 | [DBA]       |
+| [Scale-able Windows Aggregate Functions With Row Store Object]                                                          | Chris Adkin                              | 2017-07-24 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -680,3 +684,7 @@ Articles types:
 [Handling SQL Server Deadlocks With Event Notifications]:https://itsalljustelectrons.blogspot.ru/2017/06/Handling-SQL-Server-Deadlocks-With-Event-Notifications.html
 [SQL Server R Services: Digging into the R Language]:https://www.red-gate.com/simple-talk/sql/bi/sql-server-r-services-digging-r-language/
 [Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]:https://www.red-gate.com/simple-talk/sql/database-administration/investigating-cause-sql-server-high-cpu-load-conditions-happen/
+[In-Memory Engine DURABILITY = SCHEMA_ONLY And Transaction Rollback]:https://chrisadkin.io/2017/07/17/in-memory-engine-durability-schema_only-and-transaction-rollback/
+[Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]:https://www.brentozar.com/archive/2017/06/builder-day-point-time-restore-azure-sql-db/
+[Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]:https://chrisadkin.io/2017/07/18/creating-continuous-integration-build-pipelines-with-jenkins-docker-and-sql-server/
+[Scale-able Windows Aggregate Functions With Row Store Object]:https://chrisadkin.io/2017/07/24/scale-able-windows-aggregate-functions-with-row-store-objects/
