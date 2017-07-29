@@ -17,6 +17,7 @@ Articles types:
  - **[R]** R Language
  - **[SSIS]** [SQL Server Integration Services](https://msdn.microsoft.com/en-us/library/ms141026.aspx)
  - **[V]** Visualization Articles
+ - **[X]** XML, JSON, YAML, HTML
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
@@ -353,6 +354,13 @@ Articles types:
 | [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]                                                            | Brent Ozar                               | 2017-06-20 | [DBA],[AZ]  |
 | [Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]                                   | Chris Adkin                              | 2017-07-18 | [DBA]       |
 | [Scale-able Windows Aggregate Functions With Row Store Object]                                                          | Chris Adkin                              | 2017-07-24 | [DEV]       |
+| [Azure DWH part 11: Data Warehouse Migration Utility]                                                                   | Daniel Calbimonte                        | 2017-07-17 | [DBA], [AZ] |
+| [Representing a simple hierarchical list in SQL Server with JSON, YAML, XML and HTML]                                   | William Brewer                           | 2017-07-18 | [DEV], [X]  |
+| [Advanced Analytics with R and SQL Part II - Data Science Scenarios]                                                    | Frank A. Banin                           | 2017-07-27 | [DEV], [R]  |
+| [Think twice before using table variables]                                                                              | Matthew McGiffen                         | 2017-07-11 | [DEV]       |
+| [ColumnStore Indexes And Recursive CTEs]                                                                                | Erik Darling                             | 2017-07-27 | [DEV]       |
+| [CCIs and String Aggregation]                                                                                           | Joe Obbish                               | 2017-07-03 | [DEV]       |
+| [Brad’s Sure DBA Checklist]                                                                                             | Brad McGehee                             | 2010-01-20 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -688,3 +696,10 @@ Articles types:
 [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]:https://www.brentozar.com/archive/2017/06/builder-day-point-time-restore-azure-sql-db/
 [Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]:https://chrisadkin.io/2017/07/18/creating-continuous-integration-build-pipelines-with-jenkins-docker-and-sql-server/
 [Scale-able Windows Aggregate Functions With Row Store Object]:https://chrisadkin.io/2017/07/24/scale-able-windows-aggregate-functions-with-row-store-objects/
+[Azure DWH part 11: Data Warehouse Migration Utility]:http://www.sqlservercentral.com/articles/Azure+SQL+Data+Warehouse+(ASDW)/158311/
+[Representing a simple hierarchical list in SQL Server with JSON, YAML, XML and HTML]:https://www.red-gate.com/simple-talk/blogs/71858/
+[Advanced Analytics with R and SQL Part II - Data Science Scenarios]:http://www.sqlservercentral.com/articles/Data+Science/158498/
+[Think twice before using table variables]:http://www.sqlservercentral.com/blogs/matthew-mcgiffen-dba/2017/07/11/think-twice-before-using-table-variables/
+[ColumnStore Indexes And Recursive CTEs]:https://www.brentozar.com/archive/2017/07/columnstore-indexes-recursive-ctes/
+[CCIs and String Aggregation]:https://orderbyselectnull.com/2017/07/03/ccis-and-string-aggregation/
+[Brad’s Sure DBA Checklist]:https://www.red-gate.com/simple-talk/sql/database-administration/brads-sure-dba-checklist/
