@@ -483,7 +483,7 @@ Using this feature, John can upload the dump and receive recommended KB articles
 
 ![SQL Server Diagnostics Extension](/SSMS/SSMS_Tips/26_sql_server_diagnostics_extension.png)
 
-More details here: [SQL Server Diagnostics Extension for SSMS]
+More details here: [SQL Server Diagnostics Extension for SSMS] and [SQL Server Diagnostics: New "Analyze Dumps" feature]
 
 
 <a id="reference"></a>
@@ -518,3 +518,4 @@ Reference:
 [Knowing the Options]:http://sqlrus.com/2017/05/knowing-the-options/
 [SQL Server Diagnostics Extension for SSMS]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://blogs.sentryone.com/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
+[SQL Server Diagnostics: New "Analyze Dumps" feature]:https://sqlworkbooks.com/2017/07/sql-server-diagnostics-new-analyze-dumps-feature/

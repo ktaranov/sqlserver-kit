@@ -97,7 +97,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 223 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**complete list of 225 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -356,7 +356,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
- - [Adventure Works 2014 Sample Databases](https://msftdbprodsamples.codeplex.com/releases/view/125550)
+ - [Adventure Works 2014 Sample Databases](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works-2014)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
  - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
@@ -487,6 +487,7 @@ SQL Server:
  - [Architecture of a Database System](http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf) (by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton)
 
 R:
+ - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)
  - [FreeComputerBooks R EBooks](http://freecomputerbooks.com/langRBooks.html)
  - [Effective Graphs with Microsoft R Open](http://blog.revolutionanalytics.com/2016/05/e-book-effective-graphs.html)
  - [Little Book of R for Time Series](http://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
