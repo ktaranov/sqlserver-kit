@@ -3,6 +3,7 @@ Useful free and paid Microsoft SQL Server utilities and tools - complete list of
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
+ - **[BI]**: Business Intelligence Solutions {3}
  - **[D]**: Documentation solutions {3}
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
@@ -12,12 +13,12 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {22}
- - **[MS]**: Management Studio (alternative for SSMS) {19}
+ - **[MS]**: Management Studio (alternative for SSMS) {21}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {103}
+ - **[?]**: Not yet classified {99}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|----------------|------:|
@@ -89,7 +90,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Azure SQL Database Backup](#azure-sql-database-backup)               | No                               | No             | [B]        | [Azure SQL Database Backup]                 | 2012-10-02   | Idera                 | Yes            | No    |
 | [SQL Column Search](#sql-column-search)                               | No                               | No             | [S]        | [SQL Column Search]                         | 2015-11-17   | Idera                 | Yes            | No    |
 | [SQL Permissions Extractor](#sql-permissions-extractor)               | No                               | No             | [?]        | [SQL Permissions Extractor]                 | 2015-08-07   | Idera                 | Yes            | No    |
-| [SQL BI Check](#sql-bi-check)                                         | No                               | No             | [?]        | [SQL BI Check]                              | 2016-04-13   | Idera                 | Yes            | No    |
+| [SQL BI Check](#sql-bi-check)                                         | No                               | No             | [BI]       | [SQL BI Check]                              | 2016-04-13   | Idera                 | Yes            | No    |
 | [SQL Inventory Check](#sql-inventory-check)                           | No                               | No             | [?]        | [SQL Inventory Check]                       | 2016-03-24   | Idera                 | Yes            | No    |
 | [SQL Diagnostic Manager](#sql-diagnostic-manager)                     | No                               | No             | [?]        | [SQL Diagnostic Manager]                    | ?            | Idera                 | No             | $1747 |
 | [SQL Safe Backup](#sql-safe-backup)                                   | No                               | No             | [B]        | [SQL Safe Backup]                           | 2016-09-08   | Idera                 | No             |  $907 |
@@ -101,7 +102,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Admin Toolset](#sql-admin-toolset)                               | No                               | No             | [?]        | [SQL Admin Toolset]                         | 2016-01-13   | Idera                 | No             |  $395 |
 | [SQL Defrag Manager](#sql-defrag-manager)                             | No                               | No             | [?]        | [SQL Defrag Manager]                        | 2016-03-10   | Idera                 | No             | $1495 |
 | [DBArtisan](#dbartisan)                                               | No                               | No             | [?]        | [DBArtisan]                                 | ?            | Idera                 | No             | $3122 |
-| [SQL BI Manager](#sql-bi-manager)                                     | No                               | No             | [?]        | [SQL BI Manager]                            | 2015-09-08   | Idera                 | No             |  $697 |
+| [SQL BI Manager](#sql-bi-manager)                                     | No                               | No             | [BI]       | [SQL BI Manager]                            | 2015-09-08   | Idera                 | No             |  $697 |
 | [SQL Enterprise Job Manager](#sql-enterprise-job-manager)             | No                               | No             | [J]        | [SQL Enterprise Job Manager]                | 2015-09-08   | Idera                 | No             |  $697 |
 | [DB Optimizer](#db-optimizer)                                         | No                               | No             | [?]        | [DB Optimizer]                              | ?            | Idera                 | No             | $1420 |
 | [SQL Query Store Optimizer](#sql-query-store-optimizer)               | No                               | No             | [?]        | [SQL Query Store Optimizer]                 | 2016-07-01   | Idera                 | Yes            | No    |
@@ -205,17 +206,17 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             | No             | ?     |
 | [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         | Yes            |  $399 |
 | [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]        | ?            | SQLTreeo              | No             |  €180 |
-| [SchemaCrawler](#schema-crawler)                                      |Oracle, PostgreSQL, MySQL, Other  | Yes            | [D], [SC]  | [SchemaCrawler]                             | 2017-02-27   | Sualeh Fatehi         | Open Source    |  No   |
-| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]              | ?            | SENTINELAGENT         | No             |  ?    |
+| [SchemaCrawler](#schema-crawler)                                      |Oracle, PostgreSQL, MySQL, Other  | Yes            | [D], [SC]  | [SchemaCrawler]                             | 2017-02-27   | Sualeh Fatehi         | Open Source    | No    |
+| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]              | ?            | SENTINELAGENT         | No             | ?     |
 | [CatCompare v2](#cat-compare)                                         | No                               | No             | [?]        | [CatCompare v2]                             | 2017-01-07   | Andy Leonard          | No             |  $295 |
 | [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)           | No                               | No             | [?]        | [SSIS Catalog Compare v2.0 Bundle]          | 2017-01-06   | Andy Leonard          | No             |  $495 |
-| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]         | 2017-01-31   | Microsoft             | Yes            |  No   |
-| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                 | ?            | Quest Software        | Yes            |  ?    |
+| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]         | 2017-01-31   | Microsoft             | Yes            | No    |
+| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                 | ?            | Quest Software        | Yes            | ?     |
 | [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [DBConvert Studio]                          | 2017-03-01   | DMSoft Technologies   | No             |  $499 |
 | [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                 | 2017-03-01   | ActiveCrypt Software  | Yes            |  $698 |
-| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL]  | 2017-02-17   | Microsoft             | Yes            |  No   |
-| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                  | 2017-01-26   | Soheil Rashidi        | Open Source    |  No   |
-| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                              | ?            | Datamate Technology   | ?              |  ?    |
+| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL]  | 2017-02-17   | Microsoft             | Yes            | No    |
+| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                  | 2017-01-26   | Soheil Rashidi        | Open Source    | No    |
+| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                              | ?            | Datamate Technology   | ?              | ?     |
 | [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]    | 2013-10-08   | DMSoft Technologies   | No             |  $149 |
 | [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]        | 2013-10-08   | DMSoft Technologies   | No             |  $149 |
 | [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]       | 2013-10-09   | DMSoft Technologies   | No             |  $149 |
@@ -225,38 +226,38 @@ Utility types (main purpose), in braces `{}` current counts:
 | [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]      | 2013-09-09   | DMSoft Technologies   | No             |  $149 |
 | [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]    | 2013-10-08   | DMSoft Technologies   | No             |  $149 |
 | [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]     | 2013-09-11   | DMSoft Technologies   | No             |  $149 |
-| [SQLines SQL Converter](#sqllines-converter)                          | No                               | No             | [MG]       | [SQLines SQL Converter]                     | ?            | Dmtolpeko             | Open Source    |  No   |
-| [SQLite & SQL Server Compact Toolbox](#sqlite-and-sqlserver-toolbox)  | No                               | No             | [?]        | [SQLite & SQL Server Compact Toolbox]       | ?            | ErikEJ                | Open Source    |  No   |
-| [SqlPad](#sqlpad)                                                     | Postgres, MySQL, Crate, Vertica  | No             | [?]        | [SqlPad]                                    | ?            | Rickbergfalk          | Open Source    |  No   |
-| [Html-query-plan](#html-query-plan)                                   | No                               | No             | [?]        | [SqlPad]                                    | ?            | JustinPealing         | Open Source    |  No   |
-| [SqlQueryStress](#sql-query-stress)                                   | No                               | No             | [?]        | [SqlQueryStress]                            | ?            | Adam Machanic         | Open Source    |  No   |
-| [SQL Server Migration Assistant for DB2](#ssma-db2)                   | DB2                              | No             | [MG]       | [SQL Server Migration Assistant for DB2]    | 2017-02-17   | Microsoft             | Yes            |  No   |
-| [SQL Server Migration Assistant for Oracle](#ssma-oracle)             | Oracle                           | No             | [MG]       | [SQL Server Migration Assistant for Oracle] | 2017-02-17   | Microsoft             | Yes            |  No   |
-| [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft             | Yes            |  No   |
-| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | Linux, Mac     | [MS]       | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft             | Open Source    |  No   |
-| [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft             | Yes            |  No   |
-| [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft             | Open Source    |  No   |
-| [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft             | Open Source    |  No   |
-| [comparator](#pumpet-comparator)                                      | No                               | No             | [DC]       | [comparator]                                | ?            | Pumpet                | Open Source    |  No   |
+| [SQLines SQL Converter](#sqllines-converter)                          | No                               | No             | [MG]       | [SQLines SQL Converter]                     | ?            | Dmtolpeko             | Open Source    | No    |
+| [SQLite & SQL Server Compact Toolbox](#sqlite-and-sqlserver-toolbox)  | No                               | No             | [?]        | [SQLite & SQL Server Compact Toolbox]       | ?            | ErikEJ                | Open Source    | No    |
+| [SqlPad](#sqlpad)                                                     | Postgres, MySQL, Crate, Vertica  | No             | [MS]       | [SqlPad]                                    | ?            | Rickbergfalk          | Open Source    | No    |
+| [Html-query-plan](#html-query-plan)                                   | No                               | No             | [?]        | [Html-query-plan]                           | ?            | JustinPealing         | Open Source    | No    |
+| [SqlQueryStress](#sql-query-stress)                                   | No                               | No             | [?]        | [SqlQueryStress]                            | ?            | Adam Machanic         | Open Source    | No    |
+| [SQL Server Migration Assistant for DB2](#ssma-db2)                   | DB2                              | No             | [MG]       | [SQL Server Migration Assistant for DB2]    | 2017-02-17   | Microsoft             | Yes            | No    |
+| [SQL Server Migration Assistant for Oracle](#ssma-oracle)             | Oracle                           | No             | [MG]       | [SQL Server Migration Assistant for Oracle] | 2017-02-17   | Microsoft             | Yes            | No    |
+| [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft             | Yes            | No    |
+| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | Linux, Mac     | [MS]       | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft             | Open Source    | No    |
+| [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft             | Yes            | No    |
+| [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft             | Open Source    | No    |
+| [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft             | Open Source    | No    |
+| [comparator](#pumpet-comparator)                                      | No                               | No             | [DC]       | [comparator]                                | ?            | Pumpet                | Open Source    | No    |
 | [Navicat for SQL Server](#navicat-for-sql-server)                     | No                               | Mac            | [MS]       | [Navicat for SQL Server]                    | 2017-06-14   | PremiumSoft           | No             |  $699 |
 | [Navicat Premium](#navicat-premium)                                   | Oracle, PostgreSQL, MySQL, Other | Mac            | [MS]       | [Navicat Premium]                           | 2017-06-14   | PremiumSoft           | No             | $1299 |
 | [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-04-12   | DbVis Software AB.    | Yes            |  $179 |
 | [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions | Yes            |  $127 |
 | [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        | No             |  £430 |
-| [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      | No             |   $99 |
-| [BimlExpress](#bimlexpress)                                           | No                               | No             | [?]        | [BimlExpress]                               | ?            | Varigence             | No             |  No   |
-| [BIDS Helper](#bidshelper)                                            | No                               | No             | [?]        | [BIDS Helper]                               | 2015-03-17   | Microsoft             | Open Source    |  No   |
-| [Azure Data Warehouse Migration Utility](#azure-data-migration)       | No                               | No             | [MG]       | [Azure Data Warehouse Migration Utility]    | ?            | Microsoft             | ?              |  ?    |
-| [Dell Benchmark Factory](#dell-benchmark-factory)                     | Oracle, DB2, MySQL, SAP ASE      | No             | [T]        | [Dell Benchmark Factory]                    | ?            | Quest Software        | No             | $4413 |
-| [manduka](#maduka)                                                    | ?                                | Linux, Mac     | [?]        | [manduka]                                   | 2017-03-08   | Virtusa Corporation   | Yes            |  No   |
-| [PowerBI](#power-bi)                                                  | No                               | No             | [?]        | [PowerBI]                                   | ?            | Microsoft             | ?              |  ?    |
+| [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      | No             |   $99 |
+| [BimlExpress](#bimlexpress)                                           | No                               | No             | [?]        | [BimlExpress]                               | ?            | Varigence             | No             | No    |
+| [BIDS Helper](#bidshelper)                                            | No                               | No             | [?]        | [BIDS Helper]                               | 2015-03-17   | Microsoft             | Open Source    | No    |
+| [Azure Data Warehouse Migration Utility](#azure-data-migration)       | No                               | No             | [MG]       | [Azure Data Warehouse Migration Utility]    | ?            | Microsoft             | ?              | ?     |
+| [Dell Benchmark Factory](#dell-benchmark-factory)                     | Oracle, MySQL, Other             | No             | [T]        | [Dell Benchmark Factory]                    | ?            | Quest Software        | No             | $4413 |
+| [manduka](#maduka)                                                    | ?                                | Linux, Mac     | [?]        | [manduka]                                   | 2017-03-08   | Virtusa Corporation   | Yes            | No    |
+| [PowerBI Desktop](#powerbi-desktop)                                   | Oracle, PostgreSQL, MySQL, Other | No             | [BI]       | [PowerBI Desktop]                           | 2017-07-11   | Microsoft             | Yes            |  ?    |
 
 
-## SSMS
 <a id="ssms"></a>
+## SSMS
 Download page: [SSMS]<br/>
 Release date: 2017-04-25<br/>
-Support Version: 2005/2008/2012/2014/2016/2017/vNext/Azure<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -266,8 +267,8 @@ SSMS combines a broad group of graphical tools with a number of rich script edit
 This release features improved compatibility with previous versions of SQL Server, a stand-alone web installer, and toast notifications within SSMS when new releases become available.
 
 
-## bcp Utility
 <a id="bcp"></a>
+## bcp Utility
 Download page: [bcp Utility]<br/>
 Release date: 2012-02-11<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -3529,8 +3530,8 @@ Price: $4413
 - virtual user and transaction load simulation
 
 
-## manduka
 <a id="manduka"></a>
+## manduka
 Download page: [manduka]<br/>
 Release date: 2017-03-08<br/>
 Support Version: ?<br/>
@@ -3539,23 +3540,24 @@ Free version: Yes<br/>
 Price: No
 
 The Free Static code analyzer
-- PL-SQL & T-SQL
-- Support for more than 50 violation rules
-- Light weight & fast
-- Easy to install & use
-- XML reports
+ - PL-SQL & T-SQL
+ - Support for more than 50 violation rules
+ - Light weight & fast
+ - Easy to install & use
+ - XML reports
 
 
+<a id="powerbi-desktop"></a>
 ## PowerBI
-<a id="power-bi"></a>
-Download page: [PowerBI]<br/>
-Release date: ?<br/>
-Support Version: ?<br/>
+Download page: [PowerBI Desktop]<br/>
+Release date: 2017-07-11<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: Microsoft<br/>
-Free version: ?<br/>
+Free version: Yes<br/>
 Price: ?
 
-Power BI is a suite of business analytics tools to analyze data and share insights. Monitor your business and get answers quickly with rich dashboards available on every device.
+Power BI is a suite of business analytics tools to analyze data and share insights.
+Monitor your business and get answers quickly with rich dashboards available on every device.
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
@@ -3786,4 +3788,4 @@ Power BI is a suite of business analytics tools to analyze data and share insigh
 [Azure Data Warehouse Migration Utility]:https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-migrate-migration-utility
 [Dell Benchmark Factory]:https://www.quest.com/products/benchmark-factory
 [manduka]:http://www.manduka.tech/#/home
-[PowerBI]:https://powerbi.microsoft.com
+[PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
