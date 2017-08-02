@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **225** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **229** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -11,13 +11,13 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
- - **[MG]**: Migration tool {21}
+ - **[MG]**: Migration tool {22}
  - **[MS]**: Management Studio (alternative for SSMS) {19}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
- - **[T]**: Testing tools {4}
+ - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {101}
+ - **[?]**: Not yet classified {103}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|----------------|------:|
@@ -163,7 +163,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft              | No             |  $295 |
 | [Aireforge Studio](#aireforge-studio)                                 | No                               | No             | [MG], [SC] | [Aireforge Studio]                          | 2017-06-21   | AireForge             | Yes            |  $299 |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                  | ?            | HexaTier              | No             | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-03-09   | SoftTree              | No             |  $215 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-07-31   | SoftTree              | No             |  $215 |
 | [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                 | 2015-02-07   | SoftTree              | No             |  $499 |
 | [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]                 | 2016-05-26   | EMS                   | No             |  $257 |
 | [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                            | 2016-04-13   | EMS                   | Yes            |  $82  |
@@ -246,6 +246,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      | No             |   $99 |
 | [BimlExpress](#bimlexpress)                                           | No                               | No             | [?]        | [BimlExpress]                               | ?            | Varigence             | No             |  No   |
 | [BIDS Helper](#bidshelper)                                            | No                               | No             | [?]        | [BIDS Helper]                               | 2015-03-17   | Microsoft             | Open Source    |  No   |
+| [Azure Data Warehouse Migration Utility](#azure-data-migration)       | No                               | No             | [MG]       | [Azure Data Warehouse Migration Utility]    | ?            | Microsoft             | ?              |  ?    |
+| [Dell Benchmark Factory](#dell-benchmark-factory)                     | Oracle, DB2, MySQL, SAP ASE      | No             | [T]        | [Dell Benchmark Factory]                    | ?            | Quest Software        | No             | $4413 |
+| [manduka](#maduka)                                                    | ?                                | Linux, Mac     | [?]        | [manduka]                                   | 2017-03-08   | Virtusa Corporation   | Yes            |  No   |
+| [PowerBI](#power-bi)                                                  | No                               | No             | [?]        | [PowerBI]                                   | ?            | Microsoft             | ?              |  ?    |
 
 
 ## SSMS
@@ -2353,8 +2357,8 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 ## SoftTree SQL Assistant
 <a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
-Release date: 2017-03-09<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-07-31<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: SoftTree<br/>
 Free version: No<br/>
 Price: $215
@@ -3496,6 +3500,64 @@ Price: No
 A Visual Studio add-in that enhances development functionality in Business Intelligence Development Studio (BIDS) and SQL Server Data Tools (SSDTBI). 
 
 
+## Azure Data Warehouse Migration Utility
+<a id="azure-data-migration"></a>
+Download page: [Azure Data Warehouse Migration Utility]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: ?<br/>
+Price: ?
+
+The Data Warehouse Migration Utility is a tool designed to migrate schema and data from SQL Server and Azure SQL Database to Azure SQL Data Warehouse. 
+During schema migration, the tool automatically maps the corresponding schema from source to destination. 
+After the schema has been migrated, the tools provides the option to move data with automatically generated scripts.
+
+
+<a id="dell-benchmark-factory"></a>
+## Dell Benchmark Factory
+Download page: [Dell Benchmark Factory]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
+Author: Quest Software<br/>
+Free version: No<br/>
+Price: $4413
+
+- database workload generation
+- database code scalability testing
+- industry-standard benchmark testing
+- virtual user and transaction load simulation
+
+
+## manduka
+<a id="manduka"></a>
+Download page: [manduka]<br/>
+Release date: 2017-03-08<br/>
+Support Version: ?<br/>
+Author: Virtusa Corporation<br/>
+Free version: Yes<br/>
+Price: No
+
+The Free Static code analyzer
+- PL-SQL & T-SQL
+- Support for more than 50 violation rules
+- Light weight & fast
+- Easy to install & use
+- XML reports
+
+
+## PowerBI
+<a id="power-bi"></a>
+Download page: [PowerBI]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: ?<br/>
+Price: ?
+
+Power BI is a suite of business analytics tools to analyze data and share insights. Monitor your business and get answers quickly with rich dashboards available on every device.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -3721,3 +3783,7 @@ A Visual Studio add-in that enhances development functionality in Business Intel
 [SQLAutomate]:http://www.sqlautomate.com
 [BimlExpress]:https://www.varigence.com/BimlExpress
 [BIDS Helper]:https://bidshelper.codeplex.com
+[Azure Data Warehouse Migration Utility]:https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-migrate-migration-utility
+[Dell Benchmark Factory]:https://www.quest.com/products/benchmark-factory
+[manduka]:http://www.manduka.tech/#/home
+[PowerBI]:https://powerbi.microsoft.com
