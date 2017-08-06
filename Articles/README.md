@@ -18,6 +18,7 @@ Articles types:
  - **[SSIS]** [SQL Server Integration Services](https://msdn.microsoft.com/en-us/library/ms141026.aspx)
  - **[V]** Visualization Articles
  - **[X]** XML, JSON, YAML, HTML
+ - **[XE]** [Extended events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
@@ -64,7 +65,7 @@ Articles types:
 | [TSQL JOIN Types Poster]                                                                                                | Steve Stedman                            | 2015-05-28 |             |
 | [It is Hard To Destroy Data]                                                                                            | Michael J Swart                          | 2015-05-20 |             |
 | [How to transfer logins and passwords between instances of SQL Server]                                                  | Microsoft                                | 2013-12-07 |             |
-| [Finding File Growths with Extended Events]                                                                             | Andy Galbraith                           | 2016-06-13 |             |
+| [Finding File Growths with Extended Events]                                                                             | Andy Galbraith                           | 2016-06-13 | [XE]        |
 | [Questions You Should Ask About the Databases You Manage]                                                               | Brent Ozar                               | 2016-06-16 |             |
 | [Clustered Indexes in SQL Server]                                                                                       | Derik Hammer                             | 2016-06-22 | [BIDX]      |
 | [Triage Quiz: Is Your SQL Server Safe?]                                                                                 | Angie Rudduck                            | 2016-06-15 |             |
@@ -153,7 +154,7 @@ Articles types:
 | [Can Indexes My Query Doesn’t Use Help My Query?]                                                                       | Erik Darling                             | 2016-11-09 | [BIDX]      |
 | [SQL Server Audit Walkthrough]                                                                                          | Sadequl Hussain                          | 2016-01-01 |             |
 | [The SQL Server 2016 Query Store: Overview and Architecture]                                                            | Enrico van de Laar                       | 2015-11-16 |             |
-| [Reading, Writing, and Creating SQL Server Extended Properties]                                                         | Phil Factor                              | 2015-10-21 |             |
+| [Reading, Writing, and Creating SQL Server Extended Properties]                                                         | Phil Factor                              | 2015-10-21 | [XE]        |
 | [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                                        | William Brewer                           | 2016-11-04 |             |
 | [The Ten Commandments of SQL Server Monitoring]                                                                         | Adam Machanic                            | 2013-04-09 |             |
 | [Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]                                             | Adam Machanic                            | 2012-12-27 |             |
@@ -210,7 +211,7 @@ Articles types:
 | [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 |             |
 | [On the Advantages of DateTime2(n) over DateTime]                                                                       | William Assaf                            | 2012-12-04 |             |
 | [Build Your Own Tools]                                                                                                  | Michael J. Swart                         | 2016-09-23 |             |
-| [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 |             |
+| [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 | [XE]        |
 | [Compression and its Effects on Performance]                                                                            | Erin Stellato                            | 2017-01-20 |             |
 | [Does Truncate Table Reset Statistics]                                                                                  | Kendra Little                            | 2016-12-08 |             |
 | [SQL Server Database Decommissioning Check List]                                                                        | Svetlana Golovko                         | 2016-06-23 |             |
@@ -223,7 +224,7 @@ Articles types:
 | [There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]                        | Grant Fritchey                           | 2016-08-04 |             |
 | [Availability Group on SQL Server 2016]                                                                                 | Guy Glantser                             | 2017-02-01 |             |
 | [Using SQL Server and R Services for analyzing DBA Tasks]                                                               | Tomaž Kaštrun                            | 2017-02-17 |             |
-| [SQLskills SQL101: Dealing with SQL Server corruption]                                                                  | Paul Randal                              | 2017-02-28 |             |
+| [SQLskills SQL101: Dealing with SQL Server corruption]                                                                  | Paul Randal                              | 2017-02-28 | [COR]       |
 | [Advanced Analytics with R & SQL: Part I - R Distributions]                                                             | Frank A. Banin                           | 2016-10-31 | [R]         |
 | [T-SQL Tuesday #85  STOP! Restore Time!]                                                                                | Derik Hammer                             | 2016-12-13 |             |
 | [Filtered Indexes: Rowstore vs Nonclustered Columnstore]                                                                | Kendra Little                            | 2016-11-10 | [BIDX]      |
@@ -338,7 +339,7 @@ Articles types:
 | [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]                                                  | Prashanth Jayaram                        | 2017-04-18 | [DBA],[DEV] |
 | [SQL Server Mysteries: The Case of the Not 100% RESTORE…]                                                               | Bob Ward                                 | 2017-04-21 | [DBA]       |
 | [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]                               | Drew Furgiuele                           | 2017-04-11 | [DBA]       |
-| [STOPAT And Date Formats]                                                                                               | Dave Mason                               | 2017-07-12 | [DBA]       |
+| [STOPAT And Date Formats]                                                                                               | Dave Mason                               | 2017-07-12 | [DBA],[XE]  |
 | [Row-count Estimates when there are no Statistics]                                                                      | Matthew McGiffen                         | 2017-06-28 | [DEV]       |
 | [SQL Server DBA On-Boarding Checklist]                                                                                  | Svetlana Golovko                         | 2017-06-20 | [DBA]       |
 | [Be Wary of Date Formatting in T-SQL]                                                                                   | Randolph West                            | 2017-07-12 | [DEV]       |
@@ -347,7 +348,7 @@ Articles types:
 | [Message queues for the DBA: sending data out into the world]                                                           | Drew Furgiuele                           | 2017-07-21 | [DBA]       |
 | [Schema-Based Access Control for SQL Server Databases]                                                                  | Phil Factor                              | 2017-04-09 | [DBA]       |
 | [SQL Server: large RAM and DB Checkpointing]                                                                            | Guillaume Fourrat                        | 2017-06-29 | [DBA]       |
-| [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R]         |
+| [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R],[XE]    |
 | [SQL Server R Services: Digging into the R Language]                                                                    | Robert Sheldon                           | 2017-06-29 | [DBA],[DEV] |
 | [Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]                                       | Laerte Junior                            | 2017-07-17 | [DBA]       |
 | [In-Memory Engine DURABILITY = SCHEMA_ONLY And Transaction Rollback]                                                    | Chris Adkin                              | 2017-07-17 | [DEV]       |
@@ -361,6 +362,19 @@ Articles types:
 | [ColumnStore Indexes And Recursive CTEs]                                                                                | Erik Darling                             | 2017-07-27 | [DEV]       |
 | [CCIs and String Aggregation]                                                                                           | Joe Obbish                               | 2017-07-03 | [DEV]       |
 | [Brad’s Sure DBA Checklist]                                                                                             | Brad McGehee                             | 2010-01-20 | [DBA]       |
+| [Query Store and Parameterization Problems]                                                                             | Dennes Torres                            | 2017-07-06 | [DEV]       |
+| [SQL Server Event Handling: Event Notifications]                                                                        | Dave Mason                               | 2016-11-30 | [DBA],[XE]  |
+| [Identifying Deprecated Feature Usage (Part 1)]                                                                         | Dave Mason                               | 2017-07-20 | [DBA],[XE]  |
+| [Let’s Corrupt a Database Together, Part 3: Detecting Corruption]                                                       | Brent Ozar                               | 2017-07-25 | [DBA],[COR] |
+| [XML vs JSON Shootout: Which is Superior in SQL Server 2016?]                                                           | Bert Wagner                              | 2017-05-16 | [DEV],[X]   |
+| [One SQL Cheat Code For Amazingly Fast JSON Queries]                                                                    | Bert Wagner                              | 2017-05-09 | [DEV],[X]   |
+| [The Ultimate SQL Server JSON Cheat Sheet]                                                                              | Bert Wagner                              | 2017-03-07 | [DEV],[X]   |
+| [Are your indexes being thwarted by mismatched datatypes?]                                                              | Bert Wagner                              | 2017-08-01 | [DEV]       |
+| [Why Missing Index Recommendations Aren’t Perfect]                                                                      | Brent Ozar                               | 2017-08-02 | [DBA],[DEV] |
+| [Top 5 Misleading SQL Server Performance Counters]                                                                      | Kendra Little                            | 2017-06-05 | [DBA],[DEV] |
+| [The Case of the Space at the End]                                                                                      | Adam St. Pierre                          | 2017-07-24 | [DEV]       |
+| [SELECT…INTO in SQL Server 2017]                                                                                        | Andrew Pruski                            | 2017-08-02 | [DEV]       |
+| [Your Service Level Agreement is a Disaster]                                                                            | Jennifer McCown                          | 2017-07-24 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -703,3 +717,16 @@ Articles types:
 [ColumnStore Indexes And Recursive CTEs]:https://www.brentozar.com/archive/2017/07/columnstore-indexes-recursive-ctes/
 [CCIs and String Aggregation]:https://orderbyselectnull.com/2017/07/03/ccis-and-string-aggregation/
 [Brad’s Sure DBA Checklist]:https://www.red-gate.com/simple-talk/sql/database-administration/brads-sure-dba-checklist/
+[Query Store and Parameterization Problems]:https://www.red-gate.com/simple-talk/sql/database-administration/query-store-parameterization-problems/
+[SQL Server Event Handling: Event Notifications]:https://itsalljustelectrons.blogspot.ru/2016/11/SQL-Server-Event-Handling-Event-Notifications.html
+[Identifying Deprecated Feature Usage (Part 1)]:https://itsalljustelectrons.blogspot.ru/2017/07/Identifying-Deprecated-Feature-Usage-pt1.html
+[Let’s Corrupt a Database Together, Part 3: Detecting Corruption]:https://www.brentozar.com/archive/2017/07/lets-corrupt-database-together-part-3-detecting-corruption/
+[XML vs JSON Shootout: Which is Superior in SQL Server 2016?]:https://blog.bertwagner.com/xml-vs-json-shootout-which-is-superior-in-sql-server-2016-b97bf7766ef2
+[One SQL Cheat Code For Amazingly Fast JSON Queries]:https://blog.bertwagner.com/one-sql-cheat-code-for-amazingly-fast-json-queries-1c2402b4b0d2
+[The Ultimate SQL Server JSON Cheat Sheet]:https://blog.bertwagner.com/the-ultimate-sql-server-json-cheat-sheet-2fbb98049a37
+[Are your indexes being thwarted by mismatched datatypes?]:https://blog.bertwagner.com/are-your-indexes-being-thwarted-by-mismatched-datatypes-d3985375e528
+[Why Missing Index Recommendations Aren’t Perfect]:https://www.brentozar.com/archive/2017/08/missing-index-recommendations-arent-perfect/
+[Top 5 Misleading SQL Server Performance Counters]:https://sqlworkbooks.com/2017/06/top-5-misleading-sql-server-performance-counters/
+[The Case of the Space at the End]:http://www.sqlservercentral.com/articles/ANSI_PADDING/157467/
+[SELECT…INTO in SQL Server 2017]:https://dbafromthecold.com/2017/08/02/select-into-in-sql-server-2017/
+[Your Service Level Agreement is a Disaster]:http://minionware.net/service-level-agreement-disaster/
