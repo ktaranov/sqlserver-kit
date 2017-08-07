@@ -27,9 +27,10 @@ Content:
 23. [RegEx-Based Finding and Replacing of Text in SSMS](#23)
 24. [Changing what SSMS opens on startup](#24)
 25. [Modifying New Query Template](#25)
-25. [Query Execution Options](#26)
-26. [SQL Server Diagnostics Extension](#27)
-28. [Reference](#reference)
+26. [Query Execution Options](#26)
+27. [SQL Server Diagnostics Extension](#27)
+28. [Connect to SQL Servers in another domain using Windows Authentication](#28)
+29. [Reference](#reference)
 
 
 Great thanks to:
@@ -486,6 +487,42 @@ Using this feature, John can upload the dump and receive recommended KB articles
 More details here: [SQL Server Diagnostics Extension for SSMS] and [SQL Server Diagnostics: New "Analyze Dumps" feature]
 
 
+<a id="28"></a>
+## Connect to SQL Servers in another domain using Windows Authentication
+You may find that you need to connect remotely to a SQL Server that is in another domain.
+This is a problem when SQL authentication is not an option, because Windows machine is in its own domain; Management Studio cannot directly override the local Windows credentials and pass the credentials for a remote domain user.
+
+### Solution 1: runas
+
+```bat
+runas /netonly /user:domain\username "c:\path\ssms.exe"
+````
+
+At this point, you are prompted for the password for the remote user and, once provided, you are told that it is attempting to run the program as that user.
+
+Also you can create shortcut: Right-click the desktop and choose `New > Shortcut`. Then enter the same information as above in the command line:
+![Connect to SQL Servers in another domain using Windows Authentication with Shortcut](/SSMS/SSMS_Tips/28_connect_to_sql_servers_in_another_domain_using_windows_authentication_with_shortcut.gif)
+
+Now you can double-click the shortcut and, after simply providing the remote password, it will launch an instance of Management Studio that will use those remote credentials every time you use Windows Authentication and try to connect to a remote server.
+
+### Solution 2: Credential Manager
+Another method you can use to connect to remote domains using Windows Authentication is to use the Credential Manager built into Windows.
+This can be a little tricky to setup, especially if you are connecting over a VPN.
+
+The part that is tricky is ensuring that name resolution matches exactly.
+The Windows machine needs to identify the remote server by IP or fully-qualified domain name (FQDN), and may need to explicitly specify the port.
+Added the remote server names to `c:\Windows\System32\drivers\etc\hosts` file, and then ran `ipconfig /dnsflush`.
+
+Once you are sure you have the right FQDN (make sure you can ping it by name, or better yet, telnet to the server name on the SQL Server port (usually 1433)),
+go to `Control Panel > Credential Manager, choose Windows Credentials, and Add a Windows Credential`.
+Then specify the specific server name (potentially you may need `server:port notation`), the domain user (including the domain name), the password, and click OK:
+![Connect to SQL Servers in another domain using Windows Authentication with Credential Manager](/SSMS/SSMS_Tips/28_connect_to_sql_servers_in_another_domain_using_windows_authentication_with_credential.gif)
+
+Now, when you connect from Management Studio, make sure you use the exact same server name as the one you entered in the credential, including the port number (only now, use a comma instead of colon if specifying the port number: server,port). Like with the runas /netonly solution, it will *look* like you are connecting using your local Windows credentials, but - as long as the credential store doesn't have any issues in matching the server name - those really are the remote credentials that are being passed under the covers.
+
+More details here: [Connect to SQL Servers in another domain using Windows Authentication]
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -508,6 +545,7 @@ Reference:
  - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
  - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand)
+ - [Connect to SQL Servers in another domain using Windows Authentication] (by Aaron Bertrand)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -519,3 +557,4 @@ Reference:
 [SQL Server Diagnostics Extension for SSMS]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://blogs.sentryone.com/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
 [SQL Server Diagnostics: New "Analyze Dumps" feature]:https://sqlworkbooks.com/2017/07/sql-server-diagnostics-new-analyze-dumps-feature/
+[Connect to SQL Servers in another domain using Windows Authentication]:https://www.mssqltips.com/sqlservertip/3250/connect-to-sql-servers-in-another-domain-using-windows-authentication/
