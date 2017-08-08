@@ -27,21 +27,56 @@ Additionally, SSMS 17.x can be installed side-by-side with SSMS 16.X or SQL Serv
 
 ## Supported Operating systems
 This release of SSMS supports the following platforms when used with the latest available service pack:
-Windows 10, Windows 8, Windows 8.1, Windows 7 (SP1), Windows Server 2016, Windows Server 2012 (64-bit), Windows Server 2012 R2 (64-bit), Windows Server 2008 R2 (64-bit)
+ - Windows 10
+ - Windows 8
+ - Windows 8.1
+ - Windows 7 (SP1)
+ - Windows Server 2016
+ - Windows Server 2012 (64-bit)
+ - Windows Server 2012 R2 (64-bit)
+ - Windows Server 2008 R2 (64-bit)
 
-Note
-SSMS 17.0 is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
+### Note
+SSMS 17.X is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
 Microsoft takes app compatibility very seriously and ensures that already-shipped applications continue to run on the latest Windows releases.
 Because of this, we do not anticipate that SSMS with all latest updates applied) will encounter issues when running on Windows Server 2016.
 Customers are advised to contact support, should they encounter any issues with SSMS on Windows Server 2016.
 Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
+
+## Available Languages
+SQL Server Management Studio 17.2:
+ - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x404)
+ - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [French](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [German](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Italian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Japanese](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Korean](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Russian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Spanish](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+
+SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
+ - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x804)
+ - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x404)
+ - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x409)
+ - [French](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40c)
+ - [German](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x407)
+ - [Italian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x410)
+ - [Japanese](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x411)
+ - [Korean](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x412)
+ - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x416)
+ - [Russian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x419)
+ - [Spanish](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40a)
 
 
 ## SQL Server Management Studio Download Links and Release Info
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.1 Release] **Latest**        | 14.0.17119.0  | 2017-05-24   |      784 |
+| [17.2 Release] **Latest**        | 14.0.17177.0  | 2017-05-24   |      819 |
+| [17.1 Release]                   | 14.0.17119.0  | 2017-05-24   |      784 |
 | [17.0 Release]                   | 14.0.17099.0  | 2017-04-25   |      729 |
 | [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
 | [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
