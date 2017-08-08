@@ -95,7 +95,8 @@ SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
-[17.1 Release]:http://go.microsoft.com/fwlink/?linkid=849819
+[17.2 Release]:https://go.microsoft.com/fwlink/?linkid=854085
+[17.1 Release]:https://go.microsoft.com/fwlink/?linkid=849819
 [17.0 Release]:https://go.microsoft.com/fwlink/?linkid=847722
 [17.0 RC3 Release]:https://go.microsoft.com/fwlink/?linkid=844503
 [17.0 RC2 Release]:https://go.microsoft.com/fwlink/?linkid=840957
