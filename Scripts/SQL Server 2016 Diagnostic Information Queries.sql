@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2017
--- Last Modified: July 6, 2017
+-- August 2017
+-- Last Modified: August 7, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -72,7 +72,10 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.2193.0		RTM CU4				1/18/2017   ---->			13.0.4411.0		SP1 CU1				 1/18/2017
 -- 13.0.2197.0		RTM CU5				3/20/2017   ---->			13.0.4422.0		SP1 CU2				 3/20/2017
 -- 13.0.2204.0		RTM CU6				5/15/2017   ---->			13.0.4435.0		SP1 CU3				 5/15/2017
-															
+
+
+-- How to determine the version, edition and update level of SQL Server and its components 
+-- https://support.microsoft.com/en-us/kb/321185														
 
 -- How to obtain the latest Service Pack for SQL Server 2016
 -- https://support.microsoft.com/en-us/kb/3177534
@@ -86,17 +89,14 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- Where to find information about the latest SQL Server builds
 -- https://support.microsoft.com/en-us/help/957826/where-to-find-information-about-the-latest-sql-server-builds
 
--- Download SQL Server Management Studio (SSMS)
--- https://msdn.microsoft.com/en-us/library/mt238290.aspx	
-
 -- Performance and Stability Related Fixes in Post-SQL Server 2016 SP1 Builds
 -- https://www.sqlskills.com/blogs/glenn/performance-and-stability-related-fixes-in-post-sql-server-2016-sp1-builds/			
 
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 
--- How to determine the version, edition and update level of SQL Server and its components 
--- https://support.microsoft.com/en-us/kb/321185
+-- Download SQL Server Management Studio (SSMS)
+-- https://msdn.microsoft.com/en-us/library/mt238290.aspx	
 
 
 
@@ -218,6 +218,9 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 -- This should be enabled in the vast majority of cases
 -- SQL Server 2016 lets you enable this during the SQL server installation process
 
+-- Database Instant File Initialization
+-- https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-instant-file-initialization
+
 -- Misconceptions around instant file initialization
 -- https://www.sqlskills.com/blogs/paul/misconceptions-around-instant-file-initialization/
 
@@ -328,7 +331,7 @@ FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- SQL Server NUMA Node information  (Query 12) (SQL Server NUMA Info)
 SELECT node_id, node_state_desc, memory_node_id, processor_group, online_scheduler_count, 
-       active_worker_count, avg_load_balance, resource_monitor_state
+       idle_scheduler_count, active_worker_count, avg_load_balance, resource_monitor_state
 FROM sys.dm_os_nodes WITH (NOLOCK) 
 WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 ------
@@ -543,7 +546,6 @@ ORDER BY database_id OPTION (RECOMPILE);
 -- If you do get results here, you should do further investigation to determine the root cause
 
 
-
 -- Get number of data files in tempdb database (Query 25) (TempDB Data Files)
 EXEC sys.xp_readerrorlog 0, 1, N'The tempdb database has';
 ------
@@ -629,7 +631,7 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 -- Shows you the drive-level latency for reads and writes, in milliseconds
 -- Latency above 30-40ms is usually a problem
 -- These latency numbers include all file activity against all SQL Server 
--- database file on each drive since SQL Server was last started
+-- database files on each drive since SQL Server was last started
 
 
 -- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 29) (IO Stalls by File)
@@ -1003,7 +1005,6 @@ ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
 
 
 -- Get CPU Utilization History for last 256 minutes (in one minute intervals)  (Query 41) (CPU Utilization History)
--- This version works with SQL Server 2016
 DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info WITH (NOLOCK)); 
 
 SELECT TOP(256) SQLProcessUtilization AS [SQL Server Process CPU Utilization], 
@@ -1094,6 +1095,7 @@ ORDER BY SUM(mc.pages_kb) DESC OPTION (RECOMPILE);
 -- These are cached SQL statements or batches that aren't in stored procedures, functions and triggers
 -- Watch out for high values for CACHESTORE_SQLCP
 -- Enabling 'optimize for ad hoc workloads' at the instance level can help reduce this
+-- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this
 
 -- CACHESTORE_OBJCP  Object Plans      
 -- These are compiled plans for stored procedures, functions and triggers
@@ -1192,8 +1194,8 @@ SELECT f.name AS [File Name] , f.physical_name AS [Physical Name],
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
 AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
-f.is_percent_growth, f.growth, 
-fg.is_default, fg.is_read_only, fg.is_autogrow_all_files
+f.is_percent_growth, f.growth, fg.is_default, fg.is_read_only, 
+fg.is_autogrow_all_files -- New in SQL Server 2016
 FROM sys.database_files AS f WITH (NOLOCK) 
 LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
 ON f.data_space_id = fg.data_space_id
@@ -1281,7 +1283,7 @@ ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 ------
 
 
--- Queries 55 through 60 are the "Bad Man List"
+-- Queries 55 through 60 are the "Bad Man List" for stored procedures
 -- Top Cached SPs By Execution Count (Query 55) (SP Execution Counts)
 SELECT TOP(100) p.name AS [SP Name], qs.execution_count,
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute],
@@ -1842,6 +1844,10 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- Microsoft IT Pro Cloud Essentials
 -- http://bit.ly/2443SAd
+
+
+-- August 2017 blog series about upgrading and migrating SQL Server
+-- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/
 
 
 

@@ -2,7 +2,7 @@
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: June 19, 2017
+-- Last Modified: August 7, 2017
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -1379,3 +1379,7 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- Microsoft IT Pro Cloud Essentials
 -- http://bit.ly/2443SAd
+
+
+-- August 2017 blog series about upgrading and migrating SQL Server
+-- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/
