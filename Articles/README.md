@@ -375,6 +375,14 @@ Articles types:
 | [The Case of the Space at the End]                                                                                      | Adam St. Pierre                          | 2017-07-24 | [DEV]       |
 | [SELECT…INTO in SQL Server 2017]                                                                                        | Andrew Pruski                            | 2017-08-02 | [DEV]       |
 | [Your Service Level Agreement is a Disaster]                                                                            | Jennifer McCown                          | 2017-07-24 | [DBA]       |
+| [SQLskills SQL101: REBUILD vs. REORGANIZE]                                                                              | Paul Randal                              | 2017-08-03 | [DBA]       |
+| [Where do the Books Online index fragmentation thresholds come from?]                                                   | Paul Randal                              | 2009-12-08 | [DBA]       |
+| [The SQL Hall of Shame]                                                                                                 | Adam Machanic                            | 2017-06-14 | [DBA],[DEV] |
+| [A Better Way To Select Star]                                                                                           | Erik Darling                             | 2017-07-05 | [DEV]       |
+| [UDP vs TCP]                                                                                                            | Kenneth Fisher                           | 2017-06-07 | [DBA]       |
+| [When a Nonclustered Index and Statistics Make a Query Slower]                                                          | Kendra Little                            | 2017-03-24 | [DBA],[DEV] |
+| [Lipoaspiration in your SQL Server Database]                                                                            | Fabiano Amorim                           | 2011-03-03 | [DEV]       |
+| [13 Things You Should Know About Statistics and the Query Optimizer]                                                    | Fabiano Amorim                           | 2010-01-07 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -730,3 +738,11 @@ Articles types:
 [The Case of the Space at the End]:http://www.sqlservercentral.com/articles/ANSI_PADDING/157467/
 [SELECT…INTO in SQL Server 2017]:https://dbafromthecold.com/2017/08/02/select-into-in-sql-server-2017/
 [Your Service Level Agreement is a Disaster]:http://minionware.net/service-level-agreement-disaster/
+[SQLskills SQL101: REBUILD vs. REORGANIZE]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-rebuild-vs-reorganize/
+[Where do the Books Online index fragmentation thresholds come from?]:https://www.sqlskills.com/blogs/paul/where-do-the-books-online-index-fragmentation-thresholds-come-from/
+[The SQL Hall of Shame]:http://sqlblog.com/blogs/adam_machanic/archive/2017/06/14/the-sql-hall-of-shame.aspx
+[A Better Way To Select Star]:https://www.brentozar.com/archive/2017/07/better-way-select-star/
+[UDP vs TCP]:https://sqlstudies.com/2017/06/07/udp-vs-tcp/
+[When a Nonclustered Index and Statistics Make a Query Slower]:https://sqlworkbooks.com/2017/05/when-a-nonclustered-index-and-statistics-make-a-query-slower/
+[Lipoaspiration in your SQL Server Database]:https://www.red-gate.com/simple-talk/sql/performance/lipoaspiration-in-your-sql-server-database/
+[13 Things You Should Know About Statistics and the Query Optimizer]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/13-things-you-should-know-about-statistics-and-the-query-optimizer/
