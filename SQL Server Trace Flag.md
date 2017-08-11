@@ -1,8 +1,8 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (520 trace flags)
+Complete list of Microsoft SQL Server trace flags (521 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
-
+**Trace flag behavior may not be supported in future releases of SQL Server.**
 
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
@@ -160,7 +160,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **520 trace flags**
+Summary: **521 trace flags**
 
 
 <a id="-1"></a>
@@ -462,6 +462,7 @@ Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx<br />
 Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/<br />
 Link: https://msdn.microsoft.com/library/dd425070.aspx<br />
 Link: [MSDN ms188396]<br />
+Link: https://orderbyselectnull.com/2017/07/10/trace-flag-610-and-sql-server-2016/<br />
 Scope: global or session
 
 
@@ -551,6 +552,17 @@ Link: https://support.microsoft.com/en-us/help/3027860/error-17066-or-17310-duri
 **Trace Flag: 683**<br />
 Function: According to the KB, used to workaround a bug in SQL 2000 SP3 by reverting to pre-SP3 parallel-scan behavior in parallel queries. Database-Wiki.com: “Disallow row counter and column mod counters to be partitioned”<br />
 Link: None
+
+
+<a id="692"></a>
+**Trace Flag: 692**<br />
+Function: Disables fast inserts while bulk loading data into heap or clustered index.
+Starting SQL Server 2016, fast inserts is enabled by default leveraging minimal logging when database is in simple or bulk logged recovery model to optimize insert performance for records inserted into new pages. With fast inserts, each bulk load batch acquires new extent(s) bypassing the allocation lookup for existing extent with available free space to optimize insert performance.
+With fast inserts, bulk loads with small batch sizes can lead to increased unused space consumed by objects hence it is recommended to use large batchsize for each batch to fill the extent completely. If increasing batchsize is not feasible, this trace flag can help reduce unused space reserved at the expense of performance.<br />
+**Note: This trace flag applies to SQL Server 2016 RTM and higher builds.**
+Link: https://blogs.msdn.microsoft.com/sql_server_team/sql-server-2016-minimal-logging-and-impact-of-the-batchsize-in-bulk-load-operations/<br />
+Link: <br />
+Scope: global or session
 
 
 <a id="698"></a>
