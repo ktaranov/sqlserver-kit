@@ -210,9 +210,9 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
         BEGIN
             SET @tsqlCommand = N'ALTER DATABASE __databaseName__ SET RECOVERY __databaseRecoveryMode__ WITH NO_WAIT';
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
-            SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
+            SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent);
 
-            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}')
+            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}');
 
             IF @debug = 0 EXECUTE sp_executesql @tsqlCommand;
         END
@@ -223,11 +223,11 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
     BEGIN CATCH
         SET @tsqlCommand = N'ALTER DATABASE __databaseName__ SET RECOVERY __databaseRecoveryMode__ WITH NO_WAIT';
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent);
         EXECUTE sp_executesql @tsqlCommand;
 
-        EXECUTE dbo.usp_LogError;
-        EXECUTE dbo.usp_PrintError;
+        -- EXECUTE dbo.usp_LogError;
+        -- EXECUTE dbo.usp_PrintError;
     END CATCH
 END;
 GO
