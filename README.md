@@ -41,7 +41,7 @@ Headers:
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
- - [Free SQL Server and R ebooks](#free-sql-server-and-r-ebooks)
+ - [Free SQL Server, R ebooks](#free-ebooks)
  - [License](#license)
 
 
@@ -51,7 +51,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 520 Trace Flags') (**Complete list - 520 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 521 Trace Flags') (**Complete list - 521 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -198,6 +198,7 @@ Headers:
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
    - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
    - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
+   - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
  - Courses
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
@@ -414,6 +415,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
  - [PowerShell Enterprise Policy Management Framework](https://epmframework.codeplex.com/)
  - [ReportingServicesTools - Reporting Services Powershell Tools](https://github.com/Microsoft/ReportingServicesTools) (by Microsoft)
  - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
+ - [Export-DMVInformation - Export the resuts from Glenn Berry's DMV queries directly to Excel](https://github.com/sanderstad/Export-DMVInformation/) (Github) (by Sander Stad)
 
 [*Back to top*](#header05)
 
@@ -444,7 +446,8 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 [*Back to top*](#header07)
 
 
-## Free SQL Server and R ebooks
+<a id="free-ebooks"></a>
+## Free SQL Server, R ebooks
 
 SQL Server:
  - [Awesome Red Gate ebooks](http://www.red-gate.com/community/books/)
@@ -485,6 +488,7 @@ SQL Server:
  - [Giving away millions of free Microsoft Ebooks](https://blogs.msdn.microsoft.com/mssmallbiz/2016/07/10/free-thats-right-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepoint-2016-sha/) (by Eric Ligman)
  - [Free Phil Factor eBook: Confessions of an IT Manager](https://www.simple-talk.com/opinion/opinion-pieces/free-phil-factor-ebook-confessions-of-an-it-manager/) (by Phil Factor)
  - [Power BI from Rookie to Rock Star book](http://radacad.com/download-free-power-bi-book-pdf-format) (by Reza Rad)
+ - [Online Book: Analytics with Power BI and R](http://radacad.com/online-book-analytics-with-power-bi-and-r) (by Leila Etaati)
  - [Architecture of a Database System](http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf) (by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton)
 
 R:
