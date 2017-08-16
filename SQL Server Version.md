@@ -554,6 +554,7 @@ Microsoft SQL Server 2014 (SP2-CU6) (KB4019094) - 12.0.5553.0 (X64)
 | 12.0.5511.0  | 2014.120.5511.0  | SP2    | CU   | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |    45 |     36 |      556 |
 | 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  | [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
 | 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
+| 12.0.4522.0  | 2014.120.4522.0  | SP1    | CU   | [4019099 Cumulative Update 13 for SQL Server 2014 SP1]                                                                             | 2017-08-08   |    11 |     11 |      577 |
 | 12.0.4511.0  | 2014.120.4511.0  | SP1    | CU   | [4017793 Cumulative Update 12 for SQL Server 2014 SP1]                                                                             | 2017-04-17   |    12 |     11 |      573 |
 | 12.0.4502.0  | 2014.120.4502.0  | SP1    | CU   | [4010392 Cumulative Update 11 for SQL Server 2014 SP1]                                                                             | 2017-02-21   |    15 |     15 |      571 |
 | 12.0.4491.0  | 2014.120.4491.0  | SP1    | CU   | [3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]                                                          | 2016-12-28   |    33 |     27 |      571 |
@@ -624,6 +625,7 @@ Microsoft SQL Server 2014 (SP2-CU6) (KB4019094) - 12.0.5553.0 (X64)
 [3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/kb/3178925
 [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/help/3194714/ms16-136-description-of-the-security-update-for-sql-server-2014-service-pack-2-gdr-november-8,-2016
 [3171021 SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/en-us/kb/3171021
+[4019099 Cumulative Update 13 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/help/4019099/cumulative-update-13-for-sql-server-2014-sp1
 [4017793 Cumulative Update 12 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/help/4017793/cumulative-update-12-for-sql-server-2014-sp1
 [4010392 Cumulative Update 11 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/help/4010392/cumulative-update-11-for-sql-server-2014-sp1
 [3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3204399
