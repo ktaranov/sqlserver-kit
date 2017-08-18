@@ -30,7 +30,10 @@ Content:
 26. [Query Execution Options](#26)
 27. [SQL Server Diagnostics Extension](#27)
 28. [Connect to SQL Servers in another domain using Windows Authentication](#28)
-29. [Reference](#reference)
+29. [SSMS Default Reports](#29)
+30. [Live Query Statistics](#30)
+31. [Searching in Showplan](#31)
+32. [Reference](#reference)
 
 
 Great thanks to:
@@ -91,6 +94,7 @@ Most useful are:
 | `Shift + F10`         | Simulate right mouse button            |
 | `Ctrl + Alt + T`      | Display Template Explorer              |
 | `Ctrl + Shift + M`    | Specify values for template parameters |
+| `Ctrl + Shift + R`    | Refresh local cache                    |
 
 
 <a id="3"></a>
@@ -523,6 +527,41 @@ Now, when you connect from Management Studio, make sure you use the exact same s
 More details here: [Connect to SQL Servers in another domain using Windows Authentication]
 
 
+<a id="29"></a>
+## SSMS Default Reports
+By right-clicking on the SQL Server instance and navigating to `Reports > Standard Reports`, you can see the predefined SSMS reports:
+
+![SSMS_Server_Default_Reports](/SSMS/SSMS_Tips/29_SSMS_Server_Default_Reports.png)
+
+Also you can run default reports database:
+![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/29_SSMS_Database_Default_Reports.png)
+
+[New in SSMS: Performance Dashboard built-in(https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-performance-dashboard-built-in/)
+
+
+<a id="30"></a>
+## Live Query Statistics
+SQL Server Management Studio provides the ability to view the live execution plan of an active query.
+This live query plan provides real-time insights into the query execution process as the controls flow from one query plan operator to another.
+The live query plan displays the overall query progress and operator-level run-time execution statistics such as the number of rows produced, elapsed time, operator progress, etc.
+Because this data is available in real time without needing to wait for the query to complete, these execution statistics are extremely useful for debugging query performance issues.
+This feature is available beginning with SQL Server 2016 Management Studio, however it can work with SQL Server 2014.
+
+More details here: [Live Query Statistics]
+
+**Warning: This feature is primarily intended for troubleshooting purposes.
+Using this feature can moderately slow the overall query performance.
+This feature can be used with the [Transact-SQL Debugger](https://docs.microsoft.com/en-us/sql/relational-databases/scripting/configure-firewall-rules-before-running-the-tsql-debugger).
+**
+
+
+<a id="31"></a>
+## Searching in Showplan
+In SSMS 17.2, appear the ability to search table name, index name or column name and more in graphical showplan.
+ just use `CTRL+F` to start a search in graphical showplan (or right-click on a blank area of the plan, and in the context menu click on Find Node option), and you can quickly see exactly where node id 30 is.
+More details here: [New in SSMS: Searching in Showplan]
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -546,6 +585,8 @@ Reference:
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
  - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand)
  - [Connect to SQL Servers in another domain using Windows Authentication] (by Aaron Bertrand)
+ - [New in SSMS: Searching in Showplan]
+ - [Live Query Statistics]
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -558,3 +599,5 @@ Reference:
 [T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://blogs.sentryone.com/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
 [SQL Server Diagnostics: New "Analyze Dumps" feature]:https://sqlworkbooks.com/2017/07/sql-server-diagnostics-new-analyze-dumps-feature/
 [Connect to SQL Servers in another domain using Windows Authentication]:https://www.mssqltips.com/sqlservertip/3250/connect-to-sql-servers-in-another-domain-using-windows-authentication/
+[New in SSMS: Searching in Showplan]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-searching-in-showplan/
+[Live Query Statistics]:https://docs.microsoft.com/en-us/sql/relational-databases/performance/live-query-statistics
