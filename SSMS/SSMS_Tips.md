@@ -37,21 +37,21 @@ Content:
 
 
 Great thanks to:
- - Kendra Little
- - Slava Murygin
- - Mike Milligan
- - Kenneth Fisher
- - William Durkin
- - John Morehouse
- - Phil Factor
- - Klaus Aschenbrenner
- - Latish Sehgal
- - Arvind Shyamsundar
- - SQLMatters
- - MSSQLTips
+ - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
+ - Slava Murygin ([b](http://slavasql.blogspot.ru/))
+ - Mike Milligan ([b](http://www.bidn.com/Blogs/userid/43/author/mike-milligan))
+ - Kenneth Fisher ([b](https://twitter.com/sqlstudent144) | [t](https://twitter.com/sqlstudent144))
+ - William Durkin ([b](http://www.williamdurkin.com/) | [t](https://twitter.com/sql_williamd))
+ - John Morehouse ([b](http://sqlrus.com/) | [t](http://twitter.com/sqlrus))
+ - Phil Factor ([b](https://www.red-gate.com/simple-talk/author/phil-factor/) | [t](https://twitter.com/phil_factor))
+ - Klaus Aschenbrenner ([b](https://www.sqlpassion.at/) | [t](https://twitter.com/Aschenbrenner))
+ - Latish Sehgal ([b](http://www.dotnetsurfers.com/))
+ - Arvind Shyamsundar ([b](https://blogs.msdn.microsoft.com/arvindsh/))
+ - [SQLMatters](http://www.sqlmatters.com/)
+ - [MSSQLTips](https://www.mssqltips.com/)
  - Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
- - Andy Mallon
- - Aaron Bertrand
+ - Andy Mallon ([b](http://www.am2.co/) | [t](https://twitter.com/AMtwo))
+ - Aaron Bertrand ([b](http://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
 
 
 <a id="1"></a>
@@ -549,10 +549,9 @@ This feature is available beginning with SQL Server 2016 Management Studio, howe
 
 More details here: [Live Query Statistics]
 
-**Warning: This feature is primarily intended for troubleshooting purposes.
+Warning: This feature is primarily intended for troubleshooting purposes.
 Using this feature can moderately slow the overall query performance.
 This feature can be used with the [Transact-SQL Debugger](https://docs.microsoft.com/en-us/sql/relational-databases/scripting/configure-firewall-rules-before-running-the-tsql-debugger).
-**
 
 
 <a id="31"></a>
@@ -581,7 +580,7 @@ Reference:
  - [RegEx-Based Finding and Replacing of Text in SSMS] (by Phil Factor)
  - [SQL Server Management Studio (SSMS) Tips and Tricks] (by Mike Milligan)
  - [Knowing the Options] (by John Morehouse)
- - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/)  (by Kendra Little)
+ - [How to Enable/Trace the Query Thread Profile Extended Event in SQL Sever 2014+](https://sqlworkbooks.com/2017/06/how-to-enabletrace-the-query-thread-profile-extended-event-in-sql-sever-2014/) (by Kendra Little)
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
  - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand)
  - [Connect to SQL Servers in another domain using Windows Authentication] (by Aaron Bertrand)
