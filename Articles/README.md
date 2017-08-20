@@ -390,6 +390,7 @@ Articles types:
 | [Persisting statistics sampling rate]                                                                                   | Pedro Lopes                              | 2017-08-11 | [DBA]       |
 | [All about locking in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-06-16 | [DBA],[DEV] |
 | [All about Latches in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-08-10 | [DBA],[DEV] |
+| [How to monitor object space growth in SQL Server]                                                                      | Jefferson Elias                          | 2017-08-16 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -760,3 +761,4 @@ Articles types:
 [Persisting statistics sampling rate]:https://blogs.msdn.microsoft.com/sql_server_team/persisting-statistics-sampling-rate/
 [All about locking in SQL Server]:https://www.sqlshack.com/locking-sql-server/
 [All about Latches in SQL Server]:https://www.sqlshack.com/all-about-latches-in-sql-server/
+[How to monitor object space growth in SQL Server]:https://www.sqlshack.com/monitor-object-space-growth-sql-server/

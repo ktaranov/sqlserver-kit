@@ -82,6 +82,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Wayne Sheffield     | [Wayne Sheffield Blog]       | USA     | Richmond         | [@DBAWayne]        | NULL                              | 1   | [Sheffield MVP]    |
 | Ewald Cress         | [Ewald Cress Blog]           |         | NULL             | [@sqlOnIce]        | NULL                              | 0   |                    |
 | Dmitri Korotkevitch | [Dmitri Korotkevitch Blog]   | USA     | Tampa            | [@aboutsqlserver]  | dk@aboutsqlserver.com             | 6   | [Korotkevitch MVP] |
+| Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -100,7 +101,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [SQLBlog]:http://sqlblog.com/
 [Ola Maintenance Solution]:https://ola.hallengren.com/
 [Sommarskog Blog]:http://www.sommarskog.se/
-[Phil Simple-Talk]:https://www.simple-talk.com/author/phil-factor/
+[Phil Simple-Talk]:https://www.red-gate.com/simple-talk/author/phil-factor/
 [Robert Simple-Talk]:https://www.simple-talk.com/author/robert-sheldon/
 [Glenn Blog]:https://sqlserverperformance.wordpress.com/
 [Kenneth Blog]:http://sqlstudies.com/
@@ -161,6 +162,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Wayne Sheffield Blog]:http://blog.waynesheffield.com/
 [Ewald Cress Blog]:http://sqlonice.com
 [Dmitri Korotkevitch Blog]:http://aboutsqlserver.com/
+[Bert Wagner Blog]:https://blog.bertwagner.com/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
@@ -236,6 +238,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@DBAWayne]:https://twitter.com/DBAWayne
 [@sqlOnIce]:https://twitter.com/sqlOnIce
 [@aboutsqlserver]:https://twitter.com/aboutsqlserver
+[@bertwagner]:https://twitter.com/bertwagner
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
