@@ -33,7 +33,8 @@ Content:
 29. [SSMS Default Reports](#29)
 30. [Live Query Statistics](#30)
 31. [Searching in Showplan](#31)
-32. [Reference](#reference)
+32. [](#32)
+33. [Reference](#reference)
 
 
 Great thanks to:
@@ -95,6 +96,7 @@ Most useful are:
 | `Ctrl + Alt + T`      | Display Template Explorer              |
 | `Ctrl + Shift + M`    | Specify values for template parameters |
 | `Ctrl + Shift + R`    | Refresh local cache                    |
+| `Ctrl + Alt + S`      | Include Client Statistics              |
 
 
 <a id="3"></a>
@@ -180,7 +182,7 @@ This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > Al
 
 <a id="8"></a>
 ## Client Statistics
-When you enable that option for your session, SQL Server Management Studio will give you more information about the client side processing of your query.
+When you enable that option for your session (`Ctrl + Alt + S`), SQL Server Management Studio will give you more information about the client side processing of your query.
 
 The Network Statistics shows you the following information:
  - Number of Server Roundtrips
@@ -381,6 +383,14 @@ My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have
 
 <a id="24"></a>
 ## Changing what SSMS opens on startup
+The more interesting way to look at this shortcut is to check the various options available with SSMS command line parameters.
+To check them, use the following command:
+```
+C:\> ssms /?
+``
+
+![SSMS command line parameters](/SSMS/SSMS_Tips/24_SSMS_command-line_parameters.png)
+
 You can customize SSMS startup behavior in `Tools -> Options -> Environment -> Startup` and hide system objects in Object Explore:
 
 ![Changing what SSMS opens on startup](/SSMS/SSMS_Tips/24_changing_what_ssms_opens_on_startup.gif)
@@ -399,7 +409,7 @@ It is useful to create a solution of commonly used SQL scripts to always load at
 5. Open Windows explorer and browse to the location of your solution. Copy file location address to your clipboard. 
 Go back to your SSMS shortcut properties and add within double quotes the location and file name of your solution before the "-nosplash".
 
-This is the complete text within my shortcut properties:
+This is the complete text of shortcut properties:
 
 ```
 "C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\Ssms.exe" "C:\Users\taranov\Documents\SQL Server Management Studio\Projects\MySQLServerScripts.ssmssln" -nosplash
@@ -559,6 +569,21 @@ This feature can be used with the [Transact-SQL Debugger](https://docs.microsoft
 In SSMS 17.2, appear the ability to search table name, index name or column name and more in graphical showplan.
  just use `CTRL+F` to start a search in graphical showplan (or right-click on a blank area of the plan, and in the context menu click on Find Node option), and you can quickly see exactly where node id 30 is.
 More details here: [New in SSMS: Searching in Showplan]
+
+
+<a id="32"></a>
+## Object Explore Details
+To bring up the Object Explorer Details pane, use the `F7` shortcut or it can be accessed from `Toolbar -> View -> Object -> Explorer Details`.
+
+![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/32_object_explore_details_01.png)
+
+![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/32_object_explore_details_02.png)
+
+You can customize display field hide or unhide it:
+![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/32_object_explore_details_03.png)
+
+You can searched for the keyword `%Country%` and using `%` as a wildcard character.
+This tells SQL Server Management Studio to display all the objects that have the word `Country` in their name.
 
 
 <a id="reference"></a>
