@@ -58,6 +58,7 @@ Error code equal `message_id` from `sys.messages`
 |        657 | Could not disable support for increased partitions in database ...                                                                                      | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
 |        703 | There is insufficient system memory in resource pool 'default' to run this query.                                                                       | [703_link1]                                                  |
 |        824 | SQL Server detected a logical consistency-based I/O error                                                                                               | [Resolve Microsoft SQL Server Error Code 824], [KB2152734]   |
+|        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at offset %#016I64x in file '%ls'.                         | [825_link1]                                                  |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                                                                   | [FIX: Error: 913, Severity: 16 – Could Not Find Database ID] |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                                         | [CREATE DATABASE – I’ve not seen that before.]               |
 |       1904 | The statistics on table has 65 columns in the key list                                                                                                  | [SQL SERVER - Fix: Error: Msg 1904]                          |
@@ -93,6 +94,7 @@ Error code equal `message_id` from `sys.messages`
 [Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
+[825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [FIX: Error: 913, Severity: 16 – Could Not Find Database ID]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
