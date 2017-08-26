@@ -276,6 +276,7 @@ Headers:
     - [BismNormalizer - is a free and open-source tool to manage Microsoft Analysis Services tabular models](https://github.com/christianwade/BismNormalizer) (by Christian Wade)
     - [DbSharp - is a DAL Generator](https://www.codeproject.com/Articles/776811/DbSharp-DAL-generator-tool) (by Higty)
     - [YourSqlDba - Database maintenance solution as a single SQL script](https://github.com/pelsql/YourSqlDba) (by Maurice Pelchat)
+    - [OpenQueryStore](https://github.com/OpenQueryStore/OpenQueryStore)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Lift)
@@ -287,6 +288,7 @@ Headers:
     - [Using Excel to parse Set Statistics IO output](http://vickyharp.com/2012/03/using-excel-to-parse-set-statistics-io-output/) (by Vicky Harp)
     - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
     - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
+    - [Server Fault - is a question and answer site for system and network administrators](https://serverfault.com/)
     - [SQL Server Connection Strings](http://www.connectionstrings.com/sql-server/)
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
     - [RSS Most Recent SQL Server KBs](https://support.microsoft.com/en-us/rss?rssid=1044)
