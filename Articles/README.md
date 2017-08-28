@@ -395,6 +395,9 @@ Articles types:
 | [How to Read a Transaction Log Backup]                                                                                  | Greg Larsen                              | 2017-07-03 | [DBA]       |
 | [How to Find Out Which Database Object Got Deleted]                                                                     | Greg Larsen                              | 2017-07-03 | [DBA]       |
 | [In-Memory OLTP Enhancements in SQL Server 2016]                                                                        | Ahmad Yaseen                             | 2017-08-22 | [DBA],[DEV] |
+| [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA]       |
+| [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [DEV]       |
+| [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -770,3 +773,6 @@ Articles types:
 [How to Read a Transaction Log Backup]:http://www.databasejournal.com/features/mssql/how-to-read-a-transaction-log-backup.html
 [How to Find Out Which Database Object Got Deleted]:http://www.databasejournal.com/tips/how-to-find-out-which-database-object-got-deleted.html
 [In-Memory OLTP Enhancements in SQL Server 2016]:https://www.sqlshack.com/memory-oltp-enhancements-sql-server-2016/
+[Sync SQL Logins and Jobs]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2017/08/21/sync-sql-logins-and-jobs/
+[The Trillion Row Table]:https://orderbyselectnull.com/2017/08/16/the-trillion-row-table/
+[Dynamic Data Unmasking]:https://orderbyselectnull.com/2017/08/25/dynamic-data-unmasking/
