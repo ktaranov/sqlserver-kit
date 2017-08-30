@@ -127,7 +127,7 @@ Profits:
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2017    | [Install 2017 RC2]                                                   | 14.0.900.75                                  | 2017-08-02                               | ?               | ?                  | ?                | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP1] Or [Developer Free] then <br/>[SP1 CU4 KB4024305] | 13.0.4001.0<br>13.0.4446.0                   | 2016-11-16<br/>2017-08-08                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU6 KB4019094]  | 12.0.5000.0<br/>12.0.5553.0                  | 2016-07-11<br/>2017-08-08                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU7 KB4032541]  | 12.0.5000.0<br/>12.0.5556.0                  | 2016-07-11<br/>2017-08-28                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP3 2012] then<br/>[KB4025925]              | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6607.3 | 2012-02-14<br/>2015-11-21<br/>2017-08-08 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]    | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]           | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -138,7 +138,7 @@ Profits:
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU4 KB4024305]:https://support.microsoft.com/en-us/help/4024305/cumulative-update-4-for-sql-server-2016-sp1
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
-[SP2 CU6 KB4019094]:https://support.microsoft.com/en-us/help/4019094/cumulative-update-6-for-sql-server-2014-sp2
+[SP2 CU7 KB4032541]:https://support.microsoft.com/en-us/help/4032541/cumulative-update-7-for-sql-server-2014-sp2
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP3 2012]:https://www.microsoft.com/en-us/download/details.aspx?id=50733
 [KB4016762]:https://support.microsoft.com/en-us/help/4016762/cumulative-update-9-for-sql-server-2012-sp3
@@ -175,7 +175,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0  |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
 | [SQL Server 2016 SP1 KB4024305] | SQLServer2016-KB4024305-x64.exe                                   | 2017-08-08   | 13.0.4446.0  |      534 | 01b49fa27356a395faf07fff9969777dbed3453a |
 | [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0  |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
-| [SQL Server 2014 SP2 KB4019094] | SQLServer2014-KB4019094-x64.exe                                   | 2017-08-08   | 12.0.5553.0  |      539 | 4678b94b523e617917e17a0545c0d78ccd64bc34 |
+| [SQL Server 2014 SP2 KB4032541] | SQLServer2014-KB4032541-x64.exe                                   | 2017-08-28   | 12.0.5556.0  |      539 | 0a2fc03ba74b133ca56b54116ab0585a85ff7354 |
 | [SQL Server 2012]               | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60 |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP3]           | SQLServer2012SP3-KB3072779-x64-ENU.exe                            | 2015-11-21   | 11.0.6020.0  |     1017 | dbf01b6dc6d60c2b045c92d91862e6087ad72a0a |
 | [SQL Server 2012 SP3 KB4025925] | SQLServer2012-KB4025925-x64.exe                                   | 2017-08-08   | 11.0.6607.3  |      613 | b56e18bcc3a90707a558f04e3c7200eee0277239 |
@@ -193,7 +193,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4024305]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/SQL16SP1CU4/x64/SQLServer2016-KB4024305-x64.exe
 [SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP2 KB4019094]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/SQL14SP2CU6/x64/SQLServer2014-KB4019094-x64.exe
+[SQL Server 2014 SP2 KB4032541]:https://download.microsoft.com/download/5/E/E/5EEAC4AB-1635-44B9-BFBD-4A1405EB5EC8/2014SP2CU7/x64/SQLServer2014-KB4032541-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP3]:https://download.microsoft.com/download/B/1/7/B17F8608-FA44-462D-A43B-00F94591540A/ENU/x64/SQLServer2012SP3-KB3072779-x64-ENU.exe
 [SQL Server 2012 SP3 KB4025925]:https://download.microsoft.com/download/3/0/D/30D98783-31D6-4123-9F87-5058BA9FC977/SQL2012SP3CU10/x64/SQLServer2012-KB4025925-x64.exe
@@ -544,6 +544,7 @@ Microsoft SQL Server 2014 (SP2-CU6) (KB4019094) - 12.0.5553.0 (X64)
 
 | Build        | File version     | Branch | Type | KB / Description                                                                                                                   | Release Date | Fixes | Public | Size, Mb |
 |--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.5556.0  | 2014.120.5556.0  | SP2    | CU   | [4032541 Cumulative Update 7 for SQL Server 2014 SP2]                                                                              | 2017-08-28   |    15 |      8 |      539 |
 | 12.0.5553.0  | 2014.120.5553.0  | SP2    | CU   | [4019094 Cumulative Update 6 for SQL Server 2014 SP2]                                                                              | 2017-08-08   |    29 |     29 |      539 |
 | 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  | [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |   
 | 12.0.5546.0  | 2014.120.5546.0  | SP2    | CU   | [4013098 Cumulative Update 5 for SQL Server 2014 SP2]                                                                              | 2017-04-18   |    24 |     21 |      557 |
@@ -615,7 +616,8 @@ Microsoft SQL Server 2014 (SP2-CU6) (KB4019094) - 12.0.5553.0 (X64)
 | 12.0.1524    | 2014.120.1524.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |       |        |          |
 | 11.0.9120    | 2013.110.9120.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |       |        |          |
 
-[4019094 Cumulative Update 6 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4019094
+[4032541 Cumulative Update 7 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4032541/cumulative-update-7-for-sql-server-2014-sp2
+[4019094 Cumulative Update 6 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4019094/cumulative-update-6-for-sql-server-2014-sp2
 [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/en-us/help/4019093/description-of-the-security-update-for-sql-server-2014-service-pack-2
 [4013098 Cumulative Update 5 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
 [4010394 Cumulative Update 4 for SQL Server 2014 SP2]:https://support.microsoft.com/en-us/help/4010394/cumulative-update-4-for-sql-server-2014-sp2
