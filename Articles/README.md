@@ -398,6 +398,10 @@ Articles types:
 | [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA]       |
 | [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [DEV]       |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
+| [Why is My Database Application so Slow?]                                                                               | Dan Turner                               | 2017-08-24 | [DEV]       |
+| [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DEV],[DBA] |
+| [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                                       | Kendra Little                            | 2017-04-28 | [DBA]       |
+| [Microsoft SQL Server R Services - Internals X]                                                                         | Niels Berglund                           | 2017-08-29 | [DEV],[R]   |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -776,3 +780,7 @@ Articles types:
 [Sync SQL Logins and Jobs]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2017/08/21/sync-sql-logins-and-jobs/
 [The Trillion Row Table]:https://orderbyselectnull.com/2017/08/16/the-trillion-row-table/
 [Dynamic Data Unmasking]:https://orderbyselectnull.com/2017/08/25/dynamic-data-unmasking/
+[Why is My Database Application so Slow?]:https://www.red-gate.com/simple-talk/dotnet/net-performance/database-application-slow/
+[Generating Concurrent Activity]:http://michaeljswart.com/2014/01/generating-concurrent-activity/
+[Required Testing for Installing SQL Server Cumulative Updates and Service Packs]:http://littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/
+[Microsoft SQL Server R Services - Internals X]:http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
