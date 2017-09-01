@@ -458,7 +458,7 @@ Useful articles:
 
 ## Microsoft SQL Server 2016 Builds
 <a id="microsoft-sql-server-2016-builds"></a>
-Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition:
+Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 
 ```
 Microsoft SQL Server 2016 (SP1-CU4) (KB4024305) – 13.0.4446.0 (X64)
@@ -533,11 +533,11 @@ Microsoft SQL Server 2016 (SP1-CU4) (KB4024305) – 13.0.4446.0 (X64)
 
 ## Microsoft SQL Server 2014 Builds
 <a id="microsoft-sql-server-2014-builds"></a>
-Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition:
+Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2014 (SP2-CU6) (KB4019094) - 12.0.5553.0 (X64)
-    Jun 28 2017 16:26:18
+Microsoft SQL Server 2014 (SP2-CU7) (KB4032541) - 12.0.5556.0 (X64)
+    Aug 17 2017 12:07:38
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
