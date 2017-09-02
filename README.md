@@ -52,7 +52,7 @@ Headers:
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
  - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 521 Trace Flags') (**Complete list - 521 trace flags**)
- - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server VNext**)
+ - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2017**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
@@ -226,8 +226,8 @@ Headers:
      - [Madeira Data Solutions Academy](http://madeira-data-solutions.teachable.com/)
      - [SQLpassion Online Academy](http://www.sqlpassion.at/online-training/index.html) (by Klaus Aschenbrenner)
  - SQL Server Backwards Compatibility
-   - [VNext Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.140).aspx)
-   - [2016 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.130).aspx)
+   - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
+   - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
    - [2012 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
    - [2008 R2 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
@@ -250,6 +250,7 @@ Headers:
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
+   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (284 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -384,17 +385,16 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 [*Back to top*](#header03)
 
 
-## [Microsoft Transact-SQL Hints](https://msdn.microsoft.com/en-us/library/ms187713.aspx)
- - [Transact-SQL Join Hints](https://msdn.microsoft.com/en-us/library/ms173815.aspx)
- - [Transact-SQL Table Hints](https://msdn.microsoft.com/en-us/library/ms187373.aspx)
- - [Transact-SQL Query Hints](https://msdn.microsoft.com/en-us/library/ms181714.aspx)
+## [Microsoft Transact-SQL Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql)
+ - [Transact-SQL Join Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join)
+ - [Transact-SQL Table Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table)
+ - [Transact-SQL Query Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query)
 
 [*Back to top*](#header04)
 
 
 ## PowerShell and SQL Server
  - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
- - [TSQL Code Smells Finder](https://tsqlsmells.codeplex.com/) (by Dave Ballantyne)
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
  - [SQL Server Health Check Script with Powershell](http://www.codeproject.com/Tips/848661/SQL-Server-Health-Check-Script-with-Powershell) (by Atul Kapoor)
  - [Universal SQL Server Installation Scripts](https://github.com/ktaranov/Universal-SQL-Installation-Scripts) (by Prakash Heda)  (Github)
@@ -408,13 +408,12 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
  - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
  - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
  - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
- - [Performance Analysis of Logs (PAL) Tool](https://pal.codeplex.com/) (by Clint Huffman)
+ - [Performance Analysis of Logs (PAL) Tool](https://github.com/clinthuffman/PAL) (by Clint Huffman)
  - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad) (Github)
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
  - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
  - [PowerShell DBA Reports](https://github.com/SQLDBAWithABeard/dbareports) (Github)
  - [PowerShell sqlCheck](https://bitbucket.org/yardbirdsax/sqlcheck/src) (Bitbucket) (by Josh Feierman)
- - [PowerShell Enterprise Policy Management Framework](https://epmframework.codeplex.com/)
  - [ReportingServicesTools - Reporting Services Powershell Tools](https://github.com/Microsoft/ReportingServicesTools) (by Microsoft)
  - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
  - [Export-DMVInformation - Export the resuts from Glenn Berry's DMV queries directly to Excel](https://github.com/sanderstad/Export-DMVInformation/) (Github) (by Sander Stad)
