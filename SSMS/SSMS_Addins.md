@@ -16,9 +16,9 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008/2012/2014/2016/2017 | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014           | Dave ballantyne      | Yes          | No    |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008/2012/2014/2016/2017 | SQLTreeo             | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-04-13   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-05-08   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-04-13   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-06-06   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-06-19   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008/2012/2014/2016/2017 | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-03-30   | 2008/2012/2014/2016      | ApexSQL tools        | No           |  $299 |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014           | Spotlight Essentials | Yes          | No    |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2016-09-28   | 2005/2008/2012/2014/2016 | Devart               | No           |  $249 |
@@ -249,7 +249,7 @@ Price: €50
 
 ## ApexSQL Complete <a id="apexsql-complete"></a>
 Download page: [ApexSQL Complete]<br/>
-Release date: 2017-04-13<br/>
+Release date: 2017-06-06<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
@@ -267,7 +267,7 @@ Price: No
 
 ## ApexSQL Refactor <a id="apexsql-refactor"></a>
 Download page: [ApexSQL Refactor]<br/>
-Release date: 2017-05-08<br/>
+Release date: 2017-06-19<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
@@ -286,7 +286,7 @@ With ApexSQL Refactor you can:
 
 ## ApexSQL Search <a id="apexsql-search"></a>
 Download page: [ApexSQL Search]<br/>
-Release date: 2017-04-13<br/>
+Release date: 2017-06-19<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
@@ -559,3 +559,7 @@ Lightweight add-in to connect your databases to your source control system
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
+
+[SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
+[Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
+[DbForge Search Download]:https://www.devart.com/dbforge/sql/search/searchsql22std.exe
