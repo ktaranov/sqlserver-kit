@@ -1,8 +1,8 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- August 2017
--- Last Modified: August 7, 2017
+-- September 2017
+-- Last Modified: September 4, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -86,7 +86,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																												11.0.5678		SP2 CU16			1/17/2017   ---->  11.0.6579		SP3 CU7			 1/17/2017
 --																																									   11.0.6594		SP3 CU8			 3/20/2017
 --																																									   11.0.6598		SP3 CU9			 5/15/2017																											                                                            				
---																												
+--																																									   11.0.6607		SP3 CU10		  8/8/2017																											
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 

@@ -1,8 +1,8 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- August 2017
--- Last Modified: August 7, 2017
+-- September 2017
+-- Last Modified: August 28, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -347,6 +347,7 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Available physical memory is high
 -- Physical memory usage is steady
 -- Available physical memory is low
+-- Available physical memory is running low
 -- Physical memory state is transitioning
 
 
@@ -1643,6 +1644,15 @@ ORDER BY OBJECT_NAME(i.[object_id]) OPTION (RECOMPILE);
 -- https://msdn.microsoft.com/en-us/library/dn133166.aspx
 
 
+SELECT SUM(allocated_bytes)/1024/1024 AS [XTP_MEMORY_IN_MB]
+FROM sys.dm_db_xtp_memory_consumers;
+
+SELECT  SUM(allocated_bytes)/(1024*1024) AS total_allocated_MB,   
+        SUM(used_bytes)/(1024*1024) AS total_used_MB  
+FROM sys.dm_db_xtp_memory_consumers;  
+
+
+
 -- Look at Columnstore index physical statistics (Query 75) (Columnstore Index Physical Stat)
 SELECT OBJECT_NAME(ps.object_id) AS [TableName],  
 	i.[name] AS [IndexName], ps.index_id, ps.partition_number,
@@ -1759,8 +1769,8 @@ ORDER BY total_duration DESC OPTION (RECOMPILE);
 
 -- Get input buffer information for the current database (Query 80) (Input Buffer)
 SELECT es.session_id, DB_NAME(es.database_id) AS [Database Name],
-es.login_time, es.cpu_time, es.logical_reads,
-es.[status], ib.event_info AS [Input Buffer]
+       es.login_time, es.cpu_time, es.logical_reads,
+       es.[status], ib.event_info AS [Input Buffer]
 FROM sys.dm_exec_sessions AS es WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_input_buffer(es.session_id, NULL) AS ib
 WHERE es.database_id = DB_ID()

@@ -1,8 +1,8 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- August 2017
--- Last Modified: August 7, 2017
+-- September 2017
+-- Last Modified: September 4, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -72,6 +72,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.2193.0		RTM CU4				1/18/2017   ---->			13.0.4411.0		SP1 CU1				 1/18/2017
 -- 13.0.2197.0		RTM CU5				3/20/2017   ---->			13.0.4422.0		SP1 CU2				 3/20/2017
 -- 13.0.2204.0		RTM CU6				5/15/2017   ---->			13.0.4435.0		SP1 CU3				 5/15/2017
+-- 13.0.2210.0		RTM CU7				8/8/2017    ---->			13.0.4446.0		SP1 CU4				 8/8/2017
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -97,6 +98,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- Download SQL Server Management Studio (SSMS)
 -- https://msdn.microsoft.com/en-us/library/mt238290.aspx	
+
+-- Update Center for Microsoft SQL Server
+-- http://bit.ly/2pZptuQ
 
 
 
