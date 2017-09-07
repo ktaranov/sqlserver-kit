@@ -5,7 +5,7 @@ Content:
 1. [Import and Export Settings](#1)
 2. [SSMS Shortcuts](#2)
 3. [Keyboard Shortcuts for Favorite Stored Procedures](#3)
-4. [Script any object with data](#4)
+4. [SSMS Scripting Option](#4)
 5. [Selecting a block of text using the ALT Key](#5)
 6. [Script Table and Column Names by Dragging from Object Explorer](#6)
 7. [Disable Copy of Empty Text](#7)
@@ -33,8 +33,9 @@ Content:
 29. [SSMS Default Reports](#29)
 30. [Live Query Statistics](#30)
 31. [Searching in Showplan](#31)
-32. [](#32)
-33. [Reference](#reference)
+32. [Object Explore Details](#32)
+33. [Working with Azure SQL](#33)
+34. [Reference](#reference)
 
 
 Great thanks to:
@@ -53,6 +54,8 @@ Great thanks to:
  - Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
  - Andy Mallon ([b](http://www.am2.co/) | [t](https://twitter.com/AMtwo))
  - Aaron Bertrand ([b](http://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
+ - Daniel Calbimonte ([b](https://www.sqlshack.com/author/daniel-calbimonte/) | [t](https://twitter.com/dcalbimonte))
+ - Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
 
 
 <a id="1"></a>
@@ -70,7 +73,8 @@ Detailed information you can find in this article [Symbolic Links for Sharing Te
 
 <a id="2"></a>
 ## SSMS Shortcuts
-All 957 shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
+All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
+Known problem for SSMS 2012 and 2014: [CTRL+R does not hide the Query Result window in SSMS]
 
 Most useful are:
 
@@ -147,10 +151,20 @@ Also recommended:
 
 
 <a id="4"></a>
-## Script any object with data
+## SSMS Scripting Option
+
+### Script any object with data
 `Right click on database name > Tasks > Generate Scripts …`
 
 ![Script any object with data](/SSMS/SSMS_Tips/ssms_script_objects.gif)
+
+### The Default Scripting Option
+In the previous SQL Server Management Studio versions, the generated script will target the latest released SQL Server version.
+In SSMS 17.2, the `Match Script Settings to Source` has been added, with the default `True` value means that the generated script will target the source SQL Server instance’s version, edition, and engine type, where the `False` value will force the scripting to behave as the previous SSMS versions.
+
+`Tools > Options > SQL Server Object Explore > Scripting > Version Options > Match Script Settings to Source`
+
+More details here: [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more]
 
 
 <a id="5"></a>
@@ -586,6 +600,12 @@ You can searched for the keyword `%Country%` and using `%` as a wildcard charact
 This tells SQL Server Management Studio to display all the objects that have the word `Country` in their name.
 
 
+<a id="33"></a>
+## Working with Azure SQL
+For SSMS 17.2 and above you can enable Multi-Factor Authentication in Azure SQL Database, more details here:
+[Configure Multi-Factor Authentication in Azure SQL Database]
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -609,8 +629,11 @@ Reference:
  - [SQL Server Diagnostics Extension for SSMS] (by Microsoft)
  - [T-SQL Tuesday #92: Lessons Learned the Hard Way] (by Aaron Bertrand)
  - [Connect to SQL Servers in another domain using Windows Authentication] (by Aaron Bertrand)
- - [New in SSMS: Searching in Showplan]
+ - [New in SSMS: Searching in Showplan] (by Pedro Lopes)
  - [Live Query Statistics]
+ - [Configure Multi-Factor Authentication in Azure SQL Database] (by Daniel Calbimonte)
+ - [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more] (by Ahmad Yaseen)
+ - [CTRL+R does not hide the Query Result window in SSMS]
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -625,3 +648,6 @@ Reference:
 [Connect to SQL Servers in another domain using Windows Authentication]:https://www.mssqltips.com/sqlservertip/3250/connect-to-sql-servers-in-another-domain-using-windows-authentication/
 [New in SSMS: Searching in Showplan]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-searching-in-showplan/
 [Live Query Statistics]:https://docs.microsoft.com/en-us/sql/relational-databases/performance/live-query-statistics
+[Configure Multi-Factor Authentication in Azure SQL Database]:https://www.sqlshack.com/configure-multi-factor-authentication-azure-sql-database/
+[What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more]:https://www.sqlshack.com/whats-new-sql-server-management-studio-17-2-authentication-methods-scripting-options/
+[CTRL+R does not hide the Query Result window in SSMS]:https://stackoverflow.com/questions/17068661/ctrlr-does-not-hide-the-query-result-window-in-ssms
