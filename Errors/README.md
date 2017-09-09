@@ -65,6 +65,7 @@ Error code equal `message_id` from `sys.messages`
 |       3013 | RESTORE DATABASE is terminating abnormally                                                                                                              | [KB290787]                                                   |
 |       3154 | The backup set holds a backup of a database other than the existing                                                                                     | [Database Restore Fails with Msg 3154]                       |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media family.                                                    | [Unable to restore a backup – Msg 3241]                      |
+|       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                                                                          | [3634_link1]                                                 |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log file. Roll back the transaction.                        | [Case study: Troubleshooting Doomed Transactions]            |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                                                                           | [4064_link1]                                                 |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]              |
@@ -82,6 +83,7 @@ Error code equal `message_id` from `sys.messages`
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
 |      17182 | Tcp port is already in use                                                                                                                              | [TCP Port Is Already In Use]                                 |
 |      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.                                                         | [17190_link1]                                                |
+|      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s). The statement is proceeding but cannot be restarted. | [18272_link1]                                                |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                                                      | [Login from an Untrusted Domain]                             |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [Why won’t my SQL Logins work?]                              |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                                                                   | [35250_link1]                                                |
@@ -105,6 +107,7 @@ Error code equal `message_id` from `sys.messages`
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
 [Unable to restore a backup – Msg 3241]:https://blogs.msdn.microsoft.com/psssql/2017/04/12/unable-to-restore-a-backup-msg-3241/
+[3634_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
@@ -117,6 +120,7 @@ Error code equal `message_id` from `sys.messages`
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
+[18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [Why won’t my SQL Logins work?]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/

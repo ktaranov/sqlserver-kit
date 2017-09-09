@@ -3561,7 +3561,7 @@ Monitor your business and get answers quickly with rich dashboards available on 
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-[bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
+[bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
