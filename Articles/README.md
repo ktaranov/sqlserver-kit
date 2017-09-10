@@ -399,9 +399,12 @@ Articles types:
 | [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [DEV]       |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
 | [Why is My Database Application so Slow?]                                                                               | Dan Turner                               | 2017-08-24 | [DEV]       |
-| [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DEV],[DBA] |
+| [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DBA],[DEV] |
 | [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                                       | Kendra Little                            | 2017-04-28 | [DBA]       |
 | [Microsoft SQL Server R Services - Internals X]                                                                         | Niels Berglund                           | 2017-08-29 | [DEV],[R]   |
+| [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-08-29 | [DBA],[DEV] |
+| [Hands on Full-Text Search in SQL Server]                                                                               | Jefferson Elias                          | 2017-08-25 | [DBA],[DEV] |
+| [SQL Code Smells]                                                                                                       | Phil Factor                              | 2017-08-31 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -784,3 +787,6 @@ Articles types:
 [Generating Concurrent Activity]:http://michaeljswart.com/2014/01/generating-concurrent-activity/
 [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]:http://littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/
 [Microsoft SQL Server R Services - Internals X]:http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
+[Clustered columnstore: on-disk vs. in-mem]:http://nedotter.com/archive/2017/03/clustered-columnstore-on-disk-vs-in-mem/
+[Hands on Full-Text Search in SQL Server]:https://www.sqlshack.com/hands-full-text-search-sql-server/
+[SQL Code Smells]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-code-smells/
