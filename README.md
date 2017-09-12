@@ -362,7 +362,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
  - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
- - [Adventure Works 2014 Sample Databases](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/adventure-works-2014)
+ - [Adventure Works 2014 Sample Databases](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks2014)
  - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
  - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
