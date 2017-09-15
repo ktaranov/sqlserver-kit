@@ -405,6 +405,9 @@ Articles types:
 | [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-08-29 | [DBA],[DEV] |
 | [Hands on Full-Text Search in SQL Server]                                                                               | Jefferson Elias                          | 2017-08-25 | [DBA],[DEV] |
 | [SQL Code Smells]                                                                                                       | Phil Factor                              | 2017-08-31 | [DBA],[DEV] |
+| [Corruption demo databases and scripts]                                                                                 | Paul Randal                              | 2013-01-08 | [DBA],[COR] |
+| [Understanding Cross-Database Transactions in SQL Server]                                                               | Grahaeme Ross                            | 2015-04-11 | [DBA],[DEV] |
+| [Optional Parameters and Missing Index Requests]                                                                        | Brent OZar                               | 2017-09-14 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -790,3 +793,6 @@ Articles types:
 [Clustered columnstore: on-disk vs. in-mem]:http://nedotter.com/archive/2017/03/clustered-columnstore-on-disk-vs-in-mem/
 [Hands on Full-Text Search in SQL Server]:https://www.sqlshack.com/hands-full-text-search-sql-server/
 [SQL Code Smells]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-code-smells/
+[Corruption demo databases and scripts]:https://www.sqlskills.com/blogs/paul/corruption-demo-databases-and-scripts/
+[Understanding Cross-Database Transactions in SQL Server]:https://www.red-gate.com/simple-talk/sql/database-administration/understanding-cross-database-transactions-in-sql-server/
+[Optional Parameters and Missing Index Requests]:https://www.brentozar.com/archive/2017/09/optional-parameters-missing-index-requests/
