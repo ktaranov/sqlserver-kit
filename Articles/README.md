@@ -408,6 +408,10 @@ Articles types:
 | [Corruption demo databases and scripts]                                                                                 | Paul Randal                              | 2013-01-08 | [DBA],[COR] |
 | [Understanding Cross-Database Transactions in SQL Server]                                                               | Grahaeme Ross                            | 2015-04-11 | [DBA],[DEV] |
 | [Optional Parameters and Missing Index Requests]                                                                        | Brent OZar                               | 2017-09-14 | [DBA],[DEV] |
+| [Uniquifier is a rather unique word isn’t it?]                                                                          | Kenneth Fisher                           | 2017-09-18 | [DBA],[DEV] |
+| [Importance of proper transaction log size management]                                                                  | Paul Randal                              | 2009-04-10 | [DEV]       |
+| [#TSQL2sDay – Starting Out with PowerShell]                                                                             | Rob Sewell                               | 2017-09-12 | [DBA],[PS]  |
+| [Using native compilation to insert parent/child tables]                                                                | Ned Otter                                | 2017-09-11 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -796,3 +800,7 @@ Articles types:
 [Corruption demo databases and scripts]:https://www.sqlskills.com/blogs/paul/corruption-demo-databases-and-scripts/
 [Understanding Cross-Database Transactions in SQL Server]:https://www.red-gate.com/simple-talk/sql/database-administration/understanding-cross-database-transactions-in-sql-server/
 [Optional Parameters and Missing Index Requests]:https://www.brentozar.com/archive/2017/09/optional-parameters-missing-index-requests/
+[Uniquifier is a rather unique word isn’t it?]:https://sqlstudies.com/2017/09/18/uniquifier-is-a-rather-unique-word-isnt-it/
+[Importance of proper transaction log size management]:https://www.sqlskills.com/blogs/paul/importance-of-proper-transaction-log-size-management/
+[#TSQL2sDay – Starting Out with PowerShell]:https://sqldbawithabeard.com/2017/09/12/tsql2sday-starting-out-with-powershell/
+[Using native compilation to insert parent/child tables]:http://nedotter.com/archive/2017/09/using-native-compilation-to-insert-parentchild-tables/
