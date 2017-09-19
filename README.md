@@ -37,7 +37,6 @@ Headers:
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
  - [SQL Server Sample Databases and Datasets](#sql-server-sample-databases-and-datasets)
- - [Microsoft Transact-SQL Hints](#microsoft-transact-sql-hints)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
@@ -48,6 +47,7 @@ Headers:
 ## Repo Folders and Files
  - [SQL Server Data Types](/SQL%20Server%20Data%20Types.md)
  - [SQL Server Edition](/SQL%20Server%20Edition.md)
+ - [SQL Server Hints](/SQL%20Server%Hints.md)
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
@@ -385,14 +385,6 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
  - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
 
 [*Back to top*](#header03)
-
-
-## [Microsoft Transact-SQL Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql)
- - [Transact-SQL Join Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-join)
- - [Transact-SQL Table Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table)
- - [Transact-SQL Query Hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query)
-
-[*Back to top*](#header04)
 
 
 ## PowerShell and SQL Server
