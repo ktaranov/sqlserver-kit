@@ -14,8 +14,6 @@
 [![stars badge]][stars]
 [![forks badge]][forks]
 [![issues badge]][issues]
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/ktaranov/sqlserver-kit.svg)](http://isitmaintained.com/project/ktaranov/sqlserver-kit "Average time to resolve an issue")
-[![Join the chat at https://gitter.im/sqlserver-kit/Lobby](https://badges.gitter.im/sqlserver-kit/Lobby.svg)](https://gitter.im/sqlserver-kit/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![contributors_badge]][contributors]
 
 [licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
@@ -46,6 +44,7 @@ Headers:
 
 ## Repo Folders and Files
  - [SQL Server Data Types](/SQL%20Server%20Data%20Types.md)
+ - [SQL Server Drivers](/SQL%20Server%20Drivers.md)
  - [SQL Server Edition](/SQL%20Server%20Edition.md)
  - [SQL Server Hints](/SQL%20Server%Hints.md)
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)

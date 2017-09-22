@@ -462,7 +462,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer 
 
 ```
 Microsoft SQL Server 2016 (SP1-CU5) (KB4040714) – 13.0.4451.0 (X64)
-    Sep 06 2017 08:55:26
+    Sep  5 2017 16:12:34
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
