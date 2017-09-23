@@ -8,8 +8,10 @@ END;
 GO
 
 
-CREATE FUNCTION [dbo].[udf_GetResourceName] ( @waitResource AS nvarchar(128)
-,                                         @paramName as sysname          =NULL )
+CREATE FUNCTION dbo.udf_GetResourceName(
+    @waitResource AS nvarchar(128)
+  , @paramName as sysname          =NULL
+)
 RETURNS nvarchar(max) --we will return t-sql
 AS
 /*
