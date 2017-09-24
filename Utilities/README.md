@@ -110,16 +110,18 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]                  |              | Idera                 | No             | $1287 |
 | [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                         | ?            | Idera                 | No             | $1420 |
 | [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]             | ?            | Idera                 | No             | ?     |
-| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                    | 2016-09-16   | Devart                | No             |  $149 |
-| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                      | 2016-09-28   | Devart                | No             |  $149 |
-| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2016-09-16   | Devart                | No             |  $249 |
-| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2016-08-17   | Devart                | No             |  $99  |
-| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2016-09-16   | Devart                | Yes            | No    |
+| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                    | 2017-09-15   | Devart                | No             |  $199 |
+| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                      | 2017-08-30   | Devart                | No             |  $199 |
+| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2017-09-15   | Devart                | No             |  $249 |
+| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2017-08-30   | Devart                | No             |  $99  |
+| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2017-08-30   | Devart                | Yes            | No    |
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2017-04-20   | Devart                | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-03-12   | Devart                | Yes            |  $249 |
+| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-08-03   | Devart                | Yes            |  $249 |
 | [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                            | 2016-12-27   | Devart                | No             |  $149 |
-| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2016-09-16   | Devart                | No             |  $149 |
-| [Devart Excel Add-in for SQL Server](#devart-excel)                   | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-05-18   | Devart                | No             |  $100 |
+| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2017-08-30   | Devart                | No             |  $149 |
+| [dbForge Developer Bundle](#dbforge-dev-bundle)                       | No                               | No             | [?]        | [dbForge Developer Bundle]                  | 2017-08-30   | Devart                | No             |  $849 |
+| [dbForge Compare Bundle for SQL Server](#dbforge-compare-bundle)      | No                               | No             | [?]        | [dbForge Compare Bundle for SQL Server]     | 2017-08-30   | Devart                | No             |  $299 |
+| [Devart Excel Add-in for SQL Server](#devart-excel)                   | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-09-13   | Devart                | No             |  $100 |
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                         | ?            | MinionWare            | No             | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]          | 2011-06-02   | Bob Tavlor            | Yes            | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                                | 2016-07-07   | Bill Graziano         | Yes            | No    |
@@ -203,7 +205,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis              | Open Source    | No    |
 | [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne             | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne             | No             | ?     |
-| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart                | Yes            | No    |
+| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-10-31   | Devart                | Yes            | No    |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             | No             | ?     |
 | [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         | Yes            |  $399 |
 | [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]        | ?            | SQLTreeo              | No             |  €180 |
@@ -1529,10 +1531,10 @@ Price: ?
  - Streamline incident management with native ServiceNow integration
 
 
-## dbForge Schema Compare
+ ## dbForge Schema Compare
 <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-09-15<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1546,7 +1548,7 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 ## dbForge Data Compare
 <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-28<br/>
+Release date: 2017-08-30<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1560,7 +1562,7 @@ and effortlessly synchronize data via a convenient wizard with additional option
 ## dbForge Data Generator
 <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-09-15<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1572,7 +1574,7 @@ dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation
 ## dbForge Query Builder
 <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
-Release date: 2016-08-17<br/>
+Release date: 2017-08-30<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1587,7 +1589,7 @@ But even experienced users can save a lot of time on routine work.
 ## dbForge Event Profiler
 <a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1613,7 +1615,7 @@ Decrypt SQL Server Procedures, Functions, Triggers, and Views
 ## dbForge Studio
 <a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
-Release date: 2017-03-12<br/>
+Release date: 2017-08-03<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017/Amazon RDS/SQL Azure<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1643,7 +1645,7 @@ It provides an easier way to explore and maintain existing databases, design com
 ## dbForge Documenter
 <a id="dbforge-documenter"></a>
 Download page: [dbForge Documenter]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1654,10 +1656,45 @@ This tool automatically generates documentation of an entire SQL Server database
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
 
 
+## dbForge Developer Bundle
+<a id="dbforge-dev-bundle"></a>
+Download page: [dbForge Developer Bundle]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $849
+
+Developer Bundle for SQL Server is a tool pack that extends SSMS with many essential features aimed not only boost developers' productivity but also reduce expenses while performing routine tasks.
+ - Increase productivity, when creating complex queries and code writing with SQL Complete, Search, Documenter and Query Builder.
+ - Save your time while comparing and synchronizing data and schema with Source Control, Data Compare, and Schema Compare.
+ - Simplify the testing process drastically and generate intensional test data with Data Generator and Unit Test.
+ - Monitor SQL Server performance and troubleshoot database issues using Index Manager, Monitor, as well as Event Profiler.
+
+
+
+## dbForge Compare Bundle for SQL Server
+<a id="dbforge-compare-bundle"></a>
+Download page: [dbForge Compare Bundle for SQL Server]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $299
+
+One solution to handle SQL data and schema diffs.
+ - A variety of supported schema objects.
+ - Convenient comparison wizards will help you to tune data and schema comparisons up to your needs..
+ - Compare databases with different structures.
+ - Manage comparison results by applying filtering, grouping, exclude or include the needed objects to continue working with them, etc.
+ - Handy Synchronization wizards will help you to: create accurate synchronization scripts, migrate any schema differences, dependency check to script objects in the correct order for updates, resolve synchronization issues automatically, view warnings on controversial points prior to synchronization.
+ - Command-line interface.
+ 
+ 
 ## Devart Excel Add-in for SQL Server
 <a id="devart-excel"></a>
 Download page: [Devart Excel Add-in for SQL Server]<br/>
-Release date: 2017-05-18<br/>
+Release date: 2017-09-13<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -3562,6 +3599,8 @@ SQLAutomate makes it easy to manage a single database server instance, hundreds 
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[dbForge Developer Bundle]:https://www.devart.com/dbforge/sql/developer-bundle/
+[dbForge Compare Bundle for SQL Server]:https://www.devart.com/dbforge/sql/compare-bundle/
 [Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
