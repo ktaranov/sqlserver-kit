@@ -1,9 +1,9 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **32** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
          
 | Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-07-07   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-09-06   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  €150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008/2012/2014/2016/2017           | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                               | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017           | Red Gate             | Yes          | No    |
@@ -11,7 +11,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008/2012/2014/2016/2017           | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012/2014/2016/2017                | Red Gate             | No           |  $495 |
 | [Supratimas](#supratimas)                             | [Supratimas]                  | 2017-07-11   | 2008/2012/2014/2016/2017           | TTRider LLC          | Yes          | No    |
-| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2008/2012/2014/2016                | Mladen Prajdić       | No           |   €30 |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2012/2014/2016/2017                | Mladen Prajdić       | No           |   €30 |
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014                     | Gudu Software        | No           |   $50 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008/2012/2014/2016/2017           | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                     | Dave ballantyne      | Yes          | No    |
@@ -32,19 +32,20 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014                     | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014                     | Alex Maslyukov       | Yes          | No    |
 | [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012                          | Tao Klerks           | Yes          | No    |
-| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2016-08-01   | 2012/2014/2016/2017                | Vlasov Studio        | No           |   $49 |
+| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2017-08-24   | 2012/2014/2016/2017                | Vlasov Studio        | No           |   $49 |
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                          | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                          | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL           | Yes          |  $149 |
 
 
-## SSMSBoost <a id="ssmsboost"></a>
+<a id="ssmsboost"></a>
+## SSMSBoost
 Download page: [SSMSBoost]<br/>
-Release date: 2017-05-18<br/>
+Release date: 2017-09-06<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
-Price: $150
+Price: €150
 
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
@@ -55,7 +56,8 @@ Licensing options: after 30 day trial period register and get fully-functional f
 Currently both versions have the same set of features.
 
 
-## SqlSmash <a id="sqlsmash"></a>
+<a id="sqlsmash"></a>
+## SqlSmash
 Download page: [SqlSmash]<br/>
 Release date: 2017-06-10<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -99,7 +101,8 @@ SQL Code Guard is a free solution for SQL Server that provides fast and comprehe
  - API for custom tool development (demo projects can be found in SQL Code Guard folder)
 
 
-## SQL Search <a id="sql-search"></a>
+<a id="sql-search"></a>
+## SQL Search
 Download page: [SQL Search]<br/>
 Release date: 2017-02-27<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -140,7 +143,8 @@ Price: $369
 Write unit tests (using the open-source [tSQLt framework](https://github.com/tSQLt-org/tSQLt)) for SQL Server databases in SQL Server Management Studio
 
 
-## Red Gate SQL Source Control <a id="red-gate-control"></a>
+<a id="red-gate-control"></a>
+## Red Gate SQL Source Control
 Download page: [Red Gate SQL Source Control]<br/>
 Release date: 2017-06-30<br/>
 Support Version: 2012/2014/2016/2017<br/>
@@ -176,7 +180,7 @@ SQL Server query plan execution visualizer
 ## SSMS Tools Pack
 Download page: [SSMS Tools Pack]<br/>
 Release date: 2016-11-28<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2012/2014/2016/2017<br/>
 Developer: Mladen Prajdić<br/>
 Free version: No<br/>
 Price: €30
@@ -191,7 +195,8 @@ Price: €30
  - Run custom scripts from a chosen node in Object Explorer
 
 
-## SQL Pretty Printer <a id="sql-pretty-printer"></a>
+<a id="sql-pretty-printer"></a>
+## SQL Pretty Printer
 Download page: [SQL Pretty Printer]<br/>
 Release date: 2015-11-05<br/>
 Support Version: 2008/2012/2014<br/>
@@ -207,7 +212,8 @@ Price: No
  - quickly convert between SQL and C#, Java, etc.
 
 
-## SQL Sentry Plan Explorer <a id="sql-sentry-plan-explorer"></a>
+<a id="sql-sentry-plan-explorer"></a>
+## SQL Sentry Plan Explorer
 Download page: [SQL Sentry Plan Explorer]<br/>
 Release date: 2017-05-25<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -219,7 +225,8 @@ With both a free and PRO version, Plan Explorer builds upon the graphical plan v
 It is a lightweight standalone app that contains many of the plan analysis features introduced in SQL Sentry v6, and does not require a collector service or database.
 
 
-## TSQL Code Smells Finder <a id="tsql-code-smells-finder"></a>
+<a id="tsql-code-smells-finder"></a>
+## TSQL Code Smells Finder
 Download page: [TSQL Code Smells Finder]<br/>
 Release date: 2013-02-15<br/>
 Support Version: 2008/2012/2014<br/>
@@ -231,7 +238,8 @@ TSQL Code can smell, it may work just fine but there can be hidden dangers held 
 This is a proof of concept work which will analyze TSQL scripts in an attempt to weed out some of these dangers.
 
 
-## SQLTreeo <a id="sqltreeo"></a>
+<a id="sqltreeo"></a>
+## SQLTreeo
 Download page: [SQLTreeo]<br/>
 Release date: 2017-06-06<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -248,7 +256,8 @@ Price: €50
  - Dynamic folders
 
 
-## ApexSQL Complete <a id="apexsql-complete"></a>
+<a id="apexsql-complete"></a>
+## ApexSQL Complete
 Download page: [ApexSQL Complete]<br/>
 Release date: 2017-06-07<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -266,7 +275,8 @@ Price: No
  - Check queries in test mode
 
 
-## ApexSQL Refactor <a id="apexsql-refactor"></a>
+<a id="apexsql-refactor"></a>
+## ApexSQL Refactor
 Download page: [ApexSQL Refactor]<br/>
 Release date: 2017-05-08<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -285,7 +295,8 @@ With ApexSQL Refactor you can:
  - Locate & highlight unused variables
 
 
-## ApexSQL Search <a id="apexsql-search"></a>
+<a id="apexsql-search"></a>
+## ApexSQL Search
 Download page: [ApexSQL Search]<br/>
 Release date: 2017-06-19<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -302,7 +313,8 @@ With ApexSQL Search you can:
  - Rename SQL objects safely
 
 
-## ApexSQL Source Control <a id="apexsql-source-control"></a>
+<a id="apexsql-source-control"></a>
+## ApexSQL Source Control
 Download page: [ApexSQL Source Control]<br/>
 Release date: 2017-08-22<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -320,7 +332,8 @@ Price: $299
  - Create and apply label from source control
 
 
-## Spotlight Developer <a id="spotlight-developer"></a>
+<a id="spotlight-developer"></a>
+## Spotlight Developer
 Download page: [Spotlight Developer]<br/>
 Release date: 2016-02-14<br/>
 Support Version: 2008/2012/2014<br/>
@@ -337,7 +350,8 @@ This makes it possible for you to take advantage of data collections for all you
 You also get a FREE System health Check, Performance Health Analysis and comprehensive information about your most expensive queries.
 
 
-## dbForge Source Control <a id="dbforge-source-control"></a>
+<a id="dbforge-source-control"></a>
+## dbForge Source Control
 Download page: [dbForge Source Control]<br/>
 Release date: 2017-09-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
@@ -349,7 +363,8 @@ dbForge Source Control for SQL Server is a powerful SSMS add-in for managing SQL
 The tool can link your databases to all popular source control systems, and delivers smooth and clear workflow in a familiar interface.
 
 
-## dbForge Unit Test <a id="dbforge-unit-test"></a>
+<a id="dbforge-unit-test"></a>
+## dbForge Unit Test
 Download page: [dbForge Unit Test]<br/>
 Release date: 2017-09-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -362,7 +377,8 @@ The tool is based on the open-source tSQLt framework, so SQL developers can now 
 dbForge Unit Test for SQL Server functionality allows you to develop stable and reliable code that can be properly regression tested at the unit level.
 
 
-## dbForge Data Pump <a id="dbforge-data-pump"></a>
+<a id="dbforge-data-pump"></a>
+## dbForge Data Pump
 Download page: [dbForge Data Pump]<br/>
 Release date: 2017-09-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
@@ -374,7 +390,8 @@ dbForge Data Pump for SQL Server is an SSMS add-in for filling SQL databases wit
 The tool supports 10+ widely used data formats and includes a number of advanced options and templates for recurring scenarios.
 
 
-## dbForge Index Manager <a id="dbforge-index-manager"></a>
+<a id="dbforge-index-manager"></a>
+## dbForge Index Manager
 Download page: [dbForge Index Manager]<br/>
 Release date: 2017-09-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
@@ -388,7 +405,8 @@ You can instantly rebuild and reorganize SQL indexes in visual mode or generate 
 dbForge Index Manager for SQL Server will significantly boost SQL Server performance without much effort.
 
 
-## dbForge Search <a id="dbforge-search"></a>
+<a id="dbforge-search"></a>
+## dbForge Search
 Download page: [dbForge Search]<br/>
 Release date: 2017-09-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
@@ -401,7 +419,8 @@ It can be very difficult to find a required table or to remember names of your s
 With dbForge Object Search for SQL Server you no longer need to look through the entire SSMS Object Explorer to find a required object.
 
 
-## dbForge Monitor <a id="dbforge-monitor"></a>
+<a id="dbforge-monitor"></a>
+## dbForge Monitor
 Download page: [dbForge Monitor]<br/>
 Release date: 2017-04-20<br/>
 Support Version: 2008/2008R2/2012/2014/2016<br/>
@@ -414,7 +433,9 @@ Price: No
  - The Wait Stats tab, you can identify the resources that slow down the server. It shows the list of waiting tasks encountered by execution threads because resources required for the request fulfillment were busy or not available.
  - dbForge Monitor includes an SQL query performance analyzer that allows you to detect and optimize the most expensive queries that overload the system. Apart from the list of the poorly performing queries, the tool shows the query text and query profiling data that	can help you to rewrite a query in the most productive way.
 
-## dbForge SQL Complete <a id="dbforge-sql-complete"></a>
+
+<a id="dbforge-sql-complete"></a>
+## dbForge SQL Complete
 Download page: [dbForge SQL Complete]<br/>
 Release date: 2017-09-30<br/>
 Support Version: SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
@@ -426,7 +447,8 @@ dbForge SQL Complete provides a wide range of code completion features that reli
 column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
 
 
-## SoftTree SQL Assistant <a id="softtree-sql-assistant"></a>
+<a id="softtree-sql-assistant"></a>
+## SoftTree SQL Assistant
 Download page: [SoftTree SQL Assistant]<br/>
 Release date: 2016-03-18<br/>
 Support Version: 2008/2012/2014<br/>
@@ -437,7 +459,8 @@ Price: $179
 SQL Assistant equips database developers and DBAs with the productivity tools they need to speed up the database development process, improve code quality and accuracy.
 
 
-## SQL Enlight for SSMS <a id="sql-enlight-for-ssms"></a>
+<a id="sql-enlight-for-ssms"></a>
+## SQL Enlight for SSMS
 Download page: [SQL Enlight for SSMS]<br/>
 Release date: 2016-04-25<br/>
 Support Version: 2008/2012/2014<br/>
@@ -454,7 +477,8 @@ Price: $195
  - Continuous integration support
 
 
-## SQL Hunting Dog <a id="sql-hunting-dog"></a>
+<a id="sql-hunting-dog"></a>
+## SQL Hunting Dog
 Download page: [SQL Hunting Dog]<br/>
 Release date: 2016-03-03<br/>
 Support Version: 2008/2012/2014<br/>
@@ -468,7 +492,8 @@ Price: No
  - Perform common operation (select data, modify table, design table, etc.) with ease
 
 
-## Poor Mans T-SQL Formatter <a id="poor-mans"></a>
+<a id="poor-mans"></a>
+## Poor Mans T-SQL Formatter
 Download page: [Poor Mans T-SQL Formatter]<br/>
 Release date: 2013-10-23<br/>
 Support Version: 2008/2012<br/>
@@ -480,9 +505,10 @@ This formatter does implement a high-level SQL tokenizer and parser, but the gra
 It does not distinguish between different types of DML, it does not parse full expression trees, etc - there's a lot it doesn't do, it just does the bare minimum to support the target formatting.
 
 
-## Tabs Studio <a id="tabs-studio"></a>
+<a id="tabs-studio"></a>
+## Tabs Studio
 Download page: [Tabs Studio]<br/>
-Release date: 2016-08-01<br/>
+Release date: 2017-08-24<br/>
 Support Version: 2012/2014/2016/2017<br/>
 Developer: Vlasov Studio<br/>
 Free version: No<br/>
