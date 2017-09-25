@@ -1854,8 +1854,8 @@ Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server
 ## ApexSQL Audit
 <a id="apexsql-audit"></a>
 Download page: [ApexSQL Audit]<br/>
-Release date: 2016-04-08<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-11<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1699
@@ -1873,8 +1873,8 @@ Price: $1699
 ## ApexSQL Backup
 <a id="apexsql-backup"></a>
 Download page: [ApexSQL Backup]<br/>
-Release date: 2015-12-30<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-08-01<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1892,8 +1892,8 @@ Price: $499
 ## ApexSQL Log
 <a id="apexsql-log"></a>
 Download page: [ApexSQL Log]<br/>
-Release date: 2015-11-23<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-24<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1999
@@ -1911,8 +1911,8 @@ Price: $1999
 ## ApexSQL Monitor
 <a id="apexsql-monitor"></a>
 Download page: [ApexSQL Monitor]<br/>
-Release date: 2015-12-29<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-12<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1930,8 +1930,8 @@ Price: $499
 ## ApexSQL Recover
 <a id="apexsql-recover"></a>
 Download page: [ApexSQL Recover]<br/>
-Release date: 2015-01-21<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-18<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1999
@@ -1964,29 +1964,24 @@ Price: $399
 ## ApexSQL Build
 <a id="apexsql-build"></a>
 Download page: [ApexSQL Build]<br/>
-Release date: 2015-12-22<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-15<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
 
-Run scripts on multiple databases at once
- - Create C# executables / .NET deployment packages
+ - Create executable installation packages
  - Deploy databases directly from SQL source control
  - Consolidate multiple SQL scripts
- - Build databases from scripts
- - source control
- - etc
+ - Build databases from scripts, source control, etc
  - Ensure error free deployments
  - Preview the script impact by action or SQL object
- - Execute scripts on saved list of servers/databases
-
 
 ## ApexSQL Clean
 <a id="apexsql-clean"></a>
 Download page: [ApexSQL Clean]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-05-18<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
@@ -2004,33 +1999,32 @@ Price: $399
 ## ApexSQL Data Diff
 <a id="apexsql-data-diff"></a>
 Download page: [ApexSQL Data Diff]<br/>
-Release date: 2015-12-11<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-06-06<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $399
+Price: $599
 
-Compare data in live databases and backups
+ - Compare data in live DBs, backups and SC projects
  - Perform row level recovery without restoring
- - Community
- - Standard
- - and Professional editions
+ - Community, Standard, and Professional editions
  - Compare huge databases quickly and without errors
  - Automate and schedule data migrations
  - Initiate database compares directly from SSMS
- - Export results to HTML
- - XML and Excel
- - Create executable .NET packages
+ - Export results to HTML, CSV and Excel
+ - Create executable installation packages
+ - Integrate with all popular SC systems e.g. Git, SVN
+ - Deploy data changes directly from a source control label
 
 
 ## ApexSQL Diff
 <a id="apexsql-diff"></a>
 Download page: [ApexSQL Diff]<br/>
-Release date: 2016-03-23<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-06-07<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $399
+Price: $599
 
  - Compare live DBs, backups, scripts and SC projects
  - Deploy a database directly from source control
@@ -2044,13 +2038,13 @@ Price: $399
 ## ApexSQL Doc
 <a id="apexsql-doc"></a>
 Download page: [ApexSQL Doc]<br/>
-Release date: 2015-04-19<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-09-06<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $299
+Price: $699
 
-Document SQL Server databases and SSIS packages
+ - Document SQL Server databases and SSIS packages
  - Generate documentation in CHM, HTML, Word and PDF
  - Automate and schedule the documenting process
  - Display graphical relationship diagrams
@@ -2063,8 +2057,8 @@ Document SQL Server databases and SSIS packages
 ## ApexSQL Generate
 <a id="apexsql-generate"></a>
 Download page: [ApexSQL Generate]<br/>
-Release date: 2016-03-15<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-13<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -2082,11 +2076,11 @@ Price: $499
 ## ApexSQL Script
 <a id="apexsql-script"></a>
 Download page: [ApexSQL Script]<br/>
-Release date: 2015-09-11<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2016-05-10<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $249
+Price: $399
 
  - Script both SQL database objects and data
  - Create executable .NET packages
@@ -2101,11 +2095,11 @@ Price: $249
 ## ApexSQL Trigger
 <a id="apexsql-trigger"></a>
 Download page: [ApexSQL Trigger]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $1999
+Price: $1299
 
  - Track data / DML changes in SQL Server databases
  - Integrate royalty free auditing into your apps
@@ -2116,6 +2110,44 @@ Price: $1999
  - Track schema / DDL changes in audited database
  - Audit who, what, and when for all changes
 
+
+## ApexSQL Propagate
+<a id="apexsql-propagate"></a>
+Download page: [ApexSQL Propagate]<br/>
+Release date: 2017-06-20<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Execute scripts on saved list of servers/databases
+ - Parse SQL scripts prior to execution
+ - Create SQL scripts directly in the application
+ - Manage lists of SQL scripts and SQL databases
+ - Set order of SQL scripts execution
+ - Export execution results into TXT or CSV file
+ - Preview exaction results by databases or by scripts
+ - Edit SQL scripts in a built-in IDE prior to execution
+ 
+ 
+## ApexSQL Plan
+<a id="apexsql-pan"></a>
+Download page: [ApexSQL Plan]<br/>
+Release date: 2017-06-07<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Analyze and optimize SQL query execution plans
+ - Identify query performance issues and deadlocks
+ - Understand query performance characteristics
+ - Analyze query waits & review query execution plans
+ - Customize graphical query execution plan view
+ - See the actual relative cost of each plan operator
+ - Analyze query live performance statistics
+ - Compare estimated and actual query execution plans
+ 
 
 ## DBBest T-SQL Analyzer
 <a id="dbbest-t-sql-analyzer"></a>
@@ -3684,6 +3716,8 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [ApexSQL Generate]:https://www.apexsql.com/sql_tools_generate.aspx
 [ApexSQL Script]:https://www.apexsql.com/sql_tools_script.aspx
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
+[ApexSQL Propagate]:https://www.apexsql.com/sql_tools_propagate.aspx
+[ApexSQL Plan]:https://www.apexsql.com/sql_tools_plan.aspx
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
