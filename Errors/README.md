@@ -64,6 +64,7 @@ Error code equal `message_id` from `sys.messages`
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                                         | [CREATE DATABASE – I’ve not seen that before.]               |
 |       1904 | The statistics on table has 65 columns in the key list                                                                                                  | [SQL SERVER - Fix: Error: Msg 1904]                          |
 |       3013 | RESTORE DATABASE is terminating abnormally                                                                                                              | [KB290787]                                                   |
+|       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messages.                                                    | [3041_link1]                                                 |
 |       3154 | The backup set holds a backup of a database other than the existing                                                                                     | [Database Restore Fails with Msg 3154]                       |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media family.                                                    | [Unable to restore a backup – Msg 3241]                      |
 |       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                                                                          | [3634_link1]                                                 |
@@ -71,7 +72,7 @@ Error code equal `message_id` from `sys.messages`
 |       4064 | Cannot open user default database. Login failed.Login failed.                                                                                           | [4064_link1]                                                 |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]              |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                                                                   | [SQL SERVER - FIX Error 5120]                                |
-|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [When SQL Server fails to create a secondary data file]      |
+|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [5123_link1], [5123_link1]                                   |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.                                                         | [6335_link1]                                                 |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                                                                  | [Discuss Execute(SQL) At LinkedServer]                       |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...                                                          | [Discuss Execute(SQL) At LinkedServer]                       |
@@ -103,6 +104,7 @@ Error code equal `message_id` from `sys.messages`
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
+[3041_link1]:https://www.sqlservercentral.com/Forums/Topic1179720-1550-1.aspx
 [4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
 [SQL Server 2016 Online ALTER COLUMN Operation]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
@@ -110,7 +112,8 @@ Error code equal `message_id` from `sys.messages`
 [Unable to restore a backup – Msg 3241]:https://blogs.msdn.microsoft.com/psssql/2017/04/12/unable-to-restore-a-backup-msg-3241/
 [3634_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
-[When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
