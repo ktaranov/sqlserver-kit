@@ -15,14 +15,14 @@ Author: Phil Factor
 Revision: 1.0
 date: 21 Jan 2017
 example: >
-	Select dbo.Metaphone ('opportunities')
-	--OPRTNTS
+    Select dbo.Metaphone ('opportunities')
+    --OPRTNTS
 Parameters: 
-	-- @String (a word -all punctuation will be stripped out)
+    -- @String (a word -all punctuation will be stripped out)
   A string representing the Metaphone equivalent of the word. 
 **/  
 (
-	@String VARCHAR(30)
+    @String VARCHAR(30)
 )
 RETURNS VARCHAR(10)
 AS
@@ -33,9 +33,9 @@ DECLARE @This CHAR, @Next CHAR, @Following CHAR, @Previous CHAR, @silent BIT;
 SELECT @String = UPPER(LTRIM(COALESCE(@String, ''))); --trim and upper case
 SELECT @where= PATINDEX ('%[^A-Z]%',@String COLLATE Latin1_General_CI_AI ) 
 WHILE  @where>0 --strip out all non-alphabetic characters!(Edited. Thanks Ros Presser) 
-	BEGIN
-	SELECT @String=STUFF(@string,@where,1,'')
-	SELECT @where=PATINDEX ('%[^A-Z]%',@String COLLATE Latin1_General_CI_AI ) 
+    BEGIN
+    SELECT @String=STUFF(@string,@where,1,'')
+    SELECT @where=PATINDEX ('%[^A-Z]%',@String COLLATE Latin1_General_CI_AI ) 
     END
 IF(LEN(@String) < 2) RETURN  @String
  
@@ -70,9 +70,9 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
   --SELECT @Previous,@this,@Next,@Following,@New,@ii,@Len,@Metaphone
   /* Drop duplicate adjacent letters, except for C.*/
   IF @This=@Previous AND @This<> 'C' 
-	BEGIN
-	--we do nothing 
-	SELECT @New=0
+    BEGIN
+    --we do nothing 
+    SELECT @New=0
     END
   /*Drop all vowels unless it is the beginning.*/
   ELSE IF @This IN ( 'A', 'E', 'I', 'O', 'U' )
@@ -93,24 +93,24 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
          BEGIN -- -sce, i, y = silent 
          IF NOT (@Previous= 'S') AND (@Next IN ( 'H', 'E', 'I', 'Y' )) --front vowel set 
            BEGIN
-			   IF(@Next = 'I') AND (@Following = 'A')
-				 SELECT @Metaphone = @Metaphone + 'X'; -- -cia- 
-			   ELSE IF(@Next IN ( 'E', 'I', 'Y' ))
-				 SELECT @Metaphone = @Metaphone + 'S'; -- -ce, i, y = 'S' }
-			   ELSE IF(@Next = 'H') AND (@Previous = 'S')
-				 SELECT @Metaphone = @Metaphone + 'K'; -- -sch- = 'K' }
-			   ELSE IF(@Next = 'H')
-				 BEGIN
-				   IF(@ii = 1) AND ((@ii + 2) <= @Len) 
-					 AND NOT(@Following IN ( 'A', 'E', 'I', 'O', 'U' ))
-					   SELECT @Metaphone = @Metaphone + 'K';
-				   ELSE
-					 SELECT @Metaphone = @Metaphone + 'X';
-				   END
+               IF(@Next = 'I') AND (@Following = 'A')
+                 SELECT @Metaphone = @Metaphone + 'X'; -- -cia- 
+               ELSE IF(@Next IN ( 'E', 'I', 'Y' ))
+                 SELECT @Metaphone = @Metaphone + 'S'; -- -ce, i, y = 'S' }
+               ELSE IF(@Next = 'H') AND (@Previous = 'S')
+                 SELECT @Metaphone = @Metaphone + 'K'; -- -sch- = 'K' }
+               ELSE IF(@Next = 'H')
+                 BEGIN
+                   IF(@ii = 1) AND ((@ii + 2) <= @Len) 
+                     AND NOT(@Following IN ( 'A', 'E', 'I', 'O', 'U' ))
+                       SELECT @Metaphone = @Metaphone + 'K';
+                   ELSE
+                     SELECT @Metaphone = @Metaphone + 'X';
+                   END
            End  
-		 ELSE 
+         ELSE 
            SELECT @Metaphone = @Metaphone +CASE WHEN @Previous= 'S' THEN '' else 'K' end;
-         	   -- Else silent 
+               -- Else silent 
          END; -- Case C }
   /*'D' transforms to 'J' if followed by 'GE', 'GY', or 'GI'. Otherwise, 'D' 
   transforms to 'T'.*/
@@ -128,7 +128,7 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
     BEGIN
   SELECT @silent = 
     CASE WHEN (@Next = 'H') AND (@Following IN ('A','E','I','O','U'))
-	AND (@ii > 1) AND (((@ii+1) = @Len) OR ((@Next = 'n') AND
+    AND (@ii > 1) AND (((@ii+1) = @Len) OR ((@Next = 'n') AND
     (@Following = 'E') AND SUBSTRING(@String,@ii+3,1) = 'D') AND ((@ii+3) = @Len)) 
 -- Terminal -gned 
   AND (@Previous = 'i') AND (@Next = 'n')
@@ -140,7 +140,7 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
   ELSE 0 END
   IF NOT (@silent=1)
     SELECT @Metaphone = @Metaphone 
-	+ CASE WHEN (@Next IN ('E','I','Y')) --front vowel set 
+    + CASE WHEN (@Next IN ('E','I','Y')) --front vowel set 
       THEN  'J' ELSE  'K' END
   END
   /*Drop 'H' if after vowel and not before a vowel.
@@ -149,7 +149,7 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
   ELSE IF @This = 'H'
     BEGIN
     IF NOT ( (@ii= @Len) OR (@Previous IN  ( 'C', 'S', 'T', 'G' ))) 
-	   AND (@Next IN ( 'A', 'E', 'I', 'O', 'U' ) )
+       AND (@Next IN ( 'A', 'E', 'I', 'O', 'U' ) )
      SELECT @Metaphone = @Metaphone + 'H';
          -- else silent (vowel follows) }
     END;
@@ -181,12 +181,12 @@ WHILE((LEN(@Metaphone) <= 8) AND (@ii <= @Len))
   ELSE IF @This = 'S'
     BEGIN
     SELECT @Metaphone = @Metaphone + 
-	  CASE 
-		WHEN(@Next = 'H')
-		 OR( (@ii> 1) AND (@Next = 'i') 
-		  AND (@Following IN ( 'O', 'A' ) )
-		  ) 
-		THEN 'X' ELSE 'S' END;
+      CASE 
+        WHEN(@Next = 'H')
+         OR( (@ii> 1) AND (@Next = 'i') 
+          AND (@Following IN ( 'O', 'A' ) )
+          ) 
+        THEN 'X' ELSE 'S' END;
      END;
   /*'T' transforms to 'X' if followed by 'IA' or 'IO'. 'TH' transforms 
 to '0'. Drop 'T' if followed by 'CH'.*/
@@ -194,14 +194,14 @@ to '0'. Drop 'T' if followed by 'CH'.*/
     BEGIN
     SELECT @Metaphone = @Metaphone
       + CASE 
-	    WHEN(@ii = 1) AND (@Next = 'H') AND (@Following = 'O') 
-	       THEN 'T' -- Initial Tho- }
+        WHEN(@ii = 1) AND (@Next = 'H') AND (@Following = 'O') 
+           THEN 'T' -- Initial Tho- }
         WHEN(@ii > 1) AND (@Next = 'i') 
-		     AND (@Following IN ( 'O', 'A' )) 
-		  THEN 'X'
+             AND (@Following IN ( 'O', 'A' )) 
+          THEN 'X'
         WHEN(@Next = 'H') THEN '0'
         WHEN NOT((@Next = 'C') AND (@Following = 'H')) 
-		  THEN 'T'
+          THEN 'T'
         ELSE '' END;
          -- -tch = silent }
     END;
@@ -235,11 +235,12 @@ to '0'. Drop 'T' if followed by 'CH'.*/
   END; -- While 
 return @Metaphone 
 END
-go
+GO
+
 /*
 Check against the PHP implementation*/
 SELECT * FROM 
-(SELECT dbo.Metaphone ('craven') AS Attempt,'craven' AS original ,'KRFN' AS canonical                      
+(SELECT dbo.Metaphone ('craven') AS Attempt,'craven' AS original ,'KRFN' AS canonical
 UNION ALL SELECT dbo.Metaphone ('platitudinous'),'platitudinous','PLTTTNS'
 UNION ALL SELECT dbo.Metaphone ('woodcarvings'),'woodcarvings','WTKRFNKS'
 UNION ALL SELECT dbo.Metaphone ('overlaid'),'overlaid','OFRLT'
@@ -278,6 +279,5 @@ UNION ALL SELECT dbo.Metaphone ('defeatists'),'defeatists','TFTSTS'
 UNION ALL SELECT dbo.Metaphone ('dispensations'),'dispensations','TSPNSXNS'
 UNION ALL SELECT dbo.Metaphone ('downfall'),'downfall','TNFL'
 UNION ALL SELECT dbo.Metaphone ('naturalising'),'naturalising','NTRLSNK')k
- 
 WHERE attempt <> canonical
-IF @@RowCount>0 RAISERROR( 'As you can see, there was a problem somewhere',16,1)
+IF @@RowCount>0 RAISERROR( 'As you can see, there was a problem somewhere',16,1);
