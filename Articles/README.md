@@ -418,6 +418,8 @@ Articles types:
 | [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]                                            | Darko Martinović                         | 2017-07-17 | [DEV]       |
 | [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]                                   | Ahmad Yaseen                             | 2017-09-22 | [DBA],[DEV] |
 | [Clustered vs Nonclustered: Index Fundamentals You Need To Know]                                                        | Bert Wagner                              | 2017-09-26 | [DBA],[DEV] |
+| [How to Write Efficient TOP N Queries in SQL]                                                                           | JOOQ                                     | 2017-09-22 | [DEV]       |
+| [Checklist: DR Plan Sanity Check]                                                                                       | Robert Davis                             | 2017-09-04 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -816,3 +818,5 @@ Articles types:
 [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]:https://www.red-gate.com/simple-talk/sql/sql-development/sqlclr-practice-creating-better-way-sending-email-sql-server/
 [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]:https://www.sqlshack.com/t-sql-commands-performance-comparison-not-vs-not-exists-vs-left-join-vs-except/
 [Clustered vs Nonclustered: Index Fundamentals You Need To Know]:https://bertwagner.com/2017/09/26/clustered-vs-nonclustered-index-fundamentals-you-need-to-know/
+[How to Write Efficient TOP N Queries in SQL]:https://blog.jooq.org/2017/09/22/how-to-write-efficient-top-n-queries-in-sql/
+[Checklist: DR Plan Sanity Check]:http://sqlsoldier.net/wp/sqlserver/checklistdrplansanitycheck
