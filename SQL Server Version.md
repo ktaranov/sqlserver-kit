@@ -125,7 +125,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install 2017 RC2]                                                   | 14.0.900.75                                  | 2017-08-02                               | ?               | ?                  | ?                | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM]                                                   | 14.0.1000.169                                | 2017-10-02                               | ?               | ?                  | ?                | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP1] Or [Developer Free] then <br/>[SP1 CU5 KB4040714] | 13.0.4001.0<br>13.0.4451.0                   | 2016-11-16<br/>2017-09-18                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU7 KB4032541]  | 12.0.5000.0<br/>12.0.5556.0                  | 2016-07-11<br/>2017-08-28                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP3 2012] then<br/>[KB4025925]              | 11.0.2100.60<br/>11.0.6020.0<br/>11.0.6607.3 | 2012-02-14<br/>2015-11-21<br/>2017-08-08 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -134,7 +134,7 @@ Profits:
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[Install 2017 RC2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-ctp/
+[Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU5 KB4040714]:https://support.microsoft.com/en-us/help/4040714/cumulative-update-5-for-sql-server-2016-sp1
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
@@ -168,27 +168,27 @@ FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 
 Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
-| Direct x64 Download Link        | File Name                                                         | Release Date | Build Number | Size, MB | SHA1                                     |
-|---------------------------------|-------------------------------------------------------------------|--------------| ------------:|---------:|------------------------------------------|
-| [SQL Server 2017]               | SQLServer2017RC2-x64-ENU.iso                                      | 2017-08-02   | 14.0.900.75  |     1473 | 32beb035a29ffd43e6af8718467a11d241381cf1 |
-| [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5  |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |
-| [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0  |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
-| [SQL Server 2016 SP1 KB4032541] | SQLServer2016-KB4040714-x64.exe                                   | 2017-09-18   | 13.0.4451.0  |      689 | b9ed8ae80560ff45e3f696a2990a7e3abd6e73e5 |
-| [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0  |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
-| [SQL Server 2014 SP2 KB4032541] | SQLServer2014-KB4032541-x64.exe                                   | 2017-08-28   | 12.0.5556.0  |      539 | 0a2fc03ba74b133ca56b54116ab0585a85ff7354 |
-| [SQL Server 2012]               | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60 |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
-| [SQL Server 2012 SP3]           | SQLServer2012SP3-KB3072779-x64-ENU.exe                            | 2015-11-21   | 11.0.6020.0  |     1017 | dbf01b6dc6d60c2b045c92d91862e6087ad72a0a |
-| [SQL Server 2012 SP3 KB4025925] | SQLServer2012-KB4025925-x64.exe                                   | 2017-08-08   | 11.0.6607.3  |      613 | b56e18bcc3a90707a558f04e3c7200eee0277239 |
-| SQL Server 2008 R2 RTM          | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1 |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
-| [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0 |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
-| [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000   |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
-| [SQL Server 2008]               | ?                                                                 | 2008-01-19   | 10.0.1600.0  |        ? | ?                                        |
-| [SQL Server 2008 SP4]           | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   | 10.0.6241.0  |      378 | 13610d6cb39e37fcd4a3338244a3ca2a8a404cd8 |
-| [SQL Server 2008 SU]            | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   | 10.00.6000   |       61 | 37a197c60990d2e83e98d1090109a4ab3f2abe4b |
+| Direct x64 Download Link        | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
+|---------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
+| [SQL Server 2017]               | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
+| [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   |  13.0.1601.5  |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |
+| [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   |  13.0.4001.0  |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
+| [SQL Server 2016 SP1 KB4032541] | SQLServer2016-KB4040714-x64.exe                                   | 2017-09-18   |  13.0.4451.0  |      689 | b9ed8ae80560ff45e3f696a2990a7e3abd6e73e5 |
+| [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   |  12.0.5000.0  |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
+| [SQL Server 2014 SP2 KB4032541] | SQLServer2014-KB4032541-x64.exe                                   | 2017-08-28   |  12.0.5556.0  |      539 | 0a2fc03ba74b133ca56b54116ab0585a85ff7354 |
+| [SQL Server 2012]               | SQLFULL_ENU.iso                                                   | 2012-02-14   |  11.0.2100.60 |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
+| [SQL Server 2012 SP3]           | SQLServer2012SP3-KB3072779-x64-ENU.exe                            | 2015-11-21   |  11.0.6020.0  |     1017 | dbf01b6dc6d60c2b045c92d91862e6087ad72a0a |
+| [SQL Server 2012 SP3 KB4025925] | SQLServer2012-KB4025925-x64.exe                                   | 2017-08-08   |  11.0.6607.3  |      613 | b56e18bcc3a90707a558f04e3c7200eee0277239 |
+| SQL Server 2008 R2 RTM          | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   |  10.50.1600.1 |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
+| [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   |  10.50.6220.0 |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
+| [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   |  10.50.6000   |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
+| [SQL Server 2008]               | ?                                                                 | 2008-01-19   |  10.0.1600.0  |        ? | ?                                        |
+| [SQL Server 2008 SP4]           | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   |  10.0.6241.0  |      378 | 13610d6cb39e37fcd4a3338244a3ca2a8a404cd8 |
+| [SQL Server 2008 SU]            | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   |  10.00.6000   |       61 | 37a197c60990d2e83e98d1090109a4ab3f2abe4b |
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[SQL Server 2017]:https://go.microsoft.com/fwlink/?LinkID=853015
+[SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4032541]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/SQLServer2016-KB4040714-x64.exe
@@ -213,11 +213,11 @@ For downloading your copy SQL Server Developer Edition you just need to join the
 
 | Edition\Direct Download Link                                                | Release Date | File name                                                                    | Size, Mb | SHA1                                     |
 |-----------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------|---------:|------------------------------------------|
-| SQL Server 2016 Developer (x64) - DVD (English)                             | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             | 2103     | 1B23982FE56DF3BFE0456BDF0702612EB72ABF75 |
-| SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso | 3025     | BFEE1F300C39638DA0D2CD594636698C6207C852 |
-| SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso | 2462     | ED3C70507A73BCC63D67CFA272CD849B9418A18E |
-| SQL Server 2014 Developer Edition (x64) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     | 2486     | F73F430F55A71DA219FC7257A3A28E8FC142530F |
-| SQL Server 2014 Developer Edition (x86) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     | 2039     | 395B35FD80AA959B02B0C399DA1BB0C020DB6310 |
+| SQL Server 2017 Developer                                                   | 2017-10-02   | en_sql_server_2017_developer_x64_dvd_11296168                                |     1475 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
+| SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso |     3025 | BFEE1F300C39638DA0D2CD594636698C6207C852 |
+| SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso |     2462 | ED3C70507A73BCC63D67CFA272CD849B9418A18E |
+| SQL Server 2014 Developer Edition (x64) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     |     2486 | F73F430F55A71DA219FC7257A3A28E8FC142530F |
+| SQL Server 2014 Developer Edition (x86) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     |     2039 | 395B35FD80AA959B02B0C399DA1BB0C020DB6310 |
 
 
 ## SQL Server Express direct download links
@@ -384,19 +384,19 @@ For details about how to assess the performance differences of your most importa
 ## Quick summary for SQL Server Service Packs
 <a id="quick-summary-for-sql-server-service-packs"></a>
 
-| Version            | Codename    | RTM (no SP)    | SP1            | SP2                             | SP3                               | SP4                             |
-|:-------------------|:------------|:---------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2017    | 2017        | [14.0.900.75]  |                |                                 |                                   |                                 |
-| SQL Server 2016    | 2016        | [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
-| SQL Server 2014    | SQL14       | 12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1   | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
-| SQL Server 2008    | Katmai      | 10.0.1600.22   | [10.0.2531.0]  | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06    | [9.0.2047]     | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
-| SQL Server 2000    | Shiloh      | 8.0.194        | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623        | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
+| Version            | Codename    | RTM (no SP)     | SP1            | SP2                             | SP3                               | SP4                             |
+|:-------------------|:------------|:----------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
+| SQL Server 2017    | 2017        | [14.0.1000.169] |                |                                 |                                   |                                 |
+| SQL Server 2016    | 2016        |  [13.0.1601.5]  | [13.0.4001.0]  |                                 |                                   |                                 |
+| SQL Server 2014    | SQL14       |  12.0.2000.8    | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
+| SQL Server 2012    | Denali      |  11.0.2100.60   | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     |                                 |
+| SQL Server 2008 R2 | Kilimanjaro |  10.50.1600.1   | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
+| SQL Server 2008    | Katmai      |  10.0.1600.22   | [10.0.2531.0]  | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
+| SQL Server 2005    | Yukon       |  9.0.1399.06    | [9.0.2047]     | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
+| SQL Server 2000    | Shiloh      |  8.0.194        | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
+| SQL Server 7.0     | Sphinx      |  7.0.623        | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
 
-[14.0.900.75]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-ctp/
+[14.0.1000.169]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
 [13.0.4001.0]:https://support.microsoft.com/en-us/kb/3182545
 [12.0.5000.0]:https://support.microsoft.com/en-us/kb/3171021
@@ -427,8 +427,8 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RC2) – 14.0.900.75 (X64)
-  Jul 27 2017 08:53:49
+Microsoft SQL Server 2017 (RC2) – 14.0.1000.169 (X64)
+  ???
   Copyright (C) 2017 Microsoft Corporation
   Developer Edition (64-bit) on …
 ```
@@ -441,19 +441,20 @@ Useful articles:
  - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
  - [More ways to discover changes in new versions of SQL Server](https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/)
 
-| Build        | File version     | Branch | Type | KB / Description                                                     | Release Date | Build Date | Size, Mb |
-|--------------|------------------|--------|------|----------------------------------------------------------------------|--------------|------------|---------:|
-| 14.0.900.75  | 2017.140.900.75  | RC     | RC   | [Microsoft SQL Server 2017 Release Candidate 2]                      | 2017-08-02   | 2017-07-27 |     1473 |
-| 14.0.800.90  | 2017.140.800.90  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                        | 2017-07-17   | 2017-07-11 |     1473 |
-| 14.0.600.250 | 2017.140.600.250 | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)  | 2017-05-17   | 2017-05-10 |     1606 |
-| 14.0.500.272 | 2017.140.500.272 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0) | 2017-04-19   | 2017-04-13 |     1721 |
-| 14.0.405.198 | 2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4) | 2017-03-17   | 2017-03-11 |     2001 |
-| 14.0.304.138 | 2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3) | 2017-02-17   | 2017-02-14 |     1978 |
-| 14.0.200.24  | 2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2) | 2017-01-18   | 2017-01-11 |     1975 |
-| 14.0.100.187 | 2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |     1975 |
-| 14.0.1.246   | 2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |     1983 |
+| Build        | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Size, Mb |
+|--------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|---------:|
+| 14.0.900.75  | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                      | 2017-10-02   | 2017-08-27 |     1475 |
+| 14.0.900.75  |  2017.140.900.75  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                        | 2017-08-02   | 2017-07-27 |     1473 |
+| 14.0.800.90  |  2017.140.800.90  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                        | 2017-07-17   | 2017-07-11 |     1473 |
+| 14.0.600.250 |  2017.140.600.250 | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)  | 2017-05-17   | 2017-05-10 |     1606 |
+| 14.0.500.272 |  2017.140.500.272 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0) | 2017-04-19   | 2017-04-13 |     1721 |
+| 14.0.405.198 |  2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4) | 2017-03-17   | 2017-03-11 |     2001 |
+| 14.0.304.138 |  2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3) | 2017-02-17   | 2017-02-14 |     1978 |
+| 14.0.200.24  |  2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2) | 2017-01-18   | 2017-01-11 |     1975 |
+| 14.0.100.187 |  2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |     1975 |
+| 14.0.1.246   |  2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |     1983 |
 
-[Microsoft SQL Server 2017 Release Candidate 2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2017-ctp/
+[Microsoft SQL Server 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 
 
 ## Microsoft SQL Server 2016 Builds
