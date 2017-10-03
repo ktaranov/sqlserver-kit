@@ -474,6 +474,42 @@ Default value for `SELECT @@OPTIONS` is **5496**.
 Let’s assume for a moment that the only two options that are enabled on my machine are ANSI_PADDING and ANSI_WARNINGS.
 The values for these two options are 8 and 16, respectively speaking. The sum of the two is 24.
 
+Microsoft docs: https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-user-options-server-configuration-option
+
+| Value | Configuration             | Description                                                                                                                                                                                             |
+|------:|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1     | [DISABLE_DEF_CNST_CHK]    | **Deprecated** Controls interim or deferred constraint checking.                                                                                                                                        |
+| 2     | [IMPLICIT_TRANSACTIONS]   | For dblib network library connections, controls whether a transaction is started implicitly when a statement is executed. The IMPLICIT_TRANSACTIONS setting has no effect on ODBC or OLEDB connections. |
+| 4     | [CURSOR_CLOSE_ON_COMMIT]  | Controls behavior of cursors after a commit operation has been performed.                                                                                                                               |
+| 8     | [ANSI_WARNINGS]           | Controls truncation and NULL in aggregate warnings.                                                                                                                                                     |
+| 16    | [ANSI_PADDING]            | Controls padding of fixed-length variables.                                                                                                                                                             |
+| 32    | [ANSI_NULLS]              | Controls NULL handling when using equality operators.                                                                                                                                                   |
+| 64    | [ARITHABORT]              | Terminates a query when an overflow or divide-by-zero error occurs during query execution.                                                                                                              |
+| 128   | [ARITHIGNORE]             | Returns NULL when an overflow or divide-by-zero error occurs during a query.                                                                                                                            |
+| 256   | [QUOTED_IDENTIFIER]       | Differentiates between single and double quotation marks when evaluating an expression.                                                                                                                 |
+| 512   | [NOCOUNT]                 | Turns off the message returned at the end of each statement that states how many rows were affected.                                                                                                    |
+| 1024  | [ANSI_NULL_DFLT_ON]       | Alters the session's behavior to use ANSI compatibility for nullability. New columns defined without explicit nullability are defined to allow nulls.                                                   |
+| 2048  | [ANSI_NULL_DFLT_OFF]      | Alters the session's behavior not to use ANSI compatibility for nullability. New columns defined without explicit nullability do not allow nulls.                                                       |
+| 4096  | [CONCAT_NULL_YIELDS_NULL] | Returns NULL when concatenating a NULL value with a string.                                                                                                                                             |
+| 8192  | [NUMERIC_ROUNDABORT]      | Generates an error when a loss of precision occurs in an expression.                                                                                                                                    |
+| 16384 | [XACT_ABORT]              | Rolls back a transaction if a Transact-SQL statement raises a run-time error.                                                                                                                           |
+
+[DISABLE_DEF_CNST_CHK]:https://technet.microsoft.com/en-us/library/ms175103
+[IMPLICIT_TRANSACTIONS]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
+[CURSOR_CLOSE_ON_COMMIT]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-cursor-close-on-commit-transact-sql
+[ANSI_WARNINGS]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-warnings-transact-sql
+[ANSI_PADDING]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-padding-transact-sql
+[ANSI_NULLS]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql
+[ARITHABORT]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql
+[ARITHIGNORE]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithignore-transact-sql
+[QUOTED_IDENTIFIER]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-quoted-identifier-transact-sql
+[NOCOUNT]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql
+[ANSI_NULL_DFLT_ON]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql
+[ANSI_NULL_DFLT_OFF]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-concat-null-yields-null-transact-sql
+[CONCAT_NULL_YIELDS_NULL]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-concat-null-yields-null-transact-sql
+[NUMERIC_ROUNDABORT]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-numeric-roundabort-transact-sql
+[XACT_ABORT]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-xact-abort-transact-sql
+
 ```sql
 /***************************************************************
   Author: John Morehouse
@@ -483,7 +519,7 @@ The values for these two options are 8 and 16, respectively speaking. The sum of
  
   THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR PURPOSE.
 ***************************************************************/
-SELECT 'Disable_Def_Cnst_Chk'    AS 'Option', CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
+SELECT 'DISABLE_DEF_CNST_CHK'    AS 'Option', CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
 SELECT 'IMPLICIT_TRANSACTIONS'   AS 'Option', CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
 SELECT 'CURSOR_CLOSE_ON_COMMIT'  AS 'Option', CASE @@options & 4     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
 SELECT 'ANSI_WARNINGS'           AS 'Option', CASE @@options & 8     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled/Disabled' UNION ALL
