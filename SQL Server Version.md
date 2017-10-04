@@ -347,7 +347,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 
 | SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server 2017                              | 14              |  2017        | 2017         | 856                       | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              |  2016        | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 14              |  CloudDB     | 2010 (2017)  | 862                       | 140                             | 130, 120, 110, 100            |
 | SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
@@ -427,8 +427,8 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RC2) – 14.0.1000.169 (X64)
-  ???
+Microsoft SQL Server 2017 (RTM) – 14.0.1000.169 (X64)
+  Aug 22 2017 17:04:49
   Copyright (C) 2017 Microsoft Corporation
   Developer Edition (64-bit) on …
 ```
@@ -441,18 +441,18 @@ Useful articles:
  - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
  - [More ways to discover changes in new versions of SQL Server](https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/)
 
-| Build        | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Size, Mb |
-|--------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|---------:|
-| 14.0.900.75  | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                      | 2017-10-02   | 2017-08-27 |     1475 |
-| 14.0.900.75  |  2017.140.900.75  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                        | 2017-08-02   | 2017-07-27 |     1473 |
-| 14.0.800.90  |  2017.140.800.90  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                        | 2017-07-17   | 2017-07-11 |     1473 |
-| 14.0.600.250 |  2017.140.600.250 | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)  | 2017-05-17   | 2017-05-10 |     1606 |
-| 14.0.500.272 |  2017.140.500.272 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0) | 2017-04-19   | 2017-04-13 |     1721 |
-| 14.0.405.198 |  2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4) | 2017-03-17   | 2017-03-11 |     2001 |
-| 14.0.304.138 |  2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3) | 2017-02-17   | 2017-02-14 |     1978 |
-| 14.0.200.24  |  2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2) | 2017-01-18   | 2017-01-11 |     1975 |
-| 14.0.100.187 |  2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |     1975 |
-| 14.0.1.246   |  2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |     1983 |
+| Build          | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Size, Mb |
+|----------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|---------:|
+| 14.0.10000.169 | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                      | 2017-10-02   | 2017-08-27 |     1475 |
+|   14.0.900.75  |  2017.140.900.75  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                        | 2017-08-02   | 2017-07-27 |     1473 |
+|   14.0.800.90  |  2017.140.800.90  | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                        | 2017-07-17   | 2017-07-11 |     1473 |
+|   14.0.600.250 |  2017.140.600.250 | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)  | 2017-05-17   | 2017-05-10 |     1606 |
+|   14.0.500.272 |  2017.140.500.272 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0) | 2017-04-19   | 2017-04-13 |     1721 |
+|   14.0.405.198 |  2017.140.405.198 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4) | 2017-03-17   | 2017-03-11 |     2001 |
+|   14.0.304.138 |  2016.140.304.138 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3) | 2017-02-17   | 2017-02-14 |     1978 |
+|   14.0.200.24  |  2016.140.200.24  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2) | 2017-01-18   | 2017-01-11 |     1975 |
+|   14.0.100.187 |  2016.140.100.187 | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |     1975 |
+|   14.0.1.246   |  2016.140.1.246   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |     1983 |
 
 [Microsoft SQL Server 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 
