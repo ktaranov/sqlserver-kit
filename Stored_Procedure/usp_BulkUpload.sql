@@ -20,16 +20,18 @@ ALTER PROCEDURE dbo.usp_BulkUpload (
               , @ROWTERMINATOR        NVARCHAR(10)  = N'\n'
               , @TABLOCK              BIT           = 1
               , @ERRORFILE            NVARCHAR(300) = N''
+              , @FORMATFILE           VARCHAR(4)    = ''
               , @excludeColumns       NVARCHAR(MAX) = N''''''
-              , @rowOrder             NVARCHAR(MAX) = N''
-              , @orderColumnName      BIT           = 1    -- 0 - physical column order; 1 - alphabetical
+              , @rowOrderByColumn     NVARCHAR(MAX) = N''
+              , @skipTempDB           BIT           = 0
+              , @columnTypeSort       BIT           = 1    -- 0 - physical column order; 1 - alphabetical
               , @databaseRecoveryMode NVARCHAR(15)  = N''  -- FULL; BULK_LOGGED; SIMPLE
               , @debug                BIT           = 0    -- 0 - only print tsql statement; 1 - exec tsql statement
 )
 AS
 /*
-Specify Field and Row Terminators (SQL Server): http://msdn.microsoft.com/en-us/library/ms191485.aspx
-MSDN BULK INSERT: http://msdn.microsoft.com/ru-ru/library/ms188365.aspx
+Specify Field and Row Terminators (SQL Server): https://docs.microsoft.com/en-us/sql/relational-databases/import-export/specify-field-and-row-terminators-sql-server
+MSDN BULK INSERT: https://docs.microsoft.com/ru-ru/sql/t-sql/statements/bulk-insert-transact-sql
 
 BULK INSERT
    [ database_name . [ schema_name ] . | schema_name . ] [ table_name | view_name ]
@@ -80,9 +82,10 @@ EXECUTE [dbo].[usp_BulkUpload] @path         = N'd:\',
 BEGIN
     BEGIN TRY
         DECLARE @databaseRecoveryModeCurrent NVARCHAR(15);
+        DECLARE @schemaTableName             NVARCHAR(600) = QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
         DECLARE @tsqlCommand    NVARCHAR(MAX) = '';
         DECLARE @ParamDefinitionIndentity NVARCHAR(500) = N'@identityColumnNameIN NVARCHAR(200), @ColumnsOUT VARCHAR(MAX) OUTPUT';
-        DECLARE @tableFullName  NVARCHAR(600) = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+        DECLARE @tableFullName  NVARCHAR(600) = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
         DECLARE @#tableName     NVARCHAR(600) = QUOTENAME('#' + @tableName);
         DECLARE @OBJECT_ID      INTEGER       = OBJECT_ID(@tableFullName);
         DECLARE @Columns        NVARCHAR(MAX) = N'';
@@ -93,12 +96,17 @@ BEGIN
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
 
+        IF @FORMATFILE NOT IN ('', 'xml', 'fmt') THROW 50004, 'Allowed values for parameter is xml, fmt or blank value', 1;
+        IF @FORMATFILE = '' AND @skipTempDB = 1  THROW 50005, 'For using @skipTempDB = 1 please use @FORMATFILE key (xml or fmt)', 1;
+        IF @skipTempDB = 1 and @columnTypeSort <> 0 THROW 50003, 'Please do not use alphabetical sort with direct insert key (@skipTempDB).', 1;
+        IF @FORMATFILE IN ('xml', 'fmt') AND @columnTypeSort <> 0  THROW 50006, 'Please do not try use alphabetical sort files with formatfile option (@columnTypeSort).', 1;
+
         IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
         IF LEFT(@databaseName, 1) =N'[' OR LEFT (@tableName, 1) = N'[' OR @schemaName = N'['
-        THROW 50002, 'Please do not use quotes in Database, Table or Schema names! In the procedure it is already done with QUOTENAME function.', 1;
+        THROW 50002, 'Please do not use quotes in Databse, Table or Schema names! In the procedure it is alredy done with QUOTENAME function.', 1;
 
-        SET @tableFullName = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+        SET @tableFullName = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
 
         SET @TROW50000 = N'Table ' + @tableFullName + N' is not exists in database ' + QUOTENAME(@databaseName) + N'!!!';
         IF @OBJECT_ID IS NULL THROW 50000, @TROW50000, 1;
@@ -129,14 +137,20 @@ BEGIN
         IF @useIdentity = 2 AND @identityColumnName = '' SET @identityColumnName = @tableName + 'ID';
         IF @debug = 1 PRINT ISNULL('@identityColumnName = {' + @identityColumnName + '}', '@identityColumnName = Null');
 
-        SET @tsqlCommand = N'USE ' + @databaseName + ';'                                          + @crlf +
-                           N'SELECT @ColumnsOUT  = @ColumnsOUT + QUOTENAME(Name) + '','''         + @crlf +
-                           N'FROM sys.columns sac '                                               + @crlf +
-                           N'WHERE sac.object_id = ' + CAST(@OBJECT_ID AS NVARCHAR)               + @crlf +
-                           N'      AND sac.name NOT LIKE ISNULL(@identityColumnNameIN, ''Null'')' + @crlf +
-                           N'      AND QUOTENAME(Name) NOT IN (''' + REPLACE(@excludeColumns, ',', ''',''') + ''')' + @crlf +
-                           CASE WHEN @orderColumnName = 1 THEN N'ORDER BY Name;' ELSE N'ORDER BY column_id;' END
-                          ;
+        SET @tsqlCommand = 
+N'USE __DBName__;
+SELECT @ColumnsOUT  = @ColumnsOUT + QUOTENAME(Name) + '',''
+FROM sys.columns sac
+WHERE sac.object_id = __OBJ_ID__ 
+    AND sac.name NOT LIKE ISNULL(@identityColumnNameIN, ''Null'')
+    AND QUOTENAME(Name) NOT IN (''__excludeCol__'')
+    __columTS__
+';
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__DBName__',  QUOTENAME(@databaseName));
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__OBJ_ID__',  CAST(@OBJECT_ID AS NVARCHAR)); 
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__excludeCol__',  REPLACE(@excludeColumns, ',', ''','''));
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__columTS__',  CASE WHEN @columnTypeSort = 1 THEN N'ORDER BY Name;' ELSE N'ORDER BY column_id;' END);
+
 
         IF @debug = 1 PRINT ISNULL('@OBJECT_ID = {' + CAST(@OBJECT_ID AS NVARCHAR) + '}', '@OBJECT_ID = Null');
         IF @debug = 1 PRINT ISNULL(N'@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + N'}', N'@tsqlCommand = Null');
@@ -166,6 +180,7 @@ WITH (
       ,DATAFILETYPE    = ''__DATAFILETYPE__''
       __KEEPIDENTITY__
       ,FIRSTROW        = __FIRSTROW__
+      __FORMATFILE__
       ___KEEPNULLS___
       __LASTROW__
       __TABLOCK__
@@ -184,6 +199,26 @@ __useIdentityOFF__
 IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
 ';
 
+        IF @skipTempDB = 1 SET @tsqlCommand =
+'BULK INSERT __tableFullName__
+FROM ''__filePath__''
+WITH (
+       FIELDTERMINATOR = ''__FIELDTERMINATOR__''
+      ,ROWTERMINATOR   = ''__ROWTERMINATOR__''
+      ,CODEPAGE        = ''__CODEPAGE__''
+      ,DATAFILETYPE    = ''__DATAFILETYPE__''
+      __KEEPIDENTITY__
+      ,FIRSTROW        = __FIRSTROW__
+      __FORMATFILE__
+      ___KEEPNULLS___
+      __LASTROW__
+      __TABLOCK__
+      ,ERRORFILE = ''__ERRORFILE__''
+);
+'
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FORMATFILE__',      CASE WHEN @FORMATFILE = 'xml' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.xml'''
+                                                                             WHEN @FORMATFILE = 'fmt' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.fmt'''
+                                                                             ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__#tableName__',      @#tableName);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__Columns__',         @Columns);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__tableFullName__',   @tableFullName);
@@ -199,7 +234,7 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',         CASE WHEN @TABLOCK = 1   THEN ',TABLOCK' ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__ERRORFILE__',       @ERRORFILE);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityON__',   CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' ON;' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',        CASE WHEN @rowOrder <> '' THEN 'ORDER BY ' + @rowOrder ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',        CASE WHEN @rowOrderByColumn <> '' THEN 'ORDER BY ' + @rowOrderByColumn ELSE '' END);
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityOFF__',  CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' OFF;' ELSE '' END);
 
         IF @debug = 1 PRINT ISNULL(CAST('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}'  AS NTEXT), '@tsqlCommand = {Null}' + @crlf + '--End Deubg*********/')
@@ -226,8 +261,15 @@ IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
         EXECUTE sp_executesql @tsqlCommand;
 
-        EXECUTE dbo.usp_LogError;
-        EXECUTE dbo.usp_PrintError;
+        --EXECUTE dbo.usp_LogError;
+        PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER()) +
+              ', Severity: '  + CONVERT(varchar(5), ERROR_SEVERITY()) +
+              ', State: '     + CONVERT(varchar(5), ERROR_STATE()) +
+              ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-') +
+              ', Line: '      + CONVERT(varchar(5), ERROR_LINE()) +
+              ', User name: ' + CONVERT(sysname, CURRENT_USER);
+        PRINT ERROR_MESSAGE();
     END CATCH
 END;
 GO
+                                                                                           
