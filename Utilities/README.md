@@ -1534,10 +1534,10 @@ Price: ?
  - Streamline incident management with native ServiceNow integration
 
 
-## dbForge Schema Compare
+ ## dbForge Schema Compare
 <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-09-15<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1551,7 +1551,7 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 ## dbForge Data Compare
 <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-28<br/>
+Release date: 2017-08-30<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1565,7 +1565,7 @@ and effortlessly synchronize data via a convenient wizard with additional option
 ## dbForge Data Generator
 <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-09-15<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1577,7 +1577,7 @@ dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation
 ## dbForge Query Builder
 <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
-Release date: 2016-08-17<br/>
+Release date: 2017-08-30<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1592,7 +1592,7 @@ But even experienced users can save a lot of time on routine work.
 ## dbForge Event Profiler
 <a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1618,7 +1618,7 @@ Decrypt SQL Server Procedures, Functions, Triggers, and Views
 ## dbForge Studio
 <a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
-Release date: 2017-03-12<br/>
+Release date: 2017-08-03<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017/Amazon RDS/SQL Azure<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1648,7 +1648,7 @@ It provides an easier way to explore and maintain existing databases, design com
 ## dbForge Documenter
 <a id="dbforge-documenter"></a>
 Download page: [dbForge Documenter]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1659,10 +1659,45 @@ This tool automatically generates documentation of an entire SQL Server database
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
 
 
+## dbForge Developer Bundle
+<a id="dbforge-dev-bundle"></a>
+Download page: [dbForge Developer Bundle]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $849
+
+Developer Bundle for SQL Server is a tool pack that extends SSMS with many essential features aimed not only boost developers' productivity but also reduce expenses while performing routine tasks.
+ - Increase productivity, when creating complex queries and code writing with SQL Complete, Search, Documenter and Query Builder.
+ - Save your time while comparing and synchronizing data and schema with Source Control, Data Compare, and Schema Compare.
+ - Simplify the testing process drastically and generate intensional test data with Data Generator and Unit Test.
+ - Monitor SQL Server performance and troubleshoot database issues using Index Manager, Monitor, as well as Event Profiler.
+
+
+
+## dbForge Compare Bundle for SQL Server
+<a id="dbforge-compare-bundle"></a>
+Download page: [dbForge Compare Bundle for SQL Server]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $299
+
+One solution to handle SQL data and schema diffs.
+ - A variety of supported schema objects.
+ - Convenient comparison wizards will help you to tune data and schema comparisons up to your needs..
+ - Compare databases with different structures.
+ - Manage comparison results by applying filtering, grouping, exclude or include the needed objects to continue working with them, etc.
+ - Handy Synchronization wizards will help you to: create accurate synchronization scripts, migrate any schema differences, dependency check to script objects in the correct order for updates, resolve synchronization issues automatically, view warnings on controversial points prior to synchronization.
+ - Command-line interface.
+ 
+ 
 ## Devart Excel Add-in for SQL Server
 <a id="devart-excel"></a>
 Download page: [Devart Excel Add-in for SQL Server]<br/>
-Release date: 2017-05-18<br/>
+Release date: 2017-09-13<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -3685,6 +3720,8 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[dbForge Developer Bundle]:https://www.devart.com/dbforge/sql/developer-bundle/
+[dbForge Compare Bundle for SQL Server]:https://www.devart.com/dbforge/sql/compare-bundle/
 [Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
