@@ -3,7 +3,6 @@ Author: Tim Ford
 Original link: http://sqlmag.com/database-administration/estimate-when-long-running-sql-processes-will-finish
 */
 
-
 SET NOCOUNT ON;
 
 SELECT R.session_id
@@ -11,7 +10,7 @@ SELECT R.session_id
      , R.total_elapsed_time/1000 AS elapsed_seconds
      , R.wait_type
      , R.wait_time
-     , R.last_wait_type,
+     , R.last_wait_type
      , DATEADD(s,100/((R.percent_complete)/ (R.total_elapsed_time/1000)), R.start_time) AS est_complete_time
      , ST.text AS batch_text
      , CAST(SUBSTRING(ST.text, R.statement_start_offset / 2,

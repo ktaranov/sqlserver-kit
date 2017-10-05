@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Expotr all SQL Server query plans in files.
+    Export all SQL Server query plans in files.
 .DESCRIPTION
      Export all plans from cache to a .SQLPLAN file
 .PARAMETR

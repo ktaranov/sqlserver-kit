@@ -1,8 +1,8 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2017
--- Last Modified: July 6, 2017
+-- September 2017
+-- Last Modified: September 4, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -13,7 +13,7 @@
 -- If you want to find all of our SQLskills SQL101 blog posts, check out https://www.sqlskills.com/help/sql101/
 
 
--- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
+-- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server!
 
 
 --******************************************************************************
@@ -77,10 +77,11 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --                                                          12.0.4491       SP1 CU10		12/28/2016				12.0.5537		SP2 CU3			12/28/2016
 --															12.0.4502		SP1 CU11		2/21/2017				12.0.5540		SP2 CU4			2/21/2017
 --															12.0.4511		SP1 CU12        4/17/2017				12.0.5546		SP2 CU5			4/17/2017
+--															12.0.4522		SP1	CU13		7/17/2017				12.0.5552		SP2 CU6			7/17/2017
+--																													12.0.5556		SP2 CU7			8/28/2017
 
 
--- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
--- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
+
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://support.microsoft.com/en-us/kb/321185
@@ -105,6 +106,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
 -- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
+
+-- Download SQL Server Management Studio (SSMS)
+-- https://msdn.microsoft.com/en-us/library/mt238290.aspx
 
 
 -- Get socket, physical core and logical core count from the SQL Server Error log. (Query 2) (Core Counts)
@@ -197,7 +201,6 @@ DBCC TRACESTATUS (-1);
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
 --           https://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
-
 -- TF 6533 - Spatial performance improvements in SQL Server 2012 and 2014
 --           https://support.microsoft.com/en-us/kb/3107399
 
@@ -212,6 +215,16 @@ DBCC TRACESTATUS (-1);
 -- Returns status of instant file initialization (Query 6) (IFI Status)
 EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 ------
+
+-- Lets you determine whether Instant File Initialization (IFI) is enabled for the instance
+-- This should be enabled in the vast majority of cases
+-- SQL Server 2016 lets you enable this during the SQL server installation process
+
+-- Database Instant File Initialization
+-- https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-instant-file-initialization
+
+-- Misconceptions around instant file initialization
+-- https://www.sqlskills.com/blogs/paul/misconceptions-around-instant-file-initialization/
 
 
 -- SQL Server Process Address space info  (Query 7) (Process Memory)
@@ -265,7 +278,7 @@ ORDER BY sj.name OPTION (RECOMPILE);
 -- Look for jobs that have a notify_level_email set to 0 (meaning no e-mail is ever sent)
 --
 -- MSDN sysjobs documentation
--- http://msdn.microsoft.com/en-us/library/ms189817.aspx
+-- https://msdn.microsoft.com/en-us/library/ms189817.aspx
 
 -- SQL Server Maintenance Solution
 -- https://ola.hallengren.com/
@@ -316,7 +329,7 @@ FROM sys.dm_os_windows_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- SQL Server NUMA Node information  (Query 12) (SQL Server NUMA Info)
 SELECT node_id, node_state_desc, memory_node_id, processor_group, online_scheduler_count, 
-       active_worker_count, avg_load_balance, resource_monitor_state
+       idle_scheduler_count, active_worker_count, avg_load_balance, resource_monitor_state
 FROM sys.dm_os_nodes WITH (NOLOCK) 
 WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 ------
@@ -349,8 +362,6 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Physical memory usage is steady
 -- Available physical memory is low
 -- Physical memory state is transitioning
-
-
 
 
 -- You can skip the next two queries if you know you don't have a clustered instance
@@ -516,7 +527,6 @@ ORDER BY database_id OPTION (RECOMPILE);
 -- If you do get results here, you should do further investigation to determine the root cause
 
 
-
 -- Get number of data files in tempdb database (Query 25) (Tempdb Data Files)
 EXEC sys.xp_readerrorlog 0, 1, N'The tempdb database has';
 ------
@@ -601,7 +611,9 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 ------
 
 -- Shows you the drive-level latency for reads and writes, in milliseconds
--- Latency above 20-25ms is usually a problem
+-- Latency above 30-40ms is usually a problem
+-- These latency numbers include all file activity against all SQL Server 
+-- database files on each drive since SQL Server was last started
 
 
 -- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 29) (IO Stalls by File)
@@ -953,7 +965,6 @@ ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
 
 
 -- Get CPU Utilization History for last 256 minutes (in one minute intervals)  (Query 41) (CPU Utilization History)
--- This version works with SQL Server 2014
 DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info WITH (NOLOCK)); 
 
 SELECT TOP(256) SQLProcessUtilization AS [SQL Server Process CPU Utilization], 
@@ -1044,6 +1055,7 @@ ORDER BY SUM(mc.pages_kb) DESC OPTION (RECOMPILE);
 -- These are cached SQL statements or batches that aren't in stored procedures, functions and triggers
 -- Watch out for high values for CACHESTORE_SQLCP
 -- Enabling 'optimize for ad hoc workloads' at the instance level can help reduce this
+-- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this
 
 -- CACHESTORE_OBJCP  Object Plans      
 -- These are compiled plans for stored procedures, functions and triggers
@@ -1066,7 +1078,7 @@ ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
 -- Enabling forced parameterization for the database can help, but test first!
 
 -- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
--- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
+-- https://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
 
 
 -- Get top total logical reads queries for entire instance (Query 47) (Top Logical Reads Queries)
@@ -1129,8 +1141,7 @@ SELECT f.name AS [File Name] , f.physical_name AS [Physical Name],
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
 AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
-f.is_percent_growth, f.growth, 
-fg.is_default, fg.is_read_only
+f.is_percent_growth, f.growth, fg.is_default, fg.is_read_only
 FROM sys.database_files AS f WITH (NOLOCK) 
 LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
 ON f.data_space_id = fg.data_space_id
@@ -1198,7 +1209,7 @@ ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 ------
 
 
--- Queries 52 through 57 are the "Bad Man List"
+-- Queries 53 through 57 are the "Bad Man List" for stored procedures
 -- Top Cached SPs By Execution Count (Query 53) (SP Execution Counts)
 SELECT TOP(100) p.name AS [SP Name], qs.execution_count,
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute],
@@ -1216,7 +1227,7 @@ ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 -- Tells you which cached stored procedures are called the most often
 -- This helps you characterize and baseline your workload
 
--- Queries 54 through 59 are the "Bad Man List"
+
 -- Top Cached SPs By Avg Elapsed Time (Query 54) (SP Avg Elapsed Time)
 SELECT TOP(25) p.name AS [SP Name], qs.min_elapsed_time, qs.total_elapsed_time/qs.execution_count AS [avg_elapsed_time], 
 qs.max_elapsed_time, qs.last_elapsed_time, qs.total_elapsed_time, qs.execution_count, 
@@ -1660,4 +1671,5 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- http://bit.ly/2443SAd
 
 
-
+-- August 2017 blog series about upgrading and migrating SQL Server
+-- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/

@@ -9,6 +9,7 @@
  - [Troubleshoot the SQL Server Utility](https://msdn.microsoft.com/en-us/library/ee210592.aspx)
  - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
  - [SQL Server 2016 Distributed Replay Errors](https://www.sqlskills.com/blogs/jonathan/sql-server-2016-distributed-replay-errors/)
+ - [The Instance ID MSSQLSERVER Is Already In Use](http://www.sqlservercentral.com/articles/MSSQLSERVER/161398/)
 
 
 ## SQL Server All Errors List
@@ -58,17 +59,20 @@ Error code equal `message_id` from `sys.messages`
 |        657 | Could not disable support for increased partitions in database ...                                                                                      | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
 |        703 | There is insufficient system memory in resource pool 'default' to run this query.                                                                       | [703_link1]                                                  |
 |        824 | SQL Server detected a logical consistency-based I/O error                                                                                               | [Resolve Microsoft SQL Server Error Code 824], [KB2152734]   |
+|        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at offset %#016I64x in file '%ls'.                         | [825_link1]                                                  |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                                                                   | [FIX: Error: 913, Severity: 16 – Could Not Find Database ID] |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                                         | [CREATE DATABASE – I’ve not seen that before.]               |
 |       1904 | The statistics on table has 65 columns in the key list                                                                                                  | [SQL SERVER - Fix: Error: Msg 1904]                          |
 |       3013 | RESTORE DATABASE is terminating abnormally                                                                                                              | [KB290787]                                                   |
+|       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messages.                                                    | [3041_link1]                                                 |
 |       3154 | The backup set holds a backup of a database other than the existing                                                                                     | [Database Restore Fails with Msg 3154]                       |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media family.                                                    | [Unable to restore a backup – Msg 3241]                      |
+|       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                                                                          | [3634_link1]                                                 |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log file. Roll back the transaction.                        | [Case study: Troubleshooting Doomed Transactions]            |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                                                                           | [4064_link1]                                                 |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                                                                 | [SQL Server 2016 Online ALTER COLUMN Operation]              |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                                                                   | [SQL SERVER - FIX Error 5120]                                |
-|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [When SQL Server fails to create a secondary data file]      |
+|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)                                                        | [5123_link1], [5123_link1]                                   |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.                                                         | [6335_link1]                                                 |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                                                                  | [Discuss Execute(SQL) At LinkedServer]                       |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...                                                          | [Discuss Execute(SQL) At LinkedServer]                       |
@@ -76,10 +80,12 @@ Error code equal `message_id` from `sys.messages`
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                                                                     | [Internal Query Processor Error with ColumnStore Indexes]    |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource pool '%ls' (%ld).                                       | [8651_link1]                                                 |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                                                                        | [8672_link1]                                                 |
+|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                                                                            | [9002_link1]                                                 |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
 |      17182 | Tcp port is already in use                                                                                                                              | [TCP Port Is Already In Use]                                 |
 |      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.                                                         | [17190_link1]                                                |
+|      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s). The statement is proceeding but cannot be restarted. | [18272_link1]                                                |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                                                      | [Login from an Untrusted Domain]                             |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [Why won’t my SQL Logins work?]                              |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                                                                   | [35250_link1]                                                |
@@ -92,27 +98,33 @@ Error code equal `message_id` from `sys.messages`
 [Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
+[825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [FIX: Error: 913, Severity: 16 – Could Not Find Database ID]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [SQL SERVER - Fix: Error: Msg 1904]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
+[3041_link1]:https://www.sqlservercentral.com/Forums/Topic1179720-1550-1.aspx
 [4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
 [SQL Server 2016 Online ALTER COLUMN Operation]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [Case study: Troubleshooting Doomed Transactions]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [Database Restore Fails with Msg 3154]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
 [Unable to restore a backup – Msg 3241]:https://blogs.msdn.microsoft.com/psssql/2017/04/12/unable-to-restore-a-backup-msg-3241/
+[3634_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
-[When SQL Server fails to create a secondary data file]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
+[5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
+[9002_link1]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
+[18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [Why won’t my SQL Logins work?]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/

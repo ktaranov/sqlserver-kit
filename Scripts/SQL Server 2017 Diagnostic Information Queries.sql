@@ -1,8 +1,8 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- July 2017
--- Last Modified: July 6, 2017
+-- September 2017
+-- Last Modified: August 28, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -59,28 +59,29 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 14.0.405.198		CTP 1.4				3/20/2017
 -- 14.0.500.272		CTP 2.0				4/19/2017
 -- 14.0.600.250		CTP 2.1				5/17/2017
+-- 14.0.800.90		RC1					7/17/2017
+-- 14.0.900.75		RC2					8/2/2017
 		
 															
-
-
-
--- Download SQL Server Management Studio (SSMS)
--- https://msdn.microsoft.com/en-us/library/mt238290.aspx				
-
--- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
--- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://support.microsoft.com/en-us/kb/321185
 
--- SQL Server 2017 Community Technology Preview 2.0 now available
--- https://blogs.technet.microsoft.com/dataplatforminsider/2017/04/19/sql-server-2017-community-technology-preview-2-0-now-available/
+-- SQL Server 2017 Release Candidate 2 (RC2) is now available
+-- https://blogs.technet.microsoft.com/dataplatforminsider/2017/08/02/sql-server-2017-release-candidate-2-rc2-is-now-available/
 
 -- What's New in SQL Server 2017 (Database Engine)
 -- https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/what-s-new-in-sql-server-2017-database-engine
 
 -- What's New in SQL Server 2017
 -- https://docs.microsoft.com/en-us/sql/sql-server/what-s-new-in-sql-server-2017
+
+-- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
+-- https://blogs.msdn.microsoft.com/sqlreleaseservices/announcing-updates-to-the-sql-server-incremental-servicing-model-ism/
+
+-- Download SQL Server Management Studio (SSMS)
+-- https://msdn.microsoft.com/en-us/library/mt238290.aspx
+
 
 
 -- Get socket, physical core and logical core count from the SQL Server Error log. (Query 2) (Core Counts)
@@ -186,7 +187,7 @@ DBCC TRACESTATUS (-1);
 -- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
 --           https://blogs.msdn.microsoft.com/psssql/2016/03/15/sql-2016-it-just-runs-faster-t1117-and-t1118-changes-for-tempdb-and-user-databases/
 
--- The behavior of TF 2371 is enabled by default in SQL Server 2016 (in compat level 130)
+-- The behavior of TF 2371 is enabled by default in SQL Server 2016 and newer (in compat level 130 and higher)
 
 
 -- SQL Server query optimizer hotfix trace flag 4199 servicing model
@@ -201,6 +202,9 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 -- Lets you determine whether Instant File Initialization (IFI) is enabled for the instance
 -- This should be enabled in the vast majority of cases
 -- SQL Server 2016 lets you enable this during the SQL server installation process
+
+-- Database Instant File Initialization
+-- https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-instant-file-initialization
 
 -- Misconceptions around instant file initialization
 -- https://www.sqlskills.com/blogs/paul/misconceptions-around-instant-file-initialization/
@@ -229,7 +233,7 @@ FROM sys.dm_os_process_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- SQL Server Services information (Query 8) (SQL Server Services Info)
 SELECT servicename, process_id, startup_type_desc, status_desc, 
 last_startup_time, service_account, is_clustered, cluster_nodename, [filename], 
-instant_file_initialization_enabled -- New for SQL Server 2016 SP1
+instant_file_initialization_enabled 
 FROM sys.dm_server_services WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -259,7 +263,7 @@ ORDER BY sj.name OPTION (RECOMPILE);
 -- Look for jobs that have a notify_level_email set to 0 (meaning no e-mail is ever sent)
 --
 -- MSDN sysjobs documentation
--- http://msdn.microsoft.com/en-us/library/ms189817.aspx
+-- https://msdn.microsoft.com/en-us/library/ms189817.aspx
 
 -- SQL Server Maintenance Solution
 -- https://ola.hallengren.com/
@@ -273,7 +277,7 @@ ORDER BY name OPTION (RECOMPILE);
 ------
 
 -- Gives you some basic information about your SQL Server Agent Alerts (which are different from SQL Server Agent jobs)
--- Read more about Agent Alerts here: http://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
+-- Read more about Agent Alerts here: https://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
 
 
 
@@ -343,6 +347,7 @@ FROM sys.dm_os_sys_memory WITH (NOLOCK) OPTION (RECOMPILE);
 -- Available physical memory is high
 -- Physical memory usage is steady
 -- Available physical memory is low
+-- Available physical memory is running low
 -- Physical memory state is transitioning
 
 
@@ -398,13 +403,13 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 
 -- Hardware information from SQL Server 2017  (Query 17) (Hardware Info)
 SELECT cpu_count AS [Logical CPU Count], scheduler_count, (socket_count * cores_per_socket) AS [Physical CPU Count], 
-socket_count AS [Physical CPU Count], cores_per_socket, numa_node_count,
+socket_count AS [Socket Count], cores_per_socket, numa_node_count,
 physical_memory_kb/1024 AS [Physical Memory (MB)], committed_kb/1024 AS [Committed Memory (MB)],
 committed_target_kb/1024 AS [Committed Target Memory (MB)],
 max_workers_count AS [Max Workers Count], affinity_type_desc AS [Affinity Type], 
 sqlserver_start_time AS [SQL Server Start Time], virtual_machine_type_desc AS [Virtual Machine Type], 
 softnuma_configuration_desc AS [Soft NUMA Configuration], sql_memory_model_desc, 
-process_physical_affinity
+process_physical_affinity -- New in SQL Server 2017
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -612,7 +617,7 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 -- Shows you the drive-level latency for reads and writes, in milliseconds
 -- Latency above 30-40ms is usually a problem
 -- These latency numbers include all file activity against all SQL Server 
--- database file on each drive since SQL Server was last started
+-- database files on each drive since SQL Server was last started
 
 
 -- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 29) (IO Stalls by File)
@@ -967,7 +972,6 @@ ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
 
 
 -- Get CPU Utilization History for last 256 minutes (in one minute intervals)  (Query 41) (CPU Utilization History)
--- This version works with SQL Server 2016
 DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info WITH (NOLOCK)); 
 
 SELECT TOP(256) SQLProcessUtilization AS [SQL Server Process CPU Utilization], 
@@ -1058,6 +1062,7 @@ ORDER BY SUM(mc.pages_kb) DESC OPTION (RECOMPILE);
 -- These are cached SQL statements or batches that aren't in stored procedures, functions and triggers
 -- Watch out for high values for CACHESTORE_SQLCP
 -- Enabling 'optimize for ad hoc workloads' at the instance level can help reduce this
+-- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this
 
 -- CACHESTORE_OBJCP  Object Plans      
 -- These are compiled plans for stored procedures, functions and triggers
@@ -1156,8 +1161,8 @@ SELECT f.name AS [File Name] , f.physical_name AS [Physical Name],
 CAST((f.size/128.0) AS DECIMAL(15,2)) AS [Total Size in MB],
 CAST(f.size/128.0 - CAST(FILEPROPERTY(f.name, 'SpaceUsed') AS int)/128.0 AS DECIMAL(15,2)) 
 AS [Available Space In MB], f.[file_id], fg.name AS [Filegroup Name],
-f.is_percent_growth, f.growth, 
-fg.is_default, fg.is_read_only, fg.is_autogrow_all_files
+f.is_percent_growth, f.growth, fg.is_default, fg.is_read_only, 
+fg.is_autogrow_all_files
 FROM sys.database_files AS f WITH (NOLOCK) 
 LEFT OUTER JOIN sys.filegroups AS fg WITH (NOLOCK)
 ON f.data_space_id = fg.data_space_id
@@ -1167,7 +1172,7 @@ ORDER BY f.[file_id] OPTION (RECOMPILE);
 -- Look at how large and how full the files are and where they are located
 -- Make sure the transaction log is not full!!
 
--- is_autogrow_all_files is new for SQL Server 2016. Equivalent to TF 1117 for user databases
+-- is_autogrow_all_files was new for SQL Server 2016. Equivalent to TF 1117 for user databases
 
 -- SQL Server 2016: Changes in default behavior for autogrow and allocations for tempdb and user databases
 -- http://bit.ly/2evRZSR
@@ -1260,7 +1265,7 @@ ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 ------
 
 
--- Queries 55 through 60 are the "Bad Man List"
+-- Queries 56 through 61 are the "Bad Man List" for stored procedures
 -- Top Cached SPs By Execution Count (Query 56) (SP Execution Counts)
 SELECT TOP(100) p.name AS [SP Name], qs.execution_count,
 ISNULL(qs.execution_count/DATEDIFF(Minute, qs.cached_time, GETDATE()), 0) AS [Calls/Minute],
@@ -1639,6 +1644,15 @@ ORDER BY OBJECT_NAME(i.[object_id]) OPTION (RECOMPILE);
 -- https://msdn.microsoft.com/en-us/library/dn133166.aspx
 
 
+SELECT SUM(allocated_bytes)/1024/1024 AS [XTP_MEMORY_IN_MB]
+FROM sys.dm_db_xtp_memory_consumers;
+
+SELECT  SUM(allocated_bytes)/(1024*1024) AS total_allocated_MB,   
+        SUM(used_bytes)/(1024*1024) AS total_used_MB  
+FROM sys.dm_db_xtp_memory_consumers;  
+
+
+
 -- Look at Columnstore index physical statistics (Query 75) (Columnstore Index Physical Stat)
 SELECT OBJECT_NAME(ps.object_id) AS [TableName],  
 	i.[name] AS [IndexName], ps.index_id, ps.partition_number,
@@ -1755,8 +1769,8 @@ ORDER BY total_duration DESC OPTION (RECOMPILE);
 
 -- Get input buffer information for the current database (Query 80) (Input Buffer)
 SELECT es.session_id, DB_NAME(es.database_id) AS [Database Name],
-es.login_time, es.cpu_time, es.logical_reads,
-es.[status], ib.event_info AS [Input Buffer]
+       es.login_time, es.cpu_time, es.logical_reads,
+       es.[status], ib.event_info AS [Input Buffer]
 FROM sys.dm_exec_sessions AS es WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_input_buffer(es.session_id, NULL) AS ib
 WHERE es.database_id = DB_ID()
@@ -1844,3 +1858,7 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- Microsoft IT Pro Cloud Essentials
 -- http://bit.ly/2443SAd
+
+
+-- August 2017 blog series about upgrading and migrating SQL Server
+-- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/
