@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (521 trace flags)
+Complete list of Microsoft SQL Server trace flags (525 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -46,6 +46,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Amit Banerjee
  - Erin Stellato ([blog](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
  - Darik Hammer ([blog](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
+ - Erik Darling ([blog](https://www.brentozar.com/archive/author/erik-darling/))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -160,7 +161,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **521 trace flags**
+Summary: **525 trace flags**
 
 
 <a id="-1"></a>
@@ -3642,6 +3643,14 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-sta
 Related to: 9204
 
 
+<a id="9288"></a>
+#### Trace Flag: 9288
+**Undocumented trace flag**<br />
+Function: Have known effects around local and global aggregates.<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/93<br />
+Scope: local only
+
+
 <a id="9347"></a>
 #### Trace Flag: 9347
 Function: Disables batch mode for sort operator. SQL Server 2016 introduces a new batch mode sort operator that boosts performance for many analytical queries.<br />
@@ -3844,6 +3853,12 @@ Link: [MSDN mt736907]<br />
 Scope: global or session
 
 
+<a id="9706"></a>
+#### Trace Flag: 9706
+Function: Software Usage Metrics is disabled.<br />
+Link: [Bad Idea Jeans: Finding Undocumented Trace Flags]
+
+
 <a id="9806"></a>
 #### Trace Flag: 9806
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
@@ -3875,6 +3890,13 @@ Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28
 #### Trace Flag: 9837
 Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, enables “extra tracing but massive output” for Hekaton checkpoint files.<br />
 Link: None
+
+
+<a id="9850"></a>
+#### Trace Flag: 9850
+**Undocumented trace flag**<br />
+Function: Dumps more diagnostic stuff in the log.<br />
+Link: [Bad Idea Jeans: Finding Undocumented Trace Flags]
 
 
 <a id="9851"></a>
@@ -3936,6 +3958,13 @@ Link: http://www.nikoport.com/2016/02/04/columnstore-indexes-part-76-compression
 Scope: session
 
 
+<a id="10264"></a>
+#### Trace Flag: 10264
+**Undocumented trace flag**<br />
+Function: Polybase mode enabled for SqlComposable.<br />
+Link: [Bad Idea Jeans: Finding Undocumented Trace Flags]
+
+
 <a id="10316"></a>
 #### Trace Flag: 10316
 Function: Enables creation of additional indexes on internal memory-optimized staging temporal table, beside the default one.
@@ -3979,3 +4008,4 @@ Scope: global or session
 [Importance of Performing DBCC CHECKDB on all SQL Server Databases]:https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
 [SQL Server Parallel Query Placement Decision Logic]:https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
 [compatibility level]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
+[Bad Idea Jeans: Finding Undocumented Trace Flags]:https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
