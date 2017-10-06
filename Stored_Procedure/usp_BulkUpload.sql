@@ -11,15 +11,21 @@ ALTER PROCEDURE dbo.usp_BulkUpload (
               , @tableName            SYSNAME
               , @useIdentity          TINYINT       = 1  -- 1 - table with identity and identity column exists in file; 2 - table with identity and identity column not exists in file; 0 - table without identity
               , @identityColumnName   SYSNAME       = ''
-              , @CODEPAGE             NVARCHAR(30)  = N'1251'
+              , @BATCHSIZE            INTEGER       = 0  -- 0 - skip parameter value (by default, all data in the specified data file is one batch)
+              , @CHECK_CONSTRAINTS    BIT           = 0  -- 0 - skip parameter value (any CHECK and FOREIGN KEY constraints are ignored, after the operation, the constraints market as not-trusted)
+              , @CODEPAGE             NVARCHAR(30)  = N'65001'
               , @DATAFILETYPE         NVARCHAR(30)  = N'char'
               , @FIELDTERMINATOR      NVARCHAR(10)  = N'\t'
               , @FIRSTROW             INTEGER       = 1
+              , @FIRE_TRIGGERS        BIT           = 0  -- 0 - skip parameter value (no insert triggers execute)
               , @KEEPNULLS            BIT           = 0
+              , @KILOBYTES_PER_BATCH  INTEGER       = 0  -- 0 - skip parameter value (unknown by default)
               , @LASTROW              INTEGER       = 0
               , @ROWTERMINATOR        NVARCHAR(10)  = N'\n'
+              , @ROWS_PER_BATCH       INTEGER       = 0
               , @TABLOCK              BIT           = 1
               , @ERRORFILE            NVARCHAR(300) = N''
+              , @MAXERRORS            INTEGER       = 0  -- 0 - skip parameter value (used 10 by default)
               , @FORMATFILE           VARCHAR(4)    = ''
               , @excludeColumns       NVARCHAR(MAX) = N''''''
               , @rowOrderByColumn     NVARCHAR(MAX) = N''
@@ -31,7 +37,7 @@ ALTER PROCEDURE dbo.usp_BulkUpload (
 AS
 /*
 Specify Field and Row Terminators (SQL Server): https://docs.microsoft.com/en-us/sql/relational-databases/import-export/specify-field-and-row-terminators-sql-server
-MSDN BULK INSERT: https://docs.microsoft.com/ru-ru/sql/t-sql/statements/bulk-insert-transact-sql
+DOCS BULK INSERT: https://docs.microsoft.com/ru-ru/sql/t-sql/statements/bulk-insert-transact-sql
 
 BULK INSERT
    [ database_name . [ schema_name ] . | schema_name . ] [ table_name | view_name ]
@@ -97,9 +103,9 @@ BEGIN
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
 
         IF @FORMATFILE NOT IN ('', 'xml', 'fmt') THROW 50004, 'Allowed values for parameter is xml, fmt or blank value', 1;
-        IF @FORMATFILE = '' AND @skipTempDB = 1  THROW 50005, 'For using @skipTempDB = 1 please use @FORMATFILE key (xml or fmt)', 1;
-        IF @skipTempDB = 1 and @columnTypeSort <> 0 THROW 50003, 'Please do not use alphabetical sort with direct insert key (@skipTempDB).', 1;
-        IF @FORMATFILE IN ('xml', 'fmt') AND @columnTypeSort <> 0  THROW 50006, 'Please do not try use alphabetical sort files with formatfile option (@columnTypeSort).', 1;
+        IF @FORMATFILE = '' AND @skipTempDB = 1  THROW 50005, 'If @skipTempDB = 1 then @FORMATFILE must be in xml or fmt', 1;
+
+        --IF @skipTempDB = 1 and @columnTypeSort <> 0 THROW 50003, 'Please do not use alphabetical sort with direct insert key (@skipTempDB).', 1;
 
         IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
@@ -174,15 +180,21 @@ SELECT __Columns__
 BULK INSERT __#tableName__
 FROM ''__filePath__''
 WITH (
-       FIELDTERMINATOR = ''__FIELDTERMINATOR__''
+      __BATCHSIZE__
+      FIELDTERMINATOR = ''__FIELDTERMINATOR__''
       ,ROWTERMINATOR   = ''__ROWTERMINATOR__''
+      __CHECK_CONSTRAINTS__
       ,CODEPAGE        = ''__CODEPAGE__''
       ,DATAFILETYPE    = ''__DATAFILETYPE__''
       __KEEPIDENTITY__
       ,FIRSTROW        = __FIRSTROW__
       __FORMATFILE__
-      ___KEEPNULLS___
+      __FIRE_TRIGGERS__
+      __KEEPNULLS__
+      __KILOBYTES_PER_BATCH__
       __LASTROW__
+      __ROWS_PER_BATCH__
+      __MAXERRORS__
       __TABLOCK__
       ,ERRORFILE = ''__ERRORFILE__''
 );
@@ -199,43 +211,55 @@ __useIdentityOFF__
 IF OBJECT_ID(''tempdb..__#tableName__'') IS NOT NULL DROP TABLE __#tableName__;
 ';
 
-        IF @skipTempDB = 1 SET @tsqlCommand =
+        IF @skipTempDB = 1 AND @columnTypeSort = 0 SET @tsqlCommand =
 'BULK INSERT __tableFullName__
 FROM ''__filePath__''
 WITH (
-       FIELDTERMINATOR = ''__FIELDTERMINATOR__''
+      __BATCHSIZE__
+      FIELDTERMINATOR = ''__FIELDTERMINATOR__''
       ,ROWTERMINATOR   = ''__ROWTERMINATOR__''
+      __CHECK_CONSTRAINTS__
       ,CODEPAGE        = ''__CODEPAGE__''
       ,DATAFILETYPE    = ''__DATAFILETYPE__''
       __KEEPIDENTITY__
       ,FIRSTROW        = __FIRSTROW__
       __FORMATFILE__
-      ___KEEPNULLS___
+      __FIRE_TRIGGERS__
+      __KEEPNULLS__
+      __KILOBYTES_PER_BATCH__
       __LASTROW__
+      __ROWS_PER_BATCH__
+      __MAXERRORS__
       __TABLOCK__
       ,ERRORFILE = ''__ERRORFILE__''
 );
 '
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FORMATFILE__',      CASE WHEN @FORMATFILE = 'xml' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.xml'''
-                                                                             WHEN @FORMATFILE = 'fmt' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.fmt'''
-                                                                             ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__#tableName__',      @#tableName);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__Columns__',         @Columns);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__tableFullName__',   @tableFullName);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__filePath__',        @filePath);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIELDTERMINATOR__', @FIELDTERMINATOR);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ROWTERMINATOR__',   @ROWTERMINATOR);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__CODEPAGE__',        @CODEPAGE);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__DATAFILETYPE__',    @DATAFILETYPE);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__KEEPIDENTITY__',    CASE WHEN @useIdentity = 1 THEN ',KEEPIDENTITY' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIRSTROW__',        @FIRSTROW);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '___KEEPNULLS___',     CASE WHEN @KEEPNULLS = 1 THEN ',KEEPNULLS' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__LASTROW__',         CASE WHEN @LASTROW > 0   THEN ',LASTROW = ' + CAST(@LASTROW AS NVARCHAR) ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',         CASE WHEN @TABLOCK = 1   THEN ',TABLOCK' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ERRORFILE__',       @ERRORFILE);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityON__',   CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' ON;' ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',        CASE WHEN @rowOrderByColumn <> '' THEN 'ORDER BY ' + @rowOrderByColumn ELSE '' END);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityOFF__',  CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' OFF;' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FORMATFILE__',          CASE WHEN @FORMATFILE = 'xml' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.xml'''
+                                                                                 WHEN @FORMATFILE = 'fmt' THEN ',FORMATFILE = ''' + @path + @schemaTableName +'.fmt'''
+                                                                                 ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__#tableName__',          @#tableName);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__Columns__',             @Columns);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__tableFullName__',       @tableFullName);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__filePath__',            @filePath);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__BATCHSIZE__',           CASE WHEN @BATCHSIZE > 0 THEN 'BATCHSIZE = ' + CAST(@BATCHSIZE AS NVARCHAR) + ',' ELSE '' END);  
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIELDTERMINATOR__',     @FIELDTERMINATOR);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ROWTERMINATOR__',       @ROWTERMINATOR);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__CODEPAGE__',            @CODEPAGE);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__CHECK_CONSTRAINTS__',   CASE WHEN @CHECK_CONSTRAINTS = 1 THEN ',CHECK_CONSTRAINTS' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__DATAFILETYPE__',        @DATAFILETYPE);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__KEEPIDENTITY__',        CASE WHEN @useIdentity = 1 THEN ',KEEPIDENTITY' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIRSTROW__',            @FIRSTROW);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__FIRE_TRIGGERS__',       CASE WHEN @FIRE_TRIGGERS = 1 THEN ',FIRE_TRIGGERS' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__KEEPNULLS__',           CASE WHEN @KEEPNULLS = 1 THEN ',KEEPNULLS' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__KILOBYTES_PER_BATCH__', CASE WHEN @KILOBYTES_PER_BATCH > 0 THEN ',KILOBYTES_PER_BATCH = ' + CAST(@KILOBYTES_PER_BATCH AS NVARCHAR) ELSE '' END);  
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__LASTROW__',             CASE WHEN @LASTROW > 0   THEN ',LASTROW = ' + CAST(@LASTROW AS NVARCHAR) ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__TABLOCK__',             CASE WHEN @TABLOCK = 1   THEN ',TABLOCK' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ROWS_PER_BATCH__',      CASE WHEN @ROWS_PER_BATCH > 0 THEN ',ROWS_PER_BATCH = ' + CAST(@ROWS_PER_BATCH AS NVARCHAR) ELSE '' END); 
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__MAXERRORS__',           CASE WHEN @MAXERRORS > 0 THEN ',MAXERRORS = ' + CAST(@MAXERRORS AS NVARCHAR) ELSE '' END);  
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__ERRORFILE__',           @ERRORFILE);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityON__',       CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' ON;' ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__rowOrder__',            CASE WHEN @rowOrderByColumn <> '' THEN 'ORDER BY ' + @rowOrderByColumn ELSE '' END);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__useIdentityOFF__',      CASE WHEN @useIdentity = 1 THEN 'SET IDENTITY_INSERT ' + @tableFullName + ' OFF;' ELSE '' END);
 
         IF @debug = 1 PRINT ISNULL(CAST('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}'  AS NTEXT), '@tsqlCommand = {Null}' + @crlf + '--End Deubg*********/')
         ELSE
@@ -245,9 +269,9 @@ WITH (
         BEGIN
             SET @tsqlCommand = N'ALTER DATABASE __databaseName__ SET RECOVERY __databaseRecoveryMode__ WITH NO_WAIT';
             SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
-            SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent);
+            SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
 
-            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}');
+            IF @debug = 1 PRINT ISNULL('@tsqlCommand = {' + @crlf + @tsqlCommand + @crlf + '}', '@tsqlCommand = {Null}')
 
             IF @debug = 0 EXECUTE sp_executesql @tsqlCommand;
         END
@@ -258,7 +282,7 @@ WITH (
     BEGIN CATCH
         SET @tsqlCommand = N'ALTER DATABASE __databaseName__ SET RECOVERY __databaseRecoveryMode__ WITH NO_WAIT';
         SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseName__', @databaseName);
-        SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent);
+        SET @tsqlCommand = REPLACE(@tsqlCommand, '__databaseRecoveryMode__', @databaseRecoveryModeCurrent)
         EXECUTE sp_executesql @tsqlCommand;
 
         --EXECUTE dbo.usp_LogError;
@@ -269,8 +293,6 @@ WITH (
               ', Line: '      + CONVERT(varchar(5), ERROR_LINE()) +
               ', User name: ' + CONVERT(sysname, CURRENT_USER);
         PRINT ERROR_MESSAGE();
-
     END CATCH
 END;
 GO
-                                                                                           
