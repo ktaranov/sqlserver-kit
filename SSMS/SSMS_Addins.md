@@ -47,13 +47,12 @@ Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
 Price: €150
 
-SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.<br/>
+SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.
+
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
-You will realize, that plug-in will save you hundreds of mouse-clicks and key strokes every day!
-
-Licensing options: after 30 day trial period register and get fully-functional free community license or buy the professional version.<br/>
-Currently both versions have the same set of features.
+Licensing options: after 30 day trial period register and get free community license or buy the professional version.
+[Features list / SSMSBoost version comparison](http://www.ssmsboost.com/VersionCompare)
 
 
 <a id="sqlsmash"></a>
