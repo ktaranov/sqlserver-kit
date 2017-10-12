@@ -1,8 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- September 2017
--- Last Modified: September 4, 2017
+-- Last Modified: October 5, 2017
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -68,11 +67,12 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.1708.0		RTM-GDR				6/12/2016
 -- 13.0.2149.0		RTM CU1				7/25/2016
 -- 13.0.2164.0		RTM CU2				9/22/2016
--- 13.0.2186.0		RTM CU3				11/16/2016	---->			13.0.4001.0		SP1 RTM				11/16/2016
+-- 13.0.2186.0		RTM CU3				11/16/2016	---->			13.0.4001.0		SP1 RTM				 11/16/2016
 -- 13.0.2193.0		RTM CU4				1/18/2017   ---->			13.0.4411.0		SP1 CU1				 1/18/2017
 -- 13.0.2197.0		RTM CU5				3/20/2017   ---->			13.0.4422.0		SP1 CU2				 3/20/2017
 -- 13.0.2204.0		RTM CU6				5/15/2017   ---->			13.0.4435.0		SP1 CU3				 5/15/2017
 -- 13.0.2210.0		RTM CU7				8/8/2017    ---->			13.0.4446.0		SP1 CU4				 8/8/2017
+-- 13.0.2213.0		RTM CU8				9/18/2017   ---->           13.0.4451.0		SP1 CU5				 9/18/2017
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -1452,7 +1452,8 @@ INNER JOIN sys.dm_db_missing_index_details AS mid WITH (NOLOCK)
 ON mig.index_handle = mid.index_handle
 INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON p.[object_id] = mid.[object_id]
-WHERE mid.database_id = DB_ID() 
+WHERE mid.database_id = DB_ID()
+AND p.index_id < 2 
 ORDER BY index_advantage DESC OPTION (RECOMPILE);
 ------
 
