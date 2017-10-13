@@ -109,7 +109,7 @@ BEGIN
 
         IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
-        IF LEFT(@databaseName, 1) =N'[' OR LEFT (@tableName, 1) = N'[' OR @schemaName = N'['
+        IF LEFT(@databaseName, 1) =N'[' OR LEFT(@tableName, 1) = N'[' OR LEFT(@schemaName, 1) = N'['
         THROW 50002, 'Please do not use quotes in Databse, Table or Schema names! In the procedure it is alredy done with QUOTENAME function.', 1;
 
         SET @tableFullName = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
