@@ -1,5 +1,5 @@
 /*
-Author: thelonedba
+Author: Thomas Rushton
 Original link: https://thelonedba.wordpress.com/2016/07/18/which-databases-were-backed-up-in-which-backup-task/
 */
 

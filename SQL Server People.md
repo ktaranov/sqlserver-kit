@@ -84,6 +84,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Dmitri Korotkevitch | [Dmitri Korotkevitch Blog]   | USA     | Tampa            | [@aboutsqlserver]  | dk@aboutsqlserver.com             | 6   | [Korotkevitch MVP] |
 | Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
 | Erik Darling        | [Erik Darling Articles]      | USA     |                  | NULL               | NULL                              | 0   |                    |
+| Thomas Rushton      | [Thomas Rushton Blog]        | USA     |                  | NULL               | NULL                              | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -165,6 +166,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Dmitri Korotkevitch Blog]:http://aboutsqlserver.com/
 [Bert Wagner Blog]:https://blog.bertwagner.com/
 [Erik Darling Articles]:https://www.brentozar.com/archive/author/erik-darling/
+[Thomas Rushton Blog]:https://thelonedba.wordpress.com/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
