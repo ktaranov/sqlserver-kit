@@ -148,6 +148,7 @@ Headers:
     - [SQLBI Blog](http://www.sqlbi.com)
     - [RDX Blog](http://blog.rdx.com)
     - [Codingsight](http://codingsight.com/)
+    - [Solomon Rutzky's SQL Quantum Leap Blog](https://SqlQuantumLeap.com/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -161,6 +162,7 @@ Headers:
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [SQL Server Database Engine Permission Posters](http://social.technet.microsoft.com/wiki/contents/articles/11842.sql-server-database-engine-permission-posters.aspx)
+   - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
  - Free Videos
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
@@ -279,9 +281,10 @@ Headers:
     - [OpenQueryStore - collection of scripts that add Query Store like functionality to pre-SQL Server 2016 Instance](https://github.com/OpenQueryStore/OpenQueryStore)
     - [ssis-dashboard - HTML5 SQL Server Integration Services Dashboard](https://github.com/yorek/ssis-dashboard) (by Davide Mauri)
     - [SQL Server Regex - run regular expressions in SQL Server](https://github.com/DevNambi/sql-server-regex) (by Dev Nambi)
+    - [Binary Formatter - format binary files (e.g. DLL / CER / PVK) into hex bytes string for SQL script](https://github.com/SqlQuantumLeap/BinaryFormatter) (by Solomon Rutzky / Sql Quantum Leap)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
-    - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Lift)
+    - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
     - [SQL Server Wait Types Library](https://www.sqlskills.com/help/waits/) (by Paul S. Randal)
     - [Waitopedia - is a comprehensive resource of information about SQL Server waits](https://www.spotlightessentials.com/waitopedia) (by Spotlight Essentials)
