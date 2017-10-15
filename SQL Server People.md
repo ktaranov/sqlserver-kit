@@ -85,6 +85,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
 | Erik Darling        | [Erik Darling Articles]      | USA     |                  | NULL               | NULL                              | 0   |                    |
 | Thomas Rushton      | [Thomas Rushton Blog]        | USA     |                  | NULL               | NULL                              | 0   |                    |
+| Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][ContactSolomon] | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -167,6 +168,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Bert Wagner Blog]:https://blog.bertwagner.com/
 [Erik Darling Articles]:https://www.brentozar.com/archive/author/erik-darling/
 [Thomas Rushton Blog]:https://thelonedba.wordpress.com/
+[Sql Quantum Leap]:https://SqlQuantumLeap.com/
+[ContactSolomon]:https://SqlQuantumLeap.com/contact/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
@@ -243,6 +246,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@sqlOnIce]:https://twitter.com/sqlOnIce
 [@aboutsqlserver]:https://twitter.com/aboutsqlserver
 [@bertwagner]:https://twitter.com/bertwagner
+[@SqlQuantumLeap]:https://twitter.com/SqlQuantumLeap
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
