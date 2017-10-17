@@ -427,6 +427,7 @@ Articles types:
 | [SQL Server Installation Failed Due to Pending Restart of Server?]                                                      | thelonedba                               | 2017-09-18 | [DBA],[DEV] |
 | [Six Scary SQL Surprises]                                                                                               | Brent Ozar                               | 2017-09-06 | [DEV]       |
 | [How the rowversion datatype works when adding and deleting columns]                                                    | Louis Davidson                           | 2017-09-26 | [DEV]       |
+| [Quick! What's the difference between RANK, DENSE_RANK, and ROW_NUMBER?]                                                | Douglas Kline                            | 2017-10-01 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -834,3 +835,4 @@ Articles types:
 [SQL Server Installation Failed Due to Pending Restart of Server?]:https://thelonedba.wordpress.com/2017/09/18/sql-server-installation-failed-due-to-pending-restart-of-server/
 [Six Scary SQL Surprises]:https://www.red-gate.com/simple-talk/sql/database-administration/six-scary-sql-surprises/
 [How the rowversion datatype works when adding and deleting columns]:http://sqlblog.com/blogs/louis_davidson/archive/2017/09/26/how-the-rowversion-datatype-works-when-adding-and-deleting-columns.aspx
+[Quick! What's the difference between RANK, DENSE_RANK, and ROW_NUMBER?]:http://douglaskline.blogspot.ru/2017/10/quick-whats-difference-between-rank.html
