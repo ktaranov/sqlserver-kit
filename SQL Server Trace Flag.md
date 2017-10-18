@@ -258,6 +258,7 @@ Function: Increases the SQL Server Database Engine plan cache bucket count from 
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/en-us/kb/3026083<br />
 Link: [Docs Trace Flags]<br />
+Link: https://dba.stackexchange.com/a/187370<br />
 Scope: global or session
 
 
@@ -1164,8 +1165,7 @@ Link: http://blog.dbi-services.com/sql-server-2014-new-incremental-statistics
 
 <a id="2312"></a>
 #### Trace Flag: 2312
-Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2014 through SQL Server 2016 versions,
-dependent of the compatibility level of the database.<br />
+Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2014 through SQL Server 2016 versions, dependent of the compatibility level of the database.<br />
 Link: [KB2801413]<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
@@ -1294,8 +1294,10 @@ Link: None
 
 <a id="2388"></a>
 #### Trace Flag: 2388
-Function: Changes the output of DBCC SHOW_STATISTICS. Instead of the normal Header/Vector/Histogram output, instead we get a single row that gives information related to whether the lead column of the stat object is considered to be ascending or not. This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).<br />
-Link: None
+Function: Changes the output of DBCC SHOW_STATISTICS.
+Instead of the normal Header/Vector/Histogram output, instead we get a single row that gives information related to whether the lead column of the stat object is considered to be ascending or not.
+This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).<br />
+Link: [SQL Server - estimates outside of the histogram - half-baked draft]
 
 
 <a id="2389"></a>
@@ -1309,6 +1311,7 @@ Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardi
 Link: https://www.sswug.org/sswugresearch/community/trace-flag-2389-and-the-new-cardinality-estimator/<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
+Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Scope: global or session or query
 
 
@@ -1321,6 +1324,7 @@ Link: [KB2801413]<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/ianjo/2006/04/24/ascending-keys-and-auto-quick-corrected-statistics<br />
+Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Scope: global or session or query
 
 
@@ -2460,6 +2464,7 @@ Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add t
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link : https://support.microsoft.com/en-us/kb/2952101<br />
 Link: [Docs Trace Flags]<br />
+Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Scope: global or session or query
 
 
@@ -4016,3 +4021,4 @@ Link: [Docs Trace Flags]
 [SQL Server Parallel Query Placement Decision Logic]:https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
 [compatibility level]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
 [Bad Idea Jeans: Finding Undocumented Trace Flags]:https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
+[SQL Server - estimates outside of the histogram - half-baked draft]:http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
