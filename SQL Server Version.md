@@ -543,7 +543,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer 
 
 ```
 Microsoft SQL Server 2014 (SP2-CU8) (KB4037356) - 12.0.5557.0 (X64)
-    Aug 17 2017 12:07:38
+    Oct 3 2017 14:56:10
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
