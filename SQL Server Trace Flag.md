@@ -246,19 +246,18 @@ Link: http://support.microsoft.com/kb/926292
 
 <a id="174"></a>
 #### Trace Flag: 174
-Function: Enables a fix to address errors when rebuilding partitions online for tables that contain a computed partitioning column.<br />
-Link: https://support.microsoft.com/en-us/help/3213683/<br />
+Function: Increases the SQL Server Database Engine plan cache bucket count from 40,009 to 160,001 on 64-bit systems.<br />
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**
+Link: https://support.microsoft.com/en-us/help/3026083/fix-sos-cachestore-spinlock-contention-on-ad-hoc-sql-server-plan-cache<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
 
 
 <a id="176"></a>
 #### Trace Flag: 176
-Function: Increases the SQL Server Database Engine plan cache bucket count from 40009 to 160001 on 64-bit systems.<br />
-**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: https://support.microsoft.com/en-us/kb/3026083<br />
+Function: Enables a fix to address errors when rebuilding partitions online for tables that contain a computed partitioning column.<br />
+Link: https://support.microsoft.com/en-us/help/3213683/fix-unable-to-rebuild-the-partition-online-for-a-table-that-contains-a<br />
 Link: [Docs Trace Flags]<br />
-Link: https://dba.stackexchange.com/a/187370<br />
 Scope: global or session
 
 
