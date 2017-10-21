@@ -429,6 +429,9 @@ Articles types:
 | [How the rowversion datatype works when adding and deleting columns]                                                    | Louis Davidson                           | 2017-09-26 | [DEV]       |
 | [Quick! What's the difference between RANK, DENSE_RANK, and ROW_NUMBER?]                                                | Douglas Kline                            | 2017-10-01 | [DEV]       |
 | [A Serial Parallel Query]                                                                                               | Joe Obbish                               | 2017-10-20 | [DEV]       |
+| [Add or Remove IDENTITY Property From an Existing Column Efficiently]                                                   | Dan Guzman                               | 2017-04-16 | [DBA],[DEV] |
+| [How Do I Analyze a SQL Server Execution Plan?]                                                                         | Kendra Little                            | 2017-09-22 | [DEV]       |
+| [A Subtle Difference Between COALESCE and ISNULL]                                                                       | Shaneis                                  | 2017-10-09 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -838,3 +841,6 @@ Articles types:
 [How the rowversion datatype works when adding and deleting columns]:http://sqlblog.com/blogs/louis_davidson/archive/2017/09/26/how-the-rowversion-datatype-works-when-adding-and-deleting-columns.aspx
 [Quick! What's the difference between RANK, DENSE_RANK, and ROW_NUMBER?]:http://douglaskline.blogspot.ru/2017/10/quick-whats-difference-between-rank.html
 [A Serial Parallel Query]:https://orderbyselectnull.com/2017/09/26/a-serial-parallel-query/
+[Add or Remove IDENTITY Property From an Existing Column Efficiently]:http://www.dbdelta.com/add-or-remove-identity-property-from-an-existing-column-efficiently/
+[How Do I Analyze a SQL Server Execution Plan?]:https://littlekendra.com/2017/09/22/how-do-i-analyze-a-sql-server-execution-plan/
+[A Subtle Difference Between COALESCE and ISNULL]:https://nocolumnname.wordpress.com/2017/10/09/a-subtle-difference-between-coalesce-and-isnull/
