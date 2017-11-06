@@ -434,6 +434,7 @@ Articles types:
 | [A Subtle Difference Between COALESCE and ISNULL]                                                                       | Shaneis                                  | 2017-10-09 | [DEV]       |
 | [Puzzle Challenge: Graph Matching with T-SQL Part 1-Concepts]                                                           | Itzik Ben-Gan                            | 2017-08-08 | [DEV]       |
 | [Running PowerShell in a SQL Agent Job]                                                                                 | Derik Hammer                             | 2017-03-04 | [PS]        |
+| [Line-Continuation in T-SQL]                                                                                            | Solomon Rutzky                           | 2017-10-27 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -848,3 +849,4 @@ Articles types:
 [A Subtle Difference Between COALESCE and ISNULL]:https://nocolumnname.wordpress.com/2017/10/09/a-subtle-difference-between-coalesce-and-isnull/
 [Puzzle Challenge: Graph Matching with T-SQL Part 1-Concepts]:http://sqlmag.com/software-development/puzzle-challenge-graph-matching-t-sql-part-1-concepts
 [Running PowerShell in a SQL Agent Job]:https://www.sqlhammer.com/running-powershell-in-a-sql-agent-job/
+[Line-Continuation in T-SQL]:https://sqlquantumleap.com/2017/10/27/line-continuation-in-t-sql/

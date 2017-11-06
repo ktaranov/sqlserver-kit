@@ -282,6 +282,8 @@ Headers:
     - [ssis-dashboard - HTML5 SQL Server Integration Services Dashboard](https://github.com/yorek/ssis-dashboard) (by Davide Mauri)
     - [SQL Server Regex - run regular expressions in SQL Server](https://github.com/DevNambi/sql-server-regex) (by Dev Nambi)
     - [Binary Formatter - format binary files (e.g. DLL / CER / PVK) into hex bytes string for SQL script](https://github.com/SqlQuantumLeap/BinaryFormatter) (by Solomon Rutzky / Sql Quantum Leap)
+    - [ExtendedTSQLCollector - Custom collector types to extend and simplify the features offered by the built-in SQL Server Data Collector and read data from Extended Events and/or queries](https://github.com/spaghettidba/ExtendedTSQLCollector) (by Gianluca Sartori)
+    - [XESmartTarget - configurable target for SQL Server Extended Events](https://github.com/spaghettidba/XESmartTarget) (by Gianluca Sartori)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
