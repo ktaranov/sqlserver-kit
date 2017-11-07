@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **229** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **233** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -18,7 +18,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {99}
+ - **[?]**: Not yet classified {103}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
@@ -111,16 +111,17 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]                  |              | Idera                 |            | No             | $1287 |
 | [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                         | ?            | Idera                 |            | No             | $1420 |
 | [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]             | ?            | Idera                 |            | No             | ?     |
-| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                    | 2016-09-16   | Devart                |            | No             |  $149 |
-| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                      | 2016-09-28   | Devart                |            | No             |  $149 |
-| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2016-09-16   | Devart                |            | No             |  $249 |
-| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2016-08-17   | Devart                |            | No             |  $99  |
-| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2016-09-16   | Devart                |            | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2017-04-20   | Devart                |            | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-03-12   | Devart                |            | Yes            |  $249 |
-| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                            | 2016-12-27   | Devart                |            | No             |  $149 |
-| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2016-09-16   | Devart                |            | No             |  $149 |
-| [Devart Excel Add-in for SQL Server](#devart-excel)                   | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-05-18   | Devart                |            | No             |  $100 |
+| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                    | 2016-09-16   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                      | 2016-09-28   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2016-09-16   | Devart                | Shareware  | No             |  $250 |
+| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2016-08-17   | Devart                | Shareware  | No             |  $100 |
+| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2016-09-16   | Devart                | Freeware   | Yes            | No    |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2017-04-20   | Devart                | Freeware   | Yes            | No    |
+| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-03-12   | Devart                | Shareware  | Yes            |  $250 |
+| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                            | 2016-12-27   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2016-09-16   | Devart                | Shareware  | No             |  $150 |
+| [Devart Excel Add-in for SQL Server](#devart-excel-addin)             | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-09-13   | Devart                | Shareware  | No             |  $100 |
+| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart                | Freeware   | Yes            | No    |
 | [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                         | ?            | MinionWare            |            | No             | $1500 |
 | [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]          | 2011-06-02   | Bob Tavlor            |            | Yes            | No    |
 | [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                                | 2016-07-07   | Bill Graziano         |            | Yes            | No    |
@@ -146,7 +147,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Doc](#apexsql-doc)                                           | No                               | No             | [D]        | [ApexSQL Doc]                               | 2017-03-01   | ApexSQL               |            | No             |  $299 |
 | [ApexSQL Generate](#apexsql-generate)                                 | No                               | No             | [G]        | [ApexSQL Generate]                          | 2016-03-15   | ApexSQL               |            | No             |  $499 |
 | [ApexSQL Script](#apexsql-script)                                     | No                               | No             | [?]        | [ApexSQL Script]                            | 2015-09-11   | ApexSQL               |            | No             |  $249 |
-| [ApexSQL Trigger](#apexsql-trigger)                                   | No                               | No             | [?]        | [ApexSQL Trigger]                           | 2015-09-04   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Trigger](#apexsql-trigger)                                   | No                               | No             | [?]        | [ApexSQL Trigger]                           | 2017-06-01   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Propagate]                         | 2017-10-20   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Plan]                              | 2017-10-26   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                     | No                               | No             | [?]        | [ApexSQL Trigger Viewer]                    | 2017-06-01   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)                 | No                               | No             | [?]        | [ApexSQL Snapshot Utility]                  | 2016-01-12   | ApexSQL               |            | Yes            | No    |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | No                               | No             | [?]        | [DBBest T-SQL Analyzer]                     | 2015-03-13   | DBBest                |            | No             |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | No                               | No             | [SC], [DC] | [DBBest Database Compare Suite]             | 2015-09-04   | DBBest                |            | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                           | No                               | No             | [?]        | [Advanced Query Tool]                       | 2015-03-18   | Cardett Associates    |            | No             |  $180 |
@@ -202,7 +207,6 @@ Utility types (main purpose), in braces `{}` current counts:
 | [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis              |            | Open Source    | No    |
 | [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne             |            | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne             |            | No             | ?     |
-| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart                |            | Yes            | No    |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             |            | No             | ?     |
 | [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         |            | Yes            |  $399 |
 | [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]        | ?            | SQLTreeo              |            | No             |  €180 |
@@ -1538,10 +1542,10 @@ Price: ?
 <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
 Release date: 2017-09-15<br/>
-Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $149
+Price: $150
 
 dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server.
 The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups.
@@ -1695,7 +1699,7 @@ One solution to handle SQL data and schema diffs.
  
  
 ## Devart Excel Add-in for SQL Server
-<a id="devart-excel"></a>
+<a id="devart-excel-addin"></a>
 Download page: [Devart Excel Add-in for SQL Server]<br/>
 Release date: 2017-09-13<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
@@ -2149,8 +2153,8 @@ Price: $1299
 ## ApexSQL Propagate
 <a id="apexsql-propagate"></a>
 Download page: [ApexSQL Propagate]<br/>
-Release date: 2017-06-20<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-20<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: Yes<br/>
 Price: No
@@ -2168,8 +2172,8 @@ Price: No
 ## ApexSQL Plan
 <a id="apexsql-pan"></a>
 Download page: [ApexSQL Plan]<br/>
-Release date: 2017-06-07<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: Yes<br/>
 Price: No
@@ -2182,7 +2186,32 @@ Price: No
  - See the actual relative cost of each plan operator
  - Analyze query live performance statistics
  - Compare estimated and actual query execution plans
- 
+
+
+## ApexSQL Trigger Viewer
+<a id="apexsql-trigger-viewer"></a>
+Download page: [ApexSQL Trigger Viewer]<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+Read-only auditing reports for end users
+
+
+## ApexSQL Snapshot Utility
+<a id="apexsql-snapshot-utility"></a>
+Download page: [ApexSQL Snapshot Utility]<br/>
+Release date: 2016-01-12<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+Utility to create a lightweight 'snapshot' of a database schema, that can be used by ApexSQL Diff as a datasource
+
+
 
 ## DBBest T-SQL Analyzer
 <a id="dbbest-t-sql-analyzer"></a>
@@ -3723,6 +3752,7 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [dbForge Developer Bundle]:https://www.devart.com/dbforge/sql/developer-bundle/
 [dbForge Compare Bundle for SQL Server]:https://www.devart.com/dbforge/sql/compare-bundle/
 [Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
+[dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
@@ -3755,6 +3785,8 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
 [ApexSQL Propagate]:https://www.apexsql.com/sql_tools_propagate.aspx
 [ApexSQL Plan]:https://www.apexsql.com/sql_tools_plan.aspx
+[ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
+[ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
@@ -3810,7 +3842,6 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [My Batis]:http://www.mybatis.org/migrations
 [SentryOne Plan Explorer]:https://www.sentryone.com/plan-explorer
 [SQL Sentry]:https://sentryone.com/platform/sql-server-performance-monitoring
-[dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [DBmaestro TeamWork]:http://www.dbmaestro.com/product/devops-for-database
 [xSQL Schema Compare]:http://www.xsql.com/products/sql_server_schema_compare
 [Cloud-based DB Monitoring Platform]:https://www.sqltreeo.com
