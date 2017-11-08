@@ -44,7 +44,7 @@ Customers are advised to contact support, should they encounter any issues with 
 Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
 
 ## Available Languages
-SQL Server Management Studio 17.2:
+SQL Server Management Studio for another languages:
  - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
  - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x404)
  - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
@@ -57,7 +57,7 @@ SQL Server Management Studio 17.2:
  - [Russian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
  - [Spanish](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
 
-SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
+SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
  - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x804)
  - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x404)
  - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x409)
@@ -96,7 +96,7 @@ SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
-[17.2 Release]:https://go.microsoft.com/fwlink/?linkid=858904
+[17.3 Release]:https://go.microsoft.com/fwlink/?linkid=858904
 [17.2 Release]:https://go.microsoft.com/fwlink/?linkid=854085
 [17.1 Release]:https://go.microsoft.com/fwlink/?linkid=849819
 [17.0 Release]:https://go.microsoft.com/fwlink/?linkid=847722
