@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **233** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **234** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -8,7 +8,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
- - **[IDX]**: Index manager {2}
+ - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
@@ -134,22 +134,23 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Dell Enterprise Reporter](#dell-enterprise-reporter)                 | No                               | No             | [?]        | [Dell Enterprise Reporter]                  | ?            | Dell                  |            | No             | $511  |
 | [SQL Scripter](#sql-scripter)                                         | No                               | No             | [?]        | [SQL Scripter]                              | 2013-02-24   | Thomas Hinsenkamp     |            | No             |   €99 |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | No                               | No             | [?]        | [Simple Dynamic Scheduler]                  | 2016-05-02   | Miljan Radovic        |            | Yes            | No    |
-| [ApexSQL Audit](#apexsql-audit)                                       | No                               | No             | [?]        | [ApexSQL Audit]                             | 2016-04-08   | ApexSQL               |            | No             | $1699 |
-| [ApexSQL Backup](#apexsql-backup)                                     | No                               | No             | [B]        | [ApexSQL Backup]                            | 2015-12-30   | ApexSQL               |            | No             |  $499 |
-| [ApexSQL Log](#apexsql-log)                                           | No                               | No             | [?]        | [ApexSQL Log]                               | 2015-11-23   | ApexSQL               |            | No             | $1999 |
-| [ApexSQL Monitor](#apexsql-monitor)                                   | No                               | No             | [M]        | [ApexSQL Monitor]                           | 2015-12-29   | ApexSQL               |            | No             |  $499 |
-| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [?]        | [ApexSQL Recover]                           | 2015-01-21   | ApexSQL               |            | No             | $1999 |
-| [ApexSQL Restore](#apexsql-restore)                                   | No                               | No             | [?]        | [ApexSQL Restore]                           | 2014-08-12   | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Build](#apexsql-build)                                       | No                               | No             | [?]        | [ApexSQL Build]                             | 2015-12-22   | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Clean](#apexsql-clean)                                       | No                               | No             | [?]        | [ApexSQL Clean]                             | 2015-09-04   | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Data Diff](#apexsql-data-diff)                               | No                               | No             | [DC]       | [ApexSQL Data Diff]                         | 2015-12-11   | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Diff](#apexsql-diff)                                         | No                               | No             | [SC]       | [ApexSQL Diff]                              | 2016-03-23   | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Doc](#apexsql-doc)                                           | No                               | No             | [D]        | [ApexSQL Doc]                               | 2017-03-01   | ApexSQL               |            | No             |  $299 |
-| [ApexSQL Generate](#apexsql-generate)                                 | No                               | No             | [G]        | [ApexSQL Generate]                          | 2016-03-15   | ApexSQL               |            | No             |  $499 |
-| [ApexSQL Script](#apexsql-script)                                     | No                               | No             | [?]        | [ApexSQL Script]                            | 2015-09-11   | ApexSQL               |            | No             |  $249 |
+| [ApexSQL Audit](#apexsql-audit)                                       | No                               | No             | [?]        | [ApexSQL Audit]                             | 2017-07-11   | ApexSQL               |            | No             | $1699 |
+| [ApexSQL Backup](#apexsql-backup)                                     | No                               | No             | [B]        | [ApexSQL Backup]                            | 2017-10-12   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Defrag](#apexsql-defrag)                                     | No                               | No             | [IDX]      | [ApexSQL Defrag]                            | 2017-06-29   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Log](#apexsql-log)                                           | No                               | No             | [?]        | [ApexSQL Log]                               | 2017-05-24   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Monitor](#apexsql-monitor)                                   | No                               | No             | [M]        | [ApexSQL Monitor]                           | 2017-10-05   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Plan](#apexsql-plan)                                         | No                               | No             | [?]        | [ApexSQL Plan]                              | 2017-10-26   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Propagate]                         | 2017-09-25   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [?]        | [ApexSQL Recover]                           | 2017-10-26   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Build](#apexsql-build)                                       | No                               | No             | [?]        | [ApexSQL Build]                             | 2017-05-15   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Clean](#apexsql-clean)                                       | No                               | No             | [?]        | [ApexSQL Clean]                             | 2017-09-28   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Data Diff](#apexsql-data-diff)                               | No                               | No             | [DC]       | [ApexSQL Data Diff]                         | 2017-10-26   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Decrypt](#apexsql-decrypt)                                   | No                               | No             | [?]        | [ApexSQL Decrypt]                           | 2017-08-16   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Diff](#apexsql-diff)                                         | No                               | No             | [SC]       | [ApexSQL Diff]                              | 2017-10-26   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Doc](#apexsql-doc)                                           | No                               | No             | [D]        | [ApexSQL Doc]                               | 2017-09-06   | ApexSQL               |            | No             |  $299 |
+| [ApexSQL Generate](#apexsql-generate)                                 | No                               | No             | [G]        | [ApexSQL Generate]                          | 2017-07-13   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Script](#apexsql-script)                                     | No                               | No             | [?]        | [ApexSQL Script]                            | 2016-05-10   | ApexSQL               |            | No             |  $249 |
 | [ApexSQL Trigger](#apexsql-trigger)                                   | No                               | No             | [?]        | [ApexSQL Trigger]                           | 2017-06-01   | ApexSQL               |            | No             | $1999 |
-| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Propagate]                         | 2017-10-20   | ApexSQL               |            | Yes            | No    |
-| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Plan]                              | 2017-10-26   | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                     | No                               | No             | [?]        | [ApexSQL Trigger Viewer]                    | 2017-06-01   | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)                 | No                               | No             | [?]        | [ApexSQL Snapshot Utility]                  | 2016-01-12   | ApexSQL               |            | Yes            | No    |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | No                               | No             | [?]        | [DBBest T-SQL Analyzer]                     | 2015-03-13   | DBBest                |            | No             |   $89 |
@@ -1894,7 +1895,7 @@ Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server
 <a id="apexsql-audit"></a>
 Download page: [ApexSQL Audit]<br/>
 Release date: 2017-07-11<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1699
@@ -1912,8 +1913,8 @@ Price: $1699
 ## ApexSQL Backup
 <a id="apexsql-backup"></a>
 Download page: [ApexSQL Backup]<br/>
-Release date: 2017-08-01<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-12<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1928,11 +1929,26 @@ Price: $499
  - Cleanup SQL backup and restore history
 
 
+## ApexSQL Defrag
+<a id="apexsql-defrag"></a>
+Download page: [ApexSQL Defrag]<br/>
+Release date: 2017-06-29<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $499
+
+ - Index fragmentation analysis
+ - Index defragmentation
+ - Custom policies: Use custom policies to automate database index maintenance
+ - Set thresholds for reorganizing and rebuilding jobs
+
+
 ## ApexSQL Log
 <a id="apexsql-log"></a>
 Download page: [ApexSQL Log]<br/>
 Release date: 2017-05-24<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1999
@@ -1950,8 +1966,8 @@ Price: $1999
 ## ApexSQL Monitor
 <a id="apexsql-monitor"></a>
 Download page: [ApexSQL Monitor]<br/>
-Release date: 2017-07-12<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-05<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1966,45 +1982,49 @@ Price: $499
  - Visualize data with logarithmic scaling
 
 
-## ApexSQL Recover
-<a id="apexsql-recover"></a>
-Download page: [ApexSQL Recover]<br/>
-Release date: 2017-05-18<br/>
-Support Version: 2008/2012/2014/2016<br/>
+## ApexSQL Plan
+<a id="apexsql-plan"></a>
+Download page: [ApexSQL Plan]<br/>
+Release date: 2017-10-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
-Free version: No<br/>
-Price: $1999
+Free version: Yes<br/>
+Price: No
 
- - Recover deleted, dropped and truncated data
- - Reverse inadvertent or malicious database changes
- - Extract data directly from backup files
- - Recover deleted data and files from SharePoint
- - Recover deleted BLOBs
- - Extract BLOBs stored as files
+ - Analyze and optimize SQL query execution plans
+ - Identify query performance issues and deadlocks
+ - Understand query performance characteristics
+ - Analyze query waits & review query execution plans
+ - Customize graphical query execution plan view
+ - See the actual relative cost of each plan operator
+ - Analyze query live performance statistics
+ - Compare estimated and actual query execution plans
 
 
-## ApexSQL Restore
-<a id="apexsql-restore"></a>
-Download page: [ApexSQL Restore]<br/>
-Release date: 2014-12-08<br/>
-Support Version: 2008/2012/2014<br/>
+## ApexSQL Propagate
+<a id="apexsql-propagate"></a>
+Download page: [ApexSQL Propagate]<br/>
+Release date: 2017-09-25<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
-Free version: No<br/>
-Price: $399
+Free version: Yes<br/>
+Price: No
 
- - Work with backups just like with live databases
- - Mount backups to a specific point in time
- - Speed up SQL database restores
- - Access data and objects directly inside backups
- - Attach backups directly from network drives
- - Modify data without altering backup files
+ - Execute scripts on saved list of servers/databases
+ - Parse SQL scripts prior to execution
+ - Create SQL scripts directly in the application
+ - Manage lists of SQL scripts and SQL databases
+ - Set order of SQL scripts execution
+ - Export execution results into TXT or CSV file
+ - Preview exaction results by databases or by scripts
+ - Edit SQL scripts in a built-in IDE prior to execution
 
 
 ## ApexSQL Build
 <a id="apexsql-build"></a>
 Download page: [ApexSQL Build]<br/>
 Release date: 2017-05-15<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
@@ -2016,11 +2036,12 @@ Price: $399
  - Ensure error free deployments
  - Preview the script impact by action or SQL object
 
+
 ## ApexSQL Clean
 <a id="apexsql-clean"></a>
 Download page: [ApexSQL Clean]<br/>
-Release date: 2016-05-18<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-09-28<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
@@ -2038,8 +2059,8 @@ Price: $399
 ## ApexSQL Data Diff
 <a id="apexsql-data-diff"></a>
 Download page: [ApexSQL Data Diff]<br/>
-Release date: 2017-06-06<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-03<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $599
@@ -2056,11 +2077,30 @@ Price: $599
  - Deploy data changes directly from a source control label
 
 
+## ApexSQL Decrypt
+<a id="apexsql-decrypt"></a>
+Download page: [ApexSQL Decrypt]<br/>
+Release date: 2017-08-16<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Decrypt SQL procedures, functions, triggers and views
+ - Initiate decryption directly from SSMS
+ - Decrypt objects with a single click
+ - Filter encrypted objects
+ - View original DDL script
+ - Export encrypted objects into a SQL script
+ - Decrypt databases from multiple servers
+ - Decrypt wizard with built-in IDE
+
+
 ## ApexSQL Diff
 <a id="apexsql-diff"></a>
 Download page: [ApexSQL Diff]<br/>
-Release date: 2017-06-07<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $599
@@ -2078,7 +2118,7 @@ Price: $599
 <a id="apexsql-doc"></a>
 Download page: [ApexSQL Doc]<br/>
 Release date: 2017-09-06<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $699
@@ -2097,7 +2137,7 @@ Price: $699
 <a id="apexsql-generate"></a>
 Download page: [ApexSQL Generate]<br/>
 Release date: 2017-07-13<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -2115,8 +2155,8 @@ Price: $499
 ## ApexSQL Script
 <a id="apexsql-script"></a>
 Download page: [ApexSQL Script]<br/>
-Release date: 2016-05-10<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-05-08<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
@@ -2150,49 +2190,11 @@ Price: $1299
  - Audit who, what, and when for all changes
 
 
-## ApexSQL Propagate
-<a id="apexsql-propagate"></a>
-Download page: [ApexSQL Propagate]<br/>
-Release date: 2017-10-20<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
-Author: ApexSQL<br/>
-Free version: Yes<br/>
-Price: No
-
- - Execute scripts on saved list of servers/databases
- - Parse SQL scripts prior to execution
- - Create SQL scripts directly in the application
- - Manage lists of SQL scripts and SQL databases
- - Set order of SQL scripts execution
- - Export execution results into TXT or CSV file
- - Preview exaction results by databases or by scripts
- - Edit SQL scripts in a built-in IDE prior to execution
- 
- 
-## ApexSQL Plan
-<a id="apexsql-pan"></a>
-Download page: [ApexSQL Plan]<br/>
-Release date: 2017-10-26<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
-Author: ApexSQL<br/>
-Free version: Yes<br/>
-Price: No
-
- - Analyze and optimize SQL query execution plans
- - Identify query performance issues and deadlocks
- - Understand query performance characteristics
- - Analyze query waits & review query execution plans
- - Customize graphical query execution plan view
- - See the actual relative cost of each plan operator
- - Analyze query live performance statistics
- - Compare estimated and actual query execution plans
-
-
 ## ApexSQL Trigger Viewer
 <a id="apexsql-trigger-viewer"></a>
 Download page: [ApexSQL Trigger Viewer]<br/>
 Release date: 2017-06-01<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: Yes<br/>
 Price: No
@@ -3771,10 +3773,12 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
 [ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx
 [ApexSQL Backup]:https://www.apexsql.com/sql_tools_backup.aspx
+[ApexSQL Defrag]:https://www.apexsql.com/sql_tools_defrag.aspx
 [ApexSQL Log]:https://www.apexsql.com/sql_tools_log.aspx
 [ApexSQL Monitor]:https://www.apexsql.com/sql_tools_monitor.aspx
+[ApexSQL Plan]:https://www.apexsql.com/sql_tools_plan.aspx
+[ApexSQL Propagate]:https://www.apexsql.com/sql_tools_propagate.aspx
 [ApexSQL Recover]:https://www.apexsql.com/sql_tools_recover.aspx
-[ApexSQL Restore]:https://www.apexsql.com/sql_tools_restore.aspx
 [ApexSQL Build]:https://www.apexsql.com/sql_tools_build.aspx
 [ApexSQL Clean]:https://www.apexsql.com/sql_tools_clean.aspx
 [ApexSQL Data Diff]:https://www.apexsql.com/sql_tools_datadiff.aspx
@@ -3783,8 +3787,6 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [ApexSQL Generate]:https://www.apexsql.com/sql_tools_generate.aspx
 [ApexSQL Script]:https://www.apexsql.com/sql_tools_script.aspx
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
-[ApexSQL Propagate]:https://www.apexsql.com/sql_tools_propagate.aspx
-[ApexSQL Plan]:https://www.apexsql.com/sql_tools_plan.aspx
 [ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
