@@ -64,7 +64,7 @@ Headers:
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addins](/SSMS/SSMS_Addins.md) (**33 useful free and paid SSMS Addins**)
+    - [SSMS addins](/SSMS/SSMS_Addins.md) (**34 useful free and paid SSMS Addins**)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
     - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
