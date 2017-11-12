@@ -14,15 +14,16 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {22}
  - **[MS]**: Management Studio (alternative for SSMS) {21}
+ - **[REC]**: Recovery tools {3}
  - **[S]**: Search tools {2}
  - **[SC]**: Structure compare {15}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {103}
+ - **[?]**: Not yet classified {102}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                      | 2017-08-07   | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                      | 2017-10-09   | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                               | 2012-02-11   | Microsoft             |            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]              | 2014-12-12   | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                 | 2016-02-23   | Microsoft             |            | Yes            | No    |
@@ -141,7 +142,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Monitor](#apexsql-monitor)                                   | No                               | No             | [M]        | [ApexSQL Monitor]                           | 2017-10-05   | ApexSQL               |            | No             |  $499 |
 | [ApexSQL Plan](#apexsql-plan)                                         | No                               | No             | [?]        | [ApexSQL Plan]                              | 2017-10-26   | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Propagate]                         | 2017-09-25   | ApexSQL               |            | Yes            | No    |
-| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [?]        | [ApexSQL Recover]                           | 2017-10-26   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [REC]      | [ApexSQL Recover]                           | 2017-10-26   | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Build](#apexsql-build)                                       | No                               | No             | [?]        | [ApexSQL Build]                             | 2017-05-15   | ApexSQL               |            | No             |  $399 |
 | [ApexSQL Clean](#apexsql-clean)                                       | No                               | No             | [?]        | [ApexSQL Clean]                             | 2017-09-28   | ApexSQL               |            | No             |  $399 |
 | [ApexSQL Data Diff](#apexsql-data-diff)                               | No                               | No             | [DC]       | [ApexSQL Data Diff]                         | 2017-10-26   | ApexSQL               |            | No             |  $399 |
@@ -256,12 +257,14 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Dell Benchmark Factory](#dell-benchmark-factory)                     | Oracle, MySQL, Other             | No             | [T]        | [Dell Benchmark Factory]                    | ?            | Quest Software        |            | No             | $4413 |
 | [manduka](#maduka)                                                    | ?                                | Linux, Mac     | [?]        | [manduka]                                   | 2017-03-08   | Virtusa Corporation   |            | Yes            | No    |
 | [PowerBI Desktop](#powerbi-desktop)                                   | Oracle, PostgreSQL, MySQL, Other | No             | [BI]       | [PowerBI Desktop]                           | 2017-07-11   | Microsoft             |            | Yes            |  ?    |
+| [Stellar Phoenix SQL Database Repair](#stellar-phoenix)               | No                               | No             | [REC]      | [Stellar Phoenix SQL Database Repair]       | 2017-07-05   | Stellar Technology    |            | No             |  $349 |
+| [DataNumen SQL Recovery](#datanumen-sql-recovery)                     | No                               | No             | [REC]      | [DataNumen SQL Recovery]                    | 2017-03-20   | DataNumen             |            | No             |  $500 |
 
 
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2017-08-07<br/>
+Release date: 2017-10-09<br/>
 Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -3160,7 +3163,7 @@ Microsoft SQL Server Migration Assistant (SSMA) for MySQL is a tool to automate 
 
 
 ## sqlcmd for Mac and Linux
-<a id="ssma-mysql"></a>
+<a id="sqlcmd"></a>
 Download page: [sqlcmd for Mac and Linux]<br/>
 Release date: 2017-01-26<br/>
 Support Version: 2005/2008/2012/2014/2016/Azure<br/>
@@ -3168,7 +3171,7 @@ Author: Soheil Rashidi<br/>
 Free version: Open Source<br/>
 Price: No
 
-sqlcmd for Mac and Linux
+sqlcmd utility for Mac and Linux
 
 
 ## SQL Migrator
@@ -3478,9 +3481,9 @@ DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system.
 This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
 
 
-## comparator
+## Comparator
 <a id="pumpet-comparator"></a>
-Download page: [comparator]<br/>
+Download page: [Comparator]<br/>
 Release date: 2017-06-06<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Author: Pumpet<br/>
@@ -3656,6 +3659,35 @@ Price: ?
 
 Power BI is a suite of business analytics tools to analyze data and share insights.
 Monitor your business and get answers quickly with rich dashboards available on every device.
+
+
+<a id="stellar-phoenix"></a>
+## Stellar Phoenix SQL Database Repair
+Download page: [Stellar Phoenix SQL Database Repair]<br/>
+Release date: 2017-07-05<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Stellar Information Technology<br/>
+Free version: No<br/>
+Price: $349
+
+ - Repairs corrupt MDF and NDF file of SQL Server database
+ - Recovers tables, triggers, indexes, keys, rules and defaults
+ - Perform deleted records recovery from MS SQL Server database
+ - Saves Scan result of SQL Server database file automatically
+ - Allows to search and recover specific database objects
+ - Allows saving the repaired file in MS SQL, HTML, XLS & CSV formats
+ - Supports MS SQL Server 2016, 2014, 2012, 2008 and all lower versions
+
+
+## DataNumen SQL Recovery
+Download page: [DataNumen SQL Recovery]<br/>
+Release date: 2017-03-20<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: DataNumen<br/>
+Free version: No<br/>
+Price: $500
+
+Recovery rate is the most important criterion of a SQL recovery product. Based on our comprehensive tests, DataNumen SQL Recovery has the best recovery rate, much more better than any other competitors in the market!
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
@@ -3893,7 +3925,8 @@ Monitor your business and get answers quickly with rich dashboards available on 
 [Dell Benchmark Factory]:https://www.quest.com/products/benchmark-factory
 [manduka]:http://www.manduka.tech/#/home
 [PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
-
+[Stellar Phoenix SQL Database Repair]:https://www.stellarinfo.com/sql-recovery.php
+[DataNumen SQL Recovery]:https://www.datanumen.com/sql-recovery/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
