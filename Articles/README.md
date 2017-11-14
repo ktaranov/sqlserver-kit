@@ -132,7 +132,7 @@ Articles types:
 | [What is the CXPACKET Wait Type, and How Do You Reduce It?]                                                             | Brent Ozar                               | 2013-08-27 |             |
 | [New indexes, hypothetically]                                                                                           | Kenneth Fisher                           | 2016-11-02 | [BIDX]      |
 | [Indexing Wide Keys in SQL Server]                                                                                      | Brent Ozar                               | 2013-05-08 | [BIDX]      |
-| [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]                                | Simon McAuliffe                          | 2016-03-31 |             |
+| [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE), or How to Break TDE]           | Simon McAuliffe                          | 2016-03-31 |             |
 | [Correctly adding data files to tempdb]                                                                                 | Paul Randal                              | 2014-10-14 |             |
 | [Why You Should Test Your Queries Against Bigger Data]                                                                  | Erik Darling                             | 2016-11-01 |             |
 | [Tally OH! An Improved SQL 8K “CSV Splitter” Function]                                                                  | Jeff Moden                               | 2012-12-28 |             |
@@ -440,6 +440,8 @@ Articles types:
 | [Surprise Delta Stores]                                                                                                 | Joe Obbish                               | 2017-11-07 | [DEV]       |
 | [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]                                           | Denzil Ribeiro                           | 2015-07-08 | [DBA],[DEV] |
 | [The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]                                                          | Kendra Little                            | 2017-11-09 | [DEV]       |
+| [Multiple Output Datasets With R and SQL Server]                                                                        | Kendra Little                            | 2017-11-06 | [DEV],[R]   |
+| [How to Avoid Excessive Sorts in Window Functions]                                                                      | JOOQ                                     | 2017-11-06 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -551,7 +553,7 @@ Articles types:
 [What is the CXPACKET Wait Type, and How Do You Reduce It?]:https://www.brentozar.com/archive/2013/08/what-is-the-cxpacket-wait-type-and-how-do-you-reduce-it/
 [New indexes, hypothetically]:https://sqlstudies.com/2016/11/02/new-indexes-hypothetically/
 [Indexing Wide Keys in SQL Server]:https://www.brentozar.com/archive/2013/05/indexing-wide-keys-in-sql-server/
-[The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE)]:http://simonmcauliffe.com/technology/tde/
+[The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE), or How to Break TDE]:http://simonmcauliffe.com/technology/tde/
 [Correctly adding data files to tempdb]:http://www.sqlskills.com/blogs/paul/correctly-adding-data-files-tempdb/
 [Why You Should Test Your Queries Against Bigger Data]:https://www.brentozar.com/archive/2016/11/why-you-should-test-your-queries-against-bigger-data/
 [Tally OH! An Improved SQL 8K “CSV Splitter” Function]:http://www.sqlservercentral.com/articles/Tally+Table/72993/
@@ -860,3 +862,5 @@ Articles types:
 [Surprise Delta Stores]:https://orderbyselectnull.com/2017/11/07/delta-stores/
 [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]:https://blogs.msdn.microsoft.com/sqlcat/2015/07/08/sql-2014-clustered-columnstore-index-rebuild-and-maintenance-considerations/
 [The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]:https://sqlworkbooks.com/2017/11/the-case-of-the-weirdly-long-columnstore_build_throttle-wait/
+[Multiple Output Datasets With R and SQL Server]:https://itsalljustelectrons.blogspot.ru/2017/11/Multiple-Output-Datasets-with-R-and-SQL-Server.html
+[How to Avoid Excessive Sorts in Window Functions]:https://blog.jooq.org/2017/11/06/how-to-avoid-excessive-sorts-in-window-functions/

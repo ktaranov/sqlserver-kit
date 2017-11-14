@@ -366,20 +366,17 @@ BIML Bloggers
 ## SQL Server Sample Databases and Datasets
 Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
- - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
- - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
- - [Adventure Works 2014 Sample Databases](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks2014)
- - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
+ - [AdventureWorks Sample Databases and Scripts for SQL Server 2017, 2016, 2014 , 2012](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
  - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
  - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
- - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers) (Github Microsoft)
- - [WideWorldImporters Sample Database Download Files](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Github Microsoft)
+ - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Github Microsoft)
  - [IoT Smart Grid sample - demonstrates how SQL Server 2016 memory optimized databases could be used to ingest a very high input data rate](https://github.com/Microsoft/sql-server-samples/releases/tag/iot-smart-grid-v1.0) (Github Microsoft)
  - [In-Memory OLTP (WWI Sales Orders)](https://github.com/Microsoft/sql-server-samples/releases/tag/wwi-sales-orders-v0.5) (Github Microsoft)
  - [Bigger Fact Table for Wide World Importers](http://www.sqlservercentral.com/blogs/koen-verbeeck/2016/08/12/bigger-fact-table-for-wide-world-importers/) (by Koen Verbeeck)
  - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse) (Github)
  - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Brent Ozar)
  - [Updating the Stack Overflow Demo Database version 2016-12-15](https://www.brentozar.com/archive/2017/01/updating-stack-overflow-demo-database/)
+ - [Stackexchange Source files - xml files](https://archive.org/download/stackexchange)
  - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
  - [Git repo for SQL Server Reporting Services samples and community projects](https://github.com/Microsoft/Reporting-Services)
  - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
@@ -388,6 +385,7 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
  - [Itzik Ben-Gan Sample Databases](http://tsql.solidq.com/books/source_code/) (by Itzik Ben-Gan)
  - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
  - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
+ - [SQL Server Sakila DB](https://www.jooq.org/sakila) (by jOQO)
 
 [*Back to top*](#header03)
 
