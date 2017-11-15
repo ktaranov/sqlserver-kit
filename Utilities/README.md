@@ -1,12 +1,12 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **234** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **242** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {3}
- - **[D]**: Documentation solutions {3}
+ - **[D]**: Documentation solutions {5}
  - **[DA]**: Database Architecture {12}
- - **[DC]**: Data compare {11}
+ - **[DC]**: Data compare {12}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
@@ -15,8 +15,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[MG]**: Migration tool {22}
  - **[MS]**: Management Studio (alternative for SSMS) {21}
  - **[REC]**: Recovery tools {3}
- - **[S]**: Search tools {2}
- - **[SC]**: Structure compare {15}
+ - **[S]**: Search tools {3}
+ - **[SC]**: Structure compare {17}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
  - **[?]**: Not yet classified {102}
@@ -210,7 +210,15 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne             |            | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne             |            | No             | ?     |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             |            | No             | ?     |
-| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         |            | Yes            |  $399 |
+| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [SC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         | Shareware  | Yes            | $399  |
+| [xSQL Data Compare](#xsql-data-compare)                               | No                               | No             | [DK]       | [xSQL Data Compare]                         | 2017-06-26   | xSQL Software         | Shareware  | Yes            | $399  |
+| [xSQL Script Executor](#xsql-script-executor)                         | MySQL, DB2, SQL Server CE        | No             | [?]        | [xSQL Script Executor]                      | 2015-02-25   | xSQL Software         | Freeware   | Yes            | $249  |
+| [xSQL Builder](#xsql-builder)                                         | No                               | No             | [?]        | [xSQL Builder]                              | 2017-03-15   | xSQL Software         | Shareware  | No             | $799  |
+| [xSQL Documenter](#xsql-documenter)                                   | Oracle, MySQL, SQLite, Other     | No             | [D]        | [xSQL Documenter]                           | 2017-01-04   | xSQL Software         | Shareware  | No             | $199  |
+| [xSQL Profiler](#xsql-profiler)                                       | No                               | No             | [?]        | [xSQL Profiler]                             | 2017-06-28   | xSQL Software         | Shareware  | Yes            | $999  |
+| [xSQL Schema Compare SDK](#xsql-schema-compare-sdk)                   | No                               | No             | [SC]       | [xSQL Schema Compare SDK]                   | 2017-10-25   | xSQL Software         | Shareware  | No             | $1499 |
+| [xSQL RSS Reporter](#xsql-rss-reporter)                               | No                               | No             | [D]        | [xSQL RSS Reporter]                         | 2014-11-25   | xSQL Software         | Shareware  | No             | $169  |
+| [xSQL Database Searcher](#xsql-database-sercher)                      | No                               | No             | [S]        | [xSQL Database Searcher]                    | 2017-05-09   | xSQL Software         | Freeware   | Yes            | No    |
 | [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]        | ?            | SQLTreeo              |            | No             |  €180 |
 | [SchemaCrawler](#schema-crawler)                                      | Oracle, PostgreSQL, MySQL, Other | Yes            | [D], [SC]  | [SchemaCrawler]                             | 2017-02-27   | Sualeh Fatehi         |            | Open Source    | No    |
 | [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]              | ?            | SENTINELAGENT         |            | No             | ?     |
@@ -3030,6 +3038,113 @@ Price: $399
 
 Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it - xSQL Schema Compare makes database change management easy.
  
+
+## xSQL Data Compare
+<a id="xsql-Data-compare"></a>
+Download page: [xSQL Data Compare]<br/>
+Release date: 2017-06-26<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $399
+
+
+Data Compare for SQL Server is a tool for comparing and synchronizing the data in two SQL Server databases. You can use it for data migration, auditing, replication verification, populating development databases with production data etc.
+
+
+## xSQL Script Executor
+<a id="xsql-script-executor"></a>
+Download page: [xSQL Script Executor]<br/>
+Release date: 2015-02-25<br/>
+Support Version: 2000 and higher<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $249
+
+
+Script Executor is a professional grade database tool that allows you to deploy multiple Sql scripts on one or more target servers with a click of a button. Scripts can be deployed directly from the GUI, from the command line or they can be wrapped into an executable.
+
+
+## xSQL Builder
+<a id="xsql-builder"></a>
+Download page: [xSQL Builder]<br/>
+Release date: 2017-03-15<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $799
+
+
+xSQL Builder is a SQL Server tool that allows for automating the deployment of SQL Server based solutions. It generates executable packages that contain all the information and logic required to deploy the database to the clients' environments regardless of whether it is a first time deployment or an upgrade from a previous version. 
+
+
+## xSQL Documenter
+<a id="xsql-documenter"></a>
+Download page: [xSQL Documenter]<br/>
+Release date: 2017-01-04<br/>
+Support Version: 2000 to 2016<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $199
+
+
+Comprehensive, uniform, and easily navigable database documentation in HTML and compiled CHM format.
+
+
+## xSQL Profiler
+<a id="xsql-profiler"></a>
+Download page: [xSQL Profiler]<br/>
+Release date: 2017-06-28<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $999
+
+
+xSQL Profiler is a SQL tracing tool that provides for monitoring multiple SQL Servers from one central location. Traces can be customized and scheduled to run on certain servers at certain times and all trace data is automatically collected into the central repository.
+
+
+## xSQL Schema Compare SDK
+<a id="xsql-schema-compare-sdk"></a>
+Download page: [xSQL Schema Compare SDK]<br/>
+Release date: 2017-10-25<br/>
+Support Version: 2000 to 2016<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $1499
+
+
+Schema Compare SDK is a set of class libraries that allows you to perform schema comparison and synchronization for SQL Server databases in your .NET or ASP.NET applications. 
+
+
+## xSQL RSS Reporter
+<a id="xsql-rss-reporter"></a>
+Download page: [xSQL RSS Reporter]<br/>
+Release date: 2014-11-25<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $169
+
+
+RSS Reporter is a tool that generates standard Atom or RSS feeds for:
+ - SQL Server job execution history
+ - SQL Server job definition
+ - The output of any T-SQL query
+ - Database size and space usage
+
+
+## xSQL Database Searcher
+<a id="xsql-database-sercher"></a>
+Download page: [xSQL Database Searcher]<br/>
+Release date: 2017-05-09<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: No
+
+Database Searcher, previously known as "xSQL Object Search", is a free tool that allows you to search the schema of SQL Server databases.
+ 
  
 ## Cloud-based DB Monitoring Platform
 <a id="cbmp"></a>
@@ -3878,6 +3993,14 @@ Recovery rate is the most important criterion of a SQL recovery product. Based o
 [SQL Sentry]:https://sentryone.com/platform/sql-server-performance-monitoring
 [DBmaestro TeamWork]:http://www.dbmaestro.com/product/devops-for-database
 [xSQL Schema Compare]:http://www.xsql.com/products/sql_server_schema_compare
+[xSQL Data Compare]:https://www.xsql.com/products/sql_server_data_compare
+[xSQL Script Executor]:https://www.xsql.com/products/script_executor
+[xSQL Builder]:https://www.xsql.com/products/sql_database_deployment_builder
+[xSQL Documenter]:https://www.xsql.com/products/database_documenter
+[xSQL Profiler]:https://www.xsql.com/products/sql_server_profiler
+[xSQL Schema Compare SDK]:https://www.xsql.com/products/sdk/sql_server_schema_compare
+[xSQL RSS Reporter]:https://www.xsql.com/products/rss_reporter
+[xSQL Database Searcher]:https://www.xsql.com/products/sql_server_database_searcher
 [Cloud-based DB Monitoring Platform]:https://www.sqltreeo.com
 [SchemaCrawler]:http://sualeh.github.io/SchemaCrawler/index.html
 [SA MaaS Microsoft SQL Server]:http://sentinelagent.com/maas/microsoft-sql-server
