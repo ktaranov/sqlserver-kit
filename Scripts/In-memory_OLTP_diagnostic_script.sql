@@ -35,13 +35,13 @@ Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-scr
 
 */
 
-DECLARE @instanceLevelOnly BIT = 1
+DECLARE @instanceLevelOnly BIT = 1;
 
 SET NOCOUNT ON 
 DECLARE @VersionString NVARCHAR(MAX) = CAST(SERVERPROPERTY('ProductVersion') AS NVARCHAR(128))
        ,@errorMessage NVARCHAR(512);
 
-DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1))
+DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1));
 
 IF @Version < 12
 BEGIN
@@ -56,7 +56,7 @@ END;
 ######################################################################################################################
 */
 
-DECLARE @dbName VARCHAR(256) = 'ALL'
+DECLARE @dbName VARCHAR(256) = 'ALL';
 --DECLARE @dbName VARCHAR(256) = 'MyDB'
 ---DECLARE @dbName VARCHAR(256) = 'InMemDB2017'
 --DECLARE @dbName VARCHAR(256) = 'InMemoryOLTP2016'
@@ -69,13 +69,13 @@ BEGIN
     SET @errorMessage ='@dbName IS NULL, please specify database name or ALL'
     ;THROW 55001, @errorMessage, 1
     --RAISERROR()
-    RETURN
-END
+    RETURN;
+END;
 
 
 --SELECT @dbName
 -- db level
-DROP TABLE IF EXISTS #temp
+DROP TABLE IF EXISTS #temp;
 
 SELECT name
       ,database_id
@@ -84,7 +84,7 @@ INTO #temp
 FROM sys.databases
 WHERE name NOT IN ('master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
 AND (name = @dbName OR @dbName = 'ALL')
-AND state_desc = 'ONLINE'
+AND state_desc = 'ONLINE';
 
 --SELECT *
 --FROM #temp
@@ -98,7 +98,7 @@ AND state_desc = 'ONLINE'
 DECLARE @sql NVARCHAR(MAX) = ''
        ,@db  NVARCHAR(257)
        ,@counter INT = 1
-       ,@MaxRows INT = (SELECT COUNT(*) FROM #temp)
+       ,@MaxRows INT = (SELECT COUNT(*) FROM #temp);
 
 WHILE @counter <= @MaxRows
 BEGIN
@@ -124,10 +124,10 @@ BEGIN
                 --,IIF(@counter <> 1 AND @counter <> @MaxRows -1, CHAR(10) + ' UNION ALL ' + CHAR(10), '')
             )
     FROM #temp
-    WHERE RowNumber = @counter
+    WHERE RowNumber = @counter;
 
     SELECT @sql += 
-    CASE 
+    CASE
         -- there is exactly 1 database for the entire instance
         WHEN @counter = 1 AND @MaxRows = 1 THEN ''
 
@@ -138,10 +138,10 @@ BEGIN
         -- there is more than 1 database for the instance
         --WHEN @counter = 1 AND @counter = @MaxRows THEN ''
         ELSE CHAR(10) + ' UNION ALL ' + CHAR(10)
-    END 
+    END;
 
-    SELECT @counter += 1
-END
+    SELECT @counter += 1;
+END;
 
 SELECT @sql += 
     CONCAT
@@ -154,25 +154,25 @@ SELECT @sql +=
             ,CHAR(10)
             ,'INNER JOIN sys.databases ON '
             ,'sys.databases.name = InMemDatabases.databaseName '
-        )
+        );
 
-PRINT @sql
+PRINT @sql;
 
-DECLARE @RowCount INT = (SELECT COUNT(*) FROM #temp)
+DECLARE @RowCount INT = (SELECT COUNT(*) FROM #temp);
 
 IF @RowCount <> 0
 BEGIN 
-    DROP TABLE IF EXISTS #MemoryOptimizedDatabases
+    DROP TABLE IF EXISTS #MemoryOptimizedDatabases;
     CREATE TABLE #MemoryOptimizedDatabases
     (
           RowNumber INT IDENTITY
          ,dbName NVARCHAR(256) NOT NULL
          ,database_id INT  NULL
          ,log_reuse_wait_desc NVARCHAR(256)
-    )
+    );
 
     INSERT #MemoryOptimizedDatabases (dbName, database_id, log_reuse_wait_desc)
-    EXEC (@sql)
+    EXEC (@sql);
 
     IF @dbName IS NOT NULL
         SELECT 'Memory-optimized database(s)' AS databases
@@ -180,24 +180,24 @@ BEGIN
               ,database_id
               ,log_reuse_wait_desc
         FROM #MemoryOptimizedDatabases
-        ORDER BY dbName
+        ORDER BY dbName;
 
-    SET NOCOUNT ON 
-    DROP TABLE IF EXISTS #NativeModules 
+    SET NOCOUNT ON;
+    DROP TABLE IF EXISTS #NativeModules;
     CREATE TABLE #NativeModules
     (
          ModuleKey INT IDENTITY NOT NULL
         ,ModuleID INT NOT NULL
         ,ModuleName NVARCHAR(256) NOT NULL
         ,CollectionStatus BIT NULL
-    )
+    );
 
 END 
 
-SELECT @sql = ''
-DECLARE @dbCounter INT = 1
-SELECT @MaxRows  = COUNT(*) FROM #MemoryOptimizedDatabases
-DECLARE @databaseID INT = 1
+SELECT @sql = '';
+DECLARE @dbCounter INT = 1;
+SELECT @MaxRows  = COUNT(*) FROM #MemoryOptimizedDatabases;
+DECLARE @databaseID INT = 1;
 
 /*
 ###################################################
@@ -236,10 +236,10 @@ BEGIN
         ,'.sys.tables b ON b.object_id = a.object_id'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -284,10 +284,10 @@ BEGIN
         ,' ORDER BY tableName, indexName'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT @sql
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -347,10 +347,10 @@ BEGIN
                 ,i.name;'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT @sql
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -391,10 +391,10 @@ BEGIN
           ORDER BY t.name'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -428,10 +428,10 @@ BEGIN
         ORDER BY 1'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
     /*
     #########################################################
@@ -456,10 +456,10 @@ BEGIN
         ORDER BY 1'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -529,10 +529,10 @@ BEGIN
             FROM DetailedConsumption'
         )
         FROM #MemoryOptimizedDatabases
-        WHERE RowNumber = @dbCounter
+        WHERE RowNumber = @dbCounter;
 
         --PRINT (@sql)
-        EXEC (@sql)
+        EXEC (@sql);
     END; -- display memory consumption for temporal/internal tables
 
     /*
@@ -573,10 +573,10 @@ BEGIN
         ,' ORDER BY 2, 3'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -618,9 +618,9 @@ BEGIN
         ORDER BY filegroups.type, filegroups.name, database_files.name'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
     /*
     ##################################################################
@@ -657,9 +657,9 @@ BEGIN
         ,'.sys.database_files ON ContainerDetails.container_guid = database_files.file_guid'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
     /*
     ##################################################################
@@ -701,9 +701,9 @@ BEGIN
         ,' ORDER BY state_desc'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
     /*
@@ -748,9 +748,9 @@ BEGIN
         ,'.sys.database_files ON ContainerFileDetails.container_guid = database_files.file_guid'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
 
 
@@ -778,10 +778,10 @@ BEGIN
             ORDER BY [Schema], tt.name '
         )
         FROM #MemoryOptimizedDatabases
-        WHERE RowNumber = @dbCounter
+        WHERE RowNumber = @dbCounter;
 
         --PRINT (@sql)
-        EXEC (@sql)
+        EXEC (@sql);
 
     /*
 
@@ -809,10 +809,10 @@ BEGIN
         ,' WHERE uses_native_compilation = 1'
     )
     FROM #MemoryOptimizedDatabases
-    WHERE RowNumber = @dbCounter
+    WHERE RowNumber = @dbCounter;
 
     --PRINT (@sql)
-    EXEC (@sql)
+    EXEC (@sql);
 
     --SELECT 'Natively compiled modules' AS objects
  --         ,ModuleID
@@ -825,12 +825,12 @@ BEGIN
 
     IF EXISTS (SELECT 1 FROM #NativeModules)
     BEGIN
-        DECLARE @procCounter INT = 1
-        DECLARE @MaxModules INT = (SELECT COUNT(*) FROM #NativeModules)
-        DECLARE @dbID INT = (SELECT database_id FROM #MemoryOptimizedDatabases  WHERE RowNumber = @dbCounter)
-        DECLARE @ModuleID INT 
-        DECLARE @ModuleStatus BIT
-        DECLARE @ModuleName NVARCHAR(256)
+        DECLARE @procCounter INT = 1;
+        DECLARE @MaxModules INT = (SELECT COUNT(*) FROM #NativeModules);
+        DECLARE @dbID INT = (SELECT database_id FROM #MemoryOptimizedDatabases  WHERE RowNumber = @dbCounter);
+        DECLARE @ModuleID INT;
+        DECLARE @ModuleStatus BIT;
+        DECLARE @ModuleName NVARCHAR(256);
 
         /*
         ########################################################
@@ -843,11 +843,11 @@ BEGIN
             SELECT @ModuleID = ModuleID
                   ,@ModuleName = ModuleName
             FROM #NativeModules
-            WHERE ModuleKey = @procCounter
+            WHERE ModuleKey = @procCounter;
 
-            PRINT CONCAT('Verifying collection stats of ', @ModuleName)
+            PRINT CONCAT('Verifying collection stats of ', @ModuleName);
 
-            SELECT @ModuleStatus = 0
+            SELECT @ModuleStatus = 0;
 
             /*#############################################################################################
 
@@ -865,24 +865,25 @@ BEGIN
                 EXEC sys.sp_xtp_control_query_exec_stats
                     @database_id = @dbID
                    ,@xtp_object_id = @ModuleID
-                   ,@old_collection_value = @ModuleStatus OUTPUT
+                   ,@old_collection_value = @ModuleStatus OUTPUT;
 
             END TRY
             BEGIN CATCH
-                SELECT @ModuleStatus = 0
+                SELECT @ModuleStatus = 0;
             END CATCH
 
             IF @ModuleStatus = 1
             BEGIN
                 UPDATE #NativeModules
                 SET CollectionStatus = 1
-                WHERE ModuleKey = @procCounter
-            END
+                WHERE ModuleKey = @procCounter;
+            END;
 
             SELECT @procCounter +=1
         END -- -- This is the loop that processes each native module
 
         IF EXISTS(SELECT * FROM #NativeModules WHERE Collectionstatus = 1)
+        BEGIN
             SELECT 'Native execution statistics' AS Objects
                   ,ModuleName
                   ,ModuleID
@@ -893,19 +894,20 @@ BEGIN
                   END AS CollectionStatsEnabled
             FROM #NativeModules
             WHERE Collectionstatus = 1
-            ORDER BY ModuleName
+            ORDER BY ModuleName;
+        END;
         ELSE
         BEGIN
             PRINT 'No modules found that have collection stats enabled'
-        END
+        END;
 
-    END --IF EXISTS (SELECT 1 FROM #NativeModules)
+    END; --IF EXISTS (SELECT 1 FROM #NativeModules)
 
-    SELECT @dbCounter += 1
+    SELECT @dbCounter += 1;
 
-END -- This is the loop that processes each database
+END; -- This is the loop that processes each database
 
-DROP TABLE #NativeModules
+DROP TABLE #NativeModules;
 
 
 /*
@@ -937,18 +939,18 @@ BEGIN
     SELECT committed_target_kb
     FROM sys.dm_os_sys_info;
 
-    DROP TABLE IF EXISTS #TraceFlags
+    DROP TABLE IF EXISTS #TraceFlags;
     CREATE TABLE #TraceFlags
     (
          TraceFlag INT NOT NULL
         ,Status TINYINT NOT NULL
         ,Global TINYINT NOT NULL
         ,Session TINYINT NOT NULL
-    )
+    );
     INSERT #TraceFlags
-    EXEC ('DBCC TRACESTATUS')
+    EXEC ('DBCC TRACESTATUS');
 
-    DECLARE @msg NVARCHAR(MAX)
+    DECLARE @msg NVARCHAR(MAX);
 
     IF EXISTS (SELECT 1 FROM #TraceFlags WHERE TraceFlag = 10316) -- allows custom indexing on hidden staging table for temporal tables
     BEGIN
@@ -964,7 +966,7 @@ BEGIN
         WHERE TraceFlag = 10316 
         ORDER BY TraceFlag
 
-    END 
+    END;
 
     /*
     #############################################################################################
@@ -977,7 +979,7 @@ BEGIN
     */
 
     -- instance level
-    DECLARE @InstanceCollectionStatus BIT
+    DECLARE @InstanceCollectionStatus BIT;
 
     EXEC sys.sp_xtp_control_query_exec_stats
     @old_collection_value = @InstanceCollectionStatus OUTPUT
@@ -985,7 +987,7 @@ BEGIN
     SELECT CASE 
                WHEN @InstanceCollectionStatus = 1 THEN 'YES' 
                ELSE 'NO' 
-           END AS [instance-level collection of execution statistics for Native Modules enabled]
+           END AS [instance-level collection of execution statistics for Native Modules enabled];
 
     /*
     ####################################################################################
@@ -1022,9 +1024,9 @@ BEGIN
           ,target_memory_kb / 1024 AS targetMemoryMB
     FROM sys.databases d
     INNER JOIN sys.dm_resource_governor_resource_pools AS Pools ON Pools.pool_id = d.resource_pool_id
-    ORDER BY poolName, databaseName
+    ORDER BY poolName, databaseName;
 
-                             
+
     /*
     ###########################################################
         Memory breakdown
@@ -1052,7 +1054,7 @@ BEGIN
               WHEN decimalPoint > 1 THEN SUBSTRING(clerkTypeUsageMB, 1, PATINDEX('%.%', clerkTypeUsageMB) -1)
               ELSE clerkTypeUsageMB
           END 
-    FROM ClerksAggregatedString
+    FROM ClerksAggregatedString;
 
     -- total memory allocated for in-memory engine
     SELECT type clerk_type
@@ -1060,7 +1062,7 @@ BEGIN
          , memory_node_id
          , pages_kb/1024 pages_mb 
     FROM sys.dm_os_memory_clerks 
-    WHERE type LIKE '%xtp%'
+    WHERE type LIKE '%xtp%';
 
 
     /*
@@ -1075,9 +1077,9 @@ BEGIN
         SELECT 1
         FROM sys.event_notifications
     )
-    BEGIN 
+    BEGIN
         SELECT 'Event notifications are listed below'
         SELECT *
         FROM sys.event_notifications
-    END
+    END;
 END;
