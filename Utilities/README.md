@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **242** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **251** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -14,12 +14,12 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {22}
  - **[MS]**: Management Studio (alternative for SSMS) {21}
- - **[REC]**: Recovery tools {3}
+ - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {17}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {102}
+ - **[?]**: Not yet classified {107}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
@@ -267,6 +267,15 @@ Utility types (main purpose), in braces `{}` current counts:
 | [PowerBI Desktop](#powerbi-desktop)                                   | Oracle, PostgreSQL, MySQL, Other | No             | [BI]       | [PowerBI Desktop]                           | 2017-07-11   | Microsoft             |            | Yes            |  ?    |
 | [Stellar Phoenix SQL Database Repair](#stellar-phoenix)               | No                               | No             | [REC]      | [Stellar Phoenix SQL Database Repair]       | 2017-07-05   | Stellar Technology    |            | No             |  $349 |
 | [DataNumen SQL Recovery](#datanumen-sql-recovery)                     | No                               | No             | [REC]      | [DataNumen SQL Recovery]                    | 2017-03-20   | DataNumen             |            | No             |  $500 |
+| [Recovery Toolbox for SQL Server](#recovery-toolbox-for-sql-server)   | No                               | No             | [REC]      | [Recovery Toolbox for SQL Server]           | ?            | Recovery Toolbox      | Shareware  | No             |  $99  |
+| [SQL MDF Viewer](#sql-mdf-viewer)                                     | No                               | No             | [?]        | [SQL MDF Viewer]                            | ?            | SysTools              | Shareware  | No             |  $129 |
+| [SQL MDF Recovery Tool](#sql-mdf-recovery-tool)                       | No                               | No             | [REC]      | [SQL MDF Recovery Tool]                     | ?            | SysTools              | Shareware  | No             |  $129 |
+| [SQL Passord Recovery](#sql-password-recovery)                        | No                               | No             | [REC]      | [SQL Passord Recovery]                      | ?            | SysTools              | Shareware  | No             |  $69  |
+| [SQL Decryptor](#sql-decryptor)                                       | No                               | No             | [?]        | [SQL Decryptor]                             | ?            | SysTools              | Shareware  | No             |  $69  |
+| [SQL Backup Database Recovery](#sql-backup-database-recovery)         | No                               | No             | [REC]      | [Backup Database Recovery]                  | ?            | SysTools              | Shareware  | No             |  $149 |
+| [SQL Log File Viewer](#sql-log-file-viewer)                           | No                               | No             | [?]        | [Log File Viewer]                           | ?            | SysTools              | Shareware  | No             |  $999 |
+| [DAX Studio](#dax-studio)                                             | No                               | No             | [?]        | [DAX Studio]                                | ?            | Sqlbi                 | Freeware   | Yes            | No    |
+| [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
 
 
 <a id="ssms"></a>
@@ -3805,6 +3814,133 @@ Price: $500
 Recovery rate is the most important criterion of a SQL recovery product. Based on our comprehensive tests, DataNumen SQL Recovery has the best recovery rate, much more better than any other competitors in the market!
 
 
+<a id="recovery-toolbox-for-sql-server"></a>
+## Recovery Toolbox for SQL Server
+Download page: [Recovery Toolbox for SQL Server]<br/>
+Release date: ?<br/>
+Support Version: 7/2000/2005/2008/2008 R2/2012/2014<br/>
+Author: Recovery Toolbox<br/>
+Free version: No<br/>
+Price: $99
+
+Recovery Toolbox for SQL Server is a comprehensive recovery solution for damaged MS SQL Server database files.
+
+
+<a id="sql-mdf-viewer"></a>
+## SQL MDF Viewer
+Download page: [SQL MDF Viewer]<br/>
+Release date: ?<br/>
+Support Version: 2000/2005/2008/2008r2/2012/2014/2016<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $129
+
+Read and open MDF database file along with its related elements
+ - Preview all tables, indexes, triggers of the MDF file
+ - Auto detects the SQL Server version
+ - Save scanned MDF file data in .str file format
+
+
+<a id="sql-mdf-recovery-tool"></a>
+## SQL MDF Recovery Tool
+Download page: [SQL MDF Recovery Tool]<br/>
+Release date: ?<br/>
+Support Version: 2014 and all lower versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $129
+
+Repair corrupt MDF file data with ease and accuracy
+ - Recover tables, function, stored procedure, triggers, etc
+ - Performs Quick and Advance Scan to repair MDF & NDF file
+ - Export selective file with Schema or Schema and Data
+
+
+<a id="sql-password-recovery"></a>
+## SQL Passord Recovery
+Download page: [SQL Passord Recovery]<br/>
+Release date: ?<br/>
+Support Version: 2008 & all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $69
+
+Tool to Reset SQL Server Database Password
+ - Recover passwords of multiple SQL Server databases
+ - Reset both unknown and empty SQL DB passwords
+ - Remove and reset passwords of all SQL Server users
+
+
+<a id="sql-decryptor"></a>
+## SQL Decryptor
+Download page: [SQL Decryptor]<br/>
+Release date: ?<br/>
+Support Version: 2014 & all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $69
+
+User Friendly Solution to Remove Encryption From SQL Database
+ - Remove encryption from batch SQL objects
+ - Display complete preview of MS SQL database
+ - Export data to SQL Server and compatible script
+
+
+<a id="sql-backup-database-recovery"></a>
+## SQL Backup Database Recovery
+Download page: [SQL Backup Database Recovery]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $149
+
+Recover Corrupt SQL Backup File with .bak Repair Tool
+ - Repair corrupt SQL Server backup file with confidence
+ - Fix all SQL backup error messages quickly
+ - Advanced and affordable solution to recover SQL BAK file
+ - Simple and nifty graphical user interface
+
+ 
+<a id="sql-log-file-viewer"></a>
+## SQL Log File Viewer
+Download page: [SQL Log File Viewer]<br/>
+Release date: ?<br/>
+Support Version: 2016/2014/2012/2008 and all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $999
+
+Read SQL Server database transaction log file with SQL log analysis tool
+ - Analyze and view SQL Server LDF file transactions
+ - View all the transactions, i.e. insert, update, delete etc.
+ - Export log file into SQL Server, SQL script or as CSV file
+
+ 
+<a id="dax-studio"></a>
+## DAX Studio
+Download page: [DAX Studio]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Sqlbi<br/>
+Free version: Yes<br/>
+Price: No
+
+DAX Studio is a tool to write, execute, and analyze DAX queries in Power BI Designer, Power Pivot for Excel, and Analysis Services Tabular.
+
+
+<a id="sql-cop"></a>
+## SQL Cop
+Download page: [SQL Cop]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: LessThanDot<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Cop is a static code analysis tool to automatically detect issues with your database.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
@@ -4050,6 +4186,15 @@ Recovery rate is the most important criterion of a SQL recovery product. Based o
 [PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
 [Stellar Phoenix SQL Database Repair]:https://www.stellarinfo.com/sql-recovery.php
 [DataNumen SQL Recovery]:https://www.datanumen.com/sql-recovery/
+[Recovery Toolbox for SQL Server]:https://sql.recoverytoolbox.com
+[SQL MDF Viewer]:http://www.sqlmdfviewer.org
+[SQL MDF Recovery Tool]:http://www.sqlmdfviewer.org/recovery
+[SQL Passord Recovery]:http://www.sqlmdfviewer.org/sql-password-recovery-freeware.html
+[SQL Decryptor]:http://www.sqlmdfviewer.org/sql-decryptor.html
+[SQL Backup Database Recovery]:http://www.sql-backup-recovery.sqlmdfviewer.org
+[SQL Log File Viewer]:http://www.sqlmdfviewer.org/viewer/sql-server-log-file.html
+[DAX Studio]:https://www.sqlbi.com/tools/dax-studio
+[SQL Cop]:https://www.sqlshack.com/review-sql-cop-unit-tests-collection
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
