@@ -96,7 +96,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 234 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 254 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -197,9 +197,9 @@ Headers:
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
-   - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
    - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
+   - [SQL Down Under Podcast](https://www.sqldownunder.com) (by Greg Low)
  - Courses
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
@@ -284,6 +284,7 @@ Headers:
     - [Binary Formatter - format binary files (e.g. DLL / CER / PVK) into hex bytes string for SQL script](https://github.com/SqlQuantumLeap/BinaryFormatter) (by Solomon Rutzky / Sql Quantum Leap)
     - [ExtendedTSQLCollector - Custom collector types to extend and simplify the features offered by the built-in SQL Server Data Collector and read data from Extended Events and/or queries](https://github.com/spaghettidba/ExtendedTSQLCollector) (by Gianluca Sartori)
     - [XESmartTarget - configurable target for SQL Server Extended Events](https://github.com/spaghettidba/XESmartTarget) (by Gianluca Sartori)
+    - [Schemazen - script and create SQL Server objects quickly](https://github.com/sethreno/schemazen) (by Seth Reno)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)

@@ -1,12 +1,12 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **251** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **254** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {3}
  - **[D]**: Documentation solutions {5}
  - **[DA]**: Database Architecture {12}
- - **[DC]**: Data compare {12}
+ - **[DC]**: Data compare {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
@@ -16,10 +16,10 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {21}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
- - **[SC]**: Structure compare {17}
+ - **[SC]**: Structure compare {18}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {107}
+ - **[?]**: Not yet classified {110}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
@@ -3044,9 +3044,8 @@ Author: xSQL Software<br/>
 Free version: Yes<br/>
 Price: $399
 
+Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it.
 
-Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it - xSQL Schema Compare makes database change management easy.
- 
 
 ## xSQL Data Compare
 <a id="xsql-Data-compare"></a>
@@ -3057,8 +3056,8 @@ Author: xSQL Software<br/>
 Free version: Yes<br/>
 Price: $399
 
-
-Data Compare for SQL Server is a tool for comparing and synchronizing the data in two SQL Server databases. You can use it for data migration, auditing, replication verification, populating development databases with production data etc.
+Data Compare for SQL Server is a tool for comparing and synchronizing the data in two SQL Server databases.
+You can use it for data migration, auditing, replication verification, populating development databases with production data etc.
 
 
 ## xSQL Script Executor
@@ -3070,8 +3069,8 @@ Author: xSQL Software<br/>
 Free version: Yes<br/>
 Price: $249
 
-
-Script Executor is a professional grade database tool that allows you to deploy multiple Sql scripts on one or more target servers with a click of a button. Scripts can be deployed directly from the GUI, from the command line or they can be wrapped into an executable.
+Script Executor is a professional grade database tool that allows you to deploy multiple Sql scripts on one or more target servers with a click of a button.
+Scripts can be deployed directly from the GUI, from the command line or they can be wrapped into an executable.
 
 
 ## xSQL Builder
@@ -3083,8 +3082,8 @@ Author: xSQL Software<br/>
 Free version: No<br/>
 Price: $799
 
-
-xSQL Builder is a SQL Server tool that allows for automating the deployment of SQL Server based solutions. It generates executable packages that contain all the information and logic required to deploy the database to the clients' environments regardless of whether it is a first time deployment or an upgrade from a previous version. 
+xSQL Builder is a SQL Server tool that allows for automating the deployment of SQL Server based solutions.
+It generates executable packages that contain all the information and logic required to deploy the database to the clients' environments regardless of whether it is a first time deployment or an upgrade from a previous version. 
 
 
 ## xSQL Documenter
@@ -3095,7 +3094,6 @@ Support Version: 2000 to 2016<br/>
 Author: xSQL Software<br/>
 Free version: No<br/>
 Price: $199
-
 
 Comprehensive, uniform, and easily navigable database documentation in HTML and compiled CHM format.
 
@@ -3109,8 +3107,8 @@ Author: xSQL Software<br/>
 Free version: Yes<br/>
 Price: $999
 
-
-xSQL Profiler is a SQL tracing tool that provides for monitoring multiple SQL Servers from one central location. Traces can be customized and scheduled to run on certain servers at certain times and all trace data is automatically collected into the central repository.
+xSQL Profiler is a SQL tracing tool that provides for monitoring multiple SQL Servers from one central location.
+Traces can be customized and scheduled to run on certain servers at certain times and all trace data is automatically collected into the central repository.
 
 
 ## xSQL Schema Compare SDK
@@ -3122,8 +3120,7 @@ Author: xSQL Software<br/>
 Free version: No<br/>
 Price: $1499
 
-
-Schema Compare SDK is a set of class libraries that allows you to perform schema comparison and synchronization for SQL Server databases in your .NET or ASP.NET applications. 
+Schema Compare SDK is a set of class libraries that allows you to perform schema comparison and synchronization for SQL Server databases in your .NET or ASP.NET applications.
 
 
 ## xSQL RSS Reporter
@@ -3134,7 +3131,6 @@ Support Version: 2005/2008/2012/2014<br/>
 Author: xSQL Software<br/>
 Free version: No<br/>
 Price: $169
-
 
 RSS Reporter is a tool that generates standard Atom or RSS feeds for:
  - SQL Server job execution history
@@ -3163,8 +3159,11 @@ Support Version: ?<br/>
 Author: SQLTreeo<br/>
 Free version: No<br/>
 Price: €180
- 
-Charts-on-charts technology, 24/7/365. Intuïtive ease of use. Alerting via Windows, Android and iOS. Drill down into detailed history charts. Send instant messages within your secured network.
+
+ - Charts-on-charts technology, 24/7/365.
+ - Alerting via Windows, Android and iOS.
+ - Drill down into detailed history charts.
+ - Send instant messages within your secured network.
 
 
 ## SchemaCrawler
@@ -3576,7 +3575,8 @@ Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
 
-The Microsoft Assessment and Planning Toolkit makes it easy to assess your current IT infrastructure for a variety of technology migration projects. This Solution Accelerator provides a powerful inventory, assessment, and reporting tool to simplify the migration planning process.
+The Microsoft Assessment and Planning Toolkit makes it easy to assess your current IT infrastructure for a variety of technology migration projects.
+This Solution Accelerator provides a powerful inventory, assessment, and reporting tool to simplify the migration planning process.
 
 
 ## mssql-scripter
@@ -3811,7 +3811,8 @@ Author: DataNumen<br/>
 Free version: No<br/>
 Price: $500
 
-Recovery rate is the most important criterion of a SQL recovery product. Based on our comprehensive tests, DataNumen SQL Recovery has the best recovery rate, much more better than any other competitors in the market!
+Recovery rate is the most important criterion of a SQL recovery product.
+Based on our comprehensive tests, DataNumen SQL Recovery has the best recovery rate, much more better than any other competitors in the market!
 
 
 <a id="recovery-toolbox-for-sql-server"></a>
@@ -3901,7 +3902,7 @@ Recover Corrupt SQL Backup File with .bak Repair Tool
  - Advanced and affordable solution to recover SQL BAK file
  - Simple and nifty graphical user interface
 
- 
+
 <a id="sql-log-file-viewer"></a>
 ## SQL Log File Viewer
 Download page: [SQL Log File Viewer]<br/>
@@ -3916,7 +3917,7 @@ Read SQL Server database transaction log file with SQL log analysis tool
  - View all the transactions, i.e. insert, update, delete etc.
  - Export log file into SQL Server, SQL script or as CSV file
 
- 
+
 <a id="dax-studio"></a>
 ## DAX Studio
 Download page: [DAX Studio]<br/>
