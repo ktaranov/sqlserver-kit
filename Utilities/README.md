@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **254** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **255** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -13,7 +13,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
  - **[MG]**: Migration tool {22}
- - **[MS]**: Management Studio (alternative for SSMS) {21}
+ - **[MS]**: Management Studio (alternative for SSMS) {22}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {18}
@@ -25,6 +25,7 @@ Utility types (main purpose), in braces `{}` current counts:
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
 | [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                      | 2017-10-09   | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                               | 2012-02-11   | Microsoft             |            | Yes            | No    |
+| [SQL OPS Studio](#sos)                                                | No                               | Linux, Mac     | [MS]       | [SQL OPS Studio]                            | 2017-11-15   | Microsoft             |            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]              | 2014-12-12   | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                 | 2016-02-23   | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)               | No                               | No             | [?]        | [Baseline Security Analyze]                 | 2015-01-09   | Microsoft             |            | Yes            | No    |
@@ -305,6 +306,31 @@ The bcp utility bulk copies data between an instance of MicrosoftSQL Server and 
 The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
 Except when used with the queryout option, the utility requires no knowledge of Transact-SQL.
 To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
+
+
+<a id="sos"></a>
+## SQL OPS Studio
+Download page: [SQL OPS Studio]<br/>
+Release date: 2017-11-15<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Operations Studio is a data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux.
+
+ - Cross-Platform DB management for Windows, macOS and Linux with simple XCopy deployment
+ - SQL Server Connection Management with Connection Dialog, Server Groups, and Registered Servers
+ - Object Explorer supporting schema browsing and contextual command execution
+ - T-SQL Query Editor with advanced coding features such as autosuggestions, error diagnostics, tooltips, formatting and peek definition
+ - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
+ - Management Dashboard supporting customizable widgets with drill-through actionable insights
+ - Visual Data Editor that enables direct row insertion, update and deletion into tables
+ - Backup and Restore dialogs that enables advanced customization and remote filesystem browsing, configured tasks can be executed or scripted
+ - Task History window to view current task execution status, completion results with error messages and task T-SQL scripting
+ - Scripting support to generate CREATE, SELECT and DROP statements for database objects
+ - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+ - Modern light-weight shell with theming, user settings, full screen support, integrated terminal and numerous other features
 
 
 ## RML Utilities for SQL Server
@@ -3944,6 +3970,7 @@ SQL Cop is a static code analysis tool to automatically detect issues with your 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
+[SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
