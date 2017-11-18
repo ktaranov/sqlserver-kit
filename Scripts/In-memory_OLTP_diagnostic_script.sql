@@ -29,12 +29,16 @@ Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-scr
         06 Nov 2017 fixed inconsistencies with column order
         13 Nov 2017 fixed case sensitivity issues
         14 Nov 2017 fixed bug with 'ALL' parameter, db loop now works for single or ALL
-
+        15 Nov 2017 added semi-colons, removed comments, added percentUsed to Resource Group pool query
+        16 Nov 2017 added validation to lookup @dbname in sys.databases
+        17 Nov 2017 
+                    changed formatting of memory consumption, bug with 'sizeGB' to 'sizeMB', formatted committed_target_kb to MB/GB
+                    added column for LOBs, and removed LEFT JOIN that wasn't required
         
     ##########################################################################################
 
 */
-
+SET NOCOUNT ON 
 DECLARE @instanceLevelOnly BIT = 1;
 
 SET NOCOUNT ON 
@@ -56,55 +60,50 @@ END;
 ######################################################################################################################
 */
 
-DECLARE @dbName VARCHAR(256) = 'ALL';
---DECLARE @dbName VARCHAR(256) = 'MyDB'
----DECLARE @dbName VARCHAR(256) = 'InMemDB2017'
---DECLARE @dbName VARCHAR(256) = 'InMemoryOLTP2016'
-
-
-
+DECLARE @dbName VARCHAR(256) = 'ALL'
 
 IF @dbName IS NULL AND @instanceLevelOnly = 0
 BEGIN
-    SET @errorMessage ='@dbName IS NULL, please specify database name or ALL'
-    ;THROW 55001, @errorMessage, 1
-    --RAISERROR()
+    SET @errorMessage = '@dbName IS NULL, please specify database name or ALL';
+    THROW 55001, @errorMessage, 1;
     RETURN;
 END;
 
+IF (@dbName IS NOT NULL OR @dbName = 'ALL') AND NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = @dbName)
+BEGIN
+    SET @errorMessage = '@dbName not found in sys.databases, OR ALL was specified, but no memory-optimized databases were found ';
+    THROW 55002, @errorMessage, 1;
+    RETURN;
+END;
 
---SELECT @dbName
 -- db level
 DROP TABLE IF EXISTS #temp;
 
 SELECT name
       ,database_id
-      ,ROW_NUMBER() OVER(ORDER BY name ASC) AS RowNumber
+      ,ROW_NUMBER() OVER (ORDER BY name ASC) AS RowNumber
 INTO #temp
 FROM sys.databases
-WHERE name NOT IN ('master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
-AND (name = @dbName OR @dbName = 'ALL')
-AND state_desc = 'ONLINE';
+WHERE name NOT IN ( 'master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
+  AND (name = @dbName OR @dbName = 'ALL')
+  AND state_desc = 'ONLINE';
 
---SELECT *
---FROM #temp
 
 /*
 ####################################################
     Determine which databases are memory-optimized
 ####################################################
 */
-
-DECLARE @sql NVARCHAR(MAX) = ''
-       ,@db  NVARCHAR(257)
+DECLARE @sql     NVARCHAR(MAX) = ''
+       ,@db      NVARCHAR(257)
        ,@counter INT = 1
        ,@MaxRows INT = (SELECT COUNT(*) FROM #temp);
 
 WHILE @counter <= @MaxRows
 BEGIN
     
-    IF @counter = 1 
-        SELECT @sql += ';WITH InMemDatabases AS ('
+    IF @counter = 1
+        SELECT @sql += ';WITH InMemDatabases AS (';
 
     IF @counter <> @MaxRows OR (@counter = 1 AND @counter = @MaxRows)
         SELECT @sql += 
@@ -121,28 +120,24 @@ BEGIN
                 , '.sys.database_files INNER JOIN '
                 , name
                 , '.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id WHERE filegroups.type = ''FX'''
-                --,IIF(@counter <> 1 AND @counter <> @MaxRows -1, CHAR(10) + ' UNION ALL ' + CHAR(10), '')
             )
     FROM #temp
     WHERE RowNumber = @counter;
 
     SELECT @sql += 
-    CASE
-        -- there is exactly 1 database for the entire instance
-        WHEN @counter = 1 AND @MaxRows = 1 THEN ''
-
+    CASE 
+        WHEN @counter = 1 AND @MaxRows = 1 THEN ''  -- there is exactly 1 database for the entire instance
         WHEN @counter = @MaxRows  THEN ''
-
         WHEN @counter <> 1 AND @counter = @MaxRows -1 THEN ''
-
-        -- there is more than 1 database for the instance
-        --WHEN @counter = 1 AND @counter = @MaxRows THEN ''
         ELSE CHAR(10) + ' UNION ALL ' + CHAR(10)
     END;
 
     SELECT @counter += 1;
 END;
 
+--PRINT @sql 
+
+-- post-processing
 SELECT @sql += 
     CONCAT
         (
@@ -156,22 +151,28 @@ SELECT @sql +=
             ,'sys.databases.name = InMemDatabases.databaseName '
         );
 
-PRINT @sql;
+--PRINT @sql;
 
 DECLARE @RowCount INT = (SELECT COUNT(*) FROM #temp);
 
 IF @RowCount <> 0
 BEGIN 
     DROP TABLE IF EXISTS #MemoryOptimizedDatabases;
+
     CREATE TABLE #MemoryOptimizedDatabases
     (
-          RowNumber INT IDENTITY
-         ,dbName NVARCHAR(256) NOT NULL
-         ,database_id INT  NULL
-         ,log_reuse_wait_desc NVARCHAR(256)
+        RowNumber INT IDENTITY
+       ,dbName NVARCHAR(256) NOT NULL
+       ,database_id INT NULL
+       ,log_reuse_wait_desc NVARCHAR(256)
     );
 
-    INSERT #MemoryOptimizedDatabases (dbName, database_id, log_reuse_wait_desc)
+    INSERT #MemoryOptimizedDatabases
+    (
+        dbName
+       ,database_id
+       ,log_reuse_wait_desc
+    )
     EXEC (@sql);
 
     IF @dbName IS NOT NULL
@@ -181,23 +182,23 @@ BEGIN
               ,log_reuse_wait_desc
         FROM #MemoryOptimizedDatabases
         ORDER BY dbName;
+END;
 
-    SET NOCOUNT ON;
-    DROP TABLE IF EXISTS #NativeModules;
-    CREATE TABLE #NativeModules
-    (
-         ModuleKey INT IDENTITY NOT NULL
-        ,ModuleID INT NOT NULL
-        ,ModuleName NVARCHAR(256) NOT NULL
-        ,CollectionStatus BIT NULL
-    );
+DROP TABLE IF EXISTS #NativeModules;
 
-END 
+CREATE TABLE #NativeModules
+(
+    ModuleKey INT IDENTITY NOT NULL
+    ,ModuleID INT NOT NULL
+    ,ModuleName NVARCHAR(256) NOT NULL
+    ,CollectionStatus BIT NULL
+);
 
 SELECT @sql = '';
 DECLARE @dbCounter INT = 1;
-SELECT @MaxRows  = COUNT(*) FROM #MemoryOptimizedDatabases;
+SELECT @MaxRows = COUNT(*) FROM #MemoryOptimizedDatabases;
 DECLARE @databaseID INT = 1;
+
 
 /*
 ###################################################
@@ -224,10 +225,10 @@ BEGIN
         ,', b.name AS tableName
         ,durability_desc
         ,temporal_type_desc
-        ,memory_allocated_for_table_kb
-        ,memory_used_by_table_kb
-        ,memory_allocated_for_indexes_kb
-        ,memory_used_by_indexes_kb
+        ,FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
+        ,FORMAT(memory_used_by_table_kb, ''###,###,###'') AS memoryUsedByTableKB
+        ,FORMAT(memory_allocated_for_indexes_kb, ''###,###,###'') AS memoryAllocatedForIndexesKB
+        ,FORMAT(memory_used_by_indexes_kb, ''###,###,###'') AS memoryUsedByIndexesKB
         FROM '
         , dbName
         ,'.sys.dm_db_xtp_table_memory_stats a'
@@ -260,8 +261,8 @@ BEGIN
            ,c.memory_consumer_type_desc AS consumerType
            ,c.memory_consumer_desc AS description
            ,c.allocation_count AS allocations
-           ,c.allocated_bytes / 1024.0 AS allocatedBytesMB
-           ,c.used_bytes / 1024.0 AS usedBytesBytesMB
+           ,FORMAT(c.allocated_bytes / 1024.0, ''###,###,###,###'') AS allocatedBytesMB
+           ,FORMAT(c.used_bytes / 1024.00, ''###,###,###,###.###'') AS usedBytesMB
            --,c.allocated_bytes / 1048576.0 AS allocatedBytesGB
            --,c.used_bytes / 1048576.0 AS usedBytesBytesGB
         FROM '
@@ -303,7 +304,8 @@ BEGIN
 
         Chains within buckets:
             An average chain length of 1 is ideal in case there are no duplicate index key values. Chain lengths up to 10 are usually acceptable.
-            If the average chain length is greater than 10, and the empty bucket percent is greater than 10%, the data has so many duplicates that a hash index might not be the most appropriate type.
+            If the average chain length is greater than 10, and the empty bucket percent is greater than 10%, 
+            the data has so many duplicates that a hash index might not be the most appropriate type.
 
     #########################################################
     */
@@ -325,7 +327,7 @@ BEGIN
           ,h.max_chain_length AS maxChainLength
           ,IIF(FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) < 33, ''Free buckets % is low!'', '''') AS [Free buckets status]
           ,IIF(h.avg_chain_length > 10 AND FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) > 10, ''avg_chain_length has many collisions!'', '''') AS [avg_chain_length status]
-        FROM '
+         FROM '
         ,dbName 
         ,'.sys.dm_db_xtp_hash_index_stats AS h
         INNER JOIN '
@@ -337,7 +339,6 @@ BEGIN
         ,' INNER JOIN '
         ,dbName
         ,'.sys.tables t ON h.object_id = t.object_id'
-        --,'.sys.tables T1 ON IT.parent_OBJECT_ID = T1.OBJECT_ID 
         ,' INNER JOIN '
         ,dbName
         ,'.sys.schemas sch ON sch.schema_id = t.schema_id
@@ -377,12 +378,12 @@ BEGIN
         INNER JOIN '
         ,dbName
         ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
-                                                               AND a.xtp_object_id = c.xtp_object_id
+                                                            AND a.xtp_object_id = c.xtp_object_id
         LEFT JOIN '
         ,dbName 
         ,'.sys.indexes i ON c.object_id = i.object_id
-                                     AND c.index_id = i.index_id
-                                     AND a.minor_id = 0'
+                                      AND c.index_id = i.index_id
+                                      AND a.minor_id = 0'
         ,' WHERE t.type = '
         , '''u'''
         , '   AND t.is_memory_optimized = 1 '
@@ -543,7 +544,7 @@ BEGIN
 
     SELECT @sql = CONCAT(
         'SELECT '
-        ,'''Off-row data tables '' AS objects,'
+        ,'''LOB/Off-row data '' AS objects,'
         ,''''
         ,dbName
         ,'''' 
@@ -560,16 +561,12 @@ BEGIN
         INNER JOIN '
         ,dbName
         ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
-                                                              AND a.xtp_object_id = c.xtp_object_id
-        LEFT JOIN '
-        ,dbName
-        ,'.sys.indexes i ON c.object_id = i.object_id
-                                     AND c.index_id = i.index_id
-                                     AND a.minor_id = 0
-        WHERE a.type_desc = '
+                                                              AND a.xtp_object_id = c.xtp_object_id '
+        ,' WHERE a.type_desc = '
         ,''''
         ,'INTERNAL OFF-ROW DATA TABLE'
         ,''''
+        ,' AND c.memory_consumer_desc = ''Table heap'''
         ,' ORDER BY 2, 3'
     )
     FROM #MemoryOptimizedDatabases
@@ -592,11 +589,6 @@ BEGIN
         ,dbName
         ,'''' 
         ,' AS databaseName'
-      --  ,',IsContainer = 
-            --CASE 
-            --  WHEN filegroups.type = ''FX'' THEN ''Yes''
-            --  ELSE ''No''
-            --END
         ,',filegroups.name AS fileGroupName
           ,physical_name AS fileName
           --,database_files.name AS [containerName/fileType]
@@ -605,10 +597,12 @@ BEGIN
           ,IsContainer = IIF(filegroups.type = ''FX'', ''Yes'', ''No'')
           ,filegroups.type_desc AS fileGroupDescription
           ,database_files.state_desc AS fileGroupState
-          ,database_files.size AS sizeKB
-          ,CONVERT(INT, database_files.size / 128.0) AS sizeMB
-          ,CONVERT(NVARCHAR(MAX), database_files.size / 1048576.0) AS sizeGB
-          ,SUM(database_files.size / 128.0) OVER() AS totalSizeMB
+          ,FORMAT(database_files.size, ''###,###,###,###'') AS sizeKB
+          ,FORMAT(database_files.size / 128.0, ''###,###,###,###'') AS sizeMB
+          ,FORMAT(database_files.size / 1048576.0, ''###,###,###,###.##'') AS sizeGB
+          --,CONVERT(INT, database_files.size / 128.0) AS sizeMB
+          --,CONVERT(NVARCHAR(MAX), database_files.size / 1048576.0) AS sizeMB
+          ,FORMAT(SUM(database_files.size / 128.0) OVER(), ''###,###,###,###'') AS totalSizeMB
         FROM '
         ,dbName
         ,'.sys.database_files
@@ -619,6 +613,7 @@ BEGIN
     )
     FROM #MemoryOptimizedDatabases
     WHERE RowNumber = @dbCounter;
+
     --PRINT (@sql)
     EXEC (@sql);
 
@@ -658,6 +653,7 @@ BEGIN
     )
     FROM #MemoryOptimizedDatabases
     WHERE RowNumber = @dbCounter;
+
     --PRINT (@sql)
     EXEC (@sql);
 
@@ -691,7 +687,7 @@ BEGIN
             ,ContainerFileSummary.fileType
             ,ContainerFileSummary.fileState
             ,FORMAT(ContainerFileSummary.sizeinBytes, ''###,###,###'') AS sizeBytes
-            ,FORMAT(ContainerFileSummary.sizeinBytes / 1048576., ''###,###,###'') AS sizeGB
+            ,FORMAT(ContainerFileSummary.sizeinBytes / 1048576., ''###,###,###'') AS sizeMB
             ,ContainerFileSummary.fileCount
             ,database_files.state_desc AS fileGroupState
             FROM ContainerFileSummary
@@ -702,6 +698,7 @@ BEGIN
     )
     FROM #MemoryOptimizedDatabases
     WHERE RowNumber = @dbCounter;
+
     --PRINT (@sql)
     EXEC (@sql);
 
@@ -749,6 +746,7 @@ BEGIN
     )
     FROM #MemoryOptimizedDatabases
     WHERE RowNumber = @dbCounter;
+
     --PRINT (@sql)
     EXEC (@sql);
 
@@ -814,15 +812,6 @@ BEGIN
     --PRINT (@sql)
     EXEC (@sql);
 
-    --SELECT 'Natively compiled modules' AS objects
- --         ,ModuleID
- --         ,ModuleName
-    --    ,CASE 
-    --          WHEN CollectionStatus IS NULL THEN 'NO'
-    --          ELSE IIF(CollectionStatus = 1, 'YES', 'NO') 
-    --     END AS databaseCollectionStatisticsEnabled
-    --FROM #NativeModules
-
     IF EXISTS (SELECT 1 FROM #NativeModules)
     BEGIN
         DECLARE @procCounter INT = 1;
@@ -861,16 +850,16 @@ BEGIN
             #############################################################################################
             */
 
-            BEGIN TRY
-                EXEC sys.sp_xtp_control_query_exec_stats
-                    @database_id = @dbID
-                   ,@xtp_object_id = @ModuleID
-                   ,@old_collection_value = @ModuleStatus OUTPUT;
-
-            END TRY
-            BEGIN CATCH
-                SELECT @ModuleStatus = 0;
-            END CATCH
+        BEGIN TRY
+            EXEC sys.sp_xtp_control_query_exec_stats
+                @database_id = @dbID
+               ,@xtp_object_id = @ModuleID
+               ,@old_collection_value = @ModuleStatus OUTPUT;
+        END TRY
+        BEGIN CATCH
+            SELECT
+                @ModuleStatus = 0;
+        END CATCH;
 
             IF @ModuleStatus = 1
             BEGIN
@@ -879,11 +868,10 @@ BEGIN
                 WHERE ModuleKey = @procCounter;
             END;
 
-            SELECT @procCounter +=1
-        END -- -- This is the loop that processes each native module
+            SELECT @procCounter += 1;
+        END; -- -- This is the loop that processes each native module
 
-        IF EXISTS(SELECT * FROM #NativeModules WHERE Collectionstatus = 1)
-        BEGIN
+        IF EXISTS(SELECT * FROM #NativeModules WHERE CollectionStatus = 1)
             SELECT 'Native execution statistics' AS Objects
                   ,ModuleName
                   ,ModuleID
@@ -893,12 +881,11 @@ BEGIN
                        ELSE 'NO' 
                   END AS CollectionStatsEnabled
             FROM #NativeModules
-            WHERE Collectionstatus = 1
+            WHERE CollectionStatus = 1
             ORDER BY ModuleName;
-        END;
         ELSE
         BEGIN
-            PRINT 'No modules found that have collection stats enabled'
+            PRINT 'No modules found that have collection stats enabled';
         END;
 
     END; --IF EXISTS (SELECT 1 FROM #NativeModules)
@@ -907,8 +894,7 @@ BEGIN
 
 END; -- This is the loop that processes each database
 
-DROP TABLE #NativeModules;
-
+DROP TABLE IF EXISTS #NativeModules;
 
 /*
 ######################################################################################################################
@@ -927,7 +913,7 @@ DROP TABLE #NativeModules;
 IF @instanceLevelOnly= 1
 BEGIN
 
-    SELECT @@version AS Version
+    SELECT @@version AS Version;
 
     SELECT name
           ,value AS configValue
@@ -936,10 +922,13 @@ BEGIN
     WHERE name like 'max server memory%'
     ORDER BY name OPTION (RECOMPILE);
 
-    SELECT committed_target_kb
+    SELECT FORMAT(committed_target_kb, '###,###,###,###,###') AS committedTargetKB
+          ,FORMAT(committed_target_kb / 1024, '###,###,###,###,###') AS committedTargetMB
+          ,FORMAT(committed_target_kb / 1048576, '###,###,###,###,###') AS committedTargetGB
     FROM sys.dm_os_sys_info;
 
-    DROP TABLE IF EXISTS #TraceFlags;
+
+    DROP TABLE IF EXISTS #TraceFlags
     CREATE TABLE #TraceFlags
     (
          TraceFlag INT NOT NULL
@@ -947,6 +936,7 @@ BEGIN
         ,Global TINYINT NOT NULL
         ,Session TINYINT NOT NULL
     );
+
     INSERT #TraceFlags
     EXEC ('DBCC TRACESTATUS');
 
@@ -964,7 +954,7 @@ BEGIN
               ,Session
         FROM #TraceFlags
         WHERE TraceFlag = 10316 
-        ORDER BY TraceFlag
+        ORDER BY TraceFlag;
 
     END;
 
@@ -982,12 +972,13 @@ BEGIN
     DECLARE @InstanceCollectionStatus BIT;
 
     EXEC sys.sp_xtp_control_query_exec_stats
-    @old_collection_value = @InstanceCollectionStatus OUTPUT
+    @old_collection_value = @InstanceCollectionStatus OUTPUT;
 
-    SELECT CASE 
-               WHEN @InstanceCollectionStatus = 1 THEN 'YES' 
-               ELSE 'NO' 
-           END AS [instance-level collection of execution statistics for Native Modules enabled];
+    SELECT 
+        CASE 
+            WHEN @InstanceCollectionStatus = 1 THEN 'YES' 
+            ELSE 'NO'
+        END AS [instance-level collection of execution statistics for Native Modules enabled];
 
     /*
     ####################################################################################
@@ -1015,38 +1006,44 @@ BEGIN
         INNER JOIN sys.dm_resource_governor_resource_pools AS Pools ON Pools.pool_id = d.resource_pool_id
     )
     SELECT 'Resource pool' AS objects
-          ,Pools.name AS poolName
-          ,d.name AS databaseName
-          ,min_memory_percent AS minMemoryPercent
-          ,max_memory_percent AS maxMemoryPercent
-          ,used_memory_kb / 1024 AS usedMemoryMB
-          ,max_memory_kb / 1024 AS maxMemoryMB
-          ,target_memory_kb / 1024 AS targetMemoryMB
+            ,Pools.name AS poolName
+            ,d.name AS databaseName
+            ,min_memory_percent AS minMemoryPercent
+            ,max_memory_percent AS maxMemoryPercent
+            ,used_memory_kb / 1024 AS usedMemoryMB
+            ,max_memory_kb / 1024 AS maxMemoryMB
+            ,FORMAT(((used_memory_kb * 1.0) / (max_memory_kb  * 1.0) * 100), '###.##') AS percentUsed
+            ,target_memory_kb / 1024 AS targetMemoryMB
     FROM sys.databases d
     INNER JOIN sys.dm_resource_governor_resource_pools AS Pools ON Pools.pool_id = d.resource_pool_id
-    ORDER BY poolName, databaseName;
+    ORDER BY poolName, databaseName
+
+                                                     
+                                                    
 
 
+                             
     /*
     ###########################################################
         Memory breakdown
     ###########################################################
     */
-    ;WITH ClerksAggregated AS 
+    ;WITH clerksAggregated AS 
     (
-        SELECT Clerks.[type] AS clerkType
-              ,CONVERT(CHAR(20), SUM(Clerks.pages_kb) / 1024.0) AS clerkTypeUsageMB
-        FROM sys.dm_os_memory_clerks AS Clerks WITH (NOLOCK)
-        WHERE Clerks.pages_kb <> 0
-        AND Clerks.type IN ('MEMORYCLERK_SQLBUFFERPOOL', 'MEMORYCLERK_XTP')
-        GROUP BY Clerks.[type]
+        SELECT clerks.[type] AS clerkType
+              ,CONVERT(CHAR(20)
+              ,SUM(clerks.pages_kb) / 1024.0) AS clerkTypeUsageMB
+        FROM sys.dm_os_memory_clerks AS clerks WITH (NOLOCK)
+        WHERE clerks.pages_kb <> 0
+        AND clerks.type IN ('MEMORYCLERK_SQLBUFFERPOOL', 'MEMORYCLERK_XTP')
+        GROUP BY clerks.[type]
     )
-    ,ClerksAggregatedString AS 
+    ,clerksAggregatedString AS 
     (
         SELECT clerkType
               ,clerkTypeUsageMB
               ,PATINDEX('%.%', clerkTypeUsageMB) AS decimalPoint
-        FROM ClerksAggregated
+        FROM clerksAggregated
     )
     SELECT clerkType
           ,memUsageMB = 
@@ -1054,7 +1051,7 @@ BEGIN
               WHEN decimalPoint > 1 THEN SUBSTRING(clerkTypeUsageMB, 1, PATINDEX('%.%', clerkTypeUsageMB) -1)
               ELSE clerkTypeUsageMB
           END 
-    FROM ClerksAggregatedString;
+    FROM clerksAggregatedString;
 
     -- total memory allocated for in-memory engine
     SELECT type clerk_type
@@ -1077,9 +1074,9 @@ BEGIN
         SELECT 1
         FROM sys.event_notifications
     )
-    BEGIN
-        SELECT 'Event notifications are listed below'
+    BEGIN 
+        SELECT 'Event notifications are listed below';
         SELECT *
-        FROM sys.event_notifications
+        FROM sys.event_notifications;
     END;
 END;

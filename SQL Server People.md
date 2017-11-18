@@ -85,7 +85,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
 | Erik Darling        | [Erik Darling Articles]      | USA     |                  | NULL               | NULL                              | 0   |                    |
 | Thomas Rushton      | [Thomas Rushton Blog]        | USA     |                  | NULL               | NULL                              | 0   |                    |
-| Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][ContactSolomon] | 0   |                    |
+| Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][1]       | 0   |                    |
+| Ned Otter           | [Ned Otter Blog]             | USA     | New York         | [@NedOtter]        | [Contact Ned Otter][2]            | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -169,7 +170,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Erik Darling Articles]:https://www.brentozar.com/archive/author/erik-darling/
 [Thomas Rushton Blog]:https://thelonedba.wordpress.com/
 [Sql Quantum Leap]:https://SqlQuantumLeap.com/
-[ContactSolomon]:https://SqlQuantumLeap.com/contact/
+[1]:https://SqlQuantumLeap.com/contact/
+[2]:http://nedotter.com/contact/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
