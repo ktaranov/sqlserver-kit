@@ -171,6 +171,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Thomas Rushton Blog]:https://thelonedba.wordpress.com/
 [Sql Quantum Leap]:https://SqlQuantumLeap.com/
 [1]:https://SqlQuantumLeap.com/contact/
+[Ned Otter Blog]:http://nedotter.com/
 [2]:http://nedotter.com/contact/
 
 [@swynk]:https://twitter.com/swynk
@@ -249,6 +250,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@aboutsqlserver]:https://twitter.com/aboutsqlserver
 [@bertwagner]:https://twitter.com/bertwagner
 [@SqlQuantumLeap]:https://twitter.com/SqlQuantumLeap
+[@NedOtter]:https://twitter.com/NedOtter
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
