@@ -166,7 +166,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | No                               | No             | [?]        | [DBSophic Qure Optimizer]                   | ?            | DBSophic              |            | No             | ?     |
 | [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                            | 2015-01-15   | SQLServerUtilities    |            | No             |   $99 |
 | [SQLScripter](#sqlscripter)                                           | No                               | No             | [?]        | [SQLScripter]                               | 2009-08-24   | SQLServerUtilities    |            | No             |   $99 |
-| [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                      | 2016-05-23   | David Ingleton        |            | Yes            | No    |
+| [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                      | 2017-11-19   | David Ingleton        |            | Yes            | No    |
 | [Database Performance Analyzer](#dpa-solarwinds)                      | Oracle, MySQL, Other             | Linux          | [M]        | [Database Performance Analyzer]             | ?            | SolarWinds            |            | No             | $1995 |
 | [Database Performance Analyzer for MSSQL](#dpa-solarwinds-mssql)      | No                               | No             | [M]        | [Database Performance Analyzer for MSSQL]   | ?            | SolarWinds            |            | No             | $1995 |
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft              |            | No             |  $295 |
@@ -2415,19 +2415,21 @@ Author: SQLServerUtilities<br/>
 Free version: No<br/>
 Price: $99
 
-SQLScripter is a powerful command line utility that scripts SQL Server objects. The utility is designed to automate the process of schema generation.
+SQLScripter is a powerful command line utility that scripts SQL Server objects.
+The utility is designed to automate the process of schema generation.
 
 
 ## SQLC
 <a id="sqlc"></a>
 Download page: [SQLC]<br/>
-Release date: 2016-05-23<br/>
+Release date: 2017-11-19<br/>
 Support Version: ?<br/>
 Author: David Ingleton<br/>
 Free version: Yes<br/>
 Price: No
 
-SQLC is a software tool for comparing two SQL Server databases. With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
+SQLC is a software tool for comparing two SQL Server databases.
+With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
 
 
 ## Database Performance Analyzer
