@@ -175,7 +175,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017 KB4038634]     | SQLServer2017-KB4038634-x64.exe                                   | 2017-10-24   | 14.0.3006.16  |      250 | a75ab79103d72ce094866404607c2e84ae777d43 |
 | [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5   |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0   |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
-| [SQL Server 2016 SP1 KB4037354] | SQLServer2016-KB4037354-x64.exe                                   | 2017-11-22   | 13.0.4457.0   |      690 | ? |
+| [SQL Server 2016 SP1 KB4037354] | SQLServer2016-KB4037354-x64.exe                                   | 2017-11-22   | 13.0.4457.0   |      689 | 114fc2900dfb426b9ee55a7c5bd8914e656cf332 |
 | [SQL Server 2014 SP2]           | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
 | [SQL Server 2014 SP2 KB4032541] | SQLServer2014-KB4037356-x64.exe                                   | 2017-10-17   | 12.0.5557.0   |      539 | c8ddde65c2ae0a9f0f7397409475c4dd0244d626 |
 | [SQL Server 2012]               | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
@@ -474,7 +474,7 @@ Microsoft SQL Server 2016 (SP1-CU6) (KB4037354) – 13.0.4457.0 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.4457.0   | 2015.130.4457.0   | SP1    | CU   | [4037354 Cumulative Update 6 for SQL Server 2016 SP1]                                                                          | 2017-11-22   | 2017-11-16 |    55 |     41 |      690 |
+| 13.0.4457.0   | 2015.130.4457.0   | SP1    | CU   | [4037354 Cumulative Update 6 for SQL Server 2016 SP1]                                                                          | 2017-11-22   | 2017-11-16 |    55 |     41 |      689 |
 | 13.0.4451.0   | 2015.130.4451.0   | SP1    | CU   | [4040714 Cumulative Update 5 for SQL Server 2016 SP1]                                                                          | 2017-09-18   | 2017-09-06 |    49 |     44 |      689 |
 | 13.0.4446.0   | 2015.130.4446.0   | SP1    | CU   | [4024305 Cumulative Update 4 for SQL Server 2016 SP1]                                                                          | 2017-08-08   | 2017-07-16 |    63 |     49 |      534 |
 | 13.0.4435.0   | 2015.130.4435.0   | SP1    | CU   | [4019916 Cumulative Update 3 for SQL Server 2016 SP1]                                                                          | 2017-05-15   | 2017-04-27 |    70 |     57 |      534 |
