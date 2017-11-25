@@ -1,10 +1,10 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **255** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **256** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {3}
- - **[D]**: Documentation solutions {5}
+ - **[D]**: Documentation solutions {6}
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
@@ -277,6 +277,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Log File Viewer](#sql-log-file-viewer)                           | No                               | No             | [?]        | [Log File Viewer]                           | ?            | SysTools              | Shareware  | No             |  $999 |
 | [DAX Studio](#dax-studio)                                             | No                               | No             | [?]        | [DAX Studio]                                | ?            | Sqlbi                 | Freeware   | Yes            | No    |
 | [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
+| [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
 
 
 <a id="ssms"></a>
@@ -3970,6 +3971,18 @@ Price: No
 SQL Cop is a static code analysis tool to automatically detect issues with your database.
 
 
+<a id="dataedo"></a>
+## Dataedo
+Download page: [Dataedo]<br/>
+Release date: 2017-09-15<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Sqlbi<br/>
+Free version: Yes<br/>
+Price: $239
+
+Document SQL Server, Oracle and MySQL databases
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
@@ -4225,6 +4238,7 @@ SQL Cop is a static code analysis tool to automatically detect issues with your 
 [SQL Log File Viewer]:http://www.sqlmdfviewer.org/viewer/sql-server-log-file.html
 [DAX Studio]:https://www.sqlbi.com/tools/dax-studio
 [SQL Cop]:https://www.sqlshack.com/review-sql-cop-unit-tests-collection
+[Dataedo]:https://dataedo.com/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
