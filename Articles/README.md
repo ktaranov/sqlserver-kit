@@ -446,6 +446,17 @@ Articles types:
 | [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]                                               | Koen Verbeeck                            | 2017-10-03 | [DAX], [XE] |
 | [What impact can different cursor options have?]                                                                        | Aaron Bertrand                           | 2012-09-10 | [DBA],[DEV] |
 | [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA],[DEV] |
+| [Using the OPTION (RECOMPILE) option for a statement]                                                                   | Kimberly Tripp                           | 2010-04-15 | [DBA],[DEV] |
+| [Execution Plan Caching and Reuse]                                                                                      | Brett Shearer                            | 2015-02-12 | [DBA],[DEV] |
+| [Buffer Management]                                                                                                     | Microsoft                                | ?          | [DBA],[DEV] |
+| [RECOMPILE Hints and Execution Plan Caching]                                                                            | Kendra Little                            | 2017-12-17 | [DBA],[DEV] |
+| [Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]          | Robin Lester                             | 2016-08-10 | [DBA],[DEV] |
+| [Eight Different Ways to Clear the SQL Server Plan Cache]                                                               | Glenn Berry                              | 2016-03-26 | [DBA],[DEV] |
+| [Introduction and FAQs about Microsoft Azure technologies]                                                              | Daniel Calbimonte                        | 2017-10-13 | [AZ],[DEV]  |
+| [Inside the XEvent Profiler]                                                                                            | Derik Hammer                             | 2017-10-11 | [DBA],[DEV] |
+| [Does The Join Order of My Tables Matter?]                                                                              | Bert Wagner                              | 2017-11-21 | [DBA],[DEV] |
+| [Encrypting SQL Server connections with Let’s Encrypt certificates]                                                     | Derik Hammer                             | 2017-11-12 | [DBA]       |
+| [Start SQL Server without tempdb]                                                                                       | Kenneth Fisher                           | 2016-01-20 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -871,3 +882,14 @@ Articles types:
 [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]:https://www.mssqltips.com/sqlservertip/5106/extracting-a-dax-query-plan-with-analysis-services-2016-extended-events/
 [What impact can different cursor options have?]:https://sqlperformance.com/2012/09/t-sql-queries/cursor-options
 [SQL Smackdown!!! Cursors VS Loops]:https://sqlundercover.com/2017/11/16/sql-smackdown-cursors-vs-loops/
+[Using the OPTION (RECOMPILE) option for a statement]:https://www.sqlskills.com/blogs/kimberly/using-the-option-recompile-option-for-a-statement/
+[Execution Plan Caching and Reuse]:https://msdn.microsoft.com/en-us/library/ms181055.aspx
+[Buffer Management]:https://msdn.microsoft.com/en-us/library/aa337525.aspx
+[RECOMPILE Hints and Execution Plan Caching]:https://www.brentozar.com/archive/2013/12/recompile-hints-and-execution-plan-caching/
+[Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]:https://blogs.msdn.microsoft.com/robinlester/2016/08/10/improving-query-performance-with-option-recompile-constant-folding-and-avoiding-parameter-sniffing-issues/
+[Eight Different Ways to Clear the SQL Server Plan Cache]:https://www.sqlskills.com/blogs/glenn/eight-different-ways-to-clear-the-sql-server-plan-cache/
+[Introduction and FAQs about Microsoft Azure technologies]:https://www.sqlshack.com/introduction-faqs-microsoft-azure-technologies/
+[Inside the XEvent Profiler]:https://www.sqlhammer.com/inside-xevent-profiler/
+[Does The Join Order of My Tables Matter?]:https://blog.bertwagner.com/does-the-join-order-of-my-tables-matter-e091afb2e385
+[Encrypting SQL Server connections with Let’s Encrypt certificates]:https://sqlsunday.com/2017/11/22/encrypting-tds-with-letsencrypt/
+[Start SQL Server without tempdb]:https://sqlstudies.com/2016/01/20/start-sql-server-without-tempdb/
