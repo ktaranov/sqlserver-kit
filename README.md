@@ -96,7 +96,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 255 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 256 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -286,6 +286,9 @@ Headers:
     - [XESmartTarget - configurable target for SQL Server Extended Events](https://github.com/spaghettidba/XESmartTarget) (by Gianluca Sartori)
     - [Schemazen - script and create SQL Server objects quickly](https://github.com/sethreno/schemazen) (by Seth Reno)
     - [soddi - StackOverflow Data Dump Importer](https://github.com/BrentOzarULTD/soddi) (by Brent Ozar team)
+    - [Automatically fix high VLF counts in SQL Server 2012+](https://github.com/tboggiano/autofix-vlfs) (by Tracy Boggiano)
+    - [splittinglargefiles - Process for splitting large files in a filegroup that has grown out of control.](https://github.com/tboggiano/splittinglargefiles) (by Tracy Boggiano)
+    - [olamaintconfigtables - This are tables and jobs that can use to run Ola's scripts as T-SQL Jobs and run on Linux](https://github.com/tboggiano/olamaintconfigtables) (by Tracy Boggiano)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
