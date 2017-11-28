@@ -1,5 +1,5 @@
 # SQL Server Management Studio Tips
-Most tips works for SSMS higher 2008 but some of them only for SSMS 2016 and above
+Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 and above
 
 Content:
 1. [Import and Export Settings](#1)
@@ -17,7 +17,7 @@ Content:
 13. [SQLCMD mode](#13)
 14. [Script multiple objects using the Object Explorer Details Windows](#14)
 15. [Registered Servers / Central Management Server](#15)
-16. [Splitting the Query Window](#16)
+16. [Splitting the Query Window and Annotations and Map Mode for Vertical Scroll Bar](#16)
 17. [Moving columns in the results pane](#17)
 18. [Generating Charts and Drawings in SQL Server Management Studio](#18)
 19. [Additional Connection Parameters](#19)
@@ -35,7 +35,8 @@ Content:
 31. [Searching in Showplan](#31)
 32. [Object Explore Details](#32)
 33. [Working with Azure SQL](#33)
-34. [Reference](#reference)
+34. [Using Extended Events and Profiler in SSMS](#34)
+35. [Reference](#reference)
 
 
 Great thanks to:
@@ -56,6 +57,8 @@ Great thanks to:
  - Aaron Bertrand ([b](http://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
  - Daniel Calbimonte ([b](https://www.sqlshack.com/author/daniel-calbimonte/) | [t](https://twitter.com/dcalbimonte))
  - Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
+ - Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
+ - Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
 
 
 <a id="1"></a>
@@ -172,6 +175,8 @@ More details here: [What’s new in SQL Server Management Studio 17.2; Authentic
 By holding down the ALT key as you select a block of text you can control the width of the selection region as well as the number of rows.
 Also you can activate multi line mode with `Shift + Alt` keys and using keyboard arrows to format multi line code.
 
+More info and video about this awesome feature in this article: [My Favorite SSMS Shortcut (After Copy/Paste)](https://bertwagner.com/2017/11/28/multiline-edit-block-selection-alt-highlight-trick/) (by Bert Wagner)
+
 
 <a id="6"></a>
 ## Script Table and Column Names by Dragging from Object Explorer
@@ -228,17 +233,24 @@ You can make sure you’re aware when indexes have compression or are partitione
 <a id="10"></a>
 ## Using GO X to Execute a Batch or Statement Multiple Times
 The `GO` command marks the end of a batch of statements that should be sent to SQL Server for processing, and then compiled into a single execution plan. 
-By specifying a number after the ‘GO’ the batch can be run specified number of times. This can be useful if, for instance, you want to create test data by running an insert statement a number of times. Note that this is not a Transact SQL statement and will only work in Management Studio (and also SQLCMD or OSQL). For instance the following SQL can be run in SSMS :
+By specifying a number after the `GO` the batch can be run specified number of times. This can be useful if, for instance, you want to create test data by running an insert statement a number of times. Note that this is not a Transact SQL statement and will only work in Management Studio (and also SQLCMD or OSQL). For instance the following SQL can be run in SSMS :
 
 ```sql
-CREATE TABLE TestData(ID INT IDENTITY (1,1), CreatedDate DATETIME)
+IF OBJECT_ID('TestData','U') IS NOT NULL DROP TABLE TestData;
+
+CREATE TABLE TestData(ID INT IDENTITY (1,1), CreatedDate DATETIME2);
 GO
 
-INSERT INTO TestData(CreatedDate) SELECT GetDate()
+INSERT INTO TestData(CreatedDate) SELECT GETDATE();
 GO 10
+
+SELECT ID, CreatedDate FROM TestData;
+
+IF OBJECT_ID('TestData','U') IS NOT NULL DROP TABLE TestData;
+
 ```
 
-This will run the insert statement 10 times and therefore insert 10 rows into the TestData table.
+This will run the insert statement 10 times and therefore insert 10 rows into the `TestData` table.
 In this case this is a simpler alternative than creating a cursor or while loop.
 
 
@@ -297,7 +309,7 @@ A significant limitation with CMS is that the CMS server itself can’t be inclu
 
 
 <a id="16"></a>
-## Splitting the Query Window
+## Splitting the Query Window and Annotations and Map Mode for Vertical Scroll Bar
 The query window in SSMS can be split into two so that you can look at two parts of the same query simultaneously.
 Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
 To split the window simply drag the bar to the top right hand side of the window as shown below.
@@ -305,6 +317,16 @@ To split the window simply drag the bar to the top right hand side of the window
 The splitter bar allows you to view one session with two panes. You can scroll in each pane independently. You can also edit in both the top and bottom pane.
 
 ![Splitting the Query Window](/SSMS/SSMS_Tips/splitting_the_query_window.gif)
+
+Also you can view some very useful features like annotations and Map mode, detailed instruction here: [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar]
+
+Annotations show the relative position of certain aspects of the script, such as errors, changes, etc.
+There are four types of annotations, the first three of which are shown in their own columns on the left side of the scroll bar:
+
+ - "Changes" are show in yellow (unsaved) and green (saved). These occupy the left column.
+ - "Marks" are shown in maroon (Breakpoints) and black (Bookmarks). These occupy the left column.
+ - "Errors" are shown in red. These occupy the right column.
+ - "Caret Position" is a thin, blue line going horizontally across the scroll bar. This represents the line of the script that the cursor is on.
 
 
 <a id="17"></a>
@@ -642,6 +664,12 @@ For SSMS 17.2 and above you can enable Multi-Factor Authentication in Azure SQL 
 [Configure Multi-Factor Authentication in Azure SQL Database]
 
 
+<a id="34"></a>
+## Using Extended Events and Profiler in SSMS
+
+Full instruction here: [EXTENDED EVENTS AND PROFILER: XE PROFILER]
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -670,6 +698,7 @@ Reference:
  - [Configure Multi-Factor Authentication in Azure SQL Database] (by Daniel Calbimonte)
  - [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more] (by Ahmad Yaseen)
  - [CTRL+R does not hide the Query Result window in SSMS]
+ - [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar] (by Solomon Rutzky)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -687,3 +716,5 @@ Reference:
 [Configure Multi-Factor Authentication in Azure SQL Database]:https://www.sqlshack.com/configure-multi-factor-authentication-azure-sql-database/
 [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more]:https://www.sqlshack.com/whats-new-sql-server-management-studio-17-2-authentication-methods-scripting-options/
 [CTRL+R does not hide the Query Result window in SSMS]:https://stackoverflow.com/questions/17068661/ctrlr-does-not-hide-the-query-result-window-in-ssms
+[SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar]:https://sqlquantumleap.com/2017/07/17/ssms-tip-1-annotations-and-map-mode-for-vertical-scroll-bar/
+[EXTENDED EVENTS AND PROFILER: XE PROFILER]:https://www.scarydba.com/2017/11/07/extended-events-profiler-xe-profiler/
