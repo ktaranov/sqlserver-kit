@@ -55,6 +55,7 @@ Error code equal `message_id` from `sys.messages`
 |          ? | The operating system returned the error ????? while attempting SetEndOfFile' on '\\SQLBackups\database.bak'. BACKUP DATABASE is terminating abnormally. | [Compressed backup errors and TF 3042]                       |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently configured password due to the following error: ...      | [Logon Failure: The User has not Been Granted]               |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                                                                   | [Who owns your availability groups?]                         |
+|        102 | Incorrect syntax near '%.*ls'.                                                                                                                          | [102_link1]                                                  |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time instances is too large...                               | [Nuance of datetime data type in SQL Server]                 |
 |        596 | Cannot continue execution because the session is in the kill state.                                                                                     | [596_link1]                                                  |
 |        657 | Could not disable support for increased partitions in database ...                                                                                      | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
@@ -82,6 +83,7 @@ Error code equal `message_id` from `sys.messages`
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                                                                     | [Internal Query Processor Error with ColumnStore Indexes]    |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource pool '%ls' (%ld).                                       | [8651_link1]                                                 |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                                                                        | [8672_link1]                                                 |
+|       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or a system table is inconsistent. Check previous errors. | [8921_link1]                                                 |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                                                                            | [9002_link1]                                                 |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
@@ -96,6 +98,7 @@ Error code equal `message_id` from `sys.messages`
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
+[102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [SQL SERVER – Disabling 15000 Partitions (15k)]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
 [Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
@@ -122,6 +125,7 @@ Error code equal `message_id` from `sys.messages`
 [Discuss Execute(SQL) At LinkedServer]:http://www.sqlservercentral.com/blogs/powersql-by-prashanth-jayaram/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8651_link]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
+[8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
 [9002_link1]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
