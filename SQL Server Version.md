@@ -108,7 +108,7 @@ Like Cumulative Updates, Service Packs are cumulative. If you are applying SP3, 
 
 Step 1. After the CU file has been downloaded, open a DOS prompt and launch it with the /extract option with a path of your choice appended to this option. For example:
 ```bat
-SQLServer2014-KB3130926-x64.exe /extract C:\CU5
+SQLServer2017-KB4052574-x64.exe /extract C:\SQL2017CU2
 ```
 After a few moments you should see the progress bar dialog pop up. The target directory will be created if it does not exist, so this is also a great option for automating patch installs.
 
@@ -125,7 +125,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install 2017 RTM] then [CU1 KB4038634]                              | 14.0.1000.169<br>14.0.3006.16                | 2017-10-02                               | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU2 KB4052574]                              | 14.0.1000.169<br>14.0.3008.27                | 2017-10-02<br/>2017-11-28                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP1] Or [Developer Free] then <br/>[SP1 CU6 KB4037354] | 13.0.4001.0<br>13.0.4457.0                   | 2016-11-16<br/>2017-11-21                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU8 KB4037356]  | 12.0.5000.0<br/>12.0.5557.0                  | 2016-07-11<br/>2017-10-17                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012]                                   | 11.0.2100.60<br/>11.0.7001.0                 | 2012-02-14<br/>2017-10-05                | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -172,7 +172,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link        | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2017]               | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 KB4038634]     | SQLServer2017-KB4038634-x64.exe                                   | 2017-10-24   | 14.0.3006.16  |      250 | a75ab79103d72ce094866404607c2e84ae777d43 |
+| [SQL Server 2017 KB4052574]     | SQLServer2017-KB4052574-x64.exe                                   | 2017-11-28   | 14.0.3008.27  |      276 | ee995c195fafbdff4b30f424cab6fd64e2a5262d |
 | [SQL Server 2016]               | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5   |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |
 | [SQL Server 2016 SP1]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0   |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
 | [SQL Server 2016 SP1 KB4037354] | SQLServer2016-KB4037354-x64.exe                                   | 2017-11-21   | 13.0.4457.0   |      689 | 114fc2900dfb426b9ee55a7c5bd8914e656cf332 |
@@ -190,7 +190,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 KB4038634]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4038634-x64.exe
+[SQL Server 2017 KB4052574]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4052574-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4037354]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/SQLServer2016-KB4037354-x64.exe
@@ -429,15 +429,11 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU1) (KB4038634) - 14.0.3006.16 (X64)
-  Oct 19 2017 02:42:29
+Microsoft SQL Server 2017 (RTM-CU2) (KB4052574) - 14.0.3008.27 (X64)
+  Nov 16 2017 10:00:49
   Copyright (C) 2017 Microsoft Corporation
   Developer Edition (64-bit) on …
 ```
-
-There is a Microsoft page that tracks new features and fixes in each CTP: [What's New in SQL Server vNext](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/what-s-new-in-sql-server-vnext-database-engine)
-
-There is also a Linux version: [What's new for SQL Server vNext on Linux](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-whats-new)
 
 Useful articles:
  - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
@@ -445,6 +441,7 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   | [Microsoft SQL Server 2017 CU2]                                      | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
 | 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   | [Microsoft SQL Server 2017 CU1]                                      | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
 | 14.0.1000.169 | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                      | 2017-10-02   | 2017-08-23 |       |        |     1475 |
 |  14.0.900.75  | 2017.140.900.75   | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                        | 2017-08-02   | 2017-07-27 |       |        |     1473 |
@@ -457,6 +454,7 @@ Useful articles:
 |  14.0.100.187 | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 |  14.0.1.246   | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[Microsoft SQL Server 2017 CU2]:https://support.microsoft.com/en-us/help/4052574/cumulative-update-2-for-sql-server-2017
 [Microsoft SQL Server 2017 CU1]:https://support.microsoft.com/en-us/help/4038634/cumulative-update-1-for-sql-server-2017
 [Microsoft SQL Server 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 
@@ -467,14 +465,14 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer 
 
 ```
 Microsoft SQL Server 2016 (SP1-CU6) (KB4037354) – 13.0.4457.0 (X64)
-    Oct  ???
+    Nov  8 2017 17:32:23
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.4457.0   | 2015.130.4457.0   | SP1    | CU   | [4037354 Cumulative Update 6 for SQL Server 2016 SP1]                                                                          | 2017-11-21   | 2017-11-09 |    55 |     41 |      689 |
+| 13.0.4457.0   | 2015.130.4457.0   | SP1    | CU   | [4037354 Cumulative Update 6 for SQL Server 2016 SP1]                                                                          | 2017-11-21   | 2017-10-?? |    55 |     41 |      689 |
 | 13.0.4451.0   | 2015.130.4451.0   | SP1    | CU   | [4040714 Cumulative Update 5 for SQL Server 2016 SP1]                                                                          | 2017-09-18   | 2017-09-06 |    49 |     44 |      689 |
 | 13.0.4446.0   | 2015.130.4446.0   | SP1    | CU   | [4024305 Cumulative Update 4 for SQL Server 2016 SP1]                                                                          | 2017-08-08   | 2017-07-16 |    63 |     49 |      534 |
 | 13.0.4435.0   | 2015.130.4435.0   | SP1    | CU   | [4019916 Cumulative Update 3 for SQL Server 2016 SP1]                                                                          | 2017-05-15   | 2017-04-27 |    70 |     57 |      534 |
