@@ -320,6 +320,7 @@ Headers:
     - [Minion CheckDB - completes the MinionWare maintenance and backups suite](http://minionware.net/checkdb/) (by Minionware)
     - [Minion Reindex - Index maintenance that is fully automated](http://minionware.net/reindex/) (by Minionware)
     - [OrcaMDF - C# parser for MDF files](https://github.com/improvedk/OrcaMDF) (by Mark S. Rasmussen)
+    - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server) 
 
 [*Back to top*](#header02)
 
