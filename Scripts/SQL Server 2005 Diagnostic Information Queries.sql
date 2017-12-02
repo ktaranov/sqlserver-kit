@@ -2,7 +2,7 @@
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: August 7, 2017
+-- Last Modified: October 5, 2017
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -86,7 +86,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- SQL Server 2005 fell out of Mainsteam Support on April 12, 2011
 -- This means no more Service Packs or Cumulative Updates
--- SQL Server 2005 will end Extended Support on April 12, 2016 
+-- SQL Server 2005 ended Extended Support on April 12, 2016 
 
 -- SQL Server 2005 Service Pack 4
 -- http://www.microsoft.com/en-us/download/details.aspx?id=7218
@@ -938,7 +938,8 @@ INNER JOIN sys.dm_db_missing_index_details AS mid WITH (NOLOCK)
 ON mig.index_handle = mid.index_handle
 INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON p.[object_id] = mid.[object_id]
-WHERE mid.database_id = DB_ID() 
+WHERE mid.database_id = DB_ID()
+AND p.index_id < 2 
 ORDER BY index_advantage DESC OPTION (RECOMPILE);
 ------
 
