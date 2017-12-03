@@ -12,7 +12,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
- - **[MG]**: Migration tool {22}
+ - **[MG]**: Migration tool {24}
  - **[MS]**: Management Studio (alternative for SSMS) {22}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
@@ -278,7 +278,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DAX Studio](#dax-studio)                                             | No                               | No             | [?]        | [DAX Studio]                                | ?            | Sqlbi                 | Freeware   | Yes            | No    |
 | [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
 | [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
-
+| [Azure Database Migration Service](#azure-db-migration)               | Oracle, MySQL, Other             | Online         | [MG]       | [Azure Database Migration Service]          | 2017-12-01   | Microsoft             |            | Yes            |    No |
 
 <a id="ssms"></a>
 ## SSMS
@@ -3983,6 +3983,19 @@ Price: $239
 Document SQL Server, Oracle and MySQL databases
 
 
+<a id="azure-db-migration"></a>
+## Azure Database Migration Service
+Download page: [Dataedo]<br/>
+Release date: 2017-12-01<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Reduce the complexity of your cloud migration by using a single comprehensive service instead of multiple tools.
+The public preview release of Azure Database Migration Service is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
@@ -4239,6 +4252,7 @@ Document SQL Server, Oracle and MySQL databases
 [DAX Studio]:https://www.sqlbi.com/tools/dax-studio
 [SQL Cop]:https://www.sqlshack.com/review-sql-cop-unit-tests-collection
 [Dataedo]:https://dataedo.com/
+[Azure Database Migration Service]:https://azure.microsoft.com/en-us/services/database-migration/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
