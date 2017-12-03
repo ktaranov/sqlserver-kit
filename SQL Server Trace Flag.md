@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (526 trace flags)
+Complete list of Microsoft SQL Server trace flags (528 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -1145,6 +1145,12 @@ Function: SQL 8 - When you capture a SQL Profiler trace in a file and then you t
 Link: Note
 
 
+<a id="1905"></a>
+#### Trace Flag: 1905
+Function: Unknown
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
+
+
 <a id="2301"></a>
 #### Trace Flag: 2301
 Function: Enable advanced decision support optimizations<br />
@@ -2114,6 +2120,12 @@ Function: Logs extended errors to errorlog when network disconnect occurs, turne
 Link: http://support.microsoft.com/kb/922578/en-us
 
 
+<a id="3701"></a>
+#### Trace Flag: 3701
+Function: Unknown<br />
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
+
+
 <a id="3801"></a>
 #### Trace Flag: 3801
 Function: Prohibits use of USE DB statement<br />
@@ -2164,9 +2176,11 @@ Link: None
 
 <a id="4010"></a>
 #### Trace Flag: 4010
-Function: Allows only shared memory connections to the SQL Server. Meaning, you will only be able to connect from the server machine itself. Client connections over TCP/IP or named pipes will not happen.<br />
-Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do
-Link: https://blogs.msdn.microsoft.com/psssql/2008/09/05/sql-server-2005-setup-fails-in-wow-x86-on-computer-with-more-than-32-cpus
+Function: Allows only shared memory connections to the SQL Server. Meaning, you will only be able to connect from the server machine itself.
+Client connections over TCP/IP or named pipes will not happen.<br />
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/09/05/sql-server-2005-setup-fails-in-wow-x86-on-computer-with-more-than-32-cpus<br />
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
 
 
 <a id="4013"></a>
@@ -2184,7 +2198,8 @@ Link: None
 <a id="4022"></a>
 #### Trace Flag: 4022
 Function: Directs the SQL instance to ignore stored procedures that have been configured as “auto-start” procedures. Their auto-start configuration is not affected, so the next time the instance is started w/o this flag they will return to their normal behavior.<br />
-Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do/
+Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do/<br />
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
 
 
 <a id="4029"></a>
@@ -2922,6 +2937,7 @@ Scope: global only
 Function: Disable auto-detection and NUMA setup<br />
 Link: [Docs Trace Flags]<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html<br />
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]<br />
 Scope: global only
 
 
@@ -2938,6 +2954,7 @@ Function: Upgrade version conflict<br />
 Link: http://social.msdn.microsoft.com/Forums/eu/sqlexpress/thread/dd6fdc16-9d8d-4186-9549-85ba4c322d10<br />
 Link: http://connect.microsoft.com/SQLServer/feedback/details/407692/indicateur-de-trace-8017-reported-while-upgrading-from-ssee2005-to-ssee2008<br />
 Link: http://dba.stackexchange.com/questions/48580/trace-flag-and-which-need-to-be-turned-off-and-why
+
 
 <a id="8018"></a>
 #### Trace Flag: 8018
@@ -3050,7 +3067,7 @@ Link: http://blogs.msdn.com/b/psssql/archive/2011/09/01/sql-server-2008-2008-r2-
 Scope: global only
 
 *Thanks to: @sql\_handle (https://twitter.com/sql_handle)*
-Related to: 8015, 9024
+Related to: [8015](#8015), [9024](#9024)
 
 
 <a id="8049"></a>
@@ -3077,9 +3094,12 @@ Link: https://support.microsoft.com/en-us/help/3074434/fix-out-of-memory-error-w
 Function: Allows SQL Server 2014 SP2 to interrogate the hardware layout and automatically configure Soft-NUMA on systems reporting 8 or more CPUs per NUMA node.
 The automatic Soft-NUMA behavior is Hyperthread (HT/logical processor) aware.
 The partitioning and creation of additional nodes scales background processing by increasing the number of listeners, scaling and network and encryption capabilities.
-**Note: This trace flag applies to SQL Server 2014 SP2. Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.**<br />
+When Trace Flag 8079 is enabled during startup, SQL Server 2012 SP4 will interrogate the hardware layout and automatically configure Soft NUMA on systems reporting 8 or more CPUs per NUMA node.
+It is recommended to first test the performance of workload with Auto-Soft NUMA before it is turned ON in production.
+**Note: This trace flag applies to SQL Server 2014 SP2 and SQL Server 2012 SP4. Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.**<br />
 Link: [KB972767]<br />
 Link: [Docs Trace Flags]<br />
+Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/sql-server-2012-service-pack-4-sp4-released/<br />
 Scope: global only
 
 
@@ -4021,3 +4041,4 @@ Link: [Docs Trace Flags]
 [compatibility level]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
 [Bad Idea Jeans: Finding Undocumented Trace Flags]:https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
 [SQL Server - estimates outside of the histogram - half-baked draft]:http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
+[Upgrading an expired SQL Server 2016 Evaluation Edition]:https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
