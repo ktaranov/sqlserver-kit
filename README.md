@@ -50,7 +50,7 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 528 Trace Flags') (**Complete list - 528 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 529 Trace Flags') (**Complete list - 529 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2017**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -320,7 +320,8 @@ Headers:
     - [Minion CheckDB - completes the MinionWare maintenance and backups suite](http://minionware.net/checkdb/) (by Minionware)
     - [Minion Reindex - Index maintenance that is fully automated](http://minionware.net/reindex/) (by Minionware)
     - [OrcaMDF - C# parser for MDF files](https://github.com/improvedk/OrcaMDF) (by Mark S. Rasmussen)
-    - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server) 
+    - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server)
+    - [Telegraf SQL Server Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) (by influxdata)
 
 [*Back to top*](#header02)
 

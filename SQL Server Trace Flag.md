@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (528 trace flags)
+Complete list of Microsoft SQL Server trace flags (529 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -64,6 +64,8 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
 ## How do I know what Trace Flags are turned on at the moment?
+From SSMS 16 every sql plan content information about trace flags in section `Trace flags`
+
 You can use the [DBCC TRACESTATUS](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql "Microsoft Docs DBCC TRACESTATUS") command
 
 The following example displays the status of all trace flags that are currently enabled globally:
@@ -558,11 +560,12 @@ Link: None
 <a id="692"></a>
 #### Trace Flag: 692
 Function: Disables fast inserts while bulk loading data into heap or clustered index.
-Starting SQL Server 2016, fast inserts is enabled by default leveraging minimal logging when database is in simple or bulk logged recovery model to optimize insert performance for records inserted into new pages. With fast inserts, each bulk load batch acquires new extent(s) bypassing the allocation lookup for existing extent with available free space to optimize insert performance.
-With fast inserts, bulk loads with small batch sizes can lead to increased unused space consumed by objects hence it is recommended to use large batchsize for each batch to fill the extent completely. If increasing batchsize is not feasible, this trace flag can help reduce unused space reserved at the expense of performance.<br />
+Starting SQL Server 2016, fast inserts is enabled by default leveraging minimal logging when database is in simple or bulk logged recovery model to optimize insert performance for records inserted into new pages.
+With fast inserts, each bulk load batch acquires new extent(s) bypassing the allocation lookup for existing extent with available free space to optimize insert performance.
+With fast inserts, bulk loads with small batch sizes can lead to increased unused space consumed by objects hence it is recommended to use large batch size for each batch to fill the extent completely.
+If increasing batch size is not feasible, this trace flag can help reduce unused space reserved at the expense of performance.<br />
 **Note: This trace flag applies to SQL Server 2016 RTM and higher builds.**
 Link: https://blogs.msdn.microsoft.com/sql_server_team/sql-server-2016-minimal-logging-and-impact-of-the-batchsize-in-bulk-load-operations/<br />
-Link: <br />
 Scope: global or session
 
 
@@ -2421,9 +2424,13 @@ Link: https://support.microsoft.com/en-us/help/958006/fix-the-size-of-the-sql-se
 
 <a id="4134"></a>
 #### Trace Flag: 4134
-Function: Bugfix for error: parallel query returning different results every time<br />
+Function: Bugfix for error: parallel query returning different results every time
+ The trace flag disables an optimization in the query optimizer.
+The optimization caused the issue described in the KB article when you try to insert into a table by selecting from the table itself.
+As turning on the trace flag could result in a perf degradation, you only should use it if you run into the issue described in the KB article.<br />
 Link: http://support.microsoft.com/kb/2546901<br />
-Link: http://sql-sasquatch.blogspot.se/2014/04/whaddayaknow-bout-sqlserver-trace-flag.html
+Link: http://sql-sasquatch.blogspot.se/2014/04/whaddayaknow-bout-sqlserver-trace-flag.html<br />
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/9ea718c2-e0e0-40cf-b12b-3269130448b7/trace-flag-4135-sql-server-2008?forum=sqldatabaseengine
 
 
 <a id="4135"></a>
@@ -3740,6 +3747,13 @@ Scope: global or session
 Function: Apparently enables a fix for an access violation when a table with Japanese characters has an indexed changed.<br />
 Link: https://support.microsoft.com/en-us/help/3142595/fix-an-access-violation-occurs-when-a-database-table-name-contains-japanese-characters-in-sql-server-2012-or-sql-server-2014<br />
 Link: https://support.microsoft.com/en-us/help/3138659/fix-slow-performance-when-you-query-numeric-data-types-from-an-oracle-database
+
+
+<a id="9448"></a>
+#### Trace Flag: 9448
+**Undocumented trace flag**<br />
+Function: Disables the referential integrity operator.<br />
+Link: https://orderbyselectnull.com/2017/12/05/the-referential-integrity-operator/<br />
 
 
 <a id="9453"></a>
