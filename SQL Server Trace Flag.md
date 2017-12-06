@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (529 trace flags)
+Complete list of Microsoft SQL Server trace flags (530 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -30,23 +30,24 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Derik Hammer Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
 
 **Great thanks to:**
- - Aaron Morelli ([blog](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
- - Steinar Andersen ([blog](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
- - Brent Ozar ([blog](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
+ - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
+ - Steinar Andersen ([b](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
+ - Brent Ozar ([b](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
  - Yusuf Anis
  - Lars Utterström
  - Martin Höglund
  - Håkan Winther
  - Toine Rozemeijer
- - Robert L Davis ([blog](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
- - Lonny Niederstadt ([blog](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
+ - Robert L Davis ([b](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
+ - Lonny Niederstadt ([b](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
  - Andrzej Kukuła
  - Alexander Titenko ([gtihub](https://github.com/AlexTitenko))
  - Albert van der Sel
  - Amit Banerjee
- - Erin Stellato ([blog](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
- - Darik Hammer ([blog](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
- - Erik Darling ([blog](https://www.brentozar.com/archive/author/erik-darling/))
+ - Erin Stellato ([b](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
+ - Darik Hammer ([b](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
+ - Erik Darling ([b](https://www.brentozar.com/archive/author/erik-darling/))
+ - Joe Obbish ([b](https://orderbyselectnull.com/))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -163,7 +164,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **526 trace flags**
+Summary: **530 trace flags**
 
 
 <a id="-1"></a>
@@ -1928,6 +1929,14 @@ Function: Introduced in the KB to fix a race condition leading to a hung databas
 database state every two seconds instead of waiting for a lock for infinite time. It helps ending the connection tasks faster as the mirroring reac
 hes the start of the recovery phase and releasing more worker threads to be used by database mirroring.”<br />
 Link: https://support.microsoft.com/en-us/help/2970421/fix-the-database-sticks-in-role-configuration-phase-when-you-perform-a-manual-failover-of-a-mirrored-database
+
+
+<a id="3449"></a>
+#### Trace Flag: 3449
+Function: If you enable global TF 3449 (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later), you will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database, backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
+Link: https://support.microsoft.com/en-us/help/3158396/fix-sql-server-database-creation-on-a-system-with-a-large-volume-of-me<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/<br />
+Scope: global only
 
 
 <a id="3499"></a>

@@ -82,11 +82,12 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Wayne Sheffield     | [Wayne Sheffield Blog]       | USA     | Richmond         | [@DBAWayne]        | NULL                              | 1   | [Sheffield MVP]    |
 | Ewald Cress         | [Ewald Cress Blog]           |         | NULL             | [@sqlOnIce]        | NULL                              | 0   |                    |
 | Dmitri Korotkevitch | [Dmitri Korotkevitch Blog]   | USA     | Tampa            | [@aboutsqlserver]  | dk@aboutsqlserver.com             | 6   | [Korotkevitch MVP] |
-| Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
-| Erik Darling        | [Erik Darling Articles]      | USA     |                  | NULL               | NULL                              | 0   |                    |
-| Thomas Rushton      | [Thomas Rushton Blog]        | USA     |                  | NULL               | NULL                              | 0   |                    |
+| Bert Wagner         | [Bert Wagner Blog]           |         | NULL             | [@bertwagner]      | NULL                              | 0   |                    |
+| Erik Darling        | [Erik Darling Articles]      | USA     | NULL             | NULL               | NULL                              | 0   |                    |
+| Thomas Rushton      | [Thomas Rushton Blog]        | USA     | NULL             | NULL               | NULL                              | 0   |                    |
 | Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][1]       | 0   |                    |
 | Ned Otter           | [Ned Otter Blog]             | USA     | New York         | [@NedOtter]        | [Contact Ned Otter][2]            | 0   |                    |
+| Joe Obbish          | [Joe Obbish Blog]            |         | NULL             | NULL               | NULL                              | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -173,6 +174,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [1]:https://SqlQuantumLeap.com/contact/
 [Ned Otter Blog]:http://nedotter.com/
 [2]:http://nedotter.com/contact/
+[Joe Obbish Blog]:https://orderbyselectnull.com/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
