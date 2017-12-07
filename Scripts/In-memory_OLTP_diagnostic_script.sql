@@ -48,8 +48,9 @@ IF OBJECT_ID('dbo.usp_inMemoryOLTP_diag', 'P') IS NULL EXECUTE ('CREATE PROCEDUR
 GO
 
 ALTER PROCEDURE [dbo].[usp_inMemoryOLTP_diag] (
-        @instanceLevelOnly          BIT = 0
-      , @Debug                      BIT = 0
+        @instanceLevelOnly          BIT          = 0
+      , @dbName                     VARCHAR(256) = 'ALL'
+      , @Debug                      BIT          = 0
 )
 AS BEGIN
 
@@ -74,8 +75,6 @@ AS BEGIN
         DATABASE LEVEL
     ######################################################################################################################
     */
-
-    DECLARE @dbName VARCHAR(256) = 'ALL'
 
     --DROP TABLE IF EXISTS #inmemDatabases;
     IF OBJECT_ID('tempdb..#inmemDatabases') IS NOT NULL DROP TABLE #inmemDatabases;
