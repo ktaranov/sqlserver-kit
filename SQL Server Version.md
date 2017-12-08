@@ -135,7 +135,7 @@ Profits:
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[CU1 KB4038634]:https://support.microsoft.com/en-us/help/4038634/cumulative-update-1-for-sql-server-2017
+[CU1 KB4052574]:https://support.microsoft.com/en-us/help/4052574/cumulative-update-2-for-sql-server-2017
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU6 KB4037354]:https://support.microsoft.com/en-us/help/4037354/cumulative-update-6-for-sql-server-2016-sp1
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
@@ -1854,9 +1854,9 @@ Microsoft SQL Server 2014 (SP2-CU8) (KB4037356) - 12.0.5557.0 (X64)
 | 8.00.871  | 2000.80.871.0  | [830860 FIX: The performance of a computer that is running SQL Server 2000 degrades when query execution plans against temporary tables remain in the procedure cache]                                                                                        | 2005-10-25   |
 | 8.00.870  | 2000.80.870.0  | [830262 FIX: Unconditional Update May Not Hold Key Locks on New Key Values]                                                                                                                                                                                   | 2005-10-25   |
 | 8.00.869  | 2000.80.869.0  | [830588 FIX: Access violation when you trace keyset-driven cursors by using SQL Profiler]                                                                                                                                                                     | 2005-10-25   |
-| 8.00.866  | 2000.80.866.0  | [830366 FIX: An access violation occurs in SQL Server 2000 when a high volume of local shared memory connections occur after you install security update MS03-031]                                                                                            | 2006-01-16   |
-| 8.00.865  | 2000.80.865.0  | [830395 FIX: An access violation occurs during compilation if the table contains statistics for a computed column]                                                                                                                                            | 2005-10-25   |
-| 8.00.865  | 2000.80.865.0  | [828945 FIX: You cannot insert explicit values in an IDENTITY column of a SQL Server table by using the SQLBulkOperations function or the SQLSetPos ODBC function in SQL Server 2000]                                                                         | 2005-10-25   |
+| 8.00.866  | 2000.80.866.0  | 830366 FIX: An access violation occurs in SQL Server 2000 when a high volume of local shared memory connections occur after you install security update MS03-031                                                                                              | 2006-01-16   |
+| 8.00.865  | 2000.80.865.0  | 830395 FIX: An access violation occurs during compilation if the table contains statistics for a computed column                                                                                                                                              | 2005-10-25   |
+| 8.00.865  | 2000.80.865.0  | 828945 FIX: You cannot insert explicit values in an IDENTITY column of a SQL Server table by using the SQLBulkOperations function or the SQLSetPos ODBC function in SQL Server 2000                                                                           | 2005-10-25   |
 | 8.00.863  | 2000.80.863.0  | 829205 FIX: Query performance may be slow and may be inconsistent when you run a query while another query that contains an IN operator with many values is compiled                                                                                          | 2005-10-25   |
 | 8.00.863  | 2000.80.863.0  | 829444 FIX: A floating point exception occurs during the optimization of a query                                                                                                                                                                              | 2005-10-25   |
 | 8.00.859  | 2000.80.859.0  | 821334 FIX: Issues that are resolved in SQL Server 2000 build 8.00.0859                                                                                                                                                                                       | 2005-03-31   |
@@ -2188,9 +2188,6 @@ Microsoft SQL Server 2014 (SP2-CU8) (KB4037356) - 12.0.5557.0 (X64)
 [830860 FIX: The performance of a computer that is running SQL Server 2000 degrades when query execution plans against temporary tables remain in the procedure cache]:http://support.microsoft.com/kb/830860/
 [830262 FIX: Unconditional Update May Not Hold Key Locks on New Key Values]:http://support.microsoft.com/kb/830262/
 [830588 FIX: Access violation when you trace keyset-driven cursors by using SQL Profiler]:http://support.microsoft.com/kb/830588/
-[830366 FIX: An access violation occurs in SQL Server 2000 when a high volume of local shared memory connections occur after you install security update MS03-031]:http://support.microsoft.com/kb/830366/
-[830395 FIX: An access violation occurs during compilation if the table contains statistics for a computed column]:http://support.microsoft.com/kb/830395/
-[828945 FIX: You cannot insert explicit values in an IDENTITY column of a SQL Server table by using the SQLBulkOperations function or the SQLSetPos ODBC function in SQL Server 2000]:http://support.microsoft.com/kb/828945/
 [829205 FIX: Query performance may be slow and may be inconsistent when you run a query while another query that contains an IN operator with many values is compiled]:http://support.microsoft.com/kb/829205/
 [829444 FIX: A floating point exception occurs during the optimization of a query]:http://support.microsoft.com/kb/829444/
 [821334 FIX: Issues that are resolved in SQL Server 2000 build 8.00.0859]:http://support.microsoft.com/kb/821334/
@@ -2256,7 +2253,6 @@ Microsoft SQL Server 2014 (SP2-CU8) (KB4037356) - 12.0.5557.0 (X64)
 [815115 FIX: A DTS package that uses global variables ignores an error message raised by RAISERROR]:http://support.microsoft.com/kb/815115/
 [814889 FIX: A DELETE statement with a JOIN might fail and you receive a 625 error]:http://support.microsoft.com/kb/814889/
 [814893 FIX: Error Message: "Insufficient key column information for updating" Occurs in SQL Server 2000 SP3]:http://support.microsoft.com/kb/814893/
-[810163 FIX: An Access Violation Occurs if an sp_cursoropen Call References a Parameter That Is Not Defined]:http://support.microsoft.com/kb/810163/
 
 
 ## Microsoft SQL Server 7.0 Builds
