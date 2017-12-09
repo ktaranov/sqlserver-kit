@@ -460,7 +460,9 @@ Articles types:
 | [How to configure database mail in SQL Server]                                                                          | Bojan Petrovic                           | 2017-11-22 | [DBA]       |
 | [Understanding SQL server memory grant]                                                                                 | Jay Choe                                 | 2010-02-16 | [DBA],[DEV] |
 | [Cleanly Uninstalling Stubborn SQL Server Components]                                                                   | Aaron Bertrand                           | 2015-10-06 | [DBA]       |
-| [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]                                                   | Aaron Bertrand                           | 2017-17-30 | [DEV]       |
+| [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]                                                   | @sqL_handLe                              | 2017-17-30 | [DEV]       |
+| [Query Store Settings]                                                                                                  | Erin Stellato                            | 2010-11-28 | [DBA],[DEV] |
+| [Using Plan Explorer with Entity Framework]                                                                             | Jason Hall                               | 2010-11-28 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -901,3 +903,5 @@ Articles types:
 [Understanding SQL server memory grant]:https://blogs.msdn.microsoft.com/sqlqueryprocessing/2010/02/16/understanding-sql-server-memory-grant/
 [Cleanly Uninstalling Stubborn SQL Server Components]:https://www.mssqltips.com/sqlservertip/4050/cleanly-uninstalling-stubborn-sql-server-components/
 [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]:http://sql-sasquatch.blogspot.ru/2017/11/hey-whats-deal-with-nocount-and-t-sql.html
+[Query Store Settings]:https://www.sqlskills.com/blogs/erin/query-store-settings/
+[Using Plan Explorer with Entity Framework]:https://blogs.sentryone.com/jasonhall/using-plan-explorer-entity-framework/

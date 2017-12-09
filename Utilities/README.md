@@ -256,7 +256,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [comparator](#pumpet-comparator)                                      | Oracle, PostgreSQL, MySQL, Other | No             | [DC]       | [comparator]                                | 2017-06-06   | Pumpet                | [LGPL-3.0] | Open Source    | No    |
 | [Navicat for SQL Server](#navicat-for-sql-server)                     | No                               | Mac            | [MS]       | [Navicat for SQL Server]                    | 2017-06-14   | PremiumSoft           |            | No             |  $699 |
 | [Navicat Premium](#navicat-premium)                                   | Oracle, PostgreSQL, MySQL, Other | Mac            | [MS]       | [Navicat Premium]                           | 2017-06-14   | PremiumSoft           |            | No             | $1299 |
-| [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-04-12   | DbVis Software AB.    |            | Yes            |  $179 |
+| [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-11-16   | DbVis Software AB.    |            | Yes            |  $197 |
 | [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions |            | Yes            |  $127 |
 | [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        |            | No             |  £430 |
 | [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      |            | No             |   $99 |
@@ -3677,11 +3677,11 @@ You can quickly and easily build, manage and maintain your databases.
 <a id="dbvisualizer"></a>
 ## DbVisualizer
 Download page: [DbVisualizer]<br/>
-Release date: 2017-04-12<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-11-16<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: DbVis Software AB.<br/>
 Free version: Yes<br/>
-Price: $179
+Price: $197
 
 DbVisualizer is the universal database tool for developers, DBAs and analysts.
 It is the perfect solution since the same tool can be used on all major operating systems accessing a wide range of databases.
