@@ -1,23 +1,33 @@
+USE master;
+GO
+
+IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL EXECUTE ('CREATE PROCEDURE dbo.sp_BlitzInMemoryOLTP AS SELECT 1;');
+GO
+
+ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
+        @instanceLevelOnly BIT            = 0
+      , @dbName            NVARCHAR(4000) = 'ALL'
+      , @debug             BIT            = 0
+)
 /*
 Author: Ned Otter
 Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
-*/
 
-/*
     ##########################################################################################
         Copyright (C) 2017 Ned Otter (except where other authors are credited)
         All rights reserved. 
-    
+
         You may alter this code for your own *non-commercial* purposes. You may
         republish altered code as long as you include this copyright and give due credit. 
-    
-    
+
+
         THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF 
         ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED 
         TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
         PARTICULAR PURPOSE. 
 
     Tested on:
+        SQL 2014 SP2 CU8
         SQL 2016 SP1/CU4
         SQL 2017 RTM
         SQL 2017 CU1
@@ -39,36 +49,32 @@ Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-scr
         18 Nov 2017 changed #temp to #inmemDatabases and created section for which native modules are loaded (right now only checks for procedures)
         19 Nov 2017 changed logic/fixed bug in loaded module display
         19 Nov 2017 added longest running xtp queries, as a possible way to investigate GC blocking
-        29 Nov 2017 changed 'DROP IF EXISTS' like code to 'IF OBJECT_ID' like
-        05 Dec 2017 changed 'EXEC' like code to 'EXEC sp_executesql' like (except lines 979, 1105), added CASE operator to exclude not supported staff from query
-        06 Dec 2017 changed query to simple stored procedure
+        Modfified author: Alexey Nagosrskiy
+        2017-11-29 changed 'DROP IF EXISTS' like code to 'IF OBJECT_ID' like
+        2017-12-05 changed 'EXEC' like code to 'EXEC sp_executesql', added CASE operator to exclude not supported staff from query
+        2017-12-06 trasnform query to a stored procedure
+        2017-12-07 Konstantin Taranov: some code formating, test for 2014 and 2017 SQL Servers, add CATCH block
+        2017-12-11 Konstantin Taranov: fix issue with @instanceLevelOnly for SQL Server 2014, rename to sp_BlitzInMemoryOLTP
     ##########################################################################################
 */
-IF OBJECT_ID('dbo.usp_inMemoryOLTP_diag', 'P') IS NULL EXECUTE ('CREATE PROCEDURE dbo.usp_inMemoryOLTP_diag AS SELECT 1');
-GO
+AS BEGIN TRY
 
-ALTER PROCEDURE [dbo].[usp_inMemoryOLTP_diag] (
-        @instanceLevelOnly          BIT          = 0
-      , @dbName                     VARCHAR(256) = 'ALL'
-      , @Debug                      BIT          = 0
-)
-AS BEGIN
+    SET NOCOUNT ON;
 
-    SET NOCOUNT ON 
+    DECLARE @crlf VARCHAR(10) = CHAR(10);
 
-
-    SET NOCOUNT ON 
     DECLARE @VersionString NVARCHAR(MAX) = CAST(SERVERPROPERTY('ProductVersion') AS NVARCHAR(128))
            ,@errorMessage NVARCHAR(512);
 
     DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1));
 
+    IF @debug = 1 PRINT('@Version = ' + CAST(@Version AS VARCHAR(30)));
+
     IF @Version < 12
     BEGIN
-        SET @errorMessage = CONCAT('In-Memory OLTP is not supported if SQL Server version is less than 2014. You are running SQL Server version  ', @Version)
-        ;THROW 55000, @errorMessage, 1
+        SET @errorMessage = CONCAT('In-Memory OLTP is not supported if SQL Server version is less than 2014. You are running SQL Server version  ', @Version);
+        THROW 55000, @errorMessage, 1;
     END;
-
 
     /*
     ######################################################################################################################
@@ -76,7 +82,6 @@ AS BEGIN
     ######################################################################################################################
     */
 
-    --DROP TABLE IF EXISTS #inmemDatabases;
     IF OBJECT_ID('tempdb..#inmemDatabases') IS NOT NULL DROP TABLE #inmemDatabases;
     SELECT name
             ,database_id
@@ -109,21 +114,19 @@ AS BEGIN
         RETURN;
     END;
 
-    --DROP TABLE IF EXISTS #moduleSplit
     IF OBJECT_ID('tempdb..#moduleSplit') IS NOT NULL DROP TABLE #moduleSplit;
 
-    --DECLARE @moduleSplit TABLE 
     CREATE TABLE #moduleSplit
     (
          rowNumber INT IDENTITY PRIMARY KEY
         ,value NVARCHAR(MAX) NULL
-    )
+    );
 
     DECLARE @loadedModules TABLE
     (
          rowNumber INT IDENTITY PRIMARY KEY
         ,name NVARCHAR(MAX) NULL
-    )
+    );
 
     INSERT @loadedModules
     (
@@ -132,29 +135,29 @@ AS BEGIN
     SELECT name
     FROM sys.dm_os_loaded_modules AS a
     WHERE description = 'XTP Native DLL'
-        AND PATINDEX('%[_]p[_]%', name) > 0
+        AND PATINDEX('%[_]p[_]%', name) > 0;
 
-    DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules)
-    DECLARE @moduleCounter INT = 1
-    DECLARE @loadedModuleName NVARCHAR(MAX) = ''
+    DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules);
+    DECLARE @moduleCounter INT = 1;
+    DECLARE @loadedModuleName NVARCHAR(MAX) = '';
 
-    SET @moduleCounter = 1
+    SET @moduleCounter = 1;
 
     WHILE @moduleCounter <= @maxLoadedModules
     BEGIN
 
         SELECT @loadedModuleName = name
         FROM @loadedModules
-        WHERE rowNumber = @moduleCounter
+        WHERE rowNumber = @moduleCounter;
 
         INSERT #moduleSplit
         (
             value
         )
-        SELECT value 
-        FROM STRING_SPLIT(@loadedModuleName, '_')
+        SELECT value
+        FROM STRING_SPLIT(@loadedModuleName, '_');
 
-        SELECT @moduleCounter += 1
+        SELECT @moduleCounter += 1;
 
     END
 
@@ -1027,7 +1030,8 @@ AS BEGIN
 
         END; -- This is the loop that processes each database
     END;
-    --DROP TABLE IF EXISTS #NativeModules;
+
+
     IF OBJECT_ID('#NativeModules', 'U') IS NOT NULL DROP TABLE #NativeModules;
 
     /*
@@ -1044,7 +1048,7 @@ AS BEGIN
         @@version
     ###################################################
     */
-    IF @instanceLevelOnly = 1 AND @Version > 12
+    IF @instanceLevelOnly = 1 AND @Version >= 12
     BEGIN
 
         SELECT @@version AS Version;
@@ -1061,9 +1065,7 @@ AS BEGIN
               ,FORMAT(committed_target_kb / 1048576, '###,###,###,###,###') AS committedTargetGB
         FROM sys.dm_os_sys_info;
 
-
-        --DROP TABLE IF EXISTS #TraceFlags
-	    IF OBJECT_ID('#TraceFlags', 'U') IS NOT NULL DROP TABLE #TraceFlags;
+        IF OBJECT_ID('#TraceFlags', 'U') IS NOT NULL DROP TABLE #TraceFlags;
 
         CREATE TABLE #TraceFlags
         (
@@ -1077,7 +1079,7 @@ AS BEGIN
         INSERT #TraceFlags
     
         EXECUTE sp_executesql @sql
-        IF @Debug = 1 PRINT @sql
+        IF @debug = 1 PRINT(@sql)
 
         DECLARE @msg NVARCHAR(MAX);
 
@@ -1113,7 +1115,7 @@ AS BEGIN
         EXEC sys.sp_xtp_control_query_exec_stats
         @old_collection_value = @InstanceCollectionStatus OUTPUT;
 
-        SELECT 
+        SELECT
             CASE 
                 WHEN @InstanceCollectionStatus = 1 THEN 'YES' 
                 ELSE 'NO'
@@ -1155,15 +1157,15 @@ AS BEGIN
                 ,target_memory_kb / 1024 AS targetMemoryMB
         FROM sys.databases d
         INNER JOIN sys.dm_resource_governor_resource_pools AS Pools ON Pools.pool_id = d.resource_pool_id
-        ORDER BY poolName, databaseName
-                             
+        ORDER BY poolName, databaseName;
+
         /*
         ###########################################################
             Memory breakdown
         ###########################################################
         */
 
-        ;WITH clerksAggregated AS 
+        ;WITH clerksAggregated AS
         (
             SELECT clerks.[type] AS clerkType
                   ,CONVERT(CHAR(20)
@@ -1173,7 +1175,7 @@ AS BEGIN
             AND clerks.type IN ('MEMORYCLERK_SQLBUFFERPOOL', 'MEMORYCLERK_XTP')
             GROUP BY clerks.[type]
         )
-        ,clerksAggregatedString AS 
+        ,clerksAggregatedString AS
         (
             SELECT clerkType
                   ,clerkTypeUsageMB
@@ -1213,7 +1215,7 @@ AS BEGIN
               ,state_desc
               ,result_desc
         FROM sys.dm_db_xtp_transactions
-        ORDER BY begin_tsn DESC
+        ORDER BY begin_tsn DESC;
 
         /*
         #################################################################
@@ -1233,4 +1235,15 @@ AS BEGIN
             FROM sys.event_notifications;
         END;
     END;
-END;
+END TRY
+
+BEGIN CATCH
+    PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER()) +
+          ', Severity: '  + CONVERT(varchar(5), ERROR_SEVERITY()) +
+          ', State: '     + CONVERT(varchar(5), ERROR_STATE()) +
+          ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-') +
+          ', Line: '      + CONVERT(varchar(5), ERROR_LINE()) +
+          ', User name: ' + CONVERT(sysname, CURRENT_USER);
+    PRINT ERROR_MESSAGE();
+END CATCH;
+GO
