@@ -36,7 +36,8 @@ Content:
 32. [Object Explore Details](#32)
 33. [Working with Azure SQL](#33)
 34. [Using Extended Events and Profiler in SSMS](#34)
-35. [Reference](#reference)
+35. [Vulnerability Assessment in SSMS](#35)
+36. [Reference](#reference)
 
 
 Great thanks to:
@@ -59,6 +60,7 @@ Great thanks to:
  - Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
  - Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
  - Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
+ - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
 
 
 <a id="1"></a>
@@ -615,10 +617,12 @@ By right-clicking on the SQL Server instance and navigating to `Reports > Standa
 
 ![SSMS_Server_Default_Reports](/SSMS/SSMS_Tips/29_SSMS_Server_Default_Reports.png)
 
-Also you can run default reports database:
+You can run default reports database:
 ![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/29_SSMS_Database_Default_Reports.png)
 
-[New in SSMS: Performance Dashboard built-in(https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-performance-dashboard-built-in/)
+Useful another reports information:
+ - [New in SSMS: Performance Dashboard built-in](https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-performance-dashboard-built-in/)
+ - [New in SSMS – Always On Availability Group Latency Reports]
 
 
 <a id="30"></a>
@@ -670,6 +674,13 @@ For SSMS 17.2 and above you can enable Multi-Factor Authentication in Azure SQL 
 Full instruction here: [EXTENDED EVENTS AND PROFILER: XE PROFILER]
 
 
+<a id="35"></a>
+## Vulnerability Assessment in SSMS
+You will need version 17.4 for the Vulnerability Assessment feature. Right-click to any database to start a scan.
+
+More info here: [SQL Vulnerability Assessment Available in SSMS] and [Vulnerability Assessment features](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-vulnerability-assessment)
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -699,6 +710,7 @@ Reference:
  - [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more] (by Ahmad Yaseen)
  - [CTRL+R does not hide the Query Result window in SSMS]
  - [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar] (by Solomon Rutzky)
+ - [SQL Vulnerability Assessment Available in SSMS] (by Thomas LaRock)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
@@ -718,3 +730,5 @@ Reference:
 [CTRL+R does not hide the Query Result window in SSMS]:https://stackoverflow.com/questions/17068661/ctrlr-does-not-hide-the-query-result-window-in-ssms
 [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar]:https://sqlquantumleap.com/2017/07/17/ssms-tip-1-annotations-and-map-mode-for-vertical-scroll-bar/
 [EXTENDED EVENTS AND PROFILER: XE PROFILER]:https://www.scarydba.com/2017/11/07/extended-events-profiler-xe-profiler/
+[New in SSMS – Always On Availability Group Latency Reports]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-always-on-availability-group-latency-reports/
+[SQL Vulnerability Assessment Available in SSMS]:https://thomaslarock.com/2017/12/sql-vulnerability-assessment-available-in-ssms/
