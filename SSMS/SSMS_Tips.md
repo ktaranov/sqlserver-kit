@@ -678,6 +678,16 @@ Full instruction here: [EXTENDED EVENTS AND PROFILER: XE PROFILER]
 ## Vulnerability Assessment in SSMS
 You will need version 17.4 for the Vulnerability Assessment feature. Right-click to any database to start a scan.
 
+![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/SQL_Vulnerability_Assessment.gif)
+
+1. Run a scan
+2. Specify where scan will be saved
+3. View the report
+4. Analyze the results and resolve issues
+5. Set your Baseline
+6. Run a new scan to see your customized tracking report
+7. Open a previously run scan
+
 More info here: [SQL Vulnerability Assessment Available in SSMS] and [Vulnerability Assessment features](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-vulnerability-assessment)
 
 
