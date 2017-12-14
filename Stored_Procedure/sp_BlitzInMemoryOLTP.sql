@@ -16,6 +16,7 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
 
 .DESCRIPTION
     Get detailed information about In-Memory SQL Server objects
+    Tested on SQL Server: 2014, 2016, 2017
 
 .PARAMETER @instanceLevelOnly
     Only check instance In-Memory related information
@@ -46,6 +47,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
 Author: Ned Otter
 Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
+Version: 1.0
+
+Modified: 2017-12-06
+Author: Aleksey Nagorskiy
+Version: 1.1
+
+Modified: 2017-12-13
+Author: Konstantin Taranov
+Version: 1.2
+
+Modified: 2017-12-14
+Author: Konstantin Taranov
+Version: 1.3
 */
 AS BEGIN TRY
 
@@ -81,6 +95,8 @@ AS BEGIN TRY
     WHERE name NOT IN ( 'master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
         AND (name = @dbName OR @dbName = 'ALL')
         AND state_desc = 'ONLINE';
+
+    IF @debug =1 SELECT 'All not system and ONLINE databases' AS AllDatabases, * FROM #inmemDatabases;
 
     IF @dbName IS NULL AND @instanceLevelOnly = 0
     BEGIN
@@ -160,9 +176,8 @@ AS BEGIN TRY
         ####################################################
         */
         DECLARE @sql     NVARCHAR(MAX) = ''
-               ,@db      NVARCHAR(257)
-               ,@counter INT = 1
-               ,@MaxRows INT = (SELECT COUNT(*) FROM #inmemDatabases);
+              , @counter INT = 1
+              , @MaxRows INT = (SELECT COUNT(*) FROM #inmemDatabases);
 
         WHILE @counter <= @MaxRows
         BEGIN
@@ -174,35 +189,31 @@ AS BEGIN TRY
                 SELECT @sql += ';WITH InMemDatabases AS (';
             END
 
-            IF @counter <> @MaxRows OR (@counter = 1 AND @counter = @MaxRows)
-                SELECT @sql += 
+            SELECT @sql +=
+            CASE 
+                WHEN @counter = 1 THEN ''  -- there is exactly 1 database for the entire instance
+                ELSE @crlf + ' UNION ALL ' + @crlf
+            END;
+
+            SELECT @sql +=
                     CONCAT
                     (
                          @crlf
                         ,'SELECT DISTINCT '
                         , ''''
                         ,  name
-                        , ''' AS databaseName,'
+                        , ''' AS databaseName,' + @crlf
                         , database_id
-                        , ' AS database_id FROM '
+                        , ' AS database_id' + @crlf+ ' FROM '
                         , name
-                        , '.sys.database_files INNER JOIN '
+                        , '.sys.database_files' + @crlf + ' INNER JOIN '
                         , name
                         , '.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id WHERE filegroups.type = ''FX'''
                     )
             FROM #inmemDatabases
             WHERE rowNumber = @counter;
 
-            IF @debug = 1 PRINT(@sql);
-            
-            
-            SELECT @sql +=
-            CASE 
-                WHEN @counter = 1 AND @MaxRows = 1 THEN ''  -- there is exactly 1 database for the entire instance
-                WHEN @counter = @MaxRows  THEN ''
-                WHEN @counter <> 1 AND @counter = @MaxRows -1 THEN ''
-                ELSE @crlf + ' UNION ALL ' + @crlf
-            END;
+            --IF @debug = 1 PRINT(@sql);
 
             SELECT @counter += 1;
         END;
@@ -332,8 +343,8 @@ AS BEGIN TRY
             ##############################################################
             */
             SELECT @sql = CONCAT(
-                   'SELECT ''List indexes on memory-optimized tables in this database'','
-                   ,'''Indexes'' AS objects,'
+                   'SELECT '
+                   ,'''List indexes on memory-optimized tables in this database'' AS objects,'
                    ,''''
                    ,dbName
                    ,'''' 
