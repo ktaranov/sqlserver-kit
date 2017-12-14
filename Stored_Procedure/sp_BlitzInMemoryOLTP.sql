@@ -1,7 +1,8 @@
 USE master;
 GO
 
-IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL EXECUTE ('CREATE PROCEDURE dbo.sp_BlitzInMemoryOLTP AS SELECT 1;');
+IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL
+EXECUTE ('CREATE PROCEDURE dbo.sp_BlitzInMemoryOLTP AS SELECT 1;');
 GO
 
 ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
@@ -10,52 +11,41 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
       , @debug             BIT            = 0
 )
 /*
+.SYNOPSIS
+    Get detailed information about In-Memory SQL Server objects
+
+.DESCRIPTION
+    Get detailed information about In-Memory SQL Server objects
+
+.PARAMETER @instanceLevelOnly
+    Only check instance In-Memory related information
+
+.PARAMETER @dbName
+    Check database In-Memory objects for specified database
+
+.PARAMETER @debug
+    Only PRINT dynamic sql statements without executing it
+
+.EXAMPLE
+    EXEC sp_BlitzInMemoryOLTP;
+    -- Get all In-memory information
+
+.EXAMPLE
+    EXEC sp_BlitzInMemoryOLTP @instanceLevelOnly = 1;
+    -- Get only instance In-Memory information
+
+.EXAMPLE
+    EXEC sp_BlitzInMemoryOLTP @debug = 1;
+    -- PRINT dynamic sql statements without executing it
+
+.LICENSE MIT
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+.NOTE
 Author: Ned Otter
 Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
-
-    ##########################################################################################
-        Copyright (C) 2017 Ned Otter (except where other authors are credited)
-        All rights reserved. 
-
-        You may alter this code for your own *non-commercial* purposes. You may
-        republish altered code as long as you include this copyright and give due credit. 
-
-
-        THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF 
-        ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED 
-        TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
-        PARTICULAR PURPOSE. 
-
-    Tested on:
-        SQL 2014 SP2 CU8
-        SQL 2016 SP1/CU4
-        SQL 2017 RTM
-        SQL 2017 CU1
-            Windows Server 2012 
-            Ubuntu 17.04 (initial release only, need to retest against current version of script)
-        20 Oct 2017 version 1.0 (initial release)
-        25 Oct 2017 added display of memory-optimized table types
-        05 Nov 2017 added container stats and CPF details
-        05 Nov 2017 changed logic to specify individual db name or 'ALL'. If @dbname IS NULL, THROW and exit
-        06 Nov 2017 fixed inconsistencies with column order
-        13 Nov 2017 fixed case sensitivity issues
-        14 Nov 2017 fixed bug with 'ALL' parameter, db loop now works for single or ALL
-        15 Nov 2017 added semi-colons, removed comments, added percentUsed to Resource Group pool query
-        16 Nov 2017 added validation to lookup @dbname in sys.databases
-        17 Nov 2017 
-                    changed formatting of memory consumption, bug with 'sizeGB' to 'sizeMB', formatted committed_target_kb to MB/GB
-                    added column for LOBs, and removed LEFT JOIN that wasn't required
-        18 Nov 2017 added rowcount to table list, and better validation for instance level and dbname
-        18 Nov 2017 changed #temp to #inmemDatabases and created section for which native modules are loaded (right now only checks for procedures)
-        19 Nov 2017 changed logic/fixed bug in loaded module display
-        19 Nov 2017 added longest running xtp queries, as a possible way to investigate GC blocking
-        Modfified author: Alexey Nagosrskiy
-        2017-11-29 changed 'DROP IF EXISTS' like code to 'IF OBJECT_ID' like
-        2017-12-05 changed 'EXEC' like code to 'EXEC sp_executesql', added CASE operator to exclude not supported staff from query
-        2017-12-06 trasnform query to a stored procedure
-        2017-12-07 Konstantin Taranov: some code formating, test for 2014 and 2017 SQL Servers, add CATCH block
-        2017-12-11 Konstantin Taranov: fix issue with @instanceLevelOnly for SQL Server 2014, rename to sp_BlitzInMemoryOLTP
-    ##########################################################################################
 */
 AS BEGIN TRY
 
