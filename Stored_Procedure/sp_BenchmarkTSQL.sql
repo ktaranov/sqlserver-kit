@@ -1,15 +1,13 @@
 IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL 
-    EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1');
+    EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
-ALTER PROCEDURE [dbo].[sp_BenchmarkTSQL]
-(
+ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
       @tsqlStatement       NVARCHAR(MAX) = N''
     , @numberOfExecution   INT           = 10
     , @saveResults         BIT           = 0
     , @clearCache          BIT           = 0
     , @calcMedian          BIT           = 0
 )
-AS
 /*
 .SYNOPSIS
     Calculate SQL statement execution time, save results if need.
@@ -44,8 +42,10 @@ AS
 .NOTE
     Author: Aleksei Nagorskii
 */
+AS
 BEGIN TRY
-    SET NOCOUNT OFF;
+
+    SET NOCOUNT ON;
 
     IF @tsqlStatement IS NULL
         THROW 55001, '@tsqlStatement is NULL, please specify TSQL statement.', 1;
@@ -70,6 +70,7 @@ BEGIN TRY
         THROW 55002, @err_msg, 1;
     END
 
+    DECLARE @crlf          VARCHAR(10)   = CHAR(10);
     DECLARE @cts           DATETIME      = CURRENT_TIMESTAMP;
     DECLARE @r             INT           = 0;
     DECLARE @handle        VARBINARY(64);
@@ -87,7 +88,7 @@ BEGIN TRY
         ClearCache         BIT
         );
 
-    PRINT CONCAT('Benchmark started at ', CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121))
+    PRINT ('Benchmark started at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121))
     WHILE @r < @numberOfExecution
     BEGIN
         SET @r = @r + 1;
@@ -102,7 +103,7 @@ BEGIN TRY
                 DBCC FREEPROCCACHE (@handle);
             END
         EXECUTE sp_executesql @tsqlStatement;
-        PRINT CONCAT('Run ', @r, ', start at ', CONVERT(VARCHAR(23), @rts, 121), ', finish at ', CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121),', duration: ', DATEDIFF(ms, @rts, CURRENT_TIMESTAMP), 'ms.');
+        PRINT ('Run ' + CAST(@r AS VARCHAR(30)) + ', start at ' + CONVERT(VARCHAR(23), @rts, 121) + ', finish at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121) + ', duration: ' + CAST(DATEDIFF(ms, @rts, CURRENT_TIMESTAMP) AS VARCHAR(MAX)) + 'ms.');
         INSERT @t
         VALUES(
             @cts,
@@ -125,15 +126,17 @@ BEGIN TRY
          (SELECT MIN(TMAX) FROM
            (SELECT TOP 50 PERCENT DATEDIFF(ms, RunTimeStamp, FinishTimeStamp) AS TMAX FROM @t ORDER BY TMAX DESC) AS TopHalf)
         ) / 2.0
-        PRINT CONCAT('Min: ', @min, 'ms, average: ', @avg, 'ms, max: ', @max, 'ms, median: ', @median, 'ms.', CHAR(13), 'Benchmark finished at ', CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121), '.')
+        PRINT ('Min: ' + CAST(@min AS VARCHAR(30)) + 'ms, average: ' + CAST(@avg AS VARCHAR(30)) + 'ms, max: ' + CAST(@max AS VARCHAR(30)) + 'ms, median: ' + CAST(@median AS VARCHAR(30)) + 'ms.' + @crlf + 'Benchmark finished at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121) + '.')
     END
     ELSE
-        PRINT CONCAT('Min: ', @min, 'ms, average: ', @avg, 'ms, max: ', @max, 'ms.', CHAR(13), 'Benchmark finished at ', CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121), '.')
+        PRINT ('Min: ' + CAST(@min AS VARCHAR(30)) + 'ms, average: ' + CAST(@avg AS VARCHAR(30)) + 'ms, max: ' + CAST(@max AS VARCHAR(30)) + 'ms.' + @crlf + 'Benchmark finished at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121) + '.')
     IF @saveResults = 1
         IF OBJECT_ID('.[dbo].[BenchmarkTSQL]', 'U') IS NULL
             SELECT * INTO [dbo].[BenchmarkTSQL] FROM @t
         ELSE
-            INSERT INTO [dbo].[BenchmarkTSQL] SELECT * FROM @t
+            INSERT INTO [dbo].[BenchmarkTSQL] SELECT * FROM @t;
+            
+    SET NOCOUNT ON;
 END TRY
 
 BEGIN CATCH
