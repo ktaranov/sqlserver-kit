@@ -60,6 +60,10 @@ Version: 1.2
 Modified: 2017-12-14
 Author: Konstantin Taranov
 Version: 1.3
+
+Modified: 2017-12-14
+Author: Aleksey Nagorskiy
+Version: 1.4
 */
 AS BEGIN TRY
 
@@ -96,7 +100,7 @@ AS BEGIN TRY
         AND (name = @dbName OR @dbName = 'ALL')
         AND state_desc = 'ONLINE';
 
-    IF @debug =1 SELECT 'All not system and ONLINE databases' AS AllDatabases, * FROM #inmemDatabases;
+    IF @debug = 1 SELECT 'All not system and ONLINE databases' AS AllDatabases, * FROM #inmemDatabases;
 
     IF @dbName IS NULL AND @instanceLevelOnly = 0
     BEGIN
@@ -182,7 +186,7 @@ AS BEGIN TRY
         WHILE @counter <= @MaxRows
         BEGIN
 
-            IF @debug = 1 PRINT('@counter = ' + CAST(@counter AS VARCHAR(30)) + ';');
+            IF @debug = 1 PRINT('@counter = ' + CAST(@counter AS VARCHAR(30)) + ';' + @crlf);
 
             IF @counter = 1
             BEGIN
@@ -232,7 +236,8 @@ AS BEGIN TRY
                     ,'sys.databases.name = InMemDatabases.databaseName;'
                 );
 
-        IF @debug = 1 PRINT(@sql);
+        IF @debug = 1
+            PRINT('--Determine which databases are memory-optimized' +@crlf + @sql + @crlf);
 
         DECLARE @RowCount INT = (SELECT COUNT(*) FROM #inmemDatabases);
 
@@ -256,7 +261,7 @@ AS BEGIN TRY
             )
             EXECUTE sp_executesql @sql;
 
-            IF @debug = 1 PRINT(@sql)
+            IF @debug = 1 PRINT(@sql + @crlf)
             ELSE
             BEGIN
                 SELECT 'Memory-optimized database(s)' AS databases
@@ -309,7 +314,7 @@ AS BEGIN TRY
                 ,', b.name AS tableName 
                 , p.rows AS [rowCount]
                 ,durability_desc'
-                , CASE WHEN @Version >12 THEN ',temporal_type_desc' ELSE NULL END
+                , CASE WHEN @Version > 12 THEN ',temporal_type_desc' ELSE NULL END
                 ,',FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
                 ,FORMAT(memory_used_by_table_kb, ''###,###,###'') AS memoryUsedByTableKB
                 ,FORMAT(memory_allocated_for_indexes_kb, ''###,###,###'') AS memoryAllocatedForIndexesKB
@@ -333,8 +338,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            --PRINT (@sql)
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--List memory-optimized tables in this database' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -443,8 +448,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            --PRINT @sql
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--Verify avg_chain_length for HASH indexes' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -486,7 +491,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1 PRINT(@sql)
+            IF @debug = 1
+            PRINT('--Count of indexes per table in this database' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -522,8 +528,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            --PRINT (@sql)
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--List natively compiled modules in this database' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -566,8 +572,8 @@ AS BEGIN TRY
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
-                --PRINT (@sql)
-                IF @debug = 1 PRINT @sql
+                IF @debug = 1
+                PRINT('--List natively compiled modules in this database (@Version >= 13)' +@crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
             END
 
@@ -597,13 +603,13 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            --PRINT (@sql)
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--Count of natively compiled modules in this database' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
             ############################################################
-                display memory consumption for temporal/internal tables
+                Display memory consumption for temporal/internal tables
             ############################################################
             */
 
@@ -670,14 +676,14 @@ AS BEGIN TRY
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
-                --PRINT (@sql)
-                IF @debug = 1 PRINT @sql
+                IF @debug = 1
+                PRINT('--Display memory consumption for temporal/internal tables' +@crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
             END; -- display memory consumption for temporal/internal tables
 
             /*
             #########################################################
-                display memory structures for LOB columns (off-row)
+                Display memory structures for LOB columns (off-row)
             #########################################################
             */
             SELECT @sql = CONCAT(
@@ -717,7 +723,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--Display memory structures for LOB columns (off-row)' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -758,8 +765,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            --PRINT (@sql)
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--ALL database files, including container name, size, location' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -799,8 +806,8 @@ AS BEGIN TRY
              FROM #MemoryOptimizedDatabases
              WHERE rowNumber = @dbCounter;
 
-            --PRINT (@sql)
-            IF @debug = 1 PRINT @sql
+            IF @debug = 1
+            PRINT('--container name, size, number of files' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -845,7 +852,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1 PRINT(@sql)
+            IF @debug = 1
+            PRINT('--container file summary' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -892,7 +900,8 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1 PRINT(@sql)
+            IF @debug = 1
+            PRINT('--container details' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -921,7 +930,8 @@ AS BEGIN TRY
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1 PRINT(@sql)
+            IF @debug = 1
+            PRINT('--Display memory-optimized table types' +@crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -1085,7 +1095,8 @@ AS BEGIN TRY
         INSERT #TraceFlags
     
         EXECUTE sp_executesql @sql
-        IF @debug = 1 PRINT(@sql)
+        IF @debug = 1
+        PRINT(@crlf + @sql + @crlf)
 
         DECLARE @msg NVARCHAR(MAX);
 
