@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (530 trace flags)
+Complete list of Microsoft SQL Server trace flags (531 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -48,6 +48,8 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Darik Hammer ([b](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
  - Erik Darling ([b](https://www.brentozar.com/archive/author/erik-darling/))
  - Joe Obbish ([b](https://orderbyselectnull.com/))
+ - Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
+ - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -135,6 +137,7 @@ GO
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
+ - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
 
@@ -154,6 +157,11 @@ Information about successful backups is still written to msdb and can be queried
 For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
 As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
 
+**Trace flag 7412** Enables the lightweight query execution statistics profiling infrastructure.
+unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
+This would be my advice here because this enables that lightweight profiling infrastructure there and then you’ll see in a few minutes what it unleashes here.
+So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem. To tap into running system and look at what it’s doing.”
+
 **Trace flag 7745** forces Query Store to not flush data to disk on database shutdown.
 Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
 For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.
@@ -164,7 +172,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **530 trace flags**
+Summary: **531 trace flags**
 
 
 <a id="-1"></a>
@@ -1335,6 +1343,19 @@ Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/ianjo/2006/04/24/ascending-keys-and-auto-quick-corrected-statistics<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Scope: global or session or query
+
+
+<a id="2392"></a>
+#### Trace Flag: 2392
+**Undocumented trace flag**<br />
+Function: Trace Flag 2392 can be used to turn the missing index feature off completely (as a workaround to the issue that is corrected by the hotfix).
+This trace flag has been in the product since SQL Server 2005.
+The problem is, it will not disable/enable missing index stats collection unless it is enabled at startup.
+If you set it as a startup TF and restart SQL Server, then no missing index stats are collected.
+If you then subsequently disable TF 2392 while SQL Server is running, it still won’t collect any missing index stats (despite what you may expect).<br />
+Link: https://www.sqlskills.com/blogs/glenn/sql-server-missing-indexes-feature-and-trace-flag-2392/<br />
+Link: https://support.microsoft.com/en-us/help/4042232/fix-access-violation-when-you-cancel-a-pending-query-if-the-missing-in<br />
+Scope: global only
 
 
 <a id="2398"></a>
@@ -2752,9 +2773,14 @@ Link: https://support.microsoft.com/en-us/help/3088480/fix-sort-operator-spills-
 
 <a id="7412"></a>
 #### Trace Flag: 7412
-Function: Enables the lightweight query execution statistics profiling infrastructure<br />
+Function: Enables the lightweight query execution statistics profiling infrastructure.
+unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
+This would be my advice here because this enables that lightweight profiling infrastructure there and then you’ll see in a few minutes what it unleashes here.
+So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem. To tap into running system and look at what it’s doing.”<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/en-us/kb/3170113<br />
+Link: https://www.brentozar.com/archive/2017/10/get-live-query-plans-sp_blitzwho/<br />
+Link: https://groupby.org/conference-session-abstracts/enhancements-that-will-make-your-sql-database-engine-roar-2016-sp1-edition/<br />
 Scope: global only
 
 
