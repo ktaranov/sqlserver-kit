@@ -1,17 +1,17 @@
--- https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios
+﻿-- https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios
 USE master;
 
-CREATE DATABASE [TESTDB]
+CREATE DATABASE [ಠ ಠ]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'TESTDB',  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\TESTDB.mdf', SIZE = 64MB, MAXSIZE = UNLIMITED, FILEGROWTH = 64MB), 
-FILEGROUP [TESTDB] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
-( NAME = N'TESTDB_mod', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\TESTDB_mod', MAXSIZE = UNLIMITED)
+( NAME = N'ಠ ಠ',  FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\ಠ ಠ.mdf', SIZE = 64MB, MAXSIZE = UNLIMITED, FILEGROWTH = 64MB), 
+FILEGROUP [ಠ ಠ] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
+( NAME = N'TESTDB_mod', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\ಠ ಠ_mod', MAXSIZE = UNLIMITED)
  LOG ON 
-( NAME = N'TESTDB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\TESTDB_log.ldf', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB)
+( NAME = N'TESTDB_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\ಠ ಠ_log.ldf', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB)
 GO
 
-USE [TESTDB]
+USE [ಠ ಠ];
 GO
 
 -- configure recommended DB option

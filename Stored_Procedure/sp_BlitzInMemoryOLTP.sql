@@ -7,7 +7,7 @@ GO
 
 ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
         @instanceLevelOnly BIT            = 0
-      , @dbName            NVARCHAR(4000) = 'ALL'
+      , @dbName            NVARCHAR(4000) = N'ALL'
       , @debug             BIT            = 0
 )
 /*
@@ -91,7 +91,7 @@ AS BEGIN TRY
     */
 
     IF OBJECT_ID('tempdb..#inmemDatabases') IS NOT NULL DROP TABLE #inmemDatabases;
-    SELECT name
+    SELECT QUOTENAME(name) AS name
          , database_id
          , ROW_NUMBER() OVER (ORDER BY name ASC) AS rowNumber
     INTO #inmemDatabases
@@ -110,7 +110,7 @@ AS BEGIN TRY
     END;
 
     IF (@dbName IS NOT NULL AND @dbName <> 'ALL') 
-         AND (NOT EXISTS (SELECT 1 FROM #inmemDatabases WHERE name = @dbName) AND @instanceLevelOnly = 0)
+         AND (NOT EXISTS (SELECT 1 FROM #inmemDatabases WHERE name = QUOTENAME(@dbName)) AND @instanceLevelOnly = 0)
     BEGIN
         SET @errorMessage = '@dbName not found in sys.databases';
         THROW 55002, @errorMessage, 1;
@@ -160,12 +160,18 @@ AS BEGIN TRY
         FROM @loadedModules
         WHERE rowNumber = @moduleCounter;
 
+        DECLARE @xml XML
+              , @delimiter NVARCHAR(10);
+        SET @delimiter = '_';
+        SET @xml = CAST(('<X>'+REPLACE(@loadedModuleName, @delimiter, '</X><X>')+'</X>') AS XML);
+
         INSERT #moduleSplit
         (
             value
         )
-        SELECT value
-        FROM STRING_SPLIT(@loadedModuleName, '_');
+        SELECT C.value('.', 'NVARCHAR(1000)') AS value FROM @xml.nodes('X') as X(C);
+        --SELECT value
+        --FROM STRING_SPLIT(@loadedModuleName, '_');
 
         SELECT @moduleCounter += 1;
 
@@ -204,7 +210,7 @@ AS BEGIN TRY
                     (
                          @crlf
                         ,'SELECT DISTINCT '
-                        , ''''
+                        , 'N'''
                         ,  name
                         , ''' AS databaseName,' + @crlf
                         , database_id
@@ -233,7 +239,7 @@ AS BEGIN TRY
                     ,'FROM InMemDatabases '
                     ,@crlf
                     ,'INNER JOIN sys.databases ON '
-                    ,'sys.databases.name = InMemDatabases.databaseName;'
+                    ,'QUOTENAME(sys.databases.name) = InMemDatabases.databaseName;'
                 );
 
         IF @debug = 1
@@ -308,7 +314,7 @@ AS BEGIN TRY
                 'SELECT TOP 1'
                 ,'''Memory optimized tables'''
                 , ' AS objects,'
-                , ''''
+                , ' N'''
                 ,dbName
                 ,''' AS databaseName'
                 ,', b.name AS tableName 
@@ -350,9 +356,9 @@ AS BEGIN TRY
             SELECT @sql = CONCAT(
                    'SELECT '
                    ,'''List indexes on memory-optimized tables in this database'' AS objects,'
-                   ,''''
+                   ,' N'''
                    ,dbName
-                   ,'''' 
+                   ,''''
                    ,' AS databaseName
                    ,t.name AS tableName
                    ,i.name AS indexName
@@ -414,7 +420,7 @@ AS BEGIN TRY
                    ,'''avg_chain_length for HASH indexes'''
                    ,' AS objects,'''
                    ,dbName
-                   ,'''' 
+                   ,''''
                    ,' AS databaseName'
                    ,', sch.name AS [Schema] '
                    ,', t.name AS tableName 
@@ -460,8 +466,8 @@ AS BEGIN TRY
 
             SELECT @sql = CONCAT(
                 'SELECT '
-                ,'''Number of indexes per table'' AS objects,' 
-                ,''''
+                ,'''Number of indexes per table'' AS objects,'
+                ,' N'''
                 ,dbName
                 ,''''
                 ,' AS databaseName
@@ -502,7 +508,7 @@ AS BEGIN TRY
             */
             SELECT @sql = CONCAT(
                 'SELECT ''Natively compiled modules'' AS objects,'
-                ,''''
+                ,' N'''
                 ,dbName
                 ,''''
                 ,' AS databaseName
@@ -555,7 +561,7 @@ AS BEGIN TRY
                 )'
                 SELECT @sql += CONCAT(
                     'SELECT ''Loaded natively modules'' AS objects,'
-                    ,''''
+                    ,' N'''
                     ,dbName
                     ,''''
                     ,' AS databaseName
@@ -586,9 +592,9 @@ AS BEGIN TRY
 
             SELECT @sql = CONCAT(
                 'SELECT ''Count of Natively compiled modules'' AS objects,'
-                ,''''
+                ,' N'''
                 ,dbName
-                ,''''
+                ,' N'''
                 ,' AS databaseName
                 , COUNT(*) AS [Number of modules]
                 FROM '
@@ -622,7 +628,7 @@ AS BEGIN TRY
                     AS
                     (
                         SELECT '
-                        ,''''
+                        ,'N'''
                         ,dbName
                         ,'''' 
                         ,' AS databaseName'
@@ -689,7 +695,7 @@ AS BEGIN TRY
             SELECT @sql = CONCAT(
             'SELECT DISTINCT '
             ,'''LOB/Off-row data '' AS objects,'
-            ,''''
+            ,' N'''
             ,dbName
             ,'''' 
             ,' AS databaseName'
@@ -736,7 +742,7 @@ AS BEGIN TRY
             SELECT @sql = CONCAT(
                 'SELECT '
                 ,'''Database layout'' AS objects,'
-                ,''''
+                ,' N'''
                 ,dbName
                 ,'''' 
                 ,' AS databaseName'
@@ -790,7 +796,7 @@ AS BEGIN TRY
                  )
                  SELECT 
                       ''Container details by container name'' AS object,'
-                     ,''''
+                     ,' N'''
                      ,dbName
                      ,'''' 
                      ,' AS databaseName
@@ -833,7 +839,7 @@ AS BEGIN TRY
                 )
                 SELECT 
                      ''Container details by fileType and fileState'' AS object,'
-                    ,''''
+                    ,' N'''
                     ,dbName
                     ,'''' 
                     ,' AS databaseName
@@ -880,7 +886,7 @@ AS BEGIN TRY
                 )
                 SELECT '
                 ,'''Container file details'' AS object,'
-                ,''''
+                ,' N'''
                 ,dbName
                 ,'''' 
                 ,' AS databaseName
@@ -913,7 +919,7 @@ AS BEGIN TRY
                 SELECT @sql = CONCAT(
                     'SELECT '
                     ,'''Memory optimized table types'' AS objects,'
-                    ,''''
+                    ,' N'''
                     ,dbName
                     ,''' AS databaseName,' 
                     ,'SCHEMA_NAME(tt.schema_id) AS [Schema]
