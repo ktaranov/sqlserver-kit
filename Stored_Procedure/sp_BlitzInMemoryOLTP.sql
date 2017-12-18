@@ -45,25 +45,29 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-Author: Ned Otter
-Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
-Version: 1.0
+    Author: Ned Otter
+    Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
+    Version: 1.0
 
-Modified: 2017-12-06
-Author: Aleksey Nagorskiy
-Version: 1.1
+    Modified: 2017-12-06
+    Author: Aleksey Nagorskiy
+    Version: 1.1
 
-Modified: 2017-12-13
-Author: Konstantin Taranov
-Version: 1.2
+    Modified: 2017-12-13
+    Author: Konstantin Taranov
+    Version: 1.2
 
-Modified: 2017-12-14
-Author: Konstantin Taranov
-Version: 1.3
+    Modified: 2017-12-14
+    Author: Konstantin Taranov
+    Version: 1.3
 
-Modified: 2017-12-14
-Author: Aleksey Nagorskiy
-Version: 1.4
+    Modified: 2017-12-14
+    Author: Aleksey Nagorskiy
+    Version: 1.4
+
+    Modified: 2017-12-18
+    Author: Konstantin Taranov
+    Version: 1.5
 */
 AS BEGIN TRY
 
