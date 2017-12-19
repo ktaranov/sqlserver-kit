@@ -68,6 +68,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Modified: 2017-12-18
     Author: Konstantin Taranov
     Version: 1.5
+
+    Modified: 2017-12-19
+    Author: Ned Otter
+    Version: 1.6
 */
 AS BEGIN TRY
 
@@ -80,7 +84,7 @@ AS BEGIN TRY
 
     DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1));
 
-    IF @debug = 1 PRINT('@Version = ' + CAST(@Version AS VARCHAR(30)));
+    IF @debug = 1 PRINT('--@Version = ' + CAST(@Version AS VARCHAR(30)));
 
     IF @Version < 12
     BEGIN
@@ -196,7 +200,7 @@ AS BEGIN TRY
         WHILE @counter <= @MaxRows
         BEGIN
 
-            IF @debug = 1 PRINT('@counter = ' + CAST(@counter AS VARCHAR(30)) + ';' + @crlf);
+            IF @debug = 1 PRINT('--@counter = ' + CAST(@counter AS VARCHAR(30)) + ';' + @crlf);
 
             IF @counter = 1
             BEGIN
@@ -210,20 +214,20 @@ AS BEGIN TRY
             END;
 
             SELECT @sql +=
-                    CONCAT
-                    (
-                         @crlf
-                        ,'SELECT DISTINCT '
-                        , 'N'''
-                        ,  name
-                        , ''' AS databaseName,' + @crlf
-                        , database_id
-                        , ' AS database_id' + @crlf+ ' FROM '
-                        , name
-                        , '.sys.database_files' + @crlf + ' INNER JOIN '
-                        , name
-                        , '.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id WHERE filegroups.type = ''FX'''
-                    )
+                CONCAT
+                (
+                        @crlf
+                    ,'SELECT DISTINCT '
+                    , 'N'''
+                    ,  name
+                    , ''' AS databaseName,' + @crlf
+                    , database_id
+                    , ' AS database_id' + @crlf+ ' FROM '
+                    , name
+                    , '.sys.database_files' + @crlf + ' INNER JOIN '
+                    , name
+                    , '.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id WHERE filegroups.type = ''FX'''
+                )
             FROM #inmemDatabases
             WHERE rowNumber = @counter;
 
@@ -235,19 +239,19 @@ AS BEGIN TRY
         -- post-processing
         SELECT @sql += 
             CONCAT
-                (
-                     ')'
-                    ,@crlf
-                    ,'SELECT InMemDatabases.*, sys.databases.log_reuse_wait_desc'
-                    ,@crlf
-                    ,'FROM InMemDatabases '
-                    ,@crlf
-                    ,'INNER JOIN sys.databases ON '
-                    ,'QUOTENAME(sys.databases.name) = InMemDatabases.databaseName;'
-                );
+            (
+                    ')'
+                ,@crlf
+                ,'SELECT InMemDatabases.*, sys.databases.log_reuse_wait_desc'
+                ,@crlf
+                ,'FROM InMemDatabases '
+                ,@crlf
+                ,'INNER JOIN sys.databases ON '
+                ,'QUOTENAME(sys.databases.name) = InMemDatabases.databaseName;'
+            );
 
         IF @debug = 1
-            PRINT('--Determine which databases are memory-optimized' +@crlf + @sql + @crlf);
+            PRINT('--Determine which databases are memory-optimized' + @crlf + @sql + @crlf);
 
         DECLARE @RowCount INT = (SELECT COUNT(*) FROM #inmemDatabases);
 
@@ -256,7 +260,8 @@ AS BEGIN TRY
 
             IF OBJECT_ID('tempdb..#MemoryOptimizedDatabases') IS NOT NULL DROP TABLE #MemoryOptimizedDatabases;
 
-            CREATE TABLE #MemoryOptimizedDatabases(
+            CREATE TABLE #MemoryOptimizedDatabases
+            (
                  rowNumber           INT IDENTITY
                , dbName              NVARCHAR(256) NOT NULL
                , database_id         INT NULL
@@ -289,9 +294,9 @@ AS BEGIN TRY
         CREATE TABLE #NativeModules
         (
             ModuleKey INT IDENTITY NOT NULL
-            ,ModuleID INT NOT NULL
-            ,ModuleName NVARCHAR(256) NOT NULL
-            ,CollectionStatus BIT NULL
+           ,ModuleID INT NOT NULL
+           ,ModuleName NVARCHAR(256) NOT NULL
+           ,CollectionStatus BIT NULL
         );
 
         SELECT @sql = '';
@@ -314,42 +319,44 @@ AS BEGIN TRY
                 List memory-optimized tables in this database
             ###################################################
             */
-            SELECT @sql = CONCAT(
-                'SELECT TOP 1'
-                ,'''Memory optimized tables'''
-                , ' AS objects,'
-                , ' N'''
-                ,dbName
-                ,''' AS databaseName'
-                ,', b.name AS tableName 
-                , p.rows AS [rowCount]
-                ,durability_desc'
-                , CASE WHEN @Version > 12 THEN ',temporal_type_desc' ELSE NULL END
-                ,',FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
-                ,FORMAT(memory_used_by_table_kb, ''###,###,###'') AS memoryUsedByTableKB
-                ,FORMAT(memory_allocated_for_indexes_kb, ''###,###,###'') AS memoryAllocatedForIndexesKB
-                ,FORMAT(memory_used_by_indexes_kb, ''###,###,###'') AS memoryUsedByIndexesKB
-                FROM '
-                , dbName
-                ,'.sys.dm_db_xtp_table_memory_stats a'
-                ,' INNER JOIN '
-                , dbName
-                ,'.sys.tables b ON b.object_id = a.object_id'
-                ,' INNER JOIN '
-                ,dbName
-                ,'.sys.partitions p'
-                ,' ON p.[object_id] = b.[object_id]'
-                ,' INNER JOIN '
-                ,dbName
-                ,'.sys.schemas s'
-                ,' ON b.[schema_id] = s.[schema_id]'
-                ,' WHERE p.index_id = 2'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                    'SELECT TOP 1'
+                    ,'''Memory optimized tables'''
+                    , ' AS objects,'
+                    , ' N'''
+                    ,dbName
+                    ,''' AS databaseName'
+                    ,', b.name AS tableName 
+                    , p.rows AS [rowCount]
+                    ,durability_desc'
+                    , CASE WHEN @Version > 12 THEN ',temporal_type_desc' ELSE NULL END
+                    ,',FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
+                    ,FORMAT(memory_used_by_table_kb, ''###,###,###'') AS memoryUsedByTableKB
+                    ,FORMAT(memory_allocated_for_indexes_kb, ''###,###,###'') AS memoryAllocatedForIndexesKB
+                    ,FORMAT(memory_used_by_indexes_kb, ''###,###,###'') AS memoryUsedByIndexesKB
+                     FROM '
+                    , dbName
+                    ,'.sys.dm_db_xtp_table_memory_stats a'
+                    ,' INNER JOIN '
+                    , dbName
+                    ,'.sys.tables b ON b.object_id = a.object_id'
+                    ,' INNER JOIN '
+                    ,dbName
+                    ,'.sys.partitions p'
+                    ,' ON p.[object_id] = b.[object_id]'
+                    ,' INNER JOIN '
+                    ,dbName
+                    ,'.sys.schemas s'
+                    ,' ON b.[schema_id] = s.[schema_id]'
+                    ,' WHERE p.index_id = 2'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--List memory-optimized tables in this database' +@crlf + @sql + @crlf)
+            PRINT('--List memory-optimized tables in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -357,47 +364,47 @@ AS BEGIN TRY
                 List indexes on memory-optimized tables in this database
             ##############################################################
             */
-            SELECT @sql = CONCAT(
-                   'SELECT '
-                   ,'''List indexes on memory-optimized tables in this database'' AS objects,'
-                   ,' N'''
-                   ,dbName
-                   ,''''
-                   ,' AS databaseName
-                   ,t.name AS tableName
-                   ,i.name AS indexName
-                   ,c.memory_consumer_id
-                   ,c.memory_consumer_type_desc AS consumerType
-                   ,c.memory_consumer_desc AS description
-                   ,c.allocation_count AS allocations
-                   ,FORMAT(c.allocated_bytes / 1024.0, ''###,###,###,###'') AS allocatedBytesMB
-                   ,FORMAT(c.used_bytes / 1024.00, ''###,###,###,###.###'') AS usedBytesMB
-                   --,c.allocated_bytes / 1048576.0 AS allocatedBytesGB
-                   --,c.used_bytes / 1048576.0 AS usedBytesBytesGB
-                FROM '
-                ,dbName 
-                ,'.sys.dm_db_xtp_memory_consumers c
-                INNER JOIN '
-                ,dbName
-                ,'.sys.tables t ON t.object_id = c.object_id'
-                ,CASE WHEN @Version > 12 THEN ' INNER JOIN sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
-                                                                       AND a.xtp_object_id = c.xtp_object_id' ELSE NULL END
-                ,@crlf + ' LEFT JOIN '
-                ,dbName 
-                ,'.sys.indexes i ON c.object_id = i.object_id
-                                             AND c.index_id = i.index_id '
-                                             ,CASE WHEN @Version > 12 THEN 'AND a.minor_id = 0' ELSE NULL END
-                ,@crlf + ' WHERE t.type = '
-                , '''u'''
-                , '   AND t.is_memory_optimized = 1 '
-                ,' AND i.index_id IS NOT NULL'
-                ,' ORDER BY tableName, indexName;'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                        'SELECT '
+                        ,'''List indexes on memory-optimized tables in this database'' AS objects,'
+                        ,' N'''
+                        ,dbName
+                        ,''''
+                        ,' AS databaseName
+                        ,t.name AS tableName
+                        ,i.name AS indexName
+                        ,c.memory_consumer_id
+                        ,c.memory_consumer_type_desc AS consumerType
+                        ,c.memory_consumer_desc AS description
+                        ,c.allocation_count AS allocations
+                        ,FORMAT(c.allocated_bytes / 1024.0, ''###,###,###,###'') AS allocatedBytesMB
+                        ,FORMAT(c.used_bytes / 1024.00, ''###,###,###,###.###'') AS usedBytesMB
+                    FROM '
+                    ,dbName 
+                    ,'.sys.dm_db_xtp_memory_consumers c
+                    INNER JOIN '
+                    ,dbName
+                    ,'.sys.tables t ON t.object_id = c.object_id'
+                    ,CASE WHEN @Version > 12 THEN ' INNER JOIN sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
+                                                                            AND a.xtp_object_id = c.xtp_object_id' ELSE NULL END
+                    ,@crlf + ' LEFT JOIN '
+                    ,dbName 
+                    ,'.sys.indexes i ON c.object_id = i.object_id
+                                                    AND c.index_id = i.index_id '
+                                                    ,CASE WHEN @Version > 12 THEN 'AND a.minor_id = 0' ELSE NULL END
+                    ,@crlf + ' WHERE t.type = '
+                    , '''u'''
+                    , '   AND t.is_memory_optimized = 1 '
+                    ,' AND i.index_id IS NOT NULL'
+                    ,' ORDER BY tableName, indexName;'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--List indexes on memory-optimized tables in this database' +@crlf + @sql + @crlf)
+            PRINT('--List indexes on memory-optimized tables in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -419,47 +426,49 @@ AS BEGIN TRY
             #########################################################
             */
         
-            SELECT @sql = CONCAT(
-                   'SELECT '
-                   ,'''avg_chain_length for HASH indexes'''
-                   ,' AS objects,'''
-                   ,dbName
-                   ,''''
-                   ,' AS databaseName'
-                   ,', sch.name AS [Schema] '
-                   ,', t.name AS tableName 
-                  ,i.name AS [indexName]
-                  ,h.total_bucket_count AS totalBucketCount
-                  ,h.empty_bucket_count AS emptyBucketCount
-                  ,FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) AS [emptybBucketPercent]
-                  ,h.avg_chain_length AS avg_ChainLength
-                  ,h.max_chain_length AS maxChainLength
-                  ,IIF(FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) < 33, ''Free buckets % is low!'', '''') AS [Free buckets status]
-                  ,IIF(h.avg_chain_length > 10 AND FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) > 10, ''avg_chain_length has many collisions!'', '''') AS [avg_chain_length status]
-                 FROM '
-                ,dbName 
-                ,'.sys.dm_db_xtp_hash_index_stats AS h 
-                INNER JOIN '
-                ,dbName
-                ,'.sys.indexes AS i ON h.object_id = i.object_id AND h.index_id = i.index_id'
-                ,CASE WHEN @Version > 12 THEN
-                CONCAT(' INNER JOIN ', dbName ,'.sys.memory_optimized_tables_internal_attributes ia ON h.xtp_object_id = ia.xtp_object_id') ELSE NULL END
-                ,' INNER JOIN '
-                ,dbName
-                ,'.sys.tables t ON h.object_id = t.object_id'
-                ,' INNER JOIN '
-                ,dbName
-                ,'.sys.schemas sch ON sch.schema_id = t.schema_id '
-                ,CASE WHEN @Version > 12 THEN 'WHERE ia.type = 1' ELSE NULL END
-                ,' ORDER BY sch.name
-                        ,t.name
-                        ,i.name;'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                       'SELECT '
+                       ,'''avg_chain_length for HASH indexes'''
+                       ,' AS objects,'''
+                       ,dbName
+                       ,''''
+                       ,' AS databaseName'
+                       ,', sch.name AS [Schema] '
+                       ,', t.name AS tableName 
+                         ,i.name AS [indexName]
+                         ,h.total_bucket_count AS totalBucketCount
+                         ,h.empty_bucket_count AS emptyBucketCount
+                         ,FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) AS [emptybBucketPercent]
+                         ,h.avg_chain_length AS avg_ChainLength
+                         ,h.max_chain_length AS maxChainLength
+                         ,IIF(FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) < 33, ''Free buckets % is low!'', '''') AS [Free buckets status]
+                         ,IIF(h.avg_chain_length > 10 AND FLOOR((CAST(h.empty_bucket_count AS FLOAT) / h.total_bucket_count) * 100) > 10, ''avg_chain_length has many collisions!'', '''') AS [avg_chain_length status]
+                     FROM '
+                    ,dbName 
+                    ,'.sys.dm_db_xtp_hash_index_stats AS h 
+                    INNER JOIN '
+                    ,dbName
+                    ,'.sys.indexes AS i ON h.object_id = i.object_id AND h.index_id = i.index_id'
+                    ,CASE WHEN @Version > 12 THEN
+                    CONCAT(' INNER JOIN ', dbName ,'.sys.memory_optimized_tables_internal_attributes ia ON h.xtp_object_id = ia.xtp_object_id') ELSE NULL END
+                    ,' INNER JOIN '
+                    ,dbName
+                    ,'.sys.tables t ON h.object_id = t.object_id'
+                    ,' INNER JOIN '
+                    ,dbName
+                    ,'.sys.schemas sch ON sch.schema_id = t.schema_id '
+                    ,CASE WHEN @Version > 12 THEN 'WHERE ia.type = 1' ELSE NULL END
+                    ,' ORDER BY sch.name
+                            ,t.name
+                            ,i.name;'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--Verify avg_chain_length for HASH indexes' +@crlf + @sql + @crlf)
+            PRINT('--Verify avg_chain_length for HASH indexes' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -468,41 +477,43 @@ AS BEGIN TRY
             #########################################################
             */
 
-            SELECT @sql = CONCAT(
-                'SELECT '
-                ,'''Number of indexes per table'' AS objects,'
-                ,' N'''
-                ,dbName
-                ,''''
-                ,' AS databaseName
-                ,t.name AS tableName
-                ,COUNT(DISTINCT i.index_id) AS indexCount
-                FROM '
-                ,dbName 
-                ,'.sys.dm_db_xtp_memory_consumers c
-                INNER JOIN '
-                ,dbName
-                ,'.sys.tables t ON t.object_id = c.object_id'
-                ,CASE WHEN @Version > 12 THEN
-                CONCAT(' INNER JOIN ', dbName ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
-                                                                    AND a.xtp_object_id = c.xtp_object_id') ELSE NULL END 
-                ,' LEFT JOIN '
-                ,dbName 
-                ,'.sys.indexes i ON c.object_id = i.object_id
-                                              AND c.index_id = i.index_id '
-                                              ,CASE WHEN @Version > 12 THEN ' AND a.minor_id = 0'ELSE NULL END
-                ,' WHERE t.type = '
-                , '''u'''
-                , '   AND t.is_memory_optimized = 1 '
-                ,' AND i.index_id IS NOT NULL'
-                ,' GROUP BY t.name
-                  ORDER BY t.name'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                    'SELECT '
+                    ,'''Number of indexes per table'' AS objects,'
+                    ,' N'''
+                    ,dbName
+                    ,''''
+                    ,' AS databaseName
+                    ,t.name AS tableName
+                    ,COUNT(DISTINCT i.index_id) AS indexCount
+                    FROM '
+                    ,dbName 
+                    ,'.sys.dm_db_xtp_memory_consumers c
+                    INNER JOIN '
+                    ,dbName
+                    ,'.sys.tables t ON t.object_id = c.object_id'
+                    ,CASE WHEN @Version > 12 THEN
+                    CONCAT(' INNER JOIN ', dbName ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
+                                                                        AND a.xtp_object_id = c.xtp_object_id') ELSE NULL END 
+                    ,' LEFT JOIN '
+                    ,dbName 
+                    ,'.sys.indexes i ON c.object_id = i.object_id
+                                                    AND c.index_id = i.index_id '
+                                                    ,CASE WHEN @Version > 12 THEN ' AND a.minor_id = 0' ELSE NULL END
+                    ,' WHERE t.type = '
+                    , '''u'''
+                    , '   AND t.is_memory_optimized = 1 '
+                    ,' AND i.index_id IS NOT NULL'
+                    ,' GROUP BY t.name
+                        ORDER BY t.name'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--Count of indexes per table in this database' +@crlf + @sql + @crlf)
+            PRINT('--Count of indexes per table in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -510,83 +521,102 @@ AS BEGIN TRY
                 List natively compiled modules in this database
             #####################################################
             */
-            SELECT @sql = CONCAT(
-                'SELECT ''Natively compiled modules'' AS objects,'
-                ,' N'''
-                ,dbName
-                ,''''
-                ,' AS databaseName
-                ,name AS moduleName
-                ,definition
-                ,uses_ansi_nulls
-                ,uses_quoted_identifier
-                ,is_schema_bound
-                ,uses_database_collation
-                ,is_recompiled
-                ,null_on_null_input
-                ,execute_as_principal_id
-                ,uses_native_compilation
-                FROM '
-                , dbName
-                ,'.sys.all_sql_modules
-                 INNER JOIN '
-                ,dbName
-                ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
-                WHERE uses_native_compilation = 1
-                ORDER BY 1'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                    'SELECT ''Natively compiled modules'' AS objects,'
+                    ,' N'''
+                    ,dbName
+                    ,''''
+                    ,' AS databaseName
+                     ,name AS moduleName
+                     ,definition
+                     ,uses_ansi_nulls
+                     ,uses_quoted_identifier
+                     ,is_schema_bound
+                     ,uses_database_collation
+                     ,is_recompiled
+                     ,null_on_null_input
+                     ,execute_as_principal_id
+                     ,uses_native_compilation
+                     FROM '
+                    , dbName
+                    ,'.sys.all_sql_modules
+                     INNER JOIN '
+                    ,dbName
+                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
+                    WHERE uses_native_compilation = 1
+                    ORDER BY 1'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--List natively compiled modules in this database' +@crlf + @sql + @crlf)
+            PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
             #####################################################
-                List natively compiled modules in this database
+                List *loaded* natively compiled modules in this database, i.e. executed at least 1x
             #####################################################
             */
 
             /*
                 the format for checkpoint files changed from SQL 2014 to SQL 2016
-                the following code is for 2016+
+
+                SQL 2014 format:
+                database_id = 5
+                object_id = 309576141
+
+                H:\SQLDATA\xtp\5\xtp_p_5_309576141.dll
+
+                SQL 2016+ format
+                database_id = 9
+                object_id = 1600880920
+
+                H:\SQLDATA\xtp\9\xtp_p_9_1600880920_185048689287400_1.dll
+
+                the following code should handle all versions
             */
+            
+               SELECT @sql =
+                    CONCAT
+                    (
+                        ';WITH nativeModuleObjectID AS
+                         (
+                            SELECT DISTINCT REPLACE(value, ''.dll'', '''') AS object_id
+                            FROM #moduleSplit
+                            WHERE rowNumber % ' 
+                     ,CASE WHEN @Version = 12 THEN ' 4 = 0'
+                           ELSE ' 6 = 4'  -- @Version >= 13 
+                      END 
+                        ,')'
+                    );
 
-            IF @Version >= 13
-            BEGIN
-
-                SELECT @sql =
-                 ';WITH nativeModuleObjectID AS
-                (
-                    SELECT value AS object_id
-                    FROM #moduleSplit
-                    WHERE rowNumber % 6 = 4
-                )'
-                SELECT @sql += CONCAT(
-                    'SELECT ''Loaded natively modules'' AS objects,'
-                    ,' N'''
-                    ,dbName
-                    ,''''
-                    ,' AS databaseName
-                   ,name AS moduleName
-                   ,procedures.object_id
-                FROM '
-                ,dbName
-                ,'.sys.all_sql_modules
-                INNER JOIN '
-                ,dbName
-                ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
-                INNER JOIN nativeModuleObjectID ON nativeModuleObjectID.object_id = procedures.object_id'
-                )
+                SELECT @sql += 
+                    CONCAT
+                    (
+                        'SELECT ''Loaded natively compiled modules'' AS objects,'
+                        ,' N'''
+                        ,dbName
+                        ,''''
+                        ,' AS databaseName
+                       ,name AS moduleName
+                       ,procedures.object_id
+                        FROM '
+                        ,dbName
+                        ,'.sys.all_sql_modules
+                        INNER JOIN '
+                        ,dbName
+                        ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
+                        INNER JOIN nativeModuleObjectID ON nativeModuleObjectID.object_id = procedures.object_id'
+                    )
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
                 IF @debug = 1
-                PRINT('--List natively compiled modules in this database (@Version >= 13)' +@crlf + @sql + @crlf)
+                PRINT('--List natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
-            END
-
 
             /*
             #########################################################
@@ -594,27 +624,28 @@ AS BEGIN TRY
             #########################################################
             */
 
-            SELECT @sql = CONCAT(
-                'SELECT ''Count of Natively compiled modules'' AS objects,'
-                ,' N'''
-                ,dbName
-                ,' N'''
-                ,' AS databaseName
-                , COUNT(*) AS [Number of modules]
-                FROM '
-                , dbName
-                ,'.sys.all_sql_modules
-                 INNER JOIN '
-                ,dbName
-                ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
-                WHERE uses_native_compilation = 1
-                ORDER BY 1'
-            )
+            SELECT @sql = 
+                CONCAT
+                (
+                    'SELECT ''Count of natively compiled modules'' AS objects,'
+                    ,' N'''
+                    ,dbName
+                    ,' '''
+                    ,' AS databaseName
+                    , COUNT(*) AS [Number of modules]
+                    FROM '
+                    , dbName
+                    ,'.sys.all_sql_modules
+                     INNER JOIN '
+                    ,dbName
+                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
+                    WHERE uses_native_compilation = 1
+                    ORDER BY 1'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
-
             IF @debug = 1
-            PRINT('--Count of natively compiled modules in this database' +@crlf + @sql + @crlf)
+            PRINT('--Count of natively compiled modules in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -627,115 +658,126 @@ AS BEGIN TRY
             IF @Version >= 13
             BEGIN
 
-                SELECT @sql = CONCAT(
-                    ';WITH InMemoryTemporalTables
-                    AS
+                SELECT @sql = 
+                    CONCAT
                     (
-                        SELECT '
-                        ,'N'''
-                        ,dbName
-                        ,'''' 
-                        ,' AS databaseName'
-                        ,',sch.name AS temporalTableSchema
-                              ,T1.OBJECT_ID AS temporalTableObjectId
-                              ,IT.OBJECT_ID AS internalTableObjectId
-                              ,T1.name AS temporalTableName
-                              ,IT.Name AS internalHistoryTableName
-                        FROM '
-                        ,dbName
-                        ,'.sys.internal_tables IT 
-                        INNER JOIN '
-                        ,dbName
-                        ,'.sys.tables T1 ON IT.parent_OBJECT_ID = T1.OBJECT_ID 
-                        INNER JOIN '
-                        ,dbName
-                        ,'.sys.schemas sch ON sch.schema_id = T1.schema_id
-                        WHERE T1.is_memory_optimized = 1 
-                          AND T1.temporal_type = 2
-                    )
-                    ,DetailedConsumption
-                    AS
-                    (
-                        SELECT databaseName
+                        ';WITH InMemoryTemporalTables
+                        AS
+                        (
+                            SELECT '
+                            ,'N'''
+                            ,dbName
+                            ,'''' 
+                            ,' AS databaseName'
+                            ,',sch.name AS temporalTableSchema
+                                  ,T1.OBJECT_ID AS temporalTableObjectId
+                                  ,IT.OBJECT_ID AS internalTableObjectId
+                                  ,T1.name AS temporalTableName
+                                  ,IT.Name AS internalHistoryTableName
+                            FROM '
+                            ,dbName
+                            ,'.sys.internal_tables IT 
+                            INNER JOIN '
+                            ,dbName
+                            ,'.sys.tables T1 ON IT.parent_OBJECT_ID = T1.OBJECT_ID 
+                            INNER JOIN '
+                            ,dbName
+                            ,'.sys.schemas sch ON sch.schema_id = T1.schema_id
+                            WHERE T1.is_memory_optimized = 1 
+                              AND T1.temporal_type = 2
+                        )
+                        ,DetailedConsumption
+                        AS
+                        (
+                            SELECT databaseName
+                                  ,temporalTableSchema
+                                  ,T.temporalTableName
+                                  ,T.internalHistoryTableName
+                                  ,CASE
+                                      WHEN C.object_id = T.temporalTableObjectId
+                                      THEN ''Temporal Table''
+                                      ELSE ''Internal Table''
+                                   END AS ConsumedBy
+                                  ,C.allocated_bytes
+                                  ,C.used_bytes
+                            FROM '
+                            ,dbName
+                            ,'.sys.dm_db_xtp_memory_consumers C
+                            INNER JOIN InMemoryTemporalTables T
+                            ON C.object_id = T.temporalTableObjectId OR C.object_id = T.internalTableObjectId
+                            WHERE C.allocated_bytes > 0
+                              AND C.object_id <> T.temporalTableObjectId
+                        )
+                        SELECT DISTINCT databaseName
                               ,temporalTableSchema
-                              ,T.temporalTableName
-                              ,T.internalHistoryTableName
-                              ,CASE
-                                  WHEN C.object_id = T.temporalTableObjectId
-                                  THEN ''Temporal Table''
-                                  ELSE ''Internal Table''
-                              END AS ConsumedBy
-                              ,C.allocated_bytes
-                              ,C.used_bytes
-                        FROM '
-                        ,dbName
-                        ,'.sys.dm_db_xtp_memory_consumers C
-                        INNER JOIN InMemoryTemporalTables T
-                        ON C.object_id = T.temporalTableObjectId OR C.object_id = T.internalTableObjectId
-                        WHERE C.allocated_bytes > 0
-                          AND C.object_id <> T.temporalTableObjectId
+                              ,temporalTableName
+                              ,internalHistoryTableName
+                              ,SUM(allocated_bytes) OVER (PARTITION BY temporalTableName ORDER BY temporalTableName) AS allocatedBytesForInternalHistoryTable
+                              ,SUM(used_bytes) OVER (PARTITION BY temporalTableName ORDER BY temporalTableName) AS usedBytesForInternalHistoryTable
+                        FROM DetailedConsumption'
                     )
-                    SELECT DISTINCT databaseName
-                          ,temporalTableSchema
-                          ,temporalTableName
-                          ,internalHistoryTableName
-                          ,SUM(allocated_bytes) OVER (PARTITION BY temporalTableName ORDER BY temporalTableName) AS allocatedBytesForInternalHistoryTable
-                          ,SUM(used_bytes) OVER (PARTITION BY temporalTableName ORDER BY temporalTableName) AS usedBytesForInternalHistoryTable
-                    FROM DetailedConsumption'
-                )
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
                 IF @debug = 1
-                PRINT('--Display memory consumption for temporal/internal tables' +@crlf + @sql + @crlf)
+                PRINT('--Display memory consumption for temporal/internal tables' + @crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
             END; -- display memory consumption for temporal/internal tables
 
             /*
             #########################################################
                 Display memory structures for LOB columns (off-row)
+                for SQL 2016+
             #########################################################
             */
-            SELECT @sql = CONCAT(
-            'SELECT DISTINCT '
-            ,'''LOB/Off-row data '' AS objects,'
-            ,' N'''
-            ,dbName
-            ,'''' 
-            ,' AS databaseName'
-            ,', OBJECT_NAME(a.object_id) AS tableName
-            ,cols.name AS columnName
-           ,a.type_desc AS typeDescription
-           ,c.memory_consumer_type_desc AS memoryConsumerTypeDescription
-           ,c.memory_consumer_desc AS memoryConsumerDescription
-           ,c.allocated_bytes AS allocatedBytes
-           ,c.used_bytes AS usedBytes
-            FROM '
-            ,dbName
-            ,'.sys.dm_db_xtp_memory_consumers c
-            INNER JOIN '
-            ,dbName
-            ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
-                                                                    AND a.xtp_object_id = c.xtp_object_id '
-                        ,' INNER JOIN '
-            ,dbName
-            ,'.sys.objects AS b ON b.object_id = a.object_id '
-            ,' INNER JOIN '
-            ,dbName
-            ,'.sys.syscolumns AS cols ON cols.id = b.object_id
-               WHERE a.type_desc = '
-            ,''''
-            ,'INTERNAL OFF-ROW DATA TABLE'
-            ,''''
-            ,' AND c.memory_consumer_desc = ''Table heap'''
-            ,' ORDER BY databaseName, tableName, columnName'
-            )
-            FROM #MemoryOptimizedDatabases
-            WHERE rowNumber = @dbCounter;
 
-            IF @debug = 1
-            PRINT('--Display memory structures for LOB columns (off-row)' +@crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+            IF @Version >= 13
+            BEGIN
+    
+                SELECT @sql = 
+                    CONCAT
+                    (
+                        'SELECT DISTINCT '
+                        ,'''LOB/Off-row data '' AS objects,'
+                        ,' N'''
+                        ,dbName
+                        ,'''' 
+                        ,' AS databaseName'
+                        ,', OBJECT_NAME(a.object_id) AS tableName
+                        ,cols.name AS columnName
+                        ,a.type_desc AS typeDescription
+                        ,c.memory_consumer_type_desc AS memoryConsumerTypeDescription
+                        ,c.memory_consumer_desc AS memoryConsumerDescription
+                        ,c.allocated_bytes AS allocatedBytes
+                        ,c.used_bytes AS usedBytes
+                         FROM '
+                        ,dbName
+                        ,'.sys.dm_db_xtp_memory_consumers c
+                        INNER JOIN '
+                        ,dbName
+                        ,'.sys.memory_optimized_tables_internal_attributes a ON a.object_id = c.object_id
+                                                                                AND a.xtp_object_id = c.xtp_object_id '
+                                    ,' INNER JOIN '
+                        ,dbName
+                        ,'.sys.objects AS b ON b.object_id = a.object_id '
+                        ,' INNER JOIN '
+                        ,dbName
+                        ,'.sys.syscolumns AS cols ON cols.id = b.object_id
+                           WHERE a.type_desc = '
+                        ,''''
+                        ,'INTERNAL OFF-ROW DATA TABLE'
+                        ,''''
+                        ,' AND c.memory_consumer_desc = ''Table heap'''
+                        ,' ORDER BY databaseName, tableName, columnName'
+                    )
+                FROM #MemoryOptimizedDatabases
+                WHERE rowNumber = @dbCounter;
+
+                IF @debug = 1
+                PRINT('--Display memory structures for LOB columns (off-row)' + @crlf + @sql + @crlf)
+                ELSE EXECUTE sp_executesql @sql;
+
+            END;
 
             /*
             ##################################################################
@@ -743,40 +785,51 @@ AS BEGIN TRY
             ##################################################################
             */
 
-            SELECT @sql = CONCAT(
-                'SELECT '
-                ,'''Database layout'' AS objects,'
-                ,' N'''
-                ,dbName
-                ,'''' 
-                ,' AS databaseName'
-                ,',filegroups.name AS fileGroupName
-                  ,physical_name AS fileName
-                  --,database_files.name AS [containerName/fileType]
-                  ,database_files.name AS [Name]
-                  ,filegroups.type AS fileGroupType
-                  ,IsContainer = IIF(filegroups.type = ''FX'', ''Yes'', ''No'')
-                  ,filegroups.type_desc AS fileGroupDescription
-                  ,database_files.state_desc AS fileGroupState
-                  ,FORMAT(database_files.size, ''###,###,###,###'') AS sizeKB
-                  ,FORMAT(database_files.size / 128.0, ''###,###,###,###'') AS sizeMB
-                  ,FORMAT(database_files.size / 1048576.0, ''###,###,###,###.##'') AS sizeGB
-                  --,CONVERT(INT, database_files.size / 128.0) AS sizeMB
-                  --,CONVERT(NVARCHAR(MAX), database_files.size / 1048576.0) AS sizeMB
-                  ,FORMAT(SUM(database_files.size / 128.0) OVER(), ''###,###,###,###'') AS totalSizeMB
-                FROM '
-                ,dbName
-                ,'.sys.database_files
-                LEFT JOIN '
-                ,dbName
-                ,'.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id
-                ORDER BY filegroups.type, filegroups.name, database_files.name'
-            )
+/*
+
+   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1024, '###, ###.##') AS sizeKB
+   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1048576.0, '###, ###.##') AS sizeMB
+   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1073741824.0, '###, ###.##') AS sizeGB
+   ,FORMAT(SUM(database_files.size / 128.0) OVER (), '###,###,###,###') AS totalSizeMB
+
+
+
+*/
+
+            SELECT @sql = 
+                CONCAT
+                (
+                    'SELECT '
+                    ,'''Database layout'' AS objects,'
+                    ,' N'''
+                    ,dbName
+                    ,'''' 
+                    ,' AS databaseName'
+                    ,',filegroups.name AS fileGroupName
+                      ,physical_name AS fileName
+                      --,database_files.name AS [containerName/fileType]
+                      ,database_files.name AS [Name]
+                      ,filegroups.type AS fileGroupType
+                      ,IsContainer = IIF(filegroups.type = ''FX'', ''Yes'', ''No'')
+                      ,filegroups.type_desc AS fileGroupDescription
+                      ,database_files.state_desc AS fileGroupState
+                      ,FORMAT(database_files.size * CONVERT(BIGINT, 8192) / 1024, ''###,###,###,###'') AS sizeKB
+                      ,FORMAT(database_files.size * CONVERT(BIGINT, 8192) / 1048576.0, ''###,###,###,###'') AS sizeMB
+                      ,FORMAT(database_files.size * CONVERT(BIGINT, 8192) / 1073741824.0, ''###,###,###,###.##'') AS sizeGB
+                      ,FORMAT(SUM(database_files.size / 128.0) OVER(), ''###,###,###,###'') AS totalSizeMB
+                    FROM '
+                    ,dbName
+                    ,'.sys.database_files
+                    LEFT JOIN '
+                    ,dbName
+                    ,'.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id
+                    ORDER BY filegroups.type, filegroups.name, database_files.name'
+                )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--ALL database files, including container name, size, location' +@crlf + @sql + @crlf)
+            PRINT('--ALL database files, including container name, size, location' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -785,39 +838,41 @@ AS BEGIN TRY
             ##################################################################
             */
 
-            SELECT @sql = CONCAT(
-                 ';WITH ContainerDetails AS
-                 (
-                         SELECT '
-                         ,' container_id
-                           ,SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
-                           ,COUNT(*) AS fileCount
-                           ,MAX(container_guid) AS container_guid
-                     FROM ' 
-                 ,dbName
-                 ,'.sys.dm_db_xtp_checkpoint_files
-                     GROUP BY container_id
-                 )
-                 SELECT 
-                      ''Container details by container name'' AS object,'
-                     ,' N'''
+            SELECT @sql = 
+                CONCAT
+                (
+                     ';WITH ContainerDetails AS
+                     (
+                             SELECT '
+                             ,' container_id
+                               ,SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
+                               ,COUNT(*) AS fileCount
+                               ,MAX(container_guid) AS container_guid
+                         FROM ' 
                      ,dbName
-                     ,'''' 
-                     ,' AS databaseName
-                     ,database_files.name AS containerName
-                     ,ContainerDetails.container_id
-                     ,FORMAT(ContainerDetails.sizeinBytes / 1048576., ''###,###,###'') AS sizeMB
-                     ,ContainerDetails.fileCount
-                 FROM ContainerDetails
-                 INNER JOIN '
-                 ,dbName
-                 ,'.sys.database_files ON ContainerDetails.container_guid = database_files.file_guid'
-             )
+                     ,'.sys.dm_db_xtp_checkpoint_files
+                         GROUP BY container_id
+                     )
+                     SELECT 
+                          ''Container details by container name'' AS object,'
+                         ,' N'''
+                         ,dbName
+                         ,'''' 
+                         ,' AS databaseName
+                         ,database_files.name AS containerName
+                         ,ContainerDetails.container_id
+                         ,FORMAT(ContainerDetails.sizeinBytes / 1048576., ''###,###,###'') AS sizeMB
+                         ,ContainerDetails.fileCount
+                     FROM ContainerDetails
+                     INNER JOIN '
+                     ,dbName
+                     ,'.sys.database_files ON ContainerDetails.container_guid = database_files.file_guid'
+                 )
              FROM #MemoryOptimizedDatabases
              WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container name, size, number of files' +@crlf + @sql + @crlf)
+            PRINT('--container name, size, number of files' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -826,44 +881,46 @@ AS BEGIN TRY
             ##################################################################
             */
 
-            SELECT @sql = CONCAT(
-                ';WITH ContainerFileSummary AS
+            SELECT @sql = 
+                CONCAT
                 (
-                        SELECT '
-                        ,' 
-                               SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
-                              ,MAX(ISNULL(file_type_desc, '''')) AS fileType
-                          ,COUNT(*) AS fileCount
-                          ,MAX(state_desc) AS fileState
-                          ,MAX(container_guid) AS container_guid
-                    FROM ' 
-                ,dbName
-                ,'.sys.dm_db_xtp_checkpoint_files
-                    GROUP BY file_type_desc, state_desc
-                )
-                SELECT 
-                     ''Container details by fileType and fileState'' AS object,'
-                    ,' N'''
+                    ';WITH ContainerFileSummary AS
+                    (
+                            SELECT '
+                            ,' 
+                                   SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
+                                  ,MAX(ISNULL(file_type_desc, '''')) AS fileType
+                              ,COUNT(*) AS fileCount
+                              ,MAX(state_desc) AS fileState
+                              ,MAX(container_guid) AS container_guid
+                        FROM ' 
                     ,dbName
-                    ,'''' 
-                    ,' AS databaseName
-                    ,ContainerFileSummary.fileType
-                    ,ContainerFileSummary.fileState
-                    ,FORMAT(ContainerFileSummary.sizeinBytes, ''###,###,###'') AS sizeBytes
-                    ,FORMAT(ContainerFileSummary.sizeinBytes / 1048576., ''###,###,###'') AS sizeMB
-                    ,ContainerFileSummary.fileCount
-                    ,database_files.state_desc AS fileGroupState
-                    FROM ContainerFileSummary
-                INNER JOIN '
-                ,dbName
-                ,'.sys.database_files ON ContainerFileSummary.container_guid = database_files.file_guid'
-                ,' ORDER BY ContainerFileSummary.fileType, ContainerFileSummary.fileState;'
+                    ,'.sys.dm_db_xtp_checkpoint_files
+                        GROUP BY file_type_desc, state_desc
+                    )
+                    SELECT 
+                         ''Container details by fileType and fileState'' AS object,'
+                        ,' N'''
+                        ,dbName
+                        ,'''' 
+                        ,' AS databaseName
+                        ,ContainerFileSummary.fileType
+                        ,ContainerFileSummary.fileState
+                        ,FORMAT(ContainerFileSummary.sizeinBytes, ''###,###,###'') AS sizeBytes
+                        ,FORMAT(ContainerFileSummary.sizeinBytes / 1048576., ''###,###,###'') AS sizeMB
+                        ,ContainerFileSummary.fileCount
+                        ,database_files.state_desc AS fileGroupState
+                        FROM ContainerFileSummary
+                    INNER JOIN '
+                    ,dbName
+                    ,'.sys.database_files ON ContainerFileSummary.container_guid = database_files.file_guid'
+                    ,' ORDER BY ContainerFileSummary.fileType, ContainerFileSummary.fileState;'
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container file summary' +@crlf + @sql + @crlf)
+            PRINT('--container file summary' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -872,46 +929,48 @@ AS BEGIN TRY
             ##################################################################
             */
 
-            SELECT @sql = CONCAT(
-                ';WITH ContainerFileDetails AS
+            SELECT @sql = 
+                CONCAT
                 (
-                    SELECT 
-                    container_id
-                  --,SUM(file_size_in_bytes) OVER (PARTITION BY container_id ORDER BY container_id) AS fileSizeinBytes
-                  ,SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
-                  ,MAX(ISNULL(file_type_desc, '''')) AS fileType
-                  ,COUNT(*) AS fileCount
-                  ,MAX(state_desc) AS fileState
-                  ,MAX(container_guid) AS container_guid
-                FROM '
+                    ';WITH ContainerFileDetails AS
+                    (
+                        SELECT 
+                        container_id
+                      --,SUM(file_size_in_bytes) OVER (PARTITION BY container_id ORDER BY container_id) AS fileSizeinBytes
+                      ,SUM(ISNULL(file_size_in_bytes, 0)) AS sizeinBytes
+                      ,MAX(ISNULL(file_type_desc, '''')) AS fileType
+                      ,COUNT(*) AS fileCount
+                      ,MAX(state_desc) AS fileState
+                      ,MAX(container_guid) AS container_guid
+                    FROM '
+                        ,dbName
+                    ,'.sys.dm_db_xtp_checkpoint_files
+                        GROUP BY container_id, file_type_desc, state_desc
+                    )
+                    SELECT '
+                    ,'''Container file details by container_id, fileType and fileState'' AS object,'
+                    ,' N'''
                     ,dbName
-                ,'.sys.dm_db_xtp_checkpoint_files
-                    GROUP BY container_id, file_type_desc, state_desc
+                    ,'''' 
+                    ,' AS databaseName
+                    ,database_files.name AS containerName
+                    ,ContainerFileDetails.container_id
+                    ,ContainerFileDetails.fileType
+                    ,ContainerFileDetails.fileState
+                    ,FORMAT(ContainerFileDetails.sizeinBytes, ''###,###,###'') AS sizeBytes
+                    ,FORMAT(ContainerFileDetails.sizeinBytes / 1048576., ''###,###,###'') AS sizeGB
+                    ,ContainerFileDetails.fileCount
+                    ,database_files.state_desc AS fileGroupState
+                    FROM ContainerFileDetails
+                    INNER JOIN '
+                    ,dbName
+                    ,'.sys.database_files ON ContainerFileDetails.container_guid = database_files.file_guid'
                 )
-                SELECT '
-                ,'''Container file details'' AS object,'
-                ,' N'''
-                ,dbName
-                ,'''' 
-                ,' AS databaseName
-                ,database_files.name AS containerName
-                ,ContainerFileDetails.container_id
-                ,ContainerFileDetails.fileType
-                ,ContainerFileDetails.fileState
-                ,FORMAT(ContainerFileDetails.sizeinBytes, ''###,###,###'') AS sizeBytes
-                ,FORMAT(ContainerFileDetails.sizeinBytes / 1048576., ''###,###,###'') AS sizeGB
-                ,ContainerFileDetails.fileCount
-                ,database_files.state_desc AS fileGroupState
-                FROM ContainerFileDetails
-                INNER JOIN '
-                ,dbName
-                ,'.sys.database_files ON ContainerFileDetails.container_guid = database_files.file_guid'
-            )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container details' +@crlf + @sql + @crlf)
+            PRINT('--container details' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -920,28 +979,30 @@ AS BEGIN TRY
             #######################################################
             */
 
-                SELECT @sql = CONCAT(
-                    'SELECT '
-                    ,'''Memory optimized table types'' AS objects,'
-                    ,' N'''
-                    ,dbName
-                    ,''' AS databaseName,' 
-                    ,'SCHEMA_NAME(tt.schema_id) AS [Schema]
-                          ,tt.name AS [Name]
-                    FROM '
-                    ,dbName
-                    ,'.sys.table_types AS tt
-                    INNER JOIN '
-                    ,dbName
-                    ,'.sys.schemas AS stt ON stt.schema_id = tt.schema_id
-                    WHERE tt.is_memory_optimized = 1
-                    ORDER BY [Schema], tt.name '
-                )
+                SELECT @sql = 
+                    CONCAT
+                    (
+                        'SELECT '
+                        ,'''Memory optimized table types'' AS objects,'
+                        ,' N'''
+                        ,dbName
+                        ,''' AS databaseName,' 
+                        ,'SCHEMA_NAME(tt.schema_id) AS [Schema]
+                              ,tt.name AS [Name]
+                        FROM '
+                        ,dbName
+                        ,'.sys.table_types AS tt
+                        INNER JOIN '
+                        ,dbName
+                        ,'.sys.schemas AS stt ON stt.schema_id = tt.schema_id
+                        WHERE tt.is_memory_optimized = 1
+                        ORDER BY [Schema], tt.name '
+                    )
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--Display memory-optimized table types' +@crlf + @sql + @crlf)
+            PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -951,24 +1012,26 @@ AS BEGIN TRY
                 for natively compiled procedures is enabled
             ###########################################################
             */
-            SELECT @sql = CONCAT(
-                'INSERT #NativeModules
+            SELECT @sql = 
+                CONCAT
                 (
-                     ModuleID
-                    ,ModuleName
+                    'INSERT #NativeModules
+                    (
+                         ModuleID
+                        ,ModuleName
+                    )
+                    SELECT '
+                    ,dbName
+                    ,'.sys.all_sql_modules.Object_ID AS ObjectID 
+                    ,name AS ModuleName
+                    FROM '
+                    ,dbName
+                    ,'.sys.all_sql_modules
+                     INNER JOIN '
+                    ,dbName
+                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id'
+                    ,' WHERE uses_native_compilation = 1'
                 )
-                SELECT '
-                ,dbName
-                ,'.sys.all_sql_modules.Object_ID AS ObjectID 
-                ,name AS ModuleName
-                FROM '
-                ,dbName
-                ,'.sys.all_sql_modules
-                 INNER JOIN '
-                ,dbName
-                ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id'
-                ,' WHERE uses_native_compilation = 1'
-            )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
@@ -1047,7 +1110,7 @@ AS BEGIN TRY
                     ORDER BY ModuleName;
                 ELSE
                 BEGIN
-                    PRINT 'No modules found that have collection stats enabled';
+                    PRINT '--No modules found that have collection stats enabled';
                 END;
 
             END; --IF EXISTS (SELECT 1 FROM #NativeModules)
