@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **256** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **259** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -7,7 +7,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[D]**: Documentation solutions {6}
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
- - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
+ - **[I]**: Internal SQL Server utilities (for example, bcp) {15}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
@@ -19,12 +19,14 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {18}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {110}
+ - **[?]**: Not yet classified {111}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
 | [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                      | 2017-10-09   | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                               | 2012-02-11   | Microsoft             |            | Yes            | No    |
+| [sqlcmd Utility](#sqlcmd-utility)                                     | No                               | No             | [I]        | [sqlcmd Utility]                            | 2016-08-23   | Microsoft             |            | Yes            | No    |
+| [mssql-cli](#mssql-cli)                                               | No                               | Linux, Mac     | [?    ]        | [mssql-cli]                                 | 2017-12-13   | Microsoft             | BSD-3      | Open Source    | No    |
 | [SQL OPS Studio](#sos)                                                | No                               | Linux, Mac     | [MS]       | [SQL OPS Studio]                            | 2017-11-15   | Microsoft             |            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]              | 2014-12-12   | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                 | 2016-02-23   | Microsoft             |            | Yes            | No    |
@@ -279,6 +281,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
 | [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
 | [Azure Database Migration Service](#azure-db-migration)               | Oracle, MySQL, Other             | Online         | [MG]       | [Azure Database Migration Service]          | 2017-12-01   | Microsoft             |            | Yes            |    No |
+| [FlowHeater](#flowheater)                                             | No                               | No             | [?]        | [FlowHeater]                                | 2017-10-02   | FlowHeater GmbH       | Shareware  | No             | $79   |
 
 <a id="ssms"></a>
 ## SSMS
@@ -307,6 +310,38 @@ The bcp utility bulk copies data between an instance of MicrosoftSQL Server and 
 The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
 Except when used with the queryout option, the utility requires no knowledge of Transact-SQL.
 To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
+
+
+<a id="sqlcmd-utility"></a>
+## sqlcmd Utility
+Download page: [sqlcmd Utility]<br/>
+Release date: 2016-08-23<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server instances. 
+The bcp utility bulk copies data between an instance of Microsoft SQL Server and a data file in a user-specified format. 
+The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
+
+
+<a id="mssql-cli"></a>
+## mssql-cli
+Download page: [mssql-cli]<br/>
+Release date: 2017-12-13<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+Interactive command line query tool for SQL Server.
+
+ - Auto-completion
+ - Syntax highlighting
+ - Query history
+ - Configuration file support
+ - Multi-line queries
 
 
 <a id="sos"></a>
@@ -3996,8 +4031,22 @@ Reduce the complexity of your cloud migration by using a single comprehensive se
 The public preview release of Azure Database Migration Service is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.
 
 
+<a id="flowheater"></a>
+## FlowHeater
+Download page: [flowheater]<br/>
+Release date: 2017-10-02<br/>
+Support Version: 2008/2012/2016<br/>
+Author: FlowHeater GmbH<br/>
+Free version: No<br/>
+Price: $79
+
+The FlowHeater functionality closely resembles the concept of a continuous-flow water heater. A wide variety of data sources can be interconnected with FlowHeater and by making use of exchangeable adapters, there is no restriction to the data flow.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
+[sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
+[mssql-cli]:https://github.com/dbcli/mssql-cli
 [SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
@@ -4253,6 +4302,7 @@ The public preview release of Azure Database Migration Service is designed as a 
 [SQL Cop]:https://www.sqlshack.com/review-sql-cop-unit-tests-collection
 [Dataedo]:https://dataedo.com/
 [Azure Database Migration Service]:https://azure.microsoft.com/en-us/services/database-migration/
+[FlowHeater]:https://flowheater.net/en
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
