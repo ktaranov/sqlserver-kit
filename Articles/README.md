@@ -434,6 +434,7 @@ Articles types:
 | [How Do I Analyze a SQL Server Execution Plan?]                                                                         | Kendra Little                            | 2017-09-22 | [DEV]       |
 | [A Subtle Difference Between COALESCE and ISNULL]                                                                       | Shaneis                                  | 2017-10-09 | [DEV]       |
 | [Puzzle Challenge: Graph Matching with T-SQL Part 1-Concepts]                                                           | Itzik Ben-Gan                            | 2017-08-08 | [DEV]       |
+| [Graph Matching with T-SQL Part 3: Maximum Matching]                                                                    | Itzik Ben-Gan                            | 2017-10-12 | [DEV]       |
 | [Running PowerShell in a SQL Agent Job]                                                                                 | Derik Hammer                             | 2017-03-04 | [PS]        |
 | [Line-Continuation in T-SQL]                                                                                            | Solomon Rutzky                           | 2017-10-27 | [DEV]       |
 | [SQL Server 2017: Making Backups Great Again!]                                                                          | John Sterrett                            | 2017-10-31 | [DBA],[DEV] |
@@ -463,6 +464,15 @@ Articles types:
 | [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]                                                   | @sqL_handLe                              | 2017-17-30 | [DEV]       |
 | [Query Store Settings]                                                                                                  | Erin Stellato                            | 2010-11-28 | [DBA],[DEV] |
 | [Using Plan Explorer with Entity Framework]                                                                             | Jason Hall                               | 2010-11-28 | [DEV]       |
+| [Overview of Encryption Tools in SQL Server]                                                                            | Matthew McGiffen                         | 2017-12-05 | [DBA],[DEV] |
+| [Clustered Index Uniquifier Existence and Size]                                                                         | Solomon Rutzky                           | 2017-09-18 | [DBA],[DEV] |
+| [Understanding Logging and Recovery in SQL Server]                                                                      | Paul Randal                              | 2009-02-01 | [DBA],[B]   |
+| [Understanding SQL Server Backups]                                                                                      | Paul Randal                              | 2009-07-01 | [DBA],[B]   |
+| [Recovering from Disasters Using Backups]                                                                               | Paul Randal                              | 2009-11-01 | [DBA],[B]   |
+| [Simple SQL: Handling Location Datatypes]                                                                               | Joe Celko                                | 2017-10-19 | [DEV]       |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -876,6 +886,7 @@ Articles types:
 [How Do I Analyze a SQL Server Execution Plan?]:https://littlekendra.com/2017/09/22/how-do-i-analyze-a-sql-server-execution-plan/
 [A Subtle Difference Between COALESCE and ISNULL]:https://nocolumnname.wordpress.com/2017/10/09/a-subtle-difference-between-coalesce-and-isnull/
 [Puzzle Challenge: Graph Matching with T-SQL Part 1-Concepts]:http://sqlmag.com/software-development/puzzle-challenge-graph-matching-t-sql-part-1-concepts
+[Graph Matching with T-SQL Part 3: Maximum Matching]:http://www.itprotoday.com/microsoft-sql-server/graph-matching-t-sql-part-3-maximum-matching
 [Running PowerShell in a SQL Agent Job]:https://www.sqlhammer.com/running-powershell-in-a-sql-agent-job/
 [Line-Continuation in T-SQL]:https://sqlquantumleap.com/2017/10/27/line-continuation-in-t-sql/
 [SQL Server 2017: Making Backups Great Again!]:https://johnsterrett.com/2017/10/31/sql-server-2017-backups/
@@ -905,3 +916,12 @@ Articles types:
 [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]:http://sql-sasquatch.blogspot.ru/2017/11/hey-whats-deal-with-nocount-and-t-sql.html
 [Query Store Settings]:https://www.sqlskills.com/blogs/erin/query-store-settings/
 [Using Plan Explorer with Entity Framework]:https://blogs.sentryone.com/jasonhall/using-plan-explorer-entity-framework/
+[Overview of Encryption Tools in SQL Server]:https://matthewmcgiffen.com/2017/12/05/overview-of-encryption-tools-in-sql-server/
+[Clustered Index Uniquifier Existence and Size]:https://sqlquantumleap.com/2017/09/18/clustered-index-uniquifier-existence-and-size/
+[Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx
+[Understanding SQL Server Backups]:https://technet.microsoft.com/en-us/library/2009.07.sqlbackup.aspx
+[Recovering from Disasters Using Backups]:https://technet.microsoft.com/en-us/library/ee677581.aspx
+[Simple SQL: Handling Location Datatypes]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/simple-sql-handling-location-datatypes/
+[Improve SQL Server Performance by Looking at Plan Cache (Part 1)]:https://logicalread.com/sql-server-minimize-single-use-plans-tl01/
+[Improve SQL Server Performance by Looking at Plan Cache (Part 2)]:https://logicalread.com/sql-server-identifying-plans-that-need-tuning-tl01/
+[Improve SQL Server Performance by Looking at Plan Cache (Part 3)]:https://logicalread.com/sql-server-identify-similar-plans-tl01/
