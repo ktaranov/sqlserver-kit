@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **259** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **260** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -7,6 +7,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[D]**: Documentation solutions {6}
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
+ - **[ETL]**: Extract Download Load (ETL) Tools {1}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {15}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
@@ -174,7 +175,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft              |            | No             |  $295 |
 | [Aireforge Studio](#aireforge-studio)                                 | No                               | No             | [MG], [SC] | [Aireforge Studio]                          | 2017-06-21   | AireForge             |            | Yes            |  $299 |
 | [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                  | ?            | HexaTier              |            | No             | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-07-31   | SoftTree              |            | No             |  $215 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-12-17   | SoftTree              |            | No             |  $215 |
 | [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                 | 2015-02-07   | SoftTree              |            | No             |  $499 |
 | [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]                 | 2016-05-26   | EMS                   |            | No             |  $257 |
 | [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                            | 2016-04-13   | EMS                   |            | Yes            |  $82  |
@@ -281,7 +282,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
 | [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
 | [Azure Database Migration Service](#azure-db-migration)               | Oracle, MySQL, Other             | Online         | [MG]       | [Azure Database Migration Service]          | 2017-12-01   | Microsoft             |            | Yes            |    No |
-| [FlowHeater](#flowheater)                                             | No                               | No             | [?]        | [FlowHeater]                                | 2017-10-02   | FlowHeater GmbH       | Shareware  | No             | $79   |
+| [FlowHeater](#flowheater)                                             | Oracle, PostgreSQL, MySQL, Other | No             | [ETL]      | [FlowHeater]                                | 2017-10-02   | FlowHeater GmbH       | Shareware  | No             |   $79 |
+| [EDIS](#edis)                                                         | No                               | No             | [ETL]      | [EDIS]                                      | ?            | SQL ETL               | Shareware  | Yes            |  $599 |
 
 <a id="ssms"></a>
 ## SSMS
@@ -2540,7 +2542,7 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 ## SoftTree SQL Assistant
 <a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
-Release date: 2017-07-31<br/>
+Release date: 2017-12-17<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: SoftTree<br/>
 Free version: No<br/>
@@ -4035,12 +4037,25 @@ The public preview release of Azure Database Migration Service is designed as a 
 ## FlowHeater
 Download page: [flowheater]<br/>
 Release date: 2017-10-02<br/>
-Support Version: 2008/2012/2016<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: FlowHeater GmbH<br/>
 Free version: No<br/>
 Price: $79
 
 The FlowHeater functionality closely resembles the concept of a continuous-flow water heater. A wide variety of data sources can be interconnected with FlowHeater and by making use of exchangeable adapters, there is no restriction to the data flow.
+
+
+<a id="edis"></a>
+## EDIS
+Download page: [EDIS]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: SQL ETL<br/>
+Free version: Yes<br/>
+Price: $599
+
+EDIS is an Extract-Transform-Load (ETL) application for Microsoft SQL Server.
+No 3rd Party Language, No Packages, Just SQL.
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
@@ -4303,6 +4318,7 @@ The FlowHeater functionality closely resembles the concept of a continuous-flow 
 [Dataedo]:https://dataedo.com/
 [Azure Database Migration Service]:https://azure.microsoft.com/en-us/services/database-migration/
 [FlowHeater]:https://flowheater.net/en
+[EDIS]:https://sqletl.com
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
