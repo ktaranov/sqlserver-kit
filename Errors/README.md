@@ -104,7 +104,7 @@ Error code equal `message_id` from `sys.messages`
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
-[207_lin1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
+[207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
 [SQL SERVER – Disabling 15000 Partitions (15k)]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
 [Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
