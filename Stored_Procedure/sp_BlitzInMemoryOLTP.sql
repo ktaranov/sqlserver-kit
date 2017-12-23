@@ -8,6 +8,7 @@ GO
 ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
         @instanceLevelOnly BIT            = 0
       , @dbName            NVARCHAR(4000) = N'ALL'
+      , @tableName         NVARCHAR(4000) = NULL
       , @debug             BIT            = 0
 )
 /*
@@ -17,12 +18,16 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
 .DESCRIPTION
     Get detailed information about In-Memory SQL Server objects
     Tested on SQL Server: 2014, 2016, 2017
+	NOT tested on Azure SQL Database
 
 .PARAMETER @instanceLevelOnly
     Only check instance In-Memory related information
 
 .PARAMETER @dbName
     Check database In-Memory objects for specified database
+
+.PARAMETER @tableName
+    Check database In-Memory objects for specified tablename
 
 .PARAMETER @debug
     Only PRINT dynamic sql statements without executing it
@@ -72,6 +77,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Modified: 2017-12-19
     Author: Ned Otter
     Version: 1.6
+
+    Modified: 2017-12-23
+    Author: Ned Otter
+    Version: 1.7
 */
 AS BEGIN TRY
 
@@ -80,6 +89,7 @@ AS BEGIN TRY
     DECLARE @crlf VARCHAR(10) = CHAR(10);
 
     DECLARE @VersionString NVARCHAR(MAX) = CAST(SERVERPROPERTY('ProductVersion') AS NVARCHAR(128))
+	      , @Edition NVARCHAR(MAX) = CAST(SERVERPROPERTY('Edition') AS NVARCHAR(128))
           , @errorMessage  NVARCHAR(512);
 
     DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1));
@@ -89,6 +99,19 @@ AS BEGIN TRY
     IF @Version < 12
     BEGIN
         SET @errorMessage = CONCAT('In-Memory OLTP is not supported if SQL Server version is less than 2014. You are running SQL Server version  ', @Version);
+        THROW 55000, @errorMessage, 1;
+    END;
+
+    /*
+    ###################################################
+        if we get here, we are running at least SQL 2014, but that version 
+		only runs In-Memory if we are using Enterprise Edition
+    ###################################################
+    */
+
+    IF @Version = 12 AND (@Edition NOT LIKE 'Enterprise%' OR @Edition NOT LIKE 'Developer%')
+    BEGIN
+        SET @errorMessage = CONCAT('For SQL 2014, In-Memory OLTP is only suppported on Enterprise Edition. You are running SQL Server edition  ', @Edition);
         THROW 55000, @errorMessage, 1;
     END;
 
@@ -108,7 +131,7 @@ AS BEGIN TRY
         AND (name = @dbName OR @dbName = 'ALL')
         AND state_desc = 'ONLINE';
 
-    IF @debug = 1 SELECT 'All not system and ONLINE databases' AS AllDatabases, * FROM #inmemDatabases;
+    IF @debug = 1 SELECT 'All ONLINE user databases' AS AllDatabases, * FROM #inmemDatabases;
 
     IF @dbName IS NULL AND @instanceLevelOnly = 0
     BEGIN
@@ -355,6 +378,11 @@ AS BEGIN TRY
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
+			IF @tableName IS NOT NULL
+			BEGIN
+				SELECT @sql += CONCAT(' AND b.name = ', '''', @tableName, '''');
+			END;
+
             IF @debug = 1
             PRINT('--List memory-optimized tables in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
@@ -398,10 +426,16 @@ AS BEGIN TRY
                     , '''u'''
                     , '   AND t.is_memory_optimized = 1 '
                     ,' AND i.index_id IS NOT NULL'
-                    ,' ORDER BY tableName, indexName;'
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
+
+			IF @tableName IS NOT NULL
+			BEGIN
+				SELECT @sql += CONCAT(' AND t.name = ', '''', @tableName, '''');
+			END;
+
+			SELECT @sql += ' ORDER BY tableName, indexName;'
 
             IF @debug = 1
             PRINT('--List indexes on memory-optimized tables in this database' + @crlf + @sql + @crlf)
@@ -460,12 +494,18 @@ AS BEGIN TRY
                     ,dbName
                     ,'.sys.schemas sch ON sch.schema_id = t.schema_id '
                     ,CASE WHEN @Version > 12 THEN 'WHERE ia.type = 1' ELSE NULL END
-                    ,' ORDER BY sch.name
-                            ,t.name
-                            ,i.name;'
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
+
+			IF @tableName IS NOT NULL
+			BEGIN
+				SELECT @sql += CONCAT(' AND t.name = ', '''', @tableName, '''');
+			END;
+
+			SELECT @sql += ' ORDER BY sch.name
+                                     ,t.name
+                                     ,i.name;';
 
             IF @debug = 1
             PRINT('--Verify avg_chain_length for HASH indexes' + @crlf + @sql + @crlf)
@@ -506,54 +546,73 @@ AS BEGIN TRY
                     , '''u'''
                     , '   AND t.is_memory_optimized = 1 '
                     ,' AND i.index_id IS NOT NULL'
-                    ,' GROUP BY t.name
-                        ORDER BY t.name'
+                    --,' GROUP BY t.name
+                    --    ORDER BY t.name'
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
 
+			IF @tableName IS NOT NULL
+			BEGIN
+				SELECT @sql += CONCAT(' AND t.name = ', '''', @tableName, '''');
+			END;
+
+			SELECT @sql +=
+                     ' GROUP BY t.name
+                       ORDER BY t.name';
+
             IF @debug = 1
             PRINT('--Count of indexes per table in this database' + @crlf + @sql + @crlf)
             ELSE EXECUTE sp_executesql @sql;
+
 
             /*
             #####################################################
                 List natively compiled modules in this database
             #####################################################
             */
-            SELECT @sql = 
-                CONCAT
-                (
-                    'SELECT ''Natively compiled modules'' AS objects,'
-                    ,' N'''
-                    ,dbName
-                    ,''''
-                    ,' AS databaseName
-                     ,name AS moduleName
-                     ,definition
-                     ,uses_ansi_nulls
-                     ,uses_quoted_identifier
-                     ,is_schema_bound
-                     ,uses_database_collation
-                     ,is_recompiled
-                     ,null_on_null_input
-                     ,execute_as_principal_id
-                     ,uses_native_compilation
-                     FROM '
-                    , dbName
-                    ,'.sys.all_sql_modules
-                     INNER JOIN '
-                    ,dbName
-                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
-                    WHERE uses_native_compilation = 1
-                    ORDER BY 1'
-                )
-            FROM #MemoryOptimizedDatabases
-            WHERE rowNumber = @dbCounter;
+			/*
 
-            IF @debug = 1
-            PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+				FN = SQL scalar function
+				IF = SQL inline table-valued function
+				TF = SQL table-valued-function
+				TR = SQL DML trigger
+			*/
+
+			IF @tableName IS NULL
+			BEGIN
+
+				SELECT @sql = 
+					CONCAT
+					(
+						'SELECT ''Natively compiled modules'' AS objects,'
+						,' N'''
+						,dbName
+						,''''
+						,' AS databaseName
+						 ,A.name
+						 ,CASE A.type
+							WHEN ''FN'' THEN ''Function''
+							WHEN ''P'' THEN ''Procedure''
+							WHEN ''TR'' THEN ''Trigger''
+						   END AS type
+						 ,B.definition AS [definition]
+						 FROM '
+						, dbName
+						,'.sys.all_objects AS A
+						 INNER JOIN '
+						,dbName
+						,'.sys.sql_modules AS B ON B.object_id = A.object_id
+						WHERE UPPER(B.definition) LIKE ''%NATIVE_COMPILATION%''
+						ORDER BY A.type, A.name'
+					)
+				FROM #MemoryOptimizedDatabases
+				WHERE rowNumber = @dbCounter;
+
+				IF @debug = 1
+				PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf)
+				ELSE EXECUTE sp_executesql @sql;
+			END;
 
             /*
             #####################################################
@@ -578,7 +637,8 @@ AS BEGIN TRY
 
                 the following code should handle all versions
             */
-            
+            IF @tableName IS NULL
+			BEGIN
                SELECT @sql =
                     CONCAT
                     (
@@ -615,38 +675,41 @@ AS BEGIN TRY
                 WHERE rowNumber = @dbCounter;
 
                 IF @debug = 1
-                PRINT('--List natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf)
+                PRINT('--List loaded natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
+			END;
 
             /*
             #########################################################
                 Count of natively compiled modules in this database
             #########################################################
             */
-
-            SELECT @sql = 
-                CONCAT
-                (
-                    'SELECT ''Count of natively compiled modules'' AS objects,'
-                    ,' N'''
-                    ,dbName
-                    ,' '''
-                    ,' AS databaseName
-                    , COUNT(*) AS [Number of modules]
-                    FROM '
-                    , dbName
-                    ,'.sys.all_sql_modules
-                     INNER JOIN '
-                    ,dbName
-                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
-                    WHERE uses_native_compilation = 1
-                    ORDER BY 1'
-                )
-            FROM #MemoryOptimizedDatabases
-            WHERE rowNumber = @dbCounter;
-            IF @debug = 1
-            PRINT('--Count of natively compiled modules in this database' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+			IF @tableName IS NULL
+			BEGIN
+				SELECT @sql = 
+					CONCAT
+					(
+						'SELECT ''Count of natively compiled modules'' AS objects,'
+						,' N'''
+						,dbName
+						,' '''
+						,' AS databaseName
+						, COUNT(*) AS [Number of modules]
+						FROM '
+						, dbName
+						,'.sys.all_sql_modules
+						 INNER JOIN '
+						,dbName
+						,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id
+						WHERE uses_native_compilation = 1
+						ORDER BY 1'
+					)
+				FROM #MemoryOptimizedDatabases
+				WHERE rowNumber = @dbCounter;
+				IF @debug = 1
+				PRINT('--Count of natively compiled modules in this database' + @crlf + @sql + @crlf)
+				ELSE EXECUTE sp_executesql @sql;
+			END;
 
             /*
             ############################################################
@@ -719,6 +782,11 @@ AS BEGIN TRY
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
 
+				IF @tableName IS NOT NULL
+				BEGIN
+					SELECT @sql += CONCAT(' WHERE temporalTableName = ', '''', @tableName, '''');
+				END;
+
                 IF @debug = 1
                 PRINT('--Display memory consumption for temporal/internal tables' + @crlf + @sql + @crlf)
                 ELSE EXECUTE sp_executesql @sql;
@@ -768,10 +836,17 @@ AS BEGIN TRY
                         ,'INTERNAL OFF-ROW DATA TABLE'
                         ,''''
                         ,' AND c.memory_consumer_desc = ''Table heap'''
-                        ,' ORDER BY databaseName, tableName, columnName'
+                        --,' ORDER BY databaseName, tableName, columnName'
                     )
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
+
+				IF @tableName IS NOT NULL
+				BEGIN
+					SELECT @sql += CONCAT(' AND OBJECT_NAME(a.object_id) = ', '''', @tableName, '''');
+				END;
+
+				SELECT @sql += ' ORDER BY databaseName, tableName, columnName';
 
                 IF @debug = 1
                 PRINT('--Display memory structures for LOB columns (off-row)' + @crlf + @sql + @crlf)
@@ -780,21 +855,45 @@ AS BEGIN TRY
             END;
 
             /*
+            #######################################################
+                Display memory-optimized table types
+            #######################################################
+            */
+			IF @tableName IS NULL
+			BEGIN 
+                SELECT @sql = 
+                    CONCAT
+                    (
+                        'SELECT '
+                        ,'''Memory optimized table types'' AS objects,'
+                        ,' N'''
+                        ,dbName
+                        ,''' AS databaseName,' 
+                        ,'SCHEMA_NAME(tt.schema_id) AS [Schema]
+                              ,tt.name AS [Name]
+                        FROM '
+                        ,dbName
+                        ,'.sys.table_types AS tt
+                        INNER JOIN '
+                        ,dbName
+                        ,'.sys.schemas AS stt ON stt.schema_id = tt.schema_id
+                        WHERE tt.is_memory_optimized = 1
+                        ORDER BY [Schema], tt.name '
+                    )
+                FROM #MemoryOptimizedDatabases
+                WHERE rowNumber = @dbCounter;
+
+				IF @debug = 1
+				PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf)
+				ELSE EXECUTE sp_executesql @sql;
+
+			END;
+
+            /*
             ##################################################################
                 ALL database files, including container name, size, location
             ##################################################################
             */
-
-/*
-
-   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1024, '###, ###.##') AS sizeKB
-   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1048576.0, '###, ###.##') AS sizeMB
-   ,FORMAT(database_files.size * CONVERT(BIGINT, 8192)  / 1073741824.0, '###, ###.##') AS sizeGB
-   ,FORMAT(SUM(database_files.size / 128.0) OVER (), '###,###,###,###') AS totalSizeMB
-
-
-
-*/
 
             SELECT @sql = 
                 CONCAT
@@ -974,38 +1073,6 @@ AS BEGIN TRY
             ELSE EXECUTE sp_executesql @sql;
 
             /*
-            #######################################################
-                Display memory-optimized table types
-            #######################################################
-            */
-
-                SELECT @sql = 
-                    CONCAT
-                    (
-                        'SELECT '
-                        ,'''Memory optimized table types'' AS objects,'
-                        ,' N'''
-                        ,dbName
-                        ,''' AS databaseName,' 
-                        ,'SCHEMA_NAME(tt.schema_id) AS [Schema]
-                              ,tt.name AS [Name]
-                        FROM '
-                        ,dbName
-                        ,'.sys.table_types AS tt
-                        INNER JOIN '
-                        ,dbName
-                        ,'.sys.schemas AS stt ON stt.schema_id = tt.schema_id
-                        WHERE tt.is_memory_optimized = 1
-                        ORDER BY [Schema], tt.name '
-                    )
-                FROM #MemoryOptimizedDatabases
-                WHERE rowNumber = @dbCounter;
-
-            IF @debug = 1
-            PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
-
-            /*
 
             ###########################################################
                 Report on whether or not execution statistics 
@@ -1148,6 +1215,41 @@ AS BEGIN TRY
         FROM sys.configurations
         WHERE name like 'max server memory%'
         ORDER BY name OPTION (RECOMPILE);
+
+		-- from Mark Wilkinson
+		/*
+			If memory is being used it should be in here.
+
+			Memory that is reported as being consumed here for XTP was missing in 
+			the other XTP DMVs. We should simply look to see what the highest consumer is.
+
+			SELECT * FROM sys.dm_xtp_system_memory_consumers
+
+			SELECT * FROM sys.dm_db_xtp_memory_consumers 
+
+		*/
+		select * from sys.dm_os_memory_clerks
+
+		SELECT type AS object_type
+			  ,SUM(pages_kb) /1024.0 /1024.0 AS pages_mb
+		FROM sys.dm_os_memory_clerks
+		WHERE type LIKE '%XTP%'
+		GROUP BY type
+
+		SELECT memory_consumer_type_desc AS object_type,
+			 SUM(allocated_bytes) /1024.0 /1024.0 AS pagesAllocatedMB
+			,SUM(allocated_bytes) /1024.0 /1024.0 AS pagesUsedMB
+		FROM sys.dm_xtp_system_memory_consumers
+		GROUP BY memory_consumer_type_desc 
+		ORDER BY memory_consumer_type_desc 
+
+		SELECT memory_consumer_type_desc AS object_type,
+			 SUM(allocated_bytes) /1024.0 /1024.0 AS pagesAllocatedMB
+			,SUM(allocated_bytes) /1024.0 /1024.0 AS pagesUsedMB
+		FROM sys.dm_db_xtp_memory_consumers
+		GROUP BY memory_consumer_type_desc 
+		ORDER BY memory_consumer_type_desc 
+
 
         SELECT FORMAT(committed_target_kb, '###,###,###,###,###') AS committedTargetKB
               ,FORMAT(committed_target_kb / 1024, '###,###,###,###,###') AS committedTargetMB
