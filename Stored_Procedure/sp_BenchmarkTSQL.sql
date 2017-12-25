@@ -65,6 +65,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Author: Konstantin Taranov
     Modified date: 2017-12-23
     Version: 2.0
+
+    Author: Konstantin Taranov
+    Modified date: 2017-12-25
+    Version: 2.1
 */
 AS
 BEGIN TRY
@@ -123,6 +127,7 @@ BEGIN TRY
     DECLARE @rts         DATETIME2(7);
     DECLARE @finishTime  DATETIME2(7);
     DECLARE @duration    INT;
+    DECLARE @startTime  VARCHAR(27);
 
     DECLARE @t           TABLE (
         StartTimeStamp   DATETIME2(7)
@@ -135,7 +140,8 @@ BEGIN TRY
       , DurationAccuracy VARCHAR(10)
         );
 
-    PRINT('Benchmark started at ' + CONVERT(VARCHAR(27), CAST(CURRENT_TIMESTAMP AS DATETIME2(7)), 121));
+    SET @startTime = CONVERT(VARCHAR(27), CAST(CURRENT_TIMESTAMP AS DATETIME2(7)), 121);
+    PRINT('Benchmark started at ' + @startTime);
 
     WHILE @r < @numberOfExecution
     BEGIN
@@ -211,7 +217,8 @@ BEGIN TRY
 
     IF @calcMedian = 1
     BEGIN
-        SELECT @median = (
+        SELECT @median =
+        (
              (SELECT MAX(TMIN) FROM
                   (SELECT TOP(50) PERCENT
                           CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  RunTimeStamp, FinishTimeStamp) AS INT)
@@ -266,21 +273,28 @@ BEGIN TRY
           );
 
     IF @saveResults = 1
+
+    DECLARE @TSQLStatementCHECKSUM INT = CHECKSUM(@tsqlStatement + CAST(ORIGINAL_LOGIN() AS SYSNAME) + @startTime);
+
         IF OBJECT_ID('dbo.BenchmarkTSQL', 'U') IS NULL
         BEGIN
             CREATE TABLE dbo.BenchmarkTSQL(
-                  BenchmarkTSQLID  INT IDENTITY
-                , StartTimeStamp   DATETIME2(7)
-                , RunTimeStamp     DATETIME2(7)
-                , FinishTimeStamp  DATETIME2(7)
-                , Duration         BIGINT
-                , TsqlStatement    NVARCHAR(MAX)
-                , ClearCache       BIT
-                , PrintStepInfo    BIT
-                , DurationAccuracy VARCHAR(10)
+                  BenchmarkTSQLID       INT IDENTITY  NOT NULL
+                , TSQLStatementCHECKSUM INT           NOT NULL
+                , StartTimeStamp        DATETIME2(7)  NOT NULL
+                , RunTimeStamp          DATETIME2(7)  NOT NULL
+                , FinishTimeStamp       DATETIME2(7)  NOT NULL
+                , Duration              BIGINT        NOT NULL
+                , TsqlStatement         NVARCHAR(MAX) NOT NULL
+                , ClearCache            BIT           NOT NULL
+                , PrintStepInfo         BIT           NOT NULL
+                , DurationAccuracy      VARCHAR(10)   NOT NULL
+                , OriginalLogin         SYSNAME       NOT NULL
             );
+
             INSERT INTO dbo.BenchmarkTSQL(
-                 StartTimeStamp
+                 TSQLStatementCHECKSUM
+               , StartTimeStamp
                , RunTimeStamp
                , FinishTimeStamp 
                , Duration
@@ -288,8 +302,10 @@ BEGIN TRY
                , ClearCache
                , PrintStepInfo
                , DurationAccuracy
+               , OriginalLogin
             )
-            SELECT StartTimeStamp
+            SELECT @TSQLStatementCHECKSUM AS TSQLStatementCHECKSUM
+                 , StartTimeStamp
                  , RunTimeStamp
                  , FinishTimeStamp
                  , Duration
@@ -297,10 +313,22 @@ BEGIN TRY
                  , ClearCache
                  , PrintStepInfo
                  , DurationAccuracy
+                 , ORIGINAL_LOGIN() AS OriginalLogin
              FROM @t;
         END
         ELSE
-            INSERT INTO dbo.BenchmarkTSQL SELECT * FROM @t;
+            INSERT INTO dbo.BenchmarkTSQL
+            SELECT @TSQLStatementCHECKSUM AS TSQLStatementCHECKSUM
+                 , StartTimeStamp
+                 , RunTimeStamp
+                 , FinishTimeStamp
+                 , Duration
+                 , TsqlStatement
+                 , ClearCache
+                 , PrintStepInfo
+                 , DurationAccuracy
+                 , ORIGINAL_LOGIN()
+             FROM @t;
 
     SET NOCOUNT ON;
 END TRY
