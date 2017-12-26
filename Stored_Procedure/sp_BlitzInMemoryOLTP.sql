@@ -81,10 +81,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Modified: 2017-12-23
     Author: Ned Otter
     Version: 1.7
+
+    Modified: 2017-12-25
+    Author: Ned Otter
+    Version: 1.8
+
 */
 AS BEGIN TRY
 
     SET NOCOUNT ON;
+	DECLARE @rowCount INT
 
     DECLARE @crlf VARCHAR(10) = CHAR(10);
 
@@ -180,29 +186,27 @@ AS BEGIN TRY
 
     DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules);
     DECLARE @moduleCounter INT = 1;
-    DECLARE @loadedModuleName NVARCHAR(MAX) = '';
+    DECLARE @loadedmoduleName NVARCHAR(MAX) = '';
 
     SET @moduleCounter = 1;
 
     WHILE @moduleCounter <= @maxLoadedModules
     BEGIN
 
-        SELECT @loadedModuleName = name
+        SELECT @loadedmoduleName = name
         FROM @loadedModules
         WHERE rowNumber = @moduleCounter;
 
         DECLARE @xml XML
               , @delimiter NVARCHAR(10);
         SET @delimiter = '_';
-        SET @xml = CAST(('<X>'+REPLACE(@loadedModuleName, @delimiter, '</X><X>')+'</X>') AS XML);
+        SET @xml = CAST(('<X>'+REPLACE(@loadedmoduleName, @delimiter, '</X><X>')+'</X>') AS XML);
 
         INSERT #moduleSplit
         (
             value
         )
         SELECT C.value('.', 'NVARCHAR(1000)') AS value FROM @xml.nodes('X') as X(C);
-        --SELECT value
-        --FROM STRING_SPLIT(@loadedModuleName, '_');
 
         SELECT @moduleCounter += 1;
 
@@ -316,10 +320,10 @@ AS BEGIN TRY
 
         CREATE TABLE #NativeModules
         (
-            ModuleKey INT IDENTITY NOT NULL
-           ,ModuleID INT NOT NULL
-           ,ModuleName NVARCHAR(256) NOT NULL
-           ,CollectionStatus BIT NULL
+            moduleKey INT IDENTITY NOT NULL
+           ,moduleID INT NOT NULL
+           ,moduleName NVARCHAR(256) NOT NULL
+           ,collectionStatus BIT NULL
         );
 
         SELECT @sql = '';
@@ -385,7 +389,29 @@ AS BEGIN TRY
 
             IF @debug = 1
             PRINT('--List memory-optimized tables in this database' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+            ELSE 
+			BEGIN
+				DECLARE @ResultsTables TABLE
+				(
+					 [objects] NVARCHAR(MAX)
+					,databaseName NVARCHAR(MAX)
+					,tableName NVARCHAR(MAX)
+					,[rowCount] INT
+					,durability_desc NVARCHAR(MAX)
+					,temporal_type_desc NVARCHAR(MAX)
+					,memoryAllocatedForTableKB INT
+					,memoryUsedByTableKB INT
+					,memoryAllocatedForIndexesKB INT
+					,memoryUsedByIndexesKB INT
+				);
+
+				INSERT @ResultsTables
+				EXECUTE sp_executesql @sql;
+
+				IF EXISTS(SELECT 1 FROM @ResultsTables)
+					SELECT * FROM @ResultsTables;
+
+			END;
 
             /*
             ##############################################################
@@ -439,7 +465,29 @@ AS BEGIN TRY
 
             IF @debug = 1
             PRINT('--List indexes on memory-optimized tables in this database' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+            ELSE 
+				BEGIN
+					DECLARE @ResultsIndexes TABLE
+					(
+						[objects] NVARCHAR(MAX)
+					   ,databaseName NVARCHAR(MAX)
+					   ,tableName NVARCHAR(MAX)
+					   ,indexName INT
+					   ,memory_consumer_id INT
+					   ,consumerType NVARCHAR(MAX)
+					   ,description NVARCHAR(MAX)
+					   ,allocations INT
+					   ,allocatedBytesMB INT
+					   ,usedBytesMB NVARCHAR(MAX)
+					);
+
+					INSERT @ResultsIndexes
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsIndexes)
+						SELECT * FROM @ResultsIndexes;
+
+				END;
 
             /*
             #########################################################
@@ -509,7 +557,33 @@ AS BEGIN TRY
 
             IF @debug = 1
             PRINT('--Verify avg_chain_length for HASH indexes' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+            ELSE 
+			BEGIN
+			
+				DECLARE @ResultsHashBuckets TABLE
+				(
+					 [objects] NVARCHAR(MAX)
+					,databaseName NVARCHAR(MAX)
+					,[Schema] NVARCHAR(MAX)
+					,TableName NVARCHAR(MAX)
+					,indexName NVARCHAR(MAX)
+					,totalBucketCount BIGINT
+					,emptyBucketCount BIGINT
+					,emptyBucketPercent INT
+					,avg_ChainLength INT
+					,max_ChainLength BIGINT
+					,[Free buckets status] NVARCHAR(MAX)
+					,[avg_chain_length status] BIGINT
+				);
+
+				INSERT @ResultsHashBuckets
+				EXECUTE sp_executesql @sql;
+;
+				IF EXISTS(SELECT 1 FROM @ResultsHashBuckets)
+					SELECT * FROM @ResultsHashBuckets;
+
+			END;			
+			
 
             /*
             #########################################################
@@ -563,7 +637,23 @@ AS BEGIN TRY
 
             IF @debug = 1
             PRINT('--Count of indexes per table in this database' + @crlf + @sql + @crlf)
-            ELSE EXECUTE sp_executesql @sql;
+            ELSE 
+			BEGIN
+				DECLARE @ResultsIndexCount TABLE
+				(
+					 [objects] NVARCHAR(MAX)
+					,databaseName NVARCHAR(MAX)
+					,tableName NVARCHAR(MAX)
+					,indexCount INT
+				);
+
+				INSERT @ResultsIndexCount
+				EXECUTE sp_executesql @sql;
+
+				IF EXISTS(SELECT 1 FROM @ResultsIndexCount)
+					SELECT * FROM @ResultsIndexCount;
+
+			END;
 
 
             /*
@@ -611,7 +701,24 @@ AS BEGIN TRY
 
 				IF @debug = 1
 				PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf)
-				ELSE EXECUTE sp_executesql @sql;
+				ELSE 
+				BEGIN
+					DECLARE @ResultsNativeModules TABLE
+					(
+						 [objects] NVARCHAR(MAX)
+						,Name NVARCHAR(MAX)
+						,databaseName NVARCHAR(MAX)
+						,[type] NVARCHAR(MAX)
+						,[definition] NVARCHAR(MAX)
+					);
+
+					INSERT @ResultsNativeModules
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsNativeModules)
+						SELECT * FROM @ResultsNativeModules;
+
+				END;
 			END;
 
             /*
@@ -676,7 +783,23 @@ AS BEGIN TRY
 
                 IF @debug = 1
                 PRINT('--List loaded natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf)
-                ELSE EXECUTE sp_executesql @sql;
+                ELSE 
+				BEGIN
+					DECLARE @ResultsNativeLoaded TABLE
+					(
+						[objects] NVARCHAR(MAX)
+					   ,databaseName NVARCHAR(MAX)
+					   ,moduleName NVARCHAR(MAX)
+					   ,object_id INT
+					);
+
+					INSERT @ResultsNativeLoaded
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsNativeLoaded)
+						SELECT * FROM @ResultsNativeLoaded;
+
+				END;				
 			END;
 
             /*
@@ -789,7 +912,25 @@ AS BEGIN TRY
 
                 IF @debug = 1
                 PRINT('--Display memory consumption for temporal/internal tables' + @crlf + @sql + @crlf)
-                ELSE EXECUTE sp_executesql @sql;
+				ELSE
+				BEGIN
+					DECLARE @ResultsTemporal TABLE
+					(
+						databaseName NVARCHAR(MAX)
+					   ,temporalTableSchema NVARCHAR(MAX)
+					   ,temporalTableName NVARCHAR(MAX)
+					   ,internalHistoryTableName NVARCHAR(MAX)
+					   ,allocatedBytesForInternalHistoryTable BIGINT
+					   ,usedBytesForInternalHistoryTable BIGINT
+					);
+
+					INSERT @ResultsTemporal
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsTemporal)
+						SELECT * FROM @ResultsTemporal;
+
+				END;
             END; -- display memory consumption for temporal/internal tables
 
             /*
@@ -850,7 +991,28 @@ AS BEGIN TRY
 
                 IF @debug = 1
                 PRINT('--Display memory structures for LOB columns (off-row)' + @crlf + @sql + @crlf)
-                ELSE EXECUTE sp_executesql @sql;
+                ELSE 
+				BEGIN
+					DECLARE @ResultsMemoryConsumerForLOBs TABLE
+					(
+						[objects] NVARCHAR(MAX)
+					   ,databaseName NVARCHAR(MAX)
+					   ,tableName NVARCHAR(MAX)
+					   ,columnName NVARCHAR(MAX)
+					   ,typeDescription NVARCHAR(MAX)
+					   ,memoryConsumerTypeDescription NVARCHAR(MAX)
+					   ,memoryConsumerDescription NVARCHAR(MAX)
+					   ,allocatedBytes INT
+					   ,usedBytes INT
+					);
+
+					INSERT @ResultsMemoryConsumerForLOBs
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsMemoryConsumerForLOBs)
+						SELECT * FROM @ResultsMemoryConsumerForLOBs;
+
+				END;
 
             END;
 
@@ -885,7 +1047,23 @@ AS BEGIN TRY
 
 				IF @debug = 1
 				PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf)
-				ELSE EXECUTE sp_executesql @sql;
+				ELSE 
+				BEGIN
+					DECLARE @ResultsTableTypes TABLE
+					(
+						 [objects] NVARCHAR(MAX)
+						,databaseName NVARCHAR(MAX)
+						,[Schema] NVARCHAR(MAX)
+						,[Name] NVARCHAR(MAX)
+					);
+
+					INSERT @ResultsTableTypes
+					EXECUTE sp_executesql @sql;
+
+					IF EXISTS(SELECT 1 FROM @ResultsTableTypes)
+						SELECT * FROM @ResultsTableTypes;
+
+				END;
 
 			END;
 
@@ -1084,13 +1262,13 @@ AS BEGIN TRY
                 (
                     'INSERT #NativeModules
                     (
-                         ModuleID
-                        ,ModuleName
+                         moduleID
+                        ,moduleName
                     )
                     SELECT '
                     ,dbName
                     ,'.sys.all_sql_modules.Object_ID AS ObjectID 
-                    ,name AS ModuleName
+                    ,name AS moduleName
                     FROM '
                     ,dbName
                     ,'.sys.all_sql_modules
@@ -1109,9 +1287,9 @@ AS BEGIN TRY
                 DECLARE @procCounter INT = 1;
                 DECLARE @MaxModules INT = (SELECT COUNT(*) FROM #NativeModules);
                 DECLARE @dbID INT = (SELECT database_id FROM #MemoryOptimizedDatabases  WHERE rowNumber = @dbCounter);
-                DECLARE @ModuleID INT;
+                DECLARE @moduleID INT;
                 DECLARE @ModuleStatus BIT;
-                DECLARE @ModuleName NVARCHAR(256);
+                DECLARE @moduleName NVARCHAR(256);
 
                 /*
                 ########################################################
@@ -1121,12 +1299,12 @@ AS BEGIN TRY
                 WHILE @procCounter <= @MaxModules
                 BEGIN
     
-                    SELECT @ModuleID = ModuleID
-                          ,@ModuleName = ModuleName
+                    SELECT @moduleID = moduleID
+                          ,@moduleName = moduleName
                     FROM #NativeModules
-                    WHERE ModuleKey = @procCounter;
+                    WHERE moduleKey = @procCounter;
 
-                    PRINT CONCAT('Verifying collection stats of ', @ModuleName);
+                    PRINT CONCAT('Verifying collection stats of ', @moduleName);
 
                     SELECT @ModuleStatus = 0;
 
@@ -1145,7 +1323,7 @@ AS BEGIN TRY
                 BEGIN TRY
                     EXEC sys.sp_xtp_control_query_exec_stats
                         @database_id = @dbID
-                       ,@xtp_object_id = @ModuleID
+                       ,@xtp_object_id = @moduleID
                        ,@old_collection_value = @ModuleStatus OUTPUT;
                 END TRY
                 BEGIN CATCH
@@ -1156,25 +1334,25 @@ AS BEGIN TRY
                     IF @ModuleStatus = 1
                     BEGIN
                         UPDATE #NativeModules
-                        SET CollectionStatus = 1
-                        WHERE ModuleKey = @procCounter;
+                        SET collectionStatus = 1
+                        WHERE moduleKey = @procCounter;
                     END;
 
                     SELECT @procCounter += 1;
                 END; -- -- This is the loop that processes each native module
 
-                IF EXISTS(SELECT * FROM #NativeModules WHERE CollectionStatus = 1)
+                IF EXISTS(SELECT * FROM #NativeModules WHERE collectionStatus = 1)
                     SELECT 'Native execution statistics' AS Objects
-                          ,ModuleName
-                          ,ModuleID
+                          ,moduleName
+                          ,moduleID
                          ,CASE 
-                               WHEN CollectionStatus = 1 THEN 'YES' 
-                               WHEN CollectionStatus IS NULL THEN 'NO' 
+                               WHEN collectionStatus = 1 THEN 'YES' 
+                               WHEN collectionStatus IS NULL THEN 'NO' 
                                ELSE 'NO' 
                           END AS CollectionStatsEnabled
                     FROM #NativeModules
-                    WHERE CollectionStatus = 1
-                    ORDER BY ModuleName;
+                    WHERE collectionStatus = 1
+                    ORDER BY moduleName;
                 ELSE
                 BEGIN
                     PRINT '--No modules found that have collection stats enabled';
@@ -1302,14 +1480,14 @@ AS BEGIN TRY
         */
 
         -- instance level
-        DECLARE @InstanceCollectionStatus BIT;
+        DECLARE @InstancecollectionStatus BIT;
 
         EXEC sys.sp_xtp_control_query_exec_stats
-        @old_collection_value = @InstanceCollectionStatus OUTPUT;
+        @old_collection_value = @InstancecollectionStatus OUTPUT;
 
         SELECT
             CASE 
-                WHEN @InstanceCollectionStatus = 1 THEN 'YES' 
+                WHEN @InstancecollectionStatus = 1 THEN 'YES' 
                 ELSE 'NO'
             END AS [instance-level collection of execution statistics for Native Modules enabled];
 
