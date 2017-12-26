@@ -186,21 +186,21 @@ AS BEGIN TRY
 
     DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules);
     DECLARE @moduleCounter INT = 1;
-    DECLARE @loadedmoduleName NVARCHAR(MAX) = '';
+    DECLARE @loadedModuleName NVARCHAR(MAX) = '';
 
     SET @moduleCounter = 1;
 
     WHILE @moduleCounter <= @maxLoadedModules
     BEGIN
 
-        SELECT @loadedmoduleName = name
+        SELECT @loadedModuleName = name
         FROM @loadedModules
         WHERE rowNumber = @moduleCounter;
 
         DECLARE @xml XML
               , @delimiter NVARCHAR(10);
         SET @delimiter = '_';
-        SET @xml = CAST(('<X>'+REPLACE(@loadedmoduleName, @delimiter, '</X><X>')+'</X>') AS XML);
+        SET @xml = CAST(('<X>'+REPLACE(@loadedModuleName, @delimiter, '</X><X>')+'</X>') AS XML);
 
         INSERT #moduleSplit
         (
