@@ -470,9 +470,12 @@ Articles types:
 | [Understanding SQL Server Backups]                                                                                      | Paul Randal                              | 2009-07-01 | [DBA],[B]   |
 | [Recovering from Disasters Using Backups]                                                                               | Paul Randal                              | 2009-11-01 | [DBA],[B]   |
 | [Simple SQL: Handling Location Datatypes]                                                                               | Joe Celko                                | 2017-10-19 | [DEV]       |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]                                                      | Thomas LaRock                            | 2014-10-30 [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
+| [Take Care When Scripting Batches]                                                                                      | Michael J Swart                          | 2014-09-09 | [DBA],[DEV] |
+| [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA],[DEV] |
+| [Which user function do I use?]                                                                                         | Kenneth Fisher                           | 2015-06-24 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -484,7 +487,7 @@ Articles types:
 [High Performance T-SQL using Code Patterns]:https://dwaincsql.com/2015/05/27/high-performance-t-sql-using-code-patterns/
 [SQL Server Database Corruption Repair]:http://stevestedman.com/2015/08/sql-server-database-corruption-repair/
 [Basic SQL Server Performance Troubleshooting For Developers]:https://www.simple-talk.com/sql/performance/basic-sql-server-performance-troubleshooting-for-developers/
-[The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dyn-search.html
+[The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dynamic_sql.html
 [Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dynamic_sql.html
 [Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
 [How to share data between stored procedures]:http://www.sommarskog.se/share_data.html
@@ -925,3 +928,6 @@ Articles types:
 [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]:https://logicalread.com/sql-server-minimize-single-use-plans-tl01/
 [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]:https://logicalread.com/sql-server-identifying-plans-that-need-tuning-tl01/
 [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]:https://logicalread.com/sql-server-identify-similar-plans-tl01/
+[Take Care When Scripting Batches]:http://michaeljswart.com/2014/09/take-care-when-scripting-batches/
+[When Measuring Timespans, try DATEADD instead of DATEDIFF]:http://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
+[Which user function do I use?]:https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
