@@ -24,6 +24,49 @@ FILEGROUP [___DATABASE_NAME___] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
 ( NAME = N''@databaseName_log'', FILENAME = N''@databaseFilePath@databaseName_log.ldf'', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB);
 
 ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 120;
+
+USE [@databaseName];
+
+-- configure recommended DB option
+ALTER DATABASE CURRENT SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON;
+
+-- memory-optimized table
+CREATE TABLE dbo.table1(
+    c1 INT IDENTITY PRIMARY KEY NONCLUSTERED,
+    c2 NVARCHAR(4000)
+)
+WITH (MEMORY_OPTIMIZED=ON);
+
+-- non-durable table
+CREATE TABLE dbo.temp_table1
+( c1 INT IDENTITY PRIMARY KEY NONCLUSTERED,
+  c2 NVARCHAR(4000))
+WITH (MEMORY_OPTIMIZED=ON,
+      DURABILITY=SCHEMA_ONLY);
+
+ -- memory-optimized table type
+CREATE TYPE dbo.tt_table1 AS TABLE
+( c1 INT IDENTITY,
+   c2 NVARCHAR(4000),
+   is_transient BIT NOT NULL DEFAULT (0),
+   INDEX ix_c1 HASH (c1) WITH (BUCKET_COUNT=1024))
+ WITH (MEMORY_OPTIMIZED=ON);
+
+CREATE TABLE dbo.InMemTable1
+(
+keyColumn INT IDENTITY PRIMARY KEY NONCLUSTERED
+,description CHAR(100) NOT NULL
+)
+WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);
+
+INSERT dbo.InMemTable1(description)
+VALUES
+ (REPLICATE(''A'', 100))
+,(REPLICATE(''B'', 100))
+,(REPLICATE(''C'', 100))
+,(REPLICATE(''D'', 100))
+,(REPLICATE(''E'', 100))
+,(REPLICATE(''F'', 100));
 ';
 
 SET @tsqlStatement = REPLACE(@tsqlStatement, '@databaseName',     @databaseName);
@@ -34,62 +77,20 @@ ELSE
 EXEC sp_executesql @tsqlStatement;
 
 
-IF @debug = 0
-BEGIN
+--https://stackoverflow.com/a/793362/2298061
+DECLARE @UseAndExecStatment NVARCHAR(4000);
+SET @UseAndExecStatment = N'USE [' + @databaseName + N']; EXEC sp_executesql @tsqlStatement';
 
-    USE [ಠ ಠ 14 Test];
+SET @tsqlStatement = N'
+CREATE PROCEDURE dbo.native_sp
+WITH NATIVE_COMPILATION, SCHEMABINDING, EXECUTE AS OWNER
+AS
+BEGIN ATOMIC WITH (TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N''us_english'')
+    SELECT keyColumn
+         , description
+    FROM dbo.InMemTable1;
+END;
+--EXECUTE dbo.native_sp;';
 
-    -- configure recommended DB option
-     ALTER DATABASE CURRENT SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON;
-
-     -- memory-optimized table
-     CREATE TABLE dbo.table1(
-         c1 INT IDENTITY PRIMARY KEY NONCLUSTERED,
-         c2 NVARCHAR(4000)
-     )
-     WITH (MEMORY_OPTIMIZED=ON);
-
-     -- non-durable table
-     CREATE TABLE dbo.temp_table1
-     ( c1 INT IDENTITY PRIMARY KEY NONCLUSTERED,
-       c2 NVARCHAR(4000))
-     WITH (MEMORY_OPTIMIZED=ON,
-           DURABILITY=SCHEMA_ONLY);
-
-     -- memory-optimized table type
-    CREATE TYPE dbo.tt_table1 AS TABLE
-    ( c1 INT IDENTITY,
-       c2 NVARCHAR(4000),
-       is_transient BIT NOT NULL DEFAULT (0),
-       INDEX ix_c1 HASH (c1) WITH (BUCKET_COUNT=1024))
-     WITH (MEMORY_OPTIMIZED=ON);
-
-    CREATE TABLE dbo.InMemTable1
-    (
-    keyColumn INT IDENTITY PRIMARY KEY NONCLUSTERED
-    ,description CHAR(100) NOT NULL
-    )
-    WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);
-
-    INSERT dbo.InMemTable1(description)
-    VALUES
-     (REPLICATE('A', 100))
-    ,(REPLICATE('B', 100))
-    ,(REPLICATE('C', 100))
-    ,(REPLICATE('D', 100))
-    ,(REPLICATE('E', 100))
-    ,(REPLICATE('F', 100));
-
-    SET @tsqlStatement = '
-    CREATE PROCEDURE dbo.native_sp
-    WITH NATIVE_COMPILATION, SCHEMABINDING, EXECUTE AS OWNER
-    AS
-    BEGIN ATOMIC WITH (TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N''us_english'')
-        SELECT keyColumn
-             , description
-        FROM dbo.InMemTable1;
-    END;';
-    EXEC sp_executesql @tsqlStatement;
-
-    EXECUTE dbo.native_sp;
-END
+EXEC sp_executesql @UseAndExecStatment,
+     N'@tsqlStatement NVARCHAR(MAX)', @tsqlStatement = @tsqlStatement
