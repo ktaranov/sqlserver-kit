@@ -90,7 +90,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 AS BEGIN TRY
 
     SET NOCOUNT ON;
-	DECLARE @rowCount INT
 
     DECLARE @crlf VARCHAR(10) = CHAR(10);
 
@@ -207,10 +206,12 @@ AS BEGIN TRY
             value
         )
         SELECT C.value('.', 'NVARCHAR(1000)') AS value FROM @xml.nodes('X') as X(C);
+					  
+													
 
         SELECT @moduleCounter += 1;
 
-    END
+    END;
 
     IF @instanceLevelOnly = 0
     BEGIN
@@ -232,7 +233,7 @@ AS BEGIN TRY
             IF @counter = 1
             BEGIN
                 SELECT @sql += ';WITH InMemDatabases AS (';
-            END
+            END;
 
             SELECT @sql +=
             CASE 
@@ -303,7 +304,7 @@ AS BEGIN TRY
             )
             EXECUTE sp_executesql @sql;
 
-            IF @debug = 1 PRINT(@sql + @crlf)
+            IF @debug = 1 PRINT(@sql + @crlf);
             ELSE
             BEGIN
                 SELECT 'Memory-optimized database(s)' AS databases
@@ -312,7 +313,7 @@ AS BEGIN TRY
                       ,log_reuse_wait_desc
                 FROM #MemoryOptimizedDatabases
                 ORDER BY dbName;
-            END
+            END;
         END;
 
 
@@ -388,7 +389,7 @@ AS BEGIN TRY
 			END;
 
             IF @debug = 1
-            PRINT('--List memory-optimized tables in this database' + @crlf + @sql + @crlf)
+            PRINT('--List memory-optimized tables in this database' + @crlf + @sql + @crlf);
             ELSE 
 			BEGIN
 				DECLARE @ResultsTables TABLE
@@ -452,6 +453,7 @@ AS BEGIN TRY
                     , '''u'''
                     , '   AND t.is_memory_optimized = 1 '
                     ,' AND i.index_id IS NOT NULL'
+									   
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
@@ -464,7 +466,7 @@ AS BEGIN TRY
 			SELECT @sql += ' ORDER BY tableName, indexName;'
 
             IF @debug = 1
-            PRINT('--List indexes on memory-optimized tables in this database' + @crlf + @sql + @crlf)
+            PRINT('--List indexes on memory-optimized tables in this database' + @crlf + @sql + @crlf);
             ELSE 
 				BEGIN
 					DECLARE @ResultsIndexes TABLE
@@ -542,6 +544,9 @@ AS BEGIN TRY
                     ,dbName
                     ,'.sys.schemas sch ON sch.schema_id = t.schema_id '
                     ,CASE WHEN @Version > 12 THEN 'WHERE ia.type = 1' ELSE NULL END
+						 
+			  
+				
                 )
             FROM #MemoryOptimizedDatabases
             WHERE rowNumber = @dbCounter;
@@ -556,7 +561,7 @@ AS BEGIN TRY
                                      ,i.name;';
 
             IF @debug = 1
-            PRINT('--Verify avg_chain_length for HASH indexes' + @crlf + @sql + @crlf)
+            PRINT('--Verify avg_chain_length for HASH indexes' + @crlf + @sql + @crlf);
             ELSE 
 			BEGIN
 			
@@ -636,7 +641,7 @@ AS BEGIN TRY
                        ORDER BY t.name';
 
             IF @debug = 1
-            PRINT('--Count of indexes per table in this database' + @crlf + @sql + @crlf)
+            PRINT('--Count of indexes per table in this database' + @crlf + @sql + @crlf);
             ELSE 
 			BEGIN
 				DECLARE @ResultsIndexCount TABLE
@@ -662,6 +667,34 @@ AS BEGIN TRY
             #####################################################
             */
 			/*
+		  
+	 
+													   
+			
+			
+		  
+					   
+						 
+				 
+					  
+							 
+					  
+							  
+					
+						 
+							  
+							  
+			
+			 
+						   
+				  
+			
+																											   
+									  
+				
+	 
+										  
+										 
 
 				FN = SQL scalar function
 				IF = SQL inline table-valued function
@@ -700,7 +733,7 @@ AS BEGIN TRY
 				WHERE rowNumber = @dbCounter;
 
 				IF @debug = 1
-				PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf)
+				PRINT('--List natively compiled modules in this database' + @crlf + @sql + @crlf);
 				ELSE 
 				BEGIN
 					DECLARE @ResultsNativeModules TABLE
@@ -782,7 +815,7 @@ AS BEGIN TRY
                 WHERE rowNumber = @dbCounter;
 
                 IF @debug = 1
-                PRINT('--List loaded natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf)
+                PRINT('--List loaded natively compiled modules in this database (@Version >= 13)' + @crlf + @sql + @crlf);
                 ELSE 
 				BEGIN
 					DECLARE @ResultsNativeLoaded TABLE
@@ -791,6 +824,12 @@ AS BEGIN TRY
 					   ,databaseName NVARCHAR(MAX)
 					   ,moduleName NVARCHAR(MAX)
 					   ,object_id INT
+						
+						   
+											
+										   
+		   
+		  
 					);
 
 					INSERT @ResultsNativeLoaded
@@ -818,6 +857,7 @@ AS BEGIN TRY
 						,' '''
 						,' AS databaseName
 						, COUNT(*) AS [Number of modules]
+							 
 						FROM '
 						, dbName
 						,'.sys.all_sql_modules
@@ -829,10 +869,47 @@ AS BEGIN TRY
 					)
 				FROM #MemoryOptimizedDatabases
 				WHERE rowNumber = @dbCounter;
+
 				IF @debug = 1
-				PRINT('--Count of natively compiled modules in this database' + @crlf + @sql + @crlf)
-				ELSE EXECUTE sp_executesql @sql;
+				PRINT('--Count of natively compiled modules in this database' + @crlf + @sql + @crlf);
+				ELSE 
+				BEGIN
+					DECLARE @ResultsNativeModuleCount TABLE
+					(
+						[objects] NVARCHAR(MAX)
+					   ,databaseName NVARCHAR(MAX)
+					   ,[Number of modules] INT
+					);
+
+					INSERT @ResultsNativeModuleCount
+					EXECUTE sp_executesql @sql;
+																   
+																	 
+			  
+
+					IF EXISTS(SELECT 1 FROM @ResultsNativeModuleCount WHERE [Number of modules] > 0)
+						SELECT * FROM @ResultsNativeModuleCount;
+
+				END;				
 			END;
+			
+		   
+					   
+									  
+		   
+			 
+						   
+				  
+			
+																											   
+									  
+				
+	 
+										  
+										 
+						 
+																								 
+											
 
             /*
             ############################################################
@@ -911,7 +988,7 @@ AS BEGIN TRY
 				END;
 
                 IF @debug = 1
-                PRINT('--Display memory consumption for temporal/internal tables' + @crlf + @sql + @crlf)
+                PRINT('--Display memory consumption for temporal/internal tables' + @crlf + @sql + @crlf);
 				ELSE
 				BEGIN
 					DECLARE @ResultsTemporal TABLE
@@ -977,7 +1054,6 @@ AS BEGIN TRY
                         ,'INTERNAL OFF-ROW DATA TABLE'
                         ,''''
                         ,' AND c.memory_consumer_desc = ''Table heap'''
-                        --,' ORDER BY databaseName, tableName, columnName'
                     )
                 FROM #MemoryOptimizedDatabases
                 WHERE rowNumber = @dbCounter;
@@ -990,12 +1066,16 @@ AS BEGIN TRY
 				SELECT @sql += ' ORDER BY databaseName, tableName, columnName';
 
                 IF @debug = 1
-                PRINT('--Display memory structures for LOB columns (off-row)' + @crlf + @sql + @crlf)
+                PRINT('--Display memory structures for LOB columns (off-row)' + @crlf + @sql + @crlf);
                 ELSE 
 				BEGIN
 					DECLARE @ResultsMemoryConsumerForLOBs TABLE
 					(
 						[objects] NVARCHAR(MAX)
+										  
+			 
+			 
+			
 					   ,databaseName NVARCHAR(MAX)
 					   ,tableName NVARCHAR(MAX)
 					   ,columnName NVARCHAR(MAX)
@@ -1005,8 +1085,30 @@ AS BEGIN TRY
 					   ,allocatedBytes INT
 					   ,usedBytes INT
 					);
+			 
+										 
+				  
+			 
+																					   
+																						
+						
+			 
+														
+					 
+			 
+														
+							  
+		   
+									
+		   
+													 
+													  
+	  
+								  
+								 
 
 					INSERT @ResultsMemoryConsumerForLOBs
+																						 
 					EXECUTE sp_executesql @sql;
 
 					IF EXISTS(SELECT 1 FROM @ResultsMemoryConsumerForLOBs)
@@ -1046,7 +1148,7 @@ AS BEGIN TRY
                 WHERE rowNumber = @dbCounter;
 
 				IF @debug = 1
-				PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf)
+				PRINT('--Display memory-optimized table types' + @crlf + @sql + @crlf);
 				ELSE 
 				BEGIN
 					DECLARE @ResultsTableTypes TABLE
@@ -1059,6 +1161,8 @@ AS BEGIN TRY
 
 					INSERT @ResultsTableTypes
 					EXECUTE sp_executesql @sql;
+																								
+																					  
 
 					IF EXISTS(SELECT 1 FROM @ResultsTableTypes)
 						SELECT * FROM @ResultsTableTypes;
@@ -1106,7 +1210,7 @@ AS BEGIN TRY
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--ALL database files, including container name, size, location' + @crlf + @sql + @crlf)
+            PRINT('--ALL database files, including container name, size, location' + @crlf + @sql + @crlf);
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -1149,7 +1253,7 @@ AS BEGIN TRY
              WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container name, size, number of files' + @crlf + @sql + @crlf)
+            PRINT('--container name, size, number of files' + @crlf + @sql + @crlf);
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -1197,7 +1301,7 @@ AS BEGIN TRY
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container file summary' + @crlf + @sql + @crlf)
+            PRINT('--container file summary' + @crlf + @sql + @crlf);
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -1247,7 +1351,39 @@ AS BEGIN TRY
             WHERE rowNumber = @dbCounter;
 
             IF @debug = 1
-            PRINT('--container details' + @crlf + @sql + @crlf)
+															   
+											
+
+			  
+																   
+													
+																   
+			  
+
+							  
+		   
+	  
+			   
+													 
+			 
+			 
+							 
+											 
+						   
+			
+			 
+							  
+				  
+			 
+														   
+									  
+								  
+	  
+											  
+											 
+
+						 
+            PRINT('--container details' + @crlf + @sql + @crlf);
             ELSE EXECUTE sp_executesql @sql;
 
             /*
@@ -1406,27 +1542,27 @@ AS BEGIN TRY
 			SELECT * FROM sys.dm_db_xtp_memory_consumers 
 
 		*/
-		select * from sys.dm_os_memory_clerks
+		SELECT * FROM sys.dm_os_memory_clerks;
 
 		SELECT type AS object_type
 			  ,SUM(pages_kb) /1024.0 /1024.0 AS pages_mb
 		FROM sys.dm_os_memory_clerks
 		WHERE type LIKE '%XTP%'
-		GROUP BY type
+		GROUP BY type;
 
 		SELECT memory_consumer_type_desc AS object_type,
 			 SUM(allocated_bytes) /1024.0 /1024.0 AS pagesAllocatedMB
 			,SUM(allocated_bytes) /1024.0 /1024.0 AS pagesUsedMB
 		FROM sys.dm_xtp_system_memory_consumers
 		GROUP BY memory_consumer_type_desc 
-		ORDER BY memory_consumer_type_desc 
+		ORDER BY memory_consumer_type_desc;
 
 		SELECT memory_consumer_type_desc AS object_type,
 			 SUM(allocated_bytes) /1024.0 /1024.0 AS pagesAllocatedMB
 			,SUM(allocated_bytes) /1024.0 /1024.0 AS pagesUsedMB
 		FROM sys.dm_db_xtp_memory_consumers
 		GROUP BY memory_consumer_type_desc 
-		ORDER BY memory_consumer_type_desc 
+		ORDER BY memory_consumer_type_desc;
 
 
         SELECT FORMAT(committed_target_kb, '###,###,###,###,###') AS committedTargetKB
@@ -1443,20 +1579,22 @@ AS BEGIN TRY
             ,Global TINYINT NOT NULL
             ,Session TINYINT NOT NULL
         );
+
         SET @sql = 'DBCC TRACESTATUS';
 
-        INSERT #TraceFlags
-    
-        EXECUTE sp_executesql @sql
+        INSERT #TraceFlags    
+	
+        EXECUTE sp_executesql @sql;
+
         IF @debug = 1
-        PRINT(@crlf + @sql + @crlf)
+        PRINT(@crlf + @sql + @crlf);
 
         DECLARE @msg NVARCHAR(MAX);
 
         IF EXISTS (SELECT 1 FROM #TraceFlags WHERE TraceFlag = 10316) -- allows custom indexing on hidden staging table for temporal tables
         BEGIN
 
-            SELECT @msg = 'TraceFlag 10316 is enabled'
+            SELECT @msg = 'TraceFlag 10316 is enabled';
 
             SELECT @msg
                   ,TraceFlag
