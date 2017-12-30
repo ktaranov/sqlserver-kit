@@ -2,7 +2,7 @@
 USE master;
 GO
 
-DECLARE @databaseFilePath NVARCHAR(1000) = N'k:\MSSQL\MSSQL14.MSSQLSERVER\MSSQL\DATA\'--N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
+DECLARE @databaseFilePath NVARCHAR(1000) = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
 DECLARE @databaseName     SYSNAME        = N'ಠ ಠ 14 Test';
 DECLARE @tsqlStatement    NVARCHAR(4000) = N'';
 DECLARE @debug            BIT            = 0;
@@ -18,7 +18,7 @@ CREATE DATABASE [@databaseName]
  CONTAINMENT = NONE
  ON PRIMARY
 (NAME = N''@databaseName'', FILENAME = N''@databaseFilePath@databaseName.mdf'', SIZE = 64MB, MAXSIZE = UNLIMITED, FILEGROWTH = 64MB),
-FILEGROUP [___DATABASE_NAME___] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
+FILEGROUP [@databaseName] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
 ( NAME = N''@databaseName_mod'', FILENAME = N''@databaseFilePath@databaseName_mod'', MAXSIZE = UNLIMITED)
  LOG ON
 ( NAME = N''@databaseName_log'', FILENAME = N''@databaseFilePath@databaseName_log.ldf'', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB);
