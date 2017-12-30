@@ -1,243 +1,295 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **210** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **260** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
- - **[D]**: Documentation solutions {3}
- - **[DA]**: Database Architecture {10}
- - **[DC]**: Data compare {10}
- - **[I]**: Internal SQL Server utilities (for example, bcp) {13}
- - **[IDX]**: Index manager {1}
+ - **[BI]**: Business Intelligence Solutions {3}
+ - **[D]**: Documentation solutions {6}
+ - **[DA]**: Database Architecture {12}
+ - **[DC]**: Data compare {11}
+ - **[ETL]**: Extract Download Load (ETL) Tools {1}
+ - **[I]**: Internal SQL Server utilities (for example, bcp) {15}
+ - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
- - **[M]**: Monitoring and alerting Tools {12}
- - **[MG]**: Migration tool {18}
- - **[MS]**: Management Studio (alternative for SSMS) {15}
- - **[S]**: Search tools {2}
- - **[SC]**: Structure compare {15}
- - **[T]**: Testing tools {3}
- - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {98}
+ - **[M]**: Monitoring and alerting Tools {13}
+ - **[MG]**: Migration tool {24}
+ - **[MS]**: Management Studio (alternative for SSMS) {22}
+ - **[REC]**: Recovery tools {7}
+ - **[S]**: Search tools {3}
+ - **[SC]**: Structure compare {18}
+ - **[T]**: Testing tools {5}
+ - **[ST]**: Statistics utilities {4}
+ - **[?]**: Not yet classified {111}
 
-| Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                     | Release Date | Author               | Free version   | Price |
-|-----------------------------------------------------------------------|----------------------------------|----------------|------------|--------------------------------------------|--------------|----------------------|----------------|------:|
-| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                     | 2017-01-26   | Microsoft            | Yes            | No    |
-| [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                              | 2012-02-11   | Microsoft            | Yes            | No    |
-| [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]             | 2014-12-12   | Microsoft            | Yes            | No    |
-| [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                | 2016-02-23   | Microsoft            | Yes            | No    |
-| [Baseline Security Analyze](#baseline-security-analyze)               | No                               | No             | [?]        | [Baseline Security Analyze]                | 2015-01-09   | Microsoft            | Yes            | No    |
-| [tablediff Utility](#tablediff-utility)                               | No                               | No             | [I]        | [tablediff Utility]                        | -            | Microsoft            | Yes            | No    |
-| [Microsoft Log Parser](#microsoft-log-parser)                         | No                               | No             | [?]        | [Microsoft Log Parser]                     | -            | Microsoft            | Yes            | No    |
-| [Diskspd](#diskspd)                                                   | No                               | No             | [T]        | [Diskspd]                                  | 2015-12-14   | Microsoft            | Yes            | No    |
-| [HammerDB](#hammerdb)                                                 | No                               | No             | [T]        | [HammerDB]                                 | 2015-05-04   | Open Source          | Yes            | No    |
-| [Exchange Server Error Code Look-up](#error-code-look-up)             | No                               | No             | [?]        | [Exchange Server Error Code Look-up]       | 2004-05-10   | Microsoft            | Yes            | No    |
-| [LINQPad](#linqpad)                                                   | No                               | No             | [?]        | [LINQPad]                                  | 2016-01-02   | Joseph Albahari      | Non-commercial |   $45 |
-| [SqlDynamite](#sqldynamite)                                           | No                               | No             | [S]        | [SqlDynamite]                              | 2016-04-06   | Anatoly Sova         | Yes            | No    |
-| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]                    | 2016-10-26   | Microsoft            | Yes            | No    |
-| [Database Health Monitor](#database-health-monitor)                   | No                               | No             | [M]        | [Database Health Monitor]                  | 2016-03-20   | Steve Stedman        | Yes            | No    |
-| [SchemaDrift](#schemadrift)                                           | No                               | No             | [SC]       | [SchemaDrift]                              | 2016-02-28   | Steve Stedman        | Yes            | No    |
-| [Dbeaver](#dbeaver)                                                   | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Dbeaver]                                  | 2016-06-06   | Open Source          | Yes            | No    |
-| [HeidiSQL](#heidisql)                                                 | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [HeidiSQL]                                 | 2016-06-19   | Open Source          | Yes            | No    |
-| [SQLExecStats](#sqlexecstats)                                         | No                               | No             | [ST]       | [SQLExecStats]                             | 2016-02-08   | Joe Chang            | Yes            | No    |
-| [ExpressProfiler](#expressprofiler)                                   | No                               | No             | [?]        | [ExpressProfiler]                          | 2016-02-15   | Chris Moore          | Yes            | No    |
-| [Data Migration Assistant](#data-migration-assistant)                 | No                               | No             | [MG]       | [Data Migration Assistant]                 | 2017-01-25   | Microsoft            | Yes            | No    |
-| [SQL Server Migration Assistant for Sybase](#sybasetosql)             | No                               | No             | [MG]       | [Migration Assistant for Sybase]           | 2016-12-22   | Microsoft            | Yes            | No    |
-| [dta Utility](#dta-utility)                                           | No                               | No             | [I]        | [dta Utility]                              | -            | Microsoft            | Yes            | No    |
-| [osql Utility](#osql-utility)                                         | No                               | No             | [I]        | [osql Utility]                             | -            | Microsoft            | Yes            | No    |
-| [sqldiag Utility](#sqldiag-utility)                                   | No                               | No             | [I]        | [sqldiag Utility]                          | -            | Microsoft            | Yes            | No    |
-| [sqldumper Utility](#sqldumper-utility)                               | No                               | No             | [I]        | [sqldumper Utility]                        | -            | Microsoft            | Yes            | No    |
-| [SqlLocalDB Utility](#sqllocaldb-utility)                             | No                               | No             | [I]        | [SqlLocalDB Utility]                       | -            | Microsoft            | Yes            | No    |
-| [sqllogship Utility](#sqllogship-utility)                             | No                               | No             | [I]        | [sqllogship Utility]                       | -            | Microsoft            | Yes            | No    |
-| [sqlservr Application](#sqlservr-application)                         | No                               | No             | [I]        | [sqlservr Application]                     | -            | Microsoft            | Yes            | No    |
-| [sqlps Utility](#sqlps-utility)                                       | No                               | No             | [I]        | [sqlps Utility]                            | -            | Microsoft            | Yes            | No    |
-| [sqlmaint Utility](#sqlmaint-utility)                                 | No                               | No             | [I]        | [sqlmaint Utility]                         | -            | Microsoft            | Yes            | No    |
-| [Ssms Utility](#ssms-utility)                                         | No                               | No             | [I]        | [Ssms Utility]                             | -            | Microsoft            | Yes            | No    |
-| [dtexec Utility](#dtexec-utility)                                     | No                               | No             | [I]        | [dtexec Utility]                           | -            | Microsoft            | Yes            | No    |
-| [SQL Server 2016 Report Builder](#report-builder-2016)                | No                               | No             | [?]        | [SQL Server 2016 Report Builder]           | 2016-09-16   | Microsoft            | Yes            | No    |
-| [SQL Server 2005 Best Practices Analyzer](#bpa-2005)                  | No                               | No             | [?]        | [BPA 2005]                                 | 2008-08-13   | Microsoft            | Yes            | No    |
-| [SQL Server 2000 Best Practices Analyzer](#bpa-2000)                  | No                               | No             | [?]        | [BPA 2000]                                 | 2010-04-26   | Microsoft            | Yes            | No    |
-| [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | No                               | No             | [?]        | [BPA 2008]                                 | 2010-06-18   | Microsoft            | Yes            | No    |
-| [SQL Server 2012 Best Practices Analyzer](#bpa-2012)                  | No                               | No             | [?]        | [BPA 2012]                                 | 2012-06-04   | Microsoft            | Yes            | No    |
-| [DLM Dashboard](#dlm-dashboard)                                       | No                               | No             | [M]        | [DLM Dashboard]                            | 2016-04-27   | Red Gate             | Yes            | No    |
-| [Red Gate SQL Compare](#red-gate-sql-compare)                         | No                               | No             | [DC]       | [Red Gate SQL Compare]                     | 2016-10-31   | Red Gate             | No             |  $495 |
-| [Red Gate SQL Data Compare](#red-gate-sql-data-compare)               | No                               | No             | [SC]       | [Red Gate SQL Data Compare]                | 2016-05-09   | Red Gate             | No             |  $495 |
-| [Red Gate SQL Prompt](#red-gate-sql-prompt)                           | No                               | No             | [MS]       | [Red Gate SQL Prompt]                      | 2016-04-28   | Red Gate             | No             |  $369 |
-| [Red Gate SQL Monitor](#red-gate-sql-monitor)                         | No                               | No             | [M]        | [Red Gate SQL Monitor]                     | 2015-10-15   | Red Gate             | No             | $1495 |
-| [Red Gate SQL Backup Pro](#red-gate-sql-backup-pro)                   | No                               | No             | [B]        | [Red Gate SQL Backup Pro]                  | 2014-07-08   | Red Gate             | No             |  $995 |
-| [Red Gate SQL Doc](#red-gate-sql-doc)                                 | No                               | No             | [D]        | [Red Gate SQL Doc]                         | 2016-04-26   | Red Gate             | No             |  $369 |
-| [Red Gate SQL Data Generator](#red-gate-sql-data-generator)           | No                               | No             | [G]        | [Red Gate SQL Data Generator]              | 2016-04-26   | Red Gate             | No             |  $369 |
-| [Red Gate SQL Dependency Tracker](#red-gate-sql-dependency-tracker)   | No                               | No             | [?]        | [Red Gate SQL Dependency Tracker]          | 2016-04-26   | Red Gate             | No             |  $369 |
-| [Red Gate SQL Multi Script](#red-gate-sql-multi-script)               | No                               | No             | [?]        | [Red Gate SQL Multi Script]                | 2016-04-15   | Red Gate             | No             |  $245 |
-| [Red Gate SQL Index Manager](#red-gate-sql-index-manager)             | No                               | No             | [IDX]      | [Red Gate SQL Index Manager]               | ?            | Red Gate             | No             |  $149 |
-| [Red Gate SQL Comparison SDK](#red-gate-sql-comparison-sdk)           | No                               | No             | [DC], [SC] | [Red Gate SQL Comparison SDK]              | 2016-02-22   | Red Gate             | No             |  $895 |
-| [Red Gate SQL Clone](#red-gate-sql-clone)                             | No                               | No             | [?]        | [Red Gate SQL Clone]                       | 2017-02-27   | Red Gate             | No             | $6955 |
-| [DLM Automation](#dlm-automation)                                     | No                               | No             | [?]        | [DLM Automation]                           | ?            | Red Gate             | No             | ?     |
-| [ReadyRoll](#readyroll)                                               | No                               | No             | [?]        | [ReadyRoll]                                | 2016-01-03   | Red Gate             | No             |  $345 |
-| [Rapid Database Extractor](#rapid-database-extractor)                 | Oracle                           | No             | [?]        | [Rapid Database Extractor]                 | 2016-11-03   | Idera                | Yes            | No    |
-| [SQL XEvent Profiler](#sql-xevent-profiler)                           | No                               | No             | [?]        | [SQL XEvent Profiler]                      | 2014-03-14   | Idera                | Yes            | No    |
-| [SQL Check](#sql-check)                                               | No                               | No             | [?]        | [SQL Check]                                | 2015-09-24   | Idera                | Yes            | No    |
-| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | No                               | No             | [?]        | [SQL Fragmentation Analyzer]               | 2012-11-16   | Idera                | Yes            | No    |
-| [SQL Heat Map](#sql-heat-map)                                         | No                               | No             | [?]        | [SQL Heat Map]                             | 2016-01-27   | Idera                | Yes            | No    |
-| [SQL Hekaton Memory Check](#sql-hekaton-memory-check)                 | No                               | No             | [?]        | [SQL Hekaton Memory Check]                 | 2015-06-10   | Idera                | Yes            | No    |
-| [SQL Page Viewer](#sql-page-viewer)                                   | No                               | No             | [?]        | [SQL Page Viewer]                          | 2014-08-25   | Idera                | Yes            | No    |
-| [SQL Update Statistics](#sql-update-statistics)                       | No                               | No             | [ST]       | [SQL Update Statistics]                    | 2015-12-14   | Idera                | Yes            | No    |
-| [SQL Statistics Aggregator](#sql-statistics-aggregator)               | No                               | No             | [ST]       | [SQL Statistics Aggregator]                | 2015-05-18   | Idera                | Yes            | No    |
-| [SQL Backup Status Reporter](#sql-backup-status-reporter)             | No                               | No             | [B]        | [SQL Backup Status Reporter]               | 2015-08-07   | Idera                | Yes            | No    |
-| [SQL Integrity Check](#sql-integrity-check)                           | No                               | No             | [?]        | [SQL Integrity Check]                      | 2013-08-26   | Idera                | Yes            | No    |
-| [SQL Job Manager](#sql-job-manager)                                   | No                               | No             | [J]        | [SQL Job Manager]                          | 2012-03-19   | Idera                | Yes            | No    |
-| [Azure SQL Database Backup](#azure-sql-database-backup)               | No                               | No             | [B]        | [Azure SQL Database Backup]                | 2012-10-02   | Idera                | Yes            | No    |
-| [SQL Column Search](#sql-column-search)                               | No                               | No             | [S]        | [SQL Column Search]                        | 2015-11-17   | Idera                | Yes            | No    |
-| [SQL Permissions Extractor](#sql-permissions-extractor)               | No                               | No             | [?]        | [SQL Permissions Extractor]                | 2015-08-07   | Idera                | Yes            | No    |
-| [SQL BI Check](#sql-bi-check)                                         | No                               | No             | [?]        | [SQL BI Check]                             | 2016-04-13   | Idera                | Yes            | No    |
-| [SQL Inventory Check](#sql-inventory-check)                           | No                               | No             | [?]        | [SQL Inventory Check]                      | 2016-03-24   | Idera                | Yes            | No    |
-| [SQL Diagnostic Manager](#sql-diagnostic-manager)                     | No                               | No             | [?]        | [SQL Diagnostic Manager]                   | ?            | Idera                | No             | $1747 |
-| [SQL Safe Backup](#sql-safe-backup)                                   | No                               | No             | [B]        | [SQL Safe Backup]                          | 2016-09-08   | Idera                | No             |  $907 |
-| [SQL Compliance Manager](#sql-compliance-manager)                     | No                               | No             | [?]        | [SQL Compliance Manager]                   | 2015-09-08   | Idera                | No             | $2657 |
-| [SQL Inventory Manager](#sql-inventory-manager)                       | No                               | No             | [?]        | [SQL Inventory Manager]                    | 2016-04-22   | Idera                | No             | $3195 |
-| [SQL Virtual Database](#sql-virtual-database)                         | No                               | No             | [?]        | [SQL Virtual Database]                     | 2016-03-24   | Idera                | No             |  $625 |
-| [SQL Secure](#sql-secure)                                             | No                               | No             | [?]        | [SQL Secure]                               | 2016-04-19   | Idera                | No             |  $907 |
-| [SQL Doctor](#sql-doctor)                                             | No                               | No             | [?]        | [SQL Doctor]                               | 2015-12-17   | Idera                | No             |  $625 |
-| [SQL Admin Toolset](#sql-admin-toolset)                               | No                               | No             | [?]        | [SQL Admin Toolset]                        | 2016-01-13   | Idera                | No             |  $395 |
-| [SQL Defrag Manager](#sql-defrag-manager)                             | No                               | No             | [?]        | [SQL Defrag Manager]                       | 2016-03-10   | Idera                | No             | $1495 |
-| [DBArtisan](#dbartisan)                                               | No                               | No             | [?]        | [DBArtisan]                                | ?            | Idera                | No             | $3122 |
-| [SQL BI Manager](#sql-bi-manager)                                     | No                               | No             | [?]        | [SQL BI Manager]                           | 2015-09-08   | Idera                | No             |  $697 |
-| [SQL Enterprise Job Manager](#sql-enterprise-job-manager)             | No                               | No             | [J]        | [SQL Enterprise Job Manager]               | 2015-09-08   | Idera                | No             |  $697 |
-| [DB Optimizer](#db-optimizer)                                         | No                               | No             | [?]        | [DB Optimizer]                             | ?            | Idera                | No             | $1420 |
-| [SQL Query Store Optimizer](#sql-query-store-optimizer)               | No                               | No             | [?]        | [SQL Query Store Optimizer]                | 2016-07-01   | Idera                | Yes            | No    |
-| [Rapid SQL](#rapid-sql)                                               | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [Rapid SQL]                                | ?            | Idera                | No             |  $710 |
-| [SQL Comparison Toolset](#sql-comparison-toolset)                     | No                               | No             | [DC], [SC] | [SQL Comparison Toolset]                   | ?            | Idera                | No             |  $745 |
-| [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]                 |              | Idera                | No             | $1287 |
-| [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                        | ?            | Idera                | No             | $1420 |
-| [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]            | ?            | Idera                | No             | ?     |
-| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                   | 2016-09-16   | Devart               | No             |  $149 |
-| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                     | 2016-09-28   | Devart               | No             |  $149 |
-| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                   | 2016-09-16   | Devart               | No             |  $249 |
-| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                    | 2016-08-17   | Devart               | No             |  $99  |
-| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                   | 2016-09-16   | Devart               | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                    | 2016-01-22   | Devart               | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                           | 2016-09-22   | Devart               | Yes            |  $249 |
-| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                           | 2016-12-27   | Devart               | No             |  $149 |
-| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                       | 2016-09-16   | Devart               | No             |  $149 |
-| [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                        | ?            | MinionWare           | No             | $1500 |
-| [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]         | 2011-06-02   | Bob Tavlor           | Yes            | No    |
-| [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                               | 2016-07-07   | Bill Graziano        | Yes            | No    |
-| [Dell Security Explorer](#dell-security-explorer)                     | No                               | No             | [?]        | [Dell Security Explorer]                   | 2015-06-25   | Dell                 | No             |  $850 |
-| [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)       | No                               | No             | [?]        | [Dell LiteSpeed for SQL Server]            | 2015-07-31   | Dell                 | No             | ?     |
-| [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | No                               | No             | [MS]       | [Dell Toad for SQL Server]                 | 2015-05-12   | Dell                 | No             | ?     |
-| [Dell Spotlight on SQL Server Enterprise](#dell-spotlight)            | No                               | No             | [?]        | [Dell Spotlight]                           | 2016-03-10   | Dell                 | No             | $2561 |
-| [Dell Foglight](#dell-foglight)                                       | No                               | No             | [?]        | [Dell Foglight]                            | 2015-09-22   | Dell                 | No             | ?     |
-| [Dell Discovery Wizard](#dell-discovery-wizard)                       | No                               | No             | [?]        | [Dell Discovery Wizard]                    | 2011-09-22   | Dell                 | Yes            | No    |
-| [Dell Enterprise Reporter](#dell-enterprise-reporter)                 | No                               | No             | [?]        | [Dell Enterprise Reporter]                 | ?            | Dell                 | No             | $511  |
-| [SQL Deadlock Detector](#sqlsolutions-sql-deadlock-detector)          | No                               | No             | [?]        | [SQLSolutions SQL Deadlock Detector]       | 2013-05-16   | SQLSolutions         | No             |  $295 |
-| [SQL Heartbeat](#sqlsolutions-sql-heartbeat)                          | No                               | No             | [?]        | [SQLSolutions SQL Heartbeat]               | 2013-03-03   | SQLSolutions         | No             |  $295 |
-| [SQL Trace Analyzer](#sqlsolutions-sql-trace-analyzer)                | No                               | No             | [?]        | [SQLSolutions SQL Trace Analyzer]          | 2013-12-09   | SQLSolutions         | No             |  $495 |
-| [SQL Ultimate Debugger](#sqlsolutions-sql-ultimate-debugger)          | No                               | No             | [?]        | [SQLSolutions SQL Ultimate Debugger]       | -            | SQLSolutions         | No             |  $295 |
-| [SQL Scripter](#sql-scripter)                                         | No                               | No             | [?]        | [SQL Scripter]                             | 2013-02-24   | Thomas Hinsenkamp    | No             |   €99 |
-| [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | No                               | No             | [?]        | [Simple Dynamic Scheduler]                 | 2016-05-02   | Miljan Radovic       | Yes            | No    |
-| [ApexSQL Audit](#apexsql-audit)                                       | No                               | No             | [?]        | [ApexSQL Audit]                            | 2016-04-08   | ApexSQL              | No             | $1699 |
-| [ApexSQL Backup](#apexsql-backup)                                     | No                               | No             | [B]        | [ApexSQL Backup]                           | 2015-12-30   | ApexSQL              | No             |  $499 |
-| [ApexSQL Log](#apexsql-log)                                           | No                               | No             | [?]        | [ApexSQL Log]                              | 2015-11-23   | ApexSQL              | No             | $1999 |
-| [ApexSQL Monitor](#apexsql-monitor)                                   | No                               | No             | [M]        | [ApexSQL Monitor]                          | 2015-12-29   | ApexSQL              | No             |  $499 |
-| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [?]        | [ApexSQL Recover]                          | 2015-01-21   | ApexSQL              | No             | $1999 |
-| [ApexSQL Restore](#apexsql-restore)                                   | No                               | No             | [?]        | [ApexSQL Restore]                          | 2014-08-12   | ApexSQL              | No             |  $399 |
-| [ApexSQL Build](#apexsql-build)                                       | No                               | No             | [?]        | [ApexSQL Build]                            | 2015-12-22   | ApexSQL              | No             |  $399 |
-| [ApexSQL Clean](#apexsql-clean)                                       | No                               | No             | [?]        | [ApexSQL Clean]                            | 2015-09-04   | ApexSQL              | No             |  $399 |
-| [ApexSQL Data Diff](#apexsql-data-diff)                               | No                               | No             | [DC]       | [ApexSQL Data Diff]                        | 2015-12-11   | ApexSQL              | No             |  $399 |
-| [ApexSQL Diff](#apexsql-diff)                                         | No                               | No             | [SC]       | [ApexSQL Diff]                             | 2016-03-23   | ApexSQL              | No             |  $399 |
-| [ApexSQL Doc](#apexsql-doc)                                           | No                               | No             | [D]        | [ApexSQL Doc]                              | 2017-03-01   | ApexSQL              | No             |  $299 |
-| [ApexSQL Generate](#apexsql-generate)                                 | No                               | No             | [G]        | [ApexSQL Generate]                         | 2016-03-15   | ApexSQL              | No             |  $499 |
-| [ApexSQL Script](#apexsql-script)                                     | No                               | No             | [?]        | [ApexSQL Script]                           | 2015-09-11   | ApexSQL              | No             |  $249 |
-| [ApexSQL Trigger](#apexsql-trigger)                                   | No                               | No             | [?]        | [ApexSQL Trigger]                          | 2015-09-04   | ApexSQL              | No             | $1999 |
-| [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | No                               | No             | [?]        | [DBBest T-SQL Analyzer]                    | 2015-03-13   | DBBest               | No             |   $89 |
-| [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | No                               | No             | [SC], [DC] | [DBBest Database Compare Suite]            | 2015-09-04   | DBBest               | No             |  $349 |
-| [Advanced Query Tool](#advanced-query-tool)                           | No                               | No             | [?]        | [Advanced Query Tool]                      | 2015-03-18   | Cardett Associates   | No             |  $180 |
-| [SqlDiffFramework](#sqldiffframework)                                 | No                               | No             | [SC]       | [SqlDiffFramework]                         | 2012-04-17   | Michael Sorens       | Yes            | No    |
-| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                                 | 2017-02-21   | Jet Brains           | No             |   $89 |
-| [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | No                               | No             | [?]        | [Pssdiag and Sqldiag Manager]              | 2017-01-06   | Jack Li              | Yes            | No    |
-| [SQL Nexus Tool](#sql-nexus-tool)                                     | No                               | No             | [?]        | [SQL Nexus Tool]                           | 2016-11-20   | Jack Li              | Yes            | No    |
-| [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | No                               | No             | [?]        | [DBSophic Qure Profiler]                   | ?            | DBSophic             | No             |  $300 |
-| [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | No                               | No             | [?]        | [DBSophic Qure Optimizer]                  | ?            | DBSophic             | No             | ?     |
-| [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                           | 2015-01-15   | SQLServerUtilities   | No             |   $99 |
-| [SQLScripter](#sqlscripter)                                           | No                               | No             | [?]        | [SQLScripter]                              | 2009-08-24   | SQLServerUtilities   | No             |   $99 |
-| [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                     | 2016-05-23   | David Ingleton       | Yes            | No    |
-| [Database Performance Analyzer](#dpa-solarwinds)                      | No                               | No             | [M]        | [Database Performance Analyzer]            | ?            | SolarWinds           | No             | $1995 |
-| [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                              | 2016-04-25   | UbitSoft             | No             |  $295 |
-| [OmniCompare](#omnicompare)                                           | No                               | No             | [SC]       | [OmniCompare]                              | 2016-06-03   | AireForge            | Yes            | No    |
-| [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                 | ?            | HexaTier             | No             | ?     |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                   | 2017-03-09   | SoftTree             | No             |  $215 |
-| [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                | 2015-02-07   | SoftTree             | No             |  $499 |
-| [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]                | 2016-05-26   | EMS                  | No             |  $257 |
-| [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                           | 2016-04-13   | EMS                  | Yes            |  $82  |
-| [EMS SQL Administrator](#ems-sql-administrator)                       | No                               | No             | [?]        | [EMS SQL Administrator]                    | 2015-04-14   | EMS                  | Yes            |  $135 |
-| [EMS SQL Manager](#ems-sql-manager)                                   | No                               | No             | [?]        | [EMS SQL Manager]                          | 2016-05-26   | EMS                  | Yes            |  $135 |
-| [EMS Data Export](#ems-data-export)                                   | No                               | No             | [?]        | [EMS Data Export]                          | 2016-04-29   | EMS                  | No             |   $47 |
-| [EMS Data Import](#ems-data-import)                                   | No                               | No             | [?]        | [EMS Data Import]                          | 2016-04-14   | EMS                  | No             |   $47 |
-| [EMS Data Pump](#ems-data-pump)                                       | No                               | No             | [?]        | [EMS Data Pump]                            | 2016-11-03   | EMS                  | No             |   $47 |
-| [EMS Data Generator](#ems-generator)                                  | No                               | No             | [G]        | [EMS Data Generator]                       | 2010-07-10   | EMS                  | No             |   $47 |
-| [EMS DB Comparer](#ems-bd-comparer)                                   | No                               | No             | [SC]       | [EMS DB Comparer]                          | 2015-07-24   | EMS                  | No             |   $47 |
-| [EMS DB Extract](#ems-bd-extract)                                     | No                               | No             | [?]        | [EMS DB Extract]                           | 2008-10-16   | EMS                  | No             |   $47 |
-| [EMS SQL Query](#ems-sql-query)                                       | No                               | No             | [?]        | [EMS SQL Query]                            | 2012-03-29   | EMS                  | No             |   $47 |
-| [EMS Data Comparer](#ems-data-comparer)                               | No                               | No             | [DC]       | [EMS Data Comparer]                        | 2012-11-16   | EMS                  | No             |   $47 |
-| [NitroAccelerator](#nitroaccelerator)                                 | No                               | No             | [?]        | [NitroAccelerator]                         | 2016-07-10   | Nitrosphere          | No             | $1265 |
-| [ERwin Data Modeler](#erwin-data-modeler)                             | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ERwin Data Modeler]                       | 2016-06-03   | ERwin                | No             |  $810 |
-| [Toad Data Modeler](#toad-data-modeler)                               | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [Toad Data Modeler]                        | 2016-06-16   | Dell                 | No             |  $562 |
-| [SQL Power Architect](#sql-power-architect)                           | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [SQL Power Architect]                      | 2016-02-11   | SQLPower             | Yes            |  $995 |
-| [DbWrench](#dbwrench)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [DbWrench]                                 | 2016-07-06   | Nizana Systems       | No             |   $99 |
-| [Navicat Data Modeler](#navicat-data-modeler)                         | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [Navicat Data Modeler]                     | 2016-08-01   | PremiumSoft          | No             |  $199 |
-| [DeZign for Databases](#dezign-for-databases)                         | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [DeZign for Databases]                     | 2016-04-25   | Datanamic            | No             |  $259 |
-| [ERDesigner NG](#erdesigner-ng)                                       | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [ERDesigner NG]                            | 2013-04-10   | Mirko Sertic         | Open Source    | No    |
-| [Vertabelo](#vertabelo)                                               | Oracle, MySQL, PostgreSQL, Other | Online         | [DA]       | [Vertabelo]                                | ?            | Vertabelo            | No             |  $948 |
-| [dbDiffo](#dbdiffo)                                                   | Oracle, MySQL, PostgreSQL, Other | Online         | [DA]       | [dbDiffo]                                  | ?            | Contenet Ltd         | Yes            | No    |
-| [SQL DXP](#sql-dxp)                                                   | Oracle, MySQL                    | No             | [DC], [SC] | [SQL DXP]                                  | 2016-06-20   | SQL Delta            | No             |  $530 |
-| [Aqua Data Studio](#aqua-data-studio)                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Aqua Data Studio]                         | 2016-07-06   | AquaFold             | No             |  $499 |
-| [RazorSQL](#razorsql)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [RazorSQL]                                 | 2016-09-29   | Richardson Software  | No             |  $100 |
-| [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                       | 2016-02-19   | Gudu Software        | No             |   $50 |
-| [Database .NET](#database-net)                                        | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Database .NET]                            | 2017-01-13   | fish's dotNET        | Non-commercial |   $69 |
-| [dbMigration .NET](#dbmegration-net)                                  | Oracle, MySQL, PostgreSQL, Other | No             | [DC], [SC] | [dbMigration .NET]                         | 2017-01-13   | fish's dotNET        | Non-commercial |   $49 |
-| [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                                | 2016-12-13   | Bill Graziano        | Non-commercial | No    |
-| [Database Experimentation Assistant](#dea)                            | No                               | No             | [T]        | [Database Experimentation Assistant]       | 2016-11-21   | Microsoft            | Yes            | No    |
-| [Data Platform Studio](#dps)                                          | No                               | No             | [MG]       | [Data Platform Studio]                     | ?            | Red Gate Software    | Yes            | ?     |
-| [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                   | ?            | boxfuse              | Open Source    | No    |
-| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                | 2016-10-24   | Liquibase            | Open Source    | No    |
-| [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                 | 2016-06-22   | My Batis             | Open Source    | No    |
-| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SQLSentry Plan Explorer]                  | 2017-01-16   | SentryOne            | Yes            | No    |
-| [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                               | 2016-12-07   | SentryOne            | No             | ?     |
-| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                | 2012-11-01   | Devart               | Yes            | No    |
-| [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                       | ?            | DBmaestro            | No             | ?     |
-| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [DC]       | [xSQL Schema Compare]                      | 2017-03-01   | xSQL Software        | Yes            |  $399 |
-| [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]       | ?            | SQLTreeo             | No             |  €180 |
-| [SchemaCrawler](#schema-crawler)                                      |Oracle, PostgreSQL, MySQL, Other  | Yes            | [D], [SC]  | [SchemaCrawler]                            | 2017-02-27   | Sualeh Fatehi        | Open Source    |  No   |
-| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]             | ?            | SENTINELAGENT        | No             |  ?    |
-| [CatCompare v2](#cat-compare)                                         | No                               | No             | [?]        | [CatCompare v2]                            | 2017-01-07   | Andy Leonard         | No             |  $295 |
-| [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)           | No                               | No             | [?]        | [SSIS Catalog Compare v2.0 Bundle]         | 2017-01-06   | Andy Leonard         | No             |  $495 |
-| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]        | 2017-01-31   | Microsoft            | Yes            |  No   |
-| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                | ?            | Quest Software       | Yes            |  ?    |
-| [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [DBConvert Studio]                         | 2017-03-01   | DMSoft Technologies  | No             |  $499 |
-| [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                | 2017-03-01   | ActiveCrypt Software | Yes            |  $698 |
-| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL] | 2017-02-17   | Microsoft            | Yes            |  No   |
-| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                 | 2017-01-26   | Soheil Rashidi       | Open Source    |  No   |
-| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                             | ?            | Datamate Technology  | ?              |  ?    |
-| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
-| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]       | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
-| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]      | 2013-10-09   | DMSoft Technologies  | No             |  $149 |
-| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]  | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
-| [MS Excel to MS SQL Migration](#msexcel-sqlserver)                    | No                               | No             | [MG]       | [MS Excel to MS SQL Migration]             | 2013-09-23   | DMSoft Technologies  | No             |  $149 |
-| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)             | No                               | No             | [MG]       | [SQLite to MS SQL Migration and Sync]      | 2014-05-08   | DMSoft Technologies  | No             |  $149 |
-| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]     | 2013-09-09   | DMSoft Technologies  | No             |  $149 |
-| [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies  | No             |  $149 |
-| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]    | 2013-09-11   | DMSoft Technologies  | No             |  $149 |
-| [SQLines SQL Converter](#sqllines-converter)                          | No                               | No             | [MG]       | [SQLines SQL Converter]                    | ?            | Dmtolpeko            | Open Source    |  No   |
-| [SQLite & SQL Server Compact Toolbox](#sqlite-and-sqlserver-toolbox)  | No                               | No             | [?]        | [SQLite & SQL Server Compact Toolbox]      | ?            | ErikEJ               | Open Source    |  No   |
-| [SqlPad](#sqlpad)                                                     | Postgres, MySQL, Crate, Vertica  | No             | [?]        | [SqlPad]                                   | ?            | Rickbergfalk         | Open Source    |  No   |
-| [Html-query-plan](#html-query-plan)                                   | No                               | No             | [?]        | [SqlPad]                                   | ?            | JustinPealing        | Open Source    |  No   |
-| [SqlQueryStress](#sql-query-stress)                                   | No                               | No             | [?]        | [SqlQueryStress]                           | ?            | Adam Machanic        | Open Source    |  No   |
+| Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
+|-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
+| [SSMS](#ssms)                                                         | No                               | No             | [MS]       | [SSMS]                                      | 2017-10-09   | Microsoft             |            | Yes            | No    |
+| [bcp Utility](#bcp)                                                   | No                               | No             | [I]        | [bcp Utility]                               | 2012-02-11   | Microsoft             |            | Yes            | No    |
+| [sqlcmd Utility](#sqlcmd-utility)                                     | No                               | No             | [I]        | [sqlcmd Utility]                            | 2016-08-23   | Microsoft             |            | Yes            | No    |
+| [mssql-cli](#mssql-cli)                                               | No                               | Linux, Mac     | [?    ]        | [mssql-cli]                                 | 2017-12-13   | Microsoft             | BSD-3      | Open Source    | No    |
+| [SQL OPS Studio](#sos)                                                | No                               | Linux, Mac     | [MS]       | [SQL OPS Studio]                            | 2017-11-15   | Microsoft             |            | Yes            | No    |
+| [RML Utilities for SQL Server](#rml)                                  | No                               | No             | [T]        | [RML Utilities for SQL Server]              | 2014-12-12   | Microsoft             |            | Yes            | No    |
+| [GraphView](#graphview)                                               | No                               | No             | [?]        | [GraphView]                                 | 2016-02-23   | Microsoft             |            | Yes            | No    |
+| [Baseline Security Analyze](#baseline-security-analyze)               | No                               | No             | [?]        | [Baseline Security Analyze]                 | 2015-01-09   | Microsoft             |            | Yes            | No    |
+| [tablediff Utility](#tablediff-utility)                               | No                               | No             | [I]        | [tablediff Utility]                         | -            | Microsoft             |            | Yes            | No    |
+| [Microsoft Log Parser](#microsoft-log-parser)                         | No                               | No             | [?]        | [Microsoft Log Parser]                      | -            | Microsoft             |            | Yes            | No    |
+| [Log Parser Lizard GUI](#log-parser-lizard-gui)                       | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [Log Parser Lizard GUI]                     | 2017-06-01   | Lizard Labs           |            | Yes            | $59   |
+| [Diskspd](#diskspd)                                                   | No                               | No             | [T]        | [Diskspd]                                   | 2015-12-14   | Microsoft             |            | Yes            | No    |
+| [HammerDB](#hammerdb)                                                 | No                               | No             | [T]        | [HammerDB]                                  | 2015-05-04   | Open Source           |            | Yes            | No    |
+| [Exchange Server Error Code Look-up](#error-code-look-up)             | No                               | No             | [?]        | [Exchange Server Error Code Look-up]        | 2004-05-10   | Microsoft             |            | Yes            | No    |
+| [LINQPad](#linqpad)                                                   | No                               | No             | [?]        | [LINQPad]                                   | 2016-01-02   | Joseph Albahari       |            | Non-commercial |   $45 |
+| [SqlDynamite](#sqldynamite)                                           | No                               | No             | [S]        | [SqlDynamite]                               | 2016-04-06   | Anatoly Sova          |            | Yes            | No    |
+| [SQL Server Data Tools](#ssdt)                                        | No                               | No             | [MS]       | [SQL Server Data Tools]                     | 2017-04-15   | Microsoft             |            | Yes            | No    |
+| [Database Health Monitor](#database-health-monitor)                   | No                               | No             | [M]        | [Database Health Monitor]                   | 2016-03-20   | Steve Stedman         |            | Yes            | No    |
+| [SchemaDrift](#schemadrift)                                           | No                               | No             | [SC]       | [SchemaDrift]                               | 2016-02-28   | Steve Stedman         |            | Yes            | No    |
+| [Dbeaver](#dbeaver)                                                   | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Dbeaver]                                   | 2016-06-06   | Open Source           |            | Yes            | No    |
+| [HeidiSQL](#heidisql)                                                 | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [HeidiSQL]                                  | 2016-06-19   | Open Source           |            | Yes            | No    |
+| [SQLExecStats](#sqlexecstats)                                         | No                               | No             | [ST]       | [SQLExecStats]                              | 2016-02-08   | Joe Chang             |            | Yes            | No    |
+| [ExpressProfiler](#expressprofiler)                                   | No                               | No             | [?]        | [ExpressProfiler]                           | 2016-02-15   | Chris Moore           |            | Yes            | No    |
+| [Data Migration Assistant](#data-migration-assistant)                 | No                               | No             | [MG]       | [Data Migration Assistant]                  | 2017-03-15   | Microsoft             |            | Yes            | No    |
+| [SQL Server Migration Assistant for Sybase](#sybasetosql)             | No                               | No             | [MG]       | [Migration Assistant for Sybase]            | 2017-02-17   | Microsoft             |            | Yes            | No    |
+| [dta Utility](#dta-utility)                                           | No                               | No             | [I]        | [dta Utility]                               | -            | Microsoft             |            | Yes            | No    |
+| [osql Utility](#osql-utility)                                         | No                               | No             | [I]        | [osql Utility]                              | -            | Microsoft             |            | Yes            | No    |
+| [sqldiag Utility](#sqldiag-utility)                                   | No                               | No             | [I]        | [sqldiag Utility]                           | -            | Microsoft             |            | Yes            | No    |
+| [sqldumper Utility](#sqldumper-utility)                               | No                               | No             | [I]        | [sqldumper Utility]                         | -            | Microsoft             |            | Yes            | No    |
+| [SqlLocalDB Utility](#sqllocaldb-utility)                             | No                               | No             | [I]        | [SqlLocalDB Utility]                        | -            | Microsoft             |            | Yes            | No    |
+| [sqllogship Utility](#sqllogship-utility)                             | No                               | No             | [I]        | [sqllogship Utility]                        | -            | Microsoft             |            | Yes            | No    |
+| [sqlservr Application](#sqlservr-application)                         | No                               | No             | [I]        | [sqlservr Application]                      | -            | Microsoft             |            | Yes            | No    |
+| [sqlps Utility](#sqlps-utility)                                       | No                               | No             | [I]        | [sqlps Utility]                             | -            | Microsoft             |            | Yes            | No    |
+| [sqlmaint Utility](#sqlmaint-utility)                                 | No                               | No             | [I]        | [sqlmaint Utility]                          | -            | Microsoft             |            | Yes            | No    |
+| [Ssms Utility](#ssms-utility)                                         | No                               | No             | [I]        | [Ssms Utility]                              | -            | Microsoft             |            | Yes            | No    |
+| [dtexec Utility](#dtexec-utility)                                     | No                               | No             | [I]        | [dtexec Utility]                            | -            | Microsoft             |            | Yes            | No    |
+| [SQL Server 2016 Report Builder](#report-builder-2016)                | No                               | No             | [?]        | [SQL Server 2016 Report Builder]            | 2016-09-16   | Microsoft             |            | Yes            | No    |
+| [SQL Server 2005 Best Practices Analyzer](#bpa-2005)                  | No                               | No             | [?]        | [BPA 2005]                                  | 2008-08-13   | Microsoft             |            | Yes            | No    |
+| [SQL Server 2000 Best Practices Analyzer](#bpa-2000)                  | No                               | No             | [?]        | [BPA 2000]                                  | 2010-04-26   | Microsoft             |            | Yes            | No    |
+| [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)               | No                               | No             | [?]        | [BPA 2008]                                  | 2010-06-18   | Microsoft             |            | Yes            | No    |
+| [SQL Server 2012 Best Practices Analyzer](#bpa-2012)                  | No                               | No             | [?]        | [BPA 2012]                                  | 2012-06-04   | Microsoft             |            | Yes            | No    |
+| [DLM Dashboard](#dlm-dashboard)                                       | No                               | No             | [M]        | [DLM Dashboard]                             | 2016-04-27   | Red Gate              |            | Yes            | No    |
+| [Red Gate SQL Compare](#red-gate-sql-compare)                         | No                               | No             | [DC]       | [Red Gate SQL Compare]                      | 2016-10-31   | Red Gate              |            | No             |  $495 |
+| [Red Gate SQL Data Compare](#red-gate-sql-data-compare)               | No                               | No             | [SC]       | [Red Gate SQL Data Compare]                 | 2016-05-09   | Red Gate              |            | No             |  $495 |
+| [Red Gate SQL Prompt](#red-gate-sql-prompt)                           | No                               | No             | [MS]       | [Red Gate SQL Prompt]                       | 2016-04-28   | Red Gate              |            | No             |  $369 |
+| [Red Gate SQL Monitor](#red-gate-sql-monitor)                         | No                               | No             | [M]        | [Red Gate SQL Monitor]                      | 2015-10-15   | Red Gate              |            | No             | $1495 |
+| [Red Gate SQL Backup Pro](#red-gate-sql-backup-pro)                   | No                               | No             | [B]        | [Red Gate SQL Backup Pro]                   | 2014-07-08   | Red Gate              |            | No             |  $995 |
+| [Red Gate SQL Doc](#red-gate-sql-doc)                                 | No                               | No             | [D]        | [Red Gate SQL Doc]                          | 2016-04-26   | Red Gate              |            | No             |  $369 |
+| [Red Gate SQL Data Generator](#red-gate-sql-data-generator)           | No                               | No             | [G]        | [Red Gate SQL Data Generator]               | 2016-04-26   | Red Gate              |            | No             |  $369 |
+| [Red Gate SQL Dependency Tracker](#red-gate-sql-dependency-tracker)   | No                               | No             | [?]        | [Red Gate SQL Dependency Tracker]           | 2016-04-26   | Red Gate              |            | No             |  $369 |
+| [Red Gate SQL Multi Script](#red-gate-sql-multi-script)               | No                               | No             | [?]        | [Red Gate SQL Multi Script]                 | 2016-04-15   | Red Gate              |            | No             |  $245 |
+| [Red Gate SQL Index Manager](#red-gate-sql-index-manager)             | No                               | No             | [IDX]      | [Red Gate SQL Index Manager]                | ?            | Red Gate              |            | No             |  $149 |
+| [Red Gate SQL Comparison SDK](#red-gate-sql-comparison-sdk)           | No                               | No             | [DC], [SC] | [Red Gate SQL Comparison SDK]               | 2016-02-22   | Red Gate              |            | No             |  $895 |
+| [Red Gate SQL Clone](#red-gate-sql-clone)                             | No                               | No             | [?]        | [Red Gate SQL Clone]                        | 2017-02-27   | Red Gate              |            | No             | $6955 |
+| [DLM Automation](#dlm-automation)                                     | No                               | No             | [?]        | [DLM Automation]                            | ?            | Red Gate              |            | No             | ?     |
+| [ReadyRoll](#readyroll)                                               | No                               | No             | [?]        | [ReadyRoll]                                 | 2016-01-03   | Red Gate              |            | No             |  $345 |
+| [Rapid Database Extractor](#rapid-database-extractor)                 | Oracle                           | No             | [?]        | [Rapid Database Extractor]                  | 2016-11-03   | Idera                 |            | Yes            | No    |
+| [SQL XEvent Profiler](#sql-xevent-profiler)                           | No                               | No             | [?]        | [SQL XEvent Profiler]                       | 2014-03-14   | Idera                 |            | Yes            | No    |
+| [SQL Check](#sql-check)                                               | No                               | No             | [?]        | [SQL Check]                                 | 2015-09-24   | Idera                 |            | Yes            | No    |
+| [SQL Fragmentation Analyzer](#sql-fragmentation-analyzer)             | No                               | No             | [?]        | [SQL Fragmentation Analyzer]                | 2012-11-16   | Idera                 |            | Yes            | No    |
+| [SQL Heat Map](#sql-heat-map)                                         | No                               | No             | [?]        | [SQL Heat Map]                              | 2016-01-27   | Idera                 |            | Yes            | No    |
+| [SQL Hekaton Memory Check](#sql-hekaton-memory-check)                 | No                               | No             | [?]        | [SQL Hekaton Memory Check]                  | 2015-06-10   | Idera                 |            | Yes            | No    |
+| [SQL Page Viewer](#sql-page-viewer)                                   | No                               | No             | [?]        | [SQL Page Viewer]                           | 2014-08-25   | Idera                 |            | Yes            | No    |
+| [SQL Update Statistics](#sql-update-statistics)                       | No                               | No             | [ST]       | [SQL Update Statistics]                     | 2015-12-14   | Idera                 |            | Yes            | No    |
+| [SQL Statistics Aggregator](#sql-statistics-aggregator)               | No                               | No             | [ST]       | [SQL Statistics Aggregator]                 | 2015-05-18   | Idera                 |            | Yes            | No    |
+| [SQL Backup Status Reporter](#sql-backup-status-reporter)             | No                               | No             | [B]        | [SQL Backup Status Reporter]                | 2015-08-07   | Idera                 |            | Yes            | No    |
+| [SQL Integrity Check](#sql-integrity-check)                           | No                               | No             | [?]        | [SQL Integrity Check]                       | 2013-08-26   | Idera                 |            | Yes            | No    |
+| [SQL Job Manager](#sql-job-manager)                                   | No                               | No             | [J]        | [SQL Job Manager]                           | 2012-03-19   | Idera                 |            | Yes            | No    |
+| [Azure SQL Database Backup](#azure-sql-database-backup)               | No                               | No             | [B]        | [Azure SQL Database Backup]                 | 2012-10-02   | Idera                 |            | Yes            | No    |
+| [SQL Column Search](#sql-column-search)                               | No                               | No             | [S]        | [SQL Column Search]                         | 2015-11-17   | Idera                 |            | Yes            | No    |
+| [SQL Permissions Extractor](#sql-permissions-extractor)               | No                               | No             | [?]        | [SQL Permissions Extractor]                 | 2015-08-07   | Idera                 |            | Yes            | No    |
+| [SQL BI Check](#sql-bi-check)                                         | No                               | No             | [BI]       | [SQL BI Check]                              | 2016-04-13   | Idera                 |            | Yes            | No    |
+| [SQL Inventory Check](#sql-inventory-check)                           | No                               | No             | [?]        | [SQL Inventory Check]                       | 2016-03-24   | Idera                 |            | Yes            | No    |
+| [SQL Diagnostic Manager](#sql-diagnostic-manager)                     | No                               | No             | [?]        | [SQL Diagnostic Manager]                    | ?            | Idera                 |            | No             | $1747 |
+| [SQL Safe Backup](#sql-safe-backup)                                   | No                               | No             | [B]        | [SQL Safe Backup]                           | 2016-09-08   | Idera                 |            | No             |  $907 |
+| [SQL Compliance Manager](#sql-compliance-manager)                     | No                               | No             | [?]        | [SQL Compliance Manager]                    | 2015-09-08   | Idera                 |            | No             | $2657 |
+| [SQL Inventory Manager](#sql-inventory-manager)                       | No                               | No             | [?]        | [SQL Inventory Manager]                     | 2016-04-22   | Idera                 |            | No             | $3195 |
+| [SQL Virtual Database](#sql-virtual-database)                         | No                               | No             | [?]        | [SQL Virtual Database]                      | 2016-03-24   | Idera                 |            | No             |  $625 |
+| [SQL Secure](#sql-secure)                                             | No                               | No             | [?]        | [SQL Secure]                                | 2016-04-19   | Idera                 |            | No             |  $907 |
+| [SQL Doctor](#sql-doctor)                                             | No                               | No             | [?]        | [SQL Doctor]                                | 2015-12-17   | Idera                 |            | No             |  $625 |
+| [SQL Admin Toolset](#sql-admin-toolset)                               | No                               | No             | [?]        | [SQL Admin Toolset]                         | 2016-01-13   | Idera                 |            | No             |  $395 |
+| [SQL Defrag Manager](#sql-defrag-manager)                             | No                               | No             | [?]        | [SQL Defrag Manager]                        | 2016-03-10   | Idera                 |            | No             | $1495 |
+| [DBArtisan](#dbartisan)                                               | No                               | No             | [?]        | [DBArtisan]                                 | ?            | Idera                 |            | No             | $3122 |
+| [SQL BI Manager](#sql-bi-manager)                                     | No                               | No             | [BI]       | [SQL BI Manager]                            | 2015-09-08   | Idera                 |            | No             |  $697 |
+| [SQL Enterprise Job Manager](#sql-enterprise-job-manager)             | No                               | No             | [J]        | [SQL Enterprise Job Manager]                | 2015-09-08   | Idera                 |            | No             |  $697 |
+| [DB Optimizer](#db-optimizer)                                         | No                               | No             | [?]        | [DB Optimizer]                              | ?            | Idera                 |            | No             | $1420 |
+| [SQL Query Store Optimizer](#sql-query-store-optimizer)               | No                               | No             | [?]        | [SQL Query Store Optimizer]                 | 2016-07-01   | Idera                 |            | Yes            | No    |
+| [Rapid SQL](#rapid-sql)                                               | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [Rapid SQL]                                 | ?            | Idera                 |            | No             |  $710 |
+| [SQL Comparison Toolset](#sql-comparison-toolset)                     | No                               | No             | [DC], [SC] | [SQL Comparison Toolset]                    | ?            | Idera                 |            | No             |  $745 |
+| [ER/Studio Data Architect](#erstudio-data-architect)                  | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ER/Studio Data Architect]                  |              | Idera                 |            | No             | $1287 |
+| [DB Change Manager](#db-change-manager)                               | Oracle, MySQL, PostgreSQL, Other | No             | [SC]       | [DB Change Manager]                         | ?            | Idera                 |            | No             | $1420 |
+| [Uptime Infrastructure Monitor](#uim)                                 | No                               | Linux          | [?]        | [Uptime Infrastructure Monitor]             | ?            | Idera                 |            | No             | ?     |
+| [dbForge Schema Compare](#dbforge-schema-compare)                     | No                               | No             | [SC]       | [dbForge Schema Compare]                    | 2016-09-16   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Data Compare](#dbforge-data-compare)                         | No                               | No             | [DC]       | [dbForge Data Compare]                      | 2016-09-28   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Data Generator](#dbforge-data-generator)                     | No                               | No             | [G]        | [dbForge Data Generator]                    | 2016-09-16   | Devart                | Shareware  | No             |  $250 |
+| [dbForge Query Builder](#dbforge-query-builder)                       | No                               | No             | [?]        | [dbForge Query Builder]                     | 2016-08-17   | Devart                | Shareware  | No             |  $100 |
+| [dbForge Event Profiler](#dbforge-event-profiler)                     | No                               | No             | [?]        | [dbForge Event Profiler]                    | 2016-09-16   | Devart                | Freeware   | Yes            | No    |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                       | No                               | No             | [?]        | [dbForge SQL Decryptor]                     | 2017-04-20   | Devart                | Freeware   | Yes            | No    |
+| [dbForge Studio](#dbforge-studio)                                     | No                               | No             | [MS]       | [dbForge Studio]                            | 2017-03-12   | Devart                | Shareware  | Yes            |  $250 |
+| [dbForge Fusion](#dbforge-fusion)                                     | No                               | No             | [?]        | [dbForge Fusion]                            | 2016-12-27   | Devart                | Shareware  | No             |  $150 |
+| [dbForge Documenter](#dbforge-documenter)                             | No                               | No             | [D]        | [dbForge Documenter]                        | 2016-09-16   | Devart                | Shareware  | No             |  $150 |
+| [Devart Excel Add-in for SQL Server](#devart-excel-addin)             | No                               | No             | [?]        | [Devart Excel Add-in for SQL Server]        | 2017-09-13   | Devart                | Shareware  | No             |  $100 |
+| [dbMonitor](#dbmonitor)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [M]        | [dbMonitor]                                 | 2012-11-01   | Devart                | Freeware   | Yes            | No    |
+| [Minion Enterprise](#minion-enterprise)                               | No                               | No             | [?]        | [Minion Enterprise]                         | ?            | MinionWare            |            | No             | $1500 |
+| [SQL Server Compression Estimator](#sql-server-compression-estimator) | No                               | No             | [?]        | [SQL Server Compression Estimator]          | 2011-06-02   | Bob Tavlor            |            | Yes            | No    |
+| [ClearTrace](#cleartrace)                                             | No                               | No             | [?]        | [ClearTrace]                                | 2016-07-07   | Bill Graziano         |            | Yes            | No    |
+| [Dell Security Explorer](#dell-security-explorer)                     | No                               | No             | [?]        | [Dell Security Explorer]                    | 2015-06-25   | Dell                  |            | No             |  $850 |
+| [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)       | No                               | No             | [?]        | [Dell LiteSpeed for SQL Server]             | 2015-07-31   | Dell                  |            | No             | ?     |
+| [Dell Toad for SQL Server](#dell-toad-for-sql-server)                 | No                               | No             | [MS]       | [Dell Toad for SQL Server]                  | 2015-05-12   | Dell                  |            | No             | ?     |
+| [Dell Spotlight on SQL Server Enterprise](#dell-spotlight)            | No                               | No             | [?]        | [Dell Spotlight]                            | 2016-03-10   | Dell                  |            | No             | $2561 |
+| [Dell Foglight](#dell-foglight)                                       | No                               | No             | [?]        | [Dell Foglight]                             | 2015-09-22   | Dell                  |            | No             | ?     |
+| [Dell Discovery Wizard](#dell-discovery-wizard)                       | No                               | No             | [?]        | [Dell Discovery Wizard]                     | 2011-09-22   | Dell                  |            | Yes            | No    |
+| [Dell Enterprise Reporter](#dell-enterprise-reporter)                 | No                               | No             | [?]        | [Dell Enterprise Reporter]                  | ?            | Dell                  |            | No             | $511  |
+| [SQL Scripter](#sql-scripter)                                         | No                               | No             | [?]        | [SQL Scripter]                              | 2013-02-24   | Thomas Hinsenkamp     |            | No             |   €99 |
+| [Simple Dynamic Scheduler](#simple-dynamic-scheduler)                 | No                               | No             | [?]        | [Simple Dynamic Scheduler]                  | 2016-05-02   | Miljan Radovic        |            | Yes            | No    |
+| [ApexSQL Audit](#apexsql-audit)                                       | No                               | No             | [?]        | [ApexSQL Audit]                             | 2017-07-11   | ApexSQL               |            | No             | $1699 |
+| [ApexSQL Backup](#apexsql-backup)                                     | No                               | No             | [B]        | [ApexSQL Backup]                            | 2017-10-12   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Defrag](#apexsql-defrag)                                     | No                               | No             | [IDX]      | [ApexSQL Defrag]                            | 2017-06-29   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Log](#apexsql-log)                                           | No                               | No             | [?]        | [ApexSQL Log]                               | 2017-05-24   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Monitor](#apexsql-monitor)                                   | No                               | No             | [M]        | [ApexSQL Monitor]                           | 2017-10-05   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Plan](#apexsql-plan)                                         | No                               | No             | [?]        | [ApexSQL Plan]                              | 2017-10-26   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Propagate](#apexsql-propagate)                               | No                               | No             | [?]        | [ApexSQL Propagate]                         | 2017-09-25   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Recover](#apexsql-recover)                                   | No                               | No             | [REC]      | [ApexSQL Recover]                           | 2017-10-26   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Build](#apexsql-build)                                       | No                               | No             | [?]        | [ApexSQL Build]                             | 2017-05-15   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Clean](#apexsql-clean)                                       | No                               | No             | [?]        | [ApexSQL Clean]                             | 2017-09-28   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Data Diff](#apexsql-data-diff)                               | No                               | No             | [DC]       | [ApexSQL Data Diff]                         | 2017-10-26   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Decrypt](#apexsql-decrypt)                                   | No                               | No             | [?]        | [ApexSQL Decrypt]                           | 2017-08-16   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Diff](#apexsql-diff)                                         | No                               | No             | [SC]       | [ApexSQL Diff]                              | 2017-10-26   | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Doc](#apexsql-doc)                                           | No                               | No             | [D]        | [ApexSQL Doc]                               | 2017-09-06   | ApexSQL               |            | No             |  $299 |
+| [ApexSQL Generate](#apexsql-generate)                                 | No                               | No             | [G]        | [ApexSQL Generate]                          | 2017-07-13   | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Script](#apexsql-script)                                     | No                               | No             | [?]        | [ApexSQL Script]                            | 2016-05-10   | ApexSQL               |            | No             |  $249 |
+| [ApexSQL Trigger](#apexsql-trigger)                                   | No                               | No             | [?]        | [ApexSQL Trigger]                           | 2017-06-01   | ApexSQL               |            | No             | $1999 |
+| [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                     | No                               | No             | [?]        | [ApexSQL Trigger Viewer]                    | 2017-06-01   | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)                 | No                               | No             | [?]        | [ApexSQL Snapshot Utility]                  | 2016-01-12   | ApexSQL               |            | Yes            | No    |
+| [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                       | No                               | No             | [?]        | [DBBest T-SQL Analyzer]                     | 2015-03-13   | DBBest                |            | No             |   $89 |
+| [DBBest Database Compare Suite](#dbbest-database-compare-suite)       | No                               | No             | [SC], [DC] | [DBBest Database Compare Suite]             | 2015-09-04   | DBBest                |            | No             |  $349 |
+| [Advanced Query Tool](#advanced-query-tool)                           | No                               | No             | [?]        | [Advanced Query Tool]                       | 2015-03-18   | Cardett Associates    |            | No             |  $180 |
+| [SqlDiffFramework](#sqldiffframework)                                 | No                               | No             | [SC]       | [SqlDiffFramework]                          | 2012-04-17   | Michael Sorens        |            | Yes            | No    |
+| [DataGrip](#datagrip)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [DataGrip]                                  | 2017-02-21   | Jet Brains            |            | No             |   $89 |
+| [Pssdiag and Sqldiag Manager](#pssdiag-and-sqldiag-manager)           | No                               | No             | [?]        | [Pssdiag and Sqldiag Manager]               | 2017-01-06   | Jack Li               |            | Yes            | No    |
+| [SQL Nexus Tool](#sql-nexus-tool)                                     | No                               | No             | [?]        | [SQL Nexus Tool]                            | 2016-11-20   | Jack Li               |            | Yes            | No    |
+| [DBSophic Qure Profiler](#dbsophic-qure-profiler)                     | No                               | No             | [?]        | [DBSophic Qure Profiler]                    | ?            | DBSophic              |            | No             |  $300 |
+| [DBSophic Qure Optimizer](#dbsophic-qure-optimizer)                   | No                               | No             | [?]        | [DBSophic Qure Optimizer]                   | ?            | DBSophic              |            | No             | ?     |
+| [RestoreChecker](#restorechecker)                                     | No                               | No             | [?]        | [RestoreChecker]                            | 2015-01-15   | SQLServerUtilities    |            | No             |   $99 |
+| [SQLScripter](#sqlscripter)                                           | No                               | No             | [?]        | [SQLScripter]                               | 2009-08-24   | SQLServerUtilities    |            | No             |   $99 |
+| [SQLC](#sqlc)                                                         | No                               | No             | [DC], [SC] | [SQLC]                                      | 2017-11-19   | David Ingleton        |            | Yes            | No    |
+| [Database Performance Analyzer](#dpa-solarwinds)                      | Oracle, MySQL, Other             | Linux          | [M]        | [Database Performance Analyzer]             | ?            | SolarWinds            |            | No             | $1995 |
+| [Database Performance Analyzer for MSSQL](#dpa-solarwinds-mssql)      | No                               | No             | [M]        | [Database Performance Analyzer for MSSQL]   | ?            | SolarWinds            |            | No             | $1995 |
+| [SQL Enlight](#sql-enlight)                                           | No                               | No             | [MS]       | [SQL Enlight]                               | 2016-04-25   | UbitSoft              |            | No             |  $295 |
+| [Aireforge Studio](#aireforge-studio)                                 | No                               | No             | [MG], [SC] | [Aireforge Studio]                          | 2017-06-21   | AireForge             |            | Yes            |  $299 |
+| [HexaTier](#hexatier)                                                 | No                               | No             | [?]        | [HexaTier]                                  | ?            | HexaTier              |            | No             | ?     |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)                     | Oracle, MySQL, PostgreSQL, Other | No             | [MS]       | [SoftTree SQL Assistant]                    | 2017-12-17   | SoftTree              |            | No             |  $215 |
+| [DB Audit and Security 360](#db-audit-and-security-360)               | Oracle, MySQL, Other             | No             | [?]        | [DB Audit and Security 360]                 | 2015-02-07   | SoftTree              |            | No             |  $499 |
+| [EMS SQL Management Studio](#ems-management-studio)                   | No                               | No             | [MS]       | [EMS SQL Management Studio]                 | 2016-05-26   | EMS                   |            | No             |  $257 |
+| [EMS SQL Backup](#ems-sql-backup)                                     | No                               | No             | [B]        | [EMS SQL Backup]                            | 2016-04-13   | EMS                   |            | Yes            |  $82  |
+| [EMS SQL Administrator](#ems-sql-administrator)                       | No                               | No             | [?]        | [EMS SQL Administrator]                     | 2015-04-14   | EMS                   |            | Yes            |  $135 |
+| [EMS SQL Manager](#ems-sql-manager)                                   | No                               | No             | [?]        | [EMS SQL Manager]                           | 2016-05-26   | EMS                   |            | Yes            |  $135 |
+| [EMS Data Export](#ems-data-export)                                   | No                               | No             | [?]        | [EMS Data Export]                           | 2016-04-29   | EMS                   |            | No             |   $47 |
+| [EMS Data Import](#ems-data-import)                                   | No                               | No             | [?]        | [EMS Data Import]                           | 2016-04-14   | EMS                   |            | No             |   $47 |
+| [EMS Data Pump](#ems-data-pump)                                       | No                               | No             | [?]        | [EMS Data Pump]                             | 2016-11-03   | EMS                   |            | No             |   $47 |
+| [EMS Data Generator](#ems-generator)                                  | No                               | No             | [G]        | [EMS Data Generator]                        | 2010-07-10   | EMS                   |            | No             |   $47 |
+| [EMS DB Comparer](#ems-bd-comparer)                                   | No                               | No             | [SC]       | [EMS DB Comparer]                           | 2015-07-24   | EMS                   |            | No             |   $47 |
+| [EMS DB Extract](#ems-bd-extract)                                     | No                               | No             | [?]        | [EMS DB Extract]                            | 2008-10-16   | EMS                   |            | No             |   $47 |
+| [EMS SQL Query](#ems-sql-query)                                       | No                               | No             | [?]        | [EMS SQL Query]                             | 2012-03-29   | EMS                   |            | No             |   $47 |
+| [EMS Data Comparer](#ems-data-comparer)                               | No                               | No             | [DC]       | [EMS Data Comparer]                         | 2012-11-16   | EMS                   |            | No             |   $47 |
+| [NitroAccelerator](#nitroaccelerator)                                 | No                               | No             | [?]        | [NitroAccelerator]                          | 2016-07-10   | Nitrosphere           |            | No             | $1265 |
+| [ERwin Data Modeler](#erwin-data-modeler)                             | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [ERwin Data Modeler]                        | 2016-06-03   | ERwin                 |            | No             |  $810 |
+| [Toad Data Modeler](#toad-data-modeler)                               | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [Toad Data Modeler]                         | 2016-06-16   | Dell                  |            | No             |  $562 |
+| [SQL Power Architect](#sql-power-architect)                           | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [SQL Power Architect]                       | 2016-02-11   | SQLPower              |            | Yes            |  $995 |
+| [DbWrench](#dbwrench)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [DbWrench]                                  | 2016-07-06   | Nizana Systems        |            | No             |   $99 |
+| [Navicat Data Modeler](#navicat-data-modeler)                         | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [Navicat Data Modeler]                      | 2016-08-01   | PremiumSoft           |            | No             |  $199 |
+| [DeZign for Databases](#dezign-for-databases)                         | Oracle, MySQL, PostgreSQL, Other | No             | [DA]       | [DeZign for Databases]                      | 2016-04-25   | Datanamic             |            | No             |  $259 |
+| [ERDesigner NG](#erdesigner-ng)                                       | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [DA]       | [ERDesigner NG]                             | 2013-04-10   | Mirko Sertic          |            | Open Source    | No    |
+| [Vertabelo](#vertabelo)                                               | Oracle, MySQL, PostgreSQL, Other | Online         | [DA]       | [Vertabelo]                                 | ?            | Vertabelo             |            | No             |  $948 |
+| [dbDiffo](#dbdiffo)                                                   | Oracle, MySQL, PostgreSQL, Other | Online         | [DA]       | [dbDiffo]                                   | ?            | Contenet Ltd          |            | Yes            | No    |
+| [SQL DXP](#sql-dxp)                                                   | Oracle, MySQL                    | No             | [DC], [SC] | [SQL DXP]                                   | 2016-06-20   | SQL Delta             |            | No             |  $530 |
+| [Aqua Data Studio](#aqua-data-studio)                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [Aqua Data Studio]                          | 2016-07-06   | AquaFold              |            | No             |  $499 |
+| [RazorSQL](#razorsql)                                                 | Oracle, MySQL, PostgreSQL, Other | Linux, Mac     | [MS]       | [RazorSQL]                                  | 2016-09-29   | Richardson Software   |            | No             |  $100 |
+| [SQL Pretty Printer](#sql-pretty-printer)                             | No                               | No             | [?]        | [SQL Pretty Printer]                        | 2016-02-19   | Gudu Software         |            | No             |   $50 |
+| [Database .NET](#database-net)                                        | Oracle, MySQL, PostgreSQL, Other | No             | [MS], [SC] | [Database .NET]                             | 2017-01-13   | fish's dotNET         |            | Non-commercial |   $69 |
+| [dbMigration .NET](#dbmegration-net)                                  | Oracle, MySQL, PostgreSQL, Other | No             | [DC], [SC] | [dbMigration .NET]                          | 2017-01-13   | fish's dotNET         |            | Non-commercial |   $49 |
+| [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                                 | 2017-04-06   | Bill Graziano         |            | Non-commercial | No    |
+| [Database Experimentation Assistant Technical Preview 2](#dea)        | No                               | No             | [T]        | [Database Experimentation Assistant]        | 2017-03-24   | Microsoft             |            | Yes            | No    |
+| [Data Platform Studio](#dps)                                          | No                               | No             | [MG]       | [Data Platform Studio]                      | ?            | Red Gate Software     |            | Yes            | ?     |
+| [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                    | ?            | boxfuse               |            | Open Source    | No    |
+| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                 | 2016-10-24   | Liquibase             |            | Open Source    | No    |
+| [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis              |            | Open Source    | No    |
+| [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne             |            | Yes            | No    |
+| [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne             |            | No             | ?     |
+| [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             |            | No             | ?     |
+| [xSQL Schema Compare](#xsql-schema-compare)                           | No                               | No             | [SC]       | [xSQL Schema Compare]                       | 2017-03-01   | xSQL Software         | Shareware  | Yes            | $399  |
+| [xSQL Data Compare](#xsql-data-compare)                               | No                               | No             | [DK]       | [xSQL Data Compare]                         | 2017-06-26   | xSQL Software         | Shareware  | Yes            | $399  |
+| [xSQL Script Executor](#xsql-script-executor)                         | MySQL, DB2, SQL Server CE        | No             | [?]        | [xSQL Script Executor]                      | 2015-02-25   | xSQL Software         | Freeware   | Yes            | $249  |
+| [xSQL Builder](#xsql-builder)                                         | No                               | No             | [?]        | [xSQL Builder]                              | 2017-03-15   | xSQL Software         | Shareware  | No             | $799  |
+| [xSQL Documenter](#xsql-documenter)                                   | Oracle, MySQL, SQLite, Other     | No             | [D]        | [xSQL Documenter]                           | 2017-01-04   | xSQL Software         | Shareware  | No             | $199  |
+| [xSQL Profiler](#xsql-profiler)                                       | No                               | No             | [?]        | [xSQL Profiler]                             | 2017-06-28   | xSQL Software         | Shareware  | Yes            | $999  |
+| [xSQL Schema Compare SDK](#xsql-schema-compare-sdk)                   | No                               | No             | [SC]       | [xSQL Schema Compare SDK]                   | 2017-10-25   | xSQL Software         | Shareware  | No             | $1499 |
+| [xSQL RSS Reporter](#xsql-rss-reporter)                               | No                               | No             | [D]        | [xSQL RSS Reporter]                         | 2014-11-25   | xSQL Software         | Shareware  | No             | $169  |
+| [xSQL Database Searcher](#xsql-database-sercher)                      | No                               | No             | [S]        | [xSQL Database Searcher]                    | 2017-05-09   | xSQL Software         | Freeware   | Yes            | No    |
+| [Cloud-based DB Monitoring Platform](#cbmp)                           | No                               | Android, iOS   | [M]        | [Cloud-based DB Monitoring Platform]        | ?            | SQLTreeo              |            | No             |  €180 |
+| [SchemaCrawler](#schema-crawler)                                      | Oracle, PostgreSQL, MySQL, Other | Yes            | [D], [SC]  | [SchemaCrawler]                             | 2017-02-27   | Sualeh Fatehi         |            | Open Source    | No    |
+| [SA MaaS Microsoft SQL Server](#sa-maas)                              | No                               | No             | [M]        | [SA MaaS Microsoft SQL Server]              | ?            | SENTINELAGENT         |            | No             | ?     |
+| [CatCompare v2](#cat-compare)                                         | No                               | No             | [?]        | [CatCompare v2]                             | 2017-01-07   | Andy Leonard          |            | No             |  $295 |
+| [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)           | No                               | No             | [?]        | [SSIS Catalog Compare v2.0 Bundle]          | 2017-01-06   | Andy Leonard          |            | No             |  $495 |
+| [MS Kerberos Configuration Manager](#mkcm)                            | No                               | No             | [?]        | [MS Kerberos Configuration Manager]         | 2017-01-31   | Microsoft             |            | Yes            | No    |
+| [Spotlight](#spotlight)                                               | No                               | No             | [M]        | [Spotlight]                                 | ?            | Quest Software        |            | Yes            | ?     |
+| [DBConvert Studio](#dbconvert-studio)                                 | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [DBConvert Studio]                          | 2017-03-01   | DMSoft Technologies   |            | No             |  $499 |
+| [DbDefence](#dbdefence)                                               | No                               | No             | [?]        | [DbDefence]                                 | 2017-03-01   | ActiveCrypt Software  |            | Yes            |  $698 |
+| [SQL Server Migration Assistant for MySQL](#ssma-mysql)               | MySQL                            | No             | [MG]       | [SQL Server Migration Assistant for MySQL]  | 2017-02-17   | Microsoft             |            | Yes            | No    |
+| [sqlcmd for Mac and Linux](#sqlcmd)                                   | No                               | Linux, Mac     | [?]        | [sqlcmd for Mac and Linux]                  | 2017-01-26   | Soheil Rashidi        |            | Open Source    | No    |
+| [SQL Migrator](#sql-migrator)                                         | No                               | No             | [MG]       | [SQL Migrator]                              | ?            | Datamate Technology   |            | ?              | ?     |
+| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)           | No                               | No             | [MG]       | [MS FoxPro to MS SQL Migration and Sync]    | 2013-10-08   | DMSoft Technologies   |            | No             |  $149 |
+| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)                | No                               | No             | [MG]       | [MySQL to MS SQL Migration and Sync]        | 2013-10-08   | DMSoft Technologies   |            | No             |  $149 |
+| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)              | No                               | No             | [MG]       | [Oracle to MS SQL Migration and Sync]       | 2013-10-09   | DMSoft Technologies   |            | No             |  $149 |
+| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver)      | No                               | No             | [MG]       | [PostgreSQL to MS SQL Migration and Sync]   | 2013-10-08   | DMSoft Technologies   |            | No             |  $149 |
+| [MS Excel to MS SQL Migration](#msexcel-sqlserver)                    | No                               | No             | [MG]       | [MS Excel to MS SQL Migration]              | 2013-09-23   | DMSoft Technologies   |            | No             |  $149 |
+| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)             | No                               | No             | [MG]       | [SQLite to MS SQL Migration and Sync]       | 2014-05-08   | DMSoft Technologies   |            | No             |  $149 |
+| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)                | No                               | No             | [MG]       | [IBM DB2 to MS SQL Migration and Sync]      | 2013-09-09   | DMSoft Technologies   |            | No             |  $149 |
+| [MS Access to MS SQL Migration and Sync](#access-sqlserver)           | No                               | No             | [MG]       | [MS Access to MS SQL Migration and Sync]    | 2013-10-08   | DMSoft Technologies   |            | No             |  $149 |
+| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)          | No                               | No             | [MG]       | [Firebird to MS SQL Migration and Sync]     | 2013-09-11   | DMSoft Technologies   |            | No             |  $149 |
+| [SQLines SQL Converter](#sqllines-converter)                          | No                               | No             | [MG]       | [SQLines SQL Converter]                     | ?            | Dmtolpeko             |            | Open Source    | No    |
+| [SQLite & SQL Server Compact Toolbox](#sqlite-and-sqlserver-toolbox)  | No                               | No             | [?]        | [SQLite & SQL Server Compact Toolbox]       | ?            | ErikEJ                |            | Open Source    | No    |
+| [SqlPad](#sqlpad)                                                     | Postgres, MySQL, Crate, Vertica  | No             | [MS]       | [SqlPad]                                    | ?            | Rickbergfalk          |            | Open Source    | No    |
+| [Html-query-plan](#html-query-plan)                                   | No                               | No             | [?]        | [Html-query-plan]                           | ?            | JustinPealing         |            | Open Source    | No    |
+| [SqlQueryStress](#sql-query-stress)                                   | No                               | No             | [?]        | [SqlQueryStress]                            | ?            | Adam Machanic         |            | Open Source    | No    |
+| [SQL Server Migration Assistant for DB2](#ssma-db2)                   | DB2                              | No             | [MG]       | [SQL Server Migration Assistant for DB2]    | 2017-02-17   | Microsoft             |            | Yes            | No    |
+| [SQL Server Migration Assistant for Oracle](#ssma-oracle)             | Oracle                           | No             | [MG]       | [SQL Server Migration Assistant for Oracle] | 2017-02-17   | Microsoft             |            | Yes            | No    |
+| [SQL Server Migration Assistant for Access](#ssma-access)             | Access                           | No             | [MG]       | [SQL Server Migration Assistant for Access] | 2017-02-17   | Microsoft             |            | Yes            | No    |
+| [mssql for Visual Studio Code](#mssql-for-vs-code)                    | No                               | Linux, Mac     | [MS]       | [mssql for Visual Studio Code]              | 2017-05-02   | Microsoft             |            | Open Source    | No    |
+| [Microsoft Assessment and Planning](#map)                             | No                               | No             | [?]        | [Microsoft Assessment and Planning]         | 2017-02-10   | Microsoft             |            | Yes            | No    |
+| [mssql-scripter](#mssql-scripter)                                     | No                               | Linux, Mac     | [?]        | [mssql-scripter]                            | ?            | Microsoft             |            | Open Source    | No    |
+| [DBFS](#dbfs)                                                         | No                               | Linux          | [M]        | [DBFS]                                      | ?            | Microsoft             |            | Open Source    | No    |
+| [comparator](#pumpet-comparator)                                      | Oracle, PostgreSQL, MySQL, Other | No             | [DC]       | [comparator]                                | 2017-06-06   | Pumpet                | [LGPL-3.0] | Open Source    | No    |
+| [Navicat for SQL Server](#navicat-for-sql-server)                     | No                               | Mac            | [MS]       | [Navicat for SQL Server]                    | 2017-06-14   | PremiumSoft           |            | No             |  $699 |
+| [Navicat Premium](#navicat-premium)                                   | Oracle, PostgreSQL, MySQL, Other | Mac            | [MS]       | [Navicat Premium]                           | 2017-06-14   | PremiumSoft           |            | No             | $1299 |
+| [DbVisualizer](#dbvisualizer)                                         | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MS], [DA] | [DbVisualizer]                              | 2017-11-16   | DbVis Software AB.    |            | Yes            |  $197 |
+| [DbSchema](#dbschema)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [DA]       | [DbSchema]                                  | 2017-06-19   | Wise Coders Solutions |            | Yes            |  $127 |
+| [DBGhost](#dbghost)                                                   | No                               | No             | [?]        | [DBGhost]                                   | 2017-01-31   | Innovartis Ltd        |            | No             |  £430 |
+| [SQLAutomate](#sqlautomate)                                           | Oracle, MySQL, Other             | No             | [?]        | [SQLAutomate]                               | 2017-06-19   | OnLine ToolWorks      |            | No             |   $99 |
+| [BimlExpress](#bimlexpress)                                           | No                               | No             | [?]        | [BimlExpress]                               | ?            | Varigence             |            | No             | No    |
+| [BIDS Helper](#bidshelper)                                            | No                               | No             | [?]        | [BIDS Helper]                               | 2015-03-17   | Microsoft             |            | Open Source    | No    |
+| [Azure Data Warehouse Migration Utility](#azure-data-migration)       | No                               | No             | [MG]       | [Azure Data Warehouse Migration Utility]    | ?            | Microsoft             |            | ?              | ?     |
+| [Dell Benchmark Factory](#dell-benchmark-factory)                     | Oracle, MySQL, Other             | No             | [T]        | [Dell Benchmark Factory]                    | ?            | Quest Software        |            | No             | $4413 |
+| [manduka](#maduka)                                                    | ?                                | Linux, Mac     | [?]        | [manduka]                                   | 2017-03-08   | Virtusa Corporation   |            | Yes            | No    |
+| [PowerBI Desktop](#powerbi-desktop)                                   | Oracle, PostgreSQL, MySQL, Other | No             | [BI]       | [PowerBI Desktop]                           | 2017-07-11   | Microsoft             |            | Yes            |  ?    |
+| [Stellar Phoenix SQL Database Repair](#stellar-phoenix)               | No                               | No             | [REC]      | [Stellar Phoenix SQL Database Repair]       | 2017-07-05   | Stellar Technology    |            | No             |  $349 |
+| [DataNumen SQL Recovery](#datanumen-sql-recovery)                     | No                               | No             | [REC]      | [DataNumen SQL Recovery]                    | 2017-03-20   | DataNumen             |            | No             |  $500 |
+| [Recovery Toolbox for SQL Server](#recovery-toolbox-for-sql-server)   | No                               | No             | [REC]      | [Recovery Toolbox for SQL Server]           | ?            | Recovery Toolbox      | Shareware  | No             |  $99  |
+| [SQL MDF Viewer](#sql-mdf-viewer)                                     | No                               | No             | [?]        | [SQL MDF Viewer]                            | ?            | SysTools              | Shareware  | No             |  $129 |
+| [SQL MDF Recovery Tool](#sql-mdf-recovery-tool)                       | No                               | No             | [REC]      | [SQL MDF Recovery Tool]                     | ?            | SysTools              | Shareware  | No             |  $129 |
+| [SQL Passord Recovery](#sql-password-recovery)                        | No                               | No             | [REC]      | [SQL Passord Recovery]                      | ?            | SysTools              | Shareware  | No             |  $69  |
+| [SQL Decryptor](#sql-decryptor)                                       | No                               | No             | [?]        | [SQL Decryptor]                             | ?            | SysTools              | Shareware  | No             |  $69  |
+| [SQL Backup Database Recovery](#sql-backup-database-recovery)         | No                               | No             | [REC]      | [Backup Database Recovery]                  | ?            | SysTools              | Shareware  | No             |  $149 |
+| [SQL Log File Viewer](#sql-log-file-viewer)                           | No                               | No             | [?]        | [Log File Viewer]                           | ?            | SysTools              | Shareware  | No             |  $999 |
+| [DAX Studio](#dax-studio)                                             | No                               | No             | [?]        | [DAX Studio]                                | ?            | Sqlbi                 | Freeware   | Yes            | No    |
+| [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
+| [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
+| [Azure Database Migration Service](#azure-db-migration)               | Oracle, MySQL, Other             | Online         | [MG]       | [Azure Database Migration Service]          | 2017-12-01   | Microsoft             |            | Yes            |    No |
+| [FlowHeater](#flowheater)                                             | Oracle, PostgreSQL, MySQL, Other | No             | [ETL]      | [FlowHeater]                                | 2017-10-02   | FlowHeater GmbH       | Shareware  | No             |   $79 |
+| [EDIS](#edis)                                                         | No                               | No             | [ETL]      | [EDIS]                                      | ?            | SQL ETL               | Shareware  | Yes            |  $599 |
 
-
-## SSMS
 <a id="ssms"></a>
+## SSMS
 Download page: [SSMS]<br/>
-Release date: 2017-01-26<br/>
-Support Version: 2005/2008/2012/2014/2016/vNext/Azure<br/>
+Release date: 2017-10-09<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -247,8 +299,8 @@ SSMS combines a broad group of graphical tools with a number of rich script edit
 This release features improved compatibility with previous versions of SQL Server, a stand-alone web installer, and toast notifications within SSMS when new releases become available.
 
 
-## bcp Utility
 <a id="bcp"></a>
+## bcp Utility
 Download page: [bcp Utility]<br/>
 Release date: 2012-02-11<br/>
 Support Version: 2008/2012/2014/2016<br/>
@@ -260,6 +312,63 @@ The bcp utility bulk copies data between an instance of MicrosoftSQL Server and 
 The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
 Except when used with the queryout option, the utility requires no knowledge of Transact-SQL.
 To import data into a table, you must either use a format file created for that table or understand the structure of the table and the types of data that are valid for its columns.
+
+
+<a id="sqlcmd-utility"></a>
+## sqlcmd Utility
+Download page: [sqlcmd Utility]<br/>
+Release date: 2016-08-23<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The SQLCMD utility allows users to connect to, send Transact-SQL batches from, and output rowset information from SQL Server instances. 
+The bcp utility bulk copies data between an instance of Microsoft SQL Server and a data file in a user-specified format. 
+The bcp utility can be used to import large numbers of new rows into SQL Server tables or to export data out of tables into data files.
+
+
+<a id="mssql-cli"></a>
+## mssql-cli
+Download page: [mssql-cli]<br/>
+Release date: 2017-12-13<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+Interactive command line query tool for SQL Server.
+
+ - Auto-completion
+ - Syntax highlighting
+ - Query history
+ - Configuration file support
+ - Multi-line queries
+
+
+<a id="sos"></a>
+## SQL OPS Studio
+Download page: [SQL OPS Studio]<br/>
+Release date: 2017-11-15<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Operations Studio is a data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux.
+
+ - Cross-Platform DB management for Windows, macOS and Linux with simple XCopy deployment
+ - SQL Server Connection Management with Connection Dialog, Server Groups, and Registered Servers
+ - Object Explorer supporting schema browsing and contextual command execution
+ - T-SQL Query Editor with advanced coding features such as autosuggestions, error diagnostics, tooltips, formatting and peek definition
+ - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
+ - Management Dashboard supporting customizable widgets with drill-through actionable insights
+ - Visual Data Editor that enables direct row insertion, update and deletion into tables
+ - Backup and Restore dialogs that enables advanced customization and remote filesystem browsing, configured tasks can be executed or scripted
+ - Task History window to view current task execution status, completion results with error messages and task T-SQL scripting
+ - Scripting support to generate CREATE, SELECT and DROP statements for database objects
+ - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+ - Modern light-weight shell with theming, user settings, full screen support, integrated terminal and numerous other features
 
 
 ## RML Utilities for SQL Server
@@ -337,6 +446,19 @@ Log parser is a powerful, versatile tool that provides universal query access to
 XML files and CSV files, as well as key data sources on the Windows operating system such as the Event Log, the Registry, the file system, and Active Directory.
 
 
+## Log Parser Lizard GUI
+<a id="log-parser-lizard-gui"></a>
+Download page: [Log Parser Lizard GUI]<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Lizard Labs<br/>
+Free version: Yes<br/>
+Price: $59<br/>
+
+Log Parser Lizard is a GUI for Microsoft Logparser, definitely the best one available on the market today.
+Log Parser is a very powerful and versatile query software tool that provides universal query access (using SQL) to text-based data, such as log files, XML files, and TSV/CSV text files, as well as key data sources on the Microsoft Windows operating system, such as the Windows Event Log, IIS log, the registry, the File System, the Active Directory services and much more.
+
+
 ## Diskspd
 <a id="diskspd"></a>
 Download page: [Diskspd]<br/>
@@ -405,8 +527,8 @@ Supports MSSQL, Oracle, SAP, Firebird, Mysql, PostgreSQL, DB2, Informix, SQLite,
 ## SQL Server Data Tools
 <a id="ssdt"></a>
 Download page: [SQL Server Data Tools]<br/>
-Release date: 2016-10-26<br/>
-Support Version: 2008/2012/2014/2016/Azure<br/>
+Release date: 2017-04-15<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -499,8 +621,8 @@ ExpressProfiler (aka **SqlExpress Profiler**) is a simple and fast replacement f
 ## Data Migration Assistant
 <a id="data-migration-assistant"></a>
 Download page: [Data Migration Assistant]<br/>
-Release date: 2017-01-25<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-03-15<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -513,7 +635,7 @@ It allows you to not only move your schema and data, but also uncontained object
 ## SQL Server Migration Assistant for Sybase
 <a id="sybasetosql"></a>
 Download page: [Migration Assistant for Sybase]<br/>
-Release date: 2016-12-22<br/>
+Release date: 2017-02-17<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -1501,14 +1623,14 @@ Price: ?
  - Streamline incident management with native ServiceNow integration
 
 
-## dbForge Schema Compare
+ ## dbForge Schema Compare
 <a id="dbforge-schema-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-16<br/>
-Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-09-15<br/>
+Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: Devart<br/>
 Free version: No<br/>
-Price: $149
+Price: $150
 
 dbForge Schema Compare for SQL Server is a reliable tool that will save you time and effort when you need to compare databases on SQL Server.
 The relentlessly tested compare tool allows working with live SQL Server databases, database snapshots, and backups.
@@ -1518,7 +1640,7 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 ## dbForge Data Compare
 <a id="dbforge-data-compare"></a>
 Download page: [dbForge Schema Compare]<br/>
-Release date: 2016-09-28<br/>
+Release date: 2017-08-30<br/>
 Support Version: SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1532,7 +1654,7 @@ and effortlessly synchronize data via a convenient wizard with additional option
 ## dbForge Data Generator
 <a id="dbforge-data-generator"></a>
 Download page: [dbForge Data Generator]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-09-15<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1544,7 +1666,7 @@ dbForge Data Generator for SQL Server is a powerful GUI tool for fast generation
 ## dbForge Query Builder
 <a id="dbforge-query-builder"></a>
 Download page: [dbForge Query Builder]<br/>
-Release date: 2016-08-17<br/>
+Release date: 2017-08-30<br/>
 Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1559,7 +1681,7 @@ But even experienced users can save a lot of time on routine work.
 ## dbForge Event Profiler
 <a id="dbforge-event-profiler"></a>
 Download page: [dbForge Event Profiler]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2008/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1573,7 +1695,7 @@ You can use this information to identify and troubleshoot many SQL Server-relate
 ## dbForge SQL Decryptor
 <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
-Release date: 2016-01-22<br/>
+Release date: 2017-04-20<br/>
 Support Version: 2000/2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
@@ -1585,8 +1707,8 @@ Decrypt SQL Server Procedures, Functions, Triggers, and Views
 ## dbForge Studio
 <a id="dbforge-studio"></a>
 Download page: [dbForge Studio]<br/>
-Release date: 2016-09-22<br/>
-Support Version: Amazon RDS/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-08-03<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/2017/Amazon RDS/SQL Azure<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
 Price: $249
@@ -1615,7 +1737,7 @@ It provides an easier way to explore and maintain existing databases, design com
 ## dbForge Documenter
 <a id="dbforge-documenter"></a>
 Download page: [dbForge Documenter]<br/>
-Release date: 2016-09-16<br/>
+Release date: 2017-08-30<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1624,6 +1746,53 @@ Price: $149
 dbForge Documenter for SQL Server is a big time saver when it comes to documentation of SQL Server databases.
 This tool automatically generates documentation of an entire SQL Server database in a few clicks.
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements. 
+
+
+## dbForge Developer Bundle
+<a id="dbforge-dev-bundle"></a>
+Download page: [dbForge Developer Bundle]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $849
+
+Developer Bundle for SQL Server is a tool pack that extends SSMS with many essential features aimed not only boost developers' productivity but also reduce expenses while performing routine tasks.
+ - Increase productivity, when creating complex queries and code writing with SQL Complete, Search, Documenter and Query Builder.
+ - Save your time while comparing and synchronizing data and schema with Source Control, Data Compare, and Schema Compare.
+ - Simplify the testing process drastically and generate intensional test data with Data Generator and Unit Test.
+ - Monitor SQL Server performance and troubleshoot database issues using Index Manager, Monitor, as well as Event Profiler.
+
+
+
+## dbForge Compare Bundle for SQL Server
+<a id="dbforge-compare-bundle"></a>
+Download page: [dbForge Compare Bundle for SQL Server]<br/>
+Release date: 2017-08-30<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $299
+
+One solution to handle SQL data and schema diffs.
+ - A variety of supported schema objects.
+ - Convenient comparison wizards will help you to tune data and schema comparisons up to your needs..
+ - Compare databases with different structures.
+ - Manage comparison results by applying filtering, grouping, exclude or include the needed objects to continue working with them, etc.
+ - Handy Synchronization wizards will help you to: create accurate synchronization scripts, migrate any schema differences, dependency check to script objects in the correct order for updates, resolve synchronization issues automatically, view warnings on controversial points prior to synchronization.
+ - Command-line interface.
+ 
+ 
+## Devart Excel Add-in for SQL Server
+<a id="devart-excel-addin"></a>
+Download page: [Devart Excel Add-in for SQL Server]<br/>
+Release date: 2017-09-13<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $100
+
+Devart Excel Add-ins allow you to work with database and cloud data in Microsoft Excel as with usual Excel spreadsheets.
 
 
 ## Minion Enterprise
@@ -1777,65 +1946,6 @@ Dell Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility
 including users and logins, roles and database permissions
 
 
-## SQLSolutions SQL Deadlock Detector
-<a id="sqlsolutions-sql-deadlock-detector"></a>
-Download page: [SQLSolutions SQL Deadlock Detector]<br/>
-Release date: 2013-05-16<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
- - Monitor and detect long-running locks and deadlocks 24/7
- - Identify blocking SQL code, locked objects and deadlock victims with pinpoint accuracy
- - Accelerate system response time by reducing long lock waits
-
-
-## SQLSolutions SQL Heartbeat
-<a id="sqlsolutions-sql-heartbeat"></a>
-Download page: [SQLSolutions SQL Heartbeat]<br/>
-Release date: 2013-03-03<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
- - Unlock the value of a full SQL Server trace
- - Quickly diagnose and identify all performance bottlenecks
- - Locate within minutes specific SQL statements responsible for each bottleneck
- - Proactively and constantly monitor performance through scheduled traces
-
-
-## SQLSolutions SQL Trace Analyzer
-<a id="sqlsolutions-sql-trace-analyzer"></a>
-Download page: [SQLSolutions SQL Trace Analyzer]<br/>
-Release date: 2009-12-09<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $495
-
-Monitor your SQL Server 24 x 7 to remedy performance bottlenecks and maintain server health.
-SQL Heartbeat monitors all of your SQL Servers in a way that allows you to identify and prevent SQL Server problems before they happen.
-SQL Heartbeat allows for an unlimited number of custom counters to be defined.
-Important metrics often include: logins per second, lack waits per second, total latch wait time, deadlocks per second, errors per second,
-buffer cache hits ratio, page life expectancy, percent CPU utilization and average disk queue lengths.
-As default metrics have been set up by SQL Server experts, the initial setup step is minimal.
-
-
-## SQLSolutions SQL Ultimate Debugger
-<a id="sqlsolutions-sql-ultimate-debugger"></a>
-Download page: [SQLSolutions SQL Ultimate Debugger]<br/>
-Release date: ?<br/>
-Support Version: ?<br/>
-Author: SQLSolutions<br/>
-Free version: No<br/>
-Price: $295
-
-The sql server tool for developers who debug SQL server stored procedures, functions (UDFs) and triggers.
-This tool allows a developer to inspect values of ALL objects: simple variables, temporary tables, table variables and even permanent tables.
-
-
 ## SQL Scripter
 <a id="sql-scripter"></a>
 Download page: [SQL Scripter]<br/>
@@ -1868,8 +1978,8 @@ Simple Dynamic Scheduler is alternative scheduling utility which uses SQL Server
 ## ApexSQL Audit
 <a id="apexsql-audit"></a>
 Download page: [ApexSQL Audit]<br/>
-Release date: 2016-04-08<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-11<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1699
@@ -1887,8 +1997,8 @@ Price: $1699
 ## ApexSQL Backup
 <a id="apexsql-backup"></a>
 Download page: [ApexSQL Backup]<br/>
-Release date: 2015-12-30<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-10-12<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1903,11 +2013,26 @@ Price: $499
  - Cleanup SQL backup and restore history
 
 
+## ApexSQL Defrag
+<a id="apexsql-defrag"></a>
+Download page: [ApexSQL Defrag]<br/>
+Release date: 2017-06-29<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $499
+
+ - Index fragmentation analysis
+ - Index defragmentation
+ - Custom policies: Use custom policies to automate database index maintenance
+ - Set thresholds for reorganizing and rebuilding jobs
+
+
 ## ApexSQL Log
 <a id="apexsql-log"></a>
 Download page: [ApexSQL Log]<br/>
-Release date: 2015-11-23<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-24<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $1999
@@ -1925,8 +2050,8 @@ Price: $1999
 ## ApexSQL Monitor
 <a id="apexsql-monitor"></a>
 Download page: [ApexSQL Monitor]<br/>
-Release date: 2015-12-29<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-10-05<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -1941,66 +2066,66 @@ Price: $499
  - Visualize data with logarithmic scaling
 
 
-## ApexSQL Recover
-<a id="apexsql-recover"></a>
-Download page: [ApexSQL Recover]<br/>
-Release date: 2015-01-21<br/>
-Support Version: 2008/2012/2014<br/>
+## ApexSQL Plan
+<a id="apexsql-plan"></a>
+Download page: [ApexSQL Plan]<br/>
+Release date: 2017-10-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
-Free version: No<br/>
-Price: $1999
+Free version: Yes<br/>
+Price: No
 
- - Recover deleted, dropped and truncated data
- - Reverse inadvertent or malicious database changes
- - Extract data directly from backup files
- - Recover deleted data and files from SharePoint
- - Recover deleted BLOBs
- - Extract BLOBs stored as files
+ - Analyze and optimize SQL query execution plans
+ - Identify query performance issues and deadlocks
+ - Understand query performance characteristics
+ - Analyze query waits & review query execution plans
+ - Customize graphical query execution plan view
+ - See the actual relative cost of each plan operator
+ - Analyze query live performance statistics
+ - Compare estimated and actual query execution plans
 
 
-## ApexSQL Restore
-<a id="apexsql-restore"></a>
-Download page: [ApexSQL Restore]<br/>
-Release date: 2014-12-08<br/>
-Support Version: 2008/2012/2014<br/>
+## ApexSQL Propagate
+<a id="apexsql-propagate"></a>
+Download page: [ApexSQL Propagate]<br/>
+Release date: 2017-09-25<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
-Free version: No<br/>
-Price: $399
+Free version: Yes<br/>
+Price: No
 
- - Work with backups just like with live databases
- - Mount backups to a specific point in time
- - Speed up SQL database restores
- - Access data and objects directly inside backups
- - Attach backups directly from network drives
- - Modify data without altering backup files
+ - Execute scripts on saved list of servers/databases
+ - Parse SQL scripts prior to execution
+ - Create SQL scripts directly in the application
+ - Manage lists of SQL scripts and SQL databases
+ - Set order of SQL scripts execution
+ - Export execution results into TXT or CSV file
+ - Preview exaction results by databases or by scripts
+ - Edit SQL scripts in a built-in IDE prior to execution
 
 
 ## ApexSQL Build
 <a id="apexsql-build"></a>
 Download page: [ApexSQL Build]<br/>
-Release date: 2015-12-22<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-15<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
 
-Run scripts on multiple databases at once
- - Create C# executables / .NET deployment packages
+ - Create executable installation packages
  - Deploy databases directly from SQL source control
  - Consolidate multiple SQL scripts
- - Build databases from scripts
- - source control
- - etc
+ - Build databases from scripts, source control, etc
  - Ensure error free deployments
  - Preview the script impact by action or SQL object
- - Execute scripts on saved list of servers/databases
 
 
 ## ApexSQL Clean
 <a id="apexsql-clean"></a>
 Download page: [ApexSQL Clean]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-09-28<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $399
@@ -2018,33 +2143,51 @@ Price: $399
 ## ApexSQL Data Diff
 <a id="apexsql-data-diff"></a>
 Download page: [ApexSQL Data Diff]<br/>
-Release date: 2015-12-11<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-10-03<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $399
+Price: $599
 
-Compare data in live databases and backups
+ - Compare data in live DBs, backups and SC projects
  - Perform row level recovery without restoring
- - Community
- - Standard
- - and Professional editions
+ - Community, Standard, and Professional editions
  - Compare huge databases quickly and without errors
  - Automate and schedule data migrations
  - Initiate database compares directly from SSMS
- - Export results to HTML
- - XML and Excel
- - Create executable .NET packages
+ - Export results to HTML, CSV and Excel
+ - Create executable installation packages
+ - Integrate with all popular SC systems e.g. Git, SVN
+ - Deploy data changes directly from a source control label
+
+
+## ApexSQL Decrypt
+<a id="apexsql-decrypt"></a>
+Download page: [ApexSQL Decrypt]<br/>
+Release date: 2017-08-16<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Decrypt SQL procedures, functions, triggers and views
+ - Initiate decryption directly from SSMS
+ - Decrypt objects with a single click
+ - Filter encrypted objects
+ - View original DDL script
+ - Export encrypted objects into a SQL script
+ - Decrypt databases from multiple servers
+ - Decrypt wizard with built-in IDE
 
 
 ## ApexSQL Diff
 <a id="apexsql-diff"></a>
 Download page: [ApexSQL Diff]<br/>
-Release date: 2016-03-23<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-10-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $399
+Price: $599
 
  - Compare live DBs, backups, scripts and SC projects
  - Deploy a database directly from source control
@@ -2058,13 +2201,13 @@ Price: $399
 ## ApexSQL Doc
 <a id="apexsql-doc"></a>
 Download page: [ApexSQL Doc]<br/>
-Release date: 2015-04-19<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-09-06<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $299
+Price: $699
 
-Document SQL Server databases and SSIS packages
+ - Document SQL Server databases and SSIS packages
  - Generate documentation in CHM, HTML, Word and PDF
  - Automate and schedule the documenting process
  - Display graphical relationship diagrams
@@ -2077,8 +2220,8 @@ Document SQL Server databases and SSIS packages
 ## ApexSQL Generate
 <a id="apexsql-generate"></a>
 Download page: [ApexSQL Generate]<br/>
-Release date: 2016-03-15<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-07-13<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
 Price: $499
@@ -2096,11 +2239,11 @@ Price: $499
 ## ApexSQL Script
 <a id="apexsql-script"></a>
 Download page: [ApexSQL Script]<br/>
-Release date: 2015-09-11<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-05-08<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $249
+Price: $399
 
  - Script both SQL database objects and data
  - Create executable .NET packages
@@ -2115,11 +2258,11 @@ Price: $249
 ## ApexSQL Trigger
 <a id="apexsql-trigger"></a>
 Download page: [ApexSQL Trigger]<br/>
-Release date: 2015-09-04<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $1999
+Price: $1299
 
  - Track data / DML changes in SQL Server databases
  - Integrate royalty free auditing into your apps
@@ -2129,6 +2272,31 @@ Price: $1999
  - Add additional data to audit trail with watches
  - Track schema / DDL changes in audited database
  - Audit who, what, and when for all changes
+
+
+## ApexSQL Trigger Viewer
+<a id="apexsql-trigger-viewer"></a>
+Download page: [ApexSQL Trigger Viewer]<br/>
+Release date: 2017-06-01<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+Read-only auditing reports for end users
+
+
+## ApexSQL Snapshot Utility
+<a id="apexsql-snapshot-utility"></a>
+Download page: [ApexSQL Snapshot Utility]<br/>
+Release date: 2016-01-12<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+Utility to create a lightweight 'snapshot' of a database schema, that can be used by ApexSQL Diff as a datasource
+
 
 
 ## DBBest T-SQL Analyzer
@@ -2285,31 +2453,46 @@ Author: SQLServerUtilities<br/>
 Free version: No<br/>
 Price: $99
 
-SQLScripter is a powerful command line utility that scripts SQL Server objects. The utility is designed to automate the process of schema generation.
+SQLScripter is a powerful command line utility that scripts SQL Server objects.
+The utility is designed to automate the process of schema generation.
 
 
 ## SQLC
 <a id="sqlc"></a>
 Download page: [SQLC]<br/>
-Release date: 2016-05-23<br/>
+Release date: 2017-11-19<br/>
 Support Version: ?<br/>
 Author: David Ingleton<br/>
 Free version: Yes<br/>
 Price: No
 
-SQLC is a software tool for comparing two SQL Server databases. With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
+SQLC is a software tool for comparing two SQL Server databases.
+With SQLC you can perform Object comparison (Database schema) as well as Data comparison (Table data)
 
 
 ## Database Performance Analyzer
 <a id="dpa-solarwinds"></a>
 Download page: [Database Performance Analyzer]<br/>
 Release date: ?<br/>
-Support Version: ?<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/Amazon<br/>
 Author: SolarWinds<br/>
 Free version: No<br/>
 Price: $1995
 
 Monitor across your entire environment: physical servers, virtualized, and in the Cloud
+
+
+## Database Performance Analyzer for MSSQL
+<a id="dpa-solarwinds-mssql"></a>
+Download page: [Database Performance Analyzer for MSSQL]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/Amazon<br/>
+Author: SolarWinds<br/>
+Free version: No<br/>
+Price: $1995
+
+Optimize and tune SQL Server deployed anywhere - physical, virtual, or cloud based.
+Includes Azure SQL database, Azure virtual machines, and Amazon RDS.
 
 
 ## SQL Enlight
@@ -2330,17 +2513,17 @@ Price: $295
  - Continuous integration support
 
 
-## OmniCompare
-<a id="omnicompare"></a>
-Download page: [OmniCompare]<br/>
-Release date: 2016-06-03<br/>
-Support Version: ?<br/>
+## Aireforge Studio
+<a id="aireforge-studio"></a>
+Download page: [Aireforge Studio]<br/>
+Release date: 2017-06-21<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
 Author: AireForge<br/>
 Free version: Yes<br/>
-Price: No
+Price: $299
 
-**The first Aireforge product is now in beta.**
-OmniCompare is a SQL Server configuration comparison tool which compares instance settings, users, permissions, jobs, linked servers and more.
+Aireforge Studio contains a growing suite of tools that help administrators to stabilize, optimize & secure multiple database instances with ease.
+Be it, keeping two instances in sync for recovery purposes or synchronizing the settings of over 200 replication subscribers; our tools will help.
 
 
 ## HexaTier
@@ -2359,8 +2542,8 @@ Database Security, Discovery of Sensitive Data. Dynamic Data Masking, and Databa
 ## SoftTree SQL Assistant
 <a id="softtree-sql-assistant"></a>
 Download page: [SoftTree SQL Assistant]<br/>
-Release date: 2017-03-09<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-12-17<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: SoftTree<br/>
 Free version: No<br/>
 Price: $215
@@ -2755,21 +2938,26 @@ With it you can easily migrate schema and data between different databases witho
 ## Is It SQL
 <a id="is-it-sql"></a>
 Download page: [Is It SQL]<br/>
-Release date: 2016-12-13<br/>
+Release date: 2017-04-06<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
 Author: Bill Graziano<br/>
 Free version: Non-commercial<br/>
 Price: No
 
-This started as a simple SQL Server monitoring solution for my clients. The first question I get when applications 
-have issues is "Is It SQL Server?" I wanted a simple monitoring service I could run onsite that would answer that question. 
-It had to be simple enough that a non-DBA could look at it and decide whether to call me.
+ - Supports SQL Server 2005 through SQL Server 2016
+ - Monitor CPU usage for SQL Server and non-SQL Server tasks
+ - Capture batch requests per second
+ - Monitor Disk I/onsite
+ - Monitor waits
+ - Show actively running queries
+ - Capture basic demographic information including version, start time, database sizes, etc.
+ - Can run with no installation or it can be run as a service
 
 
-## Database Experimentation Assistant
+## Database Experimentation Assistant Technical Preview 2
 <a id="dea"></a>
 Download page: [Database Experimentation Assistant]<br/>
-Release date: 2016-11-21<br/>
+Release date: 2017-03-24<br/>
 Support Version: 2005/2008/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -2834,7 +3022,7 @@ Liquibase automatically creates DatabaseChangeLog Table and DatabaseChangeLogLoc
 Download page: [My Batis]<br/>
 Release date: 2016-06-22<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
-Author: Liquibase<br/>
+Author: My Batis<br/>
 Free version: Open Source<br/>
 Price: No
 
@@ -2853,8 +3041,8 @@ MyBatis Schema Migration System (or MyBatis Migrations for short) seeks to:
 ## SentryOne Plan Explorer
 <a id="sentryone-plan-explorer"></a>
 Download page: [SentryOne Plan Explorer]<br/>
-Release date: 2017-01-16<br/>
-Support Version: 2008/2012/2014/2016/<br/>
+Release date: 2017-05-25<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: SentryOne<br/>
 Free version: Yes<br/>
 Price: No
@@ -2922,8 +3110,111 @@ Author: xSQL Software<br/>
 Free version: Yes<br/>
 Price: $399
 
+Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it.
 
-Compare the schemas of two SQL Server databases, review differences, generate synchronization script and execute it - xSQL Schema Compare makes database change management easy.
+
+## xSQL Data Compare
+<a id="xsql-Data-compare"></a>
+Download page: [xSQL Data Compare]<br/>
+Release date: 2017-06-26<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $399
+
+Data Compare for SQL Server is a tool for comparing and synchronizing the data in two SQL Server databases.
+You can use it for data migration, auditing, replication verification, populating development databases with production data etc.
+
+
+## xSQL Script Executor
+<a id="xsql-script-executor"></a>
+Download page: [xSQL Script Executor]<br/>
+Release date: 2015-02-25<br/>
+Support Version: 2000 and higher<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $249
+
+Script Executor is a professional grade database tool that allows you to deploy multiple Sql scripts on one or more target servers with a click of a button.
+Scripts can be deployed directly from the GUI, from the command line or they can be wrapped into an executable.
+
+
+## xSQL Builder
+<a id="xsql-builder"></a>
+Download page: [xSQL Builder]<br/>
+Release date: 2017-03-15<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $799
+
+xSQL Builder is a SQL Server tool that allows for automating the deployment of SQL Server based solutions.
+It generates executable packages that contain all the information and logic required to deploy the database to the clients' environments regardless of whether it is a first time deployment or an upgrade from a previous version. 
+
+
+## xSQL Documenter
+<a id="xsql-documenter"></a>
+Download page: [xSQL Documenter]<br/>
+Release date: 2017-01-04<br/>
+Support Version: 2000 to 2016<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $199
+
+Comprehensive, uniform, and easily navigable database documentation in HTML and compiled CHM format.
+
+
+## xSQL Profiler
+<a id="xsql-profiler"></a>
+Download page: [xSQL Profiler]<br/>
+Release date: 2017-06-28<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: $999
+
+xSQL Profiler is a SQL tracing tool that provides for monitoring multiple SQL Servers from one central location.
+Traces can be customized and scheduled to run on certain servers at certain times and all trace data is automatically collected into the central repository.
+
+
+## xSQL Schema Compare SDK
+<a id="xsql-schema-compare-sdk"></a>
+Download page: [xSQL Schema Compare SDK]<br/>
+Release date: 2017-10-25<br/>
+Support Version: 2000 to 2016<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $1499
+
+Schema Compare SDK is a set of class libraries that allows you to perform schema comparison and synchronization for SQL Server databases in your .NET or ASP.NET applications.
+
+
+## xSQL RSS Reporter
+<a id="xsql-rss-reporter"></a>
+Download page: [xSQL RSS Reporter]<br/>
+Release date: 2014-11-25<br/>
+Support Version: 2005/2008/2012/2014<br/>
+Author: xSQL Software<br/>
+Free version: No<br/>
+Price: $169
+
+RSS Reporter is a tool that generates standard Atom or RSS feeds for:
+ - SQL Server job execution history
+ - SQL Server job definition
+ - The output of any T-SQL query
+ - Database size and space usage
+
+
+## xSQL Database Searcher
+<a id="xsql-database-sercher"></a>
+Download page: [xSQL Database Searcher]<br/>
+Release date: 2017-05-09<br/>
+Support Version: 2005/2008/2012/2014/2016, Azure<br/>
+Author: xSQL Software<br/>
+Free version: Yes<br/>
+Price: No
+
+Database Searcher, previously known as "xSQL Object Search", is a free tool that allows you to search the schema of SQL Server databases.
  
  
 ## Cloud-based DB Monitoring Platform
@@ -2934,8 +3225,11 @@ Support Version: ?<br/>
 Author: SQLTreeo<br/>
 Free version: No<br/>
 Price: €180
- 
-Charts-on-charts technology, 24/7/365. Intuïtive ease of use. Alerting via Windows, Android and iOS. Drill down into detailed history charts. Send instant messages within your secured network.
+
+ - Charts-on-charts technology, 24/7/365.
+ - Alerting via Windows, Android and iOS.
+ - Drill down into detailed history charts.
+ - Send instant messages within your secured network.
 
 
 ## SchemaCrawler
@@ -3058,7 +3352,7 @@ Microsoft SQL Server Migration Assistant (SSMA) for MySQL is a tool to automate 
 
 
 ## sqlcmd for Mac and Linux
-<a id="ssma-mysql"></a>
+<a id="sqlcmd"></a>
 Download page: [sqlcmd for Mac and Linux]<br/>
 Release date: 2017-01-26<br/>
 Support Version: 2005/2008/2012/2014/2016/Azure<br/>
@@ -3066,7 +3360,7 @@ Author: Soheil Rashidi<br/>
 Free version: Open Source<br/>
 Price: No
 
-sqlcmd for Mac and Linux
+sqlcmd utility for Mac and Linux
 
 
 ## SQL Migrator
@@ -3284,12 +3578,496 @@ Price: No
 SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/adam_machanic/archive/2016/01/04/sqlquerystress-the-source-code.aspx
 
 
+## SQL Server Migration Assistant for DB2
+<a id="ssma-db2"></a>
+Download page: [SQL Server Migration Assistant for DB2]<br/>
+Release date: 2017-02-17<br/>
+Support Version: 2005/2008/2012/2014/2016/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft SQL Server Migration Assistant (SSMA) for DB2 is a tool to automate migration from DB2 database(s) to SQL Server and Azure SQL DB.
+
+
+## SQL Server Migration Assistant for Oracle
+<a id="ssma-oracle"></a>
+Download page: [SQL Server Migration Assistant for Oracle]<br/>
+Release date: 2017-02-17<br/>
+Support Version: 2005/2008/2012/2014/2016/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft SQL Server Migration Assistant (SSMA) for Oracle is a tool to automate migration from Oracle database(s) to SQL Server and Azure SQL DB.
+
+
+## SQL Server Migration Assistant for Access
+<a id="ssma-access"></a>
+Download page: [SQL Server Migration Assistant for Access]<br/>
+Release date: 2017-02-17<br/>
+Support Version: 2005/2008/2012/2014/2016/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft SQL Server Migration Assistant (SSMA) for Access is a tool to automate migration from Access database(s) to SQL Server and Azure SQL DB.
+
+
+## mssql for Visual Studio Code
+<a id="mssql-for-vs-code"></a>
+Download page: [mssql for Visual Studio Code]<br/>
+Release date: 2017-02-02<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+mssql for Visual Studio Code an extension for developing Microsoft SQL Server, Azure SQL Database and SQL Data Warehouse everywhere with a rich set of functionalities, including:
+ - Connect to Microsoft SQL Server, Azure SQL Database and SQL Data Warehouses
+ - Create and manage connection profiles and most recently used connections
+ - Write T-SQL script with IntelliSense, Go to Definition, T-SQL snippets, syntax colorizations, T-SQL error validations and GO batch separator
+ - Execute your scripts and view results in a simple to use grid
+ - Save the result to json or csv file format and view in the editor
+ - Customizable extension options including command shortcuts and more
+
+
+## Microsoft Assessment and Planning
+<a id="map"></a>
+Download page: [Microsoft Assessment and Planning]<br/>
+Release date: 2017-02-10<br/>
+Support Version: 2008/2008R2/2012<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The Microsoft Assessment and Planning Toolkit makes it easy to assess your current IT infrastructure for a variety of technology migration projects.
+This Solution Accelerator provides a powerful inventory, assessment, and reporting tool to simplify the migration planning process.
+
+
+## mssql-scripter
+<a id="mssql-scripter"></a>
+Download page: [mssql-scripter]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+mssql-scripter is the multiplatform command line equivalent of the widely used Generate Scripts Wizard experience in SSMS.
+You can use mssql-scripter on Linux, macOS, and Windows to generate data definition language (DDL) and data manipulation language (DML) T-SQL scripts for database objects in SQL Server running anywhere, Azure SQL Database, and Azure SQL Data Warehouse.
+
+
+## DBFS
+<a id="dbfs"></a>
+Download page: [DBFS]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+DBFS uses FUSE to mount MS SQL Server DMVs as a virtual file system.
+This gives you the ability to explore information about your database (Dynamic Management Views) using native bash commands.
+
+
+## Comparator
+<a id="pumpet-comparator"></a>
+Download page: [Comparator]<br/>
+Release date: 2017-06-06<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Pumpet<br/>
+Free version: Open Source<br/>
+Price: No
+
+Simple application for compare data
+
+
+<a id="navicat-for-sql-server"></a>
+## Navicat for SQL Server
+Download page: [Navicat for SQL Server]<br/>
+Release date: 2017-06-14<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/AmazonRDS<br/>
+Author: PremiumSoft<br/>
+Free version: No<br/>
+Price: $699
+
+Navicat for SQL Server gives you a fully graphical approach to database management and development.
+Quickly and easily create, edit, and delete all database objects, or execute SQL queries and scripts.
+Connect to any local/remote SQL Server, and compatible with cloud databases like Amazon RDS and SQL Azure.
+
+
+<a id="navicat-premium"></a>
+## Navicat Premium
+Download page: [Navicat Premium]<br/>
+Release date: 2017-06-14<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/AmazonRDS<br/>
+Author: PremiumSoft<br/>
+Free version: No<br/>
+Price: $1299
+
+Navicat Premium is a database development tool that allows you to simultaneously connect to MySQL, MariaDB, SQL Server, Oracle, PostgreSQL, and SQLite databases from a single application.
+Compatible with cloud databases like Amazon RDS, Amazon Aurora, Amazon Redshift, SQL Azure, Oracle Cloud and Google Cloud.
+You can quickly and easily build, manage and maintain your databases.
+
+
+<a id="dbvisualizer"></a>
+## DbVisualizer
+Download page: [DbVisualizer]<br/>
+Release date: 2017-11-16<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: DbVis Software AB.<br/>
+Free version: Yes<br/>
+Price: $197
+
+DbVisualizer is the universal database tool for developers, DBAs and analysts.
+It is the perfect solution since the same tool can be used on all major operating systems accessing a wide range of databases.
+
+
+<a id="dbschema"></a>
+## DbSchema
+Download page: [DbSchema]<br/>
+Release date: 2017-06-19<br/>
+Support Version: 2008/2012/2014/2016/2017/Azure/Amazon<br/>
+Author: Wise Coders Solutions<br/>
+Free version: No<br/>
+Price: $127
+
+ - DbSchema is a diagram-oriented database designer with integrated data and query tools
+ - DbSchema is build for large diagrams and schemes. No database experience required - the tool is visual.
+ - For deployment of the schema on multiple databases, management of multiple versions of the schema and migration scripts, work in a team on the design project.
+This are possible as DbSchema is using its own image of the schema and saves it to XML file.
+
+
+<a id="dbghost"></a>
+## DBGhost
+Download page: [DBGhost]<br/>
+Release date: 2017-01-31<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Innovartis Ltd<br/>
+Free version: No<br/>
+Price: £430
+
+The Change Manager gives you all the tools to implement the full DB Ghost Process enabling you to script out your databases into individual DROP/CREATE scripts, place those scripts under source control, modify them there and then build and deploy from those scripts.
+
+
+<a id="sqlautomate"></a>
+## SQLAutomate
+Download page: [SQLAutomate]<br/>
+Release date: 2017-06-19<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: OnLine ToolWorks<br/>
+Free version: No<br/>
+Price: $99
+
+SQLAutomate is an advanced database automation solution for SQL Server, Oracle, MySQL, DB2 or other advanced database management system.
+It provides the ability to manage the necessary repetitive DBMS maintenance to help keep your databases efficient over time.
+SQLAutomate makes it easy to manage a single database server instance, hundreds or even thousands of instances.
+
+
+## BimlExpress
+<a id="bimlexpress"></a>
+Download page: [BimlExpress]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Varigence<br/>
+Free version: No<br/>
+Price: No
+
+BimlExpress Visual Studio Add-in built specifically to work with SQL Server 2016.
+- Generate packages within Visual Studio and avoid slow, repetitive, "drag 'n drop" workflow.
+- Write Biml code with syntax highlighting, making it easier to read and write Biml.
+- Updates are released more rapidly to work with the most current versions of SQL Server.
+
+
+## BIDS Helper
+<a id="bidshelper"></a>
+Download page: [BIDS Helper]<br/>
+Release date: 2015-03-17<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: Open Source<br/>
+Price: No
+
+A Visual Studio add-in that enhances development functionality in Business Intelligence Development Studio (BIDS) and SQL Server Data Tools (SSDTBI). 
+
+
+## Azure Data Warehouse Migration Utility
+<a id="azure-data-migration"></a>
+Download page: [Azure Data Warehouse Migration Utility]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Microsoft<br/>
+Free version: ?<br/>
+Price: ?
+
+The Data Warehouse Migration Utility is a tool designed to migrate schema and data from SQL Server and Azure SQL Database to Azure SQL Data Warehouse. 
+During schema migration, the tool automatically maps the corresponding schema from source to destination. 
+After the schema has been migrated, the tools provides the option to move data with automatically generated scripts.
+
+
+<a id="dell-benchmark-factory"></a>
+## Dell Benchmark Factory
+Download page: [Dell Benchmark Factory]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/Azure<br/>
+Author: Quest Software<br/>
+Free version: No<br/>
+Price: $4413
+
+- database workload generation
+- database code scalability testing
+- industry-standard benchmark testing
+- virtual user and transaction load simulation
+
+
+<a id="manduka"></a>
+## manduka
+Download page: [manduka]<br/>
+Release date: 2017-03-08<br/>
+Support Version: ?<br/>
+Author: Virtusa Corporation<br/>
+Free version: Yes<br/>
+Price: No
+
+The Free Static code analyzer
+ - PL-SQL & T-SQL
+ - Support for more than 50 violation rules
+ - Light weight & fast
+ - Easy to install & use
+ - XML reports
+
+
+<a id="powerbi-desktop"></a>
+## PowerBI
+Download page: [PowerBI Desktop]<br/>
+Release date: 2017-07-11<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: ?
+
+Power BI is a suite of business analytics tools to analyze data and share insights.
+Monitor your business and get answers quickly with rich dashboards available on every device.
+
+
+<a id="stellar-phoenix"></a>
+## Stellar Phoenix SQL Database Repair
+Download page: [Stellar Phoenix SQL Database Repair]<br/>
+Release date: 2017-07-05<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: Stellar Information Technology<br/>
+Free version: No<br/>
+Price: $349
+
+ - Repairs corrupt MDF and NDF file of SQL Server database
+ - Recovers tables, triggers, indexes, keys, rules and defaults
+ - Perform deleted records recovery from MS SQL Server database
+ - Saves Scan result of SQL Server database file automatically
+ - Allows to search and recover specific database objects
+ - Allows saving the repaired file in MS SQL, HTML, XLS & CSV formats
+ - Supports MS SQL Server 2016, 2014, 2012, 2008 and all lower versions
+
+
+## DataNumen SQL Recovery
+Download page: [DataNumen SQL Recovery]<br/>
+Release date: 2017-03-20<br/>
+Support Version: 2008/2012/2014/2016<br/>
+Author: DataNumen<br/>
+Free version: No<br/>
+Price: $500
+
+Recovery rate is the most important criterion of a SQL recovery product.
+Based on our comprehensive tests, DataNumen SQL Recovery has the best recovery rate, much more better than any other competitors in the market!
+
+
+<a id="recovery-toolbox-for-sql-server"></a>
+## Recovery Toolbox for SQL Server
+Download page: [Recovery Toolbox for SQL Server]<br/>
+Release date: ?<br/>
+Support Version: 7/2000/2005/2008/2008 R2/2012/2014<br/>
+Author: Recovery Toolbox<br/>
+Free version: No<br/>
+Price: $99
+
+Recovery Toolbox for SQL Server is a comprehensive recovery solution for damaged MS SQL Server database files.
+
+
+<a id="sql-mdf-viewer"></a>
+## SQL MDF Viewer
+Download page: [SQL MDF Viewer]<br/>
+Release date: ?<br/>
+Support Version: 2000/2005/2008/2008r2/2012/2014/2016<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $129
+
+Read and open MDF database file along with its related elements
+ - Preview all tables, indexes, triggers of the MDF file
+ - Auto detects the SQL Server version
+ - Save scanned MDF file data in .str file format
+
+
+<a id="sql-mdf-recovery-tool"></a>
+## SQL MDF Recovery Tool
+Download page: [SQL MDF Recovery Tool]<br/>
+Release date: ?<br/>
+Support Version: 2014 and all lower versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $129
+
+Repair corrupt MDF file data with ease and accuracy
+ - Recover tables, function, stored procedure, triggers, etc
+ - Performs Quick and Advance Scan to repair MDF & NDF file
+ - Export selective file with Schema or Schema and Data
+
+
+<a id="sql-password-recovery"></a>
+## SQL Passord Recovery
+Download page: [SQL Passord Recovery]<br/>
+Release date: ?<br/>
+Support Version: 2008 & all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $69
+
+Tool to Reset SQL Server Database Password
+ - Recover passwords of multiple SQL Server databases
+ - Reset both unknown and empty SQL DB passwords
+ - Remove and reset passwords of all SQL Server users
+
+
+<a id="sql-decryptor"></a>
+## SQL Decryptor
+Download page: [SQL Decryptor]<br/>
+Release date: ?<br/>
+Support Version: 2014 & all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $69
+
+User Friendly Solution to Remove Encryption From SQL Database
+ - Remove encryption from batch SQL objects
+ - Display complete preview of MS SQL database
+ - Export data to SQL Server and compatible script
+
+
+<a id="sql-backup-database-recovery"></a>
+## SQL Backup Database Recovery
+Download page: [SQL Backup Database Recovery]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $149
+
+Recover Corrupt SQL Backup File with .bak Repair Tool
+ - Repair corrupt SQL Server backup file with confidence
+ - Fix all SQL backup error messages quickly
+ - Advanced and affordable solution to recover SQL BAK file
+ - Simple and nifty graphical user interface
+
+
+<a id="sql-log-file-viewer"></a>
+## SQL Log File Viewer
+Download page: [SQL Log File Viewer]<br/>
+Release date: ?<br/>
+Support Version: 2016/2014/2012/2008 and all below versions<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $999
+
+Read SQL Server database transaction log file with SQL log analysis tool
+ - Analyze and view SQL Server LDF file transactions
+ - View all the transactions, i.e. insert, update, delete etc.
+ - Export log file into SQL Server, SQL script or as CSV file
+
+
+<a id="dax-studio"></a>
+## DAX Studio
+Download page: [DAX Studio]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Sqlbi<br/>
+Free version: Yes<br/>
+Price: No
+
+DAX Studio is a tool to write, execute, and analyze DAX queries in Power BI Designer, Power Pivot for Excel, and Analysis Services Tabular.
+
+
+<a id="sql-cop"></a>
+## SQL Cop
+Download page: [SQL Cop]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: LessThanDot<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Cop is a static code analysis tool to automatically detect issues with your database.
+
+
+<a id="dataedo"></a>
+## Dataedo
+Download page: [Dataedo]<br/>
+Release date: 2017-09-15<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Sqlbi<br/>
+Free version: Yes<br/>
+Price: $239
+
+Document SQL Server, Oracle and MySQL databases
+
+
+<a id="azure-db-migration"></a>
+## Azure Database Migration Service
+Download page: [Dataedo]<br/>
+Release date: 2017-12-01<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Reduce the complexity of your cloud migration by using a single comprehensive service instead of multiple tools.
+The public preview release of Azure Database Migration Service is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.
+
+
+<a id="flowheater"></a>
+## FlowHeater
+Download page: [flowheater]<br/>
+Release date: 2017-10-02<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: FlowHeater GmbH<br/>
+Free version: No<br/>
+Price: $79
+
+The FlowHeater functionality closely resembles the concept of a continuous-flow water heater. A wide variety of data sources can be interconnected with FlowHeater and by making use of exchangeable adapters, there is no restriction to the data flow.
+
+
+<a id="edis"></a>
+## EDIS
+Download page: [EDIS]<br/>
+Release date: ?<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: SQL ETL<br/>
+Free version: Yes<br/>
+Price: $599
+
+EDIS is an Extract-Transform-Load (ETL) application for Microsoft SQL Server.
+No 3rd Party Language, No Packages, Just SQL.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-[bcp Utility]:https://msdn.microsoft.com/en-us/library/ms162802.aspx
+[bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
+[sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
+[mssql-cli]:https://github.com/dbcli/mssql-cli
+[SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
 [Microsoft Log Parser]:https://www.microsoft.com/en-us/download/details.aspx?id=24659
+[Log Parser Lizard GUI]:http://lizard-labs.com/log_parser_lizard.aspx
 [tablediff Utility]:https://msdn.microsoft.com/en-us/library/ms162843.aspx
 [Diskspd]:https://github.com/microsoft/diskspd
 [HammerDB]:http://www.hammerdb.com/
@@ -3376,6 +4154,10 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[dbForge Developer Bundle]:https://www.devart.com/dbforge/sql/developer-bundle/
+[dbForge Compare Bundle for SQL Server]:https://www.devart.com/dbforge/sql/compare-bundle/
+[Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
+[dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
 [BPA 2000]: https://www.microsoft.com/en-us/download/details.aspx?id=15691
 [BPA 2008]: https://www.microsoft.com/en-us/download/details.aspx?id=15289
@@ -3390,18 +4172,16 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [Dell Foglight]:http://software.dell.com/products/foglight-for-cross-platform-databases/
 [Dell Discovery Wizard]:http://software.dell.com/products/discovery-wizard-for-sql-server/
 [Dell Enterprise Reporter]:http://software.dell.com/products/enterprise-reporter-for-sql-server/
-[SQLSolutions SQL Deadlock Detector]:http://sqlsolutions.com/products/sql-deadlock-detector/index.html
-[SQLSolutions SQL Heartbeat]:http://www.sqlsolutions.com/products/sql-server-monitor/sql-monitor.html
-[SQLSolutions SQL Trace Analyzer]:http://sqlsolutions.com/products/sql-trace-analyzer/index.html
-[SQLSolutions SQL Ultimate Debugger]:http://sqlsolutions.com/products/sql-ultimate-debugger/index.html
 [SQL Scripter]:http://www.sqlscripter.com/
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
 [ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx
 [ApexSQL Backup]:https://www.apexsql.com/sql_tools_backup.aspx
+[ApexSQL Defrag]:https://www.apexsql.com/sql_tools_defrag.aspx
 [ApexSQL Log]:https://www.apexsql.com/sql_tools_log.aspx
 [ApexSQL Monitor]:https://www.apexsql.com/sql_tools_monitor.aspx
+[ApexSQL Plan]:https://www.apexsql.com/sql_tools_plan.aspx
+[ApexSQL Propagate]:https://www.apexsql.com/sql_tools_propagate.aspx
 [ApexSQL Recover]:https://www.apexsql.com/sql_tools_recover.aspx
-[ApexSQL Restore]:https://www.apexsql.com/sql_tools_restore.aspx
 [ApexSQL Build]:https://www.apexsql.com/sql_tools_build.aspx
 [ApexSQL Clean]:https://www.apexsql.com/sql_tools_clean.aspx
 [ApexSQL Data Diff]:https://www.apexsql.com/sql_tools_datadiff.aspx
@@ -3410,10 +4190,12 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [ApexSQL Generate]:https://www.apexsql.com/sql_tools_generate.aspx
 [ApexSQL Script]:https://www.apexsql.com/sql_tools_script.aspx
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
+[ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
+[ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
-[SqlDiffFramework]:https://sqldiffframework.codeplex.com/Wikipage?ProjectName=sqldiffframework
+[SqlDiffFramework]:https://github.com/msorens/SqlDiffFramework/
 [DataGrip]:https://www.jetbrains.com/datagrip/
 [Pssdiag and Sqldiag Manager]:https://github.com/Microsoft/DiagManager
 [SQL Nexus Tool]:http://sqlnexus.codeplex.com/
@@ -3422,9 +4204,10 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [RestoreChecker]:http://sqlserverutilities.com/products/restorechecker/
 [SQLScripter]:http://sqlserverutilities.com/products/sqlscripter/
 [SQLC]:http://sqlc.azurewebsites.net/
-[Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer-sql-server
+[Database Performance Analyzer]:http://www.solarwinds.com/database-performance-analyzer
+[Database Performance Analyzer for MSSQL]:http://www.solarwinds.com/database-performance-analyzer-sql-server
 [SQL Enlight]:http://www.ubitsoft.com/products/sqlenlight/index.php
-[OmniCompare]:http://aireforge.com/download/OmniCompare.html
+[Aireforge Studio]:https://aireforge.com/studio/
 [HexaTier]:http://www.hexatier.com/
 [SoftTree SQL Assistant]:https://www.softtreetech.com/sqlassist/
 [DB Audit and Security 360]:http://softtreetech.com/dbaudit/index.htm
@@ -3457,16 +4240,23 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [Database .NET]:http://fishcodelib.com/Database.htm
 [dbMigration .NET]:http://fishcodelib.com/dbMigration.htm
 [Is It SQL]:http://www.scalesql.com/isitsql
-[Database Experimentation Assistant]:https://blogs.technet.microsoft.com/dataplatforminsider/2016/11/22/technical-preview-database-experimentation-assistant
+[Database Experimentation Assistant]:https://blogs.msdn.microsoft.com/datamigration/2017/03/24/dea-2-0-release-overview-database-experimentation-assistant
 [Data Platform Studio]:http://www.red-gate.com/products/azure-development/data-platform-studio
 [Flyway]:https://flywaydb.org
 [Liquibase]:http://www.liquibase.org
 [My Batis]:http://www.mybatis.org/migrations
 [SentryOne Plan Explorer]:https://www.sentryone.com/plan-explorer
 [SQL Sentry]:https://sentryone.com/platform/sql-server-performance-monitoring
-[dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [DBmaestro TeamWork]:http://www.dbmaestro.com/product/devops-for-database
 [xSQL Schema Compare]:http://www.xsql.com/products/sql_server_schema_compare
+[xSQL Data Compare]:https://www.xsql.com/products/sql_server_data_compare
+[xSQL Script Executor]:https://www.xsql.com/products/script_executor
+[xSQL Builder]:https://www.xsql.com/products/sql_database_deployment_builder
+[xSQL Documenter]:https://www.xsql.com/products/database_documenter
+[xSQL Profiler]:https://www.xsql.com/products/sql_server_profiler
+[xSQL Schema Compare SDK]:https://www.xsql.com/products/sdk/sql_server_schema_compare
+[xSQL RSS Reporter]:https://www.xsql.com/products/rss_reporter
+[xSQL Database Searcher]:https://www.xsql.com/products/sql_server_database_searcher
 [Cloud-based DB Monitoring Platform]:https://www.sqltreeo.com
 [SchemaCrawler]:http://sualeh.github.io/SchemaCrawler/index.html
 [SA MaaS Microsoft SQL Server]:http://sentinelagent.com/maas/microsoft-sql-server
@@ -3494,3 +4284,41 @@ SQL query stress simulator created by Adam Machanic http://sqlblog.com/blogs/ada
 [SqlPad]:https://github.com/rickbergfalk/sqlpad
 [Html-query-plan]:https://github.com/JustinPealing/html-query-plan
 [SqlQueryStress]:https://github.com/ErikEJ/SqlQueryStress
+[SQL Server Migration Assistant for DB2]:https://www.microsoft.com/en-us/download/details.aspx?id=54254
+[SQL Server Migration Assistant for Oracle]:https://www.microsoft.com/en-us/download/details.aspx?id=54258
+[SQL Server Migration Assistant for Access]:https://www.microsoft.com/en-us/download/details.aspx?id=54255
+[mssql for Visual Studio Code]:https://github.com/Microsoft/vscode-mssql
+[Microsoft Assessment and Planning]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server
+[mssql-scripter]:https://github.com/Microsoft/sql-xplat-cli
+[DBFS]:https://github.com/Microsoft/dbfs
+[comparator]:https://github.com/Pumpet/comparator
+[Navicat for SQL Server]:https://www.navicat.com/en/products/navicat-for-sqlserver
+[Navicat Premium]:https://www.navicat.com/en/products/navicat-premium
+[DbVisualizer]:http://www.dbvis.com/
+[DbSchema]:http://www.dbschema.com
+[DBGhost]:http://www.dbghost.com
+[SQLAutomate]:http://www.sqlautomate.com
+[BimlExpress]:https://www.varigence.com/BimlExpress
+[BIDS Helper]:https://bidshelper.codeplex.com
+[Azure Data Warehouse Migration Utility]:https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-migrate-migration-utility
+[Dell Benchmark Factory]:https://www.quest.com/products/benchmark-factory
+[manduka]:http://www.manduka.tech/#/home
+[PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
+[Stellar Phoenix SQL Database Repair]:https://www.stellarinfo.com/sql-recovery.php
+[DataNumen SQL Recovery]:https://www.datanumen.com/sql-recovery/
+[Recovery Toolbox for SQL Server]:https://sql.recoverytoolbox.com
+[SQL MDF Viewer]:http://www.sqlmdfviewer.org
+[SQL MDF Recovery Tool]:http://www.sqlmdfviewer.org/recovery
+[SQL Passord Recovery]:http://www.sqlmdfviewer.org/sql-password-recovery-freeware.html
+[SQL Decryptor]:http://www.sqlmdfviewer.org/sql-decryptor.html
+[SQL Backup Database Recovery]:http://www.sql-backup-recovery.sqlmdfviewer.org
+[SQL Log File Viewer]:http://www.sqlmdfviewer.org/viewer/sql-server-log-file.html
+[DAX Studio]:https://www.sqlbi.com/tools/dax-studio
+[SQL Cop]:https://www.sqlshack.com/review-sql-cop-unit-tests-collection
+[Dataedo]:https://dataedo.com/
+[Azure Database Migration Service]:https://azure.microsoft.com/en-us/services/database-migration/
+[FlowHeater]:https://flowheater.net/en
+[EDIS]:https://sqletl.com
+
+[LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
+[MIT]:https://opensource.org/licenses/MIT

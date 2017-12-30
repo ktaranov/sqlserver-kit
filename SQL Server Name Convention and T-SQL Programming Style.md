@@ -2,7 +2,7 @@
 
 Official Reference and useful links
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
- - [Subjectivity : Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
+ - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
  - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
  - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
@@ -19,10 +19,14 @@ Official Reference and useful links
  - [CLR Databse Objects MSDN](http://msdn.microsoft.com/en-us/library/ms345099%28SQL.100%29.aspx)
  - [CLR Stored Procedures](http://msdn.microsoft.com/en-us/library/ms131094%28v=sql.100%29.aspx)
  - [User-defined Functions](http://msdn.microsoft.com/en-us/library/ms191320.aspx)
- - [MSDN SET NOCOUNT ON](https://msdn.microsoft.com/en-us/library/ms189837.aspx)
+ - [MSDN SET NOCOUNT ON](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql)
  - [T-SQL Coding Guidelines Presentation](http://www.slideshare.net/chris1adkin/t-sql-coding-guidelines) (by Chris Adkin)
  - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
-
+ - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
+ - [SQL Formatting standards – Capitalization, Indentation, Comments, Parenthesis](https://solutioncenter.apexsql.com/sql-formatting-standards-capitalization-indentation-comments-parenthesis/) (by ApexSQL)
+ - [In The Cloud: The Importance of Being Organized]:http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx
+ - [Naming Conventions in Azure](http://www.sqlchick.com/entries/2017/6/24/naming-conventions-in-azure)
+ - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
 
 ## SQL Server Object Name Convention
 
@@ -67,7 +71,8 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - Delimiters: spaces (not tabs)
  - No square brackets [] and reserved words in object names and alias, use only Latin symbols **[A-z]** and numeric **[0-9]**
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
- - All finished expressions should have `;` at the end
+ - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.  This deprecation announcement means that you should always use semicolon terminators in new development.)
+   More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/)
  - All script files should end with `GO` and line break
  - The first argument in SELECT expression should be on the same line with it: `SELECT LastName`
  - Arguments are divided by line breaks, commas should be placed before an argument:
@@ -79,19 +84,27 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
  - All objects must used with schema names but without database and server name: `FROM dbo.Table`
+ - All system database and tables must be in lower case for properly working in Case Sensitive instance
+ - For demo queries use TOP(100) or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
+   More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/)
 
 Example:
 
 ```sql
+WITH CTE_MyCTE AS (
+    SELECT t1.Value1 AS Val1
+         , t1.Value2 AS Val2
+         , t2.Value3 AS Val3
+     INNER JOIN dbo.Table3 AS t2
+             ON t1.Value1 = t2.Value1
+     WHERE t1.Value1 > 1
+       AND t2.Value2 >= 101
+)
 SELECT t1.Value1 AS Val1
      , t1.Value2 AS Val2
      , t2.Value3 AS Val3
   INTO #Table3
-  FROM dbo.Table1 AS t1
- INNER JOIN dbo.Table3 AS t2
-         ON t1.Value1 = t2.Value1
- WHERE t1.Value1 > 1
-   AND t2.Value2 >= 101
+  FROM CTE_MyCTE AS t1
  ORDER BY t2.Value2;
 ```
 
@@ -103,13 +116,34 @@ SELECT t1.Value1 AS Val1
  - Parameters should be placed under procedure name divided by line breaks
  - After the ALTER statement and before AS keyword should be placed a comment with execution example
  - The procedure or function should begin with parameter check
+ - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
+ - Always use `/* */` instead inline comment `--`
  - Use `SET NOCOUNT ON` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
  - Use TOP expression with `()`:
-```
+```tsql
 -- Not working without ()
 DECLARE @n int = 1;
 SELECT TOP@n name FROM sys.objects;
+```
+ - All code should be self documenting
+ - TSQL code, triggers, stored procedures, functions, should have a standard comment banner:
+```tsql
+summary:   >
+ This procedure returns an object build script as a single-row, single column
+ result.
+Revisions: 
+ - Author: Bill Gates
+   Version: 1.1
+   Modification: dealt properly with heaps
+   date: 2017-07-15
+ - version: 1.2
+   modification: Removed several bugs and got column-level constraints working
+   date: 2017-06-30
+example:
+     - code: udf_MyFunction 'testValsue';
+returns:   >
+ single row, single column result Build_Script.
 ```
 
 Stored Procedure Example:
@@ -123,6 +157,7 @@ GO
 ALTER PROCEDURE dbo.usp_StoredProcedure (
                 @parameterValue1 SMALLINT
               , @parameterValue2 NVARCHAR(300)
+              , @debug           BIT           = 0
 )
 /*
 EXECUTE dbo.usp_StoredProcedure
@@ -131,6 +166,7 @@ EXECUTE dbo.usp_StoredProcedure
 */
 AS
 SET NOCOUNT ON;
+
 BEGIN TRY
     IF (@parameterValue1 < 0 OR @parameterValue2 NOT IN ('SIMPLE', 'BULK', 'FULL'))
     RAISERROR('Not valid data parameter!', 16, 1);
@@ -147,6 +183,8 @@ BEGIN CATCH
           ', User name: ' + CONVERT(sysname,     CURRENT_USER);
     PRINT ERROR_MESSAGE();
 END CATCH;
+
+SET NOCOUNT OFF;
 GO
 
 ```

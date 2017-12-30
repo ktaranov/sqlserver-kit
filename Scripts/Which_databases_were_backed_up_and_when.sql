@@ -1,13 +1,15 @@
 /*
-Author: Buck Woody
+Author: Thomas Rushton
 Original link: https://thelonedba.wordpress.com/2016/07/18/which-databases-were-backed-up-in-which-backup-task/
 */
-
 
 DECLARE @SQL VARCHAR(MAX);
 DECLARE @RunStartedList VARCHAR(MAX);
 DECLARE @NumDays INT;
-SELECT  @NumDays = 10; -- not doing this as a single line declare-define, as we might be running on older versions.
+SET @NumDays = 10; -- not doing this as a single line declare-define, as we might be running on older versions.
+DECLARE @THROW50000 VARCHAR(200);
+SET @THROW50000 = 'Still no backups on this server on last ' + CAST(@NumDays AS VARCHAR(50)) + ' days - please fix it!';
+DECLARE @debug BIT = 0;
  
 IF @NumDays > 0
     BEGIN
@@ -25,7 +27,9 @@ SELECT  @RunStartedList = STUFF(( SELECT    ', ' + QUOTENAME(CONVERT(VARCHAR(20)
                                 FOR
                                   XML PATH('')
                                 ), 1, 2, '');
- 
+
+IF @RunStartedList IS NULL THROW 50000, @THROW50000, 1;
+
 SELECT  @SQL = '
 WITH    JobRuns
           AS ( SELECT   jh.instance_id ,
@@ -67,6 +71,9 @@ FROM    BackupPivot bp
 ORDER BY sd.name ,
         bp.DBName
        ;
-       ';
---SELECT  @SQL;
-EXEC (@SQL);
+';
+
+IF @debug = 1 PRINT(@SQL);
+ELSE
+EXEC(@SQL);
+

@@ -1,0 +1,36 @@
+<UserSettings>
+	<ApplicationIdentity version="10.0"/>
+	<ToolsOptions>
+		<ToolsOptionsCategory name="Environment" RegisteredName="Environment"/>
+	</ToolsOptions>
+	<Category name="Environment_Group" RegisteredName="Environment_Group">
+		<Category name="Environment_FontsAndColors" Category="{1EDA5DD4-927A-43a7-810E-7FD247D0DA1D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_FontsAndColors" PackageName="Visual Studio Environment Package">
+			<PropertyValue name="Version">2</PropertyValue>
+			<FontsAndColors Version="2.0">
+				<Categories>
+					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Consolas" FontSize="20" CharSet="0" FontIsDefault="No">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x00E4E4E4" Background="0x00323232" BoldFont="No"/>
+							<Item Name="Comment" Foreground="0x002DAFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Keyword" Foreground="0x00E4B07F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Comment" Foreground="0x002DAFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Keyword" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script String" Foreground="0x0000FFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SQL Operator" Foreground="0x00C7C7C7" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SQL Stored Procedure" Foreground="0x0080FF80" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SQL String" Foreground="0x0000FFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SQL System Function" Foreground="0x00FF78DC" Background="0x02000000" BoldFont="No"/>
+							<Item Name="SQL System Table" Foreground="0x0080FF80" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{AD3737CA-26A1-47CB-A143-0EB0ECBC7FC9}" FontName="Consolas" FontSize="16" CharSet="1" FontIsDefault="No">
+						<Items/>
+					</Category>
+					<Category GUID="{E6784B78-8552-41D7-9630-D1FDEE0DD8E2}" FontName="Calibri" FontSize="16" CharSet="1" FontIsDefault="No">
+						<Items/>
+					</Category>
+				</Categories>
+			</FontsAndColors>
+		</Category>
+	</Category>
+</UserSettings>

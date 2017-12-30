@@ -4,6 +4,7 @@ Source links:
  - [MSDN DBCC (Transact-SQL)](https://msdn.microsoft.com/en-us/library/ms188796.aspx)
  - [SQL SERVER – DBCC commands List – documented and undocumented](http://blog.sqlauthority.com/2007/05/15/sql-server-dbcc-commands-list-documented-and-undocumented/) (by Pinal Dave)
  - [Microsoft SQL Server DBCC Commands list](http://www.sqlservice.se/microsoft-sql-server-dbcc-commands/) (by Steinar Andersen)
+ - [Concept and basics of DBCC Commands in SQL Server](https://www.sqlshack.com/concept-and-basics-of-dbcc-commands-in-sql-server/) (by Mustafa EL-Masry)
 
 
 To learn about all the DBCC commands run following script in query analyzer:
@@ -249,7 +250,7 @@ DBCC shrinkfile ({fileid | 'filename'}, [compress_size[, {NOTRUNCATE | TRUNCATEO
 
 DBCC sqlmgrstats
 
-DBCC sqlperf (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]} | {THREADS} | {LOGSPACE})
+DBCC SQLPERF (LOGSPACE)({IOSTATS | LRUSTATS | NETSTATS | RASTATS [, CLEAR]} | {THREADS} | {LOGSPACE}) https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-sqlperf-transact-sql
 
 DBCC stackdump [( {uid[, spid[, ecid]} | {threadId, 'THREADID'}] )]
 

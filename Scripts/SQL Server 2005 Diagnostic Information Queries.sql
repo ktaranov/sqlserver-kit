@@ -2,13 +2,15 @@
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
 -- CY 2017
--- Last Modified: March 23, 2017
--- http://sqlserverperformance.wordpress.com/
--- http://sqlskills.com/blogs/glenn/
+-- Last Modified: December 6, 2017
+-- https://www.sqlserverperformance.wordpress.com/
+-- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
--- http://www.pluralsight.com/author/glenn-berry
+-- https://www.pluralsight.com/author/glenn-berry
+
+-- If you want to find all of our SQLskills SQL101 blog posts, check out https://www.sqlskills.com/help/sql101/
 
 -- Many of these queries will not work if you have databases in 80 compatibility mode
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
@@ -18,7 +20,7 @@
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
---*      http://sqlskills.com/blogs/glenn
+--*      https://www.sqlskills.com/blogs/glenn
 --*
 --*   You may alter this code for your own *non-commercial* purposes. You may
 --*   republish altered code as long as you include this copyright and give due credit. 
@@ -46,7 +48,7 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 ------
 
--- SQL Server 2005 is out of mainsteam support from Microsoft
+-- SQL Server 2005 is out of both mainstream and extended support from Microsoft
 -- Build 9.0.5266 was the last cumulative update
 
 
@@ -84,7 +86,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- SQL Server 2005 fell out of Mainsteam Support on April 12, 2011
 -- This means no more Service Packs or Cumulative Updates
--- SQL Server 2005 will end Extended Support on April 12, 2016 
+-- SQL Server 2005 ended Extended Support on April 12, 2016 
 
 -- SQL Server 2005 Service Pack 4
 -- http://www.microsoft.com/en-us/download/details.aspx?id=7218
@@ -118,14 +120,17 @@ SERVERPROPERTY('IsIntegratedSecurityOnly') AS [IsIntegratedSecurityOnly];
 
 
 -- Get SQL Server Agent jobs and Category information (Query 4) (SQL Server Agent Jobs)
-SELECT sj.name AS [JobName], sj.[description] AS [JobDescription], SUSER_SNAME(sj.owner_sid) AS [JobOwner],
-sj.date_created, sj.[enabled], sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
-js.next_run_date, js.next_run_time
+SELECT sj.name AS [Job Name], sj.[description] AS [Job Description], SUSER_SNAME(sj.owner_sid) AS [Job Owner],
+sj.date_created AS [Date Created], sj.[enabled] AS [Job Enabled], 
+sj.notify_email_operator_id, sj.notify_level_email, sc.name AS [CategoryName],
+s.[enabled] AS [Sched Enabled], js.next_run_date, js.next_run_time
 FROM msdb.dbo.sysjobs AS sj WITH (NOLOCK)
 INNER JOIN msdb.dbo.syscategories AS sc WITH (NOLOCK)
 ON sj.category_id = sc.category_id
 LEFT OUTER JOIN msdb.dbo.sysjobschedules AS js WITH (NOLOCK)
 ON sj.job_id = js.job_id
+LEFT OUTER JOIN msdb.dbo.sysschedules AS s WITH (NOLOCK)
+ON js.schedule_id = s.schedule_id
 ORDER BY sj.name OPTION (RECOMPILE);
 ------
 
@@ -146,7 +151,7 @@ ORDER BY name OPTION (RECOMPILE);
 ------
 
 -- Gives you some basic information about your SQL Server Agent Alerts (which are different from SQL Server Agent jobs)
--- Read more about Agent Alerts here: http://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
+-- Read more about Agent Alerts here: https://www.sqlskills.com/blogs/glenn/creating-sql-server-agent-alerts-for-critical-errors/
 
 
 -- Returns a list of all global trace flags that are enabled (Query 6) (Global Trace Flags)
@@ -166,7 +171,7 @@ DBCC TRACESTATUS (-1);
 --           http://support2.microsoft.com/kb/2154845
 
 -- TF 3226 - Supresses logging of successful database backup messages to the SQL Server Error Log
---           http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
+--           https://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs/
 
 
 -- Hardware Information from SQL Server 2005  (Query 7) (Hardware Info)
@@ -203,7 +208,7 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'HARDWARE\DESCRIPTION\Syste
 -- http://www.cpuid.com/softwares/cpu-z.html
 
 -- You can learn more about processor selection for SQL Server by following this link
--- http://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
+-- https://www.sqlskills.com/blogs/glenn/processor-selection-for-sql-server/
 
 
 
@@ -224,17 +229,14 @@ ORDER BY name OPTION (RECOMPILE);
 -- remote admin connections (should be 1)
 
 
--- File Names and Paths for TempDB and all user databases in instance (Query 11) (Database Filenames and Paths)
+-- File names and paths for all user and system databases on instance  (Query 11) (Database Filenames and Paths)
 SELECT DB_NAME([database_id]) AS [Database Name], 
-       [file_id], name, physical_name, type_desc, state_desc,
+       [file_id], [name], physical_name, [type_desc], state_desc,
 	   is_percent_growth, growth,
 	   CONVERT(bigint, growth/128.0) AS [Growth in MB], 
        CONVERT(bigint, size/128.0) AS [Total Size in MB]
 FROM sys.master_files WITH (NOLOCK)
-WHERE [database_id] > 4 
-AND [database_id] <> 32767
-OR [database_id] = 2
-ORDER BY DB_NAME([database_id]) OPTION (RECOMPILE);
+ORDER BY DB_NAME([database_id]), [file_id] OPTION (RECOMPILE);
 ------
 
 -- Things to look at:
@@ -343,7 +345,7 @@ ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
 
 -- Recovery model, log reuse wait description, log file size, log usage size (Query 15) (Database Properties)
 -- and compatibility level for all databases on instance
-SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], 
+SELECT db.[name] AS [Database Name], SUSER_SNAME(db.owner_sid) AS [Database Owner], db.recovery_model_desc AS [Recovery Model], 
 db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
 ls.cntr_value AS [Log Size (KB)], lu.cntr_value AS [Log Used (KB)],
 CAST(CAST(lu.cntr_value AS FLOAT) / CAST(ls.cntr_value AS FLOAT)AS DECIMAL(18,2)) * 100 AS [Log Used %], 
@@ -519,14 +521,15 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
     AND waiting_tasks_count > 0)
 SELECT
     MAX (W1.wait_type) AS [WaitType],
+	CAST (MAX (W1.Percentage) AS DECIMAL (5,2)) AS [Wait Percentage],
+	CAST ((MAX (W1.WaitS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgWait_Sec],
+    CAST ((MAX (W1.ResourceS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgRes_Sec],
+    CAST ((MAX (W1.SignalS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgSig_Sec], 
     CAST (MAX (W1.WaitS) AS DECIMAL (16,2)) AS [Wait_Sec],
     CAST (MAX (W1.ResourceS) AS DECIMAL (16,2)) AS [Resource_Sec],
     CAST (MAX (W1.SignalS) AS DECIMAL (16,2)) AS [Signal_Sec],
     MAX (W1.WaitCount) AS [Wait Count],
-    CAST (MAX (W1.Percentage) AS DECIMAL (5,2)) AS [Wait Percentage],
-    CAST ((MAX (W1.WaitS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgWait_Sec],
-    CAST ((MAX (W1.ResourceS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgRes_Sec],
-    CAST ((MAX (W1.SignalS) / MAX (W1.WaitCount)) AS DECIMAL (16,4)) AS [AvgSig_Sec]
+	CAST (N'https://www.sqlskills.com/help/waits/' + W1.wait_type AS XML) AS [Help/Info URL]
 FROM Waits AS W1
 INNER JOIN Waits AS W2
 ON W2.RowNum <= W1.RowNum
@@ -544,7 +547,7 @@ OPTION (RECOMPILE);
 -- http://blogs.msdn.com/b/psssql/archive/2009/11/03/the-sql-server-wait-type-repository.aspx
 
 -- Wait statistics, or please tell me where it hurts
--- http://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
+-- https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
 
 -- SQL Server 2005 Performance Tuning using the Waits and Queues
 -- http://technet.microsoft.com/en-us/library/cc966413.aspx
@@ -626,7 +629,7 @@ WHERE scheduler_id < 255 OPTION (RECOMPILE);
 -- High Avg Pending DiskIO Counts are a sign of disk pressure
 
 -- How to Do Some Very Basic SQL Server Monitoring
--- http://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
+-- https://www.sqlskills.com/blogs/glenn/how-to-do-some-very-basic-sql-server-monitoring/
 
 
 
@@ -660,7 +663,7 @@ ORDER BY record_id DESC OPTION (RECOMPILE);
 
 
 -- Page Life Expectancy (PLE) value for each NUMA node in current instance  (Query 27) (PLE by NUMA Node)
-SELECT @@SERVERNAME AS [Server Name], [object_name], instance_name, cntr_value AS [Page Life Expectancy]
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], instance_name, cntr_value AS [Page Life Expectancy]
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
@@ -671,12 +674,12 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- This will only return one row for non-NUMA systems.
 
 -- Page Life Expectancy isn’t what you think…
--- http://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
+-- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
 
 -- Memory Grants Pending value for current instance (Query 28) (Memory Grants Pending)
-SELECT @@SERVERNAME AS [Server Name], [object_name], cntr_value AS [Memory Grants Pending]                                                                                                       
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], cntr_value AS [Memory Grants Pending]                                                                                                       
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Memory Manager%' -- Handles named instances
 AND counter_name = N'Memory Grants Pending' OPTION (RECOMPILE);
@@ -718,7 +721,7 @@ ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
 -- Enabling forced parameterization for the database can help, but test first!
 
 -- Plan cache, adhoc workloads and clearing the single-use plan cache bloat
--- http://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
+-- https://www.sqlskills.com/blogs/kimberly/plan-cache-adhoc-workloads-and-clearing-the-single-use-plan-cache-bloat/
 
 
 
@@ -936,7 +939,8 @@ INNER JOIN sys.dm_db_missing_index_details AS mid WITH (NOLOCK)
 ON mig.index_handle = mid.index_handle
 INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON p.[object_id] = mid.[object_id]
-WHERE mid.database_id = DB_ID() 
+WHERE mid.database_id = DB_ID()
+AND p.index_id < 2 
 ORDER BY index_advantage DESC OPTION (RECOMPILE);
 ------
 
@@ -1139,17 +1143,28 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 2
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 3
--- http://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
+-- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
 
 
--- Sign up for Microsoft Visual Studio Dev Essentials and get a free 3 month pass to Pluralsight
+-- Sign up for Microsoft Visual Studio Dev Essentials and get a free three month pass to Pluralsight
 
 -- Microsoft Visual Studio Dev Essentials
--- https://www.visualstudio.com/dev-essentials/
+-- http://bit.ly/1q6xbDL
+
+
+-- Sign up for Microsoft IT Pro Cloud Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
+
+-- Microsoft IT Pro Cloud Essentials
+-- http://bit.ly/2443SAd
+
+
+-- August 2017 blog series about upgrading and migrating SQL Server
+-- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/
+
 

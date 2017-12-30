@@ -77,6 +77,9 @@ Parameters:
         CreateOnly - Only return the create scripts where they aren't NULL.
         DropOnly - Only return the drop scripts where they aren't NULL.
         ScriptsOnly - Return drop and create scripts where they aren't NULL.
+        Report - Returns one output with one row per principal and a comma delimited list of
+                    roles the principal is a member of and a comma delimited list of the 
+                    individual permissions they have.
     @Print
         Defaults to 0, but if a 1 is passed in then the queries are not run but printed
         out instead.  This is primarily for debugging.
@@ -85,7 +88,7 @@ Data is ordered as follows
     1st result set: SrvPrincipal
     2nd result set: RoleName, LoginName if the parameter @Role is used else
                     LoginName, RoleName
-    3rd result set: Grantee_Name 
+    3rd result set: GranteeName 
    
 *********************************************************************************************
 -- V2.0
@@ -162,7 +165,7 @@ END
 --=========================================================================
 -- Server Principals
 SET @sql = 
-    N'SELECT name AS SrvPrincipal, type, type_desc, is_disabled, default_database_name, 
+    N'SELECT principal_id AS SrvPrincipalId, name AS SrvPrincipal, type, type_desc, is_disabled, default_database_name, 
                 default_language_name, sid, ' + NCHAR(13) + 
     N'   CASE WHEN principal_id < 100 THEN NULL ELSE ' + NCHAR(13) + 
     N'          ''IF EXISTS (SELECT * FROM sys.server_principals WHERE name = '' + QuoteName(Logins.name,'''''''') + '') '' + ' + NCHAR(13) + 
@@ -230,6 +233,7 @@ BEGIN
  
     -- Create temp table to store the data in
     CREATE TABLE ##SrvPrincipals (
+        SrvPrincipalId int NULL,
         SrvPrincipal sysname NULL,
         type char(1) NULL,
         type_desc nchar(60) NULL,
@@ -248,7 +252,7 @@ END
 --=========================================================================
 -- Server level roles
 SET @sql = 
-    N'SELECT Logins.name AS LoginName, Roles.name AS RoleName, ' + NCHAR(13) + 
+    N'SELECT Logins.principal_id AS LoginPrincipalId, Logins.name AS LoginName, Roles.name AS RoleName, ' + NCHAR(13) + 
     N'   ''EXEC sp_dropsrvrolemember @loginame = ''+QUOTENAME(Logins.name' + @Collation + 
             ','''''''')+'', @rolename = ''+QUOTENAME(Roles.name' + @Collation + 
             ','''''''') + '';'' AS DropScript, ' + NCHAR(13) + 
@@ -297,6 +301,7 @@ BEGIN
  
     -- Create temp table to store the data in
     CREATE TABLE ##SrvRoles (
+        LoginPrincipalId int NULL,
         LoginName sysname NULL,
         RoleName sysname NULL,
         DropScript nvarchar(max) NULL,
@@ -311,8 +316,8 @@ END
 --=========================================================================
 -- Server Permissions
 SET @sql =
-    N'SELECT Grantee.name AS Grantee_Name, Grantor.name AS Grantor_Name, ' + NCHAR(13) + 
-    N'   Permission.class_desc, Permission.permission_name, ' + NCHAR(13) + 
+    N'SELECT Grantee.principal_id AS GranteePrincipalId, Grantee.name AS GranteeName, ' + NCHAR(13) + 
+    N'   Grantor.name AS GrantorName, Permission.class_desc, Permission.permission_name, ' + NCHAR(13) + 
     N'   Permission.state_desc,  ' + NCHAR(13) + 
     N'   ''REVOKE '' + ' + NCHAR(13) + 
     N'       CASE WHEN Permission.class_desc = ''ENDPOINT'' THEN NULL ' + NCHAR(13) + 
@@ -362,8 +367,9 @@ BEGIN
  
     -- Create temp table to store the data in
     CREATE TABLE ##SrvPermissions (
-        Grantee_Name sysname NULL,
-        Grantor_Name sysname NULL,
+        GranteePrincipalId int NULL,
+        GranteeName sysname NULL,
+        GrantorName sysname NULL,
         class_desc nvarchar(60) NULL,
         permission_name nvarchar(128) NULL,
         state_desc nvarchar(60) NULL,
@@ -400,14 +406,36 @@ BEGIN
         SELECT DropScript, AddScript FROM ##SrvRoles WHERE DropScript IS NOT NULL OR AddScript IS NOT NULL
         SELECT RevokeScript, GrantScript FROM ##SrvPermissions WHERE RevokeScript IS NOT NULL OR GrantScript IS NOT NULL
     END
+    ELSE IF @Output = 'Report'
+    BEGIN
+        SELECT SrvPrincipal, type, type_desc, is_disabled,
+                STUFF((SELECT ', ' + ##SrvRoles.RoleName
+                        FROM ##SrvRoles
+                        WHERE ##SrvPrincipals.SrvPrincipalId = ##SrvRoles.LoginPrincipalId
+                        ORDER BY ##SrvRoles.RoleName
+                        FOR XML PATH(''),TYPE).value('.','VARCHAR(MAX)')
+                    , 1, 2, '') AS RoleMembership,
+                STUFF((SELECT ', ' + ##SrvPermissions.state_desc + ' ' + ##SrvPermissions.permission_name + ' ' +
+                                CASE WHEN class_desc <> 'SERVER' THEN class_desc ELSE '' END
+                        FROM (SELECT DISTINCT * FROM ##SrvPermissions) ##SrvPermissions
+                        WHERE ##SrvPrincipals.SrvPrincipalId = ##SrvPermissions.GranteePrincipalId
+                        ORDER BY ##SrvPermissions.state_desc, ##SrvPermissions.permission_name
+                        FOR XML PATH(''),TYPE).value('.','VARCHAR(MAX)')
+                    , 1, 2, '') AS DirectPermissions
+        FROM ##SrvPrincipals
+        ORDER BY SrvPrincipal
+    END
     ELSE -- 'Default' or no match
     BEGIN
-        SELECT * FROM ##SrvPrincipals ORDER BY SrvPrincipal
+        SELECT SrvPrincipal, type, type_desc, is_disabled, default_database_name, 
+                default_language_name, sid, DropScript, CreateScript 
+        FROM ##SrvPrincipals ORDER BY SrvPrincipal
         IF LEN(@Role) > 0
-            SELECT * FROM ##SrvRoles ORDER BY RoleName, LoginName
+            SELECT LoginName, RoleName, DropScript, AddScript FROM ##SrvRoles ORDER BY RoleName, LoginName
         ELSE
-            SELECT * FROM ##SrvRoles ORDER BY LoginName, RoleName
-        SELECT * FROM ##SrvPermissions ORDER BY Grantee_Name
+            SELECT LoginName, RoleName, DropScript, AddScript FROM ##SrvRoles ORDER BY LoginName, RoleName
+        SELECT GranteeName, GrantorName, class_desc, permission_name, state_desc, RevokeScript, GrantScript 
+        FROM ##SrvPermissions ORDER BY GranteeName
     END
  
     IF @DropTempTables = 1
