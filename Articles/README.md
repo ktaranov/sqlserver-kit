@@ -476,6 +476,10 @@ Articles types:
 | [Take Care When Scripting Batches]                                                                                      | Michael J Swart                          | 2014-09-09 | [DBA],[DEV] |
 | [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA],[DEV] |
 | [Which user function do I use?]                                                                                         | Kenneth Fisher                           | 2015-06-24 | [DBA],[DEV] |
+| [What’s So Bad About Shrinking Databases with DBCC SHRINKDATABASE?]                                                     | Brent Ozar                               | 2017-12-29 | [DBA],[DEV] |
+| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]                    | Solomon Rutzky                           | 2017-12-08 | [DBA],[DEV] |
+| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]                  | Solomon Rutzky                           | 2017-12-11 | [DBA],[DEV] |
+| [Current State of the NewSQL/NoSQL Cloud Arena]                                                                         | Warner Chaves                            | 2017-11-27 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -931,3 +935,7 @@ Articles types:
 [Take Care When Scripting Batches]:http://michaeljswart.com/2014/09/take-care-when-scripting-batches/
 [When Measuring Timespans, try DATEADD instead of DATEDIFF]:http://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
 [Which user function do I use?]:https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
+[What’s So Bad About Shrinking Databases with DBCC SHRINKDATABASE?]:https://www.brentozar.com/archive/2017/12/whats-bad-shrinking-databases-dbcc-shrinkdatabase/
+[Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]:https://sqlquantumleap.com/2017/12/08/which-collation-is-used-to-convert-nvarchar-to-varchar-in-a-where-condition-part-a-of-2-duck/
+[Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]:https://sqlquantumleap.com/2017/12/11/which-collation-is-used-to-convert-nvarchar-to-varchar-in-a-where-condition-part-b-of-2-rabbit/#comments
+[Current State of the NewSQL/NoSQL Cloud Arena]:https://www.red-gate.com/simple-talk/cloud/cloud-data/current-state-newsqlnosql-cloud-arena/
