@@ -46,12 +46,17 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT TOP(100000) * FROM sys.objects AS o1 CROSS JOIN sys.objects AS o2 CROSS JOIN sys.objects AS o3;'
-       , @numberOfExecution = 100
+       , @numberOfExecution = 10
        , @saveResults       = 1
        , @calcMedian        = 1
        , @clearCache        = 1
        , @printStepInfo     = 0
        , @durationAccuracy  = 'ms';
+
+.LICENSE MIT
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
     Author: Aleksei Nagorskii
@@ -69,6 +74,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Author: Konstantin Taranov
     Modified date: 2017-12-25
     Version: 2.1
+
+    Author: Konstantin Taranov
+    Modified date: 2018-01-01
+    Version: 2.2
 */
 AS
 BEGIN TRY
@@ -116,18 +125,19 @@ BEGIN TRY
         THROW 55004, @err_msg, 1;
     END
 
-    DECLARE @crlf        VARCHAR(10)   = CHAR(10);
-    DECLARE @cts         DATETIME2(7)  = CURRENT_TIMESTAMP;
-    DECLARE @r           INT           = 0;
-    DECLARE @min         BIGINT;
-    DECLARE @avg         BIGINT;
-    DECLARE @max         BIGINT;
-    DECLARE @median      REAL;
-    DECLARE @plan_handle VARBINARY(64);
-    DECLARE @rts         DATETIME2(7);
-    DECLARE @finishTime  DATETIME2(7);
-    DECLARE @duration    INT;
-    DECLARE @startTime  VARCHAR(27);
+    DECLARE @crlf          VARCHAR(10)  = CHAR(10);
+    DECLARE @cts           DATETIME2(7) = CURRENT_TIMESTAMP;
+    DECLARE @r             INT          = 0;
+    DECLARE @min           BIGINT;
+    DECLARE @avg           BIGINT;
+    DECLARE @max           BIGINT;
+    DECLARE @median        REAL;
+    DECLARE @plan_handle   VARBINARY(64);
+    DECLARE @rts           DATETIME2(7);
+    DECLARE @finishTime    DATETIME2(7);
+    DECLARE @duration      INT;
+    DECLARE @startTime     VARCHAR(27);
+    DECLARE @originalLogin SYSNAME = ORIGINAL_LOGIN();
 
     DECLARE @t           TABLE (
         StartTimeStamp   DATETIME2(7)
@@ -141,7 +151,7 @@ BEGIN TRY
         );
 
     SET @startTime = CONVERT(VARCHAR(27), CAST(CURRENT_TIMESTAMP AS DATETIME2(7)), 121);
-    PRINT('Benchmark started at ' + @startTime);
+    PRINT('Benchmark started at ' + @startTime + ' by ' + @originalLogin);
 
     WHILE @r < @numberOfExecution
     BEGIN
@@ -269,18 +279,19 @@ BEGIN TRY
           ', Average: ' + CAST(@avg AS VARCHAR(30)) + @durationAccuracy +
           CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS VARCHAR(30)) + @durationAccuracy ELSE '' END +
           @crlf +
-          'Benchmark finished at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121) + '.'
+          'Benchmark finished at ' + CONVERT(VARCHAR(23), CURRENT_TIMESTAMP, 121) + ' by ' + @originalLogin + '.'
           );
 
     IF @saveResults = 1
 
-    DECLARE @TSQLStatementCHECKSUM INT = CHECKSUM(@tsqlStatement + CAST(ORIGINAL_LOGIN() AS SYSNAME) + @startTime);
+    DECLARE @TSQLStatementGUID VARCHAR(36) = NEWID();
 
         IF OBJECT_ID('dbo.BenchmarkTSQL', 'U') IS NULL
         BEGIN
             CREATE TABLE dbo.BenchmarkTSQL(
                   BenchmarkTSQLID       INT IDENTITY  NOT NULL
-                , TSQLStatementCHECKSUM INT           NOT NULL
+                , TSQLStatementGUID     VARCHAR(36)   NOT NULL
+                , StepRowNumber         INT           NOT NULL
                 , StartTimeStamp        DATETIME2(7)  NOT NULL
                 , RunTimeStamp          DATETIME2(7)  NOT NULL
                 , FinishTimeStamp       DATETIME2(7)  NOT NULL
@@ -293,7 +304,8 @@ BEGIN TRY
             );
 
             INSERT INTO dbo.BenchmarkTSQL(
-                 TSQLStatementCHECKSUM
+                 TSQLStatementGUID
+               , StepRowNumber
                , StartTimeStamp
                , RunTimeStamp
                , FinishTimeStamp 
@@ -304,7 +316,8 @@ BEGIN TRY
                , DurationAccuracy
                , OriginalLogin
             )
-            SELECT @TSQLStatementCHECKSUM AS TSQLStatementCHECKSUM
+            SELECT @TSQLStatementGUID AS TSQLStatementGUID
+                 , ROW_NUMBER() OVER (ORDER BY RunTimeStamp, FinishTimeStamp) AS StepRowNumber
                  , StartTimeStamp
                  , RunTimeStamp
                  , FinishTimeStamp
@@ -313,12 +326,13 @@ BEGIN TRY
                  , ClearCache
                  , PrintStepInfo
                  , DurationAccuracy
-                 , ORIGINAL_LOGIN() AS OriginalLogin
+                 , @originalLogin AS OriginalLogin
              FROM @t;
         END
         ELSE
             INSERT INTO dbo.BenchmarkTSQL
-            SELECT @TSQLStatementCHECKSUM AS TSQLStatementCHECKSUM
+            SELECT @TSQLStatementGUID AS TSQLStatementGUID
+                 , ROW_NUMBER() OVER (ORDER BY RunTimeStamp, FinishTimeStamp) AS StepRowNumber
                  , StartTimeStamp
                  , RunTimeStamp
                  , FinishTimeStamp
@@ -327,7 +341,7 @@ BEGIN TRY
                  , ClearCache
                  , PrintStepInfo
                  , DurationAccuracy
-                 , ORIGINAL_LOGIN()
+                 , @originalLogin
              FROM @t;
 
     SET NOCOUNT ON;
