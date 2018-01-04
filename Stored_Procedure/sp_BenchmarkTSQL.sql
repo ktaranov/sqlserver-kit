@@ -1,23 +1,23 @@
-IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL 
+IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
 
 ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
-      @tsqlStatement       NVARCHAR(MAX)
-    , @numberOfExecution   INT           = 10
-    , @saveResults         BIT           = 0
-    , @clearCache          BIT           = 0
-    , @calcMedian          BIT           = 0
-    , @printStepInfo       BIT           = 1
-    , @durationAccuracy    VARCHAR(10)   = 'ns'
+      @tsqlStatement     NVARCHAR(MAX)
+    , @numberOfExecution INT        = 10
+    , @saveResults       BIT        = 0
+    , @clearCache        BIT        = 0
+    , @calcMedian        BIT        = 0
+    , @printStepInfo     BIT        = 1
+    , @durationAccuracy  VARCHAR(3) = 'ns'
 )
 /*
 .SYNOPSIS
-    Calculate SQL statement execution time, save results if need.
+    Calculate TSQL statement execution time, save results if needed.
 
 .DESCRIPTION
-    Run SQL statement specified times, show results in ms, insert execution details into table dbo.BenchmarkTSQL (create if not exist).
+    Run SQL statement specified times, show results, insert execution details into table dbo.BenchmarkTSQL (create if not exist).
 
 .PARAMETER @tsqlStatement
     TSQL statement for benchmarking.
@@ -26,7 +26,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
-    Save benchmark details to dbo.BenchmarkTSQL table.
+    Save benchmark details to dbo.BenchmarkTSQL table if @saveResults = 1.
 
 .PARAMETER @clearCache
     Clear cached plan for TSQL statement.
@@ -35,7 +35,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Calculate pseudo median of execution time.
 
 .PARAMETER @printStepInfo
-    PRINT detailed step information: step count, start time, end time, duration
+    PRINT detailed step information: step count, start time, end time, duration.
+
+.PARAMETER @durationAccuracy
+    Duration accuracy calculation, possible values: ns, mcs, ms, ss, s, mi, n, hh, wk, ww, dd, d.
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM , sys.databases';
@@ -50,7 +53,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @saveResults       = 1
        , @calcMedian        = 1
        , @clearCache        = 1
-       , @printStepInfo     = 0
+       , @printStepInfo     = 1
        , @durationAccuracy  = 'ms';
 
 .LICENSE MIT
@@ -78,6 +81,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Author: Konstantin Taranov
     Modified date: 2018-01-01
     Version: 2.2
+
+    Author: Konstantin Taranov
+    Modified date: 2018-01-04
+    Version: 2.3
 */
 AS
 BEGIN TRY
@@ -103,7 +110,7 @@ BEGIN TRY
                                  , 'dd'  -- day
                                  , 'd'   -- day
     )
-         THROW 55003, '@durationAccuracy can be only in this values: ns, mcs, ms, ss, s, mi, n, hh. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
+         THROW 55003, '@durationAccuracy can be only in this values: ns, mcs, ms, ss, s, mi, n, hh, wk, ww, dd, d. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
     IF EXISTS (
         SELECT 1
@@ -148,7 +155,7 @@ BEGIN TRY
       , ClearCache       BIT
       , PrintStepInfo    BIT
       , DurationAccuracy VARCHAR(10)
-        );
+      );
 
     SET @startTime = CONVERT(VARCHAR(27), CAST(CURRENT_TIMESTAMP AS DATETIME2(7)), 121);
     PRINT('Benchmark started at ' + @startTime + ' by ' + @originalLogin);
@@ -163,7 +170,7 @@ BEGIN TRY
             SELECT @plan_handle = plan_handle
             FROM sys.dm_exec_cached_plans
             CROSS APPLY sys.dm_exec_sql_text(plan_handle)
-            WHERE [text] LIKE @tsqlStatement;  -- LIKE instead = (equal) because = ignoring trailing spaces
+            WHERE [text] LIKE @tsqlStatement;  -- LIKE instead = (equal) because = ignore trailing spaces
 
             IF @plan_handle IS NOT NULL DBCC FREEPROCCACHE (@plan_handle);
         END;
@@ -344,7 +351,7 @@ BEGIN TRY
                  , @originalLogin
              FROM @t;
 
-    SET NOCOUNT ON;
+    SET NOCOUNT OFF;
 END TRY
 
 BEGIN CATCH
