@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (532 trace flags)
+Complete list of Microsoft SQL Server trace flags (533 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -172,7 +172,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **532 trace flags**
+Summary: **533 trace flags**
 
 
 <a id="-1"></a>
@@ -1367,7 +1367,7 @@ Link: None
 <a id="2422"></a>
 #### Trace Flag: 2422
 Function: Enables the SQL Server Database Engine to abort a request when the maximum time set by Resource Governor REQUEST_MAX_CPU_TIME_SEC configuration is exceeded.<br />
-**Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**
+**Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
 Link: http://support.microsoft.com/help/4038419<br />
 Scope: global only
 
@@ -4064,6 +4064,16 @@ Scope: global or session
 Function: Disables the use of the last persisted sample rate, for all subsequent statistics update where a sample rate is not specified explicitly as part of the [UPDATE STATISTICS](https://docs.microsoft.com/en-us/sql/t-sql/statements/update-statistics-transact-sql) statement.
 Link: http://support.microsoft.com/kb/4039284<br />
 Link: [Docs Trace Flags]
+
+
+<a id="11024"></a>
+#### Trace Flag: 11024
+Function: In Microsoft SQL Server 2017, when incremental statistics are built on the top of partitioned tables, the sum of modification counts of all partitions is stored as the modification count of the root node.
+When the modification count of the root node exceeds a threshold, the auto update of statistics is triggered.
+However, if the modification count of any single partition does not exceed the local threshold, the statistics are not updated.
+Additionally, the modification count of the root node is reset to zero. This may cause delay in the auto update of incremental statistics.
+When trace flag 11024 is enabled, the modification count of the root node is kept as the sum of modification counts of all partitions.<br />
+Link: http://support.microsoft.com/kb/4041811
 
 
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
