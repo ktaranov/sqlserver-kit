@@ -4073,7 +4073,9 @@ When the modification count of the root node exceeds a threshold, the auto updat
 However, if the modification count of any single partition does not exceed the local threshold, the statistics are not updated.
 Additionally, the modification count of the root node is reset to zero. This may cause delay in the auto update of incremental statistics.
 When trace flag 11024 is enabled, the modification count of the root node is kept as the sum of modification counts of all partitions.<br />
-Link: http://support.microsoft.com/kb/4041811
+**Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
+Link: http://support.microsoft.com/en-us/kb/4041811<br />
+Scope: ?
 
 
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
