@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (531 trace flags)
+Complete list of Microsoft SQL Server trace flags (532 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 **Trace flag behavior may not be supported in future releases of SQL Server.**
@@ -172,7 +172,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **531 trace flags**
+Summary: **532 trace flags**
 
 
 <a id="-1"></a>
@@ -1362,6 +1362,14 @@ Scope: global only
 #### Trace Flag: 2398
 Function: Another one I stumbled upon myself...outputs info about “Smart Seek costing”: e.g.: “Smart seek costing (75.2) :: 1.34078e+154 , 1”<br />
 Link: None
+
+
+<a id="2422"></a>
+#### Trace Flag: 2422
+Function: Enables the SQL Server Database Engine to abort a request when the maximum time set by Resource Governor REQUEST_MAX_CPU_TIME_SEC configuration is exceeded.<br />
+**Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**
+Link: http://support.microsoft.com/help/4038419<br />
+Scope: global only
 
 
 <a id="2430"></a>
