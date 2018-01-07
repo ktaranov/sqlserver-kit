@@ -50,6 +50,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Joe Obbish ([b](https://orderbyselectnull.com/))
  - Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
  - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
+ - Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -153,14 +154,15 @@ With this option enabled, page checksums are validated during a backup, and a ch
 Starting in SQL Server 2014, this option can be set instance-wide through `sp_configure ('backup checksum default')`.
 
 **Trace flag 3226** prevents the writing of successful backup messages to the SQL Server ERRORLOG.
-Information about successful backups is still written to msdb and can be queried using T-SQL.
+Information about successful backups is still written to `msdb` and can be queried using T-SQL.
 For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
 As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
 
 **Trace flag 7412** Enables the lightweight query execution statistics profiling infrastructure.
-unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
+Unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
 This would be my advice here because this enables that lightweight profiling infrastructure there and then you’ll see in a few minutes what it unleashes here.
-So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem. To tap into running system and look at what it’s doing.”
+So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem.
+To tap into running system and look at what it’s doing.”
 
 **Trace flag 7745** forces Query Store to not flush data to disk on database shutdown.
 Using this trace may cause Query Store data not previously flushed to disk to be lost in case of shutdown.
@@ -177,7 +179,8 @@ Summary: **533 trace flags**
 
 <a id="-1"></a>
 #### Trace Flag: -1
-Function: Sets trace flags for all client connections, rather than for a single client connection. Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using DBCC TRACEON and DBCC TRACEOFF.<br />
+Function: Sets trace flags for all client connections, rather than for a single client connection.
+Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using DBCC TRACEON and DBCC TRACEOFF.<br />
 Link: http://www.sql-server-performance.com/2002/traceflags/
 
 
@@ -185,16 +188,19 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 #### Trace Flag: 101
 Function: Verbose Merge Replication logging output for troubleshooting
 Merger repl performance<br />
-Link: http://support.microsoft.com/kb/2892633
+Link: https://support.microsoft.com/en-us/help/2892633<br />
+Scope: global only
 
 
 <a id="102"></a>
 #### Trace Flag: 102
 Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
-Link: http://support.microsoft.com/kb/2892633
+Link: https://support.microsoft.com/en-us/help/2892633<br />
+Scope: global only
 
 
 <a id="105"></a>
+**Undocumented trace flag**<br />
 #### Trace Flag: 105
 Function: Join more than 16 tables in SQL server 6.5<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
@@ -202,24 +208,32 @@ Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Serv
 
 <a id="106"></a>
 #### Trace Flag: 106
-Function: This enables you to see the messages that are sent to and from the Publisher, if you are using Web Synchronization<br />
+Function: If you are using Web Synchronization, you can start Replmerg.exe and pass the -T 106 option to use trace flag 106.
+This enables you to see the messages that are sent to and from the Publisher.
+The agent writes the client's input messages to a file that is named ExchangeID(guid).IN.XML, and writes the output messages to a file that is named ExchangeID(guid).OUT.XML.
+(In these file names, guid is the GUID of the Exchange Server session.)
+These files are created in the directory from which Replmerg.exe was invoked.
+For security, you should delete these files after you are finished.<br />
 Link: http://technet.microsoft.com/en-us/library/ms151872(v=sql.105).aspx
 
 
 <a id="107"></a>
 #### Trace Flag: 107
+**Undocumented trace flag**<br />
 Function: SQL 6.5/7/8 – Interprets numbers with a decimal point as float instead of decimal<br />
 Link: None
 
 
 <a id="110"></a>
 #### Trace Flag: 110
+**Undocumented trace flag**<br />
 Function: SQL 6.5 – Turns off ANSI select characteristics<br />
 Link: None
 
 
 <a id="120"></a>
 #### Trace Flag: 120
+**Undocumented trace flag**<br />
 Function: FIX: Error message when you schedule a Replication Merge Agent job to run after you install SQL Server 2000 Service Pack 4: "The process could not enumerate changes at the 'Subscriber'"<br />
 Link: None
 
@@ -245,14 +259,17 @@ Link: http://blogs.msdn.microsoft.com/sqlprogrammability/2007/01/13/6-0-best-pro
 
 <a id="146"></a>
 #### Trace Flag: 146
+**Undocumented trace flag**<br />
 Function: Consider using when replaying against SQL 8.0, to avoid an attempt to set an encrypted connection.<br />
 Link: None
 
 
 <a id="168"></a>
 #### Trace Flag: 168
-Function: Bugfix in ORDER BY<br />
-Link: http://support.microsoft.com/kb/926292
+Function: Bugfix in ORDER BY. This hotfix introduces trace flag 168. After you apply this hotfix, you must enable trace flag 168.
+Trace flag 168 must be set before the database is migrated to SQL Server 2005.
+If trace flag 168 is set after the database is migrated, the query result will remain unsorted.<br />
+Link: https://support.microsoft.com/en-us/help/926292
 
 
 <a id="174"></a>
@@ -288,12 +305,14 @@ Scope: global only
 
 <a id="206"></a>
 #### Trace Flag: 206
+**Undocumented trace flag**<br />
 Function: SQL 6.5 – Provides backward compatibility for the set user statement. KB 160732<br />
 Link: None
 
 
 <a id="208"></a>
 #### Trace Flag: 208
+**Undocumented trace flag**<br />
 Function: SET QUOTED IDENTIFIER ON<br />
 Link: None
 
@@ -306,60 +325,70 @@ Link: https://support.microsoft.com/en-us/kb/945892
 
 <a id="212"></a>
 #### Trace Flag: 212
+**Undocumented trace flag**<br />
 Function: SQL 9 – Query may run much slower when compared to SQL 8 when you use a cursor to run the query<br />
 Link: None
 
 
 <a id="220"></a>
 #### Trace Flag: 220
+**Undocumented trace flag**<br />
 Function: “FIX: Error Message: "Insufficient key column information for updating" Occurs in SQL Server 2000 SP3”<br />
 Link: None
 
 
 <a id="221"></a>
 #### Trace Flag: 221
+**Undocumented trace flag**<br />
 Function: “FIX: The query runs slower than you expected when you try to parse a query in SQL Server 2000”<br />
 Link: None
 
 
 <a id="222"></a>
 #### Trace Flag: 222
+**Undocumented trace flag**<br />
 Function: “FIX: Each query takes a long time to compile when you execute a single query or when you execute multiple concurrent queries in SQL Server 2000”<br />
 Link: None
 
 
 <a id="237"></a>
 #### Trace Flag: 237
+**Undocumented trace flag**<br />
 Function: Tells SQL Server to use correlated sub-queries in Non-ANSI standard backward compatibility mode<br />
 Link: None
 
 
 <a id="242"></a>
 #### Trace Flag: 242
+**Undocumented trace flag**<br />
 Function: Provides backward compatibility for correlated subqueries where non-ANSI-standard results are desired<br />
 Link: None
 
 
 <a id="243"></a>
 #### Trace Flag: 243
+**Undocumented trace flag**<br />
 Function: Provides backward compatibility for nullability behavior. When set, SQL Server has the same nullability violation behavior as that of a ver 4.2: Processing of the entire batch is terminated if the nullability error (inserting NULL into a NOT NULL field) can be detected at compile time; Processing of offending row is skipped, but the command continues if the nullability violation is detected at run time.Behavior of SQL Server is now more consistent because nullability checks are made at run time and a nullability violation results in the command terminating and the batch or transaction process continuing.<br />
 Link: None
 
 
 <a id="244"></a>
 #### Trace Flag: 244
+**Undocumented trace flag**<br />
 Function: Disables checking for allowed interim constraint violations. By default, SQL Server checks for and allows interim constraint violations. An interim constraint violation is caused by a change that removes the violation such that the constraint is met, all within a single statement and transaction. SQL Server checks for interim constraint violations for self-referencing DELETE statements, INSERT, and multi-row UPDATE statements. This checking requires more work tables. With this trace flag you can disallow interim constraint violations, thus requiring fewer work tables.<br />
 Link: None
 
 
 <a id="246"></a>
 #### Trace Flag: 246
+**Undocumented trace flag**<br />
 Function: Derived or NULL columns must be explicitly named in a select…INTO or create view statement when not done they raise an error. This flag avoids that.<br />
 Link: None
 
 
 <a id="253"></a>
 #### Trace Flag: 253
+**Undocumented trace flag**<br />
 Function: Prevents ad-hoc query plans to stay in cache<br />
 Link: http://www.sqlservercentral.com/Forums/Topic837613-146-1.aspx
 
