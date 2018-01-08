@@ -395,6 +395,7 @@ Link: http://www.sqlservercentral.com/Forums/Topic837613-146-1.aspx
 
 <a id="257"></a>
 #### Trace Flag: 257
+**Undocumented trace flag**<br />
 Function: Will invoke a print algorithm on the XML output before returning it to make the XML result more readable<br />
 Link: None
 
@@ -409,6 +410,7 @@ Scope: global or session
 
 <a id="262"></a>
 #### Trace Flag: 262
+**Undocumented trace flag**<br />
 Function: SQL 7 – Trailing spaces are no longer truncated from literal strings in CASE statements<br />
 Link: None
 
@@ -426,24 +428,28 @@ Link: [Demo](https://github.com/ktaranov/sqlserver-kit/blob/master/Errors/Identi
 
 <a id="274"></a>
 #### Trace Flag: 274
+**Undocumented trace flag**<br />
 Function: “FIX: Error message when you insert a new row into a view in SQL Server 2005: Cannot insert explicit value for identity column in table <TableName> when IDENTITY_INSERT is set to OFF”<br />
 Link: None
 
 
 <a id="302"></a>
 #### Trace Flag: 302
+**Undocumented trace flag**<br />
 Function: Output Index Selection info<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
 <a id="310"></a>
 #### Trace Flag: 310
+**Undocumented trace flag**<br />
 Function: Outputs info about actual join order<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
 <a id="320"></a>
 #### Trace Flag: 320
+**Undocumented trace flag**<br />
 Function: Disables join-order heuristics used in ANSI joins. To see join-order heuristics use flag 310. SQL Server uses join-order heuristics to reduce of permutations when using the best join order. <br />
 Link: None
 
@@ -454,44 +460,52 @@ Function: Outputs detailed info about updates<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm<br />
 Link: https://support.microsoft.com/en-us/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
+
 <a id="325"></a>
 #### Trace Flag: 325
+**Undocumented trace flag**<br />
 Function: Prints information about the cost of using a non-clustered index or a sort to process an ORDER BY clause<br />
 Link: None
 
 
 <a id="326"></a>
 #### Trace Flag: 326
+**Undocumented trace flag**<br />
 Function: Prints information about estimated & actual costs of sorts. Instructs server to use arithmetic averaging when calculating density instead of a geometric weighted average when updating statistics. Useful for building better stats when an index has skew on the leading column. Use only for updating the stats of a table/index with known skewed data.<br />
 Link: None
 
 
 <a id="330"></a>
 #### Trace Flag: 330
+**Undocumented trace flag**<br />
 Function: Enables full output when using the SET SHOWPLAN_ALL option, which gives detailed information about joins<br />
 Link: None
 
 
 <a id="342"></a>
 #### Trace Flag: 342
+**Undocumented trace flag**<br />
 Function: Disables the costing of pseudo-merge joins, thus significantly reducing time spent on the parse for certain types of large, multi-table joins. One can also use SET FORCEPLAN ON to disable the costing of pseudo-merge joins because the query is forced to use the order specified in the FROM clause. <br />
 Link: None
 
 
 <a id="345"></a>
 #### Trace Flag: 345
+**Undocumented trace flag**<br />
 Function: Changes join order selection logic in SQL Server 6.5<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
 
 <a id="445"></a>
 #### Trace Flag: 445
+**Undocumented trace flag**<br />
 Function: Prints ”compile issued” message in the errorlog for each compiled statement, when used together with 3605<br />
 Link: None
 
 
 <a id="506"></a>
 #### Trace Flag: 506
+**Undocumented trace flag**<br />
 Function: Enforces SQL-92 standards regarding null values for comparisons between variables and parameters. Any comparison of variables and parameters that contain a NULL always results in a NULL.<br />
 Link: None
 
@@ -509,11 +523,10 @@ Scope: global or session
 
 <a id="611"></a>
 #### Trace Flag: 611
+**Undocumented trace flag**<br />
 Function: SQL 9 – When turned on, each lock escalation is recorded in the error log along with the SQL Server handle number.
-Aaron confirmed this still works in SQL 2014. Outputs info of the form: "Escalated
-locks - Reason: LOCK_THRESHOLD, Mode: S, Granularity: TABLE, Table: 222623836,
-HoBt: 150:256, HoBt Lock Count: 6248, Escalated Lock Count: 6249, Line Number: 1,
-Start Offset: 0, SQL Statement: select count(*) from dbo.BigTable"<br />
+Aaron confirmed this still works in SQL 2014. Outputs info of the form: "Escalated locks - Reason: LOCK_THRESHOLD, Mode: S, Granularity: TABLE, Table: 222623836,
+HoBt: 150:256, HoBt Lock Count: 6248, Escalated Lock Count: 6249, Line Number: 1, Start Offset: 0, SQL Statement: select count(*) from dbo.BigTable"<br />
 Link: None
 
 
@@ -563,6 +576,7 @@ Scope: global only
 
 <a id="653"></a>
 #### Trace Flag: 653
+**Undocumented trace flag**<br />
 Function: Disables read ahead for the current connection<br />
 Link: None
 
@@ -577,9 +591,8 @@ Scope: global only
 
 <a id="662"></a>
 #### Trace Flag: 662
-Function: Prints detailed information about the work done by the ghost
-cleanup task when it runs next. Use TF 3605 to see the output in the
-errorlog<br />
+**Undocumented trace flag**<br />
+Function: Prints detailed information about the work done by the ghost cleanup task when it runs next. Use TF 3605 to see the output in the errorlog<br />
 Link: http://blogs.msdn.com/b/sqljourney/archive/2012/07/28/an-in-depth-look-at-ghost-records-in-sql-server.aspx
 
 
