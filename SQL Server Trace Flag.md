@@ -2064,10 +2064,13 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msd
 
 <a id="3604"></a>
 #### Trace Flag: 3604
-Function: Enables the output from a large number of trace flags and DBCC commands to be sent back to the client. The Connect issue notes that problems can occur when using 3604 with a query that executes across a linked server. [This CSS page](https://blogs.msdn.microsoft.com/psssql/2009/05/11/how-do-i-determine-which-dump-triggers-are-enabled/) points out that 3604 is necessary for DBCC DumpTrigger(‘display’)<br />
+Function: Enables the output from a large number of trace flags and DBCC commands to be sent back to the client.
+The Connect issue notes that problems can occur when using 3604 with a query that executes across a linked server.
+[This CSS page](https://blogs.msdn.microsoft.com/psssql/2009/05/11/how-do-i-determine-which-dump-triggers-are-enabled/) points out that 3604 is necessary for DBCC DumpTrigger(‘display’)<br />
 Link: http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
-Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604
+Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604<br />
+Link: [How to Find the Statistics Used to Compile an Execution Plan]
 
 
 <a id="3605"></a>
@@ -3576,7 +3579,7 @@ Function: Converts a global log pool memory object into NUMA node partitioned me
 Link: https://support.microsoft.com/en-us/kb/2809338<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only<br />
-Related to: 8048
+Related to: [8048](#8048)
 
 
 <a id="9050"></a>
@@ -3698,21 +3701,21 @@ Link: None
 Function: Cardinality estimates for literals that are outside the
 histogram range are very low<br />
 Link: None
-Related to: 9205
+Related to: [9205](#9205)
 
 
 <a id="9204"></a>
 #### Trace Flag: 9204
 Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx<br />
-Related to: 9292
+Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Related to: [9292](#9292)
 
 
 <a id="9205"></a>
 #### Trace Flag: 9205
 Function: Cardinality estimates for literals that are outside the histogram range are very low for tables that have parent-child relationships<br />
 Link: None
-Related to: 9185
+Related to: [9185](#9185)
 
 
 <a id="9207"></a>
@@ -3755,8 +3758,8 @@ Link: None
 <a id="9292"></a>
 #### Trace Flag: 9292
 Function: Output Statistics considered to be used by Query Optimizer<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-execution-plan.aspx<br />
-Related to: 9204
+Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Related to: [9204](#9204)
 
 
 <a id="9288"></a>
@@ -4103,9 +4106,10 @@ Scope: global or session
 
 <a id="11023"></a>
 #### Trace Flag: 11023
-Function: Disables the use of the last persisted sample rate, for all subsequent statistics update where a sample rate is not specified explicitly as part of the [UPDATE STATISTICS](https://docs.microsoft.com/en-us/sql/t-sql/statements/update-statistics-transact-sql) statement.
+Function: Disables the use of the last persisted sample rate, for all subsequent statistics update where a sample rate is not specified explicitly as part of the [UPDATE STATISTICS](https://docs.microsoft.com/en-us/sql/t-sql/statements/update-statistics-transact-sql) statement.<br />
 Link: http://support.microsoft.com/kb/4039284<br />
-Link: [Docs Trace Flags]
+Link: [Docs Trace Flags]<br />
+Scope: global or session
 
 
 <a id="11024"></a>
@@ -4117,7 +4121,7 @@ Additionally, the modification count of the root node is reset to zero. This may
 When trace flag 11024 is enabled, the modification count of the root node is kept as the sum of modification counts of all partitions.<br />
 **Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
 Link: http://support.microsoft.com/en-us/kb/4041811<br />
-Scope: ?
+Scope: global or session
 
 
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
@@ -4153,3 +4157,4 @@ Scope: ?
 [Bad Idea Jeans: Finding Undocumented Trace Flags]:https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
 [SQL Server - estimates outside of the histogram - half-baked draft]:http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
 [Upgrading an expired SQL Server 2016 Evaluation Edition]:https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
+[How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
