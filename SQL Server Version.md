@@ -466,8 +466,8 @@ Useful articles:
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2016 (SP1-CU6) (KB4037354) – 13.0.4457.0 (X64)
-    Nov  8 2017 17:32:23
+Microsoft SQL Server 2016 (SP1-CU7-GDR) (KB4057119) - 13.0.4466.4 (X64)
+    Dec 22 2017 11:25:00
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
@@ -1858,8 +1858,8 @@ Microsoft SQL Server 2014 (SP2-CU9) (KB4055557) - 12.0.5563.0 (X64)
 | 8.00.873  | 2000.80.873.0  | [830887 FIX: Some queries that have a left outer join and an IS NULL filter run slower after you install SQL Server 2000 post-SP3 hotfix]                                                                                                                     | 2005-10-25   |
 | 8.00.871  | 2000.80.871.0  | [830767 FIX: SQL Query Analyzer may stop responding when you close a query window or open a file]                                                                                                                                                             | 2005-10-25   |
 | 8.00.871  | 2000.80.871.0  | [830860 FIX: The performance of a computer that is running SQL Server 2000 degrades when query execution plans against temporary tables remain in the procedure cache]                                                                                        | 2005-10-25   |
-| 8.00.870  | 2000.80.870.0  | [830262 FIX: Unconditional Update May Not Hold Key Locks on New Key Values]                                                                                                                                                                                   | 2005-10-25   |
-| 8.00.869  | 2000.80.869.0  | [830588 FIX: Access violation when you trace keyset-driven cursors by using SQL Profiler]                                                                                                                                                                     | 2005-10-25   |
+| 8.00.870  | 2000.80.870.0  | 830262 FIX: Unconditional Update May Not Hold Key Locks on New Key Values                                                                                                                                                                                     | 2005-10-25   |
+| 8.00.869  | 2000.80.869.0  | 830588 FIX: Access violation when you trace keyset-driven cursors by using SQL Profiler                                                                                                                                                                       | 2005-10-25   |
 | 8.00.866  | 2000.80.866.0  | 830366 FIX: An access violation occurs in SQL Server 2000 when a high volume of local shared memory connections occur after you install security update MS03-031                                                                                              | 2006-01-16   |
 | 8.00.865  | 2000.80.865.0  | 830395 FIX: An access violation occurs during compilation if the table contains statistics for a computed column                                                                                                                                              | 2005-10-25   |
 | 8.00.865  | 2000.80.865.0  | 828945 FIX: You cannot insert explicit values in an IDENTITY column of a SQL Server table by using the SQLBulkOperations function or the SQLSetPos ODBC function in SQL Server 2000                                                                           | 2005-10-25   |
@@ -2191,74 +2191,6 @@ Microsoft SQL Server 2014 (SP2-CU9) (KB4055557) - 12.0.5563.0 (X64)
 [831999 FIX: An AWE system uses more memory for sorting or for hashing than a non-AWE system in SQL Server 2000]:http://support.microsoft.com/kb/831999/
 [830887 FIX: Some queries that have a left outer join and an IS NULL filter run slower after you install SQL Server 2000 post-SP3 hotfix]:http://support.microsoft.com/kb/830887/
 [830767 FIX: SQL Query Analyzer may stop responding when you close a query window or open a file]:http://support.microsoft.com/kb/830767/
-[830860 FIX: The performance of a computer that is running SQL Server 2000 degrades when query execution plans against temporary tables remain in the procedure cache]:http://support.microsoft.com/kb/830860/
-[830262 FIX: Unconditional Update May Not Hold Key Locks on New Key Values]:http://support.microsoft.com/kb/830262/
-[830588 FIX: Access violation when you trace keyset-driven cursors by using SQL Profiler]:http://support.microsoft.com/kb/830588/
-[829205 FIX: Query performance may be slow and may be inconsistent when you run a query while another query that contains an IN operator with many values is compiled]:http://support.microsoft.com/kb/829205/
-[829444 FIX: A floating point exception occurs during the optimization of a query]:http://support.microsoft.com/kb/829444/
-[821334 FIX: Issues that are resolved in SQL Server 2000 build 8.00.0859]:http://support.microsoft.com/kb/821334/
-[828637 FIX: Users Can Control the Compensating Change Process in Merge Replication]:http://support.microsoft.com/kb/828637/
-[828017 The Knowledge Base (KB) Article You Requested Is Currently Not Available]:http://support.microsoft.com/kb/828017/
-[827714 FIX: A query may fail with retail assertion when you use the NOLOCK hint or the READ UNCOMMITTED isolation level]:http://support.microsoft.com/kb/827714/
-[828308 FIX: An Internet Explorer script error occurs when you access metadata information by using DTS in SQL Server Enterprise Manager]:http://support.microsoft.com/kb/828308/
-[828096 FIX: Key Locks Are Held Until the End of the Statement for Rows That Do Not Pass Filter Criteria]:http://support.microsoft.com/kb/828096/
-[828699 FIX: An Access Violation Occurs When You Run DBCC UPDATEUSAGE on a Database That Has Many Objects]:http://support.microsoft.com/kb/828699/
-[830466 FIX: You may receive an "Internal SQL Server error" error message when you run a Transact-SQL SELECT statement on a view that has many subqueries in SQL Server 2000]:http://support.microsoft.com/kb/830466/
-[827954 FIX: Slow Execution Times May Occur When You Run DML Statements Against Tables That Have Cascading Referential Integrity]:http://support.microsoft.com/kb/827954/
-[826754 FIX: A Deadlock Occurs If You Run an Explicit UPDATE STATISTICS Command]:http://support.microsoft.com/kb/826754/
-[826860 FIX: Linked Server Query May Return NULL If It Is Performed Through a Keyset Cursor]:http://support.microsoft.com/kb/826860/
-[826815 FIX: You receive an 8623 error message in SQL Server when you try to run a query that has multiple correlated subqueries]:http://support.microsoft.com/kb/826815/
-[826906 FIX: A query that uses a view that contains a correlated subquery and an aggregate runs slowly]:http://support.microsoft.com/kb/826906/
-[826822 FIX: A Member of the db_accessadmin Fixed Database Role Can Create an Alias for the dbo Special User]:http://support.microsoft.com/kb/826822/
-[826433 PRB: Additional SQL Server Diagnostics Added to Detect Unreported I/O Problems]:http://support.microsoft.com/kb/826433/
-[826364 FIX: A Query with a LIKE Comparison Results in a Non-Optimal Query Plan When You Use a Hungarian SQL Server Collation]:http://support.microsoft.com/kb/826364/
-[825854 FIX: No Exclusive Locks May Be Taken If the DisAllowsPageLocks Value Is Set to True]:http://support.microsoft.com/kb/825854/
-[826080 FIX: SQL Server 2000 protocol encryption applies to JDBC clients]:http://support.microsoft.com/kb/826080/
-[825043 FIX: Rows are unexpectedly deleted when you run a distributed query to delete or to update a linked server table]:http://support.microsoft.com/kb/825043/
-[825225 FIX: You receive an error message when you run a parallel query that uses an aggregation function or the GROUP BY clause]:http://support.microsoft.com/kb/825225/
-[319477 FIX: Extremely Large Number of User Tables on AWE System May Cause BPool::Map Errors]:http://support.microsoft.com/kb/319477/
-[319477 FIX: Extremely Large Number of User Tables on AWE System May Cause BPool::Map Errors]:http://support.microsoft.com/kb/319477/
-[823877 FIX: An Access Violation May Occur When You Run a Query That Contains 32,000 or More OR Clauses]:http://support.microsoft.com/kb/823877/
-[824027 FIX: A Cursor with a Large Object Parameter May Cause an Access Violation on CStmtCond::XretExecute]:http://support.microsoft.com/kb/824027/
-[820788 FIX: Delayed domain authentication may cause SQL Server to stop responding]:http://support.microsoft.com/kb/820788/
-[821741 FIX: Lock monitor exception in DeadlockMonitor::ResolveDeadlock]:http://support.microsoft.com/kb/821741/
-[821548 FIX: A Parallel Query May Generate an Access Violation After You Install SQL Server 2000 SP3]:http://support.microsoft.com/kb/821548/
-[821740 FIX: MS DTC Transaction Commit Operation Blocks Itself]:http://support.microsoft.com/kb/821740/
-[823514 FIX: Build 8.00.0837: A query that contains a correlated subquery runs slowly]:http://support.microsoft.com/kb/823514/
-[826161 FIX: You are prompted for password confirmation after you change a standard SQL Server login]:http://support.microsoft.com/kb/826161/
-[821277 MS03-031: Security patch for SQL Server 2000 Service Pack 3]:http://support.microsoft.com/kb/821277/
-[821337 FIX: Localized versions of SQL Mail and the Web Assistant Wizard may not work as expected in SQL Server 2000 64 bit]:http://support.microsoft.com/kb/821337/
-[818388 FIX: A Transact-SQL Statement That Is Embedded in the Database Name Runs with System Administrator Permissions]:http://support.microsoft.com/kb/818388/
-[826161 FIX: You are prompted for password confirmation after you change a standard SQL Server login]:http://support.microsoft.com/kb/826161/
-[821280 MS03-031: Security Patch for SQL Server 2000 64-bit]:http://support.microsoft.com/kb/821280/
-[818766 FIX: Intense SQL Server activity results in spinloop wait]:http://support.microsoft.com/kb/818766/
-[819662 FIX: Distribution Cleanup Agent Incorrectly Cleans Up Entries for Anonymous Subscribers]:http://support.microsoft.com/kb/819662/
-[819248 FIX: An access violation exception may occur when you insert a row in a table that is referenced by indexed views in SQL Server 2000]:http://support.microsoft.com/kb/819248/
-[819662 FIX: Distribution Cleanup Agent Incorrectly Cleans Up Entries for Anonymous Subscribers]:http://support.microsoft.com/kb/819662/
-[818897 FIX: Invalid TDS Sent to SQL Server Results in Access Violation]:http://support.microsoft.com/kb/818897/
-[818899 FIX: Error Message 3628 May Occur When You Run a Complex Query]:http://support.microsoft.com/kb/818899/
-[818729 FIX: Internal Query Processor Error 8623 When Microsoft SQL Server Tries to Compile a Plan for a Complex Query]:http://support.microsoft.com/kb/818729/
-[818540 FIX: SQL Server Enterprise Manager unexpectedly quits when you modify a DTS package]:http://support.microsoft.com/kb/818540/
-[818414 FIX: The Sqldumper.exe File Does Not Generate a Userdump File When It Runs Against a Windows Service]:http://support.microsoft.com/kb/818414/
-[818097 FIX: An Access Violation May Occur When You Run DBCC DBREINDEX on a Table That Has Hypothetical Indexes]:http://support.microsoft.com/kb/818097/
-[818188 FIX: Query on the sysmembers Virtual Table May Fail with a Stack Overflow]:http://support.microsoft.com/kb/818188/
-[817464 FIX: Using Sp_executesql in Merge Agent Operations]:http://support.microsoft.com/kb/817464/
-[817464 FIX: Using Sp_executesql in Merge Agent Operations]:http://support.microsoft.com/kb/817464/
-[813524 FIX: OLE DB conversion errors may occur after you select a literal string that represents datetime data as a column]:http://support.microsoft.com/kb/813524/
-[816440 FIX: Error 8623 is Raised When SQL Server Compiles a Complex Query]:http://support.microsoft.com/kb/816440/
-[817709 FIX: SQL Server 2000 might produce an incorrect cardinality estimate for outer joins]:http://support.microsoft.com/kb/817709/
-[815249 FIX: Performance of a query that is run from a client program on a SQL Server SP3 database is slow after you restart the instance of SQL Server]:http://support.microsoft.com/kb/815249/
-[817081 FIX: You receive an error message when you use the SQL-DMO BulkCopy object to import data into a SQL Server table]:http://support.microsoft.com/kb/817081/
-[816840 FIX: Error 17883 May Display Message Text That Is Not Correct]:http://support.microsoft.com/kb/816840/
-[816985 FIX: You cannot install SQL Server 2000 SP3 on the Korean version of SQL Server 2000]:http://support.microsoft.com/kb/816985/
-[815057 FIX: SQL Server 2000 Uninstall Option Does Not Remove All Files]:http://support.microsoft.com/kb/815057/
-[816039 FIX: Code Point Comparison Semantics for SQL_Latin1_General_Cp850_BIN Collation]:http://support.microsoft.com/kb/816039/
-[816084 FIX: sysindexes.statblob Column May Be Corrupted After You Run a DBCC DBREINDEX Statement]:http://support.microsoft.com/kb/816084/
-[810185 SQL Server 2000 hotfix update for SQL Server 2000 Service Pack 3 and 3a]:http://support.microsoft.com/kb/810185/
-[814035 FIX: A Full-Text Population Fails After You Apply SQL Server 2000 Service Pack 3]:http://support.microsoft.com/kb/814035/
-[815115 FIX: A DTS package that uses global variables ignores an error message raised by RAISERROR]:http://support.microsoft.com/kb/815115/
-[814889 FIX: A DELETE statement with a JOIN might fail and you receive a 625 error]:http://support.microsoft.com/kb/814889/
-[814893 FIX: Error Message: "Insufficient key column information for updating" Occurs in SQL Server 2000 SP3]:http://support.microsoft.com/kb/814893/
 
 
 ## Microsoft SQL Server 7.0 Builds
