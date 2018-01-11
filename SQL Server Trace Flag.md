@@ -1,7 +1,11 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (533 trace flags)
+Complete list of Microsoft SQL Server trace flags (536 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
+
+**Some trace flags were introduced in specific SQL Server versions.
+For more information on the applicable version, see the Microsoft Support article associated with a specific trace flag.**
+
 **Trace flag behavior may not be supported in future releases of SQL Server.**
 
 Headers:
@@ -60,9 +64,9 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 <a id="how-do-i-turn-trace-flags-on-and-off"></a>
 ## How do I turn Trace Flags on and off?
- - You can use the [DBCC TRACEON](https://msdn.microsoft.com/en-us/library/ms187329.aspx "Official MSDN DBCC TRACEON Article") and [DBCC TRACEOFF](https://msdn.microsoft.com/en-us/library/ms174401.aspx "Official MSDN DBCC TRACEOFF Article") commands
- - You can use the [-T option](https://technet.microsoft.com/en-us/library/ms190737%28v=sql.120%29.aspx "Official TECHNET Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
-   **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number. A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
+ - You can use the [DBCC TRACEON](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql "Official Microsoft Docs DBCC TRACEON Article") and [DBCC TRACEOFF](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql "Official Microsoft Docs DBCC TRACEOFF Article") commands
+ - You can use the [-T option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/database-engine-service-startup-options "Official Microsoft Docs Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
+   **When specifying a trace flag with the `-T` option, use an uppercase `"T"` to pass the trace flag number. A lowercase `"t"` is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
  - You can also use the hint [QUERYTRACEON](https://support.microsoft.com/en-us/kb/2801413 "Official QUERYTRACEON KB Article") in your queries: **&lt;querytraceon_hint ::= {QUERYTRACEON trace_flag_number}>**
 
 
@@ -174,7 +178,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **533 trace flags**
+Summary: **536 trace flags**
 
 
 <a id="-1"></a>
@@ -262,6 +266,14 @@ Link: http://blogs.msdn.microsoft.com/sqlprogrammability/2007/01/13/6-0-best-pro
 **Undocumented trace flag**<br />
 Function: Consider using when replaying against SQL 8.0, to avoid an attempt to set an encrypted connection.<br />
 Link: None
+
+
+<a id="166"></a>
+#### Trace Flag: 166
+**Undocumented trace flag**<br />
+Function: Unclear. Observable effect was to change the identifier for act1008 to act1009 in a query plan.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
 
 
 <a id="168"></a>
@@ -3870,6 +3882,15 @@ Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-mul
 Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression
 
 
+<a id="9473"></a>
+#### Trace Flag: 9473
+**Undocumented trace flag**<br />
+Function: Allowing the outer join to keep a zero-row inner-side estimate (instead of raising to one row) (so all outer rows qualify) gives a 'bug-free' join estimation with either calculator.
+If you're interested in exploring this, the undocumented trace flag is 9473 (alone).<br />
+Link: https://dba.stackexchange.com/a/141533/107045<br />
+Scope: ?
+
+
 <a id="9476"></a>
 #### Trace Flag: 9476
 Function: Causes SQL Server to generate a plan using the Simple Containment assumption instead of the default Base Containment assumption, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
@@ -3928,6 +3949,14 @@ Link: http://www.queryprocessor.com/ce_mtvf
 #### Trace Flag: 9489
 Function: Implements a “model variation” in the SQL 2014 cardinality estimator and turns off the new logic that handles ascending keys. <br />
 Link: http://www.queryprocessor.com/ce_asckey
+
+
+<a id="9494"></a>
+#### Trace Flag: 9494
+**Undocumented trace flag**<br />
+Function: The behaviour of the join cardinality estimation with CSelCalcExpressionComparedToExpression can also be modified to not account for ``bId` with another undocumented variation flag (9494)<br />
+Link: https://dba.stackexchange.com/a/141533/107045<br />
+Scope: ?
 
 
 <a id="9495"></a>
@@ -4158,3 +4187,4 @@ Scope: global or session
 [SQL Server - estimates outside of the histogram - half-baked draft]:http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
 [Upgrading an expired SQL Server 2016 Evaluation Edition]:https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
 [How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
+[New Undocumented Trace Flags]:https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
