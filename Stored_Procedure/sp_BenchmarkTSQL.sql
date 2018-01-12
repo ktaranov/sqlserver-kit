@@ -39,6 +39,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 
 .PARAMETER @durationAccuracy
     Duration accuracy calculation, possible values: ns, mcs, ms, ss, s, mi, n, hh, wk, ww, dd, d.
+    See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM , sys.databases';
@@ -55,6 +56,15 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @clearCache        = 1
        , @printStepInfo     = 1
        , @durationAccuracy  = 'ms';
+
+.EXAMPLE
+    EXEC sp_BenchmarkTSQL @tsqlStatement = 'WAITFOR DELAY ''00:00:02'';'
+       , @numberOfExecution = 5
+       , @saveResults       = 1
+       , @calcMedian        = 1
+       , @clearCache        = 1
+       , @printStepInfo     = 1
+       , @durationAccuracy  = 'ns';
 
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -85,6 +95,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Author: Konstantin Taranov
     Modified date: 2018-01-04
     Version: 2.3
+
+    Author: Konstantin Taranov
+    Modified date: 2018-01-12
+    Version: 2.4
 */
 AS
 BEGIN TRY
