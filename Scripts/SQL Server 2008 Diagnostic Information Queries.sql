@@ -1,8 +1,7 @@
 
 -- SQL Server 2008 Diagnostic Information Queries
 -- Glenn Berry 
--- CY 2017
--- Last Modified: December 6, 2017
+-- Last Modified: January 10, 2018
 -- https://sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -16,7 +15,7 @@
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
 --******************************************************************************
---*   Copyright (C) 2017 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2018 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -90,7 +89,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --                                                                                                          10.0.5861       SP3 CU17      5/19/2014			
 --                                                                                                          10.0.5867       SP3 CU17+					  10.0.6000		SP4 RTM		9/30/2014
 --                                                                                                                                                        10.0.6526     SP4 + HF    2/9/2015 
---                                                                                                                                                        http://support.microsoft.com/kb/3034373
+-- Security Update for SQL Server 2008 SP4 (KB4057114)  https://www.microsoft.com/en-us/download/details.aspx?id=56418                                    10.0.6556		SP4 + HF	1/5/2018
 --
 -- SQL Server 2008 RTM is considered an "unsupported service pack" as of April 13, 2010
 -- SQL Server 2008 SP1 is considered an "unsupported service pack" as of September 19, 2011
@@ -583,7 +582,7 @@ SELECT
 FROM Waits AS W1
 INNER JOIN Waits AS W2
 ON W2.RowNum <= W1.RowNum
-GROUP BY W1.RowNum
+GROUP BY W1.RowNum, W1.wait_type
 HAVING SUM (W2.Percentage) - MAX (W1.Percentage) < 99 -- percentage threshold
 OPTION (RECOMPILE);
 ------
@@ -1028,8 +1027,9 @@ ON s.[object_id] = i.[object_id]
 AND i.index_id = s.index_id
 WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
 AND s.database_id = DB_ID()
-AND user_updates > (user_seeks + user_scans + user_lookups)
-AND i.index_id > 1
+AND s.user_updates > (s.user_seeks + s.user_scans + s.user_lookups)
+AND i.index_id > 1 AND i.[type_desc] = N'NONCLUSTERED'
+AND i.is_primary_key = 0 AND i.is_unique_constraint = 0
 ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOMPILE);
 ------
 

@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: December 7, 2017
+-- Last Modified: January 10, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -16,7 +16,7 @@
 
 
 --******************************************************************************
---*   Copyright (C) 2017 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2018 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -74,6 +74,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.2210.0		RTM CU7				8/8/2017    ---->			13.0.4446.0		SP1 CU4				 8/8/2017
 -- 13.0.2213.0		RTM CU8				9/18/2017   ---->           13.0.4451.0		SP1 CU5				 9/18/2017
 -- 13.0.2216.0		RTM CU9				11/21/2017  ---->			13.0.4457.0		SP1 CU6				 11/21/2017
+--																	13.0.4464.4		SP1 CU7				  1/4/2018
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -1451,8 +1452,9 @@ ON s.[object_id] = i.[object_id]
 AND i.index_id = s.index_id
 WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
 AND s.database_id = DB_ID()
-AND user_updates > (user_seeks + user_scans + user_lookups)
-AND i.index_id > 1
+AND s.user_updates > (s.user_seeks + s.user_scans + s.user_lookups)
+AND i.index_id > 1 AND i.[type_desc] = N'NONCLUSTERED'
+AND i.is_primary_key = 0 AND i.is_unique_constraint = 0
 ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOMPILE);
 ------
 
