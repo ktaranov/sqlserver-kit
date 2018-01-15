@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (536 trace flags)
+Complete list of Microsoft SQL Server trace flags (579 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -55,6 +55,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
  - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
  - Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
+ - Alexey Nagorskiy ([github](https://github.com/fenixfx))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -624,6 +625,7 @@ Link: https://support.microsoft.com/en-us/help/3027860/error-17066-or-17310-duri
 
 <a id="683"></a>
 #### Trace Flag: 683
+**Undocumented trace flag**<br />
 Function: According to the KB, used to workaround a bug in SQL 2000 SP3 by reverting to pre-SP3 parallel-scan behavior in parallel queries. Database-Wiki.com: “Disallow row counter and column mod counters to be partitioned”<br />
 Link: None
 
@@ -642,17 +644,20 @@ Scope: global or session
 
 <a id="698"></a>
 #### Trace Flag: 698
+**Undocumented trace flag**<br />
 Function: SQL 9 – Performance of INSERT operations against a table with an identity column may be slow when compared to SQL 8<br />
 Link: None
 
 
 <a id="699"></a>
 #### Trace Flag: 699
+**Undocumented trace flag**<br />
 Function: Turn off transaction logging for the entire SQL dataserver<br />
 Link: None
 
 
 #### Trace Flag: 670, 671
+**Undocumented trace flag**<br />
 Function: Disables deferred deallocation. But note Paul White’s comment on the post! The flag # may actuall by 671.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps/
 
@@ -674,8 +679,10 @@ Function: Turn on Page Audit functionality, to verify page validity<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
 
+
 <a id="809"></a>
 #### Trace Flag: 809
+**Undocumented trace flag**<br />
 Function: SQL 8 – Limits the amount of Lazy write activity<br />
 Link: None
 
@@ -698,12 +705,14 @@ Link: https://support.microsoft.com/en-us/help/828339/error-message-823-may-indi
 
 <a id="822"></a>
 #### Trace Flag: 822
+**Undocumented trace flag**<br />
 Function: A workaround for SQL 2000 over-committing memory on the machine<br />
 Link: None
 
 
 <a id="825"></a>
 #### Trace Flag: 825
+**Undocumented trace flag**<br />
 Function: In SQL 2000, enables Buffer Pool support for NUMA. TF 888 must be used.<br />
 Link: None
 
@@ -724,6 +733,7 @@ Link: https://technet.microsoft.com/en-us/library/aa175396(v=SQL.80).aspx
 
 <a id="831"></a>
 #### Trace Flag: 831
+**Undocumented trace flag**<br />
 Function: Protect unchanged pages in the buffer pool to catch memory corruptions<br />
 Link: None
 
@@ -740,6 +750,7 @@ Scope: global only
 
 <a id="835"></a>
 #### Trace Flag: 835
+**Undocumented trace flag**<br />
 Function: SQL 9 / 10 – On 64 bit SQL Server it turns off Lock pages in memory<br />
 Link: None
 
@@ -765,6 +776,7 @@ Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/09/the-read-ahead-that-do
 
 <a id="842"></a>
 #### Trace Flag: 842
+**Undocumented trace flag**<br />
 Function: Use sys.dm_os_memory_node_access_stats to verify local vs. foreign memory under NUMA configurations after turning on this flag<br />
 Link: None
 
@@ -777,6 +789,7 @@ Link: https://support.microsoft.com/en-us/help/2708594/fix-locked-page-allocatio
 
 
 <a id="851"></a>
+**Undocumented trace flag**<br />
 #### Trace Flag: 851
 Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, “disable[s] BPE even if enabled via ALTER SERVER”<br />
 Link: None
@@ -799,6 +812,7 @@ Scope: ?
 
 
 <a id="888"></a>
+**Undocumented trace flag**<br />
 #### Trace Flag: 888
 Function: Enables support for locked pages for SQL 2000<br />
 Link: None
@@ -819,6 +833,7 @@ Scope: global only
 
 <a id="916"></a>
 #### Trace Flag: 916
+**Undocumented trace flag**<br />
 Function: The KB article references the flag in the context of seeing a Profiler dump<br />
 Link: None
 
@@ -866,34 +881,39 @@ Scope: global only
 #### Trace Flag: 1119
 Function: Turns off mixed extent allocation (Similar to 1118?)<br />
 Link: [TECHNET List Of SQL Server Trace Flags]
-    
+
 
 <a id="1124"></a>
 #### Trace Flag: 1124
+**Undocumented trace flag**<br />
 Function: Unknown. Has been reportedly found turned on in some SQL Server instances running Dynamics AX. Also rumored to be invalid in public builds of SQL Server<br />
 Link: None
 
 
 <a id="1140"></a>
 #### Trace Flag: 1140
+**Undocumented trace flag**<br />
 Function: A workaround for a bug in SQL 2005 SP2, SP3, and SQL 2008, where mixed page allocations climb continually, due to a change in the way that mixed-page allocations are done.<br />
 Link: None
 
 
 <a id="1165"></a>
 #### Trace Flag: 1165
+**Undocumented trace flag**<br />
 Function: This [presentation](http://www.youtube.com/watch?v=SvseGMobe2w&feature=youtu.be) by Bob Ward says that this TF outputs the recalculated #’s (every 8192 allocations) for the proportional fill algorithm in database allocation when multiple files are present..<br />
 Link: None
 
 
 <a id="1180"></a>
 #### Trace Flag: 1180
+**Undocumented trace flag**<br />
 Function: SQL 7 - Forces allocation to use free pages for text or image data and maintain efficiency of storage.  Helpful in case when DBCC SHRINKFILE and SHRINKDATABASE commands may not work because of sparsely populated text, ntext, or image columns.<br />
 Link: None
 
 
 <a id="1197"></a>
 #### Trace Flag: 1197
+**Undocumented trace flag**<br />
 Function: Applies only in the case of SQL 7 – SP3, similar with trace flag 1180<br />
 Link: None
 
@@ -908,6 +928,7 @@ Link: https://support.microsoft.com/en-us/help/169960/inf-analyzing-and-avoiding
 
 <a id="1202"></a>
 #### Trace Flag: 1202
+**Undocumented trace flag**<br />
 Function: Insert blocked lock requests into syslocks<br />
 Link: None
 
@@ -952,12 +973,14 @@ Scope: global or session
 
 <a id="1216"></a>
 #### Trace Flag: 1216
-Function:  SQL 7 - Disables Health reporting. Lock monitor when detects a (worker thread) resource level blocking scenario. If a SPID that owns a lock is currently queued to the scheduler, because all the assigned worker threads have been created and all the assigned worker threads are in an un-resolvable wait state, the following error message is written to the SQL Server error log: Error 1223: Process ID %d:%d cannot acquire lock "%s" on resource %s because a potential deadlock exists on Scheduler %d for the resource. Process ID %d:% d holds a lock "%h" on this resource.<br />
+**Undocumented trace flag**<br />
+Function: SQL 7 - Disables Health reporting. Lock monitor when detects a (worker thread) resource level blocking scenario. If a SPID that owns a lock is currently queued to the scheduler, because all the assigned worker threads have been created and all the assigned worker threads are in an un-resolvable wait state, the following error message is written to the SQL Server error log: Error 1223: Process ID %d:%d cannot acquire lock "%s" on resource %s because a potential deadlock exists on Scheduler %d for the resource. Process ID %d:% d holds a lock "%h" on this resource.<br />
 Link: None
 
 
 <a id="1217"></a>
 #### Trace Flag: 1217
+**Undocumented trace flag**<br />
 Function: Disables (for 7.0) the “UMS Health” reporting messages described in the KB article.<br />
 Link: None
 
@@ -1042,6 +1065,7 @@ Scope: global only
 
 <a id="1261"></a>
 #### Trace Flag: 1261
+**Undocumented trace flag**<br />
 Function: SQL 8 - Disables Health reporting. Lock monitor when detects a (worker thread) resource level blocking scenario. If a SPID that owns a lock is currently queued to the scheduler, because all the assigned worker threads have been created and all the assigned worker threads are in an un-resolvable wait state, the following error message is written to the SQL Server error log: Error 1229: Process ID %d:%d owns resources that are blocking processes on scheduler %d.<br />
 Link: None
 
