@@ -42,6 +42,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, wk, dd.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
+.PARAMETER @dateTimeFun
+    Define using datetime function, possible values of functions: SYSDATETIME, SYSUTCDATETIME.
+    See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
+
 .EXAMPLE
     EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM , sys.databases';
     -- RETURN: Incorrect syntax near ','.
@@ -106,7 +110,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Modified date: 2018-01-16
     Version: 3.0
 
-    Author: Aleksei Nagorskiy
+    Author: Aleksei Nagorskii
     Modified date: 2018-01-17
     Version: 3.1
 */
