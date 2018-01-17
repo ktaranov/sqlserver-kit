@@ -3576,6 +3576,14 @@ Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-fa
 Link: http://connect.microsoft.com/SQL/feedback/ViewFeedback.aspx?FeedbackID=453982
 
 
+<a id="8691"></a>
+#### Trace Flag: 8691
+**Undocumented trace flag**<br />
+Function: 'performance spool' optimization to the RegEx execution, reduces the number of executions of the RegEx function.<br />
+Link: [Splitting Strings Based on Patterns]<br />
+Scope: ?
+
+
 <a id="8692"></a>
 #### Trace Flag: 8692
 Function: Force optimizer to use an Eager Spool for Halloween Protection<br />
@@ -4129,11 +4137,43 @@ Link: https://support.microsoft.com/en-us/help/3142595/fix-an-access-violation-o
 Link: https://support.microsoft.com/en-us/help/3138659/fix-slow-performance-when-you-query-numeric-data-types-from-an-oracle-database
 
 
+<a id="9398"></a>
+#### Trace Flag: 9398
+**Undocumented trace flag**<br />
+Function: Disable adaptive join.<br />
+Link: [SQL Server 2017: Adaptive Join Internals]<br />
+Scope: ?
+
+
+<a id="9399"></a>
+#### Trace Flag: 9399
+**Undocumented trace flag**<br />
+Function: Optimization adaptive threshold rows. The adaptive threshold to the minimum estimate.<br />
+Link: [SQL Server 2017: Adaptive Join Internals]<br />
+Scope: ?
+
+
+<a id="9410"></a>
+#### Trace Flag: 9410
+**Undocumented trace flag**<br />
+Function: Fix slowly query runs when SQL Server uses hash aggregate in the query plan.<br />
+Link: [Query runs slowly when SQL Server uses hash aggregate in the query plan]<br />
+Scope: ?
+
+
 <a id="9412"></a>
 #### Trace Flag: 9412
 **Undocumented trace flag**<br />
 Function: Removes the new OptimizerStatsUsage information from estimated query plans.<br />
 Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9415"></a>
+#### Trace Flag: 9415
+**Undocumented trace flag**<br />
+Function: Optimization adaptive join internals.<br />
+Link: [SQL Server 2017: Adaptive Join Internals]<br />
 Scope: ?
 
 
@@ -4219,6 +4259,15 @@ Scope: ?
 **Undocumented trace flag**<br />
 Function: Change in cardinality estimates for some joins in certain queries. Full effect unknown.<br />
 Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="9479"></a>
+#### Trace Flag: 9479
+**Undocumented trace flag**<br />
+Function: Forces the optimizer to use Simple Join [estimation] even if a histogram is available.
+Will force optimizer to use a simple join estimation algorithm, it may be CSelCalcSimpleJoinWithDistinctCounts, CSelCalcSimpleJoin or CSelCalcSimpleJoinWithUpperBound, depending on the compatibility level and predicate comparison type.<br />
+Link: [Statistics and Cardinality Estimation]<br />
 Scope: ?
 
 
@@ -4556,3 +4605,7 @@ Scope: ?
 [Upgrading an expired SQL Server 2016 Evaluation Edition]:https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
 [How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
 [New Undocumented Trace Flags]:https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
+[Statistics and Cardinality Estimation]:http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
+[Splitting Strings Based on Patterns]:https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
+[SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
+[Query runs slowly when SQL Server uses hash aggregate in the query plan]:https://support.microsoft.com/en-us/help/3167159/fix-query-runs-slowly-when-sql-server-uses-hash-aggregate-in-the-query
