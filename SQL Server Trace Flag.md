@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (579 trace flags)
+Complete list of Microsoft SQL Server trace flags (585 trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -179,7 +179,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **579 trace flags**
+Summary: **585 trace flags**
 
 
 <a id="-1"></a>
@@ -4293,6 +4293,7 @@ Scope: global or session or query
 
 <a id="9482"></a>
 #### Trace Flag: 9482
+**Undocumented trace flag**<br />
 Function: Implements a “model variation” in the SQL 2014 cardinality estimator. The flag turns off the “overpopulated primary key” adjustment that the optimizer might use when determining that a “dimension” table (the schema could be OLTP as well) has many 
 more distinct values than the “fact” table. (The seminal example is where a Date dimension is populated out into the future, but the fact table only has rows up to the current date). Since join cardinality estimation occurs based on the contents of the 
 histograms of the joined columns, an “overpopulated primary key” can result in higher selectivity estimates, causing rowcount estimates to be too low.<br />
@@ -4301,6 +4302,7 @@ Link: http://www.queryprocessor.com/ce_opk
 
 <a id="9483"></a>
 #### Trace Flag: 9483
+**Undocumented trace flag**<br />
 Function: Implements a “model variation” in the SQL 2014 cardinality estimator. The flag will force the optimizer to create (if possible) a filtered statistics object based on a predicate in 
 the query. This filtered stat object is not persisted and thus would be extremely resource intensive for frequent compilations. In Dima’s example, the filtered stat object 
 is actually created on the join column...i.e. “CREATE STATISTICS [filtered stat obj] ON [table] (Join column) WHERE (predicate column = ‘literal’)”<br />
@@ -4326,12 +4328,14 @@ Scope: global only
 
 <a id="9488"></a>
 #### Trace Flag: 9488
+**Undocumented trace flag**<br />
 Function: Implements a “model variation” in the SQL 2014 cardinality estimator. This flag reverts the estimation behavior for multi-statement TVFs back to 1 row (instead of the 100-row estimate behavior that was adopted in SQL 2014).<br />
 Link: http://www.queryprocessor.com/ce_mtvf
 
 
 <a id="9489"></a>
 #### Trace Flag: 9489
+**Undocumented trace flag**<br />
 Function: Implements a “model variation” in the SQL 2014 cardinality estimator and turns off the new logic that handles ascending keys. <br />
 Link: http://www.queryprocessor.com/ce_asckey
 
@@ -4368,6 +4372,7 @@ Link: http://connect.microsoft.com/SQLServer/feedback/details/682581/denali-hadr
 
 <a id="9559"></a>
 #### Trace Flag: 9559
+**Undocumented trace flag**<br />
 Function: For AGs, “when enabled on the secondary ignores the redo target provided from the primary progress message and always set the redo target at the Max LSN value.”<br />
 Link: https://blogs.msdn.microsoft.com/alwaysonpro/2013/12/04/recovery-on-secondary-lagging-shared-redo-target
 
@@ -4403,24 +4408,28 @@ Scope: global or session
 
 <a id="9706"></a>
 #### Trace Flag: 9706
+**Undocumented trace flag**<br />
 Function: Software Usage Metrics is disabled.<br />
 Link: [Bad Idea Jeans: Finding Undocumented Trace Flags]
 
 
 <a id="9806"></a>
 #### Trace Flag: 9806
+**Undocumented trace flag**<br />
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
 Link: None
 
 
 <a id="9807"></a>
 #### Trace Flag: 9807
+**Undocumented trace flag**<br />
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
 Link: None
 
 
 <a id="9808"></a>
 #### Trace Flag: 9808
+**Undocumented trace flag**<br />
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
 Link: None
 
@@ -4436,6 +4445,7 @@ Link: https://web.archive.org/web/20160327221828/http://speedysql.com/2015/10/28
 
 <a id="9837"></a>
 #### Trace Flag: 9837
+**Undocumented trace flag**<br />
 Function: According to Bob Ward’s PASS 2014 talk on SQL Server IO, enables “extra tracing but massive output” for Hekaton checkpoint files.<br />
 Link: None
 
@@ -4470,6 +4480,7 @@ In SQL Server 2016, when a columnstore index is reorganized, there is new functi
 Link: [Docs Trace Flags]
 Scope: global or session
 
+
 <a id="9989"></a>
 #### Trace Flag: 9989
 Function: In CTP2, enabled functionality for reading in-memory tables on a readable secondary<br />
@@ -4478,7 +4489,9 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-
 
 <a id="10202"></a>
 #### Trace Flag: 10202
-Function: According to demo scripts from a Sunil Agarwal session at PASS 2014, enables a new DMV named sys.dm_db_column_store_row_group_physical_stats. This DMV is not in SQL 2014 RTM and Sunil did not perform this demo during the session, so this DMV appears to be in a future (or internal) version of SQL Server.<br/>
+**Undocumented trace flag**<br />
+Function: According to demo scripts from a Sunil Agarwal session at PASS 2014, enables a new DMV named sys.dm_db_column_store_row_group_physical_stats.
+This DMV is not in SQL 2014 RTM and Sunil did not perform this demo during the session, so this DMV appears to be in a future (or internal) version of SQL Server.<br/>
 Link: None
 
 
@@ -4501,6 +4514,7 @@ Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/partial-results-in-a-q
 
 <a id="10213"></a>
 #### Trace Flag: 10213
+**Undocumented trace flag**<br />
 Function: Enables the option to configure compression delay in columnstore indexes in SQL Server 2016<br />
 Link: http://www.nikoport.com/2016/02/04/columnstore-indexes-part-76-compression-delay/<br />
 Scope: session
