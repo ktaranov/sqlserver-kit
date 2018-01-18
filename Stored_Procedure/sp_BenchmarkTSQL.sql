@@ -11,6 +11,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     , @calcMedian        BIT        = 0
     , @printStepInfo     BIT        = 1
     , @durationAccuracy  VARCHAR(5) = 'ns'
+    , @dateTimeFun       VARCHAR(16)= 'SYSDATETIME'
 )
 /*
 .SYNOPSIS
@@ -41,6 +42,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, wk, dd.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
+.PARAMETER @dateTimeFun
+    Define using datetime function, possible values of functions: SYSDATETIME, SYSUTCDATETIME.
+    See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
+
 .EXAMPLE
     EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM , sys.databases';
     -- RETURN: Incorrect syntax near ','.
@@ -64,7 +69,8 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @calcMedian        = 1
        , @clearCache        = 1
        , @printStepInfo     = 1
-       , @durationAccuracy  = 'mcs';
+       , @durationAccuracy  = 'mcs'
+       , @dateTimeFun       = 'SYSDATETIME';
 
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -103,6 +109,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Author: Konstantin Taranov
     Modified date: 2018-01-16
     Version: 3.0
+
+    Author: Aleksei Nagorskii
+    Modified date: 2018-01-17
+    Version: 3.1
 */
 AS
 BEGIN TRY
@@ -126,6 +136,12 @@ BEGIN TRY
     )
     THROW 55003, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
+    IF @dateTimeFun NOT IN (
+                              'SYSDATETIME'
+                            , 'SYSUTCDATETIME'
+    )
+    THROW 55004, '@dateTimeFun accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. For details see https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
+
     IF EXISTS (
         SELECT 1
         FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
@@ -147,7 +163,9 @@ BEGIN TRY
     END;
 
     DECLARE @crlf          VARCHAR(10)  = CHAR(10);
-    DECLARE @cts           DATETIME2(7) = SYSDATETIME();
+    DECLARE @cts           DATETIME2(7) = CASE WHEN @dateTimeFun = 'SYSDATETIME'    THEN SYSDATETIME()
+                                               WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                          END;
     DECLARE @r             INT          = 0;
     DECLARE @min           BIGINT;
     DECLARE @avg           BIGINT;
@@ -188,11 +206,15 @@ BEGIN TRY
             IF @plan_handle IS NOT NULL DBCC FREEPROCCACHE (@plan_handle);
         END;
 
-        SET @rts = SYSDATETIME();
+        SET @rts = CASE WHEN @dateTimeFun = 'SYSDATETIME' THEN SYSDATETIME()
+                        WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                   END;
 
         EXECUTE sp_executesql @tsqlStatement;
 
-        SET @finishTime = SYSDATETIME();
+        SET @finishTime = CASE WHEN @dateTimeFun = 'SYSDATETIME' THEN SYSDATETIME()
+                               WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                          END;
         SET @duration = CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  @rts, @finishTime) AS BIGINT)
                              WHEN @durationAccuracy = 'mcs' THEN CAST(DATEDIFF(mcs, @rts, @finishTime) AS BIGINT)
                              WHEN @durationAccuracy = 'ms'  THEN CAST(DATEDIFF(ms,  @rts, @finishTime) AS BIGINT)
@@ -232,7 +254,9 @@ BEGIN TRY
                                 ELSE CAST(@r AS VARCHAR(30))
                            END +
                   ', start: '    + CONVERT(VARCHAR(27), @rts, 121) +
-                  ', finish: '   + CONVERT(VARCHAR(27), SYSDATETIME(), 121) +
+                  ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFun = 'SYSDATETIME' THEN SYSDATETIME()
+                                                             WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                                        END, 121) +
                   ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.'
                   );
 
@@ -289,7 +313,9 @@ BEGIN TRY
           ', Average: ' + CAST(@avg AS VARCHAR(30)) + @durationAccuracy +
           CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS VARCHAR(30)) + @durationAccuracy ELSE '' END +
           @crlf +
-          'Benchmark finished at ' + CONVERT(VARCHAR(23), SYSDATETIME(), 121) + ' by ' + @originalLogin + '.'
+          'Benchmark finished at ' + CONVERT(VARCHAR(23), CASE WHEN @dateTimeFun = 'SYSDATETIME' THEN SYSDATETIME()
+                                                               WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                                          END, 121) + ' by ' + @originalLogin + '.'
           );
 
     IF @saveResults = 1
