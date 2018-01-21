@@ -16,7 +16,7 @@ Articles types:
  - **[P]** Performance Articles
  - **[PS]** Powershell Articles
  - **[R]** R Language
- - **[SSIS]** [SQL Server Integration Services](https://msdn.microsoft.com/en-us/library/ms141026.aspx)
+ - **[SSIS]** [SQL Server Integration Services](https://docs.microsoft.com/en-us/sql/integration-services/sql-server-integration-services)
  - **[V]** Visualization Articles
  - **[X]** XML, JSON, YAML, HTML
  - **[XE]** [Extended events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
@@ -480,6 +480,13 @@ Articles types:
 | [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]                    | Solomon Rutzky                           | 2017-12-08 | [DBA],[DEV] |
 | [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]                  | Solomon Rutzky                           | 2017-12-11 | [DBA],[DEV] |
 | [Current State of the NewSQL/NoSQL Cloud Arena]                                                                         | Warner Chaves                            | 2017-11-27 | [DBA],[DEV] |
+| [SQL Server 2017: JSON]                                                                                                 | Sergey Syrovatchenko                     | 2017-11-17 | [X]         |
+| [Simulating Bad Networks to Test SQL Server Replication]                                                                | John Paul Cook                           | 2018-01-02 | [DBA]       |
+| [How to Turn on Instant File Initialization]                                                                            | Greg Larsen                              | 2017-12-04 | [DBA]       |
+| [Bad Idea Jeans: Finding Undocumented Trace Flags]                                                                      | Brent Ozar                               | 2017-10-04 | [DEV]       |
+| [A Method to Find Trace Flags]                                                                                          | Joe Obbish                               | 2018-01-16 | [DEV]       |
+| [Using Windows stored credentials to connect to SQL in containers]                                                      | Andrew Pruski                            | 2018-01-17 | [DEV]       |
+| [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -939,3 +946,10 @@ Articles types:
 [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]:https://sqlquantumleap.com/2017/12/08/which-collation-is-used-to-convert-nvarchar-to-varchar-in-a-where-condition-part-a-of-2-duck/
 [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]:https://sqlquantumleap.com/2017/12/11/which-collation-is-used-to-convert-nvarchar-to-varchar-in-a-where-condition-part-b-of-2-rabbit/#comments
 [Current State of the NewSQL/NoSQL Cloud Arena]:https://www.red-gate.com/simple-talk/cloud/cloud-data/current-state-newsqlnosql-cloud-arena/
+[SQL Server 2017: JSON]:http://db-devs.com/blog/archive/sql-server-2017-json/
+[Simulating Bad Networks to Test SQL Server Replication]:https://www.red-gate.com/simple-talk/blogs/simulating-bad-networks-test-sql-server-replication/
+[How to Turn on Instant File Initialization]:https://www.databasejournal.com/tips/how-to-turn-on-instant-file-initialization.html
+[Bad Idea Jeans: Finding Undocumented Trace Flags]:https://rebrand.ly/brent-finding-undocumented-trace-flags
+[A Method to Find Trace Flags]:https://rebrand.ly/joe-finding-undocumented-trace-flags
+[Using Windows stored credentials to connect to SQL in containers]:https://dbafromthecold.com/2018/01/17/using-windows-stored-credentials-to-connect-to-sql-in-containers/
+[Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]:https://www.databasejournal.com/features/mssql/step-by-step-guide-to-migrate-sql-server-data-to-sql-server-2017.html
