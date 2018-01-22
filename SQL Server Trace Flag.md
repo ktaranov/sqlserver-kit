@@ -589,10 +589,12 @@ Link: https://support.microsoft.com/en-us/help/2986423/fix-it-takes-a-long-time-
 
 <a id="652"></a>
 #### Trace Flag: 652
-Function: Disable page pre-fetching scans<br />
+Function: Disable page pre-fetching scans.
+ If you turn on trace flag 652, SQL Server no longer brings database pages into the buffer pool before these database pages are consumed by the scans.
+If you turn on trace flag 652, queries that benefit from the page pre-fetching feature exhibit low performance.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global only
+Scope: global or session
 
 
 <a id="653"></a>
@@ -604,16 +606,20 @@ Link: None
 
 <a id="661"></a>
 #### Trace Flag: 661
-Function: Disables the ghost record removal process.<br />
+Function: Disables the ghost record removal process. A ghost record is the result of a delete operation.
+When you delete a record, the deleted record is kept as a ghost record. Later, the deleted record is purged by the ghost record removal process.
+When you disable this process, the deleted record is not purged. Therefore, the space that the deleted record consumes is not freed.
+This behavior affects space consumption and the performance of scan operations. <br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global only
+Scope: global or session
 
 
 <a id="662"></a>
 #### Trace Flag: 662
 **Undocumented trace flag**<br />
-Function: Prints detailed information about the work done by the ghost cleanup task when it runs next. Use TF 3605 to see the output in the errorlog<br />
+Function: Prints detailed information about the work done by the ghost cleanup task when it runs next.
+Use TF [3605](#3605) to see the output in the errorlog<br />
 Link: http://blogs.msdn.com/b/sqljourney/archive/2012/07/28/an-in-depth-look-at-ghost-records-in-sql-server.aspx
 
 
@@ -740,9 +746,13 @@ Link: None
 
 <a id="834"></a>
 #### Trace Flag: 834
-Function: Uses Microsoft Windows large-page allocations for the buffer pool.<br />
+Function: Uses Microsoft Windows large-page allocations for the buffer pool.
+Trace flag 834 causes SQL Server to use Microsoft Windows large-page allocations for the memory that is allocated for the buffer pool.
+The page size varies depending on the hardware platform, but the page size may be from 2 MB to 16 MB.
+Large pages are allocated at startup and are kept throughout the lifetime of the process.
+Trace flag 834 improves performance by increasing the efficiency of the translation look-aside buffer (TLB) in the CPU. <br />
 **Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**<br />
-Link: https://support.microsoft.com/en-us/kb/920093<br />
+Link: [KB920093}<br />
 Link: https://support.microsoft.com/en-us/kb/3210239<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -752,14 +762,18 @@ Scope: global only
 #### Trace Flag: 835
 **Undocumented trace flag**<br />
 Function: SQL 9 / 10 – On 64 bit SQL Server it turns off Lock pages in memory<br />
-Link: None
+Link: None<br />
+Scope: ?
 
 
 <a id="836"></a>
 #### Trace Flag: 836
-Function: Use the max server memory option for the buffer pool<br />
+Function: Trace flag 836 causes SQL Server to size the buffer pool at startup based on the value of the max server memory option instead of based on the total physical memory.
+You can use trace flag 836 to reduce the number of buffer descriptors that are allocated at startup in 32-bit Address Windowing Extensions (AWE) mode.
+Trace flag 836 applies only to 32-bit versions of SQL Server that have the AWE allocation enabled. You can turn on trace flag 836 only at startup.<br />
 Link: [KB920093]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2012/12/11/how-it-works-sql-server-32-bit-paeawe-on-sql-2005-2008-and-2008-r2-not-using-as-much-ram-as-expected/<br />
+Scope: global only
 
 
 <a id="839"></a>
@@ -856,6 +870,7 @@ Link: http://www.sqlskills.com/blogs/paul/tempdb-configuration-survey-results-an
 Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/01/attempt-to-grow-all-files-in-one-filegroup-and-not-just-the-one-next-in-the-autogrowth-chain-using-trace-flag-1117<br />
 Link: http://sql-articles.com/articles/general/day-6trace-flag-1117-auto-grow-equally-in-all-data-file<br />
 Link: http://www.ryanjadams.com/2017/05/trace-flag-1117-growth-contention/<br />
+Link: https://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br/>
 Scope: global only
 
 
@@ -1267,12 +1282,13 @@ Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
 
 <a id="2301"></a>
 #### Trace Flag: 2301
-Function: Enable advanced decision support optimizations<br />
+Function: Trace flag 2301 enables advanced optimizations that are specific to decision support queries.
+This option applies to decision support processing of large data sets.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.queryprocessor.com/ce_join_base_containment_assumption<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/772232/make-optimizer-estimations-more-accurate-by-using-metadata<br />
-Scope: global and session and query
+Scope: global or session or query
 
 
 <a id="2309"></a>
@@ -1894,7 +1910,7 @@ Function: Enables CHECKSUM option as default for BACKUP command<br />
 For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx)**.<br />
 Link: https://support.microsoft.com/en-us/kb/2656988<br />
 Link: [Docs Trace Flags]<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="3028"></a>
@@ -2847,7 +2863,7 @@ Function: Enables performance improvement of query operations with spatial data 
 The performance gain will vary, depending on the configuration, the types of queries, and the objects.<br />
 Link: [KB3107399]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="6533"></a>
@@ -2856,7 +2872,7 @@ Function: Enables performance improvement of query operations with spatial data 
 The performance gain will vary, depending on the configuration, the types of queries, and the objects.<br />
 Link: [KB3107399]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="6534"></a>
@@ -2867,7 +2883,7 @@ Link: https://support.microsoft.com/en-us/kb/3054180<br />
 Link: [KB3107399]<br />
 Link: https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/<br />
 Link: [Docs Trace Flags]<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="7103"></a>
@@ -2902,7 +2918,7 @@ Link: https://support.microsoft.com/en-us/help/3051993/fix-the-value-of-number-t
 Function: Forces NUMBER values with unknown precision/scale to be treated as double values with OLE DB provider<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/en-us/kb/3051993<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="7352"></a>
@@ -3137,15 +3153,24 @@ Link: https://technet.microsoft.com/en-us/library/cc917726.aspx
 
 <a id="8011"></a>
 #### Trace Flag: 8011
-Function: Disable the ring buffer for Resource Monitor<br />
+Function: Trace flag 8011 disables the collection of additional diagnostic information for Resource Monitor.
+You can use the information in this ring buffer to diagnose out-of-memory conditions.
+Trace flag 8011 always applies across the server and has global scope. You can turn on trace flag 8011 at startup or in a user session.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="8012"></a>
 #### Trace Flag: 8012
-Function: Disable the ring buffer for schedulers<br />
+Function: Disable the ring buffer for schedulers.
+SQL Server records an event in the schedule ring buffer every time that one of the following events occurs:
+a scheduler switches context to another worker, a worker is suspended, a worker is resumed, a worker enters the preemptive mode or the non-preemptive mode.
+You can use the diagnostic information in this ring buffer to analyze scheduling problems.
+For example, you can use the information in this ring buffer to troubleshoot problems when SQL Server stops responding.
+Trace flag 8012 disables recording of events for schedulers. You can turn on trace flag 8012 only at startup.
+The exception ring buffer records the last 256 exceptions that are raised on a node.
+Each record contains some information about the error and contains a stack trace. A record is added to the ring buffer when an exception is raised.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -3177,7 +3202,8 @@ Link: http://dba.stackexchange.com/questions/48580/trace-flag-and-which-need-to-
 
 <a id="8018"></a>
 #### Trace Flag: 8018
-Function: Disable the exception ring buffer<br />
+Function: Disables the creation of the ring buffer, and no exception information is recorded.
+Disabling the exception ring buffer makes it more difficult to diagnose problems that are related to internal server errors.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -3185,7 +3211,9 @@ Scope: global only
 
 <a id="8019"></a>
 #### Trace Flag: 8019
-Function: Disable stack collection for the exception ring buffer<br />
+Function: Disable stack collection for the exception ring buffer
+Disables stack collection during the record creation.
+Trace flag 8019 has no effect if trace flag [8018](#8018) is turned on.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -3193,7 +3221,11 @@ Scope: global only
 
 <a id="8020"></a>
 #### Trace Flag: 8020
-Function: Disable working set monitoring<br />
+Function: Disable working set monitoring.
+SQL Server uses the size of the working set when SQL Server interprets the global memory state signals from the operating system.
+Trace flag 8020 removes the size of the working set from consideration when SQL Server interprets the global memory state signals.
+If you use this trace flag incorrectly, heavy paging occurs, and the performance is poor.
+Therefore, contact Microsoft Support before you turn on trace flag 8020.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -3209,9 +3241,10 @@ Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-t
 
 <a id="8022"></a>
 #### Trace Flag: 8022
-Function: This flag gives more information about the conditions when a non-yielding scheduler/situation was encountered. The whitepaper linked to on the right gives example output for this flag<br />
+Function: This flag gives more information about the conditions when a non-yielding scheduler/situation was encountered.
+The whitepaper linked to on the right gives example output for this flag<br />
 Link: None
-    
+
 
 <a id="8024"></a>
 #### Trace Flag: 8024
@@ -3518,6 +3551,7 @@ Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-ser
 
 <a id="8671"></a>
 #### Trace Flag: 8671
+**Undocumented trace flag**<br />
 Function: According to Dima, disables the logic that prunes the memo and prevents the optimization process from stopping due to “Good Enough Plan found”. Can significantly increase the amount of time, CPU, and memory used in the compilation process<br />
 Link: http://www.queryprocessor.ru/optimizer_unleashed_2
 
@@ -3532,6 +3566,7 @@ Link: https://sqlperformance.com/2013/06/sql-indexes/recognizing-missed-optimiza
 
 <a id="8677"></a>
 #### Trace Flag: 8677
+**Undocumented trace flag**<br />
 Function: Skips “Search 1” phase of query optimization, and only Search 0 and Search 2 execute.<br />
 Link: https://sqlbits.com/Sessions/Event12/Query_Optimizer_Internals_Traceflag_fun
 
@@ -3546,12 +3581,14 @@ Scope: ?
 
 <a id="8679"></a>
 #### Trace Flag: 8679
+**Undocumented trace flag**<br />
 Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
 Link: None
 
 
 <a id="8687"></a>
 #### Trace Flag: 8687
+**Undocumented trace flag**<br />
 Function: Prevents the SQL Server optimizer from using a Hash Match Team operator<br />
 Link: None
 
@@ -3648,12 +3685,13 @@ Scope: ?
 
 <a id="8744"></a>
 #### Trace Flag: 8744
-Function: Disable pre-fetching for the Nested Loop operator<br />
+Function: Disable pre-fetching for the Nested Loop operator.
+Incorrect use of this trace flag may cause additional physical reads when SQL Server executes plans that contain the Nested Loops operator.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/03/08/execution-plan-analysis-the-mystery-work-table.aspx<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/780194/make-dbcc-trace-flags-available-as-option-querytraceon<br />
-Scope: global only
+Scope: global or session
 
 
 <a id="8746"></a>
@@ -4157,7 +4195,7 @@ Scope: ?
 #### Trace Flag: 9410
 **Undocumented trace flag**<br />
 Function: Fix slowly query runs when SQL Server uses hash aggregate in the query plan.<br />
-Link: [Query runs slowly when SQL Server uses hash aggregate in the query plan]<br />
+Link: https://support.microsoft.com/en-us/help/3167159/fix-query-runs-slowly-when-sql-server-uses-hash-aggregate-in-the-query<br />
 Scope: ?
 
 
@@ -4586,9 +4624,9 @@ Scope: ?
 
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
 [Docs Trace Flags]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
-[DBCC CHECKDB]:https://msdn.microsoft.com/en-us/library/ms176064.aspx
-[DBCC CHECKTABLE]:https://msdn.microsoft.com/en-us/library/ms174338.aspx
-[DBCC CHECKCONSTRAINTS]:https://msdn.microsoft.com/en-us/library/ms189496.aspx
+[DBCC CHECKDB]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
+[DBCC CHECKTABLE]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
+[DBCC CHECKCONSTRAINTS]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
 [Niko Neugebauer Columnstore Indexes – part 86]:http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
 [Niko Neugebauer Columnstore Indexes – part 35]:http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
 [Microsoft SQL Server 2005 TPC-C Trace Flags]:http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
@@ -4622,4 +4660,3 @@ Scope: ?
 [Statistics and Cardinality Estimation]:http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
 [Splitting Strings Based on Patterns]:https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
 [SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
-[Query runs slowly when SQL Server uses hash aggregate in the query plan]:https://support.microsoft.com/en-us/help/3167159/fix-query-runs-slowly-when-sql-server-uses-hash-aggregate-in-the-query
