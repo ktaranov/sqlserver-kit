@@ -61,7 +61,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Buck Woody          | [Buck Blog]                  |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                  |
 | Steve Stedman       | [Steve Stedman Blog]         | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                  |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]      | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                  |
-| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 0   | -                  |
+| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 6   | [Neugebauer MVP]   |
 | Mike Fal            | [Mike Fal Blog]              | USA     | Denver           | [@Mike_Fal]        | NULL                              | 0   | -                  |
 | Robert L Davis      | [Robert Blog]                | USA     | New York         | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]        |
 | Chris Shaw          | [Chris Shaw Blog]            | USA     | Colorado         | [@SQLShaw]         | NULL                              | 8   | [Shaw MVP]         |
@@ -74,7 +74,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Raul Gonzalez       | [Raul Gonzalez Blog]         |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   | -                  |
 | Rob Sewell          | [Rob Sewell Blog]            | GBR     | Somerset         | [@sqldbawithbeard] | NULL                              | 1   | [Swell MVP]        |
 | Jonathan Kehayias   | [Jonathan Kehayias Articles] | USA     | Tampa            | [@SQLPoolBoy]      | NULL                              | 9   | [Kehayias MVP]     |
-| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | NULL                              | 6   | [Neugebauer MVP]   |
 | Thomas Kejser       | [Thomas Kejser Blog]         | DNK     | NULL             | NULL               | thomas@kejser.org                 | 0   | -                  |
 | Patrick Keisler     | [Patrick Keisler Blog]       | USA     | New York         | [@patrickkeisler]  | NULL                              | 0   | -                  |
 | Markus Winand       | [Markus Winand Blog]         | AUT     | Vienna           | [@MarkusWinand]    | NULL                              | 0   | -                  |

@@ -56,6 +56,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
  - Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
  - Alexey Nagorskiy ([github](https://github.com/fenixfx))
+ - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -2693,6 +2694,7 @@ Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add t
 Link : https://support.microsoft.com/en-us/kb/2952101<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
+Link: [Parallelism in Hekaton (In-Memory OLTP)]<br />
 Scope: global or session or query
 
 
@@ -4513,9 +4515,10 @@ Link: https://support.microsoft.com/en-us/help/3147012/fix-large-disk-checkpoint
 <a id="9939"></a>
 #### Trace Flag: 9939
 Function: Disables merge/recompress during columnstore index reorganization.
-In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.
-**Note: Trace flag 10204 does not apply to columnstore indexes which are created on memory-optimized tables.**
-Link: [Docs Trace Flags]
+In SQL Server 2016, when a columnstore index is reorganized, there is new functionality to automatically merge any small compressed rowgroups into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.<br />
+**Note: Trace flag 10204 does not apply to columnstore indexes which are created on memory-optimized tables.**<br />
+Link: [Docs Trace Flags]<br />
+Link: [Parallelism in Hekaton (In-Memory OLTP)]
 Scope: global or session
 
 
@@ -4660,3 +4663,4 @@ Scope: ?
 [Statistics and Cardinality Estimation]:http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
 [Splitting Strings Based on Patterns]:https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
 [SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
+[Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
