@@ -2,7 +2,7 @@ IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
-
+　
 ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
       @tsqlStatement     NVARCHAR(MAX)
     , @numberOfExecution INT        = 10
@@ -70,7 +70,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @clearCache        = 1
        , @printStepInfo     = 1
        , @durationAccuracy  = 'mcs'
-       , @dateTimeFun       = 'SYSDATETIME';
+       , @dateTimeFun       = 'SYSUTCDATETIME';
 
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -79,50 +79,35 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .NOTE
     Author: Aleksei Nagorskii
-    Created date: 2017-12-14
-    Version: 1.0
-
-    Author: Aleksei Nagorskii
-    Modified date: 2017-12-15
-    Version: 1.1
-
-    Author: Konstantin Taranov
-    Modified date: 2017-12-23
-    Version: 2.0
-
-    Author: Konstantin Taranov
-    Modified date: 2017-12-25
-    Version: 2.1
-
-    Author: Konstantin Taranov
-    Modified date: 2018-01-01
-    Version: 2.2
-
-    Author: Konstantin Taranov
-    Modified date: 2018-01-04
-    Version: 2.3
-
-    Author: Konstantin Taranov
-    Modified date: 2018-01-12
-    Version: 2.4
-
-    Author: Konstantin Taranov
-    Modified date: 2018-01-16
-    Version: 3.0
-
-    Author: Aleksei Nagorskii
-    Modified date: 2018-01-17
-    Version: 3.1
+    Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
+    Version: 3.5
+    Last Modified: 2018-01-25 by Konstantin Taranov
+    Main contributors: Konstantin Taranov, Aleksei Nagorskii
 */
 AS
 BEGIN TRY
 
     SET NOCOUNT ON;
 
+    DECLARE @originalLogin SYSNAME = ORIGINAL_LOGIN(); -- https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
+    DECLARE @startTime DATETIME2(7) = CASE WHEN @dateTimeFun = 'SYSDATETIME'    THEN SYSDATETIME()
+                                           WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                      END;
+    PRINT('Benchmark started at ' +  CONVERT(VARCHAR(27), @startTime, 121) + ' by ' + @originalLogin);
+
+    DECLARE @productMajorVersion SQL_VARIANT = SERVERPROPERTY('ProductMajorVersion');
+    IF CAST(@productMajorVersion AS INT) < 10
+    BEGIN
+        DECLARE @MsgError VARCHAR(2000) = 'Stored procedure sp_BenchmarkTSQL works only for SQL Server 2008 and higher. Yor ProductMajorVersion is ' +
+                                           CAST(@productMajorVersion AS VARCHAR(30)) +
+                                           '. You can try to replace DATETIME2 data type on DATETIME, perhaps it will be enough.';
+        THROW 55001, @MsgError, 1;
+    END;
+
     IF @tsqlStatement IS NULL
-        THROW 55001, '@tsqlStatement is NULL, please specify TSQL statement.', 1;
+        THROW 55002, '@tsqlStatement is NULL, please specify TSQL statement.', 1;
     IF @tsqlStatement = N''
-        THROW 55002, '@tsqlStatement is empty, please specify TSQL statement.', 1;
+        THROW 55003, '@tsqlStatement is empty, please specify TSQL statement.', 1;
 
     IF @durationAccuracy NOT IN (
                                    'ns'  -- nanosecond
@@ -134,13 +119,13 @@ BEGIN TRY
                                  , 'wk'  -- week
                                  , 'dd'  -- day
     )
-    THROW 55003, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
+    THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
     IF @dateTimeFun NOT IN (
                               'SYSDATETIME'
                             , 'SYSUTCDATETIME'
     )
-    THROW 55004, '@dateTimeFun accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. For details see https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
+    THROW 55005, '@dateTimeFun accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. For details see https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
     IF EXISTS (
         SELECT 1
@@ -159,13 +144,10 @@ BEGIN TRY
         FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
         WHERE column_ordinal = 0;
 
-        THROW 55004, @err_msg, 1;
+        THROW 55006, @err_msg, 1;
     END;
 
     DECLARE @crlf          VARCHAR(10)  = CHAR(10);
-    DECLARE @cts           DATETIME2(7) = CASE WHEN @dateTimeFun = 'SYSDATETIME'    THEN SYSDATETIME()
-                                               WHEN @dateTimeFun = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                          END;
     DECLARE @r             INT          = 0;
     DECLARE @min           BIGINT;
     DECLARE @avg           BIGINT;
@@ -175,8 +157,6 @@ BEGIN TRY
     DECLARE @rts           DATETIME2(7);
     DECLARE @finishTime    DATETIME2(7);
     DECLARE @duration      INT;
-    DECLARE @startTime     VARCHAR(27);
-    DECLARE @originalLogin SYSNAME = ORIGINAL_LOGIN();
 
     DECLARE @t           TABLE (
         StartTimeStamp   DATETIME2(7)
@@ -188,9 +168,6 @@ BEGIN TRY
       , PrintStepInfo    BIT
       , DurationAccuracy VARCHAR(10)
       );
-
-    SET @startTime = CONVERT(VARCHAR(27), @cts, 121);
-    PRINT('Benchmark started at ' + @startTime + ' by ' + @originalLogin);
 
     WHILE @r < @numberOfExecution
     BEGIN
@@ -237,7 +214,7 @@ BEGIN TRY
             , DurationAccuracy
             )
         VALUES (
-              @cts
+              @startTime
             , @rts
             , @finishTime
             , @duration
