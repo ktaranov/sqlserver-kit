@@ -170,7 +170,7 @@ FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
-|---------------------------------      |-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
+|---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 KB4052987]           | SQLServer2017-KB4052987-x64.exe                                   | 2018-01-03   | 14.0.3015.40  |      459 | a533b82e49cb9a5eea52cd2339db18aa4017587b |
 | [SQL Server 2016]                     | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5   |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |

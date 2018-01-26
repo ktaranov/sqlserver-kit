@@ -3,7 +3,6 @@
 <a name="header01"></a>
 <a name="header02"></a>
 <a name="header020"></a>
-<a name="header03"></a>
 <a name="header04"></a>
 <a name="header05"></a>
 <a name="header06"></a>
@@ -34,7 +33,6 @@ Headers:
  - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
- - [SQL Server Sample Databases and Datasets](#sql-server-sample-databases-and-datasets)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
@@ -57,17 +55,13 @@ Headers:
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
  - [Extended Events](/Extended_Events)
  - [Known Errors](/Errors)
+ - [SQL Server Sample Databases and Datasets](#Sample_Databases)
  - [Solution](/Solution)
     - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
     - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
     - [Ola Maintenance Solution](/Solution/Ola_Maintenance_Solution) (by Ola Hallengren)
     - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
- - [SSMS](/SSMS)
-    - [SSMS addins](/SSMS/SSMS_Addins.md) (**34 useful free and paid SSMS Addins**)
-    - [SSMS Snippets](/SSMS/SSMS_Snippets)
-    - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
-    - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
@@ -80,6 +74,11 @@ Headers:
     - [Foreign Key batch rename](/Scripts/Foreign%20Key%20batch%20rename.sql) (by Wes Henriksen)
     - [Count character matches](/Scripts/Count%20character%20matches.sql)
     - and many others...
+ - [SSMS](/SSMS)
+    - [SSMS addins](/SSMS/SSMS_Addins.md) (**34 useful free and paid SSMS Addins**)
+    - [SSMS Snippets](/SSMS/SSMS_Snippets)
+    - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
+    - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
  - [Stored Procedure](/Stored_Procedure)
    - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
    - [sp_SrvPermissions](/Stored_Procedure/sp_SrvPermissions.sql) (by Kenneth Fisher)
@@ -368,33 +367,6 @@ BIML Bloggers
 - [Warwick Rudd](http://www.sqlmastersconsulting.com.au/SQL-Server-Blog/PID/1675/mcat/1682/evl/0/nsw/t/EDNSearch/Biml)
 
 [*Back to top*](#header020)
-
-
-## SQL Server Sample Databases and Datasets
-Alternative download link for some sample databases: http://bit.ly/ya-ssk
-
- - [AdventureWorks Sample Databases and Scripts for SQL Server 2017, 2016, 2014 , 2012](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
- - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
- - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
- - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Github Microsoft)
- - [IoT Smart Grid sample - demonstrates how SQL Server 2016 memory optimized databases could be used to ingest a very high input data rate](https://github.com/Microsoft/sql-server-samples/releases/tag/iot-smart-grid-v1.0) (Github Microsoft)
- - [In-Memory OLTP (WWI Sales Orders)](https://github.com/Microsoft/sql-server-samples/releases/tag/wwi-sales-orders-v0.5) (Github Microsoft)
- - [Bigger Fact Table for Wide World Importers](http://www.sqlservercentral.com/blogs/koen-verbeeck/2016/08/12/bigger-fact-table-for-wide-world-importers/) (by Koen Verbeeck)
- - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse) (Github)
- - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Brent Ozar)
- - [Updating the Stack Overflow Demo Database version 2016-12-15](https://www.brentozar.com/archive/2017/01/updating-stack-overflow-demo-database/)
- - [Stackexchange Source files - xml files](https://archive.org/download/stackexchange)
- - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
- - [Git repo for SQL Server Reporting Services samples and community projects](https://github.com/Microsoft/Reporting-Services)
- - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
- - [SQLIndexWorkbook Sample Database](http://www.littlekendra.com/downloads/get-the-sqlindexworkbook-database/) (by Little Kendra)
- - [Data.gov](https://www.data.gov/)
- - [Itzik Ben-Gan Sample Databases](http://tsql.solidq.com/books/source_code/) (by Itzik Ben-Gan)
- - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
- - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
- - [SQL Server Sakila DB](https://www.jooq.org/sakila) (by jOQO)
-
-[*Back to top*](#header03)
 
 
 ## PowerShell and SQL Server
