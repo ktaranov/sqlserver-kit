@@ -487,6 +487,9 @@ Articles types:
 | [A Method to Find Trace Flags]                                                                                          | Joe Obbish                               | 2018-01-16 | [DEV]       |
 | [Using Windows stored credentials to connect to SQL in containers]                                                      | Andrew Pruski                            | 2018-01-17 | [DEV]       |
 | [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA]       |
+| [Nasty Fast PERCENT_RANK]                                                                                               | Alan Burstein                            | 2018-01-05 | [DEV]       |
+| [Administrative Logins and Users]                                                                                       | Kenneth Fisher                           | 2015-11-02 | [DEV]       |
+| [Parallelism in Hekaton (In-Memory OLTP)]                                                                               | Niko Neugebauer                          | 2018-01-20 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -953,3 +956,6 @@ Articles types:
 [A Method to Find Trace Flags]:https://rebrand.ly/joe-finding-undocumented-trace-flags
 [Using Windows stored credentials to connect to SQL in containers]:https://dbafromthecold.com/2018/01/17/using-windows-stored-credentials-to-connect-to-sql-in-containers/
 [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]:https://www.databasejournal.com/features/mssql/step-by-step-guide-to-migrate-sql-server-data-to-sql-server-2017.html
+[Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
+[Administrative Logins and Users]:https://sqlstudies.com/2015/11/02/administrative-logins-and-users/
+[Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
