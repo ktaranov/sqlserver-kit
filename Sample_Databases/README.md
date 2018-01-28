@@ -26,8 +26,9 @@ Alternative download link for some sample databases:
 
 Some databases you can download from this repository: https://rebrand.ly/sample-db
 
+
 | Name/Download backups                   | SQL Server Version | Type     | .Bac, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
-|------------------------------------- ---|--------------------|----------|---------:|---------:|------------:|-------------------:|-----------------------|-------------------|
+|-----------------------------------------|--------------------|----------|---------:|---------:|------------:|-------------------:|-----------------------|-------------------|
 | [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           ? |                  ? |                     ? |                 ? |
 | [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |           ? |                  ? |                     ? |                 ? |
 | [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |           ? |                  ? |                     ? |                 ? |
