@@ -2,16 +2,19 @@ IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
-
+　
 ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
-      @tsqlStatement     NVARCHAR(MAX)
-    , @numberOfExecution INT        = 10
-    , @saveResults       BIT        = 0
-    , @clearCache        BIT        = 0
-    , @calcMedian        BIT        = 0
-    , @printStepInfo     BIT        = 1
-    , @durationAccuracy  VARCHAR(5) = 'ns'
-    , @dateTimeFunction  VARCHAR(16)= 'SYSDATETIME'
+      @tsqlStatementBefore NVARCHAR(MAX) = NULL
+    , @tsqlStatement       NVARCHAR(MAX)
+    , @tsqlStatementAfter  NVARCHAR(MAX) = NULL
+    , @numberOfExecution   INT           = 10
+    , @saveResults         BIT           = 0
+    , @skipTSQLCheck       BIT           = 1
+    , @clearCache          BIT           = 0
+    , @calcMedian          BIT           = 0
+    , @printStepInfo       BIT           = 1
+    , @durationAccuracy    VARCHAR(5)    = 'ns'
+    , @dateTimeFunction    VARCHAR(16)   = 'SYSDATETIME'
 )
 /*
 .SYNOPSIS
@@ -20,14 +23,23 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 .DESCRIPTION
     Run SQL statement specified times, show results, insert execution details into table master.dbo.BenchmarkTSQL (create if not exist).
 
+.PARAMETER @tsqlStatementBefore
+    TSQL statement that executed before run main TSQL statement.
+
 .PARAMETER @tsqlStatement
     TSQL statement for benchmarking.
+
+.PARAMETER @tsqlStatementAfter
+    TSQL statement that executed after run main TSQL statement.
 
 .PARAMETER @numberOfExecution
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
     Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1.
+
+.PARAMETER @skipTSQLCheck
+    Checking for valid TSQL statement.
 
 .PARAMETER @clearCache
     Clear cached plan for TSQL statement.
@@ -80,8 +92,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.0
-    Last Modified: 2018-01-25 by Aleksei Nagorskii
+    Version: 4.1
+    Last Modified: 2018-01-30 by Aleksei Nagorskii
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
 */
 AS
@@ -93,6 +105,7 @@ BEGIN TRY
     DECLARE @startTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                            WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                       END;
+    DECLARE @err_msg NVARCHAR(MAX);
     PRINT('Benchmark started at ' +  CONVERT(VARCHAR(27), @startTime, 121) + ' by ' + @originalLogin);
 
     DECLARE @productMajorVersion SQL_VARIANT = SERVERPROPERTY('ProductMajorVersion');
@@ -127,24 +140,63 @@ BEGIN TRY
     )
     THROW 55005, '@dateTimeFunction accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. For details see https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
-    IF EXISTS (
-        SELECT 1
-        FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
-        WHERE error_message IS NOT NULL
-          AND error_number IS NOT NULL
-          AND error_severity IS NOT NULL
-          AND error_state IS NOT NULL
-          AND error_type IS NOT NULL
-          AND error_type_desc IS NOT NULL
-          )
+    IF @numberOfExecution < 1
+        THROW 55007, '@numberOfExecution accept values greater then 0', 1;
+    IF @skipTSQLCheck = 0
     BEGIN
-        DECLARE @err_msg NVARCHAR(MAX);
+        IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> '' AND EXISTS (
+            SELECT 1
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatementBefore, NULL, 0)
+            WHERE error_message IS NOT NULL
+              AND error_number IS NOT NULL
+              AND error_severity IS NOT NULL
+              AND error_state IS NOT NULL
+              AND error_type IS NOT NULL
+              AND error_type_desc IS NOT NULL
+              )
+        BEGIN
+            SELECT @err_msg = [error_message]
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatementBefore, NULL, 0)
+            WHERE column_ordinal = 0;
 
-        SELECT @err_msg = [error_message]
-        FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
-        WHERE column_ordinal = 0;
+            THROW 55007, @err_msg, 1;
+        END;
 
-        THROW 55006, @err_msg, 1;
+        IF @tsqlStatement IS NOT NULL AND @tsqlStatement <> '' AND EXISTS (
+            SELECT 1
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
+            WHERE error_message IS NOT NULL
+              AND error_number IS NOT NULL
+              AND error_severity IS NOT NULL
+              AND error_state IS NOT NULL
+              AND error_type IS NOT NULL
+              AND error_type_desc IS NOT NULL
+              )
+        BEGIN
+            SELECT @err_msg = [error_message]
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
+            WHERE column_ordinal = 0;
+
+            THROW 55008, @err_msg, 1;
+        END;
+
+        IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> '' AND EXISTS (
+            SELECT 1
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatementAfter, NULL, 0)
+            WHERE error_message IS NOT NULL
+              AND error_number IS NOT NULL
+              AND error_severity IS NOT NULL
+              AND error_state IS NOT NULL
+              AND error_type IS NOT NULL
+              AND error_type_desc IS NOT NULL
+              )
+        BEGIN
+            SELECT @err_msg = [error_message]
+            FROM sys.dm_exec_describe_first_result_set(@tsqlStatementAfter, NULL, 0)
+            WHERE column_ordinal = 0;
+    
+            THROW 55009, @err_msg, 1;
+        END;
     END;
 
     DECLARE @crlf           NVARCHAR(10)  = CHAR(10);
@@ -183,6 +235,9 @@ BEGIN TRY
 
             IF @plan_handle IS NOT NULL DBCC FREEPROCCACHE (@plan_handle);
         END;
+
+        IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> ''
+            EXECUTE sp_executesql @tsqlStatementBefore;
 
         SET @runTimeStamp = CASE WHEN @dateTimeFunction = 'SYSDATETIME' THEN SYSDATETIME()
                         WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
@@ -239,6 +294,9 @@ BEGIN TRY
                                                         END, 121) +
                   ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.'
                   );
+
+        IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> ''
+            EXECUTE sp_executesql @tsqlStatementAfter;
 
     END;
 
