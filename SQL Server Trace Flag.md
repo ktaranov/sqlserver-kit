@@ -144,11 +144,12 @@ GO
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
+ - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
 
-**Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.
+**Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
 
 **Trace flag 1118** addresses contention that can exist on a particular type of page in a database, the SGAM page.
@@ -163,6 +164,10 @@ Starting in SQL Server 2014, this option can be set instance-wide through `sp_co
 Information about successful backups is still written to `msdb` and can be queried using T-SQL.
 For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
 As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+
+**Trace flag 3449** (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
+will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
+backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
 
 **Trace flag 7412** Enables the lightweight query execution statistics profiling infrastructure.
 Unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
@@ -192,8 +197,7 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 
 <a id="101"></a>
 #### Trace Flag: 101
-Function: Verbose Merge Replication logging output for troubleshooting
-Merger repl performance<br />
+Function: Verbose Merge Replication logging output for troubleshooting Merger repl performance<br />
 Link: https://support.microsoft.com/en-us/help/2892633<br />
 Scope: global only
 
@@ -206,8 +210,8 @@ Scope: global only
 
 
 <a id="105"></a>
-**Undocumented trace flag**<br />
 #### Trace Flag: 105
+**Undocumented trace flag**<br />
 Function: Join more than 16 tables in SQL server 6.5<br />
 Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
 
@@ -2121,9 +2125,12 @@ Link: https://support.microsoft.com/en-us/help/2970421/fix-the-database-sticks-i
 
 <a id="3449"></a>
 #### Trace Flag: 3449
-Function: If you enable global TF 3449 (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later), you will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database, backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
+Function: If you enable global TF 3449 (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
+you will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
+backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
 Link: https://support.microsoft.com/en-us/help/3158396/fix-sql-server-database-creation-on-a-system-with-a-large-volume-of-me<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/<br />
+Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Scope: global only
 
 
@@ -3311,17 +3318,16 @@ Link: http://www.sqlservergeeks.com/blogs/AmitBansal/sql-server-bi/64/sql-server
 
 <a id="8048"></a>
 #### Trace Flag: 8048
+**Note: Beginning with SQL Server 2014 SP2 and SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.**<br />
 Function: Converts NUMA partitioned memory objects into CPU partitioned<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html<br />
 Link: https://support.microsoft.com/en-us/kb/2809338<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2012/12/20/how-it-works-cmemthread-and-debugging-them.aspx<br />
 Link: [Docs Trace Flags]<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2011/09/01/sql-server-2008-2008-r2-on-newer-machines-with-more-than-8-cpus-presented-per-numa-node-may-need-trace-flag-8048.aspx<br />
-**Note: Beginning with SQL Server 2014 SP2 and SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.**<br />
-Scope: global only
-
-*Thanks to: @sql\_handle (https://twitter.com/sql_handle)*
+Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Related to: [8015](#8015), [9024](#9024)
+Scope: global only
 
 
 <a id="8049"></a>
@@ -3354,6 +3360,7 @@ It is recommended to first test the performance of workload with Auto-Soft NUMA 
 Link: [KB972767]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/sql-server-2012-service-pack-4-sp4-released/<br />
+Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Scope: global only
 
 
@@ -4664,3 +4671,4 @@ Scope: ?
 [Splitting Strings Based on Patterns]:https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
 [SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
 [Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
+[Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]:https://sqlperformance.com/2018/01/sql-performance/hidden-performance-manageability-improvements-sql-server-2012-2014
