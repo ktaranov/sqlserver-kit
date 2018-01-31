@@ -59,14 +59,19 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
 
 .EXAMPLE
-    EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM , sys.databases';
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement = 'SELECT * FROM , sys.databases'
+       , @skipTSQLCheck = 0;
     -- RETURN: Incorrect syntax near ','.
 
 .EXAMPLE
-    EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT * FROM sys.databases';
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement = 'SELECT * FROM sys.databases'
+       , @skipTSQLCheck = 0;
 
 .EXAMPLE
-    EXEC sp_BenchmarkTSQL @tsqlStatement = 'SELECT TOP(100000) * FROM sys.objects AS o1 CROSS JOIN sys.objects AS o2 CROSS JOIN sys.objects AS o3;'
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement = 'SELECT TOP(100000) * FROM sys.objects AS o1 CROSS JOIN sys.objects AS o2 CROSS JOIN sys.objects AS o3;'
        , @numberOfExecution = 10
        , @saveResults       = 1
        , @calcMedian        = 1
@@ -75,14 +80,17 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @durationAccuracy  = 'ms';
 
 .EXAMPLE
-    EXEC sp_BenchmarkTSQL @tsqlStatement = 'WAITFOR DELAY ''00:00:02'';'
-       , @numberOfExecution = 5
-       , @saveResults       = 1
-       , @calcMedian        = 1
-       , @clearCache        = 1
-       , @printStepInfo     = 1
-       , @durationAccuracy  = 'mcs'
-       , @dateTimeFunction  = 'SYSUTCDATETIME';
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatementBefore = 'WAITFOR DELAY ''00:00:01'';'
+       , @tsqlStatement       = 'BACKUP DATABASE [master] TO  DISK = N''D:\master.bak'' WITH NOFORMAT, NOINIT;'
+       , @tsqlStatementAfter  = 'WAITFOR DELAY ''00:00:02'';'
+       , @numberOfExecution   = 5
+       , @saveResults         = 1
+       , @calcMedian          = 1
+       , @clearCache          = 1
+       , @printStepInfo       = 1
+       , @durationAccuracy    = 'mcs'
+       , @dateTimeFunction    = 'SYSUTCDATETIME';
 
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -92,8 +100,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.1
-    Last Modified: 2018-01-30 by Aleksei Nagorskii
+    Version: 4.2
+    Last Modified: 2018-01-30 22:30 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
 */
 AS
@@ -211,15 +219,15 @@ BEGIN TRY
     DECLARE @duration       INT;
 
     DECLARE @BenchmarkTSQL TABLE (
-        StartBenchmarkTime  DATETIME2(7)
-      , FinishBenchmarkTime DATETIME2(7)
-      , RunTimeStamp        DATETIME2(7)
-      , FinishTimeStamp     DATETIME2(7)
-      , Duration            BIGINT
-      , TsqlStatement       NVARCHAR(MAX)
-      , ClearCache          BIT
-      , PrintStepInfo       BIT
-      , DurationAccuracy    VARCHAR(10)
+        StartBenchmarkTime  DATETIME2(7)  NOT NULL
+      , FinishBenchmarkTime DATETIME2(7)  NULL
+      , RunTimeStamp        DATETIME2(7)  NOT NULL
+      , FinishTimeStamp     DATETIME2(7)  NOT NULL
+      , Duration            BIGINT        NOT NULL
+      , TsqlStatement       NVARCHAR(MAX) NOT NULL
+      , ClearCache          BIT           NOT NULL
+      , PrintStepInfo       BIT           NOT NULL
+      , DurationAccuracy    VARCHAR(10)   NOT NULL
       );
 
     WHILE @stepNumnber < @numberOfExecution
@@ -377,19 +385,21 @@ BEGIN TRY
         IF OBJECT_ID('master.dbo.BenchmarkTSQL', 'U') IS NULL
         BEGIN
             CREATE TABLE master.dbo.BenchmarkTSQL(
-                  BenchmarkTSQLID       INT IDENTITY  NOT NULL
-                , TSQLStatementGUID     VARCHAR(36)   NOT NULL
-                , StepRowNumber         INT           NOT NULL
-                , StartBenchmarkTime    DATETIME2(7)  NOT NULL
-                , FinishBenchmarkTime   DATETIME2(7)  NOT NULL
-                , RunTimeStamp          DATETIME2(7)  NOT NULL
-                , FinishTimeStamp       DATETIME2(7)  NOT NULL
-                , Duration              BIGINT        NOT NULL
-                , TsqlStatement         NVARCHAR(MAX) NOT NULL
-                , ClearCache            BIT           NOT NULL
-                , PrintStepInfo         BIT           NOT NULL
-                , DurationAccuracy      VARCHAR(10)   NOT NULL
-                , OriginalLogin         SYSNAME       NOT NULL
+                  BenchmarkTSQLID     INT IDENTITY  NOT NULL
+                , TSQLStatementGUID   VARCHAR(36)   NOT NULL
+                , StepRowNumber       INT           NOT NULL
+                , StartBenchmarkTime  DATETIME2(7)  NOT NULL
+                , FinishBenchmarkTime DATETIME2(7)  NOT NULL
+                , RunTimeStamp        DATETIME2(7)  NOT NULL
+                , FinishTimeStamp     DATETIME2(7)  NOT NULL
+                , Duration            BIGINT        NOT NULL
+                , TsqlStatementBefore NVARCHAR(MAX) NULL
+                , TsqlStatement       NVARCHAR(MAX) NOT NULL
+                , TsqlStatementAfter  NVARCHAR(MAX) NULL
+                , ClearCache          BIT           NOT NULL
+                , PrintStepInfo       BIT           NOT NULL
+                , DurationAccuracy    VARCHAR(10)   NOT NULL
+                , OriginalLogin       SYSNAME       NOT NULL
             );
 
             INSERT INTO master.dbo.BenchmarkTSQL(
@@ -400,7 +410,9 @@ BEGIN TRY
                , RunTimeStamp
                , FinishTimeStamp
                , Duration
+               , TsqlStatementBefore
                , TsqlStatement
+               , TsqlStatementAfter
                , ClearCache
                , PrintStepInfo
                , DurationAccuracy
@@ -413,7 +425,9 @@ BEGIN TRY
                  , RunTimeStamp
                  , FinishTimeStamp
                  , Duration
+                 , @tsqlStatementBefore
                  , TsqlStatement
+                 , @tsqlStatementAfter
                  , ClearCache
                  , PrintStepInfo
                  , DurationAccuracy
@@ -429,7 +443,9 @@ BEGIN TRY
                  , RunTimeStamp
                  , FinishTimeStamp
                  , Duration
+                 , @tsqlStatementBefore
                  , TsqlStatement
+                 , @tsqlStatementAfter
                  , ClearCache
                  , PrintStepInfo
                  , DurationAccuracy
