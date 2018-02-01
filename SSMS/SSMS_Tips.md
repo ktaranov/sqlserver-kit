@@ -37,7 +37,8 @@ Content:
 33. [Working with Azure SQL](#33)
 34. [Using Extended Events and Profiler in SSMS](#34)
 35. [Vulnerability Assessment in SSMS](#35)
-36. [Reference](#reference)
+36. [Import Flat File to SQL Wizard](#36)
+37. [Reference](#reference)
 
 
 Great thanks to:
@@ -425,7 +426,7 @@ The more interesting way to look at this shortcut is to check the various option
 To check them, use the following command:
 ```
 C:\> ssms /?
-``
+```
 
 ![SSMS command line parameters](/SSMS/SSMS_Tips/24_SSMS_command-line_parameters.png)
 
@@ -691,6 +692,19 @@ You will need version 17.4 for the Vulnerability Assessment feature. Right-click
 More info here: [SQL Vulnerability Assessment Available in SSMS] and [Vulnerability Assessment features](https://docs.microsoft.com/en-us/sql/relational-databases/security/sql-vulnerability-assessment)
 
 
+<a id="36"></a>
+## Import Flat File to SQL Wizard
+You will need version 17.3 or later.
+
+Detailed article here: [Import Flat File to SQL Wizard]
+
+Import Flat File Wizard is a simple way to copy data from a flat file (.csv, .txt) to a destination.
+
+This wizard was created to improve the current import experience leveraging an intelligent framework known as Program Synthesis using Examples ([PROSE](https://microsoft.github.io/prose/)).
+For a user without specialized domain knowledge, importing data can often be a complex, error prone, and tedious task. This wizard streamlines the import process as simple as selecting an input file and unique table name, and the PROSE framework handles the rest.
+PROSE analyzes data patterns in your input file to infer column names, types, delimiters, and more. This framework learns the structure of the file and does all of the hard work so our users don't have to.
+
+
 <a id="reference"></a>
 Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
@@ -742,3 +756,4 @@ Reference:
 [EXTENDED EVENTS AND PROFILER: XE PROFILER]:https://www.scarydba.com/2017/11/07/extended-events-profiler-xe-profiler/
 [New in SSMS – Always On Availability Group Latency Reports]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-always-on-availability-group-latency-reports/
 [SQL Vulnerability Assessment Available in SSMS]:https://thomaslarock.com/2017/12/sql-vulnerability-assessment-available-in-ssms/
+[Import Flat File to SQL Wizard]:https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard
