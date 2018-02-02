@@ -199,6 +199,7 @@ Headers:
    - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
    - [SQL Down Under Podcast](https://www.sqldownunder.com) (by Greg Low)
+   - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
  - Courses
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
@@ -288,6 +289,7 @@ Headers:
     - [Automatically fix high VLF counts in SQL Server 2012+](https://github.com/tboggiano/autofix-vlfs) (by Tracy Boggiano)
     - [splittinglargefiles - Process for splitting large files in a filegroup that has grown out of control.](https://github.com/tboggiano/splittinglargefiles) (by Tracy Boggiano)
     - [olamaintconfigtables - This are tables and jobs that can use to run Ola's scripts as T-SQL Jobs and run on Linux](https://github.com/tboggiano/olamaintconfigtables) (by Tracy Boggiano)
+    - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA  ](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -310,7 +312,6 @@ Headers:
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
     - [Dell Databases Wiki](http://en.community.dell.com/techcenter/storage/w/wiki/5018.sc-series-technical-documents) (by Doug Bernhardt)
-    - [SDUTools - Free Tools for DBAs and Developers on pure TSQL](http://sqldownunder.azurewebsites.net/Resources/SDUTools) (by SQL Down Under)
     - [SqlServerSearcher - open source C# tool for searching SQL Server objects](https://github.com/CoderAllan/SqlServerSearcher) (by Allan Simonsen)
     - [DbUp is a .NET library that helps you to deploy changes to SQL Server databases](https://github.com/DbUp/DbUp)
     - [SQL Server monitor - manages sql server performance](https://github.com/unruledboy/SQLMonitor) (by Wilson Chen)
@@ -321,6 +322,7 @@ Headers:
     - [OrcaMDF - C# parser for MDF files](https://github.com/improvedk/OrcaMDF) (by Mark S. Rasmussen)
     - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server)
     - [Telegraf SQL Server Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) (by influxdata)
+    - [SDU Tools - pure TSQL functions Toolkit](https://sqldownunder.com/sdu-tools/) (by SQLDownUnder)
 
 [*Back to top*](#header02)
 
@@ -413,12 +415,11 @@ BIML Bloggers
 
 ## SQL Server Test Data Generation
  - https://www.simple-talk.com/sql/t-sql-programming/generating-test-data-in-tsql/
- - http://www.yandataellan.com/
  - https://github.com/benkeen/generatedata
  - https://sourceforge.net/projects/dbmonster/
  - https://sourceforge.net/projects/spawner/
  - http://databene.org/databene-benerator
- - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
+ - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
 
 [*Back to top*](#header07)
 
