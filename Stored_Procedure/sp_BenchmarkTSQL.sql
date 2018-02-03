@@ -1,4 +1,4 @@
-IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
+﻿IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
@@ -13,7 +13,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     , @clearCache          BIT           = 0
     , @calcMedian          BIT           = 0
     , @printStepInfo       BIT           = 1
-    , @durationAccuracy    VARCHAR(5)    = 'ns'
+    , @durationAccuracy    VARCHAR(5)    = 'ss'
     , @dateTimeFunction    VARCHAR(16)   = 'SYSDATETIME'
 )
 /*
@@ -89,7 +89,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @calcMedian          = 1
        , @clearCache          = 1
        , @printStepInfo       = 1
-       , @durationAccuracy    = 'mcs'
+       , @durationAccuracy    = 'ss'
        , @dateTimeFunction    = 'SYSUTCDATETIME';
 
 .LICENSE MIT
@@ -101,15 +101,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
     Version: 4.2
-    Last Modified: 2018-01-30 22:30 UTC+3 by Konstantin Taranov
+    Last Modified: 2018-02-03 21:25 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
+    Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
 AS
 BEGIN TRY
 
     SET NOCOUNT ON;
 
-    DECLARE @originalLogin SYSNAME = ORIGINAL_LOGIN(); -- https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
+    DECLARE @originalLogin SYSNAME = QUOTENAME(ORIGINAL_LOGIN()); -- https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
     DECLARE @startTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                            WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                       END;
@@ -146,10 +147,11 @@ BEGIN TRY
                               'SYSDATETIME'
                             , 'SYSUTCDATETIME'
     )
-    THROW 55005, '@dateTimeFunction accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. For details see https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
+    THROW 55005, '@dateTimeFunction accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
-    IF @numberOfExecution < 1
-        THROW 55007, '@numberOfExecution accept values greater then 0', 1;
+    IF @numberOfExecution <= 0 OR @numberOfExecution >= 32000
+        THROW 55006, '@numberOfExecution must be > 0 and < 32000', 1;
+
     IF @skipTSQLCheck = 0
     BEGIN
         IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> '' AND EXISTS (
@@ -207,8 +209,8 @@ BEGIN TRY
         END;
     END;
 
-    DECLARE @crlf           NVARCHAR(10)  = CHAR(10);
-    DECLARE @stepNumnber    INT           = 0;
+    DECLARE @crlf           NVARCHAR(10) = CHAR(10);
+    DECLARE @stepNumnber    INT          = 0;
     DECLARE @min            BIGINT;
     DECLARE @avg            BIGINT;
     DECLARE @max            BIGINT;
@@ -224,7 +226,6 @@ BEGIN TRY
       , RunTimeStamp        DATETIME2(7)  NOT NULL
       , FinishTimeStamp     DATETIME2(7)  NOT NULL
       , Duration            BIGINT        NOT NULL
-      , TsqlStatement       NVARCHAR(MAX) NOT NULL
       , ClearCache          BIT           NOT NULL
       , PrintStepInfo       BIT           NOT NULL
       , DurationAccuracy    VARCHAR(10)   NOT NULL
@@ -247,23 +248,24 @@ BEGIN TRY
         IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> ''
             EXECUTE sp_executesql @tsqlStatementBefore;
 
-        SET @runTimeStamp = CASE WHEN @dateTimeFunction = 'SYSDATETIME' THEN SYSDATETIME()
-                        WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                   END;
+        SET @runTimeStamp = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                 WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                            END;
 
         EXECUTE sp_executesql @tsqlStatement;
 
-        SET @finishTime = CASE WHEN @dateTimeFunction = 'SYSDATETIME' THEN SYSDATETIME()
+        SET @finishTime = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                           END;
-        SET @duration = CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'mcs' THEN CAST(DATEDIFF(mcs, @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'ms'  THEN CAST(DATEDIFF(ms,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'ss'  THEN CAST(DATEDIFF(ss,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'mi'  THEN CAST(DATEDIFF(mi,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'hh'  THEN CAST(DATEDIFF(hh,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'wk'  THEN CAST(DATEDIFF(wk,  @runTimeStamp, @finishTime) AS BIGINT)
-                             WHEN @durationAccuracy = 'dd'  THEN CAST(DATEDIFF(dd,  @runTimeStamp, @finishTime) AS BIGINT)
+
+        SET @duration = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @runTimeStamp, @finishTime)
                              ELSE 0
                         END;
 
@@ -273,7 +275,6 @@ BEGIN TRY
             , RunTimeStamp
             , FinishTimeStamp
             , Duration
-            , TsqlStatement
             , ClearCache
             , PrintStepInfo
             , DurationAccuracy
@@ -284,7 +285,6 @@ BEGIN TRY
             , @runTimeStamp
             , @finishTime
             , @duration
-            , @tsqlStatement
             , @clearCache
             , @printStepInfo
             , @durationAccuracy
@@ -292,12 +292,13 @@ BEGIN TRY
 
        IF @printStepInfo = 1
            PRINT (
-                  'Run ' + CASE WHEN @stepNumnber < 10  THEN '  ' + CAST(@stepNumnber AS VARCHAR(30))
-                                WHEN @stepNumnber < 100 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
+                  'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
+                                WHEN @stepNumnber < 100  THEN '  '  + CAST(@stepNumnber AS VARCHAR(30))
+                                WHEN @stepNumnber < 1000 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
                                 ELSE CAST(@stepNumnber AS VARCHAR(30))
                            END +
                   ', start: '    + CONVERT(VARCHAR(27), @runTimeStamp, 121) +
-                  ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME' THEN SYSDATETIME()
+                  ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                                              WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                                         END, 121) +
                   ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.'
@@ -311,72 +312,11 @@ BEGIN TRY
     SELECT @min = MIN(Duration)
          , @avg = AVG(Duration)
          , @max = MAX(Duration)
-    FROM @BenchmarkTSQL;
-
-    IF @calcMedian = 1
-    BEGIN
-        SELECT @median =
-        (
-             (SELECT MAX(TMIN) FROM
-                  (SELECT TOP(50) PERCENT
-                          CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'mcs' THEN CAST(DATEDIFF(mcs, RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'ms'  THEN CAST(DATEDIFF(ms,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'ss'  THEN CAST(DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'mi'  THEN CAST(DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'hh'  THEN CAST(DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'wk'  THEN CAST(DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               WHEN @durationAccuracy = 'dd'  THEN CAST(DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                               ELSE 0
-                          END AS TMIN
-                   FROM @BenchmarkTSQL
-                   ORDER BY TMIN
-                  ) AS BottomHalf
-             )
-             +
-             (SELECT MIN(TMAX) FROM
-                 (SELECT TOP 50 PERCENT
-                         CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'mcs' THEN CAST(DATEDIFF(mcs, RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'ms'  THEN CAST(DATEDIFF(ms,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'ss'  THEN CAST(DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'mi'  THEN CAST(DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'hh'  THEN CAST(DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'wk'  THEN CAST(DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              WHEN @durationAccuracy = 'dd'  THEN CAST(DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp) AS BIGINT)
-                              ELSE 0
-                         END AS TMAX
-                  FROM @BenchmarkTSQL
-                  ORDER BY TMAX DESC
-                 ) AS TopHalf
-             )
-         ) / 2.0;
-    END;
+      FROM @BenchmarkTSQL;
 
     DECLARE @FinishBenchmarkTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                                     WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME() ELSE SYSDATETIME() END;
-    DECLARE @BenchmarkDuration BIGINT = CASE WHEN @durationAccuracy = 'ns'  THEN CAST(DATEDIFF(ns,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'mcs' THEN CAST(DATEDIFF(mcs, @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'ms'  THEN CAST(DATEDIFF(ms,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'ss'  THEN CAST(DATEDIFF(ss,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'mi'  THEN CAST(DATEDIFF(mi,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'hh'  THEN CAST(DATEDIFF(hh,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'wk'  THEN CAST(DATEDIFF(wk,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             WHEN @durationAccuracy = 'dd'  THEN CAST(DATEDIFF(dd,  @startTime, @FinishBenchmarkTime) AS BIGINT)
-                                             ELSE 0
-                                         END;
-    PRINT (
-          'Min: '       + CAST(@min AS VARCHAR(30)) + @durationAccuracy +
-          ', Max: '     + CAST(@max AS VARCHAR(30)) + @durationAccuracy +
-          ', Average: ' + CAST(@avg AS VARCHAR(30)) + @durationAccuracy +
-          CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS VARCHAR(30)) + @durationAccuracy ELSE '' END +
-          @crlf +
-          'Benchmark finished at ' + CONVERT(VARCHAR(23), CASE WHEN @dateTimeFunction = 'SYSDATETIME' THEN SYSDATETIME()
-                                                               WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                                          END, 121) + 
-          ' by ' + @originalLogin +
-          ', duration of benchmark: ' +  CAST(@BenchmarkDuration AS VARCHAR(30)) + @durationAccuracy + '.'
-          );
+                                                     WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME() ELSE SYSDATETIME()
+                                                END;
 
     IF @saveResults = 1
     BEGIN
@@ -426,7 +366,7 @@ BEGIN TRY
                  , FinishTimeStamp
                  , Duration
                  , @tsqlStatementBefore
-                 , TsqlStatement
+                 , @tsqlStatement
                  , @tsqlStatementAfter
                  , ClearCache
                  , PrintStepInfo
@@ -444,7 +384,7 @@ BEGIN TRY
                  , FinishTimeStamp
                  , Duration
                  , @tsqlStatementBefore
-                 , TsqlStatement
+                 , @tsqlStatement
                  , @tsqlStatementAfter
                  , ClearCache
                  , PrintStepInfo
@@ -452,6 +392,71 @@ BEGIN TRY
                  , @originalLogin AS OriginalLogin
              FROM @BenchmarkTSQL;
     END;
+
+    IF @calcMedian = 1
+    BEGIN
+        SELECT @median =
+        (
+             (SELECT MAX(TMIN) FROM
+                  (SELECT TOP(50) PERCENT
+                          CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp)
+                               ELSE 0
+                          END AS TMIN
+                   FROM @BenchmarkTSQL
+                   ORDER BY TMIN
+                  ) AS BottomHalf
+             )
+             +
+             (SELECT MIN(TMAX) FROM
+                  (SELECT TOP 50 PERCENT
+                          CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp)
+                               ELSE 0
+                          END AS TMAX
+                   FROM @BenchmarkTSQL
+                   ORDER BY TMAX DESC
+                  ) AS TopHalf
+             )
+         ) / 2.0;
+    END;
+
+    PRINT(@crlf +
+         'Min: '       + CAST(@min AS VARCHAR(30)) + @durationAccuracy +
+         ', Max: '     + CAST(@max AS VARCHAR(30)) + @durationAccuracy +
+         ', Average: ' + CAST(@avg AS VARCHAR(30)) + @durationAccuracy +
+         CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS VARCHAR(30)) + @durationAccuracy ELSE '' END +
+         @crlf +
+         'Benchmark finished at ' + CONVERT(VARCHAR(23), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                                              WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                                         END, 121) + 
+         ' by ' + @originalLogin
+         );
+
+        DECLARE @BenchmarkDuration BIGINT = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @startTime, @FinishBenchmarkTime)
+                                                 WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @startTime, @FinishBenchmarkTime)
+                                                 ELSE 0
+                                            END;
+
+         PRINT(@crlf + 'Duration of benchmark: ' +  CAST(@BenchmarkDuration AS VARCHAR(30)) + @durationAccuracy + '.')
 
 END TRY
 
@@ -462,6 +467,10 @@ BEGIN CATCH
           ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-')        +
           ', Line: '      + CONVERT(varchar(5), ERROR_LINE())     +
           ', User name: ' + CONVERT(sysname, CURRENT_USER);
-    PRINT ERROR_MESSAGE();
+    PRINT(ERROR_MESSAGE());
+
+    IF ERROR_NUMBER() = 535
+    PRINT('Your @durationAccuracy = ' + @durationAccuracy + '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
+    'But in log table master.dbo.BenchmarkTSQL all times saving with DATETIME2(7) precise! You can manualy calculate difference after decreasing precise datepart.')
 END CATCH;
 GO
