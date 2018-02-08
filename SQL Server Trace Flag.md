@@ -709,7 +709,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-count
 #### Trace Flag: 818
 Function: Turn on ringbuffer to store info about IO write operations.
 Used to troubleshoot IO problems<br />
-Link: http://support.microsoft.com/kb/826433<br />
+Link: https://support.microsoft.com/en-us/help/826433/<br />
 Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
 Link: https://support.microsoft.com/en-us/help/828339/error-message-823-may-indicate-hardware-problems-or-system-problems-in-sql-server
 
@@ -1107,7 +1107,7 @@ Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
 #### Trace Flag: 1264
 Function: Collect process names in non-yielding scenario memory dumps<br />
 Link: [A Topical Collection of SQL Server Flags v6]<br />
-Link: http://support.microsoft.com/kb/2630458/en-us
+Link: https://support.microsoft.com/en-us/help/2630458/
 
 
 <a id="1400"></a>
@@ -1686,32 +1686,32 @@ Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-
 <a id="2540"></a>
 #### Trace Flag: 2540
 Function: Unknown, but related to controlling the contents of a memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2541"></a>
 #### Trace Flag: 2541
 Function: Unknown, but related to controlling the contents of a memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2542"></a>
 #### Trace Flag: 2542
 Function: Unknown, but related to controlling the contents of a memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
 <a id="2543"></a>
 #### Trace Flag: 2543
 Function: Unknown, but related to controlling the contents of a memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2544"></a>
 #### Trace Flag: 2544
 Function: Produces a full memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery
 
@@ -1720,13 +1720,13 @@ Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41f
 #### Trace Flag: 2545
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2546"></a>
 #### Trace Flag: 2546
 Function: Dumps all threads for SQL Server in the dump file<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/09/12/sql-server-2000-2005-2008-recoveryrollback-taking-longer-than-expected
@@ -1736,7 +1736,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2008/09/12/sql-server-2000-2005-20
 #### Trace Flag: 2547
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2548"></a>
@@ -1766,13 +1766,13 @@ Scope: global only
 #### Trace Flag: 2550
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2551"></a>
 #### Trace Flag: 2551
 Function: Produces a filtered memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server-is-terminating-because-of-fatal-exception-c0150014
 
 
@@ -1780,48 +1780,48 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server
 #### Trace Flag: 2552
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2553"></a>
 #### Trace Flag: 2553
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2554"></a>
 #### Trace Flag: 2554
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2555"></a>
 #### Trace Flag: 2555
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2556"></a>
 #### Trace Flag: 2556
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2557"></a>
 #### Trace Flag: 2557
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2558"></a>
 #### Trace Flag: 2558
 Function: Disables integration between CHECKDB and Watson<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
@@ -1829,7 +1829,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controllin
 #### Trace Flag: 2559
 Function: Unknown, but related to controlling the contents of a
 memory dump<br />
-Link: http://support.microsoft.com/kb/917825/en-us
+Link: [KB917825]
 
 
 <a id="2562"></a>
@@ -2897,8 +2897,9 @@ Scope: global or session
 
 <a id="7103"></a>
 #### Trace Flag: 7103
+**Undocumented trace flag**<br />
 Function: Disable table lock promotion for text columns<br />
-Link: https://support.microsoft.com/en-us/kb/230044
+Link: None
 
 
 <a id="7300"></a>
@@ -3276,7 +3277,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-t
 <a id="8026"></a>
 #### Trace Flag: 8026
 Function: SQL Server will clear a dump trigger after generating the dump once<br />
-Link: http://support.microsoft.com/kb/917825/en-us<br />
+Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 
 
@@ -4672,3 +4673,4 @@ Scope: ?
 [SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
 [Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
 [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]:https://sqlperformance.com/2018/01/sql-performance/hidden-performance-manageability-improvements-sql-server-2012-2014
+[KB917825]:https://support.microsoft.com/en-us/help/917825/
