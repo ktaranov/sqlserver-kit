@@ -1756,7 +1756,7 @@ This logic determines unique disk drives based on the drive letter of the physic
 Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: http://support.microsoft.com/kb/2634571<br />
+Link: http://support.microsoft.com/help/2634571<br />
 Link: https://support.microsoft.com/en-us/kb/2732669<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -1842,8 +1842,8 @@ Tempdb may grow to as much as 5% or more of the user database that is being proc
 **Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: http://support.microsoft.com/kb/2634571<br />
-Link: http://support.microsoft.com/kb/2732669/en-us<br />
+Link: http://support.microsoft.com/help/2634571<br />
+Link: http://support.microsoft.com/help/2732669<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
 
@@ -1976,7 +1976,7 @@ Link: https://support.microsoft.com/en-us/help/2987585/restore-log-with-standby-
 <a id="3101"></a>
 #### Trace Flag: 3101
 Function: Fix performance problems when restoring database with CDC<br />
-Link: http://support.microsoft.com/kb/2567366/
+Link: http://support.microsoft.com/help/2567366/
 
 
 <a id="3104"></a>
@@ -2164,7 +2164,7 @@ Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-check
 <a id="3505"></a>
 #### Trace Flag: 3505
 Function: Disables automatic checkpointing<br />
-Link: http://support.microsoft.com/kb/815436<br />
+Link: http://support.microsoft.com/help/815436<br />
 Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
 
 
@@ -2329,13 +2329,13 @@ Link: http://blogs.msdn.com/b/psssql/archive/2011/01/07/discussion-about-sql-ser
 <a id="3688"></a>
 #### Trace Flag: 3688
 Function: Removes messages to error log about traces started and stopped<br />
-Link: http://support.microsoft.com/kb/922578/en-us
+Link: https://support.microsoft.com/help/922578
 
 
 <a id="3689"></a>
 #### Trace Flag: 3689
 Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default. Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
-Link: http://support.microsoft.com/kb/922578/en-us
+Link: https://support.microsoft.com/help/922578
 
 
 <a id="3701"></a>
@@ -2371,7 +2371,7 @@ Link: None
 <a id="3923"></a>
 #### Trace Flag: 3923
 Function: Let SQL Server throw an exception to the application when the 3303 warning message is raised<br />
-Link: https://support.microsoft.com/kb/3014867/en-us
+Link: https://support.microsoft.com/help/3014867
 
 
 <a id="3924"></a>
@@ -2643,7 +2643,7 @@ Function: Bugfix for error: parallel query returning different results every tim
  The trace flag disables an optimization in the query optimizer.
 The optimization caused the issue described in the KB article when you try to insert into a table by selecting from the table itself.
 As turning on the trace flag could result in a perf degradation, you only should use it if you run into the issue described in the KB article.<br />
-Link: http://support.microsoft.com/kb/2546901<br />
+Link: https://support.microsoft.com/help/2546901<br />
 Link: http://sql-sasquatch.blogspot.se/2014/04/whaddayaknow-bout-sqlserver-trace-flag.html<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/9ea718c2-e0e0-40cf-b12b-3269130448b7/trace-flag-4135-sql-server-2008?forum=sqldatabaseengine
 
@@ -2651,7 +2651,7 @@ Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/9ea718c2-e0e0-40c
 <a id="4135"></a>
 #### Trace Flag: 4135
 Function: Bugfix for error inserting to temp table<br />
-Link: http://support.microsoft.com/kb/960770<br />
+Link: https://support.microsoft.com/help/960770<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/541352/tempdb-errors-during-statistics-auto-update
 
 
@@ -2673,7 +2673,7 @@ Scope: global or session or query
 Function: Causes SQL Server to generate a plan using minimum selectivity when estimating AND predicates for filters to account for correlation, under the query optimizer cardinality estimation model of SQL Server 2012 and earlier versions<br />
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: http://support.microsoft.com/kb/2658214<br />
+Link: https://support.microsoft.com/help/2658214<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session or query
@@ -2684,7 +2684,7 @@ Scope: global or session or query
 Function: Causes SQL Server to generate a plan that does not use row goal adjustments with queries that contain TOP, OPTION (FAST N), IN, or EXISTS keywords<br />
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: http://support.microsoft.com/kb/2667211<br />
+Link: https://support.microsoft.com/help/2667211<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://answers.sqlperformance.com/questions/1609/trying-to-figure-out-how-to-resolve-the-data-skew.html<br />
@@ -2905,7 +2905,7 @@ Link: None
 <a id="7300"></a>
 #### Trace Flag: 7300
 Function: Outputs extra info about linked server errors<br />
-Link: http://support.microsoft.com/kb/314530<br />
+Link: https://support.microsoft.com/help/314530<br />
 Link: https://support.microsoft.com/en-us/help/280106/how-to-set-up-and-troubleshoot-a-linked-server-to-an-oracle-database-in-sql-server<br />
 Link: https://support.microsoft.com/en-us/help/280102/how-to-set-up-a-linked-server-to-a-sybase-database-server-and-troubleshoot-problems-that-may-occur<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604
@@ -3157,7 +3157,7 @@ Link: https://technet.microsoft.com/en-us/library/cc917726.aspx
 <a id="8010"></a>
 #### Trace Flag: 8010
 Function: Disables the “idle state” behavior that a SQL instance can enter (see TF 8009). Fixes problem that SQL Server services can not be stopped<br />
-Link: http://support.microsoft.com/kb/2633271/en-us
+Link: https://support.microsoft.com/help/2633271
 Link: https://technet.microsoft.com/en-us/library/cc917726.aspx
 
 
@@ -3284,7 +3284,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controllin
 <a id="8030"></a>
 #### Trace Flag: 8030
 Function: Fix for performance bug<br />
-Link: http://support.microsoft.com/kb/917035<br />
+Link: https://support.microsoft.com/help/917035<br />
 
 
 <a id="8032"></a>
@@ -4608,7 +4608,7 @@ Scope: ?
 <a id="11023"></a>
 #### Trace Flag: 11023
 Function: Disables the use of the last persisted sample rate, for all subsequent statistics update where a sample rate is not specified explicitly as part of the [UPDATE STATISTICS](https://docs.microsoft.com/en-us/sql/t-sql/statements/update-statistics-transact-sql) statement.<br />
-Link: http://support.microsoft.com/kb/4039284<br />
+Link: https://support.microsoft.com/help/4039284<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
 
