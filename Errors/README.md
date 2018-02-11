@@ -61,9 +61,9 @@ Error code equal `message_id` from `sys.messages`
 |        596 | Cannot continue execution because the session is in the kill state.                                                                                     | [596_link1]                                                  |
 |        657 | Could not disable support for increased partitions in database ...                                                                                      | [SQL SERVER – Disabling 15000 Partitions (15k)]              |
 |        703 | There is insufficient system memory in resource pool 'default' to run this query.                                                                       | [703_link1]                                                  |
-|        824 | SQL Server detected a logical consistency-based I/O error                                                                                               | [Resolve Microsoft SQL Server Error Code 824], [KB2152734]   |
+|        824 | SQL Server detected a logical consistency-based I/O error                                                                                               | [824_link1],[KB2152734]                                      |
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at offset %#016I64x in file '%ls'.                         | [825_link1]                                                  |
-|        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                                                                   | [FIX: Error: 913, Severity: 16 – Could Not Find Database ID] |
+|        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                                                                   | [913_link1]                                                  |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 bytes of internal overhead...                            | [1701_link1]                                                 |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                                                                         | [CREATE DATABASE – I’ve not seen that before.]               |
 |       1904 | The statistics on table has 65 columns in the key list                                                                                                  | [SQL SERVER - Fix: Error: Msg 1904]                          |
@@ -90,13 +90,15 @@ Error code equal `message_id` from `sys.messages`
 |       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), page ID %S_PGID contains an incorrect page ID in its ...  | [8909_link1]                                                 |
 |       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or a system table is inconsistent. Check previous errors. | [8921_link1]                                                 |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                                                                            | [9002_link1]                                                 |
+|      13570 | The use of replication is not supported with system-versioned temporal table '%s'                                                                       | [13570_link1]                                                |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                                                                             | [15002_link1]                                                |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...                                                        | [Unable to drop a user in a database]                        |
 |      17182 | Tcp port is already in use                                                                                                                              | [TCP Port Is Already In Use]                                 |
 |      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.                                                         | [17190_link1]                                                |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s). The statement is proceeding but cannot be restarted. | [18272_link1]                                                |
-|      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                                                      | [Login from an Untrusted Domain]                             |
-|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [Why won’t my SQL Logins work?]                              |
+|      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authentication                                                      | [18452_link1]                                                |
+|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                                                                | [18456_link1]                                                |
+|      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                                                                                   | [25713_link1],[25713_link2]                                  |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                                                                   | [35250_link1]                                                |
 
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
@@ -109,9 +111,9 @@ Error code equal `message_id` from `sys.messages`
 [Nuance of datetime data type in SQL Server]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
 [703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
-[Resolve Microsoft SQL Server Error Code 824]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
+[824_link1]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
-[FIX: Error: 913, Severity: 16 – Could Not Find Database ID]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
+[913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [KB2152734]:https://support.microsoft.com/en-us/kb/2152734
 [1701_link1]:http://www.sqlservercentral.com/questions/163450/
 [CREATE DATABASE – I’ve not seen that before.]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
@@ -137,12 +139,15 @@ Error code equal `message_id` from `sys.messages`
 [8909_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-object-id-0-index-id-1-partition-id-0/
 [8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
 [9002_link1]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
+[13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [Internal Query Processor Error with ColumnStore Indexes]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [Unable to drop a user in a database]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
-[Login from an Untrusted Domain]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
-[Why won’t my SQL Logins work?]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
+[18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
+[18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
+[25713_link1]:https://sqlquantumleap.com/2018/01/22/server-audit-mystery-filtering-class_type-gets-error-msg-25713/
+[25713_link2]:https://sqlquantumleap.com/2018/01/30/server-audit-mystery-filtering-action_id-gets-error-msg-25713/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/
