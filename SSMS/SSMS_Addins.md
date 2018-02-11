@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **34** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **35** SSMS add-ins
          
 | Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
@@ -37,6 +37,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                          | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                          | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL           | Yes          |  $149 |
+| [GIN-List](#gin-list)                             | [GIN-List]                  | 2017-06-30   | 2008/2012/2014                | GIN-List           | Yes          |  No |
 
 
 <a id="ssmsboost"></a>
@@ -584,6 +585,17 @@ Price: $149
 
 Lightweight add-in to connect your databases to your source control system
 
+<a id="gin-list"></a>
+## GIN-List
+Download page: [GIN-List]<br/>
+Release date: 2017-06-30<br/>
+Support Version: 2008/2012/2014<br/>
+Developer: Omer Fancy<br/>
+Free version: Yes<br/>
+Price: No
+
+Extremely small and lightweight productivity enhancement add-in. This add-in was created to facilitate writing SQL queries where one has to specify a list of IDs in an IN list. The list of values on which you filter on might be coming from a SQL grid, or an Excel file; in either case it marks each of the values as strings, adds comma separators and the necessary parentheses. 
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
@@ -620,6 +632,7 @@ Lightweight add-in to connect your databases to your source control system
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
+[GIN-List]:http://www.omerfancy.com/ginlist/
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
