@@ -1,8 +1,6 @@
 # SQL Server Extended Events
 SQL Server Extended Events has a highly scalable and highly configurable architecture that allows users to collect as much or as little information as is necessary to troubleshoot or identify a performance problem.
 
-
-
 Useful links:
  - [Extended Events Microsoft Docs](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
  - [Find Your Dark Queries](http://michaeljswart.com/2017/04/finding-your-dark-queries/)
