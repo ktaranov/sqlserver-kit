@@ -15,6 +15,7 @@ Articles types:
  - **[J]** Jobs Articles
  - **[P]** Performance Articles
  - **[PS]** Powershell Articles
+ - **[QS]** Query Store Articles
  - **[R]** R Language
  - **[SSIS]** [SQL Server Integration Services](https://docs.microsoft.com/en-us/sql/integration-services/sql-server-integration-services)
  - **[V]** Visualization Articles
@@ -154,7 +155,7 @@ Articles types:
 | [Admin: Bulkadmin vs ADMINISTER BULK OPERATIONS]                                                                        | Richard A Brown                          | 2012-01-31 |             |
 | [Can Indexes My Query Doesn’t Use Help My Query?]                                                                       | Erik Darling                             | 2016-11-09 | [BIDX]      |
 | [SQL Server Audit Walkthrough]                                                                                          | Sadequl Hussain                          | 2016-01-01 |             |
-| [The SQL Server 2016 Query Store: Overview and Architecture]                                                            | Enrico van de Laar                       | 2015-11-16 |             |
+| [The SQL Server 2016 Query Store: Overview and Architecture]                                                            | Enrico van de Laar                       | 2015-11-16 | [QS]        |
 | [Reading, Writing, and Creating SQL Server Extended Properties]                                                         | Phil Factor                              | 2015-10-21 | [XE]        |
 | [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                                        | William Brewer                           | 2016-11-04 |             |
 | [The Ten Commandments of SQL Server Monitoring]                                                                         | Adam Machanic                            | 2013-04-09 |             |
@@ -242,7 +243,7 @@ Articles types:
 | [SQL VNext sp_configure on Windows and Linux with dbatools]                                                             | Rob Sewell                               | 2017-03-02 | [PS]        |
 | [Adding a T-SQL Job Step to a SQL Agent Job with PowerShell]                                                            | Rob Sewell                               | 2017-02-20 | [PS],[J]    |
 | [Setting up Database Mail to use my Gmail account]                                                                      | Mat Hayward                              | 2017-03-01 | [DM]        |
-| [Using DBCC CLONEDATABASE and Query Store for Testing]                                                                  | Erin Stellato                            | 2017-02-22 | [DBCC]      |
+| [Using DBCC CLONEDATABASE and Query Store for Testing]                                                                  | Erin Stellato                            | 2017-02-22 | [DBCC],[QS] |
 | [Getting Started with Natural Earth — A SQL Server Shapefile Alternative (Geospatial Resource)]                         | Jeff Pries                               | 2017-02-17 | [V]         |
 | [SQL Server Temporal Tables: How-To Recipes]                                                                            | Alex Grinberg                            | 2017-02-10 | [DEV]       |
 | [The Migration Checklist]                                                                                               | Steve Jones                              | 2017-03-08 | [MG]        |
@@ -363,7 +364,7 @@ Articles types:
 | [ColumnStore Indexes And Recursive CTEs]                                                                                | Erik Darling                             | 2017-07-27 | [DEV]       |
 | [CCIs and String Aggregation]                                                                                           | Joe Obbish                               | 2017-07-03 | [DEV]       |
 | [Brad’s Sure DBA Checklist]                                                                                             | Brad McGehee                             | 2010-01-20 | [DBA]       |
-| [Query Store and Parameterization Problems]                                                                             | Dennes Torres                            | 2017-07-06 | [DEV]       |
+| [Query Store and Parameterization Problems]                                                                             | Dennes Torres                            | 2017-07-06 | [QS]        |
 | [SQL Server Event Handling: Event Notifications]                                                                        | Dave Mason                               | 2016-11-30 | [DBA],[XE]  |
 | [Identifying Deprecated Feature Usage (Part 1)]                                                                         | Dave Mason                               | 2017-07-20 | [DBA],[XE]  |
 | [Let’s Corrupt a Database Together, Part 3: Detecting Corruption]                                                       | Brent Ozar                               | 2017-07-25 | [DBA],[COR] |
@@ -462,7 +463,7 @@ Articles types:
 | [Understanding SQL server memory grant]                                                                                 | Jay Choe                                 | 2010-02-16 | [DBA],[DEV] |
 | [Cleanly Uninstalling Stubborn SQL Server Components]                                                                   | Aaron Bertrand                           | 2015-10-06 | [DBA]       |
 | [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]                                                   | @sqL_handLe                              | 2017-17-30 | [DEV]       |
-| [Query Store Settings]                                                                                                  | Erin Stellato                            | 2010-11-28 | [DBA],[DEV] |
+| [Query Store Settings]                                                                                                  | Erin Stellato                            | 2010-11-28 | [QS]        |
 | [Using Plan Explorer with Entity Framework]                                                                             | Jason Hall                               | 2010-11-28 | [DEV]       |
 | [Overview of Encryption Tools in SQL Server]                                                                            | Matthew McGiffen                         | 2017-12-05 | [DBA],[DEV] |
 | [Clustered Index Uniquifier Existence and Size]                                                                         | Solomon Rutzky                           | 2017-09-18 | [DBA],[DEV] |
@@ -491,6 +492,14 @@ Articles types:
 | [Administrative Logins and Users]                                                                                       | Kenneth Fisher                           | 2015-11-02 | [DEV]       |
 | [Parallelism in Hekaton (In-Memory OLTP)]                                                                               | Niko Neugebauer                          | 2018-01-20 | [DEV]       |
 | [Troubleshooting THREADPOOL Waits]                                                                                      | Klaus Aschenbrenner ·                    | 2015-10-20 | [DEV]       |
+| [Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]                                     | Andy Leonard        ·                    | 2018-01-28 | [AZ],[SSIS] |
+| [PRINT vs. RAISERROR]                                                                                                   | sqlity.net          ·                    | 2012-05-27 | [DEV]       |
+| [Does a Clustered Index Give a Default Ordering?]                                                                       | Kendra Little       ·                    | 2018-02-02 | [DEV]       |
+| [Without ORDER BY, You Can’t Depend On the Order of Results]                                                            | Michael J Swart       ·                  | 2013-09-13 | [DEV]       |
+| [Query Store and “in memory”]                                                                                           | Erin Stellato       ·                    | 2018-01-31 | [QS]        |
+| [Setting and Identifying Row Goals in Execution Plans]                                                                  | Paul White       ·                       | 2018-02-12 | [DEV]       |
+| [Azure and Windows PowerShell: The Basics]                                                                              | Nicolas Prigent  ·                       | 2017-12-29 | [AZ]        |
+| [Auditing Linked Servers]                                                                                               | Thomas LaRock                            | 2018-02-08 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -961,3 +970,11 @@ Articles types:
 [Administrative Logins and Users]:https://sqlstudies.com/2015/11/02/administrative-logins-and-users/
 [Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
 [Troubleshooting THREADPOOL Waits]:https://www.sqlpassion.at/archive/2011/10/25/troubleshooting-threadpool-waits/
+[Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]:https://andyleonard.blog/2018/01/andys-excellent-ssis-in-the-cloud-adventure-part-1/
+[PRINT vs. RAISERROR]:http://sqlity.net/en/984/print-vs-raiserror/
+[Does a Clustered Index Give a Default Ordering?]:https://sqlworkbooks.com/2018/02/does-a-clustered-index-give-a-default-ordering/
+[Without ORDER BY, You Can’t Depend On the Order of Results]:http://michaeljswart.com/2013/09/without-order-by-you-cant-depend-on-the-order-of-results/
+[Query Store and “in memory”]:https://www.sqlskills.com/blogs/erin/query-store-and-in-memory/
+[Setting and Identifying Row Goals in Execution Plans]:https://sqlperformance.com/2018/02/sql-plan/setting-and-identifying-row-goals
+[Azure and Windows PowerShell: The Basics]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-windows-powershell-basics/
+[Auditing Linked Servers]:https://thomaslarock.com/2018/02/auditing-linked-servers/
