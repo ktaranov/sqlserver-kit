@@ -100,8 +100,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.2
-    Last Modified: 2018-02-03 21:25 UTC+3 by Konstantin Taranov
+    Version: 4.5
+    Last Modified: 2018-02-15 19:16 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -291,8 +291,8 @@ BEGIN TRY
             );
 
        IF @printStepInfo = 1
-           PRINT (
-                  'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
+       -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+           DECLARE @RaiseError VARCHAR(2000) = 'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
                                 WHEN @stepNumnber < 100  THEN '  '  + CAST(@stepNumnber AS VARCHAR(30))
                                 WHEN @stepNumnber < 1000 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
                                 ELSE CAST(@stepNumnber AS VARCHAR(30))
@@ -301,8 +301,8 @@ BEGIN TRY
                   ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                                              WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                                         END, 121) +
-                  ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.'
-                  );
+                  ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.';
+           RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
         IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> ''
             EXECUTE sp_executesql @tsqlStatementAfter;
