@@ -75,7 +75,8 @@ SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.4 Release] **Latest**        | 14.0.17213.0  | 2017-12-07   |      802 |
+| [17.5 Release] **Latest**        | 14.0.17224.0  | 2018-02-15   |      802 |
+| [17.4 Release]                   | 14.0.17213.0  | 2017-12-07   |      802 |
 | [17.3 Release]                   | 14.0.17199.0  | 2017-10-09   |      801 |
 | [17.2 Release]                   | 14.0.17177.0  | 2017-08-07   |      819 |
 | [17.1 Release]                   | 14.0.17119.0  | 2017-05-24   |      784 |
@@ -97,6 +98,7 @@ SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.5 Release]:https://go.microsoft.com/fwlink/?linkid=867670
 [17.4 Release]:https://go.microsoft.com/fwlink/?linkid=864329
 [17.3 Release]:https://go.microsoft.com/fwlink/?linkid=858904
 [17.2 Release]:https://go.microsoft.com/fwlink/?linkid=854085
