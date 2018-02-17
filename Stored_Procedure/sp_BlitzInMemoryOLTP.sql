@@ -356,9 +356,9 @@ BEGIN TRY
                     ,''' AS databaseName'
                     ,', b.name AS tableName 
                     , p.rows AS [rowCount]
-                    ,durability_desc
-                    , temporal_type_desc
-                    ,FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
+                    ,durability_desc '
+                    ,CASE WHEN @Version >= 13 THEN ', temporal_type_desc ' ELSE ',NULL AS temporal_type_desc' END
+                    ,', FORMAT(memory_allocated_for_table_kb, ''###,###,###'') AS memoryAllocatedForTableKB
                     ,FORMAT(memory_used_by_table_kb, ''###,###,###'') AS memoryUsedByTableKB
                     ,FORMAT(memory_allocated_for_indexes_kb, ''###,###,###'') AS memoryAllocatedForIndexesKB
                     ,FORMAT(memory_used_by_indexes_kb, ''###,###,###'') AS memoryUsedByIndexesKB
