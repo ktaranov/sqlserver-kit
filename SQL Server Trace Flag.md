@@ -145,6 +145,7 @@ GO
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
+ - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server))
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
@@ -168,6 +169,9 @@ As a DBA, this is a good thing because when I look in my ERRORLOG, I really only
 **Trace flag 3449** (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
 will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
 backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
+
+**Trace flag 6534** уnables performance improvement of query operations with spatial data types in SQL Server 2012, SQL Server 2014 and SQL Server 2016.
+The performance gain will vary, depending on the configuration, the types of queries, and the objects.
 
 **Trace flag 7412** Enables the lightweight query execution statistics profiling infrastructure.
 Unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
@@ -1142,7 +1146,7 @@ Link: https://support.microsoft.com/en-gb/kb/936179
 #### Trace Flag: 1462
 Function: Disables log stream compression for asynchronous availability groups.
 This feature is enabled by default on asynchronous availability groups in order to optimize network bandwidth.<br />
-Link: [MSDN mt736907]<br />
+Link: [Tune compression for availability group]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/sql-server-2008-performance-boost-for-database-mirroring<br />
 Link: http://sqlblog.com/blogs/joe_chang/archive/2014/03/13/hekaton-and-benchmarks.aspx<br />
@@ -2665,6 +2669,7 @@ Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add t
 Link: http://blogs.msdn.com/b/axinthefield/archive/2010/11/04/sql-server-trace-flags-for-dynamics-ax.aspx<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://kejser.org/trace-flag-4136-2/<br />
 Scope: global or session or query
 
 
@@ -4432,7 +4437,7 @@ Compression can significantly reduce the transfer time during automatic seeding 
 Link: [Docs Trace Flags]<br />
 Link: https://www.mssqltips.com/sqlservertip/4537/sql-server-2016-availability-group-automatic-seeding/<br />
 Link: https://msdn.microsoft.com/en-us/library/mt735149.aspx<br />
-Link: [MSDN mt736907]<br />
+Link: [Tune compression for availability group]<br />
 Scope: global or session
 
 
@@ -4450,7 +4455,7 @@ Scope: global or session
 Function: Enables log stream compression for synchronous availability groups.
 This feature is disabled by default on synchronous availability groups because compression adds latency.<br />
 Link: [Docs Trace Flags]<br />
-Link: [MSDN mt736907]<br />
+Link: [Tune compression for availability group]<br />
 Scope: global or session
 
 
@@ -4650,7 +4655,7 @@ Scope: ?
 [Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
 [KB920093]:https://support.microsoft.com/en-us/kb/920093
 [KB972767]:https://support.microsoft.com/en-us/kb/972767
-[MSDN mt736907]:https://msdn.microsoft.com/en-us/library/mt736907.aspx
+[Tune compression for availability group]:https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
 [More Undocumented Query Optimizer Trace Flags]:http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 [KB3107399]:https://support.microsoft.com/en-us/kb/3107399
 [KB2801413]:https://support.microsoft.com/en-us/kb/2801413
