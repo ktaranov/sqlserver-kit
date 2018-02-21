@@ -125,7 +125,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install 2017 RTM] then [CU3 KB4052987]                              | 14.0.1000.169<br>14.0.3015.40                | 2017-10-02<br/>2018-01-03                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU4 KB4056498]                              | 14.0.1000.169<br>14.0.3022.28                | 2017-10-02<br/>2018-02-20                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP1] Or [Developer Free] then <br/>[SP1 CU7 KB4057119] | 13.0.4001.0<br>13.0.4466.4                   | 2016-11-16<br/>2018-01-03                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU10 KB4052725] | 12.0.5000.0<br/>12.0.5571.0                  | 2016-07-11<br/>2018-01-16                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]        | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -135,7 +135,7 @@ Profits:
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[CU3 KB4052987]:https://support.microsoft.com/en-us/help/4052987/cumulative-update-3-for-sql-server-2017
+[CU4 KB4056498]:https://support.microsoft.com/en-us/help/4056498/
 [Install 2016 SP1]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SP1 CU7 KB4057119]:https://support.microsoft.com/en-us/help/4057119/cumulative-update-7-for-sql-server-2016-sp1
 [Install 2014 SP2]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp2
@@ -172,7 +172,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 KB4052987]           | SQLServer2017-KB4052987-x64.exe                                   | 2018-01-03   | 14.0.3015.40  |      459 | a533b82e49cb9a5eea52cd2339db18aa4017587b |
+| [SQL Server 2017 KB4056498]           | SQLServer2017-KB4056498-x64.exe                                   | 2018-02-20   | 14.0.3022.28  |      472 | d1f84e3cfbda5006301c8e569a66a982777a8a75 |
 | [SQL Server 2016]                     | SQLServer2016-x64-ENU.iso                                         | 2016-06-01   | 13.0.1601.5   |     2050 | ce21bf1c08ec1ac48ebb4988a8602c7813034ea3 |
 | [SQL Server 2016 SP1]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2016-11-16   | 13.0.4001.0   |      552 | 8c6cf18878931d8efd44b952e79420002b8a4885 |
 | [SQL Server 2016 SP1 KB4057119]       | SQLServer2016-KB4057119-x64.exe                                   | 2018-01-03   | 13.0.4466.4   |      759 | c6f298b1e0d79c208f59590354823ebefffdae60 |
@@ -191,7 +191,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 KB4052987]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4052987-x64.exe
+[SQL Server 2017 KB4056498]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4056498-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP1]:https://download.microsoft.com/download/3/0/D/30D3ECDD-AC0B-45B5-B8B9-C90E228BD3E5/ENU/SQLServer2016SP1-KB3182545-x64-ENU.exe
 [SQL Server 2016 SP1 KB4057119]:https://download.microsoft.com/download/D/3/3/D33543E3-770F-4053-AE0F-A883696668FF/SQLServer2016-KB4057119-x64.exe
@@ -431,8 +431,8 @@ For details about how to assess the performance differences of your most importa
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU3-GDR) (KB4052987) - 14.0.3015.40 (X64)
-  Dec 22 2017 16:13:22
+Microsoft SQL Server 2017 (RTM-CU4) (KB4056498) - 14.0.3022.28 (X64)
+  Feb  9 2018 19:39:09
   Copyright (C) 2017 Microsoft Corporation
   Developer Edition (64-bit) on …
 ```
@@ -443,6 +443,7 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3022.28  | 2017.140.3022.28  | RTM    | CU   | [4052987 Microsoft SQL Server 2017 CU4]                              | 2018-02-20   | 2018-02-10 |    81 |     55 |      472 |
 | 14.0.3015.40  | 2017.140.3015.40  | RTM    | CU   | [4052987 Microsoft SQL Server 2017 CU3]                              | 2017-01-03   | 2017-12-23 |    14 |     13 |      459 |
 | 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   | [4052574 Microsoft SQL Server 2017 CU2]                              | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
 | 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   | [4038634 Microsoft SQL Server 2017 CU1]                              | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
