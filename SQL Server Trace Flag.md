@@ -3332,7 +3332,7 @@ Link: http://blogs.msdn.com/b/psssql/archive/2012/12/20/how-it-works-cmemthread-
 Link: [Docs Trace Flags]<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2011/09/01/sql-server-2008-2008-r2-on-newer-machines-with-more-than-8-cpus-presented-per-numa-node-may-need-trace-flag-8048.aspx<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
-Related to: [8015](#8015), [9024](#9024)
+Related to: [8015](#8015), [9024](#9024)<br />
 Scope: global only
 
 
