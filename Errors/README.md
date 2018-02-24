@@ -51,15 +51,16 @@ Error code equal `message_id` from `sys.messages`
 
 | Error Code | Description                                                                                         | Article                                 |
 |-----------:|-----------------------------------------------------------------------------------------------------|-----------------------------------------|
-|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature   …  | [Out of user memory quota]              |
+|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …    | [Out of user memory quota]              |
 |          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while … | [Compressed backup errors and TF 3042]  |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c  … | [Logon Failure]                         |
-|          0 | A server error occurred on current command. The results, if any, should be discarded.             … | [Who owns your availability groups?]    |
-|        102 | Incorrect syntax near '%.*ls'.                                                                    … | [102_link1]                             |
-|        207 | Invalid column name '%.*ls'.                                                                      … | [207_link1]                             |
-|        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time   … | [535_link1]                             |
-|        596 | Cannot continue execution because the session is in the kill state.                               … | [596_link1]                             |
-|        657 | Could not disable support for increased partitions in database ...                                … | [657_link1]                             |
+|          0 | A server error occurred on current command. The results, if any, should be discarded.               | [Who owns your availability groups?]    |
+|        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                             |
+|        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                             |
+|        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time     | [535_link1]                             |
+|        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                             |
+|        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                             |
+|        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …       | [666_link1]                             |
 |        703 | There is insufficient system memory in resource pool 'default' to run this query.                 … | [703_link1]                             |
 |        824 | SQL Server detected a logical consistency-based I/O error                                         … | [824_link1],[KB2152734]                 |
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at   … | [825_link1]                             |
@@ -80,7 +81,7 @@ Error code equal `message_id` from `sys.messages`
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                            |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link1]              |
-|       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.   … | [6335_link1]                            |
+|       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                            |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [Discuss Execute(SQL) At LinkedServer]  |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [Discuss Execute(SQL) At LinkedServer]  |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.         … | [657_link1]                             |
@@ -93,13 +94,13 @@ Error code equal `message_id` from `sys.messages`
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                 … | [13570_link1]                           |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                       … | [15002_link1]                           |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions, ...  … | [15136_link1]                           |
-|      17182 | Tcp port is already in use                                                                        … | [TCP Port Is Already In Use]            |
+|      17182 | Tcp port is already in use                                                                          | [TCP Port Is Already In Use]            |
 |      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.   … | [17190_link1]                           |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                           |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
-|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                          … | [18456_link1]                           |
-|      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                             … | [25713_link1],[25713_link2]             |
-|      35250 | The connection to the primary replica is not active. The command cannot be processed.             … | [35250_link1]                           |
+|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
+|      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
+|      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
 
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
@@ -107,9 +108,10 @@ Error code equal `message_id` from `sys.messages`
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
-[657_link1]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
 [535_link1]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
+[657_link1]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
+[666_link1]:https://blogs.msdn.microsoft.com/psssql/2018/02/16/uniqueifier-considerations-and-error-666/
 [703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [824_link1]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
