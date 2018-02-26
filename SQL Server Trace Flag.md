@@ -57,6 +57,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
  - Alexey Nagorskiy ([github](https://github.com/fenixfx))
  - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
+ - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -2900,6 +2901,19 @@ Link: [Docs Trace Flags]<br />
 Scope: global or session
 
 
+<a id="6545"></a>
+#### Trace Flag: 6545
+Function: Enables "CLR strict security" behavior (introduced in SQL Server 2017) in SQL Server 2012, SQL Server 2014, and SQL Server 2016.
+When enabled, this option will require that _all_ assemblies, regardless of `PERMISSION_SET`, be signed, have an associated signature-based Login, and that the associated Login be granted the `UNSAFE ASSEMBLY` permission.<br />
+Please note:
+1. This TF can only be specified as a startup parameter!<br />
+1. This TF is only available in instances that have been updated / patched with a Service Pack (SP), Cumulative Update (CU), or GDR that was released on or after 2017-08-08.<br />
+
+Link: [SQLCLR vs. SQL Server 2012 &amp; 2014 &amp; 2016, Part 7: “CLR strict security” – The Problem Continues … in the Past (Wait, What?!?)][TF6545-b]<br />
+Link: [Update adds the "CLR strict security" feature to SQL Server 2016][TF6545-a] ( KB4018930 )<br />
+Scope: global
+
+
 <a id="7103"></a>
 #### Trace Flag: 7103
 **Undocumented trace flag**<br />
@@ -4638,44 +4652,46 @@ Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
 
-[Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
-[Docs Trace Flags]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
-[DBCC CHECKDB]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
-[DBCC CHECKTABLE]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
-[DBCC CHECKCONSTRAINTS]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
-[Niko Neugebauer Columnstore Indexes – part 86]:http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
-[Niko Neugebauer Columnstore Indexes – part 35]:http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
-[Microsoft SQL Server 2005 TPC-C Trace Flags]:http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
-[Trace Flag 1228 and 1229]:http://www.sqlservercentral.com/Forums/Topic741825-146-1.aspx
-[A Topical Collection of SQL Server Flags v6]:https://sqlcrossjoin.files.wordpress.com/2016/04/sqlcrossjoin_traceflagrepository_v6.pdf
-[How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]:https://msdn.microsoft.com/en-us/library/cc917684.aspx
-[Trace flags in sql server from trace flag 902 to trace flag 1462]:http://www.sqlserverf1.com/tag/sql-server-trace-flag-1448/
-[TECHNET List Of SQL Server Trace Flags]:http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
-[Cardinality Estimation Framework 2014 First Look]:http://www.somewheresomehow.ru/cardinality-estimation-framework-2014-first-look/
-[Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
-[KB920093]:https://support.microsoft.com/help/920093
-[KB972767]:https://support.microsoft.com/help/972767
-[Tune compression for availability group]:https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
-[More Undocumented Query Optimizer Trace Flags]:http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
-[KB3107399]:https://support.microsoft.com/help/3107399
-[KB2801413]:https://support.microsoft.com/help/2801413
-[New Features in SQL Server 2016 Service Pack 1]:https://www.mssqltips.com/sqlservertip/4574/new-features-in-sql-server-2016-service-pack-1/
-[Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
-[Yet another X-Ray for the QP]:http://www.queryprocessor.com/tf_8628/
-[How It Works: SQL Server 2012 Database Engine Task Scheduling]:https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
-[What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
-[SQL Server 2016 : Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
-[Importance of Performing DBCC CHECKDB on all SQL Server Databases]:https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
-[SQL Server Parallel Query Placement Decision Logic]:https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
-[compatibility level]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
-[Bad Idea Jeans: Finding Undocumented Trace Flags]:https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
-[SQL Server - estimates outside of the histogram - half-baked draft]:http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
-[Upgrading an expired SQL Server 2016 Evaluation Edition]:https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
-[How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
-[New Undocumented Trace Flags]:https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
-[Statistics and Cardinality Estimation]:http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
-[Splitting Strings Based on Patterns]:https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
-[SQL Server 2017: Adaptive Join Internals]:http://www.queryprocessor.com/adaptive-join-internals/
-[Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
-[Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]:https://sqlperformance.com/2018/01/sql-performance/hidden-performance-manageability-improvements-sql-server-2012-2014
-[KB917825]:https://support.microsoft.com/help/917825/
+[Query Store Trace Flags]: https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
+[Docs Trace Flags]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
+[DBCC CHECKDB]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
+[DBCC CHECKTABLE]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
+[DBCC CHECKCONSTRAINTS]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
+[Niko Neugebauer Columnstore Indexes – part 86]: http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
+[Niko Neugebauer Columnstore Indexes – part 35]: http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
+[Microsoft SQL Server 2005 TPC-C Trace Flags]: http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
+[Trace Flag 1228 and 1229]: http://www.sqlservercentral.com/Forums/Topic741825-146-1.aspx
+[A Topical Collection of SQL Server Flags v6]: https://sqlcrossjoin.files.wordpress.com/2016/04/sqlcrossjoin_traceflagrepository_v6.pdf
+[How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]: https://msdn.microsoft.com/en-us/library/cc917684.aspx
+[Trace flags in sql server from trace flag 902 to trace flag 1462]: http://www.sqlserverf1.com/tag/sql-server-trace-flag-1448/
+[TECHNET List Of SQL Server Trace Flags]: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
+[Cardinality Estimation Framework 2014 First Look]: http://www.somewheresomehow.ru/cardinality-estimation-framework-2014-first-look/
+[Query Optimizer Deep Dive - Part 4]: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
+[KB920093]: https://support.microsoft.com/help/920093
+[KB972767]: https://support.microsoft.com/help/972767
+[Tune compression for availability group]: https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
+[More Undocumented Query Optimizer Trace Flags]: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
+[KB3107399]: https://support.microsoft.com/help/3107399
+[KB2801413]: https://support.microsoft.com/help/2801413
+[New Features in SQL Server 2016 Service Pack 1]: https://www.mssqltips.com/sqlservertip/4574/new-features-in-sql-server-2016-service-pack-1/
+[Internals of the Seven SQL Server Sorts – Part 1]: https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
+[Yet another X-Ray for the QP]: http://www.queryprocessor.com/tf_8628/
+[How It Works: SQL Server 2012 Database Engine Task Scheduling]: https://blogs.msdn.microsoft.com/psssql/2013/08/13/how-it-works-sql-server-2012-database-engine-task-scheduling/
+[What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]: http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
+[SQL Server 2016 : Getting tempdb a little more right]: https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
+[Importance of Performing DBCC CHECKDB on all SQL Server Databases]: https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
+[SQL Server Parallel Query Placement Decision Logic]: https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
+[compatibility level]: https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
+[Bad Idea Jeans: Finding Undocumented Trace Flags]: https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
+[SQL Server - estimates outside of the histogram - half-baked draft]: http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
+[Upgrading an expired SQL Server 2016 Evaluation Edition]: https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
+[How to Find the Statistics Used to Compile an Execution Plan]: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
+[New Undocumented Trace Flags]: https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
+[Statistics and Cardinality Estimation]: http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
+[Splitting Strings Based on Patterns]: https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
+[SQL Server 2017: Adaptive Join Internals]: http://www.queryprocessor.com/adaptive-join-internals/
+[Parallelism in Hekaton (In-Memory OLTP)]: http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
+[Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]: https://sqlperformance.com/2018/01/sql-performance/hidden-performance-manageability-improvements-sql-server-2012-2014
+[KB917825]: https://support.microsoft.com/help/917825/
+[TF6545-a]: https://support.microsoft.com/help/4018930/
+[TF6545-b]: https://SqlQuantumLeap.com/2018/02/23/sqlclr-vs-sql-server-2012-2014-2016-part-7-clr-strict-security-the-problem-continues-in-the-past-wait-what/
