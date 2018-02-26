@@ -61,7 +61,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Buck Woody          | [Buck Blog]                  |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                  |
 | Steve Stedman       | [Steve Stedman Blog]         | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                  |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]      | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                  |
-| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 0   | -                  |
+| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 6   | [Neugebauer MVP]   |
 | Mike Fal            | [Mike Fal Blog]              | USA     | Denver           | [@Mike_Fal]        | NULL                              | 0   | -                  |
 | Robert L Davis      | [Robert Blog]                | USA     | New York         | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]        |
 | Chris Shaw          | [Chris Shaw Blog]            | USA     | Colorado         | [@SQLShaw]         | NULL                              | 8   | [Shaw MVP]         |
@@ -74,7 +74,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Raul Gonzalez       | [Raul Gonzalez Blog]         |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   | -                  |
 | Rob Sewell          | [Rob Sewell Blog]            | GBR     | Somerset         | [@sqldbawithbeard] | NULL                              | 1   | [Swell MVP]        |
 | Jonathan Kehayias   | [Jonathan Kehayias Articles] | USA     | Tampa            | [@SQLPoolBoy]      | NULL                              | 9   | [Kehayias MVP]     |
-| Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | NULL                              | 6   | [Neugebauer MVP]   |
 | Thomas Kejser       | [Thomas Kejser Blog]         | DNK     | NULL             | NULL               | thomas@kejser.org                 | 0   | -                  |
 | Patrick Keisler     | [Patrick Keisler Blog]       | USA     | New York         | [@patrickkeisler]  | NULL                              | 0   | -                  |
 | Markus Winand       | [Markus Winand Blog]         | AUT     | Vienna           | [@MarkusWinand]    | NULL                              | 0   | -                  |
@@ -82,10 +81,12 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Wayne Sheffield     | [Wayne Sheffield Blog]       | USA     | Richmond         | [@DBAWayne]        | NULL                              | 1   | [Sheffield MVP]    |
 | Ewald Cress         | [Ewald Cress Blog]           |         | NULL             | [@sqlOnIce]        | NULL                              | 0   |                    |
 | Dmitri Korotkevitch | [Dmitri Korotkevitch Blog]   | USA     | Tampa            | [@aboutsqlserver]  | dk@aboutsqlserver.com             | 6   | [Korotkevitch MVP] |
-| Bert Wagner         | [Bert Wagner Blog]           |         |                  | [@bertwagner]      | NULL                              | 0   |                    |
-| Erik Darling        | [Erik Darling Articles]      | USA     |                  | NULL               | NULL                              | 0   |                    |
-| Thomas Rushton      | [Thomas Rushton Blog]        | USA     |                  | NULL               | NULL                              | 0   |                    |
-| Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][ContactSolomon] | 0   |                    |
+| Bert Wagner         | [Bert Wagner Blog]           |         | NULL             | [@bertwagner]      | NULL                              | 0   |                    |
+| Erik Darling        | [Erik Darling Articles]      | USA     | NULL             | NULL               | NULL                              | 0   |                    |
+| Thomas Rushton      | [Thomas Rushton Blog]        | USA     | NULL             | NULL               | NULL                              | 0   |                    |
+| Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][1]       | 0   |                    |
+| Ned Otter           | [Ned Otter Blog]             | USA     | New York         | [@NedOtter]        | [Contact Ned Otter][2]            | 0   |                    |
+| Joe Obbish          | [Joe Obbish Blog]            |         | NULL             | NULL               | NULL                              | 0   |                    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -169,7 +170,10 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Erik Darling Articles]:https://www.brentozar.com/archive/author/erik-darling/
 [Thomas Rushton Blog]:https://thelonedba.wordpress.com/
 [Sql Quantum Leap]:https://SqlQuantumLeap.com/
-[ContactSolomon]:https://SqlQuantumLeap.com/contact/
+[1]:https://SqlQuantumLeap.com/contact/
+[Ned Otter Blog]:http://nedotter.com/
+[2]:http://nedotter.com/contact/
+[Joe Obbish Blog]:https://orderbyselectnull.com/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
@@ -247,6 +251,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@aboutsqlserver]:https://twitter.com/aboutsqlserver
 [@bertwagner]:https://twitter.com/bertwagner
 [@SqlQuantumLeap]:https://twitter.com/SqlQuantumLeap
+[@NedOtter]:https://twitter.com/NedOtter
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh

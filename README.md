@@ -3,7 +3,6 @@
 <a name="header01"></a>
 <a name="header02"></a>
 <a name="header020"></a>
-<a name="header03"></a>
 <a name="header04"></a>
 <a name="header05"></a>
 <a name="header06"></a>
@@ -34,7 +33,6 @@ Headers:
  - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
- - [SQL Server Sample Databases and Datasets](#sql-server-sample-databases-and-datasets)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
@@ -50,24 +48,14 @@ Headers:
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 526 Trace Flags') (**Complete list - 526 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 585 Trace Flags') (**Complete list - 585 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2017**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
  - [Extended Events](/Extended_Events)
  - [Known Errors](/Errors)
- - [Solution](/Solution)
-    - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
-    - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
-    - [Ola Maintenance Solution](/Solution/Ola_Maintenance_Solution) (by Ola Hallengren)
-    - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
-    - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
- - [SSMS](/SSMS)
-    - [SSMS addins](/SSMS/SSMS_Addins.md) (**33 useful free and paid SSMS Addins**)
-    - [SSMS Snippets](/SSMS/SSMS_Snippets)
-    - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
-    - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
+ - [SQL Server Sample Databases and Datasets](/Sample_Databases)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
@@ -80,6 +68,17 @@ Headers:
     - [Foreign Key batch rename](/Scripts/Foreign%20Key%20batch%20rename.sql) (by Wes Henriksen)
     - [Count character matches](/Scripts/Count%20character%20matches.sql)
     - and many others...
+ - [Solution](/Solution)
+    - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
+    - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
+    - [Ola Maintenance Solution](/Solution/Ola_Maintenance_Solution) (by Ola Hallengren)
+    - [SQLQueryStress](/Solution/SQLQueryStress) (by Adam Machanic)
+    - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
+ - [SSMS](/SSMS)
+    - [SSMS addins](/SSMS/SSMS_Addins.md) (**34 useful free and paid SSMS Addins**)
+    - [SSMS Snippets](/SSMS/SSMS_Snippets)
+    - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
+    - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
  - [Stored Procedure](/Stored_Procedure)
    - [sp_DBPermissions](/Stored_Procedure/sp_DBPermissions.sql) (by Kenneth Fisher)
    - [sp_SrvPermissions](/Stored_Procedure/sp_SrvPermissions.sql) (by Kenneth Fisher)
@@ -96,7 +95,7 @@ Headers:
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**complete list of 229 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 260 SQL Server paid and free Utilities and Tools**)
 
 [*Back to top*](#header01)
 
@@ -197,9 +196,10 @@ Headers:
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
-   - [SQLDataPartners Podcast](http://sqldatapartners.com/podcast/)
    - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
+   - [SQL Down Under Podcast](https://www.sqldownunder.com) (by Greg Low)
+   - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
  - Courses
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
@@ -251,7 +251,7 @@ Headers:
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
-   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (284 People, Russian)
+   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (473 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -282,6 +282,14 @@ Headers:
     - [ssis-dashboard - HTML5 SQL Server Integration Services Dashboard](https://github.com/yorek/ssis-dashboard) (by Davide Mauri)
     - [SQL Server Regex - run regular expressions in SQL Server](https://github.com/DevNambi/sql-server-regex) (by Dev Nambi)
     - [Binary Formatter - format binary files (e.g. DLL / CER / PVK) into hex bytes string for SQL script](https://github.com/SqlQuantumLeap/BinaryFormatter) (by Solomon Rutzky / Sql Quantum Leap)
+    - [ExtendedTSQLCollector - Custom collector types to extend and simplify the features offered by the built-in SQL Server Data Collector and read data from Extended Events and/or queries](https://github.com/spaghettidba/ExtendedTSQLCollector) (by Gianluca Sartori)
+    - [XESmartTarget - configurable target for SQL Server Extended Events](https://github.com/spaghettidba/XESmartTarget) (by Gianluca Sartori)
+    - [Schemazen - script and create SQL Server objects quickly](https://github.com/sethreno/schemazen) (by Seth Reno)
+    - [soddi - StackOverflow Data Dump Importer](https://github.com/BrentOzarULTD/soddi) (by Brent Ozar team)
+    - [Automatically fix high VLF counts in SQL Server 2012+](https://github.com/tboggiano/autofix-vlfs) (by Tracy Boggiano)
+    - [splittinglargefiles - Process for splitting large files in a filegroup that has grown out of control.](https://github.com/tboggiano/splittinglargefiles) (by Tracy Boggiano)
+    - [olamaintconfigtables - This are tables and jobs that can use to run Ola's scripts as T-SQL Jobs and run on Linux](https://github.com/tboggiano/olamaintconfigtables) (by Tracy Boggiano)
+    - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA  ](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -294,7 +302,7 @@ Headers:
     - [Stackoverflow SQL Server](http://stackoverflow.com/questions/tagged/sql-server)
     - [DBA Stackexchange SQL Server](http://dba.stackexchange.com/questions/tagged/sql-server)
     - [Server Fault - is a question and answer site for system and network administrators](https://serverfault.com/)
-    - [SQL Server Connection Strings](http://www.connectionstrings.com/sql-server/)
+    - [SQL Server Connection Strings](https://www.connectionstrings.com/sql-server/)
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
     - [RSS Most Recent SQL Server KBs](https://support.microsoft.com/en-us/rss?rssid=1044)
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
@@ -304,7 +312,6 @@ Headers:
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
     - [Dell Databases Wiki](http://en.community.dell.com/techcenter/storage/w/wiki/5018.sc-series-technical-documents) (by Doug Bernhardt)
-    - [SDUTools - Free Tools for DBAs and Developers on pure TSQL](http://sqldownunder.azurewebsites.net/Resources/SDUTools) (by SQL Down Under)
     - [SqlServerSearcher - open source C# tool for searching SQL Server objects](https://github.com/CoderAllan/SqlServerSearcher) (by Allan Simonsen)
     - [DbUp is a .NET library that helps you to deploy changes to SQL Server databases](https://github.com/DbUp/DbUp)
     - [SQL Server monitor - manages sql server performance](https://github.com/unruledboy/SQLMonitor) (by Wilson Chen)
@@ -313,6 +320,9 @@ Headers:
     - [Minion CheckDB - completes the MinionWare maintenance and backups suite](http://minionware.net/checkdb/) (by Minionware)
     - [Minion Reindex - Index maintenance that is fully automated](http://minionware.net/reindex/) (by Minionware)
     - [OrcaMDF - C# parser for MDF files](https://github.com/improvedk/OrcaMDF) (by Mark S. Rasmussen)
+    - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server)
+    - [Telegraf SQL Server Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) (by influxdata)
+    - [SDU Tools - pure TSQL functions Toolkit](https://sqldownunder.com/sdu-tools/) (by SQLDownUnder)
 
 [*Back to top*](#header02)
 
@@ -361,35 +371,6 @@ BIML Bloggers
 [*Back to top*](#header020)
 
 
-## SQL Server Sample Databases and Datasets
-Alternative download link for some sample databases: http://bit.ly/ya-ssk
-
- - [AdventureWorks Sample Databases and Scripts for SQL Server 2016 CTP3](https://www.microsoft.com/en-us/download/details.aspx?id=49502)
- - [Microsoft SQL Server Community Projects & Samples](http://sqlserversamples.codeplex.com/)
- - [Adventure Works 2014 Sample Databases](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks2014)
- - [Adventure Works 2012 Sample Databases](http://msftdbprodsamples.codeplex.com/releases/view/55330)
- - [Microsoft SQL Server 2008 R2 SR1 Sample Databases](https://sqlserversamples.codeplex.com/releases/view/72278)
- - [Thinking Big (Adventure)](http://sqlblog.com/blogs/adam_machanic/archive/2011/10/17/thinking-big-adventure.aspx) (by Adam Machanic)
- - [WideWorldImporters Sample Database](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/wide-world-importers) (Github Microsoft)
- - [WideWorldImporters Sample Database Download Files](https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0) (Github Microsoft)
- - [IoT Smart Grid sample - demonstrates how SQL Server 2016 memory optimized databases could be used to ingest a very high input data rate](https://github.com/Microsoft/sql-server-samples/releases/tag/iot-smart-grid-v1.0) (Github Microsoft)
- - [In-Memory OLTP (WWI Sales Orders)](https://github.com/Microsoft/sql-server-samples/releases/tag/wwi-sales-orders-v0.5) (Github Microsoft)
- - [Bigger Fact Table for Wide World Importers](http://www.sqlservercentral.com/blogs/koen-verbeeck/2016/08/12/bigger-fact-table-for-wide-world-importers/) (by Koen Verbeeck)
- - [Contoso Retail Data Warehose](https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/contoso-data-warehouse) (Github)
- - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Brent Ozar)
- - [Updating the Stack Overflow Demo Database version 2016-12-15](https://www.brentozar.com/archive/2017/01/updating-stack-overflow-demo-database/)
- - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
- - [Git repo for SQL Server Reporting Services samples and community projects](https://github.com/Microsoft/Reporting-Services)
- - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
- - [SQLIndexWorkbook Sample Database](http://www.littlekendra.com/downloads/get-the-sqlindexworkbook-database/) (by Little Kendra)
- - [Data.gov](https://www.data.gov/)
- - [Itzik Ben-Gan Sample Databases](http://tsql.solidq.com/books/source_code/) (by Itzik Ben-Gan)
- - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
- - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
-
-[*Back to top*](#header03)
-
-
 ## PowerShell and SQL Server
  - [SQL Server & Windows Documentation Using Windows PowerShell](https://sqlpowerdoc.codeplex.com/) (by Kendal Vandyke)
  - [Stairway to SQL PowerShell](http://www.sqlservercentral.com/stairway/91327/) (by Ben Miller)
@@ -434,12 +415,11 @@ Alternative download link for some sample databases: http://bit.ly/ya-ssk
 
 ## SQL Server Test Data Generation
  - https://www.simple-talk.com/sql/t-sql-programming/generating-test-data-in-tsql/
- - http://www.yandataellan.com/
  - https://github.com/benkeen/generatedata
  - https://sourceforge.net/projects/dbmonster/
  - https://sourceforge.net/projects/spawner/
  - http://databene.org/databene-benerator
- - http://stackoverflow.com/questions/591892/tools-for-generating-mock-data
+ - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
 
 [*Back to top*](#header07)
 

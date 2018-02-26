@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **35** SSMS add-ins
          
 | Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
@@ -16,10 +16,11 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008/2012/2014/2016/2017           | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                     | Dave ballantyne      | Yes          | No    |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008/2012/2014/2016/2017           | SQLTreeo             | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-06-07   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-05-08   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-07-13   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-08-22   | 2008/2012/2014/2016                | ApexSQL tools        | No           |  $299 |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008/2012/2014/2016/2017           | ApexSQL tools        | No           |  $299 |
+| [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2017-08-16   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          |  $499 |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014                     | Spotlight Essentials | Yes          | No    |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2017-09-30   | 2005/2008/2012/2014/2016/2017      | Devart               | No           |  $249 |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2017-09-30   | 2005/2008/2012/2014/2016/2017      | Devart               | No           |  $199 |
@@ -36,6 +37,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                          | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                          | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL           | Yes          |  $149 |
+| [GIN-List](#gin-list)                             | [GIN-List]                  | 2017-06-30   | 2008/2012/2014                | GIN-List           | Yes          |  No |
 
 
 <a id="ssmsboost"></a>
@@ -258,7 +260,7 @@ Price: €50
 <a id="apexsql-complete"></a>
 ## ApexSQL Complete
 Download page: [ApexSQL Complete]<br/>
-Release date: 2017-06-07<br/>
+Release date: 2017-10-26<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
@@ -315,8 +317,8 @@ With ApexSQL Search you can:
 <a id="apexsql-source-control"></a>
 ## ApexSQL Source Control
 Download page: [ApexSQL Source Control]<br/>
-Release date: 2017-08-22<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2017-10-12<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
 Price: $299
@@ -329,6 +331,25 @@ Price: $299
  - Set team policies for check outs and locks
  - Apply changes with dependency aware scripts
  - Create and apply label from source control
+
+
+<a id="apexsql-unit-test"></a>
+## ApexSQL Unit Test
+Download page: [ApexSQL Unit Test]<br/>
+Release date: 2017-08-22<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Developer: ApexSQL tools<br/>
+Free version: No<br/>
+Price: $499
+
+ - Integrate SQL unit testing directly into SSMS
+ - Install and manage [tSQLt](http://tsqlt.org/) from multiple sources
+ - Create and organize test classes
+ - Automate test execution using the CLI
+ - Create and organize unit tests
+ - Write tests using T-SQL
+ - Run tests with a single click
+ - Manage all tests with a single form
 
 
 <a id="spotlight-developer"></a>
@@ -564,6 +585,17 @@ Price: $149
 
 Lightweight add-in to connect your databases to your source control system
 
+<a id="gin-list"></a>
+## GIN-List
+Download page: [GIN-List]<br/>
+Release date: 2017-06-30<br/>
+Support Version: 2008/2012/2014<br/>
+Developer: Omer Fancy<br/>
+Free version: Yes<br/>
+Price: No
+
+Extremely small and lightweight productivity enhancement add-in. This add-in was created to facilitate writing SQL queries where one has to specify a list of IDs in an IN list. The list of values on which you filter on might be coming from a SQL grid, or an Excel file; in either case it marks each of the values as strings, adds comma separators and the necessary parentheses. 
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
@@ -583,6 +615,7 @@ Lightweight add-in to connect your databases to your source control system
 [ApexSQL Refactor]:https://www.apexsql.com/sql_tools_refactor.aspx
 [ApexSQL Search]:https://www.apexsql.com/sql_tools_search.aspx
 [ApexSQL Source Control]:https://www.apexsql.com/sql_tools_source_control.aspx
+[ApexSQL Unit Test]:https://www.apexsql.com/sql_tools_unit_test.aspx
 [Spotlight Developer]:https://www.spotlightessentials.com/spotlight-developer
 [dbForge Source Control]:https://www.devart.com/dbforge/sql/source-control/
 [dbForge Unit Test]:https://www.devart.com/dbforge/sql/unit-test/
@@ -599,6 +632,7 @@ Lightweight add-in to connect your databases to your source control system
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
+[GIN-List]:http://www.omerfancy.com/ginlist/
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe

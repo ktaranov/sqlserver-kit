@@ -44,7 +44,7 @@ Customers are advised to contact support, should they encounter any issues with 
 Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
 
 ## Available Languages
-SQL Server Management Studio 17.2:
+SQL Server Management Studio for another languages:
  - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
  - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x404)
  - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
@@ -57,7 +57,7 @@ SQL Server Management Studio 17.2:
  - [Russian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
  - [Spanish](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
 
-SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
+SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
  - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x804)
  - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x404)
  - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x409)
@@ -75,7 +75,9 @@ SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.3 Release] **Latest**        | 14.0.17199.0  | 2017-10-09   |      801 |
+| [17.5 Release] **Latest**        | 14.0.17224.0  | 2018-02-15   |      802 |
+| [17.4 Release]                   | 14.0.17213.0  | 2017-12-07   |      802 |
+| [17.3 Release]                   | 14.0.17199.0  | 2017-10-09   |      801 |
 | [17.2 Release]                   | 14.0.17177.0  | 2017-08-07   |      819 |
 | [17.1 Release]                   | 14.0.17119.0  | 2017-05-24   |      784 |
 | [17.0 Release]                   | 14.0.17099.0  | 2017-04-25   |      729 |
@@ -96,7 +98,9 @@ SQL Server Management Studio 17.2 Upgrade Package (upgrades 17.x to 17.2):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
-[17.2 Release]:https://go.microsoft.com/fwlink/?linkid=858904
+[17.5 Release]:https://go.microsoft.com/fwlink/?linkid=867670
+[17.4 Release]:https://go.microsoft.com/fwlink/?linkid=864329
+[17.3 Release]:https://go.microsoft.com/fwlink/?linkid=858904
 [17.2 Release]:https://go.microsoft.com/fwlink/?linkid=854085
 [17.1 Release]:https://go.microsoft.com/fwlink/?linkid=849819
 [17.0 Release]:https://go.microsoft.com/fwlink/?linkid=847722
