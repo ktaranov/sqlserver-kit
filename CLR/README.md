@@ -6,7 +6,7 @@ Useful links:
  - [CLR User-Defined Types](https://msdn.microsoft.com/en-us/library/ms131120(SQL.100).aspx)
  - [CLR Stored Procedures](https://msdn.microsoft.com/en-us/library/ms131094(SQL.100).aspx)
  - [CLR Triggers](https://msdn.microsoft.com/en-us/library/ms131093(SQL.100).aspx)
- - [SQL# CLR functions](http://www.sqlsharp.com/) (by Sql Quantum Lift)
+ - [SQL# CLR functions](https://SQLsharp.com/) (by Sql Quantum Lift)
 
 The common language runtime (CLR) is the heart of the Microsoft .NET Framework and provides the execution environment for all .NET Framework code. Code that runs within the CLR is referred to as managed code. The CLR provides various functions and services required for program execution, including just-in-time (JIT) compilation, allocating and managing memory, enforcing type safety, exception handling, thread management, and security.
 
@@ -15,9 +15,7 @@ With the CLR hosted in Microsoft SQL Server (called CLR integration), you can au
 Enabling CLR Integration:
 
 ```tsql
-sp_configure 'clr enabled', 1;
-GO
-
+EXEC sp_configure 'clr enabled', 1;
 RECONFIGURE;
 GO
 ```
