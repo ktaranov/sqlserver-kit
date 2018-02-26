@@ -17,9 +17,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Cody Konior         | [Cody Konior Blog]           | AUS     | Perth            | [@codykonior]      | NULL                              | 0   | -                  |
 | Stephen Wynkoop     | [Stephen Wynkoop Site]       | USA     | Tucson           | [@swynk]           | NULL                              | 0   | -                  |
 | Brent Ozar          | [Brent Ozar Blog]            | USA     | Chicago          | [@BrentO]          | help@brentozar.com                | 7   | [Ozar MVP]         |
-| Adam Machanic       | [SQLBlog]                    | USA     | Boston           | [@AdamMachanic]    | NULL                              | 12  | [Machanic MVP]     |
+| Adam Machanic       | [SQLBlog]                    | USA     | Boston           | [@AdamMachanic]    | NULL                              | 13  | [Machanic MVP]     |
 | Ola Hallengren      | [Ola Maintenance Solution]   | SWE     | NULL             | [@olahallengren]   | ola@hallengren.com                | 3   | [Hallengren MVP]   |
-| Erland Sommarskog   | [Sommarskog Blog]            | SWE     | Stockholm        | NULL               | esquel@sommarskog.se              | 13  | [Sommarskog MVP]   |
+| Erland Sommarskog   | [Sommarskog Blog]            | SWE     | Stockholm        | NULL               | esquel@sommarskog.se              | 14  | [Sommarskog MVP]   |
 | Phil Factor         | [Phil Simple-Talk]           |         | NULL             | [@phil_factor]     | NULL                              | 0   | -                  |
 | Robert Sheldon      | [Robert Simple-Talk]         |         | NULL             | NULL               | NULL                              | 0   | -                  |
 | Glenn Alan Berry    | [Glenn Blog]                 | USA     | Denwer           | [@GlennAlanBerry]  | glenn@SQLskills.com               | 10  | [Berry MVP]        |
@@ -30,7 +30,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Jason Strate        | [Jason Blog]                 |         | NULL             | [@StrateSQL]       | NULL                              | 7   | [Strate MVP]       |
 | Jeremiah Peschka    | [Jeremiah Blog]              |         | NULL             | [@peschkaj]        | jeremiah.peschka@gmail.com        | 5   | [Peschka MVP]      |
 | Gail Shaw           | [Gail Blog]                  | ZAF     | Johannesburg     | [@SQLintheWild]    | NULL                              | 8   | [Shaw MVP]         |
-| Aaron Bertrand      | [Aaron Articles]             |         | NULL             | [@AaronBertrand]   | NULL                              | 19  | [Bertrand MVP]     |
+| Aaron Bertrand      | [Aaron Articles]             |         | NULL             | [@AaronBertrand]   | NULL                              | 20  | [Bertrand MVP]     |
 | Kevin Kline         | [Kevin Blog]                 |         | NULL             | [@kekline]         | kevin_e_kline@yahoo.com           | 13  | [Kline MVP]        |
 | John Sansom         | [John Blog]                  |         | NULL             | [@SqlBrit]         | NULL                              | 0   | -                  |
 | Jes Borland         | [Jes Articles]               |         | NULL             | [@grrl_geek]       | NULL                              | 4   | [Borland MVP]      |
@@ -43,7 +43,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Kendal Van Dyke     | [KendaL Blog]                |         | NULL             | [@SQLDBA]          | NULL                              | 0   | -                  |
 | Tim Ford            | [Tim Blog]                   |         | NULL             | [@sqlagentman]     | NULL                              | 7   | [Ford MVP]         |
 | Steve Jones         | [Steve Jones Blog]           |         | NULL             | [@way0utwest]      | NULL                              | 9   | [Jones MVP]        |
-| Thomas Larock       | [Thomas Larock Blog]         |         | NULL             | [@sqlrockstar]     | NULL                              | 7   | [LaRock MVP]       |
+| Thomas Larock       | [Thomas Larock Blog]         |         | NULL             | [@sqlrockstar]     | NULL                              | 9   | [LaRock MVP]       |
 | Derik Hammer        | [Derik Hammer Blog]          | USA     | Oklahoma         | [@drayhammer]      | NULL                              | 1   | [Derik MVP]        |
 | Chrissy LeMaire     | [Chrissy LeMaire Blog]       |         | NULL             | [@cl]              | NULL                              | 1   | [LeMaire MVP]      |
 | Tim Mitchell        | [Tim Mitchell Blog]          |         | NULL             | [@Tim_Mitchell]    | NULL                              | 7   | [Mitchell MVP]     |
@@ -57,7 +57,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Matan Yungman       | -                            | ISR     | Tel Aviv         | [@MatanYungman]    | NULL                              | 0   | [Yungman MVP]      |
 | Julie Koesmarno     | [July Blog]                  | USA     | Redmond          | [@MsSQLGirl]       | NULL                              | 0   | -                  |
 | Michael J Swart     | [Michael Blog]               | CAN     | Waterloo         | [@MJSwart]         | NULL                              | 5   | [Swart MVP]        |
-| Dmitry Pilugin      | [Dmitry Blog]                | RUS     | Moscow           | [@SomewereSomehow] | pilugin@inbox.ru                  | 3   | [Pilugin MVP]      |
+| Dmitry Pilugin      | [Dmitry Blog]                | RUS     | Moscow           | [@SomewereSomehow] | pilugin@inbox.ru                  | 4   | [Pilugin MVP]      |
 | Buck Woody          | [Buck Blog]                  |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                  |
 | Steve Stedman       | [Steve Stedman Blog]         | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                  |
 | Daniel Hutmacher    | [Daniel Hutmacher Blog]      | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                  |
@@ -87,6 +87,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Solomon Rutzky      | [Sql Quantum Leap]           | USA     | Raleigh          | [@SqlQuantumLeap]  | [Contact Solomon Rutzky][1]       | 0   |                    |
 | Ned Otter           | [Ned Otter Blog]             | USA     | New York         | [@NedOtter]        | [Contact Ned Otter][2]            | 0   |                    |
 | Joe Obbish          | [Joe Obbish Blog]            |         | NULL             | NULL               | NULL                              | 0   |                    |
+| Stephen Bennett     | [Stephen Bennett Blog]       | ENG     | London           | NULL               | NULL                              | 0   |                    |
+| Brian Davis         | [Brian Davis Articles]       | USA     | NULL             | [@brian78]         | NULL                              | 0   |                    |
+
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -174,6 +177,8 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Ned Otter Blog]:http://nedotter.com/
 [2]:http://nedotter.com/contact/
 [Joe Obbish Blog]:https://orderbyselectnull.com/
+[Stephen Bennett Blog]:https://sqlnotesfromtheunderground.wordpress.com/
+[Brian Davis Articles]:https://blogs.sentryone.com/author/briandavis/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
@@ -252,6 +257,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@bertwagner]:https://twitter.com/bertwagner
 [@SqlQuantumLeap]:https://twitter.com/SqlQuantumLeap
 [@NedOtter]:https://twitter.com/NedOtter
+[@brian78]:https://twitter.com/brian78
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
