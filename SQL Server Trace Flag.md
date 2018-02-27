@@ -259,7 +259,7 @@ Function: Forces correct conversion semantics in the scope of DBCC check command
 **Note: This trace flag applies to SQL Server 2016 RTM CU3, SQL Server 2016 SP1 and higher builds.**<br />
 **WARNING: Trace flag 139 is not meant to be enabled continuously in a production environment, and should be used for the sole purpose of performing database validation checks described in this Microsoft Support article.
 It should be immediately disabled after validation checks are completed.**<br />
-Link: http://support.microsoft.com/help/4010261<br />
+Link: https://support.microsoft.com/help/4010261<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
 
@@ -1071,7 +1071,7 @@ Scope: global only
 #### Trace Flag: 1237
 Function: Allows the `ALTER PARTITION FUNCTION` statement to honor the current user-defined session deadlock priority instead of being the likely deadlock victim by default.<br />
 **Note: Starting with SQL Server 2017 and database [compatibility level] 140 this is the default behavior and trace flag 1237 has no effect.**
-Link: http://support.microsoft.com/help/4025261<br />
+Link: https://support.microsoft.com/help/4025261<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session or query
 
@@ -1536,7 +1536,7 @@ Scope: ?
 #### Trace Flag: 2422
 Function: Enables the SQL Server Database Engine to abort a request when the maximum time set by Resource Governor REQUEST_MAX_CPU_TIME_SEC configuration is exceeded.<br />
 **Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
-Link: http://support.microsoft.com/help/4038419<br />
+Link: https://support.microsoft.com/help/4038419<br />
 Scope: global only
 
 
@@ -1761,7 +1761,7 @@ This logic determines unique disk drives based on the drive letter of the physic
 Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: http://support.microsoft.com/help/2634571<br />
+Link: https://support.microsoft.com/help/2634571<br />
 Link: https://support.microsoft.com/help/2732669<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -1847,8 +1847,8 @@ Tempdb may grow to as much as 5% or more of the user database that is being proc
 **Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: http://support.microsoft.com/help/2634571<br />
-Link: http://support.microsoft.com/help/2732669<br />
+Link: https://support.microsoft.com/help/2634571<br />
+Link: https://support.microsoft.com/help/2732669<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
 
@@ -1981,7 +1981,7 @@ Link: https://support.microsoft.com/help/2987585/restore-log-with-standby-mode-o
 <a id="3101"></a>
 #### Trace Flag: 3101
 Function: Fix performance problems when restoring database with CDC<br />
-Link: http://support.microsoft.com/help/2567366/
+Link: https://support.microsoft.com/help/2567366/
 
 
 <a id="3104"></a>
@@ -2116,7 +2116,7 @@ Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-cau
 #### Trace Flag: 3427
 Function: Enables fix for issue when many consecutive transactions inserting data into temp table in SQL Server 2016 consume more CPU than in SQL Server 2014.<br />
 Link: [Docs Trace Flags]<br />
-Link: http://support.microsoft.com/help/3216543<br />
+Link: https://support.microsoft.com/help/3216543<br />
 Scope: global only
 
 
@@ -2125,7 +2125,7 @@ Scope: global only
 Function: Introduced in the KB to fix a race condition leading to a hung database in mirroring failover situations. “ This trace flag forces new connections to keep checking for 
 database state every two seconds instead of waiting for a lock for infinite time. It helps ending the connection tasks faster as the mirroring reac
 hes the start of the recovery phase and releasing more worker threads to be used by database mirroring.”<br />
-Link: https://support.microsoft.com/help/2970421/fix-the-database-sticks-in-role-configuration-phase-when-you-perform-a-manual-failover-of-a-mirrored-database
+Link: https://support.microsoft.com/help/2970421/
 
 
 <a id="3449"></a>
@@ -2133,7 +2133,7 @@ Link: https://support.microsoft.com/help/2970421/fix-the-database-sticks-in-role
 Function: If you enable global TF 3449 (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
 you will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
 backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
-Link: https://support.microsoft.com/help/3158396/fix-sql-server-database-creation-on-a-system-with-a-large-volume-of-me<br />
+Link: https://support.microsoft.com/help/3158396/<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Scope: global only
@@ -2169,7 +2169,7 @@ Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-check
 <a id="3505"></a>
 #### Trace Flag: 3505
 Function: Disables automatic checkpointing<br />
-Link: http://support.microsoft.com/help/815436<br />
+Link: https://support.microsoft.com/help/815436<br />
 Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
 
 
@@ -2182,7 +2182,7 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msd
 <a id="3602"></a>
 #### Trace Flag: 3602
 Function: Records all error and warning messages sent to the client<br />
-Link: https://support.microsoft.com/help/199037/how-to-capture-error-messages-that-are-sent-to-clients-from-an-instance-of-sql-server
+Link: https://support.microsoft.com/help/199037/
 
 
 <a id="3603"></a>
@@ -2301,7 +2301,7 @@ Scope: ?
 Function: Apparently increases info found in the sys.dm_os_memory_allocations DMV (which appears to have replaced the DBCC MEMOBJLIST command) Bob Ward also discusses it in his PASS 2013 session, saying that it turns on tracing for all memory allocations done by “Memory Objects” (a specific SQLOS memory term). This flag will have a significant impact on system performance.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-counting-be-a-leading-memory-scribbler-cause<br />
 Link: https://blogs.msdn.microsoft.com/slavao/2005/08/30/talking-points-around-memory-manager-in-sql-server-2005<br />
-Link: https://support.microsoft.com/help/2888658/an-access-violation-occurs-when-the-sys.dm-db-index-physical-stats-function-is-used-in-an-if-exists-statement-in-an-sql-query-in-sql-server-2012
+Link: https://support.microsoft.com/help/2888658/
 
 
 <a id="3656"></a>
@@ -2358,7 +2358,7 @@ Link: None
 <a id="3861"></a>
 #### Trace Flag: 3861
 Function: This flag allows the SQL Server DB startup code to move system tables to the primary filegroup. Introduced due to behavior in the SQL 2014 upgrade process, where system tables could be created in a secondary filegroup (if that FG was the default).<br />
-Link: https://support.microsoft.com/help/3003760/fix-cannot-remove-the-secondary-filegroup-after-you-upgrade-the-database-to-sql-server-2014
+Link: https://support.microsoft.com/help/3003760/
 
 
 <a id="3913"></a>
@@ -2382,7 +2382,7 @@ Link: https://support.microsoft.com/help/3014867
 <a id="3924"></a>
 #### Trace Flag: 3924
 Function: Enables a fix where “XA” transactions started within a JDBC-connected Java app are not closed properly and stay open indefinitely.<br />
-Link: https://support.microsoft.com/help/3145492/fix-xa-transactions-aren-t-cleaned-when-you-exit-a-java-application-in-an-instance-of-sql-server
+Link: https://support.microsoft.com/help/3145492/
 
 
 <a id="3940"></a>
@@ -2446,8 +2446,8 @@ Link: None
 <a id="4032"></a>
 #### Trace Flag: 4032
 Function: Traces the SQL commands coming in from the client. When enabled with 3605 it will direct those all to the error log.<br />
-Link: https://support.microsoft.com/help/199037/how-to-capture-error-messages-that-are-sent-to-clients-from-an-instance-of-sql-server<br />
-Link: https://support.microsoft.com/help/140895/inf-diagnostic-tips-for-the-microsoft-sql-server-odbc-driver
+Link: https://support.microsoft.com/help/199037/<br />
+Link: https://support.microsoft.com/help/140895/
 
 
 <a id="4044"></a>
@@ -2472,13 +2472,13 @@ Link: None
 #### Trace Flag: 4101
 Function: “FIX: Reorder outer joins with filter criteria before non-selective joins and outer joins” Enabling this flag may increase the chance that selective filter criteria on an OUTER 
 JOIN will influence the OJ earlier in the plan, rather than the more typical behavior of INNER JOINs being prioritized before OJs. Note that 4101 is also required to enable KB942444.<br />
-Link: https://support.microsoft.com/help/318530/fix-reorder-outer-joins-with-filter-criteria-before-non-selective-joins-and-outer-joins
+Link: https://support.microsoft.com/help/318530/
 
 
 <a id="4102"></a>
 #### Trace Flag: 4102
 Function: SQL 9 - Query performance is slow if the execution plan of the query contains semi join operators Typically, semi join operators are generated when the query contains the IN keyword or the EXISTS keyword. Enable flag 4102 and 4118 to overcome this.<br />
-Link: https://support.microsoft.com/help/946020/fix-error-message-when-you-run-a-complex-query-after-you-install-cumulative-update-3-or-cumulative-update-4-for-sql-server-2005-service-pack-2-the-query-processor-ran-out-of-internal-resources-and-could-not-produce-a-query-plan
+Link: https://support.microsoft.com/help/946020/
 
 
 <a id="4103"></a>
@@ -2521,7 +2521,7 @@ Link: None
 <a id="4109"></a>
 #### Trace Flag: 4109
 Function: “FIX: Error message when you run a query that uses a fast forward-only cursor in SQL Server 2005: "Query processor could not produce a query plan because of the hints defined in this query”<br />
-Link: https://support.microsoft.com/help/926773/fix-error-message-when-you-run-a-query-that-uses-a-fast-forward-only-cursor-in-sql-server-2005-query-processor-could-not-produce-a-query-plan-because-of-the-hints-defined-in-this-query
+Link: https://support.microsoft.com/help/926773/
 
 
 <a id="4110"></a>
@@ -2542,7 +2542,7 @@ Function: Enables a fix for a problem that occurs when a linked server from 2005
 execution plan that has a remote query. SQL Server 2005 must execute the remote query against SQL Server 2000 to retrieve the required data. SQL Server 2000 cannot 
 handle the remote query. Therefore, error 107 occurs in SQL Server 2000. Then, error 107 is propagated back to SQL Server 2005. Therefore, error 107 occurs in SQL Server 
 2005, and error 8180 occurs in SQL Server 2005.”<br />
-Link: https://support.microsoft.com/help/936223/fix-error-messages-when-you-run-a-query-against-a-linked-server-that-you-create-in-sql-server-2005-statement-s-could-not-be-prepared-and-the-column-prefix-column-prefix-name-does-not-match-with-a-table-name-or-alias-name-...
+Link: https://support.microsoft.com/help/936223/
 
 
 <a id="4115"></a>
@@ -2572,7 +2572,7 @@ Link: None
 <a id="4120"></a>
 #### Trace Flag: 4120
 Function: “FIX: Error message when you perform an update operation by using a cursor in SQL Server 2005: Transaction (Process ID <SPID>) was deadlocked on lock resources with another process and has been chosen as the deadlock victim” This issue is apparently due to deadlock issues related to upgrading a U lock to an X lock.<br />
-Link: https://support.microsoft.com/help/953948/fix-error-message-when-you-perform-an-update-operation-by-using-a-cursor-in-sql-server-2005-transaction-process-id-spid-was-deadlocked-on-lock-resources-with-another-process-and-has-been-chosen-as-the-deadlock-victim
+Link: https://support.microsoft.com/help/953948/
 
 
 <a id="4121"></a>
@@ -2602,7 +2602,7 @@ Link: None
 <a id="4126"></a>
 #### Trace Flag: 4126
 Function: “FIX: The synchronization process is slow, and the CPU usage is high on the computer that is configured as the Distributor in SQL Server 2005” The problem manifested as a replication performance issue, but the following phrase found in the KB article indicates that it is a query processor issue: “the query that performs poorly shows that a join predicate is not pushed down to a Clustered Index Seek operator.”<br />
-Link: https://support.microsoft.com/help/959013/fix-the-synchronization-process-is-slow,-and-the-cpu-usage-is-high-on-the-computer-that-is-configured-as-the-distributor-in-sql-server-2005
+Link: https://support.microsoft.com/help/959013/
 
 
 <a id="4127"></a>
@@ -2615,7 +2615,7 @@ Link: Note
 <a id="4128"></a>
 #### Trace Flag: 4128
 Function: “FIX: When you update rows by using a cursor in SQL Server 2005, the update may take a long time to finish”<br />
-Link: https://support.microsoft.com/help/957872/fix-when-you-update-rows-by-using-a-cursor-in-sql-server-2008,-the-update-may-take-a-long-time-to-finish
+Link: https://support.microsoft.com/help/957872/
 
 
 <a id="4129"></a>
@@ -2639,7 +2639,7 @@ Link: None
 <a id="4133"></a>
 #### Trace Flag: 4133
 Function: “FIX: The size of the SQL Server 2005 error log file or of the SQL Server 2008 error log file grows very quickly when query notifications are created and destroyed in a high ratio” & “FIX: The restore operation takes a long time when you restore a database that has query notification enabled in SQL Server 2005 or in SQL Server 2008”<br />
-Link: https://support.microsoft.com/help/958006/fix-the-size-of-the-sql-server-2005-error-log-file-or-of-the-sql-server-2008-error-log-file-grows-very-quickly-when-query-notifications-are-created-and-destroyed-in-a-high-ratio
+Link: https://support.microsoft.com/help/958006/
 
 
 <a id="4134"></a>
