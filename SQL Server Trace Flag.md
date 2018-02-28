@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (585 trace flags)
+Complete list of Microsoft SQL Server trace flags (**585** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -298,7 +298,7 @@ Link: https://support.microsoft.com/help/926292
 <a id="174"></a>
 #### Trace Flag: 174
 Function: Increases the SQL Server Database Engine plan cache bucket count from 40,009 to 160,001 on 64-bit systems.<br />
-**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/help/3026083/fix-sos-cachestore-spinlock-contention-on-ad-hoc-sql-server-plan-cache<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -425,7 +425,7 @@ Link: None
 
 <a id="260"></a>
 #### Trace Flag: 260
-Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). For more information about GetXpVersion(), see [Creating Extended Stored Procedures](https://msdn.microsoft.com/en-us/library/ms164627.aspx).<br />
+Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). For more information about GetXpVersion().<br />
 Link: https://docs.microsoft.com/en-us/sql/relational-databases/extended-stored-procedures-programming/creating-extended-stored-procedures<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
@@ -675,7 +675,7 @@ Link: None
 #### Trace Flag: 670, 671
 **Undocumented trace flag**<br />
 Function: Disables deferred deallocation. But note Paul White’s comment on the post! The flag # may actuall by 671.<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps/
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="715"></a>
@@ -762,7 +762,7 @@ The page size varies depending on the hardware platform, but the page size may b
 Large pages are allocated at startup and are kept throughout the lifetime of the process.
 Trace flag 834 improves performance by increasing the efficiency of the translation look-aside buffer (TLB) in the CPU. <br />
 **Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**<br />
-Link: [KB920093}<br />
+Link: [KB920093]<br />
 Link: https://support.microsoft.com/help/3210239<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -1070,7 +1070,7 @@ Scope: global only
 <a id="1237"></a>
 #### Trace Flag: 1237
 Function: Allows the `ALTER PARTITION FUNCTION` statement to honor the current user-defined session deadlock priority instead of being the likely deadlock victim by default.<br />
-**Note: Starting with SQL Server 2017 and database [compatibility level] 140 this is the default behavior and trace flag 1237 has no effect.**
+**Note: Starting with SQL Server 2017 and database [compatibility level] 140 this is the default behavior and trace flag 1237 has no effect.**<br />
 Link: https://support.microsoft.com/help/4025261<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session or query
@@ -1151,7 +1151,6 @@ Link: [Tune compression for availability group]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/sql-server-2008-performance-boost-for-database-mirroring<br />
 Link: http://sqlblog.com/blogs/joe_chang/archive/2014/03/13/hekaton-and-benchmarks.aspx<br />
-Link: https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0CCYQFjAB&url=http%3A%2F%2Fdownload.microsoft.com%2Fdownload%2F0%2FF%2FB%2F0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D%2FSQLCAT%27s%2520Guide%2520to%2520High%2520Availability%2520Disaster%2520Recovery.pdf&ei=4eGJVfzVHI35oASj25ygBg&usg=AFQjCNHWYH0t3bF8HqBuNuutrielPX3hJg&sig2=xno-YS7agP9DRG-CzNe0Ug&bvm=bv.96339352,bs.1,d.b2w<br />
 Scope: global only
 
 
@@ -1286,7 +1285,7 @@ Link: Note
 
 <a id="1905"></a>
 #### Trace Flag: 1905
-Function: Unknown
+Function: Unknown<br />
 Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
 
 
@@ -1704,7 +1703,7 @@ Link: [KB917825]
 #### Trace Flag: 2542
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="2543"></a>
@@ -1827,7 +1826,7 @@ Link: [KB917825]
 #### Trace Flag: 2558
 Function: Disables integration between CHECKDB and Watson<br />
 Link: [KB917825]<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="2559"></a>
@@ -2266,13 +2265,13 @@ Link: None
 <a id="3628"></a>
 #### Trace Flag: 3628
 Function: CSS’s mysterious description: “Includes ‘other errors’ in the dump based on a severity.”<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="3629"></a>
 #### Trace Flag: 3629
 Function: CSS: A memory dump will “include messages marked to include with this trace flag enabled.”<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="3635"></a>
@@ -2308,7 +2307,7 @@ Link: https://support.microsoft.com/help/2888658/
 #### Trace Flag: 3656
 Function: Enables resolve of all call stacks in extended events<br />
 Link: http://sqlcat.com/sqlcat/b/msdnmirror/archive/2010/05/11/resolving-dtc-related-waits-and-tuning-scalability-of-dtc.aspx<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps<br />
+Link: [Controlling SQL Server memory dumps]<br />
 Link: http://www.sqlskills.com/blogs/paul/determine-causes-particular-wait-type
 
 
@@ -3297,7 +3296,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2011/11/11/sql-server-clarifying-t
 #### Trace Flag: 8026
 Function: SQL Server will clear a dump trigger after generating the dump once<br />
 Link: [KB917825]<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+Link: [Controlling SQL Server memory dumps]
 
 
 <a id="8030"></a>
@@ -4256,7 +4255,7 @@ Scope: ?
 #### Trace Flag: 9448
 **Undocumented trace flag**<br />
 Function: Disables the referential integrity operator.<br />
-Link: https://orderbyselectnull.com/2017/12/05/the-referential-integrity-operator/<br />
+Link: https://orderbyselectnull.com/2017/12/05/the-referential-integrity-operator/
 
 
 <a id="9453"></a>
@@ -4695,3 +4694,4 @@ Scope: ?
 [KB917825]: https://support.microsoft.com/help/917825/
 [TF6545-a]: https://support.microsoft.com/help/4018930/
 [TF6545-b]: https://SqlQuantumLeap.com/2018/02/23/sqlclr-vs-sql-server-2012-2014-2016-part-7-clr-strict-security-the-problem-continues-in-the-past-wait-what/
+[Controlling SQL Server memory dumps]: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
