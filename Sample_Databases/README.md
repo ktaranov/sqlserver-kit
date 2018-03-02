@@ -1,5 +1,7 @@
 # SQL Server Sample Databases and Datasets
+Some databases you can download from this repository: https://rebrand.ly/sample-db
 
+## Sample Databases
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2017, 2016, 2014 , 2012](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
  - [AdventureWorks for Analysis Services](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks-analysis-services)
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2008 R2](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks2008r2)
@@ -13,20 +15,23 @@
  - [How to Download the Stack Overflow Database via BitTorrent 2016-03](https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/) (by Brent Ozar)
  - [Stack Overflow Database version 2016-12-15](https://www.brentozar.com/archive/2017/01/updating-stack-overflow-demo-database/)
  - [Stackexchange Source files - xml files](https://archive.org/download/stackexchange)
- - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
  - [Git repo for SQL Server Reporting Services samples and community projects](https://github.com/Microsoft/Reporting-Services)
  - [SQLSkills sample databases](https://www.sqlskills.com/sql-server-resources/sql-server-demos/) (also include SAMPLE CORRUPT DATABASES)
  - [SQLIndexWorkbook Sample Database](http://www.littlekendra.com/downloads/get-the-sqlindexworkbook-database/) (by Little Kendra)
- - [Data.gov](https://www.data.gov/)
  - [Itzik Ben-Gan Sample Databases](http://tsql.solidq.com/books/source_code/) (by Itzik Ben-Gan)
  - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
  - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
  - [SQL Server Sakila DB](https://www.jooq.org/sakila) (by jOQO)
 
-Some databases you can download from this repository: https://rebrand.ly/sample-db
+ 
+ ## Datasets
+ - [Data.gov](https://www.data.gov/)
+ - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
 
 
-| Name/Download backups                   | SQL Server Version | Type     | .Bak, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
+## Sample databases information
+
+| Name/Download backups                   | SQL Server Version | Type    | .Bak, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
 |-----------------------------------------|--------------------|----------|---------:|---------:|------------:|-------------------:|-----------------------|-------------------|
 | [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           ? |                  ? |                     ? |                 ? |
 | [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |           ? |                  ? |                     ? |                 ? |
@@ -45,6 +50,7 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 | [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |                  ? |                     ? |                 ? |
 
 [StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
+[WideWorldImporters DWH]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
 [WideWorldImporters OLTP]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
 [AdventureWorks OLTP 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
 [AdventureWorks OLTP 2016]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016.bak
