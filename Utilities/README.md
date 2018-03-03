@@ -4192,6 +4192,7 @@ No 3rd Party Language, No Packages, Just SQL.
 [ApexSQL Trigger]:https://www.apexsql.com/sql_tools_trigger.aspx
 [ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
+[ApexSQL Decrypt]:https://www.apexsql.com/sql_tools_decrypt.aspx
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
