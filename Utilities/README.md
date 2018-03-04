@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **260** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **262** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -20,7 +20,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {18}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {111}
+ - **[?]**: Not yet classified {113}
 
 | Name/Description                                                      | Cross Database                   | Cross Platform | Type       | Official/Download page                      | Release Date | Author                | License    | Free version   | Price |
 |-----------------------------------------------------------------------|----------------------------------|----------------|------------|---------------------------------------------|--------------|-----------------------|------------|----------------|------:|
@@ -78,6 +78,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Red Gate SQL Index Manager](#red-gate-sql-index-manager)             | No                               | No             | [IDX]      | [Red Gate SQL Index Manager]                | ?            | Red Gate              |            | No             |  $149 |
 | [Red Gate SQL Comparison SDK](#red-gate-sql-comparison-sdk)           | No                               | No             | [DC], [SC] | [Red Gate SQL Comparison SDK]               | 2016-02-22   | Red Gate              |            | No             |  $895 |
 | [Red Gate SQL Clone](#red-gate-sql-clone)                             | No                               | No             | [?]        | [Red Gate SQL Clone]                        | 2017-02-27   | Red Gate              |            | No             | $6955 |
+| [Red Gate SQL Provision](#red-gate-sql-provision)                     | No                               | No             | [?]        | [Red Gate SQL Provision]                    | 2018-02-26   | Red Gate              |            | No             | $2955 |
+| [Red Gate Data Masker](#red-gate-data-masker)                         | Oracle                           | No             | [?]        | [Red Gate SQL Data Masker]                  | 2018-02-26   | Red Gate              |            | No             | $2395 |
 | [DLM Automation](#dlm-automation)                                     | No                               | No             | [?]        | [DLM Automation]                            | ?            | Red Gate              |            | No             | ?     |
 | [ReadyRoll](#readyroll)                                               | No                               | No             | [?]        | [ReadyRoll]                                 | 2016-01-03   | Red Gate              |            | No             |  $345 |
 | [Rapid Database Extractor](#rapid-database-extractor)                 | Oracle                           | No             | [?]        | [Rapid Database Extractor]                  | 2016-11-03   | Idera                 |            | Yes            | No    |
@@ -1027,7 +1029,7 @@ Compare and synchronize automatically database schemas and data
 <a id="red-gate-sql-clone"></a>
 Download page: [Red Gate SQL Clone]<br/>
 Release date: 2017-02-27<br/>
-Support Version: 2008/2012/2014/2016/VNext<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
 Author: Red Gate<br/>
 Free version: No<br/>
 Price: $6955
@@ -1036,6 +1038,38 @@ Price: $6955
  - Instead of spending hours provisioning copies of your database for development, testing, or diagnostics, SQL Clone creates one data image of a SQL Server database or backup, which you use as the source for clones.
  - Clones work just like normal databases. You can connect to them and edit them using any program. SQL Clone's web app provides an easy central place to create and manage clones.
  - With SQL Clone, your team can work locally on up-to-date, isolated copies of the database to speed up development, accurately test code, and fix issues faster.
+
+
+## Red Gate SQL Provision
+<a id="red-gate-sql-provision"></a>
+Download page: [Red Gate SQL Provision]<br/>
+Release date: 2018-02-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Red Gate<br/>
+Free version: No<br/>
+Price: $2955
+
+Create, protect, and manage SQL Server database copies for compliant DevOps
+
+
+## Red Gate SQL Data Masker
+<a id="red-gate-sql-data-masker"></a>
+Download page: [Red Gate SQL Data Masker]<br/>
+Release date: 2018-02-26<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Red Gate<br/>
+Free version: No<br/>
+Price: $2355
+
+Replace sensitive data with realistic, anonymized, test data
+
+ - Multiple methods to sanitize sensitive information
+ - Use templates to remain consistent with existing data formats
+ - Replacement data sets included, such as Names, Zip Codes, Emails
+ - Populate test data as well as sanitize existing information
+ - Simple, repeatable, fast, and easy to use
+ - Supports SQL Server and Oracle databases
+
 
 ## DLM Automation
 <a id="dlm-automation"></a>
@@ -4108,6 +4142,7 @@ No 3rd Party Language, No Packages, Just SQL.
 [Red Gate SQL Index Manager]:http://www.red-gate.com/products/dba/sql-index-manager/
 [Red Gate SQL Comparison SDK]:http://www.red-gate.com/products/sql-development/sql-comparison-sdk/
 [Red Gate SQL Clone]:http://www.red-gate.com/products/dba/sql-clone/
+[Red Gate SQL Provision]:https://www.red-gate.com/products/dba/sql-provision/
 [DLM Automation]:http://www.red-gate.com/products/dlm/dlm-automation/
 [ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
 [Rapid Database Extractor]:https://www.idera.com/productssolutions/freetools/rapid-database-extractor
