@@ -278,8 +278,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL MDF Recovery Tool](#sql-mdf-recovery-tool)                       | No                               | No             | [REC]      | [SQL MDF Recovery Tool]                     | ?            | SysTools              | Shareware  | No             |  $129 |
 | [SQL Passord Recovery](#sql-password-recovery)                        | No                               | No             | [REC]      | [SQL Passord Recovery]                      | ?            | SysTools              | Shareware  | No             |  $69  |
 | [SQL Decryptor](#sql-decryptor)                                       | No                               | No             | [?]        | [SQL Decryptor]                             | ?            | SysTools              | Shareware  | No             |  $69  |
-| [SQL Backup Database Recovery](#sql-backup-database-recovery)         | No                               | No             | [REC]      | [Backup Database Recovery]                  | ?            | SysTools              | Shareware  | No             |  $149 |
-| [SQL Log File Viewer](#sql-log-file-viewer)                           | No                               | No             | [?]        | [Log File Viewer]                           | ?            | SysTools              | Shareware  | No             |  $999 |
+| [SQL Backup Database Recovery](#sql-backup-database-recovery)         | No                               | No             | [REC]      | [SQL Backup Database Recovery]              | ?            | SysTools              | Shareware  | No             |  $149 |
+| [SQL Log File Viewer](#sql-log-file-viewer)                           | No                               | No             | [?]        | [SQL Log File Viewer]                       | ?            | SysTools              | Shareware  | No             |  $999 |
 | [DAX Studio](#dax-studio)                                             | No                               | No             | [?]        | [DAX Studio]                                | ?            | Sqlbi                 | Freeware   | Yes            | No    |
 | [SQL Cop](#sql-cop)                                                   | No                               | No             | [?]        | [SQL Cop]                                   | ?            | LessThanDot           | Freeware   | Yes            | No    |
 | [Dataedo](#dataedo)                                                   | Oracle, MySQL                    | No             | [D]        | [Dataedo]                                   | 2017-09-15   | Logic Systems         | Shareware  | Yes            |  $239 |
@@ -1053,7 +1053,7 @@ Create, protect, and manage SQL Server database copies for compliant DevOps
 
 
 ## Red Gate SQL Data Masker
-<a id="red-gate-sql-data-masker"></a>
+<a id="red-gate-data-masker"></a>
 Download page: [Red Gate SQL Data Masker]<br/>
 Release date: 2018-02-26<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
@@ -4143,6 +4143,7 @@ No 3rd Party Language, No Packages, Just SQL.
 [Red Gate SQL Comparison SDK]:http://www.red-gate.com/products/sql-development/sql-comparison-sdk/
 [Red Gate SQL Clone]:http://www.red-gate.com/products/dba/sql-clone/
 [Red Gate SQL Provision]:https://www.red-gate.com/products/dba/sql-provision/
+[Red Gate SQL Data Masker]: https://www.red-gate.com/products/dba/data-masker
 [DLM Automation]:http://www.red-gate.com/products/dlm/dlm-automation/
 [ReadyRoll]:http://www.red-gate.com/products/sql-development/readyroll/
 [Rapid Database Extractor]:https://www.idera.com/productssolutions/freetools/rapid-database-extractor
