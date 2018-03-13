@@ -505,6 +505,8 @@ Articles types:
 | [PLEASE, Please, please Stop Using Impersonation, TRUSTWORTHY, and Cross-DB Ownership Chaining]                         | Solomon Rutzky                           | 2018-12-30 | [DBA]       |
 | [Setting and Identifying Row Goals in Execution Plans]                                                                  | Paul White                               | 2018-02-12 | [DEV]       |
 | [Indexing and Partitioning]                                                                                             | DBA From The Cold                        | 2018-02-21 | [DEV]       |
+| [Schema Compare for SQL Server]                                                                                         | Thomas Larock                            | 2018-02-14 | [DEV]       |
+| [How to change SQL Server ERRORLOG location]                                                                            | Mark Varnas                              | 2018-03-04 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -988,3 +990,5 @@ Articles types:
 [PLEASE, Please, please Stop Using Impersonation, TRUSTWORTHY, and Cross-DB Ownership Chaining]:https://sqlquantumleap.com/2017/12/30/please-please-please-stop-using-impersonation-execute-as/
 [Setting and Identifying Row Goals in Execution Plans]:https://sqlperformance.com/2018/02/sql-plan/setting-and-identifying-row-goals
 [Indexing and Partitioning]:https://dbafromthecold.com/2018/02/21/indexing-and-partitioning/
+[Schema Compare for SQL Server]:https://thomaslarock.com/2018/02/schema-compare-for-sql-server/
+[How to change SQL Server ERRORLOG location]:https://red9.com/sql-server-error-log-location/
