@@ -24,7 +24,7 @@ Official Reference and useful links
  - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
  - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
  - [SQL Formatting standards – Capitalization, Indentation, Comments, Parenthesis](https://solutioncenter.apexsql.com/sql-formatting-standards-capitalization-indentation-comments-parenthesis/) (by ApexSQL)
- - [In The Cloud: The Importance of Being Organized]:http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx
+ - [In The Cloud: The Importance of Being Organized](http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx)
  - [Naming Conventions in Azure](http://www.sqlchick.com/entries/2017/6/24/naming-conventions-in-azure)
  - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
 
@@ -36,10 +36,10 @@ Official Reference and useful links
 | Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | DTR_CheckLogin                     |
 | Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | myschema                           |
 | File Table                       |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | FT_MyTable                         |
-| Global Temporary Table           |      | PascalCase |    118 | No     | No     | No     | Yes          | ##[A-z][0-9] | ##MyTable                          |
-| Local Temporary Table            |      | PascalCase |    118 | No     | No     | No     | Yes          | #[A-z][0-9]  | #MyTable                           |
-| Table                            | U    | PascalCase |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | MyTable                            |
-| Table Column                     |      | PascalCase |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | MyColumn                           |
+| Global Temporary Table           |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | ##MyTable                          |
+| Local Temporary Table            |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | #MyTable                           |
+| Table                            | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | MyTable                            |
+| Table Column                     |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | MyColumn                           |
 | Table Default Values             | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | DF_MyTable_MyColumn                |
 | Table Check Column Constraint    | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | CK_MyTable_MyColumn                |
 | Table Check Table Constraint     | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | CTK_MyTable_MyColumn_AnotherColumn |
@@ -51,17 +51,17 @@ Official Reference and useful links
 | Table Trigger                    | TR   | PascalCase |    128 | No     | TR_    | No     | Yes          | [A-z][0-9]   | TR_MyTable_LogicalName             |
 | View                             | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | VI_LogicalName                     |
 | Stored Procedure                 | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | usp_LogicalName                    |
-| Scalar User-Defined Function     | FN   | PascalCase |     50 | No     | udf_   | No     | No           | [A-z][0-9]   | udf_FunctionLogicalName            |
-| Table-Valued Function            | FN   | PascalCase |     50 | No     | tvf_   | No     | No           | [A-z][0-9]   | tvf_FunctionLogicalName            |
+| Scalar User-Defined Function     | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | udf_FunctionLogicalName            |
+| Table-Valued Function            | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | tvf_FunctionLogicalName            |
 | Synonym                          | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | sy_logicalName                     |
 | Sequence                         | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | sq_TableName                       |
 | CLR Assembly                     |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | CALogicalName                      |
 | CLR Stored Procedures            | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | pc_CAName_LogicalName              |
-| CLR Scalar User-Defined Function |      | PascalCase |     50 | No     | cudf_  | No     | No           | [A-z][0-9]   | cudf_CAName_LogicalName            |
-| CLR Table-Valued Function        |      | PascalCase |     50 | No     | ctvf_  | No     | No           | [A-z][0-9]   | ctvf_CAName_LogicalName            |
-| CLR User-Defined Aggregates      |      | PascalCase |     50 | No     | ca_    | No     | No           | [A-z][0-9]   | ca_CAName_LogicalName              |
-| CLR  User-Defined Types          |      | PascalCase |     50 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
-| CLR  Triggers                    |      | PascalCase |     50 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
+| CLR Scalar User-Defined Function |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | cudf_CAName_LogicalName            |
+| CLR Table-Valued Function        |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | ctvf_CAName_LogicalName            |
+| CLR User-Defined Aggregates      |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | ca_CAName_LogicalName              |
+| CLR  User-Defined Types          |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
+| CLR  Triggers                    |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
 
 ## T-SQL Programming Style
@@ -110,16 +110,16 @@ SELECT t1.Value1 AS Val1
 
 ### Stored procedures and functions programming style
 
- - All stored procedures and functions should use ALTER statement and start with the object presence check
- - ALTER statement should be preceded by 2 line breaks
+ - All stored procedures and functions should use `ALTER` statement and start with the object presence check
+ - `ALTER` statement should be preceded by 2 line breaks
  - Parameters name should be in **camelCase**
  - Parameters should be placed under procedure name divided by line breaks
- - After the ALTER statement and before AS keyword should be placed a comment with execution example
+ - After the `ALTER` statement and before AS keyword should be placed a comment with execution example
  - The procedure or function should begin with parameter check
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
  - Always use `/* */` instead inline comment `--`
- - Use `SET NOCOUNT ON` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
+ - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
  - Use TOP expression with `()`:
 ```tsql
 -- Not working without ()

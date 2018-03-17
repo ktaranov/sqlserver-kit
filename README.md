@@ -44,7 +44,7 @@ Headers:
  - [SQL Server Data Types](/SQL%20Server%20Data%20Types.md)
  - [SQL Server Drivers](/SQL%20Server%20Drivers.md)
  - [SQL Server Edition](/SQL%20Server%20Edition.md)
- - [SQL Server Hints](/SQL%20Server%Hints.md)
+ - [SQL Server Hints](/SQL%20Server%20Hints.md)
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
@@ -324,6 +324,7 @@ Headers:
     - [Telegraf SQL Server Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) (by influxdata)
     - [SDU Tools - pure TSQL functions Toolkit](https://sqldownunder.com/sdu-tools/) (by SQLDownUnder)
     - [Microsoft SQL Server Publications](https://www.microsoft.com/en-us/research/search/?q=sql+server&content-type=publications)
+    - [SQL Server Feedback](https://feedback.azure.com/forums/908035-sql-server)
 
 [*Back to top*](#header02)
 
