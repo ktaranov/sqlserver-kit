@@ -43,39 +43,41 @@ Because of this, we do not anticipate that SSMS with all latest updates applied)
 Customers are advised to contact support, should they encounter any issues with SSMS on Windows Server 2016.
 Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
 
+
 ## Available Languages
 SQL Server Management Studio for another languages:
- - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x404)
- - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [French](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [German](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Italian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Japanese](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Korean](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Russian](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
- - [Spanish](https://go.microsoft.com/fwlink/?linkid=854085&clcid=0x804)
+ - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x404)
+ - [English (United States)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [French](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [German](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Italian](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Japanese](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Korean](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Russian](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
+ - [Spanish](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804)
 
-SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
- - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x804)
- - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x404)
- - [English (United States)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x409)
- - [French](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40c)
- - [German](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x407)
- - [Italian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x410)
- - [Japanese](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x411)
- - [Korean](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x412)
- - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x416)
- - [Russian](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x419)
- - [Spanish](https://go.microsoft.com/fwlink/?linkid=854087&clcid=0x40a)
+SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.6):
+ - [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x804)
+ - [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x404)
+ - [English (United States)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x409)
+ - [French](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x40c)
+ - [German](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x407)
+ - [Italian](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x410)
+ - [Japanese](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x411)
+ - [Korean](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x412)
+ - [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x416)
+ - [Russian](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x419)
+ - [Spanish](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x40a)
 
 
 ## SQL Server Management Studio Download Links and Release Info
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.5 Release] **Latest**        | 14.0.17224.0  | 2018-02-15   |      802 |
+| [17.6 Release] **Latest**        | 14.0.17230.0  | 2018-03-20   |      802 |
+| [17.5 Release]                   | 14.0.17224.0  | 2018-02-15   |      802 |
 | [17.4 Release]                   | 14.0.17213.0  | 2017-12-07   |      802 |
 | [17.3 Release]                   | 14.0.17199.0  | 2017-10-09   |      801 |
 | [17.2 Release]                   | 14.0.17177.0  | 2017-08-07   |      819 |
@@ -98,6 +100,7 @@ SQL Server Management Studio 17.3 Upgrade Package (upgrades 17.x to 17.3):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.6 Release]:https://go.microsoft.com/fwlink/?linkid=870039
 [17.5 Release]:https://go.microsoft.com/fwlink/?linkid=867670
 [17.4 Release]:https://go.microsoft.com/fwlink/?linkid=864329
 [17.3 Release]:https://go.microsoft.com/fwlink/?linkid=858904
