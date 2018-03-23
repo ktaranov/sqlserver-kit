@@ -62,6 +62,7 @@ Great thanks to:
  - Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
  - Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
  - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
+ - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
 
 
 <a id="1"></a>
@@ -81,6 +82,14 @@ Detailed information you can find in this article [Symbolic Links for Sharing Te
 ## SSMS Shortcuts
 All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
 Known problem for SSMS 2012 and 2014: [CTRL+R does not hide the Query Result window in SSMS]
+
+Create custom shortcut as simple as possible:
+1. `Tools > Options > Environment > Keyboard`
+2. Use the search bar `Show Commands Containing` to find and select the command.
+3. In `Press Shortcut Keys`, press the shortcut combination you want to use.
+4. Click `Assign`. If you don’t click `Assign`, and just click `OK`, your shortcut won’t be assigned.
+5. Click `OK`. (Note that some shortcut changes take effect in query windows you open after the change.)
+More details here: [MANAGEMENT STUDIO SHORTCUT – CHANGE CONNECTION](http://www.midnightdba.com/Jen/2018/03/management-studio-shortcut-change-connection/)
 
 Most useful are:
 
@@ -757,3 +766,5 @@ Reference:
 [New in SSMS – Always On Availability Group Latency Reports]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-always-on-availability-group-latency-reports/
 [SQL Vulnerability Assessment Available in SSMS]:https://thomaslarock.com/2017/12/sql-vulnerability-assessment-available-in-ssms/
 [Import Flat File to SQL Wizard]:https://docs.microsoft.com/en-us/sql/relational-databases/import-export/import-flat-file-wizard
+[SSMS Tips by Wayne Sheffield]:http://blog.waynesheffield.com/wayne/archive/tag/ssms-tips/
+[SQL Management Studio, Trusted Connections, and Remote User accounts]:https://weblogs.asp.net/miked/sql-management-studio-trusted-connections-and-remote-user-accounts
