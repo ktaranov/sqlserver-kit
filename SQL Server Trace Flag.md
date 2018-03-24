@@ -1560,6 +1560,7 @@ Link: http://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br
 Link: https://support.microsoft.com/help/2952444<br />
 Link: [Docs Trace Flags]<br />
 Link: https://www.brentozar.com/archive/2017/02/using-trace-flag-2453-improve-table-variable-performance<br />
+Link: https://www.brentozar.com/archive/2018/03/table-valued-parameters-unexpected-parameter-sniffing<br />
 Scope: global or session or query
 
 
