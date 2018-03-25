@@ -31,24 +31,26 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 
 ## Sample databases information
 
-| Name/Download backups                   | SQL Server Version | Type    | .Bak, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
+| Name/Download backups                   | SQL Server Version | Type     | .Bak, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
 |-----------------------------------------|--------------------|----------|---------:|---------:|------------:|-------------------:|-----------------------|-------------------|
-| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           ? |                  ? |                     ? |                 ? |
-| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |           ? |                  ? |                     ? |                 ? |
-| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |        ? |           ? |                  ? |                     ? |                 ? |
+| [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |        ? |           9 |                  ? |                     ? |                 ? |
+| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           9 |                  ? |                     ? |                 ? |
+| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |          29 |                  ? |                     ? |                 ? |
+| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |          48 |                  ? |                     ? |                 ? |
+| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |        ? |          71 |                  ? |                     ? |                 ? |
+| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |        ? |          96 |                  ? |                     ? |                 ? |
+| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |        ? |          71 |                  ? |                     ? |                 ? |
+| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |        ? |          71 |                  ? |                     ? |                 ? |
+| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |        ? |          71 |                  ? |                     ? |                 ? |
+| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |        ? |          31 |                  ? |                     ? |                 ? |
+| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
+| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |        ? |          33 |                  ? |                     ? |                 ? |
+| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
+| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
 | [AdventureWorks Multidimensional Model] |                  ? | AS       |       21 |        ? |           ? |                  ? |                     ? |                 ? |
 | [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |                  ? |                     ? |                 ? |
 
+[StackOverflow 2010 Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
 [StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
 [WideWorldImporters DWH]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
 [WideWorldImporters OLTP]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
