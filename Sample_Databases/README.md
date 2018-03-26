@@ -1,7 +1,52 @@
 # SQL Server Sample Databases and Datasets
 Some databases you can download from this repository: https://rebrand.ly/sample-db
 
-## Sample Databases
+
+## Sample databases information
+
+| Name / Download links                   | SQL Server Version | Type     | .Bak, MB | .Mdf, MB | Table count |
+|-----------------------------------------|--------------------|----------|---------:|---------:|------------:|
+| [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |        ? |           9 |
+| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           9 |
+| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |          29 |
+| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |          48 |
+| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |        ? |          71 |
+| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |        ? |          96 |
+| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |        ? |          71 |
+| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |        ? |          71 |
+| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |        ? |          71 |
+| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |        ? |          31 |
+| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |        ? |          31 |
+| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |        ? |          33 |
+| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |        ? |          31 |
+| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |        ? |          31 |
+| [AdventureWorks Multidimensional Model] |                  ? | AS       |       21 |        ? |           ? |
+| [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |
+
+[StackOverflow 2010 Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
+[StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
+[WideWorldImporters DWH]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
+[WideWorldImporters OLTP]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
+[AdventureWorks OLTP 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
+[AdventureWorks OLTP 2016]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016.bak
+[AdventureWorks OLTP 2016 Extended]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016_EXT.bak
+[AdventureWorks OLTP 2014]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak
+[AdventureWorks OLTP 2012]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2012.bak
+[AdventureWorks DWH 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak
+[AdventureWorks DWH 2016]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016.bak
+[AdventureWorks DWH 2016 Extended]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016_EXT.bak
+[AdventureWorks DWH 2014]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2014.bak
+[AdventureWorks DWH 2012]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2012.bak
+[AdventureWorks Multidimensional Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-multidimensional-model-full-database-backup.zip
+[AdventureWorks Tabular Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-tabular-model-1200-full-database-backup.zip
+
+
+## Datasets
+ - [Data.gov](https://www.data.gov/)
+ - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
+
+
+## Useful Links
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2017, 2016, 2014 , 2012](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
  - [AdventureWorks for Analysis Services](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks-analysis-services)
  - [AdventureWorks Sample Databases and Scripts for SQL Server 2008 R2](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks2008r2)
@@ -22,47 +67,3 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
  - [Orders: Open Source Sample Database](https://www.brentozar.com/orders-open-source-sample-database/) (by Brent Ozar)
  - [BabbyNames Database](https://github.com/LitKnd/BabbyNames) (by Kendra Little)
  - [SQL Server Sakila DB](https://www.jooq.org/sakila) (by jOQO)
-
- 
- ## Datasets
- - [Data.gov](https://www.data.gov/)
- - [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/) (This dataset contains product reviews and metadata from Amazon, including 142.8 million reviews spanning May 1996 - July 2014)
-
-
-## Sample databases information
-
-| Name/Download backups                   | SQL Server Version | Type     | .Bak, MB | .Mdf, MB | Table count | AVG Rows per table | Median rows per table | Max rows in table |
-|-----------------------------------------|--------------------|----------|---------:|---------:|------------:|-------------------:|-----------------------|-------------------|
-| [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |        ? |           9 |                  ? |                     ? |                 ? |
-| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           9 |                  ? |                     ? |                 ? |
-| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |          29 |                  ? |                     ? |                 ? |
-| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |          48 |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |        ? |          71 |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |        ? |          96 |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |        ? |          71 |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |        ? |          71 |                  ? |                     ? |                 ? |
-| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |        ? |          71 |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |        ? |          31 |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |        ? |          33 |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
-| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |        ? |          31 |                  ? |                     ? |                 ? |
-| [AdventureWorks Multidimensional Model] |                  ? | AS       |       21 |        ? |           ? |                  ? |                     ? |                 ? |
-| [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |                  ? |                     ? |                 ? |
-
-[StackOverflow 2010 Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
-[StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
-[WideWorldImporters DWH]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
-[WideWorldImporters OLTP]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
-[AdventureWorks OLTP 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
-[AdventureWorks OLTP 2016]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016.bak
-[AdventureWorks OLTP 2016 Extended]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2016_EXT.bak
-[AdventureWorks OLTP 2014]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2014.bak
-[AdventureWorks OLTP 2012]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2012.bak
-[AdventureWorks DWH 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2017.bak
-[AdventureWorks DWH 2016]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016.bak
-[AdventureWorks DWH 2016 Extended]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2016_EXT.bak
-[AdventureWorks DWH 2014]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2014.bak
-[AdventureWorks DWH 2012]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2012.bak
-[AdventureWorks Multidimensional Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-multidimensional-model-full-database-backup.zip
-[AdventureWorks Tabular Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-tabular-model-1200-full-database-backup.zip
