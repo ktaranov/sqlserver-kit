@@ -6,20 +6,20 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 
 | Name / Download links                   | SQL Server Version | Type     | .Bak, MB | .Mdf, MB | Table count |
 |-----------------------------------------|--------------------|----------|---------:|---------:|------------:|
-| [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |        ? |           9 |
-| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |        ? |           9 |
-| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |        ? |          29 |
-| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |        ? |          48 |
-| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |        ? |          71 |
-| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |        ? |          96 |
-| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |        ? |          71 |
-| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |        ? |          71 |
-| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |        ? |          71 |
-| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |        ? |          31 |
-| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |        ? |          31 |
-| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |        ? |          33 |
-| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |        ? |          31 |
-| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |        ? |          31 |
+| [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |     9104 |           9 |
+| [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |          |           9 |
+| [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |     1024 |          29 |
+| [WideWorldImporters DWH]                |                  ? | DWH      |       47 |     2048 |          48 |
+| [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |      264 |          71 |
+| [AdventureWorks OLTP 2016]              |             >=2016 | OLTP     |       93 |      208 |          96 |
+| [AdventureWorks OLTP 2016 Extended]     |             >=2016 | OLTP     |      125 |      386 |          71 |
+| [AdventureWorks OLTP 2014]              |             >=2014 | OLTP     |       44 |      205 |          71 |
+| [AdventureWorks OLTP 2012]              |             >=2012 | OLTP     |       44 |      192 |          71 |
+| [AdventureWorks DWH 2017]               |             >=2017 | DWH      |       22 |      136 |          31 |
+| [AdventureWorks DWH 2016]               |             >=2016 | DWH      |       21 |      170 |          31 |
+| [AdventureWorks DWH 2016 Extended]      |             >=2016 | DWH      |      883 |     1466 |          33 |
+| [AdventureWorks DWH 2014]               |             >=2014 | DWH      |       21 |      170 |          31 |
+| [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |      124 |          31 |
 | [AdventureWorks Multidimensional Model] |                  ? | AS       |       21 |        ? |           ? |
 | [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |
 
