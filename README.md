@@ -1,14 +1,4 @@
 # SQL Server KIT
-
-<a name="header01"></a>
-<a name="header02"></a>
-<a name="header020"></a>
-<a name="header04"></a>
-<a name="header05"></a>
-<a name="header06"></a>
-<a name="header07"></a>
-<a name="header08"></a>
-<a name="header09"></a>
 [![licence badge]][licence]
 [![stars badge]][stars]
 [![forks badge]][forks]
@@ -29,7 +19,7 @@
 
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
-Headers:
+## Table of Contents
  - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
@@ -96,11 +86,11 @@ Headers:
     - and many others...
  - [Utilities](/Utilities) (**Complete list of 262 SQLSQL Server paid and free Utilities and Tools**)
 
-[*Back to top*](#header01)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## SQL Server Web Resources
- - Blogs
+ - Blogs <a id="blogs"></a>
     - [SQL Central Blog Scripts](http://www.sqlservercentral.com/Scripts/)
     - [SQL Central Blog Articles](http://www.sqlservercentral.com/Articles/)
     - [SQL Central Blog Stairways](http://www.sqlservercentral.com/stairway/)
@@ -147,7 +137,7 @@ Headers:
     - [RDX Blog](http://blog.rdx.com)
     - [Codingsight](http://codingsight.com/)
     - [Solomon Rutzky's SQL Quantum Leap Blog](https://SqlQuantumLeap.com/)
- - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/))
+ - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
      - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you’re owned)
@@ -161,7 +151,7 @@ Headers:
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [SQL Server Database Engine Permission Posters](http://social.technet.microsoft.com/wiki/contents/articles/11842.sql-server-database-engine-permission-posters.aspx)
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
- - Free Videos
+ - Free Videos <a id="free-videos"></a>
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -182,7 +172,7 @@ Headers:
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
    - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
    - [MVP: Data Platform](https://channel9.msdn.com/Blogs/MVP-Data-Platform)
- - Free Database Podcasts
+ - Free Database Podcasts <a id="podcasts"></a>
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
    - [Away from the Keyboard](http://awayfromthekeyboard.com/) (by Cecil Phillip and Richie Rump)
@@ -199,7 +189,7 @@ Headers:
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
    - [SQL Down Under Podcast](https://www.sqldownunder.com) (by Greg Low)
    - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
- - Courses
+ - Courses <a id="courses"></a>
    - Free
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
@@ -250,7 +240,7 @@ Headers:
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
-   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (473 People, Russian)
+   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (563 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -326,7 +316,7 @@ Headers:
     - [Microsoft SQL Server Publications](https://www.microsoft.com/en-us/research/search/?q=sql+server&content-type=publications)
     - [SQL Server Feedback](https://feedback.azure.com/forums/908035-sql-server)
 
-[*Back to top*](#header02)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## BIML Resources and Bloggers
@@ -370,7 +360,7 @@ BIML Bloggers
 - [Tim Mitchell](https://www.timmitchell.net/post/tag/biml/)
 - [Warwick Rudd](http://www.sqlmastersconsulting.com.au/SQL-Server-Blog/PID/1675/mcat/1682/evl/0/nsw/t/EDNSearch/Biml)
 
-[*Back to top*](#header020)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## PowerShell and SQL Server
@@ -398,7 +388,7 @@ BIML Bloggers
  - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
  - [Export-DMVInformation - Export the resuts from Glenn Berry's DMV queries directly to Excel](https://github.com/sanderstad/Export-DMVInformation/) (Github) (by Sander Stad)
 
-[*Back to top*](#header05)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## TSQL Format Code
@@ -412,7 +402,7 @@ BIML Bloggers
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
 
-[*Back to top*](#header06)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## SQL Server Test Data Generation
@@ -423,7 +413,7 @@ BIML Bloggers
  - http://databene.org/databene-benerator
  - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
 
-[*Back to top*](#header07)
+**[⬆ back to top](#table-of-contents)**
 
 
 <a id="free-ebooks"></a>
@@ -481,7 +471,7 @@ R:
  - [Text Mining with R](http://tidytextmining.com/) (by Julia Silge and David Robinson)
  - [An Introduction to Statistical Learning with Applications in R](http://www-bcf.usc.edu/~gareth/ISL/) (by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani)
 
-[*Back to top*](#header08)
+**[⬆ back to top](#table-of-contents)**
 
 
 ## License
@@ -489,5 +479,3 @@ R:
 
 If some procedures or scripts are restricted due to **ELUA** (or we can not find original author), please email or add issue - we remove/update it immediately.
 Thanks for understanding and patience.
-
-<a name="header09"></a>
