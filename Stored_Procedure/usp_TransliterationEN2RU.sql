@@ -37,9 +37,9 @@ SET @inputstring = UPPER(@inputstring);
     declare 
         @result_table table (id int, translate varchar(8000))
 
-    ------------------------------------------------------------------	
-    ------- 1 - в соответствии с приложением 6 приказа МВД России от 26 мая 1997 г. N 310 ------------------	 	 
-     select  
+    ------------------------------------------------------------------
+    ------- 1 - в соответствии с приложением 6 приказа МВД России от 26 мая 1997 г. N 310 ------------------
+     select
          @counter = 1
         ,@outputstring = ''
     
@@ -65,21 +65,21 @@ SET @inputstring = UPPER(@inputstring);
     select @str = @str + t1.ch + t2.ch + t3.ch + '|' from @t1 t1, @t2 t2, @t1 t3
     -----------------------------------------------------------------------------
     -- exec transliteration 'ВаСиньин еГЕпа. ксения чьё ю вася мясо шняжка ' , 1
-    while (@counter <= len(@inputstring))
-    begin
-        select @ch1 = substring(@inputstring,@counter,1)
-        select @ch2 = substring(@inputstring,@counter,2)
+    WHILE (@counter <= len(@inputstring))
+    BEGIN
+        SELECT @ch1 = SUBSTRING(@inputstring,@counter,1)
+        SELECT @ch2 = SUBSTRING(@inputstring,@counter,2)
 
 
         select  
             @outputstring = @outputstring + 
                 case
-                    when J8 > 0 then 
-                                    case 
-                                        when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then'INE'
-                                        else 'ine'
-                                    end
-                    when J7 > 0 then 
+                    when J8 > 0 THEN
+                                    CASE
+                                        WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then'INE'
+                                        ELSE 'ine'
+                                    END
+                    when J7 > 0 THEN 
                                     case 
                                         when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then'IE'
                                         else 'ie'
@@ -96,20 +96,20 @@ SET @inputstring = UPPER(@inputstring);
                                     end
                     when J4 > 0 then 
                                     case
-                                        when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then 'GUIA'	
-                                        when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then 'Guia'																																																											
+                                        when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then 'GUIA'
+                                        when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then 'Guia'
                                         else 'guia'
                                     end
                     when J3 > 0 then 
                                     case
-                                        when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then 'GUIOU'	
-                                        when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then 'Guiou'																																																											
+                                        when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then 'GUIOU'
+                                        when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then 'Guiou'
                                         else 'guiou'
                                     end
                     when J2 > 0 then replace(substring(
                                                         case
-                                                            when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then '|GUE|GUE|GUI|GUI|GUY'	
-                                                            when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then '|Gue|Gue|Gui|Gui|Guy'																																																											
+                                                            when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then '|GUE|GUE|GUI|GUI|GUY'
+                                                            when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then '|Gue|Gue|Gui|Gui|Guy'
                                                             else '|gue|gue|gui|gui|guy'
                                                         end, J2 + 1, 3), '|', '')
                     when J1 > 0 then substring(
@@ -142,16 +142,16 @@ SET @inputstring = UPPER(@inputstring);
                 end
         FROM (
             SELECT
-                 PATINDEX('%|' + SUBSTRING(@inputstring,@counter,3) + '|%','|ИН |ИН,|ИН.|ИН;|ИН:|' )    AS J8 -- Фамилия на "ин" пишутся с "e" - Vassine - Васин.
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter,2) + '|%','|ЬЕ|ЬЁ|' )                  AS J7 -- Если в фамилии после "ь" следует "e", то пишется "ie"
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter,2) + '|%','|КС|' )                     AS J6 -- Сочетание "кс" во французском тексте пишется как "х"
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter-1,3) + '|%','|'+ @str )                AS J5 -- С - между двумя гласными выражается - ss
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter,2) + '|%','|ГЯ|' )                     AS J4 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter,2) + '|%','|ГЮ|' )                     AS J3 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%|' + SUBSTRING(@inputstring,@counter,2) + '|%','|ГЕ||ГЭ||ГИ||ГЙ||ГЫ|')      AS J2 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%'  + SUBSTRING(@inputstring,@counter,1) +  '%','УХЦШЯ')                     AS J1
-                ,PATINDEX('%'  + SUBSTRING(@inputstring,@counter,1)  +  '%','ЧЮ')                        AS J11
-                ,PATINDEX('%'  + SUBSTRING(@inputstring,@counter,1) +  '%','АБВГДЕЁЖЗИЙКЛМНОПРСТФЫЭЪЬ') AS J0
+                 PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 3) + '|%','|ИН |ИН,|ИН.|ИН;|ИН:|' )    AS J8 -- Фамилия на "ин" пишутся с "e" - Vassine - Васин.
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ЬЕ|ЬЁ|' )                  AS J7 -- Если в фамилии после "ь" следует "e", то пишется "ie"
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|КС|' )                     AS J6 -- Сочетание "кс" во французском тексте пишется как "х"
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter - 1,3) + '|%','|'+ @str )                AS J5 -- С - между двумя гласными выражается - ss
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЯ|' )                     AS J4 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЮ|' )                     AS J3 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
+                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЕ||ГЭ||ГИ||ГЙ||ГЫ|')      AS J2 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
+                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1) +  '%','УХЦШЯ')                     AS J1
+                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1)  +  '%','ЧЮ')                        AS J11
+                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1) +  '%','АБВГДЕЁЖЗИЙКЛМНОПРСТФЫЭЪЬ') AS J0
             ) J
     END;
 
@@ -160,15 +160,15 @@ SET @inputstring = UPPER(@inputstring);
 
 
     ------------------------------------------------------------------	
-    ------- 2 - в соответствии с ГОСТ Р 52535.1-2006 ------------------	 
+    ------- 2 - в соответствии с ГОСТ Р 52535.1-2006 ------------------
      SELECT
          @counter = 1
         ,@outputstring = '';
 
     WHILE (@counter <= len(@inputstring))
     BEGIN
-        SELECT @ch1 = SUBSTRING(@inputstring,@counter,1)
-        SELECT @ch2 = SUBSTRING(@inputstring,@counter,2)
+        SELECT @ch1 = SUBSTRING(@inputstring, @counter, 1)
+        SELECT @ch2 = SUBSTRING(@inputstring, @counter, 2)
         SELECT
             @outputstring = @outputstring + 
                 CASE
@@ -204,10 +204,10 @@ SET @inputstring = UPPER(@inputstring);
 
     ------------------------------------------------------------------	
     ------- 3 - в соответствии с п. 97 приказа ФМС России N 320 от 15 октября 2012 г.[10] в соответствии с рекомендованным ИКАО международным стандартом (Doc 9303, часть 1, добавлении 9 к разделу IV) ------------------	 
-     select  		 
+     select
          @counter = 1
         ,@outputstring = ''
-         
+
     WHILE (@counter <= len(@inputstring))
     BEGIN
         SELECT @ch1 = substring(@inputstring,@counter,1);
