@@ -1,80 +1,81 @@
-IF OBJECT_ID('dbo.usp_TransliterationEN2RU', 'P') IS NULL
+п»їIF OBJECT_ID('dbo.usp_TransliterationEN2RU', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.usp_TransliterationEN2RU AS SELECT 1;');
 GO
 
 
 ALTER PROCEDURE usp_TransliterationEN2RU
 (
-    @inputstring varchar(8000),
-    @transid int = null
+    @inputString NVARCHAR(MAX),
+    @transid     INT = NULL
 ) as
 /*
 .EXAMPLE
-  EXEC usp_TransliterationEN2RU @inputstring = 'Шрамко Александр';
+  EXEC usp_TransliterationEN2RU @inputString = 'РЁСЂР°РјРєРѕ РђР»РµРєСЃР°РЅРґСЂ';
 
 .NOTE
-  Author: Шрамко Александр
-  Original link: https://github.com/shramko/mssql/blob/master/transliteration.sql
+  Version: 2.0
+  Modified: 218-04-01 23:40:00 UTC+3 by Konstantin Taranov
+  Author: Shramko Aleksandr https://github.com/shramko/mssql/blob/master/transliteration.sql
+  Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/usp_TransliterationEN2RU.sql
 */
-BEGIN
+BEGIN TRY
     /*
-        @transid - ид варианта транслитерации. сейчас используются следующие
-        1 - в соответствии с приложением 6 приказа МВД России от 26 мая 1997 г. N 310 http://rosadvokat.ru/open.php?id=11800742_1
-        2 - в соответствии с ГОСТ Р 52535.1-2006 http://www.complexdoc.ru/pdf/%D0%93%D0%9E%D0%A1%D0%A2%20%D0%A0%2052535.1-2006/gost_r_52535.1-2006.pdf
-        3 - в соответствии с п. 97 приказа ФМС России N 320 от 15 октября 2012 г.[10] в соответствии с рекомендованным ИКАО международным стандартом (Doc 9303, часть 1, добавлении 9 к разделу IV) http://www.icao.int/publications/Documents/9303_p1_v1_cons_ru.pdf
+        @transid - РёРґ РІР°СЂРёР°РЅС‚Р° С‚СЂР°РЅСЃР»РёС‚РµСЂР°С†РёРё. СЃРµР№С‡Р°СЃ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ СЃР»РµРґСѓСЋС‰РёРµ
+        1 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РїСЂРёР»РѕР¶РµРЅРёРµРј 6 РїСЂРёРєР°Р·Р° РњР’Р” Р РѕСЃСЃРёРё РѕС‚ 26 РјР°СЏ 1997 Рі. N 310 http://rosadvokat.ru/open.php?id=11800742_1
+        2 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Р“РћРЎРў Р  52535.1-2006 http://www.complexdoc.ru/pdf/%D0%93%D0%9E%D0%A1%D0%A2%20%D0%A0%2052535.1-2006/gost_r_52535.1-2006.pdf
+        3 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Рї. 97 РїСЂРёРєР°Р·Р° Р¤РњРЎ Р РѕСЃСЃРёРё N 320 РѕС‚ 15 РѕРєС‚СЏР±СЂСЏ 2012 Рі.[10] РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ СЂРµРєРѕРјРµРЅРґРѕРІР°РЅРЅС‹Рј РРљРђРћ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рј СЃС‚Р°РЅРґР°СЂС‚РѕРј (Doc 9303, С‡Р°СЃС‚СЊ 1, РґРѕР±Р°РІР»РµРЅРёРё 9 Рє СЂР°Р·РґРµР»Сѓ IV) http://www.icao.int/publications/Documents/9303_p1_v1_cons_ru.pdf
 
     */
 
-SET @inputstring = UPPER(@inputstring);
-
     DECLARE
-         @outputstring VARCHAR(8000)
+         @outputstring NVARCHAR(MAX)
         ,@counter      INT
-        ,@ch1          VARCHAR(10)
-        ,@ch2          VARCHAR(10)
-        ,@ch3          VARCHAR(10);
+        ,@ch1          NVARCHAR(10)
+        ,@ch2          NVARCHAR(10)
+        ,@ch3          NVARCHAR(10);
     
-    declare 
-        @result_table table (id int, translate varchar(8000))
+    DECLARE @result_table TABLE (id int, translate NVARCHAR(MAX))
 
     ------------------------------------------------------------------
-    ------- 1 - в соответствии с приложением 6 приказа МВД России от 26 мая 1997 г. N 310 ------------------
+    ------- 1 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ РїСЂРёР»РѕР¶РµРЅРёРµРј 6 РїСЂРёРєР°Р·Р° РњР’Р” Р РѕСЃСЃРёРё РѕС‚ 26 РјР°СЏ 1997 Рі. N 310 ------------------
      select
          @counter = 1
         ,@outputstring = ''
     
-    --подготовка случаев: С - между двумя гласными выражается - ss - Goussev.
-    declare @t1 table (ch char)
-    insert into @t1
-              select 'А'
-        union select 'Е'
-        union select 'Ё'
-        union select 'И'
-        union select 'О'
-        union select 'У'
-        union select 'Ы'
-        union select 'Э'
-        union select 'Ю'
-        union select 'Я'
+    --РїРѕРґРіРѕС‚РѕРІРєР° СЃР»СѓС‡Р°РµРІ: РЎ - РјРµР¶РґСѓ РґРІСѓРјСЏ РіР»Р°СЃРЅС‹РјРё РІС‹СЂР°Р¶Р°РµС‚СЃСЏ - ss - Goussev.
+    DECLARE @t1 TABLE (ch NCHAR(1));
+    INSERT INTO @t1
+              SELECT N'Рђ'
+        UNION SELECT N'Р•'
+        UNION SELECT N'РЃ'
+        UNION SELECT N'Р'
+        UNION SELECT N'Рћ'
+        UNION SELECT N'РЈ'
+        UNION SELECT N'Р«'
+        UNION SELECT N'Р­'
+        UNION SELECT N'Р®'
+        UNION SELECT N'РЇ';
     
-    declare @t2 table (ch char)
-    insert into @t2
-        select 'С';
+    DECLARE @t2 TABLE (ch NCHAR(1))
+    INSERT INTO @t2
+        SELECT N'РЎ';
     
-    declare @str varchar(4000) = '';
-    select @str = @str + t1.ch + t2.ch + t3.ch + '|' from @t1 t1, @t2 t2, @t1 t3
+    DECLARE @str NVARCHAR(4000) = N'';
+    SELECT @str = @str + t1.ch + t2.ch + t3.ch + N'|'
+      FROM @t1 t1, @t2 t2, @t1 t3
     -----------------------------------------------------------------------------
-    -- exec transliteration 'ВаСиньин еГЕпа. ксения чьё ю вася мясо шняжка ' , 1
-    WHILE (@counter <= len(@inputstring))
+    -- exec transliteration 'Р’Р°РЎРёРЅСЊРёРЅ РµР“Р•РїР°. РєСЃРµРЅРёСЏ С‡СЊС‘ СЋ РІР°СЃСЏ РјСЏСЃРѕ С€РЅСЏР¶РєР° ' , 1
+    WHILE (@counter <= LEN(@inputString))
     BEGIN
-        SELECT @ch1 = SUBSTRING(@inputstring,@counter,1)
-        SELECT @ch2 = SUBSTRING(@inputstring,@counter,2)
 
+        SET @ch1 = SUBSTRING(@inputString, @counter, 1);
+        SET @ch2 = SUBSTRING(@inputString, @counter, 2);
+            PRINT(@counter);
 
-        select  
-            @outputstring = @outputstring + 
-                case
-                    when J8 > 0 THEN
+        SELECT
+            @outputstring = @outputstring +
+                CASE
+                    WHEN J8 > 0 THEN
                                     CASE
                                         WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then'INE'
                                         ELSE 'ine'
@@ -98,7 +99,7 @@ SET @inputstring = UPPER(@inputstring);
                                     case
                                         when @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then 'GUIA'
                                         when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then 'Guia'
-                                        else 'guia'
+                                        ELSE 'guia'
                                     end
                     when J3 > 0 then 
                                     case
@@ -130,45 +131,45 @@ SET @inputstring = UPPER(@inputstring);
                                                     ELSE 'abvgdeejziyklmnoprstfye'
                                                 END, J0, 1)
                     ELSE CASE 
-                            WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then replace(@ch1,'Щ','SHTCH')
-                            WHEN @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then replace(@ch1,'Щ','Shtch')
-                            ELSE replace(@ch1,'щ','shtch')
-                         END 
-                end
+                            WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then replace(@ch1,'Р©','SHTCH')
+                            WHEN @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then replace(@ch1,'Р©','Shtch')
+                            ELSE REPLACE(@ch1,'С‰','shtch')
+                         END
+                END
             ,@counter = @counter + 
-                case					
-                    when J2 + J3 + J4 + J6 + J7 + J8 >0 then 2
-                    else 1
-                end
+                CASE
+                    WHEN J2 + J3 + J4 + J6 + J7 + J8 > 0 then 2
+                    ELSE 1
+                END
         FROM (
             SELECT
-                 PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 3) + '|%','|ИН |ИН,|ИН.|ИН;|ИН:|' )    AS J8 -- Фамилия на "ин" пишутся с "e" - Vassine - Васин.
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ЬЕ|ЬЁ|' )                  AS J7 -- Если в фамилии после "ь" следует "e", то пишется "ie"
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|КС|' )                     AS J6 -- Сочетание "кс" во французском тексте пишется как "х"
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter - 1,3) + '|%','|'+ @str )                AS J5 -- С - между двумя гласными выражается - ss
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЯ|' )                     AS J4 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЮ|' )                     AS J3 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%|' + SUBSTRING(@inputstring, @counter, 2) + '|%','|ГЕ||ГЭ||ГИ||ГЙ||ГЫ|')      AS J2 --G,g перед e, i, у пишется с "u" (gue, gui, guy)
-                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1) +  '%','УХЦШЯ')                     AS J1
-                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1)  +  '%','ЧЮ')                        AS J11
-                ,PATINDEX('%'  + SUBSTRING(@inputstring, @counter, 1) +  '%','АБВГДЕЁЖЗИЙКЛМНОПРСТФЫЭЪЬ') AS J0
+                 PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 3) + '|%','|РРќ |РРќ,|РРќ.|РРќ;|РРќ:|' )    AS J8 -- Р¤Р°РјРёР»РёСЏ РЅР° "РёРЅ" РїРёС€СѓС‚СЃСЏ СЃ "e" - Vassine - Р’Р°СЃРёРЅ.
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 2) + '|%','|Р¬Р•|Р¬РЃ|' )                  AS J7 -- Р•СЃР»Рё РІ С„Р°РјРёР»РёРё РїРѕСЃР»Рµ "СЊ" СЃР»РµРґСѓРµС‚ "e", С‚Рѕ РїРёС€РµС‚СЃСЏ "ie"
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 2) + '|%','|РљРЎ|' )                     AS J6 -- РЎРѕС‡РµС‚Р°РЅРёРµ "РєСЃ" РІРѕ С„СЂР°РЅС†СѓР·СЃРєРѕРј С‚РµРєСЃС‚Рµ РїРёС€РµС‚СЃСЏ РєР°Рє "С…"
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter - 1,3) + '|%','|'+ @str )               AS J5 -- РЎ - РјРµР¶РґСѓ РґРІСѓРјСЏ РіР»Р°СЃРЅС‹РјРё РІС‹СЂР°Р¶Р°РµС‚СЃСЏ - ss
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 2) + '|%','|Р“РЇ|' )                     AS J4 --G,g РїРµСЂРµРґ e, i, Сѓ РїРёС€РµС‚СЃСЏ СЃ "u" (gue, gui, guy)
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 2) + '|%','|Р“Р®|' )                     AS J3 --G,g РїРµСЂРµРґ e, i, Сѓ РїРёС€РµС‚СЃСЏ СЃ "u" (gue, gui, guy)
+                ,PATINDEX('%|' + SUBSTRING(UPPER(@inputString), @counter, 2) + '|%','|Р“Р•||Р“Р­||Р“Р||Р“Р™||Р“Р«|')      AS J2 --G,g РїРµСЂРµРґ e, i, Сѓ РїРёС€РµС‚СЃСЏ СЃ "u" (gue, gui, guy)
+                ,PATINDEX('%'  + SUBSTRING(UPPER(@inputString), @counter, 1) +  '%','РЈРҐР¦РЁРЇ')                     AS J1
+                ,PATINDEX('%'  + SUBSTRING(UPPER(@inputString), @counter, 1) +  '%','Р§Р®')                        AS J11
+                ,PATINDEX('%'  + SUBSTRING(UPPER(@inputString), @counter, 1) +  '%','РђР‘Р’Р“Р”Р•РЃР–Р—РР™РљР›РњРќРћРџР РЎРўР¤Р«Р­РЄР¬') AS J0
             ) J
     END;
 
-    insert into @result_table
-    select 1, @outputstring;
+    INSERT INTO @result_table
+    SELECT 1, @outputstring;
 
 
     ------------------------------------------------------------------	
-    ------- 2 - в соответствии с ГОСТ Р 52535.1-2006 ------------------
+    ------- 2 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Р“РћРЎРў Р  52535.1-2006 ------------------
      SELECT
          @counter = 1
         ,@outputstring = '';
 
-    WHILE (@counter <= len(@inputstring))
+    WHILE (@counter <= len(@inputString))
     BEGIN
-        SELECT @ch1 = SUBSTRING(@inputstring, @counter, 1)
-        SELECT @ch2 = SUBSTRING(@inputstring, @counter, 2)
+        SELECT @ch1 = SUBSTRING(@inputString, @counter, 1)
+        SELECT @ch2 = SUBSTRING(@inputString, @counter, 2)
         SELECT
             @outputstring = @outputstring + 
                 CASE
@@ -185,33 +186,34 @@ SET @inputstring = UPPER(@inputstring);
                                                 END, J0, 1)
 
                     ELSE CASE
-                            WHEN @ch2 COLLATE Cyrillic_General_CS_AS = UPPER(@ch2) then REPLACE(@ch1,'Щ','SHCH')
-                            WHEN @ch1 COLLATE Cyrillic_General_CS_AS = UPPER(@ch1) then REPLACE(@ch1,'Щ','Shch')
-                            ELSE REPLACE(@ch1,'щ','shch')
+                            WHEN @ch2 COLLATE Cyrillic_General_CS_AS = UPPER(@ch2) then REPLACE(@ch1,'Р©','SHCH')
+                            WHEN @ch1 COLLATE Cyrillic_General_CS_AS = UPPER(@ch1) then REPLACE(@ch1,'Р©','Shch')
+                            ELSE REPLACE(@ch1,'С‰','shch')
                          END
                 end
             ,@counter = @counter + 1
         FROM (
                 SELECT
-                     PATINDEX('%' + @ch1 + '%','ЖХЦЧШЯЮ') as J1
-                    ,PATINDEX('%' + @ch1 + '%','АБВГДЕЁЗИЙКЛМНОПРСТУФЫЭЪЬ') as J0
+                     PATINDEX('%' + UPPER(@ch1) + '%','Р–РҐР¦Р§РЁРЇР®') as J1
+                    ,PATINDEX('%' + UPPER(@ch1) + '%','РђР‘Р’Р“Р”Р•РЃР—РР™РљР›РњРќРћРџР РЎРўРЈР¤Р«Р­РЄР¬') as J0
               ) J
-    end
+    END;
 
     insert into @result_table (id, translate)
         select 2, @outputstring
     
 
-    ------------------------------------------------------------------	
-    ------- 3 - в соответствии с п. 97 приказа ФМС России N 320 от 15 октября 2012 г.[10] в соответствии с рекомендованным ИКАО международным стандартом (Doc 9303, часть 1, добавлении 9 к разделу IV) ------------------	 
-     select
+    ------------------------------------------------------------------
+    ------- 3 - РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ Рї. 97 РїСЂРёРєР°Р·Р° Р¤РњРЎ Р РѕСЃСЃРёРё N 320 РѕС‚ 15 РѕРєС‚СЏР±СЂСЏ 2012 Рі.[10]
+    ------- РІ СЃРѕРѕС‚РІРµС‚СЃС‚РІРёРё СЃ СЂРµРєРѕРјРµРЅРґРѕРІР°РЅРЅС‹Рј РРљРђРћ РјРµР¶РґСѓРЅР°СЂРѕРґРЅС‹Рј СЃС‚Р°РЅРґР°СЂС‚РѕРј (Doc 9303, С‡Р°СЃС‚СЊ 1, РґРѕР±Р°РІР»РµРЅРёРё 9 Рє СЂР°Р·РґРµР»Сѓ IV) ------------------
+     SELECT
          @counter = 1
-        ,@outputstring = ''
+        ,@outputstring = '';
 
-    WHILE (@counter <= len(@inputstring))
+    WHILE (@counter <= len(@inputString))
     BEGIN
-        SELECT @ch1 = substring(@inputstring,@counter,1);
-        SELECT @ch2 = substring(@inputstring,@counter,2);
+        SELECT @ch1 = substring(@inputString,@counter,1);
+        SELECT @ch2 = substring(@inputString,@counter,2);
 
         SELECT
             @outputstring = @outputstring + 
@@ -219,7 +221,7 @@ SET @inputstring = UPPER(@inputstring);
                     WHEN J1 > 0 THEN substring( case 
                                                     when @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) THEN 'ZHKHTSCHSHIAIUIE'
                                                     else 'zhkhtschshiaiuie'
-                                                end	, J1*2 - 1, 2)				
+                                                end, J1*2 - 1, 2)
 
                     WHEN J0 > 0 THEN substring(CASE
                                                     WHEN @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) THEN 'ABVGDEEZIYKLMNOPRSTUFYE'
@@ -227,29 +229,42 @@ SET @inputstring = UPPER(@inputstring);
                                                 END, J0, 1)
 
                     ELSE CASE
-                            WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then replace(@ch1,'Щ','SHCH')
-                            WHEN @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then replace(@ch1,'Щ','Shch')
-                            ELSE replace(@ch1,'щ','shch')
+                            WHEN @ch2 collate Cyrillic_General_CS_AS = upper(@ch2) then replace(@ch1,'Р©','SHCH')
+                            WHEN @ch1 collate Cyrillic_General_CS_AS = upper(@ch1) then replace(@ch1,'Р©','Shch')
+                            ELSE replace(@ch1,'С‰','shch')
                          END
                 END
             ,@counter = @counter + 1
         FROM (
                 SELECT
-                     PATINDEX('%' + @ch1 + '%','ЖХЦЧШЯЮЪ') as J1
-                    ,PATINDEX('%' + @ch1 + '%','АБВГДЕЁЗИЙКЛМНОПРСТУФЫЭЬ'       ) as J0
+                     PATINDEX('%' + UPPER(@ch1) + '%','Р–РҐР¦Р§РЁРЇР®РЄ') as J1
+                    ,PATINDEX('%' + UPPER(@ch1) + '%','РђР‘Р’Р“Р”Р•РЃР—РР™РљР›РњРќРћРџР РЎРўРЈР¤Р«Р­Р¬'       ) as J0
               ) J
     END;
 
     insert into @result_table (id, translate)
         select 3, @outputstring;
 
-    --------выводим результат------------------------	
+    --------РІС‹РІРѕРґРёРј СЂРµР·СѓР»СЊС‚Р°С‚------------------------	
     SELECT *
     FROM
         @result_table
     WHERE
-        (@transid is not null and id = @transid)
-        or (id is not null and @transid is null);
+        (@transid IS NOT NULL AND id = @transid)
+        OR (id IS NOT NULL AND @transid IS NULL);
 
-END;
+END TRY
+
+BEGIN CATCH
+    THROW
+    PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER()) +
+          ', Severity: '  + CONVERT(varchar(5), ERROR_SEVERITY()) +
+          ', State: '     + CONVERT(varchar(5), ERROR_STATE()) +
+          ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-') +
+          ', Line: '      + CONVERT(varchar(5), ERROR_LINE()) +
+          ', User name: ' + CONVERT(sysname, ORIGINAL_LOGIN());
+    PRINT ERROR_MESSAGE();
+END CATCH;
+
+
 GO
