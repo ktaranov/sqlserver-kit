@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
+IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
@@ -18,34 +18,34 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 )
 /*
 .SYNOPSIS
-    Run TSQL statement n times and calculate execution time, save results if needed or print it.
+    Run TSQL statement @numberOfExecution times and calculate execution time, save results if needed or print it.
 
 .DESCRIPTION
     Run SQL statement specified times, show results, insert execution details into table master.dbo.BenchmarkTSQL (create if not exist).
 
 .PARAMETER @tsqlStatementBefore
-    TSQL statement that executed before run main TSQL statement.
+    TSQL statement that executed before tested main TSQL statement.
 
 .PARAMETER @tsqlStatement
     TSQL statement for benchmarking.
 
 .PARAMETER @tsqlStatementAfter
-    TSQL statement that executed after run main TSQL statement.
+    TSQL statement that executed after tested TSQL statement.
 
 .PARAMETER @numberOfExecution
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
-    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1.
+    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Table will be created if not exists.
 
 .PARAMETER @skipTSQLCheck
-    Checking for valid TSQL statement.
+    Checking for valid TSQL statement. Default value 0 (false) - skip checking.
 
 .PARAMETER @clearCache
-    Clear cached plan for TSQL statement.
+    Clear cached plan for TSQL statement. Default value 0 (false) - not clear.
 
 .PARAMETER @calcMedian
-    Calculate pseudo median of execution time.
+    Calculate pseudo median of execution time. Default value 0 (false) - not calculated.
 
 .PARAMETER @printStepInfo
     PRINT detailed step information: step count, start time, end time, duration.
@@ -60,13 +60,13 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
-         @tsqlStatement = 'SELECT * FROM , sys.databases'
+         @tsqlStatement = 'SELECT * FROM , sys.databases;'
        , @skipTSQLCheck = 0;
     -- RETURN: Incorrect syntax near ','.
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
-         @tsqlStatement = 'SELECT * FROM sys.databases'
+         @tsqlStatement = 'SELECT * FROM sys.databases;'
        , @skipTSQLCheck = 0;
 
 .EXAMPLE
@@ -100,8 +100,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.5
-    Last Modified: 2018-02-15 19:16 UTC+3 by Konstantin Taranov
+    Version: 4.6
+    Last Modified: 2018-04-03 22:23 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -466,7 +466,7 @@ BEGIN CATCH
           ', State: '     + CONVERT(varchar(5), ERROR_STATE())    +
           ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-')        +
           ', Line: '      + CONVERT(varchar(5), ERROR_LINE())     +
-          ', User name: ' + CONVERT(sysname, CURRENT_USER);
+          ', User name: ' + CONVERT(sysname, ORIGINAL_LOGIN());
     PRINT(ERROR_MESSAGE());
 
     IF ERROR_NUMBER() = 535
