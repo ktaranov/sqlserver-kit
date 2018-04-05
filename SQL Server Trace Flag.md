@@ -1587,6 +1587,7 @@ Link: [SQL Server Parallel Query Placement Decision Logic]
 
 <a id="2468"></a>
 #### Trace Flag: 2468
+**Undocumented trace flag**<br />
 Function: “Find the next node that can service the DOP request. Unlike full mode, the global, resource manager keeps track of the last node used.
 Starting from the last position, and moving to the next node, SQL Server checks for query placement opportunities.
 If a node can’t support the request SQL Server continues advancing nodes and searching.”<br />
@@ -1595,12 +1596,14 @@ Link: [SQL Server Parallel Query Placement Decision Logic]
 
 <a id="2470"></a>
 #### Trace Flag: 2470
+**Undocumented trace flag**<br />
 Function: Fixes performance problem when using AFTER triggers on partitioned tables<br />
 Link: https://support.microsoft.com/help/2606883
 
 
 <a id="2479"></a>
 #### Trace Flag: 2479
+**Undocumented trace flag**<br />
 Function: When SQL Server is determining the runtime DOP for a parallel plan, this flag directs it to limit the NUMA Node placement for the query to the node that the connection is associated with.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing-max-degree-of-parallelism-maxdop<br />
 Link: [SQL Server Parallel Query Placement Decision Logic]
@@ -1608,11 +1611,13 @@ Link: [SQL Server Parallel Query Placement Decision Logic]
 
 <a id="2486"></a>
 #### Trace Flag: 2486
+**Undocumented trace flag**<br />
 Function: In SQL 2016 (CTP 3.0 at least), enables output for the “query_trace_column_values” Extended Event, allowing the value of output columns from individual plan iterators to be traced.<br />
 Link: http://www.queryprocessor.com/query-trace-column-values
 
 
 <a id="2505"></a>
+**Undocumented trace flag**<br />
 #### Trace Flag: 2505
 Function: SQL 7 - Prevents DBCC TRACEON 208, SPID 10 errors from appearing in the error log (Note: DBCC TRACEON(208) just means “SET QUOTED IDENTIFIER ON”)<br />
 Link: None
@@ -1620,24 +1625,28 @@ Link: None
 
 <a id="2508"></a>
 #### Trace Flag: 2508
+**Undocumented trace flag**<br />
 Function: Disables parallel non-clustered index checking for DBCC CHECKTABLE<br />
 Link: None
 
 
 <a id="2509"></a>
 #### Trace Flag: 2509
-Function: Used with DBCC CHECKTABLE to see the total count of forward records in a table<br />
+**Undocumented trace flag**<br />
+Function: Used with `DBCC CHECKTABLE` to see the total count of forward records in a table<br />
 Link: None
 
 
 <a id="2514"></a>
 #### Trace Flag: 2514
+**Undocumented trace flag**<br />
 Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
 Link: http://sqlblog.com/blogs/argenis_fernandez/archive/2012/05/29/ghost-records-backups-and-database-compression-with-a-pinch-of-security-considerations.aspx
 
 
 <a id="2520"></a>
 #### Trace Flag: 2520
+**Undocumented trace flag**<br />
 Function: For SQL Server prior 2005. Forces DBCC HELP to return syntax of undocumented DBCC statements.
 If 2520/2588 is not turned on, DBCC HELP will refuse to give you the syntax stating: "No help available for DBCC statement 'undocumented statement'".
 Also affects dbcc help ('?')<br />
@@ -1647,6 +1656,7 @@ Scope: session only
 
 <a id="2521"></a>
 #### Trace Flag: 2521
+**Undocumented trace flag**<br />
 Function: SQL 7 SP2 - Facilitates capturing a Sqlservr.exe user-mode crash dump for postmortem analysis<br />
 Link: None
 
@@ -1678,12 +1688,14 @@ Scope: global or session
 
 <a id="2529"></a>
 #### Trace Flag: 2529
+**Undocumented trace flag**<br />
 Function: Displays memory usage for DBCC commands when used with TF 3604<br />
 Link: None
 
 
 <a id="2536"></a>
 #### Trace Flag: 2536
+**Undocumented trace flag**<br />
 Function: Allows you to see inactive records in transaction log using fn\_dblog.
 Similar to trace flag 2537 for older version than SQL Server 2008.<br />
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog
@@ -1691,6 +1703,7 @@ Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowm
 
 <a id="2537"></a>
 #### Trace Flag: 2537
+**Undocumented trace flag**<br />
 Function: Allows you to see inactive records in transaction log using fn\_dblog<br />
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog<br />
 Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log<br />
@@ -1733,8 +1746,7 @@ Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41f
 
 <a id="2545"></a>
 #### Trace Flag: 2545
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
