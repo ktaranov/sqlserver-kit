@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**585** trace flags)
+Complete list of Microsoft SQL Server trace flags (**586** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -190,7 +190,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **585 trace flags**
+Summary: **586 trace flags**
 
 
 <a id="-1"></a>
@@ -1651,17 +1651,25 @@ Function: SQL 7 SP2 - Facilitates capturing a Sqlservr.exe user-mode crash dump 
 Link: None
 
 
+<a id="2469"></a>
+#### Trace Flag: 2469
+Function: Enables alternate exchange for `INSERT INTO ... SELECT` into a partitioned columnstore index.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/3204769/<br />
+Scope: global or session or query
+
+
 <a id="2528"></a>
 #### Trace Flag: 2528
-Function: Disables parallel checking of objects by DBCC CHECKDB, DBCC CHECKFILEGROUP, and DBCC CHECKTABLE.
+Function: Disables parallel checking of objects by `DBCC CHECKDB`, `DBCC CHECKFILEGROUP`, and `DBCC CHECKTABLE`.
 By default, the degree of parallelism is automatically determined by the query processor.
 The maximum degree of parallelism is configured just like that of parallel queries.
 For more information, see [Configure the max degree of parallelism Server Configuration Option](https://msdn.microsoft.com/en-us/library/ms189094.aspx).
-Parallel DBCC should typically be left enabled.
-For DBCC CHECKDB, the query processor reevaluates and automatically adjusts parallelism with each table or batch of tables checked.
+Parallel `DBCC` should typically be left enabled.
+For `DBCC CHECKDB`, the query processor reevaluates and automatically adjusts parallelism with each table or batch of tables checked.
 Sometimes, checking may start when the server is almost idle.
 An administrator who knows that the load will increase before checking is complete may want to manually decrease or disable parallelism.
-Disabling parallel checking of DBCC can cause DBCC to take much longer to complete and if DBCC is run with the TABLOCK feature enabled and parallelism set off, tables may be locked for longer periods of time.<br />
+Disabling parallel checking of DBCC can cause `DBCC` to take much longer to complete and if `DBCC` is run with the `TABLOCK` feature enabled and parallelism set off, tables may be locked for longer periods of time.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://technet.microsoft.com/en-us/library/ms189094.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run<br />
@@ -1685,7 +1693,9 @@ Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowm
 #### Trace Flag: 2537
 Function: Allows you to see inactive records in transaction log using fn\_dblog<br />
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog<br />
-Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log
+Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log<br />
+Link: http://sqlserverandme.blogspot.ru/2014/03/how-to-view-transaction-log.html<br />
+Scope: session
 
 
 <a id="2540"></a>
