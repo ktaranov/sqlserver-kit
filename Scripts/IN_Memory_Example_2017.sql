@@ -3,10 +3,10 @@ USE master;
 GO
 
 
-DECLARE @databaseFilePath NVARCHAR(1000) = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
-DECLARE @databaseName     SYSNAME        = N'ಠ ಠ 17 Test';
+DECLARE @databaseFilePath NVARCHAR(1000) = 'k:\MSSQL\MSSQL14.MSSQLSERVER\MSSQL\DATA\' --N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
+DECLARE @databaseName     SYSNAME        = N'ಠಠಠಠ 16+ 错误的名字! Wrong Name! गलत नाम! Неправильное название! Nombre incorrecto! Falscher Name! 間違った名前! שם שגוי! Mauvais Nom! ಠಠಠಠ';
 DECLARE @tsqlStatement    NVARCHAR(4000) = N'';
-DECLARE @debug            BIT            = 0;
+DECLARE @debug            BIT            = 1;
 
 SET @tsqlStatement = '
 IF DB_ID(N''@databaseName'') IS NOT NULL
@@ -24,7 +24,14 @@ FILEGROUP [@databaseName] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
  LOG ON
 ( NAME = N''@databaseName_log'', FILENAME = N''@databaseFilePath@databaseName_log.ldf'', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB);
 
+IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) < 13
 ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 140;
+
+IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) = 14
+ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 140;
+
+IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) = 13
+ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 130;
 ';
 
 SET @tsqlStatement = REPLACE(@tsqlStatement, '@databaseName',     @databaseName);
