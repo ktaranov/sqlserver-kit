@@ -317,6 +317,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Microsoft SQL Server Publications](https://www.microsoft.com/en-us/research/search/?q=sql+server&content-type=publications)
     - [SQL Server Feedback](https://feedback.azure.com/forums/908035-sql-server)
     - [Docs Overview SQL Tools](https://docs.microsoft.com/en-us/sql/tools/overview-sql-tools)
+    - [SQL ConstantCare®: clear, personal advice for your SQL Server](https://www.brentozar.com/sql-constantcare/) (by Brent Ozar)
 
 **[⬆ back to top](#table-of-contents)**
 
