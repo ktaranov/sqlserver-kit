@@ -1,10 +1,10 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **262** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **263** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {3}
- - **[D]**: Documentation solutions {6}
+ - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {12}
  - **[DC]**: Data compare {11}
  - **[ETL]**: Extract Download Load (ETL) Tools {1}
@@ -13,7 +13,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {2}
  - **[M]**: Monitoring and alerting Tools {13}
- - **[MG]**: Migration tool {24}
+ - **[MG]**: Migration tool {25}
  - **[MS]**: Management Studio (alternative for SSMS) {22}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
@@ -210,9 +210,9 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Is It SQL](#is-it-sql)                                               | No                               | No             | [M]        | [Is It SQL]                                 | 2017-04-06   | Bill Graziano         |            | Non-commercial | No    |
 | [Database Experimentation Assistant Technical Preview 2](#dea)        | No                               | No             | [T]        | [Database Experimentation Assistant]        | 2017-03-24   | Microsoft             |            | Yes            | No    |
 | [Data Platform Studio](#dps)                                          | No                               | No             | [MG]       | [Data Platform Studio]                      | ?            | Red Gate Software     |            | Yes            | ?     |
-| [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                    | ?            | boxfuse               |            | Open Source    | No    |
-| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [?]        | [Liquibase]                                 | 2016-10-24   | Liquibase             |            | Open Source    | No    |
-| [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2016-06-22   | My Batis              |            | Open Source    | No    |
+| [Flyway](#flyway)                                                     | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Flyway]                                    | 2018-01-30   | boxfuse               | [Apache]   | Open Source    | $950  |
+| [Liquibase](#liquibase)                                               | Oracle, PostgreSQL, MySQL, Other | No             | [MG]       | [Liquibase]                                 | 2018-04-11   | Liquibase             | [Apache]   | Open Source    | No    |
+| [My Batis](#my-batis)                                                 | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [MG]       | [My Batis]                                  | 2018-03-20   | My Batis              | [Apache]   | Open Source    | No    |
 | [SentryOne Plan Explorer](#sentryone-plan-explorer)                   | No                               | No             | [?]        | [SentryOne Plan Explorer]                   | 2017-05-25   | SentryOne             |            | Yes            | No    |
 | [SQL Sentry](#sql-sentry)                                             | No                               | No             | [M]        | [SQL Sentry]                                | 2016-12-07   | SentryOne             |            | No             | ?     |
 | [DBmaestro TeamWork](#dbmaestro-teamwork)                             | Oracle                           | No             | [?]        | [DBmaestro TeamWork]                        | ?            | DBmaestro             |            | No             | ?     |
@@ -286,6 +286,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Azure Database Migration Service](#azure-db-migration)               | Oracle, MySQL, Other             | Online         | [MG]       | [Azure Database Migration Service]          | 2017-12-01   | Microsoft             |            | Yes            |    No |
 | [FlowHeater](#flowheater)                                             | Oracle, PostgreSQL, MySQL, Other | No             | [ETL]      | [FlowHeater]                                | 2017-10-02   | FlowHeater GmbH       | Shareware  | No             |   $79 |
 | [EDIS](#edis)                                                         | No                               | No             | [ETL]      | [EDIS]                                      | ?            | SQL ETL               | Shareware  | Yes            |  $599 |
+| [SchemaSpy](#schemaspy)                                               | Oracle, PostgreSQL, MySQL, Other | Linux, Mac     | [D]        | [SchemaSpy]                                 | 2017-09-30   | Rafal Kasa            | [MIT]      | Open Source    | No    |
+
 
 <a id="ssms"></a>
 ## SSMS
@@ -3018,14 +3020,14 @@ Automatically, and in far less time than it takes to handle migrations manually,
  - Utilizes the MPP power of Azure SQL Data Warehouse to ingest the data quickly
 
 
-## Flyway
 <a id="flyway"></a>
+## Flyway
 Download page: [Data Platform Studio]<br/>
-Release date: ?<br/>
+Release date: 2018-01-30<br/>
 Support Version: Oracle, SQL Server, SQL Azure, MySQL, Other<br/>
 Author: boxfuse<br/>
 Free version: Open Source<br/>
-Price: No
+Price: $950
 
 Flyway is an open-source database migration tool. It strongly favors simplicity and convention over configuration.
 It is based around just 6 basic commands: Migrate, Clean, Info, Validate, Baseline and Repair.
@@ -3033,10 +3035,10 @@ Migrations can be written in SQL (database-specific syntax (such as PL/SQL, T-SQ
 It has a Command-line client. If you are on the JVM, we recommend using the Java API (also works on Android) for migrating the database on application startup. Alternatively, you can also use the Maven plugin, Gradle plugin, SBT plugin or the Ant tasks.
 
 
-## Liquibase
 <a id="liquibase"></a>
+## Liquibase
 Download page: [Liquibase]<br/>
-Release date: 2016-10-24<br/>
+Release date: 2018-04-11<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
 Author: Liquibase<br/>
 Free version: Open Source<br/>
@@ -3051,10 +3053,10 @@ As a result, there is no database version number but this approach allows it to 
 Liquibase automatically creates DatabaseChangeLog Table and DatabaseChangeLogLock Table when you first execute a changeLog File.
 
 
-## My Batis
 <a id="my-batis"></a>
+## My Batis
 Download page: [My Batis]<br/>
-Release date: 2016-06-22<br/>
+Release date: 2018-03-20<br/>
 Support Version: Oracle, PostgreSQL, MySQL, Other<br/>
 Author: My Batis<br/>
 Free version: Open Source<br/>
@@ -4092,6 +4094,22 @@ EDIS is an Extract-Transform-Load (ETL) application for Microsoft SQL Server.
 No 3rd Party Language, No Packages, Just SQL.
 
 
+<a id="schemaspy"></a>
+## SchemaSpy
+Download page: [SchemaSpy]<br/>
+Release date: 2017-09-30<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: Rafal Kasa<br/>
+Free version: Open Source<br/>
+Price: No
+
+Document your database simply and easily.
+SchemaSpy is a Java-based tool (requires Java 8 or higher) that analyzes the metadata of a schema in a database and generates a visual representation of it in a browser-displayable format.
+It lets you click through the hierarchy of database tables via child and parent table relationships as represented by both HTML links and entity-relationship diagrams.
+It’s also designed to help resolve the obtuse errors that a database sometimes gives related to failures due to constraints.
+It is free software that is distributed under the terms of the MIT License.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
@@ -4359,3 +4377,4 @@ No 3rd Party Language, No Packages, Just SQL.
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
+[Apache]:http://www.apache.org/licenses/

@@ -84,7 +84,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 262 SQLSQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 263 SQLSQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
