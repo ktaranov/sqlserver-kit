@@ -429,8 +429,7 @@ For details about how to assess the performance differences of your most importa
 ## Microsoft SQL Server 2017 Builds
 <a id="microsoft-sql-server-2017-builds"></a>
 
-### All SQL Server 2017 CU downloads
-[Catalog Update Microsoft SQL Server 2017]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202017
+All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202017)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
@@ -442,7 +441,7 @@ Microsoft SQL Server 2017 (RTM-CU5) (KB4092643) - 14.0.3023.8 (X64)
 ```
 
 Useful articles:
- - [Release notes for SQL Server 2017 on Linux]:https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-release-notes
+ - [Release notes for SQL Server 2017 on Linux](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-release-notes)
  - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
  - [More ways to discover changes in new versions of SQL Server](https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/)
 
@@ -475,8 +474,7 @@ Useful articles:
 <a id="microsoft-sql-server-2016-builds"></a>
 ## Microsoft SQL Server 2016 Builds
 
-### All SQL Server 2016 CU downloads
-[Catalog Update Microsoft SQL Server 2016]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202016
+All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202016)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
@@ -567,8 +565,7 @@ Microsoft SQL Server 2016 (SP1-CU8) (KB4077064) - 13.0.4474.0 (X64)
 <a id="microsoft-sql-server-2014-builds"></a>
 ## Microsoft SQL Server 2014 Builds
 
-### All SQL Server 2014 CU downloads
-[Catalog Update Microsoft SQL Server 2014]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202014
+All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202014)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
@@ -732,8 +729,7 @@ Microsoft SQL Server 2014 (SP2-CU11) (KB4077063) - 12.0.5579.0 (X64)
 ## Microsoft SQL Server 2012 Builds
 <a id="microsoft-sql-server-2012-builds"></a>
 
-### All SQL Server 2012 CU downloads
-[Catalog Update Microsoft SQL Server 2017]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012
+All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2012](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012)
 
 | Build         | File version     | Branch | Type | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|--------|------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
