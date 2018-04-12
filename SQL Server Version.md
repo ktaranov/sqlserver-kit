@@ -428,6 +428,10 @@ For details about how to assess the performance differences of your most importa
 
 ## Microsoft SQL Server 2017 Builds
 <a id="microsoft-sql-server-2017-builds"></a>
+
+### All SQL Server 2017 CU downloads
+[Catalog Update Microsoft SQL Server 2017]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202017
+
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
@@ -468,10 +472,13 @@ Useful articles:
 [Microsoft SQL Server 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 
 
-## Microsoft SQL Server 2016 Builds
 <a id="microsoft-sql-server-2016-builds"></a>
-Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
+## Microsoft SQL Server 2016 Builds
 
+### All SQL Server 2016 CU downloads
+[Catalog Update Microsoft SQL Server 2016]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202016
+
+Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
 Microsoft SQL Server 2016 (SP1-CU8) (KB4077064) - 13.0.4474.0 (X64)
     Feb 24 2018 13:53:17
@@ -557,8 +564,12 @@ Microsoft SQL Server 2016 (SP1-CU8) (KB4077064) - 13.0.4474.0 (X64)
 [Microsoft SQL Server 2016 RTM]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
 
 
-## Microsoft SQL Server 2014 Builds
 <a id="microsoft-sql-server-2014-builds"></a>
+## Microsoft SQL Server 2014 Builds
+
+### All SQL Server 2014 CU downloads
+[Catalog Update Microsoft SQL Server 2014]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202014
+
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
@@ -720,6 +731,9 @@ Microsoft SQL Server 2014 (SP2-CU11) (KB4077063) - 12.0.5579.0 (X64)
 
 ## Microsoft SQL Server 2012 Builds
 <a id="microsoft-sql-server-2012-builds"></a>
+
+### All SQL Server 2012 CU downloads
+[Catalog Update Microsoft SQL Server 2017]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012
 
 | Build         | File version     | Branch | Type | KB / Description                                                                                                                       | Release Date |
 |---------------|------------------|--------|------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
@@ -893,8 +907,11 @@ Microsoft SQL Server 2014 (SP2-CU11) (KB4077063) - 12.0.5579.0 (X64)
 [2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence]:http://support.microsoft.com/kb/2685308
 
 
-## Microsoft SQL Server 2008 R2 Builds
 <a id="microsoft-sql-server-2008-r2-builds"></a>
+## Microsoft SQL Server 2008 R2 Builds
+
+### All SQL Server 2008 R2 CU downloads
+[Catalog Update Microsoft SQL Server 2008 R2]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202008%20R2
 
 | Build         | File version     | KB / Description                                                                                                                                                                              | Release Date |
 |---------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
