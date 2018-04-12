@@ -473,8 +473,8 @@ Useful articles:
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2016 (SP1-CU7-GDR) (KB4057119) - 13.0.4466.4 (X64)
-    Dec 22 2017 11:25:00
+Microsoft SQL Server 2016 (SP1-CU8) (KB4077064) - 13.0.4474.0 (X64)
+    Feb 24 2018 13:53:17
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
@@ -563,7 +563,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer 
 
 ```
 Microsoft SQL Server 2014 (SP2-CU11) (KB4077063) - 12.0.5579.0 (X64)
-    Jan 10 2018 15:52:08
+    Feb 21 2018 12:19:47
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
