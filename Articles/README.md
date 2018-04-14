@@ -507,6 +507,9 @@ Articles types:
 | [Indexing and Partitioning]                                                                                             | DBA From The Cold                        | 2018-02-21 | [DEV]       |
 | [Schema Compare for SQL Server]                                                                                         | Thomas Larock                            | 2018-02-14 | [DEV]       |
 | [How to change SQL Server ERRORLOG location]                                                                            | Mark Varnas                              | 2018-03-04 | [DBA]       |
+| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]                  | Solomon Rutzky                           | 2018-04-02 | [DBA],[DEV] |
+| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]                  | Solomon Rutzky                           | 2018-04-04 | [DBA],[DEV] |
+| [What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]                                                        | Solomon Rutzky                           | 2018-04-09 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -992,3 +995,6 @@ Articles types:
 [Indexing and Partitioning]:https://dbafromthecold.com/2018/02/21/indexing-and-partitioning/
 [Schema Compare for SQL Server]:https://thomaslarock.com/2018/02/schema-compare-for-sql-server/
 [How to change SQL Server ERRORLOG location]:https://red9.com/sql-server-error-log-location/
+[What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]:https://sqlquantumleap.com/2018/04/09/whats-in-a-name-inside-the-wacky-world-of-t-sql-identifiers/
+[The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]:https://sqlquantumleap.com/2018/04/02/the-uni-code-the-search-for-the-true-list-of-valid-characters-for-t-sql-regular-identifiers-part-1/
+[The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]:https://sqlquantumleap.com/2018/04/04/the-uni-code-the-search-for-the-true-list-of-valid-characters-for-t-sql-regular-identifiers-part-2/
