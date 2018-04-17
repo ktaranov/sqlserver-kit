@@ -9,6 +9,7 @@ For more information on the applicable version, see the Microsoft Support articl
 **Trace flag behavior may not be supported in future releases of SQL Server.**
 
 Headers:
+ - [Unknown trace flags](#unknown-trace-flags")
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
  - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
@@ -58,6 +59,32 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Alexey Nagorskiy ([github](https://github.com/fenixfx))
  - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
  - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
+
+
+<a id="unknown-trace-flags">
+## Unknown trace flags
+List of Unknown trace flags enabled on default Azure SQL Server instances, see more details here: [Azure SQL DB Managed Instances: Trace Flags, Ahoy!](https://www.brentozar.com/archive/2018/03/azure-sql-db-managed-instances-trace-flags-ahoy/)
+If you know behavior some of them please open an issue or contact me (taranov.pro).
+
+ - [ ] 2591
+ - [ ] 3447 (but 3448 is there, which is supposed to help fix an issue with hung Mirrored databases)
+ - [ ] 3978
+ - [ ] 4141
+ - [ ] 5521
+ - [ ] 7838
+ - [ ] 8037
+ - [ ] 8054
+ - [ ] 8057
+ - [ ] 8063
+ - [ ] 8065
+ - [ ] 9041
+ - [ ] 9537
+ - [ ] 9570
+ - [ ] 9883
+ - [ ] 9905
+ - [ ] 9934
+ - [ ] 9940
+ - [ ] 9941
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
