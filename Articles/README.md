@@ -510,6 +510,10 @@ Articles types:
 | [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]                  | Solomon Rutzky                           | 2018-04-02 | [DBA],[DEV] |
 | [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]                  | Solomon Rutzky                           | 2018-04-04 | [DBA],[DEV] |
 | [What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]                                                        | Solomon Rutzky                           | 2018-04-09 | [DBA],[DEV] |
+| [Programming SQL Server with SQL Server Management Objects Framework]                                                   | Darko Martinović                         | 2018-04-09 | [DEV]       |
+| [Interval Queries in SQL Server]                                                                                        | Itzik Ben-Gan                            | 2013-06-12 | [DEV]       |
+| [Dealing with date and time instead of datetime]                                                                        | Rob Farley                               | 2018-03-29 | [DEV]       |
+| [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2018-02-18 | [DBA],[DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -998,3 +1002,7 @@ Articles types:
 [What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]:https://sqlquantumleap.com/2018/04/09/whats-in-a-name-inside-the-wacky-world-of-t-sql-identifiers/
 [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]:https://sqlquantumleap.com/2018/04/02/the-uni-code-the-search-for-the-true-list-of-valid-characters-for-t-sql-regular-identifiers-part-1/
 [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]:https://sqlquantumleap.com/2018/04/04/the-uni-code-the-search-for-the-true-list-of-valid-characters-for-t-sql-regular-identifiers-part-2/
+[Programming SQL Server with SQL Server Management Objects Framework]:https://www.red-gate.com/simple-talk/dotnet/c-programming/programming-sql-server-sql-server-management-objects-framework/
+[Interval Queries in SQL Server]:http://www.itprotoday.com/software-development/interval-queries-sql-server
+[Dealing with date and time instead of datetime]:https://sqlperformance.com/2018/03/sql-optimizer/dealing-with-date-and-time
+[Insight into the SQL Server buffer cache]:https://www.sqlshack.com/insight-into-the-sql-server-buffer-cache/
