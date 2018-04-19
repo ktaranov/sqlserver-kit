@@ -59,6 +59,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Alexey Nagorskiy ([github](https://github.com/fenixfx))
  - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
  - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
+ - Jason Brimhall ([b](http://jasonbrimhall.info/) | [t](https://twitter.com/sqlrnnr))
 
 
 <a id="unknown-trace-flags">
@@ -2364,7 +2365,9 @@ Link: http://www.sqlskills.com/blogs/paul/determine-causes-particular-wait-type
 <a id="3659"></a>
 #### Trace Flag: 3659
 Function: Enables logging all errors to error log during server startup<br />
-Link: http://spaghettidba.com/2011/05/20/trace-flag-3659/
+Link: http://spaghettidba.com/2011/05/20/trace-flag-3659/<br />
+Link: [Change SQL Server Collation – Back to Basics]<br />
+Scope: global only
 
 
 <a id="3660"></a>
@@ -2471,7 +2474,9 @@ Link: None
 #### Trace Flag: 4022
 Function: Directs the SQL instance to ignore stored procedures that have been configured as “auto-start” procedures. Their auto-start configuration is not affected, so the next time the instance is started w/o this flag they will return to their normal behavior.<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2011/05/11/inf-hey-my-sql-server-service-is-not-starting-what-do-i-do/<br />
-Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
+Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]<br />
+Link: [Change SQL Server Collation – Back to Basics]<br />
+Scope: global only
 
 
 <a id="4029"></a>
@@ -3509,8 +3514,9 @@ Link: None
 <a id="8602"></a>
 #### Trace Flag: 8602
 Function: Ignore index hints that are specified in query/procedure.<br />
-Link: download.microsoft.com/download/6/e/5/6e52bf39-0519-42b7-b806-c32905f4a066/eim_perf_flowchart_final.pdf<br />
+Link: http://download.microsoft.com/download/6/e/5/6e52bf39-0519-42b7-b806-c32905f4a066/eim_perf_flowchart_final.pdf<br />
 Link: http://sqlblog.com/blogs/kalen_delaney/archive/2008/02/26/lost-without-a-trace.aspx<br />
+Scope: global only
 
 
 <a id="8605"></a>
@@ -4745,3 +4751,4 @@ Scope: ?
 [TF6545-a]: https://support.microsoft.com/help/4018930/
 [TF6545-b]: https://SqlQuantumLeap.com/2018/02/23/sqlclr-vs-sql-server-2012-2014-2016-part-7-clr-strict-security-the-problem-continues-in-the-past-wait-what/
 [Controlling SQL Server memory dumps]: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
+[Change SQL Server Collation – Back to Basics]:http://jasonbrimhall.info/2018/04/12/change-sql-server-collation/
