@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**586** trace flags)
+Complete list of Microsoft SQL Server trace flags (**587** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -60,6 +60,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
  - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
  - Jason Brimhall ([b](http://jasonbrimhall.info/) | [t](https://twitter.com/sqlrnnr))
+ - Victor Isakov ([b](https://victorisakov.wordpress.com/))
 
 
 <a id="unknown-trace-flags">
@@ -218,7 +219,7 @@ Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB wait
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **586 trace flags**
+Summary: **587 trace flags**
 
 
 <a id="-1"></a>
@@ -719,9 +720,15 @@ Scope: global or session
 
 <a id="806"></a>
 #### Trace Flag: 806
-Function: Turn on Page Audit functionality, to verify page validity<br />
+Function:  enables DBCC audit checks to be performed on pages to test for logical consistency problems.
+These checks try to detect when a read operation from a disk does not experience any errors but the read operation returns data that is not valid.
+Pages will be audited every time that they are read from disk.
+Page auditing can affect performance and should only be used in systems where data stability is in question.<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx<br />
-Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
+Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://technet.microsoft.com/en-au/library/cc917726.aspx<br />
+Scope: ?
 
 
 <a id="809"></a>
@@ -744,7 +751,9 @@ Function: Turn on ringbuffer to store info about IO write operations.
 Used to troubleshoot IO problems<br />
 Link: https://support.microsoft.com/help/826433/<br />
 Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
-Link: https://support.microsoft.com/help/828339/error-message-823-may-indicate-hardware-problems-or-system-problems-in-sql-server
+Link: https://support.microsoft.com/help/828339/<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Scope: ?
 
 
 <a id="822"></a>
@@ -976,7 +985,9 @@ Link: None
 Function: Prints detailed lock information as every request for a lock is made (the process ID and type of lock requested)<br />
 Link: [TECHNET List Of SQL Server Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2008/03/30/tempdb-table-variable-vs-local-temporary-table<br />
-Link: https://support.microsoft.com/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
+Link: https://support.microsoft.com/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Scope: ?
 
 
 <a id="1202"></a>
@@ -988,9 +999,11 @@ Link: None
 
 <a id="1204"></a>
 #### Trace Flag: 1204
-Function: Returns the resources and types of locks participating in a deadlock and also the current command affected.<br />
+Function: Returns the resources and types of locks participating in a deadlock and also the current command affected.
+Writes information about deadlocks to the ERRORLOG in a "text format"<br />
 Link: https://support.microsoft.com/help/832524<br />
 Link: [Docs Trace Flags]<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global only
 
 
@@ -1021,6 +1034,7 @@ However, because trace flag 1211 prevents escalation in every case, even under m
 This helps avoid "out-of-locks" errors when many locks are being used.<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2330-lock-escalation<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global or session
 
 
@@ -1043,6 +1057,7 @@ Link: None
 Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blog.sqlauthority.com/2017/01/09/sql-server-get-historical-deadlock-information-system-health-extended-events<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global only
 
 
@@ -1052,13 +1067,13 @@ Function: Disables lock escalation based on the number of locks. However, memory
 The Database Engine escalates row or page locks to table (or partition) locks if the amount of memory used by lock objects exceeds one of the following conditions:
  - Forty percent of the memory that is used by Database Engine. This is applicable only when the locks parameter of sp_configure is set to 0.
  - Forty percent of the lock memory that is configured by using the locks parameter of sp_configure.
-
-For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx).
+For more information, see [Server Configuration Options (SQL Server)](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/server-configuration-options-sql-server).
 If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
 However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
 This helps avoid "out-of-locks" errors when many locks are being used.<br />
 **Note: Lock escalation to the table- or HoBT-level granularity can also be controlled by using the LOCK_ESCALATION option of the ALTER TABLE statement.**<br />
 Link: [Docs Trace Flags]<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global or session
 
 
@@ -1267,11 +1282,14 @@ Link: https://support.microsoft.com/help/922804
 
 <a id="1806"></a>
 #### Trace Flag: 1806
-Function: Disable Instant File Initialization<br />
+Function: Disable Instant File Initialization.
+Used to guarantee the physical data file space acquisition during data file creation or expansion, on a thin provisioned subsystem<br />
 Link: http://technet.microsoft.com/en-au/library/cc917726.aspx<br />
 Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-330-instant-file-initialization-can-be-controlled-from-within-sql-server<br />
-Link: https://support.microsoft.com/help/2574695/file-initialization-takes-a-long-time-for-sql-server-database-related-operations
+Link: https://support.microsoft.com/help/2574695/file-initialization-takes-a-long-time-for-sql-server-database-related-operations<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Scope: ?
 
 
 <a id="1807"></a>
@@ -1711,6 +1729,7 @@ Disabling parallel checking of DBCC can cause `DBCC` to take much longer to comp
 Link: [Docs Trace Flags]<br />
 Link: https://technet.microsoft.com/en-us/library/ms189094.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global or session
 
 
@@ -1949,17 +1968,20 @@ Link: https://bytes.com/topic/sql-server/answers/162385-how-do-i-prevent-sql-200
 
 <a id="3004"></a>
 #### Trace Flag: 3004
-Function: Returns more info about Instant File Initialization. Shows information about backups and file creations use with 3605 to direct to error log.<br />
+Function: Returns more info about Instant File Initialization. Shows information about backups and file creations use with [3605](#3605) to direct to error log.
+Can be used to ensure that SQL Server has been configured to take advantage of IFI correctly.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-restorebackup-doing/<br />
-Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf<br />
-Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/<br />
+Scope: session
 
 
 <a id="3014"></a>
 #### Trace Flag: 3014
-Function: Returns more info about backups to the errorlog<br />
-Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes
+Function: Returns more info about backups to the errorlog:  Backup activity, Restore activity , File creation.<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
+Scope: session
 
 
 <a id="3023"></a>
@@ -1995,13 +2017,13 @@ Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup
 #### Trace Flag: 3035
 Function: Overrides the server default to always avoid compression, unless the backup command explicitly uses the compression clause. If both 3034 and 3035 are enabled, 3035 takes precedence<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup-compression-default
-    
-    
+
+
 <a id="3039"></a>
 #### Trace Flag: 3039
 Function: As long as the SQL edition supports backup compression, this will allow VDI backups to be affected by the default compression setting just as non-VDI BACKUP commands are affected.<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2012/02/24/vdi-backups-and-backup-compression-default
-    
+
 
 <a id="3042"></a>
 #### Trace Flag: 3042
@@ -2105,33 +2127,29 @@ Link: [TECHNET List Of SQL Server Trace Flags]
 
 <a id="3226"></a>
 #### Trace Flag: 3226
-<a id="3226"></a>
 Function: By default, every successful backup operation adds an entry in the SQL Server error log and in the system event log.
 If you create very frequent log backups, these success messages accumulate quickly, resulting in huge error logs in which finding other messages is problematic.
 With this trace flag, you can suppress these log entries. This is useful if you are running frequent log backups and if none of your scripts depend on those entries.<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/10/30/when-is-too-much-success-a-bad-thing<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global only
-
-
-<a id="3422"></a>
-#### Trace Flag: 3422
-Function: Log record auditing<br />
-Link: http://technet.microsoft.com/en-au/library/cc917726.aspx
 
 
 <a id="3231"></a>
 #### Trace Flag: 3231
 Function: SQL 8/9 - Will turn the NO_LOG and TRUNCATE_ONLY options into no-ops in FULL/BULK_LOGGED recovery mode, and will clear the log in SIMPLE recovery mode. When set, BACKUP LOG with TRUNCATE_ONLY and BACKUP LOG with NO_LOG do not allow a log backup to run if the database's recovery model is FULL or BULK_LOGGED.<br />
 Link: http://www.sqlskills.com/blogs/paul/backup-log-with-no_log-use-abuse-and-undocumented-trace-flags-to-stop-it<br />
-Link: http://www.sqlskills.com/blogs/kimberly/understanding-backups-and-log-related-trace-flags-in-sql-server-20002005-and-2008
+Link: http://www.sqlskills.com/blogs/kimberly/understanding-backups-and-log-related-trace-flags-in-sql-server-20002005-and-2008<br />
+Scope: ?
 
 
 <a id="3282"></a>
 #### Trace Flag: 3282
+**Undocumented trace flag**<br />
 Function: SQL 6.5 - Used after backup restoration fails<br />
-Link: https://support.microsoft.com/help/215458
+Scope: ?
 
 
 <a id="3400"></a>
@@ -2148,6 +2166,7 @@ Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/08/how-much-is-crash-reco
 
 <a id="3412"></a>
 #### Trace Flag: 3412
+**Undocumented trace flag**<br />
 Function: The KB article refers to SQL 6.5, but it is possible that the TF still prints out info to the SQL error log, so leaving it here for now. KB: “...reports when each transaction
 is rolled forward or back [examine the error log for progress]. However, you will not see any progress if SQL Server is rolling a large transaction forward or back. Additionally, this trace flag duplicates 
 the sp_configure setting Recovery flags..."<br />
@@ -2157,9 +2176,13 @@ Link: None
 <a id="3422"></a>
 #### Trace Flag: 3422
 Function: Cause auditing of transaction log records as they're read (during transaction rollback or log recovery).
-This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose. Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
+This is useful because there is no equivalent to page checksums for transaction log records and so no way to detect whether log records are being corrupted e careful with these trace flags - I don't recommend using them unless you are experiencing corruptions that you can't diagnose.
+Turning them on will cause a big CPU hit because of the extra auditing that's happening.<br />
 Link: https://support.microsoft.com/help/215458<br />
-Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions
+Link: http://www.sqlskills.com/blogs/paul/how-to-tell-if-the-io-subsystem-is-causing-corruptions<br />
+Link: http://technet.microsoft.com/en-au/library/cc917726.aspx<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Scope: ?
 
 
 <a id="3427"></a>
@@ -2189,18 +2212,32 @@ Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014
 Scope: global only
 
 
+<a id="3459"></a>
+#### Trace Flag: 3459
+Function: Disables parallel redo.
+Assume that you use an Always On availability group (AG) that contains heap tables.
+Starting in SQL Server 2016, parallel thread for redo operations is used in secondary replicas.
+In this case, heap tables redo operation may generate a runtime assert dump or the SQL Server may crash with an access violation error in some cases.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/3200975/<br />
+Link: https://support.microsoft.com/help/4101554/<br />
+Scope: global only
+
+
 <a id="3499"></a>
 #### Trace Flag: 3499
+**Undocumented trace flag**<br />
 Function: Provides a workaround for doing a rolling upgrade from SQL 2005 to SQL 2008 with a DB that has a full-text index<br />
 Link: None
 
 
 <a id="3502"></a>
 #### Trace Flag: 3502
-Function: Writes info about checkpoints to tech error log<br />
-Link: http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf<br />
+Function: Writes info about checkpoints to error log.<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
-Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
+Scope: session
 
 
 <a id="3503"></a>
@@ -2218,9 +2255,13 @@ Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-check
 
 <a id="3505"></a>
 #### Trace Flag: 3505
-Function: Disables automatic checkpointing<br />
-Link: https://support.microsoft.com/help/815436<br />
-Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
+Function: Disables automatic checkpoints.
+Setting trace flag 3505 may increase recovery time and can prevent log space reuse until the next checkpoint is issued.
+Make sure to issue manual checkpoints on all read/write databases at appropriate time intervals.
+"For high availability systems, such as clusters, Microsoft recommends that you do not change the recovery interval because it may affect data safety and availability."<br />
+Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Scope: ?
 
 
 <a id="3601"></a>
@@ -2762,6 +2803,8 @@ Link: https://support.microsoft.com/help/2952101<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Link: [Parallelism in Hekaton (In-Memory OLTP)]<br />
+Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://support.microsoft.com/help/974006<br />
 Scope: global or session or query
 
 
@@ -4752,3 +4795,4 @@ Scope: ?
 [TF6545-b]: https://SqlQuantumLeap.com/2018/02/23/sqlclr-vs-sql-server-2012-2014-2016-part-7-clr-strict-security-the-problem-continues-in-the-past-wait-what/
 [Controlling SQL Server memory dumps]: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 [Change SQL Server Collation – Back to Basics]:http://jasonbrimhall.info/2018/04/12/change-sql-server-collation/
+[Important Trace Flags That Every DBA Should Know]:http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
