@@ -1,13 +1,15 @@
 # Microsoft SQL Server Edition
 
 Source links:
- - [Official Microsoft Page](http://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/)
- - [Features Supported by the Editions of SQL Server 2016](https://msdn.microsoft.com/en-us/library/cc645993.aspx)
+ - [Editions and supported features of SQL Server 2017](https://docs.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2017?view=sql-server-2017)
+ - [Features Supported by the Editions of SQL Server 2017](https://docs.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2017)
+ - [Features Supported by the Editions of SQL Server 2016](https://docs.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2016)
  - [Features Supported by the Editions of SQL Server 2014](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.120%29.aspx)
  - [Features Supported by the Editions of SQL Server 2012](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.110%29.aspx)
  - [Features Supported by the Editions of SQL Server 2008](https://msdn.microsoft.com/en-us/library/cc645993%28v=SQL.100%29.aspx)
  - [Features Supported by the Editions of SQL Server 2005](https://technet.microsoft.com/en-us/library/ms143761%28v=sql.90%29.aspx)
- - [SQL Server Pricing](https://www.microsoft.com/en-us/server-cloud/products/sql-server/purchasing.aspx)
+ - [SQL Server 2017 Pricing](https://www.microsoft.com/en-Us/sql-server/sql-server-2017-pricing)
+ - [Azure SQL Database pricing](https://azure.microsoft.com/en-us/pricing/details/sql-database/managed/?cdn=disable)
  - [An Overview of SQL Server 2016 Licensing](http://sqlmag.com/scaling-success-sql-server-2016/overview-sql-server-2016-licensing)
 
 

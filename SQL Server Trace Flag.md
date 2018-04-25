@@ -63,7 +63,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Victor Isakov ([b](https://victorisakov.wordpress.com/))
 
 
-<a id="unknown-trace-flags">
+<a id="unknown-trace-flags"></a>
 ## Unknown trace flags
 List of Unknown trace flags enabled on default Azure SQL Server instances, see more details here: [Azure SQL DB Managed Instances: Trace Flags, Ahoy!](https://www.brentozar.com/archive/2018/03/azure-sql-db-managed-instances-trace-flags-ahoy/)
 If you know behavior some of them please open an issue or contact me (taranov.pro).
@@ -185,7 +185,7 @@ GO
 
 **Trace flag 1118** addresses contention that can exist on a particular type of page in a database, the SGAM page.
 This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
-In SQL Server 2016, you change this behavior using the MIXED_PAGE_ALLOCATION database option, and there is no need for TF 1118.
+In SQL Server 2016, you change this behavior using the `MIXED_PAGE_ALLOCATION` database option, and there is no need for TF 1118.
 
 **Trace flag 3023** is used to enable the CHECKSUM option, by default, for all backups taken on an instance.
 With this option enabled, page checksums are validated during a backup, and a checksum for the entire backup is generated.
@@ -200,10 +200,10 @@ As a DBA, this is a good thing because when I look in my ERRORLOG, I really only
 will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
 backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
 
-**Trace flag 6534** уnables performance improvement of query operations with spatial data types in SQL Server 2012, SQL Server 2014 and SQL Server 2016.
+**Trace flag 6534** enables performance improvement of query operations with spatial data types in SQL Server 2012, SQL Server 2014 and SQL Server 2016.
 The performance gain will vary, depending on the configuration, the types of queries, and the objects.
 
-**Trace flag 7412** Enables the lightweight query execution statistics profiling infrastructure.
+**Trace flag 7412** enables the lightweight query execution statistics profiling infrastructure.
 Unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
 This would be my advice here because this enables that lightweight profiling infrastructure there and then you’ll see in a few minutes what it unleashes here.
 So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem.
@@ -214,7 +214,7 @@ Using this trace may cause Query Store data not previously flushed to disk to be
 For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead of this trace flag to force an immediate shutdown.
 
 **Trace Flag: 7752** enables asynchronous load of Query Store.
-Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).
+Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](https://www.sqlskills.com/help/waits/qds_loaddb/) waits related to Query Store synchronous load (default behavior).
 
 
 <a id="trace-flags-list"></a>
