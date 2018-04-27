@@ -69,6 +69,7 @@ Error code equal `message_id` from `sys.messages`
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b  … | [1701_link1]                            |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                   … | [1807_link1]                            |
 |       1904 | The statistics on table has 65 columns in the key list                                            … | [1904_link1]                            |
+|       2709 | Column '%.*ls' in %S_MSG '%.*ls' cannot be used in an index or statistics or as a partition key …   | [2709_link1]                            |
 |       3013 | RESTORE DATABASE is terminating abnormally                                                        … | [KB290787]                              |
 |       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messa  … | [3041_link1]                            |
 |       3101 | Exclusive access could not be obtained because the database is in use.                            … | [3101_link1]                            |
@@ -80,6 +81,7 @@ Error code equal `message_id` from `sys.messages`
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log   … | [3930_link1]                            |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                     … | [4064_link1]                            |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                            |
+|       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                            |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link1]              |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                            |
@@ -101,6 +103,7 @@ Error code equal `message_id` from `sys.messages`
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
+|      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
 
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
@@ -122,6 +125,7 @@ Error code equal `message_id` from `sys.messages`
 [1807_link1]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [1904_link1]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
 [KB290787]:https://support.microsoft.com/en-us/kb/290787
+[2709_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [3041_link1]:https://www.sqlservercentral.com/Forums/Topic1179720-1550-1.aspx
 [3101_link1]:https://sqlstudies.com/2017/11/27/closing-all-of-the-connections-to-a-database/
 [3154_link1]:http://www.patrickkeisler.com/2016/05/database-restore-fails-with-msg-3154.html
@@ -132,6 +136,7 @@ Error code equal `message_id` from `sys.messages`
 [3930_link1]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
 [4922_link1]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
+[4934_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
@@ -153,4 +158,5 @@ Error code equal `message_id` from `sys.messages`
 [18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
 [25713_link1]:https://sqlquantumleap.com/2018/01/22/server-audit-mystery-filtering-class_type-gets-error-msg-25713/
 [25713_link2]:https://sqlquantumleap.com/2018/01/30/server-audit-mystery-filtering-action_id-gets-error-msg-25713/
+[33111_link1]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/
