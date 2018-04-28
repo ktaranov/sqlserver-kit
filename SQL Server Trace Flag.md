@@ -1472,9 +1472,11 @@ Scope: global only
 
 <a id="2372"></a>
 #### Trace Flag: 2372
-Function: Displays memory utilization during the optimization process. Memory for Phases.<br />
+Function: Displays memory utilization during the optimization process. Memory for Phases
+Memory before and after deriving properties and rules (verbose) <br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
-Link: [Cardinality Estimation Framework 2014 First Look]
+Link: [Cardinality Estimation Framework 2014 First Look]<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="2373"></a>
@@ -2291,6 +2293,7 @@ Link: http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-fla
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604<br />
 Link: [How to Find the Statistics Used to Compile an Execution Plan]
+Link: [A Row Goal Riddle]
 
 
 <a id="3605"></a>
@@ -3052,7 +3055,8 @@ Scope: global or session
 Function: Show the optimizer output and the post-optimization rewrite in action<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internals-nested-loops-prefetching.aspx<br />
-Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
+Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="7356"></a>
@@ -3067,7 +3071,7 @@ Scope: ?
 #### Trace Flag: 7357
 Function: Outputs info re: hashing operators, including role reversal, recursion levels, whether the Unique Hash optimization could be used, info about the hash-related bitmap, etc. Dima’s article is a must-read. For parallel query plans, 7357 does NOT send output to the console window. However, output to the SQL Server error log can be enabled by enabling 3605.<br />
 Link: http://www.queryprocessor.com/hash-join-execution-internals<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="7359"></a>
@@ -3595,7 +3599,7 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-dee
 <a id="8609"></a>
 #### Trace Flag: 8609
 Function: PWhite: “Task and operation type counts”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx<br />
+Link: [Query Optimizer Deep Dive - Part 4]<br />
 Link: http://www.queryprocessor.ru/good-enough-plan
 
 
@@ -3608,36 +3612,49 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2013/06/11/hello-operator-my-s
 
 <a id="8615"></a>
 #### Trace Flag: 8615
+**Undocumented trace flag**<br />
 Function: Display the final memo structure<br />
 Link: http://www.benjaminnevarez.com/2012/04/inside-the-query-optimizer-memo-structure/<br />
-Link: http://www.somewheresomehow.ru/optimizer-part-3-full-optimiztion-optimization-search0/
+Link: http://www.somewheresomehow.ru/optimizer-part-3-full-optimiztion-optimization-search0/<br />
+Link: [A Row Goal Riddle]<br />
+Scope: session only
 
 
 <a id="8619"></a>
 #### Trace Flag: 8619
+**Undocumented trace flag**<br />
 Function: Show Applied Transformation Rules<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/02/06/incorrect-results-with-indexed-views.aspx<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [A Row Goal Riddle]<br />
+Scope: session only
 
 
 <a id="8620"></a>
 #### Trace Flag: 8620
+**Undocumented trace flag**<br />
 Function: Add memo arguments to trace flag 8619<br />
 Link: [Query Optimizer Deep Dive - Part 4]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [A Row Goal Riddle]<br />
+Scope: session only
 
 
 <a id="8621"></a>
 #### Trace Flag: 8621
+**Undocumented trace flag**<br />
 Function: Rule with resulting tree<br />
 Link: [Query Optimizer Deep Dive - Part 4]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [A Row Goal Riddle]<br />
+Scope: session only
 
 
 <a id="8628"></a>
 #### Trace Flag: 8628
-Function: When used with TF 8666, causes extra information about the transformation rules applied to be put into the XML showplan.<br />
+**Undocumented trace flag**<br />
+Function: When used with TF [8666](#8666), causes extra information about the transformation rules applied to be put into the XML showplan.<br />
 Link: [Yet another X-Ray for the QP]
 
 
@@ -4796,3 +4813,4 @@ Scope: ?
 [Controlling SQL Server memory dumps]: https://blogs.msdn.microsoft.com/psssql/2009/11/17/how-it-works-controlling-sql-server-memory-dumps
 [Change SQL Server Collation – Back to Basics]:http://jasonbrimhall.info/2018/04/12/change-sql-server-collation/
 [Important Trace Flags That Every DBA Should Know]:http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
+[A Row Goal Riddle]:https://orderbyselectnull.com/2018/03/30/a-row-goal-riddle/
