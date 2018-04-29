@@ -3,6 +3,9 @@
 Articles types:
  - **[AZ]** Azure Articles
  - **[B]** Backup Articles
+ - **[BENCH]** Benchmarking Articles
+ - **[BIDX]** Index B-Tree Articles
+ - **[CLR]** Articles
  - **[COR]** Corruption Articles
  - **[DAX]** Data Analysis Expressions Articles
  - **[DBA]** DBA Articles
@@ -10,7 +13,6 @@ Articles types:
  - **[DM]** Database Mail
  - **[DBCC]** DBCC commands
  - **[DS]** Dynamic SQL
- - **[BIDX]** Index B-Tree Articles
  - **[MG]** Migration Articles
  - **[J]** Jobs Articles
  - **[P]** Performance Articles
@@ -210,7 +212,7 @@ Articles types:
 | [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |             |
 | [SQL Server Default Configurations That You Should Change]                                                              | Pio Balistoy                             | 2017-02-06 |             |
 | [Decoding Key and Page WaitResource for Deadlocks and Blocking]                                                         | Kendra Little                            | 2016-10-17 |             |
-| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 |             |
+| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 | [CLR]       |
 | [On the Advantages of DateTime2(n) over DateTime]                                                                       | William Assaf                            | 2012-12-04 |             |
 | [Build Your Own Tools]                                                                                                  | Michael J. Swart                         | 2016-09-23 |             |
 | [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 | [XE]        |
@@ -398,7 +400,7 @@ Articles types:
 | [How to Find Out Which Database Object Got Deleted]                                                                     | Greg Larsen                              | 2017-07-03 | [DBA]       |
 | [In-Memory OLTP Enhancements in SQL Server 2016]                                                                        | Ahmad Yaseen                             | 2017-08-22 | [DBA],[DEV] |
 | [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA]       |
-| [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [DEV]       |
+| [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [BENCH]     |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
 | [Why is My Database Application so Slow?]                                                                               | Dan Turner                               | 2017-08-24 | [DEV]       |
 | [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DBA],[DEV] |
@@ -417,7 +419,7 @@ Articles types:
 | [Questions About RDS SQL Server You Were Too Shy to Ask]                                                                | Laerte Junior                            | 2017-09-13 | [DEV]       |
 | [Active Directory Authentication with SQL Server on Ubuntu]                                                             | Drew Furgiuele                           | 2017-09-19 | [DBA]       |
 | [Temporary Tables in Stored Procedures]                                                                                 | Paul Randal                              | 2012-08-15 | [DEV]       |
-| [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]                                            | Darko Martinović                         | 2017-07-17 | [DEV]       |
+| [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]                                            | Darko Martinović                         | 2017-07-17 | [CLR]       |
 | [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]                                   | Ahmad Yaseen                             | 2017-09-22 | [DBA],[DEV] |
 | [Clustered vs Nonclustered: Index Fundamentals You Need To Know]                                                        | Bert Wagner                              | 2017-09-26 | [DBA],[DEV] |
 | [How to Write Efficient TOP N Queries in SQL]                                                                           | JOOQ                                     | 2017-09-22 | [DEV]       |
@@ -513,7 +515,19 @@ Articles types:
 | [Programming SQL Server with SQL Server Management Objects Framework]                                                   | Darko Martinović                         | 2018-04-09 | [DEV]       |
 | [Interval Queries in SQL Server]                                                                                        | Itzik Ben-Gan                            | 2013-06-12 | [DEV]       |
 | [Dealing with date and time instead of datetime]                                                                        | Rob Farley                               | 2018-03-29 | [DEV]       |
-| [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2018-02-18 | [DBA],[DEV]  |
+| [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2018-02-18 | [DBA],[DEV] |
+| [A concrete example of migration between an Oracle Database and SQL Server using Microsoft Data Migration Assistant]    | Jefferson Elias                          | 2018-04-12 | [DBA],[DEV] |
+| [Audit SQL Server stop, start, restart]                                                                                 | Steve Keeler                             | 2018-03-12 | [DBA]       |
+| [Query tuning: Apply yourself]                                                                                          | Daniel Janik                             | 2018-04-06 | [DEV]       |
+| [How to identify and monitor unused indexes in SQL Server]                                                              | Nikola Dimitrijevic                      | 2018-04-17 | [BIDX]      |
+| [Benchmarking: 1-TB table population (part 1: the baseline)]                                                            | Paul Randal                              | 2010-01-21 | [BENCH]     |
+| [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]                       | Paul Randal                              | 2010-01-27 | [BENCH]     |
+| [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA]       |
+| [Calling Http endpoints in T-SQL using CURL extension]                                                                  | Jovan Popovic                            | 2018-04-17 | [CLR]       |
+| [Why Table Join Orders In Relational Databases]                                                                         | Bert Wagner                              | 2018-04-16 | [DEV]       |
+| [Finding overlapping ranges of data]                                                                                    | Louis Davidson                           | 2018-04-18 | [DEV]       |
+| [Avoid use of the MONEY and SMALLMONEY datatypes]                                                                       | Phil Factor                              | 2018-04-18 | [DEV]       |
+| [Provisioning SQL Server Instances with Docker]                                                                         | Laerte Junior                            | 2018-04-18 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1006,3 +1020,15 @@ Articles types:
 [Interval Queries in SQL Server]:http://www.itprotoday.com/software-development/interval-queries-sql-server
 [Dealing with date and time instead of datetime]:https://sqlperformance.com/2018/03/sql-optimizer/dealing-with-date-and-time
 [Insight into the SQL Server buffer cache]:https://www.sqlshack.com/insight-into-the-sql-server-buffer-cache/
+[A concrete example of migration between an Oracle Database and SQL Server using Microsoft Data Migration Assistant]:https://www.sqlshack.com/a-concrete-example-of-migration-between-an-oracle-database-and-sql-server-using-microsoft-data-migration-assistant/
+[Audit SQL Server stop, start, restart]:https://blogs.msdn.microsoft.com/skeeler/2018/03/audit-sql-server-stop-start-restart/
+[Query tuning: Apply yourself]:https://sqltechblog.com/2018/04/06/query-tuning-apply-yourself/
+[How to identify and monitor unused indexes in SQL Server]:https://www.sqlshack.com/how-to-identify-and-monitor-unused-indexes-in-sql-server/
+[Benchmarking: 1-TB table population (part 1: the baseline)]:https://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-1-the-baseline/
+[Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]:https://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
+[An overview of SQL Server database migration tools provided by Microsoft]:https://www.sqlshack.com/an-overview-of-sql-server-database-migration-tools-provided-by-microsoft/
+[Calling Http endpoints in T-SQL using CURL extension]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/04/17/calling-http-endpoints-in-t-sql-using-curl-extension/
+[Why Table Join Orders In Relational Databases]:https://hackernoon.com/why-table-join-orders-in-relational-databases-dont-matter-6de3a35f2959
+[Finding overlapping ranges of data]:https://www.red-gate.com/simple-talk/blogs/finding-overlapping-ranges-data/
+[Avoid use of the MONEY and SMALLMONEY datatypes]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
+[Provisioning SQL Server Instances with Docker]:https://www.red-gate.com/simple-talk/sysadmin/containerization/provisioning-sql-server-instances-docker/
