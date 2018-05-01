@@ -3568,16 +3568,20 @@ Scope: global only
 
 <a id="8605"></a>
 #### Trace Flag: 8605
+**Undocumented trace flag**<br />
 Function: Displays logical and physical trees used during the optimization process<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="8606"></a>
 #### Trace Flag: 8606
+**Undocumented trace flag**<br />
 Function: Show LogOp Trees<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="8607"></a>
@@ -3585,7 +3589,8 @@ Link: [Yet another X-Ray for the QP]
 Function: Displays the optimization output tree during the optimization process<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
-Link: [Yet another X-Ray for the QP]
+Link: [Yet another X-Ray for the QP]<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="8608"></a>
@@ -3593,7 +3598,8 @@ Link: [Yet another X-Ray for the QP]
 Function: Shows the initial Memo structure<br />
 Link: http://www.queryprocessor.ru/optimizer-part-3-full-optimiztion-optimization-search0<br />
 Link: http://www.benjaminnevarez.com/2012/04/inside-the-query-optimizer-memo-structure<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx
+Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx<br />
+Link: [Query Optimizer Deep Dive - Part 4]
 
 
 <a id="8609"></a>
