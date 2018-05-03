@@ -1,7 +1,7 @@
 
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: February 21, 2018
+-- Last Modified: May 2, 2018
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -1135,19 +1135,24 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 ------
 
 -- Are your backup sizes and times changing over time?
+-- Are you using backup compression?
+-- Are you using backup checksums?
+-- Are you doing copy_only backups?
+-- Have you done any backup tuning with striped backups, or changing the parameters of the backup command?
 
 
 
 -- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
--- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part1
+-- https://bit.ly/2plxCer
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 2
--- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part2
+-- https://bit.ly/2IuJpzI
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 3
--- https://www.pluralsight.com/courses/sql-server-2014-dmv-diagnostic-queries-part3
+-- https://bit.ly/2FIlCPb
+
 
 
 -- Sign up for Microsoft Visual Studio Dev Essentials and get a free three month pass to Pluralsight
@@ -1156,13 +1161,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- http://bit.ly/1q6xbDL
 
 
--- Sign up for Microsoft IT Pro Cloud Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
+-- Sign up for Microsoft Azure Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
 
--- Microsoft IT Pro Cloud Essentials
--- http://bit.ly/2443SAd
+-- Microsoft Azure Essentials
+-- https://bit.ly/2JMWe8x
 
 
 -- August 2017 blog series about upgrading and migrating SQL Server
--- https://www.sqlskills.com/blogs/glenn/category/upgrading-sql-server/
+-- https://bit.ly/2ftKVrX
 
 
