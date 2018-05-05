@@ -505,7 +505,6 @@ Articles types:
 | [An alternative to data masking]                                                                                        | Daniel Hutmacher                         | 2018-02-05 | [DEV]       |
 | [Safely and Easily Use High-Level Permissions Without Granting Them to Anyone: Server-level]                            | Solomon Rutzky                           | 2018-02-15 | [DBA]       |
 | [PLEASE, Please, please Stop Using Impersonation, TRUSTWORTHY, and Cross-DB Ownership Chaining]                         | Solomon Rutzky                           | 2018-12-30 | [DBA]       |
-| [Setting and Identifying Row Goals in Execution Plans]                                                                  | Paul White                               | 2018-02-12 | [DEV]       |
 | [Indexing and Partitioning]                                                                                             | DBA From The Cold                        | 2018-02-21 | [DEV]       |
 | [Schema Compare for SQL Server]                                                                                         | Thomas Larock                            | 2018-02-14 | [DEV]       |
 | [How to change SQL Server ERRORLOG location]                                                                            | Mark Varnas                              | 2018-03-04 | [DBA]       |
@@ -528,6 +527,9 @@ Articles types:
 | [Finding overlapping ranges of data]                                                                                    | Louis Davidson                           | 2018-04-18 | [DEV]       |
 | [Avoid use of the MONEY and SMALLMONEY datatypes]                                                                       | Phil Factor                              | 2018-04-18 | [DEV]       |
 | [Provisioning SQL Server Instances with Docker]                                                                         | Laerte Junior                            | 2018-04-18 | [DBA]       |
+| [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-08-16 | [DBA],[DEV] |
+| [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]                                     | SQL Undercover                           | 2018-05-02 | [DBA],[DEV] |
+| [NOLOCK and Top Optimization]                                                                                           | Dmitry Piliugin                          | 2018-04-12 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1009,7 +1011,6 @@ Articles types:
 [An alternative to data masking]:https://sqlsunday.com/2018/02/05/an-alternative-to-data-masking/
 [Safely and Easily Use High-Level Permissions Without Granting Them to Anyone: Server-level]:https://sqlquantumleap.com/2018/02/15/safely-and-easily-use-high-level-permissions-without-granting-them-to-anyone-server-level/
 [PLEASE, Please, please Stop Using Impersonation, TRUSTWORTHY, and Cross-DB Ownership Chaining]:https://sqlquantumleap.com/2017/12/30/please-please-please-stop-using-impersonation-execute-as/
-[Setting and Identifying Row Goals in Execution Plans]:https://sqlperformance.com/2018/02/sql-plan/setting-and-identifying-row-goals
 [Indexing and Partitioning]:https://dbafromthecold.com/2018/02/21/indexing-and-partitioning/
 [Schema Compare for SQL Server]:https://thomaslarock.com/2018/02/schema-compare-for-sql-server/
 [How to change SQL Server ERRORLOG location]:https://red9.com/sql-server-error-log-location/
@@ -1032,3 +1033,6 @@ Articles types:
 [Finding overlapping ranges of data]:https://www.red-gate.com/simple-talk/blogs/finding-overlapping-ranges-data/
 [Avoid use of the MONEY and SMALLMONEY datatypes]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
 [Provisioning SQL Server Instances with Docker]:https://www.red-gate.com/simple-talk/sysadmin/containerization/provisioning-sql-server-instances-docker/
+[Understanding the graphical representation of the SQL Server Deadlock Graph]:https://www.sqlshack.com/understanding-graphical-representation-sql-server-deadlock-graph/
+[Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]:https://sqlundercover.com/2018/05/02/digitally-signing-a-stored-procedure-to-allow-it-to-run-with-elevated-permissions/
+[NOLOCK and Top Optimization]:https://www.sqlshack.com/nolock-and-top-optimization/
