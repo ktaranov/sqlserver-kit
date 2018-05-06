@@ -61,7 +61,6 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [Solution](/Solution)
     - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
     - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
-    - [Ola Maintenance Solution](/Solution/Ola_Maintenance_Solution) (by Ola Hallengren)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
     - [SSMS addins](/SSMS/SSMS_Addins.md) (**34 useful free and paid SSMS Addins**)
@@ -240,10 +239,11 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
-   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (563 People, Russian)
+   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (609 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
-    - [SQL Server Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
+    - [SQL Server Ola Hallengren's Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
+    - [Standby restore script output for Ola Hallengren's Maintenance Solution](https://github.com/jzagelbaum/OlaHallengrenRestoreScript) (by jzagelbaum) (Github)
     - [SqlQueryStress - SQL query stress simulator for SQL Server](https://github.com/ErikEJ/SqlQueryStress) (by Adam Machanic and Erik Ejlskov Jensen)
     - [Statistic Parser](https://github.com/Jorriss/StatisticsParser) (by Richie Rump) (Github)
     - [SQL Generator](https://github.com/Jorriss/sqlgenerator) (by Richie Rump) (Github)
@@ -281,6 +281,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [olamaintconfigtables - This are tables and jobs that can use to run Ola's scripts as T-SQL Jobs and run on Linux](https://github.com/tboggiano/olamaintconfigtables) (by Tracy Boggiano)
     - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA  ](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
     - [dba-database - Database containing DBA helper code and open source software](https://github.com/amtwo/dba-database) (by Andy Mallon)
+    - [SQLServerSpaceAnalysis PowerBI](https://github.com/SQLJana/SQLServerSpaceAnalysis) (by Jana Sattainathan)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -390,6 +391,7 @@ BIML Bloggers
  - [ReportingServicesTools - Reporting Services Powershell Tools](https://github.com/Microsoft/ReportingServicesTools) (by Microsoft)
  - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
  - [Export-DMVInformation - Export the resuts from Glenn Berry's DMV queries directly to Excel](https://github.com/sanderstad/Export-DMVInformation/) (Github) (by Sander Stad)
+ - [Export-QueryToSQLTable - Export one or more query results run against one or more instances/databases to table](https://github.com/SQLJana/Export-QueryToSQLTable) (by Jana Sattainathan) (Github)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -415,6 +417,7 @@ BIML Bloggers
  - https://sourceforge.net/projects/spawner/
  - http://databene.org/databene-benerator
  - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
+ - https://mockaroo.com
 
 **[⬆ back to top](#table-of-contents)**
 
