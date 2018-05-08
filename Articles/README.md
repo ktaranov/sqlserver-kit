@@ -530,6 +530,9 @@ Articles types:
 | [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-08-16 | [DBA],[DEV] |
 | [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]                                     | SQL Undercover                           | 2018-05-02 | [DBA],[DEV] |
 | [NOLOCK and Top Optimization]                                                                                           | Dmitry Piliugin                          | 2018-04-12 | [DEV]       |
+| [Operator Precedence versus the Confusing Constraint Translation]                                                       | Louis Davidson                           | 2018-04-30 | [DEV]       |
+| [Interval Queries in SQL Server]                                                                                        | Itzik Ben-Gan                            | 2013-06-13 | [DEV]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 1]                                                       | Itzik Ben-Gan                            | 2018-04-10 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1036,3 +1039,6 @@ Articles types:
 [Understanding the graphical representation of the SQL Server Deadlock Graph]:https://www.sqlshack.com/understanding-graphical-representation-sql-server-deadlock-graph/
 [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]:https://sqlundercover.com/2018/05/02/digitally-signing-a-stored-procedure-to-allow-it-to-run-with-elevated-permissions/
 [NOLOCK and Top Optimization]:https://www.sqlshack.com/nolock-and-top-optimization/
+[Operator Precedence versus the Confusing Constraint Translation]:https://www.red-gate.com/simple-talk/blogs/operator-precedence-versus-confusing-constraint-translation/
+[Interval Queries in SQL Server]:http://www.itprotoday.com/software-development/interval-queries-sql-server
+[Optimization Thresholds – Grouping and Aggregating Data, Part 1]:https://sqlperformance.com/2018/04/sql-plan/grouping-and-aggregating-part-1
