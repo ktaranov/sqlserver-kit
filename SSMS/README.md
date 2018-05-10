@@ -26,15 +26,7 @@ Additionally, SSMS 17.x can be installed side-by-side with SSMS 16.X or SQL Serv
 
 
 ## Supported Operating systems
-This release of SSMS supports the following platforms when used with the latest available service pack:
- - Windows 10
- - Windows 8
- - Windows 8.1
- - Windows 7 (SP1)
- - Windows Server 2016
- - Windows Server 2012 (64-bit)
- - Windows Server 2012 R2 (64-bit)
- - Windows Server 2008 R2 (64-bit)
+This release of SSMS supports the following platforms when used with the latest available service pack: Windows 10, Windows 8, Windows 8.1, Windows 7 (SP1),  Windows Server 2016, Windows Server 2012 (64-bit), Windows Server 2012 R2 (64-bit), Windows Server 2008 R2 (64-bit)
 
 ### Note
 SSMS 17.X is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
@@ -46,17 +38,17 @@ Support will then work with customers to determine if the issue is with SSMS or 
 
 ## Available Languages
 SQL Server Management Studio for another languages:
- [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x804) | 
- [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x404) |
- [English (United States)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x409)
- [French](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x40c) |
- [German](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x407) |
- [Italian](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x410) |
- [Japanese](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x411) |
- [Korean](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x412) |
- [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x416) |
- [Russian](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x419) |
- [Spanish](https://go.microsoft.com/fwlink/?linkid=870039&clcid=0x40a) |
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x804) | 
+ [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x404) |
+ [English (United States)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x409)
+ [French](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x40c) |
+ [German](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x407) |
+ [Italian](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x410) |
+ [Japanese](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x411) |
+ [Korean](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x412) |
+ [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x416) |
+ [Russian](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x419) |
+ [Spanish](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x40a) |
 
 SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.6):
 [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x804) |
@@ -76,7 +68,8 @@ SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.6):
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 |----------------------------------|---------------|--------------|---------:|
-| [17.6 Release] **Latest**        | 14.0.17230.0  | 2018-03-20   |      802 |
+| [17.7 Release] **Latest**        | 14.0.17254.0  | 2018-05-09   |      803 |
+| [17.6 Release]                   | 14.0.17230.0  | 2018-03-20   |      802 |
 | [17.5 Release]                   | 14.0.17224.0  | 2018-02-15   |      802 |
 | [17.4 Release]                   | 14.0.17213.0  | 2017-12-07   |      802 |
 | [17.3 Release]                   | 14.0.17199.0  | 2017-10-09   |      801 |
@@ -100,6 +93,7 @@ SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.6):
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[17.7 Release]:https://go.microsoft.com/fwlink/?linkid=873126
 [17.6 Release]:https://go.microsoft.com/fwlink/?linkid=870039
 [17.5 Release]:https://go.microsoft.com/fwlink/?linkid=867670
 [17.4 Release]:https://go.microsoft.com/fwlink/?linkid=864329
