@@ -2232,7 +2232,6 @@ Scope: global only
 Function: Disables [indirect checkpoints](https://docs.microsoft.com/en-us/sql/relational-databases/logs/database-checkpoints-sql-server?view=sql-server-2017#IndirectChkpt) on `tempdb`.
 **Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU5, SQL Server 2017 (14.x) CU1 and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
-Link: https://support.microsoft.com/help/3200975/<br />
 Scope: global only
 
 
