@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**587** trace flags)
+Complete list of Microsoft SQL Server trace flags (**588** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -219,7 +219,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **587 trace flags**
+Summary: **588 trace flags**
 
 
 <a id="-1"></a>
@@ -2220,9 +2220,19 @@ Function: Disables parallel redo.
 Assume that you use an Always On availability group (AG) that contains heap tables.
 Starting in SQL Server 2016, parallel thread for redo operations is used in secondary replicas.
 In this case, heap tables redo operation may generate a runtime assert dump or the SQL Server may crash with an access violation error in some cases.<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x) and SQL Server 2017 (14.x).**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3200975/<br />
 Link: https://support.microsoft.com/help/4101554/<br />
+Scope: global only
+
+
+<a id="3468"></a>
+#### Trace Flag: 3468
+Function: Disables [indirect checkpoints](https://docs.microsoft.com/en-us/sql/relational-databases/logs/database-checkpoints-sql-server?view=sql-server-2017#IndirectChkpt) on `tempdb`.
+**Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU5, SQL Server 2017 (14.x) CU1 and higher builds.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/3200975/<br />
 Scope: global only
 
 
