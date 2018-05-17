@@ -100,8 +100,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.6
-    Last Modified: 2018-04-03 22:23 UTC+3 by Konstantin Taranov
+    Version: 4.7
+    Last Modified: 2018-05-17 15:35 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -115,7 +115,11 @@ BEGIN TRY
                                            WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                       END;
     DECLARE @err_msg NVARCHAR(MAX);
-    PRINT('Benchmark started at ' +  CONVERT(VARCHAR(27), @startTime, 121) + ' by ' + @originalLogin);
+    DECLARE @RaiseError NVARCHAR(2000);
+
+    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    SET @RaiseError = 'Benchmark started at ' +  CONVERT(VARCHAR(27), @startTime, 121) + ' by ' + @originalLogin;
+    RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
     DECLARE @productMajorVersion SQL_VARIANT = SERVERPROPERTY('ProductMajorVersion');
     IF CAST(@productMajorVersion AS INT) < 10
@@ -292,16 +296,16 @@ BEGIN TRY
 
        IF @printStepInfo = 1
        -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
-           DECLARE @RaiseError VARCHAR(2000) = 'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
-                                WHEN @stepNumnber < 100  THEN '  '  + CAST(@stepNumnber AS VARCHAR(30))
-                                WHEN @stepNumnber < 1000 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
-                                ELSE CAST(@stepNumnber AS VARCHAR(30))
-                           END +
-                  ', start: '    + CONVERT(VARCHAR(27), @runTimeStamp, 121) +
-                  ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                                             WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                                        END, 121) +
-                  ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.';
+           SET @RaiseError = 'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
+                                           WHEN @stepNumnber < 100  THEN '  '  + CAST(@stepNumnber AS VARCHAR(30))
+                                           WHEN @stepNumnber < 1000 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
+                                           ELSE CAST(@stepNumnber AS VARCHAR(30))
+                                      END +
+                              ', start: '    + CONVERT(VARCHAR(27), @runTimeStamp, 121) +
+                              ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                                                         WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                                                    END, 121) +
+                              ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.';
            RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
         IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> ''
@@ -433,30 +437,34 @@ BEGIN TRY
          ) / 2.0;
     END;
 
-    PRINT(@crlf +
+   DECLARE @endTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                        WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                   END;
+    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    SET @RaiseError = @crlf +
          'Min: '       + CAST(@min AS VARCHAR(30)) + @durationAccuracy +
          ', Max: '     + CAST(@max AS VARCHAR(30)) + @durationAccuracy +
          ', Average: ' + CAST(@avg AS VARCHAR(30)) + @durationAccuracy +
          CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS VARCHAR(30)) + @durationAccuracy ELSE '' END +
          @crlf +
-         'Benchmark finished at ' + CONVERT(VARCHAR(23), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                                              WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                                         END, 121) + 
-         ' by ' + @originalLogin
-         );
+         'Benchmark finished at ' + CONVERT(VARCHAR(23), @endTime, 121) +
+         ' by ' + @originalLogin;
+    RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
-        DECLARE @BenchmarkDuration BIGINT = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @startTime, @FinishBenchmarkTime)
-                                                 WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @startTime, @FinishBenchmarkTime)
-                                                 ELSE 0
-                                            END;
+    DECLARE @BenchmarkDuration BIGINT = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'mcs' THEN DATEDIFF(mcs, @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'ms'  THEN DATEDIFF(ms,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @startTime, @FinishBenchmarkTime)
+                                             ELSE 0
+                                        END;
 
-         PRINT(@crlf + 'Duration of benchmark: ' +  CAST(@BenchmarkDuration AS VARCHAR(30)) + @durationAccuracy + '.')
+    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    SET @RaiseError = @crlf + 'Duration of benchmark: ' +  CAST(@BenchmarkDuration AS VARCHAR(30)) + @durationAccuracy + '.';
+    RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
 END TRY
 
