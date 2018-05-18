@@ -1,6 +1,6 @@
 # SQL Server Management Studio add-ins
 Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
-         
+
 | Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2018-01-04   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  €150 |

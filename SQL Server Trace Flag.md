@@ -2034,7 +2034,8 @@ For more information about the pre-allocation algorithm, see [Backup Compression
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/2001026/inf-space-requirements-for-backup-devices-in-sql-server<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2011/08/11/how-compressed-is-your-backup/<br />
-Link: https://technet.microsoft.com/en-us/library/bb964719.aspx<br />
+Link: https://docs.microsoft.com/en-us/sql/relational-databases/backup-restore/backup-compression-sql-server<br />
+Link: https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/<br />
 Scope: global only
 
 
@@ -2229,7 +2230,7 @@ Scope: global only
 
 <a id="3468"></a>
 #### Trace Flag: 3468
-Function: Disables [indirect checkpoints](https://docs.microsoft.com/en-us/sql/relational-databases/logs/database-checkpoints-sql-server?view=sql-server-2017#IndirectChkpt) on `tempdb`.
+Function: Disables [indirect checkpoints](https://docs.microsoft.com/en-us/sql/relational-databases/logs/database-checkpoints-sql-server?view=sql-server-2017#IndirectChkpt) on `tempdb`.<br />
 **Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU5, SQL Server 2017 (14.x) CU1 and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
