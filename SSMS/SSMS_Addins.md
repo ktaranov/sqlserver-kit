@@ -1,13 +1,12 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **35** SSMS add-ins
-         
+Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
+
 | Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2017-09-06   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  €150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2018-01-04   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  €150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008/2012/2014/2016/2017           | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                               | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017           | Red Gate             | Yes          | No    |
-| [SQL Scripts Manager](#sql-scripts-manager)           | [SQL Scripts Manager]         | 2015-05-31   | 2008/2012/2014                     | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008/2012/2014/2016/2017           | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012/2014/2016/2017                | Red Gate             | No           |  $495 |
 | [Supratimas](#supratimas)                             | [Supratimas]                  | 2017-07-11   | 2008/2012/2014/2016/2017           | TTRider LLC          | Yes          | No    |
@@ -37,13 +36,12 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                          | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                          | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL           | Yes          |  $149 |
-| [GIN-List](#gin-list)                             | [GIN-List]                  | 2017-06-30   | 2008/2012/2014                | GIN-List           | Yes          |  No |
 
 
 <a id="ssmsboost"></a>
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
-Release date: 2017-09-06<br/>
+Release date: 2018-01-04<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
@@ -118,18 +116,6 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 - Search across multiple object types and multiple databases
 - Find all references to an object
 - Search with booleans and wildcards
-
-
-<a id="sql-scripts-manager"></a>
-## SQL Scripts Manager
-Download page: [SQL Scripts Manager]<br/>
-Release date: 2015-05-31<br/>
-Support Version: 2008/2012/2014<br/>
-Developer: Red Gate<br/>
-Free version: Yes<br/>
-Price: No
-
-Powerful and reliable scripts written by SQL Server experts
 
 
 <a id="red-gate-sql-data-test"></a>
@@ -585,23 +571,11 @@ Price: $149
 
 Lightweight add-in to connect your databases to your source control system
 
-<a id="gin-list"></a>
-## GIN-List
-Download page: [GIN-List]<br/>
-Release date: 2017-06-30<br/>
-Support Version: 2008/2012/2014<br/>
-Developer: Omer Fancy<br/>
-Free version: Yes<br/>
-Price: No
-
-Extremely small and lightweight productivity enhancement add-in. This add-in was created to facilitate writing SQL queries where one has to specify a list of IDs in an IN list. The list of values on which you filter on might be coming from a SQL grid, or an Excel file; in either case it marks each of the values as strings, adds comma separators and the necessary parentheses. 
-
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
-[SQL Scripts Manager]:http://www.red-gate.com/products/dba/sql-scripts-manager/
 [Red Gate SQL Test]:http://www.red-gate.com/products/sql-development/sql-test/
 [Red Gate SQL Source Control]:http://www.red-gate.com/products/sql-development/sql-source-control/
 [Supratimas]:http://www.supratimas.com/Home/Downloads
@@ -632,7 +606,6 @@ Extremely small and lightweight productivity enhancement add-in. This add-in was
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
-[GIN-List]:http://www.omerfancy.com/ginlist/
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe

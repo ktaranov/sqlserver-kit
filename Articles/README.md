@@ -535,6 +535,7 @@ Articles types:
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 1]                                                       | Itzik Ben-Gan                            | 2018-04-10 | [DEV]       |
 | [Query Trace Column Values]                                                                                             | Dmitry Piliugin                          | 2018-04-23 | [XE]        |
 | [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]                                                | Brent Ozar                               | 2018-04-27 | [DEV]       |
+| [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1046,3 +1047,4 @@ Articles types:
 [Optimization Thresholds – Grouping and Aggregating Data, Part 1]:https://sqlperformance.com/2018/04/sql-plan/grouping-and-aggregating-part-1
 [Query Trace Column Values]:https://www.sqlshack.com/query-trace-column-values/
 [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]:https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/
+[Break large delete operations into chunks]:https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes

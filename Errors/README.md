@@ -83,10 +83,10 @@ Error code equal `message_id` from `sys.messages`
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                            |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                            |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
-|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link1]              |
+|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link2]              |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                            |
-|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [Discuss Execute(SQL) At LinkedServer]  |
-|       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [Discuss Execute(SQL) At LinkedServer]  |
+|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [7357_link1][2]                         |
+|       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [7391_link2][2]                         |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.         … | [657_link1]                             |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.               … | [8624_link1]                            |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource   … | [8651_link1]                            |
@@ -96,9 +96,11 @@ Error code equal `message_id` from `sys.messages`
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                      … | [9002_link1]                            |
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                 … | [13570_link1]                           |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                       … | [15002_link1]                           |
-|      15136 | The database principal is set as the execution context of one or more procedures, functions, ...  … | [15136_link1]                           |
+|      15136 | The database principal is set as the execution context of one or more procedures, functions,      … | [15136_link1]                           |
+|      15199 | The current security context cannot be reverted. Please switch to the original database where     … | [15199_link1][1]                        |
+|      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of … | [15406_link1][1]                        |
 |      17182 | Tcp port is already in use                                                                          | [TCP Port Is Already In Use]            |
-|      17190 |  Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.   … | [17190_link1]                           |
+|      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.    … | [17190_link1]                           |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                           |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
@@ -106,6 +108,8 @@ Error code equal `message_id` from `sys.messages`
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
 
+[1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
+[2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
@@ -141,7 +145,6 @@ Error code equal `message_id` from `sys.messages`
 [5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
-[Discuss Execute(SQL) At LinkedServer]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [8624_link1]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [8651_link1]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/

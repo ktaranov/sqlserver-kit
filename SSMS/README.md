@@ -15,8 +15,7 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
  - [SQL Server Tools](https://docs.microsoft.com/en-us/sql/ssdt/sql-server-tools)
  - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
  - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)
- - [MSDN Code Snippets Schema Reference](https://msdn.microsoft.com/en-us/library/ms171418.aspx)
- - [MSDN Add Transact-SQL Snippets](https://msdn.microsoft.com/en-us/library/gg492130.aspx)
+ - [Add Transact-SQL Snippets](https://docs.microsoft.com/en-us/sql/relational-databases/scripting/add-transact-sql-snippets)
 
 
 ## Supported SQL Server versions
@@ -38,7 +37,7 @@ Support will then work with customers to determine if the issue is with SSMS or 
 
 ## Available Languages
 SQL Server Management Studio for another languages:
- [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x804) | 
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x804) |
  [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x404) |
  [English (United States)](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x409)
  [French](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x40c) |
@@ -50,18 +49,18 @@ SQL Server Management Studio for another languages:
  [Russian](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x419) |
  [Spanish](https://go.microsoft.com/fwlink/?linkid=873126&clcid=0x40a) |
 
-SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.6):
-[Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x804) |
-[Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x404) |
-[English (United States)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x409) |
-[French](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x40c) |
-[German](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x407) |
-[Italian](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x410) |
-[Japanese](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x411) |
-[Korean](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x412) |
-[Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x416) |
-[Russian](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x419) |
-[Spanish](https://go.microsoft.com/fwlink/?linkid=870041&clcid=0x40a)
+SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.7):
+[Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x804) |
+[Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x404) |
+[English (United States)](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x409) |
+[French](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x40c) |
+[German](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x407) |
+[Italian](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x410) |
+[Japanese](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x411) |
+[Korean](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x412) |
+[Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x416) |
+[Russian](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x419) |
+[Spanish](https://go.microsoft.com/fwlink/?linkid=873128&clcid=0x40a)
 
 
 ## SQL Server Management Studio Download Links and Release Info
