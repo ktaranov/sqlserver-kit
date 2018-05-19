@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **264** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **265** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {3}
  - **[D]**: Documentation solutions {7}
- - **[DA]**: Database Architecture {12}
+ - **[DA]**: Database Architecture {13}
  - **[DC]**: Data compare {11}
  - **[ETL]**: Extract Download Load (ETL) Tools {1}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
@@ -160,6 +160,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Trigger](#apexsql-trigger)                              | No                            | No        | [?]      | [ApexSQL Trigger]                           | 2017-06-01 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                | No                            | No        | [?]      | [ApexSQL Trigger Viewer]                    | 2017-06-01 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)            | No                            | No        | [?]      | [ApexSQL Snapshot Utility]                  | 2016-01-12 | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Model](#apexsql-model)                                  | No                            | No        | [DA]     | [ApexSQL Model]                             | 2018-09-10 | ApexSQL               |            | No             |  $399 |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                  | No                            | No        | [?]      | [DBBest T-SQL Analyzer]                     | 2015-03-13 | DBBest                |            | No             |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)  | No                            | No        | [SC],[DC]| [DBBest Database Compare Suite]             | 2015-09-04 | DBBest                |            | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                      | No                            | No        | [?]      | [Advanced Query Tool]                       | 2015-03-18 | Cardett Associates    |            | No             |  $180 |
@@ -2335,6 +2336,22 @@ Price: No
 Utility to create a lightweight 'snapshot' of a database schema, that can be used by ApexSQL Diff as a datasource
 
 
+## ApexSQL Model
+<a id="apexsql-model"></a>
+Download page: [ApexSQL Model]<br/>
+Release date: 2018-10-10<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $399
+
+Create database model diagrams and synchronize changes with existing databases.
+ - Forward and reverse engineer
+ - Customize the appearance of models
+ - Create new or modify existing object groups
+ - Navigate through model history
+ - Export database models as imagesCustomize print output
+
 
 ## DBBest T-SQL Analyzer
 <a id="dbbest-t-sql-analyzer"></a>
@@ -4261,6 +4278,7 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Decrypt]:https://www.apexsql.com/sql_tools_decrypt.aspx
+[ApexSQL Model]:https://www.apexsql.com/sql_tools_model.aspx~~~~
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
