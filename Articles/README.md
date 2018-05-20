@@ -536,6 +536,7 @@ Articles types:
 | [Query Trace Column Values]                                                                                             | Dmitry Piliugin                          | 2018-04-23 | [XE]        |
 | [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]                                                | Brent Ozar                               | 2018-04-27 | [DEV]       |
 | [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA],[DEV] |
+| [How to perform a page level restore in SQL Server]                                                                     | Prashanth Jayaram                        | 2018-08-18 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1048,3 +1049,4 @@ Articles types:
 [Query Trace Column Values]:https://www.sqlshack.com/query-trace-column-values/
 [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]:https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/
 [Break large delete operations into chunks]:https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes
+[How to perform a page level restore in SQL Server]:https://www.sqlshack.com/how-to-perform-a-page-level-restore-in-sql-server/
