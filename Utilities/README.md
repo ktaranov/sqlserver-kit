@@ -1,9 +1,9 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **265** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **269** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
- - **[BI]**: Business Intelligence Solutions {3}
+ - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {13}
  - **[DC]**: Data compare {11}
@@ -11,8 +11,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {2}
  - **[G]**: Data generation {4}
- - **[J]**: Job managers {2}
- - **[M]**: Monitoring and alerting Tools {13}
+ - **[J]**: Job managers {3}
+ - **[M]**: Monitoring and alerting Tools {16}
  - **[MG]**: Migration tool {25}
  - **[MS]**: Management Studio (alternative for SSMS) {23}
  - **[REC]**: Recovery tools {7}
@@ -146,7 +146,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Defrag](#apexsql-defrag)                                | No                            | No        | [IDX]    | [ApexSQL Defrag]                            | 2017-06-29 | ApexSQL               |            | No             |  $499 |
 | [ApexSQL Log](#apexsql-log)                                      | No                            | No        | [?]      | [ApexSQL Log]                               | 2017-05-24 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Monitor](#apexsql-monitor)                              | No                            | No        | [M]      | [ApexSQL Monitor]                           | 2017-10-05 | ApexSQL               |            | No             |  $499 |
-| [ApexSQL Plan](#apexsql-plan)                                    | No                            | No        | [?]      | [ApexSQL Plan]                              | 2017-10-26 | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Plan](#apexsql-plan)                                    | No                            | No        | [?]      | [ApexSQL Plan]                              | 2018-04-05~~~~ | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Propagate](#apexsql-propagate)                          | No                            | No        | [?]      | [ApexSQL Propagate]                         | 2017-09-25 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Recover](#apexsql-recover)                              | No                            | No        | [REC]    | [ApexSQL Recover]                           | 2017-10-26 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Build](#apexsql-build)                                  | No                            | No        | [?]      | [ApexSQL Build]                             | 2017-05-15 | ApexSQL               |            | No             |  $399 |
@@ -161,6 +161,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                | No                            | No        | [?]      | [ApexSQL Trigger Viewer]                    | 2017-06-01 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)            | No                            | No        | [?]      | [ApexSQL Snapshot Utility]                  | 2016-01-12 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Model](#apexsql-model)                                  | No                            | No        | [DA]     | [ApexSQL Model]                             | 2018-09-10 | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Analyze](#apexsql-analyze)                              | No                            | No        | [?]      | [ApexSQL Analyze]                           | 2017-12-13 | ApexSQL               |            | No             |  $299 |
+| [ApexSQL BI Monitor](#apexsql-bi-monitor)                        | No                            | No        | [BI],[M] | [ApexSQL BI Monitor]                        | 2018-05-18 | ApexSQL               |            | No             |  $499 |
+| [ApexSQL VM Monitor](#apexsql-vm-monitor)                        | No                            | No        | [M]      | [ApexSQL VM Monitor]                        | 2018-05-09 | ApexSQL               |            | No             |  $999 |
+| [ApexSQL Job](#apexsql-job)                                      | No                            | No        | [J]      | [ApexSQL Job]                               | 2018-03-29 | ApexSQL               |            | No             |  $499 |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                  | No                            | No        | [?]      | [DBBest T-SQL Analyzer]                     | 2015-03-13 | DBBest                |            | No             |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)  | No                            | No        | [SC],[DC]| [DBBest Database Compare Suite]             | 2015-09-04 | DBBest                |            | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                      | No                            | No        | [?]      | [Advanced Query Tool]                       | 2015-03-18 | Cardett Associates    |            | No             |  $180 |
@@ -2107,7 +2111,7 @@ Price: $499
 ## ApexSQL Plan
 <a id="apexsql-plan"></a>
 Download page: [ApexSQL Plan]<br/>
-Release date: 2017-10-26<br/>
+Release date: 2018-04-05<br/>
 Support Version: 2008/2012/2014/2016/2017<br/>
 Author: ApexSQL<br/>
 Free version: Yes<br/>
@@ -2351,6 +2355,80 @@ Create database model diagrams and synchronize changes with existing databases.
  - Create new or modify existing object groups
  - Navigate through model history
  - Export database models as imagesCustomize print output
+
+
+## ApexSQL Analyze
+<a id="apexsql-analyze"></a>
+Download page: [ApexSQL Analyze]<br/>
+Release date: 2017-12-13<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $299
+
+Database dependency analysis
+
+ - View and analyze SQL dependencies
+ - Customize the appearance of dependency diagrams
+ - Map dependencies down to the column level
+ - Visualize object dependencies graphically
+ - Export diagrams as image files
+ - Perform impact analysis on potential object deletions
+
+
+## ApexSQL BI Monitor
+<a id="apexsql-bi-monitor"></a>
+Download page: [ApexSQL BI Monitor]<br/>
+Release date: 2018-09-18<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $499
+
+ - Monitor SSAS, SSIS and SSRS performance
+ - Add custom performance counters
+ - Track system performanceUse baselines to customize alert thresholds
+ - View real-time and historical data
+ - Set up various alert actions for each counter
+ - Generate built-in and custom reportsTrack user activity
+
+
+## ApexSQL VM Monitor
+<a id="apexsql-vm-monitor"></a>
+Download page: [ApexSQL VM Monitor]<br/>
+Release date: 2018-05-09<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $999
+
+Virtualization performance monitoring
+
+ - Monitor multiple hypervisors - Hyper-V and ESXi
+ - View system performance metrics of monitored hosts
+ - Monitor virtual machines performance
+ - Monitor performance of host devices
+ - Use comprehensive dashboards for viewing metrics
+ - Calculate baselines and thresholds
+ - View top 5 loaded virtual machines for specific hosts
+ - Create and export comprehensive performance reports
+
+
+## ApexSQL VM Job
+<a id="apexsql-job"></a>
+Download page: [ApexSQL Job]<br/>
+Release date: 2018-03-29<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $499
+
+ - Manage SQL Server Agent jobs across multiple servers
+ - Get a detailed job history overview
+ - Manage SQL Server services on managed servers
+ - Export job details to PDF, HTML, XML or CSV format
+ - Manage SQL Server schedulesControl the status of SQL Server Agent services
+ - Define and manage SQL Server alertsMonitor SQL Server Agent logs
 
 
 ## DBBest T-SQL Analyzer
