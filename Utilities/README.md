@@ -24,7 +24,7 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2017-10-09 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-05-09 | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2017-12-13 | Microsoft             | BSD-3      | Open Source    | No    |
@@ -40,11 +40,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Exchange Server Error Code Look-up](#error-code-look-up)        | No                            | No        | [?]      | [Exchange Server Error Code Look-up]        | 2004-05-10 | Microsoft             |            | Yes            | No    |
 | [LINQPad](#linqpad)                                              | No                            | No        | [?]      | [LINQPad]                                   | 2016-01-02 | Joseph Albahari       |            | Non-commercial |   $45 |
 | [SqlDynamite](#sqldynamite)                                      | No                            | No        | [S]      | [SqlDynamite]                               | 2016-04-06 | Anatoly Sova          |            | Yes            | No    |
-| [SQL Server Data Tools](#ssdt)                                   | No                            | No        | [MS]     | [SQL Server Data Tools]                     | 2017-04-15 | Microsoft             |            | Yes            | No    |
+| [SQL Server Data Tools](#ssdt)                                   | No                            | No        | [MS]     | [SQL Server Data Tools]                     | 2018-04-10 | Microsoft             |            | Yes            | No    |
 | [Database Health Monitor](#database-health-monitor)              | No                            | No        | [M]      | [Database Health Monitor]                   | 2016-03-20 | Steve Stedman         |            | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                      | No                            | No        | [SC]     | [SchemaDrift]                               | 2016-02-28 | Steve Stedman         |            | Yes            | No    |
-| [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                   | 2016-06-06 | Open Source           |            | Yes            | No    |
-| [HeidiSQL](#heidisql)                                            | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [HeidiSQL]                                  | 2016-06-19 | Open Source           |            | Yes            | No    |
+| [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                   | 2018-05-13 | Open Source           |            | Yes            | No    |
+| [HeidiSQL](#heidisql)                                            | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [HeidiSQL]                                  | 2017-12-19 | Open Source           |            | Yes            | No    |
 | [SQLExecStats](#sqlexecstats)                                    | No                            | No        | [ST]     | [SQLExecStats]                              | 2016-02-08 | Joe Chang             |            | Yes            | No    |
 | [ExpressProfiler](#expressprofiler)                              | No                            | No        | [?]      | [ExpressProfiler]                           | 2016-02-15 | Chris Moore           |            | Yes            | No    |
 | [Data Migration Assistant](#data-migration-assistant)            | No                            | No        | [MG]     | [Data Migration Assistant]                  | 2017-03-15 | Microsoft             |            | Yes            | No    |
@@ -298,8 +298,8 @@ Utility types (main purpose), in braces `{}` current counts:
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2017-10-09<br/>
-Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Release date: 2018-05-09<br/>
+Support Version: 2005/2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -537,7 +537,7 @@ Supports MSSQL, Oracle, SAP, Firebird, Mysql, PostgreSQL, DB2, Informix, SQLite,
 ## SQL Server Data Tools
 <a id="ssdt"></a>
 Download page: [SQL Server Data Tools]<br/>
-Release date: 2017-04-15<br/>
+Release date: 2018-04-10<br/>
 Support Version: 2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -576,7 +576,7 @@ SchemaDrift is a SQL Server database comparison tool that allows you to compare 
 ## DBeaver
 <a id="dbeaver"></a>
 Download page: [DBeaver]<br/>
-Release date: 2016-06-06<br/>
+Release date: 2018-05-13<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Open Source<br/>
 Free version: Yes<br/>
@@ -589,8 +589,8 @@ Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Serv
 ## HeidiSQL
 <a id="heidisql"></a>
 Download page: [HeidiSQL]<br/>
-Release date: 2016-06-19<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Release date: 2017-12-19<br/>
+Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
 Author: Open Source<br/>
 Free version: Yes<br/>
 Price: No
@@ -4235,7 +4235,7 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [Exchange Server Error Code Look-up]:https://www.microsoft.com/en-us/download/details.aspx?id=985
 [LINQPad]:https://www.linqpad.net/
 [SqlDynamite]:http://www.host-tracker.com/SqlDynamite
-[SQL Server Data Tools]:https://msdn.microsoft.com/en-us/en-en/library/mt204009.aspx
+[SQL Server Data Tools]:https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt
 [Database Health Monitor]:http://databasehealth.com/download/
 [SchemaDrift]:http://databasehealth.com/schemadrift/
 [Dbeaver]:http://dbeaver.jkiss.org/
