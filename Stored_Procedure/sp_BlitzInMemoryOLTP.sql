@@ -1,4 +1,4 @@
-USE master;
+﻿USE master;
 GO
 
 IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL
@@ -37,6 +37,10 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
     -- Get all In-memory information
 
 .EXAMPLE
+    EXEC sp_BlitzInMemoryOLTP @dbName = N'ಠ ಠ';
+    -- Get In-memory information for database with name ಠ ಠ
+
+.EXAMPLE
     EXEC sp_BlitzInMemoryOLTP @instanceLevelOnly = 1;
     -- Get only instance In-Memory information
 
@@ -51,41 +55,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .NOTE
     Author: Ned Otter
+    Version: 1.9
     Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
-    Version: 1.0
-
-    Modified: 2017-12-06
-    Author: Aleksey Nagorskiy
-    Version: 1.1
-
-    Modified: 2017-12-13
-    Author: Konstantin Taranov
-    Version: 1.2
-
-    Modified: 2017-12-14
-    Author: Konstantin Taranov
-    Version: 1.3
-
-    Modified: 2017-12-14
-    Author: Aleksey Nagorskiy
-    Version: 1.4
-
-    Modified: 2017-12-18
-    Author: Konstantin Taranov
-    Version: 1.5
-
-    Modified: 2017-12-19
-    Author: Ned Otter
-    Version: 1.6
-
-    Modified: 2017-12-23
-    Author: Ned Otter
-    Version: 1.7
-
-    Modified: 2017-12-25
-    Author: Ned Otter
-    Version: 1.8
-
+    Release Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/sp_BlitzInMemoryOLTP.sql
+    Last Modified: 2018-05-24 10:50 UTC+3
+    Last Modified by: Konstantin Taranov
+    Main Contributors: Ned Otter, Konstantin Taranov, Aleksey Nagorskiy
 */
 AS 
 BEGIN TRY
@@ -110,7 +85,7 @@ BEGIN TRY
 
     /*
     ###################################################
-        if we get here, we are running at least SQL 2014, but that version 
+        if we get here, we are running at least SQL 2014, but that version
         only runs In-Memory if we are using Enterprise Edition
     ###################################################
     */
@@ -133,7 +108,7 @@ BEGIN TRY
          , ROW_NUMBER() OVER (ORDER BY name ASC) AS rowNumber
     INTO #inmemDatabases
     FROM sys.databases
-    WHERE name NOT IN ( 'master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
+    WHERE name NOT IN ('master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
         AND (name = @dbName OR @dbName = 'ALL')
         AND state_desc = 'ONLINE';
 
@@ -146,17 +121,19 @@ BEGIN TRY
         RETURN;
     END;
 
-    IF (@dbName IS NOT NULL AND @dbName <> 'ALL') 
+    IF (@dbName IS NOT NULL AND @dbName <> N'ALL')
          AND (NOT EXISTS (SELECT 1 FROM #inmemDatabases WHERE name = QUOTENAME(@dbName)) AND @instanceLevelOnly = 0)
     BEGIN
-        SET @errorMessage = '@dbName not found in sys.databases';
+        SET @errorMessage = N'Database [' + @dbName  + N'] not found in sys.databases!!!' + @crlf +
+                            N'Do you add N if you has unicode name?' + @crlf +
+                            N'Try to exec this: EXEC sp_BlitzInMemoryOLTP @dbName = N''ಠ ಠ_Your_Unicode_DB_Name_ಠ ಠ''';
         THROW 55002, @errorMessage, 1;
         RETURN;
     END;
 
     IF @dbName = 'ALL' AND NOT EXISTS (SELECT 1 FROM #inmemDatabases)
     BEGIN
-        SET @errorMessage = 'ALL was specified, but no memory-optimized databases were found';
+        SET @errorMessage = 'ALL was specified, but no memory-optimized databases were found!!!';
         THROW 55002, @errorMessage, 1;
         RETURN;
     END;
