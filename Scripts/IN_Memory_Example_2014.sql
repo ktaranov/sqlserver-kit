@@ -1,8 +1,14 @@
-﻿-- https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios
+﻿/*
+Author: Konstantin Taranov
+Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/IN_Memory_Example_2014.sql
+*/
 USE master;
 GO
 
-DECLARE @databaseFilePath NVARCHAR(1000) = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
+DECLARE @databaseFilePath NVARCHAR(1000) = N'';
+SELECT @databaseFilePath = SUBSTRING(physical_name, 1, CHARINDEX(N'master.mdf', LOWER(physical_name)) - 1)
+ FROM  master.sys.master_files
+ WHERE database_id = 1 AND file_id = 1;
 DECLARE @databaseName     SYSNAME        = N'ಠ ಠ 14 Test';
 DECLARE @tsqlStatement    NVARCHAR(4000) = N'';
 DECLARE @debug            BIT            = 0;

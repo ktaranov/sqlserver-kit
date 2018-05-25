@@ -1,15 +1,27 @@
-﻿-- https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/overview-and-usage-scenarios
+﻿/*
+Author: Konstantin Taranov
+Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/IN_Memory_Example_2017.sql
+*/
 USE master;
 GO
 
+DECLARE @databaseFilePath NVARCHAR(1000) = N'';
+SELECT @databaseFilePath = SUBSTRING(physical_name, 1, CHARINDEX(N'master.mdf', LOWER(physical_name)) - 1)
+ FROM  master.sys.master_files
+ WHERE database_id = 1 AND file_id = 1;
 
-DECLARE @databaseFilePath NVARCHAR(1000) = 'k:\MSSQL\MSSQL14.MSSQLSERVER\MSSQL\DATA\' --N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\';
-DECLARE @databaseName     SYSNAME        = N'ಠಠಠಠ 16+ 错误的名字! Wrong Name! गलत नाम! Неправильное название! Nombre incorrecto! Falscher Name! 間違った名前! שם שגוי! Mauvais Nom! ಠಠಠಠ';
+DECLARE @databaseName SYSNAME = N'1ಠಠಠ 16+ 错误的名字! Wrong Name! गलत नाम! Неправильное название! Nombre incorrecto! Falscher Name! 間違った名前! שם שגוי! Mauvais Nom!1';
+-- To prevent Msg 5135, שםשגוי cannot be used for FILESTREAM files
+DECLARE @dbFileName_mod   SYSNAME        = SUBSTRING(@databaseName, 1, 80) + N'_mod';
+DECLARE @databaseFileName NVARCHAR(1000) = REPLACE(@databaseName, N' ', N'');
 DECLARE @tsqlStatement    NVARCHAR(4000) = N'';
+DECLARE @crlf             VARCHAR(10) = CHAR(10) + CHAR(13);
 DECLARE @debug            BIT            = 1;
 
-SET @tsqlStatement = '
-IF DB_ID(N''@databaseName'') IS NOT NULL
+SET @tsqlStatement = N'
+USE master;' +
+CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END +
+N'IF DB_ID(N''@databaseName'') IS NOT NULL
 BEGIN
     ALTER DATABASE [@databaseName] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
     DROP DATABASE  [@databaseName];
@@ -18,23 +30,22 @@ END;
 CREATE DATABASE [@databaseName]
  CONTAINMENT = NONE
  ON PRIMARY
-(NAME = N''@databaseName'', FILENAME = N''@databaseFilePath@databaseName.mdf'', SIZE = 64MB, MAXSIZE = UNLIMITED, FILEGROWTH = 64MB),
+(NAME = N''@databaseName'',
+FILENAME = N''@databaseFilePath@databaseFileName.mdf'', SIZE = 32MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB),
 FILEGROUP [@databaseName] CONTAINS MEMORY_OPTIMIZED_DATA DEFAULT
-( NAME = N''@databaseName_mod'', FILENAME = N''@databaseFilePath@databaseName_mod'', MAXSIZE = UNLIMITED)
+( NAME = N''@databaseName_mod'', FILENAME = N''@databaseFilePath@dbFileName_mod'', MAXSIZE = 2048MB)
  LOG ON
-( NAME = N''@databaseName_log'', FILENAME = N''@databaseFilePath@databaseName_log.ldf'', SIZE = 64MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB);
-
-IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) < 13
-ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 140;
-
-IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) = 14
+( NAME = N''@databaseName_log'', FILENAME = N''@databaseFilePath@databaseFileName_log.ldf'', SIZE = 32MB, MAXSIZE = 2048MB, FILEGROWTH = 64MB);
+' + CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END +
+N'IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) = 14
 ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 140;
 
 IF CAST(SERVERPROPERTY(''ProductMajorVersion'') AS INT) = 13
-ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 130;
-';
+ALTER DATABASE [@databaseName] SET COMPATIBILITY_LEVEL = 130;';
 
 SET @tsqlStatement = REPLACE(@tsqlStatement, '@databaseName',     @databaseName);
+SET @tsqlStatement = REPLACE(@tsqlStatement, '@dbFileName_mod',   @dbFileName_mod);
+SET @tsqlStatement = REPLACE(@tsqlStatement, '@databaseFileName', @databaseFileName);
 SET @tsqlStatement = REPLACE(@tsqlStatement, '@databaseFilePath', @databaseFilePath);
 
 IF @debug = 1 PRINT(@tsqlStatement)
@@ -42,12 +53,9 @@ ELSE
 EXEC sp_executesql @tsqlStatement;
 
 
-SET @tsqlStatement = '
-USE [@databaseName];
---UNCOMMENT GO Statement if you want to execute statements after printing in debug mode!!!
---GO
-
--- configure recommended DB option
+SET @tsqlStatement = N'USE [@databaseName];' +
+CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END +
+'-- configure recommended DB option
 ALTER DATABASE CURRENT SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON;
 
 -- memory-optimized table
@@ -101,8 +109,8 @@ EXEC sp_executesql @tsqlStatement;
 DECLARE @UseAndExecStatment NVARCHAR(4000);
 SET @UseAndExecStatment = N'USE [' + @databaseName + N']; EXEC sp_executesql @tsqlStatement';
 
-SET @tsqlStatement = N'
--- natively compiled stored procedure
+SET @tsqlStatement = CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END +
+N'-- natively compiled stored procedure
 CREATE PROCEDURE dbo.usp_ingest_table1
   @table1 dbo.tt_table1 READONLY
 WITH NATIVE_COMPILATION, SCHEMABINDING
@@ -146,7 +154,8 @@ END;
 
 
 SET @UseAndExecStatment = N'USE [' + @databaseName + N']; EXEC sp_executesql @tsqlStatement';
-SET @tsqlStatement = N'
+SET @tsqlStatement = CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END +
+N'
 CREATE OR ALTER PROCEDURE dbo.native_sp
 WITH NATIVE_COMPILATION, SCHEMABINDING, EXECUTE AS OWNER
 AS
@@ -154,7 +163,7 @@ BEGIN ATOMIC WITH (TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N''us_engl
 SELECT keyColumn
 ,description
 FROM dbo.InMemTable1;
-END;';
+END;' + CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END;
 
 IF @debug = 1 PRINT(@tsqlStatement)
 ELSE
