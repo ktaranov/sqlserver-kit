@@ -149,7 +149,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Steve Stedman Blog]:http://stevestedman.com
 [Daniel Hutmacher Blog]:https://sqlsunday.com
 [Niko Blog]:http://www.nikoport.com
-[Mike Fal Blog]:http://www.mikefal.net/
 [Robert Blog]:http://www.sqlsoldier.com/wp/
 [Chris Shaw Blog]:https://chrisshaw.wordpress.com
 [Andy Mallon Blog]:http://www.am2.co/
@@ -236,7 +235,6 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@stedman]:https://twitter.com/stedman
 [@dhmacher]:https://twitter.com/dhmacher
 [@NikoNeugebauer]:https://twitter.com/NikoNeugebauer
-[@Mike_Fal]:https://twitter.com/Mike_Fal
 [@SQLSoldier]:https://twitter.com/SQLSoldier
 [@SQLShaw]:https://twitter.com/SQLShaw
 [@AMtwo]:https://twitter.com/AMtwo

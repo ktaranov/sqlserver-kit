@@ -171,6 +171,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
    - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
    - [MVP: Data Platform](https://channel9.msdn.com/Blogs/MVP-Data-Platform)
+   - [Build 2018 conference](http://sqlservercode.blogspot.ru/2018/05/azure-sql-data-warehouse-azure-sql.html)
  - Free Database Podcasts <a id="podcasts"></a>
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)

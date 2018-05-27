@@ -61,6 +61,8 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
  - Jason Brimhall ([b](http://jasonbrimhall.info/) | [t](https://twitter.com/sqlrnnr))
  - Victor Isakov ([b](https://victorisakov.wordpress.com/))
+ - Scott Caldwell ([b](https://blog.rdx.com/) | [t](https://twitter.com/sqldroid))
+ - Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
 
 
 <a id="unknown-trace-flags"></a>
@@ -1975,14 +1977,17 @@ Can be used to ensure that SQL Server has been configured to take advantage of I
 Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-restorebackup-doing/<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/<br />
+Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Scope: session
 
 
 <a id="3014"></a>
 #### Trace Flag: 3014
-Function: Returns more info about backups to the errorlog:  Backup activity, Restore activity , File creation.<br />
+Function: Returns more info about backups to the errorlog: Backup activity, Restore activity , File creation.<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
+Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
+Link: [What’s CHECKDB doing in my database restore?]<br />
 Scope: session
 
 
@@ -2302,15 +2307,21 @@ The Connect issue notes that problems can occur when using 3604 with a query tha
 Link: http://blogs.msdn.com/b/askjay/archive/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements.aspx<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/306380/trace-flag-issue-7300-3604<br />
-Link: [How to Find the Statistics Used to Compile an Execution Plan]
-Link: [A Row Goal Riddle]
+Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Link: [A Row Goal Riddle]<br />
+Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
+Link: [What’s CHECKDB doing in my database restore?]<br />
+Scope: session only
 
 
 <a id="3605"></a>
 #### Trace Flag: 3605
 Function: Sends a variety of types of information to the SQL Server error log instead of to the user console.
 Often referenced in KB and blog articles in the context of other trace flags (e.g. 3604).<br />
-Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements/
+Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements/<br />
+Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
+Link: [What’s CHECKDB doing in my database restore?]<br />
+Scope: session only
 
 
 <a id="3607"></a>
@@ -2318,6 +2329,7 @@ Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-fl
 Function: Skip recovery on startup<br />
 Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb/
+
 
 <a id="3608"></a>
 #### Trace Flag: 3608
@@ -4830,3 +4842,5 @@ Scope: ?
 [Change SQL Server Collation – Back to Basics]:http://jasonbrimhall.info/2018/04/12/change-sql-server-collation/
 [Important Trace Flags That Every DBA Should Know]:http://victorisakov.files.wordpress.com/2011/10/sql_pass_summit_2011-important_trace_flags_that_every_dba_should_know-victor_isakov.pdf
 [A Row Goal Riddle]:https://orderbyselectnull.com/2018/03/30/a-row-goal-riddle/
+[Undocumented Trace Flags: Inside the Restore Process]:https://blog.rdx.com/undocumented-trace-flags-inside-the-restore-process/
+[What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
