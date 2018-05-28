@@ -537,6 +537,13 @@ Articles types:
 | [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]                                                | Brent Ozar                               | 2018-04-27 | [DEV]       |
 | [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA],[DEV] |
 | [How to perform a page level restore in SQL Server]                                                                     | Prashanth Jayaram                        | 2018-08-18 | [DBA],[DEV] |
+| [Grouping dates without blocking operators]                                                                             | Daniel Hutmacher                         | 2018-05-14 | [DEV]       |
+| [What’s CHECKDB doing in my database restore?]                                                                          | Mike Fal                                 | 2018-04-10 | [DBA]       |
+| [How To Hide An Instance Of SQL Server]                                                                                 | Thomas Larock                            | 2018-04-10 | [DBA]       |
+| [Troubleshooting Parameter Sniffing Issues the Right Way: Part 1]                                                       | Tara Kizer                               | 2018-03-06 | [DEV]       |
+| [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2]                                                       | Tara Kizer                               | 2018-03-07 | [DEV]       |
+| [Troubleshooting Parameter Sniffing Issues the Right Way: Part 3]                                                       | Tara Kizer                               | 2018-03-06 | [DEV]       |
+| [When to use the SELECT…INTO statement]                                                                                 | Phil Factor                              | 2018-03-19 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1050,3 +1057,10 @@ Articles types:
 [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]:https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/
 [Break large delete operations into chunks]:https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes
 [How to perform a page level restore in SQL Server]:https://www.sqlshack.com/how-to-perform-a-page-level-restore-in-sql-server/
+[Grouping dates without blocking operators]:https://sqlsunday.com/2018/05/14/grouping-dates-without-blocking-operators/
+[What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
+[How To Hide An Instance Of SQL Server]:https://thomaslarock.com/2018/04/how-to-hide-an-instance-of-sql-server/
+[Troubleshooting Parameter Sniffing Issues the Right Way: Part 1]:https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-the-right-way-part-1/
+[Troubleshooting Parameter Sniffing Issues the Right Way: Part 2]:https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/
+[Troubleshooting Parameter Sniffing Issues the Right Way: Part 3]:https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-the-right-way-part-3/
+[When to use the SELECT…INTO statement]:https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement
