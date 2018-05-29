@@ -1,7 +1,4 @@
-﻿USE master;
-GO
-
-IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL
+﻿IF OBJECT_ID('dbo.sp_BlitzInMemoryOLTP', 'P') IS NULL
 EXECUTE ('CREATE PROCEDURE dbo.sp_BlitzInMemoryOLTP AS SELECT 1;');
 GO
 
@@ -17,8 +14,7 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
 
 .DESCRIPTION
     Get detailed information about In-Memory SQL Server objects
-    Tested on SQL Server: 2014, 2016, 2017
-    NOT tested on Azure SQL Database
+    Tested on SQL Server: 2014, 2016, 2017, Azure SQL Database
 
 .PARAMETER @instanceLevelOnly
     Only check instance In-Memory related information
@@ -55,11 +51,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 .NOTE
     Author: Ned Otter
-    Version: 1.9
+    Version: 2.0
     Original link: http://nedotter.com/archive/2017/10/in-memory-oltp-diagnostic-script/
     Release Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/sp_BlitzInMemoryOLTP.sql
-    Last Modified: 2018-05-24 10:50 UTC+3
-    Last Modified by: Konstantin Taranov
     Main Contributors: Ned Otter, Konstantin Taranov, Aleksey Nagorskiy
 */
 AS 
@@ -67,13 +61,14 @@ BEGIN TRY
 
     SET NOCOUNT ON;
 
+    DECLARE @RunningOnAzureSQLDB BIT = 0;
+
     DECLARE @crlf VARCHAR(10) = CHAR(10);
 
-    DECLARE @VersionString NVARCHAR(MAX) = CAST(SERVERPROPERTY('ProductVersion') AS NVARCHAR(128))
-          , @Edition NVARCHAR(MAX) = CAST(SERVERPROPERTY('Edition') AS NVARCHAR(128))
+    DECLARE @Edition NVARCHAR(MAX) = CAST(SERVERPROPERTY('Edition') AS NVARCHAR(128))
           , @errorMessage  NVARCHAR(512);
 
-    DECLARE @Version INT = CONVERT(INT, SUBSTRING(@VersionString, 1, CHARINDEX('.', @VersionString) - 1));
+    DECLARE @Version INT = CONVERT(INT, SERVERPROPERTY('ProductMajorVersion'));
 
     IF @debug = 1 PRINT('--@Version = ' + CAST(@Version AS VARCHAR(30)));
 
@@ -85,15 +80,54 @@ BEGIN TRY
 
     /*
     ###################################################
-        if we get here, we are running at least SQL 2014, but that version
+        if we get here, we are running at least SQL 2014, but that version 
         only runs In-Memory if we are using Enterprise Edition
+
+        NOTE: Azure SQL database changes this equation
     ###################################################
     */
 
-    IF @Version = 12 AND (@Edition NOT LIKE 'Enterprise%' AND  @Edition NOT LIKE 'Developer%')
+    /*
+    SERVERPROPERTY('EngineEdition')
+      1 = Personal or Desktop Engine (Not available in SQL Server 2005 and later versions.)
+      2 = Standard (This is returned for Standard, Web, and Business Intelligence.)
+      3 = Enterprise (This is returned for Evaluation, Developer, and both Enterprise editions.)
+      4 = Express (This is returned for Express, Express with Tools and Express with Advanced Services)
+      5 = SQL Database
+      6 = SQL Data Warehouse
+      8 = Managed Instance
+    */
+
+    SELECT @RunningOnAzureSQLDB = 
+    CASE 
+        WHEN SERVERPROPERTY('EngineEdition') IN (5, 6, 8) THEN 1
+        ELSE 0
+    END;
+
+    -- Database level: we are running SQL Database or SQL Data Warehouse, but this specific database does not support XTP
+    IF (@RunningOnAzureSQLDB = 1 AND DatabasePropertyEx(DB_NAME(), 'IsXTPSupported') = 0)
+    BEGIN
+        SET @errorMessage = 'For Azure SQL Database, In-Memory OLTP is only suppported on the Premium tier';
+        THROW 55001, @errorMessage, 1;
+    END;
+
+    -- not on Azure, so we need to check versions/Editions
+    -- SQL 2014 only supports XTP on Enterprise edition
+    IF (SERVERPROPERTY('EngineEdition') IN (2, 4)) AND @Version = 12 AND (@Edition NOT LIKE 'Enterprise%' AND  @Edition NOT LIKE 'Developer%')
     BEGIN
         SET @errorMessage = CONCAT('For SQL 2014, In-Memory OLTP is only suppported on Enterprise Edition. You are running SQL Server edition: ', @Edition);
-        THROW 55000, @errorMessage, 1;
+        THROW 55002, @errorMessage, 1;
+    END;
+
+    -- We're not running on Azure, so we need to check versions/Editions
+    -- SQL 2016 non-Enterprise only supports XTP after SP1
+    DECLARE @BuildString VARCHAR(4) = CONVERT(VARCHAR(4), SERVERPROPERTY('ProductBuild'));
+    
+    IF (SERVERPROPERTY('EngineEdition') IN (2, 4)) AND @Version = 13 AND (@BuildString < 4001)
+    -- 13.0.4001.0 is the minimum build
+    BEGIN
+        SET @errorMessage = 'For SQL 2016, In-Memory OLTP is only suppported on non-Enterprise Edition as of SP1';
+        THROW 55003, @errorMessage, 1;
     END;
 
     /*
@@ -108,16 +142,24 @@ BEGIN TRY
          , ROW_NUMBER() OVER (ORDER BY name ASC) AS rowNumber
     INTO #inmemDatabases
     FROM sys.databases
-    WHERE name NOT IN ('master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
-        AND (name = @dbName OR @dbName = 'ALL')
-        AND state_desc = 'ONLINE';
+    WHERE name NOT IN ( 'master', 'model', 'tempdb', 'distribution', 'msdb', 'SSISDB')
+    -- original
+        --AND (name = @dbName OR @dbName = 'ALL')
+    AND 1 =
+        CASE 
+            WHEN @RunningOnAzureSQLDB = 1 THEN 1
+            WHEN @RunningOnAzureSQLDB = 0 AND name = @dbName THEN 1
+            WHEN @RunningOnAzureSQLDB = 0 AND @dbName = N'ALL' THEN 1
+            ELSE 0
+        END
+    AND state_desc = 'ONLINE';
 
     IF @debug = 1 SELECT 'All ONLINE user databases' AS AllDatabases, * FROM #inmemDatabases;
 
     IF @dbName IS NULL AND @instanceLevelOnly = 0
     BEGIN
         SET @errorMessage = '@dbName IS NULL, please specify database name or ALL';
-        THROW 55001, @errorMessage, 1;
+        THROW 55004, @errorMessage, 1;
         RETURN;
     END;
 
@@ -125,68 +167,72 @@ BEGIN TRY
          AND (NOT EXISTS (SELECT 1 FROM #inmemDatabases WHERE name = QUOTENAME(@dbName)) AND @instanceLevelOnly = 0)
     BEGIN
         SET @errorMessage = N'Database [' + @dbName  + N'] not found in sys.databases!!!' + @crlf +
-                            N'Do you add N if you has unicode name?' + @crlf +
+                            N'Did you add N if your database has a unicode name?' + @crlf +
                             N'Try to exec this: EXEC sp_BlitzInMemoryOLTP @dbName = N''ಠ ಠ_Your_Unicode_DB_Name_ಠ ಠ''';
-        THROW 55002, @errorMessage, 1;
+        THROW 55005, @errorMessage, 1;
         RETURN;
     END;
 
     IF @dbName = 'ALL' AND NOT EXISTS (SELECT 1 FROM #inmemDatabases)
     BEGIN
-        SET @errorMessage = 'ALL was specified, but no memory-optimized databases were found!!!';
-        THROW 55002, @errorMessage, 1;
+        SET @errorMessage = 'ALL was specified, but no memory-optimized databases were found';
+        THROW 55006, @errorMessage, 1;
         RETURN;
     END;
 
-    IF OBJECT_ID('tempdb..#moduleSplit') IS NOT NULL DROP TABLE #moduleSplit;
-
-    CREATE TABLE #moduleSplit
-    (
-         rowNumber INT IDENTITY PRIMARY KEY
-        ,value NVARCHAR(MAX) NULL
-    );
-
-    DECLARE @loadedModules TABLE
-    (
-         rowNumber INT IDENTITY PRIMARY KEY
-        ,name NVARCHAR(MAX) NULL
-    );
-
-    INSERT @loadedModules
-    (
-        name
-    )
-    SELECT name
-    FROM sys.dm_os_loaded_modules AS a
-    WHERE description = 'XTP Native DLL'
-        AND PATINDEX('%[_]p[_]%', name) > 0;
-
-    DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules);
-    DECLARE @moduleCounter INT = 1;
-    DECLARE @loadedModuleName NVARCHAR(MAX) = '';
-
-    SET @moduleCounter = 1;
-
-    WHILE @moduleCounter <= @maxLoadedModules
+    -- we can't reference sys.dm_os_loaded_modules if we're on Azure SQL DB
+    IF @RunningOnAzureSQLDB = 0
     BEGIN
+        IF OBJECT_ID('tempdb..#moduleSplit') IS NOT NULL DROP TABLE #moduleSplit;
 
-        SELECT @loadedModuleName = name
-        FROM @loadedModules
-        WHERE rowNumber = @moduleCounter;
-
-        DECLARE @xml XML
-              , @delimiter NVARCHAR(10);
-        SET @delimiter = '_';
-        SET @xml = CAST(('<X>'+REPLACE(@loadedModuleName, @delimiter, '</X><X>')+'</X>') AS XML);
-
-        INSERT #moduleSplit
+        CREATE TABLE #moduleSplit
         (
-            value
-        )
-        SELECT C.value('.', 'NVARCHAR(1000)') AS value FROM @xml.nodes('X') as X(C);
-                      
-        SELECT @moduleCounter += 1;
+             rowNumber INT IDENTITY PRIMARY KEY
+            ,value NVARCHAR(MAX) NULL
+        );
 
+        DECLARE @loadedModules TABLE
+        (
+             rowNumber INT IDENTITY PRIMARY KEY
+            ,name NVARCHAR(MAX) NULL
+        );
+
+        INSERT @loadedModules
+        (
+            name
+        )
+        SELECT name
+        FROM sys.dm_os_loaded_modules AS a
+        WHERE description = 'XTP Native DLL'
+            AND PATINDEX('%[_]p[_]%', name) > 0;
+
+        DECLARE @maxLoadedModules INT = (SELECT COUNT(*) FROM @loadedModules);
+        DECLARE @moduleCounter INT = 1;
+        DECLARE @loadedModuleName NVARCHAR(MAX) = '';
+
+        SET @moduleCounter = 1;
+
+        WHILE @moduleCounter <= @maxLoadedModules
+        BEGIN
+
+            SELECT @loadedModuleName = name
+            FROM @loadedModules
+            WHERE rowNumber = @moduleCounter;
+
+            DECLARE @xml XML
+                  , @delimiter NVARCHAR(10);
+            SET @delimiter = '_';
+            SET @xml = CAST(('<X>'+REPLACE(@loadedModuleName, @delimiter, '</X><X>')+'</X>') AS XML);
+
+            INSERT #moduleSplit
+            (
+                value
+            )
+            SELECT C.value('.', 'NVARCHAR(1000)') AS value FROM @xml.nodes('X') as X(C);
+                      
+            SELECT @moduleCounter += 1;
+
+        END;
     END;
 
     IF @instanceLevelOnly = 0
@@ -195,6 +241,9 @@ BEGIN TRY
         /*
         ####################################################
             Determine which databases are memory-optimized
+            NOTE: if we are running on Azure SQL DB, we need 
+            to verify in-memory capability without joining to
+            sys.filegroups
         ####################################################
         */
         DECLARE @sql     NVARCHAR(MAX) = ''
@@ -218,6 +267,7 @@ BEGIN TRY
             END;
 
             SELECT @sql +=
+            CASE WHEN @RunningOnAzureSQLDB = 0 THEN 
                 CONCAT
                 (
                         @crlf
@@ -232,6 +282,19 @@ BEGIN TRY
                     , name
                     , '.sys.filegroups ON database_files.data_space_id = filegroups.data_space_id WHERE filegroups.type = ''FX'''
                 )
+            ELSE 
+                -- if we're here and we're running on Azure SQL DB, then the database inherently supports In-Memory OLTP
+                CONCAT
+                (
+                        @crlf
+                    ,'SELECT '
+                    , 'N'''
+                    ,  name
+                    , ''' AS databaseName,' + @crlf
+                    , database_id
+                    , ' AS database_id' + @crlf
+                )
+            END
             FROM #inmemDatabases
             WHERE rowNumber = @counter;
 
@@ -449,7 +512,7 @@ BEGIN TRY
                         [object] NVARCHAR(MAX)
                        ,databaseName NVARCHAR(MAX)
                        ,tableName NVARCHAR(MAX)
-                       ,indexName INT
+                       ,indexName NVARCHAR(MAX)
                        ,memory_consumer_id INT
                        ,consumerType NVARCHAR(MAX)
                        ,description NVARCHAR(MAX)
@@ -457,6 +520,7 @@ BEGIN TRY
                        ,allocatedBytesMB NVARCHAR(MAX)
                        ,usedBytesMB NVARCHAR(MAX)
                     );
+
 
                     INSERT @resultsIndexes
                     EXECUTE sp_executesql @sql;
@@ -671,6 +735,7 @@ BEGIN TRY
                         ,dbName
                         ,'.sys.sql_modules AS B ON B.object_id = A.object_id
                         WHERE UPPER(B.definition) LIKE ''%NATIVE_COMPILATION%''
+                        AND UPPER(A.name) <> ''SP_BLITZINMEMORYOLTP''
                         ORDER BY A.type, A.name'
                     )
                 FROM #MemoryOptimizedDatabases
@@ -721,7 +786,9 @@ BEGIN TRY
 
                 the following code should handle all versions
             */
-            IF @tableName IS NULL
+
+            -- NOTE: disabling this for Azure SQL DB
+            IF @tableName IS NULL AND @RunningOnAzureSQLDB = 0
             BEGIN
                SELECT @sql =
                     CONCAT
@@ -795,7 +862,6 @@ BEGIN TRY
                         ,' '''
                         ,' AS databaseName
                         , COUNT(*) AS [Number of modules]
-                             
                         FROM '
                         , dbName
                         ,'.sys.all_sql_modules
@@ -1276,113 +1342,117 @@ BEGIN TRY
                 for natively compiled procedures is enabled
             ###########################################################
             */
-            SELECT @sql = 
-                CONCAT
-                (
-                    'INSERT #NativeModules
-                    (
-                         moduleID
-                        ,moduleName
-                    )
-                    SELECT '
-                    ,dbName
-                    ,'.sys.all_sql_modules.Object_ID AS ObjectID 
-                    ,name AS moduleName
-                    FROM '
-                    ,dbName
-                    ,'.sys.all_sql_modules
-                     INNER JOIN '
-                    ,dbName
-                    ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id'
-                    ,' WHERE uses_native_compilation = 1'
-                )
-            FROM #MemoryOptimizedDatabases
-            WHERE rowNumber = @dbCounter;
-
-            EXECUTE sp_executesql @sql;
 
             IF EXISTS (SELECT 1 FROM #NativeModules)
             BEGIN
-                DECLARE @procCounter INT = 1;
-                DECLARE @MaxModules INT = (SELECT COUNT(*) FROM #NativeModules);
-                DECLARE @dbID INT = (SELECT database_id FROM #MemoryOptimizedDatabases  WHERE rowNumber = @dbCounter);
-                DECLARE @moduleID INT;
-                DECLARE @ModuleStatus BIT;
-                DECLARE @moduleName NVARCHAR(256);
+                SELECT @sql = 
+                    CONCAT
+                    (
+                        'INSERT #NativeModules
+                        (
+                             moduleID
+                            ,moduleName
+                        )
+                        SELECT '
+                        ,dbName
+                        ,'.sys.all_sql_modules.Object_ID AS ObjectID 
+                        ,name AS moduleName
+                        FROM '
+                        ,dbName
+                        ,'.sys.all_sql_modules
+                         INNER JOIN '
+                        ,dbName
+                        ,'.sys.procedures ON procedures.object_id = all_sql_modules.object_id'
+                        ,' WHERE uses_native_compilation = 1'
+                    )
+                FROM #MemoryOptimizedDatabases
+                WHERE rowNumber = @dbCounter;
 
-                /*
-                ########################################################
-                    This is the loop that processes each native module
-                ########################################################
-                */
-                WHILE @procCounter <= @MaxModules
-                BEGIN
-    
-                    SELECT @moduleID = moduleID
-                          ,@moduleName = moduleName
-                    FROM #NativeModules
-                    WHERE moduleKey = @procCounter;
+                EXECUTE sp_executesql @sql;
 
-                    PRINT CONCAT('Verifying collection stats of ', @moduleName);
+                DECLARE @resultsNativeModuleStats TABLE
+                (
+                    [object] NVARCHAR(MAX)
+                    ,databaseName NVARCHAR(MAX)
+                    ,object_id INT 
+                    ,object_name  NVARCHAR(MAX)
+                    ,cached_time DATETIME
+                    ,last_execution_time DATETIME
+                    ,execution_count INT 
+                    ,total_worker_time  INT 
+                    ,last_worker_time INT 
+                    ,min_worker_time INT 
+                    ,max_worker_time INT 
+                    ,total_elapsed_time INT 
+                    ,last_elapsed_time INT 
+                    ,min_elapsed_time INT 
+                    ,max_elapsed_time INT 
 
-                    SELECT @ModuleStatus = 0;
+                );
+             
+                SELECT @sql = 
+                    CONCAT
+                    (
+                    'SELECT ''Native modules that have exec stats enabled'' AS object'
+                            ,','
+                            ,' N'''
+                            ,dbName
+                            ,''' AS databaseName
+                            ,object_id
+                            ,OBJECT_NAME(object_id) AS ''object name''
+                            ,cached_time
+                            ,last_execution_time
+                            ,execution_count
+                            ,total_worker_time
+                            ,last_worker_time
+                            ,min_worker_time
+                            ,max_worker_time
+                            ,total_elapsed_time
+                            ,last_elapsed_time
+                            ,min_elapsed_time
+                            ,max_elapsed_time
+                        FROM '
+                        ,'sys.dm_exec_procedure_stats
+                        WHERE database_id = DB_ID()
+                        AND object_id IN (SELECT object_id FROM sys.sql_modules WHERE uses_native_compilation = 1)
+                        ORDER BY total_worker_time DESC;'
+                    )
+                FROM #MemoryOptimizedDatabases
+                WHERE rowNumber = @dbCounter;
 
-                    /*#############################################################################################
+                INSERT @resultsNativeModuleStats
+                EXECUTE sp_executesql @sql;
 
-                        If the module we are verifying collection status for has not been executed at least once,
-                        error 41377 will be returned, and will terminate the WHILE loop (so we trap it in a CATCH block, 
-                        in order to determine the correct status for this specific proc).
-
-                        Msg 41377, Level 16, State 2, Procedure sp_xtp_control_query_exec_stats_internal, Line 1 [Batch Start Line 0]
-                        The natively compiled module with database ID 27 and object ID 1973582069 has not been executed. 
-                        Query execution statistics collection can only be enabled if the module has been executed at least once since creation or last database restart.
-                    #############################################################################################
-                    */
-
-                BEGIN TRY
-                    EXEC sys.sp_xtp_control_query_exec_stats
-                        @database_id = @dbID
-                       ,@xtp_object_id = @moduleID
-                       ,@old_collection_value = @ModuleStatus OUTPUT;
-                END TRY
-                BEGIN CATCH
-                    SELECT
-                        @ModuleStatus = 0;
-                END CATCH;
-
-                    IF @ModuleStatus = 1
-                    BEGIN
-                        UPDATE #NativeModules
-                        SET collectionStatus = 1
-                        WHERE moduleKey = @procCounter;
-                    END;
-
-                    SELECT @procCounter += 1;
-                END; -- -- This is the loop that processes each native module
-
-                IF EXISTS(SELECT * FROM #NativeModules WHERE collectionStatus = 1)
-                    SELECT 'Native execution statistics' AS [object]
-                          ,moduleName
-                          ,moduleID
-                         ,CASE 
-                               WHEN collectionStatus = 1 THEN 'YES' 
-                               WHEN collectionStatus IS NULL THEN 'NO' 
-                               ELSE 'NO' 
-                          END AS CollectionStatsEnabled
-                    FROM #NativeModules
-                    WHERE collectionStatus = 1
-                    ORDER BY moduleName;
-                ELSE
-                BEGIN
-                    PRINT '--No modules found that have collection stats enabled';
-                END;
-
+                IF @debug = 1
+                         
+                PRINT('--Native modules with execution status' + @crlf + @sql + @crlf);
+                ELSE 
+                IF EXISTS(SELECT 1 FROM @resultsNativeModuleStats)
+                    SELECT * FROM @resultsNativeModuleStats;
+                    
             END; --IF EXISTS (SELECT 1 FROM #NativeModules)
 
+            ELSE
+            BEGIN
+                PRINT '--No modules found that have collection stats enabled';
+            END;
+
+            IF @RunningOnAzureSQLDB = 1 --AND EXISTS (
+            BEGIN 
+                SELECT 'xtp_storage_percent in descending order' AS object
+                      ,end_time
+                      ,xtp_storage_percent
+                FROM sys.dm_db_resource_stats
+                WHERE xtp_storage_percent > 0
+                ORDER BY end_time desc
+            END 
+
+        
             SELECT @dbCounter += 1;
 
         END; -- This is the loop that processes each database
-    END;
+
+    END; -- IF @instanceLevelOnly = 0
 
 
     IF OBJECT_ID('#NativeModules', 'U') IS NOT NULL DROP TABLE #NativeModules;
