@@ -1,6 +1,15 @@
 # SQL Server Management Studio Tips
 Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 and above
 
+## Road map
+ - [ ] https://blogs.technet.microsoft.com/dataplatforminsider/2018/02/20/whats-new-in-ssms-17-5-data-discovery-and-classification/
+ - [ ] https://bertwagner.com/2018/02/27/splitting-it-up-easy-side-by-side-queries-in-ssms/
+ - [ ] https://sqlrus.com/2018/03/ssms-output-window/
+ - [ ] https://www.sqlshack.com/whats-new-in-ssms-17-5-data-discovery-and-classification-and-more/
+ - [ ] Add gifs or images for all tips
+ - [ ] Add some tips from excellent ebook http://insiders.sqldownunder.com/ssms-tips-and-tricks/
+
+
 Content:
 1. [Import and Export Settings](#1)
 2. [SSMS Shortcuts](#2)
@@ -63,11 +72,14 @@ Great thanks to:
  - Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
  - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
  - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
+ - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
 
 
 <a id="1"></a>
 ## Import and Export Settings
 `Tools > Options > Environment > Import and Export Settings`
+
+Default settings (if you need to compare with yours) you can find here: [SSMS settings files]
 
 You can configure so many settings in SSMS and then export it and use on all your computers.
 Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
@@ -290,6 +302,12 @@ Switching on SQLCMD mode enables a number of useful extra scripting style comman
 In particular you can use it to change to the connection credentials within the query window, so that you can run a query against multiple servers from the same query window.
 There are more details of how to do this here: [Changing the SQL Server connection within an SSMS Query Windows using SQLCMD Mode](http://www.sqlmatters.com/Articles/Changing%20the%20SQL%20Server%20connection%20within%20an%20SSMS%20Query%20Windows%20using%20SQLCMD%20Mode.aspx)
 
+Also some great tips from Louis Davidson article: [Using SQLCMD, End Execution of SQL Commands in a File](https://www.red-gate.com/simple-talk/blogs/using-sqlcmd-end-execution-sql-commands-file/)
+1. Making Sure You Don’t Accidentally Execute The Entire File By Mistake using `:EXIT` command in your scripts, details see here [sqlcmd Commands].
+2. Quitting the Statements of a File Based on a Condition using `:On Error[ exit | ignore]` command, details see here [sqlcmd Commands].
+
+[sqlcmd Commands]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017#sqlcmd-commands
+
 
 <a id="14"></a>
 ## Script multiple objects using the Object Explorer Details Windows
@@ -360,7 +378,7 @@ Also you can generate amazing chart using awesome R libraries, detailed article:
 
 <a id="19"></a>
 ## Additional Connection Parameters
-One such change SSMS got for free is the connection resiliency logic within the SqlConnection.Open() method.
+One such change SSMS got for free is the connection resiliency logic within the `SqlConnection.Open()` method.
 To improve the default experience for clients which connect to Azure SQL Database, the above method will (in the case of initial connection errors / timeouts) now retry 1 time after sleeping for 10 seconds. These numbers are configurable by properties called ConnectRetryCount (default value 1) and ConnectRetryInterval (default value 10 seconds.)
 The previous versions of the SqlConnection class would not automatically retry in cases of connection failure.
 
