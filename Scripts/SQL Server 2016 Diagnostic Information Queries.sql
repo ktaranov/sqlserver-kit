@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: May 23, 2018
+-- Last Modified: June 5, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -82,7 +82,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.2213.0		RTM CU8				9/18/2017   ---->           13.0.4451.0		SP1 CU5				 9/18/2017
 -- 13.0.2216.0		RTM CU9				11/21/2017  ---->			13.0.4457.0		SP1 CU6				 11/21/2017
 --																	13.0.4466.4		SP1 CU7				  1/4/2018
---																	13.0.4474.0		SP1 CU8				  3/20/2018	---->	13.0.5026		SP2 RTM				4/24/2018
+--																	13.0.4474.0		SP1 CU8				  3/20/2018	---->	13.0.5026.0		SP2 RTM				4/24/2018
+--                                                                  13.0.4502.0		SP1 CU9				  5/30/2018 ---->   13.0.5149.0		SP2 CU1				5/30/2018
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -873,6 +874,10 @@ DROP TABLE #VLFCountResults;
 -- Important change to VLF creation algorithm in SQL Server 2014
 -- https://bit.ly/2Hsjbg4
 
+-- SQL Server Transaction Log Architecture and Management Guide
+-- https://bit.ly/2JjmQRZ
+
+
 
 
 -- Get CPU utilization by database (Query 35) (CPU Usage by Database)
@@ -953,6 +958,8 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
 		N'HADR_NOTIFICATION_DEQUEUE', N'HADR_TIMER_TASK', N'HADR_WORK_QUEUE',
         N'KSOURCE_WAKEUP', N'LAZYWRITER_SLEEP', N'LOGMGR_QUEUE', 
 		N'MEMORY_ALLOCATION_EXT', N'ONDEMAND_TASK_QUEUE',
+		N'PARALLEL_REDO_DRAIN_WORKER', N'PARALLEL_REDO_LOG_CACHE', N'PARALLEL_REDO_TRAN_LIST',
+		N'PARALLEL_REDO_WORKER_SYNC', N'PARALLEL_REDO_WORKER_WAIT_WORK',
 		N'PREEMPTIVE_HADR_LEASE_MECHANISM', N'PREEMPTIVE_SP_SERVER_DIAGNOSTICS',
 		N'PREEMPTIVE_OS_LIBRARYOPS', N'PREEMPTIVE_OS_COMOPS', N'PREEMPTIVE_OS_CRYPTOPS',
 		N'PREEMPTIVE_OS_PIPEOPS', N'PREEMPTIVE_OS_AUTHENTICATIONOPS',

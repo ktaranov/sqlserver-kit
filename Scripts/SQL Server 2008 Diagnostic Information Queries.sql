@@ -1,7 +1,7 @@
 
 -- SQL Server 2008 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: March 17, 2018
+-- Last Modified: June 5, 2018
 -- https://sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
