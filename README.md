@@ -48,12 +48,14 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Sample Databases and Datasets](/Sample_Databases)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
+      - [Azure SQL Database Diagnostic Information Queries](/Scripts/Azure%20SQL%20Database%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL%20Server%202016%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2014 Diagnostic Information Queries](Scripts/SQL%20Server%202014%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2012 Diagnostic Information Queries](/Scripts/SQL%20Server%202012%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2008 R2 Diagnostic Information Queries](/Scripts/SQL%20Server%202008%20R2%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2008 Diagnostic Information Queries](/Scripts/SQL%20Server%202008%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2005 Diagnostic Information Queries](/Scripts/SQL%20Server%202005%20Diagnostic%20Information%20Queries.sql)
     - [Table count alternative](/Scripts/Table%20Count%20alternative.sql) (by Jes Schultz Borland)
     - [Foreign Key batch rename](/Scripts/Foreign%20Key%20batch%20rename.sql) (by Wes Henriksen)
     - [Count character matches](/Scripts/Count%20character%20matches.sql)
@@ -83,7 +85,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 264 SQLSQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 269 SQLSQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -148,7 +150,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
-   - [SQL Server Database Engine Permission Posters](http://social.technet.microsoft.com/wiki/contents/articles/11842.sql-server-database-engine-permission-posters.aspx)
+   - [Microsoft SQL Server Permissions Posters](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/security/permissions-posters)
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
  - Free Videos <a id="free-videos"></a>
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
@@ -215,7 +217,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
      - [Madeira Data Solutions Academy](http://madeira-data-solutions.teachable.com/)
      - [SQLpassion Online Academy](http://www.sqlpassion.at/online-training/index.html) (by Klaus Aschenbrenner)
- - SQL Server Backwards Compatibility
+ - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
@@ -468,6 +470,7 @@ SQL Server:
  - [Power BI from Rookie to Rock Star book](http://radacad.com/download-free-power-bi-book-pdf-format) (by Reza Rad)
  - [Online Book: Analytics with Power BI and R](http://radacad.com/online-book-analytics-with-power-bi-and-r) (by Leila Etaati)
  - [Architecture of a Database System](http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf) (by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton)
+ - [Query Optimization with SentryOne Plan Explorer](https://info.sentryone.com/ebook-query-optimization-plan-explorer)
 
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)

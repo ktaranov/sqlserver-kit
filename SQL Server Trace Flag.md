@@ -3126,6 +3126,7 @@ Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3170113<br />
 Link: https://www.brentozar.com/archive/2017/10/get-live-query-plans-sp_blitzwho/<br />
 Link: https://groupby.org/conference-session-abstracts/enhancements-that-will-make-your-sql-database-engine-roar-2016-sp1-edition/<br />
+Link: https://www.scarydba.com/2018/06/11/plan-metrics-without-the-plan-trace-flag-7412/<br />
 Scope: global only
 
 
