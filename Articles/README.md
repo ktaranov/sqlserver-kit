@@ -544,6 +544,11 @@ Articles types:
 | [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2]                                                       | Tara Kizer                               | 2018-03-07 | [DEV]       |
 | [Troubleshooting Parameter Sniffing Issues the Right Way: Part 3]                                                       | Tara Kizer                               | 2018-03-06 | [DEV]       |
 | [When to use the SELECT…INTO statement]                                                                                 | Phil Factor                              | 2018-03-19 | [DEV]       |
+| [Temp Tables In SSIS]                                                                                                   | Tim Mitchel                              | 2018-05-29 | [SSIS]      |
+| [Changing the Collation of the Instance, the Databases, and All Columns in All User Databases]                          | Solomon Rutzky                           | 2018-06-11 | [DBA]       |
+| [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Jooq                                     | 2017-09-28 | [DBA],[DEV] |
+| [Scheduling powershell tasks with sql agent]                                                                            | Chrissy Lemaire                          | 2017-09-26 | [J],[PS]    |
+| [Three ways to track logins using dbatools]                                                                             | Chrissy Lemaire                          | 2018-04-10 | [PS]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1064,3 +1069,8 @@ Articles types:
 [Troubleshooting Parameter Sniffing Issues the Right Way: Part 2]:https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-right-way-part-2/
 [Troubleshooting Parameter Sniffing Issues the Right Way: Part 3]:https://www.brentozar.com/archive/2018/03/troubleshooting-parameter-sniffing-issues-the-right-way-part-3/
 [When to use the SELECT…INTO statement]:https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement
+[Temp Tables In SSIS]:https://www.timmitchell.net/post/2018/05/29/temp-tables-in-ssis/
+[Changing the Collation of the Instance, the Databases, and All Columns in All User Databases]:https://sqlquantumleap.com/2018/06/11/changing-the-collation-of-the-instance-and-all-columns-across-all-user-databases-what-could-possibly-go-wrong/
+[10 Cool SQL Optimisations That do not Depend on the Cost Model]:https://blog.jooq.org/2017/09/28/10-cool-sql-optimisations-that-do-not-depend-on-the-cost-model/
+[Scheduling powershell tasks with sql agent]:https://dbatools.io/agent/
+[Three ways to track logins using dbatools]:https://dbatools.io/track-logins/
