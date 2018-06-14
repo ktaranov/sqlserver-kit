@@ -285,6 +285,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA  ](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
     - [dba-database - Database containing DBA helper code and open source software](https://github.com/amtwo/dba-database) (by Andy Mallon)
     - [SQLServerSpaceAnalysis PowerBI](https://github.com/SQLJana/SQLServerSpaceAnalysis) (by Jana Sattainathan)
+    - [SQL Server Telegram Bot](https://github.com/ionflux/mssql-telegram-bot/)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -322,7 +323,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Server Feedback](https://feedback.azure.com/forums/908035-sql-server)
     - [Docs Overview SQL Tools](https://docs.microsoft.com/en-us/sql/tools/overview-sql-tools)
     - [SQL ConstantCare®: clear, personal advice for your SQL Server](https://www.brentozar.com/sql-constantcare/) (by Brent Ozar)
-    - [SQL Server Telegram Bot](https://github.com/ionflux/mssql-telegram-bot/)
+    - [The SQL Server Execution Plan Reference](https://sqlserverfast.com/epr/) (by Hugo Kornelis)
 
 **[⬆ back to top](#table-of-contents)**
 
