@@ -58,6 +58,7 @@ Error code equal `message_id` from `sys.messages`
 |          0 | A server error occurred on current command. The results, if any, should be discarded.               | [Who owns your availability groups?]    |
 |        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                             |
 |        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                             |
+|        213 | Column name or number of supplied values does not match table definition.                           | [213_link1][3]                          |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time     | [535_link1]                             |
 |        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                             |
 |        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                             |
@@ -85,6 +86,7 @@ Error code equal `message_id` from `sys.messages`
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link2]              |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                            |
+|       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column     … | [7344_link1][3]                          |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [7357_link1][2]                         |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [7391_link2][2]                         |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.         … | [657_link1]                             |
@@ -110,6 +112,7 @@ Error code equal `message_id` from `sys.messages`
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
 [2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
+[3]:https://sqlstudies.com/2018/06/14/the-identity-column-the-insert-and-the-linked-server/
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
