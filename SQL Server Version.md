@@ -492,6 +492,7 @@ Microsoft SQL Server 2016  (SP2 CU1) (KB4135048) - 13.0.5149.0 (X64)
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
 | 13.0.5149.0   | 2015.130.5149.0   | SP2    | SP   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
 | 13.0.5026.0   | 2015.130.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
+| 13.0.4502.0   | 2015.130.4502.0   | SP1    | CU   | [4100997 Cumulative Update 9 for SQL Server 2016 SP1]                                                                          | 2018-05-30   | 2018-05-15 |    39 |     25 |      761 |
 | 13.0.4474.0   | 2015.130.4474.0   | SP1    | CU   | [4077064 Cumulative Update 8 for SQL Server 2016 SP1]                                                                          | 2018-03-19   | 2018-02-24 |    57 |     37 |      760 |
 | 13.0.4466.4   | 2015.130.4466.4   | SP1    | CU   | [4057119 Cumulative Update 7 for SQL Server 2016 SP1]                                                                          | 2018-01-03   | 2017-11-09 |    15 |     14 |      758 |
 | 13.0.4457.0   | 2015.130.4457.0   | SP1    | CU   | [4037354 Cumulative Update 6 for SQL Server 2016 SP1]                                                                          | 2017-11-21   | 2017-11-09 |    55 |     41 |      689 |
@@ -538,6 +539,7 @@ Microsoft SQL Server 2016  (SP2 CU1) (KB4135048) - 13.0.5149.0 (X64)
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
+[4100997 Cumulative Update 9 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4100997
 [4077064 Cumulative Update 8 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4077064
 [4057119 Cumulative Update 7 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4057119
 [4037354 Cumulative Update 6 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4037354
