@@ -3074,11 +3074,14 @@ Scope: global or session
 
 <a id="7352"></a>
 #### Trace Flag: 7352
-Function: Show the optimizer output and the post-optimization rewrite in action<br />
+Function: Show the optimizer output and the post-optimization rewrite in action (After Post Optimization Rewrite)<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internals-nested-loops-prefetching.aspx<br />
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
-Link: [Query Optimizer Deep Dive - Part 4]
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Link: [Few Outer Rows Optimization]<br />
+Related to [8607](#8607) trace flag<br />
+Scope: session only
 
 
 <a id="7356"></a>
@@ -3609,11 +3612,13 @@ Link: [Query Optimizer Deep Dive - Part 4]
 
 <a id="8607"></a>
 #### Trace Flag: 8607
-Function: Displays the optimization output tree during the optimization process<br />
+Function: Displays the optimization output tree during the optimization process (Before Post Optimization Rewrite).<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: [Yet another X-Ray for the QP]<br />
-Link: [Query Optimizer Deep Dive - Part 4]
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Link: [Few Outer Rows Optimization]<br />
+Scope: session only
 
 
 <a id="8608"></a>
@@ -3627,9 +3632,10 @@ Link: [Query Optimizer Deep Dive - Part 4]
 
 <a id="8609"></a>
 #### Trace Flag: 8609
-Function: PWhite: “Task and operation type counts”<br />
+Function: PWhite: “Task and operation type counts”. <br />
 Link: [Query Optimizer Deep Dive - Part 4]<br />
-Link: http://www.queryprocessor.ru/good-enough-plan
+Link: http://www.queryprocessor.ru/good-enough-plan<br />
+Scope: session only
 
 
 <a id="8612"></a>
@@ -3698,7 +3704,9 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-qu
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
 Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
-Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]
+Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]<br />
+Link: [Few Outer Rows Optimization]<br />
+Scope: session only
 
 
 <a id="8665"></a>
@@ -4845,3 +4853,4 @@ Scope: ?
 [A Row Goal Riddle]:https://orderbyselectnull.com/2018/03/30/a-row-goal-riddle/
 [Undocumented Trace Flags: Inside the Restore Process]:https://blog.rdx.com/undocumented-trace-flags-inside-the-restore-process/
 [What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
+[Few Outer Rows Optimization]:https://www.sqlshack.com/few-outer-rows-optimization/
