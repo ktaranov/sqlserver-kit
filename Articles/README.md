@@ -549,6 +549,11 @@ Articles types:
 | [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Jooq                                     | 2017-09-28 | [DBA],[DEV] |
 | [Scheduling powershell tasks with sql agent]                                                                            | Chrissy Lemaire                          | 2017-09-26 | [J],[PS]    |
 | [Three ways to track logins using dbatools]                                                                             | Chrissy Lemaire                          | 2018-04-10 | [PS]        |
+| [Impact of Fragmentation on Execution Plans]                                                                            | Jonathan Kehayias                        | 2017-12-18 | [DEV]       |
+| [How to “debug” a Linked Server from SQL Server to an Oracle Database instance]                                         | Jefferson Elias                          | 2018-06-11 | [DEV]       |
+| [How to implement error handling in SQL Server]                                                                         | Bojan Petrovic                           | 2018-06-15 | [DEV]       |
+| [SQL Server Closure Tables]                                                                                             | Phil Factor                              | 2018-04-10 | [DEV]       |
+| [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh the Coder                           | 2018-05-10 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1048,7 +1053,7 @@ Articles types:
 [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]:https://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
 [An overview of SQL Server database migration tools provided by Microsoft]:https://www.sqlshack.com/an-overview-of-sql-server-database-migration-tools-provided-by-microsoft/
 [Calling Http endpoints in T-SQL using CURL extension]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/04/17/calling-http-endpoints-in-t-sql-using-curl-extension/
-[Why Table Join Orders In Relational Databases]:https://hackernoon.com/why-table-join-orders-in-relational-databases-dont-matter-6de3a35f2959
+[Why Table Join In Relational Databases]:https://hackernoon.com/why-table-join-orders-in-relational-databases-dont-matter-6de3a35f2959
 [Finding overlapping ranges of data]:https://www.red-gate.com/simple-talk/blogs/finding-overlapping-ranges-data/
 [Avoid use of the MONEY and SMALLMONEY datatypes]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
 [Provisioning SQL Server Instances with Docker]:https://www.red-gate.com/simple-talk/sysadmin/containerization/provisioning-sql-server-instances-docker/
@@ -1074,3 +1079,8 @@ Articles types:
 [10 Cool SQL Optimisations That do not Depend on the Cost Model]:https://blog.jooq.org/2017/09/28/10-cool-sql-optimisations-that-do-not-depend-on-the-cost-model/
 [Scheduling powershell tasks with sql agent]:https://dbatools.io/agent/
 [Three ways to track logins using dbatools]:https://dbatools.io/track-logins/
+[Impact of Fragmentation on Execution Plans]:https://sqlperformance.com/2017/12/sql-indexes/impact-fragmentation-plans
+[How to “debug” a Linked Server from SQL Server to an Oracle Database instance]:https://www.sqlshack.com/how-to-debug-a-linked-server-from-sql-server-to-an-oracle-database-instance/
+[How to implement error handling in SQL Server]:https://www.sqlshack.com/how-to-implement-error-handling-in-sql-server/
+[SQL Server Closure Tables]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-server-closure-tables/
+[Deadlock victim choice in SQL Server - an exception?]:http://joshthecoder.com/2018/05/10/deadlock-victim-choice-an-exception.html
