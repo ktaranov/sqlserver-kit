@@ -105,6 +105,7 @@ Error code equal `message_id` from `sys.messages`
 |      17182 | Tcp port is already in use                                                                          | [TCP Port Is Already In Use]            |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.    … | [17190_link1]                           |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                           |
+|      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated  … | [18357_link1][5]                        |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
@@ -115,6 +116,7 @@ Error code equal `message_id` from `sys.messages`
 [2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
 [3]:https://sqlstudies.com/2018/06/14/the-identity-column-the-insert-and-the-linked-server/
 [4]:http://www.sqlservercentral.com/blogs/sql-server-overview/2018/05/07/know-about-sql-server-error-6401/
+[5]:https://sqlstudies.com/2018/06/18/misleading-errors-server-is-configured-for-windows-authentication-only-but-its-not/
 [Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
@@ -129,11 +131,11 @@ Error code equal `message_id` from `sys.messages`
 [824_link1]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
-[KB2152734]:https://support.microsoft.com/en-us/kb/2152734
+[KB2152734]:https://support.microsoft.com/help/2152734
 [1701_link1]:http://www.sqlservercentral.com/questions/163450/
 [1807_link1]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [1904_link1]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
-[KB290787]:https://support.microsoft.com/en-us/kb/290787
+[KB290787]:https://support.microsoft.com/help/290787
 [2709_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [3041_link1]:https://www.sqlservercentral.com/Forums/Topic1179720-1550-1.aspx
 [3101_link1]:https://sqlstudies.com/2017/11/27/closing-all-of-the-connections-to-a-database/
