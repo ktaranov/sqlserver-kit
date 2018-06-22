@@ -580,7 +580,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer 
 
 ```
 Microsoft SQL Server 2014 (SP2-CU12) (KB4130489) - 12.0.5589.7 (X64)
-    Jun 09 2018 12:19:47
+   Jun  9 2018 11:17:15
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
