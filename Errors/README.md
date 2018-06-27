@@ -52,9 +52,9 @@ Error code equal `message_id` from `sys.messages`
 
 | Error Code | Description                                                                                         | Article                                 |
 |-----------:|-----------------------------------------------------------------------------------------------------|-----------------------------------------|
-|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …    | [Out of user memory quota]              |
-|          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while … | [Compressed backup errors and TF 3042]  |
-|          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c  … | [Logon Failure]                         |
+|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …    | [Out of user memory quota][7]           |
+|          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while … | [Compressed backup errors][8]           |
+|          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c  … | [The User has not Been Granted][9]      |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.               | [Who owns your availability groups?]    |
 |        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                             |
 |        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                             |
@@ -71,12 +71,13 @@ Error code equal `message_id` from `sys.messages`
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                   … | [1807_link1]                            |
 |       1904 | The statistics on table has 65 columns in the key list                                            … | [1904_link1]                            |
 |       2709 | Column '%.*ls' in %S_MSG '%.*ls' cannot be used in an index or statistics or as a partition key …   | [2709_link1]                            |
+|       2714 | There is already an object named '%.*ls' in the database.                                           | [2712_link1][6]                         |
 |       3013 | RESTORE DATABASE is terminating abnormally                                                        … | [KB290787]                              |
 |       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messa  … | [3041_link1]                            |
 |       3101 | Exclusive access could not be obtained because the database is in use.                            … | [3101_link1]                            |
 |       3154 | The backup set holds a backup of a database other than the existing                               … | [3154_link1]                            |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam  … | [3241_link1]                            |
-|       3314 | During undoing of a logged operation in database '%.*ls', an error occurred at log record ID %S_  … | [3314_link1]                            |
+|       3314 | During undoing of a logged operation in database '%.*ls', an error occurred at log record ID %S   … | [3314_link1]                            |
 |       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                    … | [3634_link1]                            |
 |       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor  … | [3743_link1]                            |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log   … | [3930_link1]                            |
@@ -117,9 +118,10 @@ Error code equal `message_id` from `sys.messages`
 [3]:https://sqlstudies.com/2018/06/14/the-identity-column-the-insert-and-the-linked-server/
 [4]:http://www.sqlservercentral.com/blogs/sql-server-overview/2018/05/07/know-about-sql-server-error-6401/
 [5]:https://sqlstudies.com/2018/06/18/misleading-errors-server-is-configured-for-windows-authentication-only-but-its-not/
-[Out of user memory quota]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
-[Compressed backup errors and TF 3042]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
-[Logon Failure: The User has not Been Granted]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
+[6]:https://sqlstudies.com/2018/05/10/each-session-should-be-able-to-have-its-own-temp-table-but-there-can-be-problems/
+[7]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
+[8]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
+[9]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
