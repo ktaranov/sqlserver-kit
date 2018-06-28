@@ -1611,6 +1611,7 @@ Link: https://support.microsoft.com/help/2952444<br />
 Link: [Docs Trace Flags]<br />
 Link: https://www.brentozar.com/archive/2017/02/using-trace-flag-2453-improve-table-variable-performance<br />
 Link: https://www.brentozar.com/archive/2018/03/table-valued-parameters-unexpected-parameter-sniffing<br />
+Link: [TEMPDB – Files and Trace Flags and Updates]<br />
 Scope: global or session or query
 
 
@@ -2198,6 +2199,7 @@ Scope: ?
 Function: Enables fix for issue when many consecutive transactions inserting data into temp table in SQL Server 2016 consume more CPU than in SQL Server 2014.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3216543<br />
+Link: [TEMPDB – Files and Trace Flags and Updates]<br />
 Scope: global only
 
 
@@ -3727,7 +3729,9 @@ Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
 Link: [Yet another X-Ray for the QP]<br />
 Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<br />
 Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536<br />
-Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-server-table-statistics/
+Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-server-table-statistics/<br />
+Link: http://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.htmlhttp://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.html<br />
+Scope: session only
 
 
 <a id="8671"></a>
@@ -4854,3 +4858,4 @@ Scope: ?
 [Undocumented Trace Flags: Inside the Restore Process]:https://blog.rdx.com/undocumented-trace-flags-inside-the-restore-process/
 [What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
 [Few Outer Rows Optimization]:https://www.sqlshack.com/few-outer-rows-optimization/
+[TEMPDB – Files and Trace Flags and Updates]:https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/
