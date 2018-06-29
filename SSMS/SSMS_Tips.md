@@ -8,6 +8,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - [ ] https://www.sqlshack.com/whats-new-in-ssms-17-5-data-discovery-and-classification-and-more/
  - [ ] Add gifs or images for all tips
  - [ ] Add some tips from excellent ebook http://insiders.sqldownunder.com/ssms-tips-and-tricks/
+ - [ ] Add Memory Optimiser Advisor tip https://www.red-gate.com/simple-talk/sql/t-sql-programming/converting-database-memory-oltp/
 
 
 Content:
