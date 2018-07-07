@@ -1,4 +1,16 @@
-﻿$PatternMatch = '(?<ColumnName>\w+)\s*=\s*@(?<ParameterName>\w+)'
+﻿<#
+.Synopsis
+  Search for any parameter that does not match the column name.
+
+.OUTPUTS
+  Any parameter that does not match the column name
+
+.NOTES
+   Original link: https://nocolumnname.blog/2018/05/25/finding-parameters-that-do-not-match-column-names/
+   Author: Shane O'Neill
+#>
+
+$PatternMatch = '(?<ColumnName>\w+)\s*=\s*@(?<ParameterName>\w+)'
 
 $FindStoredProcedureParameters = @{
     SqlInstance            = 'localhost'

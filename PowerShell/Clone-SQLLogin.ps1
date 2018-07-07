@@ -1,42 +1,45 @@
 <#
 .Synopsis
-   Clone a SQL Server Login based on another exsiting login.
+  Clone a SQL Server Login based on another exsiting login.
+
 .DESCRIPTION
-   Clone a SQL Server Login based on another exsiting login on one or multiple servers and the process can generate a script for auditing purpose.
+  Clone a SQL Server Login based on another exsiting login on one or multiple servers and the process can generate a script for auditing purpose.
+
 .EXAMPLE
-   The following command scripts out the permissions of login account [John] and generates the script at "c:\temp\clone.sql"
-   Notice, parameters [OldLogin] and [NewLogin] uses the same value of "John"
-   Clone-SQLLogin -Server Server1, Server2 -OldLogin John -NewLogin John -FilePath "c:\temp\clone.sql"
+  The following command scripts out the permissions of login account [John] and generates the script at "c:\temp\clone.sql"
+  Notice, parameters [OldLogin] and [NewLogin] uses the same value of "John"
+  Clone-SQLLogin -Server Server1, Server2 -OldLogin John -NewLogin John -FilePath "c:\temp\clone.sql"
  
 .EXAMPLE
   The following command exports a script that can be used to clone login account [John] for new login account [David], and the script is created at "c:\temp\clone.sql"
   also the -Execute parameter means the new account "David" will be created
   Clone-SQLLogin -Server Server1, Server2 -OldLogin John -NewLogin David -NewPassword 'P@$$W0rd' -FilePath "c:\temp\clone.sql" -Execute;
- 
+
 .Parameter ServerInstance
-   ServerInstance is of string array datat ype, and can accept a string of sql instance names, spearated by comma. (mandatory)
- 
+  ServerInstance is of string array datat ype, and can accept a string of sql instance names, spearated by comma. (mandatory)
+
 .Parameter OldLogin
-   The login account is the source where all the permissions will be scripted out and to be used for the NewLogin account (mandatory)
- 
+  The login account is the source where all the permissions will be scripted out and to be used for the NewLogin account (mandatory)
+
 .Parameter NewLogin
-   The login account is the target account that we want to clone (mandatory)
- 
+  The login account is the target account that we want to clone (mandatory)
+
 .Parameter NewPassword
    The password for the new login account if we want to create the login, default to empty string "" (optional)
- 
+
 .Parameter FilePath
-   The full path name for the generated sql script (optional)
+  The full path name for the generated sql script (optional)
  
 .Parameter Execute
-   This is a swich parameter, if present, it means we need to create the NewLogin account.
- 
+  This is a swich parameter, if present, it means we need to create the NewLogin account.
+
 .OUTPUTS
-   none
+  none
+
 .NOTES
-   A few service broker related permissions are not covered in this version 1.
-   Original link: https://www.mssqltips.com/sqlservertip/4572/cloning-a-sql-server-login-with-all-permissions-using-powershell/
-   Author: Jeffrey Yao
+  A few service broker related permissions are not covered in this version 1.
+  Original link: https://www.mssqltips.com/sqlservertip/4572/cloning-a-sql-server-login-with-all-permissions-using-powershell/
+  Author: Jeffrey Yao
 #>
 #requires -version 3.0
 add-type -assembly  "Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91";  #if Version-11.xx means sql server 2012
