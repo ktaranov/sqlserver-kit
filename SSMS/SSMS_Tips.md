@@ -9,6 +9,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - [ ] Add gifs or images for all tips
  - [ ] Add some tips from excellent ebook http://insiders.sqldownunder.com/ssms-tips-and-tricks/
  - [ ] Add Memory Optimiser Advisor tip https://www.red-gate.com/simple-talk/sql/t-sql-programming/converting-database-memory-oltp/
+ - [ ] Add Removing Connections from the SSMS connection dialog https://blog.waynesheffield.com/wayne/archive/2018/05/removing-servers-ssms-connection-dialog/
 
 
 Content:
