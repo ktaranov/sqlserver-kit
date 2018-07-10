@@ -554,6 +554,11 @@ Articles types:
 | [How to implement error handling in SQL Server]                                                                         | Bojan Petrovic                           | 2018-06-15 | [DEV]       |
 | [SQL Server Closure Tables]                                                                                             | Phil Factor                              | 2018-04-10 | [DEV]       |
 | [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh the Coder                           | 2018-05-10 | [DBA],[DEV] |
+| [Azure and Windows PowerShell: The Basics]                                                                              | Nicolas Prigent                          | 2017-12-29 | [AZ],[PS]   |
+| [Azure and Windows PowerShell: Getting Information]                                                                     | Nicolas Prigent                          | 2018-06-26 | [AZ],[PS]   |
+| [Be our guest, be our guest, put our database to the test]                                                              | Kenneth Fisher                           | 2018-06-25 | [DBA]       |
+| [Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]                                       | Phil Factor                              | 2018-01-04 | [DEV]       |
+| [DATABASES 101 guide for the non-technical professional]                                                                | Thomas LaRock                            | 2018-07-05 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1084,3 +1089,8 @@ Articles types:
 [How to implement error handling in SQL Server]:https://www.sqlshack.com/how-to-implement-error-handling-in-sql-server/
 [SQL Server Closure Tables]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-server-closure-tables/
 [Deadlock victim choice in SQL Server - an exception?]:http://joshthecoder.com/2018/05/10/deadlock-victim-choice-an-exception.html
+[Azure and Windows PowerShell: The Basics]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-windows-powershell-basics/
+[Azure and Windows PowerShell: Getting Information]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-and-windows-powershell-getting-information/
+[Be our guest, be our guest, put our database to the test]:https://sqlstudies.com/2018/06/25/be-our-guest-be-our-guest-put-our-database-to-the-test/
+[Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]:https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009
+[DATABASES 101 guide for the non-technical professional]:https://thomaslarock.com/2018/07/databases-101/
