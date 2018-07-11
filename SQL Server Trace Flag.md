@@ -176,6 +176,7 @@ GO
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
+ - [Trace Flag 3427](#3427) (for SQL Server 2016)
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
  - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server))
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
@@ -197,6 +198,10 @@ Starting in SQL Server 2014, this option can be set instance-wide through `sp_co
 Information about successful backups is still written to `msdb` and can be queried using T-SQL.
 For servers with multiple databases and regular transaction log backups, enabling this option means the ERRORLOG is no longer bloated with BACKUP DATABASE and Database backed up messages.
 As a DBA, this is a good thing because when I look in my ERRORLOG, I really only want to see errors, I don’t want to scroll through hundreds or thousands of entries about successful backups.
+
+**Trace flag 3427** Another change in SQL Server 2016 behavior that could impact tempdb-heavy workloads has to do with Common Criteria Compliance (CCC), also known as C2 auditing.
+We introduced functionality to allow for transaction-level auditing in CCC which can cause some additional overhead, particularly in workloads that do heavy inserts and updates in temp tables.
+Unfortunately, this overhead is incurred whether you have CCC enabled or not. In SQL Server 2016 you can enable trace flag 3427 to bypass this overhead starting with SP1 CU2. Starting in SQL Server 2017 CU4, we automatically bypass this code if CCC is disabled.
 
 **Trace flag 3449** (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
 will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
@@ -2196,7 +2201,7 @@ Scope: ?
 
 <a id="3427"></a>
 #### Trace Flag: 3427
-Function: Enables fix for issue when many consecutive transactions inserting data into temp table in SQL Server 2016 consume more CPU than in SQL Server 2014.<br />
+Function: Enables fix for issue when many consecutive transactions inserting data into temp table in SQL Server 2016 consume more CPU than in SQL Server 2014. Another change in SQL Server 2016 behavior that could impact tempdb-heavy workloads has to do with Common Criteria Compliance (CCC), also known as C2 auditing. We introduced functionality to allow for transaction-level auditing in CCC which can cause some additional overhead, particularly in workloads that do heavy inserts and updates in temp tables. Unfortunately, this overhead is incurred whether you have CCC enabled or not. In SQL Server 2016 you can enable trace flag 3427 to bypass this overhead starting with SP1 CU2. Starting in SQL Server 2017 CU4, we automatically bypass this code if CCC is disabled.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3216543<br />
 Link: [TEMPDB – Files and Trace Flags and Updates]<br />
@@ -3708,6 +3713,7 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-
 Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]<br />
 Link: [Few Outer Rows Optimization]<br />
+Link: [Next-Level Parallel Plan Forcing: An Alternative to 8649]<br />
 Scope: session only
 
 
@@ -4859,3 +4865,4 @@ Scope: ?
 [What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
 [Few Outer Rows Optimization]:https://www.sqlshack.com/few-outer-rows-optimization/
 [TEMPDB – Files and Trace Flags and Updates]:https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/
+[Next-Level Parallel Plan Forcing: An Alternative to 8649]:http://dataeducation.com/next-level-parallel-plan-forcing-an-alternative-to-8649/
