@@ -111,6 +111,7 @@ Error code equal `message_id` from `sys.messages`
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
+|      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and    … | [33206_link1][10]                       |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
@@ -122,6 +123,7 @@ Error code equal `message_id` from `sys.messages`
 [7]:https://blogs.msdn.microsoft.com/psssql/2017/06/07/you-may-see-out-of-user-memory-quota-message-in-errorlog-when-you-use-in-memory-oltp-feature/
 [8]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [9]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
+[10]:http://nebraskasql.blogspot.com/2018/03/error-33206-sql-server-audit-failed-to.html
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
