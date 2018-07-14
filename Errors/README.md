@@ -63,7 +63,7 @@ Error code equal `message_id` from `sys.messages`
 |        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                             |
 |        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                             |
 |        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …       | [666_link1]                             |
-|        703 | There is insufficient system memory in resource pool 'default' to run this query.                 … | [703_link1]                             |
+|        701 | There is insufficient system memory in resource pool '%ls' to run this query.                     … | [701_link1],[701_link2][11]             |
 |        824 | SQL Server detected a logical consistency-based I/O error                                         … | [824_link1],[KB2152734]                 |
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at   … | [825_link1]                             |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition             … | [913_link1]                             |
@@ -124,6 +124,7 @@ Error code equal `message_id` from `sys.messages`
 [8]:https://sqlstudies.com/2017/03/16/compressed-backup-errors-and-tf-3042/
 [9]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [10]:http://nebraskasql.blogspot.com/2018/03/error-33206-sql-server-audit-failed-to.html
+[11]:http://nebraskasql.blogspot.com/2014/03/error-701-insufficient-system-memory.html
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
@@ -131,7 +132,7 @@ Error code equal `message_id` from `sys.messages`
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
 [657_link1]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
 [666_link1]:https://blogs.msdn.microsoft.com/psssql/2018/02/16/uniqueifier-considerations-and-error-666/
-[703_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
+[701_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [824_link1]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
