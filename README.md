@@ -286,6 +286,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [dba-database - Database containing DBA helper code and open source software](https://github.com/amtwo/dba-database) (by Andy Mallon)
     - [SQLServerSpaceAnalysis PowerBI](https://github.com/SQLJana/SQLServerSpaceAnalysis) (by Jana Sattainathan)
     - [SQL Server Telegram Bot](https://github.com/ionflux/mssql-telegram-bot/)
+    - [ZabbixMSSQL - Zabbix Template and tools for Microsoft SQL Server](https://github.com/dreik/ZabbixMSSQL) (by Sergey Kolesnik)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
