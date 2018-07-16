@@ -559,6 +559,8 @@ Articles types:
 | [Be our guest, be our guest, put our database to the test]                                                              | Kenneth Fisher                           | 2018-06-25 | [DBA]       |
 | [Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]                                       | Phil Factor                              | 2018-01-04 | [DEV]       |
 | [DATABASES 101 guide for the non-technical professional]                                                                | Thomas LaRock                            | 2018-07-05 | [DBA],[DEV] |
+| [Understanding your Azure EA Billing Data and Building a Centralized Data Storage Solution]                             | Feodor Georgiev                          | 2018-07-17 | [AZ]        |
+| [READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]                                                 | Uwe Ricken                               | 2018-03-06 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1094,3 +1096,5 @@ Articles types:
 [Be our guest, be our guest, put our database to the test]:https://sqlstudies.com/2018/06/25/be-our-guest-be-our-guest-put-our-database-to-the-test/
 [Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]:https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009
 [DATABASES 101 guide for the non-technical professional]:https://thomaslarock.com/2018/07/databases-101/
+[Understanding your Azure EA Billing Data and Building a Centralized Data Storage Solution]:https://www.red-gate.com/simple-talk/cloud/cloud-data/understanding-your-azure-ea-billing-data-and-building-a-centralized-data-storage-solution/
+[READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]:https://www.red-gate.com/simple-talk/sql/performance/read-committed-snapshot-isolation-high-version_ghost_record_count/
