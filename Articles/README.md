@@ -4,8 +4,8 @@ Articles types:
  - **[AZ]** Azure Articles
  - **[B]** Backup Articles
  - **[BENCH]** Benchmarking Articles
- - **[BIDX]** Index B-Tree Articles
- - **[CLR]** Articles
+ - **[IDX]** Index Articles
+ - **[CLR]** [CLR](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sql-server-common-language-runtime-integration) Articles
  - **[COR]** Corruption Articles
  - **[DAX]** Data Analysis Expressions Articles
  - **[DBA]** DBA Articles
@@ -21,12 +21,12 @@ Articles types:
  - **[R]** R Language
  - **[SSIS]** [SQL Server Integration Services](https://docs.microsoft.com/en-us/sql/integration-services/sql-server-integration-services)
  - **[V]** Visualization Articles
- - **[X]** XML, JSON, YAML, HTML
+ - **[X]** XML, JSON, YAML, HTML Articles
  - **[XE]** [Extended events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
-| [SQL Server Index Design Guide]                                                                                         | Microsoft                                | ?          | [BIDX]      |
+| [SQL Server Index Design Guide]                                                                                         | Microsoft                                | ?          | [IDX]       |
 | [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 |             |
 | [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 | [COR]       |
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
@@ -51,7 +51,7 @@ Articles types:
 | [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                                       | Kendra Little                            | 2016-04-28 |             |
 | [Stop Shrinking Your Database Files. Seriously. Now.]                                                                   | Brent Ozar                               | 2009-08-19 |             |
 | [How to shrink a database in 4 easy steps]                                                                              | Andy Mallon                              | 2016-04-28 |             |
-| [Introduction to the Index Operational Statistics Dynamic Management Function]                                          | Tim Ford                                 | 2016-04-26 | [BIDX]      |
+| [Introduction to the Index Operational Statistics Dynamic Management Function]                                          | Tim Ford                                 | 2016-04-26 | [IDX]       |
 | [Updating Statistics in SQL Server: Maintenance Questions & Answers]                                                    | Kendra Little                            | 2016-04-18 |             |
 | [Overcoming Variable Limitations in SQLCmd Mode]                                                                        | Robert L Davis                           | 2015-11-23 |             |
 | [Contents of a Run Book]                                                                                                | Microsoft                                | 2002-11-12 |             |
@@ -71,7 +71,7 @@ Articles types:
 | [How to transfer logins and passwords between instances of SQL Server]                                                  | Microsoft                                | 2013-12-07 |             |
 | [Finding File Growths with Extended Events]                                                                             | Andy Galbraith                           | 2016-06-13 | [XE]        |
 | [Questions You Should Ask About the Databases You Manage]                                                               | Brent Ozar                               | 2016-06-16 |             |
-| [Clustered Indexes in SQL Server]                                                                                       | Derik Hammer                             | 2016-06-22 | [BIDX]      |
+| [Clustered Indexes in SQL Server]                                                                                       | Derik Hammer                             | 2016-06-22 | [IDX]       |
 | [Triage Quiz: Is Your SQL Server Safe?]                                                                                 | Angie Rudduck                            | 2016-06-15 |             |
 | [Why Not Just Create Statistics?]                                                                                       | Erik Darling                             | 2016-07-14 |             |
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2011-08-16 |             |
@@ -111,7 +111,7 @@ Articles types:
 | [Query Optimizer Deep Dive - Part 2]                                                                                    | Paul White                               | 2012-04-28 |             |
 | [Query Optimizer Deep Dive - Part 3]                                                                                    | Paul White                               | 2012-04-29 |             |
 | [Query Optimizer Deep Dive - Part 4]                                                                                    | Paul White                               | 2012-05-01 |             |
-| [Should You Rebuild or Reorganize Indexes on Large Tables?]                                                             | Kendra Little                            | 2016-10-13 | [BIDX]      |
+| [Should You Rebuild or Reorganize Indexes on Large Tables?]                                                             | Kendra Little                            | 2016-10-13 | [IDX]       |
 | [Retrieving SQL Server Query Execution Plans]                                                                           | Robert Sheldon                           | 2016-10-18 |             |
 | [Introduction to Latches in SQL Server]                                                                                 | Klaus Aschenbrenner                      | 2014-06-23 |             |
 | [Latch Coupling in SQL Server]                                                                                          | Klaus Aschenbrenner                      | 2016-10-24 |             |
@@ -134,8 +134,8 @@ Articles types:
 | [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                                           | Jim Gray                                 | 2006-04-01 |             |
 | [Asynchronous procedure execution]                                                                                      | Remus Rusanu                             | 2009-08-05 |             |
 | [What is the CXPACKET Wait Type, and How Do You Reduce It?]                                                             | Brent Ozar                               | 2013-08-27 |             |
-| [New indexes, hypothetically]                                                                                           | Kenneth Fisher                           | 2016-11-02 | [BIDX]      |
-| [Indexing Wide Keys in SQL Server]                                                                                      | Brent Ozar                               | 2013-05-08 | [BIDX]      |
+| [New indexes, hypothetically]                                                                                           | Kenneth Fisher                           | 2016-11-02 | [IDX]       |
+| [Indexing Wide Keys in SQL Server]                                                                                      | Brent Ozar                               | 2013-05-08 | [IDX]       |
 | [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE), or How to Break TDE]           | Simon McAuliffe                          | 2016-03-31 |             |
 | [Correctly adding data files to tempdb]                                                                                 | Paul Randal                              | 2014-10-14 |             |
 | [Why You Should Test Your Queries Against Bigger Data]                                                                  | Erik Darling                             | 2016-11-01 |             |
@@ -149,13 +149,13 @@ Articles types:
 | [CAST vs. CONVERT]                                                                                                      | Aaron Bertrand                           | 2016-11-02 |             |
 | [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                                                   | Tim Ford                                 | 2016-10-03 |             |
 | [SQL Server Perfmon (Performance Monitor) Best Practices]                                                               | Brent Ozar                               | 2006-12-30 |             |
-| [Top 5 Overlooked Index Features]                                                                                       | Erik Darling                             | 2016-11-10 | [BIDX]      |
+| [Top 5 Overlooked Index Features]                                                                                       | Erik Darling                             | 2016-11-10 | [IDX]       |
 | [A Sysadmin’s Guide to Microsoft SQL Server Memory]                                                                     | Brent Ozar                               | 2016-09-15 |             |
 | [Searching Strings in SQL Server is Expensive]                                                                          | Brent Ozar                               | 2016-10-18 |             |
 | [Altering an INT Column to a BIGINT]                                                                                    | Kendra Little                            | 2016-08-04 |             |
 | [Query tuning 101: Problems with IN ()]                                                                                 | Daniel Janik                             | 2016-11-10 |             |
 | [Admin: Bulkadmin vs ADMINISTER BULK OPERATIONS]                                                                        | Richard A Brown                          | 2012-01-31 |             |
-| [Can Indexes My Query Doesn’t Use Help My Query?]                                                                       | Erik Darling                             | 2016-11-09 | [BIDX]      |
+| [Can Indexes My Query Doesn’t Use Help My Query?]                                                                       | Erik Darling                             | 2016-11-09 | [IDX]       |
 | [SQL Server Audit Walkthrough]                                                                                          | Sadequl Hussain                          | 2016-01-01 |             |
 | [The SQL Server 2016 Query Store: Overview and Architecture]                                                            | Enrico van de Laar                       | 2015-11-16 | [QS]        |
 | [Reading, Writing, and Creating SQL Server Extended Properties]                                                         | Phil Factor                              | 2015-10-21 | [XE]        |
@@ -181,7 +181,7 @@ Articles types:
 | [Join Containment Assumption and CE Model Variation]                                                                    | Dmitri Pilugin                           | 2014-05-04 |             |
 | [Table Variable Tip]                                                                                                    | Itzik Ben-Gan                            | 2015-02-08 |             |
 | [Heap tables in SQL Server]                                                                                             | Derik Hammer                             | 2016-04-13 |             |
-| [The ‘B’ in B-Tree – Indexing in SQL Server]                                                                            | Derik Hammer                             | 2016-04-04 | [BIDX]      |
+| [The ‘B’ in B-Tree – Indexing in SQL Server]                                                                            | Derik Hammer                             | 2016-04-04 | [IDX]       |
 | [How to read the SQL Server Database Transaction Log]                                                                   | Manvendra Singh                          | 2013-10-31 |             |
 | [Filtered Statistics Follow-up]                                                                                         | Erik Darling                             | 2016-12-22 |             |
 | [SQL Server Query Optimization: No Unknown Unknowns]                                                                    | Itzik Ben-Gan                            | 2015-10-13 |             |
@@ -206,7 +206,7 @@ Articles types:
 | [Avoid Unnecessary Lookups when Using ROW_NUMBER for Paging]                                                            | Itzik Ben-Gan                            | 2014-12-11 |             |
 | [Migrating a Disk-Based Table to a Memory-Optimized Table in SQL Server]                                                | Alex Grinberg                            | 2017-02-26 | [MG]        |
 | [SQL Server Hardware Optimization]                                                                                      | Basit Farooq                             | 2016-06-01 |             |
-| [Index Types  Heaps, Primary Keys, Clustered and Nonclustered Indexes]                                                  | Kendra Little                            | 2017-02-02 | [BIDX]      |
+| [Index Types  Heaps, Primary Keys, Clustered and Nonclustered Indexes]                                                  | Kendra Little                            | 2017-02-02 | [IDX]       |
 | [Identifying Existence of Intersections in Intervals]                                                                   | Itzik Ben-Gan                            | 2017-02-08 |             |
 | [Cheat Sheet  How to Configure TempDB for Microsoft SQL Server]                                                         | Brent Ozar                               | 2016-01-14 |             |
 | [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |             |
@@ -231,13 +231,13 @@ Articles types:
 | [SQLskills SQL101: Dealing with SQL Server corruption]                                                                  | Paul Randal                              | 2017-02-28 | [COR]       |
 | [Advanced Analytics with R & SQL: Part I - R Distributions]                                                             | Frank A. Banin                           | 2016-10-31 | [R]         |
 | [T-SQL Tuesday #85  STOP! Restore Time!]                                                                                | Derik Hammer                             | 2016-12-13 |             |
-| [Filtered Indexes: Rowstore vs Nonclustered Columnstore]                                                                | Kendra Little                            | 2016-11-10 | [BIDX]      |
+| [Filtered Indexes: Rowstore vs Nonclustered Columnstore]                                                                | Kendra Little                            | 2016-11-10 | [IDX]       |
 | [ALTER SCHEMA TRANSFER for Zero Downtime Database Upgrades]                                                             | Dave Wentzel                             | 2013-05-21 |             |
 | [Delayed Durability in SQL Server 2014]                                                                                 | Aaron Bertrand                           | 2014-04-28 |             |
 | [Daylight Savings end affects not only you, but your SQL Server too]                                                    | Aaron Bertrand                           | 2014-04-28 |             |
 | [Searching Strings in SQL Server is Expensive]                                                                          | Brent Ozar                               | 2016-10-18 |             |
-| [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 | [COR][BIDX] |
-| [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]                                                       | Brent Ozar                               | 2017-02-28 | [COR][BIDX] |
+| [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 | [COR][IDX]  |
+| [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]                                                       | Brent Ozar                               | 2017-02-28 | [COR][IDX]  |
 | [The Guide  SQL Server Installation Checklist (settings that increase SQL Server Performance)]                          | Mark Varnas                              | 2017-03-03 |             |
 | [SQL Browser, what is it good for? Absolutely something!]                                                               | Chris Sommer                             | 2017-03-01 |             |
 | [PowerShell Getting More From Generic Error Messages]                                                                   | Shane O'Neill                            | 2017-03-02 | [PS]        |
@@ -269,13 +269,13 @@ Articles types:
 | [Configuring R on SQL Server 2016]                                                                                      | Ginger Grant                             | 2016-12-06 | [DBA],[R]   |
 | [Knee-Jerk PerfMon Counters: Page Life Expectancy]                                                                      | Paul Randal                              | 2014-10-20 | [DBA],[P]   |
 | [Change Management Template for SQL Server DBAs and Developers]                                                         | Kendra Little                            | 2016-04-12 | [DBA]       |
-| [Performance Myths: Clustered vs. Non-Clustered Indexes]                                                                | Aaron Bertrand                           | 2017-03-17 | [BIDX]      |
+| [Performance Myths: Clustered vs. Non-Clustered Indexes]                                                                | Aaron Bertrand                           | 2017-03-17 | [IDX]       |
 | [Bad habits: Counting rows the hard way]                                                                                | Aaron Bertrand                           | 2014-10-30 | [DEV]       |
 | [Why Cost Threshold For Parallelism Shouldn’t Be Set To 5]                                                              | Erik Darling                             | 2017-03-14 | [DBA]       |
 | [Join Performance, Implicit Conversions, and Residuals]                                                                 | Paul White                               | 2011-07-18 | [DEV]       |
 | [Implicit Conversions that cause Index Scans]                                                                           | Jonathan Kehayias                        | 2011-04-11 | [DEV]       |
 | [When Is It Appropriate To Store JSON in SQL Server?]                                                                   | Bert Wagner                              | 2017-03-14 | [DEV]       |
-| [The Performance Penalty of Bookmark Lookups in SQL Server]                                                             | Klaus Aschenbrenner                      | 2017-03-17 | [BIDX]      |
+| [The Performance Penalty of Bookmark Lookups in SQL Server]                                                             | Klaus Aschenbrenner                      | 2017-03-17 | [IDX]       |
 | [Why You Should Change the Cost Threshold for Parallelism]                                                              | Grant Fritchey                           | 2017-03-13 | [DBA]       |
 | [Why Update Statistics can cause an IO storm]                                                                           | Kendra Little                            | 2014-01-29 | [DBA]       |
 | [SQLskills SQL101  Temporary table misuse]                                                                              | Paul White                               | 2017-03-13 | [DEV]       |
@@ -518,7 +518,7 @@ Articles types:
 | [A concrete example of migration between an Oracle Database and SQL Server using Microsoft Data Migration Assistant]    | Jefferson Elias                          | 2018-04-12 | [DBA],[DEV] |
 | [Audit SQL Server stop, start, restart]                                                                                 | Steve Keeler                             | 2018-03-12 | [DBA]       |
 | [Query tuning: Apply yourself]                                                                                          | Daniel Janik                             | 2018-04-06 | [DEV]       |
-| [How to identify and monitor unused indexes in SQL Server]                                                              | Nikola Dimitrijevic                      | 2018-04-17 | [BIDX]      |
+| [How to identify and monitor unused indexes in SQL Server]                                                              | Nikola Dimitrijevic                      | 2018-04-17 | [IDX]       |
 | [Benchmarking: 1-TB table population (part 1: the baseline)]                                                            | Paul Randal                              | 2010-01-21 | [BENCH]     |
 | [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]                       | Paul Randal                              | 2010-01-27 | [BENCH]     |
 | [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA]       |
@@ -561,6 +561,12 @@ Articles types:
 | [DATABASES 101 guide for the non-technical professional]                                                                | Thomas LaRock                            | 2018-07-05 | [DBA],[DEV] |
 | [Understanding your Azure EA Billing Data and Building a Centralized Data Storage Solution]                             | Feodor Georgiev                          | 2018-07-17 | [AZ]        |
 | [READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]                                                 | Uwe Ricken                               | 2018-03-06 | [DBA],[DEV] |
+| [In-Memory OLTP Indexes – Part 1: Recommendations.]                                                                     | Kunal Karoth                             | 2017-11-02 | [IDX]       |
+| [In-Memory OLTP Indexes – Part 2: Performance Troubleshooting Guide.]                                                   | Kunal Karoth                             | 2017-11-14 | [IDX]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 1]                                                       | Itzik Ben-Gan                            | 2018-04-10 | [DEV]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 2]                                                       | Itzik Ben-Gan                            | 2018-05-09 | [DEV]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 3]                                                       | Itzik Ben-Gan                            | 2018-06-13 | [DEV]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 4]                                                       | Itzik Ben-Gan                            | 2018-11-07 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1098,3 +1104,9 @@ Articles types:
 [DATABASES 101 guide for the non-technical professional]:https://thomaslarock.com/2018/07/databases-101/
 [Understanding your Azure EA Billing Data and Building a Centralized Data Storage Solution]:https://www.red-gate.com/simple-talk/cloud/cloud-data/understanding-your-azure-ea-billing-data-and-building-a-centralized-data-storage-solution/
 [READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]:https://www.red-gate.com/simple-talk/sql/performance/read-committed-snapshot-isolation-high-version_ghost_record_count/
+[In-Memory OLTP Indexes – Part 1: Recommendations.]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/11/02/in-memory-oltp-indexes-part-1-recommendations/
+[In-Memory OLTP Indexes – Part 2: Performance Troubleshooting Guide.]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/11/14/in-memory-oltp-indexes-part-2-performance-troubleshooting-guide/
+[Optimization Thresholds – Grouping and Aggregating Data, Part 1]:https://sqlperformance.com/2018/04/sql-plan/grouping-and-aggregating-part-1
+[Optimization Thresholds – Grouping and Aggregating Data, Part 2]:https://sqlperformance.com/2018/05/sql-plan/grouping-and-aggregating-part-2
+[Optimization Thresholds – Grouping and Aggregating Data, Part 3]:https://sqlperformance.com/2018/06/sql-plan/grouping-and-aggregating-part-3
+[Optimization Thresholds – Grouping and Aggregating Data, Part 4]:https://sqlperformance.com/2018/07/sql-performance/grouping-and-aggregating-part-4
