@@ -125,7 +125,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install 2017 RTM] then [CU8 KB4338363]                              | 14.0.1000.169<br/>14.0.3029.16               | 2017-10-02<br/>2018-06-21                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU9 KB4341265]                              | 14.0.1000.169<br/>14.0.3030.27               | 2017-10-02<br/>2018-07-18                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU2 KB4340355] Or [Developer Free]          | 13.0.5026.0<br/>13.0.5153.0                  | 2018-04-24<br/>2018-07-16                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU12 KB4130489] | 12.0.5000.0<br/>12.0.5589.7                  | 2016-07-11<br/>2018-06-18                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]        | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -135,7 +135,7 @@ Profits:
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[CU8 KB4338363]:https://support.microsoft.com/help/4338363/
+[CU9 KB4341265]:https://support.microsoft.com/help/4341265
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU2 KB4340355]:https://support.microsoft.com/help/4340355/
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
@@ -172,7 +172,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 KB4338363]           | SQLServer2017-KB4338363-x64.exe                                   | 2018-06-21   | 14.0.3029.16  |      475 | f32613586a621cacba6d08ea7af0b10e1b5938f6 |
+| [SQL Server 2017 KB4341265]           | SQLServer2017-KB4341265-x64.exe                                   | 2018-07-18   | 14.0.3030.27  |      486 | 8a5011f798115001695945f8dbad395f4ee9d9a6 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 KB4340355]       | SQLServer2016-KB4340355-x64.exe                                   | 2018-07-16   | 13.0.5153.0   |      671 | 1318472a9fc0ee77184b8a9c631e600cf787346f |
 | [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
@@ -190,7 +190,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 KB4338363]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4338363-x64.exe
+[SQL Server 2017 KB4341265]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4341265-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 KB4340355]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4340355-x64.exe
@@ -351,7 +351,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
 | SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              |  2016        | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
-| Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
 | SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
 | SQL Server 2012 CTP1                         | 11              |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
@@ -447,6 +447,7 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3030.27  | 2017.140.3030.27  | RTM    | CU   | [4341265 Microsoft SQL Server 2017 CU8]                              | 2018-07-18   | 2018-06-30 |    27 |     18 |      486 |
 | 14.0.3029.16  | 2017.140.3029.16  | RTM    | CU   | [4338363 Microsoft SQL Server 2017 CU8]                              | 2018-06-21   | 2018-06-13 |    60 |     31 |      475 |
 | 14.0.3026.27  | 2017.140.3026.27  | RTM    | CU   | [4229789 Microsoft SQL Server 2017 CU7]                              | 2018-05-24   | 2018-05-10 |    47 |     28 |      473 |
 | 14.0.3025.4   | 2017.140.3025.4   | RTM    | CU   | [4101464 Microsoft SQL Server 2017 CU6]                              | 2018-04-19   | 2018-03-03 |    39 |     39 |      473 |
@@ -466,6 +467,7 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[4341265 Microsoft SQL Server 2017 CU9]:https://support.microsoft.com/help/4341265/
 [4338363 Microsoft SQL Server 2017 CU8]:https://support.microsoft.com/help/4338363/
 [4229789 Microsoft SQL Server 2017 CU7]:https://support.microsoft.com/help/4229789/
 [4101464 Microsoft SQL Server 2017 CU6]:https://support.microsoft.com/help/4101464/
