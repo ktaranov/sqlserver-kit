@@ -49,7 +49,7 @@ SQL Server Management Studio for another languages:
  [Russian](https://go.microsoft.com/fwlink/?linkid=875802&clcid=0x419) |
  [Spanish](https://go.microsoft.com/fwlink/?linkid=875802&clcid=0x40a)
 
-SQL Server Management Studio 17.6 Upgrade Package (upgrades 17.x to 17.8.1):
+SQL Server Management Studio 17.8.1 Upgrade Package (upgrades 17.x to 17.8.1):
  [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=875804&clcid=0x804) |
  [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=875804&clcid=0x404) |
  [English (United States)](https://go.microsoft.com/fwlink/?linkid=875804&clcid=0x409) |
