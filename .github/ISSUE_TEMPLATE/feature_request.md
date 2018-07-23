@@ -4,14 +4,20 @@ about: Suggest an idea for this project
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+Fixes # .
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Changes proposed in this pull request:
+ - 
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+How to test this code:
+ - 
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+Has been tested on (remove any that don't apply):
+ - Case-sensitive SQL Server instance
+ - SQL Server 2008
+ - SQL Server 2008 R2
+ - SQL Server 2012
+ - SQL Server 2014
+ - SQL Server 2016
+ - Amazon RDS
+ - Azure SQL DB
