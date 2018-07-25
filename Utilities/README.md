@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **269** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **270** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -19,8 +19,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {18}
  - **[T]**: Testing tools {5}
- - **[ST]**: Statistics utilities {4}
- - **[?]**: Not yet classified {112}
+ - **[ST]**: Statistics utilities {3}
+ - **[?]**: Not yet classified {114}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -146,7 +146,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Defrag](#apexsql-defrag)                                | No                            | No        | [IDX]    | [ApexSQL Defrag]                            | 2017-06-29 | ApexSQL               |            | No             |  $499 |
 | [ApexSQL Log](#apexsql-log)                                      | No                            | No        | [?]      | [ApexSQL Log]                               | 2017-05-24 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Monitor](#apexsql-monitor)                              | No                            | No        | [M]      | [ApexSQL Monitor]                           | 2017-10-05 | ApexSQL               |            | No             |  $499 |
-| [ApexSQL Plan](#apexsql-plan)                                    | No                            | No        | [?]      | [ApexSQL Plan]                              | 2018-04-05~~~~ | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Plan](#apexsql-plan)                                    | No                            | No        | [?]      | [ApexSQL Plan]                              | 2018-04-05 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Propagate](#apexsql-propagate)                          | No                            | No        | [?]      | [ApexSQL Propagate]                         | 2017-09-25 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Recover](#apexsql-recover)                              | No                            | No        | [REC]    | [ApexSQL Recover]                           | 2017-10-26 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Build](#apexsql-build)                                  | No                            | No        | [?]      | [ApexSQL Build]                             | 2017-05-15 | ApexSQL               |            | No             |  $399 |
@@ -165,6 +165,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL BI Monitor](#apexsql-bi-monitor)                        | No                            | No        | [BI],[M] | [ApexSQL BI Monitor]                        | 2018-05-18 | ApexSQL               |            | No             |  $499 |
 | [ApexSQL VM Monitor](#apexsql-vm-monitor)                        | No                            | No        | [M]      | [ApexSQL VM Monitor]                        | 2018-05-09 | ApexSQL               |            | No             |  $999 |
 | [ApexSQL Job](#apexsql-job)                                      | No                            | No        | [J]      | [ApexSQL Job]                               | 2018-03-29 | ApexSQL               |            | No             |  $499 |
+| [ApexSQL Enforce](#apexsqlL-enforce)                             | No                            | No        | [?]      | [ApexSQL Enforce]                           | 2018-07-19 | ApexSQL               |            | No             |  $299 |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                  | No                            | No        | [?]      | [DBBest T-SQL Analyzer]                     | 2015-03-13 | DBBest                |            | No             |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)  | No                            | No        | [SC],[DC]| [DBBest Database Compare Suite]             | 2015-09-04 | DBBest                |            | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                      | No                            | No        | [?]      | [Advanced Query Tool]                       | 2015-03-18 | Cardett Associates    |            | No             |  $180 |
@@ -2431,6 +2432,24 @@ Price: $499
  - Define and manage SQL Server alertsMonitor SQL Server Agent logs
 
 
+## ApexSQL Enforce
+<a id="apexsql-enforce"></a>
+Download page: [ApexSQL Enforce]<br/>
+Release date: 2018-07-19<br/>
+Support Version: 2008/2012/2014/2016/2017<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $299
+
+ - Review databases and individual SQL scripts
+ - Import and export rulesProcess unattended via the CLI
+ - Seamlessly integrate into your CI/CD processLeverage a library of 100+ pre-written rules
+ - Create custom rules with a built in IDE
+ - Write custom rules in C# or VB.NETCreate HTML reports and XML exports
+ - Integrate with SSMS and Visual Studio
+ - Generate SQL to fix violations
+
+
 ## DBBest T-SQL Analyzer
 <a id="dbbest-t-sql-analyzer"></a>
 Download page: [DBBest T-SQL Analyzer]<br/>
@@ -4356,7 +4375,12 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [ApexSQL Trigger Viewer]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Snapshot Utility]:https://www.apexsql.com/Download.aspx?download=Search
 [ApexSQL Decrypt]:https://www.apexsql.com/sql_tools_decrypt.aspx
-[ApexSQL Model]:https://www.apexsql.com/sql_tools_model.aspx~~~~
+[ApexSQL Model]:https://www.apexsql.com/sql_tools_model.aspx
+[ApexSQL Analyze]:https://www.apexsql.com/sql_tools_analyze.aspx
+[ApexSQL BI Monitor]:https://www.apexsql.com/sql_tools_bi_monitor.aspx
+[ApexSQL VM Monitor]:https://www.apexsql.com/sql_tools_vm_monitor.aspx
+[ApexSQL Job]:https://www.apexsql.com/sql_tools_job.aspx
+[ApexSQL Enforce]:https://www.apexsql.com/sql_tools_enforce.aspx
 [DBBest T-SQL Analyzer]:https://www.dbbest.com/products/t-sql-analyzer
 [DBBest Database Compare Suite]:https://www.dbbest.com/products/database-compare-suite/
 [Advanced Query Tool]:http://www.querytool.com/
@@ -4484,6 +4508,7 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [Azure Database Migration Service]:https://azure.microsoft.com/en-us/services/database-migration/
 [FlowHeater]:https://flowheater.net/en
 [EDIS]:https://sqletl.com
+[SchemaSpy]:https://github.com/schemaspy/schemaspy
 [Adminer]:https://www.adminer.org/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
