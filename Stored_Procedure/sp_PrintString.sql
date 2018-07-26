@@ -11,7 +11,7 @@ DECLARE @longStr NVARCHAR(MAX) = REPLICATE(N'R', 5000) + CAST(CHAR(13) AS NVARCH
 PRINT('Microsoft PRINT with string truncating:');
 PRINT(@longStr);
 PRINT('Right PRINT using dbo.sp_PrintString without string truncating:');
-EXEC dbo.sp_PrintString @Str = @longStr;
+EXEC dbo.sp_PrintString @str = @longStr;
 */
 BEGIN
     DECLARE @line          NVARCHAR(MAX)
