@@ -567,6 +567,11 @@ Articles types:
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 2]                                                       | Itzik Ben-Gan                            | 2018-05-09 | [DEV]       |
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 3]                                                       | Itzik Ben-Gan                            | 2018-06-13 | [DEV]       |
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 4]                                                       | Itzik Ben-Gan                            | 2018-11-07 | [DEV]       |
+| [When DBCC OpenTran doesn’t list all open transactions]                                                                 | Mohamed                                  | 2013-02-17 | [DBA]       |
+| [How I spot not-yet-documented features in SQL Server CTPs]                                                             | Aaron Bertrand                           | 2015-12-02 | [DBA]       |
+| [More ways to discover changes in new versions of SQL Server]                                                           | Aaron Bertrand                           | 2016-03-30 | [DBA]       |
+| [Tail-Log Backup and Restore in SQL Server]                                                                             | Prashanth Jayaram                        | 2018-05-31 | [DBA]       |
+| [Database Filegroup(s) and Piecemeal restores in SQL Server]                                                            | Prashanth Jayaram                        | 2018-06-22 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1110,3 +1115,8 @@ Articles types:
 [Optimization Thresholds – Grouping and Aggregating Data, Part 2]:https://sqlperformance.com/2018/05/sql-plan/grouping-and-aggregating-part-2
 [Optimization Thresholds – Grouping and Aggregating Data, Part 3]:https://sqlperformance.com/2018/06/sql-plan/grouping-and-aggregating-part-3
 [Optimization Thresholds – Grouping and Aggregating Data, Part 4]:https://sqlperformance.com/2018/07/sql-performance/grouping-and-aggregating-part-4
+[When DBCC OpenTran doesn’t list all open transactions]:https://blogs.msdn.microsoft.com/mosharaf/2013/02/17/when-dbcc-opentran-doesnt-list-all-open-transactions/
+[How I spot not-yet-documented features in SQL Server CTPs]:https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/
+[More ways to discover changes in new versions of SQL Server]:https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/
+[Tail-Log Backup and Restore in SQL Server]:https://www.sqlshack.com/tail-log-backup-and-restore-in-sql-server/
+[Database Filegroup(s) and Piecemeal restores in SQL Server]:https://www.sqlshack.com/database-filegroups-and-piecemeal-restores-in-sql-server/
