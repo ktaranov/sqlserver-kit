@@ -59,6 +59,8 @@ Error code equal `message_id` from `sys.messages`
 |        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                             |
 |        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                             |
 |        213 | Column name or number of supplied values does not match table definition.                           | [213_link1][3]                          |
+|        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.              | [229_link1][12]                         |
+|        297 | The user does not have permission to perform this action.                                           | [297_link1][12]                         |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time     | [535_link1]                             |
 |        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                             |
 |        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                             |
@@ -82,6 +84,7 @@ Error code equal `message_id` from `sys.messages`
 |       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor  … | [3743_link1]                            |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log   … | [3930_link1]                            |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                     … | [4064_link1]                            |
+|       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored         … | [4629_link1][12]                        |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                            |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                            |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
@@ -125,6 +128,7 @@ Error code equal `message_id` from `sys.messages`
 [9]:https://blog.sqlauthority.com/2017/04/14/sql-server-logon-failure-user-not-granted-requested-logon-type-computer/
 [10]:http://nebraskasql.blogspot.com/2018/03/error-33206-sql-server-audit-failed-to.html
 [11]:http://nebraskasql.blogspot.com/2014/03/error-701-insufficient-system-memory.html
+[12]:http://www.nielsberglund.com/2018/06/24/sp-execute-external-script-and-permissions/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
