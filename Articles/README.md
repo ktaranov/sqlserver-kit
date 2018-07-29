@@ -572,6 +572,12 @@ Articles types:
 | [More ways to discover changes in new versions of SQL Server]                                                           | Aaron Bertrand                           | 2016-03-30 | [DBA]       |
 | [Tail-Log Backup and Restore in SQL Server]                                                                             | Prashanth Jayaram                        | 2018-05-31 | [DBA]       |
 | [Database Filegroup(s) and Piecemeal restores in SQL Server]                                                            | Prashanth Jayaram                        | 2018-06-22 | [DBA]       |
+| [Updating Statistics with Ola Hallengren’s Script]                                                                      | Erin Stellato                            | 2018-06-22 | [DBA]       |
+| [Interview questions on SQL Server database backups, restores and recovery – Part I]                                    | Prashanth Jayaram                        | 2018-07-25 | [DBA]       |
+| [Interview questions on SQL Server database backups, restores and recovery – Part II]                                   | Prashanth Jayaram                        | 2018-07-25 | [DBA]       |
+| [Interview questions on SQL Server database backups, restores and recovery – Part III]                                  | Prashanth Jayaram                        | 2018-07-25 | [DBA]       |
+| [Can Rowstore Compression Beat Columnstore Compression?]                                                                | Joe Obbish                               | 2018-06-28 | [DBA],[DEV] |
+
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1120,3 +1126,8 @@ Articles types:
 [More ways to discover changes in new versions of SQL Server]:https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/
 [Tail-Log Backup and Restore in SQL Server]:https://www.sqlshack.com/tail-log-backup-and-restore-in-sql-server/
 [Database Filegroup(s) and Piecemeal restores in SQL Server]:https://www.sqlshack.com/database-filegroups-and-piecemeal-restores-in-sql-server/
+[Updating Statistics with Ola Hallengren’s Script]:https://www.sqlskills.com/blogs/erin/updating-statistics-with-ola-hallengrens-script/
+[Interview questions on SQL Server database backups, restores and recovery – Part I]:https://www.sqlshack.com/interview-questions-on-sql-server-database-backups-restores-and-recovery-part-i/
+[Interview questions on SQL Server database backups, restores and recovery – Part II]:https://www.sqlshack.com/interview-questions-on-sql-server-database-backups-restores-and-recovery-part-ii/
+[Interview questions on SQL Server database backups, restores and recovery – Part III]:https://www.sqlshack.com/interview-questions-on-sql-server-database-backups-restores-and-recovery-part-iii/
+[Can Rowstore Compression Beat Columnstore Compression?]:https://orderbyselectnull.com/2018/06/28/can-rowstore-compression-beat-columnstore-compression/
