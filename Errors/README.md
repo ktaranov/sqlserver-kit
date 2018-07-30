@@ -113,6 +113,7 @@ Error code equal `message_id` from `sys.messages`
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
+|      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already i                        | [26023_link1][13                        |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and    … | [33206_link1][10]                       |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
@@ -129,6 +130,7 @@ Error code equal `message_id` from `sys.messages`
 [10]:http://nebraskasql.blogspot.com/2018/03/error-33206-sql-server-audit-failed-to.html
 [11]:http://nebraskasql.blogspot.com/2014/03/error-701-insufficient-system-memory.html
 [12]:http://www.nielsberglund.com/2018/06/24/sp-execute-external-script-and-permissions/
+[13]:https://blogs.msdn.microsoft.com/psssql/2018/07/26/july-10-2018-windows-updates-cause-sql-startup-issues-due-to-tcp-port-is-already-in-use-errors/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/

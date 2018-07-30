@@ -85,7 +85,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 269 SQLSQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 270 SQLSQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -163,8 +163,6 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
    - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
    - [Youtube Redgate Videos](https://www.youtube.com/redgate)
-   - [Dell DBA days the Brent Ozar Unlimited 2015](https://software.dell.com/event/webcast-series-dell-dba-days-the-brent-ozar-unlimited-show890450)
-   - [Dell DBA days the Brent Ozar Unlimited 2016](https://software.dell.com/event/live-webcast-series-dell-dba-days-the-brent-ozar-unlimited-show-the-se8112821)
    - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
    - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
    - [Youtube SQLpassion](https://www.youtube.com/channel/UCkrUQVPrv36Musorn0K4KoA)
