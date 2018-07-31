@@ -254,7 +254,7 @@ Scope: global only
 #### Trace Flag: 105
 **Undocumented trace flag**<br />
 Function: Join more than 16 tables in SQL server 6.5<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+Link: [SQL Server 6.5: Some Useful Trace Flag]
 
 
 <a id="106"></a>
@@ -461,7 +461,8 @@ Link: None
 
 <a id="260"></a>
 #### Trace Flag: 260
-Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs). For more information about GetXpVersion().<br />
+Function: Prints versioning information about extended stored procedure dynamic-link libraries (DLLs).
+When SQL Server is started with the trace flag `-T260` or if a user with system administrator privileges runs `DBCC TRACEON (260)`, and if the extended stored procedure DLL does not support `__GetXpVersion()`, a warning message (`Error 8131: Extended stored procedure DLL '%' does not export __GetXpVersion().`) is printed to the error log. (Note that `__GetXpVersion()` begins with **two underscores**.)<br />
 Link: https://docs.microsoft.com/en-us/sql/relational-databases/extended-stored-procedures-programming/creating-extended-stored-procedures<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
@@ -477,12 +478,14 @@ Link: None
 <a id="272"></a>
 #### Trace Flag: 272
 <a id="272"></a>
-**Note: Critical only for SQL Server 2012**
+**Note: Recommended for SQL Server 2012**<br />
 Function: Disabling the identity cache. It prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and tinyint and smallint data types.<br />
 Link: http://www.big.info/2013/01/how-to-solve-sql-server-2012-identity.html<br />
-Link: https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity<br />
+Link: https://web.archive.org/web/20160822054721/https://connect.microsoft.com/SQLServer/feedback/details/739013/failover-or-restart-results-in-reseed-of-identity<br />
 Link: https://dbafromthecold.com/2017/05/24/disabling-the-identity-cache-in-sql-server-2017/<br />
-Link: [Demo](https://github.com/ktaranov/sqlserver-kit/blob/master/Errors/Identity_gap_sql_server_2012.sql)
+Link: [Demo](https://github.com/ktaranov/sqlserver-kit/blob/master/Errors/Identity_gap_sql_server_2012.sql)<br />
+Link: https://stackoverflow.com/q/14146148/2298061<br />
+Scope: global only
 
 
 <a id="274"></a>
@@ -496,7 +499,7 @@ Link: None
 #### Trace Flag: 302
 **Undocumented trace flag**<br />
 Function: Output Index Selection info<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+Link: [SQL Server 6.5: Some Useful Trace Flag]
 
 
 <a id="304"></a>
@@ -511,7 +514,7 @@ Scope: ?
 #### Trace Flag: 310
 **Undocumented trace flag**<br />
 Function: Outputs info about actual join order<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+Link: [SQL Server 6.5: Some Useful Trace Flag]
 
 
 <a id="320"></a>
@@ -524,7 +527,7 @@ Link: None
 <a id="323"></a>
 #### Trace Flag: 323
 Function: Outputs detailed info about updates<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm<br />
+Link: [SQL Server 6.5: Some Useful Trace Flag]<br />
 Link: https://support.microsoft.com/help/153096/fix-sql-server-6.5-service-pack-1-fixlist
 
 
@@ -560,7 +563,7 @@ Link: None
 #### Trace Flag: 345
 **Undocumented trace flag**<br />
 Function: Changes join order selection logic in SQL Server 6.5<br />
-Link: http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+Link: [SQL Server 6.5: Some Useful Trace Flag]
 
 
 <a id="445"></a>
@@ -4866,3 +4869,4 @@ Scope: ?
 [Few Outer Rows Optimization]:https://www.sqlshack.com/few-outer-rows-optimization/
 [TEMPDB – Files and Trace Flags and Updates]:https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/
 [Next-Level Parallel Plan Forcing: An Alternative to 8649]:http://dataeducation.com/next-level-parallel-plan-forcing-an-alternative-to-8649/
+[SQL Server 6.5: Some Useful Trace Flag]:http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
