@@ -106,17 +106,18 @@ Error code equal `message_id` from `sys.messages`
 |      15136 | The database principal is set as the execution context of one or more procedures, functions,      … | [15136_link1]                           |
 |      15199 | The current security context cannot be reverted. Please switch to the original database where     … | [15199_link1][1]                        |
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of … | [15406_link1][1]                        |
-|      17182 | Tcp port is already in use                                                                          | [TCP Port Is Already In Use]            |
+|      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls        | [17182_link1][15]            |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.    … | [17190_link1]                           |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                           |
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated  … | [18357_link1][5]                        |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
-|      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already i                        | [26023_link1][13                        |
+|      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                  | [26023_link1][13]                       |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and    … | [33206_link1][10]                       |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
+|      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.    | [39004_link1][14]                       |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
 [2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
@@ -131,6 +132,8 @@ Error code equal `message_id` from `sys.messages`
 [11]:http://nebraskasql.blogspot.com/2014/03/error-701-insufficient-system-memory.html
 [12]:http://www.nielsberglund.com/2018/06/24/sp-execute-external-script-and-permissions/
 [13]:https://blogs.msdn.microsoft.com/psssql/2018/07/26/july-10-2018-windows-updates-cause-sql-startup-issues-due-to-tcp-port-is-already-in-use-errors/
+[14]:https://36chambers.wordpress.com/2017/04/27/error-0x80004005-in-sql-server-r-services/
+[15]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
@@ -172,7 +175,6 @@ Error code equal `message_id` from `sys.messages`
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
-[TCP Port Is Already In Use]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
