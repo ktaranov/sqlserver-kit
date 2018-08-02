@@ -255,7 +255,6 @@ Articles types:
 | [KPIs For DBAs to Show Their CIOs]                                                                                      | Thomas Larock                            | 2017-03-08 | [DBA]       |
 | [How To Forecast Database Disk Capacity If You Don’t Have A Monitoring Tool]                                            | Edwin M Sarmiento                        | 2015-07-31 | [DBA]       |
 | [Statistical Sampling for Verifying Database Backups]                                                                   | Thomas Larock                            | 2010-05-13 | [DBA],[B]   |
-| [Inside The Storage Engine  GAM, SGAM, PFS and other allocation maps]                                                   | Paul Randal                              | 2008-03-04 | [DBA]       |
 | [Using dbatools for automated restore and CHECKDB]                                                                      | Anthony Nocentino                        | 2017-03-04 | [DBA],[PS]  |
 | [Bad Habits Revival]                                                                                                    | Aaron Bertrand                           | 2017-01-26 | [DBA]       |
 | [Deploying Multiple SSIS Projects via PowerShell]                                                                       | Nat Sundar                               | 2017-02-27 | [SSIS,][PS] |
@@ -316,8 +315,6 @@ Articles types:
 | [Performance Myths: Table variables are always in-memory]                                                               | Derik Hammer                             | 2017-04-04 | [DEV]       |
 | [Questions About SQL Server Collations You Were Too Shy to Ask]                                                         | Robert Sheldon                           | 2017-04-06 | [DBA],[DEV] |
 | [NULL - The database's black hole]                                                                                      | Hugo Kornelis                            | 2007-07-06 | [DEV]       |
-| [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]                     | Paul Randal                              | 2007-10-01 | [DEV]       |
-| [Inside the Storage Engine: Anatomy of a page]                                                                          | Paul Randal                              | 2007-10-03 | [DEV]       |
 | [For The Better Developer: SQL Server Indexes]                                                                          | Davide Mauri                             | 2017-04-02 | [DEV]       |
 | [#EntryLevel: Compression & Data Types]                                                                                 | Melissa Connors                          | 2016-04-17 | [DEV]       |
 | [Cardinality Estimation for a Predicate on a COUNT Expression]                                                          | Paul White                               | 2017-04-12 | [DEV]       |
@@ -577,7 +574,13 @@ Articles types:
 | [Interview questions on SQL Server database backups, restores and recovery – Part II]                                   | Prashanth Jayaram                        | 2018-07-25 | [DBA]       |
 | [Interview questions on SQL Server database backups, restores and recovery – Part III]                                  | Prashanth Jayaram                        | 2018-07-25 | [DBA]       |
 | [Can Rowstore Compression Beat Columnstore Compression?]                                                                | Joe Obbish                               | 2018-06-28 | [DBA],[DEV] |
-
+| [Inside the Storage Engine: Anatomy of a record]                                                                        | Paul Randal                              | 2007-09-30 | [DBA],[DEV] |
+| [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]                     | Paul Randal                              | 2007-10-01 | [DBA],[DEV] |
+| [Inside the Storage Engine: Anatomy of a page]                                                                          | Paul Randal                              | 2007-10-03 | [DBA],[DEV] |
+| [Inside the Storage Engine: Anatomy of an extent]                                                                       | Paul Randal                              | 2007-10-03 | [DBA],[DEV] |
+| [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]                                                | Paul Randal                              | 2007-10-04 | [DBA],[DEV] |
+| [Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]                                                   | Paul Randal                              | 2008-03-14 | [DBA],[DEV] |
+| [Disaster recovery 101: fixing a broken boot page]                                                                      | Paul Randal                              | 2015-06-23 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1131,3 +1134,9 @@ Articles types:
 [Interview questions on SQL Server database backups, restores and recovery – Part II]:https://www.sqlshack.com/interview-questions-on-sql-server-database-backups-restores-and-recovery-part-ii/
 [Interview questions on SQL Server database backups, restores and recovery – Part III]:https://www.sqlshack.com/interview-questions-on-sql-server-database-backups-restores-and-recovery-part-iii/
 [Can Rowstore Compression Beat Columnstore Compression?]:https://orderbyselectnull.com/2018/06/28/can-rowstore-compression-beat-columnstore-compression/
+[Inside the Storage Engine: Anatomy of a record]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-record/
+[Inside the Storage Engine: Anatomy of an extent]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-an-extent/
+[Inside the Storage Engine: Anatomy of a page]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
+[Inside the Storage Engine: IAM pages, IAM chains, and allocation units]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-iam-pages-iam-chains-and-allocation-units/
+[Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-gam-sgam-pfs-and-other-allocation-maps/
+[Disaster recovery 101: fixing a broken boot page]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-boot-page/
