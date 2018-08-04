@@ -582,7 +582,8 @@ Articles types:
 | [Disaster recovery 101: fixing a broken boot page]                                                                      | Paul Randal                              | 2015-06-23 | [DBA],[DEV] |
 | [How to download a sqlservr.pdb symbol file]                                                                            | Paul Randal                              | 2011-04-13 | [DBA],[DEV] |
 | [A cause of high-duration ASYNC_IO_COMPLETION waits]                                                                    | Paul Randal                              | 2014-03-19 | [DBA],[DEV] |
-
+| [How to solve the Identity Crisis in SQL Server]                                                                        | Ed Pollack                               | 2017-11-14 | [DBA],[DEV] |
+| [Azure SQL Database Performance and Service Tiers Explained]                                                            | Glenn Berry                              | 2018-08-01 | [AZ]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1143,3 +1144,5 @@ Articles types:
 [Disaster recovery 101: fixing a broken boot page]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-boot-page/
 [How to download a sqlservr.pdb symbol file]:https://www.sqlskills.com/blogs/paul/how-to-download-a-sqlservr-pdb-symbol-file/
 [A cause of high-duration ASYNC_IO_COMPLETION waits]:https://www.sqlskills.com/blogs/paul/cause-high-duration-async_io_completion-waits/
+[How to solve the Identity Crisis in SQL Server]:https://www.sqlshack.com/solve-identity-crisis-sql-server/
+[Azure SQL Database Performance and Service Tiers Explained]:https://sqlperformance.com/2018/08/sql-performance/azure-sql-database-tiers
