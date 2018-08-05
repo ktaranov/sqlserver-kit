@@ -6,7 +6,7 @@
  - [Database Engine Error Severities](https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities)
  - [Integration Services Error and Message Reference](https://docs.microsoft.com/en-us/sql/integration-services/integration-services-error-and-message-reference)
  - [View and Read SQL Server Setup Log Files](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/view-and-read-sql-server-setup-log-files)
- - [Troubleshoot the SQL Server Utility](https://msdn.microsoft.com/en-us/library/ee210592.aspx)
+ - [Troubleshoot the SQL Server Utility](https://docs.microsoft.com/en-us/sql/database-engine/troubleshoot-the-sql-server-utility)
  - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
  - [SQL Server 2016 Distributed Replay Errors](https://www.sqlskills.com/blogs/jonathan/sql-server-2016-distributed-replay-errors/)
  - [The Instance ID MSSQLSERVER Is Already In Use](http://www.sqlservercentral.com/articles/MSSQLSERVER/161398/)
@@ -47,77 +47,77 @@ SELECT message_id, severity, text
 | 24             | Indicates a media failure. The system administrator may have to restore the database. You may also have to call your hardware vendor.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
 
-## SQL Server Common Errors
-Error code equal `message_id` from `sys.messages`
+## SQL Server Errors
 
-| Error Code | Description                                                                                         | Article                                 |
-|-----------:|-----------------------------------------------------------------------------------------------------|-----------------------------------------|
-|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …    | [Out of user memory quota][7]           |
-|          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while … | [Compressed backup errors][8]           |
-|          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c  … | [The User has not Been Granted][9]      |
-|          0 | A server error occurred on current command. The results, if any, should be discarded.               | [Who owns your availability groups?]    |
-|        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                             |
-|        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                             |
-|        213 | Column name or number of supplied values does not match table definition.                           | [213_link1][3]                          |
-|        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.              | [229_link1][12]                         |
-|        297 | The user does not have permission to perform this action.                                           | [297_link1][12]                         |
-|        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time     | [535_link1]                             |
-|        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                             |
-|        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                             |
-|        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …       | [666_link1]                             |
-|        701 | There is insufficient system memory in resource pool '%ls' to run this query.                     … | [701_link1],[701_link2][11]             |
-|        824 | SQL Server detected a logical consistency-based I/O error                                         … | [824_link1],[KB2152734]                 |
-|        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at   … | [825_link1]                             |
-|        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition             … | [913_link1]                             |
-|       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b  … | [1701_link1]                            |
-|       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                   … | [1807_link1]                            |
-|       1904 | The statistics on table has 65 columns in the key list                                            … | [1904_link1]                            |
-|       2709 | Column '%.*ls' in %S_MSG '%.*ls' cannot be used in an index or statistics or as a partition key …   | [2709_link1]                            |
-|       2714 | There is already an object named '%.*ls' in the database.                                           | [2712_link1][6]                         |
-|       3013 | RESTORE DATABASE is terminating abnormally                                                        … | [KB290787]                              |
-|       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messa  … | [3041_link1]                            |
-|       3101 | Exclusive access could not be obtained because the database is in use.                            … | [3101_link1]                            |
-|       3154 | The backup set holds a backup of a database other than the existing                               … | [3154_link1]                            |
-|       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam  … | [3241_link1]                            |
-|       3314 | During undoing of a logged operation in database '%.*ls', an error occurred at log record ID %S   … | [3314_link1]                            |
-|       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                    … | [3634_link1]                            |
-|       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor  … | [3743_link1]                            |
-|       3930 | The current transaction cannot be committed and cannot support operations that write to the log   … | [3930_link1]                            |
-|       4064 | Cannot open user default database. Login failed.Login failed.                                     … | [4064_link1]                            |
-|       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored         … | [4629_link1][12]                        |
-|       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                            |
-|       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                            |
-|       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]           |
-|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link2]              |
-|       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                            |
-|       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                         | [6401_link1][4]                         |
-|       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column     … | [7344_link1][3]                         |
-|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [7357_link1][2]                         |
-|       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [7391_link2][2]                         |
-|       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.         … | [657_link1]                             |
-|       8624 | Internal Query Processor Error: The query processor could not produce a query plan.               … | [8624_link1]                            |
-|       8651 |Could not perform the operation because the requested memory grant was not available in resource   … | [8651_link1]                            |
-|       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                  … | [8672_link1]                            |
-|       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), pa  … | [8909_link1]                            |
-|       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or  … | [8921_link1]                            |
-|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                      … | [9002_link1]                            |
-|      13570 | The use of replication is not supported with system-versioned temporal table '%s'                 … | [13570_link1]                           |
-|      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                       … | [15002_link1]                           |
-|      15136 | The database principal is set as the execution context of one or more procedures, functions,      … | [15136_link1]                           |
-|      15199 | The current security context cannot be reverted. Please switch to the original database where     … | [15199_link1][1]                        |
-|      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of … | [15406_link1][1]                        |
-|      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls        | [17182_link1][15]            |
-|      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.    … | [17190_link1]                           |
-|      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                           |
-|      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated  … | [18357_link1][5]                        |
-|      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                           |
-|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                           |
-|      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]             |
-|      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                  | [26023_link1][13]                       |
-|      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                           |
-|      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and    … | [33206_link1][10]                       |
-|      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                           |
-|      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.    | [39004_link1][14]                       |
+| message_id | Description                                                                                         | Article                              |
+|-----------:|-----------------------------------------------------------------------------------------------------|--------------------------------------|
+|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …    | [Out of user memory quota][7]        |
+|          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while … | [Compressed backup errors][8]        |
+|          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c  … | [The User has not Been Granted][9]   |
+|          0 | A server error occurred on current command. The results, if any, should be discarded.               | [Who owns your availability groups?] |
+|        102 | Incorrect syntax near '%.*ls'.                                                                      | [102_link1]                          |
+|        207 | Invalid column name '%.*ls'.                                                                        | [207_link1]                          |
+|        213 | Column name or number of supplied values does not match table definition.                           | [213_link1][3]                       |
+|        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.              | [229_link1][12]                      |
+|        297 | The user does not have permission to perform this action.                                           | [297_link1][12]                      |
+|        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time     | [535_link1]                          |
+|        596 | Cannot continue execution because the session is in the kill state.                                 | [596_link1]                          |
+|        657 | Could not disable support for increased partitions in database …                                    | [657_link1]                          |
+|        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …       | [666_link1]                          |
+|        701 | There is insufficient system memory in resource pool '%ls' to run this query.                     … | [701_link1],[701_link2][11]          |
+|        824 | SQL Server detected a logical consistency-based I/O error                                         … | [824_link1],[KB2152734]              |
+|        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at   … | [825_link1]                          |
+|        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition             … | [913_link1]                          |
+|       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b  … | [1701_link1]                         |
+|       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                   … | [1807_link1]                         |
+|       1904 | The statistics on table has 65 columns in the key list                                            … | [1904_link1]                         |
+|       2709 | Column '%.*ls' in %S_MSG '%.*ls' cannot be used in an index or statistics or as a partition key …   | [2709_link1]                         |
+|       2714 | There is already an object named '%.*ls' in the database.                                           | [2712_link1][6]                      |
+|       3013 | RESTORE DATABASE is terminating abnormally                                                        … | [KB290787]                           |
+|       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messa  … | [3041_link1]                         |
+|       3101 | Exclusive access could not be obtained because the database is in use.                            … | [3101_link1]                         |
+|       3154 | The backup set holds a backup of a database other than the existing                               … | [3154_link1]                         |
+|       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam  … | [3241_link1]                         |
+|       3314 | During undoing of a logged operation in database '%.*ls', an error occurred at log record ID %S   … | [3314_link1]                         |
+|       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                    … | [3634_link1]                         |
+|       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor  … | [3743_link1]                         |
+|       3930 | The current transaction cannot be committed and cannot support operations that write to the log   … | [3930_link1]                         |
+|       4064 | Cannot open user default database. Login failed.Login failed.                                     … | [4064_link1]                         |
+|       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored         … | [4629_link1][12]                     |
+|       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                         |
+|       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                         |
+|       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]        |
+|       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link2]           |
+|       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                         |
+|       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                         | [6401_link1][4]                      |
+|       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column     … | [7344_link1][3]                      |
+|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...            … | [7357_link1][2]                      |
+|       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...    … | [7391_link2][2]                      |
+|       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.         … | [657_link1]                          |
+|       8624 | Internal Query Processor Error: The query processor could not produce a query plan.               … | [8624_link1]                         |
+|       8651 |Could not perform the operation because the requested memory grant was not available in resource   … | [8651_link1]                         |
+|       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                  … | [8672_link1]                         |
+|       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), pa  … | [8909_link1]                         |
+|       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or  … | [8921_link1]                         |
+|       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related   … | [9001_link1][16]                     |
+|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                      … | [9002_link1][17]                     |
+|      13570 | The use of replication is not supported with system-versioned temporal table '%s'                 … | [13570_link1]                        |
+|      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                       … | [15002_link1]                        |
+|      15136 | The database principal is set as the execution context of one or more procedures, functions,      … | [15136_link1]                        |
+|      15199 | The current security context cannot be reverted. Please switch to the original database where     … | [15199_link1][1]                     |
+|      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of … | [15406_link1][1]                     |
+|      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls        | [17182_link1][15]                    |
+|      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.    … | [17190_link1]                        |
+|      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s  … | [18272_link1]                        |
+|      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated  … | [18357_link1][5]                     |
+|      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati  … | [18452_link1]                        |
+|      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                            | [18456_link1]                        |
+|      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                               | [25713_link1],[25713_link2]          |
+|      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                  | [26023_link1][13]                    |
+|      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                  | [33111_link1]                        |
+|      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and    … | [33206_link1][10]                    |
+|      35250 | The connection to the primary replica is not active. The command cannot be processed.               | [35250_link1]                        |
+|      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.    | [39004_link1][14]                    |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
 [2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
@@ -134,6 +134,9 @@ Error code equal `message_id` from `sys.messages`
 [13]:https://blogs.msdn.microsoft.com/psssql/2018/07/26/july-10-2018-windows-updates-cause-sql-startup-issues-due-to-tcp-port-is-already-in-use-errors/
 [14]:https://36chambers.wordpress.com/2017/04/27/error-0x80004005-in-sql-server-r-services/
 [15]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
+[16]:http://nedotter.com/archive/2018/07/dangerous-moves-setting-max-size-for-in-memory-oltp-containers/
+[17]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
+
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
@@ -171,7 +174,6 @@ Error code equal `message_id` from `sys.messages`
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
 [8909_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-object-id-0-index-id-1-partition-id-0/
 [8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
-[9002_link1]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
