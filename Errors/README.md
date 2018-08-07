@@ -71,10 +71,7 @@ SELECT message_id, severity, text
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b  … | [1701_link1]                         |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                   … | [1807_link1]                         |
 |       1904 | The statistics on table has 65 columns in the key list                                            … | [1904_link1]                         |
-|       2709 | Column '%.*ls' in %S_MSG '%.*ls' cannot be used in an index or statistics or as a partition key …   | [2709_link1]                         |
-|       2714 | There is already an object named '%.*ls' in the database.                                           | [2712_link1][6]                      |
-|       3013 | RESTORE DATABASE is terminating abnormally                                                        … | [KB290787]                           |
-|       3041 | BACKUP failed to complete the command %.*ls. Check the backup application log for detailed messa  … | [3041_link1]                         |
+|       1908 | Column '%.*ls' is partitioning column of the index '%.*ls'. Partition columns for a unique index  … | [1908_link1][18]                     |
 |       3101 | Exclusive access could not be obtained because the database is in use.                            … | [3101_link1]                         |
 |       3154 | The backup set holds a backup of a database other than the existing                               … | [3154_link1]                         |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam  … | [3241_link1]                         |
@@ -136,7 +133,7 @@ SELECT message_id, severity, text
 [15]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/10/05/tcp-port-is-already-in-use/
 [16]:http://nedotter.com/archive/2018/07/dangerous-moves-setting-max-size-for-in-memory-oltp-containers/
 [17]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
-
+[18]:https://dbafromthecold.com/2018/02/21/indexing-and-partitioning/
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
