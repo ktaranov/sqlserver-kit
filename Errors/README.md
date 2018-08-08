@@ -83,6 +83,7 @@ SELECT message_id, severity, text
 |       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored         … | [4629_link1][12]                     |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.           … | [4922_link1]                         |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …      | [4934_link1]                         |
+|       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the  … | [4947_link1][18]                     |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"             … | [SQL SERVER - FIX Error 5120]        |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)  … | [5123_link1], [5123_link2]           |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.     | [6335_link1]                         |
