@@ -563,6 +563,7 @@ Articles types:
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 2]                                                       | Itzik Ben-Gan                            | 2018-05-09 | [DEV]       |
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 3]                                                       | Itzik Ben-Gan                            | 2018-06-13 | [DEV]       |
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 4]                                                       | Itzik Ben-Gan                            | 2018-07-11 | [DEV]       |
+| [Optimization Thresholds – Grouping and Aggregating Data, Part 5]                                                       | Itzik Ben-Gan                            | 2018-08-08 | [DEV]       |
 | [When DBCC OpenTran doesn’t list all open transactions]                                                                 | Mohamed                                  | 2013-02-17 | [DBA]       |
 | [How I spot not-yet-documented features in SQL Server CTPs]                                                             | Aaron Bertrand                           | 2015-12-02 | [DBA]       |
 | [More ways to discover changes in new versions of SQL Server]                                                           | Aaron Bertrand                           | 2016-03-30 | [DBA]       |
@@ -588,7 +589,8 @@ Articles types:
 | [SQL Server Brute Force Attack Detection: Part 1]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 2]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 3]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
-
+| [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA],[DEV] |
+| [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1131,6 +1133,7 @@ Articles types:
 [Optimization Thresholds – Grouping and Aggregating Data, Part 2]:https://sqlperformance.com/2018/05/sql-plan/grouping-and-aggregating-part-2
 [Optimization Thresholds – Grouping and Aggregating Data, Part 3]:https://sqlperformance.com/2018/06/sql-plan/grouping-and-aggregating-part-3
 [Optimization Thresholds – Grouping and Aggregating Data, Part 4]:https://sqlperformance.com/2018/07/sql-performance/grouping-and-aggregating-part-4
+[Optimization Thresholds – Grouping and Aggregating Data, Part 5]:https://sqlperformance.com/2018/08/sql-performance/grouping-and-aggregating-part-5
 [When DBCC OpenTran doesn’t list all open transactions]:https://blogs.msdn.microsoft.com/mosharaf/2013/02/17/when-dbcc-opentran-doesnt-list-all-open-transactions/
 [How I spot not-yet-documented features in SQL Server CTPs]:https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/
 [More ways to discover changes in new versions of SQL Server]:https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/
@@ -1155,3 +1158,5 @@ Articles types:
 [SQL Server Brute Force Attack Detection: Part 1]:https://www.codeproject.com/Articles/1231882/SQL-Server-Brute-Force-Attack-Detection
 [SQL Server Brute Force Attack Detection: Part 2]:https://www.codeproject.com/Articles/1236461/SQL-Server-Brute-Force-Attack-Detection-Part-2
 [SQL Server Brute Force Attack Detection: Part 3]:https://www.codeproject.com/Articles/1232491/SQL-Server-Brute-Force-Attack-Detection-Part-2
+[SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]:https://sqlquantumleap.com/2018/08/09/sqlclr-vs-sql-server-2017-part-8-is-sqlclr-deprecated-in-favor-of-python-or-r-sp_execute_external_script/
+[Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]:https://swyssql.wordpress.com/2018/07/20/sql-server-agent-for-azure-sql-database-azure-elastic-database-pools-azure-managed-instance/
