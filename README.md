@@ -154,6 +154,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
  - Free Videos <a id="free-videos"></a>
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
+   - [SQLPASSTV videos](https://www.youtube.com/user/SQLPASSTV/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
    - [SQL Server Videos](http://www.sqlservervideos.com/)
@@ -166,7 +167,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
    - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
    - [Youtube SQLpassion](https://www.youtube.com/channel/UCkrUQVPrv36Musorn0K4KoA)
-   - [SQLBits Video](http://sqlbits.com/)
+   - [SQLBits Video](https://sqlbits.com/)
    - [Business Intelligence Videos](http://www.bidn.com/Videos/Videos)
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
    - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
@@ -414,6 +415,7 @@ BIML Bloggers
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
+ - http://extras.sqlservercentral.com/prettifier/prettifier.aspx
 
 **[⬆ back to top](#table-of-contents)**
 

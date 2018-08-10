@@ -591,6 +591,7 @@ Articles types:
 | [SQL Server Brute Force Attack Detection: Part 3]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA],[DEV] |
 | [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
+| [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]             | Dimitri Furman                           | 2018-07-20 | [AZ]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1160,3 +1161,4 @@ Articles types:
 [SQL Server Brute Force Attack Detection: Part 3]:https://www.codeproject.com/Articles/1232491/SQL-Server-Brute-Force-Attack-Detection-Part-2
 [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]:https://sqlquantumleap.com/2018/08/09/sqlclr-vs-sql-server-2017-part-8-is-sqlclr-deprecated-in-favor-of-python-or-r-sp_execute_external_script/
 [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]:https://swyssql.wordpress.com/2018/07/20/sql-server-agent-for-azure-sql-database-azure-elastic-database-pools-azure-managed-instance/
+[Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]:https://blogs.msdn.microsoft.com/sqlcat/2018/07/20/storage-performance-best-practices-and-considerations-for-azure-sql-db-managed-instance-general-purpose/
