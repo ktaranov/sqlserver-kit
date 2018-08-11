@@ -98,7 +98,7 @@ SELECT message_id, severity, text
 |       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), pa  … | [8909_link1]                         |
 |       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or  … | [8921_link1]                         |
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related   … | [9001_link1][16]                     |
-|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                      … | [9002_link1][17]                     |
+|       9002 | The transaction log for database '%ls' is full due to '%ls'.                                      … | [9002_link1][17],[9002_link2][19]    |
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                 … | [13570_link1]                        |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                       … | [15002_link1]                        |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions,      … | [15136_link1]                        |
@@ -135,6 +135,7 @@ SELECT message_id, severity, text
 [16]:http://nedotter.com/archive/2018/07/dangerous-moves-setting-max-size-for-in-memory-oltp-containers/
 [17]:https://docs.microsoft.com/en-us/sql/relational-databases/logs/troubleshoot-a-full-transaction-log-sql-server-error-9002
 [18]:https://dbafromthecold.com/2018/02/21/indexing-and-partitioning/
+[19]:http://nebraskasql.blogspot.com/2018/08/the-mystery-of-exploding-t-log.html
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
