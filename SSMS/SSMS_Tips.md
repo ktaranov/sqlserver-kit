@@ -11,7 +11,8 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - [ ] Add Memory Optimiser Advisor tip https://www.red-gate.com/simple-talk/sql/t-sql-programming/converting-database-memory-oltp/
  - [ ] Add Removing Connections from the SSMS connection dialog https://blog.waynesheffield.com/wayne/archive/2018/05/removing-servers-ssms-connection-dialog/
  - [ ] Add Save the Connection String Parameters http://www.sqlservercentral.com/blogs/sql-geek/2018/07/26/save-the-connection-string-parameters-in-ssms-alwayson/
-
+ - [ ] Analyze Actual Execution Plan https://www.scarydba.com/2018/08/06/analyze-actual-execution-plan/
+ - [ ] Compare Actual Execution Plans
 
 Content:
 1. [Import and Export Settings](#1)

@@ -592,6 +592,12 @@ Articles types:
 | [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA],[DEV] |
 | [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
 | [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]             | Dimitri Furman                           | 2018-07-20 | [AZ]        |
+| [T-SQL Tuesday #017: APPLY: It Slices! It Dices! It Does It All!]                                                       | Brad Schulz                              | 2011-04-12 | [DEV]       |
+| [SQL Server Encryption, What’s The Key Hierarchy All About?]                                                            | David Fowler                             | 2018-08-12 | [DBA],[DEV] |
+| [Overview of the SQLCMD utility in SQL Server]                                                                          | Prashanth Jayaram                        | 2018-08-13 | [DBA],[DEV] |
+| [The BCP (Bulk Copy Program) command in action]                                                                         | Prashanth Jayaram                        | 2018-08-13 | [DBA],[DEV] |
+| [Measuring Query Execution Time]                                                                                        | Grant Fritchey                           | 2018-08-13 | [DBA],[DEV] |
+| [How to Check Performance on a New SQL Server]                                                                          | Brent Ozar                               | 2018-08-03 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1162,3 +1168,9 @@ Articles types:
 [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]:https://sqlquantumleap.com/2018/08/09/sqlclr-vs-sql-server-2017-part-8-is-sqlclr-deprecated-in-favor-of-python-or-r-sp_execute_external_script/
 [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]:https://swyssql.wordpress.com/2018/07/20/sql-server-agent-for-azure-sql-database-azure-elastic-database-pools-azure-managed-instance/
 [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]:https://blogs.msdn.microsoft.com/sqlcat/2018/07/20/storage-performance-best-practices-and-considerations-for-azure-sql-db-managed-instance-general-purpose/
+[T-SQL Tuesday #017: APPLY: It Slices! It Dices! It Does It All!]:http://bradsruminations.blogspot.com/2011/04/t-sql-tuesday-017-it-slices-it-dices-it.html
+[SQL Server Encryption, What’s The Key Hierarchy All About?]:https://sqlundercover.com/2018/08/09/sql-server-encryption-whats-the-key-hierarchy-all-about/
+[Overview of the SQLCMD utility in SQL Server]:https://www.sqlshack.com/overview-of-the-sqlcmd-utility-in-sql-server/
+[The BCP (Bulk Copy Program) command in action]:https://www.sqlshack.com/bcp-bulk-copy-program-command-in-action/
+[Measuring Query Execution Time]:https://www.scarydba.com/2018/08/13/measuring-query-execution-time/
+[How to Check Performance on a New SQL Server]:https://www.brentozar.com/archive/2018/08/how-to-check-performance-on-a-new-sql-server/
