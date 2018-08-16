@@ -1,7 +1,7 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: July 5, 2018
+-- Last Modified: August 14, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -57,25 +57,27 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 ------
 
 -- SQL Server 2017 Builds																		
--- Build			Description			Release Date	URL to KB Article								
--- 14.0.1.246		CTP 1.0				11/30/2016
--- 14.0.100.187		CTP 1.1				12/16/2016
--- 14.0.200.24		CTP 1.2				1/19/2017
--- 14.0.304.138		CTP 1.3				2/17/2017
--- 14.0.405.198		CTP 1.4				3/20/2017
--- 14.0.500.272		CTP 2.0				4/19/2017
--- 14.0.600.250		CTP 2.1				5/17/2017
--- 14.0.800.90		RC1					7/17/2017
--- 14.0.900.75		RC2					8/2/2017
--- 14.0.1000.169	RTM					10/2/2017
--- 14.0.3006.16		CU1					10/24/2017		https://support.microsoft.com/en-us/help/4038634
--- 14.0.3008.27		CU2					11/28/2017		https://support.microsoft.com/en-us/help/4052574
--- 14.0.3015.40		CU3					1/4/2018		https://support.microsoft.com/en-us/help/4052987
--- 14.0.3022.28		CU4					2/20/2018	    https://support.microsoft.com/en-us/help/4056498
--- 14.0.3023.8		CU5					3/20/2018		https://support.microsoft.com/en-us/help/4092643
--- 14.0.3025.34		CU6					4/17/2018	    https://support.microsoft.com/en-us/help/4101464
--- 14.0.3026.27		CU7					5/23/2018		https://support.microsoft.com/en-us/help/4229789
--- 14.0.3029.16		CU8					6/19/2018		https://support.microsoft.com/en-us/help/4338363 
+-- Build			Description							Release Date	URL to KB Article								
+-- 14.0.1.246		CTP 1.0								11/30/2016
+-- 14.0.100.187		CTP 1.1								12/16/2016
+-- 14.0.200.24		CTP 1.2								1/19/2017
+-- 14.0.304.138		CTP 1.3								2/17/2017
+-- 14.0.405.198		CTP 1.4								3/20/2017
+-- 14.0.500.272		CTP 2.0								4/19/2017
+-- 14.0.600.250		CTP 2.1								5/17/2017
+-- 14.0.800.90		RC1									7/17/2017
+-- 14.0.900.75		RC2									8/2/2017
+-- 14.0.1000.169	RTM									10/2/2017
+-- 14.0.3006.16		CU1									10/24/2017		https://support.microsoft.com/en-us/help/4038634
+-- 14.0.3008.27		CU2									11/28/2017		https://support.microsoft.com/en-us/help/4052574
+-- 14.0.3015.40		CU3									1/4/2018		https://support.microsoft.com/en-us/help/4052987
+-- 14.0.3022.28		CU4									2/20/2018	    https://support.microsoft.com/en-us/help/4056498
+-- 14.0.3023.8		CU5									3/20/2018		https://support.microsoft.com/en-us/help/4092643
+-- 14.0.3025.34		CU6									4/17/2018	    https://support.microsoft.com/en-us/help/4101464
+-- 14.0.3026.27		CU7									5/23/2018		https://support.microsoft.com/en-us/help/4229789
+-- 14.0.3029.16		CU8									6/19/2018		https://support.microsoft.com/en-us/help/4338363
+-- 14.0.3030.27		CU9									7/19/2018		https://support.microsoft.com/en-us/help/4341265
+-- 14.0.3035.2		CU9 + Security Update				8/13/2018		https://www.microsoft.com/en-us/download/details.aspx?id=57263
 		
 															
 
@@ -1182,13 +1184,15 @@ ORDER BY SUM(mc.pages_kb) DESC OPTION (RECOMPILE);
 
 
 -- Find single-use, ad-hoc and prepared queries that are bloating the plan cache  (Query 49) (Ad hoc Queries)
-SELECT TOP(50) [text] AS [QueryText], cp.cacheobjtype, cp.objtype, cp.size_in_bytes/1024 AS [Plan Size in KB]
+SELECT TOP(50) DB_NAME(t.[dbid]) AS [Database Name], t.[text] AS [Query Text], 
+cp.objtype AS [Object Type], cp.cacheobjtype AS [Cache Object Type],  
+cp.size_in_bytes/1024 AS [Plan Size in KB]
 FROM sys.dm_exec_cached_plans AS cp WITH (NOLOCK)
-CROSS APPLY sys.dm_exec_sql_text(plan_handle) 
+CROSS APPLY sys.dm_exec_sql_text(plan_handle) AS t
 WHERE cp.cacheobjtype = N'Compiled Plan' 
 AND cp.objtype IN (N'Adhoc', N'Prepared') 
 AND cp.usecounts = 1
-ORDER BY cp.size_in_bytes DESC OPTION (RECOMPILE);
+ORDER BY cp.size_in_bytes DESC, DB_NAME(t.[dbid]) OPTION (RECOMPILE);
 ------
 
 -- Gives you the text, type and size of single-use ad-hoc and prepared queries that waste space in the plan cache
@@ -1870,6 +1874,9 @@ FROM sys.database_query_store_options WITH (NOLOCK) OPTION (RECOMPILE);
 -- New for SQL Server 2016
 -- Requires that Query Store is enabled for this database
 
+-- Make sure that the actual_state_desc is the same as desired_state_desc
+-- Make sure that the current_storage_size_mb is less than the max_storage_size_mb
+
 -- Tuning Workload Performance with Query Store
 -- https://bit.ly/1kHSl7w
 
@@ -1877,8 +1884,8 @@ FROM sys.database_query_store_options WITH (NOLOCK) OPTION (RECOMPILE);
 -- Get highest aggregate duration queries over last hour (Query 82) (High Aggregate Duration Queries)
 WITH AggregatedDurationLastHour
 AS
-(SELECT q.query_id, SUM(count_executions * avg_duration) AS total_duration,
-   COUNT (distinct p.plan_id) AS number_of_plans
+(SELECT q.query_id, SUM(rs.count_executions * rs.avg_duration) AS total_duration,
+   COUNT (DISTINCT p.plan_id) AS number_of_plans
    FROM sys.query_store_query_text AS qt WITH (NOLOCK)
    INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
    ON qt.query_text_id = q.query_text_id
@@ -1890,8 +1897,8 @@ AS
    ON rsi.runtime_stats_interval_id = rs.runtime_stats_interval_id
    WHERE rsi.start_time >= DATEADD(hour, -1, GETUTCDATE()) 
    AND rs.execution_type_desc = N'Regular'
-   GROUP BY q.query_id),
-OrderedDuration AS
+   GROUP BY q.query_id), OrderedDuration 
+AS
 (SELECT query_id, total_duration, number_of_plans, 
  ROW_NUMBER () OVER (ORDER BY total_duration DESC, query_id) AS RN
  FROM AggregatedDurationLastHour)
@@ -1900,7 +1907,8 @@ od.total_duration AS [Total Duration (microsecs)],
 od.number_of_plans AS [Plan Count],
 p.is_forced_plan, p.is_parallel_plan, p.is_trivial_plan,
 q.query_parameterization_type_desc, p.[compatibility_level],
-p.last_compile_start_time, q.last_execution_time,
+p.last_compile_start_time, 
+q.last_execution_time,
 CONVERT(xml, p.query_plan) AS query_plan_xml 
 FROM OrderedDuration AS od 
 INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
@@ -1910,14 +1918,59 @@ ON q.query_text_id = qt.query_text_id
 INNER JOIN sys.query_store_plan AS p WITH (NOLOCK)
 ON q.query_id = p.query_id
 WHERE od.RN <= 50 
-ORDER BY total_duration DESC OPTION (RECOMPILE);
+ORDER BY od.total_duration DESC OPTION (RECOMPILE);
 ------
 
 -- New for SQL Server 2016
 -- Requires that QueryStore is enabled for this database
 
 
--- Get input buffer information for the current database (Query 83) (Input Buffer)
+
+-- Get highest aggregate CPU time queries over last hour (Query 83) (High Aggregate CPU Queries)
+WITH AggregatedCPULastHour
+AS
+(SELECT q.query_id, SUM(rs.count_executions * rs.avg_cpu_time) AS total_cpu_time,
+   COUNT (DISTINCT p.plan_id) AS number_of_plans
+   FROM sys.query_store_query_text AS qt WITH (NOLOCK)
+   INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
+   ON qt.query_text_id = q.query_text_id
+   INNER JOIN sys.query_store_plan AS p WITH (NOLOCK)
+   ON q.query_id = p.query_id
+   INNER JOIN sys.query_store_runtime_stats AS rs WITH (NOLOCK)
+   ON rs.plan_id = p.plan_id
+   INNER JOIN sys.query_store_runtime_stats_interval AS rsi WITH (NOLOCK)
+   ON rsi.runtime_stats_interval_id = rs.runtime_stats_interval_id
+   WHERE rsi.start_time >= DATEADD(hour, -1, GETUTCDATE()) 
+   AND rs.execution_type_desc = N'Regular'
+   GROUP BY q.query_id), OrderedDuration 
+AS
+(SELECT query_id, total_cpu_time, number_of_plans, 
+ ROW_NUMBER () OVER (ORDER BY total_cpu_time DESC, query_id) AS RN
+ FROM AggregatedCPULastHour)
+SELECT OBJECT_NAME(q.object_id) AS [Containing Object], qt.query_sql_text, 
+od.total_cpu_time AS [Total CPU Time (microsecs)], 
+od.number_of_plans AS [Plan Count],
+p.is_forced_plan, p.is_parallel_plan, p.is_trivial_plan,
+q.query_parameterization_type_desc, p.[compatibility_level],
+p.last_compile_start_time, 
+q.last_execution_time,
+CONVERT(xml, p.query_plan) AS query_plan_xml 
+FROM OrderedDuration AS od 
+INNER JOIN sys.query_store_query AS q WITH (NOLOCK)
+ON q.query_id  = od.query_id
+INNER JOIN sys.query_store_query_text AS qt WITH (NOLOCK)
+ON q.query_text_id = qt.query_text_id
+INNER JOIN sys.query_store_plan AS p WITH (NOLOCK)
+ON q.query_id = p.query_id
+WHERE od.RN <= 50 
+ORDER BY od.total_cpu_time DESC OPTION (RECOMPILE);
+------
+
+-- New for SQL Server 2016
+-- Requires that QueryStore is enabled for this database
+
+
+-- Get input buffer information for the current database (Query 84) (Input Buffer)
 SELECT es.session_id, DB_NAME(es.database_id) AS [Database Name],
        es.login_time, es.cpu_time, es.logical_reads, es.memory_usage,
        es.[status], ib.event_info AS [Input Buffer]
@@ -1939,7 +1992,7 @@ AND es.session_id <> @@SPID OPTION (RECOMPILE);
 
 
 
--- Get any resumable index rebuild operation information (Query 84) (Resumable Index Rebuild)
+-- Get any resumable index rebuild operation information (Query 85) (Resumable Index Rebuild)
 SELECT OBJECT_NAME(iro.object_id) AS [Object Name], iro.index_id, iro.name AS [Index Name],
        iro.sql_text, iro.last_max_dop_used, iro.partition_number, iro.state_desc, iro.start_time, iro.percent_complete
 FROM  sys.index_resumable_operations AS iro WITH (NOLOCK)
@@ -1950,7 +2003,7 @@ OPTION (RECOMPILE);
 -- https://bit.ly/2pYSWqq
 
 
--- Get database automatic tuning options (Query 85) (Automatic Tuning Options)
+-- Get database automatic tuning options (Query 86) (Automatic Tuning Options)
 SELECT [name], desired_state_desc, actual_state_desc, reason_desc
 FROM sys.database_automatic_tuning_options WITH (NOLOCK)
 OPTION (RECOMPILE);
@@ -1961,7 +2014,7 @@ OPTION (RECOMPILE);
 
 
 
--- Look at recent Full backups for the current database (Query 86) (Recent Full Backups)
+-- Look at recent Full backups for the current database (Query 87) (Recent Full Backups)
 SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database Name], bs.recovery_model,
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
