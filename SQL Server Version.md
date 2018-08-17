@@ -90,7 +90,7 @@ The delay between RTM and GA is much shorter now that software is generally dist
  - **SP** *Service Pack*: A Service Pack is, now, essentially a Cumulative Update with slightly different labeling.
 It is a roll-up of updates (including bug fixes and security updates) and sometimes contains new features.
 Like Cumulative Updates, Service Packs are cumulative. If you are applying SP3, you do not need to first deploy SP1 and SP2.
- - **SU**: Security update.
+ - **SU** or **CVE**: Security update.
  - **Hotfix**: A single, cumulative package that includes one or more files that are used to address a problem in a product and are cumulative at the binary and file level. A hotfix addresses a specific customer situation and may not be distributed outside the customers organization.
 
 ### References
@@ -494,6 +494,7 @@ Microsoft SQL Server 2016  (SP2 CU2) (KB4340355) - 13.0.5153.0 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | [4293807 CVE-2018-8273 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **Withdrawn**                            | 2018-08-14   |          ? |     1 |      0 |      672 |
 | 13.0.5153.0   | 2015.130.5153.0   | SP2    | SP   | [4340355 Cumulative Update 2 for SQL Server 2016 SP2]                                                                          | 2018-07-16   | 2018-06-29 |    29 |     21 |      671 |
 | 13.0.5149.0   | 2015.130.5149.0   | SP2    | SP   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
 | 13.0.5026.0   | 2015.130.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
@@ -544,6 +545,7 @@ Microsoft SQL Server 2016  (SP2 CU2) (KB4340355) - 13.0.5153.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[4293807 CVE-2018-8273 Security update in SQL Server 2016 SP2 (CU): August 14, 2018]:https://support.microsoft.com/help/4293807/
 [4340355 Cumulative Update 2 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4340355
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
