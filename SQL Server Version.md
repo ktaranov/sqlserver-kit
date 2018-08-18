@@ -486,18 +486,19 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
-Microsoft SQL Server 2016  (SP2 CU2) (KB4340355) - 13.0.5153.0 (X64)
-    Jun 26 2018 09:11:49
+Microsoft SQL Server 2016  (SP2 CU2) (KB4458621) - 13.0.5201.2 (X64)
+    Aug 18 2018 09:11:49
     Copyright (c) Microsoft Corporation
     Developer Edition (64-bit) on Windows …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | [4293807 CVE-2018-8273 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **Withdrawn**                            | 2018-08-14   |          ? |     1 |      0 |      672 |
+| 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | **Withdrawn** [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      672 |
 | 13.0.5153.0   | 2015.130.5153.0   | SP2    | SP   | [4340355 Cumulative Update 2 for SQL Server 2016 SP2]                                                                          | 2018-07-16   | 2018-06-29 |    29 |     21 |      671 |
 | 13.0.5149.0   | 2015.130.5149.0   | SP2    | SP   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
 | 13.0.5026.0   | 2015.130.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
+| 13.0.4522.0   | 2015.130.4522.0   | SP1    | CU   | **Withdrawn** [4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      774 |
 | 13.0.4514.0   | 2015.130.4514.0   | SP1    | CU   | [4341569 Cumulative Update 10 for SQL Server 2016 SP1]                                                                         | 2018-07-16   | 2018-06-23 |    26 |     21 |      761 |
 | 13.0.4502.0   | 2015.130.4502.0   | SP1    | CU   | [4100997 Cumulative Update 9 for SQL Server 2016 SP1]                                                                          | 2018-05-30   | 2018-05-15 |    39 |     25 |      761 |
 | 13.0.4474.0   | 2015.130.4474.0   | SP1    | CU   | [4077064 Cumulative Update 8 for SQL Server 2016 SP1]                                                                          | 2018-03-19   | 2018-02-24 |    57 |     37 |      760 |
@@ -549,6 +550,7 @@ Microsoft SQL Server 2016  (SP2 CU2) (KB4340355) - 13.0.5153.0 (X64)
 [4340355 Cumulative Update 2 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4340355
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
+[4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018]:https://support.microsoft.com/help/4293808
 [4341569 Cumulative Update 10 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4341569
 [4100997 Cumulative Update 9 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4100997
 [4077064 Cumulative Update 8 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4077064
