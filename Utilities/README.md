@@ -294,7 +294,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [EDIS](#edis)                                                    | No                            | No        | [ETL]    | [EDIS]                                      | ?          | SQL ETL               | Shareware  | Yes            |  $599 |
 | [SchemaSpy](#schemaspy)                                          | OOracle,MySQL,PostgreSQL,Other| Linux,Mac | [D]      | [SchemaSpy]                                 | 2017-09-30 | Rafal Kasa            | [MIT]      | Open Source    | No    |
 | [Adminer](#adminer)                                              | OOracle,MySQL,PostgreSQL,Other| Linux,Mac | [MS]     | [Adminer]                                   | 2018-02-20 | Jakub Vrána           | [Apache]   | Open Source    | No    |
-
+| [Full Convert](#full-convert)                                    | Yes                           | Windows   | [MG]     | [Full Convert]                              | 2018-08-20 | Spectral Core         |            | Yes            | $699  |
+| [Replicator](#replicator)                                        | Yes                           | Windows   | [DC]     | [Replicator]                                | 2018-08-20 | Spectral Core  
 
 <a id="ssms"></a>
 ## SSMS
@@ -4237,6 +4238,29 @@ Price: No
 Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server.
 Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.
 
+<a id="full-convert"></a>
+## Full Convert Enterprise
+Download page: [Full Convert]<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2005-2017<br/>
+Author: Spectral Core<br/>
+Free version: No<br/>
+Price: $699
+
+Full Convert allows easy copying of tables and data between 40 or so supported databases. It will create all the tables, copy all of your data, then create indexes and foreign keys.
+It has powerful mapping and customization features and uses optimal copying mode for each table separately to achieve the best possible throughput.
+
+<a id="replicator"></a>
+## Replicator Pro
+Download page: [Replicator Pro]<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2005-2017<br/>
+Author: Spectral Core<br/>
+Free version: No<br/>
+Price: $799
+
+Replicator allows table data comparison and sync - even with heterogeneous databases. It is unique in the fact it can replicate changes only even if source is non-relational (CSV, DBF, Excel documents, Paradox...).
+Replicator has a built-in scheduler for easy periodic change replication.
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
@@ -4510,6 +4534,8 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [EDIS]:https://sqletl.com
 [SchemaSpy]:https://github.com/schemaspy/schemaspy
 [Adminer]:https://www.adminer.org/
+[Full Convert]:https://www.spectralcore.com/fullconvert
+[Replicator]:https://www.spectralcore.com/replicator
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
