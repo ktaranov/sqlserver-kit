@@ -4252,7 +4252,7 @@ It has powerful mapping and customization features and uses optimal copying mode
 
 <a id="replicator"></a>
 ## Replicator Pro
-Download page: [Replicator Pro]<br/>
+Download page: [Replicator]<br/>
 Release date: 2018-08-20<br/>
 Support Version: 2005-2017<br/>
 Author: Spectral Core<br/>
