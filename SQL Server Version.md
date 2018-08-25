@@ -626,13 +626,14 @@ Microsoft SQL Server 2014 (SP2-CU12) (KB4130489) - 12.0.5589.7 (X64)
 | 12.0.5557.0  | 2014.120.5557.0  | SP2    | CU   | [4037356 Cumulative Update 8 for SQL Server 2014 SP2]                                                                              | 2017-10-17   |    15 |      8 |      539 |
 | 12.0.5556.0  | 2014.120.5556.0  | SP2    | CU   | [4032541 Cumulative Update 7 for SQL Server 2014 SP2]                                                                              | 2017-08-28   |    15 |      8 |      539 |
 | 12.0.5553.0  | 2014.120.5553.0  | SP2    | CU   | [4019094 Cumulative Update 6 for SQL Server 2014 SP2]                                                                              | 2017-08-08   |    29 |     29 |      539 |
-| 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  | [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |
 | 12.0.5546.0  | 2014.120.5546.0  | SP2    | CU   | [4013098 Cumulative Update 5 for SQL Server 2014 SP2]                                                                              | 2017-04-18   |    24 |     21 |      557 |
 | 12.0.5540.0  | 2014.120.5540.0  | SP2    | CU   | [4010394 Cumulative Update 4 for SQL Server 2014 SP2]                                                                              | 2017-02-21   |    30 |     27 |      555 |
 | 12.0.5538.0  | 2014.120.5538.0  | SP2    | CU   | [3204388 Cumulative update 3 for SQL Server 2014 SP2]                                                                              | 2016-12-28   |    44 |     39 |      555 |
 | 12.0.5532.0  | 2014.120.5532.0  | SP2    | CU   | [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      551 |
 | 12.0.5522.0  | 2014.120.5522.0  | SP2    | CU   | [3188778 Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |    18 |     18 |      550 |
 | 12.0.5511.0  | 2014.120.5511.0  | SP2    | CU   | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |    45 |     36 |      556 |
+| 12.0.5214.6  | 2014.120.5214.6  | SP2    | GDR  | [4057120 Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018] **CVE-2017-5715,2017-5753,2017-5754**           | 2018-01-16   |       |        |      960 |
+| 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  | [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |
 | 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  | [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
 | 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
 | 12.0.4522.0  | 2014.120.4522.0  | SP1    | CU   | [4019099 Cumulative Update 13 for SQL Server 2014 SP1] **Last CU for 2014 SP1**                                                    | 2017-08-08   |    11 |     11 |      577 |
@@ -704,21 +705,22 @@ Microsoft SQL Server 2014 (SP2-CU12) (KB4130489) - 12.0.5589.7 (X64)
 [4037356 Cumulative Update 8 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4037356/cumulative-update-8-for-sql-server-2014-sp2
 [4032541 Cumulative Update 7 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4032541/cumulative-update-7-for-sql-server-2014-sp2
 [4019094 Cumulative Update 6 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4019094/cumulative-update-6-for-sql-server-2014-sp2
-[4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/help/4019093/description-of-the-security-update-for-sql-server-2014-service-pack-2
 [4013098 Cumulative Update 5 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
 [4010394 Cumulative Update 4 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4010394/cumulative-update-4-for-sql-server-2014-sp2
 [3204388 Cumulative update 3 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3204388
 [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/help/3194718
 [3188778 Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3188778
 [3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3178925
-[3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/help/3194714/ms16-136-description-of-the-security-update-for-sql-server-2014-service-pack-2-gdr-november-8,-2016
+[3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/en-us/help/3194714/
 [3171021 SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/help/3171021
 [4019099 Cumulative Update 13 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4019099/cumulative-update-13-for-sql-server-2014-sp1
 [4017793 Cumulative Update 12 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4017793/cumulative-update-12-for-sql-server-2014-sp1
 [4010392 Cumulative Update 11 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4010392/cumulative-update-11-for-sql-server-2014-sp1
-[3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3204399
+[3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/help/3204399
 [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]:https://support.microsoft.com/en-us/kb/3194722
-[3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3186964
+[3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/help/3186964
+[4057120 Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018]:https://support.microsoft.com/help/4057120
+[4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/help/4019093/
 [3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3174038
 [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/en-us/kb/3174370
 [3167392 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3162659
