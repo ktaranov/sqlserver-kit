@@ -599,6 +599,9 @@ Articles types:
 | [Measuring Query Execution Time]                                                                                        | Grant Fritchey                           | 2018-08-13 | [DBA],[DEV] |
 | [How to Check Performance on a New SQL Server]                                                                          | Brent Ozar                               | 2018-08-03 | [DBA],[DEV] |
 | [Questions About Kerberos and SQL Server That You Were Too Shy to Ask]                                                  | Kathi Kellenberger                       | 2018-08-21 | [DBA]       |
+| [SQL Server Execution Plans overview]                                                                                   | Ahmad Yaseen                             | 2018-07-04 | [DBA],[DEV] |
+| [SQL Server Execution Plans types]                                                                                      | Ahmad Yaseen                             | 2018-07-23 | [DBA],[DEV] |
+| [How to Analyze SQL Execution Plan Graphical Components]                                                                | Ahmad Yaseen                             | 2018-09-07 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1176,3 +1179,7 @@ Articles types:
 [Measuring Query Execution Time]:https://www.scarydba.com/2018/08/13/measuring-query-execution-time/
 [How to Check Performance on a New SQL Server]:https://www.brentozar.com/archive/2018/08/how-to-check-performance-on-a-new-sql-server/
 [Questions About Kerberos and SQL Server That You Were Too Shy to Ask]:https://www.red-gate.com/simple-talk/sql/database-administration/questions-about-kerberos-and-sql-server-that-you-were-too-shy-to-ask/
+[SQL Server Execution Plans overview]:https://www.sqlshack.com/sql-server-execution-plans-overview/
+[SQL Server Execution Plans types]:https://www.sqlshack.com/sql-server-execution-plans-types/
+[How to Analyze SQL Execution Plan Graphical Components]:https://www.sqlshack.com/how-to-analyze-sql-execution-plan-graphical-components/
+
