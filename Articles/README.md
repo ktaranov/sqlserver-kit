@@ -602,6 +602,9 @@ Articles types:
 | [SQL Server Execution Plans overview]                                                                                   | Ahmad Yaseen                             | 2018-07-04 | [DBA],[DEV] |
 | [SQL Server Execution Plans types]                                                                                      | Ahmad Yaseen                             | 2018-07-23 | [DBA],[DEV] |
 | [How to Analyze SQL Execution Plan Graphical Components]                                                                | Ahmad Yaseen                             | 2018-09-07 | [DBA],[DEV] |
+| [Query optimization techniques in SQL Server: the basics]                                                               | Ed Pollack                               | 2018-05-30 | [DBA],[DEV] |
+| [Query optimization techniques in SQL Server: tips and tricks]                                                          | Ed Pollack                               | 2018-06-19 | [DBA],[DEV] |
+| [Query optimization techniques in SQL Server: Database Design and Architecture]                                         | Ed Pollack                               | 2018-07-13 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1182,4 +1185,6 @@ Articles types:
 [SQL Server Execution Plans overview]:https://www.sqlshack.com/sql-server-execution-plans-overview/
 [SQL Server Execution Plans types]:https://www.sqlshack.com/sql-server-execution-plans-types/
 [How to Analyze SQL Execution Plan Graphical Components]:https://www.sqlshack.com/how-to-analyze-sql-execution-plan-graphical-components/
-
+[Query optimization techniques in SQL Server: the basics]:https://www.sqlshack.com/query-optimization-techniques-in-sql-server-the-basics/
+[Query optimization techniques in SQL Server: tips and tricks]:https://www.sqlshack.com/query-optimization-techniques-in-sql-server-tips-and-tricks/
+[Query optimization techniques in SQL Server: Database Design and Architecture]:https://www.sqlshack.com/query-optimization-techniques-in-sql-server-database-design-and-architecture/
