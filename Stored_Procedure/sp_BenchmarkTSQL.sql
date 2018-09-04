@@ -83,7 +83,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
          @tsqlStatementBefore = 'WAITFOR DELAY ''00:00:01'';'
-       , @tsqlStatement       = 'BACKUP DATABASE [master] TO  DISK = N''D:\master.bak'' WITH NOFORMAT, NOINIT;'
+       , @tsqlStatement       = 'BACKUP DATABASE [master] TO DISK = N''C:\master.bak'' WITH NOFORMAT, NOINIT;'
        , @tsqlStatementAfter  = 'WAITFOR DELAY ''00:00:02'';'
        , @numberOfExecution   = 5
        , @saveResults         = 1
@@ -104,6 +104,22 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @durationAccuracy    = 'ss'
        , @additionalInfo      = 1;
 
+.EXAMPLE
+    DECLARE @tsql NVARCHAR(MAX) = N'SET NOCOUNT OFF; DECLARE @tsql NVARCHAR(MAX) = N''BACKUP DATABASE [master] TO DISK = N''''C:\master'' +
+                                   REPLACE(CAST(CAST(GETDATE() AS DATETIME2(7)) AS NVARCHAR(MAX)), '':'', '' '') +
+                                   ''.bak'''' WITH NOFORMAT, NOINIT;''
+                                   EXECUTE sp_executesql @tsql;';
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement     = @tsql
+       , @numberOfExecution = 3
+       , @saveResults       = 1
+       , @calcMedian        = 1
+       , @clearCache        = 1
+       , @printStepInfo     = 1
+       , @durationAccuracy  = 'ms'
+       , @dateTimeFunction  = 'SYSUTCDATETIME'
+       , @additionalInfo    = 1;
+
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -112,8 +128,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.8
-    Last Modified: 2018-08-31 15:00 UTC+3 by Konstantin Taranov
+    Version: 4.9
+    Last Modified: 2018-09-04 15:50 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -249,6 +265,30 @@ BEGIN TRY
       , AdditionalInfo      XML           NULL
       );
 
+    IF @additionalInfo = 1
+    SET @tsqlStatement = @tsqlStatement + @crlf + N'
+        SET @additionalXMLOUT = (
+        SELECT *
+        FROM (
+               SELECT ''DISABLE_DEF_CNST_CHK'' AS "Option", CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS "Enabled" UNION ALL
+               SELECT ''IMPLICIT_TRANSACTIONS''           , CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''CURSOR_CLOSE_ON_COMMIT''          , CASE @@options & 4     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_WARNINGS''                   , CASE @@options & 8     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_PADDING''                    , CASE @@options & 16    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULLS''                      , CASE @@options & 32    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ARITHABORT''                      , CASE @@options & 64    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ARITHIGNORE''                     , CASE @@options & 128   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''QUOTED_IDENTIFIER''               , CASE @@options & 256   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''NOCOUNT''                         , CASE @@options & 512   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULL_DFLT_ON''               , CASE @@options & 1024  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULL_DFLT_OFF''              , CASE @@options & 2048  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''CONCAT_NULL_YIELDS_NULL''         , CASE @@options & 4096  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''NUMERIC_ROUNDABORT''              , CASE @@options & 8192  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''XACT_ABORT''                      , CASE @@options & 16384 WHEN 0 THEN 0 ELSE 1 END
+        ) AS s
+        FOR XML RAW
+        );';
+
     WHILE @stepNumnber < @numberOfExecution
     BEGIN
         SET @stepNumnber = @stepNumnber + 1;
@@ -263,29 +303,6 @@ BEGIN TRY
             IF @plan_handle IS NOT NULL DBCC FREEPROCCACHE (@plan_handle);
         END;
 
-        IF @additionalInfo = 1
-            SET @additionalXML = (
-                SELECT *
-                FROM (
-                       SELECT 'DISABLE_DEF_CNST_CHK'    AS 'Option', CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'IMPLICIT_TRANSACTIONS'   AS 'Option', CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'CURSOR_CLOSE_ON_COMMIT'  AS 'Option', CASE @@options & 4     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ANSI_WARNINGS'           AS 'Option', CASE @@options & 8     WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ANSI_PADDING'            AS 'Option', CASE @@options & 16    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ANSI_NULLS'              AS 'Option', CASE @@options & 32    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ARITHABORT'              AS 'Option', CASE @@options & 64    WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ARITHIGNORE'             AS 'Option', CASE @@options & 128   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'QUOTED_IDENTIFIER'       AS 'Option', CASE @@options & 256   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'NOCOUNT'                 AS 'Option', CASE @@options & 512   WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ANSI_NULL_DFLT_ON'       AS 'Option', CASE @@options & 1024  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'ANSI_NULL_DFLT_OFF'      AS 'Option', CASE @@options & 2048  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'CONCAT_NULL_YIELDS_NULL' AS 'Option', CASE @@options & 4096  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'NUMERIC_ROUNDABORT'      AS 'Option', CASE @@options & 8192  WHEN 0 THEN 0 ELSE 1 END AS 'Enabled' UNION ALL
-                       SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN 0 ELSE 1 END AS 'Enabled'
-                ) AS s
-                FOR XML RAW
-                );
-
         IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> ''
             EXECUTE sp_executesql @tsqlStatementBefore;
 
@@ -293,7 +310,11 @@ BEGIN TRY
                                  WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                             END;
 
-        EXECUTE sp_executesql @tsqlStatement;
+        IF @additionalInfo = 1
+            EXEC sp_executesql @tsqlStatement, N'@additionalXMLOUT XML OUTPUT', @additionalXMLOUT = @additionalXML OUTPUT SELECT @additionalXML;
+
+        IF @additionalInfo = 0
+            EXEC sp_executesql @tsqlStatement;
 
         SET @finishTime = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
