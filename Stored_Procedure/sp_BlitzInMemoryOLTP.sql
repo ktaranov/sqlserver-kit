@@ -1,18 +1,18 @@
-﻿DECLARE @msg NVARCHAR(MAX) = N'';
+DECLARE @msg NVARCHAR(MAX) = N'';
 
-    -- Must be a compatible, on-prem version of SQL (2014+)
-IF  (   (SELECT SERVERPROPERTY ('EDITION')) <> 'SQL Azure' 
-    AND (SELECT PARSENAME(CONVERT(NVARCHAR(128), SERVERPROPERTY ('PRODUCTVERSION')), 4)) < 12
-    )
-    -- or Azure Database (not Azure Data Warehouse), running at database compat level 120+
-OR  (   (SELECT SERVERPROPERTY ('EDITION')) = 'SQL Azure'
-    AND (SELECT SERVERPROPERTY ('ENGINEEDITION')) = 5
-    AND (SELECT [compatibility_level] FROM sys.databases WHERE [name] = DB_NAME()) < 120
-    )
+	-- Must be a compatible, on-prem version of SQL (2014+)
+IF  (	(SELECT SERVERPROPERTY ('EDITION')) <> 'SQL Azure' 
+	AND (SELECT PARSENAME(CONVERT(NVARCHAR(128), SERVERPROPERTY ('PRODUCTVERSION')), 4)) < 12
+	)
+	-- or Azure Database (not Azure Data Warehouse), running at database compat level 120+
+OR	(	(SELECT SERVERPROPERTY ('EDITION')) = 'SQL Azure'
+	AND (SELECT SERVERPROPERTY ('ENGINEEDITION')) = 5
+	AND (SELECT [compatibility_level] FROM sys.databases WHERE [name] = DB_NAME()) < 120
+	)
 BEGIN
-    SELECT @msg = N'Sorry, sp_BlitzInMemoryOLTP doesn''t work on versions of SQL prior to 2014.' + REPLICATE(CHAR(13), 7933);
-    PRINT @msg;
-    RETURN;
+	SELECT @msg = N'Sorry, sp_BlitzInMemoryOLTP doesn''t work on versions of SQL prior to 2014.' + REPLICATE(CHAR(13), 7933);
+	PRINT @msg;
+	RETURN;
 END;
 
 
@@ -25,7 +25,7 @@ ALTER PROCEDURE dbo.sp_BlitzInMemoryOLTP(
       , @dbName            NVARCHAR(4000) = N'ALL'
       , @tableName         NVARCHAR(4000) = NULL
       , @debug             BIT            = 0
-      , @VersionDate DATETIME = NULL OUTPUT
+	  , @VersionDate DATETIME = NULL OUTPUT
 )
 /*
 .SYNOPSIS
@@ -80,8 +80,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 AS 
 DECLARE @ScriptVersion VARCHAR(30);
-SET @ScriptVersion = '1.6';
-SET @VersionDate = '20180601';
+SET @ScriptVersion = '1.8';
+SET @VersionDate = '20180801';
 
 BEGIN TRY
 
@@ -853,7 +853,7 @@ BEGIN TRY
                 IF EXISTS(SELECT 1 FROM @resultsHashBuckets)
                     SELECT * FROM @resultsHashBuckets;
 
-            END;            
+            END;			
             
 
             /*
@@ -1054,7 +1054,7 @@ BEGIN TRY
                     IF EXISTS(SELECT 1 FROM @resultsNativeLoaded)
                         SELECT * FROM @resultsNativeLoaded;
 
-                END;                
+                END;				
             END;
 
             /*
@@ -1097,7 +1097,7 @@ BEGIN TRY
                     IF EXISTS(SELECT 1 FROM @resultsNativeModuleCount WHERE [Number of modules] > 0)
                         SELECT * FROM @resultsNativeModuleCount;
 
-                END;                
+                END;				
             END;
             
             /*
@@ -2022,13 +2022,13 @@ BEGIN TRY
         END;
     END; -- @instanceLevelOnly = 1 AND @Version >= 12
 
-    SELECT
-        'Thanks for using sp_BlitzInMemoryOLTP!' AS [Thanks],
-        'From Your Community Volunteers' AS [From],
-        'http://FirstResponderKit.org' AS [At],
-        'We hope you found this tool useful. Current version: ' 
-            + @ScriptVersion + ' released on ' + CONVERT(NVARCHAR(30), @VersionDate) + '.' AS [Version];
-    
+	SELECT
+		'Thanks for using sp_BlitzInMemoryOLTP!' AS [Thanks],
+		'From Your Community Volunteers' AS [From],
+		'http://FirstResponderKit.org' AS [At],
+		'We hope you found this tool useful. Current version: ' 
+			+ @ScriptVersion + ' released on ' + CONVERT(NVARCHAR(30), @VersionDate) + '.' AS [Version];
+	
 
 END TRY
 
@@ -2043,3 +2043,4 @@ BEGIN CATCH
     PRINT ERROR_MESSAGE();
 END CATCH;
 GO
+                                    
