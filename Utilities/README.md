@@ -1,19 +1,19 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **270** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **272** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {13}
- - **[DC]**: Data compare {11}
+ - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {1}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {2}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {3}
  - **[M]**: Monitoring and alerting Tools {16}
- - **[MG]**: Migration tool {25}
+ - **[MG]**: Migration tool {26}
  - **[MS]**: Management Studio (alternative for SSMS) {23}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
@@ -24,11 +24,11 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-05-09 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-06-26 | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
-| [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2017-12-13 | Microsoft             | BSD-3      | Open Source    | No    |
-| [SQL OPS Studio](#sos)                                           | No                            | Linux,Mac | [MS]     | [SQL OPS Studio]                            | 2017-11-15 | Microsoft             |            | Yes            | No    |
+| [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | BSD-3      | Open Source    | No    |
+| [SQL OPS Studio](#sos)                                           | No                            | Linux,Mac | [MS]     | [SQL OPS Studio]                            | 2018-08-16 | Microsoft             |            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [?]      | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
@@ -211,8 +211,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Aqua Data Studio](#aqua-data-studio)                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Aqua Data Studio]                          | 2016-07-06 | AquaFold              |            | No             |  $499 |
 | [RazorSQL](#razorsql)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [RazorSQL]                                  | 2016-09-29 | Richardson Software   |            | No             |  $100 |
 | [SQL Pretty Printer](#sql-pretty-printer)                        | No                            | No        | [?]      | [SQL Pretty Printer]                        | 2016-02-19 | Gudu Software         |            | No             |   $50 |
-| [Database .NET](#database-net)                                   | Oracle,MySQL,PostgreSQL,Other | No        | [MS],[SC]| [Database .NET]                             | 2017-01-13 | fish's dotNET         |            | Non-commercial |   $69 |
-| [dbMigration .NET](#dbmegration-net)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DC],[SC]| [dbMigration .NET]                          | 2017-01-13 | fish's dotNET         |            | Non-commercial |   $49 |
+| [Database .NET](#database-net)                                   | Oracle,MySQL,PostgreSQL,Other | No        | [MS],[SC]| [Database .NET]                             | 2018-08-20 | fish's dotNET         |            | Non-commercial |   $69 |
+| [dbMigration .NET](#dbmegration-net)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DC],[SC]| [dbMigration .NET]                          | 2018-08-20 | fish's dotNET         |            | Non-commercial |   $49 |
 | [Is It SQL](#is-it-sql)                                          | No                            | No        | [M]      | [Is It SQL]                                 | 2017-04-06 | Bill Graziano         |            | Non-commercial | No    |
 | [Database Experimentation Assistant Technical Preview 2](#dea)   | No                            | No        | [T]      | [Database Experimentation Assistant]        | 2017-03-24 | Microsoft             |            | Yes            | No    |
 | [Data Platform Studio](#dps)                                     | No                            | No        | [MG]     | [Data Platform Studio]                      | ?          | Red Gate Software     |            | Yes            | ?     |
@@ -292,14 +292,15 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Azure Database Migration Service](#azure-db-migration)          | Oracle,MySQL, Other           | Online    | [MG]     | [Azure Database Migration Service]          | 2017-12-01 | Microsoft             |            | Yes            |    No |
 | [FlowHeater](#flowheater)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [ETL]    | [FlowHeater]                                | 2017-10-02 | FlowHeater GmbH       | Shareware  | No             |   $79 |
 | [EDIS](#edis)                                                    | No                            | No        | [ETL]    | [EDIS]                                      | ?          | SQL ETL               | Shareware  | Yes            |  $599 |
-| [SchemaSpy](#schemaspy)                                          | OOracle,MySQL,PostgreSQL,Other| Linux,Mac | [D]      | [SchemaSpy]                                 | 2017-09-30 | Rafal Kasa            | [MIT]      | Open Source    | No    |
-| [Adminer](#adminer)                                              | OOracle,MySQL,PostgreSQL,Other| Linux,Mac | [MS]     | [Adminer]                                   | 2018-02-20 | Jakub Vrána           | [Apache]   | Open Source    | No    |
-
+| [SchemaSpy](#schemaspy)                                          | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [D]      | [SchemaSpy]                                 | 2018-08-05 | Rafal Kasa            | [MIT]      | Open Source    | No    |
+| [Adminer](#adminer)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Adminer]                                   | 2018-02-20 | Jakub Vrána           | [Apache]   | Open Source    | No    |
+| [Full Convert](#full-convert)                                    | Oracle,MySQL,PostgreSQL,Other | Windows   | [MG]     | [Full Convert]                              | 2018-08-20 | Spectral Core         | Shareware  | Yes            | $699  |
+| [Replicator](#replicator)                                        | Oracle,MySQL,PostgreSQL,Other | Windows   | [DC]     | [Replicator]                                | 2018-08-20 | Spectral Core         | Shareware  | Yes            | $699  |
 
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2018-05-09<br/>
+Release date: 2018-06-26<br/>
 Support Version: 2005/2008/2012/2014/2016/2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -342,8 +343,8 @@ The bcp utility can be used to import large numbers of new rows into SQL Server 
 <a id="mssql-cli"></a>
 ## mssql-cli
 Download page: [mssql-cli]<br/>
-Release date: 2017-12-13<br/>
-Support Version: ?<br/>
+Release date: 2018-07-06<br/>
+Support Version: 2008-2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Open Source<br/>
 Price: No
@@ -360,8 +361,8 @@ Interactive command line query tool for SQL Server.
 <a id="sos"></a>
 ## SQL OPS Studio
 Download page: [SQL OPS Studio]<br/>
-Release date: 2017-11-15<br/>
-Support Version: 2008/2012/2014/2016/2017/Azure<br/>
+Release date: 2018-08-16<br/>
+Support Version: 2008-2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -3063,8 +3064,8 @@ While sitting in the tray, you can format SQL in any editor like Microsoft Query
 ## Database .NET
 <a id="database-net"></a>
 Download page: [Database .NET]<br/>
-Release date: 2017-01-13<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2008-2017<br/>
 Author: fish's dotNET<br/>
 Free version: Non-commercial<br/>
 Price: $69
@@ -3076,8 +3077,8 @@ You can browse/grant objects, design tables, edit rows, run queries, generate sc
 ## dbMigration .NET
 <a id="dbMigration-net"></a>
 Download page: [dbMigration .NET]<br/>
-Release date: 2017-01-13<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2008-2017<br/>
 Author: fish's dotNET<br/>
 Free version: Non-commercial<br/>
 Price: $49
@@ -4212,8 +4213,8 @@ No 3rd Party Language, No Packages, Just SQL.
 <a id="schemaspy"></a>
 ## SchemaSpy
 Download page: [SchemaSpy]<br/>
-Release date: 2017-09-30<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Release date: 2018-08-05<br/>
+Support Version: 2008-2017<br/>
 Author: Rafal Kasa<br/>
 Free version: Open Source<br/>
 Price: No
@@ -4236,6 +4237,32 @@ Price: No
 
 Adminer (formerly phpMinAdmin) is a full-featured database management tool written in PHP. Conversely to phpMyAdmin, it consist of a single file ready to deploy to the target server.
 Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Firebird, SimpleDB, Elasticsearch and MongoDB.
+
+
+<a id="full-convert"></a>
+## Full Convert Enterprise
+Download page: [Full Convert]<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2005-2017<br/>
+Author: Spectral Core<br/>
+Free version: No<br/>
+Price: $699
+
+Full Convert allows easy copying of tables and data between 40 or so supported databases. It will create all the tables, copy all of your data, then create indexes and foreign keys.
+It has powerful mapping and customization features and uses optimal copying mode for each table separately to achieve the best possible throughput.
+
+
+<a id="replicator"></a>
+## Replicator Pro
+Download page: [Replicator]<br/>
+Release date: 2018-08-20<br/>
+Support Version: 2005-2017<br/>
+Author: Spectral Core<br/>
+Free version: No<br/>
+Price: $799
+
+Replicator allows table data comparison and sync - even with heterogeneous databases. It is unique in the fact it can replicate changes only even if source is non-relational (CSV, DBF, Excel documents, Paradox...).
+Replicator has a built-in scheduler for easy periodic change replication.
 
 
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
@@ -4510,6 +4537,8 @@ Adminer is available for MySQL, MariaDB, PostgreSQL, SQLite, MS SQL, Oracle, Fir
 [EDIS]:https://sqletl.com
 [SchemaSpy]:https://github.com/schemaspy/schemaspy
 [Adminer]:https://www.adminer.org/
+[Full Convert]:https://www.spectralcore.com/fullconvert
+[Replicator]:https://www.spectralcore.com/replicator
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT

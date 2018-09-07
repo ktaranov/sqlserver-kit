@@ -15,6 +15,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     , @printStepInfo       BIT           = 1
     , @durationAccuracy    VARCHAR(5)    = 'ss'
     , @dateTimeFunction    VARCHAR(16)   = 'SYSDATETIME'
+    , @additionalInfo      BIT           = 0
 )
 /*
 .SYNOPSIS
@@ -51,7 +52,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     PRINT detailed step information: step count, start time, end time, duration.
 
 .PARAMETER @durationAccuracy
-    Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, wk, dd.
+    Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, dd, wk.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
 .PARAMETER @dateTimeFunction
@@ -82,7 +83,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
          @tsqlStatementBefore = 'WAITFOR DELAY ''00:00:01'';'
-       , @tsqlStatement       = 'BACKUP DATABASE [master] TO  DISK = N''D:\master.bak'' WITH NOFORMAT, NOINIT;'
+       , @tsqlStatement       = 'BACKUP DATABASE [master] TO DISK = N''C:\master.bak'' WITH NOFORMAT, NOINIT;'
        , @tsqlStatementAfter  = 'WAITFOR DELAY ''00:00:02'';'
        , @numberOfExecution   = 5
        , @saveResults         = 1
@@ -92,6 +93,33 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @durationAccuracy    = 'ss'
        , @dateTimeFunction    = 'SYSUTCDATETIME';
 
+.EXAMPLE
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement       = 'SET NOCOUNT OFF; SELECT TOP(100000) * FROM sys.objects AS o1 CROSS JOIN sys.objects AS o2 CROSS JOIN sys.objects AS o3;'
+       , @numberOfExecution   = 5
+       , @saveResults         = 1
+       , @calcMedian          = 1
+       , @clearCache          = 1
+       , @printStepInfo       = 1
+       , @durationAccuracy    = 'ss'
+       , @additionalInfo      = 1;
+
+.EXAMPLE
+    DECLARE @tsql NVARCHAR(MAX) = N'SET NOCOUNT OFF; DECLARE @tsql NVARCHAR(MAX) = N''BACKUP DATABASE [master] TO DISK = N''''C:\master'' +
+                                   REPLACE(CAST(CAST(GETDATE() AS DATETIME2(7)) AS NVARCHAR(MAX)), '':'', '' '') +
+                                   ''.bak'''' WITH NOFORMAT, NOINIT;''
+                                   EXECUTE sp_executesql @tsql;';
+    EXEC sp_BenchmarkTSQL
+         @tsqlStatement     = @tsql
+       , @numberOfExecution = 3
+       , @saveResults       = 1
+       , @calcMedian        = 1
+       , @clearCache        = 1
+       , @printStepInfo     = 1
+       , @durationAccuracy  = 'ms'
+       , @dateTimeFunction  = 'SYSUTCDATETIME'
+       , @additionalInfo    = 1;
+
 .LICENSE MIT
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -100,8 +128,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .NOTE
     Author: Aleksei Nagorskii
     Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.7
-    Last Modified: 2018-05-17 15:35 UTC+3 by Konstantin Taranov
+    Version: 4.9
+    Last Modified: 2018-09-04 15:50 UTC+3 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -142,8 +170,8 @@ BEGIN TRY
                                  , 'ss'  -- second
                                  , 'mi'  -- minute
                                  , 'hh'  -- hour
-                                 , 'wk'  -- week
                                  , 'dd'  -- day
+                                 , 'wk'  -- week
     )
     THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
@@ -213,16 +241,17 @@ BEGIN TRY
         END;
     END;
 
-    DECLARE @crlf           NVARCHAR(10) = CHAR(10);
-    DECLARE @stepNumnber    INT          = 0;
-    DECLARE @min            BIGINT;
-    DECLARE @avg            BIGINT;
-    DECLARE @max            BIGINT;
-    DECLARE @median         REAL;
-    DECLARE @plan_handle    VARBINARY(64);
-    DECLARE @runTimeStamp   DATETIME2(7);
-    DECLARE @finishTime     DATETIME2(7);
-    DECLARE @duration       INT;
+    DECLARE @crlf          NVARCHAR(10) = CHAR(10);
+    DECLARE @stepNumnber   INT          = 0;
+    DECLARE @min           BIGINT;
+    DECLARE @avg           BIGINT;
+    DECLARE @max           BIGINT;
+    DECLARE @median        REAL;
+    DECLARE @plan_handle   VARBINARY(64);
+    DECLARE @runTimeStamp  DATETIME2(7);
+    DECLARE @finishTime    DATETIME2(7);
+    DECLARE @duration      INT;
+    DECLARE @additionalXML XML;
 
     DECLARE @BenchmarkTSQL TABLE (
         StartBenchmarkTime  DATETIME2(7)  NOT NULL
@@ -233,7 +262,32 @@ BEGIN TRY
       , ClearCache          BIT           NOT NULL
       , PrintStepInfo       BIT           NOT NULL
       , DurationAccuracy    VARCHAR(10)   NOT NULL
+      , AdditionalInfo      XML           NULL
       );
+
+    IF @additionalInfo = 1
+    SET @tsqlStatement = @tsqlStatement + @crlf + N'
+        SET @additionalXMLOUT = (
+        SELECT *
+        FROM (
+               SELECT ''DISABLE_DEF_CNST_CHK'' AS "Option", CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS "Enabled" UNION ALL
+               SELECT ''IMPLICIT_TRANSACTIONS''           , CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''CURSOR_CLOSE_ON_COMMIT''          , CASE @@options & 4     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_WARNINGS''                   , CASE @@options & 8     WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_PADDING''                    , CASE @@options & 16    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULLS''                      , CASE @@options & 32    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ARITHABORT''                      , CASE @@options & 64    WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ARITHIGNORE''                     , CASE @@options & 128   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''QUOTED_IDENTIFIER''               , CASE @@options & 256   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''NOCOUNT''                         , CASE @@options & 512   WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULL_DFLT_ON''               , CASE @@options & 1024  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''ANSI_NULL_DFLT_OFF''              , CASE @@options & 2048  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''CONCAT_NULL_YIELDS_NULL''         , CASE @@options & 4096  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''NUMERIC_ROUNDABORT''              , CASE @@options & 8192  WHEN 0 THEN 0 ELSE 1 END UNION ALL
+               SELECT ''XACT_ABORT''                      , CASE @@options & 16384 WHEN 0 THEN 0 ELSE 1 END
+        ) AS s
+        FOR XML RAW
+        );';
 
     WHILE @stepNumnber < @numberOfExecution
     BEGIN
@@ -256,7 +310,11 @@ BEGIN TRY
                                  WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                             END;
 
-        EXECUTE sp_executesql @tsqlStatement;
+        IF @additionalInfo = 1
+            EXEC sp_executesql @tsqlStatement, N'@additionalXMLOUT XML OUTPUT', @additionalXMLOUT = @additionalXML OUTPUT SELECT @additionalXML;
+
+        IF @additionalInfo = 0
+            EXEC sp_executesql @tsqlStatement;
 
         SET @finishTime = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
@@ -268,8 +326,8 @@ BEGIN TRY
                              WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @runTimeStamp, @finishTime)
                              WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @runTimeStamp, @finishTime)
                              WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @runTimeStamp, @finishTime)
-                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @runTimeStamp, @finishTime)
                              WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @runTimeStamp, @finishTime)
+                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @runTimeStamp, @finishTime)
                              ELSE 0
                         END;
 
@@ -282,6 +340,7 @@ BEGIN TRY
             , ClearCache
             , PrintStepInfo
             , DurationAccuracy
+            , AdditionalInfo
             )
         VALUES (
               @startTime
@@ -292,6 +351,7 @@ BEGIN TRY
             , @clearCache
             , @printStepInfo
             , @durationAccuracy
+            , @additionalXML
             );
 
        IF @printStepInfo = 1
@@ -344,6 +404,7 @@ BEGIN TRY
                 , PrintStepInfo       BIT           NOT NULL
                 , DurationAccuracy    VARCHAR(10)   NOT NULL
                 , OriginalLogin       SYSNAME       NOT NULL
+                , AdditionalInfo      XML           NULL
             );
 
             INSERT INTO master.dbo.BenchmarkTSQL(
@@ -361,6 +422,7 @@ BEGIN TRY
                , PrintStepInfo
                , DurationAccuracy
                , OriginalLogin
+               , AdditionalInfo
             )
             SELECT @TSQLStatementGUID AS TSQLStatementGUID
                  , ROW_NUMBER() OVER (ORDER BY RunTimeStamp, FinishTimeStamp) AS StepRowNumber
@@ -376,6 +438,7 @@ BEGIN TRY
                  , PrintStepInfo
                  , DurationAccuracy
                  , @originalLogin AS OriginalLogin
+                 , @additionalXML AS AdditionalInfo
              FROM @BenchmarkTSQL;
         END
         ELSE
@@ -394,6 +457,7 @@ BEGIN TRY
                  , PrintStepInfo
                  , DurationAccuracy
                  , @originalLogin AS OriginalLogin
+                 , @additionalXML AS AdditionalInfo
              FROM @BenchmarkTSQL;
     END;
 
@@ -409,8 +473,8 @@ BEGIN TRY
                                WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp)
-                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
                                ELSE 0
                           END AS TMIN
                    FROM @BenchmarkTSQL
@@ -426,8 +490,8 @@ BEGIN TRY
                                WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  RunTimeStamp, FinishTimeStamp)
-                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
                                WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  RunTimeStamp, FinishTimeStamp)
+                               WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  RunTimeStamp, FinishTimeStamp)
                                ELSE 0
                           END AS TMAX
                    FROM @BenchmarkTSQL
@@ -457,8 +521,8 @@ BEGIN TRY
                                              WHEN @durationAccuracy = 'ss'  THEN DATEDIFF(ss,  @startTime, @FinishBenchmarkTime)
                                              WHEN @durationAccuracy = 'mi'  THEN DATEDIFF(mi,  @startTime, @FinishBenchmarkTime)
                                              WHEN @durationAccuracy = 'hh'  THEN DATEDIFF(hh,  @startTime, @FinishBenchmarkTime)
-                                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @startTime, @FinishBenchmarkTime)
                                              WHEN @durationAccuracy = 'dd'  THEN DATEDIFF(dd,  @startTime, @FinishBenchmarkTime)
+                                             WHEN @durationAccuracy = 'wk'  THEN DATEDIFF(wk,  @startTime, @FinishBenchmarkTime)
                                              ELSE 0
                                         END;
 
