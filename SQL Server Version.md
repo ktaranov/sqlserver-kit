@@ -445,30 +445,34 @@ Useful articles:
  - [How I spot not-yet-documented features in SQL Server CTPs](https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/)
  - [More ways to discover changes in new versions of SQL Server](https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/)
 
-| Build         | File version      | Branch | Type | KB / Description                                                     | Release Date | Build Date | Fixes | Public | Size, Mb |
-|---------------|-------------------|--------|------|----------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3037.1   | 2017.140.3037.1   | RTM    | CU   | [4342123 Microsoft SQL Server 2017 CU10]                             | 2018-08-27   | 2018-07-27 |    30 |     22 |      486 |
-| 14.0.3030.27  | 2017.140.3030.27  | RTM    | CU   | [4341265 Microsoft SQL Server 2017 CU9]                              | 2018-07-18   | 2018-06-30 |    27 |     18 |      486 |
-| 14.0.3029.16  | 2017.140.3029.16  | RTM    | CU   | [4338363 Microsoft SQL Server 2017 CU8]                              | 2018-06-21   | 2018-06-13 |    60 |     31 |      475 |
-| 14.0.3026.27  | 2017.140.3026.27  | RTM    | CU   | [4229789 Microsoft SQL Server 2017 CU7]                              | 2018-05-24   | 2018-05-10 |    47 |     28 |      473 |
-| 14.0.3025.34  | 2017.140.3025.34  | RTM    | CU   | [4101464 Microsoft SQL Server 2017 CU6]                              | 2018-04-19   | 2018-03-03 |    39 |     39 |      473 |
-| 14.0.3023.8   | 2017.140.3023.8   | RTM    | CU   | [4092643 Microsoft SQL Server 2017 CU5]                              | 2018-03-20   | 2018-03-03 |    22 |     13 |      472 |
-| 14.0.3022.28  | 2017.140.3022.28  | RTM    | CU   | [4056498 Microsoft SQL Server 2017 CU4]                              | 2018-02-20   | 2018-02-10 |    81 |     55 |      472 |
-| 14.0.3015.40  | 2017.140.3015.40  | RTM    | CU   | [4052987 Microsoft SQL Server 2017 CU3]                              | 2017-01-03   | 2017-12-23 |    14 |     13 |      459 |
-| 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   | [4052574 Microsoft SQL Server 2017 CU2]                              | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
-| 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   | [4038634 Microsoft SQL Server 2017 CU1]                              | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
-| 14.0.1000.169 | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                      | 2017-10-02   | 2017-08-23 |       |        |     1475 |
-| 14.0.900.75   | 2017.140.900.75   | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                        | 2017-08-02   | 2017-07-27 |       |        |     1473 |
-| 14.0.800.90   | 2017.140.800.90   | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                        | 2017-07-17   | 2017-07-11 |       |        |     1473 |
-| 14.0.600.250  | 2017.140.600.250  | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)  | 2017-05-17   | 2017-05-10 |       |        |     1606 |
-| 14.0.500.272  | 2017.140.500.272  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0) | 2017-04-19   | 2017-04-13 |       |        |     1721 |
-| 14.0.405.198  | 2017.140.405.198  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4) | 2017-03-17   | 2017-03-11 |       |        |     2001 |
-| 14.0.304.138  | 2016.140.304.138  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3) | 2017-02-17   | 2017-02-14 |       |        |     1978 |
-| 14.0.200.24   | 2016.140.200.24   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2) | 2017-01-18   | 2017-01-11 |       |        |     1975 |
-| 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1) | 2016-12-16   | 2016-12-11 |       |        |     1975 |
-| 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)     | 2016-11-16   | 2016-11-02 |       |        |     1983 |
+| Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
+|---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3037.1   | 2017.140.3037.1   | RTM    | CU   | [4342123 Microsoft SQL Server 2017 CU10]                                                                 | 2018-08-27   | 2018-07-27 |    30 |     22 |      486 |
+| 14.0.3035.2   | 2017.140.3035.2   | RTM    | COD  | [4293805 Security update for SQL Server 2017 CU: August 14, 2018] **CVE-2018-8273**                      | 2018-08-14   | 2018-07-07 |     1 |      1 |      486 |
+| 14.0.3030.27  | 2017.140.3030.27  | RTM    | CU   | [4341265 Microsoft SQL Server 2017 CU9]                                                                  | 2018-07-18   | 2018-06-30 |    27 |     18 |      486 |
+| 14.0.3029.16  | 2017.140.3029.16  | RTM    | CU   | [4338363 Microsoft SQL Server 2017 CU8]                                                                  | 2018-06-21   | 2018-06-13 |    60 |     31 |      475 |
+| 14.0.3026.27  | 2017.140.3026.27  | RTM    | CU   | [4229789 Microsoft SQL Server 2017 CU7]                                                                  | 2018-05-24   | 2018-05-10 |    47 |     28 |      473 |
+| 14.0.3025.34  | 2017.140.3025.34  | RTM    | CU   | [4101464 Microsoft SQL Server 2017 CU6]                                                                  | 2018-04-19   | 2018-03-03 |    39 |     39 |      473 |
+| 14.0.3023.8   | 2017.140.3023.8   | RTM    | CU   | [4092643 Microsoft SQL Server 2017 CU5]                                                                  | 2018-03-20   | 2018-03-03 |    22 |     13 |      472 |
+| 14.0.3022.28  | 2017.140.3022.28  | RTM    | CU   | [4056498 Microsoft SQL Server 2017 CU4]                                                                  | 2018-02-20   | 2018-02-10 |    81 |     55 |      472 |
+| 14.0.3015.40  | 2017.140.3015.40  | RTM    | CU   | [4052987 Microsoft SQL Server 2017 CU3]                                                                  | 2017-01-03   | 2017-12-23 |    14 |     13 |      459 |
+| 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   | [4052574 Microsoft SQL Server 2017 CU2]                                                                  | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
+| 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   | [4038634 Microsoft SQL Server 2017 CU1]                                                                  | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
+| 14.0.2002.14  | 2017.140.2002.14  | RTM    | COD  | [4293803 Security update for SQL Server 2017 GDR: August 14, 2018] **CVE-2018-8273**                     | 2018-08-14   | 2018-07-21 |     1 |      1 |      433 |
+| 14.0.2000.63  | 2017.140.2000.63  | RTM    | COD  | [4057122 Security update for SQL Server 2017 GDR: January 3, 2018] **CVE-2017-5715,2017-5753,2017-5754** | 2018-01-03   | 2017-12-23 |     1 |      1 |      431 |
+| 14.0.1000.169 | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                                                          | 2017-10-02   | 2017-08-23 |       |        |     1475 |
+| 14.0.900.75   | 2017.140.900.75   | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 2                                                            | 2017-08-02   | 2017-07-27 |       |        |     1473 |
+| 14.0.800.90   | 2017.140.800.90   | RC     | RC   | Microsoft SQL Server 2017 Release Candidate 1                                                            | 2017-07-17   | 2017-07-11 |       |        |     1473 |
+| 14.0.600.250  | 2017.140.600.250  | CTP    | CTP  | Microsoft SQL Server 2017 Community Technology Preview 2.1 (CTP2.1)                                      | 2017-05-17   | 2017-05-10 |       |        |     1606 |
+| 14.0.500.272  | 2017.140.500.272  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 2.0 (CTP2.0)                                     | 2017-04-19   | 2017-04-13 |       |        |     1721 |
+| 14.0.405.198  | 2017.140.405.198  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.4 (CTP1.4)                                     | 2017-03-17   | 2017-03-11 |       |        |     2001 |
+| 14.0.304.138  | 2016.140.304.138  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.3 (CTP1.3)                                     | 2017-02-17   | 2017-02-14 |       |        |     1978 |
+| 14.0.200.24   | 2016.140.200.24   | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.2 (CTP1.2)                                     | 2017-01-18   | 2017-01-11 |       |        |     1975 |
+| 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
+| 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
 [4342123 Microsoft SQL Server 2017 CU10]:https://support.microsoft.com/help/4342123
+[4293805 Security update for SQL Server 2017 CU: August 14, 2018]:https://support.microsoft.com/help/4293805
 [4341265 Microsoft SQL Server 2017 CU9]:https://support.microsoft.com/help/4341265
 [4338363 Microsoft SQL Server 2017 CU8]:https://support.microsoft.com/help/4338363
 [4229789 Microsoft SQL Server 2017 CU7]:https://support.microsoft.com/help/4229789
@@ -478,6 +482,8 @@ Useful articles:
 [4052987 Microsoft SQL Server 2017 CU3]:https://support.microsoft.com/help/4052987
 [4052574 Microsoft SQL Server 2017 CU2]:https://support.microsoft.com/help/4052574
 [4038634 Microsoft SQL Server 2017 CU1]:https://support.microsoft.com/help/4038634
+[4293803 Security update for SQL Server 2017 GDR: August 14, 2018]:https://support.microsoft.com/help/4293803
+[4057122 Security update for SQL Server 2017 GDR: January 3, 2018]:https://support.microsoft.com/help/4057122
 [Microsoft SQL Server 2017 RTM]:https://www.microsoft.com/sql-server/sql-server-downloads
 
 
