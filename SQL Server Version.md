@@ -125,7 +125,7 @@ Profits:
 
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2017    | [Install 2017 RTM] then [CU10 KB4342123]                             | 14.0.1000.169<br/>14.0.3037.1                | 2017-10-02<br/>2018-07-18                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU10 KB4342123]                             | 14.0.1000.169<br/>14.0.3037.1                | 2017-10-02<br/>2018-08-27                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU2 KB4458621] Or [Developer Free]          | 13.0.5026.0<br/>13.0.5201.2                  | 2018-04-24<br/>2018-08-19                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU13 KB4456287] | 12.0.5000.0<br/>12.0.5590.1                  | 2016-07-11<br/>2018-08-27                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]        | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -564,7 +564,7 @@ Microsoft SQL Server 2016  (SP2 CU2) (KB4458621) - 13.0.5201.2 (X64)
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
 [4458621 Security update for SQL Server 2016 SP2 CU: August 19, 2018]:https://support.microsoft.com/help/4458621
-[4293807 Security update in SQL Server 2016 SP2 (CU): August 14, 2018]:https://support.microsoft.com/help/4293807/
+[4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018]:https://support.microsoft.com/help/4293807/
 [4340355 Cumulative Update 2 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4340355
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
 [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018]:https://support.microsoft.com/help/4293802
@@ -732,7 +732,7 @@ Microsoft SQL Server 2014 (SP2-CU12) (KB4130489) - 12.0.5589.7 (X64)
 [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/help/4019093/
 [3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3174038
 [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/en-us/kb/3174370
-[3167392 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3162659
+[3162659 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/en-us/kb/3162659
 [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3167392
 [3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)]:https://support.microsoft.com/en-us/kb/3144524
 [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/en-us/kb/3130926
