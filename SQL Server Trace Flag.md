@@ -3942,7 +3942,7 @@ Scope: global or session
 #### Trace Flag: 8780
 Function: Give the optimizer more time to find a better plan<br />
 Link: http://www.queryprocessor.ru/optimizer_unleashed_1<br />
-Link: http://www.queryprocessor.ru/optimizer_unleashed_1<br />
+Link: http://www.sqlservice.se/sql-server-trace-flag-8780/<br />
 Scope: global or session
 
 
