@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**588** trace flags)
+Complete list of Microsoft SQL Server trace flags (**589** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -1768,7 +1768,7 @@ Function: Allows you to see inactive records in transaction log using fn\_dblog<
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog<br />
 Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log<br />
 Link: http://sqlserverandme.blogspot.ru/2014/03/how-to-view-transaction-log.html<br />
-Scope: session
+Scope: session only
 
 
 <a id="2540"></a>
@@ -1987,7 +1987,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-re
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
-Scope: session
+Scope: session only
 
 
 <a id="3014"></a>
@@ -1997,7 +1997,7 @@ Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
-Scope: session
+Scope: session only
 
 
 <a id="3023"></a>
@@ -2102,7 +2102,7 @@ Link: None
 #### Trace Flag: 3205
 Function: Disable HW compression for backup to tape drives<br />
 Link: [Docs Trace Flags]<br />
-Scope: global
+Scope: global only
 
 
 <a id="3207"></a>
@@ -2264,7 +2264,7 @@ Function: Writes info about checkpoints to error log.<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
-Scope: session
+Scope: session only
 
 
 <a id="3503"></a>
@@ -2985,7 +2985,7 @@ However, a memory dump may be generated if other trace flags are used.
 If this trace flag is enabled on a running server, a memory dump will not be automatically generated from that point on.
 However, if a memory dump has already been generated due to an out-of-memory exception in the CLR, this trace flag will have no effect.<br />
 Link: [Docs Trace Flags]<br />
-Scope: global
+Scope: global only
 
 
 <a id="6530"></a>
@@ -3857,7 +3857,7 @@ Link: https://answers.sqlperformance.com/questions/603/why-is-the-sort-operator-
 
 <a id="8739"></a>
 #### Trace Flag: 8739
-Function: Dima: “Group Optimization Info”<br />
+Function: Group Optimization Information<br />
 Link: http://www.queryprocessor.ru/good-enough-plan
 
 
@@ -3923,17 +3923,27 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2010/08/04/another-interesting
 Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
 
 
+<a id="8759"></a>
+#### Trace Flag: 8759
+**Undocumented trace flag**<br />
+Function: Detect and write part of the query to the error log when it has been autoparameterized.<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/146#issue-358855110<br />
+Scope: ?
+
+
 <a id="8765"></a>
 #### Trace Flag: 8765
 Function: Allows use of variable length data, from ODBC driver; fixes the issue of a field returning the wrong data length<br />
 Link: http://jacob.steelsmith.org/content/sql-server-and-ole-db<br />
-Link: https://bugs.mysql.com/bug.php?id=46857
+Scope: global or session
 
 
 <a id="8780"></a>
 #### Trace Flag: 8780
 Function: Give the optimizer more time to find a better plan<br />
-Link: http://www.queryprocessor.ru/optimizer_unleashed_1
+Link: http://www.queryprocessor.ru/optimizer_unleashed_1<br />
+Link: http://www.queryprocessor.ru/optimizer_unleashed_1<br />
+Scope: global or session
 
 
 <a id="8783"></a>
