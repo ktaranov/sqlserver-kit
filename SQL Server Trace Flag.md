@@ -63,6 +63,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Victor Isakov ([b](https://victorisakov.wordpress.com/))
  - Scott Caldwell ([b](https://blog.rdx.com/) | [t](https://twitter.com/sqldroid))
  - Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
+ - Prince Kumar Rastogi ([b](http://www.sqlservergeeks.com/) | [t](https://twitter.com/princerastogi2))
 
 
 <a id="unknown-trace-flags"></a>
@@ -182,6 +183,7 @@ GO
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
+ - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
@@ -222,6 +224,8 @@ For a SQL Server shutdown, the command SHUTDOWN WITH NOWAIT can be used instead 
 
 **Trace Flag: 7752** enables asynchronous load of Query Store.
 Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](https://www.sqlskills.com/help/waits/qds_loaddb/) waits related to Query Store synchronous load (default behavior).
+
+**Trace Flag: 7806** enables a dedicated administrator connection ([DAC]) on SQL Server Express.
 
 
 <a id="trace-flags-list"></a>
@@ -619,6 +623,7 @@ Columnstore compression improves query performance but also consumes system reso
 You can control the timing of columnstore compression manually, by disabling the background compression task with trace flag 634, and then explicitly invoking ALTER INDEX REORGANIZE or ALTER INDEX REBUILD at the time of your choice.<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/trace-flag-634-disable-background-columnstore-compression/<br />
 Scope: global only
 
 
@@ -1358,7 +1363,7 @@ Scope: global or session or query
 
 <a id="2309"></a>
 #### Trace Flag: 2309
-Function: In SQL 2014, enables output from a 3rd parameter for DBCC SHOW_STATISTICS such that the partial statistics histogram (for just one partition) is shown. <br />
+Function: In SQL 2014, enables output from a 3rd parameter for [DBCC SHOW_STATISTICS] such that the partial statistics histogram (for just one partition) is shown. <br />
 Link: https://sqlperformance.com/2015/05/sql-statistics/incremental-statistics-are-not-used-by-the-query-optimizer<br />
 Link: http://blog.dbi-services.com/sql-server-2014-new-incremental-statistics
 
@@ -1369,6 +1374,7 @@ Function: Enables you to set the query optimizer cardinality estimation model to
 Link: [KB2801413]<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-2312/<br />
 Scope: global or session or query
 
 
@@ -1520,10 +1526,14 @@ Scope: ?
 
 <a id="2388"></a>
 #### Trace Flag: 2388
-Function: Changes the output of DBCC SHOW_STATISTICS.
+Function: Changes the output of [DBCC SHOW_STATISTICS].
 Instead of the normal Header/Vector/Histogram output, instead we get a single row that gives information related to whether the lead column of the stat object is considered to be ascending or not.
-This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).<br />
-Link: [SQL Server - estimates outside of the histogram - half-baked draft]
+This TF is primarily helpful in watching the state of a stat object change from “Unknown”, to “Ascending” (and potentially to “Stationary”).
+Also In SQL Server, if you want to see the information of last four statistics update on a statistics object then you can use trace flag 2388.
+In simple words, we can say that this trace flag provide us the historical information about statistics update.<br />
+Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2388/<br />
+Scope: session only
 
 
 <a id="2389"></a>
@@ -1538,6 +1548,7 @@ Link: https://www.sswug.org/sswugresearch/community/trace-flag-2389-and-the-new-
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2389/<br />
 Scope: global or session or query
 
 
@@ -1551,6 +1562,7 @@ Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistic
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/ianjo/2006/04/24/ascending-keys-and-auto-quick-corrected-statistics<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2390/
 Scope: global or session or query
 
 
@@ -1620,6 +1632,7 @@ Link: [Docs Trace Flags]<br />
 Link: https://www.brentozar.com/archive/2017/02/using-trace-flag-2453-improve-table-variable-performance<br />
 Link: https://www.brentozar.com/archive/2018/03/table-valued-parameters-unexpected-parameter-sniffing<br />
 Link: [TEMPDB – Files and Trace Flags and Updates]<br />
+Link: http://www.sqlservergeeks.com/the-correct-cardinality-estimation-for-table-variable-using-trace-flag-2543/<br />
 Scope: global or session or query
 
 
@@ -2127,7 +2140,9 @@ Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-d
 #### Trace Flag: 3213
 Function: Output buffer info for backups to ERRORLOG<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2008/01/28/how-it-works-sql-server-backup-buffer-exchange-a-vdi-focus/
+Link: https://blogs.msdn.microsoft.com/psssql/2008/01/28/how-it-works-sql-server-backup-buffer-exchange-a-vdi-focus/<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-3213/<br />
+Scope: global or session
 
 
 <a id="3216"></a>
@@ -2351,6 +2366,7 @@ Use for Move System Databases and Move User Databases.<br />
 Link: [Docs Trace Flags]<br />
 Link: [Importance of Performing DBCC CHECKDB on all SQL Server Databases]<br />
 Link: https://blogs.msdn.microsoft.com/ialonso/2012/10/24/why-does-restoring-a-database-needs-tempdb<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-3608/<br />
 Scope: global only
 
 
@@ -2536,8 +2552,11 @@ Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
 
 <a id="4013"></a>
 #### Trace Flag: 4013
-Function: Log each new connection the error log<br />
-Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html
+Function: Trace flag 4013 write entries in error log whenever a new connection established.
+These entries contain login name and SPID also.<br />
+Link: http://sqlkbs.blogspot.se/2008/01/trace-flag.html<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4013/<br />
+Scope: global or session
 
 
 <a id="4020"></a>
@@ -2557,27 +2576,36 @@ Scope: global only
 
 <a id="4029"></a>
 #### Trace Flag: 4029
-Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default. Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
+Function: Logs extended errors to errorlog when network disconnect occurs, turned off by default.
+Will dump out the socket error code this can sometimes give you a clue as to the root cause.<br />
 Link: https://blogs.msdn.microsoft.com/sql_protocols/2005/12/19/vss-sql-server-does-not-exist-or-access-denied
 
 
 <a id="4030"></a>
 #### Trace Flag: 4030
-Function: Prints both a byte and ASCII representation of the receive buffer. Used when you want to see what queries a client is sending to SQL Server. You can use this trace flag if you experience a protection violation and want to determine which statement caused it. Typically, you can set this flag globally or use SQL Server Enterprise Manager. You can also use DBCC INPUTBUFFER.<br />
-Link: None
+Function: Prints both a byte and ASCII representation of the receive buffer.
+Used when you want to see what queries a client is sending to SQL Server.
+You can use this trace flag if you experience a protection violation and want to determine which statement caused it.
+Typically, you can set this flag globally or use SQL Server Enterprise Manager.
+You can also use [DBCC INPUTBUFFER](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-inputbuffer-transact-sql).<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4030/<br />
+Scope: global only
 
 
 <a id="4031"></a>
 #### Trace Flag: 4031
-Function: Prints both a byte and ASCII representation of the send buffers (what SQL Server sends back to the client). You can also use DBCC OUTPUTBUFFER.<br />
-Link: None
+Function: Prints both a byte and ASCII representation of the send buffers (what SQL Server sends back to the client).
+You can also use [DBCC OUTPUTBUFFER](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-outputbuffer-transact-sql).<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4031/<br />
+Scope: global only
 
 
 <a id="4032"></a>
 #### Trace Flag: 4032
 Function: Traces the SQL commands coming in from the client. When enabled with 3605 it will direct those all to the error log.<br />
 Link: https://support.microsoft.com/help/199037/<br />
-Link: https://support.microsoft.com/help/140895/
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4032/<br />
+Scope: global only
 
 
 <a id="4044"></a>
@@ -2793,7 +2821,7 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/541352/tempdb-err
 <a id="4136"></a>
 #### Trace Flag: 4136
 Function: Disables parameter sniffing unless OPTION(RECOMPILE), WITH RECOMPILE or OPTIMIZE FOR value is used.
-To accomplish this at the database level, see ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL).
+To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].
 To accomplish this at the query level, add the OPTIMIZE FOR UNKNOWN query hint.
 Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
@@ -2801,6 +2829,8 @@ Link: http://blogs.msdn.com/b/axinthefield/archive/2010/11/04/sql-server-trace-f
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://kejser.org/trace-flag-4136-2/<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4136/<br />
+Link: http://www.sqlservergeeks.com/sql-server-did-you-know-about-trace-flag-4136/<br />
 Scope: global or session or query
 
 
@@ -2855,7 +2885,7 @@ The following table summarizes the behavior when using specific database compati
 | 130                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
 | 140                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
 
-To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).<br />
+To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
 **Note: Starting with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT [query hint](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query) instead of using this trace flag.**<br />
 Link: https://support.microsoft.com/help/974006<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
@@ -2863,6 +2893,7 @@ Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/974006/<br />
 Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-query_optimizer_hotfixes-in-sql-server-2016/<br />
 Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
+Link: http://www.sqlservergeeks.com/sql-server-2016-database-scoped-configuration-and-trace-flag-4199/<br />
 Scope: global or session or query
 
 
@@ -3245,10 +3276,12 @@ Scope: global only
 
 <a id="7806"></a>
 #### Trace Flag: 7806
-Function: Enables a dedicated administrator connection (DAC) on SQL Server Express. By default, no DAC resources are reserved on SQL Server Express.<br />
+Function: Enables a dedicated administrator connection ([DAC]) on SQL Server Express.
+By default, no [DAC] resources are reserved on SQL Server Express.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://msdn.microsoft.com/en-us/library/ms189595.aspx<br />
 Link: https://sqlperformance.com/2012/08/sql-memory/test-your-dac-connection<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-7806/<br />
 Scope: global only
 
 
@@ -3324,7 +3357,8 @@ You can use the information in this ring buffer to diagnose out-of-memory condit
 Trace flag 8011 always applies across the server and has global scope. You can turn on trace flag 8011 at startup or in a user session.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global or session
+Link: http://www.sqlservergeeks.com/sql-server-ring-buffer-trace-flag-8011/<br />
+Scope: global only
 
 
 <a id="8012"></a>
@@ -3339,6 +3373,7 @@ The exception ring buffer records the last 256 exceptions that are raised on a n
 Each record contains some information about the error and contains a stack trace. A record is added to the ring buffer when an exception is raised.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/sql-server-ring-buffer-trace-flag-8012/<br />
 Scope: global only
 
 
@@ -3372,6 +3407,8 @@ Function: Disables the creation of the ring buffer, and no exception information
 Disabling the exception ring buffer makes it more difficult to diagnose problems that are related to internal server errors.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/sql-server-ring-buffer-trace-flag-8018/<br />
+Link: http://www.sqlservergeeks.com/sql-server-ring-buffer-trace-flag-8019/<br />
 Scope: global only
 
 
@@ -3382,6 +3419,7 @@ Disables stack collection during the record creation.
 Trace flag 8019 has no effect if trace flag [8018](#8018) is turned on.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/sql-server-ring-buffer-trace-flag-8019/<br />
 Scope: global only
 
 
@@ -3596,9 +3634,11 @@ Link: None
 
 <a id="8602"></a>
 #### Trace Flag: 8602
-Function: Ignore index hints that are specified in query/procedure.<br />
+Function: This trace flag is used to ignore all the index hints specified in query or stored procedure.
+We can use this trace flag to troubleshooting the query performance without changing index hints.<br />
 Link: http://download.microsoft.com/download/6/e/5/6e52bf39-0519-42b7-b806-c32905f4a066/eim_perf_flowchart_final.pdf<br />
 Link: http://sqlblog.com/blogs/kalen_delaney/archive/2008/02/26/lost-without-a-trace.aspx<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-8602/<br />
 Scope: global only
 
 
@@ -3839,6 +3879,7 @@ Link: http://www.hanlincrest.com/SQLserverStoredProcRecompiles.htm
 Function: Reports to the error log when auto-update statistics executes<br />
 Link: https://support.microsoft.com/help/195565<br />
 Link: [Docs Trace Flags]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-8721/<br />
 Scope: global only
 
 
@@ -4178,6 +4219,8 @@ Related to: [9205](#9205)
 #### Trace Flag: 9204
 Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
 Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-9204/<br />
+Scope: global only
 Related to: [9292](#9292)
 
 
@@ -4277,6 +4320,8 @@ Scope: local only
 #### Trace Flag: 9292
 Function: Output Statistics considered to be used by Query Optimizer<br />
 Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-9292/<br />
+Scope: session only
 Related to: [9204](#9204)
 
 
@@ -4524,12 +4569,13 @@ Scope: ?
 <a id="9481"></a>
 #### Trace Flag: 9481
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database.
-To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://msdn.microsoft.com/en-us/library/mt629158.aspx).
+To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].
 To accomplish this at the query level, add the QUERYTRACEON query hint<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-legacy-ce/<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2801413]<br />
+Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/<br />
 Scope: global or session or query
 
 
@@ -4760,7 +4806,7 @@ Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/partial-results-in-a-q
 **Undocumented trace flag**<br />
 Function: Enables the option to configure compression delay in columnstore indexes in SQL Server 2016<br />
 Link: http://www.nikoport.com/2016/02/04/columnstore-indexes-part-76-compression-delay/<br />
-Scope: session
+Scope: session only
 
 
 <a id="10264"></a>
@@ -4880,3 +4926,6 @@ Scope: ?
 [TEMPDB – Files and Trace Flags and Updates]:https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/
 [Next-Level Parallel Plan Forcing: An Alternative to 8649]:http://dataeducation.com/next-level-parallel-plan-forcing-an-alternative-to-8649/
 [SQL Server 6.5: Some Useful Trace Flag]:http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
+[DAC]:https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators
+[DBCC SHOW_STATISTICS]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql
+[ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql
