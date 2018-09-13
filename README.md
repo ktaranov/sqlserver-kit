@@ -38,7 +38,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 588 Trace Flags') (**Complete list - 588 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 590 Trace Flags') (**Complete list - 590 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2017**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -85,7 +85,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 270 SQLSQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 272 SQLSQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -286,6 +286,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLServerSpaceAnalysis PowerBI](https://github.com/SQLJana/SQLServerSpaceAnalysis) (by Jana Sattainathan)
     - [SQL Server Telegram Bot](https://github.com/ionflux/mssql-telegram-bot/)
     - [ZabbixMSSQL - Zabbix Template and tools for Microsoft SQL Server](https://github.com/dreik/ZabbixMSSQL) (by Sergey Kolesnik)
+    - [AGLatency - analyze AG log block movement latency between replicas and create report accordingly](https://github.com/suyouquan/AGLatency) (by Simon Su)
+    - [SQLSetupTools - FixMissingMSI, Product Browser, SQL Registry Viewer](https://github.com/suyouquan/SQLSetupTools) (by Simon Su)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)

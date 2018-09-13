@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**589** trace flags)
+Complete list of Microsoft SQL Server trace flags (**590** trace flags)
 
 **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -644,7 +644,7 @@ Link: https://support.microsoft.com/help/2986423/fix-it-takes-a-long-time-to-add
 <a id="652"></a>
 #### Trace Flag: 652
 Function: Disable page pre-fetching scans.
- If you turn on trace flag 652, SQL Server no longer brings database pages into the buffer pool before these database pages are consumed by the scans.
+If you turn on trace flag 652, SQL Server no longer brings database pages into the buffer pool before these database pages are consumed by the scans.
 If you turn on trace flag 652, queries that benefit from the page pre-fetching feature exhibit low performance.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
@@ -3918,6 +3918,14 @@ Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
 
+<a id="8743"></a>
+#### Trace Flag: 8743
+**Undocumented trace flag**<br />
+Function: Disable SM join.<br />
+Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
 <a id="8744"></a>
 #### Trace Flag: 8744
 Function: Disable pre-fetching for the Nested Loop operator.
@@ -4178,7 +4186,7 @@ Link: None
 <a id="9164"></a>
 #### Trace Flag: 9164
 **Undocumented trace flag**<br />
-Function: Disables hash joins.<br />
+Function: Disables HM (hash joins).<br />
 Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
@@ -4186,7 +4194,7 @@ Scope: ?
 <a id="9165"></a>
 #### Trace Flag: 9165
 **Undocumented trace flag**<br />
-Function: Removed an index recommendation from a plan.<br />
+Function: Disable NL join and remove an index recommendation from a plan.<br />
 Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
