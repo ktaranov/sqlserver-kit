@@ -1,3 +1,11 @@
+SET NOEXEC OFF;
+
+IF OBJECT_ID('dbo.sp_foreachdb', 'P') IS NULL
+RAISERROR('Please install before awesome stored procedure https://github.com/ktaranov/SQL-Server-First-Responder-Kit/blob/master/sp_foreachdb.sql', 16, 1);
+SET NOEXEC ON;
+GO
+
+
 IF OBJECT_ID('dbo.usp_SearchStoredProcedureText', 'P') IS NULL
 EXECUTE ('CREATE PROCEDURE dbo.usp_SearchStoredProcedureText AS RETURN');
 GO
@@ -10,8 +18,17 @@ ALTER PROCEDURE dbo.usp_SearchStoredProcedureText(
 )
 AS
 /*
-Author: Tim Ford
-Original link: https://www.itprotoday.com/microsoft-sql-server/using-sqlmodules-system-catalog-view-search-function-and-stored-procedure
+.DESCRIPTION
+Search text in stored procedures
+
+.EXAMPLE
+EXEC dbo.usp_SearchStoredProcedureText @searchforthis = 'sp_foreachdb';
+
+.NOTE
+    Author: Tim Ford
+    Original link: https://www.itprotoday.com/microsoft-sql-server/using-sqlmodules-system-catalog-view-search-function-and-stored-procedure
+
+
 */
 SET NOCOUNT ON;
 
@@ -27,12 +44,11 @@ CREATE TABLE #search_results
     sql__text NVARCHAR(MAX) NOT NULL
     );
 
-
 IF @object_type IS NULL
     BEGIN
         SELECT @search_text =
         'USE ?; 
-        INSERT INTO #search_results (the__database, the__schema, object__name, object__type, is_ms_shipped, sql__text) 
+        INSERT INTO #search_results (the__database, the__schema, object__name, object__type, is_ms_shipped, sql__text)
         SELECT db_name() AS the__database
                 , OBJECT_SCHEMA_NAME(O.object_id) AS the__schema
                 , O.name AS object__name 
@@ -41,8 +57,8 @@ IF @object_type IS NULL
                 , M.definition AS sql__text
         FROM sys.objects O WITH(NOLOCK)
                 LEFT JOIN sys.sql_modules M ON O.object_id = M.object_id
-        WHERE O.is_ms_shipped = ' + CAST(@is_ms_shipped AS VARCHAR(1)) + ' AND M.definition LIKE ''%' + @searchforthis + '%''' + ';'
-    END
+        WHERE O.is_ms_shipped = ' + CAST(@is_ms_shipped AS VARCHAR(1)) + ' AND M.definition LIKE ''%' + @searchforthis + '%''' + ';';
+    END;
 ELSE
     BEGIN
         SELECT @search_text =
@@ -57,18 +73,18 @@ ELSE
         FROM sys.objects O WITH(NOLOCK)
             LEFT JOIN sys.sql_modules M ON O.object_id = M.object_id
         WHERE O.is_ms_shipped = ' + CAST(@is_ms_shipped AS VARCHAR(1)) + ' AND O.type = ''' + @object_type + '''' +
-            'AND M.definition LIKE ''%' + @searchforthis + '%''' + ';'
-    END
+            'AND M.definition LIKE ''%' + @searchforthis + '%''' + ';';
+    END;
 
 EXEC dbo.sp_foreachdb @command = @search_text;
 
 SELECT the__database
-    , the__schema
-    , object__name
-        , object__type
-        , is_ms_shipped
-    , sql__text 
-FROM #search_results 
+     , the__schema
+     , object__name
+     , object__type
+     , is_ms_shipped
+     , sql__text
+FROM #search_results
 ORDER BY the__database
     , the__schema
     , object__name;
