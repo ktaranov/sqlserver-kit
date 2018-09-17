@@ -288,6 +288,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [ZabbixMSSQL - Zabbix Template and tools for Microsoft SQL Server](https://github.com/dreik/ZabbixMSSQL) (by Sergey Kolesnik)
     - [AGLatency - analyze AG log block movement latency between replicas and create report accordingly](https://github.com/suyouquan/AGLatency) (by Simon Su)
     - [SQLSetupTools - FixMissingMSI, Product Browser, SQL Registry Viewer](https://github.com/suyouquan/SQLSetupTools) (by Simon Su)
+    - [tsql-parser - Library Written in C# For Parsing SQL Server T-SQL Scripts in .Net](https://github.com/bruce-dunwiddie/tsql-parser) (by Bruce Dunwiddie)
+    - [tsqllint - Configurable linting for TSQL](https://github.com/tsqllint/tsqllint) (by tsqllint)
+    - [Rezoom.SQL - F# ORM for SQL databases](https://github.com/rspeele/Rezoom.SQL) (by Robert Peele)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
