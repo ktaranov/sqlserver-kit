@@ -1,12 +1,12 @@
 # Microsoft SQL Server Trace Flags
 Complete list of Microsoft SQL Server trace flags (**590** trace flags)
 
-**REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
+⚠ **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
-**Some trace flags were introduced in specific SQL Server versions.
+⚠ **Some trace flags were introduced in specific SQL Server versions.
 For more information on the applicable version, see the Microsoft Support article associated with a specific trace flag.**
 
-**Trace flag behavior may not be supported in future releases of SQL Server.**
+⚠ **Trace flag behavior may not be supported in future releases of SQL Server.**
 
 Headers:
  - [Unknown trace flags](#unknown-trace-flags")
@@ -64,6 +64,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Scott Caldwell ([b](https://blog.rdx.com/) | [t](https://twitter.com/sqldroid))
  - Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
  - Prince Kumar Rastogi ([b](http://www.sqlservergeeks.com/) | [t](https://twitter.com/princerastogi2))
+ - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
 
 
 <a id="unknown-trace-flags"></a>
@@ -99,7 +100,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 
 <a id="how-do-i-turn-trace-flags-on-and-off"></a>
 ## How do I turn Trace Flags on and off?
- - You can use the [DBCC TRACEON](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql "Official Microsoft Docs DBCC TRACEON Article") and [DBCC TRACEOFF](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql "Official Microsoft Docs DBCC TRACEOFF Article") commands
+ - You can use the [DBCC TRACEON] and [DBCC TRACEOFF] commands
  - You can use the [-T option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/database-engine-service-startup-options "Official Microsoft Docs Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
    **When specifying a trace flag with the `-T` option, use an uppercase `"T"` to pass the trace flag number. A lowercase `"t"` is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
  - You can also use the hint [QUERYTRACEON](https://support.microsoft.com/help/2801413 "Official QUERYTRACEON KB Article") in your queries: **&lt;querytraceon_hint ::= {QUERYTRACEON trace_flag_number}>**
@@ -230,13 +231,13 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **588 trace flags**
+Summary: **590 trace flags**
 
 
 <a id="-1"></a>
 #### Trace Flag: -1
 Function: Sets trace flags for all client connections, rather than for a single client connection.
-Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using DBCC TRACEON and DBCC TRACEOFF.<br />
+Because trace flags set using the -T command-line option automatically apply to all connections, this trace flag is used only when setting trace flags using [DBCC TRACEON] and [DBCC TRACEOFF].<br />
 Link: http://www.sql-server-performance.com/2002/traceflags/
 
 
@@ -924,7 +925,8 @@ Link: https://blogs.msdn.microsoft.com/arvindsh/2014/02/24/tracking-tempdb-inter
 <a id="1117"></a>
 #### Trace Flag: 1117
 Function: When a file in the filegroup meets the autogrow threshold, all files in the filegroup grow.<br />
-**Note: Beginning with SQL Server 2016 this behavior is controlled by the AUTOGROW_SINGLE_FILE and AUTOGROW_ALL_FILES option of ALTER DATABASE, and trace flag 1117 has no affect. For more information, see ALTER DATABASE File and Filegroup Options (Transact-SQL).**<br />
+**Note: Beginning with SQL Server 2016 this behavior is controlled by the AUTOGROW_SINGLE_FILE and AUTOGROW_ALL_FILES option of ALTER DATABASE, and trace flag 1117 has no affect.
+For more information, see [ALTER DATABASE File and Filegroup Options (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options).**<br />
 Link: https://www.littlekendra.com/2017/01/03/parallelism-and-tempdb-data-file-usage-in-sql-server/<br />
 Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [Docs Trace Flags]<br />
@@ -1000,7 +1002,7 @@ Link: None
 Function: Prints detailed lock information as every request for a lock is made (the process ID and type of lock requested)<br />
 Link: [TECHNET List Of SQL Server Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2008/03/30/tempdb-table-variable-vs-local-temporary-table<br />
-Link: https://support.microsoft.com/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server<br />
+Link: [KB169960]<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: ?
 
@@ -1031,13 +1033,13 @@ Link: https://support.microsoft.com/help/832524/sql-server-technical-bulletin---
 <a id="1206"></a>
 #### Trace Flag: 1206
 Function: Used to complement flag 1204 by displaying other locks held by deadlock parties<br />
-Link: https://support.microsoft.com/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
+Link: [KB169960]
 
 
 <a id="1208"></a>
 #### Trace Flag: 1208
 Function: KB: “Prints the host name and program name supplied by the client. This can help identify a client involved in a deadlock, assuming the client specifies a unique value for each connection.”<br />
-Link: https://support.microsoft.com/help/169960/inf-analyzing-and-avoiding-deadlocks-in-sql-server
+Link: [KB169960]
 
 
 <a id="1211"></a>
@@ -3639,7 +3641,8 @@ We can use this trace flag to troubleshooting the query performance without chan
 Link: http://download.microsoft.com/download/6/e/5/6e52bf39-0519-42b7-b806-c32905f4a066/eim_perf_flowchart_final.pdf<br />
 Link: http://sqlblog.com/blogs/kalen_delaney/archive/2008/02/26/lost-without-a-trace.aspx<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-8602/<br />
-Scope: global only
+Scope: global only<br />
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8602.sql
 
 
 <a id="8605"></a>
@@ -4882,6 +4885,8 @@ Scope: ?
 
 
 [Query Store Trace Flags]: https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
+[DBCC TRACEON]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
+[DBCC TRACEOFF]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql
 [Docs Trace Flags]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [DBCC CHECKDB]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
 [DBCC CHECKTABLE]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
@@ -4937,3 +4942,4 @@ Scope: ?
 [DAC]:https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators
 [DBCC SHOW_STATISTICS]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql
 [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql
+[KB169960]:https://web.archive.org/web/20150111103047/http://support.microsoft.com:80/kb/169960
