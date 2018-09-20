@@ -607,6 +607,8 @@ Articles types:
 | [Query optimization techniques in SQL Server: Database Design and Architecture]                                         | Ed Pollack                               | 2018-07-13 | [DBA],[DEV] |
 | [SQL Query Optimization Techniques in SQL Server: Parameter Sniffing]                                                   | Ed Pollack                               | 2018-09-04 | [DBA],[DEV] |
 | [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]                                          | Ben Richardson                           | 2018-08-20 | [DBA],[DEV] |
+| [Temporal Tables Under The Covers]                                                                                      | Randolph West                            | 2015-11-17 | [DBA],[DEV] |
+| [Faking Temporal Tables with Triggers]                                                                                  | Bert Wagner                              | 2018-09-11 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1192,3 +1194,5 @@ Articles types:
 [Query optimization techniques in SQL Server: Database Design and Architecture]:https://www.sqlshack.com/query-optimization-techniques-in-sql-server-database-design-and-architecture/
 [SQL Query Optimization Techniques in SQL Server: Parameter Sniffing]:https://www.sqlshack.com/query-optimization-techniques-in-sql-server-parameter-sniffing/
 [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]:https://codingsight.com/similarities-and-differences-among-rank-dense_rank-and-row_number-functions/
+[Temporal Tables Under The Covers]:https://bornsql.ca/blog/temporal-tables-under-the-covers/
+[Faking Temporal Tables with Triggers]:https://bertwagner.com/2018/09/11/faking-temporal-tables-with-triggers/
