@@ -609,6 +609,9 @@ Articles types:
 | [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]                                          | Ben Richardson                           | 2018-08-20 | [DBA],[DEV] |
 | [Temporal Tables Under The Covers]                                                                                      | Randolph West                            | 2015-11-17 | [DBA],[DEV] |
 | [Faking Temporal Tables with Triggers]                                                                                  | Bert Wagner                              | 2018-09-11 | [DBA],[DEV] |
+| [SQL queries to manage hierarchical or parent-child relational rows in SQL Server]                                      | Dipon Roy                                | 2014-09-16 | [DBA],[DEV] |
+| [Choosing Between Table Variables and Temporary Tables]                                                                 | Phil Factor                              | 2018-05-11 | [DBA],[DEV] |
+| [What's New in the First Public CTP of SQL Server 2019]                                                                 | Aaron Bertrand                           | 2018-09-24 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1196,3 +1199,6 @@ Articles types:
 [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]:https://codingsight.com/similarities-and-differences-among-rank-dense_rank-and-row_number-functions/
 [Temporal Tables Under The Covers]:https://bornsql.ca/blog/temporal-tables-under-the-covers/
 [Faking Temporal Tables with Triggers]:https://bertwagner.com/2018/09/11/faking-temporal-tables-with-triggers/
+[SQL queries to manage hierarchical or parent-child relational rows in SQL Server]:https://www.codeproject.com/Articles/818694/SQL-queries-to-manage-hierarchical-or-parent-child
+[Choosing Between Table Variables and Temporary Tables]:https://www.red-gate.com/hub/product-learning/sql-prompt/choosing-table-variables-temporary-tables
+[What's New in the First Public CTP of SQL Server 2019]:https://www.mssqltips.com/sqlservertip/5710/whats-new-in-the-first-public-ctp-of-sql-server-2019/
