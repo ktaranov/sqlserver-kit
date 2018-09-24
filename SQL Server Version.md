@@ -173,7 +173,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServerVnextCTP2-x64-ENU.iso                                    | 2018-09-24   | 15.0.1000.34  |     1532 | ?                                        |
+| [SQL Server 2019]                     | SQLServerVnextCTP2-x64-ENU.iso                                    | 2018-09-24   | 15.0.1000.34  |     1532 | 20982d4a0934ee87e7f92ac4845b24f7daca8c4b |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 KB4342123]           | SQLServer2017-KB4342123-x64.exe                                   | 2018-08-28   | 14.0.3037.1   |      486 | 7bfea85723fd0321d2555d4e5b8648115786757e |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -238,7 +238,7 @@ Original post written by Scott Hanselman: http://www.hanselman.com/blog/Download
 Official Microsoft SQL Server Express page: https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/sql-server-express.aspx
 
 
-### [Download SQL Server 2016 Express](https://www.microsoft.com/en-us/download/details.aspx?id=55994)
+### [Download SQL Server 2017 Express](https://www.microsoft.com/en-us/download/details.aspx?id=55994)
 
 ### [Download SQL Server 2016 Express](https://www.microsoft.com/en-us/download/details.aspx?id=52679)
 
@@ -441,16 +441,27 @@ For details about how to assess the performance differences of your most importa
 
 ## Microsoft SQL Server 2019 Builds
 <a id="microsoft-sql-server-2019-builds"></a>
+More additional information about latest vNext SQL Server release you can find in this articles:
+ - [What's New in the First Public CTP of SQL Server 2019](https://www.mssqltips.com/sqlservertip/5710/whats-new-in-the-first-public-ctp-of-sql-server-2019/)
+ - [Froid: How SQL Server vNext Might Fix the Scalar Functions Problem](https://www.brentozar.com/archive/2018/01/froid-sql-server-vnext-might-fix-scalar-functions-problem/)
+ - [What’s New in SQL Server 2019 System Tables](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019-system-tables/)
+ - [What’s New in SQL Server 2019’s sys.messages: More Unannounced Features](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019s-sys-messages-more-unannounced-features/)
+ - [What’s New in SQL Server 2019: Faster Table Variables (And New Parameter Sniffing Issues)](https://www.brentozar.com/archive/2018/09/sql-server-2019-faster-table-variables-and-new-parameter-sniffing-issues/)
+ - [What’s New in SQL Server 2019: Adaptive Memory Grants](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019-adaptive-memory-grants/)
+ - [Leaked: SQL Server 2019 Big Data Clusters Introduction Video](https://www.brentozar.com/archive/2018/09/leaked-sql-server-2019-big-data-clusters-introduction-video/)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP 2.0:
 
 ```
-Microsoft SQL Server 2019
+Microsoft SQL Server vNext (CTP2.0) - 15.0.1000.34 (X64)
+   Sep 18 2018 02:32:04
+   Copyright (C) 2018 Microsoft Corporation
+   Developer Edition (64-bit) on 
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
-| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.0] | 2019-09-24   | 2018-??-?? |       |        |     1532 |
+| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.0] | 2019-09-24   | 2018-09-18 |       |        |     1532 |
 
 
 ## Microsoft SQL Server 2017 Builds
