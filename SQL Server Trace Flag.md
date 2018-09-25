@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**590** trace flags)
+Complete list of Microsoft SQL Server trace flags (**591** trace flags)
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -65,6 +65,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
  - Prince Kumar Rastogi ([b](http://www.sqlservergeeks.com/) | [t](https://twitter.com/princerastogi2))
  - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
+ - Slava Oks ([t](https://twitter.com/slava_oks/))
 
 
 <a id="unknown-trace-flags"></a>
@@ -231,7 +232,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **590 trace flags**
+Summary: **591 trace flags**
 
 
 <a id="-1"></a>
@@ -885,6 +886,15 @@ Scope: ?
 **Undocumented trace flag**<br />
 Function: According to the error log this enables buffer pool extension. This TF probably doesn’t do anything anymore.<br />
 Link: [New Undocumented Trace Flags]<br />
+Scope: ?
+
+
+<a id="876"></a>
+#### Trace Flag: 876
+**Undocumented trace flag**<br />
+Function: Turns 8k page allocations for Column Store segments into 2MB instead.<br />
+Link: https://twitter.com/slava_oks/status/1044257034361757696<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/151<br />
 Scope: ?
 
 
