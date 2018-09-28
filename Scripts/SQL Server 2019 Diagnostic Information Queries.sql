@@ -1,5 +1,5 @@
 
--- SQL Server 2017 Diagnostic Information Queries
+-- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
 -- Last Modified: September 25, 2018
 -- https://www.sqlskills.com/blogs/glenn/
@@ -40,8 +40,8 @@
 --*
 --******************************************************************************
 
--- Check the major product version to see if it is SQL Server 2017 CTP 1 or greater
-IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '14%')
+-- Check the major product version to see if it is SQL Server 2019 CTP 2 or greater
+IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersion')) LIKE '15%')
 	BEGIN
 		DECLARE @ProductVersion varchar(128) = CONVERT(varchar(128), SERVERPROPERTY('ProductVersion'));
 		RAISERROR ('Script does not match the ProductVersion [%s] of this instance. Many of these queries may not work on this version.' , 18 , 16 , @ProductVersion);
@@ -56,47 +56,21 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 ------
 
--- SQL Server 2017 Builds																		
+-- SQL Server 2019 Builds																		
 -- Build			Description							Release Date	URL to KB Article								
--- 14.0.1.246		CTP 1.0								11/30/2016
--- 14.0.100.187		CTP 1.1								12/16/2016
--- 14.0.200.24		CTP 1.2								1/19/2017
--- 14.0.304.138		CTP 1.3								2/17/2017
--- 14.0.405.198		CTP 1.4								3/20/2017
--- 14.0.500.272		CTP 2.0								4/19/2017
--- 14.0.600.250		CTP 2.1								5/17/2017
--- 14.0.800.90		RC1									7/17/2017
--- 14.0.900.75		RC2									8/2/2017
--- 14.0.1000.169	RTM									10/2/2017
--- 14.0.3006.16		CU1									10/24/2017		https://support.microsoft.com/en-us/help/4038634
--- 14.0.3008.27		CU2									11/28/2017		https://support.microsoft.com/en-us/help/4052574
--- 14.0.3015.40		CU3									1/4/2018		https://support.microsoft.com/en-us/help/4052987
--- 14.0.3022.28		CU4									2/20/2018	    https://support.microsoft.com/en-us/help/4056498
--- 14.0.3023.8		CU5									3/20/2018		https://support.microsoft.com/en-us/help/4092643
--- 14.0.3025.34		CU6									4/17/2018	    https://support.microsoft.com/en-us/help/4101464
--- 14.0.3026.27		CU7									5/23/2018		https://support.microsoft.com/en-us/help/4229789
--- 14.0.3029.16		CU8									6/19/2018		https://support.microsoft.com/en-us/help/4338363
--- 14.0.3030.27		CU9									7/19/2018		https://support.microsoft.com/en-us/help/4341265
--- 14.0.3035.2		CU9 + Security Update				8/13/2018		https://www.microsoft.com/en-us/download/details.aspx?id=57263
--- 14.0.3037.1		CU10								8/27/2018		https://support.microsoft.com/en-us/help/4342123/cumulative-update-10-for-sql-server-2017
--- 14.0.3038.14		CU11								9/20/2018		https://support.microsoft.com/en-us/help/4462262		
+-- 15.0.1000.34		CTP 2.0								9/24/2018
+
 		
 															
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://bit.ly/2oAjKgW	
 
--- SQL Server 2017 build versions
--- https://bit.ly/2FLY88I
+-- What's New in SQL Server 2019 (Database Engine)
+-- https://bit.ly/2Q29fhz
 
--- Performance and Stability Fixes in SQL Server 2017 CU Builds
--- https://bit.ly/2GV3CNM
-
--- What's New in SQL Server 2017 (Database Engine)
--- https://bit.ly/2HjSeyQ
-
--- What's New in SQL Server 2017
--- https://bit.ly/2saQ4Yh
+-- What's New in SQL Server 2019
+-- https://bit.ly/2PY442b
 
 -- Announcing the Modern Servicing Model for SQL Server
 -- https://bit.ly/2xHnh0l
@@ -110,7 +84,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- Download SQL Server Management Studio (SSMS)
 -- https://bit.ly/1OcupT9
 
--- Download and install Azure Data Studio  
+-- Download and install Azure Data Studio 
 -- https://bit.ly/2vgke1A
 
 
@@ -185,9 +159,6 @@ ORDER BY name OPTION (RECOMPILE);
 -- optimize for ad hoc workloads (should be 1)
 -- priority boost (should be zero)
 -- remote admin connections (should be 1)
-
--- New configuration options for SQL Server 2017
--- clr strict security is new in SQL Server 2017, and is enabled by default
 
 -- sys.configurations (Transact-SQL)
 -- https://bit.ly/2HsyDZI
@@ -355,7 +326,7 @@ FROM sys.dm_os_host_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- 1033 for os_language_version is US-English
 
--- SQL Server 2017 requires Windows Server 2012 or newer
+-- SQL Server 2019 requires Windows Server 2012 or newer (may change by RTM)
 
 -- Hardware and Software Requirements for Installing SQL Server
 -- https://bit.ly/2y3ka5L
@@ -373,7 +344,7 @@ WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 
 -- Gives you some useful information about the composition and relative load on your NUMA nodes
 -- You want to see an equal number of schedulers on each NUMA node
--- Watch out if SQL Server 2017 Standard Edition has been installed 
+-- Watch out if SQL Server 2019 Standard Edition has been installed 
 -- on a physical or virtual machine with more than four sockets or more than 24 physical cores
 
 -- sys.dm_os_nodes (Transact-SQL)
@@ -459,7 +430,7 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 -- https://bit.ly/2dn1H6r
 
 
--- Hardware information from SQL Server 2017  (Query 18) (Hardware Info)
+-- Hardware information from SQL Server 2019  (Query 18) (Hardware Info)
 SELECT cpu_count AS [Logical CPU Count], scheduler_count, 
        (socket_count * cores_per_socket) AS [Physical Core Count], 
        socket_count AS [Socket Count], cores_per_socket, numa_node_count,
@@ -469,7 +440,7 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
        sqlserver_start_time AS [SQL Server Start Time], 
 	   virtual_machine_type_desc AS [Virtual Machine Type], 
        softnuma_configuration_desc AS [Soft NUMA Configuration], 
-	   sql_memory_model_desc, process_physical_affinity -- New in SQL Server 2017
+	   sql_memory_model_desc, container_type_desc -- New in SQL Server 2019
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -511,7 +482,6 @@ EXEC sys.xp_instance_regread N'HKEY_LOCAL_MACHINE', N'SYSTEM\CurrentControlSet\s
 -- This is valid for VMware VMs
 -- Recommended value for intensive I/O patterns from VMware is: RequestRingPages=32,MaxQueueDepth=254
 -- https://kb.vmware.com/s/article/2053145
-
 
 
 -- Get BIOS date from Windows Registry (Query 21) (BIOS Date)
@@ -710,7 +680,7 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 -- database files on each drive since SQL Server was last started
 
 
--- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 32) (IO Latency by File)
+-- Calculates average latency per read, per write, and per total input/output for each database file  (Query 32) (IO Latency by File)
 SELECT DB_NAME(fs.database_id) AS [Database Name], CAST(fs.io_stall_read_ms/(1.0 + fs.num_of_reads) AS NUMERIC(10,1)) AS [avg_read_latency_ms],
 CAST(fs.io_stall_write_ms/(1.0 + fs.num_of_writes) AS NUMERIC(10,1)) AS [avg_write_latency_ms],
 CAST((fs.io_stall_read_ms + fs.io_stall_write_ms)/(1.0 + fs.num_of_reads + fs.num_of_writes) AS NUMERIC(10,1)) AS [avg_io_latency_ms],
@@ -765,6 +735,7 @@ DROP TABLE #IOWarningResults;
 
 -- Diagnostics in SQL Server help detect stalled and stuck I/O operations
 -- https://bit.ly/2qtaw73
+
 
 
 -- Resource Governor Resource Pool information (Query 34) (RG Resource Pools)
@@ -995,13 +966,13 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
 		N'PREEMPTIVE_XE_GETTARGETSTATE', N'PREEMPTIVE_XE_SESSIONCOMMIT',
 		N'PREEMPTIVE_XE_TARGETINIT', N'PREEMPTIVE_XE_TARGETFINALIZE',
         N'PWAIT_ALL_COMPONENTS_INITIALIZED', N'PWAIT_DIRECTLOGCONSUMER_GETNEXT',
-		N'QDS_PERSIST_TASK_MAIN_LOOP_SLEEP',
-		N'QDS_ASYNC_QUEUE',
+		N'QDS_PERSIST_TASK_MAIN_LOOP_SLEEP', N'QDS_ASYNC_QUEUE',
         N'QDS_CLEANUP_STALE_QUERIES_TASK_MAIN_LOOP_SLEEP', N'REQUEST_FOR_DEADLOCK_SEARCH',
 		N'RESOURCE_QUEUE', N'SERVER_IDLE_CHECK', N'SLEEP_BPOOL_FLUSH', N'SLEEP_DBSTARTUP',
 		N'SLEEP_DCOMSTARTUP', N'SLEEP_MASTERDBREADY', N'SLEEP_MASTERMDREADY',
         N'SLEEP_MASTERUPGRADED', N'SLEEP_MSDBSTARTUP', N'SLEEP_SYSTEMTASK', N'SLEEP_TASK',
-        N'SLEEP_TEMPDBSTARTUP', N'SNI_HTTP_ACCEPT', N'SP_SERVER_DIAGNOSTICS_SLEEP',
+        N'SLEEP_TEMPDBSTARTUP', N'SNI_HTTP_ACCEPT', N'SOS_WORK_DISPATCHER',
+		N'SP_SERVER_DIAGNOSTICS_SLEEP',
 		N'SQLTRACE_BUFFER_FLUSH', N'SQLTRACE_INCREMENTAL_FLUSH_SLEEP', N'SQLTRACE_WAIT_ENTRIES',
 		N'WAIT_FOR_RESULTS', N'WAITFOR', N'WAITFOR_TASKSHUTDOWN', N'WAIT_XTP_HOST_WAIT',
 		N'WAIT_XTP_OFFLINE_CKPT_NEW_LOG', N'WAIT_XTP_CKPT_CLOSE', N'WAIT_XTP_RECOVERY',
