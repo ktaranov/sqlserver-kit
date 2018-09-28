@@ -25,7 +25,11 @@ Additionally, SSMS 17.x can be installed side-by-side with SSMS 16.X or SQL Serv
 
 
 ## Supported Operating systems
-This release of SSMS supports the following platforms when used with the latest available service pack: Windows 10, Windows 8, Windows 8.1, Windows 7 (SP1),  Windows Server 2016, Windows Server 2012 (64-bit), Windows Server 2012 R2 (64-bit), Windows Server 2008 R2 (64-bit)
+This release of **SSMS 17.x Version** supports the following platforms when used with the latest available service pack: Windows 10, Windows 8, Windows 8.1, Windows 7 (SP1),  Windows Server 2016, Windows Server 2012 (64-bit), Windows Server 2012 R2 (64-bit), Windows Server 2008 R2 (64-bit)
+
+SSMS 18.x is not supported on Windows 8. Windows 10 / Windows Server 2016 requires version 1607 (10.0.14393) or later:
+Due to the new dependency on NetFx 4.7.2, SSMS 18.0 does not install on Windows 8, older versions of Windows 10, and Windows Server 2016. SSMS setup will block on those operating systems. Windows 8.1 is still supported.
+
 
 ### Note
 SSMS 17.X is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
@@ -34,9 +38,24 @@ Because of this, we do not anticipate that SSMS with all latest updates applied)
 Customers are advised to contact support, should they encounter any issues with SSMS on Windows Server 2016.
 Support will then work with customers to determine if the issue is with SSMS or Visual Studio or with Windows compatibility, and route the issue appropriately.
 
+SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell unlocks all the accessibility fixes that went in to both SSMS and Visual Studio.
+
 
 ## Available Languages
-SQL Server Management Studio for another languages:
+**SQL Server Management Studio 18.0 (preview 4)**:
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x804) |
+ [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x404) |
+ [English (United States)](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x409) |
+ [French](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x40c) |
+ [German](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x407) |
+ [Italian](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x410) |
+ [Japanese](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x411) |
+ [Korean](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x412) |
+ [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x416) |
+ [Russian](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x419) |
+ [Spanish](https://go.microsoft.com/fwlink/?linkid=2014662&clcid=0x40a)
+
+**SQL Server Management Studio 17.9** for another languages:
  [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x804) |
  [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x404) |
  [English (United States)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x409)
@@ -49,7 +68,7 @@ SQL Server Management Studio for another languages:
  [Russian](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x419) |
  [Spanish](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x40a)
 
-SQL Server Management Studio 17.9 Upgrade Package (upgrades 17.x to 17.9):
+**SQL Server Management Studio 17.9 Upgrade Package** (upgrades 17.x to 17.9):
  [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x804) |
  [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x404) |
  [English (United States)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x409) |
@@ -64,37 +83,42 @@ SQL Server Management Studio 17.9 Upgrade Package (upgrades 17.x to 17.9):
 
 
 ## SQL Server Management Studio Download Links and Release Info
+ - **GA** - General Availability
+ - **PP** - Public Preview
+ - Size in Megabytes for English version
 
-| Version/Download Link            | Build         | Release Date | Size, Mb |
-|----------------------------------|---------------|--------------|---------:|
-| [17.9 Release] **Latest**        | 14.0.17285.0  | 2018-09-04   |      807 |
-| [17.8.1 Release]                 | 14.0.17277.0  | 2018-06-26   |      806 |
-| [17.8 Release] **Deprecated**    | 14.0.17276.0  | 2018-06-21   |      806 |
-| [17.7 Release]                   | 14.0.17254.0  | 2018-05-09   |      803 |
-| [17.6 Release]                   | 14.0.17230.0  | 2018-03-20   |      802 |
-| [17.5 Release]                   | 14.0.17224.0  | 2018-02-15   |      802 |
-| [17.4 Release]                   | 14.0.17213.0  | 2017-12-07   |      802 |
-| [17.3 Release]                   | 14.0.17199.0  | 2017-10-09   |      801 |
-| [17.2 Release]                   | 14.0.17177.0  | 2017-08-07   |      819 |
-| [17.1 Release]                   | 14.0.17119.0  | 2017-05-24   |      784 |
-| [17.0 Release]                   | 14.0.17099.0  | 2017-04-25   |      729 |
-| [17.0 RC3 Release]               | 14.0.17028.0  | 2017-03-09   |      677 |
-| [17.0 RC2 Release]               | 14.0.16150.0  | 2017-02-01   |      682 |
-| [17.0 RC1 Release]               | 14.0.16000.64 | 2016-11-16   |      687 |
-| [16.5.3 Release]                 | 13.0.16106.4  | 2017-01-26   |      898 |
-| 16.5.2 Release **Deprecated**    | 13.0.16105.4  | 2017-01-18   |      898 |
-| [16.5.1 Release]                 | 13.0.16100.1  | 2016-12-05   |      894 |
-| [16.5 Release]                   | 13.0.16000.28 | 2016-10-26   |      894 |
-| [16.4.1 Release]                 | 13.0.15900.1  | 2016-09-23   |      894 |
-| 16.4 Release **Deprecated**      | 13.0.15800.18 | 2016-09-20   |          |
-| [16.3 Release]                   | 13.0.15700.28 | 2016-08-15   |      806 |
-| [July 2016 Hotfix Update]        | 13.0.15600.2  | 2016-07-13   |      825 |
-| July 2016 Release **Deprecated** | 13.0.15500.91 | 2016-07-01   |          |
-| [June 2016 Release]              | 13.0.15000.23 | 2016-06-01   |      825 |
-| [SQL Server 2014 SP1]            | 12.0.4100.1   | 2015-05-14   |      815 |
-| [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
-| [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
+| Version/Download Link                  | Build         | Release Date | Size, Mb |
+|----------------------------------------|---------------|--------------|---------:|
+| [18.0 Preview 4 Release] **Latest PP** | 14.0.18040.0  | 2018-09-24   |      456 |
+| [17.9 Release] **Latest GA**           | 14.0.17285.0  | 2018-09-04   |      807 |
+| [17.8.1 Release]                       | 14.0.17277.0  | 2018-06-26   |      806 |
+| [17.8 Release] **Deprecated**          | 14.0.17276.0  | 2018-06-21   |      806 |
+| [17.7 Release]                         | 14.0.17254.0  | 2018-05-09   |      803 |
+| [17.6 Release]                         | 14.0.17230.0  | 2018-03-20   |      802 |
+| [17.5 Release]                         | 14.0.17224.0  | 2018-02-15   |      802 |
+| [17.4 Release]                         | 14.0.17213.0  | 2017-12-07   |      802 |
+| [17.3 Release]                         | 14.0.17199.0  | 2017-10-09   |      801 |
+| [17.2 Release]                         | 14.0.17177.0  | 2017-08-07   |      819 |
+| [17.1 Release]                         | 14.0.17119.0  | 2017-05-24   |      784 |
+| [17.0 Release]                         | 14.0.17099.0  | 2017-04-25   |      729 |
+| [17.0 RC3 Release]                     | 14.0.17028.0  | 2017-03-09   |      677 |
+| [17.0 RC2 Release]                     | 14.0.16150.0  | 2017-02-01   |      682 |
+| [17.0 RC1 Release]                     | 14.0.16000.64 | 2016-11-16   |      687 |
+| [16.5.3 Release]                       | 13.0.16106.4  | 2017-01-26   |      898 |
+| 16.5.2 Release **Deprecated**          | 13.0.16105.4  | 2017-01-18   |      898 |
+| [16.5.1 Release]                       | 13.0.16100.1  | 2016-12-05   |      894 |
+| [16.5 Release]                         | 13.0.16000.28 | 2016-10-26   |      894 |
+| [16.4.1 Release]                       | 13.0.15900.1  | 2016-09-23   |      894 |
+| 16.4 Release **Deprecated**            | 13.0.15800.18 | 2016-09-20   |          |
+| [16.3 Release]                         | 13.0.15700.28 | 2016-08-15   |      806 |
+| [July 2016 Hotfix Update]              | 13.0.15600.2  | 2016-07-13   |      825 |
+| July 2016 Release **Deprecated**       | 13.0.15500.91 | 2016-07-01   |          |
+| [June 2016 Release]                    | 13.0.15000.23 | 2016-06-01   |      825 |
+| [SQL Server 2014 SP1]                  | 12.0.4100.1   | 2015-05-14   |      815 |
+| [SQL Server 2012 SP3]                  | 11.0.6020.0   | 2015-11-21   |      964 |
+| [SQL Server 2008 R2]                   | 10.50.4000    | 2012-07-02   |      161 |
 
+[18.0 Preview 4 Release]:https://go.microsoft.com/fwlink/?linkid=2014662
 [17.9 Release]:https://go.microsoft.com/fwlink/?linkid=2014306
 [17.8.1 Release]:https://go.microsoft.com/fwlink/?linkid=875802
 [17.8 Release]:https://go.microsoft.com/fwlink/?linkid=875673
