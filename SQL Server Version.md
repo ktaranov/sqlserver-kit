@@ -10,6 +10,7 @@ Headers:
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
  - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
+ - [Microsoft SQL Server 2019 Builds](#microsoft-sql-server-2019-builds)
  - [Microsoft SQL Server 2017 Builds](#microsoft-sql-server-2017-builds)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
  - [Microsoft SQL Server 2014 Builds](#microsoft-sql-server-2014-builds)
@@ -442,6 +443,7 @@ For details about how to assess the performance differences of your most importa
 ## Microsoft SQL Server 2019 Builds
 <a id="microsoft-sql-server-2019-builds"></a>
 More additional information about latest vNext SQL Server release you can find in this articles:
+ - [What's new in SQL Server 2019](https://docs.microsoft.com/en-us/sql/sql-server/what-s-new-in-sql-server-ver15?view=sql-server-ver15#utf-8-support)
  - [What's New in the First Public CTP of SQL Server 2019](https://www.mssqltips.com/sqlservertip/5710/whats-new-in-the-first-public-ctp-of-sql-server-2019/)
  - [Froid: How SQL Server vNext Might Fix the Scalar Functions Problem](https://www.brentozar.com/archive/2018/01/froid-sql-server-vnext-might-fix-scalar-functions-problem/)
  - [What’s New in SQL Server 2019 System Tables](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019-system-tables/)
@@ -449,6 +451,7 @@ More additional information about latest vNext SQL Server release you can find i
  - [What’s New in SQL Server 2019: Faster Table Variables (And New Parameter Sniffing Issues)](https://www.brentozar.com/archive/2018/09/sql-server-2019-faster-table-variables-and-new-parameter-sniffing-issues/)
  - [What’s New in SQL Server 2019: Adaptive Memory Grants](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019-adaptive-memory-grants/)
  - [Leaked: SQL Server 2019 Big Data Clusters Introduction Video](https://www.brentozar.com/archive/2018/09/leaked-sql-server-2019-big-data-clusters-introduction-video/)
+ - [Native UTF-8 Support in SQL Server 2019: Savior, False Prophet, or Both?](https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP 2.0:
 
@@ -462,6 +465,8 @@ Microsoft SQL Server vNext (CTP2.0) - 15.0.1000.34 (X64)
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.0] | 2019-09-24   | 2018-09-18 |       |        |     1532 |
+
+[Microsoft SQL Server 2019 CTP2.0]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 
 
 ## Microsoft SQL Server 2017 Builds
