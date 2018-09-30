@@ -451,7 +451,7 @@ More additional information about latest vNext SQL Server release you can find i
  - [What’s New in SQL Server 2019: Faster Table Variables (And New Parameter Sniffing Issues)](https://www.brentozar.com/archive/2018/09/sql-server-2019-faster-table-variables-and-new-parameter-sniffing-issues/)
  - [What’s New in SQL Server 2019: Adaptive Memory Grants](https://www.brentozar.com/archive/2018/09/whats-new-in-sql-server-2019-adaptive-memory-grants/)
  - [Leaked: SQL Server 2019 Big Data Clusters Introduction Video](https://www.brentozar.com/archive/2018/09/leaked-sql-server-2019-big-data-clusters-introduction-video/)
- - [Native UTF-8 Support in SQL Server 2019: Savior, False Prophet, or Both?](https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install)
+ - [Native UTF-8 Support in SQL Server 2019: Savior, False Prophet, or Both?](https://sqlquantumleap.com/2018/09/28/native-utf-8-support-in-sql-server-2019-savior-false-prophet-or-both/)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP 2.0:
 
