@@ -1,7 +1,8 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**592** trace flags)
+Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**592** trace flags).
 
-⚠ **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
+⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
+And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
 ⚠ **Some trace flags were introduced in specific SQL Server versions.
 For more information on the applicable version, see the Microsoft Support article associated with a specific trace flag.**
@@ -588,8 +589,9 @@ Link: None
 **Undocumented trace flag**<br />
 Function: Extend error `8152` (`String or binary data would be truncated. The statement has been terminated.`) description with useful information - which column had the truncation and which row.<br />
 Link: https://www.procuresql.com/blog/2018/09/26/string-or-binary-data-get-truncated/<br />
+Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/32908417-binary-or-string-data-would-be-truncated-error<br />
 Scope: global or session<br />
-SQL Server Version: 2019
+SQL Server Version: 2019<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_460.sql
 
 
