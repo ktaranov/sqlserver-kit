@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Complete list of Microsoft SQL Server trace flags (**591** trace flags)
+Complete list of Microsoft SQL Server trace flags (**592** trace flags)
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your test environment first. And consult professionals first if you are the slightest uncertain about the effects of your changes.**
 
@@ -66,6 +66,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Prince Kumar Rastogi ([b](http://www.sqlservergeeks.com/) | [t](https://twitter.com/princerastogi2))
  - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
  - Slava Oks ([t](https://twitter.com/slava_oks/))
+ - John Sterrett ([b](https://www.procuresql.com/))
 
 
 <a id="unknown-trace-flags"></a>
@@ -176,6 +177,7 @@ GO
 ## Recommended Trace Flags
 
  - [Trace Flag 272](#272) (for SQL Server 2012)
+ - [Trace Flag 460](#460) (for SQL Server 2019)
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
@@ -186,6 +188,8 @@ GO
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
+
+**Trace Flag 460** Extend error `8152` (`String or binary data would be truncated. The statement has been terminated.`) description with useful information - which column had the truncation and which row.
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
@@ -232,7 +236,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **591 trace flags**
+Summary: **592 trace flags**
 
 
 <a id="-1"></a>
@@ -577,6 +581,16 @@ Link: [SQL Server 6.5: Some Useful Trace Flag]
 **Undocumented trace flag**<br />
 Function: Prints ”compile issued” message in the errorlog for each compiled statement, when used together with 3605<br />
 Link: None
+
+
+<a id="460"></a>
+#### Trace Flag: 460
+**Undocumented trace flag**<br />
+Function: Extend error `8152` (`String or binary data would be truncated. The statement has been terminated.`) description with useful information - which column had the truncation and which row.<br />
+Link: https://www.procuresql.com/blog/2018/09/26/string-or-binary-data-get-truncated/<br />
+Scope: global or session<br />
+SQL Server Version: 2019
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_460.sql
 
 
 <a id="506"></a>
