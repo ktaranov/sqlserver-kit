@@ -60,6 +60,7 @@ SELECT message_id, severity, text
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                       |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                      |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                      |
+|        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
 |        596 | Cannot continue execution because the session is in the kill state.                                      | [596_link1]                          |
 |        657 | Could not disable support for increased partitions in database …                                         | [657_link1]                          |
@@ -140,6 +141,7 @@ SELECT message_id, severity, text
 [19]:http://nebraskasql.blogspot.com/2018/08/the-mystery-of-exploding-t-log.html
 [20]:https://www.sqlskills.com/blogs/paul/pfs-corruption-after-upgrading-from-sql-server-2014/
 [21]:https://sqlquantumleap.com/2018/09/28/native-utf-8-support-in-sql-server-2019-savior-false-prophet-or-both/
+[22]:https://sqlstudies.com/2018/09/13/using-table-valued-parameters-with-sp_executesql/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
