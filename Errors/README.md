@@ -49,13 +49,14 @@ SELECT message_id, severity, text
 
 ## SQL Server Errors
 
-| message_id | Description                                                                                         | Article                              |
-|-----------:|-----------------------------------------------------------------------------------------------------|--------------------------------------|
+| message_id | Description                                                                                              | Article                              |
+|-----------:|----------------------------------------------------------------------------------------------------------|--------------------------------------|
 |          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …         | [Out of user memory quota][7]        |
 |          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while      … | [Compressed backup errors][8]        |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]   |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?] |
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1]                          |
+|        156 | Incorrect syntax near the keyword 'ORDER'.                                                               | [156_link1][23]                      |
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                          |
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                       |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                      |
@@ -142,6 +143,7 @@ SELECT message_id, severity, text
 [20]:https://www.sqlskills.com/blogs/paul/pfs-corruption-after-upgrading-from-sql-server-2014/
 [21]:https://sqlquantumleap.com/2018/09/28/native-utf-8-support-in-sql-server-2019-savior-false-prophet-or-both/
 [22]:https://sqlstudies.com/2018/09/13/using-table-valued-parameters-with-sp_executesql/
+[23]:http://sqlstudies.com/2018/09/19/you-cant-delete-top-x-with-an-order-by/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
