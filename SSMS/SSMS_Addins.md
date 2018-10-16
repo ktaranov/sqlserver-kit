@@ -1,57 +1,58 @@
 # SQL Server Management Studio add-ins
 Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
 
-| Name                                                  | Download page                 | Release Date | Support SSMS Version               | Developer            | Free version | Price |
-|-------------------------------------------------------|-------------------------------|--------------|:-----------------------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2018-01-04   | 2008/2012/2014/2016/2017           | Solutions Crew GmbH  | Yes          |  €150 |
-| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008/2012/2014/2016/2017           | Smashing Jedis LLC   | Yes          |   $99 |
-| [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                               | Red Gate             | Yes          | No    |
-| [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008/2012/2014/2016/2017           | Red Gate             | Yes          | No    |
-| [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008/2012/2014/2016/2017           | Red Gate             | No           |  $369 |
-| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012/2014/2016/2017                | Red Gate             | No           |  $495 |
-| [Supratimas](#supratimas)                             | [Supratimas]                  | 2017-07-11   | 2008/2012/2014/2016/2017           | TTRider LLC          | Yes          | No    |
-| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2012/2014/2016/2017                | Mladen Prajdić       | No           |   €30 |
-| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008/2012/2014                     | Gudu Software        | No           |   $50 |
-| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008/2012/2014/2016/2017           | SQL Sentry           | Yes          | No    |
-| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008/2012/2014                     | Dave ballantyne      | Yes          | No    |
-| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008/2012/2014/2016/2017           | SQLTreeo             | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-07-13   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008/2012/2014/2016/2017           | ApexSQL tools        | No           |  $299 |
-| [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2017-08-16   | 2008/2012/2014/2016/2017           | ApexSQL tools        | Yes          |  $499 |
-| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008/2012/2014                     | Spotlight Essentials | Yes          | No    |
-| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2017-09-30   | 2005/2008/2012/2014/2016/2017      | Devart               | No           |  $249 |
-| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2017-09-30   | 2005/2008/2012/2014/2016/2017      | Devart               | No           |  $199 |
-| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2017-09-30   | 2008/2012/2014/2016                | Devart               | No           |  $149 |
-| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2017-09-30   | 2008/2012/2014/2016                | Devart               | No           |  $99  |
-| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2017-09-30   | 2008/2012/2014/2016/2017           | Devart               | Yes          | No    |
-| [dbForge Monitor](#dbforge-monitor)                   | [dbForge Monitor]             | 2017-09-30   | 2008/2012/2014/2016                | Devart               | Yes          | No    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2017-09-30   | 2000/2005/2008/2012/2014/2016/2017 | Devart               | Yes          |  $149 |
-| [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008/2012/2014                     | SoftTree             | No           |  $179 |
-| [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008/2012/2014                     | UbitSoft             | No           |  $195 |
-| [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008/2012/2014                     | Alex Maslyukov       | Yes          | No    |
-| [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008/2012                          | Tao Klerks           | Yes          | No    |
-| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2017-08-24   | 2012/2014/2016/2017                | Vlasov Studio        | No           |   $49 |
-| [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008/2012                          | Tomáš Bauer          | Yes          | No    |
-| [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016/2017                          | Microsoft            | Yes          | No    |
-| [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012/2014/2016/2017                | VersionSQL           | Yes          |  $149 |
+| Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
+|-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2018-08-10   | 2008-2017            | Solutions Crew GmbH  | Yes          |  $150 |
+| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
+| [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                 | Red Gate             | Yes          | No    |
+| [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
+| [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008-2017            | Red Gate             | No           |  $369 |
+| [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012-2017            | Red Gate             | No           |  $495 |
+| [Supratimas](#supratimas)                             | [Supratimas]                  | 2017-07-11   | 2008-2017            | TTRider LLC          | Yes          | No    |
+| [SSMS Tools Pack](#ssms-tools-pack)                   | [SSMS Tools Pack]             | 2016-11-28   | 2012-2017            | Mladen Prajdić       | No           |   €30 |
+| [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008-2014            | Gudu Software        | No           |   $50 |
+| [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008-2017            | SQL Sentry           | Yes          | No    |
+| [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008-2014            | Dave ballantyne      | Yes          | No    |
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008-2017            | SQLTreeo             | No           |   €50 |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2008-2017            | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-07-13   | 2008-2017            | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008-2017            | ApexSQL tools        | Yes          | No    |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008-2017            | ApexSQL tools        | No           |  $299 |
+| [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2017-08-16   | 2008-2017            | ApexSQL tools        | Yes          |  $499 |
+| [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008-2014            | Spotlight Essentials | Yes          | No    |
+| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2017-09-30   | 2005-2017            | Devart               | No           |  $249 |
+| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2017-09-30   | 2005-2017            | Devart               | No           |  $199 |
+| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2017-09-30   | 2008-2016            | Devart               | No           |  $149 |
+| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2017-09-30   | 2008-2016            | Devart               | No           |  $99  |
+| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2017-09-30   | 2008-2017            | Devart               | Yes          | No    |
+| [dbForge Monitor](#dbforge-monitor)                   | [dbForge Monitor]             | 2017-09-30   | 2008-2016            | Devart               | Yes          | No    |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2017-09-30   | 2000-2017            | Devart               | Yes          |  $149 |
+| [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008-2014            | SoftTree             | No           |  $179 |
+| [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008-2014            | UbitSoft             | No           |  $195 |
+| [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008-2014            | Alex Maslyukov       | Yes          | No    |
+| [Poor Mans T-SQL Formatter](#poor-mans)               | [Poor Mans T-SQL Formatter]   | 2013-10-23   | 2008-2012            | Tao Klerks           | Yes          | No    |
+| [Tabs Studio](#tabs-studio)                           | [Tabs Studio]                 | 2017-08-24   | 2012-2017            | Vlasov Studio        | No           |   $49 |
+| [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008-2012            | Tomáš Bauer          | Yes          | No    |
+| [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016-2017            | Microsoft            | Yes          | No    |
+| [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012-2017            | VersionSQL           | Yes          |  $149 |
 
 
 <a id="ssmsboost"></a>
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
-Release date: 2018-01-04<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Release date: 2018-08-10<br/>
+Support Version: 2008-2017<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
-Price: €150
+Price: $150
 
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.
 
 The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
 
 Licensing options: after 30 day trial period register and get free community license or buy the professional version.
+
 [Features list / SSMSBoost version comparison](http://www.ssmsboost.com/VersionCompare)
 
 
@@ -59,7 +60,7 @@ Licensing options: after 30 day trial period register and get free community lic
 ## SqlSmash
 Download page: [SqlSmash]<br/>
 Release date: 2017-06-10<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: Smashing Jedis LLC<br/>
 Free version: Yes<br/>
 Price: $99
@@ -104,7 +105,7 @@ SQL Code Guard is a free solution for SQL Server that provides fast and comprehe
 ## SQL Search
 Download page: [SQL Search]<br/>
 Release date: 2017-02-27<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: Red Gate<br/>
 Free version: Yes<br/>
 Price: No
@@ -122,7 +123,7 @@ SQL Search is a free add-in for SQL Server Management Studio that lets you quick
 ## Red Gate SQL Test
 Download page: [Red Gate SQL Test]<br/>
 Release date: 2017-03-21<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: Red Gate<br/>
 Free version: No<br/>
 Price: $369
@@ -134,7 +135,7 @@ Write unit tests (using the open-source [tSQLt framework](https://github.com/tSQ
 ## Red Gate SQL Source Control
 Download page: [Red Gate SQL Source Control]<br/>
 Release date: 2017-06-30<br/>
-Support Version: 2012/2014/2016/2017<br/>
+Support Version: 2012-2017<br/>
 Developer: Red Gate<br/>
 Free version: No<br/>
 Price: $495
@@ -155,7 +156,7 @@ Connect your databases to your source control system
 ## Supratimas
 Download page: [Supratimas]<br/>
 Release date: 2017-07-11<br/>
-Support Version: 2008/2012/2014/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: TTRider LLC<br/>
 Free version: Yes<br/>
 Price: No
@@ -167,7 +168,7 @@ SQL Server query plan execution visualizer
 ## SSMS Tools Pack
 Download page: [SSMS Tools Pack]<br/>
 Release date: 2016-11-28<br/>
-Support Version: 2012/2014/2016/2017<br/>
+Support Version: 2012-2017<br/>
 Developer: Mladen Prajdić<br/>
 Free version: No<br/>
 Price: €30
@@ -186,7 +187,7 @@ Price: €30
 ## SQL Pretty Printer
 Download page: [SQL Pretty Printer]<br/>
 Release date: 2015-11-05<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: Gudu Software<br/>
 Free version: No<br/>
 Price: No
@@ -203,7 +204,7 @@ Price: No
 ## SQL Sentry Plan Explorer
 Download page: [SQL Sentry Plan Explorer]<br/>
 Release date: 2017-05-25<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: SQL Sentry<br/>
 Free version: Yes<br/>
 Price: No
@@ -216,7 +217,7 @@ It is a lightweight standalone app that contains many of the plan analysis featu
 ## TSQL Code Smells Finder
 Download page: [TSQL Code Smells Finder]<br/>
 Release date: 2013-02-15<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: Dave ballantyne<br/>
 Free version: Yes<br/>
 Price: No
@@ -229,7 +230,7 @@ This is a proof of concept work which will analyze TSQL scripts in an attempt to
 ## SQLTreeo
 Download page: [SQLTreeo]<br/>
 Release date: 2017-06-06<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: Jakub Dvorak<br/>
 Free version: No<br/>
 Price: €50
@@ -247,7 +248,7 @@ Price: €50
 ## ApexSQL Complete
 Download page: [ApexSQL Complete]<br/>
 Release date: 2017-10-26<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
@@ -266,7 +267,7 @@ Price: No
 ## ApexSQL Refactor
 Download page: [ApexSQL Refactor]<br/>
 Release date: 2017-05-08<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
@@ -286,7 +287,7 @@ With ApexSQL Refactor you can:
 ## ApexSQL Search
 Download page: [ApexSQL Search]<br/>
 Release date: 2017-06-19<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: Yes<br/>
 Price: No
@@ -304,7 +305,7 @@ With ApexSQL Search you can:
 ## ApexSQL Source Control
 Download page: [ApexSQL Source Control]<br/>
 Release date: 2017-10-12<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
 Price: $299
@@ -323,7 +324,7 @@ Price: $299
 ## ApexSQL Unit Test
 Download page: [ApexSQL Unit Test]<br/>
 Release date: 2017-08-22<br/>
-Support Version: 2008/2012/2014/2016/2017<br/>
+Support Version: 2008-2017<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
 Price: $499
@@ -342,7 +343,7 @@ Price: $499
 ## Spotlight Developer
 Download page: [Spotlight Developer]<br/>
 Release date: 2016-02-14<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: Spotlight Essentials<br/>
 Free version: Yes<br/>
 Price: No
@@ -360,7 +361,7 @@ You also get a FREE System health Check, Performance Health Analysis and compreh
 ## dbForge Source Control
 Download page: [dbForge Source Control]<br/>
 Release date: 2017-09-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
+Support Version: 2005-2017<br/>
 Developer: Devart<br/>
 Free version: No<br/>
 Price: $249
@@ -373,7 +374,7 @@ The tool can link your databases to all popular source control systems, and deli
 ## dbForge Unit Test
 Download page: [dbForge Unit Test]<br/>
 Release date: 2017-09-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
+Support Version: 2005-2016<br/>
 Developer: Devart<br/>
 Free version: No<br/>
 Price: $199
@@ -387,7 +388,7 @@ dbForge Unit Test for SQL Server functionality allows you to develop stable and 
 ## dbForge Data Pump
 Download page: [dbForge Data Pump]<br/>
 Release date: 2017-09-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
+Support Version: 2005-2017<br/>
 Developer: Devart<br/>
 Free version: No<br/>
 Price: $149
@@ -400,7 +401,7 @@ The tool supports 10+ widely used data formats and includes a number of advanced
 ## dbForge Index Manager
 Download page: [dbForge Index Manager]<br/>
 Release date: 2017-09-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
+Support Version: 2005-2017<br/>
 Developer: Devart<br/>
 Free version: No<br/>
 Price: $99
@@ -415,7 +416,7 @@ dbForge Index Manager for SQL Server will significantly boost SQL Server perform
 ## dbForge Search
 Download page: [dbForge Search]<br/>
 Release date: 2017-09-30<br/>
-Support Version: 2005/2008/2008R2/2012/2014/2016/2017<br/>
+Support Version: 2005-2017<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -429,7 +430,7 @@ With dbForge Object Search for SQL Server you no longer need to look through the
 ## dbForge Monitor
 Download page: [dbForge Monitor]<br/>
 Release date: 2017-04-20<br/>
-Support Version: 2008/2008R2/2012/2014/2016<br/>
+Support Version: 2008-2016<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -444,7 +445,7 @@ Price: No
 ## dbForge SQL Complete
 Download page: [dbForge SQL Complete]<br/>
 Release date: 2017-09-30<br/>
-Support Version: SQL Server Compact/SQL Azure/2000/2005/2008/2008R2/2012/2014/2016<br/>
+Support Version: 2000-2016<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: $149
@@ -457,7 +458,7 @@ column names, SQL operators, etc., but instead allows concentrating on writing h
 ## SoftTree SQL Assistant
 Download page: [SoftTree SQL Assistant]<br/>
 Release date: 2016-03-18<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: SoftTree<br/>
 Free version: No<br/>
 Price: $179
@@ -469,7 +470,7 @@ SQL Assistant equips database developers and DBAs with the productivity tools th
 ## SQL Enlight for SSMS
 Download page: [SQL Enlight for SSMS]<br/>
 Release date: 2016-04-25<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: UbitSoft<br/>
 Free version: No<br/>
 Price: $195
@@ -487,7 +488,7 @@ Price: $195
 ## SQL Hunting Dog
 Download page: [SQL Hunting Dog]<br/>
 Release date: 2016-03-03<br/>
-Support Version: 2008/2012/2014<br/>
+Support Version: 2008-2014<br/>
 Developer: Alex Maslyukov<br/>
 Free version: Yes<br/>
 Price: No
@@ -502,7 +503,7 @@ Price: No
 ## Poor Mans T-SQL Formatter
 Download page: [Poor Mans T-SQL Formatter]<br/>
 Release date: 2013-10-23<br/>
-Support Version: 2008/2012<br/>
+Support Version: 2008-2012<br/>
 Developer: Tao Klerks<br/>
 Free version: Yes<br/>
 Price: No
@@ -515,7 +516,7 @@ It does not distinguish between different types of DML, it does not parse full e
 ## Tabs Studio
 Download page: [Tabs Studio]<br/>
 Release date: 2017-08-24<br/>
-Support Version: 2012/2014/2016/2017<br/>
+Support Version: 2012-2017<br/>
 Developer: Vlasov Studio<br/>
 Free version: No<br/>
 Price: $49
@@ -536,7 +537,7 @@ Tabs Studio is a Visual Studio and SSMS extension empowering you to work comfort
 ## Workload Addin
 Download page: [Workload Addin]<br/>
 Release date: 2017-02-07<br/>
-Support Version: 2008/2012<br/>
+Support Version: 2008-2012<br/>
 Developer: Tomáš Bauer<br/>
 Free version: Yes<br/>
 Price: No
@@ -552,7 +553,7 @@ This tool can automatically collect information about executed SQL statements an
 ## SQL Server Diagnostics
 Download page: [SQL Server Diagnostics]<br/>
 Release date: 2017-06-22<br/>
-Support Version: 2016/2017<br/>
+Support Version: 2016-2017<br/>
 Developer: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -564,7 +565,7 @@ SQL Server Diagnostics is a collection of micro-services which enables SQL Serve
 ## VersionSQL
 Download page: [VersionSQL]<br/>
 Release date: 2017-02-16<br/>
-Support Version: 2012/2014/2016/2017<br/>
+Support Version: 2012-2017<br/>
 Developer: VersionSQL<br/>
 Free version: Yes<br/>
 Price: $149
