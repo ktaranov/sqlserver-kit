@@ -85,7 +85,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 275 SQLSQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 275 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -333,6 +333,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure Instance Calculator](http://www.azureinstances.info/)
     - [PowerBI Premium Calculator](https://powerbi.microsoft.com/en-us/calculator/)
     - [Nuodb Oracle and SQL Server Calculator ](https://www.nuodb.com/product/license-cost-calculator)
+    - [Github SQL Trending](https://github.com/trending/sql)
 
 **[⬆ back to top](#table-of-contents)**
 
