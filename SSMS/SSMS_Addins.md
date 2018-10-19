@@ -14,8 +14,8 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Pretty Printer](#sql-pretty-printer)             | [SQL Pretty Printer]          | 2015-11-05   | 2008-2014            | Gudu Software        | No           |   $50 |
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008-2017            | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008-2014            | Dave ballantyne      | Yes          | No    |
-| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2008-2017            | SQLTreeo             | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2008-2017            | ApexSQL tools        | Yes          | No    |
+| [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2012-2017            | SQLTreeo             | No           |   €50 |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2012-2017            | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-07-13   | 2008-2017            | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008-2017            | ApexSQL tools        | Yes          | No    |
 | [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008-2017            | ApexSQL tools        | No           |  $299 |
