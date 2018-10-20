@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **33** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **34** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
@@ -36,6 +36,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Workload Addin](#workload-addin)                     | [Workload Addin]              | 2017-02-07   | 2008-2012            | Tomáš Bauer          | Yes          | No    |
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016-2017            | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012-2017            | VersionSQL           | Yes          |  $149 |
+| [Spotlight Tuning Pack](#spotlight-tuning-pack)       | [Spotlight Tuning Pack]       | 2018-06-01   | 2012-2017            | Quest Software Inc   | Yes          |  $180 |
 
 
 <a id="ssmsboost"></a>
@@ -573,6 +574,19 @@ Price: $149
 Lightweight add-in to connect your databases to your source control system
 
 
+<a id="#spotlight-tuning-pack"></a>
+## Spotlight Tuning Pack
+Download page: [Spotlight Tuning Pack]<br/>
+Release date: 2018-06-01<br/>
+Support Version: 2012-2017<br/>
+Developer: Quest Software Inc<br/>
+Free version: Yes<br/>
+Price: $180
+
+Powerful SQL optimization and query plan analysis.
+The analysis will indicate whether the Query Plan can be tuned to improve performance, or whether the SQL Statement can be rewritten to optimize its efficiency.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
@@ -607,6 +621,7 @@ Lightweight add-in to connect your databases to your source control system
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
+[Spotlight Tuning Pack]:https://www.spotlightcloud.io/spotlight-cloud-tuning-pack
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
