@@ -82,7 +82,7 @@ SELECT message_id, severity, text
 |       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor       … | [3743_link1]                         |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log        … | [3930_link1]                         |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                         |
-|       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                       |
+|       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                     |
 |       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored              … | [4629_link1][12]                     |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                … | [4922_link1]                         |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                         |
@@ -95,12 +95,13 @@ SELECT message_id, severity, text
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                 … | [7357_link1][2]                      |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                      |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                          |
-|       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                    … | [8624_link1]                         |
+|       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                     |
+|       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                      | [8624_link1]                         |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource        … | [8651_link1]                         |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                       … | [8672_link1]                         |
 |       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), pa       … | [8909_link1]                         |
 |       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or       … | [8921_link1]                         |
-|       8948 | Database error: Page %S_PGID is marked with the wrong type in PFS page %S_PGID. PFS status 0x%x        … | [8948_link1][20]                      |
+|       8948 | Database error: Page %S_PGID is marked with the wrong type in PFS page %S_PGID. PFS status 0x%x        … | [8948_link1][20]                     |
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related        … | [9001_link1][16]                     |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19]    |
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                      … | [13570_link1]                        |
@@ -117,7 +118,7 @@ SELECT message_id, severity, text
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                                    | [25713_link1],[25713_link2]          |
 |      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                       | [26023_link1][13]                    |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                       | [33111_link1]                        |
-|      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and         … | [33206_link1][10]                    |
+|      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                    |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                        |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                    |
 
@@ -144,6 +145,7 @@ SELECT message_id, severity, text
 [21]:https://sqlquantumleap.com/2018/09/28/native-utf-8-support-in-sql-server-2019-savior-false-prophet-or-both/
 [22]:https://sqlstudies.com/2018/09/13/using-table-valued-parameters-with-sp_executesql/
 [23]:http://sqlstudies.com/2018/09/19/you-cant-delete-top-x-with-an-order-by/
+[24]:https://www.brentozar.com/archive/2018/10/sum-avg-and-arithmetic-overflow/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
