@@ -60,6 +60,7 @@ SELECT message_id, severity, text
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                          |
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                       |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                      |
+|        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT.…      | [264_link1][25]                      |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                      |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
@@ -146,6 +147,7 @@ SELECT message_id, severity, text
 [22]:https://sqlstudies.com/2018/09/13/using-table-valued-parameters-with-sp_executesql/
 [23]:http://sqlstudies.com/2018/09/19/you-cant-delete-top-x-with-an-order-by/
 [24]:https://www.brentozar.com/archive/2018/10/sum-avg-and-arithmetic-overflow/
+[25]:https://www.sqltheater.com/blog/using-the-same-column-twice-in-an-update-statement/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
