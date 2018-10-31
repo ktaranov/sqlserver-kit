@@ -1,7 +1,7 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 25, 2018
+-- Last Modified: November 11, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -56,8 +56,8 @@ IF NOT EXISTS (SELECT * WHERE CONVERT(varchar(128), SERVERPROPERTY('ProductVersi
 SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version Info];
 ------
 
--- SQL Server 2014 RTM Branch Builds						SQL Server 2014 SP1 Branch Builds						SQL Server 2014 SP2 Branch Builds					
--- Build			Description			Release Date		Build			Description		Release Date			Build			Description		Release Date		
+-- SQL Server 2014 RTM Branch Builds						SQL Server 2014 SP1 Branch Builds						SQL Server 2014 SP2 Branch Builds					SQL Server 2014 SP23 Branch Builds				
+-- Build			Description			Release Date		Build			Description		Release Date			Build			Description		Release Date		Build			Description		Release Date
 -- 11.0.9120        CTP1				6/2/2013
 -- 12.0.1524		CTP2				10/15/2013
 -- 12.0.2000        RTM					4/1/2014
@@ -79,7 +79,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 12.0.2569		CU14				6/20/2016			12.0.4459		SP1 CU7			6/20/2016 ----------->	12.0.5000		SP2 RTM			7/11/2016
 --															12.0.4468		SP1 CU8			8/15/2016				12.0.5511		SP2 CU1			8/25/2016
 --                                                          12.0.4474		SP1 CU9		    10/17/2016				12.0.5522		SP2 CU2			10/17/2016
---															12.0.4487		SP1 CU9 + HF	11/8/2016				12.0.5532		SP2 CU2 + HF    11/8/2016  https://technet.microsoft.com/library/security/MS16-136
+--															12.0.4487		SP1 CU9 + HF	11/8/2016				12.0.5532		SP2 CU2 + HF    11/8/2016  
 --                                                          12.0.4491       SP1 CU10		12/28/2016				12.0.5537		SP2 CU3			12/28/2016
 --															12.0.4502		SP1 CU11		2/21/2017				12.0.5540		SP2 CU4			2/21/2017
 --															12.0.4511		SP1 CU12        4/17/2017				12.0.5546		SP2 CU5			4/17/2017
@@ -90,7 +90,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																													12.0.5571		SP2 CU10		1/16/2018
 --                                                                                                                  12.0.5579		SP2 CU11		3/19/2018
 --																													12.0.5589		SP2 CU12		6/18/2018
---																													12.0.5590		SP2 CU13		8/27/2018	
+--																													12.0.5590		SP2 CU13		8/27/2018
+--																													12.0.5600		SP3 CU14	   10/15/2018
+--																																										12.0.6024	SP3 RTM		10/30/2018	    	
 
 
 
@@ -480,7 +482,8 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
        committed_target_kb/1024 AS [Committed Target Memory (MB)],
        max_workers_count AS [Max Workers Count], 
 	   affinity_type_desc AS [Affinity Type], 
-       sqlserver_start_time AS [SQL Server Start Time], 
+       sqlserver_start_time AS [SQL Server Start Time],
+	   DATEDIFF(hour, sqlserver_start_time, GETDATE()) AS [SQL Server Up Time (hrs)],
 	   virtual_machine_type_desc AS [Virtual Machine Type]
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 ------
