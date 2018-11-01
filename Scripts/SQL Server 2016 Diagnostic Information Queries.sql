@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 25, 2018
+-- Last Modified: November 11, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -483,7 +483,8 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
        committed_target_kb/1024 AS [Committed Target Memory (MB)],
        max_workers_count AS [Max Workers Count], 
 	   affinity_type_desc AS [Affinity Type], 
-       sqlserver_start_time AS [SQL Server Start Time], 
+       sqlserver_start_time AS [SQL Server Start Time],
+	   DATEDIFF(hour, sqlserver_start_time, GETDATE()) AS [SQL Server Up Time (hrs)],
 	   virtual_machine_type_desc AS [Virtual Machine Type],
 	   softnuma_configuration_desc AS [Soft NUMA Configuration], 
 	   sql_memory_model_desc -- New in SQL Server 2016
