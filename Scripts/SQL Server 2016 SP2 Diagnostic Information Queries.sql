@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 SP2 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 25, 2018
+-- Last Modified: November 11, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -453,7 +453,8 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
        physical_memory_kb/1024 AS [Physical Memory (MB)], 
        max_workers_count AS [Max Workers Count], 
 	   affinity_type_desc AS [Affinity Type], 
-       sqlserver_start_time AS [SQL Server Start Time], 
+       sqlserver_start_time AS [SQL Server Start Time],
+	   DATEDIFF(hour, sqlserver_start_time, GETDATE()) AS [SQL Server Up Time (hrs)],
 	   virtual_machine_type_desc AS [Virtual Machine Type], 
        softnuma_configuration_desc AS [Soft NUMA Configuration], 
 	   sql_memory_model_desc
@@ -842,12 +843,12 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 
 
 -- Get VLF Counts for all databases on the instance (Query 36) (VLF Counts)
-SELECT [name] AS [Database Name], [VLF Count] 
-FROM sys.databases AS db WITH (NOLOCK)
-CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count] 
-			 FROM sys.dm_db_log_info(db.database_id) 
-             GROUP BY file_id) AS li
-ORDER BY [VLF Count] DESC  OPTION (RECOMPILE);
+SELECT [name] AS [Database Name], [VLF Count]
+FROM sys.databases AS db WITH (NOLOCK)
+CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count]
+		     FROM sys.dm_db_log_info(db.database_id)
+			 GROUP BY file_id) AS li
+ORDER BY [VLF Count] DESC OPTION (RECOMPILE);
 ------
 
 -- High VLF counts can affect write performance to the log file
