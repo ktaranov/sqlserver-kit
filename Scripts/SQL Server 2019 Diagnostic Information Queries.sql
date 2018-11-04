@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 25, 2018
+-- Last Modified: November 11, 2018
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -59,6 +59,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- SQL Server 2019 Builds																		
 -- Build			Description							Release Date	URL to KB Article								
 -- 15.0.1000.34		CTP 2.0								9/24/2018
+-- 15.0.1100.94		CTP 2.1								11/7/2018
 
 		
 															
@@ -437,7 +438,8 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
        physical_memory_kb/1024 AS [Physical Memory (MB)], 
        max_workers_count AS [Max Workers Count], 
 	   affinity_type_desc AS [Affinity Type], 
-       sqlserver_start_time AS [SQL Server Start Time], 
+       sqlserver_start_time AS [SQL Server Start Time],
+	   DATEDIFF(hour, sqlserver_start_time, GETDATE()) AS [SQL Server Up Time (hrs)],
 	   virtual_machine_type_desc AS [Virtual Machine Type], 
        softnuma_configuration_desc AS [Soft NUMA Configuration], 
 	   sql_memory_model_desc, container_type_desc -- New in SQL Server 2019
@@ -834,12 +836,12 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 
 
 -- Get VLF Counts for all databases on the instance (Query 37) (VLF Counts)
-SELECT [name] AS [Database Name], [VLF Count] 
-FROM sys.databases AS db WITH (NOLOCK)
-CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count] 
-			 FROM sys.dm_db_log_info(db.database_id) 
-             GROUP BY file_id) AS li
-ORDER BY [VLF Count] DESC  OPTION (RECOMPILE);
+SELECT [name] AS [Database Name], [VLF Count]
+FROM sys.databases AS db WITH (NOLOCK)
+CROSS APPLY (SELECT file_id, COUNT(*) AS [VLF Count]
+		     FROM sys.dm_db_log_info(db.database_id)
+			 GROUP BY file_id) AS li
+ORDER BY [VLF Count] DESC OPTION (RECOMPILE);
 ------
 
 -- High VLF counts can affect write performance to the log file
@@ -1872,7 +1874,23 @@ ORDER BY total_worker_time DESC OPTION (RECOMPILE);
 -- https://bit.ly/2q1Q6BM
 
 
--- Get QueryStore Options for this database (Query 83) (QueryStore Options)
+-- Determine which scalar UDFs are in-lineable (Query 83) (Inlineable UDFs)
+SELECT OBJECT_NAME(m.object_id) AS [Function Name], is_inlineable, inline_type
+FROM sys.sql_modules AS m WITH (NOLOCK) 
+LEFT OUTER JOIN sys.dm_exec_function_stats AS efs WITH (NOLOCK)
+ON  m.object_id = efs.object_id
+WHERE efs.type_desc = N'SQL_SCALAR_FUNCTION'
+OPTION (RECOMPILE);
+------
+
+-- Scalar UDF Inlining
+-- https://bit.ly/2JU971M
+
+-- sys.sql_modules (Transact-SQL)
+-- https://bit.ly/2Qt216S
+
+
+-- Get QueryStore Options for this database (Query 84) (QueryStore Options)
 SELECT actual_state_desc, desired_state_desc, [interval_length_minutes],
        current_storage_size_mb, [max_storage_size_mb], 
 	   query_capture_mode_desc, size_based_cleanup_mode_desc
@@ -1889,7 +1907,7 @@ FROM sys.database_query_store_options WITH (NOLOCK) OPTION (RECOMPILE);
 -- https://bit.ly/1kHSl7w
 
 
--- Get highest aggregate duration queries over last hour (Query 84) (High Aggregate Duration Queries)
+-- Get highest aggregate duration queries over last hour (Query 85) (High Aggregate Duration Queries)
 WITH AggregatedDurationLastHour
 AS
 (SELECT q.query_id, SUM(rs.count_executions * rs.avg_duration) AS total_duration,
@@ -1934,7 +1952,7 @@ ORDER BY od.total_duration DESC OPTION (RECOMPILE);
 
 
 
--- Get highest aggregate CPU time queries over last hour (Query 85) (High Aggregate CPU Queries)
+-- Get highest aggregate CPU time queries over last hour (Query 86) (High Aggregate CPU Queries)
 WITH AggregatedCPULastHour
 AS
 (SELECT q.query_id, SUM(rs.count_executions * rs.avg_cpu_time) AS total_cpu_time,
@@ -1978,7 +1996,7 @@ ORDER BY od.total_cpu_time DESC OPTION (RECOMPILE);
 -- Requires that QueryStore is enabled for this database
 
 
--- Get input buffer information for the current database (Query 86) (Input Buffer)
+-- Get input buffer information for the current database (Query 87) (Input Buffer)
 SELECT es.session_id, DB_NAME(es.database_id) AS [Database Name],
        es.login_time, es.cpu_time, es.logical_reads, es.memory_usage,
        es.[status], ib.event_info AS [Input Buffer]
@@ -2000,7 +2018,7 @@ AND es.session_id <> @@SPID OPTION (RECOMPILE);
 
 
 
--- Get any resumable index rebuild operation information (Query 87) (Resumable Index Rebuild)
+-- Get any resumable index rebuild operation information (Query 88) (Resumable Index Rebuild)
 SELECT OBJECT_NAME(iro.object_id) AS [Object Name], iro.index_id, iro.name AS [Index Name],
        iro.sql_text, iro.last_max_dop_used, iro.partition_number, iro.state_desc, iro.start_time, iro.percent_complete
 FROM  sys.index_resumable_operations AS iro WITH (NOLOCK)
@@ -2011,7 +2029,7 @@ OPTION (RECOMPILE);
 -- https://bit.ly/2pYSWqq
 
 
--- Get database automatic tuning options (Query 88) (Automatic Tuning Options)
+-- Get database automatic tuning options (Query 89) (Automatic Tuning Options)
 SELECT [name], desired_state_desc, actual_state_desc, reason_desc
 FROM sys.database_automatic_tuning_options WITH (NOLOCK)
 OPTION (RECOMPILE);
@@ -2022,7 +2040,7 @@ OPTION (RECOMPILE);
 
 
 
--- Look at recent Full backups for the current database (Query 89) (Recent Full Backups)
+-- Look at recent Full backups for the current database (Query 90) (Recent Full Backups)
 SELECT TOP (30) bs.machine_name, bs.server_name, bs.database_name AS [Database Name], bs.recovery_model,
 CONVERT (BIGINT, bs.backup_size / 1048576 ) AS [Uncompressed Backup Size (MB)],
 CONVERT (BIGINT, bs.compressed_backup_size / 1048576 ) AS [Compressed Backup Size (MB)],
