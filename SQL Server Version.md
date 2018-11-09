@@ -453,13 +453,13 @@ More additional information about latest vNext SQL Server release you can find i
  - [Leaked: SQL Server 2019 Big Data Clusters Introduction Video](https://www.brentozar.com/archive/2018/09/leaked-sql-server-2019-big-data-clusters-introduction-video/)
  - [Native UTF-8 Support in SQL Server 2019: Savior, False Prophet, or Both?](https://sqlquantumleap.com/2018/09/28/native-utf-8-support-in-sql-server-2019-savior-false-prophet-or-both/)
 
-Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP 2.0:
+Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server vNext (CTP2.0) - 15.0.1000.34 (X64)
-   Sep 18 2018 02:32:04
+Microsoft SQL Server 2019 (CTP2.1) - 15.0.1100.94 (X64)
+   Nov  1 2018 14:35:49
    Copyright (C) 2018 Microsoft Corporation
-   Developer Edition (64-bit) on …
+   Developer Edition (64-bit) on…
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
