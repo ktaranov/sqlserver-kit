@@ -39,7 +39,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
  - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 592 Trace Flags') (**Complete list - 592 trace flags**)
- - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2017**)
+ - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
     - [SplitterB_CLR](/CLR/SplitterB_CLR.sql)
@@ -501,5 +501,5 @@ R:
 ## License
 [MIT](/LICENSE)
 
-If some procedures or scripts are restricted due to **ELUA** (or we can not find original author), please email or add issue - we remove/update it immediately.
+If some procedures or scripts are restricted due to **ELUA** (or we can not find original author), please email us or add issue - we remove/update it immediately.
 Thanks for understanding and patience.
