@@ -22,11 +22,19 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 ## Table of Contents
  - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)
+   - [SQL Server Blogs](#blogs)
+   - [Security Resources](#security)
+   - [SQL Server Free Videos](#free-videos)
+   - [Free Database Podcasts](#podcasts)
+   - [SQL Courses](#courses)
+   - [SQL Server Backwards Compatibility](#backwards-compatibility)
+   - [Social, Forum and Messenger SQL Server Groups](#sql-social)
+   - [SQL Server Open Source Projects](#open-source)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
- - [Free SQL Server, R ebooks](#free-ebooks)
+ - [Free SQL Server and R ebooks](#free-ebooks)
  - [License](#license)
 
 
@@ -440,7 +448,7 @@ BIML Bloggers
 
 
 <a id="free-ebooks"></a>
-## Free SQL Server, R ebooks
+## Free SQL Server and R ebooks
 
 SQL Server:
  - [Awesome Red Gate ebooks](http://www.red-gate.com/community/books/)
