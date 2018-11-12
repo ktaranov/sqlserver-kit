@@ -129,7 +129,7 @@ Profits:
 | 2019    | [Install 2019 CTP 2.1]                                               | 15.0.1100.94                                 | 2018-11-06                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU11 KB4462262]                             | 14.0.1000.169<br/>14.0.3038.14               | 2017-10-02<br/>2018-09-20                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU3 KB4458871]                              | 13.0.5026.0<br/>13.0.5216.0                  | 2018-04-24<br/>2018-09-21                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP2 CU14 KB4459860] | 12.0.5000.0<br/>12.0.5600.1                  | 2016-07-11<br/>2018-10-15                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP3 KB4022619]      | 12.0.5000.0<br/>12.0.6024.0                  | 2016-07-11<br/>2018-10-30                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]        | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]    | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]           | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -142,7 +142,7 @@ Profits:
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU3 KB4458871]:https://support.microsoft.com/help/4458871
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
-[SP2 CU14 KB4459860]:https://support.microsoft.com/help/4459860
+[SP3 KB4022619]:https://support.microsoft.com/help/4022619
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/en-us/help/4018073
 [ADV180002 (GDR)]:https://support.microsoft.com/en-us/help/4057116
