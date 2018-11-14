@@ -4714,6 +4714,13 @@ Scope: global or session
 
 
 <a id="9591"></a>
+#### Trace Flag: 9576
+Function: Revert to the original (SQL Server 2016) implementation of database level health detection in AlwaysOn Availability Groups<br />
+Link: [Docs Trace Flags]<br />
+Link: https://blogs.msdn.microsoft.com/sql_server_team/sql-server-availability-groups-enhanced-database-level-failover/<br />
+Scope: global
+
+<a id="9591"></a>
 #### Trace Flag: 9591
 Function: Disables log block compression in Always On Availability Groups.
 Log block compression is the default behavior used with both synchronous and asynchronous replicas in SQL Server 2012 and SQL Server 2014.
