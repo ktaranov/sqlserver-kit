@@ -669,15 +669,15 @@ All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2014 (SP2-CU14) (KB4459860) - 12.0.5600.1 (X64) 
-   Sep 27 2018 21:47:31 
+Microsoft SQL Server 2014 (SP3) (KB4022619) - 12.0.6024.0 (X64)
+   Sep  7 2018 01:37:51
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on
 ```
 
 | Build        | File version     | Branch | Type | KB / Description                                                                                                                   | Release Date | Fixes | Public | Size, Mb |
 |--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
-| 12.0.6024.0  | 2014.120.6024.1  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
+| 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
 | 12.0.5600.1  | 2014.120.5600.1  | SP2    | CU   | [4459860 Cumulative Update 14 for SQL Server 2014 SP2]                                                                             | 2018-10-15   |     8 |      6 |      678 |
 | 12.0.5590.1  | 2014.120.5590.1  | SP2    | CU   | [4456287 Cumulative Update 13 for SQL Server 2014 SP2]                                                                             | 2018-08-27   |     4 |      4 |      679 |
 | 12.0.5589.7  | 2014.120.5589.7  | SP2    | CU   | [4130489 Cumulative Update 12 for SQL Server 2014 SP2]                                                                             | 2018-06-18   |    27 |     16 |      678 |
