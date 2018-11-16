@@ -127,7 +127,7 @@ Profits:
 | Version | Latest Update                                                        | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 CTP 2.1]                                               | 15.0.1100.94                                 | 2018-11-06                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
-| 2017    | [Install 2017 RTM] then [CU11 KB4462262]                             | 14.0.1000.169<br/>14.0.3038.14               | 2017-10-02<br/>2018-09-20                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU12 KB4464082]                             | 14.0.1000.169<br/>14.0.3045.24               | 2017-10-02<br/>2018-10-24                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU3 KB4458871]                              | 13.0.5026.0<br/>13.0.5216.0                  | 2018-04-24<br/>2018-09-21                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] Or [Developer Free] then<br/>[SP3 KB4022619]      | 12.0.5000.0<br/>12.0.6024.0                  | 2016-07-11<br/>2018-10-30                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]        | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -138,7 +138,7 @@ Profits:
 
 [Install 2019 CTP 2.0]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[CU11 KB4462262]:https://support.microsoft.com/help/4462262
+[CU12 KB4464082]:https://support.microsoft.com/help/4464082
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU3 KB4458871]:https://support.microsoft.com/help/4458871
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
