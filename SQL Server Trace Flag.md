@@ -33,7 +33,9 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
  - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
- - [Derik Hammer Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
+ - [Derik Hammer - Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
+ - [Brent Ozar - Bad Idea Jeans: Finding Undocumented Trace Flags](https://rebrand.ly/brent-finding-undocumented-trace-flags)
+ - [Joe Obbish - A Method to Find Trace Flags](https://rebrand.ly/joe-finding-undocumented-trace-flags)
 
 **Great thanks to:**
  - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
@@ -68,7 +70,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
  - Slava Oks ([t](https://twitter.com/slava_oks/))
  - John Sterrett ([b](https://www.procuresql.com/))
- - [deweter](https://github.com/deweter)
+ - Pavel Málek ([t](https://twitter.com/malekpav))
 
 
 <a id="unknown-trace-flags"></a>
