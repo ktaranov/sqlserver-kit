@@ -491,6 +491,7 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3045.24  | 2017.140.3045.24  | RTM    | CU   | [4464082 Microsoft SQL Server 2017 CU12]                                                                 | 2018-10-24   | 2018-10-19 |    22 |     18 |      488 |
 | 14.0.3038.14  | 2017.140.3038.14  | RTM    | CU   | [4462262 Microsoft SQL Server 2017 CU11]                                                                 | 2018-09-20   | 2018-09-14 |    21 |     14 |      487 |
 | 14.0.3037.1   | 2017.140.3037.1   | RTM    | CU   | [4342123 Microsoft SQL Server 2017 CU10]                                                                 | 2018-08-27   | 2018-07-27 |    30 |     22 |      486 |
 | 14.0.3035.2   | 2017.140.3035.2   | RTM    | COD  | [4293805 Security update for SQL Server 2017 CU: August 14, 2018] **CVE-2018-8273**                      | 2018-08-14   | 2018-07-07 |     1 |      1 |      486 |
@@ -516,6 +517,7 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[4464082 Microsoft SQL Server 2017 CU12]:https://support.microsoft.com/help/4464082
 [4462262 Microsoft SQL Server 2017 CU11]:https://support.microsoft.com/help/4462262
 [4342123 Microsoft SQL Server 2017 CU10]:https://support.microsoft.com/help/4342123
 [4293805 Security update for SQL Server 2017 CU: August 14, 2018]:https://support.microsoft.com/help/4293805
