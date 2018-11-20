@@ -550,6 +550,7 @@ Microsoft SQL Server 2016  (SP2 CU3) (KB4458871) - 13.0.5216.0 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5216.0   | 2015.130.5233.0   | SP2    | CU   | [4464106 Cumulative Update 4 for SQL Server 2016 SP2]                                                                          | 2018-11-13   | 2018-11-03 |    42 |     36 |      690 |
 | 13.0.5216.0   | 2015.130.5216.0   | SP2    | CU   | [4458871 Cumulative Update 3 for SQL Server 2016 SP2]                                                                          | 2018-09-21   | 2018-09-14 |    41 |     27 |      688 |
 | 13.0.5201.2   | 2015.131.5201.2   | SP2    | CU   | [4458621 Security update for SQL Server 2016 SP2 CU: August 19, 2018] **CVE-2018-8273**                                        | 2018-08-19   | 2018-08-18 |     1 |      0 |      672 |
 | 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | **Withdrawn** [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      672 |
@@ -614,6 +615,7 @@ Microsoft SQL Server 2016  (SP2 CU3) (KB4458871) - 13.0.5216.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[4464106 Cumulative Update 4 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4464106
 [4458871 Cumulative Update 3 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4458871
 [4458621 Security update for SQL Server 2016 SP2 CU: August 19, 2018]:https://support.microsoft.com/help/4458621
 [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018]:https://support.microsoft.com/help/4293807/
