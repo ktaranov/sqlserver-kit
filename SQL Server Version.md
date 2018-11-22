@@ -542,15 +542,15 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
-Microsoft SQL Server 2016  (SP2 CU3) (KB4458871) - 13.0.5216.0 (X64)
-    Sep 14 2018 09:14:49
-    Copyright (c) Microsoft Corporation
-    Developer Edition (64-bit) on Windows …
+Microsoft SQL Server 2016 (SP2-CU4) (KB4464106) - 13.0.5233.0 (X64)
+   Nov  3 2018 00:01:54
+   Copyright (c) Microsoft Corporation
+   Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.5216.0   | 2015.130.5233.0   | SP2    | CU   | [4464106 Cumulative Update 4 for SQL Server 2016 SP2]                                                                          | 2018-11-13   | 2018-11-03 |    42 |     36 |      690 |
+| 13.0.5233.0   | 2015.130.5233.0   | SP2    | CU   | [4464106 Cumulative Update 4 for SQL Server 2016 SP2]                                                                          | 2018-11-13   | 2018-11-03 |    42 |     36 |      690 |
 | 13.0.5216.0   | 2015.130.5216.0   | SP2    | CU   | [4458871 Cumulative Update 3 for SQL Server 2016 SP2]                                                                          | 2018-09-21   | 2018-09-14 |    41 |     27 |      688 |
 | 13.0.5201.2   | 2015.131.5201.2   | SP2    | CU   | [4458621 Security update for SQL Server 2016 SP2 CU: August 19, 2018] **CVE-2018-8273**                                        | 2018-08-19   | 2018-08-18 |     1 |      0 |      672 |
 | 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | **Withdrawn** [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      672 |
