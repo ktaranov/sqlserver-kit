@@ -558,6 +558,7 @@ Microsoft SQL Server 2016 (SP2-CU4) (KB4464106) - 13.0.5233.0 (X64)
 | 13.0.5149.0   | 2015.130.5149.0   | SP2    | CU   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
 | 13.0.5081.1   | 2015.131.5081.1   | SP2    | COD  | [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018] **CVE-2018-8273**                                       | 2018-05-30   | 2018-05-19 |     1 |      0 |      492 |
 | 13.0.5026.0   | 2015.130.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
+| 13.0.4541.0   | 2015.130.4541.0   | SP1    | CU   | [4464343 Cumulative Update 12 for SQL Server 2016 SP1]                                                                         | 2018-11-13   | 2018-10-27 |    21 |     16 |      761 |
 | 13.0.4531.0   | 2015.130.4531.0   | SP1    | COD  | [4465443 FIX: The "modification_counter" in DMV sys.dm_db_stats_properties shows incorrect value when partitions are merged]   | 2018-09-27   | 2018-09-22 |     1 |      1 |      759 |
 | 13.0.4528.0   | 2015.130.4528.0   | SP1    | CU   | [4459676 Cumulative Update 11 for SQL Server 2016 SP1]                                                                         | 2018-09-18   | 2018-08-31 |    14 |      8 |      762 |
 | 13.0.4522.0   | 2015.130.4522.0   | SP1    | CU   | **Withdrawn** [4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      774 |
@@ -622,6 +623,7 @@ Microsoft SQL Server 2016 (SP2-CU4) (KB4464106) - 13.0.5233.0 (X64)
 [4340355 Cumulative Update 2 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4340355
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
 [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018]:https://support.microsoft.com/help/4293802
+[4464343 Cumulative Update 12 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4464343
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
 [4459676 Cumulative Update 11 for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/help/4459676
 [4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018]:https://support.microsoft.com/help/4293808
