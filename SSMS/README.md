@@ -68,18 +68,18 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
  [Russian](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x419) |
  [Spanish](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x40a)
 
-**SQL Server Management Studio 17.9 Upgrade Package** (upgrades 17.x to 17.9):
- [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x804) |
- [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x404) |
- [English (United States)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x409) |
- [French](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x40c) |
- [German](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x407) |
- [Italian](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x410) |
- [Japanese](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x411) |
- [Korean](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x412) |
- [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x416) |
- [Russian](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x419) |
- [Spanish](https://go.microsoft.com/fwlink/?linkid=2014215&clcid=0x40a)
+**SQL Server Management Studio 17.9.1 Upgrade Package** (upgrades 17.x to 17.9.1):
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x804) |
+ [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x404) |
+ [English (United States)](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x409) |
+ [French](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x40c) |
+ [German](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x407) |
+ [Italian](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x410) |
+ [Japanese](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x411) |
+ [Korean](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x412) |
+ [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x416) |
+ [Russian](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x419) |
+ [Spanish](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x40a)
 
 
 ## SQL Server Management Studio Download Links and Release Info
@@ -91,7 +91,8 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 |----------------------------------------|---------------|--------------|---------:|
 | [18.0 Preview 5 Release] **Latest PP** | 15.0.18068.0  | 2018-11-15   |      457 |
 | [18.0 Preview 4 Release]               | 15.0.18040.0  | 2018-09-24   |      456 |
-| [17.9 Release] **Latest GA**           | 14.0.17285.0  | 2018-09-04   |      807 |
+| [17.9.1 Release] **Latest GA**         | 14.0.17289.0  | 2018-11-21   |      807 |
+| [17.9 Release]                         | 14.0.17285.0  | 2018-09-04   |      807 |
 | [17.8.1 Release]                       | 14.0.17277.0  | 2018-06-26   |      806 |
 | [17.8 Release] **Deprecated**          | 14.0.17276.0  | 2018-06-21   |      806 |
 | [17.7 Release]                         | 14.0.17254.0  | 2018-05-09   |      803 |
@@ -121,6 +122,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 [18.0 Preview 5 Release]:https://go.microsoft.com/fwlink/?linkid=2041155
 [18.0 Preview 4 Release]:https://go.microsoft.com/fwlink/?linkid=2014662
+[17.9.1 Release]:https://go.microsoft.com/fwlink/?linkid=2043154
 [17.9 Release]:https://go.microsoft.com/fwlink/?linkid=2014306
 [17.8.1 Release]:https://go.microsoft.com/fwlink/?linkid=875802
 [17.8 Release]:https://go.microsoft.com/fwlink/?linkid=875673
