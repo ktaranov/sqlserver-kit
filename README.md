@@ -49,6 +49,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
       - [Azure SQL Database Diagnostic Information Queries](/Scripts/Azure%20SQL%20Database%20Diagnostic%20Information%20Queries.sql)
+      - [SQL Server 2019 Diagnostic Information Queries](/Scripts/SQL%20Server%202019%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2016 Diagnostic Information Queries](/Scripts/SQL%20Server%202016%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2014 Diagnostic Information Queries](Scripts/SQL%20Server%202014%20Diagnostic%20Information%20Queries.sql)
@@ -334,6 +335,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [PowerBI Premium Calculator](https://powerbi.microsoft.com/en-us/calculator/)
     - [Nuodb Oracle and SQL Server Calculator ](https://www.nuodb.com/product/license-cost-calculator)
     - [Github SQL Trending](https://github.com/trending/sql)
+    - [SQLCallStackResolver - Utility to resolve SQL Server callstacks to their correct symbolic form](https://github.com/arvindshmicrosoft/SQLCallStackResolver) (by Arvind Shyamsundar)
 
 **[⬆ back to top](#table-of-contents)**
 
