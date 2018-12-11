@@ -343,6 +343,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [PowerBI Premium Calculator](https://powerbi.microsoft.com/en-us/calculator/)
     - [Nuodb Oracle and SQL Server Calculator ](https://www.nuodb.com/product/license-cost-calculator)
     - [Github SQL Trending](https://github.com/trending/sql)
+    - [SQLCallStackResolver - Utility to resolve SQL Server callstacks to their correct symbolic form](https://github.com/arvindshmicrosoft/SQLCallStackResolver) (by Arvind Shyamsundar)
 
 **[⬆ back to top](#table-of-contents)**
 

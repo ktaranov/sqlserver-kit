@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**592** trace flags).
+Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**593** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -33,7 +33,9 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
  - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
- - [Derik Hammer Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
+ - [Derik Hammer - Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
+ - [Brent Ozar - Bad Idea Jeans: Finding Undocumented Trace Flags](https://rebrand.ly/brent-finding-undocumented-trace-flags)
+ - [Joe Obbish - A Method to Find Trace Flags](https://rebrand.ly/joe-finding-undocumented-trace-flags)
 
 **Great thanks to:**
  - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
@@ -68,6 +70,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
  - Slava Oks ([t](https://twitter.com/slava_oks/))
  - John Sterrett ([b](https://www.procuresql.com/))
+ - Pavel Málek ([t](https://twitter.com/malekpav))
 
 
 <a id="unknown-trace-flags"></a>
@@ -237,7 +240,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **592 trace flags**
+Summary: **593 trace flags**
 
 
 <a id="-1"></a>
@@ -2283,6 +2286,7 @@ In this case, heap tables redo operation may generate a runtime assert dump or t
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3200975/<br />
 Link: https://support.microsoft.com/help/4101554/<br />
+Link: https://support.microsoft.com/help/4339858/<br />
 Scope: global only
 
 
@@ -4711,6 +4715,14 @@ Link: https://www.mssqltips.com/sqlservertip/4537/sql-server-2016-availability-g
 Link: https://msdn.microsoft.com/en-us/library/mt735149.aspx<br />
 Link: [Tune compression for availability group]<br />
 Scope: global or session
+
+
+<a id="9576"></a>
+#### Trace Flag: 9576
+Function: Revert to the original (SQL Server 2016) implementation of database level health detection using TF 9576 as either a startup parameter or enabled using DBCC TRACEON command.
+This new implementation is currently only available for SQL Server running on Windows and will be ported to SQL Server 2017 on Linux in an upcoming cumulative update.<br />
+Link: https://blogs.msdn.microsoft.com/sql_server_team/sql-server-availability-groups-enhanced-database-level-failover/<br />
+Scope: global only
 
 
 <a id="9591"></a>

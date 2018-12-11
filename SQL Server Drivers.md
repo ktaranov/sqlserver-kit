@@ -18,7 +18,7 @@ This driver is developed, tested, and supported by Microsoft.
 ### JDBC
 The JDBC SQL driver is a Java implementation of the TDS protocol, which is supported by all modern versions of SQL Server. This driver is developed, tested, and supported by Microsoft.
 
-[Microsoft JDBC Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server) | [Download JDBC Driver](https://go.microsoft.com/fwlink/?linkid=852460)
+[Microsoft JDBC Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server) | [Download JDBC Driver](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017)
 
 
 ### ODBC
