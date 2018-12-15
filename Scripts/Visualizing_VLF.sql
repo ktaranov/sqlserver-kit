@@ -18,9 +18,11 @@ DECLARE @logInfoResults AS TABLE
 INSERT INTO @logInfoResults
 EXEC sp_executesql N'DBCC LOGINFO WITH NO_INFOMSGS';
  
-SELECT cast(FileSize / 1024.0 / 1024 AS DECIMAL(20,1)) as FileSizeInMB,
-case when FSeqNo = 0 then 'Available - Never Used' else (Case when status = 2 then 'In Use' else 'Available' end) end as TextStatus,
-[Status] ,
-REPLICATE('x', FileSize / MIN(FileSize) over()) as [BarChart ________________________________________________________________________________________________]
+SELECT cast(FileSize / 1024.0 / 1024 AS DECIMAL(20,1)) as FileSizeInMB
+     , CASE WHEN FSeqNo = 0 THEN 'Available - Never Used'
+            ELSE (CASE WHEN [Status] = 2 THEN 'In Use' ELSE 'Available' END)
+       END AS TextStatus
+     , [Status]
+     , REPLICATE('x', FileSize / MIN(FileSize) over()) as [BarChart ________________________________________________________________________________________________]
 FROM @logInfoResults;
 GO
