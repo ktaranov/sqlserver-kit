@@ -22,6 +22,8 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 | [AdventureWorks DWH 2012]               |             >=2012 | DWH      |       21 |      124 |          31 |
 | [AdventureWorks Multidimensional Model] |                  ? | AS       |       21 |        ? |           ? |
 | [AdventureWorks Tabular Model]          |                  ? | AS       |       21 |        ? |           ? |
+| [Northwind Database][1]                 |               2000 | OLTP     |        - |        ? |           ? |
+| [Pub Database][1]                       |               2000 | OLTP     |        - |        ? |           ? |
 
 [StackOverflow 2010 Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
 [StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
@@ -39,7 +41,7 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 [AdventureWorks DWH 2012]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorksDW2012.bak
 [AdventureWorks Multidimensional Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-multidimensional-model-full-database-backup.zip
 [AdventureWorks Tabular Model]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks-analysis-services/adventure-works-tabular-model-1200-full-database-backup.zip
-
+[1]:https://github.com/Microsoft/sql-server-samples/tree/master/samples/databases/northwind-pubs
 
 ## Datasets
  - [Data.gov](https://www.data.gov/)
