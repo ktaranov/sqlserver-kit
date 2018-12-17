@@ -302,6 +302,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [tsqllint - Configurable linting for TSQL](https://github.com/tsqllint/tsqllint) (by tsqllint)
     - [Rezoom.SQL - F# ORM for SQL databases](https://github.com/rspeele/Rezoom.SQL) (by Robert Peele)
     - [SQLtoExcel - Exports the output of one or more TSQL script queries to Excel](https://github.com/BeginTry/SQLtoExcel) (by Dave Mason)
+    - [Analysis Services - Analysis Services samples and community projects](https://github.com/Microsoft/Analysis-Services) (by Microsoft)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
