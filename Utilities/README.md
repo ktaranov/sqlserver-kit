@@ -24,11 +24,11 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-09-24 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-11-21 | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | BSD-3      | Open Source    | No    |
-| [Azure Data Studio](#ads)                                        | No                            | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2018-09-24 | Microsoft             |            | Yes            | No    |
+| [Azure Data Studio](#ads)                                        | No                            | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2018-12-19 | Microsoft             |            | Yes            | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [?]      | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
@@ -304,8 +304,8 @@ Utility types (main purpose), in braces `{}` current counts:
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2018-09-24<br/>
-Support Version: 2008-2017/Azure<br/>
+Release date: 2018-11-21<br/>
+Support Version: 2005-2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -365,13 +365,15 @@ Interactive command line query tool for SQL Server.
 <a id="ads"></a>
 ## Azure Data Studio
 Download page: [Azure Data Studio]<br/>
-Release date: 2018-09-24<br/>
+Release date: 2018-12-19<br/>
 Support Version: 2008-2017/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
 
 Azure Data Studio (previously SQL Operations Studio) is a data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux.
+
+[Azure Data Studio List of Extensions](https://github.com/Microsoft/azuredatastudio/wiki/List-of-Extensions)
 
  - Cross-Platform DB management for Windows, macOS and Linux with simple XCopy deployment
  - SQL Server Connection Management with Connection Dialog, Server Groups, and Registered Servers
@@ -4312,7 +4314,7 @@ Valentina Studio lets you connect with all major databases, run queries and gene
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
 [mssql-cli]:https://github.com/dbcli/mssql-cli
-[SQL OPS Studio]:https://github.com/Microsoft/sqlopsstudio
+[[Azure Data Studio]]:https://github.com/Microsoft/azuredatastudio
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
