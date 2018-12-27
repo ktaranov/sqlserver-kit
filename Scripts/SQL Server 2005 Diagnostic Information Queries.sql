@@ -1,7 +1,7 @@
 
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: July 5, 2018
+-- Last Modified: December 19, 2018
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -283,7 +283,7 @@ DROP TABLE #IOWarningResults;
 
 -- Drive level latency information (Query 13) (Drive Level Latency)
 -- Based on code from Jimmy May
-SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point], 
+SELECT tab.[Drive],  
 	CASE 
 		WHEN num_of_reads = 0 THEN 0 
 		ELSE (io_stall_read_ms/num_of_reads) 
@@ -311,12 +311,11 @@ SELECT tab.[Drive], tab.volume_mount_point AS [Volume Mount Point],
 FROM (SELECT LEFT(UPPER(mf.physical_name), 2) AS Drive, SUM(num_of_reads) AS num_of_reads,
 	         SUM(io_stall_read_ms) AS io_stall_read_ms, SUM(num_of_writes) AS num_of_writes,
 	         SUM(io_stall_write_ms) AS io_stall_write_ms, SUM(num_of_bytes_read) AS num_of_bytes_read,
-	         SUM(num_of_bytes_written) AS num_of_bytes_written, SUM(io_stall) AS io_stall, vs.volume_mount_point 
+	         SUM(num_of_bytes_written) AS num_of_bytes_written, SUM(io_stall) AS io_stall
       FROM sys.dm_io_virtual_file_stats(NULL, NULL) AS vfs
       INNER JOIN sys.master_files AS mf WITH (NOLOCK)
       ON vfs.database_id = mf.database_id AND vfs.file_id = mf.file_id
-	  CROSS APPLY sys.dm_os_volume_stats(mf.database_id, mf.[file_id]) AS vs 
-      GROUP BY LEFT(UPPER(mf.physical_name), 2), vs.volume_mount_point) AS tab
+      GROUP BY LEFT(UPPER(mf.physical_name), 2)) AS tab
 ORDER BY [Overall Latency] OPTION (RECOMPILE);
 ------
 
@@ -325,9 +324,9 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 
 
 -- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 14) (IO Stalls by File)
-SELECT DB_NAME(fs.database_id) AS [Database Name], CAST(fs.io_stall_read_ms/(1.0 + fs.num_of_reads) AS NUMERIC(10,1)) AS [avg_read_stall_ms],
-CAST(fs.io_stall_write_ms/(1.0 + fs.num_of_writes) AS NUMERIC(10,1)) AS [avg_write_stall_ms],
-CAST((fs.io_stall_read_ms + fs.io_stall_write_ms)/(1.0 + fs.num_of_reads + fs.num_of_writes) AS NUMERIC(10,1)) AS [avg_io_stall_ms],
+SELECT DB_NAME(fs.database_id) AS [Database Name], CAST(fs.io_stall_read_ms/(1.0 + fs.num_of_reads) AS NUMERIC(16,1)) AS [avg_read_stall_ms],
+CAST(fs.io_stall_write_ms/(1.0 + fs.num_of_writes) AS NUMERIC(16,1)) AS [avg_write_stall_ms],
+CAST((fs.io_stall_read_ms + fs.io_stall_write_ms)/(1.0 + fs.num_of_reads + fs.num_of_writes) AS NUMERIC(16,1)) AS [avg_io_stall_ms],
 CONVERT(DECIMAL(18,2), mf.size/128.0) AS [File Size (MB)], mf.physical_name, mf.type_desc, fs.io_stall_read_ms, fs.num_of_reads, 
 fs.io_stall_write_ms, fs.num_of_writes, fs.io_stall_read_ms + fs.io_stall_write_ms AS [io_stalls], fs.num_of_reads + fs.num_of_writes AS [total_io]
 FROM sys.dm_io_virtual_file_stats(null,null) AS fs
@@ -983,15 +982,24 @@ ORDER BY buffer_count DESC OPTION (RECOMPILE);
 
 
 -- Get Table names, row counts  (Query 44) (Table Sizes)
-SELECT OBJECT_NAME(object_id) AS [ObjectName], SUM(Rows) AS [RowCount]
-FROM sys.partitions WITH (NOLOCK)
+SELECT SCHEMA_NAME(o.Schema_ID) AS [Schema Name], OBJECT_NAME(p.object_id) AS [ObjectName], 
+SUM(p.Rows) AS [RowCount]
+FROM sys.partitions AS p WITH (NOLOCK)
+INNER JOIN sys.objects AS o WITH (NOLOCK)
+ON p.object_id = o.object_id
 WHERE index_id < 2 --ignore the partitions from the non-clustered index if any
-AND OBJECT_NAME(object_id) NOT LIKE N'sys%'
-AND OBJECT_NAME(object_id) NOT LIKE N'queue_%' 
-AND OBJECT_NAME(object_id) NOT LIKE N'filestream_tombstone%'
-AND OBJECT_NAME(object_id) NOT LIKE N'fulltext%' 
-GROUP BY [object_id]
-ORDER BY SUM(Rows) DESC OPTION (RECOMPILE);
+AND OBJECT_NAME(p.object_id) NOT LIKE N'sys%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'spt_%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'queue_%' 
+AND OBJECT_NAME(p.object_id) NOT LIKE N'filestream_tombstone%' 
+AND OBJECT_NAME(p.object_id) NOT LIKE N'fulltext%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'ifts_comp_fragment%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'filetable_updates%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'xml_index_nodes%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'sqlagent_job%'
+AND OBJECT_NAME(p.object_id) NOT LIKE N'plan_persist%'
+GROUP BY  SCHEMA_NAME(o.Schema_ID), p.object_id
+ORDER BY SUM(p.Rows) DESC OPTION (RECOMPILE);
 ------
 
 -- Gives you an idea of table sizes
