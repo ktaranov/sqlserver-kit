@@ -60,7 +60,7 @@ SELECT message_id, severity, text
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                          |
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                       |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                      |
-|        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT.…      | [264_link1][25]                      |
+|        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT …      | [264_link1][25]                      |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                      |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
@@ -93,7 +93,7 @@ SELECT message_id, severity, text
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                         |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                      |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                      |
-|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" ...                 … | [7357_link1][2]                      |
+|       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" indicates that      … | [7357_link1][2], [7357_link2][2]     |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                      |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                          |
 |       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                     |
@@ -148,6 +148,7 @@ SELECT message_id, severity, text
 [23]:http://sqlstudies.com/2018/09/19/you-cant-delete-top-x-with-an-order-by/
 [24]:https://www.brentozar.com/archive/2018/10/sum-avg-and-arithmetic-overflow/
 [25]:https://www.sqltheater.com/blog/using-the-same-column-twice-in-an-update-statement/
+[26]:http://jasonbrimhall.info/2018/12/14/synonyms-in-sql-server-good-and-bad/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
