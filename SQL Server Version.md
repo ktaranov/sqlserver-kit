@@ -688,6 +688,7 @@ Microsoft SQL Server 2014 (SP3-CU1) (KB4470220) - 12.0.6205.1 (X64)
 |--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   | [4470220 Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
+| 12.0.5605.1  | 2014.120.5605.1  | SP2    | SP   | [4469137 Cumulative Update 15 for SQL Server 2014 SP2]                                                                             | 2018-12-12   |     8 |      7 |      679 |
 | 12.0.5600.1  | 2014.120.5600.1  | SP2    | CU   | [4459860 Cumulative Update 14 for SQL Server 2014 SP2]                                                                             | 2018-10-15   |     8 |      6 |      678 |
 | 12.0.5590.1  | 2014.120.5590.1  | SP2    | CU   | [4456287 Cumulative Update 13 for SQL Server 2014 SP2]                                                                             | 2018-08-27   |     4 |      4 |      679 |
 | 12.0.5589.7  | 2014.120.5589.7  | SP2    | CU   | [4130489 Cumulative Update 12 for SQL Server 2014 SP2]                                                                             | 2018-06-18   |    27 |     16 |      678 |
@@ -771,6 +772,7 @@ Microsoft SQL Server 2014 (SP3-CU1) (KB4470220) - 12.0.6205.1 (X64)
 
 [4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
 [4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
+[4469137 Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
 [4459860 Cumulative Update 14 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4459860
 [4456287 Cumulative Update 13 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4456287
 [4130489 Cumulative Update 12 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4130489
