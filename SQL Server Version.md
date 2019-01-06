@@ -177,7 +177,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServer-2019-CTP-2.2-x64-ENU.iso                                | 2018-12-11   | 15.0.1200.24  |     1302 | ?                                        |
+| [SQL Server 2019]                     | SQLServer-2019-CTP-2.2-x64-ENU.iso                                | 2018-12-11   | 15.0.1200.24  |     1302 | 5b54d0ef478d422766b19fe2e1f99ee7d9bdf6e2 |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU13 Hotfix]         | SQLServer2017-KB4483666-x64                                       | 2019-01-08   | 14.0.3049.1   |      488 | 6f2de49e491048ab4cb17160d4efc653c3a29bf1 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -484,8 +484,8 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU12) (KB4464082) - 14.0.3045.24 (X64)
-   Oct 18 2018 23:11:05
+Microsoft SQL Server 2017 (RTM-CU13-OD) (KB4483666) - 14.0.3049.1 (X64)
+   Dec 15 2018 11:16:42
    Copyright (C) 2017 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
