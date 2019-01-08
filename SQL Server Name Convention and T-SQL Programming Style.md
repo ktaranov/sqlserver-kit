@@ -1,32 +1,13 @@
 # SQL Server Name Convention and T-SQL Programming Style
 
-Official Reference and useful links
- - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
- - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
- - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
- - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
- - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
- - [SQL Code Layout and Beautification](https://www.simple-talk.com/sql/t-sql-programming/sql-code-layout-and-beautification/) (by William Brewer)
- - [TSQL Coding Style](http://www.databasejournal.com/features/mssql/tsql-coding-style.html) (by Gregory Larsen)
- - [Database object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
- - [User-Defined Functions MSDN](http://msdn.microsoft.com/en-us/library/ms191007.aspx)
- - [Synonim TECHNET](http://technet.microsoft.com/en-us/library/ms187552(v=sql.110).aspx)
- - [Primary and Foreign Key Constraints MSDN](http://msdn.microsoft.com/en-us/library/ms179610.aspx)
- - [sys.objects MSDN](http://msdn.microsoft.com/en-us/library/ms190324.aspx)
- - [Constraints TECHNET](http://technet.microsoft.com/en-us/library/ms189862%28v=sql.105%29.aspx)
- - [CHECK Constraint TECHNET](http://technet.microsoft.com/en-us/library/ms188258%28v=sql.105%29.aspx)
- - [SQL Server CLR Integration MSDN](http://msdn.microsoft.com/en-us/library/ms254498%28v=vs.110%29.aspx)
- - [CLR Databse Objects MSDN](http://msdn.microsoft.com/en-us/library/ms345099%28SQL.100%29.aspx)
- - [CLR Stored Procedures](http://msdn.microsoft.com/en-us/library/ms131094%28v=sql.100%29.aspx)
- - [User-defined Functions](http://msdn.microsoft.com/en-us/library/ms191320.aspx)
- - [MSDN SET NOCOUNT ON](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql)
- - [T-SQL Coding Guidelines Presentation](http://www.slideshare.net/chris1adkin/t-sql-coding-guidelines) (by Chris Adkin)
- - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
- - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
- - [SQL Formatting standards – Capitalization, Indentation, Comments, Parenthesis](https://solutioncenter.apexsql.com/sql-formatting-standards-capitalization-indentation-comments-parenthesis/) (by ApexSQL)
- - [In The Cloud: The Importance of Being Organized](http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx)
- - [Naming Conventions in Azure](http://www.sqlchick.com/entries/2017/6/24/naming-conventions-in-azure)
- - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
+
+## Table of Contents
+ - [SQL Server Object Name Convention](#sql-server-object-name-convention)
+ - [T-SQL Programming Style](#t-sql-programming-style)
+   - [General programming style](#general-programming-style)
+   - [Stored procedures and functions programming style](#programming-style)
+ - [Official Reference and useful links](#reference)
+
 
 ## SQL Server Object Name Convention
 
@@ -74,19 +55,58 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.  This deprecation announcement means that you should always use semicolon terminators in new development.)
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/)
  - All script files should end with `GO` and line break
- - The first argument in SELECT expression should be on the same line with it: `SELECT LastName`
+ - Avoid non-standard column aliases, use ,if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p`
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-non-standard-column-aliases).
+   All possible ways using aliases in SQL Server:
+
+   ```sql
+    SELECT Tables   = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT "Tables" = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT [Tables] = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT 'Tables' = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] [Tables]    FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] 'Tables'    FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] "Tables"    FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] Tables      FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] AS [Tables] FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] AS 'Tables' FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
+    SELECT Schema_Name(schema_id)+'.'+[name] AS Tables   FROM sys.tables;
+   ```
+ - The first argument in `SELECT` expression should be on the same line with it: `SELECT LastName …`
  - Arguments are divided by line breaks, commas should be placed before an argument:
    
    ```sql
    SELECT FirstName
          , LastName
    ```
- - Keywords and data types declaration should be in **UPPERCASE**
- - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other
- - All objects must used with schema names but without database and server name: `FROM dbo.Table`
- - All system database and tables must be in lower case for properly working in Case Sensitive instance
+ - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
  - For demo queries use TOP(100) or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/)
+ - Keywords and data types declaration should be in **UPPERCASE**
+ - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
+ - All objects must used with schema names but without database and server name: `FROM dbo.Table`. For stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification)
+ - All system database and tables must be in lower case for properly working in Case Sensitive instance: `master, sys.tables…`
+ - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
+   ```sql
+   CASE WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' --is it a float?
+              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]' 
+                 AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%' 
+                 AND Right(TapAngle ,1) LIKE N'[0123456789]'
+               THEN 'float' 
+         WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' --is it numeric
+              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]' 
+              AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%' 
+              AND TapAngle LIKE '%[0123456789]%'
+             THEN 'float'
+   ELSE NULL
+   END
+   ```
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029)
+ - Avoid using `INSERT INTO` a permanent table with `ORDER BY`, more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-insert-permanent-table-order-pe020)
+ - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`. More details [here](https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations)
+ - https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries
 
 Example:
 
@@ -108,6 +128,7 @@ SELECT t1.Value1 AS Val1
  ORDER BY t2.Value2;
 ```
 
+<a id="programming-style"></a>
 ### Stored procedures and functions programming style
 
  - All stored procedures and functions should use `ALTER` statement and start with the object presence check
@@ -119,7 +140,8 @@ SELECT t1.Value1 AS Val1
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
  - Always use `/* */` instead inline comment `--`
- - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement
+ - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
+ - Do not use `SET NOCOUNT ON;` (because it is default)
  - Use TOP expression with `()`:
 ```tsql
 -- Not working without ()
@@ -188,3 +210,37 @@ SET NOCOUNT OFF;
 GO
 
 ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+<a id="reference"></a>
+## Official Reference and useful links
+ - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
+ - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
+ - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
+ - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
+ - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
+ - [SQL Code Layout and Beautification](https://www.simple-talk.com/sql/t-sql-programming/sql-code-layout-and-beautification/) (by William Brewer)
+ - [TSQL Coding Style](http://www.databasejournal.com/features/mssql/tsql-coding-style.html) (by Gregory Larsen)
+ - [Database object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
+ - [User-Defined Functions MSDN](http://msdn.microsoft.com/en-us/library/ms191007.aspx)
+ - [Synonim TECHNET](http://technet.microsoft.com/en-us/library/ms187552(v=sql.110).aspx)
+ - [Primary and Foreign Key Constraints MSDN](http://msdn.microsoft.com/en-us/library/ms179610.aspx)
+ - [sys.objects MSDN](http://msdn.microsoft.com/en-us/library/ms190324.aspx)
+ - [Constraints TECHNET](http://technet.microsoft.com/en-us/library/ms189862%28v=sql.105%29.aspx)
+ - [CHECK Constraint TECHNET](http://technet.microsoft.com/en-us/library/ms188258%28v=sql.105%29.aspx)
+ - [SQL Server CLR Integration MSDN](http://msdn.microsoft.com/en-us/library/ms254498%28v=vs.110%29.aspx)
+ - [CLR Databse Objects MSDN](http://msdn.microsoft.com/en-us/library/ms345099%28SQL.100%29.aspx)
+ - [CLR Stored Procedures](http://msdn.microsoft.com/en-us/library/ms131094%28v=sql.100%29.aspx)
+ - [User-defined Functions](http://msdn.microsoft.com/en-us/library/ms191320.aspx)
+ - [MSDN SET NOCOUNT ON](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql)
+ - [T-SQL Coding Guidelines Presentation](http://www.slideshare.net/chris1adkin/t-sql-coding-guidelines) (by Chris Adkin)
+ - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
+ - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
+ - [SQL Formatting standards – Capitalization, Indentation, Comments, Parenthesis](https://solutioncenter.apexsql.com/sql-formatting-standards-capitalization-indentation-comments-parenthesis/) (by ApexSQL)
+ - [In The Cloud: The Importance of Being Organized](http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx)
+ - [Naming Conventions in Azure](http://www.sqlchick.com/entries/2017/6/24/naming-conventions-in-azure)
+ - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
+
+**[⬆ back to top](#table-of-contents)**
