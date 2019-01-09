@@ -141,7 +141,7 @@ SELECT t1.Value1 AS Val1
  - Always use `BEGIN TRY` and `BEGIN CATCH`
  - Always use `/* */` instead inline comment `--`
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
- - Do not use `SET NOCOUNT ON;` (because it is default)
+ - Do not use `SET NOCOUNT OFF;` (because it is default behavior)
  - Use TOP expression with `()`:
 ```tsql
 -- Not working without ()
@@ -206,7 +206,6 @@ BEGIN CATCH
     PRINT ERROR_MESSAGE();
 END CATCH;
 
-SET NOCOUNT OFF;
 GO
 
 ```
