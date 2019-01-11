@@ -616,6 +616,12 @@ Articles types:
 | [Misconceptions in SQL Server: A Trio of table variables]                                                               | Gail Shaw                                | 2010-10-12 | [DBA],[DEV] |
 | [Using the Same Column Twice in a SQL UPDATE Statement]                                                                 | SQL Theater                              | 2018-09-13 | [DBA],[DEV] |
 | [How to perform a performance test against a SQL Server instance]                                                       | Jefferson Elias                          | 2018-09-14 | [DBA],[DEV] |
+| [The Black Art Of Spatial Index Tuning In SQL Server]                                                                   | Todd Jackson                             | 2011-04-26 | [DEV]       |
+| [Patching SQL Server on Windows notes from the field]                                                                   | Kevin Chant                              | 2019-01-10 | [DBA]       |
+| [Availability Group Readable Secondaries – Just Say No]                                                                 | Jonathan Kehayias                        | 2019-01-10 | [DBA]       |
+| [Finding the Slowest Query in a Stored Procedure]                                                                       | Erin Stellato                            | 2018-12-13 | [DBA],[DEV] |
+| [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA]       |
+| [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1210,3 +1216,9 @@ Articles types:
 [Misconceptions in SQL Server: A Trio of table variables]:https://sqlinthewild.co.za/index.php/2010/10/12/a-trio-of-table-variables/
 [Using the Same Column Twice in a SQL UPDATE Statement]:https://www.sqltheater.com/blog/using-the-same-column-twice-in-an-update-statement/
 [How to perform a performance test against a SQL Server instance]:https://www.sqlshack.com/how-to-perform-a-performance-test-against-a-sql-server-instance/
+[The Black Art Of Spatial Index Tuning In SQL Server]:http://boomphisto.blogspot.com/2011/04/black-art-of-spatial-index-tuning-in.html
+[Patching SQL Server on Windows notes from the field]:https://www.kevinrchant.com/2019/01/10/patching-sql-server-on-windows-notes-from-the-field/
+[Availability Group Readable Secondaries – Just Say No]:https://www.sqlskills.com/blogs/jonathan/availability-group-readable-secondaries-just-say-no/
+[Finding the Slowest Query in a Stored Procedure]:https://www.sqlskills.com/blogs/erin/slowest-query-in-a-stored-procedure/
+[A Monumental Migration to SQL Server 2016 – Part 1]:https://flxsql.com/monumental-migration-sql-server-2016-part-1/
+[A Monumental Migration to SQL Server 2016 – Part 2]:https://flxsql.com/monumental-migration-sql-server-2016-part-2/
