@@ -15,7 +15,7 @@
 |----------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|------------------------------------|
 | Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | MYDATABASE                         |
 | Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | DTR_CheckLogin                     |
-| Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [A-z][0-9]   | myschema                           |
+| Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | myschema                           |
 | File Table                       |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | FT_MyTable                         |
 | Global Temporary Table           |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | ##MyTable                          |
 | Local Temporary Table            |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | #MyTable                           |
@@ -44,18 +44,20 @@
 | CLR  User-Defined Types          |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
 
+**[⬆ back to top](#table-of-contents)**
+
 
 ## T-SQL Programming Style
 SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
  - Delimiters: spaces (not tabs)
- - No square brackets [] and reserved words in object names and alias, use only Latin symbols **[A-z]** and numeric **[0-9]**
+ - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
  - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.  This deprecation announcement means that you should always use semicolon terminators in new development.)
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/)
  - All script files should end with `GO` and line break
- - Avoid non-standard column aliases, use ,if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p`
+ - Avoid non-standard column aliases, use ,if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p;`
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-non-standard-column-aliases).
    All possible ways using aliases in SQL Server:
 
@@ -70,34 +72,35 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
     SELECT Schema_Name(schema_id)+'.'+[name] Tables      FROM sys.tables;
     SELECT Schema_Name(schema_id)+'.'+[name] AS [Tables] FROM sys.tables;
     SELECT Schema_Name(schema_id)+'.'+[name] AS 'Tables' FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
     SELECT Schema_Name(schema_id)+'.'+[name] AS Tables   FROM sys.tables;
+    /* Below recommended due to ANSI
+    SELECT Schema_Name(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
    ```
  - The first argument in `SELECT` expression should be on the same line with it: `SELECT LastName …`
  - Arguments are divided by line breaks, commas should be placed before an argument:
    
    ```sql
    SELECT FirstName
-         , LastName
+        , LastName
    ```
  - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
- - For demo queries use TOP(100) or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
+ - For demo queries use `TOP(100)` or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/)
  - Keywords and data types declaration should be in **UPPERCASE**
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
  - All objects must used with schema names but without database and server name: `FROM dbo.Table`. For stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification)
- - All system database and tables must be in lower case for properly working in Case Sensitive instance: `master, sys.tables…`
+ - All system database and tables must be in lower case for properly working in Case Sensitive instance: `master, sys.tables …`
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
    ```sql
    CASE WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' --is it a float?
-              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]' 
-                 AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%' 
+              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]'
+                 AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%'
                  AND Right(TapAngle ,1) LIKE N'[0123456789]'
-               THEN 'float' 
+               THEN 'float'
          WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' --is it numeric
-              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]' 
-              AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%' 
+              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]'
+              AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%'
               AND TapAngle LIKE '%[0123456789]%'
              THEN 'float'
    ELSE NULL
@@ -127,6 +130,8 @@ SELECT t1.Value1 AS Val1
   FROM CTE_MyCTE AS t1
  ORDER BY t2.Value2;
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 <a id="programming-style"></a>
 ### Stored procedures and functions programming style
@@ -167,6 +172,8 @@ example:
 returns:   >
  single row, single column result Build_Script.
 ```
+
+**[⬆ back to top](#table-of-contents)**
 
 Stored Procedure Example:
 
