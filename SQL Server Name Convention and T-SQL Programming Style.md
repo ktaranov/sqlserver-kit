@@ -52,7 +52,7 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
  - Delimiters: spaces (not tabs)
- - Avoid using asterix in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
+ - Avoid using asterisk in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
  - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.  This deprecation announcement means that you should always use semicolon terminators in new development.)
@@ -110,7 +110,8 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029)
  - Avoid using `INSERT INTO` a permanent table with `ORDER BY`, more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-insert-permanent-table-order-pe020)
  - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`. More details [here](https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations)
- - https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries
+ - Avoid ambiguous formats for date-only literals, use `CAST('yyyymmdd' AS DATE)` format
+ - Avoid treating dates like strings and avoid calculations on the left-hand side of the `WHERE` clause. More details [here](https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries)
 
 Example:
 
