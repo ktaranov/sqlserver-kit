@@ -112,6 +112,7 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`. More details [here](https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations)
  - Avoid ambiguous formats for date-only literals, use `CAST('yyyymmdd' AS DATE)` format
  - Avoid treating dates like strings and avoid calculations on the left-hand side of the `WHERE` clause. More details [here](https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries)
+ - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `OPTION(RECOMPILE)` if needed. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7)
 
 Example:
 
