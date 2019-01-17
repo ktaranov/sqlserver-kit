@@ -84,6 +84,7 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    SELECT FirstName
         , LastName
    ```
+ - For SQL Server >= 2012 use `FETCH-OFFSET` instead `TOP`. But if you use `TOP` avoid use `TOP` in a `SELECT` statement without an `ORDER BY`. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement)
  - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
  - For demo queries use `TOP(100)` or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
