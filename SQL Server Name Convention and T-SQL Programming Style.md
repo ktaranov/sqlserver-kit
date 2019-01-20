@@ -117,6 +117,8 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement)
  - Use only ISO standard JOINS syntaxes. The “old style” Microsoft/Sybase JOIN style for SQL, which uses the `=*` and `*= syntax, has been deprecated and is no longer used. Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (FROM tableA, tableB) is still ISO standard for INNER JOINs only. Neither of these styles are worth using. It is always better to specify the type of join you require, INNER, LEFT OUTER, RIGHT OUTER, FULL OUTER and CROSS, which has been standard since ANSI SQL-92 was published. While you can choose any supported JOIN style, without affecting the query plan used by SQL Server, using the ANSI-standard syntax will make your code easier to understand, more consistent, and portable to other relational database systems.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001)
+ - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017)
 
 Example:
 
