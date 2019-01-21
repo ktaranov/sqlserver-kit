@@ -3,6 +3,7 @@
 
 ## Table of Contents
  - [SQL Server Object Name Convention](#sql-server-object-name-convention)
+ - [SQL Server Data Types Recommendation](#data-types-recommendation)
  - [T-SQL Programming Style](#t-sql-programming-style)
    - [General programming style](#general-programming-style)
    - [Stored procedures and functions programming style](#programming-style)
@@ -43,6 +44,89 @@
 | CLR User-Defined Aggregates      |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | ca_CAName_LogicalName              |
 | CLR  User-Defined Types          |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
 | CLR  Triggers                    |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
+
+**[⬆ back to top](#table-of-contents)**
+
+
+<a id="data-types-recommendation"></a>
+## SQL Server Data Types Recommendation
+
+| General Type         | Type               | Recommended |
+|----------------------|--------------------|-------------|
+| Exact Numerics       | [bit]              | No          |
+| Exact Numerics       | [tinyint]          | Maybe       |  
+| Exact Numerics       | [smallint]         | Maybe       |  
+| Exact Numerics       | [int]              | Yes         |
+| Exact Numerics       | [bigint]           | Yes         |
+| Exact Numerics       | [decimal]          | Yes         |
+| Exact Numerics       | [smallmoney]       | No          |
+| Exact Numerics       | [money]            | No          |
+| Approximate Numerics | [float]            | Yes         |
+| Date and Time        | [date]             | Yes         |
+| Date and Time        | [smalldatetime]    | Maybe       |
+| Date and Time        | [time]             | Yes         |
+| Date and Time        | [datetime2]        | Yes         |
+| Date and Time        | [datetime]         | No          |
+| Date and time        | [datetimeoffset]   | Yes         |
+| Caracter Strings     | [char]             | Yes         |
+| Caracter Strings     | [varchar]          | Yes         |
+| Caracter Strings     | [varchar](max)     | Yes         |
+| Caracter Strings     | [nchar]            | Yes         |
+| Caracter Strings     | [nvarchar]         | Yes         |
+| Caracter Strings     | [nvarchar](max)    | Yes         |
+| Caracter Strings     | [ntext](*)         | Deprecated  |
+| Caracter Strings     | [text](*)          | Deprecated  |
+| Binary Strings       | [image](*)         | Deprecated  |
+| Binary Strings       | [binary]           | Deprecated  |
+| Binary Strings       | [varbinary]        | Maybe       |
+| Binary Strings       | [varbinary](max)   | Maybe       |
+| Other Data Types     | [cursor]           | Maybe       |
+| Other Data Types     | [sql_variant]      | No          |
+| Other Data Types     | [hierarchyid]      | Maybe       |
+| Other Data Types     | [rowversion]       | Maybe       |
+| Other Data Types     | [timestamp](*)     | Deprecated  |
+| Other Data Types     | [uniqueidentifier] | Yes         |
+| Other Data Types     | [xml]              | Yes         |
+| Other Data Types     | [table]            | Maybe       |
+| Spatial Data Types   | [geometry]         | Yes         |
+| Spatial Data Types   | [geography]        | Yes         |
+
+[bit]:https://msdn.microsoft.com/en-us/library/ms177603.aspx
+[tinyint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[smallint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[int]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[bigint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
+[decimal]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
+[numeric]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
+[smallmoney]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
+[money]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
+[float]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
+[real]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
+[date]:https://msdn.microsoft.com/en-us/library/bb630352.aspx
+[smalldatetime]:https://msdn.microsoft.com/en-us/library/ms182418.aspx
+[time]:https://msdn.microsoft.com/en-us/library/bb677243.aspx
+[datetime2]:https://msdn.microsoft.com/en-us/library/bb677335.aspx
+[datetime]:https://msdn.microsoft.com/en-us/library/ms187819.aspx
+[datetimeoffset]:https://msdn.microsoft.com/en-us/library/bb630289.aspx
+[char]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
+[varchar]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
+[nchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
+[nvarchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
+[ntext]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[text]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[image]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
+[binary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
+[varbinary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
+[cursor]:https://msdn.microsoft.com/en-us/library/ms190498.aspx
+[sql_variant]:https://msdn.microsoft.com/en-us/library/ms173829.aspx
+[hierarchyid]:https://msdn.microsoft.com/en-us/library/bb677290.aspx
+[rowversion]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
+[timestamp]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
+[uniqueidentifier]:https://msdn.microsoft.com/en-us/library/ms187942.aspx
+[xml]:https://msdn.microsoft.com/en-us/library/ms187339.aspx
+[table]:https://msdn.microsoft.com/en-us/library/ms175010.aspx
+[geometry]:https://msdn.microsoft.com/en-us/library/cc280487.aspx
+[geography]:https://msdn.microsoft.com/en-us/library/cc280766.aspx
 
 **[⬆ back to top](#table-of-contents)**
 
