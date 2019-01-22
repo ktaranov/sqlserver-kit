@@ -51,45 +51,46 @@
 <a id="data-types-recommendation"></a>
 ## SQL Server Data Types Recommendation
 
-| General Type         | Type               | Recommended |
-|----------------------|--------------------|-------------|
-| Exact Numerics       | [bit]              | No          |
-| Exact Numerics       | [tinyint]          | Maybe       |
-| Exact Numerics       | [smallint]         | Maybe       |
-| Exact Numerics       | [int]              | Yes         |
-| Exact Numerics       | [bigint]           | Yes         |
-| Exact Numerics       | [decimal]          | Yes         |
-| Exact Numerics       | [smallmoney]       | No          |
-| Exact Numerics       | [money]            | No          |
-| Approximate Numerics | [float]            | Yes         |
-| Date and Time        | [date]             | Yes         |
-| Date and Time        | [smalldatetime]    | Maybe       |
-| Date and Time        | [time]             | Yes         |
-| Date and Time        | [datetime2]        | Yes         |
-| Date and Time        | [datetime]         | No          |
-| Date and time        | [datetimeoffset]   | Yes         |
-| Caracter Strings     | [char]             | Yes         |
-| Caracter Strings     | [varchar]          | Yes         |
-| Caracter Strings     | [varchar](max)     | Yes         |
-| Caracter Strings     | [nchar]            | Yes         |
-| Caracter Strings     | [nvarchar]         | Yes         |
-| Caracter Strings     | [nvarchar](max)    | Yes         |
-| Caracter Strings     | [ntext](*)         | Deprecated  |
-| Caracter Strings     | [text](*)          | Deprecated  |
-| Binary Strings       | [image](*)         | Deprecated  |
-| Binary Strings       | [binary]           | Deprecated  |
-| Binary Strings       | [varbinary]        | Maybe       |
-| Binary Strings       | [varbinary](max)   | Maybe       |
-| Other Data Types     | [cursor]           | Maybe       |
-| Other Data Types     | [sql_variant]      | No          |
-| Other Data Types     | [hierarchyid]      | Maybe       |
-| Other Data Types     | [rowversion]       | Maybe       |
-| Other Data Types     | [timestamp](*)     | Deprecated  |
-| Other Data Types     | [uniqueidentifier] | Yes         |
-| Other Data Types     | [xml]              | Yes         |
-| Other Data Types     | [table]            | Maybe       |
-| Spatial Data Types   | [geometry]         | Yes         |
-| Spatial Data Types   | [geography]        | Yes         |
+| General Type         | Type                | Recommended    |
+|----------------------|---------------------|----------------|
+| Exact Numerics       | [bit]               | No             |
+| Exact Numerics       | [tinyint][1]        | Maybe          |
+| Exact Numerics       | [smallint][1]       | Maybe          |
+| Exact Numerics       | [int][1]            | Yes            |
+| Exact Numerics       | [bigint][1]         | Yes            |
+| Exact Numerics       | [decimal][2]        | Yes            |
+| Exact Numerics       | [smallmoney][3]     | No             |
+| Exact Numerics       | [money][3]          | No             |
+| Approximate Numerics | [real][4]           | Yes            |
+| Approximate Numerics | [float][4]          | Yes            |
+| Date and Time        | [date]              | Yes            |
+| Date and Time        | [smalldatetime]     | Maybe          |
+| Date and Time        | [time]              | Yes            |
+| Date and Time        | [datetime2]         | Yes            |
+| Date and Time        | [datetime]          | No             |
+| Date and time        | [datetimeoffset]    | Yes            |
+| Caracter Strings     | [char][5]           | Yes            |
+| Caracter Strings     | [varchar][5]        | Yes            |
+| Caracter Strings     | [varchar](max)[5]   | Yes            |
+| Caracter Strings     | [nchar][6]          | Yes            |
+| Caracter Strings     | [nvarchar][6]       | Yes            |
+| Caracter Strings     | [nvarchar](max)[6]  | Yes            |
+| Caracter Strings     | [ntext][7]          | **Deprecated** |
+| Caracter Strings     | [text][7]           | **Deprecated** |
+| Binary Strings       | [image][7]          | **Deprecated** |
+| Binary Strings       | [binary][8]         | **Deprecated** |
+| Binary Strings       | [varbinary][8]      | Maybe          |
+| Binary Strings       | [varbinary](max)[8] | Maybe          |
+| Other Data Types     | [cursor]            | Maybe          |
+| Other Data Types     | [sql_variant]       | No             |
+| Other Data Types     | [hierarchyid]       | Maybe          |
+| Other Data Types     | [rowversion]        | Maybe          |
+| Other Data Types     | [timestamp]         | **Deprecated** |
+| Other Data Types     | [uniqueidentifier]  | Yes            |
+| Other Data Types     | [xml]               | Yes            |
+| Other Data Types     | [table]             | Maybe          |
+| Spatial Data Types   | [geometry]          | Yes            |
+| Spatial Data Types   | [geography]         | Yes            |
 
 [1]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
 [2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/decimal-and-numeric-transact-sql
@@ -97,35 +98,19 @@
 [4]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/float-and-real-transact-sql
 [5]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/char-and-varchar-transact-sql
 [6]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
+[7]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/ntext-text-and-image-transact-sql
+[8]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/binary-and-varbinary-transact-sql
 
 [bit]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/bit-transact-sql
-[tinyint]:[1]
-[smallint]:[1]
-[int]:[1]
-[bigint]:[1]
-[decimal]:[2]
-[numeric]:[2]
-[smallmoney]:[3]
-[money]:[3]
-[float]:[4]
-[real]:[4]
 [date]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/date-transact-sql
 [smalldatetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/smalldatetime-transact-sql
 [time]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql
 [datetime2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime2-transact-sql
 [datetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime-transact-sql
 [datetimeoffset]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetimeoffset-transact-sql
-[char]:[5]
-[varchar]:[5]
-[nchar]:[6]
-[nvarchar]:[6]
-[ntext]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
-[text]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
-[image]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
-[binary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
-[varbinary]:https://msdn.microsoft.com/en-us/library/ms188362.aspx
-[cursor]:https://msdn.microsoft.com/en-us/library/ms190498.aspx
-[sql_variant]:https://msdn.microsoft.com/en-us/library/ms173829.aspx
+[cursor]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/cursor-transact-sql
+[sql_variant]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/sql-variant-transact-sql
+
 [hierarchyid]:https://msdn.microsoft.com/en-us/library/bb677290.aspx
 [rowversion]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
 [timestamp]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
