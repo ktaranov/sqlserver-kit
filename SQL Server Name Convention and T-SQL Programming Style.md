@@ -54,8 +54,8 @@
 | General Type         | Type               | Recommended |
 |----------------------|--------------------|-------------|
 | Exact Numerics       | [bit]              | No          |
-| Exact Numerics       | [tinyint]          | Maybe       |  
-| Exact Numerics       | [smallint]         | Maybe       |  
+| Exact Numerics       | [tinyint]          | Maybe       |
+| Exact Numerics       | [smallint]         | Maybe       |
 | Exact Numerics       | [int]              | Yes         |
 | Exact Numerics       | [bigint]           | Yes         |
 | Exact Numerics       | [decimal]          | Yes         |
@@ -91,27 +91,34 @@
 | Spatial Data Types   | [geometry]         | Yes         |
 | Spatial Data Types   | [geography]        | Yes         |
 
-[bit]:https://msdn.microsoft.com/en-us/library/ms177603.aspx
-[tinyint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
-[smallint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
-[int]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
-[bigint]:https://msdn.microsoft.com/en-us/library/ms187745.aspx
-[decimal]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
-[numeric]:https://msdn.microsoft.com/en-us/library/ms187746.aspx
-[smallmoney]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
-[money]:https://msdn.microsoft.com/en-us/library/ms179882.aspx
-[float]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
-[real]:https://msdn.microsoft.com/en-us/library/ms173773.aspx
-[date]:https://msdn.microsoft.com/en-us/library/bb630352.aspx
-[smalldatetime]:https://msdn.microsoft.com/en-us/library/ms182418.aspx
-[time]:https://msdn.microsoft.com/en-us/library/bb677243.aspx
-[datetime2]:https://msdn.microsoft.com/en-us/library/bb677335.aspx
-[datetime]:https://msdn.microsoft.com/en-us/library/ms187819.aspx
-[datetimeoffset]:https://msdn.microsoft.com/en-us/library/bb630289.aspx
-[char]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
-[varchar]:https://msdn.microsoft.com/en-us/library/ms176089.aspx
-[nchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
-[nvarchar]:https://msdn.microsoft.com/en-us/library/ms186939.aspx
+[1]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
+[2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/decimal-and-numeric-transact-sql
+[3]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/money-and-smallmoney-transact-sql
+[4]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/float-and-real-transact-sql
+[5]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/char-and-varchar-transact-sql
+[6]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
+
+[bit]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/bit-transact-sql
+[tinyint]:[1]
+[smallint]:[1]
+[int]:[1]
+[bigint]:[1]
+[decimal]:[2]
+[numeric]:[2]
+[smallmoney]:[3]
+[money]:[3]
+[float]:[4]
+[real]:[4]
+[date]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/date-transact-sql
+[smalldatetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/smalldatetime-transact-sql
+[time]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql
+[datetime2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime2-transact-sql
+[datetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime-transact-sql
+[datetimeoffset]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetimeoffset-transact-sql
+[char]:[5]
+[varchar]:[5]
+[nchar]:[6]
+[nvarchar]:[6]
 [ntext]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
 [text]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
 [image]:https://msdn.microsoft.com/en-us/library/ms187993.aspx
