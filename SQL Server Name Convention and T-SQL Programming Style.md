@@ -50,6 +50,7 @@
 
 <a id="data-types-recommendation"></a>
 ## SQL Server Data Types Recommendation
+More details about SQL Server data types and mapping it with another databases you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
 
 | General Type         | Type                | Recommended    |
 |----------------------|---------------------|----------------|
@@ -71,16 +72,16 @@
 | Date and time        | [datetimeoffset]    | Yes            |
 | Caracter Strings     | [char][5]           | Yes            |
 | Caracter Strings     | [varchar][5]        | Yes            |
-| Caracter Strings     | [varchar](max)[5]   | Yes            |
+| Caracter Strings     | [varchar(max)][5]   | Yes            |
 | Caracter Strings     | [nchar][6]          | Yes            |
 | Caracter Strings     | [nvarchar][6]       | Yes            |
-| Caracter Strings     | [nvarchar](max)[6]  | Yes            |
+| Caracter Strings     | [nvarchar(max)][6]  | Yes            |
 | Caracter Strings     | [ntext][7]          | **Deprecated** |
 | Caracter Strings     | [text][7]           | **Deprecated** |
 | Binary Strings       | [image][7]          | **Deprecated** |
 | Binary Strings       | [binary][8]         | **Deprecated** |
 | Binary Strings       | [varbinary][8]      | Maybe          |
-| Binary Strings       | [varbinary](max)[8] | Maybe          |
+| Binary Strings       | [varbinary(max)][8] | Maybe          |
 | Other Data Types     | [cursor]            | Maybe          |
 | Other Data Types     | [sql_variant]       | No             |
 | Other Data Types     | [hierarchyid]       | Maybe          |
@@ -92,33 +93,31 @@
 | Spatial Data Types   | [geometry]          | Yes            |
 | Spatial Data Types   | [geography]         | Yes            |
 
-[1]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
-[2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/decimal-and-numeric-transact-sql
-[3]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/money-and-smallmoney-transact-sql
-[4]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/float-and-real-transact-sql
-[5]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/char-and-varchar-transact-sql
-[6]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
-[7]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/ntext-text-and-image-transact-sql
-[8]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/binary-and-varbinary-transact-sql
-
-[bit]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/bit-transact-sql
-[date]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/date-transact-sql
-[smalldatetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/smalldatetime-transact-sql
-[time]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/time-transact-sql
-[datetime2]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime2-transact-sql
-[datetime]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetime-transact-sql
-[datetimeoffset]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/datetimeoffset-transact-sql
-[cursor]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/cursor-transact-sql
-[sql_variant]:https://docs.microsoft.com/en-us/sql/t-sql/data-types/sql-variant-transact-sql
-
-[hierarchyid]:https://msdn.microsoft.com/en-us/library/bb677290.aspx
-[rowversion]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
-[timestamp]:https://msdn.microsoft.com/en-us/library/ms182776.aspx
-[uniqueidentifier]:https://msdn.microsoft.com/en-us/library/ms187942.aspx
-[xml]:https://msdn.microsoft.com/en-us/library/ms187339.aspx
-[table]:https://msdn.microsoft.com/en-us/library/ms175010.aspx
-[geometry]:https://msdn.microsoft.com/en-us/library/cc280487.aspx
-[geography]:https://msdn.microsoft.com/en-us/library/cc280766.aspx
+[1]:https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
+[2]:https://docs.microsoft.com/sql/t-sql/data-types/decimal-and-numeric-transact-sql
+[3]:https://docs.microsoft.com/sql/t-sql/data-types/money-and-smallmoney-transact-sql
+[4]:https://docs.microsoft.com/sql/t-sql/data-types/float-and-real-transact-sql
+[5]:https://docs.microsoft.com/sql/t-sql/data-types/char-and-varchar-transact-sql
+[6]:https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
+[7]:https://docs.microsoft.com/sql/t-sql/data-types/ntext-text-and-image-transact-sql
+[8]:https://docs.microsoft.com/sql/t-sql/data-types/binary-and-varbinary-transact-sql
+[bit]:https://docs.microsoft.com/sql/t-sql/data-types/bit-transact-sql
+[date]:https://docs.microsoft.com/sql/t-sql/data-types/date-transact-sql
+[smalldatetime]:https://docs.microsoft.com/sql/t-sql/data-types/smalldatetime-transact-sql
+[time]:https://docs.microsoft.com/sql/t-sql/data-types/time-transact-sql
+[datetime2]:https://docs.microsoft.com/sql/t-sql/data-types/datetime2-transact-sql
+[datetime]:https://docs.microsoft.com/sql/t-sql/data-types/datetime-transact-sql
+[datetimeoffset]:https://docs.microsoft.com/sql/t-sql/data-types/datetimeoffset-transact-sql
+[cursor]:https://docs.microsoft.com/sql/t-sql/data-types/cursor-transact-sql
+[sql_variant]:https://docs.microsoft.com/sql/t-sql/data-types/sql-variant-transact-sql
+[hierarchyid]:https://docs.microsoft.com/sql/t-sql/data-types/hierarchyid-data-type-method-reference
+[rowversion]:https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql
+[timestamp]:https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql#remarks
+[uniqueidentifier]:https://docs.microsoft.com/sql/t-sql/data-types/uniqueidentifier-transact-sql
+[xml]:https://docs.microsoft.com/sql/t-sql/xml/xml-transact-sql
+[table]:https://docs.microsoft.com/sql/t-sql/data-types/table-transact-sql
+[geometry]:https://docs.microsoft.com/sql/t-sql/spatial-geometry/spatial-types-geometry-transact-sql
+[geography]:https://docs.microsoft.com/sql/t-sql/spatial-geography/spatial-types-geography
 
 **[⬆ back to top](#table-of-contents)**
 
