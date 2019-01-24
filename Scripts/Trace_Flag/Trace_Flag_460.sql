@@ -1,10 +1,12 @@
 SET NOEXEC OFF;
 
 DECLARE @msg NVARCHAR(MAX) = N'';
+DECLARE @productMajorVersion INT;
+SET @productMajorVersion = CAST(SERVERPROPERTY('ProductMajorVersion') AS INT);
 
-IF CAST(SERVERPROPERTY('ProductMajorVersion') AS INT) < 15
+IF @productMajorVersion < 14 OR (@productMajorVersion = 14 AND SERVERPROPERTY('ProductBuild') < 3045)
 BEGIN
-    RAISERROR(N'Sorry, Trace flag 460 only works for SQL Server 2019 on this moment.', 16, 1);
+    RAISERROR(N'Sorry, Trace flag 460 only works for SQL Server 2019 and SQL Server >= 2017 CU12 on this moment.', 16, 1);
     SET NOEXEC ON;
 END;
 
@@ -30,4 +32,7 @@ INSERT INTO dbo.WorldSeries (TeamName, Championships) VALUES
      ('Houston Astros',     'one')
    , ('Atlanta Braves',     'two')
    , ('Pittsburgh Pirates', 'five');  /* too long Championships value */
+GO
+
+IF OBJECT_ID(N'dbo.WorldSeries', 'U') IS NOT NULL DROP TABLE dbo.WorldSeries;
 GO
