@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **34** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **35** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
@@ -37,6 +37,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016-2017            | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012-2017            | VersionSQL           | Yes          |  $149 |
 | [Spotlight Tuning Pack](#spotlight-tuning-pack)       | [Spotlight Tuning Pack]       | 2018-06-01   | 2012-2017            | Quest Software Inc   | Yes          |  $180 |
+| [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2019            | Michel Max           | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -587,6 +588,40 @@ Powerful SQL optimization and query plan analysis.
 The analysis will indicate whether the Query Plan can be tuned to improve performance, or whether the SQL Statement can be rewritten to optimize its efficiency.
 
 
+<a id="#michel-max"></a>
+## Michel Max - SSMS Tools
+Download page: [Michel Max - SSMS Tools]<br/>
+Release date: 2018-11-16<br/>
+Support Version: 2012-2019<br/>
+Developer: Michel Max<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Format SQL Code.
+ - Prepare the Procedures/Functions to be called.
+ - Regions to organize the code.
+ - Retrieve the complete Information of a Table.
+ - Tab Colorize, base in the configuration window you can colorize the existing session based in the filters that you applied, making easy to the developer to identify each server/database he/she is working on.
+ - Selection Highlight for the same word in the SQL Code.
+ - Style Markers for the same word in the SQL Code.
+ - Configurable CRUD creation.
+ - Copy/Paste Table Structure and Data (Client Side).
+ - Grid Search, with advanced Extended and Regular Expression.
+ - Grid Search Highlight.
+ - Grid Style Markers.
+ - Grid Export to JSON, Excel XML.
+ - Grid Image Capture.
+ - Configurable Header Text Template, with quick insert, so you can easily sign you codes.
+ - Quick encapsulate code in region.
+
+Other versions:
+ - https://sourceforge.net/projects/michelmaxssmstools2012/
+ - https://sourceforge.net/projects/michelmaxssmstools2014/
+ - https://sourceforge.net/projects/michelmaxssmstools2016/
+ - https://sourceforge.net/projects/michelmaxssmstools2017/
+ - https://sourceforge.net/projects/michelmaxssmstools2019/
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
@@ -622,6 +657,7 @@ The analysis will indicate whether the Query Plan can be tuned to improve perfor
 [SQL Server Diagnostics]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
 [VersionSQL]:https://www.versionsql.com/
 [Spotlight Tuning Pack]:https://www.spotlightcloud.io/spotlight-cloud-tuning-pack
+[Michel Max - SSMS Tools]:https://sourceforge.net/projects/michelmaxssmstools2017/
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
