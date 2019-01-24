@@ -525,7 +525,7 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
-[4483666 On-demand hotfix update package for SQL Server 2017 CU13] :https://support.microsoft.com/help/4483666
+[4483666 On-demand hotfix update package for SQL Server 2017 CU13]:https://support.microsoft.com/help/4483666
 [4466404 Microsoft SQL Server 2017 CU13]:https://support.microsoft.com/help/4466404
 [4464082 Microsoft SQL Server 2017 CU12]:https://support.microsoft.com/help/4464082
 [4462262 Microsoft SQL Server 2017 CU11]:https://support.microsoft.com/help/4462262

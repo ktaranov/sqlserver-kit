@@ -4314,7 +4314,7 @@ Valentina Studio lets you connect with all major databases, run queries and gene
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
 [mssql-cli]:https://github.com/dbcli/mssql-cli
-[[Azure Data Studio]]:https://github.com/Microsoft/azuredatastudio
+[Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
