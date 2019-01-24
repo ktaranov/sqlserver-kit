@@ -199,7 +199,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 [SQL Server 2019]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
-[[SQL Server 2017 CU13 Hotfix]]:http://download.microsoft.com/download/4/3/9/439277DD-1041-48F8-A5E5-FA6493E44BC5/SQLServer2017-KB4483666-x64.exe
+[SQL Server 2017 CU13 Hotfix]:http://download.microsoft.com/download/4/3/9/439277DD-1041-48F8-A5E5-FA6493E44BC5/SQLServer2017-KB4483666-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU4]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4464106-x64.exe
@@ -225,17 +225,13 @@ For downloading your copy SQL Server Developer Edition you just need to join the
 
 | Edition\Direct Download Link                                                | Release Date | File name                                                                    | Size, Mb | SHA1                                     |
 |-----------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------|---------:|------------------------------------------|
-| [SQL Server 2017 Developer (x64) - DVD (English)]                           | 2017-10-02   | en_sql_server_2017_developer_x64_dvd_11296168.iso                            |     1475 | 0280FF6C1447D287A6BD3B86B81E459FE252D17A |
-| [SQL Server 2016 Developer with Service Pack 2 (x64) - DVD (English)]       | 2018-05-22   | en_sql_server_2016_developer_with_service_pack_2_x64_dvd_12194995.iso        |     2800 | 74279286C2ABFBA9E9FF6DBEE60B71669BD234D2 |
-| [SQL Server 2016 Developer (x64) - DVD (English)]                           | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             |     2100 | 1B23982FE56DF3BFE0456BDF0702612EB72ABF75 |
+| SQL Server 2017 Developer (x64) - DVD (English)                             | 2017-10-02   | en_sql_server_2017_developer_x64_dvd_11296168.iso                            |     1475 | 0280FF6C1447D287A6BD3B86B81E459FE252D17A |
+| SQL Server 2016 Developer with Service Pack 2 (x64) - DVD (English)         | 2018-05-22   | en_sql_server_2016_developer_with_service_pack_2_x64_dvd_12194995.iso        |     2800 | 74279286C2ABFBA9E9FF6DBEE60B71669BD234D2 |
+| SQL Server 2016 Developer (x64) - DVD (English)                             | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             |     2100 | 1B23982FE56DF3BFE0456BDF0702612EB72ABF75 |
 | SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso |     3025 | BFEE1F300C39638DA0D2CD594636698C6207C852 |
 | SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso |     2462 | ED3C70507A73BCC63D67CFA272CD849B9418A18E |
 | SQL Server 2014 Developer Edition (x64) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     |     2486 | F73F430F55A71DA219FC7257A3A28E8FC142530F |
 | SQL Server 2014 Developer Edition (x86) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     |     2039 | 395B35FD80AA959B02B0C399DA1BB0C020DB6310 |
-
-[SQL Server 2017 Developer (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2017_developer_x64_dvd_11296168.iso?t=ddc1adbd-b79d-41ff-8896-b88ac1d2f932&e=1538176327&h=996b8ee74517a8fef784bf3a664acf28&su=1
-[QL Server 2016 Developer with Service Pack 2 (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2016_developer_with_service_pack_2_x64_dvd_12194995.iso?t=b0f7aada-1281-4f57-b243-03cb89f3a0f1&e=1538176399&h=b563bdb11ae6868b31fd5e4521258642&su=1
-[SQL Server 2016 Developer (x64) - DVD (English)]:https://download.my.visualstudio.com/db/en_sql_server_2016_developer_x64_dvd_8777069.iso?t=b5e07b35-92db-49c7-ba97-d8af62a9ac13&e=1538175262&h=020ffa28868d817f883d856dce1e646b&su=1
 
 
 ## SQL Server Express direct download links
@@ -469,7 +465,7 @@ Microsoft SQL Server 2019 (CTP2.1) - 15.0.1100.94 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
-| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.1] | 2018-12-11   | 2018-11-02 |       |        |     1302 |
+| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.2] | 2018-12-11   | 2018-11-02 |       |        |     1302 |
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.1   | 2018-11-06   | 2018-11-02 |       |        |     1299 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.0   | 2018-09-24   | 2018-09-18 |       |        |     1532 |
 
