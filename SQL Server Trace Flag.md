@@ -107,7 +107,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 <a id="how-do-i-turn-trace-flags-on-and-off"></a>
 ## How do I turn Trace Flags on and off?
  - You can use the [DBCC TRACEON] and [DBCC TRACEOFF] commands
- - You can use the [-T option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/database-engine-service-startup-options "Official Microsoft Docs Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
+ - You can use the [-T option](https://docs.microsoft.com/sql/database-engine/configure-windows/database-engine-service-startup-options "Official Microsoft Docs Database Engine Service Startup Options Article") in the startup configuration for the SQL Server Service.
    **When specifying a trace flag with the `-T` option, use an uppercase `"T"` to pass the trace flag number. A lowercase `"t"` is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers. (Parameters specified in the Control Panel startup window are not read.)**
  - You can also use the hint [QUERYTRACEON](https://support.microsoft.com/help/2801413 "Official QUERYTRACEON KB Article") in your queries: **&lt;querytraceon_hint ::= {QUERYTRACEON trace_flag_number}>**
 
@@ -116,7 +116,7 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 ## How do I know what Trace Flags are turned on at the moment?
 From SSMS 16 every sql plan content information about trace flags in section `Trace flags`
 
-You can use the [DBCC TRACESTATUS](https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql "Microsoft Docs DBCC TRACESTATUS") command
+You can use the [DBCC TRACESTATUS](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql "Microsoft Docs DBCC TRACESTATUS") command
 
 The following example displays the status of all trace flags that are currently enabled globally:
 ```sql
@@ -181,22 +181,23 @@ GO
 ## Recommended Trace Flags
 
  - [Trace Flag 272](#272) (for SQL Server 2012)
- - [Trace Flag 460](#460) (for SQL Server 2019)
+ - [Trace Flag 460](#460) (for SQL Server 2019, >= 2017 CU12)
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
  - [Trace Flag 3427](#3427) (for SQL Server 2016)
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
- - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server))
+ - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server))
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
 
-**Trace Flag 460** Extend error `8152` (`String or binary data would be truncated. The statement has been terminated.`) description with useful information - which column had the truncation and which row.
-
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
+
+**Trace Flag 460** Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
+Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
 
 **Trace flag 1118** addresses contention that can exist on a particular type of page in a database, the SGAM page.
 This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
@@ -589,12 +590,15 @@ Link: None
 
 <a id="460"></a>
 #### Trace Flag: 460
-**Undocumented trace flag**<br />
-Function: Extend error `8152` (`String or binary data would be truncated. The statement has been terminated.`) description with useful information - which column had the truncation and which row.<br />
+Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
+Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
+Link: [Docs Trace Flags]<br />
 Link: https://www.procuresql.com/blog/2018/09/26/string-or-binary-data-get-truncated/<br />
 Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/32908417-binary-or-string-data-would-be-truncated-error<br />
+Link: https://blogs.msdn.microsoft.com/sql_server_team/string-or-binary-data-would-be-truncated-replacing-the-infamous-error-8152/<br />
+Link: https://support.microsoft.com/help/4468101<br />
 Scope: global or session<br />
-SQL Server Version: 2019<br />
+SQL Server Version: 2019, >= 2017 CU12<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_460.sql
 
 
@@ -4922,26 +4926,26 @@ Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
 
+[Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [Query Store Trace Flags]: https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
-[DBCC TRACEON]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
-[DBCC TRACEOFF]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql
-[Docs Trace Flags]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
-[DBCC CHECKDB]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
-[DBCC CHECKTABLE]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
-[DBCC CHECKCONSTRAINTS]: https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
+[DBCC TRACEON]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
+[DBCC TRACEOFF]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql
+[DBCC CHECKDB]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
+[DBCC CHECKTABLE]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
+[DBCC CHECKCONSTRAINTS]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
 [Niko Neugebauer Columnstore Indexes – part 86]: http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
 [Niko Neugebauer Columnstore Indexes – part 35]: http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
 [Microsoft SQL Server 2005 TPC-C Trace Flags]: http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
 [Trace Flag 1228 and 1229]: http://www.sqlservercentral.com/Forums/Topic741825-146-1.aspx
 [A Topical Collection of SQL Server Flags v6]: https://sqlcrossjoin.files.wordpress.com/2016/04/sqlcrossjoin_traceflagrepository_v6.pdf
-[How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]: https://msdn.microsoft.com/en-us/library/cc917684.aspx
+[How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]: https://msdn.microsoft.com/library/cc917684.aspx
 [Trace flags in sql server from trace flag 902 to trace flag 1462]: http://www.sqlserverf1.com/tag/sql-server-trace-flag-1448/
 [TECHNET List Of SQL Server Trace Flags]: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
 [Cardinality Estimation Framework 2014 First Look]: http://www.somewheresomehow.ru/cardinality-estimation-framework-2014-first-look/
 [Query Optimizer Deep Dive - Part 4]: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
 [KB920093]: https://support.microsoft.com/help/920093
 [KB972767]: https://support.microsoft.com/help/972767
-[Tune compression for availability group]: https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
+[Tune compression for availability group]: https://docs.microsoft.com/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
 [More Undocumented Query Optimizer Trace Flags]: http://www.benjaminnevarez.com/2012/04/more-undocumented-query-optimizer-trace-flags/
 [KB3107399]: https://support.microsoft.com/help/3107399
 [KB2801413]: https://support.microsoft.com/help/2801413
@@ -4953,7 +4957,7 @@ Scope: ?
 [SQL Server 2016 : Getting tempdb a little more right]: https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
 [Importance of Performing DBCC CHECKDB on all SQL Server Databases]: https://www.mssqltips.com/sqlservertip/4581/importance-of-performing-dbcc-checkdb-on-all-sql-server-databases/
 [SQL Server Parallel Query Placement Decision Logic]: https://blogs.msdn.microsoft.com/psssql/2016/03/04/sql-server-parallel-query-placement-decision-logic/
-[compatibility level]: https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
+[compatibility level]: https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level
 [Bad Idea Jeans: Finding Undocumented Trace Flags]: https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
 [SQL Server - estimates outside of the histogram - half-baked draft]: http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
 [Upgrading an expired SQL Server 2016 Evaluation Edition]: https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
@@ -4977,7 +4981,9 @@ Scope: ?
 [TEMPDB – Files and Trace Flags and Updates]:https://blogs.msdn.microsoft.com/sql_server_team/tempdb-files-and-trace-flags-and-updates-oh-my/
 [Next-Level Parallel Plan Forcing: An Alternative to 8649]:http://dataeducation.com/next-level-parallel-plan-forcing-an-alternative-to-8649/
 [SQL Server 6.5: Some Useful Trace Flag]:http://www.databasejournal.com/features/mssql/article.php/1443351/SQL-Server-65-Some-Useful-Trace-Flags.htm
-[DAC]:https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators
-[DBCC SHOW_STATISTICS]:https://docs.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql
-[ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql
+[DAC]:https://docs.microsoft.com/sql/database-engine/configure-windows/diagnostic-connection-for-database-administrators
+[DBCC SHOW_STATISTICS]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql
+[ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)]:https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql
 [KB169960]:https://web.archive.org/web/20150111103047/http://support.microsoft.com:80/kb/169960
+[2628]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-2000-to-2999
+[8152]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-8000-to-8999
