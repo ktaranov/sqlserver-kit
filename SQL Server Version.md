@@ -634,8 +634,9 @@ Microsoft SQL Server 2016 (SP2-CU4) (KB4464106) - 13.0.5233.0 (X64)
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
 [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018]:https://support.microsoft.com/help/4293802
 [4464343 Cumulative Update 12 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4464343
+[4465443 FIX: The "modification_counter" in DMV sys.dm_db_stats_properties shows incorrect value when partitions are merged]:https://support.microsoft.com/help/4465443/
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
-[4459676 Cumulative Update 11 for SQL Server 2016 SP1]:https://support.microsoft.com/en-us/help/4459676
+[4459676 Cumulative Update 11 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4459676
 [4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018]:https://support.microsoft.com/help/4293808
 [4341569 Cumulative Update 10 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4341569
 [4100997 Cumulative Update 9 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4100997
@@ -674,7 +675,7 @@ Microsoft SQL Server 2016 (SP2-CU4) (KB4464106) - 13.0.5233.0 (X64)
 [3194716 MS16-136: Description of the security update for SQL Server 2016 GDR]:https://support.microsoft.com/help/3194716
 [3179258 Processing a partition causes data loss on other partitions after the database is restored in SQL Server 2016 (1200)]:http://support.microsoft.com/help/3179258
 [3164398 Critical update for SQL Server 2016 MSVCRT prerequisites]:https://support.microsoft.com/help/3164398
-[Microsoft SQL Server 2016 RTM]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2016
+[Microsoft SQL Server 2016 RTM]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2016
 
 
 <a id="microsoft-sql-server-2014-builds"></a>
