@@ -52,46 +52,46 @@
 ## SQL Server Data Types Recommendation
 More details about SQL Server data types and mapping it with another databases you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
 
-| General Type         | Type                | Recommended    |
-|----------------------|---------------------|----------------|
-| Exact Numerics       | [bit]               | No             |
-| Exact Numerics       | [tinyint][1]        | Maybe          |
-| Exact Numerics       | [smallint][1]       | Maybe          |
-| Exact Numerics       | [int][1]            | Yes            |
-| Exact Numerics       | [bigint][1]         | Yes            |
-| Exact Numerics       | [decimal][2]        | Yes            |
-| Exact Numerics       | [smallmoney][3]     | No             |
-| Exact Numerics       | [money][3]          | No             |
-| Approximate Numerics | [real][4]           | Yes            |
-| Approximate Numerics | [float][4]          | Yes            |
-| Date and Time        | [date]              | Yes            |
-| Date and Time        | [smalldatetime]     | Maybe          |
-| Date and Time        | [time]              | Yes            |
-| Date and Time        | [datetime2]         | Yes            |
-| Date and Time        | [datetime]          | No             |
-| Date and time        | [datetimeoffset]    | Yes            |
-| Caracter Strings     | [char][5]           | Yes            |
-| Caracter Strings     | [varchar][5]        | Yes            |
-| Caracter Strings     | [varchar(max)][5]   | Yes            |
-| Caracter Strings     | [nchar][6]          | Yes            |
-| Caracter Strings     | [nvarchar][6]       | Yes            |
-| Caracter Strings     | [nvarchar(max)][6]  | Yes            |
-| Caracter Strings     | [ntext][7]          | **Deprecated** |
-| Caracter Strings     | [text][7]           | **Deprecated** |
-| Binary Strings       | [image][7]          | **Deprecated** |
-| Binary Strings       | [binary][8]         | **Deprecated** |
-| Binary Strings       | [varbinary][8]      | Maybe          |
-| Binary Strings       | [varbinary(max)][8] | Maybe          |
-| Other Data Types     | [cursor]            | Maybe          |
-| Other Data Types     | [sql_variant]       | No             |
-| Other Data Types     | [hierarchyid]       | Maybe          |
-| Other Data Types     | [rowversion]        | Maybe          |
-| Other Data Types     | [timestamp]         | **Deprecated** |
-| Other Data Types     | [uniqueidentifier]  | Yes            |
-| Other Data Types     | [xml]               | Yes            |
-| Other Data Types     | [table]             | Maybe          |
-| Spatial Data Types   | [geometry]          | Yes            |
-| Spatial Data Types   | [geography]         | Yes            |
+| General Type         | Type                | Recommended    | What use instead   | Why use or not                                            |
+|----------------------|---------------------|----------------|--------------------|-----------------------------------------------------------|
+| Exact Numerics       | [bit]               | No             | [tinyint][1]       |                                                           |
+| Exact Numerics       | [tinyint][1]        | Maybe          | [int][1]           |                                                           |
+| Exact Numerics       | [smallint][1]       | Maybe          | [int][1]           |                                                           |
+| Exact Numerics       | [int][1]            | Yes            | -                  |                                                           |
+| Exact Numerics       | [bigint][1]         | Yes            | [int][1]           |                                                           |
+| Exact Numerics       | [decimal][2]        | Yes            | -                  |                                                           |
+| Exact Numerics       | [smallmoney][3]     | No             | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
+| Exact Numerics       | [money][3]          | No             | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
+| Approximate Numerics | [real][4]           | Yes            | -                  |                                                           |
+| Approximate Numerics | [float][4]          | Yes            | -                  |                                                           |
+| Date and Time        | [date]              | Yes            | -                  |                                                           |
+| Date and Time        | [smalldatetime]     | Maybe          | [date]             |                                                           |
+| Date and Time        | [time]              | Yes            | -                  |                                                           |
+| Date and Time        | [datetime2]         | Yes            | -                  |                                                           |
+| Date and Time        | [datetime]          | No             | [datetime2]        |                                                           |
+| Date and time        | [datetimeoffset]    | Yes            | -                  |                                                           |
+| Character Strings    | [char][5]           | Maybe          |                    |                                                           |
+| Character Strings    | [varchar][5]        | Yes            | [varchar][5]       |                                                           |
+| Character Strings    | [varchar(max)][5]   | Yes            | -                  |                                                           |
+| Character Strings    | [nchar][6]          | Maybe          | [nvarchar][6]      |                                                           |
+| Character Strings    | [nvarchar][6]       | Yes            | -                  |                                                           |
+| Character Strings    | [nvarchar(max)][6]  | Yes            | -                  |                                                           |
+| Character Strings    | [ntext][7]          | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Character Strings    | [text][7]           | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [image][7]          | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [binary][8]         | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [varbinary][8]      | Yes            | -                  |                                                           |
+| Binary Strings       | [varbinary(max)][8] | Yes            | -                  |                                                           |
+| Other Data Types     | [cursor]            | Maybe          | -                  |                                                           |
+| Other Data Types     | [sql_variant]       | No             | [varchar][5]?      |                                                           |
+| Other Data Types     | [hierarchyid]       | Maybe          | -                  |                                                           |
+| Other Data Types     | [rowversion]        | Maybe          | -                  |                                                           |
+| Other Data Types     | [timestamp]         | **Deprecated** | [rowversion]       | it is just synonym to [rowversion] data type              |
+| Other Data Types     | [uniqueidentifier]  | Yes            | -                  |                                                           |
+| Other Data Types     | [xml]               | Yes            | -                  |                                                           |
+| Other Data Types     | [table]             | Maybe          | -                  |                                                           |
+| Spatial Data Types   | [geometry]          | Yes            | -                  |                                                           |
+| Spatial Data Types   | [geography]         | Yes            | -                  |                                                           |
 
 [1]:https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
 [2]:https://docs.microsoft.com/sql/t-sql/data-types/decimal-and-numeric-transact-sql
@@ -101,6 +101,9 @@ More details about SQL Server data types and mapping it with another databases y
 [6]:https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
 [7]:https://docs.microsoft.com/sql/t-sql/data-types/ntext-text-and-image-transact-sql
 [8]:https://docs.microsoft.com/sql/t-sql/data-types/binary-and-varbinary-transact-sql
+
+[9]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
+
 [bit]:https://docs.microsoft.com/sql/t-sql/data-types/bit-transact-sql
 [date]:https://docs.microsoft.com/sql/t-sql/data-types/date-transact-sql
 [smalldatetime]:https://docs.microsoft.com/sql/t-sql/data-types/smalldatetime-transact-sql
@@ -228,10 +231,10 @@ SELECT t1.Value1 AS Val1
  - The procedure or function should begin with parameter check
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
- - Always use `/* */` instead inline comment `--`
+ - Always use `/* */` instead in-line comment `--`
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
  - Do not use `SET NOCOUNT OFF;` (because it is default behavior)
- - Use TOP expression with `()`:
+ - Use `TOP` expression with `()`:
 ```tsql
 -- Not working without ()
 DECLARE @n int = 1;
