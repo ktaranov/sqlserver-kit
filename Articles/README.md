@@ -622,6 +622,10 @@ Articles types:
 | [Finding the Slowest Query in a Stored Procedure]                                                                       | Erin Stellato                            | 2018-12-13 | [DBA],[DEV] |
 | [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA]       |
 | [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA]       |
+| [A unique review of SQL Server index types]                                                                             | Kevin Chant                              | 2019-10-18 | [DBA],[DEV] |
+| [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA],[DEV] |
+| [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA],[DEV] |
+| [How to create DACPAC file?]                                                                                            | Kamil Nowinski                           | 2018-10-31 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1222,3 +1226,7 @@ Articles types:
 [Finding the Slowest Query in a Stored Procedure]:https://www.sqlskills.com/blogs/erin/slowest-query-in-a-stored-procedure/
 [A Monumental Migration to SQL Server 2016 – Part 1]:https://flxsql.com/monumental-migration-sql-server-2016-part-1/
 [A Monumental Migration to SQL Server 2016 – Part 2]:https://flxsql.com/monumental-migration-sql-server-2016-part-2/
+[A unique review of SQL Server index types]:https://www.kevinrchant.com/2018/10/18/a-unique-review-of-sql-server-index-types/
+[Don’t Just Rely on Query Execution Stats for T-SQL Execution]:https://matthewmcgiffen.com/2018/09/18/dont-just-rely-on-query-execution-stats-for-t-sql-execution/
+[Posting SQL Server notifications to Slack]:https://alessandroalpi.blog/2018/09/19/posting-sql-server-notifications-to-slack/
+[How to create DACPAC file?]:https://sqlplayer.net/2018/10/how-to-create-dacpac-file/
