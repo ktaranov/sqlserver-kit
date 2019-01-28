@@ -1,6 +1,7 @@
 /*
 Author: Max Vernon
 Original link: https://www.sqlserverscience.com/maintenance/check-dbcc-checkdb/
+Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/DBCC_CHECKDB_Latest_date.sql
 Modified: 2018-01-26 18:20 by Konstantin Taranov
 */
 
