@@ -1,16 +1,21 @@
-IF Object_Id('dbo.SeeAccessControlChanges') IS NOT NULL
-     DROP function dbo.SeeAccessControlChanges
-  GO
-  CREATE FUNCTION dbo.SeeAccessControlChanges
+IF OBJECT_ID('dbo.udf_SeeAccessControlChanges') IS NOT NULL
+     DROP function dbo.udf_SeeAccessControlChanges
+GO
+
+
+CREATE FUNCTION dbo.udf_SeeAccessControlChanges
   /**
   Summary: >
     This function gives you a list
     of security events concerning users, roles and logins
     from the default trace
   Author: Phil Factor
-  Date: 04/10/2018
+  Date: 2018-10-04
+  Original link: https://www.red-gate.com/hub/product-learning/sql-monitor/monitoring-changes-permissions-users-roles-logins
+  Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/User_Defined_Function/dbo.udf_SeeAccessControlChanges.sql
+  Modified: 2019-01-28 18:50 UTC+3 by Konstantin Taranov
   Examples:
-     - Select * from dbo.SeeAccessControlChanges(DateAdd(day,-1,SysDateTime()),SysDateTime())
+     - SELECT * FROM dbo.udf_SeeAccessControlChanges(DateAdd(day, -1, SysDateTime()), SysDateTime())
   columns: datetime_local, action, data, hostname, ApplicationName, LoginName, traceName, spid, EventClass, objectName, rolename, TargetLoginName, category_id, ObjectType
   Returns: >
         datetime_local datetime2(7)
@@ -30,7 +35,7 @@ IF Object_Id('dbo.SeeAccessControlChanges') IS NOT NULL
           **/
     (
     @Start DATETIME2,--the start of the period
-    @finish DATETIME2--the end of the period
+    @Finish DATETIME2--the end of the period
     )
   RETURNS TABLE
    --WITH ENCRYPTION|SCHEMABINDING, ..
@@ -42,7 +47,7 @@ IF Object_Id('dbo.SeeAccessControlChanges') IS NOT NULL
           DATETIME2,
          SWITCHOFFSET(CONVERT(datetimeoffset, StartTime), DATENAME(TzOffset, SYSDATETIMEOFFSET()))
                )  AS datetime_local, 'User '+Coalesce( LoginName+ ' ','unknown ')+
-        CASE EventSubclass --interpret the subclass for these traces
+        CASE EventSubClass --interpret the subclass for these traces
           WHEN 1 THEN 'added ' WHEN 2 THEN 'dropped ' WHEN 3 THEN 'granted database access for '
           WHEN 4 THEN 'revoked database access from ' ELSE 'did something to ' END+ Coalesce(TargetLoginName,'')
         + Coalesce( CASE EventSubclass WHEN 1 THEN ' to object ' ELSE ' from object ' end+objectname, '') AS action,
@@ -51,14 +56,13 @@ IF Object_Id('dbo.SeeAccessControlChanges') IS NOT NULL
       SysTSV.subclass_name AS ObjectType
        FROM::fn_trace_gettable(--just use the latest trace
            (SELECT TOP 1 traces.path FROM sys.traces
-              WHERE traces.is_default = 1), DEFAULT) AS DT
+              WHERE is_default = 1), DEFAULT) AS DT
         LEFT OUTER JOIN sys.trace_events AS TE
           ON DT.EventClass = TE.trace_event_id
         LEFT OUTER JOIN sys.trace_subclass_values AS SysTSV
           ON DT.EventClass = SysTSV.trace_event_id
          AND DT.ObjectType = SysTSV.subclass_value
-      WHERE StartTime BETWEEN @start AND @finish
+      WHERE StartTime BETWEEN @Start AND @Finish
       AND TargetLoginName IS NOT NULL
-    )
+    );
   GO
-  
