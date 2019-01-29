@@ -54,7 +54,7 @@ More details about SQL Server data types and mapping it with another databases y
 
 | General Type         | Type                | Recommended    | What use instead   | Why use or not                                            |
 |----------------------|---------------------|----------------|--------------------|-----------------------------------------------------------|
-| Exact Numerics       | [bit]               | No             | [tinyint][1]       |                                                           |
+| Exact Numerics       | [bit]               | Maybe          | [tinyint][1]       |                                                           |
 | Exact Numerics       | [tinyint][1]        | Maybe          | [int][1]           |                                                           |
 | Exact Numerics       | [smallint][1]       | Maybe          | [int][1]           |                                                           |
 | Exact Numerics       | [int][1]            | Yes            | -                  |                                                           |
@@ -197,6 +197,15 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001)
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017)
+ - Use `EXISTS` or `NOT EXISTS` if referencing a subquery, and `IN` or `NOT IN` when have a list of literal values
+   More details [here](https://www.brentozar.com/archive/2018/08/a-common-query-error/)
+ - For concatenate strings:
+   - always using the upper-case `N`;
+   - always store into a variable of type `NVARCHAR(MAX)`;
+   - avoid truncation of string literals, simply ensure that one piece is converted to `NVARCHAR(MAX)`.
+   Example: `SET @NVCmaxVariable = CONVERT(NVARCHAR(MAX), N'anything') + N'something else' + N'another';`
+   More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/)
+
 
 Example:
 
@@ -228,12 +237,13 @@ SELECT t1.Value1 AS Val1
  - Parameters name should be in **camelCase**
  - Parameters should be placed under procedure name divided by line breaks
  - After the `ALTER` statement and before AS keyword should be placed a comment with execution example
- - The procedure or function should begin with parameter check
+ - The procedure or function should begin with parameters check
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH`
  - Always use `/* */` instead in-line comment `--`
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
  - Do not use `SET NOCOUNT OFF;` (because it is default behavior)
+ - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags. More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html)
  - Use `TOP` expression with `()`:
 ```tsql
 -- Not working without ()
