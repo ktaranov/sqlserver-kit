@@ -239,45 +239,76 @@ The table does not include all possible mappings or all data types, but is meant
 ## SQL Server to MySQL, Oracle, PostgreSQL, SQLite Data Type Mapping
 <a id="sql-server-to-mysql-oracle-postgresql-sqlite"></a>
 
-| General Type          | Type               | MySQL                                                          | Oracle        | PostgreSQL                  | SQLite  |
-|-----------------------|--------------------|----------------------------------------------------------------|---------------|-----------------------------|--------:|
-| Exact Numerics        | [bit]              | TINYINT(1)                                                     | NUMBER(3)     | BOOLEAN                     | INTEGER |
-| Exact Numerics        | [tinyint][1]       | TINYINT(signed)                                                | NUMBER(3)     | SMALLINT                    | INTEGER |
-| Exact Numerics        | [smallint][1]      | SMALLINT                                                       | NUMBER(5)     | SMALLINT                    | INTEGER |
-| Exact Numerics        | [int][1]           | MEDIUMINT, INT                                                 | NUMBER(10)    | INT                         | INTEGER |
-| Exact Numerics        | [bigint][1]        | BIGINT                                                         | NUMBER(19)    | BIGINT                      | INTEGER |
-| Exact Numerics        | [decimal][2]       | DECIMAL                                                        | NUMBER(p[,s]) | DECIMAL(p,s)                | REAL    |
-| Exact Numerics        | [smallmoney][3]    | DOUBLE                                                         | NUMBER(10,4)  | MONEY                       | REAL    |
-| Exact Numerics        | [money][3]         | DOUBLE                                                         | NUMBER(19,4)  | MONEY                       | REAL    |
-| Approximate Numerics  | [float][4]         | FLOAT<br/>DOUBLE; REAL                                         | FLOAT(49)     | DOUBLE PRECISION            | REAL    |
-| Date and Time         | [date]             | DATE                                                           |               | DATE                        | TEXT    |
-| Date and Time         | [smalldatetime]    | TIMESTAMP                                                      | DATE          | TIMESTAMP(0)                | TEXT    |
-| Date and Time         | [time]             | TIME                                                           |               | TIME                        | TEXT    |
-| Date and Time         | [datetime2]        | DDATETIME                                                      |               | TIMESTAMP                   | TEXT    |
-| Date and Time         | [datetime]         |                                                                | DATE          | TIMESTAMP(3)                | TEXT    |
-| Date and time         | [datetimeoffset]   |                                                                |               | TIMESTAMP<br/>with time zone| TEXT    |
-| Character Strings     | [char][5]          | CHAR                                                           | CHAR          | CHAR                        | TEXT    |
-| Character Strings     | [varchar][5]       | VARCHAR                                                        | VARCHAR2      | VARCHAR                     | TEXT    |
-| Character Strings     | [varchar](max)     |                                                                | VARCHAR2      | TEXT                        | TEXT    |
-| Character Strings     | [nchar][5]         | NCHAR                                                          |               | NCHAR                       | TEXT    |
-| Character Strings     | [nvarchar][5]      |                                                                | NCHAR         | VARCHAR                     | TEXT    |
-| Character Strings     | [nvarchar](max)    | VARCHAR<br/>TINYTEXT<br/>TEXT(M)<br/>MEDIUMTEXT<br/>LONGTEXT   | NCHAR         | TEXT                        | TEXT    |
-| Character Strings     | [ntext][4] (*)     |                                                                | LONG          | TEXT                        | TEXT    |
-| Character Strings     | [text][4] (*)      |                                                                | LONG          | TEXT                        | TEXT    |
-| Binary Strings        | [image][4] (*)     | LONGBLOB                                                       | LONG RAW      | BYTEA                       | BLOB    |
-| Binary Strings        | [binary][8]        | BINARY                                                         | RAW           | BYTEA                       | BLOB    |
-| Binary Strings        | [varbinary][8]     |                                                                | RAW           | BYTEA                       | BLOB    |
-| Binary Strings        | [varbinary(max)][8]| VARBINARY(M)<br/>TINYBLOB<br/>BLOB<br/>MEDIUMBLOB<br/>LONGBLOB | RAW           | BYTEA                       | BLOB    |
-| Other Data Types      | [cursor]           |                                                                |               |                             | TEXT    |
-| Other Data Types      | [sql_variant]      | BLOB                                                           |               |                             | TEXT    |
-| Other Data Types      | [hierarchyid]      |                                                                |               |                             | TEXT    |
-| Other Data Types      | [rowversion]       |                                                                |               | BYTEA                       | TEXT    |
-| Other Data Types      | [timestamp] (*)    |                                                                | RAW           | BYTEA                       | TEXT    |
-| Other Data Types      | [uniqueidentifier] | CHAR                                                           | CHAR(36)      | CHAR(16)                    | TEXT    |
-| Other Data Types      | [xml]              |                                                                |               | XML                         | TEXT    |
-| Other Data Types      | [table]            |                                                                |               |                             | -       |
-| Spatial Data Types    | [geometry]         |                                                                |               | VARCHAR                     | TEXT    |
-| Spatial Data Types    | [geography]        |                                                                |               | VARCHAR                     | TEXT    |
+Common data-type conversions between SQL Server, Oracle, Sybase ASE, and DB2.
+More details [here](https://www.sqlserverscience.com/documentation/common-data-type-conversions-between-sql-server-oracle-sybase-ase-and-db2/)
+
+| Source      | Destination |
+|-------------|-------------|
+| MSSQLSERVER | DB2         |
+| MSSQLSERVER | ORACLE      |
+| MSSQLSERVER | SYBASE      |
+| ORACLE      | MSSQLSERVER |
+
+```tsql
+DECLARE @source_dbms         SYSNAME = N'%'
+      , @source_version      SYSNAME = N'%'
+      , @source_type         SYSNAME = N'%'
+      , @destination_dbms    SYSNAME = N'%'
+      , @destination_version SYSNAME = N'%'
+      , @destination_type    SYSNAME = N'%'
+      , @defaults_only       BIT     = 0;
+
+SELECT *
+FROM sys.fn_helpdatatypemap (
+    @source_dbms
+    , @source_version
+    , @source_type
+    , @destination_dbms
+    , @destination_version
+    , @destination_type
+    , @defaults_only
+    );
+```
+
+| General Type          | Type               | MySQL                           | Oracle        | PostgreSQL                  | SQLite  |
+|-----------------------|--------------------|---------------------------------|---------------|-----------------------------|--------:|
+| Exact Numerics        | [bit]              | [TINYINT(1)][20]                | NUMBER(3)     | BOOLEAN                     | INTEGER |
+| Exact Numerics        | [tinyint][1]       | [TINYINT(3) UNSIGNED][20]       | NUMBER(3)     | SMALLINT                    | INTEGER |
+| Exact Numerics        | [smallint][1]      | [SMALLINT][20]                  | NUMBER(5)     | SMALLINT                    | INTEGER |
+| Exact Numerics        | [int][1]           | [INT][20]                       | NUMBER(10)    | INT                         | INTEGER |
+| Exact Numerics        | [bigint][1]        | [BIGINT][20]                    | NUMBER(19)    | BIGINT                      | INTEGER |
+| Exact Numerics        | [decimal][2]       | [DECIMAL][21]                   | NUMBER(p[,s]) | DECIMAL(p,s)                | REAL    |
+| Exact Numerics        | [smallmoney][3]    | [DECIMAL(10,4)][21]             | NUMBER(10,4)  | MONEY                       | REAL    |
+| Exact Numerics        | [money][3]         | [DECIMAL(19,4)][21]             | NUMBER(19,4)  | MONEY                       | REAL    |
+| Approximate Numerics  | [float][4]         | [FLOAT][22]                     | FLOAT(49)     | DOUBLE PRECISION            | REAL    |
+| Date and Time         | [date]             | [DATE][22]                      | DATE          | DATE                        | TEXT    |
+| Date and Time         | [smalldatetime]    | [TIMESTAMP][23]                 | DATE          | TIMESTAMP(0)                | TEXT    |
+| Date and Time         | [time]             | [TIME][24]                      |               | TIME                        | TEXT    |
+| Date and Time         | [datetime2]        | [DATETIME][23]                  |               | TIMESTAMP                   | TEXT    |
+| Date and Time         | [datetime]         | [DATETIME][23]                  | DATE          | TIMESTAMP(3)                | TEXT    |
+| Date and time         | [datetimeoffset]   |                                 |               | TIMESTAMP<br/>with time zone| TEXT    |
+| Character Strings     | [char][5]          | CHAR                            | CHAR          | CHAR                        | TEXT    |
+| Character Strings     | [varchar][5]       | VARCHAR                         | VARCHAR2      | VARCHAR                     | TEXT    |
+| Character Strings     | [varchar](max)     | LONGTEXT                        | VARCHAR2      | TEXT                        | TEXT    |
+| Character Strings     | [nchar][5]         | NCHAR                           |               | NCHAR                       | TEXT    |
+| Character Strings     | [nvarchar][5]      | VARCHAR with character set utf8 | NCHAR         | VARCHAR                     | TEXT    |
+| Character Strings     | [nvarchar](max)    | LONGTEXT                        | NCHAR         | TEXT                        | TEXT    |
+| Character Strings     | [ntext][4] (*)     |                                 | LONG          | TEXT                        | TEXT    |
+| Character Strings     | [text][4] (*)      |                                 | LONG          | TEXT                        | TEXT    |
+| Binary Strings        | [image][4] (*)     | LONGBLOB                        | LONG RAW      | BYTEA                       | BLOB    |
+| Binary Strings        | [binary][8]        | BINARY                          | RAW           | BYTEA                       | BLOB    |
+| Binary Strings        | [varbinary][8]     |                                 | RAW           | BYTEA                       | BLOB    |
+| Binary Strings        | [varbinary(max)][8]| LONGTEXT                        | RAW           | BYTEA                       | BLOB    |
+| Other Data Types      | [cursor]           |                                 |               |                             | TEXT    |
+| Other Data Types      | [sql_variant]      | BLOB                            |               |                             | TEXT    |
+| Other Data Types      | [hierarchyid]      |                                 |               |                             | TEXT    |
+| Other Data Types      | [rowversion]       |                                 |               | BYTEA                       | TEXT    |
+| Other Data Types      | [timestamp] (*)    |                                 | RAW           | BYTEA                       | TEXT    |
+| Other Data Types      | [uniqueidentifier] | CHAR                            | CHAR(36)      | CHAR(16)                    | TEXT    |
+| Other Data Types      | [xml]              |                                 |               | XML                         | TEXT    |
+| Other Data Types      | [table]            |                                 |               |                             | -       |
+| Spatial Data Types    | [geometry]         |                                 |               | VARCHAR                     | TEXT    |
+| Spatial Data Types    | [geography]        |                                 |               | VARCHAR                     | TEXT    |
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -309,3 +340,9 @@ The table does not include all possible mappings or all data types, but is meant
 [table]:https://docs.microsoft.com/sql/t-sql/data-types/table-transact-sql
 [geometry]:https://docs.microsoft.com/sql/t-sql/spatial-geometry/spatial-types-geometry-transact-sql
 [geography]:https://docs.microsoft.com/sql/t-sql/spatial-geography/spatial-types-geography
+
+[20]:https://dev.mysql.com/doc/refman/8.0/en/integer-types.html
+[21]:https://dev.mysql.com/doc/refman/8.0/en/fixed-point-types.html
+[22]:https://dev.mysql.com/doc/refman/8.0/en/floating-point-types.html
+[23]:https://dev.mysql.com/doc/refman/8.0/en/datetime.html
+[24]:https://dev.mysql.com/doc/refman/8.0/en/time.html

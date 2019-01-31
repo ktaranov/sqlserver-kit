@@ -14,6 +14,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - [ ] Analyze Actual Execution Plan https://www.scarydba.com/2018/08/06/analyze-actual-execution-plan/
  - [ ] Compare Actual Execution Plans
  - [ ] [Database Upgrade using the Query Tuning Assistant wizard in SSMS 18](https://www.sqlshack.com/database-upgrade-using-the-query-tuning-assistant-wizard-in-ssms-18/)
+ - [ ] [Export Data From SSMS Query to Excel](https://blog.sqlauthority.com/2019/01/16/sql-server-export-data-from-ssms-query-to-excel/)
 
 Content:
 1. [Import and Export Settings](#1)

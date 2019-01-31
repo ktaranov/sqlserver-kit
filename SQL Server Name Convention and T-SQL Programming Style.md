@@ -205,7 +205,8 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    - avoid truncation of string literals, simply ensure that one piece is converted to `NVARCHAR(MAX)`.
    Example: `SET @NVCmaxVariable = CONVERT(NVARCHAR(MAX), N'anything') + N'something else' + N'another';`
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/)
-
+ - Always specify a length to any text-based data type such as `NVARCHAR` or `VARCHAR`: `DECLARE @myGoodVariable VARCHAR(50);` and not `DECLARE @myBadVariable VARCHAR;`.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores)
 
 Example:
 

@@ -1106,6 +1106,7 @@ Link: None
 #### Trace Flag: 1222
 Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.<br />
 Link: [Docs Trace Flags]<br />
+Link: https://blogs.msdn.microsoft.com/bartd/2006/09/08/deadlock-troubleshooting-part-1/<br />
 Link: https://blog.sqlauthority.com/2017/01/09/sql-server-get-historical-deadlock-information-system-health-extended-events<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global only
@@ -1464,6 +1465,7 @@ Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-qu
 Function: Causes SQL Server to assume a fixed amount of memory is available during query optimization. It does not limit the memory SQL Server grants to execute the query.
 The memory configured for SQL Server will still be used by data cache, query execution and other consumers.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: https://www.brentozar.com/archive/2018/08/how-trace-flag-2335-affects-memory-grants/<br />
 Link: https://support.microsoft.com/help/2413549<br />
 Link: [Docs Trace Flags]<br />
 Link: http://dba.stackexchange.com/questions/53726/difference-in-execution-plans-on-uat-and-prod-server<br />
@@ -1568,6 +1570,7 @@ Also In SQL Server, if you want to see the information of last four statistics u
 In simple words, we can say that this trace flag provide us the historical information about statistics update.<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2388/<br />
+Link: [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]<br />
 Scope: session only
 
 
@@ -3816,14 +3819,16 @@ Link: [Yet another X-Ray for the QP]<br />
 Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<br />
 Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536<br />
 Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-server-table-statistics/<br />
-Link: http://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.htmlhttp://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.html<br />
-Scope: session only
+Link: http://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.html<br />
+Link: [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]<br />
+Scope: global or session
 
 
 <a id="8671"></a>
 #### Trace Flag: 8671
 **Undocumented trace flag**<br />
-Function: According to Dima, disables the logic that prunes the memo and prevents the optimization process from stopping due to “Good Enough Plan found”. Can significantly increase the amount of time, CPU, and memory used in the compilation process<br />
+Function: According to Dimitriy Pilugin, disables the logic that prunes the memo and prevents the optimization process from stopping due to “Good Enough Plan found”.
+Can significantly increase the amount of time, CPU, and memory used in the compilation process<br />
 Link: http://www.queryprocessor.ru/optimizer_unleashed_2
 
 
@@ -4987,3 +4992,4 @@ Scope: ?
 [KB169960]:https://web.archive.org/web/20150111103047/http://support.microsoft.com:80/kb/169960
 [2628]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-2000-to-2999
 [8152]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-8000-to-8999
+[Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]:http://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-trace_6.html
