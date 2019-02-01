@@ -626,6 +626,22 @@ Articles types:
 | [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA],[DEV] |
 | [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA],[DEV] |
 | [How to create DACPAC file?]                                                                                            | Kamil Nowinski                           | 2018-10-31 | [DBA],[DEV] |
+| [Find the Next Non-NULL Row in a Series With SQL]                                                                       | JOOq                                     | 2018-09-03 | [DEV]       |
+| [Calculate Percentiles to Learn About Data Set Skew in SQL]                                                             | JOOq                                     | 2019-01-22 | [DEV]       |
+| [Comparing multiple rows insert vs single row insert with three data load methods]                                      | Phil Factor                              | 2013-02-21 | [DBA],[DEV] |
+| [The Cause of Every Deadlock in SQL Server]                                                                             | Thomas Larock                            | 2018-09-19 | [DBA],[DEV] |
+| [Deadlock Troubleshooting, Part 1]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA],[DEV] |
+| [Deadlock Troubleshooting, Part 2]                                                                                      | Bart Dunkan                              | 2006-09-12 | [DBA],[DEV] |
+| [Deadlock Troubleshooting, Part 3]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA],[DEV] |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 1]                                        | Milosra Divojevic                        | 2018-10-04 | [DBA],[DEV] |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 2]                                        | Milosra Divojevic                        | 2018-10-05 | [DBA],[DEV] |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 3]                                        | Milosra Divojevic                        | 2018-10-08 | [DBA],[DEV] |
+| [Creating a SQL Server 2019 Demo Environment in a Docker Container]                                                     | Cathrine Wilhelmsen                      | 2018-12-02 | [DBA],[DEV] |
+| [Overview of Data Compression in SQL Server]                                                                            | Prashanth Jayaram                        | 2018-12-06 | [DBA],[DEV] |
+| [SQL Server Hash Match Operator]                                                                                        | Hugo Kornelis                            | 2018-06-01 | [DBA],[DEV] |
+| [How to use Microsoft Assessment and Planning (MAP) Toolkit for SQL Server]                                             | Musab Umair                              | 2017-03-31 | [DBA]       |
+| [Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]                            | Monica Rathbun                           | 2019-01-30 | [AZ],[DBA]  |
+| [[The Importance of Database Compatibility Level in SQL Server]]                                                        | Glenn Berry                              | 2019-01-14 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1183,7 +1199,6 @@ Articles types:
 [Inside the Storage Engine: Anatomy of an extent]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-an-extent/
 [Inside the Storage Engine: Anatomy of a page]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
 [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-iam-pages-iam-chains-and-allocation-units/
-[Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-gam-sgam-pfs-and-other-allocation-maps/
 [Disaster recovery 101: fixing a broken boot page]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-boot-page/
 [How to download a sqlservr.pdb symbol file]:https://www.sqlskills.com/blogs/paul/how-to-download-a-sqlservr-pdb-symbol-file/
 [A cause of high-duration ASYNC_IO_COMPLETION waits]:https://www.sqlskills.com/blogs/paul/cause-high-duration-async_io_completion-waits/
@@ -1230,3 +1245,19 @@ Articles types:
 [Don’t Just Rely on Query Execution Stats for T-SQL Execution]:https://matthewmcgiffen.com/2018/09/18/dont-just-rely-on-query-execution-stats-for-t-sql-execution/
 [Posting SQL Server notifications to Slack]:https://alessandroalpi.blog/2018/09/19/posting-sql-server-notifications-to-slack/
 [How to create DACPAC file?]:https://sqlplayer.net/2018/10/how-to-create-dacpac-file/
+[Find the Next Non-NULL Row in a Series With SQL]:https://blog.jooq.org/2018/09/03/find-the-next-non-null-row-in-a-series-with-sql/
+[Calculate Percentiles to Learn About Data Set Skew in SQL]:https://blog.jooq.org/2019/01/22/calculate-percentiles-to-learn-about-data-set-skew-in-sql/
+[Comparing multiple rows insert vs single row insert with three data load methods]:https://www.red-gate.com/simple-talk/sql/performance/comparing-multiple-rows-insert-vs-single-row-insert-with-three-data-load-methods/
+[The Cause of Every Deadlock in SQL Server]:https://thomaslarock.com/2018/09/the-cause-of-every-deadlock-in-sql-server/
+[Deadlock Troubleshooting, Part 1]:https://blogs.msdn.microsoft.com/bartd/2006/09/08/deadlock-troubleshooting-part-1/
+[Deadlock Troubleshooting, Part 2]:https://blogs.msdn.microsoft.com/bartd/2006/09/12/deadlock-troubleshooting-part-2/
+[Deadlock Troubleshooting, Part 3]:https://blogs.msdn.microsoft.com/bartd/2006/09/25/deadlock-troubleshooting-part-3/
+[The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 1]:https://milossql.wordpress.com/2018/10/04/the-good-the-bad-and-the-ugly-of-table-variable-deferred-compilation-part-1/
+[The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 2]:https://milossql.wordpress.com/2018/10/05/the-good-the-bad-and-the-ugly-of-table-variable-deferred-compilation-part-2/
+[The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 3]:https://milossql.wordpress.com/2018/10/08/the-good-the-bad-and-the-ugly-of-table-variable-deferred-compilation-part-3/
+[Creating a SQL Server 2019 Demo Environment in a Docker Container]:https://www.cathrinewilhelmsen.net/2018/12/02/sql-server-2019-docker-container/
+[Overview of Data Compression in SQL Server]:https://codingsight.com/overview-of-data-compression-in-sql-server/
+[SQL Server Hash Match Operator]:https://sqlserverfast.com/epr/hash-match/
+[How to use Microsoft Assessment and Planning (MAP) Toolkit for SQL Server]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server/
+[Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]:https://www.red-gate.com/simple-talk/sql/azure-sql-database/improve-the-performance-of-your-azure-sql-database-and-save-money-with-automatic-tuning/
+[The Importance of Database Compatibility Level in SQL Server]:https://www.sqlskills.com/blogs/glenn/the-importance-of-database-compatibility-level-in-sql-server/

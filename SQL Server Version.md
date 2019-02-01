@@ -315,7 +315,9 @@ To ALTER DATABASE Compatibility Level use simple command:
 ALTER DATABASE database_name SET COMPATIBILITY_LEVEL = { 150 | 140 | 130 | 120 | 110 | 100 | 90 }
 ```
 
-### Internal Database Version
+### Internal Database Version and Compatibility level
+[The Importance of Database Compatibility Level in SQL Server](https://www.sqlskills.com/blogs/glenn/the-importance-of-database-compatibility-level-in-sql-server/)
+
 The database version is a number stamped in the boot page of a database that indicates the SQL Server version of the most recent SQL Server instance the database was attached to.
 **The database version number does not equal the SQL Server version and does not equal the compatibility level should be considered as a completely different attribute of the database.**
 

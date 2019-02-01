@@ -5,3 +5,6 @@
  - [SQL SERVER – Unable to Launch SSMS Error – Cannot Find One or More Components. Please Reinstall the Application](https://blog.sqlauthority.com/2017/12/06/sql-server-unable-launch-ssms-error-cannot-find-one-components-please-reinstall-application/)
  - [Object Reference Not Set to an Instance of an Object’ When Failing Over an Availability Group Using SSMS <= 17.5](https://sqlundercover.com/2018/03/29/object-reference-not-set-to-an-instance-of-an-object-when-failing-over-an-availability-group-using-ssms-17-5/)
  - [File Growth Rate – The GUI Lies](https://sqlrus.com/2018/06/file-growth-rate-the-gui-lies/)
+ - [SSMS: Allow forcing case-insensitive matching in Object Explorer filters](https://feedback.azure.com/forums/908035-sql-server/suggestions/36679522-ssms-allow-forcing-case-insensitive-matching-in-o)
+ - [SSMS: Object Explorer Filtering allows for SQL Injection (oops)](https://feedback.azure.com/forums/908035-sql-server/suggestions/36678803-ssms-object-explorer-filtering-allows-for-sql-inj)
+ - [SSMS won't open scripts on double-click](https://stackoverflow.com/q/1726577/2298061)
