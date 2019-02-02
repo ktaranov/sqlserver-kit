@@ -3,7 +3,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2018-08-10   | 2008-2017            | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-01-09   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                 | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
@@ -37,14 +37,14 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Server Diagnostics](#sql-server-diagnostics)     | [SQL Server Diagnostics]      | 2017-06-22   | 2016-2017            | Microsoft            | Yes          | No    |
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012-2017            | VersionSQL           | Yes          |  $149 |
 | [Spotlight Tuning Pack](#spotlight-tuning-pack)       | [Spotlight Tuning Pack]       | 2018-06-01   | 2012-2017            | Quest Software Inc   | Yes          |  $180 |
-| [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2019            | Michel Max           | Yes          | No    |
+| [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2018            | Michel Max           | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
 ## SSMSBoost
 Download page: [SSMSBoost]<br/>
-Release date: 2018-08-10<br/>
-Support Version: 2008-2017<br/>
+Release date: 2019-01-09<br/>
+Support Version: 2008-2018<br/>
 Developer: Solutions Crew GmbH<br/>
 Free version: Yes<br/>
 Price: $150
@@ -592,7 +592,7 @@ The analysis will indicate whether the Query Plan can be tuned to improve perfor
 ## Michel Max - SSMS Tools
 Download page: [Michel Max - SSMS Tools]<br/>
 Release date: 2018-11-16<br/>
-Support Version: 2012-2019<br/>
+Support Version: 2012-2018<br/>
 Developer: Michel Max<br/>
 Free version: Yes<br/>
 Price: No
@@ -650,7 +650,7 @@ Other versions:
 [dbForge SQL Complete]:https://www.devart.com/dbforge/sql/sqlcomplete/
 [SoftTree SQL Assistant]:http://www.softtreetech.com/isql.htm
 [SQL Enlight for SSMS]:http://www.ubitsoft.com/products/sqlenlight-for-ssms/index.php
-[SQL Hunting Dog]:http://sql-hunting-dog.com/
+[SQL Hunting Dog]:http://www.sql-hunting-dog.com/
 [Poor Mans T-SQL Formatter]:http://architectshack.com/PoorMansTSqlFormatter.ashx
 [Tabs Studio]:https://tabsstudio.com
 [Workload Addin]:https://www.codeproject.com/Articles/1188027/Capture-of-a-Typical-SQL-Server-Database-Workload
