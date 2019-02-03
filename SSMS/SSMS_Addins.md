@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **35** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **36** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
@@ -38,6 +38,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [VersionSQL](#versionsql)                             | [VersionSQL]                  | 2017-02-16   | 2012-2017            | VersionSQL           | Yes          |  $149 |
 | [Spotlight Tuning Pack](#spotlight-tuning-pack)       | [Spotlight Tuning Pack]       | 2018-06-01   | 2012-2017            | Quest Software Inc   | Yes          |  $180 |
 | [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2018            | Michel Max           | Yes          | No    |
+| [SSMS Schema Folders](#ssms-schema-folders)           | [SSMS Schema Folders]         | 2018-10-06   | 2012-2018            | Nicholas Ross        | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -622,6 +623,19 @@ Other versions:
  - https://sourceforge.net/projects/michelmaxssmstools2019/
 
 
+<a id="#ssms-schema-folders"></a>
+## SSMS Schema Folders
+Download page: [SSMS Schema Folders]<br/>
+Release date: 2018-10-06<br/>
+Support Version: 2012-2018<br/>
+Developer: Michel Max<br/>
+Free version: Yes<br/>
+Price: No
+
+This an extension for SQL Server Management Studio 2012, 2014, 2016 and 17.
+It groups sql objects in Object Explorer (tables, views, etc.) into schema folders.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
@@ -658,6 +672,7 @@ Other versions:
 [VersionSQL]:https://www.versionsql.com/
 [Spotlight Tuning Pack]:https://www.spotlightcloud.io/spotlight-cloud-tuning-pack
 [Michel Max - SSMS Tools]:https://sourceforge.net/projects/michelmaxssmstools2017/
+[SSMS Schema Folders]:https://github.com/nicholas-ross/SSMS-Schema-Folders
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
