@@ -1,7 +1,7 @@
 
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: January 11, 2019
+-- Last Modified: February 1, 2019
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry

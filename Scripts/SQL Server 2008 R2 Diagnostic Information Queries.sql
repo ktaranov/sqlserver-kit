@@ -1,7 +1,7 @@
 
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: December 20, 2018
+-- Last Modified: February 1, 2019
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -15,7 +15,7 @@
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
 --******************************************************************************
---*   Copyright (C) 2018 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2019 Glenn Berry, SQLskills.com
 --*   All rights reserved. 
 --*
 --*   For more scripts and sample code, check out 
@@ -457,7 +457,7 @@ ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
 
 -- Recovery model, log reuse wait description, log file size, log usage size  (Query 21) (Database Properties)
 -- and compatibility level for all databases on instance
-SELECT db.[name] AS [Database Name], db.recovery_model_desc AS [Recovery Model], 
+SELECT db.[name] AS [Database Name], SUSER_SNAME(db.owner_sid) AS [Database Owner], db.recovery_model_desc AS [Recovery Model], 
 db.log_reuse_wait_desc AS [Log Reuse Wait Description], 
 ls.cntr_value AS [Log Size (KB)], lu.cntr_value AS [Log Used (KB)],
 CAST(CAST(lu.cntr_value AS FLOAT) / CAST(ls.cntr_value AS FLOAT)AS DECIMAL(18,2)) * 100 AS [Log Used %], 
@@ -562,6 +562,7 @@ ORDER BY [CPU Rank] OPTION (RECOMPILE);
 ------
 
 -- Helps determine which database is using the most CPU resources on the instance
+-- Note: This only reflects CPU usage from the currently cached query plans
 
 
 -- Get I/O utilization by database (Query 25) (IO Usage By Database)
@@ -1370,7 +1371,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- Have you done any backup tuning with striped backups, or changing the parameters of the backup command?
 
 
--- These three Pluralsight Courses go into more detail about how to run these queries and interpret the results
+-- These five Pluralsight Courses go into more detail about how to run these queries and interpret the results
+
+-- SQL Server 2017: Diagnosing Performance Issues with DMVs
+-- https://bit.ly/2FqCeti
+
+-- SQL Server 2017: Diagnosing Configuration Issues with DMVs
+-- https://bit.ly/2MSUDUL
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
 -- https://bit.ly/2plxCer
