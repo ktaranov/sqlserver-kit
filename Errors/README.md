@@ -56,6 +56,7 @@ SELECT message_id, severity, text
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]   |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?] |
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1]                          |
+|        145 | ORDER BY items must appear in the select list if SELECT DISTINCT is specified.                           | [145_link1][27]                      |
 |        156 | Incorrect syntax near the keyword 'ORDER'.                                                               | [156_link1][23]                      |
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                          |
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                       |
@@ -68,7 +69,7 @@ SELECT message_id, severity, text
 |        657 | Could not disable support for increased partitions in database …                                         | [657_link1]                          |
 |        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …            | [666_link1]                          |
 |        701 | There is insufficient system memory in resource pool '%ls' to run this query.                          … | [701_link1],[701_link2][11]          |
-|        824 | SQL Server detected a logical consistency-based I/O error                                              … | [824_link1],[KB2152734]              |
+|        824 | SQL Server detected a logical consistency-based I/O error                                              … | [824_link1],[824_link2],[KB2152734]  |
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at        … | [825_link1]                          |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                  … | [913_link1]                          |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                         |
@@ -97,6 +98,8 @@ SELECT message_id, severity, text
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                      |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                          |
 |       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                     |
+|       8180 | Statement(s) could not be prepared.                                                                      | [8180_link1][28]                     |
+|       8127 | Column "%.*ls.%.*ls" is invalid in the ORDER BY clause because it is not contained in either an        … | [8127_link1][27]                     |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                      | [8624_link1]                         |
 |       8651 |Could not perform the operation because the requested memory grant was not available in resource        … | [8651_link1]                         |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                       … | [8672_link1]                         |
@@ -112,6 +115,7 @@ SELECT message_id, severity, text
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of      … | [15406_link1][1]                     |
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                    |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.         … | [17190_link1]                        |
+|      17300 | SQL Server was unable to run a new system task, either because there is insufficient memory or the     … | [17300_link1]                        |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s       … | [18272_link1]                        |
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated       … | [18357_link1][5]                     |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati       … | [18452_link1]                        |
@@ -149,6 +153,8 @@ SELECT message_id, severity, text
 [24]:https://www.brentozar.com/archive/2018/10/sum-avg-and-arithmetic-overflow/
 [25]:https://www.sqltheater.com/blog/using-the-same-column-twice-in-an-update-statement/
 [26]:http://jasonbrimhall.info/2018/12/14/synonyms-in-sql-server-good-and-bad/
+[27]:https://www.brentozar.com/archive/2018/08/a-common-query-error/
+[28]:https://blog.sqlauthority.com/2019/01/14/sql-server-fix-msg-8180-statements-could-not-be-prepared-deferred-prepare-could-not-be-completed/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
@@ -159,6 +165,7 @@ SELECT message_id, severity, text
 [666_link1]:https://blogs.msdn.microsoft.com/psssql/2018/02/16/uniqueifier-considerations-and-error-666/
 [701_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
 [824_link1]:http://www.sqlservercentral.com/blogs/sql-server-citation-sql-blog-by-hemantgiri-s-goswami-sql-mvp/2016/08/23/resolve-microsoft-sql-server-error-code-824/
+[824_link2]:https://stevestedman.com/2018/08/checkdb-error-msg-824-level-24/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [KB2152734]:https://support.microsoft.com/help/2152734
@@ -191,6 +198,7 @@ SELECT message_id, severity, text
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
+[17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/

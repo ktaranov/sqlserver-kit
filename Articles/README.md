@@ -641,7 +641,9 @@ Articles types:
 | [SQL Server Hash Match Operator]                                                                                        | Hugo Kornelis                            | 2018-06-01 | [DBA],[DEV] |
 | [How to use Microsoft Assessment and Planning (MAP) Toolkit for SQL Server]                                             | Musab Umair                              | 2017-03-31 | [DBA]       |
 | [Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]                            | Monica Rathbun                           | 2019-01-30 | [AZ],[DBA]  |
-| [[The Importance of Database Compatibility Level in SQL Server]]                                                        | Glenn Berry                              | 2019-01-14 | [DBA]       |
+| [The Importance of Database Compatibility Level in SQL Server]                                                          | Glenn Berry                              | 2019-01-14 | [DBA]       |
+| [Azure Managed vs Unmanaged disks : The choice]                                                                         | Samir Farhat                             | 2017-05-31 | [AZ]        |
+| [Storage options for SQL Server database files in Azure]                                                                | James Serra                              | 2019-01-29 | [AZ]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1261,3 +1263,5 @@ Articles types:
 [How to use Microsoft Assessment and Planning (MAP) Toolkit for SQL Server]:https://www.sqlshack.com/how-to-use-microsoft-assessment-and-planning-map-toolkit-for-sql-server/
 [Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]:https://www.red-gate.com/simple-talk/sql/azure-sql-database/improve-the-performance-of-your-azure-sql-database-and-save-money-with-automatic-tuning/
 [The Importance of Database Compatibility Level in SQL Server]:https://www.sqlskills.com/blogs/glenn/the-importance-of-database-compatibility-level-in-sql-server/
+[Azure Managed vs Unmanaged disks : The choice]:https://buildwindows.wordpress.com/2017/05/31/azure-managed-vs-unmanaged-disks-the-choice/
+[Storage options for SQL Server database files in Azure]:https://www.jamesserra.com/archive/2019/01/storage-options-for-sql-server-database-files-in-azure/

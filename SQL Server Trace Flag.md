@@ -4626,6 +4626,7 @@ Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-
 Link: [Docs Trace Flags]<br />
 Link: [KB2801413]<br />
 Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/<br />
+Link: https://sqlperformance.com/2019/01/sql-performance/compatibility-levels-and-cardinality-estimation-primer
 Scope: global or session or query
 
 
