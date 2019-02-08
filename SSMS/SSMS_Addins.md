@@ -4,7 +4,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-01-09   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
-| [SqlSmash](#SqlSmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
+| [SqlSmash](#sqlsmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                 | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008-2017            | Red Gate             | No           |  $369 |

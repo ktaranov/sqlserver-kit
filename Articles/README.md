@@ -5,7 +5,7 @@ Articles types:
  - **[B]** Backup Articles
  - **[BENCH]** Benchmarking Articles
  - **[IDX]** Index Articles
- - **[CLR]** [CLR](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sql-server-common-language-runtime-integration) Articles
+ - **[CLR]** [SQL Server Common Language Runtime Integration](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sql-server-common-language-runtime-integration) Articles
  - **[COR]** Corruption Articles
  - **[DAX]** Data Analysis Expressions Articles
  - **[DBA]** DBA Articles

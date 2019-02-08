@@ -243,14 +243,15 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Troubleshooting Always On Issues](https://support.microsoft.com/en-us/help/10179/troubleshooting-alwayson-issues)
    - [Guide for enhancing privacy and addressing GDPR requirements with the Microsoft SQL platform](https://aka.ms/gdprsqlwhitepaper)
  - Social, Forum and Messenger SQL Server Groups <a id="sql-social"></a>
+   - [SQL Server help and feedback](https://docs.microsoft.com/en-us/sql/sql-server/sql-server-get-help?view=sql-server-2017)
    - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
-   - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 700 People)
-   - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 70 People)
+   - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 900 People)
+   - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 90 People)
    - [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
    - [SQL.ru SQL Server Forum](http://www.sql.ru/forum/microsoft-sql-server) (more than 10^5 People, Russian)
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
-   - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (434 People, Russian)
+   - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (900 People, Russian)
    - [SQLcom.ru telegram channel](https://t.me/sqlcom) (609 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
@@ -303,6 +304,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Rezoom.SQL - F# ORM for SQL databases](https://github.com/rspeele/Rezoom.SQL) (by Robert Peele)
     - [SQLtoExcel - Exports the output of one or more TSQL script queries to Excel](https://github.com/BeginTry/SQLtoExcel) (by Dave Mason)
     - [Analysis Services - Analysis Services samples and community projects](https://github.com/Microsoft/Analysis-Services) (by Microsoft)
+    - [ms-sql-express-replication - replication library written for MS SQL Sever Express edition](https://github.com/janhalama/ms-sql-express-replication) (by Jan Halama)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
