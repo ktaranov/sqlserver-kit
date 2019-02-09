@@ -57,31 +57,31 @@ function Format-SQLCode {
         [string]$Script
     )
     begin {
-        $ErrorActionPreference = 'Continue'
-        $FnName = '[Format-RedGateScriptSQL]'
+        $ErrorActionPreference = 'Continue';
+        $FnName = '[Format-RedGateScriptSQL]';
         if ((Invoke-WebRequest -UseBasicParsing 'https://promptformatapi.red-gate.com/').StatusCode -ne 200) {
-            Write-Warning "$FnName Check your connection with the Internet"
-            return
+            Write-Warning "$FnName Check your connection with the Internet";
+            return;
         }
     }
     process {
-        $Uri = "https://promptformatapi.red-gate.com/api/format/$Style"
+        $Uri = "https://promptformatapi.red-gate.com/api/format/$Style";
         try {
             if ($FullName) {
                 # preparing body for request
-                Write-Verbose "$FnName Get content from file: $FullName"
-                $FileContent = Get-Content $FullName -Encoding UTF8 -Raw
-                $Body = "`"$FileContent`""
-                Write-Verbose "$Body"
+                Write-Verbose "$FnName Get content from file: $FullName";
+                $FileContent = Get-Content $FullName -Encoding UTF8 -Raw;
+                $Body = "`"$FileContent`"";
+                Write-Verbose "$Body";
             }
             elseif ($Script) {
-                Write-Verbose "$Body"
-                $Body = "`"$Script`""
+                Write-Verbose "$Body";
+                $Body = "`"$Script`"";
             }
 
-            Write-Verbose "$FnName $paramInvokeWebRequest"
-            
-            Write-Verbose "$FnName Invoke-WebRequest"
+            Write-Verbose "$FnName $paramInvokeWebRequest";
+
+            Write-Verbose "$FnName Invoke-WebRequest";
             $Response = Invoke-WebRequest `
                 -Uri $Uri `
                 -Method "POST" `
@@ -90,16 +90,16 @@ function Format-SQLCode {
                 -Body $Body `
 
             if ($Response.StatusCode -eq 200) {
-                [string]$FormattedScript = ($Response.Content).replace('\r\n', '`r`n') 
-                return Invoke-Expression -Command $FormattedScript
+                [string]$FormattedScript = ($Response.Content).replace('\r\n', '`r`n');
+                return Invoke-Expression -Command $FormattedScript;
             }
         }
         catch [Microsoft.PowerShell.Commands.HttpResponseException] {
-            Write-Warning "$(($_.ErrorDetails.Message | ConvertFrom-Json).Details) - $FullName"
+            Write-Warning "$(($_.ErrorDetails.Message | ConvertFrom-Json).Details) - $FullName";
         }
         catch {
-            Write-Warning "$($_.ErrorDetails.Message) - $FullName"
+            Write-Warning "$($_.ErrorDetails.Message) - $FullName";
         }
     }
-    end { }
+    end { };
 }
