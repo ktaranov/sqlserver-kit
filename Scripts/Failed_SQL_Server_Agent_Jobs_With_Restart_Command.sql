@@ -9,20 +9,20 @@ Modified: 2019-02-11 by Konstantin Taranov
 WITH sys_job_history AS 
 (
     SELECT *
-        , rn = ROW_NUMBER() OVER (PARTITION BY sjh.job_id ORDER BY msdb.dbo.agent_datetime(sjh.RUN_DATE, sjh.RUN_TIME) DESC)
+        , rn = ROW_NUMBER() OVER (PARTITION BY sjh.job_id ORDER BY msdb.dbo.agent_datetime(sjh.run_date, sjh.run_time) DESC)
     FROM msdb.dbo.sysjobhistory sjh
     WHERE sjh.step_id > 0
         AND sjh.run_date > CONVERT(int, CONVERT(varchar(8), DATEADD(DAY, -1, GETDATE()), 112))
 )
 SELECT sj.name
-    , sjh.step_name
-    , sjh.step_id
-    , sjh.sql_message_id
-    , sjh.sql_severity
-    , sjh.message
-    , sjh.server
-    , RunDateTime = msdb.dbo.agent_datetime(sjh.run_date, sjh.run_time)
-    , StartJobCommand = N'EXEC msdb.dbo.sp_start_job @job_name = ''' + sj.name + N''', @step_name = ''' + sjh.step_name + N''';'
+     , sjh.step_name
+     , sjh.step_id
+     , sjh.sql_message_id
+     , sjh.sql_severity
+     , sjh.message
+     , sjh.server
+     , RunDateTime = msdb.dbo.agent_datetime(sjh.run_date, sjh.run_time)
+     , StartJobCommand = N'EXEC msdb.dbo.sp_start_job @job_name = ''' + sj.name + N''', @step_name = ''' + sjh.step_name + N''';'
 FROM sys_job_history sjh
     INNER JOIN msdb.dbo.sysjobs sj ON sjh.job_id = sj.job_id
     INNER JOIN msdb.dbo.sysjobschedules sjsch ON sj.job_id = sjsch.job_id
