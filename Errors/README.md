@@ -66,6 +66,7 @@ SELECT message_id, severity, text
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
 |        596 | Cannot continue execution because the session is in the kill state.                                      | [596_link1]                          |
+|        650 | You can only specify the READPAST lock in the READ COMMITTED or REPEATABLE READ isolation levels.        | [650_link1]                          |
 |        657 | Could not disable support for increased partitions in database …                                         | [657_link1]                          |
 |        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …            | [666_link1]                          |
 |        701 | There is insufficient system memory in resource pool '%ls' to run this query.                          … | [701_link1],[701_link2][11]          |
@@ -89,6 +90,7 @@ SELECT message_id, severity, text
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                … | [4922_link1]                         |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                         |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                     |
+|       5004 | To use ALTER DATABASE, the database must be in a writable state in which a checkpoint can be executed.   | [5004_link1]                         |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                  … | [SQL SERVER - FIX Error 5120]        |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]           |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                         |
@@ -111,6 +113,7 @@ SELECT message_id, severity, text
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                      … | [13570_link1]                        |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                            … | [15002_link1]                        |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions,           … | [15136_link1]                        |
+|      15190 | There are still remote logins or linked logins for the server '%s'.                                      | [15190_link1]                        |
 |      15199 | The current security context cannot be reverted. Please switch to the original database where          … | [15199_link1][1]                     |
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of      … | [15406_link1][1]                     |
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                    |
@@ -161,6 +164,7 @@ SELECT message_id, severity, text
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
 [535_link1]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
+[650_link1]:https://sqlundercover.com/2019/02/07/alter-table-fails-on-replicated-tables-with-isolation-level-serializable-or-read-uncommitted-on-sql2012-and-earlier/
 [657_link1]:https://blog.sqlauthority.com/2016/05/20/sql-server-disabling-15000-15k-partitions/
 [666_link1]:https://blogs.msdn.microsoft.com/psssql/2018/02/16/uniqueifier-considerations-and-error-666/
 [701_link1]:https://blogs.msdn.microsoft.com/psssql/2017/02/22/be-aware-of-701-error-if-you-use-memory-optimized-table-variable-in-a-loop/
@@ -186,6 +190,7 @@ SELECT message_id, severity, text
 [4922_link1]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [4934_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
+[5004_link1]:https://www.scarydba.com/2019/02/11/query-store-and-a-read_only-database/
 [5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
@@ -197,6 +202,7 @@ SELECT message_id, severity, text
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
+[15190_link1]:https://blog.sqlauthority.com/2018/12/15/sql-server-fix-msg-15190-there-are-still-remote-logins-or-linked-logins-for-the-server/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
