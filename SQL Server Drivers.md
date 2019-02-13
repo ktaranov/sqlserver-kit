@@ -36,7 +36,7 @@ The PHP SQL driver relies on the Microsoft SQL Server ODBC Driver to handle the 
 ### Node.js
 The tedious module is a javascript implementation of the TDS protocol, which is supported by all modern versions of SQL Server. The driver is an open source project, available on Github.
 
-[Node.js Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/node-js/node-js-driver-for-sql-server) | [Install Node.js Driver](http://msdn.microsoft.com/library/mt652094.aspx)
+[Node.js Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/node-js/node-js-driver-for-sql-server) | [Install Node.js Driver](https://docs.microsoft.com/en-us/sql/connect/node-js/step-1-configure-development-environment-for-node-js-development)
 
 
 ### Python
@@ -52,7 +52,13 @@ There are several python SQL Drivers available. Choose which one you want to use
 ### Ruby
 The TinyTDS gem is a Ruby implementation of the TDS protocol, which is supported by all modern versions of SQL Server.
 
-[Ruby Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/ruby/ruby-driver-for-sql-server) | [Install Ruby Driver](http://msdn.microsoft.com/library/mt711041.aspx)
+[Ruby Driver for SQL Server](https://docs.microsoft.com/en-us/sql/connect/ruby/ruby-driver-for-sql-server) | [Install Ruby Driver](https://docs.microsoft.com/en-us/sql/connect/ruby/ruby-driver-for-sql-server)
+
+
+### Rails
+The SQL Server adapter for ActiveRecord v5.1 using SQL Server 2012 or higher.
+
+[SQL Server Adapter For Rails](https://github.com/rails-sqlserver/activerecord-sqlserver-adapter)
 
 
 ## Legacy SQL Drivers
@@ -63,7 +69,7 @@ Each driver has a support statement that can be found by following the links.
 ## OLEDB
 The OLE DB provider will not be included after SQL Server 2012.
 
-[Microsoft OLE DB](https://msdn.microsoft.com/library/ms722784.aspx)
+[Microsoft OLE DB](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms722784(v=vs.85))
 
 
 ### ADO

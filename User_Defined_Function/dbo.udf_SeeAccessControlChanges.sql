@@ -1,10 +1,16 @@
-IF OBJECT_ID('dbo.udf_SeeAccessControlChanges') IS NOT NULL
-     DROP function dbo.udf_SeeAccessControlChanges
+IF OBJECT_ID('dbo.udf_SeeAccessControlChanges') IS NULL
+  EXEC('CREATE FUNCTION dbo.udf_SeeAccessControlChanges() RETURNS TABLE WITH SCHEMABINDING AS RETURN SELECT 1 AS A;');
 GO
 
 
-CREATE FUNCTION dbo.udf_SeeAccessControlChanges
-  /**
+ALTER FUNCTION dbo.udf_SeeAccessControlChanges(
+    @Start DATETIME2,--the start of the period
+    @Finish DATETIME2--the end of the period
+    )
+  RETURNS TABLE
+   --WITH ENCRYPTION|SCHEMABINDING, ..
+  AS
+/**
   Summary: >
     This function gives you a list
     of security events concerning users, roles and logins
@@ -13,7 +19,7 @@ CREATE FUNCTION dbo.udf_SeeAccessControlChanges
   Date: 2018-10-04
   Original link: https://www.red-gate.com/hub/product-learning/sql-monitor/monitoring-changes-permissions-users-roles-logins
   Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/User_Defined_Function/dbo.udf_SeeAccessControlChanges.sql
-  Modified: 2019-01-28 18:50 UTC+3 by Konstantin Taranov
+  Modified: 2019-01-29 by Konstantin Taranov
   Examples:
      - SELECT * FROM dbo.udf_SeeAccessControlChanges(DateAdd(day, -1, SysDateTime()), SysDateTime())
   columns: datetime_local, action, data, hostname, ApplicationName, LoginName, traceName, spid, EventClass, objectName, rolename, TargetLoginName, category_id, ObjectType
@@ -32,14 +38,7 @@ CREATE FUNCTION dbo.udf_SeeAccessControlChanges
         TargetLoginName nvarchar(256)
         category_id smallint
         ObjectType nvarchar(128)
-          **/
-    (
-    @Start DATETIME2,--the start of the period
-    @Finish DATETIME2--the end of the period
-    )
-  RETURNS TABLE
-   --WITH ENCRYPTION|SCHEMABINDING, ..
-  AS
+**/
   RETURN
     (
     SELECT

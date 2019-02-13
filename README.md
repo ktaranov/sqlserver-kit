@@ -46,7 +46,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 593 Trace Flags') (**Complete list - 593` trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 593 Trace Flags') (**Complete list - 593 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -305,6 +305,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLtoExcel - Exports the output of one or more TSQL script queries to Excel](https://github.com/BeginTry/SQLtoExcel) (by Dave Mason)
     - [Analysis Services - Analysis Services samples and community projects](https://github.com/Microsoft/Analysis-Services) (by Microsoft)
     - [ms-sql-express-replication - replication library written for MS SQL Sever Express edition](https://github.com/janhalama/ms-sql-express-replication) (by Jan Halama)
+    - [SQL query builder, written in C#](https://github.com/sqlkata/querybuilder)
+    - [php-crud-api - Single file PHP script that adds a REST API to a SQL database](https://github.com/mevdschee/php-crud-api) (by Maurits van der Schee)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
