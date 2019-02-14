@@ -646,7 +646,9 @@ Articles types:
 | [Storage options for SQL Server database files in Azure]                                                                | James Serra                              | 2019-01-29 | [AZ]        |
 | [The Performance of Window Aggregates Revisited with SQL Server 2019]                                                   | Kathi Kellenberger                       | 2019-02-11 | [DEV]       |
 | [Super Scaling Singleton Inserts]                                                                                       | Chris Adkin                              | 2015-02-19 | [DEV]       |
-| [Preparation for SQL Server Installation]                                                                               |  Michal Sadowski                         | 2018-12-12 | [DBA]       |
+| [Preparation for SQL Server Installation]                                                                               | Michal Sadowski                          | 2018-12-12 | [DBA]       |
+| [Executing xp_cmdshell with Non SysAdmin Account]                                                                       | Lucas Kartawidjaja                       | 2019-01-04 | [DBA]       |
+| [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1271,3 +1273,5 @@ Articles types:
 [The Performance of Window Aggregates Revisited with SQL Server 2019]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/the-performance-of-window-aggregates-revisited-with-sql-server-2019/
 [Super Scaling Singleton Inserts]:https://chrisadkin.io/2015/02/19/super-scaling-singleton-inserts/
 [Preparation for SQL Server Installation]:https://sqlplayer.net/2018/12/preparation-for-sql-server-installation/
+[Executing xp_cmdshell with Non SysAdmin Account]:http://www.lucasnotes.com/2019/01/executing-xpcmdshell-with-non-sysadmin.html
+[Generating SQL using Biml (T-SQL Tuesday #110)]:https://www.cathrinewilhelmsen.net/2019/01/08/generating-sql-using-biml/

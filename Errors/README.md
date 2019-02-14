@@ -73,6 +73,7 @@ SELECT message_id, severity, text
 |        824 | SQL Server detected a logical consistency-based I/O error                                              … | [824_link1],[824_link2],[KB2152734]  |
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at        … | [825_link1]                          |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                  … | [913_link1]                          |
+|        922 | Database '%.*ls' is being recovered. Waiting until recovery is finished.                                 | [922_link1]                          |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                         |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                         |
 |       1904 | The statistics on table has 65 columns in the key list                                                 … | [1904_link1]                         |
@@ -93,6 +94,8 @@ SELECT message_id, severity, text
 |       5004 | To use ALTER DATABASE, the database must be in a writable state in which a checkpoint can be executed.   | [5004_link1]                         |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                  … | [SQL SERVER - FIX Error 5120]        |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]           |
+|       5171 | %.*ls is not a primary database file.                                                                    | [5171_link1][29]                     |
+|       5172 | The header for file '%ls' is not a valid database file header. The %ls property is incorrect.            | [5172_link1][29]                     |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                         |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                      |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                      |
@@ -158,6 +161,7 @@ SELECT message_id, severity, text
 [26]:http://jasonbrimhall.info/2018/12/14/synonyms-in-sql-server-good-and-bad/
 [27]:https://www.brentozar.com/archive/2018/08/a-common-query-error/
 [28]:https://blog.sqlauthority.com/2019/01/14/sql-server-fix-msg-8180-statements-could-not-be-prepared-deferred-prepare-could-not-be-completed/
+[29]:https://blog.sqlauthority.com/2018/08/29/sql-server-unable-to-attach-database-files-the-pageaudit-property-is-incorrect-ransomware-attack/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
@@ -172,6 +176,7 @@ SELECT message_id, severity, text
 [824_link2]:https://stevestedman.com/2018/08/checkdb-error-msg-824-level-24/
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
+[922_link1]:https://blog.sqlauthority.com/2018/08/27/sql-server-how-to-drop-or-delete-suspect-database/
 [KB2152734]:https://support.microsoft.com/help/2152734
 [1701_link1]:http://www.sqlservercentral.com/questions/163450/
 [1807_link1]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/

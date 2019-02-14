@@ -8,3 +8,4 @@
  - [SSMS: Allow forcing case-insensitive matching in Object Explorer filters](https://feedback.azure.com/forums/908035-sql-server/suggestions/36679522-ssms-allow-forcing-case-insensitive-matching-in-o)
  - [SSMS: Object Explorer Filtering allows for SQL Injection (oops)](https://feedback.azure.com/forums/908035-sql-server/suggestions/36678803-ssms-object-explorer-filtering-allows-for-sql-inj)
  - [SSMS won't open scripts on double-click](https://stackoverflow.com/q/1726577/2298061)
+ - [SSMS Crash While Using Backup to URL or Connecting to Storage](https://blog.sqlauthority.com/2018/10/09/sql-server-sql-server-management-studio-crash-while-using-backup-to-url-or-connecting-to-storage/)
