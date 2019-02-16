@@ -121,5 +121,9 @@ SELECT @Tsql = ';WITH XEvents AS
 SELECT TOP(100) object_name, event_data,' + CHAR(13) + CHAR(10) + @Tsql + '
 FROM XEvents;';
 
+/*
+PRINT does not work - truncated @tsql variable, using XML trick instead
 PRINT(@Tsql);
-EXEC(@Tsql);
+*/
+SELECT CAST('<![CDATA[' + @Tsql + ']]>' AS XML);
+EXECUTE sp_executesql @Tsql;

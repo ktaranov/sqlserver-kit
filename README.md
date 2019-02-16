@@ -347,6 +347,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL ConstantCare®: clear, personal advice for your SQL Server](https://www.brentozar.com/sql-constantcare/) (by Brent Ozar)
     - [The SQL Server Execution Plan Reference](https://sqlserverfast.com/epr/) (by Hugo Kornelis)
     - [EC2 Instance Calculator](https://ec2instances.info/)
+    - [AWS Calculator](https://calculator.aws/#/)
     - [Azure Instance Calculator](http://www.azureinstances.info/)
     - [PowerBI Premium Calculator](https://powerbi.microsoft.com/en-us/calculator/)
     - [Nuodb Oracle and SQL Server Calculator ](https://www.nuodb.com/product/license-cost-calculator)
