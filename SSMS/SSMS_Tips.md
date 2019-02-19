@@ -769,6 +769,7 @@ Reference:
  - [CTRL+R does not hide the Query Result window in SSMS]
  - [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar] (by Solomon Rutzky)
  - [SQL Vulnerability Assessment Available in SSMS] (by Thomas LaRock)
+ - [SSMS Tips and Tricks free ebook](http://ssmsbook.sqldownunder.com) (by SDU Insiders)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
 [SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/

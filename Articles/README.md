@@ -649,6 +649,7 @@ Articles types:
 | [Preparation for SQL Server Installation]                                                                               | Michal Sadowski                          | 2018-12-12 | [DBA]       |
 | [Executing xp_cmdshell with Non SysAdmin Account]                                                                       | Lucas Kartawidjaja                       | 2019-01-04 | [DBA]       |
 | [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
+| [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2019-02-05 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1275,3 +1276,4 @@ Articles types:
 [Preparation for SQL Server Installation]:https://sqlplayer.net/2018/12/preparation-for-sql-server-installation/
 [Executing xp_cmdshell with Non SysAdmin Account]:http://www.lucasnotes.com/2019/01/executing-xpcmdshell-with-non-sysadmin.html
 [Generating SQL using Biml (T-SQL Tuesday #110)]:https://www.cathrinewilhelmsen.net/2019/01/08/generating-sql-using-biml/
+[Avoiding SQL Server Upgrade Performance Issues](https://www.sqlskills.com/blogs/glenn/avoiding-sql-server-upgrade-performance-issues/)
