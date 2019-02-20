@@ -19,6 +19,8 @@
 
 Useful links, scripts, tools and best practice for Microsoft SQL Server Database
 
+
+<a id="table-of-contents"></a>
 ## Table of Contents
  - [Repo Folders and Files](#repo-folders-and-files)
  - [SQL Server Web Resources](#sql-server-web-resources)

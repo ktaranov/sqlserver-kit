@@ -881,7 +881,6 @@ Articles types:
 [KPIs For DBAs to Show Their CIOs]:https://thomaslarock.com/2017/03/kpis-dbas-show-cios/
 [How To Forecast Database Disk Capacity If You Don’t Have A Monitoring Tool]:http://www.edwinmsarmiento.com/how-to-forecast-database-disk-capacity-if-you-dont-have-a-monitoring-tool/
 [Statistical Sampling for Verifying Database Backups]:https://www.simple-talk.com/sql/database-administration/statistical-sampling-for-verifying-database-backups/
-[Inside The Storage Engine  GAM, SGAM, PFS and other allocation maps]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-gam-sgam-pfs-and-other-allocation-maps/
 [Using dbatools for automated restore and CHECKDB]:http://www.centinosystems.com/blog/sql/using-dbatools-for-automated-restore-and-checkdb/
 [Bad Habits Revival]:https://blogs.sentryone.com/aaronbertrand/bad-habits-revival/
 [Deploying Multiple SSIS Projects via PowerShell]:https://www.simple-talk.com/sql/ssis/deploying-multiple-ssis-projects-via-powershell/
@@ -1149,7 +1148,7 @@ Articles types:
 [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]:https://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/
 [An overview of SQL Server database migration tools provided by Microsoft]:https://www.sqlshack.com/an-overview-of-sql-server-database-migration-tools-provided-by-microsoft/
 [Calling Http endpoints in T-SQL using CURL extension]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/04/17/calling-http-endpoints-in-t-sql-using-curl-extension/
-[Why Table Join In Relational Databases]:https://hackernoon.com/why-table-join-orders-in-relational-databases-dont-matter-6de3a35f2959
+[Why Table Join Orders In Relational Databases]:https://hackernoon.com/why-table-join-orders-in-relational-databases-dont-matter-6de3a35f2959
 [Finding overlapping ranges of data]:https://www.red-gate.com/simple-talk/blogs/finding-overlapping-ranges-data/
 [Avoid use of the MONEY and SMALLMONEY datatypes]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
 [Provisioning SQL Server Instances with Docker]:https://www.red-gate.com/simple-talk/sysadmin/containerization/provisioning-sql-server-instances-docker/
@@ -1207,6 +1206,7 @@ Articles types:
 [Inside the Storage Engine: Anatomy of an extent]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-an-extent/
 [Inside the Storage Engine: Anatomy of a page]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
 [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-iam-pages-iam-chains-and-allocation-units/
+[Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-gam-sgam-pfs-and-other-allocation-maps/
 [Disaster recovery 101: fixing a broken boot page]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-boot-page/
 [How to download a sqlservr.pdb symbol file]:https://www.sqlskills.com/blogs/paul/how-to-download-a-sqlservr-pdb-symbol-file/
 [A cause of high-duration ASYNC_IO_COMPLETION waits]:https://www.sqlskills.com/blogs/paul/cause-high-duration-async_io_completion-waits/
@@ -1276,4 +1276,4 @@ Articles types:
 [Preparation for SQL Server Installation]:https://sqlplayer.net/2018/12/preparation-for-sql-server-installation/
 [Executing xp_cmdshell with Non SysAdmin Account]:http://www.lucasnotes.com/2019/01/executing-xpcmdshell-with-non-sysadmin.html
 [Generating SQL using Biml (T-SQL Tuesday #110)]:https://www.cathrinewilhelmsen.net/2019/01/08/generating-sql-using-biml/
-[Avoiding SQL Server Upgrade Performance Issues](https://www.sqlskills.com/blogs/glenn/avoiding-sql-server-upgrade-performance-issues/)
+[Avoiding SQL Server Upgrade Performance Issues]:https://www.sqlskills.com/blogs/glenn/avoiding-sql-server-upgrade-performance-issues/
