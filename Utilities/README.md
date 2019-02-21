@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **275** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **276** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -299,6 +299,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [JackDB](#jackdb)                                                | Oracle,MySQL,PostgreSQL,Other | Online    | [MS]     | [JackDB]                                    | ?          | JackDB                |            | No             |   $48 |
 | [SQL Workbench](#sql-workbench)                                  | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [SQL Workbench]                             | 2018-08-20 | Thomas Kellerer       |            | Yes            | No    |
 | [Valentina Studio](#valentina-studio)                            | MySQL,PostgreSQL,Other        | Linux,Mac | [MS]     | [Valentina Studio]                          | 2018-09-24 | Paradigma Software    |            | Yes            |  $200 |
+| [SQL Plus Dot Net](#sql-plus-dot-net)                            | No                            | No        | [?]      | [SQL Plus Dot Net]                          | ?          | SQL+.NET              |            | No             |     ? |
 
 
 <a id="ssms"></a>
@@ -4277,6 +4278,19 @@ Valentina Studio is your universal database management tool for working with MyS
 Valentina Studio lets you connect with all major databases, run queries and generate diagrams to better understand your mission critical business data - and that is the free version of Valentina Studio.
 
 
+<a id="valentina-studio"></a>
+## SQL Plus Dot Net
+Download page: [SQL Plus Dot Net]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SQL+.NET<br/>
+Free version: No<br/>
+Price: ?
+
+SQL+ is a tool that generates a class library from stored procedures by utilizing a tagging system in the form of comments.
+Does all the ADO stuff like setting up parameters and converting result sets into objects.
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
@@ -4554,6 +4568,7 @@ Valentina Studio lets you connect with all major databases, run queries and gene
 [JackDB]:https://www.jackdb.com/
 [SQL Workbench]:http://www.sql-workbench.eu/
 [Valentina Studio]:https://www.valentina-db.com
+[SQL Plus Dot Net]:https://sqlplusweb.azurewebsites.net
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
