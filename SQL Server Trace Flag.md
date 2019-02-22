@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**593** trace flags).
+Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**594** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -10,7 +10,7 @@ For more information on the applicable version, see the Microsoft Support articl
 ⚠ **Trace flag behavior may not be supported in future releases of SQL Server.**
 
 Headers:
- - [Unknown trace flags](#unknown-trace-flags")
+ - [Unknown trace flags](#unknown-trace-flags)
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
  - [How do I know what Trace Flags are turned on at the moment?](#how-do-i-know-what-trace-flags-are-turned-on-at-the-moment)
@@ -4724,6 +4724,13 @@ Link: [Docs Trace Flags]<br />
 Link: https://www.mssqltips.com/sqlservertip/4537/sql-server-2016-availability-group-automatic-seeding/<br />
 Link: https://msdn.microsoft.com/en-us/library/mt735149.aspx<br />
 Link: [Tune compression for availability group]<br />
+Scope: global or session
+
+
+<a id="9571"></a>
+#### Trace Flag: 9571
+Function: Disables Availability Groups Auto seeding to the default database path.<br />
+Link: https://docs.microsoft.com/en-us/sql/database-engine/availability-groups/windows/automatic-seeding-secondary-replicas<br />
 Scope: global or session
 
 
