@@ -83,6 +83,7 @@ SELECT message_id, severity, text
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam       … | [3241_link1]                         |
 |       3314 | During undoing of a logged operation in database '%.*ls', an error occurred at log record ID %S        … | [3314_link1]                         |
 |       3634 | The operating system returned the error '%ls' while attempting '%ls' on '%ls'.                         … | [3634_link1]                         |
+|       3637 | A parallel operation cannot be started from a DAC connection.                                            | [3637_link1]                         |
 |       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor       … | [3743_link1]                         |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log        … | [3930_link1]                         |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                         |
@@ -189,6 +190,7 @@ SELECT message_id, severity, text
 [3241_link1]:https://blogs.msdn.microsoft.com/psssql/2017/04/12/unable-to-restore-a-backup-msg-3241/
 [3314_link1]:https://www.sqlskills.com/blogs/paul/20122014-bug-that-can-cause-database-or-server-to-go-offline/
 [3634_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
+[3637_link1]:https://blog.sqlauthority.com/2019/02/25/sql-server-fix-3637-a-parallel-operation-cannot-be-started-from-a-dac-connection/
 [3743_link1]:https://blog.sqlauthority.com/2017/12/05/sql-server-msg-3743-database-enabled-database-mirroring-database-mirroring-must-removed-drop-database/
 [3930_link1]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
