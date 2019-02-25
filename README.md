@@ -48,7 +48,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 593 Trace Flags') (**Complete list - 593 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 594 Trace Flags') (**Complete list - 594 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -244,8 +244,15 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Troubleshooting connectivity issues with Microsoft Azure SQL Database](https://support.microsoft.com/en-in/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database)
    - [Troubleshooting Always On Issues](https://support.microsoft.com/en-us/help/10179/troubleshooting-alwayson-issues)
    - [Guide for enhancing privacy and addressing GDPR requirements with the Microsoft SQL platform](https://aka.ms/gdprsqlwhitepaper)
+ - SQL Server feedbacks <a id="feedbacks">
+   - [SQL Server help and feedback](https://docs.microsoft.com/en-us/sql/sql-server/sql-server-get-help)
+   - [Azure Data Studio feedback](https://github.com/Microsoft/azuredatastudio/issues)
+   - [Azure SQL DB feedback](https://feedback.azure.com/forums/217321-sql-database)
+   - [Azure SQL DB Managed Instances feedback](https://feedback.azure.com/forums/915676-sql-managed-instance)
+   - [Power BI feedback](https://ideas.powerbi.com/forums/265200-power-bi-ideas)
+   - [SSMS feedback](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqltools)
+   - [SQL Server Data Tools feedback](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ssdt&filter=alltypes&sort=lastpostdesc)
  - Social, Forum and Messenger SQL Server Groups <a id="sql-social"></a>
-   - [SQL Server help and feedback](https://docs.microsoft.com/en-us/sql/sql-server/sql-server-get-help?view=sql-server-2017)
    - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
    - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 900 People)
    - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 90 People)
@@ -355,6 +362,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Nuodb Oracle and SQL Server Calculator ](https://www.nuodb.com/product/license-cost-calculator)
     - [Github SQL Trending](https://github.com/trending/sql)
     - [SQLCallStackResolver - Utility to resolve SQL Server callstacks to their correct symbolic form](https://github.com/arvindshmicrosoft/SQLCallStackResolver) (by Arvind Shyamsundar)
+    - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
 
 **[⬆ back to top](#table-of-contents)**
 
