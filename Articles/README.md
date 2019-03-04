@@ -651,6 +651,14 @@ Articles types:
 | [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
 | [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2019-02-05 | [DBA]       |
 | [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2018-02-25 | [DBA],[DEV] |
+| [Introduction to T-SQL Window Functions]                                                                                | Kathi Kellenberger                       | 2018-07-13 | [DBA],[DEV] |
+| [Intro to Debugging a Memory Dump]                                                                                      | Adam W. Saxton                           | 2012-03-15 | [DBA],[DEV] |
+| [Considering Security with SQL Bulk Insert]                                                                             | Timothy Smith                            | 2019-01-17 | [DBA],[DEV] |
+| [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring I]                                 | Juergen Thomas                           | 2013-04-21 | [DBA]       |
+| [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]                                | Juergen Thomas                           | 2013-04-24 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1279,3 +1287,11 @@ Articles types:
 [Generating SQL using Biml (T-SQL Tuesday #110)]:https://www.cathrinewilhelmsen.net/2019/01/08/generating-sql-using-biml/
 [Avoiding SQL Server Upgrade Performance Issues]:https://www.sqlskills.com/blogs/glenn/avoiding-sql-server-upgrade-performance-issues/
 [Using Temporary Procedures]:https://www.red-gate.com/simple-talk/blogs/using-temporary-procedures/
+[Introduction to SQL Server Security — Part 1]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-1/
+[Introduction to SQL Server Security — Part 2]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-2/
+[Introduction to SQL Server Security — Part 3]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-3/
+[Introduction to T-SQL Window Functions]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/
+[Intro to Debugging a Memory Dump]:https://blogs.msdn.microsoft.com/psssql/2012/03/15/intro-to-debugging-a-memory-dump/
+[Considering Security with SQL Bulk Insert]:https://www.sqlshack.com/considering-security-with-sql-bulk-insert/
+[SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring I]:https://blogs.msdn.microsoft.com/saponsqlserver/2013/04/21/sql-server-2012-alwayson-part-11-performance-aspects-and-performance-monitoring-i/
+[SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]:https://blogs.msdn.microsoft.com/saponsqlserver/2013/04/24/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii/
