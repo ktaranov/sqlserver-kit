@@ -513,6 +513,7 @@ SQL Server:
  - [Architecture of a Database System](http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf) (by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton)
  - [Query Optimization with SentryOne Plan Explorer](https://info.sentryone.com/ebook-query-optimization-plan-explorer)
  - [Troubleshooting SQL Server Performance](https://info.sentryone.com/ebook-troubleshooting-sql-server-performance) (by Kevin Kline)
+ - [Azure Machine Learning Studio: An Unleashed Guide](http://radacad.com/book-azure-machine-learning-studio-an-unleashed-guide) (by Leila Etaati)
 
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)
