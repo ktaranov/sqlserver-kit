@@ -98,6 +98,7 @@ SELECT message_id, severity, text
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]           |
 |       5171 | %.*ls is not a primary database file.                                                                    | [5171_link1][29]                     |
 |       5172 | The header for file '%ls' is not a valid database file header. The %ls property is incorrect.            | [5172_link1][29]                     |
+|       5846 | Common language runtime (CLR) execution is not supported under lightweight pooling. Disable one of two … | [5846_link1]                         |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                         |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                      |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                      |
@@ -202,6 +203,7 @@ SELECT message_id, severity, text
 [5004_link1]:https://www.scarydba.com/2019/02/11/query-store-and-a-read_only-database/
 [5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
+[5846_link1]:https://bornsql.ca/blog/proposed-sql-server-defaults-disable-lightweight-pooling/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
 [8624_link1]:http://www.sqlservercentral.com/articles/Indexing/149879/
 [8651_link1]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
