@@ -316,6 +316,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [ms-sql-express-replication - replication library written for MS SQL Sever Express edition](https://github.com/janhalama/ms-sql-express-replication) (by Jan Halama)
     - [SQL query builder, written in C#](https://github.com/sqlkata/querybuilder)
     - [php-crud-api - Single file PHP script that adds a REST API to a SQL database](https://github.com/mevdschee/php-crud-api) (by Maurits van der Schee)
+    - [sql2xls - SQL to Excel Export Tool](https://github.com/bornsql/sql2xls) (by Randolph West)
+    - [azureblobstoragesync - Backup any version of your on-premises SQL Server database to a network share or Azure Blob Storage and restore it too](https://github.com/bornsql/azureblobstoragesync) (by Randolph West)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
