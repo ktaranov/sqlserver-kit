@@ -132,7 +132,7 @@ Profits:
 | 2019    | [Install 2019 CTP 2.3]                                                | 15.0.1300.359                                | 2019-03-01                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU13 KB4483666]                              | 14.0.1000.169<br/>14.0.3049.1                | 2017-10-02<br/>2019-01-08                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU5 Hotfix KB4490133]                        | 13.0.5026.0<br/>13.0.5270.0                  | 2018-04-24<br/>2019-02-14                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU1 KB4470220] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6205.1  | 2016-07-11<br/>2018-10-30<br/>2018-12-12 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU2 KB4482960] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6214.1  | 2016-07-11<br/>2018-10-30<br/>2019-02-19 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]         | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -146,7 +146,7 @@ Profits:
 [CU5 Hotfix KB4490133]:https://support.microsoft.com/help/4490133
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
 [SP3 KB4022619]:https://support.microsoft.com/help/4022619
-[CU1 KB4470220]:https://support.microsoft.com/help/4470220
+[CU2 KB4482960]:https://support.microsoft.com/help/4482960
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/en-us/help/4018073
 [ADV180002 (GDR)]:https://support.microsoft.com/en-us/help/4057116
@@ -185,7 +185,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2016 SP2 CU5]             | SQLServer2016-KB4475776-x64.exe                                   | 2019-01-23   | 13.0.5264.1   |      712 | 68af970cf5ffea7e549216b20dfa9fab4e2e6e8f |
 | [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
 | [SQL Server 2014 SP3 KB4022619]       | SQLServer2014SP3-KB4022619-x64-ENU.exe                            | 2018-10-30   | 12.0.6024.0   |      791 | a0959d84f72fd9f8a8832ca691efc420050df9de |
-| [SQL Server 2014 SP3 CU1 KB4470220]   | SQLServer2014-KB4470220-x64.exe                                   | 2018-12-12   | 12.0.6205.1   |      601 | 727d462ffcb618400c813ae6bf06e3a9cc8418f2 |
+| [SQL Server 2014 SP3 CU2 KB4482960]   | SQLServer2014-KB4482960-x64.exe                                   | 2019-02-19   | 12.0.6214.1   |      602 | b03e8c1abe6bbcb2ba3d5ed59ffa7995d027ddb7 |
 | [SQL Server 2012]                     | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
 | [SQL Server 2012 SP4 ADV180002 (GDR)] | SQLServer2012-KB4057116-x64.exe                                   | 2018-01-12   | 11.0.7462.6   |      672 | c0c2e0e6519363a5bb3d3ca78d55ef664a8c8995 |
@@ -694,14 +694,15 @@ All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2014 (SP3-CU1) (KB4470220) - 12.0.6205.1 (X64)
-   Nov 30 2018 02:59:03
+Microsoft SQL Server 2014 (SP3-CU2) (KB4482960) - 12.0.6214.1 (X64)
+   Feb  2 2019 01:10:18
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build        | File version     | Branch | Type | KB / Description                                                                                                                   | Release Date | Fixes | Public | Size, Mb |
 |--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.6214.1  | 2014.120.6214.1  | SP3    | CU   | [4482960 Cumulative Update 2 for SQL Server 2014 SP3]                                                                              | 2019-02-19   |     5 |      5 |      602 |
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   | [4470220 Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
 | 12.0.5605.1  | 2014.120.5605.1  | SP2    | SP   | [4469137 Cumulative Update 15 for SQL Server 2014 SP2]                                                                             | 2018-12-12   |     8 |      7 |      679 |
@@ -786,6 +787,7 @@ Microsoft SQL Server 2014 (SP3-CU1) (KB4470220) - 12.0.6205.1 (X64)
 | 12.0.1524.0  | 2014.120.1524.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |       |        |          |
 | 11.0.9120.0  | 2013.110.9120.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |       |        |          |
 
+[4482960 Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
 [4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
 [4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
 [4469137 Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
