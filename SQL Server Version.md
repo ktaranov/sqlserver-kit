@@ -705,6 +705,7 @@ Microsoft SQL Server 2014 (SP3-CU2) (KB4482960) - 12.0.6214.1 (X64)
 | 12.0.6214.1  | 2014.120.6214.1  | SP3    | CU   | [4482960 Cumulative Update 2 for SQL Server 2014 SP3]                                                                              | 2019-02-19   |     5 |      5 |      602 |
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   | [4470220 Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
+| 12.0.6214.1  | 2014.120.6214.1  | SP2    | CU   | [4482967 Cumulative Update 16 for SQL Server 2014 SP2]                                                                             | 2019-02-19   |     3 |      3 |      678 |
 | 12.0.5605.1  | 2014.120.5605.1  | SP2    | SP   | [4469137 Cumulative Update 15 for SQL Server 2014 SP2]                                                                             | 2018-12-12   |     8 |      7 |      679 |
 | 12.0.5600.1  | 2014.120.5600.1  | SP2    | CU   | [4459860 Cumulative Update 14 for SQL Server 2014 SP2]                                                                             | 2018-10-15   |     8 |      6 |      678 |
 | 12.0.5590.1  | 2014.120.5590.1  | SP2    | CU   | [4456287 Cumulative Update 13 for SQL Server 2014 SP2]                                                                             | 2018-08-27   |     4 |      4 |      679 |
@@ -725,7 +726,7 @@ Microsoft SQL Server 2014 (SP3-CU2) (KB4482960) - 12.0.6214.1 (X64)
 | 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  | [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |
 | 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  | [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
 | 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
-| 12.0.4522.0  | 2014.120.4522.0  | SP1    | CU   | [4019099 Cumulative Update 13 for SQL Server 2014 SP1] **Last CU for 2014 SP1**                                                    | 2017-08-08   |    11 |     11 |      577 |
+| 12.0.5626.1  | 2014.120.5626.1  | SP1    | CU   | [4482967 Cumulative Update 13 for SQL Server 2014 SP1] **Last CU for 2014 SP1**                                                    | 2017-08-08   |    11 |     11 |      577 |
 | 12.0.4511.0  | 2014.120.4511.0  | SP1    | CU   | [4017793 Cumulative Update 12 for SQL Server 2014 SP1]                                                                             | 2017-04-17   |    12 |     11 |      573 |
 | 12.0.4502.0  | 2014.120.4502.0  | SP1    | CU   | [4010392 Cumulative Update 11 for SQL Server 2014 SP1]                                                                             | 2017-02-21   |    15 |     15 |      571 |
 | 12.0.4491.0  | 2014.120.4491.0  | SP1    | CU   | [3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]                                                          | 2016-12-28   |    33 |     27 |      571 |
@@ -790,6 +791,7 @@ Microsoft SQL Server 2014 (SP3-CU2) (KB4482960) - 12.0.6214.1 (X64)
 [4482960 Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
 [4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
 [4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
+[4482967 Cumulative Update 16 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4482967
 [4469137 Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
 [4459860 Cumulative Update 14 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4459860
 [4456287 Cumulative Update 13 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4456287
