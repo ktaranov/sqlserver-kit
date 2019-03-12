@@ -116,7 +116,9 @@ SELECT message_id, severity, text
 |       8948 | Database error: Page %S_PGID is marked with the wrong type in PFS page %S_PGID. PFS status 0x%x        … | [8948_link1][20]                     |
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related        … | [9001_link1][16]                     |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19]    |
-|      13570 | The use of replication is not supported with system-versioned temporal table '%s'                      … | [13570_link1]                        |
+|      13570 | The use of replication is not supported with system-versioned temporal table '%s'                        | [13570_link1]                        |
+|      13901 | Identifier '%.*ls' in a MATCH clause is not a node table or an alias for a node table.                   | [13901_link1][30]                    |
+|      13902 | Identifier '%.*ls' in a MATCH clause is not an edge table or an alias for an edge table.                 | [13902_link1][30]                    |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                            … | [15002_link1]                        |
 |      15136 | The database principal is set as the execution context of one or more procedures, functions,           … | [15136_link1]                        |
 |      15190 | There are still remote logins or linked logins for the server '%s'.                                      | [15190_link1]                        |
@@ -165,6 +167,7 @@ SELECT message_id, severity, text
 [27]:https://www.brentozar.com/archive/2018/08/a-common-query-error/
 [28]:https://blog.sqlauthority.com/2019/01/14/sql-server-fix-msg-8180-statements-could-not-be-prepared-deferred-prepare-could-not-be-completed/
 [29]:https://blog.sqlauthority.com/2018/08/29/sql-server-unable-to-attach-database-files-the-pageaudit-property-is-incorrect-ransomware-attack/
+[30]:http://www.nikoport.com/2018/12/01/sql-graph-part-iii-derived-tables-views/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
