@@ -661,6 +661,7 @@ Articles types:
 | [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]                                | Juergen Thomas                           | 2013-04-24 | [DBA]       |
 | [Data Compression Internals]                                                                                            | Jess Pomfret                             | 2019-02-19 | [DBA],[DEV] |
 | [SQL Server Data Compression – Crunch Time!]                                                                            | Jeff Mlakar                              | 2019-02-22 | [DBA],[DEV] |
+| [Create a slipstream installer for SQL Server on Windows]                                                               | Randolph West                            | 2018-10-24 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1299,3 +1300,4 @@ Articles types:
 [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]:https://blogs.msdn.microsoft.com/saponsqlserver/2013/04/24/sql-server-2012-alwayson-part-12-performance-aspects-and-performance-monitoring-ii/
 [Data Compression Internals]:https://jesspomfret.com/data-compression-internals/
 [SQL Server Data Compression – Crunch Time!]:https://www.mlakartechtalk.com/sql-server-data-compression-crunch-time/
+[Create a slipstream installer for SQL Server on Windows]:https://bornsql.ca/blog/create-a-slipstream-installer-for-sql-server-on-windows/
