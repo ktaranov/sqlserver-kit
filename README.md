@@ -217,6 +217,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [SQL Tutorial](https://sqlzoo.net)
      - [HackerRank.com - SQL interactive exercises and many others languages](https://www.hackerrank.com/domains/sql)
      - [SQL-EX.ru - Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
+     - [Free Azure certification training courses](https://rlevchenko.com/2019/01/11/free-azure-certification-training-courses/)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
@@ -261,7 +262,10 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (900 People, Russian)
-   - [SQLcom.ru telegram channel](https://t.me/sqlcom) (609 People, Russian)
+   - [SQLcom.ru telegram chat](https://t.me/sqlcom) (971 People, Russian)
+   - [PowerBI telegram chat](https://t.me/PBI_Rus) (228 People, Russian)
+   - [PostgesSQL telegram chat](https://t.me/pgsql) (2625 People, Russian)
+   - [DBA telegram chat](https://t.me/dba_ru) (1339 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Ola Hallengren's Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -318,6 +322,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [php-crud-api - Single file PHP script that adds a REST API to a SQL database](https://github.com/mevdschee/php-crud-api) (by Maurits van der Schee)
     - [sql2xls - SQL to Excel Export Tool](https://github.com/bornsql/sql2xls) (by Randolph West)
     - [azureblobstoragesync - Backup any version of your on-premises SQL Server database to a network share or Azure Blob Storage and restore it too](https://github.com/bornsql/azureblobstoragesync) (by Randolph West)
+    - [sql_profiler - Microsoft SQL-Server Profiler (command-line) for Linux/Mac/Windows](https://github.com/ststeiger/sql_profiler) (by Stefan Steiger)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -337,6 +342,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
     - [SQLFiddle](http://sqlfiddle.com)
+    - [DBFiddle](https://dbfiddle.uk/?rdbms=sqlserver_2017)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
@@ -365,6 +371,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Github SQL Trending](https://github.com/trending/sql)
     - [SQLCallStackResolver - Utility to resolve SQL Server callstacks to their correct symbolic form](https://github.com/arvindshmicrosoft/SQLCallStackResolver) (by Arvind Shyamsundar)
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
+    - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
 
 **[⬆ back to top](#table-of-contents)**
 
