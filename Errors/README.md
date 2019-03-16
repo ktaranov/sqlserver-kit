@@ -131,6 +131,7 @@ SELECT message_id, severity, text
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated       … | [18357_link1][5]                     |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati       … | [18452_link1]                        |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                 | [18456_link1]                        |
+|      22911 | The capture job cannot be used by Change Data Capture to extract changes from the log when             … | [22911_link1]                        |
 |      25713 | The value specified for %S_MSG, "%.*ls", %S_MSG, "%.*ls", is invalid.                                    | [25713_link1],[25713_link2]          |
 |      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                       | [26023_link1][13]                    |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                       | [33111_link1]                        |
@@ -222,6 +223,7 @@ SELECT message_id, severity, text
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
+[22911_link1]:https://www.sqlshack.com/sql-server-filestream-with-change-data-capture/
 [25713_link1]:https://sqlquantumleap.com/2018/01/22/server-audit-mystery-filtering-class_type-gets-error-msg-25713/
 [25713_link2]:https://sqlquantumleap.com/2018/01/30/server-audit-mystery-filtering-action_id-gets-error-msg-25713/
 [33111_link1]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
