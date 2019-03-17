@@ -2,7 +2,7 @@ IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
     EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
-ã€€
+
 ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
       @tsqlStatementBefore NVARCHAR(MAX) = NULL
     , @tsqlStatement       NVARCHAR(MAX)
@@ -22,7 +22,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Run TSQL statement @numberOfExecution times and calculate execution time, save results if needed or print it.
 
 .DESCRIPTION
-    Run SQL statement specified times, show results, insert execution details into table master.dbo.BenchmarkTSQL (create if not exist).
+    Run SQL statement specified times, show results, insert execution details into log table master.dbo.BenchmarkTSQL.
 
 .PARAMETER @tsqlStatementBefore
     TSQL statement that executed before tested main TSQL statement.
@@ -37,22 +37,22 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
-    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Table will be created if not exists.
+    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 245 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
 
 .PARAMETER @skipTSQLCheck
-    Checking for valid TSQL statement. Default value 0 (false) - skip checking.
+    Checking for valid TSQL statement. Default value is 0 (false) - skip checking.
 
 .PARAMETER @clearCache
-    Clear cached plan for TSQL statement. Default value 0 (false) - not clear.
+    Clear cached plan for TSQL statement. Default value is 0 (false) - not clear.
 
 .PARAMETER @calcMedian
-    Calculate pseudo median of execution time. Default value 0 (false) - not calculated.
+    Calculate pseudo median of execution time. Default value is 0 (false) - not calculated.
 
 .PARAMETER @printStepInfo
     PRINT detailed step information: step count, start time, end time, duration.
 
 .PARAMETER @durationAccuracy
-    Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, dd, wk.
+    Duration accuracy calculation, possible values: ns, mcs, ms, ss, mi, hh, dd, wk. Default value is ss - seconds.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
 .PARAMETER @dateTimeFunction
@@ -63,7 +63,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     EXEC sp_BenchmarkTSQL
          @tsqlStatement = 'SELECT * FROM , sys.databases;'
        , @skipTSQLCheck = 0;
-    -- RETURN: Incorrect syntax near ','.
+    /* RETURN: Incorrect syntax near ','. */
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
@@ -121,15 +121,14 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @additionalInfo    = 1;
 
 .LICENSE MIT
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is here by granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-    Author: Aleksei Nagorskii
-    Created date: 2017-12-14 by Konstantin Taranov k@taranov.pro
-    Version: 4.9
-    Last Modified: 2018-09-04 15:50 UTC+3 by Konstantin Taranov
+    Created date: 2017-12-14 by Konstantin Taranov
+    Version: 5.0
+    Last Modified: 2019-03-17 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -138,14 +137,14 @@ BEGIN TRY
 
     SET NOCOUNT ON;
 
-    DECLARE @originalLogin SYSNAME = QUOTENAME(ORIGINAL_LOGIN()); -- https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/
-    DECLARE @startTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                           WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                      END;
-    DECLARE @err_msg NVARCHAR(MAX);
-    DECLARE @RaiseError NVARCHAR(2000);
+    DECLARE @originalLogin SYSNAME = QUOTENAME(ORIGINAL_LOGIN()); /* https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/ */
+    DECLARE @startTime     DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                               WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                          END;
+    DECLARE @err_msg       NVARCHAR(MAX);
+    DECLARE @RaiseError    NVARCHAR(2000);
 
-    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
     SET @RaiseError = 'Benchmark started at ' +  CONVERT(VARCHAR(27), @startTime, 121) + ' by ' + @originalLogin;
     RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
@@ -164,36 +163,33 @@ BEGIN TRY
         THROW 55003, '@tsqlStatement is empty, please specify TSQL statement.', 1;
 
     IF @durationAccuracy NOT IN (
-                                   'ns'  -- nanosecond
-                                 , 'mcs' -- microsecond
-                                 , 'ms'  -- millisecond
-                                 , 'ss'  -- second
-                                 , 'mi'  -- minute
-                                 , 'hh'  -- hour
-                                 , 'dd'  -- day
-                                 , 'wk'  -- week
+                                   'ns'  /* nanosecond  */
+                                 , 'mcs' /* microsecond */
+                                 , 'ms'  /* millisecond */
+                                 , 'ss'  /* second      */
+                                 , 'mi'  /* minute      */
+                                 , 'hh'  /* hour        */
+                                 , 'dd'  /* day         */
+                                 , 'wk'  /* week        */
     )
     THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
-    IF @dateTimeFunction NOT IN (
-                              'SYSDATETIME'
-                            , 'SYSUTCDATETIME'
-    )
+    IF @dateTimeFunction NOT IN ('SYSDATETIME', 'SYSUTCDATETIME')
     THROW 55005, '@dateTimeFunction accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
     IF @numberOfExecution <= 0 OR @numberOfExecution >= 32000
-        THROW 55006, '@numberOfExecution must be > 0 and < 32000', 1;
+        THROW 55006, '@numberOfExecution must be > 0 and < 32000. If you want more execution then comment 180 and 181 lines.', 1;
 
     IF @skipTSQLCheck = 0
     BEGIN
         IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> '' AND EXISTS (
             SELECT 1
             FROM sys.dm_exec_describe_first_result_set(@tsqlStatementBefore, NULL, 0)
-            WHERE error_message IS NOT NULL
-              AND error_number IS NOT NULL
-              AND error_severity IS NOT NULL
-              AND error_state IS NOT NULL
-              AND error_type IS NOT NULL
+            WHERE error_message   IS NOT NULL
+              AND error_number    IS NOT NULL
+              AND error_severity  IS NOT NULL
+              AND error_state     IS NOT NULL
+              AND error_type      IS NOT NULL
               AND error_type_desc IS NOT NULL
               )
         BEGIN
@@ -204,7 +200,7 @@ BEGIN TRY
             THROW 55007, @err_msg, 1;
         END;
 
-        IF @tsqlStatement IS NOT NULL AND @tsqlStatement <> '' AND EXISTS (
+        IF @tsqlStatement IS NOT NULL AND @tsqlStatement <> N'' AND EXISTS (
             SELECT 1
             FROM sys.dm_exec_describe_first_result_set(@tsqlStatement, NULL, 0)
             WHERE error_message IS NOT NULL
@@ -222,7 +218,7 @@ BEGIN TRY
             THROW 55008, @err_msg, 1;
         END;
 
-        IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> '' AND EXISTS (
+        IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> N'' AND EXISTS (
             SELECT 1
             FROM sys.dm_exec_describe_first_result_set(@tsqlStatementAfter, NULL, 0)
             WHERE error_message IS NOT NULL
@@ -241,8 +237,29 @@ BEGIN TRY
         END;
     END;
 
+    IF @saveResults = 1 AND OBJECT_ID('master.dbo.BenchmarkTSQL', 'U') IS NULL
+    THROW 55010, 'Please create master.dbo.BenchmarkTSQL log table before run procedure with @saveResults = 1.
+    CREATE TABLE master.dbo.BenchmarkTSQL(
+          BenchmarkTSQLID     INT IDENTITY  NOT NULL
+        , TSQLStatementGUID   VARCHAR(36)   NOT NULL
+        , StepRowNumber       INT           NOT NULL
+        , StartBenchmarkTime  DATETIME2(7)  NOT NULL
+        , FinishBenchmarkTime DATETIME2(7)  NOT NULL
+        , RunTimeStamp        DATETIME2(7)  NOT NULL
+        , FinishTimeStamp     DATETIME2(7)  NOT NULL
+        , Duration            BIGINT        NOT NULL
+        , DurationAccuracy    VARCHAR(10)   NOT NULL
+        , TsqlStatementBefore NVARCHAR(MAX) NULL
+        , TsqlStatement       NVARCHAR(MAX) NOT NULL
+        , TsqlStatementAfter  NVARCHAR(MAX) NULL
+        , ClearCache          BIT           NOT NULL
+        , PrintStepInfo       BIT           NOT NULL
+        , OriginalLogin       SYSNAME       NOT NULL
+        , AdditionalInfo      XML           NULL
+    );', 1;
+
     DECLARE @crlf          NVARCHAR(10) = CHAR(10);
-    DECLARE @stepNumnber   INT          = 0;
+    DECLARE @stepNumber    INT          = 0;
     DECLARE @min           BIGINT;
     DECLARE @avg           BIGINT;
     DECLARE @max           BIGINT;
@@ -253,22 +270,23 @@ BEGIN TRY
     DECLARE @duration      INT;
     DECLARE @additionalXML XML;
 
-    DECLARE @BenchmarkTSQL TABLE (
-        StartBenchmarkTime  DATETIME2(7)  NOT NULL
-      , FinishBenchmarkTime DATETIME2(7)  NULL
-      , RunTimeStamp        DATETIME2(7)  NOT NULL
-      , FinishTimeStamp     DATETIME2(7)  NOT NULL
-      , Duration            BIGINT        NOT NULL
-      , ClearCache          BIT           NOT NULL
-      , PrintStepInfo       BIT           NOT NULL
-      , DurationAccuracy    VARCHAR(10)   NOT NULL
-      , AdditionalInfo      XML           NULL
+    DECLARE @BenchmarkTSQL TABLE(
+        StepNumber          INT          NOT NULL
+      , StartBenchmarkTime  DATETIME2(7) NOT NULL
+      , FinishBenchmarkTime DATETIME2(7) NULL
+      , RunTimeStamp        DATETIME2(7) NOT NULL
+      , FinishTimeStamp     DATETIME2(7) NOT NULL
+      , Duration            BIGINT       NOT NULL
+      , ClearCache          BIT          NOT NULL
+      , PrintStepInfo       BIT          NOT NULL
+      , DurationAccuracy    VARCHAR(10)  NOT NULL
+      , AdditionalInfo      XML          NULL
       );
 
     IF @additionalInfo = 1
     SET @tsqlStatement = @tsqlStatement + @crlf + N'
         SET @additionalXMLOUT = (
-        SELECT *
+        SELECT [Option], [Enabled]
         FROM (
                SELECT ''DISABLE_DEF_CNST_CHK'' AS "Option", CASE @@options & 1     WHEN 0 THEN 0 ELSE 1 END AS "Enabled" UNION ALL
                SELECT ''IMPLICIT_TRANSACTIONS''           , CASE @@options & 2     WHEN 0 THEN 0 ELSE 1 END UNION ALL
@@ -289,16 +307,22 @@ BEGIN TRY
         FOR XML RAW
         );';
 
-    WHILE @stepNumnber < @numberOfExecution
+    IF @saveResults = 1
     BEGIN
-        SET @stepNumnber = @stepNumnber + 1;
+        DECLARE @TSQLStatementGUID VARCHAR(36) = NEWID();
+        PRINT(N'TSQLStatementGUID in log table is: ' + @TSQLStatementGUID + @crlf);
+    END;
+
+    WHILE @stepNumber < @numberOfExecution
+    BEGIN
+        SET @stepNumber = @stepNumber + 1;
 
         IF @clearCache = 1
         BEGIN
             SELECT @plan_handle = plan_handle
             FROM sys.dm_exec_cached_plans
             CROSS APPLY sys.dm_exec_sql_text(plan_handle)
-            WHERE [text] LIKE @tsqlStatement;  -- LIKE instead = (equal) because = ignore trailing spaces
+            WHERE [text] LIKE @tsqlStatement;  /* LIKE instead = (equal) because = ignore trailing spaces */
 
             IF @plan_handle IS NOT NULL DBCC FREEPROCCACHE (@plan_handle);
         END;
@@ -332,34 +356,77 @@ BEGIN TRY
                         END;
 
         INSERT @BenchmarkTSQL (
-              StartBenchmarkTime
+              StepNumber
+            , StartBenchmarkTime
             , FinishBenchmarkTime
             , RunTimeStamp
             , FinishTimeStamp
             , Duration
+            , DurationAccuracy
             , ClearCache
             , PrintStepInfo
-            , DurationAccuracy
             , AdditionalInfo
             )
         VALUES (
-              @startTime
+              @stepNumber
+            , @startTime
             , NULL
             , @runTimeStamp
             , @finishTime
             , @duration
+            , @durationAccuracy
             , @clearCache
             , @printStepInfo
-            , @durationAccuracy
             , @additionalXML
             );
 
+
+       IF @saveResults = 1
+       BEGIN
+          INSERT INTO master.dbo.BenchmarkTSQL(
+            TSQLStatementGUID
+          , StepRowNumber
+          , StartBenchmarkTime
+          , FinishBenchmarkTime
+          , RunTimeStamp
+          , FinishTimeStamp
+          , Duration
+          , DurationAccuracy
+          , TsqlStatementBefore
+          , TsqlStatement
+          , TsqlStatementAfter
+          , ClearCache
+          , PrintStepInfo
+          , OriginalLogin
+          , AdditionalInfo
+          )
+          SELECT @TSQLStatementGUID AS TSQLStatementGUID
+               , @stepNumber AS StepRowNumber
+               , StartBenchmarkTime
+               , CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                      WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                 END AS FinishBenchmarkTime
+               , RunTimeStamp
+               , FinishTimeStamp
+               , Duration
+               , DurationAccuracy
+               , @tsqlStatementBefore
+               , @tsqlStatement
+               , @tsqlStatementAfter
+               , ClearCache
+               , PrintStepInfo
+               , @originalLogin AS OriginalLogin
+               , @additionalXML AS AdditionalInfo
+           FROM @BenchmarkTSQL
+           WHERE StepNumber = @stepNumber;
+       END;
+
        IF @printStepInfo = 1
-       -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
-           SET @RaiseError = 'Run ' + CASE WHEN @stepNumnber < 10   THEN '   ' + CAST(@stepNumnber AS VARCHAR(30))
-                                           WHEN @stepNumnber < 100  THEN '  '  + CAST(@stepNumnber AS VARCHAR(30))
-                                           WHEN @stepNumnber < 1000 THEN ' '  + CAST(@stepNumnber AS VARCHAR(30))
-                                           ELSE CAST(@stepNumnber AS VARCHAR(30))
+       /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
+           SET @RaiseError = 'Run ' + CASE WHEN @stepNumber < 10   THEN '   ' + CAST(@stepNumber AS VARCHAR(30))
+                                           WHEN @stepNumber < 100  THEN '  '  + CAST(@stepNumber AS VARCHAR(30))
+                                           WHEN @stepNumber < 1000 THEN ' '   + CAST(@stepNumber AS VARCHAR(30))
+                                           ELSE CAST(@stepNumber AS VARCHAR(30))
                                       END +
                               ', start: '    + CONVERT(VARCHAR(27), @runTimeStamp, 121) +
                               ', finish: '   + CONVERT(VARCHAR(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
@@ -379,86 +446,14 @@ BEGIN TRY
       FROM @BenchmarkTSQL;
 
     DECLARE @FinishBenchmarkTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                                     WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME() ELSE SYSDATETIME()
+                                                     WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                                 END;
 
     IF @saveResults = 1
     BEGIN
-    DECLARE @TSQLStatementGUID VARCHAR(36) = NEWID();
-
-        IF OBJECT_ID('master.dbo.BenchmarkTSQL', 'U') IS NULL
-        BEGIN
-            CREATE TABLE master.dbo.BenchmarkTSQL(
-                  BenchmarkTSQLID     INT IDENTITY  NOT NULL
-                , TSQLStatementGUID   VARCHAR(36)   NOT NULL
-                , StepRowNumber       INT           NOT NULL
-                , StartBenchmarkTime  DATETIME2(7)  NOT NULL
-                , FinishBenchmarkTime DATETIME2(7)  NOT NULL
-                , RunTimeStamp        DATETIME2(7)  NOT NULL
-                , FinishTimeStamp     DATETIME2(7)  NOT NULL
-                , Duration            BIGINT        NOT NULL
-                , TsqlStatementBefore NVARCHAR(MAX) NULL
-                , TsqlStatement       NVARCHAR(MAX) NOT NULL
-                , TsqlStatementAfter  NVARCHAR(MAX) NULL
-                , ClearCache          BIT           NOT NULL
-                , PrintStepInfo       BIT           NOT NULL
-                , DurationAccuracy    VARCHAR(10)   NOT NULL
-                , OriginalLogin       SYSNAME       NOT NULL
-                , AdditionalInfo      XML           NULL
-            );
-
-            INSERT INTO master.dbo.BenchmarkTSQL(
-                 TSQLStatementGUID
-               , StepRowNumber
-               , StartBenchmarkTime
-               , FinishBenchmarkTime
-               , RunTimeStamp
-               , FinishTimeStamp
-               , Duration
-               , TsqlStatementBefore
-               , TsqlStatement
-               , TsqlStatementAfter
-               , ClearCache
-               , PrintStepInfo
-               , DurationAccuracy
-               , OriginalLogin
-               , AdditionalInfo
-            )
-            SELECT @TSQLStatementGUID AS TSQLStatementGUID
-                 , ROW_NUMBER() OVER (ORDER BY RunTimeStamp, FinishTimeStamp) AS StepRowNumber
-                 , StartBenchmarkTime
-                 , @FinishBenchmarkTime
-                 , RunTimeStamp
-                 , FinishTimeStamp
-                 , Duration
-                 , @tsqlStatementBefore
-                 , @tsqlStatement
-                 , @tsqlStatementAfter
-                 , ClearCache
-                 , PrintStepInfo
-                 , DurationAccuracy
-                 , @originalLogin AS OriginalLogin
-                 , @additionalXML AS AdditionalInfo
-             FROM @BenchmarkTSQL;
-        END
-        ELSE
-            INSERT INTO master.dbo.BenchmarkTSQL
-            SELECT @TSQLStatementGUID AS TSQLStatementGUID
-                 , ROW_NUMBER() OVER (ORDER BY RunTimeStamp, FinishTimeStamp) AS StepRowNumber
-                 , StartBenchmarkTime
-                 , @FinishBenchmarkTime
-                 , RunTimeStamp
-                 , FinishTimeStamp
-                 , Duration
-                 , @tsqlStatementBefore
-                 , @tsqlStatement
-                 , @tsqlStatementAfter
-                 , ClearCache
-                 , PrintStepInfo
-                 , DurationAccuracy
-                 , @originalLogin AS OriginalLogin
-                 , @additionalXML AS AdditionalInfo
-             FROM @BenchmarkTSQL;
+        UPDATE dbo.BenchmarkTSQL
+        SET FinishTimeStamp = @FinishBenchmarkTime
+        WHERE TSQLStatementGUID = @TSQLStatementGUID;
     END;
 
     IF @calcMedian = 1
@@ -501,10 +496,18 @@ BEGIN TRY
          ) / 2.0;
     END;
 
-   DECLARE @endTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                        WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                   END;
-    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    DECLARE @endTime DATETIME2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
+                                         WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                    END;
+    
+    IF @saveResults = 1
+    BEGIN
+        UPDATE dbo.BenchmarkTSQL
+        SET FinishTimeStamp = @endTime
+        WHERE TSQLStatementGUID = @TSQLStatementGUID;
+    END;
+
+    /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
     SET @RaiseError = @crlf +
          'Min: '       + CAST(@min AS VARCHAR(30)) + @durationAccuracy +
          ', Max: '     + CAST(@max AS VARCHAR(30)) + @durationAccuracy +
@@ -526,7 +529,7 @@ BEGIN TRY
                                              ELSE 0
                                         END;
 
-    -- Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/
+    /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
     SET @RaiseError = @crlf + 'Duration of benchmark: ' +  CAST(@BenchmarkDuration AS VARCHAR(30)) + @durationAccuracy + '.';
     RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
 
@@ -542,7 +545,8 @@ BEGIN CATCH
     PRINT(ERROR_MESSAGE());
 
     IF ERROR_NUMBER() = 535
-    PRINT('Your @durationAccuracy = ' + @durationAccuracy + '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
-    'But in log table master.dbo.BenchmarkTSQL all times saving with DATETIME2(7) precise! You can manualy calculate difference after decreasing precise datepart.')
+    PRINT('Your @durationAccuracy = ' + @durationAccuracy +
+    '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
+    'But in log table master.dbo.BenchmarkTSQL all times saving with DATETIME2(7) precise! You can manualy calculate difference after decreasing precise datepart.');
 END CATCH;
 GO
