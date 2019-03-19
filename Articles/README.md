@@ -662,6 +662,8 @@ Articles types:
 | [Data Compression Internals]                                                                                            | Jess Pomfret                             | 2019-02-19 | [DBA],[DEV] |
 | [SQL Server Data Compression – Crunch Time!]                                                                            | Jeff Mlakar                              | 2019-02-22 | [DBA],[DEV] |
 | [Create a slipstream installer for SQL Server on Windows]                                                               | Randolph West                            | 2018-10-24 | [DBA]       |
+| [Temporary Tables in SQL Server]                                                                                        | Phil Factor                              | 2011-09-01 | [DBA],[DEV] |
+| [SQL unit testing with the tSQLt framework for beginners]                                                               | Esat Erkec                               | 2019-03-19 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1301,3 +1303,5 @@ Articles types:
 [Data Compression Internals]:https://jesspomfret.com/data-compression-internals/
 [SQL Server Data Compression – Crunch Time!]:https://www.mlakartechtalk.com/sql-server-data-compression-crunch-time/
 [Create a slipstream installer for SQL Server on Windows]:https://bornsql.ca/blog/create-a-slipstream-installer-for-sql-server-on-windows/
+[Temporary Tables in SQL Server]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/temporary-tables-in-sql-server/
+[SQL unit testing with the tSQLt framework for beginners]:https://www.sqlshack.com/sql-unit-testing-with-the-tsqlt-framework-for-beginners/

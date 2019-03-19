@@ -1,4 +1,7 @@
 # SQL Server Name Convention and T-SQL Programming Style
+> There are only two hard things in Computer Science: cache invalidation and naming things
+> -- <cite>[Phil Karlton](https://www.karlton.org/2017/12/naming-things-hard/)</cite>
+
 [Naming convention][99] is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.
 
 Reasons for using a naming convention (as opposed to allowing programmers to choose any character sequence) include the following:
@@ -21,38 +24,38 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 <a id="sql-server-object-name-convention"></a>
 ## SQL Server Object Name Convention
 
-| Object                           | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                            |
-|----------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|------------------------------------|
-| Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | MYDATABASE                         |
-| Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | DTR_CheckLogin                     |
-| Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | myschema                           |
-| File Table                       |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | FT_MyTable                         |
-| Global Temporary Table           |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | ##MyTable                          |
-| Local Temporary Table            |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | #MyTable                           |
-| Table                            | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | MyTable                            |
-| Table Column                     |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | MyColumn                           |
-| Table Default Values             | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | DF_MyTable_MyColumn                |
-| Table Check Column Constraint    | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | CK_MyTable_MyColumn                |
-| Table Check Table Constraint     | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | CTK_MyTable_MyColumn_AnotherColumn |
-| Table Primary Key                | PK   | PascalCase |    128 | No     | PK_    | No     | Yes          | [A-z][0-9]   | PK_MyTableID                       |
-| Table Alternative Key            | UQ   | PascalCase |    128 | No     | AK_    | No     | Yes          | [A-z][0-9]   | AK_MyTable_MyColumn_AnotherColumn  |
-| Table Foreign Key                | F    | PascalCase |    128 | No     | FK_    | No     | Yes          | [A-z][0-9]   | FK_MyTable_ForeignTableID          |
-| Table Clustered Index            |      | PascalCase |    128 | No     | IXC_   | No     | Yes          | [A-z][0-9]   | IXC_MyTable_MyColumn_AnotherColumn |
-| Table Non Clustered Index        |      | PascalCase |    128 | No     | IX_    | No     | Yes          | [A-z][0-9]   | IX_MyTable_MyColumn_AnotherColumn  |
-| Table Trigger                    | TR   | PascalCase |    128 | No     | TR_    | No     | Yes          | [A-z][0-9]   | TR_MyTable_LogicalName             |
-| View                             | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | VI_LogicalName                     |
-| Stored Procedure                 | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | usp_LogicalName                    |
-| Scalar User-Defined Function     | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | udf_FunctionLogicalName            |
-| Table-Valued Function            | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | tvf_FunctionLogicalName            |
-| Synonym                          | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | sy_logicalName                     |
-| Sequence                         | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | sq_TableName                       |
-| CLR Assembly                     |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | CALogicalName                      |
-| CLR Stored Procedures            | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | pc_CAName_LogicalName              |
-| CLR Scalar User-Defined Function |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | cudf_CAName_LogicalName            |
-| CLR Table-Valued Function        |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | ctvf_CAName_LogicalName            |
-| CLR User-Defined Aggregates      |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | ca_CAName_LogicalName              |
-| CLR  User-Defined Types          |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | ct_CAName_LogicalName              |
-| CLR  Triggers                    |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | ctr_CAName_LogicalName             |
+| Object                           | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                              |
+|----------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|--------------------------------------|
+| Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | `MYDATABASE`                         |
+| Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | `DTR_CheckLogin`                     |
+| Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | `myschema`                           |
+| File Table                       |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | `FT_MyTable`                         |
+| Global Temporary Table           |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | `##MyTable`                          |
+| Local Temporary Table            |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | `#MyTable`                           |
+| Table                            | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
+| Table Column                     |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
+| Table Default Values             | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
+| Table Check Column Constraint    | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
+| Table Check Table Constraint     | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
+| Table Primary Key                | PK   | PascalCase |    128 | No     | PK_    | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
+| Table Alternative Key            | UQ   | PascalCase |    128 | No     | AK_    | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
+| Table Foreign Key                | F    | PascalCase |    128 | No     | FK_    | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
+| Table Clustered Index            |      | PascalCase |    128 | No     | IXC_   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
+| Table Non Clustered Index        |      | PascalCase |    128 | No     | IX_    | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
+| Table Trigger                    | TR   | PascalCase |    128 | No     | TR_    | No     | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName`             |
+| View                             | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
+| Stored Procedure                 | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
+| Scalar User-Defined Function     | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
+| Table-Valued Function            | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
+| Synonym                          | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
+| Sequence                         | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
+| CLR Assembly                     |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
+| CLR Stored Procedures            | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
+| CLR Scalar User-Defined Function |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
+| CLR Table-Valued Function        |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
+| CLR User-Defined Aggregates      |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
+| CLR User-Defined Types           |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
+| CLR Triggers                     |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -138,11 +141,14 @@ More details about SQL Server data types and mapping it with another databases y
 SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
+ - For database objects names in code please use only schema plus object name, do not hardcore server and database name in your code: `dbo.MyTable` is good and NOT `PRODSERVER.PRODDB.dbo.MyTable`
+   More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/)
  - Delimiters: spaces (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
- - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.  This deprecation announcement means that you should always use semicolon terminators in new development.)
+ - All finished expressions should have `;` at the end (this is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated. 
+   This deprecation announcement means that you should always use semicolon terminators in new development.)
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/)
  - All script files should end with `GO` and line break
  - Avoid non-standard column aliases, use ,if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p;`
@@ -150,34 +156,43 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    All possible ways using aliases in SQL Server:
 
    ```sql
-    SELECT Tables   = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT "Tables" = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT [Tables] = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT 'Tables' = Schema_Name(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] [Tables]    FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] 'Tables'    FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] "Tables"    FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] Tables      FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] AS [Tables] FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] AS 'Tables' FROM sys.tables;
-    SELECT Schema_Name(schema_id)+'.'+[name] AS Tables   FROM sys.tables;
-    /* Below recommended due to ANSI
-    SELECT Schema_Name(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
+    /* Recommended due to ANSI */
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
+
+    /* Not recommended but possible */
+    SELECT Tables   = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT "Tables" = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT [Tables] = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT 'Tables' = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] [Tables]    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] 'Tables'    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] "Tables"    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] Tables      FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS [Tables] FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS 'Tables' FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS Tables   FROM sys.tables;
    ```
  - The first argument in `SELECT` expression should be on the same line with it: `SELECT LastName …`
  - Arguments are divided by line breaks, commas should be placed before an argument:
-   
+
    ```sql
    SELECT FirstName
         , LastName
    ```
- - For SQL Server >= 2012 use `FETCH-OFFSET` instead `TOP`. But if you use `TOP` avoid use `TOP` in a `SELECT` statement without an `ORDER BY`. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement)
+ - For SQL Server >= 2012 use `FETCH-OFFSET` instead `TOP`.
+   But if you use `TOP` avoid use `TOP` in a `SELECT` statement without an `ORDER BY`.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement)
  - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
- - For demo queries use `TOP(100)` or lower value because SQL Server SQL Server uses one sorting method for TOP 1-100 rows, and a different one for 101+ rows
+
+   ```sql
+   /* Not working without brackets () */
+   DECLARE @n int = 1;
+   SELECT TOP@n name FROM sys.objects;
+   ```
+ - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/)
  - Keywords and data types declaration should be in **UPPERCASE**
- - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
  - All objects must used with schema names but without database and server name: `FROM dbo.Table`. For stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification)
  - All system database and tables must be in lower case for properly working in Case Sensitive instance: `master, sys.tables …`
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
@@ -196,8 +211,10 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    END
    ```
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029)
- - Avoid using `INSERT INTO` a permanent table with `ORDER BY`, more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-insert-permanent-table-order-pe020)
- - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`. More details [here](https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations)
+ - Avoid using `INSERT INTO` a permanent table with `ORDER BY`
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-insert-permanent-table-order-pe020)
+ - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`.
+   More details [here](https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations)
  - Avoid ambiguous formats for date-only literals, use `CAST('yyyymmdd' AS DATE)` format
  - Avoid treating dates like strings and avoid calculations on the left-hand side of the `WHERE` clause. More details [here](https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries)
  - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `OPTION(RECOMPILE)` if needed. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7)
@@ -208,14 +225,16 @@ SQL Server TSQL Coding Conventions, Best Practices, and Programming Guidelines
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017)
  - Use `EXISTS` or `NOT EXISTS` if referencing a subquery, and `IN` or `NOT IN` when have a list of literal values
    More details [here](https://www.brentozar.com/archive/2018/08/a-common-query-error/)
- - For concatenate strings:
+ - For concatenate unicode strings:
    - always using the upper-case `N`;
    - always store into a variable of type `NVARCHAR(MAX)`;
    - avoid truncation of string literals, simply ensure that one piece is converted to `NVARCHAR(MAX)`.
    Example: `SET @NVCmaxVariable = CONVERT(NVARCHAR(MAX), N'anything') + N'something else' + N'another';`
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/)
- - Always specify a length to any text-based data type such as `NVARCHAR` or `VARCHAR`: `DECLARE @myGoodVariable VARCHAR(50);` and not `DECLARE @myBadVariable VARCHAR;`.
+ - Always specify a length to any text-based data type such as `NVARCHAR` or `VARCHAR`:
+  `DECLARE @myGoodVariable VARCHAR(50);` and not `DECLARE @myBadVariable VARCHAR;`
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores)
+ - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
 
 Example:
 
@@ -239,29 +258,26 @@ SELECT t1.Value1 AS Val1
 
 **[⬆ back to top](#table-of-contents)**
 
+
 <a id="programming-style"></a>
 ### Stored procedures and functions programming style
 
- - All stored procedures and functions should use `ALTER` statement and start with the object presence check
+ - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below)
  - `ALTER` statement should be preceded by 2 line breaks
  - Parameters name should be in **camelCase**
  - Parameters should be placed under procedure name divided by line breaks
- - After the `ALTER` statement and before AS keyword should be placed a comment with execution example
- - The procedure or function should begin with parameters check
+ - After the `ALTER` statement and before `AS` keyword should be placed a comment with execution example
+ - The procedure or function should begin with parameters checks (see example below)
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
- - Always use `BEGIN TRY` and `BEGIN CATCH`
- - Always use `/* */` instead in-line comment `--`
- - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
+ - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
+ - Always use multi-line comment `/* */` instead in-line comment `--`
+ - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009)
  - Do not use `SET NOCOUNT OFF;` (because it is default behavior)
- - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags. More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html)
- - Use `TOP` expression with `()`:
-```tsql
--- Not working without ()
-DECLARE @n int = 1;
-SELECT TOP@n name FROM sys.objects;
-```
+ - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
+   More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html)
  - All code should be self documenting
- - TSQL code, triggers, stored procedures, functions, should have a standard comment banner:
+ - TSQL code, triggers, stored procedures, functions, should have a standard comment-documentation banner:
 ```tsql
 summary:   >
  This procedure returns an object build script as a single-row, single column
@@ -332,7 +348,7 @@ GO
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
  - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
- - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate_)
+ - [Writing Readable SQL](http://www.codeproject.com/Articles/126380/Writing-Readable-SQL) (by Red Gate)
  - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
  - [SQL Code Layout and Beautification](https://www.simple-talk.com/sql/t-sql-programming/sql-code-layout-and-beautification/) (by William Brewer)
  - [TSQL Coding Style](http://www.databasejournal.com/features/mssql/tsql-coding-style.html) (by Gregory Larsen)
