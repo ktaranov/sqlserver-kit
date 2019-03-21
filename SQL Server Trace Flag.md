@@ -71,6 +71,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Slava Oks ([t](https://twitter.com/slava_oks/))
  - John Sterrett ([b](https://www.procuresql.com/))
  - Pavel Málek ([t](https://twitter.com/malekpav))
+ - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
 
 
 <a id="unknown-trace-flags"></a>
@@ -587,7 +588,7 @@ Link: None
 <a id="460"></a>
 #### Trace Flag: 460
 **Don’t leave this trace flag enabled.
-There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) with it as of today on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**
+There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**<br />
 Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
 Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
 Link: [Docs Trace Flags]<br />
