@@ -131,7 +131,7 @@ Profits:
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 CTP 2.3]                                                | 15.0.1300.359                                | 2019-03-01                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU13 KB4483666]                              | 14.0.1000.169<br/>14.0.3049.1                | 2017-10-02<br/>2019-01-08                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
-| 2016    | [Install 2016 SP2] then [CU5 Hotfix KB4490133]                        | 13.0.5026.0<br/>13.0.5270.0                  | 2018-04-24<br/>2019-02-14                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Install 2016 SP2] then [CU6 KB4488536]                               | 13.0.5026.0<br/>13.0.5292.0                  | 2018-04-24<br/>2019-03-19                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU2 KB4482960] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6214.1  | 2016-07-11<br/>2018-10-30<br/>2019-02-19 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]         | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
@@ -143,7 +143,7 @@ Profits:
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [CU13 KB4483666]:https://support.microsoft.com/help/4483666
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[CU5 Hotfix KB4490133]:https://support.microsoft.com/help/4490133
+[CU6 KB4488536]:https://support.microsoft.com/help/4488536
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
 [SP3 KB4022619]:https://support.microsoft.com/help/4022619
 [CU2 KB4482960]:https://support.microsoft.com/help/4482960
@@ -182,7 +182,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU13 Hotfix]         | SQLServer2017-KB4483666-x64                                       | 2019-01-08   | 14.0.3049.1   |      488 | 6f2de49e491048ab4cb17160d4efc653c3a29bf1 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU5]             | SQLServer2016-KB4475776-x64.exe                                   | 2019-01-23   | 13.0.5264.1   |      712 | 68af970cf5ffea7e549216b20dfa9fab4e2e6e8f |
+| [SQL Server 2016 SP2 CU6]             | SQLServer2016-KB4488536-x64.exe                                   | 2019-03-19   | 13.0.5292.0   |      714 | d02797c06ff36cde40c9cbd812946e0ecb59917c |
 | [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
 | [SQL Server 2014 SP3 KB4022619]       | SQLServer2014SP3-KB4022619-x64-ENU.exe                            | 2018-10-30   | 12.0.6024.0   |      791 | a0959d84f72fd9f8a8832ca691efc420050df9de |
 | [SQL Server 2014 SP3 CU2 KB4482960]   | SQLServer2014-KB4482960-x64.exe                                   | 2019-02-19   | 12.0.6214.1   |      602 | b03e8c1abe6bbcb2ba3d5ed59ffa7995d027ddb7 |
@@ -203,7 +203,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2017 CU13 Hotfix]:http://download.microsoft.com/download/4/3/9/439277DD-1041-48F8-A5E5-FA6493E44BC5/SQLServer2017-KB4483666-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[SQL Server 2016 SP2 CU5]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4475776-x64.exe
+[SQL Server 2016 SP2 CU6]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4488536-x64.exe
 [SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP3 KB4022619]:https://download.microsoft.com/download/7/9/F/79F4584A-A957-436B-8534-3397F33790A6/SQLServer2014SP3-KB4022619-x64-ENU.exe
 [SQL Server 2014 SP3 CU1 KB4470220]:https://download.microsoft.com/download/A/5/A/A5AACC94-29A5-4890-90BD-847320EE0E93/SQLServer2014-KB4470220-x64.exe
@@ -552,14 +552,15 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
-Microsoft SQL Server 2016 (SP2-CU5) (KB4475776) - 13.0.5264.1 (X64)
-   Jan 10 2019 18:51:38
+Microsoft SQL Server 2016 (SP2-CU6) (KB4488536) - 13.0.5292.0 (X64)
+   ?
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5292.0   | 2015.130.5292.0   | SP2    | CU   | [4488536 Cumulative Update 6 for SQL Server 2016 SP2]                                                                          | 2019-03-19   | 2019-03-12 |    29 |     24 |      714 |
 | 13.0.5270.0   | 2015.130.5270.0   | SP2    | COD  | [4490133 On-demand hotfix update package for SQL Server 2016 SP2 CU5]                                                          | 2019-02-14   | 2019-02-08 |     1 |      1 |      712 |
 | 13.0.5264.1   | 2015.130.5264.1   | SP2    | CU   | [4475776 Cumulative Update 5 for SQL Server 2016 SP2]                                                                          | 2019-01-23   | 2019-01-11 |    52 |     43 |      712 |
 | 13.0.5239.0   | 2015.130.5239.0   | SP2    | COD  | [4482972 On-demand hotfix update package 2 for SQL Server 2016 SP2 CU4]                                                        | 2018-12-20   | 2018-12-03 |     3 |      3 |      690 |
@@ -630,6 +631,7 @@ Microsoft SQL Server 2016 (SP2-CU5) (KB4475776) - 13.0.5264.1 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[4488536 Cumulative Update 6 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4488536
 [4490133 On-demand hotfix update package for SQL Server 2016 SP2 CU5]:https://support.microsoft.com/help/4490133
 [4475776 Cumulative Update 5 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4475776
 [4482972 On-demand hotfix update package 2 for SQL Server 2016 SP2 CU4]:https://support.microsoft.com/help/4482972
