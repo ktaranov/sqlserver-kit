@@ -572,6 +572,7 @@ Microsoft SQL Server 2016 (SP2-CU6) (KB4488536) - 13.0.5292.0 (X64)
 | 13.0.5149.0   | 2015.130.5149.0   | SP2    | CU   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
 | 13.0.5081.1   | 2015.131.5081.1   | SP2    | COD  | [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018] **CVE-2018-8273**                                       | 2018-05-30   | 2018-05-19 |     1 |      0 |      492 |
 | 13.0.5026.0   | 2015.130.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
+| 13.0.4560.0   | 2015.130.4560.0   | SP1    | SP   | [4488535 Cumulative update 14 (CU14) for SQL Server 2016 Service Pack 1]                                                       | 2019-03-19   | 2019-03-12 |     7 |      7 |      761 |
 | 13.0.4550.1   | 2015.130.4550.1   | SP1    | CU   | [4475775 Cumulative Update 13 for SQL Server 2016 SP1]                                                                         | 2019-01-23   | 2019-01-11 |    12 |      9 |      761 |
 | 13.0.4541.0   | 2015.130.4541.0   | SP1    | CU   | [4464343 Cumulative Update 12 for SQL Server 2016 SP1]                                                                         | 2018-11-13   | 2018-10-27 |    21 |     16 |      761 |
 | 13.0.4531.0   | 2015.130.4531.0   | SP1    | COD  | [4465443 FIX: The "modification_counter" in DMV sys.dm_db_stats_properties shows incorrect value when partitions are merged]   | 2018-09-27   | 2018-09-22 |     1 |      1 |      759 |
@@ -645,6 +646,7 @@ Microsoft SQL Server 2016 (SP2-CU6) (KB4488536) - 13.0.5292.0 (X64)
 [4464343 Cumulative Update 12 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4464343
 [4465443 FIX: The "modification_counter" in DMV sys.dm_db_stats_properties shows incorrect value when partitions are merged]:https://support.microsoft.com/help/4465443/
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
+[4488535 Cumulative Update 14 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4488535
 [4475775 Cumulative Update 13 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4475775
 [4459676 Cumulative Update 11 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4459676
 [4293808 Security update for SQL Server 2016 SP1 (CU): August 14, 2018]:https://support.microsoft.com/help/4293808
