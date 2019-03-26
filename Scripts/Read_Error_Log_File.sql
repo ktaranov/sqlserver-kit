@@ -3,7 +3,7 @@ Created: 2019-03-05 by Max Vernon
 Modified: 2019-03-26 by Konstantin Taranov
 Original link: https://www.sqlserverscience.com/tools/error-log-analysis-script/
 Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Read_Error_Log_File.sql
-Note: Shows the contents of the SQL Server Error Log files, up to a maximum of the most recent 6 files.
+Note: Shows the contents of the SQL Server Error Log files, up to a maximum of the most recent 9 files.
 Certain "noisy" log messages are filtered out via the #exclusions temp table.
 */
 
@@ -87,7 +87,7 @@ IF @ErrorLogCount > 9 SET @ErrorLogCount = 9;
 DECLARE @FileNum INT;
 SET @FileNum = 0
 
-WHILE @FileNum < 7-- @ErrorLogCount
+WHILE @FileNum < @ErrorLogCount
 BEGIN TRY
     SET @msg = 'Retreiving log ' + CONVERT(varchar(100), @FileNum);
     RAISERROR (@msg, 0, 1) WITH NOWAIT; --send progress to the "Messages" tab
@@ -98,8 +98,6 @@ BEGIN TRY
     UPDATE #mverrlog
     SET ErrorLogFileNum = @FileNum
     WHERE ErrorLogFileNum IS NULL;
-
-    PRINT(@FileNum);
 
     SET @FileNum = @FileNum + 1;
 END TRY
