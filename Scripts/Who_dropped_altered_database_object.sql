@@ -21,6 +21,10 @@ SET @start   = LEFT(@current, LEN(@current) - @index) + N'\log.trc';
 
 /* query on the eventclasses for delete and alter */
 SELECT te.name AS EventName
+     , gt.DatabaseName
+     , gt.ObjectName
+     , gt.StartTime
+     , gt.EndTime
      , gt.HostName
      , gt.ApplicationName
      , gt.NTUserName
@@ -30,16 +34,12 @@ SELECT te.name AS EventName
      , gt.EventClass
      , gt.EventSubClass
      , gt.TextData
-     , gt.StartTime
-     , gt.EndTime
-     , gt.ObjectName
-     , gt.DatabaseName
      , gt.FileName
      , gt.IsSystem
-FROM fn_trace_gettable(@start, DEFAULT) gt
-LEFT JOIN sys.trace_events te ON gt.EventClass = te.trace_event_id
+FROM fn_trace_gettable(@start, DEFAULT) AS gt
+LEFT JOIN sys.trace_events AS te ON gt.EventClass = te.trace_event_id
 WHERE gt.EventSubClass = 0
-  AND gt.DatabaseID <> 2
+  AND gt.DatabaseID   <> 2 /* tempdb */
   /*
   AND EventClass IN ( 164 /* Object:Deleted */
                      , 47 /* Object:Altered */
