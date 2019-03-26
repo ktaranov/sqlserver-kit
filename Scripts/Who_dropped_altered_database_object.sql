@@ -1,7 +1,11 @@
 /*
-Author: Rebecca Lewis
+Created: 2018-10-31 by Rebecca Lewis
+Modified: 2019-03-26 by Konstantin Taranov
 Original link: http://www.sqlfingers.com/2018/10/who-dropped-that-table.html
+Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Who_dropped_altered_database_object.sql
 */
+
+SET NOCOUNT ON;
 
 DECLARE @current NVARCHAR(255);
 DECLARE @start   NVARCHAR(255);
@@ -34,7 +38,12 @@ SELECT te.name AS EventName
      , gt.IsSystem
 FROM fn_trace_gettable(@start, DEFAULT) gt
 LEFT JOIN sys.trace_events te ON gt.EventClass = te.trace_event_id
-WHERE EventClass IN (164, 47)
-AND gt.EventSubClass = 0
-AND gt.DatabaseID <> 2
+WHERE gt.EventSubClass = 0
+  AND gt.DatabaseID <> 2
+  /*
+  AND EventClass IN ( 164 /* Object:Deleted */
+                     , 47 /* Object:Altered */
+                     , 46 /* Object:Created */
+                       )
+  */
 ORDER BY gt.StartTime;
