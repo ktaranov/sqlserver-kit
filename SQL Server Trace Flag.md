@@ -1664,9 +1664,9 @@ Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/dc010af9-afa0-4c8
 <a id="2451"></a>
 #### Trace Flag: 2451
 **Note: This trace flag applies to SQL Server 2019 preview CTP 2.4 and higher builds.**
-Function: Enables the equivalent of the last actual execution plan in [`sys.dm_exec_query_plan_stats`](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql).
-Link: [Docs Trace Flags]
-SQL Server Version: >= 2019 CTP 2.4
+Function: Enables the equivalent of the last actual execution plan in [`sys.dm_exec_query_plan_stats`](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql).<br />
+Link: [Docs Trace Flags]<br />
+SQL Server Version: >= 2019 CTP 2.4<br />
 Scope: global only
 
 

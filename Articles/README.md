@@ -387,7 +387,7 @@ Articles types:
 | [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]                                                       | Niels Berglund                           | 2017-06-25 | [DEV],[R]   |
 | [A Quick start Guide to Managing SQL Server 2017 on CentOS/RHEL Using the SSH Protocol]                                 | Prashanth Jayaram                        | 2017-08-08 | [DEV]       |
 | [SQL Server v.Next : STRING_AGG Performance, Part 2]                                                                    | Aaron Bertrand                           | 2017-01-06 | [DEV]       |
-| [Why Parameter Sniffing Is Making Your Queries Receive Sub-Optimal Execution Plans]                                     | Bert Wagner                              | 2017-08-08 | [DEV]       |
+| [Why Parameter Sniffing Isn’t Always A Bad Thing (But Usually Is)]                                                      | Bert Wagner                              | 2017-08-08 | [DEV]       |
 | [Persisting statistics sampling rate]                                                                                   | Pedro Lopes                              | 2017-08-11 | [DBA]       |
 | [All about locking in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-06-16 | [DBA],[DEV] |
 | [All about Latches in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-08-10 | [DBA],[DEV] |
@@ -913,7 +913,7 @@ Articles types:
 [Why Cost Threshold For Parallelism Shouldn’t Be Set To 5]:https://www.brentozar.com/archive/2017/03/why-cost-threshold-for-parallelism-shouldnt-be-set-to-5/
 [Join Performance, Implicit Conversions, and Residuals]:http://sqlblog.com/blogs/paul_white/archive/2011/07/19/join-performance-implicit-conversions-and-residuals.aspx
 [Implicit Conversions that cause Index Scans]:https://www.sqlskills.com/blogs/jonathan/implicit-conversions-that-cause-index-scans/
-[When Is It Appropriate To Store JSON in SQL Server?]:https://blog.bertwagner.com/when-is-it-appropriate-to-store-json-in-sql-server-8ed1eed1520d#.s7ntvsyd0?utm_source=DBW&utm_medium=pubemail
+[When Is It Appropriate To Store JSON in SQL Server?]:https://bertwagner.com/2017/03/14/when-is-it-appropriate-to-store-json-in-sql-server/
 [The Performance Penalty of Bookmark Lookups in SQL Server]:http://www.sqlpassion.at/archive/2017/03/13/the-performance-penalty-of-bookmark-lookups-in-sql-server/
 [Why You Should Change the Cost Threshold for Parallelism]:http://www.scarydba.com/2017/03/13/change-the-cost-threshold-for-parallelism/
 [Why Update Statistics can cause an IO storm]:https://www.brentozar.com/archive/2014/01/update-statistics-the-secret-io-explosion/
@@ -1009,10 +1009,10 @@ Articles types:
 [SQL Server Event Handling: Event Notifications]:https://itsalljustelectrons.blogspot.ru/2016/11/SQL-Server-Event-Handling-Event-Notifications.html
 [Identifying Deprecated Feature Usage (Part 1)]:https://itsalljustelectrons.blogspot.ru/2017/07/Identifying-Deprecated-Feature-Usage-pt1.html
 [Let’s Corrupt a Database Together, Part 3: Detecting Corruption]:https://www.brentozar.com/archive/2017/07/lets-corrupt-database-together-part-3-detecting-corruption/
-[XML vs JSON Shootout: Which is Superior in SQL Server 2016?]:https://blog.bertwagner.com/xml-vs-json-shootout-which-is-superior-in-sql-server-2016-b97bf7766ef2
-[One SQL Cheat Code For Amazingly Fast JSON Queries]:https://blog.bertwagner.com/one-sql-cheat-code-for-amazingly-fast-json-queries-1c2402b4b0d2
-[The Ultimate SQL Server JSON Cheat Sheet]:https://blog.bertwagner.com/the-ultimate-sql-server-json-cheat-sheet-2fbb98049a37
-[Are your indexes being thwarted by mismatched datatypes?]:https://blog.bertwagner.com/are-your-indexes-being-thwarted-by-mismatched-datatypes-d3985375e528
+[XML vs JSON Shootout: Which is Superior in SQL Server 2016?]:https://bertwagner.com/2017/05/16/xml-vs-json-shootout-which-is-superior-in-sql-server-2016/
+[One SQL Cheat Code For Amazingly Fast JSON Queries]:https://bertwagner.com/2017/05/09/one-sql-cheat-code-for-amazingly-fast-json-queries/
+[The Ultimate SQL Server JSON Cheat Sheet]:https://bertwagner.com/2017/03/07/the-ultimate-sql-server-json-cheat-sheet/
+[Are your indexes being thwarted by mismatched datatypes?]:https://bertwagner.com/2017/08/01/are-your-indexes-being-thwarted-by-mismatched-datatypes/
 [Why Missing Index Recommendations Aren’t Perfect]:https://www.brentozar.com/archive/2017/08/missing-index-recommendations-arent-perfect/
 [Top 5 Misleading SQL Server Performance Counters]:https://sqlworkbooks.com/2017/06/top-5-misleading-sql-server-performance-counters/
 [The Case of the Space at the End]:http://www.sqlservercentral.com/articles/ANSI_PADDING/157467/
@@ -1029,7 +1029,7 @@ Articles types:
 [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]:http://www.nielsberglund.com/2017/06/25/creating-r-stored-procedures-in-sql-server-2016-using-sqlrutils/
 [A Quick start Guide to Managing SQL Server 2017 on CentOS/RHEL Using the SSH Protocol]:https://www.sqlshack.com/quick-start-guide-managing-sql-server-2017-centosrhel-using-ssh-protocol/
 [SQL Server v.Next : STRING_AGG Performance, Part 2]:https://sqlperformance.com/2017/01/sql-performance/sql-server-v-next-string_agg-performance-part-2
-[Why Parameter Sniffing Is Making Your Queries Receive Sub-Optimal Execution Plans]:https://blog.bertwagner.com/why-parameter-sniffing-isnt-always-a-bad-thing-but-usually-is-ba6a62a97b68
+[Why Parameter Sniffing Isn’t Always A Bad Thing (But Usually Is)]:https://bertwagner.com/2017/08/08/why-parameter-sniffing-isnt-always-a-bad-thing-but-usually-is/
 [Persisting statistics sampling rate]:https://blogs.msdn.microsoft.com/sql_server_team/persisting-statistics-sampling-rate/
 [All about locking in SQL Server]:https://www.sqlshack.com/locking-sql-server/
 [All about Latches in SQL Server]:https://www.sqlshack.com/all-about-latches-in-sql-server/
@@ -1097,7 +1097,7 @@ Articles types:
 [Eight Different Ways to Clear the SQL Server Plan Cache]:https://www.sqlskills.com/blogs/glenn/eight-different-ways-to-clear-the-sql-server-plan-cache/
 [Introduction and FAQs about Microsoft Azure technologies]:https://www.sqlshack.com/introduction-faqs-microsoft-azure-technologies/
 [Inside the XEvent Profiler]:https://www.sqlhammer.com/inside-xevent-profiler/
-[Does The Join Order of My Tables Matter?]:https://blog.bertwagner.com/does-the-join-order-of-my-tables-matter-e091afb2e385
+[Does The Join Order of My Tables Matter?]:https://bertwagner.com/2017/11/21/does-the-join-order-of-my-tables-matter/
 [Encrypting SQL Server connections with Let’s Encrypt certificates]:https://sqlsunday.com/2017/11/22/encrypting-tds-with-letsencrypt/
 [Start SQL Server without tempdb]:https://sqlstudies.com/2016/01/20/start-sql-server-without-tempdb/
 [How to configure database mail in SQL Server]:https://www.sqlshack.com/configure-database-mail-sql-server/
