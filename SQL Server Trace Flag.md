@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**594** trace flags).
+Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**595** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -238,7 +238,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **593 trace flags**
+Summary: **595 trace flags**
 
 
 <a id="-1"></a>
@@ -587,7 +587,7 @@ Link: None
 
 <a id="460"></a>
 #### Trace Flag: 460
-**Don’t leave this trace flag enabled.
+**Note: Don’t leave this trace flag enabled on global scope.
 There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**<br />
 Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
 Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
@@ -1659,6 +1659,15 @@ Link: https://support.microsoft.com/help/2746341/fix-high-cpu-usage-when-you-exe
 #### Trace Flag: 2440
 Function: SQL 10 - Parallel query execution strategy on partitioned tables. SQL 9 used single thread per partition parallel query execution strategy. In SQL 10, multiple threads can be allocated to a single partition by turning on this flag.<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/dc010af9-afa0-4c87-937c-4343b4e1119a/trace-flag-2440
+
+
+<a id="2451"></a>
+#### Trace Flag: 2451
+**Note: This trace flag applies to SQL Server 2019 preview CTP 2.4 and higher builds.**
+Function: Enables the equivalent of the last actual execution plan in [`sys.dm_exec_query_plan_stats`](https://docs.microsoft.com/en-us/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-query-stats-transact-sql).
+Link: [Docs Trace Flags]
+SQL Server Version: >= 2019 CTP 2.4
+Scope: global only
 
 
 <a id="2453"></a>
