@@ -152,7 +152,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
  - All finished expressions should have semicolon `;` at the end. This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated. This deprecation announcement means that you should always use semicolon terminators in new development.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/).
  - All script files should end with `GO` and line break
- - Avoid non-standard column aliases, use ,if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p;`.
+ - Avoid non-standard column aliases, use, if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p;`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-non-standard-column-aliases).
    All possible ways using aliases in SQL Server:
 
