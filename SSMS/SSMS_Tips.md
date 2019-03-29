@@ -192,13 +192,16 @@ Also recommended:
 
 ![Script any object with data](/SSMS/SSMS_Tips/ssms_script_objects.gif)
 
+
 ### The Default Scripting Option
 In the previous SQL Server Management Studio versions, the generated script will target the latest released SQL Server version.
-In SSMS 17.2, the `Match Script Settings to Source` has been added, with the default `True` value means that the generated script will target the source SQL Server instance’s version, edition, and engine type, where the `False` value will force the scripting to behave as the previous SSMS versions.
+Starting SSMS 17.2, the `Match Script Settings to Source` has been added, with the default `True` value means that the generated script will target the source SQL Server instance’s version, edition, and engine type, where the `False` value will force the scripting to behave as the previous SSMS versions.
 
 `Tools > Options > SQL Server Object Explore > Scripting > Version Options > Match Script Settings to Source`
 
 More details here: [What’s new in SQL Server Management Studio 17.2; Authentication methods, scripting options and more]
+
+![Script for SQL Server version](/SSMS/SSMS_Tips/ssms_script_objects_server_version.png)
 
 
 <a id="5"></a>
@@ -213,7 +216,7 @@ More info and video about this awesome feature in this article: [My Favorite SSM
 ## Script Table and Column Names by Dragging from Object Explorer
 Save keystrokes by dragging
 Drag the `Columns` folder for a table in to auto-type all column names in the table in a single line.
- - Warning: this doesn’t include [brackets] around the column names, so if your columns contain spaces or special characters at the beginning, this shortcut isn’t for you
+ - Warning: this doesn’t include square [brackets] around the column names for SSMS below 17 version, so if your columns contain spaces or special characters at the beginning, this shortcut isn’t for you
  - Dragging the table name over will auto-type the schema and table name, with brackets.
 
 
