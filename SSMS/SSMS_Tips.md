@@ -112,29 +112,29 @@ More details here: [MANAGEMENT STUDIO SHORTCUT – CHANGE CONNECTION](http://www
 
 Most useful are:
 
-| Shortcut              | Description                            |
-|-----------------------|----------------------------------------|
-| `Ctrl + U`            | Change Selected Database               |
-| `Ctrl + R`            | Toggle Results Pane                    |
-| `Ctrl + Space`        | Activate Autocomplete                  |
-| `Ctrl + Shift + V`    | [Cycle through clipboard ring]         |
-| `Ctrl + ]`            | Navigate to matching parenthesis       |
-| `Ctrl + –`            | Navigate to last cursor location       |
-| `Ctrl + Shift + –`    | Navigate forward to cursor location    |
-| `Ctrl + K, Ctrl + C`  | Comments selected text                 |
-| `Ctrl + K, Ctrl + U`  | Uncomments selected text               |
-| `Ctrl + K, Ctrl + K`  | Toggle Bookmark                        |
-| `Ctrl + K, Ctrl + N`  | Go to Next Bookmark                    |
-| `Ctrl + L`            | Display Estimated Query Execution plan |
-| `Shift + Alt + Enter` | View Code Editor in Full Screen        |
-| `Ctrl + I`            | Quick Search                           |
-| `Ctrl + F4`           | Close the current MDI child window     |
-| `Ctrl + F5`           | Parse query  to check for errors       |
-| `Shift + F10`         | Simulate right mouse button            |
-| `Ctrl + Alt + T`      | Display Template Explorer              |
-| `Ctrl + Shift + M`    | Specify values for template parameters |
-| `Ctrl + Shift + R`    | Refresh local cache                    |
-| `Ctrl + Alt + S`      | Include Client Statistics              |
+| Shortcut                       | Description                            |
+|--------------------------------|----------------------------------------|
+| <kbd>Ctrl + U</kbd>            | Change Selected Database               |
+| <kbd>Ctrl + R</kbd>            | Toggle Results Pane                    |
+| <kbd>Ctrl + Space</kbd>        | Activate Autocomplete                  |
+| <kbd>Ctrl + Shift + V</kbd>    | [Cycle through clipboard ring]         |
+| <kbd>Ctrl + ]</kbd>            | Navigate to matching parenthesis       |
+| <kbd>Ctrl + –</kbd>            | Navigate to last cursor location       |
+| <kbd>Ctrl + Shift + –</kbd>    | Navigate forward to cursor location    |
+| <kbd>Ctrl + K, Ctrl + C</kbd>  | Comments selected text                 |
+| <kbd>Ctrl + K, Ctrl + U</kbd>  | Uncomments selected text               |
+| <kbd>Ctrl + K, Ctrl + K</kbd>  | Toggle Bookmark                        |
+| <kbd>Ctrl + K, Ctrl + N</kbd>  | Go to Next Bookmark                    |
+| <kbd>Ctrl + L</kbd>            | Display Estimated Query Execution plan |
+| <kbd>Shift + Alt + Enter</kbd> | View Code Editor in Full Screen        |
+| <kbd>Ctrl + I</kbd>            | Quick Search                           |
+| <kbd>Ctrl + F4</kbd>           | Close the current MDI child window     |
+| <kbd>Ctrl + F5</kbd>           | Parse query  to check for errors       |
+| <kbd>Shift + F10</kbd>         | Simulate right mouse button            |
+| <kbd>Ctrl + Alt + T</kbd>      | Display Template Explorer              |
+| <kbd>Ctrl + Shift + M</kbd>    | Specify values for template parameters |
+| <kbd>Ctrl + Shift + R</kbd>    | Refresh local cache                    |
+| <kbd>Ctrl + Alt + S</kbd>      | Include Client Statistics              |
 
 
 <a id="3"></a>
@@ -144,22 +144,22 @@ Most useful are:
 ![Keyboard Shortcuts for Favorite Stored Procedures](/SSMS/SSMS_Tips/keyboard_shortcuts_for_stored_procedures.png)
 
 3 Shortcuts can not be changed: `Alt + F1`, `Ctrl + 1` and `Ctrl + 2`.
-For another 9 shortcuts my recommendation awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `sp_WhoIsActive`:
+For another 9 shortcuts my recommendation awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `[sp_WhoIsActive]`:
 
-| Query Shortcut | Stored Procedure     |
-|----------------|----------------------|
-| `Alt + F1`     | [sp_help]            |
-| `Ctrl + F1`    | [sp_WhoIsActive]     |
-| `Ctrl + 1`     | [sp_who]             |
-| `Ctrl + 2`     | [sp_lock]            |
-| `Ctrl + 3`     | [sp_Blitz]           |
-| `Ctrl + 4`     | [sp_BlitzCache]      |
-| `Ctrl + 5`     | [sp_BlitzWho]        |
-| `Ctrl + 6`     | [sp_BlitzQueryStore] |
-| `Ctrl + 7`     | [sp_BlitzFirst]      |
-| `Ctrl + 8`     | [usp_BulkUpload]     |
-| `Ctrl + 9`     | [sp_BlitzTrace]      |
-| `Ctrl + 0`     | [sp_foreachdb]       |
+| Query Shortcut          | Stored Procedure     |
+|-------------------------|----------------------|
+| <kbd>Alt + F1</kbd>     | [sp_help]            |
+| <kbd>Ctrl + F1</kbd>    | [sp_WhoIsActive]     |
+| <kbd>Ctrl + 1</kbd>     | [sp_who]             |
+| <kbd>Ctrl + 2</kbd>     | [sp_lock]            |
+| <kbd>Ctrl + 3</kbd>     | [sp_Blitz]           |
+| <kbd>Ctrl + 4</kbd>     | [sp_BlitzCache]      |
+| <kbd>Ctrl + 5</kbd>     | [sp_BlitzWho]        |
+| <kbd>Ctrl + 6</kbd>     | [sp_BlitzQueryStore] |
+| <kbd>Ctrl + 7</kbd>     | [sp_BlitzFirst]      |
+| <kbd>Ctrl + 8</kbd>     | [usp_BulkUpload]     |
+| <kbd>Ctrl + 9</kbd>     | [sp_BlitzTrace]      |
+| <kbd>Ctrl + 0</kbd>     | [sp_foreachdb]       |
 
 Also recommended:
  - [sp_BlitzRS]
