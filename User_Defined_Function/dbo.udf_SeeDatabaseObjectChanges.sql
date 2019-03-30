@@ -1,5 +1,5 @@
-IF OBJECT_ID('dbo.udf_SeeDatabaseObjectChanges') IS NULL
-   EXECUTE ('CREATE FUNCTION dbo.udf_SeeDatabaseObjectChanges() RETURNS TABLE AS RETURN SELECT 1 AS A;');
+IF OBJECT_ID(N'dbo.udf_SeeDatabaseObjectChanges', N'IF') IS NULL
+   EXEC (N'CREATE FUNCTION dbo.udf_SeeDatabaseObjectChanges() RETURNS TABLE AS RETURN SELECT 1 AS A;');
 GO
 
 
@@ -11,7 +11,7 @@ Summary: >
   the two dates, taken from the default trace
 Author: Phil Factor
 Created Date: 2018-10-04
-Modified date: 2019-03-12
+Modified date: 2019-03-30
 Original link: https://www.red-gate.com/hub/product-learning/sql-monitor/monitoring-changes-permissions-users-roles-logins
 Examples:
    - SELECT * FROM dbo.udf_SeeDatabaseObjectChanges(DATEADD(day,-1, SYSDATETIME()), SYSDATETIME());
@@ -26,7 +26,7 @@ Returns: >
       LoginName nvarchar(256)
       spid int
       objectid int
-        **/
+**/
   (
   @start DATETIME2, --the start of the period
   @finish DATETIME2 --the end of the period
