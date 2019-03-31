@@ -17,10 +17,10 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - [ ] [Export Data From SSMS Query to Excel](https://blog.sqlauthority.com/2019/01/16/sql-server-export-data-from-ssms-query-to-excel/)
  - [ ] [Starting SSMS with a specific connection and script file](http://dbamastery.com/tips/ssms-cmdline-utility/)
 
-Content:
+**Table of Content**:
 1. [Import and Export Settings](#1)
 2. [SSMS Shortcuts](#2)
-3. [Keyboard Shortcuts for Favorite Stored Procedures](#3)
+3. [Keyboard Shortcuts for Favorite Stored Procedures and Scripts](#3)
 4. [SSMS Scripting Option](#4)
 5. [Selecting a block of text using the ALT Key](#5)
 6. [Script Table and Column Names by Dragging from Object Explorer](#6)
@@ -57,7 +57,7 @@ Content:
 37. [Reference](#reference)
 
 
-Great thanks to:
+**Great thanks to**:
  - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
  - Slava Murygin ([b](http://slavasql.blogspot.ru/))
  - Mike Milligan ([b](http://www.bidn.com/Blogs/userid/43/author/mike-milligan))
@@ -80,6 +80,7 @@ Great thanks to:
  - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
  - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
  - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
+ - Solomon Rutzky ([b](https://sqlquantumleap.com) | [t](https://twitter.com/srutzky))
 
 
 <a id="1"></a>
@@ -138,13 +139,19 @@ Most useful are:
 
 
 <a id="3"></a>
-## Keyboard Shortcuts for Favorite Stored Procedures
+## Keyboard Shortcuts for Favorite Stored Procedures and Scripts
+A query shortcut allows you to execute code simply by hitting <kbd>Ctrl</kbd> and a number key. Cool. But first, there are a few things to know about query shortcuts:
+
+1. The window in SSMS where you configure the query shortcuts has the text field for the shortcut labeled as **Stored Procedure**, which is misleading because you can specify a query. You can even specify multiple queries.
+2. Whatever you specify needs to be a single line: no newlines / CRLFs. Any text past the first return will be truncated.
+3. When using the keyboard query shortcuts, if nothing is highlighted then only the code in the shortcut is executed. But, if any T-SQL is highlighted when you execute the shortcut, then the highlighted code is executed after the code stored in the shortcut finishes. Adding a `RETURN;` at the end of the shortcut simply stops the processing after the code stored in the shortcut finishes. BUT, if anything is highlighted when you execute a query shortcut, it is still parsed, even if not executed. Hence, you can still get parse errors even with the `RETURN;` added at the end.
+
 `Tools > Options > Environment > Keyboard > Query Shortcuts`
 
 ![Keyboard Shortcuts for Favorite Stored Procedures](/SSMS/SSMS_Tips/keyboard_shortcuts_for_stored_procedures.png)
 
-3 Shortcuts can not be changed: `Alt + F1`, `Ctrl + 1` and `Ctrl + 2`.
-For another 9 shortcuts my recommendation awesome open source Brent Ozar teams procedures and with some limitations Adam Machanic `[sp_WhoIsActive]`:
+3 Shortcuts can not be changed: <kbd>Alt + F1</kbd> - [sp_help], <kbd>Ctrl + 1</kbd> - [sp_who] and <kbd>Ctrl + 2</kbd> - [sp_lock].
+For another 9 shortcuts my recommendation awesome open source Brent Ozar teams procedures and with some limitations in License usage Adam Machanic [sp_WhoIsActive]:
 
 | Query Shortcut          | Stored Procedure     |
 |-------------------------|----------------------|
