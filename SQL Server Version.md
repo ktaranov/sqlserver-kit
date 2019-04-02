@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 CTP 2.4]                                                | 15.0.1400.75                                 | 2019-03-29                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 CTP 2.4]                                                | 15.0.1400.75                                 | 2019-03-27                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU13 KB4483666]                              | 14.0.1000.169<br/>14.0.3049.1                | 2017-10-02<br/>2019-01-08                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU6 KB4488536]                               | 13.0.5026.0<br/>13.0.5292.0                  | 2018-04-24<br/>2019-03-19                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU2 KB4482960] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6214.1  | 2016-07-11<br/>2018-10-30<br/>2019-02-19 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -178,7 +178,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServer2019CTP2.4-x64-ENU.iso                                   | 2019-03-29   | 15.0.1400.75  |     1331 | d765874a7c6391fbf371098d1b04f3ee471a8205 |
+| [SQL Server 2019]                     | SQLServer2019CTP2.4-x64-ENU.iso                                   | 2019-03-27   | 15.0.1400.75  |     1331 | d765874a7c6391fbf371098d1b04f3ee471a8205 |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU13 Hotfix]         | SQLServer2017-KB4483666-x64                                       | 2019-01-08   | 14.0.3049.1   |      488 | 6f2de49e491048ab4cb17160d4efc653c3a29bf1 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -331,23 +331,23 @@ As you upgrade the database to new SQL Server edition (you can not go backward) 
 This is done automatically regardless of what method you use to upgrade the database to the new version of SQL Server.
 
 ```sql
--- 1 using DBCC PAGE to look at the boot page (9) of the database
+/* 1 using DBCC PAGE to look at the boot page (9) of the database */
 DBCC TRACEON(3604);
 DBCC PAGE('DatabaseName', 1, 9, 3);
 DBCC TRACEOFF(3604);
 GO
 
--- 2 using DBCC DBINFO
+/* 2 using DBCC DBINFO */
 DBCC TRACEON(3604);
 DBCC DBINFO;
 DBCC TRACEOFF(3604);
 GO
 
--- 3 using database property
+/* 3 using database property */
 SELECT DatabaseProperty('DatabaseNameHere','version');
 GO
 
--- 4 using RESTORE HEADERONLY for backup files, field DatabaseVersion
+/* 4 using RESTORE HEADERONLY for backup files, field DatabaseVersion */
 RESTORE HEADERONLY FROM DISK=N'd:\DatabseBackupFile.bak' WITH NOUNLOAD;
 GO
 ```
@@ -366,7 +366,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 
 | SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server 2019                              | 15              |  2019        | 2019         | 895                       | 150                             | 150, 140, 130, 120, 110       |
+| SQL Server 2019                              | 15              |  2019        | 2019         | 895,896,897               | 150                             | 150, 140, 130, 120, 110       |
 | SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              |  2016        | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
@@ -461,14 +461,14 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Develo
 
 ```
 Microsoft SQL Server 2019 (CTP2.4) - 15.0.1400.75 (X64)
-   Mar  17 2019 6:20:00
+   Mar 16 2019 11:53:26
    Copyright (C) 2019 Microsoft Corporation
-   Developer Edition (64-bit) on…
+   Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
-| 15.0.1400.75  | 2018.150.1400.75  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.4] | 2019-03-29   | 2019-03-17 |       |        |     1331 |
+| 15.0.1400.75  | 2018.150.1400.75  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP2.4] | 2019-03-27   | 2019-03-17 |       |        |     1331 |
 | 15.0.1300.359 | 2018.150.1200.359 | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.3   | 2019-03-01   | 2019-02-16 |       |        |     1331 |
 | 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.2   | 2018-12-11   | 2018-11-02 |       |        |     1302 |
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.1   | 2018-11-06   | 2018-11-02 |       |        |     1299 |
