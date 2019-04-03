@@ -53,6 +53,7 @@ SELECT message_id, severity, text
 |-----------:|----------------------------------------------------------------------------------------------------------|--------------------------------------|
 |          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …         | [Out of user memory quota][7]        |
 |          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while      … | [Compressed backup errors][8]        |
+|          ? | A transport-level error has occurred when receiving results from the server.                             | [link1][31]                          |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]   |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?] |
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1]                          |
@@ -65,7 +66,7 @@ SELECT message_id, severity, text
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                      |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
-|        596 | Cannot continue execution because the session is in the kill state.                                      | [596_link1]                          |
+|        596 | Cannot continue execution because the session is in the kill state.                                      | [596_link1],[596_link2][31]          |
 |        650 | You can only specify the READPAST lock in the READ COMMITTED or REPEATABLE READ isolation levels.        | [650_link1]                          |
 |        657 | Could not disable support for increased partitions in database …                                         | [657_link1]                          |
 |        666 | The maximum system-generated unique value for a duplicate group was exceeded for index with …            | [666_link1]                          |
@@ -169,6 +170,7 @@ SELECT message_id, severity, text
 [28]:https://blog.sqlauthority.com/2019/01/14/sql-server-fix-msg-8180-statements-could-not-be-prepared-deferred-prepare-could-not-be-completed/
 [29]:https://blog.sqlauthority.com/2018/08/29/sql-server-unable-to-attach-database-files-the-pageaudit-property-is-incorrect-ransomware-attack/
 [30]:http://www.nikoport.com/2018/12/01/sql-graph-part-iii-derived-tables-views/
+[31]:https://www.mssqltips.com/sqlservertip/5971/accelerated-database-recovery-in-sql-server-2019/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
