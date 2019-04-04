@@ -65,6 +65,7 @@ SELECT message_id, severity, text
 |        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT …      | [264_link1][25]                      |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                      |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                      |
+|        459 | Collation '%.*ls' is supported on Unicode data types only and cannot be applied to char, varchar or    … | [459_link1]                          |
 |        535 | The datediff function resulted in an overflow. The number of dateparts separating two date/time          | [535_link1]                          |
 |        596 | Cannot continue execution because the session is in the kill state.                                      | [596_link1],[596_link2][31]          |
 |        650 | You can only specify the READPAST lock in the READ COMMITTED or REPEATABLE READ isolation levels.        | [650_link1]                          |
@@ -175,6 +176,7 @@ SELECT message_id, severity, text
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
+[459_link1]:https://sqlquantumleap.com/2019/03/13/differences-between-the-various-binary-collations-cultures-versions-and-bin-vs-bin2/
 [535_link1]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
 [650_link1]:https://sqlundercover.com/2019/02/07/alter-table-fails-on-replicated-tables-with-isolation-level-serializable-or-read-uncommitted-on-sql2012-and-earlier/
