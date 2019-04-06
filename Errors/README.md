@@ -119,6 +119,7 @@ SELECT message_id, severity, text
 |       8948 | Database error: Page %S_PGID is marked with the wrong type in PFS page %S_PGID. PFS status 0x%x        … | [8948_link1][20]                            |
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related        … | [9001_link1][16]                            |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19]           |
+|      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                               |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                           |
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                        | [13570_link1]                               |
 |      13901 | Identifier '%.*ls' in a MATCH clause is not a node table or an alias for a node table.                   | [13901_link1][30]                           |
@@ -221,6 +222,7 @@ SELECT message_id, severity, text
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
 [8909_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-object-id-0-index-id-1-partition-id-0/
 [8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
+[10314_link1]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-clr-assembly-failure-after-an-ag-failover/
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
