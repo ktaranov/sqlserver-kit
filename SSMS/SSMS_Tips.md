@@ -54,7 +54,8 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 34. [Using Extended Events and Profiler in SSMS](#34)
 35. [Vulnerability Assessment in SSMS](#35)
 36. [Import Flat File to SQL Wizard](#36)
-37. [Reference](#reference)
+37. [AutoRecover in SSMS](#37)
+38. [Reference](#reference)
 
 
 **Great thanks to**:
@@ -81,6 +82,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
  - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
  - Solomon Rutzky ([b](https://sqlquantumleap.com) | [t](https://twitter.com/srutzky))
+ - Michelle Haarhues ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/mhaarhues))
 
 
 <a id="1"></a>
@@ -365,15 +367,17 @@ The splitter bar allows you to view one session with two panes. You can scroll i
 
 ![Splitting the Query Window](/SSMS/SSMS_Tips/splitting_the_query_window.gif)
 
-Also you can view some very useful features like annotations and Map mode, detailed instruction here: [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar]
+Also you can view some very useful features like annotations and Map mode, detailed instruction:
+1. [SSMS Tip #1: Annotations and Map Mode for Vertical Scroll Bar]
+2. [SQL Server Management Studio Scroll Bar Enhancements](https://witsociety.wordpress.com/2018/12/13/sql-server-management-studio-scroll-bar-enhancements/)
 
 Annotations show the relative position of certain aspects of the script, such as errors, changes, etc.
 There are four types of annotations, the first three of which are shown in their own columns on the left side of the scroll bar:
 
- - "Changes" are show in yellow (unsaved) and green (saved). These occupy the left column.
- - "Marks" are shown in maroon (Breakpoints) and black (Bookmarks). These occupy the left column.
- - "Errors" are shown in red. These occupy the right column.
- - "Caret Position" is a thin, blue line going horizontally across the scroll bar. This represents the line of the script that the cursor is on.
+ - **"Changes"** are show in yellow (unsaved) and green (saved). These occupy the left column.
+ - **"Marks"** are shown in maroon (Breakpoints) and black (Bookmarks). These occupy the left column.
+ - **"Errors"** are shown in red. These occupy the right column.
+ - **"Caret Position"** is a thin, blue line going horizontally across the scroll bar. This represents the line of the script that the cursor is on.
 
 
 <a id="17"></a>
@@ -747,6 +751,21 @@ Import Flat File Wizard is a simple way to copy data from a flat file (.csv, .tx
 This wizard was created to improve the current import experience leveraging an intelligent framework known as Program Synthesis using Examples ([PROSE](https://microsoft.github.io/prose/)).
 For a user without specialized domain knowledge, importing data can often be a complex, error prone, and tedious task. This wizard streamlines the import process as simple as selecting an input file and unique table name, and the PROSE framework handles the rest.
 PROSE analyzes data patterns in your input file to infer column names, types, delimiters, and more. This framework learns the structure of the file and does all of the hard work so our users don't have to.
+
+
+<a id="37"></a>
+## AutoRecover in SSMS
+With the default settings, you can lose up to 5 minutes of work on a sudden reboot.
+The recovered information will be kept for 7 days so there is some time to get your files. 
+These settings can be modified, changing how often auto recover happens and how long the information is retained.
+It depends on the criticality of things that you work on as to how often you would want AutoRecover to save your scripts.
+This feature can be turned off but it is not recommended.
+
+To change the settings, go to: `Tools -> Options -> Environment -> AutoRecover`.
+
+More details [here](https://witsociety.wordpress.com/2019/04/11/autorecover-in-ssms/)
+
+![AutoRecover in SSMS](/SSMS/SSMS_Tips/AutoRecover_in_SSMS.png)
 
 
 <a id="reference"></a>
