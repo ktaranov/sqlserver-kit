@@ -1,7 +1,7 @@
 
 -- SQL Server 2012 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: February 1, 2019
+-- Last Modified: April 11, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -134,9 +134,6 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- Performance Related Fixes in Post-SQL Server 2012 RTM Builds
 -- https://bit.ly/2vuIQn4
 
--- Announcing updates to the SQL Server Incremental Servicing Model (ISM)
--- https://bit.ly/1RzYITz
-
 -- Update Center for Microsoft SQL Server
 -- https://bit.ly/2pZptuQ
 
@@ -145,6 +142,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 
 -- Download and install Azure Data Studio 
 -- https://bit.ly/2vgke1A
+
+-- SQL Server 2012 Configuration Manager is SQLServerManager11.msc
 
 
 -- Get socket, physical core and logical core count from the SQL Server Error log. (Query 2) (Core Counts)
