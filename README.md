@@ -372,6 +372,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLCallStackResolver - Utility to resolve SQL Server callstacks to their correct symbolic form](https://github.com/arvindshmicrosoft/SQLCallStackResolver) (by Arvind Shyamsundar)
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
     - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
+    - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
 
 **[⬆ back to top](#table-of-contents)**
 
