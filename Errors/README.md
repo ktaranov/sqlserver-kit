@@ -112,7 +112,8 @@ SELECT message_id, severity, text
 |       8180 | Statement(s) could not be prepared.                                                                      | [8180_link1][28]                            |
 |       8127 | Column "%.*ls.%.*ls" is invalid in the ORDER BY clause because it is not contained in either an        … | [8127_link1][27]                            |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                      | [8624_link1]                                |
-|       8651 |Could not perform the operation because the requested memory grant was not available in resource        … | [8651_link1]                                |
+|       8645 | A timeout occurred while waiting for memory resources to execute the query in resource pool '%ls' (%ld … | [8645_link1]                                |
+|       8651 | Could not perform the operation because the requested memory grant was not available in resource       … | [8651_link1]                                |
 |       8672 | The MERGE statement attempted to UPDATE or DELETE the same row more than once...                       … | [8672_link1]                                |
 |       8909 | Table error: Object ID %d, index ID %d, partition ID %I64d, alloc unit ID %I64d (type %.*ls), pa       … | [8909_link1]                                |
 |       8921 | Check terminated. A failure was detected while collecting facts. Possibly tempdb out of space or       … | [8921_link1]                                |
@@ -218,6 +219,7 @@ SELECT message_id, severity, text
 [5846_link1]:https://bornsql.ca/blog/proposed-sql-server-defaults-disable-lightweight-pooling/
 [6335_link1]:https://www.brentozar.com/archive/2017/06/biggest-query-plans-dont-show-dmvs/
 [8624_link1]:http://www.sqlservercentral.com/articles/Indexing/149879/
+[8645_link1]:https://orderbyselectnull.com/2019/04/16/sql-server-2017-cu14-change-to-cci-insert-memory-time-out-behavior/
 [8651_link1]:https://blobeater.blog/2017/05/18/setting-sql-server-max-memory-dangerously-low/
 [8672_link1]:https://blog.sqlauthority.com/2017/03/13/sql-server-fix-error-msg-8672-merge-statement-attempted-update-delete-row/
 [8909_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-object-id-0-index-id-1-partition-id-0/

@@ -801,6 +801,7 @@ Microsoft SQL Server 2014 (SP3-CU3) (KB4491539) - 12.0.6259.0 (X64)
 [4482960 Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
 [4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
 [4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
+[4491540 Cumulative Update 17 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4491540
 [4482967 Cumulative Update 16 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4482967
 [4469137 Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
 [4459860 Cumulative Update 14 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4459860
