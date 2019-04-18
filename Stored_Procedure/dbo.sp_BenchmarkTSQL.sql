@@ -1,3 +1,6 @@
+USE master;
+GO
+
 IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL EXEC('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
@@ -36,7 +39,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
-    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 245 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
+    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 301 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
 
 .PARAMETER @skipTSQLCheck
     Checking for valid TSQL statement. Default value is 1 (true) - skip checking.
@@ -121,6 +124,67 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
        , @durationAccuracy  = 'ms'
        , @dateTimeFunction  = 'SYSUTCDATETIME'
        , @additionalInfo    = 1;
+
+.EXAMPLE
+    WITH CTE AS (
+        SELECT TSQLStatementGUID
+              , StartBenchmark
+              , EndBenchmark
+              , ClearCache
+              , PrintStepInfo
+              , DurationAccuracy
+              , CASE WHEN DurationAccuracy = 'ns'  THEN DATEDIFF(ns,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'mcs' THEN DATEDIFF(mcs, StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'ms'  THEN DATEDIFF(ms,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'ss'  THEN DATEDIFF(ss,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'mi'  THEN DATEDIFF(mi,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'hh'  THEN DATEDIFF(hh,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'dd'  THEN DATEDIFF(dd,  StartBenchmark, EndBenchmark)
+                     WHEN DurationAccuracy = 'wk'  THEN DATEDIFF(wk,  StartBenchmark, EndBenchmark)
+                     ELSE 0
+                 END AS BenchmarkDuration
+              , CASE WHEN DurationAccuracy = 'ns'  THEN DATEDIFF(ns,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'mcs' THEN DATEDIFF(mcs, StartStep, EndStep)
+                     WHEN DurationAccuracy = 'ms'  THEN DATEDIFF(ms,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'ss'  THEN DATEDIFF(ss,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'mi'  THEN DATEDIFF(mi,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'hh'  THEN DATEDIFF(hh,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'dd'  THEN DATEDIFF(dd,  StartStep, EndStep)
+                     WHEN DurationAccuracy = 'wk'  THEN DATEDIFF(wk,  StartStep, EndStep)
+                     ELSE 0
+                 END AS StepDuration
+              , StepRowNumber
+              , StartStep
+              , EndStep
+              , TsqlStatementBefore
+              , TsqlStatement
+              , TsqlStatementAfter
+              , OriginalLogin
+              , AdditionalInfo
+        FROM master.dbo.BenchmarkTSQL
+        WHERE TSQLStatementGUID IN ('D34C4BD6-01B8-4C9C-B627-E3C26F84D9FA', '02DF082C-7D3D-450E-B125-C738F015B35A')
+    )
+    SELECT  TSQLStatementGUID
+           , StartBenchmark
+           , EndBenchmark
+           , ClearCache
+           , PrintStepInfo
+           , MAX(StepRowNumber) AS StepCount
+           , DurationAccuracy
+           , BenchmarkDuration
+           , MIN(StepDuration) AS StepDurationMIN
+           , MAX(StepDuration) AS StepDurationMAX
+           , AVG(StepDuration) AS StepDurationAVG
+           , TsqlStatement
+    FROM CTE
+      GROUP BY TSQLStatementGUID
+             , StartBenchmark
+             , EndBenchmark
+             , ClearCache
+             , PrintStepInfo
+             , DurationAccuracy
+             , BenchmarkDuration
+             , TsqlStatement;
 
 .LICENSE MIT
 Permission is here by granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
