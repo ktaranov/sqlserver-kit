@@ -21,40 +21,51 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 )
 /*
 .SYNOPSIS
-    Run TSQL statement @numberOfExecution times and calculate execution time, save results if needed or print it.
+    Run TSQL statement @numberOfExecution times and calculate each execution time, save results if needed or print it.
 
 .DESCRIPTION
     Run SQL statement specified times, show results, insert execution details into log table master.dbo.BenchmarkTSQL.
 
 .PARAMETER @tsqlStatementBefore
-    TSQL statement that executed before tested main TSQL statement - not taken into account when measuring @tsqlStatement. Default is NULL.
+    TSQL statement that executed before tested main TSQL statement - not taken into account when measuring @tsqlStatement.
+    Default value is NULL.
 
 .PARAMETER @tsqlStatement
     TSQL statement for benchmarking. Mandatory parameter.
+    No defaults.
 
 .PARAMETER @tsqlStatementAfter
-    TSQL statement that executed after tested TSQL statement - not taken into account when measuring @tsqlStatement. Default is NULL.
+    TSQL statement that executed after tested TSQL statement - not taken into account when measuring @tsqlStatement.
+    Default value is NULL.
 
 .PARAMETER @numberOfExecution
     Number of execution TSQL statement.
+    Default value is 10.
 
 .PARAMETER @saveResults
-    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 301 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
+    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1.
+    Create table if not exists (see 301 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
+    Default value is 0 - not saved.
 
 .PARAMETER @skipTSQLCheck
-    Checking for valid TSQL statement. Default value is 1 (true) - skip checking.
+    Checking for valid TSQL statement.
+    Default value is 1 (true) - skip checking.
 
 .PARAMETER @clearCache
-    Clear cached plan for TSQL statement. Default value is 0 (false) - not clear.
+    Clear cached plan for TSQL statement before each run.
+    Default value is 0 (false) - not clear.
 
 .PARAMETER @calcMedian
-    Calculate pseudo median of execution time. Default value is 0 (false) - not calculated.
+    Calculate pseudo median of all execution times.
+    Default value is 0 (false) - not calculated.
 
 .PARAMETER @printStepInfo
-    PRINT detailed step information: step count, start time, end time, duration. Default value is 0.
+    PRINT detailed step information: step count, start time, end time, duration.
+    Default value is 0 - not printed.
 
 .PARAMETER @durationAccuracy
-    Duration accuracy calculation, possible values for this stored procedure parameter: ns, mcs, ms, ss, mi, hh, dd, wk. Default value is ss - seconds.
+    Duration accuracy calculation, possible values for this stored procedure parameter: ns, mcs, ms, ss, mi, hh, dd, wk.
+    Default value is ss - seconds.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
 .PARAMETER @dateTimeFunction
@@ -127,7 +138,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 
 .EXAMPLE
     WITH CTE AS (
-        SELECT TSQLStatementGUID
+        SELECT  TSQLStatementGUID
               , StartBenchmark
               , EndBenchmark
               , ClearCache
@@ -161,10 +172,10 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
               , TsqlStatementAfter
               , OriginalLogin
               , AdditionalInfo
-        FROM master.dbo.BenchmarkTSQL
-        WHERE TSQLStatementGUID IN ('D34C4BD6-01B8-4C9C-B627-E3C26F84D9FA', '02DF082C-7D3D-450E-B125-C738F015B35A')
+        FROM    master.dbo.BenchmarkTSQL
+        WHERE   TSQLStatementGUID IN ('D34C4BD6-01B8-4C9C-B627-E3C26F84D9FA', '02DF082C-7D3D-450E-B125-C738F015B35A')
     )
-    SELECT  TSQLStatementGUID
+    SELECT   TSQLStatementGUID
            , StartBenchmark
            , EndBenchmark
            , ClearCache
@@ -176,15 +187,15 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
            , MAX(StepDuration) AS StepDurationMAX
            , AVG(StepDuration) AS StepDurationAVG
            , TsqlStatement
-    FROM CTE
-      GROUP BY TSQLStatementGUID
-             , StartBenchmark
-             , EndBenchmark
-             , ClearCache
-             , PrintStepInfo
-             , DurationAccuracy
-             , BenchmarkDuration
-             , TsqlStatement;
+    FROM     CTE
+    GROUP BY TSQLStatementGUID
+           , StartBenchmark
+           , EndBenchmark
+           , ClearCache
+           , PrintStepInfo
+           , DurationAccuracy
+           , BenchmarkDuration
+           , TsqlStatement;
 
 .LICENSE MIT
 Permission is here by granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -192,7 +203,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-    Version: 5.5
+    Version: 5.7
     Created: 2017-12-14 by Konstantin Taranov
     Modified: 2019-04-18 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
@@ -632,7 +643,7 @@ BEGIN CATCH
     '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
     'But in log table master.dbo.BenchmarkTSQL (if you run stored procedure with @saveResult = 1) all times saving with datetime2(7) precise!' + @crlf +
     'You can manualy calculate difference after decreasing precise datepart.' + @crlf +
-    'For analyze log table see latest examples in document section.') + @crlf + + @crlf;
+    'For analyze log table see latest example in document section.') + @crlf + + @crlf;
 END CATCH;
 GO
 
