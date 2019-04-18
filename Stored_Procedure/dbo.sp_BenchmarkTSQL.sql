@@ -1,5 +1,4 @@
-IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL
-    EXECUTE ('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
+IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL EXEC('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
 
@@ -12,7 +11,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     , @skipTSQLCheck       BIT           = 1
     , @clearCache          BIT           = 0
     , @calcMedian          BIT           = 0
-    , @printStepInfo       BIT           = 1
+    , @printStepInfo       BIT           = 0
     , @durationAccuracy    VARCHAR(5)    = 'ss'
     , @dateTimeFunction    VARCHAR(16)   = 'SYSDATETIME'
     , @additionalInfo      BIT           = 0
@@ -37,7 +36,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Number of execution TSQL statement.
 
 .PARAMETER @saveResults
-    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 243 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
+    Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1. Create table if not exists (see 246 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
 
 .PARAMETER @skipTSQLCheck
     Checking for valid TSQL statement. Default value is 1 (true) - skip checking.
@@ -49,15 +48,18 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Calculate pseudo median of execution time. Default value is 0 (false) - not calculated.
 
 .PARAMETER @printStepInfo
-    PRINT detailed step information: step count, start time, end time, duration.
+    PRINT detailed step information: step count, start time, end time, duration. Default value is 0.
 
 .PARAMETER @durationAccuracy
     Duration accuracy calculation, possible values for this stored procedure: ns, mcs, ms, ss, mi, hh, dd, wk. Default value is ss - seconds.
     See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
 
 .PARAMETER @dateTimeFunction
-    Define using datetime function, possible values of functions: SYSDATETIME, SYSUTCDATETIME.
+    Define using datetime function, possible values of functions: SYSDATETIME, SYSUTCDATETIME. Default value is SYSDATETIME.
     See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
+
+.PARAMETER @additionalInfo
+    Save additional session parameteres (ANSI_WARNINGS, XACT_ABORT and etc) to XML column AdditionalInfo in log table master.dbo.BenchmarkTSQL. Default value is 0.
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
@@ -126,9 +128,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-    Version: 5.1
+    Version: 5.2
     Created: 2017-12-14 by Konstantin Taranov
-    Modified: 2019-03-28 by Konstantin Taranov
+    Modified: 2019-04-18 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -173,10 +175,10 @@ BEGIN TRY
         , 'dd'  /* day         */
         , 'wk'  /* week        */
     )
-    THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
+    THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. Default value is ss. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
 
     IF @dateTimeFunction NOT IN ('SYSDATETIME', 'SYSUTCDATETIME')
-    THROW 55005, '@dateTimeFunction accept only SYSUTCDATETIME and SYSDATETIME, default is SYSDATETIME. See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
+    THROW 55005, '@dateTimeFunction accept only SYSDATETIME and SYSUTCDATETIME. Default value is SYSDATETIME. See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
     IF @numberOfExecution <= 0 OR @numberOfExecution >= 32000
         THROW 55006, '@numberOfExecution must be > 0 and < 32000. If you want more execution then comment 180 and 181 lines.', 1;
@@ -336,15 +338,36 @@ BEGIN TRY
                                      WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                 END;
 
-            IF @additionalInfo = 0
-                EXEC sp_executesql @tsqlStatement;
+           IF @dateTimeFunction = 'SYSDATETIME'
+           BEGIN
+               IF @additionalInfo = 0
+               BEGIN
+                   EXEC sp_executesql @tsqlStatement;
+                   SET @finishTime = SYSDATETIME();
+               END;
 
-            IF @additionalInfo = 1
-                EXEC sp_executesql @tsqlStatement, N'@additionalXMLOUT XML OUTPUT', @additionalXMLOUT = @additionalXML OUTPUT SELECT @additionalXML;
+               IF @additionalInfo = 1
+               BEGIN
+                   EXEC sp_executesql @tsqlStatement, N'@additionalXMLOUT XML OUTPUT', @additionalXMLOUT = @additionalXML OUTPUT SELECT @additionalXML;
+                   SET @finishTime = SYSDATETIME();
+               END;
+           END;
 
-            SET @finishTime = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                     WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                END;
+           IF @dateTimeFunction = 'SYSUTCDATETIME'
+           BEGIN
+               IF @additionalInfo = 0
+               BEGIN
+                   EXEC sp_executesql @tsqlStatement;
+                   SET @finishTime = SYSUTCDATETIME();
+               END;
+
+               IF @additionalInfo = 1
+               BEGIN
+                   EXEC sp_executesql @tsqlStatement, N'@additionalXMLOUT XML OUTPUT', @additionalXMLOUT = @additionalXML OUTPUT SELECT @additionalXML;
+                   SET @finishTime = SYSUTCDATETIME();
+               END;
+           END;
+
         END;
 
         SET @duration = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @runTimeStamp, @finishTime)
@@ -405,9 +428,9 @@ BEGIN TRY
           SELECT @TSQLStatementGUID AS TSQLStatementGUID
                , @stepNumber AS StepRowNumber
                , StartBenchmarkTime
-               /* it does not matter which function use (this is NOT NULL column)
+               , /* it does not matter which function use (this is NOT NULL column)
                   becasue we update this column later with correct values */
-               , SYSDATETIME() AS FinishBenchmarkTime
+                 SYSDATETIME() AS FinishBenchmarkTime
                , RunTimeStamp
                , FinishTimeStamp
                , Duration
@@ -424,6 +447,7 @@ BEGIN TRY
        END;
 
        IF @printStepInfo = 1
+       BEGIN
        /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
            SET @RaiseError = 'Run ' + CASE WHEN @stepNumber < 10   THEN '   ' + CAST(@stepNumber AS VARCHAR(30))
                                            WHEN @stepNumber < 100  THEN '  '  + CAST(@stepNumber AS VARCHAR(30))
@@ -436,6 +460,7 @@ BEGIN TRY
                                                                     END, 121) +
                               ', duration: ' + CAST(@duration AS VARCHAR(100)) + @durationAccuracy + '.';
            RAISERROR(@RaiseError, 0, 1) WITH NOWAIT;
+        END;
 
         IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> ''
             EXECUTE sp_executesql @tsqlStatementAfter;
@@ -547,7 +572,11 @@ BEGIN CATCH
     IF ERROR_NUMBER() = 535
     PRINT('Your @durationAccuracy = ' + @durationAccuracy +
     '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
-    'But in log table master.dbo.BenchmarkTSQL all times saving with DATETIME2(7) precise! You can manualy calculate difference after decreasing precise datepart.' + @crlf +
-    'For analyze log rable see latest example in document section.');
+    'But in log table master.dbo.BenchmarkTSQL (if you run stored procedure with @saveResult = 1) all times saving with DATETIME2(7) precise!' + @crlf +
+    'You can manualy calculate difference after decreasing precise datepart.' + @crlf +
+    'For analyze log table see latest examples in document section.');
 END CATCH;
+GO
+
+EXEC master.sys.sp_MS_marksystemobject @objname = N'dbo.sp_BenchmarkTSQL';
 GO
