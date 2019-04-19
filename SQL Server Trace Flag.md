@@ -182,6 +182,7 @@ GO
 ## Recommended Trace Flags
 
  - [Trace Flag 272](#272) (for SQL Server 2012)
+ - [Trace Flag 460](#460) (for SQL Server 2019, >= 2017 CU14, >= 2016 SP2 CU6)
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
@@ -195,6 +196,9 @@ GO
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
+
+**Trace Flag 460** Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
+Description for [2628] message has useful information - which column had the truncation and which row.<br />
 
 **Trace flag 1118** addresses contention that can exist on a particular type of page in a database, the SGAM page.
 This trace flag typically provides benefit for customers that make heavy use of the tempdb system database.
@@ -587,7 +591,7 @@ Link: None
 
 <a id="460"></a>
 #### Trace Flag: 460
-**Note: Don’t leave this trace flag enabled on global scope.
+**Note: Don’t leave this trace flag enabled on global scope for SQL Server 2017 CU12 and CU13.
 There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**<br />
 Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
 Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
@@ -596,8 +600,9 @@ Link: https://www.procuresql.com/blog/2018/09/26/string-or-binary-data-get-trunc
 Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/32908417-binary-or-string-data-would-be-truncated-error<br />
 Link: https://blogs.msdn.microsoft.com/sql_server_team/string-or-binary-data-would-be-truncated-replacing-the-infamous-error-8152/<br />
 Link: https://support.microsoft.com/help/4468101<br />
-Link: https://www.brentozar.com/archive/2019/03/how-to-fix-the-error-string-or-binary-data-would-be-truncated/
-Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa
+Link: https://www.brentozar.com/archive/2019/03/how-to-fix-the-error-string-or-binary-data-would-be-truncated/<br />
+Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa<br />
+Link: https://support.microsoft.com/help/4490142<br />
 Scope: global or session<br />
 SQL Server Version: 2019, >= 2017 CU12, >= 2016 SP2 CU6<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_460.sql
