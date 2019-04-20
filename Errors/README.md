@@ -93,6 +93,7 @@ SELECT message_id, severity, text
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                                |
 |       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                            |
 |       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored              … | [4629_link1][12]                            |
+|       4901 | ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition       … | [4901_link1][33]                           |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                … | [4922_link1]                                |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                                |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                            |
@@ -122,7 +123,13 @@ SELECT message_id, severity, text
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19]           |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                               |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                           |
+|      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                           |
+|      13518 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has IDENTITY column specification … | [13518_link1][33]                           |
+|      13523 | Setting SYSTEM_VERSIONING to ON failed because table '%.*ls' has %d columns and table '%.*ls' has %d   … | [13523_link1][33]                           |
+|      13543 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' contains invalid records with end … | [13543_link1][33]                           |
 |      13570 | The use of replication is not supported with system-versioned temporal table '%s'                        | [13570_link1]                               |
+|      13573 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' contains overlapping records.       | [13573_link1][33]                           |
+|      13575 | ADD PERIOD FOR SYSTEM_TIME failed because table '%.*ls' contains records where end of period is not    … | [13575_link1][33]                           |
 |      13901 | Identifier '%.*ls' in a MATCH clause is not a node table or an alias for a node table.                   | [13901_link1][30]                           |
 |      13902 | Identifier '%.*ls' in a MATCH clause is not an edge table or an alias for an edge table.                 | [13902_link1][30]                           |
 |      15002 | The procedure 'sys.sp_dbcmptlevel' cannot be executed within a transaction.                            … | [15002_link1]                               |
@@ -177,6 +184,7 @@ SELECT message_id, severity, text
 [30]:http://www.nikoport.com/2018/12/01/sql-graph-part-iii-derived-tables-views/
 [31]:https://www.mssqltips.com/sqlservertip/5971/accelerated-database-recovery-in-sql-server-2019/
 [32]:https://www.brentozar.com/archive/2019/03/what-happens-when-you-cancel-or-kill-a-resumable-index-creation/
+[33]:https://curiousaboutdata.com/2019/04/15/temporal-tables-list-of-errors-with-reasons/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
