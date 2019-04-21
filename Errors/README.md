@@ -76,6 +76,7 @@ SELECT message_id, severity, text
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at        … | [825_link1]                                 |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                  … | [913_link1]                                 |
 |        922 | Database '%.*ls' is being recovered. Waiting until recovery is finished.                                 | [922_link1]                                 |
+|       1052 | Conflicting %ls options "%ls" and "%ls".                                                                 | [1052_link1][33]                            |
 |       1219 | Your session has been disconnected because of a high priority DDL operation.                             | [1219_link1][32]                            |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                                |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                |
@@ -93,7 +94,7 @@ SELECT message_id, severity, text
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                                |
 |       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                            |
 |       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored              … | [4629_link1][12]                            |
-|       4901 | ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition       … | [4901_link1][33]                           |
+|       4901 | ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition       … | [4901_link1][33]                            |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                … | [4922_link1]                                |
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                                |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                            |
@@ -121,6 +122,7 @@ SELECT message_id, severity, text
 |       8948 | Database error: Page %S_PGID is marked with the wrong type in PFS page %S_PGID. PFS status 0x%x        … | [8948_link1][20]                            |
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related        … | [9001_link1][16]                            |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19]           |
+|       9105 | The provided statistics stream is corrupt.                                                               | [9105_link1][33]                            |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                               |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                           |
 |      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                           |
@@ -150,6 +152,7 @@ SELECT message_id, severity, text
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                       | [33111_link1]                               |
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                           |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                               |
+|      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                           |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                           |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
@@ -185,6 +188,7 @@ SELECT message_id, severity, text
 [31]:https://www.mssqltips.com/sqlservertip/5971/accelerated-database-recovery-in-sql-server-2019/
 [32]:https://www.brentozar.com/archive/2019/03/what-happens-when-you-cancel-or-kill-a-resumable-index-creation/
 [33]:https://curiousaboutdata.com/2019/04/15/temporal-tables-list-of-errors-with-reasons/
+[34]:https://www.sqlserverscience.com/maintenance/update-statistics-failed-statistics-cannot-be-updated-columnstore-index/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
