@@ -1,25 +1,38 @@
-/*
+﻿/*
 <documentation>
-  <author>Konstantin Taranov</author>
   <summary>Create JOIN query between multiple tables dynamically.</summary>
   <returns>SELECT statement from input table with INNER JOINS for all tables having foreign consttraints with input table.</returns>
+  <issues></issues>
+  <author>Konstantin Taranov</author>
   <created>2019-04-22</created>
-  <modified>2019-04-22</modified>
-  <version>1.0</version>
+  <modified>2019-04-23 by Konstantin Taranov</modified>
+  <version>1.1</version>
   <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Create_JOIN_Query_Between_Multiple_Tables_Dynamically.sql</sourceLink>
 </documentation>
 */
 
-DECLARE @table AS VARCHAR(100)= 'YouTableName';
+DECLARE @schemaName    AS sysname          = N'dbo';
+DECLARE @tableName     AS sysname          = N'YourTable';
+DECLARE @tableFullName AS NVARCHAR(256) = QUOTENAME(@schemaName) + N'.' + QUOTENAME(@tableName)
+DECLARE @crlf          AS varchar(10)      = CHAR(10);
+DECLARE @tsql          AS nvarchar(max);
+
+IF LEFT(@tableName, 1) = N'[' OR LEFT(@schemaName, 1) = N'['
+THROW 50001, 'Please do not use quotes in Table or Schema names! In the script it is alredy done with QUOTENAME function.', 1;
+
+IF OBJECT_ID(@tableFullName) IS NULL
+THROW 50002, 'Table is not exist in database. Please check @schemaName and @tableName variables.', 1;
+
 
 WITH AllColumns
      AS (SELECT
-                pObj.name AS ParentTable
-               ,pCol.COLUMN_NAME AS ParentColumn
-               ,fkObj.name AS ReferecedTable
-               ,fkCol.COLUMN_NAME AS ReferencedColumn
+                pObj.name                    AS ParentTable
+               ,pCol.COLUMN_NAME             AS ParentColumn
+               ,SCHEMA_NAME(fkObj.schema_id) AS ReferecedTableSchema
+               ,fkObj.name                   AS ReferecedTable
+               ,fkCol.COLUMN_NAME            AS ReferencedColumn
          FROM sys.foreign_key_columns AS fkc
-              INNER JOIN sys.objects AS pObj ON pObj.object_id = fkc.parent_object_id
+              INNER JOIN sys.objects  AS pObj ON pObj.object_id = fkc.parent_object_id
               INNER JOIN INFORMATION_SCHEMA.COLUMNS AS pCol ON pCol.TABLE_NAME = pObj.name
                                                                AND pCol.ORDINAL_POSITION = fkc.parent_column_id
               INNER JOIN sys.objects AS fkObj ON fkObj.object_id = fkc.referenced_object_id
@@ -32,19 +45,30 @@ WITH AllColumns
              FROM sys.objects AS o
              WHERE o.name IN
              (
-                 SELECT 
-                        tc.CONSTRAINT_NAME
+                 SELECT
+                        tc.CONSTRAINT_NAME AS CONSTRAINT_NAME
                  FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS tc
                  WHERE tc.CONSTRAINT_TYPE = 'FOREIGN KEY'
-                       AND tc.TABLE_NAME = @table
+                   AND tc.TABLE_NAME   = @tableName
+                   AND tc.TABLE_SCHEMA = @schemaName
              )
          ))
-     SELECT
-            'SELECT *
-        FROM ' + @table +
+     SELECT 
+            @tsql = 
+           N'SELECT TOP(100) ' + QUOTENAME(@tableName) + N'.*' + @crlf +
+           N'FROM ' + @tableFullName +
+     ISNULL(
      (
-         SELECT 
-                ' INNER JOIN ' + ac.ReferecedTable + ' ON ' + ac.ParentTable + '.' + ac.ParentColumn + '=' + ac.ReferecedTable + '.' + ac.ReferencedColumn + CHAR(10)
+         SELECT
+                @crlf +  N'INNER JOIN ' + QUOTENAME(ac.ReferecedTableSchema) + N'.' + QUOTENAME(ac.ReferecedTable) + N' ON' + @crlf +
+                N'           ' + QUOTENAME(ac.ParentTable) + N'.' + QUOTENAME(ac.ParentColumn) + ' = ' +
+                QUOTENAME(ac.ReferecedTable) + '.' + QUOTENAME(ac.ReferencedColumn)
          FROM AllColumns AS ac FOR
          XML PATH('')
-     );
+     ), N'') + N';';
+
+
+IF @tsql IS NULL
+PRINT('@tsql si NULL - something went wrong!');
+ELSE
+PRINT(@tsql);
