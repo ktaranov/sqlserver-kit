@@ -2,7 +2,7 @@
 <documentation>
   <summary>Create JOIN query between multiple tables dynamically.</summary>
   <returns>SELECT statement from input table with INNER JOINS for all tables having foreign consttraints with input table.</returns>
-  <issues></issues>
+  <issues>Does not properly generate alias for case with multiply foreign keys for one table</issues>
   <author>Konstantin Taranov</author>
   <created>2019-04-22</created>
   <modified>2019-04-23 by Konstantin Taranov</modified>
@@ -11,10 +11,10 @@
 </documentation>
 */
 
-DECLARE @schemaName    AS sysname          = N'dbo';
-DECLARE @tableName     AS sysname          = N'YourTable';
-DECLARE @tableFullName AS NVARCHAR(256) = QUOTENAME(@schemaName) + N'.' + QUOTENAME(@tableName)
-DECLARE @crlf          AS varchar(10)      = CHAR(10);
+DECLARE @schemaName    AS sysname       = N'dbo';
+DECLARE @tableName     AS sysname       = N'TableName';
+DECLARE @tableFullName AS nvarchar(256) = QUOTENAME(@schemaName) + N'.' + QUOTENAME(@tableName)
+DECLARE @crlf          AS varchar(10)   = CHAR(10);
 DECLARE @tsql          AS nvarchar(max);
 
 IF LEFT(@tableName, 1) = N'[' OR LEFT(@schemaName, 1) = N'['
@@ -67,8 +67,7 @@ WITH AllColumns
          XML PATH('')
      ), N'') + N';';
 
-
 IF @tsql IS NULL
-PRINT('@tsql si NULL - something went wrong!');
+PRINT('@tsql is NULL - something went wrong!');
 ELSE
 PRINT(@tsql);

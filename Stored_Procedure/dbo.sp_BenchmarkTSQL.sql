@@ -31,7 +31,8 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Default value is NULL.
 
 .PARAMETER @tsqlStatement
-    TSQL statement for benchmarking. Mandatory parameter.
+    TSQL statement for benchmarking.
+    Mandatory parameter.
     No defaults.
 
 .PARAMETER @tsqlStatementAfter
@@ -52,7 +53,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Default value is 1 (true) - skip checking.
 
 .PARAMETER @clearCache
-    Clear cached plan for TSQL statement before each run.
+    Clear cached plan for TSQL statement before each run using DBCC FREEPROCCACHE(@planHandle).
     Default value is 0 (false) - not clear.
 
 .PARAMETER @calcMedian
@@ -344,7 +345,7 @@ BEGIN TRY
     DECLARE @median        real;
     DECLARE @planHandle    varbinary(64);
     DECLARE @startStep     datetime2(7);
-    DECLARE @endStep    datetime2(7);
+    DECLARE @endStep       datetime2(7);
     DECLARE @stepDuration  int;
     DECLARE @additionalXML xml;
 

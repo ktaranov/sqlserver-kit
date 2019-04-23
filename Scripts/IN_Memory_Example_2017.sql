@@ -11,7 +11,7 @@ SELECT @databaseFilePath = SUBSTRING(physical_name, 1, CHARINDEX(N'master.mdf', 
  WHERE database_id = 1 AND file_id = 1;
 
 DECLARE @databaseName SYSNAME = N'1ಠಠಠ 16+ 错误的名字! Wrong Name! गलत नाम! Неправильное название! Nombre incorrecto! Falscher Name! 間違った名前! שם שגוי! Mauvais Nom!1';
--- To prevent Msg 5135, שםשגוי cannot be used for FILESTREAM files
+/* To prevent Msg 5135, שםשגוי cannot be used for FILESTREAM files */
 DECLARE @dbFileName_mod   SYSNAME        = SUBSTRING(@databaseName, 1, 80) + N'_mod';
 DECLARE @databaseFileName NVARCHAR(1000) = REPLACE(@databaseName, N' ', N'');
 DECLARE @tsqlStatement    NVARCHAR(4000) = N'';
@@ -59,7 +59,7 @@ N'/* configure recommended DB option */
 ALTER DATABASE CURRENT SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT=ON;
 
 /* memory-optimized table */
-CREATE TABLE dbo.[😁__間違った名前 In Memory Table Я не советую так называть__👻]
+CREATE TABLE dbo.[¯\_(ツ)_/¯ 😁__間違った名前 In Memory Table Я не советую так называть__👻 ¯\_(ツ)_/¯]
 ( c1 INT IDENTITY PRIMARY KEY NONCLUSTERED,
   c2 NVARCHAR(MAX))
 WITH (MEMORY_OPTIMIZED=ON);
@@ -79,13 +79,13 @@ CREATE TYPE dbo.tt_table1 AS TABLE
   INDEX ix_c1 HASH (c1) WITH (BUCKET_COUNT=1024))
 WITH (MEMORY_OPTIMIZED=ON);
 
-CREATE TABLE dbo.[😁__間違った名前 In Memory Table Я не советую так называть__👻](
+CREATE TABLE dbo.[¯\_(ツ)_/¯ 😁__間違った名前 In Memory Table Я не советую так называть__👻 ¯\_(ツ)_/¯](
       keyColumn INT IDENTITY PRIMARY KEY NONCLUSTERED
     , description CHAR(100) NOT NULL
 )
 WITH (MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA);
 
-INSERT dbo.[😁__間違った名前 In Memory Table Я не советую так называть__👻]
+INSERT dbo.[¯\_(ツ)_/¯ 😁__間違った名前 In Memory Table Я не советую так называть__👻 ¯\_(ツ)_/¯]
 (
 description
 )
@@ -162,7 +162,7 @@ AS
 BEGIN ATOMIC WITH (TRANSACTION ISOLATION LEVEL = SNAPSHOT, LANGUAGE = N''us_english'')
 SELECT keyColumn
 ,description
-FROM dbo.[😁__間違った名前 In Memory Table Я не советую так называть__👻];
+FROM dbo.[¯\_(ツ)_/¯ 😁__間違った名前 In Memory Table Я не советую так называть__👻 ¯\_(ツ)_/¯];
 END;' + CASE WHEN @debug = 1 THEN @crlf + N'GO' + @crlf ELSE N'' END;
 
 IF @debug = 1 PRINT(@tsqlStatement)
