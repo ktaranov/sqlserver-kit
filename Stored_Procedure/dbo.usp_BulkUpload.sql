@@ -1,38 +1,38 @@
-IF OBJECT_ID('dbo.usp_BulkUpload', 'P') IS NULL EXECUTE ('CREATE PROCEDURE dbo.usp_BulkUpload AS SELECT 1');
+IF OBJECT_ID(N'dbo.usp_BulkUpload', N'P') IS NULL EXEC (N'CREATE PROCEDURE dbo.usp_BulkUpload AS SELECT 1');
 GO
 
 
 ALTER PROCEDURE dbo.usp_BulkUpload (
-                @path                 NVARCHAR(900)  -- add a slash (\) at the end of a variable @path
-              , @fileName             NVARCHAR(200) = ''
-              , @fileExtension        NVARCHAR(10)  = N'txt'
-              , @databaseName         SYSNAME
-              , @schemaName           SYSNAME       = N'dbo'
-              , @tableName            SYSNAME
-              , @useIdentity          TINYINT       = 1  -- 1 - table with identity and identity column exists in file; 2 - table with identity and identity column not exists in file; 0 - table without identity
-              , @identityColumnName   SYSNAME       = ''
-              , @BATCHSIZE            INTEGER       = 0  -- 0 - skip parameter value (by default, all data in the specified data file is one batch)
-              , @CHECK_CONSTRAINTS    BIT           = 0  -- 0 - skip parameter value (any CHECK and FOREIGN KEY constraints are ignored, after the operation, the constraints market as not-trusted)
-              , @CODEPAGE             NVARCHAR(30)  = N'65001'
-              , @DATAFILETYPE         NVARCHAR(30)  = N'char'
-              , @FIELDTERMINATOR      NVARCHAR(10)  = N'\t'
-              , @FIRSTROW             INTEGER       = 1
-              , @FIRE_TRIGGERS        BIT           = 0  -- 0 - skip parameter value (no insert triggers execute)
-              , @KEEPNULLS            BIT           = 0
-              , @KILOBYTES_PER_BATCH  INTEGER       = 0  -- 0 - skip parameter value (unknown by default)
-              , @LASTROW              INTEGER       = 0
-              , @ROWTERMINATOR        NVARCHAR(10)  = N'\n'
-              , @ROWS_PER_BATCH       INTEGER       = 0
-              , @TABLOCK              BIT           = 1
-              , @ERRORFILE            NVARCHAR(300) = N''
-              , @MAXERRORS            INTEGER       = 0  -- 0 - skip parameter value (used 10 by default)
-              , @FORMATFILE           VARCHAR(4)    = ''
-              , @excludeColumns       NVARCHAR(MAX) = N''''''
-              , @rowOrderByColumn     NVARCHAR(MAX) = N''
-              , @skipTempDB           BIT           = 0
-              , @columnTypeSort       BIT           = 1    -- 0 - physical column order; 1 - alphabetical
-              , @databaseRecoveryMode NVARCHAR(15)  = N''  -- FULL; BULK_LOGGED; SIMPLE
-              , @debug                BIT           = 0    -- 0 - only print tsql statement; 1 - exec tsql statement
+                @path                 nvarchar(900)  -- add a slash (\) at the end of a variable @path
+              , @fileName             nvarchar(200) = ''
+              , @fileExtension        nvarchar(10)  = N'txt'
+              , @databaseName         sysname
+              , @schemaName           sysname       = N'dbo'
+              , @tableName            sysname
+              , @useIdentity          tinyint       = 1  -- 1 - table with identity and identity column exists in file; 2 - table with identity and identity column not exists in file; 0 - table without identity
+              , @identityColumnName   sysname       = ''
+              , @BATCHSIZE            integer       = 0  -- 0 - skip parameter value (by default, all data in the specified data file is one batch)
+              , @CHECK_CONSTRAINTS    bit           = 0  -- 0 - skip parameter value (any CHECK and FOREIGN KEY constraints are ignored, after the operation, the constraints market as not-trusted)
+              , @CODEPAGE             nvarchar(30)  = N'65001'
+              , @DATAFILETYPE         nvarchar(30)  = N'char'
+              , @FIELDTERMINATOR      nvarchar(10)  = N'\t'
+              , @FIRSTROW             integer       = 1
+              , @FIRE_TRIGGERS        bit           = 0  -- 0 - skip parameter value (no insert triggers execute)
+              , @KEEPNULLS            bit           = 0
+              , @KILOBYTES_PER_BATCH  integer       = 0  -- 0 - skip parameter value (unknown by default)
+              , @LASTROW              integer       = 0
+              , @ROWTERMINATOR        nvarchar(10)  = N'\n'
+              , @ROWS_PER_BATCH       integer       = 0
+              , @TABLOCK              bit           = 1
+              , @ERRORFILE            nvarchar(300) = N''
+              , @MAXERRORS            integer       = 0  -- 0 - skip parameter value (used 10 by default)
+              , @FORMATFILE           varchar(4)    = ''
+              , @excludeColumns       nvarchar(max) = N''''''
+              , @rowOrderByColumn     nvarchar(max) = N''
+              , @skipTempDB           bit           = 0
+              , @columnTypeSort       bit           = 1    -- 0 - physical column order; 1 - alphabetical
+              , @databaseRecoveryMode nvarchar(15)  = N''  -- FULL; BULK_LOGGED; SIMPLE
+              , @debug                bit           = 0    -- 0 - only print tsql statement; 1 - exec tsql statement
 )
 AS
 /*
@@ -87,17 +87,17 @@ EXECUTE [dbo].[usp_BulkUpload] @path         = N'd:\',
 */
 BEGIN
     BEGIN TRY
-        DECLARE @databaseRecoveryModeCurrent NVARCHAR(15);
-        DECLARE @schemaTableName             NVARCHAR(600) = QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
-        DECLARE @tsqlCommand    NVARCHAR(MAX) = '';
-        DECLARE @ParamDefinitionIndentity NVARCHAR(500) = N'@identityColumnNameIN NVARCHAR(200), @ColumnsOUT VARCHAR(MAX) OUTPUT';
-        DECLARE @tableFullName  NVARCHAR(600) = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
-        DECLARE @#tableName     NVARCHAR(600) = QUOTENAME('#' + @tableName);
-        DECLARE @OBJECT_ID      INTEGER       = OBJECT_ID(@tableFullName);
-        DECLARE @Columns        NVARCHAR(MAX) = N'';
-        DECLARE @filePath       NVARCHAR(MAX) = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
-        DECLARE @crlf           NVARCHAR(10)  = CHAR(13);
-        DECLARE @TROW50000      NVARCHAR(1000) = N'';
+        DECLARE @databaseRecoveryModeCurrent nvarchar(15);
+        DECLARE @schemaTableName             nvarchar(600) = QUOTENAME(@schemaName) + '.' + QUOTENAME(@tableName);
+        DECLARE @tsqlCommand                 nvarchar(max) = '';
+        DECLARE @ParamDefinitionIndentity    nvarchar(500) = N'@identityColumnNameIN NVARCHAR(200), @ColumnsOUT VARCHAR(MAX) OUTPUT';
+        DECLARE @tableFullName               nvarchar(600) = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
+        DECLARE @#tableName                  nvarchar(600) = QUOTENAME('#' + @tableName);
+        DECLARE @OBJECT_ID                   integer       = OBJECT_ID(@tableFullName);
+        DECLARE @Columns                     nvarchar(max) = N'';
+        DECLARE @filePath                    nvarchar(max) = @path + CASE WHEN @fileName = '' THEN @tableFullName ELSE @fileName END + '.' + @fileExtension;
+        DECLARE @crlf                        nvarchar(10)  = CHAR(13);
+        DECLARE @TROW50000                   nvarchar(1000) = N'';
 
 
         IF @debug = 0 SET NOCOUNT ON ELSE PRINT '/******* Start Debug' + @crlf;
@@ -110,7 +110,7 @@ BEGIN
         IF RIGHT(@path, 1) <> '\' THROW 50001, 'Please add a slash (\) at the end of a variable @path!!!', 1;
 
         IF LEFT(@databaseName, 1) =N'[' OR LEFT(@tableName, 1) = N'[' OR LEFT(@schemaName, 1) = N'['
-        THROW 50002, 'Please do not use quotes in Databse, Table or Schema names! In the procedure it is alredy done with QUOTENAME function.', 1;
+        THROW 50002, 'Please do not use quotes in Database, Table or Schema names! In the procedure it is alredy done with QUOTENAME function.', 1;
 
         SET @tableFullName = CASE WHEN @databaseName <> '' THEN QUOTENAME(@databaseName) + '.' ELSE '' END + @schemaTableName;
 
@@ -276,7 +276,7 @@ WITH (
             IF @debug = 0 EXECUTE sp_executesql @tsqlCommand;
         END
 
-        IF @debug = 0 SET NOCOUNT OFF ELSE PRINT @crlf + '--End Deubg*********/';
+        IF @debug = 1 PRINT @crlf + '--End Deubg*********/';
     END TRY
 
     BEGIN CATCH
