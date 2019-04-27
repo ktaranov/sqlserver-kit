@@ -256,20 +256,20 @@ Example:
 
 ```sql
 WITH CTE_MyCTE AS (
-    SELECT t1.Value1 AS Val1
-         , t1.Value2 AS Val2
-         , t2.Value3 AS Val3
+    SELECT      t1.Value1  AS Val1
+              , t1.Value2  AS Val2
+              , t2.Value3  AS Val3
      INNER JOIN dbo.Table3 AS t2
              ON t1.Value1 = t2.Value1
-     WHERE t1.Value1 > 1
-       AND t2.Value2 >= 101
+     WHERE      t1.Value1 > 1
+       AND      t2.Value2 >= 101
 )
 SELECT t1.Value1 AS Val1
      , t1.Value2 AS Val2
      , t2.Value3 AS Val3
-  INTO #Table3
-  FROM CTE_MyCTE AS t1
- ORDER BY t2.Value2;
+INTO   #Table3
+FROM   CTE_MyCTE AS t1
+ORDER BY t2.Value2;
 ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -287,9 +287,9 @@ SELECT t1.Value1 AS Val1
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
  - Always use multi-line comment `/* */` instead in-line comment `--`
- - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement.
+ - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009).
- - Do not use `SET NOCOUNT OFF;` (because it is default behavior)
+ - Do not use `SET NOCOUNT OFF;` because it is default behavior
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
    More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html).
  - All code should be self documenting
@@ -342,7 +342,7 @@ BEGIN TRY
 END TRY
 
 BEGIN CATCH
-    -- Print error information. 
+    /* Print error information. */
     PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER())   +
           ', Severity: '  + CONVERT(varchar(5),  ERROR_SEVERITY()) +
           ', State: '     + CONVERT(varchar(5),  ERROR_STATE())    +
@@ -368,18 +368,17 @@ GO
  - [SQL Style Guide](http://www.sqlstyle.guide/) (by Simon Holywell)
  - [SQL Code Layout and Beautification](https://www.simple-talk.com/sql/t-sql-programming/sql-code-layout-and-beautification/) (by William Brewer)
  - [TSQL Coding Style](http://www.databasejournal.com/features/mssql/tsql-coding-style.html) (by Gregory Larsen)
- - [Database object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
- - [User-Defined Functions MSDN](http://msdn.microsoft.com/en-us/library/ms191007.aspx)
- - [Synonim TECHNET](http://technet.microsoft.com/en-us/library/ms187552(v=sql.110).aspx)
- - [Primary and Foreign Key Constraints MSDN](http://msdn.microsoft.com/en-us/library/ms179610.aspx)
- - [sys.objects MSDN](http://msdn.microsoft.com/en-us/library/ms190324.aspx)
- - [Constraints TECHNET](http://technet.microsoft.com/en-us/library/ms189862%28v=sql.105%29.aspx)
+ - [User-Defined Functions](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/user-defined-functions)
+ - [Synonyms (Database Engine)](https://docs.microsoft.com/en-us/sql/relational-databases/synonyms/synonyms-database-engine)
+ - [Primary and Foreign Key Constraints](https://docs.microsoft.com/en-us/sql/relational-databases/tables/primary-and-foreign-key-constraints)
+ - [sys.objects](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql)
+ - [SQL Server Constraints](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-table-constraint-transact-sql)
  - [CHECK Constraint TECHNET](http://technet.microsoft.com/en-us/library/ms188258%28v=sql.105%29.aspx)
- - [SQL Server CLR Integration MSDN](http://msdn.microsoft.com/en-us/library/ms254498%28v=vs.110%29.aspx)
- - [CLR Databse Objects MSDN](http://msdn.microsoft.com/en-us/library/ms345099%28SQL.100%29.aspx)
- - [CLR Stored Procedures](http://msdn.microsoft.com/en-us/library/ms131094%28v=sql.100%29.aspx)
- - [User-defined Functions](http://msdn.microsoft.com/en-us/library/ms191320.aspx)
- - [MSDN SET NOCOUNT ON](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql)
+ - [SQL Server CLR Integration](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration)
+ - [Deploying CLR Database Objects](https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/deploying-clr-database-objects)
+ - [CLR Stored Procedures](https://docs.microsoft.com/en-us/sql/database-engine/dev-guide/clr-stored-procedures)
+ - [User-defined Functions](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine)
+ - [SET NOCOUNT ON (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-nocount-transact-sql)
  - [T-SQL Coding Guidelines Presentation](http://www.slideshare.net/chris1adkin/t-sql-coding-guidelines) (by Chris Adkin)
  - [Sql Coding Style](http://c2.com/cgi/wiki?SqlCodingStyle)
  - [SQL Server Code Review Checklist for Developers](https://www.sqlshack.com/sql-server-code-review-checklist-for-developers/) (by Samir Behara)
@@ -387,5 +386,7 @@ GO
  - [In The Cloud: The Importance of Being Organized](http://sqlblog.com/blogs/john_paul_cook/archive/2017/05/16/in-the-cloud-the-importance-of-being-organized.aspx)
  - [Naming Conventions in Azure](http://www.sqlchick.com/entries/2017/6/24/naming-conventions-in-azure)
  - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
+ - [SQL naming conventions](https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/) (by Phi Factor)
+ - [SQL Server Compact Object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
 
 **[⬆ back to top](#table-of-contents)**
