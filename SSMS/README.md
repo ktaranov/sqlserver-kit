@@ -47,7 +47,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 ## Available Languages
 
-**SQL Server Management Studio 18.0 (preview 7)**:
+**SQL Server Management Studio 18.0 GA**:
  [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2078638&clcid=0x804) |
  [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2078638&clcid=0x404) |
  [English (United States)](https://go.microsoft.com/fwlink/?linkid=2078638&clcid=0x409) |
@@ -60,18 +60,18 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
  [Russian](https://go.microsoft.com/fwlink/?linkid=2078638&clcid=0x419) |
  [Spanish](https://go.microsoft.com/fwlink/?linkid=2078638&clcid=0x40a)
 
-**SQL Server Management Studio 17.9.1** for another languages:
- [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x804) |
- [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x404) |
- [English (United States)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x409)
- [French](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x40c) |
- [German](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x407) |
- [Italian](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x410) |
- [Japanese](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x411) |
- [Korean](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x412) |
- [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x416) |
- [Russian](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x419) |
- [Spanish](https://go.microsoft.com/fwlink/?linkid=2014306&clcid=0x40a)
+**SQL Server Management Studio 18.0 (GA)** for another languages:
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x804) |
+ [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x404) |
+ [English (United States)](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x409)
+ [French](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x40c) |
+ [German](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x407) |
+ [Italian](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x410) |
+ [Japanese](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x411) |
+ [Korean](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x412) |
+ [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x416) |
+ [Russian](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x419) |
+ [Spanish](https://go.microsoft.com/fwlink/?linkid=2088649&clcid=0x40a)
 
 **SQL Server Management Studio 17.9.1 Upgrade Package** (upgrades 17.x to 17.9.1):
  [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2043154&clcid=0x804) |
@@ -95,12 +95,13 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 | -------------------------------- | ------------- | ------------ | -------: |
+| [18.0 GA Release] **Latest GA**  | 15.0.18118.0  | 2019-04-24   |      524 |
 | [18.0 RC1 Release] **Latest PP** | 15.0.18098.0  | 2019-03-28   |      484 |
 | [18.0 Preview 7 Release]         | 15.0.18092.0  | 2019-03-01   |      478 |
 | [18.0 Preview 6 Release]         | 15.0.18075.0  | 2018-12-18   |      457 |
 | [18.0 Preview 5 Release]         | 15.0.18068.0  | 2018-11-15   |      457 |
 | [18.0 Preview 4 Release]         | 15.0.18040.0  | 2018-09-24   |      456 |
-| [17.9.1 Release] **Latest GA**   | 14.0.17289.0  | 2018-11-21   |      807 |
+| [17.9.1 Release]                 | 14.0.17289.0  | 2018-11-21   |      807 |
 | [17.9 Release]                   | 14.0.17285.0  | 2018-09-04   |      807 |
 | [17.8.1 Release]                 | 14.0.17277.0  | 2018-06-26   |      806 |
 | [17.8 Release] **Deprecated**    | 14.0.17276.0  | 2018-06-21   |      806 |
@@ -129,6 +130,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[18.0 GA Release]:https://go.microsoft.com/fwlink/?linkid=2088649
 [18.0 RC1 Release]:https://go.microsoft.com/fwlink/?linkid=2085742
 [18.0 Preview 7 Release]:https://go.microsoft.com/fwlink/?linkid=2078638
 [18.0 Preview 6 Release]:https://go.microsoft.com/fwlink/?linkid=2052501
