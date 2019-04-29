@@ -670,6 +670,7 @@ Articles types:
 | [Analysis Services Telemetry: What information does SSAS submit? and how has it changed in SSAS 2019?]                  | Shabnam Watson                           | 2019-04-13 | [DBA]       |
 | [The Curious Case of… how to find FILESTREAM info from an MDF]                                                          | Paul Randal                              | 2019-04-18 | [DBA]       |
 | [Does index fragmentation matter?]                                                                                      | Tibor Karaszi                            | 2019-04-05 | [DBA],[DEV] |
+| [How to perform a Page Level Restore in SQL Server]                                                                     | Klaus Aschenbrenner                      | 2015-10-13 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1317,3 +1318,4 @@ Articles types:
 [Analysis Services Telemetry: What information does SSAS submit? and how has it changed in SSAS 2019?]:https://shabnamwatson.wordpress.com/2019/04/13/analysis-services-telemetry-what-information-does-ssas-submit-and-how-has-it-changed-in-ssas-2019/
 [The Curious Case of… how to find FILESTREAM info from an MDF]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-how-to-find-filestream-info-from-an-md
 [Does index fragmentation matter?]:http://sqlblog.karaszi.com/does-index-fragmentation-matter/
+[How to perform a Page Level Restore in SQL Server]:https://sqlperfmon.blogspot.com/2016/07/how-to-perform-page-level-restore-in.html
