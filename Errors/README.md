@@ -77,6 +77,7 @@ SELECT message_id, severity, text
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                  … | [913_link1]                                 |
 |        922 | Database '%.*ls' is being recovered. Waiting until recovery is finished.                                 | [922_link1]                                 |
 |       1052 | Conflicting %ls options "%ls" and "%ls".                                                                 | [1052_link1][33]                            |
+|       1065 | The NOLOCK and READUNCOMMITTED lock hints are not allowed for target tables of INSERT, UPDATE, DELETE   …| [1065_link1]                                |
 |       1219 | Your session has been disconnected because of a high priority DDL operation.                             | [1219_link1][32]                            |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                                |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                |
@@ -206,6 +207,7 @@ SELECT message_id, severity, text
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [922_link1]:https://blog.sqlauthority.com/2018/08/27/sql-server-how-to-drop-or-delete-suspect-database/
 [KB2152734]:https://support.microsoft.com/help/2152734
+[1065_link1]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [1701_link1]:http://www.sqlservercentral.com/questions/163450/
 [1807_link1]:http://www.sqlservercentral.com/blogs/martin_catherall/2017/01/22/create-database-ive-not-seen-that-before/
 [1904_link1]:http://blog.sqlauthority.com/2016/10/27/sql-server-fix-error-msg-1904-statistics-table-65-columns-key-list/
