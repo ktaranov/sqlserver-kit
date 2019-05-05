@@ -57,12 +57,14 @@ SELECT message_id, severity, text
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]          |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?]        |
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1]                                 |
+|        120 | The select list for the INSERT statement contains fewer items than the insert list. The number of      … | [120_link1][35]                             |
+|        121 | The select list for the INSERT statement contains more items than the insert list. The number of       … | [121_link1][35]                             |
 |        145 | ORDER BY items must appear in the select list if SELECT DISTINCT is specified.                           | [145_link1][27]                             |
 |        156 | Incorrect syntax near the keyword 'ORDER'.                                                               | [156_link1][23]                             |
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                                 |
-|        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3]                              |
+|        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3],[213_link2][35]              |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                             |
-|        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT …      | [264_link1][25]                             |
+|        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT      … | [264_link1][25]                             |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                             |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                             |
 |        459 | Collation '%.*ls' is supported on Unicode data types only and cannot be applied to char, varchar or    … | [459_link1]                                 |
@@ -190,6 +192,7 @@ SELECT message_id, severity, text
 [32]:https://www.brentozar.com/archive/2019/03/what-happens-when-you-cancel-or-kill-a-resumable-index-creation/
 [33]:https://curiousaboutdata.com/2019/04/15/temporal-tables-list-of-errors-with-reasons/
 [34]:https://www.sqlserverscience.com/maintenance/update-statistics-failed-statistics-cannot-be-updated-columnstore-index/
+[35]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
