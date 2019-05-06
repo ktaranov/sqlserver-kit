@@ -674,6 +674,7 @@ Articles types:
 | [How Much Memory Does SSIS Need?]                                                                                       | Tim Mitchell                             | 2019-05-02 | [SSIS]      |
 | [The Curious Case of… trying to find an MDF file in a RAW disk]                                                         | Paul Randal                              | 2019-04-30 | [DBA]       |
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2019-04-29 | [DBA],[DEV] |
+| [Methods to Insert Data into SQL Server]                                                                                | Ed Pollack                               | 2019-04-10 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1325,3 +1326,4 @@ Articles types:
 [How Much Memory Does SSIS Need?]:https://www.timmitchell.net/post/2019/05/02/how-much-memory-does-ssis-need/
 [The Curious Case of… trying to find an MDF file in a RAW disk]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-trying-to-find-an-mdf-file-in-a-raw-disk/
 [Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
+[Methods to Insert Data into SQL Server]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
