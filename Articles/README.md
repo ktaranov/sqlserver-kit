@@ -675,6 +675,10 @@ Articles types:
 | [The Curious Case of… trying to find an MDF file in a RAW disk]                                                         | Paul Randal                              | 2019-04-30 | [DBA]       |
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2019-04-29 | [DBA],[DEV] |
 | [Methods to Insert Data into SQL Server]                                                                                | Ed Pollack                               | 2019-04-10 | [DBA],[DEV] |
+| [Batching data manipulation is great as long as you do it correctly]                                                    | Jeff Iannucci                            | 2018-09-15 | [DBA],[DEV] |
+| [Azure and Windows PowerShell: Using VM Extensions]                                                                     | Nicolas Prigent                          | 2018-10-09 | [DBA]       |
+| [Reloading fact tables with zero downtime]                                                                              | Daniel Hutmacher                         | 2014-08-24 | [DBA],[DEV] |
+| [Transferring Data Efficiently by Using Partition Switching]                                                            | Microsoft Docs                           | 2012-04-10 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1327,3 +1331,7 @@ Articles types:
 [The Curious Case of… trying to find an MDF file in a RAW disk]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-trying-to-find-an-mdf-file-in-a-raw-disk/
 [Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [Methods to Insert Data into SQL Server]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
+[Batching data manipulation is great as long as you do it correctly]:http://desertdba.com/batching-data-manipulation-is-great/
+[Azure and Windows PowerShell: Using VM Extensions]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-and-windows-powershell-using-vm-extensions/
+[Reloading fact tables with zero downtime]:https://sqlsunday.com/2014/08/24/reloading-fact-tables-with-zero-downtime/
+[Transferring Data Efficiently by Using Partition Switching]:https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191160(v=sql.105)
