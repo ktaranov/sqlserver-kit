@@ -679,6 +679,10 @@ Articles types:
 | [Azure and Windows PowerShell: Using VM Extensions]                                                                     | Nicolas Prigent                          | 2018-10-09 | [DBA]       |
 | [Reloading fact tables with zero downtime]                                                                              | Daniel Hutmacher                         | 2014-08-24 | [DBA],[DEV] |
 | [Transferring Data Efficiently by Using Partition Switching]                                                            | Microsoft Docs                           | 2012-04-10 | [DBA],[DEV] |
+| [Another Difference between N'' and '' in SQL Server]                                                                   | Shane O'Neill                            | 2018-10-24 | [DBA],[DEV] |
+| [Ignoring NULLs with FIRST_VALUE]                                                                                       | Bert Wagner                              | 2018-08-28 | [DEV]       |
+| [Shortchanged with International Money in SQL Server]                                                                   | Bert Wagner                              | 2018-09-25 | [DEV]       |
+| [Understanding database recovery with SQL Server 2016 Extended Events]                                                  | Rajendra Gupta                           | 2016-07-05 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1335,3 +1339,7 @@ Articles types:
 [Azure and Windows PowerShell: Using VM Extensions]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-and-windows-powershell-using-vm-extensions/
 [Reloading fact tables with zero downtime]:https://sqlsunday.com/2014/08/24/reloading-fact-tables-with-zero-downtime/
 [Transferring Data Efficiently by Using Partition Switching]:https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191160(v=sql.105)
+[Another Difference between N'' and '' in SQL Server]:https://nocolumnname.blog/2018/10/24/another-difference-between-n-and-in-sql-server/
+[Ignoring NULLs with FIRST_VALUE]:https://bertwagner.com/2018/08/28/ignoring-nulls-with-first-value/
+[Shortchanged with International Money in SQL Server]:https://bertwagner.com/2018/09/25/try-parse-convert-strings-to-numbers/
+[Understanding database recovery with SQL Server 2016 Extended Events]:https://www.mssqltips.com/sqlservertip/4339/understanding-database-recovery-with-sql-server-2016-extended-events/
