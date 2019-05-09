@@ -676,13 +676,18 @@ Articles types:
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2019-04-29 | [DBA],[DEV] |
 | [Methods to Insert Data into SQL Server]                                                                                | Ed Pollack                               | 2019-04-10 | [DBA],[DEV] |
 | [Batching data manipulation is great as long as you do it correctly]                                                    | Jeff Iannucci                            | 2018-09-15 | [DBA],[DEV] |
-| [Azure and Windows PowerShell: Using VM Extensions]                                                                     | Nicolas Prigent                          | 2018-10-09 | [DBA]       |
+| [Azure and Windows PowerShell: Using VM Extensions]                                                                     | Nicolas Prigent                          | 2018-10-09 | [PS]        |
 | [Reloading fact tables with zero downtime]                                                                              | Daniel Hutmacher                         | 2014-08-24 | [DBA],[DEV] |
 | [Transferring Data Efficiently by Using Partition Switching]                                                            | Microsoft Docs                           | 2012-04-10 | [DBA],[DEV] |
 | [Another Difference between N'' and '' in SQL Server]                                                                   | Shane O'Neill                            | 2018-10-24 | [DBA],[DEV] |
 | [Ignoring NULLs with FIRST_VALUE]                                                                                       | Bert Wagner                              | 2018-08-28 | [DEV]       |
 | [Shortchanged with International Money in SQL Server]                                                                   | Bert Wagner                              | 2018-09-25 | [DEV]       |
 | [Understanding database recovery with SQL Server 2016 Extended Events]                                                  | Rajendra Gupta                           | 2016-07-05 | [DBA]       |
+| [SQL Server 2019: Batch Mode on Rowstore]                                                                               | Dmitri Pilugin                           | 2018-10-04 | [DBA],[DEV] |
+| [Using Indexing To Solve Blocking and Deadlocking Issues]                                                               | David Fowler                             | 2019-03-15 | [DBA],[DEV] |
+| [Change collation of existing Azure SQL database]                                                                       | Fonseca Sergio                           | 2018-11-09 | [AZ]        |
+| [Creating Database Maintenance Plans]                                                                                   | Nisarg Upadhyay                          | 2018-11-09 | [DBA]       |
+| [SQL Server Upgrade Checklist]                                                                                          | Mike Walsh                               | 2019-03-07 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1343,3 +1348,8 @@ Articles types:
 [Ignoring NULLs with FIRST_VALUE]:https://bertwagner.com/2018/08/28/ignoring-nulls-with-first-value/
 [Shortchanged with International Money in SQL Server]:https://bertwagner.com/2018/09/25/try-parse-convert-strings-to-numbers/
 [Understanding database recovery with SQL Server 2016 Extended Events]:https://www.mssqltips.com/sqlservertip/4339/understanding-database-recovery-with-sql-server-2016-extended-events/
+[SQL Server 2019: Batch Mode on Rowstore]:http://www.queryprocessor.com/batch-mode-on-row-store/
+[Using Indexing To Solve Blocking and Deadlocking Issues]:https://sqlundercover.com/2019/03/05/using-indexing-to-solve-blocking-and-deadlocking-issues/
+[Change collation of existing Azure SQL database]:https://blogs.msdn.microsoft.com/azuresqldbsupport/2018/11/09/change-collation-of-existing-azure-sql-database/
+[Creating Database Maintenance Plans]:https://codingsight.com/creating-database-maintenance-plans/
+[SQL Server Upgrade Checklist]:https://straightpathsql.com/archives/2019/03/sql-server-upgrade-checklist/
