@@ -688,6 +688,10 @@ Articles types:
 | [Change collation of existing Azure SQL database]                                                                       | Fonseca Sergio                           | 2018-11-09 | [AZ]        |
 | [Creating Database Maintenance Plans]                                                                                   | Nisarg Upadhyay                          | 2018-11-09 | [DBA]       |
 | [SQL Server Upgrade Checklist]                                                                                          | Mike Walsh                               | 2019-03-07 | [DBA]       |
+| [Failing a PowerShell Sql Agent step]                                                                                   | Stuart Moore                             | 2019-03-04 | [PS]        |
+| [The Curse of Cursor Options]                                                                                           | Brent Ozar                               | 2018-11-02 | [DBA],[DEV] |
+| [Accelerated Database Recovery; Instant Rollback and Database Recovery]                                                 | Rajendra Gupta                           | 2019-03-12 | [DBA]       |
+| [Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]                               | Rajendra Gupta                           | 2019-03-21 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1353,3 +1357,7 @@ Articles types:
 [Change collation of existing Azure SQL database]:https://blogs.msdn.microsoft.com/azuresqldbsupport/2018/11/09/change-collation-of-existing-azure-sql-database/
 [Creating Database Maintenance Plans]:https://codingsight.com/creating-database-maintenance-plans/
 [SQL Server Upgrade Checklist]:https://straightpathsql.com/archives/2019/03/sql-server-upgrade-checklist/
+[Failing a PowerShell Sql Agent step]:https://stuart-moore.com/failing-a-powershell-sql-agent-step/
+[The Curse of Cursor Options]:https://www.brentozar.com/archive/2018/11/the-curse-of-cursor-options/
+[Accelerated Database Recovery; Instant Rollback and Database Recovery]:https://www.sqlshack.com/accelerated-database-recovery-instant-rollback-and-database-recovery/
+[Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]:https://www.sqlshack.com/accelerated-database-recovery-and-long-running-transactions-with-transaction-log-growth/
