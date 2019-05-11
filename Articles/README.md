@@ -692,6 +692,10 @@ Articles types:
 | [The Curse of Cursor Options]                                                                                           | Brent Ozar                               | 2018-11-02 | [DBA],[DEV] |
 | [Accelerated Database Recovery; Instant Rollback and Database Recovery]                                                 | Rajendra Gupta                           | 2019-03-12 | [DBA]       |
 | [Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]                               | Rajendra Gupta                           | 2019-03-21 | [DBA]       |
+| [Using docker named volumes to persist databases in SQL Server                                                          | Andrew Pruski                            | 2019-03-21 | [DBA],[DEV] |
+| [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-03-13 | [DBA],[DEV] |
+| [Grouped Concatenation in SQL Server]                                                                                   | Aaron Bertrand                           | 2014-08-06 | [DBA],[DEV] |
+| [Working with tempdb in SQL Server 2005]                                                                                | Microsoft Docs                           | 2010-01-28 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1361,3 +1365,7 @@ Articles types:
 [The Curse of Cursor Options]:https://www.brentozar.com/archive/2018/11/the-curse-of-cursor-options/
 [Accelerated Database Recovery; Instant Rollback and Database Recovery]:https://www.sqlshack.com/accelerated-database-recovery-instant-rollback-and-database-recovery/
 [Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]:https://www.sqlshack.com/accelerated-database-recovery-and-long-running-transactions-with-transaction-log-growth/
+[Using docker named volumes to persist databases in SQL Server]:https://dbafromthecold.com/2019/03/21/using-docker-named-volumes-to-persist-databases-in-sql-server/
+[T-SQL bugs, pitfalls, and best practices – determinism]:https://sqlperformance.com/2019/03/t-sql-queries/bugs-pitfalls-best-practices-determinism
+[Grouped Concatenation in SQL Server]:https://sqlperformance.com/2014/08/t-sql-queries/sql-server-grouped-concatenation
+[Working with tempdb in SQL Server 2005]:https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2005/administrator/cc966545(v%3dtechnet.10)
