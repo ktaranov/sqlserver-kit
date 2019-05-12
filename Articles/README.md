@@ -653,7 +653,8 @@ Articles types:
 | [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA],[DEV] |
 | [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [DBA],[DEV] |
 | [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [DBA],[DEV] |
-| [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2018-02-25 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2019-02-25 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 4]                                                                          | Robert Sheldon                           | 2019-03-26 | [DBA],[DEV] |
 | [Introduction to T-SQL Window Functions]                                                                                | Kathi Kellenberger                       | 2018-07-13 | [DBA],[DEV] |
 | [Intro to Debugging a Memory Dump]                                                                                      | Adam W. Saxton                           | 2012-03-15 | [DBA],[DEV] |
 | [Considering Security with SQL Bulk Insert]                                                                             | Timothy Smith                            | 2019-01-17 | [DBA],[DEV] |
@@ -696,6 +697,9 @@ Articles types:
 | [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-03-13 | [DBA],[DEV] |
 | [Grouped Concatenation in SQL Server]                                                                                   | Aaron Bertrand                           | 2014-08-06 | [DBA],[DEV] |
 | [Working with tempdb in SQL Server 2005]                                                                                | Microsoft Docs                           | 2010-01-28 | [DBA],[DEV] |
+| [SQLskills SQL101: Temporary table misuse]                                                                              | Paul Randal                              | 2017-03-13 | [DBA],[DEV] |
+| [Running SQL Server on Linux on your own laptop]                                                                        | Kevin Chant                              | 2019-03-26 | [DBA],[DEV] |
+| [SSIS and Pentaho – A Quick Comparison]                                                                                 | Koen Verbeeck                            | 2018-10-17 | [SSIS]      |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1327,6 +1331,7 @@ Articles types:
 [Introduction to SQL Server Security — Part 1]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-1/
 [Introduction to SQL Server Security — Part 2]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-2/
 [Introduction to SQL Server Security — Part 3]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-3/
+[Introduction to SQL Server Security — Part 4]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-4/
 [Introduction to T-SQL Window Functions]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/introduction-to-t-sql-window-functions/
 [Intro to Debugging a Memory Dump]:https://blogs.msdn.microsoft.com/psssql/2012/03/15/intro-to-debugging-a-memory-dump/
 [Considering Security with SQL Bulk Insert]:https://www.sqlshack.com/considering-security-with-sql-bulk-insert/
@@ -1369,3 +1374,6 @@ Articles types:
 [T-SQL bugs, pitfalls, and best practices – determinism]:https://sqlperformance.com/2019/03/t-sql-queries/bugs-pitfalls-best-practices-determinism
 [Grouped Concatenation in SQL Server]:https://sqlperformance.com/2014/08/t-sql-queries/sql-server-grouped-concatenation
 [Working with tempdb in SQL Server 2005]:https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2005/administrator/cc966545(v%3dtechnet.10)
+[SQLskills SQL101: Temporary table misuse]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-temporary-table-misuse/
+[Running SQL Server on Linux on your own laptop]:https://www.kevinrchant.com/2019/03/26/running-sql-server-on-linux-on-your-own-laptop/
+[SSIS and Pentaho – A Quick Comparison]:https://sqlkover.com/ssis-and-pentaho-a-quick-comparison/
