@@ -700,6 +700,10 @@ Articles types:
 | [SQLskills SQL101: Temporary table misuse]                                                                              | Paul Randal                              | 2017-03-13 | [DBA],[DEV] |
 | [Running SQL Server on Linux on your own laptop]                                                                        | Kevin Chant                              | 2019-03-26 | [DBA],[DEV] |
 | [SSIS and Pentaho – A Quick Comparison]                                                                                 | Koen Verbeeck                            | 2018-10-17 | [SSIS]      |
+| [WinDbg and SQL Server Fun]                                                                                             | Shane O'Neill                            | 2017-06-14 | [DBA],[DEV] |
+| [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA],[DEV] |
+| [SQL Server: Diagnosing Intermittent Connectivity Issues]                                                               | Mitch Wheat                              | 2019-04-12 | [DBA],[DEV] |
+| [Difference between Identity & Sequence in SQL Server]                                                                  | Ben Richardson                           | 2018-08-15 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1377,3 +1381,7 @@ Articles types:
 [SQLskills SQL101: Temporary table misuse]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-temporary-table-misuse/
 [Running SQL Server on Linux on your own laptop]:https://www.kevinrchant.com/2019/03/26/running-sql-server-on-linux-on-your-own-laptop/
 [SSIS and Pentaho – A Quick Comparison]:https://sqlkover.com/ssis-and-pentaho-a-quick-comparison/
+[WinDbg and SQL Server Fun]:https://blobeater.blog/2017/06/14/windbg-and-sql-server-fun/
+[Certificates, Proxies and Jobs! Oh My!]:https://sqlstudies.com/2016/04/27/certificates-proxies-and-jobs-oh-my/
+[SQL Server: Diagnosing Intermittent Connectivity Issues]:https://mitchwheat.com/2019/04/12/sql-server-diagnosing-intermittent-connectivity-issues/
+[Difference between Identity & Sequence in SQL Server]:https://www.sqlshack.com/difference-between-identity-sequence-in-sql-server/
