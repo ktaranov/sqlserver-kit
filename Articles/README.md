@@ -704,6 +704,10 @@ Articles types:
 | [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA],[DEV] |
 | [SQL Server: Diagnosing Intermittent Connectivity Issues]                                                               | Mitch Wheat                              | 2019-04-12 | [DBA],[DEV] |
 | [Difference between Identity & Sequence in SQL Server]                                                                  | Ben Richardson                           | 2018-08-15 | [DBA],[DEV] |
+| [Does the Rowmodctr Update for Non-Updating Updates?]                                                                   | Brent Ozar                               | 2019-05-20 | [DBA],[DEV] |
+| [An Intro To Data Modeling]                                                                                             | JBOSEMS                                  | 2019-04-12 | [DBA],[DEV] |
+| [On telemetry and other data collected by SQL Server]                                                                   | Aaron Bertrand                           | 2016-04-04 | [DBA],[DEV] |
+| [Purging data with batched deletes]                                                                                     | Andy Mallon                              | 2019-04-03 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1385,3 +1389,7 @@ Articles types:
 [Certificates, Proxies and Jobs! Oh My!]:https://sqlstudies.com/2016/04/27/certificates-proxies-and-jobs-oh-my/
 [SQL Server: Diagnosing Intermittent Connectivity Issues]:https://mitchwheat.com/2019/04/12/sql-server-diagnosing-intermittent-connectivity-issues/
 [Difference between Identity & Sequence in SQL Server]:https://www.sqlshack.com/difference-between-identity-sequence-in-sql-server/
+[Does the Rowmodctr Update for Non-Updating Updates?]:https://www.brentozar.com/archive/2019/05/does-the-rowmodctr-update-for-non-updating-updates/
+[An Intro To Data Modeling]:https://donedifferent.data.blog/2019/04/12/an-intro-to-data-modeling/
+[On telemetry and other data collected by SQL Server]:https://blogs.sentryone.com/aaronbertrand/sql-server-telemetry/
+[Purging data with batched deletes]:https://am2.co/2019/04/purging-data-with-batched-deletes/
