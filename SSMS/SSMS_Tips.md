@@ -55,7 +55,8 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 35. [Vulnerability Assessment in SSMS](#35)
 36. [Import Flat File to SQL Wizard](#36)
 37. [AutoRecover in SSMS](#37)
-38. [Reference](#reference)
+38. [View and query PowerBI .pbix files in SSMS](#38)
+39. [Reference](#reference)
 
 
 **Great thanks to**:
@@ -83,6 +84,8 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
  - Solomon Rutzky ([b](https://sqlquantumleap.com) | [t](https://twitter.com/srutzky))
  - Michelle Haarhues ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/mhaarhues))
+ - Christian Wade ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/_christianWade))
+ - Kellyn Pot’Vin-Gorman ([b](https://dbakevlar.com/) | [t](https://twitter.com/DBAKevlar))
 
 
 <a id="1"></a>
@@ -766,6 +769,30 @@ To change the settings, go to: `Tools -> Options -> Environment -> AutoRecover`.
 More details [here](https://witsociety.wordpress.com/2019/04/11/autorecover-in-ssms/)
 
 ![AutoRecover in SSMS](/SSMS/SSMS_Tips/AutoRecover_in_SSMS.png)
+
+
+<a id="38"></a>
+## View and query PowerBI .pbix files in SSMS
+All Power BI files end with `.pbix`. 
+You can make a copy of the file, (because DBA always like to work from copies vs. the originals) then rename the file from `.pbix` to `.zip`.
+You can then unzip the file and see the base components that make up a Power BI report and visuals:
+
+![Using SSMS with PowerBI](/SSMS/SSMS_Tips/using_ssms_with_powerbi_01.jpg)
+
+While the Power BI report is open, you’ll see what is running using the `netstat -b -n` command from the command prompt as an administrator:
+
+You’ll notice that `pbidesktop.exe` is port `54125`, with multiple child threads.
+You’ll also notice there is an executable also sourced from the `pbidesktop.exe` process called `msmdsrv.exe`.
+That’s the executable for an Analysis Server. Your data model is being run by trimmed down Analysis Server in Power BI.
+If you have an Analysis Server port, you can connect to it with SSMS using the ID for Power BI Desktop.
+In our example above, the ID is 54125 and as the desktop is running on your PC, it would be your `localhost` for the server name.
+Open up SSMS and update the server type to Analysis Server and I type in the following, using my Active Directory login to connect:
+
+You will connect to the trimmed down Analysis Server behind the PBI Desktop report you have running on your screen and have limited interactive options.
+
+![Using SSMS with PowerBI](/SSMS/SSMS_Tips/using_ssms_with_powerbi_02.jpg)
+
+More details [here](https://dbakevlar.com/2019/03/using-ssms-with-power-bi/)
 
 
 <a id="reference"></a>
