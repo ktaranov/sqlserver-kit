@@ -92,7 +92,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 ## Import and Export Settings
 `Tools > Options > Environment > Import and Export Settings`
 
-Default settings (if you need to compare with yours) you can find here: [SSMS settings files]
+Default settings (if you need to compare with yours) you can find here: [SSMS settings files](https://github.com/ktaranov/sqlserver-kit/tree/master/SSMS/SSMS_vssettings)
 
 You can configure so many settings in SSMS and then export it and use on all your computers.
 Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
@@ -222,6 +222,8 @@ By holding down the ALT key as you select a block of text you can control the wi
 Also you can activate multi line mode with `Shift + Alt` keys and using keyboard arrows to format multi line code.
 
 More info and video about this awesome feature in this article: [My Favorite SSMS Shortcut (After Copy/Paste)](https://bertwagner.com/2017/11/28/multiline-edit-block-selection-alt-highlight-trick/) (by Bert Wagner)
+
+![AutoRecover in SSMS](/SSMS/SSMS_Tips/ALT+Arrow.gif)
 
 
 <a id="6"></a>
@@ -777,7 +779,7 @@ All Power BI files end with `.pbix`.
 You can make a copy of the file, (because DBA always like to work from copies vs. the originals) then rename the file from `.pbix` to `.zip`.
 You can then unzip the file and see the base components that make up a Power BI report and visuals:
 
-![Using SSMS with PowerBI](/SSMS/SSMS_Tips/using_ssms_with_powerbi_01.jpg)
+![Using SSMS with PowerBI](/SSMS/SSMS_Tips/38_using_ssms_with_powerbi_01.jpg)
 
 While the Power BI report is open, you’ll see what is running using the `netstat -b -n` command from the command prompt as an administrator:
 
@@ -790,7 +792,7 @@ Open up SSMS and update the server type to Analysis Server and I type in the fol
 
 You will connect to the trimmed down Analysis Server behind the PBI Desktop report you have running on your screen and have limited interactive options.
 
-![Using SSMS with PowerBI](/SSMS/SSMS_Tips/using_ssms_with_powerbi_02.jpg)
+![Using SSMS with PowerBI](/SSMS/SSMS_Tips/38_using_ssms_with_powerbi_02.jpg)
 
 More details [here](https://dbakevlar.com/2019/03/using-ssms-with-power-bi/)
 
