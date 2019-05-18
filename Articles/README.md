@@ -712,6 +712,8 @@ Articles types:
 | [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-04-26 | [DBA],[DEV] |
 | [Understanding the XML description of the Deadlock Graph in SQL Server]                                                 | Minette Steynberg                        | 2016-04-26 | [DBA],[DEV] |
 | [What Is The Difference Between Checkpoint And Lazy Writer]                                                             | Saurabh Sinha                            | 2012-10-01 | [DBA]       |
+| [Efficiently Indexing Long Character Strings]                                                                           | Jon Seigel                               | 2013-07-13 | [DBA],[DEV] |
+| [SQL Server Read-only tables]                                                                                           | Kenneth Fisher                           | 2019-01-21 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1401,3 +1403,5 @@ Articles types:
 [Understanding the graphical representation of the SQL Server Deadlock Graph]:https://www.sqlshack.com/understanding-graphical-representation-sql-server-deadlock-graph/
 [Understanding the XML description of the Deadlock Graph in SQL Server]:https://www.sqlshack.com/understanding-the-xml-description-of-the-deadlock-graph-in-sql-server/
 [What Is The Difference Between Checkpoint And Lazy Writer]:https://saurabhsinhainblogs.blogspot.com/2012/10/interview-question-checkpoint-and-lazy.html?m=1
+[Efficiently Indexing Long Character Strings]:https://voluntarydba.com/2013/07/30/efficiently-indexing-long-character-strings/
+[SQL Server Read-only tables]:https://sqlstudies.com/2019/01/21/read-only-tables/
