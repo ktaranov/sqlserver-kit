@@ -693,7 +693,7 @@ Articles types:
 | [The Curse of Cursor Options]                                                                                           | Brent Ozar                               | 2018-11-02 | [DBA],[DEV] |
 | [Accelerated Database Recovery; Instant Rollback and Database Recovery]                                                 | Rajendra Gupta                           | 2019-03-12 | [DBA]       |
 | [Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]                               | Rajendra Gupta                           | 2019-03-21 | [DBA]       |
-| [Using docker named volumes to persist databases in SQL Server                                                          | Andrew Pruski                            | 2019-03-21 | [DBA],[DEV] |
+| [Using docker named volumes to persist databases in SQL Server]                                                         | Andrew Pruski                            | 2019-03-21 | [DBA],[DEV] |
 | [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-03-13 | [DBA],[DEV] |
 | [Grouped Concatenation in SQL Server]                                                                                   | Aaron Bertrand                           | 2014-08-06 | [DBA],[DEV] |
 | [Working with tempdb in SQL Server 2005]                                                                                | Microsoft Docs                           | 2010-01-28 | [DBA],[DEV] |
