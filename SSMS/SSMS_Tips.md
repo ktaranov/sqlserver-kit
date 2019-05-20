@@ -223,7 +223,9 @@ Also you can activate multi line mode with `Shift + Alt` keys and using keyboard
 
 More info and video about this awesome feature in this article: [My Favorite SSMS Shortcut (After Copy/Paste)](https://bertwagner.com/2017/11/28/multiline-edit-block-selection-alt-highlight-trick/) (by Bert Wagner)
 
-![AutoRecover in SSMS](/SSMS/SSMS_Tips/ALT+Arrow.gif)
+![Selecting a block of text using the ALT Key](/SSMS/SSMS_Tips/05_ALT+Arrow.gif)
+
+![Paste values into a template of commands](/SSMS/SSMS_Tips/05_ALT+PASTE.gif)
 
 
 <a id="6"></a>
