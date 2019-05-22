@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **276** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **277** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -9,7 +9,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {1}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
- - **[IDX]**: Index manager {2}
+ - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {3}
  - **[M]**: Monitoring and alerting Tools {16}
@@ -300,6 +300,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Workbench](#sql-workbench)                                  | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [SQL Workbench]                             | 2018-08-20 | Thomas Kellerer       |            | Yes            | No    |
 | [Valentina Studio](#valentina-studio)                            | MySQL,PostgreSQL,Other        | Linux,Mac | [MS]     | [Valentina Studio]                          | 2018-09-24 | Paradigma Software    |            | Yes            |  $200 |
 | [SQL Plus Dot Net](#sql-plus-dot-net)                            | No                            | No        | [?]      | [SQL Plus Dot Net]                          | ?          | SQL+.NET              |            | No             |     ? |
+| [SQLIndexManager](#sqlindexmanager)                              | No                            | No        | [IDX]    | [SQLIndexManager]                           | 2019-05-19 | Sergey Syrovatchenko  |            | Open Source    | No    |
 
 
 <a id="ssms"></a>
@@ -4291,6 +4292,18 @@ SQL+ is a tool that generates a class library from stored procedures by utilizin
 Does all the ADO stuff like setting up parameters and converting result sets into objects.
 
 
+<a id="sqlindexmanager"></a>
+## SQLIndexManager
+Download page: [SQLIndexManager]<br/>
+Release date: 2019-05-19<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Sergey Syrovatchenko<br/>
+Free version: Yes<br/>
+Price: No
+
+Analyze and fix index fragmentation for SQL Server / Azure
+
+
 [SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
 [bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 [sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
@@ -4569,6 +4582,7 @@ Does all the ADO stuff like setting up parameters and converting result sets int
 [SQL Workbench]:http://www.sql-workbench.eu/
 [Valentina Studio]:https://www.valentina-db.com
 [SQL Plus Dot Net]:https://sqlplusweb.azurewebsites.net
+[SQLIndexManager]:https://github.com/sergeysyrovatchenko/SQLIndexManager
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
