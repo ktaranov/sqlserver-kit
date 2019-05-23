@@ -175,7 +175,7 @@ Articles types:
 | [Downgrading the SQL Server Edition of a Dev Environment]                                                               | Kendra Little                            | 2016-11-15 |             |
 | [Date Math In The WHERE Clause]                                                                                         | Erik Darling                             | 2016-12-01 |             |
 | [Why is This Partitioned Query Slower?]                                                                                 | Kendra Little                            | 2015-09-01 |             |
-| [A Beginner’s Guide to the True Order of SQL Operations]                                                                | JOOQ                                     | 2016-12-09 |             |
+| [A Beginner’s Guide to the True Order of SQL Operations]                                                                | Lukas Eder                               | 2016-12-09 |             |
 | [Logical Query Processing: What It Is And What It Means to You]                                                         | Itzik Ben-Gan                            | 2016-01-15 |             |
 | [Forcing a Parallel Query Execution Plan]                                                                               | Paul White                               | 2011-12-23 |             |
 | [Join Containment Assumption and CE Model Variation]                                                                    | Dmitri Pilugin                           | 2014-05-04 |             |
@@ -419,7 +419,7 @@ Articles types:
 | [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]                                            | Darko Martinović                         | 2017-07-17 | [CLR]       |
 | [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]                                   | Ahmad Yaseen                             | 2017-09-22 | [DBA],[DEV] |
 | [Clustered vs Nonclustered: Index Fundamentals You Need To Know]                                                        | Bert Wagner                              | 2017-09-26 | [DBA],[DEV] |
-| [How to Write Efficient TOP N Queries in SQL]                                                                           | JOOQ                                     | 2017-09-22 | [DEV]       |
+| [How to Write Efficient TOP N Queries in SQL]                                                                           | Lukas Eder                               | 2017-09-22 | [DEV]       |
 | [Checklist: DR Plan Sanity Check]                                                                                       | Robert Davis                             | 2017-09-04 | [DBA]       |
 | [Table level recovery for selected SQL Server tables]                                                                   | Tibor Nagy                               | 2012-11-30 | [DEV]       |
 | [SQL Mirroring, Preserving the Log Chain During Database Migrations]                                                    | SQL Undercover                           | 2017-01-21 | [DBA]       |
@@ -438,12 +438,12 @@ Articles types:
 | [Running PowerShell in a SQL Agent Job]                                                                                 | Derik Hammer                             | 2017-03-04 | [PS]        |
 | [Line-Continuation in T-SQL]                                                                                            | Solomon Rutzky                           | 2017-10-27 | [DEV]       |
 | [SQL Server 2017: Making Backups Great Again!]                                                                          | John Sterrett                            | 2017-10-31 | [DBA],[DEV] |
-| [Say NO to Venn Diagrams When Explaining JOINs]                                                                         | JOOQ                                     | 2016-07-05 | [DBA],[DEV] |
+| [Say NO to Venn Diagrams When Explaining JOINs]                                                                         | Lukas Eder                               | 2016-07-05 | [DBA],[DEV] |
 | [Surprise Delta Stores]                                                                                                 | Joe Obbish                               | 2017-11-07 | [DEV]       |
 | [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]                                           | Denzil Ribeiro                           | 2015-07-08 | [DBA],[DEV] |
 | [The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]                                                          | Kendra Little                            | 2017-11-09 | [DEV]       |
 | [Multiple Output Datasets With R and SQL Server]                                                                        | Kendra Little                            | 2017-11-06 | [DEV],[R]   |
-| [How to Avoid Excessive Sorts in Window Functions]                                                                      | JOOQ                                     | 2017-11-06 | [DEV]       |
+| [How to Avoid Excessive Sorts in Window Functions]                                                                      | Lukas Eder                               | 2017-11-06 | [DEV]       |
 | [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]                                               | Koen Verbeeck                            | 2017-10-03 | [DAX], [XE] |
 | [What impact can different cursor options have?]                                                                        | Aaron Bertrand                           | 2012-09-10 | [DBA],[DEV] |
 | [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA],[DEV] |
@@ -542,7 +542,7 @@ Articles types:
 | [When to use the SELECT…INTO statement]                                                                                 | Phil Factor                              | 2018-03-19 | [DEV]       |
 | [Temp Tables In SSIS]                                                                                                   | Tim Mitchel                              | 2018-05-29 | [SSIS]      |
 | [Changing the Collation of the Instance, the Databases, and All Columns in All User Databases]                          | Solomon Rutzky                           | 2018-06-11 | [DBA]       |
-| [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Jooq                                     | 2017-09-28 | [DBA],[DEV] |
+| [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Lukas Eder                               | 2017-09-28 | [DBA],[DEV] |
 | [Scheduling powershell tasks with sql agent]                                                                            | Chrissy Lemaire                          | 2017-09-26 | [J],[PS]    |
 | [Three ways to track logins using dbatools]                                                                             | Chrissy Lemaire                          | 2018-04-10 | [PS]        |
 | [Impact of Fragmentation on Execution Plans]                                                                            | Jonathan Kehayias                        | 2017-12-18 | [DEV]       |
@@ -626,8 +626,8 @@ Articles types:
 | [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA],[DEV] |
 | [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA],[DEV] |
 | [How to create DACPAC file?]                                                                                            | Kamil Nowinski                           | 2018-10-31 | [DBA],[DEV] |
-| [Find the Next Non-NULL Row in a Series With SQL]                                                                       | JOOq                                     | 2018-09-03 | [DEV]       |
-| [Calculate Percentiles to Learn About Data Set Skew in SQL]                                                             | JOOq                                     | 2019-01-22 | [DEV]       |
+| [Find the Next Non-NULL Row in a Series With SQL]                                                                       | Lukas Eder                               | 2018-09-03 | [DEV]       |
+| [Calculate Percentiles to Learn About Data Set Skew in SQL]                                                             | Lukas Eder                               | 2019-01-22 | [DEV]       |
 | [Comparing multiple rows insert vs single row insert with three data load methods]                                      | Phil Factor                              | 2013-02-21 | [DBA],[DEV] |
 | [The Cause of Every Deadlock in SQL Server]                                                                             | Thomas Larock                            | 2018-09-19 | [DBA],[DEV] |
 | [Deadlock Troubleshooting, Part 1]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA],[DEV] |
@@ -714,6 +714,8 @@ Articles types:
 | [What Is The Difference Between Checkpoint And Lazy Writer]                                                             | Saurabh Sinha                            | 2012-10-01 | [DBA]       |
 | [Efficiently Indexing Long Character Strings]                                                                           | Jon Seigel                               | 2013-07-13 | [DBA],[DEV] |
 | [SQL Server Read-only tables]                                                                                           | Kenneth Fisher                           | 2019-01-21 | [DBA]       |
+| [Slow inserts across a linked server?]                                                                                  | Max Vernon                               | 2019-04-25 | [DBA],[DEV] |
+| [Using IGNORE NULLS With SQL Window Functions to Fill Gaps]                                                             | Lukas Eder                               | 2019-04-24 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1405,3 +1407,5 @@ Articles types:
 [What Is The Difference Between Checkpoint And Lazy Writer]:https://saurabhsinhainblogs.blogspot.com/2012/10/interview-question-checkpoint-and-lazy.html?m=1
 [Efficiently Indexing Long Character Strings]:https://voluntarydba.com/2013/07/30/efficiently-indexing-long-character-strings/
 [SQL Server Read-only tables]:https://sqlstudies.com/2019/01/21/read-only-tables/
+[Slow inserts across a linked server?]:https://www.sqlserverscience.com/performance/slow-inserts-across-linked-server/
+[Using IGNORE NULLS With SQL Window Functions to Fill Gaps]:https://blog.jooq.org/2019/04/24/using-ignore-nulls-with-sql-window-functions-to-fill-gaps/
