@@ -716,6 +716,13 @@ Articles types:
 | [SQL Server Read-only tables]                                                                                           | Kenneth Fisher                           | 2019-01-21 | [DBA]       |
 | [Slow inserts across a linked server?]                                                                                  | Max Vernon                               | 2019-04-25 | [DBA],[DEV] |
 | [Using IGNORE NULLS With SQL Window Functions to Fill Gaps]                                                             | Lukas Eder                               | 2019-04-24 | [DBA],[DEV] |
+| [SQL Server Logical Reads]                                                                                              | Ami Levin                                | 2008-01-01 | [DBA],[DEV] |
+| [Two Words For Faster Scalar Functions]                                                                                 | Bert Wagner                              | 2018-12-04 | [DBA],[DEV] |
+| [How to Get SQL Server Dates and Times Horribly Wrong]                                                                  | Robert Sheldon                           | 2015-05-28 | [DBA],[DEV] |
+| [Diagnosing and Resolving Spinlock Contention on SQL Server]                                                            | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA],[DEV] |
+| [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA],[DEV] |
+| [Advanced Nutanix: SQL Server on Nutanix Best Practices Released!]                                                      | Steven Poitras                           | 2013-11-09 | [DBA]       |
+| [Gaps and Islands Across Date Ranges]                                                                                   | Bert Wagner                              | 2019-03-12 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1409,3 +1416,10 @@ Articles types:
 [SQL Server Read-only tables]:https://sqlstudies.com/2019/01/21/read-only-tables/
 [Slow inserts across a linked server?]:https://www.sqlserverscience.com/performance/slow-inserts-across-linked-server/
 [Using IGNORE NULLS With SQL Window Functions to Fill Gaps]:https://blog.jooq.org/2019/04/24/using-ignore-nulls-with-sql-window-functions-to-fill-gaps/
+[SQL Server Logical Reads]:http://www.sql-server-performance.com/logical-reads/
+[Two Words For Faster Scalar Functions]:https://bertwagner.com/2018/12/04/two-words-for-faster-scalar-functions/
+[How to Get SQL Server Dates and Times Horribly Wrong]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/how-to-get-sql-server-dates-and-times-horribly-wrong/
+[Diagnosing and Resolving Spinlock Contention on SQL Server]:http://download.microsoft.com/download/D/A/A/DAAD63AF-B06F-4F29-AF1D-68A78102ABF4/SQLServerSpinlockContention.pdf
+[Diagnosing and Resolving Latch Contention on SQL Server]:http://download.microsoft.com/download/B/9/E/B9EDF2CD-1DBF-4954-B81E-82522880A2DC/SQLServerLatchContention.pdf
+[Advanced Nutanix: SQL Server on Nutanix Best Practices Released!]:http://stevenpoitras.com/2013/11/advanced-nutanix-sql-server-nutanix-best-practices-released/
+[Gaps and Islands Across Date Ranges]:https://bertwagner.com/2019/03/12/gaps-and-islands/
