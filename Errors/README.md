@@ -194,6 +194,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                           |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                               |
 |      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                           |
+|      35343 | The statement failed. Column '%.*ls' has a data type that cannot participate in a columnstore index.     | [35343_link1][36]                           |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                           |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
@@ -231,6 +232,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [33]:https://curiousaboutdata.com/2019/04/15/temporal-tables-list-of-errors-with-reasons/
 [34]:https://www.sqlserverscience.com/maintenance/update-statistics-failed-statistics-cannot-be-updated-columnstore-index/
 [35]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
+[36]:https://www.kevinrchant.com/2019/05/20/interesting-sql-server-2019-findings-testing-sp_estimate_data_compression_savings/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
