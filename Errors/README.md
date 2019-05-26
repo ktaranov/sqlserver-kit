@@ -146,6 +146,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       5172 | The header for file '%ls' is not a valid database file header. The %ls property is incorrect.            | [5172_link1][29]                            |
 |       5846 | Common language runtime (CLR) execution is not supported under lightweight pooling. Disable one of two … | [5846_link1]                                |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                                |
+|       6348 | Specified collection '%.*ls' cannot be created because it already exists or you do not have permission.  | [6348_link1][36]                            |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                             |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                             |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" indicates that      … | [7357_link1][2], [7357_link2][2]            |
