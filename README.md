@@ -96,7 +96,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 276 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 277 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -232,11 +232,11 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
-   - [2014 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc280407(v=sql.120).aspx)
-   - [2012 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.110).aspx)
-   - [2008 R2 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.105).aspx)
-   - [2008 Backwards Compatibility](https://msdn.microsoft.com/en-us/library/cc707787(v=sql.100).aspx)
-   - [2005 Backwards Compatibility](http://technet.microsoft.com/en-us/library/ms143532(v=sql.90).aspx)
+   - [2014 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/getting-started/backward-compatibility?view=sql-server-2014)
+   - [2012 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/cc707787(v=sql.110))
+   - [2008 R2 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/cc707787(v=sql.105))
+   - [2008 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/cc707787(v=sql.100))
+   - [2005 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2005/ms143532(v=sql.90))
  - SQL Server System Views Map
    - [SQL Server 2008 System Views Map](https://www.microsoft.com/en-us/download/details.aspx?id=9301)
    - [SQL Server 2012 System Views Map](https://www.microsoft.com/en-us/download/details.aspx?id=39083)
@@ -262,10 +262,10 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
    - [Russian SQL Server User Group](https://www.facebook.com/groups/144858492215825/) (900 People, Russian)
-   - [SQLcom.ru telegram chat](https://t.me/sqlcom) (971 People, Russian)
-   - [PowerBI telegram chat](https://t.me/PBI_Rus) (228 People, Russian)
-   - [PostgesSQL telegram chat](https://t.me/pgsql) (2625 People, Russian)
-   - [DBA telegram chat](https://t.me/dba_ru) (1339 People, Russian)
+   - [SQLcom.ru telegram chat](https://t.me/sqlcom) (1110 People, Russian)
+   - [PowerBI telegram chat](https://t.me/PBI_Rus) (295 People, Russian)
+   - [PostgesSQL telegram chat](https://t.me/pgsql) (2823 People, Russian)
+   - [DBA telegram chat](https://t.me/dba_ru) (1389 People, Russian)
  - Open Source Projects <a id="open-source">
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Ola Hallengren's Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -506,7 +506,7 @@ SQL Server:
  - [Largest FREE Microsoft eBook Giveaway!](https://blogs.msdn.microsoft.com/mssmallbiz/2017/07/11/largest-free-microsoft-ebook-giveaway-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepo/)
  - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
  - [OnlineVideoLectures ebooks](http://onlinevideolecture.com/ebooks/?subject=SQL-Server)
- - [Brent Ozar ebooks](http://www.brentozar.com/first-aid/free-database-books-pdfs-download/)
+ - [Brent Ozar ebooks](https://www.brentozar.com/first-aid/)
  - [E-books SQL Server Directory](http://www.e-booksdirectory.com/listing.php?category=569)
  - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
