@@ -143,7 +143,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
 
- - For database objects names in code please use only schema plus object name, do not hardcore server and database name in your code: `dbo.MyTable` is good and NOT `PRODSERVER.PRODDB.dbo.MyTable`.
+ - For database objects names in code please use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and NOT `PRODSERVER.PRODDB.dbo.MyTable`.
    More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/).
  - Delimiters: spaces (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
