@@ -182,7 +182,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU14]                | SQLServer2017-KB4484710-x64.exe                                   | 2019-03-25   | 14.0.3076.1   |      491 | 59015db5853814c7f2ac24cd4722c0eae771829f |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU7]             | SQLServer2016-KB4495256-x64.exe                                   | 2019-05-22   | 13.0.5337.0   |      714 | d02797c06ff36cde40c9cbd812946e0ecb59917c |
+| [SQL Server 2016 SP2 CU7]             | SQLServer2016-KB4495256-x64.exe                                   | 2019-05-22   | 13.0.5337.0   |      714 | f1b206222329d623c55c8fac16851a76b6247df3 |
 | [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
 | [SQL Server 2014 SP3 KB4022619]       | SQLServer2014SP3-KB4022619-x64-ENU.exe                            | 2018-10-30   | 12.0.6024.0   |      791 | a0959d84f72fd9f8a8832ca691efc420050df9de |
 | [SQL Server 2014 SP3 CU3 KB4491539]   | SQLServer2014-KB4491539-x64.exe                                   | 2019-04-16   | 12.0.6259.0   |      656 | d8fc176cd84a2cb1cbafba74c4fcada43151d03e |
@@ -556,7 +556,7 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
-Microsoft SQL Server 2016 (SP2-CU6) (KB4488536) - 13.0.5292.0 (X64)
+Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
    ?
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
