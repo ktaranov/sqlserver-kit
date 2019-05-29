@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **36** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **37** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
@@ -39,6 +39,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Spotlight Tuning Pack](#spotlight-tuning-pack)       | [Spotlight Tuning Pack]       | 2018-06-01   | 2012-2017            | Quest Software Inc   | Yes          |  $180 |
 | [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2018            | Michel Max           | Yes          | No    |
 | [SSMS Schema Folders](#ssms-schema-folders)           | [SSMS Schema Folders]         | 2018-10-06   | 2012-2018            | Nicholas Ross        | Yes          | No    |
+| [Statistics Reporter](#statistics-reporter)           | [Statistics Reporter]         | 2019-04-17   | 2014-2018            | Analytics Bar        | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -636,6 +637,18 @@ This an extension for SQL Server Management Studio 2012, 2014, 2016 and 17.
 It groups sql objects in Object Explorer (tables, views, etc.) into schema folders.
 
 
+<a id="statistics-reporter"></a>
+## Statistics Reporter
+Download page: [Statistics Reporter]<br/>
+Release date: 2019-04-17<br/>
+Support Version: 2014-2018<br/>
+Developer: Analytics Bar<br/>
+Free version: Yes<br/>
+Price: No
+
+Statistics Reporter SSMS Extension is a SQL Server Management Studio Add-in for parsing SET STATISTICS IO, TIME ON into a beautiful report. 
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
@@ -673,6 +686,7 @@ It groups sql objects in Object Explorer (tables, views, etc.) into schema folde
 [Spotlight Tuning Pack]:https://www.spotlightcloud.io/spotlight-cloud-tuning-pack
 [Michel Max - SSMS Tools]:https://sourceforge.net/projects/michelmaxssmstools2017/
 [SSMS Schema Folders]:https://github.com/nicholas-ross/SSMS-Schema-Folders
+[Statistics Reporter]:https://analyticsbar.com/blog/statistics-reporter-ssms-extension/
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
