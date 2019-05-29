@@ -76,7 +76,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)
-    - [SSMS addins](/SSMS/SSMS_Addins.md) (**36 useful free and paid SSMS Addins**)
+    - [SSMS addins](/SSMS/SSMS_Addins.md) (**37 useful free and paid SSMS Addins**)
     - [SSMS Snippets](/SSMS/SSMS_Snippets)
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
     - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
