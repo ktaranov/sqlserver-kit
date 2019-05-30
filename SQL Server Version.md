@@ -499,6 +499,7 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3103.1   | 2017.140.3103.1   | RTM    | COD  | [4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]                 | 2019-05-14   | 2019-03-12 |     1 |      1 |      491 |
 | 14.0.3076.1   | 2017.140.3076.1   | RTM    | CU   | [4484710 Microsoft SQL Server 2017 CU14]                                                                 | 2019-03-25   | 2019-03-12 |    51 |     34 |      491 |
 | 14.0.3049.1   | 2017.140.3049.1   | RTM    | COD  | [4483666 On-demand hotfix update package for SQL Server 2017 CU13]                                       | 2019-01-08   | 2018-12-15 |     3 |      3 |      488 |
 | 14.0.3048.4   | 2017.140.3048.4   | RTM    | CU   | **Withdrawn** [4466404 Microsoft SQL Server 2017 CU13]                                                   | 2018-12-18   | 2018-12-01 |    62 |     50 |      488 |
@@ -528,6 +529,7 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]:https://support.microsoft.com/en-us/help/4494352/security-update-for-sql-server-2017-cu-14-gdr-may-14-2019
 [4484710 Microsoft SQL Server 2017 CU14]:https://support.microsoft.com/help/4484710
 [4483666 On-demand hotfix update package for SQL Server 2017 CU13]:https://support.microsoft.com/help/4483666
 [4466404 Microsoft SQL Server 2017 CU13]:https://support.microsoft.com/help/4466404
