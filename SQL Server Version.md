@@ -130,7 +130,7 @@ Profits:
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 CTP 2.5]                                                | 15.0.1500.28                                 | 2019-04-24                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
-| 2017    | [Install 2017 RTM] then [CU14 KB4484710]                              | 14.0.1000.169<br/>14.0.3076.1                | 2017-10-02<br/>2019-03-25                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU15 KB4498951]                              | 14.0.1000.169<br/>14.0.3162.1                | 2017-10-02<br/>2019-05-23                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU7 KB4495256]                               | 13.0.5026.0<br/>13.0.5337.0                  | 2018-04-24<br/>2019-05-22                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU3 KB4491539] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6259.0  | 2016-07-11<br/>2018-10-30<br/>2019-04-16 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]         | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -141,7 +141,7 @@ Profits:
 
 [Install 2019 CTP 2.5]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[CU14 KB4484710]:https://support.microsoft.com/help/4484710
+[CU15 KB4498951]:https://support.microsoft.com/help/4498951
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU7 KB4495256]:https://support.microsoft.com/help/4495256
 [Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
@@ -180,7 +180,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2019]                     | SQLServer2019CTP2.5-x64-ENU.iso                                   | 2019-04-23   | 15.0.1500.28  |     1340 | ad123254111107448f96999ce53797ff9bad9868 |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 CU14]                | SQLServer2017-KB4484710-x64.exe                                   | 2019-03-25   | 14.0.3076.1   |      491 | 59015db5853814c7f2ac24cd4722c0eae771829f |
+| [SQL Server 2017 CU15]                | SQLServer2017-KB4498951-x64.exe                                   | 2019-05-23   | 14.0.3162.1   |      528 | b143d28a48204eb6ebab62394ce45df53d73f286 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CU7]             | SQLServer2016-KB4495256-x64.exe                                   | 2019-05-22   | 13.0.5337.0   |      714 | f1b206222329d623c55c8fac16851a76b6247df3 |
 | [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
@@ -200,7 +200,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 [SQL Server 2019]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 CU14]:http://download.microsoft.com/download/4/3/9/439277DD-1041-48F8-A5E5-FA6493E44BC5/SQLServer2017-KB4483666-x64.exe
+[SQL Server 2017 CU15]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4498951-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU7]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4495256-x64.exe
@@ -486,8 +486,8 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU14) (KB4484710) - 14.0.3076.1 (X64)
-   Mar 12 2019 19:29:19
+Microsoft SQL Server 2017 (RTM-CU15) (KB4498951) - 14.0.3162.1 (X64)
+   May 15 2019 19:14:30
    Copyright (C) 2017 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
@@ -499,7 +499,8 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3103.1   | 2017.140.3103.1   | RTM    | COD  | [4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]                 | 2019-05-14   | 2019-03-12 |     1 |      1 |      491 |
+| 14.0.3162.1   | 2017.140.3162.1   | RTM    | CU   | **Latest CU** [4498951 Microsoft SQL Server 2017 CU15]                                                   | 2019-05-23   | 2019-05- |    52 |     45 |      528 |
+| 14.0.3103.1   | 2017.140.3103.1   | RTM    | COD  | [4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]                 | 2019-05-14   | 2019-03-23 |     1 |      1 |      491 |
 | 14.0.3076.1   | 2017.140.3076.1   | RTM    | CU   | [4484710 Microsoft SQL Server 2017 CU14]                                                                 | 2019-03-25   | 2019-03-12 |    51 |     34 |      491 |
 | 14.0.3049.1   | 2017.140.3049.1   | RTM    | COD  | [4483666 On-demand hotfix update package for SQL Server 2017 CU13]                                       | 2019-01-08   | 2018-12-15 |     3 |      3 |      488 |
 | 14.0.3048.4   | 2017.140.3048.4   | RTM    | CU   | **Withdrawn** [4466404 Microsoft SQL Server 2017 CU13]                                                   | 2018-12-18   | 2018-12-01 |    62 |     50 |      488 |
@@ -529,7 +530,8 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
-[4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]:https://support.microsoft.com/en-us/help/4494352/security-update-for-sql-server-2017-cu-14-gdr-may-14-2019
+[4498951 Microsoft SQL Server 2017 CU15]:https://support.microsoft.com/help/4498951/
+[4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]:https://support.microsoft.com/help/4494352
 [4484710 Microsoft SQL Server 2017 CU14]:https://support.microsoft.com/help/4484710
 [4483666 On-demand hotfix update package for SQL Server 2017 CU13]:https://support.microsoft.com/help/4483666
 [4466404 Microsoft SQL Server 2017 CU13]:https://support.microsoft.com/help/4466404
