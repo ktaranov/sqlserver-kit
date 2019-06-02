@@ -336,7 +336,6 @@ Articles types:
 | [Properly Persisted Computed Columns]                                                                                   | Paul White                               | 2017-05-25 | [DEV]       |
 | [A SQL Server DBA myth a day: (17/30) page checksums]                                                                   | Paul Randal                              | 2010-04-17 | [DBA]       |
 | [What are different ways to replace ISNULL() in a WHERE clause that uses only literal values?]                          | Eric Darling                             | 2017-05-27 | [DEV]       |
-| [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DEV]       |
 | [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]                                                  | Prashanth Jayaram                        | 2017-04-18 | [DBA],[DEV] |
 | [SQL Server Mysteries: The Case of the Not 100% RESTORE…]                                                               | Bob Ward                                 | 2017-04-21 | [DBA]       |
 | [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]                               | Drew Furgiuele                           | 2017-04-11 | [DBA]       |
@@ -1037,7 +1036,6 @@ Articles types:
 [Properly Persisted Computed Columns]:https://sqlperformance.com/2017/05/sql-plan/properly-persisted-computed-columns
 [A SQL Server DBA myth a day: (17/30) page checksums]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1730-page-checksums/
 [What are different ways to replace ISNULL() in a WHERE clause that uses only literal values?]:https://dba.stackexchange.com/questions/168276/what-are-different-ways-to-replace-isnull-in-a-where-clause-that-uses-only-lit
-[Weaning yourself off of SQL Profiler (Part 1)]:http://blog.waynesheffield.com/wayne/archive/2017/04/weaning-yourself-off-sql-profiler/
 [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]:https://www.sqlshack.com/sql-server-2016-enhancements-truncate-table-table-partitioning
 [SQL Server Mysteries: The Case of the Not 100% RESTORE…]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-mysteries-the-case-of-the-not-100-restore/
 [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]:http://port1433.com/2017/04/11/transactional-replication-and-stored-procedure-execution-silver-bullet-or-poison-pill/

@@ -81,8 +81,6 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SSMS Shortcuts](/SSMS/SSMS_Shortcuts.md) (**More than 300 Shortcuts**)
     - [SSMS Tips](/SSMS/SSMS_Tips.md) (**Complete guide about hidden gems of SSMS**)
  - [Stored Procedure](/Stored_Procedure)
-   - [sp_DBPermissions](/Stored_Procedure/dbo.sp_DBPermissions.sql) (by Kenneth Fisher)
-   - [sp_SrvPermissions](/Stored_Procedure/dbo.sp_SrvPermissions.sql) (by Kenneth Fisher)
    - [sp_RestoreGene](/Stored_Procedure/dbo.sp_RestoreGene.sql) (by Paul Brewer)
    - [usp_who5](/Stored_Procedure/dbo.usp_who5.sql) (by Sean Smith)
    - [usp_String_Search](/Stored_Procedure/dbo.usp_String_Search.sql) (by Sean Smith)
@@ -373,6 +371,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
     - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
     - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
+    - [sp_SrvPermissions - stored procedure for list Server permissions](https://github.com/sqlstudent144/SQL-Server-Scripts/blob/master/sp_SrvPermissions.sql) (by Kenneth Fisher)
+    - [sp_DBPermissions - stored procedure for list database permissions](https://github.com/sqlstudent144/SQL-Server-Scripts/blob/master/sp_DBPermissions.sql) (by Kenneth Fisher)
 
 **[⬆ back to top](#table-of-contents)**
 

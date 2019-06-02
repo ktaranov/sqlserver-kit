@@ -43,12 +43,6 @@ Original link: http://www.sqlshack.com/managing-untrusted-foreign-keys/<br/>
 Tested on SQL Server version: 2008/2012/2014
 
 
-## [sp_SrvPermissions](sp_SrvPermissions.sql)
-Author: Kenneth Fisher<br/>
-Original link: http://sqlstudies.com/free-scripts/sp_srvpermissions/<br/>
-Tested on SQL Server version: 2012
-
-
 ## [sp_capture_login_auth](sp_capture_login_auth.sql)
 Author: Unknown<br/>
 Original link: Unknown<br/>
