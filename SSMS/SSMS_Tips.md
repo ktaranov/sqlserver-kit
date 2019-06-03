@@ -87,6 +87,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
  - Michelle Haarhues ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/mhaarhues))
  - Christian Wade ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/_christianWade))
  - Kellyn Pot’Vin-Gorman ([b](https://dbakevlar.com/) | [t](https://twitter.com/DBAKevlar))
+ - Kevin Feasel ([b](https://36chambers.wordpress.com) | [t](https://twitter.com/feaselkl))
 
 
 <a id="1"></a>
@@ -175,7 +176,6 @@ For another 9 shortcuts my recommendation awesome open source Brent Ozar teams p
 | <kbd>Ctrl + 0</kbd>     | [sp_foreachdb]       |
 
 Also recommended:
- - [sp_BlitzRS]
  - [sp_DatabaseRestore]
  - [usp_BulkUpload]
 
@@ -196,6 +196,40 @@ Also recommended:
 [sp_foreachdb]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_foreachdb.sql
 [usp_BulkUpload]:https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/usp_BulkUpload.sql
 
+### Some useful shortcuts for `sp_WhoIsActive from Kevin Feasel
+More details [here](https://36chambers.wordpress.com/2019/04/02/whoisactive-in-ssms/)
+
+What’s Going On shortcut?
+`EXEC sp_whoisactive @get_full_inner_text = 1, @get_outer_command = 1, @find_block_leaders = 1, @get_task_info = 2, @get_transaction_info = 1, @get_plans = 0, @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]', @sort_order = '[session_id]';`
+
+And here it is in a little bit nicer of a format so we can cover it:
+```sql
+EXEC sp_whoisactive
+    @get_full_inner_text = 1,
+    @get_outer_command = 1,
+    @find_block_leaders = 1,
+    @get_task_info = 2,
+    @get_transaction_info = 1,
+    @get_plans = 0,
+    @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]',
+    @sort_order = '[session_id]';
+```
+
+When you need to get execution plans, that’s when I break out Ctrl+4. Here is the one-liner:
+`EXEC sp_whoisactive @get_full_inner_text = 1, @get_outer_command = 1, @find_block_leaders = 1, @get_task_info = 2, @get_transaction_info = 1, @get_plans = 1, @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]', @sort_order = '[session_id]';`
+
+Formatted:
+```
+EXEC sp_whoisactive
+    @get_full_inner_text = 1,
+    @get_outer_command = 1,
+    @find_block_leaders = 1,
+    @get_task_info = 2,
+    @get_transaction_info = 1,
+    @get_plans = 1,
+    @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]',
+    @sort_order = '[session_id]';
+```
 
 <a id="4"></a>
 ## SSMS Scripting Option
