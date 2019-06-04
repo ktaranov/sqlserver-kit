@@ -190,8 +190,8 @@ GO
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
  - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server))
  - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
- - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016)
- - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016)
+ - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016 and Query Store enabled)
+ - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016 and Query Store enabled)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
@@ -697,6 +697,7 @@ When you disable this process, the deleted record is not purged. Therefore, the 
 This behavior affects space consumption and the performance of scan operations. <br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
+Link: [Let’s talk about trace flags]<br />
 Scope: global or session
 
 
@@ -848,6 +849,7 @@ Trace flag 834 improves performance by increasing the efficiency of the translat
 Link: [KB920093]<br />
 Link: https://support.microsoft.com/help/3210239<br />
 Link: [Docs Trace Flags]<br />
+Link: [Let’s talk about trace flags]<br />
 Scope: global only
 
 
@@ -1917,8 +1919,7 @@ Scope: global only
 
 <a id="2550"></a>
 #### Trace Flag: 2550
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
@@ -1926,13 +1927,13 @@ Link: [KB917825]
 #### Trace Flag: 2551
 Function: Produces a filtered memory dump<br />
 Link: [KB917825]<br />
-Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server-is-terminating-because-of-fatal-exception-c0150014
+Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server-is-terminating-because-of-fatal-exception-c0150014<br />
+Link: [Let’s talk about trace flags]
 
 
 <a id="2552"></a>
 #### Trace Flag: 2552
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
@@ -2948,6 +2949,7 @@ Link: https://support.microsoft.com/help/974006/<br />
 Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-query_optimizer_hotfixes-in-sql-server-2016/<br />
 Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
 Link: http://www.sqlservergeeks.com/sql-server-2016-database-scoped-configuration-and-trace-flag-4199/<br />
+Link: [Let’s talk about trace flags]<br />
 Scope: global or session or query
 
 
@@ -3325,6 +3327,7 @@ Function: Enables asynchronous load of Query Store.<br />
 Note: Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).<br />
 Link: [Docs Trace Flags]<br />
 Link: [Query Store Trace Flags]<br />
+Link: [Let’s talk about trace flags]<br />
 Scope: global only
 
 
@@ -5016,3 +5019,4 @@ Scope: ?
 [2628]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-2000-to-2999
 [8152]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-8000-to-8999
 [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]:http://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-trace_6.html
+[Let’s talk about trace flags]:https://blogs.msdn.microsoft.com/sql_server_team/lets-talk-about-trace-flags/
