@@ -1,7 +1,7 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: April 11, 2019
+-- Last Modified: June 3, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -84,7 +84,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --															12.0.4502		SP1 CU11		2/21/2017				12.0.5540		SP2 CU4			 2/21/2017
 --															12.0.4511		SP1 CU12        4/17/2017				12.0.5546		SP2 CU5			 4/17/2017
 --															12.0.4522		SP1	CU13		7/17/2017				12.0.5552		SP2 CU6			 7/17/2017
---																													12.0.5556		SP2 CU7			 8/28/2017
+--																																																								12.0.5556		SP2 CU7			 8/28/2017
 --																													12.0.5557		SP2 CU8			10/16/2017
 --																													12.0.5563		SP2 CU9			12/18/2017
 --																													12.0.5571		SP2 CU10		 1/16/2018
@@ -95,6 +95,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																																										12.0.6024	SP3 RTM		10/30/2018
 --																													12.0.5605		SP2 CU15		12/12/2018 ---->	12.0.6205	SP3 CU1	    12/12/2018
 --																													12.0.5626		SP2 CU16		 2/19/2019 ---->    12.0.6214	SP3 CU2      2/19/2019
+--																													12.0.5632		SP2 CU17		 4/16/2019 ---->    12.0.6259   SP3 CU3		 4/16/2019
 
 
 
@@ -601,9 +602,9 @@ EXEC sys.xp_readerrorlog 0, 1, N'The tempdb database has';
 -- File names and paths for all user and system databases on instance  (Query 26) (Database Filenames and Paths)
 SELECT DB_NAME([database_id]) AS [Database Name], 
        [file_id], [name], physical_name, [type_desc], state_desc,
-	   is_percent_growth, growth,
+	   is_percent_growth, growth, 
 	   CONVERT(bigint, growth/128.0) AS [Growth in MB], 
-       CONVERT(bigint, size/128.0) AS [Total Size in MB]
+       CONVERT(bigint, size/128.0) AS [Total Size in MB], max_size
 FROM sys.master_files WITH (NOLOCK)
 ORDER BY DB_NAME([database_id]), [file_id] OPTION (RECOMPILE);
 ------
@@ -1123,7 +1124,8 @@ ORDER BY qs.total_worker_time DESC OPTION (RECOMPILE);
 
 
 -- Page Life Expectancy (PLE) value for each NUMA node in current instance  (Query 44) (PLE by NUMA Node)
-SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], instance_name, cntr_value AS [Page Life Expectancy]
+SELECT @@SERVERNAME AS [Server Name], RTRIM([object_name]) AS [Object Name], 
+       instance_name, cntr_value AS [Page Life Expectancy]
 FROM sys.dm_os_performance_counters WITH (NOLOCK)
 WHERE [object_name] LIKE N'%Buffer Node%' -- Handles named instances
 AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
@@ -1482,7 +1484,9 @@ ORDER BY [Avg IO] DESC OPTION (RECOMPILE);
 
 
 -- Possible Bad NC Indexes (writes > reads)  (Query 62) (Bad NC Indexes)
-SELECT OBJECT_NAME(s.[object_id]) AS [Table Name], i.name AS [Index Name], i.index_id, 
+SELECT SCHEMA_NAME(o.[schema_id]) AS [Schema Name], 
+OBJECT_NAME(s.[object_id]) AS [Table Name],
+i.name AS [Index Name], i.index_id, 
 i.is_disabled, i.is_hypothetical, i.has_filter, i.fill_factor,
 s.user_updates AS [Total Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads],
 s.user_updates - (s.user_seeks + s.user_scans + s.user_lookups) AS [Difference]
@@ -1490,6 +1494,8 @@ FROM sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
 INNER JOIN sys.indexes AS i WITH (NOLOCK)
 ON s.[object_id] = i.[object_id]
 AND i.index_id = s.index_id
+INNER JOIN sys.objects AS o WITH (NOLOCK)
+ON i.[object_id] = o.[object_id]
 WHERE OBJECTPROPERTY(s.[object_id],'IsUserTable') = 1
 AND s.database_id = DB_ID()
 AND s.user_updates > (s.user_seeks + s.user_scans + s.user_lookups)
@@ -1546,7 +1552,8 @@ ORDER BY cp.usecounts DESC OPTION (RECOMPILE);
 
 -- Breaks down buffers used by current database by object (table, index) in the buffer cache  (Query 64) (Buffer Usage)
 -- Note: This query could take some time on a busy instance
-SELECT OBJECT_NAME(p.[object_id]) AS [Object Name], p.index_id, 
+SELECT SCHEMA_NAME(o.Schema_ID) AS [Schema Name],
+OBJECT_NAME(p.[object_id]) AS [Object Name], p.index_id, 
 CAST(COUNT(*)/128.0 AS DECIMAL(10, 2)) AS [Buffer size(MB)],  
 COUNT(*) AS [BufferCount], p.[Rows] AS [Row Count],
 p.data_compression_desc AS [Compression Type]
@@ -1555,12 +1562,14 @@ INNER JOIN sys.dm_os_buffer_descriptors AS b WITH (NOLOCK)
 ON a.allocation_unit_id = b.allocation_unit_id
 INNER JOIN sys.partitions AS p WITH (NOLOCK)
 ON a.container_id = p.hobt_id
+INNER JOIN sys.objects AS o WITH (NOLOCK)
+ON p.object_id = o.object_id
 WHERE b.database_id = CONVERT(int, DB_ID())
 AND p.[object_id] > 100
 AND OBJECT_NAME(p.[object_id]) NOT LIKE N'plan_%'
 AND OBJECT_NAME(p.[object_id]) NOT LIKE N'sys%'
 AND OBJECT_NAME(p.[object_id]) NOT LIKE N'xml_index_nodes%'
-GROUP BY p.[object_id], p.index_id, p.data_compression_desc, p.[Rows]
+GROUP BY o.Schema_ID, p.[object_id], p.index_id, p.data_compression_desc, p.[Rows]
 ORDER BY [BufferCount] DESC OPTION (RECOMPILE);
 ------
 
