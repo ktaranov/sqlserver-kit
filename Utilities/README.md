@@ -24,11 +24,11 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2018-12-21 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-04-24 | Microsoft             |            | Yes            | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
-| [Azure Data Studio](#ads)                                        | No                            | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2018-12-19 | Microsoft             |            | Yes            | No    |
+| [Azure Data Studio](#ads)                                        | No                            | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-05-08 | Microsoft             | [MIT]      | Open Source    | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [?]      | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
@@ -160,7 +160,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Trigger](#apexsql-trigger)                              | No                            | No        | [?]      | [ApexSQL Trigger]                           | 2017-06-01 | ApexSQL               |            | No             | $1999 |
 | [ApexSQL Trigger Veiwer](#apexsql-trigger-viewer)                | No                            | No        | [?]      | [ApexSQL Trigger Viewer]                    | 2017-06-01 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Snapshot Utility](#apexsql-snapshot-utility)            | No                            | No        | [?]      | [ApexSQL Snapshot Utility]                  | 2016-01-12 | ApexSQL               |            | Yes            | No    |
-| [ApexSQL Model](#apexsql-model)                                  | No                            | No        | [DA]     | [ApexSQL Model]                             | 2018-09-10 | ApexSQL               |            | No             |  $399 |
+| [ApexSQL Model](#apexsql-model)                                  | No                            | No        | [DA]     | [ApexSQL Model]                             | 2019-05-22 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Analyze](#apexsql-analyze)                              | No                            | No        | [?]      | [ApexSQL Analyze]                           | 2017-12-13 | ApexSQL               |            | No             |  $299 |
 | [ApexSQL BI Monitor](#apexsql-bi-monitor)                        | No                            | No        | [BI],[M] | [ApexSQL BI Monitor]                        | 2018-05-18 | ApexSQL               |            | No             |  $499 |
 | [ApexSQL VM Monitor](#apexsql-vm-monitor)                        | No                            | No        | [M]      | [ApexSQL VM Monitor]                        | 2018-05-09 | ApexSQL               |            | No             |  $999 |
@@ -367,8 +367,8 @@ Interactive command line query tool for SQL Server.
 <a id="ads"></a>
 ## Azure Data Studio
 Download page: [Azure Data Studio]<br/>
-Release date: 2018-12-19<br/>
-Support Version: 2008-2017/Azure<br/>
+Release date: 2019-05-18<br/>
+Support Version: 2008-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
@@ -2320,11 +2320,11 @@ Utility to create a lightweight 'snapshot' of a database schema, that can be use
 ## ApexSQL Model
 <a id="apexsql-model"></a>
 Download page: [ApexSQL Model]<br/>
-Release date: 2018-10-10<br/>
-Support Version: 2008-2017<br/>
+Release date: 2019-05-22<br/>
+Support Version: 2008-2019<br/>
 Author: ApexSQL<br/>
 Free version: No<br/>
-Price: $399
+Price: No
 
 Create database model diagrams and synchronize changes with existing databases.
  - Forward and reverse engineer

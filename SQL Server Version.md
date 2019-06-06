@@ -562,7 +562,7 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 Developer Edition on Windows:
 ```
 Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
-   ?
+   May 16 2019 02:24:21
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
