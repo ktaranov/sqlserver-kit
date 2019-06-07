@@ -321,6 +321,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [sql2xls - SQL to Excel Export Tool](https://github.com/bornsql/sql2xls) (by Randolph West)
     - [azureblobstoragesync - Backup any version of your on-premises SQL Server database to a network share or Azure Blob Storage and restore it too](https://github.com/bornsql/azureblobstoragesync) (by Randolph West)
     - [sql_profiler - Microsoft SQL-Server Profiler (command-line) for Linux/Mac/Windows](https://github.com/ststeiger/sql_profiler) (by Stefan Steiger)
+    - [dbops - Powershell module that provides continuous database deployments on any scale](https://github.com/sqlcollaborative/dbops) (by Kirill Kravtsov)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)

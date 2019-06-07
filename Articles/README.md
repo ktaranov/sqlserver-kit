@@ -303,7 +303,7 @@ Articles types:
 | [Hiding tables in SSMS Object Explorer]                                                                                 | Kenneth Fisher                           | 2017-04-03 | [DEV]       |
 | [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-03-21 | [DBA]       |
 | [Generating Plots Automatically From PowerShell and SQL Server Using Gnuplot]                                           | Phil Factor                              | 2017-03-27 | [DEV]       |
-| [How to Benchmark Alternative SQL Queries to Find the Fastest Query]                                                    | Luka Seder                               | 2017-03-29 | [DEV]       |
+| [How to Benchmark Alternative SQL Queries to Find the Fastest Query]                                                    | Luka Seder                               | 2017-03-29 | [BENCH]     |
 | [Checking for Strange Client Settings with sys.dm_exec_sessions]                                                        | Brent Ozar                               | 2017-03-31 | [DEV]       |
 | [Decrypting Insert Query Plans]                                                                                         | Eric Darling                             | 2017-03-30 | [DEV]       |
 | [SQLskills SQL101: Partitioning]                                                                                        | Kimberly Tripp                           | 2017-03-27 | [DBA]       |
@@ -722,6 +722,15 @@ Articles types:
 | [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA],[DEV] |
 | [Advanced Nutanix: SQL Server on Nutanix Best Practices Released!]                                                      | Steven Poitras                           | 2013-11-09 | [DBA]       |
 | [Gaps and Islands Across Date Ranges]                                                                                   | Bert Wagner                              | 2019-03-12 | [DBA]       |
+| [NOT NULL Persisted Computed Columns (And What They Allow)]                                                             | Louis Davidson                           | 2019-06-01 | [DBA],[DEV] |
+| [How many ways are there to sort GUIDs? How much time do you have?]                                                     | Raymond Chen                             | 2019-04-26 | [DBA],[DEV] |
+| [How do I force a SQL Login to change it’s password on next login]                                                      | Kenneth Fisher                           | 2019-06-05 | [DBA]       |
+| [SQL Server Performance Benchmarking with Patterns]                                                                     | Paul Brewer                              | 2017-10-19 | [BENCH]     |
+| [SQL Server function to convert integer date to datetime format]                                                        | Tim Ford                                 | 2019-05-24 | [DBA],[DEV] |
+| [Storing Utc Is Not A Silver Bullet]                                                                                    | Jon Skeet                                | 2019-03-27 | [DBA],[DEV] |
+| [Logical Query Processing Part 8 : SELECT and ORDER BY]                                                                 | Itzik Ben-Gan                            | 2016-11-15 | [DBA],[DEV] |
+| [SQL Server Common Table Expression vs Temp Table]                                                                      | Rick Dobson                              | 2019-05-22 | [DBA],[DEV] |
+| [Which Query Used The Most Cpu? Implementing Extended Events]                                                           | Grant Fritchey                           | 2019-06-03 | [XE]        |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1421,3 +1430,12 @@ Articles types:
 [Diagnosing and Resolving Latch Contention on SQL Server]:http://download.microsoft.com/download/B/9/E/B9EDF2CD-1DBF-4954-B81E-82522880A2DC/SQLServerLatchContention.pdf
 [Advanced Nutanix: SQL Server on Nutanix Best Practices Released!]:http://stevenpoitras.com/2013/11/advanced-nutanix-sql-server-nutanix-best-practices-released/
 [Gaps and Islands Across Date Ranges]:https://bertwagner.com/2019/03/12/gaps-and-islands/
+[NOT NULL Persisted Computed Columns (And What They Allow)]:https://www.red-gate.com/simple-talk/blogs/not-null-persisted-computed-columns-and-what-they-allow/
+[How many ways are there to sort GUIDs? How much time do you have?]:https://devblogs.microsoft.com/oldnewthing/20190426-00/?p=102450
+[How do I force a SQL Login to change it’s password on next login]:https://sqlstudies.com/2019/06/05/how-do-i-force-a-sql-login-to-change-its-password-on-next-login/
+[SQL Server Performance Benchmarking with Patterns]:https://www.sqlservercentral.com/articles/sql-server-performance-benchmarking-with-patterns
+[SQL Server function to convert integer date to datetime format]:https://www.mssqltips.com/sqlservertip/1712/sql-server-function-to-convert-integer-date-to-datetime-format/
+[Storing Utc Is Not A Silver Bullet]:https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/
+[Logical Query Processing Part 8 : SELECT and ORDER BY]:https://www.itprotoday.com/sql-server/logical-query-processing-part-8-select-and-order
+[SQL Server Common Table Expression vs Temp Table]:https://www.mssqltips.com/sqlservertip/6040/sql-server-common-table-expression-vs-temp-table/
+[Which Query Used The Most Cpu? Implementing Extended Events]:https://www.scarydba.com/2019/06/03/which-query-used-the-most-cpu-implementing-extended-events/
