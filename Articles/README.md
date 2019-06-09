@@ -731,6 +731,15 @@ Articles types:
 | [Logical Query Processing Part 8 : SELECT and ORDER BY]                                                                 | Itzik Ben-Gan                            | 2016-11-15 | [DBA],[DEV] |
 | [SQL Server Common Table Expression vs Temp Table]                                                                      | Rick Dobson                              | 2019-05-22 | [DBA],[DEV] |
 | [Which Query Used The Most Cpu? Implementing Extended Events]                                                           | Grant Fritchey                           | 2019-06-03 | [XE]        |
+| [SQL Server Plan Cache Limits]                                                                                          | Erin Stellato                            | 2019-05-28 | [DBA]       |
+| [SQL Server and ReFS: Part 1 – DBCC and In Memory OLTP]                                                                 | swasheck                                 | 2014-11-11 | [DBA]       |
+| [SQL Server and ReFS: Part 2 – FIO Benchmarking NTFS vs. ReFS]                                                          | swasheck                                 | 2014-12-18 | [DBA]       |
+| [Why Rolling back inserts with Identity columns is a bad idea]                                                          | Adrian Buckman                           | 2019-04-11 | [DBA],[DEV] |
+| [What’s Better, CTEs or Temp Tables?]                                                                                   | Brent Ozar                               | 2019-06-06 | [DBA],[DEV] |
+| [The Difference Between SQL’s JOIN .. ON Clause and the Where Clause]                                                   | Lukas Eder                               | 2019-04-09 | [DBA],[DEV] |
+| [My IT department installed an antivirus with SQL Server]                                                               | Randolph West                            | 2019-06-05 | [DBA]       |
+| [An Experiment with Deadlocks - ROWLOCK hint myth]                                                                      | Jason Brimhall                           | 2019-03-25 | [DBA],[DEV] |
+| [Adding a New Transaction Log File when the Existing Log is Full]                                                       | Max Vernon                               | 2019-03-19 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1439,3 +1448,12 @@ Articles types:
 [Logical Query Processing Part 8 : SELECT and ORDER BY]:https://www.itprotoday.com/sql-server/logical-query-processing-part-8-select-and-order
 [SQL Server Common Table Expression vs Temp Table]:https://www.mssqltips.com/sqlservertip/6040/sql-server-common-table-expression-vs-temp-table/
 [Which Query Used The Most Cpu? Implementing Extended Events]:https://www.scarydba.com/2019/06/03/which-query-used-the-most-cpu-implementing-extended-events/
+[SQL Server Plan Cache Limits]:https://www.sqlskills.com/blogs/erin/sql-server-plan-cache-limits/
+[SQL Server and ReFS: Part 1 – DBCC and In Memory OLTP]:https://swasheck.wordpress.com/2014/11/11/sql-server-and-refs-part-1-dbcc-and-in-memory-oltp/
+[SQL Server and ReFS: Part 2 – FIO Benchmarking NTFS vs. ReFS]:https://swasheck.wordpress.com/2014/12/18/sql-server-and-refs-part-2-fio-benchmarking-ntfs-vs-refs/
+[Why Rolling back inserts with Identity columns is a bad idea]:https://sqlundercover.com/2019/04/11/rolling-back-inserts-with-identity-columns/
+[What’s Better, CTEs or Temp Tables?]:https://www.brentozar.com/archive/2019/06/whats-better-ctes-or-temp-tables/
+[The Difference Between SQL’s JOIN .. ON Clause and the Where Clause]:https://blog.jooq.org/2019/04/09/the-difference-between-sqls-join-on-clause-and-the-where-clause/
+[My IT department installed an antivirus with SQL Server]:https://bornsql.ca/blog/my-it-department-installed-an-antivirus-with-sql-server/
+[An Experiment with Deadlocks - ROWLOCK hint myth]:http://jasonbrimhall.info/2019/03/25/an-experiment-with-deadlocks/
+[Adding a New Transaction Log File when the Existing Log is Full]:https://www.sqlserverscience.com/internals/adding-new-transaction-log-file-when-existing-log-full/

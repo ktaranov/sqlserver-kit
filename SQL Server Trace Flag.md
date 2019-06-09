@@ -351,8 +351,9 @@ Link: https://support.microsoft.com/help/926292
 #### Trace Flag: 174
 Function: Increases the SQL Server Database Engine plan cache bucket count from 40,009 to 160,001 on 64-bit systems.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: https://support.microsoft.com/help/3026083/fix-sos-cachestore-spinlock-contention-on-ad-hoc-sql-server-plan-cache<br />
+Link: https://support.microsoft.com/help/3026083/<br />
 Link: [Docs Trace Flags]<br />
+Link: [SQL Server Plan Cache Limits]<br />
 Scope: global only
 
 
@@ -3543,6 +3544,7 @@ Link: https://support.microsoft.com/help/917035<br />
 Function: Alters cache limit settings<br />
 **Warning: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.**<br />
 Link: [Docs Trace Flags]<br />
+Link: [SQL Server Plan Cache Limits]<br />
 Scope: global only
 
 
@@ -5020,3 +5022,4 @@ Scope: ?
 [8152]:https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-events-and-errors?view=sql-server-2017#errors-8000-to-8999
 [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]:http://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-trace_6.html
 [Let’s talk about trace flags]:https://blogs.msdn.microsoft.com/sql_server_team/lets-talk-about-trace-flags/
+[SQL Server Plan Cache Limits]:https://www.sqlskills.com/blogs/erin/sql-server-plan-cache-limits/
