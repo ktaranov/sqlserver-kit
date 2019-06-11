@@ -354,6 +354,7 @@ Function: Increases the SQL Server Database Engine plan cache bucket count from 
 Link: https://support.microsoft.com/help/3026083/<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server Plan Cache Limits]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -851,6 +852,7 @@ Link: [KB920093]<br />
 Link: https://support.microsoft.com/help/3210239<br />
 Link: [Docs Trace Flags]<br />
 Link: [Let’s talk about trace flags]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -977,6 +979,7 @@ Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/01/attempt-to-grow-all-fi
 Link: http://sql-articles.com/articles/general/day-6trace-flag-1117-auto-grow-equally-in-all-data-file<br />
 Link: http://www.ryanjadams.com/2017/05/trace-flag-1117-growth-contention/<br />
 Link: https://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br/>
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -995,6 +998,7 @@ Link: https://support.microsoft.com/help/328551<br />
 Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -1167,6 +1171,7 @@ Function: Enables database lock partitioning. Fixes performance problem in scena
 **Note: Beginning with SQL Server 2012 SP3 and SQL Server 2014 SP1 this behavior is controlled by the engine and trace flag 1236 has no effect.**<br />
 Link: https://support.microsoft.com/help/2926217<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -1529,6 +1534,7 @@ Link: https://support.microsoft.com/help/2754171<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx<br />
 Link: https://blogs.msdn.microsoft.com/axinthefield/sql-server-trace-flag-2371-for-dynamics-ax/<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -1915,6 +1921,7 @@ Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-chec
 Link: https://support.microsoft.com/help/2634571<br />
 Link: https://support.microsoft.com/help/2732669<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -2000,6 +2007,7 @@ Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-chec
 Link: https://support.microsoft.com/help/2634571<br />
 Link: https://support.microsoft.com/help/2732669<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -2011,7 +2019,8 @@ For databases upgraded from earlier versions of SQL Server, column-value checks 
 After this, DBCC CHECKDB checks column-value integrity by default.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb<br />
-Link: https://support.microsoft.com/help/2888996/fix-data-purity-corruption-in-sys.sysbinobjs-table-in-master-database-when-you-log-on-to-sql-server-by-using-the-sa-account-and-then-run-dbcc-checkdb<br />
+Link: https://support.microsoft.com/help/2888996/<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -2297,6 +2306,7 @@ backup transaction log, create database, add a file to a database, restore a tra
 Link: https://support.microsoft.com/help/3158396/<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -2951,6 +2961,7 @@ Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-que
 Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
 Link: http://www.sqlservergeeks.com/sql-server-2016-database-scoped-configuration-and-trace-flag-4199/<br />
 Link: [Let’s talk about trace flags]<br />
+Link: [KB2964518]<br />
 Scope: global or session or query
 
 
@@ -3061,6 +3072,7 @@ It is based on the 80 percentage of SQL Server Target Memory, and it allows for 
 Link: https://support.microsoft.com/help/3024815<br />
 Link: [Docs Trace Flags]<br />
 Link: http://blogs.msdn.com/b/sql_server_team/archive/2015/10/09/query-compile-big-gateway-policy-changes-in-sql-server.aspx<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -3098,6 +3110,7 @@ Function: Enables performance improvement of query operations with spatial data 
 The performance gain will vary, depending on the configuration, the types of queries, and the objects.<br />
 Link: [KB3107399]<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global or session
 
 
@@ -3107,6 +3120,7 @@ Function: Enables performance improvement of query operations with spatial data 
 The performance gain will vary, depending on the configuration, the types of queries, and the objects.<br />
 Link: [KB3107399]<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global or session
 
 
@@ -3118,6 +3132,7 @@ Link: https://support.microsoft.com/help/3054180<br />
 Link: [KB3107399]<br />
 Link: https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global or session
 
 
@@ -3228,6 +3243,7 @@ Link: https://support.microsoft.com/help/3170113<br />
 Link: https://www.brentozar.com/archive/2017/10/get-live-query-plans-sp_blitzwho/<br />
 Link: https://groupby.org/conference-session-abstracts/enhancements-that-will-make-your-sql-database-engine-roar-2016-sp1-edition/<br />
 Link: https://www.scarydba.com/2018/06/11/plan-metrics-without-the-plan-trace-flag-7412/<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -3239,9 +3255,17 @@ Link: https://support.microsoft.com/help/3088480
 
 <a id="7471"></a>
 #### Trace Flag: 7471
-Function: Running multiple UPDATE STATISTICS for different statistics on a single table concurrently<br />
+Function: Running multiple `UPDATE STATISTICS` for different statistics on a single table concurrently.
+Trace Flag 7471 changes the locking behavior of update statistics command such that SQL Server engine no longer acquires `X LOCK` on UPDSTATS resource on the table.
+Rather the engine acquires an (update) `U LOCK` on each individual statistics object being updated which doesn't block other parallel threads on the same table running on different statistics.
+This behavior improves the overall concurrency of the update statistics job run executing in parallel and improves its performance.<br />
+** TF 7471 can increase the possibility of deadlock especially when creation of new statistics and updating of existing statistics are executed simultaneously.
+So the recommended best practice is to use TF 7471 only as a part of maintenance when update statistics jobs are run in parallel and should be turned off otherwise.**
 Link: https://support.microsoft.com/help/3156157<br />
-Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds
+Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds<br />
+Link: [KB2964518]<br />
+Link: https://blogs.msdn.microsoft.com/sql_server_team/boosting-update-statistics-performance-with-sql-2014-sp1cu6/<br />
+Scope: global only
 
 
 <a id="7497"></a>
@@ -3545,6 +3569,7 @@ Function: Alters cache limit settings<br />
 **Warning: Trace flag 8032 can cause poor performance if large caches make less memory available for other memory consumers, such as the buffer pool.**<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server Plan Cache Limits]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -3580,6 +3605,7 @@ Link: http://blogs.msdn.com/b/psssql/archive/2012/12/20/how-it-works-cmemthread-
 Link: [Docs Trace Flags]<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2011/09/01/sql-server-2008-2008-r2-on-newer-machines-with-more-than-8-cpus-presented-per-numa-node-may-need-trace-flag-8048.aspx<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
+Link: [KB2964518]<br />
 Related to: [8015](#8015), [9024](#9024)<br />
 Scope: global only
 
@@ -3599,8 +3625,13 @@ Link: https://blogs.msdn.microsoft.com/psssql/2009/11/02/the-sql-server-wait-typ
 
 <a id="8075"></a>
 #### Trace Flag: 8075
-Function: Enables a fix (after applying the appropriate CU) for x64 VAS exhaustion.<br />
-Link: https://support.microsoft.com/help/3074434/
+Function: Enables a fix (after applying the appropriate CU) for x64 VAS exhaustion.
+Assume that you install the 64-bit version of Microsoft SQL Server 2014, 2016 or 2017 on a computer that's running Windows Server 2012 or an earlier version of Windows operating system.
+When SQL Server uses up all the user-mode virtual address space, you may receive an out of memory error message in the SQL Server error log.
+Additionally, queries take a long time to finish execution, and the `SOS_MEMORY_TOPLEVELBLOCKALLOCATOR` wait occurs.<br />
+Link: https://support.microsoft.com/help/3074434/<br />
+Link: [KB2964518]<br />
+Scope: global only
 
 
 <a id="8079"></a>
@@ -3615,6 +3646,7 @@ Link: [KB972767]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/sql-server-2012-service-pack-4-sp4-released/<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
+Link: [KB2964518]<br />
 Scope: global only
 
 
@@ -4119,6 +4151,7 @@ Function: Converts a global log pool memory object into NUMA node partitioned me
 **Note: Beginning with SQL Server 2012 SP3 and SQL Server 2014 SP1 this behavior is controlled by the engine and trace flag 9024 has no effect.**<br />
 Link: https://support.microsoft.com/help/2809338<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2964518]<br />
 Scope: global only<br />
 Related to: [8048](#8048)
 
@@ -5023,3 +5056,4 @@ Scope: ?
 [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]:http://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-trace_6.html
 [Let’s talk about trace flags]:https://blogs.msdn.microsoft.com/sql_server_team/lets-talk-about-trace-flags/
 [SQL Server Plan Cache Limits]:https://www.sqlskills.com/blogs/erin/sql-server-plan-cache-limits/
+[KB2964518]:https://support.microsoft.com/help/2964518
