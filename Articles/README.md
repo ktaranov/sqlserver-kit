@@ -740,6 +740,14 @@ Articles types:
 | [My IT department installed an antivirus with SQL Server]                                                               | Randolph West                            | 2019-06-05 | [DBA]       |
 | [An Experiment with Deadlocks - ROWLOCK hint myth]                                                                      | Jason Brimhall                           | 2019-03-25 | [DBA],[DEV] |
 | [Adding a New Transaction Log File when the Existing Log is Full]                                                       | Max Vernon                               | 2019-03-19 | [DBA]       |
+| [Transactions Don't Start At BEGIN TRAN]                                                                                | Josh Darnell                             | 2019-06-05 | [DBA],[DEV] |
+| [CAST/CONVERT makes expressions nullable]                                                                               | Daniel Hutmacher                         | 2019-06-05 | [DBA],[DEV] |
+| [Deciding between COALESCE and ISNULL in SQL Server]                                                                    | Aaron Bertrand                           | 2012-04-30 | [DBA],[DEV] |
+| [How do you choose which columns to include in your SQL Server clustered index?]                                        | agilesql                                 | 2019-06-01 | [DBA],[DEV] |
+| [A ever-increasing Clustered Key value doesn’t scale]                                                                   | Klaus Aschenbrenner                      | 2014-04-15 | [DBA],[DEV] |
+| [SQL Server Bit reversion]                                                                                              | Rick                                     | 2011-10-03 | [DBA],[DEV] |
+| [Troubleshooting a renamed SQL Server]                                                                                  | Jamie Wick                               | 2019-06-05 | [DBA]       |
+| [Are Differential Backups Necessary?]                                                                                   | Jamie Wick                               | 2019-04-02 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1457,3 +1465,11 @@ Articles types:
 [My IT department installed an antivirus with SQL Server]:https://bornsql.ca/blog/my-it-department-installed-an-antivirus-with-sql-server/
 [An Experiment with Deadlocks - ROWLOCK hint myth]:http://jasonbrimhall.info/2019/03/25/an-experiment-with-deadlocks/
 [Adding a New Transaction Log File when the Existing Log is Full]:https://www.sqlserverscience.com/internals/adding-new-transaction-log-file-when-existing-log-full/
+[Transactions Don't Start At BEGIN TRAN]:https://www.joshthecoder.com/2019/06/05/transactions-dont-start-at-begin-tran.html
+[CAST/CONVERT makes expressions nullable]:https://sqlsunday.com/2019/06/05/cast-convert-makes-expressions-nullable/
+[Deciding between COALESCE and ISNULL in SQL Server]:https://www.mssqltips.com/sqlservertip/2689/deciding-between-coalesce-and-isnull-in-sql-server/]
+[How do you choose which columns to include in your SQL Server clustered index?]:https://the.agilesql.club/2019/06/how-do-you-choose-which-columns-to-include-in-your-sql-server-clustered-index/
+[A ever-increasing Clustered Key value doesn’t scale]:https://www.sqlpassion.at/archive/2014/04/15/an-ever-increasing-clustered-key-value-doesnt-scale/
+[SQL Server Bit reversion]:https://dangerousdba.blogspot.com/2011/10/bit-reversion.html
+[Troubleshooting a renamed SQL Server]:https://blog.wicktech.net/troubleshooting-a-renamed-sql-server/
+[Are Differential Backups Necessary?]:https://blog.wicktech.net/differential-backups/
