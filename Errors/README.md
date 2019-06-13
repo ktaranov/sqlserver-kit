@@ -148,7 +148,9 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                                   |
 |       6348 | Specified collection '%.*ls' cannot be created because it already exists or you do not have permission.  | [6348_link1][36]                               |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                                |
+|       7341 | Cannot get the current row value of column "%ls.%ls" from OLE DB provider "%ls" for linked server "%ls … | [7341_link1][37]                                |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                                |
+|       7356 | The OLE DB provider "%ls" for linked server "%ls" supplied inconsistent metadata for a column.         … | [7356_link1][37]                                |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" indicates that      … | [7357_link1][2], [7357_link2][2]               |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                                |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                                    |
@@ -181,6 +183,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      15136 | The database principal is set as the execution context of one or more procedures, functions,           … | [15136_link1]                                  |
 |      15190 | There are still remote logins or linked logins for the server '%s'.                                      | [15190_link1]                                  |
 |      15199 | The current security context cannot be reverted. Please switch to the original database where          … | [15199_link1][1]                               |
+|      15274 | Access to the remote server is denied because the current security context is not trusted.               | [15274_link1]                                  |
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of      … | [15406_link1][1]                               |
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                              |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.         … | [17190_link1]                                  |
@@ -235,6 +238,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [34]:https://www.sqlserverscience.com/maintenance/update-statistics-failed-statistics-cannot-be-updated-columnstore-index/
 [35]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
 [36]:https://www.kevinrchant.com/2019/05/20/interesting-sql-server-2019-findings-testing-sp_estimate_data_compression_savings/
+[37]:https://blog.pythian.com/fix-sql-server-to-postgresql-linked-server-error-requested-conversion-is-not-supported/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
@@ -290,6 +294,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [15021_link1]:https://nebraskasql.blogspot.com/2018/10/invalid-value-given-for-parameter.html
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [15190_link1]:https://blog.sqlauthority.com/2018/12/15/sql-server-fix-msg-15190-there-are-still-remote-logins-or-linked-logins-for-the-server/
+[15274_link1]:https://blog.sqlauthority.com/2019/06/03/sql-server-fix-msg-15274-access-to-the-remote-server-is-denied-because-the-current-security-context-is-not-trusted/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
