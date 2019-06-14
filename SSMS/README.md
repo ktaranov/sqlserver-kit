@@ -35,7 +35,7 @@ SSMS 18.x is not supported on Windows 8. Windows 10 / Windows Server 2016 requir
 Due to the new dependency on NetFx 4.7.2, SSMS 18.0 does not install on Windows 8, older versions of Windows 10, and Windows Server 2016. SSMS setup will block on those operating systems. Windows 8.1 is still supported.
 
 
-### Note
+### SSMS Version Notes
 SSMS 17.X is based on the Visual Studio 2015 Isolated shell, which was released before Windows Server 2016.
 Microsoft takes app compatibility very seriously and ensures that already-shipped applications continue to run on the latest Windows releases.
 Because of this, we do not anticipate that SSMS with all latest updates applied) will encounter issues when running on Windows Server 2016.
@@ -67,7 +67,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 | -------------------------------- | ------------- | ------------ | -------: |
-| [18.1 GA Release] **Latest GA**  | 15.0.18131.0  | 2019-06-11   |       |
+| [18.1 GA Release] **Latest GA**  | 15.0.18131.0  | 2019-06-11   |      527 |
 | [18.0 GA Release]                | 15.0.18118.0  | 2019-04-24   |      524 |
 | [18.0 RC1 Release]               | 15.0.18098.0  | 2019-03-28   |      484 |
 | [18.0 Preview 7 Release]         | 15.0.18092.0  | 2019-03-01   |      478 |
