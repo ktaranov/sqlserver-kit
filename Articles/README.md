@@ -748,6 +748,10 @@ Articles types:
 | [SQL Server Bit reversion]                                                                                              | Rick                                     | 2011-10-03 | [DBA],[DEV] |
 | [Troubleshooting a renamed SQL Server]                                                                                  | Jamie Wick                               | 2019-06-05 | [DBA]       |
 | [Are Differential Backups Necessary?]                                                                                   | Jamie Wick                               | 2019-04-02 | [DBA]       |
+| [Updating Statistics on Secondary Replicas of the Availability Groups]                                                  | Niko Neugebauer                          | 2019-06-20 | [DBA]       |
+| [It’s interesting how an OR short circuits]                                                                             | Kenneth Fisher                           | 2019-06-17 | [DBA],[DEV] |
+| [SQL Server NOLOCK Anomalies, Issues and Inconsistencies]                                                               | Aaron Bertrand                           | 2019-06-18 | [DBA],[DEV] |
+| [Choosing a Database for Serverless Applications]                                                                       | Alex DeBrie                              | 2019-06-22 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1473,3 +1477,7 @@ Articles types:
 [SQL Server Bit reversion]:https://dangerousdba.blogspot.com/2011/10/bit-reversion.html
 [Troubleshooting a renamed SQL Server]:https://blog.wicktech.net/troubleshooting-a-renamed-sql-server/
 [Are Differential Backups Necessary?]:https://blog.wicktech.net/differential-backups/
+[Updating Statistics on Secondary Replicas of the Availability Groups]:http://www.nikoport.com/2019/06/20/updating-statistics-on-secondary-replicas-of-the-availability-groups/
+[It’s interesting how an OR short circuits]:https://sqlstudies.com/2019/06/17/its-interesting-how-an-or-short-circuits/
+[SQL Server NOLOCK Anomalies, Issues and Inconsistencies]:https://www.mssqltips.com/sqlservertip/6072/sql-server-nolock-anomalies-issues-and-inconsistencies/
+[Choosing a Database for Serverless Applications]:https://serverless.com/blog/choosing-a-database-with-serverless/
