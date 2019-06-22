@@ -759,6 +759,8 @@ Articles types:
 | [SQL Server Agent for SQL Express on Linux]                                                                             | Thom Andrews                             | 2019-06-18 | [DBA]       |
 | [Trailing Spaces in SQL Server]                                                                                         | Bert Wagner                              | 2019-06-18 | [DEV]       |
 | [Troubleshooting a Change in Query Performance]                                                                         | Erin Stellato                            | 2019-06-20 | [DBA],[DEV] |
+| [The Silent Bug I Find in Most Triggers]                                                                                | Brent Ozar                               | 2019-05-06 | [DBA],[DEV] |
+| [How to Copy a Table in SQL Server to Another Database]                                                                 | Pablo Echeverria                         | 2019-05-14 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1495,3 +1497,5 @@ Articles types:
 [SQL Server Agent for SQL Express on Linux]:https://www.sqlservercentral.com/articles/sql-server-agent-for-sql-express-on-linux
 [Trailing Spaces in SQL Server]:https://bertwagner.com/2019/06/18/trailing-spaces-in-sql-server/
 [Troubleshooting a Change in Query Performance]:https://www.sqlskills.com/blogs/erin/troubleshooting-a-change-in-query-performance/
+[The Silent Bug I Find in Most Triggers]:https://www.brentozar.com/archive/2019/05/the-silent-bug-i-find-in-most-triggers/
+[How to Copy a Table in SQL Server to Another Database]:https://www.mssqltips.com/sqlservertip/6009/how-to-copy-a-table-in-sql-server-to-another-database/

@@ -4450,7 +4450,7 @@ Function: Disables batch mode for sort operator. SQL Server 2016 introduces a ne
 Link: https://support.microsoft.com/help/3172787<br />
 Link: [Docs Trace Flags]<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
-Scope: global only
+Scope: global or session or query
 
 
 <a id="9348"></a>
@@ -4492,7 +4492,8 @@ set statistics xml, time off;
 #### Trace Flag: 9358
 Function: Disable batch mode sort operations in a complex parallel query. For example, this flag could apply if the query contains merge join operations.<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
-Link: https://support.microsoft.com/help/3171555
+Link: https://support.microsoft.com/help/3171555<br />
+Scope: global or session or query
 
 
 <a id="9384"></a>
@@ -4509,7 +4510,7 @@ Function: Enables dynamic memory grant for batch mode operators. If a query does
 If the dynamic memory grant trace flag is enabled, a batch mode operator may ask for additional memory and avoid spilling to tempdb if additional memory is available.<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
 Link: [Docs Trace Flags]<br />
-Scope: global or session
+Scope: global or session or query
 
 
 <a id="9390"></a>
@@ -4910,7 +4911,8 @@ In SQL Server 2016, when a columnstore index is reorganized, there is new functi
 into larger compressed rowgroups, as well as recompressing any rowgroups that have a large number of deleted rows.<br />
 **Note: Trace flag 10204 does not apply to column store indexes which are created on memory-optimized tables.**<br />
 Link: [Docs Trace Flags]<br />
-Scope: global or session
+Link: [Niko Neugebauer Columnstore Indexes – part 86]<br />
+Scope: global or session or query
 
 
 <a id="10207"></a>
