@@ -123,6 +123,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                   |
 |       1904 | The statistics on table has 65 columns in the key list                                                 … | [1904_link1]                                   |
 |       1908 | Column '%.*ls' is partitioning column of the index '%.*ls'. Partition columns for a unique index       … | [1908_link1][18]                               |
+|       2812 | Could not find stored procedure '%.*ls'.                                                                 | [2812_link1][38]                               |
 |       3101 | Exclusive access could not be obtained because the database is in use.                                 … | [3101_link1]                                   |
 |       3154 | The backup set holds a backup of a database other than the existing                                    … | [3154_link1]                                   |
 |       3241 | The media family on device '%ls' is incorrectly formed. SQL Server cannot process this media fam       … | [3241_link1]                                   |
@@ -169,6 +170,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       9105 | The provided statistics stream is corrupt.                                                               | [9105_link1][33]                               |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                                  |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                              |
+|      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                              |
 |      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                              |
 |      13518 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has IDENTITY column specification … | [13518_link1][33]                              |
 |      13523 | Setting SYSTEM_VERSIONING to ON failed because table '%.*ls' has %d columns and table '%.*ls' has %d   … | [13523_link1][33]                              |
@@ -239,6 +241,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [35]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
 [36]:https://www.kevinrchant.com/2019/05/20/interesting-sql-server-2019-findings-testing-sp_estimate_data_compression_savings/
 [37]:https://blog.pythian.com/fix-sql-server-to-postgresql-linked-server-error-requested-conversion-is-not-supported/
+[38]:https://www.sqlshack.com/exec-sql-overview-and-examples/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
