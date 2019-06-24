@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**595** trace flags).
+Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**597** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -242,7 +242,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **595 trace flags**
+Summary: **597 trace flags**
 
 
 <a id="-1"></a>
@@ -2599,6 +2599,39 @@ Link: https://support.microsoft.com/help/3145492/
 #### Trace Flag: 3940
 Function: According to Bob Ward’s PASS 2014 SQL Server IO talk, forces the Eager Write functionality to throttle at 1024 outstanding eager writes.<br />
 Link: None
+
+
+<a id="3979"></a>
+#### Trace Flag: 3979
+**Undocumented trace flag**<br />
+Function: **Request Fua Writes**.
+SQL Server opens database data and log files with FILE_FLAG_WRITE_THROUGH, mapping to O_DSYNC in the Host Extension, asking for Fua writes. 
+Linux Default: Trace flag considered **Off**
+Windows Default: Trace flag considered **On **
+**The trace flag does not apply to SQL Server on Linux SQL 2017 RTM thru CU5.  The behavior is assumed enabled prior to CU 6.
+** The trace flag does not apply to Windows.  On Windows it is always assumed to be enabled.**
+On Linux, you need a file system that provides DpuFua=1 enablement or you have confirmed your system is O_DIRECT safe.
+By enabling the trace flag you disable the batch flush requests from SQL Server and are trusting SQLPAL, HE and the I/O subsystem configuration to achieve durability.<br />
+Link: [SQL Server On Linux: Forced Unit Access (Fua) Internals]<br />
+Scope: global
+
+
+<a id="3982"></a>
+#### Trace Flag: 3982
+**Undocumented trace flag**<br />
+Function: **Avoid Fua Writes**.
+Forces SQL Server to open database data and log files without `FILE_FLAG_WRITE_THROUGH` and issue the `FlushFileBuffers` calls to complete transactions and checkpoint activities.
+Linux Default: Trace flag is considered **On**
+Windows Default: Trace flag is considered **Off**
+**Microsoft retains the policy that SQL Server should always be run on a system with stable media configurations.
+The trace flag is NOT supported on Windows.**
+[This article](https://support.microsoft.com/help/86903/) highlights these support boundaries.
+It was written by David Campbell, Bob Ward, Keith Elmore and I many years ago and the forced flush feature does not alter the intent: “SQL Server requires systems to support ‘ guaranteed delivery to stable media ’ as outlined under the Microsoft SQL Server Always-On Storage Solution Review program.
+For more information about the input and output requirements for the SQL Server database engine.
+When running on Linux kernels or file systems that do not support optimized Fua capabilities.
+The trace flag and forced flush behavior is intended to be a workaround for Linux installations until the SQL Server instance id deployed on a system providing optimized, Fua capabilities.<br />
+Link: [SQL Server On Linux: Forced Unit Access (Fua) Internals]<br />
+Scope: global
 
 
 <a id="4001"></a>
@@ -5059,3 +5092,4 @@ Scope: ?
 [Let’s talk about trace flags]:https://blogs.msdn.microsoft.com/sql_server_team/lets-talk-about-trace-flags/
 [SQL Server Plan Cache Limits]:https://www.sqlskills.com/blogs/erin/sql-server-plan-cache-limits/
 [KB2964518]:https://support.microsoft.com/help/2964518
+[SQL Server On Linux: Forced Unit Access (Fua) Internals]:http://bobsql.com/sql-server-on-linux-forced-unit-access-fua-internals/
