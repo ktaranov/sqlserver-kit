@@ -752,7 +752,7 @@ Articles types:
 | [It’s interesting how an OR short circuits]                                                                             | Kenneth Fisher                           | 2019-06-17 | [DBA],[DEV] |
 | [SQL Server NOLOCK Anomalies, Issues and Inconsistencies]                                                               | Aaron Bertrand                           | 2019-06-18 | [DBA],[DEV] |
 | [Choosing a Database for Serverless Applications]                                                                       | Alex DeBrie                              | 2019-06-22 | [DEV]       |
-| [SQL Server On Linux: Forced Unit Access (Fua) Internals]                                                               | bobsql                                   | 2018-12-18 | [DBA]       |
+| [SQL Server On Linux: Forced Unit Access (Fua) Internals]                                                               | Robert Dorr                              | 2018-12-18 | [DBA]       |
 | [Socrates: The New SQL Server in the Cloud]                                                                             | Microsoft                                | 2019-05-01 | [DBA],[DEV] |
 | [What permissions do temp stored procedures use?]                                                                       | Kenneth Fisher                           | 2019-06-19 | [DBA],[DEV] |
 | [Common SQL Server Mishaps]                                                                                             | Tim Radney                               | 2019-06-21 | [DBA]       |
@@ -761,6 +761,14 @@ Articles types:
 | [Troubleshooting a Change in Query Performance]                                                                         | Erin Stellato                            | 2019-06-20 | [DBA],[DEV] |
 | [The Silent Bug I Find in Most Triggers]                                                                                | Brent Ozar                               | 2019-05-06 | [DBA],[DEV] |
 | [How to Copy a Table in SQL Server to Another Database]                                                                 | Pablo Echeverria                         | 2019-05-14 | [DBA],[DEV] |
+| [Configuration of SQL Server instance]                                                                                  | Michal Sadowski                          | 2019-06-18 | [DBA]       |
+| [What is the SQL Server Virtual Log file and how to monitor it]                                                         | Musab Umair                              | 2017-04-26 | [DBA]       |
+| [Important change to VLF creation algorithm in SQL Server 2014]                                                         | Paul Randal                              | 2015-01-06 | [DBA]       |
+| [SQL Server Transaction Log Fragmentation: a Primer]                                                                    | Greg Larsen                              | 2012-04-26 | [DBA]       |
+| [8 Steps to better Transaction Log throughput]                                                                          | Kimberly Tripp                           | 2019-01-01 | [DBA]       |
+| [Joins With OR Clauses = 💔]                                                                                             | Erik Darling                             | 2019-06-04 | [DBA],[DEV] |
+| [Thoughts on MAXDOP]                                                                                                    | Erik Darling                             | 2019-06-18 | [DBA],[DEV] |
+| [What the Arrow Sizes in Query Plans Really Mean]                                                                       | Brent Ozar                               | 2019-06-21 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1499,3 +1507,11 @@ Articles types:
 [Troubleshooting a Change in Query Performance]:https://www.sqlskills.com/blogs/erin/troubleshooting-a-change-in-query-performance/
 [The Silent Bug I Find in Most Triggers]:https://www.brentozar.com/archive/2019/05/the-silent-bug-i-find-in-most-triggers/
 [How to Copy a Table in SQL Server to Another Database]:https://www.mssqltips.com/sqlservertip/6009/how-to-copy-a-table-in-sql-server-to-another-database/
+[Configuration of SQL Server instance]:https://sqlplayer.net/2019/06/configuration-of-sql-server-instance/
+[What is the SQL Server Virtual Log file and how to monitor it]:https://www.sqlshack.com/what-is-sql-server-virtual-log-file-and-how-to-monitor-it/
+[Important change to VLF creation algorithm in SQL Server 2014]:https://www.sqlskills.com/blogs/paul/important-change-vlf-creation-algorithm-sql-server-2014/
+[SQL Server Transaction Log Fragmentation: a Primer]:https://www.red-gate.com/simple-talk/sql/database-administration/sql-server-transaction-log-fragmentation-a-primer/
+[8 Steps to better Transaction Log throughput]:https://www.sqlskills.com/blogs/kimberly/8-steps-to-better-transaction-log-throughput/
+[Joins With OR Clauses = 💔]:https://erikdarlingdata.com/2019/06/joins-with-or-clauses-%F0%9F%92%94/
+[Thoughts on MAXDOP]:https://erikdarlingdata.com/2019/06/thoughts-on-maxdop/
+[What the Arrow Sizes in Query Plans Really Mean]:https://www.brentozar.com/archive/2019/06/what-the-arrow-sizes-in-query-plans-really-mean/
