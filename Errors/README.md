@@ -94,7 +94,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |          ? | A transport-level error has occurred when receiving results from the server.                             | [link1][31]                                    |
 |          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]             |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?]           |
-|        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1]                                    |
+|        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1],[102_link2][39]                    |
 |        120 | The select list for the INSERT statement contains fewer items than the insert list. The number of      … | [120_link1][35]                                |
 |        121 | The select list for the INSERT statement contains more items than the insert list. The number of       … | [121_link1][35]                                |
 |        145 | ORDER BY items must appear in the select list if SELECT DISTINCT is specified.                           | [145_link1][27]                                |
@@ -102,6 +102,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                                    |
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3],[213_link2][35]                 |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                                |
+|        241 | Conversion failed when converting date and/or time from character string.                                | [241_link1]                                    |
 |        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT      … | [264_link1][25]                                |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                                |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                                |
@@ -149,12 +150,14 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                                   |
 |       6348 | Specified collection '%.*ls' cannot be created because it already exists or you do not have permission.  | [6348_link1][36]                               |
 |       6401 | Cannot roll back %.*ls. No transaction or savepoint of that name was found.                              | [6401_link1][4]                                |
-|       7341 | Cannot get the current row value of column "%ls.%ls" from OLE DB provider "%ls" for linked server "%ls … | [7341_link1][37]                                |
+|       7341 | Cannot get the current row value of column "%ls.%ls" from OLE DB provider "%ls" for linked server "%ls … | [7341_link1][37]                               |
 |       7344 | The OLE DB provider "%ls" for linked server "%ls" could not %ls table "%ls" because of column          … | [7344_link1][3]                                |
-|       7356 | The OLE DB provider "%ls" for linked server "%ls" supplied inconsistent metadata for a column.         … | [7356_link1][37]                                |
+|       7356 | The OLE DB provider "%ls" for linked server "%ls" supplied inconsistent metadata for a column.         … | [7356_link1][37]                               |
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" indicates that      … | [7357_link1][2], [7357_link2][2]               |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                                |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                                    |
+|       8101 | An explicit value for the identity column in table '%.*ls' can only be specified when a column list is … | [8101_link1][40]                               |
+|       8107 | IDENTITY_INSERT is already ON for table '%.*ls.%.*ls.%.*ls'. Cannot perform SET operation for table '% … | [8107_link1][40]                               |
 |       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                               |
 |       8180 | Statement(s) could not be prepared.                                                                      | [8180_link1][28]                               |
 |       8127 | Column "%.*ls.%.*ls" is invalid in the ORDER BY clause because it is not contained in either an        … | [8127_link1][27]                               |
@@ -170,6 +173,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       9105 | The provided statistics stream is corrupt.                                                               | [9105_link1][33]                               |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                                  |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                              |
+|      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                              |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                              |
 |      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                              |
 |      13518 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has IDENTITY column specification … | [13518_link1][33]                              |
@@ -242,10 +246,13 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [36]:https://www.kevinrchant.com/2019/05/20/interesting-sql-server-2019-findings-testing-sp_estimate_data_compression_savings/
 [37]:https://blog.pythian.com/fix-sql-server-to-postgresql-linked-server-error-requested-conversion-is-not-supported/
 [38]:https://www.sqlshack.com/exec-sql-overview-and-examples/
+[39]:http://www.nikoport.com/2015/09/02/columnstore-indexes-part-64-t-sql-improvements-in-sql-server-2016/
+[40]:https://bertwagner.com/2019/06/25/multiple-identity-inserts/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
+[241_link1]:https://www.essentialsql.com/datatype-conversion-in-sql-using-cast-and-convert/
 [459_link1]:https://sqlquantumleap.com/2019/03/13/differences-between-the-various-binary-collations-cultures-versions-and-bin-vs-bin2/
 [535_link1]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html

@@ -769,6 +769,9 @@ Articles types:
 | [Joins With OR Clauses = 💔]                                                                                             | Erik Darling                             | 2019-06-04 | [DBA],[DEV] |
 | [Thoughts on MAXDOP]                                                                                                    | Erik Darling                             | 2019-06-18 | [DBA],[DEV] |
 | [What the Arrow Sizes in Query Plans Really Mean]                                                                       | Brent Ozar                               | 2019-06-21 | [DBA],[DEV] |
+| [Query Store Best Practices]                                                                                            | Erin Stellato                            | 2019-06-25 | [DBA],[DEV] |
+| [Introduction to Data Normalization: A Database "Best" Practice]                                                        | Scott Wambler                            | 2019-01-01 | [DBA],[DEV] |
+| [Dr. OUTPUT or: How I Learned to Stop Worrying and Love the MERGE]                                                      | Adam Machanic                            | 2009-08-24 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1515,3 +1518,6 @@ Articles types:
 [Joins With OR Clauses = 💔]:https://erikdarlingdata.com/2019/06/joins-with-or-clauses-%F0%9F%92%94/
 [Thoughts on MAXDOP]:https://erikdarlingdata.com/2019/06/thoughts-on-maxdop/
 [What the Arrow Sizes in Query Plans Really Mean]:https://www.brentozar.com/archive/2019/06/what-the-arrow-sizes-in-query-plans-really-mean/
+[Query Store Best Practices]:https://www.sqlskills.com/blogs/erin/query-store-best-practices/
+[Introduction to Data Normalization: A Database "Best" Practice]:http://agiledata.org/essays/dataNormalization.html
+[Dr. OUTPUT or: How I Learned to Stop Worrying and Love the MERGE]:http://dataeducation.com/dr-output-or-how-i-learned-to-stop-worrying-and-love-the-merge/
