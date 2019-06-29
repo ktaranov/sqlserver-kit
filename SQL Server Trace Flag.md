@@ -1714,9 +1714,16 @@ Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing
 
 <a id="2467"></a>
 #### Trace Flag: 2467
-Function: “If target MAXDOP target is less than a single node can provide and if trace flag 2467 is enabled attempt to locate least loaded node”<br />
+Function: Enables an alternate parallel worker thread allocation policy, based on which node has the least allocated threads.
+For more information, see [Parallel Query Processing](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide#parallel-query-processing).
+Refer to [Configure the max worker threads Server Configuration Option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-max-worker-threads-server-configuration-option) for information on configuring the max worker threads server option.
+**Note: Query degree of parallelism (DOP) has to fit into a single node for this alternate policy to be used, or the default thread allocation policy is used instead. Using this trace flag, it is not recommended to execute queries specifying a DOP over the number of schedulers in a single node, as this could interfere with queries specifying a DOP below or equal to the number of schedulers in a single node.
+Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2013/09/27/how-it-works-maximizing-max-degree-of-parallelism-maxdop<br />
-Link: [SQL Server Parallel Query Placement Decision Logic]
+Link: https://erikdarlingdata.com/2019/06/thoughts-on-maxdop/<br />
+Link: [SQL Server Parallel Query Placement Decision Logic]<br />
+Scope: global only
 
 
 <a id="2468"></a>
