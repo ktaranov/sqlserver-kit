@@ -943,12 +943,13 @@ Link: None
 #### Trace Flag: 902
 Function: Bypasses execution of database upgrade script when installing a Cumulative Update or Service Pack.
 If you encounter an error during script upgrade mode, it is recommended to contact Microsoft SQL Customer Service and Support (CSS) for further guidance.<br />
-**Warning: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously
-in a production environment. Database upgrade scripts needs to execute successfully for a complete install of Cumulative Updates and Service Packs.
+**Warning: This trace flag is meant for troubleshooting of failed updates during script upgrade mode, and it is not supported to run it continuously in a production environment.
+Database upgrade scripts needs to execute successfully for a complete install of Cumulative Updates and Service Packs.
 Not doing so can cause unexpected issues with your SQL Server instance.**<br />
 Link: https://support.microsoft.com/help/2163980<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/<br />
+Link: https://blog.sqlauthority.com/2018/11/06/sql-server-script-level-upgrade-for-database-master-failed-because-upgrade-step-msdb110_upgrade-sql-encountered-error-926-state-1-severity-25/<br />
 Scope: global only
 
 
@@ -1735,6 +1736,14 @@ If a node can’t support the request SQL Server continues advancing nodes and s
 Link: [SQL Server Parallel Query Placement Decision Logic]
 
 
+<a id="2469"></a>
+#### Trace Flag: 2469
+Function: Enables alternate exchange for `INSERT INTO ... SELECT` into a partitioned columnstore index.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/3204769/<br />
+Scope: global or session or query
+
+
 <a id="2470"></a>
 #### Trace Flag: 2470
 **Undocumented trace flag**<br />
@@ -1802,27 +1811,18 @@ Function: SQL 7 SP2 - Facilitates capturing a Sqlservr.exe user-mode crash dump 
 Link: None
 
 
-<a id="2469"></a>
-#### Trace Flag: 2469
-Function: Enables alternate exchange for `INSERT INTO ... SELECT` into a partitioned columnstore index.<br />
-Link: [Docs Trace Flags]<br />
-Link: https://support.microsoft.com/help/3204769/<br />
-Scope: global or session or query
-
-
 <a id="2528"></a>
 #### Trace Flag: 2528
 Function: Disables parallel checking of objects by `DBCC CHECKDB`, `DBCC CHECKFILEGROUP`, and `DBCC CHECKTABLE`.
 By default, the degree of parallelism is automatically determined by the query processor.
 The maximum degree of parallelism is configured just like that of parallel queries.
-For more information, see [Configure the max degree of parallelism Server Configuration Option](https://msdn.microsoft.com/en-us/library/ms189094.aspx).
+For more information, see [Configure the max degree of parallelism Server Configuration Option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option).
 Parallel `DBCC` should typically be left enabled.
 For `DBCC CHECKDB`, the query processor reevaluates and automatically adjusts parallelism with each table or batch of tables checked.
 Sometimes, checking may start when the server is almost idle.
 An administrator who knows that the load will increase before checking is complete may want to manually decrease or disable parallelism.
 Disabling parallel checking of DBCC can cause `DBCC` to take much longer to complete and if `DBCC` is run with the `TABLOCK` feature enabled and parallelism set off, tables may be locked for longer periods of time.<br />
 Link: [Docs Trace Flags]<br />
-Link: https://technet.microsoft.com/en-us/library/ms189094.aspx<br />
 Link: http://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Scope: global or session
@@ -2003,12 +2003,12 @@ Link: [KB917825]
 
 <a id="2562"></a>
 #### Trace Flag: 2562
-Function: Runs the DBCC CHECKDB command in a single "batch" regardless of the number of indexes in the database.
-By default, the DBCC CHECKDB command tries to minimize tempdb resources by limiting the number of indexes or "facts" that it generates by using a "batches" concept.
+Function: Runs the `DBCC CHECKDB` command in a single "batch" regardless of the number of indexes in the database.
+By default, the `DBCC CHECKDB` command tries to minimize `tempdb` resources by limiting the number of indexes or "facts" that it generates by using a "batches" concept.
 This trace flag forces all processing into one batch.
-One effect of using this trace flag is that the space requirements for tempdb may increase.
-Tempdb may grow to as much as 5% or more of the user database that is being processed by the DBCC CHECKDB command.<br />
-**Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
+One effect of using this trace flag is that the space requirements for `tempdb` may increase.
+`tempdb` may grow to as much as 5% or more of the user database that is being processed by the `DBCC CHECKDB` command.<br />
+**Note: Although this trace flag improve the performance of the `DBCC CHECKDB` commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
 Link: https://support.microsoft.com/help/2634571<br />
@@ -2020,10 +2020,10 @@ Scope: global only
 
 <a id="2566"></a>
 #### Trace Flag: 2566
-Function: Runs the DBCC CHECKDB command without data purity check unless DATA_PURITY option is specified.<br />
+Function: Runs the `DBCC CHECKDB` command without data purity check unless DATA_PURITY option is specified.<br />
 **Note: Column-value integrity checks are enabled by default and do not require the DATA_PURITY option.
-For databases upgraded from earlier versions of SQL Server, column-value checks are not enabled by default until DBCC CHECKDB WITH DATA_PURITY has been run error free on the database at least once.
-After this, DBCC CHECKDB checks column-value integrity by default.**<br />
+For databases upgraded from earlier versions of SQL Server, column-value checks are not enabled by default until `DBCC CHECKDB WITH DATA_PURITY` has been run error free on the database at least once.
+After this, `DBCC CHECKDB` checks column-value integrity by default.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb<br />
 Link: https://support.microsoft.com/help/2888996/<br />
@@ -2042,7 +2042,7 @@ Scope: session only
 
 <a id="2701"></a>
 #### Trace Flag: 2701
-Function: SQL 6.5 - Sets the @@ERROR system function to 50000 for RAISERROR messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
+Function: SQL 6.5 - Sets the `@@ERROR` system function to 50000 for `RAISERROR` messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
 Link: None
 
 
@@ -2052,7 +2052,12 @@ Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cac
 Link: None
 
 
-#### Trace Flag: 2880, 2881
+#### Trace Flag: 2880
+Function: Both 2880 and 2881 are related to a SQL 2000 hotfix introduced to solve problems where ad-hoc queries would cause the procedure cache to get too big<br />
+Link: None
+
+
+#### Trace Flag: 2881
 Function: Both 2880 and 2881 are related to a SQL 2000 hotfix introduced to solve problems where ad-hoc queries would cause the procedure cache to get too big<br />
 Link: None
 

@@ -117,6 +117,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |        825 | The operating system returned error %ls to SQL Server. It failed creating event for a %S_MSG at        … | [825_link1]                                    |
 |        913 | Could Not Find Database %d. Database May Not be Activated Yet or May be in Transition                  … | [913_link1]                                    |
 |        922 | Database '%.*ls' is being recovered. Waiting until recovery is finished.                                 | [922_link1]                                    |
+|        926 | Database '%.*ls' cannot be opened. It has been marked SUSPECT by recovery. See the SQL Server errorlog … | [926_link1]                                    |
 |       1052 | Conflicting %ls options "%ls" and "%ls".                                                                 | [1052_link1][33]                               |
 |       1065 | The NOLOCK and READUNCOMMITTED lock hints are not allowed for target tables of INSERT, UPDATE, DELETE   …| [1065_link1]                                   |
 |       1219 | Your session has been disconnected because of a high priority DDL operation.                             | [1219_link1][32]                               |
@@ -265,6 +266,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [825_link1]:https://www.sqlskills.com/blogs/paul/a-little-known-sign-of-impending-doom-error-825/
 [913_link1]:https://blog.sqlauthority.com/2017/04/10/sql-server-fix-error-913-severity-16-not-find-database-id-3-database-may-not-activated-yet-may-transition-sql-service/
 [922_link1]:https://blog.sqlauthority.com/2018/08/27/sql-server-how-to-drop-or-delete-suspect-database/
+[926_link1]:https://blog.sqlauthority.com/2018/11/06/sql-server-script-level-upgrade-for-database-master-failed-because-upgrade-step-msdb110_upgrade-sql-encountered-error-926-state-1-severity-25/
 [KB2152734]:https://support.microsoft.com/help/2152734
 [1065_link1]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [1701_link1]:http://www.sqlservercentral.com/questions/163450/
