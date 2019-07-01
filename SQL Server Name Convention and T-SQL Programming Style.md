@@ -194,7 +194,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
  - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
  - Keywords and data types declaration should be in **UPPERCASE**
- - All objects must used with schema names but without database and server name: `FROM dbo.Table`. For stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
+ - All objects must used with schema names but without database and server name: `FROM dbo.Table`.
+   More details [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and for stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
  - All system database and tables must be in lower case for properly working for Case Sensitive instance: `master, sys.tables …`
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
    ```sql

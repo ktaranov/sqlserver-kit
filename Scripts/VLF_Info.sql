@@ -112,9 +112,9 @@ WITH CTE_VLF AS (
             , dc.DBName
 )
 SELECT   CTE_VLF.*
-       , CASE WHEN VLFCount      >= 1000 THEN 'Check your VLF count, maybee you need reduce it'
+       , CASE WHEN VLFCount      >= 1000 THEN 'Check your VLF count, maybe you need reduce it'
               WHEN FileSizeMbAVG >= 500  THEN 'Check your VLF size, maybe you need decrease it'
-              ELSE 'Maybee it is ok'
+              ELSE 'Maybe it is ok'
          END Warnings
 FROM     CTE_VLF
 ORDER BY VLFCount DESC;
