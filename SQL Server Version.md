@@ -460,23 +460,24 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (CTP3.0) - 15.0.1600.8 (X64)
-   May 17 2019 00:00:00
+Microsoft SQL Server 2019 (CTP3.1) - 15.0.1700.0 (X64)
+   Jun 20 2019 00:00:00
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
-| 15.0.1600.8   | 2018.150.1600.8   | CTP    | CTP  | [Microsoft SQL Server 2019 CTP3.0] | 2019-05-22   | 2019-05-17 |       |        |     1339 |
-| 15.0.1500.28  | 2018.150.1500.28  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.5   | 2019-04-23   | 2019-04-16 |       |        |     1340 |
-| 15.0.1400.75  | 2018.150.1400.75  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.4   | 2019-03-27   | 2019-03-17 |       |        |     1331 |
-| 15.0.1300.359 | 2018.150.1200.359 | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.3   | 2019-03-01   | 2019-02-16 |       |        |     1331 |
+| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  | [Microsoft SQL Server 2019 CTP3.1] | 2019-06-26   | 2019-06-20 |       |        |     1341 |
+| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.0   | 2019-05-22   | 2019-05-17 |       |        |     1339 |
+| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.5   | 2019-04-23   | 2019-04-16 |       |        |     1340 |
+| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.4   | 2019-03-27   | 2019-03-17 |       |        |     1331 |
+| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.3   | 2019-03-01   | 2019-02-16 |       |        |     1331 |
 | 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.2   | 2018-12-11   | 2018-11-02 |       |        |     1302 |
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.1   | 2018-11-06   | 2018-11-02 |       |        |     1299 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.0   | 2018-09-24   | 2018-09-18 |       |        |     1532 |
 
-[Microsoft SQL Server 2019 CTP3.0]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
+[Microsoft SQL Server 2019 CTP3.1]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 
 
 ## Microsoft SQL Server 2017 Builds
