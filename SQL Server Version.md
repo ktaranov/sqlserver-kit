@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 CTP 3.0]                                                | 15.0.1600.8                                  | 2019-05-22                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 CTP 3.1]                                                | 15.0.1700.0                                  | 2019-06-26                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU15 KB4498951]                              | 14.0.1000.169<br/>14.0.3162.1                | 2017-10-02<br/>2019-05-23                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU7 KB4495256]                               | 13.0.5026.0<br/>13.0.5337.0                  | 2018-04-24<br/>2019-05-22                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [CU3 KB4491539] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6259.0  | 2016-07-11<br/>2018-10-30<br/>2019-04-16 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -139,7 +139,7 @@ Profits:
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[Install 2019 CTP 3.0]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
+[Install 2019 CTP 3.1]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [CU15 KB4498951]:https://support.microsoft.com/help/4498951
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -178,7 +178,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServerVNext-x64-ENU.iso                                        | 2019-05-22   | 15.0.1600.8   |      1339 |  |
+| [SQL Server 2019]                     | SQLServer2019CTP3.1-x64-ENU.iso                                   | 2019-06-26   | 15.0.1700.0   |     1341 | b8ab9012977d67a6dda05d594ce11cb95d540de5 |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU15]                | SQLServer2017-KB4498951-x64.exe                                   | 2019-05-23   | 14.0.3162.1   |      528 | b143d28a48204eb6ebab62394ce45df53d73f286 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
