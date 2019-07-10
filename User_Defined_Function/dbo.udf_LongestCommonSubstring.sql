@@ -47,7 +47,6 @@ Revision: 1.1
 Created Date: 2014-12-05
 Modified date: 2019-07-08 Konstantin Taranov
 Original link: https://www.red-gate.com/simple-talk/blogs/string-comparisons-in-sql-the-longest-common-substring/
-
 example:
 code:
      SELECT * FROM dbo.udf_LongestCommonSubstring ('1234', '1224533324');
