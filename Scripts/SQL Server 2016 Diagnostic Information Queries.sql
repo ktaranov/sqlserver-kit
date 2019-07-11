@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: June 3, 2019
+-- Last Modified: July 12, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -244,6 +244,9 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 -- Lets you determine whether Instant File Initialization (IFI) is enabled for the instance
 -- This should be enabled in the vast majority of cases
 -- SQL Server 2016 lets you enable this during the SQL server installation process
+
+-- Note: This query won't return any results if the SQL Server error log has been recycled
+-- Query 8 has a instant_file_initialization_enabled column that will show the status of IFI (if you have SP1 or later)
 
 -- Database Instant File Initialization
 -- https://bit.ly/2nTX74y

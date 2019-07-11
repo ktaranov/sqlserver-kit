@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 SP2 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: June 3, 2019
+-- Last Modified: July 12, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -63,15 +63,16 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 ------
 
 -- SQL Server 2016 Builds																		
--- Build			Description			Release Date	URL to KB Article								
--- 13.0.5026.0		SP2 RTM				4/24/2018		https://bit.ly/2FEvN2q 
--- 13.0.5149.0		SP2 CU1				5/30/2018		https://support.microsoft.com/en-us/help/4135048/cumulative-update-1-for-sql-server-2016-sp2
--- 13.0.5153.0		SP2 CU2				7/16/2018		https://support.microsoft.com/en-us/help/4340355
--- 13.0.5216.0		SP2 CU3				9/20/2018		https://support.microsoft.com/en-us/help/4458871
--- 13.0.5233.0		SP2 CU4			   11/13/2018		https://support.microsoft.com/en-us/help/4464106/cumulative-update-4-for-sql-server-2016-sp2
--- 13.0.5264.1		SP2 CU5             1/23/2019	    https://support.microsoft.com/en-us/help/4475776/cumulative-update-5-for-sql-server-2016-sp2
--- 13.0.5292.0		SP2 CU6				3/19/2019		https://support.microsoft.com/en-us/help/4488536/cumulative-update-6-for-sql-server-2016-sp2
--- 13.0.5337.0		SP2 CU7				5/22/2019		https://support.microsoft.com/en-us/help/4495256/cumulative-update-7-for-sql-server-2016-sp2
+-- Build			Description					Release Date	URL to KB Article								
+-- 13.0.5026.0		SP2 RTM						4/24/2018		https://bit.ly/2FEvN2q 
+-- 13.0.5149.0		SP2 CU1						5/30/2018		https://support.microsoft.com/en-us/help/4135048/cumulative-update-1-for-sql-server-2016-sp2
+-- 13.0.5153.0		SP2 CU2						7/16/2018		https://support.microsoft.com/en-us/help/4340355
+-- 13.0.5216.0		SP2 CU3						9/20/2018		https://support.microsoft.com/en-us/help/4458871
+-- 13.0.5233.0		SP2 CU4						11/13/2018		https://support.microsoft.com/en-us/help/4464106/cumulative-update-4-for-sql-server-2016-sp2
+-- 13.0.5264.1		SP2 CU5						1/23/2019	    https://support.microsoft.com/en-us/help/4475776/cumulative-update-5-for-sql-server-2016-sp2
+-- 13.0.5292.0		SP2 CU6						3/19/2019		https://support.microsoft.com/en-us/help/4488536/cumulative-update-6-for-sql-server-2016-sp2
+-- 13.0.5337.0		SP2 CU7						5/22/2019		https://support.microsoft.com/en-us/help/4495256/cumulative-update-7-for-sql-server-2016-sp2
+-- 13.0.5366.0		SP2 CU7 + Security Update	7/9/2019		https://support.microsoft.com/en-us/help/4505222/security-update-for-sql-server-2016-sp2-cu7-gdr-july-9-2019		
 
 		
 															
@@ -219,6 +220,10 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 -- Lets you determine whether Instant File Initialization (IFI) is enabled for the instance
 -- This should be enabled in the vast majority of cases
 -- SQL Server 2016 and newer lets you enable this during the SQL server installation process
+
+-- Note: This query won't return any results if the SQL Server error log has been recycled
+-- Query 8 has a instant_file_initialization_enabled column that will show the status of IFI
+
 
 -- Database Instant File Initialization
 -- https://bit.ly/2nTX74y
