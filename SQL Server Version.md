@@ -501,7 +501,10 @@ Useful articles:
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3162.1   | 2017.140.3162.1   | RTM    | CU   | **Latest CU** [4498951 Microsoft SQL Server 2017 CU15]                                                   | 2019-05-23   | 2019-05- |    52 |     45 |      528 |
+| 14.0.3208.1   | 2017.140.3208.1   | RTM    | CU   | **Latest CU** [4510083 On-demand hotfix update package 2 for SQL Server 2017 Cumulative update 15 (CU15)]| 2019-07-09   | 2019-06-26 |     2 |      2 |      528 |
+| 14.0.3192.2   | 2017.140.3192.2   | RTM    | GDR  | [4505225 Security update for SQL Server 2017 CU15 GDR: July 9, 2019] **CVE-2019-1068**                   | 2019-07-09   | 2019-06-26 |     1 |      1 |      528 |
+| 14.0.3164.1   | 2017.140.3164.1   | RTM    | COD  | [4506633 On-demand hotfix update package for SQL Server 2017 Cumulative update 15 (CU15)]                | 2019-06-20   | 2019-05-16 |     1 |      1 |      528 |
+| 14.0.3162.1   | 2017.140.3162.1   | RTM    | CU   | [4498951 Microsoft SQL Server 2017 CU15]                                                                 | 2019-05-23   | 2019-05-16 |    52 |     45 |      528 |
 | 14.0.3103.1   | 2017.140.3103.1   | RTM    | GDR  | [4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019] CVE-2019-0819   | 2019-05-14   | 2019-03-23 |     1 |      1 |      491 |
 | 14.0.3076.1   | 2017.140.3076.1   | RTM    | CU   | [4484710 Microsoft SQL Server 2017 CU14]                                                                 | 2019-03-25   | 2019-03-12 |    51 |     34 |      491 |
 | 14.0.3049.1   | 2017.140.3049.1   | RTM    | COD  | [4483666 On-demand hotfix update package for SQL Server 2017 CU13]                                       | 2019-01-08   | 2018-12-15 |     3 |      3 |      488 |
@@ -532,6 +535,9 @@ Useful articles:
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                                     | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                                         | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[4510083 On-demand hotfix update package 2 for SQL Server 2017 Cumulative update 15 (CU15)]:https://support.microsoft.com/help/4510083/
+[4505225 Security update for SQL Server 2017 CU15 GDR: July 9, 2019]:https://support.microsoft.com/help/4505225/
+[4506633 On-demand hotfix update package for SQL Server 2017 Cumulative update 15 (CU15)]:https://support.microsoft.com/help/4506633/
 [4498951 Microsoft SQL Server 2017 CU15]:https://support.microsoft.com/help/4498951/
 [4494352 Description of the security update for SQL Server 2017 CU 14 GDR: May 14, 2019]:https://support.microsoft.com/help/4494352
 [4484710 Microsoft SQL Server 2017 CU14]:https://support.microsoft.com/help/4484710
