@@ -522,6 +522,8 @@ Useful articles:
 | 14.0.3015.40  | 2017.140.3015.40  | RTM    | CU   | [4052987 Microsoft SQL Server 2017 CU3]                                                                  | 2017-01-03   | 2017-12-23 |    14 |     13 |      459 |
 | 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   | [4052574 Microsoft SQL Server 2017 CU2]                                                                  | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
 | 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   | [4038634 Microsoft SQL Server 2017 CU1]                                                                  | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
+| 14.0.2027.2   | 2017.140.2027.2   | RTM    | COD  | [4505224 Security update for SQL Server 2017 GDR: July 9, 2019] **CVE-2019-1068**                        | 2019-07-09   | 2019-06-15 |     1 |      1 |      447 |
+| 14.0.2014.14  | 2017.140.2014.14  | RTM    | COD  | [4494351 Security update for SQL Server 2017 GDR: May 14, 2019] **CVE-2019-0819**                        | 2019-05-14   | 2019-04-05 |     1 |      1 |      447 |
 | 14.0.2002.14  | 2017.140.2002.14  | RTM    | COD  | [4293803 Security update for SQL Server 2017 GDR: August 14, 2018] **CVE-2018-8273**                     | 2018-08-14   | 2018-07-21 |     1 |      1 |      433 |
 | 14.0.2000.63  | 2017.140.2000.63  | RTM    | COD  | [4057122 Security update for SQL Server 2017 GDR: January 3, 2018] **CVE-2017-5715,2017-5753,2017-5754** | 2018-01-03   | 2017-12-23 |     1 |      1 |      431 |
 | 14.0.1000.169 | 2017.140.1000.169 | RTM    | RTM  | [Microsoft SQL Server 2017 RTM]                                                                          | 2017-10-02   | 2017-08-23 |       |        |     1475 |
@@ -555,6 +557,8 @@ Useful articles:
 [4056498 Microsoft SQL Server 2017 CU4]:https://support.microsoft.com/help/4056498
 [4052987 Microsoft SQL Server 2017 CU3]:https://support.microsoft.com/help/4052987
 [4052574 Microsoft SQL Server 2017 CU2]:https://support.microsoft.com/help/4052574
+[4505224 Security update for SQL Server 2017 GDR: July 9, 2019]:https://support.microsoft.com/help/4505224
+[4494351 Security update for SQL Server 2017 GDR: May 14, 2019]:https://support.microsoft.com/help/4494351
 [4038634 Microsoft SQL Server 2017 CU1]:https://support.microsoft.com/help/4038634
 [4293803 Security update for SQL Server 2017 GDR: August 14, 2018]:https://support.microsoft.com/help/4293803
 [4057122 Security update for SQL Server 2017 GDR: January 3, 2018]:https://support.microsoft.com/help/4057122
