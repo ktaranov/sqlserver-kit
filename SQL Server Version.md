@@ -580,6 +580,9 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5382.0   | 2015.131.5382.0   |  RTM   | CU   | [4510807 On-demand hotfix update package 2 for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]                 | 2019-07-09   | 2019-06-15 |     2 |      2 |      714 |
+| 13.0.5366.0   | 2015.131.5366.0   |  RTM   | GDR  | [4505222 Security update for SQL Server 2016 SP2 CU7 GDR: July 9, 2019] **CVE-2019-1068**                                      | 2019-07-09   | 2019-06-15 |     2 |      2 |      714 |
+| 13.0.5343.1   | 2015.131.5343.1   |  RTM   | COD  | [4508636 On-demand hotfix update package for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]                   | 2019-06-24   | 2019-06-15 |     2 |      2 |      714 |
 | 13.0.5337.0   | 2015.131.5337.0   | SP2    | CU   | **Latest SP2 CU**[4495256 Cumulative Update 7 for SQL Server 2016 SP2]                                                         | 2019-05-22   | 2019-05-16 |    28 |     27 |      714 |
 | 13.0.5292.0   | 2015.131.5292.0   | SP2    | CU   | [4488536 Cumulative Update 6 for SQL Server 2016 SP2]                                                                          | 2019-03-19   | 2019-03-12 |    29 |     24 |      714 |
 | 13.0.5270.0   | 2015.131.5270.0   | SP2    | COD  | [4490133 On-demand hotfix update package for SQL Server 2016 SP2 CU5]                                                          | 2019-02-14   | 2019-02-08 |     1 |      1 |      712 |
@@ -654,6 +657,10 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                            | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP    | CTP  | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                                | 2015-05-26   | 2015-05-21 |       |        |          |
 
+
+[4510807 On-demand hotfix update package 2 for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]:https://support.microsoft.com/help/4510807
+[4505222 Security update for SQL Server 2016 SP2 CU7 GDR: July 9, 2019]:https://support.microsoft.com/help/4505222
+[4508636 On-demand hotfix update package for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]:https://support.microsoft.com/help/4508636
 [4495256 Cumulative Update 7 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4495256
 [4488536 Cumulative Update 6 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4488536
 [4490133 On-demand hotfix update package for SQL Server 2016 SP2 CU5]:https://support.microsoft.com/help/4490133
