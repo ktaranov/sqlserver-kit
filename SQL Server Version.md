@@ -594,8 +594,11 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 | 13.0.5161.0   | 2015.131.5161.0   | SP2    | CU   | **Withdrawn** [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018] **CVE-2018-8273**                        | 2018-08-14   | 2018-07-18 |     1 |      0 |      672 |
 | 13.0.5153.0   | 2015.131.5153.0   | SP2    | CU   | [4340355 Cumulative Update 2 for SQL Server 2016 SP2]                                                                          | 2018-07-16   | 2018-06-29 |    29 |     21 |      671 |
 | 13.0.5149.0   | 2015.131.5149.0   | SP2    | CU   | [4135048 Cumulative Update 1 for SQL Server 2016 SP2]                                                                          | 2018-05-30   | 2018-05-19 |    45 |     28 |      549 |
+| 13.0.5101.9   | 2015.131.5101.9   | SP2    | GDR  | [4505220 Security update for SQL Server 2016 SP2 GDR: July 9, 2019] **CVE-2019-1068**                                          | 2019-07-09   | 2019-06-15 |     2 |      2 |      491 |
 | 13.0.5081.1   | 2015.131.5081.1   | SP2    | COD  | [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018] **CVE-2018-8273**                                       | 2018-05-30   | 2018-05-19 |     1 |      0 |      492 |
 | 13.0.5026.0   | 2015.131.5026.0   | SP2    | SP   | [4052908 SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
+| 13.0.4604.0   | 2015.130.4604.0   | SP1    | GDR  | [4505221 Security update for SQL Server 2016 SP1 CU15 GDR: July 9, 2019]  **CVE-2019-1068**                                    | 2019-07-09   | 2019-06-15 |     2 |      2 |      761 |
+| 13.0.4577.0   | 2015.130.4577.0   | SP1    | COD  | [4508471 On-demand hotfix update package for SQL Server 2016 Service Pack 1 (SP1) Cumulative update 15 (CU15)]                 | 2019-06-20   | 2019-06-15 |     2 |      2 |      761 |
 | 13.0.4574.0   | 2015.130.4574.0   | SP1    | CU   | **Last SP1 CU** [4495257 Cumulative Update 15 for SQL Server 2016 SP1]                                                         | 2019-05-16   | 2019-04-28 |     7 |      7 |      761 |
 | 13.0.4560.0   | 2015.130.4560.0   | SP1    | CU   | [4488535 Cumulative update 14 (CU14) for SQL Server 2016 Service Pack 1]                                                       | 2019-03-19   | 2019-03-12 |     7 |      7 |      761 |
 | 13.0.4550.1   | 2015.130.4550.1   | SP1    | CU   | [4475775 Cumulative Update 13 for SQL Server 2016 SP1]                                                                         | 2019-01-23   | 2019-01-11 |    12 |      9 |      761 |
@@ -613,6 +616,7 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 | 13.0.4435.0   | 2015.130.4435.0   | SP1    | CU   | [4019916 Cumulative Update 3 for SQL Server 2016 SP1]                                                                          | 2017-05-15   | 2017-04-27 |    70 |     57 |      534 |
 | 13.0.4422.0   | 2015.130.4422.0   | SP1    | CU   | [4013106 Cumulative Update 2 for SQL Server 2016 SP1]                                                                          | 2017-03-20   | 2017-03-06 |   117 |    100 |      415 |
 | 13.0.4411.0   | 2015.130.4411.0   | SP1    | CU   | [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]                                                               | 2017-01-18   | 2017-01-06 |    63 |     55 |      439 |
+| 13.0.4259.0   | 2015.130.4223.10  | SP1    | GDR  | [4505219 Security update for SQL Server 2016 SP1 GDR: July 9, 2019] **CVE-2019-1068**                                          | 2019-07-09   | 2019-06-15 |     2 |      2 |      699 |
 | 13.0.4224.16  | 2015.130.4224.16  | SP1    | CU   | [4458842 Security update for SQL Server 2016 SP1 GDR: August 22, 2018] **CVE-2018-8273**                                       | 2018-08-22   |            |     1 |      0 |      700 |
 | 13.0.4223.10  | 2015.130.4223.10  | SP1    | CU   | **Withdrawn** [4293801 Security update for SQL Server 2016 SP1 GDR: August 14, 2018] **CVE-2018-8273**                         | 2018-08-14   |            |     1 |      0 |          |
 | 13.0.4210.6   | 2015.130.4210.6   | SP1    | CU   | [4057118 Description of the security update for SQL Server 2016 SP1 GDR: January 3, 2018] **CVE-2017-5715,2017-5753,2017-5754**|2018-01-03    |            |     1 |      0 |      696 |
@@ -672,10 +676,13 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 [4293807 Security update for SQL Server 2016 SP2 (CU): August 14, 2018]:https://support.microsoft.com/help/4293807/
 [4340355 Cumulative Update 2 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4340355
 [4135048 Cumulative Update 1 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4135048
+[4505220 Security update for SQL Server 2016 SP2 GDR: July 9, 2019]:https://support.microsoft.com/help/4505220
 [4293802 Security update for SQL Server 2016 SP2 GDR: August 14, 2018]:https://support.microsoft.com/help/4293802
 [4464343 Cumulative Update 12 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4464343
 [4465443 FIX: The "modification_counter" in DMV sys.dm_db_stats_properties shows incorrect value when partitions are merged]:https://support.microsoft.com/help/4465443/
 [4052908 SQL Server 2016 Service Pack 2 release information]:https://support.microsoft.com/help/4052908
+[4505221 Security update for SQL Server 2016 SP1 CU15 GDR: July 9, 2019]:https://support.microsoft.com/help/4505221
+[4508471 On-demand hotfix update package for SQL Server 2016 Service Pack 1 (SP1) Cumulative update 15 (CU15)]:https://support.microsoft.com/help/4508471
 [4495257 Cumulative Update 15 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4495257
 [4488535 Cumulative Update 14 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4488535
 [4475775 Cumulative Update 13 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4475775
@@ -691,6 +698,7 @@ Microsoft SQL Server 2016 (SP2-CU7) (KB4495256) - 13.0.5337.0 (X64)
 [4019916 Cumulative Update 3 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4019916
 [4013106 Cumulative Update 2 for SQL Server 2016 SP1]:https://support.microsoft.com/help/4013106
 [3208177 Cumulative update 1 for SQL Server 2016 Service Pack 1]:https://support.microsoft.com/help/3208177
+[4505219 Security update for SQL Server 2016 SP1 GDR: July 9, 2019]:https://support.microsoft.com/help/4505219
 [4458842 Security update for SQL Server 2016 SP1 GDR: August 22, 2018]:https://support.microsoft.com/help/4458842
 [4293801 Security update for SQL Server 2016 SP1 GDR: August 14, 2018]:https://support.microsoft.com/help/4293801
 [4057118 Description of the security update for SQL Server 2016 SP1 GDR: January 3, 2018]:https://support.microsoft.com/help/4057118
