@@ -775,6 +775,7 @@ Articles types:
 | [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]                                                | Klaus Aschenbrenner                      | 2013-06-12 | [DBA],[DEV] |
 | [SQL Server Guide To NULL Handling]                                                                                     | Gavin Draper                             | 2018-11-29 | [DBA],[DEV] |
 | [Living with SQL’s 900 Byte Index Key Length Limit]                                                                     | Bart Duncan                              | 2011-01-06 | [DBA],[DEV] |
+| [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Ed Pollack                               | 2019-07-10 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1528,3 +1529,4 @@ Articles types:
 [SQL Server Guide To NULL Handling]:https://gavindraper.com//2018/11/29/SQL-Server-Guide-To-NULL-Handling/
 [Data Compression + Backup Compression = Double Compression?]:https://jesspomfret.com/double-compression/
 [Living with SQL’s 900 Byte Index Key Length Limit]:https://blogs.msdn.microsoft.com/bartd/2011/01/06/living-with-sqls-900-byte-index-key-length-limit/
+[Memory-Optimized TempDB Metadata in SQL Server 2019]:https://www.sqlshack.com/memory-optimized-tempdb-metadata-in-sql-server-2019/

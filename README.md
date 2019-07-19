@@ -58,6 +58,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Sample Databases and Datasets](/Sample_Databases)
  - [Scripts](/Scripts)
     - **Awesome SQL Server Diagnostic Information Queries** (by Glenn Alan Berry)
+      - [SQL Managed Instance Diagnostic Information Queries](/Scripts/SQL%20Managed%20Instance%20Diagnostic%20Information%20Queries.sql)
       - [Azure SQL Database Diagnostic Information Queries](/Scripts/Azure%20SQL%20Database%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2019 Diagnostic Information Queries](/Scripts/SQL%20Server%202019%20Diagnostic%20Information%20Queries.sql)
       - [SQL Server 2017 Diagnostic Information Queries](/Scripts/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql)
