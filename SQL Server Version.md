@@ -132,7 +132,7 @@ Profits:
 | 2019    | [Install 2019 CTP 3.1]                                                | 15.0.1700.0                                  | 2019-06-26                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU15 KB4510083]                              | 14.0.1000.169<br/>14.0.3208.1                | 2017-10-02<br/>2019-07-09                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU7 KB4510807]                               | 13.0.5026.0<br/>13.0.5382.0                  | 2018-04-24<br/>2019-05-22                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP2] then<br/>[SP3 KB4022619] then<br/> [GDR KB4505422] | 12.0.5000.0<br/>12.0.6024.0<br/>12.0.6293.0  | 2016-07-11<br/>2018-10-30<br/>2019-07-09 | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2014    | [Install 2014 SP3] then<br/> [GDR KB4505422]                          | 12.0.6024.0<br/>12.0.6293.0                  | 2018-10-30<br/>2019-07-09                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[ADV180002 (GDR)]         | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7462.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | Review Note     | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2014-07-07      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -144,8 +144,7 @@ Profits:
 [CU15 KB4510083]:https://support.microsoft.com/help/4510083
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU7 KB4510807]:https://support.microsoft.com/help/4510807
-[Install 2014 SP2]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp2
-[SP3 KB4022619]:https://support.microsoft.com/help/4022619
+[Install 2014 SP3]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp3
 [GDR KB4505422]:https://support.microsoft.com/help/4505422
 [Install 2012]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/en-us/help/4018073
@@ -183,8 +182,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017 CU15]                | SQLServer2017-KB4510083-x64.exe                                   | 2019-07-09   | 14.0.3208.1   |      528 | 61e727e0183ce605bfa2b2a114a1baa9f9272332 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CU7]             | SQLServer2016-KB4510807-x64.exe                                   | 2019-07-09   | 13.0.5382.0   |      714 | 486a4a4da5f0dcc2fbf807988d100107fe8173e8 |
-| [SQL Server 2014 SP2]                 | SQLServer2014SP2-FullSlipstream-x64-ENU.iso                       | 2016-07-11   | 12.0.5000.0   |     3010 | 16f1934dc1f47994cd924439f884a05c6ad4d173 |
-| [SQL Server 2014 SP3 KB4022619]       | SQLServer2014SP3-KB4022619-x64-ENU.exe                            | 2018-10-30   | 12.0.6024.0   |      791 | a0959d84f72fd9f8a8832ca691efc420050df9de |
+| [SQL Server 2014 SP3]                 | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
 | [SQL Server 2014 SP3 GDR KB4505422]   | SQLServer2014-KB4505422-x64.exe                                   | 2019-07-09   | 12.0.6293.0   |      656 | 1eb492c57bf397234bbe2dfdd2abad571b345a67 |
 | [SQL Server 2012]                     | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
@@ -204,8 +202,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU7]:http://download.microsoft.com/download/C/4/2/C42DB537-DC1F-4AAD-9954-D1FF29960C2F/SQLServer2016-KB4510807-x64.exe
-[SQL Server 2014 SP2]:http://care.dlservice.microsoft.com/dl/download/6/D/9/6D90C751-6FA3-4A78-A78E-D11E1C254700/SQLServer2014SP2-FullSlipstream-x64-ENU.iso
-[SQL Server 2014 SP3 KB4022619]:https://download.microsoft.com/download/7/9/F/79F4584A-A957-436B-8534-3397F33790A6/SQLServer2014SP3-KB4022619-x64-ENU.exe
+[SQL Server 2014 SP3]:http://download.microsoft.com/download/7/9/F/79F4584A-A957-436B-8534-3397F33790A6/SQLServer2014SP3-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP3 GDR KB4505422]:https://download.microsoft.com/download/6/4/2/64207134-52D5-45EB-BC48-D0F684F24762/SQLServer2014-KB4505422-x64.exe
 [SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
