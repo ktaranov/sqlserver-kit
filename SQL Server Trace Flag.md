@@ -1954,22 +1954,19 @@ Link: [KB917825]
 
 <a id="2553"></a>
 #### Trace Flag: 2553
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2554"></a>
 #### Trace Flag: 2554
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2555"></a>
 #### Trace Flag: 2555
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
@@ -1982,8 +1979,7 @@ Link: [KB917825]
 
 <a id="2557"></a>
 #### Trace Flag: 2557
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
@@ -1996,8 +1992,7 @@ Link: [Controlling SQL Server memory dumps]
 
 <a id="2559"></a>
 #### Trace Flag: 2559
-Function: Unknown, but related to controlling the contents of a
-memory dump<br />
+Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
@@ -2048,8 +2043,10 @@ Link: None
 
 <a id="2861"></a>
 #### Trace Flag: 2861
+**Undocumented trace flag**<br />
+**TF2861 only exists in SQL Server 2000 SP3 and SP4, was removed before 2005 shipped, and if you’re using it now you’re definitely incorrect and should removed it from your startup parameters/application code that enables it.**
 Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cache Zero-Cost Query Plan<br />
-Link: None
+Link: http://www.seangallardy.com/trace-flag-2861-the-trace-flag-the-myth-the-legend/
 
 
 #### Trace Flag: 2880
@@ -3917,6 +3914,7 @@ Link: https://blogfabiano.com/2012/07/03/statistics-used-in-a-cached-query-plan<
 Link: http://dataidol.com/davebally/2014/04/12/reasons-why-your-plans-suck-no-56536<br />
 Link: https://www.mssqltips.com/sqlservertip/4269/how-to-identify-useful-sql-server-table-statistics/<br />
 Link: http://sql-sasquatch.blogspot.com/2018/06/harvesting-sql-server-trace-flag-8666.html<br />
+Link: https://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-trace.html<br />
 Link: [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]<br />
 Scope: global or session
 
