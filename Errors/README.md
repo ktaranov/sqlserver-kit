@@ -176,6 +176,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                              |
 |      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                              |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                              |
+|      12349 | Operation not supported for memory optimized tables having columnstore index.                            | [12349_link1][41]                              |
 |      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                              |
 |      13518 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has IDENTITY column specification … | [13518_link1][33]                              |
 |      13523 | Setting SYSTEM_VERSIONING to ON failed because table '%.*ls' has %d columns and table '%.*ls' has %d   … | [13523_link1][33]                              |
@@ -205,6 +206,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                       | [33111_link1]                                  |
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                              |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                                  |
+|      35320 | Column store indexes are not allowed on tables for which the durability option SCHEMA_ONLY is specified. | [35320_link1][41]                              |
 |      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                              |
 |      35343 | The statement failed. Column '%.*ls' has a data type that cannot participate in a columnstore index.     | [35343_link1][36]                              |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                              |
@@ -249,6 +251,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [38]:https://www.sqlshack.com/exec-sql-overview-and-examples/
 [39]:http://www.nikoport.com/2015/09/02/columnstore-indexes-part-64-t-sql-improvements-in-sql-server-2016/
 [40]:https://bertwagner.com/2019/06/25/multiple-identity-inserts/
+[41]:https://www.sqlshack.com/how-to-create-a-clustered-columnstore-index-on-a-memory-optimized-table/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
