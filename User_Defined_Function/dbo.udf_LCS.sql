@@ -1,5 +1,5 @@
 IF OBJECT_ID('dbo.udf_LCS') IS NULL
-   EXECUTE ('CREATE FUNCTION dbo.udf_LCS() RETURNS NVARCHAR(MAX) AS RETURN SELECT 1 AS A;');
+   EXECUTE ('CREATE FUNCTION dbo.udf_LCS() RETURNS nvarchar(max) AS RETURN SELECT 1 AS A;');
 GO
 
 
@@ -25,22 +25,22 @@ example:
 returns:   >
   the longest common subsequence as a string
 **/
-  (@xString VARCHAR(MAX), @yString VARCHAR(MAX))
-RETURNS VARCHAR(MAX)
+  (@xString varchar(max), @yString varchar(max))
+RETURNS varchar(max)
 AS
   BEGIN
 
-    DECLARE @ii INT = 1; --inner index
-    DECLARE @jj INT = 1; --next loop index
-    DECLARE @West INT; --array reference number to left
-    DECLARE @NorthWest INT; --array reference previous left
-    DECLARE @North INT; --array reference previous
-    DECLARE @Max INT; --holds the maximum of two values
-    DECLARE @Current INT; --current number of matches
-    DECLARE @Matrix NVARCHAR(MAX);
-    DECLARE @PreviousRow NVARCHAR(2000); -- the previous matrix row
-    DECLARE @JSON NVARCHAR(4000); --json work variable
-    DECLARE @Numbers TABLE (jj INT);
+    DECLARE @ii int = 1; --inner index
+    DECLARE @jj int = 1; --next loop index
+    DECLARE @West int; --array reference number to left
+    DECLARE @NorthWest int; --array reference previous left
+    DECLARE @North int; --array reference previous
+    DECLARE @Max int; --holds the maximum of two values
+    DECLARE @Current int; --current number of matches
+    DECLARE @Matrix nvarchar(max);
+    DECLARE @PreviousRow nvarchar(2000); -- the previous matrix row
+    DECLARE @JSON nvarchar(4000); --json work variable
+    DECLARE @Numbers TABLE (jj int);
 -- SQL Prompt formatting off
 
 INSERT INTO @Numbers(jj) --this is designed for words of max 40 characters
@@ -59,16 +59,16 @@ VALUES(1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12),(13),(14),(15),
         SELECT @West = 0, @JSON = NULL;
         --now create a row in just one query
         SELECT @NorthWest =
-          Json_Value(@PreviousRow, '$[' + Cast(jj - 1 AS VARCHAR(5)) + ']'),
+          Json_Value(@PreviousRow, '$[' + Cast(jj - 1 AS varchar(5)) + ']'),
           @North =
-            Json_Value(@PreviousRow, '$[' + Cast(jj AS VARCHAR(5)) + ']'),
+            Json_Value(@PreviousRow, '$[' + Cast(jj AS varchar(5)) + ']'),
           @Max = CASE WHEN @West > @North THEN @West ELSE @North END,
           @Current =
             CASE WHEN Substring(@xString, jj, 1) = Substring(@yString, @ii, 1) THEN
                    @NorthWest + 1 ELSE @Max END,
           @JSON =
             Coalesce(@JSON + ',', '[0,')
-            + Coalesce(Cast(@Current AS VARCHAR(5)), 'null'), @West = @Current
+            + Coalesce(Cast(@Current AS varchar(5)), 'null'), @West = @Current
           FROM @Numbers AS f
           WHERE f.jj <= Len(@xString);
           --and store the result as the previous row
@@ -97,14 +97,14 @@ VALUES(1),(2),(3),(4),(5),(6),(7),(8),(9),(10),(11),(12),(13),(14),(15),
             SELECT @PreviousRowScore =
               Json_Value(
                           @Matrix,
-                          'strict $[' + Convert(VARCHAR(5), @ii - 1) + ']['
-                          + Convert(VARCHAR(5), @jj) + ']'
+                          'strict $[' + Convert(varchar(5), @ii - 1) + ']['
+                          + Convert(varchar(5), @jj) + ']'
                         ),
               @previousColScore =
                 Json_Value(
                             @Matrix,
-                            'strict $[' + Convert(VARCHAR(5), @ii) + ']['
-                            + Convert(VARCHAR(5), @jj - 1) + ']'
+                            'strict $[' + Convert(varchar(5), @ii) + ']['
+                            + Convert(varchar(5), @jj - 1) + ']'
                           );
            --either go north or west
             IF @PreviousRowScore < @previousColScore SELECT @jj = @jj - 1;
