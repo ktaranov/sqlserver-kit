@@ -198,6 +198,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                                   |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.         … | [17190_link1]                                       |
 |      17300 | SQL Server was unable to run a new system task, either because there is insufficient memory or the     … | [17300_link1]                                       |
+|      18054 | Error %d, severity %d, state %d was raised, but no message with that error number was found in         … | [18054_link1]                                       |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s       … | [18272_link1]                                       |
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated       … | [18357_link1][5]                                    |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati       … | [18452_link1]                                       |
@@ -315,6 +316,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [15274_link1]:https://blog.sqlauthority.com/2019/06/03/sql-server-fix-msg-15274-access-to-the-remote-server-is-denied-because-the-current-security-context-is-not-trusted/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
+[18054_link1]:https://sqlstudies.com/2019/07/24/custom-error-messages/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
 [18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/

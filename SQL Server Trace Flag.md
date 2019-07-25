@@ -2618,8 +2618,8 @@ SQL Server opens database data and log files with FILE_FLAG_WRITE_THROUGH, mappi
 Linux Default: Trace flag considered **Off**
 Windows Default: Trace flag considered **On **
 **The trace flag does not apply to SQL Server on Linux SQL 2017 RTM thru CU5.  The behavior is assumed enabled prior to CU 6.
-** The trace flag does not apply to Windows.  On Windows it is always assumed to be enabled.**
-On Linux, you need a file system that provides DpuFua=1 enablement or you have confirmed your system is O_DIRECT safe.
+**The trace flag does not apply to Windows.  On Windows it is always assumed to be enabled.**
+On Linux, you need a file system that provides `DpuFua=1` enabled or you have confirmed your system is O_DIRECT safe.
 By enabling the trace flag you disable the batch flush requests from SQL Server and are trusting SQLPAL, HE and the I/O subsystem configuration to achieve durability.<br />
 Link: [SQL Server On Linux: Forced Unit Access (Fua) Internals]<br />
 Scope: global
