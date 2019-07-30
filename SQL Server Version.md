@@ -734,8 +734,8 @@ All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2014 (SP3-CU3-GDR) (KB4505422) - 12.0.6293.0 (X64)
-   May 25 2019 22:45:08
+Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
+   Jul 20 2019 21:42:29
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
@@ -749,6 +749,7 @@ Microsoft SQL Server 2014 (SP3-CU3-GDR) (KB4505422) - 12.0.6293.0 (X64)
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   | [4470220 Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
 | 12.0.6108.1  | 2014.120.6108.1  | SP3    | GDR  | [4505218 Security update for SQL Server 2014 SP3 GDR: July 9, 2019] **CVE-2019-1068**                                              | 2019-07-09   |     1 |      1 |      654 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
+| 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | [4500180 Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
 | 12.0.5659.1  | 2014.120.5659.1  | SP2    | GDR  | [4505419 Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019] **CVE-2019-1068**                                         | 2019-07-09   |     1 |      1 |      679 |
 | 12.0.5632.1  | 2014.120.5632.1  | SP2    | CU   | [4491540 Cumulative Update 17 for SQL Server 2014 SP2]                                                                             | 2019-04-16   |     3 |      3 |      678 |
 | 12.0.5626.1  | 2014.120.5626.1  | SP2    | CU   | [4482967 Cumulative Update 16 for SQL Server 2014 SP2]                                                                             | 2019-02-19   |     3 |      3 |      678 |
@@ -842,6 +843,7 @@ Microsoft SQL Server 2014 (SP3-CU3-GDR) (KB4505422) - 12.0.6293.0 (X64)
 [4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
 [4505218 Security update for SQL Server 2014 SP3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505218
 [4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
+[4500180 Cumulative Update 18 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4500180
 [4505419 Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019]:https://support.microsoft.com/help/4505419
 [4491540 Cumulative Update 17 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4491540
 [4482967 Cumulative Update 16 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4482967
