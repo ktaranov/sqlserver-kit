@@ -1532,7 +1532,7 @@ Scope: ?
 Function: Changes the fixed auto update statistics threshold to dynamic auto update statistics threshold.<br />
 **Note: Beginning with SQL Server 2016 this behavior is controlled by the engine and trace flag 2371 has no effect.**<br />
 Link: https://support.microsoft.com/help/2754171<br />
-Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371.aspx<br />
+Link: https://blogs.msdn.microsoft.com/saponsqlserver/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371/<br />
 Link: https://blogs.msdn.microsoft.com/axinthefield/sql-server-trace-flag-2371-for-dynamics-ax/<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
@@ -3002,6 +3002,7 @@ Link: https://support.microsoft.com/help/974006/<br />
 Link: https://sqlworkbooks.com/2017/04/selectively-enabletrace-flag-4199-and-query_optimizer_hotfixes-in-sql-server-2016/<br />
 Link: https://sqlworkbooks.com/2017/04/trace-flag-4199-no-per-session-override-if-you-enable-it-globally/<br />
 Link: http://www.sqlservergeeks.com/sql-server-2016-database-scoped-configuration-and-trace-flag-4199/<br />
+Link: https://nebraskasql.blogspot.com/2018/11/things-i-learned-at-summit-v20-trace.html<br />
 Link: [Let’s talk about trace flags]<br />
 Link: [KB2964518]<br />
 Scope: global or session or query
