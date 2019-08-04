@@ -2,32 +2,13 @@
 Detailed information about Microsoft SQL Server Data Types and its mapping to another databases and program languages analog.
 
 ## Table of Contents:
- - [Source link](#source-link)
  - [Data Type Precedence (Transact-SQL)](#data-type-precedence)
  - [Data Type Synonyms (Transact-SQL)](#data-type-synonyms)
  - [Precision, Scale, and Length (Transact-SQL)](#precision-scale-and-length)
  - [SQL Server, SSIS and Biml Data Types](#sql-server-ssis-and-biml-data-types)
  - [SQL Server Data Types Length](#sql-server-data-types-length)
  - [SQL Server to MySQL, Oracle, PostgreSQL and SQLite Data Type Mapping](#sql-server-to-mysql-oracle-postgresql-sqlite)
-
-
-## Source link
-<a id="source-link"></a>
- - [Data Types (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
- - [Data Type Precedence (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql)
- - [Data Type Synonyms (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-synonyms-transact-sql)
- - [Precision, Scale, and Length](https://docs.microsoft.com/en-us/sql/t-sql/data-types/precision-scale-and-length-transact-sql)
- - [Integration Services Data Types](https://docs.microsoft.com/en-us/sql/integration-services/data-flow/integration-services-data-types)
- - [DbType Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.data.dbtype)
- - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
- - [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
- - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
- - [SQL Server to MySQL Data Type Conversion](https://convertdb.com/mysql_mssql_mapping)
- - [SQL Server to Oracle Data Type Conversion](https://docs.oracle.com/cd/B19306_01/gateways.102/b14270/apa.htm)
- - [SQL Server to PostgreSQL Data Type Conversion](http://www.sqlines.com/sql-server-to-postgresql)
- - [SQL Server to SQLite Data Type Conversion](http://ericsink.com/mssql_mobile/data_types.html)
-
-**[⬆ back to top](#table-of-contents)**
+ - [Source links](#source-links)
 
 
 ## Data Type Precedence (Transact-SQL)
@@ -310,9 +291,29 @@ FROM sys.fn_helpdatatypemap (
 | Spatial Data Types    | [geometry]         |                                 |               | VARCHAR                     | TEXT    |
 | Spatial Data Types    | [geography]        |                                 |               | VARCHAR                     | TEXT    |
 
+(\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
+
 **[⬆ back to top](#table-of-contents)**
 
-(\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
+
+## Source links
+<a id="source-links"></a>
+ - [Data Types (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
+ - [Data Type Precedence (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql)
+ - [Data Type Synonyms (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-synonyms-transact-sql)
+ - [Precision, Scale, and Length](https://docs.microsoft.com/en-us/sql/t-sql/data-types/precision-scale-and-length-transact-sql)
+ - [Integration Services Data Types](https://docs.microsoft.com/en-us/sql/integration-services/data-flow/integration-services-data-types)
+ - [DbType Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.data.dbtype)
+ - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
+ - [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
+ - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
+ - [SQL Server to MySQL Data Type Conversion](https://convertdb.com/mysql_mssql_mapping)
+ - [SQL Server to Oracle Data Type Conversion](https://docs.oracle.com/cd/B19306_01/gateways.102/b14270/apa.htm)
+ - [SQL Server to PostgreSQL Data Type Conversion](http://www.sqlines.com/sql-server-to-postgresql)
+ - [SQL Server to SQLite Data Type Conversion](http://ericsink.com/mssql_mobile/data_types.html)
+
+**[⬆ back to top](#table-of-contents)**
+
 
 [1]:https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
 [2]:https://docs.microsoft.com/sql/t-sql/data-types/decimal-and-numeric-transact-sql

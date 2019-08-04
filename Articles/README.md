@@ -780,6 +780,10 @@ Articles types:
 | [Remember the Default Window]                                                                                           | Steve Jones                              | 2018-08-23 | [DBA],[DEV] |
 | [The Impact of Non-Updating Updates]                                                                                    | Paul Randal                              | 2010-08-11 | [DBA],[DEV] |
 | [What are Columnstore Indexes?]                                                                                         | Monica Rathbun                           | 2019-07-22 | [DBA],[DEV] |
+| [PolyBase in SQL Server 2019 – The End of ETL?]                                                                         | Benjamin Weissman                        | 2019-07-23 | [DBA],[DEV] |
+| [Overview of Service Principal Name and Kerberos authentication in SQL Server]                                          | Rajendra Gupta                           | 2019-07-18 | [DBA]       |
+| [Data Transfer Strategies between MongoDB and SQL Server]                                                               | Phil Factor                              | 2019-07-22 | [DBA],[DEV] |
+| [SQL Server and Excel Hierarchyid Example for Organization Charts]                                                      | Rick Dobson                              | 2019-07-04 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1538,3 +1542,7 @@ Articles types:
 [Remember the Default Window]:https://voiceofthedba.com/2018/08/23/remember-the-default-window/
 [The Impact of Non-Updating Updates]:https://www.sql.kiwi/2010/08/the-impact-of-non-updating-updates.html
 [What are Columnstore Indexes?]:https://www.red-gate.com/simple-talk/sql/sql-development/what-are-columnstore-indexes/
+[PolyBase in SQL Server 2019 – The End of ETL?]:https://www.red-gate.com/simple-talk/sql/data-platform/polybase-in-sql-server-2019-the-end-of-etl/
+[Overview of Service Principal Name and Kerberos authentication in SQL Server]:https://www.sqlshack.com/overview-of-service-principal-name-and-kerberos-authentication-sql-server/
+[Data Transfer Strategies between MongoDB and SQL Server]:https://www.sqlservercentral.com/articles/data-transfer-strategies-between-mongodb-and-sql-server
+[SQL Server and Excel Hierarchyid Example for Organization Charts]:https://www.mssqltips.com/sqlservertip/6054/sql-server-and-excel-hierarchyid-example-for-organization-charts/
