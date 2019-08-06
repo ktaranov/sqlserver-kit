@@ -143,6 +143,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                                        |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                                    |
 |       5004 | To use ALTER DATABASE, the database must be in a writable state in which a checkpoint can be executed.   | [5004_link1]                                        |
+|       5084 | Setting database option %ls to %ls for database '%.*ls'.                                                 | [5084_link1][43]                                    |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                  … | [SQL SERVER - FIX Error 5120]                       |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]                          |
 |       5171 | %.*ls is not a primary database file.                                                                    | [5171_link1][29]                                    |
@@ -195,6 +196,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      15199 | The current security context cannot be reverted. Please switch to the original database where          … | [15199_link1][1]                                    |
 |      15274 | Access to the remote server is denied because the current security context is not trusted.               | [15274_link1]                                       |
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of      … | [15406_link1][1]                                    |
+|      15457 | Configuration option '%ls' changed from %ld to %ld. Run the RECONFIGURE statement to install.            | [5457_link1][43]                                    |
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                                   |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.         … | [17190_link1]                                       |
 |      17300 | SQL Server was unable to run a new system task, either because there is insufficient memory or the     … | [17300_link1]                                       |
@@ -256,6 +258,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [40]:https://bertwagner.com/2019/06/25/multiple-identity-inserts/
 [41]:https://www.sqlshack.com/how-to-create-a-clustered-columnstore-index-on-a-memory-optimized-table/
 [42]:https://www.sqlserverscience.com/internals/invalid-protection-option/
+[43]:https://www.red-gate.com/hub/product-learning/sql-monitor/spotting-unauthorized-configuration-settings-sql-server
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
