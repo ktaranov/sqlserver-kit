@@ -19,6 +19,7 @@ Articles types:
  - **[PS]** Powershell Articles
  - **[QS]** Query Store Articles
  - **[R]** R Language
+ - **[SEC]** SQL Server Security Articles
  - **[SSIS]** [SQL Server Integration Services](https://docs.microsoft.com/en-us/sql/integration-services/sql-server-integration-services)
  - **[V]** Visualization Articles
  - **[X]** XML, JSON, YAML, HTML Articles
@@ -27,7 +28,7 @@ Articles types:
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
 | [SQL Server Index Design Guide]                                                                                         | Microsoft                                | ?          | [IDX]       |
-| [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 |             |
+| [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 | [SEC]       |
 | [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 | [COR]       |
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
 | [What to Do When DBCC CHECKDB Reports Corruption]                                                                       | Brent Ozar                               | 2016-05-19 | [COR]       |
@@ -136,7 +137,7 @@ Articles types:
 | [What is the CXPACKET Wait Type, and How Do You Reduce It?]                                                             | Brent Ozar                               | 2013-08-27 |             |
 | [New indexes, hypothetically]                                                                                           | Kenneth Fisher                           | 2016-11-02 | [IDX]       |
 | [Indexing Wide Keys in SQL Server]                                                                                      | Brent Ozar                               | 2013-05-08 | [IDX]       |
-| [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE), or How to Break TDE]           | Simon McAuliffe                          | 2016-03-31 |             |
+| [The Anatomy and (In)Security of Microsoft SQL Server Transparent Data Encryption (TDE), or How to Break TDE]           | Simon McAuliffe                          | 2016-03-31 | [SEC]       |
 | [Correctly adding data files to tempdb]                                                                                 | Paul Randal                              | 2014-10-14 |             |
 | [Why You Should Test Your Queries Against Bigger Data]                                                                  | Erik Darling                             | 2016-11-01 |             |
 | [Tally OH! An Improved SQL 8K “CSV Splitter” Function]                                                                  | Jeff Moden                               | 2012-12-28 |             |
@@ -147,7 +148,7 @@ Articles types:
 | [Inside the Statistics Histogram & Density Vector]                                                                      | Klaus Aschenbrenner                      | 2014-01-28 |             |
 | [Misconceptions on parameter sniffing]                                                                                  | Hugo Kornelis                            | 2016-11-03 |             |
 | [CAST vs. CONVERT]                                                                                                      | Aaron Bertrand                           | 2016-11-02 |             |
-| [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                                                   | Tim Ford                                 | 2016-10-03 |             |
+| [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                                                   | Tim Ford                                 | 2016-10-03 | [SEC]       |
 | [SQL Server Perfmon (Performance Monitor) Best Practices]                                                               | Brent Ozar                               | 2006-12-30 |             |
 | [Top 5 Overlooked Index Features]                                                                                       | Erik Darling                             | 2016-11-10 | [IDX]       |
 | [A Sysadmin’s Guide to Microsoft SQL Server Memory]                                                                     | Brent Ozar                               | 2016-09-15 |             |
@@ -159,7 +160,7 @@ Articles types:
 | [SQL Server Audit Walkthrough]                                                                                          | Sadequl Hussain                          | 2016-01-01 |             |
 | [The SQL Server 2016 Query Store: Overview and Architecture]                                                            | Enrico van de Laar                       | 2015-11-16 | [QS]        |
 | [Reading, Writing, and Creating SQL Server Extended Properties]                                                         | Phil Factor                              | 2015-10-21 | [XE]        |
-| [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                                        | William Brewer                           | 2016-11-04 |             |
+| [Questions About SQL Server Security and Access Control You Were Too Shy to Ask]                                        | William Brewer                           | 2016-11-04 | [SEC]       |
 | [The Ten Commandments of SQL Server Monitoring]                                                                         | Adam Machanic                            | 2013-04-09 |             |
 | [Should I use NOT IN, OUTER APPLY, LEFT OUTER JOIN, EXCEPT, or NOT EXISTS?]                                             | Adam Machanic                            | 2012-12-27 |             |
 | [Parameter Sniffing, Embedding, and the RECOMPILE Options]                                                              | Paul White                               | 2013-08-28 |             |
@@ -190,7 +191,7 @@ Articles types:
 | [Troubleshooting SQL Server backup and restore operations]                                                              | Microsoft                                | 2016-07-23 | [B]         |
 | [SQL Server 2016: Getting tempdb a little more right]                                                                   | Aaron Bertrand                           | 2015-09-30 |             |
 | [Practical uses of binary types]                                                                                        | Daniel Hutmacher                         | 2017-01-09 |             |
-| [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]                                                    | Aaron Nelson                             | 2017-01-12 |             |
+| [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]                                                    | Aaron Nelson                             | 2017-01-12 | [PS]        |
 | [Creating, detaching, re-attaching, and fixing a SUSPECT database]                                                      | Paul Randal                              | 2008-08-29 |             |
 | [Modifying Tables Online – Part 1: Migration Strategy]                                                                  | Michael J Swart                          | 2012-04-16 | [MG]        |
 | [Modifying Tables Online – Part 2: Implementation Example]                                                              | Michael J Swart                          | 2012-04-17 | [MG]        |
@@ -212,7 +213,7 @@ Articles types:
 | [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |             |
 | [SQL Server Default Configurations That You Should Change]                                                              | Pio Balistoy                             | 2017-02-06 |             |
 | [Decoding Key and Page WaitResource for Deadlocks and Blocking]                                                         | Kendra Little                            | 2016-10-17 |             |
-| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 | [CLR]       |
+| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 | [CLR],[SEC] |
 | [On the Advantages of DateTime2(n) over DateTime]                                                                       | William Assaf                            | 2012-12-04 |             |
 | [Build Your Own Tools]                                                                                                  | Michael J. Swart                         | 2016-09-23 |             |
 | [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 | [XE]        |
@@ -650,13 +651,13 @@ Articles types:
 | [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
 | [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2019-02-05 | [DBA]       |
 | [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA],[DEV] |
-| [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [DBA],[DEV] |
-| [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [DBA],[DEV] |
-| [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2019-02-25 | [DBA],[DEV] |
-| [Introduction to SQL Server Security — Part 4]                                                                          | Robert Sheldon                           | 2019-03-26 | [DBA],[DEV] |
+| [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [SEC]       |
+| [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [SEC]       |
+| [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2019-02-25 | [SEC]       |
+| [Introduction to SQL Server Security — Part 4]                                                                          | Robert Sheldon                           | 2019-03-26 | [SEC]       |
 | [Introduction to T-SQL Window Functions]                                                                                | Kathi Kellenberger                       | 2018-07-13 | [DBA],[DEV] |
 | [Intro to Debugging a Memory Dump]                                                                                      | Adam W. Saxton                           | 2012-03-15 | [DBA],[DEV] |
-| [Considering Security with SQL Bulk Insert]                                                                             | Timothy Smith                            | 2019-01-17 | [DBA],[DEV] |
+| [Considering Security with SQL Bulk Insert]                                                                             | Timothy Smith                            | 2019-01-17 | [SEC]       |
 | [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring I]                                 | Juergen Thomas                           | 2013-04-21 | [DBA]       |
 | [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]                                | Juergen Thomas                           | 2013-04-24 | [DBA]       |
 | [Data Compression Internals]                                                                                            | Jess Pomfret                             | 2019-02-19 | [DBA],[DEV] |
@@ -758,7 +759,7 @@ Articles types:
 | [Common SQL Server Mishaps]                                                                                             | Tim Radney                               | 2019-06-21 | [DBA]       |
 | [SQL Server Agent for SQL Express on Linux]                                                                             | Thom Andrews                             | 2019-06-18 | [DBA]       |
 | [Trailing Spaces in SQL Server]                                                                                         | Bert Wagner                              | 2019-06-18 | [DEV]       |
-| [Troubleshooting a Change in Query Performance]                                                                         | Erin Stellato                            | 2019-06-20 | [DBA],[DEV] |
+| [Troubleshooting a Change in Query Performance]                                                                         | Erin Stellato                            | 2019-06-20 | [P]         |
 | [The Silent Bug I Find in Most Triggers]                                                                                | Brent Ozar                               | 2019-05-06 | [DBA],[DEV] |
 | [How to Copy a Table in SQL Server to Another Database]                                                                 | Pablo Echeverria                         | 2019-05-14 | [DBA],[DEV] |
 | [Configuration of SQL Server instance]                                                                                  | Michal Sadowski                          | 2019-06-18 | [DBA]       |
@@ -784,6 +785,20 @@ Articles types:
 | [Overview of Service Principal Name and Kerberos authentication in SQL Server]                                          | Rajendra Gupta                           | 2019-07-18 | [DBA]       |
 | [Data Transfer Strategies between MongoDB and SQL Server]                                                               | Phil Factor                              | 2019-07-22 | [DBA],[DEV] |
 | [SQL Server and Excel Hierarchyid Example for Organization Charts]                                                      | Rick Dobson                              | 2019-07-04 | [DEV]       |
+| [Difference between sp_execute and sp_executesql and exec]                                                              | Prasad Sahoo                             | 2015-02-09 | [DBA],[DEV] |
+| [EXEC and sp_executesql – how are they different?]                                                                      | Kimberly Tripp                           | 2010-04-05 | [DBA],[DEV] |
+| [Little Bobby Tables, SQL Injection and EXECUTE AS]                                                                     | Kimberly Tripp                           | 2010-04-04 | [DBA],[DEV] |
+| [Examining the Performance Impact of an Adhoc Workload]                                                                 | Erin Stellato                            | 2019-05-22 | [BENCH]     |
+| [Backup to URL]                                                                                                         | Jon Gurgul                               | 2019-01-01 | [DBA]       |
+| [Spotting Unauthorized Configuration Settings in SQL Server]                                                            | Phil Factor                              | 2018-09-30 | [DBA],[DEV] |
+| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-10-27 | [DBA],[DEV] |
+| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-11-24 | [DBA],[DEV] |
+| [An Intro to SQL Window Functions]                                                                                      | Neal Barnett                             | 2019-07-07 | [DBA],[DEV] |
+| [SQL Database Performance Tuning for Developers]                                                                        | Rodrigo Koch                             | ?          | [P]         |
+| [“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]                                                             | Brent Ozar                               | 2019-08-05 | [DBA],[DEV] |
+| [tempdb Enhancements in SQL Server 2019]                                                                                | Erin Stellato                            | 2019-08-02 | [BENCH]     |
+| [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]      | Solomon Rutzky                           | 2019-08-05 | [SEC]       |
+| [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]                                            | Scott Sutherland                         | 2017-05-23 | [PS],[SEC]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1546,3 +1561,17 @@ Articles types:
 [Overview of Service Principal Name and Kerberos authentication in SQL Server]:https://www.sqlshack.com/overview-of-service-principal-name-and-kerberos-authentication-sql-server/
 [Data Transfer Strategies between MongoDB and SQL Server]:https://www.sqlservercentral.com/articles/data-transfer-strategies-between-mongodb-and-sql-server
 [SQL Server and Excel Hierarchyid Example for Organization Charts]:https://www.mssqltips.com/sqlservertip/6054/sql-server-and-excel-hierarchyid-example-for-organization-charts/
+[Difference between sp_execute and sp_executesql and exec]:https://www.sqlindia.com/difference-between-sp_execute-sp_executesql-exec/
+[EXEC and sp_executesql – how are they different?]:https://www.sqlskills.com/blogs/kimberly/exec-and-sp_executesql-how-are-they-different/
+[Little Bobby Tables, SQL Injection and EXECUTE AS]:https://www.sqlskills.com/blogs/kimberly/little-bobby-tables-sql-injection-and-execute-as/
+[Examining the Performance Impact of an Adhoc Workload]:https://sqlperformance.com/2019/05/sql-plan/perf-impact-adhoc-workload
+[Backup to URL]:https://blog.coeo.com/backup-to-url
+[Spotting Unauthorized Configuration Settings in SQL Server]:https://www.red-gate.com/hub/product-learning/sql-monitor/spotting-unauthorized-configuration-settings-sql-server
+[Window Functions in SQL Server]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/window-functions-in-sql-server/
+[Window Functions in SQL Server: Part 2-The Frame]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/window-functions-in-sql-server-part-2-the-frame/
+[An Intro to SQL Window Functions]:https://www.toptal.com/sql/intro-to-sql-windows-functions
+[SQL Database Performance Tuning for Developers]:https://www.toptal.com/sql-server/sql-database-tuning-for-developers
+[“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]:https://www.brentozar.com/archive/2019/08/but-nolock-is-okay-when-the-data-isnt-changing-right/
+[tempdb Enhancements in SQL Server 2019]:https://sqlperformance.com/2019/08/tempdb/tempdb-enhancements-in-sql-server-2019
+[Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]:https://sqlquantumleap.com/2019/08/05/feature-restrictions-in-sql-server-2019-are-worse-than-useless-a-false-sense-of-security-and-wasted-opportunity/
+[How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]:https://blog.netspi.com/get-sql-server-sysadmin-privileges-local-admin-powerupsql/
