@@ -18,6 +18,36 @@ SELECT
     xed.event_data.value('(action[@name="client_connection_id"]/value)[1]', 'varchar(255)') AS client_conn,
     xed.event_data.value('(action[@name="client_app_name"]/value)[1]', 'varchar(255)') AS client_app_name
 FROM @Target_Data.nodes('//RingBufferTarget/event') AS xed (event_data);
+
+EXEC sp_configure 'show advanced options',1;
+RECONFIGURE;
+GO
+EXEC sp_configure 'CLR Enabled',1;
+EXEC sp_configure 'Ad Hoc Distributed Queries',1;
+EXEC sp_configure 'Cross DB Ownership Chaining',1;
+EXEC sp_configure 'Database Mail XPs',1;
+EXEC sp_configure 'Ole Automation Procedures',1;
+EXEC sp_configure 'Remote ACCESS',1;
+EXEC sp_configure 'Remote Admin Connections',1;
+EXEC sp_configure 'Scan for Startup Procs',1; 
+RECONFIGURE -- To update the currently configured value for advanced options.
+GO
+
+/* this code turns OFF some of the configuration items with security issues */
+EXEC sp_configure 'show advanced options',1;
+RECONFIGURE;
+GO
+EXEC sp_configure 'Ad Hoc Distributed Queries',0;
+EXEC sp_configure 'CLR ENABLED',0;
+EXEC sp_configure 'Cross DB Ownership Chaining',0;
+EXEC sp_configure 'Database Mail XPs',0;
+EXEC sp_configure 'Ole Automation Procedures',0;
+EXEC sp_configure 'Remote ACCESS',0;
+EXEC sp_configure 'Remote Admin Connections',0;
+EXEC sp_configure 'Scan for Startup Procs',0;
+EXEC sp_configure 'show advanced options',0;
+RECONFIGURE; -- To update the currently configured value for advanced options.
+GO
 */
 
 USE master;
