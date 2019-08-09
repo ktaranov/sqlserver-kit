@@ -1,7 +1,7 @@
 
 -- SQL Managed Instance Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: July 18, 2019
+-- Last Modified: August 8, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -88,8 +88,8 @@ SERVERPROPERTY('InstanceDefaultDataPath') AS [InstanceDefaultDataPath],
 SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version],
 SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
-SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				-- New for SQL Server 2016
-SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled];	-- New for SQL Server 2016
+SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				
+SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled];	
 ------
 
 -- This gives you a lot of useful information about your "instance" of SQL Managed Instance
@@ -194,10 +194,17 @@ WHERE node_state_desc <> N'ONLINE DAC' OPTION (RECOMPILE);
 
 -- Server Resource Statistics (Query 7) (Server Resource Stats)
 SELECT TOP(250) resource_type, resource_name, sku, hardware_generation, 
-virtual_core_count, avg_cpu_percent,
-io_requests, io_bytes_read, io_bytes_written, start_time, end_time
+virtual_core_count, avg_cpu_percent, io_requests, 
+CONVERT(DECIMAL(18,2), io_bytes_read/1048576.0) AS [MB Read],
+CONVERT(DECIMAL(18,2), io_bytes_read * 1./(io_bytes_read + io_bytes_written) * 100.) AS [Read Percentage],
+CONVERT(DECIMAL(18,2), io_bytes_written/1048576.0) AS [MB Written],
+CONVERT(DECIMAL(18,2), io_bytes_written * 1./(io_bytes_read + io_bytes_written) * 100.) AS [Write Percentage],
+CONVERT(DECIMAL(18,2), (io_bytes_read + io_bytes_written)/1048576.0) AS [MB Total IO],
+start_time, end_time
 FROM master.sys.server_resource_stats WITH (NOLOCK)
+WHERE io_bytes_read > 0 AND io_bytes_written > 0       
 ORDER BY end_time DESC OPTION (RECOMPILE);
+------
 
 -- Shows recent resource usage, in 15-second slices
 
@@ -526,14 +533,15 @@ ORDER BY [VLF Count] DESC OPTION (RECOMPILE);
 -- Get CPU utilization by database (Query 20) (CPU Usage by Database)
 WITH DB_CPU_Stats
 AS
-(SELECT pa.DatabaseID, DB_Name(pa.DatabaseID) AS [Database Name], SUM(qs.total_worker_time/1000) AS [CPU_Time_Ms]
+(SELECT pa.DatabaseID, DB_Name(pa.DatabaseID) AS [Database Name],
+        SUM(qs.total_worker_time/1000) AS [CPU_Time_Ms]
  FROM sys.dm_exec_query_stats AS qs WITH (NOLOCK)
  CROSS APPLY (SELECT CONVERT(int, value) AS [DatabaseID] 
               FROM sys.dm_exec_plan_attributes(qs.plan_handle)
               WHERE attribute = N'dbid') AS pa
  GROUP BY DatabaseID)
-SELECT ROW_NUMBER() OVER(ORDER BY [CPU_Time_Ms] DESC) AS [CPU Rank],
-       [Database Name], [CPU_Time_Ms] AS [CPU Time (ms)], 
+SELECT ROW_NUMBER() OVER(ORDER BY [CPU_Time_Ms] DESC) AS [CPU Rank], 
+       [Database Name], DatabaseID, [CPU_Time_Ms] AS [CPU Time (ms)], 
        CAST([CPU_Time_Ms] * 1.0 / SUM([CPU_Time_Ms]) OVER() * 100.0 AS DECIMAL(5, 2)) AS [CPU Percent]
 FROM DB_CPU_Stats
 WHERE DatabaseID <> 32767 -- ResourceDB
@@ -541,6 +549,8 @@ ORDER BY [CPU Rank] OPTION (RECOMPILE);
 ------
 
 -- Helps determine which database is using the most CPU resources on the instance
+-- There are two copies on the master database. The low DatabaseID is the physical master, 
+-- and the high DatabaseID is the replicated master
 -- Note: This only reflects CPU usage from the currently cached query plans
 
 
@@ -549,11 +559,11 @@ WITH Aggregate_IO_Statistics
 AS (SELECT DB_NAME(database_id) AS [Database Name],
     CAST(SUM(num_of_bytes_read + num_of_bytes_written) / 1048576 AS DECIMAL(12, 2)) AS [ioTotalMB],
     CAST(SUM(num_of_bytes_read ) / 1048576 AS DECIMAL(12, 2)) AS [ioReadMB],
-    CAST(SUM(num_of_bytes_written) / 1048576 AS DECIMAL(12, 2)) AS [ioWriteMB]
+    CAST(SUM(num_of_bytes_written) / 1048576 AS DECIMAL(12, 2)) AS [ioWriteMB], database_id
     FROM sys.dm_io_virtual_file_stats(NULL, NULL) AS [DM_IO_STATS]
     GROUP BY database_id)
 SELECT ROW_NUMBER() OVER (ORDER BY ioTotalMB DESC) AS [I/O Rank],
-        [Database Name], ioTotalMB AS [Total I/O (MB)],
+        [Database Name], database_id, ioTotalMB AS [Total I/O (MB)],
         CAST(ioTotalMB / SUM(ioTotalMB) OVER () * 100.0 AS DECIMAL(5, 2)) AS [Total I/O %],
         ioReadMB AS [Read I/O (MB)], 
 		CAST(ioReadMB / SUM(ioReadMB) OVER () * 100.0 AS DECIMAL(5, 2)) AS [Read I/O %],
@@ -572,13 +582,14 @@ ORDER BY [I/O Rank] OPTION (RECOMPILE);
 -- This make take some time to run on a busy instance
 WITH AggregateBufferPoolUsage
 AS
-(SELECT DB_NAME(database_id) AS [Database Name],
+(SELECT DB_NAME(database_id) AS [Database Name], database_id,
 CAST(COUNT(*) * 8/1024.0 AS DECIMAL (10,2))  AS [CachedSize]
 FROM sys.dm_os_buffer_descriptors WITH (NOLOCK)
 WHERE database_id <> 32767 -- ResourceDB
-GROUP BY DB_NAME(database_id))
-SELECT ROW_NUMBER() OVER(ORDER BY CachedSize DESC) AS [Buffer Pool Rank], [Database Name], CachedSize AS [Cached Size (MB)],
-       CAST(CachedSize / SUM(CachedSize) OVER() * 100.0 AS DECIMAL(5,2)) AS [Buffer Pool Percent]
+GROUP BY DB_NAME(database_id), database_id)
+   SELECT ROW_NUMBER() OVER(ORDER BY CachedSize DESC) AS [Buffer Pool Rank], 
+   [Database Name], database_id, CachedSize AS [Cached Size (MB)],
+   CAST(CachedSize / SUM(CachedSize) OVER() * 100.0 AS DECIMAL(5,2)) AS [Buffer Pool Percent]
 FROM AggregateBufferPoolUsage
 ORDER BY [Buffer Pool Rank] OPTION (RECOMPILE);
 ------
@@ -1129,7 +1140,7 @@ qs.total_elapsed_time, qs.total_elapsed_time/qs.execution_count AS [avg_elapsed_
 CASE WHEN CONVERT(nvarchar(max), qp.query_plan) LIKE N'%<MissingIndexes>%' THEN 1 ELSE 0 END AS [Has Missing Index],
 FORMAT(qs.last_execution_time, 'yyyy-MM-dd HH:mm:ss', 'en-US') AS [Last Execution Time], 
 FORMAT(qs.cached_time, 'yyyy-MM-dd HH:mm:ss', 'en-US') AS [Plan Cached Time]
--- ,qp.query_plan AS [Query Plan] -- Uncomment if you want the Query Plan
+--,qp.query_plan AS [Query Plan] -- Uncomment if you want the Query Plan
 FROM sys.procedures AS p WITH (NOLOCK)
 INNER JOIN sys.dm_exec_procedure_stats AS qs WITH (NOLOCK)
 ON p.[object_id] = qs.[object_id]
@@ -1630,6 +1641,8 @@ WHERE bs.database_name = DB_NAME(DB_ID())
 AND bs.[type] = 'D' 
 ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 ------
+
+-- Automatic database backups by the MI Service will not appear in this list
 
 -- Are your backup sizes and times changing over time?
 -- Are you using backup compression?

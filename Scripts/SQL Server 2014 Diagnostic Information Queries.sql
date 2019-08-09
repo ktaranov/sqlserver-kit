@@ -1,7 +1,7 @@
 
 -- SQL Server 2014 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: July 9, 2019
+-- Last Modified: August 1, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -84,7 +84,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --															12.0.4502		SP1 CU11		2/21/2017				12.0.5540		SP2 CU4			 2/21/2017
 --															12.0.4511		SP1 CU12        4/17/2017				12.0.5546		SP2 CU5			 4/17/2017
 --															12.0.4522		SP1	CU13		7/17/2017				12.0.5552		SP2 CU6			 7/17/2017
---																																																								12.0.5556		SP2 CU7			 8/28/2017
+--																													12.0.5556		SP2 CU7			 8/28/2017
 --																													12.0.5557		SP2 CU8			10/16/2017
 --																													12.0.5563		SP2 CU9			12/18/2017
 --																													12.0.5571		SP2 CU10		 1/16/2018
@@ -96,6 +96,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																													12.0.5605		SP2 CU15		12/12/2018 ---->	12.0.6205	SP3 CU1	    12/12/2018
 --																													12.0.5626		SP2 CU16		 2/19/2019 ---->    12.0.6214	SP3 CU2      2/19/2019
 --																													12.0.5632		SP2 CU17		 4/16/2019 ---->    12.0.6259   SP3 CU3		 4/16/2019
+--																													12.0.5687		SP2 CU18		 7/29/2019 ---->	12.0.6329	SP3	CU4		 7/29/2019
 
 
 
@@ -245,6 +246,7 @@ EXEC sys.xp_readerrorlog 0, 1, N'Database Instant File Initialization';
 
 -- Lets you determine whether Instant File Initialization (IFI) is enabled for the instance
 -- This should be enabled in the vast majority of cases
+-- Note: This query won't return any results if the SQL Server error log has been recycled
 
 
 -- Database Instant File Initialization
