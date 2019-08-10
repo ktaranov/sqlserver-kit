@@ -799,6 +799,10 @@ Articles types:
 | [tempdb Enhancements in SQL Server 2019]                                                                                | Erin Stellato                            | 2019-08-02 | [BENCH]     |
 | [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]      | Solomon Rutzky                           | 2019-08-05 | [SEC]       |
 | [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]                                            | Scott Sutherland                         | 2017-05-23 | [PS],[SEC]  |
+| [Views of the Same Problem: Network Admin, DBA, and Developer]                                                          | Kyle Brandt                              | 2011-03-16 | [DBA],[DEV] |
+| [The SQL Server Data Row Size Question: Why is It Bigger?]                                                              | Kendra Little                            | 2019-03-19 | [DBA],[DEV] |
+| [Finding Max Concurrent Operations With T-SQL (Part 1)]                                                                 | Kevin Feasel                             | 2019-01-02 | [DEV]       |
+| [Finding Max Concurrent Operations With T-SQL (Part 2)]                                                                 | Kevin Feasel                             | 2019-01-03 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1575,3 +1579,7 @@ Articles types:
 [tempdb Enhancements in SQL Server 2019]:https://sqlperformance.com/2019/08/tempdb/tempdb-enhancements-in-sql-server-2019
 [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]:https://sqlquantumleap.com/2019/08/05/feature-restrictions-in-sql-server-2019-are-worse-than-useless-a-false-sense-of-security-and-wasted-opportunity/
 [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]:https://blog.netspi.com/get-sql-server-sysadmin-privileges-local-admin-powerupsql/
+[Views of the Same Problem: Network Admin, DBA, and Developer]:https://blog.serverfault.com/2011/03/16/views-of-the-same-problem-network-admin-dba-and-developer/
+[The SQL Server Data Row Size Question: Why is It Bigger?]:https://sqlworkbooks.com/2019/03/the-sql-server-data-row-size-question-why-is-it-bigger/
+[Finding Max Concurrent Operations With T-SQL (Part 1)]:https://36chambers.wordpress.com/2019/01/02/finding-max-concurrent-operations-with-t-sql-part-1/
+[Finding Max Concurrent Operations With T-SQL (Part 2)]:https://36chambers.wordpress.com/2019/01/03/finding-max-concurrent-operations-with-t-sql-part-2/
