@@ -803,6 +803,11 @@ Articles types:
 | [The SQL Server Data Row Size Question: Why is It Bigger?]                                                              | Kendra Little                            | 2019-03-19 | [DBA],[DEV] |
 | [Finding Max Concurrent Operations With T-SQL (Part 1)]                                                                 | Kevin Feasel                             | 2019-01-02 | [DEV]       |
 | [Finding Max Concurrent Operations With T-SQL (Part 2)]                                                                 | Kevin Feasel                             | 2019-01-03 | [DEV]       |
+| [Stack Overflow: The Architecture - 2016 Edition]                                                                       | Nick Craver                              | 2019-02-17 | [DBA],[DEV] |
+| [Stack Overflow: The Hardware - 2016 Edition]                                                                           | Nick Craver                              | 2016-03-29 | [DBA]       |
+| [Stack Overflow: How We Do Deployment - 2016 Edition]                                                                   | Nick Craver                              | 2016-05-03 | [DBA],[DEV] |
+| [Stack Overflow: How We Do Monitoring - 2018 Edition]                                                                   | Nick Craver                              | 2018-11-29 | [DBA],[DEV] |
+| [Stack Overflow: How We Do App Caching - 2019 Edition]                                                                  | Nick Craver                              | 2019-08-06 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1583,3 +1588,8 @@ Articles types:
 [The SQL Server Data Row Size Question: Why is It Bigger?]:https://sqlworkbooks.com/2019/03/the-sql-server-data-row-size-question-why-is-it-bigger/
 [Finding Max Concurrent Operations With T-SQL (Part 1)]:https://36chambers.wordpress.com/2019/01/02/finding-max-concurrent-operations-with-t-sql-part-1/
 [Finding Max Concurrent Operations With T-SQL (Part 2)]:https://36chambers.wordpress.com/2019/01/03/finding-max-concurrent-operations-with-t-sql-part-2/
+[Stack Overflow: The Architecture - 2016 Edition]:https://nickcraver.com/blog/2016/02/17/stack-overflow-the-architecture-2016-edition/
+[Stack Overflow: The Hardware - 2016 Edition]:https://nickcraver.com/blog/2016/03/29/stack-overflow-the-hardware-2016-edition/
+[Stack Overflow: How We Do Deployment - 2016 Edition]:https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/
+[Stack Overflow: How We Do Monitoring - 2018 Edition]:https://nickcraver.com/blog/2018/11/29/stack-overflow-how-we-do-monitoring/
+[Stack Overflow: How We Do App Caching - 2019 Edition]:https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
