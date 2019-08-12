@@ -1,7 +1,8 @@
 /*
 Original link: https://jasonbrimhall.info/2019/06/25/database-file-changes/
 Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/Extended_Events/AuditFileSize.sql
-Author: Jason Brimhall
+Author: Phil Factor
+
 */
 
 USE master;
