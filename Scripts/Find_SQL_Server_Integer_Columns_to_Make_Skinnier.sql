@@ -5,8 +5,8 @@
   <issues>No</issues>
   <author>Konstantin Taranov</author>
   <created>2019-07-25</created>
-  <modified>2019-08-14 by Konstantin Taranov</modified>
-  <version>1.0</version>
+  <modified>2019-08-15 by Konstantin Taranov</modified>
+  <version>1.1</version>
   <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Find_SQL_Server_Integer_Columns_to_Make_Skinnier.sql</sourceLink>
   <originalLink>https://www.mssqltips.com/sqlservertip/6107/find-sql-server-integer-columns-to-make-skinnier/</originalLink>
 </documentation>
@@ -39,15 +39,15 @@ DECLARE @src bigint = 2;
 cols AS
 (
   SELECT t.[object_id],
-         [schema] = s.name, 
-         [table]  = t.name, 
+         [schema] = s.name,
+         [table]  = t.name,
          [column] = QUOTENAME(c.name), 
          [type]   = styp.name + COALESCE(' (alias: ' + utyp.name + ')', ''),
-         c.is_nullable, 
+         c.is_nullable,
          trgtyp.seq,
-         trgtyp.type_id, 
+         trgtyp.type_id,
          trgtype = trgtyp.[type],
-         savings = srctyp.bytes - trgtyp.bytes, 
+         savings = srctyp.bytes - trgtyp.bytes,
          trgtyp.minval,
          trgtyp.maxval,
          [rowcount] = (SELECT SUM([rows]) FROM sys.partitions
@@ -95,5 +95,11 @@ SET @sql += N'
   AND x.maxval <= c.maxval;';
 
 --PRINT(@sql);
+
+DECLARE @xml xml = (SELECT @sql FOR XML path(''));
+SET @sql = 
+  REPLACE(REPLACE(REPLACE(REPLACE(CONVERT(nvarchar(MAX), @xml, 1), '&#x0D;', CHAR(13)), '&gt;', '>'), '&lt;', '<'), '&amp;', '&');
+/* Enable in SSMS option Tools->Options->Query Results->SQL Server->Results to Grid->Return CR/LF on copy or save */
+SELECT @sql AS SQL_Print;
 
 EXEC sys.sp_executesql @sql;
