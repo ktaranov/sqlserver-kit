@@ -280,7 +280,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [stpChecklist_Seguranca - stored procedure with more than 70 security items to validate your SQL Server database](https://github.com/dirceuresende/checklist_seguranca) (by Dirceu Resende)
     - [mssql-docker - Official Microsoft repository for SQL Server in Docker resources](https://github.com/ktaranov/mssql-docker) (by Microsoft) (Github)
     - [SQLCover - TSQL code coverage tool for SQL Server 2008+](https://github.com/GoEddie/SQLCover) (by Ed Elliott) (Github)
-    - [tSQLt testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
+    - [tSQLt - testing framework for Microsoft SQL Server](https://github.com/tSQLt-org/tSQLt) (Github)
+    - [SQLCop - tSQLt tests to highlight potential problems in your database](https://github.com/red-gate/SQLCop) (Red Gate)
     - [T-SQL SimMetrics string matching algorithms](https://github.com/GuerrillaAnalytics/similarity) (Github)
     - [Azure Blob Storage Backup](https://github.com/bornsql/azureblobstoragesync) (by Randolph West) (Github)
     - [StackExchange.DataExplorer - free tool for executing SQL queries against Stack Exchange databases](https://github.com/StackExchange/StackExchange.DataExplorer) (Github)
@@ -331,6 +332,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [TSqlStrong - T-Sql type checker that detects improper joins, possibly null value operations, enumeration check constraint violations, incorrect use of temporary table at call site, and more](https://github.com/JSuder-xx/TSqlStrong) (by John Suder)
     - [SQL Power Doc - is a collection of Windows PowerShell scripts and modules that discover, document, and diagnose SQL Server instances and their underlying Windows OS & machine configuration](https://github.com/kendalvandyke/sqlpowerdoc) (by Kendal Van Dyke)
     - [rsqlserver - Sql Server driver database interface (DBI) driver for R](https://github.com/agstudy/rsqlserver)
+    - [sp_SizeOptimiser - a stored procedure that recommends space saving and corrective data type measures based on SQL Server database schemas](https://github.com/LowlyDBA/ExpressSQL) (by John McCall)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
