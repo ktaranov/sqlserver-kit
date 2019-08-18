@@ -161,6 +161,8 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       8101 | An explicit value for the identity column in table '%.*ls' can only be specified when a column list is … | [8101_link1][40]                                    |
 |       8107 | IDENTITY_INSERT is already ON for table '%.*ls.%.*ls.%.*ls'. Cannot perform SET operation for table '% … | [8107_link1][40]                                    |
 |       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                                    |
+|       8116 | Argument data type %ls is invalid for argument %d of %ls function.                                       | [8116_link1][44]                                    |
+|       8117 | Operand data type %ls is invalid for %ls operator.                                                       | [8117_link1][44]                                    |
 |       8180 | Statement(s) could not be prepared.                                                                      | [8180_link1][28]                                    |
 |       8127 | Column "%.*ls.%.*ls" is invalid in the ORDER BY clause because it is not contained in either an        … | [8127_link1][27]                                    |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                      | [8624_link1]                                        |
@@ -259,6 +261,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [41]:https://www.sqlshack.com/how-to-create-a-clustered-columnstore-index-on-a-memory-optimized-table/
 [42]:https://www.sqlserverscience.com/internals/invalid-protection-option/
 [43]:https://www.red-gate.com/hub/product-learning/sql-monitor/spotting-unauthorized-configuration-settings-sql-server
+[44]:https://www.red-gate.com/hub/product-learning/sql-prompt/problems-caused-by-use-of-the-sql_variant-datatype
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
