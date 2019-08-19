@@ -808,6 +808,11 @@ Articles types:
 | [Stack Overflow: How We Do Deployment - 2016 Edition]                                                                   | Nick Craver                              | 2016-05-03 | [DBA],[DEV] |
 | [Stack Overflow: How We Do Monitoring - 2018 Edition]                                                                   | Nick Craver                              | 2018-11-29 | [DBA],[DEV] |
 | [Stack Overflow: How We Do App Caching - 2019 Edition]                                                                  | Nick Craver                              | 2019-08-06 | [DBA],[DEV] |
+| [Adding a Missing Index Killed Performance]                                                                             | Jeffry Schwartz                          | 2019-08-15 | [DBA],[DEV] |
+| [Corruption in TempDB]                                                                                                  | Steve Stedman                            | 2019-08-12 | [COR],[DBA] |
+| [Corruption recovery using DBCC WRITEPAGE]                                                                              | Paul Randal                              | 2014-02-13 | [COR],[DBA] |
+| [Why DBCC CHECKDB can miss memory corruption]                                                                           | Paul Randal                              | 2017-07-19 | [COR],[DBA] |
+| [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1593,3 +1598,8 @@ Articles types:
 [Stack Overflow: How We Do Deployment - 2016 Edition]:https://nickcraver.com/blog/2016/05/03/stack-overflow-how-we-do-deployment-2016-edition/
 [Stack Overflow: How We Do Monitoring - 2018 Edition]:https://nickcraver.com/blog/2018/11/29/stack-overflow-how-we-do-monitoring/
 [Stack Overflow: How We Do App Caching - 2019 Edition]:https://nickcraver.com/blog/2019/08/06/stack-overflow-how-we-do-app-caching/
+[Adding a Missing Index Killed Performance]:https://www.sqlrx.com/missing-index-killed-performance/
+[Corruption in TempDB]:https://stevestedman.com/2019/08/corruption-in-tempdb/
+[Corruption recovery using DBCC WRITEPAGE]:https://www.sqlskills.com/blogs/paul/corruption-recovery-using-dbcc-writepage/
+[Why DBCC CHECKDB can miss memory corruption]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-dbcc-checkdb-can-miss-memory-corruption/
+[Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/

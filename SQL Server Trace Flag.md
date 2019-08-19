@@ -4367,7 +4367,8 @@ Related to: [9205](#9205)
 Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
 Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-9204/<br />
-Scope: global only
+Link: https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/<br />
+Scope: global or query
 Related to: [9292](#9292)
 
 
