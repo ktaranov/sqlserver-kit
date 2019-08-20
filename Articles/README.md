@@ -813,6 +813,12 @@ Articles types:
 | [Corruption recovery using DBCC WRITEPAGE]                                                                              | Paul Randal                              | 2014-02-13 | [COR],[DBA] |
 | [Why DBCC CHECKDB can miss memory corruption]                                                                           | Paul Randal                              | 2017-07-19 | [COR],[DBA] |
 | [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DBA],[DEV] |
+| [Plan Stitch: Harnessing the Best of Many Plans]                                                                        | Bailu Ding, Sudipto Das Wentao …         | 2018-07-01 | [DBA],[DEV] |
+| [Query and Resource Optimization: Bridging the Gap]                                                                     | Lalitha Viswanathan, Alekh Jindal …      | 2018-02-01 | [DBA],[DEV] |
+| [Cuttlefish: A Lightweight Primitive for Adaptive Query Processing]                                                     | Tomer Kaftan, Magdalena Balazinska …     | 2018-02-01 | [DBA],[DEV] |
+| [Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]                                | Anshuman Dutt, Vivek Narasayya …         | 2017-05-01 | [DBA],[DEV] |
+| [How to choose antivirus software to run on computers that are running SQL Server]                                      | Microsoft                                | 2018-10-31 | [DBA],[SEC] |
+| [Why is SYSDATETIME() slower than SYSUTCDATETIME()?]                                                                    | Erik Darling                             | 2019-05-28 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1603,3 +1609,9 @@ Articles types:
 [Corruption recovery using DBCC WRITEPAGE]:https://www.sqlskills.com/blogs/paul/corruption-recovery-using-dbcc-writepage/
 [Why DBCC CHECKDB can miss memory corruption]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-dbcc-checkdb-can-miss-memory-corruption/
 [Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/
+[Plan Stitch: Harnessing the Best of Many Plans]:https://www.microsoft.com/en-us/research/publication/plan-stitch-harnessing-the-best-of-many-plans-2/
+[Query and Resource Optimization: Bridging the Gap]:https://www.microsoft.com/en-us/research/publication/query-resource-optimization-bridging-gap/
+[Cuttlefish: A Lightweight Primitive for Adaptive Query Processing]:https://www.microsoft.com/en-us/research/publication/cuttlefish-a-lightweight-primitive-for-adaptive-query-processing/
+[Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]:https://www.microsoft.com/en-us/research/publication/leveraging-re-costing-online-optimization-parameterized-queries-guarantees/
+[How to choose antivirus software to run on computers that are running SQL Server]:https://support.microsoft.com/help/309422
+[Why is SYSDATETIME() slower than SYSUTCDATETIME()?]:https://erikdarlingdata.com/2019/05/why-is-sysdatetime-slower-than-sysutcdatetime/
