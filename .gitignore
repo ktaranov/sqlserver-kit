@@ -1,5 +1,5 @@
 Files
 
-*.sql linguist-language=TSQL
+*.sql linguist-language=T-SQL
 *.R linguist-language=R
 *.ps linguist-language=Powershell
