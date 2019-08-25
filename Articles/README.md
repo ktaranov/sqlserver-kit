@@ -819,6 +819,10 @@ Articles types:
 | [Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]                                | Anshuman Dutt, Vivek Narasayya …         | 2017-05-01 | [DBA],[DEV] |
 | [How to choose antivirus software to run on computers that are running SQL Server]                                      | Microsoft                                | 2018-10-31 | [DBA],[SEC] |
 | [Why is SYSDATETIME() slower than SYSUTCDATETIME()?]                                                                    | Erik Darling                             | 2019-05-28 | [DBA],[DEV] |
+| [Constant Time Recovery in Azure SQL Database]                                                                          | Panagiotis Antonopoulos, Peter Byrne …   | 2019-06-01 | [AZ]        |
+| [Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]                        | Bailu Ding, Lucja Kot, Johannes Gehrke   | 2019-01-01 | [DBA],[DEV] |
+| [An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]                                                | Yingjun Wu, Joy Arulraj, Jiexi Lin …     | 2019-01-01 | [DBA],[DEV] |
+| [Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]                                          | Sudipto Das, Miroslav Grbic, Igor Ilic … | 2019-01-01 | [AZ],[IDX]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1615,3 +1619,7 @@ Articles types:
 [Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]:https://www.microsoft.com/en-us/research/publication/leveraging-re-costing-online-optimization-parameterized-queries-guarantees/
 [How to choose antivirus software to run on computers that are running SQL Server]:https://support.microsoft.com/help/309422
 [Why is SYSDATETIME() slower than SYSUTCDATETIME()?]:https://erikdarlingdata.com/2019/05/why-is-sysdatetime-slower-than-sysutcdatetime/
+[Constant Time Recovery in Azure SQL Database]:https://www.microsoft.com/en-us/research/publication/constant-time-recovery-in-azure-sql-database/
+[Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]:https://www.microsoft.com/en-us/research/publication/improving-optimistic-concurrency-control-through-transaction-batching-and-operation-reordering/
+[An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]:https://www.cs.cmu.edu/~pavlo/papers/p781-wu.pdf
+[Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]:https://www.microsoft.com/en-us/research/publication/automatically-indexing-millions-of-databases-in-microsoft-azure-sql-database/
