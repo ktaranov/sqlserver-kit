@@ -44,19 +44,19 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
 
 .PARAMETER @numberOfExecution
     Number of execution TSQL statement.
-    Possible values: 1 or 31999.
+    Possible values: 1 or 32000.
     Default value: 10.
 
 .PARAMETER @saveResults
     Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1.
     Create table if not exists (see 335 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
     Possible values: 0 or 1.
-    Default value is 0 - not saved.
+    Default value: 0 - not saved.
 
 .PARAMETER @skipTSQLCheck
     Checking for valid TSQL statement using sys.dm_exec_describe_first_result_set.
     Possible values: 0 or 1.
-    Default value: 1 (true) - skip checking.
+    Default value: 1 - skip checking.
     See https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-describe-first-result-set-transact-sql
 
 .PARAMETER @clearCache
@@ -218,9 +218,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-    Version: 5.8
+    Version: 5.9
     Created: 2017-12-14 by Konstantin Taranov
-    Modified: 2019-08-23 by Konstantin Taranov
+    Modified: 2019-08-26 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
