@@ -1,7 +1,7 @@
 USE master;
 GO
 
-IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL EXEC('CREATE PROCEDURE dbo.sp_BenchmarkTSQL AS SELECT 1;');
+IF OBJECT_ID('dbo.sp_BenchmarkTSQL', 'P') IS NULL EXEC('CREATE PROC dbo.sp_BenchmarkTSQL AS SELECT 1;');
 GO
 
 
@@ -24,57 +24,71 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     Run TSQL statement @numberOfExecution times and calculate each execution time, save results if needed or print it.
 
 .DESCRIPTION
-    Run SQL statement specified times, show results, insert execution details into log table master.dbo.BenchmarkTSQL.
+    Run TSQL statement specified times with sp_executesql, print step results, insert execution details into log table master.dbo.BenchmarkTSQL.
 
 .PARAMETER @tsqlStatementBefore
     TSQL statement that executed before tested main TSQL statement - not taken into account when measuring @tsqlStatement.
-    Default value is NULL.
+    Possible values: any TSQL statements.
+    Default value: NULL.
 
 .PARAMETER @tsqlStatement
     TSQL statement for benchmarking.
     Mandatory parameter.
+    Possible values: any TSQL statements.
     No defaults.
 
 .PARAMETER @tsqlStatementAfter
     TSQL statement that executed after tested TSQL statement - not taken into account when measuring @tsqlStatement.
-    Default value is NULL.
+    Possible values: any TSQL statements.
+    Default value: NULL.
 
 .PARAMETER @numberOfExecution
     Number of execution TSQL statement.
-    Default value is 10.
+    Possible values: 1 or 32000.
+    Default value: 10.
 
 .PARAMETER @saveResults
     Save benchmark details to master.dbo.BenchmarkTSQL table if @saveResults = 1.
-    Create table if not exists (see 301 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
-    Default value is 0 - not saved.
+    Create table if not exists (see 335 line: CREATE TABLE master.dbo.BenchmarkTSQL …).
+    Possible values: 0 or 1.
+    Default value: 0 - not saved.
 
 .PARAMETER @skipTSQLCheck
-    Checking for valid TSQL statement.
-    Default value is 1 (true) - skip checking.
+    Checking for valid TSQL statement using sys.dm_exec_describe_first_result_set.
+    Possible values: 0 or 1.
+    Default value: 1 - skip checking.
+    See https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-describe-first-result-set-transact-sql
 
 .PARAMETER @clearCache
     Clear cached plan for TSQL statement before each run using DBCC FREEPROCCACHE(@planHandle).
-    Default value is 0 (false) - not clear.
+    Possible values: 0 or 1.
+    Default value: 0 - not clear.
 
 .PARAMETER @calcMedian
     Calculate pseudo median of all execution times.
-    Default value is 0 (false) - not calculated.
+    Possible values: 0 or 1.
+    Default value: 0 - not calculated.
 
 .PARAMETER @printStepInfo
-    PRINT detailed step information: step count, start time, end time, duration.
-    Default value is 0 - not printed.
+    PRINT detailed step information: step count, start step time, end step time, duration.
+    Default value: 0 - not printed.
 
 .PARAMETER @durationAccuracy
-    Duration accuracy calculation, possible values for this stored procedure parameter: ns, mcs, ms, ss, mi, hh, dd, wk.
-    Default value is ss - seconds.
-    See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
+    Duration accuracy calculation.
+    Possible values: ns, mcs, ms, ss, mi, hh, dd, wk.
+    Default value: ss - seconds.
+    See DATEDIFF https://docs.microsoft.com/sql/t-sql/functions/datediff-transact-sql
 
 .PARAMETER @dateTimeFunction
-    Define using datetime function, possible values of functions: SYSDATETIME, SYSUTCDATETIME. Default value is SYSDATETIME.
-    See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
+    Define using datetime function.
+    Possible values: SYSDATETIME, SYSUTCDATETIME.
+    Default value: SYSDATETIME.
+    See https://docs.microsoft.com/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql
 
 .PARAMETER @additionalInfo
-    Save additional session parameteres (ANSI_WARNINGS, XACT_ABORT and etc) to XML column AdditionalInfo in log table master.dbo.BenchmarkTSQL. Default value is 0.
+    Save additional session parameteres (ANSI_WARNINGS, XACT_ABORT and etc) to XML column AdditionalInfo in log table master.dbo.BenchmarkTSQL.
+    Possible values: 0 or 1.
+    Default value: 0 - not saved.
 
 .EXAMPLE
     EXEC sp_BenchmarkTSQL
@@ -125,7 +139,7 @@ ALTER PROCEDURE dbo.sp_BenchmarkTSQL(
     DECLARE @tsql nvarchar(max) = N'SET NOCOUNT OFF; DECLARE @tsql nvarchar(max) = N''BACKUP DATABASE [master] TO DISK = N''''C:\master'' +
                                    REPLACE(CAST(CAST(GETDATE() AS datetime2(7)) AS nvarchar(max)), '':'', '' '') +
                                    ''.bak'''' WITH NOFORMAT, NOINIT;''
-                                   EXECUTE sp_executesql @tsql;';
+                                   EXEC sp_executesql @tsql;';
     EXEC sp_BenchmarkTSQL
          @tsqlStatement     = @tsql
        , @numberOfExecution = 3
@@ -204,9 +218,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .NOTE
-    Version: 5.7
+    Version: 5.9
     Created: 2017-12-14 by Konstantin Taranov
-    Modified: 2019-04-18 by Konstantin Taranov
+    Modified: 2019-08-26 by Konstantin Taranov
     Main contributors: Konstantin Taranov, Aleksei Nagorskii
     Source: https://rebrand.ly/sp_BenchmarkTSQL
 */
@@ -216,15 +230,15 @@ BEGIN TRY
     SET NOCOUNT ON;
 
     DECLARE @startBenchmark datetime2(7) = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
-                                           WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
-                                      END;
+                                                WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
+                                           END;
 
     DECLARE @originalLogin sysname = QUOTENAME(ORIGINAL_LOGIN()); /* https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/ */
     DECLARE @err_msg       nvarchar(max);
     DECLARE @raiseError    nvarchar(2000);
 
     /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
-    SET @raiseError = 'Benchmark started at ' +  CONVERT(varchar(27), @startBenchmark, 121) + ' by ' + @originalLogin;
+    SET @raiseError = 'Benchmark started at ' + CONVERT(varchar(27), @startBenchmark, 121) + ' by ' + @originalLogin;
     RAISERROR(@raiseError, 0, 1) WITH NOWAIT;
 
     DECLARE @productMajorVersion sql_variant = SERVERPROPERTY('ProductMajorVersion');
@@ -251,13 +265,13 @@ BEGIN TRY
         , 'dd'  /* day         */
         , 'wk'  /* week        */
     )
-    THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. Default value is ss. See DATEDIFF https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql' , 1;
+    THROW 55004, '@durationAccuracy accept only this values: ns, mcs, ms, ss, mi, hh, wk, dd. Default value is ss. See DATEDIFF https://docs.microsoft.com/sql/t-sql/functions/datediff-transact-sql' , 1;
 
     IF @dateTimeFunction NOT IN ('SYSDATETIME', 'SYSUTCDATETIME')
-    THROW 55005, '@dateTimeFunction accept only SYSDATETIME and SYSUTCDATETIME. Default value is SYSDATETIME. See https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
+    THROW 55005, '@dateTimeFunction accept only SYSDATETIME and SYSUTCDATETIME. Default value is SYSDATETIME. See https://docs.microsoft.com/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql', 1;
 
-    IF @numberOfExecution <= 0 OR @numberOfExecution >= 32000
-        THROW 55006, '@numberOfExecution must be > 0 and < 32000. If you want more execution then comment 183 and 184 lines.', 1;
+    IF @numberOfExecution <= 0 OR @numberOfExecution > 32000
+        THROW 55006, '@numberOfExecution must be > 0 and <= 32000. If you want more execution then comment 273 and 274 lines.', 1;
 
     IF @skipTSQLCheck = 0
     BEGIN
@@ -337,7 +351,7 @@ BEGIN TRY
         , AdditionalInfo      xml           NULL
     );', 1;
 
-    DECLARE @crlf          nvarchar(10) = CHAR(10);
+    DECLARE @crlf          nvarchar(10) = CHAR(13) + CHAR(10);
     DECLARE @stepNumber    int          = 0;
     DECLARE @min           bigint;
     DECLARE @avg           bigint;
@@ -389,7 +403,7 @@ BEGIN TRY
     IF @saveResults = 1
     BEGIN
         DECLARE @TSQLStatementGUID varchar(36) = NEWID();
-        PRINT(N'TSQLStatementGUID in log table is: ' + @TSQLStatementGUID + @crlf);
+        PRINT(N'TSQLStatementGUID in log table is: ' + @TSQLStatementGUID + @crlf + @crlf);
     END;
 
     WHILE @stepNumber < @numberOfExecution
@@ -407,7 +421,7 @@ BEGIN TRY
         END;
 
         IF @tsqlStatementBefore IS NOT NULL AND @tsqlStatementBefore <> ''
-            EXECUTE sp_executesql @tsqlStatementBefore;
+            EXEC sp_executesql @tsqlStatementBefore;
 
         BEGIN /* Run bencmark step and calculate it duration */
             SET @startStep = CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
@@ -525,21 +539,22 @@ BEGIN TRY
        IF @printStepInfo = 1
        BEGIN
        /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
-           SET @raiseError = 'Run ' + CASE WHEN @stepNumber < 10   THEN '   ' + CAST(@stepNumber AS varchar(30))
-                                           WHEN @stepNumber < 100  THEN '  '  + CAST(@stepNumber AS varchar(30))
-                                           WHEN @stepNumber < 1000 THEN ' '   + CAST(@stepNumber AS varchar(30))
+           SET @raiseError = 'Run ' + CASE WHEN @stepNumber < 10    THEN '    ' + CAST(@stepNumber AS varchar(30))
+                                           WHEN @stepNumber < 100   THEN '   '  + CAST(@stepNumber AS varchar(30))
+                                           WHEN @stepNumber < 1000  THEN '  '   + CAST(@stepNumber AS varchar(30))
+                                           WHEN @stepNumber < 10000 THEN ' '    + CAST(@stepNumber AS varchar(30))
                                            ELSE CAST(@stepNumber AS varchar(30))
                                       END +
                               ', start: '    + CONVERT(varchar(27), @startStep, 121) +
                               ', finish: '   + CONVERT(varchar(27), CASE WHEN @dateTimeFunction = 'SYSDATETIME'    THEN SYSDATETIME()
                                                                          WHEN @dateTimeFunction = 'SYSUTCDATETIME' THEN SYSUTCDATETIME()
                                                                     END, 121) +
-                              ', step duration: ' + CAST(@stepDuration AS varchar(100)) + @durationAccuracy + '.';
+                              ', step duration: ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @stepDuration), 1), '.00', '') + ' ' + @durationAccuracy + @crlf;
            RAISERROR(@raiseError, 0, 1) WITH NOWAIT;
         END;
 
         IF @tsqlStatementAfter IS NOT NULL AND @tsqlStatementAfter <> ''
-            EXECUTE sp_executesql @tsqlStatementAfter;
+            EXEC sp_executesql @tsqlStatementAfter;
 
     END;
 
@@ -603,13 +618,14 @@ BEGIN TRY
 
     /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
     SET @raiseError = @crlf +
-         'Min: '       + CAST(@min AS varchar(30)) + @durationAccuracy +
-         ', Max: '     + CAST(@max AS varchar(30)) + @durationAccuracy +
-         ', Average: ' + CAST(@avg AS varchar(30)) + @durationAccuracy +
-         CASE WHEN @calcMedian = 1 THEN ', Median: ' + CAST(@median AS varchar(30)) + @durationAccuracy ELSE '' END +
-         @crlf +
-         'Benchmark ended at ' + CONVERT(varchar(23), @endTime, 121) +
-         ' by ' + @originalLogin;
+         'Min:     ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @min),    1), '.00', '') + ' ' + @durationAccuracy + @crlf +
+         'Average: ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @avg),    1), '.00', '') + ' ' + @durationAccuracy + @crlf +
+         CASE WHEN @calcMedian = 1 THEN
+         'Median:  ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @median) ,1), '.00', '') + ' ' + @durationAccuracy
+              ELSE ''
+         END + @crlf +
+         'Max:     ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @max),    1), '.00', '') + ' ' + @durationAccuracy + @crlf + @crlf +
+         'Benchmark ended at ' + CONVERT(varchar(23), @endTime, 121) + ' by ' + @originalLogin;
     RAISERROR(@raiseError, 0, 1) WITH NOWAIT;
 
     DECLARE @benchmarkDuration bigint = CASE WHEN @durationAccuracy = 'ns'  THEN DATEDIFF(ns,  @startBenchmark, @endBenchmark)
@@ -624,27 +640,28 @@ BEGIN TRY
                                         END;
 
     /* Using RAISEEROR for interactive step printing http://sqlity.net/en/984/print-vs-raiserror/ */
-    SET @raiseError = @crlf + 'Duration of benchmark: ' +  CAST(@benchmarkDuration AS varchar(30)) + @durationAccuracy + '.'  + @crlf + + @crlf;
+    SET @raiseError = @crlf + 'Duration of benchmark: ' + REPLACE(CONVERT(varchar(30), CONVERT(money, @benchmarkDuration), 1), '.00', '') + ' ' + @durationAccuracy + @crlf;
     RAISERROR(@raiseError, 0, 1) WITH NOWAIT;
 
 END TRY
 
 BEGIN CATCH
-    PRINT('Error: '       + CONVERT(varchar(50), ERROR_NUMBER())  +
+    PRINT(@crlf +
+            'Error: '       + CONVERT(varchar(50), ERROR_NUMBER())  +
           ', Severity: '  + CONVERT(varchar(5), ERROR_SEVERITY()) +
           ', State: '     + CONVERT(varchar(5), ERROR_STATE())    +
           ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-')        +
           ', Line: '      + CONVERT(varchar(5), ERROR_LINE())     +
           ', User name: ' + CONVERT(sysname, ORIGINAL_LOGIN())
           );
-    PRINT(ERROR_MESSAGE());
+    PRINT(ERROR_MESSAGE() + @crlf + @crlf);
 
     IF ERROR_NUMBER() = 535
     PRINT('Your @durationAccuracy = ' + @durationAccuracy +
-    '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or days (dd).' + @crlf +
+    '. Try to use @durationAccuracy with a less precise datepart - seconds (ss) or minutes (mm) or hours (hh).' + @crlf +
     'But in log table master.dbo.BenchmarkTSQL (if you run stored procedure with @saveResult = 1) all times saving with datetime2(7) precise!' + @crlf +
     'You can manualy calculate difference after decreasing precise datepart.' + @crlf +
-    'For analyze log table see latest example in document section.') + @crlf + + @crlf;
+    'For analyze log table see latest example in document section.') + @crlf + @crlf;
 END CATCH;
 GO
 

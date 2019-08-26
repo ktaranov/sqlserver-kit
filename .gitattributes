@@ -64,3 +64,9 @@
 *.sql eol=crlf merge=union
 /*.sql diff
 *.sql diff
+
+# linguist overrides
+*.sql linguist-language=TSQL
+*.R linguist-language=R
+*.ps1 linguist-language=Powershell
+
