@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 CTP 3.2]                                                | 15.0.1800.32                                 | 2019-07-24                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RC1]                                                    | 15.0.1900.25                                 | 2019-08-21                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU16 KB4508218]                              | 14.0.1000.169<br/>14.0.3223.3                | 2017-10-02<br/>2019-08-01                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU8 KB4505830]                               | 13.0.5026.0<br/>13.0.5426.0                  | 2018-04-24<br/>2019-07-31                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [CU4 KB4500181]                          | 12.0.6024.0<br/>12.0.6329.1                  | 2018-10-30<br/>2019-07-29                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -139,7 +139,7 @@ Profits:
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[Install 2019 CTP 3.2]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
+[Install 2019 RC1]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [CU16 KB4508218]:https://support.microsoft.com/help/4508218
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -177,7 +177,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServer2019CTP3.2-x64-ENU.iso                                   | 2019-07-24   | 15.0.1800.32  |     1358 | 1b897b2200e24990177ef072d4913afd43b00286 |
+| [SQL Server 2019]                     | SQLServer2019RC-x64-ENU.iso                                       | 2019-08-21   | 15.0.1900.25  |     1360 | 7405402e7c73531d599c285334fc2e3d945215a2 |
 | [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU16]                | SQLServer2017-KB4508218-x64.exe                                   | 2019-08-01   | 14.0.3223.3   |      529 | a7fefaa78e201c654262066d84eb5e1c1fbe3282 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -369,7 +369,6 @@ SELECT SERVERPROPERTY('ProductVersion');
 | Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
 | SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
-| SQL Server 2012 CTP1                         | 11              |  Denali      | 2010         | 684                       | 110                             | 110, 100, 90                  |
 | SQL Server 2008 R2                           | 10.5            |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
 | SQL Server 2008                              | 10              |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
 | SQL Server 2005 SP2+ with VarDecimal enabled |  9              |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
@@ -463,19 +462,20 @@ Microsoft SQL Server 2019 (CTP3.1) - 15.0.1700.0 (X64)
    Developer Edition (64-bit) on …
 ```
 
-| Build         | File version      | Branch | Type | KB / Description                   | Release Date | Build Date | Fixes | Public | Size, Mb |
-|---------------|-------------------|--------|------|----------------------------------- |--------------|------------|------:|-------:|---------:|
-| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  | [Microsoft SQL Server 2019 CTP3.2] | 2019-07-24   | 2019-07-18 |       |        |     1358 |
-| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.1   | 2019-06-26   | 2019-06-20 |       |        |     1341 |
-| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.0   | 2019-05-22   | 2019-05-17 |       |        |     1339 |
-| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.5   | 2019-04-23   | 2019-04-16 |       |        |     1340 |
-| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.4   | 2019-03-27   | 2019-03-17 |       |        |     1331 |
-| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.3   | 2019-03-01   | 2019-02-16 |       |        |     1331 |
-| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.2   | 2018-12-11   | 2018-11-02 |       |        |     1302 |
-| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.1   | 2018-11-06   | 2018-11-02 |       |        |     1299 |
-| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.0   | 2018-09-24   | 2018-09-18 |       |        |     1532 |
+| Build         | File version      | Branch | Type | KB / Description                                      | Release Date | Build Date | Fixes | Public | Size, Mb |
+|---------------|-------------------|--------|------|-------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC1  | [Microsoft SQL Server 2019 Release Candidate 1 (RC1)] | 2019-08-21   | 2019-08-17 |       |        |     1360 |
+| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.2                      | 2019-07-24   | 2019-07-18 |       |        |     1358 |
+| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.1                      | 2019-06-26   | 2019-06-20 |       |        |     1341 |
+| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  | Microsoft SQL Server 2019 CTP3.0                      | 2019-05-22   | 2019-05-17 |       |        |     1339 |
+| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.5                      | 2019-04-23   | 2019-04-16 |       |        |     1340 |
+| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.4                      | 2019-03-27   | 2019-03-17 |       |        |     1331 |
+| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.3                      | 2019-03-01   | 2019-02-16 |       |        |     1331 |
+| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.2                      | 2018-12-11   | 2018-11-02 |       |        |     1302 |
+| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.1                      | 2018-11-06   | 2018-11-02 |       |        |     1299 |
+| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  | Microsoft SQL Server 2019 CTP2.0                      | 2018-09-24   | 2018-09-18 |       |        |     1532 |
 
-[Microsoft SQL Server 2019 CTP3.2]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
+[Microsoft SQL Server 2019 Release Candidate 1 (RC1)]:https://www.microsoft.com/en-us/sql-server/sql-server-2019#Install
 
 
 ## Microsoft SQL Server 2017 Builds
