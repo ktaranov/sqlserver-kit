@@ -66,7 +66,10 @@
 *.sql diff
 
 # linguist overrides
-*.sql linguist-language=TSQL
-*.R linguist-language=R
+*.cs linguist-language=C#
 *.ps1 linguist-language=Powershell
+*.psd1 linguist-language=Powershell
+*.psm1 linguist-language=Powershell
+*.R linguist-language=R
+*.sql linguist-language=TSQL
 

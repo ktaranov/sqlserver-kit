@@ -709,7 +709,6 @@ Articles types:
 | [On telemetry and other data collected by SQL Server]                                                                   | Aaron Bertrand                           | 2016-04-04 | [DBA],[DEV] |
 | [Purging data with batched deletes]                                                                                     | Andy Mallon                              | 2019-04-03 | [DBA],[DEV] |
 | [Don’t Forget RoboCopy]                                                                                                 | John Morehouse                           | 2019-03-03 | [DBA]       |
-| [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-04-26 | [DBA],[DEV] |
 | [Understanding the XML description of the Deadlock Graph in SQL Server]                                                 | Minette Steynberg                        | 2016-04-26 | [DBA],[DEV] |
 | [What Is The Difference Between Checkpoint And Lazy Writer]                                                             | Saurabh Sinha                            | 2012-10-01 | [DBA]       |
 | [Efficiently Indexing Long Character Strings]                                                                           | Jon Seigel                               | 2013-07-13 | [DBA],[DEV] |
@@ -823,6 +822,10 @@ Articles types:
 | [Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]                        | Bailu Ding, Lucja Kot, Johannes Gehrke   | 2019-01-01 | [DBA],[DEV] |
 | [An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]                                                | Yingjun Wu, Joy Arulraj, Jiexi Lin …     | 2019-01-01 | [DBA],[DEV] |
 | [Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]                                          | Sudipto Das, Miroslav Grbic, Igor Ilic … | 2019-01-01 | [AZ],[IDX]  |
+| [Adding a Column with a Default Constraint]                                                                             | Matthew Mcgiffen                         | 2019-07-16 | [DBA],[DEV] |
+| [A Hidden Value Of Apply]                                                                                               | Erik Darling                             | 2019-06-24 | [DEV]       |
+| [Improve Performance of UDFs with NULL ON NULL INPUT]                                                                   | Jonathan Kehayias                        | 2018-12-27 | [DEV]       |
+| [The ‘= NULL’ Mistake and other SQL NULL Heresies]                                                                      | Phill Factor                             | 2019-06-17 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1508,7 +1511,6 @@ Articles types:
 [On telemetry and other data collected by SQL Server]:https://blogs.sentryone.com/aaronbertrand/sql-server-telemetry/
 [Purging data with batched deletes]:https://am2.co/2019/04/purging-data-with-batched-deletes/
 [Don’t Forget RoboCopy]:https://sqlrus.com/2019/05/dont-forget-robocopy/
-[Understanding the graphical representation of the SQL Server Deadlock Graph]:https://www.sqlshack.com/understanding-graphical-representation-sql-server-deadlock-graph/
 [Understanding the XML description of the Deadlock Graph in SQL Server]:https://www.sqlshack.com/understanding-the-xml-description-of-the-deadlock-graph-in-sql-server/
 [What Is The Difference Between Checkpoint And Lazy Writer]:https://saurabhsinhainblogs.blogspot.com/2012/10/interview-question-checkpoint-and-lazy.html?m=1
 [Efficiently Indexing Long Character Strings]:https://voluntarydba.com/2013/07/30/efficiently-indexing-long-character-strings/
@@ -1623,3 +1625,7 @@ Articles types:
 [Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]:https://www.microsoft.com/en-us/research/publication/improving-optimistic-concurrency-control-through-transaction-batching-and-operation-reordering/
 [An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]:https://www.cs.cmu.edu/~pavlo/papers/p781-wu.pdf
 [Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]:https://www.microsoft.com/en-us/research/publication/automatically-indexing-millions-of-databases-in-microsoft-azure-sql-database/
+[Adding a Column with a Default Constraint]:https://matthewmcgiffen.com/2019/07/16/adding-a-column-with-a-default-constraint/
+[A Hidden Value Of Apply]:https://erikdarlingdata.com/2019/06/a-hidden-value-of-apply/
+[Improve Performance of UDFs with NULL ON NULL INPUT]:https://sqlperformance.com/2018/12/sql-performance/improve-udfs-null-on-null-input
+[The ‘= NULL’ Mistake and other SQL NULL Heresies]:https://www.red-gate.com/hub/product-learning/sql-prompt/the-null-mistake-and-other-sql-null-heresies
