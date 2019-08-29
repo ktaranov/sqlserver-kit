@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **277** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **278** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -11,7 +11,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
- - **[J]**: Job managers {3}
+ - **[J]**: Job managers {4}
  - **[M]**: Monitoring and alerting Tools {16}
  - **[MG]**: Migration tool {26}
  - **[MS]**: Management Studio (alternative for SSMS) {26}
@@ -24,11 +24,11 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-04-24 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-07-25 | Microsoft             |            | Yes            | No    |
+| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-08-08 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
-| [Azure Data Studio](#ads)                                        | No                            | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-05-08 | Microsoft             | [MIT]      | Open Source    | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [?]      | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
@@ -181,7 +181,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Database Performance Analyzer](#dpa-solarwinds)                 | Oracle, MySQL, Other          | Linux     | [M]      | [Database Performance Analyzer]             | ?          | SolarWinds            |            | No             | $1995 |
 | [Database Performance Analyzer for MSSQL](#dpa-solarwinds-mssql) | No                            | No        | [M]      | [Database Performance Analyzer for MSSQL]   | ?          | SolarWinds            |            | No             | $1995 |
 | [SQL Enlight](#sql-enlight)                                      | No                            | No        | [MS]     | [SQL Enlight]                               | 2016-04-25 | UbitSoft              |            | No             |  $295 |
-| [Aireforge Studio](#aireforge-studio)                            | No                            | No        | [MG],[SC]| [Aireforge Studio]                          | 2017-06-21 | AireForge             |            | Yes            |  $299 |
+| [Aireforge Studio](#aireforge-studio)                            | No                            | No        | [MG],[SC]| [Aireforge Studio]                          | 2019-08-08 | AireForge             |            | Yes            |  $299 |
 | [HexaTier](#hexatier)                                            | No                            | No        | [?]      | [HexaTier]                                  | ?          | HexaTier              |            | No             | ?     |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)                | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [SoftTree SQL Assistant]                    | 2017-12-17 | SoftTree              |            | No             |  $215 |
 | [DB Audit and Security 360](#db-audit-and-security-360)          | Oracle,MySQL,Other            | No        | [?]      | [DB Audit and Security 360]                 | 2015-02-07 | SoftTree              |            | No             |  $499 |
@@ -301,12 +301,13 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Valentina Studio](#valentina-studio)                            | MySQL,PostgreSQL,Other        | Linux,Mac | [MS]     | [Valentina Studio]                          | 2018-09-24 | Paradigma Software    |            | Yes            |  $200 |
 | [SQL Plus Dot Net](#sql-plus-dot-net)                            | No                            | No        | [?]      | [SQL Plus Dot Net]                          | ?          | SQL+.NET              |            | No             |     ? |
 | [SQLIndexManager](#sqlindexmanager)                              | No                            | No        | [IDX]    | [SQLIndexManager]                           | 2019-05-19 | Sergey Syrovatchenko  |            | Open Source    | No    |
+| [JAMS Enterprise Job Scheduling](#jams-job)                      | No                            | No        | [J]      | [JAMS Enterprise Job Scheduling]            | 2019-08-20 | HelpSystems           |            | No             |     ? |
 
 
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-07-25<br/>
 Support Version: 2005-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -315,6 +316,33 @@ Price: No
 SQL Server Management Studio (SSMS) is an integrated environment for accessing, configuring, managing, administering, and developing all components of SQL Server.
 SSMS combines a broad group of graphical tools with a number of rich script editors to provide developers and administrators of all skill levels access to SQL Server.
 This release features improved compatibility with previous versions of SQL Server, a stand-alone web installer, and toast notifications within SSMS when new releases become available.
+
+
+<a id="ads"></a>
+## Azure Data Studio
+Download page: [Azure Data Studio]<br/>
+Release date: 2019-08-08<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Azure Data Studio (previously SQL Operations Studio) is a data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux.
+
+[Azure Data Studio List of Extensions](https://github.com/Microsoft/azuredatastudio/wiki/List-of-Extensions)
+
+ - Cross-Platform DB management for Windows, macOS and Linux with simple XCopy deployment
+ - SQL Server Connection Management with Connection Dialog, Server Groups, and Registered Servers
+ - Object Explorer supporting schema browsing and contextual command execution
+ - T-SQL Query Editor with advanced coding features such as autosuggestions, error diagnostics, tooltips, formatting and peek definition
+ - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
+ - Management Dashboard supporting customizable widgets with drill-through actionable insights
+ - Visual Data Editor that enables direct row insertion, update and deletion into tables
+ - Backup and Restore dialogs that enables advanced customization and remote filesystem browsing, configured tasks can be executed or scripted
+ - Task History window to view current task execution status, completion results with error messages and task T-SQL scripting
+ - Scripting support to generate CREATE, SELECT and DROP statements for database objects
+ - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
+ - Modern light-weight shell with theming, user settings, full screen support, integrated terminal and numerous other features
 
 
 <a id="bcp"></a>
@@ -362,33 +390,6 @@ Interactive command line query tool for SQL Server.
  - Query history
  - Configuration file support
  - Multi-line queries
-
-
-<a id="ads"></a>
-## Azure Data Studio
-Download page: [Azure Data Studio]<br/>
-Release date: 2019-05-18<br/>
-Support Version: 2008-2019/Azure<br/>
-Author: Microsoft<br/>
-Free version: Yes<br/>
-Price: No
-
-Azure Data Studio (previously SQL Operations Studio) is a data management tool that enables working with SQL Server, Azure SQL DB and SQL DW from Windows, macOS and Linux.
-
-[Azure Data Studio List of Extensions](https://github.com/Microsoft/azuredatastudio/wiki/List-of-Extensions)
-
- - Cross-Platform DB management for Windows, macOS and Linux with simple XCopy deployment
- - SQL Server Connection Management with Connection Dialog, Server Groups, and Registered Servers
- - Object Explorer supporting schema browsing and contextual command execution
- - T-SQL Query Editor with advanced coding features such as autosuggestions, error diagnostics, tooltips, formatting and peek definition
- - Query Results Viewer with advanced data grid supporting large result sets, export to JSON\CSV\Excel, query plan and charting
- - Management Dashboard supporting customizable widgets with drill-through actionable insights
- - Visual Data Editor that enables direct row insertion, update and deletion into tables
- - Backup and Restore dialogs that enables advanced customization and remote filesystem browsing, configured tasks can be executed or scripted
- - Task History window to view current task execution status, completion results with error messages and task T-SQL scripting
- - Scripting support to generate CREATE, SELECT and DROP statements for database objects
- - Workspaces with full Git integration and Find In Files support to managing T-SQL script libraries
- - Modern light-weight shell with theming, user settings, full screen support, integrated terminal and numerous other features
 
 
 ## RML Utilities for SQL Server
@@ -2643,8 +2644,8 @@ Price: $295
 ## Aireforge Studio
 <a id="aireforge-studio"></a>
 Download page: [Aireforge Studio]<br/>
-Release date: 2017-06-21<br/>
-Support Version: 2008/2012/2014/2016/Azure<br/>
+Release date: 2019-08-08<br/>
+Support Version: 2008-2019/Azure<br/>
 Author: AireForge<br/>
 Free version: Yes<br/>
 Price: $299
@@ -4304,11 +4305,27 @@ Price: No
 Analyze and fix index fragmentation for SQL Server / Azure
 
 
-[SSMS]:https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms
-[bcp Utility]:https://docs.microsoft.com/en-us/sql/tools/bcp-utility
-[sqlcmd Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility
-[mssql-cli]:https://github.com/dbcli/mssql-cli
+<a id="jams-job"></a>
+## JAMS Enterprise Job Scheduling
+Download page: [JAMS Enterprise Job Scheduling]<br/>
+Release date: 2019-08-20<br/>
+Support Version: 2008-2019<br/>
+Author: HelpSystems<br/>
+Free version: No<br/>
+Price: ?
+
+Take control of SQL Agent sprawl. Automate smarter with JAMS and regain control over your critical SQL Server batch processes.
+
+- Monitor SQL Server Job Progress
+- Customize SQL Job Schedules (Dates, times, triggers, dependencies and more)
+- Send Alerts
+
+
+[SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
+[bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
+[sqlcmd Utility]:https://docs.microsoft.com/sql/tools/sqlcmd-utility
+[mssql-cli]:https://github.com/dbcli/mssql-cli
 [RML Utilities for SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=4511
 [GraphView]:https://github.com/Microsoft/GraphView
 [Baseline Security Analyze]:https://www.microsoft.com/en-us/download/details.aspx?id=7558
@@ -4583,6 +4600,7 @@ Analyze and fix index fragmentation for SQL Server / Azure
 [Valentina Studio]:https://www.valentina-db.com
 [SQL Plus Dot Net]:https://sqlplusweb.azurewebsites.net
 [SQLIndexManager]:https://github.com/sergeysyrovatchenko/SQLIndexManager
+[JAMS Enterprise Job Scheduling]:https://info.jamsscheduler.com/jams-sql-wla-rethink
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
