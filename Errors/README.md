@@ -137,6 +137,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log        … | [3930_link1]                                        |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                                        |
 |       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                                    |
+|       4353 | Conflicting file relocations have been specified for file '%.*ls'. Only a single WITH MOVE clause      … | [4353_link1]                                        |
 |       4629 | Permissions on server scoped catalog views or system stored procedures or extended stored              … | [4629_link1][12]                                    |
 |       4901 | ALTER TABLE only allows columns to be added that can contain nulls, or have a DEFAULT definition       … | [4901_link1][33]                                    |
 |       4922 | ALTER TABLE ALTER COLUMN Address failed because one or more objects access this column.                … | [4922_link1]                                        |
@@ -205,6 +206,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      18054 | Error %d, severity %d, state %d was raised, but no message with that error number was found in         … | [18054_link1]                                       |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s       … | [18272_link1]                                       |
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated       … | [18357_link1][5]                                    |
+|      18401 | Login failed for user '%.*ls'. Reason: Server is in script upgrade mode. Only administrator can connect… | [18401_link1]                                       |
 |      18452 | Login failed. The login is from an untrusted domain and cannot be used with Windows authenticati       … | [18452_link1]                                       |
 |      18456 | Login failed for user '%.*ls'.%.*ls%.*ls                                                                 | [18456_link1]                                       |
 |      22911 | The capture job cannot be used by Change Data Capture to extract changes from the log when             … | [22911_link1]                                       |
@@ -298,6 +300,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [3906_link1]:https://thelonedba.wordpress.com/2019/03/03/failed-update-read-only-database-backup/
 [3930_link1]:http://michaeljswart.com/2017/01/case-study-troubleshooting-doomed-transactions/
 [4064_link1]:https://blog.sqlauthority.com/2008/11/04/sql-server-fix-error-4064-cannot-open-user-default-database-login-failed-login-failed-for-user/
+[4353_link1]:https://blog.sqlauthority.com/2019/05/24/sql-server-fix-msg-4353-conflicting-file-relocations-have-been-specified-for-file-only-a-single-with-move-clause-should-be-specified-for-any-logical-file-name/
 [4922_link1]:https://www.mssqltips.com/sqlservertip/4749/sql-server-2016-online-alter-column-operation/
 [4934_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
@@ -324,6 +327,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
 [18054_link1]:https://sqlstudies.com/2019/07/24/custom-error-messages/
 [18272_link1]:https://sqlundercover.com/2017/08/29/restores-using-invalid-backup-default-locations/
+[18401_link1]:https://blog.sqlauthority.com/2019/05/20/sql-server-fix-error-login-failed-for-user-reason-server-is-in-script-upgrade-mode-only-administrator-can-connect-at-this-time-microsoft-sql-server-error-18401/
 [18452_link1]:http://jasonbrimhall.info/2016/11/08/login-from-an-untrusted-domain-back-to-basics/
 [18456_link1]:https://sqlstudies.com/2017/01/12/why-wont-my-sql-logins-work/
 [22911_link1]:https://www.sqlshack.com/sql-server-filestream-with-change-data-capture/
