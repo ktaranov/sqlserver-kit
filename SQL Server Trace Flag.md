@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all (documented and undocumented) Microsoft SQL Server trace flags (**597** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**597** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -9,7 +9,10 @@ For more information on the applicable version, see the Microsoft Support articl
 
 ⚠ **Trace flag behavior may not be supported in future releases of SQL Server.**
 
+⚠ **[Azure SQL Database Managed Instance](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance) supports the following global Trace Flags: [460](#460), [2301](#2301), [2389](#2389), [2390](#2390), [2453](#2453), [2467](#2467), [7471](#7471), [8207](#8207), [9389](#9389), [10316](#10316) and [11024](#11024). Session trace-flags are not yet supported in Managed Instance.**
+
 Headers:
+ - [Remarks](#remarks)
  - [Unknown trace flags](#unknown-trace-flags)
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
@@ -74,6 +77,29 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
 
 
+<a id="remarks"></a>
+## Remarks
+There are three types of trace flags: query, session and global. Query trace flags are active for the context of a specific query. Session trace flags are active for a connection and are visible only to that connection. Global trace flags are set at the server level and are visible to every connection on the server. Some flags can only be enabled as global, and some can be enabled at either global or session scope.
+
+⚠ **Some `USE HINT` hints may conflict with trace flags enabled at the global or session level, or database scoped configuration settings. In this case, the query level hint (`USE HINT`) always takes precedence. If a `USE HINT` conflicts with another query hint, or a trace flag enabled at the query level (such as by [QUERYTRACEON]), SQL Server will generate an error when trying to execute the query.**
+
+The following rules apply:
+- A global trace flag must be enabled globally. Otherwise, the trace flag has no effect. We recommend that you enable global trace flags at startup, by using the `-T` command line option. This ensures the trace flag remains active after a server restart. Restart SQL Server for the trace flag to take effect.
+- If a trace flag has either global, session or query scope, it can be enabled with the appropriate scope. A trace flag that is enabled at the session level never affects another session, and the effect of the trace flag is lost when the SPID that opened the session logs out.
+
+Trace flags are set on or off by using either of the following methods:
+- Using the [DBCC TRACEON] and [DBCC TRACEOFF] commands.
+For example, to enable the 2528 trace flag globally, use `DBCC TRACEON` with the `-1` argument: `DBCC TRACEON (2528, -1)`. The effect of enabling a global trace flag with `DBCC TRACEON` is lost on server restart. To turn off a global trace flag, use `DBCC TRACEOFF` with the `-1` argument.
+- Using the `-T` startup option to specify that the trace flag be set on during startup.
+The `-T` startup option enables a trace flag globally. You cannot enable a session-level trace flag by using a startup option. This ensures the trace flag remains active after a server restart. For more information about startup options, see [Database Engine Service Startup Options](https://github.com/MicrosoftDocs/sql-docs/blob/live/docs/database-engine/configure-windows/database-engine-service-startup-options.md).
+- At the query level, by using the [QUERYTRACEON][KB2801413] query hint. The [QUERYTRACEON][KB2801413] option is only supported for Query Optimizer trace flags documented in the [Docs Trace Flags].  However, this option will not return any error or warning if an unsupported trace flag number is used. If the specified trace flag is not one that affects a query execution plan, the option will be silently ignored. 
+More than one trace flag can be specified in the OPTION clause if `QUERYTRACEON` `trace_flag_number` is duplicated with different trace flag numbers.
+Executing a query with the [QUERYTRACEON][KB2801413] option requires membership in the sysadmin fixed server role.
+The [QUERYTRACEON][KB2801413] option can be used in [Plan Guides](https://docs.microsoft.com/en-us/sql/relational-databases/performance/plan-guides).
+
+Use the [DBCC TRACESTATUS] command to determine which trace flags are currently active.
+
+
 <a id="unknown-trace-flags"></a>
 ## Unknown trace flags
 List of Unknown trace flags enabled on default Azure SQL Server instances, see more details here: [Azure SQL DB Managed Instances: Trace Flags, Ahoy!](https://www.brentozar.com/archive/2018/03/azure-sql-db-managed-instances-trace-flags-ahoy/)
@@ -104,6 +130,8 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
 ## What are Microsoft SQL Server Trace Flags?
 Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: [Docs Trace Flags]
 
+Trace flags are used to set specific server characteristics or to alter a particular behavior. For example, trace flag 3226 is a commonly used startup trace flag which suppresses successful backup messages in the error log. Trace flags are frequently used to diagnose performance issues or to debug stored procedures or complex computer systems, but they may also be recommended by Microsoft Support to address behavior that is negatively impacting a specific workload.  All documented trace flags and those recommended by Microsoft Support are fully supported in a production environment when used as directed.  Note that trace flags in this list may have additional considerations regarding their particular usage, so it is advisable to carefully review all the recommendations given here and/or by your support engineer. Also, as with any configuration change in SQL Server, it is always best to thoroughly test the flag in a non-production environment before deploying.
+
 
 <a id="how-do-i-turn-trace-flags-on-and-off"></a>
 ## How do I turn Trace Flags on and off?
@@ -117,28 +145,28 @@ Trace Flags are settings that in some way or another alters the behavior of vari
 ## How do I know what Trace Flags are turned on at the moment?
 From SSMS 16 every sql plan content information about trace flags in section `Trace flags`
 
-You can use the [DBCC TRACESTATUS](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql "Microsoft Docs DBCC TRACESTATUS") command
+You can use the [DBCC TRACESTATUS] command.
 
 The following example displays the status of all trace flags that are currently enabled globally:
-```sql
+```tsql
 DBCC TRACESTATUS(-1);
 GO
 ```
 
 The following example displays the status of trace flags 2528 and 3205:
-```sql
+```tsql
 DBCC TRACESTATUS (2528, 3205);
 GO
 ```
 
 The following example displays whether trace flag 3205 is enabled globally:
-```sql
+```tsql
 DBCC TRACESTATUS (3205, -1);
 GO
 ```
 
 The following example lists all the trace flags that are enabled for the current session:
-```sql
+```tsql
 DBCC TRACESTATUS ();
 GO
 ```
@@ -154,7 +182,7 @@ When we write a simple select statement with an inner join, the query optimizer 
 To obtain the list of rules of your version of SQL Server we must use the undocumented DBCC commands SHOWONRULES and SHOWOFFRULES.
 Those commands display the enabled and disabled rules for the whole instance respectively. As you may guess, the number of rules varies amongst versions.
 
-```sql
+```tsql
 USE master;
 GO
 
@@ -1426,6 +1454,7 @@ Link: [KB2801413]<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-2312/<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -1484,6 +1513,7 @@ Link: https://www.brentozar.com/archive/2018/08/how-trace-flag-2335-affects-memo
 Link: https://support.microsoft.com/help/2413549<br />
 Link: [Docs Trace Flags]<br />
 Link: http://dba.stackexchange.com/questions/53726/difference-in-execution-plans-on-uat-and-prod-server<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -1502,6 +1532,7 @@ Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2010/01/11/high-cpu-after-upgrading-to-sql-server-2005-from-2000-due-to-batch-sort<br />
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -1594,6 +1625,7 @@ Scope: session only
 #### Trace Flag: 2389
 Function: Enable automatically generated quick statistics for ascending keys (histogram amendment).
 If trace flag 2389 is set, and a leading statistics column is marked as ascending, then the histogram used to estimate cardinality will be adjusted at query compile time.<br />
+**Note: This trace flag does not apply to CE version 120 or above. Use trace flag [4139](#4139) instead.**<br />
 Link: [KB2801413]<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
@@ -1603,6 +1635,7 @@ Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2389/<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -1610,13 +1643,15 @@ Scope: global or session or query
 #### Trace Flag: 2390
 Function: Enable automatically generated quick statistics for ascending or unknown keys (histogram amendment).
 If trace flag 2390 is set, and a leading statistics column is marked as ascending or unknown, then the histogram used to estimate cardinality will be adjusted at query compile time<br />
+**Note: This trace flag does not apply to CE version 120 or above. Use trace flag [4139](#4139) instead.**<br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: [KB2801413]<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/ianjo/2006/04/24/ascending-keys-and-auto-quick-corrected-statistics<br />
 Link: [SQL Server - estimates outside of the histogram - half-baked draft]<br />
-Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2390/
+Link: http://www.sqlservergeeks.com/sql-server-trace-flag-2390/<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -2931,7 +2966,7 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/541352/tempdb-err
 Function: Disables parameter sniffing unless OPTION(RECOMPILE), WITH RECOMPILE or OPTIMIZE FOR value is used.
 To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].
 To accomplish this at the query level, add the OPTIMIZE FOR UNKNOWN query hint.
-Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
+Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the `USE HINT` query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: http://blogs.msdn.com/b/axinthefield/archive/2010/11/04/sql-server-trace-flags-for-dynamics-ax.aspx<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
@@ -2939,30 +2974,33 @@ Link: [Docs Trace Flags]<br />
 Link: http://kejser.org/trace-flag-4136-2/<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4136/<br />
 Link: http://www.sqlservergeeks.com/sql-server-did-you-know-about-trace-flag-4136/<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
 <a id="4137"></a>
 #### Trace Flag: 4137
 Function: Causes SQL Server to generate a plan using minimum selectivity when estimating AND predicates for filters to account for correlation, under the query optimizer cardinality estimation model of SQL Server 2012 and earlier versions<br />
-Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
+Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the `USE HINT` query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/help/2658214<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
 <a id="4138"></a>
 #### Trace Flag: 4138
-Function: Causes SQL Server to generate a plan that does not use row goal adjustments with queries that contain TOP, OPTION (FAST N), IN, or EXISTS keywords<br />
-Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.
+Function: Causes SQL Server to generate a plan that does not use row goal adjustments with queries that contain `TOP`, `OPTION (FAST N)`, `IN`, or `EXISTS` keywords<br />
+Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the `USE HINT` query hint instead of using this trace flag.
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
 Link: https://support.microsoft.com/help/2667211<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://answers.sqlperformance.com/questions/1609/trying-to-figure-out-how-to-resolve-the-data-skew.html<br />
 Link: http://dba.stackexchange.com/questions/55198/huge-slowdown-to-sql-server-query-on-adding-wildcard-or-top<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -3005,6 +3043,7 @@ Link: http://www.sqlservergeeks.com/sql-server-2016-database-scoped-configuratio
 Link: https://nebraskasql.blogspot.com/2018/11/things-i-learned-at-summit-v20-trace.html<br />
 Link: [Let’s talk about trace flags]<br />
 Link: [KB2964518]<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -4719,13 +4758,14 @@ Scope: ?
 #### Trace Flag: 9481
 Function: Enables you to set the query optimizer cardinality estimation model to the SQL Server 2012 and earlier version independent of the compatibility level of the database.
 To accomplish this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].
-To accomplish this at the query level, add the QUERYTRACEON query hint<br />
+To accomplish this at the query level, add the QUERYTRACEON query hint.<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: https://sqlserverscotsman.wordpress.com/2016/11/28/a-guide-on-forcing-the-legacy-ce/<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2801413]<br />
 Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/<br />
-Link: https://sqlperformance.com/2019/01/sql-performance/compatibility-levels-and-cardinality-estimation-primer
+Link: https://sqlperformance.com/2019/01/sql-performance/compatibility-levels-and-cardinality-estimation-primer<br />
+Link: [KB2801413]<br />
 Scope: global or session or query
 
 
@@ -5043,9 +5083,11 @@ Scope: ?
 [Query Store Trace Flags]: https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
 [DBCC TRACEON]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
 [DBCC TRACEOFF]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql
+[DBCC TRACESTATUS]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-tracestatus-transact-sql
 [DBCC CHECKDB]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql
 [DBCC CHECKTABLE]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checktable-transact-sql
 [DBCC CHECKCONSTRAINTS]: https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-checkconstraints-transact-sql
+[KB2801413]:https://support.microsoft.com/help/2801413
 [Niko Neugebauer Columnstore Indexes – part 86]: http://www.nikoport.com/2016/07/29/columnstore-indexes-part-86-new-trace-flags-in-sql-server-2016/
 [Niko Neugebauer Columnstore Indexes – part 35]: http://www.nikoport.com/2014/07/24/clustered-columnstore-indexes-part-35-trace-flags-query-optimiser-rules/
 [Microsoft SQL Server 2005 TPC-C Trace Flags]: http://webcache.googleusercontent.com/search?q=cache:Nttlt2Dp8egJ:blogs.msmvps.com/gladchenko/2009/08/21/sql_trace_flags_tpc-c/+&cd=6&hl=en&ct=clnk&gl=ru
