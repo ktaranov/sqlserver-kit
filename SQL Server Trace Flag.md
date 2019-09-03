@@ -99,7 +99,7 @@ Also, as with any configuration change in SQL Server, it is always best to thoro
 
 <a id="how-do-i-know-what-trace-flags-are-turned-on-at-the-moment"></a>
 ## How do I know what Trace Flags are turned on at the moment?
-From SSMS 16 every sql plan content information about trace flags in section `Trace flags`
+From SSMS 16 every sql plan content information about trace flags in section `Trace flags`.
 
 You can use the [DBCC TRACESTATUS] command.
 
@@ -164,7 +164,12 @@ GO
 
 <a id="remarks"></a>
 ## Remarks
-There are three types of trace flags: query, session and global. Query trace flags are active for the context of a specific query. Session trace flags are active for a connection and are visible only to that connection. Global trace flags are set at the server level and are visible to every connection on the server. Some flags can only be enabled as global, and some can be enabled at either global or session scope.
+There are three types of trace flags: query, session and global.
+- Query trace flags are active for the context of a specific query
+- Session trace flags are active for a connection and are visible only to that connection
+- Global trace flags are set at the server level and are visible to every connection on the server.
+
+Some flags can only be enabled as global, and some can be enabled at either global or session scope.
 
 ⚠ **Some `USE HINT` hints may conflict with trace flags enabled at the global or session level, or database scoped configuration settings. In this case, the query level hint (`USE HINT`) always takes precedence. If a `USE HINT` conflicts with another query hint, or a trace flag enabled at the query level (such as by [QUERYTRACEON]), SQL Server will generate an error when trying to execute the query.**
 
@@ -627,9 +632,11 @@ Link: None
 <a id="460"></a>
 #### Trace Flag: 460
 Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
-Description for [2628] mesage has useful information - which column had the truncation and which row.<br />
-**Note: Starting with database compatibility level 150, message ID 2628 is the default and this trace flag has no effect.**
-**Note: Don’t leave this trace flag enabled on global scope for SQL Server 2017 CU12 and CU13.
+Description for [2628] mesage has useful information - which column had the truncation and which row.
+Starting with SQL Server 2019 CTP 2.4, to accomplish this at the database level, see the VERBOSE_TRUNCATION_WARNINGS option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
+**Note: This trace flag applies to SQL Server 2017 (14.x) CU12, and higher builds.**<br />
+**Note: Starting with database compatibility level 150, message ID 2628 is the default and this trace flag has no effect.**<br />
+**Note: Don’t leave this trace flag enabled on global scope for SQL Server 2017 CU12 and CU13.**<br />
 There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://www.procuresql.com/blog/2018/09/26/string-or-binary-data-get-truncated/<br />
@@ -640,7 +647,7 @@ Link: https://www.brentozar.com/archive/2019/03/how-to-fix-the-error-string-or-b
 Link: https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa<br />
 Link: https://support.microsoft.com/help/4490142<br />
 Scope: global or session<br />
-SQL Server Version: 2019, >= 2017 CU12, >= 2016 SP2 CU6<br />
+SQL Server Version: >= 2017 CU12, >= 2016 SP2 CU6<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_460.sql
 
 
@@ -765,7 +772,8 @@ Starting SQL Server 2016, fast inserts is enabled by default leveraging minimal 
 With fast inserts, each bulk load batch acquires new extent(s) bypassing the allocation lookup for existing extent with available free space to optimize insert performance.
 With fast inserts, bulk loads with small batch sizes can lead to increased unused space consumed by objects hence it is recommended to use large batch size for each batch to fill the extent completely.
 If increasing batch size is not feasible, this trace flag can help reduce unused space reserved at the expense of performance.<br />
-**Note: This trace flag applies to SQL Server 2016 RTM and higher builds.**
+**Note:  This trace flag applies to SQL Server 2016 (13.x) RTM and higher builds.**<br />
+Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sql_server_team/sql-server-2016-minimal-logging-and-impact-of-the-batchsize-in-bulk-load-operations/<br />
 Scope: global or session
 
@@ -1134,6 +1142,7 @@ This helps avoid "out-of-locks" errors when many locks are being used.<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2330-lock-escalation<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://support.microsoft.com/help/323630<br />
 Scope: global or session
 
 
@@ -1181,12 +1190,13 @@ Scope: global or session
 #### Trace Flag: 1228
 Function: Enable lock partitioning.
 By default, lock partitioning is enabled when a server has 16 or more CPUs. Otherwise, lock partitioning is disabled.
-Trace flag 1228 enables lock partitioning for 2 or more CPUs. Trace flag 1229 disables lock partitioning.
-Trace flag 1229 overrides trace flag 1228 if trace flag 1228 is also set.
+Trace flag 1228 enables lock partitioning for 2 or more CPUs. Trace flag [1229](#1229) disables lock partitioning.
+Trace flag [1229](#1229) overrides trace flag 1228 if trace flag 1228 is also set.
 Lock partitioning is useful on multiple-CPU servers where some tables have very high lock rates.
-You can turn on trace flag 1228 and trace flag 1229 only at startup.<br />
+You can turn on trace flag 1228 and trace flag [1229](#1229) only at startup.<br />
 Link: [Trace Flag 1228 and 1229]<br />
-Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]
+Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]<br />
+Scope: global only
 
 
 <a id="1229"></a>
@@ -3070,7 +3080,8 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2008/07/31/upgrade-of-sql-se
 
 <a id="4610"></a>
 #### Trace Flag: 4610
-Function: When you use trace flag 4618 together with trace flag 4610, the number of entries in the cache store is limited to 8,192. When the limit is reached, SQL 2005 removes some entries from the TokenAndPermUserStore cache store.<br />
+Function: Increases the size of the hash table that stores the cache entries by a factor of 8.
+When used together with trace flag 4618 increases the number of entries in the TokenAndPermUserStore cache store to 8,192.<br />
 Link: https://support.microsoft.com/help/959823<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/06/16/query-performance-issues-associated-with-a-large-sized-security-cache/<br />
@@ -3446,8 +3457,8 @@ Scope: global only
 <a id="7752"></a>
 #### Trace Flag: 7752
 Function: Enables asynchronous load of Query Store.<br />
-Note: Use this trace flag if SQL Server is experiencing high number of QDS_LOADDB waits related to Query Store synchronous load (default behavior).<br />
-Note:** Starting with SQL Server 2019 this behavior is controlled by the engine and trace flag 7752 has no effect.<br /><br />**
+**Note: Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](https://www.sqlskills.com/help/waits/qds_loaddb/) waits related to Query Store synchronous load (default behavior).**<br />
+**Note: Starting with SQL Server 2019 this behavior is controlled by the engine and trace flag 7752 has no effect.**<br />
 Link: [Docs Trace Flags]<br />
 Link: [Query Store Trace Flags]<br />
 Link: [Let’s talk about trace flags]<br />
@@ -5086,6 +5097,7 @@ Additionally, the modification count of the root node is reset to zero. This may
 When trace flag 11024 is enabled, the modification count of the root node is kept as the sum of modification counts of all partitions.<br />
 **Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
 Link: https://support.microsoft.com/help/4041811<br />
+Link: [Docs Trace Flags]<br />
 Scope: global or session
 
 
