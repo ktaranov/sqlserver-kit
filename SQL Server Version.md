@@ -365,9 +365,9 @@ SELECT SERVERPROPERTY('ProductVersion');
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
 | SQL Server 2019                              | 15              |  2019        | 2019         | 895,896,897               | 150                             | 150, 140, 130, 120, 110       |
 | SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2016                              | 13              |  2016        | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
+| SQL Server 2016                              | 13              |  Helsinki    | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2014                              | 12              |  SQL14       | 2014         | 782                       | 120                             | 120, 110, 100                 |
+| SQL Server 2014                              | 12              |  Hekaton     | 2014         | 782                       | 120                             | 120, 110, 100                 |
 | SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
 | SQL Server 2008 R2                           | 10.5            |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
 | SQL Server 2008                              | 10              |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
@@ -378,8 +378,8 @@ SELECT SERVERPROPERTY('ProductVersion');
 | SQL Server 6.5                               |  ?              |  Hydra       | 1996         | 408                       |  65                             | 65                            |
 | SQL Server 6.0                               |  ?              |  SQL95       | 1995         | ?                         |  60                             | ?                             |
 | SQL Server 4.21                              |  ?              |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
-| SQL Server 1.1 (16 bit)                      |  ?              |  ?           | 1991         | ?                         |  60                             | ?                             |
-| SQL Server 1.0 (16 bit)                      |  ?              |  Ashton-Tate | 1989         | ?                         |  60                             | ?                             |
+| SQL Server 1.1 (16 bit)                      |  ?              |  Pietro      | 1991         | ?                         |  60                             | ?                             |
+| SQL Server 1.0 (16 bit)                      |  ?              |  Filipi      | 1989         | ?                         |  60                             | ?                             |
 
 **Azure SQL Database V12** was released in December 2014. One aspect of that release was that newly created databases had their compatibility level set to 120. In 2015 SQL Database began support for level 130, although the default remained 120.
 
