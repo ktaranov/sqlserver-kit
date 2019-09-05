@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: August 8, 2019
+-- Last Modified: September 4, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -65,7 +65,9 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 15.0.1400.75		CTP 2.4								3/26/2019
 -- 15.0.1500.28		CTP 2.5								4/23/2019
 -- 15.0.1600.8		CTP 3.0								5/22/2019
--- 15.0.1700.37		CTP 3.1								6/26/2019							
+-- 15.0.1700.37		CTP 3.1								6/26/2019
+-- 15.0.1800.32		CTP 3.2								7/24/2019
+-- 15.0.1900.25		RC1/RC1 Refresh						8/29/2019
 
 		
 															
