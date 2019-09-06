@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 277 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 278 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -334,6 +334,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [rsqlserver - Sql Server driver database interface (DBI) driver for R](https://github.com/agstudy/rsqlserver)
     - [sp_SizeOptimiser - a stored procedure that recommends space saving and corrective data type measures based on SQL Server database schemas](https://github.com/LowlyDBA/ExpressSQL) (by John McCall)
     - [language-extensions-sqlserver - SQL Server Language Extensions project](https://github.com/microsoft/sql-server-language-extensions) (by Microsoft)
+    - [AzureRMR - R package for interacting with Azure Resource Manager](https://github.com/Azure/AzureRMR) (by Microsoft)
+    - [EntityFramework.Utilities - Provides extensions for EntityFramework that doesn't exist out of the box like delete and update by query and bulk inserts](https://github.com/MikaelEliasson/EntityFramework.Utilities) (by Mikael Eliasson)
+    - [EFCore.BulkExtensions - Entity Framework Core Bulk Batch Extensions for Insert Update Delete and Read (CRUD) operations on SQL Server and SQLite](https://github.com/borisdj/EFCore.BulkExtensions) (by Boris Djurdjevic)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
