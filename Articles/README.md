@@ -168,7 +168,7 @@ Articles types:
 | [SQL Server Temporary Table Caching]                                                                                    | Simon Liew                               | 2016-08-12 |             |
 | [Techniques to Monitor SQL Server memory usage]                                                                         | Basit Farooq                             | 2016-08-01 |             |
 | [Troubleshooting Query Regressions Caused By The New Cardinality Estimator]                                             | SQL Scotsman                             | 2016-11-28 |             |
-| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 | [MG],[AZ]   |
+| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 | [AZ],[MG]   |
 | [Solve Common SQL Server Restore Issues]                                                                                | Sergey Gigoyan                           | 2015-04-12 |             |
 | [Spills SQL Server Doesn’t Warn You About]                                                                              | Erik Darling                             | 2016-11-30 |             |
 | [How often should I run DBCC CHECKDB?]                                                                                  | Erik Darling                             | 2016-02-25 |             |
@@ -356,7 +356,7 @@ Articles types:
 | [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]                                                            | Brent Ozar                               | 2017-06-20 | [DBA],[AZ]  |
 | [Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]                                   | Chris Adkin                              | 2017-07-18 | [DBA]       |
 | [Scale-able Windows Aggregate Functions With Row Store Object]                                                          | Chris Adkin                              | 2017-07-24 | [DEV]       |
-| [Azure DWH part 11: Data Warehouse Migration Utility]                                                                   | Daniel Calbimonte                        | 2017-07-17 | [DBA], [AZ] |
+| [Azure DWH part 11: Data Warehouse Migration Utility]                                                                   | Daniel Calbimonte                        | 2017-07-17 | [AZ],[MG]   |
 | [Representing a simple hierarchical list in SQL Server with JSON, YAML, XML and HTML]                                   | William Brewer                           | 2017-07-18 | [DEV], [X]  |
 | [Advanced Analytics with R and SQL Part II - Data Science Scenarios]                                                    | Frank A. Banin                           | 2017-07-27 | [DEV], [R]  |
 | [Think twice before using table variables]                                                                              | Matthew McGiffen                         | 2017-07-11 | [DEV]       |
@@ -422,7 +422,7 @@ Articles types:
 | [How to Write Efficient TOP N Queries in SQL]                                                                           | Lukas Eder                               | 2017-09-22 | [DEV]       |
 | [Checklist: DR Plan Sanity Check]                                                                                       | Robert Davis                             | 2017-09-04 | [DBA]       |
 | [Table level recovery for selected SQL Server tables]                                                                   | Tibor Nagy                               | 2012-11-30 | [DEV]       |
-| [SQL Mirroring, Preserving the Log Chain During Database Migrations]                                                    | SQL Undercover                           | 2017-01-21 | [DBA]       |
+| [SQL Mirroring, Preserving the Log Chain During Database Migrations]                                                    | SQL Undercover                           | 2017-01-21 | [DBA],[MG]  |
 | [How NOLOCK Will Block Your Queries]                                                                                    | Bert Wagner                              | 2017-10-10 | [DEV]       |
 | [8 Ways to Export SQL Results To a Text File]                                                                           | Daniel Calbimonte                        | 2017-10-06 | [DBA],[DEV] |
 | [SQL Server Installation Failed Due to Pending Restart of Server?]                                                      | thelonedba                               | 2017-09-18 | [DBA],[DEV] |
@@ -486,7 +486,7 @@ Articles types:
 | [Bad Idea Jeans: Finding Undocumented Trace Flags]                                                                      | Brent Ozar                               | 2017-10-04 | [DEV]       |
 | [A Method to Find Trace Flags]                                                                                          | Joe Obbish                               | 2018-01-16 | [DEV]       |
 | [Using Windows stored credentials to connect to SQL in containers]                                                      | Andrew Pruski                            | 2018-01-17 | [DEV]       |
-| [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA]       |
+| [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA],[MG]  |
 | [Nasty Fast PERCENT_RANK]                                                                                               | Alan Burstein                            | 2018-01-05 | [DEV]       |
 | [Administrative Logins and Users]                                                                                       | Kenneth Fisher                           | 2015-11-02 | [DEV]       |
 | [Parallelism in Hekaton (In-Memory OLTP)]                                                                               | Niko Neugebauer                          | 2018-01-20 | [DEV]       |
@@ -518,7 +518,7 @@ Articles types:
 | [How to identify and monitor unused indexes in SQL Server]                                                              | Nikola Dimitrijevic                      | 2018-04-17 | [IDX]       |
 | [Benchmarking: 1-TB table population (part 1: the baseline)]                                                            | Paul Randal                              | 2010-01-21 | [BENCH]     |
 | [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]                       | Paul Randal                              | 2010-01-27 | [BENCH]     |
-| [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA]       |
+| [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA],[MG]  |
 | [Calling Http endpoints in T-SQL using CURL extension]                                                                  | Jovan Popovic                            | 2018-04-17 | [CLR]       |
 | [Why Table Join Orders In Relational Databases]                                                                         | Bert Wagner                              | 2018-04-16 | [DEV]       |
 | [Finding overlapping ranges of data]                                                                                    | Louis Davidson                           | 2018-04-18 | [DEV]       |
@@ -620,8 +620,8 @@ Articles types:
 | [Patching SQL Server on Windows notes from the field]                                                                   | Kevin Chant                              | 2019-01-10 | [DBA]       |
 | [Availability Group Readable Secondaries – Just Say No]                                                                 | Jonathan Kehayias                        | 2019-01-10 | [DBA]       |
 | [Finding the Slowest Query in a Stored Procedure]                                                                       | Erin Stellato                            | 2018-12-13 | [DBA],[DEV] |
-| [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA]       |
-| [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA]       |
+| [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA],[MG]  |
+| [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA],[MG]  |
 | [A unique review of SQL Server index types]                                                                             | Kevin Chant                              | 2019-10-18 | [DBA],[DEV] |
 | [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA],[DEV] |
 | [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA],[DEV] |
@@ -840,6 +840,14 @@ Articles types:
 | [Performance impact of different error handling techniques]                                                             | Aaron Bertrand                           | 2012-08-12 | [DBA],[DEV] |
 | [Backup and Restore Databases with CHECKSUM and VERIFYONLY]                                                             | Lori Brown                               | 2019-08-29 | [B],[DBA]   |
 | [dm_db_database_page_allocations]                                                                                       | Max Vernon                               | 2019-08-01 | [DBA],[DEV] |
+| [Compress Big Tables]                                                                                                   | Max Vernon                               | 2019-08-22 | [DBA],[DEV] |
+| [Hardening SQL Server Security]                                                                                         | Mitch Wheat                              | 2019-08-21 | [DBA],[SEC] |
+| [Splitting Strings With OPENJSON]                                                                                       | Dave Mason                               | 2019-05-06 | [DEV],[X]   |
+| [How to migrate to Amazon RDS for SQL Server using transactional replication]                                           | Richard Waymire                          | 2018-05-17 | [DBA],[MG]  |
+| [The Hardest Part Of Query Tuning: Logical Equivalence]                                                                 | Erik Darling                             | 2019-08-13 | [DBA],[DEV] |
+| [SQL Injection: What is it? Causes and exploits]                                                                        | Ed Pollack                               | 2019-08-30 | [SEC]       |
+| [SQL Injection: Detection and prevention]                                                                               | Ed Pollack                               | 2019-08-30 | [SEC]       |
+| [Some T-SQL INSERTs DO Follow the Fill Factor!]                                                                         | Jeff Moden                               | 2019-08-08 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1657,3 +1665,11 @@ Articles types:
 [Performance impact of different error handling techniques]:https://sqlperformance.com/2012/08/t-sql-queries/error-handling
 [Backup and Restore Databases with CHECKSUM and VERIFYONLY]:https://www.sqlrx.com/backup-and-restore-databases-with-checksum-and-verifyonly/
 [dm_db_database_page_allocations]:https://www.sqlserverscience.com/sys/dm_db_database_page_allocations/
+[Compress Big Tables]:https://www.sqlserverscience.com/performance/compress-big-tables/
+[Hardening SQL Server Security]:https://mitchwheat.com/2019/08/21/hardening-sql-server-security/
+[Splitting Strings With OPENJSON]:https://itsalljustelectrons.blogspot.com/2019/05/Splitting-Strings-With-OPENJSON.html
+[How to migrate to Amazon RDS for SQL Server using transactional replication]:https://aws.amazon.com/ru/blogs/database/how-to-migrate-to-amazon-rds-for-sql-server-using-transactional-replication/
+[The Hardest Part Of Query Tuning: Logical Equivalence]:https://erikdarlingdata.com/2019/08/the-hardest-part-of-query-tuning-logical-equivalence/
+[SQL Injection: What is it? Causes and exploits]:https://www.sqlshack.com/sql-injection-what-is-it-causes-and-exploits/
+[SQL Injection: Detection and prevention]:https://www.sqlshack.com/sql-injection-detection-and-prevention/
+[Some T-SQL INSERTs DO Follow the Fill Factor!]:https://www.sqlservercentral.com/articles/some-t-sql-inserts-do-follow-the-fill-factor-sql-oolie

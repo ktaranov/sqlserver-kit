@@ -183,6 +183,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                                   |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                                   |
 |      12349 | Operation not supported for memory optimized tables having columnstore index.                            | [12349_link1][41]                                   |
+|      13609 | JSON text is not properly formatted. Unexpected character '%lc' is found at position %d.                 | [13609_link1]                                       |
 |      13515 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has custom unique keys defined.   … | [13515_link1][33]                                   |
 |      13518 | Setting SYSTEM_VERSIONING to ON failed because history table '%.*ls' has IDENTITY column specification … | [13518_link1][33]                                   |
 |      13523 | Setting SYSTEM_VERSIONING to ON failed because table '%.*ls' has %d columns and table '%.*ls' has %d   … | [13523_link1][33]                                   |
@@ -317,6 +318,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
 [9002_link3]:https://www.sqlserverscience.com/internals/adding-new-transaction-log-file-when-existing-log-full/
 [10314_link1]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-clr-assembly-failure-after-an-ag-failover/
+[13609_link1]:https://itsalljustelectrons.blogspot.com/2019/05/Splitting-Strings-With-OPENJSON.html
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
 [15021_link1]:https://nebraskasql.blogspot.com/2018/10/invalid-value-given-for-parameter.html
