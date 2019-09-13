@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**597** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**598** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **597 trace flags**
+Summary: **598 trace flags**
 
 
 <a id="-1"></a>
@@ -880,6 +880,20 @@ Link: https://technet.microsoft.com/en-us/library/aa175396(v=SQL.80).aspx
 **Undocumented trace flag**<br />
 Function: Protect unchanged pages in the buffer pool to catch memory corruptions<br />
 Link: None
+
+
+<a id="833"></a>
+#### Trace Flag: 833
+**Undocumented trace flag**<br />
+Function: Disable [superlatches](https://www.sqlshack.com/all-about-latches-in-sql-server/).
+Starting with SQL Server 2005, superlatches (also called sublatches) were introduced to improve SQL Server efficiency in highly concurrent OLTP workloads for a certain pattern of usage (i.e. very high shared read only access to the page (SH) while write access is very low or not exists).
+**Superlatches are used by SQL Server only in NUMA systems with 32+ logical processors.**
+A Superlatch will behave as a single latch with sublatch structures and there can be one sublatch per partition per logical CPU core.
+So when a superlatch is created, the CPU worker thread will just have to acquire the shared (SH) sublatch that is assigned to the scheduler.
+This ensures that a shared (SH) superlatch uses less resources while at the same time access to pages is more efficient comparing to non-partitioned shared latches.
+The reason for this is that the superlatch do not require any synchronization of the global state as it will access only the local NUMA memory.<br />
+Link: https://www.sqlservercentral.com/forums/topic/sql-server-trace-flags-complete-list/page/3/#post-3679021<br />
+Scope: global
 
 
 <a id="834"></a>
