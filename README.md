@@ -48,7 +48,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 597 Trace Flags') (**Complete list - 597 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 598 Trace Flags') (**Complete list - 598 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -149,6 +149,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [RDX Blog](http://blog.rdx.com)
     - [Codingsight](http://codingsight.com/)
     - [Solomon Rutzky's SQL Quantum Leap Blog](https://SqlQuantumLeap.com/)
+    - [Niels Berglund Blog](https://nielsberglund.com)
+    - [BornSQL Blog](https://bornsql.ca/blog/)
+    - [Kevin Chant Blog](https://www.kevinrchant.com/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
