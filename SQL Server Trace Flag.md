@@ -722,6 +722,7 @@ If you turn on trace flag 652, SQL Server no longer brings database pages into t
 If you turn on trace flag 652, queries that benefit from the page pre-fetching feature exhibit low performance.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-652/<br />
 Scope: global or session
 
 
@@ -741,6 +742,7 @@ This behavior affects space consumption and the performance of scan operations. 
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: [Let’s talk about trace flags]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-661/<br />
 Scope: global or session
 
 
@@ -909,6 +911,7 @@ Link: https://support.microsoft.com/help/3210239<br />
 Link: [Docs Trace Flags]<br />
 Link: [Let’s talk about trace flags]<br />
 Link: [KB2964518]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-834/<br />
 Scope: global only
 
 
@@ -933,13 +936,15 @@ Scope: global only
 <a id="839"></a>
 #### Trace Flag: 839
 Function: (Apparently) forces SQL Server to treate all NUMA memory as “flat”, as if it was SMP.<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2010/04/02/how-it-works-soft-numa-io-completion-thread-lazy-writer-workers-and-memory-nodes
+Link: https://blogs.msdn.microsoft.com/psssql/2010/04/02/how-it-works-soft-numa-io-completion-thread-lazy-writer-workers-and-memory-nodes<br />
+Scope: global only
 
 
 <a id="840"></a>
 #### Trace Flag: 840
 Function: SQL 9 – When trace turned on, SQL Server can perform larger I/O extent reads to populate the buffer pool when SQL Server starts this populates the buffer pool faster. Additionally, the larger I/O extent reads improve the initial query compilation and the response time when SQL Server starts.<br />
-Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/09/the-read-ahead-that-doesnt-count-as-read-ahead
+Link: https://blogs.msdn.microsoft.com/ialonso/2011/12/09/the-read-ahead-that-doesnt-count-as-read-ahead<br />
+Scope: global only
 
 
 <a id="842"></a>
@@ -1038,6 +1043,7 @@ Link: http://sql-articles.com/articles/general/day-6trace-flag-1117-auto-grow-eq
 Link: http://www.ryanjadams.com/2017/05/trace-flag-1117-growth-contention/<br />
 Link: https://www.sqlskills.com/blogs/paul/misconceptions-around-tf-1118/<br/>
 Link: [KB2964518]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-1117/<br />
 Scope: global only
 
 
@@ -1057,6 +1063,7 @@ Link: [SQL Server 2016 : Getting tempdb a little more right]<br />
 Link: [Docs Trace Flags]<br />
 Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches<br />
 Link: [KB2964518]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-1118/<br />
 Scope: global only
 
 
@@ -1121,10 +1128,13 @@ Link: None
 <a id="1204"></a>
 #### Trace Flag: 1204
 Function: Returns the resources and types of locks participating in a deadlock and also the current command affected.
-Writes information about deadlocks to the ERRORLOG in a "text format"<br />
+Writes information about deadlocks to the ERRORLOG in a "text format".
+Trace flag 1204 provides node base information about deadlock in another words you can say that all nodes which are involved in deadlock.
+Finally after all nodes information it also provides information about deadlock victim.<br />
 Link: https://support.microsoft.com/help/832524<br />
 Link: [Docs Trace Flags]<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://www.sqlservergeeks.com/sql-server-deadlock-trace-flag-1204/<br />
 Scope: global only
 
 
@@ -1150,13 +1160,14 @@ Link: [KB169960]
 #### Trace Flag: 1211
 Function: Disables lock escalation based on memory pressure, or based on number of locks. The SQL Server Database Engine will not escalate row or page locks to table locks.
 Using this trace flag can generate excessive numbers of locks. This can slow the performance of the Database Engine, or cause 1204 errors (unable to allocate lock resource) because of insufficient memory.
-If both trace flag 1211 and 1224 are set, 1211 takes precedence over 1224.
-However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
+If both trace flag 1211 and [1224](#1224) are set, 1211 takes precedence over [1224](#1224).
+However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use [1224](#1224).
 This helps avoid "out-of-locks" errors when many locks are being used.<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2330-lock-escalation<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://support.microsoft.com/help/323630<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-1211/<br />
 Scope: global or session
 
 
@@ -1176,11 +1187,13 @@ Link: None
 
 <a id="1222"></a>
 #### Trace Flag: 1222
-Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.<br />
+Function: Returns the resources and types of locks that are participating in a deadlock and also the current command affected, in an XML format that does not comply with any XSD schema.
+Write deadlock information to sql server error log.<br />
 Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/bartd/2006/09/08/deadlock-troubleshooting-part-1/<br />
 Link: https://blog.sqlauthority.com/2017/01/09/sql-server-get-historical-deadlock-information-system-health-extended-events<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: <br />
 Scope: global only
 
 
@@ -1197,6 +1210,7 @@ This helps avoid "out-of-locks" errors when many locks are being used.<br />
 **Note: Lock escalation to the table- or HoBT-level granularity can also be controlled by using the LOCK_ESCALATION option of the ALTER TABLE statement.**<br />
 Link: [Docs Trace Flags]<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-1224/<br />
 Scope: global or session
 
 
@@ -1248,11 +1262,11 @@ Scope: global or session or query
 #### Trace Flag: 1260
 Function: Disabled mini-dump for non-yield condition.
 Disables mini-dump generation for "any of the 17883, 17884, 17887, or 17888 errors.
-The trace flag can be used in conjunction with trace flag –T1262. For example, you
-could enable –T1262 to get 10- and a 60-second interval reporting and also enable – T1260 to avoid getting mini-dumps."<br />
+The trace flag can be used in conjunction with trace flag –T1262. For example, you could enable `–T1262` to get 10- and a 60-second interval reporting and also enable `–T1260` to avoid getting mini-dumps."<br />
 Link: [A Topical Collection of SQL Server Flags v6]<br />
 Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]<br />
 Link: [Docs Trace Flags]<br />
+Link: https://www.sqlservergeeks.com/sql-trace-flag-1260/<br />
 Scope: global only
 
 
@@ -1265,15 +1279,15 @@ Link: None
 
 <a id="1262"></a>
 #### Trace Flag: 1262
-Function: The default behavior (for 1788* errors) is for SQL to generate a mini-dump on the first
-occurrence, but never after. 1262 changes the behavior: “When –T1262 is enabled, a
-mini-dump is generated when the non-yielding condition is declared (15 seconds) and
-at subsequent 60-second intervals for the same non-yield occurrence. A new nonDiagCorrect17883etc;
-yielding occurrence causes dump captures to occur again.”
+Function: The default behavior (for 1788* errors) is for SQL to generate a mini-dump on the first occurrence, but never after.
+1262 changes the behavior: “When –T1262 is enabled, a mini-dump is generated when the non-yielding condition is declared (15 seconds) and at subsequent 60-second intervals for the same non-yield occurrence.
+A new nonDiagCorrect17883etc; yielding occurrence causes dump captures to occur again.”
 In SQL 2000 this was a startup-only flag; in 2005+ it can be enabled via TRACEON.
 Note that the flag is also covered in Khen2005, p400, but with no new information.<br />
 Link: [A Topical Collection of SQL Server Flags v6]<br />
-Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]
+Link: [How To Diagnose and Correct Errors 17883, 17884, 17887, and 17888]<br />
+Link: https://www.sqlservergeeks.com/sql-trace-flag-1262/<br />
+Scope: global or session
 
 
 <a id="1264"></a>
@@ -1468,6 +1482,7 @@ Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.queryprocessor.com/ce_join_base_containment_assumption<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/772232/make-optimizer-estimations-more-accurate-by-using-metadata<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2301/<br />
 Scope: global or session or query
 
 
@@ -1567,6 +1582,7 @@ Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2010/01/11/high-cpu-after-upgrading-to-sql-server-2005-from-2000-due-to-batch-sort<br />
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
 Link: [KB2801413]<br />
+Link: https://www.sqlservergeeks.com/trace-flag-2340/<br />
 Scope: global or session or query
 
 
@@ -1601,7 +1617,8 @@ Link: https://blogs.msdn.microsoft.com/saponsqlserver/2011/09/07/changes-to-auto
 Link: https://blogs.msdn.microsoft.com/axinthefield/sql-server-trace-flag-2371-for-dynamics-ax/<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
-Scope: global only
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2371/<br />
+Scope: global or session
 
 
 <a id="2372"></a>
@@ -1891,6 +1908,7 @@ The typical use scenario is when a system administrator knows that server load w
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2528/<br />
 Scope: global or session
 
 
@@ -1912,27 +1930,31 @@ Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowm
 <a id="2537"></a>
 #### Trace Flag: 2537
 **Undocumented trace flag**<br />
-Function: Allows you to see inactive records in transaction log using fn\_dblog<br />
+Function: By using this trace flag, function `fn_dblog()` will read both active and inactive portions of transaction log.<br />
 Link: http://www.sqlsoldier.com/wp/sqlserver/day19of31daysofdisasterrecoveryhowmuchlogcanabackuplog<br />
 Link: http://www.sqlskills.com/blogs/paul/finding-out-who-dropped-a-table-using-the-transaction-log<br />
 Link: http://sqlserverandme.blogspot.ru/2014/03/how-to-view-transaction-log.html<br />
+Link: https://www.sqlservergeeks.com/trace-flag-2537/<br />
 Scope: session only
 
 
 <a id="2540"></a>
 #### Trace Flag: 2540
+**Undocumented trace flag**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2541"></a>
 #### Trace Flag: 2541
+**Undocumented trace flag**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2542"></a>
 #### Trace Flag: 2542
+**Undocumented trace flag**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]<br />
 Link: [Controlling SQL Server memory dumps]
@@ -1940,16 +1962,20 @@ Link: [Controlling SQL Server memory dumps]
 
 <a id="2543"></a>
 #### Trace Flag: 2543
+**Undocumented trace flag**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2544"></a>
 #### Trace Flag: 2544
+**Undocumented trace flag**<br />
 Function: Produces a full memory dump<br />
 Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
-Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery<br />
+Link: [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]<br />
+Scope: Session
 
 
 <a id="2545"></a>
@@ -1960,11 +1986,13 @@ Link: [KB917825]
 
 <a id="2546"></a>
 #### Trace Flag: 2546
-Function: Dumps all threads for SQL Server in the dump file<br />
+Function: Generates dump file for all threads of SQL Server (mini dump).<br />
 Link: [KB917825]<br />
 Link: https://blogs.msdn.microsoft.com/askjay/2010/02/05/how-can-i-create-a-dump-of-sql-server<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/13ce4292-b8a7-41fa-a173-645693957d70/sqldumper?forum=sqldisasterrecovery&forum=sqldisasterrecovery<br />
-Link: https://blogs.msdn.microsoft.com/psssql/2008/09/12/sql-server-2000-2005-2008-recoveryrollback-taking-longer-than-expected
+Link: https://blogs.msdn.microsoft.com/psssql/2008/09/12/sql-server-2000-2005-2008-recoveryrollback-taking-longer-than-expected<br />
+Link: [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]<br />
+Scope: Session
 
 
 <a id="2547"></a>
@@ -2000,16 +2028,20 @@ Scope: global only
 
 <a id="2550"></a>
 #### Trace Flag: 2550
+**Undocumented trace flag**<br />
 Function: Unknown, but related to controlling the contents of a memory dump<br />
 Link: [KB917825]
 
 
 <a id="2551"></a>
 #### Trace Flag: 2551
+**Undocumented trace flag**<br />
 Function: Produces a filtered memory dump<br />
 Link: [KB917825]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/477863/sql-server-is-terminating-because-of-fatal-exception-c0150014<br />
-Link: [Let’s talk about trace flags]
+Link: [Let’s talk about trace flags]<br />
+Link: [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]<br />
+Scope: Session
 
 
 <a id="2552"></a>
@@ -2137,6 +2169,7 @@ Link: https://blogs.msdn.microsoft.com/psssql/2008/01/23/how-it-works-what-is-re
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/sql_pfe_blog/2009/12/22/how-and-why-to-enable-instant-file-initialization/<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3004/<br />
 Scope: session only
 
 
@@ -2406,6 +2439,7 @@ Scope: global only
 Function: Disables [indirect checkpoints](https://docs.microsoft.com/en-us/sql/relational-databases/logs/database-checkpoints-sql-server?view=sql-server-2017#IndirectChkpt) on `tempdb`.<br />
 **Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU5, SQL Server 2017 (14.x) CU1 and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
+Link: https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/bc-p/851152#M1351
 Scope: global only
 
 
@@ -5191,3 +5225,4 @@ Scope: ?
 [SQL Server Plan Cache Limits]:https://www.sqlskills.com/blogs/erin/sql-server-plan-cache-limits/
 [KB2964518]:https://support.microsoft.com/help/2964518
 [SQL Server On Linux: Forced Unit Access (Fua) Internals]:http://bobsql.com/sql-server-on-linux-forced-unit-access-fua-internals/
+[SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]:https://www.sqlservergeeks.com/trace-flag-2544/
