@@ -42,40 +42,40 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
  - [Joe Obbish - A Method to Find Trace Flags](https://rebrand.ly/joe-finding-undocumented-trace-flags)
 
 **Great thanks to:**
- - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
- - Steinar Andersen ([b](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
- - Brent Ozar ([b](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
- - Yusuf Anis
- - Lars Utterström
- - Martin Höglund
- - Håkan Winther
- - Toine Rozemeijer
- - Robert L Davis ([b](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
- - Lonny Niederstadt ([b](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
- - Andrzej Kukuła
- - Alexander Titenko ([gtihub](https://github.com/AlexTitenko))
- - Albert van der Sel
- - Amit Banerjee
- - Erin Stellato ([b](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
- - Darik Hammer ([b](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
- - Erik Darling ([b](https://www.brentozar.com/archive/author/erik-darling/))
- - Joe Obbish ([b](https://orderbyselectnull.com/))
- - Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
- - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
- - Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
- - Alexey Nagorskiy ([github](https://github.com/fenixfx))
- - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
- - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
- - Jason Brimhall ([b](http://jasonbrimhall.info/) | [t](https://twitter.com/sqlrnnr))
- - Victor Isakov ([b](https://victorisakov.wordpress.com/))
- - Scott Caldwell ([b](https://blog.rdx.com/) | [t](https://twitter.com/sqldroid))
- - Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
- - Prince Kumar Rastogi ([b](http://www.sqlservergeeks.com/) | [t](https://twitter.com/princerastogi2))
- - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
- - Slava Oks ([t](https://twitter.com/slava_oks/))
- - John Sterrett ([b](https://www.procuresql.com/))
- - Pavel Málek ([t](https://twitter.com/malekpav))
- - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
+- Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
+- Steinar Andersen ([b](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
+- Brent Ozar ([b](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
+- Yusuf Anis
+- Lars Utterström
+- Martin Höglund
+- Håkan Winther
+- Toine Rozemeijer
+- Robert L Davis ([b](http://www.sqlsoldier.com/wp/) | [@SQLSoldier](https://twitter.com/SQLSoldier))
+- Lonny Niederstadt ([b](http://sql-sasquatch.blogspot.ru/) | [@sql_handle](https://twitter.com/@sql_handle))
+- Andrzej Kukuła
+- Alexander Titenko ([gtihub](https://github.com/AlexTitenko))
+- Albert van der Sel
+- Amit Banerjee
+- Erin Stellato ([b](http://www.sqlskills.com/blogs/erin/) | [@erinstellato](https://twitter.com/erinstellato))
+- Darik Hammer ([b](http://www.sqlhammer.com/) | [@drayhammer](https://twitter.com/drayhammer))
+- Erik Darling ([b](https://www.brentozar.com/archive/author/erik-darling/))
+- Joe Obbish ([b](https://orderbyselectnull.com/))
+- Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
+- Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
+- Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
+- Alexey Nagorskiy ([github](https://github.com/fenixfx))
+- Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
+- Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
+- Jason Brimhall ([b](http://jasonbrimhall.info/) | [t](https://twitter.com/sqlrnnr))
+- Victor Isakov ([b](https://victorisakov.wordpress.com/))
+- Scott Caldwell ([b](https://blog.rdx.com/) | [t](https://twitter.com/sqldroid))
+- Mike Fal ([b](http://www.mikefal.net) | [t](https://twitter.com/Mike_Fal))
+- Prince Kumar Rastogi ([b](https://www.sqlservergeeks.com/author/princerastogi/) | [t](https://twitter.com/princerastogi2))
+- Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
+- Slava Oks ([t](https://twitter.com/slava_oks/))
+- John Sterrett ([b](https://www.procuresql.com/))
+- Pavel Málek ([t](https://twitter.com/malekpav))
+- Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -956,9 +956,12 @@ Link: None
 
 <a id="845"></a>
 #### Trace Flag: 845
-Function: Enable Lock pages in Memory on Standard Edition<br />
+**Undocumented trace flag**<br />
+Function: Enable Lock pages in Memory on Standard Edition for SQL Server 2005 and 2008.<br />
 Link: https://support.microsoft.com/help/970070<br />
-Link: https://support.microsoft.com/help/2708594/fix-locked-page-allocations-are-enabled-without-any-warning-after-you-upgrade-to-sql-server-2012
+Link: https://support.microsoft.com/help/2708594/fix-locked-page-allocations-are-enabled-without-any-warning-after-you-upgrade-to-sql-server-2012<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-845/<br />
+Scope: global only
 
 
 <a id="851"></a>
@@ -2175,22 +2178,24 @@ Scope: session only
 
 <a id="3014"></a>
 #### Trace Flag: 3014
-Function: Returns more info about backups to the errorlog: Backup activity, Restore activity , File creation.<br />
+Function: Returns more info about backups to the errorlog: Backup activity, Restore activity, File creation.<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2008/02/06/how-it-works-how-does-sql-server-backup-and-restore-select-transfer-sizes<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3014/<br />
 Scope: session only
 
 
 <a id="3023"></a>
 #### Trace Flag: 3023
 <a id="3023"></a>
-Function: Enables CHECKSUM option as default for BACKUP command<br />
+Function: Enables `CHECKSUM` option as default for `BACKUP` command.<br />
 **Note: Beginning with SQL Server 2014 this behavior is controlled by setting the backup checksum default configuration option.
 For more information, see [Server Configuration Options (SQL Server)](https://msdn.microsoft.com/en-us/library/ms189631.aspx)**.<br />
 Link: https://support.microsoft.com/help/2656988<br />
 Link: [Docs Trace Flags]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3023/<br />
 Scope: global or session
 
 
@@ -2336,6 +2341,7 @@ Link: [Docs Trace Flags]<br />
 Link: http://www.sqlskills.com/blogs/paul/fed-up-with-backup-success-messages-bloating-your-error-logs<br />
 Link: https://blogs.msdn.microsoft.com/sqlserverstorageengine/2007/10/30/when-is-too-much-success-a-bad-thing<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3226/<br />
 Scope: global only
 
 
@@ -2452,10 +2458,11 @@ Link: None
 
 <a id="3502"></a>
 #### Trace Flag: 3502
-Function: Writes info about checkpoints to error log.<br />
+Function: Write checkpoint start and end messages in the SQL Server error log.<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3502/<br />
 Scope: session only
 
 
@@ -2467,20 +2474,25 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 
 <a id="3504"></a>
 #### Trace Flag: 3504
+**Undocumented trace flag**<br />
 Function: For internal testing. Will raise a bogus log-out-of-space condition from checkpoint<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
-Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
+Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3504/<br />
+Scope: Session only
 
 
 <a id="3505"></a>
 #### Trace Flag: 3505
+**Undocumented trace flag**<br />
 Function: Disables automatic checkpoints.
 Setting trace flag 3505 may increase recovery time and can prevent log space reuse until the next checkpoint is issued.
 Make sure to issue manual checkpoints on all read/write databases at appropriate time intervals.
 "For high availability systems, such as clusters, Microsoft recommends that you do not change the recovery interval because it may affect data safety and availability."<br />
 Link: http://www.sqlskills.com/blogs/paul/benchmarking-1-tb-table-population-part-2-optimizing-log-block-io-size-and-how-log-io-works/<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
-Scope: ?
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3505/<br />
+Scope: global only
 
 
 <a id="3601"></a>
@@ -2513,6 +2525,7 @@ Link: [How to Find the Statistics Used to Compile an Execution Plan]<br />
 Link: [A Row Goal Riddle]<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3604/<br />
 Scope: session only
 
 
@@ -2523,6 +2536,7 @@ Often referenced in KB and blog articles in the context of other trace flags (e.
 Link: https://blogs.msdn.microsoft.com/askjay/2011/01/21/why-do-we-need-trace-flag-3604-for-dbcc-statements/<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
+Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3605/<br />
 Scope: session only
 
 
