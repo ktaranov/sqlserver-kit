@@ -1,7 +1,8 @@
 /*
 <documentation>
   <summary>Compress tables and indexes</summary>
-  <returns>Temp table #estimated_results and print or exec rebuild index commands</author>
+  <returns>Temp table #estimated_results and print or exec rebuild index commands</returns>
+  <author>Max Vernon</author>
   <created>2019-08-08</created>
   <modified>2019-09-12 by Konstantin Taranov</modified>
   <version>1.1</version>
