@@ -4,8 +4,8 @@
   <returns>Temp table #obd with memory consumption by objects</returns>
   <author>Max Vernon</author>
   <created>2019-08-02</created>
-  <modified>2019-09-19 by Konstantin Taranov</modified>
-  <version>1.0</version>
+  <modified>2019-09-20 by Konstantin Taranov</modified>
+  <version>1.1</version>
   <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Memory_Consumption_By_Object.sql</sourceLink>
   <originalLink>https://www.sqlserverscience.com/performance/memory-consumption-by-object/</originalLink>
 </documentation>
@@ -60,9 +60,9 @@ SELECT
     , obd.read_microsec      
 FROM sys.dm_os_buffer_descriptors obd;
 
-SELECT DatabaseName = d.name
+SELECT d.name AS DatabaseName
     , obd.page_type
-    , MB_in_memory = (COUNT(1) * 8192 / 1048576.0)
+    , (COUNT(1) * 8192 / 1048576.0) AS MB_in_memory
 FROM #obd obd
     INNER JOIN sys.databases d ON obd.database_id = d.database_id
 WHERE d.state_desc = N'ONLINE'
@@ -90,8 +90,8 @@ DECLARE @serverCollation nvarchar(200) = CAST(SERVERPROPERTY('Collation') AS nva
 SELECT @cmd = @cmd + CASE WHEN @cmd = N'' THEN N'' ELSE N'
 UNION ALL
 ' END + N'SELECT au.allocation_unit_id
-    , ObjectName = o.name
-    , database_id = ' + CONVERT(nvarchar(10), d.database_id) + N'
+    , o.name COLLATE ' + @serverCollation + N' AS ObjectName' +
+  N', ' + CONVERT(nvarchar(10), d.database_id) + N' AS database_id
 FROM ' + QUOTENAME(d.name) + N'.sys.allocation_units au
     INNER JOIN ' + QUOTENAME(d.name) + N'.sys.partitions p ON ((au.type = 1 OR au.type = 3) AND (au.container_id = p.hobt_id))
         OR (au.type = 2 AND au.container_id = p.partition_id)
@@ -105,11 +105,10 @@ PRINT(@cmd);
 INSERT INTO #allocunits (allocation_unit_id, ObjectName, database_id)
 EXEC sys.sp_executesql @cmd;
 
-
-SELECT DatabaseName = d.name
-    , ObjectName = au.ObjectName
+SELECT d.name AS DatabaseName
+    , au.ObjectName
     , obd.page_type
-    , MB_in_memory = (COUNT_BIG(1) * 8192 / 1048576.0)
+    , (COUNT(1) * 8192 / 1048576.0) AS MB_in_memory
 FROM #obd obd
     INNER JOIN sys.databases d ON obd.database_id = d.database_id
     INNER JOIN #allocunits au ON obd.database_id = au.database_id 
@@ -117,7 +116,7 @@ FROM #obd obd
 GROUP BY d.name
     , au.ObjectName
     , obd.page_type
-ORDER BY (COUNT_BIG(1)) DESC
-    , d.name
+ORDER BY d.name
+    , MB_in_memory DESC
     , au.ObjectName
     , obd.page_type;
