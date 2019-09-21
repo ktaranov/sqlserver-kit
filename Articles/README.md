@@ -76,7 +76,7 @@ Articles types:
 | [Triage Quiz: Is Your SQL Server Safe?]                                                                                 | Angie Rudduck                            | 2016-06-15 |             |
 | [Why Not Just Create Statistics?]                                                                                       | Erik Darling                             | 2016-07-14 |             |
 | [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2011-08-16 |             |
-| [Recover access to a SQL Server instance]                                                                               | Aaron Bertrand                           | 2012-08-30 |             |
+| [Recover access to a SQL Server instance]                                                                               | Aaron Bertrand                           | 2012-08-30 | [SEC]       |
 | [SQL Server 2016 Upgrade Planning]                                                                                      | Jen Underwood                            | 2016-06-28 |             |
 | [Graphs and Graph Algorithms in T-SQL]                                                                                  | Hans Olav Norheim                        | 2010-05-22 |             |
 | [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]                                                  | Sanjay Mishra                            | 2016-07-12 | [DEV],[R]   |
@@ -827,7 +827,6 @@ Articles types:
 | [Improve Performance of UDFs with NULL ON NULL INPUT]                                                                   | Jonathan Kehayias                        | 2018-12-27 | [DEV]       |
 | [The ‘= NULL’ Mistake and other SQL NULL Heresies]                                                                      | Phill Factor                             | 2019-06-17 | [DBA],[DEV] |
 | [How to Corrupt a Database]                                                                                             | Max Vernon                               | 2019-07-29 | [DBA],[COR] |
-| [Partitioned Views: A How-To Guide]                                                                                     | Erik Darling                             | 2016-09-22 | [DBA],[DEV] |
 | [SQL Server Page Types]                                                                                                 | John Huang                               | 2011-10-31 | [DBA],[DEV] |
 | [SQL Server Index Maintenance – You’re Doing It Wrong]                                                                  | Sean Gallardy                            | 2019-09-01 | [DBA],[DEV] |
 | [Stop Worrying About SQL Server Fragmentation]                                                                          | Brent Ozar                               | 2012-08-14 | [DBA]       |
@@ -848,6 +847,17 @@ Articles types:
 | [SQL Injection: What is it? Causes and exploits]                                                                        | Ed Pollack                               | 2019-08-30 | [SEC]       |
 | [SQL Injection: Detection and prevention]                                                                               | Ed Pollack                               | 2019-08-30 | [SEC]       |
 | [Some T-SQL INSERTs DO Follow the Fill Factor!]                                                                         | Jeff Moden                               | 2019-08-08 | [DBA],[DEV] |
+| [Install SQL Server 2019 Big Data Cluster using Azure Data Studio]                                                      | Niels Berglund                           | 2019-09-11 | [DBA],[DEV] |
+| [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]                                     | Parikshit Savjani                        | 2018-09-14 | [DBA]       |
+| [Ghost Records in SQL Server… Now whats that ????]                                                                      | Sachin Nandanwar                         | 2011-04-10 | [DBA]       |
+| [Transaction Isolation Levels and sp_executesql]                                                                        | Max Vernon                               | 2019-08-19 | [DBA],[DEV] |
+| [Batch Mode Bitmaps in SQL Server]                                                                                      | Paul White                               | 2019-08-23 | [DBA],[DEV] |
+| [Transparent Data Encryption (TDE) on Azure SQL database]                                                               | Ranga Babu                               | 2019-09-13 | [DBA],[AZ]  |
+| [Analyzing Estimates from the CSelCalcAscendingKeyFilter Calculator]                                                    | Josh Darnell                             | 2019-08-21 | [DEV]       |
+| [Building Storage for SQL Server (and other database) Virtual Machines in the Cloud]                                    | Joey Dantoni                             | 2019-09-18 | [AZ]        |
+| [SQL Server Simple and Forced Parameterization]                                                                         | Brady Upton                              | 2013-04-23 | [DBA],[DEV] |
+| [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [DBA],[DEV] |
+| [How to use a SQL Server Plan Guide to Tune Queries]                                                                    | Armando Prato                            | 2018-06-02 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1653,7 +1663,6 @@ Articles types:
 [The ‘= NULL’ Mistake and other SQL NULL Heresies]:https://www.red-gate.com/hub/product-learning/sql-prompt/the-null-mistake-and-other-sql-null-heresies
 [How to Corrupt a Database]:https://www.sqlserverscience.com/tools/how-to-corrupt-a-database/
 [SQL Server Page Types]:http://www.sqlnotes.info/2011/10/31/page-type/
-[Partitioned Views: A How-To Guide]:https://www.brentozar.com/archive/2016/09/partitioned-views-guide/
 [SQL Server Index Maintenance – You’re Doing It Wrong]:http://www.seangallardy.com/sql-server-index-maintenance-youre-doing-it-wrong/
 [Stop Worrying About SQL Server Fragmentation]:https://www.brentozar.com/archive/2012/08/sql-server-index-fragmentation/
 [How much will it cost or save to rebuild that index?]:https://www.sqlservercentral.com/articles/rebuild-index
@@ -1673,3 +1682,14 @@ Articles types:
 [SQL Injection: What is it? Causes and exploits]:https://www.sqlshack.com/sql-injection-what-is-it-causes-and-exploits/
 [SQL Injection: Detection and prevention]:https://www.sqlshack.com/sql-injection-detection-and-prevention/
 [Some T-SQL INSERTs DO Follow the Fill Factor!]:https://www.sqlservercentral.com/articles/some-t-sql-inserts-do-follow-the-fill-factor-sql-oolie
+[Install SQL Server 2019 Big Data Cluster using Azure Data Studio]:https://nielsberglund.com/2019/09/11/install-sql-server-2019-big-data-cluster-using-azure-data-studio/
+[Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]:https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/bc-p/851152#M1351
+[Ghost Records in SQL Server… Now whats that ????]:https://www.sqlservergeeks.com/sql-server-ghost-records-in-sql-server-now-whats-that/
+[Transaction Isolation Levels and sp_executesql]:https://www.sqlserverscience.com/basics/stored-procedure-dynamic-sql-execute-as/
+[Batch Mode Bitmaps in SQL Server]:https://sqlperformance.com/2019/08/sql-performance/batch-mode-bitmaps-in-sql-server
+[Transparent Data Encryption (TDE) on Azure SQL database]:https://www.sqlshack.com/transparent-data-encryption-tde-on-the-azure-sql-database/
+[Analyzing Estimates from the CSelCalcAscendingKeyFilter Calculator]:https://www.joshthecoder.com/2019/08/21/analyzing-estimates-cselcalcascendingkeyfilter-calculator.html
+[Building Storage for SQL Server (and other database) Virtual Machines in the Cloud]:https://joeydantoni.com/2019/09/18/building-storage-for-sql-server-and-other-database-virtual-machines-in-the-cloud/
+[SQL Server Simple and Forced Parameterization]:https://www.mssqltips.com/sqlservertip/2935/sql-server-simple-and-forced-parameterization/
+[How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
+[How to use a SQL Server Plan Guide to Tune Queries]:https://www.mssqltips.com/sqlservertip/1630/how-to-use-a-sql-server-plan-guide-to-tune-queries/
