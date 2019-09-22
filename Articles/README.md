@@ -858,6 +858,12 @@ Articles types:
 | [SQL Server Simple and Forced Parameterization]                                                                         | Brady Upton                              | 2013-04-23 | [DBA],[DEV] |
 | [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [DBA],[DEV] |
 | [How to use a SQL Server Plan Guide to Tune Queries]                                                                    | Armando Prato                            | 2018-06-02 | [DBA],[DEV] |
+| [Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]                                                            | Phil Factor                              | 2019-08-14 | [DBA],[DEV] |
+| [Defensive Error Handling]                                                                                              | Alex Kuznetsov                           | 2010-10-08 | [DBA],[DEV] |
+| [A Self-Tuning Fill Factor Technique for SQL Server – Part 1]                                                           | Mike Byrd                                | 2019-08-20 | [DBA],[DEV] |
+| [A Self-Tuning Fill Factor Technique for SQL Server – Part 2]                                                           | Mike Byrd                                | 2019-08-27 | [DBA],[DEV] |
+| [SQL: Been told you can't access master database system views in Azure SQL Database? Not true!]                         | Greg Low                                 | 2019-09-17 | [AZ]        |
+| [How to increase SQL Database Full Backup speed using compression and Solid State Disks]                                | Henk                                     | 2010-01-15 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1693,3 +1699,9 @@ Articles types:
 [SQL Server Simple and Forced Parameterization]:https://www.mssqltips.com/sqlservertip/2935/sql-server-simple-and-forced-parameterization/
 [How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
 [How to use a SQL Server Plan Guide to Tune Queries]:https://www.mssqltips.com/sqlservertip/1630/how-to-use-a-sql-server-plan-guide-to-tune-queries/
+[Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]:https://www.red-gate.com/hub/product-learning/sql-prompt/neglecting-to-use-or-misusing-the-return-keyword-bp016
+[Defensive Error Handling]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/defensive-error-handling/
+[A Self-Tuning Fill Factor Technique for SQL Server – Part 1]:https://www.sqlservercentral.com/articles/a-self-tuning-fill-factor-technique-for-sql-server-part-1
+[A Self-Tuning Fill Factor Technique for SQL Server – Part 2]:https://www.sqlservercentral.com/articles/a-self-tuning-fill-factor-technique-for-sql-server-part-2
+[SQL: Been told you can't access master database system views in Azure SQL Database? Not true!]:https://blog.greglow.com/2019/09/17/sql-told-cannot-access-master-database-system-views-azure-sql-database-not-true/
+[How to increase SQL Database Full Backup speed using compression and Solid State Disks]:http://henkvandervalk.com/how-to-increase-sql-database-full-backup-speed-using-compression-and-solid-state-disks
