@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **278** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **277** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -134,11 +134,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ClearTrace](#cleartrace)                                        | No                            | No        | [?]      | [ClearTrace]                                | 2016-07-07 | Bill Graziano         |            | Yes            | No    |
 | [Dell Security Explorer](#dell-security-explorer)                | No                            | No        | [?]      | [Dell Security Explorer]                    | 2015-06-25 | Dell                  |            | No             |  $850 |
 | [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)  | No                            | No        | [?]      | [Dell LiteSpeed for SQL Server]             | 2015-07-31 | Dell                  |            | No             | ?     |
-| [Dell Toad for SQL Server](#dell-toad-for-sql-server)            | No                            | No        | [MS]     | [Dell Toad for SQL Server]                  | 2015-05-12 | Dell                  |            | No             | ?     |
-| [Dell Spotlight on SQL Server Enterprise](#dell-spotlight)       | No                            | No        | [?]      | [Dell Spotlight]                            | 2016-03-10 | Dell                  |            | No             | $2561 |
-| [Dell Foglight](#dell-foglight)                                  | No                            | No        | [?]      | [Dell Foglight]                             | 2015-09-22 | Dell                  |            | No             | ?     |
-| [Dell Discovery Wizard](#dell-discovery-wizard)                  | No                            | No        | [?]      | [Dell Discovery Wizard]                     | 2011-09-22 | Dell                  |            | Yes            | No    |
-| [Dell Enterprise Reporter](#dell-enterprise-reporter)            | No                            | No        | [?]      | [Dell Enterprise Reporter]                  | ?          | Dell                  |            | No             | $511  |
+| [Quest Toad for SQL Server](#quest-toad-for-sql-server)          | No                            | No        | [MS]     | [Quest Toad for SQL Server]                 | 2015-05-12 | Quest Software        |            | No             | ?     |
+| [Quest Spotlight on SQL Server Enterprise](#quest-spotlight)     | No                            | No        | [?]      | [Quest Spotlight]                           | 2016-03-10 | Quest Software        |            | No             | $2561 |
+| [Quest Foglight](#quest-foglight)                                | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Quest Foglight]                            | 2019-08-29 | Quest Software        |            | No             | ?     |
+| [Quest Enterprise Reporter](#quest-enterprise-reporter)          | No                            | No        | [?]      | [Quest Enterprise Reporter]                 | ?          | Quest Software        |            | No             |  $511 |
 | [SQL Scripter](#sql-scripter)                                    | No                            | No        | [?]      | [SQL Scripter]                              | 2013-02-24 | Thomas Hinsenkamp     |            | No             |   €99 |
 | [Simple Dynamic Scheduler](#simple-dynamic-scheduler)            | No                            | No        | [?]      | [Simple Dynamic Scheduler]                  | 2016-05-02 | Miljan Radovic        |            | Yes            | No    |
 | [ApexSQL Audit](#apexsql-audit)                                  | No                            | No        | [?]      | [ApexSQL Audit]                             | 2017-07-11 | ApexSQL               |            | No             | $1699 |
@@ -199,7 +198,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [EMS Data Comparer](#ems-data-comparer)                          | No                            | No        | [DC]     | [EMS Data Comparer]                         | 2012-11-16 | EMS                   |            | No             |   $47 |
 | [NitroAccelerator](#nitroaccelerator)                            | No                            | No        | [?]      | [NitroAccelerator]                          | 2016-07-10 | Nitrosphere           |            | No             | $1265 |
 | [ERwin Data Modeler](#erwin-data-modeler)                        | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERwin Data Modeler]                        | 2016-06-03 | ERwin                 |            | No             |  $810 |
-| [Toad Data Modeler](#toad-data-modeler)                          | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Toad Data Modeler]                         | 2016-06-16 | Dell                  |            | No             |  $562 |
+| [Quest Data Modeler](#toad-data-modeler)                         | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Toad Data Modeler]                         | 2016-06-16 | Quest Software        |            | No             |  $562 |
 | [SQL Power Architect](#sql-power-architect)                      | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [SQL Power Architect]                       | 2016-02-11 | SQLPower              |            | Yes            |  $995 |
 | [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                  | 2016-07-06 | Nizana Systems        |            | No             |   $99 |
 | [Navicat Data Modeler](#navicat-data-modeler)                    | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Navicat Data Modeler]                      | 2016-08-01 | PremiumSoft           |            | No             |  $199 |
@@ -274,7 +273,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [BimlExpress](#bimlexpress)                                      | No                            | No        | [?]      | [BimlExpress]                               | ?          | Varigence             |            | No             | No    |
 | [BIDS Helper](#bidshelper)                                       | No                            | No        | [?]      | [BIDS Helper]                               | 2015-03-17 | Microsoft             |            | Open Source    | No    |
 | [Azure Data Warehouse Migration Utility](#azure-migration)       | No                            | No        | [MG]     | [Azure Data Warehouse Migration Utility]    | ?          | Microsoft             |            | ?              | ?     |
-| [Dell Benchmark Factory](#dell-benchmark-factory)                | Oracle,MySQL,Other            | No        | [T]      | [Dell Benchmark Factory]                    | ?          | Quest Software        |            | No             | $4413 |
+| [Quest Benchmark Factory](#quest-benchmark-factory)              | Oracle,MySQL,Other            | No        | [T]      | [Quest Benchmark Factory]                   | ?          | Quest Software        |            | No             | $4413 |
 | [manduka](#maduka)                                               | Oracle                        | Linux,Mac | [?]      | [manduka]                                   | 2017-03-08 | Virtusa Corporation   |            | Yes            | No    |
 | [PowerBI Desktop](#powerbi-desktop)                              | Oracle,MySQL,PostgreSQL,Other | No        | [BI]     | [PowerBI Desktop]                           | 2017-07-11 | Microsoft             |            | Yes            |  ?    |
 | [Stellar Phoenix SQL Database Repair](#stellar-phoenix)          | No                            | No        | [REC]    | [Stellar Phoenix SQL Database Repair]       | 2017-07-05 | Stellar Technology    |            | No             |  $349 |
@@ -1860,12 +1859,12 @@ ClearTrace imports SQL Server 2016, SQL Server 2014, SQL Server 2012, SQL Server
 and Profiler files into SQL Server and displays summary performance information.
 
 
-## Dell Security Explorer
-<a id="dell-security-explorer"></a>
-Download page: [Dell Security Explorer]<br/>
-Release date: 2015-06-25<br/>
-Support Version: 2008/2012/2014<br/>
-Author: Dell<br/>
+## Quest Security Explorer
+<a id="quest-security-explorer"></a>
+Download page: [Quest Security Explorer]<br/>
+Release date: 2008-2017<br/>
+Support Version: 2019-08-29<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: $850
 
@@ -1874,12 +1873,12 @@ Plus, it complements Microsoft tools by solving key SQL Server challenges, so yo
 It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
 
 
-## Dell LiteSpeed for SQL Server
-<a id="dell-litespeed-for-sql-server"></a>
-Download page: [Dell Security Explorer]<br/>
-Release date: 2015-07-31<br/>
-Support Version: 2008/2012/2014<br/>
-Author: Dell<br/>
+## Quest LiteSpeed for SQL Server
+<a id="quest-litespeed-for-sql-server"></a>
+Download page: [Quest Security Explorer]<br/>
+Release date: 2019-08-29<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: ?
 
@@ -1888,12 +1887,12 @@ operations across the entire enterprise. Easily manage and monitor SQL Server pr
 With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
 
 
-## Dell Toad for SQL Server
-<a id="dell-toad-for-sql-server"></a>
-Download page: [Dell Toad for SQL Server]<br/>
-Release date: 2015-05-12<br/>
-Support Version: 2008/2008R2/2012/2014<br/>
-Author: Dell<br/>
+## Quest Toad for SQL Server
+<a id="quest-toad-for-sql-server"></a>
+Download page: [Quest Toad for SQL Server]<br/>
+Release date: 2019-08-29<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: ?
 
@@ -1904,12 +1903,12 @@ Unlike native tools, Security Explorer provides the ability to back up and resto
 Security Explorer provides on-the-fly reports to help meet auditing requirements.
 
 
-## Dell Spotlight
-<a id="dell-spotlight"></a>
-Download page: [Dell Spotlight]<br/>
-Release date: 2016-03-10<br/>
-Support Version: 2008/2008R2/2012/2014<br/>
-Author: Dell<br/>
+## Quest Spotlight
+<a id="quest-spotlight"></a>
+Download page: [Quest Spotlight]<br/>
+Release date: 2019-08-29<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: $2561
 
@@ -1921,12 +1920,12 @@ an integrated Xpert tuning module and mobile device support,
 Spotlight on SQL Server Enterprise makes it easier than ever to obtain the data you need to ensure the health of your SQL Server databases.
 
 
-## Dell Foglight
-<a id="dell-foglight"></a>
-Download page: [Dell Foglight]<br/>
-Release date: 2015-09-22<br/>
-Support Version: 2008/2008R2/2012/2014<br/>
-Author: Dell<br/>
+## Quest Foglight
+<a id="quest-foglight"></a>
+Download page: [Quest Foglight]<br/>
+Release date: 2019-08-29<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: ?
 
@@ -1936,29 +1935,12 @@ multi-platform environments – even when you use native or third-party tools �
 Get a wealth of information at a fraction of the impact of conventional collection methods.
 
 
-## Dell Discovery Wizard
-<a id="dell-discovery-wizard"></a>
-Download page: [Dell Foglight]<br/>
-Release date: 2011-09-22<br/>
-Support Version: 2008/2008R2/2012/2014<br/>
-Author: Dell<br/>
-Free version: Yes<br/>
-Price: No
-
- - Take inventory of your network databases, including data amounts
- - Choose the databases you want to consolidate
- - Review database history, including installation and creation dates
- - Find the SQL Server versions and service packs currently deployed
- - Identify names of servers, instances and operating systems
- - Learn the identity of your end users
-
-
-## Dell Enterprise Reporter
+## Quest Enterprise Reporter
 <a id="dell-enterprise-reporter"></a>
 Download page: [Dell Enterprise Reporter]<br/>
 Release date: ?<br/>
-Support Version: 2008/2008R2/2012/2014<br/>
-Author: Dell<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
 Price: $511
 
@@ -4430,13 +4412,12 @@ Take control of SQL Agent sprawl. Automate smarter with JAMS and regain control 
 [Minion Enterprise]:http://minionware.net/enterprise/
 [SQL Server Compression Estimator]:http://ssce.codeplex.com
 [ClearTrace]:http://www.scalesql.com/cleartrace/download.html
-[Dell Security Explorer]:http://software.dell.com/products/security-explorer/
-[Dell LiteSpeed for SQL Server]:http://software.dell.com/products/litespeed-for-sql-server/
-[Dell Toad for SQL Server]:http://software.dell.com/products/toad-for-sql-server/
-[Dell Spotlight]:http://software.dell.com/products/spotlight-on-sql-server-enterprise/
-[Dell Foglight]:http://software.dell.com/products/foglight-for-cross-platform-databases/
-[Dell Discovery Wizard]:http://software.dell.com/products/discovery-wizard-for-sql-server/
-[Dell Enterprise Reporter]:http://software.dell.com/products/enterprise-reporter-for-sql-server/
+[Quest Security Explorer]:https://www.quest.com/products/security-explorer/
+[Quest LiteSpeed for SQL Server]:https://www.quest.com/products/litespeed-for-sql-server/
+[Quest Toad for SQL Server]:https://www.quest.com/products/toad-for-sql-server/
+[Quest Spotlight]:https://www.quest.com/products/spotlight-on-sql-server-enterprise/
+[Quest Foglight]:https://www.quest.com/products/foglight-for-cross-platform-databases/
+[Quest Enterprise Reporter]:https://www.quest.com/enterprise-reporter/
 [SQL Scripter]:http://www.sqlscripter.com/
 [Simple Dynamic Scheduler]:http://www.codeproject.com/Articles/1096104/Simple-Dynamic-Scheduler
 [ApexSQL Audit]:http://www.apexsql.com/sql_tools_audit.aspx
@@ -4573,7 +4554,7 @@ Take control of SQL Agent sprawl. Automate smarter with JAMS and regain control 
 [BimlExpress]:https://www.varigence.com/BimlExpress
 [BIDS Helper]:https://bidshelper.codeplex.com
 [Azure Data Warehouse Migration Utility]:https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-migrate-migration-utility
-[Dell Benchmark Factory]:https://www.quest.com/products/benchmark-factory
+[Quest Benchmark Factory]:https://www.quest.com/products/benchmark-factory
 [manduka]:http://www.manduka.tech/#/home
 [PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
 [Stellar Phoenix SQL Database Repair]:https://www.stellarinfo.com/sql-recovery.php
