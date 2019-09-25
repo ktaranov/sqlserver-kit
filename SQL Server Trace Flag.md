@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**598** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**599** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **598 trace flags**
+Summary: **599 trace flags**
 
 
 <a id="-1"></a>
@@ -1597,10 +1597,12 @@ Link: https://support.microsoft.com/help/3146123/query-plan-generation-improveme
 
 <a id="2363"></a>
 #### Trace Flag: 2363
-Function: TF Selectivity<br />
+Function: TF Selectivity. can be used with the new cardinality estimation model to see the derivation of the distinct estimate on the outer input to an apply, and cardinality estimation in general.<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
 Link: http://www.queryprocessor.com/ce-process<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
+Link: [Nested Loops Joins and Performance Spools]<br />
+Scope: session or query
 
 
 <a id="2368"></a>
@@ -1657,8 +1659,11 @@ Link: None
 <a id="2387"></a>
 #### Trace Flag: 2387
 **Undocumented trace flag**<br />
-Function: There was a small change in CPU and IO costs for some operators. Full effect unknown.<br />
+Function: can be used to reduce the CPU cost of reading rows from a lazy index spool.
+This flag affects general CPU cost estimates for reading a range of rows from a b-tree.
+This flag tends to make index spool selection more likely, for cost reasons.<br />
 Link: [New Undocumented Trace Flags]<br />
+Link: [Nested Loops Joins and Performance Spools]<br />
 Scope: ?
 
 
@@ -4111,13 +4116,15 @@ But in vast majority of situations, you don’t need to manually disable spool w
 Link: https://blogs.msdn.microsoft.com/psssql/2015/12/15/spool-operator-and-trace-flag-8690/<br />
 Link: http://dba.stackexchange.com/questions/52552/index-not-making-execution-faster-and-in-some-cases-is-slowing-down-the-query<br />
 Link: http://connect.microsoft.com/SQL/feedback/ViewFeedback.aspx?FeedbackID=453982
-
+Link: [Nested Loops Joins and Performance Spools]<br />
+Scope: ?
 
 <a id="8691"></a>
 #### Trace Flag: 8691
 **Undocumented trace flag**<br />
 Function: 'performance spool' optimization to the RegEx execution, reduces the number of executions of the RegEx function.<br />
 Link: [Splitting Strings Based on Patterns]<br />
+Link: [Nested Loops Joins and Performance Spools]<br />
 Scope: ?
 
 
@@ -4490,6 +4497,14 @@ Link: None
 Related to: [9205](#9205)
 
 
+<a id="9198"></a>
+#### Trace Flag: 9198
+**Undocumented trace flag**<br />
+Function: Ccan be used to disable lazy index performance spools specifically.
+You may still get a lazy table or row count spool instead (with or without sort optimization), depending on costing.<br />
+Link: [Nested Loops Joins and Performance Spools]<br />
+Scope: ?
+
 <a id="9204"></a>
 #### Trace Flag: 9204
 Function: Output Statistics used by Query Optimizer. When enabled and a plan is compiled or recompiled there is a listing of statistics which is being fully loaded & used to produce cardinality and distribution estimates for some plan alternative or other.<br />
@@ -4589,7 +4604,7 @@ Scope: ?
 **Undocumented trace flag**<br />
 Function: Effects around local and global aggregates - choose coerce partial and global aggregation over scalar aggregation.<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/93<br />
-Scope: local only
+Scope: session only
 
 
 <a id="9292"></a>
@@ -5240,3 +5255,4 @@ Scope: ?
 [KB2964518]:https://support.microsoft.com/help/2964518
 [SQL Server On Linux: Forced Unit Access (Fua) Internals]:http://bobsql.com/sql-server-on-linux-forced-unit-access-fua-internals/
 [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]:https://www.sqlservergeeks.com/trace-flag-2544/
+[Nested Loops Joins and Performance Spools]:https://sqlperformance.com/2019/09/sql-performance/nested-loops-joins-performance-spools
