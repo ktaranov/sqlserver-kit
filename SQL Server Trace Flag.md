@@ -3916,7 +3916,9 @@ Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/T
 Function: Displays logical and physical trees used during the optimization process<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
 Link: [Yet another X-Ray for the QP]<br />
-Link: [Query Optimizer Deep Dive - Part 4]
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Link: [Query Optimizer Deep Dive - Part 1]<br />
+Scope: session or query
 
 
 <a id="8606"></a>
@@ -4234,7 +4236,8 @@ Link: http://sqlmag.com/sql-server/investigating-trace-flags
 #### Trace Flag: 8757
 Function: Skip trivial plan optimization and force a full optimization<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-1.aspx
+Link: [Query Optimizer Deep Dive - Part 1]<br />
+Scope: session or query
 
 
 <a id="8758"></a>
@@ -5256,3 +5259,4 @@ Scope: ?
 [SQL Server On Linux: Forced Unit Access (Fua) Internals]:http://bobsql.com/sql-server-on-linux-forced-unit-access-fua-internals/
 [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]:https://www.sqlservergeeks.com/trace-flag-2544/
 [Nested Loops Joins and Performance Spools]:https://sqlperformance.com/2019/09/sql-performance/nested-loops-joins-performance-spools
+[Query Optimizer Deep Dive - Part 1]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-1.html
