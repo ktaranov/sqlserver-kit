@@ -48,7 +48,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 598 Trace Flags') (**Complete list - 598 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 599 Trace Flags') (**Complete list - 599 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 278 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 277 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -340,6 +340,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [AzureRMR - R package for interacting with Azure Resource Manager](https://github.com/Azure/AzureRMR) (by Microsoft)
     - [EntityFramework.Utilities - Provides extensions for EntityFramework that doesn't exist out of the box like delete and update by query and bulk inserts](https://github.com/MikaelEliasson/EntityFramework.Utilities) (by Mikael Eliasson)
     - [EFCore.BulkExtensions - Entity Framework Core Bulk Batch Extensions for Insert Update Delete and Read (CRUD) operations on SQL Server and SQLite](https://github.com/borisdj/EFCore.BulkExtensions) (by Boris Djurdjevic)
+     - [Performance Analysis of Logs (PAL) Tool](https://github.com/clinthuffman/PAL) (by Clint Huffman)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -453,7 +454,6 @@ BIML Bloggers
  - [PowerShell Blog NetNerds](https://blog.netnerds.net/)
  - [QS Config](http://www.sqlhammer.com/qs-config/) (by Derik Hammer)
  - [Idera 89 Free SQL Server PowerShell Scripts](https://www.idera.com/productssolutions/freetools/sqlpowershellscripts)
- - [Performance Analysis of Logs (PAL) Tool](https://github.com/clinthuffman/PAL) (by Clint Huffman)
  - [Powershell SQL Server Library (PSSQLLib)](https://github.com/sanderstad/PSSQLLib) (by Sander Stad) (Github)
  - [Trello Board: Powershell and SQL Client Tools](https://trello.com/b/NEerYXUU/powershell-sql-client-tools-sqlps-ssms)
  - [PowerUpSQL: A PowerShell Toolkit for Attacking SQL Server](https://github.com/NetSPI/PowerUpSQL) (Github)
