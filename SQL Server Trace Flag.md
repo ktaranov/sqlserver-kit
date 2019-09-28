@@ -62,7 +62,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
 - Joe Obbish ([b](https://orderbyselectnull.com/))
 - Glenn Berry ([b](https://sqlserverperformance.wordpress.com/) | [t](https://twitter.com/GlennAlanBerry))
 - Pedro Lopes ([b](https://social.msdn.microsoft.com/profile/Pedro+Lopes+%28PL%29) | [t](https://twitter.com/sqlpto))
-- Paul White ([b](http://sqlblog.com/blogs/paul_white/) | [t](https://twitter.com/SQL_Kiwi))
+- Paul White ([b](https://www.sql.kiwi/) | [t](https://twitter.com/SQL_Kiwi))
 - Alexey Nagorskiy ([github](https://github.com/fenixfx))
 - Niko Neugebauer ([b](http://www.nikoport.com/) | [t](https://twitter.com/@NikoNeugebauer))
 - Solomon Rutzky ([b](https://SqlQuantumLeap.com/) | [t](https://twitter.com/@SqlQuantumLeap))
@@ -1552,7 +1552,7 @@ Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-ser
 <a id="2332"></a>
 #### Trace Flag: 2332
 Function: PWhite: “Force DML Request Sort (CUpdUtil::FDemandRowsSortedForPerformance)”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+Link: [Optimizing T-SQL queries that change data]
 
 
 <a id="2335"></a>
@@ -4016,7 +4016,7 @@ Link: [Yet another X-Ray for the QP]
 <a id="8633"></a>
 #### Trace Flag: 8633
 Function: PWhite: “Enable prefetch (CUpdUtil::FPrefetchAllowedForDML and CPhyOp_StreamUpdate::FDoNotPrefetch)”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+Link: [Optimizing T-SQL queries that change data]
 
 
 <a id="8649"></a>
@@ -4245,7 +4245,7 @@ Scope: session or query
 Function: “A [workaround to the MERGE bug described] is to apply Trace Flag 8758 –unfortunately this disables a number of optimisations, not just the one 
 above, so it’s not really recommended for long term use.” “Disable rewrite to a single operator plan (CPhyOp_StreamUpdate::PqteConvert)”<br />
 Link: http://sqlblog.com/blogs/paul_white/archive/2010/08/04/another-interesting-merge-bug.aspx<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
+Link: [Optimizing T-SQL queries that change data]<br />
 
 
 <a id="8759"></a>
@@ -4288,7 +4288,7 @@ Link: https://sqlperformance.com/2014/06/sql-plan/filtered-index-side-effect
 <a id="8795"></a>
 #### Trace Flag: 8795
 Function: PWhite: “Disable DML Request Sort (CUpdUtil::FDemandRowsSortedForPerformance)”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
+Link: [Optimizing T-SQL queries that change data]<br />
 Link: https://sqlperformance.com/2014/10/t-sql-queries/performance-tuning-whole-plan
 
 
@@ -4432,7 +4432,7 @@ Scope: ?
 <a id="9115"></a>
 #### Trace Flag: 9115
 Function: PWhite: “Disable prefetch (CUpdUtil::FPrefetchAllowedForDML)” Dima: “Disables both [NLoop Implicit Batch Sort {TF 2340} and NL Prefetching {TF 8744}], and not only on the Post Optimization, but the explicit Sort also”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx<br />
+Link: [Optimizing T-SQL queries that change data]<br />
 Link: http://www.hanlincrest.com/SQLServerLockEscalation.htm<br />
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
 
@@ -5260,3 +5260,4 @@ Scope: ?
 [SQL Server Trace Flag 2544, Trace Flag 2546 and Trace Flag 2551]:https://www.sqlservergeeks.com/trace-flag-2544/
 [Nested Loops Joins and Performance Spools]:https://sqlperformance.com/2019/09/sql-performance/nested-loops-joins-performance-spools
 [Query Optimizer Deep Dive - Part 1]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-1.html
+[Optimizing T-SQL queries that change data]:https://www.sql.kiwi/2013/01/optimizing-t-sql-queries-that-change-data.html
