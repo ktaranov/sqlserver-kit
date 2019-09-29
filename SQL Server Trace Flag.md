@@ -3364,7 +3364,7 @@ Scope: global or session
 #### Trace Flag: 7352
 Function: Show the optimizer output and the post-optimization rewrite in action (After Post Optimization Rewrite)<br />
 Link: [Internals of the Seven SQL Server Sorts – Part 1]<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internals-nested-loops-prefetching.aspx<br />
+Link: https://www.sql.kiwi/2013/08/sql-server-internals-nested-loops-prefetching.html<br />
 Link: http://www.queryprocessor.com/batch-sort-and-nested-loops<br />
 Link: [Query Optimizer Deep Dive - Part 4]<br />
 Link: [Few Outer Rows Optimization]<br />
@@ -3946,7 +3946,7 @@ Scope: session only
 Function: Shows the initial Memo structure<br />
 Link: http://www.queryprocessor.ru/optimizer-part-3-full-optimiztion-optimization-search0<br />
 Link: http://www.benjaminnevarez.com/2012/04/inside-the-query-optimizer-memo-structure<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx<br />
+Link: [Query Optimizer Deep Dive – Part 3]<br />
 Link: [Query Optimizer Deep Dive - Part 4]
 
 
@@ -4067,7 +4067,7 @@ Link: http://www.queryprocessor.ru/optimizer_unleashed_2
 #### Trace Flag: 8675
 Function: Displays the query optimization phases for a specific optimization<br />
 Link: [More Undocumented Query Optimizer Trace Flags]<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx<br />
+Link: [Query Optimizer Deep Dive – Part 3]<br />
 Link: https://sqlperformance.com/2013/06/sql-indexes/recognizing-missed-optimizations
 
 
@@ -5207,7 +5207,7 @@ Scope: ?
 [Trace flags in sql server from trace flag 902 to trace flag 1462]: http://www.sqlserverf1.com/tag/sql-server-trace-flag-1448/
 [TECHNET List Of SQL Server Trace Flags]: http://social.technet.microsoft.com/wiki/contents/articles/13105.trace-flags-in-sql-server.aspx
 [Cardinality Estimation Framework 2014 First Look]: http://www.somewheresomehow.ru/cardinality-estimation-framework-2014-first-look/
-[Query Optimizer Deep Dive - Part 4]: http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
+[Query Optimizer Deep Dive - Part 4]:https://www.sql.kiwi/2012/05/query-optimizer-deep-dive-part-4.html
 [KB920093]: https://support.microsoft.com/help/920093
 [KB972767]: https://support.microsoft.com/help/972767
 [Tune compression for availability group]: https://docs.microsoft.com/sql/database-engine/availability-groups/windows/tune-compression-for-availability-group
@@ -5226,7 +5226,7 @@ Scope: ?
 [Bad Idea Jeans: Finding Undocumented Trace Flags]: https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
 [SQL Server - estimates outside of the histogram - half-baked draft]: http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
 [Upgrading an expired SQL Server 2016 Evaluation Edition]: https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
-[How to Find the Statistics Used to Compile an Execution Plan]: http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
+[How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
 [New Undocumented Trace Flags]: https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
 [Statistics and Cardinality Estimation]: http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
 [Splitting Strings Based on Patterns]: https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
@@ -5261,3 +5261,4 @@ Scope: ?
 [Nested Loops Joins and Performance Spools]:https://sqlperformance.com/2019/09/sql-performance/nested-loops-joins-performance-spools
 [Query Optimizer Deep Dive - Part 1]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-1.html
 [Optimizing T-SQL queries that change data]:https://www.sql.kiwi/2013/01/optimizing-t-sql-queries-that-change-data.html
+[Query Optimizer Deep Dive – Part 3]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-3.html
