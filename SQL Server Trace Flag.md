@@ -3962,7 +3962,7 @@ Scope: session only
 #### Trace Flag: 8612
 Function: Add Extra Info to the Trees Output<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/06/11/hello-operator-my-switch-is-bored.aspx
+Link: [Hello Operator, My Switch Is Bored]
 
 
 <a id="8615"></a>
@@ -3979,7 +3979,7 @@ Scope: session only
 #### Trace Flag: 8619
 **Undocumented trace flag**<br />
 Function: Show Applied Transformation Rules<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/02/06/incorrect-results-with-indexed-views.aspx<br />
+Link: https://www.sql.kiwi/2013/02/incorrect-results-with-indexed-views.html<br />
 Link: [Cardinality Estimation Framework 2014 First Look]<br />
 Link: [Yet another X-Ray for the QP]<br />
 Link: [A Row Goal Riddle]<br />
@@ -4022,7 +4022,7 @@ Link: [Optimizing T-SQL queries that change data]
 <a id="8649"></a>
 #### Trace Flag: 8649
 Function: Set Cost Threshold for parallelism from 1 to 0<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx<br />
+Link: https://www.sql.kiwi/2011/12/forcing-a-parallel-query-execution-plan.html<br />
 Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]<br />
 Link: [Few Outer Rows Optimization]<br />
@@ -4207,7 +4207,7 @@ Function: Disable pre-fetching for the Nested Loop operator.
 **WARNING: Incorrect use of this trace flag may cause additional physical reads when SQL Server executes plans that contain the Nested Loops operator.**<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/03/08/execution-plan-analysis-the-mystery-work-table.aspx<br />
+Link: https://www.sql.kiwi/2013/03/execution-plan-analysis-the-mystery-work-table.html<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/780194/make-dbcc-trace-flags-available-as-option-querytraceon<br />
 Scope: global or session
 
@@ -4244,7 +4244,7 @@ Scope: session or query
 #### Trace Flag: 8758
 Function: “A [workaround to the MERGE bug described] is to apply Trace Flag 8758 –unfortunately this disables a number of optimisations, not just the one 
 above, so it’s not really recommended for long term use.” “Disable rewrite to a single operator plan (CPhyOp_StreamUpdate::PqteConvert)”<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2010/08/04/another-interesting-merge-bug.aspx<br />
+Link: https://www.sql.kiwi/2010/08/another-interesting-merge-bug.html<br />
 Link: [Optimizing T-SQL queries that change data]<br />
 
 
@@ -4281,7 +4281,7 @@ Link: None
 #### Trace Flag: 8790
 Function: PWhite: “Undocumented trace flag 8790 forces a wide update plan for any data-changing query (remember that a wide update plan is always possible)”<br />
 Link: https://support.microsoft.com/help/956718/<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/12/10/merge-bug-with-filtered-indexes.aspx<br />
+Link: https://www.sql.kiwi/2012/12/merge-bug-with-filtered-indexes.html<br />
 Link: https://sqlperformance.com/2014/06/sql-plan/filtered-index-side-effect
 
 
@@ -4441,9 +4441,9 @@ Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
 #### Trace Flag: 9130
 Function: Disables the particular copy out stage rewrite from Filter + (Scan or Seek) to (Scan or Seek) + Residual Predicate.
 Enabling this flag retains the Filter in the final execution plan, resulting in a SQL Server 2008+ plan that mirrors the 2005 version.<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2012/10/15/cardinality-estimation-bug-with-lookups-in-sql-server-2008-onward.aspx<br />
+Link: https://www.sql.kiwi/2012/10/cardinality-estimation-bug-with-lookups-in-sql-server-2008-onward.html<br />
 Link: http://sqlblogcasts.com/blogs/sqlandthelike/archive/2012/12/06/my-new-favourite-traceflag.aspx<br />
-Link: http://sqlblog.com/blogs/paul_white/archive/2013/06/11/hello-operator-my-switch-is-bored.aspx<br />
+Link: [Hello Operator, My Switch Is Bored]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/767395/cardinality-estimation-error-with-pushed-predicate-on-a-lookup<br />
 Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in-Execution-Plans-(TF-9130).aspx
 
@@ -5226,7 +5226,7 @@ Scope: ?
 [Bad Idea Jeans: Finding Undocumented Trace Flags]: https://www.brentozar.com/archive/2017/10/bad-idea-jeans-finding-undocumented-trace-flags/
 [SQL Server - estimates outside of the histogram - half-baked draft]: http://sql-sasquatch.blogspot.ru/2017/09/sql-server-estimates-outside-of.html
 [Upgrading an expired SQL Server 2016 Evaluation Edition]: https://www.codykonior.com/2017/11/30/upgrading-an-expired-sql-server-2016-evaluation-edition/
-[How to Find the Statistics Used to Compile an Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/09/21/how-to-find-the-statistics-used-to-compile-an-paul_white
+[How to Find the Statistics Used to Compile an Execution Plan]:https://www.sql.kiwi/2011/09/how-to-find-the-statistics-used-to-compile-an-execution-plan.html
 [New Undocumented Trace Flags]: https://orderbyselectnull.com/2018/01/09/45-new-trace-flags/
 [Statistics and Cardinality Estimation]: http://topicaltraceflags.readthedocs.io/en/latest/cat/qry_StatsAndEst.html
 [Splitting Strings Based on Patterns]: https://www.sqlservercentral.com/Forums/Topic1390297-3122-5.aspx
@@ -5262,3 +5262,4 @@ Scope: ?
 [Query Optimizer Deep Dive - Part 1]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-1.html
 [Optimizing T-SQL queries that change data]:https://www.sql.kiwi/2013/01/optimizing-t-sql-queries-that-change-data.html
 [Query Optimizer Deep Dive – Part 3]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-3.html
+[Hello Operator, My Switch Is Bored]:https://www.sql.kiwi/2013/06/hello-operator-my-switch-is-bored.html
