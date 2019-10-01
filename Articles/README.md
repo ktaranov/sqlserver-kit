@@ -919,7 +919,7 @@ Articles types:
 [Graphs and Graph Algorithms in T-SQL]:http://www.hansolav.net/sql/graphs.html
 [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]:https://blogs.msdn.microsoft.com/sqlcat/2016/07/12/sqlsweet16-episode-4-sql-server-r-services-makes-you-a-smarter-t-sql-developer/
 [How to Set Max Degree of Parallelism in SQL Server]:http://www.littlekendra.com/2016/07/14/max-degree-of-parallelism-cost-threshold-for-parallelism/
-[Undocumented Query Plans: Equality Comparisons]:http://sqlblog.com/blogs/paul_white/archive/2011/06/22/undocumented-query-plans-equality-comparisons.aspx
+[Undocumented Query Plans: Equality Comparisons]:https://www.sql.kiwi/2011/06/undocumented-query-plans-equality-comparisons.html
 [Simplified Order Of Operations]:http://michaeljswart.com/2016/07/simplified-order-of-operations/
 [SQL Server Statistics Basics]:https://www.simple-talk.com/sql/performance/sql-server-statistics-basics/
 [Learn to Use sp_Blitz, sp_BlitzCache, sp_BlitzFirst, and sp_BlitzIndex with These Tutorial Videos]:https://www.brentozar.com/archive/2016/09/learn-use-sp_blitz-sp_blitzcache-sp_blitzfirst-sp_blitzindex-tutorial-videos/
@@ -934,9 +934,9 @@ Articles types:
 [Finding the Right Path]:http://jasonbrimhall.info/2016/08/24/finding-the-right-path/
 [#BackToBasics : An Updated "Kitchen Sink" Example]:https://blogs.sqlsentry.com/aaronbertrand/backtobasics-updated-kitchen-sink-example/
 [Locking and Blocking in SQL Server]:https://www.brentozar.com/sql/locking-and-blocking-in-sql-server/
-[Nested Loops Prefetching]:http://sqlblog.com/blogs/paul_white/archive/2013/08/31/sql-server-internals-nested-loops-prefetching.aspx
+[Nested Loops Prefetching]:https://www.sql.kiwi/2013/08/sql-server-internals-nested-loops-prefetching.html
 [Performance tuning backup and restore operations]:http://www.sqlhammer.com/performance-tuning-backup-restore-operations/
-[Execution Plan Analysis: The Mystery Work Table]:http://sqlblog.com/blogs/paul_white/archive/2013/03/08/execution-plan-analysis-the-mystery-work-table.aspx
+[Execution Plan Analysis: The Mystery Work Table]:https://www.sql.kiwi/2013/03/execution-plan-analysis-the-mystery-work-table.html
 [How to move data between File Groups in SQL Server]:http://www.sqlpassion.at/archive/2016/09/26/how-to-move-data-between-file-groups-in-sql-server/
 [Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]:https://msdn.microsoft.com/en-us/library/dn673537.aspx
 [Parallelism in SQL Server Query Tuning]:http://sqlmag.com/sql-server/parallelism-sql-server-query-tuning
@@ -945,11 +945,11 @@ Articles types:
 [Questions You Should Be Asking About Your Backups]:https://www.brentozar.com/archive/2016/10/questions-asking-backups/
 [Evolutionary Database Design]:http://martinfowler.com/articles/evodb.html
 [Implementing a custom sort]:https://sqlperformance.com/2016/10/sql-plan/implementing-custom-sort
-[Deletes that Split Pages and Forwarded Ghosts]:http://sqlblog.com/blogs/paul_white/archive/2012/08/31/deletes-that-split-pages-and-forwarded-ghosts.aspx
-[Query Optimizer Deep Dive - Part 1]:http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-1.aspx
-[Query Optimizer Deep Dive - Part 2]:http://sqlblog.com/blogs/paul_white/archive/2012/04/28/query-optimizer-deep-dive-part-2.aspx
-[Query Optimizer Deep Dive - Part 3]:http://sqlblog.com/blogs/paul_white/archive/2012/04/29/query-optimizer-deep-dive-part-3.aspx
-[Query Optimizer Deep Dive - Part 4]:http://sqlblog.com/blogs/paul_white/archive/2012/05/01/query-optimizer-deep-dive-part-4.aspx
+[Deletes that Split Pages and Forwarded Ghosts]:https://www.sql.kiwi/2012/08/deletes-that-split-pages-and-forwarded-ghosts.html
+[Query Optimizer Deep Dive - Part 1]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-1.html
+[Query Optimizer Deep Dive - Part 2]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-2.html
+[Query Optimizer Deep Dive - Part 3]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-3.html
+[Query Optimizer Deep Dive - Part 4]:https://www.sql.kiwi/2012/05/query-optimizer-deep-dive-part-4.html
 [Should You Rebuild or Reorganize Indexes on Large Tables?]:https://www.littlekendra.com/2016/10/13/should-you-rebuild-or-reorganize-indexes-on-large-tables-dear-sql-dba-episode-19/
 [Retrieving SQL Server Query Execution Plans]:https://www.simple-talk.com/sql/database-administration/retrieving-sql-server-query-execution-plans/ 
 [Introduction to Latches in SQL Server]:http://www.sqlpassion.at/archive/2014/06/23/introduction-to-latches-in-sql-server/
@@ -981,10 +981,10 @@ Articles types:
 [Tally OH! An Improved SQL 8K “CSV Splitter” Function]:http://www.sqlservercentral.com/articles/Tally+Table/72993/
 [Set Statistics… Profile?]:https://www.brentozar.com/archive/2016/10/set-statistics-profile/
 [Hierarchies on Steroids #1: Convert an Adjacency List to Nested Sets]:http://www.sqlservercentral.com/articles/Hierarchy/94040/
-[Optimizing T-SQL queries that change data]:http://sqlblog.com/blogs/paul_white/archive/2013/01/26/optimizing-t-sql-queries-that-change-data.aspx
+[Optimizing T-SQL queries that change data]:https://www.sql.kiwi/2013/01/optimizing-t-sql-queries-that-change-data.html
 [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]:https://www.littlekendra.com/2016/09/27/measuring-query-duration-ssms-vs-sql-sentry-plan-explorer/
 [Inside the Statistics Histogram & Density Vector]:http://www.sqlpassion.at/archive/2014/01/28/inside-the-statistics-histogram-density-vector/
-[Misconceptions on parameter sniffing]:http://sqlblog.com/blogs/hugo_kornelis/archive/2016/11/03/misconceptions-on-parameter-sniffing.aspx
+[Misconceptions on parameter sniffing]:https://sqlserverfast.com/blog/hugo/2016/11/misconceptions-on-parameter-sniffing/
 [CAST vs. CONVERT]:https://blogs.sentryone.com/aaronbertrand/backtobasics-cast-vs-convert/
 [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]:http://sqlmag.com/database-security/what-every-accidental-dba-needs-know-now-basics-sql-security
 [SQL Server Perfmon (Performance Monitor) Best Practices]:https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/
@@ -1016,7 +1016,7 @@ Articles types:
 [Why is This Partitioned Query Slower?]:https://www.brentozar.com/archive/2015/09/why-is-this-partitioned-query-slower/
 [A Beginner’s Guide to the True Order of SQL Operations]:https://blog.jooq.org/2016/12/09/a-beginners-guide-to-the-true-order-of-sql-operations/
 [Logical Query Processing: What It Is And What It Means to You]:http://sqlmag.com/sql-server/logical-query-processing-what-it-and-what-it-means-you
-[Forcing a Parallel Query Execution Plan]:http://sqlblog.com/blogs/paul_white/archive/2011/12/23/forcing-a-parallel-query-execution-plan.aspx
+[Forcing a Parallel Query Execution Plan]:https://www.sql.kiwi/2011/12/forcing-a-parallel-query-execution-plan.html
 [Join Containment Assumption and CE Model Variation]:http://www.queryprocessor.com/ce_join_base_containment_assumption/
 [Table Variable Tip]:http://sqlmag.com/t-sql/table-variable-tip
 [Heap tables in SQL Server]:http://www.sqlhammer.com/heaps-in-microsoft-sql-server/
@@ -1111,7 +1111,7 @@ Articles types:
 [Performance Myths: Clustered vs. Non-Clustered Indexes]:https://sqlperformance.com/2017/03/sql-indexes/performance-myths-clustered-vs-non-clustered
 [Bad habits: Counting rows the hard way]:https://sqlperformance.com/2014/10/t-sql-queries/bad-habits-count-the-hard-way
 [Why Cost Threshold For Parallelism Shouldn’t Be Set To 5]:https://www.brentozar.com/archive/2017/03/why-cost-threshold-for-parallelism-shouldnt-be-set-to-5/
-[Join Performance, Implicit Conversions, and Residuals]:http://sqlblog.com/blogs/paul_white/archive/2011/07/19/join-performance-implicit-conversions-and-residuals.aspx
+[Join Performance, Implicit Conversions, and Residuals]:https://www.sql.kiwi/2011/07/join-performance-implicit-conversions-and-residuals.html
 [Implicit Conversions that cause Index Scans]:https://www.sqlskills.com/blogs/jonathan/implicit-conversions-that-cause-index-scans/
 [When Is It Appropriate To Store JSON in SQL Server?]:https://bertwagner.com/2017/03/14/when-is-it-appropriate-to-store-json-in-sql-server/
 [The Performance Penalty of Bookmark Lookups in SQL Server]:http://www.sqlpassion.at/archive/2017/03/13/the-performance-penalty-of-bookmark-lookups-in-sql-server/
@@ -1154,20 +1154,20 @@ Articles types:
 [Switch in Staging Tables Instead of sp_rename]:https://www.littlekendra.com/2017/01/19/why-you-should-switch-in-staging-tables-instead-of-renaming/
 [Performance Myths: Table variables are always in-memory]:https://sqlperformance.com/2017/04/performance-myths/table-variables-in-memory
 [Questions About SQL Server Collations You Were Too Shy to Ask]:https://www.simple-talk.com/sql/sql-development/questions-sql-server-collations-shy-ask/
-[NULL - The database's black hole]:http://sqlblog.com/blogs/hugo_kornelis/archive/2007/07/06/null-ndash-the-database-rsquo-s-black-hole.aspx
+[NULL - The database's black hole]:https://sqlserverfast.com/blog/hugo/2007/07/null-the-databases-black-hole/
 [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-using-dbcc-page-and-dbcc-ind-to-find-out-if-page-splits-ever-roll-back/
 [Inside the Storage Engine: Anatomy of a page]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
-[For The Better Developer: SQL Server Indexes]:http://sqlblog.com/blogs/davide_mauri/archive/2017/04/02/for-the-better-developer-sql-server-indexes.aspx
+[For The Better Developer: SQL Server Indexes]:https://medium.com/sql-server-for-the-better-developer/know-your-data-base-affd6241bcac
 [#EntryLevel: Compression & Data Types]:https://blogs.sentryone.com/melissaconnors/entry-level-compression/
 [Cardinality Estimation for a Predicate on a COUNT Expression]:https://sqlperformance.com/2017/04/sql-optimizer/cardinality-count
 [Changing SQL Server Collation After Installation]:https://www.mssqltips.com/sqlservertip/3519/changing-sql-server-collation-after-installation/
 [Does a TempDB spill mean statistics are out of date?]:https://www.brentozar.com/archive/2017/04/tempdb-spill-mean-statistics-date/
 [Transaction log growth during BACKUP]:https://www.am2.co/2017/04/transaction-log-growth-backup/
-[When is a SQL function not a function?]:http://sqlblog.com/blogs/rob_farley/archive/2011/11/08/when-is-a-sql-function-not-a-function.aspx
+[When is a SQL function not a function?]:http://blogs.lobsterpot.com.au/2011/11/08/when-is-a-sql-function-not-a-function/
 [Introducing Batch Mode Adaptive Joins]:https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/04/19/introducing-batch-mode-adaptive-joins/
 [Investigating the proportional fill algorithm]:https://www.sqlskills.com/blogs/paul/investigating-the-proportional-fill-algorithm/
 [Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx
-[Bad Habits to Kick: Using shorthand with date/time operations]:http://sqlblog.com/blogs/aaron_bertrand/archive/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations.aspx
+[Bad Habits to Kick: Using shorthand with date/time operations]:https://sqlblog.org/2011/09/20/bad-habits-to-kick-using-shorthand-with-date-time-operations
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
 [How expensive are column-side Implicit Conversions?]:https://sqlperformance.com/2013/04/t-sql-queries/implicit-conversion-costs
 [Execution Plan Basics]:https://www.simple-talk.com/sql/performance/execution-plan-basics/
@@ -1219,7 +1219,7 @@ Articles types:
 [Your Service Level Agreement is a Disaster]:http://minionware.net/service-level-agreement-disaster/
 [SQLskills SQL101: REBUILD vs. REORGANIZE]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-rebuild-vs-reorganize/
 [Where do the Books Online index fragmentation thresholds come from?]:https://www.sqlskills.com/blogs/paul/where-do-the-books-online-index-fragmentation-thresholds-come-from/
-[The SQL Hall of Shame]:http://sqlblog.com/blogs/adam_machanic/archive/2017/06/14/the-sql-hall-of-shame.aspx
+[The SQL Hall of Shame]:http://dataeducation.com/the-sql-hall-of-shame/
 [A Better Way To Select Star]:https://www.brentozar.com/archive/2017/07/better-way-select-star/
 [UDP vs TCP]:https://sqlstudies.com/2017/06/07/udp-vs-tcp/
 [When a Nonclustered Index and Statistics Make a Query Slower]:https://sqlworkbooks.com/2017/05/when-a-nonclustered-index-and-statistics-make-a-query-slower/
@@ -1256,7 +1256,7 @@ Articles types:
 [Using native compilation to insert parent/child tables]:http://nedotter.com/archive/2017/09/using-native-compilation-to-insert-parentchild-tables/
 [Questions About RDS SQL Server You Were Too Shy to Ask]:https://www.red-gate.com/simple-talk/cloud/cloud-data/questions-rds-sql-server-shy-ask/
 [Active Directory Authentication with SQL Server on Ubuntu]:http://port1433.com/2017/09/19/active-directory-authentication-with-sql-server-on-ubuntu/
-[Temporary Tables in Stored Procedures]:http://sqlblog.com/blogs/paul_white/archive/2012/08/15/temporary-tables-in-stored-procedures.aspx
+[Temporary Tables in Stored Procedures]:https://www.sql.kiwi/2012/08/temporary-tables-in-stored-procedures.html
 [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]:https://www.red-gate.com/simple-talk/sql/sql-development/sqlclr-practice-creating-better-way-sending-email-sql-server/
 [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]:https://www.sqlshack.com/t-sql-commands-performance-comparison-not-vs-not-exists-vs-left-join-vs-except/
 [Clustered vs Nonclustered: Index Fundamentals You Need To Know]:https://bertwagner.com/2017/09/26/clustered-vs-nonclustered-index-fundamentals-you-need-to-know/

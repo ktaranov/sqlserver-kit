@@ -118,7 +118,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLMag](http://sqlmag.com/)
     - [SQLShack](http://www.sqlshack.com/)
     - [LessThanDot SQL Server Blog](http://blogs.lessthandot.com/index.php/category/datamgmt/dbprogramming/mssqlserver/)
-    - [SQLBlog](http://sqlblog.com)
+    - [SQL Kiwi by Paul White](https://www.sql.kiwi/)
     - [DatabseJournal SQL Server Blog](http://www.databasejournal.com/features/mssql/)
     - [SQLPass](http://www.sqlpass.org/Home.aspx)
     - [Vertabelo Blog](http://www.vertabelo.com/blog)
@@ -152,6 +152,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Niels Berglund Blog](https://nielsberglund.com)
     - [BornSQL Blog](https://bornsql.ca/blog/)
     - [Kevin Chant Blog](https://www.kevinrchant.com/)
+    - [SQLBlog.org](https://sqlblog.org)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -340,7 +341,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [AzureRMR - R package for interacting with Azure Resource Manager](https://github.com/Azure/AzureRMR) (by Microsoft)
     - [EntityFramework.Utilities - Provides extensions for EntityFramework that doesn't exist out of the box like delete and update by query and bulk inserts](https://github.com/MikaelEliasson/EntityFramework.Utilities) (by Mikael Eliasson)
     - [EFCore.BulkExtensions - Entity Framework Core Bulk Batch Extensions for Insert Update Delete and Read (CRUD) operations on SQL Server and SQLite](https://github.com/borisdj/EFCore.BulkExtensions) (by Boris Djurdjevic)
-     - [Performance Analysis of Logs (PAL) Tool](https://github.com/clinthuffman/PAL) (by Clint Huffman)
+    - [Performance Analysis of Logs (PAL) Tool](https://github.com/clinthuffman/PAL) (by Clint Huffman)
+    - [SQL-Server-Permissions-Manager - a set of scripts for managing logins and permissions on SQL Server databases](https://github.com/ericcobb/SQL-Server-Permissions-Manager) (by Eric Cobb)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
@@ -406,7 +408,6 @@ BIML Resources
 - [Stairway to Biml](http://www.sqlservercentral.com/stairway/100550/)
 - [Biml User Group at LinkedIn](https://www.linkedin.com/groups/4640985)
 - [Building Blocks of Biml (Pluralsight course by Stacia Misner Varga)](https://app.pluralsight.com/library/courses/building-blocks-biml/table-of-contents)
-- [Biml-tagged posts on this blog](http://sqlblog.com/blogs/andy_leonard/archive/tags/BIML/default.aspx)
 
 BIML Bloggers
 - [Ben Weissman](https://www.solisyon.de/biml-blog-de/)
@@ -416,7 +417,7 @@ BIML Bloggers
 - [Cathrine Wilhelmsen](http://www.cathrinewilhelmsen.net/biml/)
 - [Datachix: Julie Smith and Audrey Hammonds](http://datachix.com/)
 - [David Stein](http://www.made2mentor.com/category/biml/)
-- [Davide Mauri](http://sqlblog.com/blogs/davide_mauri/archive/tags/BIML/default.aspx)
+- [Davide Mauri](http://blog.davidemauri.it/)
 - [Erik Hudzik](http://www.anexinet.com/blog/author/ehudzik/)
 - [Hennie de Nooijer](http://bifuture.blogspot.com/search/label/BIML)
 - [John Welch](http://agilebi.com/jwelch/tag/biml/)
