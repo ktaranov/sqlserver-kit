@@ -46,18 +46,18 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 
 ## Available Languages
-**SQL Server Management Studio 18.2 GA**:
- [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x804) |
- [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x404) |
- [English (United States)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x409) |
- [French](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x40c) |
- [German](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x407) |
- [Italian](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x410) |
- [Japanese](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x411) |
- [Korean](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x412) |
- [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x416) |
- [Russian](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x419) |
- [Spanish](https://go.microsoft.com/fwlink/?linkid=2099720&clcid=0x40a)
+**SQL Server Management Studio 18.3 GA**:
+ [Chinese (People's Republic of China)](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x804) |
+ [Chinese (Taiwan)](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x404) |
+ [English (United States)](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x409) |
+ [French](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x40c) |
+ [German](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x407) |
+ [Italian](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x410) |
+ [Japanese](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x411) |
+ [Korean](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x412) |
+ [Portuguese (Brazil)](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x416) |
+ [Russian](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x419) |
+ [Spanish](https://go.microsoft.com/fwlink/?linkid=2104251&clcid=0x40a)
 
 
 ## SQL Server Management Studio Download Links and Release Info
@@ -67,7 +67,8 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 
 | Version/Download Link            | Build         | Release Date | Size, Mb |
 | -------------------------------- | ------------- | ------------ | -------: |
-| [18.2 GA Release] **Latest GA**  | 15.0.18142.0  | 2019-07-25   |      528 |
+| [18.3 GA Release] **Latest GA**  | 15.0.18178.0  | 2019-09-23   |      534 |
+| [18.2 GA Release]                | 15.0.18142.0  | 2019-07-25   |      528 |
 | [18.1 GA Release]                | 15.0.18131.0  | 2019-06-11   |      527 |
 | [18.0 GA Release]                | 15.0.18118.0  | 2019-04-24   |      524 |
 | [18.0 RC1 Release]               | 15.0.18098.0  | 2019-03-28   |      484 |
@@ -104,6 +105,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 | [SQL Server 2012 SP3]            | 11.0.6020.0   | 2015-11-21   |      964 |
 | [SQL Server 2008 R2]             | 10.50.4000    | 2012-07-02   |      161 |
 
+[18.3 GA Release]:https://go.microsoft.com/fwlink/?linkid=2104251
 [18.2 GA Release]:https://go.microsoft.com/fwlink/?linkid=2099720
 [18.1 GA Release]:https://go.microsoft.com/fwlink/?linkid=2094583
 [18.0 GA Release]:https://go.microsoft.com/fwlink/?linkid=2088649
