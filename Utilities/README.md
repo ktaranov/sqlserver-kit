@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **277** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **282** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -7,7 +7,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {13}
  - **[DC]**: Data compare {12}
- - **[ETL]**: Extract Download Load (ETL) Tools {1}
+ - **[ETL]**: Extract Download Load (ETL) Tools {6}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
@@ -24,7 +24,7 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-07-25 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-09-23 | Microsoft             |            | Yes            | No    |
 | [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-08-08 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
@@ -208,7 +208,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbDiffo](#dbdiffo)                                              | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [dbDiffo]                                   | ?          | Contenet Ltd          |            | Yes            | No    |
 | [SQL DXP](#sql-dxp)                                              | Oracle,MySQL                  | No        | [DC],[SC]| [SQL DXP]                                   | 2016-06-20 | SQL Delta             |            | No             |  $530 |
 | [Aqua Data Studio](#aqua-data-studio)                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Aqua Data Studio]                          | 2016-07-06 | AquaFold              |            | No             |  $499 |
-| [RazorSQL](#razorsql)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [RazorSQL]                                  | 2016-09-29 | Richardson Software   |            | No             |  $100 |
+| [RazorSQL](#razorsql)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [RazorSQL]                                  | 2019-09-26 | Richardson Software   |            | No             |  $100 |
 | [SQL Pretty Printer](#sql-pretty-printer)                        | No                            | No        | [?]      | [SQL Pretty Printer]                        | 2016-02-19 | Gudu Software         |            | No             |   $50 |
 | [Database .NET](#database-net)                                   | Oracle,MySQL,PostgreSQL,Other | No        | [MS],[SC]| [Database .NET]                             | 2018-08-20 | fish's dotNET         |            | Non-commercial |   $69 |
 | [dbMigration .NET](#dbmegration-net)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DC],[SC]| [dbMigration .NET]                          | 2018-08-20 | fish's dotNET         |            | Non-commercial |   $49 |
@@ -301,12 +301,17 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Plus Dot Net](#sql-plus-dot-net)                            | No                            | No        | [?]      | [SQL Plus Dot Net]                          | ?          | SQL+.NET              |            | No             |     ? |
 | [SQLIndexManager](#sqlindexmanager)                              | No                            | No        | [IDX]    | [SQLIndexManager]                           | 2019-05-19 | Sergey Syrovatchenko  |            | Open Source    | No    |
 | [JAMS Enterprise Job Scheduling](#jams-job)                      | No                            | No        | [J]      | [JAMS Enterprise Job Scheduling]            | 2019-08-20 | HelpSystems           |            | No             |     ? |
+| [Stitch Data Loader](#stitch)                                    | Oracle,MySQL,PostgreSQL,Other | Online    | [ETL]    | [Stitch Data Loader]                        | 2019-09-20 | Talend                |            | No             |     ? |
+| [Talend Data Integration](#talend-integration)                   | Oracle,MySQL,PostgreSQL,Other | Mac       | [ETL]    | [Talend Data Integration]                   | 2019-06-20 | Talend                | [Apache]   | Yes            |     ? |
+| [Talend Data Preparation](#talend-preparation)                   | Oracle,MySQL,PostgreSQL,Other | Mac       | [ETL]    | [Talend Data Preparation]                   | 2018-06-05 | Talend                | [Apache]   | Yes            |     ? |
+| [Pentaho Data Integration](#pentaho)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [ETL]    | [Pentaho Data Integration]                  | 2019-06-20 |  Hitachi Vantara      |            | No             |     ? |
+| [Studio3T](#studio3t)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MG]     | [Studio3T]                                  | 2019-09-19 | Studio 3T             |            | No             |  $150 |
 
 
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2019-07-25<br/>
+Release date: 2019-09-23<br/>
 Support Version: 2005-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -2993,9 +2998,9 @@ It supports all major database vendors, works on all major operating systems and
 ## RazorSQL
 <a id="razorsql"></a>
 Download page: [RazorSQL]<br/>
-Release date: 2016-09-29<br/>
-Support Version: 2008/2012/2014/2016<br/>
-Author:  Richardson Software<br/>
+Release date: 2019-09-26<br/>
+Support Version: 2008-2019<br/>
+Author: Richardson Software<br/>
 Free version: No<br/>
 Price: $100
 
@@ -4303,6 +4308,68 @@ Take control of SQL Agent sprawl. Automate smarter with JAMS and regain control 
 - Send Alerts
 
 
+<a id="stitch"></a>
+## Stitch Data Loader
+Download page: [Stitch Data Loader]<br/>
+Release date: 2019-09-20<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Talend<br/>
+Free version: No<br/>
+Price: ?
+
+Stitch makes it simple to load data from dozens of cloud sources into cloud data warehouses and data lakes in minutes.
+
+
+<a id="talend-integration"></a>
+## Talend Data Integration
+Download page: [Talend Data Integration]<br/>
+Release date: 2019-06-20<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Talend<br/>
+Free version: Yes<br/>
+Price: ?
+
+Talend Data Integration an enterprise data integration software to connect, access, and transform any data across the cloud or on-premises.
+
+
+<a id="talend-preparation"></a>
+## Talend Data Preparation
+Download page: [Talend Data Preparation]<br/>
+Release date: 2018-06-05<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Talend<br/>
+Free version: Yes<br/>
+Price: ?
+
+Talend Data Preparation empowers anyone to quickly prepare data for trusted insights throughout the organization.
+
+
+<a id="pentaho"></a>
+## Pentaho Data Integration
+Download page: [Talend Data Integration]<br/>
+Release date: 2019-06-20<br/>
+Support Version: 2008-2019/Azure<br/>
+Author: Hitachi Vantara<br/>
+Free version: No<br/>
+Price: ?
+
+This end-to-end platform meets all data integration challenges. Its intuitive drag-and-drop graphical interface simplifies the creation of self-documented data pipelines.
+For data transformation, easily use push-down processing to scale out compute platforms, such as Apache Hadoop.
+
+
+<a id="studio3t"></a>
+## Studio3T
+Download page: [Studio3T]<br/>
+Release date: 2019-09-19<br/>
+Support Version: 2008-2019<br/>
+Author: Studio 3T<br/>
+Free version: No<br/>
+Price: $149
+
+Speed up tasks like query building, data exploration, import/export, code generation, and more – with or without the knowledge of the MongoDB query language.
+MongoDB from and to migrations with many RDBMS.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4582,6 +4649,11 @@ Take control of SQL Agent sprawl. Automate smarter with JAMS and regain control 
 [SQL Plus Dot Net]:https://sqlplusweb.azurewebsites.net
 [SQLIndexManager]:https://github.com/sergeysyrovatchenko/SQLIndexManager
 [JAMS Enterprise Job Scheduling]:https://info.jamsscheduler.com/jams-sql-wla-rethink
+[Stitch Data Loader]:https://www.talend.com/products/data-loader/
+[Talend Data Integration]:https://www.talend.com/products/data-integration/
+[Talend Data Preparation]:https://www.talend.com/products/data-preparation/
+[Pentaho Data Integration]:https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho-data-integration.html
+[Studio3T]:https://studio3t.com/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
