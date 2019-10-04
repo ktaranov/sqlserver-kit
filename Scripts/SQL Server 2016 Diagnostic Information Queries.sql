@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 4, 2019
+-- Last Modified: October 3, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -91,6 +91,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																	13.0.4560.0		SP1 CU14			  3/19/2019 ---->	13.0.5292.0		SP2 CU6				3/19/2019
 --																	13.0.4574.0		SP1 CU15			  5/16/2019 ---->   13.0.5337.0		SP2 CU7				5/22/2019
 --																															13.0.5426.0		SP2 CU8				7/31/2019
+--																															13.0.5470.0		SP2 CU9				9/30/2019	
 
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -1930,7 +1931,10 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- https://bit.ly/28Rpb2x
 
 
--- These five Pluralsight Courses go into more detail about how to run these queries and interpret the results
+-- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
+
+-- Azure SQL Database: Diagnosing Performance Issues with DMVs
+-- https://bit.ly/2meDRCN
 
 -- SQL Server 2017: Diagnosing Performance Issues with DMVs
 -- https://bit.ly/2FqCeti

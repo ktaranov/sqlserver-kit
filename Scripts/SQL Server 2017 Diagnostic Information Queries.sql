@@ -1,7 +1,7 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 4, 2019
+-- Last Modified: October 3, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -1984,14 +1984,16 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- https://bit.ly/28Rpb2x
 
 
--- These five Pluralsight Courses go into more detail about how to run these queries and interpret the results
+-- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
+
+-- Azure SQL Database: Diagnosing Performance Issues with DMVs
+-- https://bit.ly/2meDRCN
 
 -- SQL Server 2017: Diagnosing Performance Issues with DMVs
 -- https://bit.ly/2FqCeti
 
 -- SQL Server 2017: Diagnosing Configuration Issues with DMVs
 -- https://bit.ly/2MSUDUL
-
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
 -- https://bit.ly/2plxCer

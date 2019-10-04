@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 4, 2019
+-- Last Modified: October 3, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -138,8 +138,8 @@ SERVERPROPERTY('InstanceDefaultDataPath') AS [InstanceDefaultDataPath],
 SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version],
 SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
-SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				-- New for SQL Server 2016
-SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled];	-- New for SQL Server 2016
+SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				
+SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled];	
 ------
 
 -- This gives you a lot of useful information about your instance of SQL Server,
@@ -169,6 +169,7 @@ ORDER BY name OPTION (RECOMPILE);
 -- optimize for ad hoc workloads (should be 1)
 -- priority boost (should be zero)
 -- remote admin connections (should be 1)
+-- tempdb metadata memory-optimized (0 by default, some workloads may benefit by enabling)
 
 -- sys.configurations (Transact-SQL)
 -- https://bit.ly/2HsyDZI
@@ -191,14 +192,6 @@ DBCC TRACESTATUS (-1);
 -- TF 7745 - Prevents Query Store data from being written to disk in case of a failover or shutdown command
 --           https://bit.ly/2GU69Km
 
--- TF 7752 - Enables asynchronous load of Query Store. 
---           This allows a database to become online and queries to be executed before the Query Store has been fully recovered 
-
--- The behavior of TF 1117, 1118 are enabled for tempdb in SQL Server 2016 by default
--- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
--- https://bit.ly/2lbNWxK           
-
--- The behavior of TF 2371 is enabled by default in SQL Server 2016 and newer (in compat level 130 and higher)
 
 -- DBCC TRACEON - Trace Flags (Transact-SQL)
 -- https://bit.ly/2FuSvPg
@@ -324,7 +317,7 @@ FROM sys.dm_os_host_info WITH (NOLOCK) OPTION (RECOMPILE);
 
 -- 1033 for os_language_version is US-English
 
--- SQL Server 2019 requires Windows Server 2012 or newer (may change by RTM)
+-- SQL Server 2019 requires Windows Server 2016 or newer 
 
 -- Hardware and Software Requirements for Installing SQL Server
 -- https://bit.ly/2y3ka5L
@@ -439,7 +432,8 @@ SELECT cpu_count AS [Logical CPU Count], scheduler_count,
 	   DATEDIFF(hour, sqlserver_start_time, GETDATE()) AS [SQL Server Up Time (hrs)],
 	   virtual_machine_type_desc AS [Virtual Machine Type], 
        softnuma_configuration_desc AS [Soft NUMA Configuration], 
-	   sql_memory_model_desc, container_type_desc -- New in SQL Server 2019
+	   sql_memory_model_desc, 
+	   container_type_desc -- New in SQL Server 2019
 FROM sys.dm_os_sys_info WITH (NOLOCK) OPTION (RECOMPILE);
 ------
 
@@ -742,7 +736,7 @@ db.delayed_durability_desc, db.is_auto_create_stats_incremental_on,
 db.is_query_store_on, db.is_sync_with_backup, db.is_temporal_history_retention_enabled,
 db.is_supplemental_logging_enabled, db.is_remote_data_archive_enabled,
 db.is_encrypted, de.encryption_state, de.percent_complete, de.key_algorithm, de.key_length, db.resource_pool_id,
-db.is_tempdb_spill_to_remote_store, db.is_result_set_caching_on, db.is_accelerated_database_recovery_on
+db.is_tempdb_spill_to_remote_store, db.is_result_set_caching_on, db.is_accelerated_database_recovery_on, is_stale_page_detection_on
 FROM sys.databases AS db WITH (NOLOCK)
 INNER JOIN sys.dm_os_performance_counters AS lu WITH (NOLOCK)
 ON db.name = lu.instance_name
@@ -935,7 +929,7 @@ AS (SELECT wait_type, wait_time_ms/ 1000.0 AS [WaitS],
 		N'PREEMPTIVE_OS_PIPEOPS', N'PREEMPTIVE_OS_AUTHENTICATIONOPS',
 		N'PREEMPTIVE_OS_GENERICOPS', N'PREEMPTIVE_OS_VERIFYTRUST',
 		N'PREEMPTIVE_OS_FILEOPS', N'PREEMPTIVE_OS_DEVICEOPS', N'PREEMPTIVE_OS_QUERYREGISTRY',
-		N'PREEMPTIVE_OS_WRITEFILE',
+		N'PREEMPTIVE_OS_WRITEFILE', N'PREEMPTIVE_OS_WRITEFILEGATHER',
 		N'PREEMPTIVE_XE_CALLBACKEXECUTE', N'PREEMPTIVE_XE_DISPATCHER',
 		N'PREEMPTIVE_XE_GETTARGETSTATE', N'PREEMPTIVE_XE_SESSIONCOMMIT',
 		N'PREEMPTIVE_XE_TARGETINIT', N'PREEMPTIVE_XE_TARGETFINALIZE',
@@ -1965,7 +1959,10 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- https://bit.ly/28Rpb2x
 
 
--- These five Pluralsight Courses go into more detail about how to run these queries and interpret the results
+-- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
+
+-- Azure SQL Database: Diagnosing Performance Issues with DMVs
+-- https://bit.ly/2meDRCN
 
 -- SQL Server 2017: Diagnosing Performance Issues with DMVs
 -- https://bit.ly/2FqCeti
