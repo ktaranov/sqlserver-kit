@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 277 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 285 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -233,6 +233,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Learn SQL Server High Availability & Disaster Recovery](https://learnsqlserverhadr.com/) (by Edwin M Sarmiento)
      - [Madeira Data Solutions Academy](http://madeira-data-solutions.teachable.com/)
      - [SQLpassion Online Academy](http://www.sqlpassion.at/online-training/index.html) (by Klaus Aschenbrenner)
+     - [Vertabelo Academy](https://academy.vertabelo.com/)
  - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)

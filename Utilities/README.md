@@ -1,18 +1,18 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **282** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **285** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
- - **[DA]**: Database Architecture {13}
+ - **[DA]**: Database Architecture {15}
  - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {6}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {16}
+ - **[M]**: Monitoring and alerting Tools {17}
  - **[MG]**: Migration tool {26}
  - **[MS]**: Management Studio (alternative for SSMS) {26}
  - **[REC]**: Recovery tools {7}
@@ -200,7 +200,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ERwin Data Modeler](#erwin-data-modeler)                        | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERwin Data Modeler]                        | 2016-06-03 | ERwin                 |            | No             |  $810 |
 | [Quest Data Modeler](#toad-data-modeler)                         | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Toad Data Modeler]                         | 2016-06-16 | Quest Software        |            | No             |  $562 |
 | [SQL Power Architect](#sql-power-architect)                      | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [SQL Power Architect]                       | 2016-02-11 | SQLPower              |            | Yes            |  $995 |
-| [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                  | 2016-07-06 | Nizana Systems        |            | No             |   $99 |
+| [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                  | 2019-09-17 | Nizana Systems        |            | No             |   $99 |
 | [Navicat Data Modeler](#navicat-data-modeler)                    | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Navicat Data Modeler]                      | 2016-08-01 | PremiumSoft           |            | No             |  $199 |
 | [DeZign for Databases](#dezign-for-databases)                    | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [DeZign for Databases]                      | 2016-04-25 | Datanamic             |            | No             |  $259 |
 | [ERDesigner NG](#erdesigner-ng)                                  | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [ERDesigner NG]                             | 2013-04-10 | Mirko Sertic          |            | Open Source    | No    |
@@ -306,6 +306,9 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Talend Data Preparation](#talend-preparation)                   | Oracle,MySQL,PostgreSQL,Other | Mac       | [ETL]    | [Talend Data Preparation]                   | 2018-06-05 | Talend                | [Apache]   | Yes            |     ? |
 | [Pentaho Data Integration](#pentaho)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [ETL]    | [Pentaho Data Integration]                  | 2019-06-20 |  Hitachi Vantara      |            | No             |     ? |
 | [Studio3T](#studio3t)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MG]     | [Studio3T]                                  | 2019-09-19 | Studio 3T             |            | No             |  $150 |
+| [SQLGrease](#sqlgrease)                                          | No                            | Online    | [M]      | [SQLGrease]                                 | 2019-09-20 | SQLGrease             |            | No             |  $948 |
+| [QuickDBD](#quickdbd)                                            | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [QuickDBD]                                  | ?          | Dovetail Technologies |            | Yes            |   $95 |
+| [DB Designer](#dbdesigner)                                       | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [DB Designer]                               | ?          | DB Designer           |            | Yes            |  $180 |
 
 
 <a id="ssms"></a>
@@ -2894,8 +2897,8 @@ It allows users to reverse-engineer existing databases, perform data profiling o
 ## DbWrench
 <a id="dbwrench"></a>
 Download page: [DbWrench]<br/>
-Release date: 2016-07-06<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2019-09-17<br/>
+Support Version: 2008-2017<br/>
 Author: Nizana Systems<br/>
 Free version: No<br/>
 Price: $99
@@ -4370,6 +4373,43 @@ Speed up tasks like query building, data exploration, import/export, code genera
 MongoDB from and to migrations with many RDBMS.
 
 
+<a id="sqlgrease"></a>
+## SQLGrease
+Download page: [SQLGrease]<br/>
+Release date: 2019-09-20<br/>
+Support Version: 2008-2019/Azure/RDS<br/>
+Author: SQLGrease<br/>
+Free version: No<br/>
+Price: $948
+
+SQLGrease was built from the ground up specifically for monitoring SQL Server.
+Using the newest monitoring features in SQL Server, SQLGrease collects detailed information with extremely low overhead.
+
+
+## QuickDBD
+<a id="quickdbd"></a>
+Download page: [QuickDBD]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Dovetail Technologies Ltd<br/>
+Free version: Yes<br/>
+Price: $95
+
+Draw databases diagrams by typing online and collaborating.
+
+
+## DB Designer
+<a id="dbdesigner"></a>
+Download page: [DB Designer]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: DB Designer<br/>
+Free version: Yes<br/>
+Price: $180
+
+All The Features You Need For Database Design – Simple But Powerful.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4654,6 +4694,9 @@ MongoDB from and to migrations with many RDBMS.
 [Talend Data Preparation]:https://www.talend.com/products/data-preparation/
 [Pentaho Data Integration]:https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho-data-integration.html
 [Studio3T]:https://studio3t.com/
+[SQLGrease]:https://sqlgrease.com
+[QuickDBD]:https://www.quickdatabasediagrams.com/
+[DB Designer]:https://www.dbdesigner.net
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
