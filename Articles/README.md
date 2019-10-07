@@ -864,6 +864,13 @@ Articles types:
 | [A Self-Tuning Fill Factor Technique for SQL Server – Part 2]                                                           | Mike Byrd                                | 2019-08-27 | [DBA],[DEV] |
 | [SQL: Been told you can't access master database system views in Azure SQL Database? Not true!]                         | Greg Low                                 | 2019-09-17 | [AZ]        |
 | [How to increase SQL Database Full Backup speed using compression and Solid State Disks]                                | Henk                                     | 2010-01-15 | [DBA]       |
+| [Troubleshooting NUMA Node Imbalance Problems (HammerDB Benchmark)]                                                     | Klaus Aschenbrenner                      | 2019-09-23 | [BENCH]     |
+| [SQL Server Unequal NUMA CPU engagement]                                                                                | @sqL_handLe                              | 2019-09-19 | [DBA]       |
+| [SSIS Connection Managers: OLE DB vs ODBC vs ADO.NET]                                                                   | Hadi Fadlallah                           | 2019-10-04 | [SSIS]      |
+| [SSIS Data Flows – ADO.NET vs. OLE DB vs. ODBC]                                                                         | Ross at Datatell                         | 2015-01-13 | [SSIS]      |
+| [SSIS – Fastest data flow task item for transferring data over the network]                                             | Gilbert Quevauvilliers                   | 2013-01-19 | [SSIS]      |
+| [The Case of the Vanishing Index Compression]                                                                           | Louis Davidson                           | 2019-09-30 | [DBA],[IDX] |
+| [Migrating from MSSQL to PostgreSQL - What You Should Know]                                                             | Severalnines                             | 2018-11-05 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1705,3 +1712,10 @@ Articles types:
 [A Self-Tuning Fill Factor Technique for SQL Server – Part 2]:https://www.sqlservercentral.com/articles/a-self-tuning-fill-factor-technique-for-sql-server-part-2
 [SQL: Been told you can't access master database system views in Azure SQL Database? Not true!]:https://blog.greglow.com/2019/09/17/sql-told-cannot-access-master-database-system-views-azure-sql-database-not-true/
 [How to increase SQL Database Full Backup speed using compression and Solid State Disks]:http://henkvandervalk.com/how-to-increase-sql-database-full-backup-speed-using-compression-and-solid-state-disks
+[Troubleshooting NUMA Node Imbalance Problems (HammerDB Benchmark)]:https://www.sqlpassion.at/archive/2019/09/23/troubleshooting-numa-node-inbalance-problems/
+[SQL Server Unequal NUMA CPU engagement]:https://sql-sasquatch.blogspot.com/2019/09/sql-server-numa-cpu-engagement.html
+[SSIS Connection Managers: OLE DB vs ODBC vs ADO.NET]:https://www.sqlshack.com/ssis-connection-managers-ole-db-vs-odbc-vs-ado-net/
+[SSIS Data Flows – ADO.NET vs. OLE DB vs. ODBC]:https://datatellblog.wordpress.com/2015/01/13/ssis-data-flows-ado-net-vs-ole-db-vs-odbc/
+[SSIS – Fastest data flow task item for transferring data over the network]:https://gqbi.wordpress.com/2013/06/19/ssis-fastest-data-flow-task-item-for-transferring-data-over-the-network/
+[The Case of the Vanishing Index Compression]:red-gate.com/simple-talk/blogs/the-case-of-the-vanishing-index-compression/
+[Migrating from MSSQL to PostgreSQL - What You Should Know]:https://severalnines.com/database-blog/migrating-mssql-postgresql-what-you-should-know
