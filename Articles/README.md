@@ -871,6 +871,8 @@ Articles types:
 | [SSIS – Fastest data flow task item for transferring data over the network]                                             | Gilbert Quevauvilliers                   | 2013-01-19 | [SSIS]      |
 | [The Case of the Vanishing Index Compression]                                                                           | Louis Davidson                           | 2019-09-30 | [DBA],[IDX] |
 | [Migrating from MSSQL to PostgreSQL - What You Should Know]                                                             | Severalnines                             | 2018-11-05 | [DEV]       |
+| [Difference between Identity and Sequence in SQL Server 2012]                                                           | Muhammad Imran                           | 2012-05-01 | [DEV]       |
+| [Sequence vs Identity – Performance Comparison]                                                                         | Bill Anton                               | 2012-09-02 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1719,3 +1721,5 @@ Articles types:
 [SSIS – Fastest data flow task item for transferring data over the network]:https://gqbi.wordpress.com/2013/06/19/ssis-fastest-data-flow-task-item-for-transferring-data-over-the-network/
 [The Case of the Vanishing Index Compression]:red-gate.com/simple-talk/blogs/the-case-of-the-vanishing-index-compression/
 [Migrating from MSSQL to PostgreSQL - What You Should Know]:https://severalnines.com/database-blog/migrating-mssql-postgresql-what-you-should-know
+[Difference between Identity and Sequence in SQL Server 2012]:https://raresql.com/2012/05/01/difference-between-identity-and-sequence/
+[Sequence vs Identity – Performance Comparison]:http://byobi.com/2012/09/sequence-vs-identity-performance-comparison/

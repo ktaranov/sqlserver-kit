@@ -292,7 +292,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [FlowHeater](#flowheater)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [ETL]    | [FlowHeater]                                | 2017-10-02 | FlowHeater GmbH       | Shareware  | No             |   $79 |
 | [EDIS](#edis)                                                    | No                            | No        | [ETL]    | [EDIS]                                      | ?          | SQL ETL               | Shareware  | Yes            |  $599 |
 | [SchemaSpy](#schemaspy)                                          | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [D]      | [SchemaSpy]                                 | 2018-08-05 | Rafal Kasa            | [MIT]      | Open Source    | No    |
-| [Adminer](#adminer)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Adminer]                                   | 2018-02-20 | Jakub Vrána           | [Apache]   | Open Source    | No    |
+| [Adminer](#adminer)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Adminer]                                   | 2019-08-27 | Jakub Vrána           | [Apache]   | Open Source    | No    |
 | [Full Convert](#full-convert)                                    | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Full Convert]                              | 2018-08-20 | Spectral Core         | Shareware  | Yes            |  $699 |
 | [Replicator](#replicator)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [DC]     | [Replicator]                                | 2018-08-20 | Spectral Core         | Shareware  | Yes            |  $699 |
 | [JackDB](#jackdb)                                                | Oracle,MySQL,PostgreSQL,Other | Online    | [MS]     | [JackDB]                                    | ?          | JackDB                |            | No             |   $48 |
@@ -4195,7 +4195,7 @@ It is free software that is distributed under the terms of the MIT License.
 <a id="adminer"></a>
 ## Adminer
 Download page: [Adminer]<br/>
-Release date: 2018-02-20<br/>
+Release date: 2019-08-27<br/>
 Support Version: 2005-2017<br/>
 Author: Adminer<br/>
 Free version: Open Source<br/>
