@@ -496,7 +496,7 @@ Microsoft SQL Server 2017 (RTM-CU17) (KB4515579) - 14.0.3238.1 (X64)
 
 | Build         | File version      | Branch | Type | KB / Description                                                                                         | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|----------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3238.1   | 2017.140.3238.1   | RTM    | CU   | **Latest CU** [4515579 Microsoft SQL Server 2017 CU17]                                                   | 2019-10-01   | 2019-09-14 |    50 |     36 |      528 |
+| 14.0.3238.1   | 2017.140.3238.1   | RTM    | CU   | **Latest CU** [4515579 Microsoft SQL Server 2017 CU17]                                                   | 2019-10-01   | 2019-09-14 |    41 |     34 |      528 |
 | 14.0.3223.3   | 2017.140.3223.3   | RTM    | CU   | [4508218 Microsoft SQL Server 2017 CU16]                                                                 | 2019-08-01   | 2019-07-13 |    50 |     37 |      529 |
 | 14.0.3208.1   | 2017.140.3208.1   | RTM    | COD  | [4510083 On-demand hotfix update package 2 for SQL Server 2017 Cumulative update 15 (CU15)]              | 2019-07-09   | 2019-06-26 |     2 |      2 |      528 |
 | 14.0.3192.2   | 2017.140.3192.2   | RTM    | GDR  | [4505225 Security update for SQL Server 2017 CU15 GDR: July 9, 2019] **CVE-2019-1068**                   | 2019-07-09   | 2019-06-26 |     1 |      1 |      528 |
@@ -580,6 +580,7 @@ Microsoft SQL Server 2016 (SP2-CU10) (KB4524334) - 13.0.5492.2 (X64)
 | Build         | File version      | Branch | Type | KB / Description                                                                                                               | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|--------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
 | 13.0.5492.2   | 2015.131.5492.2   | SP2    | CU   | **Latest SP2 CU** [4524334 Cumulative Update 10 for SQL Server 2016 SP2]                                                       | 2019-10-08   | 2019-10-05 |    21 |     21 |      752 |
+| 13.0.5479.0   | 2015.131.5479.0   | SP2    | CU   | **Withdrawn** 4515435 Cumulative Update 9 for SQL Server 2016 SP2                                                              | 2019-09-30   | 2019-09-13 |    21 |     21 |      752 |
 | 13.0.5426.0   | 2015.131.5426.0   | SP2    | CU   | [4505830 Cumulative Update 8 for SQL Server 2016 SP2]                                                                          | 2019-07-31   | 2019-06-15 |    33 |     28 |      752 |
 | 13.0.5382.0   | 2015.131.5382.0   | SP2    | COD  | [4510807 On-demand hotfix update package 2 for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]                 | 2019-07-09   | 2019-06-15 |     2 |      2 |      714 |
 | 13.0.5366.0   | 2015.131.5366.0   | SP2    | GDR  | [4505222 Security update for SQL Server 2016 SP2 CU7 GDR: July 9, 2019] **CVE-2019-1068**                                      | 2019-07-09   | 2019-06-15 |     2 |      2 |      714 |
