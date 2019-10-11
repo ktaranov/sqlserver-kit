@@ -703,9 +703,11 @@ Scope: global only
 
 <a id="646"></a>
 #### Trace Flag: 646
+**Undocumented trace flag**<br />
 Function: Serves for getting detailed information on which Columnstore were eliminated by the Query Optimiser right into the error log.<br />
 Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
-Link: http://www.sqlskills.com/blogs/joe/exploring-columnstore-index-metadata-segment-distribution-and-elimination-behaviors
+Link: http://www.sqlskills.com/blogs/joe/exploring-columnstore-index-metadata-segment-distribution-and-elimination-behaviors<br />
+Scope: global or session
 
 
 <a id="647"></a>
@@ -2145,8 +2147,8 @@ Function: When used in conjunction with trace flag [3656](#3656), enables symbol
 For more information, see this [Microsoft Whitepaper](https://www.microsoft.com/download/details.aspx?id=26666).<br />
 **WARNING: This is a debugging trace flag and not meant for production environment use.**<br />
 **Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br/>
-Link: [Docs Trace Flags]
-Scope: global and session
+Link: [Docs Trace Flags]<br />
+Scope: global or session
 
 
 <a id="2701"></a>
@@ -2660,7 +2662,7 @@ Link: [Docs Trace Flags]<br />
 Link: http://sqlcat.com/sqlcat/b/msdnmirror/archive/2010/05/11/resolving-dtc-related-waits-and-tuning-scalability-of-dtc.aspx<br />
 Link: [Controlling SQL Server memory dumps]<br />
 Link: http://www.sqlskills.com/blogs/paul/determine-causes-particular-wait-type<br />
-Scope: global and session
+Scope: global or session
 
 
 <a id="3659"></a>
