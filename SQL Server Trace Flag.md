@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**599** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**600** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **599 trace flags**
+Summary: **600 trace flags**
 
 
 <a id="-1"></a>
@@ -2139,6 +2139,16 @@ Link: http://www.sqlskills.com/blogs/paul/dbcc-writepage/<br />
 Scope: session only
 
 
+<a id="2592"></a>
+#### Trace Flag: 2592
+Function: When used in conjunction with trace flag [3656](#3656), enables symbol resolution on stack dumps when the Debugging Tools for Windows are installed.
+For more information, see this [Microsoft Whitepaper](https://www.microsoft.com/download/details.aspx?id=26666).<br />
+**WARNING: This is a debugging trace flag and not meant for production environment use.**<br />
+**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br/>
+Link: [Docs Trace Flags]
+Scope: global and session
+
+
 <a id="2701"></a>
 #### Trace Flag: 2701
 Function: SQL 6.5 - Sets the `@@ERROR` system function to 50000 for `RAISERROR` messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
@@ -2437,7 +2447,7 @@ Function: Disables parallel redo.
 Assume that you use an Always On availability group (AG) that contains heap tables.
 Starting in SQL Server 2016, parallel thread for redo operations is used in secondary replicas.
 In this case, heap tables redo operation may generate a runtime assert dump or the SQL Server may crash with an access violation error in some cases.<br />
-**Note: This trace flag applies to SQL Server 2016 (13.x) and SQL Server 2017 (14.x).**<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x) and SQL Server 2017 (14.x), and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3200975/<br />
 Link: https://support.microsoft.com/help/4101554/<br />
@@ -2643,13 +2653,13 @@ Link: https://support.microsoft.com/help/2888658/
 
 <a id="3656"></a>
 #### Trace Flag: 3656
-Function: Enables symbol resolution on stack dumps when the Debugging Tools for Windows are installed.<br />
-**WARNING: This is a debugging trace flag and not meant for production environment use.**
+Function: Enables symbol resolution on stack dumps when the Debugging Tools for Windows are installed.
+For more information, see this [Microsoft Whitepaper](https://www.microsoft.com/en-us/download/details.aspx?id=26666).<br />
+**WARNING: This is a debugging trace flag and not meant for production environment use.**<br />
 Link: [Docs Trace Flags]<br />
 Link: http://sqlcat.com/sqlcat/b/msdnmirror/archive/2010/05/11/resolving-dtc-related-waits-and-tuning-scalability-of-dtc.aspx<br />
 Link: [Controlling SQL Server memory dumps]<br />
 Link: http://www.sqlskills.com/blogs/paul/determine-causes-particular-wait-type<br />
-Link: https://www.microsoft.com/en-us/download/details.aspx?id=26666<br />
 Scope: global and session
 
 
