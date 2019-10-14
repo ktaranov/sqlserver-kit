@@ -578,8 +578,8 @@ Microsoft SQL Server 2016 (SP2-CU10) (KB4524334) - 13.0.5492.2 (X64)
 ```
 
 | Build         | File version      |Branch | Type | Info                              | KB      | Description/Link                                                                                                       | Release Date | Build Date | Fixes | Public | Size, Mb |
-|---------------|-------------------|-------|------|-----------------------------------|----------------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.5492.2   | 2015.131.5492.2   | SP2   | CU   | **Latest SP2 CU**                 | 4524334 | [Cumulative Update 10 for SQL Server 2016 SP2]                                                                         | 2019-10-08   | 2019-10-05 |    21 |     21 |      752 |
+|---------------|-------------------|-------|------|-----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5492.2   | 2015.131.5492.2   | SP2   | CU   | **Latest CU SP2**                 | 4524334 | [Cumulative Update 10 for SQL Server 2016 SP2]                                                                         | 2019-10-08   | 2019-10-05 |    21 |     21 |      752 |
 | 13.0.5479.0   | 2015.131.5479.0   | SP2   | CU   | **Withdrawn**                     | 4515435 | Cumulative Update 9 for SQL Server 2016 SP2                                                                            | 2019-09-30   | 2019-09-13 |    21 |     21 |      752 |
 | 13.0.5426.0   | 2015.131.5426.0   | SP2   | CU   |                                   | 4505830 | [Cumulative Update 8 for SQL Server 2016 SP2]                                                                          | 2019-07-31   | 2019-06-15 |    33 |     28 |      752 |
 | 13.0.5382.0   | 2015.131.5382.0   | SP2   | COD  |                                   | 4510807 | [On-demand hotfix update package 2 for SQL Server 2016 Service Pack 2 (SP2) Cumulative update 7 (CU7)]                 | 2019-07-09   | 2019-06-15 |     2 |      2 |      714 |
@@ -599,9 +599,9 @@ Microsoft SQL Server 2016 (SP2-CU10) (KB4524334) - 13.0.5492.2 (X64)
 | 13.0.5101.9   | 2015.131.5101.9   | SP2   | GDR  | CVE-2019-1068                     | 4505220 | [Security update for SQL Server 2016 SP2 GDR: July 9, 2019]                                                            | 2019-07-09   | 2019-06-15 |     2 |      2 |      491 |
 | 13.0.5081.1   | 2015.131.5081.1   | SP2   | COD  | CVE-2018-8273                     | 4293802 | [Security update for SQL Server 2016 SP2 GDR: August 14, 2018]                                                         | 2018-05-30   | 2018-05-19 |     1 |      0 |      492 |
 | 13.0.5026.0   | 2015.131.5026.0   | SP2   | SP   |                                   | 4052908 | [SQL Server 2016 Service Pack 2 release information]                                                                   | 2018-04-24   | 2018-03-18 |    50 |     50 |      774 |
-| 13.0.4604.0   | 2015.130.4604.0   | SP1   | GDR  | CVE-2019-1068                     | 4505221 | [Security update for SQL Server 2016 SP1 CU15 GDR: July 9, 2019]                                                       | 2019-07-09   | 2019-06-15 |     2 |      2 |      761 |
+| 13.0.4604.0   | 2015.130.4604.0   | SP1   | GDR  | **Latest CU SP1**,CVE-2019-1068   | 4505221 | [Security update for SQL Server 2016 SP1 CU15 GDR: July 9, 2019]                                                       | 2019-07-09   | 2019-06-15 |     2 |      2 |      761 |
 | 13.0.4577.0   | 2015.130.4577.0   | SP1   | COD  |                                   | 4508471 | [On-demand hotfix update package for SQL Server 2016 Service Pack 1 (SP1) Cumulative update 15 (CU15)]                 | 2019-06-20   | 2019-06-15 |     2 |      2 |      761 |
-| 13.0.4574.0   | 2015.130.4574.0   | SP1   | CU   | **Last SP1 CU**                   | 4495257 | [Cumulative Update 15 for SQL Server 2016 SP1]                                                                         | 2019-05-16   | 2019-04-28 |     7 |      7 |      761 |
+| 13.0.4574.0   | 2015.130.4574.0   | SP1   | CU   |                                   | 4495257 | [Cumulative Update 15 for SQL Server 2016 SP1]                                                                         | 2019-05-16   | 2019-04-28 |     7 |      7 |      761 |
 | 13.0.4560.0   | 2015.130.4560.0   | SP1   | CU   |                                   | 4488535 | [Cumulative update 14 (CU14) for SQL Server 2016 Service Pack 1]                                                       | 2019-03-19   | 2019-03-12 |     7 |      7 |      761 |
 | 13.0.4550.1   | 2015.130.4550.1   | SP1   | CU   |                                   | 4475775 | [Cumulative Update 13 for SQL Server 2016 SP1]                                                                         | 2019-01-23   | 2019-01-11 |    12 |      9 |      761 |
 | 13.0.4541.0   | 2015.130.4541.0   | SP1   | CU   |                                   | 4464343 | [Cumulative Update 12 for SQL Server 2016 SP1]                                                                         | 2018-11-13   | 2018-10-27 |    21 |     16 |      761 |
@@ -746,190 +746,190 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
    Developer Edition (64-bit) on …
 ```
 
-| Build        | File version     | Branch | Type | KB / Description                                                                                                                   | Release Date | Fixes | Public | Size, Mb |
-|--------------|------------------|--------|------|------------------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
-| 12.0.6329.1  | 2014.120.6329.1  | SP3    | CU   | [4500181 Cumulative Update 3 for SQL Server 2014 SP3] **Latest CU**                                                                | 2019-07-29   |    25 |     19 |      658 |
-| 12.0.6293.0  | 2014.120.6293.0  | SP3    | GDR  | [4505422 Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019] **CVE-2019-1068**                                          | 2019-07-09   |     1 |      1 |      656 |
-| 12.0.6259.0  | 2014.120.6259.0  | SP3    | CU   | [4491539 Cumulative Update 3 for SQL Server 2014 SP3]                                                                              | 2019-04-16   |     4 |      4 |      656 |
-| 12.0.6214.1  | 2014.120.6214.1  | SP3    | CU   | [4482960 Cumulative Update 2 for SQL Server 2014 SP3]                                                                              | 2019-02-19   |     5 |      5 |      602 |
-| 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   | [4470220 Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
-| 12.0.6108.1  | 2014.120.6108.1  | SP3    | GDR  | [4505218 Security update for SQL Server 2014 SP3 GDR: July 9, 2019] **CVE-2019-1068**                                              | 2019-07-09   |     1 |      1 |      654 |
-| 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   | [4022619 SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
-| 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | [4500180 Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
-| 12.0.5659.1  | 2014.120.5659.1  | SP2    | GDR  | [4505419 Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019] **CVE-2019-1068**                                         | 2019-07-09   |     1 |      1 |      679 |
-| 12.0.5632.1  | 2014.120.5632.1  | SP2    | CU   | [4491540 Cumulative Update 17 for SQL Server 2014 SP2]                                                                             | 2019-04-16   |     3 |      3 |      678 |
-| 12.0.5626.1  | 2014.120.5626.1  | SP2    | CU   | [4482967 Cumulative Update 16 for SQL Server 2014 SP2]                                                                             | 2019-02-19   |     3 |      3 |      678 |
-| 12.0.5605.1  | 2014.120.5605.1  | SP2    | SP   | [4469137 Cumulative Update 15 for SQL Server 2014 SP2]                                                                             | 2018-12-12   |     8 |      7 |      679 |
-| 12.0.5600.1  | 2014.120.5600.1  | SP2    | CU   | [4459860 Cumulative Update 14 for SQL Server 2014 SP2]                                                                             | 2018-10-15   |     8 |      6 |      678 |
-| 12.0.5590.1  | 2014.120.5590.1  | SP2    | CU   | [4456287 Cumulative Update 13 for SQL Server 2014 SP2]                                                                             | 2018-08-27   |     4 |      4 |      679 |
-| 12.0.5589.7  | 2014.120.5589.7  | SP2    | CU   | [4130489 Cumulative Update 12 for SQL Server 2014 SP2]                                                                             | 2018-06-18   |    27 |     16 |      678 |
-| 12.0.5579.0  | 2014.120.5579.0  | SP2    | CU   | [4077063 Cumulative Update 11 for SQL Server 2014 SP2]                                                                             | 2018-03-19   |    12 |     10 |      677 |
-| 12.0.5571.0  | 2014.120.5571.0  | SP2    | CU   | [4052725 Cumulative Update 10 for SQL Server 2014 SP2]                                                                             | 2018-01-16   |     5 |      4 |      676 |
-| 12.0.5563.0  | 2014.120.5563.0  | SP2    | CU   | [4055557 Cumulative Update 9 for SQL Server 2014 SP2]                                                                              | 2017-12-18   |     8 |      7 |      540 |
-| 12.0.5557.0  | 2014.120.5557.0  | SP2    | CU   | [4037356 Cumulative Update 8 for SQL Server 2014 SP2]                                                                              | 2017-10-17   |    15 |      8 |      539 |
-| 12.0.5556.0  | 2014.120.5556.0  | SP2    | CU   | [4032541 Cumulative Update 7 for SQL Server 2014 SP2]                                                                              | 2017-08-28   |    15 |      8 |      539 |
-| 12.0.5553.0  | 2014.120.5553.0  | SP2    | CU   | [4019094 Cumulative Update 6 for SQL Server 2014 SP2]                                                                              | 2017-08-08   |    29 |     29 |      539 |
-| 12.0.5546.0  | 2014.120.5546.0  | SP2    | CU   | [4013098 Cumulative Update 5 for SQL Server 2014 SP2]                                                                              | 2017-04-18   |    24 |     21 |      557 |
-| 12.0.5540.0  | 2014.120.5540.0  | SP2    | CU   | [4010394 Cumulative Update 4 for SQL Server 2014 SP2]                                                                              | 2017-02-21   |    30 |     27 |      555 |
-| 12.0.5538.0  | 2014.120.5538.0  | SP2    | CU   | [3204388 Cumulative update 3 for SQL Server 2014 SP2]                                                                              | 2016-12-28   |    44 |     39 |      555 |
-| 12.0.5532.0  | 2014.120.5532.0  | SP2    | CU   | [3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      551 |
-| 12.0.5522.0  | 2014.120.5522.0  | SP2    | CU   | [3188778 Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |    18 |     18 |      550 |
-| 12.0.5511.0  | 2014.120.5511.0  | SP2    | CU   | [3178925 Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |    45 |     36 |      556 |
-| 12.0.5223.6  | 2014.120.5223.6  | SP2    | GDR  | [4505217 Security update for SQL Server 2014 SP2 GDR: July 9, 2019] **CVE-2019-1068                                                | 2019-07-09   |     1 |      1 |      588 |
-| 12.0.5214.6  | 2014.120.5214.6  | SP2    | GDR  | [4057120 Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018] **CVE-2017-5715,2017-5753,2017-5754**           | 2018-01-16   |       |        |      960 |
-| 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  | [4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |
-| 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  | [3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
-| 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   | [3171021 SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
-| 12.0.5626.1  | 2014.120.5626.1  | SP1    | CU   | [4482967 Cumulative Update 13 for SQL Server 2014 SP1] **Last CU for 2014 SP1**                                                    | 2017-08-08   |    11 |     11 |      577 |
-| 12.0.4511.0  | 2014.120.4511.0  | SP1    | CU   | [4017793 Cumulative Update 12 for SQL Server 2014 SP1]                                                                             | 2017-04-17   |    12 |     11 |      573 |
-| 12.0.4502.0  | 2014.120.4502.0  | SP1    | CU   | [4010392 Cumulative Update 11 for SQL Server 2014 SP1]                                                                             | 2017-02-21   |    15 |     15 |      571 |
-| 12.0.4491.0  | 2014.120.4491.0  | SP1    | CU   | [3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]                                                          | 2016-12-28   |    33 |     27 |      571 |
-| 12.0.4487.0  | 2014.120.4487.0  | SP1    | CU   | [3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      569 |
-| 12.0.4474.0  | 2014.120.4474.0  | SP1    | CU   | [3186964 Cumulative update 9 for SQL Server 2014 SP1]                                                                              | 2016-10-18   |    14 |     14 |      912 |
-| 12.0.4468.0  | 2014.120.4468.0  | SP1    | CU   | [3174038 Cumulative update 8 for SQL Server 2014 SP1]                                                                              | 2016-08-16   |    38 |     38 |      929 |
-| 12.0.4463.0  | 2014.120.4463.0  | SP1    | COD  | [3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |     1 |      1 |          |
-| 12.0.4459.0  | 2014.120.4459.0  | SP1    | CU   | [3162659 Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |    35 |     33 |      928 |
-| 12.0.4457.0  | 2014.120.4457.0  | SP1    | CU   | [3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1] **Refresh**                                                       | 2016-05-31   |    44 |     43 |      927 |
-| 12.0.4452.0  | 2014.120.4452.0  | SP1    | COD  | 3147825 COD Hotfix **Deprecated**                                                                                                  | 2016-04-05   |     1 |      1 |          |
-| 12.0.4449.0  | 2014.120.4449.0  | SP1    | CU   | [3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)] **Deprecated**                                                  | 2016-04-18   |   N/A |    N/A |          |
-| 12.0.4439.1  | 2014.120.4439.1  | SP1    | CU   | [3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |    20 |     20 |      924 |
-| 12.0.4437.0  | 2014.120.4437.0  | SP1    | COD  | [3130999 On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]                                   | 2016-02-05   |     2 |      2 |          |
-| 12.0.4436.0  | 2014.120.4436.0  | SP1    | CU   | [3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |    34 |     34 |          |
-| 12.0.4433.0  | 2014.120.4433.0  | SP1    | COD  | [3119148 FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]                            | 2015-12-09   |     1 |      1 |          |
-| 12.0.4432.0  | 2014.120.4432.0  | SP1    | COD  | [3097972 FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]               | 2015-11-19   |     3 |      3 |          |
-| 12.0.4427.24 | 2014.120.4427.24 | SP1    | CU   | [3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |    40 |     36 |          |
-| 12.0.4422.0  | 2014.120.4422.0  | SP1    | CU   | [3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |    51 |     46 |          |
-| 12.0.4419.0  | 2014.120.4419.0  | SP1    | COD  | [3078973 An on-demand hotfix update package is available for SQL Server 2014 SP1]                                                  | 2015-07-24   |    13 |     13 |          |
-| 12.0.4416.0  | 2014.120.4416.0  | SP1    | CU   | [3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]                                                     | 2015-06-22   |   141 |    121 |          |
-| 12.0.4237.0  | 2014.120.4237.0  | SP1    | GDR  | [4019091 Security update for SQL Server 2014 Service Pack 1 GDR: August 8, 2017]                                                   | 2017-08-08   |     1 |      1 |      391 |
-| 12.0.4232.0  | 2014.120.4232.0  | SP1    | CU   | [3194720 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      371 |
-| 12.0.4219.0  | 2014.120.4219.0  | SP1    | GDR  | [3098852 SP1 GDR TLS 1.2 Update]                                                                                                   | 2016-01-29   |       |        |          |
-| 12.0.4213.0  | 2014.120.4213.0  | SP1    | GDR  | [3070446 MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                    | 2015-07-14   |       |        |      381 |
-| 12.0.4100.1  | 2014.120.4100.1  | SP1    | SP   | [3058865 SQL Server 2014 Service Pack 1 release information]                                                                       | 2015-05-14   |    29 |     29 |     1025 |
-| 12.0.4050.0  | 2014.120.4050.0  | SP1    | SP   | SQL Server 2014 Service Pack 1 (SP1) (initial)                                                                                     | 2015-04-15   |       |        |          |
-| 12.0.2569.0  | 2014.120.2569.0  | RTM    | CU   | [3158271 Cumulative update package 14 (CU14) for SQL Server 2014] **Last CU for 2014 RTM**                                         | 2016-06-20   |    21 |     20 |     1049 |
-| 12.0.2568.0  | 2014.120.2568.0  | RTM    | CU   | [3144517 Cumulative update package 13 (CU13) for SQL Server 2014]                                                                  | 2016-04-18   |    30 |     30 |     1047 |
-| 12.0.2564.0  | 2014.120.2564.0  | RTM    | CU   | [3130923 Cumulative update package 12 (CU12) for SQL Server 2014]                                                                  | 2016-02-22   |     7 |      7 |     1045 |
-| 12.0.2560.0  | 2014.120.2550.0  | RTM    | CU   | [3106659 Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |    19 |     19 |          |
-| 12.0.2556.4  | 2014.120.2556.4  | RTM    | CU   | [3094220 Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |    33 |     30 |          |
-| 12.0.2553.0  | 2014.120.2553.0  | RTM    | CU   | [3075949 Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |    31 |     30 |          |
-| 12.0.2548.0  | 2014.120.2548.0  | RTM    | CU   | [3045323 MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]                                      | 2015-07-14   |     1 |      1 |     1038 |
-| 12.0.2546.0  | 2014.120.2546.0  | RTM    | CU   | [3067836 Cumulative update package 8 (CU8) for SQL Server 2014]                                                                    | 2015-06-22   |    40 |     38 |          |
-| 12.0.2506.0  | 2014.120.2506.0  | RTM    | COD  | [3063054 Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]                      | 2015-05-19   |     1 |      1 |          |
-| 12.0.2505.0  | 2014.120.2505.0  | RTM    | COD  | [3052167 FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]                    | 2015-05-19   |     1 |      1 |          |
-| 12.0.2504.0  | 2014.120.2504.0  | RTM    | COD  | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2015-05-05   |     2 |      2 |          |
-| 12.0.2504.0  | 2014.120.2504.0  | RTM    | COD  | [3058512 FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]                                      | 2015-05-05   |       |        |          |
-| 12.0.2495.0  | 2014.120.2495.0  | RTM    | CU   | [3046038 Cumulative update package 7 (CU7) for SQL Server 2014]                                                                    | 2015-04-23   |    47 |     41 |          |
-| 12.0.2488.0  | 2014.120.2488.0  | RTM    | COD  | [3048751 FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan] | 2015-04-01   |     1 |      1 |          |
-| 12.0.2485.0  | 2014.120.2485.0  | RTM    | COD  | [3043788 An on-demand hotfix update package is available for SQL Server 2014]                                                      | 2015-03-16   |     1 |      1 |          |
-| 12.0.2480.0  | 2014.120.2480.0  | RTM    | CU   | [3031047 Cumulative update package 6 (CU6) for SQL Server 2014]                                                                    | 2015-02-16   |    64 |     55 |          |
-| 12.0.2474.0  | 2014.120.2474.0  | RTM    | COD  | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                      | 2015-02-04   |     1 |      1 |          |
-| 12.0.2472.0  | 2014.120.2472.0  | RTM    | COD  | [3032087 FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014] | 2015-01-28   |     1 |      1 |          |
-| 12.0.2464.0  | 2014.120.2464.0  | RTM    | COD  | [3024815 Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]                                     | 2015-01-05   |     1 |      1 |          |
-| 12.0.2456.0  | 2014.120.2456.0  | RTM    | CU   | [3011055 Cumulative update package 5 (CU5) for SQL Server 2014]                                                                    | 2014-12-18   |    54 |     48 |          |
-| 12.0.2436.0  | 2014.120.2436.0  | RTM    | COD  | [3014867 FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]        | 2014-11-27   |     1 |      1 |          |
-| 12.0.2430.0  | 2014.120.2430.0  | RTM    | CU   | [2999197 Cumulative update package 4 (CU4) for SQL Server 2014]                                                                    | 2014-10-21   |    66 |     54 |          |
-| 12.0.2423.0  | 2014.120.2423.0  | RTM    | COD  | [3007050 FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]       | 2014-10-22   |       |        |          |
-| 12.0.2405.0  | 2014.120.2405.0  | RTM    | COD  | [2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2014-09-25   |       |        |          |
-| 12.0.2402.0  | 2014.120.2402.0  | RTM    | CU   | [2984923 Cumulative update package 3 (CU3) for SQL Server 2014]                                                                    | 2014-08-18   |    40 |     32 |          |
-| 12.0.2381.0  | 2014.120.2381.0  | RTM    | QFE  | [2977316 MS14-044: Description of the security update for SQL Server 2014 (QFE)]                                                   | 2014-08-12   |     1 |      1 |      602 |
-| 12.0.2370.0  | 2014.120.2370.0  | RTM    | CU   | [2967546 Cumulative update package 2 (CU2) for SQL Server 2014]                                                                    | 2014-06-27   |    52 |     48 |          |
-| 12.0.2342.0  | 2014.120.2342.0  | RTM    | CU   | [2931693 Cumulative update package 1 (CU1) for SQL Server 2014]                                                                    | 2014-04-21   |   121 |    114 |          |
-| 12.0.2271.0  | 2014.120.2271.0  | RTM    | GDR  | [TLS 1.2 support for SQL Server 2014 RTM]                                                                                          | 2016-01-29   |     3 |      3 |          |
-| 12.0.2269.0  | 2014.120.2269.0  | RTM    | GDR  | [3045324 MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]                                      | 2015-07-14   |     2 |      2 |      388 |
-| 12.0.2254.0  | 2014.120.2254.0  | RTM    | GDR  | [2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]                                                   | 2014-08-12   |     1 |      1 |      183 |
-| 12.0.2000.8  | 2014.120.2000.8  | RTM    | RTM  | SQL Server 2014 RTM                                                                                                                | 2014-04-01   |     - |      - |          |
-| 12.0.1524.0  | 2014.120.1524.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                                    | 2013-10-15   |       |        |          |
-| 11.0.9120.0  | 2013.110.9120.0  | CTP    | CTP  | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                                    | 2013-06-25   |       |        |          |
+| Build        | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                           | Release Date | Fixes | Public | Size, Mb |
+|--------------|------------------|--------|------|-----------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.6329.1  | 2014.120.6329.1  | SP3    | CU   | **Latest CU SP3**                 | 4500181 | [Cumulative Update 4 for SQL Server 2014 SP3]                                                                              | 2019-07-29   |    25 |     19 |      658 |
+| 12.0.6293.0  | 2014.120.6293.0  | SP3    | GDR  | CVE-2019-1068                     | 4505422 | [Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]                                                            | 2019-07-09   |     1 |      1 |      656 |
+| 12.0.6259.0  | 2014.120.6259.0  | SP3    | CU   |                                   | 4491539 | [Cumulative Update 3 for SQL Server 2014 SP3]                                                                              | 2019-04-16   |     4 |      4 |      656 |
+| 12.0.6214.1  | 2014.120.6214.1  | SP3    | CU   |                                   | 4482960 | [Cumulative Update 2 for SQL Server 2014 SP3]                                                                              | 2019-02-19   |     5 |      5 |      602 |
+| 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   |                                   | 4470220 | [Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
+| 12.0.6108.1  | 2014.120.6108.1  | SP3    | GDR  | CVE-2019-1068                     | 4505218 | [Security update for SQL Server 2014 SP3 GDR: July 9, 2019]                                                                | 2019-07-09   |     1 |      1 |      654 |
+| 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   |                                   | 4022619 | [SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
+| 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | **Latest CU SP3**                 | 4500180 | [Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
+| 12.0.5659.1  | 2014.120.5659.1  | SP2    | GDR  | CVE-2019-1068                     | 4505419 | [Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019]                                                           | 2019-07-09   |     1 |      1 |      679 |
+| 12.0.5632.1  | 2014.120.5632.1  | SP2    | CU   |                                   | 4491540 | [Cumulative Update 17 for SQL Server 2014 SP2]                                                                             | 2019-04-16   |     3 |      3 |      678 |
+| 12.0.5626.1  | 2014.120.5626.1  | SP2    | CU   |                                   | 4482967 | [Cumulative Update 16 for SQL Server 2014 SP2]                                                                             | 2019-02-19   |     3 |      3 |      678 |
+| 12.0.5605.1  | 2014.120.5605.1  | SP2    | SP   |                                   | 4469137 | [Cumulative Update 15 for SQL Server 2014 SP2]                                                                             | 2018-12-12   |     8 |      7 |      679 |
+| 12.0.5600.1  | 2014.120.5600.1  | SP2    | CU   |                                   | 4459860 | [Cumulative Update 14 for SQL Server 2014 SP2]                                                                             | 2018-10-15   |     8 |      6 |      678 |
+| 12.0.5590.1  | 2014.120.5590.1  | SP2    | CU   |                                   | 4456287 | [Cumulative Update 13 for SQL Server 2014 SP2]                                                                             | 2018-08-27   |     4 |      4 |      679 |
+| 12.0.5589.7  | 2014.120.5589.7  | SP2    | CU   |                                   | 4130489 | [Cumulative Update 12 for SQL Server 2014 SP2]                                                                             | 2018-06-18   |    27 |     16 |      678 |
+| 12.0.5579.0  | 2014.120.5579.0  | SP2    | CU   |                                   | 4077063 | [Cumulative Update 11 for SQL Server 2014 SP2]                                                                             | 2018-03-19   |    12 |     10 |      677 |
+| 12.0.5571.0  | 2014.120.5571.0  | SP2    | CU   |                                   | 4052725 | [Cumulative Update 10 for SQL Server 2014 SP2]                                                                             | 2018-01-16   |     5 |      4 |      676 |
+| 12.0.5563.0  | 2014.120.5563.0  | SP2    | CU   |                                   | 4055557 | [Cumulative Update 9 for SQL Server 2014 SP2]                                                                              | 2017-12-18   |     8 |      7 |      540 |
+| 12.0.5557.0  | 2014.120.5557.0  | SP2    | CU   |                                   | 4037356 | [Cumulative Update 8 for SQL Server 2014 SP2]                                                                              | 2017-10-17   |    15 |      8 |      539 |
+| 12.0.5556.0  | 2014.120.5556.0  | SP2    | CU   |                                   | 4032541 | [Cumulative Update 7 for SQL Server 2014 SP2]                                                                              | 2017-08-28   |    15 |      8 |      539 |
+| 12.0.5553.0  | 2014.120.5553.0  | SP2    | CU   |                                   | 4019094 | [Cumulative Update 6 for SQL Server 2014 SP2]                                                                              | 2017-08-08   |    29 |     29 |      539 |
+| 12.0.5546.0  | 2014.120.5546.0  | SP2    | CU   |                                   | 4013098 | [Cumulative Update 5 for SQL Server 2014 SP2]                                                                              | 2017-04-18   |    24 |     21 |      557 |
+| 12.0.5540.0  | 2014.120.5540.0  | SP2    | CU   |                                   | 4010394 | [Cumulative Update 4 for SQL Server 2014 SP2]                                                                              | 2017-02-21   |    30 |     27 |      555 |
+| 12.0.5538.0  | 2014.120.5538.0  | SP2    | CU   |                                   | 3204388 | [Cumulative update 3 for SQL Server 2014 SP2]                                                                              | 2016-12-28   |    44 |     39 |      555 |
+| 12.0.5532.0  | 2014.120.5532.0  | SP2    | CU   |                                   | 3194718 | [MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      551 |
+| 12.0.5522.0  | 2014.120.5522.0  | SP2    | CU   |                                   | 3188778 | [Cumulative update 2 for SQL Server 2014 SP2]                                                                              | 2016-10-18   |    18 |     18 |      550 |
+| 12.0.5511.0  | 2014.120.5511.0  | SP2    | CU   |                                   | 3178925 | [Cumulative update 1 for SQL Server 2014 SP2]                                                                              | 2016-08-24   |    45 |     36 |      556 |
+| 12.0.5223.6  | 2014.120.5223.6  | SP2    | GDR  | CVE-2019-1068                     | 4505217 | [Security update for SQL Server 2014 SP2 GDR: July 9, 2019]                                                                | 2019-07-09   |     1 |      1 |      588 |
+| 12.0.5214.6  | 2014.120.5214.6  | SP2    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057120 | [Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018]                                                 | 2018-01-16   |       |        |      960 |
+| 12.0.5207.0  | 2014.120.5207.0  | SP2    | GDR  |                                   | 4019093 | [Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]                                | 2017-08-08   |     1 |      1 |      413 |
+| 12.0.5203.0  | 2014.120.5203.0  | SP2    | GDR  |                                   | 3194714 | [MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      463 |
+| 12.0.5000.0  | 2014.120.5000.0  | SP2    | SP   |                                   | 3171021 | [SQL Server 2014 Service Pack 2 release information]                                                                       | 2016-07-11   |   133 |     55 |      681 |
+| 12.0.5626.1  | 2014.120.5626.1  | SP1    | CU   | **Latest CU SP1**                 | 4482967 | [Cumulative Update 13 for SQL Server 2014 SP1]                                                                             | 2017-08-08   |    11 |     11 |      577 |
+| 12.0.4511.0  | 2014.120.4511.0  | SP1    | CU   |                                   | 4017793 | [Cumulative Update 12 for SQL Server 2014 SP1]                                                                             | 2017-04-17   |    12 |     11 |      573 |
+| 12.0.4502.0  | 2014.120.4502.0  | SP1    | CU   |                                   | 4010392 | [Cumulative Update 11 for SQL Server 2014 SP1]                                                                             | 2017-02-21   |    15 |     15 |      571 |
+| 12.0.4491.0  | 2014.120.4491.0  | SP1    | CU   |                                   | 3204399 | [Cumulative update package 10 for SQL Server 2014 Service Pack 1]                                                          | 2016-12-28   |    33 |     27 |      571 |
+| 12.0.4487.0  | 2014.120.4487.0  | SP1    | CU   |                                   | 3194722 | [MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]                     | 2016-11-08   |     1 |      1 |      569 |
+| 12.0.4474.0  | 2014.120.4474.0  | SP1    | CU   |                                   | 3186964 | [Cumulative update 9 for SQL Server 2014 SP1]                                                                              | 2016-10-18   |    14 |     14 |      912 |
+| 12.0.4468.0  | 2014.120.4468.0  | SP1    | CU   |                                   | 3174038 | [Cumulative update 8 for SQL Server 2014 SP1]                                                                              | 2016-08-16   |    38 |     38 |      929 |
+| 12.0.4463.0  | 2014.120.4463.0  | SP1    | COD  |                                   | 3174370 | [COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]                                            | 2016-08-04   |     1 |      1 |          |
+| 12.0.4459.0  | 2014.120.4459.0  | SP1    | CU   |                                   | 3162659 | [Cumulative Update 7 for SQL Server 2014 SP1]                                                                              | 2016-06-20   |    35 |     33 |      928 |
+| 12.0.4457.0  | 2014.120.4457.0  | SP1    | CU   | **Refresh**                       | 3167392 | [Cumulative Update 6 for SQL Server 2014 Service Pack 1]                                                                   | 2016-05-31   |    44 |     43 |      927 |
+| 12.0.4452.0  | 2014.120.4452.0  | SP1    | COD  | **Withdrawn**                     | 3147825 | 3147825 COD Hotfix                                                                                                         | 2016-04-05   |     1 |      1 |          |
+| 12.0.4449.0  | 2014.120.4449.0  | SP1    | CU   | **Withdrawn**                     | 3144524 | [Cumulative update 6 for SQL Server 2014 SP1 (deprecated)]                                                                 | 2016-04-18   |       |        |          |
+| 12.0.4439.1  | 2014.120.4439.1  | SP1    | CU   |                                   | 3130926 | [Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]                                                             | 2016-02-22   |    20 |     20 |      924 |
+| 12.0.4437.0  | 2014.120.4437.0  | SP1    | COD  |                                   | 3130999 | [On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]                                   | 2016-02-05   |     2 |      2 |          |
+| 12.0.4436.0  | 2014.120.4436.0  | SP1    | CU   |                                   | 3106660 | [Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]                                                     | 2015-12-21   |    34 |     34 |          |
+| 12.0.4433.0  | 2014.120.4433.0  | SP1    | COD  |                                   | 3119148 | [FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]                            | 2015-12-09   |     1 |      1 |          |
+| 12.0.4432.0  | 2014.120.4432.0  | SP1    | COD  |                                   | 3097972 | [FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]               | 2015-11-19   |     3 |      3 |          |
+| 12.0.4427.24 | 2014.120.4427.24 | SP1    | CU   |                                   | 3094221 | [Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]                                                     | 2015-10-21   |    40 |     36 |          |
+| 12.0.4422.0  | 2014.120.4422.0  | SP1    | CU   |                                   | 3075950 | [Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]                                                     | 2015-08-17   |    51 |     46 |          |
+| 12.0.4419.0  | 2014.120.4419.0  | SP1    | COD  |                                   | 3078973 | [An on-demand hotfix update package is available for SQL Server 2014 SP1]                                                  | 2015-07-24   |    13 |     13 |          |
+| 12.0.4416.0  | 2014.120.4416.0  | SP1    | CU   |                                   | 3067839 | [Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]                                                     | 2015-06-22   |   141 |    121 |          |
+| 12.0.4237.0  | 2014.120.4237.0  | SP1    | GDR  |                                   | 4019091 | [Security update for SQL Server 2014 Service Pack 1 GDR: August 8, 2017]                                                   | 2017-08-08   |     1 |      1 |      391 |
+| 12.0.4232.0  | 2014.120.4232.0  | SP1    | CU   |                                   | 3194720 | [MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]                    | 2016-11-08   |     1 |      1 |      371 |
+| 12.0.4219.0  | 2014.120.4219.0  | SP1    | GDR  |                                   | 3098852 | [SP1 GDR TLS 1.2 Update]                                                                                                   | 2016-01-29   |       |        |          |
+| 12.0.4213.0  | 2014.120.4213.0  | SP1    | GDR  |                                   | 3070446 | [MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]                    | 2015-07-14   |       |        |      381 |
+| 12.0.4100.1  | 2014.120.4100.1  | SP1    | SP   |                                   | 3058865 | [SQL Server 2014 Service Pack 1 release information]                                                                       | 2015-05-14   |    29 |     29 |     1025 |
+| 12.0.4050.0  | 2014.120.4050.0  | SP1    | SP   |                                   |         | SQL Server 2014 Service Pack 1 (SP1) (initial)                                                                             | 2015-04-15   |       |        |          |
+| 12.0.2569.0  | 2014.120.2569.0  | RTM    | CU   | **Latest CU RTM**                 | 3158271 | [Cumulative update package 14 (CU14) for SQL Server 2014]                                                                  | 2016-06-20   |    21 |     20 |     1049 |
+| 12.0.2568.0  | 2014.120.2568.0  | RTM    | CU   |                                   | 3144517 | [Cumulative update package 13 (CU13) for SQL Server 2014]                                                                  | 2016-04-18   |    30 |     30 |     1047 |
+| 12.0.2564.0  | 2014.120.2564.0  | RTM    | CU   |                                   | 3130923 | [Cumulative update package 12 (CU12) for SQL Server 2014]                                                                  | 2016-02-22   |     7 |      7 |     1045 |
+| 12.0.2560.0  | 2014.120.2550.0  | RTM    | CU   |                                   | 3106659 | [Cumulative update package 11 (CU11) for SQL Server 2014]                                                                  | 2015-12-21   |    19 |     19 |          |
+| 12.0.2556.4  | 2014.120.2556.4  | RTM    | CU   |                                   | 3094220 | [Cumulative update package 10 (CU10) for SQL Server 2014]                                                                  | 2015-10-20   |    33 |     30 |          |
+| 12.0.2553.0  | 2014.120.2553.0  | RTM    | CU   |                                   | 3075949 | [Cumulative update package 9 (CU9) for SQL Server 2014]                                                                    | 2015-08-17   |    31 |     30 |          |
+| 12.0.2548.0  | 2014.120.2548.0  | RTM    | CU   |                                   | 3045323 | [MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]                                      | 2015-07-14   |     1 |      1 |     1038 |
+| 12.0.2546.0  | 2014.120.2546.0  | RTM    | CU   |                                   | 3067836 | [Cumulative update package 8 (CU8) for SQL Server 2014]                                                                    | 2015-06-22   |    40 |     38 |          |
+| 12.0.2506.0  | 2014.120.2506.0  | RTM    | COD  |                                   | 3063054 | [Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]                      | 2015-05-19   |     1 |      1 |          |
+| 12.0.2505.0  | 2014.120.2505.0  | RTM    | COD  |                                   | 3052167 | [FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]                    | 2015-05-19   |     1 |      1 |          |
+| 12.0.2504.0  | 2014.120.2504.0  | RTM    | COD  |                                   | 2999809 | [FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2015-05-05   |     2 |      2 |          |
+| 12.0.2504.0  | 2014.120.2504.0  | RTM    | COD  |                                   | 3058512 | [FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]                                      | 2015-05-05   |       |        |          |
+| 12.0.2495.0  | 2014.120.2495.0  | RTM    | CU   |                                   | 3046038 | [Cumulative update package 7 (CU7) for SQL Server 2014]                                                                    | 2015-04-23   |    47 |     41 |          |
+| 12.0.2488.0  | 2014.120.2488.0  | RTM    | COD  |                                   | 3048751 | [FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan] | 2015-04-01   |     1 |      1 |          |
+| 12.0.2485.0  | 2014.120.2485.0  | RTM    | COD  |                                   | 3043788 | [An on-demand hotfix update package is available for SQL Server 2014]                                                      | 2015-03-16   |     1 |      1 |          |
+| 12.0.2480.0  | 2014.120.2480.0  | RTM    | CU   |                                   | 3031047 | [Cumulative update package 6 (CU6) for SQL Server 2014]                                                                    | 2015-02-16   |    64 |     55 |          |
+| 12.0.2474.0  | 2014.120.2474.0  | RTM    | COD  |                                   | 3034679 | [FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                      | 2015-02-04   |     1 |      1 |          |
+| 12.0.2472.0  | 2014.120.2472.0  | RTM    | COD  |                                   | 3032087 | [FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014] | 2015-01-28   |     1 |      1 |          |
+| 12.0.2464.0  | 2014.120.2464.0  | RTM    | COD  |                                   | 3024815 | [Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]                                     | 2015-01-05   |     1 |      1 |          |
+| 12.0.2456.0  | 2014.120.2456.0  | RTM    | CU   |                                   | 3011055 | [Cumulative update package 5 (CU5) for SQL Server 2014]                                                                    | 2014-12-18   |    54 |     48 |          |
+| 12.0.2436.0  | 2014.120.2436.0  | RTM    | COD  |                                   | 3014867 | [FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]        | 2014-11-27   |     1 |      1 |          |
+| 12.0.2430.0  | 2014.120.2430.0  | RTM    | CU   |                                   | 2999197 | [Cumulative update package 4 (CU4) for SQL Server 2014]                                                                    | 2014-10-21   |    66 |     54 |          |
+| 12.0.2423.0  | 2014.120.2423.0  | RTM    | COD  |                                   | 3007050 | [FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]       | 2014-10-22   |       |        |          |
+| 12.0.2405.0  | 2014.120.2405.0  | RTM    | COD  |                                   | 2999809 | [FIX: Poor performance when a query contains table joins in SQL Server 2014]                                               | 2014-09-25   |       |        |          |
+| 12.0.2402.0  | 2014.120.2402.0  | RTM    | CU   |                                   | 2984923 | [Cumulative update package 3 (CU3) for SQL Server 2014]                                                                    | 2014-08-18   |    40 |     32 |          |
+| 12.0.2381.0  | 2014.120.2381.0  | RTM    | QFE  |                                   | 2977316 | [MS14-044: Description of the security update for SQL Server 2014 (QFE)]                                                   | 2014-08-12   |     1 |      1 |      602 |
+| 12.0.2370.0  | 2014.120.2370.0  | RTM    | CU   |                                   | 2967546 | [Cumulative update package 2 (CU2) for SQL Server 2014]                                                                    | 2014-06-27   |    52 |     48 |          |
+| 12.0.2342.0  | 2014.120.2342.0  | RTM    | CU   |                                   | 2931693 | [Cumulative update package 1 (CU1) for SQL Server 2014]                                                                    | 2014-04-21   |   121 |    114 |          |
+| 12.0.2271.0  | 2014.120.2271.0  | RTM    | GDR  |                                   |         | [TLS 1.2 support for SQL Server 2014 RTM]                                                                                  | 2016-01-29   |     3 |      3 |          |
+| 12.0.2269.0  | 2014.120.2269.0  | RTM    | GDR  |                                   | 3045324 | [MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]                                      | 2015-07-14   |     2 |      2 |      388 |
+| 12.0.2254.0  | 2014.120.2254.0  | RTM    | GDR  |                                   | 2977315 | [MS14-044: Description of the security update for SQL Server 2014 (GDR)]                                                   | 2014-08-12   |     1 |      1 |      183 |
+| 12.0.2000.8  | 2014.120.2000.8  | RTM    | RTM  |                                   |         | SQL Server 2014 RTM                                                                                                        | 2014-04-01   |       |        |          |
+| 12.0.1524.0  | 2014.120.1524.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                            | 2013-10-15   |       |        |          |
+| 11.0.9120.0  | 2013.110.9120.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                            | 2013-06-25   |       |        |          |
 
-[4500181 Cumulative Update 3 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4500181
-[4505422 Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505422
-[4491539 Cumulative Update 3 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4491539
-[4482960 Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
-[4470220 Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
-[4505218 Security update for SQL Server 2014 SP3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505218
-[4022619 SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
-[4500180 Cumulative Update 18 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4500180
-[4505419 Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019]:https://support.microsoft.com/help/4505419
-[4491540 Cumulative Update 17 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4491540
-[4482967 Cumulative Update 16 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4482967
-[4469137 Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
-[4459860 Cumulative Update 14 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4459860
-[4456287 Cumulative Update 13 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4456287
-[4130489 Cumulative Update 12 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4130489
-[4077063 Cumulative Update 11 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4077063
-[4052725 Cumulative Update 10 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4052725/cumulative-update-10-for-sql-server-2014-sp2
-[4055557 Cumulative Update 9 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4055557/cumulative-update-9-for-sql-server-2014-sp2
-[4037356 Cumulative Update 8 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4037356/cumulative-update-8-for-sql-server-2014-sp2
-[4032541 Cumulative Update 7 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4032541/cumulative-update-7-for-sql-server-2014-sp2
-[4019094 Cumulative Update 6 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4019094/cumulative-update-6-for-sql-server-2014-sp2
-[4013098 Cumulative Update 5 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
-[4010394 Cumulative Update 4 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4010394/cumulative-update-4-for-sql-server-2014-sp2
-[3204388 Cumulative update 3 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3204388
-[3194718 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/help/3194718
-[3188778 Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3188778
-[3178925 Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3178925
-[4505217 Security update for SQL Server 2014 SP2 GDR: July 9, 2019]:https://support.microsoft.com/help/4505217
-[3194714 MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/help/3194714/
-[3171021 SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/help/3171021
-[4019099 Cumulative Update 13 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4019099/cumulative-update-13-for-sql-server-2014-sp1
-[4017793 Cumulative Update 12 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4017793/cumulative-update-12-for-sql-server-2014-sp1
-[4010392 Cumulative Update 11 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4010392/cumulative-update-11-for-sql-server-2014-sp1
-[3204399 Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/help/3204399
-[3194722 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]:https://support.microsoft.com/kb/3194722
-[3186964 Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/help/3186964
-[4057120 Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018]:https://support.microsoft.com/help/4057120
-[4019093 Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/help/4019093/
-[3174038 Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/kb/3174038
-[3174370 COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/kb/3174370
-[3162659 Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/kb/3162659
-[3167392 Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3167392
-[3144524 Cumulative update 6 for SQL Server 2014 SP1 (deprecated)]:https://support.microsoft.com/kb/3144524
-[3130926 Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3130926
-[3130999 On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]:https://support.microsoft.com/kb/3130999
-[3106660 Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3106660
-[3119148 FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]:http://support.microsoft.com/kb/3119148
-[3097972 FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]:http://support.microsoft.com/kb/3097972
-[3094221 Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3094221
-[3075950 Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3075950
-[3078973 An on-demand hotfix update package is available for SQL Server 2014 SP1]:http://support.microsoft.com/kb/3078973
-[3067839 Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3067839
-[4019091 Security update for SQL Server 2014 Service Pack 1 GDR: August 8, 2017]:http://support.microsoft.com/help/4019091
-[3194720 MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194720
-[3098852 SP1 GDR TLS 1.2 Update]:https://support.microsoft.com/hotfix/kbhotfix?kbnum=3098852&kbln=en-us
-[3070446 MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]:https://support.microsoft.com/kb/3070446
-[3058865 SQL Server 2014 Service Pack 1 release information]:https://support.microsoft.com/kb/3058865
-[3158271 Cumulative update package 14 (CU14) for SQL Server 2014]:https://support.microsoft.com/kb/3158271
-[3144517 Cumulative update package 13 (CU13) for SQL Server 2014]:https://support.microsoft.com/kb/3144517
-[3130923 Cumulative update package 12 (CU12) for SQL Server 2014]:https://support.microsoft.com/kb/3130923
-[3106659 Cumulative update package 11 (CU11) for SQL Server 2014]:http://support.microsoft.com/kb/3106659
-[3094220 Cumulative update package 10 (CU10) for SQL Server 2014]:http://support.microsoft.com/kb/3094220
-[3075949 Cumulative update package 9 (CU9) for SQL Server 2014]:http://support.microsoft.com/kb/3075949
-[3045323 MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045323
-[3067836 Cumulative update package 8 (CU8) for SQL Server 2014]:http://support.microsoft.com/kb/3067836
-[3063054 Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]:http://support.microsoft.com/kb/3063054
-[3052167 FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]:http://support.microsoft.com/kb/3052167
-[2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]:http://support.microsoft.com/kb/2999809
-[3058512 FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]:http://support.microsoft.com/kb/3058512
-[3046038 Cumulative update package 7 (CU7) for SQL Server 2014]:http://support.microsoft.com/kb/3046038
-[3048751 FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan]:http://support.microsoft.com/kb/3048751
-[3043788 An on-demand hotfix update package is available for SQL Server 2014]:http://support.microsoft.com/kb/3043788
-[3031047 Cumulative update package 6 (CU6) for SQL Server 2014]:http://support.microsoft.com/kb/3031047
-[3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]:http://support.microsoft.com/kb/3034679
-[3032087 FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014]:http://support.microsoft.com/kb/3032087
-[3024815 Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]:http://support.microsoft.com/kb/3024815
-[3011055 Cumulative update package 5 (CU5) for SQL Server 2014]:http://support.microsoft.com/kb/3011055
-[3014867 FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]:http://support.microsoft.com/kb/3014867
-[2999197 Cumulative update package 4 (CU4) for SQL Server 2014]:http://support.microsoft.com/kb/2999197
-[3007050 FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]:http://support.microsoft.com/kb/3007050
-[2999809 FIX: Poor performance when a query contains table joins in SQL Server 2014]:http://support.microsoft.com/kb/2999809
-[2984923 Cumulative update package 3 (CU3) for SQL Server 2014]:http://support.microsoft.com/kb/2984923
-[2977316 MS14-044: Description of the security update for SQL Server 2014 (QFE)]:http://support.microsoft.com/kb/2977316
-[2967546 Cumulative update package 2 (CU2) for SQL Server 2014]:http://support.microsoft.com/kb/2967546
-[2931693 Cumulative update package 1 (CU1) for SQL Server 2014]:http://support.microsoft.com/kb/2931693
+[Cumulative Update 4 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4500181
+[Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505422
+[Cumulative Update 3 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4491539
+[Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
+[Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
+[Security update for SQL Server 2014 SP3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505218
+[SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
+[Cumulative Update 18 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4500180
+[Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019]:https://support.microsoft.com/help/4505419
+[Cumulative Update 17 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4491540
+[Cumulative Update 16 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4482967
+[Cumulative Update 15 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4469137
+[Cumulative Update 14 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4459860
+[Cumulative Update 13 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4456287
+[Cumulative Update 12 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4130489
+[Cumulative Update 11 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4077063
+[Cumulative Update 10 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4052725/cumulative-update-10-for-sql-server-2014-sp2
+[Cumulative Update 9 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4055557/cumulative-update-9-for-sql-server-2014-sp2
+[Cumulative Update 8 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4037356/cumulative-update-8-for-sql-server-2014-sp2
+[Cumulative Update 7 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4032541/cumulative-update-7-for-sql-server-2014-sp2
+[Cumulative Update 6 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4019094/cumulative-update-6-for-sql-server-2014-sp2
+[Cumulative Update 5 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4013098/cumulative-update-5-for-sql-server-2014-sp2
+[Cumulative Update 4 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4010394/cumulative-update-4-for-sql-server-2014-sp2
+[Cumulative update 3 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3204388
+[MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/help/3194718
+[Cumulative update 2 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3188778
+[Cumulative update 1 for SQL Server 2014 SP2]:https://support.microsoft.com/help/3178925
+[Security update for SQL Server 2014 SP2 GDR: July 9, 2019]:https://support.microsoft.com/help/4505217
+[MS16-136: Description of the security update for SQL Server 2014 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/help/3194714/
+[SQL Server 2014 Service Pack 2 release information]:https://support.microsoft.com/help/3171021
+[Cumulative Update 13 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4019099/cumulative-update-13-for-sql-server-2014-sp1
+[Cumulative Update 12 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4017793/cumulative-update-12-for-sql-server-2014-sp1
+[Cumulative Update 11 for SQL Server 2014 SP1]:https://support.microsoft.com/help/4010392/cumulative-update-11-for-sql-server-2014-sp1
+[Cumulative update package 10 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/help/3204399
+[MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 CU: November 8, 2016]:https://support.microsoft.com/kb/3194722
+[Cumulative update 9 for SQL Server 2014 SP1]:https://support.microsoft.com/help/3186964
+[Security update for SQL Server 2014 Service Pack 2 GDR: January 16, 2018]:https://support.microsoft.com/help/4057120
+[Description of the security update for SQL Server 2014 Service Pack 2 GDR: August 8, 2017]:https://support.microsoft.com/help/4019093/
+[Cumulative update 8 for SQL Server 2014 SP1]:https://support.microsoft.com/kb/3174038
+[COD Hotfix A memory leak occurs when you use Azure Storage in SQL Server 2014]:https://support.microsoft.com/kb/3174370
+[Cumulative Update 7 for SQL Server 2014 SP1]:https://support.microsoft.com/kb/3162659
+[Cumulative Update 6 for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3167392
+[Cumulative update 6 for SQL Server 2014 SP1 (deprecated)]:https://support.microsoft.com/kb/3144524
+[Cumulative Update 5 (CU5) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3130926
+[On-demand hotfix update package for SQL Server 2014 Service Pack 1 Cumulative Update 4]:https://support.microsoft.com/kb/3130999
+[Cumulative update package 4 (CU4) for SQL Server 2014 Service Pack 1]:https://support.microsoft.com/kb/3106660
+[FIX: Error 3203 occurs and a SQL Server 2014 backup job can't restart after a network failure]:http://support.microsoft.com/kb/3119148
+[FIX: Error when your stored procedure calls another stored procedure on a linked server in SQL Server 2014]:http://support.microsoft.com/kb/3097972
+[Cumulative update package 3 (CU3) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3094221
+[Cumulative update package 2 (CU2) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3075950
+[An on-demand hotfix update package is available for SQL Server 2014 SP1]:http://support.microsoft.com/kb/3078973
+[Cumulative update package 1 (CU1) for SQL Server 2014 Service Pack 1]:http://support.microsoft.com/kb/3067839
+[Security update for SQL Server 2014 Service Pack 1 GDR: August 8, 2017]:http://support.microsoft.com/help/4019091
+[MS16-136: Description of the security update for SQL Server 2014 Service Pack 1 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194720
+[SP1 GDR TLS 1.2 Update]:https://support.microsoft.com/hotfix/kbhotfix?kbnum=3098852&kbln=en-us
+[MS15-058: Description of the nonsecurity update for SQL Server 2014 Service Pack 1 GDR: July 14, 2015]:https://support.microsoft.com/kb/3070446
+[SQL Server 2014 Service Pack 1 release information]:https://support.microsoft.com/kb/3058865
+[Cumulative update package 14 (CU14) for SQL Server 2014]:https://support.microsoft.com/kb/3158271
+[Cumulative update package 13 (CU13) for SQL Server 2014]:https://support.microsoft.com/kb/3144517
+[Cumulative update package 12 (CU12) for SQL Server 2014]:https://support.microsoft.com/kb/3130923
+[Cumulative update package 11 (CU11) for SQL Server 2014]:http://support.microsoft.com/kb/3106659
+[Cumulative update package 10 (CU10) for SQL Server 2014]:http://support.microsoft.com/kb/3094220
+[Cumulative update package 9 (CU9) for SQL Server 2014]:http://support.microsoft.com/kb/3075949
+[MS15-058: Description of the security update for SQL Server 2014 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045323
+[Cumulative update package 8 (CU8) for SQL Server 2014]:http://support.microsoft.com/kb/3067836
+[Update enables Premium Storage support for Data files on Azure Storage and resolves backup failures]:http://support.microsoft.com/kb/3063054
+[FIX: Error 1205 when you execute parallel query that contains outer join operators in SQL Server 2014]:http://support.microsoft.com/kb/3052167
+[FIX: Poor performance when a query contains table joins in SQL Server 2014]:http://support.microsoft.com/kb/2999809
+[FIX: Unpivot Transformation task changes null to zero or empty strings in SSIS 2014]:http://support.microsoft.com/kb/3058512
+[Cumulative update package 7 (CU7) for SQL Server 2014]:http://support.microsoft.com/kb/3046038
+[FIX: Deadlock cannot be resolved automatically when you run a SELECT query that can result in a parallel batch-mode scan]:http://support.microsoft.com/kb/3048751
+[An on-demand hotfix update package is available for SQL Server 2014]:http://support.microsoft.com/kb/3043788
+[Cumulative update package 6 (CU6) for SQL Server 2014]:http://support.microsoft.com/kb/3031047
+[FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]:http://support.microsoft.com/kb/3034679
+[FIX: Cannot show requested dialog after you connect to the latest SQL Database Update V12 (preview) with SQL Server 2014]:http://support.microsoft.com/kb/3032087
+[Large query compilation waits on RESOURCE_SEMAPHORE_QUERY_COMPILE in SQL Server 2014]:http://support.microsoft.com/kb/3024815
+[Cumulative update package 5 (CU5) for SQL Server 2014]:http://support.microsoft.com/kb/3011055
+[FIX: "Remote hardening failure" exception cannot be caught and a potential data loss when you use SQL Server 2014]:http://support.microsoft.com/kb/3014867
+[Cumulative update package 4 (CU4) for SQL Server 2014]:http://support.microsoft.com/kb/2999197
+[FIX: RTDATA_LIST waits when you run natively stored procedures that encounter expected failures in SQL Server 2014]:http://support.microsoft.com/kb/3007050
+[FIX: Poor performance when a query contains table joins in SQL Server 2014]:http://support.microsoft.com/kb/2999809
+[Cumulative update package 3 (CU3) for SQL Server 2014]:http://support.microsoft.com/kb/2984923
+[MS14-044: Description of the security update for SQL Server 2014 (QFE)]:http://support.microsoft.com/kb/2977316
+[Cumulative update package 2 (CU2) for SQL Server 2014]:http://support.microsoft.com/kb/2967546
+[Cumulative update package 1 (CU1) for SQL Server 2014]:http://support.microsoft.com/kb/2931693
 [TLS 1.2 support for SQL Server 2014 RTM]:https://support.microsoft.com/hotfix/kbhotfix?kbnum=3098856&kbln=en-us
-[3045324 MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045324
-[2977315 MS14-044: Description of the security update for SQL Server 2014 (GDR)]:http://support.microsoft.com/kb/2977315
+[MS15-058: Description of the security update for SQL Server 2014 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045324
+[MS14-044: Description of the security update for SQL Server 2014 (GDR)]:http://support.microsoft.com/kb/2977315
 
 
 ## Microsoft SQL Server 2012 Builds
