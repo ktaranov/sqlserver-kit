@@ -9,7 +9,6 @@ Headers:
  - [SQL Server Developer Edition Info](#sql-server-developer-edition-info)
  - [SQL Server Express direct download links](#sql-server-express-direct-download-links)
  - [Internal Database Version and Compatibility Level](#internal-database-version-and-compatibility-level)
- - [Quick summary for SQL Server Service Packs](#quick-summary-for-sql-server-service-packs)
  - [Microsoft SQL Server 2019 Builds](#microsoft-sql-server-2019-builds)
  - [Microsoft SQL Server 2017 Builds](#microsoft-sql-server-2017-builds)
  - [Microsoft SQL Server 2016 Builds](#microsoft-sql-server-2016-builds)
@@ -395,49 +394,6 @@ For details about how to assess the performance differences of your most importa
  - [ALTER DATABASE Compatibility Level (Transact-SQL)](https://msdn.microsoft.com/library/bb510680(SQL.130).aspx)
  - [View or Change the Compatibility Level of a Database](https://msdn.microsoft.com/library/bb933794.aspx)
  - [Database Version vs Database Compatibility Level](http://sqlblog.com/blogs/jonathan_kehayias/archive/2009/07/28/database-version-vs-database-compatibility-level.aspx) (by Jonathan Kehayias)
-
-
-## Quick summary for SQL Server Service Packs
-<a id="quick-summary-for-sql-server-service-packs"></a>
-
-| Version            | Codename    | RTM (no SP)     | SP1            | SP2                             | SP3                               | SP4                             |
-|:-------------------|:------------|:----------------|:---------------|:--------------------------------|:----------------------------------|:--------------------------------|
-| SQL Server 2017    | 2017        | [14.0.1000.169] |                |                                 |                                   |                                 |
-| SQL Server 2016    | 2016        | [13.0.1601.5]   | [13.0.4001.0]  | [13.5026.0]                     |                                   |                                 |
-| SQL Server 2014    | SQL14       | 12.0.2000.8     | [12.0.4100.1]  | [12.0.5000.0]                   |                                   |                                 |
-| SQL Server 2012    | Denali      | 11.0.2100.60    | [11.0.3000.0]  | [11.0.5058.0]                   | [11.0.6020.0]                     | [11.0.7001.0]                   |
-| SQL Server 2008 R2 | Kilimanjaro | 10.50.1600.1    | [10.50.2500.0] | [10.50.4000.0]<br/>10.52.4000.0 | [10.50.6000.34]<br/>10.53.6000.34 |                                 |
-| SQL Server 2008    | Katmai      | 10.0.1600.22    | [10.0.2531.0]  | [10.0.4000.0]<br/>10.2.4000.0   | [10.0.5500.0]<br/>10.3.5500.0     | [10.0.6000.29]<br/>10.4.6000.29 |
-| SQL Server 2005    | Yukon       | 9.0.1399.06     | [9.0.2047]     | [9.0.3042]                      | [9.0.4035]                        | [9.0.5000]                      |
-| SQL Server 2000    | Shiloh      | 8.0.194         | [8.0.384]      | [8.0.532]                       | [8.0.760]                         | [8.0.2039]                      |
-| SQL Server 7.0     | Sphinx      | 7.0.623         | 7.0.699        | 7.0.842                         | 7.0.961                           | [7.0.1063]                      |
-
-[14.0.1000.169]:https://www.microsoft.com/sql-server/sql-server-downloads
-[13.5026.0]:https://go.microsoft.com/fwlink/?LinkID=799011
-[13.0.1601.5]:https://www.microsoft.com/en-in/evalcenter/evaluate-sql-server-2016
-[13.0.4001.0]:https://support.microsoft.com/kb/3182545
-[12.0.5000.0]:https://support.microsoft.com/kb/3171021
-[12.0.4100.1]:http://www.microsoft.com/download/details.aspx?id=46694
-[11.0.3000.0]:http://www.microsoft.com/download/details.aspx?id=35575
-[11.0.5058.0]:http://www.microsoft.com/download/details.aspx?id=43340
-[11.0.6020.0]:http://www.microsoft.com/download/details.aspx?id=49996
-[11.0.7001.0]:https://www.microsoft.com/download/details.aspx?id=56040
-[10.50.2500.0]:http://www.microsoft.com/download/details.aspx?id=26727
-[10.50.4000.0]:http://www.microsoft.com/download/details.aspx?id=30437
-[10.50.6000.34]:http://www.microsoft.com/download/details.aspx?id=44271
-[10.0.2531.0]:http://www.microsoft.com/downloads/details.aspx?familyid=66AB3DBB-BF3E-4F46-9559-CCC6A4F9DC19
-[10.0.4000.0]:http://www.microsoft.com/downloads/en/details.aspx?FamilyID=8FBFC1DE-D25E-4790-88B5-7DDA1F1D4E17
-[10.0.5500.0]:http://www.microsoft.com/download/en/details.aspx?id=27594
-[10.0.6000.29]:http://www.microsoft.com/download/details.aspx?id=44278
-[9.0.2047]:http://www.microsoft.com/downloads/details.aspx?FamilyID=CB6C71EA-D649-47FF-9176-E7CAC58FD4BC
-[9.0.3042]:http://www.microsoft.com/downloads/details.aspx?FamilyId=d07219b2-1e23-49c8-8f0c-63fa18f26d3a
-[9.0.4035]:http://www.microsoft.com/downloads/details.aspx?FamilyId=ae7387c3-348c-4faa-8ae5-949fdfbe59c4
-[9.0.5000]:http://www.microsoft.com/downloads/details.aspx?FamilyId=b953e84f-9307-405e-bceb-47bd345baece
-[8.0.384]:http://www.microsoft.com/downloads/details.aspx?FamilyID=DFF43C50-51DF-4FE0-9717-DE41FB48556E
-[8.0.532]:http://www.microsoft.com/downloads/details.aspx?FamilyID=75672496-af8e-40dc-853e-ad2c9fe96882
-[8.0.760]:http://www.microsoft.com/downloads/details.aspx?familyid=90DCD52C-0488-4E46-AFBF-ACACE5369FA3
-[8.0.2039]:http://www.microsoft.com/downloads/details.aspx?FamilyId=8E2DFC8D-C20E-4446-99A9-B7F0213F8BC5
-[7.0.1063]:https://www.microsoft.com/download/details.aspx?id=7959
 
 
 ## Microsoft SQL Server 2019 Builds
@@ -939,7 +895,7 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 
 | Build         | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                               | Release Date |
 |---------------|------------------|--------|------|-----------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 11.0.7469.6   | 2011.110.7469.6  | SP4    | COD  | **Latest CU SP4**                 | 4091266 | [On-demand hotfix update package for SQL Server 2012 SP4]                                                                      | 2018-03-28   |
+| 11.0.7469.6   | 2011.110.7469.6  | SP4    | CU   | **Latest CU SP4**                 | 4091266 | [On-demand hotfix update package for SQL Server 2012 SP4]                                                                      | 2018-03-28   |
 | 11.0.77462.6  | 2011.110.7462.6  | SP4    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057116 | [Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |
 | 11.0.7001.0   | 2011.110.7001.0  | SP4    | SP   |                                   | 4018073 | [SQL Server 2012 Service Pack 4 release information]                                                                           | 2017-10-05   |
 | 11.0.6615.2   | 2012.110.6615.2  | SP3    | CU   | CVE-2017-5715,2017-5753,2017-5754 | 4057121 | [Description of the security update for SQL Server 2012 SP3 CU: January 16, 2018]                                              | 2018-01-16   |
