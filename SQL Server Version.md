@@ -456,25 +456,25 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (CTP3.1) - 15.0.1700.0 (X64)
+Microsoft SQL Server 2019 (RC1.1) - 15.0.1900.47 (X64)
    Jun 20 2019 00:00:00
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
-| Build         | File version      | Branch | Type | Info   | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb |
-|---------------|-------------------|--------|------|--------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   | Latest |         | [Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)] | 2019-08-28   | 2019-08-17 |       |        |     1360 |
-| 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |        |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |
-| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |
-| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP3.1                          | 2019-06-26   | 2019-06-20 |       |        |     1341 |
-| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP3.0                          | 2019-05-22   | 2019-05-17 |       |        |     1339 |
-| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.5                          | 2019-04-23   | 2019-04-16 |       |        |     1340 |
-| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.4                          | 2019-03-27   | 2019-03-17 |       |        |     1331 |
-| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.3                          | 2019-03-01   | 2019-02-16 |       |        |     1331 |
-| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.2                          | 2018-12-11   | 2018-11-02 |       |        |     1302 |
-| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |
-| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |        |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |
+| Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb |
+|---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   | **Latest** |         | [Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)] | 2019-08-28   | 2019-08-17 |       |        |     1360 |
+| 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |
+| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |
+| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.1                          | 2019-06-26   | 2019-06-20 |       |        |     1341 |
+| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.0                          | 2019-05-22   | 2019-05-17 |       |        |     1339 |
+| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.5                          | 2019-04-23   | 2019-04-16 |       |        |     1340 |
+| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.4                          | 2019-03-27   | 2019-03-17 |       |        |     1331 |
+| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.3                          | 2019-03-01   | 2019-02-16 |       |        |     1331 |
+| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.2                          | 2018-12-11   | 2018-11-02 |       |        |     1302 |
+| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |
+| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |
 
 [Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)]:https://www.microsoft.com/sql-server/sql-server-2019#Install
 
@@ -627,7 +627,7 @@ Microsoft SQL Server 2016 (SP2-CU10) (KB4524334) - 13.0.5492.2 (X64)
 | 13.0.4199.0   | 2015.130.4199.0   | SP1   | COD  |                                   | 3207512 | [Important update for SQL Server 2016 SP1 Reporting Services]                                                          | 2016-11-23   | 2016-11-18 |     2 |      2 |      521 |
 | 13.0.4001.0   | 2015.130.4001.0   | SP1   | SP   |                                   | 3182545 | [SQL Server 2016 Service Pack 1 release information]                                                                   | 2016-11-16   | 2016-10-29 |    33 |     33 |      552 |
 | 13.0.2218.0   | 2015.130.2218.0   | RTM   | COD  | CVE-2017-5715,2017-5753,2017-5754 | 4058559 | [Security update for SQL Server 2016 CU: January 6, 2018]                                                              | 2018-01-06   |            |       |        |      918 |
-| 13.0.2216.0   | 2015.130.2216.0   | RTM   | CU   |                                   | 4037357 | [Cumulative Update 9 for SQL Server 2016]                                                                              | 2017-11-21   | 2017-11-09 |    26 |     21 |      865 |
+| 13.0.2216.0   | 2015.130.2216.0   | RTM   | CU   | **Latest CU RTM**                 | 4037357 | [Cumulative Update 9 for SQL Server 2016]                                                                              | 2017-11-21   | 2017-11-09 |    26 |     21 |      865 |
 | 13.0.2213.0   | 2015.130.2213.0   | RTM   | CU   |                                   | 4040713 | [Cumulative Update 8 for SQL Server 2016]                                                                              | 2017-09-18   | 2017-09-06 |    19 |     17 |      864 |
 | 13.0.2210.0   | 2015.130.2210.0   | RTM   | CU   |                                   | 4024304 | [Cumulative Update 7 for SQL Server 2016]                                                                              | 2017-08-08   | 2017-07-16 |    33 |     30 |      815 |
 | 13.0.2204.0   | 2015.130.2204.0   | RTM   | CU   |                                   | 4019914 | [Cumulative Update 6 for SQL Server 2016]                                                                              | 2017-05-15   | 2017-04-20 |    28 |     22 |      814 |
@@ -755,7 +755,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   |                                   | 4470220 | [Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
 | 12.0.6108.1  | 2014.120.6108.1  | SP3    | GDR  | CVE-2019-1068                     | 4505218 | [Security update for SQL Server 2014 SP3 GDR: July 9, 2019]                                                                | 2019-07-09   |     1 |      1 |      654 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   |                                   | 4022619 | [SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
-| 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | **Latest CU SP3**                 | 4500180 | [Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
+| 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | **Latest CU SP2**                 | 4500180 | [Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
 | 12.0.5659.1  | 2014.120.5659.1  | SP2    | GDR  | CVE-2019-1068                     | 4505419 | [Security update for SQL Server 2014 SP2 CU17 GDR: July 9, 2019]                                                           | 2019-07-09   |     1 |      1 |      679 |
 | 12.0.5632.1  | 2014.120.5632.1  | SP2    | CU   |                                   | 4491540 | [Cumulative Update 17 for SQL Server 2014 SP2]                                                                             | 2019-04-16   |     3 |      3 |      678 |
 | 12.0.5626.1  | 2014.120.5626.1  | SP2    | CU   |                                   | 4482967 | [Cumulative Update 16 for SQL Server 2014 SP2]                                                                             | 2019-02-19   |     3 |      3 |      678 |
@@ -935,178 +935,184 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 ## Microsoft SQL Server 2012 Builds
 <a id="microsoft-sql-server-2012-builds"></a>
 
-All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2012](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012)
+All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012)
 
-| Build         | File version     | Branch | Type | KB / Description                                                                                                                       | Release Date |
-|---------------|------------------|--------|------|----------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 11.0.77462.6  | 2011.110.7462.6  | SP4    | GDR  | [4057116 Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |
-| 11.0.7001.0   | 2011.110.7001.0  | SP4    | SP   | [4018073 SQL Server 2012 Service Pack 4 release information]                                                                           | 2017-10-05   |
-| 11.0.6607.3   | 2011.110.6607.3  | SP3    | CU   | [4016762 Cumulative Update 10 for SQL Server 2012 SP3]                                                                                 | 2017-08-08   |
-| 11.0.6598.0   | 2011.110.6598.0  | SP3    | CU   | [4016762 Cumulative Update 9 for SQL Server 2012 SP3]                                                                                  | 2017-05-15   |
-| 11.0.6594.0   | 2011.110.6594.0  | SP3    | CU   | [4013104 Cumulative Update 8 for SQL Server 2012 SP3]                                                                                  | 2017-03-21   |
-| 11.0.6579.0   | 2011.110.6579.0  | SP3    | CU   | [3205051 Cumulative Update Package 7 for SQL Server 2012 SP3]                                                                          | 2017-01-18   |
-| 11.0.6567.0   | 2011.110.6567.0  | SP3    | COD  | [3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
-| 11.0.6544.0   | 2011.110.6544.0  | SP3    | CU   | [3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
-| 11.0.6540.0   | 2011.110.6540.0  | SP3    | CU   | [3165264 Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
-| 11.0.6537.0   | 2011.110.6537.0  | SP3    | CU   | [3152635 Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
-| 11.0.6523.0   | 2011.110.6523.0  | SP3    | CU   | [3137746 Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
-| 11.0.6518.0   | 2011.110.6518.0  | SP3    | CU   | [3123299 Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
-| 11.0.6248.0   | 2011.110.6248.0  | SP3    | GDR  | [3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]                        | 2016-11-08   |
-| 11.0.6216.27  | 2011.110.6216.27 | SP3    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]                                                                                  | 2016-01-27   |
-| 11.3.6020.0   | 2011.110.6020.0  | SP3    | SP   | [3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
-| 11.0.5678.0   | 2011.110.5678.0  | SP2    | CU   | [3205054 Cumulative Update 16 for SQL Server 2012 SP2]                                                                                 | 2017-01-18   |
-| 11.0.5676.0   | 2011.110.5676.0  | SP2    | CU   | [3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]                                                       | 2016-11-17   |
-| 11.0.5676.0   | 2011.110.5676.0  | SP2    | COD  | [3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
-| 11.0.5657.0   | 2011.110.5657.0  | SP2    | CU   | [3180914 Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
-| 11.0.5655.0   | 2011.110.5655.0  | SP2    | CU   | [3165266 Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
-| 11.0.5649.0   | 2011.110.5649.0  | SP2    | CU   | [3152637 Cumulative update package 12 for SQL Server 2012 SP2]                                                                         | 2016-05-16   |
-| 11.0.5646.2   | 2011.110.5646.2  | SP2    | CU   | [3137745 Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
-| 11.0.5644.2   | 2011.110.5644.2  | SP2    | CU   | [3120313 Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
-| 11.0.5641.0   | 2011.110.5641.0  | SP2    | CU   | [3098512 Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-16   |
-| 11.0.5636     | 2011.110.5636.3  | SP2    | COD  | [3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
-| 11.0.5634     | 2011.110.5634.0  | SP2    | CU   | [3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
-| 11.0.5629     | 2011.110.5629.0  | SP2    | COD  | [3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
-| 11.0.5623     | 2011.110.5623.0  | SP2    | CU   | [3072100 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]                                                         | 2015-07-20   |
-| 11.0.5613     | 2011.110.5613.0  | SP2    | COD  | [3045319 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]                           | 2015-07-14   |
-| 11.0.5592     | 2011.110.5592.0  | SP2    | CU   | [3052468 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]                                                         | 2015-05-19   |
-| 11.0.5582     | 2011.110.5582.0  | SP2    | CU   | [3037255 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]                                                         | 2015-03-16   |
-| 11.0.5571     | 2011.110.5571.0  | SP2    | COD  | [3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                          | 2015-05-15   |
-| 11.0.5569     | 2011.110.5569.0  | SP2    | CU   | [3007556 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]                                                         | 2015-01-20   |
-| 11.0.5556     | 2011.110.5556.0  | SP2    | CU   | [3002049 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]                                                         | 2014-11-17   |
-| 11.0.5548     | 2011.110.5548.0  | SP2    | CU   | [2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]                                                         | 2014-09-15   |
-| 11.0.5532     | 2011.110.5532.0  | SP2    | CU   | [2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]                                                         | 2014-07-24   |
-| 11.0.5522     | 2011.110.5522.0  | SP2    | COD  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]         | 2014-06-20   |
-| 11.0.5388     | 2012.110.5388.0  | SP2    | GDR  | [3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]                        | 2016-11-08   |
-| 11.0.5352     | 2012.110.5352.0  | SP2    | GDR  | [3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]                                                                                  | 2016-01-27   |
-| 11.0.5343     | 2011.110.5343.0  | SP2    | GDR  | [3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]                           | 2015-07-14   |
-| 11.0.5058     | 2011.110.5058.0  | SP2    | SP   | [SQL Server 2012 Service Pack 2 (SP2)]                                                                                                 | 2014-06-10   |
-| 11.0.3513     | 2011.110.3513.0  | SP1    | QFE  | [3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]                                      | 2015-07-14   |
-| 11.0.3492     | 2011.110.3492.0  | SP1    | CU   | [3052476 Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]                                                       | 2015-05-18   |
-| 11.0.3487     | 2011.110.3487.0  | SP1    | CU   | [3038001 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]                                                       | 2015-03-16   |
-| 11.0.3486     | 2011.110.3486.0  | SP1    | QFE  | [3023636 Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]                                                       | 2015-01-19   |
-| 11.0.3460     | 2011.110.3460.0  | SP1    | COD  | [2977325 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]                                        | 2014-08-12   |
-| 11.0.3482     | 2011.110.3482.0  | SP1    | CU   | [3002044 Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]                                                       | 2014-11-17   |
-| 11.0.3470     | 2011.110.3470.0  | SP1    | CU   | [2991533 Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]                                                       | 2014-09-15   |
-| 11.0.3449     | 2011.110.3449.0  | SP1    | CU   | [2975396 Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]                                                       | 2014-07-21   |
-| 11.0.3437     | 2011.110.3437.0  | SP1    | COD  | [2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]         | 2014-06-10   |
-| 11.0.3431     | 2011.110.3431.0  | SP1    | CU   | [2954099 Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]                                                       | 2014-05-19   |
-| 11.0.3412     | 2011.110.3412.0  | SP1    | CU   | [2931078 Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]                                                         | 2014-03-18   |
-| 11.0.3401     | 2011.110.3401.0  | SP1    | CU   | [2917531 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]                                                         | 2014-01-20   |
-| 11.0.3393     | 2011.110.3393.0  | SP1    | CU   | [2894115 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]                                                         | 2013-11-18   |
-| 11.0.3381     | 2011.110.3381.0  | SP1    | CU   | [2874879 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]                                                         | 2013-09-16   |
-| 11.0.3373     | 2011.110.3373.0  | SP1    | CU   | [2861107 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]                                                         | 2013-07-16   |
-| 11.0.3368     | 2011.110.3368.0  | SP1    | CU   | [2833645 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]                                                         | 2013-05-31   |
-| 11.0.3350     | 2011.110.3350.0  | SP1    | COD  | [2832017 FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1] | 2013-04-17   |
-| 11.0.3349     | 2011.110.3349.0  | SP1    | CU   | [2812412 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]                                                         | 2013-03-18   |
-| 11.0.3339     | 2011.110.3339.0  | SP1    | CU   | [2790947 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]                                                         | 2013-01-25   |
-| 11.0.3335     | 2011.110.3335.0  | SP1    | COD  | [2800050 FIX: Component installation process fails after you install SQL Server 2012 SP1]                                              | 2013-01-14   |
-| 11.0.3321     | 2011.110.3321.0  | SP1    | CU   | [2765331 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]                                                         | 2012-11-20   |
-| 11.0.3156     | 2011.110.3156.0  | SP1    | COD  | [3045318 MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]                                      | 2015-07-14   |
-| 11.0.3153     | 2011.110.3153.0  | SP1    | GDR  | [2977326 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]                                        | 2014-08-12   |
-| 11.0.3128     | 2011.110.3128.0  | SP1    | COD  | [2793634 Windows Installer starts repeatedly after you install SQL Server 2012 SP1]                                                    | 2013-01-03   |
-| 11.0.3000     | 2011.110.3000.0  | SP1    | SP   | [SQL Server 2012 Service Pack 1 (SP1)]                                                                                                 | 2012-11-06   |
-| 11.0.2845     | 2011.110.2845.0  | SP1    | CTP  | SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                                    | 2012-09-20   |
-| 11.0.2809     | 2011.110.2809.24 | SP1    | CTP  | SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                                    | 2012-07-05   |
-| 11.0.2424     | 2011.110.2424.0  | RTM    | CU   | [2908007 Cumulative update package 11 (CU11) for SQL Server 2012]                                                                      | 2013-12-17   |
-| 11.0.2420     | 2011.110.2420.0  | RTM    | CU   | [2891666 Cumulative update package 10 (CU10) for SQL Server 2012]                                                                      | 2013-10-21   |
-| 11.0.2419     | 2011.110.2419.0  | RTM    | CU   | [2867319 Cumulative update package 9 (CU9) for SQL Server 2012]                                                                        | 2013-08-21   |
-| 11.0.2410     | 2011.110.2410.0  | RTM    | CU   | [2844205 Cumulative update package 8 (CU8) for SQL Server 2012]                                                                        | 2013-06-18   |
-| 11.0.2405     | 2011.110.2405.0  | RTM    | CU   | [2823247 Cumulative update package 7 (CU7) for SQL Server 2012]                                                                        | 2013-04-15   |
-| 11.0.2401     | 2011.110.2401.0  | RTM    | CU   | [2728897 Cumulative update package 6 (CU6) for SQL Server 2012]                                                                        | 2013-02-18   |
-| 11.0.2395     | 2011.110.2395.0  | RTM    | CU   | [2777772 Cumulative update package 5 (CU5) for SQL Server 2012]                                                                        | 2012-12-18   |
-| 11.0.9000     | 2011.110.9000.5  | RTM    | CTP  | Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                               | 2012-11-27   |
-| 11.0.2383     | 2011.110.2383.0  | RTM    | CU   | [2758687 Cumulative update package 4 (CU4) for SQL Server 2012]                                                                        | 2012-10-18   |
-| 11.0.2376     | 2011.110.2376.0  | RTM    | COD  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
-| 11.0.2332     | 2011.110.2332.0  | RTM    | CU   | [2723749 Cumulative update package 3 (CU3) for SQL Server 2012]                                                                        | 2012-08-29   |
-| 11.0.2325     | 2011.110.2325.0  | RTM    | CU   | [2703275 Cumulative update package 2 (CU2) for SQL Server 2012]                                                                        | 2012-06-18   |
-| 11.0.2316     | 2011.110.2316.0  | RTM    | CU   | [2679368 Cumulative update package 1 (CU1) for SQL Server 2012]                                                                        | 2012-04-12   |
-| 11.0.2218     | 2011.110.2218.0  | RTM    | COD  | [Microsoft Security Bulletin MS12-070]                                                                                                 | 2012-10-09   |
-| 11.0.2214     | 2011.110.2214.0  | RTM    | COD  | 2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence                                                          | 2012-04-06   |
-| 11.0.2100     | 2011.110.2100.60 | RTM    | RTM  | SQL Server 2012 RTM                                                                                                                    | 2012-03-06   |
-| 11.0.1913     | 2011.110.1913.37 | RC     | RC   | Microsoft SQL Server 2012 Release Candidate 1 (RC1)                                                                                    | 2011-12-16   |
-| 11.0.1750     | 2011.110.1750.32 | RC     | RC   | Microsoft SQL Server 2012 Release Candidate 0 (RC0)                                                                                    | 2011-11-17   |
-| 11.0.1440     | 2010.110.1440.19 | CTP    | CTP  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                                      | 2011-07-11   |
-| 11.0.1103     | 2010.110.1103.9  | CTP    | CTP  | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                                      | 2010-11-08   |
+| Build         | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                               | Release Date |
+|---------------|------------------|--------|------|-----------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 11.0.7469.6   | 2011.110.7469.6  | SP4    | COD  | **Latest CU SP4**                 | 4091266 | [On-demand hotfix update package for SQL Server 2012 SP4]                                                                      | 2018-03-28   |
+| 11.0.77462.6  | 2011.110.7462.6  | SP4    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057116 | [Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |
+| 11.0.7001.0   | 2011.110.7001.0  | SP4    | SP   |                                   | 4018073 | [SQL Server 2012 Service Pack 4 release information]                                                                           | 2017-10-05   |
+| 11.0.6615.2   | 2012.110.6615.2  | SP3    | CU   | CVE-2017-5715,2017-5753,2017-5754 | 4057121 | [Description of the security update for SQL Server 2012 SP3 CU: January 16, 2018]                                              | 2018-01-16   |
+| 11.0.6607.3   | 2011.110.6607.3  | SP3    | CU   | **Latest CU SP3**                 | 4016762 | [Cumulative Update 10 for SQL Server 2012 SP3]                                                                                 | 2017-08-08   |
+| 11.0.6598.0   | 2011.110.6598.0  | SP3    | CU   |                                   | 4016762 | [Cumulative Update 9 for SQL Server 2012 SP3]                                                                                  | 2017-05-15   |
+| 11.0.6594.0   | 2011.110.6594.0  | SP3    | CU   |                                   | 4013104 | [Cumulative Update 8 for SQL Server 2012 SP3]                                                                                  | 2017-03-21   |
+| 11.0.6579.0   | 2011.110.6579.0  | SP3    | CU   |                                   | 3205051 | [Cumulative Update Package 7 for SQL Server 2012 SP3]                                                                          | 2017-01-18   |
+| 11.0.6567.0   | 2011.110.6567.0  | SP3    | COD  |                                   | 3194724 | [MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.6544.0   | 2011.110.6544.0  | SP3    | CU   |                                   | 3180915 | [Cumulative update 5 for SQL Server 2012 Service Pack 3]                                                                       | 2016-09-20   |
+| 11.0.6540.0   | 2011.110.6540.0  | SP3    | CU   |                                   | 3165264 | [Cumulative Update 4 for SQL Server 2012 SP3]                                                                                  | 2016-07-18   |
+| 11.0.6537.0   | 2011.110.6537.0  | SP3    | CU   |                                   | 3152635 | [Cumulative update package 3 for SQL Server 2012 SP3]                                                                          | 2016-05-16   |
+| 11.0.6523.0   | 2011.110.6523.0  | SP3    | CU   |                                   | 3137746 | [Cumulative update package 2 for SQL Server 2012 SP3]                                                                          | 2016-03-21   |
+| 11.0.6518.0   | 2011.110.6518.0  | SP3    | CU   |                                   | 3123299 | [Cumulative update package 1 for SQL Server 2012 SP3]                                                                          | 2016-01-19   |
+| 11.0.6248.0   | 2011.110.6248.0  | SP3    | GDR  |                                   | 3194721 | [MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.6216.27  | 2011.110.6216.27 | SP3    | GDR  |                                   | 3135244 | [TLS 1.2 support for SQL Server 2012 SP3 GDR]                                                                                  | 2016-01-27   |
+| 11.3.6020.0   | 2011.110.6020.0  | SP3    | SP   |                                   | 3072779 | [Microsoft SQL Server 2012 Service Pack 3 (SP3)]                                                                               | 2015-11-21   |
+| 11.0.5678.0   | 2011.110.5678.0  | SP2    | CU   | **Latest CU SP2**                 | 3205054 | [Cumulative Update 16 for SQL Server 2012 SP2]                                                                                 | 2017-01-18   |
+| 11.0.5676.0   | 2011.110.5676.0  | SP2    | CU   |                                   | 3205416 | [Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]                                                       | 2016-11-17   |
+| 11.0.5676.0   | 2011.110.5676.0  | SP2    | COD  |                                   | 3194725 | [MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]                         | 2016-11-17   |
+| 11.0.5657.0   | 2011.110.5657.0  | SP2    | CU   |                                   | 3180914 | [Cumulative Update 14 for SQL Server 2012 SP2]                                                                                 | 2016-09-20   |
+| 11.0.5655.0   | 2011.110.5655.0  | SP2    | CU   |                                   | 3165266 | [Cumulative Update 13 for SQL Server 2012 SP2]                                                                                 | 2016-07-18   |
+| 11.0.5649.0   | 2011.110.5649.0  | SP2    | CU   |                                   | 3152637 | [Cumulative update package 12 for SQL Server 2012 SP2]                                                                         | 2016-05-16   |
+| 11.0.5646.2   | 2011.110.5646.2  | SP2    | CU   |                                   | 3137745 | [Cumulative update package 11 for SQL Server 2012 SP2]                                                                         | 2016-03-21   |
+| 11.0.5644.2   | 2011.110.5644.2  | SP2    | CU   |                                   | 3120313 | [Cumulative update package 10 for SQL Server 2012 SP2]                                                                         | 2016-01-19   |
+| 11.0.5641.0   | 2011.110.5641.0  | SP2    | CU   |                                   | 3098512 | [Cumulative update package 9 for SQL Server 2012 SP2]                                                                          | 2015-11-16   |
+| 11.0.5636     | 2011.110.5636.3  | SP2    | COD  |                                   | 3097636 | [FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]          | 2015-09-22   |
+| 11.0.5634     | 2011.110.5634.0  | SP2    | CU   |                                   | 3082561 | [Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]                                                         | 2015-09-21   |
+| 11.0.5629     | 2011.110.5629.0  | SP2    | COD  |                                   | 3087872 | [FIX: Access violations when you use the FileTable feature in SQL Server 2012]                                                 | 2015-08-31   |
+| 11.0.5623     | 2011.110.5623.0  | SP2    | CU   |                                   | 3072100 | [Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]                                                         | 2015-07-20   |
+| 11.0.5613     | 2011.110.5613.0  | SP2    | COD  |                                   | 3045319 | [MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]                           | 2015-07-14   |
+| 11.0.5592     | 2011.110.5592.0  | SP2    | CU   |                                   | 3052468 | [Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]                                                         | 2015-05-19   |
+| 11.0.5582     | 2011.110.5582.0  | SP2    | CU   |                                   | 3037255 | [Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]                                                         | 2015-03-16   |
+| 11.0.5571     | 2011.110.5571.0  | SP2    | COD  |                                   | 3034679 | [FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]                                                          | 2015-05-15   |
+| 11.0.5569     | 2011.110.5569.0  | SP2    | CU   |                                   | 3007556 | [Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]                                                         | 2015-01-20   |
+| 11.0.5556     | 2011.110.5556.0  | SP2    | CU   |                                   | 3002049 | [Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]                                                         | 2014-11-17   |
+| 11.0.5548     | 2011.110.5548.0  | SP2    | CU   |                                   | 2983175 | [Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]                                                         | 2014-09-15   |
+| 11.0.5532     | 2011.110.5532.0  | SP2    | CU   |                                   | 2976982 | [Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]                                                         | 2014-07-24   |
+| 11.0.5522     | 2011.110.5522.0  | SP2    | COD  |                                   | 2969896 | [FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]         | 2014-06-20   |
+| 11.0.5388     | 2012.110.5388.0  | SP2    | GDR  |                                   | 3194719 | [MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]                        | 2016-11-08   |
+| 11.0.5352     | 2012.110.5352.0  | SP2    | GDR  |                                   | 3135244 | [TLS 1.2 support for SQL Server 2012 SP2 GDR]                                                                                  | 2016-01-27   |
+| 11.0.5343     | 2011.110.5343.0  | SP2    | GDR  |                                   | 3045321 | [MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]                           | 2015-07-14   |
+| 11.0.5058     | 2011.110.5058.0  | SP2    | SP   |                                   |         | [SQL Server 2012 Service Pack 2 (SP2)]                                                                                         | 2014-06-10   |
+| 11.0.3513     | 2011.110.3513.0  | SP1    | QFE  | **Latest CU SP1**                 | 3045317 | [MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]                                      | 2015-07-14   |
+| 11.0.3492     | 2011.110.3492.0  | SP1    | CU   |                                   | 3052476 | [Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]                                                       | 2015-05-18   |
+| 11.0.3487     | 2011.110.3487.0  | SP1    | CU   |                                   | 3038001 | [Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]                                                       | 2015-03-16   |
+| 11.0.3486     | 2011.110.3486.0  | SP1    | QFE  |                                   | 3023636 | [Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]                                                       | 2015-01-19   |
+| 11.0.3460     | 2011.110.3460.0  | SP1    | COD  |                                   | 2977325 | [MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]                                        | 2014-08-12   |
+| 11.0.3482     | 2011.110.3482.0  | SP1    | CU   |                                   | 3002044 | [Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]                                                       | 2014-11-17   |
+| 11.0.3470     | 2011.110.3470.0  | SP1    | CU   |                                   | 2991533 | [Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]                                                       | 2014-09-15   |
+| 11.0.3449     | 2011.110.3449.0  | SP1    | CU   |                                   | 2975396 | [Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]                                                       | 2014-07-21   |
+| 11.0.3437     | 2011.110.3437.0  | SP1    | COD  |                                   | 2969896 | [FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]         | 2014-06-10   |
+| 11.0.3431     | 2011.110.3431.0  | SP1    | CU   |                                   | 2954099 | [Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]                                                       | 2014-05-19   |
+| 11.0.3412     | 2011.110.3412.0  | SP1    | CU   |                                   | 2931078 | [Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]                                                         | 2014-03-18   |
+| 11.0.3401     | 2011.110.3401.0  | SP1    | CU   |                                   | 2917531 | [Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]                                                         | 2014-01-20   |
+| 11.0.3393     | 2011.110.3393.0  | SP1    | CU   |                                   | 2894115 | [Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]                                                         | 2013-11-18   |
+| 11.0.3381     | 2011.110.3381.0  | SP1    | CU   |                                   | 2874879 | [Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]                                                         | 2013-09-16   |
+| 11.0.3373     | 2011.110.3373.0  | SP1    | CU   |                                   | 2861107 | [Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]                                                         | 2013-07-16   |
+| 11.0.3368     | 2011.110.3368.0  | SP1    | CU   |                                   | 2833645 | [Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]                                                         | 2013-05-31   |
+| 11.0.3350     | 2011.110.3350.0  | SP1    | COD  |                                   | 2832017 | [FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1] | 2013-04-17   |
+| 11.0.3349     | 2011.110.3349.0  | SP1    | CU   |                                   | 2812412 | [Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]                                                         | 2013-03-18   |
+| 11.0.3339     | 2011.110.3339.0  | SP1    | CU   |                                   | 2790947 | [Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]                                                         | 2013-01-25   |
+| 11.0.3335     | 2011.110.3335.0  | SP1    | COD  |                                   | 2800050 | [FIX: Component installation process fails after you install SQL Server 2012 SP1]                                              | 2013-01-14   |
+| 11.0.3321     | 2011.110.3321.0  | SP1    | CU   |                                   | 2765331 | [Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]                                                         | 2012-11-20   |
+| 11.0.3156     | 2011.110.3156.0  | SP1    | COD  |                                   | 3045318 | [MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]                                      | 2015-07-14   |
+| 11.0.3153     | 2011.110.3153.0  | SP1    | GDR  |                                   | 2977326 | [MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]                                        | 2014-08-12   |
+| 11.0.3128     | 2011.110.3128.0  | SP1    | COD  |                                   | 2793634 | [Windows Installer starts repeatedly after you install SQL Server 2012 SP1]                                                    | 2013-01-03   |
+| 11.0.3000     | 2011.110.3000.0  | SP1    | SP   |                                   |         | [SQL Server 2012 Service Pack 1 (SP1)]                                                                                         | 2012-11-06   |
+| 11.0.2845     | 2011.110.2845.0  | SP1    | CTP  |                                   |         | SQL Server 2012 Service Pack 1 Customer Technology Preview 4 (CTP4)                                                            | 2012-09-20   |
+| 11.0.2809     | 2011.110.2809.24 | SP1    | CTP  |                                   |         | SQL Server 2012 Service Pack 1 Customer Technology Preview 3 (CTP3)                                                            | 2012-07-05   |
+| 11.0.2424     | 2011.110.2424.0  | RTM    | CU   | **Latest CU RTM**                 | 2908007 | [Cumulative update package 11 (CU11) for SQL Server 2012]                                                                      | 2013-12-17   |
+| 11.0.2420     | 2011.110.2420.0  | RTM    | CU   |                                   | 2891666 | [Cumulative update package 10 (CU10) for SQL Server 2012]                                                                      | 2013-10-21   |
+| 11.0.2419     | 2011.110.2419.0  | RTM    | CU   |                                   | 2867319 | [Cumulative update package 9 (CU9) for SQL Server 2012]                                                                        | 2013-08-21   |
+| 11.0.2410     | 2011.110.2410.0  | RTM    | CU   |                                   | 2844205 | [Cumulative update package 8 (CU8) for SQL Server 2012]                                                                        | 2013-06-18   |
+| 11.0.2405     | 2011.110.2405.0  | RTM    | CU   |                                   | 2823247 | [Cumulative update package 7 (CU7) for SQL Server 2012]                                                                        | 2013-04-15   |
+| 11.0.2401     | 2011.110.2401.0  | RTM    | CU   |                                   | 2728897 | [Cumulative update package 6 (CU6) for SQL Server 2012]                                                                        | 2013-02-18   |
+| 11.0.2395     | 2011.110.2395.0  | RTM    | CU   |                                   | 2777772 | [Cumulative update package 5 (CU5) for SQL Server 2012]                                                                        | 2012-12-18   |
+| 11.0.9000     | 2011.110.9000.5  | RTM    | CTP  |                                   |         | Microsoft SQL Server 2012 With Power View For Multidimensional Models Customer Technology Preview (CTP3)                       | 2012-11-27   |
+| 11.0.2383     | 2011.110.2383.0  | RTM    | CU   |                                   | 2758687 | [Cumulative update package 4 (CU4) for SQL Server 2012]                                                                        | 2012-10-18   |
+| 11.0.2376     | 2011.110.2376.0  | RTM    | COD  | [MS12-070]                        | 2716441 | [Security Update for SQL Server 2012 RTM (KB2716441)]                                                                          | 2012-10-09   |
+| 11.0.2332     | 2011.110.2332.0  | RTM    | CU   |                                   | 2723749 | [Cumulative update package 3 (CU3) for SQL Server 2012]                                                                        | 2012-08-29   |
+| 11.0.2325     | 2011.110.2325.0  | RTM    | CU   |                                   | 2703275 | [Cumulative update package 2 (CU2) for SQL Server 2012]                                                                        | 2012-06-18   |
+| 11.0.2316     | 2011.110.2316.0  | RTM    | CU   |                                   | 2679368 | [Cumulative update package 1 (CU1) for SQL Server 2012]                                                                        | 2012-04-12   |
+| 11.0.2218     | 2011.110.2218.0  | RTM    | COD  | [MS12-070]                        | 2716442 | [Security Update for SQL Server 2012 RTM (KB2716442)]                                                                          | 2012-10-09   |
+| 11.0.2214     | 2011.110.2214.0  | RTM    | COD  |                                   | 2685308 | [FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence                                                         | 2012-04-06   |
+| 11.0.2100     | 2011.110.2100.60 | RTM    | RTM  |                                   |         | SQL Server 2012 RTM                                                                                                            | 2012-03-06   |
+| 11.0.1913     | 2011.110.1913.37 | RC     | RC   |                                   |         | Microsoft SQL Server 2012 Release Candidate 1 (RC1)                                                                            | 2011-12-16   |
+| 11.0.1750     | 2011.110.1750.32 | RC     | RC   |                                   |         | Microsoft SQL Server 2012 Release Candidate 0 (RC0)                                                                            | 2011-11-17   |
+| 11.0.1440     | 2010.110.1440.19 | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                              | 2011-07-11   |
+| 11.0.1103     | 2010.110.1103.9  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                              | 2010-11-08   |
 
-[4057116 Security Advisory ADV180002 (GDR)]:https://support.microsoft.com/help/4057116/security-update-for-vulnerabilities-in-sql-server
-[4018073 SQL Server 2012 Service Pack 4 release information]:https://support.microsoft.com/help/4018073/sql-server-2012-service-pack-4-release-information
-[4016762 Cumulative Update 10 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4025925/cumulative-update-10-for-sql-server-2012-sp3
-[4016762 Cumulative Update 9 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4016762/cumulative-update-9-for-sql-server-2012-sp3
-[4013104 Cumulative Update 8 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4013104/cumulative-update-8-for-sql-server-2012-sp3
-[3205051 Cumulative Update Package 7 for SQL Server 2012 SP3]:https://support.microsoft.com/help/3205051/cumulative-update-7-for-sql-server-2012-sp3
-[3194724 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]:https://support.microsoft.com/kb/3194724
-[3194725 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/kb/3194725
-[3180914 Cumulative Update 14 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3180914
-[3180915 Cumulative update 5 for SQL Server 2012 Service Pack 3]:https://support.microsoft.com/kb/3180915
-[3165264 Cumulative Update 4 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3165264
-[3165266 Cumulative Update 13 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3165266
-[3152635 Cumulative update package 3 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3152635
-[3152637 Cumulative update package 12 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3152637
-[3137746 Cumulative update package 2 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3137746
-[3137745 Cumulative update package 11 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3137745
-[3123299 Cumulative update package 1 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3123299
-[3205416 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]:https://support.microsoft.com/kb/3205416
-[3194721 MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194721
-[3135244 TLS 1.2 support for SQL Server 2012 SP3 GDR]:https://support.microsoft.com/kb/3135244
-[3120313 Cumulative update package 10 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3120313
-[3072779 Microsoft SQL Server 2012 Service Pack 3 (SP3)]:https://support.microsoft.com/kb/3072779
-[3205054 Cumulative Update 16 for SQL Server 2012 SP2]:https://support.microsoft.com/help/3205054/cumulative-update-16-for-sql-server-2012-sp2
-[3098512 Cumulative update package 9 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3098512
-[3097636 FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]:https://support.microsoft.com/kb/3097636
-[3082561 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3082561
-[3087872 FIX: Access violations when you use the FileTable feature in SQL Server 2012]:https://support.microsoft.com/kb/3087872
-[3072100 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3072100
-[3045319 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045319
-[3052468 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3052468
-[3037255 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3037255
-[3034679 FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]:http://support.microsoft.com/kb/3034679
-[3007556 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3007556
-[3002049 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3002049
-[2983175 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2983175
-[2976982 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2976982
-[2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]:http://support.microsoft.com/kb/2969896
-[3194719 MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194719
-[3135244 TLS 1.2 support for SQL Server 2012 SP2 GDR]:https://support.microsoft.com/kb/3135244
-[3045321 MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045321
+[On-demand hotfix update package for SQL Server 2012 SP4]:https://support.microsoft.com/help/4091266
+[Security Advisory ADV180002 (GDR)]:https://support.microsoft.com/help/4057116/security-update-for-vulnerabilities-in-sql-server
+[SQL Server 2012 Service Pack 4 release information]:https://support.microsoft.com/help/4018073/sql-server-2012-service-pack-4-release-information
+[Description of the security update for SQL Server 2012 SP3 CU: January 16, 2018]:https://support.microsoft.com/help/4057121
+[Cumulative Update 10 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4025925/cumulative-update-10-for-sql-server-2012-sp3
+[Cumulative Update 9 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4016762/cumulative-update-9-for-sql-server-2012-sp3
+[Cumulative Update 8 for SQL Server 2012 SP3]:https://support.microsoft.com/help/4013104/cumulative-update-8-for-sql-server-2012-sp3
+[Cumulative Update Package 7 for SQL Server 2012 SP3]:https://support.microsoft.com/help/3205051/cumulative-update-7-for-sql-server-2012-sp3
+[MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 CU: November 8, 2016]:https://support.microsoft.com/kb/3194724
+[MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 CU: November 8, 2016]:https://support.microsoft.com/kb/3194725
+[Cumulative Update 14 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3180914
+[Cumulative update 5 for SQL Server 2012 Service Pack 3]:https://support.microsoft.com/kb/3180915
+[Cumulative Update 4 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3165264
+[Cumulative Update 13 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3165266
+[Cumulative update package 3 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3152635
+[Cumulative update package 12 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3152637
+[Cumulative update package 2 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3137746
+[Cumulative update package 11 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3137745
+[Cumulative update package 1 for SQL Server 2012 SP3]:https://support.microsoft.com/kb/3123299
+[Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 2]:https://support.microsoft.com/kb/3205416
+[MS16-136: Description of the security update for SQL Server 2012 Service Pack 3 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194721
+[TLS 1.2 support for SQL Server 2012 SP3 GDR]:https://support.microsoft.com/kb/3135244
+[Cumulative update package 10 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3120313
+[Microsoft SQL Server 2012 Service Pack 3 (SP3)]:https://support.microsoft.com/kb/3072779
+[Cumulative Update 16 for SQL Server 2012 SP2]:https://support.microsoft.com/help/3205054/cumulative-update-16-for-sql-server-2012-sp2
+[Cumulative update package 9 for SQL Server 2012 SP2]:https://support.microsoft.com/kb/3098512
+[FIX: Performance decrease when application with connection pooling frequently connects or disconnects in SQL Server]:https://support.microsoft.com/kb/3097636
+[Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3082561
+[FIX: Access violations when you use the FileTable feature in SQL Server 2012]:https://support.microsoft.com/kb/3087872
+[Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3072100
+[MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045319
+[Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3052468
+[Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3037255
+[FIX: AlwaysOn availability groups are reported as NOT SYNCHRONIZING]:http://support.microsoft.com/kb/3034679
+[Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3007556
+[Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/3002049
+[Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2983175
+[Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 2]:http://support.microsoft.com/kb/2976982
+[FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP2)]:http://support.microsoft.com/kb/2969896
+[MS16-136: Description of the security update for SQL Server 2012 Service Pack 2 GDR: November 8, 2016]:https://support.microsoft.com/kb/3194719
+[TLS 1.2 support for SQL Server 2012 SP2 GDR]:https://support.microsoft.com/kb/3135244
+[MS15-058: Description of the security update for SQL Server 2012 Service Pack 2 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045321
 [SQL Server 2012 Service Pack 2 (SP2)]:http://www.microsoft.com/download/details.aspx?id=43340
-[3045317 MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045317
-[3052476 Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3052476
-[3038001 Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3038001
-[3023636 Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3023636
-[2977325 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]:http://support.microsoft.com/kb/2977325
-[3002044 Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3002044
-[2991533 Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2991533
-[2975396 Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2975396
-[2969896 FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]:http://support.microsoft.com/kb/2969896
-[2954099 Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2954099
-[2931078 Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2931078
-[2917531 Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2917531
-[2894115 Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2894115
-[2874879 Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2874879
-[2861107 Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2861107
-[2833645 Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2833645
-[2832017 FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1]:http://support.microsoft.com/kb/2832017
-[2812412 Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2812412
-[2790947 Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2790947
-[2800050 FIX: Component installation process fails after you install SQL Server 2012 SP1]:http://support.microsoft.com/kb/2800050
-[2765331 Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2765331
-[3045318 MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045318
-[2977326 MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]:http://support.microsoft.com/kb/2977326
-[2793634 Windows Installer starts repeatedly after you install SQL Server 2012 SP1]:http://support.microsoft.com/kb/2793634
+[MS15-058: Description of the security update for SQL Server 2012 SP1 QFE: July 14, 2015]:https://support.microsoft.com/kb/3045317
+[Cumulative update package 16 (CU16) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3052476
+[Cumulative update package 15 (CU15) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3038001
+[Cumulative update package 14 (CU14) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3023636
+[MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (QFE)]:http://support.microsoft.com/kb/2977325
+[Cumulative update package 13 (CU13) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/3002044
+[Cumulative update package 12 (CU12) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2991533
+[Cumulative update package 11 (CU11) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2975396
+[FIX: Data loss in clustered index occurs when you run online build index in SQL Server 2012 (Hotfix for SQL2012 SP1)]:http://support.microsoft.com/kb/2969896
+[Cumulative update package 10 (CU10) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2954099
+[Cumulative update package 9 (CU9) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2931078
+[Cumulative update package 8 (CU8) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2917531
+[Cumulative update package 7 (CU7) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2894115
+[Cumulative update package 6 (CU6) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2874879
+[Cumulative update package 5 (CU5) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2861107
+[Cumulative update package 4 (CU4) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2833645
+[FIX: You can’t create or open SSIS projects or maintenance plans after you apply Cumulative Update 3 for SQL Server 2012 SP1]:http://support.microsoft.com/kb/2832017
+[Cumulative update package 3 (CU3) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2812412
+[Cumulative update package 2 (CU2) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2790947
+[FIX: Component installation process fails after you install SQL Server 2012 SP1]:http://support.microsoft.com/kb/2800050
+[Cumulative update package 1 (CU1) for SQL Server 2012 Service Pack 1]:http://support.microsoft.com/kb/2765331
+[MS15-058: Description of the security update for SQL Server 2012 SP1 GDR: July 14, 2015]:https://support.microsoft.com/kb/3045318
+[MS14-044: Description of the security update for SQL Server 2012 Service Pack 1 (GDR)]:http://support.microsoft.com/kb/2977326
+[Windows Installer starts repeatedly after you install SQL Server 2012 SP1]:http://support.microsoft.com/kb/2793634
 [SQL Server 2012 Service Pack 1 (SP1)]:http://www.microsoft.com/download/details.aspx?id=35575
-[2908007 Cumulative update package 11 (CU11) for SQL Server 2012]:http://support.microsoft.com/kb/2908007
-[2891666 Cumulative update package 10 (CU10) for SQL Server 2012]:http://support.microsoft.com/kb/2891666
-[2867319 Cumulative update package 9 (CU9) for SQL Server 2012]:http://support.microsoft.com/kb/2867319
-[2844205 Cumulative update package 8 (CU8) for SQL Server 2012]:http://support.microsoft.com/kb/2844205
-[2823247 Cumulative update package 7 (CU7) for SQL Server 2012]:http://support.microsoft.com/kb/2823247
-[2728897 Cumulative update package 6 (CU6) for SQL Server 2012]:http://support.microsoft.com/kb/2728897
-[2777772 Cumulative update package 5 (CU5) for SQL Server 2012]:http://support.microsoft.com/kb/2777772
-[2758687 Cumulative update package 4 (CU4) for SQL Server 2012]:http://support.microsoft.com/kb/2758687
-[Microsoft Security Bulletin MS12-070]:http://technet.microsoft.com/security/bulletin/ms12-070
-[2723749 Cumulative update package 3 (CU3) for SQL Server 2012]:http://support.microsoft.com/kb/2723749
-[2703275 Cumulative update package 2 (CU2) for SQL Server 2012]:http://support.microsoft.com/kb/2703275
-[2679368 Cumulative update package 1 (CU1) for SQL Server 2012]:http://support.microsoft.com/kb/2679368
-[2685308 FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence]:http://support.microsoft.com/kb/2685308
+[Cumulative update package 11 (CU11) for SQL Server 2012]:http://support.microsoft.com/kb/2908007
+[Cumulative update package 10 (CU10) for SQL Server 2012]:http://support.microsoft.com/kb/2891666
+[Cumulative update package 9 (CU9) for SQL Server 2012]:http://support.microsoft.com/kb/2867319
+[Cumulative update package 8 (CU8) for SQL Server 2012]:http://support.microsoft.com/kb/2844205
+[Cumulative update package 7 (CU7) for SQL Server 2012]:http://support.microsoft.com/kb/2823247
+[Cumulative update package 6 (CU6) for SQL Server 2012]:http://support.microsoft.com/kb/2728897
+[Cumulative update package 5 (CU5) for SQL Server 2012]:http://support.microsoft.com/kb/2777772
+[Cumulative update package 4 (CU4) for SQL Server 2012]:http://support.microsoft.com/kb/2758687
+[Security Update for SQL Server 2012 RTM (KB2716441)]:https://www.microsoft.com/en-us/download/details.aspx?id=34917
+[Cumulative update package 3 (CU3) for SQL Server 2012]:http://support.microsoft.com/kb/2723749
+[Cumulative update package 2 (CU2) for SQL Server 2012]:http://support.microsoft.com/kb/2703275
+[Cumulative update package 1 (CU1) for SQL Server 2012]:http://support.microsoft.com/kb/2679368
+[Security Update for SQL Server 2012 RTM (KB2716442)]:https://www.microsoft.com/en-us/download/details.aspx?id=34884
+[FIX: SSAS uses only 20 cores in SQL Server 2012 Business Intelligence]:http://support.microsoft.com/kb/2685308
+[MS12-070]:http://technet.microsoft.com/security/bulletin/ms12-070
 
 
 <a id="microsoft-sql-server-2008-r2-builds"></a>
