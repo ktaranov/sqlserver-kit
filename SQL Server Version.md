@@ -189,11 +189,11 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | SQL Server 2008 R2 RTM                | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
 | [SQL Server 2008 R2 SP3]              | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0  |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
 | [SQL Server 2008 R2 SU]               | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000    |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
-| [SQL Server 2008]                     | ?                                                                 | 2008-01-19   | 10.0.1600.0   |        ? | ?                                        |
+| SQL Server 2008                       | ?                                                                 | 2008-01-19   | 10.0.1600.0   |        ? | ?                                        |
 | [SQL Server 2008 SP4]                 | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   | 10.0.6241.0   |      378 | 13610d6cb39e37fcd4a3338244a3ca2a8a404cd8 |
 | [SQL Server 2008 SU]                  | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   | 10.00.6000    |       61 | 37a197c60990d2e83e98d1090109a4ab3f2abe4b |
 
-**For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
+**For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
 [SQL Server 2019]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
@@ -209,7 +209,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
-[SQL Server 2008]:https://download.microsoft.com/download/D/D/B/DDB17DC1-A879-44DD-BD11-C0991D292AD7/6001.18000.080118-1840_amd64fre_Server_en-us-KRMSXFRE_EN_DVD.exe
+[SQL Server 2008]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 SP4]:https://download.microsoft.com/download/5/E/7/5E7A89F7-C013-4090-901E-1A0F86B6A94C/ENU/SQLServer2008SP4-KB2979596-x64-ENU.exe
 [SQL Server 2008 SU]:https://download.microsoft.com/download/E/C/0/EC0A7C15-9A6D-4F41-9B9F-BCA10CC3937C/SQLServer2008-KB3045311-x64.exe
 
@@ -475,10 +475,10 @@ Microsoft SQL Server 2017 (RTM-CU17) (KB4515579) - 14.0.3238.1 (X64)
 | 14.0.3015.40  | 2017.140.3015.40  | RTM    | CU   |                                   | 4052987 | [Microsoft SQL Server 2017 CU3]                                                     | 2017-01-03   | 2017-12-23 |    14 |     13 |      459 |
 | 14.0.3008.27  | 2017.140.3008.27  | RTM    | CU   |                                   | 4052574 | [Microsoft SQL Server 2017 CU2]                                                     | 2017-11-28   | 2017-11-16 |    56 |     33 |      276 |
 | 14.0.3006.16  | 2017.140.3006.16  | RTM    | CU   |                                   | 4038634 | [Microsoft SQL Server 2017 CU1]                                                     | 2017-10-24   | 2017-10-19 |    72 |     68 |      250 |
-| 14.0.2027.2   | 2017.140.2027.2   | RTM    | COD  | CVE-2019-1068                     | 4505224 | [Security update for SQL Server 2017 GDR: July 9, 2019]                             | 2019-07-09   | 2019-06-15 |     1 |      1 |      447 |
-| 14.0.2014.14  | 2017.140.2014.14  | RTM    | COD  | CVE-2019-0819                     | 4494351 | [Security update for SQL Server 2017 GDR: May 14, 2019]                             | 2019-05-14   | 2019-04-05 |     1 |      1 |      447 |
-| 14.0.2002.14  | 2017.140.2002.14  | RTM    | COD  | CVE-2018-8273                     | 4293803 | [Security update for SQL Server 2017 GDR: August 14, 2018]                          | 2018-08-14   | 2018-07-21 |     1 |      1 |      433 |
-| 14.0.2000.63  | 2017.140.2000.63  | RTM    | COD  | CVE-2017-5715,2017-5753,2017-5754 | 4057122 | [Security update for SQL Server 2017 GDR: January 3, 2018]                          | 2018-01-03   | 2017-12-23 |     1 |      1 |      431 |
+| 14.0.2027.2   | 2017.140.2027.2   | RTM    | GDR  | CVE-2019-1068                     | 4505224 | [Security update for SQL Server 2017 GDR: July 9, 2019]                             | 2019-07-09   | 2019-06-15 |     1 |      1 |      447 |
+| 14.0.2014.14  | 2017.140.2014.14  | RTM    | GDR  | CVE-2019-0819                     | 4494351 | [Security update for SQL Server 2017 GDR: May 14, 2019]                             | 2019-05-14   | 2019-04-05 |     1 |      1 |      447 |
+| 14.0.2002.14  | 2017.140.2002.14  | RTM    | GDR  | CVE-2018-8273                     | 4293803 | [Security update for SQL Server 2017 GDR: August 14, 2018]                          | 2018-08-14   | 2018-07-21 |     1 |      1 |      433 |
+| 14.0.2000.63  | 2017.140.2000.63  | RTM    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057122 | [Security update for SQL Server 2017 GDR: January 3, 2018]                          | 2018-01-03   | 2017-12-23 |     1 |      1 |      431 |
 | 14.0.1000.169 | 2017.140.1000.169 | RTM    | RTM  |                                   |         | [Microsoft SQL Server 2017 RTM]                                                     | 2017-10-02   | 2017-08-23 |       |        |     1475 |
 | 14.0.900.75   | 2017.140.900.75   | RC     | RC   |                                   |         | Microsoft SQL Server 2017 Release Candidate 2                                       | 2017-08-02   | 2017-07-27 |       |        |     1473 |
 | 14.0.800.90   | 2017.140.800.90   | RC     | RC   |                                   |         | Microsoft SQL Server 2017 Release Candidate 1                                       | 2017-07-17   | 2017-07-11 |       |        |     1473 |
@@ -1077,143 +1077,143 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 ### All SQL Server 2008 R2 CU downloads
 [Catalog Update Microsoft SQL Server 2008 R2]:http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202008%20R2
 
-| Build         | File version     | KB / Description                                                                                                                                                                              | Release Date |
-|---------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| 10.50.6542    | 2009.100.6542.0  | [3146034 Intermittent service terminations occur after you install any SQL Server 2008 or SQL Server 2008 R2 versions from KB3135244]                                                         | 2016-03-03   |
-| 10.50.6537    | 2009.100.6537.0  | [3135244 TLS 1.2 support for SQL Server 2008 R2 SP3]                                                                                                                                          | 2016-01-27   |
-| 10.50.6529    | 2009.100.6529.0  | [3045314 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 QFE: July 14, 2015]                                                                               | 2015-07-14   |
-| 10.50.6525    | 2009.100.6525.0  | [3033860 An on-demand hotfix update package is available for SQL Server 2008 R2 Service Pack 3 (SP3)]                                                                                         | 2015-02-09   |
-| 10.50.6220    | 2009.100.6220.0  | [3045316 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 GDR: July 14, 2015]                                                                               | 2015-07-14   |
-| 10.50.6000.34 | 2009.100.6000.34 | [SQL Server 2008 R2 Service Pack 3 (SP3)]                                                                                                                                                     | 2014-09-26   |
-| 10.50.4343    | 2009.100.4343.0  | [3135244 TLS 1.2 support for SQL Server 2008 R2 SP2 (IA-64 only)]                                                                                                                             | 2016-01-27   |
-| 10.50.4339    | 2009.100.4339.0  | [3045312 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 QFE: July 14, 2015]                                                                               | 2015-07-14   |
-| 10.50.4331    | 2009.100.4331.0  | [2987585 Restore Log with Standby Mode on an Advanced Format disk may cause a 9004 error in SQL Server 2008 R2 or SQL Server 2012]                                                            | 2014-08-27   |
-| 10.50.4321    | 2009.100.4321.0  | [2977319 MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (QFE)]                                                                                            | 2014-08-12   |
-| 10.50.4319    | 2009.100.4319.0  | [2967540 Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-06-30   |
-| 10.50.4305    | 2009.100.4305.0  | [2938478 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-04-21   |
-| 10.50.4302    | 2009.100.4302.0  | [2926028 Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-02-18   |
-| 10.50.4297    | 2009.100.4297.0  | [2908087 Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2013-12-16   |
-| 10.50.4295    | 2009.100.4295.0  | [2887606 Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-10-29   |
-| 10.50.4290    | 2009.100.4290.0  | [2871401 Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-08-30   |
-| 10.50.4286    | 2009.100.4286.0  | [2844090 Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-06-17   |
-| 10.50.4285    | 2009.100.4285.0  | [2830140 Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (updated)]                                                                                                   | 2013-06-13   |
-| 10.50.4279    | 2009.100.4279.0  | 2830140 Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (replaced)                                                                                                    | 2013-04-15   |
-| 10.50.4276    | 2009.100.4276.0  | [2797460 Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-02-18   |
-| 10.50.4270    | 2009.100.4270.0  | [2777358 Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-12-17   |
-| 10.50.4266    | 2009.100.4266.0  | [2754552 Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-10-15   |
-| 10.50.4263    | 2009.100.4263.0  | [2740411 Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-08-29   |
-| 10.50.4260    | 2009.100.4260.0  | [2720425 Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-08-01   |
-| 10.50.4042    | 2009.100.4042.0  | [3045313 MS15-058: MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 GDR: July 14, 2015]                                                                     | 2015-07-14   |
-| 10.50.4033    | 2009.100.4033.0  | [2977320 MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (GDR)]                                                                                            | 2014-08-12   |
-| 10.50.4000    | 2009.100.4000.0  | [SQL Server 2008 R2 Service Pack 2 (SP2)]                                                                                                                                                     | 2012-06-26   |
-| 10.50.3720    | 2009.100.3720.0  | SQL Server 2008 R2 Service Pack 2 Community Technology Preview (CTP)                                                                                                                          | 2012-05-13   |
-| 10.50.2881    | 2009.100.2881.0  | [2868244 An on-demand hotfix update package for SQL Server 2008 R2 Service Pack 1]                                                                                                            | 2013-08-12   |
-| 10.50.2876    | 2009.100.2876.0  | [2855792 Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2013-06-17   |
-| 10.50.2875    | 2009.100.2875.0  | [2828727 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (updated)]                                                                                                 | 2013-06-13   |
-| 10.50.2874    | 2009.100.2874.0  | 2828727 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (replaced)                                                                                                  | 2013-04-15   |
-| 10.50.2861    | 2009.100.2861.0  | [Microsoft Security Bulletin MS12-070]                                                                                                                                                        | 2012-10-09   |
-| 10.50.2869    | 2009.100.2869.0  | [2812683 Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2013-02-18   |
-| 10.50.2868    | 2009.100.2868.0  | [2783135 Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2012-12-17   |
-| 10.50.2866    | 2009.100.2866.0  | [2756574 Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-11-06   |
-| 10.50.2861    | 2009.100.2861.0  | [2716439 MS12-070: Description of the security update for SQL Server 2008 R2 Service Pack 1 QFE: October 9, 2012]                                                                             | 2012-10-09   |
-| 10.50.2822    | 2009.100.2822.0  | [2723743 Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-08-29   |
-| 10.50.2817    | 2009.100.2817.0  | [2703282 Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-06-18   |
-| 10.50.2811    | 2009.100.2811.0  | [2679367 Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-04-16   |
-| 10.50.2807    | 2009.100.2807.0  | [2675522 FIX: Access violation when you run DML statements against a table that has partitioned indexes in SQL Server 2008 R2]                                                                | 2012-03-12   |
-| 10.50.2806    | 2009.100.2806.0  | [2659694 Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-02-22   |
-| 10.50.2799    | 2009.100.2799.0  | [2633357 FIX: "Non-yielding Scheduler" error might occur when you run a query that uses the CHARINDEX function in SQL Server 2008 R2]                                                         | 2012-02-22   |
-| 10.50.2796    | 2009.100.2796.0  | [2633146 Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-12-20   |
-| 10.50.2789    | 2009.100.2789.0  | [2591748 Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-10-17   |
-| 10.50.2776    | 2009.100.2776.0  | [2606883 FIX: Slow performance when an AFTER trigger runs on a partitioned table in SQL Server 2008 R2]                                                                                       | 2011-10-18   |
-| 10.50.2772    | 2009.100.2772.0  | [2567714 Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-08-15   |
-| 10.50.2769    | 2009.100.2769.0  | [2544793 Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-07-18   |
-| 10.50.2550    | 2009.100.2550.0  | [Microsoft Security Bulletin MS12-070]                                                                                                                                                        | 2012-10-09   |
-| 10.50.2500    | 2009.100.2500.0  | [SQL Server 2008 R2 Service Pack 1 (SP1)]                                                                                                                                                     | 2011-07-11   |
-| 10.50.1817    | 2009.100.1817.0  | [2703280 Cumulative update package 14 (CU14) for SQL Server 2008 R2]                                                                                                                          | 2012-06-18   |
-| 10.50.1815    | 2009.100.1815.0  | [2679366 Cumulative update package 13 (CU13) for SQL Server 2008 R2]                                                                                                                          | 2012-04-17   |
-| 10.50.1810    | 2009.100.1810.0  | [2659692 Cumulative update package 12 (CU12) for SQL Server 2008 R2]                                                                                                                          | 2012-02-21   |
-| 10.50.1809    | 2009.100.1809.0  | [2633145 Cumulative update package 11 (CU11) for SQL Server 2008 R2]                                                                                                                          | 2012-01-09   |
-| 10.50.1807    | 2009.100.1807.0  | [2591746 Cumulative update package 10 (CU10) for SQL Server 2008 R2]                                                                                                                          | 2011-10-19   |
-| 10.50.1804    | 2009.100.1804.0  | [2567713 Cumulative update package 9 (CU9) for SQL Server 2008 R2]                                                                                                                            | 2011-08-16   |
-| 10.50.1800    | 2009.100.1800.0  | [2574699 FIX: Database data files might be incorrectly marked as sparse in SQL Server 2008 R2 or in SQL Server 2008 even when the physical files are marked as not sparse in the file system] | 2011-10-18   |
-| 10.50.1797    | 2009.100.1797.0  | [2534352 Cumulative update package 8 (CU8) for SQL Server 2008 R2]                                                                                                                            | 2011-06-20   |
-| 10.50.1790    | 2009.100.1790.0  | [2494086 MS11-049: Description of the security update for SQL Server 2008 R2 QFE: June 14, 2011]                                                                                              | 2011-06-17   |
-| 10.50.1777    | 2009.100.1777.0  | [2507770 Cumulative update package 7 (CU7) for SQL Server 2008 R2]                                                                                                                            | 2011-06-16   |
-| 10.50.1769    | 2009.100.1769.0  | [2520808 FIX: Non-yielding scheduler error when you run a query that uses a TVP in SQL Server 2008 or in SQL Server 2008 R2 if SQL Profiler or SQL Server Extended Events is used]            | 2011-04-18   |
-| 10.50.1765    | 2009.100.1765.0  | [2489376 Cumulative update package 6 (CU6) for SQL Server 2008 R2]                                                                                                                            | 2011-02-21   |
-| 10.50.1753    | 2009.100.1753.0  | [2438347 Cumulative update package 5 (CU5) for SQL Server 2008 R2]                                                                                                                            | 2010-12-23   |
-| 10.50.1746    | 2009.100.1746.0  | [2345451 Cumulative update package 4 (CU4) for SQL Server 2008 R2]                                                                                                                            | 2010-10-18   |
-| 10.50.1734    | 2009.100.1734.0  | [2261464 Cumulative update package 3 (CU3) for SQL Server 2008 R2]                                                                                                                            | 2010-08-20   |
-| 10.50.1720    | 2009.100.1720.0  | [2072493 Cumulative update package 2 (CU2) for SQL Server 2008 R2]                                                                                                                            | 2010-06-25   |
-| 10.50.1702    | 2009.100.1702.0  | [981355 Cumulative update package 1 (CU1) for SQL Server 2008 R2]                                                                                                                             | 2010-05-18   |
-| 10.50.1617    | 2009.100.1617.0  | [2494088 MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]                                                                                              | 2011-06-14   |
-| 10.50.1600.1  | 2009.100.1600.1  | SQL Server 2008 R2 RTM                                                                                                                                                                        | 2010-04-21   |
-| 10.50.1352    | 2009.100.1352.12 | Microsoft SQL Server 2008 R2 November Community Technology Preview (CTP)                                                                                                                      | 2009-11-12   |
-| 10.50.1092    | 2009.100.1092.20 | Microsoft SQL Server 2008 R2 August Community Technology Preview (CTP)                                                                                                                        | 2009-06-30   |
+| Build         | File version     | Branch | Type | Info             | KB      | Description/Link                                                                                                                                                                      | Release Date |
+|---------------|------------------|--------|------|------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 10.50.6542    | 2009.100.6542.0  | SP3    | CU   |**Latest CU SP3** | 3146034 | [Intermittent service terminations occur after you install any SQL Server 2008 or SQL Server 2008 R2 versions from KB3135244]                                                         | 2016-03-03   |
+| 10.50.6537    | 2009.100.6537.0  | SP3    | CU   |                  | 3135244 | [TLS 1.2 support for SQL Server 2008 R2 SP3]                                                                                                                                          | 2016-01-27   |
+| 10.50.6529    | 2009.100.6529.0  | SP3    | QFE  |                  | 3045314 | [MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 QFE: July 14, 2015]                                                                               | 2015-07-14   |
+| 10.50.6525    | 2009.100.6525.0  | SP3    | COD  |                  | 3033860 | [An on-demand hotfix update package is available for SQL Server 2008 R2 Service Pack 3 (SP3)]                                                                                         | 2015-02-09   |
+| 10.50.6220    | 2009.100.6220.0  | SP3    | COD  |                  | 3045316 | [MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 GDR: July 14, 2015]                                                                               | 2015-07-14   |
+| 10.50.6000.34 | 2009.100.6000.34 | SP3    | SP   |**Latest SP**     |         | [SQL Server 2008 R2 Service Pack 3 (SP3)]                                                                                                                                             | 2014-09-26   |
+| 10.50.4343    | 2009.100.4343.0  | SP2    | CU   |                  | 3135244 | [TLS 1.2 support for SQL Server 2008 R2 SP2 (IA-64 only)]                                                                                                                             | 2016-01-27   |
+| 10.50.4339    | 2009.100.4339.0  | SP2    | QFE  |                  | 3045312 | [MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 QFE: July 14, 2015]                                                                               | 2015-07-14   |
+| 10.50.4331    | 2009.100.4331.0  | SP2    |      |                  | 2987585 | [Restore Log with Standby Mode on an Advanced Format disk may cause a 9004 error in SQL Server 2008 R2 or SQL Server 2012]                                                            | 2014-08-27   |
+| 10.50.4321    | 2009.100.4321.0  | SP2    | QFE  |                  | 2977319 | [MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (QFE)]                                                                                            | 2014-08-12   |
+| 10.50.4319    | 2009.100.4319.0  | SP2    | CU   |                  | 2967540 | [Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-06-30   |
+| 10.50.4305    | 2009.100.4305.0  | SP2    | CU   |                  | 2938478 | [Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-04-21   |
+| 10.50.4302    | 2009.100.4302.0  | SP2    | CU   |                  | 2926028 | [Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2014-02-18   |
+| 10.50.4297    | 2009.100.4297.0  | SP2    | CU   |                  | 2908087 | [Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 2]                                                                                                           | 2013-12-16   |
+| 10.50.4295    | 2009.100.4295.0  | SP2    | CU   |                  | 2887606 | [Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-10-29   |
+| 10.50.4290    | 2009.100.4290.0  | SP2    | CU   |                  | 2871401 | [Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-08-30   |
+| 10.50.4286    | 2009.100.4286.0  | SP2    | CU   |                  | 2844090 | [Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-06-17   |
+| 10.50.4285    | 2009.100.4285.0  | SP2    | CU   |                  | 2830140 | [Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (updated)]                                                                                                   | 2013-06-13   |
+| 10.50.4279    | 2009.100.4279.0  | SP2    | CU   |**Withdrawn**     | 2830140 | Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (replaced)                                                                                                    | 2013-04-15   |
+| 10.50.4276    | 2009.100.4276.0  | SP2    | CU   |                  | 2797460 | [Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2013-02-18   |
+| 10.50.4270    | 2009.100.4270.0  | SP2    | CU   |                  | 2777358 | [Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-12-17   |
+| 10.50.4266    | 2009.100.4266.0  | SP2    | CU   |                  | 2754552 | [Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-10-15   |
+| 10.50.4263    | 2009.100.4263.0  | SP2    | CU   |                  | 2740411 | [Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-08-29   |
+| 10.50.4260    | 2009.100.4260.0  | SP2    | CU   |                  | 2720425 | [Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 2]                                                                                                             | 2012-08-01   |
+| 10.50.4042    | 2009.100.4042.0  | SP2    | GDR  |                  | 3045313 | [MS15-058: MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 GDR: July 14, 2015]                                                                     | 2015-07-14   |
+| 10.50.4033    | 2009.100.4033.0  | SP2    | GDR  |                  | 2977320 | [MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (GDR)]                                                                                            | 2014-08-12   |
+| 10.50.4000    | 2009.100.4000.0  | SP2    | SP   |                  |         | [SQL Server 2008 R2 Service Pack 2 (SP2)]                                                                                                                                             | 2012-06-26   |
+| 10.50.3720    | 2009.100.3720.0  | SP2    | CTP  |                  |         | SQL Server 2008 R2 Service Pack 2 Community Technology Preview (CTP)                                                                                                                  | 2012-05-13   |
+| 10.50.2881    | 2009.100.2881.0  | SP1    |      |                  | 2868244 | [An on-demand hotfix update package for SQL Server 2008 R2 Service Pack 1]                                                                                                            | 2013-08-12   |
+| 10.50.2876    | 2009.100.2876.0  | SP1    | CU   |                  | 2855792 | [Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2013-06-17   |
+| 10.50.2875    | 2009.100.2875.0  | SP1    | CU   |                  | 2828727 | [Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (updated)]                                                                                                 | 2013-06-13   |
+| 10.50.2874    | 2009.100.2874.0  | SP1    | CU   |**Withdrawn**     | 2828727 | Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (replaced)                                                                                                  | 2013-04-15   |
+| 10.50.2861    | 2009.100.2861.0  | SP1    |      |                  |         | [Microsoft Security Bulletin MS12-070]                                                                                                                                                | 2012-10-09   |
+| 10.50.2869    | 2009.100.2869.0  | SP1    | CU   |                  | 2812683 | [Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2013-02-18   |
+| 10.50.2868    | 2009.100.2868.0  | SP1    | CU   |                  | 2783135 | [Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 1]                                                                                                           | 2012-12-17   |
+| 10.50.2866    | 2009.100.2866.0  | SP1    | CU   |                  | 2756574 | [Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-11-06   |
+| 10.50.2861    | 2009.100.2861.0  | SP1    | QFE  |                  | 2716439 | [MS12-070: Description of the security update for SQL Server 2008 R2 Service Pack 1 QFE: October 9, 2012]                                                                             | 2012-10-09   |
+| 10.50.2822    | 2009.100.2822.0  | SP1    | CU   |                  | 2723743 | [Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-08-29   |
+| 10.50.2817    | 2009.100.2817.0  | SP1    | CU   |                  | 2703282 | [Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-06-18   |
+| 10.50.2811    | 2009.100.2811.0  | SP1    | CU   |                  | 2679367 | [Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-04-16   |
+| 10.50.2807    | 2009.100.2807.0  | SP1    |      |                  | 2675522 | [FIX: Access violation when you run DML statements against a table that has partitioned indexes in SQL Server 2008 R2]                                                                | 2012-03-12   |
+| 10.50.2806    | 2009.100.2806.0  | SP1    | CU   |                  | 2659694 | [Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2012-02-22   |
+| 10.50.2799    | 2009.100.2799.0  | SP1    |      |                  | 2633357 | [FIX: "Non-yielding Scheduler" error might occur when you run a query that uses the CHARINDEX function in SQL Server 2008 R2]                                                         | 2012-02-22   |
+| 10.50.2796    | 2009.100.2796.0  | SP1    | CU   |                  | 2633146 | [Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-12-20   |
+| 10.50.2789    | 2009.100.2789.0  | SP1    | CU   |                  | 2591748 | [Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-10-17   |
+| 10.50.2776    | 2009.100.2776.0  | SP1    |      |                  | 2606883 | [FIX: Slow performance when an AFTER trigger runs on a partitioned table in SQL Server 2008 R2]                                                                                       | 2011-10-18   |
+| 10.50.2772    | 2009.100.2772.0  | SP1    | CU   |                  | 2567714 | [Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-08-15   |
+| 10.50.2769    | 2009.100.2769.0  | SP1    | CU   |                  | 2544793 | [Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 1]                                                                                                             | 2011-07-18   |
+| 10.50.2550    | 2009.100.2550.0  | SP1    |      | [MS12-070]       |         | [Microsoft Security Bulletin MS12-070]                                                                                                                                                | 2012-10-09   |
+| 10.50.2500    | 2009.100.2500.0  | SP1    | SP   |                  |         | [SQL Server 2008 R2 Service Pack 1 (SP1)]                                                                                                                                             | 2011-07-11   |
+| 10.50.1817    | 2009.100.1817.0  | RTM    | CU   |                  | 2703280 | [Cumulative update package 14 (CU14) for SQL Server 2008 R2]                                                                                                                          | 2012-06-18   |
+| 10.50.1815    | 2009.100.1815.0  | RTM    | CU   |                  | 2679366 | [Cumulative update package 13 (CU13) for SQL Server 2008 R2]                                                                                                                          | 2012-04-17   |
+| 10.50.1810    | 2009.100.1810.0  | RTM    | CU   |                  | 2659692 | [Cumulative update package 12 (CU12) for SQL Server 2008 R2]                                                                                                                          | 2012-02-21   |
+| 10.50.1809    | 2009.100.1809.0  | RTM    | CU   |                  | 2633145 | [Cumulative update package 11 (CU11) for SQL Server 2008 R2]                                                                                                                          | 2012-01-09   |
+| 10.50.1807    | 2009.100.1807.0  | RTM    | CU   |                  | 2591746 | [Cumulative update package 10 (CU10) for SQL Server 2008 R2]                                                                                                                          | 2011-10-19   |
+| 10.50.1804    | 2009.100.1804.0  | RTM    | CU   |                  | 2567713 | [Cumulative update package 9 (CU9) for SQL Server 2008 R2]                                                                                                                            | 2011-08-16   |
+| 10.50.1800    | 2009.100.1800.0  | RTM    |      |                  | 2574699 | [FIX: Database data files might be incorrectly marked as sparse in SQL Server 2008 R2 or in SQL Server 2008 even when the physical files are marked as not sparse in the file system] | 2011-10-18   |
+| 10.50.1797    | 2009.100.1797.0  | RTM    | CU   |                  | 2534352 | [Cumulative update package 8 (CU8) for SQL Server 2008 R2]                                                                                                                            | 2011-06-20   |
+| 10.50.1790    | 2009.100.1790.0  | RTM    | QFE  |                  | 2494086 | [MS11-049: Description of the security update for SQL Server 2008 R2 QFE: June 14, 2011]                                                                                              | 2011-06-17   |
+| 10.50.1777    | 2009.100.1777.0  | RTM    | CU   |                  | 2507770 | [Cumulative update package 7 (CU7) for SQL Server 2008 R2]                                                                                                                            | 2011-06-16   |
+| 10.50.1769    | 2009.100.1769.0  | RTM    |      |                  | 2520808 | [FIX: Non-yielding scheduler error when you run a query that uses a TVP in SQL Server 2008 or in SQL Server 2008 R2 if SQL Profiler or SQL Server Extended Events is used]            | 2011-04-18   |
+| 10.50.1765    | 2009.100.1765.0  | RTM    | CU   |                  | 2489376 | [Cumulative update package 6 (CU6) for SQL Server 2008 R2]                                                                                                                            | 2011-02-21   |
+| 10.50.1753    | 2009.100.1753.0  | RTM    | CU   |                  | 2438347 | [Cumulative update package 5 (CU5) for SQL Server 2008 R2]                                                                                                                            | 2010-12-23   |
+| 10.50.1746    | 2009.100.1746.0  | RTM    | CU   |                  | 2345451 | [Cumulative update package 4 (CU4) for SQL Server 2008 R2]                                                                                                                            | 2010-10-18   |
+| 10.50.1734    | 2009.100.1734.0  | RTM    | CU   |                  | 2261464 | [Cumulative update package 3 (CU3) for SQL Server 2008 R2]                                                                                                                            | 2010-08-20   |
+| 10.50.1720    | 2009.100.1720.0  | RTM    | CU   |                  | 2072493 | [Cumulative update package 2 (CU2) for SQL Server 2008 R2]                                                                                                                            | 2010-06-25   |
+| 10.50.1702    | 2009.100.1702.0  | RTM    | CU   |                  | 981355  | [Cumulative update package 1 (CU1) for SQL Server 2008 R2]                                                                                                                            | 2010-05-18   |
+| 10.50.1617    | 2009.100.1617.0  | RTM    | GDR  |                  | 2494088 | [MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]                                                                                              | 2011-06-14   |
+| 10.50.1600.1  | 2009.100.1600.1  | RTM    | RTM  |**RTM**           |         | SQL Server 2008 R2 RTM                                                                                                                                                                | 2010-04-21   |
+| 10.50.1352    | 2009.100.1352.12 | CTP    | CTP  |                  |         | Microsoft SQL Server 2008 R2 November Community Technology Preview (CTP)                                                                                                              | 2009-11-12   |
+| 10.50.1092    | 2009.100.1092.20 | CTP    | CTP  |                  |         | Microsoft SQL Server 2008 R2 August Community Technology Preview (CTP)                                                                                                                | 2009-06-30   |
 
-[3146034 Intermittent service terminations occur after you install any SQL Server 2008 or SQL Server 2008 R2 versions from KB3135244]:http://support.microsoft.com/kb/3146034
-[3135244 TLS 1.2 support for SQL Server 2008 R2 SP3]:http://support.microsoft.com/kb/3135244
-[3045314 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 QFE: July 14, 2015]:http://support.microsoft.com/kb/3045314
-[3033860 An on-demand hotfix update package is available for SQL Server 2008 R2 Service Pack 3 (SP3)]:http://support.microsoft.com/kb/3033860
-[3045316 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 GDR: July 14, 2015]:http://support.microsoft.com/kb/3045316
+[Intermittent service terminations occur after you install any SQL Server 2008 or SQL Server 2008 R2 versions from KB3135244]:http://support.microsoft.com/kb/3146034
+[TLS 1.2 support for SQL Server 2008 R2 SP3]:http://support.microsoft.com/kb/3135244
+[MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 QFE: July 14, 2015]:http://support.microsoft.com/kb/3045314
+[An on-demand hotfix update package is available for SQL Server 2008 R2 Service Pack 3 (SP3)]:http://support.microsoft.com/kb/3033860
+[MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 3 GDR: July 14, 2015]:http://support.microsoft.com/kb/3045316
 [SQL Server 2008 R2 Service Pack 3 (SP3)]:http://www.microsoft.com/download/details.aspx?id=44271
-[3135244 TLS 1.2 support for SQL Server 2008 R2 SP2 (IA-64 only)]:http://support.microsoft.com/kb/3135244
-[3045312 MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 QFE: July 14, 2015]:http://support.microsoft.com/kb/3045312
-[2987585 Restore Log with Standby Mode on an Advanced Format disk may cause a 9004 error in SQL Server 2008 R2 or SQL Server 2012]:http://support.microsoft.com/kb/2987585
-[2977319 MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (QFE)]:http://support.microsoft.com/kb/2977319
-[2967540 Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2967540
-[2938478 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2938478
-[2926028 Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2926028
-[2908087 Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2908087
-[2887606 Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2887606
-[2871401 Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2871401
-[2844090 Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2844090
-[2830140 Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (updated)]:http://support.microsoft.com/kb/2830140
-[2797460 Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2797460
-[2777358 Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2777358
-[2754552 Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2754552
-[2740411 Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2740411
-[2720425 Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2720425
-[3045313 MS15-058: MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 GDR: July 14, 2015]:http://support.microsoft.com/kb/3045313
-[2977320 MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (GDR)]:http://support.microsoft.com/kb/2977320
+[TLS 1.2 support for SQL Server 2008 R2 SP2 (IA-64 only)]:http://support.microsoft.com/kb/3135244
+[MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 QFE: July 14, 2015]:http://support.microsoft.com/kb/3045312
+[Restore Log with Standby Mode on an Advanced Format disk may cause a 9004 error in SQL Server 2008 R2 or SQL Server 2012]:http://support.microsoft.com/kb/2987585
+[MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (QFE)]:http://support.microsoft.com/kb/2977319
+[Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2967540
+[Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2938478
+[Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2926028
+[Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2908087
+[Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2887606
+[Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2871401
+[Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2844090
+[Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 2 (updated)]:http://support.microsoft.com/kb/2830140
+[Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2797460
+[Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2777358
+[Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2754552
+[Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2740411
+[Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 2]:http://support.microsoft.com/kb/2720425
+[MS15-058: MS15-058: Description of the security update for SQL Server 2008 R2 Service Pack 2 GDR: July 14, 2015]:http://support.microsoft.com/kb/3045313
+[MS14-044: Description of the security update for SQL Server 2008 R2 Service Pack 2 (GDR)]:http://support.microsoft.com/kb/2977320
 [SQL Server 2008 R2 Service Pack 2 (SP2)]:http://www.microsoft.com/download/details.aspx?id=30437
-[2868244 An on-demand hotfix update package for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2868244
-[2855792 Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2855792
-[2828727 Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (updated)]:http://support.microsoft.com/kb/2828727
-[2812683 Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2812683
-[2783135 Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2783135
-[2756574 Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2756574
-[2716439 MS12-070: Description of the security update for SQL Server 2008 R2 Service Pack 1 QFE: October 9, 2012]:http://support.microsoft.com/kb/2716439
-[2723743 Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2723743
-[2703282 Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2703282
-[2679367 Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2679367
-[2675522 FIX: Access violation when you run DML statements against a table that has partitioned indexes in SQL Server 2008 R2]:http://support.microsoft.com/kb/2675522
-[2659694 Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2659694
-[2633357 FIX: "Non-yielding Scheduler" error might occur when you run a query that uses the CHARINDEX function in SQL Server 2008 R2]:http://support.microsoft.com/kb/2633357
-[2633146 Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2633146
-[2591748 Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2591748
-[2606883 FIX: Slow performance when an AFTER trigger runs on a partitioned table in SQL Server 2008 R2]:http://support.microsoft.com/kb/2606883
-[2567714 Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2567714
-[2544793 Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2544793
+[An on-demand hotfix update package for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2868244
+[Cumulative update package 13 (CU13) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2855792
+[Cumulative update package 12 (CU12) for SQL Server 2008 R2 Service Pack 1 (updated)]:http://support.microsoft.com/kb/2828727
+[Cumulative update package 11 (CU11) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2812683
+[Cumulative update package 10 (CU10) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2783135
+[Cumulative update package 9 (CU9) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2756574
+[MS12-070: Description of the security update for SQL Server 2008 R2 Service Pack 1 QFE: October 9, 2012]:http://support.microsoft.com/kb/2716439
+[Cumulative update package 8 (CU8) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2723743
+[Cumulative update package 7 (CU7) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2703282
+[Cumulative update package 6 (CU6) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2679367
+[FIX: Access violation when you run DML statements against a table that has partitioned indexes in SQL Server 2008 R2]:http://support.microsoft.com/kb/2675522
+[Cumulative update package 5 (CU5) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2659694
+[FIX: "Non-yielding Scheduler" error might occur when you run a query that uses the CHARINDEX function in SQL Server 2008 R2]:http://support.microsoft.com/kb/2633357
+[Cumulative update package 4 (CU4) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2633146
+[Cumulative update package 3 (CU3) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2591748
+[FIX: Slow performance when an AFTER trigger runs on a partitioned table in SQL Server 2008 R2]:http://support.microsoft.com/kb/2606883
+[Cumulative update package 2 (CU2) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2567714
+[Cumulative update package 1 (CU1) for SQL Server 2008 R2 Service Pack 1]:http://support.microsoft.com/kb/2544793
 [SQL Server 2008 R2 Service Pack 1 (SP1)]:http://www.microsoft.com/download/en/details.aspx?id=26727
-[2703280 Cumulative update package 14 (CU14) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2703280
-[2679366 Cumulative update package 13 (CU13) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2679366
-[2659692 Cumulative update package 12 (CU12) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2659692
-[2633145 Cumulative update package 11 (CU11) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2633145
-[2591746 Cumulative update package 10 (CU10) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2591746
-[2567713 Cumulative update package 9 (CU9) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2567713
-[2574699 FIX: Database data files might be incorrectly marked as sparse in SQL Server 2008 R2 or in SQL Server 2008 even when the physical files are marked as not sparse in the file system]:http://support.microsoft.com/kb/2574699
-[2534352 Cumulative update package 8 (CU8) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2534352
-[2494086 MS11-049: Description of the security update for SQL Server 2008 R2 QFE: June 14, 2011]:http://support.microsoft.com/kb/2494086
-[2507770 Cumulative update package 7 (CU7) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2507770
-[2520808 FIX: Non-yielding scheduler error when you run a query that uses a TVP in SQL Server 2008 or in SQL Server 2008 R2 if SQL Profiler or SQL Server Extended Events is used]:http://support.microsoft.com/kb/2520808
-[2489376 Cumulative update package 6 (CU6) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2489376
-[2438347 Cumulative update package 5 (CU5) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2438347
-[2345451 Cumulative update package 4 (CU4) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2345451
-[2261464 Cumulative update package 3 (CU3) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2261464
-[2072493 Cumulative update package 2 (CU2) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2072493
-[981355 Cumulative update package 1 (CU1) for SQL Server 2008 R2]:http://support.microsoft.com/kb/981355
-[2494088 MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]:http://support.microsoft.com/kb/2494088
+[Cumulative update package 14 (CU14) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2703280
+[Cumulative update package 13 (CU13) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2679366
+[Cumulative update package 12 (CU12) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2659692
+[Cumulative update package 11 (CU11) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2633145
+[Cumulative update package 10 (CU10) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2591746
+[Cumulative update package 9 (CU9) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2567713
+[FIX: Database data files might be incorrectly marked as sparse in SQL Server 2008 R2 or in SQL Server 2008 even when the physical files are marked as not sparse in the file system]:http://support.microsoft.com/kb/2574699
+[Cumulative update package 8 (CU8) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2534352
+[MS11-049: Description of the security update for SQL Server 2008 R2 QFE: June 14, 2011]:http://support.microsoft.com/kb/2494086
+[Cumulative update package 7 (CU7) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2507770
+[FIX: Non-yielding scheduler error when you run a query that uses a TVP in SQL Server 2008 or in SQL Server 2008 R2 if SQL Profiler or SQL Server Extended Events is used]:http://support.microsoft.com/kb/2520808
+[Cumulative update package 6 (CU6) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2489376
+[Cumulative update package 5 (CU5) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2438347
+[Cumulative update package 4 (CU4) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2345451
+[Cumulative update package 3 (CU3) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2261464
+[Cumulative update package 2 (CU2) for SQL Server 2008 R2]:http://support.microsoft.com/kb/2072493
+[Cumulative update package 1 (CU1) for SQL Server 2008 R2]:http://support.microsoft.com/kb/981355
+[MS11-049: Description of the security update for SQL Server 2008 R2 GDR: June 14, 2011]:http://support.microsoft.com/kb/2494088
 
 
 ## Microsoft SQL Server 2008 Builds
