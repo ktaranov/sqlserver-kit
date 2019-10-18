@@ -873,6 +873,10 @@ Articles types:
 | [Migrating from MSSQL to PostgreSQL - What You Should Know]                                                             | Severalnines                             | 2018-11-05 | [DEV]       |
 | [Difference between Identity and Sequence in SQL Server 2012]                                                           | Muhammad Imran                           | 2012-05-01 | [DEV]       |
 | [Sequence vs Identity – Performance Comparison]                                                                         | Bill Anton                               | 2012-09-02 | [DEV]       |
+| [Read Excel File in SQL Server with OPENROWSET or OPENDATASOURCE]                                                       | Diana Moldovan                           | 2019-10-10 | [DBA],[DEV] |
+| [Upgrading SQL Server using Availability Groups – Checklist]                                                            | Thomas Rushton                           | 2019-10-17 | [DBA]       |
+| [Using indexed views? WITH (NOEXPAND) for Standard Edition]                                                             | Randolph West                            | 2019-10-09 | [DEV],[IDX] |
+| [Using indexed views? What is an imprecise or non-deterministic convert?]                                               | Randolph West                            | 2019-10-16 | [DEV],[IDX] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1723,3 +1727,7 @@ Articles types:
 [Migrating from MSSQL to PostgreSQL - What You Should Know]:https://severalnines.com/database-blog/migrating-mssql-postgresql-what-you-should-know
 [Difference between Identity and Sequence in SQL Server 2012]:https://raresql.com/2012/05/01/difference-between-identity-and-sequence/
 [Sequence vs Identity – Performance Comparison]:http://byobi.com/2012/09/sequence-vs-identity-performance-comparison/
+[Read Excel File in SQL Server with OPENROWSET or OPENDATASOURCE]:https://www.mssqltips.com/sqlservertip/6178/read-excel-file-in-sql-server-with-openrowset-or-opendatasource/
+[Upgrading SQL Server using Availability Groups – Checklist]:https://thelonedba.wordpress.com/2019/10/17/upgrading-sql-server-using-availability-groups-checklist/
+[Using indexed views? WITH (NOEXPAND) for Standard Edition]:https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/
+[Using indexed views? What is an imprecise or non-deterministic convert?]:https://bornsql.ca/blog/using-indexed-views-what-is-an-imprecise-or-non-deterministic-convert/
