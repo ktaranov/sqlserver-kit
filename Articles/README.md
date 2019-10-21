@@ -27,7 +27,7 @@ Articles types:
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
-| [SQL Server Index Design Guide]                                                                                         | Microsoft                                | ?          | [IDX]       |
+| [SQL Server Index Design Guide]                                                                                         | Microsoft                                | 1753-01-01 | [IDX]       |
 | [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 | [SEC]       |
 | [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 | [COR]       |
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
@@ -449,7 +449,7 @@ Articles types:
 | [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA],[DEV] |
 | [Using the OPTION (RECOMPILE) option for a statement]                                                                   | Kimberly Tripp                           | 2010-04-15 | [DBA],[DEV] |
 | [Execution Plan Caching and Reuse]                                                                                      | Brett Shearer                            | 2015-02-12 | [DBA],[DEV] |
-| [Buffer Management]                                                                                                     | Microsoft                                | ?          | [DBA],[DEV] |
+| [Buffer Management]                                                                                                     | Microsoft                                | 1753-01-01 | [DBA],[DEV] |
 | [RECOMPILE Hints and Execution Plan Caching]                                                                            | Kendra Little                            | 2017-12-17 | [DBA],[DEV] |
 | [Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]          | Robin Lester                             | 2016-08-10 | [DBA],[DEV] |
 | [Eight Different Ways to Clear the SQL Server Plan Cache]                                                               | Glenn Berry                              | 2016-03-26 | [DBA],[DEV] |
@@ -793,7 +793,7 @@ Articles types:
 | [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-10-27 | [DBA],[DEV] |
 | [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-11-24 | [DBA],[DEV] |
 | [An Intro to SQL Window Functions]                                                                                      | Neal Barnett                             | 2019-07-07 | [DBA],[DEV] |
-| [SQL Database Performance Tuning for Developers]                                                                        | Rodrigo Koch                             | ?          | [P]         |
+| [SQL Database Performance Tuning for Developers]                                                                        | Rodrigo Koch                             | 1753-01-01 | [P]         |
 | [“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]                                                             | Brent Ozar                               | 2019-08-05 | [DBA],[DEV] |
 | [tempdb Enhancements in SQL Server 2019]                                                                                | Erin Stellato                            | 2019-08-02 | [BENCH]     |
 | [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]      | Solomon Rutzky                           | 2019-08-05 | [SEC]       |
@@ -877,6 +877,19 @@ Articles types:
 | [Upgrading SQL Server using Availability Groups – Checklist]                                                            | Thomas Rushton                           | 2019-10-17 | [DBA]       |
 | [Using indexed views? WITH (NOEXPAND) for Standard Edition]                                                             | Randolph West                            | 2019-10-09 | [DEV],[IDX] |
 | [Using indexed views? What is an imprecise or non-deterministic convert?]                                               | Randolph West                            | 2019-10-16 | [DEV],[IDX] |
+| [JSON in your Azure SQL Database? Let’s benchmark some options!]                                                        | Silvano Coriani                          | 2019-10-15 | [X]         |
+| [Looking for strange - addition to system_health XE]                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[XE]  |
+| [What's new in SQL Server version x]                                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[DEV] |
+| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi's                          | 1753-01-01 | [DBA],[DEV] |
+| [Some numbers that you will know by heart if you have been working with SQL Server for a while]                         | Unknown                                  | 2019-03-20 | [DBA],[DEV] |
+| [#TSQL2sday: How Much Plan Cache History Do You Have?]                                                                  | Brent Ozar                               | 2018-07-10 | [DBA],[DEV] |
+| [Fixing SQL Server Management Studio’s Tab Text]                                                                        | Brent Ozar                               | 2011-06-07 | [DBA],[DEV] |
+| [An overview of the SQL table variable]                                                                                 | Rajendra Gupta                           | 2019-10-16 | [DBA],[DEV] |
+| [Performance Impact of Small Queries]                                                                                   | Forrest                                  | 2019-06-15 | [DBA],[DEV] |
+| [How we use SQL Server as a Document Store]                                                                             | Paul Stovell                             | 2019-03-24 | [DBA],[DEV] |
+| [Overlooked T-SQL Gems]                                                                                                 | Itzik Ben-Gan                            | 2019-10-09 | [DBA],[DEV] |
+| [Are SQL Server database triggers evil?]                                                                                | Daniel Calbimonte                        | 2017-01-25 | [DBA],[DEV] |
+| [Configuration Best Practices for SQL Server Tempdb–Initial Sizing]                                                     | Christian Bolton, Justin Langford …      | 2013-02-12 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1731,3 +1744,16 @@ Articles types:
 [Upgrading SQL Server using Availability Groups – Checklist]:https://thelonedba.wordpress.com/2019/10/17/upgrading-sql-server-using-availability-groups-checklist/
 [Using indexed views? WITH (NOEXPAND) for Standard Edition]:https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/
 [Using indexed views? What is an imprecise or non-deterministic convert?]:https://bornsql.ca/blog/using-indexed-views-what-is-an-imprecise-or-non-deterministic-convert/
+[JSON in your Azure SQL Database? Let’s benchmark some options!]:https://techcommunity.microsoft.com/t5/SQL-Customer-Success-Engineering/JSON-in-your-Azure-SQL-Database-Let-s-benchmark-some-options/ba-p/909131
+[Looking for strange - addition to system_health XE]:https://karaszi.com/looking-for-strange
+[What's new in SQL Server version x]:https://karaszi.com/new-in-version-x
+[The ultimate guide to the datetime datatypes]:https://karaszi.com/the-ultimate-guide-to-the-datetime-datatypes
+[Some numbers that you will know by heart if you have been working with SQL Server for a while]:https://sqlservercode.blogspot.com/2019/03/some-numbers-that-you-will-know-by.html
+[#TSQL2sday: How Much Plan Cache History Do You Have?]:https://www.brentozar.com/archive/2018/07/tsql2sday-how-much-plan-cache-history-do-you-have/
+[Fixing SQL Server Management Studio’s Tab Text]:https://www.brentozar.com/archive/2011/06/fixing-sql-server-management-studios-tab-text/
+[An overview of the SQL table variable]:https://www.sqlshack.com/an-overview-of-the-sql-table-variable/
+[Performance Impact of Small Queries]:https://forrestmcdaniel.com/2019/06/25/performance-impact-of-small-queries/
+[How we use SQL Server as a Document Store]:https://octopus.com/blog/sql-as-document-store
+[Overlooked T-SQL Gems]:https://sqlperformance.com/2019/10/t-sql-queries/overlooked-t-sql-gems
+[Are SQL Server database triggers evil?]:https://www.sqlshack.com/are-sql-server-database-triggers-evil/
+[Configuration Best Practices for SQL Server Tempdb–Initial Sizing]:https://logicalread.com/2013/02/12/sql-server-tempdb-best-practices-initial-sizing-w01/
