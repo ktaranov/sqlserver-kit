@@ -344,7 +344,6 @@ Articles types:
 | [Row-count Estimates when there are no Statistics]                                                                      | Matthew McGiffen                         | 2017-06-28 | [DEV]       |
 | [SQL Server DBA On-Boarding Checklist]                                                                                  | Svetlana Golovko                         | 2017-06-20 | [DBA]       |
 | [Be Wary of Date Formatting in T-SQL]                                                                                   | Randolph West                            | 2017-07-12 | [DEV]       |
-| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi                            | 2010-01-01 | [DEV]       |
 | [Statistics and Cardinality Estimation]                                                                                 | Matthew McGiffen                         | 2017-06-20 | [DEV]       |
 | [Message queues for the DBA: sending data out into the world]                                                           | Drew Furgiuele                           | 2017-07-21 | [DBA]       |
 | [Schema-Based Access Control for SQL Server Databases]                                                                  | Phil Factor                              | 2017-04-09 | [DBA]       |
@@ -880,7 +879,7 @@ Articles types:
 | [JSON in your Azure SQL Database? Let’s benchmark some options!]                                                        | Silvano Coriani                          | 2019-10-15 | [X]         |
 | [Looking for strange - addition to system_health XE]                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[XE]  |
 | [What's new in SQL Server version x]                                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[DEV] |
-| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi's                          | 1753-01-01 | [DBA],[DEV] |
+| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi's                          | 2010-01-01 | [DBA],[DEV] |
 | [Some numbers that you will know by heart if you have been working with SQL Server for a while]                         | Unknown                                  | 2019-03-20 | [DBA],[DEV] |
 | [#TSQL2sday: How Much Plan Cache History Do You Have?]                                                                  | Brent Ozar                               | 2018-07-10 | [DBA],[DEV] |
 | [Fixing SQL Server Management Studio’s Tab Text]                                                                        | Brent Ozar                               | 2011-06-07 | [DBA],[DEV] |
@@ -890,6 +889,14 @@ Articles types:
 | [Overlooked T-SQL Gems]                                                                                                 | Itzik Ben-Gan                            | 2019-10-09 | [DBA],[DEV] |
 | [Are SQL Server database triggers evil?]                                                                                | Daniel Calbimonte                        | 2017-01-25 | [DBA],[DEV] |
 | [Configuration Best Practices for SQL Server Tempdb–Initial Sizing]                                                     | Christian Bolton, Justin Langford …      | 2013-02-12 | [DBA]       |
+| [Sql Server Extended Events Trace Overhead]                                                                             | Nenad Noveljic                           | 2018-09-04 | [DBA]       |
+| [Measuring "Observer Overhead" of SQL Trace vs. Extended Events]                                                        | Jonathan Kehayias                        | 2012-10-23 | [DBA],[XE]  |
+| [Performance overhead of tracing with Extended Event targets vs SQL Trace under CPU Load]                               | Andreas Wolter                           | 2013-07-01 | [DBA],[XE]  |
+| [Fragmentation, the final installment]                                                                                  | Tibor Karaszi's                          | 2019-10-18 | [DBA],[IX]  |
+| [Atomic Durability - How do databases recover from a crash ?]                                                           | Pedro Ramalhete                          | 2019-10-01 | [DBA],[DEV] |
+| [Truth First, or Why You Should Mostly Implement Database First Designs]                                                | Lukas Eder                               | 2018-06-06 | [DEV]       |
+| [SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]                                        | Rajendra Gupta                           | 2019-08-22 | [DBA]       |
+| [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-08-14 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1211,7 +1218,6 @@ Articles types:
 [Row-count Estimates when there are no Statistics]:http://www.sqlservercentral.com/blogs/matthew-mcgiffen-dba/2017/06/28/row-count-estimates-when-there-are-no-statistics/
 [SQL Server DBA On-Boarding Checklist]:https://www.mssqltips.com/sqlservertip/4871/sql-server-dba-onboarding-checklist/
 [Be Wary of Date Formatting in T-SQL]:https://bornsql.ca/2017/07/wary-date-formatting-t-sql/
-[The ultimate guide to the datetime datatypes]:http://www.karaszi.com/SQLServer/info_datetime.asp
 [Statistics and Cardinality Estimation]:http://www.sqlservercentral.com/blogs/matthew-mcgiffen-dba/2017/06/20/statistics-and-cardinality-estimation/
 [Message queues for the DBA: sending data out into the world]:http://port1433.com/2017/07/21/messaging-queuing-for-the-dba-sending-data-out-into-the-world/
 [Schema-Based Access Control for SQL Server Databases]:https://www.red-gate.com/simple-talk/sql/sql-training/schema-based-access-control-for-sql-server-databases/
@@ -1757,3 +1763,11 @@ Articles types:
 [Overlooked T-SQL Gems]:https://sqlperformance.com/2019/10/t-sql-queries/overlooked-t-sql-gems
 [Are SQL Server database triggers evil?]:https://www.sqlshack.com/are-sql-server-database-triggers-evil/
 [Configuration Best Practices for SQL Server Tempdb–Initial Sizing]:https://logicalread.com/2013/02/12/sql-server-tempdb-best-practices-initial-sizing-w01/
+[Sql Server Extended Events Trace Overhead]:https://nenadnoveljic.com/blog/sql-server-extended-events-trace-overhead/
+[Measuring "Observer Overhead" of SQL Trace vs. Extended Events]:https://sqlperformance.com/2012/10/sql-trace/observer-overhead-trace-extended-events
+[Performance overhead of tracing with Extended Event targets vs SQL Trace under CPU Load]:http://andreas-wolter.com/en/performance-overhead-of-tracing-with-extended-event-targets-vs-sql-trace-under-cpu-load/
+[Fragmentation, the final installment]:http://sqlblog.karaszi.com/fragmentation-the-final-installment/
+[Atomic Durability - How do databases recover from a crash ?]:https://concurrencyfreaks.blogspot.com/2019/10/atomic-durability-how-do-databases.html
+[Truth First, or Why You Should Mostly Implement Database First Designs]:https://blog.jooq.org/2018/06/06/truth-first-or-why-you-should-mostly-implement-database-first-designs/
+[SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]:https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/
+[T-SQL bugs, pitfalls, and best practices – window functions]:https://sqlperformance.com/2019/08/sql-performance/t-sql-bugs-pitfalls-and-best-practices-window-functions

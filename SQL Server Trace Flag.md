@@ -2496,6 +2496,7 @@ Function: For internal testing. Will raise a bogus log-out-of-space condition fr
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3504/<br />
+Link: https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/<br />
 Scope: Session only
 
 

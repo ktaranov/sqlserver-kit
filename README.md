@@ -493,6 +493,7 @@ BIML Bloggers
  - http://databene.org/databene-benerator
  - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
  - https://mockaroo.com
+ - https://anonymize.strd.co/
 
 **[⬆ back to top](#table-of-contents)**
 
