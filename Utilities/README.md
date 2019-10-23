@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **285** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **290** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
- - **[DA]**: Database Architecture {15}
+ - **[DA]**: Database Architecture {16}
  - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {6}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
@@ -13,8 +13,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
  - **[M]**: Monitoring and alerting Tools {17}
- - **[MG]**: Migration tool {26}
- - **[MS]**: Management Studio (alternative for SSMS) {26}
+ - **[MG]**: Migration tool {29}
+ - **[MS]**: Management Studio (alternative for SSMS) {28}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {18}
@@ -309,6 +309,11 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQLGrease](#sqlgrease)                                          | No                            | Online    | [M]      | [SQLGrease]                                 | 2019-09-20 | SQLGrease             |            | No             |  $948 |
 | [QuickDBD](#quickdbd)                                            | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [QuickDBD]                                  | ?          | Dovetail Technologies |            | Yes            |   $95 |
 | [DB Designer](#dbdesigner)                                       | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [DB Designer]                               | ?          | DB Designer           |            | Yes            |  $180 |
+| [ESF Database Migration Toolkit](#esf)                           | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [ESF Database Migration Toolkit]            | 2019-10-23 | DBSofts Inc           |            | No             |  $322 |
+| [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters|            | No             |   $99 |
+| [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                |            | No             |  €109 |
+| [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder]                                 | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
+| [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
 
 
 <a id="ssms"></a>
@@ -4410,6 +4415,70 @@ Price: $180
 All The Features You Need For Database Design – Simple But Powerful.
 
 
+## ESF Database Migration Toolkit
+<a id="esf"></a>
+Download page: [ESF Database Migration Toolkit]<br/>
+Release date: 2019-10-23<br/>
+Support Version: 2008-2017<br/>
+Author: DBSofts Inc<br/>
+Free version: No<br/>
+Price: $322
+
+ESF Database Migration Toolkit is the most popular toolkit to help people migrate data across various database formats, supporting Oracle, MySQL, MariaDB, SQL Server, PostgreSQL, IBM DB2, IBM Informix, InterSystems Caché, Teradata, Visual Foxpro, SQLite, FireBird, InterBase, Microsoft Access, Microsoft Excel, Paradox, Lotus, dBase, CSV/Text and so on.
+
+
+## MS SQL Migration Toolkit
+<a id="msskit"></a>
+Download page: [MS SQL Migration Toolkit]<br/>
+Release date: 2019-04-22<br/>
+Support Version: 2008-2017<br/>
+Author: Intelligent Converters<br/>
+Free version: No<br/>
+Price: $99
+
+MS SQL Migration Toolkit is a software pack to convert any data source to Microsoft SQL Server or Azure SQL and vice versa. The product has high performance because it does not use ODBC or any other middleware software.
+Command line support allows to script, automate and schedule the conversion.
+
+
+## DatabaseSpy
+<a id="databasespy"></a>
+Download page: [DatabaseSpy]<br/>
+Release date: 2019-10-09<br/>
+Support Version: 2008-2019<br/>
+Author: Altova<br/>
+Free version: No<br/>
+Price: €109
+
+Altova DatabaseSpy is the unique multi-database query and design tool that even generates elegant charts directly from query results.
+
+
+## ERBuilder data modeler
+<a id="erbuilder"></a>
+Download page: [ERBuilder data modeler]<br/>
+Release date: 2019-07-04<br/>
+Support Version: 2008-2017/AzureSQL<br/>
+Author: Softbuilder<br/>
+Free version: Yes<br/>
+Price: $280
+
+ERBuilder Data Modeler allows developers to graphically design databases by using entity relationship diagrams, and automatically generates the most popular SQL databases.
+It also allows developers to easily deploy databases by offering a sophisticated visual data modeling environment.
+
+
+## SQLDatabaseStudio
+<a id="sqldatabasestudio"></a>
+Download page: [SQLDatabaseStudio]<br/>
+Release date: 2017-05-10<br/>
+Support Version: 2008-2017<br/>
+Author: Jan Pivarcek<br/>
+Free version: Yes<br/>
+Price: $215
+
+- Attention to the details is what makes SQL Database Studio (SDS) perfect. SDS automates repetitive tasks such as filtering, sorting, searching and much more. You can stay focused on problem you are solving and be more productive.
+- Start Up in No Time
+- Smart and Modern IDE
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4697,6 +4766,11 @@ All The Features You Need For Database Design – Simple But Powerful.
 [SQLGrease]:https://sqlgrease.com
 [QuickDBD]:https://www.quickdatabasediagrams.com/
 [DB Designer]:https://www.dbdesigner.net
+[ESF Database Migration Toolkit]:https://www.dbsofts.com/
+[MS SQL Migration Toolkit]:https://www.convert-in.com/msskit.htm
+[DatabaseSpy]:https://www.altova.com/databasespy
+[ERBuilder data modeler]:https://soft-builder.com/
+[SQLDatabaseStudio]:https://www.sqldatabasestudio.com/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
