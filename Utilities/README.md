@@ -312,7 +312,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ESF Database Migration Toolkit](#esf)                           | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [ESF Database Migration Toolkit]            | 2019-10-23 | DBSofts Inc           |            | No             |  $322 |
 | [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters|            | No             |   $99 |
 | [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                |            | No             |  €109 |
-| [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder]                                 | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
+| [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
 | [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
 
 
