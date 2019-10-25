@@ -64,46 +64,44 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 ## SQL Server Data Types Recommendation
 More details about SQL Server data types and mapping it with another databases you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
 
-| General Type         | Type                | Recommended    | What use instead   | Why use or not                                            |
-|----------------------|---------------------|----------------|--------------------|-----------------------------------------------------------|
-| Exact Numerics       | [bit]               | *Maybe*        | [tinyint][1]       |                                                           |
-| Exact Numerics       | [tinyint][1]        | *Maybe*        | [int][1]           |                                                           |
-| Exact Numerics       | [smallint][1]       | *Maybe*        | [int][1]           |                                                           |
-| Exact Numerics       | [int][1]            | Yes            | -                  |                                                           |
-| Exact Numerics       | [bigint][1]         | Yes            | [int][1]           |                                                           |
-| Exact Numerics       | [decimal][2]        | Yes            | -                  |                                                           |
-| Exact Numerics       | [smallmoney][3]     | No             | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
-| Exact Numerics       | [money][3]          | No             | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
-| Approximate Numerics | [real][4]           | Yes            | -                  |                                                           |
-| Approximate Numerics | [float][4]          | Yes            | -                  |                                                           |
-| Date and Time        | [date]              | Yes            | -                  |                                                           |
-| Date and Time        | [smalldatetime]     | *Maybe*        | [date]             |                                                           |
-| Date and Time        | [time]              | Yes            | -                  |                                                           |
-| Date and Time        | [datetime2]         | Yes            | -                  |                                                           |
-| Date and Time        | [datetime]          | No             | [datetime2]        |                                                           |
-| Date and time        | [datetimeoffset]    | Yes            | -                  |                                                           |
-| Character Strings    | [char][5]           | *Maybe*        |                    |                                                           |
-| Character Strings    | [varchar][5]        | Yes            | [varchar][5]       |                                                           |
-| Character Strings    | [varchar(max)][5]   | Yes            | -                  |                                                           |
-| Character Strings    | [nchar][6]          | *Maybe*        | [nvarchar][6]      |                                                           |
-| Character Strings    | [nvarchar][6]       | Yes            | -                  |                                                           |
-| Character Strings    | [nvarchar(max)][6]  | Yes            | -                  |                                                           |
-| Character Strings    | [ntext][7]          | **Deprecated** | [nvarchar(max)][6] |                                                           |
-| Character Strings    | [text][7]           | **Deprecated** | [nvarchar(max)][6] |                                                           |
-| Binary Strings       | [image][7]          | **Deprecated** | [nvarchar(max)][6] |                                                           |
-| Binary Strings       | [binary][8]         | **Deprecated** | [nvarchar(max)][6] |                                                           |
-| Binary Strings       | [varbinary][8]      | Yes            | -                  |                                                           |
-| Binary Strings       | [varbinary(max)][8] | Yes            | -                  |                                                           |
-| Other Data Types     | [cursor]            | *Maybe*        | -                  |                                                           |
-| Other Data Types     | [sql_variant]       | No             | [varchar][5]?      |                                                           |
-| Other Data Types     | [hierarchyid]       | *Maybe*         | -                  |                                                           |
-| Other Data Types     | [rowversion]        | *Maybe*        | -                  |                                                           |
-| Other Data Types     | [timestamp]         | **Deprecated** | [rowversion]       | it is just synonym to [rowversion] data type              |
-| Other Data Types     | [uniqueidentifier]  | Yes            | -                  |                                                           |
-| Other Data Types     | [xml]               | Yes            | -                  |                                                           |
-| Other Data Types     | [table]             | *Maybe*        | -                  |                                                           |
-| Spatial Data Types   | [geometry]          | Yes            | -                  |                                                           |
-| Spatial Data Types   | [geography]         | Yes            | -                  |                                                           |
+| General Type         | Type                | ANSI | Recommended    | What use instead   | Why use or not                                            |
+|----------------------|---------------------|------|----------------|--------------------|-----------------------------------------------------------|
+| Exact Numerics       | [bit]               | No   | *Maybe*        | [tinyint][1]       | bit convert any number except 0 to 1                     |
+| Exact Numerics       | [tinyint][1]        | No   | *Maybe*        | [int][1]           |                                                           |
+| Exact Numerics       | [smallint][1]       | Yes  | *Maybe*        | [int][1]           |                                                           |
+| Exact Numerics       | [int][1]            | Yes  | Yes            | -                  |                                                           |
+| Exact Numerics       | [bigint][1]         | No   | Yes            | [int][1]           |                                                           |
+| Exact Numerics       | [decimal][2]        | Yes  | Yes            | -                  |                                                           |
+| Exact Numerics       | [smallmoney][3]     | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
+| Exact Numerics       | [money][3]          | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
+| Approximate Numerics | [real][4]           | Yes  | Yes            | -                  |                                                           |
+| Approximate Numerics | [float][4](1-24)    | Yes  | No             | [real][4]          | sql server automatically converts float(1-24) to real     |
+| Approximate Numerics | [float][4]          | Yes  | Yes            | -                  |                                                           |
+| Date and Time        | [date]              | Yes  | Yes            | -                  |                                                           |
+| Date and Time        | [smalldatetime]     | No   | *Maybe*        | [date]             |                                                           |
+| Date and Time        | [time]              | Yes  | Yes            | -                  |                                                           |
+| Date and Time        | [datetime2]         | No   | Yes            | -                  |                                                           |
+| Date and Time        | [datetime]          | Yes  | *Maybe*        | [datetime2]        | [On the Advantages of DateTime2(n) over DateTime]         |
+| Date and time        | [datetimeoffset]    | ?    | Yes            | -                  |                                                           |
+| Character Strings    | [char][5]           | Yes  | *Maybe*        | [varchar][5]       | Save 1 byte from varchar, but be ready for trailing spaces|
+| Character Strings    | [varchar][5]        | Yes  | Yes            | -                  |                                                           |
+| Character Strings    | [varchar(max)][5]   | Yes  | Yes            | -                  |                                                           |
+| Character Strings    | [nchar][6]          | Yes  | *Maybe*        | [nvarchar][6]      |                                                           |
+| Character Strings    | [nvarchar][6]       | Yes  | Yes            | -                  |                                                           |
+| Character Strings    | [nvarchar(max)][6]  | Yes  | Yes            | -                  |                                                           |
+| Character Strings    | [ntext][7]          | No   | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Character Strings    | [text][7]           | No   | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [image][7]          | No   | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [binary][8]         | Yes  | **Deprecated** | [nvarchar(max)][6] |                                                           |
+| Binary Strings       | [varbinary][8]      | Yes  | Yes            | -                  |                                                           |
+| Binary Strings       | [varbinary(max)][8] | Yes  | *Maybe*        | -                  |                                                           |
+| Other Data Types     | [rowversion]        | No   | *Maybe*        | -                  |                                                           |
+| Other Data Types     | [timestamp]         | No   | **Deprecated** | [rowversion]       | it is just synonym to [rowversion] data type              |
+| Other Data Types     | [uniqueidentifier]  | No   | Yes            | -                  |                                                           |
+| Other Data Types     | [xml]               | ?    | Yes            | -                  |                                                           |
+| Other Data Types     | [table]             | No   | *Maybe*        | -                  |                                                           |
+| Spatial Data Types   | [geometry]          | No   | Yes            | -                  |                                                           |
+| Spatial Data Types   | [geography]         | No   | Yes            | -                  |                                                           |
 
 [1]:https://docs.microsoft.com/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql
 [2]:https://docs.microsoft.com/sql/t-sql/data-types/decimal-and-numeric-transact-sql
@@ -133,6 +131,7 @@ More details about SQL Server data types and mapping it with another databases y
 [table]:https://docs.microsoft.com/sql/t-sql/data-types/table-transact-sql
 [geometry]:https://docs.microsoft.com/sql/t-sql/spatial-geometry/spatial-types-geometry-transact-sql
 [geography]:https://docs.microsoft.com/sql/t-sql/spatial-geography/spatial-types-geography
+[On the Advantages of DateTime2(n) over DateTime]:http://www.sqltact.com/2012/12/on-advantages-of-datetime2n-over.html
 
 **[⬆ back to top](#table-of-contents)**
 
