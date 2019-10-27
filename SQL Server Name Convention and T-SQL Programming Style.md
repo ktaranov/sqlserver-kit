@@ -66,7 +66,7 @@ More details about SQL Server data types and mapping it with another databases y
 
 | General Type         | Type                | ANSI | Recommended    | What use instead   | Why use or not                                            |
 |----------------------|---------------------|------|----------------|--------------------|-----------------------------------------------------------|
-| Exact Numerics       | [bit]               | No   | *Maybe*        | [tinyint][1]       | bit convert any number except 0 to 1                     |
+| Exact Numerics       | [bit]               | No   | *Maybe*        | [tinyint][1]       | bit convert any number (except 0) to 1, 0 converted to 0  |
 | Exact Numerics       | [tinyint][1]        | No   | *Maybe*        | [int][1]           |                                                           |
 | Exact Numerics       | [smallint][1]       | Yes  | *Maybe*        | [int][1]           |                                                           |
 | Exact Numerics       | [int][1]            | Yes  | Yes            | -                  |                                                           |
@@ -76,13 +76,13 @@ More details about SQL Server data types and mapping it with another databases y
 | Exact Numerics       | [money][3]          | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9] |
 | Approximate Numerics | [real][4]           | Yes  | Yes            | -                  |                                                           |
 | Approximate Numerics | [float][4](1-24)    | Yes  | No             | [real][4]          | sql server automatically converts float(1-24) to real     |
-| Approximate Numerics | [float][4]          | Yes  | Yes            | -                  |                                                           |
+| Approximate Numerics | [float][4](24-53)   | Yes  | Yes            | -                  |                                                           |
 | Date and Time        | [date]              | Yes  | Yes            | -                  |                                                           |
 | Date and Time        | [smalldatetime]     | No   | *Maybe*        | [date]             |                                                           |
 | Date and Time        | [time]              | Yes  | Yes            | -                  |                                                           |
 | Date and Time        | [datetime2]         | No   | Yes            | -                  |                                                           |
 | Date and Time        | [datetime]          | Yes  | *Maybe*        | [datetime2]        | [On the Advantages of DateTime2(n) over DateTime]         |
-| Date and time        | [datetimeoffset]    | ?    | Yes            | -                  |                                                           |
+| Date and time        | [datetimeoffset]    | No   | Yes            | -                  |                                                           |
 | Character Strings    | [char][5]           | Yes  | *Maybe*        | [varchar][5]       | Save 1 byte from varchar, but be ready for trailing spaces|
 | Character Strings    | [varchar][5]        | Yes  | Yes            | -                  |                                                           |
 | Character Strings    | [varchar(max)][5]   | Yes  | Yes            | -                  |                                                           |
@@ -95,10 +95,13 @@ More details about SQL Server data types and mapping it with another databases y
 | Binary Strings       | [binary][8]         | Yes  | **Deprecated** | [nvarchar(max)][6] |                                                           |
 | Binary Strings       | [varbinary][8]      | Yes  | Yes            | -                  |                                                           |
 | Binary Strings       | [varbinary(max)][8] | Yes  | *Maybe*        | -                  |                                                           |
+| Other Data Types     | [cursor]            | No   | Yes            | -                  |                                                           |
+| Other Data Types     | [sql_variant]       | No   | Yes            | -                  |                                                           |
+| Other Data Types     | [hierarchyid]       | No   | Yes            | -                  |                                                           |
 | Other Data Types     | [rowversion]        | No   | *Maybe*        | -                  |                                                           |
 | Other Data Types     | [timestamp]         | No   | **Deprecated** | [rowversion]       | it is just synonym to [rowversion] data type              |
 | Other Data Types     | [uniqueidentifier]  | No   | Yes            | -                  |                                                           |
-| Other Data Types     | [xml]               | ?    | Yes            | -                  |                                                           |
+| Other Data Types     | [xml]               | Yes  | Yes            | -                  |                                                           |
 | Other Data Types     | [table]             | No   | *Maybe*        | -                  |                                                           |
 | Spatial Data Types   | [geometry]          | No   | Yes            | -                  |                                                           |
 | Spatial Data Types   | [geography]         | No   | Yes            | -                  |                                                           |
@@ -142,35 +145,40 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
 
- - For database objects names in code please use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and NOT `PRODSERVER.PRODDB.dbo.MyTable`.
+ - For database objects names in code please use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
    More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/).
- - Delimiters: spaces (not tabs)
+ - Delimiters: **spaces** (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
  - All finished expressions should have semicolon `;` at the end. This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated. This deprecation announcement means that you should always use semicolon terminators in new development.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/).
  - All script files should end with `GO` and line break
- - Avoid non-standard column aliases, use, if required, double-quotes and always `AS` keyword: `SELECT p.LastName AS "Last Name" FROM dbo.Person AS p;`.
+ - Avoid non-standard column aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
+   ```sql
+   SELECT p.LastName AS "Last Name"
+     FROM dbo.Person AS p;
+   ```
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-non-standard-column-aliases).
    All possible ways using aliases in SQL Server:
 
-   ```sql
+   ```tsql
     /* Recommended due to ANSI */
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS "Tables" FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + "name" AS "Tables" FROM sys.tables;
 
     /* Not recommended but possible */
-    SELECT Tables   = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT "Tables" = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT [Tables] = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT 'Tables' = SCHEMA_NAME(schema_id)+'.'+[name]  FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] [Tables]    FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] 'Tables'    FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] "Tables"    FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] Tables      FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS [Tables] FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS 'Tables' FROM sys.tables;
-    SELECT SCHEMA_NAME(schema_id)+'.'+[name] AS Tables   FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS "Tables" FROM sys.tables;
+    SELECT Tables   = SCHEMA_NAME(schema_id) + '.' + [name]  FROM sys.tables;
+    SELECT "Tables" = SCHEMA_NAME(schema_id) + '.' + [name]  FROM sys.tables;
+    SELECT [Tables] = SCHEMA_NAME(schema_id) + '.' + [name]  FROM sys.tables;
+    SELECT 'Tables' = SCHEMA_NAME(schema_id) + '.' + [name]  FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] [Tables]    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] 'Tables'    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] "Tables"    FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] Tables      FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS [Tables] FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS 'Tables' FROM sys.tables;
+    SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS Tables   FROM sys.tables;
    ```
  - The first argument in `SELECT` expression should be on the same line with it: `SELECT LastName …`
  - Arguments are divided by line breaks, commas should be placed before an argument:
@@ -185,14 +193,15 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
  - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
 
-   ```sql
+   ```tsql
    /* Not working without brackets () */
    DECLARE @n int = 1;
    SELECT TOP@n name FROM sys.objects;
    ```
  - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
- - Keywords and data types declaration should be in **UPPERCASE**
+ - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc
+ - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc. More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All objects must used with schema names but without database and server name: `FROM dbo.Table`.
    More details [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and for stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
  - All system database and tables must be in lower case for properly working for Case Sensitive instance: `master, sys.tables …`
@@ -222,7 +231,9 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
  - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `OPTION(RECOMPILE)` if needed.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7).
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement).
- - Use only ISO standard JOINS syntaxes. The “old style” Microsoft/Sybase JOIN style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used. Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (`FROM tableA, tableB`) is still ISO standard for `INNER JOINs` only. Neither of these styles are worth using. It is always better to specify the type of join you require` INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`, which has been standard since ANSI SQL-92 was published. While you can choose any supported `JOIN `style, without affecting the query plan used by SQL Server, using the ANSI-standard syntax will make your code easier to understand, more consistent, and portable to other relational database systems.
+ - Use only ISO standard JOINS syntaxes. The *old style* Microsoft/Sybase `JOIN` style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used.
+   Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (`FROM tableA, tableB`) is still ISO standard for `INNER JOINs` only. Neither of these styles are worth using.
+   It is always better to specify the type of join you require` INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`, which has been standard since ANSI SQL-92 was published. While you can choose any supported `JOIN `style, without affecting the query plan used by SQL Server, using the ANSI-standard syntax will make your code easier to understand, more consistent, and portable to other relational database systems.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001).
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017).
@@ -233,21 +244,25 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
    - always store into a variable of type `NVARCHAR(MAX)`;
    - avoid truncation of string literals, simply ensure that one piece is converted to `NVARCHAR(MAX)`.
    Example:
-   `SET @NVCmaxVariable = CONVERT(NVARCHAR(MAX), N'anything') + N'something else' + N'another';`
+   ```tsql
+   DECLARE @nvcmaxVariable nvarchar(max);
+   SET @nvcmaxVariable = CONVERT(nvarchar(max), N'ಠ russian anomaly ЯЁЪ ಠ ') + N'something else' + N'another';
+   SELECT @nvcmaxVariable
+   ```
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/).
  - Always specify a length to any text-based data type such as `VARCHAR`, `NVARCHAR`, `CHAR`, `NCHAR`:
-   ```sql
+   ```tsql
     /* Correct */
-    DECLARE @myGoodVarchareVariable  VARCHAR(50);
-    DECLARE @myGoodNVarchareVariable NVARCHAR(90);
-    DECLARE @myGoodCharVariable      CHAR(7);
-    DECLARE @myGoodNCharVariable     NCHAR(10);
+    DECLARE @myGoodVarchareVariable  varchar(50);
+    DECLARE @myGoodNVarchareVariable nvarchar(90);
+    DECLARE @myGoodCharVariable      char(7);
+    DECLARE @myGoodNCharVariable     nchar(10);
     
     /* Not correct */
-    DECLARE @myBadVarcharVariable  VARCHAR;
-    DECLARE @myBadNVarcharVariable NVARCHAR;
-    DECLARE @myBadCharVariable     CHAR;
-    DECLARE @myBadNCharVariable    NCHAR;
+    DECLARE @myBadVarcharVariable  varchar;
+    DECLARE @myBadNVarcharVariable nvarchar;
+    DECLARE @myBadCharVariable     char;
+    DECLARE @myBadNCharVariable    nchar;
     ```
     More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores).
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
