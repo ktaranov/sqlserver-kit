@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **290** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **291** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -7,7 +7,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {16}
  - **[DC]**: Data compare {12}
- - **[ETL]**: Extract Download Load (ETL) Tools {6}
+ - **[ETL]**: Extract Download Load (ETL) Tools {8}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
@@ -233,8 +233,9 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Cloud-based DB Monitoring Platform](#cbmp)                      | No                            | Mobile    | [M]      | [Cloud-based DB Monitoring Platform]        | ?          | SQLTreeo              |            | No             |  €180 |
 | [SchemaCrawler](#schema-crawler)                                 | Oracle,MySQL,PostgreSQL,Other | Yes       | [D],[SC] | [SchemaCrawler]                             | 2017-02-27 | Sualeh Fatehi         |            | Open Source    | No    |
 | [SA MaaS Microsoft SQL Server](#sa-maas)                         | No                            | No        | [M]      | [SA MaaS Microsoft SQL Server]              | ?          | SENTINELAGENT         |            | No             | ?     |
-| [CatCompare v2](#cat-compare)                                    | No                            | No        | [?]      | [CatCompare v2]                             | 2017-01-07 | Andy Leonard          |            | No             |  $295 |
-| [SSIS Catalog Compare v2.0 Bundle](#catalog-compare-bundle)      | No                            | No        | [?]      | [SSIS Catalog Compare v2.0 Bundle]          | 2017-01-06 | Andy Leonard          |            | No             |  $495 |
+| [SSIS Framework](#ssis-framework)                                | No                            | No        | [ETL]    | [SSIS Framework]                            | 2017-01-07 | Andy Leonard          |            | Yes            | ?     |
+| [SSIS Catalog Browser](#ssis-browser)                            | No                            | No        | [ETL]    | [SSIS Catalog Browser]                      | 2019-04-23 | Andy Leonard          |            | Yes            | No    |
+| [BimlExpress Metadata Framework](#bimlexpress)                   | No                            | No        | [?]      | [BimlExpress Metadata Framework]            | 2017-01-06 | Andy Leonard          |            | Yes            | No    |
 | [MS Kerberos Configuration Manager](#mkcm)                       | No                            | No        | [?]      | [MS Kerberos Configuration Manager]         | 2017-01-31 | Microsoft             |            | Yes            | No    |
 | [Spotlight](#spotlight)                                          | No                            | No        | [M]      | [Spotlight]                                 | ?          | Quest Software        |            | Yes            | ?     |
 | [DBConvert Studio](#dbconvert-studio)                            | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [DBConvert Studio]                          | 2017-03-01 | DMSoft Technologies   |            | No             |  $499 |
@@ -3383,29 +3384,45 @@ SA MaaS Microsoft SQL Server for on-premise and virtual Microsoft SQL servers ga
 diagnostics to help network admins and DBAs keep SQL servers running at peak performance and find the logs they need.
 
 
-## CatCompare v2
-<a id="cat-compare"></a>
-Download page: [CatCompare v2]<br/>
-Release date: 2017-01-07<br/>
+## SSIS Framework
+<a id="ssis-framework"></a>
+Download page: [SSIS Framework]<br/>
+Release date: 2019-01-07<br/>
 Support Version: ?<br/>
 Author: Andy Leonard<br/>
-Free version: No<br/>
-Price: $295
+Free version: Yes<br/>
+Price: ?
 
-CatCompare provides automate-able command-line management of SSIS Catalog project configuration, deployment, migration, code promotion, and comparison.
+- Orchestrate SSIS Applications
+- Execute SSIS Applications with a single command
+- SSIS Catalog-integrated execution
+- Works with SSMS Catalog Reporting
+- Works with DILM Suite Catalog Reports
+- SSIS Catalog-integrated logging
+- SSIS Framework Reporting
+- Restart SSIS Applications at Failed Application Package
+- Application Package Parameter Support
+- Metadata-Driven Data Tap Support
+- Application Package Environment (References) Support
+- Application Package Property Override Support
+- Execute SSIS Applications / Packages on Different / Several Servers
+- Support for “Enterprise Data Integration Farm” SSIS Scale-Out
+- Enterprise Data Integration Reporting
 
 
-## SSIS Catalog Compare v2.0 Bundle
-<a id="catalog-compare-bundle"></a>
-Download page: [SSIS Catalog Compare v2.0 Bundle]<br/>
+## BimlExpress Metadata Framework
+<a id="bimlexpress"></a>
+Download page: [BimlExpress Metadata Framework]<br/>
 Release date: 2017-01-06<br/>
 Support Version: ?<br/>
 Author: Andy Leonard<br/>
-Free version: No<br/>
-Price: $495
+Free version: Yes<br/>
+Price: No
 
-Deploying SSIS Catalog Projects help deploying environments, references, mappings, and overrides.
-The SSIS Catalog Compare Version 2.0 Bundle includes SSIS Catalog Compare and CatCompare, a CLI (Command-Line Interface) utility.
+The BimlExpress Metadata Framework version 2 uses Business Intelligence Markup Language (Biml) to:
+- Read metadata stored in a SQL Server database.
+- Build SSIS projects that create the target database, schemas, and tables.
+- Build an SSIS project that contains one SSIS package per table, plus a Controller package that executes each table-package.
 
 
 ## MS Kerberos Configuration Manager
@@ -4689,8 +4706,9 @@ Price: $215
 [Cloud-based DB Monitoring Platform]:https://www.sqltreeo.com
 [SchemaCrawler]:http://sualeh.github.io/SchemaCrawler/index.html
 [SA MaaS Microsoft SQL Server]:http://sentinelagent.com/maas/microsoft-sql-server
-[CatCompare v2]:https://dilmsuite.com/downloads/cat-compare-v2
-[SSIS Catalog Compare v2.0 Bundle]:https://dilmsuite.com/downloads/ssis-catalog-compare-v2-bundle
+[SSIS Framework]:https://dilmsuite.com/ssis-framework-editions/
+[SSIS Catalog Browser]:https://dilmsuite.com/product/catalog-browser/
+[BimlExpress Metadata Framework]:https://dilmsuite.com/product/biml-express-metadata-framework/
 [MS Kerberos Configuration Manager]:https://www.microsoft.com/en-us/download/details.aspx?id=39046
 [Spotlight]:https://www.spotlightessentials.com/home/Console
 [DBConvert Studio]:https://dbconvert.com/dbconvert-studio

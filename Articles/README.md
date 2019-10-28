@@ -896,7 +896,8 @@ Articles types:
 | [Atomic Durability - How do databases recover from a crash ?]                                                           | Pedro Ramalhete                          | 2019-10-01 | [DBA],[DEV] |
 | [Truth First, or Why You Should Mostly Implement Database First Designs]                                                | Lukas Eder                               | 2018-06-06 | [DEV]       |
 | [SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]                                        | Rajendra Gupta                           | 2019-08-22 | [DBA]       |
-| [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-08-14 | [DBA],[DEV] |
+| [T-SQL bugs, pitfalls, and best practices – window functions]                                                           | Itzik Ben-Gan                            | 2019-08-14 | [DBA],[DEV] |
+| [#BackToBasics: Why I use lower case for data type names (now)]                                                         | Aaron Bertrand                           | 2016-10-04 | [DBA],[DEV] |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1771,3 +1772,4 @@ Articles types:
 [Truth First, or Why You Should Mostly Implement Database First Designs]:https://blog.jooq.org/2018/06/06/truth-first-or-why-you-should-mostly-implement-database-first-designs/
 [SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]:https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/
 [T-SQL bugs, pitfalls, and best practices – window functions]:https://sqlperformance.com/2019/08/sql-performance/t-sql-bugs-pitfalls-and-best-practices-window-functions
+[#BackToBasics: Why I use lower case for data type names (now)]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types
