@@ -147,7 +147,7 @@ The table does not include all possible mappings or all data types, but is meant
 | [ntext][7] (*)     | String         | DT_NTEXT             | -                 | String            | String                |
 | [numeric][2]       | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
 | [nvarchar][5]      | String         | DT_WSTR              | NVARCHAR          | String            | String                |
-| [nvarchar](max)    | Object         | DT_NTEXT             | -                 | -                 | String                |
+| [nvarchar(max)][5] | Object         | DT_NTEXT             | -                 | -                 | String                |
 | [real][4]          | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
 | [rowversion]       | Object         | DT_BYTES             | -                 | Binary            | Binary                |
 | [smalldatetime]    | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
@@ -163,7 +163,7 @@ The table does not include all possible mappings or all data types, but is meant
 | [varbinary][8]     | Object         | DT_BYTES             | -                 | Binary            | Binary                |
 | [varbinary(max)][8]| Object         | DT_IMAGE             | -                 | Binary            | Binary                |
 | [varchar][5]       | String         | DT_STR               | VARCHAR           | String            | AnsiString            |
-| [varchar](max)     | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| [varchar(max)][5]  | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
 | [xml]              | Object         | DT_NTEXT             | -                 | -                 | Xml                   |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
@@ -193,10 +193,10 @@ The table does not include all possible mappings or all data types, but is meant
 | Date and time         | [datetimeoffset]   |                | 26-29<br/>30-34                   | 8<br/>10              | 0001-01-01 through 9999-12-31<br/>January 1, 1 CE through December 31, 9999 CE<br/>00:00:00 through 23:59:59.9999999<br/>-14:00 throuth +14:00 |
 | Character Strings     | [char][5]          | 1-8000         |                                   | n                     |                                                                                                                                                |
 | Character Strings     | [varchar][5]       | 1-8000         |                                   | n + 2                 |                                                                                                                                                |
-| Character Strings     | [varchar](max)     | 1-(2^31 - 1)   |                                   | 2^31 - 1 + 2          |                                                                                                                                                |
+| Character Strings     | [varchar(max)][5]  | 1-(2^31 - 1)   |                                   | 2^31 - 1 + 2          |                                                                                                                                                |
 | Character Strings     | [nchar][5]         | 1-4000         |                                   |                       |                                                                                                                                                |
 | Character Strings     | [nvarchar][5]      | 1-4000         |                                   |                       |                                                                                                                                                |
-| Character Strings     | [nvarchar](max)    | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
+| Character Strings     | [nvarchar(max)][5] | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
 | Character Strings     | [ntext][7] (*)     | 1-(2^30 - 1)   |                                   | n + n                 |                                                                                                                                                |
 | Character Strings     | [text][7] (*)      | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
 | Binary Strings        | [image][7] (*)     | 1-(2^31 - 1)   |                                   | n                     |                                                                                                                                                |
@@ -280,10 +280,10 @@ FROM sys.fn_helpdatatypemap (
 | Date and time         | [datetimeoffset]   | No   | -                         | -             | TIMESTAMP<br/>with time zone| [TEXT][28]    |
 | Character Strings     | [char][5]          | Yes  | [CHAR][26]                | CHAR          | CHAR                        | [TEXT][28]    |
 | Character Strings     | [varchar][5]       | Yes  | [VARCHAR][26]             | VARCHAR2      | VARCHAR                     | [TEXT][28]    |
-| Character Strings     | [varchar](max)     | Yes  | [LONGTEXT][25]            | VARCHAR2      | TEXT                        | [TEXT][28]    |
+| Character Strings     | [varchar(max)][5]  | Yes  | [LONGTEXT][25]            | VARCHAR2      | TEXT                        | [TEXT][28]    |
 | Character Strings     | [nchar][5]         | Yes  | [CHAR][26] with utf8      | NCHAR         | CHAR                        | [TEXT][28]    |
 | Character Strings     | [nvarchar][5]      | Yes  | [VARCHAR][26] with utf8   | NVARCHAR      | VARCHAR                     | [TEXT][28]    |
-| Character Strings     | [nvarchar](max)    | Yes  | [LONGTEXT][25]            | NCHAR         | TEXT                        | [TEXT][28]    |
+| Character Strings     | [nvarchar(max)][5] | Yes  | [LONGTEXT][25]            | NCHAR         | TEXT                        | [TEXT][28]    |
 | Character Strings     | [ntext][7] (*)     | No   | [LONGTEXT][25]            | CLOB          | TEXT                        | [TEXT][28]    |
 | Character Strings     | [text][7] (*)      | No   | [LONGTEXT][25]            | LONG          | TEXT                        | [TEXT][28]    |
 | Binary Strings        | [image][7] (*)     | No   | [LONGBLOB][25]            | LONG RAW      | BYTEA                       | [BLOB][28]    |
