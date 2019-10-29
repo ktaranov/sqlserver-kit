@@ -2,14 +2,12 @@
 > There are only two hard things in Computer Science: cache invalidation and naming things
 > -- <cite>[Phil Karlton](https://www.karlton.org/2017/12/naming-things-hard/)</cite>
 
-[Naming convention][99] is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.
+[Naming convention](https://en.wikipedia.org/wiki/Naming_convention_(programming)) is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.
 
 Reasons for using a naming convention (as opposed to allowing programmers to choose any character sequence) include the following:
- - To reduce the effort needed to read and understand source code;
+ - To reduce the effort needed to read and understand source code.
  - To enable code reviews to focus on more important issues than arguing over syntax and naming standards.
  - To enable code quality review tools to focus their reporting mainly on significant issues other than syntax and style preferences.
-
-[99]:https://en.wikipedia.org/wiki/Naming_convention_(programming)
 
 
 ## Table of Contents
@@ -145,15 +143,21 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
 
 ### General programming style
 
- - For database objects names in code please use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
-   More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/).
+ - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
+   More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/),
+   [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
  - Delimiters: **spaces** (not tabs)
- - Avoid using asterisk in select statements `SELECT *`, use explicit column names. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list)
- - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**
- - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions
+ - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
+ - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
+ - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions (`CAST` instead `CONVERT`, `COALESE` instead `ISNULL`).
  - All finished expressions should have semicolon `;` at the end. This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated. This deprecation announcement means that you should always use semicolon terminators in new development.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/).
- - All script files should end with `GO` and line break
+ - All script files should end with `GO` and line break.
+ - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc.
+ - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
+   More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
+ - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
  - Avoid non-standard column aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
    SELECT p.LastName AS "Last Name"
@@ -200,20 +204,15 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
    ```
  - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
- - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc
- - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc. More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
- - All objects must used with schema names but without database and server name: `FROM dbo.Table`.
-   More details [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and for stored procedure more details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
- - All system database and tables must be in lower case for properly working for Case Sensitive instance: `master, sys.tables …`
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
-   ```sql
-   CASE WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' --is it a float?
-              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]'
+   ```tsql
+   CASE WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' /* is it a float? */
+              AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
                  AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%'
-                 AND Right(TapAngle ,1) LIKE N'[0123456789]'
+                 AND RIGHT(TapAngle ,1) LIKE N'[0123456789]'
                THEN 'float'
-         WHEN Stuff(LTrim(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' --is it numeric
-              AND Left(LTrim(TapAngle),1) LIKE '[-.+0123456789]'
+         WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' /* is it numeric */
+              AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
               AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%'
               AND TapAngle LIKE '%[0123456789]%'
              THEN 'float'
@@ -228,8 +227,10 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
  - Avoid ambiguous formats for date-only literals, use `CAST('yyyymmdd' AS DATE)` format.
  - Avoid treating dates like strings and avoid calculations on the left-hand side of the `WHERE` clause.
    More details [here](https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries).
- - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `OPTION(RECOMPILE)` if needed.
+ - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `RECOMPILE` if needed and `NOEXPAND` (see next tip).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7).
+ - Use `NOEXPAND` hint for [indexed views](https://docs.microsoft.com/sql/relational-databases/views/create-indexed-views) on non enterprise editions of SQL Server to let the query optimizer know that we have indexes.
+   More details [here](https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/).
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement).
  - Use only ISO standard JOINS syntaxes. The *old style* Microsoft/Sybase `JOIN` style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used.
    Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (`FROM tableA, tableB`) is still ISO standard for `INNER JOINs` only. Neither of these styles are worth using.
@@ -241,16 +242,16 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
    More details [here](https://www.brentozar.com/archive/2018/08/a-common-query-error/).
  - For concatenate unicode strings:
    - always using the upper-case `N`;
-   - always store into a variable of type `NVARCHAR(MAX)`;
-   - avoid truncation of string literals, simply ensure that one piece is converted to `NVARCHAR(MAX)`.
+   - always store into a variable of type `nvarchar(max)`;
+   - avoid truncation of string literals, simply ensure that one piece is converted to `nvarchar(max)`.
    Example:
    ```tsql
    DECLARE @nvcmaxVariable nvarchar(max);
-   SET @nvcmaxVariable = CONVERT(nvarchar(max), N'ಠ russian anomaly ЯЁЪ ಠ ') + N'something else' + N'another';
-   SELECT @nvcmaxVariable
+   SET @nvcmaxVariable = CAST(N'ಠ russian anomaly ЯЁЪ ಠ ' AS nvarchar(max)) + N'something else' + N'another';
+   SELECT @nvcmaxVariable;
    ```
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/).
- - Always specify a length to any text-based data type such as `VARCHAR`, `NVARCHAR`, `CHAR`, `NCHAR`:
+ - Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
    ```tsql
     /* Correct */
     DECLARE @myGoodVarchareVariable  varchar(50);
@@ -269,7 +270,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
 
 Example:
 
-```sql
+```tsql
 WITH CTE_MyCTE AS (
     SELECT      t1.Value1  AS Val1
               , t1.Value2  AS Val2
