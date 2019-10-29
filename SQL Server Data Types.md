@@ -140,22 +140,22 @@ The table does not include all possible mappings or all data types, but is meant
 | [geography]        | -              | DT_IMAGE             | -                 | Object            | Object                |
 | [geometry]         | -              | DT_IMAGE             | -                 | Object            | Object                |
 | [hierarchyid]      | -              | DT_BYTES             | -                 | Object            | Object                |
-| [image] (*)        | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
+| [image][7] (*)     | Object         | DT_IMAGE             | -                 | Binary            | Binary                |
 | [int][1]           | Int32          | DT_I4                | LONG              | Int32             | Int32                 |
 | [money][3]         | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
 | [nchar][5]         | String         | DT_WSTR              | NVARCHAR          | StringFixedLength | StringFixedLength     |
-| [ntext] (*)        | String         | DT_NTEXT             | -                 | String            | String                |
-| [numeric]          | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
+| [ntext][7] (*)     | String         | DT_NTEXT             | -                 | String            | String                |
+| [numeric][2]       | Decimal        | DT_NUMERIC           | NUMERIC           | Decimal           | Decimal               |
 | [nvarchar][5]      | String         | DT_WSTR              | NVARCHAR          | String            | String                |
 | [nvarchar](max)    | Object         | DT_NTEXT             | -                 | -                 | String                |
-| [real]             | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
+| [real][4]          | Single         | DT_R4                | FLOAT, DOUBLE     | Single            | Single                |
 | [rowversion]       | Object         | DT_BYTES             | -                 | Binary            | Binary                |
 | [smalldatetime]    | DateTime       | DT_DBTIMESTAMP       | DATE              | DateTime          | DateTime              |
 | [smallint][1]      | Int16          | DT_I2                | SHORT             | Int16             | Int16                 |
 | [smallmoney][3]    | Object         | DT_CY, DT_NUMERIC    | CURRENCY          | Currency          | Currency              |
 | [sql_variant]      | Object         | DT_WSTR, DT_NTEXT    | -                 | Object            | Object                |
 | [table]            | Object         | -                    | -                 | -                 | -                     |
-| [text] (*)         | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
+| [text][7] (*)      | Object         | DT_TEXT              | -                 | -                 | AnsiString            |
 | [time]             | Object         | DT_DBTIME2           | DBTIME2           | Time              | Time                  |
 | [timestamp] (*)    | Object         | DT_BYTES             | -                 | Binary            | Binary                |
 | [tinyint][1]       | Byte           | DT_UI1               | BYTE              | Byte              | Byte                  |
@@ -197,9 +197,9 @@ The table does not include all possible mappings or all data types, but is meant
 | Character Strings     | [nchar][5]         | 1-4000         |                                   |                       |                                                                                                                                                |
 | Character Strings     | [nvarchar][5]      | 1-4000         |                                   |                       |                                                                                                                                                |
 | Character Strings     | [nvarchar](max)    | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
-| Character Strings     | [ntext](*)         | 1-(2^30 - 1)   |                                   | n + n                 |                                                                                                                                                |
-| Character Strings     | [text](*)          | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
-| Binary Strings        | [image](*)         | 1-(2^31 - 1)   |                                   | n                     |                                                                                                                                                |
+| Character Strings     | [ntext][7] (*)     | 1-(2^30 - 1)   |                                   | n + n                 |                                                                                                                                                |
+| Character Strings     | [text][7] (*)      | 1-(2^31 - 1)   |                                   |                       |                                                                                                                                                |
+| Binary Strings        | [image][7] (*)     | 1-(2^31 - 1)   |                                   | n                     |                                                                                                                                                |
 | Binary Strings        | [binary][8]        | 1-8000         |                                   | n                     |                                                                                                                                                |
 | Binary Strings        | [varbinary][8]     | 1-8000         |                                   | n                     |                                                                                                                                                |
 | Binary Strings        | [varbinary(max)][8]| 1-(2^31 - 1)   |                                   | n + 2                 |                                                                                                                                                |
@@ -207,12 +207,14 @@ The table does not include all possible mappings or all data types, but is meant
 | Other Data Types      | [sql_variant]      |                |                                   | max 8016              |                                                                                                                                                |
 | Other Data Types      | [hierarchyid]      |                |                                   | max 892               |                                                                                                                                                |
 | Other Data Types      | [rowversion]       |                |                                   | 8                     |                                                                                                                                                |
-| Other Data Types      | [timestamp](*)     |                |                                   |                       |                                                                                                                                                |
+| Other Data Types      | [timestamp] (*)    |                |                                   |                       |                                                                                                                                                |
 | Other Data Types      | [uniqueidentifier] |                |                                   | 16                    |                                                                                                                                                |
 | Other Data Types      | [xml]              |                |                                   | max 2Gb               |                                                                                                                                                |
 | Other Data Types      | [table]            |                |                                   |                       |                                                                                                                                                |
 | Spatial Data Types    | [geometry]         |                |                                   |                       |                                                                                                                                                |
 | Spatial Data Types    | [geography]        |                |                                   |                       |                                                                                                                                                |
+
+(\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -282,9 +284,9 @@ FROM sys.fn_helpdatatypemap (
 | Character Strings     | [nchar][5]         | Yes  | [CHAR][26] with utf8      | NCHAR         | CHAR                        | [TEXT][28]    |
 | Character Strings     | [nvarchar][5]      | Yes  | [VARCHAR][26] with utf8   | NVARCHAR      | VARCHAR                     | [TEXT][28]    |
 | Character Strings     | [nvarchar](max)    | Yes  | [LONGTEXT][25]            | NCHAR         | TEXT                        | [TEXT][28]    |
-| Character Strings     | [ntext][4] (*)     | No   | [LONGTEXT][25]            | CLOB          | TEXT                        | [TEXT][28]    |
-| Character Strings     | [text][4] (*)      | No   | [LONGTEXT][25]            | LONG          | TEXT                        | [TEXT][28]    |
-| Binary Strings        | [image][4] (*)     | No   | [LONGBLOB][25]            | LONG RAW      | BYTEA                       | [BLOB][28]    |
+| Character Strings     | [ntext][7] (*)     | No   | [LONGTEXT][25]            | CLOB          | TEXT                        | [TEXT][28]    |
+| Character Strings     | [text][7] (*)      | No   | [LONGTEXT][25]            | LONG          | TEXT                        | [TEXT][28]    |
+| Binary Strings        | [image][7] (*)     | No   | [LONGBLOB][25]            | LONG RAW      | BYTEA                       | [BLOB][28]    |
 | Binary Strings        | [binary][8]        | Yes  | [BINARY][27]              | BLOB          | BYTEA                       | [BLOB][28]    |
 | Binary Strings        | [varbinary][8]     | Yes  | [VARBINARY][27]           | RAW           | BYTEA                       | [BLOB][28]    |
 | Binary Strings        | [varbinary(max)][8]| Yes  | [LONGTEXT][25]            | RAW           | BYTEA                       | [BLOB][28]    |
@@ -293,8 +295,8 @@ FROM sys.fn_helpdatatypemap (
 | Other Data Types      | [hierarchyid]      | No   | [TEXT][25]                | BLOB          | VARCHAR                     | [TEXT][28]    |
 | Other Data Types      | [rowversion]       | No   | [TEXT][25]                | RAW           | BYTEA                       | [TEXT][28]    |
 | Other Data Types      | [timestamp] (*)    | No   | [TEXT][25]                | RAW           | BYTEA                       | [TEXT][28]    |
-| Other Data Types      | [uniqueidentifier] | No   | CHAR(16)                  | CHAR(16)      | CHAR(16)                    | [TEXT][28]    |
-| Other Data Types      | [xml]              | Yes  | LONGTEXT                  | [XMLTYPE]     | XML                         | [TEXT][28]    |
+| Other Data Types      | [uniqueidentifier] | No   | [CHAR(16)][26]            | CHAR(16)      | CHAR(16)                    | [TEXT][28]    |
+| Other Data Types      | [xml]              | Yes  | [LONGTEXT][25]            | [XMLTYPE]     | XML                         | [TEXT][28]    |
 | Other Data Types      | [table]            | No   | -                         | -             | -                           | -             |
 | Spatial Data Types    | [geometry]         | No   | [TEXT][25]                | BLOB          | VARCHAR                     | [TEXT][28]    |
 | Spatial Data Types    | [geography]        | No   | [TEXT][25]                | BLOB          | VARCHAR                     | [TEXT][28]    |
