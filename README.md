@@ -1,17 +1,17 @@
 # SQL Server KIT
-[![licence badge]][licence]
+[![license badge]][license]
 [![stars badge]][stars]
 [![forks badge]][forks]
 [![issues badge]][issues]
 [![contributors_badge]][contributors]
 
-[licence badge]:https://img.shields.io/badge/license-MIT-blue.svg
+[license badge]:https://img.shields.io/badge/license-MIT-blue.svg
 [stars badge]:https://img.shields.io/github/stars/ktaranov/sqlserver-kit.svg
 [forks badge]:https://img.shields.io/github/forks/ktaranov/sqlserver-kit.svg
 [issues badge]:https://img.shields.io/github/issues/ktaranov/sqlserver-kit.svg
 [contributors_badge]:https://img.shields.io/github/contributors/ktaranov/sqlserver-kit.svg
 
-[licence]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
+[license]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
 [stars]:https://github.com/ktaranov/sqlserver-kit/stargazers
 [forks]:https://github.com/ktaranov/sqlserver-kit/network
 [issues]:https://github.com/ktaranov/sqlserver-kit/issues
@@ -222,6 +222,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [SQL-EX.ru - Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
      - [Free Azure certification training courses](https://rlevchenko.com/2019/01/11/free-azure-certification-training-courses/)
      - [SQL Server Tutorial](https://www.tutorialgateway.org/sql/) (by Tutorial Gateway)
+     - [Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql) 
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
