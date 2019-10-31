@@ -1,11 +1,11 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **291** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **292** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
- - **[DA]**: Database Architecture {16}
+ - **[DA]**: Database Architecture {17}
  - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {8}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
@@ -24,8 +24,8 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-09-23 | Microsoft             |            | Yes            | No    |
-| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-08-08 | Microsoft             | [MIT]      | Open Source    | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-10-02 | Microsoft             |            | Yes            | No    |
+| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-10-11 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
@@ -44,7 +44,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Database Health Monitor](#database-health-monitor)              | No                            | No        | [M]      | [Database Health Monitor]                   | 2016-03-20 | Steve Stedman         |            | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                      | No                            | No        | [SC]     | [SchemaDrift]                               | 2016-02-28 | Steve Stedman         |            | Yes            | No    |
 | [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                   | 2018-09-24 | Open Source           |            | Yes            | No    |
-| [HeidiSQL](#heidisql)                                            | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [HeidiSQL]                                  | 2017-12-19 | Open Source           |            | Yes            | No    |
+| [HeidiSQL](#heidisql)                                            | MySQL,PostgreSQL,Other        | No        | [MS]     | [HeidiSQL]                                  | 2019-06-15 | Open Source           |            | Yes            | No    |
 | [SQLExecStats](#sqlexecstats)                                    | No                            | No        | [ST]     | [SQLExecStats]                              | 2016-02-08 | Joe Chang             |            | Yes            | No    |
 | [ExpressProfiler](#expressprofiler)                              | No                            | No        | [?]      | [ExpressProfiler]                           | 2016-02-15 | Chris Moore           |            | Yes            | No    |
 | [Data Migration Assistant](#data-migration-assistant)            | No                            | No        | [MG]     | [Data Migration Assistant]                  | 2017-03-15 | Microsoft             |            | Yes            | No    |
@@ -305,16 +305,17 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Stitch Data Loader](#stitch)                                    | Oracle,MySQL,PostgreSQL,Other | Online    | [ETL]    | [Stitch Data Loader]                        | 2019-09-20 | Talend                |            | No             |     ? |
 | [Talend Data Integration](#talend-integration)                   | Oracle,MySQL,PostgreSQL,Other | Mac       | [ETL]    | [Talend Data Integration]                   | 2019-06-20 | Talend                | [Apache]   | Yes            |     ? |
 | [Talend Data Preparation](#talend-preparation)                   | Oracle,MySQL,PostgreSQL,Other | Mac       | [ETL]    | [Talend Data Preparation]                   | 2018-06-05 | Talend                | [Apache]   | Yes            |     ? |
-| [Pentaho Data Integration](#pentaho)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [ETL]    | [Pentaho Data Integration]                  | 2019-06-20 |  Hitachi Vantara      |            | No             |     ? |
-| [Studio3T](#studio3t)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MG]     | [Studio3T]                                  | 2019-09-19 | Studio 3T             |            | No             |  $150 |
-| [SQLGrease](#sqlgrease)                                          | No                            | Online    | [M]      | [SQLGrease]                                 | 2019-09-20 | SQLGrease             |            | No             |  $948 |
+| [Pentaho Data Integration](#pentaho)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [ETL]    | [Pentaho Data Integration]                  | 2019-06-20 |  Hitachi Vantara      |  Shareware | No             |     ? |
+| [Studio3T](#studio3t)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MG]     | [Studio3T]                                  | 2019-09-19 | Studio 3T             |  Shareware | No             |  $150 |
+| [SQLGrease](#sqlgrease)                                          | No                            | Online    | [M]      | [SQLGrease]                                 | 2019-09-20 | SQLGrease             |  Shareware | No             |  $948 |
 | [QuickDBD](#quickdbd)                                            | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [QuickDBD]                                  | ?          | Dovetail Technologies |            | Yes            |   $95 |
 | [DB Designer](#dbdesigner)                                       | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [DB Designer]                               | ?          | DB Designer           |            | Yes            |  $180 |
-| [ESF Database Migration Toolkit](#esf)                           | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [ESF Database Migration Toolkit]            | 2019-10-23 | DBSofts Inc           |            | No             |  $322 |
-| [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters|            | No             |   $99 |
-| [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                |            | No             |  €109 |
+| [ESF Database Migration Toolkit](#esf)                           | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [ESF Database Migration Toolkit]            | 2019-10-23 | DBSofts Inc           | Shareware  | No             |  $322 |
+| [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters| Shareware  | No             |   $99 |
+| [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                | Shareware  | No             |  €109 |
 | [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
 | [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
+| [Enterprise Architect](#ea)                                      | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [Enterprise Architect]                      | 2019-10-31 | Sparx Systems Pty Ltd | Shareware  | No             |  $225 |
 
 
 <a id="ssms"></a>
@@ -334,7 +335,7 @@ This release features improved compatibility with previous versions of SQL Serve
 <a id="ads"></a>
 ## Azure Data Studio
 Download page: [Azure Data Studio]<br/>
-Release date: 2019-08-08<br/>
+Release date: 2019-10-11<br/>
 Support Version: 2008-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -613,7 +614,7 @@ Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Serv
 ## HeidiSQL
 <a id="heidisql"></a>
 Download page: [HeidiSQL]<br/>
-Release date: 2017-12-19<br/>
+Release date: 2019-06-15<br/>
 Support Version: 2005-2017<br/>
 Author: Open Source<br/>
 Free version: Yes<br/>
@@ -4496,6 +4497,20 @@ Price: $215
 - Smart and Modern IDE
 
 
+## Enterprise Architect
+<a id="ea"></a>
+Download page: [Enterprise Architect]<br/>
+Release date: 2019-10-31<br/>
+Support Version: 2008-2017<br/>
+Author: Sparx Systems Pty Ltd<br/>
+Free version: No<br/>
+Price: $225
+
+Integrated modeling platform.
+Enterprise Archite, t's built-in Data Modeling tools and profiles extend UML to provide an intuitive mapping from the database concepts of tables and relationships onto the UML concepts of classes and associations. These extensions also enable you to model database keys, triggers, constraints, RI and other relational database features.
+Enterprise Architect supports modeling of database schema and automatic generation of DDL scripts for eleven DBMS targets out-of-the-box: DB2, Firebird, MS Access, MySQL, MS SQL Server, Oracle, PostgreSQL
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4789,6 +4804,7 @@ Price: $215
 [DatabaseSpy]:https://www.altova.com/databasespy
 [ERBuilder data modeler]:https://soft-builder.com/
 [SQLDatabaseStudio]:https://www.sqldatabasestudio.com/
+[Enterprise Architect]:https://sparxsystems.com/products/ea/index.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
