@@ -311,47 +311,47 @@ FROM sys.fn_helpdatatypemap (
 - [Java and SQL Server supported data types](https://docs.microsoft.com/en-us/sql/language-extensions/how-to/java-to-sql-data-types)
 - [Data type mappings between Python and SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/python-libraries-and-data-types)
 
-| General Type          | Type               | ANSI | Java                 |
-|:----------------------|:-------------------|:-----|:---------------------|
-| Exact Numerics        | [bit]              | No   | boolean              |
-| Exact Numerics        | [tinyint][1]       | No   | short                |
-| Exact Numerics        | [smallint][1]      | Yes  | short                |
-| Exact Numerics        | [int][1]           | Yes  | int                  |
-| Exact Numerics        | [bigint][1]        | No   | long                 |
-| Exact Numerics        | [decimal][2]       | Yes  | java.math.BigDecimal |
-| Exact Numerics        | [smallmoney][3]    | No   | java.math.BigDecimal |
-| Exact Numerics        | [money][3]         | No   | java.math.BigDecimal |
-| Approximate Numerics  | [real][4]          | Yes  | float                |
-| Approximate Numerics  | [float][4](1-24)   | Yes  | float                |
-| Approximate Numerics  | [float][4](25-53)  | Yes  | double               |
-| Date and Time         | [date]             | Yes  | java.sql.date        |
-| Date and Time         | [smalldatetime]    | No   | java.sql.timestamp   |
-| Date and Time         | [time]             | Yes  | ?                    |
-| Date and Time         | [datetime2]        | Yes  | java.sql.timestamp   |
-| Date and Time         | [datetime]         | Yes  | java.sql.timestamp   |
-| Date and time         | [datetimeoffset]   | No   | ?                    |
-| Character Strings     | [char][5]          | Yes  | String (**)          |
-| Character Strings     | [varchar][5]       | Yes  | String (**)          |
-| Character Strings     | [varchar(max)][5]  | Yes  | String (**)          |
-| Character Strings     | [nchar][5]         | Yes  | String               |
-| Character Strings     | [nvarchar][5]      | Yes  | String               |
-| Character Strings     | [nvarchar(max)][5] | Yes  | String               |
-| Character Strings     | [ntext][7] (*)     | No   | String               |
-| Character Strings     | [text][7] (*)      | No   | String (**)          |
-| Binary Strings        | [image][7] (*)     | No   | String (**)          |
-| Binary Strings        | [binary][8]        | Yes  | byte[]               |
-| Binary Strings        | [varbinary][8]     | Yes  | byte[]               |
-| Binary Strings        | [varbinary(max)][8]| Yes  | byte[]               |
-| Other Data Types      | [cursor]           | No   | -                    |
-| Other Data Types      | [sql_variant]      | No   | String               |
-| Other Data Types      | [hierarchyid]      | No   | String               |
-| Other Data Types      | [rowversion]       | No   | ?                    |
-| Other Data Types      | [timestamp] (*)    | No   | ?                    |
-| Other Data Types      | [uniqueidentifier] | No   | String               |
-| Other Data Types      | [xml]              | Yes  | ?                    |
-| Other Data Types      | [table]            | No   | -                    |
-| Spatial Data Types    | [geometry]         | No   | ?                    |
-| Spatial Data Types    | [geography]        | No   | ?                    |
+| General Type          | Type               | ANSI | Java                 | Python               |
+|:----------------------|:-------------------|:-----|:---------------------|:---------------------|
+| Exact Numerics        | [bit]              | No   | boolean              | bool                 |
+| Exact Numerics        | [tinyint][1]       | No   | short                | uint8                |
+| Exact Numerics        | [smallint][1]      | Yes  | short                | int16                |
+| Exact Numerics        | [int][1]           | Yes  | int                  | int32                |
+| Exact Numerics        | [bigint][1]        | No   | long                 | numeric              |
+| Exact Numerics        | [decimal][2]       | Yes  | java.math.BigDecimal | ?                    |
+| Exact Numerics        | [smallmoney][3]    | No   | java.math.BigDecimal | ?                    |
+| Exact Numerics        | [money][3]         | No   | java.math.BigDecimal | ?                    |
+| Approximate Numerics  | [real][4]          | Yes  | float                | float32              |
+| Approximate Numerics  | [float][4](1-24)   | Yes  | float                | float32              |
+| Approximate Numerics  | [float][4](25-53)  | Yes  | double               | float64              |
+| Date and Time         | [date]             | Yes  | java.sql.date        | ?                    |
+| Date and Time         | [smalldatetime]    | No   | java.sql.timestamp   | ?                    |
+| Date and Time         | [time]             | Yes  | ?                    | ?                    |
+| Date and Time         | [datetime2]        | Yes  | java.sql.timestamp   | ?                    |
+| Date and Time         | [datetime]         | Yes  | java.sql.timestamp   | ?                    |
+| Date and time         | [datetimeoffset]   | No   | ?                    | ?                    |
+| Character Strings     | [char][5]          | Yes  | String (**)          | str                  |
+| Character Strings     | [varchar][5]       | Yes  | String (**)          | str                  |
+| Character Strings     | [varchar(max)][5]  | Yes  | String (**)          | str                  |
+| Character Strings     | [nchar][5]         | Yes  | String               | str                  |
+| Character Strings     | [nvarchar][5]      | Yes  | String               | str                  |
+| Character Strings     | [nvarchar(max)][5] | Yes  | String               | str                  |
+| Character Strings     | [ntext][7] (*)     | No   | String               | str                  |
+| Character Strings     | [text][7] (*)      | No   | String (**)          | str                  |
+| Binary Strings        | [image][7] (*)     | No   | byte[]               | str                  |
+| Binary Strings        | [binary][8]        | Yes  | byte[]               | raw                  |
+| Binary Strings        | [varbinary][8]     | Yes  | byte[]               | bytes                |
+| Binary Strings        | [varbinary(max)][8]| Yes  | byte[]               | bytes                |
+| Other Data Types      | [cursor]           | No   | -                    | -                    |
+| Other Data Types      | [sql_variant]      | No   | String               | str                  |
+| Other Data Types      | [hierarchyid]      | No   | String               | str                  |
+| Other Data Types      | [rowversion]       | No   | ?                    | ?                    |
+| Other Data Types      | [timestamp] (*)    | No   | ?                    | ?                    |
+| Other Data Types      | [uniqueidentifier] | No   | String               | str                  |
+| Other Data Types      | [xml]              | Yes  | ?                    | ?                    |
+| Other Data Types      | [table]            | No   | -                    | -                    |
+| Spatial Data Types    | [geometry]         | No   | ?                    | ?                    |
+| Spatial Data Types    | [geography]        | No   | ?                    | ?                    |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
 (\*\* Only UTF8 Strings supported)
