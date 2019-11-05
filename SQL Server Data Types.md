@@ -2,13 +2,14 @@
 Detailed information about Microsoft SQL Server Data Types and its mapping to another databases and program languages analog.
 
 ## Table of Contents:
- - [Data Type Precedence (Transact-SQL)](#data-type-precedence)
- - [Data Type Synonyms (Transact-SQL)](#data-type-synonyms)
- - [Precision, Scale, and Length (Transact-SQL)](#precision-scale-and-length)
- - [SQL Server, SSIS and Biml Data Types](#sql-server-ssis-and-biml-data-types)
- - [SQL Server Data Types Length](#sql-server-data-types-length)
- - [SQL Server to MySQL, Oracle, PostgreSQL and SQLite Data Type Mapping](#sql-server-to-mysql-oracle-postgresql-sqlite)
- - [Source links](#source-links)
+- [Data Type Precedence (Transact-SQL)](#data-type-precedence)
+- [Data Type Synonyms (Transact-SQL)](#data-type-synonyms)
+- [Precision, Scale, and Length (Transact-SQL)](#precision-scale-and-length)
+- [SQL Server, SSIS and Biml Data Types](#sql-server-ssis-and-biml-data-types)
+- [SQL Server Data Types Length](#sql-server-data-types-length)
+- [SQL Server to MySQL, Oracle, PostgreSQL and SQLite Data Type Mapping](#sql-server-to-mysql-oracle-postgresql-sqlite)
+- [SQL Server Data Types Mapping to Program Languages](sql-server-data-types-mapping-to-program-languages)
+- [Source links](#source-links)
 
 
 ## Data Type Precedence (Transact-SQL)
@@ -18,35 +19,35 @@ If the conversion is not a supported implicit conversion, an error is returned.
 When both operand expressions have the same data type, the result of the operation has that data type.
 
 SQL Server uses the following precedence order for data types:
- 1. sql_variant
- 2. xml
- 3. datetimeoffset
- 4. datetime2
- 5. datetime
- 6. smalldatetime
- 7. date
- 8. time
- 9. float
- 10. real
- 11. decimal
- 12. money
- 13. smallmoney
- 14. bigint
- 15. int
- 16. smallint
- 17. tinyint
- 18. bit
- 19. ntext
- 20. text
- 21. image
- 22. timestamp
- 23. uniqueidentifier
- 24. nvarchar (including nvarchar(max) )
- 25. nchar
- 26. varchar (including varchar(max) )
- 27. char
- 28. varbinary (including varbinary(max) )
- 29. binary (lowest)
+1. [sql_variant] (**highest**)
+2. [xml]
+3. [datetimeoffset]
+4. [datetime2]
+5. [datetime]
+6. [smalldatetime]
+7. [date]
+8. [time]
+9. [float][4]
+10. [real][4]
+11. [decimal][2]
+12. [money][3]
+13. [smallmoney][3]
+14. [bigint][1]
+15. [int][1]
+16. [smallint][1]
+17. [tinyint][1]
+18. [bit]
+19. [ntext][7]
+20. [text][7]
+21. [image][7]
+22. [timestamp]
+23. [uniqueidentifier]
+24. [nvarchar][5] (including [nvarchar][5])
+25. [nchar][5]
+26. [varchar][5] (including [varchar][5])
+27. [char][5]
+28. [varbinary][8] (including [varbinary(max)][8])
+29. [binary][8] (**lowest**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -227,6 +228,11 @@ The table does not include all possible mappings or all data types, but is meant
 - [Oracle 19C data types](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlqr/Data-Types.html#GUID-DCCC6F18-15A0-4ECC-BA48-16F73F844844)
 - [PostgreSQL 12 data types](https://www.postgresql.org/docs/12/datatype.html)
 - [SQLite 3 data types][28]
+- [SQL Server to MySQL Data Type Conversion](https://convertdb.com/mysql_mssql_mapping)
+- [SQL Server to Oracle Data Type Conversion](https://docs.oracle.com/cd/B19306_01/gateways.102/b14270/apa.htm)
+- [SQL Server to PostgreSQL Data Type Conversion](http://www.sqlines.com/sql-server-to-postgresql)
+- [SQL Server to SQLite Data Type Conversion](http://ericsink.com/mssql_mobile/data_types.html)
+
 
 Common data-type conversions between SQL Server, Oracle, Sybase ASE, and DB2.
 More details [here](https://www.sqlserverscience.com/documentation/common-data-type-conversions-between-sql-server-oracle-sybase-ase-and-db2/)
@@ -306,7 +312,8 @@ FROM sys.fn_helpdatatypemap (
 **[⬆ back to top](#table-of-contents)**
 
 
-## SQL Server Data types mapping to program languages
+## SQL Server Data Types Mapping to Program Languages
+<a id="sql-server-data-types-mapping-to-program-languages"></a>
 
 - [Java and SQL Server supported data types](https://docs.microsoft.com/en-us/sql/language-extensions/how-to/java-to-sql-data-types)
 - [Data type mappings between Python and SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/python-libraries-and-data-types)
@@ -360,22 +367,17 @@ FROM sys.fn_helpdatatypemap (
 **[⬆ back to top](#table-of-contents)**
 
 
-
 ## Source links
 <a id="source-links"></a>
- - [Data Types (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
- - [Data Type Precedence (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql)
- - [Data Type Synonyms (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-synonyms-transact-sql)
- - [Precision, Scale, and Length](https://docs.microsoft.com/en-us/sql/t-sql/data-types/precision-scale-and-length-transact-sql)
- - [Integration Services Data Types](https://docs.microsoft.com/en-us/sql/integration-services/data-flow/integration-services-data-types)
- - [DbType Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.data.dbtype)
- - [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
- - [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
- - [SQL Server Data Type Conversion](https://msdn.microsoft.com/en-us/library/ms191530.aspx)
- - [SQL Server to MySQL Data Type Conversion](https://convertdb.com/mysql_mssql_mapping)
- - [SQL Server to Oracle Data Type Conversion](https://docs.oracle.com/cd/B19306_01/gateways.102/b14270/apa.htm)
- - [SQL Server to PostgreSQL Data Type Conversion](http://www.sqlines.com/sql-server-to-postgresql)
- - [SQL Server to SQLite Data Type Conversion](http://ericsink.com/mssql_mobile/data_types.html)
+- [Data Types (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
+- [Data Type Precedence (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-precedence-transact-sql)
+- [Data Type Synonyms (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-synonyms-transact-sql)
+- [Precision, Scale, and Length](https://docs.microsoft.com/en-us/sql/t-sql/data-types/precision-scale-and-length-transact-sql)
+- [Integration Services Data Types](https://docs.microsoft.com/en-us/sql/integration-services/data-flow/integration-services-data-types)
+- [DbType Enumeration](https://docs.microsoft.com/en-us/dotnet/api/system.data.dbtype)
+- [SQL Server, SSIS and Biml Data Types](http://www.cathrinewilhelmsen.net/2014/05/27/sql-server-ssis-and-biml-data-types/)
+- [SQL Server Integration Services, Data Type Mapping](http://milambda.blogspot.ru/2014/02/sql-server-integration-services-data.html)
+- [Data type conversion (Database Engine)](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-type-conversion-database-engine)
 
 **[⬆ back to top](#table-of-contents)**
 
