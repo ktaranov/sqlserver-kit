@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 290 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 292 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -503,7 +503,7 @@ BIML Bloggers
 ## Free SQL Server and R ebooks
 
 SQL Server:
- - [Awesome Red Gate ebooks](http://www.red-gate.com/community/books/)
+ - [Awesome Red Gate ebooks](https://www.red-gate.com/hub/books/)
    - SQL Developers
      - [Defensive Database Programming](https://assets.red-gate.com/community/books/defensive-database-programming.pdf) (by Alex Kuznetsov)
      - [Inside the SQL Server Query Optimizer](https://assets.red-gate.com/community/books/inside-the-sql-server-query-optimizer.pdf) (by Benjamin Nevarez)
@@ -517,11 +517,11 @@ SQL Server:
      - [SQL Server Internals: In-Memory OLTP](https://www.red-gate.com/library/sql-server-internals-in-memory-oltp) (by Kalen Delaney)
      - [Fundamentals Of SQL Server 2012 Replication](https://assets.red-gate.com/community/books/fundamentals-of-sql-server-2012-replication.pdf) (by Sebastian Meine)
      - [Tribal SQL](https://www.red-gate.com/library/tribal-sql)
-     - [SQL Server Transaction Log Management](https://assets.red-gate.com/offerings/transaction-log-management.pdf) (by Tony Davis and Gail Shaw)
+     - [SQL Server Transaction Log Management](https://www.red-gate.com/library/sql-server-transaction-log-management) (by Tony Davis and Gail Shaw)
      - [The Art of SQL Server FILESTREAM](https://assets.red-gate.com/community/books/art-of-ss-filestream.pdf) (by Jacob Sebastian and Sven Aelterman)
      - [SQL Server Concurrency: Locking, Blocking and Row Versioning](https://www.red-gate.com/library/sql-server-concurrency-locking-blocking-and-row-versioning) (by Kalen Delaney)
      - [SQL Server Backup and Restore](https://assets.red-gate.com/community/books/sql-server-backup-and-restore.pdf) (by Shawn McGehee)
-     - [Troubleshooting SQL Server: A Guide for the Accidental DBA](http://assets.red-gate.com/products/dba/assets/Accidental_DBA_EBook.zip) (by Jonathan Kehayias and Ted Krueger )
+     - [Troubleshooting SQL Server: A Guide for the Accidental DBA](https://www.red-gate.com/library/troubleshooting-sql-server-a-guide-for-accidental-dbas) (by Jonathan Kehayias and Ted Krueger )
      - [SQL Server Hardware](http://assets.red-gate.com/community/books/sql-server-hardware-ebook.pdf) (by Glen Berry)
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
