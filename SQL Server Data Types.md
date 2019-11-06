@@ -8,7 +8,7 @@ Detailed information about Microsoft SQL Server Data Types and its mapping to an
 - [SQL Server, SSIS and Biml Data Types](#sql-server-ssis-and-biml-data-types)
 - [SQL Server Data Types Length](#sql-server-data-types-length)
 - [SQL Server to MySQL, Oracle, PostgreSQL and SQLite Data Type Mapping](#sql-server-to-mysql-oracle-postgresql-sqlite)
-- [SQL Server Data Types Mapping to Program Languages](sql-server-data-types-mapping-to-program-languages)
+- [SQL Server Data Types Mapping to Program Languages](#sql-server-data-types-mapping-to-program-languages)
 - [Source links](#source-links)
 
 
@@ -42,9 +42,9 @@ SQL Server uses the following precedence order for data types:
 21. [image][7]
 22. [timestamp]
 23. [uniqueidentifier]
-24. [nvarchar][5] (including [nvarchar][5])
+24. [nvarchar][5] (including [nvarchar(max)][5])
 25. [nchar][5]
-26. [varchar][5] (including [varchar][5])
+26. [varchar][5] (including [varchar(max)][5])
 27. [char][5]
 28. [varbinary][8] (including [varbinary(max)][8])
 29. [binary][8] (**lowest**)

@@ -11,7 +11,7 @@
 [issues badge]:https://img.shields.io/github/issues/ktaranov/sqlserver-kit.svg
 [contributors_badge]:https://img.shields.io/github/contributors/ktaranov/sqlserver-kit.svg
 
-[license]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE.md
+[license]:https://github.com/ktaranov/sqlserver-kit/blob/master/LICENSE
 [stars]:https://github.com/ktaranov/sqlserver-kit/stargazers
 [forks]:https://github.com/ktaranov/sqlserver-kit/network
 [issues]:https://github.com/ktaranov/sqlserver-kit/issues
@@ -115,9 +115,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
     - [Weblogs SQLTeam Blogs](http://weblogs.sqlteam.com/)
-    - [SQLMag](http://sqlmag.com/)
-    - [SQLShack](http://www.sqlshack.com/)
-    - [LessThanDot SQL Server Blog](http://blogs.lessthandot.com/index.php/category/datamgmt/dbprogramming/mssqlserver/)
+    - [SQLShack](https://www.sqlshack.com/)
     - [SQL Kiwi by Paul White](https://www.sql.kiwi/)
     - [DatabseJournal SQL Server Blog](http://www.databasejournal.com/features/mssql/)
     - [SQLPass](http://www.sqlpass.org/Home.aspx)
@@ -138,12 +136,11 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL.ru SQL Server](http://www.sql.ru/blogs/t-sql) (Russian)
     - [C# Corner SQL Server Articles](http://www.c-sharpcorner.com/technologies/sql-server)
     - [TechTarget Blog](http://searchsqlserver.techtarget.com/)
-    - [Toad SQL Server Blog](http://www.toadworld.com/platforms/sql-server/b/weblog)
+    - [Toad SQL Server Blog](https://blog.toadworld.com/tag/sql-server)
     - [SQL-Articles](http://sql-articles.com/articles/)
     - [DallasDBAs Blog](http://dallasdbas.com/blog/)
     - [UpSearch Blog](https://upsearch.com/blog/)
     - [ProData Blog](http://blogs.prodata.ie/)
-    - [Red9 SQL Server Performance Blog](https://red9.com/blog/)
     - [DallasDBAs.com Blog](http://dallasdbas.com/blog/)
     - [SQLBI Blog](http://www.sqlbi.com)
     - [RDX Blog](http://blog.rdx.com)
@@ -161,7 +158,6 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - Exploit databases and breach coverage
      - [seclists.org](http://seclists.org) – Heaps of exploits consolidated from various bug tracking lists
      - [Exploit Database](https://www.exploit-db.com/) – Very comprehensive list of vulnerabilities
-     - [PunkSPIDER](https://www.punkspider.org/) – Lots of vulnerabilities of all kinds all over the web (about 90M sites scanned with over 3M vulns at present)
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
      - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
@@ -175,7 +171,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SQL Server Videos](http://www.sqlservervideos.com/)
    - [TECHNET How do I Videos](https://technet.microsoft.com/en-us/library/dd353197.aspx)
    - [Veeam Learn Microsoft SQL Server](http://go.veeam.com/learn-microsoft-sql-server-free-video-tutorial-course.html)
-   - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/)
+   - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/Minion/Reindex)
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
    - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
    - [Youtube Redgate Videos](https://www.youtube.com/redgate)
@@ -183,7 +179,6 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
    - [Youtube SQLpassion](https://www.youtube.com/channel/UCkrUQVPrv36Musorn0K4KoA)
    - [SQLBits Video](https://sqlbits.com/)
-   - [Business Intelligence Videos](http://www.bidn.com/Videos/Videos)
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
    - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
    - [MVP: Data Platform](https://channel9.msdn.com/Blogs/MVP-Data-Platform)
@@ -195,15 +190,13 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [RunAs Radio](http://runasradio.com/) (by Richard Campbell and Greg Hughes)
    - [People Talking Tech](http://peopletalkingtech.com/) (by Denny Cherry)
    - [NET Rocks!](http://www.dotnetrocks.com/) (by Richard Campbell and Carl Franklin)
-   - [SQL Down Under Podcast](http://www.sqldownunder.com/Podcasts) (by Greg Low)
+   - [SQL Down Under Podcast](https://sqldownunder.com/pages/sql-down-under-podcast) (by Greg Low)
    - [Free sql server video tutorials for beginners](http://csharp-video-tutorials.blogspot.ru/p/free-sql-server-video-tutorials-for.html) (by PRAGIM Technologies)
-   - [Midnight DBA Podcast](http://midnightdba.itbookworm.com/Show) (by Sean and Jen McCown)
    - [Dear SQL DBA](https://www.littlekendra.com/dearsqldba/) (by Kendra Little)
    - [GroupBy.org - Group By is a free online event for the community, by the community](https://groupby.org/) (by Brent Ozar team)
    - [DevopsCafe](http://devopscafe.org/) (by John Willis and Damon Edwards)
    - [SQLPlayer](http://sqlplayer.net/) (by Kamil Nowinski and Damian Widera)
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
-   - [SQL Down Under Podcast](https://www.sqldownunder.com) (by Greg Low)
    - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
  - Courses <a id="courses"></a>
    - Free
@@ -212,8 +205,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
      - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
      - [MVA SQL Server Courses](https://mva.microsoft.com/product-training/sql-server)
-     - [How to Think Like the SQL Server Engine](https://learnfrom.brentozar.com/courses/how-to-think-like-the-engine-an-introduction-to-sql-server-internals/)
-     - [Number and Date Tables](https://www.brentozar.com/archive/2016/01/video-free-training-of-the-week-number-and-date-tables/)
+     - [How to Think Like the SQL Server Engine](https://www.brentozar.com/training/think-like-sql-server-engine/)
      - [Free SQL Tutorials](http://www.guru99.com/sql.html)
      - [OpenedX Microsoft Courses](https://openedx.microsoft.com/)
      - [SQLBolt - Learn SQL with simple, interactive exercises](https://sqlbolt.com/)
@@ -227,7 +219,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
      - [SQLSkills Trainings](https://www.sqlskills.com/sql-server-training/online-training/)
-     - [Brent Ozar Team Trainings](https://learnfrom.brentozar.com/)
+     - [Brent Ozar Team Trainings](https://www.brentozar.com/training/)
      - [Pluralsight Courses](https://www.pluralsight.com/search?q=sql+server&categories=all)
      - [SolidQ Classes](https://training.solidq.com/classes/)
      - [JOOQ SQL Masterclass](http://www.jooq.org/training/)
@@ -239,7 +231,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2014 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/getting-started/backward-compatibility?view=sql-server-2014)
-   - [2012 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/cc707787(v=sql.110))
+   - [2012 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/ms143532(v=sql.110))
    - [2008 R2 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/cc707787(v=sql.105))
    - [2008 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/cc707787(v=sql.100))
    - [2005 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2005/ms143532(v=sql.90))
@@ -360,10 +352,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Server Connection Strings](https://www.connectionstrings.com/sql-server/)
     - [SQL Connection String Generator for .NET](https://aireforge.com/Tools/ConnectionStringGenerator)
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
-    - [RSS Most Recent SQL Server KBs](https://support.microsoft.com/en-us/rss?rssid=1044)
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
-    - [SQLFiddle](http://sqlfiddle.com)
+    - [DBFiddle](https://dbfiddle.uk/)
     - [DBFiddle](https://dbfiddle.uk/?rdbms=sqlserver_2017)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
@@ -379,7 +370,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [OrcaMDF - C# parser for MDF files](https://github.com/improvedk/OrcaMDF) (by Mark S. Rasmussen)
     - [Microsoft SQL Server Zabbix templates](https://share.zabbix.com/databases/microsoft-sql-server)
     - [Telegraf SQL Server Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) (by influxdata)
-    - [SDU Tools - pure TSQL functions Toolkit](https://sqldownunder.com/sdu-tools/) (by SQLDownUnder)
+    - [SDU Tools - pure TSQL functions Toolkit](https://sqldownunder.com/pages/sdu-tools) (by SQLDownUnder)
     - [Microsoft SQL Server Publications](https://www.microsoft.com/en-us/research/search/?q=sql+server&content-type=publications)
     - [SQL Server Feedback](https://feedback.azure.com/forums/908035-sql-server)
     - [Docs Overview SQL Tools](https://docs.microsoft.com/en-us/sql/tools/overview-sql-tools)
@@ -418,15 +409,12 @@ BIML Bloggers
 - [Brian Bønk](http://www.bonk.dk/biml/)
 - [Cathrine Wilhelmsen](http://www.cathrinewilhelmsen.net/biml/)
 - [Datachix: Julie Smith and Audrey Hammonds](http://datachix.com/)
-- [David Stein](http://www.made2mentor.com/category/biml/)
 - [Davide Mauri](http://blog.davidemauri.it/)
 - [Erik Hudzik](http://www.anexinet.com/blog/author/ehudzik/)
 - [Hennie de Nooijer](http://bifuture.blogspot.com/search/label/BIML)
 - [John Welch](http://agilebi.com/jwelch/tag/biml/)
 - [Joost van Rossum](http://microsoft-ssis.blogspot.com/search/label/BIML)
-- [Koen Verbeeck](http://blogs.lessthandot.com/index.php/tag/biml/)
 - [Marco Schreuder](http://blog.in2bi.eu/biml/)
-- [Martin Andersson](http://www.frysdisken.net/)
 - [Meagan Longoria](https://datasavvy.wordpress.com/category/biml/)
 - [Nicholas Sorrell](http://sorrell.github.io/)
 - [Paul Te Braak](https://paultebraak.wordpress.com/tag/biml/)
@@ -434,8 +422,6 @@ BIML Bloggers
 - [Reeves Smith](https://reevessmith.wordpress.com/category/biml/)
 - [Roelant Vos](http://roelantvos.com/blog/?tag=biml)
 - [Rui Custódio](http://www.bi4all.pt/taxonomy/term/75)
-- [Samuel Vanga](http://samuelvanga.com/category/biml/)
-- [Stephen Leach](http://www.imgroup.com/author/stephen-leach/)
 - [Tim Mitchell](https://www.timmitchell.net/post/tag/biml/)
 - [Warwick Rudd](http://www.sqlmastersconsulting.com.au/SQL-Server-Blog/PID/1675/mcat/1682/evl/0/nsw/t/EDNSearch/Biml)
 
@@ -480,7 +466,6 @@ BIML Bloggers
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
- - http://extras.sqlservercentral.com/prettifier/prettifier.aspx
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -491,7 +476,6 @@ BIML Bloggers
  - https://github.com/benkeen/generatedata
  - https://sourceforge.net/projects/dbmonster/
  - https://sourceforge.net/projects/spawner/
- - http://databene.org/databene-benerator
  - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
  - https://mockaroo.com
  - https://anonymize.strd.co/
@@ -526,11 +510,9 @@ SQL Server:
  - [Microsoft huge collection](https://blogs.msdn.microsoft.com/mssmallbiz/2013/06/18/huge-collection-of-free-microsoft-ebooks-for-you-including-office-office-365-sharepoint-sql-server-system-center-visual-studio-web-development-windows-windows-azure-and-windows-server/)
  - [Microsoft large collection](https://blogs.msdn.microsoft.com/mssmallbiz/2012/07/27/large-collection-of-free-microsoft-ebooks-for-you-including-sharepoint-visual-studio-windows-phone-windows-8-office-365-office-2010-sql-server-2012-azure-and-more/)
  - [Largest FREE Microsoft eBook Giveaway!](https://blogs.msdn.microsoft.com/mssmallbiz/2017/07/11/largest-free-microsoft-ebook-giveaway-im-giving-away-millions-of-free-microsoft-ebooks-again-including-windows-10-office-365-office-2016-power-bi-azure-windows-8-1-office-2013-sharepo/)
- - [Microsoft MVA Free ebooks](https://mva.microsoft.com/ebooks)
  - [OnlineVideoLectures ebooks](http://onlinevideolecture.com/ebooks/?subject=SQL-Server)
  - [Brent Ozar ebooks](https://www.brentozar.com/first-aid/)
  - [E-books SQL Server Directory](http://www.e-booksdirectory.com/listing.php?category=569)
- - [TOAD SQL Server ebooks](https://www.toadworld.com/platforms/sql-server/b/weblog/archive/2013/06/21/huge-collection-of-free-microsoft-sql-server-ebooks)
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
