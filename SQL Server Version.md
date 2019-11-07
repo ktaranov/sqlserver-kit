@@ -128,7 +128,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RC1.1]                                                  | 15.0.1900.47                                 | 2019-08-28                               | ?               | ?                  | ?                | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [GDR1]                                        | 15.0.2070.41                                 | 2019-11-04                               | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU17 KB4515579]                              | 14.0.1000.169<br/>14.0.3238.1                | 2017-10-02<br/>2019-10-08                | 2017-08-28      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU10 KB4524334]                              | 13.0.5026.0<br/>13.0.5492.2                  | 2018-04-24<br/>2019-10-08                | 2016-11-16      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [CU4 KB4500181]                          | 12.0.6024.0<br/>12.0.6329.1                  | 2018-10-30<br/>2019-07-29                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -138,7 +138,8 @@ Profits:
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [Install 2008 R2] and [Install 2008] links.**
 
-[Install 2019 RC1.1]:https://www.microsoft.com/sql-server/sql-server-2019#Install
+[Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
+[GDR1]:https://support.microsoft.com/help/4517790/
 [Install 2017 RTM]:https://www.microsoft.com/sql-server/sql-server-downloads
 [CU17 KB4515579]:https://support.microsoft.com/help/4515579
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -175,9 +176,10 @@ FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
-|---------------------------------------|-------------------------------------------------------------------|--------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019]                     | SQLServer2019RC-x64-ENU.iso                                       | 2019-08-28   | 15.0.1900.47  |     1360 | 7405402e7c73531d599c285334fc2e3d945215a2 |
-| [SQL Server 2017]                     | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
+|:--------------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
+| [SQL Server 2019 RTM]                 | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
+| [SQL Server 2019 GDR1]                | SQLServer2019-KB4517790-x64.exe                                   | 2019-11-04   | 15.0.2070.41  |      452 | 6412a53eb385a693b48948a297816647d25fa5d5 |
+| [SQL Server 2017 RTM]                 | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU17]                | SQLServer2017-KB4515579-x64.exe                                   | 2019-10-08   | 14.0.3238.1   |      528 | e6ab5e1c932edbff9ac99f1ba80998779745e6c6 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CU10]            |SQLServer2016-KB4524334-x64.exe                                    | 2019-08-10   | 13.0.5492.2   |      752 | 3f2615608ee9418473cc8576390f1a9fffedd743 |
@@ -196,7 +198,8 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
 [SQL Server 2019]:https://go.microsoft.com/fwlink/?linkid=866664
-[SQL Server 2017]:https://go.microsoft.com/fwlink/?linkid=853016
+[SQL Server 2019 GDR1]:https://download.microsoft.com/download/a/2/f/a2ff1afa-a7bc-431f-bb9f-834774bc68cf/SQLServer2019-KB4517790-x64.exe
+[SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
 [SQL Server 2017 CU17]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4515579-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -420,7 +423,9 @@ Microsoft SQL Server 2019 (RC1.1) - 15.0.1900.47 (X64)
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   | **Latest** |         | [Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)] | 2019-08-28   | 2019-08-17 |       |        |     1360 |
+| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  | **Latest** | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |
+| 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-25 |       |        |     1360 |
+| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)   | 2019-08-28   | 2019-08-17 |       |        |     1360 |
 | 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |
 | 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |
 | 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.1                          | 2019-06-26   | 2019-06-20 |       |        |     1341 |
@@ -432,7 +437,8 @@ Microsoft SQL Server 2019 (RC1.1) - 15.0.1900.47 (X64)
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |
 
-[Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)]:https://www.microsoft.com/sql-server/sql-server-2019#Install
+[Servicing Update for SQL Server 2019 RTM]:https://support.microsoft.com/help/4517790/
+[Microsoft SQL Server 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
 
 
 ## Microsoft SQL Server 2017 Builds
