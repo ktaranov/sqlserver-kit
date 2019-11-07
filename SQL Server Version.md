@@ -185,7 +185,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2016 SP2 CU10]            |SQLServer2016-KB4524334-x64.exe                                    | 2019-08-10   | 13.0.5492.2   |      752 | 3f2615608ee9418473cc8576390f1a9fffedd743 |
 | [SQL Server 2014 SP3]                 | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
 | [SQL Server 2014 SP3 KB4500181]       | SQLServer2014-KB4500181-x64.exe                                   | 2019-07-29   | 12.0.6329.1   |      658 | d6470880388461b7bc506f6bd3ccd464e4f8b2d2 |
-| [SQL Server 2012]                     | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
+| [SQL Server 2012 RTM]                 | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
 | [SQL Server 2012 SP4 KB4091266]       | SQLServer2012-KB4091266-x64.exe                                   | 2018-03-28   | 11.0.7469.6   |      867 | 64fc3a8a0ca3726d57852f1ebbb7247d3e58cbcf |
 | SQL Server 2008 R2 RTM                | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
@@ -197,7 +197,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
-[SQL Server 2019]:https://go.microsoft.com/fwlink/?linkid=866664
+[SQL Server 2019 RTM]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2019 GDR1]:https://download.microsoft.com/download/a/2/f/a2ff1afa-a7bc-431f-bb9f-834774bc68cf/SQLServer2019-KB4517790-x64.exe
 [SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
 [SQL Server 2017 CU17]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4515579-x64.exe
@@ -206,7 +206,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2016 SP2 CU10]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4524334-x64.exe
 [SQL Server 2014 SP3]:http://download.microsoft.com/download/7/9/F/79F4584A-A957-436B-8534-3397F33790A6/SQLServer2014SP3-FullSlipstream-x64-ENU.iso
 [SQL Server 2014 SP3 KB4500181]:https://download.microsoft.com/download/A/5/A/A5AACC94-29A5-4890-90BD-847320EE0E93/SQLServer2014-KB4500181-x64.exe
-[SQL Server 2012]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
+[SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
 [SQL Server 2012 SP4 KB4091266]:http://download.microsoft.com/download/3/D/9/3D95BF50-AED7-44A6-863B-BC7DC7C722CE/SQLServer2012-KB4091266-x64.exe
 [SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
@@ -1643,14 +1643,14 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 | 9.00.1528 | 2005.90.1528.0 | [915306 FIX: The merge agent fails and a "permission denied" error message is logged when you synchronize a SQL Server 2005-based merge publication]                                                                                                                 | 2007-01-08   |
 | 9.00.1528 | 2005.90.1528.0 | [915112 FIX: Error message when an ADO.NET-connected application tries to reuse a connection from the connection pool in SQL Server 2005: "The request failed to run because the batch is aborted"]                                                                  | 2006-07-26   |
 | 9.00.1519 | 2005.90.1519.0 | [913494 FIX: The merge agent does not use a specified custom user update to handle conflicting UPDATE statements in SQL Server 2005]                                                                                                                                 | 2007-01-20   |
-| 9.00.1518 | 2005.90.1518.0 | [913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005]                                                                                                                                                         | 2006-09-22   |
-| 9.00.1518 | 2005.90.1518.0 | [912472 FIX: An incorrect result may appear in the subscribing database when you set database mirroring for a database and database failover occurs in SQL Server 2005]                                                                                              | 2006-07-26   |
-| 9.00.1518 | 2005.90.1518.0 | [913371 FIX: You may receive error messages when you use the sp_cursoropen statement to open a cursor on a user-defined stored procedure in SQL Server 2005]                                                                                                         | 2006-07-26   |
-| 9.00.1514 | 2005.90.1514.0 | [912471 FIX: The replication on the server does not work any longer when you manually fail over databases in SQL Server 2005]                                                                                                                                        | 2006-07-26   |
-| 9.00.1503 | 2005.90.1503.0 | [911662 FIX: You may receive an access violation error message when you run a SELECT query in SQL Server 2005]                                                                                                                                                       | 2006-07-26   |
-| 9.00.1502 | 2005.90.1502.0 | [915793 FIX: You cannot restore the log backups on the mirror server after you remove database mirroring for the mirror database in SQL Server 2005]                                                                                                                 | 2006-07-26   |
-| 9.00.1500 | 2005.90.1500.0 | [910416 FIX: Error message when you run certain queries or certain stored procedures in SQL Server 2005: "A severe error occurred on the current command"]                                                                                                           | 2006-06-01   |
-| 9.00.1406 | 2005.90.1406.0 | [932557 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1399]                                                                                                                                   | 2007-07-11   |
+| 9.00.1518 | 2005.90.1518.0 | 913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005                                                                                                                                                           | 2006-09-22   |
+| 9.00.1518 | 2005.90.1518.0 | 912472 FIX: An incorrect result may appear in the subscribing database when you set database mirroring for a database and database failover occurs in SQL Server 2005                                                                                                | 2006-07-26   |
+| 9.00.1518 | 2005.90.1518.0 | 913371 FIX: You may receive error messages when you use the sp_cursoropen statement to open a cursor on a user-defined stored procedure in SQL Server 2005                                                                                                           | 2006-07-26   |
+| 9.00.1514 | 2005.90.1514.0 | 912471 FIX: The replication on the server does not work any longer when you manually fail over databases in SQL Server 2005                                                                                                                                          | 2006-07-26   |
+| 9.00.1503 | 2005.90.1503.0 | 911662 FIX: You may receive an access violation error message when you run a SELECT query in SQL Server 2005                                                                                                                                                         | 2006-07-26   |
+| 9.00.1502 | 2005.90.1502.0 | 915793 FIX: You cannot restore the log backups on the mirror server after you remove database mirroring for the mirror database in SQL Server 2005                                                                                                                   | 2006-07-26   |
+| 9.00.1500 | 2005.90.1500.0 | 910416 FIX: Error message when you run certain queries or certain stored procedures in SQL Server 2005: "A severe error occurred on the current command"                                                                                                             | 2006-06-01   |
+| 9.00.1406 | 2005.90.1406.0 | 932557 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1399                                                                                                                                     | 2007-07-11   |
 | 9.00.1399 | 2005.90.1399.0 | SQL Server 2005 RTM                                                                                                                                                                                                                                                  | 2005-11-07   |
 
 [2716427 MS12-070: Description of the security update for SQL Server 2005 Service Pack 4 QFE]:http://support.microsoft.com/kb/2716427
@@ -1885,13 +1885,6 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 [915112 FIX: Error message when an ADO.NET-connected application tries to reuse a connection from the connection pool in SQL Server 2005: "The request failed to run because the batch is aborted"]:http://support.microsoft.com/kb/915112
 [913494 FIX: The merge agent does not use a specified custom user update to handle conflicting UPDATE statements in SQL Server 2005]:http://support.microsoft.com/kb/913494
 [913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005]:http://support.microsoft.com/kb/913941
-[912472 FIX: An incorrect result may appear in the subscribing database when you set database mirroring for a database and database failover occurs in SQL Server 2005]:http://support.microsoft.com/kb/912472
-[913371 FIX: You may receive error messages when you use the sp_cursoropen statement to open a cursor on a user-defined stored procedure in SQL Server 2005]:http://support.microsoft.com/kb/913371
-[912471 FIX: The replication on the server does not work any longer when you manually fail over databases in SQL Server 2005]:http://support.microsoft.com/kb/912471
-[911662 FIX: You may receive an access violation error message when you run a SELECT query in SQL Server 2005]:http://support.microsoft.com/kb/911662
-[915793 FIX: You cannot restore the log backups on the mirror server after you remove database mirroring for the mirror database in SQL Server 2005]:http://support.microsoft.com/kb/915793
-[910416 FIX: Error message when you run certain queries or certain stored procedures in SQL Server 2005: "A severe error occurred on the current command"]:http://support.microsoft.com/kb/910416
-[932557 FIX: A script task or a script component may not run correctly when you run an SSIS package in SQL Server 2005 build 1399]:https://support.microsoft.com/help/932557
 
 
 ## Microsoft SQL Server 2000 Builds
