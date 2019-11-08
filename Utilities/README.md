@@ -1,18 +1,18 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **292** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **296** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
- - **[DA]**: Database Architecture {17}
+ - **[DA]**: Database Architecture {20}
  - **[DC]**: Data compare {12}
  - **[ETL]**: Extract Download Load (ETL) Tools {8}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {17}
+ - **[M]**: Monitoring and alerting Tools {19}
  - **[MG]**: Migration tool {29}
  - **[MS]**: Management Studio (alternative for SSMS) {28}
  - **[REC]**: Recovery tools {7}
@@ -20,12 +20,12 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {18}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {114}
+ - **[?]**: Not yet classified {111}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
 | [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-10-02 | Microsoft             |            | Yes            | No    |
-| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-10-11 | Microsoft             | [MIT]      | Open Source    | No    |
+| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-11-04 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
@@ -131,7 +131,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbMonitor](#dbmonitor)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [M]      | [dbMonitor]                                 | 2012-11-01 | Devart                | Freeware   | Yes            | No    |
 | [Minion Enterprise](#minion-enterprise)                          | No                            | No        | [?]      | [Minion Enterprise]                         | ?          | MinionWare            |            | No             | $1500 |
 | [SQL Server Compression Estimator](#compression-estimator)       | No                            | No        | [?]      | [SQL Server Compression Estimator]          | 2011-06-02 | Bob Tavlor            |            | Yes            | No    |
-| [ClearTrace](#cleartrace)                                        | No                            | No        | [?]      | [ClearTrace]                                | 2016-07-07 | Bill Graziano         |            | Yes            | No    |
+| [ClearTrace](#cleartrace)                                        | No                            | No        | [M]      | [ClearTrace]                                | 2016-07-07 | Bill Graziano         |            | Yes            | No    |
+| [ClearTraceXE](#cleartracexe)                                    | No                            | No        | [M]      | [ClearTrace]                                | 2019-09-04 | Bill Graziano         |            | Yes            | No    |
 | [Dell Security Explorer](#dell-security-explorer)                | No                            | No        | [?]      | [Dell Security Explorer]                    | 2015-06-25 | Dell                  |            | No             |  $850 |
 | [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)  | No                            | No        | [?]      | [Dell LiteSpeed for SQL Server]             | 2015-07-31 | Dell                  |            | No             | ?     |
 | [Quest Toad for SQL Server](#quest-toad-for-sql-server)          | No                            | No        | [MS]     | [Quest Toad for SQL Server]                 | 2015-05-12 | Quest Software        |            | No             | ?     |
@@ -202,7 +203,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Power Architect](#sql-power-architect)                      | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [SQL Power Architect]                       | 2016-02-11 | SQLPower              |            | Yes            |  $995 |
 | [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                  | 2019-09-17 | Nizana Systems        |            | No             |   $99 |
 | [Navicat Data Modeler](#navicat-data-modeler)                    | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Navicat Data Modeler]                      | 2016-08-01 | PremiumSoft           |            | No             |  $199 |
-| [DeZign for Databases](#dezign-for-databases)                    | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [DeZign for Databases]                      | 2016-04-25 | Datanamic             |            | No             |  $259 |
+| [DeZign for Databases](#dezign-for-databases)                    | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [DeZign for Databases]                      | 2019-04-01 | Datanamic             |            | No             | €29/mo|
 | [ERDesigner NG](#erdesigner-ng)                                  | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [ERDesigner NG]                             | 2013-04-10 | Mirko Sertic          |            | Open Source    | No    |
 | [Vertabelo](#vertabelo)                                          | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [Vertabelo]                                 | ?          | Vertabelo             |            | No             |  $948 |
 | [dbDiffo](#dbdiffo)                                              | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [dbDiffo]                                   | ?          | Contenet Ltd          |            | Yes            | No    |
@@ -316,6 +317,9 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
 | [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
 | [Enterprise Architect](#ea)                                      | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [Enterprise Architect]                      | 2019-10-31 | Sparx Systems Pty Ltd | Shareware  | No             |  $225 |
+| [MogwaiERDesignerNG](#mogwai)                                    | Oracle,MySQL,PostgreSQL       | No        | [DA]     | [MogwaiERDesignerNG]                        | 2019-08-22 | Mirko Sertic          | [LGPL-3.0] | Open Source    | No    |
+| [Xcase](#xcase)                                                  | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Xcase]                                     | 2018-06-19 | Resolution Software   | Shareware  | No             |  $799 |
+| [Oracle SQL Developer Data Modeler](#oracle-modeler)             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Oracle SQL Developer Data Modeler]         | 2019-08-01 | Oracle                | Shareware  | Yes            | No    |
 
 
 <a id="ssms"></a>
@@ -335,7 +339,7 @@ This release features improved compatibility with previous versions of SQL Serve
 <a id="ads"></a>
 ## Azure Data Studio
 Download page: [Azure Data Studio]<br/>
-Release date: 2019-10-11<br/>
+Release date: 2019-11-04<br/>
 Support Version: 2008-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -1865,13 +1869,30 @@ You can then use that information to perhaps choose a less aggresive compression
 <a id="cleartrace"></a>
 Download page: [ClearTrace]<br/>
 Release date: 2016-07-07<br/>
-Support Version: 2008/2012/2014/2016<br/>
+Support Version: 2000-2017<br/>
 Author: Bill Graziano<br/>
 Free version: Yes<br/>
 Price: No
 
-ClearTrace imports SQL Server 2016, SQL Server 2014, SQL Server 2012, SQL Server 2008, SQL Server 2005, SQL Server 2000 trace
-and Profiler files into SQL Server and displays summary performance information.
+ClearTrace imports SQL Server 2017, 2016, 2014, 2012, 2008, 2005, 2000 trace and Profiler files into SQL Server and displays summary performance information.
+
+- Summarize SQL Server Query Performance
+- Enhance SQL Server Performance Tuning
+
+
+## ClearTraceXE
+<a id="cleartracexe"></a>
+Download page: [ClearTraceXE]<br/>
+Release date: 2019-09-04<br/>
+Support Version: 2008-2017<br/>
+Author: Bill Graziano<br/>
+Free version: Yes<br/>
+Price: No
+
+ClearTrace for Extended Events imports extended event files from SQL Server 2017, 2016, 2014, 2012, 2008.
+
+- Summarize SQL Server Query Performance
+- Enhance SQL Server Performance Tuning
 
 
 ## Quest Security Explorer
@@ -2931,11 +2952,11 @@ It allows you to visually design database structures, perform reverse/forward en
 ## DeZign for Databases
 <a id="dezign-for-databases"></a>
 Download page: [DeZign for Databases]<br/>
-Release date: 2016-04-25<br/>
-Support Version: 2008/2012/2014<br/>
+Release date: 2019-04-01<br/>
+Support Version: 2008-2017<br/>
 Author: Datanamic<br/>
 Free version: No<br/>
-Price: $259
+Price: €29/month
 
 DeZign for Databases is an intuitive database design and modeling tool for developers and DBA's that can help you model, create and maintain databases.
 The software uses entity relationship diagrams (ERDs, data models) to graphically design databases and automatically generates the most popular SQL and desktop database.
@@ -4511,6 +4532,49 @@ Enterprise Archite, t's built-in Data Modeling tools and profiles extend UML to 
 Enterprise Architect supports modeling of database schema and automatic generation of DDL scripts for eleven DBMS targets out-of-the-box: DB2, Firebird, MS Access, MySQL, MS SQL Server, Oracle, PostgreSQL
 
 
+## MogwaiERDesignerNG
+<a id="mogwai"></a>
+Download page: [MogwaiERDesignerNG]<br/>
+Release date: 2019-08-22<br/>
+Support Version: 2008-2017<br/>
+Author: Mirko Sertic<br/>
+Free version: Yes<br/>
+Price: No
+
+Java 2D & 3D visual entity relationship design & modeling (ERD,SQL) for Oracle, MSSQL, Postgres and MySQL.
+
+The Mogwai ERDesigner is an entity relationship modeling/design tool(ERD) such as ERWin and co.
+The only difference is that it is Open Source and does not cost anything.
+It was designed to make database modeling as easy as it can be and to support the developer in the whole development process, from database design to schema and code generation.
+
+
+## Xcase
+<a id="xcase"></a>
+Download page: [Xcase]<br/>
+Release date: 2018-06-19<br/>
+Support Version: 2008-2017<br/>
+Author: Resolution Software Ltd<br/>
+Free version: No<br/>
+Price: $799
+
+Xcase is a complete database design tool engineered to help you accomplish all your database-related tasks – from database design to modeling to daily modifications – with greater speed, higher quality, and better adherence to best practices. Its powerful automation and graphics features quickly and accurately complete tasks throughout the entire life cycle of your database, freeing you to focus on database strategy.
+
+
+## Oracle SQL Developer Data Modeler
+<a id="oracle-modeler"></a>
+Download page: [Oracle SQL Developer Data Modeler]<br/>
+Release date: 2019-08-01<br/>
+Support Version: 2008-2017<br/>
+Author: Oracle<br/>
+Free version: Yes<br/>
+Price: No
+
+Oracle SQL Developer Data Modeler is a free graphical tool that enhances productivity and simplifies data modeling tasks.
+Using Oracle SQL Developer Data Modeler users can create, browse and edit, logical, relational, physical, multi-dimensional, and data type models.
+The Data Modeler provides forward and reverse engineering capabilities and supports collaborative development through integrated source code control.
+The Data Modeler can be used in both traditional and in Cloud environments.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4620,6 +4684,7 @@ Enterprise Architect supports modeling of database schema and automatic generati
 [Minion Enterprise]:http://minionware.net/enterprise/
 [SQL Server Compression Estimator]:http://ssce.codeplex.com
 [ClearTrace]:http://www.scalesql.com/cleartrace/download.html
+[ClearTraceXE]:http://www.scalesql.com/cleartrace/download.html
 [Quest Security Explorer]:https://www.quest.com/products/security-explorer/
 [Quest LiteSpeed for SQL Server]:https://www.quest.com/products/litespeed-for-sql-server/
 [Quest Toad for SQL Server]:https://www.quest.com/products/toad-for-sql-server/
@@ -4805,6 +4870,9 @@ Enterprise Architect supports modeling of database schema and automatic generati
 [ERBuilder data modeler]:https://soft-builder.com/
 [SQLDatabaseStudio]:https://www.sqldatabasestudio.com/
 [Enterprise Architect]:https://sparxsystems.com/products/ea/index.html
+[MogwaiERDesignerNG]:https://github.com/mirkosertic/MogwaiERDesignerNG
+[Xcase]:https://www.xcase.com/
+[Oracle SQL Developer Data Modeler ]:https://www.oracle.com/database/technologies/appdev/datamodeler.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
