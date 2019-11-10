@@ -79,7 +79,7 @@ Articles types:
 | [Recover access to a SQL Server instance]                                                                               | Aaron Bertrand                           | 2012-08-30 | [SEC]       |
 | [SQL Server 2016 Upgrade Planning]                                                                                      | Jen Underwood                            | 2016-06-28 |             |
 | [Graphs and Graph Algorithms in T-SQL]                                                                                  | Hans Olav Norheim                        | 2010-05-22 |             |
-| [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]                                                  | Sanjay Mishra                            | 2016-07-12 | [DEV],[R]   |
+| [Episode 4: SQL Server R Services makes you a smarter T-SQL Developer]                                                  | Sanjay Mishra                            | 2016-07-12 | [DEV][R]    |
 | [How to Set Max Degree of Parallelism in SQL Server]                                                                    | Kendra Little                            | 2016-07-14 |             |
 | [Undocumented Query Plans: Equality Comparisons]                                                                        | Paul White                               | 2016-06-22 |             |
 | [Simplified Order Of Operations]                                                                                        | Michael J Swart                          | 2016-07-20 |             |
@@ -97,7 +97,7 @@ Articles types:
 | [#BackToBasics : An Updated "Kitchen Sink" Example]                                                                     | Aaron Bertrand                           | 2016-06-01 |             |
 | [Locking and Blocking in SQL Server]                                                                                    | Brent OZar                               | 2016-01-01 |             |
 | [Nested Loops Prefetching]                                                                                              | Paul White                               | 2013-08-31 |             |
-| [Performance tuning backup and restore operations]                                                                      | Derik Hammer                             | 2015-12-21 | [B],[P]     |
+| [Performance tuning backup and restore operations]                                                                      | Derik Hammer                             | 2015-12-21 | [B][P]      |
 | [Execution Plan Analysis: The Mystery Work Table]                                                                       | Paul White                               | 2013-03-08 |             |
 | [How to move data between File Groups in SQL Server]                                                                    | Klaus Aschenbrenner                      | 2016-09-26 |             |
 | [Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]                                            | Joseph Sack                              | 2014-06-24 |             |
@@ -168,7 +168,7 @@ Articles types:
 | [SQL Server Temporary Table Caching]                                                                                    | Simon Liew                               | 2016-08-12 |             |
 | [Techniques to Monitor SQL Server memory usage]                                                                         | Basit Farooq                             | 2016-08-01 |             |
 | [Troubleshooting Query Regressions Caused By The New Cardinality Estimator]                                             | SQL Scotsman                             | 2016-11-28 |             |
-| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 | [AZ],[MG]   |
+| [Migrating Databases to Azure SQL Database]                                                                             | Tim Radney                               | 2016-10-25 | [AZ][MG]    |
 | [Solve Common SQL Server Restore Issues]                                                                                | Sergey Gigoyan                           | 2015-04-12 |             |
 | [Spills SQL Server Doesn’t Warn You About]                                                                              | Erik Darling                             | 2016-11-30 |             |
 | [How often should I run DBCC CHECKDB?]                                                                                  | Erik Darling                             | 2016-02-25 |             |
@@ -213,7 +213,7 @@ Articles types:
 | [A Tourist’s Guide to the sp_Blitz Source Code, Part 1: The Big Picture]                                                | Brent Ozar                               | 2017-02-09 |             |
 | [SQL Server Default Configurations That You Should Change]                                                              | Pio Balistoy                             | 2017-02-06 |             |
 | [Decoding Key and Page WaitResource for Deadlocks and Blocking]                                                         | Kendra Little                            | 2016-10-17 |             |
-| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 | [CLR],[SEC] |
+| [Security in the CLR World Inside SQL Server]                                                                           | Kiely Don                                | 1990-01-01 | [CLR][SEC]  |
 | [On the Advantages of DateTime2(n) over DateTime]                                                                       | William Assaf                            | 2012-12-04 |             |
 | [Build Your Own Tools]                                                                                                  | Michael J Swart                          | 2016-09-23 |             |
 | [Enhanced T-SQL Error Handling With Extended Events]                                                                    | Dave Mason                               | 2016-09-14 | [XE]        |
@@ -244,9 +244,9 @@ Articles types:
 | [PowerShell Getting More From Generic Error Messages]                                                                   | Shane O'Neill                            | 2017-03-02 | [PS]        |
 | [#BackToBasics : Common Table Expressions (CTEs)]                                                                       | Aaron Bertrand                           | 2016-01-06 |             |
 | [SQL VNext sp_configure on Windows and Linux with dbatools]                                                             | Rob Sewell                               | 2017-03-02 | [PS]        |
-| [Adding a T-SQL Job Step to a SQL Agent Job with PowerShell]                                                            | Rob Sewell                               | 2017-02-20 | [PS],[J]    |
+| [Adding a T-SQL Job Step to a SQL Agent Job with PowerShell]                                                            | Rob Sewell                               | 2017-02-20 | [PS][J]     |
 | [Setting up Database Mail to use my Gmail account]                                                                      | Mat Hayward                              | 2017-03-01 | [DM]        |
-| [Using DBCC CLONEDATABASE and Query Store for Testing]                                                                  | Erin Stellato                            | 2017-02-22 | [DBCC],[QS] |
+| [Using DBCC CLONEDATABASE and Query Store for Testing]                                                                  | Erin Stellato                            | 2017-02-22 | [DBCC][QS]  |
 | [Getting Started with Natural Earth — A SQL Server Shapefile Alternative (Geospatial Resource)]                         | Jeff Pries                               | 2017-02-17 | [V]         |
 | [SQL Server Temporal Tables: How-To Recipes]                                                                            | Alex Grinberg                            | 2017-02-10 | [DEV]       |
 | [The Migration Checklist]                                                                                               | Steve Jones                              | 2017-03-08 | [MG]        |
@@ -255,8 +255,8 @@ Articles types:
 | [Representing Hierarchical Data for Mere Mortals]                                                                       | Phil Factor                              | 2016-10-06 | [DEV]       |
 | [KPIs For DBAs to Show Their CIOs]                                                                                      | Thomas Larock                            | 2017-03-08 | [DBA]       |
 | [How To Forecast Database Disk Capacity If You Don’t Have A Monitoring Tool]                                            | Edwin M Sarmiento                        | 2015-07-31 | [DBA]       |
-| [Statistical Sampling for Verifying Database Backups]                                                                   | Thomas Larock                            | 2010-05-13 | [B],[DBA]   |
-| [Using dbatools for automated restore and CHECKDB]                                                                      | Anthony Nocentino                        | 2017-03-04 | [DBA],[PS]  |
+| [Statistical Sampling for Verifying Database Backups]                                                                   | Thomas Larock                            | 2010-05-13 | [B][DBA]    |
+| [Using dbatools for automated restore and CHECKDB]                                                                      | Anthony Nocentino                        | 2017-03-04 | [DBA][PS]   |
 | [Bad Habits Revival]                                                                                                    | Aaron Bertrand                           | 2017-01-26 | [DBA]       |
 | [Deploying Multiple SSIS Projects via PowerShell]                                                                       | Nat Sundar                               | 2017-02-27 | [SSIS,][PS] |
 | [Determining the Cost Threshold for Parallelism]                                                                        | Grant Fritchey                           | 2017-02-28 | [DBA]       |
@@ -265,9 +265,9 @@ Articles types:
 | [Why PFS pages cannot be repaired]                                                                                      | Paul Randal                              | 2017-03-05 | [DBA]       |
 | [ERRORLOG records max out at 2049 characters]                                                                           | Cody Konior                              | 2017-03-02 | [DEV]       |
 | [How to Build a SQL Server Disaster Recovery Plan with Google Compute Engine]                                           | Tara Kizer                               | 2017-03-10 | [DBA]       |
-| [SQL Server Performance Tuning in Google Compute Engine]                                                                | Erik Darling                             | 2017-03-09 | [DBA],[P]   |
-| [Configuring R on SQL Server 2016]                                                                                      | Ginger Grant                             | 2016-12-06 | [DBA],[R]   |
-| [Knee-Jerk PerfMon Counters: Page Life Expectancy]                                                                      | Paul Randal                              | 2014-10-20 | [DBA],[P]   |
+| [SQL Server Performance Tuning in Google Compute Engine]                                                                | Erik Darling                             | 2017-03-09 | [DBA][P]    |
+| [Configuring R on SQL Server 2016]                                                                                      | Ginger Grant                             | 2016-12-06 | [DBA][R]    |
+| [Knee-Jerk PerfMon Counters: Page Life Expectancy]                                                                      | Paul Randal                              | 2014-10-20 | [DBA][P]    |
 | [Change Management Template for SQL Server DBAs and Developers]                                                         | Kendra Little                            | 2016-04-12 | [DBA]       |
 | [Performance Myths: Clustered vs. Non-Clustered Indexes]                                                                | Aaron Bertrand                           | 2017-03-17 | [IDX]       |
 | [Bad habits: Counting rows the hard way]                                                                                | Aaron Bertrand                           | 2014-10-30 | [DEV]       |
@@ -314,14 +314,14 @@ Articles types:
 | [Hack-Attaching a SQL Server database with NORECOVERY]                                                                  | Argenis Fernandez                        | 2016-01-24 | [DBA]       |
 | [Switch in Staging Tables Instead of sp_rename]                                                                         | Kendra Little                            | 2017-01-19 | [DBA]       |
 | [Performance Myths: Table variables are always in-memory]                                                               | Derik Hammer                             | 2017-04-04 | [DEV]       |
-| [Questions About SQL Server Collations You Were Too Shy to Ask]                                                         | Robert Sheldon                           | 2017-04-06 | [DBA],[DEV] |
+| [Questions About SQL Server Collations You Were Too Shy to Ask]                                                         | Robert Sheldon                           | 2017-04-06 | [DBA][DEV]  |
 | [NULL - The database's black hole]                                                                                      | Hugo Kornelis                            | 2007-07-06 | [DEV]       |
 | [For The Better Developer: SQL Server Indexes]                                                                          | Davide Mauri                             | 2017-04-02 | [DEV]       |
 | [#EntryLevel: Compression & Data Types]                                                                                 | Melissa Connors                          | 2016-04-17 | [DEV]       |
 | [Cardinality Estimation for a Predicate on a COUNT Expression]                                                          | Paul White                               | 2017-04-12 | [DEV]       |
 | [Changing SQL Server Collation After Installation]                                                                      | Douglas P. Castilho                      | 2015-02-19 | [DBA]       |
 | [Does a TempDB spill mean statistics are out of date?]                                                                  | Brent Ozar                               | 2017-04-12 | [DEV]       |
-| [Transaction log growth during BACKUP]                                                                                  | Andy Mallon                              | 2017-04-10 | [B],[DBA]   |
+| [Transaction log growth during BACKUP]                                                                                  | Andy Mallon                              | 2017-04-10 | [B][DBA]    |
 | [When is a SQL function not a function?]                                                                                | Rob Farley                               | 2011-11-08 | [DEV]       |
 | [Introducing Batch Mode Adaptive Joins]                                                                                 | Joseph Sack                              | 2017-04-19 | [DEV]       |
 | [Investigating the proportional fill algorithm]                                                                         | Paul Randal                              | 2016-10-04 | [DBA]       |
@@ -333,14 +333,14 @@ Articles types:
 | [Disabling ROW and PAGE Level Locks in SQL Server]                                                                      | Klaus Aschenbrenner                      | 2016-10-31 | [DEV]       |
 | [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DEV]       |
 | [Cardinality Estimation for Multiple Predicates]                                                                        | Paul Randal                              | 2014-01-15 | [DEV]       |
-| [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DBA],[DEV] |
+| [Weaning yourself off of SQL Profiler (Part 1)]                                                                         | Wayne Sheffield                          | 2017-04-19 | [DBA][DEV]  |
 | [Properly Persisted Computed Columns]                                                                                   | Paul White                               | 2017-05-25 | [DEV]       |
 | [A SQL Server DBA myth a day: (17/30) page checksums]                                                                   | Paul Randal                              | 2010-04-17 | [DBA]       |
 | [What are different ways to replace ISNULL() in a WHERE clause that uses only literal values?]                          | Eric Darling                             | 2017-05-27 | [DEV]       |
-| [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]                                                  | Prashanth Jayaram                        | 2017-04-18 | [DBA],[DEV] |
+| [SQL Server 2016 enhancements – Truncate Table and Table Partitioning]                                                  | Prashanth Jayaram                        | 2017-04-18 | [DBA][DEV]  |
 | [SQL Server Mysteries: The Case of the Not 100% RESTORE…]                                                               | Bob Ward                                 | 2017-04-21 | [DBA]       |
 | [Transactional Replication and Stored Procedure Execution: Silver Bullet or Poison Pill?]                               | Drew Furgiuele                           | 2017-04-11 | [DBA]       |
-| [STOPAT And Date Formats]                                                                                               | Dave Mason                               | 2017-07-12 | [DBA],[XE]  |
+| [STOPAT And Date Formats]                                                                                               | Dave Mason                               | 2017-07-12 | [DBA][XE]   |
 | [Row-count Estimates when there are no Statistics]                                                                      | Matthew McGiffen                         | 2017-06-28 | [DEV]       |
 | [SQL Server DBA On-Boarding Checklist]                                                                                  | Svetlana Golovko                         | 2017-06-20 | [DBA]       |
 | [Be Wary of Date Formatting in T-SQL]                                                                                   | Randolph West                            | 2017-07-12 | [DEV]       |
@@ -348,14 +348,14 @@ Articles types:
 | [Message queues for the DBA: sending data out into the world]                                                           | Drew Furgiuele                           | 2017-07-21 | [DBA]       |
 | [Schema-Based Access Control for SQL Server Databases]                                                                  | Phil Factor                              | 2017-04-09 | [DBA]       |
 | [SQL Server: large RAM and DB Checkpointing]                                                                            | Guillaume Fourrat                        | 2017-06-29 | [DBA]       |
-| [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R],[XE]    |
-| [SQL Server R Services: Digging into the R Language]                                                                    | Robert Sheldon                           | 2017-06-29 | [DBA],[DEV] |
+| [Handling SQL Server Deadlocks With Event Notifications]                                                                | Dave Mason                               | 2017-07-17 | [R][XE]     |
+| [SQL Server R Services: Digging into the R Language]                                                                    | Robert Sheldon                           | 2017-06-29 | [DBA][DEV]  |
 | [Investigating the Cause of SQL Server High CPU Load Conditions When They Happen]                                       | Laerte Junior                            | 2017-07-17 | [DBA]       |
 | [In-Memory Engine DURABILITY = SCHEMA_ONLY And Transaction Rollback]                                                    | Chris Adkin                              | 2017-07-17 | [DEV]       |
-| [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]                                                            | Brent Ozar                               | 2017-06-20 | [DBA],[AZ]  |
+| [Builder Day: Doing a Point-in-Time Restore in Azure SQL DB]                                                            | Brent Ozar                               | 2017-06-20 | [DBA][AZ]   |
 | [Creating Continuous Integration Build Pipelines With Jenkins, Docker and SQL Server]                                   | Chris Adkin                              | 2017-07-18 | [DBA]       |
 | [Scale-able Windows Aggregate Functions With Row Store Object]                                                          | Chris Adkin                              | 2017-07-24 | [DEV]       |
-| [Azure DWH part 11: Data Warehouse Migration Utility]                                                                   | Daniel Calbimonte                        | 2017-07-17 | [AZ],[MG]   |
+| [Azure DWH part 11: Data Warehouse Migration Utility]                                                                   | Daniel Calbimonte                        | 2017-07-17 | [AZ][MG]    |
 | [Representing a simple hierarchical list in SQL Server with JSON, YAML, XML and HTML]                                   | William Brewer                           | 2017-07-18 | [DEV], [X]  |
 | [Advanced Analytics with R and SQL Part II - Data Science Scenarios]                                                    | Frank A. Banin                           | 2017-07-27 | [DEV], [R]  |
 | [Think twice before using table variables]                                                                              | Matthew McGiffen                         | 2017-07-11 | [DEV]       |
@@ -363,134 +363,134 @@ Articles types:
 | [CCIs and String Aggregation]                                                                                           | Joe Obbish                               | 2017-07-03 | [DEV]       |
 | [Brad’s Sure DBA Checklist]                                                                                             | Brad McGehee                             | 2010-01-20 | [DBA]       |
 | [Query Store and Parameterization Problems]                                                                             | Dennes Torres                            | 2017-07-06 | [QS]        |
-| [SQL Server Event Handling: Event Notifications]                                                                        | Dave Mason                               | 2016-11-30 | [DBA],[XE]  |
-| [Identifying Deprecated Feature Usage (Part 1)]                                                                         | Dave Mason                               | 2017-07-20 | [DBA],[XE]  |
-| [Let’s Corrupt a Database Together, Part 3: Detecting Corruption]                                                       | Brent Ozar                               | 2017-07-25 | [DBA],[COR] |
-| [XML vs JSON Shootout: Which is Superior in SQL Server 2016?]                                                           | Bert Wagner                              | 2017-05-16 | [DEV],[X]   |
-| [One SQL Cheat Code For Amazingly Fast JSON Queries]                                                                    | Bert Wagner                              | 2017-05-09 | [DEV],[X]   |
-| [The Ultimate SQL Server JSON Cheat Sheet]                                                                              | Bert Wagner                              | 2017-03-07 | [DEV],[X]   |
+| [SQL Server Event Handling: Event Notifications]                                                                        | Dave Mason                               | 2016-11-30 | [DBA][XE]   |
+| [Identifying Deprecated Feature Usage (Part 1)]                                                                         | Dave Mason                               | 2017-07-20 | [DBA][XE]   |
+| [Let’s Corrupt a Database Together, Part 3: Detecting Corruption]                                                       | Brent Ozar                               | 2017-07-25 | [DBA][COR]  |
+| [XML vs JSON Shootout: Which is Superior in SQL Server 2016?]                                                           | Bert Wagner                              | 2017-05-16 | [DEV][X]    |
+| [One SQL Cheat Code For Amazingly Fast JSON Queries]                                                                    | Bert Wagner                              | 2017-05-09 | [DEV][X]    |
+| [The Ultimate SQL Server JSON Cheat Sheet]                                                                              | Bert Wagner                              | 2017-03-07 | [DEV][X]    |
 | [Are your indexes being thwarted by mismatched datatypes?]                                                              | Bert Wagner                              | 2017-08-01 | [DEV]       |
-| [Why Missing Index Recommendations Aren’t Perfect]                                                                      | Brent Ozar                               | 2017-08-02 | [DBA],[DEV] |
-| [Top 5 Misleading SQL Server Performance Counters]                                                                      | Kendra Little                            | 2017-06-05 | [DBA],[DEV] |
+| [Why Missing Index Recommendations Aren’t Perfect]                                                                      | Brent Ozar                               | 2017-08-02 | [DBA][DEV]  |
+| [Top 5 Misleading SQL Server Performance Counters]                                                                      | Kendra Little                            | 2017-06-05 | [DBA][DEV]  |
 | [The Case of the Space at the End]                                                                                      | Adam St. Pierre                          | 2017-07-24 | [DEV]       |
 | [SELECT…INTO in SQL Server 2017]                                                                                        | Andrew Pruski                            | 2017-08-02 | [DEV]       |
 | [Your Service Level Agreement is a Disaster]                                                                            | Jennifer McCown                          | 2017-07-24 | [DBA]       |
 | [SQLskills SQL101: REBUILD vs. REORGANIZE]                                                                              | Paul Randal                              | 2017-08-03 | [DBA]       |
 | [Where do the Books Online index fragmentation thresholds come from?]                                                   | Paul Randal                              | 2009-12-08 | [DBA]       |
-| [The SQL Hall of Shame]                                                                                                 | Adam Machanic                            | 2017-06-14 | [DBA],[DEV] |
+| [The SQL Hall of Shame]                                                                                                 | Adam Machanic                            | 2017-06-14 | [DBA][DEV]  |
 | [A Better Way To Select Star]                                                                                           | Erik Darling                             | 2017-07-05 | [DEV]       |
 | [UDP vs TCP]                                                                                                            | Kenneth Fisher                           | 2017-06-07 | [DBA]       |
-| [When a Nonclustered Index and Statistics Make a Query Slower]                                                          | Kendra Little                            | 2017-03-24 | [DBA],[DEV] |
+| [When a Nonclustered Index and Statistics Make a Query Slower]                                                          | Kendra Little                            | 2017-03-24 | [DBA][DEV]  |
 | [Lipoaspiration in your SQL Server Database]                                                                            | Fabiano Amorim                           | 2011-03-03 | [DEV]       |
-| [13 Things You Should Know About Statistics and the Query Optimizer]                                                    | Fabiano Amorim                           | 2010-01-07 | [DBA],[DEV] |
-| [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]                                                       | Niels Berglund                           | 2017-06-25 | [DEV],[R]   |
+| [13 Things You Should Know About Statistics and the Query Optimizer]                                                    | Fabiano Amorim                           | 2010-01-07 | [DBA][DEV]  |
+| [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]                                                       | Niels Berglund                           | 2017-06-25 | [DEV][R]    |
 | [A Quick start Guide to Managing SQL Server 2017 on CentOS/RHEL Using the SSH Protocol]                                 | Prashanth Jayaram                        | 2017-08-08 | [DEV]       |
 | [SQL Server v.Next : STRING_AGG Performance, Part 2]                                                                    | Aaron Bertrand                           | 2017-01-06 | [DEV]       |
 | [Why Parameter Sniffing Isn’t Always A Bad Thing (But Usually Is)]                                                      | Bert Wagner                              | 2017-08-08 | [DEV]       |
 | [Persisting statistics sampling rate]                                                                                   | Pedro Lopes                              | 2017-08-11 | [DBA]       |
-| [All about locking in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-06-16 | [DBA],[DEV] |
-| [All about Latches in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-08-10 | [DBA],[DEV] |
-| [All about SQL Server spinlocks]                                                                                        | Nikola Dimitrijevic                      | 2017-08-23 | [DBA],[DEV] |
-| [How to monitor object space growth in SQL Server]                                                                      | Jefferson Elias                          | 2017-08-16 | [DBA],[DEV] |
-| [How to Read a Transaction Log Backup]                                                                                  | Greg Larsen                              | 2017-07-03 | [B],[DBA]   |
+| [All about locking in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-06-16 | [DBA][DEV]  |
+| [All about Latches in SQL Server]                                                                                       | Nikola Dimitrijevic                      | 2017-08-10 | [DBA][DEV]  |
+| [All about SQL Server spinlocks]                                                                                        | Nikola Dimitrijevic                      | 2017-08-23 | [DBA][DEV]  |
+| [How to monitor object space growth in SQL Server]                                                                      | Jefferson Elias                          | 2017-08-16 | [DBA][DEV]  |
+| [How to Read a Transaction Log Backup]                                                                                  | Greg Larsen                              | 2017-07-03 | [B][DBA]    |
 | [How to Find Out Which Database Object Got Deleted]                                                                     | Greg Larsen                              | 2017-07-03 | [DBA]       |
-| [In-Memory OLTP Enhancements in SQL Server 2016]                                                                        | Ahmad Yaseen                             | 2017-08-22 | [DBA],[DEV] |
+| [In-Memory OLTP Enhancements in SQL Server 2016]                                                                        | Ahmad Yaseen                             | 2017-08-22 | [DBA][DEV]  |
 | [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA]       |
 | [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [BENCH]     |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
 | [Why is My Database Application so Slow?]                                                                               | Dan Turner                               | 2017-08-24 | [DEV]       |
-| [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DBA],[DEV] |
+| [Generating Concurrent Activity]                                                                                        | Michael J Swart                          | 2017-01-23 | [DBA][DEV]  |
 | [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                                       | Kendra Little                            | 2017-04-28 | [DBA]       |
-| [Microsoft SQL Server R Services - Internals X]                                                                         | Niels Berglund                           | 2017-08-29 | [DEV],[R]   |
-| [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-08-29 | [DBA],[DEV] |
-| [Hands on Full-Text Search in SQL Server]                                                                               | Jefferson Elias                          | 2017-08-25 | [DBA],[DEV] |
-| [SQL Code Smells]                                                                                                       | Phil Factor                              | 2017-08-31 | [DBA],[DEV] |
-| [Corruption demo databases and scripts]                                                                                 | Paul Randal                              | 2013-01-08 | [DBA],[COR] |
-| [Understanding Cross-Database Transactions in SQL Server]                                                               | Grahaeme Ross                            | 2015-04-11 | [DBA],[DEV] |
-| [Optional Parameters and Missing Index Requests]                                                                        | Brent OZar                               | 2017-09-14 | [DBA],[DEV] |
-| [Uniquifier is a rather unique word isn’t it?]                                                                          | Kenneth Fisher                           | 2017-09-18 | [DBA],[DEV] |
+| [Microsoft SQL Server R Services - Internals X]                                                                         | Niels Berglund                           | 2017-08-29 | [DEV][R]    |
+| [Clustered columnstore: on-disk vs. in-mem]                                                                             | Ned Otter                                | 2017-08-29 | [DBA][DEV]  |
+| [Hands on Full-Text Search in SQL Server]                                                                               | Jefferson Elias                          | 2017-08-25 | [DBA][DEV]  |
+| [SQL Code Smells]                                                                                                       | Phil Factor                              | 2017-08-31 | [DBA][DEV]  |
+| [Corruption demo databases and scripts]                                                                                 | Paul Randal                              | 2013-01-08 | [DBA][COR]  |
+| [Understanding Cross-Database Transactions in SQL Server]                                                               | Grahaeme Ross                            | 2015-04-11 | [DBA][DEV]  |
+| [Optional Parameters and Missing Index Requests]                                                                        | Brent OZar                               | 2017-09-14 | [DBA][DEV]  |
+| [Uniquifier is a rather unique word isn’t it?]                                                                          | Kenneth Fisher                           | 2017-09-18 | [DBA][DEV]  |
 | [Importance of proper transaction log size management]                                                                  | Paul Randal                              | 2009-04-10 | [DEV]       |
-| [#TSQL2sDay – Starting Out with PowerShell]                                                                             | Rob Sewell                               | 2017-09-12 | [DBA],[PS]  |
+| [#TSQL2sDay – Starting Out with PowerShell]                                                                             | Rob Sewell                               | 2017-09-12 | [DBA][PS]   |
 | [Using native compilation to insert parent/child tables]                                                                | Ned Otter                                | 2017-09-11 | [DEV]       |
 | [Questions About RDS SQL Server You Were Too Shy to Ask]                                                                | Laerte Junior                            | 2017-09-13 | [DEV]       |
 | [Active Directory Authentication with SQL Server on Ubuntu]                                                             | Drew Furgiuele                           | 2017-09-19 | [DBA]       |
 | [Temporary Tables in Stored Procedures]                                                                                 | Paul Randal                              | 2012-08-15 | [DEV]       |
 | [SQLCLR in Practice: Creating a Better Way of Sending Email from SQL Server]                                            | Darko Martinović                         | 2017-07-17 | [CLR]       |
-| [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]                                   | Ahmad Yaseen                             | 2017-09-22 | [DBA],[DEV] |
-| [Clustered vs Nonclustered: Index Fundamentals You Need To Know]                                                        | Bert Wagner                              | 2017-09-26 | [DBA],[DEV] |
+| [T-SQL commands performance comparison – NOT IN vs NOT EXISTS vs LEFT JOIN vs EXCEPT]                                   | Ahmad Yaseen                             | 2017-09-22 | [DBA][DEV]  |
+| [Clustered vs Nonclustered: Index Fundamentals You Need To Know]                                                        | Bert Wagner                              | 2017-09-26 | [DBA][DEV]  |
 | [How to Write Efficient TOP N Queries in SQL]                                                                           | Lukas Eder                               | 2017-09-22 | [DEV]       |
 | [Checklist: DR Plan Sanity Check]                                                                                       | Robert Davis                             | 2017-09-04 | [DBA]       |
 | [Table level recovery for selected SQL Server tables]                                                                   | Tibor Nagy                               | 2012-11-30 | [DEV]       |
-| [SQL Mirroring, Preserving the Log Chain During Database Migrations]                                                    | SQL Undercover                           | 2017-01-21 | [DBA],[MG]  |
+| [SQL Mirroring, Preserving the Log Chain During Database Migrations]                                                    | SQL Undercover                           | 2017-01-21 | [DBA][MG]   |
 | [How NOLOCK Will Block Your Queries]                                                                                    | Bert Wagner                              | 2017-10-10 | [DEV]       |
-| [8 Ways to Export SQL Results To a Text File]                                                                           | Daniel Calbimonte                        | 2017-10-06 | [DBA],[DEV] |
-| [SQL Server Installation Failed Due to Pending Restart of Server?]                                                      | thelonedba                               | 2017-09-18 | [DBA],[DEV] |
+| [8 Ways to Export SQL Results To a Text File]                                                                           | Daniel Calbimonte                        | 2017-10-06 | [DBA][DEV]  |
+| [SQL Server Installation Failed Due to Pending Restart of Server?]                                                      | thelonedba                               | 2017-09-18 | [DBA][DEV]  |
 | [Six Scary SQL Surprises]                                                                                               | Brent Ozar                               | 2017-09-06 | [DEV]       |
 | [How the rowversion datatype works when adding and deleting columns]                                                    | Louis Davidson                           | 2017-09-26 | [DEV]       |
 | [Quick! What's the difference between RANK, DENSE_RANK, and ROW_NUMBER?]                                                | Douglas Kline                            | 2017-10-01 | [DEV]       |
 | [A Serial Parallel Query]                                                                                               | Joe Obbish                               | 2017-10-20 | [DEV]       |
-| [Add or Remove IDENTITY Property From an Existing Column Efficiently]                                                   | Dan Guzman                               | 2017-04-16 | [DBA],[DEV] |
+| [Add or Remove IDENTITY Property From an Existing Column Efficiently]                                                   | Dan Guzman                               | 2017-04-16 | [DBA][DEV]  |
 | [How Do I Analyze a SQL Server Execution Plan?]                                                                         | Kendra Little                            | 2017-09-22 | [DEV]       |
 | [A Subtle Difference Between COALESCE and ISNULL]                                                                       | Shaneis                                  | 2017-10-09 | [DEV]       |
 | [Puzzle Challenge: Graph Matching with T-SQL Part 1-Concepts]                                                           | Itzik Ben-Gan                            | 2017-08-08 | [DEV]       |
 | [Graph Matching with T-SQL Part 3: Maximum Matching]                                                                    | Itzik Ben-Gan                            | 2017-10-12 | [DEV]       |
 | [Running PowerShell in a SQL Agent Job]                                                                                 | Derik Hammer                             | 2017-03-04 | [PS]        |
 | [Line-Continuation in T-SQL]                                                                                            | Solomon Rutzky                           | 2017-10-27 | [DEV]       |
-| [SQL Server 2017: Making Backups Great Again!]                                                                          | John Sterrett                            | 2017-10-31 | [B],[DBA]   |
-| [Say NO to Venn Diagrams When Explaining JOINs]                                                                         | Lukas Eder                               | 2016-07-05 | [DBA],[DEV] |
+| [SQL Server 2017: Making Backups Great Again!]                                                                          | John Sterrett                            | 2017-10-31 | [B][DBA]    |
+| [Say NO to Venn Diagrams When Explaining JOINs]                                                                         | Lukas Eder                               | 2016-07-05 | [DBA][DEV]  |
 | [Surprise Delta Stores]                                                                                                 | Joe Obbish                               | 2017-11-07 | [DEV]       |
-| [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]                                           | Denzil Ribeiro                           | 2015-07-08 | [DBA],[DEV] |
+| [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]                                           | Denzil Ribeiro                           | 2015-07-08 | [DBA][DEV]  |
 | [The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]                                                          | Kendra Little                            | 2017-11-09 | [DEV]       |
-| [Multiple Output Datasets With R and SQL Server]                                                                        | Kendra Little                            | 2017-11-06 | [DEV],[R]   |
+| [Multiple Output Datasets With R and SQL Server]                                                                        | Kendra Little                            | 2017-11-06 | [DEV][R]    |
 | [How to Avoid Excessive Sorts in Window Functions]                                                                      | Lukas Eder                               | 2017-11-06 | [DEV]       |
 | [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]                                               | Koen Verbeeck                            | 2017-10-03 | [DAX], [XE] |
-| [What impact can different cursor options have?]                                                                        | Aaron Bertrand                           | 2012-09-10 | [DBA],[DEV] |
-| [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA],[DEV] |
-| [Using the OPTION (RECOMPILE) option for a statement]                                                                   | Kimberly Tripp                           | 2010-04-15 | [DBA],[DEV] |
-| [Execution Plan Caching and Reuse]                                                                                      | Brett Shearer                            | 2015-02-12 | [DBA],[DEV] |
-| [Buffer Management]                                                                                                     | Microsoft                                | 1753-01-01 | [DBA],[DEV] |
-| [RECOMPILE Hints and Execution Plan Caching]                                                                            | Kendra Little                            | 2017-12-17 | [DBA],[DEV] |
-| [Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]          | Robin Lester                             | 2016-08-10 | [DBA],[DEV] |
-| [Eight Different Ways to Clear the SQL Server Plan Cache]                                                               | Glenn Berry                              | 2016-03-26 | [DBA],[DEV] |
-| [Introduction and FAQs about Microsoft Azure technologies]                                                              | Daniel Calbimonte                        | 2017-10-13 | [AZ],[DEV]  |
-| [Inside the XEvent Profiler]                                                                                            | Derik Hammer                             | 2017-10-11 | [DBA],[DEV] |
-| [Does The Join Order of My Tables Matter?]                                                                              | Bert Wagner                              | 2017-11-21 | [DBA],[DEV] |
+| [What impact can different cursor options have?]                                                                        | Aaron Bertrand                           | 2012-09-10 | [DBA][DEV]  |
+| [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA][DEV]  |
+| [Using the OPTION (RECOMPILE) option for a statement]                                                                   | Kimberly Tripp                           | 2010-04-15 | [DBA][DEV]  |
+| [Execution Plan Caching and Reuse]                                                                                      | Brett Shearer                            | 2015-02-12 | [DBA][DEV]  |
+| [Buffer Management]                                                                                                     | Microsoft                                | 1753-01-01 | [DBA][DEV]  |
+| [RECOMPILE Hints and Execution Plan Caching]                                                                            | Kendra Little                            | 2017-12-17 | [DBA][DEV]  |
+| [Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]          | Robin Lester                             | 2016-08-10 | [DBA][DEV]  |
+| [Eight Different Ways to Clear the SQL Server Plan Cache]                                                               | Glenn Berry                              | 2016-03-26 | [DBA][DEV]  |
+| [Introduction and FAQs about Microsoft Azure technologies]                                                              | Daniel Calbimonte                        | 2017-10-13 | [AZ][DEV]   |
+| [Inside the XEvent Profiler]                                                                                            | Derik Hammer                             | 2017-10-11 | [DBA][DEV]  |
+| [Does The Join Order of My Tables Matter?]                                                                              | Bert Wagner                              | 2017-11-21 | [DBA][DEV]  |
 | [Encrypting SQL Server connections with Let’s Encrypt certificates]                                                     | Derik Hammer                             | 2017-11-12 | [DBA]       |
 | [Start SQL Server without tempdb]                                                                                       | Kenneth Fisher                           | 2016-01-20 | [DBA]       |
 | [How to configure database mail in SQL Server]                                                                          | Bojan Petrovic                           | 2017-11-22 | [DBA]       |
-| [Understanding SQL server memory grant]                                                                                 | Jay Choe                                 | 2010-02-16 | [DBA],[DEV] |
+| [Understanding SQL server memory grant]                                                                                 | Jay Choe                                 | 2010-02-16 | [DBA][DEV]  |
 | [Cleanly Uninstalling Stubborn SQL Server Components]                                                                   | Aaron Bertrand                           | 2015-10-06 | [DBA]       |
 | [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]                                                   | @sqL_handLe                              | 2017-17-30 | [DEV]       |
 | [Query Store Settings]                                                                                                  | Erin Stellato                            | 2010-11-28 | [QS]        |
 | [Using Plan Explorer with Entity Framework]                                                                             | Jason Hall                               | 2010-11-28 | [DEV]       |
-| [Overview of Encryption Tools in SQL Server]                                                                            | Matthew McGiffen                         | 2017-12-05 | [DBA],[DEV] |
-| [Clustered Index Uniquifier Existence and Size]                                                                         | Solomon Rutzky                           | 2017-09-18 | [DBA],[DEV] |
-| [Understanding Logging and Recovery in SQL Server]                                                                      | Paul Randal                              | 2009-02-01 | [DBA],[B]   |
-| [Understanding SQL Server Backups]                                                                                      | Paul Randal                              | 2009-07-01 | [B],[DBA]   |
-| [Recovering from Disasters Using Backups]                                                                               | Paul Randal                              | 2009-11-01 | [B],[DBA]   |
+| [Overview of Encryption Tools in SQL Server]                                                                            | Matthew McGiffen                         | 2017-12-05 | [DBA][DEV]  |
+| [Clustered Index Uniquifier Existence and Size]                                                                         | Solomon Rutzky                           | 2017-09-18 | [DBA][DEV]  |
+| [Understanding Logging and Recovery in SQL Server]                                                                      | Paul Randal                              | 2009-02-01 | [DBA][B]    |
+| [Understanding SQL Server Backups]                                                                                      | Paul Randal                              | 2009-07-01 | [B][DBA]    |
+| [Recovering from Disasters Using Backups]                                                                               | Paul Randal                              | 2009-11-01 | [B][DBA]    |
 | [Simple SQL: Handling Location Datatypes]                                                                               | Joe Celko                                | 2017-10-19 | [DEV]       |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
-| [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA],[DEV] |
-| [Take Care When Scripting Batches]                                                                                      | Michael J Swart                          | 2014-09-09 | [DBA],[DEV] |
-| [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA],[DEV] |
-| [Which user function do I use?]                                                                                         | Kenneth Fisher                           | 2015-06-24 | [DBA],[DEV] |
-| [What’s So Bad About Shrinking Databases with DBCC SHRINKDATABASE?]                                                     | Brent Ozar                               | 2017-12-29 | [DBA],[DEV] |
-| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]                    | Solomon Rutzky                           | 2017-12-08 | [DBA],[DEV] |
-| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]                  | Solomon Rutzky                           | 2017-12-11 | [DBA],[DEV] |
-| [Current State of the NewSQL/NoSQL Cloud Arena]                                                                         | Warner Chaves                            | 2017-11-27 | [DBA],[DEV] |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA][DEV]  |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 2)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA][DEV]  |
+| [Improve SQL Server Performance by Looking at Plan Cache (Part 3)]                                                      | Thomas LaRock                            | 2014-10-30 | [DBA][DEV]  |
+| [Take Care When Scripting Batches]                                                                                      | Michael J Swart                          | 2014-09-09 | [DBA][DEV]  |
+| [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA][DEV]  |
+| [Which user function do I use?]                                                                                         | Kenneth Fisher                           | 2015-06-24 | [DBA][DEV]  |
+| [What’s So Bad About Shrinking Databases with DBCC SHRINKDATABASE?]                                                     | Brent Ozar                               | 2017-12-29 | [DBA][DEV]  |
+| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part A of 2: “Duck”)]                    | Solomon Rutzky                           | 2017-12-08 | [DBA][DEV]  |
+| [Which Collation is Used to Convert NVARCHAR to VARCHAR in a WHERE Condition? (Part B of 2: “Rabbit”)]                  | Solomon Rutzky                           | 2017-12-11 | [DBA][DEV]  |
+| [Current State of the NewSQL/NoSQL Cloud Arena]                                                                         | Warner Chaves                            | 2017-11-27 | [DBA][DEV]  |
 | [SQL Server 2017: JSON]                                                                                                 | Sergey Syrovatchenko                     | 2017-11-17 | [X]         |
 | [Simulating Bad Networks to Test SQL Server Replication]                                                                | John Paul Cook                           | 2018-01-02 | [DBA]       |
 | [How to Turn on Instant File Initialization]                                                                            | Greg Larsen                              | 2017-12-04 | [DBA]       |
 | [Bad Idea Jeans: Finding Undocumented Trace Flags]                                                                      | Brent Ozar                               | 2017-10-04 | [DEV]       |
 | [A Method to Find Trace Flags]                                                                                          | Joe Obbish                               | 2018-01-16 | [DEV]       |
 | [Using Windows stored credentials to connect to SQL in containers]                                                      | Andrew Pruski                            | 2018-01-17 | [DEV]       |
-| [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA],[MG]  |
+| [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]                                                      | Anoop Kumar                              | 2017-12-21 | [DBA][MG]   |
 | [Nasty Fast PERCENT_RANK]                                                                                               | Alan Burstein                            | 2018-01-05 | [DEV]       |
 | [Administrative Logins and Users]                                                                                       | Kenneth Fisher                           | 2015-11-02 | [DEV]       |
 | [Parallelism in Hekaton (In-Memory OLTP)]                                                                               | Niko Neugebauer                          | 2018-01-20 | [DEV]       |
 | [Troubleshooting THREADPOOL Waits]                                                                                      | Klaus Aschenbrenner ·                    | 2015-10-20 | [DEV]       |
-| [Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]                                     | Andy Leonard        ·                    | 2018-01-28 | [AZ],[SSIS] |
+| [Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]                                     | Andy Leonard        ·                    | 2018-01-28 | [AZ][SSIS]  |
 | [PRINT vs. RAISERROR]                                                                                                   | sqlity.net          ·                    | 2012-05-27 | [DEV]       |
 | [Does a Clustered Index Give a Default Ordering?]                                                                       | Kendra Little       ·                    | 2018-02-02 | [DEV]       |
 | [Without ORDER BY, You Can’t Depend On the Order of Results]                                                            | Michael J Swart       ·                  | 2013-09-13 | [DEV]       |
@@ -504,34 +504,34 @@ Articles types:
 | [Indexing and Partitioning]                                                                                             | DBA From The Cold                        | 2018-02-21 | [DEV]       |
 | [Schema Compare for SQL Server]                                                                                         | Thomas Larock                            | 2018-02-14 | [DEV]       |
 | [How to change SQL Server ERRORLOG location]                                                                            | Mark Varnas                              | 2018-03-04 | [DBA]       |
-| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]                  | Solomon Rutzky                           | 2018-04-02 | [DBA],[DEV] |
-| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]                  | Solomon Rutzky                           | 2018-04-04 | [DBA],[DEV] |
-| [What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]                                                        | Solomon Rutzky                           | 2018-04-09 | [DBA],[DEV] |
+| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 1]                  | Solomon Rutzky                           | 2018-04-02 | [DBA][DEV]  |
+| [The Uni-Code: The Search for the True List of Valid Characters for T-SQL Regular Identifiers, Part 2]                  | Solomon Rutzky                           | 2018-04-04 | [DBA][DEV]  |
+| [What’s in a Name?: Inside the Wacky World of T-SQL Identifiers]                                                        | Solomon Rutzky                           | 2018-04-09 | [DBA][DEV]  |
 | [Programming SQL Server with SQL Server Management Objects Framework]                                                   | Darko Martinović                         | 2018-04-09 | [DEV]       |
 | [Interval Queries in SQL Server]                                                                                        | Itzik Ben-Gan                            | 2013-06-12 | [DEV]       |
 | [Dealing with date and time instead of datetime]                                                                        | Rob Farley                               | 2018-03-29 | [DEV]       |
-| [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2018-02-18 | [DBA],[DEV] |
-| [A concrete example of migration between an Oracle Database and SQL Server using Microsoft Data Migration Assistant]    | Jefferson Elias                          | 2018-04-12 | [DBA],[DEV] |
+| [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2018-02-18 | [DBA][DEV]  |
+| [A concrete example of migration between an Oracle Database and SQL Server using Microsoft Data Migration Assistant]    | Jefferson Elias                          | 2018-04-12 | [DBA][DEV]  |
 | [Audit SQL Server stop, start, restart]                                                                                 | Steve Keeler                             | 2018-03-12 | [DBA]       |
 | [Query tuning: Apply yourself]                                                                                          | Daniel Janik                             | 2018-04-06 | [DEV]       |
 | [How to identify and monitor unused indexes in SQL Server]                                                              | Nikola Dimitrijevic                      | 2018-04-17 | [IDX]       |
 | [Benchmarking: 1-TB table population (part 1: the baseline)]                                                            | Paul Randal                              | 2010-01-21 | [BENCH]     |
 | [Benchmarking: 1-TB table population (part 2: optimizing log block IO size and how log IO works)]                       | Paul Randal                              | 2010-01-27 | [BENCH]     |
-| [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA],[MG]  |
+| [An overview of SQL Server database migration tools provided by Microsoft]                                              | Jefferson Elias                          | 2018-03-16 | [DBA][MG]   |
 | [Calling Http endpoints in T-SQL using CURL extension]                                                                  | Jovan Popovic                            | 2018-04-17 | [CLR]       |
 | [Why Table Join Orders In Relational Databases]                                                                         | Bert Wagner                              | 2018-04-16 | [DEV]       |
 | [Finding overlapping ranges of data]                                                                                    | Louis Davidson                           | 2018-04-18 | [DEV]       |
 | [Avoid use of the MONEY and SMALLMONEY datatypes]                                                                       | Phil Factor                              | 2018-04-18 | [DEV]       |
 | [Provisioning SQL Server Instances with Docker]                                                                         | Laerte Junior                            | 2018-04-18 | [DBA]       |
-| [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-08-16 | [DBA],[DEV] |
-| [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]                                     | SQL Undercover                           | 2018-05-02 | [DBA],[DEV] |
+| [Understanding the graphical representation of the SQL Server Deadlock Graph]                                           | Minette Steynberg                        | 2016-08-16 | [DBA][DEV]  |
+| [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]                                     | SQL Undercover                           | 2018-05-02 | [DBA][DEV]  |
 | [NOLOCK and Top Optimization]                                                                                           | Dmitry Piliugin                          | 2018-04-12 | [DEV]       |
 | [Operator Precedence versus the Confusing Constraint Translation]                                                       | Louis Davidson                           | 2018-04-30 | [DEV]       |
 | [Interval Queries in SQL Server]                                                                                        | Itzik Ben-Gan                            | 2013-06-13 | [DEV]       |
 | [Query Trace Column Values]                                                                                             | Dmitry Piliugin                          | 2018-04-23 | [XE]        |
 | [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]                                                | Brent Ozar                               | 2018-04-27 | [DEV]       |
-| [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA],[DEV] |
-| [How to perform a page level restore in SQL Server]                                                                     | Prashanth Jayaram                        | 2018-08-18 | [DBA],[DEV] |
+| [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA][DEV]  |
+| [How to perform a page level restore in SQL Server]                                                                     | Prashanth Jayaram                        | 2018-08-18 | [DBA][DEV]  |
 | [Grouping dates without blocking operators]                                                                             | Daniel Hutmacher                         | 2018-05-14 | [DEV]       |
 | [What’s CHECKDB doing in my database restore?]                                                                          | Mike Fal                                 | 2018-04-10 | [DBA]       |
 | [How To Hide An Instance Of SQL Server]                                                                                 | Thomas Larock                            | 2018-04-10 | [DBA]       |
@@ -541,21 +541,21 @@ Articles types:
 | [When to use the SELECT…INTO statement]                                                                                 | Phil Factor                              | 2018-03-19 | [DEV]       |
 | [Temp Tables In SSIS]                                                                                                   | Tim Mitchel                              | 2018-05-29 | [SSIS]      |
 | [Changing the Collation of the Instance, the Databases, and All Columns in All User Databases]                          | Solomon Rutzky                           | 2018-06-11 | [DBA]       |
-| [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Lukas Eder                               | 2017-09-28 | [DBA],[DEV] |
-| [Scheduling powershell tasks with sql agent]                                                                            | Chrissy Lemaire                          | 2017-09-26 | [J],[PS]    |
+| [10 Cool SQL Optimisations That do not Depend on the Cost Model]                                                        | Lukas Eder                               | 2017-09-28 | [DBA][DEV]  |
+| [Scheduling powershell tasks with sql agent]                                                                            | Chrissy Lemaire                          | 2017-09-26 | [J][PS]     |
 | [Three ways to track logins using dbatools]                                                                             | Chrissy Lemaire                          | 2018-04-10 | [PS]        |
 | [Impact of Fragmentation on Execution Plans]                                                                            | Jonathan Kehayias                        | 2017-12-18 | [DEV]       |
 | [How to “debug” a Linked Server from SQL Server to an Oracle Database instance]                                         | Jefferson Elias                          | 2018-06-11 | [DEV]       |
 | [How to implement error handling in SQL Server]                                                                         | Bojan Petrovic                           | 2018-06-15 | [DEV]       |
 | [SQL Server Closure Tables]                                                                                             | Phil Factor                              | 2018-04-10 | [DEV]       |
-| [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh the Coder                           | 2018-05-10 | [DBA],[DEV] |
-| [Azure and Windows PowerShell: The Basics]                                                                              | Nicolas Prigent                          | 2017-12-29 | [AZ],[PS]   |
-| [Azure and Windows PowerShell: Getting Information]                                                                     | Nicolas Prigent                          | 2018-06-26 | [AZ],[PS]   |
+| [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh the Coder                           | 2018-05-10 | [DBA][DEV]  |
+| [Azure and Windows PowerShell: The Basics]                                                                              | Nicolas Prigent                          | 2017-12-29 | [AZ][PS]    |
+| [Azure and Windows PowerShell: Getting Information]                                                                     | Nicolas Prigent                          | 2018-06-26 | [AZ][PS]    |
 | [Be our guest, be our guest, put our database to the test]                                                              | Kenneth Fisher                           | 2018-06-25 | [DBA]       |
 | [Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]                                       | Phil Factor                              | 2018-01-04 | [DEV]       |
-| [DATABASES 101 guide for the non-technical professional]                                                                | Thomas LaRock                            | 2018-07-05 | [DBA],[DEV] |
+| [DATABASES 101 guide for the non-technical professional]                                                                | Thomas LaRock                            | 2018-07-05 | [DBA][DEV]  |
 | [Understanding your Azure EA Billing Data and Building a Centralized Data Storage Solution]                             | Feodor Georgiev                          | 2018-07-17 | [AZ]        |
-| [READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]                                                 | Uwe Ricken                               | 2018-03-06 | [DBA],[DEV] |
+| [READ COMMITTED SNAPSHOT ISOLATION and High version_ghost_record_count]                                                 | Uwe Ricken                               | 2018-03-06 | [DBA][DEV]  |
 | [In-Memory OLTP Indexes – Part 1: Recommendations.]                                                                     | Kunal Karoth                             | 2017-11-02 | [IDX]       |
 | [In-Memory OLTP Indexes – Part 2: Performance Troubleshooting Guide.]                                                   | Kunal Karoth                             | 2017-11-14 | [IDX]       |
 | [Optimization Thresholds – Grouping and Aggregating Data, Part 1]                                                       | Itzik Ben-Gan                            | 2018-04-10 | [DEV]       |
@@ -566,80 +566,80 @@ Articles types:
 | [When DBCC OpenTran doesn’t list all open transactions]                                                                 | Mohamed                                  | 2013-02-17 | [DBA]       |
 | [How I spot not-yet-documented features in SQL Server CTPs]                                                             | Aaron Bertrand                           | 2015-12-02 | [DBA]       |
 | [More ways to discover changes in new versions of SQL Server]                                                           | Aaron Bertrand                           | 2016-03-30 | [DBA]       |
-| [Tail-Log Backup and Restore in SQL Server]                                                                             | Prashanth Jayaram                        | 2018-05-31 | [B],[DBA]   |
+| [Tail-Log Backup and Restore in SQL Server]                                                                             | Prashanth Jayaram                        | 2018-05-31 | [B][DBA]    |
 | [Database Filegroup(s) and Piecemeal restores in SQL Server]                                                            | Prashanth Jayaram                        | 2018-06-22 | [DBA]       |
 | [Updating Statistics with Ola Hallengren’s Script]                                                                      | Erin Stellato                            | 2018-06-22 | [DBA]       |
-| [Interview questions on SQL Server database backups, restores and recovery – Part I]                                    | Prashanth Jayaram                        | 2018-07-25 | [B],[DBA]   |
-| [Interview questions on SQL Server database backups, restores and recovery – Part II]                                   | Prashanth Jayaram                        | 2018-07-25 | [B],[DBA]   |
-| [Interview questions on SQL Server database backups, restores and recovery – Part III]                                  | Prashanth Jayaram                        | 2018-07-25 | [B],[DBA]   |
-| [Can Rowstore Compression Beat Columnstore Compression?]                                                                | Joe Obbish                               | 2018-06-28 | [DBA],[DEV] |
-| [Inside the Storage Engine: Anatomy of a record]                                                                        | Paul Randal                              | 2007-09-30 | [DBA],[DEV] |
-| [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]                     | Paul Randal                              | 2007-10-01 | [DBA],[DEV] |
-| [Inside the Storage Engine: Anatomy of a page]                                                                          | Paul Randal                              | 2007-10-03 | [DBA],[DEV] |
-| [Inside the Storage Engine: Anatomy of an extent]                                                                       | Paul Randal                              | 2007-10-03 | [DBA],[DEV] |
-| [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]                                                | Paul Randal                              | 2007-10-04 | [DBA],[DEV] |
-| [Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]                                                   | Paul Randal                              | 2008-03-14 | [DBA],[DEV] |
-| [Disaster recovery 101: fixing a broken boot page]                                                                      | Paul Randal                              | 2015-06-23 | [DBA],[DEV] |
-| [How to download a sqlservr.pdb symbol file]                                                                            | Paul Randal                              | 2011-04-13 | [DBA],[DEV] |
-| [A cause of high-duration ASYNC_IO_COMPLETION waits]                                                                    | Paul Randal                              | 2014-03-19 | [DBA],[DEV] |
-| [How to solve the Identity Crisis in SQL Server]                                                                        | Ed Pollack                               | 2017-11-14 | [DBA],[DEV] |
+| [Interview questions on SQL Server database backups, restores and recovery – Part I]                                    | Prashanth Jayaram                        | 2018-07-25 | [B][DBA]    |
+| [Interview questions on SQL Server database backups, restores and recovery – Part II]                                   | Prashanth Jayaram                        | 2018-07-25 | [B][DBA]    |
+| [Interview questions on SQL Server database backups, restores and recovery – Part III]                                  | Prashanth Jayaram                        | 2018-07-25 | [B][DBA]    |
+| [Can Rowstore Compression Beat Columnstore Compression?]                                                                | Joe Obbish                               | 2018-06-28 | [DBA][DEV]  |
+| [Inside the Storage Engine: Anatomy of a record]                                                                        | Paul Randal                              | 2007-09-30 | [DBA][DEV]  |
+| [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]                     | Paul Randal                              | 2007-10-01 | [DBA][DEV]  |
+| [Inside the Storage Engine: Anatomy of a page]                                                                          | Paul Randal                              | 2007-10-03 | [DBA][DEV]  |
+| [Inside the Storage Engine: Anatomy of an extent]                                                                       | Paul Randal                              | 2007-10-03 | [DBA][DEV]  |
+| [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]                                                | Paul Randal                              | 2007-10-04 | [DBA][DEV]  |
+| [Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]                                                   | Paul Randal                              | 2008-03-14 | [DBA][DEV]  |
+| [Disaster recovery 101: fixing a broken boot page]                                                                      | Paul Randal                              | 2015-06-23 | [DBA][DEV]  |
+| [How to download a sqlservr.pdb symbol file]                                                                            | Paul Randal                              | 2011-04-13 | [DBA][DEV]  |
+| [A cause of high-duration ASYNC_IO_COMPLETION waits]                                                                    | Paul Randal                              | 2014-03-19 | [DBA][DEV]  |
+| [How to solve the Identity Crisis in SQL Server]                                                                        | Ed Pollack                               | 2017-11-14 | [DBA][DEV]  |
 | [Azure SQL Database Performance and Service Tiers Explained]                                                            | Glenn Berry                              | 2018-08-01 | [AZ]        |
 | [What To Do When Wait Stats Don’t Help]                                                                                 | Joe Obbish                               | 2018-07-20 | [DEV]       |
 | [SQL Server Brute Force Attack Detection: Part 1]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 2]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 3]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
-| [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA],[DEV] |
+| [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA][DEV]  |
 | [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
 | [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]             | Dimitri Furman                           | 2018-07-20 | [AZ]        |
 | [T-SQL Tuesday #017: APPLY: It Slices! It Dices! It Does It All!]                                                       | Brad Schulz                              | 2011-04-12 | [DEV]       |
-| [SQL Server Encryption, What’s The Key Hierarchy All About?]                                                            | David Fowler                             | 2018-08-12 | [DBA],[DEV] |
-| [Overview of the SQLCMD utility in SQL Server]                                                                          | Prashanth Jayaram                        | 2018-08-13 | [DBA],[DEV] |
-| [The BCP (Bulk Copy Program) command in action]                                                                         | Prashanth Jayaram                        | 2018-08-13 | [DBA],[DEV] |
-| [Measuring Query Execution Time]                                                                                        | Grant Fritchey                           | 2018-08-13 | [DBA],[DEV] |
-| [How to Check Performance on a New SQL Server]                                                                          | Brent Ozar                               | 2018-08-03 | [DBA],[DEV] |
+| [SQL Server Encryption, What’s The Key Hierarchy All About?]                                                            | David Fowler                             | 2018-08-12 | [DBA][DEV]  |
+| [Overview of the SQLCMD utility in SQL Server]                                                                          | Prashanth Jayaram                        | 2018-08-13 | [DBA][DEV]  |
+| [The BCP (Bulk Copy Program) command in action]                                                                         | Prashanth Jayaram                        | 2018-08-13 | [DBA][DEV]  |
+| [Measuring Query Execution Time]                                                                                        | Grant Fritchey                           | 2018-08-13 | [DBA][DEV]  |
+| [How to Check Performance on a New SQL Server]                                                                          | Brent Ozar                               | 2018-08-03 | [DBA][DEV]  |
 | [Questions About Kerberos and SQL Server That You Were Too Shy to Ask]                                                  | Kathi Kellenberger                       | 2018-08-21 | [DBA]       |
-| [SQL Server Execution Plans overview]                                                                                   | Ahmad Yaseen                             | 2018-07-04 | [DBA],[DEV] |
-| [SQL Server Execution Plans types]                                                                                      | Ahmad Yaseen                             | 2018-07-23 | [DBA],[DEV] |
-| [How to Analyze SQL Execution Plan Graphical Components]                                                                | Ahmad Yaseen                             | 2018-09-07 | [DBA],[DEV] |
-| [Query optimization techniques in SQL Server: the basics]                                                               | Ed Pollack                               | 2018-05-30 | [DBA],[DEV] |
-| [Query optimization techniques in SQL Server: tips and tricks]                                                          | Ed Pollack                               | 2018-06-19 | [DBA],[DEV] |
-| [Query optimization techniques in SQL Server: Database Design and Architecture]                                         | Ed Pollack                               | 2018-07-13 | [DBA],[DEV] |
-| [SQL Query Optimization Techniques in SQL Server: Parameter Sniffing]                                                   | Ed Pollack                               | 2018-09-04 | [DBA],[DEV] |
-| [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]                                          | Ben Richardson                           | 2018-08-20 | [DBA],[DEV] |
-| [Temporal Tables Under The Covers]                                                                                      | Randolph West                            | 2015-11-17 | [DBA],[DEV] |
-| [Faking Temporal Tables with Triggers]                                                                                  | Bert Wagner                              | 2018-09-11 | [DBA],[DEV] |
-| [SQL queries to manage hierarchical or parent-child relational rows in SQL Server]                                      | Dipon Roy                                | 2014-09-16 | [DBA],[DEV] |
-| [Choosing Between Table Variables and Temporary Tables]                                                                 | Phil Factor                              | 2018-05-11 | [DBA],[DEV] |
-| [What's New in the First Public CTP of SQL Server 2019]                                                                 | Aaron Bertrand                           | 2018-09-24 | [DBA],[DEV] |
-| [SQL Server support for TLS 1.2 – Read This First!]                                                                     | Aaron Bertrand                           | 2016-03-03 | [DBA],[DEV] |
-| [Misconceptions in SQL Server: A Trio of table variables]                                                               | Gail Shaw                                | 2010-10-12 | [DBA],[DEV] |
-| [Using the Same Column Twice in a SQL UPDATE Statement]                                                                 | SQL Theater                              | 2018-09-13 | [DBA],[DEV] |
-| [How to perform a performance test against a SQL Server instance]                                                       | Jefferson Elias                          | 2018-09-14 | [DBA],[DEV] |
+| [SQL Server Execution Plans overview]                                                                                   | Ahmad Yaseen                             | 2018-07-04 | [DBA][DEV]  |
+| [SQL Server Execution Plans types]                                                                                      | Ahmad Yaseen                             | 2018-07-23 | [DBA][DEV]  |
+| [How to Analyze SQL Execution Plan Graphical Components]                                                                | Ahmad Yaseen                             | 2018-09-07 | [DBA][DEV]  |
+| [Query optimization techniques in SQL Server: the basics]                                                               | Ed Pollack                               | 2018-05-30 | [DBA][DEV]  |
+| [Query optimization techniques in SQL Server: tips and tricks]                                                          | Ed Pollack                               | 2018-06-19 | [DBA][DEV]  |
+| [Query optimization techniques in SQL Server: Database Design and Architecture]                                         | Ed Pollack                               | 2018-07-13 | [DBA][DEV]  |
+| [SQL Query Optimization Techniques in SQL Server: Parameter Sniffing]                                                   | Ed Pollack                               | 2018-09-04 | [DBA][DEV]  |
+| [Similarities and Differences among RANK, DENSE_RANK and ROW_NUMBER Functions]                                          | Ben Richardson                           | 2018-08-20 | [DBA][DEV]  |
+| [Temporal Tables Under The Covers]                                                                                      | Randolph West                            | 2015-11-17 | [DBA][DEV]  |
+| [Faking Temporal Tables with Triggers]                                                                                  | Bert Wagner                              | 2018-09-11 | [DBA][DEV]  |
+| [SQL queries to manage hierarchical or parent-child relational rows in SQL Server]                                      | Dipon Roy                                | 2014-09-16 | [DBA][DEV]  |
+| [Choosing Between Table Variables and Temporary Tables]                                                                 | Phil Factor                              | 2018-05-11 | [DBA][DEV]  |
+| [What's New in the First Public CTP of SQL Server 2019]                                                                 | Aaron Bertrand                           | 2018-09-24 | [DBA][DEV]  |
+| [SQL Server support for TLS 1.2 – Read This First!]                                                                     | Aaron Bertrand                           | 2016-03-03 | [DBA][DEV]  |
+| [Misconceptions in SQL Server: A Trio of table variables]                                                               | Gail Shaw                                | 2010-10-12 | [DBA][DEV]  |
+| [Using the Same Column Twice in a SQL UPDATE Statement]                                                                 | SQL Theater                              | 2018-09-13 | [DBA][DEV]  |
+| [How to perform a performance test against a SQL Server instance]                                                       | Jefferson Elias                          | 2018-09-14 | [DBA][DEV]  |
 | [The Black Art Of Spatial Index Tuning In SQL Server]                                                                   | Todd Jackson                             | 2011-04-26 | [DEV]       |
 | [Patching SQL Server on Windows notes from the field]                                                                   | Kevin Chant                              | 2019-01-10 | [DBA]       |
 | [Availability Group Readable Secondaries – Just Say No]                                                                 | Jonathan Kehayias                        | 2019-01-10 | [DBA]       |
-| [Finding the Slowest Query in a Stored Procedure]                                                                       | Erin Stellato                            | 2018-12-13 | [DBA],[DEV] |
-| [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA],[MG]  |
-| [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA],[MG]  |
-| [A unique review of SQL Server index types]                                                                             | Kevin Chant                              | 2019-10-18 | [DBA],[DEV] |
-| [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA],[DEV] |
-| [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA],[DEV] |
-| [How to create DACPAC file?]                                                                                            | Kamil Nowinski                           | 2018-10-31 | [DBA],[DEV] |
+| [Finding the Slowest Query in a Stored Procedure]                                                                       | Erin Stellato                            | 2018-12-13 | [DBA][DEV]  |
+| [A Monumental Migration to SQL Server 2016 – Part 1]                                                                    | Andy Levy                                | 2019-01-07 | [DBA][MG]   |
+| [A Monumental Migration to SQL Server 2016 – Part 2]                                                                    | Andy Levy                                | 2019-01-09 | [DBA][MG]   |
+| [A unique review of SQL Server index types]                                                                             | Kevin Chant                              | 2019-10-18 | [DBA][DEV]  |
+| [Don’t Just Rely on Query Execution Stats for T-SQL Execution]                                                          | Kevin Chant                              | 2018-09-18 | [DBA][DEV]  |
+| [Posting SQL Server notifications to Slack]                                                                             | Alessandro Alpi                          | 2018-09-19 | [DBA][DEV]  |
+| [How to create DACPAC file?]                                                                                            | Kamil Nowinski                           | 2018-10-31 | [DBA][DEV]  |
 | [Find the Next Non-NULL Row in a Series With SQL]                                                                       | Lukas Eder                               | 2018-09-03 | [DEV]       |
 | [Calculate Percentiles to Learn About Data Set Skew in SQL]                                                             | Lukas Eder                               | 2019-01-22 | [DEV]       |
-| [Comparing multiple rows insert vs single row insert with three data load methods]                                      | Phil Factor                              | 2013-02-21 | [DBA],[DEV] |
-| [The Cause of Every Deadlock in SQL Server]                                                                             | Thomas Larock                            | 2018-09-19 | [DBA],[DEV] |
-| [Deadlock Troubleshooting, Part 1]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA],[DEV] |
-| [Deadlock Troubleshooting, Part 2]                                                                                      | Bart Dunkan                              | 2006-09-12 | [DBA],[DEV] |
-| [Deadlock Troubleshooting, Part 3]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA],[DEV] |
-| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 1]                                        | Milosra Divojevic                        | 2018-10-04 | [DBA],[DEV] |
-| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 2]                                        | Milosra Divojevic                        | 2018-10-05 | [DBA],[DEV] |
-| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 3]                                        | Milosra Divojevic                        | 2018-10-08 | [DBA],[DEV] |
-| [Creating a SQL Server 2019 Demo Environment in a Docker Container]                                                     | Cathrine Wilhelmsen                      | 2018-12-02 | [DBA],[DEV] |
-| [Overview of Data Compression in SQL Server]                                                                            | Prashanth Jayaram                        | 2018-12-06 | [DBA],[DEV] |
-| [SQL Server Hash Match Operator]                                                                                        | Hugo Kornelis                            | 2018-06-01 | [DBA],[DEV] |
+| [Comparing multiple rows insert vs single row insert with three data load methods]                                      | Phil Factor                              | 2013-02-21 | [DBA][DEV]  |
+| [The Cause of Every Deadlock in SQL Server]                                                                             | Thomas Larock                            | 2018-09-19 | [DBA][DEV]  |
+| [Deadlock Troubleshooting, Part 1]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA][DEV]  |
+| [Deadlock Troubleshooting, Part 2]                                                                                      | Bart Dunkan                              | 2006-09-12 | [DBA][DEV]  |
+| [Deadlock Troubleshooting, Part 3]                                                                                      | Bart Dunkan                              | 2006-09-08 | [DBA][DEV]  |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 1]                                        | Milosra Divojevic                        | 2018-10-04 | [DBA][DEV]  |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 2]                                        | Milosra Divojevic                        | 2018-10-05 | [DBA][DEV]  |
+| [The Good, the Bad and the Ugly of Table Variable Deferred Compilation – Part 3]                                        | Milosra Divojevic                        | 2018-10-08 | [DBA][DEV]  |
+| [Creating a SQL Server 2019 Demo Environment in a Docker Container]                                                     | Cathrine Wilhelmsen                      | 2018-12-02 | [DBA][DEV]  |
+| [Overview of Data Compression in SQL Server]                                                                            | Prashanth Jayaram                        | 2018-12-06 | [DBA][DEV]  |
+| [SQL Server Hash Match Operator]                                                                                        | Hugo Kornelis                            | 2018-06-01 | [DBA][DEV]  |
 | [How to use Microsoft Assessment and Planning (MAP) Toolkit for SQL Server]                                             | Musab Umair                              | 2017-03-31 | [DBA]       |
-| [Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]                            | Monica Rathbun                           | 2019-01-30 | [AZ],[DBA]  |
+| [Improve the Performance of Your Azure SQL Database (and Save Money!) with Automatic Tuning]                            | Monica Rathbun                           | 2019-01-30 | [AZ][DBA]   |
 | [The Importance of Database Compatibility Level in SQL Server]                                                          | Glenn Berry                              | 2019-01-14 | [DBA]       |
 | [Azure Managed vs Unmanaged disks : The choice]                                                                         | Samir Farhat                             | 2017-05-31 | [AZ]        |
 | [Storage options for SQL Server database files in Azure]                                                                | James Serra                              | 2019-01-29 | [AZ]        |
@@ -649,218 +649,218 @@ Articles types:
 | [Executing xp_cmdshell with Non SysAdmin Account]                                                                       | Lucas Kartawidjaja                       | 2019-01-04 | [DBA]       |
 | [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
 | [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2019-02-05 | [DBA]       |
-| [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA],[DEV] |
+| [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA][DEV]  |
 | [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [SEC]       |
 | [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [SEC]       |
 | [Introduction to SQL Server Security — Part 3]                                                                          | Robert Sheldon                           | 2019-02-25 | [SEC]       |
 | [Introduction to SQL Server Security — Part 4]                                                                          | Robert Sheldon                           | 2019-03-26 | [SEC]       |
-| [Introduction to T-SQL Window Functions]                                                                                | Kathi Kellenberger                       | 2018-07-13 | [DBA],[DEV] |
-| [Intro to Debugging a Memory Dump]                                                                                      | Adam W. Saxton                           | 2012-03-15 | [DBA],[DEV] |
+| [Introduction to T-SQL Window Functions]                                                                                | Kathi Kellenberger                       | 2018-07-13 | [DBA][DEV]  |
+| [Intro to Debugging a Memory Dump]                                                                                      | Adam W. Saxton                           | 2012-03-15 | [DBA][DEV]  |
 | [Considering Security with SQL Bulk Insert]                                                                             | Timothy Smith                            | 2019-01-17 | [SEC]       |
 | [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring I]                                 | Juergen Thomas                           | 2013-04-21 | [DBA]       |
 | [SQL Server 2012 AlwaysOn – Part 11 – Performance Aspects and Performance Monitoring II]                                | Juergen Thomas                           | 2013-04-24 | [DBA]       |
-| [Data Compression Internals]                                                                                            | Jess Pomfret                             | 2019-02-19 | [DBA],[DEV] |
-| [SQL Server Data Compression – Crunch Time!]                                                                            | Jeff Mlakar                              | 2019-02-22 | [DBA],[DEV] |
+| [Data Compression Internals]                                                                                            | Jess Pomfret                             | 2019-02-19 | [DBA][DEV]  |
+| [SQL Server Data Compression – Crunch Time!]                                                                            | Jeff Mlakar                              | 2019-02-22 | [DBA][DEV]  |
 | [Create a slipstream installer for SQL Server on Windows]                                                               | Randolph West                            | 2018-10-24 | [DBA]       |
-| [Temporary Tables in SQL Server]                                                                                        | Phil Factor                              | 2011-09-01 | [DBA],[DEV] |
+| [Temporary Tables in SQL Server]                                                                                        | Phil Factor                              | 2011-09-01 | [DBA][DEV]  |
 | [SQL unit testing with the tSQLt framework for beginners]                                                               | Esat Erkec                               | 2019-03-19 | [DEV]       |
-| [Oracle vs. SQL Server Architecture]                                                                                    | Kellyn Pot'vin-Gorman                    | 2019-03-20 | [DBA],[DEV] |
-| [Oracle RAC vs. SQL Server AG]                                                                                          | Kellyn Pot'vin-Gorman                    | 2019-03-28 | [DBA],[DEV] |
-| [SSIS vs. Oracle GG]                                                                                                    | Kellyn Pot'vin-Gorman                    | 2019-04-10 | [DBA],[DEV] |
+| [Oracle vs. SQL Server Architecture]                                                                                    | Kellyn Pot'vin-Gorman                    | 2019-03-20 | [DBA][DEV]  |
+| [Oracle RAC vs. SQL Server AG]                                                                                          | Kellyn Pot'vin-Gorman                    | 2019-03-28 | [DBA][DEV]  |
+| [SSIS vs. Oracle GG]                                                                                                    | Kellyn Pot'vin-Gorman                    | 2019-04-10 | [DBA][DEV]  |
 | [Analysis Services Telemetry: What information does SSAS submit? and how has it changed in SSAS 2019?]                  | Shabnam Watson                           | 2019-04-13 | [DBA]       |
 | [The Curious Case of… how to find FILESTREAM info from an MDF]                                                          | Paul Randal                              | 2019-04-18 | [DBA]       |
-| [Does index fragmentation matter?]                                                                                      | Tibor Karaszi                            | 2019-04-05 | [DBA],[DEV] |
+| [Does index fragmentation matter?]                                                                                      | Tibor Karaszi                            | 2019-04-05 | [DBA][DEV]  |
 | [How to perform a Page Level Restore in SQL Server]                                                                     | Klaus Aschenbrenner                      | 2015-10-13 | [DBA]       |
 | [How Much Memory Does SSIS Need?]                                                                                       | Tim Mitchell                             | 2019-05-02 | [SSIS]      |
 | [The Curious Case of… trying to find an MDF file in a RAW disk]                                                         | Paul Randal                              | 2019-04-30 | [DBA]       |
-| [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2019-04-29 | [DBA],[DEV] |
-| [Methods to Insert Data into SQL Server]                                                                                | Ed Pollack                               | 2019-04-10 | [DBA],[DEV] |
-| [Batching data manipulation is great as long as you do it correctly]                                                    | Jeff Iannucci                            | 2018-09-15 | [DBA],[DEV] |
+| [Understanding the SQL Server NOLOCK hint]                                                                              | Greg Robidoux                            | 2019-04-29 | [DBA][DEV]  |
+| [Methods to Insert Data into SQL Server]                                                                                | Ed Pollack                               | 2019-04-10 | [DBA][DEV]  |
+| [Batching data manipulation is great as long as you do it correctly]                                                    | Jeff Iannucci                            | 2018-09-15 | [DBA][DEV]  |
 | [Azure and Windows PowerShell: Using VM Extensions]                                                                     | Nicolas Prigent                          | 2018-10-09 | [PS]        |
-| [Reloading fact tables with zero downtime]                                                                              | Daniel Hutmacher                         | 2014-08-24 | [DBA],[DEV] |
-| [Transferring Data Efficiently by Using Partition Switching]                                                            | Microsoft Docs                           | 2012-04-10 | [DBA],[DEV] |
-| [Another Difference between N'' and '' in SQL Server]                                                                   | Shane O'Neill                            | 2018-10-24 | [DBA],[DEV] |
+| [Reloading fact tables with zero downtime]                                                                              | Daniel Hutmacher                         | 2014-08-24 | [DBA][DEV]  |
+| [Transferring Data Efficiently by Using Partition Switching]                                                            | Microsoft Docs                           | 2012-04-10 | [DBA][DEV]  |
+| [Another Difference between N'' and '' in SQL Server]                                                                   | Shane O'Neill                            | 2018-10-24 | [DBA][DEV]  |
 | [Ignoring NULLs with FIRST_VALUE]                                                                                       | Bert Wagner                              | 2018-08-28 | [DEV]       |
 | [Shortchanged with International Money in SQL Server]                                                                   | Bert Wagner                              | 2018-09-25 | [DEV]       |
 | [Understanding database recovery with SQL Server 2016 Extended Events]                                                  | Rajendra Gupta                           | 2016-07-05 | [DBA]       |
-| [SQL Server 2019: Batch Mode on Rowstore]                                                                               | Dmitri Pilugin                           | 2018-10-04 | [DBA],[DEV] |
-| [Using Indexing To Solve Blocking and Deadlocking Issues]                                                               | David Fowler                             | 2019-03-15 | [DBA],[DEV] |
+| [SQL Server 2019: Batch Mode on Rowstore]                                                                               | Dmitri Pilugin                           | 2018-10-04 | [DBA][DEV]  |
+| [Using Indexing To Solve Blocking and Deadlocking Issues]                                                               | David Fowler                             | 2019-03-15 | [DBA][DEV]  |
 | [Change collation of existing Azure SQL database]                                                                       | Fonseca Sergio                           | 2018-11-09 | [AZ]        |
 | [Creating Database Maintenance Plans]                                                                                   | Nisarg Upadhyay                          | 2018-11-09 | [DBA]       |
 | [SQL Server Upgrade Checklist]                                                                                          | Mike Walsh                               | 2019-03-07 | [DBA]       |
 | [Failing a PowerShell Sql Agent step]                                                                                   | Stuart Moore                             | 2019-03-04 | [PS]        |
-| [The Curse of Cursor Options]                                                                                           | Brent Ozar                               | 2018-11-02 | [DBA],[DEV] |
+| [The Curse of Cursor Options]                                                                                           | Brent Ozar                               | 2018-11-02 | [DBA][DEV]  |
 | [Accelerated Database Recovery; Instant Rollback and Database Recovery]                                                 | Rajendra Gupta                           | 2019-03-12 | [DBA]       |
 | [Accelerated Database Recovery and Long Running Transactions with Transaction Log Growth]                               | Rajendra Gupta                           | 2019-03-21 | [DBA]       |
-| [Using docker named volumes to persist databases in SQL Server]                                                         | Andrew Pruski                            | 2019-03-21 | [DBA],[DEV] |
-| [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-03-13 | [DBA],[DEV] |
-| [Grouped Concatenation in SQL Server]                                                                                   | Aaron Bertrand                           | 2014-08-06 | [DBA],[DEV] |
-| [Working with tempdb in SQL Server 2005]                                                                                | Microsoft Docs                           | 2010-01-28 | [DBA],[DEV] |
-| [SQLskills SQL101: Temporary table misuse]                                                                              | Paul Randal                              | 2017-03-13 | [DBA],[DEV] |
-| [Running SQL Server on Linux on your own laptop]                                                                        | Kevin Chant                              | 2019-03-26 | [DBA],[DEV] |
+| [Using docker named volumes to persist databases in SQL Server]                                                         | Andrew Pruski                            | 2019-03-21 | [DBA][DEV]  |
+| [T-SQL bugs, pitfalls, and best practices – determinism]                                                                | Itzik Ben-Gan                            | 2019-03-13 | [DBA][DEV]  |
+| [Grouped Concatenation in SQL Server]                                                                                   | Aaron Bertrand                           | 2014-08-06 | [DBA][DEV]  |
+| [Working with tempdb in SQL Server 2005]                                                                                | Microsoft Docs                           | 2010-01-28 | [DBA][DEV]  |
+| [SQLskills SQL101: Temporary table misuse]                                                                              | Paul Randal                              | 2017-03-13 | [DBA][DEV]  |
+| [Running SQL Server on Linux on your own laptop]                                                                        | Kevin Chant                              | 2019-03-26 | [DBA][DEV]  |
 | [SSIS and Pentaho – A Quick Comparison]                                                                                 | Koen Verbeeck                            | 2018-10-17 | [SSIS]      |
-| [WinDbg and SQL Server Fun]                                                                                             | Shane O'Neill                            | 2017-06-14 | [DBA],[DEV] |
-| [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA],[DEV] |
-| [SQL Server: Diagnosing Intermittent Connectivity Issues]                                                               | Mitch Wheat                              | 2019-04-12 | [DBA],[DEV] |
-| [Difference between Identity & Sequence in SQL Server]                                                                  | Ben Richardson                           | 2018-08-15 | [DBA],[DEV] |
-| [Does the Rowmodctr Update for Non-Updating Updates?]                                                                   | Brent Ozar                               | 2019-05-20 | [DBA],[DEV] |
-| [An Intro To Data Modeling]                                                                                             | JBOSEMS                                  | 2019-04-12 | [DBA],[DEV] |
-| [On telemetry and other data collected by SQL Server]                                                                   | Aaron Bertrand                           | 2016-04-04 | [DBA],[DEV] |
-| [Purging data with batched deletes]                                                                                     | Andy Mallon                              | 2019-04-03 | [DBA],[DEV] |
+| [WinDbg and SQL Server Fun]                                                                                             | Shane O'Neill                            | 2017-06-14 | [DBA][DEV]  |
+| [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA][DEV]  |
+| [SQL Server: Diagnosing Intermittent Connectivity Issues]                                                               | Mitch Wheat                              | 2019-04-12 | [DBA][DEV]  |
+| [Difference between Identity & Sequence in SQL Server]                                                                  | Ben Richardson                           | 2018-08-15 | [DBA][DEV]  |
+| [Does the Rowmodctr Update for Non-Updating Updates?]                                                                   | Brent Ozar                               | 2019-05-20 | [DBA][DEV]  |
+| [An Intro To Data Modeling]                                                                                             | JBOSEMS                                  | 2019-04-12 | [DBA][DEV]  |
+| [On telemetry and other data collected by SQL Server]                                                                   | Aaron Bertrand                           | 2016-04-04 | [DBA][DEV]  |
+| [Purging data with batched deletes]                                                                                     | Andy Mallon                              | 2019-04-03 | [DBA][DEV]  |
 | [Don’t Forget RoboCopy]                                                                                                 | John Morehouse                           | 2019-03-03 | [DBA]       |
-| [Understanding the XML description of the Deadlock Graph in SQL Server]                                                 | Minette Steynberg                        | 2016-04-26 | [DBA],[DEV] |
+| [Understanding the XML description of the Deadlock Graph in SQL Server]                                                 | Minette Steynberg                        | 2016-04-26 | [DBA][DEV]  |
 | [What Is The Difference Between Checkpoint And Lazy Writer]                                                             | Saurabh Sinha                            | 2012-10-01 | [DBA]       |
-| [Efficiently Indexing Long Character Strings]                                                                           | Jon Seigel                               | 2013-07-13 | [DBA],[DEV] |
+| [Efficiently Indexing Long Character Strings]                                                                           | Jon Seigel                               | 2013-07-13 | [DBA][DEV]  |
 | [SQL Server Read-only tables]                                                                                           | Kenneth Fisher                           | 2019-01-21 | [DBA]       |
-| [Slow inserts across a linked server?]                                                                                  | Max Vernon                               | 2019-04-25 | [DBA],[DEV] |
-| [Using IGNORE NULLS With SQL Window Functions to Fill Gaps]                                                             | Lukas Eder                               | 2019-04-24 | [DBA],[DEV] |
-| [SQL Server Logical Reads]                                                                                              | Ami Levin                                | 2008-01-01 | [DBA],[DEV] |
-| [Two Words For Faster Scalar Functions]                                                                                 | Bert Wagner                              | 2018-12-04 | [DBA],[DEV] |
-| [How to Get SQL Server Dates and Times Horribly Wrong]                                                                  | Robert Sheldon                           | 2015-05-28 | [DBA],[DEV] |
-| [Diagnosing and Resolving Spinlock Contention on SQL Server]                                                            | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA],[DEV] |
-| [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA],[DEV] |
+| [Slow inserts across a linked server?]                                                                                  | Max Vernon                               | 2019-04-25 | [DBA][DEV]  |
+| [Using IGNORE NULLS With SQL Window Functions to Fill Gaps]                                                             | Lukas Eder                               | 2019-04-24 | [DBA][DEV]  |
+| [SQL Server Logical Reads]                                                                                              | Ami Levin                                | 2008-01-01 | [DBA][DEV]  |
+| [Two Words For Faster Scalar Functions]                                                                                 | Bert Wagner                              | 2018-12-04 | [DBA][DEV]  |
+| [How to Get SQL Server Dates and Times Horribly Wrong]                                                                  | Robert Sheldon                           | 2015-05-28 | [DBA][DEV]  |
+| [Diagnosing and Resolving Spinlock Contention on SQL Server]                                                            | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA][DEV]  |
+| [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Ewan Fairweather, Mike Ruthruff          | 2011-06-01 | [DBA][DEV]  |
 | [Advanced Nutanix: SQL Server on Nutanix Best Practices Released!]                                                      | Steven Poitras                           | 2013-11-09 | [DBA]       |
 | [Gaps and Islands Across Date Ranges]                                                                                   | Bert Wagner                              | 2019-03-12 | [DBA]       |
-| [NOT NULL Persisted Computed Columns (And What They Allow)]                                                             | Louis Davidson                           | 2019-06-01 | [DBA],[DEV] |
-| [How many ways are there to sort GUIDs? How much time do you have?]                                                     | Raymond Chen                             | 2019-04-26 | [DBA],[DEV] |
+| [NOT NULL Persisted Computed Columns (And What They Allow)]                                                             | Louis Davidson                           | 2019-06-01 | [DBA][DEV]  |
+| [How many ways are there to sort GUIDs? How much time do you have?]                                                     | Raymond Chen                             | 2019-04-26 | [DBA][DEV]  |
 | [How do I force a SQL Login to change it’s password on next login]                                                      | Kenneth Fisher                           | 2019-06-05 | [DBA]       |
 | [SQL Server Performance Benchmarking with Patterns]                                                                     | Paul Brewer                              | 2017-10-19 | [BENCH]     |
-| [SQL Server function to convert integer date to datetime format]                                                        | Tim Ford                                 | 2019-05-24 | [DBA],[DEV] |
-| [Storing Utc Is Not A Silver Bullet]                                                                                    | Jon Skeet                                | 2019-03-27 | [DBA],[DEV] |
-| [Logical Query Processing Part 8 : SELECT and ORDER BY]                                                                 | Itzik Ben-Gan                            | 2016-11-15 | [DBA],[DEV] |
-| [SQL Server Common Table Expression vs Temp Table]                                                                      | Rick Dobson                              | 2019-05-22 | [DBA],[DEV] |
+| [SQL Server function to convert integer date to datetime format]                                                        | Tim Ford                                 | 2019-05-24 | [DBA][DEV]  |
+| [Storing Utc Is Not A Silver Bullet]                                                                                    | Jon Skeet                                | 2019-03-27 | [DBA][DEV]  |
+| [Logical Query Processing Part 8 : SELECT and ORDER BY]                                                                 | Itzik Ben-Gan                            | 2016-11-15 | [DBA][DEV]  |
+| [SQL Server Common Table Expression vs Temp Table]                                                                      | Rick Dobson                              | 2019-05-22 | [DBA][DEV]  |
 | [Which Query Used The Most Cpu? Implementing Extended Events]                                                           | Grant Fritchey                           | 2019-06-03 | [XE]        |
 | [SQL Server Plan Cache Limits]                                                                                          | Erin Stellato                            | 2019-05-28 | [DBA]       |
 | [SQL Server and ReFS: Part 1 – DBCC and In Memory OLTP]                                                                 | swasheck                                 | 2014-11-11 | [DBA]       |
 | [SQL Server and ReFS: Part 2 – FIO Benchmarking NTFS vs. ReFS]                                                          | swasheck                                 | 2014-12-18 | [DBA]       |
-| [Why Rolling back inserts with Identity columns is a bad idea]                                                          | Adrian Buckman                           | 2019-04-11 | [DBA],[DEV] |
-| [What’s Better, CTEs or Temp Tables?]                                                                                   | Brent Ozar                               | 2019-06-06 | [DBA],[DEV] |
-| [The Difference Between SQL’s JOIN .. ON Clause and the Where Clause]                                                   | Lukas Eder                               | 2019-04-09 | [DBA],[DEV] |
+| [Why Rolling back inserts with Identity columns is a bad idea]                                                          | Adrian Buckman                           | 2019-04-11 | [DBA][DEV]  |
+| [What’s Better, CTEs or Temp Tables?]                                                                                   | Brent Ozar                               | 2019-06-06 | [DBA][DEV]  |
+| [The Difference Between SQL’s JOIN .. ON Clause and the Where Clause]                                                   | Lukas Eder                               | 2019-04-09 | [DBA][DEV]  |
 | [My IT department installed an antivirus with SQL Server]                                                               | Randolph West                            | 2019-06-05 | [DBA]       |
-| [An Experiment with Deadlocks - ROWLOCK hint myth]                                                                      | Jason Brimhall                           | 2019-03-25 | [DBA],[DEV] |
+| [An Experiment with Deadlocks - ROWLOCK hint myth]                                                                      | Jason Brimhall                           | 2019-03-25 | [DBA][DEV]  |
 | [Adding a New Transaction Log File when the Existing Log is Full]                                                       | Max Vernon                               | 2019-03-19 | [DBA]       |
-| [Transactions Don't Start At BEGIN TRAN]                                                                                | Josh Darnell                             | 2019-06-05 | [DBA],[DEV] |
-| [CAST/CONVERT makes expressions nullable]                                                                               | Daniel Hutmacher                         | 2019-06-05 | [DBA],[DEV] |
-| [Deciding between COALESCE and ISNULL in SQL Server]                                                                    | Aaron Bertrand                           | 2012-04-30 | [DBA],[DEV] |
-| [How do you choose which columns to include in your SQL Server clustered index?]                                        | agilesql                                 | 2019-06-01 | [DBA],[DEV] |
-| [A ever-increasing Clustered Key value doesn’t scale]                                                                   | Klaus Aschenbrenner                      | 2014-04-15 | [DBA],[DEV] |
-| [SQL Server Bit reversion]                                                                                              | Rick                                     | 2011-10-03 | [DBA],[DEV] |
+| [Transactions Don't Start At BEGIN TRAN]                                                                                | Josh Darnell                             | 2019-06-05 | [DBA][DEV]  |
+| [CAST/CONVERT makes expressions nullable]                                                                               | Daniel Hutmacher                         | 2019-06-05 | [DBA][DEV]  |
+| [Deciding between COALESCE and ISNULL in SQL Server]                                                                    | Aaron Bertrand                           | 2012-04-30 | [DBA][DEV]  |
+| [How do you choose which columns to include in your SQL Server clustered index?]                                        | agilesql                                 | 2019-06-01 | [DBA][DEV]  |
+| [A ever-increasing Clustered Key value doesn’t scale]                                                                   | Klaus Aschenbrenner                      | 2014-04-15 | [DBA][DEV]  |
+| [SQL Server Bit reversion]                                                                                              | Rick                                     | 2011-10-03 | [DBA][DEV]  |
 | [Troubleshooting a renamed SQL Server]                                                                                  | Jamie Wick                               | 2019-06-05 | [DBA]       |
-| [Are Differential Backups Necessary?]                                                                                   | Jamie Wick                               | 2019-04-02 | [B],[DBA]   |
+| [Are Differential Backups Necessary?]                                                                                   | Jamie Wick                               | 2019-04-02 | [B][DBA]    |
 | [Updating Statistics on Secondary Replicas of the Availability Groups]                                                  | Niko Neugebauer                          | 2019-06-20 | [DBA]       |
-| [It’s interesting how an OR short circuits]                                                                             | Kenneth Fisher                           | 2019-06-17 | [DBA],[DEV] |
-| [SQL Server NOLOCK Anomalies, Issues and Inconsistencies]                                                               | Aaron Bertrand                           | 2019-06-18 | [DBA],[DEV] |
+| [It’s interesting how an OR short circuits]                                                                             | Kenneth Fisher                           | 2019-06-17 | [DBA][DEV]  |
+| [SQL Server NOLOCK Anomalies, Issues and Inconsistencies]                                                               | Aaron Bertrand                           | 2019-06-18 | [DBA][DEV]  |
 | [Choosing a Database for Serverless Applications]                                                                       | Alex DeBrie                              | 2019-06-22 | [DEV]       |
 | [SQL Server On Linux: Forced Unit Access (Fua) Internals]                                                               | Robert Dorr                              | 2018-12-18 | [DBA]       |
-| [Socrates: The New SQL Server in the Cloud]                                                                             | Microsoft                                | 2019-05-01 | [DBA],[DEV] |
-| [What permissions do temp stored procedures use?]                                                                       | Kenneth Fisher                           | 2019-06-19 | [DBA],[DEV] |
+| [Socrates: The New SQL Server in the Cloud]                                                                             | Microsoft                                | 2019-05-01 | [DBA][DEV]  |
+| [What permissions do temp stored procedures use?]                                                                       | Kenneth Fisher                           | 2019-06-19 | [DBA][DEV]  |
 | [Common SQL Server Mishaps]                                                                                             | Tim Radney                               | 2019-06-21 | [DBA]       |
 | [SQL Server Agent for SQL Express on Linux]                                                                             | Thom Andrews                             | 2019-06-18 | [DBA]       |
 | [Trailing Spaces in SQL Server]                                                                                         | Bert Wagner                              | 2019-06-18 | [DEV]       |
 | [Troubleshooting a Change in Query Performance]                                                                         | Erin Stellato                            | 2019-06-20 | [P]         |
-| [The Silent Bug I Find in Most Triggers]                                                                                | Brent Ozar                               | 2019-05-06 | [DBA],[DEV] |
-| [How to Copy a Table in SQL Server to Another Database]                                                                 | Pablo Echeverria                         | 2019-05-14 | [DBA],[DEV] |
+| [The Silent Bug I Find in Most Triggers]                                                                                | Brent Ozar                               | 2019-05-06 | [DBA][DEV]  |
+| [How to Copy a Table in SQL Server to Another Database]                                                                 | Pablo Echeverria                         | 2019-05-14 | [DBA][DEV]  |
 | [Configuration of SQL Server instance]                                                                                  | Michal Sadowski                          | 2019-06-18 | [DBA]       |
 | [What is the SQL Server Virtual Log file and how to monitor it]                                                         | Musab Umair                              | 2017-04-26 | [DBA]       |
 | [Important change to VLF creation algorithm in SQL Server 2014]                                                         | Paul Randal                              | 2015-01-06 | [DBA]       |
 | [SQL Server Transaction Log Fragmentation: a Primer]                                                                    | Greg Larsen                              | 2012-04-26 | [DBA]       |
 | [8 Steps to better Transaction Log throughput]                                                                          | Kimberly Tripp                           | 2019-01-01 | [DBA]       |
-| [Joins With OR Clauses = 💔]                                                                                            | Erik Darling                             | 2019-06-04 | [DBA],[DEV] |
-| [Thoughts on MAXDOP]                                                                                                    | Erik Darling                             | 2019-06-18 | [DBA],[DEV] |
-| [What the Arrow Sizes in Query Plans Really Mean]                                                                       | Brent Ozar                               | 2019-06-21 | [DBA],[DEV] |
-| [Query Store Best Practices]                                                                                            | Erin Stellato                            | 2019-06-25 | [DBA],[DEV] |
-| [Introduction to Data Normalization: A Database "Best" Practice]                                                        | Scott Wambler                            | 2019-01-01 | [DBA],[DEV] |
-| [Dr. OUTPUT or: How I Learned to Stop Worrying and Love the MERGE]                                                      | Adam Machanic                            | 2009-08-24 | [DBA],[DEV] |
-| [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]                                                | Klaus Aschenbrenner                      | 2013-06-12 | [DBA],[DEV] |
-| [SQL Server Guide To NULL Handling]                                                                                     | Gavin Draper                             | 2018-11-29 | [DBA],[DEV] |
-| [Living with SQL’s 900 Byte Index Key Length Limit]                                                                     | Bart Duncan                              | 2011-01-06 | [DBA],[DEV] |
-| [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Ed Pollack                               | 2019-07-10 | [DBA],[DEV] |
-| [Forcing A Plan That Has A Plan Guide]                                                                                  | Grant Fritchey                           | 2018-11-26 | [DBA],[DEV] |
-| [Remember the Default Window]                                                                                           | Steve Jones                              | 2018-08-23 | [DBA],[DEV] |
-| [The Impact of Non-Updating Updates]                                                                                    | Paul Randal                              | 2010-08-11 | [DBA],[DEV] |
-| [What are Columnstore Indexes?]                                                                                         | Monica Rathbun                           | 2019-07-22 | [DBA],[DEV] |
-| [PolyBase in SQL Server 2019 – The End of ETL?]                                                                         | Benjamin Weissman                        | 2019-07-23 | [DBA],[DEV] |
+| [Joins With OR Clauses = 💔]                                                                                            | Erik Darling                             | 2019-06-04 | [DBA][DEV]  |
+| [Thoughts on MAXDOP]                                                                                                    | Erik Darling                             | 2019-06-18 | [DBA][DEV]  |
+| [What the Arrow Sizes in Query Plans Really Mean]                                                                       | Brent Ozar                               | 2019-06-21 | [DBA][DEV]  |
+| [Query Store Best Practices]                                                                                            | Erin Stellato                            | 2019-06-25 | [DBA][DEV]  |
+| [Introduction to Data Normalization: A Database "Best" Practice]                                                        | Scott Wambler                            | 2019-01-01 | [DBA][DEV]  |
+| [Dr. OUTPUT or: How I Learned to Stop Worrying and Love the MERGE]                                                      | Adam Machanic                            | 2009-08-24 | [DBA][DEV]  |
+| [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]                                                | Klaus Aschenbrenner                      | 2013-06-12 | [DBA][DEV]  |
+| [SQL Server Guide To NULL Handling]                                                                                     | Gavin Draper                             | 2018-11-29 | [DBA][DEV]  |
+| [Living with SQL’s 900 Byte Index Key Length Limit]                                                                     | Bart Duncan                              | 2011-01-06 | [DBA][DEV]  |
+| [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Ed Pollack                               | 2019-07-10 | [DBA][DEV]  |
+| [Forcing A Plan That Has A Plan Guide]                                                                                  | Grant Fritchey                           | 2018-11-26 | [DBA][DEV]  |
+| [Remember the Default Window]                                                                                           | Steve Jones                              | 2018-08-23 | [DBA][DEV]  |
+| [The Impact of Non-Updating Updates]                                                                                    | Paul Randal                              | 2010-08-11 | [DBA][DEV]  |
+| [What are Columnstore Indexes?]                                                                                         | Monica Rathbun                           | 2019-07-22 | [DBA][DEV]  |
+| [PolyBase in SQL Server 2019 – The End of ETL?]                                                                         | Benjamin Weissman                        | 2019-07-23 | [DBA][DEV]  |
 | [Overview of Service Principal Name and Kerberos authentication in SQL Server]                                          | Rajendra Gupta                           | 2019-07-18 | [DBA]       |
-| [Data Transfer Strategies between MongoDB and SQL Server]                                                               | Phil Factor                              | 2019-07-22 | [DBA],[DEV] |
+| [Data Transfer Strategies between MongoDB and SQL Server]                                                               | Phil Factor                              | 2019-07-22 | [DBA][DEV]  |
 | [SQL Server and Excel Hierarchyid Example for Organization Charts]                                                      | Rick Dobson                              | 2019-07-04 | [DEV]       |
-| [Difference between sp_execute and sp_executesql and exec]                                                              | Prasad Sahoo                             | 2015-02-09 | [DBA],[DEV] |
-| [EXEC and sp_executesql – how are they different?]                                                                      | Kimberly Tripp                           | 2010-04-05 | [DBA],[DEV] |
-| [Little Bobby Tables, SQL Injection and EXECUTE AS]                                                                     | Kimberly Tripp                           | 2010-04-04 | [DBA],[DEV] |
+| [Difference between sp_execute and sp_executesql and exec]                                                              | Prasad Sahoo                             | 2015-02-09 | [DBA][DEV]  |
+| [EXEC and sp_executesql – how are they different?]                                                                      | Kimberly Tripp                           | 2010-04-05 | [DBA][DEV]  |
+| [Little Bobby Tables, SQL Injection and EXECUTE AS]                                                                     | Kimberly Tripp                           | 2010-04-04 | [DBA][DEV]  |
 | [Examining the Performance Impact of an Adhoc Workload]                                                                 | Erin Stellato                            | 2019-05-22 | [BENCH]     |
-| [Backup to URL]                                                                                                         | Jon Gurgul                               | 2019-01-01 | [B],[DBA]   |
-| [Spotting Unauthorized Configuration Settings in SQL Server]                                                            | Phil Factor                              | 2018-09-30 | [DBA],[DEV] |
-| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-10-27 | [DBA],[DEV] |
-| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-11-24 | [DBA],[DEV] |
-| [An Intro to SQL Window Functions]                                                                                      | Neal Barnett                             | 2019-07-07 | [DBA],[DEV] |
+| [Backup to URL]                                                                                                         | Jon Gurgul                               | 2019-01-01 | [B][DBA]    |
+| [Spotting Unauthorized Configuration Settings in SQL Server]                                                            | Phil Factor                              | 2018-09-30 | [DBA][DEV]  |
+| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-10-27 | [DBA][DEV]  |
+| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-11-24 | [DBA][DEV]  |
+| [An Intro to SQL Window Functions]                                                                                      | Neal Barnett                             | 2019-07-07 | [DBA][DEV]  |
 | [SQL Database Performance Tuning for Developers]                                                                        | Rodrigo Koch                             | 1753-01-01 | [P]         |
-| [“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]                                                             | Brent Ozar                               | 2019-08-05 | [DBA],[DEV] |
+| [“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]                                                             | Brent Ozar                               | 2019-08-05 | [DBA][DEV]  |
 | [tempdb Enhancements in SQL Server 2019]                                                                                | Erin Stellato                            | 2019-08-02 | [BENCH]     |
 | [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]      | Solomon Rutzky                           | 2019-08-05 | [SEC]       |
-| [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]                                            | Scott Sutherland                         | 2017-05-23 | [PS],[SEC]  |
-| [Views of the Same Problem: Network Admin, DBA, and Developer]                                                          | Kyle Brandt                              | 2011-03-16 | [DBA],[DEV] |
-| [The SQL Server Data Row Size Question: Why is It Bigger?]                                                              | Kendra Little                            | 2019-03-19 | [DBA],[DEV] |
+| [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]                                            | Scott Sutherland                         | 2017-05-23 | [PS][SEC]   |
+| [Views of the Same Problem: Network Admin, DBA, and Developer]                                                          | Kyle Brandt                              | 2011-03-16 | [DBA][DEV]  |
+| [The SQL Server Data Row Size Question: Why is It Bigger?]                                                              | Kendra Little                            | 2019-03-19 | [DBA][DEV]  |
 | [Finding Max Concurrent Operations With T-SQL (Part 1)]                                                                 | Kevin Feasel                             | 2019-01-02 | [DEV]       |
 | [Finding Max Concurrent Operations With T-SQL (Part 2)]                                                                 | Kevin Feasel                             | 2019-01-03 | [DEV]       |
-| [Stack Overflow: The Architecture - 2016 Edition]                                                                       | Nick Craver                              | 2019-02-17 | [DBA],[DEV] |
+| [Stack Overflow: The Architecture - 2016 Edition]                                                                       | Nick Craver                              | 2019-02-17 | [DBA][DEV]  |
 | [Stack Overflow: The Hardware - 2016 Edition]                                                                           | Nick Craver                              | 2016-03-29 | [DBA]       |
-| [Stack Overflow: How We Do Deployment - 2016 Edition]                                                                   | Nick Craver                              | 2016-05-03 | [DBA],[DEV] |
-| [Stack Overflow: How We Do Monitoring - 2018 Edition]                                                                   | Nick Craver                              | 2018-11-29 | [DBA],[DEV] |
-| [Stack Overflow: How We Do App Caching - 2019 Edition]                                                                  | Nick Craver                              | 2019-08-06 | [DBA],[DEV] |
-| [Adding a Missing Index Killed Performance]                                                                             | Jeffry Schwartz                          | 2019-08-15 | [DBA],[DEV] |
-| [Corruption in TempDB]                                                                                                  | Steve Stedman                            | 2019-08-12 | [COR],[DBA] |
-| [Corruption recovery using DBCC WRITEPAGE]                                                                              | Paul Randal                              | 2014-02-13 | [COR],[DBA] |
-| [Why DBCC CHECKDB can miss memory corruption]                                                                           | Paul Randal                              | 2017-07-19 | [COR],[DBA] |
-| [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DBA],[DEV] |
-| [Plan Stitch: Harnessing the Best of Many Plans]                                                                        | Bailu Ding, Sudipto Das Wentao …         | 2018-07-01 | [DBA],[DEV] |
-| [Query and Resource Optimization: Bridging the Gap]                                                                     | Lalitha Viswanathan, Alekh Jindal …      | 2018-02-01 | [DBA],[DEV] |
-| [Cuttlefish: A Lightweight Primitive for Adaptive Query Processing]                                                     | Tomer Kaftan, Magdalena Balazinska …     | 2018-02-01 | [DBA],[DEV] |
-| [Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]                                | Anshuman Dutt, Vivek Narasayya …         | 2017-05-01 | [DBA],[DEV] |
-| [How to choose antivirus software to run on computers that are running SQL Server]                                      | Microsoft                                | 2018-10-31 | [DBA],[SEC] |
-| [Why is SYSDATETIME() slower than SYSUTCDATETIME()?]                                                                    | Erik Darling                             | 2019-05-28 | [DBA],[DEV] |
+| [Stack Overflow: How We Do Deployment - 2016 Edition]                                                                   | Nick Craver                              | 2016-05-03 | [DBA][DEV]  |
+| [Stack Overflow: How We Do Monitoring - 2018 Edition]                                                                   | Nick Craver                              | 2018-11-29 | [DBA][DEV]  |
+| [Stack Overflow: How We Do App Caching - 2019 Edition]                                                                  | Nick Craver                              | 2019-08-06 | [DBA][DEV]  |
+| [Adding a Missing Index Killed Performance]                                                                             | Jeffry Schwartz                          | 2019-08-15 | [DBA][DEV]  |
+| [Corruption in TempDB]                                                                                                  | Steve Stedman                            | 2019-08-12 | [COR][DBA]  |
+| [Corruption recovery using DBCC WRITEPAGE]                                                                              | Paul Randal                              | 2014-02-13 | [COR][DBA]  |
+| [Why DBCC CHECKDB can miss memory corruption]                                                                           | Paul Randal                              | 2017-07-19 | [COR][DBA]  |
+| [Fixing Cardinality Estimation Errors with Filtered Statistics]                                                         | Klaus Aschenbrenner                      | 2013-10-29 | [DBA][DEV]  |
+| [Plan Stitch: Harnessing the Best of Many Plans]                                                                        | Bailu Ding, Sudipto Das Wentao …         | 2018-07-01 | [DBA][DEV]  |
+| [Query and Resource Optimization: Bridging the Gap]                                                                     | Lalitha Viswanathan, Alekh Jindal …      | 2018-02-01 | [DBA][DEV]  |
+| [Cuttlefish: A Lightweight Primitive for Adaptive Query Processing]                                                     | Tomer Kaftan, Magdalena Balazinska …     | 2018-02-01 | [DBA][DEV]  |
+| [Leveraging Re-costing for Online Optimization of Parameterized Queries with Guarantees]                                | Anshuman Dutt, Vivek Narasayya …         | 2017-05-01 | [DBA][DEV]  |
+| [How to choose antivirus software to run on computers that are running SQL Server]                                      | Microsoft                                | 2018-10-31 | [DBA][SEC]  |
+| [Why is SYSDATETIME() slower than SYSUTCDATETIME()?]                                                                    | Erik Darling                             | 2019-05-28 | [DBA][DEV]  |
 | [Constant Time Recovery in Azure SQL Database]                                                                          | Panagiotis Antonopoulos, Peter Byrne …   | 2019-06-01 | [AZ]        |
-| [Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]                        | Bailu Ding, Lucja Kot, Johannes Gehrke   | 2019-01-01 | [DBA],[DEV] |
-| [An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]                                                | Yingjun Wu, Joy Arulraj, Jiexi Lin …     | 2019-01-01 | [DBA],[DEV] |
-| [Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]                                          | Sudipto Das, Miroslav Grbic, Igor Ilic … | 2019-01-01 | [AZ],[IDX]  |
-| [Adding a Column with a Default Constraint]                                                                             | Matthew Mcgiffen                         | 2019-07-16 | [DBA],[DEV] |
+| [Improving Optimistic Concurrency Control Through Transaction Batching and Operation Reordering]                        | Bailu Ding, Lucja Kot, Johannes Gehrke   | 2019-01-01 | [DBA][DEV]  |
+| [An Empirical Evaluation of In-Memory Multi-Version Concurrency Control]                                                | Yingjun Wu, Joy Arulraj, Jiexi Lin …     | 2019-01-01 | [DBA][DEV]  |
+| [Automatically Indexing Millions of Databases in Microsoft Azure SQL Database]                                          | Sudipto Das, Miroslav Grbic, Igor Ilic … | 2019-01-01 | [AZ][IDX]   |
+| [Adding a Column with a Default Constraint]                                                                             | Matthew Mcgiffen                         | 2019-07-16 | [DBA][DEV]  |
 | [A Hidden Value Of Apply]                                                                                               | Erik Darling                             | 2019-06-24 | [DEV]       |
 | [Improve Performance of UDFs with NULL ON NULL INPUT]                                                                   | Jonathan Kehayias                        | 2018-12-27 | [DEV]       |
-| [The ‘= NULL’ Mistake and other SQL NULL Heresies]                                                                      | Phill Factor                             | 2019-06-17 | [DBA],[DEV] |
-| [How to Corrupt a Database]                                                                                             | Max Vernon                               | 2019-07-29 | [DBA],[COR] |
-| [SQL Server Page Types]                                                                                                 | John Huang                               | 2011-10-31 | [DBA],[DEV] |
-| [SQL Server Index Maintenance – You’re Doing It Wrong]                                                                  | Sean Gallardy                            | 2019-09-01 | [DBA],[DEV] |
+| [The ‘= NULL’ Mistake and other SQL NULL Heresies]                                                                      | Phill Factor                             | 2019-06-17 | [DBA][DEV]  |
+| [How to Corrupt a Database]                                                                                             | Max Vernon                               | 2019-07-29 | [DBA][COR]  |
+| [SQL Server Page Types]                                                                                                 | John Huang                               | 2011-10-31 | [DBA][DEV]  |
+| [SQL Server Index Maintenance – You’re Doing It Wrong]                                                                  | Sean Gallardy                            | 2019-09-01 | [DBA][DEV]  |
 | [Stop Worrying About SQL Server Fragmentation]                                                                          | Brent Ozar                               | 2012-08-14 | [DBA]       |
-| [How much will it cost or save to rebuild that index?]                                                                  | Jeff Moden                               | 2019-09-03 | [DBA],[DEV] |
-| [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                                           | Russell Sears2, Catharine van Ingen …    | 2019-04-01 | [DBA],[DEV] |
-| [SQL Server UPSERT Patterns and Antipatterns]                                                                           | Michael J Swart                          | 2017-07-20 | [DBA],[DEV] |
-| [Use Caution with SQL Server's MERGE Statement]                                                                         | Aaron Bertrand                           | 2018-07-24 | [DBA],[DEV] |
-| [“UPSERT” Race Condition With MERGE]                                                                                    | Dan Guzman                               | 2009-01-31 | [DBA],[DEV] |
-| [Checking for potential constraint violations before entering SQL Server TRY and CATCH logic]                           | Aaron Bertrand                           | 2012-02-18 | [DBA],[DEV] |
-| [Performance impact of different error handling techniques]                                                             | Aaron Bertrand                           | 2012-08-12 | [DBA],[DEV] |
-| [Backup and Restore Databases with CHECKSUM and VERIFYONLY]                                                             | Lori Brown                               | 2019-08-29 | [B],[DBA]   |
-| [dm_db_database_page_allocations]                                                                                       | Max Vernon                               | 2019-08-01 | [DBA],[DEV] |
-| [Compress Big Tables]                                                                                                   | Max Vernon                               | 2019-08-22 | [DBA],[DEV] |
-| [Hardening SQL Server Security]                                                                                         | Mitch Wheat                              | 2019-08-21 | [DBA],[SEC] |
-| [Splitting Strings With OPENJSON]                                                                                       | Dave Mason                               | 2019-05-06 | [DEV],[X]   |
-| [How to migrate to Amazon RDS for SQL Server using transactional replication]                                           | Richard Waymire                          | 2018-05-17 | [DBA],[MG]  |
-| [The Hardest Part Of Query Tuning: Logical Equivalence]                                                                 | Erik Darling                             | 2019-08-13 | [DBA],[DEV] |
+| [How much will it cost or save to rebuild that index?]                                                                  | Jeff Moden                               | 2019-09-03 | [DBA][DEV]  |
+| [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                                           | Russell Sears2, Catharine van Ingen …    | 2019-04-01 | [DBA][DEV]  |
+| [SQL Server UPSERT Patterns and Antipatterns]                                                                           | Michael J Swart                          | 2017-07-20 | [DBA][DEV]  |
+| [Use Caution with SQL Server's MERGE Statement]                                                                         | Aaron Bertrand                           | 2018-07-24 | [DBA][DEV]  |
+| [“UPSERT” Race Condition With MERGE]                                                                                    | Dan Guzman                               | 2009-01-31 | [DBA][DEV]  |
+| [Checking for potential constraint violations before entering SQL Server TRY and CATCH logic]                           | Aaron Bertrand                           | 2012-02-18 | [DBA][DEV]  |
+| [Performance impact of different error handling techniques]                                                             | Aaron Bertrand                           | 2012-08-12 | [DBA][DEV]  |
+| [Backup and Restore Databases with CHECKSUM and VERIFYONLY]                                                             | Lori Brown                               | 2019-08-29 | [B][DBA]    |
+| [dm_db_database_page_allocations]                                                                                       | Max Vernon                               | 2019-08-01 | [DBA][DEV]  |
+| [Compress Big Tables]                                                                                                   | Max Vernon                               | 2019-08-22 | [DBA][DEV]  |
+| [Hardening SQL Server Security]                                                                                         | Mitch Wheat                              | 2019-08-21 | [DBA][SEC]  |
+| [Splitting Strings With OPENJSON]                                                                                       | Dave Mason                               | 2019-05-06 | [DEV][X]    |
+| [How to migrate to Amazon RDS for SQL Server using transactional replication]                                           | Richard Waymire                          | 2018-05-17 | [DBA][MG]   |
+| [The Hardest Part Of Query Tuning: Logical Equivalence]                                                                 | Erik Darling                             | 2019-08-13 | [DBA][DEV]  |
 | [SQL Injection: What is it? Causes and exploits]                                                                        | Ed Pollack                               | 2019-08-30 | [SEC]       |
 | [SQL Injection: Detection and prevention]                                                                               | Ed Pollack                               | 2019-08-30 | [SEC]       |
-| [Some T-SQL INSERTs DO Follow the Fill Factor!]                                                                         | Jeff Moden                               | 2019-08-08 | [DBA],[DEV] |
-| [Install SQL Server 2019 Big Data Cluster using Azure Data Studio]                                                      | Niels Berglund                           | 2019-09-11 | [DBA],[DEV] |
+| [Some T-SQL INSERTs DO Follow the Fill Factor!]                                                                         | Jeff Moden                               | 2019-08-08 | [DBA][DEV]  |
+| [Install SQL Server 2019 Big Data Cluster using Azure Data Studio]                                                      | Niels Berglund                           | 2019-09-11 | [DBA][DEV]  |
 | [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]                                     | Parikshit Savjani                        | 2018-09-14 | [DBA]       |
 | [Ghost Records in SQL Server… Now whats that ????]                                                                      | Sachin Nandanwar                         | 2011-04-10 | [DBA]       |
-| [Transaction Isolation Levels and sp_executesql]                                                                        | Max Vernon                               | 2019-08-19 | [DBA],[DEV] |
-| [Batch Mode Bitmaps in SQL Server]                                                                                      | Paul White                               | 2019-08-23 | [DBA],[DEV] |
-| [Transparent Data Encryption (TDE) on Azure SQL database]                                                               | Ranga Babu                               | 2019-09-13 | [DBA],[AZ]  |
+| [Transaction Isolation Levels and sp_executesql]                                                                        | Max Vernon                               | 2019-08-19 | [DBA][DEV]  |
+| [Batch Mode Bitmaps in SQL Server]                                                                                      | Paul White                               | 2019-08-23 | [DBA][DEV]  |
+| [Transparent Data Encryption (TDE) on Azure SQL database]                                                               | Ranga Babu                               | 2019-09-13 | [DBA][AZ]   |
 | [Analyzing Estimates from the CSelCalcAscendingKeyFilter Calculator]                                                    | Josh Darnell                             | 2019-08-21 | [DEV]       |
 | [Building Storage for SQL Server (and other database) Virtual Machines in the Cloud]                                    | Joey Dantoni                             | 2019-09-18 | [AZ]        |
-| [SQL Server Simple and Forced Parameterization]                                                                         | Brady Upton                              | 2013-04-23 | [DBA],[DEV] |
-| [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [DBA],[DEV] |
-| [How to use a SQL Server Plan Guide to Tune Queries]                                                                    | Armando Prato                            | 2018-06-02 | [DBA],[DEV] |
-| [Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]                                                            | Phil Factor                              | 2019-08-14 | [DBA],[DEV] |
-| [Defensive Error Handling]                                                                                              | Alex Kuznetsov                           | 2010-10-08 | [DBA],[DEV] |
-| [A Self-Tuning Fill Factor Technique for SQL Server – Part 1]                                                           | Mike Byrd                                | 2019-08-20 | [DBA],[DEV] |
-| [A Self-Tuning Fill Factor Technique for SQL Server – Part 2]                                                           | Mike Byrd                                | 2019-08-27 | [DBA],[DEV] |
+| [SQL Server Simple and Forced Parameterization]                                                                         | Brady Upton                              | 2013-04-23 | [DBA][DEV]  |
+| [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [DBA][DEV]  |
+| [How to use a SQL Server Plan Guide to Tune Queries]                                                                    | Armando Prato                            | 2018-06-02 | [DBA][DEV]  |
+| [Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]                                                            | Phil Factor                              | 2019-08-14 | [DBA][DEV]  |
+| [Defensive Error Handling]                                                                                              | Alex Kuznetsov                           | 2010-10-08 | [DBA][DEV]  |
+| [A Self-Tuning Fill Factor Technique for SQL Server – Part 1]                                                           | Mike Byrd                                | 2019-08-20 | [DBA][DEV]  |
+| [A Self-Tuning Fill Factor Technique for SQL Server – Part 2]                                                           | Mike Byrd                                | 2019-08-27 | [DBA][DEV]  |
 | [SQL: Been told you can't access master database system views in Azure SQL Database? Not true!]                         | Greg Low                                 | 2019-09-17 | [AZ]        |
 | [How to increase SQL Database Full Backup speed using compression and Solid State Disks]                                | Henk                                     | 2010-01-15 | [DBA]       |
 | [Troubleshooting NUMA Node Imbalance Problems (HammerDB Benchmark)]                                                     | Klaus Aschenbrenner                      | 2019-09-23 | [BENCH]     |
@@ -868,36 +868,45 @@ Articles types:
 | [SSIS Connection Managers: OLE DB vs ODBC vs ADO.NET]                                                                   | Hadi Fadlallah                           | 2019-10-04 | [SSIS]      |
 | [SSIS Data Flows – ADO.NET vs. OLE DB vs. ODBC]                                                                         | Ross at Datatell                         | 2015-01-13 | [SSIS]      |
 | [SSIS – Fastest data flow task item for transferring data over the network]                                             | Gilbert Quevauvilliers                   | 2013-01-19 | [SSIS]      |
-| [The Case of the Vanishing Index Compression]                                                                           | Louis Davidson                           | 2019-09-30 | [DBA],[IDX] |
+| [The Case of the Vanishing Index Compression]                                                                           | Louis Davidson                           | 2019-09-30 | [DBA][IDX]  |
 | [Migrating from MSSQL to PostgreSQL - What You Should Know]                                                             | Severalnines                             | 2018-11-05 | [DEV]       |
 | [Difference between Identity and Sequence in SQL Server 2012]                                                           | Muhammad Imran                           | 2012-05-01 | [DEV]       |
 | [Sequence vs Identity – Performance Comparison]                                                                         | Bill Anton                               | 2012-09-02 | [DEV]       |
-| [Read Excel File in SQL Server with OPENROWSET or OPENDATASOURCE]                                                       | Diana Moldovan                           | 2019-10-10 | [DBA],[DEV] |
+| [Read Excel File in SQL Server with OPENROWSET or OPENDATASOURCE]                                                       | Diana Moldovan                           | 2019-10-10 | [DBA][DEV]  |
 | [Upgrading SQL Server using Availability Groups – Checklist]                                                            | Thomas Rushton                           | 2019-10-17 | [DBA]       |
-| [Using indexed views? WITH (NOEXPAND) for Standard Edition]                                                             | Randolph West                            | 2019-10-09 | [DEV],[IDX] |
-| [Using indexed views? What is an imprecise or non-deterministic convert?]                                               | Randolph West                            | 2019-10-16 | [DEV],[IDX] |
+| [Using indexed views? WITH (NOEXPAND) for Standard Edition]                                                             | Randolph West                            | 2019-10-09 | [DEV][IDX]  |
+| [Using indexed views? What is an imprecise or non-deterministic convert?]                                               | Randolph West                            | 2019-10-16 | [DEV][IDX]  |
 | [JSON in your Azure SQL Database? Let’s benchmark some options!]                                                        | Silvano Coriani                          | 2019-10-15 | [X]         |
-| [Looking for strange - addition to system_health XE]                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[XE]  |
-| [What's new in SQL Server version x]                                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA],[DEV] |
-| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi's                          | 2010-01-01 | [DBA],[DEV] |
-| [Some numbers that you will know by heart if you have been working with SQL Server for a while]                         | Unknown                                  | 2019-03-20 | [DBA],[DEV] |
-| [#TSQL2sday: How Much Plan Cache History Do You Have?]                                                                  | Brent Ozar                               | 2018-07-10 | [DBA],[DEV] |
-| [Fixing SQL Server Management Studio’s Tab Text]                                                                        | Brent Ozar                               | 2011-06-07 | [DBA],[DEV] |
-| [An overview of the SQL table variable]                                                                                 | Rajendra Gupta                           | 2019-10-16 | [DBA],[DEV] |
-| [Performance Impact of Small Queries]                                                                                   | Forrest                                  | 2019-06-15 | [DBA],[DEV] |
-| [How we use SQL Server as a Document Store]                                                                             | Paul Stovell                             | 2019-03-24 | [DBA],[DEV] |
-| [Overlooked T-SQL Gems]                                                                                                 | Itzik Ben-Gan                            | 2019-10-09 | [DBA],[DEV] |
-| [Are SQL Server database triggers evil?]                                                                                | Daniel Calbimonte                        | 2017-01-25 | [DBA],[DEV] |
+| [Looking for strange - addition to system_health XE]                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA][XE]   |
+| [What's new in SQL Server version x]                                                                                    | Tibor Karaszi's                          | 1753-01-01 | [DBA][DEV]  |
+| [The ultimate guide to the datetime datatypes]                                                                          | Tibor Karaszi's                          | 2010-01-01 | [DBA][DEV]  |
+| [Some numbers that you will know by heart if you have been working with SQL Server for a while]                         | Unknown                                  | 2019-03-20 | [DBA][DEV]  |
+| [#TSQL2sday: How Much Plan Cache History Do You Have?]                                                                  | Brent Ozar                               | 2018-07-10 | [DBA][DEV]  |
+| [Fixing SQL Server Management Studio’s Tab Text]                                                                        | Brent Ozar                               | 2011-06-07 | [DBA][DEV]  |
+| [An overview of the SQL table variable]                                                                                 | Rajendra Gupta                           | 2019-10-16 | [DBA][DEV]  |
+| [Performance Impact of Small Queries]                                                                                   | Forrest                                  | 2019-06-15 | [DBA][DEV]  |
+| [How we use SQL Server as a Document Store]                                                                             | Paul Stovell                             | 2019-03-24 | [DBA][DEV]  |
+| [Overlooked T-SQL Gems]                                                                                                 | Itzik Ben-Gan                            | 2019-10-09 | [DBA][DEV]  |
+| [Are SQL Server database triggers evil?]                                                                                | Daniel Calbimonte                        | 2017-01-25 | [DBA][DEV]  |
 | [Configuration Best Practices for SQL Server Tempdb–Initial Sizing]                                                     | Christian Bolton, Justin Langford …      | 2013-02-12 | [DBA]       |
 | [Sql Server Extended Events Trace Overhead]                                                                             | Nenad Noveljic                           | 2018-09-04 | [DBA]       |
-| [Measuring "Observer Overhead" of SQL Trace vs. Extended Events]                                                        | Jonathan Kehayias                        | 2012-10-23 | [DBA],[XE]  |
-| [Performance overhead of tracing with Extended Event targets vs SQL Trace under CPU Load]                               | Andreas Wolter                           | 2013-07-01 | [DBA],[XE]  |
-| [Fragmentation, the final installment]                                                                                  | Tibor Karaszi's                          | 2019-10-18 | [DBA],[IX]  |
-| [Atomic Durability - How do databases recover from a crash ?]                                                           | Pedro Ramalhete                          | 2019-10-01 | [DBA],[DEV] |
+| [Measuring "Observer Overhead" of SQL Trace vs. Extended Events]                                                        | Jonathan Kehayias                        | 2012-10-23 | [DBA][XE]   |
+| [Performance overhead of tracing with Extended Event targets vs SQL Trace under CPU Load]                               | Andreas Wolter                           | 2013-07-01 | [DBA][XE]   |
+| [Fragmentation, the final installment]                                                                                  | Tibor Karaszi's                          | 2019-10-18 | [DBA][IX]   |
+| [Atomic Durability - How do databases recover from a crash ?]                                                           | Pedro Ramalhete                          | 2019-10-01 | [DBA][DEV]  |
 | [Truth First, or Why You Should Mostly Implement Database First Designs]                                                | Lukas Eder                               | 2018-06-06 | [DEV]       |
 | [SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]                                        | Rajendra Gupta                           | 2019-08-22 | [DBA]       |
-| [T-SQL bugs, pitfalls, and best practices – window functions]                                                           | Itzik Ben-Gan                            | 2019-08-14 | [DBA],[DEV] |
-| [#BackToBasics: Why I use lower case for data type names (now)]                                                         | Aaron Bertrand                           | 2016-10-04 | [DBA],[DEV] |
+| [T-SQL bugs, pitfalls, and best practices – window functions]                                                           | Itzik Ben-Gan                            | 2019-08-14 | [DBA][DEV]  |
+| [#BackToBasics: Why I use lower case for data type names (now)]                                                         | Aaron Bertrand                           | 2016-10-04 | [DBA][DEV]  |
+| [New high availability and disaster recovery benefits for SQL Server]                                                   | Amit Banerjee                            | 2019-10-30 | [DBA]       |
+| [Because Your Index Maintenance Script Is Measuring The Wrong Thing]                                                    | Eric Darling                             | 2019-10-28 | [DBA][IDX]  |
+| [Memory-Optimized TempDB Metadata]                                                                                      | Niko Neugebauer                          | 2019-10-30 | [DBA][BENCH]|
+| [Build a SQL Cluster Lab Part 1]                                                                                        | Ryan Adams                               | 2019-10-28 | [DBA]       |
+| [There is no Such Thing as Object-Relational Impedance Mismatch]                                                        | Lukas Eder                               | 2015-08-26 | [DEV]       |
+| [ORMs Under the Hood]                                                                                                   | Patrycja Dybka                           | 2015-08-18 | [DEV]       |
+| [EMERGENCY-mode repair: the very, very last resort]                                                                     | Paul Randal                              | 2007-10-02 | [DBA]       |
+| [Scalar functions and improvements in SQL Server 2019]                                                                  | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
+| [Scalar functions in SQL server 2019, part 2]                                                                           | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1773,3 +1782,12 @@ Articles types:
 [SQL Server CHECKPOINT, Lazy Writer, Eager Writer and Dirty Pages in SQL Server]:https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/
 [T-SQL bugs, pitfalls, and best practices – window functions]:https://sqlperformance.com/2019/08/sql-performance/t-sql-bugs-pitfalls-and-best-practices-window-functions
 [#BackToBasics: Why I use lower case for data type names (now)]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types
+[New high availability and disaster recovery benefits for SQL Server]:https://cloudblogs.microsoft.com/sqlserver/2019/10/30/new-high-availability-and-disaster-recovery-benefits-for-sql-server/
+[Because Your Index Maintenance Script Is Measuring The Wrong Thing]:https://www.erikdarlingdata.com/2019/10/because-your-index-maintenance-script-is-measuring-the-wrong-thing/
+[Memory-Optimized TempDB Metadata]:http://www.nikoport.com/2019/10/30/memory-optimized-tempdb-metadata/
+[Build a SQL Cluster Lab Part 1]:https://www.ryanjadams.com/2019/10/build-a-sql-cluster-lab-part-1/
+[There is no Such Thing as Object-Relational Impedance Mismatch]:https://blog.jooq.org/2015/08/26/there-is-no-such-thing-as-object-relational-impedance-mismatch/
+[ORMs Under the Hood]:https://www.vertabelo.com/blog/orms-under-the-hood/
+[EMERGENCY-mode repair: the very, very last resort]:https://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-emergency-mode-repair-the-very-very-last-resort/
+[Scalar functions and improvements in SQL Server 2019]:http://sqlblog.karaszi.com/scalar-functions-and-improvements-in-sql-server-2019/
+[Scalar functions in SQL server 2019, part 2]:http://sqlblog.karaszi.com/scalar-functions-in-sql-server-2019-part-2/
