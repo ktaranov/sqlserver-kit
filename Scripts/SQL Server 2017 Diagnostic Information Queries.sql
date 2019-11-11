@@ -1,7 +1,7 @@
 
 -- SQL Server 2017 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: October 3, 2019
+-- Last Modified: November 4, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -87,6 +87,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 14.0.3162.1		CU15								5/23/2019		https://support.microsoft.com/en-us/help/4498951/cumulative-update-15-for-sql-server-2017
 -- 14.0.3192.2		CU15 + Security Update				7/9/2019		https://support.microsoft.com/en-us/help/4505225/security-update-for-sql-server-2017-cu15-gdr-july-9-2019 
 -- 14.0.3223.3		CU16								8/1/2019		https://support.microsoft.com/en-us/help/4508218/cumulative-update-16-for-sql-server-2017
+-- 14.0.3238.1		CU17							   10/8/2019		https://support.microsoft.com/en-us/help/4515579/cumulative-update-17-for-sql-server-2017		
 		
 															
 

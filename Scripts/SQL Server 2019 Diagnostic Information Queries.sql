@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: October 3, 2019
+-- Last Modified: November 5, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -68,12 +68,16 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 15.0.1700.37		CTP 3.1								6/26/2019
 -- 15.0.1800.32		CTP 3.2								7/24/2019
 -- 15.0.1900.25		RC1/RC1 Refresh						8/29/2019
+-- 15.0.2000.5		RTM									11/4/2019
 
 		
 															
 
 -- How to determine the version, edition and update level of SQL Server and its components 
--- https://bit.ly/2oAjKgW	
+-- https://bit.ly/2oAjKgW
+
+-- SQL Server 2019 build versions
+-- https://bit.ly/2qjKwOl
 
 -- What's New in SQL Server 2019 (Database Engine)
 -- https://bit.ly/2Q29fhz
