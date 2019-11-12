@@ -82,7 +82,7 @@ A lowercase "t" is accepted by SQL Server, but this sets other internal trace fl
 ## What are Microsoft SQL Server Trace Flags?
 Trace Flags are settings that in some way or another alters the behavior of various SQL Server functions: [Docs Trace Flags]
 
-Trace flags are used to set specific server characteristics or to alter a particular behavior. For example, trace flag 3226 is a commonly used startup trace flag which suppresses successful backup messages in the error log.
+Trace flags are used to set specific server characteristics or to alter a particular behavior. For example, trace flag [3226](#3226) is a commonly used startup trace flag which suppresses successful backup messages in the error log.
 Trace flags are frequently used to diagnose performance issues or to debug stored procedures or complex computer systems, but they may also be recommended by Microsoft Support to address behavior that is negatively impacting a specific workload.
 All documented trace flags and those recommended by Microsoft Support are fully supported in a production environment when used as directed.
 Note that trace flags in this list may have additional considerations regarding their particular usage, so it is advisable to carefully review all the recommendations given here and/or by your support engineer.
@@ -2435,7 +2435,7 @@ Link: https://support.microsoft.com/help/2970421/
 #### Trace Flag: 3449
 Function: If you enable global TF 3449 (and you are on SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later),
 you will get much better performance by avoiding a FlushCache call in a number of different common scenarios, such as backup database,
-backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.
+backup transaction log, create database, add a file to a database, restore a transaction log, recover a database, shrink a database file, and a SQL Server “graceful” shutdown.<br />
 Link: https://support.microsoft.com/help/3158396/<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2017/06/29/sql-server-large-ram-and-db-checkpointing/<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
@@ -3125,18 +3125,25 @@ Scope: global or session or query
 
 <a id="4199"></a>
 #### Trace Flag: 4199
+**Important: Query Optimizer fixes that address wrong results or access violation errors are not enabled by trace flag 4199.
+Those fixes are not considered optional and become enabled by default once the update package is installed.**<br />
 Function: Enables query optimizer (QO) changes released in SQL Server Cumulative Updates and Service Packs.
-QO changes that are made to previous releases of SQL Server are enabled by default under the latest database compatibility level in a given product release, without trace flag 4199 enabled.<br />
+QO changes that are made to previous releases of SQL Server are enabled by default under the latest database [compatibility level](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) in a given product release, without trace flag 4199 enabled.<br />
 The following table summarizes the behavior when using specific database compatibility levels and trace flag 4199:
 
-| Database compatibility level | TF 4199     | QO changes from previous database compatibility levels | QO changes for current version post-RTM |
-|------------------------------|-------------|--------------------------------------------------------|-----------------------------------------|
-| 100 to 120                   | Off<br />On | Disabled<br />Enabled                                  | Disabled<br />Enabled                   |
-| 130                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
-| 140                          | Off<br />On | Enabled<br />Enabled                                   | Disabled<br />Enabled                   |
+|Database Engine (DE) version                                   | Database compatibility level | TF 4199     | QO changes from all previous Database Compatibility Levels | QO changes for DE version post-RTM |
+|---------------------------------------------------------------|------------------------------|-------------|------------------------------------------------------------|------------------------------------|
+| 13 (SQL Server 2016 (13.x))                                   | 100 to 120                   | Off<br />On | Disabled<br />Enabled                                      | Disabled<br />Enabled              |
+|                                                               | 130 (Default)                | Off<br />On | Enabled<br />Enabled                                       | Disabled<br />Enabled              |
+| 14 (SQL Server 2017 (14.x))                                   | 100 to 120                   | Off<br />On | Disabled<br />Enabled                                      | Disabled<br />Enabled              |
+|                                                               | 130                          | Off<br />On | Enabled<br />Enabled                                       | Disabled<br />Enabled              |
+|                                                               | 140 (Default)                | Off<br />On | Enabled<br />Enabled                                       | Disabled<br />Enabled              |
+| 15 (SQL Server 2019 (15.x))<br /> and 12 (Azure SQL Database) | 100 to 120                   | Off<br />On | Disabled<br />Enabled                                      | Disabled<br />Enabled              |
+|                                                               | 130 to 140                   | Off<br />On | Enabled<br />Enabled                                       | Disabled<br />Enabled              |
+|                                                               | 150 (Default)                | Off<br />On | Enabled<br />Enabled                                       | Disabled<br />Enabled              |
 
-To enable this at the database level, see [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
-**Note: Starting with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT [query hint](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query) instead of using this trace flag.**<br />
+Starting with SQL Server 2016 (13.x), to accomplish this at the database level, see the QUERY_OPTIMIZER_HOTFIXES option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql).
+Starting with  SQL Server 2016 (13.x) SP1, to accomplish this at the query level, add the USE HINT [query hint](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query) instead of using this trace flag.<br />
 Link: https://support.microsoft.com/help/974006<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
