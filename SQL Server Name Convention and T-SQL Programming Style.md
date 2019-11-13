@@ -22,38 +22,56 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 <a id="sql-server-object-name-convention"></a>
 ## SQL Server Object Name Convention
 
-| Object                           | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                              |
-|----------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|--------------------------------------|
-| Database                         |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | `MYDATABASE`                         |
-| Database Trigger                 |      | PascalCase |     50 | No     | DTR_   | No     | Yes          | [A-z]        | `DTR_CheckLogin`                     |
-| Schema                           |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | `myschema`                           |
-| File Table                       |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | `FT_MyTable`                         |
-| Global Temporary Table           |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | `##MyTable`                          |
-| Local Temporary Table            |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | `#MyTable`                           |
-| Table                            | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
-| Table Column                     |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
-| Table Default Values             | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
-| Table Check Column Constraint    | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
-| Table Check Table Constraint     | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
-| Table Primary Key                | PK   | PascalCase |    128 | No     | PK_    | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
-| Table Alternative Key            | UQ   | PascalCase |    128 | No     | AK_    | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
-| Table Foreign Key                | F    | PascalCase |    128 | No     | FK_    | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
-| Table Clustered Index            |      | PascalCase |    128 | No     | IXC_   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
-| Table Non Clustered Index        |      | PascalCase |    128 | No     | IX_    | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
-| Table Trigger                    | TR   | PascalCase |    128 | No     | TR_    | No     | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName`             |
-| View                             | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
-| Stored Procedure                 | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
-| Scalar User-Defined Function     | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
-| Table-Valued Function            | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
-| Synonym                          | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
-| Sequence                         | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
-| CLR Assembly                     |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
-| CLR Stored Procedures            | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
-| CLR Scalar User-Defined Function |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
-| CLR Table-Valued Function        |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
-| CLR User-Defined Aggregates      |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
-| CLR User-Defined Types           |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
-| CLR Triggers                     |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
+| Object                                   | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                              |
+|------------------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|--------------------------------------|
+| [Database]                               |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | `MYDATABASE`                         |
+| [Schema]                                 |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | `myschema`                           |
+| [Global Temporary Table]                 |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | `##MyTable`                          |
+| [Local Temporary Table]                  |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | `#MyTable`                           |
+| [File Table]                             |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | `FT_MyTable`                         |
+| [Memory-optimized SCHEMA_AND_DATA Table] |      | PascalCase |    128 | No     | MT_    | _SD    | Yes          | [A-z][0-9]   | `MT_MyTable_SD`                      |
+| [Memory-optimized SCHEMA_ONLY Table]     |      | PascalCase |    128 | No     | MT_    | _SO    | Yes          | [A-z][0-9]   | `MT_MyTable_SO`                      |
+| [Temporal Table]                         |      | PascalCase |    128 | No     | No     | _TT    | Yes          | [A-z][0-9]   | `MyTable_TT`                         |
+| [Disk-Based Table]                       | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
+| Table Column                             |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
+| Table Default Values                     | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
+| Table Check Column Constraint            | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
+| Table Check Table Constraint             | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
+| Table Primary Key                        | PK   | PascalCase |    128 | No     | PK_    | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
+| Table Alternative Key                    | UQ   | PascalCase |    128 | No     | AK_    | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
+| Table Foreign Key                        | F    | PascalCase |    128 | No     | FK_    | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
+| Table Clustered Index                    |      | PascalCase |    128 | No     | IXC_   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
+| Table Non Clustered Index                |      | PascalCase |    128 | No     | IX_    | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
+| [DDL Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DDL   | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
+| [DML Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DML   | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
+| [Logon Trigger]                          | TR   | PascalCase |    128 | No     | TR_    | _LOG   | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
+| View                                     | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
+| Stored Procedure                         | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
+| Scalar User-Defined Function             | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
+| Table-Valued Function                    | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
+| Synonym                                  | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
+| Sequence                                 | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
+| CLR Assembly                             |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
+| CLR Stored Procedures                    | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
+| CLR Scalar User-Defined Function         |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
+| CLR Table-Valued Function                |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
+| CLR User-Defined Aggregates              |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
+| CLR User-Defined Types                   |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
+| CLR Triggers                             |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
+
+[Database]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-database-transact-sql
+[Schema]:https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-schema
+[Global Temporary Table]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables
+[Local Temporary Table]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables
+[File Table]:https://docs.microsoft.com/en-us/sql/relational-databases/blob/filetables-sql-server
+[Memory-optimized SCHEMA_AND_DATA Table]:https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/introduction-to-memory-optimized-tables
+[Memory-optimized SCHEMA_ONLY Table]:https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/defining-durability-for-memory-optimized-objects
+[Temporal Table]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/temporal-tables
+[Disk-Based Table]:https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/comparing-disk-based-table-storage-to-memory-optimized-table-storage
+
+[DDL Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+[DML Trigger]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/dml-triggers
+[Logon Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
 
 **[⬆ back to top](#table-of-contents)**
 
