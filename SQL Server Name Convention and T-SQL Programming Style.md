@@ -14,13 +14,14 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
  - [SQL Server Object Name Convention](#sql-server-object-name-convention)
  - [SQL Server Data Types Recommendation](#data-types-recommendation)
  - [T-SQL Programming Style](#t-sql-programming-style)
-   - [General programming style](#general-programming-style)
+   - [General T-SQL programming style](#general-t-sql-programming-style)
    - [Stored procedures and functions programming style](#programming-style)
+   - [Dynamic T-SQL Recommendation](#dynamic-t-sql-recommendation)
  - [Reference and useful links](#reference)
 
 
-<a id="sql-server-object-name-convention"></a>
 ## SQL Server Object Name Convention
+<a id="sql-server-object-name-convention"></a>
 
 | Object                                   | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                              |
 |------------------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|--------------------------------------|
@@ -33,7 +34,9 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [Memory-optimized SCHEMA_ONLY Table]     |      | PascalCase |    128 | No     | MT_    | _SO    | Yes          | [A-z][0-9]   | `MT_MyTable_SO`                      |
 | [Temporal Table]                         |      | PascalCase |    128 | No     | No     | _TT    | Yes          | [A-z][0-9]   | `MyTable_TT`                         |
 | [Disk-Based Table]                       | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
-| Table Column                             |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
+| [Disk-Based Wide Table - SPARSE Column]  | U    | PascalCase |    128 | No     | No     | _SPR   | Yes          | [A-z][0-9]   | `MyTable_SPR`                        |
+| [Table Column]                           |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
+| [Table Column SPARSE]                    |      | PascalCase |    128 | No     | No     | _SPR   | Yes          | [A-z][0-9]   | `MyColumn_SPR`                       |
 | Table Default Values                     | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
 | Table Check Column Constraint            | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
 | Table Check Table Constraint             | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
@@ -45,12 +48,13 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [DDL Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DDL   | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
 | [DML Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DML   | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
 | [Logon Trigger]                          | TR   | PascalCase |    128 | No     | TR_    | _LOG   | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
-| View                                     | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
-| Stored Procedure                         | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
-| Scalar User-Defined Function             | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
-| Table-Valued Function                    | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
-| Synonym                                  | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
-| Sequence                                 | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
+| [View]                                   | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
+| [Indexed View]                           | V    | PascalCase |    128 | No     | VIX_   | No     | No           | [A-z][0-9]   | `VIx_LogicalName`                    |
+| [Stored Procedure]                       | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
+| [Scalar User-Defined Function]           | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
+| [Table-Valued Function]                  | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
+| [Synonym]                                | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
+| [Sequence]                               | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
 | CLR Assembly                             |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
 | CLR Stored Procedures                    | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
 | CLR Scalar User-Defined Function         |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
@@ -68,17 +72,27 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [Memory-optimized SCHEMA_ONLY Table]:https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/defining-durability-for-memory-optimized-objects
 [Temporal Table]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/temporal-tables
 [Disk-Based Table]:https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/comparing-disk-based-table-storage-to-memory-optimized-table-storage
+[Disk-Based Wide Table - SPARSE Column]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables#wide-tables
+[Table Column]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql
+[Table Column SPARSE]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-sparse-columns
 
 [DDL Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
 [DML Trigger]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/dml-triggers
 [Logon Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
+[View]:https://docs.microsoft.com/en-us/sql/relational-databases/views/views
+[Indexed View]:https://docs.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views
+[Stored Procedure]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql
+[Scalar User-Defined Function]:https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine#Scalar
+[Table-Valued Function]:https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine#TVF
+[Synonym]:https://docs.microsoft.com/en-us/sql/relational-databases/synonyms/synonyms-database-engine
+[Sequence]:https://docs.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers
 
 **[⬆ back to top](#table-of-contents)**
 
 
-<a id="data-types-recommendation"></a>
 ## SQL Server Data Types Recommendation
-More details about SQL Server data types and mapping it with another databases you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
+<a id="data-types-recommendation"></a>
+More details about SQL Server data types and mapping it with another databases and program languages you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
 
 | General Type         | Type                | ANSI | Recommended    | What use instead   | Why use or not                                            |
 |----------------------|---------------------|------|----------------|--------------------|-----------------------------------------------------------|
@@ -156,10 +170,12 @@ More details about SQL Server data types and mapping it with another databases y
 
 
 ## T-SQL Programming Style
-SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines
+<a id="t-sql-programming-style"></a>
+SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
 
 ### General programming style
+<a id="#general-t-sql-programming-style"></a>
 
  - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
    More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/),
@@ -309,8 +325,8 @@ ORDER BY t2.Value2;
 **[⬆ back to top](#table-of-contents)**
 
 
-<a id="programming-style"></a>
 ### Stored procedures and functions programming style
+<a id="programming-style"></a>
 
  - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below)
  - `ALTER` statement should be preceded by 2 line breaks
@@ -327,7 +343,7 @@ ORDER BY t2.Value2;
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
    More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html).
  - All code should be self documenting
- - TSQL code, triggers, stored procedures, functions, should have a standard comment-documentation banner:
+ - T-SQL code, triggers, stored procedures, functions, should have a standard comment-documentation banner:
 ```tsql
 summary:   >
  This procedure returns an object build script as a single-row, single column
@@ -393,8 +409,116 @@ GO
 **[⬆ back to top](#table-of-contents)**
 
 
-<a id="reference"></a>
+### Dynamic T-SQL Recommendation
+<a id="dynamic-t-sql-recommendation"></a>
+**Highly recommended to read awesome detailed article about dynamic T-SQL by Erland Sommarskog: [The Curse and Blessings of Dynamic SQL](http://sommarskog.se/dynamic_sql.html)**
+
+Dynamic SQL is a programming technique that allows you to construct SQL statements dynamically at runtime.
+It allows you to create more general purpose and flexible SQL statement because the full text of the SQL statements may be unknown at compilation.
+For example, you can use the dynamic SQL to create a stored procedure that queries data against a table whose name is not known until runtime.
+
+More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedures/sql-server-dynamic-sql/).
+
+- Do not use [nvarchar(max)] for your object’s name parameter, use [sysname] instead (synonym for nvarchar(128)).
+  ```tsql
+  /* Bad */
+  DECLARE @tableName nvarchar(max) = N'MyTableName';
+
+  /* Good */
+  DECLARE @tableName sysname = N'MyTableName';
+  ```
+- Do quote the names of your objects properly.
+  ```tsql
+  /* Bad */
+  DECLARE @tsql      nvarchar(max);
+  DECLARE @tableName sysname = N'My badly named table!';
+  SET @tsql = N'SELECT object_id FROM ' + @tableName;
+
+  /* Good */
+  DECLARE @tsql      nvarchar(max);
+  DECLARE @tableName sysname = N'My badly named table 111!';
+  SET @tsql = N'SELECT object_id FROM ' + QUOTENAME(@tableName);
+  ```
+- Always use [`sp_executesql`] instead [`EXEC`] to prevent sql injection.
+  Also [`sp_executesql`] can parameterizing your dynamic statement that means plans can be reused as well (when the value of the dynamic object is the same).
+  Also [`sp_executesql`] can even be used to output values as well (see example below).
+  ```tsql
+  /* Bad EXEC example*/
+  DECLARE @tsql      nvarchar(max);
+  DECLARE @tableName sysname = N'master.sys.tables';
+  DECLARE @id        int     = 2107154552;
+  SET @tsql = N'SELECT "name" FROM ' + @tableName +
+              N' WHERE object_id = ' + CONVERT(nvarchar(max), @id);
+  EXEC (@tsql);
+
+  /* Good sp_executesql example*/
+  DECLARE @tsql      nvarchar(max);
+  DECLARE @tableName sysname = N'master.sys.tables';
+  DECLARE @id        int     = 2107154552;
+  SET @tsql = N'SELECT name FROM '   + @tableName +
+              N' WHERE object_id = ' + CONVERT(nvarchar(max), @id);
+  EXEC sp_executesql @tsql, N'@ID int', @ID = @id;
+
+  /* Good sp_executesql example with OUTPUT */
+  DECLARE @tsql      nvarchar(max);
+  DECLARE @tableName sysname = N'master.sys.tables';
+  DECLARE @count     bigint;
+  SET @tsql = N'SELECT @countOUT = COUNT(*) FROM ' + @tableName + N';';
+  EXEC sp_executesql @tsql, N'@countOUT bigint OUTPUT', @countOUT = @count OUTPUT;
+  PRINT('@count = ' + CASE WHEN @count IS NULL THEN 'NULL' ELSE CAST(@count AS varchar(30)) END);
+  ```
+- Do not use dynamic T-SQL if your statement is not dynamic.
+  ```tsql
+  /* Bad */
+  DECLARE @tsql nvarchar(max);
+  DECLARE @id   int = 2107154552;
+  SET @tsql = N'SELECT object_id, "name" FROM master.sys.tables WHERE object_id = ' + CONVERT(nvarchar(max), @id);
+  EXEC sp_executesql @tsql;
+
+  /* Good */
+  DECLARE @id int = 2107154552;
+  SELECT object_id, "name" FROM master.sys.tables WHERE object_id = @id;
+  ```
+- Do not debug the code that creates the dynamic T-SQL first, debug the generated T-SQL statement instead.
+  Use `@debug` variable to print (or a `SELECT` statement if your dynamic T-SQL is over 4000 characters) dynamic statement instead executing it.
+- Do take the time to format your dynamic T-SQL.
+  ```tsql
+  /* Bad @tsql formating */
+  DECLARE @tsql  nvarchar(max);
+  DECLARE @sep   nvarchar(30) = ' UNION ALL ';
+  DECLARE @debug bit          = 1;
+
+  SELECT @tsql = COALESCE(@tsql, N'') +
+                 N'SELECT N' + QUOTENAME(name,'''') +
+                 N' AS DBName, (SELECT COUNT(*) FROM ' +
+                 QUOTENAME(name) + N'.sys.tables) AS TableCount' +
+                 @sep
+  FROM sys.databases
+  ORDER BY name;
+
+  SET @tsql = LEFT(@tsql, LEN(@tsql) - LEN(@sep));
+  IF @debug = 1 SELECT @tsql AS "tsql" ELSE EXEC sp_executesql @tsql;
+
+  /* Good @tsql formating */
+  DECLARE @tsql  nvarchar(max);
+  DECLARE @sep   nvarchar(30) = ' UNION ALL ';
+  DECLARE @debug bit          = 1;
+  DECLARE @crlf  nvarchar(10) = NCHAR(13) + NCHAR(10);
+
+  SELECT @tsql = COALESCE(@tsql, N'') + @crlf +
+                 N'SELECT N' + QUOTENAME(name,'''') + N' AS DBName' + @crlf +
+                 N'     , (SELECT COUNT(*) FROM ' + QUOTENAME(name) + N'.sys.tables) AS TableCount' + @crlf +
+                 @sep
+  FROM sys.databases
+  ORDER BY name;
+
+  SET @tsql = LEFT(@tsql, LEN(@tsql) - LEN(@sep)) + N';';
+  IF @debug = 1 SELECT @tsql AS "tsql" ELSE EXEC sp_executesql @tsql;
+  ```
+
+
 ## Official Reference and useful links
+<a id="reference"></a>
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
  - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
@@ -422,5 +546,9 @@ GO
  - [The Basics of Good T-SQL Coding Style – Part 3: Querying and Manipulating Data](https://www.simple-talk.com/sql/t-sql-programming/basics-good-t-sql-coding-style-part-3-querying-manipulating-data/)
  - [SQL naming conventions](https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/) (by Phi Factor)
  - [SQL Server Compact Object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
+ - [Dos and Don'ts of Dynamic SQL](https://www.sqlservercentral.com/articles/dos-and-donts-of-dynamic-sql) (by Thom Andrews)
 
 **[⬆ back to top](#table-of-contents)**
+
+[`sp_executesql`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql
+[`EXEC`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
