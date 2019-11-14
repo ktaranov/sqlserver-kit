@@ -218,11 +218,15 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS 'Tables' FROM sys.tables;
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS Tables   FROM sys.tables;
    ```
- - The first argument in `SELECT` expression should be on the same line with it: `SELECT LastName …`
- - Arguments are divided by line breaks, commas should be placed before an argument:
-
+ - The first argument in `SELECT` expression should be on the next line:
    ```sql
-   SELECT FirstName
+    SELECT
+           FirstName
+   ```
+ - Arguments are divided by line breaks, commas should be placed before an argument:
+   ```sql
+   SELECT
+          FirstName
         , LastName
    ```
  - For SQL Server >= 2012 use `FETCH-OFFSET` instead `TOP`.
