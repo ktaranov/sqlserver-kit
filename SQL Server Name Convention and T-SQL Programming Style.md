@@ -5,19 +5,19 @@
 [Naming convention](https://en.wikipedia.org/wiki/Naming_convention_(programming)) is a set of rules for choosing the character sequence to be used for identifiers which denote variables, types, functions, and other entities in source code and documentation.
 
 Reasons for using a naming convention (as opposed to allowing programmers to choose any character sequence) include the following:
- - To reduce the effort needed to read and understand source code.
- - To enable code reviews to focus on more important issues than arguing over syntax and naming standards.
- - To enable code quality review tools to focus their reporting mainly on significant issues other than syntax and style preferences.
+- To reduce the effort needed to read and understand source code.
+- To enable code reviews to focus on more important issues than arguing over syntax and naming standards.
+- To enable code quality review tools to focus their reporting mainly on significant issues other than syntax and style preferences.
 
 
 ## Table of Contents
- - [SQL Server Object Name Convention](#sql-server-object-name-convention)
- - [SQL Server Data Types Recommendation](#data-types-recommendation)
- - [T-SQL Programming Style](#t-sql-programming-style)
-   - [General T-SQL programming style](#general-t-sql-programming-style)
-   - [Stored procedures and functions programming style](#programming-style)
-   - [Dynamic T-SQL Recommendation](#dynamic-t-sql-recommendation)
- - [Reference and useful links](#reference)
+- [SQL Server Object Name Convention](#sql-server-object-name-convention)
+- [SQL Server Data Types Recommendation](#data-types-recommendation)
+- [T-SQL Programming T-SQL Style](#t-sql-programming-style)
+  - [General T-SQL programming style](#general-t-sql-programming-style)
+  - [Stored procedures and functions programming style](#programming-style)
+  - [Dynamic T-SQL Recommendation](#dynamic-t-sql-recommendation)
+- [Reference and useful links](#reference)
 
 
 ## SQL Server Object Name Convention
@@ -174,7 +174,7 @@ More details about SQL Server data types and mapping it with another databases a
 SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
 
-### General programming style
+### General programming T-SQL style
 <a id="#general-t-sql-programming-style"></a>
 
  - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
@@ -419,7 +419,7 @@ For example, you can use the dynamic SQL to create a stored procedure that queri
 
 More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedures/sql-server-dynamic-sql/).
 
-- Do not use [nvarchar(max)] for your object’s name parameter, use [sysname] instead (synonym for nvarchar(128)).
+- Do not use [nvarchar(max)][6] for your object’s name parameter, use [sysname](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms191240(v=sql.105)?redirectedfrom=MSDN) instead (synonym for nvarchar(128) except that, by default, sysname is NOT NULL).
   ```tsql
   /* Bad */
   DECLARE @tableName nvarchar(max) = N'MyTableName';
@@ -443,12 +443,10 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
   Also [`sp_executesql`] can parameterizing your dynamic statement that means plans can be reused as well (when the value of the dynamic object is the same).
   Also [`sp_executesql`] can even be used to output values as well (see example below).
   ```tsql
-  /* Bad EXEC example*/
+  /* Bad EXEC example with sql injection*/
   DECLARE @tsql      nvarchar(max);
-  DECLARE @tableName sysname = N'master.sys.tables';
-  DECLARE @id        int     = 2107154552;
-  SET @tsql = N'SELECT "name" FROM ' + @tableName +
-              N' WHERE object_id = ' + CONVERT(nvarchar(max), @id);
+  DECLARE @tableName sysname = N'master.sys.tables; SELECT * FROM master.sys.server_principals;';
+  SET @tsql = N'SELECT "name" FROM ' + @tableName + N';';
   EXEC (@tsql);
 
   /* Good sp_executesql example*/
