@@ -23,45 +23,45 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 ## SQL Server Object Name Convention
 <a id="sql-server-object-name-convention"></a>
 
-| Object                                   | Code | Notation   | Length | Plural | Prefix | Suffix | Abbreviation | Char Mask    | Example                              |
-|------------------------------------------|------| ---------- |-------:|--------|--------|--------|--------------|--------------|--------------------------------------|
-| [Database]                               |      | UPPERCASE  |     30 | No     | No     | No     | Yes          | [A-z]        | `MYDATABASE`                         |
-| [Schema]                                 |      | lowercase  |     30 | No     | No     | No     | Yes          | [a-z][0-9]   | `myschema`                           |
-| [Global Temporary Table]                 |      | PascalCase |    117 | No     | No     | No     | Yes          | ##[A-z][0-9] | `##MyTable`                          |
-| [Local Temporary Table]                  |      | PascalCase |    116 | No     | No     | No     | Yes          | #[A-z][0-9]  | `#MyTable`                           |
-| [File Table]                             |      | PascalCase |    128 | No     | FT_    | No     | Yes          | [A-z][0-9]   | `FT_MyTable`                         |
-| [Memory-optimized SCHEMA_AND_DATA Table] |      | PascalCase |    128 | No     | MT_    | _SD    | Yes          | [A-z][0-9]   | `MT_MyTable_SD`                      |
-| [Memory-optimized SCHEMA_ONLY Table]     |      | PascalCase |    128 | No     | MT_    | _SO    | Yes          | [A-z][0-9]   | `MT_MyTable_SO`                      |
-| [Temporal Table]                         |      | PascalCase |    128 | No     | No     | _TT    | Yes          | [A-z][0-9]   | `MyTable_TT`                         |
-| [Disk-Based Table]                       | U    | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
-| [Disk-Based Wide Table - SPARSE Column]  | U    | PascalCase |    128 | No     | No     | _SPR   | Yes          | [A-z][0-9]   | `MyTable_SPR`                        |
-| [Table Column]                           |      | PascalCase |    128 | No     | No     | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
-| [Table Column SPARSE]                    |      | PascalCase |    128 | No     | No     | _SPR   | Yes          | [A-z][0-9]   | `MyColumn_SPR`                       |
-| Table Default Values                     | D    | PascalCase |    128 | No     | DF_    | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
-| Table Check Column Constraint            | C    | PascalCase |    128 | No     | CK_    | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
-| Table Check Table Constraint             | C    | PascalCase |    128 | No     | CTK_   | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
-| Table Primary Key                        | PK   | PascalCase |    128 | No     | PK_    | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
-| Table Alternative Key                    | UQ   | PascalCase |    128 | No     | AK_    | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
-| Table Foreign Key                        | F    | PascalCase |    128 | No     | FK_    | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
-| Table Clustered Index                    |      | PascalCase |    128 | No     | IXC_   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
-| Table Non Clustered Index                |      | PascalCase |    128 | No     | IX_    | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
-| [DDL Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DDL   | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
-| [DML Trigger]                            | TR   | PascalCase |    128 | No     | TR_    | _DML   | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
-| [Logon Trigger]                          | TR   | PascalCase |    128 | No     | TR_    | _LOG   | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
-| [View]                                   | V    | PascalCase |    128 | No     | VI_    | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
-| [Indexed View]                           | V    | PascalCase |    128 | No     | VIX_   | No     | No           | [A-z][0-9]   | `VIx_LogicalName`                    |
-| [Stored Procedure]                       | P    | PascalCase |    128 | No     | usp_   | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
-| [Scalar User-Defined Function]           | FN   | PascalCase |    128 | No     | udf_   | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
-| [Table-Valued Function]                  | FN   | PascalCase |    128 | No     | tvf_   | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
-| [Synonym]                                | SN   | camelCase  |    128 | No     | sy_    | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
-| [Sequence]                               | SO   | PascalCase |    128 | No     | sq_    | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
-| CLR Assembly                             |      | PascalCase |    128 | No     | CA     | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
-| CLR Stored Procedures                    | PC   | PascalCase |    128 | No     | pc_    | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
-| CLR Scalar User-Defined Function         |      | PascalCase |    128 | No     | cudf_  | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
-| CLR Table-Valued Function                |      | PascalCase |    128 | No     | ctvf_  | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
-| CLR User-Defined Aggregates              |      | PascalCase |    128 | No     | ca_    | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
-| CLR User-Defined Types                   |      | PascalCase |    128 | No     | ct_    | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
-| CLR Triggers                             |      | PascalCase |    128 | No     | ctr_   | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
+| Object                                   | Code | Notation   | Length | Plural | Prefix  | Suffix | Abbreviation | Char Mask    | Example                              |
+|------------------------------------------|------| ---------- |-------:|--------|---------|--------|--------------|--------------|--------------------------------------|
+| [Database]                               |      | UPPERCASE  |     30 | No     | No      | No     | Yes          | [A-z]        | `MYDATABASE`                         |
+| [Schema]                                 |      | lowercase  |     30 | No     | No      | No     | Yes          | [a-z][0-9]   | `myschema`                           |
+| [Global Temporary Table]                 |      | PascalCase |    117 | No     | No      | No     | Yes          | ##[A-z][0-9] | `##MyTable`                          |
+| [Local Temporary Table]                  |      | PascalCase |    116 | No     | No      | No     | Yes          | #[A-z][0-9]  | `#MyTable`                           |
+| [File Table]                             |      | PascalCase |    128 | No     | `FT_`   | No     | Yes          | [A-z][0-9]   | `FT_MyTable`                         |
+| [Memory-optimized SCHEMA_AND_DATA Table] |      | PascalCase |    128 | No     | `MT_`   | `_SD`  | Yes          | [A-z][0-9]   | `MT_MyTable_SD`                      |
+| [Memory-optimized SCHEMA_ONLY Table]     |      | PascalCase |    128 | No     | `MT_`   | `_SO`  | Yes          | [A-z][0-9]   | `MT_MyTable_SO`                      |
+| [Temporal Table]                         |      | PascalCase |    128 | No     | No      | `_TT`  | Yes          | [A-z][0-9]   | `MyTable_TT`                         |
+| [Disk-Based Table]                       | U    | PascalCase |    128 | No     | No      | No     | Yes          | [A-z][0-9]   | `MyTable`                            |
+| [Disk-Based Wide Table - SPARSE Column]  | U    | PascalCase |    128 | No     | No      | `_SPR` | Yes          | [A-z][0-9]   | `MyTable_SPR`                        |
+| [Table Column]                           |      | PascalCase |    128 | No     | No      | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
+| [Table Column SPARSE]                    |      | PascalCase |    128 | No     | No      | `_SPR` | Yes          | [A-z][0-9]   | `MyColumn_SPR`                       |
+| Table Default Values                     | D    | PascalCase |    128 | No     | `DF_`   | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
+| Table Check Column Constraint            | C    | PascalCase |    128 | No     | `CK_`   | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
+| Table Check Table Constraint             | C    | PascalCase |    128 | No     | `CTK_`  | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
+| Table Primary Key                        | PK   | PascalCase |    128 | No     | `PK_`   | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
+| Table Alternative Key                    | UQ   | PascalCase |    128 | No     | `AK_`   | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
+| Table Foreign Key                        | F    | PascalCase |    128 | No     | `FK_`   | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
+| Table Clustered Index                    |      | PascalCase |    128 | No     | `IXC`   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
+| Table Non Clustered Index                |      | PascalCase |    128 | No     | `IX_`   | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
+| [DDL Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DDL` | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
+| [DML Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DML` | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
+| [Logon Trigger]                          | TR   | PascalCase |    128 | No     | `TR_`   | `_LOG` | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
+| [View]                                   | V    | PascalCase |    128 | No     | `VI_`   | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
+| [Indexed View]                           | V    | PascalCase |    128 | No     | `VIX_`  | No     | No           | [A-z][0-9]   | `VIx_LogicalName`                    |
+| [Stored Procedure]                       | P    | PascalCase |    128 | No     | `usp_`  | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
+| [Scalar User-Defined Function]           | FN   | PascalCase |    128 | No     | `udf_`  | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
+| [Table-Valued Function]                  | FN   | PascalCase |    128 | No     | `tvf_`  | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
+| [Synonym]                                | SN   | camelCase  |    128 | No     | `sy_`   | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
+| [Sequence]                               | SO   | PascalCase |    128 | No     | `sq_`   | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
+| CLR Assembly                             |      | PascalCase |    128 | No     | `CA `   | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
+| CLR Stored Procedures                    | PC   | PascalCase |    128 | No     | `pc_`   | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
+| CLR Scalar User-Defined Function         |      | PascalCase |    128 | No     | `cudf_` | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
+| CLR Table-Valued Function                |      | PascalCase |    128 | No     | `ctvf_` | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
+| CLR User-Defined Aggregates              |      | PascalCase |    128 | No     | `ca_`   | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
+| CLR User-Defined Types                   |      | PascalCase |    128 | No     | `ct_`   | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
+| CLR Triggers                             |      | PascalCase |    128 | No     | `ctr_`  | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
 
 [Database]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-database-transact-sql
 [Schema]:https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-schema
@@ -245,15 +245,15 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
    ```tsql
    CASE WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' /* is it a float? */
-              AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
-                 AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%'
-                 AND RIGHT(TapAngle ,1) LIKE N'[0123456789]'
-               THEN 'float'
-         WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' /* is it numeric */
-              AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
-              AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%'
-              AND TapAngle LIKE '%[0123456789]%'
-             THEN 'float'
+             AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
+             AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%'
+             AND RIGHT(TapAngle ,1) LIKE N'[0123456789]'
+        THEN 'float'
+        WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' /* is it numeric? */
+             AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
+             AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%'
+             AND TapAngle LIKE '%[0123456789]%'
+        THEN 'float'
    ELSE NULL
    END
    ```
@@ -306,11 +306,12 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores).
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
 
-Example:
+TSQL Example with formating:
 
 ```tsql
 WITH CTE_MyCTE AS (
-    SELECT      t1.Value1  AS Val1
+    SELECT
+                t1.Value1  AS Val1
               , t1.Value2  AS Val2
               , t2.Value3  AS Val3
      INNER JOIN dbo.Table3 AS t2
@@ -318,7 +319,8 @@ WITH CTE_MyCTE AS (
      WHERE      t1.Value1 > 1
        AND      t2.Value2 >= 101
 )
-SELECT t1.Value1 AS Val1
+SELECT
+       t1.Value1 AS Val1
      , t1.Value2 AS Val2
      , t2.Value3 AS Val3
 INTO   #Table3
@@ -347,44 +349,49 @@ ORDER BY t2.Value2;
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
    More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html).
  - All code should be self documenting
- - T-SQL code, triggers, stored procedures, functions, should have a standard comment-documentation banner:
-```tsql
-summary:   >
- This procedure returns an object build script as a single-row, single column
- result.
-Revisions: 
- - Author: Bill Gates
-   Version: 1.1
-   Modification: dealt properly with heaps
-   date: 2017-07-15
- - version: 1.2
-   modification: Removed several bugs and got column-level constraints working
-   date: 2017-06-30
-example:
-     - code: udf_MyFunction 'testValsue';
-returns:   >
- single row, single column result Build_Script.
+ - T-SQL code, triggers, stored procedures, functions, scripts, should have a standard comment-documentation banner:
+```
+<documentation>
+  <summary>Get all databases meta data using dynamic T-SQL</summary>
+  <returns>1 data set: temp table #DatabaseInfo.</returns>
+  <issues>No</issues>
+  <author>Konstantin Taranov</author>
+  <created>2018-03-01</created>
+  <modified>2019-11-14 by Konstantin Taranov</modified>
+  <version>1.2</version>
+  <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Databases_Report.sql</sourceLink>
+</documentation>
 ```
 
 **[⬆ back to top](#table-of-contents)**
 
 Stored Procedure Example:
 
-```sql
+```tsql
 IF OBJECT_ID('dbo.usp_StoredProcedure', 'P') IS NULL
 EXECUTE('CREATE PROCEDURE dbo.usp_StoredProcedure as SELECT 1');
 GO
 
 
-ALTER PROCEDURE dbo.usp_StoredProcedure (
-                @parameterValue1 SMALLINT
-              , @parameterValue2 NVARCHAR(300)
-              , @debug           BIT           = 0
+ALTER PROCEDURE dbo.usp_StoredProcedure(
+                @parameterValue1 smallint
+              , @parameterValue2 nvarchar(300)
+              , @debug           bit = 0
 )
 /*
-EXECUTE dbo.usp_StoredProcedure
+<documentation>
+  <summary>Simple example of tsql procedure</summary>
+  <returns>nothing</returns>
+  <issues>No</issues>
+  <author>Konstantin Taranov</author>
+  <created>2019-01-01</created>
+  <modified>2019-11-25 by Konstantin Taranov</modified>
+  <version>1.2</version>
+  <sourceLink>-</sourceLink>
+  <example1>EXECUTE dbo.usp_StoredProcedure
         @parameterValue1 = 0
-      , @parameterValue2 = N'BULK'
+      , @parameterValue2 = N'BULK'</example1>
+</documentation>
 */
 AS
 SET NOCOUNT ON;
@@ -392,20 +399,19 @@ SET NOCOUNT ON;
 BEGIN TRY
     IF (@parameterValue1 < 0 OR @parameterValue2 NOT IN ('SIMPLE', 'BULK', 'FULL'))
     RAISERROR('Not valid data parameter!', 16, 1);
-    PRINT @parameterValue2;
+    IF (@debug) PRINT @parameterValue2;
 END TRY
 
 BEGIN CATCH
     /* Print error information. */
-    PRINT 'Error: '       + CONVERT(varchar(50), ERROR_NUMBER())   +
-          ', Severity: '  + CONVERT(varchar(5),  ERROR_SEVERITY()) +
-          ', State: '     + CONVERT(varchar(5),  ERROR_STATE())    +
-          ', Procedure: ' + ISNULL(ERROR_PROCEDURE(), '-')         +
-          ', Line: '      + CONVERT(varchar(5),  ERROR_LINE())     +
-          ', User name: ' + CONVERT(sysname,     CURRENT_USER);
+    PRINT 'Error: '       + CAST(ERROR_NUMBER()) AS varchar(50)) +
+          ', Severity: '  + CAST(ERROR_SEVERITY(), varchar(5))   +
+          ', State: '     + CAST(ERROR_STATE(), varchar(5) )     +
+          ', Procedure: ' + COALESCE(ERROR_PROCEDURE(), '-')     +
+          ', Line: '      + CAST(ERROR_LINE(), varchar(5))       +
+          ', User name: ' + CAST(ORIGINAL_LOGIN(), sysname);
     PRINT ERROR_MESSAGE();
 END CATCH;
-
 GO
 
 ```
