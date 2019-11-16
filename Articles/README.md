@@ -907,6 +907,7 @@ Articles types:
 | [EMERGENCY-mode repair: the very, very last resort]                                                                     | Paul Randal                              | 2007-10-02 | [DBA]       |
 | [Scalar functions and improvements in SQL Server 2019]                                                                  | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
 | [Scalar functions in SQL server 2019, part 2]                                                                           | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
+| [Dos and Don'ts of Dynamic SQL]                                                                                         | Thom Andrews                             | 2019-04-29 | [DEV][DBA]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1791,3 +1792,4 @@ Articles types:
 [EMERGENCY-mode repair: the very, very last resort]:https://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-emergency-mode-repair-the-very-very-last-resort/
 [Scalar functions and improvements in SQL Server 2019]:http://sqlblog.karaszi.com/scalar-functions-and-improvements-in-sql-server-2019/
 [Scalar functions in SQL server 2019, part 2]:http://sqlblog.karaszi.com/scalar-functions-in-sql-server-2019-part-2/
+[Dos and Don'ts of Dynamic SQL]:https://www.sqlservercentral.com/articles/dos-and-donts-of-dynamic-sql

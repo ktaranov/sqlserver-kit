@@ -304,6 +304,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     DECLARE @myBadNCharVariable    nchar;
     ```
     More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores).
+ - Use only [`ORIGINAL_LOGIN()`](https://docs.microsoft.com/en-us/sql/t-sql/functions/original-login-transact-sql) dunction because is the only function that consistently returns the actual login name that we started with regardless of impersonation.
+   More details [here](https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/).
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
 
 TSQL Example with formating:
