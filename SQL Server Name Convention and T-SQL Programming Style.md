@@ -97,15 +97,15 @@ More details about SQL Server data types and mapping it with another databases a
 | General Type         | Type                | ANSI | Recommended    | What use instead   | Why use or not                                                                     |
 |----------------------|---------------------|------|----------------|--------------------|------------------------------------------------------------------------------------|
 | Exact Numerics       | [bit]               | No   | *Maybe*        | [tinyint][1]       | `bit` convert any number (except 0) to 1, 0 converted to 0                         |
-| Exact Numerics       | [tinyint][1]        | No   | *Maybe*        | [int][1]           |                                                                                    |
-| Exact Numerics       | [smallint][1]       | Yes  | *Maybe*        | [int][1]           |                                                                                    |
+| Exact Numerics       | [tinyint][1]        | No   | *Maybe*        | [int][1]           | for saving 3 bytes compare to `int` data type or for replacing `bit` data type     |
+| Exact Numerics       | [smallint][1]       | Yes  | *Maybe*        | [int][1]           | for saving 2 bytes compare to `int` data type                                      |
 | Exact Numerics       | [int][1]            | Yes  | Yes            | -                  |                                                                                    |
-| Exact Numerics       | [bigint][1]         | No   | Yes            | [int][1]           |                                                                                    |
+| Exact Numerics       | [bigint][1]         | No   | Yes            | [int][1]           | if you work more than                                                              |
 | Exact Numerics       | [decimal][2]        | Yes  | Yes            | -                  |                                                                                    |
 | Exact Numerics       | [smallmoney][3]     | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9]                          |
 | Exact Numerics       | [money][3]          | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9]                          |
 | Approximate Numerics | [real][4]           | Yes  | Yes            | -                  |                                                                                    |
-| Approximate Numerics | [float][4](1-24)    | Yes  | No             | [real][4]          | sql server automatically converts float(1-24) to real                              |
+| Approximate Numerics | [float][4](1-24)    | Yes  | No             | [real][4]          | SQL Server automatically converts `float(1-24)` to `real` data type                |
 | Approximate Numerics | [float][4](24-53)   | Yes  | Yes            | -                  |                                                                                    |
 | Date and Time        | [date]              | Yes  | Yes            | -                  |                                                                                    |
 | Date and Time        | [smalldatetime]     | No   | *Maybe*        | [date]             |                                                                                    |
@@ -113,7 +113,7 @@ More details about SQL Server data types and mapping it with another databases a
 | Date and Time        | [datetime2]         | No   | Yes            | -                  |                                                                                    |
 | Date and Time        | [datetime]          | Yes  | *Maybe*        | [datetime2]        | [On the Advantages of DateTime2(n) over DateTime]                                  |
 | Date and time        | [datetimeoffset]    | No   | Yes            | -                  |                                                                                    |
-| Character Strings    | [char][5]           | Yes  | *Maybe*        | [varchar][5]       | Save 1 byte from varchar, but be ready for trailing spaces                         |
+| Character Strings    | [char][5]           | Yes  | *Maybe*        | [varchar][5]       | Save 1 byte from `varchar`, but be ready for trailing spaces                       |
 | Character Strings    | [varchar][5]        | Yes  | Yes            | -                  |                                                                                    |
 | Character Strings    | [varchar(max)][5]   | Yes  | Yes            | -                  |                                                                                    |
 | Character Strings    | [nchar][6]          | Yes  | *Maybe*        | [nvarchar][6]      |                                                                                    |
