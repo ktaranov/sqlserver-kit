@@ -37,14 +37,14 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [Disk-Based Wide Table - SPARSE Column]  | U    | PascalCase |    128 | No     | No      | `_SPR` | Yes          | [A-z][0-9]   | `MyTable_SPR`                        |
 | [Table Column]                           |      | PascalCase |    128 | No     | No      | No     | Yes          | [A-z][0-9]   | `MyColumn`                           |
 | [Table Column SPARSE]                    |      | PascalCase |    128 | No     | No      | `_SPR` | Yes          | [A-z][0-9]   | `MyColumn_SPR`                       |
-| Table Default Values                     | D    | PascalCase |    128 | No     | `DF_`   | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
-| Table Check Column Constraint            | C    | PascalCase |    128 | No     | `CK_`   | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
-| Table Check Table Constraint             | C    | PascalCase |    128 | No     | `CTK_`  | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
-| Table Primary Key                        | PK   | PascalCase |    128 | No     | `PK_`   | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
-| Table Alternative Key                    | UQ   | PascalCase |    128 | No     | `AK_`   | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
-| Table Foreign Key                        | F    | PascalCase |    128 | No     | `FK_`   | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
-| Table Clustered Index                    |      | PascalCase |    128 | No     | `IXC`   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
-| Table Non Clustered Index                |      | PascalCase |    128 | No     | `IX_`   | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
+| [Columns Check Constraint]               | C    | PascalCase |    128 | No     | `CTK_`  | No     | Yes          | [A-z][0-9]   | `CTK_MyTable_MyColumn_AnotherColumn` |
+| [Column Check Constraint]                | C    | PascalCase |    128 | No     | `CK_`   | No     | Yes          | [A-z][0-9]   | `CK_MyTable_MyColumn`                |
+| [Column Default Values]                  | D    | PascalCase |    128 | No     | `DF_`   | No     | Yes          | [A-z][0-9]   | `DF_MyTable_MyColumn`                |
+| [Table Primary Key]                      | PK   | PascalCase |    128 | No     | `PK_`   | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
+| [Table Unique (Alternative) Key]         | UQ   | PascalCase |    128 | No     | `AK_`   | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
+| [Table Foreign Key]                      | F    | PascalCase |    128 | No     | `FK_`   | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
+| [Table Clustered Index]                  |      | PascalCase |    128 | No     | `IXC`   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
+| [Table Non Clustered Index]              |      | PascalCase |    128 | No     | `IX_`   | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
 | [DDL Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DDL` | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
 | [DML Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DML` | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
 | [Logon Trigger]                          | TR   | PascalCase |    128 | No     | `TR_`   | `_LOG` | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
@@ -75,6 +75,14 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [Disk-Based Wide Table - SPARSE Column]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/tables#wide-tables
 [Table Column]:https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-transact-sql
 [Table Column SPARSE]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/use-sparse-columns
+[Columns Check Constraint]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-check-constraints
+[Column Check Constraint]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-check-constraints
+[Column Default Values]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/specify-default-values-for-columns
+[Table Primary Key]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-primary-keys
+[Table Unique (Alternative) Key]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-unique-constraints
+[Table Foreign Key]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships
+[Table Clustered Index]:https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described
+[Table Non Clustered Index]:https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described
 
 [DDL Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
 [DML Trigger]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/dml-triggers
@@ -189,8 +197,10 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
- - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions (`CAST` instead `CONVERT`, `COALESE` instead `ISNULL`).
- - All finished expressions should have semicolon `;` at the end. This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated. This deprecation announcement means that you should always use semicolon terminators in new development.
+ - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions ([`CAST`][10] instead [`CONVERT`][10], [`COALESE`](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql) instead [`ISNULL`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnull-transact-sql), etc.).
+ - All finished expressions should have semicolon `;` at the end.
+   This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
+   This deprecation announcement means that you should always use semicolon terminators in new development.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/).
  - All script files should end with `GO` and line break.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc.
@@ -199,7 +209,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
  - Avoid non-standard column aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
-   SELECT p.LastName AS "Last Name"
+   SELECT
+          p.LastName AS "Last Name"
      FROM dbo.Person AS p;
    ```
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-non-standard-column-aliases).
@@ -487,7 +498,7 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
   /* Bad */
   DECLARE @tsql nvarchar(max);
   DECLARE @id   int = 2107154552;
-  SET @tsql = N'SELECT object_id, "name" FROM master.sys.tables WHERE object_id = ' + CONVERT(nvarchar(max), @id);
+  SET @tsql = N'SELECT object_id, "name" FROM master.sys.tables WHERE object_id = ' + CAST(@id AS nvarchar(max));
   EXEC sp_executesql @tsql;
 
   /* Good */
@@ -567,3 +578,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 
 [`sp_executesql`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql
 [`EXEC`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
+[10]:https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql
