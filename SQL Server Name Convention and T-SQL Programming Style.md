@@ -83,7 +83,6 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [Table Foreign Key]:https://docs.microsoft.com/en-us/sql/relational-databases/tables/create-foreign-key-relationships
 [Table Clustered Index]:https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described
 [Table Non Clustered Index]:https://docs.microsoft.com/en-us/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described
-
 [DDL Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
 [DML Trigger]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/dml-triggers
 [Logon Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
@@ -94,6 +93,13 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [Table-Valued Function]:https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine#TVF
 [Synonym]:https://docs.microsoft.com/en-us/sql/relational-databases/synonyms/synonyms-database-engine
 [Sequence]:https://docs.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers
+[CLR Assembly]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/assemblies/creating-an-assembly
+[CLR Stored Procedures]:https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/clr-stored-procedures
+[CLR Scalar User-Defined Function]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions
+[CLR Table-Valued Function]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-table-valued-functions
+[CLR User-Defined Aggregates]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-aggregates
+[CLR User-Defined Types]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types?view=sql-server-ver15
+[CLR Triggers]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/create-clr-triggers
 
 **[⬆ back to top](#table-of-contents)**
 
