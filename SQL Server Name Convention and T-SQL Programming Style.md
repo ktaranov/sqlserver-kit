@@ -251,11 +251,12 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
           FirstName
         , LastName
    ```
- - For SQL Server >= 2012 use `FETCH-OFFSET` instead `TOP`.
-   But if you use `TOP` avoid use `TOP` in a `SELECT` statement without an `ORDER BY`.
+ - For SQL Server >= 2012 use [`FETCH-OFFSET`] instead `TOP`.
+   But if you use [`TOP`] avoid use [`TOP`] in a `SELECT` statement without an `ORDER BY`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement).
- - Use `TOP` function with brackets because `TOP` has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
-   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause). Also `TOP` without brackets does not work with `UPDATE` and `DELETE` statements.
+ - If you using [`TOP`] (instead [`FETCH-OFFSET`]) function with round brackets because [`TOP`] has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause).
+   Also [`TOP`] without brackets does not work with `UPDATE` and `DELETE` statements.
 
    ```tsql
    /* Not working without brackets () */
@@ -513,6 +514,7 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
   ```
 - Do not debug the code that creates the dynamic T-SQL first, debug the generated T-SQL statement instead.
   Use `@debug` variable to print (or a `SELECT` statement if your dynamic T-SQL is over 4000 characters) dynamic statement instead executing it.
+  See example below.
 - Do take the time to format your dynamic T-SQL.
   ```tsql
   /* Bad @tsql formating */
@@ -582,6 +584,8 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 
 **[⬆ back to top](#table-of-contents)**
 
+[`TOP`]:https://docs.microsoft.com/it-it/sql/t-sql/queries/top-transact-sql
+[`FETCH-OFFSET`]:https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql
 [`sp_executesql`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql
 [`EXEC`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
 [10]:https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql
