@@ -252,9 +252,10 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
         , LastName
    ```
  - For SQL Server >= 2012 use [`FETCH-OFFSET`] instead `TOP`.
+   More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned)_
    But if you use [`TOP`] avoid use [`TOP`] in a `SELECT` statement without an `ORDER BY`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement).
- - If you using [`TOP`] (instead [`FETCH-OFFSET`]) function with round brackets because [`TOP`] has supports use of an expression, such as `(@Rows*2)`, or a subquery: `SELECT TOP(100) LastName …`.
+ - If you using [`TOP`] (instead recommended [`FETCH-OFFSET`]) function with round brackets because [`TOP`] has supports use of an expression, such as `(@Rows*2)`, or a sub query: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause).
    Also [`TOP`] without brackets does not work with `UPDATE` and `DELETE` statements.
 
@@ -265,6 +266,18 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    ```
  - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
    More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
+- Avoid specifying integers in the `ORDER BY` clause as positional representations of the columns in the select list.
+  The statement with integers is not as easily understood by others compared with specifying the actual column name.
+  In addition, changes to the select list, such as changing the column order or adding new columns, requires modifying the `ORDER BY` clause in order to avoid unexpected results.
+  More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#best-practices).
+  ```sql
+  /* bad */
+  SELECT ProductID, Name FROM Production.Production ORDER BY 2;
+
+  /* good */
+  SELECT ProductID, Name FROM Production.Production ORDER BY Name;
+  ```
+
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
    ```tsql
    CASE WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' /* is it a float? */
