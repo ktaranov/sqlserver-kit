@@ -174,6 +174,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [MidnightDBA ITBookWorm Video](http://midnightdba.itbookworm.com/Minion/Reindex)
    - [SQL Server Hangouts](https://www.youtube.com/playlist?list=PLvcGRPk71pmRi2UZHKfyruJKu_zHZ0ROc) (by Boris Hristov, Cathrine Wilhelmsen)
    - [Youtube russianVC](https://www.youtube.com/channel/UC0UA5gKnOq9TM1RNvMIArwg) (Russian)
+   - [Youtube SSMSBoost tutorials](https://www.youtube.com/channel/UCkm2ETlBDjs5V-kKb6j86zQ)
    - [Youtube Redgate Videos](https://www.youtube.com/redgate)
    - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
    - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
