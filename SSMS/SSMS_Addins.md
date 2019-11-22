@@ -3,7 +3,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
-| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-01-09   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
+| [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-08-19   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#sqlsmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                 | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
@@ -52,8 +52,18 @@ Free version: Yes<br/>
 Price: $150
 
 SSMSBoost add-in adds missing features and improves your productivity when working with Microsoft SQL Server in SQL Server Management Studio.
-
-The main goal of the project is to speed-up daily tasks of SQL DBA and SQL developers and to help you avoid destructive DML executions in production environments.
+ - SQL Code formatting
+ - GoTo Definition
+ - Run current statement
+ - Restore last session
+ - Export data to Excel
+ - Prohibit execution of UPDATE/DELETE without WHERE
+ - Connections manager
+ - Save/Visualize files stored in BLOB/TEXT fields
+ - Regions
+ - Code highlighting within INSERT/VALUES statement
+ - Connection coloring
+ - and even more...
 
 Licensing options: after 30 day trial period register and get free community license or buy the professional version.
 
