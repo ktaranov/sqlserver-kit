@@ -1,26 +1,26 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **296** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **300** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {20}
- - **[DC]**: Data compare {12}
+ - **[DC]**: Data compare {13}
  - **[ETL]**: Extract Download Load (ETL) Tools {8}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
  - **[M]**: Monitoring and alerting Tools {19}
- - **[MG]**: Migration tool {29}
- - **[MS]**: Management Studio (alternative for SSMS) {28}
+ - **[MG]**: Migration tool {30}
+ - **[MS]**: Management Studio (alternative for SSMS) {29}
  - **[REC]**: Recovery tools {7}
  - **[S]**: Search tools {3}
- - **[SC]**: Structure compare {18}
+ - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {111}
+ - **[?]**: Not yet classified {112}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -314,12 +314,16 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ESF Database Migration Toolkit](#esf)                           | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [ESF Database Migration Toolkit]            | 2019-10-23 | DBSofts Inc           | Shareware  | No             |  $322 |
 | [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters| Shareware  | No             |   $99 |
 | [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                | Shareware  | No             |  €109 |
+| [DiffDog](#diffdog)                                              | Oracle,MySQL,PostgreSQL,Other | No        | [DC],[SC]| [DiffDog]                                   | 2019-10-09 | Altova                | Shareware  | No             |  €109 |
 | [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
 | [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
 | [Enterprise Architect](#ea)                                      | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [Enterprise Architect]                      | 2019-10-31 | Sparx Systems Pty Ltd | Shareware  | No             |  $225 |
 | [MogwaiERDesignerNG](#mogwai)                                    | Oracle,MySQL,PostgreSQL       | No        | [DA]     | [MogwaiERDesignerNG]                        | 2019-08-22 | Mirko Sertic          | [LGPL-3.0] | Open Source    | No    |
 | [Xcase](#xcase)                                                  | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Xcase]                                     | 2018-06-19 | Resolution Software   | Shareware  | No             |  $799 |
 | [Oracle SQL Developer Data Modeler](#oracle-modeler)             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Oracle SQL Developer Data Modeler]         | 2019-08-01 | Oracle                | Shareware  | Yes            | No    |
+| [Exportizer](#exportizer)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Exportizer]                                | 2019-11-17 | Vitaliy Levchenko     | Shareware  | No             |   $29 |
+| [Reportizer](#reportizer)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Reportizer]                                | 2019-09-10 | Vitaliy Levchenko     | Shareware  | No             |   $39 |
+| [Database Tour](#database-tour)                                  | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [Database Tour]                             | 2019-11-20 | Vitaliy Levchenko     | Shareware  | No             |   $49 |
 
 
 <a id="ssms"></a>
@@ -4491,6 +4495,20 @@ Price: €109
 Altova DatabaseSpy is the unique multi-database query and design tool that even generates elegant charts directly from query results.
 
 
+## DiffDog
+<a id="databasespy"></a>
+Download page: [DatabaseSpy]<br/>
+Release date: 2019-10-09<br/>
+Support Version: 2008-2019<br/>
+Author: Altova<br/>
+Free version: No<br/>
+Price: €109
+
+Altova DiffDog® 2020 is a powerful diff/merge tool for files, folders, and databases.
+This easy-to-use synchronization tool quickly compares and merges text or source code files, Microsoft Word documents, directories, CSV files, databases, and XML Schemas via its intuitive visual interface.
+It indicates differences, intelligently merges content, and creates XSLT to convert XML data.
+
+
 ## ERBuilder data modeler
 <a id="erbuilder"></a>
 Download page: [ERBuilder data modeler]<br/>
@@ -4573,6 +4591,45 @@ Oracle SQL Developer Data Modeler is a free graphical tool that enhances product
 Using Oracle SQL Developer Data Modeler users can create, browse and edit, logical, relational, physical, multi-dimensional, and data type models.
 The Data Modeler provides forward and reverse engineering capabilities and supports collaborative development through integrated source code control.
 The Data Modeler can be used in both traditional and in Cloud environments.
+
+
+## Exportizer
+<a id="exportizer"></a>
+Download page: [Exportizer]<br/>
+Release date: 2019-11-17<br/>
+Support Version: 2008-2017<br/>
+Author: Vitaliy Levchenko<br/>
+Free version: No<br/>
+Price: $29
+
+You can export dbf to txt, csv to dbf, Paradox to xls, and make several other data conversions.
+Beside that, in Exportizer Pro or Exportizer Enterprise, it is possible to export DB2 to xlsx, SQLite to dBase, Access to HTML, Excel to Access, migrate Interbase to SQL Server, FDB to Excel, Oracle to PostgreSQL, and much more.
+
+
+## Reportizer
+<a id="reportizer"></a>
+Download page: [Reportizer]<br/>
+Release date: 2019-09-10<br/>
+Support Version: 2008-2017<br/>
+Author: Vitaliy Levchenko<br/>
+Free version: No<br/>
+Price: $39
+
+Reportizer is a software tool to create database and file reports.
+With Reportizer, you can create professional reports in a couple of minutes!
+
+
+## Database Tour
+<a id="database-tour"></a>
+Download page: [Database Tour]<br/>
+Release date: 2019-11-20<br/>
+Support Version: 2008-2017<br/>
+Author: Vitaliy Levchenko<br/>
+Free version: No<br/>
+Price: $49
+
+Database Tour is a multi-functional database tool for Windows.
+In addition, Database Tour Pro provides powerful command line and reporting functionality.
 
 
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
@@ -4873,6 +4930,9 @@ The Data Modeler can be used in both traditional and in Cloud environments.
 [MogwaiERDesignerNG]:https://github.com/mirkosertic/MogwaiERDesignerNG
 [Xcase]:https://www.xcase.com/
 [Oracle SQL Developer Data Modeler ]:https://www.oracle.com/database/technologies/appdev/datamodeler.html
+[Exportizer]:https://www.vlsoftware.net/exportizer/
+[Reportizer]:https://www.reportizer.net/
+[Database Tour]:https://www.databasetour.net/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
