@@ -132,10 +132,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Minion Enterprise](#minion-enterprise)                          | No                            | No        | [?]      | [Minion Enterprise]                         | ?          | MinionWare            |            | No             | $1500 |
 | [SQL Server Compression Estimator](#compression-estimator)       | No                            | No        | [?]      | [SQL Server Compression Estimator]          | 2011-06-02 | Bob Tavlor            |            | Yes            | No    |
 | [ClearTrace](#cleartrace)                                        | No                            | No        | [M]      | [ClearTrace]                                | 2016-07-07 | Bill Graziano         |            | Yes            | No    |
-| [ClearTraceXE](#cleartracexe)                                    | No                            | No        | [M]      | [ClearTrace]                                | 2019-09-04 | Bill Graziano         |            | Yes            | No    |
-| [Dell Security Explorer](#dell-security-explorer)                | No                            | No        | [?]      | [Dell Security Explorer]                    | 2015-06-25 | Dell                  |            | No             |  $850 |
-| [Dell LiteSpeed for SQL Server](#dell-litespeed-for-sql-server)  | No                            | No        | [?]      | [Dell LiteSpeed for SQL Server]             | 2015-07-31 | Dell                  |            | No             | ?     |
-| [Quest Toad for SQL Server](#quest-toad-for-sql-server)          | No                            | No        | [MS]     | [Quest Toad for SQL Server]                 | 2015-05-12 | Quest Software        |            | No             | ?     |
+| [ClearTraceXE](#cleartracexe)                                    | No                            | No        | [M]      | [ClearTraceXE]                              | 2019-09-04 | Bill Graziano         |            | Yes            | No    |
+| [Security Explorer](#security-explorer)                          | No                            | No        | [?]      | [Security Explorer]                         | 2015-06-25 | Quest Software        |            | No             |  $850 |
+| [LiteSpeed for SQL Server](#litespeed-for-sql-server)            | No                            | No        | [?]      | [LiteSpeed for SQL Server]                  | 2015-07-31 | Quest Software        |            | No             | ?     |
+| [Toad for SQL Server](#toad-for-sql-server)                      | No                            | No        | [MS]     | [Toad for SQL Server]                     | 2015-05-12 | Quest Software        |            | No             | ?     |
 | [Quest Spotlight on SQL Server Enterprise](#quest-spotlight)     | No                            | No        | [?]      | [Quest Spotlight]                           | 2016-03-10 | Quest Software        |            | No             | $2561 |
 | [Quest Foglight](#quest-foglight)                                | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Quest Foglight]                            | 2019-08-29 | Quest Software        |            | No             | ?     |
 | [Quest Enterprise Reporter](#quest-enterprise-reporter)          | No                            | No        | [?]      | [Quest Enterprise Reporter]                 | ?          | Quest Software        |            | No             |  $511 |
@@ -199,7 +199,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [EMS Data Comparer](#ems-data-comparer)                          | No                            | No        | [DC]     | [EMS Data Comparer]                         | 2012-11-16 | EMS                   |            | No             |   $47 |
 | [NitroAccelerator](#nitroaccelerator)                            | No                            | No        | [?]      | [NitroAccelerator]                          | 2016-07-10 | Nitrosphere           |            | No             | $1265 |
 | [ERwin Data Modeler](#erwin-data-modeler)                        | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERwin Data Modeler]                        | 2016-06-03 | ERwin                 |            | No             |  $810 |
-| [Quest Data Modeler](#toad-data-modeler)                         | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Toad Data Modeler]                         | 2016-06-16 | Quest Software        |            | No             |  $562 |
+| [Toad Data Point](#toad-data-point)                              | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Toad Data Point]                         | 2016-06-16 | Quest Software        |            | No             | ?     |
 | [SQL Power Architect](#sql-power-architect)                      | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [SQL Power Architect]                       | 2016-02-11 | SQLPower              |            | Yes            |  $995 |
 | [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                  | 2019-09-17 | Nizana Systems        |            | No             |   $99 |
 | [Navicat Data Modeler](#navicat-data-modeler)                    | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [Navicat Data Modeler]                      | 2016-08-01 | PremiumSoft           |            | No             |  $199 |
@@ -1901,9 +1901,9 @@ ClearTrace for Extended Events imports extended event files from SQL Server 2017
 - Enhance SQL Server Performance Tuning
 
 
-## Quest Security Explorer
-<a id="quest-security-explorer"></a>
-Download page: [Quest Security Explorer]<br/>
+## Security Explorer
+<a id="security-explorer"></a>
+Download page: [Security Explorer]<br/>
 Release date: 2008-2017<br/>
 Support Version: 2019-08-29<br/>
 Author: Quest Software<br/>
@@ -1915,9 +1915,9 @@ Plus, it complements Microsoft tools by solving key SQL Server challenges, so yo
 It also makes it easy to manage change, resolve issues quickly and promote the highest levels of code quality, performance and maintainability.
 
 
-## Quest LiteSpeed for SQL Server
-<a id="quest-litespeed-for-sql-server"></a>
-Download page: [Quest Security Explorer]<br/>
+## LiteSpeed for SQL Server
+<a id="litespeed-for-sql-server"></a>
+Download page: [LiteSpeed for SQL Server]<br/>
 Release date: 2019-08-29<br/>
 Support Version: 2008-2017<br/>
 Author: Quest Software<br/>
@@ -1929,9 +1929,9 @@ operations across the entire enterprise. Easily manage and monitor SQL Server pr
 With LiteSpeed, a complete workbench of SQL Server recovery tools are at your fingertips so you can get data back online — fast.
 
 
-## Quest Toad for SQL Server
-<a id="quest-toad-for-sql-server"></a>
-Download page: [Quest Toad for SQL Server]<br/>
+## Toad for SQL Server
+<a id="toad-for-sql-server"></a>
+Download page: [Toad for SQL Server]<br/>
 Release date: 2019-08-29<br/>
 Support Version: 2008-2017<br/>
 Author: Quest Software<br/>
@@ -1978,16 +1978,15 @@ Get a wealth of information at a fraction of the impact of conventional collecti
 
 
 ## Quest Enterprise Reporter
-<a id="dell-enterprise-reporter"></a>
-Download page: [Dell Enterprise Reporter]<br/>
+<a id="quest-enterprise-reporter"></a>
+Download page: [Quest Enterprise Reporter]<br/>
 Release date: ?<br/>
 Support Version: 2008-2017<br/>
 Author: Quest Software<br/>
 Free version: No<br/>
 Price: $511
 
-Dell Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility database security configuration,
-including users and logins, roles and database permissions
+Quest Enterprise Reporter for SQL Server provides ad-hoc reporting for visibility database security configuration, including users and logins, roles and database permissions.
 
 
 ## SQL Scripter
@@ -2902,21 +2901,20 @@ Price: $810
 ERwin Data Modeler is an industry-leading data modeling solution that provides a simple, visual interface to manage your complex data environment
 
 
-## Toad Data Modeler
-<a id="toad-data-modeler"></a>
-Download page: [Toad Data Modeler]<br/>
+## Toad Data Point
+<a id="toad-data-point"></a>
+Download page: [Toad Data Point]<br/>
 Release date: 2016-06-16<br/>
-Support Version: 2008/2012/2014<br/>
-Author: Dell<br/>
+Support Version: 2008-2017<br/>
+Author: Quest Software<br/>
 Free version: No<br/>
-Price: $562
+Price: ?
 
-Easily create high-quality data models. Toad Data Modeler enables you to rapidly deploy accurate changes to data structures across more than 20 different platforms.
-It allows you to construct logical and physical data models, compare and synchronize models, quickly generate complex SQL/DDL, create and modify scripts, as well as reverse and forward engineer both databases and data warehouse systems
+Query and Reporting Software Tool for Data Analysts
 
 
 ## SQL Power Architect
-<a id="toad-data-modeler"></a>
+<a id="sql-power-architect"></a>
 Download page: [SQL Power Architect]<br/>
 Release date: 2016-02-11<br/>
 Support Version: 2008/2012/2014<br/>
@@ -3974,9 +3972,9 @@ During schema migration, the tool automatically maps the corresponding schema fr
 After the schema has been migrated, the tools provides the option to move data with automatically generated scripts.
 
 
-<a id="dell-benchmark-factory"></a>
-## Dell Benchmark Factory
-Download page: [Dell Benchmark Factory]<br/>
+<a id="benchmark-factory"></a>
+## Benchmark Factory
+Download page: [Benchmark Factory]<br/>
 Release date: ?<br/>
 Support Version: 2008/2012/2014/2016/Azure<br/>
 Author: Quest Software<br/>
@@ -4548,7 +4546,7 @@ Free version: No<br/>
 Price: $225
 
 Integrated modeling platform.
-Enterprise Archite, t's built-in Data Modeling tools and profiles extend UML to provide an intuitive mapping from the database concepts of tables and relationships onto the UML concepts of classes and associations. These extensions also enable you to model database keys, triggers, constraints, RI and other relational database features.
+Enterprise Architect, t's built-in Data Modeling tools and profiles extend UML to provide an intuitive mapping from the database concepts of tables and relationships onto the UML concepts of classes and associations. These extensions also enable you to model database keys, triggers, constraints, RI and other relational database features.
 Enterprise Architect supports modeling of database schema and automatic generation of DDL scripts for eleven DBMS targets out-of-the-box: DB2, Firebird, MS Access, MySQL, MS SQL Server, Oracle, PostgreSQL
 
 
@@ -4770,8 +4768,8 @@ Repair corrupt & damaged MS SQL database files.
 [SQL Server Compression Estimator]:http://ssce.codeplex.com
 [ClearTrace]:http://www.scalesql.com/cleartrace/download.html
 [ClearTraceXE]:http://www.scalesql.com/cleartrace/download.html
-[Quest Security Explorer]:https://www.quest.com/products/security-explorer/
-[Quest LiteSpeed for SQL Server]:https://www.quest.com/products/litespeed-for-sql-server/
+[Security Explorer]:https://www.quest.com/products/security-explorer/
+[LiteSpeed for SQL Server]:https://www.quest.com/products/litespeed-for-sql-server/
 [Quest Toad for SQL Server]:https://www.quest.com/products/toad-for-sql-server/
 [Quest Spotlight]:https://www.quest.com/products/spotlight-on-sql-server-enterprise/
 [Quest Foglight]:https://www.quest.com/products/foglight-for-cross-platform-databases/
@@ -4836,7 +4834,7 @@ Repair corrupt & damaged MS SQL database files.
 [EMS Data Comparer]:http://www.sqlmanager.net/en/products/mssql/datacomparer
 [NitroAccelerator]:http://nitrosphere.com/nitroaccelerator/
 [ERwin Data Modeler]:http://erwin.com/products/data-modeler
-[Toad Data Modeler]:https://software.dell.com/products/toad-data-modeler/
+[Toad Data Point]:https://www.quest.com/products/toad-data-point/
 [SQL Power Architect]:http://www.sqlpower.ca/page/architect
 [DbWrench]:http://www.dbwrench.com/
 [Navicat Data Modeler]:https://www.navicat.com/products/navicat-data-modeler
@@ -4952,6 +4950,7 @@ Repair corrupt & damaged MS SQL database files.
 [ESF Database Migration Toolkit]:https://www.dbsofts.com/
 [MS SQL Migration Toolkit]:https://www.convert-in.com/msskit.htm
 [DatabaseSpy]:https://www.altova.com/databasespy
+[DiffDog]:https://www.altova.com/diffdog
 [ERBuilder data modeler]:https://soft-builder.com/
 [SQLDatabaseStudio]:https://www.sqldatabasestudio.com/
 [Enterprise Architect]:https://sparxsystems.com/products/ea/index.html
