@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **300** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **302** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -13,9 +13,9 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
  - **[M]**: Monitoring and alerting Tools {19}
- - **[MG]**: Migration tool {30}
+ - **[MG]**: Migration tool {31}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
- - **[REC]**: Recovery tools {7}
+ - **[REC]**: Recovery tools {8}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
@@ -24,7 +24,7 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-10-02 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-11-04 | Microsoft             |            | Yes            | No    |
 | [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-11-04 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
@@ -324,12 +324,14 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Exportizer](#exportizer)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Exportizer]                                | 2019-11-17 | Vitaliy Levchenko     | Shareware  | No             |   $29 |
 | [Reportizer](#reportizer)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Reportizer]                                | 2019-09-10 | Vitaliy Levchenko     | Shareware  | No             |   $39 |
 | [Database Tour](#database-tour)                                  | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [Database Tour]                             | 2019-11-20 | Vitaliy Levchenko     | Shareware  | No             |   $49 |
+| [Ispirer MnMATK](#mnmatk)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Ispirer MnMATK]                            | ?          |  Ispirer Systems      | Shareware  | No             |     ? |
+| [SQL Database Recovery](#sql-database-recovery)                  | No                            | No        | [REC]    | [SQL Database Recovery]                     | 2019-09-10 | KernelApps Private    | Shareware  | No             |  $399 |
 
 
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2019-09-23<br/>
+Release date: 2019-11-04<br/>
 Support Version: 2005-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -4632,6 +4634,32 @@ Database Tour is a multi-functional database tool for Windows.
 In addition, Database Tour Pro provides powerful command line and reporting functionality.
 
 
+## Ispirer MnMATK
+<a id="mnmatk"></a>
+Download page: [Ispirer MnMATK]<br/>
+Release date: 2019-10-23<br/>
+Support Version: 2008-2017<br/>
+Author: Ispirer Systems<br/>
+Free version: No<br/>
+Price: ?
+
+Ispirer Migration and Modernization Assessment Toolkit (Ispirer MnMATK) is designed to collect statistical information about your database or application, as well as better realize the size of a migration project.
+The software provides a full report on the number of tables, the amount of data, the number of database objects, and the number of lines of code in each type of database object.
+The toolkit consists of Migration Assessment Wizard designed to collect and evaluate information about the database, and Migration Assessment Studio designed to collect and evaluate information about the application.
+
+
+## SQL Database Recovery
+<a id="sql-database-recovery"></a>
+Download page: [SQL Database Recovery]<br/>
+Release date: 2019-09-10<br/>
+Support Version: 2008-2019<br/>
+Author: KernelApps Private<br/>
+Free version: No<br/>
+Price: 399
+
+Repair corrupt & damaged MS SQL database files.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4933,6 +4961,8 @@ In addition, Database Tour Pro provides powerful command line and reporting func
 [Exportizer]:https://www.vlsoftware.net/exportizer/
 [Reportizer]:https://www.reportizer.net/
 [Database Tour]:https://www.databasetour.net/
+[Ispirer MnMATK]:https://www.ispirer.com/download/download-sqlways-assessment
+[SQL Database Recovery]:https://www.nucleustechnologies.com/sql-recovery.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
