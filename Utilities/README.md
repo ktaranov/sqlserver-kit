@@ -20,7 +20,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {112}
+ - **[?]**: Not yet classified {113}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -275,8 +275,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [BimlExpress](#bimlexpress)                                      | No                            | No        | [?]      | [BimlExpress]                               | ?          | Varigence             |            | No             | No    |
 | [BIDS Helper](#bidshelper)                                       | No                            | No        | [?]      | [BIDS Helper]                               | 2015-03-17 | Microsoft             |            | Open Source    | No    |
 | [Azure Data Warehouse Migration Utility](#azure-migration)       | No                            | No        | [MG]     | [Azure Data Warehouse Migration Utility]    | ?          | Microsoft             |            | ?              | ?     |
-| [Quest Benchmark Factory](#quest-benchmark-factory)              | Oracle,MySQL,Other            | No        | [T]      | [Quest Benchmark Factory]                   | ?          | Quest Software        |            | No             | $4413 |
-| [manduka](#maduka)                                               | Oracle                        | Linux,Mac | [?]      | [manduka]                                   | 2017-03-08 | Virtusa Corporation   |            | Yes            | No    |
+| [Benchmark Factory](#benchmark-factory)                          | Oracle,MySQL,Other            | No        | [T]      | [Benchmark Factory]                         | ?          | Quest Software        |            | No             | $4413 |
+| [manduka](#manduka)                                              | Oracle                        | Linux,Mac | [?]      | [manduka]                                   | 2017-03-08 | Virtusa Corporation   |            | Yes            | No    |
 | [PowerBI Desktop](#powerbi-desktop)                              | Oracle,MySQL,PostgreSQL,Other | No        | [BI]     | [PowerBI Desktop]                           | 2017-07-11 | Microsoft             |            | Yes            |  ?    |
 | [Stellar Phoenix SQL Database Repair](#stellar-phoenix)          | No                            | No        | [REC]    | [Stellar Phoenix SQL Database Repair]       | 2017-07-05 | Stellar Technology    |            | No             |  $349 |
 | [DataNumen SQL Recovery](#datanumen-sql-recovery)                | No                            | No        | [REC]    | [DataNumen SQL Recovery]                    | 2017-03-20 | DataNumen             |            | No             |  $500 |
@@ -4770,7 +4770,7 @@ Repair corrupt & damaged MS SQL database files.
 [ClearTraceXE]:http://www.scalesql.com/cleartrace/download.html
 [Security Explorer]:https://www.quest.com/products/security-explorer/
 [LiteSpeed for SQL Server]:https://www.quest.com/products/litespeed-for-sql-server/
-[Quest Toad for SQL Server]:https://www.quest.com/products/toad-for-sql-server/
+[Toad for SQL Server]:https://www.quest.com/products/toad-for-sql-server/
 [Quest Spotlight]:https://www.quest.com/products/spotlight-on-sql-server-enterprise/
 [Quest Foglight]:https://www.quest.com/products/foglight-for-cross-platform-databases/
 [Quest Enterprise Reporter]:https://www.quest.com/enterprise-reporter/
@@ -4911,7 +4911,7 @@ Repair corrupt & damaged MS SQL database files.
 [BimlExpress]:https://www.varigence.com/BimlExpress
 [BIDS Helper]:https://bidshelper.codeplex.com
 [Azure Data Warehouse Migration Utility]:https://docs.microsoft.com/en-us/azure/sql-data-warehouse/sql-data-warehouse-migrate-migration-utility
-[Quest Benchmark Factory]:https://www.quest.com/products/benchmark-factory
+[Benchmark Factory]:https://www.quest.com/products/benchmark-factory
 [manduka]:http://www.manduka.tech/#/home
 [PowerBI Desktop]:https://powerbi.microsoft.com/en-us/desktop/
 [Stellar Phoenix SQL Database Repair]:https://www.stellarinfo.com/sql-recovery.php

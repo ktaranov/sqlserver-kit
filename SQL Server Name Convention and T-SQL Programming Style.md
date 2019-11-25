@@ -55,13 +55,13 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [Table-Valued Function]                  | FN   | PascalCase |    128 | No     | `tvf_`  | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
 | [Synonym]                                | SN   | camelCase  |    128 | No     | `sy_`   | No     | No           | [A-z][0-9]   | `sy_logicalName`                     |
 | [Sequence]                               | SO   | PascalCase |    128 | No     | `sq_`   | No     | No           | [A-z][0-9]   | `sq_TableName`                       |
-| CLR Assembly                             |      | PascalCase |    128 | No     | `CA `   | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
-| CLR Stored Procedures                    | PC   | PascalCase |    128 | No     | `pc_`   | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
-| CLR Scalar User-Defined Function         |      | PascalCase |    128 | No     | `cudf_` | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
-| CLR Table-Valued Function                |      | PascalCase |    128 | No     | `ctvf_` | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
-| CLR User-Defined Aggregates              |      | PascalCase |    128 | No     | `ca_`   | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
-| CLR User-Defined Types                   |      | PascalCase |    128 | No     | `ct_`   | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
-| CLR Triggers                             |      | PascalCase |    128 | No     | `ctr_`  | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
+| [CLR Assembly]                           |      | PascalCase |    128 | No     | `CA `   | No     | Yes          | [A-z][0-9]   | `CALogicalName`                      |
+| [CLR Stored Procedures]                  | PC   | PascalCase |    128 | No     | `pc_`   | No     | Yes          | [A-z][0-9]   | `pc_CAName_LogicalName`              |
+| [CLR Scalar User-Defined Function]       |      | PascalCase |    128 | No     | `cudf_` | No     | No           | [A-z][0-9]   | `cudf_CAName_LogicalName`            |
+| [CLR Table-Valued Function]              |      | PascalCase |    128 | No     | `ctvf_` | No     | No           | [A-z][0-9]   | `ctvf_CAName_LogicalName`            |
+| [CLR User-Defined Aggregates]            |      | PascalCase |    128 | No     | `ca_`   | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
+| [CLR User-Defined Types]                 |      | PascalCase |    128 | No     | `ct_`   | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
+| [CLR Triggers]                           |      | PascalCase |    128 | No     | `ctr_`  | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
 
 [Database]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-database-transact-sql
 [Schema]:https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-schema
@@ -98,7 +98,7 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [CLR Scalar User-Defined Function]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions
 [CLR Table-Valued Function]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-table-valued-functions
 [CLR User-Defined Aggregates]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-aggregates
-[CLR User-Defined Types]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types?view=sql-server-ver15
+[CLR User-Defined Types]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types
 [CLR Triggers]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/create-clr-triggers
 
 **[⬆ back to top](#table-of-contents)**
@@ -251,8 +251,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
           FirstName
         , LastName
    ```
- - For SQL Server >= 2012 use [`FETCH-OFFSET`] instead `TOP`.
-   More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned)_
+ - For SQL Server >= 2012 use [`FETCH-OFFSET`] instead [`TOP`].
+   More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned).
    But if you use [`TOP`] avoid use [`TOP`] in a `SELECT` statement without an `ORDER BY`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-top-without-order-select-statement).
  - If you using [`TOP`] (instead recommended [`FETCH-OFFSET`]) function with round brackets because [`TOP`] has supports use of an expression, such as `(@Rows*2)`, or a sub query: `SELECT TOP(100) LastName …`.
@@ -303,7 +303,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://sqlblog.org/2009/10/16/bad-habits-to-kick-mis-handling-date-range-queries).
  - Avoid using [hints](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql) except `RECOMPILE` if needed and `NOEXPAND` (see next tip).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7).
- - Use `NOEXPAND` hint for [indexed views](https://docs.microsoft.com/sql/relational-databases/views/create-indexed-views) on non enterprise editions of SQL Server to let the query optimizer know that we have indexes.
+ - Use [`NOEXPAND`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table#using-noexpand) hint for [indexed views](https://docs.microsoft.com/sql/relational-databases/views/create-indexed-views) on non enterprise editions and Prior to SQL Server 2016 (13.x) SP1 to let the query optimizer know that we have indexes.
    More details [here](https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/).
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement).
  - Use only ISO standard JOINS syntaxes. The *old style* Microsoft/Sybase `JOIN` style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used.
