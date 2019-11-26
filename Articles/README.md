@@ -908,6 +908,13 @@ Articles types:
 | [Scalar functions and improvements in SQL Server 2019]                                                                  | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
 | [Scalar functions in SQL server 2019, part 2]                                                                           | Tibor Karaszi's                          | 2019-11-07 | [DEV]       |
 | [Dos and Don'ts of Dynamic SQL]                                                                                         | Thom Andrews                             | 2019-04-29 | [DEV][DBA]  |
+| [Differences Between Sql Server TEXT and VARCHAR(MAX) Data Type]                                                        | Basavaraj Biradar                        | 2016-05-11 | [DEV][DBA]  |
+| [VARBINARY(MAX) Tames the BLOB]                                                                                         | Michael Otey                             | 2006-08-22 | [DEV][DBA]  |
+| [Query Store Options in SSMS 18.4]                                                                                      | Erin Stellato                            | 2019-11-12 | [DBA][QS]   |
+| [Query Store Performance Overhead: What you need to know]                                                               | Erin Stellato                            | 2018-11-06 | [DBA][QS]   |
+| [How to fork a GitHub repository and contribute to an open source project]                                              | Rob Sewell                               | 2019-11-29 | [DBA][DEV]  |
+| [But I Need To Compare Two Date Columns In My Where Clause]                                                             | Eric Darling                             | 2019-11-27 | [DBA][IDX]  |
+| [The Difference Between Fault Tolerance, High Availability, & Disaster Recovery]                                        | Patrick Benson                           | 2014-02-25 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1793,3 +1800,11 @@ Articles types:
 [Scalar functions and improvements in SQL Server 2019]:http://sqlblog.karaszi.com/scalar-functions-and-improvements-in-sql-server-2019/
 [Scalar functions in SQL server 2019, part 2]:http://sqlblog.karaszi.com/scalar-functions-in-sql-server-2019-part-2/
 [Dos and Don'ts of Dynamic SQL]:https://www.sqlservercentral.com/articles/dos-and-donts-of-dynamic-sql
+[Differences Between Sql Server TEXT and VARCHAR(MAX) Data Type]:https://sqlhints.com/2016/05/11/differences-between-sql-server-text-and-varcharmax-data-type/
+[VARBINARY(MAX) Tames the BLOB]:https://www.itprotoday.com/microsoft-visual-studio/varbinarymax-tames-blob
+[Query Store Options in SSMS 18.4]:https://www.sqlskills.com/blogs/erin/query-store-options-in-ssms-18-4/
+[Query Store Performance Overhead: What you need to know]:https://www.sqlskills.com/blogs/erin/query-store-performance-overhead/
+[How to fork a GitHub repository and contribute to an open source project]:https://sqldbawithabeard.com/2019/11/29/how-to-fork-a-github-repository-and-contribute-to-an-open-source-project/
+[But I Need To Compare Two Date Columns In My Where Clause]:https://www.erikdarlingdata.com/2019/11/but-i-need-to-compare-two-date-columns-in-my-where-clause/
+[How Many Bytes Per Character in SQL Server: a Completely Complete Guide]:https://sqlquantumleap.com/2019/11/22/how-many-bytes-per-character-in-sql-server-a-completely-complete-guide/
+[The Difference Between Fault Tolerance, High Availability, & Disaster Recovery]:http://www.pbenson.net/2014/02/the-difference-between-fault-tolerance-high-availability-disaster-recovery/
