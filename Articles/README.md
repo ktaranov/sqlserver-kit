@@ -915,6 +915,9 @@ Articles types:
 | [How to fork a GitHub repository and contribute to an open source project]                                              | Rob Sewell                               | 2019-11-29 | [DBA][DEV]  |
 | [But I Need To Compare Two Date Columns In My Where Clause]                                                             | Eric Darling                             | 2019-11-27 | [DBA][IDX]  |
 | [The Difference Between Fault Tolerance, High Availability, & Disaster Recovery]                                        | Patrick Benson                           | 2014-02-25 | [DBA][DEV]  |
+| [Why LOB data makes shrink run slooooowly]                                                                              | Paul Randal                              | 2010-05-11 | [DBA]       |
+| [SQL Server 2019 Scalar UDF inlining - out of memory in some cases]                                                     | @sqL_handLe                              | 2019-11-19 | [DBA][DEV]  |
+| [Is it true that editing a single row in Management Studio empties and reloads the entire table?]                       | Randolph West                            | 2019-11-27 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1808,3 +1811,6 @@ Articles types:
 [But I Need To Compare Two Date Columns In My Where Clause]:https://www.erikdarlingdata.com/2019/11/but-i-need-to-compare-two-date-columns-in-my-where-clause/
 [How Many Bytes Per Character in SQL Server: a Completely Complete Guide]:https://sqlquantumleap.com/2019/11/22/how-many-bytes-per-character-in-sql-server-a-completely-complete-guide/
 [The Difference Between Fault Tolerance, High Availability, & Disaster Recovery]:http://www.pbenson.net/2014/02/the-difference-between-fault-tolerance-high-availability-disaster-recovery/
+[Why LOB data makes shrink run slooooowly]:https://www.sqlskills.com/blogs/paul/why-lob-data-makes-shrink-run-slooooowly-t-sql-tuesday-006/
+[SQL Server 2019 Scalar UDF inlining - out of memory in some cases]:https://sql-sasquatch.blogspot.com/2019/11/sql-server-2019-udf-inlining-oom-in.html
+[Is it true that editing a single row in Management Studio empties and reloads the entire table?]:https://bornsql.ca/blog/is-it-true-that-editing-a-single-row-in-management-studio-empties-and-reloads-the-entire-table/
