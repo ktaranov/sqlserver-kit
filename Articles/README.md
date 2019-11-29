@@ -918,6 +918,8 @@ Articles types:
 | [Why LOB data makes shrink run slooooowly]                                                                              | Paul Randal                              | 2010-05-11 | [DBA]       |
 | [SQL Server 2019 Scalar UDF inlining - out of memory in some cases]                                                     | @sqL_handLe                              | 2019-11-19 | [DBA][DEV]  |
 | [Is it true that editing a single row in Management Studio empties and reloads the entire table?]                       | Randolph West                            | 2019-11-27 | [DBA][DEV]  |
+| [A Guide to SQL Naming Conventions]                                                                                     | Lukas Eder                               | 2019-10-29 | [DBA][DEV]  |
+| [Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]                                        | Lukas Eder                               | 2019-11-13 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1814,3 +1816,5 @@ Articles types:
 [Why LOB data makes shrink run slooooowly]:https://www.sqlskills.com/blogs/paul/why-lob-data-makes-shrink-run-slooooowly-t-sql-tuesday-006/
 [SQL Server 2019 Scalar UDF inlining - out of memory in some cases]:https://sql-sasquatch.blogspot.com/2019/11/sql-server-2019-udf-inlining-oom-in.html
 [Is it true that editing a single row in Management Studio empties and reloads the entire table?]:https://bornsql.ca/blog/is-it-true-that-editing-a-single-row-in-management-studio-empties-and-reloads-the-entire-table/
+[A Guide to SQL Naming Conventions]:https://blog.jooq.org/2019/10/29/a-guide-to-sql-naming-conventions/
+[Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]:https://blog.jooq.org/2019/11/13/stop-mapping-stuff-in-your-middleware-use-sqls-xml-or-json-operators-instead/
