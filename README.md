@@ -530,6 +530,7 @@ SQL Server:
  - [Troubleshooting SQL Server Performance](https://info.sentryone.com/ebook-troubleshooting-sql-server-performance) (by Kevin Kline)
  - [Azure Machine Learning Studio: An Unleashed Guide](http://radacad.com/book-azure-machine-learning-studio-an-unleashed-guide) (by Leila Etaati)
  - [Nutanix Best Practices for SQL Server 2016](https://www.nutanix.com/viewer.html?type=pdf&lpurl=virtualize-microsoft-sql-server-hyperconverged-infrastructure.php&fromCampaign=true) (by Nutanix, Inc.)
+ - [Cloud Analytics with Microsoft Azure](https://azure.microsoft.com/en-us/resources/cloud-analytics-with-microsoft-azure/) (by Has Altaiar, Jack Lee, Michael Peña)
 
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)

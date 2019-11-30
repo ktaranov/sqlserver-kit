@@ -920,6 +920,7 @@ Articles types:
 | [Is it true that editing a single row in Management Studio empties and reloads the entire table?]                       | Randolph West                            | 2019-11-27 | [DBA][DEV]  |
 | [A Guide to SQL Naming Conventions]                                                                                     | Lukas Eder                               | 2019-10-29 | [DBA][DEV]  |
 | [Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]                                        | Lukas Eder                               | 2019-11-13 | [DBA][DEV]  |
+| [How Does Accelerated Database Recovery Work]                                                                           | Forrest McDaniel                         | 2019-11-26 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1818,3 +1819,4 @@ Articles types:
 [Is it true that editing a single row in Management Studio empties and reloads the entire table?]:https://bornsql.ca/blog/is-it-true-that-editing-a-single-row-in-management-studio-empties-and-reloads-the-entire-table/
 [A Guide to SQL Naming Conventions]:https://blog.jooq.org/2019/10/29/a-guide-to-sql-naming-conventions/
 [Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]:https://blog.jooq.org/2019/11/13/stop-mapping-stuff-in-your-middleware-use-sqls-xml-or-json-operators-instead/
+[How Does Accelerated Database Recovery Work]:https://www.red-gate.com/simple-talk/sql/database-administration/how-does-accelerated-database-recovery-work/

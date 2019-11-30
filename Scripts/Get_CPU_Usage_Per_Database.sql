@@ -3,7 +3,7 @@
   <summary>Get CPU Usage Per Database</summary>
   <returns>1 data set with 2 columns: database name and CPUTimeAsPercentage.</returns>
   <issues>No</issues>
-  <author>Eli Leiba </author>
+  <author>Eli Leiba</author>
   <created>2019-11-05</created>
   <modified>2019-11-05</modified>
   <version>1.0</version>
