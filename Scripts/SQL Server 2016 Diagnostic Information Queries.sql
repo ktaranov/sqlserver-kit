@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: November 4, 2019
+-- Last Modified: December 4, 2019
 -- https://www.sqlskills.com/blogs/glenn/
 -- http://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -812,13 +812,12 @@ ORDER BY db.[name] OPTION (RECOMPILE);
 
 
 -- Missing Indexes for all databases by Index Advantage  (Query 32) (Missing Indexes All Databases)
-SELECT CONVERT(decimal(18,2), user_seeks * avg_total_user_cost * (avg_user_impact * 0.01)) AS [index_advantage],
+SELECT CONVERT(decimal(18,2), migs.user_seeks * migs.avg_total_user_cost * (migs.avg_user_impact * 0.01)) AS [index_advantage],
 FORMAT(migs.last_user_seek, 'yyyy-MM-dd HH:mm:ss') AS [last_user_seek], 
 mid.[statement] AS [Database.Schema.Table],
 COUNT(1) OVER(PARTITION BY mid.[statement]) AS [missing_indexes_for_table],
 COUNT(1) OVER(PARTITION BY mid.[statement], equality_columns) AS [similar_missing_indexes_for_table],
-mid.equality_columns, mid.inequality_columns, mid.included_columns,
-migs.unique_compiles, migs.user_seeks, 
+mid.equality_columns, mid.inequality_columns, mid.included_columns, migs.user_seeks, 
 CONVERT(decimal(18,2), migs.avg_total_user_cost) AS [avg_total_user_cost], migs.avg_user_impact 
 FROM sys.dm_db_missing_index_group_stats AS migs WITH (NOLOCK)
 INNER JOIN sys.dm_db_missing_index_groups AS mig WITH (NOLOCK)
@@ -833,6 +832,7 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Also look at avg_user_impact and avg_total_user_cost to help determine importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
+-- Håkan Winther has given me some great suggestions for this query
 
 -- SQL Server Index Design Guide
 -- https://bit.ly/2qtZr4N
@@ -1574,13 +1574,10 @@ ORDER BY [Difference] DESC, [Total Writes] DESC, [Total Reads] ASC OPTION (RECOM
 
 
 -- Missing Indexes for current database by Index Advantage  (Query 63) (Missing Indexes)
-SELECT CONVERT(decimal(18,2), user_seeks * avg_total_user_cost * (avg_user_impact * 0.01)) AS [index_advantage], 
+SELECT DISTINCT CONVERT(decimal(18,2), migs.user_seeks * migs.avg_total_user_cost * (migs.avg_user_impact * 0.01)) AS [index_advantage], 
 migs.last_user_seek, mid.[statement] AS [Database.Schema.Table],
-COUNT(1) OVER(PARTITION BY mid.[statement]) AS [missing_indexes_for_table],
-COUNT(1) OVER(PARTITION BY mid.[statement], equality_columns) AS [similar_missing_indexes_for_table],
 mid.equality_columns, mid.inequality_columns, mid.included_columns,
-migs.unique_compiles, migs.user_seeks, 
-CONVERT(decimal(18,2), migs.avg_total_user_cost) AS [avg_total_user_cost], migs.avg_user_impact,
+migs.user_seeks, migs.avg_total_user_cost, migs.avg_user_impact,
 OBJECT_NAME(mid.[object_id]) AS [Table Name], p.rows AS [Table Rows]
 FROM sys.dm_db_missing_index_group_stats AS migs WITH (NOLOCK)
 INNER JOIN sys.dm_db_missing_index_groups AS mig WITH (NOLOCK)
@@ -1597,12 +1594,13 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Look at index advantage, last user seek time, number of user seeks to help determine source and importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
+-- Håkan Winther has given me some great suggestions for this query
 
 
 -- Find missing index warnings for cached plans in the current database  (Query 64) (Missing Index Warnings)
 -- Note: This query could take some time on a busy instance
 SELECT TOP(25) OBJECT_NAME(objectid) AS [ObjectName], 
-               cp.objtype, cp.usecounts, cp.size_in_bytes, query_plan
+               cp.objtype, cp.usecounts, cp.size_in_bytes, qp.query_plan
 FROM sys.dm_exec_cached_plans AS cp WITH (NOLOCK)
 CROSS APPLY sys.dm_exec_query_plan(cp.plan_handle) AS qp
 WHERE CAST(query_plan AS NVARCHAR(MAX)) LIKE N'%MissingIndex%'
@@ -1643,7 +1641,7 @@ ORDER BY [BufferCount] DESC OPTION (RECOMPILE);
 
 -- Get Table names, row counts, and compression status for clustered index or heap  (Query 66) (Table Sizes)
 SELECT SCHEMA_NAME(o.Schema_ID) AS [Schema Name], OBJECT_NAME(p.object_id) AS [ObjectName], 
-SUM(p.Rows) AS [RowCount], data_compression_desc AS [CompressionType]
+SUM(p.Rows) AS [RowCount], p.data_compression_desc AS [Compression Type]
 FROM sys.partitions AS p WITH (NOLOCK)
 INNER JOIN sys.objects AS o WITH (NOLOCK)
 ON p.object_id = o.object_id
@@ -1954,20 +1952,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 
 
--- Sign up for Microsoft Visual Studio Dev Essentials and get a free three month pass to Pluralsight
-
 -- Microsoft Visual Studio Dev Essentials
--- http://bit.ly/1q6xbDL
+-- https://bit.ly/2qjNRxi
 
-
--- Sign up for Microsoft Azure Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
-
--- Microsoft Azure Essentials
--- https://bit.ly/2JMWe8x
-
+-- Microsoft Azure Learn
+-- https://bit.ly/2O0Hacc
 
 -- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
 -- https://bit.ly/2ftKVrX
-
 
 

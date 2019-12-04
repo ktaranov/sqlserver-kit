@@ -1,7 +1,7 @@
 
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: April 19, 2019
+-- Last Modified: November 19, 2019
 -- https://www.sqlserverperformance.wordpress.com/
 -- https://www.sqlskills.com/blogs/glenn/
 -- Twitter: GlennAlanBerry
@@ -1153,14 +1153,16 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 
 
--- These five Pluralsight Courses go into more detail about how to run these queries and interpret the results
+-- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
+
+-- Azure SQL Database: Diagnosing Performance Issues with DMVs
+-- https://bit.ly/2meDRCN
 
 -- SQL Server 2017: Diagnosing Performance Issues with DMVs
 -- https://bit.ly/2FqCeti
 
 -- SQL Server 2017: Diagnosing Configuration Issues with DMVs
 -- https://bit.ly/2MSUDUL
-
 
 -- SQL Server 2014 DMV Diagnostic Queries – Part 1 
 -- https://bit.ly/2plxCer
@@ -1173,19 +1175,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 
 
--- Sign up for Microsoft Visual Studio Dev Essentials and get a free three month pass to Pluralsight
-
 -- Microsoft Visual Studio Dev Essentials
--- http://bit.ly/1q6xbDL
+-- https://bit.ly/2qjNRxi
 
+-- Microsoft Azure Learn
+-- https://bit.ly/2O0Hacc
 
--- Sign up for Microsoft Azure Essentials and get lots of free Azure usage credits, MCP exam voucher, three month Pluralsight subscription
-
--- Microsoft Azure Essentials
--- https://bit.ly/2JMWe8x
-
-
--- August 2017 blog series about upgrading and migrating SQL Server
+-- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
 -- https://bit.ly/2ftKVrX
 
 
