@@ -921,6 +921,9 @@ Articles types:
 | [A Guide to SQL Naming Conventions]                                                                                     | Lukas Eder                               | 2019-10-29 | [DBA][DEV]  |
 | [Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]                                        | Lukas Eder                               | 2019-11-13 | [DBA][DEV]  |
 | [How Does Accelerated Database Recovery Work]                                                                           | Forrest McDaniel                         | 2019-11-26 | [DBA]       |
+| [Recover SQL Server Resource Database]                                                                                  | Daniel Farina                            | 2019-10-25 | [DBA]       |
+| [What’s in that database? Getting information about routines]                                                           | Phil Factor                              | 2019-11-04 | [DBA][DEV]  |
+| [The Gloop: An Easier way of Managing SQL Server Documentation]                                                         | Phil Factor                              | 2019-12-03 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1820,3 +1823,6 @@ Articles types:
 [A Guide to SQL Naming Conventions]:https://blog.jooq.org/2019/10/29/a-guide-to-sql-naming-conventions/
 [Stop Mapping Stuff in Your Middleware. Use SQL’s XML or JSON Operators Instead]:https://blog.jooq.org/2019/11/13/stop-mapping-stuff-in-your-middleware-use-sqls-xml-or-json-operators-instead/
 [How Does Accelerated Database Recovery Work]:https://www.red-gate.com/simple-talk/sql/database-administration/how-does-accelerated-database-recovery-work/
+[Recover SQL Server Resource Database]:https://www.mssqltips.com/sqlservertip/6194/recover-sql-server-resource-database/
+[What’s in that database? Getting information about routines]:https://www.red-gate.com/simple-talk/blogs/whats-in-that-database-getting-information-about-routines/
+[The Gloop: An Easier way of Managing SQL Server Documentation]:https://www.red-gate.com/simple-talk/blogs/the-gloop-an-easier-way-of-managing-sql-server-documentation/

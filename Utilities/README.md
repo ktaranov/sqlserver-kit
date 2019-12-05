@@ -315,7 +315,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [MS SQL Migration Toolkit](#msskit)                              | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [MS SQL Migration Toolkit]                  | 2019-04-22 | Intelligent Converters| Shareware  | No             |   $99 |
 | [DatabasesSpy](#databasespy)                                     | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [DatabaseSpy]                               | 2019-10-09 | Altova                | Shareware  | No             |  €109 |
 | [DiffDog](#diffdog)                                              | Oracle,MySQL,PostgreSQL,Other | No        | [DC],[SC]| [DiffDog]                                   | 2019-10-09 | Altova                | Shareware  | No             |  €109 |
-| [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-07-04 | Softbuilder           |            | Yes            |   $95 |
+| [ERBuilder data modeler](#erbuilder)                             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERBuilder data modeler]                    | 2019-11-14 | Softbuilder           |            | Yes            |   $99 |
 | [SQLDatabaseStudio](#sqldatabasestudio)                          | No                            | No        | [MS]     | [SQLDatabaseStudio]                         | 2017-05-10 | Jan Pivarcek          |            | Yes            |  $215 |
 | [Enterprise Architect](#ea)                                      | Oracle,MySQL,PostgreSQL,Other | Online    | [DA]     | [Enterprise Architect]                      | 2019-10-31 | Sparx Systems Pty Ltd | Shareware  | No             |  $225 |
 | [MogwaiERDesignerNG](#mogwai)                                    | Oracle,MySQL,PostgreSQL       | No        | [DA]     | [MogwaiERDesignerNG]                        | 2019-08-22 | Mirko Sertic          | [LGPL-3.0] | Open Source    | No    |
@@ -4512,11 +4512,11 @@ It indicates differences, intelligently merges content, and creates XSLT to conv
 ## ERBuilder data modeler
 <a id="erbuilder"></a>
 Download page: [ERBuilder data modeler]<br/>
-Release date: 2019-07-04<br/>
-Support Version: 2008-2017/AzureSQL<br/>
+Release date: 2019-11-14<br/>
+Support Version: 2008-2019/AzureSQL<br/>
 Author: Softbuilder<br/>
 Free version: Yes<br/>
-Price: $280
+Price: $99
 
 ERBuilder Data Modeler allows developers to graphically design databases by using entity relationship diagrams, and automatically generates the most popular SQL databases.
 It also allows developers to easily deploy databases by offering a sophisticated visual data modeling environment.
