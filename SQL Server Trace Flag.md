@@ -1731,8 +1731,11 @@ Scope: global only
 
 <a id="2398"></a>
 #### Trace Flag: 2398
-Function: Another one I stumbled upon myself...outputs info about “Smart Seek costing”: e.g.: “Smart seek costing (75.2) :: 1.34078e+154 , 1”<br />
-Link: None
+**Undocumented trace flag**<br />
+Function: Disable SSC (Smart Seek Costing).
+SSC attempts to assess inner side seek I/O cost in more detail, perhaps by considering local ordering and/or the range of values to fetch.<br />
+Link: https://dba.stackexchange.com/a/149933/107045<br />
+Scope: session or query
 
 
 <a id="2399"></a>
