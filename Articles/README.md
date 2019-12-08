@@ -926,6 +926,10 @@ Articles types:
 | [The Gloop: An Easier way of Managing SQL Server Documentation]                                                         | Phil Factor                              | 2019-12-03 | [DBA][DEV]  |
 | [The SQL of Gaps and Islands in Sequences]                                                                              | Dwain Camps                              | 2013-07-25 | [DEV]       |
 | [Drop Database Objects Practically Risk-Free!]                                                                          | Pamela Mooney                            | 2019-04-17 | [DBA]       |
+| [Predicate Pushdown and why should I care?]                                                                             | Pedro Lopes                              | 2018-07-06 | [DEV][DBA]  |
+| [Stack Overflow Demo Database Column Store Edition: Downloads And Links]                                                | Eric Darling                             | 2019-11-11 | [DEV][DBA]  |
+| [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]                                            | Eric Darling                             | 2019-11-14 | [DEV][DBA]  |
+| [Stack Overflow Demo Database Column Store Edition: Helpful Links]                                                      | Eric Darling                             | 2019-11-15 | [DEV][DBA]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1830,3 +1834,7 @@ Articles types:
 [The Gloop: An Easier way of Managing SQL Server Documentation]:https://www.red-gate.com/simple-talk/blogs/the-gloop-an-easier-way-of-managing-sql-server-documentation/
 [The SQL of Gaps and Islands in Sequences]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/the-sql-of-gaps-and-islands-in-sequences/
 [Drop Database Objects Practically Risk-Free!]:https://thenonclutteredindex.com/2019/04/17/drop-database-objects-practically-risk-free/
+[Predicate Pushdown and why should I care?]:https://techcommunity.microsoft.com/t5/SQL-Server/Predicate-Pushdown-and-why-should-I-care/bc-p/1045243#M1406
+[Stack Overflow Demo Database Column Store Edition: Downloads And Links]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-downloads-and-links/
+[Stack Overflow Demo Database Column Store Edition: Exploring Relationships]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-exploring-relationships/
+[Stack Overflow Demo Database Column Store Edition: Helpful Links]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-helpful-links/
