@@ -8,6 +8,7 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 |-----------------------------------------|--------------------|----------|---------:|---------:|------------:|
 | [StackOverflow 2010 Database]           |             >=2012 | OLTP     |     9360 |     9104 |           9 |
 | [StackOverflow Database]                |             >=2012 | OLTP     |   137000 |          |           9 |
+| [StackOverflow Column Store Edition]    |             >=2017 | OLTP     |   160000 |          |           9 |
 | [WideWorldImporters OLTP]               |                  ? | OLTP     |      121 |     1024 |          29 |
 | [WideWorldImporters DWH]                |                  ? | DWH      |       47 |     2048 |          48 |
 | [AdventureWorks OLTP 2017]              |               2017 | OLTP     |       47 |      264 |          71 |
@@ -27,6 +28,7 @@ Some databases you can download from this repository: https://rebrand.ly/sample-
 
 [StackOverflow 2010 Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
 [StackOverflow Database]:https://www.brentozar.com/archive/2015/10/how-to-download-the-stack-overflow-database-via-bittorrent/
+[StackOverflow Column Store Edition]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-downloads-and-links/
 [WideWorldImporters DWH]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
 [WideWorldImporters OLTP]:https://github.com/Microsoft/sql-server-samples/releases/tag/wide-world-importers-v1.0
 [AdventureWorks OLTP 2017]:https://github.com/Microsoft/sql-server-samples/releases/download/adventureworks/AdventureWorks2017.bak
