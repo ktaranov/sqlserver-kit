@@ -855,7 +855,6 @@ Articles types:
 | [Analyzing Estimates from the CSelCalcAscendingKeyFilter Calculator]                                                    | Josh Darnell                             | 2019-08-21 | [DEV]       |
 | [Building Storage for SQL Server (and other database) Virtual Machines in the Cloud]                                    | Joey Dantoni                             | 2019-09-18 | [AZ]        |
 | [SQL Server Simple and Forced Parameterization]                                                                         | Brady Upton                              | 2013-04-23 | [DBA][DEV]  |
-| [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [DBA][DEV]  |
 | [How to use a SQL Server Plan Guide to Tune Queries]                                                                    | Armando Prato                            | 2018-06-02 | [DBA][DEV]  |
 | [Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]                                                            | Phil Factor                              | 2019-08-14 | [DBA][DEV]  |
 | [Defensive Error Handling]                                                                                              | Alex Kuznetsov                           | 2010-10-08 | [DBA][DEV]  |
@@ -931,6 +930,9 @@ Articles types:
 | [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]                                            | Eric Darling                             | 2019-11-14 | [DEV][DBA]  |
 | [Stack Overflow Demo Database Column Store Edition: Helpful Links]                                                      | Eric Darling                             | 2019-11-15 | [DEV][DBA]  |
 | [Online, Resumable, and WAIT_AT_LOW_PRIORITY operations in SQL Server]                                                  | Kendra Little                            | 2019-12-09 | [DEV][DBA]  |
+| [How filtered indexes could be a more powerful feature]                                                                 | Aaron Bertrand                           | 2013-04-24 | [IDX]       |
+| [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [IDX]       |
+| [Filtered Indexes and Forced Parameterization (redux)]                                                                  | Aaron Bertrand                           | 2019-12-03 | [IDX]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1763,7 +1765,6 @@ Articles types:
 [Analyzing Estimates from the CSelCalcAscendingKeyFilter Calculator]:https://www.joshthecoder.com/2019/08/21/analyzing-estimates-cselcalcascendingkeyfilter-calculator.html
 [Building Storage for SQL Server (and other database) Virtual Machines in the Cloud]:https://joeydantoni.com/2019/09/18/building-storage-for-sql-server-and-other-database-virtual-machines-in-the-cloud/
 [SQL Server Simple and Forced Parameterization]:https://www.mssqltips.com/sqlservertip/2935/sql-server-simple-and-forced-parameterization/
-[How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
 [How to use a SQL Server Plan Guide to Tune Queries]:https://www.mssqltips.com/sqlservertip/1630/how-to-use-a-sql-server-plan-guide-to-tune-queries/
 [Neglecting to Use, or Misusing, the RETURN Keyword (BP016)]:https://www.red-gate.com/hub/product-learning/sql-prompt/neglecting-to-use-or-misusing-the-return-keyword-bp016
 [Defensive Error Handling]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/defensive-error-handling/
@@ -1840,3 +1841,8 @@ Articles types:
 [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-exploring-relationships/
 [Stack Overflow Demo Database Column Store Edition: Helpful Links]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-helpful-links/
 [Online, Resumable, and WAIT_AT_LOW_PRIORITY operations in SQL Server]:https://littlekendra.com/2019/12/09/online-resumable-and-wait_at_low_priority-operations-in-sql-server/
+[NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
+[How filtered indexes could be a more powerful feature]:https://sqlperformance.com/2013/04/t-sql-queries/filtered-indexes
+[How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
+[Filtered Indexes and Forced Parameterization (redux)]:https://sqlperformance.com/2019/12/t-sql-queries/filtered-indexes-forced-parameterization
+
