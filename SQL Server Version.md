@@ -449,11 +449,10 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-
-Microsoft SQL Server 2017 (RTM-CU18) (KB4527377) - 14.0.3257.3 (X64)
-   Nov 16 2019 15:49:57
+Microsoft SQL Server 2017 (RTM-CU18) (KB4527377) - 14.0.3257.3 (X64) 
+   Nov 16 2019 01:14:50 
    Copyright (C) 2017 Microsoft Corporation
-   Developer Edition (64-bit) on …
+   Developer Edition (64-bit) …
 ```
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
