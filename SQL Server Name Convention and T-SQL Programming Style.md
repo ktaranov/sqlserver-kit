@@ -327,21 +327,46 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/).
  - Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
    ```tsql
-    /* Correct */
-    DECLARE @myGoodVarchareVariable  varchar(50);
-    DECLARE @myGoodNVarchareVariable nvarchar(90);
-    DECLARE @myGoodCharVariable      char(7);
-    DECLARE @myGoodNCharVariable     nchar(10);
-    
-    /* Not correct */
+    /* bad */
     DECLARE @myBadVarcharVariable  varchar;
     DECLARE @myBadNVarcharVariable nvarchar;
     DECLARE @myBadCharVariable     char;
     DECLARE @myBadNCharVariable    nchar;
+    
+    /* good */
+    DECLARE @myGoodVarchareVariable  varchar(50);
+    DECLARE @myGoodNVarchareVariable nvarchar(90);
+    DECLARE @myGoodCharVariable      char(7);
+    DECLARE @myGoodNCharVariable     nchar(10);
     ```
     More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores).
- - Use only [`ORIGINAL_LOGIN()`](https://docs.microsoft.com/en-us/sql/t-sql/functions/original-login-transact-sql) dunction because is the only function that consistently returns the actual login name that we started with regardless of impersonation.
+ - Use only [`ORIGINAL_LOGIN()`](https://docs.microsoft.com/en-us/sql/t-sql/functions/original-login-transact-sql) function because is the only function that consistently returns the actual login name that we started with regardless of impersonation.
    More details [here](https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/).
+ - Always use `IF` statement with `BEGIN-END` block to prevent errors with multi line statements:
+   ```tsql
+   DECLARE @x int = 0;
+   DECLARE @y int = 1;
+   
+   /* bad */
+   IF @y > @x
+   SET @x = @x + 1;
+   SET @y = @y - 1;
+   ELSE
+   PRINT(1);
+   /* Msg 156, Level 15, State 1, Line 8
+      Incorrect syntax near the keyword 'ELSE'. */
+   
+   /* good */
+   IF @y > @x
+   BEGIN
+      SET @x = @x + 1;
+      SET @y = @y - 1;
+   END;
+   ELSE
+   BEGIN
+       PRINT(1);
+   END;
+   ```
  - `FROM, WHERE, INTO, JOIN, GROUP BY, ORDER BY` expressions should be aligned so, that all their arguments are placed under each other (see Example below)
 
 TSQL Example with formating:
