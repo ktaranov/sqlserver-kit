@@ -21,13 +21,13 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008-2017            | ApexSQL tools        | No           |  $299 |
 | [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2017-08-16   | 2008-2017            | ApexSQL tools        | Yes          |  $499 |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008-2014            | Spotlight Essentials | Yes          | No    |
-| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2018-12-21   | 2005-2018            | Devart               | No           |  $249 |
-| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2018-12-21   | 2005-2018            | Devart               | No           |  $199 |
-| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2018-12-21   | 2008-2018            | Devart               | No           |  $149 |
-| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2018-12-21   | 2008-2018            | Devart               | No           |  $99  |
-| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2018-12-21   | 2008-2018            | Devart               | Yes          | No    |
-| [dbForge Monitor](#dbforge-monitor)                   | [dbForge Monitor]             | 2018-12-21   | 2008-2018            | Devart               | Yes          | No    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2018-12-21   | 2000-2018            | Devart               | Yes          |  $149 |
+| [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2019-10-10   | 2005-2018            | Devart               | No           |  $249 |
+| [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2019-10-10   | 2005-2018            | Devart               | No           |  $199 |
+| [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2019-10-10   | 2008-2018            | Devart               | No           |  $149 |
+| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2019-10-10   | 2008-2018            | Devart               | No           |  $99  |
+| [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2019-10-10   | 2008-2018            | Devart               | Yes          | No    |
+| [dbForge Monitor](#dbforge-monitor)                   | [dbForge Monitor]             | 2019-10-10   | 2012-2018            | Devart               | Yes          | No    |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2019-10-10   | 2000-2018            | Devart               | Yes          |  $149 |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008-2014            | SoftTree             | No           |  $179 |
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008-2014            | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008-2014            | Alex Maslyukov       | Yes          | No    |
@@ -374,7 +374,7 @@ You also get a FREE System health Check, Performance Health Analysis and compreh
 <a id="dbforge-source-control"></a>
 ## dbForge Source Control
 Download page: [dbForge Source Control]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2005-2018<br/>
 Developer: Devart<br/>
 Free version: No<br/>
@@ -387,7 +387,7 @@ The tool can link your databases to all popular source control systems, and deli
 <a id="dbforge-unit-test"></a>
 ## dbForge Unit Test
 Download page: [dbForge Unit Test]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2005-2018<br/>
 Developer: Devart<br/>
 Free version: No<br/>
@@ -401,7 +401,7 @@ dbForge Unit Test for SQL Server functionality allows you to develop stable and 
 <a id="dbforge-data-pump"></a>
 ## dbForge Data Pump
 Download page: [dbForge Data Pump]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2008-2018<br/>
 Developer: Devart<br/>
 Free version: No<br/>
@@ -414,7 +414,7 @@ The tool supports import and export from 10+ widely used data formats (Text, MS 
 <a id="dbforge-index-manager"></a>
 ## dbForge Index Manager
 Download page: [dbForge Index Manager]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2008-2018<br/>
 Developer: Devart<br/>
 Free version: No<br/>
@@ -429,7 +429,7 @@ dbForge Index Manager for SQL Server will significantly boost SQL Server perform
 <a id="dbforge-search"></a>
 ## dbForge Search
 Download page: [dbForge Search]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2008-2018<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
@@ -443,8 +443,8 @@ With dbForge Object Search for SQL Server you no longer need to look through the
 <a id="dbforge-monitor"></a>
 ## dbForge Monitor
 Download page: [dbForge Monitor]<br/>
-Release date: 2018-12-21<br/>
-Support Version: 2008-2018<br/>
+Release date: 2019-10-10<br/>
+Support Version: 2012-2018<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
 Price: No
@@ -458,7 +458,7 @@ Price: No
 <a id="dbforge-sql-complete"></a>
 ## dbForge SQL Complete
 Download page: [dbForge SQL Complete]<br/>
-Release date: 2018-12-21<br/>
+Release date: 2019-10-10<br/>
 Support Version: 2000-2018<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
