@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**600** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**601** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **600 trace flags**
+Summary: **601 trace flags**
 
 
 <a id="-1"></a>
@@ -1477,6 +1477,17 @@ Link: Note
 #### Trace Flag: 1905
 Function: Unknown<br />
 Link: [Upgrading an expired SQL Server 2016 Evaluation Edition]
+
+
+<a id="1906"></a>
+#### Trace Flag: 1906
+**Undocumented trace flag**<br />
+Function: It enables SQL Server to read ETW tracing templates stored in the `etwcnf.xml` directory on SQL Server 2008.
+When the flag is turned off, the file is not read, and a static in-memory ETW template is used instead.
+It is not documented because it can cause SQL Server to hang on startup.
+We will be supported by Microsoft running this trace flag as long as we do not experience start up "hangs".
+Microsoft recommends using Xevents instead the template file.<br />
+Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/0489f308-2e0c-479f-85a8-9a5661b2462f/trace-flag-1906?forum=sqldatabaseengine
 
 
 <a id="2301"></a>
