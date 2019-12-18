@@ -925,14 +925,16 @@ Articles types:
 | [The Gloop: An Easier way of Managing SQL Server Documentation]                                                         | Phil Factor                              | 2019-12-03 | [DBA][DEV]  |
 | [The SQL of Gaps and Islands in Sequences]                                                                              | Dwain Camps                              | 2013-07-25 | [DEV]       |
 | [Drop Database Objects Practically Risk-Free!]                                                                          | Pamela Mooney                            | 2019-04-17 | [DBA]       |
-| [Predicate Pushdown and why should I care?]                                                                             | Pedro Lopes                              | 2018-07-06 | [DEV][DBA]  |
-| [Stack Overflow Demo Database Column Store Edition: Downloads And Links]                                                | Eric Darling                             | 2019-11-11 | [DEV][DBA]  |
-| [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]                                            | Eric Darling                             | 2019-11-14 | [DEV][DBA]  |
-| [Stack Overflow Demo Database Column Store Edition: Helpful Links]                                                      | Eric Darling                             | 2019-11-15 | [DEV][DBA]  |
-| [Online, Resumable, and WAIT_AT_LOW_PRIORITY operations in SQL Server]                                                  | Kendra Little                            | 2019-12-09 | [DEV][DBA]  |
+| [Predicate Pushdown and why should I care?]                                                                             | Pedro Lopes                              | 2018-07-06 | [DBA][DEV]  |
+| [Stack Overflow Demo Database Column Store Edition: Downloads And Links]                                                | Eric Darling                             | 2019-11-11 | [DBA][DEV]  |
+| [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]                                            | Eric Darling                             | 2019-11-14 | [DBA][DEV]  |
+| [Stack Overflow Demo Database Column Store Edition: Helpful Links]                                                      | Eric Darling                             | 2019-11-15 | [DBA][DEV]  |
+| [Online, Resumable, and WAIT_AT_LOW_PRIORITY operations in SQL Server]                                                  | Kendra Little                            | 2019-12-09 | [DBA][DEV]  |
 | [How filtered indexes could be a more powerful feature]                                                                 | Aaron Bertrand                           | 2013-04-24 | [IDX]       |
 | [How Forced Parameterization in SQL Server Affects Filtered Indexes]                                                    | Aaron Bertrand                           | 2019-09-19 | [IDX]       |
 | [Filtered Indexes and Forced Parameterization (redux)]                                                                  | Aaron Bertrand                           | 2019-12-03 | [IDX]       |
+| [Interpreting SQL Server 2019 DBCC MEMORYSTATUS output -- Part 1]                                                       | @sqL_handLe                              | 2019-12-15 | [DBA]       |
+| [Invisible tempdb Killer]                                                                                               | Josh Darnell                             | 2019-12-18 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1845,4 +1847,5 @@ Articles types:
 [How filtered indexes could be a more powerful feature]:https://sqlperformance.com/2013/04/t-sql-queries/filtered-indexes
 [How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
 [Filtered Indexes and Forced Parameterization (redux)]:https://sqlperformance.com/2019/12/t-sql-queries/filtered-indexes-forced-parameterization
-
+[Interpreting SQL Server 2019 DBCC MEMORYSTATUS output -- Part 1]:https://sql-sasquatch.blogspot.com/2019/12/interpreting-sql-server-2019-dbcc.html
+[Invisible tempdb Killer]:https://www.joshthecoder.com/2019/12/18/invisible-tempdb-killer.html
