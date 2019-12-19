@@ -935,6 +935,8 @@ Articles types:
 | [Filtered Indexes and Forced Parameterization (redux)]                                                                  | Aaron Bertrand                           | 2019-12-03 | [IDX]       |
 | [Interpreting SQL Server 2019 DBCC MEMORYSTATUS output -- Part 1]                                                       | @sqL_handLe                              | 2019-12-15 | [DBA]       |
 | [Invisible tempdb Killer]                                                                                               | Josh Darnell                             | 2019-12-18 | [DBA][DEV]  |
+| [Batch Mode On Row Store Is Fickle]                                                                                     | Eric Darling                             | 2019-12-19 | [DBA][DEV]  |
+| [Use Azure To Store Sql Server Backups Offsite]                                                                         | Sander Stad                              | 2019-12-18 | [AZ][B]     |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1849,3 +1851,5 @@ Articles types:
 [Filtered Indexes and Forced Parameterization (redux)]:https://sqlperformance.com/2019/12/t-sql-queries/filtered-indexes-forced-parameterization
 [Interpreting SQL Server 2019 DBCC MEMORYSTATUS output -- Part 1]:https://sql-sasquatch.blogspot.com/2019/12/interpreting-sql-server-2019-dbcc.html
 [Invisible tempdb Killer]:https://www.joshthecoder.com/2019/12/18/invisible-tempdb-killer.html
+[Batch Mode On Row Store Is Fickle]:https://www.erikdarlingdata.com/2019/12/batch-mode-on-row-store-is-fickle/
+[Use Azure To Store Sql Server Backups Offsite]:https://www.sqlstad.nl/sql-server/use-azure-to-store-sql-server-backups-offsite/
