@@ -89,7 +89,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Joe Obbish          | [Joe Obbish Blog]            |         | NULL             | NULL               | NULL                              | 0   |                    |
 | Stephen Bennett     | [Stephen Bennett Blog]       | ENG     | London           | NULL               | NULL                              | 0   |                    |
 | Brian Davis         | [Brian Davis Articles]       | USA     | NULL             | [@brian78]         | NULL                              | 0   |                    |
-
+| Raul Gonzalez       | [Raul Gonzalez Blog]         |         | NULL             | [@SQLDoubleG]      | NULL                              | 0   |                    |
+| Hugo Kornelis       | [Hugo Kornelis Blog]         |         | NULL             | [@Hugo_Kornelis]   | NULL                              | 12  | [Kornelis MVP]     |
+| Drew Furgiuele      | [Drew Furgiuele Blog]        | USA     | Dublin           | [@pittfurg]        | NULL                              | 1   | [Furgiuele MVP]    |
 
 [Stephen Wynkoop Site]:https://www.sswug.org/
 [Cody Konior Blog]:https://www.codykonior.com/categories/#sql
@@ -178,6 +180,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Joe Obbish Blog]:https://orderbyselectnull.com/
 [Stephen Bennett Blog]:https://sqlnotesfromtheunderground.wordpress.com/
 [Brian Davis Articles]:https://blogs.sentryone.com/author/briandavis/
+[Raul Gonzalez Blog]:http://www.sqldoubleg.com/
+[Hugo Kornelis Blog]:https://sqlserverfast.com/
+[Drew Furgiuele Blog]:https://port1433.com/
 
 [@swynk]:https://twitter.com/swynk
 [@codykonior]:https://twitter.com/codykonior
@@ -256,6 +261,9 @@ Most valuable professionals in Microsoft SQL Server Database world
 [@SqlQuantumLeap]:https://twitter.com/SqlQuantumLeap
 [@NedOtter]:https://twitter.com/NedOtter
 [@brian78]:https://twitter.com/brian78
+[@SQLDoubleG]:https://twitter.com/SQLDoubleG
+[@Hugo_Kornelis]:https://twitter.com/Hugo_Kornelis
+[@pittfurg]:https://twitter.com/pittfurg
 
 [Swell MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002693?fullName=Rob%20%20Sewell
 [Walsh MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4032569?fullName=Mike%20%20Walsh
@@ -298,3 +306,5 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Feasel MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5001922?fullName=Kevin%20%20Feasel
 [Sheffield MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5002585?fullName=Wayne%20%20Sheffield
 [Korotkevitch MVP]:https://mvp.microsoft.com/en-us/PublicProfile/4039717?fullName=Dmitri%20%20Korotkevitch
+[Kornelis MVP]:https://mvp.microsoft.com/en-us/PublicProfile/33298?fullName=Hugo%20Kornelis
+[Furgiuele MVP]:https://mvp.microsoft.com/en-us/PublicProfile/5003244?fullName=Drew%20Furgiuele
