@@ -939,6 +939,8 @@ Articles types:
 | [Use Azure To Store Sql Server Backups Offsite]                                                                         | Sander Stad                              | 2019-12-18 | [AZ][B]     |
 | [Handling Data Returned from a SQL Stored Procedure]                                                                    | Drew                                     | 2019-12-20 | [DBA][DEV]  |
 | [When QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_140 does not follow CL 140 rules]                                             | Milos Radivojevic                        | 2019-12-20 | [DBA][DEV]  |
+| [SQL Server–HOW-TO: quickly retrieve accurate row count for table]                                                      | martijnh1                                | 2010-07-15 | [DBA][DEV]  |
+| [Do You Have REFERENCES?]                                                                                               | Joe Celko                                | 2019-12-03 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1857,3 +1859,5 @@ Articles types:
 [Use Azure To Store Sql Server Backups Offsite]:https://www.sqlstad.nl/sql-server/use-azure-to-store-sql-server-backups-offsite/
 [Handling Data Returned from a SQL Stored Procedure]:https://www.drewsk.tech/2019/12/20/handling-data-returned-from-a-sql-stored-procedure/
 [When QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_140 does not follow CL 140 rules]:https://milossql.wordpress.com/2019/12/20/query_optimizer_compatibility_level_140/
+[SQL Server–HOW-TO: quickly retrieve accurate row count for table]:https://blogs.msdn.microsoft.com/martijnh/2010/07/15/sql-serverhow-to-quickly-retrieve-accurate-row-count-for-table/
+[Do You Have REFERENCES?]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/do-you-have-references/
