@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **302** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **303** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -12,10 +12,10 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {19}
+ - **[M]**: Monitoring and alerting Tools {20}
  - **[MG]**: Migration tool {31}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
- - **[REC]**: Recovery tools {8}
+ - **[REC]**: Recovery tools {9}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
@@ -326,6 +326,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Database Tour](#database-tour)                                  | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [Database Tour]                             | 2019-11-20 | Vitaliy Levchenko     | Shareware  | No             |   $49 |
 | [Ispirer MnMATK](#mnmatk)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Ispirer MnMATK]                            | ?          |  Ispirer Systems      | Shareware  | No             |     ? |
 | [SQL Database Recovery](#sql-database-recovery)                  | No                            | No        | [REC]    | [SQL Database Recovery]                     | 2019-09-10 | KernelApps Private    | Shareware  | No             |  $399 |
+| [SysTools SQL Log Analyzer](#log-analzyer)                       | No                            | No        | [M][REC] | [SysTools SQL Log Analyzer]                 | 2019-01-01 | SysTools              | Shareware  | No             |  $999 |
 
 
 <a id="ssms"></a>
@@ -4655,7 +4656,32 @@ Author: KernelApps Private<br/>
 Free version: No<br/>
 Price: 399
 
-Repair corrupt & damaged MS SQL database files.
+Repair corrupt and damaged MS SQL database files.
+
+
+## SysTools SQL Log Analyzer
+<a id="log-analyzer"></a>
+Download page: [SysTools SQL Log Analyzer]<br/>
+Release date: 2019-01-01<br/>
+Support Version: 2000-2019<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $999
+
+SysTools SQL Log Analyzer - To Read & Analyze SQL Server Log File (.ldf) Transactions
+- Complete analyses of SQL transaction Log (.ldf) file to identify critical changes in record
+- Open, Read & Analyze all Microsoft SQL transactions: Insert, Update & Delete
+- SQL LDF File Recovery to restore the modified database back into SQL Server
+- Forensic Investigator can track who modified SQL table records with details provide by Log Analyzer
+- Quick Scan to deeply examine log file & provide full visibility to database records
+- Open & Analyze all operation of a transaction(LDF) file Without MS SQL Server application
+- SQL Log Analyzer works on both Online & Offline SQL Database Environment
+- Support to fetch & view records from Live SQL database environment
+- Support For Advance SQL Data Type : Datetime2, datetimeoffset, sql_variant, hierarchyid, geometry & geography data types
+- Dynamic Filters to export only Selective transaction records after complete analyses
+- Display LDF information in SQL Scripts, CSV file or directly export to any SQL Server database
+- Auto-locate MDF to read database schema of scanned Log File while opting Offline DB Option
+- Provide support to Unicode (Collation) property after exporting database
 
 
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
@@ -4960,6 +4986,7 @@ Repair corrupt & damaged MS SQL database files.
 [Database Tour]:https://www.databasetour.net/
 [Ispirer MnMATK]:https://www.ispirer.com/download/download-sqlways-assessment
 [SQL Database Recovery]:https://www.nucleustechnologies.com/sql-recovery.html
+[SysTools SQL Log Analyzer]:https://www.systoolsgroup.com/sql-log-analyzer.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
