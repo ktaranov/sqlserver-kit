@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **303** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **304** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -15,7 +15,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[M]**: Monitoring and alerting Tools {20}
  - **[MG]**: Migration tool {31}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
- - **[REC]**: Recovery tools {9}
+ - **[REC]**: Recovery tools {10}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
@@ -327,6 +327,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Ispirer MnMATK](#mnmatk)                                        | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [Ispirer MnMATK]                            | ?          |  Ispirer Systems      | Shareware  | No             |     ? |
 | [SQL Database Recovery](#sql-database-recovery)                  | No                            | No        | [REC]    | [SQL Database Recovery]                     | 2019-09-10 | KernelApps Private    | Shareware  | No             |  $399 |
 | [SysTools SQL Log Analyzer](#log-analzyer)                       | No                            | No        | [M][REC] | [SysTools SQL Log Analyzer]                 | 2019-01-01 | SysTools              | Shareware  | No             |  $999 |
+| [SysTools SQL Server Recovery Manager](#systools-rec-manager)    | No                            | No        | [REC]    | [SysTools SQL Log Analyzer]                 | 2017-01-01 | SysTools              | Shareware  | No             | $1499 |
 
 
 <a id="ssms"></a>
@@ -4684,6 +4685,23 @@ SysTools SQL Log Analyzer - To Read & Analyze SQL Server Log File (.ldf) Transac
 - Provide support to Unicode (Collation) property after exporting database
 
 
+## SysTools SQL Server Recovery Manager
+<a id="systools-rec-manager"></a>
+Download page: [SysTools SQL Server Recovery Manager]<br/>
+Release date: 2017-01-01<br/>
+Support Version: 2000-2016<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $1499
+
+- Recover & Export SQL Database: Primary (MDF) and Secondary (NDF)
+- Analyze SQL Server LOG database transactions
+- Scan, recover & Export database from corrupt SQL Server Backup File
+- Recover & Reset SQL User Password from master.mdf file
+- Decrypt Encryption of SQL Server Scripts & Database from Live Environ
+- Recover Data from all Database Files : master.mdf/.ndf/.bak/.ldf etc.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -4987,6 +5005,7 @@ SysTools SQL Log Analyzer - To Read & Analyze SQL Server Log File (.ldf) Transac
 [Ispirer MnMATK]:https://www.ispirer.com/download/download-sqlways-assessment
 [SQL Database Recovery]:https://www.nucleustechnologies.com/sql-recovery.html
 [SysTools SQL Log Analyzer]:https://www.systoolsgroup.com/sql-log-analyzer.html
+[SysTools SQL Server Recovery Manager]:https://www.systoolsgroup.com/sql-server-recovery-manager.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
