@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **305** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **306** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -15,7 +15,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[M]**: Monitoring and alerting Tools {20}
  - **[MG]**: Migration tool {31}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
- - **[REC]**: Recovery tools {11}
+ - **[REC]**: Recovery tools {12}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
@@ -329,6 +329,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SysTools SQL Log Analyzer](#log-analzyer)                       | No                            | No        | [M][REC] | [SysTools SQL Log Analyzer]                 | 2019-01-01 | SysTools              | Shareware  | No             |  $999 |
 | [SysTools SQL Server Recovery Manager](#systools-rec-manager)    | No                            | No        | [REC]    | [SysTools SQL Log Analyzer]                 | 2017-01-01 | SysTools              | Shareware  | No             | $1499 |
 | [SysTools SQL Recovery](#systools-recovery)                      | No                            | No        | [REC]    | [SysTools SQL Recovery]                     | 2019-01-01 | SysTools              | Shareware  | No             |  $249 |
+| [SQL Backup Recovery](#systools-backup-recovery)                 | No                            | No        | [REC]    | [SQL Backup Recovery]                       | 2018-01-01 | SysTools              | Shareware  | No             |  $149 |
 
 
 <a id="ssms"></a>
@@ -4724,6 +4725,24 @@ Price: $249
 - Recover data from Wallet Ransomware affected .mdf files.
 
 
+## SysTools SQL Recovery
+<a id="systools-rec-manager"></a>
+Download page: [SysTools SQL Recovery]<br/>
+Release date: 2018-01-01<br/>
+Support Version: 2000-2019<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $149
+
+- Recover & Preview Tables, Views, Procedures, Triggers, Functions, Columns
+- Supports to repair corrupt SQL Backup file without any modification
+- Recover MDF & NDF files Saved within SQL Backup File
+- Option of Auto-Detect to detect the version of SQL .bak file
+- 2 Export Options: SQL Server Database or SQL Server Compatible Script
+- Supports XML Data type in MS SQL server 2017, 2016, 2014, 2012, 2008
+- No File Size Limitation: Tested with 1.4 TB of SQL .bak file
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5029,6 +5048,7 @@ Price: $249
 [SysTools SQL Log Analyzer]:https://www.systoolsgroup.com/sql-log-analyzer.html
 [SysTools SQL Server Recovery Manager]:https://www.systoolsgroup.com/sql-server-recovery-manager.html
 [SysTools SQL Recovery]:https://www.systoolsgroup.com/sql-recovery.html
+[SQL Backup Recovery]:https://www.systoolsgroup.com/sql-backup-recovery.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
