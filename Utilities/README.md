@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **306** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **307** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -15,7 +15,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[M]**: Monitoring and alerting Tools {20}
  - **[MG]**: Migration tool {31}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
- - **[REC]**: Recovery tools {12}
+ - **[REC]**: Recovery tools {13}
  - **[S]**: Search tools {3}
  - **[SC]**: Structure compare {19}
  - **[T]**: Testing tools {5}
@@ -330,6 +330,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SysTools SQL Server Recovery Manager](#systools-rec-manager)    | No                            | No        | [REC]    | [SysTools SQL Log Analyzer]                 | 2017-01-01 | SysTools              | Shareware  | No             | $1499 |
 | [SysTools SQL Recovery](#systools-recovery)                      | No                            | No        | [REC]    | [SysTools SQL Recovery]                     | 2019-01-01 | SysTools              | Shareware  | No             |  $249 |
 | [SQL Backup Recovery](#systools-backup-recovery)                 | No                            | No        | [REC]    | [SQL Backup Recovery]                       | 2018-01-01 | SysTools              | Shareware  | No             |  $149 |
+| [SysTools SQL Password Recovery](#systools-password-recovery)    | No                            | No        | [REC]    | [SysTools SQL Password Recovery]            | 2018-01-01 | SysTools              | Shareware  | No             |   $69 |
 
 
 <a id="ssms"></a>
@@ -4729,7 +4730,7 @@ Price: $249
 <a id="systools-rec-manager"></a>
 Download page: [SysTools SQL Recovery]<br/>
 Release date: 2018-01-01<br/>
-Support Version: 2000-2019<br/>
+Support Version: 2000-2017<br/>
 Author: SysTools<br/>
 Free version: No<br/>
 Price: $149
@@ -4741,6 +4742,24 @@ Price: $149
 - 2 Export Options: SQL Server Database or SQL Server Compatible Script
 - Supports XML Data type in MS SQL server 2017, 2016, 2014, 2012, 2008
 - No File Size Limitation: Tested with 1.4 TB of SQL .bak file
+
+
+## SysTools SQL Password Recovery
+<a id="systools-rec-manager"></a>
+Download page: [SysTools SQL Password Recovery]<br/>
+Release date: 2018-01-01<br/>
+Support Version: 2000-2017<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $149
+
+- Reset both Individual User & SA passwords from SQL master.mdf file
+- Installation of MS SQL Server is not mandatory to reset SA password
+- SQL Server services should be stopped while loading master.mdf file
+- Recover & Reset SQL password of any length or type without any fail
+- Provide facility to set new password for User Login within a software
+- Capable to recover Multilingual Password of MDF Files successfully
+- SQL Server SA Password Recovery can install on Windows OS
 
 
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
@@ -5049,6 +5068,7 @@ Price: $149
 [SysTools SQL Server Recovery Manager]:https://www.systoolsgroup.com/sql-server-recovery-manager.html
 [SysTools SQL Recovery]:https://www.systoolsgroup.com/sql-recovery.html
 [SQL Backup Recovery]:https://www.systoolsgroup.com/sql-backup-recovery.html
+[SysTools SQL Password Recovery]:https://www.systoolsgroup.com/sql-password-recovery.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
