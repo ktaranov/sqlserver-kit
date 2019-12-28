@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **307** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **308** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -17,10 +17,11 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[MS]**: Management Studio (alternative for SSMS) {29}
  - **[REC]**: Recovery tools {13}
  - **[S]**: Search tools {3}
+ - **[SEC]**: Security tools {7}
  - **[SC]**: Structure compare {19}
- - **[T]**: Testing tools {5}
  - **[ST]**: Statistics utilities {3}
- - **[?]**: Not yet classified {113}
+ - **[T]**: Testing tools {5}
+ - **[?]**: Not yet classified {107}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -31,7 +32,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
-| [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [?]      | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
+| [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [SEC]    | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
 | [tablediff Utility](#tablediff-utility)                          | No                            | No        | [I]      | [tablediff Utility]                         | -          | Microsoft             |            | Yes            | No    |
 | [Microsoft Log Parser](#microsoft-log-parser)                    | No                            | No        | [?]      | [Microsoft Log Parser]                      | -          | Microsoft             |            | Yes            | No    |
 | [Log Parser Lizard GUI](#log-parser-lizard-gui)                  | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [Log Parser Lizard GUI]                     | 2017-06-01 | Lizard Labs           |            | Yes            | $59   |
@@ -123,7 +124,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Data Generator](#dbforge-data-generator)                | No                            | No        | [G]      | [dbForge Data Generator]                    | 2018-10-10 | Devart                | Shareware  | No             |  $250 |
 | [dbForge Query Builder](#dbforge-query-builder)                  | No                            | No        | [?]      | [dbForge Query Builder]                     | 2018-10-10 | Devart                | Shareware  | No             |  $100 |
 | [dbForge Event Profiler](#dbforge-event-profiler)                | No                            | No        | [M]      | [dbForge Event Profiler]                    | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [?]      | [dbForge SQL Decryptor]                     | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [SEC]    | [dbForge SQL Decryptor]                     | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
 | [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2018-10-10 | Devart                | Shareware  | Yes            |  $250 |
 | [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
@@ -133,7 +134,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Compression Estimator](#compression-estimator)       | No                            | No        | [?]      | [SQL Server Compression Estimator]          | 2011-06-02 | Bob Tavlor            |            | Yes            | No    |
 | [ClearTrace](#cleartrace)                                        | No                            | No        | [M]      | [ClearTrace]                                | 2016-07-07 | Bill Graziano         |            | Yes            | No    |
 | [ClearTraceXE](#cleartracexe)                                    | No                            | No        | [M]      | [ClearTraceXE]                              | 2019-09-04 | Bill Graziano         |            | Yes            | No    |
-| [Security Explorer](#security-explorer)                          | No                            | No        | [?]      | [Security Explorer]                         | 2015-06-25 | Quest Software        |            | No             |  $850 |
+| [Security Explorer](#security-explorer)                          | No                            | No        | [SEC]    | [Security Explorer]                         | 2015-06-25 | Quest Software        |            | No             |  $850 |
 | [LiteSpeed for SQL Server](#litespeed-for-sql-server)            | No                            | No        | [?]      | [LiteSpeed for SQL Server]                  | 2015-07-31 | Quest Software        |            | No             | ?     |
 | [Toad for SQL Server](#toad-for-sql-server)                      | No                            | No        | [MS]     | [Toad for SQL Server]                     | 2015-05-12 | Quest Software        |            | No             | ?     |
 | [Quest Spotlight on SQL Server Enterprise](#quest-spotlight)     | No                            | No        | [?]      | [Quest Spotlight]                           | 2016-03-10 | Quest Software        |            | No             | $2561 |
@@ -152,7 +153,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Build](#apexsql-build)                                  | No                            | No        | [?]      | [ApexSQL Build]                             | 2017-05-15 | ApexSQL               |            | No             |  $399 |
 | [ApexSQL Clean](#apexsql-clean)                                  | No                            | No        | [?]      | [ApexSQL Clean]                             | 2017-09-28 | ApexSQL               |            | No             |  $399 |
 | [ApexSQL Data Diff](#apexsql-data-diff)                          | No                            | No        | [DC]     | [ApexSQL Data Diff]                         | 2017-10-26 | ApexSQL               |            | No             |  $399 |
-| [ApexSQL Decrypt](#apexsql-decrypt)                              | No                            | No        | [?]      | [ApexSQL Decrypt]                           | 2017-08-16 | ApexSQL               |            | Yes            | No    |
+| [ApexSQL Decrypt](#apexsql-decrypt)                              | No                            | No        | [SEC]    | [ApexSQL Decrypt]                           | 2017-08-16 | ApexSQL               |            | Yes            | No    |
 | [ApexSQL Diff](#apexsql-diff)                                    | No                            | No        | [SC]     | [ApexSQL Diff]                              | 2017-10-26 | ApexSQL               |            | No             |  $399 |
 | [ApexSQL Doc](#apexsql-doc)                                      | No                            | No        | [D]      | [ApexSQL Doc]                               | 2017-09-06 | ApexSQL               |            | No             |  $299 |
 | [ApexSQL Generate](#apexsql-generate)                            | No                            | No        | [G]      | [ApexSQL Generate]                          | 2017-07-13 | ApexSQL               |            | No             |  $499 |
@@ -184,7 +185,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Aireforge Studio](#aireforge-studio)                            | No                            | No        | [MG],[SC]| [Aireforge Studio]                          | 2019-08-08 | AireForge             |            | Yes            |  $299 |
 | [HexaTier](#hexatier)                                            | No                            | No        | [?]      | [HexaTier]                                  | ?          | HexaTier              |            | No             | ?     |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)                | Oracle,MySQL,PostgreSQL,Other | No        | [MS]     | [SoftTree SQL Assistant]                    | 2017-12-17 | SoftTree              |            | No             |  $215 |
-| [DB Audit and Security 360](#db-audit-and-security-360)          | Oracle,MySQL,Other            | No        | [?]      | [DB Audit and Security 360]                 | 2015-02-07 | SoftTree              |            | No             |  $499 |
+| [DB Audit and Security 360](#db-audit-and-security-360)          | Oracle,MySQL,Other            | No        | [SEC]    | [DB Audit and Security 360]                 | 2015-02-07 | SoftTree              |            | No             |  $499 |
 | [EMS SQL Management Studio](#ems-management-studio)              | No                            | No        | [MS]     | [EMS SQL Management Studio]                 | 2016-05-26 | EMS                   |            | No             |  $257 |
 | [EMS SQL Backup](#ems-sql-backup)                                | No                            | No        | [B]      | [EMS SQL Backup]                            | 2016-04-13 | EMS                   |            | Yes            |  $82  |
 | [EMS SQL Administrator](#ems-sql-administrator)                  | No                            | No        | [?]      | [EMS SQL Administrator]                     | 2015-04-14 | EMS                   |            | Yes            |  $135 |
@@ -284,7 +285,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL MDF Viewer](#sql-mdf-viewer)                                | No                            | No        | [?]      | [SQL MDF Viewer]                            | ?          | SysTools              | Shareware  | No             |  $129 |
 | [SQL MDF Recovery Tool](#sql-mdf-recovery-tool)                  | No                            | No        | [REC]    | [SQL MDF Recovery Tool]                     | ?          | SysTools              | Shareware  | No             |  $129 |
 | [SQL Passord Recovery](#sql-password-recovery)                   | No                            | No        | [REC]    | [SQL Passord Recovery]                      | ?          | SysTools              | Shareware  | No             |  $69  |
-| [SQL Decryptor](#sql-decryptor)                                  | No                            | No        | [?]      | [SQL Decryptor]                             | ?          | SysTools              | Shareware  | No             |  $69  |
+| [SQL Decryptor](#sql-decryptor)                                  | No                            | No        | [SEC]    | [SQL Decryptor]                             | ?          | SysTools              | Shareware  | No             |   $69 |
 | [SQL Backup Database Recovery](#sql-backup-database-recovery)    | No                            | No        | [REC]    | [SQL Backup Database Recovery]              | ?          | SysTools              | Shareware  | No             |  $149 |
 | [SQL Log File Viewer](#sql-log-file-viewer)                      | No                            | No        | [?]      | [SQL Log File Viewer]                       | ?          | SysTools              | Shareware  | No             |  $999 |
 | [DAX Studio](#dax-studio)                                        | No                            | No        | [?]      | [DAX Studio]                                | ?          | Sqlbi                 | Freeware   | Yes            | No    |
@@ -331,6 +332,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SysTools SQL Recovery](#systools-recovery)                      | No                            | No        | [REC]    | [SysTools SQL Recovery]                     | 2019-01-01 | SysTools              | Shareware  | No             |  $249 |
 | [SQL Backup Recovery](#systools-backup-recovery)                 | No                            | No        | [REC]    | [SQL Backup Recovery]                       | 2018-01-01 | SysTools              | Shareware  | No             |  $149 |
 | [SysTools SQL Password Recovery](#systools-password-recovery)    | No                            | No        | [REC]    | [SysTools SQL Password Recovery]            | 2018-01-01 | SysTools              | Shareware  | No             |   $69 |
+| [SysTools SQL Decryptor](#systools-sql-decryptor)                | No                            | No        | [SEC]    | [SysTools SQL Decryptor]                    | 2019-01-01 | SysTools              | Shareware  | No             |   $69 |
 
 
 <a id="ssms"></a>
@@ -4762,6 +4764,24 @@ Price: $149
 - SQL Server SA Password Recovery can install on Windows OS
 
 
+## SysTools SQL Decryptor
+<a id="systools-sql-decryptor"></a>
+Download page: [SysTools SQL Decryptor]<br/>
+Release date: 2019-01-01<br/>
+Support Version: 2000-2019<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $69
+
+- Remove encryption from complete MS SQL database
+- Supports Dual Login Mode : Windows & SQL Server Authentication
+- SQL Server credentials required to decrypt SQL database file
+- Option Export SQL database: SQL Server & Compatible Scripts
+- Able to Decrypt SQL Stored Procedure, Triggers, Functions, Views.
+- SQL Server should be installed on machine for decryption
+- Dedicated Admin Connection (DAC) is required to run the utility
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5069,6 +5089,7 @@ Price: $149
 [SysTools SQL Recovery]:https://www.systoolsgroup.com/sql-recovery.html
 [SQL Backup Recovery]:https://www.systoolsgroup.com/sql-backup-recovery.html
 [SysTools SQL Password Recovery]:https://www.systoolsgroup.com/sql-password-recovery.html
+[SysTools SQL Decryptor]:https://www.systoolsgroup.com/sql-decryptor.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
