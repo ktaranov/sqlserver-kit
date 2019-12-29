@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **308** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **309** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {6}
@@ -13,7 +13,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
  - **[M]**: Monitoring and alerting Tools {20}
- - **[MG]**: Migration tool {31}
+ - **[MG]**: Migration tool {32}
  - **[MS]**: Management Studio (alternative for SSMS) {29}
  - **[REC]**: Recovery tools {13}
  - **[S]**: Search tools {3}
@@ -333,6 +333,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Backup Recovery](#systools-backup-recovery)                 | No                            | No        | [REC]    | [SQL Backup Recovery]                       | 2018-01-01 | SysTools              | Shareware  | No             |  $149 |
 | [SysTools SQL Password Recovery](#systools-password-recovery)    | No                            | No        | [REC]    | [SysTools SQL Password Recovery]            | 2018-01-01 | SysTools              | Shareware  | No             |   $69 |
 | [SysTools SQL Decryptor](#systools-sql-decryptor)                | No                            | No        | [SEC]    | [SysTools SQL Decryptor]                    | 2019-01-01 | SysTools              | Shareware  | No             |   $69 |
+| [SysTools SQL Server Database Migrator](#systools-migrator)      | No                            | No        | [MG]     | [SysTools SQL Server Database Migrator]     | 2018-01-01 | SysTools              | Shareware  | No             |  $249 |
 
 
 <a id="ssms"></a>
@@ -4782,6 +4783,24 @@ Price: $69
 - Dedicated Admin Connection (DAC) is required to run the utility
 
 
+## SysTools SQL Server Database Migrator
+<a id="systools-migrator"></a>
+Download page: [SysTools SQL Server Database Migrator]<br/>
+Release date: 2018-01-01<br/>
+Support Version: 2000-2017<br/>
+Author: SysTools<br/>
+Free version: No<br/>
+Price: $249
+
+- Migrate Corrupted SQL Server Database from SQL Server 2008 to 2012, 2014, 2016, 2017
+- Move Tables, Functions, SPs etc from One database to Another In all SQL Server
+- Migrate Database Objects (Tables, Functions, Stored Procedures etc) from One Server to Another
+- Creates .sql Script File of All Database Objects of an MDF File One by One
+- Migrate SQL Database Objects from One Server to Another With Only Schema
+- Copy SQL Server Database from One Server to Another With Schema & Data
+- Move & Export SQL Server Database on an Existing Database or as a New Database.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5090,6 +5109,7 @@ Price: $69
 [SQL Backup Recovery]:https://www.systoolsgroup.com/sql-backup-recovery.html
 [SysTools SQL Password Recovery]:https://www.systoolsgroup.com/sql-password-recovery.html
 [SysTools SQL Decryptor]:https://www.systoolsgroup.com/sql-decryptor.html
+[SysTools SQL Server Database Migrator]:https://www.systoolsgroup.com/sql-server/migration/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
