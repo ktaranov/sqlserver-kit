@@ -1615,6 +1615,7 @@ Link: [Cardinality Estimation Framework 2014 First Look]<br />
 Link: http://www.queryprocessor.com/ce-process<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
 Link: [Nested Loops Joins and Performance Spools]<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
 Scope: session or query
 
 
@@ -2547,6 +2548,7 @@ Link: https://blogs.msdn.microsoft.com/sqlserverfaq/2009/05/27/info-sql-2000-msd
 
 <a id="3604"></a>
 #### Trace Flag: 3604
+**Undocumented trace flag**<br />
 Function: Enables the output from a large number of trace flags and DBCC commands to be sent back to the client.
 The Connect issue notes that problems can occur when using 3604 with a query that executes across a linked server.
 [This CSS page](https://blogs.msdn.microsoft.com/psssql/2009/05/11/how-do-i-determine-which-dump-triggers-are-enabled/) points out that 3604 is necessary for DBCC DumpTrigger(‘display’)<br />
@@ -2558,6 +2560,7 @@ Link: [A Row Goal Riddle]<br />
 Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3604/<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
 Scope: session only
 
 
@@ -3105,6 +3108,7 @@ Link: https://support.microsoft.com/help/2658214<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2801413]<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
 Scope: global or session or query
 
 
@@ -4821,19 +4825,25 @@ Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in S
 
 <a id="9471"></a>
 #### Trace Flag: 9471
-Function: Causes SQL Server to generate a plan using minimum selectivity for single-table filters, under the query optimizer cardinality estimation model of SQL Server 2014 through SQL Server 2016 versions.
-Beginning with SQL Server 2016 SP1, to accomplish this at the query level, add the USE HINT query hint instead of using this trace flag.<br />
+Function: Causes SQL Server to generate a plan using minimum selectivity for single-table filters, under the query optimizer cardinality estimation model of SQL Server 2014 (12.x) and later versions.
+Starting with SQL Server 2016 (13.x) SP1, to accomplish this at the query level, add the USE HINT 'ASSUME_MIN_SELECTIVITY_FOR_FILTER_ESTIMATES' query hint instead of using this trace flag.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+**Note: This trace flag does not apply to CE version 70. Use trace flag [4137](#4137) instead.**<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
 Scope: global or session or query
 
 
 <a id="9472"></a>
 #### Trace Flag: 9472
-Function: Assumes independence for multiple WHERE predicates in the SQL 2014 cardinality estimation model. Predicate independence was the default for versions prior to SQL Server 2014, and thus this flag can be used to more closely emulate pre-SQL 2014 cardinality estimate behavior in a more specific fashion than TF 9481.<br />
+**Undocumented trace flag**<br />
+Function: Assumes independence for multiple WHERE predicates in the SQL 2014 cardinality estimation model.
+Predicate independence was the default for versions prior to SQL Server 2014, and thus this flag can be used to more closely emulate pre-SQL 2014 cardinality estimate behavior in a more specific fashion than TF 9481.<br />
 Link: https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates<br />
-Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression
+Link: https://connect.microsoft.com/SQLServer/feedback/details/801908/sql-server-2014-cardinality-estimation-regression<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
+Scope: global or session or query
 
 
 <a id="9473"></a>
@@ -4909,6 +4919,7 @@ Link: [KB2801413]<br />
 Link: http://www.sqlservergeeks.com/sql-server-2014-trace-flags-9481/<br />
 Link: https://sqlperformance.com/2019/01/sql-performance/compatibility-levels-and-cardinality-estimation-primer<br />
 Link: [KB2801413]<br />
+Link: [Cardinality Estimation for Multiple Predicates]<br />
 Scope: global or session or query
 
 
@@ -5297,3 +5308,4 @@ Scope: ?
 [Optimizing T-SQL queries that change data]:https://www.sql.kiwi/2013/01/optimizing-t-sql-queries-that-change-data.html
 [Query Optimizer Deep Dive – Part 3]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-3.html
 [Hello Operator, My Switch Is Bored]:https://www.sql.kiwi/2013/06/hello-operator-my-switch-is-bored.html
+[Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
