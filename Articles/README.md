@@ -941,6 +941,9 @@ Articles types:
 | [When QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_140 does not follow CL 140 rules]                                             | Milos Radivojevic                        | 2019-12-20 | [DBA][DEV]  |
 | [SQL Server–HOW-TO: quickly retrieve accurate row count for table]                                                      | martijnh1                                | 2010-07-15 | [DBA][DEV]  |
 | [Do You Have REFERENCES?]                                                                                               | Joe Celko                                | 2019-12-03 | [DBA][DEV]  |
+| [Fun with (columnstore) compression on a very large table – part 1]                                                     | Aaron Bertrand                           | 2019-12-27 | [DBA]       |
+| [How to Make SELECT COUNT(*) Queries Crazy Fast]                                                                        | Brent Ozar                               | 2019-12-26 | [DBA][DEV]  |
+| [SSISDB Catalog Defaults Best Practices]                                                                                | Steve Rezhener                           | 2019-12-26 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1015,7 +1018,7 @@ Articles types:
 [Performance tuning backup and restore operations]:http://www.sqlhammer.com/performance-tuning-backup-restore-operations/
 [Execution Plan Analysis: The Mystery Work Table]:https://www.sql.kiwi/2013/03/execution-plan-analysis-the-mystery-work-table.html
 [How to move data between File Groups in SQL Server]:http://www.sqlpassion.at/archive/2016/09/26/how-to-move-data-between-file-groups-in-sql-server/
-[Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]:https://msdn.microsoft.com/en-us/library/dn673537.aspx
+[Optimizing Your Query Plans with the SQL Server 2014 Cardinality Estimator]:https://docs.microsoft.com/en-us/previous-versions/dn673537(v=msdn.10)?redirectedfrom=MSDN
 [Parallelism in SQL Server Query Tuning]:http://sqlmag.com/sql-server/parallelism-sql-server-query-tuning
 [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]:http://sqlmag.com/sql-server/what-you-need-know-about-batch-mode-window-aggregate-operator-sql-server-2016-part-1
 [What To Do If sp_BlitzFirst Warns About High Compilations]:https://www.brentozar.com/archive/2016/09/what-to-do-if-sp_blitzfirst-warns-about-high-compilations/
@@ -1861,3 +1864,6 @@ Articles types:
 [When QUERY_OPTIMIZER_COMPATIBILITY_LEVEL_140 does not follow CL 140 rules]:https://milossql.wordpress.com/2019/12/20/query_optimizer_compatibility_level_140/
 [SQL Server–HOW-TO: quickly retrieve accurate row count for table]:https://blogs.msdn.microsoft.com/martijnh/2010/07/15/sql-serverhow-to-quickly-retrieve-accurate-row-count-for-table/
 [Do You Have REFERENCES?]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/do-you-have-references/
+[Fun with (columnstore) compression on a very large table – part 1]:https://sqlperformance.com/2019/12/columnstore/fun-with-compression-very-large-table-1
+[How to Make SELECT COUNT(*) Queries Crazy Fast]:https://www.brentozar.com/archive/2019/12/how-to-make-select-count-queries-crazy-fast/
+[SSISDB Catalog Defaults Best Practices]:https://datasteve.com/2019/12/06/ssisdb-catalog-defaults-best-practices/
