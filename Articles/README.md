@@ -944,6 +944,9 @@ Articles types:
 | [Fun with (columnstore) compression on a very large table – part 1]                                                     | Aaron Bertrand                           | 2019-12-27 | [DBA]       |
 | [How to Make SELECT COUNT(*) Queries Crazy Fast]                                                                        | Brent Ozar                               | 2019-12-26 | [DBA][DEV]  |
 | [SSISDB Catalog Defaults Best Practices]                                                                                | Steve Rezhener                           | 2019-12-26 | [DBA][DEV]  |
+| [Temporal Tables, and how to deal with computed columns]                                                                | Randolph West                            | 2019-12-25 | [DBA][DEV]  |
+| [Cardinality Estimation for Disjunctive Predicates in SQL Server 2014]                                                  | Paul White                               | 2014-04-15 | [DBA][DEV]  |
+| [Create Distributed Availability Group in Sql Server Linux(Redhat) --- step by step]                                    | Liwei                                    | 2019-11-14 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1867,3 +1870,6 @@ Articles types:
 [Fun with (columnstore) compression on a very large table – part 1]:https://sqlperformance.com/2019/12/columnstore/fun-with-compression-very-large-table-1
 [How to Make SELECT COUNT(*) Queries Crazy Fast]:https://www.brentozar.com/archive/2019/12/how-to-make-select-count-queries-crazy-fast/
 [SSISDB Catalog Defaults Best Practices]:https://datasteve.com/2019/12/06/ssisdb-catalog-defaults-best-practices/
+[Temporal Tables, and how to deal with computed columns]:https://bornsql.ca/blog/temporal-tables-and-how-to-deal-with-computed-columns/
+[Cardinality Estimation for Disjunctive Predicates in SQL Server 2014]:https://www.sql.kiwi/2014/04/cardinality-estimation-for-disjunctive-predicates-in-2014.html
+[Create Distributed Availability Group in Sql Server Linux(Redhat) --- step by step]:https://techcommunity.microsoft.com/t5/sql-server-support/create-distributed-availability-group-in-sql-server-linux-redhat/ba-p/1003471
