@@ -531,6 +531,7 @@ SQL Server:
  - [Azure Machine Learning Studio: An Unleashed Guide](http://radacad.com/book-azure-machine-learning-studio-an-unleashed-guide) (by Leila Etaati)
  - [Nutanix Best Practices for SQL Server 2016](https://www.nutanix.com/viewer.html?type=pdf&lpurl=virtualize-microsoft-sql-server-hyperconverged-infrastructure.php&fromCampaign=true) (by Nutanix, Inc.)
  - [Cloud Analytics with Microsoft Azure](https://azure.microsoft.com/en-us/resources/cloud-analytics-with-microsoft-azure/) (by Has Altaiar, Jack Lee, Michael Peña)
+ - [Snowflake for SQL Server Users Part 1 – Core Concepts](https://sqldownunder.blob.core.windows.net/public/SnowflakeForSQLServerUsers_Part_1_CoreConcepts%20-%20for%20SDU%20Insiders.pdf) (by Dr Greg Low)
 
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)

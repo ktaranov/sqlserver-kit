@@ -3491,7 +3491,7 @@ Release date: 2017-03-01<br/>
 Support Version: ?<br/>
 Author: DMSoft Technologies<br/>
 Free version: Yes<br/>
-Price: 499
+Price: $499
 
 DBConvert Studio Software combines familiar and powerful features from the mature DBConvert and DBSync product series along with a redesigned and improved UI.
 The following scenarios are available:
@@ -4662,7 +4662,7 @@ Release date: 2019-09-10<br/>
 Support Version: 2008-2019<br/>
 Author: KernelApps Private<br/>
 Free version: No<br/>
-Price: 399
+Price: $399
 
 Repair corrupt and damaged MS SQL database files.
 
