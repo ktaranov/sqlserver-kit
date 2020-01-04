@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**601** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**602** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **601 trace flags**
+Summary: **602 trace flags**
 
 
 <a id="-1"></a>
@@ -5216,11 +5216,11 @@ Scope: global or session
 <a id="11024"></a>
 #### Trace Flag: 11024
 Function: In Microsoft SQL Server 2017, when incremental statistics are built on the top of partitioned tables, the sum of modification counts of all partitions is stored as the modification count of the root node.
-When the modification count of the root node exceeds a threshold, the auto update of statistics is triggered.
+When the modification count of the root node exceeds a [threshold](https://docs.microsoft.com/en-us/sql/relational-databases/statistics/statistics#AutoUpdateStats), the auto update of statistics is triggered.
 However, if the modification count of any single partition does not exceed the local threshold, the statistics are not updated.
 Additionally, the modification count of the root node is reset to zero. This may cause delay in the auto update of incremental statistics.
 When trace flag 11024 is enabled, the modification count of the root node is kept as the sum of modification counts of all partitions.<br />
-**Note: This trace flag applies to SQL Server 2017 CU3 and higher builds.**<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x) SP2, SQL Server 2017 (14.x) CU3, and higher builds.**<br />
 Link: https://support.microsoft.com/help/4041811<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
@@ -5232,6 +5232,15 @@ Scope: global or session
 Function: Prevents new information about row goals from getting logged to the plan cache.<br />
 Link: [New Undocumented Trace Flags]<br />
 Scope: ?
+
+
+<a id="11047"></a>
+#### Trace Flag: 11047
+Function: Applies the default timeout set by query wait (s) or the Resource Governor `REQUEST_MEMORY_GRANT_TIMEOUT_SEC` configuration to Columnstore index build operations.<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x) SP2 CU5, SQL Server 2017 (14.x) CU14, and higher builds.**
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/kb/4480641<br />
+Scope: global or session
 
 
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
