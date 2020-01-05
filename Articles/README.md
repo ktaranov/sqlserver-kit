@@ -947,6 +947,9 @@ Articles types:
 | [Temporal Tables, and how to deal with computed columns]                                                                | Randolph West                            | 2019-12-25 | [DBA][DEV]  |
 | [Cardinality Estimation for Disjunctive Predicates in SQL Server 2014]                                                  | Paul White                               | 2014-04-15 | [DBA][DEV]  |
 | [Create Distributed Availability Group in Sql Server Linux(Redhat) --- step by step]                                    | Liwei                                    | 2019-11-14 | [DBA]       |
+| [Connection options in SSMS]                                                                                            | Kenneth Fisher                           | 2013-11-18 | [DBA][DEV]  |
+| [A Script To Automatically Align Columnstore Indexes To Enhance Segment Elimination (and Hence Performances)]           | Emanuele Meazzo                          | 2018-06-04 | [DBA][IDX]  |
+| [Issues with SQLCMD when using special characters]                                                                      | Daniel Farina                            | 2018-01-11 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1873,3 +1876,6 @@ Articles types:
 [Temporal Tables, and how to deal with computed columns]:https://bornsql.ca/blog/temporal-tables-and-how-to-deal-with-computed-columns/
 [Cardinality Estimation for Disjunctive Predicates in SQL Server 2014]:https://www.sql.kiwi/2014/04/cardinality-estimation-for-disjunctive-predicates-in-2014.html
 [Create Distributed Availability Group in Sql Server Linux(Redhat) --- step by step]:https://techcommunity.microsoft.com/t5/sql-server-support/create-distributed-availability-group-in-sql-server-linux-redhat/ba-p/1003471
+[Connection options in SSMS]:https://sqlstudies.com/2013/11/18/connection-options-in-ssms/
+[A Script To Automatically Align Columnstore Indexes To Enhance Segment Elimination (and Hence Performances)]:https://tsql.tech/a-script-to-automatically-align-columnstore-indexes-to-enhance-segment-elimination-and-hence-performances/
+[Issues with SQLCMD when using special characters]:https://www.mssqltips.com/sqlservertip/5132/issues-with-sqlcmd-when-using-special-characters/
