@@ -950,6 +950,9 @@ Articles types:
 | [Connection options in SSMS]                                                                                            | Kenneth Fisher                           | 2013-11-18 | [DBA][DEV]  |
 | [A Script To Automatically Align Columnstore Indexes To Enhance Segment Elimination (and Hence Performances)]           | Emanuele Meazzo                          | 2018-06-04 | [DBA][IDX]  |
 | [Issues with SQLCMD when using special characters]                                                                      | Daniel Farina                            | 2018-01-11 | [DBA][DEV]  |
+| [Encrypting passwords with Python Scripts in SQL Notebooks of Azure Data Studio]                                        | Rajendra Gupta                           | 2020-01-06 | [DBA][DEV]  |
+| [Fun with (columnstore) compression on a very large table – part 2]                                                     | Aaron Bertrand                           | 2020-01-07 | [DBA][IDX]  |
+| [The curious case of the sqlcmd password]                                                                               | Randolph West                            | 2020-01-08 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1879,3 +1882,6 @@ Articles types:
 [Connection options in SSMS]:https://sqlstudies.com/2013/11/18/connection-options-in-ssms/
 [A Script To Automatically Align Columnstore Indexes To Enhance Segment Elimination (and Hence Performances)]:https://tsql.tech/a-script-to-automatically-align-columnstore-indexes-to-enhance-segment-elimination-and-hence-performances/
 [Issues with SQLCMD when using special characters]:https://www.mssqltips.com/sqlservertip/5132/issues-with-sqlcmd-when-using-special-characters/
+[Encrypting passwords with Python Scripts in SQL Notebooks of Azure Data Studio]:https://www.sqlshack.com/encrypting-passwords-with-python-scripts-in-sql-notebooks-of-azure-data-studio/
+[Fun with (columnstore) compression on a very large table – part 2]:https://sqlperformance.com/2020/01/columnstore/fun-with-compression-very-large-table-2
+[The curious case of the sqlcmd password]:https://bornsql.ca/blog/the-curious-case-of-the-sqlcmd-password/
