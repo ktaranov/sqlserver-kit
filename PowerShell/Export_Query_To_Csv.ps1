@@ -12,23 +12,27 @@
 .NOTES
    Original link: http://www.sqlmovers.com/removing-quotes-from-csv-created-by-powershell/
    Author: Russ Loski
-   Version: 1.1
+   Version: 1.2
    Modified: 2020-01-07 by Konstantin Taranov
    Source link: https://github.com/ktaranov/sqlserver-kit/blob/master/Powershell/Export_Query_To_Csv.ps1
 #>
 
 $databaseName = "master";
 $fileName = $tableName = "sys.objects";
-$delimeter = ",";
+$delimiter = ","; # possible values "`t", ",", ";", "|"
+if ($delimiter -eq "|") {
+    $delimiterReg = $delimiterBit = "\|";
+    } else {
+    $delimiterReg = $delimiterBit = $delimiter;
+    };
+$regReplace = '\G(?<start>^|' + $delimiterReg + '+)(("(?<output>[^' + $delimiterReg + '"]*?)"(?=' + $delimiterReg + '|$))|(?<output>".*?(?<!")("")*?"(?=' + $delimiterReg + '|$)))';
 
 Invoke-Sqlcmd -Query "SELECT * FROM $tableName;" `
               -Database $databaseName `
               -Server localhost |
 ConvertTo-CSV -NoTypeInformation `
-               -Delimiter $delimeter |
-               % {$_ -replace  `
-              '\G(?<start>^|,+)(("(?<output>[^,"]*?)"(?=,|$))|(?<output>".*?(?<!")("")*?"(?=,|$)))' `
-              ,'${start}${output}'} |
-               % {$_ -replace ($delimeter + 'False'), ($delimeter + '0')} |
-               % {$_ -replace ($delimeter + 'True'), ($delimeter + '1')} |
-Out-File "$fileName.csv" -fo -en utf8 ; 
+               -Delimiter $delimiter |
+               % {$_ -replace $regReplace, '${start}${output}'} |
+               % {$_ -replace ($delimiterBit + 'False'), ($delimiter + '0')} |
+               % {$_ -replace ($delimiterBit + 'True'),  ($delimiter + '1')} |
+Out-File "$fileName.csv" -fo -en utf8; 
