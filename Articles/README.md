@@ -953,6 +953,10 @@ Articles types:
 | [Encrypting passwords with Python Scripts in SQL Notebooks of Azure Data Studio]                                        | Rajendra Gupta                           | 2020-01-06 | [DBA][DEV]  |
 | [Fun with (columnstore) compression on a very large table – part 2]                                                     | Aaron Bertrand                           | 2020-01-07 | [DBA][IDX]  |
 | [The curious case of the sqlcmd password]                                                                               | Randolph West                            | 2020-01-08 | [DBA][DEV]  |
+| [Setting up Management Studio for remote SQL Server]                                                                    | aveek22                                  | 2020-01-06 | [DBA][DEV]  |
+| [SQL Server Security Best Practices for an Application Installed on SQL Server]                                         | Svetlana Golovko                         | 2019-12-08 | [DBA][SEC]  |
+| [PCI Best Practices Guide for SQL Server DBAs]                                                                          | Tibor Nagy                               | 2015-05-08 | [DBA][SEC]  |
+| [SQL Server Security Checklist]                                                                                         | Tibor Nagy                               | 2014-02-06 | [DBA][SEC]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1885,3 +1889,7 @@ Articles types:
 [Encrypting passwords with Python Scripts in SQL Notebooks of Azure Data Studio]:https://www.sqlshack.com/encrypting-passwords-with-python-scripts-in-sql-notebooks-of-azure-data-studio/
 [Fun with (columnstore) compression on a very large table – part 2]:https://sqlperformance.com/2020/01/columnstore/fun-with-compression-very-large-table-2
 [The curious case of the sqlcmd password]:https://bornsql.ca/blog/the-curious-case-of-the-sqlcmd-password/
+[Setting up Management Studio for remote SQL Server]:https://www.sqlservercentral.com/articles/setting-up-management-studio-for-remote-sql-server
+[SQL Server Security Best Practices for an Application Installed on SQL Server]:https://www.mssqltips.com/sqlservertip/6266/sql-server-security-best-practices-for-an-application-installed-on-sql-server/
+[PCI Best Practices Guide for SQL Server DBAs]:https://www.mssqltips.com/sqlservertip/3609/pci-best-practices-guide-for-sql-server-dbas/
+[SQL Server Security Checklist]:https://www.mssqltips.com/sqlservertip/3159/sql-server-security-checklist/
