@@ -957,6 +957,9 @@ Articles types:
 | [SQL Server Security Best Practices for an Application Installed on SQL Server]                                         | Svetlana Golovko                         | 2019-12-08 | [DBA][SEC]  |
 | [PCI Best Practices Guide for SQL Server DBAs]                                                                          | Tibor Nagy                               | 2015-05-08 | [DBA][SEC]  |
 | [SQL Server Security Checklist]                                                                                         | Tibor Nagy                               | 2014-02-06 | [DBA][SEC]  |
+| [Replace Model SQL Server Database with a User Database]                                                                | Daniel Farina                            | 2019-12-13 | [DBA]       |
+| [SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]                                                 | Rajendra Gupta                           | 2020-01-09 | [DBA]       |
+| [Departure of a SQL Server Administrator – What to Check?]                                                              | Thomas Rushton                           | 2020-01-03 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1893,3 +1896,6 @@ Articles types:
 [SQL Server Security Best Practices for an Application Installed on SQL Server]:https://www.mssqltips.com/sqlservertip/6266/sql-server-security-best-practices-for-an-application-installed-on-sql-server/
 [PCI Best Practices Guide for SQL Server DBAs]:https://www.mssqltips.com/sqlservertip/3609/pci-best-practices-guide-for-sql-server-dbas/
 [SQL Server Security Checklist]:https://www.mssqltips.com/sqlservertip/3159/sql-server-security-checklist/
+[Replace Model SQL Server Database with a User Database]:https://www.mssqltips.com/sqlservertip/6154/replace-model-sql-server-database-with-a-user-database/
+[SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]:https://www.sqlshack.com/sql-server-linux-installation-for-amazon-ec2-instance-with-red-hat-os/
+[Departure of a SQL Server Administrator – What to Check?]:https://thelonedba.wordpress.com/2020/01/03/departure-of-a-sql-server-administrator-what-to-check/
