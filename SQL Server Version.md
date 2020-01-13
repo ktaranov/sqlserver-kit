@@ -365,7 +365,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 
 | SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server 2019                              | 15              |  2019        | 2019         | 904                       | 150                             | 150, 140, 130, 120, 110       |
+| SQL Server 2019                              | 15              |  2019        | 2019         | 895-904                   | 150                             | 150, 140, 130, 120, 110       |
 | SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              |  Helsinki    | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
@@ -421,22 +421,22 @@ Microsoft SQL Server 2019 (RC1.1) - 15.0.1900.47 (X64)
    Developer Edition (64-bit) on …
 ```
 
-| Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb |
-|---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-10-28 |    83 |     62 |      452 |
-| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  |            | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |
-| 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-25 |       |        |     1360 |
-| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)   | 2019-08-28   | 2019-08-17 |       |        |     1360 |
-| 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |
-| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |
-| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.1                          | 2019-06-26   | 2019-06-20 |       |        |     1341 |
-| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.0                          | 2019-05-22   | 2019-05-17 |       |        |     1339 |
-| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.5                          | 2019-04-23   | 2019-04-16 |       |        |     1340 |
-| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.4                          | 2019-03-27   | 2019-03-17 |       |        |     1331 |
-| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.3                          | 2019-03-01   | 2019-02-16 |       |        |     1331 |
-| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.2                          | 2018-12-11   | 2018-11-02 |       |        |     1302 |
-| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |
-| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |
+| Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
+|---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
+| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-10-28 |    83 |     62 |      452 |        904 |
+| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  |            | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |        904 |
+| 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-25 |       |        |     1360 |        904 |
+| 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)   | 2019-08-28   | 2019-08-17 |       |        |     1360 |        904 |
+| 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |        904 |
+| 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |        904 |
+| 15.0.1700.0   | 2019.150.1700.0   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.1                          | 2019-06-26   | 2019-06-20 |       |        |     1341 |        902 |
+| 15.0.1600.8   | 2019.150.1600.8   | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.0                          | 2019-05-22   | 2019-05-17 |       |        |     1339 |        902 |
+| 15.0.1500.28  | 2019.150.1500.28  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.5                          | 2019-04-23   | 2019-04-16 |       |        |     1340 |        897 |
+| 15.0.1400.75  | 2019.150.1400.75  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.4                          | 2019-03-27   | 2019-03-17 |       |        |     1331 |        897 |
+| 15.0.1300.359 | 2019.150.1200.359 | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.3                          | 2019-03-01   | 2019-02-16 |       |        |     1331 |        897 |
+| 15.0.1200.24  | 2018.150.1200.24  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.2                          | 2018-12-11   | 2018-11-02 |       |        |     1302 |        896 |
+| 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |        896 |
+| 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |        895 |
 
 [Cumulative Update 1 for SQL Server 2019]:https://support.microsoft.com/help/4527376/
 [Servicing Update for SQL Server 2019 RTM]:https://support.microsoft.com/help/4517790/
