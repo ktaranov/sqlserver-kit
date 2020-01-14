@@ -20,6 +20,7 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
 - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
 - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)
 - [Add Transact-SQL Snippets](https://docs.microsoft.com/en-us/sql/relational-databases/scripting/add-transact-sql-snippets)
+- [A month of SSMS tips and tricks](https://blog.waynesheffield.com/wayne/archive/2018/02/ssms-tips-tricks/)
 
 
 ## Supported SQL Server versions
