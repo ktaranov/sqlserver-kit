@@ -362,25 +362,25 @@ Execute the following query to determine the version of the Database Engine that
 SELECT SERVERPROPERTY('ProductVersion');
 ```
 
-| SQL Server Version                           | Database Engine | Code Name    | Release Year | Internal Database Version | Compatibility Level Designation | Supported Compatibility Level |
-|:---------------------------------------------|----------------:|:-------------|-------------:|--------------------------:|--------------------------------:|------------------------------:|
-| SQL Server 2019                              | 15              |  2019        | 2019         | 895-904                   | 150                             | 150, 140, 130, 120, 110       |
-| SQL Server 2017                              | 14              |  2017        | 2017         | 869                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2016                              | 13              |  Helsinki    | 2016         | 852                       | 130                             | 130, 120, 110, 100            |
-| Azure SQL Database                           | 14              |  CloudDB     | 2010 (2018)  | 862                       | 140                             | 140, 130, 120, 110, 100       |
-| SQL Server 2014                              | 12              |  Hekaton     | 2014         | 782                       | 120                             | 120, 110, 100                 |
-| SQL Server 2012                              | 11              |  Denali      | 2012         | 706                       | 110                             | 110, 100, 90                  |
-| SQL Server 2008 R2                           | 10.5            |  Kilimanjaro | 2010         | 660 / 661                 | 100                             | 100, 90, 80                   |
-| SQL Server 2008                              | 10              |  Katmai      | 2008         | 655                       | 100                             | 100, 90, 80                   |
-| SQL Server 2005 SP2+ with VarDecimal enabled |  9              |  Yukon       | 2005         | 612                       |  90                             | 90, 80                        |
-| SQL Server 2005                              |  9              |  Yukon       | 2005         | 611                       |  90                             | 90, 80                        |
-| SQL Server 2000                              |  8              |  Shiloh      | 2000         | 539                       |  80                             | 80                            |
-| SQL Server 7.0                               |  ?              |  Sphinx      | 1998         | 515                       |  70                             | 70                            |
-| SQL Server 6.5                               |  ?              |  Hydra       | 1996         | 408                       |  65                             | 65                            |
-| SQL Server 6.0                               |  ?              |  SQL95       | 1995         | ?                         |  60                             | ?                             |
-| SQL Server 4.21                              |  ?              |  SQLNT       | 1993         | ?                         |  60                             | ?                             |
-| SQL Server 1.1 (16 bit)                      |  ?              |  Pietro      | 1991         | ?                         |  60                             | ?                             |
-| SQL Server 1.0 (16 bit)                      |  ?              |  Filipi      | 1989         | ?                         |  60                             | ?                             |
+| SQL Server Version                           | Database Engine | Code Name   | Release Year | Internal DB Version | Compatibility Level Designation | Supported Compatibility Level |
+|:---------------------------------------------|----------------:|:------------|-------------:|--------------------:|--------------------------------:|------------------------------:|
+| SQL Server 2019                              | 15              | 2019        | 2019         | 895-904             | 150                             | 150, 140, 130, 120, 110       |
+| SQL Server 2017                              | 14              | 2017        | 2017         | 869                 | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2016                              | 13              | Helsinki    | 2016         | 852                 | 130                             | 130, 120, 110, 100            |
+| Azure SQL Database                           | 14              | CloudDB     | 2010 (2018)  | 862                 | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2014                              | 12              | Hekaton     | 2014         | 782                 | 120                             | 120, 110, 100                 |
+| SQL Server 2012                              | 11              | Denali      | 2012         | 706                 | 110                             | 110, 100, 90                  |
+| SQL Server 2008 R2                           | 10.5            | Kilimanjaro | 2010         | 660 / 661           | 100                             | 100, 90, 80                   |
+| SQL Server 2008                              | 10              | Katmai      | 2008         | 655                 | 100                             | 100, 90, 80                   |
+| SQL Server 2005 SP2+ with VarDecimal enabled |  9              | Yukon       | 2005         | 612                 |  90                             | 90, 80                        |
+| SQL Server 2005                              |  9              | Yukon       | 2005         | 611                 |  90                             | 90, 80                        |
+| SQL Server 2000                              |  8              | Shiloh      | 2000         | 539                 |  80                             | 80                            |
+| SQL Server 7.0                               |  ?              | Sphinx      | 1998         | 515                 |  70                             | 70                            |
+| SQL Server 6.5                               |  ?              | Hydra       | 1996         | 408                 |  65                             | 65                            |
+| SQL Server 6.0                               |  ?              | SQL95       | 1995         | ?                   |  60                             | ?                             |
+| SQL Server 4.21                              |  ?              | SQLNT       | 1993         | ?                   |  60                             | ?                             |
+| SQL Server 1.1 (16 bit)                      |  ?              | Pietro      | 1991         | ?                   |  60                             | ?                             |
+| SQL Server 1.0 (16 bit)                      |  ?              | Filipi      | 1989         | ?                   |  60                             | ?                             |
 
 **Azure SQL Database V12** was released in December 2014. One aspect of that release was that newly created databases had their compatibility level set to 120. In 2015 SQL Database began support for level 130, although the default remained 120.
 
@@ -414,17 +414,17 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (RC1.1) - 15.0.1900.47 (X64)
-   Jun 20 2019 00:00:00
+Microsoft SQL Server 2019 (RTM-CU1) (KB4527376) - 15.0.4003.23 (X64)
+   Dec  6 2019 14:53:33
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-10-28 |    83 |     62 |      452 |        904 |
+| 15.0.2070.41  | 2019.150.2070.41  | RTM    | CU   | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-12-06 |    83 |     62 |      452 |        904 |
 | 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  |            | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |        904 |
-| 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-25 |       |        |     1360 |        904 |
+| 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-24 |       |        |     1360 |        904 |
 | 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)   | 2019-08-28   | 2019-08-17 |       |        |     1360 |        904 |
 | 15.0.1900.25  | 2019.150.1900.25  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1 (RC1)       | 2019-08-21   | 2019-08-17 |       |        |     1360 |        904 |
 | 15.0.1800.32  | 2019.150.1800.32  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP3.2                          | 2019-07-24   | 2019-07-18 |       |        |     1358 |        904 |
