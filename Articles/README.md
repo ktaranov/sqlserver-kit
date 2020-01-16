@@ -960,6 +960,10 @@ Articles types:
 | [Replace Model SQL Server Database with a User Database]                                                                | Daniel Farina                            | 2019-12-13 | [DBA]       |
 | [SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]                                                 | Rajendra Gupta                           | 2020-01-09 | [DBA]       |
 | [Departure of a SQL Server Administrator – What to Check?]                                                              | Thomas Rushton                           | 2020-01-03 | [DBA]       |
+| [The Curious Case of… transactions rolling back during DBCC CHECKDB]                                                    | Paul Randal                              | 2020-01-15 | [DBA]       |
+| [Don’t install SQL Server from a mounted ISO]                                                                           | Randolph West                            | 2020-01-15 | [DBA]       |
+| [NULL complexities – Part 1]                                                                                            | Itzik Ben-Gan                            | 2019-12-11 | [DBA][DEV]  |
+| [NULL complexities – Part 2]                                                                                            | Itzik Ben-Gan                            | 2020-01-08 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1868,7 +1872,6 @@ Articles types:
 [Stack Overflow Demo Database Column Store Edition: Exploring Relationships]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-exploring-relationships/
 [Stack Overflow Demo Database Column Store Edition: Helpful Links]:https://www.erikdarlingdata.com/2019/11/stack-overflow-demo-database-column-store-edition-helpful-links/
 [Online, Resumable, and WAIT_AT_LOW_PRIORITY operations in SQL Server]:https://littlekendra.com/2019/12/09/online-resumable-and-wait_at_low_priority-operations-in-sql-server/
-[NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
 [How filtered indexes could be a more powerful feature]:https://sqlperformance.com/2013/04/t-sql-queries/filtered-indexes
 [How Forced Parameterization in SQL Server Affects Filtered Indexes]:https://www.mssqltips.com/sqlservertip/6139/how-forced-parameterization-in-sql-server-affects-filtered-indexes/
 [Filtered Indexes and Forced Parameterization (redux)]:https://sqlperformance.com/2019/12/t-sql-queries/filtered-indexes-forced-parameterization
@@ -1899,3 +1902,7 @@ Articles types:
 [Replace Model SQL Server Database with a User Database]:https://www.mssqltips.com/sqlservertip/6154/replace-model-sql-server-database-with-a-user-database/
 [SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]:https://www.sqlshack.com/sql-server-linux-installation-for-amazon-ec2-instance-with-red-hat-os/
 [Departure of a SQL Server Administrator – What to Check?]:https://thelonedba.wordpress.com/2020/01/03/departure-of-a-sql-server-administrator-what-to-check/
+[The Curious Case of… transactions rolling back during DBCC CHECKDB]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-transactions-rolling-back-during-dbcc-checkdb/
+[Don’t install SQL Server from a mounted ISO]:https://bornsql.ca/blog/dont-install-sql-server-from-a-mounted-iso/
+[NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
+[NULL complexities – Part 2]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-2
