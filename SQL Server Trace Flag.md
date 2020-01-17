@@ -220,7 +220,7 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
 ## Recommended Trace Flags
 
  - [Trace Flag 272](#272) (for SQL Server 2012)
- - [Trace Flag 460](#460) (for SQL Server 2019, >= 2017 CU14, >= 2016 SP2 CU6)
+ - [Trace Flag 460](#460) (2017 for >= CU14, 2016 for >= SP2 CU6)
  - [Trace Flag 1118](#1118) (for versions < SQL Server 2016)
  - [Trace Flag 3023](#3023) (for versions < SQL Server 2014)
  - [Trace Flag 3226](#3226) (for all versions)
@@ -632,8 +632,8 @@ Link: None
 <a id="460"></a>
 #### Trace Flag: 460
 Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
-Description for [2628] mesage has useful information - which column had the truncation and which row.
-Starting with SQL Server 2019 CTP 2.4, to accomplish this at the database level, see the VERBOSE_TRUNCATION_WARNINGS option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
+Description for [2628] message has useful information - which column had the truncation and which row.
+Starting with SQL Server 2019 CTP 2.4, to accomplish this at the database level, see the `VERBOSE_TRUNCATION_WARNINGS` option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
 **Note: This trace flag applies to SQL Server 2017 (14.x) CU12, and higher builds.**<br />
 **Note: Starting with database compatibility level 150, message ID 2628 is the default and this trace flag has no effect.**<br />
 **Note: Don’t leave this trace flag enabled on global scope for SQL Server 2017 CU12 and CU13.**<br />
@@ -4477,13 +4477,17 @@ Link: http://www.queryprocessor.com/batch-sort-and-nested-loops
 
 <a id="9130"></a>
 #### Trace Flag: 9130
+**Undocumented trace flag**<br />
 Function: Disables the particular copy out stage rewrite from Filter + (Scan or Seek) to (Scan or Seek) + Residual Predicate.
-Enabling this flag retains the Filter in the final execution plan, resulting in a SQL Server 2008+ plan that mirrors the 2005 version.<br />
+Enabling this flag retains the Filter in the final execution plan, resulting in a SQL Server 2008+ plan that mirrors the 2005 version.
+Before Service Pack 3 of SQL Server 2012, we didn't have property `Number of Rows Read` in execution plan, and to get a feel for the difference between the `Number of Rows Read` and the `Actual Number of Rows`, we'd need to use trace flag 9130.<br />
 Link: https://www.sql.kiwi/2012/10/cardinality-estimation-bug-with-lookups-in-sql-server-2008-onward.html<br />
 Link: http://sqlblogcasts.com/blogs/sqlandthelike/archive/2012/12/06/my-new-favourite-traceflag.aspx<br />
 Link: [Hello Operator, My Switch Is Bored]<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/767395/cardinality-estimation-error-with-pushed-predicate-on-a-lookup<br />
-Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in-Execution-Plans-(TF-9130).aspx
+Link: http://www.theboreddba.com/Categories/FunWithFlags/Revealing-Predicates-in-Execution-Plans-(TF-9130).aspx<br />
+Link: https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer<br />
+Scope: global or session or query
 
 
 <a id="9134"></a>
