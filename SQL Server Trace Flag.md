@@ -1095,8 +1095,13 @@ Link: None
 <a id="1165"></a>
 #### Trace Flag: 1165
 **Undocumented trace flag**<br />
-Function: This [presentation](http://www.youtube.com/watch?v=SvseGMobe2w&feature=youtu.be) by Bob Ward says that this TF outputs the recalculated #’s (every 8192 allocations) for the proportional fill algorithm in database allocation when multiple files are present..<br />
-Link: None
+Function: In the Proportional Fill Algorithm, each database data file will be assigned with a ranking integer number to specify how many times this file will be skipped from the writing process to the next file depending on the free space of that file, this number is called the Skip Target where the minimum value equal to 1 means that a write process will be performed on that file.
+The Skip Target can be measured by dividing the number of free extents in the file with the largest free space amount by the number of free extents in the current file, as integer value. The larger the free space in the database data file, the smaller Skip Target value.
+To have one file to write on each loop, there should be minimum one data file with Skip Target value equal to 1.
+Each time a new database data file is added or removed, or 8192 extents is filled in the database filegroup, the Skip Target value will be calculated again. In this way, all database data files will become full approximately at the same time.
+The Skip Target calculation can be monitored by enabling the Trace Flag 1165.<br />
+Link: https://www.sqlshack.com/understanding-sql-server-proportional-fill-algorithm/<br />
+Scope: 
 
 
 <a id="1180"></a>
