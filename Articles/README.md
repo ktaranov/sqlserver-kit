@@ -790,7 +790,7 @@ Articles types:
 | [Backup to URL]                                                                                                         | Jon Gurgul                               | 2019-01-01 | [B][DBA]    |
 | [Spotting Unauthorized Configuration Settings in SQL Server]                                                            | Phil Factor                              | 2018-09-30 | [DBA][DEV]  |
 | [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-10-27 | [DBA][DEV]  |
-| [Window Functions in SQL Server]                                                                                        | Fabiano Amorim                           | 2011-11-24 | [DBA][DEV]  |
+| [Window Functions in SQL Server: Part 2-The Frame]                                                                      | Fabiano Amorim                           | 2011-11-24 | [DBA][DEV]  |
 | [An Intro to SQL Window Functions]                                                                                      | Neal Barnett                             | 2019-07-07 | [DBA][DEV]  |
 | [SQL Database Performance Tuning for Developers]                                                                        | Rodrigo Koch                             | 1753-01-01 | [P]         |
 | [“But NOLOCK Is Okay When The Data Isn’t Changing, Right?”]                                                             | Brent Ozar                               | 2019-08-05 | [DBA][DEV]  |
@@ -964,6 +964,13 @@ Articles types:
 | [Don’t install SQL Server from a mounted ISO]                                                                           | Randolph West                            | 2020-01-15 | [DBA]       |
 | [NULL complexities – Part 1]                                                                                            | Itzik Ben-Gan                            | 2019-12-11 | [DBA][DEV]  |
 | [NULL complexities – Part 2]                                                                                            | Itzik Ben-Gan                            | 2020-01-08 | [DBA][DEV]  |
+| [How to fix the “Agent XPs disabled” error]                                                                             | Nisarg Upadhyay                          | 2019-12-27 | [DBA][DEV]  |
+| [Number of Rows Read / Actual Rows Read warnings in Plan Explorer]                                                      | Rob Farley                               | 2016-06-02 | [DBA][DEV]  |
+| [Data Compression + Backup Compression = Double Compression?]                                                           | Jess Pomfret                             | 2019-08-12 | [B][DBA]    |
+| [How Many Bytes Per Character in SQL Server: a Completely Complete Guide]                                               | Solomon Rutzky                           | 2019-11-12 | [DBA][DEV]  |
+| [Storage 101: Welcome to the Wonderful World of Storage]                                                                | Robert Sheldon                           | 2019-12-03 | [DBA][DEV]  |
+| [How to detect and prevent unexpected growth of the TempDB database]                                                    | Ahmad Yaseen                             | 2020-01-13 | [DBA]       |
+| [Understanding the SQL Server Proportional fill algorithm]                                                              | Ahmad Yaseen                             | 2016-11-22 | [DBA]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1189,7 +1196,6 @@ Articles types:
 [SQL Server Temporal Tables: How-To Recipes]:https://www.simple-talk.com/sql/sql-training/sql-server-temporal-tables-recipes/
 [The Migration Checklist]:http://www.sqlservercentral.com/articles/Editorial/154033/
 [Upgrading to SQL Server 2014: A Dozen Things to Check]:https://thomaslarock.com/2014/06/upgrading-to-sql-server-2014-a-dozen-things-to-check/
-[Number of Rows Read / Actual Rows Read warnings in Plan Explorer]:https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer
 [Introducing the Set-based Loop]:http://www.sqlservercentral.com/articles/set-based+loop/127670/
 [Representing Hierarchical Data for Mere Mortals]:https://www.simple-talk.com/sql/database-administration/representing-hierarchical-data-for-mere-mortals/
 [KPIs For DBAs to Show Their CIOs]:https://thomaslarock.com/2017/03/kpis-dbas-show-cios/
@@ -1713,7 +1719,6 @@ Articles types:
 [Dr. OUTPUT or: How I Learned to Stop Worrying and Love the MERGE]:http://dataeducation.com/dr-output-or-how-i-learned-to-stop-worrying-and-love-the-merge/
 [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]:https://www.sqlpassion.at/archive/2013/06/12/sql-server-tipping-games-why-non-clustered-indexes-are-just-ignored/
 [SQL Server Guide To NULL Handling]:https://gavindraper.com//2018/11/29/SQL-Server-Guide-To-NULL-Handling/
-[Data Compression + Backup Compression = Double Compression?]:https://jesspomfret.com/double-compression/
 [Living with SQL’s 900 Byte Index Key Length Limit]:https://blogs.msdn.microsoft.com/bartd/2011/01/06/living-with-sqls-900-byte-index-key-length-limit/
 [Memory-Optimized TempDB Metadata in SQL Server 2019]:https://www.sqlshack.com/memory-optimized-tempdb-metadata-in-sql-server-2019/
 [Forcing A Plan That Has A Plan Guide]:https://www.scarydba.com/2018/11/26/forcing-a-plan-that-has-a-plan-guide/
@@ -1854,7 +1859,6 @@ Articles types:
 [Query Store Performance Overhead: What you need to know]:https://www.sqlskills.com/blogs/erin/query-store-performance-overhead/
 [How to fork a GitHub repository and contribute to an open source project]:https://sqldbawithabeard.com/2019/11/29/how-to-fork-a-github-repository-and-contribute-to-an-open-source-project/
 [But I Need To Compare Two Date Columns In My Where Clause]:https://www.erikdarlingdata.com/2019/11/but-i-need-to-compare-two-date-columns-in-my-where-clause/
-[How Many Bytes Per Character in SQL Server: a Completely Complete Guide]:https://sqlquantumleap.com/2019/11/22/how-many-bytes-per-character-in-sql-server-a-completely-complete-guide/
 [The Difference Between Fault Tolerance, High Availability, & Disaster Recovery]:http://www.pbenson.net/2014/02/the-difference-between-fault-tolerance-high-availability-disaster-recovery/
 [Why LOB data makes shrink run slooooowly]:https://www.sqlskills.com/blogs/paul/why-lob-data-makes-shrink-run-slooooowly-t-sql-tuesday-006/
 [SQL Server 2019 Scalar UDF inlining - out of memory in some cases]:https://sql-sasquatch.blogspot.com/2019/11/sql-server-2019-udf-inlining-oom-in.html
@@ -1906,3 +1910,10 @@ Articles types:
 [Don’t install SQL Server from a mounted ISO]:https://bornsql.ca/blog/dont-install-sql-server-from-a-mounted-iso/
 [NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
 [NULL complexities – Part 2]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-2
+[How to fix the “Agent XPs disabled” error]:https://www.sqlshack.com/how-to-fix-the-agent-xps-disabled-error/
+[Number of Rows Read / Actual Rows Read warnings in Plan Explorer]:https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer
+[Data Compression + Backup Compression = Double Compression?]:https://jesspomfret.com/double-compression/
+[How Many Bytes Per Character in SQL Server: a Completely Complete Guide]:https://sqlquantumleap.com/2019/11/22/how-many-bytes-per-character-in-sql-server-a-completely-complete-guide/
+[Storage 101: Welcome to the Wonderful World of Storage]:https://www.red-gate.com/simple-talk/sql/database-administration/storage-101-welcome-to-the-wonderful-world-of-storage/
+[How to detect and prevent unexpected growth of the TempDB database]:https://www.sqlshack.com/how-to-detect-and-prevent-unexpected-growth-of-the-tempdb-database/
+[Understanding the SQL Server Proportional fill algorithm]:https://www.sqlshack.com/understanding-sql-server-proportional-fill-algorithm/

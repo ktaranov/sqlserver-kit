@@ -139,7 +139,7 @@ Profits:
 
 [Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
 [CU1 KB4527376]:https://support.microsoft.com/help/4527376/
-[Install 2017 RTM]:https://www.microsoft.com/sql-server/sql-server-downloads
+[Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU18 KB4527377]:https://support.microsoft.com/help/4527377
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU11 KB4527378]:https://support.microsoft.com/help/4527378
@@ -177,7 +177,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
 |:--------------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2019 RTM]                 | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
-| [SQL Server 2019 GDR1]                | SQLServer2019-KB4527376-x64.exe                                   | 2020-01-07   | 15.0.4003.23  |      452 | 6412a53eb385a693b48948a297816647d25fa5d5 |
+| [SQL Server 2019 CU1]                 | SQLServer2019-KB4527376-x64.exe                                   | 2020-01-07   | 15.0.4003.23  |      452 | 6412a53eb385a693b48948a297816647d25fa5d5 |
 | [SQL Server 2017 RTM]                 | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU18]                | SQLServer2017-KB4527377-x64.exe                                   | 2019-12-09   | 14.0.3257.3   |      529 | cd2488e727d332802f77d5032e3e4b40da777f77 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
