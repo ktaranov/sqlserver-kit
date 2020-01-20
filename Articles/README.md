@@ -971,6 +971,9 @@ Articles types:
 | [Storage 101: Welcome to the Wonderful World of Storage]                                                                | Robert Sheldon                           | 2019-12-03 | [DBA][DEV]  |
 | [How to detect and prevent unexpected growth of the TempDB database]                                                    | Ahmad Yaseen                             | 2020-01-13 | [DBA]       |
 | [Understanding the SQL Server Proportional fill algorithm]                                                              | Ahmad Yaseen                             | 2016-11-22 | [DBA]       |
+| [VALUES() and Long Parameter Lists]                                                                                     | Joe Celko                                | 2010-07-22 | [DBA][DEV]  |
+| [Going Serverless with Azure SQL Database]                                                                              | John Miner                               | 2019-12-20 | [DBA][DEV]  |
+| [SQLskills SQL101: Why are Statistics so Important?]                                                                    | Kimberly Tripp                           | 2020-01-20 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1917,3 +1920,6 @@ Articles types:
 [Storage 101: Welcome to the Wonderful World of Storage]:https://www.red-gate.com/simple-talk/sql/database-administration/storage-101-welcome-to-the-wonderful-world-of-storage/
 [How to detect and prevent unexpected growth of the TempDB database]:https://www.sqlshack.com/how-to-detect-and-prevent-unexpected-growth-of-the-tempdb-database/
 [Understanding the SQL Server Proportional fill algorithm]:https://www.sqlshack.com/understanding-sql-server-proportional-fill-algorithm/
+[VALUES() and Long Parameter Lists]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/values-and-long-parameter-lists/
+[Going Serverless with Azure SQL Database]:https://www.mssqltips.com/sqlservertip/6273/going-serverless-with-azure-sql-database/
+[SQLskills SQL101: Why are Statistics so Important?]:https://www.sqlskills.com/blogs/kimberly/sql101_whystatisticsareimportant/
