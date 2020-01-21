@@ -178,6 +178,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       9001 | The log for database '%.*ls' is not available. Check the operating system error log for related        … | [9001_link1][16]                                    |
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19],[9002_link3]      |
 |       9105 | The provided statistics stream is corrupt.                                                               | [9105_link1][33]                                    |
+|       9642 | An error occurred in a Service Broker/Database Mirroring transport connection endpoint, Error: %i,     … | [9105_link1][45]                                    |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                                       |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                                   |
 |      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                                   |
@@ -204,6 +205,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                                   |
 |      17190 | Initializing the FallBack certificate failed with error code: %d, state: %d, error number: %d.         … | [17190_link1]                                       |
 |      17300 | SQL Server was unable to run a new system task, either because there is insufficient memory or the     … | [17300_link1]                                       |
+|      17836 | Length specified in network packet payload did not match number of bytes read; the connection has been … | [17836_link1][45]                                   |
 |      18054 | Error %d, severity %d, state %d was raised, but no message with that error number was found in         … | [18054_link1]                                       |
 |      18272 | During restore restart, an I/O error occurred on checkpoint file '%s' (operating system error %s       … | [18272_link1]                                       |
 |      18357 | Reason: An attempt to login using SQL authentication failed. Server is configured for Integrated       … | [18357_link1][5]                                    |
@@ -266,6 +268,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [42]:https://www.sqlserverscience.com/internals/invalid-protection-option/
 [43]:https://www.red-gate.com/hub/product-learning/sql-monitor/spotting-unauthorized-configuration-settings-sql-server
 [44]:https://www.red-gate.com/hub/product-learning/sql-prompt/problems-caused-by-use-of-the-sql_variant-datatype
+[45]:http://www.seangallardy.com/error-8474-state-11-17836-state-20-9642-state-3-and-your-companys-need-to-incessantly-scan-for-vulnerable-ports/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
