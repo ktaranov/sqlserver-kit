@@ -974,6 +974,11 @@ Articles types:
 | [VALUES() and Long Parameter Lists]                                                                                     | Joe Celko                                | 2010-07-22 | [DBA][DEV]  |
 | [Going Serverless with Azure SQL Database]                                                                              | John Miner                               | 2019-12-20 | [DBA][DEV]  |
 | [SQLskills SQL101: Why are Statistics so Important?]                                                                    | Kimberly Tripp                           | 2020-01-20 | [DBA][DEV]  |
+| [Configuring SQL Server Express edition as SQL witness server in Database Mirroring]                                    | Nisarg Upadhyay                          | 2020-01-20 | [DBA]       |
+| [The Half Apply Query]                                                                                                  | Forrest                                  | 2020-01-20 | [DBA][DEV]  |
+| [Import JSON data into SQL Server]                                                                                      | Rajendra Gupta                           | 2020-01-17 | [X]         |
+| [Auditing in AWS RDS SQL Server]                                                                                        | Rajendra Gupta                           | 2020-01-20 | [DBA]       |
+| [Types of SQL Server Indexes]                                                                                           | Ben Snaidero                             | 2019-12-24 | [IDX]       |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1923,3 +1928,8 @@ Articles types:
 [VALUES() and Long Parameter Lists]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/values-and-long-parameter-lists/
 [Going Serverless with Azure SQL Database]:https://www.mssqltips.com/sqlservertip/6273/going-serverless-with-azure-sql-database/
 [SQLskills SQL101: Why are Statistics so Important?]:https://www.sqlskills.com/blogs/kimberly/sql101_whystatisticsareimportant/
+[Configuring SQL Server Express edition as SQL witness server in Database Mirroring]:https://www.sqlshack.com/configuring-sql-server-express-edition-as-sql-witness-server-in-database-mirroring/
+[The Half Apply Query]:https://forrestmcdaniel.com/2020/01/20/the-half-apply-query/
+[Import JSON data into SQL Server]:https://www.sqlshack.com/import-json-data-into-sql-server/
+[Auditing in AWS RDS SQL Server]:https://www.sqlshack.com/auditing-in-aws-rds-sql-server/
+[Types of SQL Server Indexes]:https://www.mssqltips.com/sqlservertip/6274/types-of-sql-server-indexes/
