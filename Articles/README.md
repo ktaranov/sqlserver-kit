@@ -979,6 +979,10 @@ Articles types:
 | [Import JSON data into SQL Server]                                                                                      | Rajendra Gupta                           | 2020-01-17 | [X]         |
 | [Auditing in AWS RDS SQL Server]                                                                                        | Rajendra Gupta                           | 2020-01-20 | [DBA]       |
 | [Types of SQL Server Indexes]                                                                                           | Ben Snaidero                             | 2019-12-24 | [IDX]       |
+| [Use SQL Server's UNPIVOT operator to help normalize output]                                                            | Aaron Bertrand                           | 2013-07-12 | [DBA][DEV]  |
+| [Prevent SSMS from seeing the server's file system]                                                                     | Randi Vertongen                          | 2019-09-02 | [DBA]       |
+| [Add the ability to disable or enable a few new DMVs and DMFs introduced in SQL Server 2017]                            | Microsoft                                | 2017-11-08 | [DBA]       |
+| [Actual Difference Between EXISTS(SELECT 1 …), EXISTS(SELECT * …), and EXISTS(SELECT column …)]                         | Solomon Rutzky                           | 2020-01-24 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1933,3 +1937,7 @@ Articles types:
 [Import JSON data into SQL Server]:https://www.sqlshack.com/import-json-data-into-sql-server/
 [Auditing in AWS RDS SQL Server]:https://www.sqlshack.com/auditing-in-aws-rds-sql-server/
 [Types of SQL Server Indexes]:https://www.mssqltips.com/sqlservertip/6274/types-of-sql-server-indexes/
+[Use SQL Server's UNPIVOT operator to help normalize output]:https://www.mssqltips.com/sqlservertip/3000/use-sql-servers-unpivot-operator-to-help-normalize-output/
+[Prevent SSMS from seeing the server's file system]:https://dba.stackexchange.com/a/246783/107045
+[Add the ability to disable or enable a few new DMVs and DMFs introduced in SQL Server 2017]:https://support.microsoft.com/help/4046638/
+[Actual Difference Between EXISTS(SELECT 1 …), EXISTS(SELECT * …), and EXISTS(SELECT column …)]:https://sqlquantumleap.com/2020/01/24/actual-difference-between-existsselect-1-existsselect-and-existsselect-column/
