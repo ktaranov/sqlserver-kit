@@ -2739,6 +2739,12 @@ Function: This flag allows the SQL Server DB startup code to move system tables 
 Link: https://support.microsoft.com/help/3003760/
 
 
+<a id="3895"></a>
+#### Trace Flag: 3895
+Function: In SQL Server 2019, when you enable the Memory-Optimized TempDB Metadata feature, this trace flag is automatically enabled after the next restart. When you disable that feature, the trace flag is automatically removed after the next restart.<br />
+Link: None
+
+
 <a id="3913"></a>
 #### Trace Flag: 3913
 Function: SQL 7/8 - SQL Server does not update the rowcnt column of the sysindexes system table until the transaction is committed. When turned on the optimizer gets row count information from in-memory metadata that is saved to sysindexes system table when the transaction commits.<br />
