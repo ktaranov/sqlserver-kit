@@ -983,6 +983,13 @@ Articles types:
 | [Prevent SSMS from seeing the server's file system]                                                                     | Randi Vertongen                          | 2019-09-02 | [DBA]       |
 | [Add the ability to disable or enable a few new DMVs and DMFs introduced in SQL Server 2017]                            | Microsoft                                | 2017-11-08 | [DBA]       |
 | [Actual Difference Between EXISTS(SELECT 1 …), EXISTS(SELECT * …), and EXISTS(SELECT column …)]                         | Solomon Rutzky                           | 2020-01-24 | [DBA][DEV]  |
+| [Why Wait Stats Alone Are Not Enough]                                                                                   | Greg Gonzalez                            | 2020-01-24 | [DBA][DEV]  |
+| [Estimating AWS RDS SQL Server costs]                                                                                   | Rajendra Gupta                           | 2020-01-23 | [DEV]       |
+| [SQL Server Performance Tuning Using Wait Statistics: A Beginner’s Guide]                                               | Jonathan Kehayias, Erin Stellato         | 2014-04-01 | [DBA][DEV]  |
+| [sys.xp_delete_files and ‘allow filesystem enumeration’: two new undocumented items in SQL Server 2019]                 | Solomon Rutzky                           | 2020-01-26 | [DBA][DEV]  |
+| [Why Database Monitoring Tools Are So Hard to Interpret]                                                                | Brent Ozar                               | 2020-01-27 | [DBA]       |
+| [Extended Events Misperceptions: Profiler Is Easier]                                                                    | Grant Fritchey                           | 2020-01-20 | [DBA][DEV]  |
+| [Extended Events Misperceptions: Profiler Is Easier, Part 2]                                                            | Grant Fritchey                           | 2020-01-27 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1941,3 +1948,10 @@ Articles types:
 [Prevent SSMS from seeing the server's file system]:https://dba.stackexchange.com/a/246783/107045
 [Add the ability to disable or enable a few new DMVs and DMFs introduced in SQL Server 2017]:https://support.microsoft.com/help/4046638/
 [Actual Difference Between EXISTS(SELECT 1 …), EXISTS(SELECT * …), and EXISTS(SELECT column …)]:https://sqlquantumleap.com/2020/01/24/actual-difference-between-existsselect-1-existsselect-and-existsselect-column/
+[Why Wait Stats Alone Are Not Enough]:https://sqlperformance.com/2020/01/sql-performance/why-waits-alone-are-not-enough
+[Estimating AWS RDS SQL Server costs]:https://www.sqlshack.com/estimating-aws-rds-sql-server-costs/
+[SQL Server Performance Tuning Using Wait Statistics: A Beginner’s Guide]:https://www.sqlskills.com/wp-content/uploads/2014/04/sql-server-performance-tuning-using-wait-statistics-whitepaper.pdf
+[sys.xp_delete_files and ‘allow filesystem enumeration’: two new undocumented items in SQL Server 2019]:https://sqlquantumleap.com/2020/01/26/sys-xp_delete_files-and-allow-filesystem-enumeration-two-new-undocumented-items-in-sql-server-2019/
+[Why Database Monitoring Tools Are So Hard to Interpret]:https://www.brentozar.com/archive/2020/01/why-database-monitoring-tools-are-so-hard-to-interpret/
+[Extended Events Misperceptions: Profiler Is Easier]:https://www.scarydba.com/2020/01/20/extended-events-misperceptions-profiler-is-easier/
+[Extended Events Misperceptions: Profiler Is Easier, Part 2]:https://www.scarydba.com/2020/01/27/extended-events-misperceptions-profiler-is-easier-part-2/
