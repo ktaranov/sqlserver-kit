@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**602** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**603** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **602 trace flags**
+Summary: **603 trace flags**
 
 
 <a id="-1"></a>
@@ -2735,14 +2735,19 @@ Link: None
 
 <a id="3861"></a>
 #### Trace Flag: 3861
-Function: This flag allows the SQL Server DB startup code to move system tables to the primary filegroup. Introduced due to behavior in the SQL 2014 upgrade process, where system tables could be created in a secondary filegroup (if that FG was the default).<br />
+Function: This flag allows the SQL Server DB startup code to move system tables to the primary filegroup.
+Introduced due to behavior in the SQL 2014 upgrade process, where system tables could be created in a secondary filegroup (if that FG was the default).<br />
 Link: https://support.microsoft.com/help/3003760/
 
 
 <a id="3895"></a>
 #### Trace Flag: 3895
-Function: In SQL Server 2019, when you enable the Memory-Optimized TempDB Metadata feature, this trace flag is automatically enabled after the next restart. When you disable that feature, the trace flag is automatically removed after the next restart.<br />
-Link: None
+**Undocumented trace flag**<br />
+Function: In SQL Server 2019, when you enable the [Memory-Optimized TempDB Metadata](https://docs.microsoft.com/en-us/sql/relational-databases/databases/tempdb-database) feature, this trace flag is automatically enabled after the next restart.
+When you disable that feature, the trace flag is automatically removed after the next restart.
+Also if you add race flag 3895 to startup parameters after restarting SQL Server option `IsTempdbMetadataMemoryOptimized` will be enabled.<br />
+Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_3895.sql<br />
+Scope: global only
 
 
 <a id="3913"></a>
