@@ -990,6 +990,9 @@ Articles types:
 | [Why Database Monitoring Tools Are So Hard to Interpret]                                                                | Brent Ozar                               | 2020-01-27 | [DBA]       |
 | [Extended Events Misperceptions: Profiler Is Easier]                                                                    | Grant Fritchey                           | 2020-01-20 | [DBA][DEV]  |
 | [Extended Events Misperceptions: Profiler Is Easier, Part 2]                                                            | Grant Fritchey                           | 2020-01-27 | [DBA][DEV]  |
+| [Automate SFTP File Transfer with SQL Server Agent and WinSCP]                                                          | Joe Gavin                                | 2020-01-16 | [DBA][DEV]  |
+| [Running Database Console Commands (DBCCs) on Azure SQL Database]                                                       | Marcin Policht                           | 2020-01-20 | [AZ]        |
+| [How to Remove Times from Dates in SQL Server]                                                                          | Brent Ozar                               | 2020-01-29 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1955,3 +1958,6 @@ Articles types:
 [Why Database Monitoring Tools Are So Hard to Interpret]:https://www.brentozar.com/archive/2020/01/why-database-monitoring-tools-are-so-hard-to-interpret/
 [Extended Events Misperceptions: Profiler Is Easier]:https://www.scarydba.com/2020/01/20/extended-events-misperceptions-profiler-is-easier/
 [Extended Events Misperceptions: Profiler Is Easier, Part 2]:https://www.scarydba.com/2020/01/27/extended-events-misperceptions-profiler-is-easier-part-2/
+[Automate SFTP File Transfer with SQL Server Agent and WinSCP]:https://www.mssqltips.com/sqlservertip/6285/automate-sftp-file-transfer-with-sql-server-agent-and-winscp/
+[Running Database Console Commands (DBCCs) on Azure SQL Database]:https://www.databasejournal.com/features/mssql/running-database-console-commands-dbccs-on-azure-sql-database.html
+[How to Remove Times from Dates in SQL Server]:https://www.brentozar.com/archive/2020/01/how-to-remove-times-from-dates-in-sql-server/
