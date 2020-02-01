@@ -120,6 +120,9 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |        926 | Database '%.*ls' cannot be opened. It has been marked SUSPECT by recovery. See the SQL Server errorlog … | [926_link1]                                         |
 |       1052 | Conflicting %ls options "%ls" and "%ls".                                                                 | [1052_link1][33]                                    |
 |       1065 | The NOLOCK and READUNCOMMITTED lock hints are not allowed for target tables of INSERT, UPDATE, DELETE   …| [1065_link1]                                        |
+|       1204 | The instance of the SQL Server Database Engine cannot obtain a LOCK resource at this time. Rerun your  … | [1204_link1][46]                                    |
+|       1205 | Transaction (Process ID %d) was deadlocked on %.*ls resources with another process and has been chosen … | [1205_link1][46]                                    |
+|       1222 | Lock request time out period exceeded.                                                                   | [1222_link1][46]                                    |
 |       1219 | Your session has been disconnected because of a high priority DDL operation.                             | [1219_link1][32]                                    |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                                        |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                        |
@@ -179,7 +182,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       9002 | The transaction log for database '%ls' is full due to '%ls'.                                           … | [9002_link1][17],[9002_link2][19],[9002_link3]      |
 |       9105 | The provided statistics stream is corrupt.                                                               | [9105_link1][33]                                    |
 |       9642 | An error occurred in a Service Broker/Database Mirroring transport connection endpoint, Error: %i,     … | [9105_link1][45]                                    |
-|      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1]                                       |
+|      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1],[10314_link2]                         |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                                   |
 |      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                                   |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                                   |
@@ -269,6 +272,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [43]:https://www.red-gate.com/hub/product-learning/sql-monitor/spotting-unauthorized-configuration-settings-sql-server
 [44]:https://www.red-gate.com/hub/product-learning/sql-prompt/problems-caused-by-use-of-the-sql_variant-datatype
 [45]:http://www.seangallardy.com/error-8474-state-11-17836-state-20-9642-state-3-and-your-companys-need-to-incessantly-scan-for-vulnerable-ports/
+[46]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
@@ -322,6 +326,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [8921_link1]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-system-table-page/
 [9002_link3]:https://www.sqlserverscience.com/internals/adding-new-transaction-log-file-when-existing-log-full/
 [10314_link1]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-clr-assembly-failure-after-an-ag-failover/
+[10314_link2]:https://www.sqlservercentral.com/articles/do-not-set-trustwority-on-for-the-ssisdb-catalog
 [13609_link1]:https://itsalljustelectrons.blogspot.com/2019/05/Splitting-Strings-With-OPENJSON.html
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
