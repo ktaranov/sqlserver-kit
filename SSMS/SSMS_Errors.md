@@ -10,3 +10,4 @@
  - [SSMS won't open scripts on double-click](https://stackoverflow.com/q/1726577/2298061)
  - [SSMS Crash While Using Backup to URL or Connecting to Storage](https://blog.sqlauthority.com/2018/10/09/sql-server-sql-server-management-studio-crash-while-using-backup-to-url-or-connecting-to-storage/)
  - [Error in SSMS: Attempted to read or write protected memory.](https://sqlstudies.com/2019/02/18/error-in-ssms-attempted-to-read-or-write-protected-memory/)
+ - [SSMS Sequence Contains No Elements](https://thomaslarock.com/2020/01/sequence-contains-no-elements/)

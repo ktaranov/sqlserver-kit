@@ -993,6 +993,10 @@ Articles types:
 | [Automate SFTP File Transfer with SQL Server Agent and WinSCP]                                                          | Joe Gavin                                | 2020-01-16 | [DBA][DEV]  |
 | [Running Database Console Commands (DBCCs) on Azure SQL Database]                                                       | Marcin Policht                           | 2020-01-20 | [AZ]        |
 | [How to Remove Times from Dates in SQL Server]                                                                          | Brent Ozar                               | 2020-01-29 | [DBA][DEV]  |
+| [Export/Import Data using BCP - SQL Server on Linux]                                                                    | Carlos Robles                            | 2020-01-30 | [DBA][DEV]  |
+| [Prevent SQL Server Blocking using Lock_Timeout]                                                                        | Bhavesh Patel                            | 2020-01-07 | [DBA][DEV]  |
+| [Bin Packing Problems: The SQL]                                                                                         | Joe Celko                                | 2012-03-22 | [DBA][DEV]  |
+| [Causation, Correlation and Crackpots]                                                                                  | Joe Celko                                | 2009-09-15 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1961,3 +1965,7 @@ Articles types:
 [Automate SFTP File Transfer with SQL Server Agent and WinSCP]:https://www.mssqltips.com/sqlservertip/6285/automate-sftp-file-transfer-with-sql-server-agent-and-winscp/
 [Running Database Console Commands (DBCCs) on Azure SQL Database]:https://www.databasejournal.com/features/mssql/running-database-console-commands-dbccs-on-azure-sql-database.html
 [How to Remove Times from Dates in SQL Server]:https://www.brentozar.com/archive/2020/01/how-to-remove-times-from-dates-in-sql-server/
+[Export/Import Data using BCP - SQL Server on Linux]:https://www.sqlservercentral.com/articles/export-import-data-using-bcp-sql-server-on-linux
+[Prevent SQL Server Blocking using Lock_Timeout]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
+[Bin Packing Problems: The SQL]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/bin-packing-problems-the-sql/
+[Causation, Correlation and Crackpots]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/causation-correlation-and-crackpots/
