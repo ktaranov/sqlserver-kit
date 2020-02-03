@@ -48,7 +48,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 601 Trace Flags') (**Complete list - 601 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 603 Trace Flags') (**Complete list - 603 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 302 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 310 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -340,6 +340,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL-Server-Permissions-Manager - a set of scripts for managing logins and permissions on SQL Server databases](https://github.com/ericcobb/SQL-Server-Permissions-Manager) (by Eric Cobb)
     - [AwesomeSQLServer - collection of SQL Server Queries and documentations to fix your SQL Server's bottle neck](https://github.com/SQLadmin/AwesomeSQLServer) (by SqlAdmin)
     - [databases_scripts - SQL Server useful scripts](https://github.com/dgavrikov/databases_scripts/tree/master/SQL%20Server) (by Dmitriy Gavrikov)
+    - [sp_pressure_detector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/blob/master/sp_pressure_detector/sp_pressure_detector.sql) (by Erik Darling)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
