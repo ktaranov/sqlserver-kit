@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **310** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **312** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
- - **[B]**: Backup solutions {6}
+ - **[B]**: Backup solutions {8}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {20}
@@ -335,6 +335,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SysTools SQL Decryptor](#systools-sql-decryptor)                | No                            | No        | [SEC]    | [SysTools SQL Decryptor]                    | 2019-01-01 | SysTools              | Shareware  | No             |   $69 |
 | [SysTools SQL Server Database Migrator](#systools-migrator)      | No                            | No        | [MG]     | [SysTools SQL Server Database Migrator]     | 2018-01-01 | SysTools              | Shareware  | No             |  $249 |
 | [SQL Server to Azure Database Migrator](#systools-azure)         | No                            | No        | [MG]     | [SQL Server to Azure Database Migrator]     | 2018-01-01 | SysTools              | Shareware  | No             |  $169 |
+| [Commvault Complete Backup & Recovery](#commvault)               | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [B]      | [Commvault Complete Backup & Recovery]      | 2019-12-31 | Commvault             | Shareware  | No             |     ? |
+| [Veeam Backup & Replication](#veeam)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [B]      | [Veeam Backup & Replication]                | 2019-12-31 | Veeam                 | Shareware  | No             |  $600 |
 
 
 <a id="ssms"></a>
@@ -4820,6 +4822,32 @@ Price: $169
 - Allows to Migrate deleted records to SQL Azure cloud database
 
 
+## Commvault Complete Backup & Recovery
+<a id="commvault"></a>
+Download page: [Commvault Complete Backup & Recovery]<br/>
+Release date: 2019-12-31<br/>
+Support Version: 2008-2019<br/>
+Author: Commvault<br/>
+Free version: No<br/>
+Price: ?
+
+Complete coverage starts and ends here. Commvault Complete Backup & Recovery is a single, powerful solution for data protection – wherever your data lives.
+[Supported Technologies](https://www.commvault.com/supported-technologies)
+
+
+## Veeam Backup & Recovery
+<a id="veeam"></a>
+Download page: [Veeam Backup & Recovery]<br/>
+Release date: 2019-12-31<br/>
+Support Version: 2008-2019<br/>
+Author: Veeam<br/>
+Free version: No<br/>
+Price: $600
+
+Veeam Backup & Replication™ delivers Intelligent Data Management for ALL your virtual, physical and cloud-based workloads.
+Through a single management console, you can manage fast, flexible and reliable backup, recovery and replication of all your applications and data to eliminate legacy backup solutions forever.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5130,6 +5158,8 @@ Price: $169
 [SysTools SQL Decryptor]:https://www.systoolsgroup.com/sql-decryptor.html
 [SysTools SQL Server Database Migrator]:https://www.systoolsgroup.com/sql-server/migration/
 [SQL Server to Azure Database Migrator]:https://www.systoolsgroup.com/sql-server/azure/
+[Commvault Complete Backup & Recovery]:https://www.commvault.com/complete-backup
+[Veeam Backup & Replication]:https://www.veeam.com/ru/vm-backup-recovery-replication-software.html
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
