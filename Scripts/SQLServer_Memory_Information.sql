@@ -1,13 +1,25 @@
-﻿SET NOCOUNT ON;
+﻿/*
+<documentation>
+  <summary>Get SQL Server memory detailed information.</summary>
+  <returns>3 row sets: 1 - countes info; 2 - min, max, target memory info; 3 - detailed tree memory info.</returns>
+  <created>?</created>
+  <modified>2020-02-04 by Konstantin Taranov</modified>
+  <version>1.0</version>
+  <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/SQLServer_Memory_Information.sql</sourceLink>
+</documentation>
+*/
+
+
+SET NOCOUNT ON;
 SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 SET LOCK_TIMEOUT 10000;
 
-DECLARE @ServiceName nvarchar(100)
+DECLARE @ServiceName nvarchar(100);
 SET @ServiceName =
                   CASE
                     WHEN @@SERVICENAME = 'MSSQLSERVER' THEN 'SQLServer:'
                     ELSE 'MSSQL$' + @@SERVICENAME + ':'
-                  END
+                  END;
 
 DECLARE @Perf TABLE (
   object_name nvarchar(20),
@@ -16,7 +28,7 @@ DECLARE @Perf TABLE (
   cntr_value bigint,
   formatted_value numeric(20, 2),
   shortname nvarchar(20)
-)
+);
 INSERT INTO @Perf (object_name, counter_name, instance_name, cntr_value, formatted_value, shortname)
   SELECT
     CASE
@@ -55,12 +67,12 @@ INSERT INTO @Perf (object_name, counter_name, instance_name, cntr_value, formatt
   OR (object_name LIKE @ServiceName + 'Cursor Manager by Type%'
   AND counter_name = 'Cursor memory usage'
   AND instance_name = '_Total'
-  )
+  );
 
 -- Add unit to 'Cursor memory usage'
 UPDATE @Perf
 SET counter_name = counter_name + ' (KB)'
-WHERE counter_name = 'Cursor memory usage'
+WHERE counter_name = 'Cursor memory usage';
 
 -- Convert values from pages and KB to MB and rename counters accordingly
 UPDATE @Perf
@@ -70,7 +82,7 @@ SET counter_name = REPLACE(REPLACE(REPLACE(counter_name, ' pages', ''), ' (KB)',
                        WHEN counter_name LIKE '%pages' THEN cntr_value / 128.
                        WHEN counter_name LIKE '%(KB)' THEN cntr_value / 1024.
                        ELSE cntr_value
-                     END
+                     END;
 
 -- Delete some pre 2012 counters for 2012 in order to remove duplicates
 DELETE P2008
@@ -78,7 +90,7 @@ DELETE P2008
   INNER JOIN @Perf P2012
     ON REPLACE(P2008.object_name, 'Buffer', 'Memory') = P2012.object_name
     AND P2008.shortname = P2012.shortname
-WHERE P2008.object_name IN ('Buffer Manager', 'Buffer Node')
+WHERE P2008.object_name IN ('Buffer Manager', 'Buffer Node');
 
 -- Update counter/object names so they look like in 2012
 UPDATE PC
@@ -109,7 +121,7 @@ SELECT
     counter_name
   FROM @Perf
   WHERE object_name = 'Memory Manager')
-WHERE object_name IN ('Buffer Manager', 'Buffer Node')
+WHERE object_name IN ('Buffer Manager', 'Buffer Node');
 
 
 -- Build Memory Tree
@@ -119,7 +131,7 @@ DECLARE @MemTree TABLE (
   counter_name nvarchar(128),
   formatted_value numeric(20, 2),
   shortname nvarchar(20)
-)
+);
 
 -- Level 5
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -132,7 +144,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
   FROM @Perf
   WHERE object_name = 'Plan Cache'
   AND counter_name IN ('Cache')
-  AND instance_name <> '_Total'
+  AND instance_name <> '_Total';
 
 -- Level 4
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -184,7 +196,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
   UNION ALL
   SELECT
     1110) P
-  GROUP BY P.ParentID
+  GROUP BY P.ParentID;
 
 -- Level 3
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -205,7 +217,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
     shortname
   FROM @Perf
   WHERE object_name = 'Memory Manager'
-  AND counter_name IN ('Stolen Server Memory', 'Database Cache Memory', 'Free Memory', 'Granted Workspace Memory')
+  AND counter_name IN ('Stolen Server Memory', 'Database Cache Memory', 'Free Memory', 'Granted Workspace Memory');
 
 -- Level 2
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -221,7 +233,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
     shortname
   FROM @Perf
   WHERE object_name = 'Memory Manager'
-  AND counter_name IN ('Total Server Memory', 'Maximum Workspace Memory')
+  AND counter_name IN ('Total Server Memory', 'Maximum Workspace Memory');
 
 -- Level 1
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -233,7 +245,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
     shortname
   FROM @Perf
   WHERE object_name = 'Memory Manager'
-  AND counter_name IN ('Target Server Memory')
+  AND counter_name IN ('Target Server Memory');
 
 -- Level 4 -- 'Other Stolen Server Memory' = 'Stolen Server Memory' - SUM(Children of 'Stolen Server Memory')
 INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
@@ -248,7 +260,7 @@ INSERT @MemTree (Id, ParentId, counter_name, formatted_value, shortname)
     - SUM(formatted_value),
     shortname = 'Other Stolen'
   FROM @MemTree
-  WHERE ParentId = 1220
+  WHERE ParentId = 1220;
 
 -- Results:
 
@@ -289,7 +301,7 @@ FROM @Perf
 WHERE object_name = 'Memory Node')
 > 1
 )
-ORDER BY P.counter_name DESC, P.instance_name
+ORDER BY P.counter_name DESC, P.instance_name;
 
 -- Get physical memory
 -- You can also extract this information from sys.dm_os_sys_info but the column names have changed starting from 2012
@@ -300,8 +312,8 @@ CREATE TABLE #msver (
   Name sysname,
   Internal_Value int,
   Value nvarchar(512)
-)
-INSERT #msver EXEC master.dbo.xp_msver 'PhysicalMemory'
+);
+INSERT #msver EXEC master.dbo.xp_msver 'PhysicalMemory';
 
 -- Physical memory, config parameters and Target memory
 SELECT
@@ -319,7 +331,7 @@ SELECT
   WHERE object_name = 'Memory Manager'
   AND counter_name IN ('Target Server Memory')),
   physical_mb = CAST(Internal_Value AS decimal(20, 2))
-FROM #msver
+FROM #msver;
 
 -- Memory tree
 ;

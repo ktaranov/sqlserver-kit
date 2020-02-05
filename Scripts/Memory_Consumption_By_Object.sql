@@ -2,15 +2,16 @@
 <documentation>
   <summary>Get memory for all objects in all databases</summary>
   <returns>Temp table #obd with memory consumption by objects</returns>
-  <author>Max Vernon</author>
-  <created>2019-08-02</created>
-  <modified>2019-09-20 by Konstantin Taranov</modified>
-  <version>1.1</version>
+  <created>2019-08-02 by Max Vernon</created>
+  <modified>2020-02-05 by Konstantin Taranov</modified>
+  <version>1.2</version>
   <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Memory_Consumption_By_Object.sql</sourceLink>
   <originalLink>https://www.sqlserverscience.com/performance/memory-consumption-by-object/</originalLink>
 </documentation>
 */
 
+SET NOCOUNT ON;
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 IF OBJECT_ID(N'tempdb..#obd', N'U') IS NOT NULL
 BEGIN
@@ -34,30 +35,30 @@ CREATE TABLE #obd
 
 INSERT INTO #obd
 (
-      database_id        
-    , file_id            
-    , page_id            
-    , page_level         
-    , allocation_unit_id 
-    , page_type          
-    , row_count          
+      database_id
+    , file_id
+    , page_id
+    , page_level
+    , allocation_unit_id
+    , page_type
+    , row_count
     , free_space_in_bytes
-    , is_modified        
-    , numa_node          
-    , read_microsec      
+    , is_modified
+    , numa_node
+    , read_microsec
 )
-SELECT 
-      obd.database_id        
-    , obd.file_id            
-    , obd.page_id            
-    , obd.page_level         
-    , obd.allocation_unit_id 
-    , obd.page_type          
-    , obd.row_count          
+SELECT
+      obd.database_id
+    , obd.file_id
+    , obd.page_id
+    , obd.page_level
+    , obd.allocation_unit_id
+    , obd.page_type
+    , obd.row_count
     , obd.free_space_in_bytes
-    , obd.is_modified        
-    , obd.numa_node          
-    , obd.read_microsec      
+    , obd.is_modified
+    , obd.numa_node
+    , obd.read_microsec
 FROM sys.dm_os_buffer_descriptors obd;
 
 SELECT d.name AS DatabaseName
@@ -70,7 +71,6 @@ GROUP BY d.name
     , obd.page_type
 ORDER BY d.name
     , obd.page_type;
-
 
 IF OBJECT_ID(N'tempdb..#allocunits', N'U') IS NOT NULL
 BEGIN
@@ -96,7 +96,7 @@ FROM ' + QUOTENAME(d.name) + N'.sys.allocation_units au
     INNER JOIN ' + QUOTENAME(d.name) + N'.sys.partitions p ON ((au.type = 1 OR au.type = 3) AND (au.container_id = p.hobt_id))
         OR (au.type = 2 AND au.container_id = p.partition_id)
     INNER JOIN ' + QUOTENAME(d.name) + N'.sys.objects o ON p.object_id = o.object_id
-WHERE o.is_ms_shipped = 0'   
+WHERE o.is_ms_shipped = 0'
 FROM sys.databases d
 WHERE d.state_desc = N'ONLINE';
 
@@ -111,8 +111,8 @@ SELECT d.name AS DatabaseName
     , (COUNT(1) * 8192 / 1048576.0) AS MB_in_memory
 FROM #obd obd
     INNER JOIN sys.databases d ON obd.database_id = d.database_id
-    INNER JOIN #allocunits au ON obd.database_id = au.database_id 
-        AND obd.allocation_unit_id = au.allocation_unit_id
+    INNER JOIN #allocunits au  ON obd.database_id = au.database_id
+                              AND obd.allocation_unit_id = au.allocation_unit_id
 GROUP BY d.name
     , au.ObjectName
     , obd.page_type
