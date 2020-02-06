@@ -997,6 +997,8 @@ Articles types:
 | [Prevent SQL Server Blocking using Lock_Timeout]                                                                        | Bhavesh Patel                            | 2020-01-07 | [DBA][DEV]  |
 | [Bin Packing Problems: The SQL]                                                                                         | Joe Celko                                | 2012-03-22 | [DBA][DEV]  |
 | [Causation, Correlation and Crackpots]                                                                                  | Joe Celko                                | 2009-09-15 | [DBA][DEV]  |
+| [What Events are in a Trace?]                                                                                           | Erin Stellato                            | 2020-01-23 | [DBA]       |
+| [What Are Soft Deletes, and How Are They Implemented?]                                                                  | Brent Ozar                               | 2020-02-04 | [DBA][DEV]  |
 
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1969,3 +1971,5 @@ Articles types:
 [Prevent SQL Server Blocking using Lock_Timeout]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
 [Bin Packing Problems: The SQL]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/bin-packing-problems-the-sql/
 [Causation, Correlation and Crackpots]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/causation-correlation-and-crackpots/
+[What Events are in a Trace?]:https://www.sqlskills.com/blogs/erin/what-events-are-in-a-trace/
+[What Are Soft Deletes, and How Are They Implemented?]:https://www.brentozar.com/archive/2020/02/what-are-soft-deletes-and-how-are-they-implemented/

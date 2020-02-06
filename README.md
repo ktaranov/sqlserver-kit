@@ -201,6 +201,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
  - Courses <a id="courses"></a>
    - Free
+     - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) (by Jason Brimhall)
      - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
      - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
@@ -215,7 +216,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [SQL-EX.ru - Practical skills of SQL language](http://www.sql-ex.ru) (Russian, English)
      - [Free Azure certification training courses](https://rlevchenko.com/2019/01/11/free-azure-certification-training-courses/)
      - [SQL Server Tutorial](https://www.tutorialgateway.org/sql/) (by Tutorial Gateway)
-     - [Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql) 
+     - [Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql)
+     - [T-SQL Tutorial](https://www.tutorialspoint.com/t_sql/index.htm) (by TutorialSpoint)
+     - [T-SQL Tutorial and examples](https://www.tsql.info/sql-tutorial.php) (by tsql.info)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
