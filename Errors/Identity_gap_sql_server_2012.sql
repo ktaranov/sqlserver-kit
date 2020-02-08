@@ -3,12 +3,12 @@ DROP TABLE t1;
 GO
 
 CREATE TABLE t1 (
-	col1 INTEGER IDENTITY(1,1),
+    col1 INTEGER IDENTITY(1,1),
     col2 VARCHAR(10),
-	col3 CHAR(10),
-	col4 NCHAR(10),
-	col5 TINYINT,
-	col6 BIGINT
+    col3 CHAR(10),
+    col4 NCHAR(10),
+    col5 TINYINT,
+    col6 BIGINT
 );
 GO
 
@@ -34,15 +34,15 @@ SELECT *,
        LEN(col1) AS integer_len,
        LEN(col2) AS varchar_len,
        LEN(col3) AS char_len,
-	   LEN(col4) AS nchar_len,
-	   LEN(col5) AS tinyint_len,
-	   LEN(col6) AS bigint_len,
-	   DATALENGTH(col1) AS integer_datalength,
-	   DATALENGTH(col2) AS varchar_datalength,
-	   DATALENGTH(col3) AS char_datalength,
-	   DATALENGTH(col4) AS nchar_datalength,
-	   DATALENGTH(col5) AS tinyint_datalength,
-	   DATALENGTH(col6) AS  bigint_datalength
+       LEN(col4) AS nchar_len,
+       LEN(col5) AS tinyint_len,
+       LEN(col6) AS bigint_len,
+       DATALENGTH(col1) AS integer_datalength,
+       DATALENGTH(col2) AS varchar_datalength,
+       DATALENGTH(col3) AS char_datalength,
+       DATALENGTH(col4) AS nchar_datalength,
+       DATALENGTH(col5) AS tinyint_datalength,
+       DATALENGTH(col6) AS  bigint_datalength
 FROM t1;
 
 -- DBCC CHECKIDENT('t1', 'RESEED', 5);
@@ -55,14 +55,14 @@ GO
 BEGIN TRY
 SELECT --/*
        CAST(-1 AS tinyint),
-	    1/0
+        1/0
        --*/ * FROM t1;
 END TRY
 BEGIN CATCH
 SELECT ERROR_NUMBER() AS ERROR_NUMBER,
        ERROR_SEVERITY() AS ERROR_SEVERITY,
-	   ERROR_STATE() AS ERROR_STATE,
-	   ERROR_PROCEDURE() AS ERROR_PROCEDURE,
+       ERROR_STATE() AS ERROR_STATE,
+       ERROR_PROCEDURE() AS ERROR_PROCEDURE,
        ERROR_MESSAGE() AS ERROR_MESSAGE,
-	   ERROR_LINE() AS ERROR_LINE;
+       ERROR_LINE() AS ERROR_LINE;
 END CATCH;

@@ -27,10 +27,10 @@ Articles types:
 
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
+| [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
 | [SQL Server Index Design Guide]                                                                                         | Microsoft                                | 1753-01-01 | [IDX]       |
 | [SQL Server 2012 Security Best Practices - Microsoft]                                                                   | Bob Beauchemin                           | 2012-01-15 | [SEC]       |
 | [Help, my database is corrupt. Now what?]                                                                               | Gail Shaw                                | 2010-04-23 | [COR]       |
-| [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
 | [What to Do When DBCC CHECKDB Reports Corruption]                                                                       | Brent Ozar                               | 2016-05-19 | [COR]       |
 | [Troubleshooting SQL Server CPU Performance Issues]                                                                     | Joe Sack                                 | 2013-05-28 | [P]         |
 | [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]                                                      | Paul Randal                              | 2016-04-06 | [P]         |
@@ -999,12 +999,29 @@ Articles types:
 | [Causation, Correlation and Crackpots]                                                                                  | Joe Celko                                | 2009-09-15 | [DBA][DEV]  |
 | [What Events are in a Trace?]                                                                                           | Erin Stellato                            | 2020-01-23 | [DBA]       |
 | [What Are Soft Deletes, and How Are They Implemented?]                                                                  | Brent Ozar                               | 2020-02-04 | [DBA][DEV]  |
+| [Why You Should Switch in Staging Tables Instead of Renaming Them (Dear SQL DBA Episode 26)]                            | Kendra Little                            | 2017-01-19 | [DBA][DEV]  |
+| [Changing a column from int to bigint, without downtime]                                                                | Andy Mallon                              | 2019-12-11 | [DBA][DEV]  |
+| [I hate sp_estimate_data_compression_savings]                                                                           | Andy Mallon                              | 2019-12-17 | [DBA][DEV]  |
+| [Testing as another user…without their password -  impersonate the other user]                                          | Andy Mallon                              | 2019-12-18 | [DBA][DEV]  |
+| [How does a database RESTORE affect plan cache?]                                                                        | Andy Mallon                              | 2019-10-24 | [DBA]       |
+| [Recovery of database is 0% complete (approximately 1000000 seconds remain)]                                            | Andy Mallon                              | 2019-10-12 | [DBA]       |
+| [Code to purge data based on creation date]                                                                             | Andy Mallon                              | 2019-04-04 | [DBA]       |
+| [Blocking with OBJECT_NAME()]                                                                                           | Andy Mallon                              | 2019-12-24 | [DBA]       |
+| [Performance Myths: The query result cache]                                                                             | Andy Mallon                              | 2018-07-23 | [DBA][DEV]  |
+| [Fun with (columnstore) compression on a very large table – part 3]                                                     | Aaron Bertrand                           | 2020-02-03 | [DBA][DEV]  |
+| [Indexing basics]                                                                                                       | Daniel Hutmacher                         | 2013-02-19 | [IDX]       |
+| [Working with covering indexes]                                                                                         | Daniel Hutmacher                         | 2013-02-19 | [IDX]       |
+| [Using Erik Darling’s sp_pressure_detector to resolve CPU issues]                                                       | Jeff Iannucci                            | 2020-01-28 | [DBA][DEV]  |
+| [The Accidental DBA (Day 16 of 30): General Security]                                                                   | Jonathan Kehayias                        | 2013-01-16 | [DBA][SEC]  |
+| [Securing Data in SQL Server]                                                                                           | Jonathan Kehayias                        | 2020-01-27 | [DBA][SEC]  |
+| [Performance Testing SQL 2008's Transparent Data Encryption]                                                            | Rob Garrison                             | 2009-04-20 | [DBA]       |
+| [Common SQL Server Security Issues and Solutions]                                                                       | Paul Randal                              | 2016-10-04 | [DBA][SEC]  |
 
+[Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
 [Help, my database is corrupt. Now what?]:http://www.sqlservercentral.com/articles/Corruption/65804/
 [What to Do When DBCC CHECKDB Reports Corruption]:https://www.brentozar.com/archive/2016/05/dbcc-checkdb-reports-corruption/
-[Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [Troubleshooting SQL Server CPU Performance Issues]:http://sqlperformance.com/2013/05/io-subsystem/cpu-troubleshooting
 [Knee-Jerk Performance Tuning : Incorrect Use of Temporary Tables]:http://sqlperformance.com/2016/04/t-sql-queries/knee-jerk-temporary-tables
 [High Performance T-SQL using Code Patterns]:https://dwaincsql.com/2015/05/27/high-performance-t-sql-using-code-patterns/
@@ -1973,3 +1990,20 @@ Articles types:
 [Causation, Correlation and Crackpots]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/causation-correlation-and-crackpots/
 [What Events are in a Trace?]:https://www.sqlskills.com/blogs/erin/what-events-are-in-a-trace/
 [What Are Soft Deletes, and How Are They Implemented?]:https://www.brentozar.com/archive/2020/02/what-are-soft-deletes-and-how-are-they-implemented/
+[Why You Should Switch in Staging Tables Instead of Renaming Them (Dear SQL DBA Episode 26)]:https://littlekendra.com/2017/01/19/why-you-should-switch-in-staging-tables-instead-of-renaming/
+[Changing a column from int to bigint, without downtime]:https://am2.co/2019/12/changing-a-column-from-int-to-bigint-without-downtime/
+[I hate sp_estimate_data_compression_savings]:https://am2.co/2019/12/i-hate-sp_estimate_data_compression_savings/
+[Testing as another user…without their password -  impersonate the other user]:https://am2.co/2019/12/testing-as-another-user-without-their-password/
+[How does a database RESTORE affect plan cache?]:https://am2.co/2019/10/how-does-a-database-restore-affect-plan-cache/
+[Recovery of database is 0% complete (approximately 1000000 seconds remain)]:https://am2.co/2019/10/recovery-of-database-is-0-complete-approximately-1000000-seconds-remain/
+[Code to purge data based on creation date]:https://am2.co/2019/04/code-to-purge-data-on-creation-date/
+[Blocking with OBJECT_NAME()]:https://am2.co/2019/12/blocking-with-object_name/
+[Performance Myths: The query result cache]:https://sqlperformance.com/2018/07/performance-myths/query-result-cache
+[Fun with (columnstore) compression on a very large table – part 3]:https://sqlperformance.com/2020/02/columnstore/fun-with-columnstore-compression-on-a-very-large-table-part-3
+[Indexing basics]:https://sqlsunday.com/2013/02/19/indexing-basics/
+[Working with covering indexes]:https://sqlsunday.com/2013/02/24/covering-indexes/
+[Using Erik Darling’s sp_pressure_detector to resolve CPU issues]:https://desertdba.com/using-erik-darlings-sp_pressure_detector-to-resolve-cpu-issues/
+[The Accidental DBA (Day 16 of 30): General Security]:https://www.sqlskills.com/blogs/jonathan/the-accidental-dba-day-16-of-30-general-security/
+[Securing Data in SQL Server]:https://www.sqlskills.com/blogs/jonathan/securing-data-in-sql-server/
+[Performance Testing SQL 2008's Transparent Data Encryption]:https://www.databasejournal.com/features/mssql/article.php/3815501/Performance-Testing-SQL-2008146s-Transparent-Data-Encryption.htm
+[Common SQL Server Security Issues and Solutions]:https://docs.microsoft.com/en-us/previous-versions/technet-magazine/dd637114(v=msdn.10)
