@@ -329,7 +329,9 @@ As you upgrade the database to new SQL Server edition (you can not go backward) 
 This is done automatically regardless of what method you use to upgrade the database to the new version of SQL Server.
 
 ```sql
-/* 1 using DBCC PAGE to look at the boot page (9) of the database */
+/* 1 using DBCC PAGE to look at the boot page (9) of the database
+Search dbi_version string
+ */
 DBCC TRACEON(3604);
 DBCC PAGE('DatabaseName', 1, 9, 3);
 DBCC TRACEOFF(3604);
@@ -342,7 +344,7 @@ DBCC TRACEOFF(3604);
 GO
 
 /* 3 using database property */
-SELECT DatabaseProperty('DatabaseNameHere','version');
+SELECT DatabaseProperty('DatabaseNameHere', 'version');
 GO
 
 /* 4 using RESTORE HEADERONLY for backup files, field DatabaseVersion */
@@ -422,7 +424,7 @@ Microsoft SQL Server 2019 (RTM-CU1) (KB4527376) - 15.0.4003.23 (X64)
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.2070.41  | 2019.150.2070.41  | RTM    | CU   | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-12-06 |    83 |     62 |      452 |        904 |
+| 15.0.4003.23  | 2019.150.4003.23  | RTM    | CU   | **Latest** | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-12-06 |    83 |     62 |      452 |        904 |
 | 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  |            | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |        904 |
 | 15.0.2000.5   | 2019.150.2000.5   | RTM    | RTM  |            |         | [Microsoft SQL Server 2019 RTM]                           | 2019-11-04   | 2019-09-24 |       |        |     1360 |        904 |
 | 15.0.1900.47  | 2019.150.1900.47  | CTP    | RC   |            |         | Microsoft SQL Server 2019 Release Candidate 1.1 (RC1.1)   | 2019-08-28   | 2019-08-17 |       |        |     1360 |        904 |
@@ -450,15 +452,15 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU18) (KB4527377) - 14.0.3257.3 (X64) 
-   Nov 16 2019 01:14:50 
+Microsoft SQL Server 2017 (RTM-CU19) (KB4535007) - 14.0.3281.6 (X64) 
+   Jan 23 2020 21:00:04 
    Copyright (C) 2017 Microsoft Corporation
    Developer Edition (64-bit) …
 ```
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|-----------------------------------|---------|-------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3281.6   | 2017.140.3281.6   | RTM    | CU   | **Latest CU**                     | 4535007 | [Microsoft SQL Server 2017 CU19]                                                    | 2020-02-05   |            |    38 |     31 |      530 |
+| 14.0.3281.6   | 2017.140.3281.6   | RTM    | CU   | **Latest CU**                     | 4535007 | [Microsoft SQL Server 2017 CU19]                                                    | 2020-02-05   | 2020-01-23 |    38 |     31 |      530 |
 | 14.0.3257.3   | 2017.140.3257.3   | RTM    | CU   |                                   | 4527377 | [Microsoft SQL Server 2017 CU18]                                                    | 2019-12-09   | 2019-11-16 |    35 |     28 |      529 |
 | 14.0.3238.1   | 2017.140.3238.1   | RTM    | CU   |                                   | 4515579 | [Microsoft SQL Server 2017 CU17]                                                    | 2019-10-01   | 2019-09-14 |    41 |     34 |      528 |
 | 14.0.3223.3   | 2017.140.3223.3   | RTM    | CU   |                                   | 4508218 | [Microsoft SQL Server 2017 CU16]                                                    | 2019-08-01   | 2019-07-13 |    50 |     37 |      529 |
