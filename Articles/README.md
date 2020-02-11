@@ -1016,6 +1016,10 @@ Articles types:
 | [Securing Data in SQL Server]                                                                                           | Jonathan Kehayias                        | 2020-01-27 | [DBA][SEC]  |
 | [Performance Testing SQL 2008's Transparent Data Encryption]                                                            | Rob Garrison                             | 2009-04-20 | [DBA]       |
 | [Common SQL Server Security Issues and Solutions]                                                                       | Paul Randal                              | 2016-10-04 | [DBA][SEC]  |
+| [Chaos Engineering and SQL Server]                                                                                      | Andrew Pruski                            | 2020-01-29 | [DBA]       |
+| [Different methods to attach SQL Server MDF files]                                                                      | Nisarg Upadhyay                          | 2020-02-07 | [DBA]       |
+| [Learn SQL: How to Write a Complex SELECT Query]                                                                        | Emil Drkusic                             | 2020-02-04 | [DBA][DEV]  |
+| [Filling In Missing Values Using the T-SQL Window Frame]                                                                | Dwain Camps                              | 2014-09-18 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2007,3 +2011,7 @@ Articles types:
 [Securing Data in SQL Server]:https://www.sqlskills.com/blogs/jonathan/securing-data-in-sql-server/
 [Performance Testing SQL 2008's Transparent Data Encryption]:https://www.databasejournal.com/features/mssql/article.php/3815501/Performance-Testing-SQL-2008146s-Transparent-Data-Encryption.htm
 [Common SQL Server Security Issues and Solutions]:https://docs.microsoft.com/en-us/previous-versions/technet-magazine/dd637114(v=msdn.10)
+[Chaos Engineering and SQL Server]:https://dbafromthecold.com/2020/01/29/chaos-engineering-and-sql-server/
+[Different methods to attach SQL Server MDF files]:https://www.sqlshack.com/different-methods-to-attach-sql-server-mdf-files/
+[Learn SQL: How to Write a Complex SELECT Query]:https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/
+[Filling In Missing Values Using the T-SQL Window Frame]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/filling-in-missing-values-using-the-t-sql-window-frame/
