@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**603** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**604** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -280,7 +280,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **603 trace flags**
+Summary: **604 trace flags**
 
 
 <a id="-1"></a>
@@ -1634,7 +1634,8 @@ Scope: ?
 
 <a id="2371"></a>
 #### Trace Flag: 2371
-Function: Changes the fixed update statistics threshold to a linear update statistics threshold.<br />
+Function: Changes the fixed update statistics threshold to a linear update statistics threshold.
+Change a fixed rate 20% of rows changed for Recompilation Thresholds (RT) on new formula - **SQRT(1000 * table rows)**<br />
 **Note: Starting with SQL Server 2016 (13.x) and under the database compatibility level 130 or above, this behavior is controlled by the engine and trace flag 2371 has no effect.**<br />
 Link: https://support.microsoft.com/help/2754171<br />
 Link: https://blogs.msdn.microsoft.com/saponsqlserver/2011/09/07/changes-to-automatic-update-statistics-in-sql-server-traceflag-2371/<br />
@@ -1642,6 +1643,7 @@ Link: https://blogs.msdn.microsoft.com/axinthefield/sql-server-trace-flag-2371-f
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2371/<br />
+Link: [Temporary Table Caching in Stored Procedures]<br />
 Scope: global or session
 
 
@@ -5155,6 +5157,15 @@ Function: In CTP2, enabled functionality for reading in-memory tables on a reada
 Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-db-gets-suspect-when-i-add-in-memory-table-to-db-which-is-part-of-alwayson-availability-group
 
 
+<a id="9497"></a>
+#### Trace Flag: 9497
+**Undocumented trace flag**<br />
+Function: Unknown. See article.
+The formula to compute RT (Recompilation Thresholds) values is different when trace flag 2371 is enabled (or for versions and compatibility settings where the sublinear behaviour is default (if trace flag 9497 is off)). The new formula for RT is SQRT(1000 * table rows).<br />
+Link: [Temporary Table Caching in Stored Procedures]<br />
+Scope: ?
+
+
 <a id="10202"></a>
 #### Trace Flag: 10202
 **Undocumented trace flag**<br />
@@ -5338,3 +5349,4 @@ Scope: global or session
 [Query Optimizer Deep Dive – Part 3]:https://www.sql.kiwi/2012/04/query-optimizer-deep-dive-part-3.html
 [Hello Operator, My Switch Is Bored]:https://www.sql.kiwi/2013/06/hello-operator-my-switch-is-bored.html
 [Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
+[Temporary Table Caching in Stored Procedures]:https://www.sql.kiwi/2012/08/temporary-tables-in-stored-procedures.html
