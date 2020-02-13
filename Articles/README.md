@@ -1020,6 +1020,9 @@ Articles types:
 | [Different methods to attach SQL Server MDF files]                                                                      | Nisarg Upadhyay                          | 2020-02-07 | [DBA]       |
 | [Learn SQL: How to Write a Complex SELECT Query]                                                                        | Emil Drkusic                             | 2020-02-04 | [DBA][DEV]  |
 | [Filling In Missing Values Using the T-SQL Window Frame]                                                                | Dwain Camps                              | 2014-09-18 | [DBA][DEV]  |
+| [Select * in a view]                                                                                                    | Reitse Eskens                            | 2020-02-20 | [DBA][DEV]  |
+| [T-SQL TUESDAY #123: Aggregates of Aggregates using Windowing Functions]                                                | James Mcgillivray                        | 2020-02-20 | [DBA][DEV]  |
+| [SQL Server Statistics: Explained]                                                                                      | Krishna Golla                            | 2012-09-04 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2015,3 +2018,6 @@ Articles types:
 [Different methods to attach SQL Server MDF files]:https://www.sqlshack.com/different-methods-to-attach-sql-server-mdf-files/
 [Learn SQL: How to Write a Complex SELECT Query]:https://www.sqlshack.com/learn-sql-how-to-write-a-complex-select-query/
 [Filling In Missing Values Using the T-SQL Window Frame]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/filling-in-missing-values-using-the-t-sql-window-frame/
+[Select * in a view]:https://sqlreitse.home.blog/2020/02/12/select-in-a-view/
+[T-SQL TUESDAY #123: Aggregates of Aggregates using Windowing Functions]:https://jimbabwe.co.za/2020/02/12/t-sql-tuesday-123-life-hacking-by-opening-windows/
+[SQL Server Statistics: Explained]:https://blogs.msdn.microsoft.com/srgolla/2012/09/04/sql-server-statistics-explained/
