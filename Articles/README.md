@@ -964,6 +964,7 @@ Articles types:
 | [Don’t install SQL Server from a mounted ISO]                                                                           | Randolph West                            | 2020-01-15 | [DBA]       |
 | [NULL complexities – Part 1]                                                                                            | Itzik Ben-Gan                            | 2019-12-11 | [DBA][DEV]  |
 | [NULL complexities – Part 2]                                                                                            | Itzik Ben-Gan                            | 2020-01-08 | [DBA][DEV]  |
+| [NULL complexities – Part 3]                                                                                            | Itzik Ben-Gan                            | 2020-02-12 | [DBA][DEV]  |
 | [How to fix the “Agent XPs disabled” error]                                                                             | Nisarg Upadhyay                          | 2019-12-27 | [DBA][DEV]  |
 | [Number of Rows Read / Actual Rows Read warnings in Plan Explorer]                                                      | Rob Farley                               | 2016-06-02 | [DBA][DEV]  |
 | [Data Compression + Backup Compression = Double Compression?]                                                           | Jess Pomfret                             | 2019-08-12 | [B][DBA]    |
@@ -1023,6 +1024,8 @@ Articles types:
 | [Select * in a view]                                                                                                    | Reitse Eskens                            | 2020-02-20 | [DBA][DEV]  |
 | [T-SQL TUESDAY #123: Aggregates of Aggregates using Windowing Functions]                                                | James Mcgillivray                        | 2020-02-20 | [DBA][DEV]  |
 | [SQL Server Statistics: Explained]                                                                                      | Krishna Golla                            | 2012-09-04 | [DBA][DEV]  |
+| [How to Pass a List of Values Into a Stored Procedure]                                                                  | Brent Ozar                               | 2020-02-13 | [DBA][DEV]  |
+| [What's the difference between a temp table and table variable in SQL Server]                                           | Paul White                               | 2019-05-04 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -1962,6 +1965,7 @@ Articles types:
 [Don’t install SQL Server from a mounted ISO]:https://bornsql.ca/blog/dont-install-sql-server-from-a-mounted-iso/
 [NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
 [NULL complexities – Part 2]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-2
+[NULL complexities – Part 3]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-3
 [How to fix the “Agent XPs disabled” error]:https://www.sqlshack.com/how-to-fix-the-agent-xps-disabled-error/
 [Number of Rows Read / Actual Rows Read warnings in Plan Explorer]:https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer
 [Data Compression + Backup Compression = Double Compression?]:https://jesspomfret.com/double-compression/
@@ -2021,3 +2025,5 @@ Articles types:
 [Select * in a view]:https://sqlreitse.home.blog/2020/02/12/select-in-a-view/
 [T-SQL TUESDAY #123: Aggregates of Aggregates using Windowing Functions]:https://jimbabwe.co.za/2020/02/12/t-sql-tuesday-123-life-hacking-by-opening-windows/
 [SQL Server Statistics: Explained]:https://blogs.msdn.microsoft.com/srgolla/2012/09/04/sql-server-statistics-explained/
+[How to Pass a List of Values Into a Stored Procedure]:https://www.brentozar.com/archive/2020/02/how-to-pass-a-list-of-values-into-a-stored-procedure/
+[What's the difference between a temp table and table variable in SQL Server?]:https://dba.stackexchange.com/a/16386/107045
