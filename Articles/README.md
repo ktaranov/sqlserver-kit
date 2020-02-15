@@ -1026,6 +1026,10 @@ Articles types:
 | [SQL Server Statistics: Explained]                                                                                      | Krishna Golla                            | 2012-09-04 | [DBA][DEV]  |
 | [How to Pass a List of Values Into a Stored Procedure]                                                                  | Brent Ozar                               | 2020-02-13 | [DBA][DEV]  |
 | [What's the difference between a temp table and table variable in SQL Server]                                           | Paul White                               | 2019-05-04 | [DBA][DEV]  |
+| [Be Mindful of SQL Server Tempdb Use (aka Tempdb Parasites!)]                                                           | Jason Hall                               | 2020-01-28 | [DBA][DEV]  |
+| [Robyn Page’s SQL Server Cursor Workbench]                                                                              | Robyn Page                               | 2007-01-24 | [DBA][DEV]  |
+| [Solving the Running Total and Ordinal Rank Problems (Rewritten) (Quirky Update)]                                       | Jeff Moden                               | 2012-01-27 | [DBA][DEV]  |
+| [Running totals in “Denali” CTP3 (Quirky Update)]                                                                       | Wayne Sheffield                          | 2011-08-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2027,3 +2031,7 @@ Articles types:
 [SQL Server Statistics: Explained]:https://blogs.msdn.microsoft.com/srgolla/2012/09/04/sql-server-statistics-explained/
 [How to Pass a List of Values Into a Stored Procedure]:https://www.brentozar.com/archive/2020/02/how-to-pass-a-list-of-values-into-a-stored-procedure/
 [What's the difference between a temp table and table variable in SQL Server?]:https://dba.stackexchange.com/a/16386/107045
+[Be Mindful of SQL Server Tempdb Use (aka Tempdb Parasites!)]:https://www.sentryone.com/blog/be-mindful-of-sql-server-tempdb-use-aka-tempdb-parasites
+[Robyn Page’s SQL Server Cursor Workbench (Quirky Update)]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/robyn-pages-sql-server-cursor-workbench/
+[Solving the Running Total and Ordinal Rank Problems (Rewritten) (Quirky Update)]:https://www.sqlservercentral.com/articles/solving-the-running-total-and-ordinal-rank-problems-rewritten
+[Running totals in “Denali” CTP3 (Quirky Update)]:https://blog.waynesheffield.com/wayne/archive/2011/08/running-totals-in-denali-ctp3/
