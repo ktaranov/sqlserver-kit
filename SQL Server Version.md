@@ -131,7 +131,7 @@ Profits:
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 RTM] then [CU2 KB4536075]                               | 15.0.2070.41<br/>15.0.4013.40                | 2019-11-04<br/>2020-02-13                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU19 KB4535007]                              | 14.0.1000.169<br/>14.0.3281.6                | 2017-10-02<br/>2020-02-05                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
-| 2016    | [Install 2016 SP2] then [CU11 KB4527378]                              | 13.0.5026.0<br/>13.0.5598.27                 | 2018-04-24<br/>2019-12-09                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2016    | [Install 2016 SP2] then [CVE-2020-0618]                               | 13.0.5026.0<br/>13.0.5622.0                  | 2018-04-24<br/>2020-02-11                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [CU4 KB4500181]                          | 12.0.6024.0<br/>12.0.6329.1                  | 2018-10-30<br/>2019-07-29                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4091266]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7469.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
@@ -142,7 +142,7 @@ Profits:
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU19 KB4535007]:https://support.microsoft.com/help/4535007
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[CU11 KB4527378]:https://support.microsoft.com/help/4527378
+[CVE-2020-0618]:https://support.microsoft.com/help/4535706
 [Install 2014 SP3]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp3
 [CU4 KB4500181]:https://support.microsoft.com/help/4500181
 [Install 2012]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2012
@@ -181,7 +181,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017 RTM]                 | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU19]                | SQLServer2017-KB4535007-x64.exe                                   | 2020-02-05   | 14.0.3281.6   |      530 | 6c883a7a36a1029066e2be6ab9eeab0967804580 |
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU11]            | SQLServer2016-KB4527378-x64.exe                                   | 2019-12-09   | 13.0.5598.27  |      752 | e7f4a4b2dab64d8e60c702c6696a447645dcd495 |
+| [SQL Server 2016 SP2 CVE-2020-0618]   | SQLServer2016-KB4535706-x64.exe                                   | 2020-02-11   | 13.0.5622.0   |      752 | 44db436fc985096d49093b47b9f80601e06abe61 |
 | [SQL Server 2014 SP3]                 | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
 | [SQL Server 2014 SP3 KB4500181]       | SQLServer2014-KB4500181-x64.exe                                   | 2019-07-29   | 12.0.6329.1   |      658 | d6470880388461b7bc506f6bd3ccd464e4f8b2d2 |
 | [SQL Server 2012 RTM]                 | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
@@ -202,8 +202,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2017 CU19]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4535007-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[SQL Server 2016 SP2 CU11]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4527378-x64.exe
-[SQL Server 2014 SP3]:http://download.microsoft.com/download/7/9/F/79F4584A-A957-436B-8534-3397F33790A6/SQLServer2014SP3-FullSlipstream-x64-ENU.iso
+[SQL Server 2016 SP2 CVE-2020-0618]:https://download.microsoft.com/download/9/f/a/9fa97512-ff9b-466a-918e-d95214fbfceb/SQLServer2016-KB4535706-x64.exe
 [SQL Server 2014 SP3 KB4500181]:https://download.microsoft.com/download/A/5/A/A5AACC94-29A5-4890-90BD-847320EE0E93/SQLServer2014-KB4500181-x64.exe
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
@@ -549,6 +548,7 @@ Microsoft SQL Server 2016 (SP2-CU11) (KB4527378) - 13.0.5598.27 (X64)
 
 | Build         | File version      |Branch | Type | Info                              | KB      | Description/Link                                                                                                       | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|-------|------|-----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 13.0.5622.0   | 2015.131.5622.0   | SP2   | GDR  | CVE-2020-0618                     | 4535706 | [Description of the security update for SQL Server 2016 SP2 CU11: February 11, 2020]                                   | 2020-02-11   | 2019-11-28 |     1 |      1 |      752 |
 | 13.0.5598.27  | 2015.131.5598.27  | SP2   | CU   | **Latest CU SP2**                 | 4527378 | [Cumulative Update 11 for SQL Server 2016 SP2]                                                                         | 2019-12-09   | 2019-11-28 |    29 |     26 |      752 |
 | 13.0.5492.2   | 2015.131.5492.2   | SP2   | CU   |                                   | 4524334 | [Cumulative Update 10 for SQL Server 2016 SP2]                                                                         | 2019-10-08   | 2019-10-05 |    21 |     21 |      752 |
 | 13.0.5479.0   | 2015.131.5479.0   | SP2   | CU   | **Withdrawn**                     | 4515435 | Cumulative Update 9 for SQL Server 2016 SP2                                                                            | 2019-09-30   | 2019-09-13 |    21 |     21 |      752 |
@@ -634,6 +634,7 @@ Microsoft SQL Server 2016 (SP2-CU11) (KB4527378) - 13.0.5598.27 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                    | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                        | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[Description of the security update for SQL Server 2016 SP2 CU11: February 11, 2020]:https://support.microsoft.com/help/4535706
 [Cumulative Update 11 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4527378
 [Cumulative Update 10 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4524334
 [Cumulative Update 8 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4505830
