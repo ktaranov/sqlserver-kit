@@ -728,6 +728,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 | 12.0.6259.0  | 2014.120.6259.0  | SP3    | CU   |                                   | 4491539 | [Cumulative Update 3 for SQL Server 2014 SP3]                                                                              | 2019-04-16   |     4 |      4 |      656 |
 | 12.0.6214.1  | 2014.120.6214.1  | SP3    | CU   |                                   | 4482960 | [Cumulative Update 2 for SQL Server 2014 SP3]                                                                              | 2019-02-19   |     5 |      5 |      602 |
 | 12.0.6205.1  | 2014.120.6205.1  | SP3    | CU   |                                   | 4470220 | [Cumulative Update 1 for SQL Server 2014 SP3]                                                                              | 2018-12-12   |    16 |     13 |      601 |
+| 12.0.6118.4  | 2014.120.6118.4  | SP3    | GDR  | CVE-2020-0618                     | 4532095 | [Security update for SQL Server 2014 SP3 GDR: February 11, 2020]                                                           | 2020-02-11   |     1 |      1 |      656 |
 | 12.0.6108.1  | 2014.120.6108.1  | SP3    | GDR  | CVE-2019-1068                     | 4505218 | [Security update for SQL Server 2014 SP3 GDR: July 9, 2019]                                                                | 2019-07-09   |     1 |      1 |      654 |
 | 12.0.6024.0  | 2014.120.6024.0  | SP3    | SP   |                                   | 4022619 | [SQL Server 2014 Service Pack 3 release information]                                                                       | 2018-10-30   |    31 |      6 |      791 |
 | 12.0.5687.1  | 2014.120.5687.1  | SP2    | CU   | **Latest CU SP2**                 | 4500180 | [Cumulative Update 18 for SQL Server 2014 SP2]                                                                             | 2019-07-29   |     7 |      4 |      681 |
@@ -822,6 +823,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 [Cumulative Update 3 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4491539
 [Cumulative Update 2 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4482960
 [Cumulative Update 1 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4470220
+[Security update for SQL Server 2014 SP3 GDR: February 11, 2020]:https://support.microsoft.com/help/4532095
 [Security update for SQL Server 2014 SP3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505218
 [SQL Server 2014 Service Pack 3 release information]:https://support.microsoft.com/help/4022619
 [Cumulative Update 18 for SQL Server 2014 SP2]:https://support.microsoft.com/help/4500180
