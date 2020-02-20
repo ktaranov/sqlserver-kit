@@ -131,8 +131,8 @@ Profits:
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 RTM] then [CU2 KB4536075]                               | 15.0.2070.41<br/>15.0.4013.40                | 2019-11-04<br/>2020-02-13                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU19 KB4535007]                              | 14.0.1000.169<br/>14.0.3281.6                | 2017-10-02<br/>2020-02-05                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
-| 2016    | [Install 2016 SP2] then [CVE-2020-0618]                               | 13.0.5026.0<br/>13.0.5622.0                  | 2018-04-24<br/>2020-02-11                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
-| 2014    | [Install 2014 SP3] then<br/> [CU4 KB4500181]                          | 12.0.6024.0<br/>12.0.6329.1                  | 2018-10-30<br/>2019-07-29                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
+| 2016    | [Install 2016 SP2] then [KB4535706]                                   | 13.0.5026.0<br/>13.0.5622.0                  | 2018-04-24<br/>2020-02-11                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
+| 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4091266]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7469.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
@@ -142,9 +142,9 @@ Profits:
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU19 KB4535007]:https://support.microsoft.com/help/4535007
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[CVE-2020-0618]:https://support.microsoft.com/help/4535706
+[KB4535706]:https://support.microsoft.com/help/4535706
 [Install 2014 SP3]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp3
-[CU4 KB4500181]:https://support.microsoft.com/help/4500181
+[KB4535288]:https://support.microsoft.com/help/4535288
 [Install 2012]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/help/4018073
 [KB4091266]:https://support.microsoft.com/help/4091266
@@ -183,7 +183,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CVE-2020-0618]   | SQLServer2016-KB4535706-x64.exe                                   | 2020-02-11   | 13.0.5622.0   |      752 | 44db436fc985096d49093b47b9f80601e06abe61 |
 | [SQL Server 2014 SP3]                 | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
-| [SQL Server 2014 SP3 KB4500181]       | SQLServer2014-KB4500181-x64.exe                                   | 2019-07-29   | 12.0.6329.1   |      658 | d6470880388461b7bc506f6bd3ccd464e4f8b2d2 |
+| [SQL Server 2014 SP3 KB4535288]       | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
 | [SQL Server 2012 RTM]                 | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
 | [SQL Server 2012 SP4 KB4091266]       | SQLServer2012-KB4091266-x64.exe                                   | 2018-03-28   | 11.0.7469.6   |      867 | 64fc3a8a0ca3726d57852f1ebbb7247d3e58cbcf |
@@ -203,7 +203,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CVE-2020-0618]:https://download.microsoft.com/download/9/f/a/9fa97512-ff9b-466a-918e-d95214fbfceb/SQLServer2016-KB4535706-x64.exe
-[SQL Server 2014 SP3 KB4500181]:https://download.microsoft.com/download/A/5/A/A5AACC94-29A5-4890-90BD-847320EE0E93/SQLServer2014-KB4500181-x64.exe
+[SQL Server 2014 SP3 KB4535288]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100913&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
 [SQL Server 2012 SP4 KB4091266]:http://download.microsoft.com/download/3/D/9/3D95BF50-AED7-44A6-863B-BC7DC7C722CE/SQLServer2012-KB4091266-x64.exe
@@ -723,6 +723,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 
 | Build        | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                           | Release Date | Fixes | Public | Size, Mb |
 |--------------|------------------|--------|------|-----------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.6372.1  | 2014.120.6372.1  | SP3    | GDR  | CVE-2020-0618                     | 4535288 | [Security update for SQL Server 2014 SP3 CU4: February 11, 2020]                                                           | 2020-02-11   |     1 |      1 |      604 |
 | 12.0.6329.1  | 2014.120.6329.1  | SP3    | CU   | **Latest CU SP3**                 | 4500181 | [Cumulative Update 4 for SQL Server 2014 SP3]                                                                              | 2019-07-29   |    25 |     19 |      658 |
 | 12.0.6293.0  | 2014.120.6293.0  | SP3    | GDR  | CVE-2019-1068                     | 4505422 | [Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]                                                            | 2019-07-09   |     1 |      1 |      656 |
 | 12.0.6259.0  | 2014.120.6259.0  | SP3    | CU   |                                   | 4491539 | [Cumulative Update 3 for SQL Server 2014 SP3]                                                                              | 2019-04-16   |     4 |      4 |      656 |
@@ -818,6 +819,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 | 12.0.1524.0  | 2014.120.1524.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                            | 2013-10-15   |       |        |          |
 | 11.0.9120.0  | 2013.110.9120.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                            | 2013-06-25   |       |        |          |
 
+[Security update for SQL Server 2014 SP3 CU4: February 11, 2020]:https://support.microsoft.com/help/4535288
 [Cumulative Update 4 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4500181
 [Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505422
 [Cumulative Update 3 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4491539
