@@ -133,7 +133,7 @@ Profits:
 | 2017    | [Install 2017 RTM] then [CU19 KB4535007]                              | 14.0.1000.169<br/>14.0.3281.6                | 2017-10-02<br/>2020-02-05                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [KB4535706]                                   | 13.0.5026.0<br/>13.0.5622.0                  | 2018-04-24<br/>2020-02-11                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4091266]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7469.6 | 2012-02-14<br/>2017-10-05<br/>2018-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4532098]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7493.4 | 2012-02-14<br/>2017-10-05<br/>2020-02-11 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
@@ -147,7 +147,7 @@ Profits:
 [KB4535288]:https://support.microsoft.com/help/4535288
 [Install 2012]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/help/4018073
-[KB4091266]:https://support.microsoft.com/help/4091266
+[KB4532098]:https://support.microsoft.com/help/4532098
 [CU9 KB3098512]:https://support.microsoft.com/kb/3098512
 [Install 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SP3 2008 R2]:http://www.microsoft.com/download/details.aspx?id=44271
@@ -186,7 +186,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2014 SP3 KB4535288]       | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
 | [SQL Server 2012 RTM]                 | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
-| [SQL Server 2012 SP4 KB4091266]       | SQLServer2012-KB4091266-x64.exe                                   | 2018-03-28   | 11.0.7469.6   |      867 | 64fc3a8a0ca3726d57852f1ebbb7247d3e58cbcf |
+| [SQL Server 2012 SP4 KB4532098]       | SQLServer2012-KB4532098-x64.exe                                   | 2020-02-11   | 11.0.7493.4   |      867 | e20fa98775d4983a042e987caa6d59eba46ec760 |
 | SQL Server 2008 R2 RTM                | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
 | [SQL Server 2008 R2 SP3]              | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0  |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
 | [SQL Server 2008 R2 SU]               | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000    |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
@@ -206,7 +206,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2014 SP3 KB4535288]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100913&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
-[SQL Server 2012 SP4 KB4091266]:http://download.microsoft.com/download/3/D/9/3D95BF50-AED7-44A6-863B-BC7DC7C722CE/SQLServer2012-KB4091266-x64.exe
+[SQL Server 2012 SP4 KB4532098https://www.microsoft.com/en-us/download/confirmation.aspx?id=100915&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100915&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 [SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
@@ -918,8 +918,9 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 
 | Build         | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                               | Release Date |
 |---------------|------------------|--------|------|-----------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------|--------------|
+| 11.0.7493.4   | 2011.110.7462.6  | SP4    | GDR  | CVE-2020-0618                     | 4532098 | [Security update for SQL Server 2012 SP4 GDR: February 11, 2020]                                                               | 2020-02-11   |
 | 11.0.7469.6   | 2011.110.7469.6  | SP4    | CU   | **Latest CU SP4**                 | 4091266 | [On-demand hotfix update package for SQL Server 2012 SP4]                                                                      | 2018-03-28   |
-| 11.0.77462.6  | 2011.110.7462.6  | SP4    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057116 | [Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |
+| 11.0.7462.6   | 2011.110.7462.6  | SP4    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057116 | [Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |
 | 11.0.7001.0   | 2011.110.7001.0  | SP4    | SP   |                                   | 4018073 | [SQL Server 2012 Service Pack 4 release information]                                                                           | 2017-10-05   |
 | 11.0.6615.2   | 2012.110.6615.2  | SP3    | CU   | CVE-2017-5715,2017-5753,2017-5754 | 4057121 | [Description of the security update for SQL Server 2012 SP3 CU: January 16, 2018]                                              | 2018-01-16   |
 | 11.0.6607.3   | 2011.110.6607.3  | SP3    | CU   | **Latest CU SP3**                 | 4016762 | [Cumulative Update 10 for SQL Server 2012 SP3]                                                                                 | 2017-08-08   |
@@ -1009,6 +1010,7 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 | 11.0.1440     | 2010.110.1440.19 | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                              | 2011-07-11   |
 | 11.0.1103     | 2010.110.1103.9  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                              | 2010-11-08   |
 
+[Security update for SQL Server 2012 SP4 GDR: February 11, 2020]:https://support.microsoft.com/help/4532098
 [On-demand hotfix update package for SQL Server 2012 SP4]:https://support.microsoft.com/help/4091266
 [Security Advisory ADV180002 (GDR)]:https://support.microsoft.com/help/4057116/security-update-for-vulnerabilities-in-sql-server
 [SQL Server 2012 Service Pack 4 release information]:https://support.microsoft.com/help/4018073/sql-server-2012-service-pack-4-release-information
