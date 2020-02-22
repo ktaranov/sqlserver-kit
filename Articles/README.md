@@ -1030,6 +1030,10 @@ Articles types:
 | [Robyn Page’s SQL Server Cursor Workbench]                                                                              | Robyn Page                               | 2007-01-24 | [DBA][DEV]  |
 | [Solving the Running Total and Ordinal Rank Problems (Rewritten) (Quirky Update)]                                       | Jeff Moden                               | 2012-01-27 | [DBA][DEV]  |
 | [Running totals in “Denali” CTP3 (Quirky Update)]                                                                       | Wayne Sheffield                          | 2011-08-23 | [DBA][DEV]  |
+| [WHERE GETDATE() BETWEEN StartDate AND EndDate Is Hard to Tune.]                                                        | Brent Ozar                               | 2020-02-18 | [DBA][DEV]  |
+| [WHERE GETDATE() BETWEEN StartDate AND COALESCE(CancelDate, EndDate) Is Even Harder to Tune.]                           | Brent Ozar                               | 2020-02-19 | [DBA][DEV]  |
+| [How to solve the SQL Identity Crisis in SQL Server]                                                                    | Ed Pollack                               | 2017-11-14 | [DBA][DEV]  |
+| [Significant SQL Server 2019 licensing changes]                                                                         | Kevin Chant                              | 2020-02-17 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2035,3 +2039,7 @@ Articles types:
 [Robyn Page’s SQL Server Cursor Workbench (Quirky Update)]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/robyn-pages-sql-server-cursor-workbench/
 [Solving the Running Total and Ordinal Rank Problems (Rewritten) (Quirky Update)]:https://www.sqlservercentral.com/articles/solving-the-running-total-and-ordinal-rank-problems-rewritten
 [Running totals in “Denali” CTP3 (Quirky Update)]:https://blog.waynesheffield.com/wayne/archive/2011/08/running-totals-in-denali-ctp3/
+[WHERE GETDATE() BETWEEN StartDate AND EndDate Is Hard to Tune.]:https://www.brentozar.com/archive/2020/02/where-getdate-between-startdate-and-enddate-is-hard-to-tune/
+[WHERE GETDATE() BETWEEN StartDate AND COALESCE(CancelDate, EndDate) Is Even Harder to Tune.]:https://www.brentozar.com/archive/2020/02/where-getdate-between-startdate-and-coalescecanceldate-enddate-is-even-harder-to-tune/
+[How to solve the SQL Identity Crisis in SQL Server]:https://www.sqlshack.com/solve-identity-crisis-sql-server/
+[Significant SQL Server 2019 licensing changes]:https://www.kevinrchant.com/2020/02/17/significant-sql-server-2019-licensing-changes/
