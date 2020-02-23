@@ -1034,6 +1034,13 @@ Articles types:
 | [WHERE GETDATE() BETWEEN StartDate AND COALESCE(CancelDate, EndDate) Is Even Harder to Tune.]                           | Brent Ozar                               | 2020-02-19 | [DBA][DEV]  |
 | [How to solve the SQL Identity Crisis in SQL Server]                                                                    | Ed Pollack                               | 2017-11-14 | [DBA][DEV]  |
 | [Significant SQL Server 2019 licensing changes]                                                                         | Kevin Chant                              | 2020-02-17 | [DBA]       |
+| [Indexed View Maintenance Is Only As Bad As Your Indexes]                                                               | Erik Darling                             | 2020-02-19 | [DBA][DEV]  |
+| [Why Design Impacts Performance on Microsoft SQL Server]                                                                | Kevin Kline                              | 2020-01-29 | [DBA][DEV]  |
+| [Apply versus Nested Loops Join]                                                                                        | Paul White                               | 2019-06-09 | [DBA][DEV]  |
+| [Inside the Optimizer: Constructing a Plan - Part 1]                                                                    | Paul White                               | 2010-07-29 | [DBA][DEV]  |
+| [Inside the Optimizer: Constructing a Plan - Part 2]                                                                    | Paul White                               | 2010-07-29 | [DBA][DEV]  |
+| [Inside the Optimizer: Constructing a Plan - Part 3]                                                                    | Paul White                               | 2010-07-31 | [DBA][DEV]  |
+| [Inside the Optimizer: Constructing a Plan - Part 4]                                                                    | Paul White                               | 2010-07-31 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2043,3 +2050,10 @@ Articles types:
 [WHERE GETDATE() BETWEEN StartDate AND COALESCE(CancelDate, EndDate) Is Even Harder to Tune.]:https://www.brentozar.com/archive/2020/02/where-getdate-between-startdate-and-coalescecanceldate-enddate-is-even-harder-to-tune/
 [How to solve the SQL Identity Crisis in SQL Server]:https://www.sqlshack.com/solve-identity-crisis-sql-server/
 [Significant SQL Server 2019 licensing changes]:https://www.kevinrchant.com/2020/02/17/significant-sql-server-2019-licensing-changes/
+[Indexed View Maintenance Is Only As Bad As Your Indexes]:https://www.erikdarlingdata.com/2020/02/indexed-view-maintenance-is-only-as-bad-as-your-indexes/
+[Why Design Impacts Performance on Microsoft SQL Server]:https://www.sentryone.com/blog/why-design-impacts-performance-microsoft-sql-server
+[Apply versus Nested Loops Join]:https://www.sql.kiwi/2019/06/apply-versus-nested-loops-join.html
+[Inside the Optimizer: Constructing a Plan - Part 1]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan.html
+[Inside the Optimizer: Constructing a Plan - Part 2]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-ii.html
+[Inside the Optimizer: Constructing a Plan - Part 3]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-part-3.html
+[Inside the Optimizer: Constructing a Plan - Part 4]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-part-4.html
