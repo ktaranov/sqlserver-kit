@@ -4083,7 +4083,8 @@ Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-paral
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]<br />
 Link: [Few Outer Rows Optimization]<br />
 Link: [Next-Level Parallel Plan Forcing: An Alternative to 8649]<br />
-Scope: session only
+Link: https://logicalread.com/2015/10/30/sql-server-query-parallelizing-mc11/
+Scope: session or query
 
 
 <a id="8665"></a>

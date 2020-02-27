@@ -1041,6 +1041,9 @@ Articles types:
 | [Inside the Optimizer: Constructing a Plan - Part 2]                                                                    | Paul White                               | 2010-07-29 | [DBA][DEV]  |
 | [Inside the Optimizer: Constructing a Plan - Part 3]                                                                    | Paul White                               | 2010-07-31 | [DBA][DEV]  |
 | [Inside the Optimizer: Constructing a Plan - Part 4]                                                                    | Paul White                               | 2010-07-31 | [DBA][DEV]  |
+| [Tips for dealing with large SQL Server scripts]                                                                        | Kevin Chant                              | 2020-02-24 | [DBA][DEV]  |
+| [Database Normalization in SQL with Examples]                                                                           | Gouri Shankar                            | 2020-02-18 | [DBA][DEV]  |
+| [Why SQL Server May Not Parallelize a Query]                                                                            | SolarWinds                               | 2015-10-30 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2057,3 +2060,6 @@ Articles types:
 [Inside the Optimizer: Constructing a Plan - Part 2]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-ii.html
 [Inside the Optimizer: Constructing a Plan - Part 3]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-part-3.html
 [Inside the Optimizer: Constructing a Plan - Part 4]:https://www.sql.kiwi/2010/07/inside-the-optimiser-constructing-a-plan-part-4.html
+[Tips for dealing with large SQL Server scripts]:https://www.kevinrchant.com/2020/02/24/tips-for-dealing-with-large-sql-server-scripts/
+[Database Normalization in SQL with Examples]:https://www.sqlservercentral.com/articles/database-normalization-in-sql-with-examples
+[Why SQL Server May Not Parallelize a Query]:https://logicalread.com/2015/10/30/sql-server-query-parallelizing-mc11/
