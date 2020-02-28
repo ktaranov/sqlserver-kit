@@ -1044,6 +1044,9 @@ Articles types:
 | [Tips for dealing with large SQL Server scripts]                                                                        | Kevin Chant                              | 2020-02-24 | [DBA][DEV]  |
 | [Database Normalization in SQL with Examples]                                                                           | Gouri Shankar                            | 2020-02-18 | [DBA][DEV]  |
 | [Why SQL Server May Not Parallelize a Query]                                                                            | SolarWinds                               | 2015-10-30 | [DBA][DEV]  |
+| [Parallelism in SQL Server Execution Plan]                                                                              | Ahmad Yaseen                             | 2018-03-30 | [DBA][DEV]  |
+| [An XEvent a Day (26 of 31) – Configuring Session Options]                                                              | Jonathan Kehayias                        | 2010-12-26 | [XE]        |
+| [Azure SQL Managed Instance Performance Considerations]                                                                 | Tim Radney                               | 2020-02-26 | [AZ]        |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2063,3 +2066,6 @@ Articles types:
 [Tips for dealing with large SQL Server scripts]:https://www.kevinrchant.com/2020/02/24/tips-for-dealing-with-large-sql-server-scripts/
 [Database Normalization in SQL with Examples]:https://www.sqlservercentral.com/articles/database-normalization-in-sql-with-examples
 [Why SQL Server May Not Parallelize a Query]:https://logicalread.com/2015/10/30/sql-server-query-parallelizing-mc11/
+[Parallelism in SQL Server Execution Plan]:https://www.mssqltips.com/sqlservertip/5404/parallelism-in-sql-server-execution-plan/
+[An XEvent a Day (26 of 31) – Configuring Session Options]:https://www.sqlskills.com/blogs/jonathan/an-xevent-a-day-26-of-31-configuring-session-options/
+[Azure SQL Managed Instance Performance Considerations]:https://sqlperformance.com/2020/02/azure/sql-managed-instance-performance-considerations
