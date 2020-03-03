@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**604** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**605** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -231,6 +231,7 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016 and Query Store enabled)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016 and < 2019 and Query Store enabled)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
+ - [Trace Flag 8099](#8099) (for versions >= 2019)
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
@@ -277,10 +278,12 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 **Trace Flag: 7806** enables a dedicated administrator connection ([DAC]) on SQL Server Express.
 
+**Trace Flag: 8099** enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.
+
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **604 trace flags**
+Summary: **605 trace flags**
 
 
 <a id="-1"></a>
@@ -3879,6 +3882,14 @@ Link: [Docs Trace Flags]<br />
 Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/sql-server-2012-service-pack-4-sp4-released/<br />
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Link: [KB2964518]<br />
+Scope: global only
+
+
+<a id="8099"></a>
+#### Trace Flag: 8099
+Function: Enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.<br />
+Note: This trace flag applies to SQL Server 2019 (15.x) CU2 and higher builds.<br />
+Link: https://support.microsoft.com/kb/4538688<br />
 Scope: global only
 
 
