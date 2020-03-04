@@ -12,6 +12,10 @@ For more information on the applicable version, see the Microsoft Support articl
 ⚠ **[Azure SQL Database Managed Instance](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-managed-instance) supports the following global Trace Flags: [460](#460), [2301](#2301), [2389](#2389), [2390](#2390), [2453](#2453), [2467](#2467), [7471](#7471), [8207](#8207), [9389](#9389), [10316](#10316) and [11024](#11024).
 Session trace-flags are not yet supported in Managed Instance.**
 
+⚠ **[When specifying a trace flag with the `-T` option](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/database-engine-service-startup-options#list-of-startup-options), use an uppercase "**T**" to pass the trace flag number.
+A lowercase "**t**" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers.
+(Parameters specified in the Control Panel startup window are not read.)**
+
 Headers:
  - [What are Microsoft SQL Server Trace Flags?](#what-are-microsoft-sql-server-trace-flags)
  - [How do I turn Trace Flags on and off?](#how-do-i-turn-trace-flags-on-and-off)
@@ -31,9 +35,6 @@ Source links:
  - [TECHNET List Of SQL Server Trace Flags]
  - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
  - [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
- - **When specifying a trace flag with the -T option, use an uppercase "T" to pass the trace flag number.
-A lowercase "t" is accepted by SQL Server, but this sets other internal trace flags that are required only by SQL Server support engineers.
-(Parameters specified in the Control Panel startup window are not read.)**: https://technet.microsoft.com/en-us/en-en/library/ms190737%28v=sql.120%29.aspx
  - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
  - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
  - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
@@ -4088,14 +4089,19 @@ Link: [Optimizing T-SQL queries that change data]
 
 <a id="8649"></a>
 #### Trace Flag: 8649
-Function: Set Cost Threshold for parallelism from 1 to 0<br />
+**Undocumented trace flag**<br />
+Function: Set Cost Threshold for parallelism from 1 to 0, Forcing a Parallel Query Execution Plan.
+Possible drawbacks: you'll run out of worker threads (if max worker threads is at default value) and unintentionally reduce DOP for queries that could really use parallelism.
+Also be queries that looked fine with a serial merge join that, with a parallel merge join now have an order-preserving repartition streams and their performance will go to crap.
+In the new version of SQL Server 2017 there is one more way to force parallel plan, that involves using the undocumented hint `ENABLE_PARALLEL_PLAN_PREFERENCE`.<br />
 Link: https://www.sql.kiwi/2011/12/forcing-a-parallel-query-execution-plan.html<br />
-Link: http://sqlblog.com/blogs/adam_machanic/archive/2013/07/11/next-level-parallel-plan-porcing.aspx<br />
+Link: https://www.sqlshack.com/sql-server-2017-how-to-get-a-parallel-plan/<br />
 Link: [What You Need to Know about the Batch Mode Window Aggregate Operator in SQL Server 2016: Part 1]<br />
 Link: [Few Outer Rows Optimization]<br />
 Link: [Next-Level Parallel Plan Forcing: An Alternative to 8649]<br />
-Link: https://logicalread.com/2015/10/30/sql-server-query-parallelizing-mc11/
-Scope: session or query
+Link: https://logicalread.com/2015/10/30/sql-server-query-parallelizing-mc11/<br />
+Link: https://twitter.com/erikdarlingdata/status/1233449807907303425<br />
+Scope: global or session or query
 
 
 <a id="8665"></a>
