@@ -1047,6 +1047,13 @@ Articles types:
 | [Parallelism in SQL Server Execution Plan]                                                                              | Ahmad Yaseen                             | 2018-03-30 | [DBA][DEV]  |
 | [An XEvent a Day (26 of 31) – Configuring Session Options]                                                              | Jonathan Kehayias                        | 2010-12-26 | [XE]        |
 | [Azure SQL Managed Instance Performance Considerations]                                                                 | Tim Radney                               | 2020-02-26 | [AZ]        |
+| [The Curious Case of… whether corruption can propagate to secondary databases]                                          | Paul Randal                              | 2020-02-26 | [COR][DBA]  |
+| [Stop and Think Before You Shrink – Shrinking a SQL Server Database]                                                    | Jeff Mlakar                              | 2018-09-25 | [DBA]       |
+| [How to Analyze the SQL Server Error Log]                                                                               | Jeff Mlakar                              | 2018-11-02 | [DBA]       |
+| [Converting SQL Trace to Extended Events in SQL Server 2012]                                                            | Jonathan Kehayias                        | 2012-04-04 | [DBA]       |
+| [What event information can I get by default from SQL Server?]                                                          | Aaron Bertrand                           | 2019-03-28 | [DBA]       |
+| [Removing the default trace – Part 1]                                                                                   | Aaron Bertrand                           | 2020-03-02 | [DBA]       |
+| [Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]                                                 | Adrian Hills                             | 2020-02-20 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2069,3 +2076,10 @@ Articles types:
 [Parallelism in SQL Server Execution Plan]:https://www.mssqltips.com/sqlservertip/5404/parallelism-in-sql-server-execution-plan/
 [An XEvent a Day (26 of 31) – Configuring Session Options]:https://www.sqlskills.com/blogs/jonathan/an-xevent-a-day-26-of-31-configuring-session-options/
 [Azure SQL Managed Instance Performance Considerations]:https://sqlperformance.com/2020/02/azure/sql-managed-instance-performance-considerations
+[The Curious Case of… whether corruption can propagate to secondary databases]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-whether-corruption-can-propagate-to-secondary-databases/
+[Stop and Think Before You Shrink – Shrinking a SQL Server Database]:https://www.mlakartechtalk.com/stop-and-think-before-you-shrink-shrinking-a-sql-server-database/
+[How to Analyze the SQL Server Error Log]:https://www.mlakartechtalk.com/how-to-analyze-the-sql-server-error-log/
+[Converting SQL Trace to Extended Events in SQL Server 2012]:https://www.sqlskills.com/blogs/jonathan/converting-sql-trace-to-extended-events-in-sql-server-2012/
+[What event information can I get by default from SQL Server?]:https://dba.stackexchange.com/a/48053/107045
+[Removing the default trace – Part 1]:https://sqlperformance.com/2020/03/extended-events/removing-default-trace-1
+[Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]:https://www.sentryone.com/blog/keeping-dry-in-sql-server-with-scalar-user-defined-functions-part-1
