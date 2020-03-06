@@ -165,7 +165,7 @@ GO
 
 <a id="remarks"></a>
 ## Remarks
-There are three types of trace flags: query, session and global.
+There are three scopes at which trace flags can work: query, session, and global.
 - Query trace flags are active for the context of a specific query
 - Session trace flags are active for a connection and are visible only to that connection
 - Global trace flags are set at the server level and are visible to every connection on the server.
@@ -178,7 +178,7 @@ The following rules apply:
 - A global trace flag must be enabled globally. Otherwise, the trace flag has no effect. We recommend that you enable global trace flags at startup, by using the `-T` command line option. This ensures the trace flag remains active after a server restart. Restart SQL Server for the trace flag to take effect.
 - If a trace flag has either global, session or query scope, it can be enabled with the appropriate scope. A trace flag that is enabled at the session level never affects another session, and the effect of the trace flag is lost when the SPID that opened the session logs out.
 
-Trace flags are set on or off by using either of the following methods:
+Trace flags are set `ON` or `OFF` by using either of the following methods:
 - Using the [DBCC TRACEON] and [DBCC TRACEOFF] commands.
 For example, to enable the 2528 trace flag globally, use `DBCC TRACEON` with the `-1` argument: `DBCC TRACEON (2528, -1)`. The effect of enabling a global trace flag with `DBCC TRACEON` is lost on server restart. To turn off a global trace flag, use `DBCC TRACEOFF` with the `-1` argument.
 - Using the `-T` startup option to specify that the trace flag be set on during startup.
@@ -232,7 +232,7 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016 and Query Store enabled)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016 and < 2019 and Query Store enabled)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
- - [Trace Flag 8099](#8099) (for versions >= 2019)
+ - [Trace Flag 8099](#8099) (for versions >= 2019 CU2)
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
@@ -296,16 +296,20 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 
 <a id="101"></a>
 #### Trace Flag: 101
-Function: Verbose Merge Replication logging output for troubleshooting Merger repl performance<br />
+Function: Increases the verboseness of the merge replication agent logging.<br />
+**IMPORTANT**: Trace flag 101 can only be enabled for the [Replication Merge Agent] using the `-T` option when executing `replmerg.exe` from the command prompt.<br />
+**WARNING**: Trace flag 101 is not meant to be enabled continuously in a production environment, but only for time-limited troubleshooting purposes.<br />
 Link: https://support.microsoft.com/help/2892633<br />
-Scope: global only
+Scope: Replication Merge Agent only
 
 
 <a id="102"></a>
 #### Trace Flag: 102
-Function: Verbose Merge Replication logging to msmerge\_history table for troubleshooting Merger repl performance<br />
+Function: Increases the verboseness of the merge replication agent logging and directs it to the `<Distribution server>..msmerge_history` table.<br />
+**IMPORTANT**: Trace flag 102 can only be enabled for the pReplication Merge Agent[ using the `-T` option when executing `replmerg.exe` from the command prompt.
+**WARNING**: Trace flag 102 is not meant to be enabled continuously in a production environment, but only for time-limited troubleshooting purposes.
 Link: https://support.microsoft.com/help/2892633<br />
-Scope: global only
+Scope: Replication Merge Agent only
 
 
 <a id="105"></a>
@@ -403,7 +407,8 @@ Scope: global only
 <a id="176"></a>
 #### Trace Flag: 176
 Function: Enables a fix to address errors when rebuilding partitions online for tables that contain a computed partitioning column.<br />
-Link: https://support.microsoft.com/help/3213683/fix-unable-to-rebuild-the-partition-online-for-a-table-that-contains-a<br />
+Link: https://support.microsoft.com/help/3213683/<br />
+Link: https://support.microsoft.com/help/4541096/<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
 
@@ -635,11 +640,11 @@ Link: None
 
 <a id="460"></a>
 #### Trace Flag: 460
-Function: Replace error message [8152] with [2628] (`String or binary data would be truncated. The statement has been terminated.`).
+Function: Replace error message ID [8152] with message ID [2628] (`String or binary data would be truncated. The statement has been terminated.`).
 Description for [2628] message has useful information - which column had the truncation and which row.
-Starting with SQL Server 2019 CTP 2.4, to accomplish this at the database level, see the `VERBOSE_TRUNCATION_WARNINGS` option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
-**Note: This trace flag applies to SQL Server 2017 (14.x) CU12, and higher builds.**<br />
-**Note: Starting with database compatibility level 150, message ID 2628 is the default and this trace flag has no effect.**<br />
+Starting with SQL Server 2019 (15.x) CTP 2.4, to accomplish this at the database level, see the `VERBOSE_TRUNCATION_WARNINGS` option in [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)].<br />
+**Note: This trace flag applies to SQL Server 2017 (14.x) CU12 and higher builds.**<br />
+**Note: Starting with database compatibility level 150, message ID [2628] is the default and this trace flag has no effect.**<br />
 **Note: Don’t leave this trace flag enabled on global scope for SQL Server 2017 CU12 and CU13.**<br />
 There’s at least one [bug](https://feedback.azure.com/forums/908035-sql-server/suggestions/36311467-traceflag-460-causing-truncation-errors-on-code-pa) on SQL Server 2017 CU13: table variables will throw errors saying their contents are being truncated even when no data is going into them.**<br />
 Link: [Docs Trace Flags]<br />
@@ -664,7 +669,11 @@ Link: None
 
 <a id="610"></a>
 #### Trace Flag: 610
-Function: Controls minimally logged inserts into indexed tables.<br />
+Function: Controls minimally logged inserts into indexed tables.
+This trace flag is not required starting SQL Server 2016 as minimal logging is turned on by default for indexed tables.
+In SQL Server 2016, when the bulk load operation causes a new page to be allocated, all of the rows sequentially filling that new page are minimally logged if all the other pre-requisites for minimal logging are met.
+Rows inserted into existing pages (no new page allocation) to maintain index order are still fully logged, as are rows that are moved as a result of page splits during the load.
+It is also important to have `ALLOW_PAGE_LOCKS` turned `ON` for indexes (which is `ON` by default) for minimal logging operation to work as page locks are acquired during allocation and thereby only page or extent allocations are logged.<br />
 Link: http://msdn.microsoft.com/en-us/library/dd425070%28v=SQL.100%29.aspx<br />
 Link: https://www.pythian.com/blog/minimally-logged-operations-data-loads/<br />
 Link: https://msdn.microsoft.com/library/dd425070.aspx<br />
@@ -811,7 +820,7 @@ Link: [Controlling SQL Server memory dumps]
 Function: Enables table lock for bulk load operations into a heap with no non-clustered indexes.
 When this trace flag is enabled, bulk load operations acquire bulk update (BU) locks when bulk copying data into a table.
 Bulk update (BU) locks allow multiple threads to bulk load data concurrently into the same table, while preventing other processes that are not bulk loading data from accessing the table.
-The behavior is similar to when the user explicitly specifies TABLOCK hint while performing bulk load, or when the sp_tableoption table lock on bulk load is enabled for a given table.
+The behavior is similar to when the user explicitly specifies `TABLOCK` hint while performing bulk load, or when the `sp_tableoption` table lock on bulk load is enabled for a given table.
 However, when this trace flag is enabled, this behavior becomes default without any query or database changes.<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session
@@ -846,13 +855,15 @@ Link: https://blogs.msdn.microsoft.com/psssql/2012/11/12/how-can-reference-count
 
 <a id="818"></a>
 #### Trace Flag: 818
-Function: Turn on ringbuffer to store info about IO write operations.
-Used to troubleshoot IO problems<br />
+Function: Enables additional I/O diagnostics to check for Lost Write or Stale Read conditions during file I/O operations.
+Trace flag 818 enables an in-memory ring buffer that is used for tracking the last 2,048 successful write operations that are performed by SQL Server, not including sort and workfile I/Os.
+When errors such as Error 605, 823, or 3448 occur, the incoming buffer's log sequence number (LSN) value is compared to the recent write list.
+If the LSN that is retrieved is older than the one specified during the write operation, a new error message is logged in the SQL Server Errorlog.<br />
 Link: https://support.microsoft.com/help/826433/<br />
 Link: https://technet.microsoft.com/en-us/library/cc966500.aspx<br />
 Link: https://support.microsoft.com/help/828339/<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
-Scope: ?
+Scope: global only
 
 
 <a id="822"></a>
@@ -911,7 +922,8 @@ Trace flag 834 causes SQL Server to use Microsoft Windows large-page allocations
 The page size varies depending on the hardware platform, but the page size may be from 2 MB to 16 MB.
 Large pages are allocated at startup and are kept throughout the lifetime of the process.
 Trace flag 834 improves performance by increasing the efficiency of the translation look-aside buffer (TLB) in the CPU. <br />
-**Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.**<br />
+**Note: If you are using the Columnstore Index feature of SQL Server 2012 to SQL Server 2016, we do not recommend turning on trace flag 834.
+If using SQL Server 2019 (15.x) and columnstore, see trace flag [876](#876) instead.**<br />
 Link: [KB920093]<br />
 Link: https://support.microsoft.com/help/3210239<br />
 Link: [Docs Trace Flags]<br />
@@ -995,11 +1007,15 @@ Scope: ?
 
 <a id="876"></a>
 #### Trace Flag: 876
-**Undocumented trace flag**<br />
-Function: Turns 8k page allocations for Column Store segments into 2MB instead.<br />
+Function: Uses large-page allocations for columnstore.
+Turns 8k page allocations for Column Store segments into 2MB instead.<br />
+**Note: Unlike trace flag [834](#834), using trace flag 876 does not pre-allocate SQLOS memory at instance startup, and unused memory can be released.**<br />
+**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
+**Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
+Link: [Docs Trace Flags]<br />
 Link: https://twitter.com/slava_oks/status/1044257034361757696<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/151<br />
-Scope: ?
+Scope: global only
 
 
 <a id="888"></a>
@@ -1221,7 +1237,7 @@ For more information, see [Server Configuration Options (SQL Server)](https://do
 If both trace flag [1211](#1211) and 1224 are set, [1211](#1211) takes precedence over 1224.
 However, because trace flag 1211 prevents escalation in every case, even under memory pressure, we recommend that you use 1224.
 This helps avoid "out-of-locks" errors when many locks are being used.<br />
-**Note: Lock escalation to the table- or HoBT-level granularity can also be controlled by using the LOCK_ESCALATION option of the ALTER TABLE statement.**<br />
+**Note: Lock escalation to the table- or HoBT-level granularity can also be controlled by using the `LOCK_ESCALATION` option of the `ALTER TABLE` statement.**<br />
 Link: [Docs Trace Flags]<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-1224/<br />
@@ -1246,7 +1262,7 @@ Scope: global only
 Function: Disables all lock partitioning regardless of the number of CPUs.
 By default, SQL Server enables lock partitioning when a server has 16 or more CPUs, to improve the scalability characteristics of larger systems.
 For more information on lock partitioning, see the [Transaction Locking and Row Versioning Guide](https://docs.microsoft.com/en-us/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide?view=sql-server-2017#lock_partitioning)<br />
-**WARNING: Trace flag 1229 can cause spinlock contention and poor performance, or unexpected behaviors when switching partitions.**
+**WARNING: Trace flag 1229 can cause spinlock contention and poor performance.**
 Link: [Docs Trace Flags]<br />
 Link: [Trace Flag 1228 and 1229]<br />
 Link: [Microsoft SQL Server 2005 TPC-C Trace Flags]<br />
@@ -1421,7 +1437,10 @@ Link: None
 
 <a id="1800"></a>
 #### Trace Flag: 1800
-Function: Enables SQL Server optimization when disks of different sector sizes are used for primary and secondary replica log files, in SQL Server AG and Log Shipping environments.<br />
+Function: Enables SQL Server optimization when disks of different sector sizes are used for primary and secondary replica log files, in SQL Server Always On and Log Shipping environments.
+This trace flag is only required to be enabled on SQL Server instances with transaction log file residing on disk with sector size of 512 bytes.
+It is **not** required to be enabled on disk with 4k sector sizes.<br />
+**Note: This trace flag applies to SQL Server 2012 (11.x) SP1 CU13, SQL Server 2012 (11.x) SP2 CU3, SQL Server 2014 (12.x) RTM CU5, and higher builds.**<br />
 Link: https://support.microsoft.com/help/3009974<br />
 Link: [Docs Trace Flags]<br />
 Scope: global only
@@ -2048,8 +2067,8 @@ Link: http://blogs.msdn.com/b/psssql/archive/2008/03/28/how-it-works-sql-server-
 
 <a id="2549"></a>
 #### Trace Flag: 2549
-Function: Forces the DBCC CHECKDB command to assume each database file is on a unique disk drive but treating different physical files as one logical file.
-DBCC CHECKDB command builds an internal list of pages to read per unique disk drive across all database files.
+Function: Forces the `DBCC CHECKDB` command to assume each database file is on a unique disk drive but treating different physical files as one logical file.
+`DBCC CHECKDB` command builds an internal list of pages to read per unique disk drive across all database files.
 This logic determines unique disk drives based on the drive letter of the physical file name of each file.
 **Note: Do not use this trace flag unless you know that each file is based on a unique physical disk.**
 **Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
@@ -2442,7 +2461,7 @@ Function: Enables fix for issue when many consecutive transactions inserting dat
 Another change in SQL Server 2016 behavior that could impact tempdb-heavy workloads has to do with Common Criteria Compliance (CCC), also known as C2 auditing.
 We introduced functionality to allow for transaction-level auditing in CCC which can cause some additional overhead, particularly in workloads that do heavy inserts and updates in temp tables
 Unfortunately, this overhead is incurred whether you have CCC enabled or not. In SQL Server 2016 you can enable trace flag 3427 to bypass this overhead starting with SP1 CU2. Starting in SQL Server 2017 CU4, we automatically bypass this code if CCC is disabled.<br />
-**Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU2 and higher builds. Starting with SQL Server 2017 (14.x) this trace flag has no effect.**<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x) SP1 CU2 through SQL Server 2016 (13.x) SP2 CU2. Starting with SQL Server 2016 (13.x) SP2 CU3 and SQL Server 2017 (14.x), this trace flag has no effect.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3216543<br />
 Link: [TEMPDB – Files and Trace Flags and Updates]<br />
@@ -2475,7 +2494,7 @@ Function: Disables parallel redo.
 Assume that you use an Always On availability group (AG) that contains heap tables.
 Starting in SQL Server 2016, parallel thread for redo operations is used in secondary replicas.
 In this case, heap tables redo operation may generate a runtime assert dump or the SQL Server may crash with an access violation error in some cases.<br />
-**Note: This trace flag applies to SQL Server 2016 (13.x) and SQL Server 2017 (14.x), and higher builds.**<br />
+**Note: This trace flag applies to SQL Server 2016 (13.x), SQL Server 2017 (14.x), and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/help/3200975/<br />
 Link: https://support.microsoft.com/help/4101554/<br />
@@ -2776,8 +2795,10 @@ Link: https://support.microsoft.com/help/3014867
 
 <a id="3924"></a>
 #### Trace Flag: 3924
-Function: Enables a fix where “XA” transactions started within a JDBC-connected Java app are not closed properly and stay open indefinitely.<br />
-Link: https://support.microsoft.com/help/3145492/
+Function: Enables automatic removal of orphaned DTC transactions with `SPID=-2`, which is a problem for some 3rd party transaction monitors.<br />
+Link: https://support.microsoft.com/help/4519668<br />
+Link: https://support.microsoft.com/help/4511816<br />
+Scope: global only
 
 
 <a id="3940"></a>
@@ -3368,7 +3389,7 @@ Link: [KB3107399]<br />
 Link: https://blogs.msdn.microsoft.com/bobsql/2016/06/03/sql-2016-it-just-runs-faster-native-spatial-implementations/<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
-Scope: global or session
+Scope: global only
 
 
 <a id="6545"></a>
@@ -3378,10 +3399,12 @@ When enabled, this option will require that _all_ assemblies, regardless of `PER
 Please note:
 1. This TF can only be specified as a startup parameter!<br />
 1. This TF is only available in instances that have been updated / patched with a Service Pack (SP), Cumulative Update (CU), or GDR that was released on or after 2017-08-08.<br />
-
+**Note: This trace flag applies to SQL Server 2012 (11.x) SP3 CU10, SQL Server 2014 (12.x) SP2 CU6, SQL Server 2016 (13.x) RTM CU7, SQL Server 2016 (13.x) SP1 CU4, and higher builds.
+Starting with SQL Server 2017 (14.x) this feature is enabled by default and trace flag 6545 has no effect.**<br />
 Link: [SQLCLR vs. SQL Server 2012 &amp; 2014 &amp; 2016, Part 7: “CLR strict security” – The Problem Continues … in the Past (Wait, What?!?)][TF6545-b]<br />
 Link: [Update adds the "CLR strict security" feature to SQL Server 2016][TF6545-a] ( KB4018930 )<br />
-Scope: global
+Link: https://support.microsoft.com/kb/3107399
+Scope: global only
 
 
 <a id="7103"></a>
@@ -3463,8 +3486,11 @@ Scope: ?
 
 <a id="7470"></a>
 #### Trace Flag: 7470
-Function: Fixes a problem where under certain (unknown) conditions, a sort spill occurs for large sorts<br />
-Link: https://support.microsoft.com/help/3088480/
+Function: Enables additional computations for memory grants required for sort operations.<br />
+**Note: This trace flag applies to SQL Server 2012 (11.x) SP2 CU8, SQL Server 2014 (12.x) RTM CU10, SQL Server 2014 (12.x) SP1 CU3, and higher builds.**<br />
+**WARNING: Trace flag 7470 will increase memory requirements for queries using sort operators and may impact memory availability for other concurrent queries.**<br />
+Link: https://support.microsoft.com/help/3088480/<br />
+Scope: global or session or query
 
 
 <a id="7412"></a>
@@ -3896,8 +3922,7 @@ Scope: global only
 
 <a id="8202"></a>
 #### Trace Flag: 8202
-Function: Used to replicate UPDATE as DELETE/INSERT pair at the publisher. i.e.
-UPDATE commands at the publisher can be run as an "on-page DELETE/INSERT" or a "full DELETE/INSERT".
+Function: Used to replicate `UPDATE` as `DELETE/INSERT` pair at the publisher. i.e. UPDATE commands at the publisher can be run as an "on-page DELETE/INSERT" or a "full DELETE/INSERT".
 If the UPDATE command is run as an "on-page DELETE/INSERT," the Logreader send UDPATE command to the subscriber,
 If the UPDATE command is run as a "full DELETE/INSERT," the Logreader send UPDATE as DELETE/INSERT Pair.
 If you turn on trace flag 8202, then UPDATE commands at the publisher will be always send to the subscriber as DELETE/INSERT pair.<br />
@@ -5285,7 +5310,7 @@ Scope: ?
 
 <a id="11047"></a>
 #### Trace Flag: 11047
-Function: Applies the default timeout set by query wait (s) or the Resource Governor `REQUEST_MEMORY_GRANT_TIMEOUT_SEC` configuration to Columnstore index build operations.<br />
+Function: Applies the default timeout set by `query wait (s)` or the Resource Governor `REQUEST_MEMORY_GRANT_TIMEOUT_SEC` configuration to Columnstore index build operations.<br />
 **Note: This trace flag applies to SQL Server 2016 (13.x) SP2 CU5, SQL Server 2017 (14.x) CU14, and higher builds.**
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/4480641<br />
@@ -5368,3 +5393,4 @@ Scope: global or session
 [Hello Operator, My Switch Is Bored]:https://www.sql.kiwi/2013/06/hello-operator-my-switch-is-bored.html
 [Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
 [Temporary Table Caching in Stored Procedures]:https://www.sql.kiwi/2012/08/temporary-tables-in-stored-procedures.html
+[Replication Merge Agent]:https://docs.microsoft.com/en-us/sql/relational-databases/replication/agents/replication-merge-agent
