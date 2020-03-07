@@ -1054,6 +1054,11 @@ Articles types:
 | [What event information can I get by default from SQL Server?]                                                          | Aaron Bertrand                           | 2019-03-28 | [DBA]       |
 | [Removing the default trace – Part 1]                                                                                   | Aaron Bertrand                           | 2020-03-02 | [DBA]       |
 | [Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]                                                 | Adrian Hills                             | 2020-02-20 | [DBA][DEV]  |
+| [Different Ways to Monitor SQL Server AlwaysOn Availability Groups]                                                     | Nisarg Upadhyay                          | 2020-02-21 | [DBA]       |
+| [SQL Server internals: Is Order of Column in the table important?]                                                      | Ronen Ariely                             | 2018-08-11 | [DBA][DEV]  |
+| [Code: Order of columns in table might impact the size of the table/database and even related to errors]                | Ronen Ariely                             | 2019-10-13 | [DBA][DEV]  |
+| [SQL Server Internals: Getting the data of deleted column]                                                              | Ronen Ariely                             | 2018-11-28 | [DBA][DEV]  |
+| [Queue table issues with Availability Groups in SQL Server]                                                             | Aaron Bertrand                           | 2020-01-29 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2083,3 +2088,8 @@ Articles types:
 [What event information can I get by default from SQL Server?]:https://dba.stackexchange.com/a/48053/107045
 [Removing the default trace – Part 1]:https://sqlperformance.com/2020/03/extended-events/removing-default-trace-1
 [Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]:https://www.sentryone.com/blog/keeping-dry-in-sql-server-with-scalar-user-defined-functions-part-1
+[Different Ways to Monitor SQL Server AlwaysOn Availability Groups]:https://codingsight.com/different-ways-to-monitor-sql-server-alwayson-availability-groups/
+[SQL Server internals: Is Order of Column in the table important?]:http://ariely.info/Blog/tabid/83/EntryId/219/SQL-Server-internals-Is-Order-of-Column-in-the-table-important.aspx
+[Code: Order of columns in table might impact the size of the table/database and even related to errors]:http://ariely.info/Blog/tabid/83/EntryId/243/Code-Order-of-columns-in-table-might-impact-the-size-of-the-table-database-and-even-related-to-errors.aspx
+[SQL Server Internals: Getting the data of deleted column]:http://ariely.info/Blog/tabid/83/EntryId/213/SQL-Server-Internals-Getting-the-data-of-deleted-column.aspx
+[Queue table issues with Availability Groups in SQL Server]:mssqltips.com/sqlservertip/6284/queue-table-issues-with-availability-groups-in-sql-server/
