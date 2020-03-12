@@ -1,18 +1,13 @@
 
 -- SQL Managed Instance Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: December 4, 2019
--- https://www.sqlskills.com/blogs/glenn/
--- http://sqlserverperformance.wordpress.com/
+-- Last Modified: February 26, 2020
+-- https://glennsqlperformance.com/
+-- https://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
 
 -- Please listen to my Pluralsight courses
 -- https://www.pluralsight.com/author/glenn-berry
-
--- If you want to find all of our SQLskills SQL101 blog posts, check out https://bit.ly/2qLwfXW
-
-
--- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
 
 
 -- If you like PowerShell, there is a very useful community solution for running these queries in an automated fashion
@@ -23,11 +18,9 @@
 
 
 --******************************************************************************
---*   Copyright (C) 2019 Glenn Berry, SQLskills.com
+--*   Copyright (C) 2020 Glenn Berry
 --*   All rights reserved. 
 --*
---*   For more scripts and sample code, check out 
---*      https://www.sqlskills.com/blogs/glenn
 --*
 --*   You may alter this code for your own *non-commercial* purposes. You may
 --*   republish altered code as long as you include this copyright and give due credit. 
@@ -683,7 +676,7 @@ OPTION (RECOMPILE);
 
 -- Cumulative wait stats are not as useful on an idle instance that is not under load or performance pressure
 
--- SQL Server Wait Types Library (Paul Randal)
+-- SQL Server Wait Types Library
 -- https://bit.ly/2ePzYO2
 
 -- The SQL Server Wait Type Repository

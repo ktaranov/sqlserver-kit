@@ -421,4 +421,3 @@ FROM sys.fn_helpdatatypemap (
 [28]:https://www.sqlite.org/datatype3.html
 
 [XMLTYPE]:https://docs.oracle.com/en/database/oracle/oracle-database/12.2/arpls/XMLTYPE.html
-
