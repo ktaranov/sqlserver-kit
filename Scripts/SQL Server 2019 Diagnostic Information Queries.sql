@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: February 26, 2020
+-- Last Modified: April 2, 2020
 -- https://glennsqlperformance.com/ 
 -- https://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -68,6 +68,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 15.0.2070.41		GDR1								11/4/2019		https://support.microsoft.com/en-us/help/4517790/servicing-update-for-sql-server-2019-rtm 
 -- 15.0.4003.23		CU1									 1/7/2020		https://support.microsoft.com/en-us/help/4527376/cumulative-update-1-for-sql-server-2019
 -- 15.0.4013.40		CU2									2/13/2020		https://support.microsoft.com/en-us/help/4536075/cumulative-update-2-for-sql-server-2019
+-- 15.0.4023.6		CU3									3/12/2020		https://support.microsoft.com/en-us/help/4538853/cumulative-update-3-for-sql-server-2019
+-- 15.0.4033.1		CU4									3/31/2020		https://support.microsoft.com/en-us/help/4548597/cumulative-update-4-for-sql-server-2019     
 
 		
 															
@@ -142,12 +144,15 @@ SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version],
 SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
 SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				
-SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled];	
+SERVERPROPERTY('IsAdvancedAnalyticsInstalled') AS [IsRServicesInstalled],
+SERVERPROPERTY('IsTempdbMetadataMemoryOptimized') AS [IsTempdbMetadataMemoryOptimized];	
 ------
 
 -- This gives you a lot of useful information about your instance of SQL Server,
 -- such as the ProcessID for SQL Server and your collation
 -- Note: Some columns will be NULL on older SQL Server builds
+
+-- SERVERPROPERTY('IsTempdbMetadataMemoryOptimized') is a new option for SQL Server 2019
 
 -- SERVERPROPERTY (Transact-SQL)
 -- https://bit.ly/2eeaXeI
@@ -1055,21 +1060,21 @@ ON t1.lock_owner_address = t2.resource_address OPTION (RECOMPILE);
 
 
 -- Get CPU Utilization History for last 256 minutes (in one minute intervals)  (Query 42) (CPU Utilization History)
-DECLARE @ts_now bigint = (SELECT cpu_ticks/(cpu_ticks/ms_ticks) FROM sys.dm_os_sys_info WITH (NOLOCK)); 
+DECLARE @ts_now bigint = (SELECT ms_ticks FROM sys.dm_os_sys_info WITH (NOLOCK)); 
 
 SELECT TOP(256) SQLProcessUtilization AS [SQL Server Process CPU Utilization], 
                SystemIdle AS [System Idle Process], 
                100 - SystemIdle - SQLProcessUtilization AS [Other Process CPU Utilization], 
                DATEADD(ms, -1 * (@ts_now - [timestamp]), GETDATE()) AS [Event Time] 
 FROM (SELECT record.value('(./Record/@id)[1]', 'int') AS record_id, 
-			record.value('(./Record/SchedulerMonitorEvent/SystemHealth/SystemIdle)[1]', 'int') 
-			AS [SystemIdle], 
-			record.value('(./Record/SchedulerMonitorEvent/SystemHealth/ProcessUtilization)[1]', 'int') 
-			AS [SQLProcessUtilization], [timestamp] 
-	  FROM (SELECT [timestamp], CONVERT(xml, record) AS [record] 
-			FROM sys.dm_os_ring_buffers WITH (NOLOCK)
-			WHERE ring_buffer_type = N'RING_BUFFER_SCHEDULER_MONITOR' 
-			AND record LIKE N'%<SystemHealth>%') AS x) AS y 
+              record.value('(./Record/SchedulerMonitorEvent/SystemHealth/SystemIdle)[1]', 'int') 
+                      AS [SystemIdle], 
+              record.value('(./Record/SchedulerMonitorEvent/SystemHealth/ProcessUtilization)[1]', 'int') 
+                      AS [SQLProcessUtilization], [timestamp] 
+         FROM (SELECT [timestamp], CONVERT(xml, record) AS [record] 
+                      FROM sys.dm_os_ring_buffers WITH (NOLOCK)
+                      WHERE ring_buffer_type = N'RING_BUFFER_SCHEDULER_MONITOR' 
+                      AND record LIKE N'%<SystemHealth>%') AS x) AS y 
 ORDER BY record_id DESC OPTION (RECOMPILE);
 ------
 
