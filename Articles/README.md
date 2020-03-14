@@ -1059,6 +1059,8 @@ Articles types:
 | [Code: Order of columns in table might impact the size of the table/database and even related to errors]                | Ronen Ariely                             | 2019-10-13 | [DBA][DEV]  |
 | [SQL Server Internals: Getting the data of deleted column]                                                              | Ronen Ariely                             | 2018-11-28 | [DBA][DEV]  |
 | [Queue table issues with Availability Groups in SQL Server]                                                             | Aaron Bertrand                           | 2020-01-29 | [DBA]       |
+| [Transact-SQL: openjson hierarchy solution]                                                                             | Ronen Ariely                             | 2019-09-29 | [DBA][DEV]  |
+| [CREATE DLL TRIGGER ON CREATE_LOGIN to configure default parameters for any new LOGIN]                                  | Ronen Ariely                             | 2019-10-12 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2093,3 +2095,5 @@ Articles types:
 [Code: Order of columns in table might impact the size of the table/database and even related to errors]:http://ariely.info/Blog/tabid/83/EntryId/243/Code-Order-of-columns-in-table-might-impact-the-size-of-the-table-database-and-even-related-to-errors.aspx
 [SQL Server Internals: Getting the data of deleted column]:http://ariely.info/Blog/tabid/83/EntryId/213/SQL-Server-Internals-Getting-the-data-of-deleted-column.aspx
 [Queue table issues with Availability Groups in SQL Server]:mssqltips.com/sqlservertip/6284/queue-table-issues-with-availability-groups-in-sql-server/
+[Transact-SQL: openjson hierarchy solution]:http://ariely.info/Blog/tabid/83/EntryId/239/Transact-SQL-openjson-hierarchy-solution.aspx
+[CREATE DLL TRIGGER ON CREATE_LOGIN to configure default parameters for any new LOGIN]:http://ariely.info/Blog/tabid/83/EntryId/240/CREATE-DLL-TRIGGER-ON-CREATE_LOGIN-to-configure-default-parameters-for-any-new-LOGIN.aspx
