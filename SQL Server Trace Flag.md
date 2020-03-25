@@ -5061,6 +5061,16 @@ Link: [Docs Trace Flags]<br />
 Scope: global or session
 
 
+<a id="9497"></a>
+#### Trace Flag: 9497
+**Undocumented trace flag**<br />
+Function: For SQL Server versions where the behaviour previously enabled under TF [2371](#2371) is the default, start-up trace flag 9497 reverts to the original behaviour for the statistics update recompilation threshold.
+The formula to compute RT (Recompilation Thresholds) values is different when trace flag [2371](#2371) is enabled (or for versions and compatibility settings where the sublinear behaviour is default (if trace flag 9497 is off)).
+The new formula for RT is SQRT(1000 * table rows).<br />
+Link: [Temporary Table Caching in Stored Procedures]<br />
+Scope: global only
+
+
 <a id="9532"></a>
 #### Trace Flag: 9532
 Function: SQL 11 CTP3 - to get more than 1 availability group replica in CTP3 Scope Startup<br />
@@ -5198,15 +5208,6 @@ Scope: global or session
 #### Trace Flag: 9989
 Function: In CTP2, enabled functionality for reading in-memory tables on a readable secondary<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-db-gets-suspect-when-i-add-in-memory-table-to-db-which-is-part-of-alwayson-availability-group
-
-
-<a id="9497"></a>
-#### Trace Flag: 9497
-**Undocumented trace flag**<br />
-Function: Unknown. See article.
-The formula to compute RT (Recompilation Thresholds) values is different when trace flag 2371 is enabled (or for versions and compatibility settings where the sublinear behaviour is default (if trace flag 9497 is off)). The new formula for RT is SQRT(1000 * table rows).<br />
-Link: [Temporary Table Caching in Stored Procedures]<br />
-Scope: ?
 
 
 <a id="10202"></a>
