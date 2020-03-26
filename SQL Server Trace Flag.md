@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**605** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**606** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -284,7 +284,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **605 trace flags**
+Summary: **606 trace flags**
 
 
 <a id="-1"></a>
@@ -1487,6 +1487,15 @@ Link: None
 #### Trace Flag: 1816
 Function: Bob Ward briefly references this flag in his PASS 2014 SQL Server IO talk, saying that it “could provide more details around errors” that occur with IO done to SQL data files in Azure Storage.<br />
 Link: None
+
+
+<a id="1819"></a>
+#### Trace Flag: 1819
+Function: Allows [backup to URL](https://docs.microsoft.com/en-gb/sql/relational-databases/backup-restore/sql-server-backup-to-url?view=sql-server-ver15) to leverage a proxy server when accessing Azure block blobs. In addition to this trace flag, you must set the WinHTTP proxy configuration on the server via one of the following methods:
+- The [`proxycfg.exe`](https://docs.microsoft.com/en-us/windows/win32/winhttp/proxycfg-exe--a-proxy-configuration-tool) utility on Windows XP or Windows Server 2003 and earlier.
+- The [`netsh.exe`]() utility on Windows Vista and Windows Server 2008 or later.<br />
+Link: [Docs Trace Flags]
+Scope: global or session or query (QUERYTRACEON)
 
 
 <a id="1851"></a>
