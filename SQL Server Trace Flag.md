@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**606** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**607** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -284,7 +284,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **606 trace flags**
+Summary: **607 trace flags**
 
 
 <a id="-1"></a>
@@ -5325,6 +5325,15 @@ Function: Applies the default timeout set by `query wait (s)` or the Resource Go
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/4480641<br />
 Scope: global or session
+
+
+<a id="11064"></a>
+#### Trace Flag: 11064
+Function: Improves the scalability of data loading operations into columnstore indexes, by optimizing memory distribution between the `SELECT` and `INSERT` statements.
+**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
+Link: [Docs Trace Flags]
+Link: https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance
+Scope: global only
 
 
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
