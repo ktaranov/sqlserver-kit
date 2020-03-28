@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**607** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**608** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -284,7 +284,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **607 trace flags**
+Summary: **608 trace flags**
 
 
 <a id="-1"></a>
@@ -5333,6 +5333,18 @@ Function: Improves the scalability of data loading operations into columnstore i
 **Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
 Link: [Docs Trace Flags]
 Link: https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance
+Scope: global only
+
+
+<a id="11068"></a>
+#### Trace Flag: 11068
+Function: Uses the configured max degree of parallelism (MAXDOP) value for columnstore index insert operations.
+For more information on overriding degrees of parallelism, see the [Query Processing Architecture Guide](https://docs.microsoft.com/en-gb/sql/relational-databases/query-processing-architecture-guide#overriding-degrees-of-parallelism).
+**Important: This trace flag is only effective if trace flag [11064](#11064) is also enabled.**<br />
+**Important: Use this trace flag when faster data loads are preferred over maintaining [columnstore segment](https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-overview#column-segment) quality.
+For example, using this trace flag when loading 1,048,577 rows into a columnstore may result in more than one compressed rowgroup, if the insert operation is executing in parallel mode.
+Without this trace flag, the insert operation would result in one compressed rowgroup.**<br />
+**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**
 Scope: global only
 
 
