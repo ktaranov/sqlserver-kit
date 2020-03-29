@@ -27,10 +27,10 @@ Headers:
  - [Trace flags list](#trace-flags-list)
 
 Source links:
+ - [Docs Trace Flags]
  - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/) (by Aaron Morelli)
  - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
  - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
- - [Docs Trace Flags]
  - [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
  - [TECHNET List Of SQL Server Trace Flags]
  - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
@@ -5199,8 +5199,11 @@ Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePape
 
 <a id="9929"></a>
 #### Trace Flag: 9929
-Function: Enables an update that reduces the “disk footprint [of In-Memory OLTP] by reducing the In-Memory checkpoint files to 1 MB (megabytes) each.”<br/>
+Function: Enables an update that reduces the “disk footprint [of In-Memory OLTP] by reducing the In-Memory checkpoint files to 1 MB (megabytes) each.”
+ Because this traceflag is instance level, it affects the size of checkpoint files for all databases with a memory optimized filegroup on that instance.
+ Be cautious when you use this traceflag.<br/>
 Link: https://support.microsoft.com/help/3147012/
+Scope: global or session
 
 
 <a id="9939"></a>
@@ -5215,6 +5218,7 @@ Scope: global or session
 
 <a id="9989"></a>
 #### Trace Flag: 9989
+**Undocumented trace flag**<br />
 Function: In CTP2, enabled functionality for reading in-memory tables on a readable secondary<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-db-gets-suspect-when-i-add-in-memory-table-to-db-which-is-part-of-alwayson-availability-group
 
