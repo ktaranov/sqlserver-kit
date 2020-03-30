@@ -312,6 +312,11 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001).
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017).
+ - In [sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility) move the `-U`and `-P` parameters after the `-Q` parameter so that the password is at the end of the command.
+   More details [here](https://bornsql.ca/blog/the-curious-case-of-the-sqlcmd-password/)
+   ```
+   sqlcmd -S MSSQLSERVER$EXPRESS -Q "dbcc checkdb ('master') with DATA_PURITY, NO_INFOMSGS;" -U maintenanceUser -P ""weirdPassword
+   ```
  - Use `EXISTS` or `NOT EXISTS` if referencing a subquery, and `IN` or `NOT IN` when have a list of literal values.
    More details [here](https://www.brentozar.com/archive/2018/08/a-common-query-error/).
  - For concatenate unicode strings:
