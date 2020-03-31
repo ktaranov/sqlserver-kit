@@ -312,6 +312,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-old-style-join-syntax-st001).
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017).
+ - For scalar function use [`WITH SCHEMABINDING`](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices) option to get a performance boost. More details [here](https://bertwagner.com/2018/12/04/two-words-for-faster-scalar-functions/)
  - In [sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility) move the `-U`and `-P` parameters after the `-Q` parameter so that the password is at the end of the command.
    More details [here](https://bornsql.ca/blog/the-curious-case-of-the-sqlcmd-password/)
    ```
