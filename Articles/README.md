@@ -447,7 +447,7 @@ Articles types:
 | [What impact can different cursor options have?]                                                                        | Aaron Bertrand                           | 2012-09-10 | [DBA][DEV]  |
 | [SQL Smackdown!!! Cursors VS Loops]                                                                                     | SQL Undercover                           | 2017-11-16 | [DBA][DEV]  |
 | [Using the OPTION (RECOMPILE) option for a statement]                                                                   | Kimberly Tripp                           | 2010-04-15 | [DBA][DEV]  |
-| [Execution Plan Caching and Reuse]                                                                                      | Brett Shearer                            | 2015-02-12 | [DBA][DEV]  |
+| [Execution Plan Caching and Reuse]                                                                                      | Microsoft                                | 2015-02-12 | [DBA][DEV]  |
 | [Buffer Management]                                                                                                     | Microsoft                                | 1753-01-01 | [DBA][DEV]  |
 | [RECOMPILE Hints and Execution Plan Caching]                                                                            | Kendra Little                            | 2017-12-17 | [DBA][DEV]  |
 | [Improving query performance with OPTION (RECOMPILE), Constant Folding and avoiding Parameter Sniffing issues]          | Robin Lester                             | 2016-08-10 | [DBA][DEV]  |
@@ -589,7 +589,7 @@ Articles types:
 | [SQL Server Brute Force Attack Detection: Part 2]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 3]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA][DEV]  |
-| [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
+| [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                          | 2018-07-20 | [AZ]        |
 | [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]             | Dimitri Furman                           | 2018-07-20 | [AZ]        |
 | [T-SQL Tuesday #017: APPLY: It Slices! It Dices! It Does It All!]                                                       | Brad Schulz                              | 2011-04-12 | [DEV]       |
 | [SQL Server Encryption, What’s The Key Hierarchy All About?]                                                            | David Fowler                             | 2018-08-12 | [DBA][DEV]  |
@@ -1025,9 +1025,9 @@ Articles types:
 | [T-SQL TUESDAY #123: Aggregates of Aggregates using Windowing Functions]                                                | James Mcgillivray                        | 2020-02-20 | [DBA][DEV]  |
 | [SQL Server Statistics: Explained]                                                                                      | Krishna Golla                            | 2012-09-04 | [DBA][DEV]  |
 | [How to Pass a List of Values Into a Stored Procedure]                                                                  | Brent Ozar                               | 2020-02-13 | [DBA][DEV]  |
-| [What's the difference between a temp table and table variable in SQL Server]                                           | Paul White                               | 2019-05-04 | [DBA][DEV]  |
+| [What's the difference between a temp table and table variable in SQL Server?]                                          | Paul White                               | 2019-05-04 | [DBA][DEV]  |
 | [Be Mindful of SQL Server Tempdb Use (aka Tempdb Parasites!)]                                                           | Jason Hall                               | 2020-01-28 | [DBA][DEV]  |
-| [Robyn Page’s SQL Server Cursor Workbench]                                                                              | Robyn Page                               | 2007-01-24 | [DBA][DEV]  |
+| [Robyn Page’s SQL Server Cursor Workbench (Quirky Update)]                                                              | Robyn Page                               | 2007-01-24 | [DBA][DEV]  |
 | [Solving the Running Total and Ordinal Rank Problems (Rewritten) (Quirky Update)]                                       | Jeff Moden                               | 2012-01-27 | [DBA][DEV]  |
 | [Running totals in “Denali” CTP3 (Quirky Update)]                                                                       | Wayne Sheffield                          | 2011-08-23 | [DBA][DEV]  |
 | [WHERE GETDATE() BETWEEN StartDate AND EndDate Is Hard to Tune.]                                                        | Brent Ozar                               | 2020-02-18 | [DBA][DEV]  |
