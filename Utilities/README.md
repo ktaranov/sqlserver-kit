@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **312** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **313** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {8}
@@ -128,6 +128,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2018-10-10 | Devart                | Shareware  | Yes            |  $250 |
 | [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
+| [dbForge SSIS Data Flow Components](#dbforge-ssis)               | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [dbForge SSIS Data Flow Components]         | 2020-03-31 | Devart                | Shareware  | No             |  $500 |
 | [Devart Excel Add-in for SQL Server](#devart-excel-addin)        | No                            | No        | [?]      | [Devart Excel Add-in for SQL Server]        | 2019-12-11 | Devart                | Shareware  | No             |  $250 |
 | [dbMonitor](#dbmonitor)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [M]      | [dbMonitor]                                 | 2012-11-01 | Devart                | Freeware   | Yes            | No    |
 | [Minion Enterprise](#minion-enterprise)                          | No                            | No        | [?]      | [Minion Enterprise]                         | ?          | MinionWare            |            | No             | $1500 |
@@ -1836,6 +1837,19 @@ Price: $149
 dbForge Documenter for SQL Server is a big time saver when it comes to documentation of SQL Server databases.
 This tool automatically generates documentation of an entire SQL Server database in a few clicks.
 The tool includes a wide range of options to customize the generated documentation to meet your specific requirements.
+
+
+## dbForge SSIS Data Flow Components
+<a id="dbforge-ssis"></a>
+Download page: [dbForge SSIS Data Flow Components]<br/>
+Release date: 2020-03-31<br/>
+Support Version: 2014-2019<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $500
+
+Devart SSIS Data Flow Components provide easy to set up cost-effective data integration using SSIS ETL engine.
+They provide high performance data loading, convenient component editors, SQL support for cloud data sources and lots of data source specific features.
 
 
 ## Devart Excel Add-in for SQL Server
