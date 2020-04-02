@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **313** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **314** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {8}
@@ -129,6 +129,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge SSIS Data Flow Components](#dbforge-ssis)               | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [dbForge SSIS Data Flow Components]         | 2020-03-31 | Devart                | Shareware  | No             |  $500 |
+| [dbForge DevOps Automation for SQL Server](#dbforge-devops)      | No                            | No        | [?]      | [dbForge DevOps Automation for SQL Server]  | 2020-01-27 | Devart                | Shareware  | No             |  $900 |
 | [Devart Excel Add-in for SQL Server](#devart-excel-addin)        | No                            | No        | [?]      | [Devart Excel Add-in for SQL Server]        | 2019-12-11 | Devart                | Shareware  | No             |  $250 |
 | [dbMonitor](#dbmonitor)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [M]      | [dbMonitor]                                 | 2012-11-01 | Devart                | Freeware   | Yes            | No    |
 | [Minion Enterprise](#minion-enterprise)                          | No                            | No        | [?]      | [Minion Enterprise]                         | ?          | MinionWare            |            | No             | $1500 |
@@ -1850,6 +1851,18 @@ Price: $500
 
 Devart SSIS Data Flow Components provide easy to set up cost-effective data integration using SSIS ETL engine.
 They provide high performance data loading, convenient component editors, SQL support for cloud data sources and lots of data source specific features.
+
+
+## dbForge DevOps Automation for SQL Server
+<a id="dbforge-ssis"></a>
+Download page: [dbForge DevOps Automation for SQL Server]<br/>
+Release date: 2020-01-27<br/>
+Support Version: 2014-2019<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $900
+
+dbForge DevOps Automation for SQL Server is a cutting-edge solution that takes conventional database development and deployment to a whole new level.
 
 
 ## Devart Excel Add-in for SQL Server
@@ -4960,6 +4973,8 @@ Through a single management console, you can manage fast, flexible and reliable 
 [dbForge Studio]:https://www.devart.com/dbforge/sql/studio/
 [dbForge Fusion]:https://www.devart.com/dbforge/sql/fusion/
 [dbForge Documenter]:https://www.devart.com/dbforge/sql/documenter/
+[dbForge SSIS Data Flow Components]:https://www.devart.com/ssis/
+[dbForge DevOps Automation for SQL Server]:https://www.devart.com/dbforge/sql/database-devops/
 [Devart Excel Add-in for SQL Server]:https://www.devart.com/excel-addins/sql-server.html
 [dbMonitor]:https://www.devart.com/dbmonitor/download.html
 [BPA 2005]: https://www.microsoft.com/en-us/download/details.aspx?id=23864
