@@ -119,8 +119,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ER/Studio Data Architect](#erstudio-data-architect)             | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ER/Studio Data Architect]                  |            | Idera                 |            | No             | $1287 |
 | [DB Change Manager](#db-change-manager)                          | Oracle,MySQL,PostgreSQL,Other | No        | [SC]     | [DB Change Manager]                         | ?          | Idera                 |            | No             | $1420 |
 | [Uptime Infrastructure Monitor](#uim)                            | No                            | Linux     | [?]      | [Uptime Infrastructure Monitor]             | ?          | Idera                 |            | No             | ?     |
-| [dbForge Schema Compare](#dbforge-schema-compare)                | No                            | No        | [SC]     | [dbForge Schema Compare]                    | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
-| [dbForge Data Compare](#dbforge-data-compare)                    | No                            | No        | [DC]     | [dbForge Data Compare]                      | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
+| [dbForge Schema Compare](#dbforge-schema-compare)                | No                            | No        | [SC]     | [dbForge Schema Compare]                    | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
+| [dbForge Data Compare](#dbforge-data-compare)                    | No                            | No        | [DC]     | [dbForge Data Compare]                      | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Data Generator](#dbforge-data-generator)                | No                            | No        | [G]      | [dbForge Data Generator]                    | 2018-10-10 | Devart                | Shareware  | No             |  $250 |
 | [dbForge Query Builder](#dbforge-query-builder)                  | No                            | No        | [?]      | [dbForge Query Builder]                     | 2018-10-10 | Devart                | Shareware  | No             |  $100 |
 | [dbForge Event Profiler](#dbforge-event-profiler)                | No                            | No        | [M]      | [dbForge Event Profiler]                    | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
@@ -1729,7 +1729,7 @@ You can compare your SQL Server databases, analyze differences and synchronize y
 
 ## dbForge Data Compare
 <a id="dbforge-data-compare"></a>
-Download page: [dbForge Schema Compare]<br/>
+Download page: [dbForge Data Compare]<br/>
 Release date: 2019-10-10<br/>
 Support Version: 2005-2019/Amazon/Azure<br/>
 Author: Devart<br/>
