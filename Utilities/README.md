@@ -121,10 +121,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Uptime Infrastructure Monitor](#uim)                            | No                            | Linux     | [?]      | [Uptime Infrastructure Monitor]             | ?          | Idera                 |            | No             | ?     |
 | [dbForge Schema Compare](#dbforge-schema-compare)                | No                            | No        | [SC]     | [dbForge Schema Compare]                    | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Data Compare](#dbforge-data-compare)                    | No                            | No        | [DC]     | [dbForge Data Compare]                      | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
-| [dbForge Data Generator](#dbforge-data-generator)                | No                            | No        | [G]      | [dbForge Data Generator]                    | 2018-10-10 | Devart                | Shareware  | No             |  $250 |
-| [dbForge Query Builder](#dbforge-query-builder)                  | No                            | No        | [?]      | [dbForge Query Builder]                     | 2018-10-10 | Devart                | Shareware  | No             |  $100 |
-| [dbForge Event Profiler](#dbforge-event-profiler)                | No                            | No        | [M]      | [dbForge Event Profiler]                    | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
-| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [SEC]    | [dbForge SQL Decryptor]                     | 2018-10-10 | Devart                | Freeware   | Yes            | No    |
+| [dbForge Data Generator](#dbforge-data-generator)                | No                            | No        | [G]      | [dbForge Data Generator]                    | 2019-10-10 | Devart                | Shareware  | No             |  $250 |
+| [dbForge Query Builder](#dbforge-query-builder)                  | No                            | No        | [?]      | [dbForge Query Builder]                     | 2019-10-10 | Devart                | Shareware  | No             |  $100 |
+| [dbForge Event Profiler](#dbforge-event-profiler)                | No                            | No        | [M]      | [dbForge Event Profiler]                    | 2019-10-10 | Devart                | Freeware   | Yes            | No    |
+| [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [SEC]    | [dbForge SQL Decryptor]                     | 2017-09-19 | Devart                | Freeware   | Yes            | No    |
 | [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2018-10-10 | Devart                | Shareware  | Yes            |  $250 |
 | [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
@@ -1787,7 +1787,7 @@ You can use this information to identify and troubleshoot many SQL Server-relate
 ## dbForge SQL Decryptor
 <a id="dbforge-sql-decryptor"></a>
 Download page: [dbForge SQL Decryptor]<br/>
-Release date: 2019-10-10<br/>
+Release date: 2017-09-19<br/>
 Support Version: 2005-2019<br/>
 Author: Devart<br/>
 Free version: Yes<br/>
