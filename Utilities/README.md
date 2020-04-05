@@ -125,8 +125,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Query Builder](#dbforge-query-builder)                  | No                            | No        | [?]      | [dbForge Query Builder]                     | 2019-10-10 | Devart                | Shareware  | No             |  $100 |
 | [dbForge Event Profiler](#dbforge-event-profiler)                | No                            | No        | [M]      | [dbForge Event Profiler]                    | 2019-10-10 | Devart                | Freeware   | Yes            | No    |
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [SEC]    | [dbForge SQL Decryptor]                     | 2017-09-19 | Devart                | Freeware   | Yes            | No    |
-| [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2018-10-10 | Devart                | Shareware  | Yes            |  $250 |
-| [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
+| [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2019-10-10 | Devart                | Shareware  | Yes            |  $250 |
+| [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2019-11-08 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge SSIS Data Flow Components](#dbforge-ssis)               | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [dbForge SSIS Data Flow Components]         | 2020-03-31 | Devart                | Shareware  | No             |  $500 |
 | [dbForge DevOps Automation for SQL Server](#dbforge-devops)      | No                            | No        | [?]      | [dbForge DevOps Automation for SQL Server]  | 2020-01-27 | Devart                | Shareware  | No             |  $900 |
@@ -1815,7 +1815,7 @@ Price: $249
 ## dbForge Fusion
 <a id="dbforge-fusion"></a>
 Download page: [dbForge Fusion]<br/>
-Release date: 2019-10-10<br/>
+Release date: 2019-11-08<br/>
 Support Version: 2005-2019/Amazon/Azure<br/>
 Author: Devart<br/>
 Free version: No<br/>
