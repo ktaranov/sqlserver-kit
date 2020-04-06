@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**608** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**609** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -27,20 +27,20 @@ Headers:
  - [Trace flags list](#trace-flags-list)
 
 Source links:
- - [Docs Trace Flags]
- - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/) (by Aaron Morelli)
- - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
- - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
- - [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
- - [TECHNET List Of SQL Server Trace Flags]
- - [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
- - [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
- - [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
- - [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
- - [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
- - [Derik Hammer - Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
- - [Brent Ozar - Bad Idea Jeans: Finding Undocumented Trace Flags](https://rebrand.ly/brent-finding-undocumented-trace-flags)
- - [Joe Obbish - A Method to Find Trace Flags](https://rebrand.ly/joe-finding-undocumented-trace-flags)
+- [Docs Trace Flags]
+- [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/) (by Aaron Morelli)
+- [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
+- [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
+- [Albert van der Sel TF list](http://antapex.org/traceflags_sqlserver.txt)
+- [TECHNET List Of SQL Server Trace Flags]
+- [Amit Banerjee TF list](http://troubleshootingsql.com/2012/07/01/sql-server-2008-trace-flags/)
+- [Paul Randal discussing TF Pro’s and Con’s](http://www.sqlskills.com/blogs/paul/the-pros-and-cons-of-trace-flags/)
+- [Enabling SQL Server Trace Flag for a Poor Performing Query Using QUERYTRACEON](https://www.mssqltips.com/sqlservertip/3320/enabling-sql-server-trace-flag-for-a-poor-performing-query-using-querytraceon/)
+- [Disabling SQL Server Optimizer Rules with QUERYRULEOFF](https://www.mssqltips.com/sqlservertip/4175/disabling-sql-server-optimizer-rules-with-queryruleoff/)
+- [SQLskills SQL101: Trace Flags](https://www.sqlskills.com/blogs/erin/sqlskills-101-trace-flags/)
+- [Derik Hammer - Trace Flag Recommendation](http://www.sqlhammer.com/deriks-favorite-trace-flags/)
+- [Brent Ozar - Bad Idea Jeans: Finding Undocumented Trace Flags](https://rebrand.ly/brent-finding-undocumented-trace-flags)
+- [Joe Obbish - A Method to Find Trace Flags](https://rebrand.ly/joe-finding-undocumented-trace-flags)
 
 **Great thanks to:**
 - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
@@ -77,6 +77,7 @@ Source links:
 - John Sterrett ([b](https://www.procuresql.com/))
 - Pavel Málek ([t](https://twitter.com/malekpav))
 - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
+- Josh Darnell ([b](https://joshthecoder.com/)
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -284,7 +285,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **608 trace flags**
+Summary: **609 trace flags**
 
 
 <a id="-1"></a>
@@ -1121,7 +1122,8 @@ To have one file to write on each loop, there should be minimum one data file wi
 Each time a new database data file is added or removed, or 8192 extents is filled in the database filegroup, the Skip Target value will be calculated again. In this way, all database data files will become full approximately at the same time.
 The Skip Target calculation can be monitored by enabling the Trace Flag 1165.<br />
 Link: https://www.sqlshack.com/understanding-sql-server-proportional-fill-algorithm/<br />
-Scope: 
+Scope: global or session
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_1165.sql
 
 
 <a id="1180"></a>
@@ -1677,6 +1679,7 @@ Link: [KB2964518]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2371/<br />
 Link: [Temporary Table Caching in Stored Procedures]<br />
 Scope: global or session
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_2371.sql
 
 
 <a id="2372"></a>
@@ -4270,6 +4273,16 @@ Scope: global only
 #### Trace Flag: 8722
 Function: Disable all hints except locking hints<br />
 Link: http://sqlmag.com/sql-server/investigating-trace-flags
+
+
+<a id="8726"></a>
+**#### Trace Flag: 8726**<br />
+**Undocumented trace flag**<br />
+Function: Disables the heuristic that discourages the optimizer from producing an index union plan.<br />
+Link: https://topanswers.xyz/databases?q=815#a960<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/170<br />
+Scope: query only
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8726.sql
 
 
 <a id="8738"></a>
