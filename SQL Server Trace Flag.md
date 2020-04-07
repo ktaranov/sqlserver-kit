@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**609** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**610** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -285,7 +285,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **609 trace flags**
+Summary: **610 trace flags**
 
 
 <a id="-1"></a>
@@ -4279,10 +4279,20 @@ Link: http://sqlmag.com/sql-server/investigating-trace-flags
 **#### Trace Flag: 8726**<br />
 **Undocumented trace flag**<br />
 Function: Disables the heuristic that discourages the optimizer from producing an index union plan.<br />
-Link: https://topanswers.xyz/databases?q=815#a960<br />
+Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/170<br />
 Scope: query only
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8726.sql
+
+
+<a id="8727"></a>
+**#### Trace Flag: 8727**<br />
+**Undocumented trace flag**<br />
+Function: Can be used to prevent unwanted index union plans.<br />
+Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/170<br />
+Scope: query only
+Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8727.sql
 
 
 <a id="8738"></a>
@@ -5442,3 +5452,4 @@ Scope: global only
 [Cardinality Estimation for Multiple Predicates]:https://sqlperformance.com/2014/01/sql-plan/cardinality-estimation-for-multiple-predicates
 [Temporary Table Caching in Stored Procedures]:https://www.sql.kiwi/2012/08/temporary-tables-in-stored-procedures.html
 [Replication Merge Agent]:https://docs.microsoft.com/en-us/sql/relational-databases/replication/agents/replication-merge-agent
+[Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]:https://topanswers.xyz/databases?q=815#a960

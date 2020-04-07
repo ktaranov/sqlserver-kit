@@ -2,7 +2,7 @@
 Trace Flag Demo: 8726
 !!! Undocumented trace flag !!!
 Function: Disables the heuristic that discourages the optimizer from producing an index union plan.
-SQL Server Version: 2019
+SQL Server Version: ?
 Information link: https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Trace%20Flag.md#8726
 */
 
