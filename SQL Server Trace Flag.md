@@ -4281,7 +4281,9 @@ Link: http://sqlmag.com/sql-server/investigating-trace-flags
 Function: Disables the heuristic that discourages the optimizer from producing an index union plan.<br />
 Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/170<br />
-Scope: query only
+Link: https://dba.stackexchange.com/a/23779<br />
+Link: https://dba.stackexchange.com/a/261790<br />
+Scope: query only<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8726.sql
 
 
@@ -4291,7 +4293,7 @@ Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/T
 Function: Can be used to prevent unwanted index union plans.<br />
 Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
 Link: https://github.com/ktaranov/sqlserver-kit/issues/170<br />
-Scope: query only
+Scope: query only<br />
 Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_8727.sql
 
 
