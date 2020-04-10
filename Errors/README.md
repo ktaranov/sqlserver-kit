@@ -169,6 +169,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |       8117 | Operand data type %ls is invalid for %ls operator.                                                       | [8117_link1][44]                                    |
 |       8180 | Statement(s) could not be prepared.                                                                      | [8180_link1][28]                                    |
 |       8127 | Column "%.*ls.%.*ls" is invalid in the ORDER BY clause because it is not contained in either an        … | [8127_link1][27]                                    |
+|       8152 | String or binary data would be truncated.                                                                | [8152_link1][47]                                    |
 |       8624 | Internal Query Processor Error: The query processor could not produce a query plan.                      | [8624_link1]                                        |
 |       8645 | A timeout occurred while waiting for memory resources to execute the query in resource pool '%ls' (%ld … | [8645_link1]                                        |
 |       8651 | Could not perform the operation because the requested memory grant was not available in resource       … | [8651_link1]                                        |
@@ -273,6 +274,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [44]:https://www.red-gate.com/hub/product-learning/sql-prompt/problems-caused-by-use-of-the-sql_variant-datatype
 [45]:http://www.seangallardy.com/error-8474-state-11-17836-state-20-9642-state-3-and-your-companys-need-to-incessantly-scan-for-vulnerable-ports/
 [46]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
+[47]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
