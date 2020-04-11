@@ -97,6 +97,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1],[102_link2][39]                         |
 |        120 | The select list for the INSERT statement contains fewer items than the insert list. The number of      … | [120_link1][35]                                     |
 |        121 | The select list for the INSERT statement contains more items than the insert list. The number of       … | [121_link1][35]                                     |
+|        131 | The size (%d) given to the %S_MSG '%.*ls' exceeds the maximum allowed for any data type (%d).            | [131_link1][47]                                    |
 |        145 | ORDER BY items must appear in the select list if SELECT DISTINCT is specified.                           | [145_link1][27]                                     |
 |        156 | Incorrect syntax near the keyword 'ORDER'.                                                               | [156_link1][23]                                     |
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                                         |
