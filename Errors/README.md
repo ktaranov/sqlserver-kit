@@ -89,15 +89,16 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 
 | message_id | Description                                                                                              | Article                                             |
 |-----------:|----------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
-|          ? | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …         | [Out of user memory quota][7]                       |
-|          ? | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while      … | [Compressed backup errors][8]                       |
-|          ? | A transport-level error has occurred when receiving results from the server.                             | [link1][31]                                         |
-|          - | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]                  |
+|          0 | You may see “out of user memory quota” message in errorlog when you use In-Memory OLTP feature …         | [Out of user memory quota][7]                       |
+|          0 | Logon Failure: The User has not Been Granted. The operating system returned the error ????? while      … | [Compressed backup errors][8]                       |
+|          0 | A transport-level error has occurred when receiving results from the server.                             | [link1][31]                                         |
+|          0 | The MSSQLSERVER service was unable to log on as SQLAuthority\SQLFarmService with the currently c       … | [The User has not Been Granted][9]                  |
 |          0 | A server error occurred on current command. The results, if any, should be discarded.                    | [Who owns your availability groups?]                |
+|          0 | A network-related issue or instance-specific error occured while establishing a connection to SQL Server | [Cannot Connect to SQL Server]                      |
 |        102 | Incorrect syntax near '%.*ls'.                                                                           | [102_link1],[102_link2][39]                         |
 |        120 | The select list for the INSERT statement contains fewer items than the insert list. The number of      … | [120_link1][35]                                     |
 |        121 | The select list for the INSERT statement contains more items than the insert list. The number of       … | [121_link1][35]                                     |
-|        131 | The size (%d) given to the %S_MSG '%.*ls' exceeds the maximum allowed for any data type (%d).            | [131_link1][47]                                    |
+|        131 | The size (%d) given to the %S_MSG '%.*ls' exceeds the maximum allowed for any data type (%d).            | [131_link1][47]                                     |
 |        145 | ORDER BY items must appear in the select list if SELECT DISTINCT is specified.                           | [145_link1][27]                                     |
 |        156 | Incorrect syntax near the keyword 'ORDER'.                                                               | [156_link1][23]                                     |
 |        207 | Invalid column name '%.*ls'.                                                                             | [207_link1]                                         |
@@ -278,6 +279,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [47]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
+[Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
 [241_link1]:https://www.essentialsql.com/datatype-conversion-in-sql-using-cast-and-convert/
