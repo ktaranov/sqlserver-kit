@@ -105,6 +105,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |        213 | Column name or number of supplied values does not match table definition.                                | [213_link1][3],[213_link2][35]                      |
 |        229 | The %ls permission was denied on the object '%.*ls', database '%.*ls', schema '%.*ls'.                   | [229_link1][12]                                     |
 |        241 | Conversion failed when converting date and/or time from character string.                                | [241_link1]                                         |
+|        257 | Implicit conversion from data type %ls to %ls is not allowed. Use the CONVERT function to run this query | [257_link1]                                         |
 |        264 | The column name '%.*ls' is specified more than once in the SET clause or column list of an INSERT      … | [264_link1][25]                                     |
 |        297 | The user does not have permission to perform this action.                                                | [297_link1][12]                                     |
 |        352 | The table-valued parameter "%.*ls" must be declared with the READONLY option.                            | [352_link1][22]                                     |
@@ -283,6 +284,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [102_link1]:http://jasonbrimhall.info/2017/11/17/incorrect-syntax-what/
 [207_link1]:http://www.sqlservercentral.com/questions/IDENT_CURRENT/165581/
 [241_link1]:https://www.essentialsql.com/datatype-conversion-in-sql-using-cast-and-convert/
+[257_link1]:https://sqlstudies.com/2020/04/16/what-is-the-datatype-sql_varient/
 [459_link1]:https://sqlquantumleap.com/2019/03/13/differences-between-the-various-binary-collations-cultures-versions-and-bin-vs-bin2/
 [535_link1]:http://www.sqlservercentral.com/articles/T-SQL/153921/
 [596_link1]:http://sql-sasquatch.blogspot.ru/2017/09/sqlserver-just-how-minimal-can-that.html
