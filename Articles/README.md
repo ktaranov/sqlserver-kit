@@ -1065,6 +1065,7 @@ Articles types:
 | [SQL Server Internals: Getting the data of deleted column]                                                              | Ronen Ariely                             | 2018-08-11 | [DBA][DEV]  |
 | [SQL varchar data type deep dive]                                                                                       | Gauri Mahajan                            | 2019-05-29 | [DBA][DEV]  |
 | [What is the datatype SQL_VARIANT]                                                                                      | Kenneth Fisher                           | 2020-04-16 | [DBA][DEV]  |
+| [An Introduction to Asynchronous Processing with Service Broker]                                                        | Jonathan Kehayias                        | 2014-03-18 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2105,3 +2106,4 @@ Articles types:
 [SQL Server Internals: Getting the data of deleted column]:http://ariely.info/Blog/tabid/83/EntryId/213/SQL-Server-Internals-Getting-the-data-of-deleted-column.aspx
 [SQL varchar data type deep dive]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 [What is the datatype SQL_VARIANT]:https://sqlstudies.com/2020/04/16/what-is-the-datatype-sql_varient/
+[An Introduction to Asynchronous Processing with Service Broker]:https://sqlperformance.com/2014/03/sql-performance/intro-to-service-broker
