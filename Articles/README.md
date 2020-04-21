@@ -395,7 +395,7 @@ Articles types:
 | [How to Read a Transaction Log Backup]                                                                                  | Greg Larsen                              | 2017-07-03 | [B][DBA]    |
 | [How to Find Out Which Database Object Got Deleted]                                                                     | Greg Larsen                              | 2017-07-03 | [DBA]       |
 | [In-Memory OLTP Enhancements in SQL Server 2016]                                                                        | Ahmad Yaseen                             | 2017-08-22 | [DBA][DEV]  |
-| [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA]       |
+| [Sync SQL Logins and Jobs]                                                                                              | Ryan J. Adams                            | 2017-08-21 | [DBA][J]    |
 | [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2017-08-16 | [BENCH]     |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-25 | [DEV]       |
 | [Why is My Database Application so Slow?]                                                                               | Dan Turner                               | 2017-08-24 | [DEV]       |
@@ -700,7 +700,7 @@ Articles types:
 | [Running SQL Server on Linux on your own laptop]                                                                        | Kevin Chant                              | 2019-03-26 | [DBA][DEV]  |
 | [SSIS and Pentaho – A Quick Comparison]                                                                                 | Koen Verbeeck                            | 2018-10-17 | [SSIS]      |
 | [WinDbg and SQL Server Fun]                                                                                             | Shane O'Neill                            | 2017-06-14 | [DBA][DEV]  |
-| [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA][DEV]  |
+| [Certificates, Proxies and Jobs! Oh My!]                                                                                | Kenneth Fisher                           | 2016-04-27 | [DBA][J]    |
 | [SQL Server: Diagnosing Intermittent Connectivity Issues]                                                               | Mitch Wheat                              | 2019-04-12 | [DBA][DEV]  |
 | [Difference between Identity & Sequence in SQL Server]                                                                  | Ben Richardson                           | 2018-08-15 | [DBA][DEV]  |
 | [Does the Rowmodctr Update for Non-Updating Updates?]                                                                   | Brent Ozar                               | 2019-05-20 | [DBA][DEV]  |
@@ -1066,6 +1066,7 @@ Articles types:
 | [SQL varchar data type deep dive]                                                                                       | Gauri Mahajan                            | 2019-05-29 | [DBA][DEV]  |
 | [What is the datatype SQL_VARIANT]                                                                                      | Kenneth Fisher                           | 2020-04-16 | [DBA][DEV]  |
 | [An Introduction to Asynchronous Processing with Service Broker]                                                        | Jonathan Kehayias                        | 2014-03-18 | [DBA][DEV]  |
+| [Detecting and Alerting on SQL Server Agent Missed Jobs]                                                                | Ed Pollack                               | 2019-02-21 | [DBA][J]    |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2107,3 +2108,4 @@ Articles types:
 [SQL varchar data type deep dive]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 [What is the datatype SQL_VARIANT]:https://sqlstudies.com/2020/04/16/what-is-the-datatype-sql_varient/
 [An Introduction to Asynchronous Processing with Service Broker]:https://sqlperformance.com/2014/03/sql-performance/intro-to-service-broker
+[Detecting and Alerting on SQL Server Agent Missed Jobs]:https://www.sqlshack.com/detecting-and-alerting-on-sql-server-agent-missed-jobs-2/
