@@ -1067,6 +1067,7 @@ Articles types:
 | [What is the datatype SQL_VARIANT]                                                                                      | Kenneth Fisher                           | 2020-04-16 | [DBA][DEV]  |
 | [An Introduction to Asynchronous Processing with Service Broker]                                                        | Jonathan Kehayias                        | 2014-03-18 | [DBA][DEV]  |
 | [Detecting and Alerting on SQL Server Agent Missed Jobs]                                                                | Ed Pollack                               | 2019-02-21 | [DBA][J]    |
+| [Execute multiple jobs Synchronously from in a main job]                                                                | Ronen Ariely                             | 2020-04-11 | [J]         |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2109,3 +2110,5 @@ Articles types:
 [What is the datatype SQL_VARIANT]:https://sqlstudies.com/2020/04/16/what-is-the-datatype-sql_varient/
 [An Introduction to Asynchronous Processing with Service Broker]:https://sqlperformance.com/2014/03/sql-performance/intro-to-service-broker
 [Detecting and Alerting on SQL Server Agent Missed Jobs]:https://www.sqlshack.com/detecting-and-alerting-on-sql-server-agent-missed-jobs-2/
+[Execute multiple jobs Synchronously from in a main job]:http://ariely.info/Blog/tabid/83/EntryId/250/Execute-multiple-jobs-Synchronously-from-in-a-main-job.aspx
+
