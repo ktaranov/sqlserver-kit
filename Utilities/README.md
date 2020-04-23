@@ -21,7 +21,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SC]**: Structure compare {19}
  - **[ST]**: Statistics utilities {3}
  - **[T]**: Testing tools {5}
- - **[?]**: Not yet classified {107}
+ - **[?]**: Not yet classified {109}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -127,10 +127,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge SQL Decryptor](#dbforge-sql-decryptor)                  | No                            | No        | [SEC]    | [dbForge SQL Decryptor]                     | 2017-09-19 | Devart                | Freeware   | Yes            | No    |
 | [dbForge Studio](#dbforge-studio)                                | No                            | No        | [MS]     | [dbForge Studio]                            | 2019-10-10 | Devart                | Shareware  | Yes            |  $250 |
 | [dbForge Fusion](#dbforge-fusion)                                | No                            | No        | [?]      | [dbForge Fusion]                            | 2019-11-08 | Devart                | Shareware  | No             |  $150 |
-| [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2018-10-10 | Devart                | Shareware  | No             |  $150 |
+| [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2020-04-23 | Devart                | Shareware  | No             |  $150 |
 | [dbForge SSIS Data Flow Components](#dbforge-ssis)               | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [dbForge SSIS Data Flow Components]         | 2020-03-31 | Devart                | Shareware  | No             |  $500 |
 | [dbForge DevOps Automation for SQL Server](#dbforge-devops)      | No                            | No        | [?]      | [dbForge DevOps Automation for SQL Server]  | 2020-01-27 | Devart                | Shareware  | No             |  $900 |
-| [Devart Excel Add-in for SQL Server](#devart-excel-addin)        | No                            | No        | [?]      | [Devart Excel Add-in for SQL Server]        | 2019-12-11 | Devart                | Shareware  | No             |  $250 |
+| [Devart Excel Add-in for SQL Server](#devart-excel-addin)        | No                            | No        | [?]      | [Devart Excel Add-in for SQL Server]        | 2020-04-13 | Devart                | Shareware  | No             |  $250 |
 | [dbMonitor](#dbmonitor)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [M]      | [dbMonitor]                                 | 2012-11-01 | Devart                | Freeware   | Yes            | No    |
 | [Minion Enterprise](#minion-enterprise)                          | No                            | No        | [?]      | [Minion Enterprise]                         | ?          | MinionWare            |            | No             | $1500 |
 | [SQL Server Compression Estimator](#compression-estimator)       | No                            | No        | [?]      | [SQL Server Compression Estimator]          | 2011-06-02 | Bob Tavlor            |            | Yes            | No    |
@@ -1829,7 +1829,7 @@ It provides an easier way to explore and maintain existing databases, design com
 ## dbForge Documenter
 <a id="dbforge-documenter"></a>
 Download page: [dbForge Documenter]<br/>
-Release date: 2019-10-10<br/>
+Release date: 2020-04-23<br/>
 Support Version: 2005-2019<br/>
 Author: Devart<br/>
 Free version: No<br/>
@@ -1856,7 +1856,7 @@ They provide high performance data loading, convenient component editors, SQL su
 ## dbForge DevOps Automation for SQL Server
 <a id="dbforge-ssis"></a>
 Download page: [dbForge DevOps Automation for SQL Server]<br/>
-Release date: 2020-01-27<br/>
+Release date: 2020-04-13<br/>
 Support Version: 2014-2019<br/>
 Author: Devart<br/>
 Free version: No<br/>
