@@ -1070,6 +1070,7 @@ Articles types:
 | [Execute multiple jobs Synchronously from in a main job]                                                                | Ronen Ariely                             | 2020-04-11 | [J]         |
 | [Why Ordering Isn’t Guaranteed Without an ORDER BY]                                                                     | Brent Ozar                               | 2020-04-22 | [DBA][DEV]  |
 | [How to Attach a SQL Server Database without a Transaction Log and with Open Transactions]                              | Daniel Farina                            | 2020-04-29 | [COR]       |
+| [SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]                                                           | Ryan Stonecipher, Peter Byrne, Bob Dorr  | 2016-04-12 | [DBA][DEV] |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2115,3 +2116,4 @@ Articles types:
 [Execute multiple jobs Synchronously from in a main job]:http://ariely.info/Blog/tabid/83/EntryId/250/Execute-multiple-jobs-Synchronously-from-in-a-main-job.aspx
 [Why Ordering Isn’t Guaranteed Without an ORDER BY]:https://www.brentozar.com/archive/2020/04/why-ordering-isnt-guaranteed-without-an-order-by/
 [How to Attach a SQL Server Database without a Transaction Log and with Open Transactions]:https://www.mssqltips.com/sqlservertip/3579/how-to-attach-a-sql-server-database-without-a-transaction-log-and-with-open-transactions/
+[SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]:https://docs.microsoft.com/en-gb/archive/blogs/psssql/sql-2016-it-just-runs-faster-indirect-checkpoint-default
