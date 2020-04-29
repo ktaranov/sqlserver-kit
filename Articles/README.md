@@ -6,6 +6,7 @@ Articles types:
  - **[BENCH]** Benchmarking Articles
  - **[IDX]** Index Articles
  - **[CLR]** [SQL Server Common Language Runtime Integration](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/sql-server-common-language-runtime-integration) Articles
+ - **[CHP]** Checkpont Articles
  - **[COR]** Corruption Articles
  - **[DAX]** Data Analysis Expressions Articles
  - **[DBA]** DBA Articles
@@ -1070,9 +1071,12 @@ Articles types:
 | [Execute multiple jobs Synchronously from in a main job]                                                                | Ronen Ariely                             | 2020-04-11 | [J]         |
 | [Why Ordering Isn’t Guaranteed Without an ORDER BY]                                                                     | Brent Ozar                               | 2020-04-22 | [DBA][DEV]  |
 | [How to Attach a SQL Server Database without a Transaction Log and with Open Transactions]                              | Daniel Farina                            | 2020-04-29 | [COR]       |
-| [SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]                                                           | Ryan Stonecipher, Peter Byrne, Bob Dorr  | 2016-04-12 | [DBA][DEV] |
-| [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]                                     | Parikshit Savjani                        | 2017-06-26 | [DBA][DEV] |
-
+| [SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]                                                           | Ryan Stonecipher, Peter Byrne, Bob Dorr  | 2016-04-12 | [DBA][CHP]  |
+| [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]                                     | Parikshit Savjani                        | 2017-06-26 | [DBA][CHP]  |
+| [How do checkpoints work and what gets logged]                                                                          | Paul Randal                              | 2009-09-27 | [DBA][CHP]  |
+| [Inside the Storage Engine: What’s in the buffer pool?]                                                                 | Paul Randal                              | 2008-08-26 | [DBA]       |  
+| [What does checkpoint do for tempdb?]                                                                                   | Paul Randal                              | 2009-10-07 | [DBA][CHP]  |
+|
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -2120,3 +2124,7 @@ Articles types:
 [SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]:https://docs.microsoft.com/en-gb/archive/blogs/psssql/sql-2016-it-just-runs-faster-indirect-checkpoint-default
 [SQL Server : large RAM and DB Checkpointing]:https://docs.microsoft.com/en-us/archive/blogs/psssql/sql-server-large-ram-and-db-checkpointing
 [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]:https://docs.microsoft.com/en-gb/archive/blogs/sql_server_team/indirect-checkpoint-and-tempdb-the-good-the-bad-and-the-non-yielding-scheduler
+[How do checkpoints work and what gets logged]:https://www.sqlskills.com/blogs/paul/how-do-checkpoints-work-and-what-gets-logged/
+[Inside the Storage Engine: What’s in the buffer pool?]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-whats-in-the-buffer-pool/
+[What does checkpoint do for tempdb?]:https://www.sqlskills.com/blogs/paul/what-does-checkpoint-do-for-tempdb/
+
