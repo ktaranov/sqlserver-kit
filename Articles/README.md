@@ -1076,6 +1076,7 @@ Articles types:
 | [How do checkpoints work and what gets logged]                                                                          | Paul Randal                              | 2009-09-27 | [DBA][CHP]  |
 | [Inside the Storage Engine: What’s in the buffer pool?]                                                                 | Paul Randal                              | 2008-08-26 | [DBA]       |  
 | [What does checkpoint do for tempdb?]                                                                                   | Paul Randal                              | 2009-10-07 | [DBA][CHP]  |
+| [Performance issues from wasted buffer pool memory]                                                                     | Paul Randal                              | 2011-06-01 | [DBA]       |
 |
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2127,4 +2128,4 @@ Articles types:
 [How do checkpoints work and what gets logged]:https://www.sqlskills.com/blogs/paul/how-do-checkpoints-work-and-what-gets-logged/
 [Inside the Storage Engine: What’s in the buffer pool?]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-whats-in-the-buffer-pool/
 [What does checkpoint do for tempdb?]:https://www.sqlskills.com/blogs/paul/what-does-checkpoint-do-for-tempdb/
-
+[Performance issues from wasted buffer pool memory]:https://www.sqlskills.com/blogs/paul/performance-issues-from-wasted-buffer-pool-memory/
