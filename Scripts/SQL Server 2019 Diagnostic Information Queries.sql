@@ -1,7 +1,7 @@
 
 -- SQL Server 2019 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: April 2, 2020
+-- Last Modified: May 3, 2020
 -- https://glennsqlperformance.com/ 
 -- https://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -286,7 +286,7 @@ ORDER BY sj.name OPTION (RECOMPILE);
 -- MSDN sysjobs documentation
 -- https://bit.ly/2paDEOP 
 
--- SQL Server Maintenance Solution
+-- SQL Server Maintenance Solution (Ola Hallengren)
 -- https://bit.ly/1pgchQu  
 
 -- You can use this script to add default schedules to the standard Ola Hallengren Maintenance Solution jobs
@@ -409,7 +409,7 @@ FROM sys.dm_hadr_cluster WITH (NOLOCK) OPTION (RECOMPILE);
 -- You will see no results if your instance is not using AlwaysOn AGs
 
 
--- Good overview of AG health and status (Query 16) (AlwaysOn AG Status)
+-- Good overview of AG health and status (Query 16) (AG Status)
 SELECT ag.name AS [AG Name], ar.replica_server_name, ar.availability_mode_desc, adc.[database_name], 
        drs.is_local, drs.is_primary_replica, drs.synchronization_state_desc, drs.is_commit_participant, 
 	   drs.synchronization_health_desc, drs.recovery_lsn, drs.truncation_lsn, drs.last_sent_lsn, 
@@ -761,7 +761,8 @@ ORDER BY db.[name] OPTION (RECOMPILE);
 -- What compatibility level are the databases on? 
 -- What is the Page Verify Option? (should be CHECKSUM)
 -- Is Auto Update Statistics Asynchronously enabled?
--- Is Delayed Durability enabled
+-- What is target_recovery_time_in_seconds?
+-- Is Delayed Durability enabled?
 -- Make sure auto_shrink and auto_close are not enabled!
 
 -- is_mixed_page_allocation_on is a new property for SQL Server 2016. Equivalent to TF 1118 for a user database
@@ -1150,13 +1151,13 @@ ORDER BY SUM(mc.pages_kb) DESC OPTION (RECOMPILE);
 
 -- MEMORYCLERK_SQLBUFFERPOOL was new for SQL Server 2012. It should be your highest consumer of memory
 
--- CACHESTORE_SQLCP  SQL Plans         
+-- CACHESTORE_SQLCP - SQL Plans         
 -- These are cached SQL statements or batches that aren't in stored procedures, functions and triggers
 -- Watch out for high values for CACHESTORE_SQLCP
 -- Enabling 'optimize for ad hoc workloads' at the instance level can help reduce this
 -- Running DBCC FREESYSTEMCACHE ('SQL Plans') periodically may be required to better control this
 
--- CACHESTORE_OBJCP  Object Plans      
+-- CACHESTORE_OBJCP - Object Plans      
 -- These are compiled plans for stored procedures, functions and triggers
 
 -- sys.dm_os_memory_clerks (Transact-SQL)
@@ -1354,7 +1355,7 @@ ON vfs.[file_id]= df.[file_id] OPTION (RECOMPILE);
 ------
 
 -- This helps you characterize your workload better from an I/O perspective for this database
--- It helps you determine whether you has an OLTP or DW/DSS type of workload
+-- It helps you determine whether you have an OLTP or DW/DSS type of workload
 
 
 
@@ -1375,6 +1376,10 @@ CROSS APPLY sys.dm_exec_query_plan(plan_handle) AS qp
 WHERE t.dbid = DB_ID()
 ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 ------
+
+-- Tells you which cached queries are called the most often
+-- This helps you characterize and baseline your workload
+-- It also helps you find possible caching opportunities
 
 
 -- Queries 57 through 62 are the "Bad Man List" for stored procedures
@@ -1400,6 +1405,7 @@ ORDER BY qs.execution_count DESC OPTION (RECOMPILE);
 
 -- Tells you which cached stored procedures are called the most often
 -- This helps you characterize and baseline your workload
+-- It also helps you find possible caching opportunities
 
 
 -- Top Cached SPs By Avg Elapsed Time (Query 58) (SP Avg Elapsed Time)
@@ -1959,12 +1965,14 @@ AND bs.[type] = 'D' -- Change to L if you want Log backups
 ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 ------
 
+-- Things to look at:
 -- Are your backup sizes and times changing over time?
 -- Are you using backup compression?
 -- Are you using backup checksums?
 -- Are you doing copy_only backups?
 -- Are you doing encrypted backups?
 -- Have you done any backup tuning with striped backups, or changing the parameters of the backup command?
+-- Where are the backups going to?
 
 -- In SQL Server 2016, native SQL Server backup compression actually works 
 -- much better with databases that are using TDE than in previous versions
@@ -2000,5 +2008,3 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- Microsoft Azure Learn
 -- https://bit.ly/2O0Hacc
 
--- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
--- https://bit.ly/2ftKVrX
