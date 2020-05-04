@@ -25,11 +25,11 @@ Utility types (main purpose), in braces `{}` current counts:
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
-| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2019-11-04 | Microsoft             |            | Yes            | No    |
+| [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2020-04-07 | Microsoft             |            | Yes            | No    |
 | [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-11-04 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
-| [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2018-07-06 | Microsoft             | [BSD-3]    | Open Source    | No    |
+| [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2020-05-01 | Microsoft             | [BSD-3]    | Open Source    | No    |
 | [RML Utilities for SQL Server](#rml)                             | No                            | No        | [T]      | [RML Utilities for SQL Server]              | 2014-12-12 | Microsoft             |            | Yes            | No    |
 | [GraphView](#graphview)                                          | No                            | No        | [?]      | [GraphView]                                 | 2016-02-23 | Microsoft             |            | Yes            | No    |
 | [Baseline Security Analyze](#baseline-security-analyze)          | No                            | No        | [SEC]    | [Baseline Security Analyze]                 | 2015-01-09 | Microsoft             |            | Yes            | No    |
@@ -344,7 +344,7 @@ Utility types (main purpose), in braces `{}` current counts:
 <a id="ssms"></a>
 ## SSMS
 Download page: [SSMS]<br/>
-Release date: 2019-11-04<br/>
+Release date: 2020-04-07<br/>
 Support Version: 2005-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
@@ -414,19 +414,19 @@ The bcp utility can be used to import large numbers of new rows into SQL Server 
 <a id="mssql-cli"></a>
 ## mssql-cli
 Download page: [mssql-cli]<br/>
-Release date: 2018-07-06<br/>
-Support Version: 2008-2017/Azure<br/>
+Release date: 2020-01-05<br/>
+Support Version: 2008-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Open Source<br/>
 Price: No
 
 Interactive command line query tool for SQL Server.
 
- - Auto-completion
- - Syntax highlighting
- - Query history
- - Configuration file support
- - Multi-line queries
+- Auto-completion
+- Syntax highlighting
+- Query history
+- Configuration file support
+- Multi-line queries
 
 
 ## RML Utilities for SQL Server
