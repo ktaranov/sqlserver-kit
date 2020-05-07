@@ -220,6 +220,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Intro to SQL: Querying and managing data](https://www.khanacademy.org/computing/computer-programming/sql)
      - [T-SQL Tutorial](https://www.tutorialspoint.com/t_sql/index.htm) (by TutorialSpoint)
      - [T-SQL Tutorial and examples](https://www.tsql.info/sql-tutorial.php) (by tsql.info)
+     - [Red Gate Data Platform courses](https://www.red-gate.com/hub/university/courses/data-platform) (by Red Gate)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
