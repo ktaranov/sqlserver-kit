@@ -349,6 +349,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [databases_scripts - SQL Server useful scripts](https://github.com/dgavrikov/databases_scripts/tree/master/SQL%20Server) (by Dmitriy Gavrikov)
     - [sp_pressure_detector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/blob/master/sp_pressure_detector/sp_pressure_detector.sql) (by Erik Darling)
     - [Export Prometheus metrics from SQL queries](https://github.com/albertodonato/query-exporter) (by Alberto Donato)
+    - [homebrew-mssql-release - brew formulae for Microsoft ODBC Driver for SQL Server and SQL Server Command Line Utilities](https://github.com/microsoft/homebrew-mssql-release) (by Microsoft)
  - Other
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
