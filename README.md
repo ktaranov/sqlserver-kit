@@ -201,6 +201,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
    - [Dallas DBAs](https://dallasdbas.com/) (by Kevin Hill)
    - [Dear SQL DBA](https://sqlworkbooks.com/dear-sql-dba/) (by Kendra Little)
+   - [SQL Server Pain Relief: Office Hours](https://www.stitcher.com/podcast/sql-server-pain-relief-office-hours-with-brent-ozar-unlimitedr) (by Brent Ozar)
  - Courses <a id="courses"></a>
    - Free
      - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) (by Jason Brimhall)
