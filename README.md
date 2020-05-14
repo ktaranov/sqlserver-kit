@@ -238,6 +238,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [SQLpassion Online Academy](http://www.sqlpassion.at/online-training/index.html) (by Klaus Aschenbrenner)
      - [Vertabelo Academy](https://academy.vertabelo.com/)
      - [Darling Data - The Best SQL Server Training On The Internet?](https://learn.erikdarlingdata.com/) (by Erik Darling)
+     - [W3Resource SQL Exercises, Practice, Solution](https://www.w3resource.com/sql-exercises/) (by w3resource)
  - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
