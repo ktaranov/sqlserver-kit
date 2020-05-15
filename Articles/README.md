@@ -1077,6 +1077,9 @@ Articles types:
 | [Inside the Storage Engine: What’s in the buffer pool?]                                                                 | Paul Randal                              | 2008-08-26 | [DBA]       |  
 | [What does checkpoint do for tempdb?]                                                                                   | Paul Randal                              | 2009-10-07 | [DBA][CHP]  |
 | [Performance issues from wasted buffer pool memory]                                                                     | Paul Randal                              | 2011-06-01 | [DBA]       |
+| [How It Works: When is the FlushCache message added to SQL Server Error Log?]                                           | Bob Dorr                                 | 2012-01-06 | [DBA]       |
+| [Negative identity values don’t suck]                                                                                   | Randolph West                            | 2020-05-06 | [DBA][DEV]  |
+| [Cross Database Transactions on One Server]                                                                             | Michael J. Swart                         | 2020-05-15 | [DBA][DEV]  |
 |
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2129,3 +2132,6 @@ Articles types:
 [Inside the Storage Engine: What’s in the buffer pool?]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-whats-in-the-buffer-pool/
 [What does checkpoint do for tempdb?]:https://www.sqlskills.com/blogs/paul/what-does-checkpoint-do-for-tempdb/
 [Performance issues from wasted buffer pool memory]:https://www.sqlskills.com/blogs/paul/performance-issues-from-wasted-buffer-pool-memory/
+[How It Works: When is the FlushCache message added to SQL Server Error Log?]:https://docs.microsoft.com/en-us/archive/blogs/psssql/how-it-works-when-is-the-flushcache-message-added-to-sql-server-error-log
+[Negative identity values don’t suck]:https://bornsql.ca/blog/negative-identity-values-dont-suck/
+[Cross Database Transactions on One Server]:https://michaeljswart.com/2020/05/cross_database_transactions/
