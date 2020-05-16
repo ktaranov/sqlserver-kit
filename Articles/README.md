@@ -1079,8 +1079,10 @@ Articles types:
 | [Performance issues from wasted buffer pool memory]                                                                     | Paul Randal                              | 2011-06-01 | [DBA]       |
 | [How It Works: When is the FlushCache message added to SQL Server Error Log?]                                           | Bob Dorr                                 | 2012-01-06 | [DBA]       |
 | [Negative identity values don’t suck]                                                                                   | Randolph West                            | 2020-05-06 | [DBA][DEV]  |
+| [How SQL Server stores data types: integers and decimals]                                                               | Randolph West                            | 2020-05-13 | [DBA][DEV]  |
 | [Cross Database Transactions on One Server]                                                                             | Michael J. Swart                         | 2020-05-15 | [DBA][DEV]  |
-|
+| [Your Views Aren’t The Problem. Your Code Is.]                                                                          | Brent Ozar                               | 2020-05-06 | [DBA][DEV]  |
+
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -2135,3 +2137,5 @@ Articles types:
 [How It Works: When is the FlushCache message added to SQL Server Error Log?]:https://docs.microsoft.com/en-us/archive/blogs/psssql/how-it-works-when-is-the-flushcache-message-added-to-sql-server-error-log
 [Negative identity values don’t suck]:https://bornsql.ca/blog/negative-identity-values-dont-suck/
 [Cross Database Transactions on One Server]:https://michaeljswart.com/2020/05/cross_database_transactions/
+[Your Views Aren’t The Problem. Your Code Is.]:https://www.brentozar.com/archive/2020/05/your-views-arent-the-problem-your-code-is/
+[How SQL Server stores data types: integers and decimals]:https://bornsql.ca/blog/how-sql-server-stores-data-types-integers-and-decimals/
