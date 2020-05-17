@@ -225,6 +225,7 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 |      26023 | Server TCP provider failed to listen on [ %s <%s> %d]. Tcp port is already in use.                       | [26023_link1][13]                                   |
 |      33111 | Cannot find server %S_MSG with thumbprint '%.*ls'.                                                       | [33111_link1]                                       |
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                                   |
+|      35217 |  The thread pool for Always On Availability Groups was unable to start a new worker thread because     … | [35217_link1]                                       |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                                       |
 |      35320 | Column store indexes are not allowed on tables for which the durability option SCHEMA_ONLY is specified. | [35320_link1][41]                                   |
 |      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                                   |
@@ -354,3 +355,4 @@ langid | dateformat | datefirst | upgrade | name               | alias          
 [25713_link2]:https://sqlquantumleap.com/2018/01/30/server-audit-mystery-filtering-action_id-gets-error-msg-25713/
 [33111_link1]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/
+[35217_link1] :https://www.seangallardy.com/error-35217-and-availability-groups-smh/
