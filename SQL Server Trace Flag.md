@@ -77,7 +77,7 @@ Source links:
 - John Sterrett ([b](https://www.procuresql.com/))
 - Pavel Málek ([t](https://twitter.com/malekpav))
 - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
-- Josh Darnell ([b](https://joshthecoder.com/)
+- Josh Darnell ([b](https://joshthecoder.com/))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -2219,7 +2219,9 @@ Link: None
 **Undocumented trace flag**<br />
 **TF2861 only exists in SQL Server 2000 SP3 and SP4, was removed before 2005 shipped, and if you’re using it now you’re definitely incorrect and should removed it from your startup parameters/application code that enables it.**
 Function: Keep zero cost plans in cache. Tip: Avoid Using Trace Flag 2861 to Cache Zero-Cost Query Plan<br />
-Link: http://www.seangallardy.com/trace-flag-2861-the-trace-flag-the-myth-the-legend/
+Link: http://www.seangallardy.com/trace-flag-2861-the-trace-flag-the-myth-the-legend/<br />
+Link: https://web.archive.org/web/20121008074923/http://support.microsoft.com/kb/325607<br />
+Scope: global only
 
 
 #### Trace Flag: 2880
@@ -2554,6 +2556,7 @@ Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-pr
 Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3504/<br />
 Link: https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/<br />
+Link: https://docs.microsoft.com/en-us/archive/blogs/psssql/how-it-works-when-is-the-flushcache-message-added-to-sql-server-error-log<br />
 Scope: Session only
 
 
