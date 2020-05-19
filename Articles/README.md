@@ -1082,6 +1082,9 @@ Articles types:
 | [How SQL Server stores data types: integers and decimals]                                                               | Randolph West                            | 2020-05-13 | [DBA][DEV]  |
 | [Cross Database Transactions on One Server]                                                                             | Michael J. Swart                         | 2020-05-15 | [DBA][DEV]  |
 | [Your Views Aren’t The Problem. Your Code Is.]                                                                          | Brent Ozar                               | 2020-05-06 | [DBA][DEV]  |
+| [Can I Offload DBCC CHECKDB To Another Server?]                                                                         | Brent Ozar                               | 2020-05-19 | [DBA]       |
+| [Negative (-) is an operator and will affect the order of operations.]                                                  | Kenneth Fisher                           | 2020-05-18 | [DBA][DEV]  |
+| ["0 to 60" : Switching to indirect checkpoints]                                                                         | Aaron Bertrand                           | 2020-05-01 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2139,3 +2142,6 @@ Articles types:
 [Cross Database Transactions on One Server]:https://michaeljswart.com/2020/05/cross_database_transactions/
 [Your Views Aren’t The Problem. Your Code Is.]:https://www.brentozar.com/archive/2020/05/your-views-arent-the-problem-your-code-is/
 [How SQL Server stores data types: integers and decimals]:https://bornsql.ca/blog/how-sql-server-stores-data-types-integers-and-decimals/
+[Can I Offload DBCC CHECKDB To Another Server?]:https://www.brentozar.com/archive/2020/05/can-i-offload-dbcc-checkdb-to-another-server/
+[Negative (-) is an operator and will affect the order of operations.]:https://sqlstudies.com/2020/05/18/negative-is-an-operator-and-will-effect-the-order-of-operations/
+["0 to 60" : Switching to indirect checkpoints]:https://sqlperformance.com/2020/05/system-configuration/0-to-60-switching-to-indirect-checkpoints
