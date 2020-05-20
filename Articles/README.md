@@ -1084,7 +1084,9 @@ Articles types:
 | [Your Views Aren’t The Problem. Your Code Is.]                                                                          | Brent Ozar                               | 2020-05-06 | [DBA][DEV]  |
 | [Can I Offload DBCC CHECKDB To Another Server?]                                                                         | Brent Ozar                               | 2020-05-19 | [DBA]       |
 | [Negative (-) is an operator and will affect the order of operations.]                                                  | Kenneth Fisher                           | 2020-05-18 | [DBA][DEV]  |
-| ["0 to 60" : Switching to indirect checkpoints]                                                                         | Aaron Bertrand                           | 2020-05-01 | [DBA]       |
+| ["0 to 60" : Switching to indirect checkpoints]                                                                         | Aaron Bertrand                           | 2020-05-01 | [DBA][CHP]  |
+| [Parallelism Can Make Queries Perform Worse.]                                                                           | Brent Ozar                               | 2020-05-20 | [DBA][DEV]  |
+| [A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]                         | Paul Randal                              | 2010-04-15 | [DBA][CHP]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2145,3 +2147,5 @@ Articles types:
 [Can I Offload DBCC CHECKDB To Another Server?]:https://www.brentozar.com/archive/2020/05/can-i-offload-dbcc-checkdb-to-another-server/
 [Negative (-) is an operator and will affect the order of operations.]:https://sqlstudies.com/2020/05/18/negative-is-an-operator-and-will-effect-the-order-of-operations/
 ["0 to 60" : Switching to indirect checkpoints]:https://sqlperformance.com/2020/05/system-configuration/0-to-60-switching-to-indirect-checkpoints
+[Parallelism Can Make Queries Perform Worse.]:https://www.brentozar.com/archive/2020/05/parallelism-can-make-queries-perform-worse/
+[A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
