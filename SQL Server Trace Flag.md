@@ -77,7 +77,7 @@ Source links:
 - John Sterrett ([b](https://www.procuresql.com/))
 - Pavel Málek ([t](https://twitter.com/malekpav))
 - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
-- Josh Darnell ([b](https://joshthecoder.com/))
+- Josh Darnell ([b](https://joshthecoder.com/) | [t](https://twitter.com/josh_the_coder))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -2534,16 +2534,18 @@ Link: None
 
 <a id="3502"></a>
 #### Trace Flag: 3502
+**Undocumented trace flag**<br />
 Function: Write checkpoint start and end messages in the SQL Server error log.<br />
 Link: [Important Trace Flags That Every DBA Should Know]<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
-Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
+Link: [A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3502/<br />
 Scope: session only
 
 
 <a id="3503"></a>
 #### Trace Flag: 3503
+**Undocumented trace flag**<br />
 Function: Indicates whether the checkpoint at the end of automatic recovery was skipped for a database (this applies only to read-only databases)<br />
 Link: http://www.sql-server-performance.com/2002/traceflags/
 
@@ -2551,13 +2553,14 @@ Link: http://www.sql-server-performance.com/2002/traceflags/
 <a id="3504"></a>
 #### Trace Flag: 3504
 **Undocumented trace flag**<br />
-Function: For internal testing. Will raise a bogus log-out-of-space condition from checkpoint<br />
+Function: writes to the error log information about what is written to disk.
+For internal testing. Will raise a bogus log-out-of-space condition from checkpoint.<br />
 Link: https://blogs.msdn.microsoft.com/joaol/2008/11/20/sql-server-checkpoint-problems/<br />
-Link: http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/<br />
+Link: [A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3504/<br />
 Link: https://www.sqlshack.com/sql-server-checkpoint-lazy-writer-eager-writer-and-dirty-pages-in-sql-server/<br />
 Link: https://docs.microsoft.com/en-us/archive/blogs/psssql/how-it-works-when-is-the-flushcache-message-added-to-sql-server-error-log<br />
-Scope: Session only
+Scope: session only
 
 
 <a id="3505"></a>
@@ -5458,3 +5461,4 @@ Scope: global only
 [Temporary Table Caching in Stored Procedures]:https://www.sql.kiwi/2012/08/temporary-tables-in-stored-procedures.html
 [Replication Merge Agent]:https://docs.microsoft.com/en-us/sql/relational-databases/replication/agents/replication-merge-agent
 [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]:https://topanswers.xyz/databases?q=815#a960
+[A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]:http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
