@@ -26,7 +26,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
 | [SSMS](#ssms)                                                    | No                            | No        | [MS]     | [SSMS]                                      | 2020-04-07 | Microsoft             |            | Yes            | No    |
-| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2019-11-04 | Microsoft             | [MIT]      | Open Source    | No    |
+| [Azure Data Studio](#ads)                                        | PostgreSQL                    | Linux,Mac | [MS]     | [Azure Data Studio]                         | 2020-05-20 | Microsoft             | [MIT]      | Open Source    | No    |
 | [bcp Utility](#bcp)                                              | No                            | No        | [I]      | [bcp Utility]                               | 2012-02-11 | Microsoft             |            | Yes            | No    |
 | [sqlcmd Utility](#sqlcmd-utility)                                | No                            | No        | [I]      | [sqlcmd Utility]                            | 2016-08-23 | Microsoft             |            | Yes            | No    |
 | [mssql-cli](#mssql-cli)                                          | No                            | Linux,Mac | [?]      | [mssql-cli]                                 | 2020-05-01 | Microsoft             | [BSD-3]    | Open Source    | No    |
@@ -358,7 +358,7 @@ This release features improved compatibility with previous versions of SQL Serve
 <a id="ads"></a>
 ## Azure Data Studio
 Download page: [Azure Data Studio]<br/>
-Release date: 2019-11-04<br/>
+Release date: 2020-05-20<br/>
 Support Version: 2008-2019/Azure<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
