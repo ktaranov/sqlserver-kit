@@ -403,6 +403,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
     - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
     - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
+    - [SQL Cheat Sheet](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
 
 **[⬆ back to top](#table-of-contents)**
 

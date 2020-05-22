@@ -242,20 +242,20 @@ Utility types (main purpose), in braces `{}` current counts:
 | [BimlExpress Metadata Framework](#bimlexpress)                   | No                            | No        | [?]      | [BimlExpress Metadata Framework]            | 2017-01-06 | Andy Leonard          |            | Yes            | No    |
 | [MS Kerberos Configuration Manager](#mkcm)                       | No                            | No        | [?]      | [MS Kerberos Configuration Manager]         | 2017-01-31 | Microsoft             |            | Yes            | No    |
 | [Spotlight](#spotlight)                                          | No                            | No        | [M]      | [Spotlight]                                 | ?          | Quest Software        |            | Yes            | ?     |
-| [DBConvert Studio](#dbconvert-studio)                            | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [DBConvert Studio]                          | 2017-03-01 | DMSoft Technologies   |            | No             |  $499 |
+| [DBConvert Studio](#dbconvert-studio)                            | Oracle,MySQL,PostgreSQL,Other | No        | [MG]     | [DBConvert Studio]                          | 2020-05-11 | Slotix   |            | No             |  $499 |
 | [DbDefence](#dbdefence)                                          | No                            | No        | [?]      | [DbDefence]                                 | 2017-03-01 | ActiveCrypt Software  |            | Yes            |  $698 |
 | [SQL Server Migration Assistant for MySQL](#ssma-mysql)          | MySQL                         | No        | [MG]     | [SQL Server Migration Assistant for MySQL]  | 2017-02-17 | Microsoft             |            | Yes            | No    |
 | [sqlcmd for Mac and Linux](#sqlcmd)                              | No                            | Linux,Mac | [?]      | [sqlcmd for Mac and Linux]                  | 2017-01-26 | Soheil Rashidi        |            | Open Source    | No    |
 | [SQL Migrator](#sql-migrator)                                    | No                            | No        | [MG]     | [SQL Migrator]                              | ?          | Datamate Technology   |            | ?              | ?     |
-| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)      | No                            | No        | [MG]     | [MS FoxPro to MS SQL Migration and Sync]    | 2013-10-08 | DMSoft Technologies   |            | No             |  $149 |
-| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)           | No                            | No        | [MG]     | [MySQL to MS SQL Migration and Sync]        | 2013-10-08 | DMSoft Technologies   |            | No             |  $149 |
-| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)         | No                            | No        | [MG]     | [Oracle to MS SQL Migration and Sync]       | 2013-10-09 | DMSoft Technologies   |            | No             |  $149 |
-| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver) | No                            | No        | [MG]     | [PostgreSQL to MS SQL Migration and Sync]   | 2013-10-08 | DMSoft Technologies   |            | No             |  $149 |
-| [MS Excel to MS SQL Migration](#msexcel-sqlserver)               | No                            | No        | [MG]     | [MS Excel to MS SQL Migration]              | 2013-09-23 | DMSoft Technologies   |            | No             |  $149 |
-| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)        | No                            | No        | [MG]     | [SQLite to MS SQL Migration and Sync]       | 2014-05-08 | DMSoft Technologies   |            | No             |  $149 |
-| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)           | No                            | No        | [MG]     | [IBM DB2 to MS SQL Migration and Sync]      | 2013-09-09 | DMSoft Technologies   |            | No             |  $149 |
-| [MS Access to MS SQL Migration and Sync](#access-sqlserver)      | No                            | No        | [MG]     | [MS Access to MS SQL Migration and Sync]    | 2013-10-08 | DMSoft Technologies   |            | No             |  $149 |
-| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)     | No                            | No        | [MG]     | [Firebird to MS SQL Migration and Sync]     | 2013-09-11 | DMSoft Technologies   |            | No             |  $149 |
+| [MS FoxPro to MS SQL Migration and Sync](#foxpro-sqlserver)      | No                            | No        | [MG]     | [MS FoxPro to MS SQL Migration and Sync]    | 2019-04-25 | Slotix   |            | No             |  $149 |
+| [MySQL to MS SQL Migration and Sync](#mysql-sqlserver)           | No                            | No        | [MG]     | [MySQL to MS SQL Migration and Sync]        | 2018-10-03 | Slotix   |            | No             |  $149 |
+| [Oracle to MS SQL Migration and Sync](#oracle-sqlserver)         | No                            | No        | [MG]     | [Oracle to MS SQL Migration and Sync]       | 2020-02-12 | Slotix   |            | No             |  $149 |
+| [PostgreSQL to MS SQL Migration and Sync](#postgresql-sqlserver) | No                            | No        | [MG]     | [PostgreSQL to MS SQL Migration and Sync]   | 2019-10-24 | Slotix   |            | No             |  $149 |
+| [MS Excel to MS SQL Migration](#msexcel-sqlserver)               | No                            | No        | [MG]     | [MS Excel to MS SQL Migration]              | 2018-02-23 | Slotix   |            | No             |  $149 |
+| [SQLite to MS SQL Migration and Sync](#sqllite-sqlserver)        | No                            | No        | [MG]     | [SQLite to MS SQL Migration and Sync]       | 2016-08-18 | Slotix   |            | No             |  $149 |
+| [IBM DB2 to MS SQL Migration and Sync](#db2-sqlserver)           | No                            | No        | [MG]     | [IBM DB2 to MS SQL Migration and Sync]      | 2019-07-09 | Slotix   |            | No             |  $149 |
+| [MS Access to MS SQL Migration and Sync](#access-sqlserver)      | No                            | No        | [MG]     | [MS Access to MS SQL Migration and Sync]    | 2020-01-15 | Slotix   |            | No             |  $149 |
+| [Firebird to MS SQL Migration and Sync](#firebird-sqlserver)     | No                            | No        | [MG]     | [Firebird to MS SQL Migration and Sync]     | 2016-08-18 | Slotix   |            | No             |  $149 |
 | [SQLines SQL Converter](#sqllines-converter)                     | No                            | No        | [MG]     | [SQLines SQL Converter]                     | ?          | Dmtolpeko             |            | Open Source    | No    |
 | [SQLite & SQL Server Compact Toolbox](#sqlite-sqlserver-toolbox) | No                            | No        | [?]      | [SQLite & SQL Server Compact Toolbox]       | ?          | ErikEJ                |            | Open Source    | No    |
 | [SqlPad](#sqlpad)                                                | Postgres,MySQL,Crate,Vertica  | No        | [MS]     | [SqlPad]                                    | ?          | Rickbergfalk          |            | Open Source    | No    |
@@ -3516,9 +3516,9 @@ Can diagnose SQL Server performance issues quickly and accurately, ensuring a he
 ## DBConvert Studio
 <a id="dbconvert-studio"></a>
 Download page: [DBConvert Studio]<br/>
-Release date: 2017-03-01<br/>
-Support Version: ?<br/>
-Author: DMSoft Technologies<br/>
+Release date: 2020-05-11<br/>
+Support Version: 1.7.5<br/>
+Author: Slotix<br/>
 Free version: Yes<br/>
 Price: $499
 
@@ -3584,7 +3584,7 @@ Automatically upgrade objects within a SQL Server Instance from lower to higher 
 Download page: [MS FoxPro to MS SQL Migration and Sync]<br/>
 Release date: 2013-10-08<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3599,7 +3599,7 @@ Approximately 1 Million of records from FoxPro to MSSQL Server with "Bulk" optio
 Download page: [MySQL to MS SQL Migration and Sync]<br/>
 Release date: 2013-10-08<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3617,7 +3617,7 @@ Integrated Data Types Mapping feature helps to find and map similar data types b
 Download page: [Oracle to MS SQL Migration and Sync]<br/>
 Release date: 2013-10-09<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3633,7 +3633,7 @@ Our tool easily handles huge databases and tables. A clear easy-to-use wizard in
 Download page: [PostgreSQL to MS SQL Migration and Sync]<br/>
 Release date: 2013-10-08<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3650,7 +3650,7 @@ Our software will save you hours of learning SQL commands as any large PostgreSQ
 Download page: [MS Excel to MS SQL Migration]<br/>
 Release date: 2013-09-23<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3666,7 +3666,7 @@ Saving data into a MS SQL Dump for export to MS SQL database
 Download page: [SQLite to MS SQL Migration and Sync]<br/>
 Release date: 2014-05-08<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3682,7 +3682,7 @@ If you have any restrictions on direct access to MS SQL server our product provi
 Download page: [IBM DB2 to MS SQL Migration and Sync]<br/>
 Release date: 2013-09-09<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3696,7 +3696,7 @@ Optionally target SQL Dump file may be generated if you haven’t a direct acces
 Download page: [IBM DB2 to MS SQL Migration and Sync]<br/>
 Release date: 2013-10-08<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
@@ -3710,7 +3710,7 @@ The program allows migrating MS Access queries to MSSQL views automatically with
 Download page: [Firebird to MS SQL Migration and Sync]<br/>
 Release date: 2013-09-11<br/>
 Support Version: 2005/2008/2012/Azure<br/>
-Author: DMSoft Technologies<br/>
+Author: Slotix<br/>
 Free version: No<br/>
 Price: $149
 
