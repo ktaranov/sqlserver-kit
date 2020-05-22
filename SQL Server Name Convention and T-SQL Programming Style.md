@@ -62,6 +62,7 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [CLR User-Defined Aggregates]            |      | PascalCase |    128 | No     | `ca_`   | No     | No           | [A-z][0-9]   | `ca_CAName_LogicalName`              |
 | [CLR User-Defined Types]                 |      | PascalCase |    128 | No     | `ct_`   | No     | No           | [A-z][0-9]   | `ct_CAName_LogicalName`              |
 | [CLR Triggers]                           |      | PascalCase |    128 | No     | `ctr_`  | No     | No           | [A-z][0-9]   | `ctr_CAName_LogicalName`             |
+| [Linked Server]                          |      | PascalCase |    128 | No     | `ls_`   | No     | No           | [A-z][0-9]   | `ls_LogicalName`                     |
 
 [Database]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-database-transact-sql
 [Schema]:https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-schema
@@ -100,6 +101,7 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [CLR User-Defined Aggregates]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-aggregates
 [CLR User-Defined Types]:https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration-database-objects-user-defined-types/clr-user-defined-types
 [CLR Triggers]:https://docs.microsoft.com/en-us/sql/relational-databases/triggers/create-clr-triggers
+[Linked Server]:https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine
 
 **[⬆ back to top](#table-of-contents)**
 
