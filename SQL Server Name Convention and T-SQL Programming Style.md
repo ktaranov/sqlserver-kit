@@ -315,6 +315,11 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017).
  - For scalar function use [`WITH SCHEMABINDING`](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices) option to get a performance boost. More details [here](https://bertwagner.com/2018/12/04/two-words-for-faster-scalar-functions/)
+ - Do not use [`INFORMATION_SCHEMA`] views to determine the schema of an object. [`INFORMATION_SCHEMA`] views only represent a **subset of the metadata** of an object.
+   The only reliable way to find the schema of a object is to query the [`sys.objects`](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) catalog view.
+   More details [here](https://github.com/MicrosoftDocs/sql-docs/issues/4188).
+ - Do not use explicit transactions for DML and DDL especially for reorganize index because the locking behavior of this statemnets becomes more restrictive.
+   More details [here](https://github.com/MicrosoftDocs/sql-docs/pull/4011).
  - In [sqlcmd](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility) move the `-U`and `-P` parameters after the `-Q` parameter so that the password is at the end of the command.
    More details [here](https://bornsql.ca/blog/the-curious-case-of-the-sqlcmd-password/)
    ```
@@ -635,3 +640,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [`sp_executesql`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-executesql-transact-sql
 [`EXEC`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
 [10]:https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql
+[`INFORMATION_SCHEMA`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql
