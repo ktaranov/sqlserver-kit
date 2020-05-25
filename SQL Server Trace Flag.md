@@ -4282,7 +4282,7 @@ Link: http://sqlmag.com/sql-server/investigating-trace-flags
 
 
 <a id="8726"></a>
-**#### Trace Flag: 8726**<br />
+#### Trace Flag: 8726<br />
 **Undocumented trace flag**<br />
 Function: Disables the heuristic that discourages the optimizer from producing an index union plan.<br />
 Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
@@ -4294,7 +4294,7 @@ Demo: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/T
 
 
 <a id="8727"></a>
-**#### Trace Flag: 8727**<br />
+#### Trace Flag: 8727<br />
 **Undocumented trace flag**<br />
 Function: Can be used to prevent unwanted index union plans.<br />
 Link: [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]<br />
@@ -5364,22 +5364,23 @@ Scope: global or session
 
 <a id="11064"></a>
 #### Trace Flag: 11064
-Function: Improves the scalability of data loading operations into columnstore indexes, by optimizing memory distribution between the `SELECT` and `INSERT` statements.
+Function: Improves the scalability of data loading operations into columnstore indexes, by optimizing memory distribution between the `SELECT` and `INSERT` statements.<br />
+For more information on loading data into a columnstore index, see [Columnstore indexes - Data loading guidance](https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance).
 **Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
-Link: [Docs Trace Flags]
-Link: https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance
+Link: [Docs Trace Flags]<br />
 Scope: global only
 
 
 <a id="11068"></a>
 #### Trace Flag: 11068
 Function: Uses the configured max degree of parallelism (MAXDOP) value for columnstore index insert operations.
-For more information on overriding degrees of parallelism, see the [Query Processing Architecture Guide](https://docs.microsoft.com/en-gb/sql/relational-databases/query-processing-architecture-guide#overriding-degrees-of-parallelism).
+For more information on overriding degrees of parallelism, see the [Query Processing Architecture Guide](https://docs.microsoft.com/en-gb/sql/relational-databases/query-processing-architecture-guide#overriding-degrees-of-parallelism).<br />
 **Important: This trace flag is only effective if trace flag [11064](#11064) is also enabled.**<br />
 **Important: Use this trace flag when faster data loads are preferred over maintaining [columnstore segment](https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-overview#column-segment) quality.
 For example, using this trace flag when loading 1,048,577 rows into a columnstore may result in more than one compressed rowgroup, if the insert operation is executing in parallel mode.
 Without this trace flag, the insert operation would result in one compressed rowgroup.**<br />
-**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**
+**Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
+Link: [Docs Trace Flags]<br />
 Scope: global only
 
 

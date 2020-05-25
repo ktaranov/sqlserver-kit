@@ -405,6 +405,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
     - [SQL Cheat Sheet](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
     - [Azure Database Migration Guide](https://datamigration.microsoft.com/) (by Microsoft)
+    - [Hermitage: Testing transaction isolation levels in relation databases](https://github.com/ept/hermitage) (by Martin Kleppmann)
 
 **[⬆ back to top](#table-of-contents)**
 

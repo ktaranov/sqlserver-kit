@@ -4864,7 +4864,7 @@ Complete coverage starts and ends here. Commvault Complete Backup & Recovery is 
 
 ## Veeam Backup & Recovery
 <a id="veeam"></a>
-Download page: [Veeam Backup & Recovery]<br/>
+Download page: [Veeam Backup & Replication]<br/>
 Release date: 2019-12-31<br/>
 Support Version: 2008-2019<br/>
 Author: Veeam<br/>
