@@ -5356,7 +5356,7 @@ Scope: ?
 <a id="11047"></a>
 #### Trace Flag: 11047
 Function: Applies the default timeout set by `query wait (s)` or the Resource Governor `REQUEST_MEMORY_GRANT_TIMEOUT_SEC` configuration to Columnstore index build operations.<br />
-**Note: This trace flag applies to SQL Server 2016 (13.x) SP2 CU5, SQL Server 2017 (14.x) CU14, and higher builds.**
+**Note: This trace flag applies to SQL Server 2016 (13.x) SP2 CU5, SQL Server 2017 (14.x) CU14, and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/4480641<br />
 Scope: global or session

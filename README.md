@@ -239,6 +239,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Vertabelo Academy](https://academy.vertabelo.com/)
      - [Darling Data - The Best SQL Server Training On The Internet?](https://learn.erikdarlingdata.com/) (by Erik Darling)
      - [W3Resource SQL Exercises, Practice, Solution](https://www.w3resource.com/sql-exercises/) (by w3resource)
+     - [LinkedIn SQL Server cources](https://www.linkedin.com/learning/search?entityType=COURSE&keywords=sql%20server) (by LinkedIn)
  - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
    - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
    - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
@@ -356,6 +357,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [sp_pressure_detector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/blob/master/sp_pressure_detector/sp_pressure_detector.sql) (by Erik Darling)
     - [Export Prometheus metrics from SQL queries](https://github.com/albertodonato/query-exporter) (by Alberto Donato)
     - [homebrew-mssql-release - brew formulae for Microsoft ODBC Driver for SQL Server and SQL Server Command Line Utilities](https://github.com/microsoft/homebrew-mssql-release) (by Microsoft)
+    - [ASSP - Analysis Services Stored Procedure Project](https://asstoredprocedures.github.io/ASStoredProcedures/) (by Darren Gosbell)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
