@@ -232,6 +232,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                                   |
 |      35343 | The statement failed. Column '%.*ls' has a data type that cannot participate in a columnstore index.     | [35343_link1][36]                                   |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                                   |
+|      41922 | The backup operation for a database with service-managed transaprent data encryption is not supported on…| [41922_link1]                                       |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
 [2]:https://sqlpowershell.wordpress.com/2016/11/09/sql-server-discuss-executesql-at-linkedserver/
@@ -358,3 +359,4 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [33111_link1]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [35250_link1]:https://blog.sqlauthority.com/2017/05/18/sql-server-fix-msg-35250-level-16-state-7-connection-primary-replica-not-active-command-cannot-processed/
 [35217_link1] :https://www.seangallardy.com/error-35217-and-availability-groups-smh/
+[41922_link1]:http://timradney.com/2020/05/23/updated-default-settings-for-azure-sql-managed-instance-databases/

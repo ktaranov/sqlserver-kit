@@ -1092,6 +1092,7 @@ Articles types:
 | [The Learner’s Guide to SQL Server Performance Triage]                                                                  | Kendra Little                            | 2020-03-19 | [DBA]       |
 | [Learner’s Guide to SQL Server Query Tuning]                                                                            | Kendra Little                            | 2020-05-01 | [DBA][DEV]  |
 | [How to Get Better Estimates for Modification Queries]                                                                  | Brent Ozar                               | 2020-04-27 | [DBA][DEV]  |
+| [SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]                                                | Solomon Rutzky                           | 2020-05-22 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2159,3 +2160,4 @@ Articles types:
 [The Learner’s Guide to SQL Server Performance Triage]:https://littlekendra.com/2020/03/19/the-learners-guide-to-sql-server-performance-triage/
 [Learner’s Guide to SQL Server Query Tuning]:https://littlekendra.com/2020/05/01/learners-guide-to-sql-server-query-tuning/
 [How to Get Better Estimates for Modification Queries]:https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/
+[SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]:https://sqlquantumleap.com/2020/05/22/ssms-prevent-copy-and-paste-of-text-in-messages-tab-cruel-joke-2/s
