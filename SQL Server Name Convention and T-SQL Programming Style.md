@@ -215,6 +215,17 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
+ - When more than one logical operator is used always use parentheses, even when they are not required.
+   This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
+   There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide?view=sql-server-ver15#logical-operator-precedence).
+   ```sql
+   SELECT
+       ProductID
+   FROM Production.Product
+   WHERE (ProductModelID = 20 OR ProductModelID = 21)
+       AND Color = 'Red';
+
+   ```
  - Avoid non-standard column aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
    SELECT
@@ -260,7 +271,6 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - If you using [`TOP`] (instead recommended [`FETCH-OFFSET`]) function with round brackets because [`TOP`] has supports use of an expression, such as `(@Rows*2)`, or a sub query: `SELECT TOP(100) LastName …`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoiding-old-style-top-clause).
    Also [`TOP`] without brackets does not work with `UPDATE` and `DELETE` statements.
-
    ```tsql
    /* Not working without brackets () */
    DECLARE @n int = 1;
