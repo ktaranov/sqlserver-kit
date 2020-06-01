@@ -712,6 +712,7 @@ You can control the timing of columnstore compression manually, by disabling the
 Link: [Niko Neugebauer Columnstore Indexes – part 35]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.sqlservergeeks.com/trace-flag-634-disable-background-columnstore-compression/<br />
+Link: [SQL Server 2019 Aggressive Clustered Columnstore Cleanup]<br />
 Scope: global only
 
 
@@ -759,6 +760,7 @@ Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: [Let’s talk about trace flags]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-661/<br />
+Link: [SQL Server 2019 Aggressive Clustered Columnstore Cleanup]<br />
 Scope: global or session
 
 
@@ -5463,3 +5465,4 @@ Scope: global only
 [Replication Merge Agent]:https://docs.microsoft.com/en-us/sql/relational-databases/replication/agents/replication-merge-agent
 [Why are (seemingly) suitable indexes not used on a LEFT JOIN with OR]:https://topanswers.xyz/databases?q=815#a960
 [A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]:http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
+[SQL Server 2019 Aggressive Clustered Columnstore Cleanup]:https://www.tarynpivots.com/post/aggressive-clustered-columnstore-cleanup/
