@@ -130,7 +130,7 @@ Profits:
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
 | 2019    | [Install 2019 RTM] then [CU4 KB4548597]                               | 15.0.2070.41<br/>15.0.4033.1                 | 2019-11-04<br/>2020-03-31                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
-| 2017    | [Install 2017 RTM] then [CU19 KB4535007]                              | 14.0.1000.169<br/>14.0.3281.6                | 2017-10-02<br/>2020-02-05                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
+| 2017    | [Install 2017 RTM] then [CU20 KB4541283]                              | 14.0.1000.169<br/>14.0.3294.2                | 2017-10-02<br/>2020-04-07                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU12 KB4536648]                              | 13.0.5026.0<br/>13.0.5698.0                  | 2018-04-24<br/>2020-02-25                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
 | 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4532098]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7493.4 | 2012-02-14<br/>2017-10-05<br/>2020-02-11 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
@@ -140,7 +140,7 @@ Profits:
 [Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
 [CU4 KB4548597]:https://support.microsoft.com/help/4548597/
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
-[CU19 KB4535007]:https://support.microsoft.com/help/4535007
+[CU20 KB4541283]:https://support.microsoft.com/help/4541283
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [CU12 KB4536648]:https://support.microsoft.com/help/4536648
 [Install 2014 SP3]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2014-sp3
@@ -174,32 +174,32 @@ FOR /R "d:\SQL Server" %I IN (*.exe) DO certUtil -hashfile "%I" sha1
 
 Alternative download link for all English x64 distributives: https://rebrand.ly/sql-server-distribs
 
-| Direct x64 Download Link              | File Name                                                         | Release Date |  Build Number | Size, MB | SHA1                                     |
-|:--------------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
-| [SQL Server 2019 RTM]                 | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
-| [SQL Server 2019 CU4]                 | SQLServer2019-KB4548597-x64.exe                                   | 2020-03-31   | 15.0.4033.1   |      571 | 654ea92437fde8aad04745c6c380e9e72289babf |
-| [SQL Server 2017 RTM]                 | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 CU19]                | SQLServer2017-KB4535007-x64.exe                                   | 2020-02-05   | 14.0.3281.6   |      530 | 6c883a7a36a1029066e2be6ab9eeab0967804580 |
-| [SQL Server 2016 SP2]                 | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU12]            | SQLServer2016-KB4536648-x64.exe                                   | 2020-02-25   | 13.0.5698.0   |      746 | 2a40a4a2ae53c4d1edbc0d7594733511d13b945a |
-| [SQL Server 2014 SP3]                 | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
-| [SQL Server 2014 SP3 KB4535288]       | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
-| [SQL Server 2012 RTM]                 | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
-| [SQL Server 2012 SP4]                 | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
-| [SQL Server 2012 SP4 KB4532098]       | SQLServer2012-KB4532098-x64.exe                                   | 2020-02-11   | 11.0.7493.4   |      867 | e20fa98775d4983a042e987caa6d59eba46ec760 |
-| SQL Server 2008 R2 RTM                | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
-| [SQL Server 2008 R2 SP3]              | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0  |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
-| [SQL Server 2008 R2 SU]               | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000    |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
-| SQL Server 2008                       | ?                                                                 | 2008-01-19   | 10.0.1600.0   |        ? | ?                                        |
-| [SQL Server 2008 SP4]                 | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   | 10.0.6241.0   |      378 | 13610d6cb39e37fcd4a3338244a3ca2a8a404cd8 |
-| [SQL Server 2008 SU]                  | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   | 10.00.6000    |       61 | 37a197c60990d2e83e98d1090109a4ab3f2abe4b |
+| Direct x64 Download Link        | File Name                                                         | Release Date | Build Number  | Size, MB | SHA1                                     |
+|:--------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
+| [SQL Server 2019 RTM]           | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
+| [SQL Server 2019 CU4]           | SQLServer2019-KB4548597-x64.exe                                   | 2020-03-31   | 15.0.4033.1   |      571 | 654ea92437fde8aad04745c6c380e9e72289babf |
+| [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
+| [SQL Server 2017 CU20]          | SQLServer2017-KB4541283-x64.exe                                   | 2020-04-07   | 14.0.3294.2   |      530 | b0f1a8f63ba7e9c155546a49f18fd95bc5e9aeaa |
+| [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
+| [SQL Server 2016 SP2 CU12]      | SQLServer2016-KB4536648-x64.exe                                   | 2020-02-25   | 13.0.5698.0   |      746 | 2a40a4a2ae53c4d1edbc0d7594733511d13b945a |
+| [SQL Server 2014 SP3]           | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
+| [SQL Server 2014 SP3 KB4535288] | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
+| [SQL Server 2012 RTM]           | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
+| [SQL Server 2012 SP4]           | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
+| [SQL Server 2012 SP4 KB4532098] | SQLServer2012-KB4532098-x64.exe                                   | 2020-02-11   | 11.0.7493.4   |      867 | e20fa98775d4983a042e987caa6d59eba46ec760 |
+| SQL Server 2008 R2 RTM          | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
+| [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0  |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
+| [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000    |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
+| SQL Server 2008                 | ?                                                                 | 2008-01-19   | 10.0.1600.0   |        ? | ?                                        |
+| [SQL Server 2008 SP4]           | SQLServer2008SP4-KB2979596-x64-ENU.exe                            | 2014-09-30   | 10.0.6241.0   |      378 | 13610d6cb39e37fcd4a3338244a3ca2a8a404cd8 |
+| [SQL Server 2008 SU]            | SQLServer2008-KB3045311-x64.exe                                   | 2015-07-14   | 10.00.6000    |       61 | 37a197c60990d2e83e98d1090109a4ab3f2abe4b |
 
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
 [SQL Server 2019 RTM]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2019 CU4]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4548597-x64.exe
 [SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 CU19]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4535007-x64.exe
+[SQL Server 2017 CU20]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4541283-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU12]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4536648-x64.exe
@@ -458,15 +458,16 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU19) (KB4535007) - 14.0.3281.6 (X64) 
-   Jan 23 2020 21:00:04 
+Microsoft SQL Server 2017 (RTM-CU20) (KB4541283) - 14.0.3294.2 (X64)
+   Mar 13 2020 14:53:45
    Copyright (C) 2017 Microsoft Corporation
-   Developer Edition (64-bit) …
+   Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|-----------------------------------|---------|-------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3281.6   | 2017.140.3281.6   | RTM    | CU   | **Latest CU**                     | 4535007 | [Microsoft SQL Server 2017 CU19]                                                    | 2020-02-05   | 2020-01-23 |    38 |     31 |      530 |
+| 14.0.3294.2   | 2017.140.3294.2   | RTM    | CU   | **Latest CU**                     | 4535007 | [Microsoft SQL Server 2017 CU20]                                                    | 2020-04-07   | 2020-03-14 |    40 |     36 |      530 |
+| 14.0.3281.6   | 2017.140.3281.6   | RTM    | CU   |                                   | 4535007 | [Microsoft SQL Server 2017 CU19]                                                    | 2020-02-05   | 2020-01-23 |    38 |     31 |      530 |
 | 14.0.3257.3   | 2017.140.3257.3   | RTM    | CU   |                                   | 4527377 | [Microsoft SQL Server 2017 CU18]                                                    | 2019-12-09   | 2019-11-16 |    35 |     28 |      529 |
 | 14.0.3238.1   | 2017.140.3238.1   | RTM    | CU   |                                   | 4515579 | [Microsoft SQL Server 2017 CU17]                                                    | 2019-10-01   | 2019-09-14 |    41 |     34 |      528 |
 | 14.0.3223.3   | 2017.140.3223.3   | RTM    | CU   |                                   | 4508218 | [Microsoft SQL Server 2017 CU16]                                                    | 2019-08-01   | 2019-07-13 |    50 |     37 |      529 |
@@ -506,6 +507,7 @@ Microsoft SQL Server 2017 (RTM-CU19) (KB4535007) - 14.0.3281.6 (X64)
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                    | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[Microsoft SQL Server 2017 CU20]:https://support.microsoft.com/help/4541283
 [Microsoft SQL Server 2017 CU19]:https://support.microsoft.com/help/4535007
 [Microsoft SQL Server 2017 CU18]:https://support.microsoft.com/help/4527377
 [Microsoft SQL Server 2017 CU17]:https://support.microsoft.com/help/4515579
