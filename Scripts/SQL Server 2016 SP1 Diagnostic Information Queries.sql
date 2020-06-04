@@ -1,7 +1,7 @@
 
 -- SQL Server 2016 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: May 1, 2020
+-- Last Modified: June 1, 2020
 -- https://glennsqlperformance.com/
 -- https://sqlserverperformance.wordpress.com/
 -- Twitter: GlennAlanBerry
@@ -90,6 +90,8 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 --																															13.0.5470.0		SP2 CU9				9/30/2019
 --																															13.0.5492.2		SP2 CU10			10/8/2019
 --																															13.0.5598.27	SP2 CU11			12/9/2019
+--																															13.0.5698.0		SP2 CU12			2/25/2020
+--																															13.0.5820.21	SP2 CU13            5/28/2020
 
 -- How to determine the version, edition and update level of SQL Server and its components 
 -- https://bit.ly/2oAjKgW														
