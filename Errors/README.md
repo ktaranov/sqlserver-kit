@@ -208,6 +208,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |      15190 | There are still remote logins or linked logins for the server '%s'.                                      | [15190_link1]                                       |
 |      15199 | The current security context cannot be reverted. Please switch to the original database where          … | [15199_link1][1]                                    |
 |      15274 | Access to the remote server is denied because the current security context is not trusted.               | [15274_link1]                                       |
+|      15404 | Could not obtain information about Windows NT group/user '%ls', error code %#lx.                         | [15404_link1]                                       |
 |      15406 | Cannot execute as the server principal because the principal "%.*ls" does not exist, this type of      … | [15406_link1][1]                                    |
 |      15457 | Configuration option '%ls' changed from %ld to %ld. Run the RECONFIGURE statement to install.            | [5457_link1][43]                                    |
 |      17182 | TDSSNIClient initialization failed with error 0x%lx, status code 0x%lx. Reason: %S_MSG %.*ls             | [17182_link1][15]                                   |
@@ -345,6 +346,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [15136_link1]:https://blogs.msdn.microsoft.com/psssql/2016/11/15/unable-to-drop-a-user-in-a-database/
 [15190_link1]:https://blog.sqlauthority.com/2018/12/15/sql-server-fix-msg-15190-there-are-still-remote-logins-or-linked-logins-for-the-server/
 [15274_link1]:https://blog.sqlauthority.com/2019/06/03/sql-server-fix-msg-15274-access-to-the-remote-server-is-denied-because-the-current-security-context-is-not-trusted/
+[15404_link1]:https://sqlstudies.com/2020/05/06/could-not-obtain-information-about-windows-nt-group-user/
 [17190_link1]:https://www.sqlskills.com/blogs/jonathan/using-group-managed-service-accounts-for-sql-server/
 [17300_link1]:https://blog.sqlauthority.com/2018/08/16/sql-server-error-17300-the-error-is-printed-in-terse-mode-because-there-was-error-during-formatting/
 [18054_link1]:https://sqlstudies.com/2019/07/24/custom-error-messages/
