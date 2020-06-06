@@ -215,6 +215,10 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
+ - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
+   Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
+ - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries.More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
+   INFORMATION_SCHEMA views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
  - When more than one logical operator is used always use parentheses, even when they are not required.
    This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
    There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide?view=sql-server-ver15#logical-operator-precedence).
