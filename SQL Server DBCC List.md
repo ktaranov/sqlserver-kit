@@ -227,7 +227,7 @@ DBCC setioweight (weight)
 
 DBCC show_statistics ('table_name', 'target_name')
 
-DBCC showcontig (table_id | table_name [, index_id | index_name] [WITH FAST, ALL_INDEXES, TABLERESULTS [,ALL_LEVELS]])
+DBCC showcontig (table_id | table_name [, index_id | index_name] [WITH FAST, ALL_INDEXES, TABLERESULTS [,ALL_LEVELS]]) -- https://www.sqlskills.com/blogs/paul/the-curious-case-of-extent-scan-fragmentation/
 
 DBCC showdbaffinity
 
