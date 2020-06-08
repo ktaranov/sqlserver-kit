@@ -358,6 +358,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Export Prometheus metrics from SQL queries](https://github.com/albertodonato/query-exporter) (by Alberto Donato)
     - [homebrew-mssql-release - brew formulae for Microsoft ODBC Driver for SQL Server and SQL Server Command Line Utilities](https://github.com/microsoft/homebrew-mssql-release) (by Microsoft)
     - [ASSP - Analysis Services Stored Procedure Project](https://asstoredprocedures.github.io/ASStoredProcedures/) (by Darren Gosbell)
+    - [Data-Blogger-Resource-Kit - Includes resources for use by bloggers, microbloggers, vloggers, and origami enthusiasts who focus on SQL Server](https://github.com/amtwo/Data-Blogger-Resource-Kit) (by Andy Andy Mallon)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
