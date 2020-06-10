@@ -1054,6 +1054,8 @@ Articles types:
 | [Converting SQL Trace to Extended Events in SQL Server 2012]                                                            | Jonathan Kehayias                        | 2012-04-04 | [DBA]       |
 | [What event information can I get by default from SQL Server?]                                                          | Aaron Bertrand                           | 2019-03-28 | [DBA]       |
 | [Removing the default trace – Part 1]                                                                                   | Aaron Bertrand                           | 2020-03-02 | [DBA]       |
+| [Removing the default trace – Part 2]                                                                                   | Aaron Bertrand                           | 2020-03-02 | [DBA]       |
+| [Removing the default trace – Part 3]                                                                                   | Aaron Bertrand                           | 2020-03-02 | [DBA]       |
 | [Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]                                                 | Adrian Hills                             | 2020-02-20 | [DBA][DEV]  |
 | [Different Ways to Monitor SQL Server AlwaysOn Availability Groups]                                                     | Nisarg Upadhyay                          | 2020-02-21 | [DBA]       |
 | [SQL Server internals: Is Order of Column in the table important?]                                                      | Ronen Ariely                             | 2018-08-11 | [DBA][DEV]  |
@@ -1093,6 +1095,7 @@ Articles types:
 | [Learner’s Guide to SQL Server Query Tuning]                                                                            | Kendra Little                            | 2020-05-01 | [DBA][DEV]  |
 | [How to Get Better Estimates for Modification Queries]                                                                  | Brent Ozar                               | 2020-04-27 | [DBA][DEV]  |
 | [SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]                                                | Solomon Rutzky                           | 2020-05-22 | [DBA][DEV]  |
+| [Compare the Best SQL Server Performance Monitoring Tools]                                                              | SentryOne                                | 2020-01-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2121,6 +2124,8 @@ Articles types:
 [Converting SQL Trace to Extended Events in SQL Server 2012]:https://www.sqlskills.com/blogs/jonathan/converting-sql-trace-to-extended-events-in-sql-server-2012/
 [What event information can I get by default from SQL Server?]:https://dba.stackexchange.com/a/48053/107045
 [Removing the default trace – Part 1]:https://sqlperformance.com/2020/03/extended-events/removing-default-trace-1
+[Removing the default trace – Part 2]:https://sqlperformance.com/2020/04/extended-events/removing-default-trace-2
+[Removing the default trace – Part 3]:https://sqlperformance.com/2020/04/extended-events/removing-default-trace-3
 [Keeping DRY in SQL Server with Scalar User Defined Functions – Part 1]:https://www.sentryone.com/blog/keeping-dry-in-sql-server-with-scalar-user-defined-functions-part-1
 [Different Ways to Monitor SQL Server AlwaysOn Availability Groups]:https://codingsight.com/different-ways-to-monitor-sql-server-alwayson-availability-groups/
 [SQL Server internals: Is Order of Column in the table important?]:http://ariely.info/Blog/tabid/83/EntryId/219/SQL-Server-internals-Is-Order-of-Column-in-the-table-important.aspx
@@ -2161,3 +2166,4 @@ Articles types:
 [Learner’s Guide to SQL Server Query Tuning]:https://littlekendra.com/2020/05/01/learners-guide-to-sql-server-query-tuning/
 [How to Get Better Estimates for Modification Queries]:https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/
 [SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]:https://sqlquantumleap.com/2020/05/22/ssms-prevent-copy-and-paste-of-text-in-messages-tab-cruel-joke-2/s
+[Compare the Best SQL Server Performance Monitoring Tools]:https://www.sentryone.com/compare-best-sql-server-monitoring-tools
