@@ -1096,6 +1096,9 @@ Articles types:
 | [How to Get Better Estimates for Modification Queries]                                                                  | Brent Ozar                               | 2020-04-27 | [DBA][DEV]  |
 | [SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]                                                | Solomon Rutzky                           | 2020-05-22 | [DBA][DEV]  |
 | [Compare the Best SQL Server Performance Monitoring Tools]                                                              | SentryOne                                | 2020-01-01 | [DBA][DEV]  |
+| [Minimal Logging with INSERT…SELECT into Heap Tables]                                                                   | Paul White                               | 2020-05-01 | [DBA][DEV]  |
+| [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]                                                        | Paul White                               | 2020-05-16 | [DBA][DEV]  |
+| [Minimal Logging with INSERT…SELECT and Fast Load Context]                                                              | Paul White                               | 2020-05-19 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2167,3 +2170,6 @@ Articles types:
 [How to Get Better Estimates for Modification Queries]:https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/
 [SSMS: Prevent Copy and Paste of Text in “Messages” tab (Cruel Joke #2)]:https://sqlquantumleap.com/2020/05/22/ssms-prevent-copy-and-paste-of-text-in-messages-tab-cruel-joke-2/s
 [Compare the Best SQL Server Performance Monitoring Tools]:https://www.sentryone.com/compare-best-sql-server-monitoring-tools
+[Minimal Logging with INSERT…SELECT into Heap Tables]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-insert-select-heap
+[Minimal Logging with INSERT…SELECT into Empty Clustered Tables]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-empty-clustered
+[Minimal Logging with INSERT…SELECT and Fast Load Context]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-fast-load-context
