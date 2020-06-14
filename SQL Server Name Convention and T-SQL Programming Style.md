@@ -198,9 +198,18 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 ### General programming T-SQL style
 <a id="#general-t-sql-programming-style"></a>
 
- - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code: `dbo.MyTable` is good and bad `PRODSERVER.PRODDB.dbo.MyTable`.
+ - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code:
+   ```
+   /* good */
+   CREATE TABLE dbo.MyTable (MyColumn int);
+   
+   /* bad*/
+   CREATE TABLE PRODSERVER.PRODDB.dbo.MyTable (MyColumn int);
+   CREATE TABLE MyTable (MyColumn int);
+   ```
    More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/),
-   [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification).
+   [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification),
+   [here](https://sqlstudies.com/2020/06/22/i-created-a-table-and-sql-created-a-schema-and-a-user/).
  - Delimiters: **spaces** (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
