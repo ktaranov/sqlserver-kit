@@ -1101,6 +1101,9 @@ Articles types:
 | [Minimal Logging with INSERT…SELECT and Fast Load Context]                                                              | Paul White                               | 2020-05-19 | [DBA][DEV]  |
 | [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2020-02-05 | [DBA][DEV]  |
 | [Compatibility Levels and Cardinality Estimation Primer]                                                                | Glenn Berry                              | 2020-01-29 | [DBA][DEV]  |
+| [An approach to index tuning – Part 1]                                                                                  | Erin Stellato                            | 2020-03-26 | [DBA][DEV]  |
+| [An approach to index tuning – Part 2]                                                                                  | Erin Stellato                            | 2020-04-13 | [DBA][DEV]  |
+| [Moving A Database to New Storage With No Downtime]                                                                     | Bob Pusateri                             | 2013-03-12 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2177,3 +2180,6 @@ Articles types:
 [Minimal Logging with INSERT…SELECT and Fast Load Context]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-fast-load-context
 [Avoiding SQL Server Upgrade Performance Issues]:https://www.sqlskills.com/blogs/glenn/avoid-sql-server-upgrade-performance-issues/
 [Compatibility Levels and Cardinality Estimation Primer]:https://sqlperformance.com/2019/01/sql-performance/compatibility-levels-and-cardinality-estimation-primer
+[An approach to index tuning – Part 1]:https://sqlperformance.com/2020/03/sql-indexes/an-approach-to-index-tuning-part-1
+[An approach to index tuning – Part 2]:https://sqlperformance.com/2020/04/sql-indexes/an-approach-to-index-tuning-part-2
+[Moving A Database to New Storage With No Downtime]:https://www.bobpusateri.com/archive/2013/03/moving-a-database-to-new-storage-with-no-downtime/
