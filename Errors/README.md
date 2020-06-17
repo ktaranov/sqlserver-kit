@@ -151,6 +151,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                                        |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                                    |
 |       5004 | To use ALTER DATABASE, the database must be in a writable state in which a checkpoint can be executed.   | [5004_link1]                                        |
+|       5061 | ALTER DATABASE failed because a lock could not be placed on database '%.*ls'. Try again later.           | [5061_link1]                                        |
 |       5084 | Setting database option %ls to %ls for database '%.*ls'.                                                 | [5084_link1][43]                                    |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                  … | [SQL SERVER - FIX Error 5120]                       |
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]                          |
@@ -326,6 +327,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [4934_link1]:https://www.brentozar.com/archive/2018/04/an-odd-case-of-blocking/
 [SQL SERVER - FIX Error 5120]:http://blog.sqlauthority.com/2016/10/26/sql-server-fix-error-5120-database-read-mode-attaching-files/
 [5004_link1]:https://www.scarydba.com/2019/02/11/query-store-and-a-read_only-database/
+[5061_link1]:https://sqlstudies.com/2020/06/11/end-an-alter-database-immediately-if-anyone-is-in-the-database/
 [5123_link1]:https://blogs.msdn.microsoft.com/sql_pfe_blog/2016/11/10/tempdb-misconfiguration-when-sql-server-fails-to-create-a-secondary-data-file/
 [5123_link2]:https://blog.sqlauthority.com/2017/09/21/sql-server-fix-msg-5123-level-16-create-file-encountered-operating-system-error-5/
 [5846_link1]:https://bornsql.ca/blog/proposed-sql-server-defaults-disable-lightweight-pooling/
