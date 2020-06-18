@@ -1104,6 +1104,11 @@ Articles types:
 | [An approach to index tuning – Part 1]                                                                                  | Erin Stellato                            | 2020-03-26 | [DBA][DEV]  |
 | [An approach to index tuning – Part 2]                                                                                  | Erin Stellato                            | 2020-04-13 | [DBA][DEV]  |
 | [Moving A Database to New Storage With No Downtime]                                                                     | Bob Pusateri                             | 2013-03-12 | [DBA]       |
+| [RESOURCE_GOVERNOR_IDLE in Azure]                                                                                       | Josh Darnell                             | 2020-06-15 | [AZ]        |
+| [Automated Backup Tuning]                                                                                               | Nicholas Cain                            | 2012-12-13 | [B]         |
+| [Automated Restore Tuning]                                                                                              | Nicholas Cain                            | 2011-09-26 | [DBA]       |
+| [AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]                                                       | Nicholas Cain                            | 2020-05-19 | [DBA]       |
+| [Changing an INT to a BIGINT with no downtime]                                                                          | Michael Swart                            | 2020-06-19 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2183,3 +2188,8 @@ Articles types:
 [An approach to index tuning – Part 1]:https://sqlperformance.com/2020/03/sql-indexes/an-approach-to-index-tuning-part-1
 [An approach to index tuning – Part 2]:https://sqlperformance.com/2020/04/sql-indexes/an-approach-to-index-tuning-part-2
 [Moving A Database to New Storage With No Downtime]:https://www.bobpusateri.com/archive/2013/03/moving-a-database-to-new-storage-with-no-downtime/
+[RESOURCE_GOVERNOR_IDLE in Azure]:https://joshthecoder.com/2020/06/15/resource-governor-idle-in-azure.html
+[Automated Backup Tuning]:https://sirsql.net/2012/12/13/20121212automated-backup-tuning/
+[Optimizing Database Restores]:https://sirsql.net/2011/09/26/2011926optimizing-database-restores-html/
+[AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]:https://sirsql.net/2020/05/19/the-deception-of-the-log-reuse-wait-type/
+[Changing an INT to a BIGINT with no downtime]:https://michaeljswart.com/2020/06/problem-solving-by-cheating/
