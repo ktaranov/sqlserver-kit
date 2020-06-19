@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**610** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**611** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -285,7 +285,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **610 trace flags**
+Summary: **611 trace flags**
 
 
 <a id="-1"></a>
@@ -2664,6 +2664,15 @@ Link: None
 #### Trace Flag: 3614
 Function: Modifies the order of startup operations so that SQL Server can successfully start up even if many user connections are being attempted during SQL startup<br />
 Link: None
+
+
+#### Trace Flag: 3618
+**Undocumented trace flag**<br />
+Function: Disable the new Metadata-Only Column Changes in SQL Server 2016 and upper versions.
+This trace flag is not effective when used at the session level.
+There is no way to specify a query-level trace flag with an `ALTER COLUMN` command.<br />
+Link: https://sqlperformance.com/2020/04/database-design/new-metadata-column-changes-sql-server-2016<br /s>
+Scope: globa only
 
 
 <a id="3625"></a>
