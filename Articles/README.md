@@ -1109,6 +1109,10 @@ Articles types:
 | [Automated Restore Tuning]                                                                                              | Nicholas Cain                            | 2011-09-26 | [DBA]       |
 | [AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]                                                       | Nicholas Cain                            | 2020-05-19 | [DBA]       |
 | [Changing an INT to a BIGINT with no downtime]                                                                          | Michael Swart                            | 2020-06-19 | [DBA]       |
+| [New Metadata-Only Column Changes in SQL Server 2016]                                                                   | Paul White                               | 2020-04-17 | [DBA][DEV]  |
+| [Bandwidth-friendly Query Profiling for Azure SQL Database]                                                             | Greg Gonzalez                            | 2020-04-15 | [AZ][XE]    |
+| [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-10 | [DBA][DEV]  |
+| [Column scope and binding order in subqueries]                                                                          | Gail Shaw                                | 2019-04-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2193,3 +2197,7 @@ Articles types:
 [Optimizing Database Restores]:https://sirsql.net/2011/09/26/2011926optimizing-database-restores-html/
 [AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]:https://sirsql.net/2020/05/19/the-deception-of-the-log-reuse-wait-type/
 [Changing an INT to a BIGINT with no downtime]:https://michaeljswart.com/2020/06/problem-solving-by-cheating/
+[New Metadata-Only Column Changes in SQL Server 2016]:https://sqlperformance.com/2020/04/database-design/new-metadata-column-changes-sql-server-2016
+[Bandwidth-friendly Query Profiling for Azure SQL Database]:https://sqlperformance.com/2020/04/sql-performance/bandwidth-friendly-query-profiling-azure-sql-database
+[When a Columnstore Index Makes Your Query Fail]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
+[Column scope and binding order in subqueries]:https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/
