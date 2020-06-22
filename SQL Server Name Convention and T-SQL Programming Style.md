@@ -227,7 +227,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
    Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
  - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries.More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
-   INFORMATION_SCHEMA views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+   `INFORMATION_SCHEMA` views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
  - When more than one logical operator is used always use parentheses, even when they are not required.
    This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
    There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide?view=sql-server-ver15#logical-operator-precedence).
@@ -239,7 +239,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
        AND Color = 'Red';
 
    ```
- - Avoid non-standard column aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
+ - Always use aliases for table names. More details [here](https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/).
+ - Avoid non-standard column and table aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
    SELECT
           p.LastName AS "Last Name"
