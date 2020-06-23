@@ -331,6 +331,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-a-hint-is-used-pe004-7).
  - Use [`NOEXPAND`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-table#using-noexpand) hint for [indexed views](https://docs.microsoft.com/sql/relational-databases/views/create-indexed-views) on non enterprise editions and Prior to SQL Server 2016 (13.x) SP1 to let the query optimizer know that we have indexes.
    More details [here](https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/).
+ - Use [`LOOP JOIN`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query#arguments) and [`FAST 1`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query#arguments) query hints for deleting huge number of rows with `ON DELETE CASCADE` foreign keys specification.
+   More details [here](https://dba.stackexchange.com/a/262116).
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement).
  - Use only ISO standard JOINS syntaxes. The *old style* Microsoft/Sybase `JOIN` style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used.
    Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (`FROM tableA, tableB`) is still ISO standard for `INNER JOINs` only. Neither of these styles are worth using.
