@@ -116,7 +116,7 @@ More details about SQL Server data types and mapping it with another databases a
 | Exact Numerics       | [tinyint][1]        | No   | *Maybe*        | [int][1]           | for saving 3 bytes compare to `int` data type or for replacing `bit` data type     |
 | Exact Numerics       | [smallint][1]       | Yes  | *Maybe*        | [int][1]           | for saving 2 bytes compare to `int` data type                                      |
 | Exact Numerics       | [int][1]            | Yes  | Yes            | -                  |                                                                                    |
-| Exact Numerics       | [bigint][1]         | No   | Yes            | [int][1]           | if you work more than                                                              |
+| Exact Numerics       | [bigint][1]         | No   | Yes            | [int][1]           | if you work more than 2^31 numbers.                                                |
 | Exact Numerics       | [decimal][2]        | Yes  | Yes            | -                  |                                                                                    |
 | Exact Numerics       | [smallmoney][3]     | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9]                          |
 | Exact Numerics       | [money][3]          | No   | *Maybe*        | [decimal][2]       | [possibility to loss precision due to rounding errors][9]                          |
@@ -304,6 +304,13 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
   SELECT ProductID, Name FROM Production.Production ORDER BY Name;
   ```
 
+ - Avoid wrapping functions around columns specified in the WHERE and JOIN clauses.
+   Doing so makes the columns non-deterministic and prevents the query processor from using indexes.
+ - Use `NULL` or `NOT NULL` for each column in a temporary table. The `ANSI_DFLT_ON` and `ANSI_DFLT_OFF` options control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
+   If a connection executes a procedure with different settings for these options than the connection that created the procedure, the columns of the table created for the second connection can have different nullability and exhibit different behavior. If `NULL` or `NOT NULL` is explicitly stated for each column, the temporary tables are created by using the same nullability for all connections that execute the procedure.
+ - Use modification statements that convert nulls and include logic that eliminates rows with null values from queries. Be aware that in Transact-SQL, `NULL` is not an empty or "nothing" value. It is a placeholder for an unknown value and can cause unexpected behavior, especially when querying for result sets or using AGGREGATE functions.
+ - Use the `UNION ALL` operator instead of the UNION or OR operators, unless there is a specific need for distinct values.
+   The `UNION ALL` operator requires less processing overhead because duplicates are not filtered out of the result set.
  - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
    ```tsql
    CASE WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' /* is it a float? */
@@ -436,7 +443,10 @@ ORDER BY t2.Value2;
 ### Stored procedures and functions programming style
 <a id="programming-style"></a>
 
- - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below)
+Recommendations from Microsoft: [Stored procedure Best practice][11]
+
+ - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below) for saving GRANTs on your object.
+   For SQL Server 2016 and higher you can use new `CREATE OR ALTER` statement.
  - `ALTER` statement should be preceded by 2 line breaks
  - Parameters name should be in **camelCase**
  - Parameters should be placed under procedure name divided by line breaks
@@ -446,7 +456,7 @@ ORDER BY t2.Value2;
  - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
  - Always use multi-line comment `/* */` instead in-line comment `--`
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
-   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009).
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009) and [here][11].
  - Do not use `SET NOCOUNT OFF;` because it is default behavior
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
    More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html).
@@ -667,3 +677,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [`EXEC`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/execute-transact-sql
 [10]:https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql
 [`INFORMATION_SCHEMA`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql
+[11]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql#best-practices
