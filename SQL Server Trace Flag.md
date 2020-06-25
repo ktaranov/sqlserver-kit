@@ -2666,6 +2666,7 @@ Function: Modifies the order of startup operations so that SQL Server can succes
 Link: None
 
 
+<a id="3618"></a>
 #### Trace Flag: 3618
 **Undocumented trace flag**<br />
 Function: Disable the new Metadata-Only Column Changes in SQL Server 2016 and upper versions.
