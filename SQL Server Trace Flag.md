@@ -2672,7 +2672,7 @@ Link: None
 Function: Disable the new Metadata-Only Column Changes in SQL Server 2016 and upper versions.
 This trace flag is not effective when used at the session level.
 There is no way to specify a query-level trace flag with an `ALTER COLUMN` command.<br />
-Link: https://sqlperformance.com/2020/04/database-design/new-metadata-column-changes-sql-server-2016<br /s>
+Link: https://sqlperformance.com/2020/04/database-design/new-metadata-column-changes-sql-server-2016<br />
 Scope: globa only
 
 

@@ -1106,13 +1106,16 @@ Articles types:
 | [Moving A Database to New Storage With No Downtime]                                                                     | Bob Pusateri                             | 2013-03-12 | [DBA]       |
 | [RESOURCE_GOVERNOR_IDLE in Azure]                                                                                       | Josh Darnell                             | 2020-06-15 | [AZ]        |
 | [Automated Backup Tuning]                                                                                               | Nicholas Cain                            | 2012-12-13 | [B]         |
-| [Automated Restore Tuning]                                                                                              | Nicholas Cain                            | 2011-09-26 | [DBA]       |
+| [Optimizing Database Restores]                                                                                          | Nicholas Cain                            | 2011-09-26 | [DBA]       |
 | [AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]                                                       | Nicholas Cain                            | 2020-05-19 | [DBA]       |
 | [Changing an INT to a BIGINT with no downtime]                                                                          | Michael Swart                            | 2020-06-19 | [DBA]       |
 | [New Metadata-Only Column Changes in SQL Server 2016]                                                                   | Paul White                               | 2020-04-17 | [DBA][DEV]  |
 | [Bandwidth-friendly Query Profiling for Azure SQL Database]                                                             | Greg Gonzalez                            | 2020-04-15 | [AZ][XE]    |
 | [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-10 | [DBA][DEV]  |
 | [Column scope and binding order in subqueries]                                                                          | Gail Shaw                                | 2019-04-23 | [DBA][DEV]  |
+| [Improve SQL Server Extended Events system_health Session]                                                              | Aaron Bertrand                           | 2020-06-17 | [DBA][DEV]  |
+| [Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]                                            | Brent Ozar                               | 2020-06-17 | [DBA][DEV]  |
+| [Unsupported but working versions of SQL Server on Windows Server 2019]                                                 | Randolph West                            | 2020-06-24 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -1125,7 +1128,7 @@ Articles types:
 [SQL Server Database Corruption Repair]:http://stevestedman.com/2015/08/sql-server-database-corruption-repair/
 [Basic SQL Server Performance Troubleshooting For Developers]:https://www.simple-talk.com/sql/performance/basic-sql-server-performance-troubleshooting-for-developers/
 [The Curse and Blessings of Dynamic SQL]:http://sommarskog.se/dynamic_sql.html
-[Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dynamic_sql.html
+[Dynamic Search Conditions in T-SQL]:http://www.sommarskog.se/dyn-search.html
 [Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
 [How to share data between stored procedures]:http://www.sommarskog.se/share_data.html
 [Arrays and Lists in SQL Server 2008]:http://www.sommarskog.se/arrays-in-sql-2008.html
@@ -2201,3 +2204,6 @@ Articles types:
 [Bandwidth-friendly Query Profiling for Azure SQL Database]:https://sqlperformance.com/2020/04/sql-performance/bandwidth-friendly-query-profiling-azure-sql-database
 [When a Columnstore Index Makes Your Query Fail]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
 [Column scope and binding order in subqueries]:https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/
+[Improve SQL Server Extended Events system_health Session]:https://www.mssqltips.com/sqlservertip/6456/improve-sql-server-extended-events-systemhealth-session/
+[Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]:https://www.brentozar.com/archive/2020/06/page-life-expectancy-doesnt-mean-jack-and-you-should-stop-looking-at-it/
+[Unsupported but working versions of SQL Server on Windows Server 2019]:https://bornsql.ca/blog/unsupported-but-working-versions-of-sql-server-on-windows-server-2019/
