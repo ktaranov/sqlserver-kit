@@ -16,21 +16,30 @@
 
 
 ## Azure Data Studio extensions
+[Official ADS List of Extensions](https://github.com/microsoft/azuredatastudio/wiki/List-of-Extensions)
 
-| Extension                             | .vsix download link          | Repository Link | Release date | Version |
-|---------------------------------------|------------------------------|-----------------|--------------|---------|
-| [SQL Server 2019 extension (preview)] | [Win][1], [Mac][2], [Lin][3] | N/A             | 2019-08-15   | 0.15.0  |
-| [PostgreSQL extension (preview)]      | [Github][4]                  | [Github][5]     | 2019-07-08   | 0.2.1   |
+| Extension                             | .vsix download link          | Repository Link | Release date | Version | Description                                                                                                                              |
+|---------------------------------------|------------------------------|-----------------|--------------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
+| [PostgreSQL extension (preview)]      | [Github][4]                  | [Github][5]     | 2019-07-08   | 0.2.1   | Enables users to connect, query, and manage Postgres databases with Azure Data Studio                                                    |
+| [SQL Server Import]                   | [Github][4]                  | [Github][5]     | 2019-07-08   | 0.15.0  | Streamlines the data import process by providing a wizard that simplifies copying flat files (.csv, .txt, .json) into a SQL Server table |
 
 
-[SQL Server 2019 extension (preview)]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-2019-extension
-[1]:https://go.microsoft.com/fwlink/?linkid=2101241
-[2]:https://go.microsoft.com/fwlink/?linkid=2101240
-[3]:https://go.microsoft.com/fwlink/?linkid=2101239
+## Azure Data Studio Articles
+
+| Title                                                      | Author                                   | Modified   |
+|------------------------------------------------------------|------------------------------------------|------------|
+| [Integrating Azure Data Studio with Git and GitHub]        | Rajendra Gupta                           | 2020-07-03 |
+|
+
+[1]:
+[2]:
+[3]:
 [PostgreSQL extension (preview)]:https://docs.microsoft.com/en-us/sql/azure-data-studio/postgres-extension
 [2]:https://github.com/microsoft/azuredatastudio-postgresql/releases
 [5]:https://github.com/microsoft/azuredatastudio-postgresql
+[Integrating Azure Data Studio with Git and GitHub]:https://www.sqlshack.com/integrating-azure-data-studio-with-git-and-github/
 
-https://github.com/microsoft/azuredatastudio/issues/2752#issuecomment-487315692
-https://github.com/microsoft/azuredatastudio/wiki/List-of-Extensions
-https://github.com/ktaranov/query-editor-boost
+
+### TODO Links
+ - https://github.com/microsoft/azuredatastudio/issues/2752#issuecomment-487315692
+ - https://github.com/ktaranov/query-editor-boost
