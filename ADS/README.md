@@ -22,13 +22,17 @@
 
 ## Azure Data Studio extensions
 
-| Extension                             | Repository Link | Release Date | Version | .vsix download link                                                       | Description                                                                                                                                             |
-|---------------------------------------|-----------------|--------------|---------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [SQL Server Import]                   | [Github][1]     | 2020-06-15   | 0.15.0  | [GO](https://go.microsoft.com/fwlink/?linkid=2131183)                     | Streamlines the data import process by providing a wizard that simplifies copying flat files (`.csv`, `.txt`, `.json`) into a SQL Server table          |
-| [PostgreSQL extension (preview)]      | [Github][2]     | 2019-07-08   | 0.2.6   | [GO](https://go.microsoft.com/fwlink/?linkid=2099772)                     | Enables users to connect, query, and manage Postgres databases with Azure Data Studio                                                                   |
-| [Query Editor Boost][3]               | [Github][3]     | 2020-02-17   | 0.4.1   | [Github][https://github.com/dzsquared/query-editor-boost/releases/latest] | This extension adds several features helpful with query writing in Azure Data Studio                                                                    |
-| [SQL Server Dacpac]                   | [Github][1]     | 2020-06-15   | 1.5.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2099885)                     | Provides an easy-to-use wizarding experience to deploy and extract `.dacpac` files and import and export `.bacpac` files                                |
-| [SQL Server Profiler]                 | [Github][1]     | 2020-06-15   | 1.5.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2099574)                     | Provides a simple SQL Server tracing solution similar to SSMS Profiler, allowing users to create and manage traces and analyze and replay trace results |
+| Extension                             | Repository Link | Release Date | Version  | .vsix download link                                                       | Description                                                                                                                                             |
+|---------------------------------------|-----------------|--------------|----------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [SQL Server Import]                   | [Github][1]     | 2020-05-15   | 0.15.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2131183)                     | Streamlines the data import process by providing a wizard that simplifies copying flat files (`.csv`, `.txt`, `.json`) into a SQL Server table          |
+| [PostgreSQL extension (preview)]      | [Github][2]     | 2020-03-26   | 0.2.6    | [GO](https://go.microsoft.com/fwlink/?linkid=2099772)                     | Enables users to connect, query, and manage Postgres databases with Azure Data Studio                                                                   |
+| [Query Editor Boost][3]               | [Github][3]     | 2020-02-17   | 0.4.1    | [Github][https://github.com/dzsquared/query-editor-boost/releases/latest] | This extension adds several features helpful with query writing in Azure Data Studio                                                                    |
+| [SQL Server Dacpac]                   | [Github][1]     | 2020-06-04   | 1.5.0    | [GO](https://go.microsoft.com/fwlink/?linkid=2099885)                     | Provides an easy-to-use wizarding experience to deploy and extract [`.dacpac`] files and import and export `.bacpac` files                              |
+| [SQL Server Profiler]                 | [Github][1]     | 2019-12-18   | 0.11.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2099574)                     | Provides a simple SQL Server tracing solution similar to SSMS Profiler, allowing users to create and manage traces and analyze and replay trace results |
+| [SQL Server Agent]                    | [Github][1]     | 2020-04-16   | 0.47.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2099884)                     | Helps manage and troubleshoot SQL Server Agent jobs and configuration (early preview)                                                                   |
+| SQL Server Admin Pack                 | [Github][1]     | 2019-03-14   | 0.0.2    | [GO](https://go.microsoft.com/fwlink/?linkid=2099889)                     | A collection of popular database administration extensions to help manage SQL Server                                                                    |
+| [SQL Server Schema Compare]           | [Github][1]     | 2020-06-17   | 1.5.0    | [GO](https://go.microsoft.com/fwlink/?linkid=2099886)                     | Provides an easy-to-use experience to compare the schemas from [`.dacpac`] files and databases and apply the changes from source to target              |
+| [PowerShell Extension]                | [Github][6]     | 2020-06-17   | 2020.4.0 | [GO](https://go.microsoft.com/fwlink/?linkid=2099773)                     | Provides rich PowerShell language support for Azure Data Studio                                                                                         |
 
 
 ## Azure Data Studio Articles
@@ -42,10 +46,17 @@
 [3]:https://github.com/dzsquared/query-editor-boost/
 [4]:https://github.com/dzsquared/query-editor-boost/releases/latest
 [5]:https://github.com/microsoft/azuredatastudio-postgresql
+[6]:https://github.com/PowerShell/vscode-powershell/
+
+[`.dacpac`]:https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications
 
 [SQL Server Import]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-import-extension
 [PostgreSQL extension (preview)]:https://docs.microsoft.com/en-us/sql/azure-data-studio/postgres-extension
-[SQL Server Dacpac]:
+[SQL Server Dacpac]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-dacpac-extension
+[SQL Server Profiler]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-profiler-extension
+[SQL Server Agent]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-agent-extension
+[SQL Server Compare]:https://docs.microsoft.com/en-us/sql/azure-data-studio/schema-compare-extension
+[PowerShell Extension]:https://docs.microsoft.com/en-us/sql/azure-data-studio/powershell-extension
 
 [Integrating Azure Data Studio with Git and GitHub]:https://www.sqlshack.com/integrating-azure-data-studio-with-git-and-github/
 
