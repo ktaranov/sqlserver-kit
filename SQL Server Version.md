@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RTM] then [CU4 KB4548597]                               | 15.0.2070.41<br/>15.0.4033.1                 | 2019-11-04<br/>2020-03-31                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [CU5 KB4552255]                               | 15.0.2070.41<br/>15.0.4043.16                | 2019-11-04<br/>2020-06-22                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU20 KB4541283]                              | 14.0.1000.169<br/>14.0.3294.2                | 2017-10-02<br/>2020-04-07                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU13 KB4549825]                              | 13.0.5026.0<br/>13.0.5820.21                 | 2018-04-24<br/>2020-05-28                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -138,7 +138,7 @@ Profits:
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
 [Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
-[CU4 KB4548597]:https://support.microsoft.com/help/4548597/
+[CU5 KB4552255]:https://support.microsoft.com/help/4552255
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU20 KB4541283]:https://support.microsoft.com/help/4541283
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -177,7 +177,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link        | File Name                                                         | Release Date | Build Number  | Size, MB | SHA1                                     |
 |:--------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2019 RTM]           | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
-| [SQL Server 2019 CU4]           | SQLServer2019-KB4548597-x64.exe                                   | 2020-03-31   | 15.0.4033.1   |      571 | 654ea92437fde8aad04745c6c380e9e72289babf |
+| [SQL Server 2019 CU5]           | SQLServer2019-KB4552255-x64.exe                                   | 2020-06-22   | 15.0.4043.16  |      603 | c6a0778132b00ced30f06ee61875d58d7a7a70b2 |
 | [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU20]          | SQLServer2017-KB4541283-x64.exe                                   | 2020-04-07   | 14.0.3294.2   |      530 | b0f1a8f63ba7e9c155546a49f18fd95bc5e9aeaa |
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -197,7 +197,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
 [SQL Server 2019 RTM]:https://go.microsoft.com/fwlink/?linkid=866664
-[SQL Server 2019 CU4]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4548597-x64.exe
+[SQL Server 2019 CU5]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4552255-x64.exe
 [SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
 [SQL Server 2017 CU20]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4541283-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
@@ -367,7 +367,7 @@ SELECT SERVERPROPERTY('ProductVersion');
 | SQL Server Version                           | Database Engine | Code Name   | Release Year | Internal DB Version | Compatibility Level Designation | Supported Compatibility Level |
 |:---------------------------------------------|----------------:|:------------|-------------:|--------------------:|--------------------------------:|------------------------------:|
 | SQL Server 2019                              | 15              | 2019        | 2019         | 895-904             | 150                             | 150, 140, 130, 120, 110       |
-| SQL Server 2017                              | 14              | 2017        | 2017         | 869                 | 140                             | 140, 130, 120, 110, 100       |
+| SQL Server 2017                              | 14              | 2017        | 2017         | 869-894             | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2016                              | 13              | Helsinki    | 2016         | 852                 | 130                             | 130, 120, 110, 100            |
 | Azure SQL Database                           | 14              | CloudDB     | 2010 (2018)  | 862                 | 140                             | 140, 130, 120, 110, 100       |
 | SQL Server 2014                              | 12              | Hekaton     | 2014         | 782                 | 120                             | 120, 110, 100                 |
@@ -416,16 +416,17 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (RTM-CU4) (KB4548597) - 15.0.4033.1 (X64) 
-   Mar 14 2020 16:10:35 
+Microsoft SQL Server 2019 (RTM-CU5) (KB4552255) - 15.0.4043.16 (X64)
+   Jun 10 2020 18:25:25
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.4033.1   | 2019.150.4033.1   | RTM    | CU   | **Latest** | 4548597 | [Cumulative Update 4 for SQL Server 2019]                 | 2020-03-31   | 2020-03-04 |    50 |     38 |      571 |        904 |
-| 15.0.4023.6   | 2019.150.4023.6   | RTM    | CU   |            | 4548597 | [Cumulative Update 3 for SQL Server 2019]                 | 2020-03-12   | 2020-02-20 |    56 |     11 |      572 |        904 |
+| 15.0.4043.16  | 2019.150.4043.16  | RTM    | CU   | **Latest** | 4552255 | [Cumulative Update 5 for SQL Server 2019]                 | 2020-06-22   | 2020-06-10 |    86 |     58 |      603 |        904 |
+| 15.0.4033.1   | 2019.150.4033.1   | RTM    | CU   |            | 4548597 | [Cumulative Update 4 for SQL Server 2019]                 | 2020-03-31   | 2020-03-04 |    50 |     38 |      571 |        904 |
+| 15.0.4023.6   | 2019.150.4023.6   | RTM    | CU   |            | 4538853 | [Cumulative Update 3 for SQL Server 2019]                 | 2020-03-12   | 2020-02-20 |    56 |     11 |      572 |        904 |
 | 15.0.4013.40  | 2019.150.4013.40  | RTM    | CU   |            | 4536075 | [Cumulative Update 2 for SQL Server 2019]                 | 2020-02-07   | 2020-02-03 |   134 |     88 |      537 |        904 |
 | 15.0.4003.23  | 2019.150.4003.23  | RTM    | CU   |            | 4527376 | [Cumulative Update 1 for SQL Server 2019]                 | 2020-01-07   | 2019-12-06 |    83 |     62 |      452 |        904 |
 | 15.0.2070.41  | 2019.150.2070.41  | RTM    | GDR  |            | 4517790 | [Servicing Update for SQL Server 2019 RTM]                | 2019-11-04   | 2019-10-28 |     1 |      1 |      452 |        904 |
@@ -442,11 +443,12 @@ Microsoft SQL Server 2019 (RTM-CU4) (KB4548597) - 15.0.4033.1 (X64)
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |        896 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |        895 |
 
+[Cumulative Update 4 for SQL Server 2019]:https://support.microsoft.com/help/4552255
 [Cumulative Update 4 for SQL Server 2019]:https://support.microsoft.com/help/4548597
-[Cumulative Update 3 for SQL Server 2019]:https://support.microsoft.com/help/4548597
-[Cumulative Update 2 for SQL Server 2019]:https://support.microsoft.com/help/4536075/
-[Cumulative Update 1 for SQL Server 2019]:https://support.microsoft.com/help/4527376/
-[Servicing Update for SQL Server 2019 RTM]:https://support.microsoft.com/help/4517790/
+[Cumulative Update 3 for SQL Server 2019]:https://support.microsoft.com/help/4538853
+[Cumulative Update 2 for SQL Server 2019]:https://support.microsoft.com/help/4536075
+[Cumulative Update 1 for SQL Server 2019]:https://support.microsoft.com/help/4527376
+[Servicing Update for SQL Server 2019 RTM]:https://support.microsoft.com/help/4517790
 [Microsoft SQL Server 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
 
 
