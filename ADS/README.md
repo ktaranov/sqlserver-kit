@@ -32,7 +32,8 @@
 | [SQL Server Agent]                    | [Github][1]     | 2020-04-16   | 0.47.0   | [GO](https://go.microsoft.com/fwlink/?linkid=2099884)                     | Helps manage and troubleshoot SQL Server Agent jobs and configuration (early preview)                                                                   |
 | SQL Server Admin Pack                 | [Github][1]     | 2019-03-14   | 0.0.2    | [GO](https://go.microsoft.com/fwlink/?linkid=2099889)                     | A collection of popular database administration extensions to help manage SQL Server                                                                    |
 | [SQL Server Schema Compare]           | [Github][1]     | 2020-06-17   | 1.5.0    | [GO](https://go.microsoft.com/fwlink/?linkid=2099886)                     | Provides an easy-to-use experience to compare the schemas from [`.dacpac`] files and databases and apply the changes from source to target              |
-| [PowerShell Extension]                | [Github][6]     | 2020-06-17   | 2020.4.0 | [GO](https://go.microsoft.com/fwlink/?linkid=2099773)                     | Provides rich PowerShell language support for Azure Data Studio                                                                                         |
+| [PowerShell Extension]                | [Github][6]     | 2020-04-15   | 2020.4.0 | [GO](https://go.microsoft.com/fwlink/?linkid=2099773)                     | Provides rich PowerShell language support for Azure Data Studio                                                                                         |
+| [SandDance]                           | [Github][7]     | 2020-06-24   | 3.0.0    | [Vsix](https://github.com/microsoft/SandDance/releases/latest)          | Provides interactive visualizations that help users explore, understand, and present their data                                                         |
 
 
 ## Azure Data Studio Articles
@@ -47,6 +48,7 @@
 [4]:https://github.com/dzsquared/query-editor-boost/releases/latest
 [5]:https://github.com/microsoft/azuredatastudio-postgresql
 [6]:https://github.com/PowerShell/vscode-powershell/
+[7]:https://github.com/Microsoft/SandDance
 
 [`.dacpac`]:https://docs.microsoft.com/en-us/sql/relational-databases/data-tier-applications/data-tier-applications
 
@@ -57,6 +59,7 @@
 [SQL Server Agent]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sql-server-agent-extension
 [SQL Server Compare]:https://docs.microsoft.com/en-us/sql/azure-data-studio/schema-compare-extension
 [PowerShell Extension]:https://docs.microsoft.com/en-us/sql/azure-data-studio/powershell-extension
+[SandDance]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sanddance-extension
 
 [Integrating Azure Data Studio with Git and GitHub]:https://www.sqlshack.com/integrating-azure-data-studio-with-git-and-github/
 
