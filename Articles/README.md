@@ -590,7 +590,7 @@ Articles types:
 | [SQL Server Brute Force Attack Detection: Part 2]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQL Server Brute Force Attack Detection: Part 3]                                                                       | Ryan G Conrad                            | 2018-03-26 | [DBA]       |
 | [SQLCLR vs SQL Server 2017, Part 8: Is SQLCLR Deprecated in Favor of Python or R (sp_execute_external_script)?]         | Solomon Rutzky                           | 2018-08-09 | [DBA][DEV]  |
-| [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                          | 2018-07-20 | [AZ]        |
+| [Sql Server Agent For Azure Sql Database, Azure Elastic Database Pools & Azure Managed Instance]                        | ?                                        | 2018-07-20 | [AZ]        |
 | [Storage performance best practices and considerations for Azure SQL DB Managed Instance (General Purpose)]             | Dimitri Furman                           | 2018-07-20 | [AZ]        |
 | [T-SQL Tuesday #017: APPLY: It Slices! It Dices! It Does It All!]                                                       | Brad Schulz                              | 2011-04-12 | [DEV]       |
 | [SQL Server Encryption, What’s The Key Hierarchy All About?]                                                            | David Fowler                             | 2018-08-12 | [DBA][DEV]  |

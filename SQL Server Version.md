@@ -723,6 +723,8 @@ Microsoft SQL Server 2016 (SP2-CU11) (KB4527378) - 13.0.5598.27 (X64)
 <a id="microsoft-sql-server-2014-builds"></a>
 ## Microsoft SQL Server 2014 Builds
 
+⚠ End-of-Life: SQL Server 2014 reached [end of mainstream support on July 9th, 2019](https://support.microsoft.com/en-us/lifecycle/search?alpha=SQL%20Server%202014%20Service%20Pack%203).
+
 All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202014)
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
@@ -926,6 +928,8 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 
 ## Microsoft SQL Server 2012 Builds
 <a id="microsoft-sql-server-2012-builds"></a>
+
+⚠ End-of-Life: SQL Server 2012 reached [end of mainstream support on July 11th, 2017](https://support.microsoft.com/en-us/lifecycle/search?alpha=sql%20server%202012%20Service%20Pack%204).
 
 All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](http://www.catalog.update.microsoft.com/Search.aspx?q=sql%20server%202012)
 
