@@ -1116,6 +1116,10 @@ Articles types:
 | [Improve SQL Server Extended Events system_health Session]                                                              | Aaron Bertrand                           | 2020-06-17 | [DBA][DEV]  |
 | [Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]                                            | Brent Ozar                               | 2020-06-17 | [DBA][DEV]  |
 | [Unsupported but working versions of SQL Server on Windows Server 2019]                                                 | Randolph West                            | 2020-06-24 | [DBA][DEV]  |
+| [Bad Idea Jeans: Building Big Query Plans]                                                                              | Brent Ozar                               | 2020-06-23 | [DBA][DEV]  |
+| [SQL Server performance tuning – RESOURCE_SEMAPHORE waits]                                                              | Timothy Smith                            | 2020-06-16 | [DBA][DEV]  |
+| [Use session_context to create a “variable” that lasts between batches.]                                                | Kenneth Fisher                           | 2020-05-26 | [DBA][DEV]  |
+| [Phase out CONTEXT_INFO() in SQL Server 2016 with SESSION_CONTEXT()]                                                    | Aaron Bertrand                           | 2015-11-19 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2207,3 +2211,7 @@ Articles types:
 [Improve SQL Server Extended Events system_health Session]:https://www.mssqltips.com/sqlservertip/6456/improve-sql-server-extended-events-systemhealth-session/
 [Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]:https://www.brentozar.com/archive/2020/06/page-life-expectancy-doesnt-mean-jack-and-you-should-stop-looking-at-it/
 [Unsupported but working versions of SQL Server on Windows Server 2019]:https://bornsql.ca/blog/unsupported-but-working-versions-of-sql-server-on-windows-server-2019/
+[Bad Idea Jeans: Building Big Query Plans]:https://www.brentozar.com/archive/2020/06/bad-idea-jeans-building-big-query-plans/
+[SQL Server performance tuning – RESOURCE_SEMAPHORE waits]:https://www.sqlshack.com/sql-server-performance-tuning-resource_semaphore-waits/
+[Use session_context to create a “variable” that lasts between batches.]:https://sqlstudies.com/2020/05/26/use-session_context-to-create-a-variable-that-lasts-between-batches/
+[Phase out CONTEXT_INFO() in SQL Server 2016 with SESSION_CONTEXT()]:https://www.mssqltips.com/sqlservertip/4094/phase-out-contextinfo-in-sql-server-2016-with-sessioncontext/
