@@ -1120,6 +1120,9 @@ Articles types:
 | [SQL Server performance tuning – RESOURCE_SEMAPHORE waits]                                                              | Timothy Smith                            | 2020-06-16 | [DBA][DEV]  |
 | [Use session_context to create a “variable” that lasts between batches.]                                                | Kenneth Fisher                           | 2020-05-26 | [DBA][DEV]  |
 | [Phase out CONTEXT_INFO() in SQL Server 2016 with SESSION_CONTEXT()]                                                    | Aaron Bertrand                           | 2015-11-19 | [DBA][DEV]  |
+| [How to Balance SQL Server Core Licenses Across NUMA Nodes]                                                             | Glenn Berry                              | 2020-06-25 | [DBA]       |
+| [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]                                   | Glenn Berry                              | 2019-12-18 | [DBA]       |
+| [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]                                   | Kevin Kline                              | 2020-06-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2215,3 +2218,6 @@ Articles types:
 [SQL Server performance tuning – RESOURCE_SEMAPHORE waits]:https://www.sqlshack.com/sql-server-performance-tuning-resource_semaphore-waits/
 [Use session_context to create a “variable” that lasts between batches.]:https://sqlstudies.com/2020/05/26/use-session_context-to-create-a-variable-that-lasts-between-batches/
 [Phase out CONTEXT_INFO() in SQL Server 2016 with SESSION_CONTEXT()]:https://www.mssqltips.com/sqlservertip/4094/phase-out-contextinfo-in-sql-server-2016-with-sessioncontext/
+[How to Balance SQL Server Core Licenses Across NUMA Nodes]:https://glennsqlperformance.com/2020/06/25/how-to-balance-sql-server-core-licenses-across-numa-nodes/
+[What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]:https://glennsqlperformance.com/2019/12/18/what-is-the-difference-between-physical-sockets-physical-cores-and-logical-cores/
+[Troubleshooting SQL Server Wait Stats]:https://www.sentryone.com/white-papers/troubleshooting-sql-server-wait-stats
