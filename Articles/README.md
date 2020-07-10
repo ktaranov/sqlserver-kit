@@ -1123,6 +1123,8 @@ Articles types:
 | [How to Balance SQL Server Core Licenses Across NUMA Nodes]                                                             | Glenn Berry                              | 2020-06-25 | [DBA]       |
 | [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]                                   | Glenn Berry                              | 2019-12-18 | [DBA]       |
 | [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]                                   | Kevin Kline                              | 2020-06-01 | [DBA][DEV]  |
+| [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]                                           | Brent Ozar                               | 2020-07-07 | [DBA][DEV]  |
+| [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]                                        | Brent Ozar                               | 2020-07-08 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2221,3 +2223,5 @@ Articles types:
 [How to Balance SQL Server Core Licenses Across NUMA Nodes]:https://glennsqlperformance.com/2020/06/25/how-to-balance-sql-server-core-licenses-across-numa-nodes/
 [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]:https://glennsqlperformance.com/2019/12/18/what-is-the-difference-between-physical-sockets-physical-cores-and-logical-cores/
 [Troubleshooting SQL Server Wait Stats]:https://www.sentryone.com/white-papers/troubleshooting-sql-server-wait-stats
+[The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-1-why-you-still-dont-get-accurate-estimates/
+[The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-2-how-bad-estimates-backfire-as-your-data-grows/

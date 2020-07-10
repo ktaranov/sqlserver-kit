@@ -35,6 +35,8 @@
 | [PowerShell Extension]                | [Github][6]     | 2020-04-15   | 2020.4.0 | [GO](https://go.microsoft.com/fwlink/?linkid=2099773)                     | Provides rich PowerShell language support for Azure Data Studio                                                                                         |
 | [SandDance for Azure Data Studio]     | [Github][7]     | 2020-06-24   | 3.0.0    | [Vsix](https://github.com/microsoft/SandDance/releases/latest)            | Provides interactive visualizations that help users explore, understand, and present their data                                                         |
 | [SandDance for VSCode][8]             | [Github][7]     | 2020-06-24   | 3.0.0    | [Vsix][8]                                                                 | Provides interactive visualizations that help users explore, understand, and present their data for `.csv` or `.tsv` files                              |
+| [Server Reports][1]                   | [Github][1]     | 2020-04-27   | 0.2.2    | [GO][https://go.microsoft.com/fwlink/?linkid=2099768]                     | Provides useful information about the server's performance, such as: DB Space Usage, DB Buffer Usage, CPU Utilization, Backup Growth Trend              |
+| [whoisactive][1]                      | [Github][1]     | 2020-04-27   | 0.1.4    | [GO][https://go.microsoft.com/fwlink/?linkid=2099774]                     | Displays insights from sp_whoisactive, a useful tool for activity monitoring and troubleshooting, as graphs and tasks inside an Azure Data Studio       |
 
 
 ## Azure Data Studio Articles
@@ -42,6 +44,7 @@
 | Title                                                      | Author                                   | Modified   |
 |------------------------------------------------------------|------------------------------------------|------------|
 | [Integrating Azure Data Studio with Git and GitHub]        | Rajendra Gupta                           | 2020-07-03 |
+| [Working with Git components in Azure Data Studio]         | Rajendra Gupta                           | 2020-07-09 |
 
 [1]:https://github.com/Microsoft/azuredatastudio
 [2]:https://github.com/microsoft/azuredatastudio-postgresql
@@ -63,6 +66,7 @@
 [SandDance for Azure Data Studio]:https://docs.microsoft.com/en-us/sql/azure-data-studio/sanddance-extension
 
 [Integrating Azure Data Studio with Git and GitHub]:https://www.sqlshack.com/integrating-azure-data-studio-with-git-and-github/
+[Working with Git components in Azure Data Studio]:https://www.sqlshack.com/working-with-git-components-in-azure-data-studio/
 
 
 ### TODO Links
