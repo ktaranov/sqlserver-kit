@@ -64,7 +64,7 @@ Articles types:
 | [Dynamically Query a 100 Million Row Table-Efficiently]                                                                 | Gary Strange                             | 2016-05-27 |             |
 | [Understanding and Using Parallelism in SQL Server]                                                                     | Paul White                               | 2011-03-03 |             |
 | [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Microsoft                                | 2014-02-28 |             |
-| [Parallel Execution Plans – Branches and Threads]                                                                       | Paul White                               | 2013-10-07 |             |
+| [Parallel Execution Plans – Branches and Threads]                                                                       | Paul White                               | 2013-10-07 | [DBA][DEV]  |
 | [Nasty Fast PERCENT_RANK]                                                                                               | Alan Burstein                            | 2016-06-07 |             |
 | [Looking at VIEWs, Close Up]                                                                                            | Joe Celko                                | 2016-05-10 |             |
 | [SQL Server 2016: It Just Runs Faster]                                                                                  | Thomas LaRock                            | 2016-06-01 |             |
@@ -1125,6 +1125,9 @@ Articles types:
 | [What is the Difference Between Physical Sockets, Physical Cores, and Logical Cores?]                                   | Kevin Kline                              | 2020-06-01 | [DBA][DEV]  |
 | [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]                                           | Brent Ozar                               | 2020-07-07 | [DBA][DEV]  |
 | [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]                                        | Brent Ozar                               | 2020-07-08 | [DBA][DEV]  |
+| [Sql Server — Widely Random Query Exec Times (cxconsumer Wait/cxpacket) & Possible Remediation]                         | VIKTOR                                   | 2020-06-26 | [DBA][DEV]  |
+| [How MAXDOP Really Works]                                                                                               | Paul White                               | 2020-06-07 | [DBA][DEV]  |
+| [What is MaxDOP controlling?]                                                                                           | Pedro Lopes                              | 2020-07-07 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2225,3 +2228,6 @@ Articles types:
 [Troubleshooting SQL Server Wait Stats]:https://www.sentryone.com/white-papers/troubleshooting-sql-server-wait-stats
 [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-1-why-you-still-dont-get-accurate-estimates/
 [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-2-how-bad-estimates-backfire-as-your-data-grows/
+[Sql Server — Widely Random Query Exec Times (cxconsumer Wait/cxpacket) & Possible Remediation]:https://viktorsrandomposts.wordpress.com/2020/06/26/sql-server-widely-random-query-exec-times-cxconsumer-wait-possible-remediation/
+[How MAXDOP Really Works]:https://www.sql.kiwi/2020/07/how-maxdop-really-works.html
+[What is MaxDOP controlling?]:https://techcommunity.microsoft.com/t5/sql-server/what-is-maxdop-controlling/ba-p/1505968
