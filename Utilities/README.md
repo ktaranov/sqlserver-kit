@@ -1,27 +1,27 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **331** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **360** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
- - **[B]**: Backup solutions {8}
+ - **[B]**: Backup solutions {9}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {7}
  - **[DA]**: Database Architecture {21}
  - **[DC]**: Data compare {14}
- - **[ETL]**: Extract Download Load (ETL) Tools {8}
+ - **[ETL]**: Extract Download Load (ETL) Tools {9}
  - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
- - **[IDX]**: Index manager {3}
+ - **[IDX]**: Index manager {4}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {20}
- - **[MG]**: Migration tool {33}
- - **[MS]**: Management Studio (alternative for SSMS) {30}
+ - **[M]**: Monitoring and alerting Tools {27}
+ - **[MG]**: Migration tool {35}
+ - **[MS]**: Management Studio (alternative for SSMS) {31}
  - **[REC]**: Recovery tools {13}
- - **[S]**: Search tools {5}
+ - **[S]**: Search tools {8}
  - **[SEC]**: Security tools {7}
  - **[SC]**: Structure compare {20}
- - **[ST]**: Statistics utilities {3}
- - **[T]**: Testing tools {5}
- - **[?]**: Not yet classified {120}
+ - **[ST]**: Statistics utilities {4}
+ - **[T]**: Testing tools {6}
+ - **[?]**: Not yet classified {133}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-----------------------|------------|----------------|------:|
@@ -83,6 +83,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Red Gate Data Masker](#red-gate-data-masker)                    | Oracle                        | No        | [?]      | [Red Gate SQL Data Masker]                  | 2018-02-26 | Red Gate              |            | No             | $2395 |
 | [DLM Automation](#dlm-automation)                                | No                            | No        | [?]      | [DLM Automation]                            | ?          | Red Gate              |            | No             | ?     |
 | [ReadyRoll](#readyroll)                                          | No                            | No        | [?]      | [ReadyRoll]                                 | 2016-01-03 | Red Gate              |            | No             |  $345 |
+| [SQL Search](#sql-search)                                        | No                            | No        | [S]      | [SQL Search]                                | ?          | Red Gate              |            | Yes            | No    |
+| [SQL Scripts Manager](#sql-scripts-manager)                      | No                            | No        | [?]      | [SQL Scripts Manager]                       | ?          | Red Gate              |            | Yes            | No    |
 | [Rapid Database Extractor](#rapid-database-extractor)            | Oracle                        | No        | [?]      | [Rapid Database Extractor]                  | 2016-11-03 | Idera                 |            | Yes            | No    |
 | [SQL XEvent Profiler](#sql-xevent-profiler)                      | No                            | No        | [?]      | [SQL XEvent Profiler]                       | 2014-03-14 | Idera                 |            | Yes            | No    |
 | [SQL Check](#sql-check)                                          | No                            | No        | [?]      | [SQL Check]                                 | 2015-09-24 | Idera                 |            | Yes            | No    |
@@ -120,6 +122,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [DB Change Manager](#db-change-manager)                          | Oracle,MySQL,PostgreSQL,Other | No        | [SC]     | [DB Change Manager]                         | ?          | Idera                 |            | No             | $1420 |
 | [Uptime Infrastructure Monitor](#uim)                            | No                            | Linux     | [?]      | [Uptime Infrastructure Monitor]             | ?          | Idera                 |            | No             | ?     |
 | [Powershell Scripts](#powershell-scripts)                        | No                            | No        | [?]      | [Powershell Scripts]                        | ?          | Idera                 |            | No             | ?     |
+| [SQL Data Profiler](#sql-data-profiler)                          | No                            | No        | [?]      | [SQL Data Profiler]                         | ?          | Idera                 |            | No             | ?     |
+| [SQL Instance Check](#sql-instance-check)                        | No                            | No        | [M]      | [SQL Instance Check]                        | ?          | Idera                 |            | Yes            | ?     |
 | [dbForge Schema Compare](#dbforge-schema-compare)                | No                            | No        | [SC]     | [dbForge Schema Compare]                    | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Data Compare](#dbforge-data-compare)                    | No                            | No        | [DC]     | [dbForge Data Compare]                      | 2019-10-10 | Devart                | Shareware  | No             |  $150 |
 | [dbForge Data Generator](#dbforge-data-generator)                | No                            | No        | [G]      | [dbForge Data Generator]                    | 2019-10-10 | Devart                | Shareware  | No             |  $250 |
@@ -271,6 +275,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Migration Assistant for DB2](#ssma-db2)              | DB2                           | No        | [MG]     | [SQL Server Migration Assistant for DB2]    | 2017-02-17 | Microsoft             |            | Yes            | No    |
 | [SQL Server Migration Assistant for Oracle](#ssma-oracle)        | Oracle                        | No        | [MG]     | [SQL Server Migration Assistant for Oracle] | 2017-02-17 | Microsoft             |            | Yes            | No    |
 | [SQL Server Migration Assistant for Access](#ssma-access)        | Access                        | No        | [MG]     | [SQL Server Migration Assistant for Access] | 2017-02-17 | Microsoft             |            | Yes            | No    |
+| [SQL Server Migration Assistant for SAP ASE](#ssma-sap)          | SAP ASE                       | No        | [MG]     | [SQL Server Migration Assistant for SAP ASE]| 2020-06-29 | Microsoft             |            | Yes            | No    |
 | [mssql for Visual Studio Code](#mssql-for-vs-code)               | No                            | Linux,Mac | [MS]     | [mssql for Visual Studio Code]              | 2017-05-02 | Microsoft             |            | Open Source    | No    |
 | [Microsoft Assessment and Planning](#map)                        | No                            | No        | [?]      | [Microsoft Assessment and Planning]         | 2017-02-10 | Microsoft             |            | Yes            | No    |
 | [mssql-scripter](#mssql-scripter)                                | No                            | Linux,Mac | [?]      | [mssql-scripter]                            | ?          | Microsoft             |            | Open Source    | No    |
@@ -354,7 +359,31 @@ Utility types (main purpose), in braces `{}` current counts:
 | [MSKerberos Configuration Manager](#mskerberos-config-manager)   | No                            | No        | [DC],[SC]| [MSKerberos Configuration Manager]          | 2020-02-25 | Microsoft             |            | Yes            |  No   |
 | [Partition Management](#partition-management)                    | No                            | No        | [?]      | [Partition Management]                      | ?          | ?                     |            | Open Source    |  No   |
 | [PSDatabaseClone](#psdatabaseclone)                              | No                            | No        | [?]      | [PSDatabaseClone]                           | 2018-07-27 | Sander Stad           |            | Open Source    |  No   |
-| [Pssdiag&Sqldiag Manager](pssdiag-sqldiag-manager)               | No                            | No        | [?]      | [Pssdiag&Sqldiag Manager]                   | 2020-05-04 | Jack Li               |            | Open Source    |  No   |
+| [Pssdiag&Sqldiag Manager](#pssdiag-sqldiag-manager)              | No                            | No        | [?]      | [Pssdiag&Sqldiag Manager]                   | 2020-05-04 | Jack Li               |            | Open Source    |  No   |
+| [sp_Blitz](#sp-blitz)                                            | No                            | No        | [?]      | [sp_Blitz]                                  | ?          | Brent Ozar            |            | Yes            |  No   |
+| [sp_whoisactive](#sp-whoisactive)                                | No                            | No        | [M]      | [sp_whoisactive]                            | 2017-10-10 | Adam Machanic         |            | Yes            |  No   |
+| [SQuirreL SQL Client](#squirrelsql-client)                       | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [SQuirreL SQL Client]                       | 2020-04-30 | Colin Bell, Gerd Wagner|           | Yes            |  No   |
+| [Data Synchronisation Studio](#data-synchronisation-studio)      | No                            | No        | [?]      | [Data Synchronisation Studio]               | 2020-05-26 | Simego Ltd            |            | No             | $999  |
+| [SQL Converter](#sql-converter)                                  | No                            | No        | [?]      | [SQL Converter]                             | 2015-12-15 | Alaa Ben Fatma        |            | Yes            |  No   |
+| [SQLDBSearch](#sqldbsearch)                                      | No                            | No        | [S]      | [SQLDBSearch]                               | ?          | Mohamed Bouarroudj    |            | Yes            |  No   |
+| [SQLDBSize](#sqldbsize)                                          | No                            | No        | [?]      | [SQLDBSize]                                 | ?          | Mohamed Bouarroudj    |            | Yes            |  No   |
+| [SQLines Data](#sqlines-data)                                    | Oracle,MySQL,PostgreSQL,Other | Linux     |[MG],[ETL]| [SQLines Data]                              | 2019-05-29 | SQLines               |            | Open Source    |  No   |
+| [SqlDbAid](#sqldbaid)                                            | No                            | No        | [?]      | [SqlDbAid]                                  | 2018-02-10 | Miken                 |            | Yes            |  No   |
+| [sqlectron](#sqlectron)                                          | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [?]      | [sqlectron]                                 | 2018-09-06 | sqlectron             |            | Open Source    |  No   |
+| [SQL ExecStats](#sql-execstats)                                  | No                            | No        | [?]      | [SQL ExecStats]                             | ?          | Elemental Inc         |            | Yes            |  No   |
+| [SQL-FineBuild](#sql-finebuild)                                  | No                            | No        | [?]      | [SQL-FineBuild]                             | 2017-10-28 | Edward Vassie         |            | Open Source    |  No   |
+| [SQL Health Monitor](#sql-health-monitor)                        | No                            | No        | [M]      | [SQL Health Monitor]                        | ?          | ManageEngine          |            | Yes            |  No   |
+| [SQL Hunting Dog](#sql-hunting-dog)                              | No                            | No        | [S]      | [SQL Hunting Dog]                           | ?          | SQL Hunting Dog       |            | Yes            |  No   |
+| [SQLPRep](#sqlprep)                                              | No                            | No        | [?]      | [SQLPRep]                                   | ?          | Consequential Solutions|           | Yes            |  No   |
+| [SQL Server Backup](#sql-server-backup)                          | No                            | No        | [B]      | [SQL Server Backup]                         | ?          | Ola Hallengren        |            | Yes            |  No   |
+| [SQL Server Integrity Check](#sql-server-integrity-check)        | No                            | No        | [?]      | [SQL Server Integrity Check]                | ?          | Ola Hallengren        |            | Yes            |  No   |
+| [SQL Server Index and Statistics Maintenance](#index-stat-maint) | No                            | No        | [I],[ST] | [SQL Server Index and Statistics Maintenance]| ?         | Ola Hallengren        |            | Yes            |  No   |
+| [SQL Server Monitoring](#sql-server-monitoring)                  | No                            | No        | [M]      | [SQL Server Monitoring]                     | ?          | Spiceworks            |            | Yes            |  No   |
+| [SQL Server Storage manager](#sql-server-storage-manager)        | No                            | No        | [M]      | [SQL Server Storage manager]                | ?          | Lepide Software       |            | Yes            |  No   |
+| [SysKit Pulse](#syskit-pulse)                                    | No                            | No        | [M]      | [SysKit Pulse]                              | ?          | SysKit Ltd            |            | Yes            |  No   |
+| [TSQLT](#tsqlt)                                                  | No                            | No        | [T]      | [TSQLT]                                     | ?          | sqlity.net llc        |            | Yes            |  No   |
+| [WhatsUp SQL Server Monitor](#whatsup-sql-server-monitor)        | No                            | No        | [M]      | [WhatsUp SQL Server Monitor]                | ?          | Ipswitch              |            | Yes            |  No   |
+| [YourSqlDba](#yoursqldba)                                        | No                            | No        | [?]      | [YourSqlDba]                                | 2020-05-05 | Maurice Pelchat       |            | Open Source    |  No   |
 
 
 <a id="ssms"></a>
@@ -1168,6 +1197,36 @@ It generates numerically ordered SQL migration scripts that sit inside your proj
 You can add them to version control, use them to build and release, and automate database and application deployments, all in one process.
 
 
+## SQL Search
+<a id="sql-search"></a>
+Download page: [SQL Search]
+Release date: ?
+Support Version: ?
+Author: Red Gate
+Free version: Yes
+Prise: No
+
+Find SQL fast in SQL Server Management Studio and Visual Studio
+ - Find fragments of SQL in tables, views, stored procedures, functions, jobs, and more
+ - Quickly navigate to objects wherever they happen to be on a server
+ - Search across multiple object types and multiple databases
+ - Find all references to an object
+ - Search with booleans and wildcards
+
+
+## SQL Scripts Manager
+<a id="sql-scripts-manager"></a>
+Download page: [SQL Scripts Manager]
+Release date: ?
+Support Version: ?
+Author: Red Gate
+Free version: Yes
+Prise: No
+
+ - Expert scripts: contains 28 scripts written by expert DBAs, SQL Server MVPs, and Redgate's SQL developers.
+ - Accelerated scripting: streamline repeated administration and scripting tasks with quick and easy access to scripts.
+ - Customize and extend: easily build custom user interfaces around any T-SQL or IronPython script.
+
 ## Rapid Database Extractor
 <a id="rapid-database-extractor"></a>
 Download page: [Rapid Database Extractor]<br/>
@@ -1727,6 +1786,24 @@ Price: ?
  - Track service-level performance trends for SLA compliance and reporting
  - Monitor virtually anything via a multitude of pre-built plug-ins or custom scripts
  - Streamline incident management with native ServiceNow integration
+
+
+## SQL Data Profiler
+<a id="sql-data-profiler"></a>
+Download page: [SQL Data Profiler]<br/>
+Release date: ?<br/>
+Support Version: 2008-2019<br/>
+Author: Idera<br/>
+Free version: No<br/>
+Price: ?
+
+ - Profile data in SQL Server tables
+ - Analyze subsets of data types at a time
+ - Adjust profiling thresholds to customize the analysis
+ - Display summary of data in selected table and its columns
+ - Receive recommendations based on data per column
+ - View summary of value distribution per column
+ - Export results to plain text file format
 
 
 ## dbForge Schema Compare
@@ -3953,6 +4030,19 @@ Price: No
 Microsoft SQL Server Migration Assistant (SSMA) for Access is a tool to automate migration from Access database(s) to SQL Server and Azure SQL DB.
 
 
+## SQL Server Migration Assistant for SAP ASE
+<a id="ssma-sap"></a>
+Download page: [SQL Server Migration Assistant for SAP ASE]<br/>
+Release date: 2020-06-29<br/>
+Support Version: 2012/2014/2016/2019/Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft SQL Server Migration Assistant (SSMA) for SAP ASE is a tool to automate migration from SAP ASE database(s) to SQL Server, Azure SQL Database and Azure SQL Database Managed Instance. 
+SSMA for SAP ASE is designed to support migration from SAP ASE version 11.9 and higher.
+
+
 ## mssql for Visual Studio Code
 <a id="mssql-for-vs-code"></a>
 Download page: [mssql for Visual Studio Code]<br/>
@@ -5150,6 +5240,345 @@ Prise: No
 Pssdiag/Sqldiag Manager is a graphic interface that provides customization capabilities to collect data for SQL Server using sqldiag collector engine. The data collected can be used by SQL Nexus tool which help you troubleshoot SQL Server performance problems. This is the same tool Microsoft SQL Server support engineers use to for data collection to troubleshoot customer's performance problems.
 
 
+## sp_Blitz
+<a id="sp-blitz"></a>
+Download page: [sp_Blitz]
+Release date: ?
+Support Version: 2005-2016
+Author: Brent Ozar
+Free version: Yes
+Prise: No
+
+Fast, easy, free health check that flags common issues in seconds, and for each warning, gives you a link to a web page with more in-depth advice. 
+
+
+## sp_whoisactive
+<a id="sp-whoisactive"></a>
+Download page: [sp_whoisactive]
+Release date: 2017-10-10
+Support Version: 2005-2017
+Author: Adam Machanic
+Free version: Yes
+Prise: No
+
+Comprehensive activity monitoring stored procedure that works for all versions of SQL Server from 2005 through 2017 
+
+
+## SQuirreL SQL Client
+<a id="squirrelsql-client"></a>
+Download page: [SQuirreL SQL Client]
+Release date: 2020-04-30
+Support Version: ?
+Author: Colin Bell, Gerd Wagner
+Free version: Yes
+Prise: No
+
+SQuirreL SQL Client is a JAVA-based database administration tool for JDBC compliant databases. It allows you to view the database structure and issue SQL commands. It provides an editor that offers code completion and syntax highlighting for standard SQL.
+
+
+## Data Synchronisation Studio
+<a id="data-synchronisation-studio"></a>
+Download page: [Data Synchronisation Studio]
+Release date: 2020-05-26
+Support Version: SQL Server 2014 or higher
+Author: Simego Ltd
+Free version: No
+Prise: $999
+
+The complete package for data integration and automation for SQL.
+ - Import + Export
+ - Data Reconciliation
+ - Data Preview
+ - Transformation
+ - Lookups
+ - Connection Library
+ - Schedule
+
+
+## SQL Converter
+<a id="sql-converter"></a>
+Download page: [SQL Converter]
+Release date: 2015-12-15
+Support Version: ?
+Author: Alaa Ben Fatma
+Free version: Yes
+Prise: No
+
+SQL Converter is the utility, allowing one to extract information from source servers selectively and save it to a variety of formats.
+
+
+## SQLDBSearch 
+<a id="sqldbsearch"></a>
+Download page: [SQLDBSearch]
+Release date: ?
+Support Version: 2000-2019
+Author: Mohamed Bouarroudj
+Free version: Yes
+Prise: No
+
+SQLDBSearch is a SQL Server tool that lets you easily and quickly search for database objects or SQL statements across your databases.
+
+
+## SQLDBSize 
+<a id="sqldbsize"></a>
+Download page: [SQLDBSize]
+Release date: ?
+Support Version: 2000-2019
+Author: Mohamed Bouarroudj
+Free version: Yes
+Prise: No
+
+SQLDBSize is a SQL Server tool that allows you to display graphically the size used or reserved by tables, indexes, databases, transaction logs and physical files.
+
+
+## SQLines Data 
+<a id="sqlines-data"></a>
+Download page: [SQLines Data]
+Release date: 2019-05-29
+Support Version: ?
+Author: SQLines
+Free version: Yes
+Prise: No
+
+SQLines Data is an open source, scalable, parallel high performance data transfer and schema conversion tool that you can use for database migrations and ETL processes.
+
+ 
+## SSqlDbAid
+<a id="sqldbaid"></a>
+Download page: [SqlDbAid]
+Release date: 2018-02-10
+Support Version: 2005+
+Author: Miken
+Free version: Yes
+Prise: No
+
+ - Text search inside code definition with highlitghting
+ - DBA reports (missing indexes, missing foreign key indexes, indexes status, top queries, table MBytes)
+ - One file per object or single file scripts (tables, views, triggers, procedures, functions, indexes...)
+ - Select, Insert and Update scripts
+ - Table data insert script creation
+ - Table/View data export
+ - Offline database compare tool
+
+ 
+## sqlectron
+<a id="sqlectron"></a>
+Download page: [sqlectron]
+Release date: 2018-09-06
+Support Version: ?
+Author: sqlectron
+Free version: Yes
+Prise: No
+
+A simple and lightweight SQL client with cross database and platform support. 
+
+
+## SQL ExecStats
+<a id="sql-execstats"></a>
+Download page: [SQL ExecStats]
+Release date: ?
+Support Version: ?
+Author: Elemental Inc
+Free version: Yes
+Prise: No
+
+ExecStats started out with a focus on execution plan analysis with cross-referencing index usage to the SQL. Formerly separate programs for performance monitoring and server system architecture discovery via WMI have now been integrated into ExecStats.
+
+
+## SQL-FineBuild
+<a id="sql-finebuild"></a>
+Download page: [SQL-FineBuild]
+Release date: 2017-10-28
+Support Version: 2005-2017
+Author: Edward Vassie
+Free version: Yes
+Prise: No
+
+SQL FineBuild provides 1-click install and best-practice configuration on Windows of SQL Server 2017 down to SQL Server 2005. 
+
+
+## SQL Health Monitor
+<a id="sql-health-monitor"></a>
+Download page: [SQL Health Monitor]
+Release date: ?
+Support Version: 2000-2014
+Author: Edward Vassie
+Free version: Yes
+Prise: No
+
+ - Keep a tab on the performance parameters of both default and named instances
+ - Get a dashboard view of system resources used & MS SQL performance parameters
+ - Fetch the status of Winodws services related to your MS SQL Server
+ - Keep an eye on buffer, memory, lock and latch details of your MS SQL Server
+ - Generate real time performance reports in PDF format and Email it from the tool
+
+
+## SQL Hunting Dog
+<a id="sql-hunting-dog"></a>
+Download page: [SQL Hunting Dog]
+Release date: ?
+Support Version: 2015-08-16
+Author: SQL Hunting Dog
+Free version: Yes
+Prise: No
+
+Quick Search Tool (AddIn) for Microsoft SQL Management Studio 2008/2012/2014
+ - Quickly find tables, stored procedure, functions and views
+ - Completely removes the pain of clunky Object Explorer
+ - Switch between different servers and databases
+ - Perform common operation (select data, modify table, design table, etc.) with ease
+
+
+## SQL Instance Check
+<a id="sql-instance-check"></a>
+Download page: [SQL Instance Check]
+Release date: ?
+Support Version: 2008-2019
+Author: Idera
+Free version: Yes
+Prise: No
+
+
+ - Monitor 20 key performance metrics
+ - See throughput of varying types
+ - See "heartbeat" statistics at different intervals
+ - Up and running in minutes with easy installation wizard
+ - No agents required
+ - Connect to cloud and run in cloud (provisional)
+
+
+## SQLPRep
+<a id="sqlprep"></a>
+Download page: [SQLPRep]
+Release date: ?
+Support Version: ?
+Author: Consequential Solutions
+Free version: Yes
+Prise: No
+
+SQLPRep 2015 aka SQL Performance Report is our newest software product that takes any TSQL and produces a concise, readable, highlighted performance report allowing you to greatly reduce your time spent in developing, debugging, optimising, testing and reviewing TSQL.
+
+
+## SQL Server Backup
+<a id="sql-server-backup"></a>
+Download page: [SQL Server Backup]
+Release date: ?
+Support Version: 2008-2019
+Author: Ola Hallengren
+Free version: Yes
+Prise: No
+
+DatabaseBackup is the SQL Server Maintenance Solution’s stored procedure for backing up databases.
+
+
+## SQL Server Integrity Check
+<a id="sql-server-integrity-check"></a>
+Download page: [SQL Server Integrity Check]
+Release date: ?
+Support Version: 2008-2019
+Author: Ola Hallengren
+Free version: Yes
+Prise: No
+
+DatabaseIntegrityCheck is the SQL Server Maintenance Solution’s stored procedure for checking the integrity of databases.
+
+
+## SQL Server Index and Statistics Maintenance
+<a id="index-stat-maint"></a>
+Download page: [SQL Server Index and Statistics Maintenance]
+Release date: ?
+Support Version: 2008-2019
+Author: Ola Hallengren
+Free version: Yes
+Prise: No
+
+IndexOptimize is the SQL Server Maintenance Solution’s stored procedure for rebuilding and reorganizing indexes and updating statistics.
+
+
+## SQL Server Monitoring
+<a id="sql-server-monitoring"></a>
+Download page: [SQL Server Monitoring]
+Release date: ?
+Support Version: 2005 and higher
+Author: Spiceworks
+Free version: Yes
+Prise: No
+
+ - Auto collect data about the server
+ - Instantly access health info on the data
+ - Create multiple widgets to monitor what you want
+ - Monitor SQL Server size, connection, speed & more
+
+
+## SQL Server Storage manager
+<a id="sql-server-storage-manager"></a>
+Download page: [SQL Server Storage manager]
+Release date: ?
+Support Version: ?
+Author: Lepide Software
+Free version: Yes
+Prise: No
+
+ - Removes the need to writing complex SQL Servers and stored procedures
+ - Provides real time alerts based on easy to configure criteria
+ - Provides a centralized platform to create consolidated reports of all SQL resources
+ - Provides simple graphical displays showing all elements of your SQL servers
+
+
+## SysKit Pulse
+<a id="syskit-pulse"></a>
+Download page: [SysKit Pulse]
+Release date: ?
+Support Version: ?
+Author: SysKit Ltd
+Free version: Yes
+Prise: No
+
+ - Track servers via interactive live dashboards.
+ - Server Auto-Discover Wizard
+ - Performance Counters Check
+ - A simplified way of looking at your servers.
+
+
+## TSQLT
+<a id="tsqlt"></a>
+Download page: [TSQLT]
+Release date: ?
+Support Version: from 2005
+Author: sqlity.net llc
+Free version: Yes
+Prise: No
+
+ - Tests are automatically run within transactions
+ - Tests can be grouped together within a schema
+ - Output can be generated in plain text or XML
+ - The framework gives you the ability to fake tables and views, and create stored procedure spies
+
+
+## WhatsUp SQL Server Monitor
+<a id="whatsup-sql-server-monitor"></a>
+Download page: [WhatsUp SQL Server Monitor]
+Release date: ?
+Support Version: ?
+Author: Ipswitch
+Free version: Yes
+Prise: No
+
+The WhatsUp SQL Server Monitor is a free tool that shows off Ipswitch monitoring technology you can use to catch problems before they begin to affect users.
+
+
+## YourSqlDba
+<a id="yoursqldba"></a>
+Download page: [YourSqlDba]
+Release date: 2020-05-05
+Support Version: ?
+Author: Maurice Pelchat
+Free version: Yes
+Prise: No
+
+YourSqlDba script creates a database named YourSqlDba packed with T-SQL modules (function, stored procedures, and views) on the server where it is run. You don't need to be concerned by all of them, albeit some of them are interesting tools for exceptional day-to-day DBA tasks, out of regular maintenance tasks.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5239,6 +5668,7 @@ Pssdiag/Sqldiag Manager is a graphic interface that provides customization capab
 [SQL Comparison Toolset]:https://www.idera.com/productssolutions/sqlserver/sqlcomparisontoolset
 [ER/Studio Data Architect]:https://www.idera.com/er-studio-data-architect-software
 [DB Change Manager]:https://www.idera.com/database-change-management
+[SQL Data Profiler]:https://www.idera.com/productssolutions/freetools/sql-data-profiler
 [dbForge Schema Compare]: https://www.devart.com/dbforge/sql/schemacompare/
 [dbForge Data Compare]: https://www.devart.com/dbforge/sql/datacompare/
 [dbForge Data Generator]: https://www.devart.com/dbforge/sql/data-generator/
@@ -5480,6 +5910,34 @@ Pssdiag/Sqldiag Manager is a graphic interface that provides customization capab
 [Powershell Scripts]:https://www.idera.com/productssolutions/freetools/sqlpowershellscripts
 [PSDatabaseClone]:https://psdatabaseclone.org/#
 [Pssdiag&Sqldiag Manager]:https://github.com/microsoft/DiagManager/releases
+[sp_Blitz]:https://www.brentozar.com/blitz
+[sp_whoisactive]:http://whoisactive.com
+[SQuirreL SQL Client]:http://squirrelsql.org
+[Data Synchronisation Studio]:https://www.simego.com/solutions/sql
+[SQL Converter]:https://sourceforge.net/projects/sql-converter
+[SQLDBSearch]:https://www.sqldbtools.com/tools/sqldbsearch
+[SQLDBSize]:https://www.sqldbtools.com/tools/sqldbsize
+[SQLines Data]:http://www.sqlines.com/sqldata
+[SqlDbAid]:http://sqlapproach.blogspot.com/2010/06/sqldbaid.html
+[sqlectron]:https://sqlectron.github.io 
+[SQL ExecStats]:http://www.qdpma.com/execstats/sqlexecstats.html
+[SQL-FineBuild]:https://github.com/SQL-FineBuild/v3.4
+[SQL Health Monitor]:https://www.manageengine.com/sql-performance-monitor/sql-server-monitoring-index.html
+[SQL Hunting Dog]:http://www.sql-hunting-dog.com
+[SQL Instance Check]:https://www.idera.com/productssolutions/freetools
+[SQLPRep]:https://www.csqls.com/products
+[SQL Search]:https://www.red-gate.com/products/sql-development/sql-search
+[SQL Server Migration Assistant for SAP ASE]:https://www.microsoft.com/en-us/download/details.aspx?id=54256
+[SQL Scripts Manager]:https://www.red-gate.com/products/dba/sql-scripts-manager
+[SQL Server Backup]:https://ola.hallengren.com/sql-server-backup.html
+[SQL Server Index and Statistics Maintenance]:https://ola.hallengren.com/sql-server-index-and-statistics-maintenance.html
+[SQL Server Integrity Check]:https://ola.hallengren.com/sql-server-integrity-check.html
+[SQL Server Monitoring]:https://www.spiceworks.com/free-sql-server-monitoring-tool
+[SQL Server Storage manager]:https://www.lepide.com/sql-storage-manager
+[SysKit Pulse]:https://www.syskit.com/products/insights-lite
+[TSQLT]:http://tsqlt.org
+[WhatsUp SQL Server Monitor]:https://www.ipswitch.com/resources/free-tools/whatsup-sql-server-monitor
+[YourSqlDba]:https://github.com/pelsql/YourSqlDba
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
