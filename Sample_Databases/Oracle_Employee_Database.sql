@@ -6,6 +6,8 @@ Original link: https://livesql.oracle.com/apex/livesql/file/content_O5AEB2HE08PY
 Code style for PostgresSQL - python like.
 */
 
+CREATE DATABASE oracle_employee;
+
 DROP TABLE employee;
 DROP TABLE department;
 
