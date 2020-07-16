@@ -1128,6 +1128,9 @@ Articles types:
 | [Sql Server — Widely Random Query Exec Times (cxconsumer Wait/cxpacket) & Possible Remediation]                         | VIKTOR                                   | 2020-06-26 | [DBA][DEV]  |
 | [How MAXDOP Really Works]                                                                                               | Paul White                               | 2020-06-07 | [DBA][DEV]  |
 | [What is MaxDOP controlling?]                                                                                           | Pedro Lopes                              | 2020-07-07 | [DBA][DEV]  |
+| [What If You Really DO Need to Shrink a Database?]                                                                      | Brent Ozar                               | 2020-07-14 | [DBA]       |
+| [Everything I Never Wanted to Know About Collation]                                                                     | Kendra Little                            | 2020-07-16 | [DBA][DEV]  |
+| [Comparing SSIS And Azure Data Factory]                                                                                 | Tim Mitchell                             | 2020-07-16 | [AZ][SSIS]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2231,3 +2234,6 @@ Articles types:
 [Sql Server — Widely Random Query Exec Times (cxconsumer Wait/cxpacket) & Possible Remediation]:https://viktorsrandomposts.wordpress.com/2020/06/26/sql-server-widely-random-query-exec-times-cxconsumer-wait-possible-remediation/
 [How MAXDOP Really Works]:https://www.sql.kiwi/2020/07/how-maxdop-really-works.html
 [What is MaxDOP controlling?]:https://techcommunity.microsoft.com/t5/sql-server/what-is-maxdop-controlling/ba-p/1505968
+[What If You Really DO Need to Shrink a Database?]:https://www.brentozar.com/archive/2020/07/what-if-you-really-do-need-to-shrink-a-database/
+[Everything I Never Wanted to Know About Collation]:https://littlekendra.com/2020/07/16/everything-i-never-wanted-to-know-about-collation-14-minute-video-podcast-episode/
+[Comparing SSIS And Azure Data Factory]:https://www.timmitchell.net/post/2020/07/16/comparing-ssis-and-azure-data-factory/
