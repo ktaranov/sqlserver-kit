@@ -264,11 +264,12 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Power BI feedback](https://ideas.powerbi.com/forums/265200-power-bi-ideas)
    - [SSMS feedback](https://social.msdn.microsoft.com/Forums/en-US/home?forum=sqltools)
    - [SQL Server Data Tools feedback](https://social.msdn.microsoft.com/Forums/en-US/home?forum=ssdt&filter=alltypes&sort=lastpostdesc)
- - Social, Forum and Messenger SQL Server Groups <a id="sql-social"></a>
+ - Social, Forum and Messenger SQL Server Groups <a id="social"></a>
    - [SQLServerCentral Forum](http://www.sqlservercentral.com/Forums/) (more than 10^6 People)
    - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 900 People)
    - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 90 People)
-   - [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
+   - [Twitter #SQLServer](https://twitter.com/hashtag/SQLServer), [Twitter #SQLFamily](https://twitter.com/hashtag/SQLFamily), [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
+   - Reddit – [`/r/sqlserver`](https://www.reddit.com/r/SQLServer/), ['/r/sql`](https://www.reddit.com/r/SQL/), and ['/r/database`](https://www.reddit.com/r/Database/)
    - [SQL.ru SQL Server Forum](http://www.sql.ru/forum/microsoft-sql-server) (more than 10^5 People, Russian)
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
@@ -277,6 +278,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [PowerBI telegram chat](https://t.me/PBI_Rus) (295 People, Russian)
    - [PostgesSQL telegram chat](https://t.me/pgsql) (2823 People, Russian)
    - [DBA telegram chat](https://t.me/dba_ru) (1389 People, Russian)
+   - 
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
