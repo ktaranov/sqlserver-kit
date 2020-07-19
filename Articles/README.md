@@ -1131,6 +1131,9 @@ Articles types:
 | [What If You Really DO Need to Shrink a Database?]                                                                      | Brent Ozar                               | 2020-07-14 | [DBA]       |
 | [Everything I Never Wanted to Know About Collation]                                                                     | Kendra Little                            | 2020-07-16 | [DBA][DEV]  |
 | [Comparing SSIS And Azure Data Factory]                                                                                 | Tim Mitchell                             | 2020-07-16 | [AZ][SSIS]  |
+| [sp_Blitz for All Servers]                                                                                              | Garry Bargsley                           | 2020-07-14 | [DBA]       |
+| [Where is the SQL Server Community Networking Online?]                                                                  | Brent Ozar                               | 2020-07-13 | [DBA][DEV]  |
+| [Make the most out of your Azure Disks using Storage Pools]                                                             | Roberto Marras                           | 2020-07-01 | [AZ][DBA]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2237,3 +2240,6 @@ Articles types:
 [What If You Really DO Need to Shrink a Database?]:https://www.brentozar.com/archive/2020/07/what-if-you-really-do-need-to-shrink-a-database/
 [Everything I Never Wanted to Know About Collation]:https://littlekendra.com/2020/07/16/everything-i-never-wanted-to-know-about-collation-14-minute-video-podcast-episode/
 [Comparing SSIS And Azure Data Factory]:https://www.timmitchell.net/post/2020/07/16/comparing-ssis-and-azure-data-factory/
+[sp_Blitz for All Servers]:https://garrybargsley.com/2020/07/14/sp_blitz-for-all-servers/
+[Where is the SQL Server Community Networking Online?]:https://www.brentozar.com/archive/2020/07/where-is-the-sql-server-community-networking-online/
+[Make the most out of your Azure Disks using Storage Pools]:https://blog.coeo.com/make-the-most-out-of-your-azure-disks-using-storage-pools
