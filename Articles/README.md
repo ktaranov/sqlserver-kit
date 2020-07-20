@@ -1134,6 +1134,14 @@ Articles types:
 | [sp_Blitz for All Servers]                                                                                              | Garry Bargsley                           | 2020-07-14 | [DBA]       |
 | [Where is the SQL Server Community Networking Online?]                                                                  | Brent Ozar                               | 2020-07-13 | [DBA][DEV]  |
 | [Make the most out of your Azure Disks using Storage Pools]                                                             | Roberto Marras                           | 2020-07-01 | [AZ][DBA]   |
+| [SQL Server High Availability Solutions on Azure VMs]                                                                   | Marco Obinu                              | 2020-07-12 | [AZ][DBA]   |
+| [How to Get Started with SQL Server Management Studio]                                                                  | Brent Ozar                               | 2020-07-21 | [DBA][DEV]  |
+| [How should I store currency values in SQL Server?]                                                                     | Randolph West                            | 2020-06-03 | [DBA][DEV]  |
+| [Read committed isolation level doesn’t guarantee much…]                                                                | Paul Randal                              | 2010-04-17 | [DBA][DEV]  |
+| [Prevent Unexpected Failovers When Patching AGs]                                                                        | Josh Darnell                             | 2010-05-21 | [DBA]       |
+| [Updating Statistics Causes Parameter Sniffing]                                                                         | Brent Ozar                               | 2010-06-02 | [DBA][DEV]  |
+| [The Ascending Key Problem in Fact Tables– Part one: Pain!]                                                             | Thomas Kejser                            | 2011-01-01 | [DBA][DEV]  |
+| [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2243,3 +2251,10 @@ Articles types:
 [sp_Blitz for All Servers]:https://garrybargsley.com/2020/07/14/sp_blitz-for-all-servers/
 [Where is the SQL Server Community Networking Online?]:https://www.brentozar.com/archive/2020/07/where-is-the-sql-server-community-networking-online/
 [Make the most out of your Azure Disks using Storage Pools]:https://blog.coeo.com/make-the-most-out-of-your-azure-disks-using-storage-pools
+[SQL Server High Availability Solutions on Azure VMs]:https://www.brentozar.com/archive/2020/07/where-is-the-sql-server-community-networking-online/
+[How to Get Started with SQL Server Management Studio]:https://www.brentozar.com/archive/2020/07/how-to-get-started-with-sql-server-management-studio/
+[How should I store currency values in SQL Server?]:https://bornsql.ca/blog/how-should-i-store-currency-values-in-sql-server/
+[Read committed isolation level doesn’t guarantee much…]:https://www.sqlskills.com/blogs/paul/read-committed-doesnt-guarantee-much/
+[Prevent Unexpected Failovers When Patching AGs]:https://joshthecoder.com/2020/05/21/prevent-unexpected-failovers-when-patching-ags.html
+[Updating Statistics Causes Parameter Sniffing]:https://www.brentozar.com/archive/2020/06/updating-statistics-causes-parameter-sniffing/
+[The Ascending Key Problem in Fact Tables– Part one: Pain!]:https://kejserbi.wordpress.com/2011/07/01/the-ascending-key-problem-in-fact-tables-part-one-pain/
