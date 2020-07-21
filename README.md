@@ -150,6 +150,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [BornSQL Blog](https://bornsql.ca/blog/)
     - [Kevin Chant Blog](https://www.kevinrchant.com/)
     - [SQLBlog.org](https://sqlblog.org)
+    - [Idera SQL Server Blog](https://community.idera.com/tags/SQL%2bServer)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -278,7 +279,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [PowerBI telegram chat](https://t.me/PBI_Rus) (295 People, Russian)
    - [PostgesSQL telegram chat](https://t.me/pgsql) (2823 People, Russian)
    - [DBA telegram chat](https://t.me/dba_ru) (1389 People, Russian)
-   - 
+   - [SQLTeam SQL Server Forum](https://forums.sqlteam.com/)
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
