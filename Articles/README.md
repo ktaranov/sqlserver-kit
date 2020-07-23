@@ -1142,6 +1142,10 @@ Articles types:
 | [Updating Statistics Causes Parameter Sniffing]                                                                         | Brent Ozar                               | 2010-06-02 | [DBA][DEV]  |
 | [The Ascending Key Problem in Fact Tables– Part one: Pain!]                                                             | Thomas Kejser                            | 2011-01-01 | [DBA][DEV]  |
 | [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DBA][DEV]  |
+| [Are Statistics Being Used for inserted and deleted tables and table variables?]                                        | Deborah Melkin                           | 2020-05-05 | [DBA][DEV]  |
+| [Tackling Imperial and US Customary Measurements in Databases]                                                          | Phil Factor                              | 2020-05-06 | [DBA][DEV]  |
+| [In-Memory OLTP Best Practices – Part 1]                                                                                | Jon Guerin, Daniel Taylor                | 2020-03-11 | [DBA][DEV]  |
+| [In-Memory OLTP Best Practices – Part 2]                                                                                | Jon Guerin, Daniel Taylor                | 2020-05-06 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2258,3 +2262,7 @@ Articles types:
 [Prevent Unexpected Failovers When Patching AGs]:https://joshthecoder.com/2020/05/21/prevent-unexpected-failovers-when-patching-ags.html
 [Updating Statistics Causes Parameter Sniffing]:https://www.brentozar.com/archive/2020/06/updating-statistics-causes-parameter-sniffing/
 [The Ascending Key Problem in Fact Tables– Part one: Pain!]:https://kejserbi.wordpress.com/2011/07/01/the-ascending-key-problem-in-fact-tables-part-one-pain/
+[Are Statistics Being Used for inserted and deleted tables and table variables?]:https://community.idera.com/database-tools/blog/b/community_blog/posts/are-statistics-being-used
+[Tackling Imperial and US Customary Measurements in Databases]:https://www.red-gate.com/simple-talk/blogs/tackling-imperial-and-us-customary-measurements-in-databases/
+[In-Memory OLTP Best Practices – Part 1]:https://devblogs.microsoft.com/premier-developer/in-memory-oltp-best-practices-part-1/
+[In-Memory OLTP Best Practices – Part 2]:https://devblogs.microsoft.com/premier-developer/in-memory-oltp-best-practices-part-2/
