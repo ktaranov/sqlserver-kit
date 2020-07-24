@@ -280,6 +280,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [PostgesSQL telegram chat](https://t.me/pgsql) (2823 People, Russian)
    - [DBA telegram chat](https://t.me/dba_ru) (1389 People, Russian)
    - [SQLTeam SQL Server Forum](https://forums.sqlteam.com/)
+   - [Red Gate SQL Server Forum](https://forum.red-gate.com/)
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
