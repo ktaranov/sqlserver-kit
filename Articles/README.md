@@ -1146,6 +1146,11 @@ Articles types:
 | [Tackling Imperial and US Customary Measurements in Databases]                                                          | Phil Factor                              | 2020-05-06 | [DBA][DEV]  |
 | [In-Memory OLTP Best Practices – Part 1]                                                                                | Jon Guerin, Daniel Taylor                | 2020-03-11 | [DBA][DEV]  |
 | [In-Memory OLTP Best Practices – Part 2]                                                                                | Jon Guerin, Daniel Taylor                | 2020-05-06 | [DBA][DEV]  |
+| [Things I Wished More Developers Knew About Databases]                                                                  | Jaana Dogan                              | 2020-04-21 | [DBA][DEV]  |
+| [Online migrations at scale]                                                                                            | Jacqueline Xu                            | 2017-02-02 | [DBA]       |
+| [The Dirty (Baker’s) Dozen of SQL Server Technical Debt]                                                                | Andy Jones                               | 2020-06-01 | [DBA][DEV]  |
+| [15 SQL Server Performance Counters to Monitor In 2020]                                                                 | Allen White                              | 2020-05-05 | [DBA][DEV]  |
+| [Pulling Group By Above a Join]                                                                                         | Paul White                               | 2020-05-31 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2266,3 +2271,8 @@ Articles types:
 [Tackling Imperial and US Customary Measurements in Databases]:https://www.red-gate.com/simple-talk/blogs/tackling-imperial-and-us-customary-measurements-in-databases/
 [In-Memory OLTP Best Practices – Part 1]:https://devblogs.microsoft.com/premier-developer/in-memory-oltp-best-practices-part-1/
 [In-Memory OLTP Best Practices – Part 2]:https://devblogs.microsoft.com/premier-developer/in-memory-oltp-best-practices-part-2/
+[Things I Wished More Developers Knew About Databases]:https://medium.com/@rakyll/things-i-wished-more-developers-knew-about-databases-2d0178464f78
+[Online migrations at scale]:https://stripe.com/blog/online-migrations
+[The Dirty (Baker’s) Dozen of SQL Server Technical Debt]:https://blog.coeo.com/the-dirty-bakers-dozen-of-sql-server-technical-debt
+[15 SQL Server Performance Counters to Monitor In 2020]:https://www.sentryone.com/blog/allenwhite/sql-server-performance-counters-to-monitor
+[Pulling Group By Above a Join]:https://www.sql.kiwi/2020/05/pulling-group-by-above-join.html
