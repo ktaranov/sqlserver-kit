@@ -1151,6 +1151,12 @@ Articles types:
 | [The Dirty (Baker’s) Dozen of SQL Server Technical Debt]                                                                | Andy Jones                               | 2020-06-01 | [DBA][DEV]  |
 | [15 SQL Server Performance Counters to Monitor In 2020]                                                                 | Allen White                              | 2020-05-05 | [DBA][DEV]  |
 | [Pulling Group By Above a Join]                                                                                         | Paul White                               | 2020-05-31 | [DBA][DEV]  |
+| [SQLskills SQL101: Running out of ints and bigints]                                                                     | Paul Randal                              | 2017-10-03 | [DBA][DEV]  |
+| [Parallel Execution Plans – Branches and Threads]                                                                       | Paul White                               | 2013-10-07 | [DBA][DEV]  |
+| [Understanding and Using Parallelism in SQL Server]                                                                     | Paul White                               | 2011-03-03 | [DBA][DEV]  |
+| [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]                                     | Sean Gallardy                            | 2020-06-16 | [DBA]       |
+| [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]                                           | Brent Ozar                               | 2020-07-07 | [DBA][DEV]  |
+| [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]                                        | Brent Ozar                               | 2020-07-08 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2276,3 +2282,9 @@ Articles types:
 [The Dirty (Baker’s) Dozen of SQL Server Technical Debt]:https://blog.coeo.com/the-dirty-bakers-dozen-of-sql-server-technical-debt
 [15 SQL Server Performance Counters to Monitor In 2020]:https://www.sentryone.com/blog/allenwhite/sql-server-performance-counters-to-monitor
 [Pulling Group By Above a Join]:https://www.sql.kiwi/2020/05/pulling-group-by-above-join.html
+[SQLskills SQL101: Running out of ints and bigints]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-running-out-of-ints-and-bigints/
+[Parallel Execution Plans – Branches and Threads]:https://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
+[Understanding and Using Parallelism in SQL Server]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
+[Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]:https://www.seangallardy.com/top-asked-availability-group-questions-and-maybe-some-helpful-tidbits-as-answers/
+[The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-1-why-you-still-dont-get-accurate-estimates/
+[The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-2-how-bad-estimates-backfire-as-your-data-grows/
