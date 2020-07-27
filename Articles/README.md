@@ -1157,6 +1157,10 @@ Articles types:
 | [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]                                     | Sean Gallardy                            | 2020-06-16 | [DBA]       |
 | [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]                                           | Brent Ozar                               | 2020-07-07 | [DBA][DEV]  |
 | [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]                                        | Brent Ozar                               | 2020-07-08 | [DBA][DEV]  |
+| [Encrypting SQL Server Database Backups]                                                                                | David Fowler                             | 2018-04-04 | [DBA]       |
+| [Using Track Causality to Understand Query Execution]                                                                   | Erin Stellato                            | 2019-01-04 | [DBA][DEV]  |
+| [Understanding SQL Server Backup Types]                                                                                 | Prashanth Jayaram                        | 2018-04-19 | [B][DBA]    |
+| [Scripting the Description of Database Tables Using Extended Properties                                                 | Phil Factor                              | 2020-03-03 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -1599,7 +1603,7 @@ Articles types:
 [Overview of Encryption Tools in SQL Server]:https://matthewmcgiffen.com/2017/12/05/overview-of-encryption-tools-in-sql-server/
 [Clustered Index Uniquifier Existence and Size]:https://sqlquantumleap.com/2017/09/18/clustered-index-uniquifier-existence-and-size/
 [Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx
-[Understanding SQL Server Backups]:https://technet.microsoft.com/en-us/library/2009.07.sqlbackup.aspx
+[Understanding SQL Server Backups]:https://docs.microsoft.com/en-us/previous-versions/technet-magazine/dd822915(v=msdn.10)
 [Recovering from Disasters Using Backups]:https://technet.microsoft.com/en-us/library/ee677581.aspx
 [Simple SQL: Handling Location Datatypes]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/simple-sql-handling-location-datatypes/
 [Improve SQL Server Performance by Looking at Plan Cache (Part 1)]:https://logicalread.com/sql-server-minimize-single-use-plans-tl01/
@@ -2288,3 +2292,7 @@ Articles types:
 [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]:https://www.seangallardy.com/top-asked-availability-group-questions-and-maybe-some-helpful-tidbits-as-answers/
 [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-1-why-you-still-dont-get-accurate-estimates/
 [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-2-how-bad-estimates-backfire-as-your-data-grows/
+[Encrypting SQL Server Database Backups]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
+[Using Track Causality to Understand Query Execution]:https://sqlperformance.com/2019/01/extended-events/using-track-causality-to-understand-query-execution
+[Understanding SQL Server Backup Types]:https://www.sqlshack.com/understanding-sql-server-backup-types/
+[Scripting the Description of Database Tables Using Extended Properties]:https://www.red-gate.com/simple-talk/sql/database-delivery/scripting-description-database-tables-using-extended-properties/
