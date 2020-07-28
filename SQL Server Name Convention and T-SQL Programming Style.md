@@ -208,8 +208,10 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    CREATE TABLE MyTable (MyColumn int);
    ```
    More details [here](https://www.red-gate.com/simple-talk/opinion/editorials/why-you-shouldnt-hardcode-the-current-database-name-in-your-views-functions-and-stored-procedures/),
-   [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/) and [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification),
-   [here](https://sqlstudies.com/2020/06/22/i-created-a-table-and-sql-created-a-schema-and-a-user/).
+   [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/),
+   [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification),
+   [here](https://sqlstudies.com/2020/06/22/i-created-a-table-and-sql-created-a-schema-and-a-user/),
+   [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query).
  - Delimiters: **spaces** (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
@@ -218,7 +220,9 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - All finished expressions should have semicolon `;` at the end.
    This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
    This deprecation announcement means that you should always use semicolon terminators in new development.
-   More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/).
+   From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
+   > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
+   More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/) and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
  - All script files should end with `GO` and line break.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
@@ -385,7 +389,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     DECLARE @myGoodCharVariable      char(7);
     DECLARE @myGoodNCharVariable     nchar(10);
     ```
-    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores).
+    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/using-a-variable-length-datatype-without-explicit-length-the-whys-and-wherefores) and [here](https://sqlblog.org/2009/10/09/bad-habits-to-kick-declaring-varchar-without-length).
  - Use only [`ORIGINAL_LOGIN()`](https://docs.microsoft.com/en-us/sql/t-sql/functions/original-login-transact-sql) function because is the only function that consistently returns the actual login name that we started with regardless of impersonation.
    More details [here](https://sqlstudies.com/2015/06/24/which-user-function-do-i-use/).
  - Always use `IF` statement with `BEGIN-END` block to prevent errors with multi line statements:
