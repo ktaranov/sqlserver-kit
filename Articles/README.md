@@ -1160,7 +1160,11 @@ Articles types:
 | [Encrypting SQL Server Database Backups]                                                                                | David Fowler                             | 2018-04-04 | [DBA]       |
 | [Using Track Causality to Understand Query Execution]                                                                   | Erin Stellato                            | 2019-01-04 | [DBA][DEV]  |
 | [Understanding SQL Server Backup Types]                                                                                 | Prashanth Jayaram                        | 2018-04-19 | [B][DBA]    |
-| [Scripting the Description of Database Tables Using Extended Properties                                                 | Phil Factor                              | 2020-03-03 | [DBA][DEV]  |
+| [Scripting the Description of Database Tables Using Extended Properties]                                                | Phil Factor                              | 2020-03-03 | [DBA][DEV]  |
+| [The Table Variable in SQL Server]                                                                                      | Esat Erkec                               | 2019-12-03 | [DBA][DEV]  |
+| [Multiple Plans for an "Identical" Query]                                                                               | Aaron Bertrand                           | 2014-11-20 | [DBA][DEV]  |
+| [Another argument for stored procedures versus ORM versus Add Hoc Queries]                                              | Aaron Bertrand                           | 2013-05-17 | [DBA][DEV]  |
+| [Bad habits to kick : avoiding the schema prefix]                                                                       | Aaron Bertrand                           | 2019-09-12 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2296,3 +2300,7 @@ Articles types:
 [Using Track Causality to Understand Query Execution]:https://sqlperformance.com/2019/01/extended-events/using-track-causality-to-understand-query-execution
 [Understanding SQL Server Backup Types]:https://www.sqlshack.com/understanding-sql-server-backup-types/
 [Scripting the Description of Database Tables Using Extended Properties]:https://www.red-gate.com/simple-talk/sql/database-delivery/scripting-description-database-tables-using-extended-properties/
+[The Table Variable in SQL Server]:https://www.sqlshack.com/the-table-variable-in-sql-server/
+[Multiple Plans for an "Identical" Query]:https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query
+[Another argument for stored procedures versus ORM versus Add Hoc Queries]:https://sqlperformance.com/2013/05/t-sql-queries/another-argument-for-stored-procedures
+[Bad habits to kick : avoiding the schema prefix]:https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix
