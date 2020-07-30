@@ -1165,6 +1165,7 @@ Articles types:
 | [Multiple Plans for an "Identical" Query]                                                                               | Aaron Bertrand                           | 2014-11-20 | [DBA][DEV]  |
 | [Another argument for stored procedures versus ORM versus Add Hoc Queries]                                              | Aaron Bertrand                           | 2013-05-17 | [DBA][DEV]  |
 | [Bad habits to kick : avoiding the schema prefix]                                                                       | Aaron Bertrand                           | 2019-09-12 | [DBA][DEV]  |
+| [How not to call Hekaton natively-compiled stored procedures]                                                           | Aaron Bertrand                           | 2015-06-05 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2304,3 +2305,4 @@ Articles types:
 [Multiple Plans for an "Identical" Query]:https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query
 [Another argument for stored procedures versus ORM versus Add Hoc Queries]:https://sqlperformance.com/2013/05/t-sql-queries/another-argument-for-stored-procedures
 [Bad habits to kick : avoiding the schema prefix]:https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix
+[How not to call Hekaton natively-compiled stored procedures]:https://sqlperformance.com/2015/06/t-sql-queries/how-not-to-call-hekaton-procedures

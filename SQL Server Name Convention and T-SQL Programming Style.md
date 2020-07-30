@@ -211,7 +211,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://www.sqlserverscience.com/basics/on-default-schemas-and-search-paths/),
    [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-procedures-lack-schema-qualification),
    [here](https://sqlstudies.com/2020/06/22/i-created-a-table-and-sql-created-a-schema-and-a-user/),
-   [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query).
+   [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query),
+   [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs)
  - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
@@ -464,6 +465,8 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
  - Do not use `SET NOCOUNT OFF;` because it is default behavior
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
    More details [here](http://sqlity.net/en/984/print-vs-raiserror/) and [here](http://sqlservercode.blogspot.com/2019/01/print-disruptor-of-batch-deletes-in-sql.html).
+ - Call natively-compiled stored procedures without named parameters.
+   More details [here](https://sqlperformance.com/2015/06/t-sql-queries/how-not-to-call-hekaton-procedures).
  - All code should be self documenting
  - T-SQL code, triggers, stored procedures, functions, scripts, should have a standard comment-documentation banner:
 ```

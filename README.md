@@ -526,6 +526,7 @@ SQL Server:
      - [The Redgate Guide to SQL Server Team-based Development](https://assets.red-gate.com/products/sql-development/sql-source-control/entrypage/assets/RG_Guide_to_SQL_Server_Dev.pdf) (by Phil Factor, Grant Fritchey, Alex Kuznetsov, and Mladen Prajdić)
      - [XML Stairway](https://assets.red-gate.com/simple-talk/stairway-to-xml.pdf)
      - [119 SQL Code Smells](https://assets.red-gate.com/community/books/sql-code-smells.pdf)
+     - [High Performance Techniques for SQL Server](https://www.sentryone.com/sql-server-books) (by SentryOne)
    - SQL DBA
      - [SQL Server Internals: In-Memory OLTP](https://www.red-gate.com/library/sql-server-internals-in-memory-oltp) (by Kalen Delaney)
      - [Fundamentals Of SQL Server 2012 Replication](https://assets.red-gate.com/community/books/fundamentals-of-sql-server-2012-replication.pdf) (by Sebastian Meine)
