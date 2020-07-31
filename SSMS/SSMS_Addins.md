@@ -1,11 +1,10 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **37** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **36** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-08-19   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
 | [SqlSmash](#sqlsmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
-| [SQL Code Guard](#sql-code-guard)                     | [Red Gate SQL Code Guard]     | 2017-07-03   | 2016                 | Red Gate             | Yes          | No    |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008-2017            | Red Gate             | No           |  $369 |
 | [Red Gate SQL Source Control](#red-gate-control)      | [Red Gate SQL Source Control] | 2017-06-30   | 2012-2017            | Red Gate             | No           |  $495 |
@@ -94,25 +93,6 @@ Write maintainable SQL scripts, Understand code better and Navigate faster with 
  - Quick Info
  - Summarize Script
  - Go To Definition
-
-
-<a id="sql-code-guard"></a>
-## SQL Code Guard
-Download link: [Red Gate SQL Code Guard]<br/>
-Release date: 2017-02-17<br/>
-Support Version: 2016<br/>
-Developer: Red Gate<br/>
-Free version: Yes<br/>
-Price: No
-
-SQL Code Guard is a free solution for SQL Server that provides fast and comprehensive static analysis for T-Sql code, shows code complexity and objects dependencies.
-
- - Integration with SSMS 2016
- - Integration with Visual Studio 2012/2013
- - Checkin Policy for TFS (how to install & use)
- - Support of msbuild (how to use msbuild)
- - Command line utility (how to use command line utility).
- - API for custom tool development (demo projects can be found in SQL Code Guard folder)
 
 
 <a id="sql-search"></a>
