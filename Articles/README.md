@@ -1166,6 +1166,9 @@ Articles types:
 | [Another argument for stored procedures versus ORM versus Add Hoc Queries]                                              | Aaron Bertrand                           | 2013-05-17 | [DBA][DEV]  |
 | [Bad habits to kick : avoiding the schema prefix]                                                                       | Aaron Bertrand                           | 2019-09-12 | [DBA][DEV]  |
 | [How not to call Hekaton natively-compiled stored procedures]                                                           | Aaron Bertrand                           | 2015-06-05 | [DBA][DEV]  |
+| [A One-Slide Summary of the Differences Between TDE and Always Encrypted]                                               | Brent Ozar                               | 2020-07-31 | [SEC]       |
+| [Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]                                                     | Brent Ozar                               | 2020-07-29 | [DBA][DEV]  |
+| [Finding & Downloading Required SQL Server Updates]                                                                     | Andy Levy                                | 2020-07-21 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2306,3 +2309,6 @@ Articles types:
 [Another argument for stored procedures versus ORM versus Add Hoc Queries]:https://sqlperformance.com/2013/05/t-sql-queries/another-argument-for-stored-procedures
 [Bad habits to kick : avoiding the schema prefix]:https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix
 [How not to call Hekaton natively-compiled stored procedures]:https://sqlperformance.com/2015/06/t-sql-queries/how-not-to-call-hekaton-procedures
+[A One-Slide Summary of the Differences Between TDE and Always Encrypted]:https://www.brentozar.com/archive/2020/07/a-one-slide-summary-of-the-differences-between-tde-and-always-encrypted/
+[Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]:https://www.brentozar.com/archive/2020/07/remember-nothing-stops-a-hekaton-transaction-yeah-about-that/
+[Finding & Downloading Required SQL Server Updates]:https://flxsql.com/downloading-latest-sql-server-updates/

@@ -190,7 +190,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       9642 | An error occurred in a Service Broker/Database Mirroring transport connection endpoint, Error: %i,     … | [9105_link1][45]                                    |
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1],[10314_link2]                         |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                                   |
-|      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39]                                   |
+|      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39],[10794_link2]                     |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                                   |
 |      12349 | Operation not supported for memory optimized tables having columnstore index.                            | [12349_link1][41]                                   |
 |      13609 | JSON text is not properly formatted. Unexpected character '%lc' is found at position %d.                 | [13609_link1]                                       |
@@ -343,6 +343,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [9002_link3]:https://www.sqlserverscience.com/internals/adding-new-transaction-log-file-when-existing-log-full/
 [10314_link1]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-clr-assembly-failure-after-an-ag-failover/
 [10314_link2]:https://www.sqlservercentral.com/articles/do-not-set-trustwority-on-for-the-ssisdb-catalog
+[10794_link2]:https://www.brentozar.com/archive/2020/07/remember-nothing-stops-a-hekaton-transaction-yeah-about-that/
 [13609_link1]:https://itsalljustelectrons.blogspot.com/2019/05/Splitting-Strings-With-OPENJSON.html
 [13570_link1]:https://www.mssqltips.com/sqlservertip/5281/sql-server-replication-for-temporal-tables/
 [15002_link1]:https://blogs.msdn.microsoft.com/luti/2017/05/17/sql-server-offline-after-applying-service-pack/
