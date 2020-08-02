@@ -1169,6 +1169,7 @@ Articles types:
 | [A One-Slide Summary of the Differences Between TDE and Always Encrypted]                                               | Brent Ozar                               | 2020-07-31 | [SEC]       |
 | [Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]                                                     | Brent Ozar                               | 2020-07-29 | [DBA][DEV]  |
 | [Finding & Downloading Required SQL Server Updates]                                                                     | Andy Levy                                | 2020-07-21 | [DBA]       |
+| [SQLskills SQL101: Why do some wait types need to be ignored?]                                                          | Paul Randal                              | 2018-05-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2312,3 +2313,4 @@ Articles types:
 [A One-Slide Summary of the Differences Between TDE and Always Encrypted]:https://www.brentozar.com/archive/2020/07/a-one-slide-summary-of-the-differences-between-tde-and-always-encrypted/
 [Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]:https://www.brentozar.com/archive/2020/07/remember-nothing-stops-a-hekaton-transaction-yeah-about-that/
 [Finding & Downloading Required SQL Server Updates]:https://flxsql.com/downloading-latest-sql-server-updates/
+[SQLskills SQL101: Why do some wait types need to be ignored?]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-do-some-wait-types-need-to-be-ignored/

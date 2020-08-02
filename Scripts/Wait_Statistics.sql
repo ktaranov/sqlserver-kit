@@ -1,8 +1,13 @@
 /*
-Author: Paul Randal
-Original link: https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
-Created Date: 2010-12-09
-Modified Date: 2018-06-13
+<documentation>
+  <summary>Generate complex query plan</summary>
+  <returns>Reads and writes per database.</returns>
+  <created>2010-12-09 by Paul Randal</created>
+  <modified>2019-02-26 by Paul Randal</modified>
+  <version>1.1</version>
+  <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Wait_Statistics.sql</sourceLink>
+  <originalLink>https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/</originalLink>
+</documentation>
 */
 
 WITH [Waits] AS
@@ -62,6 +67,7 @@ WITH [Waits] AS
         N'PARALLEL_REDO_TRAN_LIST', -- https://www.sqlskills.com/help/waits/PARALLEL_REDO_TRAN_LIST
         N'PARALLEL_REDO_WORKER_SYNC', -- https://www.sqlskills.com/help/waits/PARALLEL_REDO_WORKER_SYNC
         N'PARALLEL_REDO_WORKER_WAIT_WORK', -- https://www.sqlskills.com/help/waits/PARALLEL_REDO_WORKER_WAIT_WORK
+        N'PREEMPTIVE_OS_FLUSHFILEBUFFERS', -- https://www.sqlskills.com/help/waits/PREEMPTIVE_OS_FLUSHFILEBUFFERS 
         N'PREEMPTIVE_XE_GETTARGETSTATE', -- https://www.sqlskills.com/help/waits/PREEMPTIVE_XE_GETTARGETSTATE
         N'PWAIT_ALL_COMPONENTS_INITIALIZED', -- https://www.sqlskills.com/help/waits/PWAIT_ALL_COMPONENTS_INITIALIZED
         N'PWAIT_DIRECTLOGCONSUMER_GETNEXT', -- https://www.sqlskills.com/help/waits/PWAIT_DIRECTLOGCONSUMER_GETNEXT
@@ -85,10 +91,12 @@ WITH [Waits] AS
         N'SLEEP_TASK', -- https://www.sqlskills.com/help/waits/SLEEP_TASK
         N'SLEEP_TEMPDBSTARTUP', -- https://www.sqlskills.com/help/waits/SLEEP_TEMPDBSTARTUP
         N'SNI_HTTP_ACCEPT', -- https://www.sqlskills.com/help/waits/SNI_HTTP_ACCEPT
+        N'SOS_WORK_DISPATCHER', -- https://www.sqlskills.com/help/waits/SOS_WORK_DISPATCHER
         N'SP_SERVER_DIAGNOSTICS_SLEEP', -- https://www.sqlskills.com/help/waits/SP_SERVER_DIAGNOSTICS_SLEEP
         N'SQLTRACE_BUFFER_FLUSH', -- https://www.sqlskills.com/help/waits/SQLTRACE_BUFFER_FLUSH
         N'SQLTRACE_INCREMENTAL_FLUSH_SLEEP', -- https://www.sqlskills.com/help/waits/SQLTRACE_INCREMENTAL_FLUSH_SLEEP
         N'SQLTRACE_WAIT_ENTRIES', -- https://www.sqlskills.com/help/waits/SQLTRACE_WAIT_ENTRIES
+        N'VDI_CLIENT_OTHER', -- https://www.sqlskills.com/help/waits/VDI_CLIENT_OTHER
         N'WAIT_FOR_RESULTS', -- https://www.sqlskills.com/help/waits/WAIT_FOR_RESULTS
         N'WAITFOR', -- https://www.sqlskills.com/help/waits/WAITFOR
         N'WAITFOR_TASKSHUTDOWN', -- https://www.sqlskills.com/help/waits/WAITFOR_TASKSHUTDOWN
