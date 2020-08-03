@@ -13,10 +13,10 @@ For running any of these scripts, please note the following:
 - The script will automatically create the folder where the downloaded PDB files are stored.
 
 Please click on one of the links below depending on the major version of SQL Server that you are looking at:
-- [SQL Server 2019](SQL-Server-2019)
-- [SQL Server 2017](SQL-Server-2017)
-- [SQL Server 2016](SQL-Server-2016)
-- [SQL Server 2014](SQL-Server-2014)
-- [SQL Server 2012](SQL-Server-2012)
-- [SQL Server 2008 R2](SQL-Server-2008-R2)
-- [SQL Server 2008](SQL-Server-2008)
+- [SQL Server 2019](SQL-Server-2019.md)
+- [SQL Server 2017](SQL-Server-2017.md)
+- [SQL Server 2016](SQL-Server-2016.md)
+- [SQL Server 2014](SQL-Server-2014.md)
+- [SQL Server 2012](SQL-Server-2012.md)
+- [SQL Server 2008 R2](SQL-Server-2008-R2.md)
+- [SQL Server 2008](SQL-Server-2008.md)
