@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**611** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**613** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -285,7 +285,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **611 trace flags**
+Summary: **613 trace flags**
 
 
 <a id="-1"></a>
@@ -4916,6 +4916,30 @@ Link: [SQL Server 2017: Adaptive Join Internals]<br />
 Scope: ?
 
 
+<a id="9424"></a>
+#### Trace Flag: 9424
+**Undocumented trace flag**<br />
+Function: Sets the number of splits to four.
+The SQL Server 2019 query optimizer has a new trick available to improve the performance of large aggregations.
+The new exploration abilities are encoded in two new closely-related optimizer rules: `GbAggSplitToRanges` and `SelOnGbAggSplitToRanges`.
+The extended event `query_optimizer_batch_mode_agg_split is` provided to track when this new optimization is considered.
+The description of this event is: Occurs when the query optimizer detects batch mode aggregation is likely to spill and tries to split it into multiple smaller aggregations.<br />
+Link: [SQL Server 2019 Aggregate Splitting]<br />
+Scope: session or query
+
+
+<a id="9426"></a>
+#### Trace Flag: 9426
+**Undocumented trace flag**<br />
+Function: Disables the aggregate splitting feature.
+The SQL Server 2019 query optimizer has a new trick available to improve the performance of large aggregations.
+The new exploration abilities are encoded in two new closely-related optimizer rules: `GbAggSplitToRanges` and `SelOnGbAggSplitToRanges`.
+The extended event `query_optimizer_batch_mode_agg_split is` provided to track when this new optimization is considered.
+The description of this event is: Occurs when the query optimizer detects batch mode aggregation is likely to spill and tries to split it into multiple smaller aggregations.<br />
+Link: [SQL Server 2019 Aggregate Splitting]<br />
+Scope: session or query
+
+
 <a id="9447"></a>
 #### Trace Flag: 9447
 **Undocumented trace flag**<br />
@@ -5477,3 +5501,4 @@ Scope: global only
 [A SQL Server DBA myth a day: (15/30) checkpoint only writes pages from committed transactions]:http://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-1530-checkpoint-only-writes-pages-from-committed-transactions/
 [SQL Server 2019 Aggressive Clustered Columnstore Cleanup]:https://www.tarynpivots.com/post/aggressive-clustered-columnstore-cleanup/
 [KB153096]:https://support.microsoft.com/kb/153096
+[SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
