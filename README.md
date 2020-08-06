@@ -48,7 +48,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [SQL Server Name Convention and T-SQL Programming Style](/SQL%20Server%20Name%20Convention%20and%20T-SQL%20Programming%20Style.md)
  - [SQL Server Licensing](/SQL%20Server%20Licensing.md)
  - [SQL Server People](/SQL%20Server%20People.md 'Most Valuable SQL Server professionals')
- - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 610 Trace Flags') (**Complete list - 610 trace flags**)
+ - [SQL Server Trace Flag](/SQL%20Server%20Trace%20Flag.md 'Complete list - 613 Trace Flags') (**Complete list - 613 trace flags**)
  - [SQL Server Version](/SQL%20Server%20Version.md 'List of all Microsoft SQL Sever versions') (**Complete list - from SQL Server 1.0 to SQL Server 2019**)
  - [Articles](/Articles)
  - [CLR procedures](/CLR)
@@ -364,6 +364,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [ASSP - Analysis Services Stored Procedure Project](https://asstoredprocedures.github.io/ASStoredProcedures/) (by Darren Gosbell)
     - [Data-Blogger-Resource-Kit - Includes resources for use by bloggers, microbloggers, vloggers, and origami enthusiasts who focus on SQL Server](https://github.com/amtwo/Data-Blogger-Resource-Kit) (by Andy Andy Mallon)
     - [SQL-Server-Multi-Thread - a framework to do multi-threading in T-SQL using SQL Server Agent jobs.](https://github.com/jobbish-sql/SQL-Server-Multi-Thread) (by )
+    - [SQL Server and Azure SQL Labs and Workshops](https://microsoft.github.io/sqlworkshops/) (by Microsoft)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
@@ -562,6 +563,7 @@ SQL Server:
  - [Cloud Analytics with Microsoft Azure](https://azure.microsoft.com/en-us/resources/cloud-analytics-with-microsoft-azure/) (by Has Altaiar, Jack Lee, Michael Peña)
  - [Snowflake for SQL Server Users Part 1 – Core Concepts](https://sqldownunder.blob.core.windows.net/public/SnowflakeForSQLServerUsers_Part_1_CoreConcepts%20-%20for%20SDU%20Insiders.pdf) (by Dr Greg Low)
  - [The Fundamental Guide To Sql Query Optimization](https://www.quest.com/whitepapert/the-fundamental-guide-to-sql-query-optimization8143740/) (by Janis Griffin)
+ - [An Expert Guide To Sql Server Performance Tuning](https://www.quest.com/whitepaper/an-expert-guide-to-sql-server-performance-tuning8143874/) (by Brent Ozar, Pinal Dave, Janis Griffin)
  
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)
