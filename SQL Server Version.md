@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RTM] then [CU6 KB44563110]                              | 15.0.2070.41<br/>15.0.4053.23                | 2019-11-04<br/>2020-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [CU6 KB4563110]                               | 15.0.2070.41<br/>15.0.4053.23                | 2019-11-04<br/>2020-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU21 KB4557397]                              | 14.0.1000.169<br/>14.0.3335.7                | 2017-10-02<br/>2020-07-01                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU13 KB4549825]                              | 13.0.5026.0<br/>13.0.5820.21                 | 2018-04-24<br/>2020-05-28                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -267,7 +267,7 @@ Great thanks Scott Hanselman for Original post: [Download SQL Server Express](ht
   - [Advanced Services x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe)
   - [Advanced Services x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe)
 - [Download SQL Server 2012 Express](http://www.microsoft.com/download/details.aspx?id=29062)
-- [Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=35579)<br />
+- [Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=35579)
   - You likely just want SQL Server 2012 Express with Tools. This download includes SQL Management Studio:
   - [SQL Server 2012 Express x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPRWT_x64_ENU.exe)
   - Here's just SQL Server 2012 Management Studio:
@@ -1928,7 +1928,7 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 [915306 FIX: The merge agent fails and a "permission denied" error message is logged when you synchronize a SQL Server 2005-based merge publication]:http://support.microsoft.com/kb/915306
 [915112 FIX: Error message when an ADO.NET-connected application tries to reuse a connection from the connection pool in SQL Server 2005: "The request failed to run because the batch is aborted"]:http://support.microsoft.com/kb/915112
 [913494 FIX: The merge agent does not use a specified custom user update to handle conflicting UPDATE statements in SQL Server 2005]:http://support.microsoft.com/kb/913494
-[913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005]:http://support.microsoft.com/kb/913941
+[913941 FIX: A SQL Server login may have more permissions when you log on to an instance of SQL Server 2005]:https://web.archive.org/web/20170712163528/https://support.microsoft.com/en-us/help/913494
 
 
 ## Microsoft SQL Server 2000 Builds
