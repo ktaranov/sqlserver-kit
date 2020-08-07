@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RTM] then [CU5 KB4552255]                               | 15.0.2070.41<br/>15.0.4043.16                | 2019-11-04<br/>2020-06-22                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [CU5 KB44563110]                              | 15.0.2070.41<br/>15.0.4053.23                | 2019-11-04<br/>2020-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU21 KB4557397]                              | 14.0.1000.169<br/>14.0.3335.7                | 2017-10-02<br/>2020-07-01                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU13 KB4549825]                              | 13.0.5026.0<br/>13.0.5820.21                 | 2018-04-24<br/>2020-05-28                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -138,7 +138,7 @@ Profits:
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
 [Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
-[CU5 KB4552255]:https://support.microsoft.com/help/4552255
+[CU6 KB4563110]:https://support.microsoft.com/help/4563110
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU21 KB4557397]:https://support.microsoft.com/help/4557397
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
@@ -177,7 +177,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | Direct x64 Download Link        | File Name                                                         | Release Date | Build Number  | Size, MB | SHA1                                     |
 |:--------------------------------|:------------------------------------------------------------------|:-------------|--------------:|---------:|------------------------------------------|
 | [SQL Server 2019 RTM]           | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
-| [SQL Server 2019 CU5]           | SQLServer2019-KB4552255-x64.exe                                   | 2020-06-22   | 15.0.4043.16  |      603 | c6a0778132b00ced30f06ee61875d58d7a7a70b2 |
+| [SQL Server 2019 CU6]           | SQLServer2019-KB4563110-x64.exe                                   | 2020-08-04   | 15.0.4053.23  |      604 | 505c6d0a8773909e87a0456978ffb43449a92309 |
 | [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU21]          | SQLServer2017-KB4557397-x64.exe                                   | 2020-07-01   | 14.0.3335.7   |      533 | e91bfa33a34accf82a0c374c9e8b7d0ce3b7ce05 |
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
@@ -197,7 +197,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 **For downloading distributive for SQL Server 2008 R2 and SQL Server 2008 you must have MSDN subscription, see [SQL Server 2008 R2] and [SQL Server 2008] links.**
 
 [SQL Server 2019 RTM]:https://go.microsoft.com/fwlink/?linkid=866664
-[SQL Server 2019 CU5]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4552255-x64.exe
+[SQL Server 2019 CU6]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4563110-x64.exe
 [SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
 [SQL Server 2017 CU21]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4557397-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
@@ -224,13 +224,15 @@ For downloading your copy SQL Server Developer Edition you just need to join the
 
 | Edition\Direct Download Link                                                | Release Date | File name                                                                    | Size, Mb | SHA1                                     |
 |-----------------------------------------------------------------------------|--------------|------------------------------------------------------------------------------|---------:|------------------------------------------|
-| SQL Server 2017 Developer (x64) - DVD (English)                             | 2017-10-02   | en_sql_server_2017_developer_x64_dvd_11296168.iso                            |     1475 | 0280FF6C1447D287A6BD3B86B81E459FE252D17A |
-| SQL Server 2016 Developer with Service Pack 2 (x64) - DVD (English)         | 2018-05-22   | en_sql_server_2016_developer_with_service_pack_2_x64_dvd_12194995.iso        |     2800 | 74279286C2ABFBA9E9FF6DBEE60B71669BD234D2 |
-| SQL Server 2016 Developer (x64) - DVD (English)                             | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             |     2100 | 1B23982FE56DF3BFE0456BDF0702612EB72ABF75 |
-| SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso |     3025 | BFEE1F300C39638DA0D2CD594636698C6207C852 |
-| SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso |     2462 | ED3C70507A73BCC63D67CFA272CD849B9418A18E |
-| SQL Server 2014 Developer Edition (x64) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     |     2486 | F73F430F55A71DA219FC7257A3A28E8FC142530F |
-| SQL Server 2014 Developer Edition (x86) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     |     2039 | 395B35FD80AA959B02B0C399DA1BB0C020DB6310 |
+| SQL Server 2019 Developer (x64) - DVD (English)                             | 2019-11-05   | en_sql_server_2019_developer_x64_dvd_baea4195.iso                            |     1367 | 22974e466987d7d4659437aab06ac0798657c700 |
+| SQL Server 2017 Developer (x64) - DVD (English)                             | 2017-10-02   | en_sql_server_2017_developer_x64_dvd_11296168.iso                            |     1475 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
+| SQL Server 2016 Developer with Service Pack 2 (x64) - DVD (English)         | 2018-05-22   | en_sql_server_2016_developer_with_service_pack_2_x64_dvd_12194995.iso        |     2800 | 74279286c2abfba9e9ff6dbee60b71669bd234d2 |
+| SQL Server 2016 Developer with Service Pack 1 (x64) - DVD (English)         | 2016-11-16   | en_sql_server_2016_developer_with_service_pack_1_x64_dvd_9548071.iso         |     2590 | b12af2cc5112f22a784a14f8d32b49ee56d296b3 |
+| SQL Server 2016 Developer (x64) - DVD (English)                             | 2016-06-01   | en_sql_server_2016_developer_x64_dvd_8777069.iso                             |     2100 | 1b23982fe56df3bfe0456bdf0702612eb72abf75 |
+| SQL Server 2014 Developer Edition with Service Pack 1 (x64) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x64_dvd_6668542.iso |     3025 | bfee1f300c39638da0d2cd594636698c6207c852 |
+| SQL Server 2014 Developer Edition with Service Pack 1 (x86) - DVD (English) | 2015-05-21   | en_sql_server_2014_developer_edition_with_service_pack_1_x86_dvd_6668541.iso |     2462 | ed3c70507a73bcc63d67cfa272cd849b9418a18e |
+| SQL Server 2014 Developer Edition (x64) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x64_dvd_3940406.iso                     |     2486 | f73f430f55a71da219fc7257a3a28e8fc142530f |
+| SQL Server 2014 Developer Edition (x86) - DVD (English)                     | 2014-04-01   | en_sql_server_2014_developer_edition_x86_dvd_3938200.iso                     |     2039 | 395b35fd80aa959b02b0c399da1bb0c020db6310 |
 
 
 ## SQL Server Express direct download links
@@ -238,48 +240,35 @@ For downloading your copy SQL Server Developer Edition you just need to join the
 Original post written by Scott Hanselman: http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx<br />
 Official Microsoft SQL Server Express page: https://www.microsoft.com/server-cloud/products/sql-server-editions/sql-server-express.aspx
 
-
-### [Download SQL Server 2017 Express](https://www.microsoft.com/download/details.aspx?id=55994)
-
-### [Download SQL Server 2016 Express](https://www.microsoft.com/download/details.aspx?id=52679)
-
-
-### [Download SQL Server 2014 Express](http://www.microsoft.com/download/details.aspx?id=42299)
-[Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=46697)<br />
-You likely just want SQL Server 2014 Express with Tools. This download includes SQL Management Studio:
- - [SQL Server 2014 Express x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2064BIT/SQLEXPRWT_x64_ENU.exe)
- - [SQL Server 2014 Express x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2032BIT/SQLEXPRWT_x86_ENU.exe)
-
-Here's just SQL Server 2014 Management Studio:
- - [SQL Management Studio x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2064BIT/SQLManagementStudio_x64_ENU.exe)
- - [SQL Management Studio x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2032BIT/SQLManagementStudio_x86_ENU.exe)
-
-SQL Server 2014 Express with Advanced Services:
- - [Advanced Services x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe)
- - [Advanced Services x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe)
-
-
-### [Download SQL Server 2012 Express](http://www.microsoft.com/download/details.aspx?id=29062)
-[Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=35579)<br />
-You likely just want SQL Server 2012 Express with Tools. This download includes SQL Management Studio:
- - [SQL Server 2012 Express x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPRWT_x64_ENU.exe)
-
-Here's just SQL Server 2012 Management Studio:
- - [SQL Management Studio x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe)
- - [SQL Management Studio x86](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe)
-
-
-### [Download SQL Server 2008 Express R2 SP2](http://www.microsoft.com/download/details.aspx?id=30438)
-You likely just want SQL Server 2008 Express with Tools. This download includes SQL Management Studio:
- - [SQL Server 2008 Express x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x64_ENU.exe)
- - [SQL Server 2008 Express x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x86_ENU.exe)
-
-Here's just SQL Server 2008 Management Studio:
- - [SQL Management Studio x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x64_ENU.exe)
- - [SQL Management Studio x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x86_ENU.exe)
-
-
-### [Download SQL Server 2005 Express](https://www.microsoft.com/download/details.aspx?id=21844)
+- [Download SQL Server 2019 Express](https://www.microsoft.com/Download/details.aspx?id=101064)
+- [Download SQL Server 2017 Express](https://www.microsoft.com/download/details.aspx?id=55994)
+- [Download SQL Server 2016 Express](https://www.microsoft.com/download/details.aspx?id=52679)
+- [Download SQL Server 2014 Express](http://www.microsoft.com/download/details.aspx?id=42299)
+- [Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=46697)<br />
+  - You likely just want SQL Server 2014 Express with Tools. This download includes SQL Management Studio:
+  - [SQL Server 2014 Express x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2064BIT/SQLEXPRWT_x64_ENU.exe)
+  - [SQL Server 2014 Express x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2032BIT/SQLEXPRWT_x86_ENU.exe)
+  - Here's just SQL Server 2014 Management Studio:
+  - [SQL Management Studio x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2064BIT/SQLManagementStudio_x64_ENU.exe)
+  - [SQL Management Studio x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/MgmtStudio%2032BIT/SQLManagementStudio_x86_ENU.exe)
+  - SQL Server 2014 Express with Advanced Services:
+  - [Advanced Services x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2064BIT/SQLEXPRADV_x64_ENU.exe)
+  - [Advanced Services x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAdv%2032BIT/SQLEXPRADV_x86_ENU.exe)
+- [Download SQL Server 2012 Express](http://www.microsoft.com/download/details.aspx?id=29062)
+- [Download Microsoft SQL Server 2012 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=35579)<br />
+  - You likely just want SQL Server 2012 Express with Tools. This download includes SQL Management Studio:
+  - [SQL Server 2012 Express x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPRWT_x64_ENU.exe)
+  - Here's just SQL Server 2012 Management Studio:
+  - [SQL Management Studio x64](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe)
+  - [SQL Management Studio x86](http://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe)
+- [Download SQL Server 2008 Express R2 SP2](http://www.microsoft.com/download/details.aspx?id=30438)
+  - You likely just want SQL Server 2008 Express with Tools. This download includes SQL Management Studio:
+  - [SQL Server 2008 Express x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x64_ENU.exe)
+  - [SQL Server 2008 Express x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLEXPRWT_x86_ENU.exe)
+  - Here's just SQL Server 2008 Management Studio:
+  - [SQL Management Studio x64](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x64_ENU.exe)
+  - [SQL Management Studio x86](http://download.microsoft.com/download/0/4/B/04BE03CD-EAF3-4797-9D8D-2E08E316C998/SQLManagementStudio_x86_ENU.exe)
+- [Download SQL Server 2005 Express](https://www.microsoft.com/download/details.aspx?id=21844)
 
 
 ## Internal Database Version and Compatibility Level
@@ -416,15 +405,16 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (RTM-CU5) (KB4552255) - 15.0.4043.16 (X64)
-   Jun 10 2020 18:25:25
+Microsoft SQL Server 2019 (RTM-CU6) (KB4563110) - 15.0.4053.23 (X64)
+   Jul 25 2020 11:26:55
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.4043.16  | 2019.150.4043.16  | RTM    | CU   | **Latest** | 4552255 | [Cumulative Update 5 for SQL Server 2019]                 | 2020-06-22   | 2020-06-10 |    86 |     58 |      603 |        904 |
+| 15.0.4053.23  | 2019.150.4053.23  | RTM    | CU   | **Latest** | 4563110 | [Cumulative Update 6 for SQL Server 2019]                 | 2020-08-04   | 2020-07-25 |    51 |     42 |      604 |        904 |
+| 15.0.4043.16  | 2019.150.4043.16  | RTM    | CU   |            | 4552255 | [Cumulative Update 5 for SQL Server 2019]                 | 2020-06-22   | 2020-06-10 |    86 |     58 |      603 |        904 |
 | 15.0.4033.1   | 2019.150.4033.1   | RTM    | CU   |            | 4548597 | [Cumulative Update 4 for SQL Server 2019]                 | 2020-03-31   | 2020-03-04 |    50 |     38 |      571 |        904 |
 | 15.0.4023.6   | 2019.150.4023.6   | RTM    | CU   |            | 4538853 | [Cumulative Update 3 for SQL Server 2019]                 | 2020-03-12   | 2020-02-20 |    56 |     11 |      572 |        904 |
 | 15.0.4013.40  | 2019.150.4013.40  | RTM    | CU   |            | 4536075 | [Cumulative Update 2 for SQL Server 2019]                 | 2020-02-07   | 2020-02-03 |   134 |     88 |      537 |        904 |
@@ -443,7 +433,8 @@ Microsoft SQL Server 2019 (RTM-CU5) (KB4552255) - 15.0.4043.16 (X64)
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |        896 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |        895 |
 
-[Cumulative Update 4 for SQL Server 2019]:https://support.microsoft.com/help/4552255
+[Cumulative Update 6 for SQL Server 2019]:https://support.microsoft.com/help/4563110
+[Cumulative Update 5 for SQL Server 2019]:https://support.microsoft.com/help/4552255
 [Cumulative Update 4 for SQL Server 2019]:https://support.microsoft.com/help/4548597
 [Cumulative Update 3 for SQL Server 2019]:https://support.microsoft.com/help/4538853
 [Cumulative Update 2 for SQL Server 2019]:https://support.microsoft.com/help/4536075
