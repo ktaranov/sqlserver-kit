@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RTM] then [CU5 KB44563110]                              | 15.0.2070.41<br/>15.0.4053.23                | 2019-11-04<br/>2020-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [CU6 KB44563110]                              | 15.0.2070.41<br/>15.0.4053.23                | 2019-11-04<br/>2020-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU21 KB4557397]                              | 14.0.1000.169<br/>14.0.3335.7                | 2017-10-02<br/>2020-07-01                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU13 KB4549825]                              | 13.0.5026.0<br/>13.0.5820.21                 | 2018-04-24<br/>2020-05-28                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -237,14 +237,26 @@ For downloading your copy SQL Server Developer Edition you just need to join the
 
 ## SQL Server Express direct download links
 <a id="sql-server-express-direct-download-links"></a>
-Original post written by Scott Hanselman: http://www.hanselman.com/blog/DownloadSQLServerExpress.aspx<br />
-Official Microsoft SQL Server Express page: https://www.microsoft.com/server-cloud/products/sql-server-editions/sql-server-express.aspx
+Great thanks Scott Hanselman for Original post: [Download SQL Server Express](http://downloadsqlserverexpress.com)
 
-- [Download SQL Server 2019 Express](https://www.microsoft.com/Download/details.aspx?id=101064)
+- [SQL Server 2019 Express Edition](https://www.microsoft.com/Download/details.aspx?id=101064)
+  - [Download SQL Server 2019 Express Basic (English)](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SQLEXPR_x64_ENU.exe)
+  - [Download SQL Server 2019 Express Advanced (English)](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SQLEXPRADV_x64_ENU.exe)
+  - [Download SQL Server 2019 Express LocalDB (English)](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SqlLocalDB.msi)
 - [Download SQL Server 2017 Express](https://www.microsoft.com/download/details.aspx?id=55994)
-- [Download SQL Server 2016 Express](https://www.microsoft.com/download/details.aspx?id=52679)
+  - [Download SQL Server 2017 Express Basic (English)](https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SQLEXPR_x64_ENU.exe)
+  - [Download SQL Server 2017 Express Advanced (English)](https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SQLEXPRADV_x64_ENU.exe)
+  - [Download SQL Server 2017 Express LocalDB (English)](https://download.microsoft.com/download/E/F/2/EF23C21D-7860-4F05-88CE-39AA114B014B/SqlLocalDB.msi)
+- SQL Server 2016 Express
+  - [Download SQL Server 2016 SP2 Express Basic (English)](https://download.microsoft.com/download/4/1/A/41AD6EDE-9794-44E3-B3D5-A1AF62CD7A6F/sql16_sp2_dlc/en-us/SQLEXPR_x64_ENU.exe)
+  - [Download SQL Server 2016 SP2 Express Advanced (English)](https://download.microsoft.com/download/4/1/A/41AD6EDE-9794-44E3-B3D5-A1AF62CD7A6F/sql16_sp2_dlc/en-us/SQLEXPRADV_x64_ENU.exe)
+  - [Download SQL Server 2016 SP2 Express LocalDB (English)](https://download.microsoft.com/download/4/1/A/41AD6EDE-9794-44E3-B3D5-A1AF62CD7A6F/sql16_sp2_dlc/en-us/SqlLocalDB.msi)
+- SQL Server 2016 Express
+  - [Download SQL Server 2016 SP1 Express Basic (English)](https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SQLEXPR_x64_ENU.exe)
+  - [Download SQL Server 2016 SP1 Express Advanced (English)](https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SQLEXPRADV_x64_ENU.exe)
+  - [Download SQL Server 2016 SP1 Express LocalDB (English)](https://download.microsoft.com/download/9/0/7/907AD35F-9F9C-43A5-9789-52470555DB90/ENU/SqlLocalDB.msi)
 - [Download SQL Server 2014 Express](http://www.microsoft.com/download/details.aspx?id=42299)
-- [Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express ](https://www.microsoft.com/download/details.aspx?id=46697)<br />
+- [Download Microsoft SQL Server 2014 Service Pack 1 (SP1) Express](https://www.microsoft.com/download/details.aspx?id=46697)
   - You likely just want SQL Server 2014 Express with Tools. This download includes SQL Management Studio:
   - [SQL Server 2014 Express x64](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2064BIT/SQLEXPRWT_x64_ENU.exe)
   - [SQL Server 2014 Express x86](http://download.microsoft.com/download/E/A/E/EAE6F7FC-767A-4038-A954-49B8B05D04EB/ExpressAndTools%2032BIT/SQLEXPRWT_x86_ENU.exe)
