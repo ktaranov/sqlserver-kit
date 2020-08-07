@@ -1170,6 +1170,8 @@ Articles types:
 | [Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]                                                     | Brent Ozar                               | 2020-07-29 | [DBA][DEV]  |
 | [Finding & Downloading Required SQL Server Updates]                                                                     | Andy Levy                                | 2020-07-21 | [DBA]       |
 | [SQLskills SQL101: Why do some wait types need to be ignored?]                                                          | Paul Randal                              | 2018-05-23 | [DBA][DEV]  |
+| [What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]                            | Joe Obbish                               | 2018-09-27 | [DBA][DEV]  |
+| [SQL Server 2019 Aggregate Splitting]                                                                                   | Paul White                               | 2020-08-04 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2314,3 +2316,5 @@ Articles types:
 [Remember “Nothing Stops a Hekaton Transaction?” Yeah, About That.]:https://www.brentozar.com/archive/2020/07/remember-nothing-stops-a-hekaton-transaction-yeah-about-that/
 [Finding & Downloading Required SQL Server Updates]:https://flxsql.com/downloading-latest-sql-server-updates/
 [SQLskills SQL101: Why do some wait types need to be ignored?]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-do-some-wait-types-need-to-be-ignored/
+[What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]:https://orderbyselectnull.com/2018/09/27/what-is-the-sos_work_dispatcher-wait-type/
+[SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
