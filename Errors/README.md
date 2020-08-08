@@ -128,6 +128,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       1205 | Transaction (Process ID %d) was deadlocked on %.*ls resources with another process and has been chosen … | [1205_link1][46]                                    |
 |       1222 | Lock request time out period exceeded.                                                                   | [1222_link1][46]                                    |
 |       1219 | Your session has been disconnected because of a high priority DDL operation.                             | [1219_link1][32]                                    |
+|       1480 | The %S_MSG database "%.*ls" is changing roles from "%ls" to "%ls" because the mirroring session or     … | [1480_link1][48]                                    |
 |       1701 | Creating or altering table %ls failed because the minimum row size would be 8061, including 10 b       … | [1701_link1]                                        |
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                        |
 |       1904 | The statistics on table has 65 columns in the key list                                                 … | [1904_link1]                                        |
@@ -231,6 +232,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |      33206 | SQL Server Audit failed to create the audit file '%s'. Make sure that the disk is not full and …         | [33206_link1][10]                                   |
 |      35217 |  The thread pool for Always On Availability Groups was unable to start a new worker thread because     … | [35217_link1]                                       |
 |      35250 | The connection to the primary replica is not active. The command cannot be processed.                    | [35250_link1]                                       |
+|      35264 | Always On Availability Groups data movement for database '%.*ls' has been suspended for the following  … | [35264_link1][48]                                   |
 |      35320 | Column store indexes are not allowed on tables for which the durability option SCHEMA_ONLY is specified. | [35320_link1][41]                                   |
 |      35337 | UPDATE STATISTICS failed because statistics cannot be updated on a columnstore index.                  … | [35337_link1][33]                                   |
 |      35343 | The statement failed. Column '%.*ls' has a data type that cannot participate in a columnstore index.     | [35343_link1][36]                                   |
@@ -285,6 +287,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [45]:http://www.seangallardy.com/error-8474-state-11-17836-state-20-9642-state-3-and-your-companys-need-to-incessantly-scan-for-vulnerable-ports/
 [46]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
 [47]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
+[48]:https://blog.waynesheffield.com/wayne/archive/2020/08/availability-group-issues-fixed-with-alerts/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
