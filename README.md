@@ -30,7 +30,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Free Database Podcasts](#podcasts)
    - [SQL Courses](#courses)
    - [SQL Server Backwards Compatibility](#backwards-compatibility)
-   - [Social, Forum and Messenger SQL Server Groups](#sql-social)
+   - [Social, Forum and Messenger SQL Server Groups](#social)
    - [SQL Server Open Source Projects](#open-source)
  - [BIML Resources and Bloggers](#biml-resources-and-bloggers)
  - [PowerShell and SQL Server](#powershell-and-sql-server)
@@ -95,7 +95,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 314 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 346 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -270,7 +270,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Slack #sqlhelp](https://sqlcommunity.slack.com/messages/sqlhelp/) (more than 900 People)
    - [Slack #firstresponderkit](https://sqlcommunity.slack.com/messages/firstresponderkit/) (more then 90 People)
    - [Twitter #SQLServer](https://twitter.com/hashtag/SQLServer), [Twitter #SQLFamily](https://twitter.com/hashtag/SQLFamily), [Twitter #sqlhelp](https://twitter.com/hashtag/sqlhelp) (more than 500 People)
-   - Reddit – [`/r/sqlserver`](https://www.reddit.com/r/SQLServer/), ['/r/sql`](https://www.reddit.com/r/SQL/), and ['/r/database`](https://www.reddit.com/r/Database/)
+   - Reddit – [`/r/sqlserver`](https://www.reddit.com/r/SQLServer/), [`/r/sql`](https://www.reddit.com/r/SQL/), and [`/r/database`](https://www.reddit.com/r/Database/)
    - [SQL.ru SQL Server Forum](http://www.sql.ru/forum/microsoft-sql-server) (more than 10^5 People, Russian)
    - [VK.com #sqlcom](https://vk.com/sqlcom) (more than 3600 People, Russian)
    - [SQL Server User Group Meetings](https://www.mssqltips.com/sql-server-user-groups/)
