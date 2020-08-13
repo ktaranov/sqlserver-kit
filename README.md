@@ -37,6 +37,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
  - [TSQL Format Code](#tsql-format-code)
  - [SQL Server Test Data Generation](#sql-server-test-data-generation)
  - [Free SQL Server and R ebooks](#free-ebooks)
+ - [Paid SQL Server ebooks](#paid-ebooks)
  - [License](#license)
 
 
@@ -515,7 +516,6 @@ BIML Bloggers
 
 <a id="free-ebooks"></a>
 ## Free SQL Server and R ebooks
-
 SQL Server:
  - [Awesome Red Gate ebooks](https://www.red-gate.com/hub/books/)
    - SQL Developers
@@ -574,6 +574,23 @@ R:
  - [Little Book of R for Multivariate Analysis](http://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/index.html) (by Avril Coghlan)
  - [Text Mining with R](http://tidytextmining.com/) (by Julia Silge and David Robinson)
  - [An Introduction to Statistical Learning with Applications in R](http://www-bcf.usc.edu/~gareth/ISL/) (by Gareth James, Daniela Witten, Trevor Hastie and Robert Tibshirani)
+
+**[⬆ back to top](#table-of-contents)**
+
+
+<a id="paid-ebooks"></a>
+## SQL Server Paid Books
+- [T-SQL Fundamentals](https://amzn.to/39CLxSN) 361 pages (by Itzik Ben-Gan)
+- [T-SQL Querying (Developer Reference)](https://amzn.to/3bGxVIa) 803 pages (by Itzik Ben-Gan)
+- [Great Post, Erik](https://amzn.to/3bMtgUY) 342 pages (by Erik Darling)
+- [Learn T-SQL Querying](https://amzn.to/39Ia7BX) 450 pages (by Pedro Lopes, Pam Lahoud)
+- [SQL Server 2017 Query Performance Tuning](https://amzn.to/2UW3s2E) 823 pages (by Grant Fritchey)
+- [Query Store for SQL Server 2019](https://amzn.to/2OZAzPp) 236 pages (by Tracy Boggiano, Grant Fritchey)
+- [SQL Server 2019 Revealed](https://amzn.to/2OZSiWS) 444 pages (by Bob Ward)
+- [Pro SQL Server Internals](https://www.amazon.co.uk/dp/1484219635/) 840 pages (by Dmitri Korotkevitch)
+- [Pro SQL Server Always On Availability Groups](https://www.amazon.co.uk/dp/B01M3U6WRM/) 332 pages (by Uttam Parui, Vivek Sanil) 
+- [Refactoring Legacy T-SQL for Improved Performance: Modern Practices for SQL Server](https://www.amazon.co.uk/dp/1484255801/) 260 pages (by Lisa Bohm)
+
 
 **[⬆ back to top](#table-of-contents)**
 
