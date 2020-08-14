@@ -1172,6 +1172,12 @@ Articles types:
 | [SQLskills SQL101: Why do some wait types need to be ignored?]                                                          | Paul Randal                              | 2018-05-23 | [DBA][DEV]  |
 | [What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]                            | Joe Obbish                               | 2018-09-27 | [DBA][DEV]  |
 | [SQL Server 2019 Aggregate Splitting]                                                                                   | Paul White                               | 2020-08-04 | [DBA][DEV]  |
+| [Security Best Practice: dny and revoke permissions granted to All Users by default - HIGHLY IMPORTANT!]                | Ronen Ariely                             | 2019-10-13 | [DBA][SEC]  |
+| [Execute multiple jobs Synchronously from in a main job]                                                                | Ronen Ariely                             | 2020-04-11 | [DBA][DEV]  |
+| [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2020-08-12 | [BENCH]     |
+| [Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]                                          | Erik Darlling                            | 2020-03-03 | [DBA][DEV] |
+| [Long Running Query on Read-Only Replica that takes moments on the Primary]                                             | Sean Gallardy,Joe Obbish                 | 2019-09-05 | [DBA][DEV] |
+| [Date Tables are Great for Users, but Not So Great for Performance]                                                     | Brent Ozar                               | 2020-08-05 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2318,3 +2324,9 @@ Articles types:
 [SQLskills SQL101: Why do some wait types need to be ignored?]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-do-some-wait-types-need-to-be-ignored/
 [What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]:https://orderbyselectnull.com/2018/09/27/what-is-the-sos_work_dispatcher-wait-type/
 [SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
+[Security Best Practice: dny and revoke permissions granted to All Users by default - HIGHLY IMPORTANT!]:https://ariely.info/Blog/tabid/83/EntryId/241/Security-Best-Practice-dny-and-revoke-permissions-granted-to-All-Users-by-default-HIGHLY-IMPORTANT.aspx
+[Execute multiple jobs Synchronously from in a main job]:https://ariely.info/Blog/tabid/83/EntryId/250/Execute-multiple-jobs-Synchronously-from-in-a-main-job.aspx
+[The Trillion Row Operator]:https://www.erikdarlingdata.com/2020/08/the-trillion-row-operator/
+[Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]:https://www.erikdarlingdata.com/2020/03/temporal-tables-and-table-partitioning-not-if-you-like-switching-partitions/
+[Long Running Query on Read-Only Replica that takes moments on the Primary]:https://dba.stackexchange.com/questions/237671/long-running-query-on-read-only-replica-that-takes-moments-on-the-primary/
+[Date Tables are Great for Users, but Not So Great for Performance]:https://www.brentozar.com/archive/2020/08/date-tables-are-great-for-users-but-not-so-great-for-performance/
