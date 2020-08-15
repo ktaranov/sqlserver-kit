@@ -549,7 +549,7 @@ Articles types:
 | [How to “debug” a Linked Server from SQL Server to an Oracle Database instance]                                         | Jefferson Elias                          | 2018-06-11 | [DEV]       |
 | [How to implement error handling in SQL Server]                                                                         | Bojan Petrovic                           | 2018-06-15 | [DEV]       |
 | [SQL Server Closure Tables]                                                                                             | Phil Factor                              | 2018-04-10 | [DEV]       |
-| [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh the Coder                           | 2018-05-10 | [DBA][DEV]  |
+| [Deadlock victim choice in SQL Server - an exception?]                                                                  | Josh Darnell                             | 2018-05-10 | [DBA][DEV]  |
 | [Azure and Windows PowerShell: The Basics]                                                                              | Nicolas Prigent                          | 2017-12-29 | [AZ][PS]    |
 | [Azure and Windows PowerShell: Getting Information]                                                                     | Nicolas Prigent                          | 2018-06-26 | [AZ][PS]    |
 | [Be our guest, be our guest, put our database to the test]                                                              | Kenneth Fisher                           | 2018-06-25 | [DBA]       |
@@ -1178,6 +1178,15 @@ Articles types:
 | [Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]                                          | Erik Darlling                            | 2020-03-03 | [DBA][DEV] |
 | [Long Running Query on Read-Only Replica that takes moments on the Primary]                                             | Sean Gallardy,Joe Obbish                 | 2019-09-05 | [DBA][DEV] |
 | [Date Tables are Great for Users, but Not So Great for Performance]                                                     | Brent Ozar                               | 2020-08-05 | [DBA][DEV]  |
+| [Should I install SSMS on a server running SQL Server?]                                                                 | Andy Mallon                              | 2020-04-14 | [DBA][DEV]  |
+| [Finding a table name from a page ID]                                                                                   | Paul Randal                              | 2014-09-25 | [DBA][DEV]  |
+| [Finding Distinct Values Quickly]                                                                                       | Paul White                               | 2020-04-17 | [DBA][DEV]  |
+| [Can You Fail To Spill To tempdb?]                                                                                      | Josh Darnell                             | 2019-07-17 | [DBA][DEV]  |
+| [Migrating SQL workloads to Microsoft Azure: Databases Trip to Azure SQL Database]                                      | Ahmad Yaseen                             | 2020-08-03 | [AZ][DBA]   |
+| [How It Works: Bob Dorr's SQL Server I/O Presentation]                                                                  | Bob Dorr                                 | 2010-03-24 | [DBA][DEV]  |
+| [Who does SQL Server run xp_cmdshell command as?]                                                                       | Steve Stedman                            | 2020-04-14 | [DBA][DEV]  |
+| [Transaction Modes in SQL Server]                                                                                       | Kevin Feasel                             | 2020-08-10 | [DBA][DEV]  |
+| [Working Effectively with Legacy SQL]                                                                                   | Kevin Feasel                             | 2015-03-15 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2330,3 +2339,12 @@ Articles types:
 [Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]:https://www.erikdarlingdata.com/2020/03/temporal-tables-and-table-partitioning-not-if-you-like-switching-partitions/
 [Long Running Query on Read-Only Replica that takes moments on the Primary]:https://dba.stackexchange.com/questions/237671/long-running-query-on-read-only-replica-that-takes-moments-on-the-primary/
 [Date Tables are Great for Users, but Not So Great for Performance]:https://www.brentozar.com/archive/2020/08/date-tables-are-great-for-users-but-not-so-great-for-performance/
+[Should I install SSMS on a server running SQL Server?]:https://am2.co/2020/04/should-i-install-ssms-on-a-server-running-sql-server/
+[Finding a table name from a page ID]:https://www.sqlskills.com/blogs/paul/finding-table-name-page-id/
+[Finding Distinct Values Quickly]:https://sqlperformance.com/2020/03/sql-performance/finding-distinct-values-quickly
+[Can You Fail To Spill To tempdb?]:https://www.joshthecoder.com/2019/07/17/can-you-fail-to-spill-to-tempdb.html
+[Migrating SQL workloads to Microsoft Azure: Databases Trip to Azure SQL Database]:https://www.sqlshack.com/migrate-sql-workloads-to-microsoft-azure-databases-trip-to-azure-sql-database/
+[How It Works: Bob Dorr's SQL Server I/O Presentation]:https://techcommunity.microsoft.com/t5/sql-server-support/how-it-works-bob-dorr-s-sql-server-i-o-presentation/ba-p/316031
+[Who does SQL Server run xp_cmdshell command as?]:https://stevestedman.com/2020/04/who-does-sql-server-run-xp_cmdshell-command-as/
+[Transaction Modes in SQL Server]:https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/
+[Working Effectively with Legacy SQL]:https://www.catallaxyservices.com/presentations/legacy-sql/
