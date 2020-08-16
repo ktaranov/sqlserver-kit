@@ -229,6 +229,14 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
+ - Whenever you have data modification on non-temporary tables, is to use [explicit transactions] over [autocommit].
+   1. If you have a stored procedure which is simply running a `SELECT` statement, use [autocommit].
+   2. If you have a stored procedure which performs data modification on non-temporary tables, use an [explicit transaction] only over the area which modifies data.
+   3. If you are working with non-global temporary tables beforehand, don’t include any modification of those inside the explicit transaction. 
+   4. In a [loop](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql), choose whether you want to put the [explicit transaction] around the loop or inside it. In most cases, prefer to put the transaction inside the loop to minimize the amount of time that blocking other users.
+   5. Outside of a stored procedure use [explicit transactions] if you’re doing something potentially risky.
+   6. Watch out for nested transactions.
+   More details [her](https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/).
  - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
    Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
  - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries.More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
@@ -275,13 +283,13 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - The first argument in `SELECT` expression should be on the next line:
    ```sql
     SELECT
-           FirstName
+        FirstName
    ```
  - Arguments are divided by line breaks, commas should be placed before an argument:
    ```sql
    SELECT
-          FirstName
-        , LastName
+        FirstName
+      , LastName
    ```
  - For SQL Server >= 2012 use [`FETCH-OFFSET`] instead [`TOP`].
    More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned).
@@ -425,20 +433,20 @@ TSQL Example with formating:
 ```tsql
 WITH CTE_MyCTE AS (
     SELECT
-                t1.Value1  AS Val1
-              , t1.Value2  AS Val2
-              , t2.Value3  AS Val3
-     INNER JOIN dbo.Table3 AS t2
-             ON t1.Value1 = t2.Value1
-     WHERE      t1.Value1 > 1
-       AND      t2.Value2 >= 101
+        t1.Value1  AS Val1
+        , t1.Value2  AS Val2
+        , t2.Value3  AS Val3
+    INNER JOIN dbo.Table3 AS t2
+            ON t1.Value1 = t2.Value1
+    WHERE t1.Value1 > 1
+         AND t2.Value2 >= 101
 )
 SELECT
-         t1.Value1 AS Val1
-       , t1.Value2 AS Val2
-       , t2.Value3 AS Val3
-INTO     #Table3
-FROM     CTE_MyCTE AS t1
+    t1.Value1 AS Val1
+    , t1.Value2 AS Val2
+    , t2.Value3 AS Val3
+INTO #Table3
+FROM CTE_MyCTE AS t1
 ORDER BY t2.Value2;
 ```
 
@@ -685,3 +693,5 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [10]:https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql
 [`INFORMATION_SCHEMA`]:https://docs.microsoft.com/en-us/sql/relational-databases/system-information-schema-views/system-information-schema-views-transact-sql
 [11]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql#best-practices
+[explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
+[autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
