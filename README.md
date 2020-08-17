@@ -181,10 +181,10 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [User Group.tv](http://usergroup.tv/) (by Shawn Weisfeld)
    - [SQLPass Virtual Chapters](http://www.sqlpass.org/passchapters/virtualchapters.aspx)
    - [Youtube SQLpassion](https://www.youtube.com/channel/UCkrUQVPrv36Musorn0K4KoA)
-   - [SQLBits Video](https://sqlbits.com/)
+   - [SQLBits Video](https://sqlbits.com/content/)
    - [Pragmatic Works Free Training Webinars](http://pragmaticworks.com/Training/FreeTrainingWebinars)
    - [Youtube Pragmatic Works Video](https://www.youtube.com/user/PragmaticWorks) (by Devin Knight and Manuel Quintana)
-   - [MVP: Data Platform](https://channel9.msdn.com/Blogs/MVP-Data-Platform)
+   - [TechEd SQL Server Videos](https://channel9.msdn.com/Search?term=sql%20server&lang-en=true)
    - [Build 2018 conference](http://sqlservercode.blogspot.ru/2018/05/azure-sql-data-warehouse-azure-sql.html)
  - Free Database Podcasts <a id="podcasts"></a>
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
@@ -282,6 +282,13 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [DBA telegram chat](https://t.me/dba_ru) (1389 People, Russian)
    - [SQLTeam SQL Server Forum](https://forums.sqlteam.com/)
    - [Red Gate SQL Server Forum](https://forum.red-gate.com/)
+ - SQL Server Conferences <a id="conference"></a>
+   - [SQL Saturdays](https://sqlsaturday.com/)
+   - [Pass Sumit](https://www.pass.org/AttendanEvent/Conferences/PASSSummit.aspx)
+   - [SQLBits](https://sqlbits.com/)
+   - [Microsoft Ignite](https://www.microsoft.com/en-us/ignite)
+   - [Microsoft Build](https://www.microsoft.com/en-us/build)
+   - [Devintersection](https://devintersection.com/)
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
