@@ -235,7 +235,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    3. If you are working with non-global temporary tables beforehand, don’t include any modification of those inside the explicit transaction. 
    4. In a [loop](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql), choose whether you want to put the [explicit transaction] around the loop or inside it. In most cases, prefer to put the transaction inside the loop to minimize the amount of time that blocking other users.
    5. Outside of a stored procedure use [explicit transactions] if you’re doing something potentially risky.
-   6. Watch out for nested transactions.
+   6. Watch out for nested transactions. In SQL Server, there’s very little utility in them and their behavior is weird.[Paul Randal explains in great detail just how broken they are](https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/).
    More details [her](https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/).
  - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
    Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
