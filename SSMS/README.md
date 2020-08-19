@@ -5,10 +5,13 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
 
 
 ## SSMS Guides
-- [40 SSMS Tips](SSMS_Tips.md)
-- [36 SSMS Addins](SSMS_Addins.md)
+- [40 SSMS Tips](SSMS_Tips.md) (by Konstantin Taranov)
+- [36 SSMS Addins](SSMS_Addins.md) (by Konstantin Taranov)
 - [SSMS Snippets](SSMS_Snippets)
-- [SSMS Shortcuts](SSMS_Shortcuts.md)
+- [SSMS Shortcuts](SSMS_Shortcuts.md) (by Konstantin Taranov)
+- [A month of SSMS tips and tricks](https://blog.waynesheffield.com/wayne/archive/2018/02/ssms-tips-tricks/) (by Wayne Sheffield)
+- [SSMS Tricks & Shortcuts](http://www.e-squillace.com/ssms-tricks-shortcuts/) (by George Squillace)
+- [SSMS Tricks and Tips Ebook](https://sql-down-under.newzenler.com/f/ssms-tips-tricks-book) (by Greg Low)
 
 ### Useful Resources
 - [Download SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms)
@@ -20,7 +23,6 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
 - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
 - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)
 - [Add Transact-SQL Snippets](https://docs.microsoft.com/en-us/sql/relational-databases/scripting/add-transact-sql-snippets)
-- [A month of SSMS tips and tricks](https://blog.waynesheffield.com/wayne/archive/2018/02/ssms-tips-tricks/)
 
 
 ## Supported SQL Server versions

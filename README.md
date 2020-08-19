@@ -167,6 +167,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
  - Free Videos <a id="free-videos"></a>
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
+   - [Youtube Free SQL Server Statisctics Class](https://www.youtube.com/playlist?list=PLDYqU5RH_aX05ajDAH-6sYXr4i1Mjh9lT)
    - [SQLPASSTV videos](https://www.youtube.com/user/SQLPASSTV/videos)
    - [IDERA Resource Center](https://www.idera.com/resourcecentral)
    - [MSSQLTips SQL Server Webcasts and Videos](https://www.mssqltips.com/sql-server-webcasts/)
@@ -289,6 +290,9 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Microsoft Ignite](https://www.microsoft.com/en-us/ignite)
    - [Microsoft Build](https://www.microsoft.com/en-us/build)
    - [Devintersection](https://devintersection.com/)
+   - [SentryOne SQL Server Virtual Conference](https://info.sentryone.com/accelerate-2020)
+   - [Red Gate SQL Server Online Events](https://www.red-gate.com/hub/events/online-events/)
+   - [EigthKB Sql Server Internals Conference](https://eightkb.online/)
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
@@ -373,6 +377,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Data-Blogger-Resource-Kit - Includes resources for use by bloggers, microbloggers, vloggers, and origami enthusiasts who focus on SQL Server](https://github.com/amtwo/Data-Blogger-Resource-Kit) (by Andy Andy Mallon)
     - [SQL-Server-Multi-Thread - a framework to do multi-threading in T-SQL using SQL Server Agent jobs.](https://github.com/jobbish-sql/SQL-Server-Multi-Thread) (by )
     - [SQL Server and Azure SQL Labs and Workshops](https://microsoft.github.io/sqlworkshops/) (by Microsoft)
+    - [MsSqlDependencyBrowser - Simple tool to browse between dependent objects on MS SQL Server](https://github.com/usharik/MsSqlDependencyBrowser) (by Aleksej Usharovskij)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
@@ -424,6 +429,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure Database Migration Guide](https://datamigration.microsoft.com/) (by Microsoft)
     - [Hermitage: Testing transaction isolation levels in relation databases](https://github.com/ept/hermitage) (by Martin Kleppmann)
     - [csv to INSERT online converter - translates your tab-delimited data into a T-SQL INSERT statement](https://table.strd.co/) (by Structured Concepts AB)
+    - [SQL Server Diagrams](http://www.e-squillace.com/techdiagrams-sqlserver/) (by George Squillace)
 
 **[⬆ back to top](#table-of-contents)**
 
