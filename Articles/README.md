@@ -1187,6 +1187,7 @@ Articles types:
 | [Who does SQL Server run xp_cmdshell command as?]                                                                       | Steve Stedman                            | 2020-04-14 | [DBA][DEV]  |
 | [Transaction Modes in SQL Server]                                                                                       | Kevin Feasel                             | 2020-08-10 | [DBA][DEV]  |
 | [Working Effectively with Legacy SQL]                                                                                   | Kevin Feasel                             | 2015-03-15 | [DBA][DEV]  |
+| [A SQL Server DBA myth a day: (26/30) nested transactions are real]                                                     | Paul Randal                              | 2010-04-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2348,3 +2349,4 @@ Articles types:
 [Who does SQL Server run xp_cmdshell command as?]:https://stevestedman.com/2020/04/who-does-sql-server-run-xp_cmdshell-command-as/
 [Transaction Modes in SQL Server]:https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/
 [Working Effectively with Legacy SQL]:https://www.catallaxyservices.com/presentations/legacy-sql/
+[A SQL Server DBA myth a day: (26/30) nested transactions are real]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/

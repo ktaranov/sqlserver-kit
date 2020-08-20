@@ -378,6 +378,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL-Server-Multi-Thread - a framework to do multi-threading in T-SQL using SQL Server Agent jobs.](https://github.com/jobbish-sql/SQL-Server-Multi-Thread) (by )
     - [SQL Server and Azure SQL Labs and Workshops](https://microsoft.github.io/sqlworkshops/) (by Microsoft)
     - [MsSqlDependencyBrowser - Simple tool to browse between dependent objects on MS SQL Server](https://github.com/usharik/MsSqlDependencyBrowser) (by Aleksej Usharovskij)
+    - [Projects-MS-SQL-Server-DBA - Utilities and Scripts for SQL Server dba](https://github.com/jobgemws/Projects-MS-SQL-Server-DBA) (by Evgeniy Gribkov)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
