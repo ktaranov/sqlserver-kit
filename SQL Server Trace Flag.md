@@ -4575,9 +4575,11 @@ Link: https://support.microsoft.com/kb/2483090
 <a id="9114"></a>
 #### Trace Flag: 9114
 **Undocumented trace flag**<br />
-Function: Implemented a (SELECT 1) = 1 predicate as a join instead of optimizing it away.<br />
+Function: Prevents the optimizer rewriting the apply as a join.<br />
 Link: [New Undocumented Trace Flags]<br />
-Scope: ?
+Link: https://dba.stackexchange.com/a/274195/107045<br />
+Scope: global or session or query<br />
+Versions: 2008-2019
 
 
 <a id="9115"></a>

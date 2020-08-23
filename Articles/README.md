@@ -1188,6 +1188,9 @@ Articles types:
 | [Transaction Modes in SQL Server]                                                                                       | Kevin Feasel                             | 2020-08-10 | [DBA][DEV]  |
 | [Working Effectively with Legacy SQL]                                                                                   | Kevin Feasel                             | 2015-03-15 | [DBA][DEV]  |
 | [A SQL Server DBA myth a day: (26/30) nested transactions are real]                                                     | Paul Randal                              | 2010-04-26 | [DBA][DEV]  |
+| [dbatools multithreading commands with PoshRSJob module]                                                                | Kin                                      | 2019-01-04 | [DBA][PS]   |
+| [SQL Server Debugging with WinDbg – an Introduction]                                                                    | Klaus Aschenbrenner                      | 2014-05-05 | [DBA][DEV]  |
+| [Looking deeper into SQL Server using Minidumps]                                                                        | Thomas Kejser                            | 2009-09-11 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2350,3 +2353,6 @@ Articles types:
 [Transaction Modes in SQL Server]:https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/
 [Working Effectively with Legacy SQL]:https://www.catallaxyservices.com/presentations/legacy-sql/
 [A SQL Server DBA myth a day: (26/30) nested transactions are real]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/
+[dbatools multithreading commands with PoshRSJob module]:https://dbatools.io/multithread/
+[SQL Server Debugging with WinDbg – an Introduction]:https://www.sqlpassion.at/archive/2014/05/05/sql-server-debugging-with-windbg-an-introduction/
+[Looking deeper into SQL Server using Minidumps]:https://docs.microsoft.com/en-gb/archive/blogs/sqlcat/looking-deeper-into-sql-server-using-minidumps
