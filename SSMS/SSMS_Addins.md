@@ -39,6 +39,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [Michel Max - SSMS Tools](#michel-max)                | [Michel Max - SSMS Tools]     | 2018-11-16   | 2012-2018            | Michel Max           | Yes          | No    |
 | [SSMS Schema Folders](#ssms-schema-folders)           | [SSMS Schema Folders]         | 2018-10-06   | 2012-2018            | Nicholas Ross        | Yes          | No    |
 | [Statistics Reporter](#statistics-reporter)           | [Statistics Reporter]         | 2019-04-17   | 2014-2018            | Analytics Bar        | Yes          | No    |
+| [SSMS Lizard](#ssms-lizard)                           | [SSMS Lizard]                 | 2020-06-15   | 2018-2018            | Lizard Labs Software | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -638,6 +639,22 @@ Price: No
 
 Statistics Reporter SSMS Extension is a SQL Server Management Studio Add-in for parsing SET STATISTICS IO, TIME ON into a beautiful report. 
 
+<a id="ssms-lizard"></a>
+## SSMS Lizard
+Download page: [SSMS Lizard]<br/>
+Release date: 2020-06-15<br/>
+Support Version: 2018-2018<br/>
+Developer: Lizard Labs Software<br/>
+Free version: Yes<br/>
+Price: No
+
+SSMS Lizard extends SQL Server Management Studio with a number of new features not previously seen on its user interfaces:
+
+- Show query results in advanced data grid (sorting, grouping, searching, filtering, tabs, conditional formatting, formula fields, column chooser, bookmarks, split view, etc...)
+- Extend SQL quires with in-line Visual Basic (VB.Net) code.
+- Print or export data to Excel, Word, PDF, HTML, TSV, CSV, RTF or TXT documents.
+- Quickly attach the query results to an e-mail, FTP or even Google Drive with a single click of a button; and more.
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
@@ -681,3 +698,4 @@ Statistics Reporter SSMS Extension is a SQL Server Management Studio Add-in for 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
 [DbForge Search Download]:https://www.devart.com/dbforge/sql/search/searchsql22std.exe
+[SSMS Lizard]:https://www.lizard-labs.com/sql_server_management_studio_ssms_extesnsion_lizard.aspx
