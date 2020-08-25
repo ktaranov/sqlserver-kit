@@ -148,7 +148,6 @@ Articles types:
 | [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]                                                            | Kendra Little                            | 2016-09-27 |             |
 | [Inside the Statistics Histogram & Density Vector]                                                                      | Klaus Aschenbrenner                      | 2014-01-28 |             |
 | [Misconceptions on parameter sniffing]                                                                                  | Hugo Kornelis                            | 2016-11-03 |             |
-| [CAST vs. CONVERT]                                                                                                      | Aaron Bertrand                           | 2016-11-02 |             |
 | [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]                                                   | Tim Ford                                 | 2016-10-03 | [SEC]       |
 | [SQL Server Perfmon (Performance Monitor) Best Practices]                                                               | Brent Ozar                               | 2006-12-30 |             |
 | [Top 5 Overlooked Index Features]                                                                                       | Erik Darling                             | 2016-11-10 | [IDX]       |
@@ -1191,6 +1190,11 @@ Articles types:
 | [dbatools multithreading commands with PoshRSJob module]                                                                | Kin                                      | 2019-01-04 | [DBA][PS]   |
 | [SQL Server Debugging with WinDbg – an Introduction]                                                                    | Klaus Aschenbrenner                      | 2014-05-05 | [DBA][DEV]  |
 | [Looking deeper into SQL Server using Minidumps]                                                                        | Thomas Kejser                            | 2009-09-11 | [DBA][DEV]  |
+| [Anatomy of a spool operators in SQL Server execution plans]                                                            | Hugo Kornelis                            | 2020-01-01 | [DBA][DEV]  |
+| [CAST v/s CONVERT – Is there a difference as far as SQL Server is concerned? Which is better?]                          | Nakul Vachhrajani                        | 2011-07-18 | [DBA][DEV]  |
+| [#BackToBasics: CAST vs. CONVERT]                                                                                       | Aaron Bertrand                           | 2016-11-02 | [DBA][DEV]  |
+| [Productivity Hacks: Migrate in Minutes to the Most Current Version of SQL Server]                                      | Chris Lumnah                             | 2020-07-29 | [DBA]       |
+| [Database alias in Microsoft SQL Server]                                                                                | Bohumír Kubík                            | 2011-01-11 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -1312,7 +1316,6 @@ Articles types:
 [Measuring Query Duration: SSMS vs SQL Sentry Plan Explorer]:https://www.littlekendra.com/2016/09/27/measuring-query-duration-ssms-vs-sql-sentry-plan-explorer/
 [Inside the Statistics Histogram & Density Vector]:http://www.sqlpassion.at/archive/2014/01/28/inside-the-statistics-histogram-density-vector/
 [Misconceptions on parameter sniffing]:https://sqlserverfast.com/blog/hugo/2016/11/misconceptions-on-parameter-sniffing/
-[CAST vs. CONVERT]:https://blogs.sentryone.com/aaronbertrand/backtobasics-cast-vs-convert/
 [What Every Accidental DBA Needs to Know Now: Basics of SQL Security]:http://sqlmag.com/database-security/what-every-accidental-dba-needs-know-now-basics-sql-security
 [SQL Server Perfmon (Performance Monitor) Best Practices]:https://www.brentozar.com/archive/2006/12/dba-101-using-perfmon-for-sql-performance-tuning/
 [Top 5 Overlooked Index Features]:https://www.brentozar.com/archive/2016/11/top-5-overlooked-index-features/
@@ -2356,3 +2359,8 @@ Articles types:
 [dbatools multithreading commands with PoshRSJob module]:https://dbatools.io/multithread/
 [SQL Server Debugging with WinDbg – an Introduction]:https://www.sqlpassion.at/archive/2014/05/05/sql-server-debugging-with-windbg-an-introduction/
 [Looking deeper into SQL Server using Minidumps]:https://docs.microsoft.com/en-gb/archive/blogs/sqlcat/looking-deeper-into-sql-server-using-minidumps
+[Anatomy of a spool operators in SQL Server execution plans]:https://sqlserverfast.com/articles/anatomy-of-a-spool/
+[CAST v/s CONVERT – Is there a difference as far as SQL Server is concerned? Which is better?]:https://nakulvachhrajani.com/2011/07/18/cast-vs-convert-is-there-a-difference-as-far-as-sql-server-is-concerned-which-is-better/
+[#BackToBasics: CAST vs. CONVERT]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-cast-vs-convert
+[Productivity Hacks: Migrate in Minutes to the Most Current Version of SQL Server]:https://www.rubrik.com/blog/migrate-quickly-current-version-sql-server/
+[Database alias in Microsoft SQL Server]:http://www.baud.cz/blog/database-alias-in-microsoft-sql-server
