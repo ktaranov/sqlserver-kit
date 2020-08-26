@@ -1195,6 +1195,15 @@ Articles types:
 | [#BackToBasics: CAST vs. CONVERT]                                                                                       | Aaron Bertrand                           | 2016-11-02 | [DBA][DEV]  |
 | [Productivity Hacks: Migrate in Minutes to the Most Current Version of SQL Server]                                      | Chris Lumnah                             | 2020-07-29 | [DBA]       |
 | [Database alias in Microsoft SQL Server]                                                                                | Bohumír Kubík                            | 2011-01-11 | [DBA][DEV]  |
+| [The Curious Case of… the 8060-byte row size limit]                                                                     | Paul Randal                              | 2020-03-11 | [DBA][DEV]  |
+| [.NET TransactionScope Considered Annoying - Default Isolation Level is Serializable]                                   | Josh Darnell                             | 2020-07-27 | [DBA][DEV]  |
+| [Parameter Sniffing, Embedding, and the RECOMPILE Options]                                                              | Paul White                               | 2013-08-28 | [DBA][DEV]  |
+| [Why You’re Tuning Stored Procedures Wrong (the Problem with Local Variables)]                                          | Kendra Little                            | 2020-05-06 | [DBA][DEV]  |
+| [Yet Another Post About Local Variables]                                                                                | Erik Darlling                            | 2020-03-31 | [DBA][DEV]  |
+| [Cleaning up Backups from Azure Blob Storage]                                                                           | Niko Neugebauer                          | 2020-03-30 | [AZ][B]     |
+| [Temporary Table Caching Explained]                                                                                     | Paul White                               | 2012-08-17 | [DBA][DEV]  |
+| [SQL Server Temporary Object Caching]                                                                                   | Paul White                               | 2017-05-02 | [DBA][DEV]  |
+| [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-24 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2364,3 +2373,12 @@ Articles types:
 [#BackToBasics: CAST vs. CONVERT]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-cast-vs-convert
 [Productivity Hacks: Migrate in Minutes to the Most Current Version of SQL Server]:https://www.rubrik.com/blog/migrate-quickly-current-version-sql-server/
 [Database alias in Microsoft SQL Server]:http://www.baud.cz/blog/database-alias-in-microsoft-sql-server
+[The Curious Case of… the 8060-byte row size limit]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-8060-byte-row-size-limit/
+[.NET TransactionScope Considered Annoying - Default Isolation Level is Serializable]:https://joshthecoder.com/2020/07/27/transactionscope-considered-annoying.html
+[Parameter Sniffing, Embedding, and the RECOMPILE Options]:https://sqlperformance.com/2013/08/t-sql-queries/parameter-sniffing-embedding-and-the-recompile-options
+[Why You’re Tuning Stored Procedures Wrong (the Problem with Local Variables)]:https://www.brentozar.com/archive/2014/06/tuning-stored-procedures-local-variables-problems/
+[Yet Another Post About Local Variables]:https://www.erikdarlingdata.com/sql-server/yet-another-post-about-local-variables/
+[Cleaning up Backups from Azure Blob Storage]:http://www.nikoport.com/2020/03/30/cleaning-up-backups-from-azure-blob-storage/
+[Temporary Table Caching Explained]:https://www.sql.kiwi/2012/08/temporary-object-caching-explained.html
+[SQL Server Temporary Object Caching]:https://sqlperformance.com/2017/05/sql-performance/sql-server-temporary-object-caching
+[Dynamic Data Unmasking]:https://www.erikdarlingdata.com/sql-server/dynamic-data-unmasking/
