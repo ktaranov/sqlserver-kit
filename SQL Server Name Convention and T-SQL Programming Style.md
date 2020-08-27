@@ -43,13 +43,14 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 | [Table Primary Key]                      | PK   | PascalCase |    128 | No     | `PK_`   | No     | Yes          | [A-z][0-9]   | `PK_MyTableID`                       |
 | [Table Unique (Alternative) Key]         | UQ   | PascalCase |    128 | No     | `AK_`   | No     | Yes          | [A-z][0-9]   | `AK_MyTable_MyColumn_AnotherColumn`  |
 | [Table Foreign Key]                      | F    | PascalCase |    128 | No     | `FK_`   | No     | Yes          | [A-z][0-9]   | `FK_MyTable_ForeignTableID`          |
-| [Table Clustered Index]                  |      | PascalCase |    128 | No     | `IXC`   | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
+| [Table Clustered Index]                  |      | PascalCase |    128 | No     | `IXC_`  | No     | Yes          | [A-z][0-9]   | `IXC_MyTable_MyColumn_AnotherColumn` |
 | [Table Non Clustered Index]              |      | PascalCase |    128 | No     | `IX_`   | No     | Yes          | [A-z][0-9]   | `IX_MyTable_MyColumn_AnotherColumn`  |
 | [DDL Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DDL` | Yes          | [A-z][0-9]   | `TR_LogicalName_DDL`                 |
 | [DML Trigger]                            | TR   | PascalCase |    128 | No     | `TR_`   | `_DML` | Yes          | [A-z][0-9]   | `TR_MyTable_LogicalName_DML`         |
 | [Logon Trigger]                          | TR   | PascalCase |    128 | No     | `TR_`   | `_LOG` | Yes          | [A-z][0-9]   | `TR_LogicalName_LOG`                 |
 | [View]                                   | V    | PascalCase |    128 | No     | `VI_`   | No     | No           | [A-z][0-9]   | `VI_LogicalName`                     |
-| [Indexed View]                           | V    | PascalCase |    128 | No     | `VIX_`  | No     | No           | [A-z][0-9]   | `VIx_LogicalName`                    |
+| [Indexed View]                           | V    | PascalCase |    128 | No     | `VIX_`  | No     | No           | [A-z][0-9]   | `VIX_LogicalName`                    |
+| [Statistic]                              |      | PascalCase |    128 | No     | `ST_`   | No     | No           | [A-z][0-9]   | `ST_MyTable_MyColumn_AnotherColumn`  |
 | [Stored Procedure]                       | P    | PascalCase |    128 | No     | `usp_`  | No     | No           | [A-z][0-9]   | `usp_LogicalName`                    |
 | [Scalar User-Defined Function]           | FN   | PascalCase |    128 | No     | `udf_`  | No     | No           | [A-z][0-9]   | `udf_FunctionLogicalName`            |
 | [Table-Valued Function]                  | FN   | PascalCase |    128 | No     | `tvf_`  | No     | No           | [A-z][0-9]   | `tvf_FunctionLogicalName`            |
@@ -89,6 +90,7 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 [Logon Trigger]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-trigger-transact-sql
 [View]:https://docs.microsoft.com/en-us/sql/relational-databases/views/views
 [Indexed View]:https://docs.microsoft.com/en-us/sql/relational-databases/views/create-indexed-views
+[Statistic]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-statistics-transact-sql
 [Stored Procedure]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql
 [Scalar User-Defined Function]:https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine#Scalar
 [Table-Valued Function]:https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine#TVF
