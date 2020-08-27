@@ -190,6 +190,28 @@ More details about SQL Server data types and mapping it with another databases a
 **[⬆ back to top](#table-of-contents)**
 
 
+## SQL Server Function Recommendations
+<a id="function-recommendation"></a>
+This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
+
+| Recommended function | Not Recommended | Why                                                                                         | More details |
+|----------------------|-----------------|---------------------------------------------------------------------------------------------|--------------|
+| [`<>`][12]           | [`!=`][12]      | `<>` is `ANSI`, `!=` not `ANSI`, [`<>` and `!=` are identical][13]                          | [13]         |
+| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is `ANSI`                                                                            | [14],[15]    |
+| [`COALCESE`]         | [`ISNULL`]      | `COALCESE` is `ANSI` and supports more than two arguments, `ISNULL` has dangerous behaviour | [16],[17]    |
+
+[12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
+[13]:https://dba.stackexchange.com/a/155670/107045
+[14]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-cast-vs-convert
+[15]:https://nakulvachhrajani.com/2011/07/18/cast-vs-convert-is-there-a-difference-as-far-as-sql-server-is-concerned-which-is-better/
+[`COALCESE`]:https://docs.microsoft.com/sql/t-sql/language-elements/coalesce-transact-sql
+[`ISNULL`]:https://docs.microsoft.com/sql/t-sql/functions/isnull-transact-sql
+[16]:https://www.mssqltips.com/sqlservertip/2689/deciding-between-coalesce-and-isnull-in-sql-server/
+[17]:https://nocolumnname.blog/2017/10/09/a-subtle-difference-between-coalesce-and-isnull/
+
+**[⬆ back to top](#table-of-contents)**
+
+
 ## T-SQL Programming Style
 <a id="t-sql-programming-style"></a>
 SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
@@ -214,8 +236,26 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query),
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs)
- - Avoid using asterisk in select statements `SELECT *`, use explicit column names.
-   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list).
+ - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
+   Only one exception, see it below.
+   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list),
+   [here](https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list),
+   [here](https://dba.stackexchange.com/q/253873/107045).
+ - Use asterisk (`*`) only in an archiving situation, where rows are being moved to another table that must have the same structure.
+   ``sql
+   INSERT INTO SalesOrderArchive  /* Note no column list */
+   SELECT *
+   FROM SalesOrder
+   WHERE OrderDate < @OneYearAgo;
+    
+   DELETE FROM SalesOrder
+   WHERE OrderDate < @OneYearAgo;
+   ```
+   If a new column is added to `SalesOrder` table in the future, but not to `SalesOrderArchive`, the `INSERT` will fail.
+   Which sounds bad, but it's actually a really good thing! Because the alternative is much worse.
+   If all the columns were listed on the `INSERT` and the `SELECT`, then the `INSERT` would succeed, and so would the following DELETE (which is effectively `DELETE *`).
+   Production code that succeeds doesn't get any attention, and it may be a long time before someone notices that the new column is not being archived, but being silently deleted altogether.
+   More details [here](https://dba.stackexchange.com/a/253917/107045).
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
  - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions ([`CAST`][10] instead [`CONVERT`][10], [`COALESE`](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql) instead [`ISNULL`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnull-transact-sql), etc.).
  - All finished expressions should have semicolon `;` at the end.
