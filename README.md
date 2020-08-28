@@ -380,7 +380,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL-Server-Multi-Thread - a framework to do multi-threading in T-SQL using SQL Server Agent jobs.](https://github.com/jobbish-sql/SQL-Server-Multi-Thread) (by )
     - [SQL Server and Azure SQL Labs and Workshops](https://microsoft.github.io/sqlworkshops/) (by Microsoft)
     - [MsSqlDependencyBrowser - Simple tool to browse between dependent objects on MS SQL Server](https://github.com/usharik/MsSqlDependencyBrowser) (by Aleksej Usharovskij)
-    - [Projects-MS-SQL-Server-DBA - Utilities and Scripts for SQL Server dba](https://github.com/jobgemws/Projects-MS-SQL-Server-DBA) (by Evgeniy Gribkov)
+    - [`Projects-MS-SQL-Server-DBA` - Utilities and Scripts for SQL Server dba](https://github.com/jobgemws/Projects-MS-SQL-Server-DBA) (by Evgeniy Gribkov)
+    - [`sp_alter_column` stored procedure is able to alter a column with dependencies](https://github.com/segovoni/sp_alter_column) (by Sergio Govoni)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
@@ -581,6 +582,7 @@ SQL Server:
  - [Snowflake for SQL Server Users Part 1 – Core Concepts](https://sqldownunder.blob.core.windows.net/public/SnowflakeForSQLServerUsers_Part_1_CoreConcepts%20-%20for%20SDU%20Insiders.pdf) (by Dr Greg Low)
  - [The Fundamental Guide To Sql Query Optimization](https://www.quest.com/whitepapert/the-fundamental-guide-to-sql-query-optimization8143740/) (by Janis Griffin)
  - [An Expert Guide To Sql Server Performance Tuning](https://www.quest.com/whitepaper/an-expert-guide-to-sql-server-performance-tuning8143874/) (by Brent Ozar, Pinal Dave, Janis Griffin)
+ - [Microsoft® SQL Server® Notes for Professionals book](https://books.goalkicker.com/MicrosoftSQLServerBook/) (by GoalKicker Books)
  
 R:
  - [BookDown - Write HTML, PDF, ePub, and Kindle books with R Markdown](https://bookdown.org)

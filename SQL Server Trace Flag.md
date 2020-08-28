@@ -1747,7 +1747,7 @@ If trace flag 2389 is set, and a leading statistics column is marked as ascendin
 Link: <br />
 Link: http://blogs.msdn.com/b/ianjo/archive/2006/04/24/582227.aspx<br />
 Link: http://www.sqlmag.com/article/tsql3/making-the-most-of-automatic-statistics-updating--96767<br />
-Link: http://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator<br />
+Link: https://sqlperformance.com/2016/07/sql-statistics/trace-flag-2389-new-cardinality-estimator<br />
 Link: https://www.sswug.org/sswugresearch/community/trace-flag-2389-and-the-new-cardinality-estimator/<br />
 Link: [New Features in SQL Server 2016 Service Pack 1]<br />
 Link: [Docs Trace Flags]<br />
@@ -1844,7 +1844,7 @@ Scope: global only
 #### Trace Flag: 2453
 Function: Allow a table variable to trigger recompile when enough number of rows are changed with may allow the query optimizer to choose a more efficient plan.<br />
 **Note: Please ensure that you thoroughly test this option, before rolling it into a production environment.**<br />
-Link: http://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br />
+Link: https://sqlperformance.com/2014/06/t-sql-queries/table-variable-perf-fix<br />
 Link: https://support.microsoft.com/kb/2952444<br />
 Link: [Docs Trace Flags]<br />
 Link: https://www.brentozar.com/archive/2017/02/using-trace-flag-2453-improve-table-variable-performance<br />
@@ -3553,7 +3553,7 @@ This behavior improves the overall concurrency of the update statistics job run 
 ** TF 7471 can increase the possibility of deadlock especially when creation of new statistics and updating of existing statistics are executed simultaneously.
 So the recommended best practice is to use TF 7471 only as a part of maintenance when update statistics jobs are run in parallel and should be turned off otherwise.**
 Link: https://support.microsoft.com/kb/3156157<br />
-Link: http://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds<br />
+Link: https://sqlperformance.com/2016/05/sql-performance/parallel-rebuilds<br />
 Link: [KB2964518]<br />
 Link: https://blogs.msdn.microsoft.com/sql_server_team/boosting-update-statistics-performance-with-sql-2014-sp1cu6/<br />
 Scope: global only

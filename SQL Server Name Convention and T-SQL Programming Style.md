@@ -237,10 +237,12 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs)
  - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
-   Only one exception, see it below.
+   Main problems are: traffic issues, Memory Grants issues, Index usage issues.
+   **Only one exception, see it below.**
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-asterisk-select-list),
    [here](https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list),
-   [here](https://dba.stackexchange.com/q/253873/107045).
+   [here](https://dba.stackexchange.com/q/253873/107045),
+   [here](https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/).
  - Use asterisk (`*`) only in an archiving situation, where rows are being moved to another table that must have the same structure.
    ``sql
    INSERT INTO SalesOrderArchive  /* Note no column list */
