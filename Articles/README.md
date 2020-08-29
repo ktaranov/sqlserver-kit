@@ -883,7 +883,7 @@ Articles types:
 | [#TSQL2sday: How Much Plan Cache History Do You Have?]                                                                  | Brent Ozar                               | 2018-07-10 | [DBA][DEV]  |
 | [Fixing SQL Server Management Studio’s Tab Text]                                                                        | Brent Ozar                               | 2011-06-07 | [DBA][DEV]  |
 | [An overview of the SQL table variable]                                                                                 | Rajendra Gupta                           | 2019-10-16 | [DBA][DEV]  |
-| [Performance Impact of Small Queries]                                                                                   | Forrest                                  | 2019-06-15 | [DBA][DEV]  |
+| [Performance Impact of Small Queries]                                                                                   | Forrest McDaniel                         | 2019-06-15 | [DBA][DEV]  |
 | [How we use SQL Server as a Document Store]                                                                             | Paul Stovell                             | 2019-03-24 | [DBA][DEV]  |
 | [Overlooked T-SQL Gems]                                                                                                 | Itzik Ben-Gan                            | 2019-10-09 | [DBA][DEV]  |
 | [Are SQL Server database triggers evil?]                                                                                | Daniel Calbimonte                        | 2017-01-25 | [DBA][DEV]  |
@@ -976,7 +976,7 @@ Articles types:
 | [Going Serverless with Azure SQL Database]                                                                              | John Miner                               | 2019-12-20 | [DBA][DEV]  |
 | [SQLskills SQL101: Why are Statistics so Important?]                                                                    | Kimberly Tripp                           | 2020-01-20 | [DBA][DEV]  |
 | [Configuring SQL Server Express edition as SQL witness server in Database Mirroring]                                    | Nisarg Upadhyay                          | 2020-01-20 | [DBA]       |
-| [The Half Apply Query]                                                                                                  | Forrest                                  | 2020-01-20 | [DBA][DEV]  |
+| [The Half Apply Query]                                                                                                  | Forrest McDaniel                         | 2020-01-20 | [DBA][DEV]  |
 | [Import JSON data into SQL Server]                                                                                      | Rajendra Gupta                           | 2020-01-17 | [X]         |
 | [Auditing in AWS RDS SQL Server]                                                                                        | Rajendra Gupta                           | 2020-01-20 | [DBA]       |
 | [Types of SQL Server Indexes]                                                                                           | Ben Snaidero                             | 2019-12-24 | [IDX]       |
@@ -1204,6 +1204,12 @@ Articles types:
 | [Temporary Table Caching Explained]                                                                                     | Paul White                               | 2012-08-17 | [DBA][DEV]  |
 | [SQL Server Temporary Object Caching]                                                                                   | Paul White                               | 2017-05-02 | [DBA][DEV]  |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-24 | [DBA][DEV]  |
+| [3 Ways to Run DBCC CHECKDB Faster]                                                                                     | Brent Ozar                               | 2020-08-27 | [DBA][DEV]  |
+| [Back Up SQL Server 43%-67% Faster by Writing to Multiple Files.]                                                       | Brent Ozar                               | 2020-08-23 | [DBA][DEV]  |
+| [Bad Habits to Kick : Using SELECT * / omitting the column list]                                                        | Aaron Bertrand                           | 2009-10-10 | [DBA][DEV]  |
+| [All The Problems With Select *]                                                                                        | Erik Darlling                            | 2019-12-10 | [DBA][DEV]  |
+| [When Select * Doesn’t Matter]                                                                                          | Erik Darlling                            | 2019-11-18 | [DBA][DEV]  |
+| [HT Waits – Explained and Animated]                                                                                     | Forrest McDaniel                         | 2020-08-12 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2382,3 +2388,9 @@ Articles types:
 [Temporary Table Caching Explained]:https://www.sql.kiwi/2012/08/temporary-object-caching-explained.html
 [SQL Server Temporary Object Caching]:https://sqlperformance.com/2017/05/sql-performance/sql-server-temporary-object-caching
 [Dynamic Data Unmasking]:https://www.erikdarlingdata.com/sql-server/dynamic-data-unmasking/
+[3 Ways to Run DBCC CHECKDB Faster]:https://www.brentozar.com/archive/2020/08/3-ways-to-run-dbcc-checkdb-faster/
+[Back Up SQL Server 43%-67% Faster by Writing to Multiple Files]:https://www.brentozar.com/archive/2020/08/back-up-sql-server-43-67-faster-by-writing-to-multiple-files/
+[Bad Habits to Kick : Using SELECT * / omitting the column list]:https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list
+[All The Problems With Select *]:https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/
+[When Select * Doesn’t Matter]:https://www.erikdarlingdata.com/sql-server/when-select-doesnt-matter/
+[HT Waits – Explained and Animated]:https://forrestmcdaniel.com/2020/08/12/ht-waits-explained-and-animated/
