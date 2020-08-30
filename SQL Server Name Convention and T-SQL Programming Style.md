@@ -1,4 +1,5 @@
 # SQL Server Name Convention and T-SQL Programming Style
+
 > There are only two hard things in Computer Science: cache invalidation and naming things
 > -- <cite>[Phil Karlton](https://www.karlton.org/2017/12/naming-things-hard/)</cite>
 
@@ -11,8 +12,10 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 
 
 ## Table of Contents
+
 - [SQL Server Object Name Convention](#sql-server-object-name-convention)
 - [SQL Server Data Types Recommendation](#data-types-recommendation)
+- [SQL Server Function Recommendations](#function-recommendation)
 - [T-SQL Programming T-SQL Style](#t-sql-programming-style)
   - [General T-SQL programming style](#general-t-sql-programming-style)
   - [Stored procedures and functions programming style](#programming-style)
@@ -20,8 +23,8 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 - [Reference and useful links](#reference)
 
 
-## SQL Server Object Name Convention
 <a id="sql-server-object-name-convention"></a>
+## SQL Server Object Name Convention
 
 | Object                                   | Code | Notation   | Length | Plural | Prefix  | Suffix | Abbreviation | Char Mask    | Example                              |
 |------------------------------------------|------| ---------- |-------:|--------|---------|--------|--------------|--------------|--------------------------------------|
@@ -108,8 +111,9 @@ Reasons for using a naming convention (as opposed to allowing programmers to cho
 **[⬆ back to top](#table-of-contents)**
 
 
-## SQL Server Data Types Recommendation
 <a id="data-types-recommendation"></a>
+## SQL Server Data Types Recommendation
+
 More details about SQL Server data types and mapping it with another databases and program languages you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SQL%20Server%20Data%20Types.md)
 
 | General Type         | Type                | ANSI | Recommended    | What use instead   | Why use or not                                                                     |
@@ -192,8 +196,9 @@ More details about SQL Server data types and mapping it with another databases a
 **[⬆ back to top](#table-of-contents)**
 
 
-## SQL Server Function Recommendations
 <a id="function-recommendation"></a>
+## SQL Server Function Recommendations
+
 This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
 
 | Recommended function | Not Recommended | Why                                                                                         | More details |
@@ -214,13 +219,13 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 **[⬆ back to top](#table-of-contents)**
 
 
-## T-SQL Programming Style
 <a id="t-sql-programming-style"></a>
+## T-SQL Programming Style
 SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
 
-### General programming T-SQL style
 <a id="#general-t-sql-programming-style"></a>
+### General programming T-SQL style
 
  - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code:
    ```
@@ -497,8 +502,8 @@ ORDER BY t2.Value2;
 **[⬆ back to top](#table-of-contents)**
 
 
-### Stored procedures and functions programming style
 <a id="programming-style"></a>
+### Stored procedures and functions programming style
 
 Recommendations from Microsoft: [Stored procedure Best practice][11]
 
@@ -590,8 +595,9 @@ GO
 **[⬆ back to top](#table-of-contents)**
 
 
-### Dynamic T-SQL Recommendation
 <a id="dynamic-t-sql-recommendation"></a>
+### Dynamic T-SQL Recommendation
+
 **Highly recommended to read awesome detailed article about dynamic T-SQL by Erland Sommarskog: [The Curse and Blessings of Dynamic SQL](http://sommarskog.se/dynamic_sql.html)**
 
 Dynamic SQL is a programming technique that allows you to construct SQL statements dynamically at runtime.
@@ -696,9 +702,12 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
   IF @debug = 1 SELECT @tsql AS "tsql" ELSE EXEC sp_executesql @tsql;
   ```
 
+**[⬆ back to top](#table-of-contents)**
 
-## Official Reference and useful links
+
 <a id="reference"></a>
+## Official Reference and useful links
+
  - [Transact-SQL Formatting Standards](https://www.simple-talk.com/sql/t-sql-programming/transact-sql-formatting-standards-%28coding-styles%29/) (by Robert Sheldon)
  - [Subjectivity: Naming Standards](http://blogs.sqlsentry.com/aaronbertrand/subjectivity-naming-standards/) (by Aaron Bertrand)
  - [General Database Conventions](http://kejser.org/database-naming-conventions/general-database-conventions/) (by Thomas Kejser)
