@@ -1082,7 +1082,7 @@ Articles types:
 | [Negative identity values don’t suck]                                                                                   | Randolph West                            | 2020-05-06 | [DBA][DEV]  |
 | [How SQL Server stores data types: integers and decimals]                                                               | Randolph West                            | 2020-05-13 | [DBA][DEV]  |
 | [How SQL Server stores data types: DATETIME, DATE, TIME, and DATETIME2]                                                 | Randolph West                            | 2020-04-22 | [DBA][DEV]  |
-| [Cross Database Transactions on One Server]                                                                             | Michael J. Swart                         | 2020-05-15 | [DBA][DEV]  |
+| [Cross Database Transactions on One Server]                                                                             | Michael J Swart                          | 2020-05-15 | [DBA][DEV]  |
 | [Your Views Aren’t The Problem. Your Code Is.]                                                                          | Brent Ozar                               | 2020-05-06 | [DBA][DEV]  |
 | [Can I Offload DBCC CHECKDB To Another Server?]                                                                         | Brent Ozar                               | 2020-05-19 | [DBA]       |
 | [Negative (-) is an operator and will affect the order of operations.]                                                  | Kenneth Fisher                           | 2020-05-18 | [DBA][DEV]  |
@@ -1107,7 +1107,7 @@ Articles types:
 | [Automated Backup Tuning]                                                                                               | Nicholas Cain                            | 2012-12-13 | [B]         |
 | [Optimizing Database Restores]                                                                                          | Nicholas Cain                            | 2011-09-26 | [DBA]       |
 | [AVAILABILITY_REPLICA - The Deception of the Log Reuse Wait Type]                                                       | Nicholas Cain                            | 2020-05-19 | [DBA]       |
-| [Changing an INT to a BIGINT with no downtime]                                                                          | Michael Swart                            | 2020-06-19 | [DBA]       |
+| [Changing an INT to a BIGINT with no downtime]                                                                          | Michael J Swart                          | 2020-06-19 | [DBA]       |
 | [New Metadata-Only Column Changes in SQL Server 2016]                                                                   | Paul White                               | 2020-04-17 | [DBA][DEV]  |
 | [Bandwidth-friendly Query Profiling for Azure SQL Database]                                                             | Greg Gonzalez                            | 2020-04-15 | [AZ][XE]    |
 | [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-10 | [DBA][DEV]  |
@@ -1210,6 +1210,8 @@ Articles types:
 | [All The Problems With Select *]                                                                                        | Erik Darlling                            | 2019-12-10 | [DBA][DEV]  |
 | [When Select * Doesn’t Matter]                                                                                          | Erik Darlling                            | 2019-11-18 | [DBA][DEV]  |
 | [HT Waits – Explained and Animated]                                                                                     | Forrest McDaniel                         | 2020-08-12 | [DBA][DEV]  |
+| [SQL Server 100% Online Deployments]                                                                                    | Michael J Swart                          | 2018-01-05 | [DBA]       |
+| [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2394,3 +2396,5 @@ Articles types:
 [All The Problems With Select *]:https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/
 [When Select * Doesn’t Matter]:https://www.erikdarlingdata.com/sql-server/when-select-doesnt-matter/
 [HT Waits – Explained and Animated]:https://forrestmcdaniel.com/2020/08/12/ht-waits-explained-and-animated/
+[SQL Server 100% Online Deployments]:https://michaeljswart.com/2018/01/100-online-deployments/
+[When Measuring Timespans, try DATEADD instead of DATEDIFF]:https://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
