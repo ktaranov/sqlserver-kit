@@ -152,6 +152,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Kevin Chant Blog](https://www.kevinrchant.com/)
     - [SQLBlog.org](https://sqlblog.org)
     - [Idera SQL Server Blog](https://community.idera.com/tags/SQL%2bServer)
+    - [SQL Server Science Blog](https://www.sqlserverscience.com/) (by Max Vernon)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
@@ -539,7 +540,7 @@ SQL Server:
    - SQL Developers
      - [Defensive Database Programming](https://assets.red-gate.com/community/books/defensive-database-programming.pdf) (by Alex Kuznetsov)
      - [Inside the SQL Server Query Optimizer](https://assets.red-gate.com/community/books/inside-the-sql-server-query-optimizer.pdf) (by Benjamin Nevarez)
-     - [SQL Server Execution Plans, 2nd Edition](https://assets.red-gate.com/community/books/sql-server-execution-plans-book.zip) (by Grant Fritchey)
+     - [SQL Server Execution Plans, 3rd Edition](https://www.red-gate.com/products/dba/sql-monitor/entrypage/execution-plans) (by Grant Fritchey)
      - [SQL Server Source Control Basics](https://www.red-gate.com/products/sql-development/sql-source-control/entrypage/sql-server-source-control-basics) (by Robert Sheldon, Rob Richardson & Tony Davis)
      - [The Art of XSD](https://assets.red-gate.com/community/books/the-art-of-xsd.pdf) (by Jacob Sebastian)
      - [The Redgate Guide to SQL Server Team-based Development](https://assets.red-gate.com/products/sql-development/sql-source-control/entrypage/assets/RG_Guide_to_SQL_Server_Dev.pdf) (by Phil Factor, Grant Fritchey, Alex Kuznetsov, and Mladen Prajdić)
