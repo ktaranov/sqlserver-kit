@@ -205,16 +205,22 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 |----------------------|-----------------|---------------------------------------------------------------------------------------------|--------------|
 | [`<>`][12]           | [`!=`][12]      | `<>` is `ANSI`, `!=` not `ANSI`, [`<>` and `!=` are identical][13]                          | [13]         |
 | [`CAST`][10]         | [`CONVERT`][10] | `CAST` is `ANSI`                                                                            | [14],[15]    |
-| [`COALCESE`]         | [`ISNULL`]      | `COALCESE` is `ANSI` and supports more than two arguments, `ISNULL` has dangerous behaviour | [16],[17]    |
+| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is `ANSI` and supports more than two arguments, `ISNULL` has dangerous behaviour | [16],[17]    |
+| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]       | [18],[19]    |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
 [14]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-cast-vs-convert
 [15]:https://nakulvachhrajani.com/2011/07/18/cast-vs-convert-is-there-a-difference-as-far-as-sql-server-is-concerned-which-is-better/
-[`COALCESE`]:https://docs.microsoft.com/sql/t-sql/language-elements/coalesce-transact-sql
+[`COALECSE`]:https://docs.microsoft.com/sql/t-sql/language-elements/coalesce-transact-sql
 [`ISNULL`]:https://docs.microsoft.com/sql/t-sql/functions/isnull-transact-sql
 [16]:https://www.mssqltips.com/sqlservertip/2689/deciding-between-coalesce-and-isnull-in-sql-server/
 [17]:https://nocolumnname.blog/2017/10/09/a-subtle-difference-between-coalesce-and-isnull/
+[`DATEADD`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/dateadd-transact-sql
+[`DATEDIFF`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql
+[`SARGable`]:https://www.sqlshack.com/how-to-use-sargable-expressions-in-t-sql-queries-performance-advantages-and-examples/
+[18]:https://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
+[19]:https://dba.stackexchange.com/q/132437/107045
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -251,7 +257,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://dba.stackexchange.com/q/253873/107045),
    [here](https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/).
  - Use asterisk (`*`) only in an archiving situation, where rows are being moved to another table that must have the same structure.
-   ``sql
+   ```sql
    INSERT INTO SalesOrderArchive  /* Note no column list */
    SELECT *
    FROM SalesOrder
@@ -273,8 +279,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
    > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/) and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
- - All script files should end with `GO` and line break.
- - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc.
+ - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
+ - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
