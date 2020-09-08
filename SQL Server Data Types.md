@@ -316,8 +316,8 @@ FROM sys.fn_helpdatatypemap (
 <a id="sql-server-data-types-mapping-to-program-languages"></a>
 
 - [Java and SQL Server supported data types](https://docs.microsoft.com/en-us/sql/language-extensions/how-to/java-to-sql-data-types)
-- [Data type mappings between Python and SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/python/python-libraries-and-data-types)
-- [Data type mappings between R and SQL Server](https://docs.microsoft.com/en-us/sql/advanced-analytics/r/r-libraries-and-data-types)
+- [Data type mappings between Python and SQL Server](https://docs.microsoft.com/en-us/sql/machine-learning/python/python-libraries-and-data-types)
+- [Data type mappings between R and SQL Server](https://docs.microsoft.com/en-us/sql/machine-learning/r/r-libraries-and-data-types)
 
 | General Type          | Type               | ANSI | Java                 | Python  | R         |
 |:----------------------|:-------------------|:-----|:---------------------|:--------|:----------|
@@ -362,7 +362,7 @@ FROM sys.fn_helpdatatypemap (
 | Spatial Data Types    | [geography]        | No   | ?                    | ?       | -         |
 
 (\* *These data types will be removed in a future version of SQL Server. Avoid using these data types in new projects, and try to change them in current projects*)
-(\*\* Only UTF8 Strings supported)
+(\*\* *Only UTF8 Strings supported*)
 
 **[⬆ back to top](#table-of-contents)**
 
