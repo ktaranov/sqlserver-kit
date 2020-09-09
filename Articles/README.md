@@ -1212,6 +1212,9 @@ Articles types:
 | [HT Waits – Explained and Animated]                                                                                     | Forrest McDaniel                         | 2020-08-12 | [DBA][DEV]  |
 | [SQL Server 100% Online Deployments]                                                                                    | Michael J Swart                          | 2018-01-05 | [DBA]       |
 | [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA][DEV]  |
+| [The Curious Case of… setting up a server for DBCC CHECKDB]                                                             | Paul Randal                              | 2020-08-24 | [DBA]       |
+| [When should a primary key be declared non-clustered?]                                                                  | Paul White                               | 2012-12-01 | [IDX]       |
+| [Guid vs INT - Which is better as a primary key?]                                                                       | Sandeep Kumar M                          | 2011-01-05 | [DBA][DEV] |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2398,3 +2401,6 @@ Articles types:
 [HT Waits – Explained and Animated]:https://forrestmcdaniel.com/2020/08/12/ht-waits-explained-and-animated/
 [SQL Server 100% Online Deployments]:https://michaeljswart.com/2018/01/100-online-deployments/
 [When Measuring Timespans, try DATEADD instead of DATEDIFF]:https://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
+[The Curious Case of… setting up a server for DBCC CHECKDB]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-setting-up-a-server-for-dbcc-checkdb/
+[When should a primary key be declared non-clustered?]:https://dba.stackexchange.com/q/7741/107045
+[Guid vs INT - Which is better as a primary key?]:https://dba.stackexchange.com/q/264/107045
