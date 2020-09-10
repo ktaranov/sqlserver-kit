@@ -383,6 +383,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [MsSqlDependencyBrowser - Simple tool to browse between dependent objects on MS SQL Server](https://github.com/usharik/MsSqlDependencyBrowser) (by Aleksej Usharovskij)
     - [`Projects-MS-SQL-Server-DBA` - Utilities and Scripts for SQL Server dba](https://github.com/jobgemws/Projects-MS-SQL-Server-DBA) (by Evgeniy Gribkov)
     - [`sp_alter_column` stored procedure is able to alter a column with dependencies](https://github.com/segovoni/sp_alter_column) (by Sergio Govoni)
+    - [Toolbox repository for Madeira's consultant team](https://github.com/MadeiraData/MadeiraToolbox) (by Madeira)
+    - [`mssql-jobs-hadr` - maintain scheduled jobs on SQL Servers with either Availability Groups or Database Mirroring](https://github.com/MadeiraData/mssql-jobs-hadr) (by Eitan Blumin)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
