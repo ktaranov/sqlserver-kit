@@ -1214,7 +1214,9 @@ Articles types:
 | [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA][DEV]  |
 | [The Curious Case of… setting up a server for DBCC CHECKDB]                                                             | Paul Randal                              | 2020-08-24 | [DBA]       |
 | [When should a primary key be declared non-clustered?]                                                                  | Paul White                               | 2012-12-01 | [IDX]       |
-| [Guid vs INT - Which is better as a primary key?]                                                                       | Sandeep Kumar M                          | 2011-01-05 | [DBA][DEV] |
+| [Guid vs INT - Which is better as a primary key?]                                                                       | Sandeep Kumar M                          | 2011-01-05 | [DBA][DEV]  |
+| [Control SQL Jobs based on HADR Role – Taking it to the Next Level]                                                     | Eitan Blumin                             | 2020-05-26 | [DBA][J]    |
+| [SQL Friday #16: Eitan Blumin on “How to HADR Your SQL Jobs”]                                                           | Eitan Blumin                             | 2020-07-31 | [DBA][J]    |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2404,3 +2406,5 @@ Articles types:
 [The Curious Case of… setting up a server for DBCC CHECKDB]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-setting-up-a-server-for-dbcc-checkdb/
 [When should a primary key be declared non-clustered?]:https://dba.stackexchange.com/q/7741/107045
 [Guid vs INT - Which is better as a primary key?]:https://dba.stackexchange.com/q/264/107045
+[Control SQL Jobs based on HADR Role – Taking it to the Next Level]:https://eitanblumin.com/2020/05/26/sql-jobs-based-on-hadr-role-next-level/
+[SQL Friday #16: Eitan Blumin on “How to HADR Your SQL Jobs”]:https://sqlfriday.net/past-sql-friday-sessions/sql-friday-16-eitan-blumin-on-how-to-hadr-your-sql-jobs/
