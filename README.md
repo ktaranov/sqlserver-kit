@@ -296,6 +296,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [SentryOne SQL Server Virtual Conference](https://info.sentryone.com/accelerate-2020)
    - [Red Gate SQL Server Online Events](https://www.red-gate.com/hub/events/online-events/)
    - [EigthKB Sql Server Internals Conference](https://eightkb.online/)
+   - [DataWeekender](https://www.dataweekender.com/schedule)
  - Open Source Projects <a id="open-source">
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
