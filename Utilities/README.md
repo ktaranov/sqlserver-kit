@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **346** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **374** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
- - **[B]**: Backup solutions {7}
+ - **[B]**: Backup solutions {11}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {8}
  - **[DA]**: Database Architecture {20}
@@ -12,16 +12,16 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {26}
- - **[MG]**: Migration tool {29}
- - **[MS]**: Management Studio (alternative for SSMS) {31}
+ - **[M]**: Monitoring and alerting Tools {27}
+ - **[MG]**: Migration tool {30}
+ - **[MS]**: Management Studio (alternative for SSMS) {32}
  - **[REC]**: Recovery tools {13}
- - **[S]**: Search tools {4}
+ - **[S]**: Search tools {5}
  - **[SEC]**: Security tools {7}
  - **[SC]**: Structure compare {21}
  - **[ST]**: Statistics utilities {3}
- - **[T]**: Testing tools {5}
- - **[?]**: Not yet classified {127}
+ - **[T]**: Testing tools {6}
+ - **[?]**: Not yet classified {146}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                  | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-------------------------|------------|----------------|------:|
@@ -66,6 +66,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server 2000 Best Practices Analyzer](#bpa-2000)             | No                            | No        | [?]      | [BPA 2000]                                  | 2010-04-26 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2008 R2 Best Practices Analyzer](#bpa-2008)          | No                            | No        | [?]      | [BPA 2008]                                  | 2010-06-18 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2012 Best Practices Analyzer](#bpa-2012)             | No                            | No        | [?]      | [BPA 2012]                                  | 2012-06-04 | Microsoft               |            | Yes            | No    |
+| [Elastic database tools](#elastic-database-tools)                | No                            | No        | [?]      | [Elastic database tools]                    | ?          | Microsoft               |            | Yes            | No    |
+| [Microsoft Sync Framework](#microsoft-sync-framework)            | No                            | No        | [?]      | [Microsoft Sync Framework]                  | 2020-04-22 | Microsoft               |            | Yes            | No    |
 | [DLM Dashboard](#dlm-dashboard)                                  | No                            | No        | [M]      | [DLM Dashboard]                             | 2016-04-27 | Red Gate                |            | Yes            | No    |
 | [Red Gate SQL Compare](#red-gate-sql-compare)                    | No                            | No        | [DC]     | [Red Gate SQL Compare]                      | 2016-10-31 | Red Gate                |            | No             |  $495 |
 | [Red Gate SQL Data Compare](#red-gate-sql-data-compare)          | No                            | No        | [SC]     | [Red Gate SQL Data Compare]                 | 2016-05-09 | Red Gate                |            | No             |  $495 |
@@ -132,6 +134,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [dbForge Documenter](#dbforge-documenter)                        | No                            | No        | [D]      | [dbForge Documenter]                        | 2020-04-23 | Devart                  | Shareware  | No             |  $150 |
 | [dbForge SSIS Data Flow Components](#dbforge-ssis)               | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [dbForge SSIS Data Flow Components]         | 2020-03-31 | Devart                  | Shareware  | No             |  $500 |
 | [dbForge DevOps Automation for SQL Server](#dbforge-devops)      | No                            | No        | [?]      | [dbForge DevOps Automation for SQL Server]  | 2020-01-27 | Devart                  | Shareware  | No             |  $900 |
+| [dbForge Complete](#dbforge-complete)                            | No                            | No        | [?]      | [dbForge Complete]                          | 2020-09-01 | Devart                  | Shareware  | No             |  $199 |
+| [dbForge SQL Azure Backup](#dbforge-sql-azure-backup)            | No                            | No        | [B]      | [dbForge SQL Azure Backup]                  | 2013-04-18 | Devart                  | Freeware   | Yes            | No    |
 | [Devart Excel Add-in for SQL Server](#devart-excel-addin)        | No                            | No        | [?]      | [Devart Excel Add-in for SQL Server]        | 2020-04-13 | Devart                  | Shareware  | No             |  $250 |
 | [dbMonitor](#dbmonitor)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [M]      | [dbMonitor]                                 | 2012-11-01 | Devart                  | Freeware   | Yes            | No    |
 | [SQL Server Compression Estimator](#compression-estimator)       | No                            | No        | [?]      | [SQL Server Compression Estimator]          | 2011-06-02 | Bob Tavlor              |            | Yes            | No    |
@@ -174,6 +178,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [ApexSQL Compare](#apexsql-compare)                              | No                            | No        | [?]      | [ApexSQL Compare]                           | 2020-03-17 | ApexSQL                 |            | Yes            | No    |
 | [ApexSQL Complete](#apexsql-complete)                            | No                            | No        | [?]      | [ApexSQL Complete]                          | 2020-05-28 | ApexSQL                 |            | Yes            | No    |
 | [ApexSQL Refactor](#apexsql-refactor)                            | No                            | No        | [?]      | [ApexSQL Refactor]                          | 2020-06-09 | ApexSQL                 |            | Yes            | No    |
+| [ApexSQL Search](#apexsql-search)                                | No                            | No        | [S]      | [ApexSQL Search]                            | 2020-07-30 | ApexSQL                 |            | Yes            | No    |
+| [ApexSQL Source Control](#apexsql-source-control)                | No                            | No        | [?]      | [ApexSQL Source Control]                    | 2020-01-20 | ApexSQL                 |            | No             | $299  |
 | [DBBest T-SQL Analyzer](#dbbest-t-sql-analyzer)                  | No                            | No        | [?]      | [DBBest T-SQL Analyzer]                     | 2015-03-13 | DBBest                  |            | No             |   $89 |
 | [DBBest Database Compare Suite](#dbbest-database-compare-suite)  | No                            | No        | [SC],[DC]| [DBBest Database Compare Suite]             | 2015-09-04 | DBBest                  |            | No             |  $349 |
 | [Advanced Query Tool](#advanced-query-tool)                      | No                            | No        | [?]      | [Advanced Query Tool]                       | 2015-03-18 | Cardett Associates      |            | No             |  $180 |
@@ -354,7 +360,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Partition Management](#partition-management)                    | No                            | No        | [?]      | [Partition Management]                      | ?          | ?                       |            | Open Source    |  No   |
 | [PSDatabaseClone](#psdatabaseclone)                              | No                            | No        | [?]      | [PSDatabaseClone]                           | 2018-07-27 | Sander Stad             |            | Open Source    |  No   |
 | [Pssdiag&Sqldiag Manager](#pssdiag-sqldiag-manager)              | No                            | No        | [?]      | [Pssdiag&Sqldiag Manager]                   | 2020-05-04 | Jack Li                 |            | Open Source    |  No   |
-| [SQuirreL SQL Client](#squirrelsql-client)                       | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [SQuirreL SQL Client]                       | 2020-04-30 | Colin Bell              |           | Yes            |  No   |
+| [SQuirreL SQL Client](#squirrelsql-client)                       | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [SQuirreL SQL Client]                       | 2020-04-30 | Colin Bell              |            | Yes            |  No   |
 | [Data Synchronisation Studio](#data-synchronisation-studio)      | No                            | No        | [?]      | [Data Synchronisation Studio]               | 2020-05-26 | Simego Ltd              |            | No             | $999  |
 | [SQL Converter](#sql-converter)                                  | No                            | No        | [?]      | [SQL Converter]                             | 2015-12-15 | Alaa Ben Fatma          |            | Yes            |  No   |
 | [SQLDBSearch](#sqldbsearch)                                      | No                            | No        | [S]      | [SQLDBSearch]                               | ?          | Mohamed Bouarroudj      |            | Yes            |  No   |
@@ -365,12 +371,34 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL ExecStats](#sql-execstats)                                  | No                            | No        | [?]      | [SQL ExecStats]                             | ?          | Elemental Inc           |            | Yes            |  No   |
 | [SQL-FineBuild](#sql-finebuild)                                  | No                            | No        | [?]      | [SQL-FineBuild]                             | 2017-10-28 | Edward Vassie           |            | Open Source    |  No   |
 | [SQL Health Monitor](#sql-health-monitor)                        | No                            | No        | [M]      | [SQL Health Monitor]                        | ?          | ManageEngine            |            | Yes            |  No   |
-| [SQLPRep](#sqlprep)                                              | No                            | No        | [?]      | [SQLPRep]                                   | ?          | Consequential Solutions |           | Yes            |  No   |
+| [SQLPRep](#sqlprep)                                              | No                            | No        | [?]      | [SQLPRep]                                   | ?          | Consequential Solutions |            | Yes            |  No   |
 | [SQL Server Monitoring](#sql-server-monitoring)                  | No                            | No        | [M]      | [SQL Server Monitoring]                     | ?          | Spiceworks              |            | Yes            |  No   |
 | [SQL Server Storage manager](#sql-server-storage-manager)        | No                            | No        | [M]      | [SQL Server Storage manager]                | ?          | Lepide Software         |            | Yes            |  No   |
 | [SysKit Pulse](#syskit-pulse)                                    | No                            | No        | [M]      | [SysKit Pulse]                              | ?          | SysKit Ltd              |            | Yes            |  No   |
 | [WhatsUp SQL Server Monitor](#whatsup-sql-server-monitor)        | No                            | No        | [M]      | [WhatsUp SQL Server Monitor]                | ?          | Ipswitch                |            | Yes            |  No   |
-| [POPSQL](#popsql)                                                | Oracle,MySQL,PostgreSQL,Other | Online    | [MS]     | [POPSQL]                                    | 2020-08-01 | PopSQL                  |            | Yes            |   10$ |
+| [POPSQL](#popsql)                                                | Oracle,MySQL,PostgreSQL,Other | Online    | [MS]     | [POPSQL]                                    | 2020-08-01 | PopSQL                  |            | Yes            | $10   |
+| [Azure Blob Studio 2011](#azure-blob-studio-2011)                | No                            | No        | [?]      | [Azure Blob Studio 2011]                    | 2010-12-25 | Alessandro Del Sole     |            | Yes            |  No   |
+| [Azure Explorer](#azure-explorer)                                | No                            | No        | [?]      | [Azure Explorer]                            | ?          | Monza Cloud             |            | Yes            |  No   |
+| [Azure SQL Agent](#azure-sql-agent)                              | No                            | No        | [?]      | [Azure SQL Agent]                           | ?          | ?                       | [MIT]      | Open Source    |  No   |
+| [Azure SQL Database DTU Calculator](#azure-sql-dtu-calculator)   | No                            | No        | [?]      | [Azure SQL Database DTU Calculator]         | ?          | Justin Henriksen        | [MIT]      | Open Source    |  No   |
+| [Azure SQL Database Stress Test Tool](#azure-sql-stress-test)    | No                            | No        | [T]      | [Azure SQL Database Stress Test Tool]       | ?          | Kiyoaki Tsurutani       | [MIT]      | Open Source    |  No   |
+| [Azure SQL Dev Cloner](#azure-sql-dev-cloner)                    | No                            | No        | [?]      | [Azure SQL Dev Cloner]                      | ?          | ?                       | [MIT]      | Open Source    |  No   |
+| [Azure User Management Console](#azure-user-management-console)  | No                            | No        | [?]      | [Azure User Management Console]             | ?          | ?                       | [Apache]   | Open Source    |  No   |
+| [CloudMonix SQL Azure Database Management](#cloudmonix-azure-man)| No                            | No        | [?]      | [CloudMonix SQL Azure Database Management]  | ?          | CloudMonix              |            | No             | $15   |
+| [DB Ghost Change Manager Professional](#db-ghost-change-manager) | No                            | No        | [?]      | [DB Ghost Change Manager Professional]      | ?          | Innovartis Ltd          |            | No             | £430  |
+| [MSSQL-Maestro](#mssql-maestro)                                  | No                            | No        | [MS]     | [MSSQL-Maestro]                             | 2017-06-29 | SQL Maestro Group       |            | No             | $229  |
+| [MSSQLMerge](#mssqlmerge)                                        | No                            | No        | [?]      | [MSSQLMerge]                                | ?          | Konstantin Semenenkov   |            | Yes            | $50   |
+| [SQL Backup and FTP](#sql-backup-and-ftp)                        | MySQL,PostgreSQL              | Linux     | [B]      | [SQL Backup and FTP]                        | ?          | Pranas.NET              |            | Yes            | $129  |
+| [SQL Bak](#sql-bak)                                              | MySQL,PostgreSQL              | Linux     | [B]      | [SQL Bak]                                   | ?          | Pranas.NET              |            | Yes            | $9    |
+| [SQL Bulk Tools](#sql-bulk-tools)                                | No                            | No        | [?]      | [SQL Bulk Tools]                            | ?          | Greg Taylor             | [MIT]      | Open Source    |  No   |
+| [SQL Data Examiner](#sql-data-examiner)                          | Oracle,MySQL,PostgreSQL       | No        | [?]      | [SQL Data Examiner]                         | ?          | Intelligent Database Solutions |     | No             | $400  |
+| [SQL Examiner](#sql-examiner)                                    | Oracle,MySQL,PostgreSQL       | No        | [?]      | [SQL Examiner]                              | ?          | Intelligent Database Solutions |     | No             | $400  |
+| [SQL Database Backup](#sql-database-backup)                      | No                            | No        | [B]      | [SQL Database Backup]                       | ?          | Richard Astbury          | [MIT]     | Open Source    |  No   |
+| [SQL Database Copy](#sql-database-copy)                          | No                            | No        | [MG]     | [SQL Database Copy]                         | 2017-07-25 | ryanovic                 | [MIT]     | Open Source    |  No   |
+| [SQL Delta Duo for SQL Server](#sql-delta-duo-for-sql-server)    | No                            | No        | [?]      | [SQL Delta Duo for SQL Server]              | ?          | The Australian Software Company |    | No             | $370  |
+| [SQL Trace Replay](#sql-trace-replay)                            | No                            | No        | [?]      | [SQL Trace Replay]                          | ?          | Mikhail Shilkov          | [MIT]     | Open Source    |  No   |
+| [SQL Workload Profiler](#sql-workload-profiler)                  | No                            | No        | [?]      | [SQL Workload Profiler]                     | 2014-10-01 | Chris Bailiss            |            | Yes           |  No   |
+| [SQLDBdiff](#sqldbdiff)                                          | No                            | Linux     | [?]      | [SQLDBdiff]                                 | ?          | SQLDBtools               |            | Yes           | $60   |
 
 <a id="ssms"></a>
 ## SSMS
@@ -5400,6 +5428,421 @@ Collaborative SQL editor for your team.
 Write queries, visualize data, and share your results.
 
 
+## ApexSQL Search
+<a id="apexsql-search"></a>
+Download page: [ApexSQL Search]<br/>
+Release date: 2020-07-30<br/>
+Support Version: SQL Server 2005 and higher<br/>
+Author: ApexSQL<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Search for SQL objects
+ - Quickly find data in SQL tables
+ - Edit extended properties
+ - Easily navigate to result objects
+ - Rename SQL objects safely
+ - Export results to HTML, CSV and Excel
+
+
+## ApexSQL Source Control
+<a id="apexsql-source-control"></a>
+Download page: [ApexSQL Source Control]<br/>
+Release date: 2020-01-20<br/>
+Support Version: SQL Server 2005 and higher<br/>
+Author: ApexSQL<br/>
+Free version: No<br/>
+Price: $299
+
+ - Integrate SQL source control directly into SSMS
+ - Use dedicated or shared development models
+ - View conflicts and resolve directly in the UI
+ - View a detailed history of changes
+ - Lock objects to prevent overwrites
+ - Set team policies for check outs and locks
+ - Apply changes with dependency aware scripts
+ - Create and apply labels from source control
+ - Create branch or merge branches directly from SSMS
+ - Associate a changeset with a TFS work item
+
+
+## Azure Blob Studio 2011
+<a id="azure-blob-studio-2011"></a>
+Download page: [Azure Blob Studio 2011]<br/>
+Release date: 2010-12-25<br/>
+Support Version: ?<br/>
+Author: Alessandro Del Sole<br/>
+Free version: Yes<br/>
+Price: No
+
+Azure Blob Studio is a tool for managing files in the Windows Azure's Blob Storage
+You can:
+ - Work with both the developer and on-line accounts
+ - Create containers (folders)
+ - Upload multiple blobs (files)
+ - Remove containers
+ - Remove multiple blobs
+ - Retrieve URI for each blob
+ - Copy the blob's URI to the clipboard right-clicking the Blob's name
+ - Retrieve metadata
+ - Open blobs via URI 
+
+
+## Azure Explorer
+<a id="azure-explorer"></a>
+Download page: [Azure Explorer]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Monza Cloud<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Manage Azure blobs like local files
+ - Support for common blob operations
+ - Built for users with thousands of blob containers
+ - Designed for Microsoft Azure
+
+
+## Azure SQL Agent
+<a id="azure-sql-agent"></a>
+Download page: [Azure SQL Agent]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: ?<br/>
+Free version: Yes<br/>
+Price: No
+
+Command line agent to automatically add your current public IP address to the Azure SQL firewall
+
+
+## Azure SQL Database DTU Calculator
+<a id="azure-sql-dtu-calculator"></a>
+Download page: [Azure SQL Database DTU Calculator]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Justin Henriksen<br/>
+Free version: Yes<br/>
+Price: No
+
+This calculator will help you determine the number of DTUs for your existing SQL Server database(s) as well as a recommendation of the minimum performance level and service tier that you need before you migrate to Azure SQL Database.
+
+
+## Azure SQL Database Stress Test Tool
+<a id="azure-sql-stress-test"></a>
+Download page: [Azure SQL Database Stress Test Tool]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Kiyoaki Tsurutani<br/>
+Free version: Yes<br/>
+Price: No
+
+Azure SQL Database Stress Test Tool 
+
+
+## Azure SQL Dev Cloner
+<a id="azure-sql-stress-test"></a>
+Download page: [Azure SQL Dev Cloner]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: ?<br/>
+Free version: Yes<br/>
+Price: No
+
+Command line tool for cloning an Azure SQL Database from website instance to another. It optionally allows the target to be a Deployment Slot.
+
+
+## Azure User Management Console
+<a id="azure-user-management-console"></a>
+Download page: [Azure User Management Console]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: ?<br/>
+Free version: Yes<br/>
+Price: No
+
+AUMC is a User Graphic Interface (GUI) that manages the users and logins of an Azure SQL database. The tool is simply convertin
+
+
+## CloudMonix SQL Azure Database Management
+<a id="cloudmonix-azure-man"></a>
+Download page: [CloudMonix SQL Azure Database Management]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: CloudMonix<br/>
+Free version: No<br/>
+Price: $15
+
+CloudMonix monitors Azure SQL Databases by tracking their key performance indicators retrieved from Azure Management API and Dynamic Management Views. In addition, CloudMonix allows to automate maintenance tasks and automatically scale the database performance tier according to load.
+
+## DB Ghost Change Manager Professional
+<a id="db-ghost-change-manager"></a>
+Download page: [DB Ghost Change Manager Professional]<br/>
+Release date: ?<br/>
+Support Version: 2000-2019, Azure<br/>
+Author: Innovartis Ltd<br/>
+Free version: No<br/>
+Price: £430
+
+ - Scripts all object types into individual DROP/CREATE scripts, ready for check in to source control.
+ - Scripts data into boilerplate INSERT scripts.
+ - Builds databases from individual object scripts.
+ - Highlights syntax, dependency and data errors.
+ - Creates a single script for the database build that can be reused.
+ - Can synchronize two databases making them match precisely.
+ - Can synchronize an existing database to a set of base schema creation scripts in your Source Management System. This means that your Source Management System itself provides a complete audit trail.
+ - Can insert custom scripts at the end of the build, before and after the synch process.
+ - Creates a script of the differences between two databases or base schema scripts and a target database.
+ - Handles all types of database object and all complex interactions.
+ - Intuitive, straightforward wizard based interface.
+ - SessionSave facility lets you save your wizard answers for later reuse.
+
+
+## dbForge Complete
+<a id="dbforge-complete"></a>
+Download page: [dbForge Complete]<br/>
+Release date: 2020-09-01<br/>
+Support Version: 2000-2019, Azure<br/>
+Author: Devart<br/>
+Free version: No<br/>
+Price: $199
+
+ - Speed up SQL query writing with IntelliSense-style SQL code completion
+ - Beautify T-SQL code and unify code standards with smart SQL Formatter
+ - Get the essential information on DB objects while you are writing a code
+ - Format your SQL query right in Management Studio or Visual Studio
+ - Use rich SQL code snippet collection, manage and modify the existing snippets or create your own templates
+ - Navigate through the SQL document easily and synchronize it with the code
+ - Rename tables, columns, procedures, and functions safely with automatic correction of references to the renamed objects
+ - Boost your productivity significantly with convenient tabs and windows, as well as intuitive SQL statements management
+
+
+## dbForge SQL Azure Backup
+<a id="dbforge-sql-azure-backup"></a>
+Download page: [dbForge SQL Azure Backup]<br/>
+Release date: 2013-04-18<br/>
+Support Version: ?<br/>
+Author: Devart<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Create a copy of your SQL Azure database on local SQL Server
+ - Make an archive copy on your local hard drive
+ - Restore SQL Azure database from archive
+ - Schedule periodic backups to your Azure Blob storage
+
+
+## Elastic database tools
+<a id="dbforge-sql-azure-backup"></a>
+Download page: [Elastic database tools]<br/>
+Release date: ?<br/>
+Support Version: Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+The elastic database client library helping you run a sample app. The sample app creates a simple sharded application and explores key capabilities of the Elastic Database Tools feature of Azure SQL Database. It focuses on use cases for shard map management, data-dependent routing, and multi-shard querying. The client library is available for .NET as well as Java.
+
+
+## Microsoft Sync Framework
+<a id="microsoft-sync-framework"></a>
+Download page: [Microsoft Sync Framework]<br/>
+Release date: 2020-04-22 <br/>
+Support Version: Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Microsoft Sync Framework is a comprehensive synchronization platform that enables collaboration and offline scenarios for applications, services, and devices.
+Sync Framework 2.1 introduces new features that let you synchronize a SQL Server or SQL Server Compact database on your computer with a SQL Azure database. This release also introduces parameter-based filtering, the ability to remove synchronization scopes and templates from a database, and performance enhancements to make synchronization faster and easier.
+
+
+## MSSQL-Maestro
+<a id="mssql-maestro"></a>
+Download page: [MSSQL-Maestro]<br/>
+Release date: 2017-06-29<br/>
+Support Version: from 7.0 to 2019, Azure 11 and 12<br/>
+Author: SQL Maestro Group<br/>
+Free version: No<br/>
+Price: $229
+
+Complete and powerful database management, admin and development tool for Microsoft SQL Server and Microsoft Azure SQL Database.
+
+
+## MSSQLMerge
+<a id="mssqlmerge"></a>
+Download page: [MSSQLMerge]<br/>
+Release date: ?<br/>
+Support Version: 2008-2019, Azure<br/>
+Author: Konstantin Semenenkov<br/>
+Free version: Yes<br/>
+Price: $50
+
+MssqlMerge is an easy to use diff & merge tool for Microsoft SQL Server databases. This tool allows users to compare and import/export the most common database programming objects and the data between any two databases.
+
+
+## SQL Backup and FTP
+<a id="sql-backup-and-ftp"></a>
+Download page: [SQL Backup and FTP]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Pranas.NET<br/>
+Free version: Yes<br/>
+Price: $129
+
+SQLBackupAndFTP is SQL Server, MySQL and PostgreSQL backup software that runs scheduled backups (full, differential or transaction log) of SQL Server or SQL Server Express databases (any version), runs file/folder backup, zips and encrypts the backups, stores them on a network or on an FTP server or in the cloud (Amazon S3 and others we're constantly adding more), removes old backups, and sends an e-mail confirmation on the job's success or failure.
+
+
+## SQL Bak
+<a id="sql-bak"></a>
+Download page: [SQL Bak]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Pranas.NET<br/>
+Free version: Yes<br/>
+Price: $9
+
+ - Schedule and restore sql backup from any web browser on any device
+ - Send backups to a folder, FTP, Dropbox, Google Drive, OneDrive, Amazon S3 and more
+ - Monitor database performance and receive email alerts
+ - Install our app on Windows or Linux, connect to sqlbak.com, then manage backups via the web
+
+
+## SQL Bulk Tools
+<a id="sql-bulk-tools"></a>
+Download page: [SQL Bulk Tools]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Greg Taylor<br/>
+Free version: Yes<br/>
+Price: No
+
+## SQL Data Examiner
+<a id="sql-data-examiner"></a>
+Download page: [SQL Data Examiner]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Intelligent Database Solutions<br/>
+Free version: No<br/>
+Price: $400
+
+ - Migrate data between database servers
+ - Verify data migration success
+ - Consolidate data from slave databases to a master database
+ - Perform one-way master-slave or slave-master replication
+
+
+## SQL Examiner
+<a id="sql-examiner"></a>
+Download page: [SQL Examiner]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Intelligent Database Solutions<br/>
+Free version: No<br/>
+Price: $400
+
+ - Speed up the deployment of schema updates
+ - Eliminate a chance of a human error
+ - Quickly compare databases and find all the differences
+ - Work with MSSQL, Oracle, PostgreSQL, MySQL
+ - Keep your database schema under Source Control
+ - Set up a scheduled comparison and synchronization
+ - Performs cross-platform comparison and synchronization
+
+
+
+## SQL Database Backup
+<a id="sql-database-backup"></a>
+Download page: [SQL Database Backup]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Richard Astbury<br/>
+Free version: Yes<br/>
+Price: No
+
+Windows Azure SQL Database Backup Utility. 
+This utility will take a copy of your SQL Database, and once the copy has completed, will make a backup of the database to blob storage using the bacpac format.
+
+
+## SQL Database Copy
+<a id="sql-database-copy"></a>
+Download page: [SQL Database Copy]<br/>
+Release date: 2017-07-25<br/>
+Support Version: ?<br/>
+Author: ryanovic<br/>
+Free version: Yes<br/>
+Price: No
+
+Simple console tool uses SMO scripting capabilities and SqlBulkCopy for schema and data migration between different instances.
+Available options:
+ - SQL Server database to Azure SQL database
+ - SQL Server database to SQL Server database
+
+
+## SQL Delta Duo for SQL Server
+<a id="sql-delta-duo-for-sql-server"></a>
+Download page: [SQL Delta Duo for SQL Server]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: The Australian Software Company<br/>
+Free version: No<br/>
+Price: $370
+
+Compare and Sync Schema and Data for SQL Server databases. 
+
+
+## SQL Trace Replay
+<a id="sql-trace-replay"></a>
+Download page: [SQL Trace Replay]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Mikhail Shilkov<br/>
+Free version: Yes<br/>
+Price: No
+
+Tool to capture and replay traces between SQL Server instances (and to Azure SQL Database in particular)
+
+
+## SQL Workload Profiler
+<a id="sql-workload-profiler"></a>
+Download page: [SQL Workload Profiler]<br/>
+Release date: 2014-10-01<br/>
+Support Version: 2008+, Azure<br/>
+Author: Chris Bailiss<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Workload Profiler is a free tool for capturing and logging workload performance information from SQL Server.  Performance statistics can be captured minute-by-minute (or more frequently if you want, up to every ten seconds, depending on the type/size of workload).  Data can be analysed as it is being collected and/or saved for later analysis.  Workload Profiler supports both (on-premise) SQL Server and Azure SQL Database.
+
+
+## SQLDBdiff
+<a id="sqldbdiff"></a>
+Download page: [SQLDBdiff]<br/>
+Release date: ?<br/>
+Support Version: 2005-2019, Azure<br/>
+Author: SQLDBtools<br/>
+Free version: No<br/>
+Price: $60
+
+ - Tables and columns (with the possibility to respect or not columns order);
+ - Views (including their indexes and triggers);
+ - Stored procedures;
+ - User defined functions;
+ - Triggers;
+ - PK and Indexes (with the possibility to include or not statistic indexes);
+ - Relationships (FK);
+ - CHECK Constraints;
+ - Default Constraints;
+ - User Defined Data Type & User Defined Table Type
+ - DDL Triggers;
+ - Synonyms;
+ - In-Memory table
+ - System versioning (Temporal type)
+ - Permissions;
+ - User and Roles;
+ - Database properties;
+ - SQL Server properties.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -5749,6 +6192,32 @@ Write queries, visualize data, and share your results.
 [SysKit Pulse]:https://www.syskit.com/products/insights-lite
 [WhatsUp SQL Server Monitor]:https://www.ipswitch.com/resources/free-tools/whatsup-sql-server-monitor
 [POPSQL]:https://popsql.com/
+[ApexSQL Search]:https://www.apexsql.com/sql-tools-search.aspx
+[ApexSQL Source Control]:https://www.apexsql.com/sql-tools-source-control.aspx
+[Azure Blob Studio 2011]:https://marketplace.visualstudio.com/items?itemName=AlessandroDelSoleMVP.AzureBlobStudio2011
+[Azure Explorer]:https://monzacloud.com/azure-cloud-explorer
+[Azure SQL Agent]:https://www.npmjs.com/package/azure-sql-agent
+[Azure SQL Database DTU Calculator]:https://dtucalculator.azurewebsites.net
+[Azure SQL Database Stress Test Tool]:https://github.com/kiyoaki/AzurePerformanceTesting
+[Azure SQL Dev Cloner]:https://github.com/cleanchoice/azure-sql-dev-cloner
+[Azure User Management Console]:https://www.openhub.net/p/aumc
+[CloudMonix SQL Azure Database Management]:https://cloudmonix.com/features/azure-management/sql-azure-database-monitoring
+[DB Ghost Change Manager Professional]:http://www.dbghost.com/products/ChangeManager.aspx
+[dbForge Complete]:https://www.devart.com/dbforge/sql/sqlcomplete
+[dbForge SQL Azure Backup]:https://www.devart.com/dbforge/sql/sqlazurebackup
+[Elastic database tools]:https://docs.microsoft.com/en-us/azure/azure-sql/database/elastic-scale-get-started
+[Microsoft Sync Framework]:https://www.microsoft.com/en-us/download/details.aspx?id=23217
+[MSSQL-Maestro]:https://www.sqlmaestro.com/products/mssql/maestro/about
+[MSSQLMerge]:https://db-merge-tools.net/microsoft-sql-server-diff-merge-overview.html
+[SQL Backup and FTP]:https://sqlbackupandftp.com
+[SQL Bak]:https://sqlbak.com
+[SQL Bulk Tools]:https://github.com/olegil/SqlBulkTools
+[SQL Data Examiner]:https://www.sqlaccessories.com/sql-data-examiner
+[SQL Examiner]:https://www.sqlaccessories.com/sql-examiner
+[SQL Database Backup]:https://github.com/richorama/SQLDatabaseBackup
+[SQL Database Copy]:https://github.com/ryanovic/SqlDatabaseCopy
+[SQL Delta Duo for SQL Server]:https://sqldelta.com/products
+[SQL Trace Replay]:https://github.com/mikhailshilkov/sql-trace-replay
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
