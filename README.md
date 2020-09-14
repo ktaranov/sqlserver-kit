@@ -208,6 +208,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Dear SQL DBA](https://sqlworkbooks.com/dear-sql-dba/) (by Kendra Little)
    - [SQL Server Pain Relief: Office Hours](https://www.stitcher.com/podcast/sql-server-pain-relief-office-hours-with-brent-ozar-unlimitedr) (by Brent Ozar)
    - [Azure DevOps Podcast](http://azuredevopspodcast.clear-measure.com/) (by Microsoft)
+   - [Mixed Extents](https://youtu.be/hBgMadT9fuU) (by EightKB)
  - Courses <a id="courses"></a>
    - Free
      - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) and new [link](http://sqlxevents.com/) (by Jason Brimhall)
