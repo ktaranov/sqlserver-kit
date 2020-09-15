@@ -2408,3 +2408,4 @@ Articles types:
 [Guid vs INT - Which is better as a primary key?]:https://dba.stackexchange.com/q/264/107045
 [Control SQL Jobs based on HADR Role – Taking it to the Next Level]:https://eitanblumin.com/2020/05/26/sql-jobs-based-on-hadr-role-next-level/
 [SQL Friday #16: Eitan Blumin on “How to HADR Your SQL Jobs”]:https://sqlfriday.net/past-sql-friday-sessions/sql-friday-16-eitan-blumin-on-how-to-hadr-your-sql-jobs/
+[Choosing the Correct Azure VM Size for Your Workload]:https://www.sentryone.com/blog/choosing-the-correct-azure-vm-size-for-your-workload
