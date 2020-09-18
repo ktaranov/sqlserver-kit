@@ -440,6 +440,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [csv to INSERT online converter - translates your tab-delimited data into a T-SQL INSERT statement](https://table.strd.co/) (by Structured Concepts AB)
     - [SQL Server Diagrams](http://www.e-squillace.com/techdiagrams-sqlserver/) (by George Squillace)
     - [New Stars of Data 2020 Presentations](https://github.com/SQLGrillen/NSOD-1) (by SQLGrillen)
+    - [Get Your ColumnScore](https://columnscore.com) (by ColumnScore)
 
 **[⬆ back to top](#table-of-contents)**
 
