@@ -1220,6 +1220,7 @@ Articles types:
 | [Choosing the Correct Azure VM Size for Your Workload]                                                                  | Eric Smith                               | 2020-09-09 | [AZ][DBA]   |
 | [Table Partitioning in SQL Server – The Basics]                                                                         | Cathrine Wilhelmsen                      | 2015-04-12 | [AZ][DBA]   |
 | [Table Partitioning in SQL Server – Partition Switching]                                                                | Cathrine Wilhelmsen                      | 2015-04-19 | [AZ][DBA]   |
+| [TempDB in SQL Server]                                                                                                  | SentryOne                                | 2020-09-15 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2414,3 +2415,4 @@ Articles types:
 [Choosing the Correct Azure VM Size for Your Workload]:https://www.sentryone.com/blog/choosing-the-correct-azure-vm-size-for-your-workload
 [Table Partitioning in SQL Server – The Basics]:https://www.cathrinewilhelmsen.net/2015/04/12/table-partitioning-in-sql-server/
 [Table Partitioning in SQL Server – Partition Switching]:https://www.cathrinewilhelmsen.net/2015/04/19/table-partitioning-in-sql-server-partition-switching/
+[TempDB in SQL Server]:https://www.sentryone.com/tempdb-in-sql-server
