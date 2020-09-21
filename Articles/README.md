@@ -43,7 +43,7 @@ Articles types:
 | [Slow in the Application, Fast in SSMS]                                                                                 | Erland Sommarskog                        | 2013-12-18 |             |
 | [How to share data between stored procedures]                                                                           | Erland Sommarskog                        | 2013-11-02 |             |
 | [Arrays and Lists in SQL Server 2008]                                                                                   | Erland Sommarskog                        | 2016-08-21 |             |
-| [Giving Permissions through Stored Procedures]                                                                          | Erland Sommarskog                        | 2011-12-31 |             |
+| [Packaging Permissions in Stored Procedures]                                                                            | Erland Sommarskog                        | 2011-12-31 |             |
 | [Error and Transaction Handling in SQL Server Part One – Jumpstart Error Handling]                                      | Erland Sommarskog                        | 2015-05-03 | [DBA][DEV]  |
 | [Error and Transaction Handling in SQL Server Part Two – Commands and Mechanisms]                                       | Erland Sommarskog                        | 2019-09-03 | [DBA][DEV]  |
 | [Error and Transaction Handling in SQL Server Part Three – Implementation]                                              | Erland Sommarskog                        | 2017-05-03 | [DBA][DEV]  |
@@ -1239,7 +1239,7 @@ Articles types:
 [Slow in the Application, Fast in SSMS]:http://www.sommarskog.se/query-plan-mysteries.html
 [How to share data between stored procedures]:http://www.sommarskog.se/share_data.html
 [Arrays and Lists in SQL Server 2008]:http://www.sommarskog.se/arrays-in-sql-2008.html
-[Giving Permissions through Stored Procedures]:http://www.sommarskog.se/grantperm.html
+[Packaging Permissions in Stored Procedures]:http://www.sommarskog.se/grantperm.html
 [Error and Transaction Handling in SQL Server Part One – Jumpstart Error Handling]:http://www.sommarskog.se/error_handling/Part1.html
 [Error and Transaction Handling in SQL Server Part Two – Commands and Mechanisms]:http://www.sommarskog.se/error_handling/Part2.html
 [Error and Transaction Handling in SQL Server Part Three – Implementation]:http://www.sommarskog.se/error_handling/Part3.html
