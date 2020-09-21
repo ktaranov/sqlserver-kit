@@ -1,13 +1,13 @@
-
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: February 26, 2020
+-- Last Modified: September 1, 2020
 -- https://glennsqlperformance.com/
 -- https://sqlserverperformance.wordpress.com/
+-- YouTube: https://bit.ly/2PkoAM1 
 -- Twitter: GlennAlanBerry
 
--- Please listen to my Pluralsight courses
--- https://www.pluralsight.com/author/glenn-berry
+-- Diagnostic Queries are available here
+-- https://glennsqlperformance.com/resources/
 
 -- Many of these queries will not work if you have databases in 80 compatibility mode
 -- Please make sure you are using the correct version of these diagnostic queries for your version of SQL Server
@@ -668,7 +668,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value.
 -- This will only return one row for non-NUMA systems.
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnt what you think
 -- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1149,28 +1149,6 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 
 
--- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
-
--- Azure SQL Database: Diagnosing Performance Issues with DMVs
--- https://bit.ly/2meDRCN
-
--- SQL Server 2017: Diagnosing Performance Issues with DMVs
--- https://bit.ly/2FqCeti
-
--- SQL Server 2017: Diagnosing Configuration Issues with DMVs
--- https://bit.ly/2MSUDUL
-
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
--- https://bit.ly/2plxCer
-
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
--- https://bit.ly/2IuJpzI
-
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
--- https://bit.ly/2FIlCPb
-
-
-
 -- Microsoft Visual Studio Dev Essentials
 -- https://bit.ly/2qjNRxi
 
@@ -1179,5 +1157,3 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
 -- https://bit.ly/2ftKVrX
-
-

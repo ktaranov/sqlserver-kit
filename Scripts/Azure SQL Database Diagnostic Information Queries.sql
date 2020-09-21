@@ -1,13 +1,13 @@
-
 -- Azure SQL Database Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: June 1, 2020
+-- Last Modified: September 1, 2020
 -- https://glennsqlperformance.com/
 -- https://sqlserverperformance.wordpress.com/
+-- YouTube: https://bit.ly/2PkoAM1 
 -- Twitter: GlennAlanBerry
 
--- Please listen to my Pluralsight courses
--- https://www.pluralsight.com/author/glenn-berry
+-- Diagnostic Queries are available here
+-- https://glennsqlperformance.com/resources/
 
 
 -- If you like PowerShell, there is a very useful community solution for running these queries in an automated fashion
@@ -89,14 +89,19 @@ ORDER BY avg_io_stall_ms DESC OPTION (RECOMPILE);
 
 -- Get I/O utilization by database (Query 5) (IO Usage By Database)
 WITH Aggregate_IO_Statistics
-AS
-(SELECT DB_NAME(database_id) AS [Database Name],
-CAST(SUM(num_of_bytes_read + num_of_bytes_written)/1048576 AS DECIMAL(12, 2)) AS io_in_mb
-FROM sys.dm_io_virtual_file_stats(NULL, NULL) AS [DM_IO_STATS]
-GROUP BY database_id)
-SELECT ROW_NUMBER() OVER(ORDER BY io_in_mb DESC) AS [I/O Rank], [Database Name], 
-      CAST(io_in_mb/ SUM(io_in_mb) OVER() * 100.0 AS DECIMAL(5,2)) AS [I/O Percent],
-      io_in_mb AS [Total I/O (MB)]     
+AS (SELECT DB_NAME(database_id) AS [Database Name],
+    CAST(SUM(num_of_bytes_read + num_of_bytes_written) / 1048576 AS DECIMAL(12, 2)) AS [ioTotalMB],
+    CAST(SUM(num_of_bytes_read ) / 1048576 AS DECIMAL(12, 2)) AS [ioReadMB],
+    CAST(SUM(num_of_bytes_written) / 1048576 AS DECIMAL(12, 2)) AS [ioWriteMB]
+    FROM sys.dm_io_virtual_file_stats(NULL, NULL) AS [DM_IO_STATS]
+    GROUP BY database_id)
+SELECT ROW_NUMBER() OVER (ORDER BY ioTotalMB DESC) AS [I/O Rank],
+        [Database Name], ioTotalMB AS [Total I/O (MB)],
+        CAST(ioTotalMB / SUM(ioTotalMB) OVER () * 100.0 AS DECIMAL(5, 2)) AS [Total I/O %],
+        ioReadMB AS [Read I/O (MB)], 
+		CAST(ioReadMB / SUM(ioReadMB) OVER () * 100.0 AS DECIMAL(5, 2)) AS [Read I/O %],
+        ioWriteMB AS [Write I/O (MB)], 
+		CAST(ioWriteMB / SUM(ioWriteMB) OVER () * 100.0 AS DECIMAL(5, 2)) AS [Write I/O %]
 FROM Aggregate_IO_Statistics
 ORDER BY [I/O Rank] OPTION (RECOMPILE);
 ------
@@ -203,7 +208,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnâ€™t what you thinkâ€¦
 -- https://bit.ly/2EgynLa
 
 
@@ -1238,13 +1243,13 @@ SELECT DATABASEPROPERTYEX (DB_NAME(DB_ID()), 'Edition') AS [Database Edition],
 -- SQL Server 2017: Diagnosing Configuration Issues with DMVs
 -- https://bit.ly/2MSUDUL
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 1 
 -- https://bit.ly/2plxCer
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 2
 -- https://bit.ly/2IuJpzI
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
+-- SQL Server 2014 DMV Diagnostic Queries â€“ Part 3
 -- https://bit.ly/2FIlCPb
 
 
@@ -1254,6 +1259,3 @@ SELECT DATABASEPROPERTYEX (DB_NAME(DB_ID()), 'Edition') AS [Database Edition],
 
 -- Microsoft Azure Learn
 -- https://bit.ly/2O0Hacc
-
-
-
