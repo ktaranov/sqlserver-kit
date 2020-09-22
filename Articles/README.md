@@ -1223,6 +1223,7 @@ Articles types:
 | [Table Partitioning in SQL Server – The Basics]                                                                         | Cathrine Wilhelmsen                      | 2015-04-12 | [AZ][DBA]   |
 | [Table Partitioning in SQL Server – Partition Switching]                                                                | Cathrine Wilhelmsen                      | 2015-04-19 | [AZ][DBA]   |
 | [TempDB in SQL Server]                                                                                                  | SentryOne                                | 2020-09-15 | [DBA]       |
+| [SQL Server’s Cost Threshold for Parallelism]                                                                           | Kendra Little                            | 2014-11-20 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2420,3 +2421,4 @@ Articles types:
 [Table Partitioning in SQL Server – The Basics]:https://www.cathrinewilhelmsen.net/2015/04/12/table-partitioning-in-sql-server/
 [Table Partitioning in SQL Server – Partition Switching]:https://www.cathrinewilhelmsen.net/2015/04/19/table-partitioning-in-sql-server-partition-switching/
 [TempDB in SQL Server]:https://www.sentryone.com/tempdb-in-sql-server
+[SQL Server’s Cost Threshold for Parallelism]:https://www.brentozar.com/archive/2014/11/sql-server-cost-threshold-for-parallelism/
