@@ -1226,6 +1226,7 @@ Articles types:
 | [SQL Server’s Cost Threshold for Parallelism]                                                                           | Kendra Little                            | 2014-11-20 | [DBA][DEV]  |
 | [How many CPUs is my parallel query using in SQL Server?]                                                               | Kendra Little                            | 2014-05-04 | [DBA][DEV]  |
 | [Protecting your data against unauthorised reads on SQL Server]                                                         | Monin                                    | 2020-06-24 | [SEC]       |
+| [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea]                                                                | Brent Ozar                               | 2019-05-06 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2426,3 +2427,4 @@ Articles types:
 [SQL Server’s Cost Threshold for Parallelism]:https://www.brentozar.com/archive/2014/11/sql-server-cost-threshold-for-parallelism/
 [How many CPUs is my parallel query using in SQL Server?]:https://www.brentozar.com/archive/2014/11/many-cpus-parallel-query-using-sql-server/
 [Protecting your data against unauthorised reads on SQL Server]:https://monin-it.be/2020/06/23/protectingyourdata/
+[SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea]:https://www.brentozar.com/archive/2018/02/set-implicit_transactions-one-hell-bad-idea/
