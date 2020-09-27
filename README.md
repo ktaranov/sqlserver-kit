@@ -153,6 +153,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLBlog.org](https://sqlblog.org)
     - [Idera SQL Server Blog](https://community.idera.com/tags/SQL%2bServer)
     - [SQL Server Science Blog](https://www.sqlserverscience.com/) (by Max Vernon)
+    - [Kohera SQL Server Blog](https://kohera.be/blog/category/sql-server/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
      - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
