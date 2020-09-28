@@ -442,6 +442,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Server Diagrams](http://www.e-squillace.com/techdiagrams-sqlserver/) (by George Squillace)
     - [New Stars of Data 2020 Presentations](https://github.com/SQLGrillen/NSOD-1) (by SQLGrillen)
     - [Get Your ColumnScore](https://columnscore.com) (by ColumnScore)
+    - [SQL Assessment API rules in .csv format](https://github.com/microsoft/sql-server-samples/blob/master/samples/manage/sql-assessment-api/DefaultRuleset.csv) (by Microsoft)
 
 **[⬆ back to top](#table-of-contents)**
 
