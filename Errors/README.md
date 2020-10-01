@@ -153,6 +153,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       4934 | Computed column '%.*ls' in table '%.*ls' cannot be persisted because the column does user or …           | [4934_link1]                                        |
 |       4947 | ALTER TABLE SWITCH statement failed. There is no identical index in source table '%.*ls' for the       … | [4947_link1][18]                                    |
 |       5004 | To use ALTER DATABASE, the database must be in a writable state in which a checkpoint can be executed.   | [5004_link1]                                        |
+|       5011 | User does not have permission to alter database '%.*ls', the database does not exist, or the database  … | [5011_link1][49]                                    |
 |       5061 | ALTER DATABASE failed because a lock could not be placed on database '%.*ls'. Try again later.           | [5061_link1]                                        |
 |       5084 | Setting database option %ls to %ls for database '%.*ls'.                                                 | [5084_link1][43]                                    |
 |       5120 | Unable to open the physical file ... Operating system error 5: "5(Access is denied.)"                  … | [SQL SERVER - FIX Error 5120]                       |
@@ -289,6 +290,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [46]:https://www.mssqltips.com/sqlservertip/6279/prevent-sql-server-blocking-using-locktimeout/
 [47]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 [48]:https://blog.waynesheffield.com/wayne/archive/2020/08/availability-group-issues-fixed-with-alerts/
+[49]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
