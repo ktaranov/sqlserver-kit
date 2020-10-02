@@ -144,6 +144,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       3743 | The database '%.*ls' is enabled for database mirroring. Database mirroring must be removed befor       … | [3743_link1]                                        |
 |       3906 | Failed to update database "%.*ls" because the database is read-only.                                     | [3906_link1]                                        |
 |       3930 | The current transaction cannot be committed and cannot support operations that write to the log        … | [3930_link1]                                        |
+|       3956 | Snapshot isolation transaction failed to start in database '%.*ls' because the ALTER DATABASE command  … | [3956_link1][49]                                    |
 |       4064 | Cannot open user default database. Login failed.Login failed.                                          … | [4064_link1]                                        |
 |       4189 | Cannot convert to text/ntext or collate to '%.*ls' because these legacy LOB types do not support UTF-8 … | [4189_link1][21]                                    |
 |       4353 | Conflicting file relocations have been specified for file '%.*ls'. Only a single WITH MOVE clause      … | [4353_link1]                                        |
