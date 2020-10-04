@@ -1229,6 +1229,7 @@ Articles types:
 | [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea]                                                                | Brent Ozar                               | 2019-05-06 | [DBA][DEV]  |
 | [Tempdb: The Ghost Of Version Store]                                                                                    | Stijn Wynants                            | 2015-11-09 | [DBA][DEV]  |
 | [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]                            | Glenn Boonen                             | 2020-05-07 | [DBA][DEV]  |
+| [A SQL Server DBA myth a day: (26/30) nested transactions are real]                                                     | Paul Randal                              | 2010-04-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2433,3 +2434,4 @@ Articles types:
 [Tempdb: The Ghost Of Version Store]:https://kohera.be/blog/sql-server/tempdb-the-ghost-of-version-store/
 [Row Versioning Concurrency in SQL Server]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
 [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]:https://kohera.be/blog/sql-server/when-tempdb-becomes-permanentdb/
+[A SQL Server DBA myth a day: (26/30) nested transactions are real]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/
