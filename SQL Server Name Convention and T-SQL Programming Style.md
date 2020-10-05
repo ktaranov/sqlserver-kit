@@ -268,7 +268,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    ```
    If a new column is added to `SalesOrder` table in the future, but not to `SalesOrderArchive`, the `INSERT` will fail.
    Which sounds bad, but it's actually a really good thing! Because the alternative is much worse.
-   If all the columns were listed on the `INSERT` and the `SELECT`, then the `INSERT` would succeed, and so would the following DELETE (which is effectively `DELETE *`).
+   If all the columns were listed on the `INSERT` and the `SELECT`, then the `INSERT` would succeed, and so would the following `DELETE` (which is effectively `DELETE *`).
    Production code that succeeds doesn't get any attention, and it may be a long time before someone notices that the new column is not being archived, but being silently deleted altogether.
    More details [here](https://dba.stackexchange.com/a/253917/107045).
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
@@ -556,23 +556,23 @@ GO
 
 
 ALTER PROCEDURE dbo.usp_StoredProcedure(
-                @parameterValue1 smallint
-              , @parameterValue2 nvarchar(300)
-              , @debug           bit = 0
+      @parameterValue1 smallint
+    , @parameterValue2 nvarchar(300)
+    , @debug           bit = 0
 )
 /*
 <documentation>
-  <summary>Simple example of tsql procedure</summary>
-  <returns>nothing</returns>
-  <issues>No</issues>
-  <author>Konstantin Taranov</author>
-  <created>2019-01-01</created>
-  <modified>2019-11-25 by Konstantin Taranov</modified>
-  <version>1.2</version>
-  <sourceLink>-</sourceLink>
-  <example1>EXECUTE dbo.usp_StoredProcedure
-        @parameterValue1 = 0
-      , @parameterValue2 = N'BULK'</example1>
+    <summary>Simple example of tsql procedure</summary>
+    <returns>nothing</returns>
+    <issues>No</issues>
+    <author>Konstantin Taranov</author>
+    <created>2019-01-01</created>
+    <modified>2019-11-25 by Konstantin Taranov</modified>
+    <version>1.2</version>
+    <sourceLink>-</sourceLink>
+    <example1>EXECUTE dbo.usp_StoredProcedure
+          @parameterValue1 = 0
+        , @parameterValue2 = N'BULK'</example1>
 </documentation>
 */
 AS
