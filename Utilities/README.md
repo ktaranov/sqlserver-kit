@@ -1,8 +1,8 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **374** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **379** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
- - **[B]**: Backup solutions {11}
+ - **[B]**: Backup solutions {16}
  - **[BI]**: Business Intelligence Solutions {4}
  - **[D]**: Documentation solutions {8}
  - **[DA]**: Database Architecture {20}
@@ -351,6 +351,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server to Azure Database Migrator](#systools-azure)         | No                            | No        | [MG]     | [SQL Server to Azure Database Migrator]     | 2018-01-01 | SysTools                | Shareware  | No             |  $169 |
 | [Commvault Complete Backup & Recovery](#commvault)               | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [B]      | [Commvault Complete Backup & Recovery]      | 2019-12-31 | Commvault               | Shareware  | No             |     ? |
 | [Veeam Backup & Replication](#veeam)                             | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [B]      | [Veeam Backup & Replication]                | 2019-12-31 | Veeam                   | Shareware  | No             |  $600 |
+| [Veeam Explorer for Microsoft SQL Server](#veeam-explorer)       | ?                             | ?         | [B]      | [Veeam Explorer for Microsoft SQL Server]   | ?          | Veeam                   | Shareware  | No             |  ?    |
 | [Database Modeling Excel](#database-modeling-excel)              | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [Database Modeling Excel]                   | ?          | Yang Ning (Steven)      | [BSD-3]    | Open Source    |  No   |
 | [DBAchecks](#dbachecks)                                          | No                            | No        | [?]      | [DBAchecks]                                 | ?          | sqlcollaborative        | [MIT]      | Open Source    |  No   |
 | [DBComparer](#dbcomparer)                                        | No                            | No        | [DC],[SC]| [DBComparer]                                | ?          | DBComparer              |            | Yes            |  No   |
@@ -397,8 +398,12 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Database Copy](#sql-database-copy)                          | No                            | No        | [MG]     | [SQL Database Copy]                         | 2017-07-25 | ryanovic                 | [MIT]     | Open Source    |  No   |
 | [SQL Delta Duo for SQL Server](#sql-delta-duo-for-sql-server)    | No                            | No        | [?]      | [SQL Delta Duo for SQL Server]              | ?          | The Australian Software Company |    | No             | $370  |
 | [SQL Trace Replay](#sql-trace-replay)                            | No                            | No        | [?]      | [SQL Trace Replay]                          | ?          | Mikhail Shilkov          | [MIT]     | Open Source    |  No   |
-| [SQL Workload Profiler](#sql-workload-profiler)                  | No                            | No        | [?]      | [SQL Workload Profiler]                     | 2014-10-01 | Chris Bailiss            |            | Yes           |  No   |
-| [SQLDBdiff](#sqldbdiff)                                          | No                            | Linux     | [?]      | [SQLDBdiff]                                 | ?          | SQLDBtools               |            | Yes           | $60   |
+| [SQL Workload Profiler](#sql-workload-profiler)                  | No                            | No        | [?]      | [SQL Workload Profiler]                     | 2014-10-01 | Chris Bailiss            |           | Yes            |  No   |
+| [SQLDBdiff](#sqldbdiff)                                          | No                            | Linux     | [?]      | [SQLDBdiff]                                 | ?          | SQLDBtools               |           | Yes            | $60   |
+| [SQL Backup Master](#sql-backup-master)                          | No                            | No        | [B]      | [SQL Backup Master]                         | ?          | Key Metric Software      |           | Yes            | $49   |
+| [Handy Backup Server](#handy-backup-server)                      | Oracle,MySQL,PostgreSQL,Other | Linux     | [B]      | [Handy Backup Server]                       | 2019-03-11 | Novosoft                 |           | No             | $39   |
+| [EaseUS Todo Backup Server](#easeus-todo-backup-server)          | No                            | No        | [B]      | [EaseUS Todo Backup Server]                 | ?          | EaseUS                   |           | No             | $39   |
+| [SqlBackupFree](#sqlbackupfree)                                  | No                            | No        | [B]      | [SqlBackupFree]                             | ?          | pranas.net               |           | Yes            |  No   |
 
 <a id="ssms"></a>
 ## SSMS
@@ -5843,6 +5848,88 @@ Price: $60
  - SQL Server properties.
 
 
+## SQL Backup Master
+<a id="sql-backup-master"></a>
+Download page: [SQL Backup Master]<br/>
+Release date: ?<br/>
+Support Version: 2005-2019<br/>
+Author: Key Metric Software<br/>
+Free version: Yes<br/>
+Price: $49
+
+ - Supports full, differential, and transaction log backups
+ - Simple yet powerful backup job scheduling
+ - Built-in email notifications for backup job successes, failures, and warnings
+ - Back up to local folders, network folders, or attached storage devices
+ - Back up to FTP servers with first-class FTP, SFTP, & FTPS support
+ - Back up to Dropbox, Google Drive, Box, Amazon S3, OneDrive, & Azure
+
+
+## Handy Backup Server
+<a id="handy-backup-server"></a>
+Download page: [Handy Backup Server]<br/>
+Release date: 2019-03-11<br/>
+Support Version: 2005-2019<br/>
+Author: Novosoft<br/>
+Free version: Yes<br/>
+Price: $39
+
+ - Automating All Operations
+ - Native and Generic Database Backup
+ - Other Server Data Backup
+ - Saving Snapshots of Virtual Machines
+ - Using Modern Local and Online Data Storages
+ - Dealing with OS older than Windows Server 2019 or other
+
+
+## Veeam Explorer for Microsoft SQL Server
+<a id="veeam-explorer"></a>
+Download page: [Veeam Explorer for Microsoft SQL Server]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: Veeam<br/>
+Free version: No<br/>
+Price: ?
+
+ - Full database and table level recovery
+ - Perform quick point-in-time restore
+ - Delegate restore tasks to SQL DBAs
+ - Part of Veeam Backup & Replication
+ - Recover one or multiple databases simultaneously from a single-pass image level backup
+ - Restore entire Microsoft SQL databases down to the table level
+ - Microsoft SQL log backup provides transaction log replay to restore to a specific point in time
+
+
+## EaseUS Todo Backup Server
+<a id="easeus-todo-backup-server"></a>
+Download page: [EaseUS Todo Backup Server]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: EaseUS<br/>
+Free version: No<br/>
+Price: $39
+
+ - Add new backup tasks on disk, partition, system, mail and other data
+ - Select a source system/disk/partition, target a location to store copies and clone fast
+ - Create a bootable WinPE/Linux bootable USB/DVD/CD to restart the system from it
+ - Check backup logs, replicate backup issues, and restore data from exact backup files
+ - P2V copy, P2V recovery, P2V conversion. Clone, restore, and convert backup to the virtual machine
+
+
+## SqlBackupFree
+<a id="sqlbackupfree"></a>
+Download page: [SqlBackupFree]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: pranas.net<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Schedule SQL Server Database Backups. Full backups
+ - Compress (zip) the backups
+ - Send backups to FTP, local, network folder or HDD drive
+ - Send e-mail confirmation on job success or failure
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -6218,6 +6305,11 @@ Price: $60
 [SQL Database Copy]:https://github.com/ryanovic/SqlDatabaseCopy
 [SQL Delta Duo for SQL Server]:https://sqldelta.com/products
 [SQL Trace Replay]:https://github.com/mikhailshilkov/sql-trace-replay
+[SQL Backup Master]:https://www.sqlbackupmaster.com 
+[Handy Backup Server]:https://www.handybackup.net/handybackup-server.shtml
+[Veeam Explorer for Microsoft SQL Server]:https://www.veeam.com/microsoft-sql-server-explorer.html
+[EaseUS Todo Backup Server]:https://www.easeus.com/backup-software/tb-enterprise.html
+[SqlBackupFree]:http://sqlbackupfree.com
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
