@@ -201,12 +201,12 @@ More details about SQL Server data types and mapping it with another databases a
 
 This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
 
-| Recommended function | Not Recommended | Why                                                                                         | More details |
-|----------------------|-----------------|---------------------------------------------------------------------------------------------|--------------|
-| [`<>`][12]           | [`!=`][12]      | `<>` is `ANSI`, `!=` not `ANSI`, [`<>` and `!=` are identical][13]                          | [13]         |
-| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is `ANSI`                                                                            | [14],[15]    |
-| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is `ANSI` and supports more than two arguments, `ISNULL` has dangerous behaviour | [16],[17]    |
-| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]       | [18],[19]    |
+| Recommended function | Not Recommended | Why                                                                                           | More details |
+|----------------------|-----------------|-----------------------------------------------------------------------------------------------|--------------|
+| [`<>`][12]           | [`!=`][12]      | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                          | [13]         |
+| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is [`ANSI`]                                                                            | [14],[15]    |
+| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour | [16],[17]    |
+| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]         | [18],[19]    |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -272,9 +272,9 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    Production code that succeeds doesn't get any attention, and it may be a long time before someone notices that the new column is not being archived, but being silently deleted altogether.
    More details [here](https://dba.stackexchange.com/a/253917/107045).
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
- - Prefer [ANSI syntax](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) and functions ([`CAST`][10] instead [`CONVERT`][10], [`COALESE`](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql) instead [`ISNULL`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnull-transact-sql), etc.).
+ - Prefer [`ANSI`](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) syntax and functions ([`CAST`][10] instead [`CONVERT`][10], [`COALESE`](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql) instead [`ISNULL`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnull-transact-sql), etc.).
  - All finished expressions should have semicolon `;` at the end.
-   This is ANSI standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
+   This is [`ANSI`] standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
    > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
@@ -754,3 +754,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [11]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql#best-practices
 [explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
+[`ANSI`](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip)
