@@ -284,6 +284,9 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).
  - All system database and tables must be in **lowercase** for properly working for Case Sensitive instance: `master, sys.tables …`.
+ - Do not use [nested transactions](https://docs.microsoft.com/en-us/sql/ado/guide/data/transaction-processing#nested-transactions).
+   The commit of a nested transaction has absolutely no effect – as the only transaction that really exists as far as SQL Server is concerned is the outer one.
+   More details [here](https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/).
  - Whenever you have data modification on non-temporary tables, is to use [explicit transactions] over [autocommit].
    1. If you have a stored procedure which is simply running a `SELECT` statement, use [autocommit].
    2. If you have a stored procedure which performs data modification on non-temporary tables, use an [explicit transaction] only over the area which modifies data.
