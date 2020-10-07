@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **379** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **384** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {16}
@@ -20,8 +20,8 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[SEC]**: Security tools {7}
  - **[SC]**: Structure compare {21}
  - **[ST]**: Statistics utilities {3}
- - **[T]**: Testing tools {6}
- - **[?]**: Not yet classified {146}
+ - **[T]**: Testing tools {7}
+ - **[?]**: Not yet classified {150}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                  | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-------------------------|------------|----------------|------:|
@@ -68,6 +68,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server 2012 Best Practices Analyzer](#bpa-2012)             | No                            | No        | [?]      | [BPA 2012]                                  | 2012-06-04 | Microsoft               |            | Yes            | No    |
 | [Elastic database tools](#elastic-database-tools)                | No                            | No        | [?]      | [Elastic database tools]                    | ?          | Microsoft               |            | Yes            | No    |
 | [Microsoft Sync Framework](#microsoft-sync-framework)            | No                            | No        | [?]      | [Microsoft Sync Framework]                  | 2020-04-22 | Microsoft               |            | Yes            | No    |
+| [Query Performance Insight for Azure SQL Database](#query-perf)  | No                            | No        | [?]      | [Query Performance Insight for Azure SQL Database]| ?    | Microsoft               |            | Yes            | No    |
 | [DLM Dashboard](#dlm-dashboard)                                  | No                            | No        | [M]      | [DLM Dashboard]                             | 2016-04-27 | Red Gate                |            | Yes            | No    |
 | [Red Gate SQL Compare](#red-gate-sql-compare)                    | No                            | No        | [DC]     | [Red Gate SQL Compare]                      | 2016-10-31 | Red Gate                |            | No             |  $495 |
 | [Red Gate SQL Data Compare](#red-gate-sql-data-compare)          | No                            | No        | [SC]     | [Red Gate SQL Data Compare]                 | 2016-05-09 | Red Gate                |            | No             |  $495 |
@@ -404,6 +405,10 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Handy Backup Server](#handy-backup-server)                      | Oracle,MySQL,PostgreSQL,Other | Linux     | [B]      | [Handy Backup Server]                       | 2019-03-11 | Novosoft                 |           | No             | $39   |
 | [EaseUS Todo Backup Server](#easeus-todo-backup-server)          | No                            | No        | [B]      | [EaseUS Todo Backup Server]                 | ?          | EaseUS                   |           | No             | $39   |
 | [SqlBackupFree](#sqlbackupfree)                                  | No                            | No        | [B]      | [SqlBackupFree]                             | ?          | pranas.net               |           | Yes            |  No   |
+| [ERDPlus](#erdplus)                                              | No                            | No        | [?]      | [ERDPlus]                                   | 2020-05-24 | ERDPlus                  |           | ?              |  ?    |
+| [SentryOne Test](#sentryone-test)                                | No                            | No        | [T]      | [SentryOne Test]                            | ?          | SQL Sentry               |           | No             | $828  |
+| [Code Quality and Security for T-SQL](#sonarsource)              | No                            | No        | [?]      | [Code Quality and Security for T-SQL]       | ?          | SonarSource              |           | No             | €120  |
+| [DBBALANCE](#dbbalance)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [DBBALANCE]                                 | ?          | DBBalance                |           | No             |  ?    |
 
 <a id="ssms"></a>
 ## SSMS
@@ -5930,6 +5935,76 @@ Price: No
  - Send backups to FTP, local, network folder or HDD drive
  - Send e-mail confirmation on job success or failure
 
+
+## ERDPlus
+<a id="erdplus"></a>
+Download page: [ERDPlus]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: ERDPlus<br/>
+Free version: ?<br/>
+Price: ?
+
+A database modeling tool for creating Entity Relationship Diagrams, Relational Schemas, Star Schemas, and SQL DDL statements.
+
+
+## SentryOne Test
+<a id="sentryone-test"></a>
+Download page: [SentryOne Test]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SQL Sentry<br/>
+Free version: No<br/>
+Price: $828
+
+ - Quickly build tests with wizards
+ - Simplify unit testing
+ - Build tests within Visual Studio
+ - Create custom testing modules
+ - Reconcile and verify data
+ - Conduct BI testing
+
+
+## Query Performance Insight for Azure SQL Database
+<a id="query-perf"></a>
+Download page: [Query Performance Insight for Azure SQL Database]<br/>
+Release date: ?<br/>
+Support Version: Azure<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Deeper insight into your databases resource (DTU) consumption
+ - Details on top database queries by CPU, duration, and execution count (potential tuning candidates for performance improvements)
+ - The ability to drill down into details of a query, to view the query text and history of resource utilization
+ - Annotations that show performance recommendations from database advisors
+
+
+## Code Quality and Security for T-SQL
+<a id="sonarsource"></a>
+Download page: [Code Quality and Security for T-SQL]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: SonarSource<br/>
+Free version: Yes<br/>
+Price: €120
+
+SonarSource provides static code analysis for T-SQL projects. Based on our own T-SQL compiler front-end, it uses the most advanced techniques (pattern matching, program flow analysis) to analyze code and find Code Smells, Bugs, and Security Vulnerabilities. As with everything we develop at SonarSource, it was built on the principles of depth, accuracy, and speed.
+
+## DBBALANCE
+<a id="dbbalance"></a>
+Download page: [DBBALANCE]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: DBBalance<br/>
+Free version: No<br/>
+Price: ?
+
+ - Data and Schema Synchronization
+ - Data and Schema Comparison
+ - Database Migration
+ - Database Development
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -6310,6 +6385,11 @@ Price: No
 [Veeam Explorer for Microsoft SQL Server]:https://www.veeam.com/microsoft-sql-server-explorer.html
 [EaseUS Todo Backup Server]:https://www.easeus.com/backup-software/tb-enterprise.html
 [SqlBackupFree]:http://sqlbackupfree.com
+[ERDPlus]:https://erdplus.com
+[SentryOne Test]:https://www.sentryone.com/products/sentryone-test
+[Query Performance Insight for Azure SQL Database]:https://docs.microsoft.com/en-us/azure/azure-sql/database/query-performance-insight-use
+[Code Quality and Security for T-SQL]:https://www.sonarsource.com/tsql
+[DBBALANCE]:http://www.dbbalance.com
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
