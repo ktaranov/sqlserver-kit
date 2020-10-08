@@ -96,7 +96,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 346 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 384 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -204,13 +204,12 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Data Driven](http://datadriven.tv/) (by Frank La Vigne and Andy Leonard)
    - [SQL Undercover Podcast](https://sqlundercover.com/category/podcast/) (by David Fowler and Adrian Buckman)
    - [Dallas DBAs](https://dallasdbas.com/) (by Kevin Hill)
-   - [Dear SQL DBA](https://sqlworkbooks.com/dear-sql-dba/) (by Kendra Little)
    - [SQL Server Pain Relief: Office Hours](https://www.stitcher.com/podcast/sql-server-pain-relief-office-hours-with-brent-ozar-unlimitedr) (by Brent Ozar)
    - [Azure DevOps Podcast](http://azuredevopspodcast.clear-measure.com/) (by Microsoft)
  - Courses <a id="courses"></a>
    - Free
      - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) and new [link](http://sqlxevents.com/) (by Jason Brimhall)
-     - [Learn SQL Server by solving problems](https://sqlworkbooks.com/courses-overview/) (by Little Kendra)
+     - [Learn SQL Server by solving problems](https://littlekendra.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
      - [Codecademy SQL: Table Transformation](https://www.codecademy.com/learn/sql-table-transformation)
      - [Codecademy SQL: Analyzing Business Metrics](https://www.codecademy.com/learn/sql-analyzing-business-metrics)
