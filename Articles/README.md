@@ -1231,6 +1231,7 @@ Articles types:
 | [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]                            | Glenn Boonen                             | 2020-05-07 | [DBA][DEV]  |
 | [A SQL Server DBA myth a day: (26/30) nested transactions are real]                                                     | Paul Randal                              | 2010-04-26 | [DBA][DEV]  |
 | [The Best Medium-Hard Data Analyst SQL Interview Questions]                                                             | Zachary Thomas                           | 2020-01-01 | [DBA][DEV]  |
+| [Starting SQL: Why Not Make Everything Dynamic?]                                                                        | Eric Darling                             | 2020-09-28 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2437,3 +2438,4 @@ Articles types:
 [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]:https://kohera.be/blog/sql-server/when-tempdb-becomes-permanentdb/
 [A SQL Server DBA myth a day: (26/30) nested transactions are real]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/
 [The Best Medium-Hard Data Analyst SQL Interview Questions]:https://quip.com/2gwZArKuWk7W
+[Starting SQL: Why Not Make Everything Dynamic?]:https://www.erikdarlingdata.com/starting-sql/starting-sql-why-not-make-everything-dynamic/
