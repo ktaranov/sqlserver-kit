@@ -1233,6 +1233,7 @@ Articles types:
 | [The Best Medium-Hard Data Analyst SQL Interview Questions]                                                             | Zachary Thomas                           | 2020-01-01 | [DBA][DEV]  |
 | [Starting SQL: Why Not Make Everything Dynamic?]                                                                        | Eric Darling                             | 2020-09-28 | [DBA][DEV]  |
 | [dbatools multithreading commands]                                                                                      | Kin                                      | 2019-01-04 | [PS]        |
+| [Preventing Brute Force Attacks in SQL Server]                                                                          | Raul Gonzalez                            | 2020-01-01 | [SEC]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2441,3 +2442,4 @@ Articles types:
 [The Best Medium-Hard Data Analyst SQL Interview Questions]:https://quip.com/2gwZArKuWk7W
 [Starting SQL: Why Not Make Everything Dynamic?]:https://www.erikdarlingdata.com/starting-sql/starting-sql-why-not-make-everything-dynamic/
 [dbatools multithreading commands]:https://dbatools.io/multithread/
+[Preventing Brute Force Attacks in SQL Server]:https://blog.coeo.com/preventing-brute-force-attacks-in-sql-server
