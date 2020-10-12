@@ -1234,6 +1234,7 @@ Articles types:
 | [Starting SQL: Why Not Make Everything Dynamic?]                                                                        | Eric Darling                             | 2020-09-28 | [DBA][DEV]  |
 | [dbatools multithreading commands]                                                                                      | Kin                                      | 2019-01-04 | [PS]        |
 | [Preventing Brute Force Attacks in SQL Server]                                                                          | Raul Gonzalez                            | 2020-01-01 | [SEC]       |
+| [Asynchronous T-SQL Execution Without Service Broker]                                                                   | Oleg Vorkunov                            | 2008-09-15 | [CLR]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2443,3 +2444,4 @@ Articles types:
 [Starting SQL: Why Not Make Everything Dynamic?]:https://www.erikdarlingdata.com/starting-sql/starting-sql-why-not-make-everything-dynamic/
 [dbatools multithreading commands]:https://dbatools.io/multithread/
 [Preventing Brute Force Attacks in SQL Server]:https://blog.coeo.com/preventing-brute-force-attacks-in-sql-server
+[Asynchronous T-SQL Execution Without Service Broker]:https://www.codeproject.com/Articles/29356/Asynchronous-T-SQL-Execution-Without-Service-Broke
