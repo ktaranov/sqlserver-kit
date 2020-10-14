@@ -1236,6 +1236,7 @@ Articles types:
 | [Preventing Brute Force Attacks in SQL Server]                                                                          | Raul Gonzalez                            | 2020-01-01 | [SEC]       |
 | [Asynchronous T-SQL Execution Without Service Broker]                                                                   | Oleg Vorkunov                            | 2008-09-15 | [CLR]       |
 | [Using hash values in SSIS to determine when to insert or update rows]                                                  | Koen Verbeeck                            | 2019-10-15 | [SSIS]      |
+| [Capturing Queries Can Be A Pain]                                                                                       | Grant Fritchey                           | 2020-08-03 | [XE]        |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2447,3 +2448,4 @@ Articles types:
 [Preventing Brute Force Attacks in SQL Server]:https://blog.coeo.com/preventing-brute-force-attacks-in-sql-server
 [Asynchronous T-SQL Execution Without Service Broker]:https://www.codeproject.com/Articles/29356/Asynchronous-T-SQL-Execution-Without-Service-Broke
 [Using hash values in SSIS to determine when to insert or update rows]:https://www.mssqltips.com/sqlservertip/3170/using-hash-values-in-ssis-to-determine-when-to-insert-or-update-rows/
+[Capturing Queries Can Be A Pain]:https://www.scarydba.com/2020/08/03/capturing-queries-can-be-a-pain/
