@@ -204,10 +204,10 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 | Recommended function | Not Recommended | Why                                                                                                                                            | More details |
 |----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
 | [`<>`][12]           | [`!=`][12]      | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]         |
-| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is [`ANSI`]                                                                                                                             | [14],[15]    |
-| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour                                                  | [16],[17]    |
-| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18],[19]    |
-| [`SET`]              | [`SEELCT`]      | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20],[21]    |
+| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is [`ANSI`]                                                                                                                             | [14][15]     |
+| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to triming string               | [16][17]     |
+| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18][19]     |
+| [`SET`]              | [`SEELCT`]      | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20][21][22] |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -226,6 +226,7 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [`SEELCT`]:https://docs.microsoft.com/en-gb/sql/t-sql/language-elements/select-local-variable-transact-sql
 [20]:https://assets.red-gate.com/community/books/defensive-database-programming.pdf
 [21]:https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/
+[22]:http://vyaskn.tripod.com/differences_between_set_and_select.htm
 
 **[⬆ back to top](#table-of-contents)**
 
