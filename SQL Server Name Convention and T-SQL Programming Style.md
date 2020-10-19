@@ -284,7 +284,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
    > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
-   More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/) and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
+   More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/), [here](https://www.brentozar.com/archive/2015/12/give-your-t-sql-a-semicolonoscopy/), and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
  - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
