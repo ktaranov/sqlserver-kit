@@ -1240,6 +1240,7 @@ Articles types:
 | [Building full-text indexes using the Sphinx search engine]                                                             | Hadi Fadlallah                           | 2020-08-04 | [DBA][DEV]  |
 | [Starting SQL: Measuring A Query]                                                                                       | Eric Darling                             | 2020-09-28 | [DBA][DEV]  |
 | [When to use SET vs SELECT when assigning values to variables in SQL Server]                                            | Atif Shehzad                             | 2009-11-25 | [DBA][DEV]  |
+| [What is the difference between SET and SELECT when assigning values to variables, in T-SQL?]                           | Narayana Vyas Kondreddi                  | 2005-10-29 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2455,3 +2456,4 @@ Articles types:
 [Building full-text indexes using the Sphinx search engine]:https://www.sqlshack.com/building-full-text-indexes-using-the-sphinx-search-engine/
 [Starting SQL: Measuring A Query]:https://www.erikdarlingdata.com/starting-sql/starting-sql-measuring-a-query/
 [When to use SET vs SELECT when assigning values to variables in SQL Server]:https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/
+[What is the difference between SET and SELECT when assigning values to variables, in T-SQL?]:http://vyaskn.tripod.com/differences_between_set_and_select.htm
