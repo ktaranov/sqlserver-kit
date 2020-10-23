@@ -78,6 +78,7 @@ Source links:
 - Pavel Málek ([t](https://twitter.com/malekpav))
 - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
 - Josh Darnell ([b](https://joshthecoder.com/) | [t](https://twitter.com/josh_the_coder))
+- Andrzej Kukula
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -2076,8 +2077,6 @@ Link: [KB917825]
 Function: Shrink will run faster with this trace flag if there are LOB pages that need conversion and/or compaction, because that actions will be skipped.<br />
 Link: http://blogs.msdn.com/b/psssql/archive/2008/03/28/how-it-works-sql-server-2005-dbcc-shrink-may-take-longer-than-sql-server-2000.aspx
 
-*Thanks to: Andrzej Kukula*
-
 
 <a id="2549"></a>
 #### Trace Flag: 2549
@@ -2085,8 +2084,9 @@ Function: Forces the `DBCC CHECKDB` command to assume each database file is on a
 `DBCC CHECKDB` command builds an internal list of pages to read per unique disk drive across all database files.
 This logic determines unique disk drives based on the drive letter of the physical file name of each file.
 **Note: Do not use this trace flag unless you know that each file is based on a unique physical disk.**
-**Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance.
+**Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the `PHYSICAL_ONLY` option, some users may not see any improvement in performance.
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
+Link: [Minimizing the impact of DBCC CHECKDB]
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
 Link: https://support.microsoft.com/kb/2634571<br />
 Link: https://support.microsoft.com/kb/2732669<br />
@@ -2165,11 +2165,12 @@ Link: [KB917825]
 
 <a id="2562"></a>
 #### Trace Flag: 2562
-Function: Runs the DBCC CHECKDB command in a single "batch" regardless of the number of indexes in the database.
-By default, the DBCC CHECKDB command tries to minimize TempDB resources by limiting the number of indexes or "facts" that it generates by using a "batches" concept.
+Function: Runs the `DBCC CHECKDB` command in a single "batch" regardless of the number of indexes in the database.
+By default, the `DBCC CHECKDB` command tries to minimize TempDB resources by limiting the number of indexes or "facts" that it generates by using a "batches" concept.
 But this trace flag forces all processing into one batch.
 One effect of using this trace flag is that the space requirements for TempDB may increase. TempDB may grow to as much as 5% or more of the user database that is being processed by the DBCC CHECKDB command.
-**Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the PHYSICAL_ONLY option, some users may not see any improvement in performance. While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
+**Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the `PHYSICAL_ONLY` option, some users may not see any improvement in performance. While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
+Link: [Minimizing the impact of DBCC CHECKDB]
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
 Link: https://support.microsoft.com/kb/2634571<br />
 Link: https://support.microsoft.com/kb/2732669<br />
@@ -2185,7 +2186,7 @@ Function: Runs the `DBCC CHECKDB` command without data purity check unless `DATA
 For databases upgraded from earlier versions of SQL Server, column-value checks are not enabled by default until `DBCC CHECKDB WITH DATA_PURITY` has been run error free on the database at least once.
 After this, `DBCC CHECKDB` checks column-value integrity by default.**<br />
 Link: [Docs Trace Flags]<br />
-Link: https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb<br />
+Link: [Minimizing the impact of DBCC CHECKDB]<br />
 Link: https://support.microsoft.com/kb/2888996<br />
 Link: [KB2964518]<br />
 Scope: global only
@@ -5504,3 +5505,4 @@ Scope: global only
 [SQL Server 2019 Aggressive Clustered Columnstore Cleanup]:https://www.tarynpivots.com/post/aggressive-clustered-columnstore-cleanup/
 [KB153096]:https://support.microsoft.com/kb/153096
 [SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
+[Minimizing the impact of DBCC CHECKDB]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
