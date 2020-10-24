@@ -79,6 +79,8 @@ Source links:
 - Andrew Pruski ([b](https://dbafromthecold.com/) | [t](https://twitter.com/dbafromthecold))
 - Josh Darnell ([b](https://joshthecoder.com/) | [t](https://twitter.com/josh_the_coder))
 - Andrzej Kukula
+- Aaron Bertrand ([b](https://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
+- Wilfred van Dijk
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -4002,7 +4004,6 @@ Link: https://social.msdn.microsoft.com/forums/sqlserver/en-US/00250311-7991-47b
 Link: https://support.microsoft.com/kb/2476322<br />
 Link: https://www.brentozar.com/archive/2014/06/performance-tuning-sql-server-change-tracking<br />
 Link: https://blogs.technet.microsoft.com/smartinez/2013/03/06/sql-server-for-configmgr-2012-ebook-and-top-10-database-issues<br />
-Thanks to: Wilfred van Dijk
 
 
 <a id="8446"></a>
