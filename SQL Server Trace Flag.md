@@ -2090,7 +2090,7 @@ This logic determines unique disk drives based on the drive letter of the physic
 While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: [Minimizing the impact of DBCC CHECKDB]
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: https://support.microsoft.com/kb/2634571<br />
+Link: [KB2634571]<br />
 Link: https://support.microsoft.com/kb/2732669<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
@@ -2174,7 +2174,7 @@ One effect of using this trace flag is that the space requirements for TempDB ma
 **Note: Although this trace flag improve the performance of the DBCC CHECKDB commands which target usage of the `PHYSICAL_ONLY` option, some users may not see any improvement in performance. While this trace flag improves disk I/O resources usage, the underlying performance of disk resources may limit the overall performance of the DBCC CHECKDB command.**<br />
 Link: [Minimizing the impact of DBCC CHECKDB]
 Link: http://blogs.msdn.com/b/saponsqlserver/archive/2011/12/22/faster-dbcc-checkdb-released-in-sql-2008-r2-sp1-traceflag-2562-amp-2549.aspx<br />
-Link: https://support.microsoft.com/kb/2634571<br />
+Link: [KB2634571]<br />
 Link: https://support.microsoft.com/kb/2732669<br />
 Link: [Docs Trace Flags]<br />
 Link: [KB2964518]<br />
@@ -5507,3 +5507,4 @@ Scope: global only
 [KB153096]:https://support.microsoft.com/kb/153096
 [SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
 [Minimizing the impact of DBCC CHECKDB]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
+[KB2634571]:https://web.archive.org/web/20150303213855/http://support.microsoft.com/kb/2634571
