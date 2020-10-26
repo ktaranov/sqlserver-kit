@@ -1243,6 +1243,7 @@ Articles types:
 | [What is the difference between SET and SELECT when assigning values to variables, in T-SQL?]                           | Narayana Vyas Kondreddi                  | 2005-10-29 | [DBA][DEV]  |
 | [CHECKDB From Every Angle: How long will CHECKDB take to run?]                                                          | Paul Randal                              | 2007-11-15 | [DBA]       |
 | [CHECKDB From Every Angle: Consistency Checking Options for a VLDB]                                                     | Paul Randal                              | 2007-11-19 | [DBA]       |
+| [Minimizing the impact of DBCC CHECKDB : DOs and DON'Ts]                                                                | Aaron Bertrand                           | 2012-11-29 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2461,3 +2462,4 @@ Articles types:
 [What is the difference between SET and SELECT when assigning values to variables, in T-SQL?]:http://vyaskn.tripod.com/differences_between_set_and_select.htm
 [CHECKDB From Every Angle: How long will CHECKDB take to run?]:https://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-how-long-will-checkdb-take-to-run/
 [CHECKDB From Every Angle: Consistency Checking Options for a VLDB]:https://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-consistency-checking-options-for-a-vldb/
+[Minimizing the impact of DBCC CHECKDB : DOs and DON'Ts]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
