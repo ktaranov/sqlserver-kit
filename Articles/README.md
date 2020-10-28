@@ -1245,6 +1245,7 @@ Articles types:
 | [CHECKDB From Every Angle: Consistency Checking Options for a VLDB]                                                     | Paul Randal                              | 2007-11-19 | [DBA]       |
 | [Minimizing the impact of DBCC CHECKDB : DOs and DON'Ts]                                                                | Aaron Bertrand                           | 2012-11-29 | [DBA]       |
 | [A faster CHECKDB – Part II]                                                                                            | Bob Ward                                 | 2012-02-23 | [DBA]       |
+| [A faster CHECKDB – Part III]                                                                                           | Bob Dorr                                 | 2014-11-10 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2465,3 +2466,4 @@ Articles types:
 [CHECKDB From Every Angle: Consistency Checking Options for a VLDB]:https://www.sqlskills.com/blogs/paul/checkdb-from-every-angle-consistency-checking-options-for-a-vldb/
 [Minimizing the impact of DBCC CHECKDB : DOs and DON'Ts]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
 [A faster CHECKDB – Part II]:https://web.archive.org/web/20150315173540/http://blogs.msdn.com/b/psssql/archive/2012/02/23/a-faster-checkdb-part-ii.aspx
+[A faster CHECKDB – Part III]:https://web.archive.org/web/20150206201933/http://blogs.msdn.com/b/psssql/archive/2014/11/10/a-faster-checkdb-part-iii.aspx
