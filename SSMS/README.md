@@ -71,6 +71,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 | Version/Download Link     | Info           | Build         | Release Date | Size, Mb |
 | --------------------------|----------------|---------------|--------------|---------:|
 | [18.7.1 GA Release]       | **Latest GA**  | 15.0.18358.0  | 2020-07-27   |      635 |
+| [18.7. GA Release]        |                | 15.0.18357.0  | 2020-07-20   |      635 |
 | [18.6 GA Release]         |                | 15.0.18338.0  | 2020-07-22   |      534 |
 | [18.5.1 GA Release]       |                | 15.0.18333.0  | 2020-07-09   |      535 |
 | [18.5 GA Release]         |                | 15.0.18183.0  | 2020-04-07   |      535 |
@@ -115,6 +116,7 @@ SSMS 18.x is based on the new Visual Studio 2017 Isolated Shell: The new shell u
 | [SQL Server 2008 R2]      |                | 10.50.4000    | 2012-07-02   |      161 |
 
 [18.7.1 GA Release]:https://go.microsoft.com/fwlink/?linkid=2147207
+[18.7 GA Release]:https://go.microsoft.com/fwlink/?linkid=2146265
 [18.6 GA Release]:https://go.microsoft.com/fwlink/?linkid=2135491
 [18.5.1 GA Release]:https://go.microsoft.com/fwlink/?linkid=2132606
 [18.5 GA Release]:https://go.microsoft.com/fwlink/?linkid=2125901
