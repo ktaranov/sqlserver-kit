@@ -1250,6 +1250,8 @@ Articles types:
 | [A faster CHECKDB – Part IV (SQL CLR UDTs)]                                                                             | Bob Dorr                                 | 2015-01-26 | [DBA]       |
 | [Minimize performance impact of SQL Server DBCC CHECKDB]                                                                | Robert Pearl                             | 2011-06-02 | [DBA]       |
 | [Starting SQL: A Little More Fun With Logging Dynamic SQL]                                                              | Eric Darling                             | 2020-10-01 | [DBA][DEV]  |
+| [Allocation Order Scans]                                                                                                | Paul White                               | 2015-01-23 | [DBA][DEV]  |
+| [Parameter Sniffing in SQL Server 2019: Air_Quote_Actual Plans]                                                         | Brent Ozar                               | 2020-05-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2474,3 +2476,5 @@ Articles types:
 [A faster CHECKDB – Part IV (SQL CLR UDTs)]:https://web.archive.org/web/20150205043737/http://blogs.msdn.com/b/psssql/archive/2015/01/26/a-faster-checkdb-part-iv-sql-clr-udts.aspx
 [Minimize performance impact of SQL Server DBCC CHECKDB]:https://www.mssqltips.com/sqlservertip/2399/minimize-performance-impact-of-sql-server-dbcc-checkdb/
 [Starting SQL: A Little More Fun With Logging Dynamic SQL]:https://www.erikdarlingdata.com/starting-sql/starting-sql-a-little-more-fun-with-logging-dynamic-sql/
+[Allocation Order Scans]:https://sqlperformance.com/2015/01/t-sql-queries/allocation-order-scans
+[Parameter Sniffing in SQL Server 2019: Air_Quote_Actual Plans]:https://www.brentozar.com/archive/2019/04/parameter-sniffing-in-sql-server-2019-air_quote_actual-plans/
