@@ -1252,6 +1252,9 @@ Articles types:
 | [Starting SQL: A Little More Fun With Logging Dynamic SQL]                                                              | Eric Darling                             | 2020-10-01 | [DBA][DEV]  |
 | [Allocation Order Scans]                                                                                                | Paul White                               | 2015-01-23 | [DBA][DEV]  |
 | [Parameter Sniffing in SQL Server 2019: Air_Quote_Actual Plans]                                                         | Brent Ozar                               | 2020-05-26 | [DBA][DEV]  |
+| [Guide For Set Up Of Telegraf For Monitoring Sql Server Xplat]                                                          | Tracy Boggiano                           | 2018-02-24 | [DBA]       |
+| [Azure Table Storage Tips for the RDBMS Developer]                                                                      | Adrian Hills                             | 2020-10-21 | [AZ]        |
+| [sql_handle and the SQL Server batch text hash]                                                                         | Paul White                               | 2020-10-11 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2478,3 +2481,6 @@ Articles types:
 [Starting SQL: A Little More Fun With Logging Dynamic SQL]:https://www.erikdarlingdata.com/starting-sql/starting-sql-a-little-more-fun-with-logging-dynamic-sql/
 [Allocation Order Scans]:https://sqlperformance.com/2015/01/t-sql-queries/allocation-order-scans
 [Parameter Sniffing in SQL Server 2019: Air_Quote_Actual Plans]:https://www.brentozar.com/archive/2019/04/parameter-sniffing-in-sql-server-2019-air_quote_actual-plans/
+[Guide For Set Up Of Telegraf For Monitoring Sql Server Xplat]:https://tracyboggiano.com/archive/2018/02/setup-of-telegraf/
+[Azure Table Storage Tips for the RDBMS Developer]:https://www.sentryone.com/blog/azure-table-storage-tips-for-the-rdbms-developer
+[sql_handle and the SQL Server batch text hash]:https://www.sql.kiwi/2020/10/sqlhandle-and-sql-server-batch-text-hash.html
