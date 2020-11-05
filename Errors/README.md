@@ -134,6 +134,8 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       1807 | Could not obtain exclusive lock on database ‘model’. Retry the operation later.                        … | [1807_link1]                                        |
 |       1904 | The statistics on table has 65 columns in the key list                                                 … | [1904_link1]                                        |
 |       1908 | Column '%.*ls' is partitioning column of the index '%.*ls'. Partition columns for a unique index       … | [1908_link1][18]                                    |
+|       2533 | Table error: page %S_PGID allocated to object ID %d, index ID %d, partition ID %I64d, alloc unit ID    … | [2533_link1][50]                                    |
+|       2534 | Table error: page %S_PGID, whose header indicates that it is allocated to object ID %d, index ID %d,   … | [2534_link1][50]                                    |
 |       2812 | Could not find stored procedure '%.*ls'.                                                                 | [2812_link1][38]                                    |
 |       3101 | Exclusive access could not be obtained because the database is in use.                                 … | [3101_link1]                                        |
 |       3154 | The backup set holds a backup of a database other than the existing                                    … | [3154_link1]                                        |
@@ -162,6 +164,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       5123 | CREATE FILE encountered operating system error "%ls"(The system cannot find the path specified.)       … | [5123_link1], [5123_link2]                          |
 |       5171 | %.*ls is not a primary database file.                                                                    | [5171_link1][29]                                    |
 |       5172 | The header for file '%ls' is not a valid database file header. The %ls property is incorrect.            | [5172_link1][29]                                    |
+|       5235 | %lsDBCC %ls (%ls%ls%ls)%ls executed by %ls terminated abnormally due to error state %d. Elapsed time:  … | [5235_link1][50]                                    |
 |       5846 | Common language runtime (CLR) execution is not supported under lightweight pooling. Disable one of two … | [5846_link1]                                        |
 |       6335 | XML datatype instance has too many levels of nested nodes. Maximum allowed depth is 128 levels.          | [6335_link1]                                        |
 |       6348 | Specified collection '%.*ls' cannot be created because it already exists or you do not have permission.  | [6348_link1][36]                                    |
@@ -172,6 +175,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |       7357 | Cannot process the object "%ls". The OLE DB provider "%ls" for linked server "%ls" indicates that      … | [7357_link1][2], [7357_link2][2]                    |
 |       7391 | The operation could not be performed because OLE DB provider "%ls" for linked server "%ls" ...         … | [7391_link2][2]                                     |
 |       7719 | CREATE/ALTER partition function failed as only maximum of 1000 partitions can be created.              … | [657_link1]                                         |
+|       7926 | Check statement aborted. The database could not be checked as a database snapshot could not be created … | [7926_link1][50]                                    |
 |       8101 | An explicit value for the identity column in table '%.*ls' can only be specified when a column list is … | [8101_link1][40]                                    |
 |       8107 | IDENTITY_INSERT is already ON for table '%.*ls.%.*ls.%.*ls'. Cannot perform SET operation for table '% … | [8107_link1][40]                                    |
 |       8115 | Arithmetic overflow error converting %ls to data type %ls.                                               | [8115_link1][24]                                    |
@@ -293,6 +297,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [47]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 [48]:https://blog.waynesheffield.com/wayne/archive/2020/08/availability-group-issues-fixed-with-alerts/
 [49]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
+[50]:https://sqlblog.org/2020/11/05/navigating-dbcc-checkdb-for-vldb
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
