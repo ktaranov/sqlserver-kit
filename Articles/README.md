@@ -1255,6 +1255,9 @@ Articles types:
 | [Guide For Set Up Of Telegraf For Monitoring Sql Server Xplat]                                                          | Tracy Boggiano                           | 2018-02-24 | [DBA]       |
 | [Azure Table Storage Tips for the RDBMS Developer]                                                                      | Adrian Hills                             | 2020-10-21 | [AZ]        |
 | [sql_handle and the SQL Server batch text hash]                                                                         | Paul White                               | 2020-10-11 | [DBA][DEV]  |
+| [Navigating DBCC CHECKDB for VLDB]                                                                                      | Aaron Bertrand                           | 2020-11-05 | [DBA]       |
+| [Hidden Formatting Troubles with STR() (SQL Spackle)]                                                                   | Jeff Moden                               | 2019-04-26 | [DBA][DEV]  |
+| [The What, Why, When, and How of Incremental Loads]                                                                     | Tim Mitchell                             | 2020-07-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2484,3 +2487,6 @@ Articles types:
 [Guide For Set Up Of Telegraf For Monitoring Sql Server Xplat]:https://tracyboggiano.com/archive/2018/02/setup-of-telegraf/
 [Azure Table Storage Tips for the RDBMS Developer]:https://www.sentryone.com/blog/azure-table-storage-tips-for-the-rdbms-developer
 [sql_handle and the SQL Server batch text hash]:https://www.sql.kiwi/2020/10/sqlhandle-and-sql-server-batch-text-hash.html
+[Navigating DBCC CHECKDB for VLDB]:https://sqlblog.org/2020/11/05/navigating-dbcc-checkdb-for-vldb
+[Hidden Formatting Troubles with STR() (SQL Spackle)]:https://www.sqlservercentral.com/articles/hidden-formatting-troubles-with-str-sql-spackle
+[The What, Why, When, and How of Incremental Loads]:https://www.timmitchell.net/post/2020/07/23/incremental-loads/
