@@ -1261,6 +1261,8 @@ Articles types:
 | [How Do I Know If My Query Is Good Enough for Production?]                                                              | Brent Ozar                               | 2020-08-12 | [DBA][DEV]  |
 | [How to Find Out Whose Queries are Using The Most CPU]                                                                  | Brent Ozar                               | 2020-08-10 | [DBA][DEV]  |
 | [Limitations of SQL Server Native Backup and Restore in Amazon RDS]                                                     | Sadequl Hussain                          | 2017-08-23 | [B]         |
+| [SQL Server Native Backup and Restore in Amazon RDS]                                                                    | Sadequl Hussain                          | 2017-08-18 | [B]         |
+| [What Is the SQL Server CEIP Service (telemetry)?]                                                                      | Brent Ozar                               | 2020-10-07 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2496,3 +2498,5 @@ Articles types:
 [How Do I Know If My Query Is Good Enough for Production?]:https://www.brentozar.com/archive/2020/08/how-do-i-know-if-my-query-is-good-enough-for-production/
 [How to Find Out Whose Queries are Using The Most CPU]:https://www.brentozar.com/archive/2020/08/how-to-find-out-whose-queries-are-using-the-most-cpu/
 [Limitations of SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5042/limitations-of-sql-server-native-backup-and-restore-in-amazon-rds/
+[SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5041/sql-server-native-backup-and-restore-in-amazon-rds/
+[What Is the SQL Server CEIP Service?]:https://www.brentozar.com/archive/2020/10/what-is-the-sql-server-ceip-service/

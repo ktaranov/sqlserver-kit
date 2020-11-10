@@ -1,3 +1,18 @@
+#requires -version 2.0
+
+<#
+.SYNOPSIS
+    Disable SQL Server CEIP services
+
+.DESCRIPTION
+    Author: Eric Cobb
+    Create date: 2020-02-18
+    http://www.sqlnuggets.com/blog/disable-telemetry-on-multiple-sql-servers-with-powershell/
+
+.PARAMETER server
+    Server list where disable SEIP services
+#>
+
 $server = 'Server01' ,'Server02','Server03','Server04';
  
 # Stop all CEIP services
