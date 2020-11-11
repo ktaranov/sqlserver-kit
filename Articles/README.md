@@ -1263,6 +1263,8 @@ Articles types:
 | [Limitations of SQL Server Native Backup and Restore in Amazon RDS]                                                     | Sadequl Hussain                          | 2017-08-23 | [B]         |
 | [SQL Server Native Backup and Restore in Amazon RDS]                                                                    | Sadequl Hussain                          | 2017-08-18 | [B]         |
 | [What Is the SQL Server CEIP Service (telemetry)?]                                                                      | Brent Ozar                               | 2020-10-07 | [DBA]       |
+| [Maximum Simultaneous User Connections]                                                                                 | Michael J Swart                          | 2020-10-16 | [DBA]       |
+| [Find Database Connection Leaks in Your Application]                                                                    | Michael J Swart                          | 2017-07-07 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2500,3 +2502,5 @@ Articles types:
 [Limitations of SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5042/limitations-of-sql-server-native-backup-and-restore-in-amazon-rds/
 [SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5041/sql-server-native-backup-and-restore-in-amazon-rds/
 [What Is the SQL Server CEIP Service?]:https://www.brentozar.com/archive/2020/10/what-is-the-sql-server-ceip-service/
+[Maximum Simultaneous User Connections]:http://www.sqlnuggets.com/blog/disable-telemetry-on-multiple-sql-servers-with-powershell/
+[Find Database Connection Leaks in Your Application]:https://sqlperformance.com/2017/07/sql-performance/find-database-connection-leaks
