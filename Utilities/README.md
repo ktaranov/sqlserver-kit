@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **384** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **391** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {16}
@@ -16,12 +16,12 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[MG]**: Migration tool {30}
  - **[MS]**: Management Studio (alternative for SSMS) {32}
  - **[REC]**: Recovery tools {13}
- - **[S]**: Search tools {5}
+ - **[S]**: Search tools {7}
  - **[SEC]**: Security tools {7}
  - **[SC]**: Structure compare {21}
  - **[ST]**: Statistics utilities {3}
  - **[T]**: Testing tools {7}
- - **[?]**: Not yet classified {150}
+ - **[?]**: Not yet classified {155}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                      | Release    | Author                  | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|---------------------------------------------|------------|-------------------------|------------|----------------|------:|
@@ -409,6 +409,13 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SentryOne Test](#sentryone-test)                                | No                            | No        | [T]      | [SentryOne Test]                            | ?          | SQL Sentry               |           | No             | $828  |
 | [Code Quality and Security for T-SQL](#sonarsource)              | No                            | No        | [?]      | [Code Quality and Security for T-SQL]       | ?          | SonarSource              |           | No             | €120  |
 | [DBBALANCE](#dbbalance)                                          | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [DBBALANCE]                                 | ?          | DBBalance                |           | No             |  ?    |
+| [Convert SQL to Excel](#convert-sql-to-excel)                    | No                            | No        | [?]      | [Convert SQL to Excel]                      | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [Search string in Schema](#search-string-in-schema)              | No                            | No        | [S]      | [Search string in Schema]                   | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [Search string in SQL](#search-string-in-sql)                    | No                            | No        | [S]      | [Search string in SQL]                      | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [SQL Table Scripter](#sql-table-scripter)                        | No                            | No        | [?]      | [SQL Table Scripter]                        | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [SQLCLR Util](#sqlclr-util)                                      | No                            | No        | [?]      | [SQLCLR Util]                               | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [Image To SQL](#image-to-sql)                                    | No                            | No        | [?]      | [Image To SQL]                              | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
+| [dbdiagram](#dbdiagram)                                          | No                            | No        | [?]      | [dbdiagram]                                 | ?          | holistics.io             |           | Yes            | $9/mo |
 
 <a id="ssms"></a>
 ## SSMS
@@ -6005,6 +6012,111 @@ Price: ?
  - Database Migration
  - Database Development
 
+
+## Convert SQL to Excel
+<a id="convert-sql-to-excel"></a>
+Download page: [Convert SQL to Excel]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2000-2014<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Easy way to convert SQL table or a subset of table to Excel. No programming.
+ - Convert / export a SQL Table to Excel file (.xlsx or .xls format)
+ - Convert multiple tables (multiple query results) to multiple Excel worksheets.
+ - Allow flexible TSQL query which can have multiple SELECT statements or other complex query statements.
+ - Supports command line execution (unattended mode). Useful for periodical scheduling.
+ - Allow user defined Excel worksheet names.
+
+
+## Search string in Schema
+<a id="search-string-in-schema"></a>
+Download page: [Search string in Schema]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2005-2012<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+ - This tool searches tables, columns, views, stored procedures, XPs, functions, triggers, constraints and SQL Agent Jobs in a database to find a given string.
+ - Simply input target server, target database, search keyword and you will get fast search results!
+ - Supports filterng by object type or schema user
+ - Supports easy switch between multiple SQL Servers.
+ - Supports SQL Agent Jobs search.
+
+
+## Search string in SQL
+<a id="search-string-in-sql"></a>
+Download page: [Search string in SQL]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2005-2008<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+This tool helps you to search all columns of all tables in a database for a string keyword. In order to increase performance, it examines string type columns only in all tables to search for a given keyword.
+
+
+## SQL Table Scripter
+<a id="sql-table-scripter"></a>
+Download page: [SQL Table Scripter]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2005, 2008<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Generates a CREATE SQL script for a table.
+ - Script can include all DRI (declarative referential integrity) such as Foreign Key, Constraints for the table.
+ - Script can include Indexes for the table.
+ - Generates INSERT SQL scripts for table data (optionally).
+
+
+## SQLCLR Util
+<a id="sqlclr-util"></a>
+Download page: [SQLCLR Util]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2005, 2014+r<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+ - generates DLL file from SQL CLR assembly in the SQL Server. When creating SQL CLR assembly with its DLL file, SQL Server saves the DLL binary into SQL Server system table. This tool help you to recreate DLL file easily from the SQL Server system table.
+ - generates CREATE ASSEMBLY script from a DLL file. Once CREATE script is generated, one can run the script without physical .DLL file. This method will be useful when one has no permission to access physical disk on the server because there is no need to copy the file to server.
+
+
+## Image To SQL
+<a id="image-to-sql"></a>
+Download page: [Image To SQL]<br/>
+Release date: 2015-10-09<br/>
+Support Version: 2005,2008 or later<br/>
+Author: MSSQL.TOOLS<br/>
+Free version: Yes<br/>
+Price: No
+
+ - Save any image file such as .JPG, .PNG, .BMP, .GIF to SQL Server table.
+ - Image file is saved to any varbinary column (or image column)
+ - User can specify input image file and table/column target in easy UI.
+ - User can specify where to save image file by setting primary key value(s) of the user table in easy UI.
+
+
+## dbdiagram
+<a id="dbdiagram"></a>
+Download page: [dbdiagram]<br/>
+Release date: ?<br/>
+Support Version: ?<br/>
+Author: holistics.io<br/>
+Free version: Yes<br/>
+Price: &9/mo
+
+A free, simple tool to draw ER diagrams by just writing code. Designed for developers and data analysts.
+ - Generate SQL statements
+ - Export to Images and PDFs
+ - One Click Sharing
+ - Integrate with your SQL Databases
+ - Integrate with Popular Web Frameworks
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -6390,6 +6502,13 @@ Price: ?
 [Query Performance Insight for Azure SQL Database]:https://docs.microsoft.com/en-us/azure/azure-sql/database/query-performance-insight-use
 [Code Quality and Security for T-SQL]:https://www.sonarsource.com/tsql
 [DBBALANCE]:http://www.dbbalance.com
+[Convert SQL to Excel]:http://mssql.tools/sql/Convert-SQL-to-Excel
+[Search string in Schema]:http://mssql.tools/sql/Search-string-in-Schema
+[Search string in SQL]:http://mssql.tools/sql/Search-string-in-SQL
+[SQL Table Scripter]:http://mssql.tools/sql/SQL-Table-Scripter
+[SQLCLR Util]:http://mssql.tools/sql/SQLCLR-Util
+[Image To SQL]:http://mssql.tools/sql/Image-To-SQL
+[dbdiagram]:https://dbdiagram.io/home
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
