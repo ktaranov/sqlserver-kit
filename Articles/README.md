@@ -1269,6 +1269,8 @@ Articles types:
 | [Prevent Lock Escalation On Indexed Views]                                                                              | Thomas Costers                           | 2019-10-30 | [DBA][DEV]  |
 | [Concatenating Strings in SQL Server]                                                                                   | Guy Glantser                             | 2020-11-10 | [DBA][DEV]  |
 | [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-07 | [DBA][DEV]  |
+| [Migrating SSIS to Azure – an Overview]                                                                                 | Koen Verbeeck                            | 2020-11-03 | [AZ][MG]    |
+| [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-12 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2512,3 +2514,5 @@ Articles types:
 [Prevent Lock Escalation On Indexed Views]:https://kohera.be/blog/sql-server/prevent-lock-escalation-on-indexed-views/
 [Concatenating Strings in SQL Server]:https://www.madeiradata.com/post/concatenating-strings
 [Why Full Text’s CONTAINS Queries Are So Slow]:https://www.brentozar.com/archive/2020/11/why-full-texts-contains-queries-are-so-slow/
+[Migrating SSIS to Azure – an Overview]:https://sqlkover.com/migrating-ssis-to-azure-an-overview/
+[(Video) How to Troubleshoot Someone Else’s Temp Table Contents]:https://www.brentozar.com/archive/2020/11/video-how-to-troubleshoot-someone-elses-temp-table-contents/
