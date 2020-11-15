@@ -1271,6 +1271,8 @@ Articles types:
 | [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-07 | [DBA][DEV]  |
 | [Migrating SSIS to Azure – an Overview]                                                                                 | Koen Verbeeck                            | 2020-11-03 | [AZ][MG]    |
 | [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-12 | [DBA][DEV]  |
+| [A Parameterization Puzzle With TOP: Part 1]                                                                            | Eric Darling                             | 2020-10-21 | [DBA][DEV]  |
+| [A Parameterization Puzzle With TOP: Part 2]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2516,3 +2518,5 @@ Articles types:
 [Why Full Text’s CONTAINS Queries Are So Slow]:https://www.brentozar.com/archive/2020/11/why-full-texts-contains-queries-are-so-slow/
 [Migrating SSIS to Azure – an Overview]:https://sqlkover.com/migrating-ssis-to-azure-an-overview/
 [(Video) How to Troubleshoot Someone Else’s Temp Table Contents]:https://www.brentozar.com/archive/2020/11/video-how-to-troubleshoot-someone-elses-temp-table-contents/
+[A Parameterization Puzzle With TOP: Part 1]:https://www.erikdarlingdata.com/execution-plans/a-parameterization-puzzle-with-top-part-1/
+[A Parameterization Puzzle With TOP: Part 2]:https://www.erikdarlingdata.com/execution-plans/a-parameterization-puzzle-with-top-part-2/
