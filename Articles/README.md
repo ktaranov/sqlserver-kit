@@ -1273,6 +1273,8 @@ Articles types:
 | [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-12 | [DBA][DEV]  |
 | [A Parameterization Puzzle With TOP: Part 1]                                                                            | Eric Darling                             | 2020-10-21 | [DBA][DEV]  |
 | [A Parameterization Puzzle With TOP: Part 2]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
+| [T-SQL: Get The Text Between Two Delimiters]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
+| [Explore dynamic management views for monitoring SQL Server Always On Availability Groups]                              | Rajendra Gupta                           | 2020-11-16 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2520,3 +2522,5 @@ Articles types:
 [(Video) How to Troubleshoot Someone Else’s Temp Table Contents]:https://www.brentozar.com/archive/2020/11/video-how-to-troubleshoot-someone-elses-temp-table-contents/
 [A Parameterization Puzzle With TOP: Part 1]:https://www.erikdarlingdata.com/execution-plans/a-parameterization-puzzle-with-top-part-1/
 [A Parameterization Puzzle With TOP: Part 2]:https://www.erikdarlingdata.com/execution-plans/a-parameterization-puzzle-with-top-part-2/
+[T-SQL: Get The Text Between Two Delimiters]:https://www.erikdarlingdata.com/sql-server/t-sql-get-the-text-between-two-delimiters/
+[Explore dynamic management views for monitoring SQL Server Always On Availability Groups]:https://www.sqlshack.com/explore-dynamic-management-views-for-monitoring-sql-server-always-on-availability-groups/
