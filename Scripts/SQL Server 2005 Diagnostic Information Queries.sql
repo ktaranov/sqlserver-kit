@@ -1,4 +1,3 @@
-
 -- SQL Server 2005 Diagnostic Information Queries
 -- Glenn Berry 
 -- Last Modified: September 1, 2020
@@ -669,7 +668,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value.
 -- This will only return one row for non-NUMA systems.
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnt what you think
 -- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1158,5 +1157,3 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 
 -- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
 -- https://bit.ly/2ftKVrX
-
-

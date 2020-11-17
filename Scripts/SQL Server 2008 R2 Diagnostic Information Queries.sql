@@ -1,4 +1,3 @@
-
 -- SQL Server 2008 R2 Diagnostic Information Queries
 -- Glenn Berry 
 -- Last Modified: September 1, 2020
@@ -834,7 +833,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value.
 -- This will only return one row for non-NUMA systems.
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnt what you think
 -- https://www.sqlskills.com/blogs/paul/page-life-expectancy-isnt-what-you-think/
 
 
@@ -1389,13 +1388,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- SQL Server 2017: Diagnosing Configuration Issues with DMVs
 -- https://bit.ly/2MSUDUL
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries  Part 1 
 -- https://bit.ly/2plxCer
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
+-- SQL Server 2014 DMV Diagnostic Queries  Part 2
 -- https://bit.ly/2IuJpzI
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
+-- SQL Server 2014 DMV Diagnostic Queries  Part 3
 -- https://bit.ly/2FIlCPb
 
 

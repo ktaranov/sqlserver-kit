@@ -1,7 +1,7 @@
-
 -- SQL Server 2016 SP2 Diagnostic Information Queries
 -- Glenn Berry 
 -- Last Modified: September 1, 2020
+-- Last Modified: September 13, 2020
 -- https://glennsqlperformance.com/
 -- https://sqlserverperformance.wordpress.com/
 -- YouTube: https://bit.ly/2PkoAM1 
@@ -210,7 +210,7 @@ DBCC TRACESTATUS (-1);
 --           This allows a database to become online and queries to be executed before the Query Store has been fully recovered 
 
 -- The behavior of TF 1117, 1118 are enabled for tempdb in SQL Server 2016 by default
--- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
+-- SQL 2016  It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
 -- https://bit.ly/2lbNWxK           
 
 -- The behavior of TF 2371 is enabled by default in SQL Server 2016 and newer (in compat level 130 and higher)
@@ -455,7 +455,7 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 
 -- You will see no results if your instance is not using AlwaysOn AGs
 
--- SQL Server 2016 – It Just Runs Faster: Always On Availability Groups Turbocharged
+-- SQL Server 2016  It Just Runs Faster: Always On Availability Groups Turbocharged
 -- https://bit.ly/2dn1H6r
 
 
@@ -660,6 +660,12 @@ ORDER BY [Overall Latency] OPTION (RECOMPILE);
 -- These latency numbers include all file activity against all SQL Server 
 -- database files on each drive since SQL Server was last started
 
+-- sys.dm_io_virtual_file_stats (Transact-SQL)
+-- https://bit.ly/3bRWUc0
+
+-- sys.dm_os_volume_stats (Transact-SQL)
+-- https://bit.ly/33thz2j
+
 
 -- Calculates average stalls per read, per write, and per total input/output for each database file  (Query 27) (IO Latency by File)
 SELECT DB_NAME(fs.database_id) AS [Database Name], CAST(fs.io_stall_read_ms/(1.0 + fs.num_of_reads) AS NUMERIC(10,1)) AS [avg_read_latency_ms],
@@ -680,6 +686,9 @@ ORDER BY avg_io_latency_ms DESC OPTION (RECOMPILE);
 -- want to move some files to a different location or perhaps improve your I/O performance
 -- These latency numbers include all file activity against each SQL Server 
 -- database file since SQL Server was last started
+
+-- sys.dm_io_virtual_file_stats (Transact-SQL)
+-- https://bit.ly/3bRWUc0
 
 
 -- Look for I/O requests taking longer than 15 seconds in the six most recent SQL Server Error Logs (Query 28) (IO Warnings)
@@ -805,7 +814,7 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Also look at avg_user_impact and avg_total_user_cost to help determine importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
--- Håkan Winther has given me some great suggestions for this query
+-- Hkan Winther has given me some great suggestions for this query
 
 -- SQL Server Index Design Guide
 -- https://bit.ly/2qtZr4N
@@ -1130,7 +1139,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isn’t what you think…
+-- Page Life Expectancy isnt what you think
 -- https://bit.ly/2EgynLa
 
 
@@ -1613,7 +1622,7 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Look at index advantage, last user seek time, number of user seeks to help determine source and importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
--- Håkan Winther has given me some great suggestions for this query
+-- Hkan Winther has given me some great suggestions for this query
 
 
 -- Find missing index warnings for cached plans in the current database  (Query 66) (Missing Index Warnings)
@@ -1976,13 +1985,13 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- SQL Server 2017: Diagnosing Configuration Issues with DMVs
 -- https://bit.ly/2MSUDUL
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 1 
+-- SQL Server 2014 DMV Diagnostic Queries  Part 1 
 -- https://bit.ly/2plxCer
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 2
+-- SQL Server 2014 DMV Diagnostic Queries  Part 2
 -- https://bit.ly/2IuJpzI
 
--- SQL Server 2014 DMV Diagnostic Queries – Part 3
+-- SQL Server 2014 DMV Diagnostic Queries  Part 3
 -- https://bit.ly/2FIlCPb
 
 
