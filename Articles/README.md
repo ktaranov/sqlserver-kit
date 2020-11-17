@@ -1275,6 +1275,8 @@ Articles types:
 | [A Parameterization Puzzle With TOP: Part 2]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
 | [T-SQL: Get The Text Between Two Delimiters]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
 | [Explore dynamic management views for monitoring SQL Server Always On Availability Groups]                              | Rajendra Gupta                           | 2020-11-16 | [DBA]       |
+| [Deploy SQLWATCH to SQL Server using GitHub Actions]                                                                    | Kevin Chant                              | 2020-11-17 | [DBA]       |
+| [SQL Server table hints – WITH (NOLOCK) best practices]                                                                 | Ahmad Yaseen                             | 2018-02-24 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2524,3 +2526,5 @@ Articles types:
 [A Parameterization Puzzle With TOP: Part 2]:https://www.erikdarlingdata.com/execution-plans/a-parameterization-puzzle-with-top-part-2/
 [T-SQL: Get The Text Between Two Delimiters]:https://www.erikdarlingdata.com/sql-server/t-sql-get-the-text-between-two-delimiters/
 [Explore dynamic management views for monitoring SQL Server Always On Availability Groups]:https://www.sqlshack.com/explore-dynamic-management-views-for-monitoring-sql-server-always-on-availability-groups/
+[Deploy SQLWATCH to SQL Server using GitHub Actions]:https://www.kevinrchant.com/2020/11/17/deploy-sqlwatch-to-sql-server-using-github-actions/
+[SQL Server table hints – WITH (NOLOCK) best practices]:https://www.sqlshack.com/understanding-impact-clr-strict-security-configuration-setting-sql-server-2017/
