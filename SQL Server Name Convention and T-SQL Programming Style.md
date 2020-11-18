@@ -201,14 +201,15 @@ More details about SQL Server data types and mapping it with another databases a
 
 This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
 
-| Recommended function | Not Recommended | Why                                                                                                                                            | More details |
-|----------------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| [`<>`][12]           | [`!=`][12]      | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]         |
-| [`CAST`][10]         | [`CONVERT`][10] | `CAST` is [`ANSI`]                                                                                                                             | [14][15]     |
-| [`COALECSE`]         | [`ISNULL`]      | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to triming string               | [16][17]     |
-| [`DATEADD`]          | [`DATEDIFF`]    | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18][19]     |
-| [`SET`]              | [`SEELCT`]      | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20][21][22] |
-| [`CAST`][10]         | [`STR`]         | `SET` is not [`ANSI`], extremly slow, don't use more than 15 digits, and has rounding problem - use `CAST` plus concatenate instead            | [23]         |
+| Not Recommended | Recommended     | When and Why                                                                                                                                   | More details   |
+|-----------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| [`!=`][12]      | [`<>`][12]      | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]           |
+| [`CONVERT`][10] | [`CAST`][10]    | `CAST` is [`ANSI`]                                                                                                                             | [14],[15]      |
+| [`ISNULL`]      | [`COALECSE`]    | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to implicit triming string      | [16],[17]      |
+| [`DATEDIFF`]    | [`DATEADD`]     | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18],[19]      |
+| [`SELECT`]      | [`SET`]         | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20],[21],[22] |
+| [`STR`]         | [`CAST`][10]    | `STR` is not [`ANSI`], extremly slow, don't use more than 15 digits, and has rounding problem - use `CAST` plus concatenate instead `STR`      | [23]           |
+| [`ISNUMERIC`]   | [`TRY_CONVERT`] | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.             | [24]           |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -224,12 +225,15 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [18]:https://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
 [19]:https://dba.stackexchange.com/q/132437/107045
 [`SET`]:https://docs.microsoft.com/en-gb/sql/t-sql/language-elements/set-local-variable-transact-sql
-[`SEELCT`]:https://docs.microsoft.com/en-gb/sql/t-sql/language-elements/select-local-variable-transact-sql
+[`SELECT`]:https://docs.microsoft.com/en-gb/sql/t-sql/language-elements/select-local-variable-transact-sql
 [20]:https://assets.red-gate.com/community/books/defensive-database-programming.pdf
 [21]:https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/
 [22]:http://vyaskn.tripod.com/differences_between_set_and_select.htm
+[`STR`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/str-transact-sql
 [23]:https://www.sqlservercentral.com/articles/hidden-formatting-troubles-with-str-sql-spackle
-[24]:https://docs.microsoft.com/en-us/sql/t-sql/functions/str-transact-sql
+[`ISNUMERIC`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql
+[`TRY_CONVERT`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql
+[24]:https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -243,7 +247,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 ### General programming T-SQL style
 
  - For database objects names in code use only schema plus object name, do not hardcode server and database names in your code:
-   ```
+   ```tsql
    /* good */
    CREATE TABLE dbo.MyTable (MyColumn int);
    
@@ -257,7 +261,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlstudies.com/2020/06/22/i-created-a-table-and-sql-created-a-schema-and-a-user/),
    [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query),
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
- - Delimiters: **spaces** (not tabs)
+ - Delimiters: **spaces** (not tabs).
  - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
    Main problems are: traffic issues, Memory Grants issues, Index usage issues.
    **Only one exception, see it below.**
@@ -298,16 +302,16 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/).
  - Whenever you have data modification on non-temporary tables, is to use [explicit transactions] over [autocommit].
    1. If you have a stored procedure which is simply running a `SELECT` statement, use [autocommit].
-   2. If you have a stored procedure which performs data modification on non-temporary tables, use an [explicit transaction] only over the area which modifies data.
+   2. If you have a stored procedure which performs data modification on non-temporary tables, use an [explicit transactions] only over the area which modifies data.
    3. If you are working with non-global temporary tables beforehand, don’t include any modification of those inside the explicit transaction. 
-   4. In a [loop](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql), choose whether you want to put the [explicit transaction] around the loop or inside it. In most cases, prefer to put the transaction inside the loop to minimize the amount of time that blocking other users.
+   4. In a [loop](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql), choose whether you want to put the [explicit transactions] around the loop or inside it. In most cases, prefer to put the transaction inside the loop to minimize the amount of time that blocking other users.
    5. Outside of a stored procedure use [explicit transactions] if you’re doing something potentially risky.
-   6. Watch out for nested transactions. In SQL Server, there’s very little utility in them and their behavior is weird.[Paul Randal explains in great detail just how broken they are](https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/).
-   More details [her](https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/).
+   6. Watch out for nested transactions. In SQL Server, there’s very little utility in them and their behavior is weird. [Paul Randal explains in great detail just how broken they are](https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/).
+   More details [here](https://36chambers.wordpress.com/2020/08/10/transaction-modes-in-sql-server/).
  - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
    Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
- - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries.More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
-   `INFORMATION_SCHEMA` views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the sys.objects catalog view.
+ - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries. More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
+   `INFORMATION_SCHEMA` views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the `sys.objects` catalog view.
  - When more than one logical operator is used always use parentheses, even when they are not required.
    This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
    There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide?view=sql-server-ver15#logical-operator-precedence).
@@ -378,35 +382,20 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
   More details [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-order-by-clause-transact-sql#best-practices).
   ```sql
   /* bad */
-  SELECT ProductID, Name FROM Production.Production ORDER BY 2;
+  SELECT ProductID, Name FROM production.Production ORDER BY 2;
 
   /* good */
-  SELECT ProductID, Name FROM Production.Production ORDER BY Name;
+  SELECT ProductID, Name FROM production.Production ORDER BY Name;
   ```
 
- - Avoid wrapping functions around columns specified in the WHERE and JOIN clauses.
+ - Avoid wrapping functions around columns specified in the `WHERE` and `JOIN` clauses.
    Doing so makes the columns non-deterministic and prevents the query processor from using indexes.
- - Use `NULL` or `NOT NULL` for each column in a temporary table. The `ANSI_DFLT_ON` and `ANSI_DFLT_OFF` options control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
+ - Use `NULL` or `NOT NULL` for each column in a temporary table. The [`ANSI_NULL_DFLT_ON`] option control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
    If a connection executes a procedure with different settings for these options than the connection that created the procedure, the columns of the table created for the second connection can have different nullability and exhibit different behavior. If `NULL` or `NOT NULL` is explicitly stated for each column, the temporary tables are created by using the same nullability for all connections that execute the procedure.
+   [`ANSI_NULL_DFLT_ON`]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql
  - Use modification statements that convert nulls and include logic that eliminates rows with null values from queries. Be aware that in Transact-SQL, `NULL` is not an empty or "nothing" value. It is a placeholder for an unknown value and can cause unexpected behavior, especially when querying for result sets or using AGGREGATE functions.
- - Use the `UNION ALL` operator instead of the UNION or OR operators, unless there is a specific need for distinct values.
+ - Use the `UNION ALL` operator instead of the `UNION` or `OR` operators, unless there is a specific need for distinct values.
    The `UNION ALL` operator requires less processing overhead because duplicates are not filtered out of the result set.
- - Avoid using [`ISNUMERIC`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql) function. Use for SQL Server >= 2012 [`TRY_CONVERT`](https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql) function and for SQL Server < 2012 `LIKE` expression:
-   ```tsql
-   CASE WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^-+.ED0123456789]%' /* is it a float? */
-             AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
-             AND TapAngle LIKE '%[0123456789][ED][-+0123456789]%'
-             AND RIGHT(TapAngle ,1) LIKE N'[0123456789]'
-        THEN 'float'
-        WHEN STUFF(LTRIM(TapAngle),1,1,'') NOT LIKE '%[^.0123456789]%' /* is it numeric? */
-             AND LEFT(LTRIM(TapAngle),1) LIKE '[-.+0123456789]'
-             AND TapAngle LIKE '%.%' AND TapAngle NOT LIKE '%.%.%'
-             AND TapAngle LIKE '%[0123456789]%'
-        THEN 'float'
-   ELSE NULL
-   END
-   ```
-   More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029).
  - Avoid using `INSERT INTO` a permanent table with `ORDER BY`.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-insert-permanent-table-order-pe020).
  - Avoid using shorthand (`wk, yyyy, d` etc.) with date/time operations, use full names: `month, day, year`.
@@ -766,4 +755,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [11]:https://docs.microsoft.com/en-us/sql/t-sql/statements/create-procedure-transact-sql#best-practices
 [explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
-[`ANSI`](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip)
+[`ANSI`]:http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip
