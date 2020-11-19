@@ -1277,6 +1277,15 @@ Articles types:
 | [Explore dynamic management views for monitoring SQL Server Always On Availability Groups]                              | Rajendra Gupta                           | 2020-11-16 | [DBA]       |
 | [Deploy SQLWATCH to SQL Server using GitHub Actions]                                                                    | Kevin Chant                              | 2020-11-17 | [DBA]       |
 | [SQL Server table hints – WITH (NOLOCK) best practices]                                                                 | Ahmad Yaseen                             | 2018-02-24 | [DBA][DEV]  |
+| [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Aaron Bertrand                           | 2020-02-14 | [DBA]       |
+| [What permissions do temp stored procedures use?]                                                                       | Kenneth Fisher                           | 2019-06-19 | [DBA][DEV]  |
+| [SQLskills SQL101: Should you kill that long-running transaction?]                                                      | Paul Randal                              | 2020-10-10 | [DBA][DEV]  |
+| [A quick and dirty scan of a list of instances using a dynamic linked server]                                           | Kenneth Fisher                           | 2020-11-12 | [DBA]       |
+| [sp_whoisactive: Analyzing Tempdb Contention]                                                                           | Adam Machanic                            | 2017-01-01 | [DBA][DEV]  |
+| [How to Choose Between RCSI and Snapshot Isolation Levels]                                                              | Little Kendra                            | 2018-02-18 | [DBA][DEV]  |
+| [Explore the SQL query table hint READPAST]                                                                             | Rajendra Gupta                           | 2020-11-14 | [DBA][DEV]  |
+| [How Bad Statistics Cause Bad SQL Server Query Performance]                                                             | Brent Ozar                               | 2020-11-14 | [DBA][DEV]  |
+| [How Scalar User-Defined Functions Slow Down Queries]                                                                   | Brent Ozar                               | 2020-11-14 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2528,3 +2537,12 @@ Articles types:
 [Explore dynamic management views for monitoring SQL Server Always On Availability Groups]:https://www.sqlshack.com/explore-dynamic-management-views-for-monitoring-sql-server-always-on-availability-groups/
 [Deploy SQLWATCH to SQL Server using GitHub Actions]:https://www.kevinrchant.com/2020/11/17/deploy-sqlwatch-to-sql-server-using-github-actions/
 [SQL Server table hints – WITH (NOLOCK) best practices]:https://www.sqlshack.com/understanding-impact-clr-strict-security-configuration-setting-sql-server-2017/
+[Memory-Optimized TempDB Metadata in SQL Server 2019]:https://www.mssqltips.com/sqlservertip/6230/memoryoptimized-tempdb-metadata-in-sql-server-2019/
+[What permissions do temp stored procedures use?]:https://sqlstudies.com/2019/06/19/what-permissions-do-temp-stored-procedures-use/
+[SQLskills SQL101: Should you kill that long-running transaction?]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-should-you-kill-that-long-running-transaction/
+[A quick and dirty scan of a list of instances using a dynamic linked server]:https://sqlstudies.com/2020/11/12/a-quick-and-dirty-scan-of-a-list-of-instances-using-a-dynamic-linked-server/
+[sp_whoisactive: Analyzing Tempdb Contention]:http://whoisactive.com/docs/21_tempdb/
+[How to Choose Between RCSI and Snapshot Isolation Levels]:https://littlekendra.com/2016/02/18/how-to-choose-rcsi-snapshot-isolation-levels/
+[Explore the SQL query table hint READPAST]:https://www.sqlshack.com/explore-the-sql-query-table-hint-readpast/
+[How Bad Statistics Cause Bad SQL Server Query Performance]:https://www.brentozar.com/archive/2020/11/how-bad-statistics-cause-bad-sql-server-query-performance/
+[How Scalar User-Defined Functions Slow Down Queries]:https://www.brentozar.com/archive/2020/11/how-scalar-user-defined-functions-slow-down-queries/
