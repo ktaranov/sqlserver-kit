@@ -387,6 +387,12 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [`sp_alter_column` stored procedure is able to alter a column with dependencies](https://github.com/segovoni/sp_alter_column) (by Sergio Govoni)
     - [Toolbox repository for Madeira's consultant team](https://github.com/MadeiraData/MadeiraToolbox) (by Madeira)
     - [`mssql-jobs-hadr` - maintain scheduled jobs on SQL Servers with either Availability Groups or Database Mirroring](https://github.com/MadeiraData/mssql-jobs-hadr) (by Eitan Blumin)
+    - [Fluent Migrator is a migration framework for .NET much like Ruby on Rails Migrations](https://github.com/fluentmigrator/fluentmigrator) (by Eivind Gussiås Løksetheloekset, Mark Junker, Tom Marien)
+    - [SQL Server in Docker](https://github.com/microsoft/mssql-docker) (by Microsoft)
+    - [ActiveRecord SQL Server Adapter - SQL Server Adapter For Rails](https://github.com/rails-sqlserver/activerecord-sqlserver-adapter) (by rails-sqlserver)
+    - [EFCorePowerTools - Reverse engineering, model visualization and migrations UI for EF Core](https://github.com/ErikEJ/EFCorePowerTools) (by Erik Ejlskov Jensen)
+    - [SqlTableDependency - a high-level C# component used to audit, monitor and receive notifications on SQL Server's record table changes](https://github.com/christiandelbianco/monitor-table-change-with-sqltabledependency) (by Christian Del Bianco)
+    - [EFSecondLevelCache.Core - Entity Framework Core Second Level Caching Library (Redis)](https://github.com/VahidN/EFSecondLevelCache.Core) (by Vahid Nasiri)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
