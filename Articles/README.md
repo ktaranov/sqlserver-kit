@@ -1207,7 +1207,7 @@ Articles types:
 | [SQL Server Temporary Object Caching]                                                                                   | Paul White                               | 2017-05-02 | [DBA][DEV]  |
 | [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-24 | [DBA][DEV]  |
 | [3 Ways to Run DBCC CHECKDB Faster]                                                                                     | Brent Ozar                               | 2020-08-27 | [DBA][DEV]  |
-| [Back Up SQL Server 43%-67% Faster by Writing to Multiple Files.]                                                       | Brent Ozar                               | 2020-08-23 | [DBA][DEV]  |
+| [Back Up SQL Server 43%-67% Faster by Writing to Multiple Files]                                                        | Brent Ozar                               | 2020-08-23 | [DBA][DEV]  |
 | [Bad Habits to Kick : Using SELECT * / omitting the column list]                                                        | Aaron Bertrand                           | 2009-10-10 | [DBA][DEV]  |
 | [All The Problems With Select *]                                                                                        | Erik Darlling                            | 2019-12-10 | [DBA][DEV]  |
 | [When Select * Doesn’t Matter]                                                                                          | Erik Darlling                            | 2019-11-18 | [DBA][DEV]  |
@@ -1286,6 +1286,11 @@ Articles types:
 | [Explore the SQL query table hint READPAST]                                                                             | Rajendra Gupta                           | 2020-11-14 | [DBA][DEV]  |
 | [How Bad Statistics Cause Bad SQL Server Query Performance]                                                             | Brent Ozar                               | 2020-11-14 | [DBA][DEV]  |
 | [How Scalar User-Defined Functions Slow Down Queries]                                                                   | Brent Ozar                               | 2020-11-14 | [DBA][DEV]  |
+| [Could verifying your backups be costing you money?]                                                                    | Matt Robertshaw                          | 2020-01-01 | [AZ][B]     |
+| [Extended Events: System_health And A Long Running Query]                                                               | Grant Fritchey                           | 2020-05-09 | [XE]        |
+| [Altering an indexed view in SQL Server drops all indexes]                                                              | Little Kendra                            | 2020-03-02 | [DBA][DEV]  |
+| [Deprecated and discontinued features in SQL Server]                                                                    | Randolph West                            | 2020-03-04 | [DBA][DEV]  |
+| [Query Store, Plan Forcing, And Drop/create]                                                                            | Grant Fritchey                           | 2020-03-02 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2403,6 +2408,7 @@ Articles types:
 [Prevent Unexpected Failovers When Patching AGs]:https://joshthecoder.com/2020/05/21/prevent-unexpected-failovers-when-patching-ags.html
 [Updating Statistics Causes Parameter Sniffing]:https://www.brentozar.com/archive/2020/06/updating-statistics-causes-parameter-sniffing/
 [The Ascending Key Problem in Fact Tables– Part one: Pain!]:https://kejserbi.wordpress.com/2011/07/01/the-ascending-key-problem-in-fact-tables-part-one-pain/
+[The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]:http://blog.kejser.org/the-ascending-column-problem-in-fact-tables-part-two-stat-job/
 [Are Statistics Being Used for inserted and deleted tables and table variables?]:https://community.idera.com/database-tools/blog/b/community_blog/posts/are-statistics-being-used
 [Tackling Imperial and US Customary Measurements in Databases]:https://www.red-gate.com/simple-talk/blogs/tackling-imperial-and-us-customary-measurements-in-databases/
 [In-Memory OLTP Best Practices – Part 1]:https://devblogs.microsoft.com/premier-developer/in-memory-oltp-best-practices-part-1/
@@ -2436,7 +2442,7 @@ Articles types:
 [Security Best Practice: dny and revoke permissions granted to All Users by default - HIGHLY IMPORTANT!]:https://ariely.info/Blog/tabid/83/EntryId/241/Security-Best-Practice-dny-and-revoke-permissions-granted-to-All-Users-by-default-HIGHLY-IMPORTANT.aspx
 [Execute multiple jobs Synchronously from in a main job]:https://ariely.info/Blog/tabid/83/EntryId/250/Execute-multiple-jobs-Synchronously-from-in-a-main-job.aspx
 [The Trillion Row Operator]:https://www.erikdarlingdata.com/2020/08/the-trillion-row-operator/
-[Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]:https://www.erikdarlingdata.com/2020/03/temporal-tables-and-table-partitioning-not-if-you-like-switching-partitions/
+[Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]:https://www.erikdarlingdata.com/sql-server/temporal-tables-and-table-partitioning-not-if-you-like-switching-partitions/
 [Long Running Query on Read-Only Replica that takes moments on the Primary]:https://dba.stackexchange.com/questions/237671/long-running-query-on-read-only-replica-that-takes-moments-on-the-primary/
 [Date Tables are Great for Users, but Not So Great for Performance]:https://www.brentozar.com/archive/2020/08/date-tables-are-great-for-users-but-not-so-great-for-performance/
 [Should I install SSMS on a server running SQL Server?]:https://am2.co/2020/04/should-i-install-ssms-on-a-server-running-sql-server/
@@ -2522,7 +2528,7 @@ Articles types:
 [How to Find Out Whose Queries are Using The Most CPU]:https://www.brentozar.com/archive/2020/08/how-to-find-out-whose-queries-are-using-the-most-cpu/
 [Limitations of SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5042/limitations-of-sql-server-native-backup-and-restore-in-amazon-rds/
 [SQL Server Native Backup and Restore in Amazon RDS]:https://www.mssqltips.com/sqlservertip/5041/sql-server-native-backup-and-restore-in-amazon-rds/
-[What Is the SQL Server CEIP Service?]:https://www.brentozar.com/archive/2020/10/what-is-the-sql-server-ceip-service/
+[What Is the SQL Server CEIP Service (telemetry)?]:https://www.brentozar.com/archive/2020/10/what-is-the-sql-server-ceip-service/
 [Maximum Simultaneous User Connections]:http://www.sqlnuggets.com/blog/disable-telemetry-on-multiple-sql-servers-with-powershell/
 [Find Database Connection Leaks in Your Application]:https://sqlperformance.com/2017/07/sql-performance/find-database-connection-leaks
 [How to Troubleshoot THREADPOOL Waits and Deadlocked Schedulers]:https://eitanblumin.com/2020/10/05/how-to-troubleshoot-threadpool-waits-and-deadlocked-schedulers/
@@ -2546,3 +2552,8 @@ Articles types:
 [Explore the SQL query table hint READPAST]:https://www.sqlshack.com/explore-the-sql-query-table-hint-readpast/
 [How Bad Statistics Cause Bad SQL Server Query Performance]:https://www.brentozar.com/archive/2020/11/how-bad-statistics-cause-bad-sql-server-query-performance/
 [How Scalar User-Defined Functions Slow Down Queries]:https://www.brentozar.com/archive/2020/11/how-scalar-user-defined-functions-slow-down-queries/
+[Could verifying your backups be costing you money?]:https://blog.coeo.com/verifying-backups-cost
+[Extended Events: System_health And A Long Running Query]:https://www.scarydba.com/2020/03/09/extended-events-system_health-and-a-long-running-query/
+[Altering an indexed view in SQL Server drops all indexes]:https://littlekendra.com/2020/03/02/altering-an-indexed-view-in-sql-server-drops-all-indexes/
+[Deprecated and discontinued features in SQL Server]:https://bornsql.ca/blog/deprecated-and-discontinued-features-in-sql-server/
+[Query Store, Plan Forcing, And Drop/create]:https://www.scarydba.com/2020/03/02/query-store-plan-forcing-and-drop-create/
