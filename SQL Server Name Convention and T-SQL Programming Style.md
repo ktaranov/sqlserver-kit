@@ -324,7 +324,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
    ```
  - Always use aliases for table names. More details [here](https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/).
- - Avoid non-standard column and table aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
+ -  <a id="tsql-alias"> Avoid non-standard column and table aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
    SELECT
           p.LastName AS "Last Name"
@@ -409,6 +409,9 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://bornsql.ca/blog/using-indexed-views-dont-forget-this-important-tip/).
  - Use [`LOOP JOIN`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query#arguments) and [`FAST 1`](https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql-query#arguments) query hints for deleting huge number of rows with `ON DELETE CASCADE` foreign keys specification.
    More details [here](https://dba.stackexchange.com/a/262116).
+ - If you use [hints] always use it with `WITH` keyword because omitting the `WITH` keyword is a deprecated feature and will be removed from future Microsoft SQL Server versions.
+   One benefit of using the `WITH` keyword is that you can specify multiple table hints using the WITH keyword against the same table.
+   More details [here](https://www.sqlshack.com/understanding-impact-clr-strict-security-configuration-setting-sql-server-2017/).
  - Avoid use of `SELECT…INTO` for production code, use instead `CREATE TABLE` + `INSERT INTO …` approach. More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/use-selectinto-statement).
  - Use only ISO standard JOINS syntaxes. The *old style* Microsoft/Sybase `JOIN` style for SQL, which uses the `=*` and `*=` syntax, has been deprecated and is no longer used.
    Queries that use this syntax will fail when the database engine level is 10 (SQL Server 2008) or later (compatibility level 100). The ANSI-89 table citation list (`FROM tableA, tableB`) is still ISO standard for `INNER JOINs` only. Neither of these styles are worth using.
@@ -435,6 +438,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    - avoid truncation of string literals, simply ensure that one piece is converted to `nvarchar(max)`.
    Example:
    ```tsql
+   /* good */
    DECLARE @nvcmaxVariable nvarchar(max);
    SET @nvcmaxVariable = CAST(N'ಠ russian anomaly ЯЁЪ ಠ ' AS nvarchar(max)) + N'something else' + N'another';
    SELECT @nvcmaxVariable;
@@ -514,7 +518,8 @@ ORDER BY t2.Value2;
 
 Recommendations from Microsoft: [Stored procedure Best practice][11]
 
- - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below) for saving GRANTs on your object.
+ - All stored procedures and functions should use `ALTER` statement and start with the object presence check (see example below) for saving `GRANTs` on your object.
+   Also if you use Query Store and plan forcing and `DROP` and then `CREATE` new object you loosing plan forcing, more details [here](https://www.scarydba.com/2020/03/02/query-store-plan-forcing-and-drop-create/).
    For SQL Server 2016 and higher you can use new `CREATE OR ALTER` statement.
  - `ALTER` statement should be preceded by 2 line breaks
  - Parameters name should be in **camelCase**
@@ -756,3 +761,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
 [`ANSI`]:http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip
+[hints]https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
