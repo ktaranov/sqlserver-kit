@@ -2,6 +2,7 @@
 
 Articles types:
  - **[AZ]** Azure Articles
+ - **[AMZ]** Amazon AWS Articles
  - **[B]** Backup Articles
  - **[BENCH]** Benchmarking Articles
  - **[IDX]** Index Articles
@@ -843,7 +844,7 @@ Articles types:
 | [Compress Big Tables]                                                                                                   | Max Vernon                               | 2019-08-22 | [DBA][DEV]  |
 | [Hardening SQL Server Security]                                                                                         | Mitch Wheat                              | 2019-08-21 | [DBA][SEC]  |
 | [Splitting Strings With OPENJSON]                                                                                       | Dave Mason                               | 2019-05-06 | [DEV][X]    |
-| [How to migrate to Amazon RDS for SQL Server using transactional replication]                                           | Richard Waymire                          | 2018-05-17 | [DBA][MG]   |
+| [How to migrate to Amazon RDS for SQL Server using transactional replication]                                           | Richard Waymire                          | 2018-05-17 | [AMZ][MG]   |
 | [The Hardest Part Of Query Tuning: Logical Equivalence]                                                                 | Erik Darling                             | 2019-08-13 | [DBA][DEV]  |
 | [SQL Injection: What is it? Causes and exploits]                                                                        | Ed Pollack                               | 2019-08-30 | [SEC]       |
 | [SQL Injection: Detection and prevention]                                                                               | Ed Pollack                               | 2019-08-30 | [SEC]       |
@@ -960,7 +961,7 @@ Articles types:
 | [PCI Best Practices Guide for SQL Server DBAs]                                                                          | Tibor Nagy                               | 2015-05-08 | [DBA][SEC]  |
 | [SQL Server Security Checklist]                                                                                         | Tibor Nagy                               | 2014-02-06 | [DBA][SEC]  |
 | [Replace Model SQL Server Database with a User Database]                                                                | Daniel Farina                            | 2019-12-13 | [DBA]       |
-| [SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]                                                 | Rajendra Gupta                           | 2020-01-09 | [DBA]       |
+| [SQL Server Linux installation for Amazon EC2 instance with Red Hat OS]                                                 | Rajendra Gupta                           | 2020-01-09 | [AMZ        |
 | [Departure of a SQL Server Administrator – What to Check?]                                                              | Thomas Rushton                           | 2020-01-03 | [DBA]       |
 | [The Curious Case of… transactions rolling back during DBCC CHECKDB]                                                    | Paul Randal                              | 2020-01-15 | [DBA]       |
 | [Don’t install SQL Server from a mounted ISO]                                                                           | Randolph West                            | 2020-01-15 | [DBA]       |
@@ -1260,8 +1261,8 @@ Articles types:
 | [The What, Why, When, and How of Incremental Loads]                                                                     | Tim Mitchell                             | 2020-07-23 | [DBA][DEV]  |
 | [How Do I Know If My Query Is Good Enough for Production?]                                                              | Brent Ozar                               | 2020-08-12 | [DBA][DEV]  |
 | [How to Find Out Whose Queries are Using The Most CPU]                                                                  | Brent Ozar                               | 2020-08-10 | [DBA][DEV]  |
-| [Limitations of SQL Server Native Backup and Restore in Amazon RDS]                                                     | Sadequl Hussain                          | 2017-08-23 | [B]         |
-| [SQL Server Native Backup and Restore in Amazon RDS]                                                                    | Sadequl Hussain                          | 2017-08-18 | [B]         |
+| [Limitations of SQL Server Native Backup and Restore in Amazon RDS]                                                     | Sadequl Hussain                          | 2017-08-23 | [AMZ][B]    |
+| [SQL Server Native Backup and Restore in Amazon RDS]                                                                    | Sadequl Hussain                          | 2017-08-18 | [AMZ][B]    |
 | [What Is the SQL Server CEIP Service (telemetry)?]                                                                      | Brent Ozar                               | 2020-10-07 | [DBA]       |
 | [Maximum Simultaneous User Connections]                                                                                 | Michael J Swart                          | 2020-10-16 | [DBA]       |
 | [Find Database Connection Leaks in Your Application]                                                                    | Michael J Swart                          | 2017-07-07 | [DBA][DEV]  |
@@ -1290,7 +1291,12 @@ Articles types:
 | [Extended Events: System_health And A Long Running Query]                                                               | Grant Fritchey                           | 2020-05-09 | [XE]        |
 | [Altering an indexed view in SQL Server drops all indexes]                                                              | Little Kendra                            | 2020-03-02 | [DBA][DEV]  |
 | [Deprecated and discontinued features in SQL Server]                                                                    | Randolph West                            | 2020-03-04 | [DBA][DEV]  |
-| [Query Store, Plan Forcing, And Drop/create]                                                                            | Grant Fritchey                           | 2020-03-02 | [DBA][DEV]  |
+| [Query Store, Plan Forcing, And Drop/create]                                                                            | Grant Fritchey                           | 2020-03-02 | [QS]        |
+| [Uncommon SQL in SQL Server]                                                                                            | Shane O'Neill                            | 2020-11-20 | [DBA][DEV]  |
+| [Configure SQL Server Replication between AWS RDS SQL Server and On-premises SQL Server]                                | Rajendra Gupta                           | 2020-11-12 | [AMZ]       |
+| [Import data into Azure SQL database from AWS Redshift]                                                                 | Rahul Mehta                              | 2020-11-10 | [AMZ][AZ]   |
+| [When You’re Troubleshooting Blocking, Look at Query #2, Too.]                                                          | Brent Ozar                               | 2020-11-19 | [DBA][DEV]  |
+| [Finding the One Query to Tune in a Multi-Query Batch]                                                                  | Brent Ozar                               | 2020-11-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2557,3 +2563,8 @@ Articles types:
 [Altering an indexed view in SQL Server drops all indexes]:https://littlekendra.com/2020/03/02/altering-an-indexed-view-in-sql-server-drops-all-indexes/
 [Deprecated and discontinued features in SQL Server]:https://bornsql.ca/blog/deprecated-and-discontinued-features-in-sql-server/
 [Query Store, Plan Forcing, And Drop/create]:https://www.scarydba.com/2020/03/02/query-store-plan-forcing-and-drop-create/
+[Uncommon SQL in SQL Server]:https://nocolumnname.blog/2020/11/20/uncommon-sql/
+[Configure SQL Server Replication between AWS RDS SQL Server and On-premises SQL Server]:https://www.sqlshack.com/configure-sql-server-replication-between-aws-rds-sql-server-and-on-premises-sql-server/
+[Import data into Azure SQL database from AWS Redshift]:https://www.sqlshack.com/import-data-into-azure-sql-database-from-aws-redshift/
+[When You’re Troubleshooting Blocking, Look at Query #2, Too.]:https://www.brentozar.com/archive/2020/11/when-youre-troubleshooting-blocking-look-at-query-2-too/
+[Finding the One Query to Tune in a Multi-Query Batch]:https://www.brentozar.com/archive/2020/11/finding-the-one-query-to-tune-in-a-multi-query-batch/
