@@ -393,6 +393,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [EFCorePowerTools - Reverse engineering, model visualization and migrations UI for EF Core](https://github.com/ErikEJ/EFCorePowerTools) (by Erik Ejlskov Jensen)
     - [SqlTableDependency - a high-level C# component used to audit, monitor and receive notifications on SQL Server's record table changes](https://github.com/christiandelbianco/monitor-table-change-with-sqltabledependency) (by Christian Del Bianco)
     - [EFSecondLevelCache.Core - Entity Framework Core Second Level Caching Library (Redis)](https://github.com/VahidN/EFSecondLevelCache.Core) (by Vahid Nasiri)
+    - [Dotmim.Sync - a brand new database synchronization, multi platform, multi databases, developed on top of .Net Standard 2.0](https://github.com/Mimetis/Dotmim.Sync)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
@@ -538,7 +539,7 @@ BIML Bloggers
  - https://github.com/benkeen/generatedata
  - https://sourceforge.net/projects/dbmonster/
  - https://sourceforge.net/projects/spawner/
- - [Tools for Generating Mock Data?](https://stackoverflow.com/q/591892)
+ - [Tools for Generating Mock Data](https://stackoverflow.com/q/591892)
  - https://mockaroo.com
  - https://anonymize.strd.co/
 
@@ -622,6 +623,7 @@ R:
 - [Pro SQL Server Internals](https://www.amazon.co.uk/dp/1484219635/) 840 pages (by Dmitri Korotkevitch)
 - [Pro SQL Server Always On Availability Groups](https://www.amazon.co.uk/dp/B01M3U6WRM/) 332 pages (by Uttam Parui, Vivek Sanil) 
 - [Refactoring Legacy T-SQL for Improved Performance: Modern Practices for SQL Server](https://www.amazon.co.uk/dp/1484255801/) 260 pages (by Lisa Bohm)
+- [Hands-On SQL Server 2019 Analysis Services](https://www.packtpub.com/product/hands-on-sql-server-2019-analysis-services/9781800204768) (by Steve Hughes)
 
 
 **[⬆ back to top](#table-of-contents)**
