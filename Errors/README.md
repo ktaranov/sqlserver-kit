@@ -200,6 +200,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |      10314 | An error occurred in the Microsoft .NET Framework while trying to load assembly id %d. The server may  … | [10314_link1],[10314_link2]                         |
 |      10637 | Cannot perform this operation on '%.*ls' with ID %I64d as one or more indexes are currently in         … | [10637_link1][32]                                   |
 |      10794 | The %S_MSG '%ls' is not supported with %S_MSG.                                                           | [10794_link1][39],[10794_link2]                     |
+|      11442 | Columnstore index creation is not supported in tempdb when memory-optimized metadata mode is enabled.  … | [11442_link1][51]                                   |
 |      11535 | EXECUTE statement failed because its WITH RESULT SETS clause specified %d result set(s), and the       … | [11535_link1][38]                                   |
 |      12349 | Operation not supported for memory optimized tables having columnstore index.                            | [12349_link1][41]                                   |
 |      13609 | JSON text is not properly formatted. Unexpected character '%lc' is found at position %d.                 | [13609_link1]                                       |
@@ -246,6 +247,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 |      35343 | The statement failed. Column '%.*ls' has a data type that cannot participate in a columnstore index.     | [35343_link1][36]                                   |
 |      39004 | A '%s' script error occurred during execution of 'sp_execute_external_script' with HRESULT 0x%x.         | [39004_link1][14]                                   |
 |      41121 | The local availability replica of availability group '%.*ls' cannot accept signal '%s' in its current   …| [41121_link1]                                       |
+|      41317 | A user transaction that accesses memory optimized tables or natively compiled modules cannot access more…| [41317_link1][51]                                   |
 |      41922 | The backup operation for a database with service-managed transaprent data encryption is not supported on…| [41922_link1]                                       |
 
 [1]:https://sqlstudies.com/2018/05/16/the-trials-and-tribulations-of-reverting-from-impersonation/
@@ -298,6 +300,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [48]:https://blog.waynesheffield.com/wayne/archive/2020/08/availability-group-issues-fixed-with-alerts/
 [49]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
 [50]:https://sqlblog.org/2020/11/05/navigating-dbcc-checkdb-for-vldb
+[51]:
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
