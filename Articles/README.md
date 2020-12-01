@@ -1297,6 +1297,12 @@ Articles types:
 | [Import data into Azure SQL database from AWS Redshift]                                                                 | Rahul Mehta                              | 2020-11-10 | [AMZ][AZ]   |
 | [When You’re Troubleshooting Blocking, Look at Query #2, Too.]                                                          | Brent Ozar                               | 2020-11-19 | [DBA][DEV]  |
 | [Finding the One Query to Tune in a Multi-Query Batch]                                                                  | Brent Ozar                               | 2020-11-23 | [DBA][DEV]  |
+| [Recursion in SQL Explained Visually]                                                                                   | Denis Lukichev                           | 2020-11-22 | [DBA][DEV]  |
+| [Viva la Famiglia! Stored procedure for created recursive family tree]                                                  | Brad Schulz                              | 2020-10-01 | [DEV]       |
+| [How to Set & Get the Next ID Without Serializable Isolation]                                                           | Brent Ozar                               | 2020-11-25 | [DBA][DEV]  |
+| [Discovering Three or Four Part Names in SQL Server Database Code]                                                      | Louis Davidson                           | 2019-03-08 | [DBA][DEV]  |
+| [Troubleshooting RESOURCE_SEMAPHORE_QUERY_COMPILE Helper Queries]                                                       | Eric Darling                             | 2020-11-24 | [DBA][DEV]  |
+| [When Do I Need to Use DESC in Indexes?]                                                                                | Brent Ozar                               | 2020-11-30 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2568,3 +2574,9 @@ Articles types:
 [Import data into Azure SQL database from AWS Redshift]:https://www.sqlshack.com/import-data-into-azure-sql-database-from-aws-redshift/
 [When You’re Troubleshooting Blocking, Look at Query #2, Too.]:https://www.brentozar.com/archive/2020/11/when-youre-troubleshooting-blocking-look-at-query-2-too/
 [Finding the One Query to Tune in a Multi-Query Batch]:https://www.brentozar.com/archive/2020/11/finding-the-one-query-to-tune-in-a-multi-query-batch/
+[Recursion in SQL Explained Visually]:https://medium.com/swlh/recursion-in-sql-explained-graphically-679f6a0f143b
+[Viva la Famiglia! Stored procedure for created recursive family tree]:https://bradsruminations.blogspot.com/2009/10/viva-la-famiglia.html
+[How to Set & Get the Next ID Without Serializable Isolation]:https://www.brentozar.com/archive/2020/11/how-to-set-get-the-next-id-without-serializable-isolation/
+[Discovering Three or Four Part Names in SQL Server Database Code]:https://www.red-gate.com/simple-talk/blogs/discovering-three-or-four-part-names-in-sql-server-database-code/
+[Troubleshooting RESOURCE_SEMAPHORE_QUERY_COMPILE Helper Queries]:https://www.erikdarlingdata.com/sql-server/troubleshooting-resource_semaphore_query_compile-helper-queries/
+[When Do I Need to Use DESC in Indexes?]:https://www.brentozar.com/archive/2020/11/when-do-i-need-to-use-desc-in-indexes/
