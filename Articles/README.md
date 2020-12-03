@@ -1303,6 +1303,10 @@ Articles types:
 | [Discovering Three or Four Part Names in SQL Server Database Code]                                                      | Louis Davidson                           | 2019-03-08 | [DBA][DEV]  |
 | [Troubleshooting RESOURCE_SEMAPHORE_QUERY_COMPILE Helper Queries]                                                       | Eric Darling                             | 2020-11-24 | [DBA][DEV]  |
 | [When Do I Need to Use DESC in Indexes?]                                                                                | Brent Ozar                               | 2020-11-30 | [DBA][DEV]  |
+| [Export Power BI Desktop data to SQL Server]                                                                            | Rui Romano                               | 2016-04-21 | [DBA][DEV]  |
+| [Exploring errors to reveal unauthorized information]                                                                   | Fabiano Amorim                           | 2020-10-19 | [SEC]       |
+| [How to run your CTE just once, and re-use the output]                                                                  | Daniel Hutmacher                         | 2020-12-01 | [DBA][DEV]  |
+| [Documenting SSIS Packages using Sequence Diagrams]                                                                     | Aveek Das                                | 2020-11-25 | [SSIS]      |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2580,3 +2584,7 @@ Articles types:
 [Discovering Three or Four Part Names in SQL Server Database Code]:https://www.red-gate.com/simple-talk/blogs/discovering-three-or-four-part-names-in-sql-server-database-code/
 [Troubleshooting RESOURCE_SEMAPHORE_QUERY_COMPILE Helper Queries]:https://www.erikdarlingdata.com/sql-server/troubleshooting-resource_semaphore_query_compile-helper-queries/
 [When Do I Need to Use DESC in Indexes?]:https://www.brentozar.com/archive/2020/11/when-do-i-need-to-use-desc-in-indexes/
+[Export Power BI Desktop data to SQL Server]:https://ruiromanoblog.wordpress.com/2016/04/21/use-power-bi-desktop-as-an-etl-tool/
+[Exploring errors to reveal unauthorized information]:https://www.red-gate.com/simple-talk/sql/database-administration/exploring-errors-to-reveal-unauthorized-information/
+[How to run your CTE just once, and re-use the output]:https://sqlsunday.com/2020/12/01/run-your-cte-just-once-and-reuse-output/
+[Documenting SSIS Packages using Sequence Diagrams]:https://www.sqlshack.com/documenting-ssis-packages-using-sequence-diagrams-2/
