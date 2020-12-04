@@ -515,6 +515,7 @@ BIML Bloggers
  - [Powershell xSQLServer module contains DSC resources for deployment and configuration of SQL Server](https://github.com/PowerShell/xSQLServer) (Github by Microsoft)
  - [Export-DMVInformation - Export the resuts from Glenn Berry's DMV queries directly to Excel](https://github.com/sanderstad/Export-DMVInformation/) (Github) (by Sander Stad)
  - [Export-QueryToSQLTable - Export one or more query results run against one or more instances/databases to table](https://github.com/SQLJana/Export-QueryToSQLTable) (by Jana Sattainathan) (Github)
+ - [PowerBIETL - a developer tool to quickly load a SQL Database using PowerBIDesktop queries](https://www.powershellgallery.com/packages/PowerBIETL/) (by DevScope)
 
 **[⬆ back to top](#table-of-contents)**
 
