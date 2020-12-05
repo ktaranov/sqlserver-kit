@@ -1,0 +1,995 @@
+<UserSettings><ApplicationIdentity version="15.0"/><ToolsOptions><ToolsOptionsCategory name="Environment" RegisteredName="Environment"><ToolsOptionsSubCategory name="Documents" RegisteredName="Documents" PackageName="Visual Studio Environment Package">
+        <PropertyValue name="ShowMiscFilesProject">true</PropertyValue>
+        <PropertyValue name="AutoloadExternalChanges">false</PropertyValue>
+        <PropertyValue name="CheckForConsistentLineEndings">true</PropertyValue>
+        <PropertyValue name="SaveDocsAsUnicodeWhenDataLoss">false</PropertyValue>
+        <PropertyValue name="InitializeOpenFileFromCurrentDocument">true</PropertyValue>
+        <PropertyValue name="ReuseSavedActiveDocWindow">false</PropertyValue>
+        <PropertyValue name="DetectFileChangesOutsideIDE">true</PropertyValue>
+        <PropertyValue name="DontShowGlobalUndoChangeLossDialog">true</PropertyValue>
+        <PropertyValue name="AllowEditingReadOnlyFiles">true</PropertyValue>
+        <PropertyValue name="DocumentDockPreference">0</PropertyValue>
+        <PropertyValue name="MiscFilesProjectSavesLastNItems">0</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="FindAndReplace" RegisteredName="FindAndReplace" PackageName="Visual Studio Environment Package">
+        <PropertyValue name="ShowWarningMessages">true</PropertyValue>
+        <PropertyValue name="InitializeFromEditor">true</PropertyValue>
+        <PropertyValue name="ShowMessageBoxes">true</PropertyValue>
+        <PropertyValue name="HideWindowAfterMatchFromQuickFindReplace">false</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="General" RegisteredName="General" PackageName="Visual Studio Environment Package">
+        <PropertyValue name="AnimationSpeed">5</PropertyValue>
+        <PropertyValue name="RichClientExperienceOptions">0</PropertyValue>
+        <PropertyValue name="WindowMenuContainsNItems">10</PropertyValue>
+        <PropertyValue name="CloseButtonActiveTabOnly">true</PropertyValue>
+        <PropertyValue name="UseTitleCaseOnMenu">true</PropertyValue>
+        <PropertyValue name="AutoAdjustExperience">true</PropertyValue>
+        <PropertyValue name="Animations">false</PropertyValue>
+        <PropertyValue name="AutohidePinActiveTabOnly">false</PropertyValue>
+        <PropertyValue name="ShowStatusBar">true</PropertyValue>
+        <PropertyValue name="MRUListContainsNItems">10</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="Import and Export Settings" RegisteredName="Import and Export Settings" PackageName="Visual Studio Environment Package">
+        <PropertyValue name="TrackTeamSettings">false</PropertyValue>
+        <PropertyValue name="TeamSettingsFile"/>
+        <PropertyValue name="AutoSaveFile">%vsspv_settings_directory%\NewSettings.vssettings</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="ProjectsAndSolution" RegisteredName="ProjectsAndSolution" PackageName="Visual Studio Environment Package">
+        <PropertyValue name="ProjectsLocation">%vsspv_user_appdata%\Documents\SQL Server Management Studio</PropertyValue>
+        <PropertyValue name="PromptForRenameSymbol">true</PropertyValue>
+        <PropertyValue name="TrackFileSelectionInExplorer">true</PropertyValue>
+        <PropertyValue name="ShowOutputWindowBeforeBuild">true</PropertyValue>
+        <PropertyValue name="OnRunWhenErrors">4</PropertyValue>
+        <PropertyValue name="OnRunWhenOutOfDate">4</PropertyValue>
+        <PropertyValue name="AlwaysShowSolutionNode">true</PropertyValue>
+        <PropertyValue name="ProjectItemTemplatesLocation">%vsspv_visualstudio_dir%\Templates\ItemTemplates</PropertyValue>
+        <PropertyValue name="OnlySaveStartupProjectsAndDependencies">false</PropertyValue>
+        <PropertyValue name="ShowAdvancedBuildConfigurations">true</PropertyValue>
+        <PropertyValue name="DefaultBehaviorForStartupProjects">1</PropertyValue>
+        <PropertyValue name="OnRunOrPreview">0</PropertyValue>
+        <PropertyValue name="MSBuildOutputVerbosity">1</PropertyValue>
+        <PropertyValue name="ProjectTemplatesLocation">%vsspv_visualstudio_dir%\Templates\ProjectTemplates</PropertyValue>
+        <PropertyValue name="ShowTaskListAfterBuild">true</PropertyValue>
+        <PropertyValue name="ConcurrentBuilds">4</PropertyValue>
+        <PropertyValue name="SaveNewProjects">true</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="Startup" RegisteredName="Startup" PackageName="Microsoft.SqlServer.Management.SqlStudio, Microsoft.SqlServer.Management.SqlStudio, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"/><ToolsOptionsSubCategory name="TaskList" RegisteredName="TaskList" PackageName="ErrorListPackage">
+        <PropertyValue name="ConfirmTaskDeletion">false</PropertyValue>
+        <PropertyValue name="CommentTokens" ArrayType="VT_BSTR" ArrayElementCount="4">
+          <PropertyValue name="0">HACK:2</PropertyValue>
+          <PropertyValue name="1">TODO:2</PropertyValue>
+          <PropertyValue name="2">UNDONE:2</PropertyValue>
+          <PropertyValue name="3">UnresolvedMergeConflict:3</PropertyValue>
+        </PropertyValue>
+        <PropertyValue name="WarnOnAddingHiddenItem">false</PropertyValue>
+        <PropertyValue name="DontShowFilePaths">false</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="WebBrowser" RegisteredName="WebBrowser" PackageName="Visual Studio Web Browser Package">
+        <PropertyValue name="HomePage">https://docs.microsoft.com/sql/ssms/tutorials/tutorial-sql-server-management-studio</PropertyValue>
+        <PropertyValue name="ViewSourceIn">1</PropertyValue>
+        <PropertyValue name="ViewSourceExternalProgram">C:\Windows\system32\notepad.exe</PropertyValue>
+        <PropertyValue name="SearchPage">https://www.bing.com</PropertyValue>
+      </ToolsOptionsSubCategory></ToolsOptionsCategory><ToolsOptionsCategory name="TextEditor" RegisteredName="TextEditor"><ToolsOptionsSubCategory name="AllLanguages" RegisteredName="AllLanguages" PackageName="Text Management Package"/><ToolsOptionsSubCategory name="General" RegisteredName="General" PackageName="Text Management Package">
+        <PropertyValue name="DragNDropTextEditing">true</PropertyValue>
+        <PropertyValue name="HighlightCurrentLine">true</PropertyValue>
+        <PropertyValue name="EditorEmulation">0</PropertyValue>
+        <PropertyValue name="DetectUTF8WithoutSignature">true</PropertyValue>
+        <PropertyValue name="TrackChanges">true</PropertyValue>
+        <PropertyValue name="UndoCaretActions">false</PropertyValue>
+        <PropertyValue name="SelectionMargin">true</PropertyValue>
+        <PropertyValue name="GoToAnchorAfterEscape">false</PropertyValue>
+        <PropertyValue name="AutoDelimiterHighlighting">true</PropertyValue>
+        <PropertyValue name="MarginIndicatorBar">true</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="HTML Specific" RegisteredName="HTML Specific" PackageName="{1B437D20-F8FE-11D2-A6AE-00104BCC7269}"/><ToolsOptionsSubCategory name="JavaScript" RegisteredName="JavaScript" PackageName="Text Management Package">
+        <PropertyValue name="TabSize">4</PropertyValue>
+        <PropertyValue name="ShowChanges">true</PropertyValue>
+        <PropertyValue name="AutoListMembers">true</PropertyValue>
+        <PropertyValue name="ShowPreview">true</PropertyValue>
+        <PropertyValue name="ShowMarks">true</PropertyValue>
+        <PropertyValue name="IndentStyle">2</PropertyValue>
+        <PropertyValue name="ShowCaretPosition">true</PropertyValue>
+        <PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+        <PropertyValue name="ShowNavigationBar">true</PropertyValue>
+        <PropertyValue name="UseMapMode">false</PropertyValue>
+        <PropertyValue name="VirtualSpace">false</PropertyValue>
+        <PropertyValue name="ShowAnnotations">true</PropertyValue>
+        <PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+        <PropertyValue name="InsertTabs">false</PropertyValue>
+        <PropertyValue name="WordWrapGlyphs">false</PropertyValue>
+        <PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+        <PropertyValue name="ShowErrors">true</PropertyValue>
+        <PropertyValue name="OverviewWidth">58</PropertyValue>
+        <PropertyValue name="ShowLineNumbers">false</PropertyValue>
+        <PropertyValue name="WordWrap">false</PropertyValue>
+        <PropertyValue name="IndentSize">4</PropertyValue>
+        <PropertyValue name="BraceCompletion">true</PropertyValue>
+        <PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+        <PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+        <PropertyValue name="AutoListParams">true</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="JavaScript Specific" RegisteredName="JavaScript Specific" PackageName="{D62C17C6-44B3-4E5D-B0AA-1C5536E979D9}"/><ToolsOptionsSubCategory name="PlainText" RegisteredName="PlainText" PackageName="Text Management Package">
+        <PropertyValue name="TabSize">4</PropertyValue>
+        <PropertyValue name="ShowChanges">true</PropertyValue>
+        <PropertyValue name="AutoListMembers">true</PropertyValue>
+        <PropertyValue name="ShowPreview">true</PropertyValue>
+        <PropertyValue name="ShowMarks">true</PropertyValue>
+        <PropertyValue name="IndentStyle">1</PropertyValue>
+        <PropertyValue name="ShowCaretPosition">true</PropertyValue>
+        <PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+        <PropertyValue name="ShowNavigationBar">false</PropertyValue>
+        <PropertyValue name="UseMapMode">false</PropertyValue>
+        <PropertyValue name="VirtualSpace">false</PropertyValue>
+        <PropertyValue name="ShowAnnotations">true</PropertyValue>
+        <PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+        <PropertyValue name="InsertTabs">true</PropertyValue>
+        <PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+        <PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+        <PropertyValue name="ShowErrors">true</PropertyValue>
+        <PropertyValue name="OverviewWidth">58</PropertyValue>
+        <PropertyValue name="ShowLineNumbers">false</PropertyValue>
+        <PropertyValue name="WordWrap">false</PropertyValue>
+        <PropertyValue name="IndentSize">4</PropertyValue>
+        <PropertyValue name="BraceCompletion">true</PropertyValue>
+        <PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+        <PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+        <PropertyValue name="AutoListParams">true</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="SQL" RegisteredName="SQL" PackageName="Text Management Package">
+        <PropertyValue name="TabSize">4</PropertyValue>
+        <PropertyValue name="ShowChanges">true</PropertyValue>
+        <PropertyValue name="AutoListMembers">true</PropertyValue>
+        <PropertyValue name="ShowPreview">true</PropertyValue>
+        <PropertyValue name="ShowMarks">true</PropertyValue>
+        <PropertyValue name="IndentStyle">1</PropertyValue>
+        <PropertyValue name="ShowCaretPosition">true</PropertyValue>
+        <PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+        <PropertyValue name="ShowNavigationBar">false</PropertyValue>
+        <PropertyValue name="UseMapMode">false</PropertyValue>
+        <PropertyValue name="VirtualSpace">false</PropertyValue>
+        <PropertyValue name="ShowAnnotations">true</PropertyValue>
+        <PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+        <PropertyValue name="InsertTabs">true</PropertyValue>
+        <PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+        <PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+        <PropertyValue name="ShowErrors">true</PropertyValue>
+        <PropertyValue name="OverviewWidth">58</PropertyValue>
+        <PropertyValue name="ShowLineNumbers">false</PropertyValue>
+        <PropertyValue name="WordWrap">false</PropertyValue>
+        <PropertyValue name="IndentSize">4</PropertyValue>
+        <PropertyValue name="BraceCompletion">false</PropertyValue>
+        <PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+        <PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+        <PropertyValue name="AutoListParams">true</PropertyValue>
+      </ToolsOptionsSubCategory><ToolsOptionsSubCategory name="TypeScript Specific" RegisteredName="TypeScript Specific" PackageName="{2ffe45c4-5c73-493c-b187-f2e955ff875e}"/><ToolsOptionsSubCategory name="XML" RegisteredName="XML" PackageName="Text Management Package">
+        <PropertyValue name="TabSize">4</PropertyValue>
+        <PropertyValue name="ShowChanges">true</PropertyValue>
+        <PropertyValue name="AutoListMembers">true</PropertyValue>
+        <PropertyValue name="ShowPreview">true</PropertyValue>
+        <PropertyValue name="ShowMarks">true</PropertyValue>
+        <PropertyValue name="IndentStyle">2</PropertyValue>
+        <PropertyValue name="ShowCaretPosition">true</PropertyValue>
+        <PropertyValue name="HideAdvancedMembers">true</PropertyValue>
+        <PropertyValue name="ShowNavigationBar">false</PropertyValue>
+        <PropertyValue name="UseMapMode">false</PropertyValue>
+        <PropertyValue name="VirtualSpace">false</PropertyValue>
+        <PropertyValue name="ShowAnnotations">true</PropertyValue>
+        <PropertyValue name="ShowVerticalScrollBar">true</PropertyValue>
+        <PropertyValue name="InsertTabs">true</PropertyValue>
+        <PropertyValue name="WordWrapGlyphs">true</PropertyValue>
+        <PropertyValue name="EnableLeftClickForURLs">true</PropertyValue>
+        <PropertyValue name="ShowErrors">true</PropertyValue>
+        <PropertyValue name="OverviewWidth">58</PropertyValue>
+        <PropertyValue name="ShowLineNumbers">false</PropertyValue>
+        <PropertyValue name="WordWrap">false</PropertyValue>
+        <PropertyValue name="IndentSize">4</PropertyValue>
+        <PropertyValue name="BraceCompletion">false</PropertyValue>
+        <PropertyValue name="ShowHorizontalScrollBar">true</PropertyValue>
+        <PropertyValue name="CutCopyBlankLines">true</PropertyValue>
+        <PropertyValue name="AutoListParams">true</PropertyValue>
+      </ToolsOptionsSubCategory></ToolsOptionsCategory><ToolsOptionsCategory name="XAML Designer" RegisteredName="XAML Designer"><ToolsOptionsSubCategory name="Artboard" RegisteredName="Artboard" PackageName="{512be089-83ec-4cc6-8483-cf16565ae209}"/><ToolsOptionsSubCategory name="General" RegisteredName="General" PackageName="{512be089-83ec-4cc6-8483-cf16565ae209}"/></ToolsOptionsCategory></ToolsOptions><Category name="Environment_Group" RegisteredName="Environment_Group"><Category name="Environment_StartPage" Category="{255FE6D3-A0AE-4076-A509-D581B2BE4F9E}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_StartPage" PackageName="Visual Studio Environment Package"/><Category name="Environment_Aliases" Category="{AD334E74-368A-4c46-9AF8-F53ABF0775F2}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_Aliases" PackageName="Visual Studio Environment Package">
+      <Aliases Version="1.0">
+        <Alias Name="alias" Definition="Tools.Alias"/>
+        <Alias Name="CloseAll" Definition="Window.CloseAllDocuments"/>
+        <Alias Name="cls" Definition="Edit.ClearAll"/>
+        <Alias Name="cmd" Definition="View.CommandWindow"/>
+        <Alias Name="FullScreen" Definition="View.FullScreen"/>
+        <Alias Name="GotoLn" Definition="Edit.GoTo"/>
+        <Alias Name="immed" Definition="Tools.ImmediateMode"/>
+        <Alias Name="log" Definition="Tools.LogCommandWindowOutput"/>
+        <Alias Name="shell" Definition="Tools.Shell"/>
+        <Alias Name="StopFind" Definition="Edit.FindInFiles /stop"/>
+        <Alias Name="TileH" Definition="Window.TileHorizontally"/>
+        <Alias Name="TileV" Definition="Window.TileVertically"/>
+        <Alias Name="of" Definition="File.OpenFile"/>
+        <Alias Name="open" Definition="File.OpenFile"/>
+        <Alias Name="SaveAll" Definition="File.SaveAll"/>
+        <Alias Name="nf" Definition="File.NewFile"/>
+        <Alias Name="new" Definition="File.NewFile"/>
+        <Alias Name="save" Definition="File.SaveSelectedItems"/>
+        <Alias Name="SaveAs" Definition="File.SaveSelectedItemsAs"/>
+        <Alias Name="AddProj" Definition="File.AddNewProject"/>
+        <Alias Name="NewProj" Definition="File.NewProject"/>
+        <Alias Name="np" Definition="File.NewProject"/>
+        <Alias Name="op" Definition="File.OpenProject"/>
+        <Alias Name="help" Definition="Help.F1Help"/>
+        <Alias Name="nav" Definition="navigate"/>
+        <Alias Name="navigate" Definition="View.WebBrowser"/>
+        <Alias Name="close" Definition="File.Close"/>
+        <Alias Name="exit" Definition="File.Exit"/>
+        <Alias Name="ClearBook" Definition="Edit.ClearBookmarks"/>
+        <Alias Name="DelBOL" Definition="Edit.DeleteToBOL"/>
+        <Alias Name="DelEOL" Definition="Edit.DeleteToEOL"/>
+        <Alias Name="DelHSp" Definition="Edit.DeleteHorizontalWhiteSpace"/>
+        <Alias Name="format" Definition="Edit.FormatSelection"/>
+        <Alias Name="GotoBrace" Definition="Edit.GotoBrace"/>
+        <Alias Name="InsertFile" Definition="Edit.InsertFileAsText"/>
+        <Alias Name="Lcase" Definition="Edit.MakeLowercase"/>
+        <Alias Name="LineCut" Definition="Edit.LineCut"/>
+        <Alias Name="LineDel" Definition="Edit.LineDelete"/>
+        <Alias Name="ListMembers" Definition="Edit.ListMembers"/>
+        <Alias Name="NextBook" Definition="Edit.NextBookmark"/>
+        <Alias Name="OutlineDefs" Definition="Edit.CollapsetoDefinitions"/>
+        <Alias Name="ParamInfo" Definition="Edit.ParameterInfo"/>
+        <Alias Name="PrevBook" Definition="Edit.PreviousBookmark"/>
+        <Alias Name="redo" Definition="Edit.Redo"/>
+        <Alias Name="StopOutlining" Definition="Edit.CollapsetoDefinitions"/>
+        <Alias Name="SwapAnchor" Definition="Edit.SwapAnchor"/>
+        <Alias Name="tabify" Definition="Edit.TabifySelectedLines"/>
+        <Alias Name="ToggleBook" Definition="Edit.ToggleBookmark"/>
+        <Alias Name="Ucase" Definition="Edit.MakeUppercase"/>
+        <Alias Name="undo" Definition="Edit.Undo"/>
+        <Alias Name="Untabify" Definition="Edit.UntabifySelectedLines"/>
+        <Alias Name="WordWrap" Definition="Edit.ToggleWordWrap"/>
+        <Alias Name="?" Definition="Debug.Print"/>
+        <Alias Name="??" Definition="Debug.QuickWatch"/>
+        <Alias Name="~" Definition="Debug.ListThreads"/>
+        <Alias Name="~*k" Definition="Debug.ListCallStack /AllThreads"/>
+        <Alias Name="~*kb" Definition="Debug.ListCallStack /AllThreads"/>
+        <Alias Name="|" Definition="Debug.ListProcesses"/>
+        <Alias Name="autos" Definition="Debug.Autos"/>
+        <Alias Name="bl" Definition="Debug.Breakpoints"/>
+        <Alias Name="bp" Definition="Debug.ToggleBreakpoint"/>
+        <Alias Name="callstack" Definition="Debug.CallStack"/>
+        <Alias Name="d" Definition="Debug.ListMemory"/>
+        <Alias Name="da" Definition="Debug.ListMemory /Ansi"/>
+        <Alias Name="db" Definition="Debug.ListMemory /Format:OneByte"/>
+        <Alias Name="dc" Definition="Debug.ListMemory /Format:FourBytes /Ansi"/>
+        <Alias Name="dd" Definition="Debug.ListMemory /Format:FourBytes"/>
+        <Alias Name="df" Definition="Debug.ListMemory /Format:Float"/>
+        <Alias Name="dq" Definition="Debug.ListMemory /Format:EightBytes"/>
+        <Alias Name="du" Definition="Debug.ListMemory /Unicode"/>
+        <Alias Name="disasm" Definition="Debug.Disassembly"/>
+        <Alias Name="eval" Definition="Debug.EvaluateStatement"/>
+        <Alias Name="g" Definition="Debug.Start"/>
+        <Alias Name="k" Definition="Debug.ListCallStack"/>
+        <Alias Name="kb" Definition="Debug.ListCallStack"/>
+        <Alias Name="locals" Definition="Debug.Locals"/>
+        <Alias Name="memory" Definition="memory1"/>
+        <Alias Name="memory1" Definition="Debug.Memory1"/>
+        <Alias Name="memory2" Definition="Debug.Memory2"/>
+        <Alias Name="memory3" Definition="Debug.Memory3"/>
+        <Alias Name="memory4" Definition="Debug.Memory4"/>
+        <Alias Name="n" Definition="Debug.SetRadix"/>
+        <Alias Name="p" Definition="Debug.StepOver"/>
+        <Alias Name="pr" Definition="Debug.StepOut"/>
+        <Alias Name="q" Definition="Debug.StopDebugging"/>
+        <Alias Name="r" Definition="Debug.ListRegisters"/>
+        <Alias Name="registers" Definition="Debug.Registers"/>
+        <Alias Name="rtc" Definition="Debug.RunToCursor"/>
+        <Alias Name="t" Definition="Debug.StepInto"/>
+        <Alias Name="threads" Definition="Debug.Threads"/>
+        <Alias Name="u" Definition="Debug.ListDisassembly"/>
+        <Alias Name="watch" Definition="Debug.Watch"/>
+        <Alias Name="code" Definition="View.ViewCode"/>
+        <Alias Name="designer" Definition="View.ViewDesigner"/>
+        <Alias Name="print" Definition="File.Print"/>
+        <Alias Name="props" Definition="View.PropertiesWindow"/>
+        <Alias Name="TaskList" Definition="View.TaskList"/>
+        <Alias Name="toolbox" Definition="View.Toolbox"/>
+      </Aliases>
+    </Category><Category name="Environment_CallBrowser" Category="{50B05A5D-9174-48eb-851A-B1C616A0B43D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_CallBrowser" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="CallBrowserSortAlphabetically">true</PropertyValue>
+      <PropertyValue name="CallBrowserSortByAccess">false</PropertyValue>
+      <PropertyValue name="CallBrowserShowFullyQualifiedNames">true</PropertyValue>
+    </Category><Category name="Environment_ClassView" Category="{40AF29AB-4C5B-412A-9CE8-465C4FCFE41D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_ClassView" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="ClassViewShowProjectReferences">true</PropertyValue>
+      <PropertyValue name="ClassViewShowHiddenTypesAndMembers">true</PropertyValue>
+      <PropertyValue name="ClassViewTypesSortAlphabetically">true</PropertyValue>
+      <PropertyValue name="ClassViewTypesSortByType">false</PropertyValue>
+      <PropertyValue name="ClassViewTypesSortByAccess">false</PropertyValue>
+      <PropertyValue name="ClassViewTypesGroupByType">false</PropertyValue>
+      <PropertyValue name="ClassViewSearchResultsSortByBestMatch">true</PropertyValue>
+      <PropertyValue name="ClassViewSearchResultsSortAlphabetically">false</PropertyValue>
+      <PropertyValue name="ClassViewSearchResultsSortByType">false</PropertyValue>
+      <PropertyValue name="ClassViewSearchResultsSortByAccess">false</PropertyValue>
+      <PropertyValue name="ClassViewSearchResultsGroupByType">false</PropertyValue>
+      <PropertyValue name="ClassViewMembersViewPublic">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersViewProtected">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersViewPrivate">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersViewOther">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersShowInherited">false</PropertyValue>
+      <PropertyValue name="ClassViewShowExtensionMembers">false</PropertyValue>
+      <PropertyValue name="ClassViewShowBaseTypes">true</PropertyValue>
+      <PropertyValue name="ClassViewShowDerivedTypes">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersSortAlphabetically">false</PropertyValue>
+      <PropertyValue name="ClassViewMembersSortByType">true</PropertyValue>
+      <PropertyValue name="ClassViewMembersSortByAccess">false</PropertyValue>
+    </Category><Category name="Environment_CommandBars" Category="{B9D9C123-B500-4202-B887-57C829CBD08F}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_CommandBars" PackageName="Visual Studio Environment Package">
+      <CommandBars Version="05072811">
+        <DefaultCustomizations/>
+        <UserCustomizations>
+          <modify_toolbar Menu="{33F13AC3-80BB-4ECB-85BC-225435603A5E}:00000001" Visibility="show" FullScreen="hide" Dock="top" Row="2" FloatRectangle="0,0,712,24" DockRectangle="0,0,712,24"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000401" CmdPri="03000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000103" GroupPri="05000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000000" IsPartialRemoval="false"/>
+          <remove Cmd="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" CmdPri="00010000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000104" GroupPri="07000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000000" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" CmdPri="00500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000104" GroupPri="07000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000000" IsPartialRemoval="false"/>
+          <remove Cmd="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00001199" CmdPri="02400000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000104" GroupPri="07000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000000" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000002ac" CmdPri="03000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000174" GroupPri="09000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{1496A755-94DE-11D0-8C3F-00C04FC2AAE2}:000007c6" CmdPri="04000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000174" GroupPri="09000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{6E87CFAD-6C05-4ADF-9CD7-3B7943875B7C}:00000500" CmdPri="05000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000174" GroupPri="09000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{6E87CFAD-6C05-4ADF-9CD7-3B7943875B7C}:00000010" CmdPri="06500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000174" GroupPri="09000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000ee" CmdPri="02500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000178" GroupPri="0d000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{F9FF219D-9853-4AE2-A85A-1303E6F783E9}:00002002" CmdPri="00100000" Group="{F9FF219D-9853-4AE2-A85A-1303E6F783E9}:00001020" GroupPri="f0000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{F9FF219D-9853-4AE2-A85A-1303E6F783E9}:00001070" CmdPri="00400000" Group="{F9FF219D-9853-4AE2-A85A-1303E6F783E9}:00001020" GroupPri="f0000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000001" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000376" CmdPri="10000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:000001d2" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000000d" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000372" CmdPri="20000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:000001d2" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000000d" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000037a" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000283" GroupPri="45000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000000d" IsPartialRemoval="false"/>
+          <remove Cmd="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00003922" CmdPri="01000000" Group="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00002832" GroupPri="07010000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000082" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000257" CmdPri="01500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000722" GroupPri="08000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000082" IsPartialRemoval="false"/>
+          <remove Cmd="{1496A755-94DE-11D0-8C3F-00C04FC2AAE2}:00000786" CmdPri="02500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000722" GroupPri="08000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000082" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000ee" CmdPri="03500000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000722" GroupPri="08000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000082" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000ec" CmdPri="04000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000723" GroupPri="08500000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000082" IsPartialRemoval="false"/>
+          <remove Cmd="{4A79114A-19E4-11D3-B86B-00C04F79F802}:00000100" CmdPri="01000000" Group="{4A79114B-19E4-11D3-B86B-00C04F79F802}:00000010" GroupPri="00200000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000088" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000147" CmdPri="02000000" Group="{4A79114B-19E4-11D3-B86B-00C04F79F802}:00000010" GroupPri="00200000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000088" IsPartialRemoval="false"/>
+          <remove Cmd="{1496A755-94DE-11D0-8C3F-00C04FC2AAE2}:000008a6" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000016a" GroupPri="05000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000088" IsPartialRemoval="false"/>
+          <remove Cmd="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00003911" CmdPri="01000000" Group="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00002865" GroupPri="05000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000088" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000372" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000280" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000373" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000280" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000374" CmdPri="03000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000280" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000375" CmdPri="04000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000280" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000330" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000376" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000331" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000377" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000378" CmdPri="03000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000379" CmdPri="04000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000335" CmdPri="05000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000281" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000037b" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000282" GroupPri="04000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000303" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000282" GroupPri="04000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000037a" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000283" GroupPri="04000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:0000320a" CmdPri="00010000" Group="{FA554DC1-6DD4-11D1-AF71-006097DF568C}:00002880" GroupPri="80000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000008c" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000049" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000004a" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000432" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000433" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000434" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000435" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000436" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000437" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000438" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000439" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000440" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000441" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000442" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000443" CmdPri="00000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000492" GroupPri="01000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000491" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000003b2" CmdPri="0e000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:000002c0" GroupPri="00000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000500" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000ef" CmdPri="02000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000019f" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000502" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000003ff" CmdPri="06000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:0000019f" GroupPri="02000000" Menu="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000502" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000005" CmdPri="00100000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001003" GroupPri="03080000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000401" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000003" CmdPri="00200000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001003" GroupPri="03080000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000401" IsPartialRemoval="false"/>
+          <remove Cmd="{D63DB1F0-404E-4B21-9648-CA8D99245EC3}:00000015" CmdPri="20100000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000163" GroupPri="ff000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000401" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000502" CmdPri="01000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000504" CmdPri="04000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000510" CmdPri="04500000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:0000050a" CmdPri="05000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000501" CmdPri="07000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000507" CmdPri="08000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000509" CmdPri="09000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:0000050b" CmdPri="0b000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000508" CmdPri="0d000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000503" CmdPri="0e000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000500" CmdPri="0f000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:0000050f" CmdPri="10000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{5289D302-2432-4761-8C45-051C64BD00C4}:0000021a" CmdPri="30000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{5289D302-2432-4761-8C45-051C64BD00C4}:0000021b" CmdPri="30000000" Group="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000012" GroupPri="01000000" Menu="{C9DD4A58-47FB-11D2-83E7-00C04F9902C1}:00000410" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000f6" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000205" GroupPri="04000000" Menu="{5289D302-2432-4761-8C45-051C64BD00C4}:00000201" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000018d" CmdPri="01000000" Group="{D309F791-903F-11D0-9EFC-00A0C911004F}:00000214" GroupPri="06000000" Menu="{5289D302-2432-4761-8C45-051C64BD00C4}:00000201" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000005" CmdPri="00000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055b" GroupPri="01000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000003" CmdPri="01000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:00000559" GroupPri="03000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000007" CmdPri="02000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:00000559" GroupPri="03000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000004" CmdPri="03000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:00000559" GroupPri="03000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000006" CmdPri="01000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055a" GroupPri="04000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000002" CmdPri="02000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055a" GroupPri="04000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000001" CmdPri="03000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055a" GroupPri="04000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000025" CmdPri="01000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055c" GroupPri="05000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000024" CmdPri="02000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055c" GroupPri="05000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000023" CmdPri="03000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055c" GroupPri="05000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000027" CmdPri="04000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055c" GroupPri="05000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000018" CmdPri="01000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055d" GroupPri="06000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000017" CmdPri="02000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055d" GroupPri="06000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000016" CmdPri="03000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055d" GroupPri="06000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000015" CmdPri="04000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055d" GroupPri="06000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000031" CmdPri="01000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055e" GroupPri="07000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000030" CmdPri="02000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055e" GroupPri="07000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000002f" CmdPri="03000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055e" GroupPri="07000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000002e" CmdPri="04000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055e" GroupPri="07000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000000c" CmdPri="00000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055f" GroupPri="08000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000000d" CmdPri="00000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:0000055f" GroupPri="08000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000000b" CmdPri="01000000" Group="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000321" GroupPri="09000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000021" CmdPri="02000000" Group="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000321" GroupPri="09000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000029" CmdPri="00000000" Group="{234A7FC1-CFE9-4335-9E82-061F86E402C1}:00000568" GroupPri="10000000" Menu="{74D21312-2AEE-11D1-8BFB-00A0C90F26F7}:00000601" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000005" CmdPri="00100000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001000" GroupPri="00000000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000003" CmdPri="00200000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001000" GroupPri="00000000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000009" CmdPri="00300000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001000" GroupPri="00000000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:0000000c" CmdPri="00400000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001000" GroupPri="00000000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:00000001" CmdPri="00100000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001001" GroupPri="00100000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{FB87333B-16C8-400E-BC8F-F6B890410582}:0000000b" CmdPri="00800000" Group="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00001001" GroupPri="00100000" Menu="{061317B2-F992-435E-A23D-9EAD4B972ED5}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000068" CmdPri="01000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:0000100f" GroupPri="01000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000021" CmdPri="02000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:0000100f" GroupPri="01000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000001" CmdPri="03000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:0000100f" GroupPri="01000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000000c" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001107" GroupPri="03000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000033" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001107" GroupPri="03000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000000d" CmdPri="01000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00001011" GroupPri="05000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000003" CmdPri="03000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00001011" GroupPri="05000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000002" CmdPri="05000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00001011" GroupPri="05000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000106" CmdPri="07000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00001011" GroupPri="05000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000006" CmdPri="01000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:0000100e" GroupPri="09000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000000f" CmdPri="02000000" Group="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:0000100e" GroupPri="09000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000007" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001111" GroupPri="0b000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000008" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001027" GroupPri="0c000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000009" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001027" GroupPri="0c000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000002b" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001119" GroupPri="0e000000" Menu="{732ABE70-CD80-11D0-A2DB-00AA00A3EFFF}:00000004" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000068" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001106" GroupPri="01000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000021" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001106" GroupPri="01000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000001" CmdPri="05000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001106" GroupPri="01000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000000c" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001107" GroupPri="03000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000033" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001107" GroupPri="03000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:000000ad" CmdPri="09000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001118" GroupPri="05000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:0000006d" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001109" GroupPri="07000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000006" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001109" GroupPri="07000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000012" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110b" GroupPri="09000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000007" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110c" GroupPri="0b000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000008" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110d" GroupPri="0b000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000009" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110d" GroupPri="0b000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:0000000d" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110e" GroupPri="0d000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000003" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110e" GroupPri="0d000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:00000002" CmdPri="05000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110e" GroupPri="0d000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{5EFC7975-14BC-11CF-9B2B-00AA00573819}:00000032" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:0000110f" GroupPri="0f000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:000002a4" CmdPri="01000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:000002a3" CmdPri="03000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{748813A7-657C-499D-81A0-2FFDF790711A}:00000065" CmdPri="05000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{748813A7-657C-499D-81A0-2FFDF790711A}:00000066" CmdPri="06000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{732ABE75-CD80-11D0-A2DB-00AA00A3EFFF}:000002a5" CmdPri="07000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+          <remove Cmd="{748813A7-657C-499D-81A0-2FFDF790711A}:0000006c" CmdPri="08000000" Group="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00001110" GroupPri="10000000" Menu="{732ABE74-CD80-11D0-A2DB-00AA00A3EFFF}:00000101" IsPartialRemoval="false"/>
+        </UserCustomizations>
+      </CommandBars>
+      <PropertyValue name="ShowLargeButtons">false</PropertyValue>
+      <PropertyValue name="ShowScreenTips">true</PropertyValue>
+      <PropertyValue name="ShowScreenTipShortcutKeys">false</PropertyValue>
+    </Category><Category name="Environment_DefaultEditors" Category="{68161AEE-BCA8-4214-B2E4-7875263E49C5}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_DefaultEditors" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="NumberOfMappings">0</PropertyValue>
+      <PropertyValue name="NumberOfDefaultEditors">0</PropertyValue>
+    </Category><Category name="Environment_Expansions" Category="{0B9A10B2-C0D0-4a6a-8353-115E9CACF34A}" Package="{F5E7E720-1401-11d1-883B-0000F87579D2}" RegisteredName="Environment_Expansions" PackageName="Text Management Package">
+      <Expansions Default="true" Version="1.0"/>
+    </Category><Category name="Environment_ExtensionManager" Category="{539391d7-9414-4715-b033-8669db0abee1}" Package="{e7576c05-1874-450c-9e98-cf3a0897a069}" RegisteredName="Environment_ExtensionManager" PackageName="ExtensionManagerPackage">
+      <PropertyValue name="AutomaticallyCheckForUpdates2">True</PropertyValue>
+      <PropertyValue name="CustomRepositories">&lt;ExtensionRepositoryConfigList Capacity="0" xmlns="clr-namespace:Microsoft.VisualStudio.ExtensionManager;assembly=Microsoft.VisualStudio.ExtensionEngine" /&gt;</PropertyValue>
+      <PropertyValue name="EnableAdminExtensions">True</PropertyValue>
+    </Category><Category name="Environment_ExternalTools" Category="{E8FAE9E8-FBA2-4474-B134-AB0FFCFB291D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_ExternalTools" PackageName="Visual Studio Environment Package">
+      <ExternalTools/>
+    </Category><Category name="Environment_FindSymbol" Category="{C93260BC-0C07-484a-8188-6F4763BD7FD4}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_FindSymbol" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="FindOptionsIsExpanded">false</PropertyValue>
+      <PropertyValue name="LookinReferencesIsChecked">true</PropertyValue>
+      <PropertyValue name="MatchCaseIsChecked">false</PropertyValue>
+      <PropertyValue name="Type">2</PropertyValue>
+      <PropertyValue name="SelectedScope">{B1BA9461-FC54-45B3-A484-CB6DD0B95C94}</PropertyValue>
+      <PropertyValue name="SelectedScopeSubScope">0</PropertyValue>
+    </Category><Category name="Environment_FontsAndColors" Category="{1EDA5DD4-927A-43a7-810E-7FD247D0DA1D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_FontsAndColors" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="Version">2</PropertyValue>
+      <FontsAndColors Version="2.0">
+        <Theme Id="{A4D6A176-B948-4B29-8C66-53C97A1ED7D0}"/>
+        <Categories>
+          <Category GUID="{6B113BF3-0F02-4A21-9AA0-D735A59076CE}" FontIsDefault="Yes">
+            <Items>
+              <Item Name="detail" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+              <Item Name="grid" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+            </Items>
+          </Category>
+          <Category GUID="{E0187991-B458-4F7E-8CA9-42C9A573B56C}" FontIsDefault="Yes">
+            <Items>
+              <Item Name="SQL System Table" Foreground="0x00008000" Background="0x01000001" BoldFont="No"/>
+            </Items>
+          </Category>
+        </Categories>
+      </FontsAndColors>
+    </Category><Category name="Environment_KeyBindings" Category="{F09035F1-80D2-4312-8EC4-4D354A4BCB4C}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_KeyBindings" PackageName="Visual Studio Environment Package">
+      <Version>15.0.0.0</Version>
+      <KeyboardShortcuts>
+        <ScopeDefinitions>
+          <Scope Name="Find All References Tool Window" ID="{1FA1FD06-3592-4D1D-AC75-0B953320140C}"/>
+          <Scope Name="XML (Text) Editor" ID="{FA3CD31E-987B-443A-9B81-186104E8DAC1}"/>
+          <Scope Name="Text Editor" ID="{8B382828-6202-11D1-8870-0000F87579D2}"/>
+          <Scope Name="Solution Explorer" ID="{3AE79031-E1BC-11D0-8F78-00A0C9110057}"/>
+          <Scope Name="Table Designer" ID="{A8FC853B-D6C6-4482-A279-9E74EA812B00}"/>
+          <Scope Name="WebBrowser" ID="{E8B06F41-6D01-11D2-AA7D-00C04F990343}"/>
+          <Scope Name="Query Designer" ID="{33941854-F604-48D5-97EF-7E538692D2FB}"/>
+          <Scope Name="XamlTabEditorFactory" ID="{A4F9FF65-A78C-4650-866D-5069CC4127CF}"/>
+          <Scope Name="View Designer" ID="{E6AC6F69-B102-48DE-BE5F-002B18596BBF}"/>
+          <Scope Name="Global" ID="{5EFC7975-14BC-11CF-9B2B-00AA00573819}"/>
+          <Scope Name="DAX Query Editor" ID="{7B55DE85-B56C-4A92-A964-DF2032512683}"/>
+          <Scope Name="XMLA Query Editor" ID="{B7DF28AE-C9A1-4263-A498-9897B98336A1}"/>
+          <Scope Name="Windows Forms Designer" ID="{BA09E2AF-9DF2-4068-B2F0-4C7E5CC19E2F}"/>
+          <Scope Name="Database Designer" ID="{53F43BBD-B2F3-46BA-A85C-7D4718290D29}"/>
+          <Scope Name="DataWarehouse Designer" ID="{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}"/>
+          <Scope Name="MDX Query Editor" ID="{1CEAF4C2-677D-456A-9BED-1AC73B989127}"/>
+          <Scope Name="Difference Viewer" ID="{79D52DDF-52BC-43F1-9663-B3E85CDCA912}"/>
+          <Scope Name="SQL Query Editor" ID="{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"/>
+          <Scope Name="DMX Query Editor" ID="{A8AE89ED-34A0-489E-8A98-AEE7CEDEA6B7}"/>
+        </ScopeDefinitions>
+        <DefaultShortcuts/>
+        <ShortcutsScheme/>
+        <UserShortcuts>
+          <RemoveShortcut Command="Edit.FindinFiles" Scope="Global">Ctrl+Shift+F</RemoveShortcut>
+          <RemoveShortcut Command="Edit.LineDelete" Scope="Text Editor">Ctrl+Shift+L</RemoveShortcut>
+          <RemoveShortcut Command="Help.ViewHelp" Scope="Global">Ctrl+F1</RemoveShortcut>
+          <RemoveShortcut Command="View.TaskList" Scope="Global">Ctrl+\, Ctrl+T</RemoveShortcut>
+          <RemoveShortcut Command="View.TaskList" Scope="Global">Ctrl+\, T</RemoveShortcut>
+          <RemoveShortcut Command="View.ToggleDesigner" Scope="Global">F7</RemoveShortcut>
+
+          <Shortcut Command="Edit.CharTranspose" Scope="Text Editor">Ctrl+T</Shortcut>
+          <Shortcut Command="Edit.CommentSelection" Scope="Global">Ctrl+K, Ctrl+C</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="DAX Query Editor">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="DMX Query Editor">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="Global">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="MDX Query Editor">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="SQL Query Editor">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeLowercase" Scope="XMLA Query Editor">Ctrl+Shift+L</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="DAX Query Editor">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="DMX Query Editor">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="Global">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="MDX Query Editor">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="SQL Query Editor">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.MakeUppercase" Scope="XMLA Query Editor">Ctrl+Shift+U</Shortcut>
+          <Shortcut Command="Edit.UncommentSelection" Scope="Global">Ctrl+K, Ctrl+U</Shortcut>
+          <Shortcut Command="Edit.WordTranspose" Scope="Text Editor">Ctrl+Shift+T</Shortcut>
+          <Shortcut Command="File.NewFile" Scope="Global">Ctrl+Alt+N</Shortcut>
+          <Shortcut Command="File.NewQuery" Scope="Global">Ctrl+N</Shortcut>
+          <Shortcut Command="Query.CustomSP1" Scope="SQL Query Editor">Ctrl+F1</Shortcut>
+          <Shortcut Command="Query.DisplayEstimatedExecutionPlan" Scope="SQL Query Editor">Ctrl+L</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="DAX Query Editor">F5</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="DAX Query Editor">Ctrl+E</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="DMX Query Editor">F5</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="DMX Query Editor">Ctrl+E</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="Global">Alt+X</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="MDX Query Editor">F5</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="MDX Query Editor">Ctrl+E</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="SQL Query Editor">F5</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="SQL Query Editor">Ctrl+E</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="XMLA Query Editor">F5</Shortcut>
+          <Shortcut Command="Query.Execute" Scope="XMLA Query Editor">Ctrl+E</Shortcut>
+          <Shortcut Command="Query.IncludeActualExecutionPlan" Scope="SQL Query Editor">Ctrl+M</Shortcut>
+          <Shortcut Command="Query.IncludeClientStatistics" Scope="Global">Shift+Alt+S</Shortcut>
+          <Shortcut Command="Query.OpenServerinObjectExplorer" Scope="Global">Alt+F8</Shortcut>
+          <Shortcut Command="Query.ResultstoFile" Scope="Global">Ctrl+Shift+F</Shortcut>
+          <Shortcut Command="Query.ResultstoFile" Scope="SQL Query Editor">Ctrl+Shift+F</Shortcut>
+          <Shortcut Command="Query.ResultstoGrid" Scope="Global">Ctrl+D</Shortcut>
+          <Shortcut Command="Query.ResultstoGrid" Scope="SQL Query Editor">Ctrl+D</Shortcut>
+          <Shortcut Command="Query.ResultstoText" Scope="Global">Ctrl+T</Shortcut>
+          <Shortcut Command="Query.ResultstoText" Scope="SQL Query Editor">Ctrl+T</Shortcut>
+          <Shortcut Command="Query.SpecifyValuesforTemplateParameters" Scope="SQL Query Editor">Ctrl+Shift+M</Shortcut>
+          <Shortcut Command="View.ObjectExplorer" Scope="Global">F8</Shortcut>
+          <Shortcut Command="View.ObjectExplorerDetails" Scope="Global">F7</Shortcut>
+          <Shortcut Command="View.Refresh" Scope="Global">F5</Shortcut>
+          <Shortcut Command="View.TaskList" Scope="Global">Ctrl+Alt+K</Shortcut>
+          <Shortcut Command="View.TemplateExplorer" Scope="Global">Ctrl+Alt+T</Shortcut>
+          <Shortcut Command="Window.NextPane" Scope="Global">F6</Shortcut>
+          <Shortcut Command="Window.PreviousPane" Scope="Global">Shift+F6</Shortcut>
+          <Shortcut Command="Window.ShowResultsPane" Scope="DAX Query Editor">Ctrl+R</Shortcut>
+          <Shortcut Command="Window.ShowResultsPane" Scope="DMX Query Editor">Ctrl+R</Shortcut>
+          <Shortcut Command="Window.ShowResultsPane" Scope="MDX Query Editor">Ctrl+R</Shortcut>
+          <Shortcut Command="Window.ShowResultsPane" Scope="SQL Query Editor">Ctrl+R</Shortcut>
+          <Shortcut Command="Window.ShowResultsPane" Scope="XMLA Query Editor">Ctrl+R</Shortcut>
+        </UserShortcuts>
+      </KeyboardShortcuts>
+    </Category><Category name="Environment_NewProjectDialogPreferredLanguage" Category="{77E22C0C-9F4A-4bfb-AD3A-3F3F4711E9ED}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_NewProjectDialogPreferredLanguage" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="HasNewProjectDialogPreferredLanguage">false</PropertyValue>
+      <PropertyValue name="DefaultToLargeIconView">false</PropertyValue>
+    </Category><Category name="Environment_ObjectBrowser" Category="{D98D784D-88BF-4EBF-B039-C146EC14F472}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_ObjectBrowser" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="ObjectBrowserViewNamespaces">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserShowHiddenTypesAndMembers">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserTypesSortAlphabetically">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserTypesSortByType">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserTypesSortByAccess">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserTypesGroupByType">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserSearchResultsSortByBestMatch">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserSearchResultsSortAlphabetically">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserSearchResultsSortByType">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserSearchResultsSortByAccess">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserSearchResultsGroupByType">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersViewPublic">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersViewProtected">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersViewPrivate">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersViewOther">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersShowInherited">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserShowExtensionMembers">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserShowBaseTypes">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserShowDerivedTypes">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersSortAlphabetically">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersSortByType">true</PropertyValue>
+      <PropertyValue name="ObjectBrowserMembersSortByAccess">false</PropertyValue>
+      <PropertyValue name="ObjectBrowserScope">{B1BA9461-FC54-45B3-A484-CB6DD0B95C94}</PropertyValue>
+      <PropertyValue name="ObjectBrowserScopeSubScope">0</PropertyValue>
+    </Category><Category name="Environment_OutputWindow" Category="{07C6CD04-100B-4f3e-BA93-DD1363E8D8E3}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_OutputWindow" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="OutputWindowWordWrap">false</PropertyValue>
+    </Category><Category name="Environment_PropertiesWindow" Category="{731a3cc7-de5e-49ca-9115-9a03e46624b0}" Package="{7494682b-37a0-11d2-a273-00c04f8ef4ff}" RegisteredName="Environment_PropertiesWindow" PackageName="Windows Forms Designer Package">
+      <PropertyValue name="PbrsAlpha">0</PropertyValue>
+      <PropertyValue name="PbrsShowDesc">1</PropertyValue>
+    </Category><Category name="Environment_QuickLaunch" Category="{dfbffb75-d8ed-47a2-87de-1d246fd06ae5}" Package="{18333854-d2ff-44a3-98d8-40501b914d7d}" RegisteredName="Environment_QuickLaunch" PackageName="Global Search Package">
+      <PropertyValue name="UseGlobalSearch">true</PropertyValue>
+      <PropertyValue name="PreserveSearchResults">false</PropertyValue>
+      <SearchProviders>
+        <Provider Name="Most Recently Used" Id="{3ef528c5-c45a-47e0-b9ee-a212a32a99ec}" Enabled="True"/>
+        <Provider Name="Menus" Id="{f7a34a7c-b596-4bfa-b119-321539fc96ed}" Enabled="True"/>
+        <Provider Name="Options" Id="{258ebb6f-5c3b-4241-b929-71ec7a18dbf0}" Enabled="True"/>
+        <Provider Name="Open Documents" Id="{28a7edd7-524f-4c82-8e1e-1e472357454d}" Enabled="True"/>
+        <Provider Name="Install" Id="{caf11422-9334-422c-91d9-656307e3b552}" Enabled="True"/>
+        <Provider Name="Tasks" Id="{1f29847b-341f-441f-bcb8-67d0249eb2e7}" Enabled="True"/>
+      </SearchProviders>
+    </Category><Category name="Environment_SimplifiedToolsOptions" Category="{13BEDEE6-9051-4809-B9E3-2EEC749EB15A}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_SimplifiedToolsOptions" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="SupportsSimpleToolsOptions">false</PropertyValue>
+      <PropertyValue name="ShowingAllPages">true</PropertyValue>
+      <PropertyValue name="ShowFlatList">false</PropertyValue>
+    </Category><Category name="Environment_SolutionExplorer" Category="{6FA9062F-82B2-4725-BA6D-58CF7CBA7DEA}" Package="{cf6a5c16-83b0-4d04-b702-195c35c6e887}" RegisteredName="Environment_SolutionExplorer" PackageName="Microsoft.VisualStudio.PlatformUI.SolutionNavigatorPackage">
+      <PropertyValue name="SearchFileContents">true</PropertyValue>
+      <PropertyValue name="SearchExternalItems">true</PropertyValue>
+    </Category><Category name="Environment_TabsAndWindows" Category="{CCF27946-63D9-4806-91BA-EEBF5F3DFA4A}" Package="{5E56B3DB-7964-4588-8D49-D3523AB7BDB9}" RegisteredName="Environment_TabsAndWindows" PackageName="Environment Package Window Management">
+      <PropertyValue name="EnableIndependentTabWell">True</PropertyValue>
+      <PropertyValue name="EnableIndependentToolWindows">False</PropertyValue>
+      <PropertyValue name="EnablePreviewTab">True</PropertyValue>
+      <PropertyValue name="EnableSingleClickPreviewInFindResults">True</PropertyValue>
+      <PropertyValue name="EnableSingleClickPreviewInNavigateTo">True</PropertyValue>
+      <PropertyValue name="EnableSingleClickPreviewInSolutionExplorer">True</PropertyValue>
+      <PropertyValue name="MaintainPinStatus">False</PropertyValue>
+      <PropertyValue name="ShowAutoHiddenWindowsOnHover">False</PropertyValue>
+      <PropertyValue name="ShowPinButtonInUnpinnedTabs">True</PropertyValue>
+      <PropertyValue name="ShowPinnedTabsInSeparateRow">False</PropertyValue>
+    </Category><Category name="Environment_Toolbox" Category="{481999F2-7479-4e03-83D5-BE808BA142DF}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_Toolbox" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="ShowAllTabs">false</PropertyValue>
+      <PropertyValue name="Version">1</PropertyValue>
+      <PropertyValue name="DeletedTabCount">0</PropertyValue>
+      <PropertyValue name="TabCount">0</PropertyValue>
+      <PropertyValue name="DeletedItemCount">0</PropertyValue>
+      <PropertyValue name="ItemCount">0</PropertyValue>
+    </Category><Category name="Environment_UnifiedFind" Category="{DF00ADDF-C14C-4ffd-9325-634FD605850B}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_UnifiedFind" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="Options">MatchCase=0 WholeWord=0 Hidden=0 Up=0 Selection=0 Block=0 KeepCase=0 SubFolders=1 KeepOpen=0 NameOnly=0 Append=0 Plain Files Find</PropertyValue>
+      <PropertyValue name="DialogOptions">MatchCase=0 WholeWord=0 Hidden=0 Up=0 Selection=0 Block=0 KeepCase=0 SubFolders=1 KeepOpen=0 NameOnly=0 Append=0 Plain Solution Find</PropertyValue>
+      <PropertyValue name="AdornmentOptions">MatchCase=0 WholeWord=0 Hidden=0 Up=0 Selection=0 Block=0 KeepCase=0 SubFolders=0 KeepOpen=0 NameOnly=0 Append=0 Plain Document Find</PropertyValue>
+      <PropertyValue name="Result list">1</PropertyValue>
+      <PropertyValue name="ShowEndOfSearch">1</PropertyValue>
+      <PropertyValue name="ShowNoFound">1</PropertyValue>
+      <PropertyValue name="ShowAllReplacementsNotAllowed">1</PropertyValue>
+      <PropertyValue name="ShowSomeReplacementsNotAllowed">1</PropertyValue>
+      <PropertyValue name="ShowNoMore">1</PropertyValue>
+      <PropertyValue name="ShowFindStart">1</PropertyValue>
+      <PropertyValue name="ShowCancel">1</PropertyValue>
+      <PropertyValue name="ShowCancelBeforeReplacementsMade">1</PropertyValue>
+      <PropertyValue name="ShowReplaceInFilesWarning">1</PropertyValue>
+      <PropertyValue name="ShowCancelEntireReplaceAfterCancellingSCC">1</PropertyValue>
+      <PropertyValue name="AutomaticallyLimitSearchToSelection">1</PropertyValue>
+      <PropertyValue name="FindTextFromEditor">1</PropertyValue>
+      <PropertyValue name="HitReplaced">1</PropertyValue>
+      <PropertyValue name="EditableFindInFilesResults">1</PropertyValue>
+      <PropertyValue name="Syntax">Regex</PropertyValue>
+      <PropertyValue name="In Files Pane Display Options">0</PropertyValue>
+      <PropertyValue name="NumberOfScopes">0</PropertyValue>
+    </Category><Category name="Environment_WindowLayout" Category="{eb4ba109-a9db-4445-bd09-e7604bcdce84}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_WindowLayout" PackageName="Visual Studio Environment Package">
+      <PropertyValue name="Version">7</PropertyValue>
+      <PropertyValue name="WindowProfileNames">NoToolWin|Design</PropertyValue>
+      <NoToolWin>
+        <WindowProfile xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:wm="clr-namespace:Microsoft.VisualStudio.Platform.WindowManagement;assembly=Microsoft.VisualStudio.Platform.WindowManagement" Name="NoToolWin" xmlns="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+          <MainSite FloatingTop="0" FloatingLeft="48" FloatingHeight="1056" FloatingWidth="1936" FloatingWindowState="Maximized">
+            <AutoHideRoot IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0" DockRestriction="DocumentGroup, Document, OutsideView">
+              <AutoHideChannel Orientation="Vertical" FloatingTop="0" FloatingLeft="0"/>
+              <AutoHideChannel Dock="Right" Orientation="Vertical" FloatingTop="0" FloatingLeft="0"/>
+              <AutoHideChannel Dock="Top" FloatingTop="0" FloatingLeft="0"/>
+              <AutoHideChannel Dock="Bottom" FloatingTop="0" FloatingLeft="0"/>
+              <DockRoot IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                <DockGroup Orientation="Vertical" IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                  <DockGroup IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                    <TabGroup DockedHeight="652.8" DockedWidth="174.08" FloatingTop="0" FloatingLeft="0">
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{099ca9ea-0ae4-4e31-a7e4-fe09bd1715cc}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{9f3ec988-1174-4746-a66a-3969715d1fc7}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{5b6781c0-e99d-11d0-9954-00a0c91bc8e5}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                    </TabGroup>
+                    <DockGroup Orientation="Vertical" IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                      <TabGroup DockedHeight="153.6" DockedWidth="819.2" FloatingTop="0" FloatingLeft="0">
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:1:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:2:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:3:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:4:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{ca4b8ff5-bfc7-11d2-9929-00c04f68fdaf}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{51c76317-9037-4cf2-a20a-6206fd30b4a1}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{e62ce6a0-b439-11d0-a79d-00a0c9110051}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{37aba9be-445a-11d3-9949-00c04f68fd0a}" DockedHeight="153.6" DockedWidth="819.2" FloatingTop="76.8" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="614.4"/>
+                      </TabGroup>
+                      <DocumentGroupContainer IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                        <wm:WMDocumentGroup FloatingTop="0" FloatingLeft="0">
+                          <wm:ToolWindowView Name="ST:0:0:{29ce07d3-1898-47d3-88fa-15453b726b27}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView Name="ST:0:0:{c79b74ff-f1d7-4c94-aefa-4d22bfe1b1f9}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="DontForceCreate" Name="ST:0:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{46c87f81-5a06-43a8-9e25-85d33bac49f8}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="384" FloatingWidth="512"/>
+                          <wm:ToolWindowView Name="ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{cf577b8c-4134-11d2-83e5-00c04f9902c1}" FloatingTop="192" FloatingLeft="327.68" FloatingHeight="384" FloatingWidth="358.4"/>
+                        </wm:WMDocumentGroup>
+                      </DocumentGroupContainer>
+                    </DockGroup>
+                    <TabGroup DockedHeight="652.8" DockedWidth="174.08" FloatingTop="0" FloatingLeft="0">
+                      <wm:ToolWindowView Name="ST:0:0:{ed485b08-5acf-4ce9-8e13-699174ea0201}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{ecdd9ee0-ac6b-11d0-89f9-00a0c9110055}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{3addf8e2-81cc-41a0-9785-dbd2d86064bd}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{66dba47c-61df-11d2-aa79-00c04f990343}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{4a791147-19e4-11d3-b86b-00c04f79f802}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{73f6dd58-437e-11d3-b88e-00c04f79f802}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{57dc5d59-11c2-4955-a7b4-d7699d677e93}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{07cd18b4-3ba1-11d2-890a-0060083196c6}" DockedHeight="652.8" DockedWidth="174.08" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                    </TabGroup>
+                  </DockGroup>
+                  <DockGroup DockedHeight="192" DockedWidth="512" FloatingTop="0" FloatingLeft="0">
+                    <TabGroup DockedHeight="192" DockedWidth="512" FloatingTop="0" FloatingLeft="0">
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{4a18f9d0-b838-11d0-93eb-00a0c90f2734}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:1:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:2:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:3:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="T:4:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="DontForceCreate" Name="ST:0:0:{0f887920-c2b6-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="DontForceCreate" Name="ST:0:0:{0f887921-c2b6-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{68487888-204a-11d3-87eb-00c04f7971a5}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{fdffccf2-5f63-404f-86ad-33693f544948}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{73f6dd5b-437e-11d3-b88e-00c04f79f802}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="51.2" FloatingHeight="192" FloatingWidth="614.4"/>
+                    </TabGroup>
+                    <TabGroup DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0">
+                      <ViewBookmark Name="ST:0:0:{53024d34-0ef5-11d3-87e0-00c04f7971a5}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                      <ViewBookmark Name="ST:0:0:{e830ec50-c2b5-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                      <ViewBookmark Name="ST:0:0:{cf2ddc32-8cad-11d2-9302-005345000000}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                    </TabGroup>
+                    <TabGroup DockedHeight="192" DockedWidth="512" FloatingTop="0" FloatingLeft="0">
+                      <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{588470cc-84f8-4a57-9ac4-86bca0625ff4}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{5415ea3a-d813-4948-b51e-562082ce0887}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{a0c5197d-0ac7-4b63-97cd-8872a789d233}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="409.6" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{2456bd12-ecf7-4988-a4a6-67d49173f564}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView Name="ST:0:0:{905da7d1-18fd-4a46-8d0f-a5ff58ada9de}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView Name="ST:0:0:{519e8a32-1c95-4a42-956f-2cee2f28eb0f}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView Name="ST:0:0:{92547016-2bd0-4dfe-bd4f-5b52bdce0037}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      <wm:ToolWindowView Name="ST:0:0:{b869198c-f673-46d2-83ae-64f515277716}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{b8399b49-7330-487b-9235-7d2e969d0a79}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="460.8"/>
+                      <wm:ToolWindowView Name="ST:0:0:{778b5376-ad77-4751-acdc-f3d18343f8dd}" DockedHeight="192" DockedWidth="512" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="460.8"/>
+                    </TabGroup>
+                  </DockGroup>
+                </DockGroup>
+              </DockRoot>
+            </AutoHideRoot>
+          </MainSite>
+          <wm:WMFloatSite Id="f9b1711f-8a83-48e6-963b-6c878795ee21" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92">
+            <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{53024d34-0ef5-11d3-87e0-00c04f7971a5}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="54897ef5-9cce-406a-bed3-94420283ef65" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92">
+            <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{e830ec50-c2b5-11d2-9375-0080c747d9a0}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="16f348ad-45a1-47c7-b520-dc6d2356c528" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="337.92">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{cf2ddc32-8cad-11d2-9302-005345000000}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="17d5a962-2e9a-4cf4-b8b7-ee2832943cdc" IsVisible="True" FloatingTop="0" FloatingLeft="0" FloatingHeight="600">
+            <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="0" IconResourceID="305" IconResourcePackage="687b26ef-c096-4f2d-9f8c-aaafada321ac" Name="ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}" IsSelected="True" IsVisible="True" FloatingTop="0" FloatingLeft="0" FloatingHeight="600"/>
+          </wm:WMFloatSite>
+        </WindowProfile>
+      </NoToolWin>
+      <Design>
+        <WindowProfile xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:wm="clr-namespace:Microsoft.VisualStudio.Platform.WindowManagement;assembly=Microsoft.VisualStudio.Platform.WindowManagement" Name="Design" xmlns="clr-namespace:Microsoft.VisualStudio.PlatformUI.Shell;assembly=Microsoft.VisualStudio.Shell.ViewManager">
+          <MainSite FloatingTop="52" FloatingLeft="96" FloatingHeight="936" FloatingWidth="1728">
+            <AutoHideRoot IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0" DockRestriction="AlwaysFloating">
+              <AutoHideChannel Orientation="Vertical" FloatingTop="0" FloatingLeft="0">
+                <AutoHideGroup FloatingTop="0" FloatingLeft="0">
+                  <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                  <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="0" IconResourceID="6650" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                </AutoHideGroup>
+              </AutoHideChannel>
+              <AutoHideChannel Dock="Right" Orientation="Vertical" FloatingTop="0" FloatingLeft="0"/>
+              <AutoHideChannel Dock="Top" FloatingTop="0" FloatingLeft="0"/>
+              <AutoHideChannel Dock="Bottom" FloatingTop="0" FloatingLeft="0"/>
+              <DockRoot IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                <DockGroup IsVisible="True" DockedHeight="*" DockedWidth="*">
+                  <DockGroup Orientation="Vertical" IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                    <DockGroup IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                      <TabGroup DockedHeight="768" DockedWidth="204.8" FloatingTop="0" FloatingLeft="0">
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <ViewBookmark Name="ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}" DockedHeight="768" DockedWidth="204.8" FloatingTop="0" FloatingLeft="0"/>
+                        <wm:ToolWindowView Name="ST:0:0:{099ca9ea-0ae4-4e31-a7e4-fe09bd1715cc}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <ViewBookmark Name="ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}" DockedHeight="768" DockedWidth="204.8" FloatingTop="0" FloatingLeft="0"/>
+                        <wm:ToolWindowView Name="ST:0:0:{9f3ec988-1174-4746-a66a-3969715d1fc7}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView Name="ST:0:0:{5b6781c0-e99d-11d0-9954-00a0c91bc8e5}" DockedHeight="768" DockedWidth="204.8" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      </TabGroup>
+                      <DockGroup Orientation="Vertical" IsVisible="True" DockedHeight="592" DockedWidth="259">
+                        <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="0" IconResourceID="300" IconResourcePackage="1886ae28-9166-4759-8e1e-08c54dee6e7c" Name="ST:0:0:{5550ce83-c8d3-4ff0-a63b-fca87d639dd5}" DockedHeight="278.026119402985" DockedWidth="259" FloatingTop="344" FloatingLeft="464" FloatingHeight="450" FloatingWidth="450"/>
+                        <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="0" IconResourceID="305" IconResourcePackage="687b26ef-c096-4f2d-9f8c-aaafada321ac" Name="ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}" IsSelected="True" IsVisible="True" DockedHeight="755.973880597015" DockedWidth="259" FloatingTop="377" FloatingLeft="463" FloatingHeight="600"/>
+                      </DockGroup>
+                      <DocumentGroupContainer IsVisible="True" DockedHeight="*" DockedWidth="*" FloatingTop="0" FloatingLeft="0">
+                        <wm:WMDocumentGroup FloatingTop="0" FloatingLeft="0">
+                          <wm:ToolWindowView Name="ST:0:0:{29ce07d3-1898-47d3-88fa-15453b726b27}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView Name="ST:0:0:{c79b74ff-f1d7-4c94-aefa-4d22bfe1b1f9}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="DontForceCreate" Name="ST:0:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{46c87f81-5a06-43a8-9e25-85d33bac49f8}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="384" FloatingWidth="512"/>
+                          <wm:ToolWindowView Name="ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}" FloatingTop="76.8" FloatingLeft="102.4" FloatingHeight="537.6" FloatingWidth="716.8"/>
+                          <wm:ToolWindowView ForceCreate="DontForceCreate" IconIndex="3" IconResourceID="304" IconResourcePackage="4aacffa8-176d-4eac-b242-431220f2693c" Name="ST:0:0:{8e59ed60-44ac-4c12-bc43-483beb2aee52}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+                          <wm:ToolWindowView ForceCreate="DontForceCreate" IconIndex="0" IconResourceID="304" IconResourcePackage="4aacffa8-176d-4eac-b242-431220f2693c" Name="ST:0:0:{93de7655-de77-4af8-8147-e30bca2c3fb2}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+                          <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="1" IconResourceID="305" IconResourcePackage="687b26ef-c096-4f2d-9f8c-aaafada321ac" Name="ST:0:0:{c5d6e9c3-367c-4403-a5f7-f6954f49d59b}" FloatingTop="0" FloatingLeft="0" FloatingHeight="400" FloatingWidth="600"/>
+                        </wm:WMDocumentGroup>
+                      </DocumentGroupContainer>
+                      <TabGroup DockedHeight="537.6" DockedWidth="257.8" FloatingTop="0" FloatingLeft="0">
+                        <wm:ToolWindowView Name="ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{de1fc918-f32e-4dd7-a915-1792a051f26b}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{07cd18b4-3ba1-11d2-890a-0060083196c6}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{2d7728c2-de0a-45b5-99aa-89b609dfde73}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView Name="ST:0:0:{3addf8e2-81cc-41a0-9785-dbd2d86064bd}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{4a791147-19e4-11d3-b86b-00c04f79f802}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{73f6dd58-437e-11d3-b88e-00c04f79f802}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{57dc5d59-11c2-4955-a7b4-d7699d677e93}" DockedHeight="537.6" DockedWidth="257.8" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="537.6" FloatingWidth="204.8"/>
+                      </TabGroup>
+                    </DockGroup>
+                    <DockGroup DockedHeight="192" DockedWidth="1024" FloatingTop="0" FloatingLeft="0">
+                      <TabGroup DockedHeight="192" DockedWidth="1024" FloatingTop="0" FloatingLeft="0">
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="6" IconResourceID="6650" IconResourcePackage="4a9b7e50-aa16-11d0-a8c5-00a0c921a4d2" Name="ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{28836128-fc2c-11d2-a433-00c04f72d18a}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{ecb7191a-597b-41f5-9843-03a4cf275dde}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{588470cc-84f8-4a57-9ac4-86bca0625ff4}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{5415ea3a-d813-4948-b51e-562082ce0887}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="3" IconResourceID="6650" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="3" IconResourceID="6651" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{a0c5197d-0ac7-4b63-97cd-8872a789d233}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{2456bd12-ecf7-4988-a4a6-67d49173f564}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{905da7d1-18fd-4a46-8d0f-a5ff58ada9de}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{519e8a32-1c95-4a42-956f-2cee2f28eb0f}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{92547016-2bd0-4dfe-bd4f-5b52bdce0037}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{b869198c-f673-46d2-83ae-64f515277716}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{b8399b49-7330-487b-9235-7d2e969d0a79}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView Name="ST:0:0:{778b5376-ad77-4751-acdc-f3d18343f8dd}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{0f887920-c2b6-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="307.2"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{0f887921-c2b6-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{68487888-204a-11d3-87eb-00c04f7971a5}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{fdffccf2-5f63-404f-86ad-33693f544948}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                        <wm:ToolWindowView ContextVisibilityEnabled="False" Name="ST:0:0:{73f6dd5b-437e-11d3-b88e-00c04f79f802}" DockedHeight="192" DockedWidth="1024" FloatingTop="576" FloatingLeft="102.4" FloatingHeight="192" FloatingWidth="614.4"/>
+                      </TabGroup>
+                      <TabGroup DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0">
+                        <ViewBookmark Name="ST:0:0:{53024d34-0ef5-11d3-87e0-00c04f7971a5}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                        <ViewBookmark Name="ST:0:0:{e830ec50-c2b5-11d2-9375-0080c747d9a0}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                        <ViewBookmark Name="ST:0:0:{cf2ddc32-8cad-11d2-9302-005345000000}" DockedHeight="192" DockedWidth="100" FloatingTop="0" FloatingLeft="0"/>
+                      </TabGroup>
+                    </DockGroup>
+                  </DockGroup>
+                  <DockGroup Orientation="Vertical" DockedHeight="685" DockedWidth="250">
+                    <TabGroup DockedHeight="685" DockedWidth="250" FloatingTop="450" FloatingLeft="1167" FloatingHeight="693" FloatingWidth="258">
+                      <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="2" IconResourceID="6650" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}" DockedHeight="685" DockedWidth="250" FloatingTop="282" FloatingLeft="994" FloatingHeight="538" FloatingWidth="205"/>
+                      <wm:ToolWindowView ForceCreate="ForceCreate" IconIndex="0" IconResourceID="306" IconResourcePackage="70aa6d64-1357-4652-a41d-2bd680b26946" Name="ST:0:0:{e01a3358-4577-42a1-a4a2-4667f21e1c72}" DockedHeight="685" DockedWidth="250" FloatingTop="450" FloatingLeft="1167" FloatingHeight="693" FloatingWidth="258"/>
+                      <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{66dba47c-61df-11d2-aa79-00c04f990343}" DockedHeight="685" DockedWidth="250" FloatingTop="76.8" FloatingLeft="819.2" FloatingHeight="693" FloatingWidth="258"/>
+                    </TabGroup>
+                    <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" IconIndex="1" IconResourceID="6650" IconResourcePackage="da9fb551-c724-11d0-ae1f-00a0c90fffc3" Name="ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}" IsSelected="True" DockedHeight="677.092352092352" DockedWidth="250" FloatingTop="496" FloatingLeft="1043" FloatingHeight="693" FloatingWidth="258"/>
+                  </DockGroup>
+                </DockGroup>
+              </DockRoot>
+            </AutoHideRoot>
+          </MainSite>
+          <wm:WMFloatSite Id="713ed582-06de-48b2-a01e-7ab06679fc7c" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92">
+            <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{53024d34-0ef5-11d3-87e0-00c04f7971a5}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="c4462451-f98a-4e72-83e9-35e7db834730" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92">
+            <wm:ToolWindowView ContextVisibilityEnabled="False" ForceCreate="ForceCreate" Name="ST:0:0:{e830ec50-c2b5-11d2-9375-0080c747d9a0}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="76.8" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="bb158385-2cde-46ea-9fb6-1dd33f2b4c32" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="337.92">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{cf2ddc32-8cad-11d2-9302-005345000000}" DockedHeight="100" DockedWidth="100" FloatingTop="153.6" FloatingLeft="204.8" FloatingHeight="153.6" FloatingWidth="337.92"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="83aa2b08-8a40-44c6-b2c1-d592dd440853" FloatingTop="450" FloatingLeft="1167" FloatingHeight="693" FloatingWidth="258">
+            <TabGroup FloatingHeight="693" FloatingWidth="258">
+              <ViewBookmark Name="ST:0:0:{e01a3358-4577-42a1-a4a2-4667f21e1c72}" ViewBookmarkType="Raft" FloatingHeight="693" FloatingWidth="258"/>
+              <ViewBookmark Name="ST:0:0:{66dba47c-61df-11d2-aa79-00c04f990343}" ViewBookmarkType="Raft" FloatingHeight="693" FloatingWidth="258"/>
+            </TabGroup>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="f6b064f3-0b6e-4f1f-aa80-168397335338" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:1:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="b553a73f-cecf-4e24-93d9-12bf21163372" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:2:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="79e6c478-68eb-40ea-8055-4aaf94ce46c3" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:3:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="4cd20dfb-eaee-446d-9dda-0c4caf6b2df4" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:4:0:{350f9856-a72b-11d2-8ad0-00c04f79e479}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="3623951f-3680-4605-911b-ad4fcdbda2db" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{ca4b8ff5-bfc7-11d2-9929-00c04f68fdaf}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="70123646-e57b-4e51-8844-bbbb6af0de37" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{51c76317-9037-4cf2-a20a-6206fd30b4a1}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="99802bd3-175c-4b6f-9d8b-dec9887c89da" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{e62ce6a0-b439-11d0-a79d-00a0c9110051}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="b51dd532-b398-4366-99c9-8b089e137595" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{37aba9be-445a-11d3-9949-00c04f68fd0a}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="89ad8ca6-672f-4ccd-8b99-bd4f9e245a5c" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{cf577b8c-4134-11d2-83e5-00c04f9902c1}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="9406278a-9604-4497-b985-6b3cfab71c90">
+            <wm:ToolWindowView Name="ST:0:0:{ed485b08-5acf-4ce9-8e13-699174ea0201}"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="c760e0c3-5069-4e2f-abda-5176a1eefc74" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{ecdd9ee0-ac6b-11d0-89f9-00a0c9110055}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="8a0bdce1-9576-4dee-b00d-18de1d4a77bf" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{f2e84780-2af1-11d1-a7fa-00a0c9110051}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="3531b05e-f61a-4098-9b28-5834c44f3846" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{4a18f9d0-b838-11d0-93eb-00a0c90f2734}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="da4ecb11-2b0d-4655-af53-e6c391e2fcd8" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:1:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="7e0a659f-0888-4904-876b-5059ca2e730e" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:2:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="1098237a-551f-460d-967e-9977ed3a763e" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:3:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="3bb64977-59df-4272-ab60-9d96f2bbece2" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="T:4:0:{90243340-bd7a-11d0-93ef-00a0c90f2734}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+          <wm:WMFloatSite Id="d2527d86-dba9-45d9-b7ea-07477ad33397" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450">
+            <wm:ToolWindowView ForceCreate="ForceCreate" Name="ST:0:0:{0504ff91-9d61-11d0-a794-00a0c9110051}" FloatingTop="100" FloatingLeft="100" FloatingHeight="450" FloatingWidth="450"/>
+          </wm:WMFloatSite>
+        </WindowProfile>
+      </Design>
+    </Category></Category><Category name="Debugger" Category="{EEDBF29A-5C8B-4E01-827C-263382C18CFE}" Package="{C9DD4A57-47FB-11D2-83E7-00C04F9902C1}" RegisteredName="Debugger" PackageName="Visual Studio Debugger"><PropertyValue name="ConfirmDeleteAllBreakpoints">1</PropertyValue><PropertyValue name="StopAllProcesses">1</PropertyValue><PropertyValue name="StopOnExceptionCrossingManagedBoundary">0</PropertyValue><PropertyValue name="EnableAddressLevelDebugging">1</PropertyValue><PropertyValue name="ShowDisassemblyWhenNoSource">0</PropertyValue><PropertyValue name="EnableBreakpointConstraints">1</PropertyValue><PropertyValue name="UseExceptionHelper">1</PropertyValue><PropertyValue name="AutoUnwindOnException">1</PropertyValue><PropertyValue name="JustMyCode">1</PropertyValue><PropertyValue name="ShowNonPublicMembers">0</PropertyValue><PropertyValue name="WarnIfNoUserCodeOnLaunch">1</PropertyValue><PropertyValue name="FrameworkSourceStepping">0</PropertyValue><PropertyValue name="WarnAboutSymbolCacheDuringRemoteManagedDebugging">1</PropertyValue><PropertyValue name="EnableStepFiltering">1</PropertyValue><PropertyValue name="WarnOnStepFilter">1</PropertyValue><PropertyValue name="AllowImplicitFuncEval">1</PropertyValue><PropertyValue name="AllowToString">1</PropertyValue><PropertyValue name="UseSourceServer">0</PropertyValue><PropertyValue name="ShowSourceServerDiagnostics">0</PropertyValue><PropertyValue name="AlwaysColorMarkerText">0</PropertyValue><PropertyValue name="UseDocumentChecksum">1</PropertyValue><PropertyValue name="OutputToImmediate">0</PropertyValue><PropertyValue name="ShowRawStructures">0</PropertyValue><PropertyValue name="DisableJITOptimization">0</PropertyValue><PropertyValue name="ShowNoSymbolsDialog">0</PropertyValue><PropertyValue name="ShowScriptDebuggingDisabledDialog">0</PropertyValue><PropertyValue name="EnableILInterpreterMinidump">0</PropertyValue><PropertyValue name="EnableILInterpreterLive">0</PropertyValue><PropertyValue name="HexDisplay">0</PropertyValue><PropertyValue name="HexInput">0</PropertyValue><PropertyValue name="MapClientBreakpoints">1</PropertyValue><PropertyValue name="AddUnmappedBreakpointAtMappedLocation">0</PropertyValue><PropertyValue name="StepIntoOnRestart">0</PropertyValue><PropertyValue name="ENCEnable">1</PropertyValue><PropertyValue name="ENCApplyChangesOnContinue">1</PropertyValue><PropertyValue name="ENCWelcome">0</PropertyValue><PropertyValue name="ENCStaleCodeWarning">1</PropertyValue><PropertyValue name="ENCPrecompile">0</PropertyValue><PropertyValue name="ENCRelink">0</PropertyValue><PropertyValue name="NOENCAllowEdits">1</PropertyValue><PropertyValue name="NOENCIgnore">0</PropertyValue><PropertyValue name="NOENCRebuild">0</PropertyValue><PropertyValue name="ENCEnableWhenRemoteDebugging">0</PropertyValue><PropertyValue name="ConfirmFoundFiles">0</PropertyValue><PropertyValue name="DisasmLineNumbers">0</PropertyValue><PropertyValue name="ModulesShowAll">0</PropertyValue><PropertyValue name="UseCodeSense">1</PropertyValue><PropertyValue name="DisasmFields">67577</PropertyValue><PropertyValue name="CallStackViewOptions">3604736</PropertyValue><PropertyValue name="ShowExternalCode">0</PropertyValue><PropertyValue name="SourceStepUnit">0</PropertyValue><PropertyValue name="DisasmStepUnit">2</PropertyValue><PropertyValue name="CrossThreadCallStack">1</PropertyValue><PropertyValue name="ShowOnlyFlaggedThreads">0</PropertyValue><PropertyValue name="ConcurrencySupport">1</PropertyValue><PropertyValue name="GuessAtThreadNames">1</PropertyValue><PropertyValue name="ShowOtherThreadIpMarkers">0</PropertyValue><PropertyValue name="ShowThreadCategory">1</PropertyValue><PropertyValue name="SaveRemoteDumps">1</PropertyValue><PropertyValue name="LongEvalTimeout">10000</PropertyValue><PropertyValue name="NormalEvalTimeout">1500</PropertyValue><PropertyValue name="QuickwatchTimeout">1500</PropertyValue><PropertyValue name="DataTipTimeout">1500</PropertyValue><PropertyValue name="AutosReturnValsTimeout">1000</PropertyValue><PropertyValue name="AutosRegistersTimeout">1000</PropertyValue><PropertyValue name="LocalsTimeout">1000</PropertyValue><PropertyValue name="RegistersTimeout">2000</PropertyValue><PropertyValue name="AddressExpressionTimeout">2000</PropertyValue><PropertyValue name="ScriptDocsTimeout">5000</PropertyValue><PropertyValue name="ImmediateWindowTimeout">10000</PropertyValue><PropertyValue name="SetValueTimeout">10000</PropertyValue><PropertyValue name="TreeGridRePaintTimer">250</PropertyValue><PropertyValue name="TreeGridBusyPaintTimer">1000</PropertyValue><PropertyValue name="ModulesWindowUpdateTimer">500</PropertyValue><PropertyValue name="TreeGridDelayOnEnterTimer">125</PropertyValue><PropertyValue name="DelayTreeGridPaintOnBreak">1</PropertyValue><PropertyValue name="ShowNonprintableCharsAsGlyphs">0</PropertyValue><PropertyValue name="ShowSystemProcesses">0</PropertyValue><PropertyValue name="ShowProcessesFromAllSessions">0</PropertyValue><PropertyValue name="EnhancedDataTips">1</PropertyValue><PropertyValue name="DataTipDismissalSensitivity">1</PropertyValue><PropertyValue name="DataTipKeyboardDismissal">0</PropertyValue><PropertyValue name="UserSpecifiedEngines">0</PropertyValue><PropertyValue name="OutputOnException">1</PropertyValue><PropertyValue name="OutputOnStepFilter">1</PropertyValue><PropertyValue name="OutputOnModuleLoad">1</PropertyValue><PropertyValue name="OutputOnModuleUnload">1</PropertyValue><PropertyValue name="OutputOnModuleSymbolSearch">1</PropertyValue><PropertyValue name="OutputOnProcessDestroy">1</PropertyValue><PropertyValue name="OutputOnThreadDestroy">1</PropertyValue><PropertyValue name="OutputOnOutputDebugString">1</PropertyValue><PropertyValue name="OutputOnDebuggerMessage">1</PropertyValue><PropertyValue name="VariableWindowIcons">1</PropertyValue><PropertyValue name="DisableAttachSecurityWarning">0</PropertyValue><PropertyValue name="LoadDllExports">0</PropertyValue><PropertyValue name="NativeRPC">0</PropertyValue><PropertyValue name="AllowSideEffectEval">0</PropertyValue><PropertyValue name="LoadSymbolsWhenSettingsChanged">1</PropertyValue><PropertyValue name="SymbolUseExcludeList">1</PropertyValue><PropertyValue name="SymbolsAlwaysLoadAdjacent">1</PropertyValue><PropertyValue name="DontForceCacheOnManualLoad">0</PropertyValue><PropertyValue name="SymbolUseMSSymbolServers">0</PropertyValue><PropertyValue name="AutoLoadFromSymbolPath">1</PropertyValue><PropertyValue name="OneClickEdit">0</PropertyValue><PropertyValue name="OfferArrayExpansion">0</PropertyValue><PropertyValue name="VariableWindowPromptOnLargeExpansion">1</PropertyValue><PropertyValue name="VariableWindowMaxSupportedChildren">1000000</PropertyValue><PropertyValue name="PromptToAddSourceToIgnoreList">0</PropertyValue><PropertyValue name="OwnerDrawDebugLocationToolbar">0</PropertyValue><PropertyValue name="EnableSelectedBreakpointHighlight">1</PropertyValue><PropertyValue name="DisableUniscribe">0</PropertyValue><PropertyValue name="ShowParallelStacksBottomUp">1</PropertyValue><PropertyValue name="ThreadsWindowGroupingColumn">2048</PropertyValue><PropertyValue name="ThreadsWindowVisibleColumns">253</PropertyValue><PropertyValue name="ThreadsWindowShowTipWhenCallStackExpanded">0</PropertyValue><PropertyValue name="AllowDesignModePinning">0</PropertyValue><PropertyValue name="CallStackParamToString">0</PropertyValue><PropertyValue name="CheckRDTForFilesFirst">1</PropertyValue><PropertyValue name="AllowSourceServerInPartialTrust">0</PropertyValue><PropertyValue name="ENCEnableCrossUser">0</PropertyValue><PropertyValue name="ENCEnableNative">1</PropertyValue><PropertyValue name="OpenNewFilesProvisionally">1</PropertyValue><PropertyValue name="ForceRealFuncEval">1</PropertyValue><PropertyValue name="ShowOnlyCurrentProcess">0</PropertyValue><PropertyValue name="GpuRaceHazardsAllowSame">0</PropertyValue><PropertyValue name="DisasmToolbarIsExpanded">0</PropertyValue><PropertyValue name="AlwaysRunUntrustedSourceServerCommands">0</PropertyValue><PropertyValue name="DebugEngineCompatibilityMode">0</PropertyValue><PropertyValue name="CallStackViewOptionsEx">1</PropertyValue><PropertyValue name="ManagedDebugEngineCompatibilityMode_Normal">0</PropertyValue><PropertyValue name="ManagedDebugEngineCompatibilityMode_ProductInstalled">1</PropertyValue><PropertyValue name="ManagedMemoryViewCollapseSmallObjects">0</PropertyValue><PropertyValue name="NativeDebugEngineCompatibilityMode">0</PropertyValue><PropertyValue name="ManagedMemoryViewHideUndeterminedTypes">1</PropertyValue><PropertyValue name="ManagedMemoryViewJustMyCode">1</PropertyValue><PropertyValue name="UseLegacyManagedEE">0</PropertyValue><PropertyValue name="ShowClrCustomVisualizerSecurityWarning">1</PropertyValue><PropertyValue name="EnableNativeDebugHeap">0</PropertyValue><PropertyValue name="EnableXamlVisualDiagnostics">1</PropertyValue><PropertyValue name="EnableXamlVisualDiagnosticsPreviewSelection">0</PropertyValue><PropertyValue name="EnableDiagnosticToolsWindow">1</PropertyValue><PropertyValue name="EnableIntelliTrace">1</PropertyValue><PropertyValue name="PerformanceTipsEnableSysTime">1</PropertyValue><PropertyValue name="TextVisualizerStringLimit">32768</PropertyValue><PropertyValue name="ExceptionDescriptionMessageLimit">8192</PropertyValue><PropertyValue name="UseNewExceptionHelper">1</PropertyValue><PropertyValue name="UseSourceLink">1</PropertyValue><PropertyValue name="EnableAspNetJavaScriptDebuggingOnLaunch">0</PropertyValue><PropertyValue name="EnableXamlVisualDiagnosticsInAppMenu">1</PropertyValue><PropertyValue name="EnableXamlVisualDiagnosticsEditAndContinue">1</PropertyValue><PropertyValue name="EnableIntelliTraceInstrumentation">0</PropertyValue><PropertyValue name="EnableRunToClick">1</PropertyValue><PropertyValue name="EnableEdgeDevToolsWWAOnLaunch">0</PropertyValue><PropertyValue name="EnableLegacyChromeJavaScriptDebuggerForASPNET">0</PropertyValue><PropertyValue name="UseGcmSourceLinkAuthFallback">0</PropertyValue><PropertyValue name="EnableLaunchChromeUnelevatedExperiment">0</PropertyValue><PropertyValue name="CallStackShowFrameType">0</PropertyValue><PropertyValue name="UseVBCSLegacyExpressionEvaluator">0</PropertyValue><PropertyValue name="EnableIntelliTraceSnapshot">0</PropertyValue><PropertyValue name="PromptIntelliTraceSnapshot">1</PropertyValue><PropertyValue name="EnableIntelliTraceSnapshotException">1</PropertyValue><PropertyValue name="MaxIntelliTraceSnapshotOnException">5</PropertyValue><PropertyValue name="DisableForegroundWindowSwitching">0</PropertyValue><PropertyValue name="WarnIfNoAspNetJavaScriptDebuggingOnLaunch">1</PropertyValue><PropertyValue name="DisableIntegratedConsole">0</PropertyValue><PropertyValue name="SourceServerExtractToDirectory"/><PropertyValue name="FrameworkSourceServerName">https://referencesource.microsoft.com/symbols</PropertyValue><PropertyValue name="PublicSymbolServerName"/><PropertyValue name="PublicSymbolServerName2">https://msdl.microsoft.com/download/symbols</PropertyValue><PropertyValue name="DefaultTracepointMessage"/><PropertyValue name="ProgramToDebugPath"/><PropertyValue name="AttachToProcessDefaultEngineList"/><PropertyValue name="SecureSourceLocalDirectory"/><PropertyValue name="SymbolPath"/><PropertyValue name="SymbolPathState"/><PropertyValue name="SymbolCacheDir"/><PropertyValue name="SymbolIncludeList"/><PropertyValue name="SymbolIncludeListState"/><PropertyValue name="SymbolExcludeList"/><PropertyValue name="SymbolExcludeListState"/></Category><Category name="SQL_Editor" Category="{7d092b67-f9b8-4de4-a60e-298bada6f735}" Package="{cd5a6b66-0d89-4949-b356-361cf0d74372}" RegisteredName="SQL_Editor" PackageName="RadLangSvc.Package, RadLangSvc, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+    <PropertyValue name="AutoOutlining">True</PropertyValue>
+    <PropertyValue name="EnableIntellisense">True</PropertyValue>
+    <PropertyValue name="MaxScriptSize">1048576</PropertyValue>
+    <PropertyValue name="TextCasing">0</PropertyValue>
+    <PropertyValue name="UnderlineErrors">True</PropertyValue>
+  </Category><Category name="WindowsFormsDesigner_General" Category="{de03177c-918d-40af-8c17-c9d63670c175}" Package="{7b5d447b-0b12-41ea-a84e-c822034422d4}" RegisteredName="WindowsFormsDesigner_General" PackageName="Windows Forms Designer Resources Package">
+    <PropertyValue name="AutoToolboxPopulate">True</PropertyValue>
+    <PropertyValue name="EnableInSituEditing">True</PropertyValue>
+    <PropertyValue name="EnableRefactoringOnRename">True</PropertyValue>
+    <PropertyValue name="GridSize">8, 8</PropertyValue>
+    <PropertyValue name="LayoutMode">SnapLines</PropertyValue>
+    <PropertyValue name="ObjectBoundSmartTagAutoShow">True</PropertyValue>
+    <PropertyValue name="ShowGrid">True</PropertyValue>
+    <PropertyValue name="SnapToGrid">True</PropertyValue>
+    <PropertyValue name="UseOptimizedCodeGeneration">True</PropertyValue>
+  </Category><Category name="XmlEditor" Category="{4E1CDE49-B840-4826-8CC6-8FB80D7EF455}" Package="{87569308-4813-40a0-9cd0-d7a30838ca3f}" RegisteredName="XmlEditor" PackageName="Visual Studio XML Editor Package">
+    <PropertyValue name="AttributeFormatting">None</PropertyValue>
+    <PropertyValue name="AutoDownload">False</PropertyValue>
+    <PropertyValue name="AutoInsertAttributeQuotes">True</PropertyValue>
+    <PropertyValue name="AutoInsertEndTags">True</PropertyValue>
+    <PropertyValue name="AutoInsertNamespaceDeclarations">True</PropertyValue>
+    <PropertyValue name="AutoInsertOther">True</PropertyValue>
+    <PropertyValue name="AutoOutlining">True</PropertyValue>
+    <PropertyValue name="AutoReformatOnEndTag">True</PropertyValue>
+    <PropertyValue name="AutoReformatOnPaste">True</PropertyValue>
+    <PropertyValue name="FormatMixedContentByDefault">True</PropertyValue>
+    <PropertyValue name="SchemaCacheLocation">%VsInstallDir%\xml\Schemas</PropertyValue>
+  </Category></UserSettings>
