@@ -61,37 +61,38 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 
 
 **Great thanks to**:
- - Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
- - Slava Murygin ([b](http://slavasql.blogspot.ru/))
- - Mike Milligan ([b](http://www.bidn.com/Blogs/userid/43/author/mike-milligan))
- - Kenneth Fisher ([b](https://twitter.com/sqlstudent144) | [t](https://twitter.com/sqlstudent144))
- - William Durkin ([b](http://www.williamdurkin.com/) | [t](https://twitter.com/sql_williamd))
- - John Morehouse ([b](http://sqlrus.com/) | [t](http://twitter.com/sqlrus))
- - Phil Factor ([b](https://www.red-gate.com/simple-talk/author/phil-factor/) | [t](https://twitter.com/phil_factor))
- - Klaus Aschenbrenner ([b](https://www.sqlpassion.at/) | [t](https://twitter.com/Aschenbrenner))
- - Latish Sehgal ([b](http://www.dotnetsurfers.com/))
- - Arvind Shyamsundar ([b](https://blogs.msdn.microsoft.com/arvindsh/))
- - [SQLMatters](http://www.sqlmatters.com/)
- - [MSSQLTips](https://www.mssqltips.com/)
- - Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
- - Andy Mallon ([b](http://www.am2.co/) | [t](https://twitter.com/AMtwo))
- - Aaron Bertrand ([b](http://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
- - Daniel Calbimonte ([b](https://www.sqlshack.com/author/daniel-calbimonte/) | [t](https://twitter.com/dcalbimonte))
- - Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
- - Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
- - Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
- - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
- - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
- - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
- - Solomon Rutzky ([b](https://sqlquantumleap.com) | [t](https://twitter.com/srutzky))
- - Michelle Haarhues ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/mhaarhues))
- - Christian Wade ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/_christianWade))
- - Kellyn Pot’Vin-Gorman ([b](https://dbakevlar.com/) | [t](https://twitter.com/DBAKevlar))
- - Kevin Feasel ([b](https://36chambers.wordpress.com) | [t](https://twitter.com/feaselkl))
+- Kendra Little ([b](http://www.littlekendra.com/) | [t](https://twitter.com/Kendra_Little))
+- Slava Murygin ([b](http://slavasql.blogspot.ru/))
+- Mike Milligan ([b](http://www.bidn.com/Blogs/userid/43/author/mike-milligan))
+- Kenneth Fisher ([b](https://twitter.com/sqlstudent144) | [t](https://twitter.com/sqlstudent144))
+- William Durkin ([b](http://www.williamdurkin.com/) | [t](https://twitter.com/sql_williamd))
+- John Morehouse ([b](http://sqlrus.com/) | [t](http://twitter.com/sqlrus))
+- Phil Factor ([b](https://www.red-gate.com/simple-talk/author/phil-factor/) | [t](https://twitter.com/phil_factor))
+- Klaus Aschenbrenner ([b](https://www.sqlpassion.at/) | [t](https://twitter.com/Aschenbrenner))
+- Latish Sehgal ([b](http://www.dotnetsurfers.com/))
+- Arvind Shyamsundar ([b](https://blogs.msdn.microsoft.com/arvindsh/))
+- [SQLMatters](http://www.sqlmatters.com/)
+- [MSSQLTips](https://www.mssqltips.com/)
+- Anthony Zanevsky, Andrew Zanevsky and Katrin Zanevsky
+- Andy Mallon ([b](http://www.am2.co/) | [t](https://twitter.com/AMtwo))
+- Aaron Bertrand ([b](http://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
+- Daniel Calbimonte ([b](https://www.sqlshack.com/author/daniel-calbimonte/) | [t](https://twitter.com/dcalbimonte))
+- Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
+- Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
+- Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
+- Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
+- Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
+- Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
+- Solomon Rutzky ([b](https://sqlquantumleap.com) | [t](https://twitter.com/srutzky))
+- Michelle Haarhues ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/mhaarhues))
+- Christian Wade ([b](https://witsociety.wordpress.com/) | [t](https://twitter.com/_christianWade))
+- Kellyn Pot’Vin-Gorman ([b](https://dbakevlar.com/) | [t](https://twitter.com/DBAKevlar))
+- Kevin Feasel ([b](https://36chambers.wordpress.com) | [t](https://twitter.com/feaselkl))
+- Brent Ozar ([b](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
 
 
 <a id="1"></a>
-## Import and Export Settings
+## 1. Import and Export Settings
 `Tools > Options > Environment > Import and Export Settings`
 
 Default settings (if you need to compare with yours) you can find here: [SSMS settings files](https://github.com/ktaranov/sqlserver-kit/tree/master/SSMS/SSMS_vssettings)
@@ -106,8 +107,8 @@ Detailed information you can find in this article [Symbolic Links for Sharing Te
 
 
 <a id="2"></a>
-## SSMS Shortcuts
-All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md)
+## 2. SSMS Shortcuts
+All shortcuts you can find [here](https://github.com/ktaranov/sqlserver-kit/blob/master/SSMS/SSMS_Shortcuts.md).
 Known problem for SSMS 2012 and 2014: [CTRL+R does not hide the Query Result window in SSMS]
 
 Create custom shortcut as simple as possible:
@@ -146,7 +147,7 @@ Most useful are:
 
 
 <a id="3"></a>
-## Keyboard Shortcuts for Favorite Stored Procedures and Scripts
+## 3. Keyboard Shortcuts for Favorite Stored Procedures and Scripts
 A query shortcut allows you to execute code simply by hitting <kbd>Ctrl</kbd> and a number key. Cool. But first, there are a few things to know about query shortcuts:
 
 1. The window in SSMS where you configure the query shortcuts has the text field for the shortcut labeled as **Stored Procedure**, which is misleading because you can specify a query. You can even specify multiple queries.
@@ -163,7 +164,7 @@ For another 9 shortcuts my recommendation awesome open source Brent Ozar teams p
 | Query Shortcut          | Stored Procedure     |
 |-------------------------|----------------------|
 | <kbd>Alt + F1</kbd>     | [sp_help]            |
-| <kbd>Ctrl + F1</kbd>    | [sp_WhoIsActive]     |
+| <kbd>Ctrl + F1</kbd>    | [`sp_WhoIsActive`]   |
 | <kbd>Ctrl + 1</kbd>     | [sp_who]             |
 | <kbd>Ctrl + 2</kbd>     | [sp_lock]            |
 | <kbd>Ctrl + 3</kbd>     | [sp_Blitz]           |
@@ -182,7 +183,7 @@ Also recommended:
 [sp_help]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-help-transact-sql
 [sp_who]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-who-transact-sql
 [sp_lock]:https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-lock-transact-sql
-[sp_WhoIsActive]:http://whoisactive.com
+[`sp_WhoIsActive`]:http://whoisactive.com
 [sp_Blitz]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_Blitz.sql
 [sp_BlitzBackups]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzBackups.sql
 [sp_BlitzCache]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_BlitzCache.sql
@@ -196,43 +197,50 @@ Also recommended:
 [sp_foreachdb]:https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit/blob/dev/sp_foreachdb.sql
 [usp_BulkUpload]:https://github.com/ktaranov/sqlserver-kit/blob/master/Stored_Procedure/usp_BulkUpload.sql
 
-### Some useful shortcuts for `sp_WhoIsActive from Kevin Feasel
-More details [here](https://36chambers.wordpress.com/2019/04/02/whoisactive-in-ssms/)
+### Some useful shortcuts for `sp_WhoIsActive` from Kevin Feasel
+More details [here](https://36chambers.wordpress.com/2019/04/02/whoisactive-in-ssms/).
 
 What’s Going On shortcut?
-`EXEC sp_whoisactive @get_full_inner_text = 1, @get_outer_command = 1, @find_block_leaders = 1, @get_task_info = 2, @get_transaction_info = 1, @get_plans = 0, @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]', @sort_order = '[session_id]';`
+```tsql
+EXEC sp_whoisactive
+    @get_full_inner_text = 1
+  , @get_outer_command = 1
+  , @find_block_leaders = 1
+  , @get_task_info = 2
+  , @get_transaction_info = 1
+  , @get_plans = 0
+  , @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]'
+  , @sort_order = '[session_id]';
+```
 
 And here it is in a little bit nicer of a format so we can cover it:
-```sql
+```tsql
 EXEC sp_whoisactive
-    @get_full_inner_text = 1,
-    @get_outer_command = 1,
-    @find_block_leaders = 1,
-    @get_task_info = 2,
-    @get_transaction_info = 1,
-    @get_plans = 0,
-    @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]',
-    @sort_order = '[session_id]';
+    @get_full_inner_text = 1
+   , @get_outer_command = 1
+   , @find_block_leaders = 1
+   , @get_task_info = 2
+   , @get_transaction_info = 1
+   , @get_plans = 0
+   , @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]'
+   , @sort_order = '[session_id]';
 ```
 
 When you need to get execution plans, that’s when I break out Ctrl+4. Here is the one-liner:
-`EXEC sp_whoisactive @get_full_inner_text = 1, @get_outer_command = 1, @find_block_leaders = 1, @get_task_info = 2, @get_transaction_info = 1, @get_plans = 1, @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]', @sort_order = '[session_id]';`
-
-Formatted:
-```
+```tsql
 EXEC sp_whoisactive
-    @get_full_inner_text = 1,
-    @get_outer_command = 1,
-    @find_block_leaders = 1,
-    @get_task_info = 2,
-    @get_transaction_info = 1,
-    @get_plans = 1,
-    @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]',
-    @sort_order = '[session_id]';
+    @get_full_inner_text = 1
+   , @get_outer_command = 1
+   , @find_block_leaders = 1
+   , @get_task_info = 2
+   , @get_transaction_info = 1
+   , @get_plans = 1
+   , @output_column_list = '[session_id][login_name][dd%][CPU][reads][writes][wait_info][blocking_session_id][blocked_session_count][sql_text][sql_command][status][tempdb_%][%]'
+   , @sort_order = '[session_id]';
 ```
 
 <a id="4"></a>
-## SSMS Scripting Option
+## 4. SSMS Scripting Option
 
 ### Script any object with data
 `Right click on database name > Tasks > Generate Scripts …`
@@ -252,7 +260,7 @@ More details here: [What’s new in SQL Server Management Studio 17.2; Authentic
 
 
 <a id="5"></a>
-## Selecting a block of text using the ALT Key
+## 5. Selecting a block of text using the ALT Key
 By holding down the ALT key as you select a block of text you can control the width of the selection region as well as the number of rows.
 Also you can activate multi line mode with `Shift + Alt` keys and using keyboard arrows to format multi line code.
 
@@ -264,7 +272,7 @@ More info and video about this awesome feature in this article: [My Favorite SSM
 
 
 <a id="6"></a>
-## Script Table and Column Names by Dragging from Object Explorer
+## 6. Script Table and Column Names by Dragging from Object Explorer
 Save keystrokes by dragging
 Drag the `Columns` folder for a table in to auto-type all column names in the table in a single line.
  - Warning: this doesn’t include square [brackets] around the column names for SSMS below 17 version, so if your columns contain spaces or special characters at the beginning, this shortcut isn’t for you
@@ -272,7 +280,7 @@ Drag the `Columns` folder for a table in to auto-type all column names in the ta
 
 
 <a id="7"></a>
-## Disable Copy of Empty Text
+## 7. Disable Copy of Empty Text
 
  - Select a block of text to copy;
  - Move the cursor the place where you want to paste the code;
@@ -285,7 +293,7 @@ This behavior can be disabled in SSMS: go to `Tools > Options > Text Editor > Al
 
 
 <a id="8"></a>
-## Client Statistics
+## 8. Client Statistics
 When you enable that option for your session (`Ctrl + Alt + S`), SQL Server Management Studio will give you more information about the client side processing of your query.
 
 The Network Statistics shows you the following information:
@@ -302,7 +310,7 @@ The Time Statistics additionally shows you the following information:
 
 
 <a id="9"></a>
-## Configure Object Explorer to Script Compression and Partition Schemes for Indexes
+## 9. Configure Object Explorer to Script Compression and Partition Schemes for Indexes
 Is this index compressed or partitioned?
 
 By default, you wouldn’t know just by scripting out the index from Object Explorer. If you script out indexes this way to check them into source code, or to tweak the definition slightly, this can lead you to make mistakes.
@@ -316,7 +324,7 @@ You can make sure you’re aware when indexes have compression or are partitione
 
 
 <a id="10"></a>
-## Using GO X to Execute a Batch or Statement Multiple Times
+## 10. Using GO X to Execute a Batch or Statement Multiple Times
 The `GO` command marks the end of a batch of statements that should be sent to SQL Server for processing, and then compiled into a single execution plan. 
 By specifying a number after the `GO` the batch can be run specified number of times. This can be useful if, for instance, you want to create test data by running an insert statement a number of times. Note that this is not a Transact SQL statement and will only work in Management Studio (and also SQLCMD or OSQL). For instance the following SQL can be run in SSMS :
 
@@ -340,7 +348,7 @@ In this case this is a simpler alternative than creating a cursor or while loop.
 
 
 <a id="11"></a>
-## SSMS Template Replacement
+## 11. SSMS Template Replacement
 One under-used feature of Management Studio is the template replacement feature. SSMS comes with a library of templates, but you can also make your own templates for reusable scripts.
 
 In your saved .sql script, just use the magic incantation to denote the parameters for replacement. The format is simple: `<label, datatype, default value>`
@@ -349,7 +357,7 @@ Then, when you open the `.sql` script, you hit `CTRL + Shift + M`, and SSMS will
 
 
 <a id="12"></a>
-## Color coding of connections
+## 12. Color coding of connections
 SQL Server Management Studio has the capability of coloring the bar at the bottom of each query window, with the color dependent on which server is connected.
 This can be useful in order to provide a visual check of the server that a query is to be run against, for instance to color code production instances as red, development as green and amber as test.
 This can also be used in conjunction with Registered Servers and CMS (Central Management Server).
@@ -358,7 +366,7 @@ Select the check box towards the bottom of the window and use the ‘Select…�
 
 
 <a id="13"></a>
-## SQLCMD mode
+## 13. SQLCMD mode
 Switching on SQLCMD mode enables a number of useful extra scripting style commands in SSMS.
 In particular you can use it to change to the connection credentials within the query window, so that you can run a query against multiple servers from the same query window.
 There are more details of how to do this here: [Changing the SQL Server connection within an SSMS Query Windows using SQLCMD Mode](http://www.sqlmatters.com/Articles/Changing%20the%20SQL%20Server%20connection%20within%20an%20SSMS%20Query%20Windows%20using%20SQLCMD%20Mode.aspx)
@@ -371,18 +379,18 @@ Also some great tips from Louis Davidson article: [Using SQLCMD, End Execution o
 
 
 <a id="14"></a>
-## Script multiple objects using the Object Explorer Details Windows
+## 14. Script multiple objects using the Object Explorer Details Windows
 Individual database objects, such as a table or stored procedure, can be scripted within SSMS by right clicking on the object within Object Explorer and selecting the appropriate item in the drop down menu.
 However if you have a lot of objects to script that can quickly become time consuming.
 Fortunately it’s possible to select multiple objects and script them up all together in a single query window.
 To do this just open the Object Explorer Details window from the View menu (or press the F7 key).
 If you want to script up multiple (or all) tables, select the Tables item under the relevant database in Object Explorer.
 A list of all tables appears in the Object Explorer Details window.
-Select the tables you want to script (using the Control key if necessary) and then right click and select which script option you want – e.g. to create a table create script for all tables
+Select the tables you want to script (using the Control key if necessary) and then right click and select which script option you want – e.g. to create a table create script for all tables.
 
 
 <a id="15"></a>
-## Registered Servers / Central Management Server
+## 15. Registered Servers / Central Management Server
 If you have a lot of servers then re-entering the details in Object Explorer every time you start SSMS can be frustrating and time consuming.
 Fortunately there are two facilities within SSMS that enable these details to be entered just once and "remembered" each time you open up SSMS.
 These two facilities are **Registered Servers** and **Central Management Servers**.
@@ -400,7 +408,7 @@ A significant limitation with CMS is that the CMS server itself can’t be inclu
 
 
 <a id="16"></a>
-## Splitting the Query Window and Annotations and Map Mode for Vertical Scroll Bar
+## 16. Splitting the Query Window and Annotations and Map Mode for Vertical Scroll Bar
 The query window in SSMS can be split into two so that you can look at two parts of the same query simultaneously.
 Both parts of the split window can be scrolled independently. This is especially useful if you have a large query and want to compare different areas of the same query.
 To split the window simply drag the bar to the top right hand side of the window as shown below.
@@ -423,14 +431,14 @@ There are four types of annotations, the first three of which are shown in their
 
 
 <a id="17"></a>
-## Moving columns in the results pane
+## 17. Moving columns in the results pane
 It may not be immediately obvious but you can switch columns around in the results pane when using the grid view, by dragging the column headers and dropping them next to another column header.
 This can be useful if you want to rearrange how the results are displayed without amending the query, especially if you have a lot of columns in your result set.
 This works only for one column.
 
 
 <a id="18"></a>
-## Generating Charts and Drawings in SQL Server Management Studio
+## 18. Generating Charts and Drawings in SQL Server Management Studio
 You don't have to settle for T-SQL's monochrome text output. These stored procedures let you quickly and easily turn your SELECT queries' output into colorized charts and even computer-generated art.
 To turn your own data into a line, column, area, or bar chart using the Chart stored procedure, you need to design a SELECT query that serves as the first parameter in the stored procedure call.
 
@@ -440,7 +448,7 @@ Also you can generate amazing chart using awesome R libraries, detailed article:
 
 
 <a id="19"></a>
-## Additional Connection Parameters
+## 19. Additional Connection Parameters
 One such change SSMS got for free is the connection resiliency logic within the `SqlConnection.Open()` method.
 To improve the default experience for clients which connect to Azure SQL Database, the above method will (in the case of initial connection errors / timeouts) now retry 1 time after sleeping for 10 seconds. These numbers are configurable by properties called ConnectRetryCount (default value 1) and ConnectRetryInterval (default value 10 seconds.)
 The previous versions of the SqlConnection class would not automatically retry in cases of connection failure.
@@ -454,14 +462,14 @@ ConnectRetryCount=0
 
 
 <a id="20"></a>
-## Working with tabs headers
+## 20. Working with tabs headers
 You can view [SPID](https://docs.microsoft.com/en-us/sql/t-sql/functions/spid-transact-sql) in tabs header, quickly open script containing folder or copy script file path.
 
 ![Working with tabs headers](/SSMS/SSMS_Tips/working_with_tabs_headers.png)
 
 
 <a id="21"></a>
-## Hiding tables in SSMS Object Explorer
+## 21. Hiding tables in SSMS Object Explorer
 1. You can actually hide an object from object explorer by assigning a specific extended property:
 ```
 EXEC sp_addextendedproperty
@@ -494,14 +502,14 @@ In the case of SPs the code, same with Views and in the case of Tables it’s th
 
 
 <a id="22"></a>
-## UnDock Tabs and Windows for Multi Monitor Support
+## 22. UnDock Tabs and Windows for Multi Monitor Support
 From SSMS 2012 and onwards, you can easily dock/undock the query tabs as well as different object windows inside SSMS to make better use of the screen real estate and multiple monitors you have.
 
 ![UnDock Tabs and Windows for Multi Monitor Support](/SSMS/SSMS_Tips/undock_tabs_and_windows_for_multi_monitor_support.gif)
 
 
 <a id="23"></a>
-## RegEx-Based Finding and Replacing of Text in SSMS
+## 23. RegEx-Based Finding and Replacing of Text in SSMS
 So often, one sees developers doing repetitive coding in SSMS or Visual Studio that would be much quicker and easier by using the built-in Regular-Expression-based Find/Replace functionality.
 It is understandable, since the syntax is odd and some features are missing, but it is still well-worth knowing about.
 
@@ -511,7 +519,7 @@ My favorite regex: replace `\t` on `\n, `. It useful in many cases when you have
 
 
 <a id="24"></a>
-## Changing what SSMS opens on startup
+## 24. Changing what SSMS opens on startup
 The more interesting way to look at this shortcut is to check the various options available with SSMS command line parameters.
 To check them, use the following command:
 ```
@@ -548,7 +556,7 @@ This is the complete text of shortcut properties:
 
 
 <a id="25"></a>
-## Modifying New Query Template
+## 25. Modifying New Query Template
 You can modified New Query template for any instance SQL Server:
 ```
 C:\Program Files (x86)\Microsoft SQL Server\[140|130|120|110]\Tools\Binn\ ManagementStudio\SqlWorkbenchProjectItems\Sql\SQLFile.sql
@@ -567,7 +575,7 @@ Thanks for this tip Aaron Bertrand: [T-SQL Tuesday #92: Lessons Learned the Hard
 
 
 <a id="26"></a>
-## Query Execution Options
+## 26. Query Execution Options
 More detailed article here: [Knowing the Options]
 
 The options represent the SET values of the current session.
@@ -653,7 +661,7 @@ SELECT 'XACT_ABORT'              AS 'Option', CASE @@options & 16384 WHEN 0 THEN
 
 
 <a id="27"></a>
-## SQL Server Diagnostics Extension
+## 27. SQL Server Diagnostics Extension
 
 Analyze Dumps – Customers using this extension will be able to debug and self-resolve memory dump issues from their SQL Server instances and receive recommended Knowledge Base (KB) article(s) from Microsoft, which may be applicable for the fix.
 The memory dumps are stored in a secured and compliant manner as governed by the [Microsoft Privacy Policy](https://privacy.microsoft.com/en-us/privacystatement).
@@ -667,7 +675,7 @@ More details here: [SQL Server Diagnostics Extension for SSMS] and [SQL Server D
 
 
 <a id="28"></a>
-## Connect to SQL Servers in another domain using Windows Authentication
+## 28. Connect to SQL Servers in another domain using Windows Authentication
 You may find that you need to connect remotely to a SQL Server that is in another domain.
 This is a problem when SQL authentication is not an option, because Windows machine is in its own domain; Management Studio cannot directly override the local Windows credentials and pass the credentials for a remote domain user.
 
@@ -703,7 +711,7 @@ More details here: [Connect to SQL Servers in another domain using Windows Authe
 
 
 <a id="29"></a>
-## SSMS Default Reports
+## 29. SSMS Default Reports
 By right-clicking on the SQL Server instance and navigating to `Reports > Standard Reports`, you can see the predefined SSMS reports:
 
 ![SSMS_Server_Default_Reports](/SSMS/SSMS_Tips/29_SSMS_Server_Default_Reports.png)
@@ -717,7 +725,7 @@ Useful another reports information:
 
 
 <a id="30"></a>
-## Live Query Statistics
+## 30. Live Query Statistics
 SQL Server Management Studio provides the ability to view the live execution plan of an active query.
 This live query plan provides real-time insights into the query execution process as the controls flow from one query plan operator to another.
 The live query plan displays the overall query progress and operator-level run-time execution statistics such as the number of rows produced, elapsed time, operator progress, etc.
@@ -732,14 +740,14 @@ This feature can be used with the [Transact-SQL Debugger](https://docs.microsoft
 
 
 <a id="31"></a>
-## Searching in Showplan
+## 31. Searching in Showplan
 In SSMS 17.2, appear the ability to search table name, index name or column name and more in graphical showplan.
  just use `CTRL+F` to start a search in graphical showplan (or right-click on a blank area of the plan, and in the context menu click on Find Node option), and you can quickly see exactly where node id 30 is.
 More details here: [New in SSMS: Searching in Showplan]
 
 
 <a id="32"></a>
-## Object Explore Details
+## 32. Object Explore Details
 To bring up the Object Explorer Details pane, use the `F7` shortcut or it can be accessed from `Toolbar -> View -> Object -> Explorer Details`.
 
 ![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/32_object_explore_details_01.png)
@@ -754,19 +762,19 @@ This tells SQL Server Management Studio to display all the objects that have the
 
 
 <a id="33"></a>
-## Working with Azure SQL
+## 33. Working with Azure SQL
 For SSMS 17.2 and above you can enable Multi-Factor Authentication in Azure SQL Database, more details here:
 [Configure Multi-Factor Authentication in Azure SQL Database]
 
 
 <a id="34"></a>
-## Using Extended Events and Profiler in SSMS
+## 34. Using Extended Events and Profiler in SSMS
 
 Full instruction here: [EXTENDED EVENTS AND PROFILER: XE PROFILER]
 
 
 <a id="35"></a>
-## Vulnerability Assessment in SSMS
+## 35. Vulnerability Assessment in SSMS
 You will need version 17.4 for the Vulnerability Assessment feature. Right-click to any database to start a scan.
 
 ![SSMS_Database_Default_Reports](/SSMS/SSMS_Tips/SQL_Vulnerability_Assessment.gif)
@@ -783,7 +791,7 @@ More info here: [SQL Vulnerability Assessment Available in SSMS] and [Vulnerabil
 
 
 <a id="36"></a>
-## Import Flat File to SQL Wizard
+## 36. Import Flat File to SQL Wizard
 You will need version 17.3 or later.
 
 Detailed article here: [Import Flat File to SQL Wizard]
@@ -796,7 +804,7 @@ PROSE analyzes data patterns in your input file to infer column names, types, de
 
 
 <a id="37"></a>
-## AutoRecover in SSMS
+## 37. AutoRecover in SSMS
 With the default settings, you can lose up to 5 minutes of work on a sudden reboot.
 The recovered information will be kept for 7 days so there is some time to get your files. 
 These settings can be modified, changing how often auto recover happens and how long the information is retained.
@@ -805,13 +813,13 @@ This feature can be turned off but it is not recommended.
 
 To change the settings, go to: `Tools -> Options -> Environment -> AutoRecover`.
 
-More details [here](https://witsociety.wordpress.com/2019/04/11/autorecover-in-ssms/)
+More details [here](https://witsociety.wordpress.com/2019/04/11/autorecover-in-ssms/).
 
 ![AutoRecover in SSMS](/SSMS/SSMS_Tips/AutoRecover_in_SSMS.png)
 
 
 <a id="38"></a>
-## View and query Power BI .pbix files in SSMS
+## 38. View and query Power BI .pbix files in SSMS
 All Power BI files end with `.pbix`. 
 You can make a copy of the file, (because DBA always like to work from copies vs. the originals) then rename the file from `.pbix` to `.zip`.
 You can then unzip the file and see the base components that make up a Power BI report and visuals:
@@ -831,21 +839,21 @@ You will connect to the trimmed down Analysis Server behind the PBI Desktop repo
 
 ![Using SSMS with PowerBI](/SSMS/SSMS_Tips/38_using_ssms_with_powerbi_02.jpg)
 
-More details [here](https://dbakevlar.com/2019/03/using-ssms-with-power-bi/)
+More details [here](https://dbakevlar.com/2019/03/using-ssms-with-power-bi/).
 
 
 <a id="39"></a>
-## Using SSMS and Profiler to analyze PowerBI with XMLA
+## 39. Using SSMS and Profiler to analyze PowerBI with XMLA
 SSMS can be used to, for example, view partitions generated by [incremental refresh](https://docs.microsoft.com/power-bi/service-premium-incremental-refresh). Version 18.0 RC1 or above is required.
 
 SQL Server Profiler can be used for tracing and debugging. SSMS 18.0 RC1 or above is required.
 
-More details [here](https://powerbi.microsoft.com/en-us/blog/power-bi-open-platform-connectivity-with-xmla-endpoints-public-preview/)
+More details [here](https://powerbi.microsoft.com/en-us/blog/power-bi-open-platform-connectivity-with-xmla-endpoints-public-preview/).
 
 <a id="reference"></a>
-Reference:
+## 40. Reference:
  - [Free Course: SQL Server Management Studio Shortcuts & Secrets](https://sqlworkbooks.com/course/sql-server-management-studio-shortcuts-secrets/) (by Kendra Little)
- - [SSMS Tips: Templates and Control+Shift+M] (by Kendra Little)
+ - [SSMS Tips: Templates and Control+Shift+M](http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/) (by Kendra Little)
  - [Fixing Hot-Key issue in SSMS in five steps](http://slavasql.blogspot.ru/2017/02/fixing-hot-key-issue-in-ssms-in-five.html) (by Slava Murygin)
  - [SSMS Tips and Tricks](http://www.ssmstipsandtricks.com/) (by Latish Sehgal)
  - [Do you need more than STATISTICS IO for Query Tuning?](https://www.sqlpassion.at/archive/2017/03/27/do-you-need-more-than-statistics-io-for-query-tuning/) (by Klaus Aschenbrenner)
@@ -875,7 +883,6 @@ Reference:
  - [SSMS Tips and Tricks free ebook](http://ssmsbook.sqldownunder.com) (by SDU Insiders)
 
 [Cycle through clipboard ring]:http://www.ssmstipsandtricks.com/blog/2014/05/05/cycle-through-clipboard-ring/
-[SSMS Tips: Templates and Control+Shift+M]:http://littlekendra.com/2016/08/09/ssms-tips-templates-and-controlshiftm/
 [Generating Charts and Drawings in SQL Server Management Studio]:http://sqlmag.com/t-sql/generating-charts-and-drawings-sql-server-management-studio
 [View R Plots from within SQL Server Management Studio]:http://www.sqlservercentral.com/articles/R+Services/156107/
 [RegEx-Based Finding and Replacing of Text in SSMS]:https://www.simple-talk.com/sql/sql-training/regex-based-finding-and-replacing-of-text-in-ssms/
