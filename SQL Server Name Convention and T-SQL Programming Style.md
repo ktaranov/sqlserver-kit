@@ -286,12 +286,13 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    More details [here](https://dba.stackexchange.com/a/253917/107045).
  - No square brackets `[]` and [reserved words](https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Check_Reserved_Words_For_Object_Names.sql) in object names and alias, use only Latin symbols **`[A-z]`** and numeric **`[0-9]`**.
  - Prefer [`ANSI`](http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip) syntax and functions ([`CAST`][10] instead [`CONVERT`][10], [`COALESE`](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/coalesce-transact-sql) instead [`ISNULL`](https://docs.microsoft.com/en-us/sql/t-sql/functions/isnull-transact-sql), etc.).
- - All finished expressions should have semicolon `;` at the end.
+ - <a id="semicolon"></a> All finished expressions should have semicolon `;` at the end.
    This is [`ANSI`] standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
    > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/), [here](https://www.brentozar.com/archive/2015/12/give-your-t-sql-a-semicolonoscopy/), and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
+   Also if you use `WITH CTE ` expression `;` is mandority.
  - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
@@ -540,14 +541,14 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
  - T-SQL code, triggers, stored procedures, functions, scripts, should have a standard comment-documentation banner:
 ```
 <documentation>
-  <summary>Get all databases meta data using dynamic T-SQL</summary>
-  <returns>1 data set: temp table #DatabaseInfo.</returns>
-  <issues>No</issues>
-  <author>Konstantin Taranov</author>
-  <created>2018-03-01</created>
-  <modified>2019-11-14 by Konstantin Taranov</modified>
-  <version>1.2</version>
-  <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Databases_Report.sql</sourceLink>
+    <summary>Get all databases meta data using dynamic T-SQL</summary>
+    <returns>1 data set: temp table #DatabaseInfo.</returns>
+    <issues>No</issues>
+    <author>Konstantin Taranov</author>
+    <created>2018-03-01</created>
+    <modified>2019-11-14 by Konstantin Taranov</modified>
+    <version>1.2</version>
+    <sourceLink>https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Databases_Report.sql</sourceLink>
 </documentation>
 ```
 
