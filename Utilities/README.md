@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **393** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **394** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {17}
@@ -418,6 +418,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Image To SQL](#image-to-sql)                                    | No                            | No        | [?]      | [Image To SQL]                                     | 2015-10-09 | MSSQL.TOOLS              |           | Yes            |  No   |
 | [dbdiagram](#dbdiagram)                                          | No                            | No        | [?]      | [dbdiagram]                                        | ?          | holistics.io             |           | Yes            | $9/mo |
 | [Beekeeper Studio](#beekeeper)                                   | MySQL,PostgreSQL,Other        | Linux,Mac | [MS]     | [Beekeeper Studio]                                 | 2020-11-21 | Beekeeper Studio         | [MIT]     | Yes            |  No   |
+| [Babelfish for Aurora PostgreSQL](#babelfish)                    | No                            | Online    | [?]      | [Babelfish for Aurora PostgreSQL]                  | 2020-12-01 | Amazon                   | [Apache]  | Open Source    |  No   |
 
 <a id="ssms"></a>
 ## SSMS
@@ -6158,6 +6159,18 @@ Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and m
 - Default dark theme
 
 
+## Babelfish for Aurora PostgreSQL
+<a id="babelfish"></a>
+Download page: [Babelfish for Aurora PostgreSQL]<br/>
+Release date: 2020-12-01<br/>
+Support Version: 2008-2019<br/>
+Author: Amazon<br/>
+Free version: Yes<br/>
+Price: No
+
+Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables Aurora to understand commands from applications written for Microsoft SQL Server.
+
+
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
 [bcp Utility]:https://docs.microsoft.com/sql/tools/bcp-utility
@@ -6552,6 +6565,7 @@ Modern and easy to use SQL client for MySQL, Postgres, SQLite, SQL Server, and m
 [Image To SQL]:http://mssql.tools/sql/Image-To-SQL
 [dbdiagram]:https://dbdiagram.io/home
 [Beekeeper Studio]:https://github.com/beekeeper-studio/beekeeper-studio
+[Babelfish for Aurora PostgreSQL]:https://aws.amazon.com/rds/aurora/babelfish/
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
