@@ -1,0 +1,9 @@
+https://www.dropbox.com/s/k1vauzxxhyh1fnb/SQL%20Server%202019%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/3ix2lqhry34c5wy/SQL%20Server%202017%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/pkpxihdkq3odgbj/SQL%20Server%202016%20SP2%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/w6gi8j76k64fgbg/SQL%20Server%202016%20SP1%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/uttp0843e5078vs/SQL%20Server%202014%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/3l4yotzedk45xeh/SQL%20Server%202012%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/fq6hyw899fe3crv/SQL%20Server%202008%20R2%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/mjxw1w9tgw7eo6g/SQL%20Server%202008%20Diagnostic%20Information%20Queries.sql?dl=1
+https://www.dropbox.com/s/3kkskuheyzauih9/SQL%20Server%202005%20Diagnostic%20Information%20Queries.sql?dl=1

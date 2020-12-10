@@ -1,7 +1,7 @@
+
 -- SQL Server 2016 SP2 Diagnostic Information Queries
 -- Glenn Berry 
--- Last Modified: September 1, 2020
--- Last Modified: September 13, 2020
+-- Last Modified: December 3, 2020
 -- https://glennsqlperformance.com/
 -- https://sqlserverperformance.wordpress.com/
 -- YouTube: https://bit.ly/2PkoAM1 
@@ -78,7 +78,7 @@ SELECT @@SERVERNAME AS [Server Name], @@VERSION AS [SQL Server and OS Version In
 -- 13.0.5698.0		SP2 CU12					2/25/2020		https://support.microsoft.com/en-us/help/4536648/cumulative-update-12-for-sql-server-2016-sp2
 -- 13.0.5820.21		SP2 CU13					5/38/2020		https://support.microsoft.com/en-us/help/4549825/cumulative-update-13-for-sql-server-2016-sp2
 -- 13.0.5830.85     SP2 CU14			         8/6/2020		https://support.microsoft.com/en-us/help/4564903/cumulative-update-14-for-sql-server-2016-sp2
-		
+-- 13.0.5850.14		SP2 CU15					9/28/2020		https://support.microsoft.com/en-us/help/4577775/cumulative-update-15-for-sql-server-2016-sp2	
 															
 
 -- How to determine the version, edition and update level of SQL Server and its components 
@@ -147,6 +147,7 @@ SERVERPROPERTY('IsHadrEnabled') AS [IsHadrEnabled],
 SERVERPROPERTY('HadrManagerStatus') AS [HadrManagerStatus],
 SERVERPROPERTY('InstanceDefaultDataPath') AS [InstanceDefaultDataPath],
 SERVERPROPERTY('InstanceDefaultLogPath') AS [InstanceDefaultLogPath],
+SERVERPROPERTY('ErrorLogFileName') AS [ErrorLogFileName],
 SERVERPROPERTY('BuildClrVersion') AS [Build CLR Version],
 SERVERPROPERTY('IsXTPSupported') AS [IsXTPSupported],
 SERVERPROPERTY('IsPolybaseInstalled') AS [IsPolybaseInstalled],				-- New for SQL Server 2016
@@ -210,7 +211,7 @@ DBCC TRACESTATUS (-1);
 --           This allows a database to become online and queries to be executed before the Query Store has been fully recovered 
 
 -- The behavior of TF 1117, 1118 are enabled for tempdb in SQL Server 2016 by default
--- SQL 2016  It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
+-- SQL 2016 – It Just Runs Faster: -T1117 and -T1118 changes for TEMPDB and user databases
 -- https://bit.ly/2lbNWxK           
 
 -- The behavior of TF 2371 is enabled by default in SQL Server 2016 and newer (in compat level 130 and higher)
@@ -455,7 +456,7 @@ ORDER BY ag.name, ar.replica_server_name, adc.[database_name] OPTION (RECOMPILE)
 
 -- You will see no results if your instance is not using AlwaysOn AGs
 
--- SQL Server 2016  It Just Runs Faster: Always On Availability Groups Turbocharged
+-- SQL Server 2016 – It Just Runs Faster: Always On Availability Groups Turbocharged
 -- https://bit.ly/2dn1H6r
 
 
@@ -755,9 +756,7 @@ db.is_auto_create_stats_on, db.is_auto_update_stats_on, db.is_auto_update_stats_
 db.snapshot_isolation_state_desc, db.is_read_committed_snapshot_on, db.is_auto_close_on, db.is_auto_shrink_on, 
 db.target_recovery_time_in_seconds, db.is_cdc_enabled, db.is_published, db.is_distributor,
 db.group_database_id, db.replica_id,db.is_memory_optimized_elevate_to_snapshot_on, 
-db.delayed_durability_desc, db.is_auto_create_stats_incremental_on,
-db.is_query_store_on, db.is_sync_with_backup, 
-db.is_supplemental_logging_enabled, db.is_remote_data_archive_enabled,
+db.delayed_durability_desc, db.is_query_store_on, db.is_sync_with_backup, db.is_remote_data_archive_enabled,
 db.is_encrypted, de.encryption_state, de.percent_complete, de.key_algorithm, de.key_length      
 FROM sys.databases AS db WITH (NOLOCK)
 INNER JOIN sys.dm_os_performance_counters AS lu WITH (NOLOCK)
@@ -771,6 +770,15 @@ AND ls.counter_name LIKE N'Log File(s) Size (KB)%'
 AND ls.cntr_value > 0 
 ORDER BY db.[name] OPTION (RECOMPILE);
 ------
+
+-- sys.databases (Transact-SQL)
+-- https://bit.ly/2G5wqaX
+
+-- sys.dm_os_performance_counters (Transact-SQL)
+-- https://bit.ly/3kEO2JR
+
+-- sys.dm_database_encryption_keys (Transact-SQL)
+-- https://bit.ly/3mE7kkx
 
 -- Things to look at:
 -- How many databases are on the instance?
@@ -814,7 +822,7 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Also look at avg_user_impact and avg_total_user_cost to help determine importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
--- Hkan Winther has given me some great suggestions for this query
+-- Håkan Winther has given me some great suggestions for this query
 
 -- SQL Server Index Design Guide
 -- https://bit.ly/2qtZr4N
@@ -1139,7 +1147,7 @@ AND counter_name = N'Page life expectancy' OPTION (RECOMPILE);
 -- Higher PLE is better. Watch the trend over time, not the absolute value
 -- This will only return one row for non-NUMA systems
 
--- Page Life Expectancy isnt what you think
+-- Page Life Expectancy isn’t what you think…
 -- https://bit.ly/2EgynLa
 
 
@@ -1622,7 +1630,7 @@ ORDER BY index_advantage DESC OPTION (RECOMPILE);
 -- Look at index advantage, last user seek time, number of user seeks to help determine source and importance
 -- SQL Server is overly eager to add included columns, so beware
 -- Do not just blindly add indexes that show up from this query!!!
--- Hkan Winther has given me some great suggestions for this query
+-- Håkan Winther has given me some great suggestions for this query
 
 
 -- Find missing index warnings for cached plans in the current database  (Query 66) (Missing Index Warnings)
@@ -1792,7 +1800,8 @@ ORDER BY ps.avg_fragmentation_in_percent DESC OPTION (RECOMPILE);
 
 
 --- Index Read/Write stats (all tables in current DB) ordered by Reads  (Query 73) (Overall Index Usage - Reads)
-SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.[name] AS [IndexName], i.index_id, 
+SELECT SCHEMA_NAME(t.[schema_id]) AS [SchemaName], OBJECT_NAME(i.[object_id]) AS [ObjectName], 
+       i.[name] AS [IndexName], i.index_id, 
        s.user_seeks, s.user_scans, s.user_lookups,
 	   s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
 	   s.user_updates AS [Writes],  
@@ -1803,6 +1812,8 @@ LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
 ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
+LEFT OUTER JOIN sys.tables AS t WITH (NOLOCK)
+ON t.[object_id] = i.[object_id]
 WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
 ORDER BY s.user_seeks + s.user_scans + s.user_lookups DESC OPTION (RECOMPILE); -- Order by reads
 ------
@@ -1811,7 +1822,8 @@ ORDER BY s.user_seeks + s.user_scans + s.user_lookups DESC OPTION (RECOMPILE); -
 
 
 --- Index Read/Write stats (all tables in current DB) ordered by Writes  (Query 74) (Overall Index Usage - Writes)
-SELECT OBJECT_NAME(i.[object_id]) AS [ObjectName], i.[name] AS [IndexName], i.index_id,
+SELECT SCHEMA_NAME(t.[schema_id]) AS [SchemaName],OBJECT_NAME(i.[object_id]) AS [ObjectName], 
+	   i.[name] AS [IndexName], i.index_id,
 	   s.user_updates AS [Writes], s.user_seeks + s.user_scans + s.user_lookups AS [Total Reads], 
 	   i.[type_desc] AS [Index Type], i.fill_factor AS [Fill Factor], i.has_filter, i.filter_definition,
 	   s.last_system_update, s.last_user_update
@@ -1820,6 +1832,8 @@ LEFT OUTER JOIN sys.dm_db_index_usage_stats AS s WITH (NOLOCK)
 ON i.[object_id] = s.[object_id]
 AND i.index_id = s.index_id
 AND s.database_id = DB_ID()
+LEFT OUTER JOIN sys.tables AS t WITH (NOLOCK)
+ON t.[object_id] = i.[object_id]
 WHERE OBJECTPROPERTY(i.[object_id],'IsUserTable') = 1
 ORDER BY s.user_updates DESC OPTION (RECOMPILE);						 -- Order by writes
 ------
@@ -1974,33 +1988,10 @@ ORDER BY bs.backup_finish_date DESC OPTION (RECOMPILE);
 -- https://bit.ly/28Rpb2x
 
 
--- These six Pluralsight Courses go into more detail about how to run these queries and interpret the results
-
--- Azure SQL Database: Diagnosing Performance Issues with DMVs
--- https://bit.ly/2meDRCN
-
--- SQL Server 2017: Diagnosing Performance Issues with DMVs
--- https://bit.ly/2FqCeti
-
--- SQL Server 2017: Diagnosing Configuration Issues with DMVs
--- https://bit.ly/2MSUDUL
-
--- SQL Server 2014 DMV Diagnostic Queries  Part 1 
--- https://bit.ly/2plxCer
-
--- SQL Server 2014 DMV Diagnostic Queries  Part 2
--- https://bit.ly/2IuJpzI
-
--- SQL Server 2014 DMV Diagnostic Queries  Part 3
--- https://bit.ly/2FIlCPb
-
-
-
 -- Microsoft Visual Studio Dev Essentials
 -- https://bit.ly/2qjNRxi
 
 -- Microsoft Azure Learn
 -- https://bit.ly/2O0Hacc
 
--- August 2017 blog series about upgrading and migrating to SQL Server 2016/2017
--- https://bit.ly/2ftKVrX
+
