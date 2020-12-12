@@ -1311,6 +1311,8 @@ Articles types:
 | [Optimizing memory settings in Analysis Services]                                                                       | Marco Russo                              | 2020-12-07 | [DBA]       |
 | [VMware and SQL Server Best Practices]                                                                                  | Mike Walsh                               | 2020-12-02 | [DBA]       |
 | [Autoparameterized Trivial Queries May Not Get Partition Elimination]                                                   | Brent Ozar                               | 2020-11-26 | [DBA][DEV]  |
+| [Trigram Wildcard String Search in SQL Server]                                                                          | Paul White                               | 2017-09-08 | [DBA][DEV]  |
+| [Which Locks Count Toward Lock Escalation?]                                                                             | Kendra Little                            | 2017-04-03 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2596,3 +2598,5 @@ Articles types:
 [Optimizing memory settings in Analysis Services]:https://www.sqlbi.com/articles/optimizing-memory-settings-in-analysis-services/
 [VMware and SQL Server Best Practices]:https://straightpathsql.com/archives/2020/12/vmware-and-sql-server-best-practices/
 [Autoparameterized Trivial Queries May Not Get Partition Elimination]:https://www.brentozar.com/archive/2020/12/autoparameterized-trivial-queries-may-not-get-partition-elimination/
+[Trigram Wildcard String Search in SQL Server]:https://sqlperformance.com/2017/09/sql-performance/sql-server-trigram-wildcard-search
+[Which Locks Count Toward Lock Escalation?]:https://littlekendra.com/2017/04/03/which-locks-count-toward-lock-escalation/
