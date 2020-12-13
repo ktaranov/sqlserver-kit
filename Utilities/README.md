@@ -1,5 +1,5 @@
 # Microsoft SQL Server Utilities and Tools
-Useful free and paid Microsoft SQL Server utilities and tools - complete list of **394** SQL Server Utilities
+Useful free and paid Microsoft SQL Server utilities and tools - complete list of **395** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
  - **[B]**: Backup solutions {17}
@@ -8,7 +8,7 @@ Utility types (main purpose), in braces `{}` current counts:
  - **[DA]**: Database Architecture {20}
  - **[DC]**: Data compare {15}
  - **[ETL]**: Extract Download Load (ETL) Tools {9}
- - **[I]**: Internal SQL Server utilities (for example, bcp) {14}
+ - **[I]**: Internal SQL Server utilities (for example, bcp) {15}
  - **[IDX]**: Index manager {3}
  - **[G]**: Data generation {4}
  - **[J]**: Job managers {4}
@@ -61,6 +61,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [sqlmaint Utility](#sqlmaint-utility)                            | No                            | No        | [I]      | [sqlmaint Utility]                                 | -          | Microsoft               |            | Yes            | No    |
 | [Ssms Utility](#ssms-utility)                                    | No                            | No        | [I]      | [Ssms Utility]                                     | -          | Microsoft               |            | Yes            | No    |
 | [dtexec Utility](#dtexec-utility)                                | No                            | No        | [I]      | [dtexec Utility]                                   | -          | Microsoft               |            | Yes            | No    |
+| [adutil Utility](#adutil-utility)                                | No                            | Linux     | [I]      | [adutil Utility]                                   | 2020-10-30 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2016 Report Builder](#report-builder-2016)           | No                            | No        | [?]      | [SQL Server 2016 Report Builder]                   | 2016-09-16 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2005 Best Practices Analyzer](#bpa-2005)             | No                            | No        | [?]      | [BPA 2005]                                         | 2008-08-13 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2000 Best Practices Analyzer](#bpa-2000)             | No                            | No        | [?]      | [BPA 2000]                                         | 2010-04-26 | Microsoft               |            | Yes            | No    |
@@ -937,6 +938,18 @@ Price: No
 The dtexec command prompt utility is used to configure and execute SQL Server Integration Services packages.
 The dtexec utility provides access to all the package configuration and execution features, such as parameters, connections, properties, variables, logging, and progress indicators.
 The dtexec utility lets you load packages from these sources: the Integration Services server, an .ispac project file, a Microsoft SQL Server database, the SSIS Package Store, and the file system.
+
+
+## adutil Utility
+<a id="adutil-utility"></a>
+Download page: [adutil Utility]<br/>
+Release date: -<br/>
+Support Version: 2017-2019<br/>
+Author: Microsoft<br/>
+Free version: Yes<br/>
+Price: No
+
+Configure Active Directory authentication with SQL Server on Linux.
 
 
 ## SQL Server 2016 Report Builder
@@ -6203,10 +6216,11 @@ Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables A
 [SqlLocalDB Utility]:https://msdn.microsoft.com/en-us/library/hh212961.aspx
 [sqllogship Utility]:https://msdn.microsoft.com/en-us/library/bb283327.aspx
 [sqlservr Application]:https://msdn.microsoft.com/en-us/library/ms162819.aspx
-[sqlps Utility]: https://msdn.microsoft.com/en-us/library/cc280450.aspx
-[sqlmaint Utility]: https://msdn.microsoft.com/en-us/library/ms162827.aspx
-[Ssms Utility]: https://msdn.microsoft.com/en-us/library/ms162825.aspx
-[dtexec Utility]: https://msdn.microsoft.com/en-us/library/hh231187.aspx
+[sqlps Utility]:https://msdn.microsoft.com/en-us/library/cc280450.aspx
+[sqlmaint Utility]:https://msdn.microsoft.com/en-us/library/ms162827.aspx
+[Ssms Utility]:https://msdn.microsoft.com/en-us/library/ms162825.aspx
+[dtexec Utility]:https://msdn.microsoft.com/en-us/library/hh231187.aspx
+[adutil Utility]:https://docs.microsoft.com/sql/linux/sql-server-linux-ad-auth-adutil-tutorial
 [SQL Server 2016 Report Builder]:https://www.microsoft.com/en-us/download/details.aspx?id=53613
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
 [Red Gate SQL Compare]:http://www.red-gate.com/products/sql-development/sql-compare/
