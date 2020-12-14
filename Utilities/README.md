@@ -44,8 +44,8 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SQL Server Data Tools](#ssdt)                                   | No                            | No        | [MS]     | [SQL Server Data Tools]                            | 2018-04-10 | Microsoft               |            | Yes            | No    |
 | [Database Health Monitor](#database-health-monitor)              | No                            | No        | [M]      | [Database Health Monitor]                          | 2019-12-01 | Steve Stedman           |            | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                      | No                            | No        | [SC]     | [SchemaDrift]                                      | 2016-02-28 | Steve Stedman           |            | Yes            | No    |
-| [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                          | 2018-09-24 | Open Source             |            | Yes            | No    |
-| [HeidiSQL](#heidisql)                                            | MySQL,PostgreSQL,Other        | No        | [MS]     | [HeidiSQL]                                         | 2019-06-15 | Open Source             |            | Yes            | No    |
+| [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                          | 2020-11-29 | Open Source             |            | Yes            | No    |
+| [HeidiSQL](#heidisql)                                            | MySQL,PostgreSQL,Other        | No        | [MS]     | [HeidiSQL]                                         | 2020-11-02 | Open Source             |            | Yes            | No    |
 | [SQLExecStats](#sqlexecstats)                                    | No                            | No        | [ST]     | [SQLExecStats]                                     | 2016-02-08 | Joe Chang               |            | Yes            | No    |
 | [ExpressProfiler](#expressprofiler)                              | No                            | No        | [?]      | [ExpressProfiler]                                  | 2016-02-15 | Chris Moore             |            | Yes            | No    |
 | [Data Migration Assistant](#data-migration-assistant)            | No                            | No        | [MG]     | [Data Migration Assistant]                         | 2020-04-23 | Microsoft               |            | Yes            | No    |
@@ -59,7 +59,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [sqlservr Application](#sqlservr-application)                    | No                            | No        | [I]      | [sqlservr Application]                             | -          | Microsoft               |            | Yes            | No    |
 | [sqlps Utility](#sqlps-utility)                                  | No                            | No        | [I]      | [sqlps Utility]                                    | -          | Microsoft               |            | Yes            | No    |
 | [sqlmaint Utility](#sqlmaint-utility)                            | No                            | No        | [I]      | [sqlmaint Utility]                                 | -          | Microsoft               |            | Yes            | No    |
-| [Ssms Utility](#ssms-utility)                                    | No                            | No        | [I]      | [Ssms Utility]                                     | -          | Microsoft               |            | Yes            | No    |
+| [SSMS Utility](#ssms-utility)                                    | No                            | No        | [I]      | [SSMS Utility]                                     | -          | Microsoft               |            | Yes            | No    |
 | [dtexec Utility](#dtexec-utility)                                | No                            | No        | [I]      | [dtexec Utility]                                   | -          | Microsoft               |            | Yes            | No    |
 | [adutil Utility](#adutil-utility)                                | No                            | Linux     | [I]      | [adutil Utility]                                   | 2020-10-30 | Microsoft               |            | Yes            | No    |
 | [SQL Server 2016 Report Builder](#report-builder-2016)           | No                            | No        | [?]      | [SQL Server 2016 Report Builder]                   | 2016-09-16 | Microsoft               |            | Yes            | No    |
@@ -704,26 +704,26 @@ SchemaDrift is a SQL Server database comparison tool that allows you to compare 
 ## DBeaver
 <a id="dbeaver"></a>
 Download page: [DBeaver]<br/>
-Release date: 2018-09-24<br/>
-Support Version: 2005-2017<br/>
+Release date: 2020-11-29<br/>
+Support Version: 2005-2019<br/>
 Author: Open Source<br/>
 Free version: Yes<br/>
 Price: No
 
-Free multi-platform database tool for developers, SQL programmers, database administrators and analysts.
-Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MongoDB, Cassandra, etc
+Free multi-platform database tool for developers, database administrators, analysts and all people who need to work with databases.
+Supports all popular databases: MySQL, PostgreSQL, SQLite, Oracle, DB2, SQL Server, Sybase, MS Access, Teradata, Firebird, Apache Hive, Phoenix, Presto, etc.
 
 
 ## HeidiSQL
 <a id="heidisql"></a>
 Download page: [HeidiSQL]<br/>
-Release date: 2019-06-15<br/>
-Support Version: 2005-2017<br/>
+Release date: 2020-11-02<br/>
+Support Version: 2005-2019<br/>
 Author: Open Source<br/>
 Free version: Yes<br/>
 Price: No
 
-HeidiSQL is a useful and reliable tool designed for web developers using the popular MySQL server, Microsoft SQL databases and PostgreSQL.
+HeidiSQL is a useful and reliable tool designed for web developers using the popular MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite.
 It enables you to browse and edit data, create and edit tables, views, procedures, triggers and scheduled events.
 Also, you can export structure and data either to SQL file, clipboard or to other servers.
 
@@ -911,14 +911,14 @@ Avoid using this feature in new development work, and plan to modify application
 
 ## Ssms Utility
 <a id="ssms-utility"></a>
-Download page: [Ssms Utility]<br/>
+Download page: [SSMS Utility]<br/>
 Release date: -<br/>
 Support Version: 2005/2008/2008R2/2012/2014/2016<br/>
 Author: Microsoft<br/>
 Free version: Yes<br/>
 Price: No
 
-The Ssms utility opens SQL Server Management Studio.
+The SSMS utility opens SQL Server Management Studio.
 If specified, Ssms also establishes a connection to a server, and opens queries, scripts, files, projects, and solutions.
 You can specify files that contain queries, projects, or solutions.
 Files that contain queries are automatically connected to a server if connection information is provided and the file type is associated with that type of server.
@@ -6203,23 +6203,23 @@ Babelfish is a new translation layer for Amazon Aurora PostgreSQL that enables A
 [SQL Server Data Tools]:https://docs.microsoft.com/en-us/sql/ssdt/download-sql-server-data-tools-ssdt
 [Database Health Monitor]:http://databasehealth.com/download/
 [SchemaDrift]:http://databasehealth.com/schemadrift/
-[Dbeaver]:http://dbeaver.jkiss.org/
-[HeidiSQL]:http://www.heidisql.com
+[Dbeaver]:https://dbeaver.io
+[HeidiSQL]:https://www.heidisql.com
 [SQLExecStats]:http://www.qdpma.com/ExecStats/SQLExecStats.html
 [ExpressProfiler]:https://expressprofiler.codeplex.com/
-[Migration Assistant for Sybase]:https://msdn.microsoft.com/en-us/library/hh302795(v=sql.130).aspx
-[Data Migration Assistant]:https://www.microsoft.com/en-us/download/details.aspx?id=53595
-[dta Utility]:https://msdn.microsoft.com/en-us/library/ms162812.aspx
-[osql Utility]:https://msdn.microsoft.com/en-us/library/ms162806.aspx
-[sqldiag Utility]:https://msdn.microsoft.com/en-us/library/ms162833.aspx
-[sqldumper Utility]:https://support.microsoft.com/en-us/kb/917825
-[SqlLocalDB Utility]:https://msdn.microsoft.com/en-us/library/hh212961.aspx
-[sqllogship Utility]:https://msdn.microsoft.com/en-us/library/bb283327.aspx
-[sqlservr Application]:https://msdn.microsoft.com/en-us/library/ms162819.aspx
-[sqlps Utility]:https://msdn.microsoft.com/en-us/library/cc280450.aspx
-[sqlmaint Utility]:https://msdn.microsoft.com/en-us/library/ms162827.aspx
-[Ssms Utility]:https://msdn.microsoft.com/en-us/library/ms162825.aspx
-[dtexec Utility]:https://msdn.microsoft.com/en-us/library/hh231187.aspx
+[Migration Assistant for Sybase]:https://docs.microsoft.com/en-us/sql/ssma/sybase/sql-server-migration-assistant-for-sybase-sybasetosql
+[Data Migration Assistant]:https://docs.microsoft.com/en-us/sql/dma/dma-overview
+[dta Utility]:https://docs.microsoft.com/en-us/sql/tools/dta/dta-utility
+[osql Utility]:https://docs.microsoft.com/en-us/sql/tools/osql-utility
+[sqldiag Utility]:https://docs.microsoft.com/en-us/sql/tools/sqldiag-utility
+[sqldumper Utility]:https://docs.microsoft.com/en-us/troubleshoot/sql/tools/use-sqldumper-generate-dump-file
+[SqlLocalDB Utility]:https://docs.microsoft.com/en-us/sql/tools/sqllocaldb-utility
+[sqllogship Utility]:https://docs.microsoft.com/en-us/sql/tools/sqllogship-application
+[sqlservr Application]:https://docs.microsoft.com/en-us/sql/tools/sqlservr-application
+[sqlps Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlps-utility
+[sqlmaint Utility]:https://docs.microsoft.com/en-us/sql/tools/sqlmaint-utility
+[SSMS Utility]:https://docs.microsoft.com/en-us/sql/ssms/ssms-utility
+[dtexec Utility]:https://docs.microsoft.com/en-us/sql/integration-services/packages/dtexec-utility
 [adutil Utility]:https://docs.microsoft.com/sql/linux/sql-server-linux-ad-auth-adutil-tutorial
 [SQL Server 2016 Report Builder]:https://www.microsoft.com/en-us/download/details.aspx?id=53613
 [DLM Dashboard]:http://www.red-gate.com/products/dlm/dlm-dashboard/
