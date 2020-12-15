@@ -96,7 +96,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [udf_SplitStringByDelimiter](/User_Defined_Function/udf_SplitStringByDelimiter.sql)
     - [udf_Tally](/User_Defined_Function/udf_Tally.sql)
     - and many others...
- - [Utilities](/Utilities) (**Complete list of 393 SQL Server paid and free Utilities and Tools**)
+ - [Utilities](/Utilities) (**Complete list of 395 SQL Server paid and free Utilities and Tools**)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -231,6 +231,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [T-SQL Tutorial and examples](https://www.tsql.info/sql-tutorial.php) (by tsql.info)
      - [Red Gate Data Platform courses](https://www.red-gate.com/hub/university/courses/data-platform) (by Red Gate)
      - [SQLZoo tutorial](https://sqlzoo.net/)
+     - [edX SQL Courses](https://www.edx.org/learn/sql) (by edX)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
