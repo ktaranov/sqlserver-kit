@@ -1313,6 +1313,7 @@ Articles types:
 | [Autoparameterized Trivial Queries May Not Get Partition Elimination]                                                   | Brent Ozar                               | 2020-11-26 | [DBA][DEV]  |
 | [Trigram Wildcard String Search in SQL Server]                                                                          | Paul White                               | 2017-09-08 | [DBA][DEV]  |
 | [Which Locks Count Toward Lock Escalation?]                                                                             | Kendra Little                            | 2017-04-03 | [DBA][DEV]  |
+| [The challenge is on! Community call for creating the fastest number series generator]                                  | tzik Ben-Gan                             | 2020-12-09 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2600,3 +2601,4 @@ Articles types:
 [Autoparameterized Trivial Queries May Not Get Partition Elimination]:https://www.brentozar.com/archive/2020/12/autoparameterized-trivial-queries-may-not-get-partition-elimination/
 [Trigram Wildcard String Search in SQL Server]:https://sqlperformance.com/2017/09/sql-performance/sql-server-trigram-wildcard-search
 [Which Locks Count Toward Lock Escalation?]:https://littlekendra.com/2017/04/03/which-locks-count-toward-lock-escalation/
+[The challenge is on! Community call for creating the fastest number series generator]:https://sqlperformance.com/2020/12/t-sql-queries/number-series-challenge
