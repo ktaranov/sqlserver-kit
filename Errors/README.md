@@ -2,15 +2,15 @@
 
 
 ## Useful links
- - [System Error Messages](https://technet.microsoft.com/en-us/library/cc645603%28v=sql.105%29.aspx)
- - [Database Engine Error Severities](https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities)
- - [Integration Services Error and Message Reference](https://docs.microsoft.com/en-us/sql/integration-services/integration-services-error-and-message-reference)
- - [View and Read SQL Server Setup Log Files](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/view-and-read-sql-server-setup-log-files)
- - [Troubleshoot the SQL Server Utility](https://docs.microsoft.com/en-us/sql/database-engine/troubleshoot-the-sql-server-utility)
- - [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
- - [SQL Server 2016 Distributed Replay Errors](https://www.sqlskills.com/blogs/jonathan/sql-server-2016-distributed-replay-errors/)
- - [The Instance ID MSSQLSERVER Is Already In Use](http://www.sqlservercentral.com/articles/MSSQLSERVER/161398/)
- - [SQL Server: Detach/Attach Gotchas!](https://sqljana.wordpress.com/2018/04/08/sql-server-detach-attach-gotchas/)
+- [System Error Messages](https://technet.microsoft.com/en-us/library/cc645603%28v=sql.105%29.aspx)
+- [Database Engine Error Severities](https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities)
+- [Integration Services Error and Message Reference](https://docs.microsoft.com/en-us/sql/integration-services/integration-services-error-and-message-reference)
+- [View and Read SQL Server Setup Log Files](https://docs.microsoft.com/en-us/sql/database-engine/install-windows/view-and-read-sql-server-setup-log-files)
+- [Troubleshoot the SQL Server Utility](https://docs.microsoft.com/en-us/sql/database-engine/troubleshoot-the-sql-server-utility)
+- [Common Issues: Licensing Errors](http://blogs.sqlsentry.com/georgeboakye/common-issues-licensing-errors/)
+- [SQL Server 2016 Distributed Replay Errors](https://www.sqlskills.com/blogs/jonathan/sql-server-2016-distributed-replay-errors/)
+- [The Instance ID MSSQLSERVER Is Already In Use](http://www.sqlservercentral.com/articles/MSSQLSERVER/161398/)
+- [SQL Server: Detach/Attach Gotchas!](https://sqljana.wordpress.com/2018/04/08/sql-server-detach-attach-gotchas/)
 
 
 ## SQL Server All Errors List
