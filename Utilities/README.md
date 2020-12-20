@@ -2,26 +2,26 @@
 Useful free and paid Microsoft SQL Server utilities and tools - complete list of **395** SQL Server Utilities
 
 Utility types (main purpose), in braces `{}` current counts:
- - **[B]**: Backup solutions {17}
- - **[BI]**: Business Intelligence Solutions {4}
- - **[D]**: Documentation solutions {8}
- - **[DA]**: Database Architecture {20}
- - **[DC]**: Data compare {15}
- - **[ETL]**: Extract Download Load (ETL) Tools {9}
- - **[I]**: Internal SQL Server utilities (for example, bcp) {15}
- - **[IDX]**: Index manager {3}
- - **[G]**: Data generation {4}
- - **[J]**: Job managers {4}
- - **[M]**: Monitoring and alerting Tools {27}
- - **[MG]**: Migration tool {31}
- - **[MS]**: Management Studio (alternative for SSMS) {33}
- - **[REC]**: Recovery tools {13}
- - **[S]**: Search tools {7}
- - **[SEC]**: Security tools {7}
- - **[SC]**: Structure compare {21}
- - **[ST]**: Statistics utilities {3}
- - **[T]**: Testing tools {7}
- - **[?]**: Not yet classified {155}
+- **[B]**: Backup solutions {17}
+- **[BI]**: Business Intelligence Solutions {4}
+- **[D]**: Documentation solutions {8}
+- **[DA]**: Database Architecture {20}
+- **[DC]**: Data compare {15}
+- **[ETL]**: Extract Download Load (ETL) Tools {9}
+- **[I]**: Internal SQL Server utilities (for example, bcp) {15}
+- **[IDX]**: Index manager {3}
+- **[G]**: Data generation {4}
+- **[J]**: Job managers {4}
+- **[M]**: Monitoring and alerting Tools {27}
+- **[MG]**: Migration tool {31}
+- **[MS]**: Management Studio (alternative for SSMS) {33}
+- **[REC]**: Recovery tools {13}
+- **[S]**: Search tools {7}
+- **[SEC]**: Security tools {7}
+- **[SC]**: Structure compare {21}
+- **[ST]**: Statistics utilities {3}
+- **[T]**: Testing tools {7}
+- **[?]**: Not yet classified {156}
 
 | Name/Description                                                 | Cross Database                | Platform  | Type     | Official/Download page                             | Release    | Author                  | License    | Free version   | Price |
 |------------------------------------------------------------------|-------------------------------|-----------|----------|----------------------------------------------------|------------|-------------------------|------------|----------------|------:|
