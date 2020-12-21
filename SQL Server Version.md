@@ -422,7 +422,8 @@ Microsoft SQL Server 2019 (RTM-CU7) (KB4570012) - 15.0.4063.15 (X64)
 
 | Build         | File version      | Branch | Type | Info       | KB      | Description/Link                                          | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|------------|---------|-----------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.4063.15  | 2019.150.4063.15  | RTM    | CU   | **Latest** | 4570012 | [Cumulative Update 7 for SQL Server 2019]                 | 2020-09-02   | 2020-07-25 |    56 |     49 |      604 |        904 |
+| 15.0.4073.23  | 2019.150.4073.23  | RTM    | CU   | **Latest** | 4577194 | [Cumulative Update 8 for SQL Server 2019]                 | 2020-10-01   | 2020-07-25 |   104 |     81 |      607 |        904 |
+| 15.0.4063.15  | 2019.150.4063.15  | RTM    | CU   |            | 4570012 | [Cumulative Update 7 for SQL Server 2019]                 | 2020-09-02   | 2020-07-25 |    56 |     49 |      604 |        904 |
 | 15.0.4053.23  | 2019.150.4053.23  | RTM    | CU   |            | 4563110 | [Cumulative Update 6 for SQL Server 2019]                 | 2020-08-04   | 2020-07-25 |    51 |     42 |      604 |        904 |
 | 15.0.4043.16  | 2019.150.4043.16  | RTM    | CU   |            | 4552255 | [Cumulative Update 5 for SQL Server 2019]                 | 2020-06-22   | 2020-06-10 |    86 |     58 |      603 |        904 |
 | 15.0.4033.1   | 2019.150.4033.1   | RTM    | CU   |            | 4548597 | [Cumulative Update 4 for SQL Server 2019]                 | 2020-03-31   | 2020-03-04 |    50 |     38 |      571 |        904 |
@@ -443,6 +444,7 @@ Microsoft SQL Server 2019 (RTM-CU7) (KB4570012) - 15.0.4063.15 (X64)
 | 15.0.1100.94  | 2018.150.1100.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.1                          | 2018-11-06   | 2018-11-02 |       |        |     1299 |        896 |
 | 15.0.1000.34  | 2018.150.1000.34  | CTP    | CTP  |            |         | Microsoft SQL Server 2019 CTP2.0                          | 2018-09-24   | 2018-09-18 |       |        |     1532 |        895 |
 
+[Cumulative Update 8 for SQL Server 2019]:https://support.microsoft.com/help/4577194
 [Cumulative Update 7 for SQL Server 2019]:https://support.microsoft.com/help/4570012
 [Cumulative Update 6 for SQL Server 2019]:https://support.microsoft.com/help/4563110
 [Cumulative Update 5 for SQL Server 2019]:https://support.microsoft.com/help/4552255
