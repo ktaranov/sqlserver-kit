@@ -1315,6 +1315,7 @@ Articles types:
 | [Which Locks Count Toward Lock Escalation?]                                                                             | Kendra Little                            | 2017-04-03 | [DBA][DEV]  |
 | [The challenge is on! Community call for creating the fastest number series generator]                                  | Itzik Ben-Gan                            | 2020-12-09 | [DBA][DEV]  |
 | [SQL Injection Prevention Cheat Sheet]                                                                                  | OWASP                                    | 2020-07-14 | [SEC]       |
+| [A cheat sheet for isolation levels in SQL Server]                                                                      | Dan Jackson                              | 2020-01-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2604,3 +2605,4 @@ Articles types:
 [Which Locks Count Toward Lock Escalation?]:https://littlekendra.com/2017/04/03/which-locks-count-toward-lock-escalation/
 [The challenge is on! Community call for creating the fastest number series generator]:https://sqlperformance.com/2020/12/t-sql-queries/number-series-challenge
 [SQL Injection Prevention Cheat Sheet]:https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
+[A cheat sheet for isolation levels in SQL Server]:https://blog.coeo.com/a-cheat-sheet-for-isolation-levels-in-sql-server
