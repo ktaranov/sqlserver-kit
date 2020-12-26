@@ -1316,6 +1316,8 @@ Articles types:
 | [The challenge is on! Community call for creating the fastest number series generator]                                  | Itzik Ben-Gan                            | 2020-12-09 | [DBA][DEV]  |
 | [SQL Injection Prevention Cheat Sheet]                                                                                  | OWASP                                    | 2020-07-14 | [SEC]       |
 | [A cheat sheet for isolation levels in SQL Server]                                                                      | Dan Jackson                              | 2020-01-01 | [DBA][DEV]  |
+| [Don't Fear the Trace]                                                                                                  | Greg Gonzalez                            | 2011-04-26 | [DBA][DEV]  |
+| [Which sp_configure Options Clear the Plan Cache?]                                                                      | Brent Ozar                               | 2017-05-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2606,3 +2608,5 @@ Articles types:
 [The challenge is on! Community call for creating the fastest number series generator]:https://sqlperformance.com/2020/12/t-sql-queries/number-series-challenge
 [SQL Injection Prevention Cheat Sheet]:https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html
 [A cheat sheet for isolation levels in SQL Server]:https://blog.coeo.com/a-cheat-sheet-for-isolation-levels-in-sql-server
+[Don't Fear the Trace]:https://www.sentryone.com/blog/dont-fear-the-trace
+[Which sp_configure Options Clear the Plan Cache?]:https://www.brentozar.com/archive/2017/09/sp_configure-options-clear-plan-cache/
