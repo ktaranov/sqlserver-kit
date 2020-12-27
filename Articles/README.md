@@ -1318,6 +1318,7 @@ Articles types:
 | [A cheat sheet for isolation levels in SQL Server]                                                                      | Dan Jackson                              | 2020-01-01 | [DBA][DEV]  |
 | [Don't Fear the Trace]                                                                                                  | Greg Gonzalez                            | 2011-04-26 | [DBA][DEV]  |
 | [Which sp_configure Options Clear the Plan Cache?]                                                                      | Brent Ozar                               | 2017-05-26 | [DBA][DEV]  |
+| [The danger of HADR_SYNC_COMMIT wait and synchronous replication in AlwaysOn Availability Groups]                       | Dmitri Korotkevitch                      | 2016-06-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2610,3 +2611,4 @@ Articles types:
 [A cheat sheet for isolation levels in SQL Server]:https://blog.coeo.com/a-cheat-sheet-for-isolation-levels-in-sql-server
 [Don't Fear the Trace]:https://www.sentryone.com/blog/dont-fear-the-trace
 [Which sp_configure Options Clear the Plan Cache?]:https://www.brentozar.com/archive/2017/09/sp_configure-options-clear-plan-cache/
+[The danger of HADR_SYNC_COMMIT wait and synchronous replication in AlwaysOn Availability Groups]:https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/
