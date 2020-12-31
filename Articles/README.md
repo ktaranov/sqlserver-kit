@@ -1322,6 +1322,7 @@ Articles types:
 | [Faster SQL Pagination with Keysets, Continued]                                                                         | Lukas Eder                               | 2013-11-18 | [DBA][DEV]  |
 | [We need tool support for keyset pagination]                                                                            | Markus Winand                            | 2014-08-16 | [DBA][DEV]  |
 | [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2016-02-18 | [DBA][DEV]  |
+| Index-Only Scan: Avoiding Table Access]                                                                                 | Markus Winand                            | 2014-01-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2618,3 +2619,4 @@ Articles types:
 [Faster SQL Pagination with Keysets, Continued]:https://blog.jooq.org/2013/11/18/faster-sql-pagination-with-keysets-continued/
 [We need tool support for keyset pagination]:https://use-the-index-luke.com/no-offset
 [Insight into the SQL Server buffer cache]:https://www.sqlshack.com/insight-into-the-sql-server-buffer-cache/
+[Index-Only Scan: Avoiding Table Access]:https://use-the-index-luke.com/sql/clustering/index-only-scan-covering-index
