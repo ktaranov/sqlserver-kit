@@ -1324,7 +1324,8 @@ Articles types:
 | [Insight into the SQL Server buffer cache]                                                                              | Ed Pollack                               | 2016-02-18 | [DBA][DEV]  |
 | [Index-Only Scan: Avoiding Table Access]                                                                                | Markus Winand                            | 2014-01-01 | [DBA][DEV]  |
 | [The two top performance problems caused by ORM tool]                                                                   | Markus Winand                            | 2013-04-23 | [DBA][DEV]  |
-| [Nested loops join n1 problem in ORM]                                                                                   | Markus Winand                            | 2013-01-01 | [DBA][DEV]  |
+| [Nested loops join and n1 problem in ORM]                                                                               | Markus Winand                            | 2013-01-01 | [DBA][DEV]  |
+| [Hash join partial objects]                                                                                             | Markus Winand                            | 2013-01-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2623,4 +2624,5 @@ Articles types:
 [Insight into the SQL Server buffer cache]:https://www.sqlshack.com/insight-into-the-sql-server-buffer-cache/
 [Index-Only Scan: Avoiding Table Access]:https://use-the-index-luke.com/sql/clustering/index-only-scan-covering-index
 [The two top performance problems caused by ORM tool]:https://use-the-index-luke.com/blog/2013-04/the-two-top-performance-problems-caused-by-ORM-tools
-[Nested loops join n1 problem in ORM]:https://use-the-index-luke.com/sql/join/nested-loops-join-n1-problem
+[Nested loops join and n1 problem in ORM]:https://use-the-index-luke.com/sql/join/nested-loops-join-n1-problem
+[Hash join partial objects]:https://use-the-index-luke.com/sql/join/hash-join-partial-objects
