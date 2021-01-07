@@ -495,7 +495,6 @@ Articles types:
 | [Troubleshooting THREADPOOL Waits]                                                                                      | Klaus Aschenbrenner ·                    | 2015-10-20 | [DEV]       |
 | [Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]                                     | Andy Leonard        ·                    | 2018-01-28 | [AZ][SSIS]  |
 | [PRINT vs. RAISERROR]                                                                                                   | sqlity.net          ·                    | 2012-05-27 | [DEV]       |
-| [Does a Clustered Index Give a Default Ordering?]                                                                       | Kendra Little       ·                    | 2018-02-02 | [DEV]       |
 | [Without ORDER BY, You Can’t Depend On the Order of Results]                                                            | Michael J Swart       ·                  | 2013-09-13 | [DEV]       |
 | [Query Store and “in memory”]                                                                                           | Erin Stellato       ·                    | 2018-01-31 | [QS]        |
 | [Setting and Identifying Row Goals in Execution Plans]                                                                  | Paul White       ·                       | 2018-02-12 | [DEV]       |
@@ -1798,7 +1797,6 @@ Articles types:
 [Troubleshooting THREADPOOL Waits]:https://www.sqlpassion.at/archive/2011/10/25/troubleshooting-threadpool-waits/
 [Andy’s Excellent SSIS-in-the-Cloud Adventure, Part 1 – Build an ADFv2 IR Instance]:https://andyleonard.blog/2018/01/andys-excellent-ssis-in-the-cloud-adventure-part-1/
 [PRINT vs. RAISERROR]:http://sqlity.net/en/984/print-vs-raiserror/
-[Does a Clustered Index Give a Default Ordering?]:https://sqlworkbooks.com/2018/02/does-a-clustered-index-give-a-default-ordering/
 [Without ORDER BY, You Can’t Depend On the Order of Results]:http://michaeljswart.com/2013/09/without-order-by-you-cant-depend-on-the-order-of-results/
 [Query Store and “in memory”]:https://www.sqlskills.com/blogs/erin/query-store-and-in-memory/
 [Setting and Identifying Row Goals in Execution Plans]:https://sqlperformance.com/2018/02/sql-plan/setting-and-identifying-row-goals
