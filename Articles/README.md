@@ -800,7 +800,6 @@ Articles types:
 | [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]      | Solomon Rutzky                           | 2019-08-05 | [SEC]       |
 | [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]                                            | Scott Sutherland                         | 2017-05-23 | [PS][SEC]   |
 | [Views of the Same Problem: Network Admin, DBA, and Developer]                                                          | Kyle Brandt                              | 2011-03-16 | [DBA][DEV]  |
-| [The SQL Server Data Row Size Question: Why is It Bigger?]                                                              | Kendra Little                            | 2019-03-19 | [DBA][DEV]  |
 | [Finding Max Concurrent Operations With T-SQL (Part 1)]                                                                 | Kevin Feasel                             | 2019-01-02 | [DEV]       |
 | [Finding Max Concurrent Operations With T-SQL (Part 2)]                                                                 | Kevin Feasel                             | 2019-01-03 | [DEV]       |
 | [Stack Overflow: The Architecture - 2016 Edition]                                                                       | Nick Craver                              | 2019-02-17 | [DBA][DEV]  |
@@ -2101,7 +2100,6 @@ Articles types:
 [Feature Restrictions in SQL Server 2019 are Worse Than Useless: a False Sense of Security And Wasted Opportunity]:https://sqlquantumleap.com/2019/08/05/feature-restrictions-in-sql-server-2019-are-worse-than-useless-a-false-sense-of-security-and-wasted-opportunity/
 [How to get SQL Server Sysadmin Privileges as a Local Admin with PowerUpSQL]:https://blog.netspi.com/get-sql-server-sysadmin-privileges-local-admin-powerupsql/
 [Views of the Same Problem: Network Admin, DBA, and Developer]:https://blog.serverfault.com/2011/03/16/views-of-the-same-problem-network-admin-dba-and-developer/
-[The SQL Server Data Row Size Question: Why is It Bigger?]:https://sqlworkbooks.com/2019/03/the-sql-server-data-row-size-question-why-is-it-bigger/
 [Finding Max Concurrent Operations With T-SQL (Part 1)]:https://36chambers.wordpress.com/2019/01/02/finding-max-concurrent-operations-with-t-sql-part-1/
 [Finding Max Concurrent Operations With T-SQL (Part 2)]:https://36chambers.wordpress.com/2019/01/03/finding-max-concurrent-operations-with-t-sql-part-2/
 [Stack Overflow: The Architecture - 2016 Edition]:https://nickcraver.com/blog/2016/02/17/stack-overflow-the-architecture-2016-edition/
