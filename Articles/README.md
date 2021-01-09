@@ -443,7 +443,6 @@ Articles types:
 | [Say NO to Venn Diagrams When Explaining JOINs]                                                                         | Lukas Eder                               | 2016-07-05 | [DBA][DEV]  |
 | [Surprise Delta Stores]                                                                                                 | Joe Obbish                               | 2017-11-07 | [DEV]       |
 | [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]                                           | Denzil Ribeiro                           | 2015-07-08 | [DBA][DEV]  |
-| [The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]                                                          | Kendra Little                            | 2017-11-09 | [DEV]       |
 | [Multiple Output Datasets With R and SQL Server]                                                                        | Kendra Little                            | 2017-11-06 | [DEV][R]    |
 | [How to Avoid Excessive Sorts in Window Functions]                                                                      | Lukas Eder                               | 2017-11-06 | [DEV]       |
 | [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]                                               | Koen Verbeeck                            | 2017-10-03 | [DAX], [XE] |
@@ -1744,7 +1743,6 @@ Articles types:
 [Say NO to Venn Diagrams When Explaining JOINs]:https://blog.jooq.org/2016/07/05/say-no-to-venn-diagrams-when-explaining-joins/
 [Surprise Delta Stores]:https://orderbyselectnull.com/2017/11/07/delta-stores/
 [SQL 2014 Clustered Columnstore index rebuild and maintenance considerations]:https://blogs.msdn.microsoft.com/sqlcat/2015/07/08/sql-2014-clustered-columnstore-index-rebuild-and-maintenance-considerations/
-[The Case of the Weirdly Long COLUMNSTORE_BUILD_THROTTLE Wait]:https://sqlworkbooks.com/2017/11/the-case-of-the-weirdly-long-columnstore_build_throttle-wait/
 [Multiple Output Datasets With R and SQL Server]:https://itsalljustelectrons.blogspot.ru/2017/11/Multiple-Output-Datasets-with-R-and-SQL-Server.html
 [How to Avoid Excessive Sorts in Window Functions]:https://blog.jooq.org/2017/11/06/how-to-avoid-excessive-sorts-in-window-functions/
 [Extracting a DAX Query Plan With Analysis Services 2016 Extended Events]:https://www.mssqltips.com/sqlservertip/5106/extracting-a-dax-query-plan-with-analysis-services-2016-extended-events/
