@@ -383,7 +383,6 @@ Articles types:
 | [The SQL Hall of Shame]                                                                                                 | Adam Machanic                            | 2017-06-14 | [DBA][DEV]  |
 | [A Better Way To Select Star]                                                                                           | Erik Darling                             | 2017-07-05 | [DEV]       |
 | [UDP vs TCP]                                                                                                            | Kenneth Fisher                           | 2017-06-07 | [DBA]       |
-| [When a Nonclustered Index and Statistics Make a Query Slower]                                                          | Kendra Little                            | 2017-03-24 | [DBA][DEV]  |
 | [Lipoaspiration in your SQL Server Database]                                                                            | Fabiano Amorim                           | 2011-03-03 | [DEV]       |
 | [13 Things You Should Know About Statistics and the Query Optimizer]                                                    | Fabiano Amorim                           | 2010-01-07 | [DBA][DEV]  |
 | [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]                                                       | Niels Berglund                           | 2017-06-25 | [DEV][R]    |
@@ -1683,7 +1682,6 @@ Articles types:
 [The SQL Hall of Shame]:http://dataeducation.com/the-sql-hall-of-shame/
 [A Better Way To Select Star]:https://www.brentozar.com/archive/2017/07/better-way-select-star/
 [UDP vs TCP]:https://sqlstudies.com/2017/06/07/udp-vs-tcp/
-[When a Nonclustered Index and Statistics Make a Query Slower]:https://sqlworkbooks.com/2017/05/when-a-nonclustered-index-and-statistics-make-a-query-slower/
 [Lipoaspiration in your SQL Server Database]:https://www.red-gate.com/simple-talk/sql/performance/lipoaspiration-in-your-sql-server-database/
 [13 Things You Should Know About Statistics and the Query Optimizer]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/13-things-you-should-know-about-statistics-and-the-query-optimizer/
 [Creating R Stored Procedures in SQL Server 2016 Using sqlrutils]:http://www.nielsberglund.com/2017/06/25/creating-r-stored-procedures-in-sql-server-2016-using-sqlrutils/
