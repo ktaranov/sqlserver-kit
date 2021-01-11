@@ -374,7 +374,6 @@ Articles types:
 | [The Ultimate SQL Server JSON Cheat Sheet]                                                                              | Bert Wagner                              | 2017-03-07 | [DEV][X]    |
 | [Are your indexes being thwarted by mismatched datatypes?]                                                              | Bert Wagner                              | 2017-08-01 | [DEV]       |
 | [Why Missing Index Recommendations Aren’t Perfect]                                                                      | Brent Ozar                               | 2017-08-02 | [DBA][DEV]  |
-| [Top 5 Misleading SQL Server Performance Counters]                                                                      | Kendra Little                            | 2017-06-05 | [DBA][DEV]  |
 | [The Case of the Space at the End]                                                                                      | Adam St. Pierre                          | 2017-07-24 | [DEV]       |
 | [SELECT…INTO in SQL Server 2017]                                                                                        | Andrew Pruski                            | 2017-08-02 | [DEV]       |
 | [Your Service Level Agreement is a Disaster]                                                                            | Jennifer McCown                          | 2017-07-24 | [DBA]       |
@@ -1673,7 +1672,6 @@ Articles types:
 [The Ultimate SQL Server JSON Cheat Sheet]:https://bertwagner.com/2017/03/07/the-ultimate-sql-server-json-cheat-sheet/
 [Are your indexes being thwarted by mismatched datatypes?]:https://bertwagner.com/2017/08/01/are-your-indexes-being-thwarted-by-mismatched-datatypes/
 [Why Missing Index Recommendations Aren’t Perfect]:https://www.brentozar.com/archive/2017/08/missing-index-recommendations-arent-perfect/
-[Top 5 Misleading SQL Server Performance Counters]:https://sqlworkbooks.com/2017/06/top-5-misleading-sql-server-performance-counters/
 [The Case of the Space at the End]:http://www.sqlservercentral.com/articles/ANSI_PADDING/157467/
 [SELECT…INTO in SQL Server 2017]:https://dbafromthecold.com/2017/08/02/select-into-in-sql-server-2017/
 [Your Service Level Agreement is a Disaster]:http://minionware.net/service-level-agreement-disaster/
