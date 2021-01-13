@@ -1325,6 +1325,7 @@ Articles types:
 | [Indexing LIKE Filters]                                                                                                 | Markus Winand                            | 2013-01-01 | [DBA][DEV]  |
 | [Date and time conditions causing SQL performance problems]                                                             | Markus Winand                            | 2013-01-01 | [DBA][DEV]  |
 | [Dates and Times in SQL Server: more functions you should never use]                                                    | Randolph West                            | 2018-05-16 | [DBA][DEV]  |
+| [Dates and Times in SQL Server: T-SQL functions to get the current date and time]                                       | Randolph West                            | 2018-04-25 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2624,3 +2625,4 @@ Articles types:
 [Indexing LIKE Filters]:https://use-the-index-luke.com/sql/where-clause/searching-for-ranges/like-performance-tuning
 [Date and time conditions causing SQL performance problems]:https://use-the-index-luke.com/sql/where-clause/obfuscation/dates
 [Dates and Times in SQL Server: more functions you should never use]:https://bornsql.ca/blog/dates-and-times-in-sql-server-more-functions-you-should-never-use/
+[Dates and Times in SQL Server: T-SQL functions to get the current date and time]:https://bornsql.ca/blog/dates-times-sql-server-t-sql-functions-get-current-date-time/
