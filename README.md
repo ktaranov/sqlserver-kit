@@ -366,7 +366,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [TSqlStrong - T-Sql type checker that detects improper joins, possibly null value operations, enumeration check constraint violations, incorrect use of temporary table at call site, and more](https://github.com/JSuder-xx/TSqlStrong) (by John Suder)
     - [SQL Power Doc - is a collection of Windows PowerShell scripts and modules that discover, document, and diagnose SQL Server instances and their underlying Windows OS & machine configuration](https://github.com/kendalvandyke/sqlpowerdoc) (by Kendal Van Dyke)
     - [rsqlserver - Sql Server driver database interface (DBI) driver for R](https://github.com/agstudy/rsqlserver)
-    - [sp_SizeOptimiser - a stored procedure that recommends space saving and corrective data type measures based on SQL Server database schemas](https://github.com/LowlyDBA/ExpressSQL) (by John McCall)
+    - [DBA MultiTool - T-SQL scripts for the long haul: optimizing storage, on-the-fly documentation, and general administrative needs.](https://github.com/LowlyDBA/dba-multitool) (by John McCall)
     - [language-extensions-sqlserver - SQL Server Language Extensions project](https://github.com/microsoft/sql-server-language-extensions) (by Microsoft)
     - [AzureRMR - R package for interacting with Azure Resource Manager](https://github.com/Azure/AzureRMR) (by Microsoft)
     - [EntityFramework.Utilities - Provides extensions for EntityFramework that doesn't exist out of the box like delete and update by query and bulk inserts](https://github.com/MikaelEliasson/EntityFramework.Utilities) (by Mikael Eliasson)
