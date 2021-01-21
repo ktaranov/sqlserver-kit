@@ -1329,6 +1329,7 @@ Articles types:
 | [Super Scaling Queues Using the LMax Disruptor Pattern And The In-Memory OLTP Engine]                                   | Chris Adkin                              | 2016-01-18 | [DBA][DEV]  |
 | [Early History of SQL]                                                                                                  | Donald D. Chamberlin                     | 2012-01-01 | [DBA][DEV]  |
 | [Is it a bad practice to always create a transaction?]                                                                  | Kin Shah                                 | 2013-09-06 | [DBA][DEV]  |
+| [Incomplete checkpoints and recovery]                                                                                   | Paul Randal                              | 2015-03-18 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2632,3 +2633,4 @@ Articles types:
 [Super Scaling Queues Using the LMax Disruptor Pattern And The In-Memory OLTP Engine]:https://chrisadkin.io/2016/01/18/super-scaling-queues-using-the-lmax-disruptor-pattern-and-the-in-memory-oltp-engine/
 [Early History of SQL]:https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=6359709
 [Is it a bad practice to always create a transaction?]:https://dba.stackexchange.com/a/43256
+[Incomplete checkpoints and recovery]:https://www.sqlskills.com/blogs/paul/incomplete-checkpoints-and-recovery/
