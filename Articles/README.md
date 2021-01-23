@@ -1332,6 +1332,7 @@ Articles types:
 | [Incomplete checkpoints and recovery]                                                                                   | Paul Randal                              | 2015-03-18 | [DBA]       |
 | [4 SQL Injection Techniques For Stealing Data]                                                                          | Bert Wagner                              | 2018-11-20 | [DBA][DEV]  |
 | [Towards Safer Dynamic SQL]                                                                                             | Eric Darling                             | 2020-10-11 | [DBA][DEV]  |
+| [Setting the timezone to anything other than UTC]                                                                       | Yeller                                   | 2015-01-12 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2638,3 +2639,4 @@ Articles types:
 [Incomplete checkpoints and recovery]:https://www.sqlskills.com/blogs/paul/incomplete-checkpoints-and-recovery/
 [4 SQL Injection Techniques For Stealing Data]:https://bertwagner.com/posts/4-sql-injection-techniques-for-stealing-data/
 [Towards Safer Dynamic SQL]:https://www.erikdarlingdata.com/sql-server/towards-safer-dynamic-sql/
+[Setting the timezone to anything other than UTC]:http://yellerapp.com/posts/2015-01-12-the-worst-server-setup-you-can-make.html
