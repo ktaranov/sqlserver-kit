@@ -3440,6 +3440,14 @@ Link: https://support.microsoft.com/kb/3107399
 Scope: global only
 
 
+<a id="6559"></a>
+#### Trace Flag: 6559
+Function: avoids blocking from orphaned CLR sessions. Enables new functionality in SQL Server 2016 SP1 CU10, SQL Server 2017 CU18, and SQL Server 2019 CU1. Based on the description, this behavior will never be the default, and even though it is available in all versions after 2019, you have to opt into it with the trace flag.<br />
+Link: https://support.microsoft.com/kb/4517771<br />
+Scope: global only<br />
+SQL Server Version: >= 2019 CU1, >= 2017 CU18, >= 2016 SP1 CU10
+
+
 <a id="7103"></a>
 #### Trace Flag: 7103
 **Undocumented trace flag**<br />
