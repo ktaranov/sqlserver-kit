@@ -1335,6 +1335,7 @@ Articles types:
 | [Setting the timezone to anything other than UTC]                                                                       | Yeller                                   | 2015-01-12 | [DBA][DEV]  |
 | [Advanced Service Broker Sample: Multi-Threading]                                                                       | Eitan Blumin                             | 2018-10-31 | [DBA][DEV]  |
 | [Temporary Table Caching Explained]                                                                                     | Paul White                               | 2012-08-17 | [DBA][DEV]  |
+| [Copy a SQL Server database with just the objects and no data]                                                          | Jeffrey Yao                              | 2017-02-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2644,3 +2645,4 @@ Articles types:
 [Setting the timezone to anything other than UTC]:http://yellerapp.com/posts/2015-01-12-the-worst-server-setup-you-can-make.html
 [Advanced Service Broker Sample: Multi-Threading]:https://eitanblumin.com/2018/10/31/advanced-service-broker-sample-multi-threading/
 [Temporary Table Caching Explained]:https://www.sql.kiwi/2012/08/temporary-object-caching-explained.html
+[Copy a SQL Server database with just the objects and no data]:https://www.mssqltips.com/sqlservertip/4664/copy-a-sql-server-database-with-just-the-objects-and-no-data/
