@@ -1339,6 +1339,7 @@ Articles types:
 | [QOMPLX Knowledge: Kerberoasting Attacks Explained]                                                                     | QOMPLX                                   | 2020-01-01 | [SEC]       |
 | [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-24 | [DBA][DEV]  |
 | [Query Memory Grants and Resource Semaphores in SQL Server]                                                             | Klaus Aschenbrenner                      | 2018-10-16 | [DBA][DEV]  |
+| [Using a Table of Numbers (or a Table of Dates, Months etc)]                                                            | Erland Sommarskog                        | 2020-09-16 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2652,3 +2653,4 @@ Articles types:
 [QOMPLX Knowledge: Kerberoasting Attacks Explained]:https://www.qomplx.com/qomplx-knowledge-kerberoasting-attacks-explained/
 [How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
 [Query Memory Grants and Resource Semaphores in SQL Server]:https://www.sqlpassion.at/archive/2018/10/16/query-memory-grants-and-resource-semaphores-in-sql-server/
+[Using a Table of Numbers (or a Table of Dates, Months etc)]:https://www.sommarskog.se/Short%20Stories/table-of-numbers.html
