@@ -1342,6 +1342,7 @@ Articles types:
 | [Using a Table of Numbers (or a Table of Dates, Months etc)]                                                            | Erland Sommarskog                        | 2020-09-16 | [DBA][DEV]  |
 | [SQL Server MDF and NDF files]                                                                                          | SQL Recovery                             | 2020-01-01 | [DBA][DEV]  |
 | [The SQL Standard ANSI ISO is Public!]                                                                                  | Markus Winand                            | 2020-01-01 | [DBA][DEV]  |
+| [SQL Server Full Backup]                                                                                                | Alexandr Omelchenko                      | 2015-10-28 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2658,4 +2659,4 @@ Articles types:
 [Using a Table of Numbers (or a Table of Dates, Months etc)]:https://www.sommarskog.se/Short%20Stories/table-of-numbers.html
 [SQL Server MDF and NDF files]:https://www.sqlrecoverysoftware.net/sql-server-mdf-file/recover-mdf-ndf.html
 [The SQL Standard ANSI ISO is Public!]:https://modern-sql.com/standard
- 
+[SQL Server Full Backup]:https://sqlbak.com/academy/full-backup
