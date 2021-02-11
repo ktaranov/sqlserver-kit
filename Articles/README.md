@@ -1343,6 +1343,7 @@ Articles types:
 | [SQL Server MDF and NDF files]                                                                                          | SQL Recovery                             | 2020-01-01 | [DBA][DEV]  |
 | [The SQL Standard ANSI ISO is Public!]                                                                                  | Markus Winand                            | 2020-01-01 | [DBA][DEV]  |
 | [SQL Server Full Backup]                                                                                                | Alexandr Omelchenko                      | 2015-10-28 | [DBA][DEV]  |
+| [Import data from PDF files using R Scripts SQL Server]                                                                 | Rajendra Gupta                           | 2020-12-08 | [R]         |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2660,3 +2661,4 @@ Articles types:
 [SQL Server MDF and NDF files]:https://www.sqlrecoverysoftware.net/sql-server-mdf-file/recover-mdf-ndf.html
 [The SQL Standard ANSI ISO is Public!]:https://modern-sql.com/standard
 [SQL Server Full Backup]:https://sqlbak.com/academy/full-backup
+[Import data from PDF files using R Scripts SQL Server]:https://www.sqlshack.com/import-data-from-pdf-files-using-r-scripts-sql-server/
