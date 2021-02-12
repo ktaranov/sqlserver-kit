@@ -5433,6 +5433,20 @@ Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags 876, 11064, and 11068, SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.
 Scope: global only
 
+<a id="11631"></a>
+#### Trace Flag: 11631
+Function: When reorganizing a columnstore index, use a threshold of 10% of the actual number of rows in the rowgroup. By default, without this trace flag, SQL Server uses 10% of a theoretical max of ~1M rows in the rowgroup, 100K rows, which meant that small rowgroups would never get reorganized.
+**Note: This trace flag applies to SQL Server 2019 CU9 (15.x) and higher builds.**<br />
+Link: https://techcommunity.microsoft.com/t5/sql-server-support/new-trace-flags-for-better-maintenance-of-deleted-rows-in/ba-p/2127034
+Scope: global only
+
+<a id="11634"></a>
+#### Trace Flag: 11634
+Function: When reorganizing a columnstore index, use a threshold of 1% of the rows in the rowgroup rather than the default of 10%. Keep in mind that unless you also enable trace flag 11631, then it's 1% of the theoretical maximum number of rows in the rowgroup (~1M) rather than the actual number of rows in the rowgroup. Use both 11631 and 11634 trace flags together for the most accurate thresholds of when to rebuild a rowgroup.
+**Note: This trace flag applies to SQL Server 2019 CU9 (15.x) and higher builds.**<br />
+Link: https://techcommunity.microsoft.com/t5/sql-server-support/new-trace-flags-for-better-maintenance-of-deleted-rows-in/ba-p/2127034
+Scope: global only
+
 
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
