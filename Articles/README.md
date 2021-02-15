@@ -1346,6 +1346,7 @@ Articles types:
 | [Import data from PDF files using R Scripts SQL Server]                                                                 | Rajendra Gupta                           | 2020-12-08 | [R]         |
 | [Adding Additional Data Files To The TempDB Database In SQL Server]                                                     | Jack Worthen                             | 2017-08-24 | [DBA]       |
 | [SQL Server Isolation Levels: A Series]                                                                                 | Paul White                               | 2014-07-01 | [DBA][DEV]  |
+| [SQL Server Isolation Levels: The ACID Properties of Statements & Transactions]                                         | Paul White                               | 2014-02-27 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2666,3 +2667,4 @@ Articles types:
 [Import data from PDF files using R Scripts SQL Server]:https://www.sqlshack.com/import-data-from-pdf-files-using-r-scripts-sql-server/
 [Adding Additional Data Files To The TempDB Database In SQL Server]:https://jackworthen.com/2017/08/24/adding-additional-data-files-to-the-tempdb-database-in-sql-server/
 [SQL Server Isolation Levels: A Series]:https://sqlperformance.com/2014/07/t-sql-queries/isolation-levels
+[SQL Server Isolation Levels: The ACID Properties of Statements & Transactions]:https://sqlperformance.com/2014/02/t-sql-queries/confusion-caused-by-trusting-acid
