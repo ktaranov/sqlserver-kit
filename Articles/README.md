@@ -1351,6 +1351,7 @@ Articles types:
 | [SQL Server Isolation Levels: The Repeatable Read Isolation Level]                                                      | Paul White                               | 2014-04-15 | [DBA][DEV]  |
 | [SQL Server Isolation Levels: The Read Committed Isolation Level]                                                       | Paul White                               | 2014-04-22 | [DBA][DEV]  |
 | [SQL Server Isolation Levels: Read Committed Snapshot Isolation]                                                        | Paul White                               | 2014-05-07 | [DBA][DEV]  |
+| [SQL Server Isolation Levels: Data Modifications under Read Committed Snapshot Isolation]                               | Paul White                               | 2014-05-14 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2676,3 +2677,4 @@ Articles types:
 [SQL Server Isolation Levels: The Repeatable Read Isolation Level]:https://sqlperformance.com/2014/04/t-sql-queries/the-repeatable-read-isolation-level
 [SQL Server Isolation Levels: The Read Committed Isolation Level]:https://sqlperformance.com/2014/04/t-sql-queries/the-read-committed-isolation-level
 [SQL Server Isolation Levels: Read Committed Snapshot Isolation]:https://sqlperformance.com/2014/05/t-sql-queries/read-committed-snapshot-isolation
+[SQL Server Isolation Levels: Data Modifications under Read Committed Snapshot Isolation]:https://sqlperformance.com/2014/05/t-sql-queries/data-modifications-under-rcsi
