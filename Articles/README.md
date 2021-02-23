@@ -1354,6 +1354,7 @@ Articles types:
 | [SQL Server Isolation Levels: Data Modifications under Read Committed Snapshot Isolation]                               | Paul White                               | 2014-05-14 | [DBA][DEV]  |
 | [SQL Server Isolation Levels: The SNAPSHOT Isolation Level]                                                             | Paul White                               | 2014-06-30 | [DBA][DEV]  |
 | [SQL Server Isolation Levels: The Read Uncommitted Isolation Level]                                                     | Paul White                               | 2015-04-23 | [DBA][DEV]  |
+| [The OUTPUT Clause for the MERGE Statements]                                                                            | Amarendra Reddy Thummeti                 | 2019-03-08 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2682,3 +2683,4 @@ Articles types:
 [SQL Server Isolation Levels: Data Modifications under Read Committed Snapshot Isolation]:https://sqlperformance.com/2014/05/t-sql-queries/data-modifications-under-rcsi
 [SQL Server Isolation Levels: The SNAPSHOT Isolation Level]:https://sqlperformance.com/2014/06/sql-performance/the-snapshot-isolation-level
 [SQL Server Isolation Levels: The Read Uncommitted Isolation Level]:https://sqlperformance.com/2015/04/t-sql-queries/the-read-uncommitted-isolation-level
+[The OUTPUT Clause for the MERGE Statements]:https://www.sqlservercentral.com/articles/the-output-clause-for-the-merge-statements
