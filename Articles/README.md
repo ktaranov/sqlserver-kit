@@ -1357,6 +1357,7 @@ Articles types:
 | [The OUTPUT Clause for the MERGE Statements]                                                                            | Amarendra Reddy Thummeti                 | 2019-03-08 | [DBA][DEV]  |
 | [SQLskills SQL101: Query plans based on what’s in memory]                                                               | Paul Randal                              | 2017-03-03 | [DBA][DEV]  |
 | [Performance: String Concatenation in SQL Server]                                                                       | Steve Stedman                            | 2021-01-25 | [DBA][DEV]  |
+| [Performance: Faster way to concatenate longer string]                                                                  | Steve Stedman                            | 2021-01-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2688,3 +2689,4 @@ Articles types:
 [The OUTPUT Clause for the MERGE Statements]:https://www.sqlservercentral.com/articles/the-output-clause-for-the-merge-statements
 [SQLskills SQL101: Query plans based on what’s in memory]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-query-plans-based-on-whats-in-memory/
 [Performance: String Concatenation in SQL Server]:https://stevestedman.com/2021/01/performance-string-concatenation-in-sql-server/
+[Performance: Faster way to concatenate longer string]:https://stevestedman.com/2021/01/performance-faster-way-to-concatenate-longer-string/
