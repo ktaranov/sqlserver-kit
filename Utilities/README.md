@@ -5708,11 +5708,11 @@ Complete and powerful database management, admin and development tool for Micros
 ## MSSQLMerge
 <a id="mssqlmerge"></a>
 Download page: [MSSQLMerge]<br/>
-Release date: ?<br/>
+Release date: 2021-02-26<br/>
 Support Version: 2008-2019, Azure<br/>
 Author: Konstantin Semenenkov<br/>
 Free version: Yes<br/>
-Price: $50
+Price: $75
 
 MssqlMerge is an easy to use diff & merge tool for Microsoft SQL Server databases. This tool allows users to compare and import/export the most common database programming objects and the data between any two databases.
 
