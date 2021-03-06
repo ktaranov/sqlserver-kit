@@ -1363,6 +1363,7 @@ Articles types:
 | [The Hidden Danger of Readable Secondaries in SQL Server AlwaysOn Availability Groups]                                  | Dmitri Korotkevitch                      | 2018-09-04 | [DBA]       |
 | [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-08 | [DBA]       |
 | [Poor Man’s Resource Governor: Database-Scoped Configurations]                                                          | Brent Ozar                               | 2020-09-26 | [DBA]       |
+| [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]                                             | Brent Ozar                               | 2020-11-27 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2700,3 +2701,4 @@ Articles types:
 [The Hidden Danger of Readable Secondaries in SQL Server AlwaysOn Availability Groups]:https://www.apress.com/de/blog/all-blog-posts/readable-secondaries-in-sql-server/16064064
 [When a Columnstore Index Makes Your Query Fail]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
 [Poor Man’s Resource Governor: Database-Scoped Configurations]:https://www.brentozar.com/archive/2020/10/poor-mans-resource-governor-database-scoped-configurations/
+[SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]:https://www.brentozar.com/archive/2020/09/sql-server-suddenly-frozen-you-might-be-snapshotting-too-many-databases/
