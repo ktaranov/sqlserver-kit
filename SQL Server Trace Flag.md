@@ -3900,7 +3900,9 @@ Link: http://www.sqlservergeeks.com/blogs/AmitBansal/sql-server-bi/64/sql-server
 
 <a id="8048"></a>
 #### Trace Flag: 8048
-**Note: Beginning with SQL Server 2014 SP2 and SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.**<br />
+According [Docs Trace Flags]: Beginning with SQL Server 2014 SP2 and SQL Server 2016 this behavior is controlled by the engine and trace flag 8048 has no effect.<br />
+**BUT [according SQL Server ultra expert Erik Darling](https://github.com/ktaranov/sqlserver-kit/issues/195): The trace flag does still has effect. The engine behavior will partition memory if `CMEMTHREAD` contention is detected. Turning on TF 8048 forces the partitioning without having to hit the internal thresholds.
+I trust Eric's opinion (and bold it).**<br />
 Function: Converts NUMA partitioned memory objects into CPU partitioned<br />
 Link: http://sql-sasquatch.blogspot.se/2013/04/startup-trace-flags-i-love.html<br />
 Link: https://support.microsoft.com/kb/2809338<br />
