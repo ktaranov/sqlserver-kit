@@ -1366,6 +1366,7 @@ Articles types:
 | [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]                                             | Brent Ozar                               | 2020-11-27 | [DBA]       |
 | [How to Batch Updates A Few Thousand Rows at a Time]                                                                    | Brent Ozar                               | 2020-12-17 | [DBA][DEV]  |
 | [The Table Variable in SQL Server]                                                                                      | Esat Erkec                               | 2019-12-03 | [DBA][DEV]  |
+| [Using Amazon Fsx For Sql Server Failover Cluster Instances – What You Need To Know!]                                   | Dave Berm                                | 2020-01-24 | [AMZ]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2706,3 +2707,4 @@ Articles types:
 [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]:https://www.brentozar.com/archive/2020/09/sql-server-suddenly-frozen-you-might-be-snapshotting-too-many-databases/
 [How to Batch Updates A Few Thousand Rows at a Time]:https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/
 [The Table Variable in SQL Server]:https://www.sqlshack.com/the-table-variable-in-sql-server/
+[USING AMAZON FSX FOR SQL SERVER FAILOVER CLUSTER INSTANCES – WHAT YOU NEED TO KNOW!]:https://clusteringformeremortals.com/2021/01/08/using-amazon-fsx-for-sql-server-failover-cluster-instances-what-you-need-to-know/
