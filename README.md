@@ -190,6 +190,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [TechEd SQL Server Videos](https://channel9.msdn.com/Search?term=sql%20server&lang-en=true)
    - [Build 2018 conference](http://sqlservercode.blogspot.ru/2018/05/azure-sql-data-warehouse-azure-sql.html)
    - [New Stars of Data SQL Server Video](https://www.youtube.com/playlist?list=PLLq_tkpMFDU5ibrnqn6I8CZxZ2-zYWG9m)
+   - [Youtube Community 1nn0va](https://www.youtube.com/c/Community1nn0va/videos) (by Community 1nn0va)
  - Free Database Podcasts <a id="podcasts"></a>
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
