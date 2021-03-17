@@ -1369,6 +1369,7 @@ Articles types:
 | [Using Amazon Fsx For Sql Server Failover Cluster Instances – What You Need To Know!]                                   | Dave Berm                                | 2020-01-24 | [AMZ]       |
 | [Sometimes you CAN upsize a column in-place]                                                                            | Aaron Bertrand                           | 2020-08-19 | [DBA]       |
 | [Which Microsoft Certification Should You Get?]                                                                         | Brent Ozar                               | 2021-01-04 | [DBA][DEV]  |
+| [SQL Server RAISERROR Cheatsheet]                                                                                       | Chad Baldwin                             | 2021-01-15 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2712,3 +2713,4 @@ Articles types:
 [USING AMAZON FSX FOR SQL SERVER FAILOVER CLUSTER INSTANCES – WHAT YOU NEED TO KNOW!]:https://clusteringformeremortals.com/2021/01/08/using-amazon-fsx-for-sql-server-failover-cluster-instances-what-you-need-to-know/
 [Sometimes you CAN upsize a column in-place]:https://sqlperformance.com/2020/08/sql-indexes/upsize-column-in-place
 [Which Microsoft Certification Should You Get?]:https://www.brentozar.com/archive/2021/01/which-microsoft-certification-should-you-get/
+[SQL Server RAISERROR Cheatsheet]:https://chadbaldwin.net/2021/01/15/raiserror-cheatsheet.html
