@@ -1371,6 +1371,7 @@ Articles types:
 | [Which Microsoft Certification Should You Get?]                                                                         | Brent Ozar                               | 2021-01-04 | [DBA][DEV]  |
 | [SQL Server RAISERROR Cheatsheet]                                                                                       | Chad Baldwin                             | 2021-01-15 | [DBA][DEV]  |
 | [Want to Avoid Deployment Downtime? Replication Probably Isn’t the Answer.]                                             | Brent Ozar                               | 2021-01-06 | [DBA][DEV]  |
+| [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”]                                                         | Brent Ozar                               | 2021-01-25 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2716,3 +2717,4 @@ Articles types:
 [Which Microsoft Certification Should You Get?]:https://www.brentozar.com/archive/2021/01/which-microsoft-certification-should-you-get/
 [SQL Server RAISERROR Cheatsheet]:https://chadbaldwin.net/2021/01/15/raiserror-cheatsheet.html
 [Want to Avoid Deployment Downtime? Replication Probably Isn’t the Answer.]:https://www.brentozar.com/archive/2021/01/want-to-avoid-deployment-downtime-replication-probably-isnt-the-answer/
+[“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”]:https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/
