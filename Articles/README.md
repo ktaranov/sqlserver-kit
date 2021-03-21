@@ -1372,6 +1372,7 @@ Articles types:
 | [SQL Server RAISERROR Cheatsheet]                                                                                       | Chad Baldwin                             | 2021-01-15 | [DBA][DEV]  |
 | [Want to Avoid Deployment Downtime? Replication Probably Isn’t the Answer.]                                             | Brent Ozar                               | 2021-01-06 | [DBA][DEV]  |
 | [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”]                                                         | Brent Ozar                               | 2021-01-25 | [DBA][DEV]  |
+| [Why Multiple Plans for One Query Are Bad]                                                                              | Brent Ozar                               | 2018-01-17 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2718,3 +2719,4 @@ Articles types:
 [SQL Server RAISERROR Cheatsheet]:https://chadbaldwin.net/2021/01/15/raiserror-cheatsheet.html
 [Want to Avoid Deployment Downtime? Replication Probably Isn’t the Answer.]:https://www.brentozar.com/archive/2021/01/want-to-avoid-deployment-downtime-replication-probably-isnt-the-answer/
 [“But Surely NOLOCK Is Okay If No One’s Changing Data, Right?”]:https://www.brentozar.com/archive/2021/01/but-surely-nolock-is-okay-if-no-ones-changing-data-right/
+[Why Multiple Plans for One Query Are Bad]:https://www.brentozar.com/archive/2018/03/why-multiple-plans-for-one-query-are-bad/
