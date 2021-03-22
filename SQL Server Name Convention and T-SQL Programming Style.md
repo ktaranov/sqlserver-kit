@@ -291,6 +291,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
    > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.   
+   
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/), [here](https://www.brentozar.com/archive/2015/12/give-your-t-sql-a-semicolonoscopy/), and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
    Semicolon is mandority for:
    1. [Common table expression `WITH CTE `](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql):
@@ -398,9 +399,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
  - Avoid wrapping functions around columns specified in the `WHERE` and `JOIN` clauses.
    Doing so makes the columns non-deterministic and prevents the query processor from using indexes.
- - Use `NULL` or `NOT NULL` for each column in a temporary table. The [`ANSI_NULL_DFLT_ON`] option control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
+ - Use `NULL` or `NOT NULL` for each column in a temporary table. The [`ANSI_NULL_DFLT_ON`](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql) option control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
    If a connection executes a procedure with different settings for these options than the connection that created the procedure, the columns of the table created for the second connection can have different nullability and exhibit different behavior. If `NULL` or `NOT NULL` is explicitly stated for each column, the temporary tables are created by using the same nullability for all connections that execute the procedure.
-   [`ANSI_NULL_DFLT_ON`]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql
  - Use modification statements that convert nulls and include logic that eliminates rows with null values from queries. Be aware that in Transact-SQL, `NULL` is not an empty or "nothing" value. It is a placeholder for an unknown value and can cause unexpected behavior, especially when querying for result sets or using AGGREGATE functions.
  - Use the `UNION ALL` operator instead of the `UNION` or `OR` operators, unless there is a specific need for distinct values.
    The `UNION ALL` operator requires less processing overhead because duplicates are not filtered out of the result set.
@@ -769,4 +769,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
 [`ANSI`]:http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip
-[hints]https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
+[hints]:https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
