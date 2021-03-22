@@ -296,10 +296,12 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    Semicolon is mandority for:
    1. [Common table expression `WITH CTE `](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql):
    > When a CTE is used in a statement that is part of a batch, the statement before it must be followed by a semicolon.
-   3. [`Merge`](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql) statements:
+   2. [`Merge`](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql) statements:
    > The MERGE statement requires a semicolon (;) as a statement terminator. Error 10713 is raised when a MERGE statement is run without the terminator.
-   5. [`TROW`](https://docs.microsoft.com/sql/t-sql/language-elements/throw-transact-sql) exceptions:
+   3. [`TROW`](https://docs.microsoft.com/sql/t-sql/language-elements/throw-transact-sql) exceptions:
    > The statement before the THROW statement must be followed by the semicolon (;) statement terminator.
+   4. All [Service Broker statements](https://docs.microsoft.com/sql/t-sql/statements/send-transact-sql):
+   > If the SEND statement isn't the first statement in a batch or stored procedure, the preceding statement must be terminated with a semicolon (;).
    
  - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
