@@ -290,10 +290,16 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    This is [`ANSI`] standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
-   > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
-   
+   > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.   
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/), [here](https://www.brentozar.com/archive/2015/12/give-your-t-sql-a-semicolonoscopy/), and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
-   Also if you use common table expression `WITH CTE ` semicolon is mandority.
+   Semicolon is mandority for:
+   1. [Common table expression `WITH CTE `](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql):
+   > When a CTE is used in a statement that is part of a batch, the statement before it must be followed by a semicolon.
+   3. [`Merge`](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql] statements:
+   > The MERGE statement requires a semicolon (;) as a statement terminator. Error 10713 is raised when a MERGE statement is run without the terminator.
+   5. [`TROW`](https://docs.microsoft.com/sql/t-sql/language-elements/throw-transact-sql) exceptions:
+   > The statement before the THROW statement must be followed by the semicolon (;) statement terminator.
+   
  - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
