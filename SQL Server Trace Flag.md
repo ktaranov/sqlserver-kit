@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**613** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**614** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -81,6 +81,7 @@ Source links:
 - Andrzej Kukula
 - Aaron Bertrand ([b](https://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
 - Wilfred van Dijk
+- Tracy Boggiano ([b](databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -288,7 +289,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **613 trace flags**
+Summary: **614 trace flags**
 
 
 <a id="-1"></a>
@@ -5449,6 +5450,16 @@ Function: When reorganizing a columnstore index, use a threshold of 1% of the ro
 Link: https://techcommunity.microsoft.com/t5/sql-server-support/new-trace-flags-for-better-maintenance-of-deleted-rows-in/ba-p/2127034
 Scope: global only
 
+<a id="12306"></a>
+#### Trace Flag: 12306
+Function: Enable setting maximum [group commit time](https://www.sqlshack.com/sql-server-wait-type-hadr-group-commit/), use new trace flag 12306. This TF can be enabled during SQL Server startup or dynamically (through `DBCC TRACEON(12306, -1)`).
+After TF 12306 is enabled, you can further enable 12311, 12312, 12314, 12318. These represent maximum group commit times of 1ms, 2ms, 4ms, and 8ms, respectively. They settings are additive. The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.
+If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF 12306.
+The effect of TFs 12311, 12312, 12314, and 12318 occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
+In the SQL Server error log, you can see entries about this actions.<br />
+Link: [KB4565944]<br />
+Scope: global or session
+
 
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
@@ -5534,3 +5545,5 @@ Scope: global only
 [SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
 [Minimizing the impact of DBCC CHECKDB]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
 [KB2634571]:https://web.archive.org/web/20150303213855/http://support.microsoft.com/kb/2634571
+[KB4565944]:https://support.microsoft.com/kb/4565944
+
