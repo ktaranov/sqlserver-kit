@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**614** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**618** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -81,7 +81,7 @@ Source links:
 - Andrzej Kukula
 - Aaron Bertrand ([b](https://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
 - Wilfred van Dijk
-- Tracy Boggiano ([b](databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
+- Tracy Boggiano ([b](http://databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -289,7 +289,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **614 trace flags**
+Summary: **618 trace flags**
 
 
 <a id="-1"></a>
@@ -5436,12 +5436,14 @@ Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags 876, 11064, and 11068, SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.
 Scope: global only
 
+
 <a id="11631"></a>
 #### Trace Flag: 11631
 Function: When reorganizing a columnstore index, use a threshold of 10% of the actual number of rows in the rowgroup. By default, without this trace flag, SQL Server uses 10% of a theoretical max of ~1M rows in the rowgroup, 100K rows, which meant that small rowgroups would never get reorganized.
 **Note: This trace flag applies to SQL Server 2019 CU9 (15.x) and higher builds.**<br />
 Link: https://techcommunity.microsoft.com/t5/sql-server-support/new-trace-flags-for-better-maintenance-of-deleted-rows-in/ba-p/2127034
 Scope: global only
+
 
 <a id="11634"></a>
 #### Trace Flag: 11634
@@ -5450,14 +5452,60 @@ Function: When reorganizing a columnstore index, use a threshold of 1% of the ro
 Link: https://techcommunity.microsoft.com/t5/sql-server-support/new-trace-flags-for-better-maintenance-of-deleted-rows-in/ba-p/2127034
 Scope: global only
 
+
 <a id="12306"></a>
 #### Trace Flag: 12306
-Function: Enable setting maximum [group commit time](https://www.sqlshack.com/sql-server-wait-type-hadr-group-commit/), use new trace flag 12306. This TF can be enabled during SQL Server startup or dynamically (through `DBCC TRACEON(12306, -1)`).
-After TF 12306 is enabled, you can further enable 12311, 12312, 12314, 12318. These represent maximum group commit times of 1ms, 2ms, 4ms, and 8ms, respectively. They settings are additive. The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.
+Function: Enable setting maximum [group commit time](https://www.sqlshack.com/sql-server-wait-type-hadr-group-commit/). This TF can be enabled during SQL Server startup or dynamically (through `DBCC TRACEON(12306, -1)`).<br />
+After TF 12306 is enabled, you can further enable 12311, 12312, 12314, 12318. These represent maximum group commit times of 1ms, 2ms, 4ms, and 8ms, respectively. They settings are additive. The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.<br />
 If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF 12306.
 The effect of TFs 12311, 12312, 12314, and 12318 occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
 In the SQL Server error log, you can see entries about this actions.<br />
 Link: [KB4565944]<br />
+Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
+Scope: global or session
+
+
+<a id="12311"></a>
+#### Trace Flag: 12311
+Function: After TF [12306](#12306) is enabled, you can further enable 12311 trace flag that represent maximum group commit times of **1ms**. This TF is additive whith [12312](#12312), [12314](#12314), and [12318](#12318). The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.<br />
+If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF [12306](#12306).
+The effect of TFs [12311](#12311), [12312](#12312), [12314](#12314), and [12318](#12318) occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
+In the SQL Server error log, you can see entries about this actions.<br />
+Link: [KB4565944]<br />
+Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
+Scope: global or session
+
+
+<a id="12312"></a>
+#### Trace Flag: 12312
+Function: After TF [12306](#12306) is enabled, you can further enable 12312 trace flag that represent maximum group commit times of **2ms**. This TF is additive whith [12311](#12311), [12314](#12314), and [12318](#12318). The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.<br />
+If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF [12306](#12306).
+The effect of TFs [12311](#12311), [12312](#12312), [12314](#12314), and [12318](#12318) occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
+In the SQL Server error log, you can see entries about this actions.<br />
+Link: [KB4565944]<br />
+Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
+Scope: global or session
+
+
+<a id="12314"></a>
+#### Trace Flag: 12314
+Function: After TF [12306](#12306) is enabled, you can further enable 12314 trace flag that represent maximum group commit times of **4ms**. This TF is additive whith [12311](#12311), [12312](#12312), and [12318](#12318). The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.<br />
+If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF [12306](#12306).
+The effect of TFs [12311](#12311), [12312](#12312), [12314](#12314), and [12318](#12318) occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
+In the SQL Server error log, you can see entries about this actions.<br />
+Link: [KB4565944]<br />
+Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
+Scope: global or session
+
+
+<a id="12318"></a>
+#### Trace Flag: 12318
+Function: After TF [12306](#12306) is enabled, you can further enable 12318 trace flag that represent maximum group commit times of **8ms**. This TF is additive whith [12311](#12311), [12312](#12312), and [12314](#12314). The maximum group commit time setting is capped at 10ms. However, these should not be repeated. For example, do not specify the same TF more than one time.<br />
+If you do not want to set maximum group commit time but want, instead, to revert to the default behavior of 10ms, disable TF [12306](#12306).
+The effect of TFs [12311](#12311), [12312](#12312), [12314](#12314), and [12318](#12318) occurs when there is a checkpoint in the database. You can rely on the setting of SQL Server or the database to let the checkpoint automatically occur. If you want to let the TFs take effect immediately, you can issue a manual checkpoint.
+In the SQL Server error log, you can see entries about this actions.<br />
+Link: [KB4565944]<br />
+Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
 Scope: global or session
 
 
