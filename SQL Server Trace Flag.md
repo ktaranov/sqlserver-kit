@@ -5393,7 +5393,8 @@ When trace flag 11024 is enabled, the modification count of the root node is kep
 **Note: This trace flag applies to SQL Server 2016 (13.x) SP2, SQL Server 2017 (14.x) CU3, and higher builds.**<br />
 Link: https://support.microsoft.com/kb/4041811<br />
 Link: [Docs Trace Flags]<br />
-Scope: global or session
+Scope: global or session<br />
+SQL Server Version: >= 2019 RTM,  >= 2017 CU3, >= 2016 SP2
 
 
 <a id="11029"></a>
@@ -5420,7 +5421,7 @@ Function: Improves the scalability of data loading operations into columnstore i
 For more information on loading data into a columnstore index, see [Columnstore indexes - Data loading guidance](https://docs.microsoft.com/en-gb/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance).
 **Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
-Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags 876, 11064, and 11068, SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.
+Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags 876, 11064, and 11068, SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.<br />
 Scope: global only<br />
 SQL Server Version: >= 2019 RTM
 
@@ -5435,7 +5436,7 @@ For example, using this trace flag when loading 1,048,577 rows into a columnstor
 Without this trace flag, the insert operation would result in one compressed rowgroup.**<br />
 **Note: This trace flag applies to SQL Server 2019 (15.x) and higher builds.**<br />
 Link: [Docs Trace Flags]<br />
-Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags [876](#876), [11064](#11064), and [11068](#11068), SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.
+Link: https://support.microsoft.com/en-us/topic/kb4588980-fix-higher-than-expected-number-of-single-row-columnstore-rowgroups-may-be-generated-for-columnstore-bulk-insert-when-both-large-page-allocator-and-scalable-columnstore-bulk-insert-features-are-turned-on-0d74afa4-96e7-2026-b486-122d2619554a - if you turn on trace flags [876](#876), [11064](#11064), and [11068](#11068), SQL Server may generate single row columnstore rowgroups. Fixed in 2019 CU9.<br />
 Scope: global only<br />
 SQL Server Version: >= 2019 RTM
 
