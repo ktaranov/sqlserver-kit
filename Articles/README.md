@@ -1376,6 +1376,7 @@ Articles types:
 | [Partitioned Tables Cause Longer Plan Compilation Times.]                                                               | Brent Ozar                               | 2021-02-26 | [DBA][DEV]  |
 | [Query Hints You Can Use to Avoid Blocking]                                                                             | Brent Ozar                               | 2021-01-21 | [DBA][DEV]  |
 | [Changing Statistics Cause Longer Compilation Times]                                                                    | Brent Ozar                               | 2021-02-13 | [DBA][DEV]  |
+| [Understanding Execution Plan Operator Timings]                                                                         | Paul White                               | 2021-03-08 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2726,3 +2727,4 @@ Articles types:
 [Partitioned Tables Cause Longer Plan Compilation Times.]:https://www.brentozar.com/archive/2021/02/partitioned-tables-cause-longer-plan-compilation-times/
 [Query Hints You Can Use to Avoid Blocking]:https://www.brentozar.com/archive/2021/01/query-hints-you-can-use-to-avoid-blocking/
 [Changing Statistics Cause Longer Compilation Times]:https://www.brentozar.com/archive/2021/02/changing-statistics-cause-longer-compilation-times/
+[Understanding Execution Plan Operator Timings]:https://sqlperformance.com/2021/03/sql-performance/execution-plan-timings
