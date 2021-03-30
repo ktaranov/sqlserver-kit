@@ -1377,6 +1377,7 @@ Articles types:
 | [Query Hints You Can Use to Avoid Blocking]                                                                             | Brent Ozar                               | 2021-01-21 | [DBA][DEV]  |
 | [Changing Statistics Cause Longer Compilation Times]                                                                    | Brent Ozar                               | 2021-02-13 | [DBA][DEV]  |
 | [Understanding Execution Plan Operator Timings]                                                                         | Paul White                               | 2021-03-08 | [DBA][DEV]  |
+| [What Does a Database Administrator Actually Do?]                                                                       | Brent Ozar                               | 2021-03-20 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2728,3 +2729,4 @@ Articles types:
 [Query Hints You Can Use to Avoid Blocking]:https://www.brentozar.com/archive/2021/01/query-hints-you-can-use-to-avoid-blocking/
 [Changing Statistics Cause Longer Compilation Times]:https://www.brentozar.com/archive/2021/02/changing-statistics-cause-longer-compilation-times/
 [Understanding Execution Plan Operator Timings]:https://sqlperformance.com/2021/03/sql-performance/execution-plan-timings
+[What Does a Database Administrator Actually Do?]:https://www.brentozar.com/archive/2021/03/what-does-a-database-administrator-actually-do/
