@@ -1378,6 +1378,7 @@ Articles types:
 | [Changing Statistics Cause Longer Compilation Times]                                                                    | Brent Ozar                               | 2021-02-13 | [DBA][DEV]  |
 | [Understanding Execution Plan Operator Timings]                                                                         | Paul White                               | 2021-03-08 | [DBA][DEV]  |
 | [What Does a Database Administrator Actually Do?]                                                                       | Brent Ozar                               | 2021-03-20 | [DBA]       |
+| [How Useful Is Column Store In Standard Edition?]                                                                       | Erik Darling                             | 2021-03-17 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2730,3 +2731,4 @@ Articles types:
 [Changing Statistics Cause Longer Compilation Times]:https://www.brentozar.com/archive/2021/02/changing-statistics-cause-longer-compilation-times/
 [Understanding Execution Plan Operator Timings]:https://sqlperformance.com/2021/03/sql-performance/execution-plan-timings
 [What Does a Database Administrator Actually Do?]:https://www.brentozar.com/archive/2021/03/what-does-a-database-administrator-actually-do/
+[How Useful Is Column Store In Standard Edition?]:https://www.erikdarlingdata.com/sql-server/how-useful-is-column-store-in-standard-edition/
