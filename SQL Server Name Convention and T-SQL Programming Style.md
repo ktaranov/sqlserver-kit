@@ -538,7 +538,7 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
  - The procedure or function should begin with parameters checks (see example below)
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
- - Always use multi-line comment `/* */` instead in-line comment `--`
+ - <a id="sql-comment"></a> Always use multi-line comment `/* */` instead in-line comment `--` in production code due to potential formating problems. More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/).
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009) and [here][11].
  - Do not use `SET NOCOUNT OFF;` because it is default behavior
