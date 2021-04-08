@@ -1382,6 +1382,7 @@ Articles types:
 | [Task Manager’s CPU numbers are all but meaningless]                                                                    | Aaron Margosis                           | 2021-03-25 | [DBA]       |
 | [Global temporary tables are almost never the answer in SQL Server]                                                     | Greg Low                                 | 2021-02-04 | [DBA][DEV]  |
 | [Never, Ever, Ever Start T-SQL Comments with Two Dashes]                                                                | Brent Ozar                               | 2021-04-05 | [DBA][DEV]  |
+| [Why All My Servers Have an 8GB Empty File]                                                                             | Brian Schrader                           | 2021-03-25 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2738,3 +2739,4 @@ Articles types:
 [Task Manager’s CPU numbers are all but meaningless]:https://aaron-margosis.medium.com/task-managers-cpu-numbers-are-all-but-meaningless-2d165b421e43
 [Global temporary tables are almost never the answer in SQL Server]:https://blog.greglow.com/2021/02/04/sql-global-temporary-tables-are-almost-never-the-answer-in-sql-server/
 [Never, Ever, Ever Start T-SQL Comments with Two Dashes]:https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/
+[Why All My Servers Have an 8GB Empty File]:https://brianschrader.com/archive/why-all-my-servers-have-an-8gb-empty-file/
