@@ -1383,6 +1383,7 @@ Articles types:
 | [Global temporary tables are almost never the answer in SQL Server]                                                     | Greg Low                                 | 2021-02-04 | [DBA][DEV]  |
 | [Never, Ever, Ever Start T-SQL Comments with Two Dashes]                                                                | Brent Ozar                               | 2021-04-05 | [DBA][DEV]  |
 | [Why All My Servers Have an 8GB Empty File]                                                                             | Brian Schrader                           | 2021-03-25 | [DBA]       |
+| [Incorrect Results with Parallel Eager Spools and Batch Mode]                                                           | Paul White                               | 2021-03-24 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2740,3 +2741,4 @@ Articles types:
 [Global temporary tables are almost never the answer in SQL Server]:https://blog.greglow.com/2021/02/04/sql-global-temporary-tables-are-almost-never-the-answer-in-sql-server/
 [Never, Ever, Ever Start T-SQL Comments with Two Dashes]:https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/
 [Why All My Servers Have an 8GB Empty File]:https://brianschrader.com/archive/why-all-my-servers-have-an-8gb-empty-file/
+[Incorrect Results with Parallel Eager Spools and Batch Mode]:https://www.sql.kiwi/2021/03/spools-batch-mode-hp.html
