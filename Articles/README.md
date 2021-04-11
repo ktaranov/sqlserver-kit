@@ -1385,6 +1385,7 @@ Articles types:
 | [Why All My Servers Have an 8GB Empty File]                                                                             | Brian Schrader                           | 2021-03-25 | [DBA]       |
 | [Incorrect Results with Parallel Eager Spools and Batch Mode]                                                           | Paul White                               | 2021-03-24 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 1]                                                              | Aaron Bertrand                           | 2021-02-22 | [DBA][DEV]  |
+| [Deprecated features to take out of your toolbox – Part 2]                                                              | Aaron Bertrand                           | 2021-03-15 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2744,3 +2745,4 @@ Articles types:
 [Why All My Servers Have an 8GB Empty File]:https://brianschrader.com/archive/why-all-my-servers-have-an-8gb-empty-file/
 [Incorrect Results with Parallel Eager Spools and Batch Mode]:https://www.sql.kiwi/2021/03/spools-batch-mode-hp.html
 [Deprecated features to take out of your toolbox – Part 1]:https://sqlperformance.com/2021/02/sql-performance/deprecated-features-1
+[Deprecated features to take out of your toolbox – Part 2]:https://sqlperformance.com/2021/03/sql-performance/deprecated-features-2
