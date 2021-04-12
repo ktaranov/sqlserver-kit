@@ -1386,6 +1386,7 @@ Articles types:
 | [Incorrect Results with Parallel Eager Spools and Batch Mode]                                                           | Paul White                               | 2021-03-24 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 1]                                                              | Aaron Bertrand                           | 2021-02-22 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 2]                                                              | Aaron Bertrand                           | 2021-03-15 | [DBA][DEV]  |
+| [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-04 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2746,3 +2747,4 @@ Articles types:
 [Incorrect Results with Parallel Eager Spools and Batch Mode]:https://www.sql.kiwi/2021/03/spools-batch-mode-hp.html
 [Deprecated features to take out of your toolbox – Part 1]:https://sqlperformance.com/2021/02/sql-performance/deprecated-features-1
 [Deprecated features to take out of your toolbox – Part 2]:https://sqlperformance.com/2021/03/sql-performance/deprecated-features-2
+[How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
