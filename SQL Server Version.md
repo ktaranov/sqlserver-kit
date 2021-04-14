@@ -943,6 +943,7 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 
 | Build         | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                               | Release Date | Fixes | Public |
 |---------------|------------------|--------|------|-----------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------|--------------|-------|--------|
+| 11.0.7507.2   | 2011.110.7507.2  | SP4    | GDR  | CVE-2021-1636                     | 4583465 | [Description of the security update for SQL Server 2012 SP4 GDR: January 12, 2021]                                             | 2021-01-12   |     1 |      1 |
 | 11.0.7493.4   | 2011.110.7462.6  | SP4    | GDR  | CVE-2020-0618                     | 4532098 | [Security update for SQL Server 2012 SP4 GDR: February 11, 2020]                                                               | 2020-02-11   |     1 |      1 |
 | 11.0.7469.6   | 2011.110.7469.6  | SP4    | CU   | **Latest CU SP4**                 | 4091266 | [On-demand hotfix update package for SQL Server 2012 SP4]                                                                      | 2018-03-28   |     2 |      2 |
 | 11.0.7462.6   | 2011.110.7462.6  | SP4    | GDR  | CVE-2017-5715,2017-5753,2017-5754 | 4057116 | [Security Advisory ADV180002 (GDR)]                                                                                            | 2018-01-12   |     1 |      1 |
@@ -1037,6 +1038,7 @@ All SQL Server 2012 CU downloads: [Catalog Update Microsoft SQL Server 2012](htt
 | 11.0.1440     | 2010.110.1440.19 | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 3 (CTP3)                                              | 2011-07-11   |       |        |
 | 11.0.1103     | 2010.110.1103.9  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2012 (codename Denali) Community Technology Preview 1 (CTP1)                                              | 2010-11-08   |       |        |
 
+[Description of the security update for SQL Server 2012 SP4 GDR: January 12, 2021]:https://support.microsoft.com/help/4583465
 [Security update for SQL Server 2012 SP4 GDR: February 11, 2020]:https://support.microsoft.com/help/4532098
 [On-demand hotfix update package for SQL Server 2012 SP4]:https://support.microsoft.com/help/4091266
 [Security Advisory ADV180002 (GDR)]:https://support.microsoft.com/help/4057116/security-update-for-vulnerabilities-in-sql-server
