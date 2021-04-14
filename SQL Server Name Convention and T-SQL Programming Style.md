@@ -262,6 +262,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query),
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs).
+ - <a id="sql-comment"></a> Always use multi-line comment `/* */` instead in-line comment `--` in production code due to potential formating problems in different tools and programs.
+   More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/) and [here](https://sqlkover.com/ssis-and-the-ora-00907-missing-right-parenthesis-error/).
  - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
    Main problems are: traffic issues, Memory Grants issues, Index usage issues.
    **Only one exception, see it below.**
@@ -538,7 +540,6 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
  - The procedure or function should begin with parameters checks (see example below)
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
- - <a id="sql-comment"></a> Always use multi-line comment `/* */` instead in-line comment `--` in production code due to potential formating problems. More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/).
  - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009) and [here][11].
  - Do not use `SET NOCOUNT OFF;` because it is default behavior
