@@ -133,7 +133,7 @@ Profits:
 | 2017    | [Install 2017 RTM] then [CU21 KB4557397]                              | 14.0.1000.169<br/>14.0.3335.7                | 2017-10-02<br/>2020-07-01                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU14 KB4564903]                              | 13.0.5026.0<br/>13.0.5830.85                 | 2018-04-24<br/>2020-08-06                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4535288]                              | 12.0.6024.0<br/>12.0.6372.1                  | 2018-10-30<br/>2020-02-11                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
-| 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4532098]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7493.4 | 2012-02-14<br/>2017-10-05<br/>2020-02-11 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
+| 2012    | [Install 2012] then<br/>[SP4 2012] then<br/>[KB4583465]               | 11.0.2100.60<br/>11.0.7001.0<br/>11.0.7507.2 | 2012-02-14<br/>2017-10-05<br/>2021-01-12 | 2015-12-01      | 2017-07-11         | 2022-07-12       | [Other SQL 2012 Updates](#microsoft-sql-server-2012-builds)       |
 | 2008 R2 | [Install 2008 R2] then <br/>[SP3 2008 R2] then<br/>[SU KB3045311]     | 10.50.1600<br/>10.50.6000<br/>10.50.6220.0   | 2010-11-21<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 R2 Updates](#microsoft-sql-server-2008-r2-builds) |
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
@@ -147,7 +147,7 @@ Profits:
 [KB4535288]:https://support.microsoft.com/help/4535288
 [Install 2012]:https://www.microsoft.com/evalcenter/evaluate-sql-server-2012
 [SP4 2012]:https://support.microsoft.com/help/4018073
-[KB4532098]:https://support.microsoft.com/help/4532098
+[KB4583465]:https://support.microsoft.com/help/4583465
 [CU9 KB3098512]:https://support.microsoft.com/kb/3098512
 [Install 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SP3 2008 R2]:http://www.microsoft.com/download/details.aspx?id=44271
