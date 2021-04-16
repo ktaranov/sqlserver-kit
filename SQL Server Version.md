@@ -186,7 +186,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2014 SP3 KB4535288] | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
 | [SQL Server 2012 RTM]           | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]           | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
-| [SQL Server 2012 SP4 KB4532098] | SQLServer2012-KB4532098-x64.exe                                   | 2020-02-11   | 11.0.7493.4   |      867 | e20fa98775d4983a042e987caa6d59eba46ec760 |
+| [SQL Server 2012 SP4 KB4583465] | SQLServer2012-KB4583465-x64.exe                                   | 2021-01-12   | 11.0.7507.2   |      856 | c6e5ea14425fed26b885ab6b70aba8622817fd8c |
 | SQL Server 2008 R2 RTM          | SW_DVD9_SQL_Svr_Enterprise_Edtn_2008_R2_English_MLF_X16-29540.ISO | 2010-04-21   | 10.50.1600.1  |     4177 | 18105db70f0f0b23418f5005a6ce4b25317c6d03 |
 | [SQL Server 2008 R2 SP3]        | SQLServer2008R2SP3-KB2979597-x64-ENU.exe                          | 2014-09-30   | 10.50.6220.0  |      358 | 194cd740d5812b12639b47886ebde0d04774b4ec |
 | [SQL Server 2008 R2 SU]         | SQLServer2008R2-KB3045316-x64.exe                                 | 2015-07-14   | 10.50.6000    |       58 | 3aa4d820553b1e5d96735541cbb55d97322c286e |
@@ -207,7 +207,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2014 SP3 KB4535288]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100913&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
-[SQL Server 2012 SP4 KB4532098]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100915&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100915&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
+[SQL Server 2012 SP4 KB4583465]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=102625
 [SQL Server 2008 R2]:https://msdn.microsoft.com/subscriptions/securedownloads/#searchTerm=sql%20server%202008%20r2&ProductFamilyId=0&Languages=en&FileExtensions=.iso&PageSize=10&PageIndex=0&FileId=0
 [SQL Server 2008 R2 SP3]:https://download.microsoft.com/download/D/7/A/D7A28B6C-FCFE-4F70-A902-B109388E01E9/ENU/SQLServer2008R2SP3-KB2979597-x64-ENU.exe
 [SQL Server 2008 R2 SU]:https://download.microsoft.com/download/4/D/A/4DAE6F9E-960E-4A59-BDE7-1D92DA508315/SQLServer2008R2-KB3045316-x64.exe
