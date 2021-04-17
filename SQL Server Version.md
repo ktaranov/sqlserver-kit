@@ -746,6 +746,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 
 | Build        | File version     | Branch | Type | Info                              | KB      | Description/Link                                                                                                           | Release Date | Fixes | Public | Size, Mb |
 |--------------|------------------|--------|------|-----------------------------------|---------|----------------------------------------------------------------------------------------------------------------------------|--------------|------:|-------:|---------:|
+| 12.0.6433.1  | 2014.120.6433.1  | SP3    | GDR  | CVE-2021-1636                     | 4583462 | [Description of the security update for SQL Server 2014 SP3 CU4: January 12, 2021]                                         | 2021-01-12   |     1 |      1 |      596 |
 | 12.0.6372.1  | 2014.120.6372.1  | SP3    | GDR  | CVE-2020-0618                     | 4535288 | [Security update for SQL Server 2014 SP3 CU4: February 11, 2020]                                                           | 2020-02-11   |     1 |      1 |      604 |
 | 12.0.6329.1  | 2014.120.6329.1  | SP3    | CU   | **Latest CU SP3**                 | 4500181 | [Cumulative Update 4 for SQL Server 2014 SP3]                                                                              | 2019-07-29   |    25 |     19 |      658 |
 | 12.0.6293.0  | 2014.120.6293.0  | SP3    | GDR  | CVE-2019-1068                     | 4505422 | [Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]                                                            | 2019-07-09   |     1 |      1 |      656 |
@@ -842,6 +843,7 @@ Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
 | 12.0.1524.0  | 2014.120.1524.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 2 (CTP2)                                                            | 2013-10-15   |       |        |          |
 | 11.0.9120.0  | 2013.110.9120.0  | CTP    | CTP  |                                   |         | Microsoft SQL Server 2014 Community Technology Preview 1 (CTP1)                                                            | 2013-06-25   |       |        |          |
 
+[Description of the security update for SQL Server 2014 SP3 CU4: January 12, 2021]:https://support.microsoft.com/help/4583462
 [Security update for SQL Server 2014 SP3 CU4: February 11, 2020]:https://support.microsoft.com/help/4535288
 [Cumulative Update 4 for SQL Server 2014 SP3]:https://support.microsoft.com/help/4500181
 [Security update for SQL Server 2014 SP3 CU3 GDR: July 9, 2019]:https://support.microsoft.com/help/4505422
