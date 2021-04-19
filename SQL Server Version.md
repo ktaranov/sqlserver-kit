@@ -183,7 +183,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CU14]      | SQLServer2016-KB4564903-x64.exe                                   | 2020-05-28   | 13.0.5820.21  |      752 | a1de57f8d273b9ae97868e0fd8394c237d7a593d |
 | [SQL Server 2014 SP3]           | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
-| [SQL Server 2014 SP3 KB4535288] | SQLServer2014-KB4535288-x64.exe                                   | 2020-02-11   | 12.0.6372.1   |      604 | f5a76d473fee50a2aabe7c08daeb0910f3590491 |
+| [SQL Server 2014 SP3 KB4583462] | SQLServer2014-KB4583462-x64.exe                                   | 2021-01-12   | 12.0.6433.1   |      596 | 0dc4f56583828865365340dcb95436f1a41754b9 |
 | [SQL Server 2012 RTM]           | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
 | [SQL Server 2012 SP4]           | SQLServer2012SP4-KB4018073-x64-ENU.exe                            | 2017-10-05   | 11.0.7001.0   |     1024 | 95127ee2e8dfef180752e531a83cd948c24a3a87 |
 | [SQL Server 2012 SP4 KB4583465] | SQLServer2012-KB4583465-x64.exe                                   | 2021-01-12   | 11.0.7507.2   |      856 | c6e5ea14425fed26b885ab6b70aba8622817fd8c |
@@ -204,7 +204,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU14]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4564903-x64.exe
 [SQL Server 2014 SP3]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp3
-[SQL Server 2014 SP3 KB4535288]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=100913&6B49FDFB-8E5B-4B07-BC31-15695C5A2143=1
+[SQL Server 2014 SP3 KB4583462]:https://www.microsoft.com/en-us/download/details.aspx?id=102623
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
 [SQL Server 2012 SP4]:https://download.microsoft.com/download/E/A/B/EABF1E75-54F0-42BB-B0EE-58E837B7A17F/SQLServer2012SP4-KB4018073-x64-ENU.exe
 [SQL Server 2012 SP4 KB4583465]:https://www.microsoft.com/en-us/download/confirmation.aspx?id=102625
