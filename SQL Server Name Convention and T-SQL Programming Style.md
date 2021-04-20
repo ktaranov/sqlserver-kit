@@ -271,7 +271,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list),
    [here](https://dba.stackexchange.com/q/253873/107045),
    [here](https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/).
- - Use asterisk (`*`) only in an archiving situation, where rows are being moved to another table that must have the same structure.
+ - Use asterisk (`*`) **ONLY** in an archiving situation, where rows are being moved to another table that must have the same structure.
    ```sql
    INSERT INTO SalesOrderArchive  /* Note no column list */
    SELECT *
@@ -364,6 +364,21 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS 'Tables' FROM sys.tables;
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS Tables   FROM sys.tables;
    ```
+ - <a id="explicit-range-condition"></a> Always consider using an explicit range condition when comparing dates for properly make use of an index. More details [here](https://use-the-index-luke.com/sql/where-clause/obfuscation/dates).
+   ```tsql
+   /* bad */
+   SELECT sale_date
+   FROM sales
+   WHERE YEAR(sale_date) >= 1970
+   AND YEAR(sale_date) < 1971;
+   
+   /* good */
+   SELECT sale_date
+   FROM sales
+   WHERE sale_date >= CAST('1970-01-01' AS date) 
+     AND sale_date < CAST('1971-01-01', AS date);
+   ```
+   
  - The first argument in `SELECT` expression should be on the next line:
    ```sql
     SELECT
