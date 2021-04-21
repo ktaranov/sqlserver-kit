@@ -738,8 +738,8 @@ All SQL Server 2014 CU downloads: [Catalog Update Microsoft SQL Server 2014](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2014 Developer Edition on Windows:
 
 ```
-Microsoft SQL Server 2014 (SP3-CU4) (KB4500181) - 12.0.6329.1 (X64)
-   Jul 20 2019 21:42:29
+Microsoft SQL Server 2014 (SP3-CU4) (KB4583462) - 12.0.6433.1 (X64)
+   Dec 20 2020 21:42:29
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
