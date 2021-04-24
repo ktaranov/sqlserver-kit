@@ -563,7 +563,8 @@ Microsoft SQL Server 2016 (SP2-CU14) (KB4564903) - 13.0.5830.85 (X64)
 
 | Build         | File version      |Branch | Type | Info                              | KB      | Description/Link                                                                                                       | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|-------|------|-----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.5850.14  | 2015.131.585014   | SP2   | CU   | **Latest CU SP2**                 | 4577775 | [Cumulative Update 15 for SQL Server 2016 SP2]                                                                         | 2020-09-28   | 2020-09-18 |    21 |     20 |      753 |
+| 13.0.5865.1   | 2015.131.5865.1   | SP2   | CU   | CVE-2021-1636                     | 4583461 | [Description of the security update for SQL Server 2016 SP2 CU15: January 12, 2021]                                    | 2021-01-12   | 2020-09-18 |     1 |      1 |      753 |
+| 13.0.5850.14  | 2015.131.5850.14  | SP2   | CU   | **Latest CU SP2**                 | 4577775 | [Cumulative Update 15 for SQL Server 2016 SP2]                                                                         | 2020-09-28   | 2020-09-18 |    21 |     20 |      753 |
 | 13.0.5830.85  | 2015.131.5830.85  | SP2   | CU   |                                   | 4564903 | [Cumulative Update 14 for SQL Server 2016 SP2]                                                                         | 2020-08-06   | 2020-08-01 |    18 |     16 |      753 |
 | 13.0.5820.21  | 2015.131.5820.21  | SP2   | CU   |                                   | 4549825 | [Cumulative Update 13 for SQL Server 2016 SP2]                                                                         | 2020-05-28   | 2020-05-23 |    29 |     26 |      748 |
 | 13.0.5698.0   | 2015.131.5698.0   | SP2   | CU   |                                   | 4536648 | [Cumulative Update 12 for SQL Server 2016 SP2]                                                                         | 2020-02-25   | 2020-02-16 |    39 |     33 |      746 |
@@ -654,6 +655,7 @@ Microsoft SQL Server 2016 (SP2-CU14) (KB4564903) - 13.0.5830.85 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                    | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                        | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[Description of the security update for SQL Server 2016 SP2 CU15: January 12, 2021]:https://support.microsoft.com/4583461
 [Cumulative Update 15 for SQL Server 2016 SP2]:https://support.microsoft.com/4577775
 [Cumulative Update 14 for SQL Server 2016 SP2]:https://support.microsoft.com/4564903
 [Cumulative Update 13 for SQL Server 2016 SP2]:https://support.microsoft.com/4549825
