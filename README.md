@@ -443,7 +443,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
     - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
     - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
-    - [SQL Cheat Sheet](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
+    - [SQL Cheat Sheet for MySQL](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
     - [Azure Database Migration Guide](https://datamigration.microsoft.com/) (by Microsoft)
     - [Hermitage: Testing transaction isolation levels in relation databases](https://github.com/ept/hermitage) (by Martin Kleppmann)
     - [csv to INSERT online converter - translates your tab-delimited data into a T-SQL INSERT statement](https://table.strd.co/) (by Structured Concepts AB)
@@ -451,6 +451,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [New Stars of Data 2020 Presentations](https://github.com/SQLGrillen/NSOD-1) (by SQLGrillen)
     - [Get Your ColumnScore](https://columnscore.com) (by ColumnScore)
     - [SQL Assessment API rules in .csv format](https://github.com/microsoft/sql-server-samples/blob/master/samples/manage/sql-assessment-api/DefaultRuleset.csv) (by Microsoft)
+    - [SQL cheat sheet for PostgreSQL and Oracle](https://www.pcwdld.com/sql-cheat-sheet) (by Marc Wilson)
 
 **[⬆ back to top](#table-of-contents)**
 
