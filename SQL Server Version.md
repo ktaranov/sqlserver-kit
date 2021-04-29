@@ -555,7 +555,7 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 SP2 Developer Edition on Windows:
 ```
-Microsoft SQL Server 2016 (SP2-CU14) (KB4564903) - 13.0.5830.85 (X64)
+Microsoft SQL Server 2016 (SP2-CU17) (KB5001092) - 13.0.5888.11 (X64)
    Jul 31 2020 18:47:07
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
@@ -657,6 +657,7 @@ Microsoft SQL Server 2016 (SP2-CU14) (KB4564903) - 13.0.5830.85 (X64)
 | 13.0.300.44   | 2015.130.300.444  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2.1 (CTP2.1)                                                    | 2015-06-14   | 2015-06-12 |       |        |          |
 | 13.0.200.172  | 2015.130.200.172  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                        | 2015-05-26   | 2015-05-21 |       |        |          |
 
+[Cumulative Update 17 for SQL Server 2016 SP2]:https://support.microsoft.com/help/5001092
 [Cumulative Update 16 for SQL Server 2016 SP2]:https://support.microsoft.com/5000645
 [Description of the security update for SQL Server 2016 SP2 CU15: January 12, 2021]:https://support.microsoft.com/4583461
 [Cumulative Update 15 for SQL Server 2016 SP2]:https://support.microsoft.com/4577775
