@@ -556,14 +556,14 @@ All SQL Server 2016 CU downloads: [Catalog Update Microsoft SQL Server 2016](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2016 SP2 Developer Edition on Windows:
 ```
 Microsoft SQL Server 2016 (SP2-CU17) (KB5001092) - 13.0.5888.11 (X64)
-   Jul 31 2020 18:47:07
+   Mar 20 2021 08:57:07
    Copyright (c) Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      |Branch | Type | Info                              | KB      | Description/Link                                                                                                       | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|-------|------|-----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 13.0.5888.11  | 2015.131.5888.11  | SP2   | CU   | **Latest CU SP2**                 | 5001092 | [Cumulative Update 17 for SQL Server 2016 SP2]                                                                         | 2021-03-29   |          ? |    20 |     17 |      753 |
+| 13.0.5888.11  | 2015.131.5888.11  | SP2   | CU   | **Latest CU SP2**                 | 5001092 | [Cumulative Update 17 for SQL Server 2016 SP2]                                                                         | 2021-03-29   | 2021-03-20 |    20 |     17 |      753 |
 | 13.0.5882.1   | 2015.131.5882.1   | SP2   | CU   |                                   | 5000645 | [Cumulative Update 16 for SQL Server 2016 SP2]                                                                         | 2021-02-11   |          ? |    22 |     21 |      753 |
 | 13.0.5865.1   | 2015.131.5865.1   | SP2   | CU   | CVE-2021-1636                     | 4583461 | [Description of the security update for SQL Server 2016 SP2 CU15: January 12, 2021]                                    | 2021-01-12   | 2020-10-31 |     1 |      1 |      753 |
 | 13.0.5850.14  | 2015.131.5850.14  | SP2   | CU   |                                   | 4577775 | [Cumulative Update 15 for SQL Server 2016 SP2]                                                                         | 2020-09-28   | 2020-09-18 |    21 |     20 |      753 |
