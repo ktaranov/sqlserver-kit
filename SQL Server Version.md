@@ -658,11 +658,11 @@ Microsoft SQL Server 2016 (SP2-CU17) (KB5001092) - 13.0.5888.11 (X64)
 | 13.0.200.172  | 2015.130.200.172  | CTP   | CTP  |                                   |         | Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)                                                        | 2015-05-26   | 2015-05-21 |       |        |          |
 
 [Cumulative Update 17 for SQL Server 2016 SP2]:https://support.microsoft.com/help/5001092
-[Cumulative Update 16 for SQL Server 2016 SP2]:https://support.microsoft.com/5000645
+[Cumulative Update 16 for SQL Server 2016 SP2]:https://support.microsoft.com/help/5000645
 [Description of the security update for SQL Server 2016 SP2 CU15: January 12, 2021]:https://support.microsoft.com/4583461
-[Cumulative Update 15 for SQL Server 2016 SP2]:https://support.microsoft.com/4577775
-[Cumulative Update 14 for SQL Server 2016 SP2]:https://support.microsoft.com/4564903
-[Cumulative Update 13 for SQL Server 2016 SP2]:https://support.microsoft.com/4549825
+[Cumulative Update 15 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4577775
+[Cumulative Update 14 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4564903
+[Cumulative Update 13 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4549825
 [Cumulative Update 12 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4536648
 [Description of the security update for SQL Server 2016 SP2 CU11: February 11, 2020]:https://support.microsoft.com/help/4535706
 [Cumulative Update 11 for SQL Server 2016 SP2]:https://support.microsoft.com/help/4527378
