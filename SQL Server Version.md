@@ -181,7 +181,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU21]          | SQLServer2017-KB4557397-x64.exe                                   | 2020-07-01   | 14.0.3335.7   |      533 | e91bfa33a34accf82a0c374c9e8b7d0ce3b7ce05 |
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU14]      | SQLServer2016-KB4564903-x64.exe                                   | 2020-05-28   | 13.0.5820.21  |      752 | a1de57f8d273b9ae97868e0fd8394c237d7a593d |
+| [SQL Server 2016 SP2 CU17]      | SQLServer2016-KB5001092-x64.exe                                   | 2021-03-29   | 13.0.5888.11  |      752 |  |
 | [SQL Server 2014 SP3]           | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
 | [SQL Server 2014 SP3 KB4583462] | SQLServer2014-KB4583462-x64.exe                                   | 2021-01-12   | 12.0.6433.1   |      596 | 0dc4f56583828865365340dcb95436f1a41754b9 |
 | [SQL Server 2012 RTM]           | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
@@ -202,7 +202,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2017 CU21]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4557397-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
-[SQL Server 2016 SP2 CU14]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB4564903-x64.exe
+[SQL Server 2016 SP2 CU17]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB5001092-x64.exe
 [SQL Server 2014 SP3]:https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2014-sp3
 [SQL Server 2014 SP3 KB4583462]:https://www.microsoft.com/en-us/download/details.aspx?id=102623
 [SQL Server 2012 RTM]:https://download.microsoft.com/download/4/C/7/4C7D40B9-BCF8-4F8A-9E76-06E9B92FE5AE/ENU/SQLFULL_ENU.iso
