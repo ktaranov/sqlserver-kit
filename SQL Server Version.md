@@ -181,7 +181,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
 | [SQL Server 2017 CU21]          | SQLServer2017-KB4557397-x64.exe                                   | 2020-07-01   | 14.0.3335.7   |      533 | e91bfa33a34accf82a0c374c9e8b7d0ce3b7ce05 |
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
-| [SQL Server 2016 SP2 CU17]      | SQLServer2016-KB5001092-x64.exe                                   | 2021-03-29   | 13.0.5888.11  |      752 |  |
+| [SQL Server 2016 SP2 CU17]      | SQLServer2016-KB5001092-x64.exe                                   | 2021-03-29   | 13.0.5888.11  |      752 | f9a30a72026251ddb3ba4bc840135066b528a494 |
 | [SQL Server 2014 SP3]           | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
 | [SQL Server 2014 SP3 KB4583462] | SQLServer2014-KB4583462-x64.exe                                   | 2021-01-12   | 12.0.6433.1   |      596 | 0dc4f56583828865365340dcb95436f1a41754b9 |
 | [SQL Server 2012 RTM]           | SQLFULL_ENU.iso                                                   | 2012-02-14   | 11.0.2100.60  |     4300 | be00942cc56d033e2c9dce8a17a6f2654f5184a3 |
