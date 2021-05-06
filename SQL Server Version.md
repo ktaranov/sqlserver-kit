@@ -472,7 +472,8 @@ Microsoft SQL Server 2017 (RTM-CU21) (KB4557397) - 14.0.3335.7 (X64)
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|-----------------------------------|---------|-------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3335.7   | 2017.140.3335.7   | RTM    | CU   | **Latest CU**                     | 4535007 | [Microsoft SQL Server 2017 CU21]                                                    | 2020-07-01   | 2020-06-13 |    35 |     33 |      533 |
+| 14.0.3356.20  | 2017.140.3356.20  | RTM    | CU   |                                   | 4577467 | [Microsoft SQL Server 2017 CU22]                                                    | 2020-09-10   |          ? |    42 |     38 |      533 |
+| 14.0.3335.7   | 2017.140.3335.7   | RTM    | CU   |                                   | 4535007 | [Microsoft SQL Server 2017 CU21]                                                    | 2020-07-01   | 2020-06-13 |    35 |     33 |      533 |
 | 14.0.3294.2   | 2017.140.3294.2   | RTM    | CU   |                                   | 4541283 | [Microsoft SQL Server 2017 CU20]                                                    | 2020-04-07   | 2020-03-14 |    40 |     36 |      530 |
 | 14.0.3281.6   | 2017.140.3281.6   | RTM    | CU   |                                   | 4535007 | [Microsoft SQL Server 2017 CU19]                                                    | 2020-02-05   | 2020-01-23 |    38 |     31 |      530 |
 | 14.0.3257.3   | 2017.140.3257.3   | RTM    | CU   |                                   | 4527377 | [Microsoft SQL Server 2017 CU18]                                                    | 2019-12-09   | 2019-11-16 |    35 |     28 |      529 |
@@ -514,6 +515,7 @@ Microsoft SQL Server 2017 (RTM-CU21) (KB4557397) - 14.0.3335.7 (X64)
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                    | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[Microsoft SQL Server 2017 CU22]:https://support.microsoft.com/help/4577467
 [Microsoft SQL Server 2017 CU21]:https://support.microsoft.com/help/4557397
 [Microsoft SQL Server 2017 CU20]:https://support.microsoft.com/help/4541283
 [Microsoft SQL Server 2017 CU19]:https://support.microsoft.com/help/4535007
