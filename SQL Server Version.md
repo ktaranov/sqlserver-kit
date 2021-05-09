@@ -472,6 +472,7 @@ Microsoft SQL Server 2017 (RTM-CU21) (KB4557397) - 14.0.3335.7 (X64)
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|-----------------------------------|---------|-------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
+| 14.0.3391.2   | 2017.140.3391.2   | RTM    | CU   |                                   | 5001228 | [Microsoft SQL Server 2017 CU24]                                                    | 2021-05-10   |          ? |    30 |     24 |      533 |
 | 14.0.3381.3   | 2017.140.3381.3   | RTM    | CU   |                                   | 5000685 | [Microsoft SQL Server 2017 CU23]                                                    | 2021-02-24   |          ? |    58 |     47 |      533 |
 | 14.0.3370.1   | 2017.140.3370.1   | RTM    | GDR  | CVE-2021-1636                     | 4583457 | [Description of the security update for SQL Server 2017 CU22: January 12, 2021]     | 2021-01-12   |          ? |     1 |      1 |      533 |
 | 14.0.3356.20  | 2017.140.3356.20  | RTM    | CU   |                                   | 4577467 | [Microsoft SQL Server 2017 CU22]                                                    | 2020-09-10   |          ? |    42 |     38 |      533 |
@@ -517,6 +518,7 @@ Microsoft SQL Server 2017 (RTM-CU21) (KB4557397) - 14.0.3335.7 (X64)
 | 14.0.100.187  | 2016.140.100.187  | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1.1 (CTP1.1)                | 2016-12-16   | 2016-12-11 |       |        |     1975 |
 | 14.0.1.246    | 2016.140.1.246    | CTP    | CTP  |                                   |         | Microsoft SQL Server vNext Community Technology Preview 1 (CTP1)                    | 2016-11-16   | 2016-11-02 |       |        |     1983 |
 
+[Microsoft SQL Server 2017 CU24]:https://support.microsoft.com/help/5001228
 [Microsoft SQL Server 2017 CU23]:https://support.microsoft.com/help/5000685
 [Description of the security update for SQL Server 2017 CU22: January 12, 2021]:https://support.microsoft.com/help/4583457
 [Microsoft SQL Server 2017 CU22]:https://support.microsoft.com/help/4577467
