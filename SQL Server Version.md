@@ -464,15 +464,15 @@ All SQL Server 2017 CU downloads: [Catalog Update Microsoft SQL Server 2017](htt
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2017 Developer Edition:
 
 ```
-Microsoft SQL Server 2017 (RTM-CU21) (KB4557397) - 14.0.3335.7 (X64)
-   Jun 13 2020 14:53:45
+Microsoft SQL Server 2017 (RTM-CU25) (KB5003830) - 14.0.3401.7 (X64)
+   Jun 26 2021 00:48:45
    Copyright (C) 2017 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
 
 | Build         | File version      | Branch | Type | Info                              | KB      | Description/Link                                                                    | Release Date | Build Date | Fixes | Public | Size, Mb |
 |---------------|-------------------|--------|------|-----------------------------------|---------|-------------------------------------------------------------------------------------|--------------|------------|------:|-------:|---------:|
-| 14.0.3401.7   | 2017.140.3401.7   | RTM    | CU   |                                   | 5003830 | [Microsoft SQL Server 2017 CU25]                                                    | 2021-07-12   |          ? |    19 |     18 |      533 |
+| 14.0.3401.7   | 2017.140.3401.7   | RTM    | CU   |                                   | 5003830 | [Microsoft SQL Server 2017 CU25]                                                    | 2021-07-12   | 2021-06-26 |    19 |     18 |      533 |
 | 14.0.3391.2   | 2017.140.3391.2   | RTM    | CU   |                                   | 5001228 | [Microsoft SQL Server 2017 CU24]                                                    | 2021-05-10   |          ? |    30 |     24 |      533 |
 | 14.0.3381.3   | 2017.140.3381.3   | RTM    | CU   |                                   | 5000685 | [Microsoft SQL Server 2017 CU23]                                                    | 2021-02-24   |          ? |    58 |     47 |      533 |
 | 14.0.3370.1   | 2017.140.3370.1   | RTM    | GDR  | CVE-2021-1636                     | 4583457 | [Description of the security update for SQL Server 2017 CU22: January 12, 2021]     | 2021-01-12   |          ? |     1 |      1 |      533 |
