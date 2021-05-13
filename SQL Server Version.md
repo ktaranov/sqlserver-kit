@@ -179,7 +179,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 | [SQL Server 2019 RTM]           | SQLServer2019-x64-ENU.iso                                         | 2019-11-04   | 15.0.2000.5   |     1360 | d41eb957a037add32441e2302a734268bda94709 |
 | [SQL Server 2019 CU7]           | SQLServer2019-KB4570012-x64.exe                                   | 2020-09-02   | 15.0.4053.23  |      604 | f77dcdcf86f73088437466ae9c5a99da55b093dc |
 | [SQL Server 2017 RTM]           | SQLServer2017-x64-ENU-Dev.iso                                     | 2017-10-02   | 14.0.1000.169 |     1476 | 0280ff6c1447d287a6bd3b86b81e459fe252d17a |
-| [SQL Server 2017 CU21]          | SQLServer2017-KB4557397-x64.exe                                   | 2020-07-01   | 14.0.3335.7   |      533 | e91bfa33a34accf82a0c374c9e8b7d0ce3b7ce05 |
+| [SQL Server 2017 CU25]          | SQLServer2017-KB5003830-x64.exe                                   | 2021-07-12   | 14.0.3401.7   |      533 | bcd8cf2bfa6d57fca1a6a916a3f54d11687aa97f |
 | [SQL Server 2016 SP2]           | SQLServer2016SP1-KB3182545-x64-ENU.exe                            | 2018-04-24   | 13.0.5026.0   |     2832 | 6309d729a0f063d11c0bb7f840f1069483406755 |
 | [SQL Server 2016 SP2 CU17]      | SQLServer2016-KB5001092-x64.exe                                   | 2021-03-29   | 13.0.5888.11  |      752 | f9a30a72026251ddb3ba4bc840135066b528a494 |
 | [SQL Server 2014 SP3]           | SQLServer2014SP3-FullSlipstream-x64-ENU.iso                       | 2018-10-30   | 12.0.6024.0   |     3190 | 6041e06548c46862c9f3536e28113f598bb6ae00 |
@@ -199,7 +199,7 @@ Alternative download link for all English x64 distributives: https://rebrand.ly/
 [SQL Server 2019 RTM]:https://go.microsoft.com/fwlink/?linkid=866664
 [SQL Server 2019 CU7]:https://download.microsoft.com/download/6/e/7/6e72dddf-dfa4-4889-bc3d-e5d3a0fd11ce/SQLServer2019-KB4570012-x64.exe
 [SQL Server 2017 RTM]:https://go.microsoft.com/fwlink/?linkid=853016
-[SQL Server 2017 CU21]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB4557397-x64.exe
+[SQL Server 2017 CU25]:https://download.microsoft.com/download/C/4/F/C4F908C9-98ED-4E5F-88D5-7D6A5004AEBD/SQLServer2017-KB5003830-x64.exe
 [SQL Server 2016]:http://care.dlservice.microsoft.com/dl/download/F/E/9/FE9397FA-BFAB-4ADD-8B97-91234BC774B2/SQLServer2016-x64-ENU.iso
 [SQL Server 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
 [SQL Server 2016 SP2 CU17]:https://download.microsoft.com/download/6/0/6/606B3A2E-0EAE-4DCD-930D-178686370921/SQLServer2016-KB5001092-x64.exe
