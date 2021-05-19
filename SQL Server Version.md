@@ -414,7 +414,7 @@ More additional information about latest vNext SQL Server release you can find i
 Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Developer Edition:
 
 ```
-Microsoft SQL Server 2019 (RTM-CU7) (KB4570012) - 15.0.4063.15 (X64)
+Microsoft SQL Server 2019 (RTM-CU12) (KB4570012) - 15.0.4153.1 (X64)
    Aug 15 2020 10:48:11
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
@@ -422,7 +422,7 @@ Microsoft SQL Server 2019 (RTM-CU7) (KB4570012) - 15.0.4063.15 (X64)
 
 | Build         | File version      | Branch | Type | Info          | KB      | Description/Link                                            | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|---------------|---------|-------------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.4153.1   | 2019.150.4153.1   | RTM    | CU   |               | 5004524 | [Cumulative Update 12 for SQL Server 2019]                  | 2021-08-04   |          ? |    40 |     29 |      607 |        904 |
+| 15.0.4153.1   | 2019.150.4153.1   | RTM    | CU   | **Latest CU** | 5004524 | [Cumulative Update 12 for SQL Server 2019]                  | 2021-08-04   |          ? |    40 |     29 |      607 |        904 |
 | 15.0.4138.2   | 2019.150.4138.2   | RTM    | CU   |               | 5003249 | [Cumulative Update 11 for SQL Server 2019]                  | 2021-06-10   |          ? |    62 |     35 |      607 |        904 |
 | 15.0.4123.1   | 2019.150.4123.1   | RTM    | CU   |               | 5001090 | [Cumulative Update 10 for SQL Server 2019]                  | 2021-04-06   |          ? |    63 |     39 |      607 |        904 |
 | 15.0.4102.2   | 2019.150.4102.2   | RTM    | CU   |               | 5000642 | [Cumulative Update 9 for SQL Server 2019]                   | 2021-02-11   |          ? |   140 |     89 |      607 |        904 |
