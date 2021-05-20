@@ -301,6 +301,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [DataWeekender](https://www.dataweekender.com/schedule)
    - [Dativerse](https://sessionize.com/dativerse)
  - Open Source Projects <a id="open-source">
+    - [SQLFluff - A SQL linter and auto-formatter for Humans](https://github.com/sqlfluff/sqlfluff)
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Ola Hallengren's Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
