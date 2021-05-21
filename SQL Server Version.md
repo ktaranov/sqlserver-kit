@@ -129,7 +129,7 @@ Profits:
 
 | Version | Latest Update                                                         | Build Number                                 | Release Date                             | Lifecycle Start | Mainstream Support | Extended Support | Other Updates                                                     |
 |---------|-----------------------------------------------------------------------|----------------------------------------------|------------------------------------------|-----------------|--------------------|------------------|-------------------------------------------------------------------|
-| 2019    | [Install 2019 RTM] then [CU7 KB4570012]                               | 15.0.2070.41<br/>15.0.4063.15                | 2019-11-04<br/>2020-09-02                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
+| 2019    | [Install 2019 RTM] then [CU12 KB5004524]                              | 15.0.2070.41<br/>15.0.4153.1                 | 2019-11-04<br/>2021-08-04                | 2019-11-04      | 2025-01-07         | 2030-01-08       | [Other SQL 2019 Updates](#microsoft-sql-server-2019-builds)       |
 | 2017    | [Install 2017 RTM] then [CU25 KB5003830]                              | 14.0.1000.169<br/>14.0.3401.7                | 2017-10-02<br/>2021-07-12                | 2017-09-29      | 2022-11-10         | 2027-12-10       | [Other SQL 2017 Updates](#microsoft-sql-server-2017-builds)       |
 | 2016    | [Install 2016 SP2] then [CU17 KB5001092]                              | 13.0.5026.0<br/>13.0.5888.11                 | 2018-04-24<br/>2021-03-29                | 2016-01-06      | 2021-07-13         | 2026-07-14       | [Other SQL 2016 Updates](#microsoft-sql-server-2016-builds)       |
 | 2014    | [Install 2014 SP3] then<br/> [KB4583462]                              | 12.0.6024.0<br/>12.0.6433.1                  | 2018-10-30<br/>2021-01-12                | 2016-07-14      | 2019-07-09         | 2024-07-09       | [Other SQL 2014 Updates](#microsoft-sql-server-2014-builds)       |
@@ -138,7 +138,7 @@ Profits:
 | 2008    | [Install 2008] then<br/>[SP4 2008] then<br/>[SU KB3045316]            | 10.0.1600.0<br/>10.0.6000<br/>10.0.6241.0    | 2008-01-19<br/>2014-09-30<br/>2015-07-14 | 2010-07-20      | 2014-07-08         | 2019-07-09       | [Other SQL 2008 Updates](#microsoft-sql-server-2008-builds)       |
 
 [Install 2019 RTM]:https://www.microsoft.com/sql-server/sql-server-2019#Install
-[CU7 KB4570012]:https://support.microsoft.com/help/4570012
+[CU12 KB5004524]:https://support.microsoft.com/help/5004524
 [Install 2017 RTM]:https://www.microsoft.com/en-us/sql-server/sql-server-2017
 [CU25 KB5003830]:https://support.microsoft.com/help/50038307
 [Install 2016 SP2]:https://go.microsoft.com/fwlink/?LinkID=799011
