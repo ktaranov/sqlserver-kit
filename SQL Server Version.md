@@ -422,11 +422,11 @@ Microsoft SQL Server 2019 (RTM-CU12) (KB4570012) - 15.0.4153.1 (X64)
 
 | Build         | File version      | Branch | Type | Info          | KB      | Description/Link                                            | Release Date | Build Date | Fixes | Public | Size, Mb | DB Version |
 |---------------|-------------------|--------|------|---------------|---------|-------------------------------------------------------------|--------------|------------|------:|-------:|---------:|-----------:|
-| 15.0.4153.1   | 2019.150.4153.1   | RTM    | CU   | **Latest CU** | 5004524 | [Cumulative Update 12 for SQL Server 2019]                  | 2021-08-04   |          ? |    40 |     29 |      607 |        904 |
-| 15.0.4138.2   | 2019.150.4138.2   | RTM    | CU   |               | 5003249 | [Cumulative Update 11 for SQL Server 2019]                  | 2021-06-10   |          ? |    62 |     35 |      607 |        904 |
-| 15.0.4123.1   | 2019.150.4123.1   | RTM    | CU   |               | 5001090 | [Cumulative Update 10 for SQL Server 2019]                  | 2021-04-06   |          ? |    63 |     39 |      607 |        904 |
-| 15.0.4102.2   | 2019.150.4102.2   | RTM    | CU   |               | 5000642 | [Cumulative Update 9 for SQL Server 2019]                   | 2021-02-11   |          ? |   140 |     89 |      607 |        904 |
-| 15.0.4083.2   | 2019.150.4083.2   | RTM    | GDR  | CVE-2021-1636 | 4583459 | [Security update for SQL Server 2019 CU8: January 12, 2021] | 2021-01-12   |          ? |     1 |      1 |      607 |        904 |
+| 15.0.4153.1   | 2019.150.4153.1   | RTM    | CU   | **Latest CU** | 5004524 | [Cumulative Update 12 for SQL Server 2019]                  | 2021-08-04   |          ? |    40 |     29 |      669 |        904 |
+| 15.0.4138.2   | 2019.150.4138.2   | RTM    | CU   |               | 5003249 | [Cumulative Update 11 for SQL Server 2019]                  | 2021-06-10   |          ? |    62 |     35 |        ? |        904 |
+| 15.0.4123.1   | 2019.150.4123.1   | RTM    | CU   |               | 5001090 | [Cumulative Update 10 for SQL Server 2019]                  | 2021-04-06   |          ? |    63 |     39 |        ? |        904 |
+| 15.0.4102.2   | 2019.150.4102.2   | RTM    | CU   |               | 5000642 | [Cumulative Update 9 for SQL Server 2019]                   | 2021-02-11   |          ? |   140 |     89 |        ? |        904 |
+| 15.0.4083.2   | 2019.150.4083.2   | RTM    | GDR  | CVE-2021-1636 | 4583459 | [Security update for SQL Server 2019 CU8: January 12, 2021] | 2021-01-12   |          ? |     1 |      1 |        ? |        904 |
 | 15.0.4073.23  | 2019.150.4073.23  | RTM    | CU   |               | 4577194 | [Cumulative Update 8 for SQL Server 2019]                   | 2020-10-01   | 2020-07-25 |   104 |     81 |      607 |        904 |
 | 15.0.4063.15  | 2019.150.4063.15  | RTM    | CU   | **Withdrawn** | 4570012 | [Cumulative Update 7 for SQL Server 2019]                   | 2020-09-02   | 2020-07-25 |    56 |     49 |      604 |        904 |
 | 15.0.4053.23  | 2019.150.4053.23  | RTM    | CU   |               | 4563110 | [Cumulative Update 6 for SQL Server 2019]                   | 2020-08-04   | 2020-07-25 |    51 |     42 |      604 |        904 |
