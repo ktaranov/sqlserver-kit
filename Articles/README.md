@@ -1388,6 +1388,7 @@ Articles types:
 | [Deprecated features to take out of your toolbox – Part 2]                                                              | Aaron Bertrand                           | 2021-03-15 | [DBA][DEV]  |
 | [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-04 | [DBA][DEV]  |
 | [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]                                  | Erik Darling                             | 2021-04-19 | [DBA]       |
+| [Execution Plans Don’t Have the Yellow Bang They Really Need.]                                                          | Brent Ozar                               | 2021-04-29 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2750,3 +2751,4 @@ Articles types:
 [Deprecated features to take out of your toolbox – Part 2]:https://sqlperformance.com/2021/03/sql-performance/deprecated-features-2
 [How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
 [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]:https://www.erikdarlingdata.com/sql-server/troubleshooting-security-cache-issues-userstore_tokenperm-and-tokenandpermuserstore/
+[Execution Plans Don’t Have the Yellow Bang They Really Need.]:https://www.brentozar.com/archive/2021/04/execution-plans-dont-have-the-yellow-bang-they-really-need/
