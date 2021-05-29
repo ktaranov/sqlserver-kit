@@ -1392,6 +1392,7 @@ Articles types:
 | [The Curious Case of… the un-killable thread]                                                                           | Paul Randal                              | 2021-04-20 | [DBA]       |
 | [olved steries #1 – SQL FCI Failovers]                                                                                  | Sean Gallardy                            | 2021-04-29 | [DBA]       |
 | [Possible configuration error: 1000000 IO requests allocated]                                                           | Sean Gallardy                            | 2021-05-23 | [DBA]       |
+| [Availability Group Long Failover Times]                                                                                | Sean Gallardy                            | 2021-04-18 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2758,3 +2759,4 @@ Articles types:
 [The Curious Case of… the un-killable thread]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-un-killable-thread/
 [olved steries #1 – SQL FCI Failovers]:https://www.seangallardy.com/olved-steries-1-sql-fci-failovers/
 [Possible configuration error: 1000000 IO requests allocated]:https://www.seangallardy.com/possible-configuration-error-1000000-io-requests-allocated/
+[Availability Group Long Failover Times]:https://www.seangallardy.com/availability-group-long-failover-times/
