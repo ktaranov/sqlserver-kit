@@ -1393,7 +1393,8 @@ Articles types:
 | [olved steries #1 – SQL FCI Failovers]                                                                                  | Sean Gallardy                            | 2021-04-29 | [DBA]       |
 | [Possible configuration error: 1000000 IO requests allocated]                                                           | Sean Gallardy                            | 2021-05-23 | [DBA]       |
 | [Availability Group Long Failover Times]                                                                                | Sean Gallardy                            | 2021-04-18 | [DBA]       |
-| [Testing Backups and Offloading CheckDB]                                                                                |Taryn Pratt                               | 2021-04-19 | [DBA]       |
+| [Testing Backups and Offloading CheckDB]                                                                                | Taryn Pratt                              | 2021-04-19 | [DBA]       |
+| [Adding Additional Data Files To The TempDB Database In SQL Server]                                                     | Jack Worthen                             | 2017-08-24 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2762,3 +2763,4 @@ Articles types:
 [Possible configuration error: 1000000 IO requests allocated]:https://www.seangallardy.com/possible-configuration-error-1000000-io-requests-allocated/
 [Availability Group Long Failover Times]:https://www.seangallardy.com/availability-group-long-failover-times/
 [Testing Backups and Offloading CheckDB]:https://www.tarynpivots.com/post/2021/testing-backups-offload-dbcc-checkdb/
+[Adding Additional Data Files To The TempDB Database In SQL Server]:https://jackworthen.com/2017/08/24/adding-additional-data-files-to-the-tempdb-database-in-sql-server/
