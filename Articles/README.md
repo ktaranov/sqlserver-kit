@@ -1395,6 +1395,7 @@ Articles types:
 | [Availability Group Long Failover Times]                                                                                | Sean Gallardy                            | 2021-04-18 | [DBA]       |
 | [Testing Backups and Offloading CheckDB]                                                                                | Taryn Pratt                              | 2021-04-19 | [DBA]       |
 | [Adding Additional Data Files To The TempDB Database In SQL Server]                                                     | Jack Worthen                             | 2017-08-24 | [DBA]       |
+| [Fighting with Deadlocks]                                                                                               | Taryn Pratt                              | 2021-04-09 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2764,3 +2765,4 @@ Articles types:
 [Availability Group Long Failover Times]:https://www.seangallardy.com/availability-group-long-failover-times/
 [Testing Backups and Offloading CheckDB]:https://www.tarynpivots.com/post/2021/testing-backups-offload-dbcc-checkdb/
 [Adding Additional Data Files To The TempDB Database In SQL Server]:https://jackworthen.com/2017/08/24/adding-additional-data-files-to-the-tempdb-database-in-sql-server/
+[Fighting with Deadlocks]:https://www.tarynpivots.com/post/2021/fighting-with-deadlocks/
