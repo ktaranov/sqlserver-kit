@@ -415,7 +415,7 @@ Here is the latest output from `SELECT @@VERSION` for SQL Server 2019 CTP Develo
 
 ```
 Microsoft SQL Server 2019 (RTM-CU12) (KB4570012) - 15.0.4153.1 (X64)
-   Aug 15 2020 10:48:11
+   Jul 19 2021 15:37:34
    Copyright (C) 2019 Microsoft Corporation
    Developer Edition (64-bit) on …
 ```
