@@ -1398,6 +1398,7 @@ Articles types:
 | [Fighting with Deadlocks]                                                                                               | Taryn Pratt                              | 2021-04-09 | [DBA][DEV]  |
 | [Syncing Logins Between Availability Group Replicas]                                                                    | Taryn Pratt                              | 2020-12-18 | [DBA]       |
 | [The Ascending Key Problem in Fact Tables– Part one: Pain!]                                                             | Thomas Kejser                            | 2011-07-01 | [DEV]       |
+| [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DEV]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2770,3 +2771,4 @@ Articles types:
 [Fighting with Deadlocks]:https://www.tarynpivots.com/post/2021/fighting-with-deadlocks/
 [Syncing Logins Between Availability Group Replicas]:https://www.tarynpivots.com/post/2020/syncing-logins-between-availablity-group-replicas/
 [The Ascending Key Problem in Fact Tables– Part one: Pain!]:https://kejserbi.wordpress.com/2011/07/01/the-ascending-key-problem-in-fact-tables-part-one-pain/
+[The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]:http://kejser.org/the-ascending-column-problem-in-fact-tables-part-two-stat-job/
