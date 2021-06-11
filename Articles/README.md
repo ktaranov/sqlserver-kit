@@ -1399,7 +1399,7 @@ Articles types:
 | [Syncing Logins Between Availability Group Replicas]                                                                    | Taryn Pratt                              | 2020-12-18 | [DBA]       |
 | [The Ascending Key Problem in Fact Tables– Part one: Pain!]                                                             | Thomas Kejser                            | 2011-07-01 | [DEV]       |
 | [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DEV]       |
-| [SQL JOINs and UNIONs]                                                                                                  | Thomas Kejser                            | 2020-03-13 | [DBA][DEV]  |
+| [SQL JOINs and UNIONs]                                                                                                  | Austin Smith                             | 2020-03-13 | [DBA][DEV]  |
 | [Some opinionated thoughts on SQL databases]                                                                            | Nelson Elhage                            | 2020-03-30 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
