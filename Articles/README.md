@@ -1403,6 +1403,7 @@ Articles types:
 | [Some opinionated thoughts on SQL databases]                                                                            | Nelson Elhage                            | 2020-03-30 | [DBA][DEV]  |
 | [How MERGE on two different rows can still deadlock you]                                                                | Daniel Hutmacher                         | 2021-05-04 | [DBA][DEV]  |
 | [Auto-failover Groups for Azure – Grace Period With Data Loss Hours]                                                    | Taiob Ali                                | 2021-03-31 | [AZ][DBA]   |
+| [How Parallel Plans Start Up – Part 1]                                                                                  | Paul White                               | 2021-03-30 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2780,3 +2781,4 @@ Articles types:
 [Some opinionated thoughts on SQL databases]:https://blog.nelhage.com/post/some-opinionated-sql-takes/
 [How MERGE on two different rows can still deadlock you]:https://sqlsunday.com/2021/05/04/how-merge-can-deadlock-you/
 [Auto-failover Groups for Azure – Grace Period With Data Loss Hours]:https://sqlworldwide.com/auto-failover-groups-graceperiodwithdatalosshours/
+[How Parallel Plans Start Up – Part 1]:https://sqlperformance.com/2021/03/sql-performance/parallel-plans-start-1
