@@ -1406,6 +1406,7 @@ Articles types:
 | [How Parallel Plans Start Up – Part 1]                                                                                  | Paul White                               | 2021-03-30 | [DBA][DEV]   |
 | [How Parallel Plans Start Up – Part 2]                                                                                  | Paul White                               | 2021-04-08 | [DBA][DEV]   |
 | [How Parallel Plans Start Up – Part 3]                                                                                  | Paul White                               | 2021-04-20 | [DBA][DEV]   |
+| [How Parallel Plans Start Up – Part 4]                                                                                  | Paul White                               | 2021-05-06 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2786,3 +2787,4 @@ Articles types:
 [How Parallel Plans Start Up – Part 1]:https://sqlperformance.com/2021/03/sql-performance/parallel-plans-start-1
 [How Parallel Plans Start Up – Part 2]:https://sqlperformance.com/2021/04/sql-performance/parallel-plans-start-2
 [How Parallel Plans Start Up – Part 3]:https://sqlperformance.com/2021/04/sql-performance/parallel-plans-start-3
+[How Parallel Plans Start Up – Part 4]:https://sqlperformance.com/2021/05/sql-performance/parallel-plans-start-4
