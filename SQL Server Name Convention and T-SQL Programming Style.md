@@ -263,7 +263,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs).
  - <a id="sql-comment"></a> Always use multi-line comment `/* */` instead in-line comment `--` in production code due to potential formating problems in different tools and programs.
-   More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/) and [here](https://sqlkover.com/ssis-and-the-ora-00907-missing-right-parenthesis-error/).
+   More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/), [here](https://sqlkover.com/ssis-and-the-ora-00907-missing-right-parenthesis-error/), and [here](https://docs.microsoft.com/troubleshoot/sql/admin/crashes-run-oracle-linked-server-query).
  - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
    Main problems are: traffic issues, Memory Grants issues, Index usage issues.
    **Only one exception, see it below.**
