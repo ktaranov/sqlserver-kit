@@ -1408,6 +1408,7 @@ Articles types:
 | [How Parallel Plans Start Up – Part 3]                                                                                  | Paul White                               | 2021-04-20 | [DBA][DEV]   |
 | [How Parallel Plans Start Up – Part 4]                                                                                  | Paul White                               | 2021-05-06 | [DBA][DEV]   |
 | [How Parallel Plans Start Up – Part 5]                                                                                  | Paul White                               | 2021-05-17 | [DBA][DEV]   |
+| [Iterators, Query Plans, and Why They Run Backwards]                                                                    | Paul White                               | 2010-08-05 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2790,3 +2791,4 @@ Articles types:
 [How Parallel Plans Start Up – Part 3]:https://sqlperformance.com/2021/04/sql-performance/parallel-plans-start-3
 [How Parallel Plans Start Up – Part 4]:https://sqlperformance.com/2021/05/sql-performance/parallel-plans-start-4
 [How Parallel Plans Start Up – Part 5]:https://sqlperformance.com/2021/05/sql-performance/parallel-plans-start-5
+[Iterators, Query Plans, and Why They Run Backwards]:https://www.sql.kiwi/2010/08/iterators-query-plans-and-why-they-run-backwards.html
