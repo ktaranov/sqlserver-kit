@@ -1411,6 +1411,7 @@ Articles types:
 | [Iterators, Query Plans, and Why They Run Backwards]                                                                    | Paul White                               | 2010-08-05 | [DBA][DEV]   |
 | [What account is xp_cmdshell using?]                                                                                    | Kenneth Fisher                           | 2021-05-25 | [DBA]        |
 | [Hammer Part 1 -What is HammerDB and why would I use it?]                                                               | Tom Wilson                               | 2021-04-17 | [BENCH][P]   |
+| [Hammer Part 2 -Let the Nail see the Hammer!]                                                                           | Tom Wilson                               | 2021-05-26 | [BENCH][P]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2796,3 +2797,4 @@ Articles types:
 [Iterators, Query Plans, and Why They Run Backwards]:https://www.sql.kiwi/2010/08/iterators-query-plans-and-why-they-run-backwards.html
 [What account is xp_cmdshell using?]:https://sqlstudies.com/2021/05/25/what-account-is-xp_cmdshell-using/
 [Hammer Part 1 -What is HammerDB and why would I use it?]:https://t101wilson.wordpress.com/2021/04/17/hammer-part-1-what-is-hammerdb-and-why-would-i-use-it/
+[Hammer Part 2 -Let the Nail see the Hammer!]:https://t101wilson.wordpress.com/2021/05/26/hammer-part-2-let-the-nail-see-the-hammer/
