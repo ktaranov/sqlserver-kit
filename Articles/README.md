@@ -1414,6 +1414,7 @@ Articles types:
 | [Hammer Part 2 -Let the Nail see the Hammer!]                                                                           | Tom Wilson                               | 2021-05-26 | [BENCH][P]   |
 | [Fun with DATETIME Arithmetics]                                                                                         | Eitan Blumin                             | 2021-04-27 | [DBA][DEV]   |
 | [Even more fun with DATETIME arithmetics!]                                                                              | Eitan Blumin                             | 2021-06-17 | [DBA][DEV]   |
+| [I learned to love WHILE (true) and you should too]                                                                     | Eitan Blumin                             | 2021-02-16 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2802,3 +2803,4 @@ Articles types:
 [Hammer Part 2 -Let the Nail see the Hammer!]:https://t101wilson.wordpress.com/2021/05/26/hammer-part-2-let-the-nail-see-the-hammer/
 [Fun with DATETIME Arithmetics]:https://eitanblumin.com/2021/04/27/fun-with-datetime-arithmetics/
 [Even more fun with DATETIME arithmetics!]:https://eitanblumin.com/2021/06/17/even-more-fun-with-datetime-arithmetics/
+[I learned to love WHILE (true) and you should too]:https://eitanblumin.com/2021/02/16/i-learned-to-love-while-true-and-you-should-too/
