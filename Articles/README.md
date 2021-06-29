@@ -1416,6 +1416,7 @@ Articles types:
 | [Even more fun with DATETIME arithmetics!]                                                                              | Eitan Blumin                             | 2021-06-17 | [DBA][DEV]   |
 | [I learned to love WHILE (true) and you should too]                                                                     | Eitan Blumin                             | 2021-02-16 | [DBA][DEV]   |
 | [Troubleshooting Long-Running SHRINK Operations]                                                                        | Eitan Blumin                             | 2020-04-07 | [DBA]        |
+| [The Ultimate Compression Savings Estimation Script for an Entire Database]                                             | Eitan Blumin                             | 2020-02-18 | [DBA]        |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2806,3 +2807,4 @@ Articles types:
 [Even more fun with DATETIME arithmetics!]:https://eitanblumin.com/2021/06/17/even-more-fun-with-datetime-arithmetics/
 [I learned to love WHILE (true) and you should too]:https://eitanblumin.com/2021/02/16/i-learned-to-love-while-true-and-you-should-too/
 [Troubleshooting Long-Running SHRINK Operations]:https://eitanblumin.com/2020/04/07/troubleshooting-long-running-shrink-operations/
+[The Ultimate Compression Savings Estimation Script for an Entire Database]:https://eitanblumin.com/2020/02/18/ultimate-compression-savings-estimation-script-entire-database/
