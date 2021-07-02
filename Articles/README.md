@@ -1419,6 +1419,7 @@ Articles types:
 | [The Ultimate Compression Savings Estimation Script for an Entire Database]                                             | Eitan Blumin                             | 2020-02-18 | [DBA]        |
 | [The Complete Guide to Temporary Tables and Table Variables - Part 1]                                                   | Guy Glanster                             | 2021-04-08 | [DBA][DEV]  |
 | [Store Files in a File System, Not a Relational Database.]                                                              | Brent Ozar                               | 2021-07-01 | [DBA][DEV]  |
+| [Most (XML) and Least (SQL_VARIANT) Favorite Data Type]                                                                 | Eitan Blumin                             | 2021-03-09 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2812,3 +2813,4 @@ Articles types:
 [The Ultimate Compression Savings Estimation Script for an Entire Database]:https://eitanblumin.com/2020/02/18/ultimate-compression-savings-estimation-script-entire-database/
 [The Complete Guide to Temporary Tables and Table Variables - Part 1]:https://www.madeiradata.com/post/the-complete-guide-to-temporary-tables-and-table-variables-part-1
 [Store Files in a File System, Not a Relational Database.]:https://www.brentozar.com/archive/2021/07/store-files-in-a-file-system-not-a-relational-database/
+[Most (XML) and Least (SQL_VARIANT) Favorite Data Type]:https://eitanblumin.com/2021/03/09/t-sql-tuesday-136-most-and-least-favorite-data-type/
