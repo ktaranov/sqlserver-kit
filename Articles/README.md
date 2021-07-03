@@ -1421,6 +1421,7 @@ Articles types:
 | [Store Files in a File System, Not a Relational Database.]                                                              | Brent Ozar                               | 2021-07-01 | [DBA][DEV]  |
 | [Most (XML) and Least (SQL_VARIANT) Favorite Data Type]                                                                 | Eitan Blumin                             | 2021-03-09 | [DBA][DEV]   |
 | [What should the CPU usage be of a fully-loaded CPU that has been throttled?]                                           | Raymond                                  | 2021-06-29 | [DBA][DEV]   |
+| [Fixing Queues with Watermarks]                                                                                         | Forrest Daniel                           | 2021-06-30 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2816,3 +2817,4 @@ Articles types:
 [Store Files in a File System, Not a Relational Database.]:https://www.brentozar.com/archive/2021/07/store-files-in-a-file-system-not-a-relational-database/
 [Most (XML) and Least (SQL_VARIANT) Favorite Data Type]:https://eitanblumin.com/2021/03/09/t-sql-tuesday-136-most-and-least-favorite-data-type/
 [What should the CPU usage be of a fully-loaded CPU that has been throttled?]:https://devblogs.microsoft.com/oldnewthing/20210629-00/?p=105378
+[Fixing Queues with Watermarks]:https://forrestmcdaniel.com/2021/06/30/fixing-queues-with-watermarks/
