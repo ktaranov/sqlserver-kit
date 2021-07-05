@@ -1423,6 +1423,7 @@ Articles types:
 | [What should the CPU usage be of a fully-loaded CPU that has been throttled?]                                           | Raymond                                  | 2021-06-29 | [DBA][DEV]   |
 | [Fixing Queues with Watermarks]                                                                                         | Forrest Daniel                           | 2021-06-30 | [DBA][DEV]   |
 | [How to Patch SQL Server]                                                                                               | Brent Ozar                               | 2021-06-04 | [DBA]        |
+| [“I’m getting index seeks. Why are my row estimates still wrong?”]                                                      | Brent Ozar                               | 2021-06-06 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2820,3 +2821,4 @@ Articles types:
 [What should the CPU usage be of a fully-loaded CPU that has been throttled?]:https://devblogs.microsoft.com/oldnewthing/20210629-00/?p=105378
 [Fixing Queues with Watermarks]:https://forrestmcdaniel.com/2021/06/30/fixing-queues-with-watermarks/
 [How to Patch SQL Server]:https://www.brentozar.com/archive/2021/06/how-to-patch-sql-server/
+[“I’m getting index seeks. Why are my row estimates still wrong?”]:https://www.brentozar.com/archive/2021/06/how-can-index-seeks-get-inaccurate-row-estimates/
