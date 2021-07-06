@@ -415,7 +415,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
-    - [DBFiddle](https://dbfiddle.uk/?rdbms=sqlserver_2017)
+    - [DBFiddle - test your queries online](https://dbfiddle.uk/?rdbms=sqlserver_2019)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
