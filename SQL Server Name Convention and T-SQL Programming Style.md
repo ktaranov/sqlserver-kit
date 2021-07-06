@@ -471,7 +471,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    SELECT @nvcmaxVariable;
    ```
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/).
- - Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
+ - <a href="data-type-length"></a> Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
    ```tsql
     /* bad */
     DECLARE @myBadVarcharVariable  varchar;
