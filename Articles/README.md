@@ -1424,6 +1424,7 @@ Articles types:
 | [Fixing Queues with Watermarks]                                                                                         | Forrest Daniel                           | 2021-06-30 | [DBA][DEV]   |
 | [How to Patch SQL Server]                                                                                               | Brent Ozar                               | 2021-06-04 | [DBA]        |
 | [“I’m getting index seeks. Why are my row estimates still wrong?”]                                                      | Brent Ozar                               | 2021-06-06 | [DBA][DEV]   |
+| [OLAP != OLAP Cube]                                                                                                     | Cedric Chin                              | 2020-02-06 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2822,3 +2823,4 @@ Articles types:
 [Fixing Queues with Watermarks]:https://forrestmcdaniel.com/2021/06/30/fixing-queues-with-watermarks/
 [How to Patch SQL Server]:https://www.brentozar.com/archive/2021/06/how-to-patch-sql-server/
 [“I’m getting index seeks. Why are my row estimates still wrong?”]:https://www.brentozar.com/archive/2021/06/how-can-index-seeks-get-inaccurate-row-estimates/
+[OLAP != OLAP Cube]:https://www.holistics.io/blog/olap-is-not-olap-cube/
