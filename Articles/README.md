@@ -1386,6 +1386,7 @@ Articles types:
 | [Incorrect Results with Parallel Eager Spools and Batch Mode]                                                           | Paul White                               | 2021-03-24 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 1]                                                              | Aaron Bertrand                           | 2021-02-22 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 2]                                                              | Aaron Bertrand                           | 2021-03-15 | [DBA][DEV]  |
+| [Deprecated features to take out of your toolbox – Part 3]                                                              | Aaron Bertrand                           | 2021-07-01 | [DBA][DEV]  |
 | [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-04 | [DBA][DEV]  |
 | [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]                                  | Erik Darling                             | 2021-04-19 | [DBA]       |
 | [Execution Plans Don’t Have the Yellow Bang They Really Need.]                                                          | Brent Ozar                               | 2021-04-29 | [DBA][DEV]  |
@@ -2785,6 +2786,7 @@ Articles types:
 [Incorrect Results with Parallel Eager Spools and Batch Mode]:https://www.sql.kiwi/2021/03/spools-batch-mode-hp.html
 [Deprecated features to take out of your toolbox – Part 1]:https://sqlperformance.com/2021/02/sql-performance/deprecated-features-1
 [Deprecated features to take out of your toolbox – Part 2]:https://sqlperformance.com/2021/03/sql-performance/deprecated-features-2
+[Deprecated features to take out of your toolbox – Part 3]:https://sqlperformance.com/2021/07/sql-performance/deprecated-features-3
 [How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
 [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]:https://www.erikdarlingdata.com/sql-server/troubleshooting-security-cache-issues-userstore_tokenperm-and-tokenandpermuserstore/
 [Execution Plans Don’t Have the Yellow Bang They Really Need.]:https://www.brentozar.com/archive/2021/04/execution-plans-dont-have-the-yellow-bang-they-really-need/
