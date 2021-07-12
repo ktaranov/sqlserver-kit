@@ -1430,6 +1430,7 @@ Articles types:
 | [Is a sort faster when the data is already sorted?]                                                                     | Daniel Hutmacher                         | 2021-02-15 | [DBA][DEV]  |
 | [Connect using Windows authentication across domains]                                                                   | Daniel Hutmacher                         | 2021-02-05 | [DBA][DEV]  |
 | [The uncorrelated correlated subquery]                                                                                  | Daniel Hutmacher                         | 2020-12-21 | [DBA][DEV]  |
+| [How to fix rounding errors]                                                                                            | Daniel Hutmacher                         | 2020-12-15 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2834,3 +2835,4 @@ Articles types:
 [Is a sort faster when the data is already sorted?]:https://sqlsunday.com/2021/02/15/is-a-sort-faster-when-data-already-sorted/
 [Connect using Windows authentication across domains]:https://sqlsunday.com/2021/02/05/connect-using-windows-authentication-across-domains/
 [The uncorrelated correlated subquery]:https://sqlsunday.com/2020/12/21/the-uncorrelated-correlated-subquery/
+[How to fix rounding errors]:https://sqlsunday.com/2020/12/15/how-to-fix-rounding-errors/
