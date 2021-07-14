@@ -1432,6 +1432,7 @@ Articles types:
 | [The uncorrelated correlated subquery]                                                                                  | Daniel Hutmacher                         | 2020-12-21 | [DBA][DEV]  |
 | [How to fix rounding errors]                                                                                            | Daniel Hutmacher                         | 2020-12-15 | [DBA][DEV]  |
 | [The curious case of the Top N Sort]                                                                                    | Daniel Hutmacher                         | 2020-12-08 | [DBA][DEV]  |
+| [Consolidating grouped transactions into evenly sized batches]                                                          | Daniel Hutmacher                         | 2020-07-13 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2838,3 +2839,4 @@ Articles types:
 [The uncorrelated correlated subquery]:https://sqlsunday.com/2020/12/21/the-uncorrelated-correlated-subquery/
 [How to fix rounding errors]:https://sqlsunday.com/2020/12/15/how-to-fix-rounding-errors/
 [The curious case of the Top N Sort]:https://sqlsunday.com/2020/12/08/the-curious-case-of-the-top-n-sort/
+[Consolidating grouped transactions into evenly sized batches]:https://sqlsunday.com/2020/07/13/grouping-into-evenly-sized-batches/
