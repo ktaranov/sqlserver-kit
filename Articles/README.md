@@ -1434,6 +1434,7 @@ Articles types:
 | [The curious case of the Top N Sort]                                                                                    | Daniel Hutmacher                         | 2020-12-08 | [DBA][DEV]  |
 | [Consolidating grouped transactions into evenly sized batches]                                                          | Daniel Hutmacher                         | 2020-07-13 | [DBA][DEV]  |
 | [A “shock absorber” pattern for high-performance data ingestion]                                                        | Daniel Hutmacher                         | 2021-07-15 | [P]         |
+| [Why Are Linked Server Queries So Bad?]                                                                                 | Brent Ozar                               | 2021-07-15 | [DBA][DEV]   |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2842,3 +2843,4 @@ Articles types:
 [The curious case of the Top N Sort]:https://sqlsunday.com/2020/12/08/the-curious-case-of-the-top-n-sort/
 [Consolidating grouped transactions into evenly sized batches]:https://sqlsunday.com/2020/07/13/grouping-into-evenly-sized-batches/
 [A “shock absorber” pattern for high-performance data ingestion]:https://sqlsunday.com/2021/07/15/a-shock-absorber-pattern-for-high-performance-data-ingest/
+[Why Are Linked Server Queries So Bad?]:https://www.brentozar.com/archive/2021/07/why-are-linked-server-queries-so-bad/
