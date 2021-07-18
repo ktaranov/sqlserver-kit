@@ -395,6 +395,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SqlTableDependency - a high-level C# component used to audit, monitor and receive notifications on SQL Server's record table changes](https://github.com/christiandelbianco/monitor-table-change-with-sqltabledependency) (by Christian Del Bianco)
     - [EFSecondLevelCache.Core - Entity Framework Core Second Level Caching Library (Redis)](https://github.com/VahidN/EFSecondLevelCache.Core) (by Vahid Nasiri)
     - [Dotmim.Sync - a brand new database synchronization, multi platform, multi databases, developed on top of .Net Standard 2.0](https://github.com/Mimetis/Dotmim.Sync)
+    - [Hekaton-based shock absorber pattern for SQL Server](https://github.com/sqlsunday/shock-absorber) (by Daniel Hutmacher)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
