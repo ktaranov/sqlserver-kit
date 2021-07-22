@@ -1437,6 +1437,7 @@ Articles types:
 | [Why Are Linked Server Queries So Bad?]                                                                                 | Brent Ozar                               | 2021-07-15 | [DBA][DEV]  |
 | [Fundamentals of table expressions, Part 1]                                                                             | Itzik Ben-Gan                            | 2020-04-08 | [DBA][DEV]  |
 | [Fundamentals of table expressions, Part 2 – Derived tables, logical considerations]                                    | Itzik Ben-Gan                            | 2020-05-13 | [DBA][DEV]  |
+| [Fundamentals of table expressions, Part 3 – Derived tables, optimization considerations]                               | Itzik Ben-Gan                            | 2020-06-10 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2848,3 +2849,4 @@ Articles types:
 [Why Are Linked Server Queries So Bad?]:https://www.brentozar.com/archive/2021/07/why-are-linked-server-queries-so-bad/
 [Fundamentals of table expressions, Part 1]:https://sqlperformance.com/2020/04/t-sql-queries/table-expressions-part-1
 [Fundamentals of table expressions, Part 2 – Derived tables, logical considerations]:https://sqlperformance.com/2020/04/t-sql-queries/table-expressions-part-2
+[Fundamentals of table expressions, Part 3 – Derived tables, optimization considerations]:https://sqlperformance.com/2020/06/t-sql-queries/table-expressions-part-3
