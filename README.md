@@ -156,14 +156,14 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Kohera SQL Server Blog](https://kohera.be/blog/category/sql-server/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
-     - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
-     - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you’re owned)
-     - [Ethical Hacking: SQL Injection](http://www.pluralsight.com/courses/ethical-hacking-sql-injection) – If you really want to go deep, here’s five and a half hours worth of Pluralsight content
+     - [sqlmap - The tool for mounting SQL injection attacks tests against a running site](http://sqlmap.org/)
+     - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you are owned)
+     - [Ethical Hacking: SQL Injection](http://www.pluralsight.com/courses/ethical-hacking-sql-injection) – If you really want to go deep, here is five and a half hours worth of Pluralsight content
    - Exploit databases and breach coverage
      - [seclists.org](http://seclists.org) – Heaps of exploits consolidated from various bug tracking lists
      - [Exploit Database](https://www.exploit-db.com/) – Very comprehensive list of vulnerabilities
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
-     - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
+     - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/)
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [Microsoft SQL Server Permissions Posters](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/security/permissions-posters)
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
@@ -212,6 +212,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Mixed Extents](https://youtu.be/hBgMadT9fuU) (by EightKB)
  - Courses <a id="courses"></a>
    - Free
+     - [SQLBolt - Learn SQL with simple, interactive exercises](https://sqlbolt.com/)
      - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) and new [link](http://sqlxevents.com/) (by Jason Brimhall)
      - [Learn SQL Server by solving problems](https://littlekendra.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
