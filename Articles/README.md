@@ -1442,6 +1442,7 @@ Articles types:
 | [Fundamentals of table expressions, Part 5 – CTEs, logical considerations]                                              | Itzik Ben-Gan                            | 2020-08-12 | [DBA][DEV]  |
 | [Fundamentals of table expressions, Part 6 – Recursive CTEs]                                                            | Itzik Ben-Gan                            | 2020-09-09 | [DBA][DEV]  |
 | [Fundamentals of table expressions, Part 7 – CTEs, optimization considerations]                                         | Itzik Ben-Gan                            | 2020-10-14 | [DBA][DEV]  |
+| [Fundamentals of table expressions, Part 8 – CTEs, optimization considerations continued]                               | Itzik Ben-Gan                            | 2020-11-11 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2858,3 +2859,4 @@ Articles types:
 [Fundamentals of table expressions, Part 5 – CTEs, logical considerations]:https://sqlperformance.com/2020/08/t-sql-queries/table-expressions-part-5
 [Fundamentals of table expressions, Part 6 – Recursive CTEs]:https://sqlperformance.com/2020/09/t-sql-queries/fundamentals-of-table-expressions-part-6-recursive-ctes
 [Fundamentals of table expressions, Part 7 – CTEs, optimization considerations]:https://sqlperformance.com/2020/10/t-sql-queries/table-expressions-part-7
+[Fundamentals of table expressions, Part 8 – CTEs, optimization considerations continued]:https://sqlperformance.com/2020/11/t-sql-queries/table-expressions-part-8
