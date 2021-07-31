@@ -1446,6 +1446,7 @@ Articles types:
 | [Fundamentals of table expressions, Part 9 – Views, compared with derived tables and CTEs]                              | Itzik Ben-Gan                            | 2021-06-09 | [DBA][DEV]  |
 | [Fundamentals of table expressions, Part 10 – Views, SELECT *, and DDL changes]                                         | Itzik Ben-Gan                            | 2021-07-14 | [DBA][DEV]  |
 | [Understanding xp_fileexist and its usage]                                                                              | Nisarg Upadhyay                          | 2021-07-09 | [DBA][DEV]  |
+| [SQL Server Restore Database Options and Examples]                                                                      | Joe Gavin                                | 2021-06-21 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2866,3 +2867,4 @@ Articles types:
 [Fundamentals of table expressions, Part 9 – Views, compared with derived tables and CTEs]:https://sqlperformance.com/2021/06/t-sql-queries/table-expressions-part-9
 [Fundamentals of table expressions, Part 10 – Views, SELECT *, and DDL changes]:https://sqlperformance.com/2021/07/t-sql-queries/table-expressions-part-10
 [Understanding xp_fileexist and its usage]:https://www.sqlshack.com/understanding-xp_fileexist-and-its-usage/
+[SQL Server Restore Database Options and Examples]:https://www.mssqltips.com/sqlservertip/6893/restore-database-sql-server-options-examples/
