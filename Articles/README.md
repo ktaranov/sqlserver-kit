@@ -1448,6 +1448,7 @@ Articles types:
 | [Understanding xp_fileexist and its usage]                                                                              | Nisarg Upadhyay                          | 2021-07-09 | [DBA][DEV]  |
 | [SQL Server Restore Database Options and Examples]                                                                      | Joe Gavin                                | 2021-06-21 | [DBA]       |
 | [SQL Server Database RESTORE WITH MOVE or not WITH MOVE]                                                                | Mike Eastland                            | 2013-11-22 | [DBA]       |
+| [Getting exclusive access to restore SQL Server database]                                                               | Greg Robidoux                            | 2021-02-21 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2870,3 +2871,4 @@ Articles types:
 [Understanding xp_fileexist and its usage]:https://www.sqlshack.com/understanding-xp_fileexist-and-its-usage/
 [SQL Server Restore Database Options and Examples]:https://www.mssqltips.com/sqlservertip/6893/restore-database-sql-server-options-examples/
 [SQL Server Database RESTORE WITH MOVE or not WITH MOVE]:https://www.mssqltips.com/sqlservertip/3113/sql-server-database-restore-with-move-or-not-with-move/
+[Getting exclusive access to restore SQL Server database]:https://www.mssqltips.com/sqlservertip/1407/getting-exclusive-access-to-restore-sql-server-database/
