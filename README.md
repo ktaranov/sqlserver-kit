@@ -528,15 +528,15 @@ BIML Bloggers
 
 
 ## TSQL Format Code
- - http://sqlinform.com/
- - http://www.dpriver.com/pp/sqlformat.htm
- - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
- - http://www.apexsql.com/sql_tools_refactor.aspx
+ - [SQLinform Online](https://sqlinform.azurewebsites.net)
+ - [Instant SQL Formatter](http://www.dpriver.com/pp/sqlformat.htm)
  - http://poorsql.com/
  - http://www.architectshack.com/PoorMansTSqlFormatter.ashx
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
+ - http://www.apexsql.com/sql_tools_refactor.aspx
+ - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
 
 **[⬆ back to top](#table-of-contents)**
 
