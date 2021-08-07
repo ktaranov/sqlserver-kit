@@ -402,8 +402,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    DECLARE @n int = 1;
    SELECT TOP@n name FROM sys.objects;
    ```
- - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
-   More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
+ - <a id="top100"></a>For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
+   More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/) and [here](https://sqlsunday.com/2020/12/08/the-curious-case-of-the-top-n-sort/).
 - Avoid specifying integers in the `ORDER BY` clause as positional representations of the columns in the select list.
   The statement with integers is not as easily understood by others compared with specifying the actual column name.
   In addition, changes to the select list, such as changing the column order or adding new columns, requires modifying the `ORDER BY` clause in order to avoid unexpected results.
