@@ -391,7 +391,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [CloudMonix SQL Azure Database Management](#cloudmonix-azure-man)| No                            | No        | [?]      | [CloudMonix SQL Azure Database Management]         | ?          | CloudMonix              |            | No             | $15   |
 | [DB Ghost Change Manager Professional](#db-ghost-change-manager) | No                            | No        | [?]      | [DB Ghost Change Manager Professional]             | ?          | Innovartis Ltd          |            | No             | £430  |
 | [MSSQL-Maestro](#mssql-maestro)                                  | No                            | No        | [MS]     | [MSSQL-Maestro]                                    | 2017-06-29 | SQL Maestro Group       |            | No             | $229  |
-| [MSSQLMerge](#mssqlmerge)                                        | No                            | No        | [?]      | [MSSQLMerge]                                       | ?          | Konstantin Semenenkov   |            | Yes            | $50   |
+| [MSSQLMerge](#mssqlmerge)                                        | No                            | No        | [DC],[SC]| [MSSQLMerge]                                       | 2021-02-26 | Konstantin Semenenkov   |            | Yes            | $75   |
 | [SQL Backup and FTP](#sql-backup-and-ftp)                        | MySQL,PostgreSQL              | Linux     | [B]      | [SQL Backup and FTP]                               | ?          | Pranas.NET              |            | Yes            | $129  |
 | [SQL Bak](#sql-bak)                                              | MySQL,PostgreSQL              | Linux     | [B]      | [SQL Bak]                                          | ?          | Pranas.NET              |            | Yes            | $9    |
 | [SQL Bulk Tools](#sql-bulk-tools)                                | No                            | No        | [?]      | [SQL Bulk Tools]                                   | ?          | Greg Taylor             | [MIT]      | Open Source    |  No   |
@@ -5721,11 +5721,11 @@ Complete and powerful database management, admin and development tool for Micros
 ## MSSQLMerge
 <a id="mssqlmerge"></a>
 Download page: [MSSQLMerge]<br/>
-Release date: ?<br/>
+Release date: 2021-02-26<br/>
 Support Version: 2008-2019, Azure<br/>
 Author: Konstantin Semenenkov<br/>
 Free version: Yes<br/>
-Price: $50
+Price: $75
 
 MssqlMerge is an easy to use diff & merge tool for Microsoft SQL Server databases. This tool allows users to compare and import/export the most common database programming objects and the data between any two databases.
 

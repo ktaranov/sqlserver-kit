@@ -5,6 +5,17 @@ Please see below for a summary of the different drivers, both current and legacy
 [SQL Server Drivers](https://docs.microsoft.com/en-us/sql/connect/sql-server-drivers)
 
 
+# Driver feature support matrix for Microsoft SQL Server
+[Driver feature support matrix for Microsoft SQL Server](https://docs.microsoft.com/en-us/sql/connect/driver-feature-matrix)
+If you're planning to use a feature in Microsoft SQL Server, it might not be available in all drivers. Some reasons a feature might not be in a particular driver include:
+
+- The feature doesn't apply to the driver technology.
+- The feature is new and hasn't been implemented across all drivers yet.
+- The feature isn't in demand in a particular driver.
+- Other features are being implemented first.
+We wish all drivers supported every feature and spend effort to ensure feature parity across drivers. However that isn't always possible. To help you choose the appropriate driver for your needs, here's a list of popular features and the drivers that implement them.
+
+
 ## Current SQL Drivers
 The following SQL Drivers are actively developed. Each driver has a support statement that can be found by following the links.
 
@@ -30,7 +41,7 @@ The ODBC SQL driver is a C++ implementation of the TDS protocol, which is suppor
 ### PHP
 The PHP SQL driver relies on the Microsoft SQL Server ODBC Driver to handle the low-level communication with SQL Server. This driver is developed, tested, and supported by Microsoft.
 
-[Microsoft PHP Driver for SQL Driver](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) | [Download PHP Driver](https://www.microsoft.com/en-us/download/details.aspx?id=20098) | [Github](https://github.com/Microsoft/msphpsql)
+[Microsoft PHP Driver for SQL Driver](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) | [Download PHP Driver](https://github.com/microsoft/msphpsql/releases/latest) | [Github](https://github.com/Microsoft/msphpsql)
 
 
 ### Node.js

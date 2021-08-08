@@ -156,14 +156,14 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Kohera SQL Server Blog](https://kohera.be/blog/category/sql-server/)
  - Security (great thanks to [Troy Hunt](https://www.troyhunt.com/troys-ultimate-list-of-security-links/)) <a id="security"></a>
    - SQL injection
-     - [sqlmap](http://sqlmap.org/) – The tool for mounting SQL injection attacks tests against a running site
-     - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you’re owned)
-     - [Ethical Hacking: SQL Injection](http://www.pluralsight.com/courses/ethical-hacking-sql-injection) – If you really want to go deep, here’s five and a half hours worth of Pluralsight content
+     - [sqlmap - The tool for mounting SQL injection attacks tests against a running site](http://sqlmap.org/)
+     - [Drupal 7 SQL injection flaw of 2014](https://www.drupal.org/PSA-2014-003) – great example of how impactful it still is (patch it within 7 hours or you are owned)
+     - [Ethical Hacking: SQL Injection](http://www.pluralsight.com/courses/ethical-hacking-sql-injection) – If you really want to go deep, here is five and a half hours worth of Pluralsight content
    - Exploit databases and breach coverage
      - [seclists.org](http://seclists.org) – Heaps of exploits consolidated from various bug tracking lists
      - [Exploit Database](https://www.exploit-db.com/) – Very comprehensive list of vulnerabilities
      - [Data Loss DB](http://datalossdb.org/) – Good list of breaches including stats on number of records compromised
-     - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/) – Fantastic visualisation of incidents that give a great indication of scale
+     - [Information is Beautiful: World’s Biggest Data Breaches](http://www.informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/)
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [Microsoft SQL Server Permissions Posters](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/security/permissions-posters)
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
@@ -190,6 +190,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [TechEd SQL Server Videos](https://channel9.msdn.com/Search?term=sql%20server&lang-en=true)
    - [Build 2018 conference](http://sqlservercode.blogspot.ru/2018/05/azure-sql-data-warehouse-azure-sql.html)
    - [New Stars of Data SQL Server Video](https://www.youtube.com/playlist?list=PLLq_tkpMFDU5ibrnqn6I8CZxZ2-zYWG9m)
+   - [Youtube Community 1nn0va](https://www.youtube.com/c/Community1nn0va/videos) (by Community 1nn0va)
  - Free Database Podcasts <a id="podcasts"></a>
    - [SQL Server Radio](http://www.sqlserverradio.com/) (by Guy Glantser and Matan Yungman)
    - [SQL Data Partners](http://sqldatapartners.com/podcast/) (by Carlos L Chacon, César Oviedo and Adrian Miranda)
@@ -211,6 +212,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Mixed Extents](https://youtu.be/hBgMadT9fuU) (by EightKB)
  - Courses <a id="courses"></a>
    - Free
+     - [SQLBolt - Learn SQL with simple, interactive exercises](https://sqlbolt.com/)
      - [Learning Extended Events in 60 Days](https://jasonbrimhall.info/2015/09/08/learning-extended-events-in-60-days/) and new [link](http://sqlxevents.com/) (by Jason Brimhall)
      - [Learn SQL Server by solving problems](https://littlekendra.com/courses-overview/) (by Little Kendra)
      - [Codecademy Learn SQL](https://www.codecademy.com/learn/learn-sql)
@@ -290,16 +292,18 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
    - [Microsoft SQL Server on Q&A](https://docs.microsoft.com/en-us/answers/products/sql-server)
  - SQL Server Conferences <a id="conference"></a>
    - [SQL Saturdays](https://sqlsaturday.com/)
-   - [Pass Sumit](https://www.pass.org/AttendanEvent/Conferences/PASSSummit.aspx)
+   - [Pass Sumit - Red Gate](https://www.red-gate.com/hub/entrypage/redgate-pass)
    - [SQLBits](https://sqlbits.com/)
-   - [Microsoft Ignite](https://www.microsoft.com/en-us/ignite)
-   - [Microsoft Build](https://www.microsoft.com/en-us/build)
+   - [Microsoft Ignite](https://myignite.microsoft.com/home)
+   - [Microsoft Build](https://mybuild.microsoft.com/home)
    - [Devintersection](https://devintersection.com/)
    - [SentryOne SQL Server Virtual Conference](https://info.sentryone.com/accelerate-2020)
    - [Red Gate SQL Server Online Events](https://www.red-gate.com/hub/events/online-events/)
    - [EigthKB Sql Server Internals Conference](https://eightkb.online/)
    - [DataWeekender](https://www.dataweekender.com/schedule)
+   - [Dativerse](https://sessionize.com/dativerse)
  - Open Source Projects <a id="open-source">
+    - [SQLFluff - A SQL linter and auto-formatter for Humans](https://github.com/sqlfluff/sqlfluff)
     - [sp_whoisactive](http://whoisactive.com/) (documentation) and github repo for it [sp_WhoIsActive](https://github.com/amachanic/sp_whoisactive) (by Adam Machanic)
     - [Brent Ozar SQL Server First Responder Kit](https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit) (Github)
     - [SQL Server Ola Hallengren's Maintenance Solution](https://github.com/olahallengren/sql-server-maintenance-solution) (by Ola Hallengren) (Github)
@@ -367,7 +371,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [TSqlStrong - T-Sql type checker that detects improper joins, possibly null value operations, enumeration check constraint violations, incorrect use of temporary table at call site, and more](https://github.com/JSuder-xx/TSqlStrong) (by John Suder)
     - [SQL Power Doc - is a collection of Windows PowerShell scripts and modules that discover, document, and diagnose SQL Server instances and their underlying Windows OS & machine configuration](https://github.com/kendalvandyke/sqlpowerdoc) (by Kendal Van Dyke)
     - [rsqlserver - Sql Server driver database interface (DBI) driver for R](https://github.com/agstudy/rsqlserver)
-    - [sp_SizeOptimiser - a stored procedure that recommends space saving and corrective data type measures based on SQL Server database schemas](https://github.com/LowlyDBA/ExpressSQL) (by John McCall)
+    - [DBA MultiTool - T-SQL scripts for the long haul: optimizing storage, on-the-fly documentation, and general administrative needs.](https://github.com/LowlyDBA/dba-multitool) (by John McCall)
     - [language-extensions-sqlserver - SQL Server Language Extensions project](https://github.com/microsoft/sql-server-language-extensions) (by Microsoft)
     - [AzureRMR - R package for interacting with Azure Resource Manager](https://github.com/Azure/AzureRMR) (by Microsoft)
     - [EntityFramework.Utilities - Provides extensions for EntityFramework that doesn't exist out of the box like delete and update by query and bulk inserts](https://github.com/MikaelEliasson/EntityFramework.Utilities) (by Mikael Eliasson)
@@ -377,6 +381,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [AwesomeSQLServer - collection of SQL Server Queries and documentations to fix your SQL Server's bottle neck](https://github.com/SQLadmin/AwesomeSQLServer) (by SqlAdmin)
     - [databases_scripts - SQL Server useful scripts](https://github.com/dgavrikov/databases_scripts/tree/master/SQL%20Server) (by Dmitriy Gavrikov)
     - [sp_pressure_detector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/blob/master/sp_pressure_detector/sp_pressure_detector.sql) (by Erik Darling)
+    - [sp_HumanEvents - make Extended Events easier and more approachable for the average admin to troubleshoot common scenarios](https://www.erikdarlingdata.com/sp_humanevents/) (by Erik Darling)
     - [Export Prometheus metrics from SQL queries](https://github.com/albertodonato/query-exporter) (by Alberto Donato)
     - [homebrew-mssql-release - brew formulae for Microsoft ODBC Driver for SQL Server and SQL Server Command Line Utilities](https://github.com/microsoft/homebrew-mssql-release) (by Microsoft)
     - [ASSP - Analysis Services Stored Procedure Project](https://asstoredprocedures.github.io/ASStoredProcedures/) (by Darren Gosbell)
@@ -396,6 +401,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [EFSecondLevelCache.Core - Entity Framework Core Second Level Caching Library (Redis)](https://github.com/VahidN/EFSecondLevelCache.Core) (by Vahid Nasiri)
     - [Dotmim.Sync - a brand new database synchronization, multi platform, multi databases, developed on top of .Net Standard 2.0](https://github.com/Mimetis/Dotmim.Sync)
     - [Hekaton-based shock absorber pattern for SQL Server](https://github.com/sqlsunday/shock-absorber) (by Daniel Hutmacher)
+    - [HammerDBBenchmark - Swarchy T101 Wilson HammerDb Benchmark Setup Scripts for SQL Server](https://github.com/swarchy/HammerDBBenchmark) (by Swarchy T101 Wilson) 
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
@@ -412,7 +418,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Injection Cheat Sheet](https://www.netsparker.com/blog/web-security/sql-injection-cheat-sheet/) (by Ferruh Mavituna)
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
-    - [DBFiddle](https://dbfiddle.uk/?rdbms=sqlserver_2017)
+    - [DBFiddle - test your queries online](https://dbfiddle.uk/?rdbms=sqlserver_2019)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
@@ -443,7 +449,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Azure updates](https://azure.microsoft.com/en-us/updates/?status=all)
     - [Guides for Microsoft SQL Server Express](https://expressdb.io/) (by John McCall)
     - [SQL Server Diagrams](http://www.e-squillace.com/tech/techdiagrams/#SQL_Server)
-    - [SQL Cheat Sheet](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
+    - [SQL Cheat Sheet for MySQL](https://websitesetup.org/sql-cheat-sheet/) (by Luke Harrison)
     - [Azure Database Migration Guide](https://datamigration.microsoft.com/) (by Microsoft)
     - [Hermitage: Testing transaction isolation levels in relation databases](https://github.com/ept/hermitage) (by Martin Kleppmann)
     - [csv to INSERT online converter - translates your tab-delimited data into a T-SQL INSERT statement](https://table.strd.co/) (by Structured Concepts AB)
@@ -451,6 +457,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [New Stars of Data 2020 Presentations](https://github.com/SQLGrillen/NSOD-1) (by SQLGrillen)
     - [Get Your ColumnScore](https://columnscore.com) (by ColumnScore)
     - [SQL Assessment API rules in .csv format](https://github.com/microsoft/sql-server-samples/blob/master/samples/manage/sql-assessment-api/DefaultRuleset.csv) (by Microsoft)
+    - [SQL cheat sheet for PostgreSQL and Oracle](https://www.pcwdld.com/sql-cheat-sheet) (by Marc Wilson)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -523,15 +530,15 @@ BIML Bloggers
 
 
 ## TSQL Format Code
- - http://sqlinform.com/
- - http://www.dpriver.com/pp/sqlformat.htm
- - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
- - http://www.apexsql.com/sql_tools_refactor.aspx
+ - [SQLinform Online](https://sqlinform.azurewebsites.net)
+ - [Instant SQL Formatter](http://www.dpriver.com/pp/sqlformat.htm)
  - http://poorsql.com/
  - http://www.architectshack.com/PoorMansTSqlFormatter.ashx
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
  - http://www.sql-format.com/
+ - http://www.apexsql.com/sql_tools_refactor.aspx
+ - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
 
 **[⬆ back to top](#table-of-contents)**
 

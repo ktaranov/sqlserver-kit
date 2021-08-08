@@ -14,11 +14,11 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SQL Sentry Plan Explorer](#sql-sentry-plan-explorer) | [SQL Sentry Plan Explorer]    | 2017-05-25   | 2008-2017            | SQL Sentry           | Yes          | No    |
 | [TSQL Code Smells Finder](#tsql-code-smells-finder)   | [TSQL Code Smells Finder]     | 2013-02-15   | 2008-2014            | Dave ballantyne      | Yes          | No    |
 | [SQLTreeo](#sqltreeo)                                 | [SQLTreeo]                    | 2017-06-06   | 2012-2017            | SQLTreeo             | No           |   €50 |
-| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2017-10-26   | 2012-2017            | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2017-07-13   | 2008-2017            | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2017-06-19   | 2008-2017            | ApexSQL tools        | Yes          | No    |
-| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2017-10-12   | 2008-2017            | ApexSQL tools        | No           |  $299 |
-| [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2017-08-16   | 2008-2017            | ApexSQL tools        | Yes          |  $499 |
+| [ApexSQL Complete](#apexsql-complete)                 | [ApexSQL Complete]            | 2021-01-20   | 2012-2019            | ApexSQL tools        | No           |  $514 |
+| [ApexSQL Refactor](#apexsql-refactor)                 | [ApexSQL Refactor]            | 2021-01-20   | 2008-2019            | ApexSQL tools        | No           |  $514 |
+| [ApexSQL Search](#apexsql-search)                     | [ApexSQL Search]              | 2021-01-20   | 2008-2019            | ApexSQL tools        | No           |  $514 |
+| [ApexSQL Source Control](#apexsql-source-control)     | [ApexSQL Source Control]      | 2021-01-20   | 2008-2019            | ApexSQL tools        | No           |  $257 |
+| [ApexSQL Unit Test](#apexsql-unit-test)               | [ApexSQL Unit Test]           | 2021-01-20   | 2008-2019            | ApexSQL tools        | No           |  $514 |
 | [Spotlight Developer](#spotlight-developer)           | [Spotlight Developer]         | 2016-02-04   | 2008-2014            | Spotlight Essentials | Yes          | No    |
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2019-10-10   | 2005-2018            | Devart               | No           |  $249 |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2019-10-10   | 2005-2018            | Devart               | No           |  $199 |
@@ -242,11 +242,11 @@ Price: €50
 <a id="apexsql-complete"></a>
 ## ApexSQL Complete
 Download page: [ApexSQL Complete]<br/>
-Release date: 2017-10-26<br/>
-Support Version: 2008-2017<br/>
+Release date: 2021-01-20<br/>
+Support Version: 2008-2019<br/>
 Developer: ApexSQL tools<br/>
-Free version: Yes<br/>
-Price: No
+Free version: No<br/>
+Price: $514
 
  - Automatically complete SQL statements
  - Review an objects script and description
@@ -261,11 +261,11 @@ Price: No
 <a id="apexsql-refactor"></a>
 ## ApexSQL Refactor
 Download page: [ApexSQL Refactor]<br/>
-Release date: 2017-05-08<br/>
-Support Version: 2008-2017<br/>
+Release date: 2021-01-20<br/>
+Support Version: 2008-2019<br/>
 Developer: ApexSQL tools<br/>
-Free version: Yes<br/>
-Price: No
+Free version: No<br/>
+Price: $514
 
 With ApexSQL Refactor you can:
  - Format SQL with over 160 options
@@ -281,11 +281,11 @@ With ApexSQL Refactor you can:
 <a id="apexsql-search"></a>
 ## ApexSQL Search
 Download page: [ApexSQL Search]<br/>
-Release date: 2017-06-19<br/>
-Support Version: 2008-2017<br/>
+Release date: 2021-01-20<br/>
+Support Version: 2008-2019<br/>
 Developer: ApexSQL tools<br/>
-Free version: Yes<br/>
-Price: No
+Free version: No<br/>
+Price: $514
 
 With ApexSQL Search you can:
  - Search for SQL objects
@@ -299,11 +299,11 @@ With ApexSQL Search you can:
 <a id="apexsql-source-control"></a>
 ## ApexSQL Source Control
 Download page: [ApexSQL Source Control]<br/>
-Release date: 2017-10-12<br/>
-Support Version: 2008-2017<br/>
+Release date: 2021-01-20<br/>
+Support Version: 2008-2019<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
-Price: $299
+Price: $257
 
  - Integrate SQL source control directly into SSMS
  - Use dedicated or shared development models
@@ -318,8 +318,8 @@ Price: $299
 <a id="apexsql-unit-test"></a>
 ## ApexSQL Unit Test
 Download page: [ApexSQL Unit Test]<br/>
-Release date: 2017-08-22<br/>
-Support Version: 2008-2017<br/>
+Release date: 2021-01-20<br/>
+Support Version: 2008-2019<br/>
 Developer: ApexSQL tools<br/>
 Free version: No<br/>
 Price: $499

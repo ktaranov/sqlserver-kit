@@ -2,19 +2,19 @@ IF OBJECT_ID('dbo.usp_bcpUnloadSelect', 'P') IS NULL EXECUTE('CREATE PROCEDURE d
 GO
 
 ALTER PROCEDURE dbo.usp_bcpUnloadSelect(
-      @outputFilePath  VARCHAR(255)  /* The path can have from 1 through 255 characters, see documentation */
-    , @serverName      SYSNAME      = @@SERVERNAME
-    , @sqlCommand      VARCHAR(MAX)
-    , @fileName        VARCHAR(300) = ''
-    , @field_term      VARCHAR( 10) = '|'
-    , @fileExtension   VARCHAR( 10) = 'txt'
-    , @codePage        VARCHAR( 10) = 'C1251'
+      @outputFilePath  varchar(255)  /* The path can have from 1 through 255 characters, see documentation */
+    , @serverName      sysname      = @@SERVERNAME
+    , @sqlCommand      varchar(MAX)
+    , @fileName        varchar(300) = ''
+    , @field_term      varchar( 10) = '|'
+    , @fileExtension   varchar( 10) = 'txt'
+    , @codePage        varchar( 10) = 'C65001' /* C1251 - Cyrillic */
     , @row_term        VARCHAR( 10) = '\n'
     , @debug           BIT          = 0
 )
 AS
 /*--
-Official bcp documentation: http://technet.microsoft.com/en-us/library/ms162802.aspx
+Official bcp documentation: https://docs.microsoft.com/en-us/sql/tools/bcp-utility
 In select statement use full table names: DATABASENAME.SCHEMANAME.TABLENAME
 EXECUTE dbo.usp_bcpUnloadSelect
       @outputFilePath = 'd:\'

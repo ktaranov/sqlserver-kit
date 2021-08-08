@@ -262,6 +262,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlperformance.com/2014/11/t-sql-queries/multiple-plans-identical-query),
    [here](https://sqlblog.org/2019/09/12/bad-habits-to-kick-avoiding-the-schema-prefix).
  - Delimiters: **spaces** (not tabs).
+ - <a id="sql-comment"></a> Always use multi-line comment `/* */` instead in-line comment `--` in production code due to potential formating problems in different tools and programs.
+   More details [here](https://www.brentozar.com/archive/2021/04/never-ever-ever-start-t-sql-comments-with-two-dashes/), [here](https://sqlkover.com/ssis-and-the-ora-00907-missing-right-parenthesis-error/), and [here](https://docs.microsoft.com/troubleshoot/sql/admin/crashes-run-oracle-linked-server-query).
  - Never use asterisk (`*`) in select statements `SELECT *` and `INSERT` statements, use explicit column names.
    Main problems are: traffic issues, Memory Grants issues, Index usage issues.
    **Only one exception, see it below.**
@@ -269,7 +271,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    [here](https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list),
    [here](https://dba.stackexchange.com/q/253873/107045),
    [here](https://www.erikdarlingdata.com/sql-server/all-the-problems-with-select/).
- - Use asterisk (`*`) only in an archiving situation, where rows are being moved to another table that must have the same structure.
+ - Use asterisk (`*`) **ONLY** in an archiving situation, where rows are being moved to another table that must have the same structure.
    ```sql
    INSERT INTO SalesOrderArchive  /* Note no column list */
    SELECT *
@@ -290,10 +292,19 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    This is [`ANSI`] standard and Microsoft announced with the SQL Server 2008 release that semicolon statement terminators will become mandatory in a future version so statement terminators other than semicolons (whitespace) are currently deprecated.
    This deprecation announcement means that you should always use semicolon terminators in new development.
    From [Transact-SQL Syntax Conventions (Transact-SQL)](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transact-sql-syntax-conventions-transact-sql):
-   > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.
+   > Although the semicolon isn't required for most statements in this version of SQL Server, it will be required in a future version.   
    
    More details [here](http://www.dbdelta.com/always-use-semicolon-statement-terminators/), [here](https://www.brentozar.com/archive/2015/12/give-your-t-sql-a-semicolonoscopy/), and [here](https://sqlblog.org/2009/09/03/ladies-and-gentlemen-start-your-semi-colons).
-   Also if you use common table expression `WITH CTE ` semicolon is mandority.
+   Semicolon is mandority for:
+   1. [Common table expression `WITH CTE `](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql):
+   > When a CTE is used in a statement that is part of a batch, the statement before it must be followed by a semicolon.
+   2. [`Merge`](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql) statements:
+   > The MERGE statement requires a semicolon (;) as a statement terminator. Error 10713 is raised when a MERGE statement is run without the terminator.
+   3. [`TROW`](https://docs.microsoft.com/sql/t-sql/language-elements/throw-transact-sql) exceptions:
+   > The statement before the THROW statement must be followed by the semicolon (;) statement terminator.
+   4. All [Service Broker statements](https://docs.microsoft.com/sql/t-sql/statements/send-transact-sql):
+   > If the SEND statement isn't the first statement in a batch or stored procedure, the preceding statement must be terminated with a semicolon (;).
+   
  - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
@@ -353,6 +364,21 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS 'Tables' FROM sys.tables;
     SELECT SCHEMA_NAME(schema_id) + '.' + [name] AS Tables   FROM sys.tables;
    ```
+ - <a id="explicit-range-condition"></a> Always consider using an explicit range condition when comparing dates for properly make use of an index. More details [here](https://use-the-index-luke.com/sql/where-clause/obfuscation/dates).
+   ```tsql
+   /* bad */
+   SELECT sale_date
+   FROM sales
+   WHERE YEAR(sale_date) >= 1970
+   AND YEAR(sale_date) < 1971;
+   
+   /* good */
+   SELECT sale_date
+   FROM sales
+   WHERE sale_date >= CAST('1970-01-01' AS date) 
+     AND sale_date < CAST('1971-01-01', AS date);
+   ```
+   
  - The first argument in `SELECT` expression should be on the next line:
    ```sql
     SELECT
@@ -376,8 +402,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    DECLARE @n int = 1;
    SELECT TOP@n name FROM sys.objects;
    ```
- - For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
-   More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/).
+ - <a id="top100"></a>For demo queries use `TOP(100)` or lower value because SQL Server uses one sorting method for `TOP` 1-100 rows, and a different one for 101+ rows.
+   More details [here](https://www.brentozar.com/archive/2017/09/much-can-one-row-change-query-plan-part-2/) and [here](https://sqlsunday.com/2020/12/08/the-curious-case-of-the-top-n-sort/).
 - Avoid specifying integers in the `ORDER BY` clause as positional representations of the columns in the select list.
   The statement with integers is not as easily understood by others compared with specifying the actual column name.
   In addition, changes to the select list, such as changing the column order or adding new columns, requires modifying the `ORDER BY` clause in order to avoid unexpected results.
@@ -392,9 +418,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
  - Avoid wrapping functions around columns specified in the `WHERE` and `JOIN` clauses.
    Doing so makes the columns non-deterministic and prevents the query processor from using indexes.
- - Use `NULL` or `NOT NULL` for each column in a temporary table. The [`ANSI_NULL_DFLT_ON`] option control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
+ - Use `NULL` or `NOT NULL` for each column in a temporary table. The [`ANSI_NULL_DFLT_ON`](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql) option control the way the Database Engine assigns the `NULL` or `NOT NULL` attributes to columns when these attributes are not specified in a `CREATE TABLE` or `ALTER TABLE` statement.
    If a connection executes a procedure with different settings for these options than the connection that created the procedure, the columns of the table created for the second connection can have different nullability and exhibit different behavior. If `NULL` or `NOT NULL` is explicitly stated for each column, the temporary tables are created by using the same nullability for all connections that execute the procedure.
-   [`ANSI_NULL_DFLT_ON`]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-null-dflt-on-transact-sql
  - Use modification statements that convert nulls and include logic that eliminates rows with null values from queries. Be aware that in Transact-SQL, `NULL` is not an empty or "nothing" value. It is a placeholder for an unknown value and can cause unexpected behavior, especially when querying for result sets or using AGGREGATE functions.
  - Use the `UNION ALL` operator instead of the `UNION` or `OR` operators, unless there is a specific need for distinct values.
    The `UNION ALL` operator requires less processing overhead because duplicates are not filtered out of the result set.
@@ -446,7 +471,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    SELECT @nvcmaxVariable;
    ```
    More details [here](https://themondaymorningdba.wordpress.com/2018/09/13/them-concatenatin-blues/).
- - Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
+ - <a href="data-type-length"></a> Always specify a length to any text-based data type such as `varchar`, `nvarchar`, `char`, `nchar`:
    ```tsql
     /* bad */
     DECLARE @myBadVarcharVariable  varchar;
@@ -530,8 +555,7 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
  - The procedure or function should begin with parameters checks (see example below)
  - Create `sp_` procedures only in `master` database - SQL Server will always scan through the system catalog first
  - Always use `BEGIN TRY` and `BEGIN CATCH` for error handling
- - Always use multi-line comment `/* */` instead in-line comment `--`
- - Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
+ - <a id="nocount"></a> Use `SET NOCOUNT ON;` for stops the message that shows the count of the number of rows affected by a Transact-SQL statement and decreasing network traffic.
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009) and [here][11].
  - Do not use `SET NOCOUNT OFF;` because it is default behavior
  - Use `RAISERROR` instead `PRINT` if you want to give feedback about the state of the currently executing SQL batch without lags.
@@ -763,4 +787,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [explicit transactions]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/transactions-transact-sql
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
 [`ANSI`]:http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip
-[hints]https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
+[hints]:https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
