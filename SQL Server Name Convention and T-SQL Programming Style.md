@@ -337,6 +337,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
 
    ```
  - Always use aliases for table names. More details [here](https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/).
+ - Whenever you’re working with multiple tables in a join (explicit or, like this one, implicit), always specify which table each column comes from. Even if your code works just fine today, just adding an unfortunately named column many years later can break your code. More details [here](https://sqlsunday.com/2020/12/21/the-uncorrelated-correlated-subquery/).
  -  <a id="tsql-alias"> Avoid non-standard column and table aliases, use, if required, double-quotes for special characters and always `AS` keyword before alias:
    ```sql
    SELECT
