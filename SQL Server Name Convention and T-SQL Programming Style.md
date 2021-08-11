@@ -201,15 +201,18 @@ More details about SQL Server data types and mapping it with another databases a
 
 This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
 
-| Not Recommended | Recommended     | When and Why                                                                                                                                   | More details   |
-|-----------------|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| [`!=`][12]      | [`<>`][12]      | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]           |
-| [`CONVERT`][10] | [`CAST`][10]    | `CAST` is [`ANSI`]                                                                                                                             | [14],[15]      |
-| [`ISNULL`]      | [`COALECSE`]    | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to implicit triming string      | [16],[17]      |
-| [`DATEDIFF`]    | [`DATEADD`]     | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18],[19]      |
-| [`SELECT`]      | [`SET`]         | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20],[21],[22] |
-| [`STR`]         | [`CAST`][10]    | `STR` is not [`ANSI`], extremly slow, don't use more than 15 digits, and has rounding problem - use `CAST` plus concatenate instead `STR`      | [23]           |
-| [`ISNUMERIC`]   | [`TRY_CONVERT`] | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.             | [24]           |
+| Not Recommended | Recommended        | When and Why                                                                                                                                   | More details   |
+|-----------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| [`!=`][12]      | [`<>`][12]         | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]           |
+| [`CONVERT`][10] | [`CAST`][10]       | `CAST` is [`ANSI`]                                                                                                                             | [14],[15]      |
+| [`ISNULL`]      | [`COALECSE`]       | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to implicit triming string      | [16],[17]      |
+| [`DATEDIFF`]    | [`DATEADD`]        | The predicate `MyDateTime < DATEADD(SECOND, -1, GETUTCDATE())` syntax is [`SARGable`]                                                          | [18],[19]      |
+| [`SELECT`]      | [`SET`]            | Using `SET` (is [`ANSI`]) instead of `SELECT` when assigning variables due to properly work with `Msg 501 Subquery returned more than 1 value` | [20],[21],[22] |
+| [`STR`]         | [`CAST`][10]       | `STR` is not [`ANSI`], extremly slow, don't use more than 15 digits, and has rounding problem - use `CAST` plus concatenate instead `STR`      | [23]           |
+| [`ISNUMERIC`]   | [`TRY_CONVERT`]    | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.             | [24]           |
+| [`GETDATE`]     | [`SYSUTCDATETIME`] | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                        | [25]           |
+| [`GETUTCDATE`]  | [`SYSUTCDATETIME`] | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                        | [25]           |
+| [`SYSDATETIME`] | [`SYSUTCDATETIME`] | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                        | [25]           |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -234,6 +237,10 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [`ISNUMERIC`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/isnumeric-transact-sql
 [`TRY_CONVERT`]:https://docs.microsoft.com/en-us/sql/t-sql/functions/try-convert-transact-sql
 [24]:https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029
+[25]:https://bornsql.ca/blog/dates-times-sql-server-t-sql-functions-get-current-date-time/
+[`GETDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql
+[`GETUTCDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getutcdate-transact-sql
+[`SYSDATETIME`]:https://docs.microsoft.com/sql/t-sql/functions/sysdatetime-transact-sql
 
 **[⬆ back to top](#table-of-contents)**
 
