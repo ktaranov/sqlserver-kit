@@ -26,6 +26,7 @@ Articles types:
  - **[V]** Visualization Articles
  - **[X]** XML, JSON, YAML, HTML Articles
  - **[XE]** [Extended events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
+
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
@@ -1438,6 +1439,7 @@ Articles types:
 | [How to migrate a SQL Server database to a lower version]                                                               | Basit Farooq                             | 2019-08-05 | [DBA]       |
 | [Make Network Path Visible For SQL Server Backup and Restore in SSMS]                                                   | Ahmad Yaseen                             | 2015-03-03 | [DBA]       |
 | [T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]                                                    | Itzik Ben-Gan                            | 2019-09-12 | [DBA][DEV]  |
+| [How to Prep a SQL Server Availability Group for VM-Level DR Replication]                                               | David Klee                               | 2021-02-08 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2842,3 +2844,4 @@ Articles types:
 [How to migrate a SQL Server database to a lower version]:https://www.mssqltips.com/sqlservertip/2810/how-to-migrate-a-sql-server-database-to-a-lower-version/
 [Make Network Path Visible For SQL Server Backup and Restore in SSMS]:https://www.mssqltips.com/sqlservertip/3499/make-network-path-visible-for-sql-server-backup-and-restore-in-ssms/
 [T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]:https://sqlperformance.com/2019/09/t-sql-queries/t-sql-pitfalls-pivoting-unpivoting
+[How to Prep a SQL Server Availability Group for VM-Level DR Replication]:https://www.davidklee.net/2021/02/08/how-to-prep-a-sql-server-availability-group-for-vm-level-dr-replication/
