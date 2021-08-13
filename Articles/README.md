@@ -26,7 +26,6 @@ Articles types:
  - **[V]** Visualization Articles
  - **[X]** XML, JSON, YAML, HTML Articles
  - **[XE]** [Extended events](https://docs.microsoft.com/en-us/sql/relational-databases/extended-events/extended-events)
-
 | Title                                                                                                                   | Author                                   | Modified   | Type        |
 |-------------------------------------------------------------------------------------------------------------------------|------------------------------------------|------------|-------------|
 | [Understanding how SQL Server executes a query]                                                                         | Remus Rusanu                             | 2016-04-15 |             |
@@ -239,7 +238,6 @@ Articles types:
 | [ALTER SCHEMA TRANSFER for Zero Downtime Database Upgrades]                                                             | Dave Wentzel                             | 2013-05-21 |             |
 | [Delayed Durability in SQL Server 2014]                                                                                 | Aaron Bertrand                           | 2014-04-28 |             |
 | [Daylight Savings end affects not only you, but your SQL Server too]                                                    | Aaron Bertrand                           | 2014-04-28 |             |
-| [Searching Strings in SQL Server is Expensive]                                                                          | Brent Ozar                               | 2016-10-18 |             |
 | [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]                                               | Brent Ozar                               | 2017-02-22 | [COR][IDX]  |
 | [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]                                                       | Brent Ozar                               | 2017-02-28 | [COR][IDX]  |
 | [The Guide  SQL Server Installation Checklist (settings that increase SQL Server Performance)]                          | Mark Varnas                              | 2017-03-03 |             |
@@ -1061,7 +1059,6 @@ Articles types:
 | [Queue table issues with Availability Groups in SQL Server]                                                             | Aaron Bertrand                           | 2020-01-29 | [DBA]       |
 | [Transact-SQL: openjson hierarchy solution]                                                                             | Ronen Ariely                             | 2019-09-29 | [DBA][DEV]  |
 | [CREATE DLL TRIGGER ON CREATE_LOGIN to configure default parameters for any new LOGIN]                                  | Ronen Ariely                             | 2019-10-12 | [DBA][DEV]  |
-| [Code: Order of columns in table might impact the size of the table/database and even related to errors]                | Ronen Ariely                             | 2019-10-13 | [DBA][DEV]  |
 | [SQL Server Internals: Getting the data of deleted column]                                                              | Ronen Ariely                             | 2018-08-11 | [DBA][DEV]  |
 | [SQL varchar data type deep dive]                                                                                       | Gauri Mahajan                            | 2019-05-29 | [DBA][DEV]  |
 | [What is the datatype SQL_VARIANT]                                                                                      | Kenneth Fisher                           | 2020-04-16 | [DBA][DEV]  |
@@ -1149,11 +1146,8 @@ Articles types:
 | [15 SQL Server Performance Counters to Monitor In 2020]                                                                 | Allen White                              | 2020-05-05 | [DBA][DEV]  |
 | [Pulling Group By Above a Join]                                                                                         | Paul White                               | 2020-05-31 | [DBA][DEV]  |
 | [SQLskills SQL101: Running out of ints and bigints]                                                                     | Paul Randal                              | 2017-10-03 | [DBA][DEV]  |
-| [Parallel Execution Plans – Branches and Threads]                                                                       | Paul White                               | 2013-10-07 | [DBA][DEV]  |
 | [Understanding and Using Parallelism in SQL Server]                                                                     | Paul White                               | 2011-03-03 | [DBA][DEV]  |
 | [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]                                     | Sean Gallardy                            | 2020-06-16 | [DBA]       |
-| [The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]                                           | Brent Ozar                               | 2020-07-07 | [DBA][DEV]  |
-| [The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]                                        | Brent Ozar                               | 2020-07-08 | [DBA][DEV]  |
 | [Encrypting SQL Server Database Backups]                                                                                | David Fowler                             | 2018-04-04 | [DBA]       |
 | [Using Track Causality to Understand Query Execution]                                                                   | Erin Stellato                            | 2019-01-04 | [DBA][DEV]  |
 | [Understanding SQL Server Backup Types]                                                                                 | Prashanth Jayaram                        | 2018-04-19 | [B][DBA]    |
@@ -1209,7 +1203,6 @@ Articles types:
 | [When Select * Doesn’t Matter]                                                                                          | Erik Darlling                            | 2019-11-18 | [DBA][DEV]  |
 | [HT Waits – Explained and Animated]                                                                                     | Forrest McDaniel                         | 2020-08-12 | [DBA][DEV]  |
 | [SQL Server 100% Online Deployments]                                                                                    | Michael J Swart                          | 2018-01-05 | [DBA]       |
-| [When Measuring Timespans, try DATEADD instead of DATEDIFF]                                                             | Michael J Swart                          | 2017-12-20 | [DBA][DEV]  |
 | [The Curious Case of… setting up a server for DBCC CHECKDB]                                                             | Paul Randal                              | 2020-08-24 | [DBA]       |
 | [When should a primary key be declared non-clustered?]                                                                  | Paul White                               | 2012-12-01 | [IDX]       |
 | [Guid vs INT - Which is better as a primary key?]                                                                       | Sandeep Kumar M                          | 2011-01-05 | [DBA][DEV]  |
@@ -1225,7 +1218,6 @@ Articles types:
 | [SET IMPLICIT_TRANSACTIONS ON Is One Hell of a Bad Idea]                                                                | Brent Ozar                               | 2019-05-06 | [DBA][DEV]  |
 | [Tempdb: The Ghost Of Version Store]                                                                                    | Stijn Wynants                            | 2015-11-09 | [DBA][DEV]  |
 | [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]                            | Glenn Boonen                             | 2020-05-07 | [DBA][DEV]  |
-| [A SQL Server DBA myth a day: (26/30) nested transactions are real]                                                     | Paul Randal                              | 2010-04-26 | [DBA][DEV]  |
 | [The Best Medium-Hard Data Analyst SQL Interview Questions]                                                             | Zachary Thomas                           | 2020-01-01 | [DBA][DEV]  |
 | [Starting SQL: Why Not Make Everything Dynamic?]                                                                        | Eric Darling                             | 2020-09-28 | [DBA][DEV]  |
 | [dbatools multithreading commands]                                                                                      | Kin                                      | 2019-01-04 | [PS]        |
@@ -1274,7 +1266,6 @@ Articles types:
 | [Deploy SQLWATCH to SQL Server using GitHub Actions]                                                                    | Kevin Chant                              | 2020-11-17 | [DBA]       |
 | [SQL Server table hints – WITH (NOLOCK) best practices]                                                                 | Ahmad Yaseen                             | 2018-02-24 | [DBA][DEV]  |
 | [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Aaron Bertrand                           | 2020-02-14 | [DBA]       |
-| [What permissions do temp stored procedures use?]                                                                       | Kenneth Fisher                           | 2019-06-19 | [DBA][DEV]  |
 | [SQLskills SQL101: Should you kill that long-running transaction?]                                                      | Paul Randal                              | 2020-10-10 | [DBA][DEV]  |
 | [A quick and dirty scan of a list of instances using a dynamic linked server]                                           | Kenneth Fisher                           | 2020-11-12 | [DBA]       |
 | [sp_whoisactive: Analyzing Tempdb Contention]                                                                           | Adam Machanic                            | 2017-01-01 | [DBA][DEV]  |
@@ -1334,7 +1325,6 @@ Articles types:
 | [Towards Safer Dynamic SQL]                                                                                             | Eric Darling                             | 2020-10-11 | [DBA][DEV]  |
 | [Setting the timezone to anything other than UTC]                                                                       | Yeller                                   | 2015-01-12 | [DBA][DEV]  |
 | [Advanced Service Broker Sample: Multi-Threading]                                                                       | Eitan Blumin                             | 2018-10-31 | [DBA][DEV]  |
-| [Temporary Table Caching Explained]                                                                                     | Paul White                               | 2012-08-17 | [DBA][DEV]  |
 | [Copy a SQL Server database with just the objects and no data]                                                          | Jeffrey Yao                              | 2017-02-01 | [DBA][DEV]  |
 | [QOMPLX Knowledge: Kerberoasting Attacks Explained]                                                                     | QOMPLX                                   | 2020-01-01 | [SEC]       |
 | [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-24 | [DBA][DEV]  |
@@ -1365,7 +1355,6 @@ Articles types:
 | [Poor Man’s Resource Governor: Database-Scoped Configurations]                                                          | Brent Ozar                               | 2020-09-26 | [DBA]       |
 | [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]                                             | Brent Ozar                               | 2020-11-27 | [DBA]       |
 | [How to Batch Updates A Few Thousand Rows at a Time]                                                                    | Brent Ozar                               | 2020-12-17 | [DBA][DEV]  |
-| [The Table Variable in SQL Server]                                                                                      | Esat Erkec                               | 2019-12-03 | [DBA][DEV]  |
 | [Using Amazon Fsx For Sql Server Failover Cluster Instances – What You Need To Know!]                                   | Dave Berm                                | 2020-01-24 | [AMZ]       |
 | [Sometimes you CAN upsize a column in-place]                                                                            | Aaron Bertrand                           | 2020-08-19 | [DBA]       |
 | [Which Microsoft Certification Should You Get?]                                                                         | Brent Ozar                               | 2021-01-04 | [DBA][DEV]  |
@@ -1387,7 +1376,6 @@ Articles types:
 | [Deprecated features to take out of your toolbox – Part 1]                                                              | Aaron Bertrand                           | 2021-02-22 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 2]                                                              | Aaron Bertrand                           | 2021-03-15 | [DBA][DEV]  |
 | [Deprecated features to take out of your toolbox – Part 3]                                                              | Aaron Bertrand                           | 2021-07-01 | [DBA][DEV]  |
-| [How to create a SQL dependency diagram in SQL Server]                                                                  | Marko Zivkovic                           | 2018-09-04 | [DBA][DEV]  |
 | [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]                                  | Erik Darling                             | 2021-04-19 | [DBA]       |
 | [Execution Plans Don’t Have the Yellow Bang They Really Need.]                                                          | Brent Ozar                               | 2021-04-29 | [DBA][DEV]  |
 | [The Curious Case of… the un-killable thread]                                                                           | Paul Randal                              | 2021-04-20 | [DBA]       |
@@ -1395,10 +1383,8 @@ Articles types:
 | [Possible configuration error: 1000000 IO requests allocated]                                                           | Sean Gallardy                            | 2021-05-23 | [DBA]       |
 | [Availability Group Long Failover Times]                                                                                | Sean Gallardy                            | 2021-04-18 | [DBA]       |
 | [Testing Backups and Offloading CheckDB]                                                                                | Taryn Pratt                              | 2021-04-19 | [DBA]       |
-| [Adding Additional Data Files To The TempDB Database In SQL Server]                                                     | Jack Worthen                             | 2017-08-24 | [DBA]       |
 | [Fighting with Deadlocks]                                                                                               | Taryn Pratt                              | 2021-04-09 | [DBA][DEV]  |
 | [Syncing Logins Between Availability Group Replicas]                                                                    | Taryn Pratt                              | 2020-12-18 | [DBA]       |
-| [The Ascending Key Problem in Fact Tables– Part one: Pain!]                                                             | Thomas Kejser                            | 2011-07-01 | [DEV]       |
 | [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DEV]       |
 | [SQL JOINs and UNIONs]                                                                                                  | Austin Smith                             | 2020-03-13 | [DBA][DEV]  |
 | [Some opinionated thoughts on SQL databases]                                                                            | Nelson Elhage                            | 2020-03-30 | [DBA][DEV]  |
@@ -1451,7 +1437,6 @@ Articles types:
 | [Getting exclusive access to restore SQL Server database]                                                               | Greg Robidoux                            | 2021-02-21 | [DBA]       |
 | [How to migrate a SQL Server database to a lower version]                                                               | Basit Farooq                             | 2019-08-05 | [DBA]       |
 | [Make Network Path Visible For SQL Server Backup and Restore in SSMS]                                                   | Ahmad Yaseen                             | 2015-03-03 | [DBA]       |
-
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -1663,7 +1648,6 @@ Articles types:
 [ALTER SCHEMA TRANSFER for Zero Downtime Database Upgrades]:http://www.davewentzel.com/content/alter-schema-transfer-zero-downtime-database-upgrades
 [Delayed Durability in SQL Server 2014]:https://sqlperformance.com/2014/04/io-subsystem/delayed-durability-in-sql-server-2014
 [Daylight Savings end affects not only you, but your SQL Server too]:http://www.sqldoubleg.com/2015/10/28/daylight-savings-end-affects-not-only-you-but-your-sql-server-too/
-[Searching Strings in SQL Server is Expensive]:https://www.brentozar.com/archive/2016/10/searching-strings-sql-server-expensive/
 [Let’s Corrupt a SQL Server Database Together, Part 1: Clustered Indexes]:https://www.brentozar.com/archive/2017/02/lets-corrupt-sql-server-database-together/
 [Let’s Corrupt a Database Together, Part 2: Nonclustered Indexes]:https://www.brentozar.com/archive/2017/02/lets-corrupt-database-together-part-2-nonclustered-indexes/
 [The Guide  SQL Server Installation Checklist (settings that increase SQL Server Performance)]:https://red9.com/blog/sql-server-installation-checklist/
@@ -1828,7 +1812,6 @@ Articles types:
 [Generating Concurrent Activity]:http://michaeljswart.com/2014/01/generating-concurrent-activity/
 [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]:http://littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/
 [Microsoft SQL Server R Services - Internals X]:http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
-[Clustered columnstore: on-disk vs. in-mem]:http://nedotter.com/archive/2017/03/clustered-columnstore-on-disk-vs-in-mem/
 [Hands on Full-Text Search in SQL Server]:https://www.sqlshack.com/hands-full-text-search-sql-server/
 [SQL Code Smells]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-code-smells/
 [Corruption demo databases and scripts]:https://www.sqlskills.com/blogs/paul/corruption-demo-databases-and-scripts/
@@ -1890,7 +1873,6 @@ Articles types:
 [Using Plan Explorer with Entity Framework]:https://blogs.sentryone.com/jasonhall/using-plan-explorer-entity-framework/
 [Overview of Encryption Tools in SQL Server]:https://matthewmcgiffen.com/2017/12/05/overview-of-encryption-tools-in-sql-server/
 [Clustered Index Uniquifier Existence and Size]:https://sqlquantumleap.com/2017/09/18/clustered-index-uniquifier-existence-and-size/
-[Understanding Logging and Recovery in SQL Server]:https://technet.microsoft.com/en-us/library/2009.02.logging.aspx
 [Understanding SQL Server Backups]:https://docs.microsoft.com/en-us/previous-versions/technet-magazine/dd822915(v=msdn.10)
 [Recovering from Disasters Using Backups]:https://technet.microsoft.com/en-us/library/ee677581.aspx
 [Simple SQL: Handling Location Datatypes]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/simple-sql-handling-location-datatypes/
@@ -1911,7 +1893,6 @@ Articles types:
 [A Method to Find Trace Flags]:https://rebrand.ly/joe-finding-undocumented-trace-flags
 [Using Windows stored credentials to connect to SQL in containers]:https://dbafromthecold.com/2018/01/17/using-windows-stored-credentials-to-connect-to-sql-in-containers/
 [Step by Step Guide to Migrate SQL Server Data to SQL Server 2017]:https://www.databasejournal.com/features/mssql/step-by-step-guide-to-migrate-sql-server-data-to-sql-server-2017.html
-[Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
 [Administrative Logins and Users]:https://sqlstudies.com/2015/11/02/administrative-logins-and-users/
 [Parallelism in Hekaton (In-Memory OLTP)]:http://www.nikoport.com/2018/01/20/parallelism-in-hekaton-in-memory-oltp/
 [Troubleshooting THREADPOOL Waits]:https://www.sqlpassion.at/archive/2011/10/25/troubleshooting-threadpool-waits/
@@ -1951,7 +1932,6 @@ Articles types:
 [Digitally Signing a Stored Procedure To Allow It To Run With Elevated Permissions]:https://sqlundercover.com/2018/05/02/digitally-signing-a-stored-procedure-to-allow-it-to-run-with-elevated-permissions/
 [NOLOCK and Top Optimization]:https://www.sqlshack.com/nolock-and-top-optimization/
 [Operator Precedence versus the Confusing Constraint Translation]:https://www.red-gate.com/simple-talk/blogs/operator-precedence-versus-confusing-constraint-translation/
-[Interval Queries in SQL Server]:http://www.itprotoday.com/software-development/interval-queries-sql-server
 [Query Trace Column Values]:https://www.sqlshack.com/query-trace-column-values/
 [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]:https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/
 [Break large delete operations into chunks]:https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes
@@ -1973,7 +1953,6 @@ Articles types:
 [How to implement error handling in SQL Server]:https://www.sqlshack.com/how-to-implement-error-handling-in-sql-server/
 [SQL Server Closure Tables]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-server-closure-tables/
 [Deadlock victim choice in SQL Server - an exception?]:http://joshthecoder.com/2018/05/10/deadlock-victim-choice-an-exception.html
-[Azure and Windows PowerShell: The Basics]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-windows-powershell-basics/
 [Azure and Windows PowerShell: Getting Information]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-and-windows-powershell-getting-information/
 [Be our guest, be our guest, put our database to the test]:https://sqlstudies.com/2018/06/25/be-our-guest-be-our-guest-put-our-database-to-the-test/
 [Finding code smells using SQL Prompt: the SET NOCOUNT problem (PE008 and PE009)]:https://www.red-gate.com/hub/product-learning/sql-prompt/finding-code-smells-using-sql-prompt-set-nocount-problem-pe008-pe009
@@ -2096,7 +2075,6 @@ Articles types:
 [How to perform a Page Level Restore in SQL Server]:https://sqlperfmon.blogspot.com/2016/07/how-to-perform-page-level-restore-in.html
 [How Much Memory Does SSIS Need?]:https://www.timmitchell.net/post/2019/05/02/how-much-memory-does-ssis-need/
 [The Curious Case of… trying to find an MDF file in a RAW disk]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-trying-to-find-an-mdf-file-in-a-raw-disk/
-[Understanding the SQL Server NOLOCK hint]:https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
 [Methods to Insert Data into SQL Server]:https://www.sqlshack.com/methods-to-insert-data-into-sql-server/
 [Batching data manipulation is great as long as you do it correctly]:http://desertdba.com/batching-data-manipulation-is-great/
 [Azure and Windows PowerShell: Using VM Extensions]:https://www.red-gate.com/simple-talk/sysadmin/powershell/azure-and-windows-powershell-using-vm-extensions/
@@ -2232,7 +2210,6 @@ Articles types:
 [Corruption in TempDB]:https://stevestedman.com/2019/08/corruption-in-tempdb/
 [Corruption recovery using DBCC WRITEPAGE]:https://www.sqlskills.com/blogs/paul/corruption-recovery-using-dbcc-writepage/
 [Why DBCC CHECKDB can miss memory corruption]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-why-dbcc-checkdb-can-miss-memory-corruption/
-[Fixing Cardinality Estimation Errors with Filtered Statistics]:https://www.sqlpassion.at/archive/2013/10/29/fixing-cardinality-estimation-errors-with-filtered-statistics/
 [Plan Stitch: Harnessing the Best of Many Plans]:https://www.microsoft.com/en-us/research/publication/plan-stitch-harnessing-the-best-of-many-plans-2/
 [Query and Resource Optimization: Bridging the Gap]:https://www.microsoft.com/en-us/research/publication/query-resource-optimization-bridging-gap/
 [Cuttlefish: A Lightweight Primitive for Adaptive Query Processing]:https://www.microsoft.com/en-us/research/publication/cuttlefish-a-lightweight-primitive-for-adaptive-query-processing/
@@ -2386,7 +2363,7 @@ Articles types:
 [Don’t install SQL Server from a mounted ISO]:https://bornsql.ca/blog/dont-install-sql-server-from-a-mounted-iso/
 [NULL complexities – Part 1]:https://sqlperformance.com/2019/12/t-sql-queries/null-complexities-part-1
 [NULL complexities – Part 2]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-2
-[NULL complexities – Part 3]:https://sqlperformance.com/2020/01/t-sql-queries/null-complexities-part-3
+[NULL complexities – Part 3]:https://sqlperformance.com/2020/02/t-sql-queries/null-complexities-part-3-missing-standard-features-and-t-sql-alternatives
 [How to fix the “Agent XPs disabled” error]:https://www.sqlshack.com/how-to-fix-the-agent-xps-disabled-error/
 [Number of Rows Read / Actual Rows Read warnings in Plan Explorer]:https://sqlperformance.com/2016/06/sql-indexes/actual-rows-read-warnings-plan-explorer
 [Data Compression + Backup Compression = Double Compression?]:https://jesspomfret.com/double-compression/
@@ -2485,8 +2462,6 @@ Articles types:
 [Queue table issues with Availability Groups in SQL Server]:mssqltips.com/sqlservertip/6284/queue-table-issues-with-availability-groups-in-sql-server/
 [Transact-SQL: openjson hierarchy solution]:http://ariely.info/Blog/tabid/83/EntryId/239/Transact-SQL-openjson-hierarchy-solution.aspx
 [CREATE DLL TRIGGER ON CREATE_LOGIN to configure default parameters for any new LOGIN]:http://ariely.info/Blog/tabid/83/EntryId/240/CREATE-DLL-TRIGGER-ON-CREATE_LOGIN-to-configure-default-parameters-for-any-new-LOGIN.aspx
-[Code: Order of columns in table might impact the size of the table/database and even related to errors]:http://ariely.info/Blog/tabid/83/EntryId/243/Code-Order-of-columns-in-table-might-impact-the-size-of-the-table-database-and-even-related-to-errors.aspx
-[SQL Server Internals: Getting the data of deleted column]:http://ariely.info/Blog/tabid/83/EntryId/213/SQL-Server-Internals-Getting-the-data-of-deleted-column.aspx
 [SQL varchar data type deep dive]:https://www.sqlshack.com/sql-varchar-data-type-deep-dive/
 [What is the datatype SQL_VARIANT]:https://sqlstudies.com/2020/04/16/what-is-the-datatype-sql_varient/
 [An Introduction to Asynchronous Processing with Service Broker]:https://sqlperformance.com/2014/03/sql-performance/intro-to-service-broker
@@ -2577,8 +2552,6 @@ Articles types:
 [Parallel Execution Plans – Branches and Threads]:https://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
 [Understanding and Using Parallelism in SQL Server]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
 [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]:https://www.seangallardy.com/top-asked-availability-group-questions-and-maybe-some-helpful-tidbits-as-answers/
-[The 201 Buckets Problem, Part 1: Why You Still Don’t Get Accurate Estimates]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-1-why-you-still-dont-get-accurate-estimates/
-[The 201 Buckets Problem, Part 2: How Bad Estimates Backfire As Your Data Grows]:https://www.brentozar.com/archive/2020/07/the-201-buckets-problem-part-2-how-bad-estimates-backfire-as-your-data-grows/
 [Encrypting SQL Server Database Backups]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [Using Track Causality to Understand Query Execution]:https://sqlperformance.com/2019/01/extended-events/using-track-causality-to-understand-query-execution
 [Understanding SQL Server Backup Types]:https://www.sqlshack.com/understanding-sql-server-backup-types/
@@ -2620,7 +2593,6 @@ Articles types:
 [Database alias in Microsoft SQL Server]:http://www.baud.cz/blog/database-alias-in-microsoft-sql-server
 [The Curious Case of… the 8060-byte row size limit]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-8060-byte-row-size-limit/
 [.NET TransactionScope Considered Annoying - Default Isolation Level is Serializable]:https://joshthecoder.com/2020/07/27/transactionscope-considered-annoying.html
-[Parameter Sniffing, Embedding, and the RECOMPILE Options]:https://sqlperformance.com/2013/08/t-sql-queries/parameter-sniffing-embedding-and-the-recompile-options
 [Why You’re Tuning Stored Procedures Wrong (the Problem with Local Variables)]:https://www.brentozar.com/archive/2014/06/tuning-stored-procedures-local-variables-problems/
 [Yet Another Post About Local Variables]:https://www.erikdarlingdata.com/sql-server/yet-another-post-about-local-variables/
 [Cleaning up Backups from Azure Blob Storage]:http://www.nikoport.com/2020/03/30/cleaning-up-backups-from-azure-blob-storage/
@@ -2651,7 +2623,6 @@ Articles types:
 [Tempdb: The Ghost Of Version Store]:https://kohera.be/blog/sql-server/tempdb-the-ghost-of-version-store/
 [Row Versioning Concurrency in SQL Server]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
 [When Tempdb Becomes Permanentdb (In-memory tempdb metadata and Resource governor problems)]:https://kohera.be/blog/sql-server/when-tempdb-becomes-permanentdb/
-[A SQL Server DBA myth a day: (26/30) nested transactions are real]:https://www.sqlskills.com/blogs/paul/a-sql-server-dba-myth-a-day-2630-nested-transactions-are-real/
 [The Best Medium-Hard Data Analyst SQL Interview Questions]:https://quip.com/2gwZArKuWk7W
 [Starting SQL: Why Not Make Everything Dynamic?]:https://www.erikdarlingdata.com/starting-sql/starting-sql-why-not-make-everything-dynamic/
 [dbatools multithreading commands]:https://dbatools.io/multithread/
@@ -2699,7 +2670,6 @@ Articles types:
 [Deploy SQLWATCH to SQL Server using GitHub Actions]:https://www.kevinrchant.com/2020/11/17/deploy-sqlwatch-to-sql-server-using-github-actions/
 [SQL Server table hints – WITH (NOLOCK) best practices]:https://www.sqlshack.com/understanding-impact-clr-strict-security-configuration-setting-sql-server-2017/
 [Memory-Optimized TempDB Metadata in SQL Server 2019]:https://www.mssqltips.com/sqlservertip/6230/memoryoptimized-tempdb-metadata-in-sql-server-2019/
-[What permissions do temp stored procedures use?]:https://sqlstudies.com/2019/06/19/what-permissions-do-temp-stored-procedures-use/
 [SQLskills SQL101: Should you kill that long-running transaction?]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-should-you-kill-that-long-running-transaction/
 [A quick and dirty scan of a list of instances using a dynamic linked server]:https://sqlstudies.com/2020/11/12/a-quick-and-dirty-scan-of-a-list-of-instances-using-a-dynamic-linked-server/
 [sp_whoisactive: Analyzing Tempdb Contention]:http://whoisactive.com/docs/21_tempdb/
@@ -2741,7 +2711,6 @@ Articles types:
 [The danger of HADR_SYNC_COMMIT wait and synchronous replication in AlwaysOn Availability Groups]:https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/
 [Faster SQL Pagination with Keysets, Continued]:https://blog.jooq.org/2013/11/18/faster-sql-pagination-with-keysets-continued/
 [We need tool support for keyset pagination]:https://use-the-index-luke.com/no-offset
-[Insight into the SQL Server buffer cache]:https://www.sqlshack.com/insight-into-the-sql-server-buffer-cache/
 [Index-Only Scan: Avoiding Table Access]:https://use-the-index-luke.com/sql/clustering/index-only-scan-covering-index
 [The two top performance problems caused by ORM tool]:https://use-the-index-luke.com/blog/2013-04/the-two-top-performance-problems-caused-by-ORM-tools
 [Nested loops join and n1 problem in ORM]:https://use-the-index-luke.com/sql/join/nested-loops-join-n1-problem
@@ -2759,7 +2728,6 @@ Articles types:
 [Towards Safer Dynamic SQL]:https://www.erikdarlingdata.com/sql-server/towards-safer-dynamic-sql/
 [Setting the timezone to anything other than UTC]:http://yellerapp.com/posts/2015-01-12-the-worst-server-setup-you-can-make.html
 [Advanced Service Broker Sample: Multi-Threading]:https://eitanblumin.com/2018/10/31/advanced-service-broker-sample-multi-threading/
-[Temporary Table Caching Explained]:https://www.sql.kiwi/2012/08/temporary-object-caching-explained.html
 [Copy a SQL Server database with just the objects and no data]:https://www.mssqltips.com/sqlservertip/4664/copy-a-sql-server-database-with-just-the-objects-and-no-data/
 [QOMPLX Knowledge: Kerberoasting Attacks Explained]:https://www.qomplx.com/qomplx-knowledge-kerberoasting-attacks-explained/
 [How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
@@ -2786,11 +2754,9 @@ Articles types:
 [Identifying Cost-Saving Opportunities in Azure DevOps]:https://www.sentryone.com/blog/cost-savings-in-azuredevops
 [One wide index or multiple narrow indexes?]:https://sqlinthewild.co.za/index.php/2010/09/14/one-wide-index-or-multiple-narrow-indexes/
 [The Hidden Danger of Readable Secondaries in SQL Server AlwaysOn Availability Groups]:https://www.apress.com/de/blog/all-blog-posts/readable-secondaries-in-sql-server/16064064
-[When a Columnstore Index Makes Your Query Fail]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
 [Poor Man’s Resource Governor: Database-Scoped Configurations]:https://www.brentozar.com/archive/2020/10/poor-mans-resource-governor-database-scoped-configurations/
 [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]:https://www.brentozar.com/archive/2020/09/sql-server-suddenly-frozen-you-might-be-snapshotting-too-many-databases/
 [How to Batch Updates A Few Thousand Rows at a Time]:https://www.brentozar.com/archive/2020/12/how-to-batch-updates-a-few-thousand-rows-at-a-time/
-[The Table Variable in SQL Server]:https://www.sqlshack.com/the-table-variable-in-sql-server/
 [USING AMAZON FSX FOR SQL SERVER FAILOVER CLUSTER INSTANCES – WHAT YOU NEED TO KNOW!]:https://clusteringformeremortals.com/2021/01/08/using-amazon-fsx-for-sql-server-failover-cluster-instances-what-you-need-to-know/
 [Sometimes you CAN upsize a column in-place]:https://sqlperformance.com/2020/08/sql-indexes/upsize-column-in-place
 [Which Microsoft Certification Should You Get?]:https://www.brentozar.com/archive/2021/01/which-microsoft-certification-should-you-get/
@@ -2812,7 +2778,6 @@ Articles types:
 [Deprecated features to take out of your toolbox – Part 1]:https://sqlperformance.com/2021/02/sql-performance/deprecated-features-1
 [Deprecated features to take out of your toolbox – Part 2]:https://sqlperformance.com/2021/03/sql-performance/deprecated-features-2
 [Deprecated features to take out of your toolbox – Part 3]:https://sqlperformance.com/2021/07/sql-performance/deprecated-features-3
-[How to create a SQL dependency diagram in SQL Server]:https://www.sqlshack.com/how-to-create-a-sql-dependency-diagram-in-sql-server/
 [Troubleshooting Security Cache Issues: USERSTORE_TOKENPERM And TokenAndPermUserStore]:https://www.erikdarlingdata.com/sql-server/troubleshooting-security-cache-issues-userstore_tokenperm-and-tokenandpermuserstore/
 [Execution Plans Don’t Have the Yellow Bang They Really Need.]:https://www.brentozar.com/archive/2021/04/execution-plans-dont-have-the-yellow-bang-they-really-need/
 [The Curious Case of… the un-killable thread]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-un-killable-thread/
@@ -2820,10 +2785,8 @@ Articles types:
 [Possible configuration error: 1000000 IO requests allocated]:https://www.seangallardy.com/possible-configuration-error-1000000-io-requests-allocated/
 [Availability Group Long Failover Times]:https://www.seangallardy.com/availability-group-long-failover-times/
 [Testing Backups and Offloading CheckDB]:https://www.tarynpivots.com/post/2021/testing-backups-offload-dbcc-checkdb/
-[Adding Additional Data Files To The TempDB Database In SQL Server]:https://jackworthen.com/2017/08/24/adding-additional-data-files-to-the-tempdb-database-in-sql-server/
 [Fighting with Deadlocks]:https://www.tarynpivots.com/post/2021/fighting-with-deadlocks/
 [Syncing Logins Between Availability Group Replicas]:https://www.tarynpivots.com/post/2020/syncing-logins-between-availablity-group-replicas/
-[The Ascending Key Problem in Fact Tables– Part one: Pain!]:https://kejserbi.wordpress.com/2011/07/01/the-ascending-key-problem-in-fact-tables-part-one-pain/
 [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]:http://kejser.org/the-ascending-column-problem-in-fact-tables-part-two-stat-job/
 [SQL JOINs and UNIONs]:https://levelup.gitconnected.com/sql-joins-2cc89babb6f9
 [Some opinionated thoughts on SQL databases]:https://blog.nelhage.com/post/some-opinionated-sql-takes/
