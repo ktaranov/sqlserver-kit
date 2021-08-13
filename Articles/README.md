@@ -1437,6 +1437,8 @@ Articles types:
 | [Getting exclusive access to restore SQL Server database]                                                               | Greg Robidoux                            | 2021-02-21 | [DBA]       |
 | [How to migrate a SQL Server database to a lower version]                                                               | Basit Farooq                             | 2019-08-05 | [DBA]       |
 | [Make Network Path Visible For SQL Server Backup and Restore in SSMS]                                                   | Ahmad Yaseen                             | 2015-03-03 | [DBA]       |
+| [T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]                                                    | Itzik Ben-Gan                            | 2019-09-12 | [DBA][DEV]  |
+
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
 [SQL Server 2012 Security Best Practices - Microsoft]:http://download.microsoft.com/download/8/f/a/8fabacd7-803e-40fc-adf8-355e7d218f4c/sql_server_2012_security_best_practice_whitepaper_apr2012.docx
@@ -2839,3 +2841,4 @@ Articles types:
 [Getting exclusive access to restore SQL Server database]:https://www.mssqltips.com/sqlservertip/1407/getting-exclusive-access-to-restore-sql-server-database/
 [How to migrate a SQL Server database to a lower version]:https://www.mssqltips.com/sqlservertip/2810/how-to-migrate-a-sql-server-database-to-a-lower-version/
 [Make Network Path Visible For SQL Server Backup and Restore in SSMS]:https://www.mssqltips.com/sqlservertip/3499/make-network-path-visible-for-sql-server-backup-and-restore-in-ssms/
+[T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]:https://sqlperformance.com/2019/09/t-sql-queries/t-sql-pitfalls-pivoting-unpivoting
