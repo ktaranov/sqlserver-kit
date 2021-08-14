@@ -234,6 +234,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Red Gate Data Platform courses](https://www.red-gate.com/hub/university/courses/data-platform) (by Red Gate)
      - [SQLZoo tutorial](https://sqlzoo.net/)
      - [edX SQL Courses](https://www.edx.org/learn/sql) (by edX)
+     - [SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries) (by NUKnightLab)
+     - [SQL Murder Mystery with answers](https://github.com/erika-e/sql-mysteries) (by Erika Pullum)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
