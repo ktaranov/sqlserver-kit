@@ -166,7 +166,6 @@ More details about SQL Server data types and mapping it with another databases a
 [6]:https://docs.microsoft.com/sql/t-sql/data-types/nchar-and-nvarchar-transact-sql
 [7]:https://docs.microsoft.com/sql/t-sql/data-types/ntext-text-and-image-transact-sql
 [8]:https://docs.microsoft.com/sql/t-sql/data-types/binary-and-varbinary-transact-sql
-
 [9]:https://www.red-gate.com/hub/product-learning/sql-prompt/avoid-use-money-smallmoney-datatypes
 
 [bit]:https://docs.microsoft.com/sql/t-sql/data-types/bit-transact-sql
@@ -187,7 +186,6 @@ More details about SQL Server data types and mapping it with another databases a
 [geometry]:https://docs.microsoft.com/sql/t-sql/spatial-geometry/spatial-types-geometry-transact-sql
 [geography]:https://docs.microsoft.com/sql/t-sql/spatial-geography/spatial-types-geography
 [On the Advantages of DateTime2(n) over DateTime]:http://www.sqltact.com/2012/12/on-advantages-of-datetime2n-over.html
-
 [Differences Between Sql Server TEXT and VARCHAR(MAX) Data Type]:https://sqlhints.com/2016/05/11/differences-between-sql-server-text-and-varcharmax-data-type/
 [NVARCHAR(MAX) VS NTEXT in SQL Server]:https://www.sqlservercurry.com/2010/07/nvarcharmax-vs-ntext-in-sql-server.html
 [VARBINARY(MAX) Tames the BLOB]:https://www.itprotoday.com/microsoft-visual-studio/varbinarymax-tames-blob
@@ -201,8 +199,8 @@ More details about SQL Server data types and mapping it with another databases a
 
 This is only recommendations! But it is consistent for choosing only 1 function from possibles alterntives and use only it.
 
-| Not Recommended       | Recommended        | When and Why                                                                                                                                   | More details   |
-|-----------------------|--------------------    |------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
+| Not Recommended       | Recommended            | When and Why                                                                                                                                       | More details   |
+|-----------------------|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
 | [`!=`][12]            | [`<>`][12]             | `<>` is [`ANSI`], `!=` not `ANSI`, [`<>` and `!=` are identical][13]                                                                           | [13]           |
 | [`CONVERT`][10]       | [`CAST`][10]           | `CAST` is [`ANSI`]                                                                                                                             | [14],[15]      |
 | [`ISNULL`]            | [`COALECSE`]           | `COALECSE` is [`ANSI`] and supports more than two arguments, `ISNULL` has dangerous behaviour with possibility to implicit triming string      | [16],[17]      |
@@ -215,6 +213,7 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 | [`SYSDATETIME`]       | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                        | [25]           |
 | [`CURRENT_TIMESTAMP`] | [`SYSUTCDATETIME`]     | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called ROWVERSION.        | [26]           |
 | [`DATETIMEFROMPARTS`] | [`DATETIME2FROMPARTS`] | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called ROWVERSION.        | [26]           |
+| [`ISDATE`]            | [`TRY_CONVERT`]        | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.             | [26]           |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -244,7 +243,7 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [`GETUTCDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getutcdate-transact-sql
 [`SYSDATETIME`]:https://docs.microsoft.com/sql/t-sql/functions/sysdatetime-transact-sql
 [26]:https://bornsql.ca/blog/dates-and-times-in-sql-server-more-functions-you-should-never-use/
-
+[`ISDATE`]:https://docs.microsoft.com/sql/t-sql/functions/isdate-transact-sql
 
 **[⬆ back to top](#table-of-contents)**
 
