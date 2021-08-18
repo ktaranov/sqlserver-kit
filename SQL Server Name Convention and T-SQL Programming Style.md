@@ -211,8 +211,9 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 | [`GETDATE`]           | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                                                                | [25]           |
 | [`GETUTCDATE`]        | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                                                                | [25]           |
 | [`SYSDATETIME`]       | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                                                                | [25]           |
-| [`CURRENT_TIMESTAMP`] | [`SYSUTCDATETIME`]     | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called ROWVERSION.                                                | [26]           |
-| [`DATETIMEFROMPARTS`] | [`DATETIME2FROMPARTS`] | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called ROWVERSION.                                                | [26]           |
+| [`CURRENT_TIMESTAMP`] | [`SYSUTCDATETIME`]     | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called `ROWVERSION`.                                              | [26]           |
+| [`DATETFROMPARTS`]    | [`DATET2FROMPARTS`]    | The `datetime` data type returns a value to the nearest three milliseconds, as long as it ends with 0, 3, and 7. This is data corruption by definition.                                | [26]           |
+| [`DATETIMEFROMPARTS`] | [`DATETIME2FROMPARTS`] |  The `datetime` data type returns a value to the nearest three milliseconds, as long as it ends with 0, 3, and 7. This is data corruption by definition.                               | [26]           |
 | [`ISDATE`]            | [`TRY_CONVERT`]        | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.                                                     | [26]           |
 | [`BETWEEN`]           | `>=` and `<=`          | Always use an open-ended range to prevent erroneously including or excluding rows. It's much less complex to find the beginning of the next period than the end of the current period. | [27]           |
 
@@ -243,7 +244,10 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [`GETDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql
 [`GETUTCDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getutcdate-transact-sql
 [`SYSDATETIME`]:https://docs.microsoft.com/sql/t-sql/functions/sysdatetime-transact-sql
+[`CURRENT_TIMESTAMP`]:https://docs.microsoft.com/sql/t-sql/functions/current-timestamp-transact-sql
 [26]:https://bornsql.ca/blog/dates-and-times-in-sql-server-more-functions-you-should-never-use/
+[`DATETFROMPARTS`]:https://docs.microsoft.com/sql/t-sql/functions/datefromparts-transact-sql
+[`DATETIMEFROMPARTS`]:https://docs.microsoft.com/sql/t-sql/functions/datetimefromparts-transact-sql
 [`ISDATE`]:https://docs.microsoft.com/sql/t-sql/functions/isdate-transact-sql
 [`BETWEEN`]:https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver15
 [27]:https://www.mssqltips.com/sqlservertip/5206/sql-server-datetime-best-practices/
