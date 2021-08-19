@@ -53,7 +53,6 @@ Articles types:
 | [SQL Server Columnstore Articles]                                                                                       | Niko Neugebauer                          | 2016-05-09 |             |
 | [Documentation: It Does not Suck!]                                                                                      | Jes Schultz Borland                      | 2013-01-15 |             |
 | [The Data Loading Performance Guide]                                                                                    | Thomas Kejser, Peter Carlin, Stuart Ozer | 2009-01-15 |             |
-| [Required Testing for Installing SQL Server Cumulative Updates and Service Packs]                                       | Kendra Little                            | 2016-04-28 |             |
 | [Stop Shrinking Your Database Files. Seriously. Now.]                                                                   | Brent Ozar                               | 2009-08-19 |             |
 | [How to shrink a database in 4 easy steps]                                                                              | Andy Mallon                              | 2016-04-28 |             |
 | [Introduction to the Index Operational Statistics Dynamic Management Function]                                          | Tim Ford                                 | 2016-04-26 | [IDX]       |
@@ -65,8 +64,6 @@ Articles types:
 | [Understanding GRANT, DENY, and REVOKE in SQL Server]                                                                   | K. Brian Kelley                          | 2013-02-27 |             |
 | [Monitor SQL Server Transaction Log File Free Space]                                                                    | Mike Eastland                            | 2015-05-12 |             |
 | [Dynamically Query a 100 Million Row Table-Efficiently]                                                                 | Gary Strange                             | 2016-05-27 |             |
-| [Understanding and Using Parallelism in SQL Server]                                                                     | Paul White                               | 2011-03-03 |             |
-| [Diagnosing and Resolving Latch Contention on SQL Server]                                                               | Microsoft                                | 2014-02-28 |             |
 | [Parallel Execution Plans – Branches and Threads]                                                                       | Paul White                               | 2013-10-07 | [DBA][DEV]  |
 | [Nasty Fast PERCENT_RANK]                                                                                               | Alan Burstein                            | 2016-06-07 |             |
 | [Looking at VIEWs, Close Up]                                                                                            | Joe Celko                                | 2016-05-10 |             |
@@ -1478,7 +1475,6 @@ Articles types:
 [Monitor SQL Server Transaction Log File Free Space]:https://www.mssqltips.com/sqlservertip/3617/monitor-sql-server-transaction-log-file-free-space/
 [Dynamically Query a 100 Million Row Table-Efficiently]:http://www.sqlservercentral.com/articles/T-SQL/121906/
 [Understanding and Using Parallelism in SQL Server]:https://www.simple-talk.com/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
-[Diagnosing and Resolving Latch Contention on SQL Server]:https://www.microsoft.com/en-us/download/details.aspx?id=26665
 [Parallel Execution Plans – Branches and Threads]:http://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
 [Nasty Fast PERCENT_RANK]:http://www.sqlservercentral.com/articles/PERCENT_RANK/141532/
 [Looking at VIEWs, Close Up]:https://www.simple-talk.com/sql/t-sql-programming/looking-at-views,-close-up/
@@ -1814,7 +1810,6 @@ Articles types:
 [Dynamic Data Unmasking]:https://orderbyselectnull.com/2017/08/25/dynamic-data-unmasking/
 [Why is My Database Application so Slow?]:https://www.red-gate.com/simple-talk/dotnet/net-performance/database-application-slow/
 [Generating Concurrent Activity]:http://michaeljswart.com/2014/01/generating-concurrent-activity/
-[Required Testing for Installing SQL Server Cumulative Updates and Service Packs]:http://littlekendra.com/2016/04/28/required-testing-for-installing-sql-server-cumulative-updates-and-service-packs/
 [Microsoft SQL Server R Services - Internals X]:http://www.nielsberglund.com/2017/08/29/microsoft-sql-server-r-services-internals-x/
 [Hands on Full-Text Search in SQL Server]:https://www.sqlshack.com/hands-full-text-search-sql-server/
 [SQL Code Smells]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/sql-code-smells/
@@ -2554,7 +2549,6 @@ Articles types:
 [Pulling Group By Above a Join]:https://www.sql.kiwi/2020/05/pulling-group-by-above-join.html
 [SQLskills SQL101: Running out of ints and bigints]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-running-out-of-ints-and-bigints/
 [Parallel Execution Plans – Branches and Threads]:https://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
-[Understanding and Using Parallelism in SQL Server]:https://www.red-gate.com/simple-talk/sql/learn-sql-server/understanding-and-using-parallelism-in-sql-server/
 [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]:https://www.seangallardy.com/top-asked-availability-group-questions-and-maybe-some-helpful-tidbits-as-answers/
 [Encrypting SQL Server Database Backups]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [Using Track Causality to Understand Query Execution]:https://sqlperformance.com/2019/01/extended-events/using-track-causality-to-understand-query-execution
