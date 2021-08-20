@@ -118,10 +118,8 @@ Articles types:
 | [Introduction to Latches in SQL Server]                                                                                 | Klaus Aschenbrenner                      | 2014-06-23 |             |
 | [Latch Coupling in SQL Server]                                                                                          | Klaus Aschenbrenner                      | 2016-10-24 |             |
 | [Partitioned Views? A How-To Guide]                                                                                     | Erik Darling                             | 2016-09-22 |             |
-| [How to Choose Between RCSI and Snapshot Isolation Levels]                                                              | Kendra Little                            | 2016-02-18 |             |
 | [TroubleShooting SQL Server Memory Consumption]                                                                         | Satnam Singh                             | 2012-09-28 |             |
 | [Time Series Algorithms in SQL Server]                                                                                  | Dinesh Asanka                            | 2015-06-01 |             |
-| [Heap Tables in SQL Server]                                                                                             | Klaus Aschenbrenner                      | 2015-10-19 |             |
 | [Internals of the Seven SQL Server Sorts – Part 1]                                                                      | Paul White                               | 2015-04-29 |             |
 | [Internals of the Seven SQL Server Sorts – Part 2]                                                                      | Paul White                               | 2015-05-07 |             |
 | [The 9 Letters That Get DBAs Fired]                                                                                     | Brent Ozar                               | 2011-12-22 |             |
@@ -1529,10 +1527,8 @@ Articles types:
 [Introduction to Latches in SQL Server]:http://www.sqlpassion.at/archive/2014/06/23/introduction-to-latches-in-sql-server/
 [Latch Coupling in SQL Server]:https://www.sqlpassion.at/archive/2016/10/24/latch-coupling-in-sql-server/
 [Partitioned Views? A How-To Guide]:https://www.brentozar.com/archive/2016/09/partitioned-views-guide/
-[How to Choose Between RCSI and Snapshot Isolation Levels]:https://www.littlekendra.com/2016/02/18/how-to-choose-rcsi-snapshot-isolation-levels/
 [TroubleShooting SQL Server Memory Consumption]:http://www.sql-server-performance.com/2016/trouble-shooting-sql-server-ra-memory-consumption/
 [Time Series Algorithms in SQL Server]:http://www.sql-server-performance.com/2015/time-series-algorithms-sql-server/
-[Heap Tables in SQL Server]:http://www.sqlpassion.at/archive/2015/10/19/heap-tables-in-sql-server/
 [Internals of the Seven SQL Server Sorts – Part 1]:https://sqlperformance.com/2015/04/sql-plan/internals-of-the-seven-sql-server-sorts-part-1
 [Internals of the Seven SQL Server Sorts – Part 2]:https://sqlperformance.com/2015/05/sql-plan/internals-of-the-seven-sql-server-sorts-part-2
 [The 9 Letters That Get DBAs Fired]:https://www.brentozar.com/archive/2011/12/letters-that-get-dbas-fired/
@@ -2548,7 +2544,6 @@ Articles types:
 [15 SQL Server Performance Counters to Monitor In 2020]:https://www.sentryone.com/blog/allenwhite/sql-server-performance-counters-to-monitor
 [Pulling Group By Above a Join]:https://www.sql.kiwi/2020/05/pulling-group-by-above-join.html
 [SQLskills SQL101: Running out of ints and bigints]:https://www.sqlskills.com/blogs/paul/sqlskills-sql101-running-out-of-ints-and-bigints/
-[Parallel Execution Plans – Branches and Threads]:https://sqlperformance.com/2013/10/sql-plan/parallel-plans-branches-threads
 [Top Asked Availability Group Questions… and Maybe Some Helpful Tidbits as Answers]:https://www.seangallardy.com/top-asked-availability-group-questions-and-maybe-some-helpful-tidbits-as-answers/
 [Encrypting SQL Server Database Backups]:https://sqlundercover.com/2018/04/04/encrypting-sql-server-database-backups/
 [Using Track Causality to Understand Query Execution]:https://sqlperformance.com/2019/01/extended-events/using-track-causality-to-understand-query-execution
