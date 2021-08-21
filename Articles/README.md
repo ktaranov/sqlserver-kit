@@ -131,7 +131,6 @@ Articles types:
 | [Successful Anti-Patterns, Storage Requirements]                                                                        | Raul Gonzalez                            | 2016-10-19 |             |
 | [SQL Server table columns under the hood]                                                                               | Remus Rusanu                             | 2011-10-20 |             |
 | [How to analyse SQL Server performance]                                                                                 | Remus Rusanu                             | 2014-02-24 |             |
-| [To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]                                           | Jim Gray                                 | 2006-04-01 |             |
 | [Asynchronous procedure execution]                                                                                      | Remus Rusanu                             | 2009-08-05 |             |
 | [What is the CXPACKET Wait Type, and How Do You Reduce It?]                                                             | Brent Ozar                               | 2013-08-27 |             |
 | [New indexes, hypothetically]                                                                                           | Kenneth Fisher                           | 2016-11-02 | [IDX]       |
@@ -524,7 +523,7 @@ Articles types:
 | [Query Trace Column Values]                                                                                             | Dmitry Piliugin                          | 2018-04-23 | [XE]        |
 | [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]                                                | Brent Ozar                               | 2018-04-27 | [DEV]       |
 | [Break large delete operations into chunks]                                                                             | Aaron Bertrand                           | 2013-03-13 | [DBA][DEV]  |
-| [How to perform a page level restore in SQL Server]                                                                     | Prashanth Jayaram                        | 2018-08-18 | [DBA][DEV]  |
+| [How to perform a page level restore in SQL Server - Jayaram]                                                           | Prashanth Jayaram                        | 2018-08-18 | [DBA][DEV]  |
 | [Grouping dates without blocking operators]                                                                             | Daniel Hutmacher                         | 2018-05-14 | [DEV]       |
 | [What’s CHECKDB doing in my database restore?]                                                                          | Mike Fal                                 | 2018-04-10 | [DBA]       |
 | [How To Hide An Instance Of SQL Server]                                                                                 | Thomas Larock                            | 2018-04-10 | [DBA]       |
@@ -1191,7 +1190,6 @@ Articles types:
 | [Cleaning up Backups from Azure Blob Storage]                                                                           | Niko Neugebauer                          | 2020-03-30 | [AZ][B]     |
 | [Temporary Table Caching Explained]                                                                                     | Paul White                               | 2012-08-17 | [DBA][DEV]  |
 | [SQL Server Temporary Object Caching]                                                                                   | Paul White                               | 2017-05-02 | [DBA][DEV]  |
-| [Dynamic Data Unmasking]                                                                                                | Joe Obbish                               | 2017-08-24 | [DBA][DEV]  |
 | [3 Ways to Run DBCC CHECKDB Faster]                                                                                     | Brent Ozar                               | 2020-08-27 | [DBA][DEV]  |
 | [Back Up SQL Server 43%-67% Faster by Writing to Multiple Files]                                                        | Brent Ozar                               | 2020-08-23 | [DBA][DEV]  |
 | [Bad Habits to Kick : Using SELECT * / omitting the column list]                                                        | Aaron Bertrand                           | 2009-10-10 | [DBA][DEV]  |
@@ -1540,7 +1538,6 @@ Articles types:
 [Successful Anti-Patterns, Storage Requirements]:http://www.sqldoubleg.com/2016/10/19/successful-anti-patterns-storage-requirements/
 [SQL Server table columns under the hood]:http://rusanu.com/2011/10/20/sql-server-table-columns-under-the-hood/
 [How to analyse SQL Server performance]:http://rusanu.com/2014/02/24/how-to-analyse-sql-server-performance/
-[To BLOB or Not To BLOB: Large Object Storage in a Database or a Filesystem?]:https://www.microsoft.com/en-us/research/publication/to-blob-or-not-to-blob-large-object-storage-in-a-database-or-a-filesystem/
 [Asynchronous procedure execution]:http://rusanu.com/2009/08/05/asynchronous-procedure-execution/
 [What is the CXPACKET Wait Type, and How Do You Reduce It?]:https://www.brentozar.com/archive/2013/08/what-is-the-cxpacket-wait-type-and-how-do-you-reduce-it/
 [New indexes, hypothetically]:https://sqlstudies.com/2016/11/02/new-indexes-hypothetically/
@@ -1930,7 +1927,7 @@ Articles types:
 [Query Trace Column Values]:https://www.sqlshack.com/query-trace-column-values/
 [Concurrency Week: How to Delete Just Some Rows from a Really Big Table]:https://www.brentozar.com/archive/2018/04/how-to-delete-just-some-rows-from-a-really-big-table/
 [Break large delete operations into chunks]:https://sqlperformance.com/2013/03/io-subsystem/chunk-deletes
-[How to perform a page level restore in SQL Server]:https://www.sqlshack.com/how-to-perform-a-page-level-restore-in-sql-server/
+[How to perform a page level restore in SQL Server - Jayaram]:https://www.sqlshack.com/how-to-perform-a-page-level-restore-in-sql-server/
 [Grouping dates without blocking operators]:https://sqlsunday.com/2018/05/14/grouping-dates-without-blocking-operators/
 [What’s CHECKDB doing in my database restore?]:http://www.mikefal.net/2018/04/10/whats-checkdb-doing-in-my-database-restore/
 [How To Hide An Instance Of SQL Server]:https://thomaslarock.com/2018/04/how-to-hide-an-instance-of-sql-server/
@@ -1973,7 +1970,6 @@ Articles types:
 [Can Rowstore Compression Beat Columnstore Compression?]:https://orderbyselectnull.com/2018/06/28/can-rowstore-compression-beat-columnstore-compression/
 [Inside the Storage Engine: Anatomy of a record]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-record/
 [Inside the Storage Engine: Anatomy of an extent]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-an-extent/
-[Inside the Storage Engine: Anatomy of a page]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
 [Inside the Storage Engine: IAM pages, IAM chains, and allocation units]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-iam-pages-iam-chains-and-allocation-units/
 [Inside The Storage Engine: GAM, SGAM, PFS and other allocation maps]:https://www.sqlskills.com/blogs/paul/inside-the-storage-engine-gam-sgam-pfs-and-other-allocation-maps/
 [Disaster recovery 101: fixing a broken boot page]:https://www.sqlskills.com/blogs/paul/disaster-recovery-101-fixing-a-broken-boot-page/
@@ -2591,7 +2587,6 @@ Articles types:
 [Cleaning up Backups from Azure Blob Storage]:http://www.nikoport.com/2020/03/30/cleaning-up-backups-from-azure-blob-storage/
 [Temporary Table Caching Explained]:https://www.sql.kiwi/2012/08/temporary-object-caching-explained.html
 [SQL Server Temporary Object Caching]:https://sqlperformance.com/2017/05/sql-performance/sql-server-temporary-object-caching
-[Dynamic Data Unmasking]:https://www.erikdarlingdata.com/sql-server/dynamic-data-unmasking/
 [3 Ways to Run DBCC CHECKDB Faster]:https://www.brentozar.com/archive/2020/08/3-ways-to-run-dbcc-checkdb-faster/
 [Back Up SQL Server 43%-67% Faster by Writing to Multiple Files]:https://www.brentozar.com/archive/2020/08/back-up-sql-server-43-67-faster-by-writing-to-multiple-files/
 [Bad Habits to Kick : Using SELECT * / omitting the column list]:https://sqlblog.org/2009/10/10/bad-habits-to-kick-using-select-omitting-the-column-list
@@ -2599,7 +2594,6 @@ Articles types:
 [When Select * Doesn’t Matter]:https://www.erikdarlingdata.com/sql-server/when-select-doesnt-matter/
 [HT Waits – Explained and Animated]:https://forrestmcdaniel.com/2020/08/12/ht-waits-explained-and-animated/
 [SQL Server 100% Online Deployments]:https://michaeljswart.com/2018/01/100-online-deployments/
-[When Measuring Timespans, try DATEADD instead of DATEDIFF]:https://michaeljswart.com/2017/12/when-measuring-timespans-try-dateadd-instead-of-datediff/
 [The Curious Case of… setting up a server for DBCC CHECKDB]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-setting-up-a-server-for-dbcc-checkdb/
 [When should a primary key be declared non-clustered?]:https://dba.stackexchange.com/q/7741/107045
 [Guid vs INT - Which is better as a primary key?]:https://dba.stackexchange.com/q/264/107045
