@@ -640,7 +640,6 @@ Articles types:
 | [Preparation for SQL Server Installation]                                                                               | Michal Sadowski                          | 2018-12-12 | [DBA]       |
 | [Executing xp_cmdshell with Non SysAdmin Account]                                                                       | Lucas Kartawidjaja                       | 2019-01-04 | [DBA]       |
 | [Generating SQL using Biml (T-SQL Tuesday #110)]                                                                        | Cathrine Wilhelmsen                      | 2019-01-08 | [DEV]       |
-| [Avoiding SQL Server Upgrade Performance Issues]                                                                        | Glenn Berry                              | 2019-02-05 | [DBA]       |
 | [Using Temporary Procedures]                                                                                            | Phil Factor                              | 2019-02-08 | [DBA][DEV]  |
 | [Introduction to SQL Server Security — Part 1]                                                                          | Robert Sheldon                           | 2018-12-31 | [SEC]       |
 | [Introduction to SQL Server Security — Part 2]                                                                          | Robert Sheldon                           | 2019-01-28 | [SEC]       |
@@ -766,7 +765,7 @@ Articles types:
 | [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]                                                | Klaus Aschenbrenner                      | 2013-06-12 | [DBA][DEV]  |
 | [SQL Server Guide To NULL Handling]                                                                                     | Gavin Draper                             | 2018-11-29 | [DBA][DEV]  |
 | [Living with SQL’s 900 Byte Index Key Length Limit]                                                                     | Bart Duncan                              | 2011-01-06 | [DBA][DEV]  |
-| [Memory-Optimized TempDB Metadata in SQL Server 2019]                                                                   | Ed Pollack                               | 2019-07-10 | [DBA][DEV]  |
+| [Memory-Optimized TempDB Metadata in SQL Server 2019 - SQLHack]                                                         | Ed Pollack                               | 2019-07-10 | [DBA][DEV]  |
 | [Forcing A Plan That Has A Plan Guide]                                                                                  | Grant Fritchey                           | 2018-11-26 | [DBA][DEV]  |
 | [Remember the Default Window]                                                                                           | Steve Jones                              | 2018-08-23 | [DBA][DEV]  |
 | [The Impact of Non-Updating Updates]                                                                                    | Paul Randal                              | 2010-08-11 | [DBA][DEV]  |
@@ -1063,7 +1062,6 @@ Articles types:
 | [Why Ordering Isn’t Guaranteed Without an ORDER BY]                                                                     | Brent Ozar                               | 2020-04-22 | [DBA][DEV]  |
 | [How to Attach a SQL Server Database without a Transaction Log and with Open Transactions]                              | Daniel Farina                            | 2020-04-29 | [COR]       |
 | [SQL 2016 - It Just Runs Faster: Indirect Checkpoint Default]                                                           | Ryan Stonecipher, Peter Byrne, Bob Dorr  | 2016-04-12 | [DBA][CHP]  |
-| [Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]                                     | Parikshit Savjani                        | 2017-06-26 | [DBA][CHP]  |
 | [How do checkpoints work and what gets logged]                                                                          | Paul Randal                              | 2009-09-27 | [DBA][CHP]  |
 | [Inside the Storage Engine: What’s in the buffer pool?]                                                                 | Paul Randal                              | 2008-08-26 | [DBA]       |  
 | [What does checkpoint do for tempdb?]                                                                                   | Paul Randal                              | 2009-10-07 | [DBA][CHP]  |
@@ -2041,7 +2039,6 @@ Articles types:
 [Preparation for SQL Server Installation]:https://sqlplayer.net/2018/12/preparation-for-sql-server-installation/
 [Executing xp_cmdshell with Non SysAdmin Account]:http://www.lucasnotes.com/2019/01/executing-xpcmdshell-with-non-sysadmin.html
 [Generating SQL using Biml (T-SQL Tuesday #110)]:https://www.cathrinewilhelmsen.net/2019/01/08/generating-sql-using-biml/
-[Avoiding SQL Server Upgrade Performance Issues]:https://www.sqlskills.com/blogs/glenn/avoiding-sql-server-upgrade-performance-issues/
 [Using Temporary Procedures]:https://www.red-gate.com/simple-talk/blogs/using-temporary-procedures/
 [Introduction to SQL Server Security — Part 1]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-1/
 [Introduction to SQL Server Security — Part 2]:https://www.red-gate.com/simple-talk/sysadmin/data-protection-and-privacy/introduction-to-sql-server-security-part-2/
@@ -2166,7 +2163,7 @@ Articles types:
 [SQL Server Tipping Games – Why Non-Clustered Indexes are just ignored!]:https://www.sqlpassion.at/archive/2013/06/12/sql-server-tipping-games-why-non-clustered-indexes-are-just-ignored/
 [SQL Server Guide To NULL Handling]:https://gavindraper.com//2018/11/29/SQL-Server-Guide-To-NULL-Handling/
 [Living with SQL’s 900 Byte Index Key Length Limit]:https://blogs.msdn.microsoft.com/bartd/2011/01/06/living-with-sqls-900-byte-index-key-length-limit/
-[Memory-Optimized TempDB Metadata in SQL Server 2019]:https://www.sqlshack.com/memory-optimized-tempdb-metadata-in-sql-server-2019/
+[Memory-Optimized TempDB Metadata in SQL Server 2019 - SQLHack]:https://www.sqlshack.com/memory-optimized-tempdb-metadata-in-sql-server-2019/
 [Forcing A Plan That Has A Plan Guide]:https://www.scarydba.com/2018/11/26/forcing-a-plan-that-has-a-plan-guide/
 [Remember the Default Window]:https://voiceofthedba.com/2018/08/23/remember-the-default-window/
 [The Impact of Non-Updating Updates]:https://www.sql.kiwi/2010/08/the-impact-of-non-updating-updates.html
@@ -2237,7 +2234,6 @@ Articles types:
 [SQL Injection: Detection and prevention]:https://www.sqlshack.com/sql-injection-detection-and-prevention/
 [Some T-SQL INSERTs DO Follow the Fill Factor!]:https://www.sqlservercentral.com/articles/some-t-sql-inserts-do-follow-the-fill-factor-sql-oolie
 [Install SQL Server 2019 Big Data Cluster using Azure Data Studio]:https://nielsberglund.com/2019/09/11/install-sql-server-2019-big-data-cluster-using-azure-data-studio/
-[Indirect Checkpoint and tempdb – the good, the bad and the non-yielding scheduler]:https://techcommunity.microsoft.com/t5/SQL-Server/Indirect-Checkpoint-and-tempdb-8211-the-good-the-bad-and-the-non/bc-p/851152#M1351
 [Ghost Records in SQL Server… Now whats that ????]:https://www.sqlservergeeks.com/sql-server-ghost-records-in-sql-server-now-whats-that/
 [Transaction Isolation Levels and sp_executesql]:https://www.sqlserverscience.com/basics/stored-procedure-dynamic-sql-execute-as/
 [Batch Mode Bitmaps in SQL Server]:https://sqlperformance.com/2019/08/sql-performance/batch-mode-bitmaps-in-sql-server
