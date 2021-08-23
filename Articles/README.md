@@ -1098,7 +1098,6 @@ Articles types:
 | [Changing an INT to a BIGINT with no downtime]                                                                          | Michael J Swart                          | 2020-06-19 | [DBA]       |
 | [New Metadata-Only Column Changes in SQL Server 2016]                                                                   | Paul White                               | 2020-04-17 | [DBA][DEV]  |
 | [Bandwidth-friendly Query Profiling for Azure SQL Database]                                                             | Greg Gonzalez                            | 2020-04-15 | [AZ][XE]    |
-| [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-10 | [DBA][DEV]  |
 | [Column scope and binding order in subqueries]                                                                          | Gail Shaw                                | 2019-04-23 | [DBA][DEV]  |
 | [Improve SQL Server Extended Events system_health Session]                                                              | Aaron Bertrand                           | 2020-06-17 | [DBA][DEV]  |
 | [Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]                                            | Brent Ozar                               | 2020-06-17 | [DBA][DEV]  |
@@ -1157,7 +1156,6 @@ Articles types:
 | [What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]                            | Joe Obbish                               | 2018-09-27 | [DBA][DEV]  |
 | [SQL Server 2019 Aggregate Splitting]                                                                                   | Paul White                               | 2020-08-04 | [DBA][DEV]  |
 | [Security Best Practice: dny and revoke permissions granted to All Users by default - HIGHLY IMPORTANT!]                | Ronen Ariely                             | 2019-10-13 | [DBA][SEC]  |
-| [Execute multiple jobs Synchronously from in a main job]                                                                | Ronen Ariely                             | 2020-04-11 | [DBA][DEV]  |
 | [The Trillion Row Table]                                                                                                | Joe Obbish                               | 2020-08-12 | [BENCH]     |
 | [Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]                                          | Erik Darlling                            | 2020-03-03 | [DBA][DEV] |
 | [Long Running Query on Read-Only Replica that takes moments on the Primary]                                             | Sean Gallardy,Joe Obbish                 | 2019-09-05 | [DBA][DEV] |
@@ -1343,7 +1341,7 @@ Articles types:
 | [Identifying Cost-Saving Opportunities in Azure DevOps]                                                                 | Eric Smith                               | 2020-04-28 | [Az]        |
 | [One wide index or multiple narrow indexes?]                                                                            | Gail Shaw                                | 2010-09-14 | [DBA][DEV]  |
 | [The Hidden Danger of Readable Secondaries in SQL Server AlwaysOn Availability Groups]                                  | Dmitri Korotkevitch                      | 2018-09-04 | [DBA]       |
-| [When a Columnstore Index Makes Your Query Fail]                                                                        | Brent Ozar                               | 2020-06-08 | [DBA]       |
+| [When a Columnstore Index Makes Your Query Fail - 1/0 error]                                                            | Brent Ozar                               | 2020-06-08 | [DBA]       |
 | [Poor Man’s Resource Governor: Database-Scoped Configurations]                                                          | Brent Ozar                               | 2020-09-26 | [DBA]       |
 | [SQL Server Suddenly Frozen? You Might Be Snapshotting Too Many Databases.]                                             | Brent Ozar                               | 2020-11-27 | [DBA]       |
 | [How to Batch Updates A Few Thousand Rows at a Time]                                                                    | Brent Ozar                               | 2020-12-17 | [DBA][DEV]  |
@@ -1377,7 +1375,6 @@ Articles types:
 | [Testing Backups and Offloading CheckDB]                                                                                | Taryn Pratt                              | 2021-04-19 | [DBA]       |
 | [Fighting with Deadlocks]                                                                                               | Taryn Pratt                              | 2021-04-09 | [DBA][DEV]  |
 | [Syncing Logins Between Availability Group Replicas]                                                                    | Taryn Pratt                              | 2020-12-18 | [DBA]       |
-| [The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]                                                         | Thomas Kejser                            | 2011-07-07 | [DEV]       |
 | [SQL JOINs and UNIONs]                                                                                                  | Austin Smith                             | 2020-03-13 | [DBA][DEV]  |
 | [Some opinionated thoughts on SQL databases]                                                                            | Nelson Elhage                            | 2020-03-30 | [DBA][DEV]  |
 | [How MERGE on two different rows can still deadlock you]                                                                | Daniel Hutmacher                         | 2021-05-04 | [DBA][DEV]  |
@@ -2495,7 +2492,7 @@ Articles types:
 [Changing an INT to a BIGINT with no downtime]:https://michaeljswart.com/2020/06/problem-solving-by-cheating/
 [New Metadata-Only Column Changes in SQL Server 2016]:https://sqlperformance.com/2020/04/database-design/new-metadata-column-changes-sql-server-2016
 [Bandwidth-friendly Query Profiling for Azure SQL Database]:https://sqlperformance.com/2020/04/sql-performance/bandwidth-friendly-query-profiling-azure-sql-database
-[When a Columnstore Index Makes Your Query Fail]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
+[When a Columnstore Index Makes Your Query Fail - 1/0 error]:https://www.brentozar.com/archive/2020/06/when-a-columnstore-index-makes-your-query-fail/
 [Column scope and binding order in subqueries]:https://sqlinthewild.co.za/index.php/2019/04/23/no-this-is-not-a-bug-in-t-sql/
 [Improve SQL Server Extended Events system_health Session]:https://www.mssqltips.com/sqlservertip/6456/improve-sql-server-extended-events-systemhealth-session/
 [Page Life Expectancy Doesn’t Mean Jack, and You Should Stop Looking At It.]:https://www.brentozar.com/archive/2020/06/page-life-expectancy-doesnt-mean-jack-and-you-should-stop-looking-at-it/
@@ -2553,7 +2550,6 @@ Articles types:
 [What is the SOS_WORK_DISPATCHER Wait Type? (Or how to work with Call Stacks in SQL Server)]:https://orderbyselectnull.com/2018/09/27/what-is-the-sos_work_dispatcher-wait-type/
 [SQL Server 2019 Aggregate Splitting]:https://www.sql.kiwi/2020/08/sql-server-2019-aggregate-splitting.html
 [Security Best Practice: dny and revoke permissions granted to All Users by default - HIGHLY IMPORTANT!]:https://ariely.info/Blog/tabid/83/EntryId/241/Security-Best-Practice-dny-and-revoke-permissions-granted-to-All-Users-by-default-HIGHLY-IMPORTANT.aspx
-[Execute multiple jobs Synchronously from in a main job]:https://ariely.info/Blog/tabid/83/EntryId/250/Execute-multiple-jobs-Synchronously-from-in-a-main-job.aspx
 [The Trillion Row Operator]:https://www.erikdarlingdata.com/2020/08/the-trillion-row-operator/
 [Temporal Tables and Table Partitioning: Not If You Like Switching Partitions]:https://www.erikdarlingdata.com/sql-server/temporal-tables-and-table-partitioning-not-if-you-like-switching-partitions/
 [Long Running Query on Read-Only Replica that takes moments on the Primary]:https://dba.stackexchange.com/questions/237671/long-running-query-on-read-only-replica-that-takes-moments-on-the-primary/
@@ -2770,7 +2766,6 @@ Articles types:
 [Testing Backups and Offloading CheckDB]:https://www.tarynpivots.com/post/2021/testing-backups-offload-dbcc-checkdb/
 [Fighting with Deadlocks]:https://www.tarynpivots.com/post/2021/fighting-with-deadlocks/
 [Syncing Logins Between Availability Group Replicas]:https://www.tarynpivots.com/post/2020/syncing-logins-between-availablity-group-replicas/
-[The Ascending Key Problem In Fact Tables –Part Two: Stat Job!]:http://kejser.org/the-ascending-column-problem-in-fact-tables-part-two-stat-job/
 [SQL JOINs and UNIONs]:https://levelup.gitconnected.com/sql-joins-2cc89babb6f9
 [Some opinionated thoughts on SQL databases]:https://blog.nelhage.com/post/some-opinionated-sql-takes/
 [How MERGE on two different rows can still deadlock you]:https://sqlsunday.com/2021/05/04/how-merge-can-deadlock-you/
