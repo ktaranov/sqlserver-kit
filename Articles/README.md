@@ -1428,6 +1428,8 @@ Articles types:
 | [Make Network Path Visible For SQL Server Backup and Restore in SSMS]                                                   | Ahmad Yaseen                             | 2015-03-03 | [DBA]       |
 | [T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]                                                    | Itzik Ben-Gan                            | 2019-09-12 | [DBA][DEV]  |
 | [How to Prep a SQL Server Availability Group for VM-Level DR Replication]                                               | David Klee                               | 2021-02-08 | [DBA]       |
+| [Special Agent Jenkins]                                                                                                 | Kirill Kravtsov                          | 2018-03-03 | [J]         |
+| [What To Avoid If You Want To Use MERGE]                                                                                | Michael J Swart                          | 2021-08-04 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2819,3 +2821,5 @@ Articles types:
 [Make Network Path Visible For SQL Server Backup and Restore in SSMS]:https://www.mssqltips.com/sqlservertip/3499/make-network-path-visible-for-sql-server-backup-and-restore-in-ssms/
 [T-SQL bugs, pitfalls, and best practices – pivoting and unpivoting]:https://sqlperformance.com/2019/09/t-sql-queries/t-sql-pitfalls-pivoting-unpivoting
 [How to Prep a SQL Server Availability Group for VM-Level DR Replication]:https://www.davidklee.net/2021/02/08/how-to-prep-a-sql-server-availability-group-for-vm-level-dr-replication/
+[Special Agent Jenkins]:https://nvarscar.wordpress.com/2018/05/03/special-agent-jenkins/
+[What To Avoid If You Want To Use MERGE]:https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/
