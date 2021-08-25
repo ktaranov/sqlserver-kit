@@ -1430,6 +1430,8 @@ Articles types:
 | [How to Prep a SQL Server Availability Group for VM-Level DR Replication]                                               | David Klee                               | 2021-02-08 | [DBA]       |
 | [Special Agent Jenkins]                                                                                                 | Kirill Kravtsov                          | 2018-03-03 | [J]         |
 | [What To Avoid If You Want To Use MERGE]                                                                                | Michael J Swart                          | 2021-08-04 | [DBA][DEV]  |
+| [Solving Gaps and Islands with Enhanced Window]                                                                         | Itzik Ben-Gan                            | 2012-09-20 | [DBA][DEV]  |
+| [How to choose between SQL and NoSQL databases]                                                                         | Robert Sheldon                           | 2021-04-13 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2823,3 +2825,5 @@ Articles types:
 [How to Prep a SQL Server Availability Group for VM-Level DR Replication]:https://www.davidklee.net/2021/02/08/how-to-prep-a-sql-server-availability-group-for-vm-level-dr-replication/
 [Special Agent Jenkins]:https://nvarscar.wordpress.com/2018/05/03/special-agent-jenkins/
 [What To Avoid If You Want To Use MERGE]:https://michaeljswart.com/2021/08/what-to-avoid-if-you-want-to-use-merge/
+[Solving Gaps and Islands with Enhanced Window]:https://www.itprotoday.com/sql-server/solving-gaps-and-islands-enhanced-window-functions
+[How to choose between SQL and NoSQL databases]:https://www.red-gate.com/simple-talk/databases/nosql/how-to-choose-between-sql-and-nosql-databases/
