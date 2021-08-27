@@ -1434,6 +1434,8 @@ Articles types:
 | [How to choose between SQL and NoSQL databases]                                                                         | Robert Sheldon                           | 2021-04-13 | [DBA][DEV]  |
 | [SQL Server plan cache mining – Plan attributes]                                                                        | Edward Pollack                           | 2021-04-26 | [DBA][DEV]  |
 | [How to Prep a SQL Server Availability Group for VM-Level DR Replication]                                               | David Klee                               | 2021-02-08 | [DBA]       |
+| [How to create an autonomous transaction in SQL Server 2008]                                                            | SQL-Server-Team                          | 2021-02-08 | [DBA][DEV]  |
+| [Cloud Comparison: AWS vs. Azure vs. GCP]                                                                               | Troy Blake                               | 2021-03-24 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2831,3 +2833,5 @@ Articles types:
 [How to choose between SQL and NoSQL databases]:https://www.red-gate.com/simple-talk/databases/nosql/how-to-choose-between-sql-and-nosql-databases/
 [SQL Server plan cache mining – Plan attributes]:https://www.red-gate.com/simple-talk/homepage/sql-server-plan-cache-mining-plan-attributes/
 [How to Prep a SQL Server Availability Group for VM-Level DR Replication]:https://www.davidklee.net/2021/02/08/how-to-prep-a-sql-server-availability-group-for-vm-level-dr-replication/
+[How to create an autonomous transaction in SQL Server 2008]:https://techcommunity.microsoft.com/t5/sql-server/how-to-create-an-autonomous-transaction-in-sql-server-2008/ba-p/383471
+[Cloud Comparison: AWS vs. Azure vs. GCP]:https://seniordba.wordpress.com/2021/05/24/cloud-comparison-aws-vs-azure-vs-gcp/
