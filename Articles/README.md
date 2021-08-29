@@ -1438,6 +1438,8 @@ Articles types:
 | [Cloud Comparison: AWS vs. Azure vs. GCP]                                                                               | Troy Blake                               | 2021-03-24 | [DBA][DEV]  |
 | [New VLF status value]                                                                                                  | Troy Blake                               | 2021-03-24 | [DBA][DEV]  |
 | [The Simplest Alternative to sp_MSforeachdb]                                                                            | Eitan Blumin                             | 2021-08-05 | [DBA][DEV]  |
+| [Your database connection deserves a name]                                                                              | Andy Grunwald                            | 2021-07-25 | [DBA][DEV]  |
+| [Renaming a Database Table In-Flight]                                                                                   | Arvind Paul                              | 2021-01-01 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2839,3 +2841,5 @@ Articles types:
 [Cloud Comparison: AWS vs. Azure vs. GCP]:https://seniordba.wordpress.com/2021/05/24/cloud-comparison-aws-vs-azure-vs-gcp/
 [New VLF status value]:https://www.sqlskills.com/blogs/paul/new-vlf-status-value/
 [The Simplest Alternative to sp_MSforeachdb]:https://eitanblumin.com/2021/08/05/simplest-alternative-to-sp_msforeachdb/
+[Your database connection deserves a name]:https://andygrunwald.com/blog/your-database-connection-deserves-a-name/
+[Renaming a Database Table In-Flight]:https://engineering.outschool.com/posts/renaming-database-table/
