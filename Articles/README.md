@@ -1440,6 +1440,8 @@ Articles types:
 | [The Simplest Alternative to sp_MSforeachdb]                                                                            | Eitan Blumin                             | 2021-08-05 | [DBA][DEV]  |
 | [Your database connection deserves a name]                                                                              | Andy Grunwald                            | 2021-07-25 | [DBA][DEV]  |
 | [Renaming a Database Table In-Flight]                                                                                   | Arvind Paul                              | 2021-01-01 | [DBA][DEV]  |
+| [Upgrading/Migrating Large Replicated Databases Without Reinitializing]                                                 | Jonathan Kehayias                        | 2021-08-12 | [DBA][DEV]  |
+| [TempDB configuration for people in a hurry]                                                                            | Jeff Iannucci                            | 2021-07-03 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2843,3 +2845,5 @@ Articles types:
 [The Simplest Alternative to sp_MSforeachdb]:https://eitanblumin.com/2021/08/05/simplest-alternative-to-sp_msforeachdb/
 [Your database connection deserves a name]:https://andygrunwald.com/blog/your-database-connection-deserves-a-name/
 [Renaming a Database Table In-Flight]:https://engineering.outschool.com/posts/renaming-database-table/
+[Upgrading/Migrating Large Replicated Databases Without Reinitializing]:https://www.sqlskills.com/blogs/jonathan/upgrading-migrating-large-replicated-databases-without-reinitializing/
+[TempDB configuration for people in a hurry]:https://desertdba.com/tempdb-configuration-for-people-in-a-hurry/
