@@ -1445,6 +1445,7 @@ Articles types:
 | [Help! My tempdb database won’t shrink!]                                                                                | Jeff Iannucci                            | 2018-06-22 | [DBA][DEV]  |
 | [SQL Server Checkpoint Monitoring with Extended Events]                                                                 | Aaron Bertrand                           | 2020-02-17 | [DBA][DEV]  |
 | ["0 to 60" : Switching to indirect checkpoints]                                                                         | Aaron Bertrand                           | 2020-05-01 | [DBA][DEV]  |
+| [A case against using Basic and Standard (S0 & S1) tiers in Azure SQL Databases]                                        | Niko Neugebauer                          | 2021-02-09 | [AZ]        |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2853,3 +2854,4 @@ Articles types:
 [Help! My tempdb database won’t shrink!]:https://desertdba.com/help-my-tempdb-database-wont-shrink/
 [SQL Server Checkpoint Monitoring with Extended Events]:https://www.mssqltips.com/sqlservertip/6319/sql-server-checkpoint-monitoring-with-extended-events/
 ["0 to 60" : Switching to indirect checkpoints]:https://sqlperformance.com/2020/05/system-configuration/0-to-60-switching-to-indirect-checkpoints
+[A case against using Basic and Standard (S0 & S1) tiers in Azure SQL Databases]:https://www.nikoport.com/2021/02/09/a-case-against-using-basic-and-standard-s0-s1-tiers-in-azure-sql-databases/
