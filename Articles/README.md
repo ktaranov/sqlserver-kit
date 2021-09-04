@@ -1446,7 +1446,8 @@ Articles types:
 | [SQL Server Checkpoint Monitoring with Extended Events]                                                                 | Aaron Bertrand                           | 2020-02-17 | [DBA][DEV]  |
 | ["0 to 60" : Switching to indirect checkpoints]                                                                         | Aaron Bertrand                           | 2020-05-01 | [DBA][DEV]  |
 | [A case against using Basic and Standard (S0 & S1) tiers in Azure SQL Databases]                                        | Niko Neugebauer                          | 2021-02-09 | [AZ]        |
-| [Experiment: Does sp_recompile on a table update associated views.]                                                     | Niko Neugebauer                          | 2021-08-17 | [DBA][DEV]  |
+| [Experiment: Does sp_recompile on a table update associated views.]                                                     | Kenneth Fisher                           | 2021-08-17 | [DBA][DEV]  |
+| [On index key size, index depth, and performance]                                                                       | Paul Radal                               | 2015-10-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2857,3 +2858,4 @@ Articles types:
 ["0 to 60" : Switching to indirect checkpoints]:https://sqlperformance.com/2020/05/system-configuration/0-to-60-switching-to-indirect-checkpoints
 [A case against using Basic and Standard (S0 & S1) tiers in Azure SQL Databases]:https://www.nikoport.com/2021/02/09/a-case-against-using-basic-and-standard-s0-s1-tiers-in-azure-sql-databases/
 [Experiment: Does sp_recompile on a table update associated views.]:https://sqlstudies.com/2021/08/17/experiment-does-sp_recompile-on-a-table-update-associated-views/
+[On index key size, index depth, and performance]:https://www.sqlskills.com/blogs/paul/on-index-key-size-index-depth-and-performance/
