@@ -1449,6 +1449,7 @@ Articles types:
 | [Experiment: Does sp_recompile on a table update associated views.]                                                     | Kenneth Fisher                           | 2021-08-17 | [DBA][DEV]  |
 | [On index key size, index depth, and performance]                                                                       | Paul Radal                               | 2015-10-23 | [DBA][DEV]  |
 | [SQL Server Hierarchyid Data Type Overview and Examples]                                                                | Rick Dobson                              | 2019-06-21 | [DBA][DEV]  |
+| [Make It Easier for the DBA: Give SQL Connections the Application’s Name!]                                              | Ben Gribaudo                             | 2017-06-23 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2861,3 +2862,4 @@ Articles types:
 [Experiment: Does sp_recompile on a table update associated views.]:https://sqlstudies.com/2021/08/17/experiment-does-sp_recompile-on-a-table-update-associated-views/
 [On index key size, index depth, and performance]:https://www.sqlskills.com/blogs/paul/on-index-key-size-index-depth-and-performance/
 [SQL Server Hierarchyid Data Type Overview and Examples]:https://www.mssqltips.com/sqlservertip/6048/sql-server-hierarchyid-data-type-overview-and-examples/
+[Make It Easier for the DBA: Give SQL Connections the Application’s Name!]:https://bengribaudo.com/blog/2017/06/23/3657/give-sql-connections-the-applications-name
