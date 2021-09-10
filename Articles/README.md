@@ -1453,6 +1453,7 @@ Articles types:
 | [You Probably Shouldn’t Index Your Temp Tables.]                                                                        | Brent Ozar                               | 2021-08-17 | [DBA][DEV]  |
 | [SQL Server Error Handling Gotchas]                                                                                     | Niels Berglund                           | 2016-12-31 | [DBA][DEV]  |
 | [B-Trees: More Than I Thought I'd Want to Know]                                                                         | Ben Congdon                              | 2021-08-17 | [DBA][DEV]  |
+| [Wait Stats During Hash Spills]                                                                                         | Eric Darling                             | 2021-09-21 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2869,3 +2870,4 @@ Articles types:
 [You Probably Shouldn’t Index Your Temp Tables.]:https://www.brentozar.com/archive/2021/08/you-probably-shouldnt-index-your-temp-tables/
 [SQL Server Error Handling Gotchas]:https://nielsberglund.com/2016/12/31/sql-server-error-handling-gotchas/
 [B-Trees: More Than I Thought I'd Want to Know]:https://benjamincongdon.me/blog/2021/08/17/B-Trees-More-Than-I-Thought-Id-Want-to-Know/
+[Wait Stats During Hash Spills]:https://www.erikdarlingdata.com/sql-server/wait-stats-during-hash-spills/
