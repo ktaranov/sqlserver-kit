@@ -1455,6 +1455,7 @@ Articles types:
 | [B-Trees: More Than I Thought I'd Want to Know]                                                                         | Ben Congdon                              | 2021-08-17 | [DBA][DEV]  |
 | [Wait Stats During Hash Spills]                                                                                         | Eric Darling                             | 2021-09-21 | [DBA][DEV]  |
 | [Shrinking The tempdb System Database Without Restarting SQL Server]                                                    | Jack Worthen                             | 2016-06-02 | [DBA][DEV]  |
+| [Graphing SQL Server wait stats on Prometheus and Grafana]                                                              | David Barbarin                           | 2021-09-09 | [M]         |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2873,3 +2874,4 @@ Articles types:
 [B-Trees: More Than I Thought I'd Want to Know]:https://benjamincongdon.me/blog/2021/08/17/B-Trees-More-Than-I-Thought-Id-Want-to-Know/
 [Wait Stats During Hash Spills]:https://www.erikdarlingdata.com/sql-server/wait-stats-during-hash-spills/
 [Shrinking The tempdb System Database Without Restarting SQL Server]:https://jackworthen.com/2016/06/02/shrinking-the-tempdb-system-database-without-restarting-sql-server/
+[Graphing SQL Server wait stats on Prometheus and Grafana]:https://blog.developpez.com/mikedavem/p13209/devops/graphing-sql-server-wait-stats-on-prometheus-and-grafana
