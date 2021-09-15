@@ -1458,6 +1458,7 @@ Articles types:
 | [Graphing SQL Server wait stats on Prometheus and Grafana]                                                              | David Barbarin                           | 2021-09-09 | [M]         |
 | [Transition from SSMS to DataGrip: 10 tips]                                                                             | Maksim Sobolevskiy                       | 2021-08-19 | [DBA][DEV]  |
 | [Query Store Hints]                                                                                                     | Erin Stellato                            | 2021-06-09 | [DBA][DEV]  |
+| [Announcing SSIS Framework Manager, v1]                                                                                 | Andy Leonard                             | 2021-06-09 | [SSIS]      |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2879,3 +2880,4 @@ Articles types:
 [Graphing SQL Server wait stats on Prometheus and Grafana]:https://blog.developpez.com/mikedavem/p13209/devops/graphing-sql-server-wait-stats-on-prometheus-and-grafana
 [Transition from SSMS to DataGrip: 10 tips]:https://blog.jetbrains.com/datagrip/2021/08/19/transition-from-ssms-to-datagrip-10-tips/
 [Query Store Hints]:https://www.sqlskills.com/blogs/erin/query-store-hints/
+[Announcing SSIS Framework Manager, v1]:https://andyleonard.blog/2021/06/announcing-ssis-framework-manager-v1/
