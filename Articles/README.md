@@ -1459,6 +1459,8 @@ Articles types:
 | [Transition from SSMS to DataGrip: 10 tips]                                                                             | Maksim Sobolevskiy                       | 2021-08-19 | [DBA][DEV]  |
 | [Query Store Hints]                                                                                                     | Erin Stellato                            | 2021-06-09 | [DBA][DEV]  |
 | [Announcing SSIS Framework Manager, v1]                                                                                 | Andy Leonard                             | 2021-06-09 | [SSIS]      |
+| [Improving The Performance of RBAR Modifications]                                                                       | Erik Darling                             | 2021-02-15 | [DBA][DEV]  |
+| [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]                                                        | Paul White                               | 2019-05-16 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2881,3 +2883,5 @@ Articles types:
 [Transition from SSMS to DataGrip: 10 tips]:https://blog.jetbrains.com/datagrip/2021/08/19/transition-from-ssms-to-datagrip-10-tips/
 [Query Store Hints]:https://www.sqlskills.com/blogs/erin/query-store-hints/
 [Announcing SSIS Framework Manager, v1]:https://andyleonard.blog/2021/06/announcing-ssis-framework-manager-v1/
+[Improving The Performance of RBAR Modifications]:https://www.erikdarlingdata.com/sql-server/improving-the-performance-of-rbar-modifications/
+[Minimal Logging with INSERT…SELECT into Empty Clustered Tables]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-empty-clustered
