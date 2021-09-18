@@ -1462,6 +1462,7 @@ Articles types:
 | [Improving The Performance of RBAR Modifications]                                                                       | Erik Darling                             | 2021-02-15 | [DBA][DEV]  |
 | [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]                                                        | Paul White                               | 2019-05-16 | [DBA][DEV]  |
 | [What Is a Cost-Based Optimizer?]                                                                                       | Brent Ozar                               | 2021-09-17 | [DBA][DEV]  |
+| [Unusual Parameter Sniffing: Big Problems with Small Data]                                                              | Brent Ozar                               | 2021-02-03 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2887,3 +2888,4 @@ Articles types:
 [Improving The Performance of RBAR Modifications]:https://www.erikdarlingdata.com/sql-server/improving-the-performance-of-rbar-modifications/
 [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-empty-clustered
 [What Is a Cost-Based Optimizer?]:https://www.brentozar.com/archive/2021/09/what-is-a-cost-based-optimizer/
+[Unusual Parameter Sniffing: Big Problems with Small Data]:https://www.brentozar.com/archive/2021/02/unusual-parameter-sniffing-big-problems-with-small-data/
