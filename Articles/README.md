@@ -1463,6 +1463,7 @@ Articles types:
 | [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]                                                        | Paul White                               | 2019-05-16 | [DBA][DEV]  |
 | [What Is a Cost-Based Optimizer?]                                                                                       | Brent Ozar                               | 2021-09-17 | [DBA][DEV]  |
 | [Unusual Parameter Sniffing: Big Problems with Small Data]                                                              | Brent Ozar                               | 2021-02-03 | [DBA][DEV]  |
+| [Rowcount estimates when there are no Statistics]                                                                       | Matthew Mcgiffen                         | 2021-01-26 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2889,3 +2890,4 @@ Articles types:
 [Minimal Logging with INSERT…SELECT into Empty Clustered Tables]:https://sqlperformance.com/2019/05/sql-performance/minimal-logging-empty-clustered
 [What Is a Cost-Based Optimizer?]:https://www.brentozar.com/archive/2021/09/what-is-a-cost-based-optimizer/
 [Unusual Parameter Sniffing: Big Problems with Small Data]:https://www.brentozar.com/archive/2021/02/unusual-parameter-sniffing-big-problems-with-small-data/
+[Rowcount estimates when there are no Statistics]:https://matthewmcgiffen.com/2021/01/26/rowcount-estimates-when-there-are-no-statistics/
