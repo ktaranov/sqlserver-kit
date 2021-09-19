@@ -460,6 +460,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Get Your ColumnScore](https://columnscore.com) (by ColumnScore)
     - [SQL Assessment API rules in .csv format](https://github.com/microsoft/sql-server-samples/blob/master/samples/manage/sql-assessment-api/DefaultRuleset.csv) (by Microsoft)
     - [SQL cheat sheet for PostgreSQL and Oracle](https://www.pcwdld.com/sql-cheat-sheet) (by Marc Wilson)
+    - [Bllitz Excel UI](https://1pro.bi/blitz-excel-ui/) (by Alex)
 
 **[⬆ back to top](#table-of-contents)**
 
