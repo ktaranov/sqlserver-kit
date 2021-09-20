@@ -1464,6 +1464,8 @@ Articles types:
 | [What Is a Cost-Based Optimizer?]                                                                                       | Brent Ozar                               | 2021-09-17 | [DBA][DEV]  |
 | [Unusual Parameter Sniffing: Big Problems with Small Data]                                                              | Brent Ozar                               | 2021-02-03 | [DBA][DEV]  |
 | [Rowcount estimates when there are no Statistics]                                                                       | Matthew Mcgiffen                         | 2021-01-26 | [DBA][DEV]  |
+| [Processing Data Queues in SQL Server with READPAST and UPDLOCK]                                                        | Armando Prato                            | 2007-06-04 | [DBA][DEV]  |
+| [Can You Get Parameter Sniffing on Updates and Deletes?]                                                                | Brent Ozar                               | 2021-01-27 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2891,3 +2893,5 @@ Articles types:
 [What Is a Cost-Based Optimizer?]:https://www.brentozar.com/archive/2021/09/what-is-a-cost-based-optimizer/
 [Unusual Parameter Sniffing: Big Problems with Small Data]:https://www.brentozar.com/archive/2021/02/unusual-parameter-sniffing-big-problems-with-small-data/
 [Rowcount estimates when there are no Statistics]:https://matthewmcgiffen.com/2021/01/26/rowcount-estimates-when-there-are-no-statistics/
+[Processing Data Queues in SQL Server with READPAST and UPDLOCK]:https://www.mssqltips.com/sqlservertip/1257/processing-data-queues-in-sql-server-with-readpast-and-updlock/
+[Can You Get Parameter Sniffing on Updates and Deletes?]:https://www.brentozar.com/archive/2021/01/can-you-get-parameter-sniffing-on-updates-and-deletes/
