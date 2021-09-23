@@ -1468,6 +1468,9 @@ Articles types:
 | [Can You Get Parameter Sniffing on Updates and Deletes?]                                                                | Brent Ozar                               | 2021-01-27 | [DBA][DEV]  |
 | [An Empirical Look at Key Lookups]                                                                                      | Forrest mc Daniel                        | 2020-12-30 | [DBA][DEV]  |
 | [Please stop using this UPSERT anti-pattern]                                                                            | Aaron Bertrand                           | 2020-09-02 | [DBA][DEV]  |
+| [The Curious Case of… the failing differential restore]                                                                 | Paul Randal                              | 2021-01-18 | [DBA]       |
+| [Starting SQL: Compensating For Lock Waits]                                                                             | Erik Darling                             | 2020-01-31 | [DBA][DEV]  |
+| [Finding & Downloading Required SQL Server Updates]                                                                     | Andy Levy                                | 2020-07-21 | [DBA]       |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2899,3 +2902,6 @@ Articles types:
 [Can You Get Parameter Sniffing on Updates and Deletes?]:https://www.brentozar.com/archive/2021/01/can-you-get-parameter-sniffing-on-updates-and-deletes/
 [An Empirical Look at Key Lookups]:https://forrestmcdaniel.com/2020/12/30/an-empirical-look-at-key-lookups/
 [Please stop using this UPSERT anti-pattern]:https://sqlperformance.com/2020/09/locking/upsert-anti-pattern
+[The Curious Case of… the failing differential restore]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-failing-differential-restore/
+[Starting SQL: Compensating For Lock Waits]:https://www.erikdarlingdata.com/starting-sql/starting-sql-compensating-for-lock-waits/
+[Finding & Downloading Required SQL Server Updates]:https://www.flxsql.com/downloading-latest-sql-server-updates/
