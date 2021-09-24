@@ -1471,6 +1471,8 @@ Articles types:
 | [The Curious Case of… the failing differential restore]                                                                 | Paul Randal                              | 2021-01-18 | [DBA]       |
 | [Starting SQL: Compensating For Lock Waits]                                                                             | Erik Darling                             | 2020-01-31 | [DBA][DEV]  |
 | [Finding & Downloading Required SQL Server Updates]                                                                     | Andy Levy                                | 2020-07-21 | [DBA]       |
+| [Quick SQL Server CPU Comparison Tests]                                                                                 | Joe Obbish                               | 2021-09-22 | [DBA][DEV]  |
+| [Using fn_dblog, fn_dump_dblog, and restoring with STOPBEFOREMARK to an LSN]                                            | Paul Randal                              | 2012-05-17 | [DBA][DEV]  |
 
 [Understanding how SQL Server executes a query]:http://rusanu.com/2013/08/01/understanding-how-sql-server-executes-a-query/
 [SQL Server Index Design Guide]:https://technet.microsoft.com/en-us/library/jj835095.aspx
@@ -2905,3 +2907,5 @@ Articles types:
 [The Curious Case of… the failing differential restore]:https://www.sqlskills.com/blogs/paul/the-curious-case-of-the-failing-differential-restore/
 [Starting SQL: Compensating For Lock Waits]:https://www.erikdarlingdata.com/starting-sql/starting-sql-compensating-for-lock-waits/
 [Finding & Downloading Required SQL Server Updates]:https://www.flxsql.com/downloading-latest-sql-server-updates/
+[Quick SQL Server CPU Comparison Tests]:https://www.erikdarlingdata.com/sql-server/quick-sql-server-cpu-comparison-tests/
+[Using fn_dblog, fn_dump_dblog, and restoring with STOPBEFOREMARK to an LSN]:https://www.sqlskills.com/blogs/paul/using-fn_dblog-fn_dump_dblog-and-restoring-with-stopbeforemark-to-an-lsn/
