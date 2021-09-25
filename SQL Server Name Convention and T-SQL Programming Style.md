@@ -475,6 +475,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    ```
    sqlcmd -S MSSQLSERVER$EXPRESS -Q "dbcc checkdb ('master') with DATA_PURITY, NO_INFOMSGS;" -U maintenanceUser -P ""weirdPassword
    ```
+ - Only update rows that changed? Try using `EXISTS` and `EXCEPT` for perfomance reasons and code readanlity.More details [here](https://chadbaldwin.net/2020/12/30/only-update-rows-that-changed).
  - Use `EXISTS` or `NOT EXISTS` if referencing a subquery, and `IN` or `NOT IN` when have a list of literal values.
    More details [here](https://www.brentozar.com/archive/2018/08/a-common-query-error/).
  - For concatenate unicode strings:
