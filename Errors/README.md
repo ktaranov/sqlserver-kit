@@ -300,7 +300,7 @@ Your `language_id` you can find in [`sys.syslanguages`](https://docs.microsoft.c
 [48]:https://blog.waynesheffield.com/wayne/archive/2020/08/availability-group-issues-fixed-with-alerts/
 [49]:https://www.red-gate.com/simple-talk/sql/t-sql-programming/row-versioning-concurrency-in-sql-server/
 [50]:https://sqlblog.org/2020/11/05/navigating-dbcc-checkdb-for-vldb
-[51]:
+[51]:https://www.mssqltips.com/sqlservertip/6230/memoryoptimized-tempdb-metadata-in-sql-server-2019/
 
 [Who owns your availability groups?]:http://www.cjsommer.com/2016-10-20-who-owns-your-availability-groups/
 [Cannot Connect to SQL Server]:https://dallasdbas.com/irl-cannot-connect-to-sql-server/
