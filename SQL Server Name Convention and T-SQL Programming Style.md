@@ -597,7 +597,7 @@ Recommendations from Microsoft: [Stored procedure Best practice][11]
 
 **[⬆ back to top](#table-of-contents)**
 
-Stored Procedure Example:
+<a id="sp-example"></a> Stored Procedure Example:
 
 ```tsql
 IF OBJECT_ID('dbo.usp_StoredProcedure', 'P') IS NULL
