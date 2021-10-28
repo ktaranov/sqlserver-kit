@@ -23,10 +23,10 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [dbForge Source Control](#dbforge-source-control)     | [dbForge Source Control]      | 2019-10-10   | 2005-2018            | Devart               | No           |  $249 |
 | [dbForge Unit Test](#dbforge-unit-test)               | [dbForge Unit Test]           | 2019-10-10   | 2005-2018            | Devart               | No           |  $199 |
 | [dbForge Data Pump](#dbforge-data-pump)               | [dbForge Data Pump]           | 2019-10-10   | 2008-2018            | Devart               | No           |  $149 |
-| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2019-10-10   | 2008-2018            | Devart               | No           |  $99  |
+| [dbForge Index Manager](#dbforge-index-manager)       | [dbForge Index Manager]       | 2021-09-10   | 2008-2018            | Devart               | No           |  $119 |
 | [dbForge Search](#dbforge-search)                     | [dbForge Search]              | 2019-10-10   | 2008-2018            | Devart               | Yes          | No    |
 | [dbForge Monitor](#dbforge-monitor)                   | [dbForge Monitor]             | 2019-10-10   | 2012-2018            | Devart               | Yes          | No    |
-| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2019-10-10   | 2000-2018            | Devart               | Yes          |  $149 |
+| [dbForge SQL Complete](#dbforge-sql-complete)         | [dbForge SQL Complete]        | 2021-10-05   | 2000-2018            | Devart               | Yes          |  $199 |
 | [SoftTree SQL Assistant](#softtree-sql-assistant)     | [SoftTree SQL Assistant]      | 2016-03-18   | 2008-2014            | SoftTree             | No           |  $179 |
 | [SQL Enlight For SSMS](#sql-enlight-for-ssms)         | [SQL Enlight For SSMS]        | 2016-04-25   | 2008-2014            | UbitSoft             | No           |  $195 |
 | [SQL Hunting Dog](#sql-hunting-dog)                   | [SQL Hunting Dog]             | 2016-03-03   | 2008-2014            | Alex Maslyukov       | Yes          | No    |
@@ -395,11 +395,11 @@ The tool supports import and export from 10+ widely used data formats (Text, MS 
 <a id="dbforge-index-manager"></a>
 ## dbForge Index Manager
 Download page: [dbForge Index Manager]<br/>
-Release date: 2019-10-10<br/>
+Release date: 2021-09-10<br/>
 Support Version: 2008-2018<br/>
 Developer: Devart<br/>
 Free version: No<br/>
-Price: $99
+Price: $119
 
 dbForge Index Manager for SQL Server is a handy SSMS add-in for analyzing the status of SQL indexes and fixing issues with index fragmentation.
 The tool allows you to quickly collect index fragmentation statistics and detect databases that require maintenance.
@@ -439,11 +439,11 @@ Price: No
 <a id="dbforge-sql-complete"></a>
 ## dbForge SQL Complete
 Download page: [dbForge SQL Complete]<br/>
-Release date: 2019-10-10<br/>
+Release date: 2021-10-05<br/>
 Support Version: 2000-2018<br/>
 Developer: Devart<br/>
 Free version: Yes<br/>
-Price: $149
+Price: $199
 
 dbForge SQL Complete provides a wide range of code completion features that relieve users from remembering long and complex object names,
 column names, SQL operators, etc., but instead allows concentrating on writing high-quality SQL code with proper formatting that is easy to understand and interpret.
