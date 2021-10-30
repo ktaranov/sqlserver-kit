@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**618** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**620** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -289,7 +289,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **618 trace flags**
+Summary: **620 trace flags**
 
 
 <a id="-1"></a>
@@ -1295,6 +1295,19 @@ Function: Allows the `ALTER PARTITION FUNCTION` statement to honor the current u
 Link: https://support.microsoft.com/kb/4025261<br />
 Link: [Docs Trace Flags]<br />
 Scope: global or session or query
+ 
+ 
+<a id="1252"></a>
+#### Trace Flag: 1252
+**Undocumented trace flag**<br />
+Function: It prints some kind of lock related information when [3604](#3604) is also enabled. Example:
+```
+SELECT * FROM master..spt_values
+OPTION (QUERYTRACEON 1252, QUERYTRACEON 3604); 
+```
+<br />
+Link: https://github.com/ktaranov/sqlserver-kit/issues/196<br />
+Scope: ?
 
 
 <a id="1260"></a>
@@ -4196,6 +4209,14 @@ Link: https://sql-sasquatch.blogspot.com/2018/12/fun-with-sql-server-plan-cache-
 Link: [Fun with SQL Server Plan Cache, Trace Flag 8666, and Trace Flag 2388]<br />
 Scope: global or session
 
+ 
+<a id="8670"></a>
+#### Trace Flag: 8670
+**Undocumented trace flag**<br />
+Function: Skip search 2 in plan?<br />
+Link: [Query Optimizer Deep Dive - Part 4]<br />
+Scope: ?
+ 
 
 <a id="8671"></a>
 #### Trace Flag: 8671
