@@ -1245,10 +1245,9 @@ Articles types:
 | [Find Database Connection Leaks in Your Application]                                                                    | Michael J Swart                          | 2017-07-07 | [DBA][DEV]  |
 | [How to Troubleshoot THREADPOOL Waits and Deadlocked Schedulers]                                                        | Eitan Blumin                             | 2020-10-05 | [DBA][DEV]  |
 | [Prevent Lock Escalation On Indexed Views]                                                                              | Thomas Costers                           | 2019-10-30 | [DBA][DEV]  |
-| [Concatenating Strings in SQL Server]                                                                                   | Guy Glantser                             | 2020-11-10 | [DBA][DEV]  |
+| [Concatenating Strings in SQL Server]                                                                                   | Guy Glantser                             | 2020-11-30 | [DBA][DEV]  |
 | [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-07 | [DBA][DEV]  |
 | [Migrating SSIS to Azure – an Overview]                                                                                 | Koen Verbeeck                            | 2020-11-03 | [AZ][MG]    |
-| [Why Full Text’s CONTAINS Queries Are So Slow]                                                                          | Brent Ozar                               | 2020-11-12 | [DBA][DEV]  |
 | [A Parameterization Puzzle With TOP: Part 1]                                                                            | Eric Darling                             | 2020-10-21 | [DBA][DEV]  |
 | [A Parameterization Puzzle With TOP: Part 2]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
 | [T-SQL: Get The Text Between Two Delimiters]                                                                            | Eric Darling                             | 2020-10-22 | [DBA][DEV]  |
