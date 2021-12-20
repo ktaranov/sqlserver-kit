@@ -236,6 +236,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [edX SQL Courses](https://www.edx.org/learn/sql) (by edX)
      - [SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries) (by NUKnightLab)
      - [SQL Murder Mystery with answers](https://github.com/erika-e/sql-mysteries) (by Erika Pullum)
+     - [SQL Problems and solutions](http://www.sql-tutorial.ru/en) (by S. I. Moiseenko)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
@@ -414,7 +415,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [EFSecondLevelCache.Core - Entity Framework Core Second Level Caching Library (Redis)](https://github.com/VahidN/EFSecondLevelCache.Core) (by Vahid Nasiri)
     - [Dotmim.Sync - a brand new database synchronization, multi platform, multi databases, developed on top of .Net Standard 2.0](https://github.com/Mimetis/Dotmim.Sync)
     - [Hekaton-based shock absorber pattern for SQL Server](https://github.com/sqlsunday/shock-absorber) (by Daniel Hutmacher)
-    - [HammerDBBenchmark - Swarchy T101 Wilson HammerDb Benchmark Setup Scripts for SQL Server](https://github.com/swarchy/HammerDBBenchmark) (by Swarchy T101 Wilson) 
+    - [HammerDBBenchmark - Swarchy T101 Wilson HammerDb Benchmark Setup Scripts for SQL Server](https://github.com/swarchy/HammerDBBenchmark) (by Swarchy T101 Wilson)
+    - [sqlblockedprocesses - SQL Server Blocked Process Report Viewer](https://github.com/mjswart/sqlblockedprocesses) (by Michael J. Swart)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
