@@ -362,7 +362,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Automatically fix high VLF counts in SQL Server 2012+](https://github.com/tboggiano/autofix-vlfs) (by Tracy Boggiano)
     - [splittinglargefiles - Process for splitting large files in a filegroup that has grown out of control.](https://github.com/tboggiano/splittinglargefiles) (by Tracy Boggiano)
     - [olamaintconfigtables - This are tables and jobs that can use to run Ola's scripts as T-SQL Jobs and run on Linux](https://github.com/tboggiano/olamaintconfigtables) (by Tracy Boggiano)
-    - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA  ](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
+    - [SQL Undercover Toolbox -  A collection of cool and useful tools, procedures and scripts for the discerning DBA](https://github.com/SQLUndercover/UndercoverToolbox) (by SQL Undercover)
     - [dba-database - Database containing DBA helper code and open source software](https://github.com/amtwo/dba-database) (by Andy Mallon)
     - [SQLServerSpaceAnalysis PowerBI](https://github.com/SQLJana/SQLServerSpaceAnalysis) (by Jana Sattainathan)
     - [SQL Server Telegram Bot](https://github.com/ionflux/mssql-telegram-bot/)
@@ -417,6 +417,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Hekaton-based shock absorber pattern for SQL Server](https://github.com/sqlsunday/shock-absorber) (by Daniel Hutmacher)
     - [HammerDBBenchmark - Swarchy T101 Wilson HammerDb Benchmark Setup Scripts for SQL Server](https://github.com/swarchy/HammerDBBenchmark) (by Swarchy T101 Wilson)
     - [sqlblockedprocesses - SQL Server Blocked Process Report Viewer](https://github.com/mjswart/sqlblockedprocesses) (by Michael J. Swart)
+    - [sp_CRUDGen - stored procedure that generates stored procedures for you based on your tables and metadata like foreign keys and data types](https://github.com/kevinmartintech/sp_CRUDGen) (by Kevin Martin)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
