@@ -2041,9 +2041,12 @@ Link: [KB917825]
 <a id="2542"></a>
 #### Trace Flag: 2542
 **Undocumented trace flag**<br />
-Function: Unknown, but related to controlling the contents of a memory dump<br />
+Function: SQL Server error log still tells you about the dump. But it never gets written.
+The error log still tells you about the stack text file, which still gets generated even with T2542 in place. Looks like that takes about 6 seconds rather than the dumps which were always over 1 minute.
+[@sqL_handLe](https://twitter.com/sqL_handLe) used it to resolve an issue where a production environment (with > 1 TB of RAM) was experiencing unhelpful memory dumps that would take more than 100 seconds to complete. 100 seconds is the max Availability Group lease timeout threshold.<br />
 Link: [KB917825]<br />
-Link: [Controlling SQL Server memory dumps]
+Link: [Controlling SQL Server memory dumps]<br />
+Link: [197](https://github.com/ktaranov/sqlserver-kit/issues/197)
 
 
 <a id="2543"></a>
