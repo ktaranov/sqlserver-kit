@@ -436,6 +436,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Stackoverflow SQL Anti Patterns](http://stackoverflow.com/questions/346659/what-are-the-most-common-sql-anti-patterns)
     - [Azure Speed](http://www.azurespeed.com/) (by Blair Chen)
     - [DBFiddle - test your queries online](https://dbfiddle.uk/?rdbms=sqlserver_2019)
+    - [SQLize Online - is a free online SQL environment for quickly running, experimenting with and sharing SQL code](https://sqlize.online/sql/mssql2019/)
     - [Experts-Exchange.com MS SQL Server Topics](https://www.experts-exchange.com/topics/ms-sql-server/)
     - [Paste The Plan - share query plans quickly and easily](https://www.brentozar.com/pastetheplan/) (by Brent Ozar Team)
     - [StackExchange DataExplorer Query On line](http://data.stackexchange.com/stackoverflow/query/new)
