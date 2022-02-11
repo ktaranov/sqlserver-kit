@@ -212,10 +212,9 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 | [`GETUTCDATE`]        | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                                                                | [25]           |
 | [`SYSDATETIME`]       | [`SYSUTCDATETIME`]     | Daylight Saving Time and other factors can play havoc with our dates and times, rounding to the nearest 3 milliseconds.                                                                | [25]           |
 | [`CURRENT_TIMESTAMP`] | [`SYSUTCDATETIME`]     | It's too similar to the poorly-named TIMESTAMP data type, which has nothing to do with dates and times and should be called `ROWVERSION`.                                              | [26]           |
-| [`DATETFROMPARTS`]    | [`DATET2FROMPARTS`]    | The `datetime` data type returns a value to the nearest three milliseconds, as long as it ends with 0, 3, and 7. This is data corruption by definition.                                | [26]           |
 | [`DATETIMEFROMPARTS`] | [`DATETIME2FROMPARTS`] |  The `datetime` data type returns a value to the nearest three milliseconds, as long as it ends with 0, 3, and 7. This is data corruption by definition.                               | [26]           |
 | [`ISDATE`]            | [`TRY_CONVERT`]        | `ISNUMERIC` can often lead to data type conversion errors, when importing data. For SQL Server below 2012 use `WHERE` with `LIKE`.                                                     | [26]           |
-| [`BETWEEN`]           | `>=` and `<=`          | Always use an open-ended range to prevent erroneously including or excluding rows. It's much less complex to find the beginning of the next period than the end of the current period. | [27]           |
+| [`BETWEEN`]           | [`>=`] and [`<=`]      | Always use an open-ended range to prevent erroneously including or excluding rows. It's much less complex to find the beginning of the next period than the end of the current period. | [27]           |
 
 [12]:https://docs.microsoft.com/sql/t-sql/language-elements/comparison-operators-transact-sql
 [13]:https://dba.stackexchange.com/a/155670/107045
@@ -242,14 +241,18 @@ This is only recommendations! But it is consistent for choosing only 1 function 
 [24]:https://www.red-gate.com/hub/product-learning/sql-prompt/sql-prompt-code-analysis-avoid-using-isnumeric-function-e1029
 [25]:https://bornsql.ca/blog/dates-times-sql-server-t-sql-functions-get-current-date-time/
 [`GETDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql
+[`SYSUTCDATETIME`]:https://docs.microsoft.com/en-gb/sql/t-sql/functions/sysutcdatetime-transact-sql
 [`GETUTCDATE`]:https://docs.microsoft.com/sql/t-sql/functions/getutcdate-transact-sql
 [`SYSDATETIME`]:https://docs.microsoft.com/sql/t-sql/functions/sysdatetime-transact-sql
 [`CURRENT_TIMESTAMP`]:https://docs.microsoft.com/sql/t-sql/functions/current-timestamp-transact-sql
 [26]:https://bornsql.ca/blog/dates-and-times-in-sql-server-more-functions-you-should-never-use/
 [`DATETFROMPARTS`]:https://docs.microsoft.com/sql/t-sql/functions/datefromparts-transact-sql
 [`DATETIMEFROMPARTS`]:https://docs.microsoft.com/sql/t-sql/functions/datetimefromparts-transact-sql
+[`DATETIME2FROMPARTS`]:https://docs.microsoft.com/sql/t-sql/functions/datetime2fromparts-transact-sql
 [`ISDATE`]:https://docs.microsoft.com/sql/t-sql/functions/isdate-transact-sql
-[`BETWEEN`]:https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql?view=sql-server-ver15
+[`BETWEEN`]:https://docs.microsoft.com/sql/t-sql/language-elements/between-transact-sql
+[`>=`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/greater-than-or-equal-to-transact-sql
+[`<=`]:https://docs.microsoft.com/en-us/sql/t-sql/language-elements/less-than-or-equal-to-transact-sql
 [27]:https://www.mssqltips.com/sqlservertip/5206/sql-server-datetime-best-practices/
 
 **[⬆ back to top](#table-of-contents)**
@@ -344,7 +347,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    `INFORMATION_SCHEMA` views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the `sys.objects` catalog view.
  - When more than one logical operator is used always use parentheses, even when they are not required.
    This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
-   There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide?view=sql-server-ver15#logical-operator-precedence).
+   There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide#logical-operator-precedence).
    ```sql
    SELECT
        ProductID
