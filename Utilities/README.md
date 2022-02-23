@@ -421,6 +421,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [Beekeeper Studio](#beekeeper)                                   | MySQL,PostgreSQL,Other        | Linux,Mac | [MS]     | [Beekeeper Studio]                                 | 2020-11-21 | Beekeeper Studio         | [MIT]     | Yes            |  No   |
 | [Babelfish for Aurora PostgreSQL](#babelfish)                    | No                            | Online    | [?]      | [Babelfish for Aurora PostgreSQL]                  | 2020-12-01 | Amazon                   | [Apache]  | Open Source    |  No   |
 | [DBA Dash](#dbadash)                                             | No                            | No        | [M]      | [DBA Dash]                                         | -          | Trimble                  | [MIT]     | Open Source    |  No   |
+| [SQLWATCH](#sqlwatch)                                             | No                            | No        | [M]      | [SQLWATCH]                                         | -          | Marcin Gminski                  | [MIT]     | Open Source    |  No   |
 
 <a id="ssms"></a>
 ## SSMS
@@ -6199,6 +6200,20 @@ DBA Dash is a tool for SQL Server DBAs to assist with daily checks, performance 
 - Configuration, Trace Flags, Hardware, Patching, Schema
 - HA/DR, Backups, Last Good DBCC, Drive Space, Agent Jobs, Corruption, Alerts
 
+## SQLWATCH
+<a id="sqlwatch"></a>
+Download page: [SQLWATCH]<br/>
+Release date: 2018-09-16<br/>
+Support Version: 2008-2019<br/>
+Author: Marcin Gminski<br/>
+Free version: Yes<br/>
+Price: No
+
+SQLWATCH is an Open Source (MIT License) Real-Time monitoring solution for SQL Server
+- Grafana and Power BI Dashboards
+- Real Time Alerts and Actions
+- Central Repository
+- Infinite scalability. SQLWATCH can collect data locally on the local SQL Server or into a central repository.
 
 [SSMS]:https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms
 [Azure Data Studio]:https://github.com/Microsoft/azuredatastudio
@@ -6597,6 +6612,7 @@ DBA Dash is a tool for SQL Server DBAs to assist with daily checks, performance 
 [Beekeeper Studio]:https://github.com/beekeeper-studio/beekeeper-studio
 [Babelfish for Aurora PostgreSQL]:https://aws.amazon.com/rds/aurora/babelfish/
 [DBA Dash]:https://github.com/trimble-oss/dba-dash
+[SQLWATCH]:https://sqlwatch.io
 
 [LGPL-3.0]:http://www.gnu.org/licenses/lgpl-3.0.txt
 [MIT]:https://opensource.org/licenses/MIT
