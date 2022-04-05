@@ -394,7 +394,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL-Server-Permissions-Manager - a set of scripts for managing logins and permissions on SQL Server databases](https://github.com/ericcobb/SQL-Server-Permissions-Manager) (by Eric Cobb)
     - [AwesomeSQLServer - collection of SQL Server Queries and documentations to fix your SQL Server's bottle neck](https://github.com/SQLadmin/AwesomeSQLServer) (by SqlAdmin)
     - [databases_scripts - SQL Server useful scripts](https://github.com/dgavrikov/databases_scripts/tree/master/SQL%20Server) (by Dmitriy Gavrikov)
-    - [sp_pressure_detector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/blob/master/sp_pressure_detector/sp_pressure_detector.sql) (by Erik Darling)
+    - [sp_PressureDetector - stored procedure for quickly detecting CPU and Memory pressure on a SQL Server](https://github.com/erikdarlingdata/DarlingData/tree/main/sp_PressureDetector) (by Erik Darling)
     - [sp_HumanEvents - make Extended Events easier and more approachable for the average admin to troubleshoot common scenarios](https://www.erikdarlingdata.com/sp_humanevents/) (by Erik Darling)
     - [Export Prometheus metrics from SQL queries](https://github.com/albertodonato/query-exporter) (by Alberto Donato)
     - [homebrew-mssql-release - brew formulae for Microsoft ODBC Driver for SQL Server and SQL Server Command Line Utilities](https://github.com/microsoft/homebrew-mssql-release) (by Microsoft)
