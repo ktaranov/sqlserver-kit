@@ -420,6 +420,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [sp_CRUDGen - stored procedure that generates stored procedures for you based on your tables and metadata like foreign keys and data types](https://github.com/kevinmartintech/sp_CRUDGen) (by Kevin Martin)
     - [sp_Develop - can be used by database developers, software developers and for performing database code (smell) reviews.s](https://github.com/EmergentSoftware/SQL-Server-Development-Assessment) (by Kevin Martin)
     - [DBA Dash - Performance monitoring tool for SQL Server](https://github.com/trimble-oss/dba-dash) (by Trimble)
+    - [lowlydba.sqlserver - A cross-platform Ansible collection using PowerShell to configure and maintain SQL Server](https://github.com/lowlydba/lowlydba.sqlserver) - (by John McCall)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
