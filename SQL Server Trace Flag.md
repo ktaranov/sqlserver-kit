@@ -3464,6 +3464,21 @@ Link: https://support.microsoft.com/kb/4517771<br />
 Scope: global only<br />
 SQL Server Version: >= 2019 CU1, >= 2017 CU18, >= 2016 SP1 CU10
 
+<a id="6950"></a>
+#### Trace Flag: 6950
+**Undocumented trace flag**<br />
+Function: Disable SQL Server 2022's TempDB contention improvements around GAM/SGAM access.<br />
+Link: https://github.com/microsoft/bobsql/blob/master/demos/sqlserver2022/tempdb/disablegamsgam.cmd
+Scope: global only<br />
+SQL Server Version: >= 2022
+
+<a id="6962"></a>
+#### Trace Flag: 6962
+**Undocumented trace flag**<br />
+Function: Disable SQL Server 2022's TempDB contention improvements around GAM/SGAM access.<br />
+Link: https://github.com/microsoft/bobsql/blob/master/demos/sqlserver2022/tempdb/disablegamsgam.cmd
+Scope: global only<br />
+SQL Server Version: >= 2022
 
 <a id="7103"></a>
 #### Trace Flag: 7103
