@@ -60,7 +60,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 | Dmitry Pilugin      | [Dmitry Blog]                | RUS     | Moscow           | [@SomewereSomehow] | pilugin@inbox.ru                  | 4   | [Pilugin MVP]      |
 | Buck Woody          | [Buck Blog]                  |         | NULL             | [@buckwoodymsft]   | NULL                              | 0   | -                  |
 | Steve Stedman       | [Steve Stedman Blog]         | USA     | Austin           | [@stedman]         | NULL                              | 0   | -                  |
-| Daniel Hutmacher    | [Daniel Hutmacher Blog]      | USA     | Austin           | [@dhmacher]        | NULL                              | 0   | -                  |
+| Daniel Hutmacher    | [Daniel Hutmacher Blog]      | SWE     | Stockholm        | [@dhmacher]        | NULL                              | 0   | -                  |
 | Niko Neugebauer     | [Niko Blog]                  | PRT     | NULL             | [@NikoNeugebauer]  | niko@nikoport.com                 | 6   | [Neugebauer MVP]   |
 | Mike Fal            | [Mike Fal Blog]              | USA     | Denver           | [@Mike_Fal]        | NULL                              | 0   | -                  |
 | Robert L Davis      | [Robert Blog]                | USA     | New York         | [@SQLSoldier]      | NULL                              | 3   | [Davis MVP]        |
