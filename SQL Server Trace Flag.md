@@ -1,5 +1,5 @@
 # Microsoft SQL Server Trace Flags
-Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**620** trace flags).
+Detailed list of all discovered (documented and undocumented) Microsoft SQL Server trace flags (**622** trace flags).
 
 ⚠ **REMEMBER: Be extremely careful with trace flags, test in your development environment first.
 And consult professionals first if you are the slightest uncertain about the effects of your changes.**
@@ -289,7 +289,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 <a id="trace-flags-list"></a>
 ## Trace Flags List
-Summary: **620 trace flags**
+Summary: **622 trace flags**
 
 
 <a id="-1"></a>
@@ -3464,22 +3464,25 @@ Link: https://support.microsoft.com/kb/4517771<br />
 Scope: global only<br />
 SQL Server Version: >= 2019 CU1, >= 2017 CU18, >= 2016 SP1 CU10
 
+ 
 <a id="6950"></a>
 #### Trace Flag: 6950
 **Undocumented trace flag**<br />
 Function: Disable SQL Server 2022's TempDB contention improvements around GAM/SGAM access.<br />
-Link: https://github.com/microsoft/bobsql/blob/master/demos/sqlserver2022/tempdb/disablegamsgam.cmd
+Link: [Github disable gamsgam]<br />
 Scope: global only<br />
 SQL Server Version: >= 2022
 
+ 
 <a id="6962"></a>
 #### Trace Flag: 6962
 **Undocumented trace flag**<br />
 Function: Disable SQL Server 2022's TempDB contention improvements around GAM/SGAM access.<br />
-Link: https://github.com/microsoft/bobsql/blob/master/demos/sqlserver2022/tempdb/disablegamsgam.cmd
+Link: [Github disable gamsgam]<br />
 Scope: global only<br />
 SQL Server Version: >= 2022
 
+ 
 <a id="7103"></a>
 #### Trace Flag: 7103
 **Undocumented trace flag**<br />
@@ -5646,3 +5649,4 @@ SQL Server Version: >= 2019 CU9, >= 2017 CU21
 [Minimizing the impact of DBCC CHECKDB]:https://sqlperformance.com/2012/11/io-subsystem/minimize-impact-of-checkdb
 [KB2634571]:https://web.archive.org/web/20150303213855/http://support.microsoft.com/kb/2634571
 [KB4565944]:https://support.microsoft.com/kb/4565944
+[Github disable gamsgam]:https://github.com/microsoft/bobsql/blob/master/demos/sqlserver2022/tempdb/disablegamsgam.cmd
