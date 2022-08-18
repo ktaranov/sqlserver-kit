@@ -141,6 +141,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL-Articles](http://sql-articles.com/articles/)
     - [DallasDBAs Blog](http://dallasdbas.com/blog/)
     - [UpSearch Blog](https://upsearch.com/blog/)
+    - [SQL tutorial](https://www.scaler.com/topics/sql)
     - [ProData Blog](http://blogs.prodata.ie/)
     - [DallasDBAs.com Blog](http://dallasdbas.com/blog/)
     - [SQLBI Blog](http://www.sqlbi.com)
