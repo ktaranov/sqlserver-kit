@@ -111,7 +111,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [MSSQLTips](https://www.mssqltips.com/get-free-sql-server-tips/)
     - [BRENT OZAR](https://www.brentozar.com/) scripts, videos and articles
     - [Simple-talk Articles](https://www.simple-talk.com/)
-    - [SQLSentry Blog](http://blogs.sqlsentry.com)
+    - [SentryOne Blog](https://www.sentryone.com/blog)
     - [Glenn Berry's SQL Server Performance](http://sqlserverperformance.wordpress.com/)
     - [Kenneth Fisher SQLStudies Blog](http://sqlstudies.com/)
     - [Best SQL Server Perfomance Blog](http://sqlperformance.com/)
@@ -613,7 +613,7 @@ SQL Server:
  - [Syncfusion Techportal](http://syncfusion.com/resources/techportal)
  - [Modern Storage Strategies for SQL Server](http://www.actualtech.io/gg-modern-storage/)
  - [Migrating SQL Server Databases to Azure](https://blogs.msdn.microsoft.com/microsoft_press/2016/05/11/free-ebook-microsoft-azure-essentials-migrating-sql-server-databases-to-azure/)
- - [SQL Sentry Free eBooks](https://www.sqlsentry.com/sql-server-books)
+ - [SentryOne Free eBooks](https://www.sentryone.com/resources#filter=.ebook)
  - [Microsoft Cloud Security for Enterprise Architects (PDF)](http://download.microsoft.com/download/6/d/f/6dfd7614-bbcf-4572-a871-e446b8cf5d79/msft_cloud_architecture_security.pdf)
  - [Brent Ozar SQL Server Setup Checklist eBook](http://u.brentozar.com/eBook_SQL_Server_Setup_Checklist.pdf)
  - [Introducing Microsoft SQL Server 2016](https://info.microsoft.com/Introducing-SQL-Server-2016-eBook.html)

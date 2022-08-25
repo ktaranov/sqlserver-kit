@@ -1541,7 +1541,7 @@ Articles types:
 [How To Fix Forwarded Records]:https://www.brentozar.com/archive/2016/07/fix-forwarded-records/
 [Should I Automate my Windows Updates for SQL Server?]:http://www.littlekendra.com/2016/07/28/should-i-automate-my-windows-updates-for-sql-server-dear-sql-dba-episode-10/
 [Finding the Right Path]:http://jasonbrimhall.info/2016/08/24/finding-the-right-path/
-[#BackToBasics : An Updated "Kitchen Sink" Example]:https://blogs.sqlsentry.com/aaronbertrand/backtobasics-updated-kitchen-sink-example/
+[#BackToBasics : An Updated "Kitchen Sink" Example]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-updated-kitchen-sink-example
 [Locking and Blocking in SQL Server]:https://www.brentozar.com/sql/locking-and-blocking-in-sql-server/
 [Nested Loops Prefetching]:https://www.sql.kiwi/2013/08/sql-server-internals-nested-loops-prefetching.html
 [Performance tuning backup and restore operations]:http://www.sqlhammer.com/performance-tuning-backup-restore-operations/
@@ -1632,7 +1632,7 @@ Articles types:
 [Sync Vs Async Statistics: The Old Debate]:https://sqlserverscotsman.wordpress.com/2016/12/10/sync-vs-async-statistics-the-old-debate/
 [Recommended updates and configuration options for SQL Server 2012 and SQL Server 2014 with high-performance workloads]:https://support.microsoft.com/en-gb/kb/2964518
 [Troubleshooting SQL Server backup and restore operations]:https://support.microsoft.com/en-us/kb/224071
-[SQL Server 2016: Getting tempdb a little more right]:https://blogs.sentryone.com/aaronbertrand/sql-server-2016-tempdb-fixes/
+[SQL Server 2016: Getting tempdb a little more right]:https://www.sentryone.com/blog/aaronbertrand/sql-server-2016-tempdb-fixes
 [Practical uses of binary types]:https://sqlsunday.com/2017/01/09/binary-types/
 [Backing Up SQL Server Databases is Easier in PowerShell than T-SQL]:http://www.sqlservercentral.com/articles/PowerShell/151510/
 [Creating, detaching, re-attaching, and fixing a SUSPECT database]:http://www.sqlskills.com/blogs/paul/creating-detaching-re-attaching-and-fixing-a-suspect-database/
@@ -1666,8 +1666,8 @@ Articles types:
 [New SQL Server Database Request Questionnaire and Checklist]:https://www.mssqltips.com/sqlservertip/3523/new-sql-server-database-request-questionnaire-and-checklist/
 [Adding Partitions to the Lower End of a Left Based Partition Function]:https://www.littlekendra.com/2017/02/21/adding-partitions-to-the-lower-end-of-a-left-based-partition-function/
 [Don't Panic  Busting a File Space Myth]:http://sqlmag.com/database-administration/dont-panic-busting-file-space-myth
-[#BackToBasics : Dating Responsibly]:https://blogs.sentryone.com/aaronbertrand/backtobasics-dating-responsibly/
-[#BackToBasics : Common Table Expressions (CTEs)]:https://blogs.sentryone.com/aaronbertrand/backtobasics-ctes/
+[#BackToBasics : Dating Responsibly]:https://www.sentryone.com/blog/aaronbertrand/backtobasics-dating-responsibly/
+[#BackToBasics : Common Table Expressions (CTEs)]:https://www.sentryone.com/blog/aaronbertrand//backtobasics-ctes/
 [How to Establish Dedicated Admin Connection (DAC) to SQL Server]:https://www.codeproject.com/tips/1136361/how-to-establish-dedicated-admin-connection-dac-to
 [SQL and SQL only Best Practice]:http://strictlysql.blogspot.ru/search/label/Best%20Practices
 [There Is No Difference Between Table Variables, Temporary Tables, and Common Table Expressions]:https://dzone.com/articles/there-is-no-difference-between-table-variables-tem
@@ -1699,7 +1699,7 @@ Articles types:
 [How To Forecast Database Disk Capacity If You Don’t Have A Monitoring Tool]:http://www.edwinmsarmiento.com/how-to-forecast-database-disk-capacity-if-you-dont-have-a-monitoring-tool/
 [Statistical Sampling for Verifying Database Backups]:https://www.simple-talk.com/sql/database-administration/statistical-sampling-for-verifying-database-backups/
 [Using dbatools for automated restore and CHECKDB]:http://www.centinosystems.com/blog/sql/using-dbatools-for-automated-restore-and-checkdb/
-[Bad Habits Revival]:https://blogs.sentryone.com/aaronbertrand/bad-habits-revival/
+[Bad Habits Revival]:https://www.sentryone.com/blog/aaronbertrand/bad-habits-revival/
 [Deploying Multiple SSIS Projects via PowerShell]:https://www.simple-talk.com/sql/ssis/deploying-multiple-ssis-projects-via-powershell/
 [Determining the Cost Threshold for Parallelism]:http://www.scarydba.com/2017/02/28/determining-the-cost-threshold-for-parallelism/
 [Identifying a row’s physical location]:http://blog.waynesheffield.com/wayne/archive/2017/03/identifying-rows-physical-location/
@@ -1738,7 +1738,7 @@ Articles types:
 [Why Is This Query Sometimes Fast and Sometimes Slow]:https://www.brentozar.com/archive/2016/11/query-sometimes-fast-sometimes-slow/
 [Using Plan Guides to Remove OPTIMIZE FOR UNKNOWN Hints]:https://www.brentozar.com/archive/2016/11/using-plan-guides-remove-optimize-unknown-hints/
 [ETL Best Practices]:https://www.timmitchell.net/etl-best-practices/
-[Resolving Key Lookup Deadlocks with Plan Explorer]:https://blogs.sentryone.com/greggonzalez/key-lookup-deadlocks-plan-explorer/
+[Resolving Key Lookup Deadlocks with Plan Explorer]:https://www.sentryone.com/blog/greggonzalez/key-lookup-deadlocks-plan-explorer/
 [Why ROWLOCK Hints Can Make Queries Slower and Blocking Worse in SQL Server]:https://www.littlekendra.com/2016/02/04/why-rowlock-hints-can-make-queries-slower-and-blocking-worse-in-sql-server/
 [Does a Clustered Index really physically store the rows in key order]:http://www.sqlservercentral.com/blogs/discussionofsqlserver/2012/10/21/does-a-clustered-index-really-physically-store-the-rows-in-key-order/
 [Ugly Pragmatism For The Win]:http://michaeljswart.com/2016/02/ugly-pragmatism-for-the-win/
@@ -1761,7 +1761,7 @@ Articles types:
 [Inside the Storage Engine: Using DBCC PAGE and DBCC IND to find out if page splits ever roll back]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-using-dbcc-page-and-dbcc-ind-to-find-out-if-page-splits-ever-roll-back/
 [Inside the Storage Engine: Anatomy of a page]:http://www.sqlskills.com/blogs/paul/inside-the-storage-engine-anatomy-of-a-page/
 [For The Better Developer: SQL Server Indexes]:https://medium.com/sql-server-for-the-better-developer/know-your-data-base-affd6241bcac
-[#EntryLevel: Compression & Data Types]:https://blogs.sentryone.com/melissaconnors/entry-level-compression/
+[#EntryLevel: Compression & Data Types]:https://www.sentryone.com/blog/melissaconnors/entry-level-compression/
 [Cardinality Estimation for a Predicate on a COUNT Expression]:https://sqlperformance.com/2017/04/sql-optimizer/cardinality-count
 [Changing SQL Server Collation After Installation]:https://www.mssqltips.com/sqlservertip/3519/changing-sql-server-collation-after-installation/
 [Does a TempDB spill mean statistics are out of date?]:https://www.brentozar.com/archive/2017/04/tempdb-spill-mean-statistics-date/
@@ -1901,7 +1901,7 @@ Articles types:
 [Cleanly Uninstalling Stubborn SQL Server Components]:https://www.mssqltips.com/sqlservertip/4050/cleanly-uninstalling-stubborn-sql-server-components/
 [Hey! What's the deal with SQL Server NOCOUNT and T-SQL WHILE loops?]:http://sql-sasquatch.blogspot.ru/2017/11/hey-whats-deal-with-nocount-and-t-sql.html
 [Query Store Settings]:https://www.sqlskills.com/blogs/erin/query-store-settings/
-[Using Plan Explorer with Entity Framework]:https://blogs.sentryone.com/jasonhall/using-plan-explorer-entity-framework/
+[Using Plan Explorer with Entity Framework]:https://www.sentryone.com/blog/jasonhall/using-plan-explorer-entity-framework/
 [Overview of Encryption Tools in SQL Server]:https://matthewmcgiffen.com/2017/12/05/overview-of-encryption-tools-in-sql-server/
 [Clustered Index Uniquifier Existence and Size]:https://sqlquantumleap.com/2017/09/18/clustered-index-uniquifier-existence-and-size/
 [Understanding SQL Server Backups]:https://docs.microsoft.com/en-us/previous-versions/technet-magazine/dd822915(v=msdn.10)
@@ -1998,8 +1998,8 @@ Articles types:
 [Optimization Thresholds – Grouping and Aggregating Data, Part 4]:https://sqlperformance.com/2018/07/sql-performance/grouping-and-aggregating-part-4
 [Optimization Thresholds – Grouping and Aggregating Data, Part 5]:https://sqlperformance.com/2018/08/sql-performance/grouping-and-aggregating-part-5
 [When DBCC OpenTran doesn’t list all open transactions]:https://blogs.msdn.microsoft.com/mosharaf/2013/02/17/when-dbcc-opentran-doesnt-list-all-open-transactions/
-[How I spot not-yet-documented features in SQL Server CTPs]:https://blogs.sentryone.com/aaronbertrand/fishing-for-features-in-ctps/
-[More ways to discover changes in new versions of SQL Server]:https://blogs.sentryone.com/aaronbertrand/more-changes-sql-server/
+[How I spot not-yet-documented features in SQL Server CTPs]:https://www.sentryone.com/blog/aaronbertrand/fishing-for-features-in-ctps/
+[More ways to discover changes in new versions of SQL Server]:https://www.sentryone.com/blog/aaronbertrand/more-changes-sql-server/
 [Tail-Log Backup and Restore in SQL Server]:https://www.sqlshack.com/tail-log-backup-and-restore-in-sql-server/
 [Database Filegroup(s) and Piecemeal restores in SQL Server]:https://www.sqlshack.com/database-filegroups-and-piecemeal-restores-in-sql-server/
 [Updating Statistics with Ola Hallengren’s Script]:https://www.sqlskills.com/blogs/erin/updating-statistics-with-ola-hallengrens-script/
@@ -2043,7 +2043,7 @@ Articles types:
 [SQL queries to manage hierarchical or parent-child relational rows in SQL Server]:https://www.codeproject.com/Articles/818694/SQL-queries-to-manage-hierarchical-or-parent-child
 [Choosing Between Table Variables and Temporary Tables]:https://www.red-gate.com/hub/product-learning/sql-prompt/choosing-table-variables-temporary-tables
 [What's New in the First Public CTP of SQL Server 2019]:https://www.mssqltips.com/sqlservertip/5710/whats-new-in-the-first-public-ctp-of-sql-server-2019/
-[SQL Server support for TLS 1.2 – Read This First!]:https://blogs.sentryone.com/aaronbertrand/tls-1-2-support-read-first/
+[SQL Server support for TLS 1.2 – Read This First!]:https://www.sentryone.com/blog/aaronbertrand/tls-1-2-support-read-first/
 [Misconceptions in SQL Server: A Trio of table variables]:https://sqlinthewild.co.za/index.php/2010/10/12/a-trio-of-table-variables/
 [Using the Same Column Twice in a SQL UPDATE Statement]:https://www.sqltheater.com/blog/using-the-same-column-twice-in-an-update-statement/
 [How to perform a performance test against a SQL Server instance]:https://www.sqlshack.com/how-to-perform-a-performance-test-against-a-sql-server-instance/
@@ -2135,7 +2135,7 @@ Articles types:
 [Difference between Identity & Sequence in SQL Server]:https://www.sqlshack.com/difference-between-identity-sequence-in-sql-server/
 [Does the Rowmodctr Update for Non-Updating Updates?]:https://www.brentozar.com/archive/2019/05/does-the-rowmodctr-update-for-non-updating-updates/
 [An Intro To Data Modeling]:https://donedifferent.data.blog/2019/04/12/an-intro-to-data-modeling/
-[On telemetry and other data collected by SQL Server]:https://blogs.sentryone.com/aaronbertrand/sql-server-telemetry/
+[On telemetry and other data collected by SQL Server]:https://www.sentryone.com/blog/aaronbertrand/sql-server-telemetry/
 [Purging data with batched deletes]:https://am2.co/2019/04/purging-data-with-batched-deletes/
 [Don’t Forget RoboCopy]:https://sqlrus.com/2019/05/dont-forget-robocopy/
 [Understanding the XML description of the Deadlock Graph in SQL Server]:https://www.sqlshack.com/understanding-the-xml-description-of-the-deadlock-graph-in-sql-server/

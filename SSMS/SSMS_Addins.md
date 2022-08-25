@@ -666,7 +666,7 @@ SSMS Lizard extends SQL Server Management Studio with a number of new features n
 [dbForge SQL Complete]:https://www.devart.com/dbforge/sql/sqlcomplete/ordering.html
 [SSMS Tools Pack]:http://www.ssmstoolspack.com/Features
 [SQL Pretty Printer]:http://www.excel-sql-server.com/excel-sql-server-import-export-using-excel-add-ins.htm
-[SQL Sentry Plan Explorer]:https://www.sqlsentry.com/products/plan-explorer/sql-server-query-view
+[SQL Sentry Plan Explorer]:https://www.sentryone.com/plan-explorer
 [TSQL Code Smells Finder]:https://tsqlsmells.codeplex.com/releases/view/101979
 [SQLTreeo]:http://www.sqltreeo.com/
 [ApexSQL Complete]:http://www.apexsql.com/sql_tools_complete.aspx
