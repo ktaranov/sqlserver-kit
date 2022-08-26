@@ -105,7 +105,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [Andrea Allred Blog]:https://royalsql.com/
 [Randolph West Blog]:https://rabryst.ca/
 [Dave Ballantyne]:clearskysql.co.uk/
-[Lori Edwards Blog]:https://blogs.sentryone.com/author/LoriEdwards/
+[Lori Edwards Blog]:https://www.sentryone.com/blog/author/lori-edwards
 [Brent Ozar Blog]:http://www.brentozar.com/
 [SQLBlog]:http://sqlblog.com/
 [Ola Maintenance Solution]:https://ola.hallengren.com/
@@ -179,7 +179,7 @@ Most valuable professionals in Microsoft SQL Server Database world
 [2]:http://nedotter.com/contact/
 [Joe Obbish Blog]:https://orderbyselectnull.com/
 [Stephen Bennett Blog]:https://sqlnotesfromtheunderground.wordpress.com/
-[Brian Davis Articles]:https://blogs.sentryone.com/author/briandavis/
+[Brian Davis Articles]:https://www.sentryone.com/blog/author/brian-davis
 [Raul Gonzalez Blog]:http://www.sqldoubleg.com/
 [Hugo Kornelis Blog]:https://sqlserverfast.com/
 [Drew Furgiuele Blog]:https://port1433.com/

@@ -18,7 +18,7 @@ It also provides tools to deploy, monitor, and upgrade the data-tier components,
 - [SQL Server Management Studio - Changelog (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-changelog-ssms)
 - [SQL Server Management Studio (SSMS) - Release Candidate](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms-release-candidate)
 - [Previous SQL Server Management Studio Releases](https://docs.microsoft.com/en-us/sql/ssms/previous-sql-server-management-studio-releases)
-- [SQLSentry Latest Builds of Management Studio](http://blogs.sqlsentry.com/team-posts/latest-builds-management-studio/)
+- [SQLSentry Latest Builds of Management Studio](https://www.sentryone.com/blog/team-posts/latest-builds-management-studio/)
 - [SQL Server Tools](https://docs.microsoft.com/en-us/sql/ssdt/sql-server-tools)
 - [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/en-us/sql/ssms/sql-server-management-studio-ssms)
 - [Microsoft Download Center SSMS](https://www.microsoft.com/en-us/download/search.aspx?q=sql%20server%20management%20studio&p=0&r=10&t=&s=Relevancy~Descending)

@@ -80,7 +80,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 - Daniel Calbimonte ([b](https://www.sqlshack.com/author/daniel-calbimonte/) | [t](https://twitter.com/dcalbimonte))
 - Ahmad Yaseen ([b](https://www.sqlshack.com/author/ahmad-yaseen/) | [t](https://twitter.com/AhmadZYaseen))
 - Solomon Rutzky ([b](https://sqlquantumleap.com/) | [t](https://twitter.com/SqlQuantumLeap))
-- Bert Wagner ([b](https://blogs.sentryone.com) | [t](https://twitter.com/bertwagner))
+- Bert Wagner ([b](https://bertwagner.com/category/sql.html) | [t](https://twitter.com/bertwagner))
 - Thomas LaRock ([b](https://thomaslarock.com/) | [t](https://twitter.com/SQLRockstar))
 - Jen Mccown ([b](http://www.midnightdba.com/Jen/author/jen/))
 - Louis Davidson ([b](https://www.red-gate.com/simple-talk/author/louis-davidson/) | [t](https://twitter.com/drsql))
@@ -99,7 +99,7 @@ Most tips works for SSMS higher 2008 but some of them only works for SSMS 2016 a
 Default settings (if you need to compare with yours) you can find here: [SSMS settings files](https://github.com/ktaranov/sqlserver-kit/tree/master/SSMS/SSMS_vssettings)
 
 You can configure so many settings in SSMS and then export it and use on all your computers.
-Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://blogs.sentryone.com/aaronbertrand/making-ssms-pretty-my-dark-theme/)
+Below link provide detailed instruction and awesome Dark theme configuration: [Making SSMS Pretty: My Dark Theme](https://www.sentryone.com/blog/aaronbertrand/making-ssms-pretty-my-dark-theme/)
 
 Also you can create shared team settings file and use it from network location.
 Detailed information you can find in this article [Symbolic Links for Sharing Template Files or "How I Broke Management Studio with Symbolic Links"](http://sqlmag.com/sql-server/symbolic-links-sharing-template-files-or-how-i-broke-management-studio-symbolic-links)
@@ -943,7 +943,7 @@ More details [here](https://dba.stackexchange.com/a/147182/107045)
 [SQL Server Management Studio (SSMS) Tips and Tricks]:http://www.bidn.com/blogs/MMilligan/bidn-blog/3326/sql-server-management-studio-ssms-tips-and-tricks
 [Knowing the Options]:http://sqlrus.com/2017/05/knowing-the-options/
 [SQL Server Diagnostics Extension for SSMS]:https://blogs.msdn.microsoft.com/sql_server_team/sql-server-diagnostics-preview/
-[T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://blogs.sentryone.com/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
+[T-SQL Tuesday #92: Lessons Learned the Hard Way]:https://www.sentryone.com/blog/aaronbertrand/t-sql-tuesday-92-lessons-learned-hard-way/
 [SQL Server Diagnostics: New "Analyze Dumps" feature]:https://sqlworkbooks.com/2017/07/sql-server-diagnostics-new-analyze-dumps-feature/
 [Connect to SQL Servers in another domain using Windows Authentication]:https://www.mssqltips.com/sqlservertip/3250/connect-to-sql-servers-in-another-domain-using-windows-authentication/
 [New in SSMS: Searching in Showplan]:https://blogs.msdn.microsoft.com/sql_server_team/new-in-ssms-searching-in-showplan/
