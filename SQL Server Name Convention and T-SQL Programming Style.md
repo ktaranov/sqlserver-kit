@@ -344,7 +344,6 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Avoid using [Cross-Database Queries](https://docs.microsoft.com/en-us/sql/relational-databases/in-memory-oltp/cross-database-queries) because it increase backup/restore complexity (you restore one database, then realise you don’t have log backups to bring the other database to the same point in time).
    Also Azure SQL Database does not support cross-database queries and you can not migrate into in future.
  - Use `temp` tables to reduce network trafic, decrease query complexity and also to get better estimates for modification queries. More details [here](https://www.brentozar.com/archive/2020/04/how-to-get-better-estimates-for-modification-queries/).
-   `INFORMATION_SCHEMA` views only represent a subset of the metadata of an object. The only reliable way to find the schema of a object is to query the `sys.objects` catalog view.
  - When more than one logical operator is used always use parentheses, even when they are not required.
    This can improve the readability of queries, and reduce the chance of making a subtle mistake because of operator precedence.
    There is no significant performance penalty in using parentheses. More details [here](https://docs.microsoft.com/en-us/sql/relational-databases/query-processing-architecture-guide#logical-operator-precedence).
@@ -468,8 +467,8 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
  - Do not use a scalar user-defined function (UDF) in a `JOIN` condition, `WHERE` search condition, or in a `SELECT` list, unless the function is [schema-bound](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices).
    More details [here](https://www.red-gate.com/hub/product-learning/sql-prompt/misuse-scalar-user-defined-function-constant-pe017).
  - For scalar function use [`WITH SCHEMABINDING`](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-function-transact-sql#best-practices) option to get a performance boost. More details [here](https://bertwagner.com/2018/12/04/two-words-for-faster-scalar-functions/)
- - Do not use [`INFORMATION_SCHEMA`] views to determine the schema of an object. [`INFORMATION_SCHEMA`] views only represent a **subset of the metadata** of an object.
-   The only reliable way to find the schema of a object is to query the [`sys.objects`](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) catalog view.
+ - <a href="information_schema"></a> Do not use [`INFORMATION_SCHEMA`] views to determine the schema of an object. [`INFORMATION_SCHEMA`] views only represent a **subset of the metadata** of an object.
+   The only reliable way to find the schema of a object is to query the [`sys.objects`](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-objects-transact-sql) catalog view. [`INFORMATION_SCHEMA`] does not represent every possible state of the objects in SQL. For example, [`filtered indexes`](https://docs.microsoft.com/en-us/sql/relational-databases/indexes/create-filtered-indexes). The [`INFORMATION_SCHEMA`] are incomplete.
    More details [here](https://github.com/MicrosoftDocs/sql-docs/issues/4188).
  - Do not use explicit transactions for DML and DDL especially for reorganize index because the locking behavior of this statemnets becomes more restrictive.
    More details [here](https://github.com/MicrosoftDocs/sql-docs/pull/4011).
