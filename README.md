@@ -555,12 +555,12 @@ BIML Bloggers
 
 ## TSQL Format Code
  - [SQLinform Online](https://sqlinform.azurewebsites.net)
+ - [SQLinform Online](https://www.sqlinform.com)
  - [Instant SQL Formatter](http://www.dpriver.com/pp/sqlformat.htm)
  - http://poorsql.com/
  - http://www.architectshack.com/PoorMansTSqlFormatter.ashx
  - http://www.ssmstoolspack.com/
  - http://www.devart.com/dbforge/sql/sqlcomplete/
- - http://www.sql-format.com/
  - http://www.apexsql.com/sql_tools_refactor.aspx
  - http://stackoverflow.com/questions/401928/sql-formatter-for-sql-management-studio
 
