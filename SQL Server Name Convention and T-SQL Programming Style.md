@@ -795,6 +795,7 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
  - [SQL naming conventions](https://www.red-gate.com/simple-talk/blogs/sql-naming-conventions/) (by Phi Factor)
  - [SQL Server Compact Object Limitations](http://technet.microsoft.com/en-us/library/ms172451%28v=sql.110%29.aspx)
  - [Dos and Don'ts of Dynamic SQL](https://www.sqlservercentral.com/articles/dos-and-donts-of-dynamic-sql) (by Thom Andrews)
+ - [Unique Key in SQL](https://www.scaler.com/topics/unique-key-in-sql/) (Scaler Topics)
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -809,3 +810,4 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
 [autocommit]:https://docs.microsoft.com/en-us/sql/t-sql/statements/set-implicit-transactions-transact-sql
 [`ANSI`]:http://standards.iso.org/ittf/PubliclyAvailableStandards/c053681_ISO_IEC_9075-1_2011.zip
 [hints]:https://docs.microsoft.com/en-us/sql/t-sql/queries/hints-transact-sql
+  
