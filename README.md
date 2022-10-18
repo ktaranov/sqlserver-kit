@@ -253,9 +253,12 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Darling Data - The Best SQL Server Training On The Internet?](https://learn.erikdarlingdata.com/) (by Erik Darling)
      - [W3Resource SQL Exercises, Practice, Solution](https://www.w3resource.com/sql-exercises/) (by w3resource)
      - [LinkedIn SQL Server cources](https://www.linkedin.com/learning/search?entityType=COURSE&keywords=sql%20server) (by LinkedIn)
- - SQL Server Backwards Compatibility <a id="backwards-compatibility"></a>
-   - [2017 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
-   - [2016 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/database-engine/sql-server-database-engine-backward-compatibility)
+ - SQL Server Deprecated database engine features and Backwards Compatibility <a id="deprecated"></a>
+   - [Deprecated Features in SQL Server Replication](https://learn.microsoft.com/en-us/sql/relational-databases/replication/deprecated-features-in-sql-server-replication?view=sql-server-ver16)
+   - [Deprecated database engine features in SQL Server 2022](https://learn.microsoft.com/sql/database-engine/discontinued-database-engine-functionality-in-sql-server?view=sql-server-ver16)
+   - [Deprecated database engine features in SQL Server 2019](https://learn.microsoft.com/sql/database-engine/deprecated-database-engine-features-in-sql-server-2019?view=sql-server-ver16)
+   - [Deprecated database engine features in SQL Server 2017](https://learn.microsoft.com/sql/database-engine/deprecated-database-engine-features-in-sql-server-2017?view=sql-server-ver16)
+   - [Deprecated database engine features in SQL Server 2016](https://learn.microsoft.com/sql/database-engine/deprecated-database-engine-features-in-sql-server-2016?view=sql-server-ver16)
    - [2014 Backwards Compatibility](https://docs.microsoft.com/en-us/sql/getting-started/backward-compatibility?view=sql-server-2014)
    - [2012 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/ms143532(v=sql.110))
    - [2008 R2 Backwards Compatibility](https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/cc707787(v=sql.105))
@@ -554,8 +557,8 @@ BIML Bloggers
 
 
 ## TSQL Format Code
- - [SQLinform Online](https://sqlinform.azurewebsites.net)
- - [SQLinform Online](https://www.sqlinform.com)
+ - [SQLinform Online Web](https://sqlinform.azurewebsites.net)
+ - [SQLinform Online Utility](https://www.sqlinform.com)
  - [Instant SQL Formatter](http://www.dpriver.com/pp/sqlformat.htm)
  - http://poorsql.com/
  - http://www.architectshack.com/PoorMansTSqlFormatter.ashx
