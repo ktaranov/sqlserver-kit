@@ -485,6 +485,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL cheat sheet for PostgreSQL and Oracle](https://www.pcwdld.com/sql-cheat-sheet) (by Marc Wilson)
     - [Bllitz Excel UI](https://1pro.bi/blitz-excel-ui/) (by Alex)
     - [Industry-specific Data Models - cover Subject Areas and are used to create Enterprise Data Models](http://www.databaseanswers.org/data_models/)
+    - [SQLFacts - A powerful suite of FREE TSQL tools for SQL Server database professionals](https://www.sqlfacts.com)
 
 **[⬆ back to top](#table-of-contents)**
 
