@@ -82,6 +82,7 @@ Source links:
 - Aaron Bertrand ([b](https://sqlperformance.com/author/abertrand) | [t](https://twitter.com/AaronBertrand))
 - Wilfred van Dijk
 - Tracy Boggiano ([b](http://databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
+- Danilo Zocco (https://github.com/CrazySwimmer)
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -3988,10 +3989,10 @@ Link: https://blogs.msdn.microsoft.com/sqlreleaseservices/sql-server-2012-servic
 Link: [Hidden Performance & Manageability Improvements in SQL Server 2012 / 2014]<br />
 Link: [KB2964518]<br />
 Scope: global only
-
-
-<a id="8099"></a>
-#### Trace Flag: 8099
+ 
+ 
+ <a id="8101"></a>
+#### Trace Flag: 8101
 Function: Enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.<br />
 Note: This trace flag applies to SQL Server 2019 (15.x) CU2 and higher builds.<br />
 Link: https://support.microsoft.com/kb/4538688<br />
