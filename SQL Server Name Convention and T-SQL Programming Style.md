@@ -781,6 +781,7 @@ More details [here](http://www.sqlservertutorial.net/sql-server-stored-procedure
  - [SQL Server Constraints](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-table-table-constraint-transact-sql)
  - [CHECK Constraint TECHNET](http://technet.microsoft.com/en-us/library/ms188258%28v=sql.105%29.aspx)
  - [SQL Server CLR Integration](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/introduction-to-sql-server-clr-integration)
+ - [SQL Server in Detail](https://www.scaler.com/topics/sql-server/)
  - [Deploying CLR Database Objects](https://docs.microsoft.com/en-us/sql/relational-databases/clr-integration/deploying-clr-database-objects)
  - [CLR Stored Procedures](https://docs.microsoft.com/en-us/sql/database-engine/dev-guide/clr-stored-procedures)
  - [User-defined Functions](https://docs.microsoft.com/en-us/sql/relational-databases/user-defined-functions/create-user-defined-functions-database-engine)
