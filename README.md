@@ -168,6 +168,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [Biggest data breaches in history](https://www.comparitech.com/blog/information-security/biggest-data-breaches-in-history/) (by Dave Albaugh)
    - [Microsoft SQL Server Permissions Posters](https://github.com/Microsoft/sql-server-samples/tree/master/samples/features/security/permissions-posters)
    - [Module Signing Info](https://modulesigning.info/) - Info and resources related to module signing (i.e. Certificates, Asymmetric Keys, `ADD SIGNATURE`, etc) in T-SQL and SQLCLR
+   - [SQL Server security best practices](https://learn.microsoft.com/en-us/sql/relational-databases/security/sql-server-security-best-practices) (by Microsoft)
  - Free Videos <a id="free-videos"></a>
    - [Youtube Brent Ozar](https://www.youtube.com/user/BrentOzar/videos)
    - [Youtube Free SQL Server Statisctics Class](https://www.youtube.com/playlist?list=PLDYqU5RH_aX05ajDAH-6sYXr4i1Mjh9lT)
