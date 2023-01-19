@@ -152,6 +152,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [BornSQL Blog](https://bornsql.ca/blog/)
     - [Kevin Chant Blog](https://www.kevinrchant.com/)
     - [SQLBlog.org](https://sqlblog.org)
+    - [Data Visualization With SQL](https://medium.com/towards-artificial-intelligence/data-vizualization-with-sql-a-brief-guide-4be81f02c5a0)
+    - [SQL Cheat Sheet](https://www.interviewbit.com/sql-cheat-sheet/)
     - [Idera SQL Server Blog](https://community.idera.com/tags/SQL%2bServer)
     - [SQL Server Science Blog](https://www.sqlserverscience.com/) (by Max Vernon)
     - [Kohera SQL Server Blog](https://kohera.be/blog/category/sql-server/)
