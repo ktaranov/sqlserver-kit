@@ -239,6 +239,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
      - [SQL Murder Mystery](https://github.com/NUKnightLab/sql-mysteries) (by NUKnightLab)
      - [SQL Murder Mystery with answers](https://github.com/erika-e/sql-mysteries) (by Erika Pullum)
      - [SQL Problems and solutions](http://www.sql-tutorial.ru/en) (by S. I. Moiseenko)
+     - [Advanced T-SQL Puzzles](https://github.com/smpetersgithub/AdvancedSQLPuzzles) (by Scott Peters)
+     - [Leetcode SQL Problems](https://leetcode.com/problemset/database/)
    - Paid
      - [Lynda Courses](http://www.lynda.com/SQL-Server-training-tutorials/456-0.html)
      - [Veeam Free Courses](https://go.veeam.com/microsoft-sql-series-webinars.html)
