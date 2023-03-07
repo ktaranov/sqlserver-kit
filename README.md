@@ -487,7 +487,8 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQL Assessment API rules in .csv format](https://github.com/microsoft/sql-server-samples/blob/master/samples/manage/sql-assessment-api/DefaultRuleset.csv) (by Microsoft)
     - [SQL cheat sheet for PostgreSQL and Oracle](https://www.pcwdld.com/sql-cheat-sheet) (by Marc Wilson)
     - [Bllitz Excel UI](https://1pro.bi/blitz-excel-ui/) (by Alex)
-    - [Industry-specific Data Models - cover Subject Areas and are used to create Enterprise Data Models](http://www.databaseanswers.org/data_models/)
+    - [Industry-specific Data Models - cover Subject Areas and are used to create Enterprise Data Models](https://web.archive.org/web/20220330034214/http://databaseanswers.org/data_models/)
+    - [Library of Database Schemas](https://dbschemalibrary.com/)
     - [SQLFacts - A powerful suite of FREE TSQL tools for SQL Server database professionals](https://www.sqlfacts.com)
 
 **[⬆ back to top](#table-of-contents)**
