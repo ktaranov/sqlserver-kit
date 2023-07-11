@@ -1,5 +1,5 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **36** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **37** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
@@ -40,6 +40,8 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SSMS Schema Folders](#ssms-schema-folders)           | [SSMS Schema Folders]         | 2018-10-06   | 2012-2018            | Nicholas Ross        | Yes          | No    |
 | [Statistics Reporter](#statistics-reporter)           | [Statistics Reporter]         | 2019-04-17   | 2014-2018            | Analytics Bar        | Yes          | No    |
 | [SSMS Lizard](#ssms-lizard)                           | [SSMS Lizard]                 | 2020-06-15   | 2018-2018            | Lizard Labs Software | Yes          | No    |
+| [SSMS Object Explorer Menu](#ssms-lizard)             | [SSMS Object Explorer Menu]   | 2023-07-10   | 2018-2022            | 
+Daniel Brink         | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -656,6 +658,18 @@ SSMS Lizard extends SQL Server Management Studio with a number of new features n
 - Quickly attach the query results to an e-mail, FTP or even Google Drive with a single click of a button; and more.
 
 
+<a id="ssms-menu"></a>
+## SSMS Object Explorer Menu
+Download page: [SSMS Object Explorer Menu]<br/>
+Release date: 2023-07-10<br/>
+Support Version: 2018-2023<br/>
+Developer: Daniel Brink<br/>
+Free version: Yes<br/>
+Price: No
+
+SSMS extension for adding custom menu items to the Object Explorer's right-click context menu.
+
+
 [SSMSBoost]:http://www.ssmsboost.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
@@ -694,6 +708,7 @@ SSMS Lizard extends SQL Server Management Studio with a number of new features n
 [Michel Max - SSMS Tools]:https://sourceforge.net/projects/michelmaxssmstools2017/
 [SSMS Schema Folders]:https://github.com/nicholas-ross/SSMS-Schema-Folders
 [Statistics Reporter]:https://analyticsbar.com/blog/statistics-reporter-ssms-extension/
+[SSMS Object Explorer Menu]:https://github.com/brink-daniel/ssms-object-explorer-menu
 
 [SQL_Search Download]:https://download.red-gate.com/SQL_Search.exe
 [Apex SQL Search Download]:https://www.apexsql.com/zips/ApexSQLSearch.exe
