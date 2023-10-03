@@ -4787,6 +4787,15 @@ Link: [New Undocumented Trace Flags]<br />
 Scope: ?
 
 
+<a id="9265"></a>
+#### Trace Flag: 9265
+**Undocumented trace flag**<br />
+Function: MS engineering team has decided to generate a DUMP from SQL 2019+ every time a “PLAN cannot be generated”. Once a Dump freezes connections during the generation, the cluster will probably lost the connectivity to the cluster and the AG can be down/failover if it has automatic failover configured. The mitigation for this issue (avoid DUMP generation) is to enable TF Trace Flag 9265 on Startup.
+Once TF 9265 is enabled, SQL Server stops generating DUMP on the “PLAN cannot be generated” error but only writes a message to ERRORLOG file (Internal Query Processor Error: The query processor could not produce a query plan. For more information, contact Customer Support Services).
+<br />
+Link: None
+
+
 <a id="9268"></a>
 #### Trace Flag: 9268
 Function: SQL 8 - When SQL Server runs a parameterized query that contains several IN clauses, each with a large number of values, SQL Server may return the following error message after a minute or more of high CPU utilization: KB 325658. Server: Msg 8623, Level 16, State 1. Internal Query Processor Error: The query processor could not produce a query plan. Contact your primary support provider for more information.<br />
