@@ -506,6 +506,7 @@ BIML Resources
 - [Stairway to Biml](http://www.sqlservercentral.com/stairway/100550/)
 - [Biml User Group at LinkedIn](https://www.linkedin.com/groups/4640985)
 - [Building Blocks of Biml (Pluralsight course by Stacia Misner Varga)](https://app.pluralsight.com/library/courses/building-blocks-biml/table-of-contents)
+- [SQL Reserved Words](https://modern-sql.com/reserved-words-empirical-list) (by Markus Winand)
 
 BIML Bloggers
 - [Ben Weissman](https://www.solisyon.de/biml-blog-de/)
