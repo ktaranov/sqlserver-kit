@@ -5574,6 +5574,14 @@ Scope: global or session<br />
 SQL Server Version: >= 2019 CU9, >= 2017 CU21
 
 
+<a id="12606"></a>
+#### Trace Flag: 12606
+Function: Enables Query Store for secondary replicas.<br />
+Link: https://learn.microsoft.com/en-us/sql/relational-databases/performance/query-store-for-secondary-replicas?view=sql-server-ver16<br />
+Scope: global<br />
+SQL Server Version: >= 2022
+
+
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
 [Query Store Trace Flags]:https://www.sqlskills.com/blogs/erin/query-store-trace-flags/
 [DBCC TRACEON]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql
