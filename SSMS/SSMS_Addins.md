@@ -85,9 +85,9 @@ Price: $17-25
 SQL Refactor Studio is a SQL Server Management Studio addin. It contains a lot of useful tools that help SQL Server developers to perform their daily routines.
 
 Key features of SQL Refactor Studio:
-- Group Databases and Database Objects  <font size= "3"><span style="color:red"> _New!_ </font></span>
-- SQL Query History  <font size= "3"><span style="color:red"> _New!_ </font></span>
-- Generate C# classes <font size= "3"><span style="color:red"> _New!_ </font></span>
+- Group Databases and Database Objects
+- SQL Query History
+- Generate C# classes
 - Refactoring «Rename»
 - View Dependencies
 - Find Code
