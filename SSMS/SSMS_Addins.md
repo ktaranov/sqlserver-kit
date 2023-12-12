@@ -1,9 +1,10 @@
 # SQL Server Management Studio add-ins
-Complete list of useful and must have add-ins for SQL Server Management Studio - **37** SSMS add-ins
+Complete list of useful and must have add-ins for SQL Server Management Studio - **38** SSMS add-ins
 
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-08-19   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
+| [Statistics Reporter SSMS Extension](#statistics-reporter-ssms-extension)        | [Statistics Reporter SSMS Extension]    | 2019-04-17   | 2014, 2016-2019      | Era Apps             | Yes          |    $9 |
 | [SqlSmash](#sqlsmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008-2017            | Red Gate             | No           |  $369 |
@@ -70,6 +71,18 @@ SSMSBoost add-in adds missing features and improves your productivity when worki
 Licensing options: after 30 day trial period register and get free community license or buy the professional version.
 
 [Features list / SSMSBoost version comparison](http://www.ssmsboost.com/VersionCompare)
+
+
+<a id="statistics-reporter-ssms-extension"></a>
+## Statistics Reporter SSMS Extension
+Download page: [Statistics Reporter SSMS Extension]<br/>
+Release date: 2019-04-17<br/>
+Support Version: 2014, 2016-2019<br/>
+Developer: Era Apps<br/>
+Free version: Yes<br/>
+Price: $9
+
+Statistics Reporter SSMS Extension is a SQL Server Management Studio Add-in for parsing SET STATISTICS IO, TIME ON into a beautiful report.
 
 
 <a id="sqlsmash"></a>
@@ -682,6 +695,7 @@ Adds a true dark theme to SSMS.
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
+[Statistics Reporter SSMS Extension]:https://analyticsbar.com/blog/statistics-reporter-ssms-extension/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
