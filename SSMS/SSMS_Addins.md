@@ -4,7 +4,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | Name                                                  | Download page                 | Release Date | Support SSMS Version | Developer            | Free version | Price |
 |-------------------------------------------------------|-------------------------------|--------------|:---------------------|----------------------|--------------|------:|
 | [SSMSBoost](#ssmsboost)                               | [SSMSBoost]                   | 2019-08-19   | 2008-2018            | Solutions Crew GmbH  | Yes          |  $150 |
-| [Statistics Reporter SSMS Extension](#statistics-reporter-ssms-extension)        | [Statistics Reporter SSMS Extension]    | 2019-04-17   | 2014, 2016-2019      | Era Apps             | Yes          |    $9 |
+| [SQL Refactor Studio](#sql-refactor-studio)        | [SQL Refactor Studio] | 2013-09-01   | 2013-2016      | SQL Refactor Studio Team             | Yes          |    $17-25 |
 | [SqlSmash](#sqlsmash)                                 | [SqlSmash]                    | 2017-06-10   | 2008-2017            | Smashing Jedis LLC   | Yes          |   $99 |
 | [SQL Search](#sql-search)                             | [SQL Search]                  | 2017-02-27   | 2008-2017            | Red Gate             | Yes          | No    |
 | [Red Gate SQL Test](#red-gate-sql-test)               | [Red Gate SQL Test]           | 2017-03-21   | 2008-2017            | Red Gate             | No           |  $369 |
@@ -73,16 +73,37 @@ Licensing options: after 30 day trial period register and get free community lic
 [Features list / SSMSBoost version comparison](http://www.ssmsboost.com/VersionCompare)
 
 
-<a id="statistics-reporter-ssms-extension"></a>
-## Statistics Reporter SSMS Extension
-Download page: [Statistics Reporter SSMS Extension]<br/>
-Release date: 2019-04-17<br/>
-Support Version: 2014, 2016-2019<br/>
-Developer: Era Apps<br/>
+<a id="sql-refactor-studio"></a>
+## SQL Refactor Studio
+Download page: [SQL Refactor Studio]<br/>
+Release date: 2013-09-01<br/>
+Support Version: 2013-2016<br/>
+Developer: SQL Refactor Studio Team<br/>
 Free version: Yes<br/>
-Price: $9
+Price: $17-25
 
-Statistics Reporter SSMS Extension is a SQL Server Management Studio Add-in for parsing SET STATISTICS IO, TIME ON into a beautiful report.
+SQL Refactor Studio is a SQL Server Management Studio addin. It contains a lot of useful tools that help SQL Server developers to perform their daily routines.
+
+Key features of SQL Refactor Studio:
+- Group Databases and Database Objects  <font size= "3"><span style="color:red"> _New!_ </font></span>
+- SQL Query History  <font size= "3"><span style="color:red"> _New!_ </font></span>
+- Generate C# classes <font size= "3"><span style="color:red"> _New!_ </font></span>
+- Refactoring «Rename»
+- View Dependencies
+- Find Code
+- Displaying calculations on the SSMS status bar
+- Refactoring «Add CRUD Methods»
+- Refactoring «Introduce Trigger for History»
+- Refactoring «Add Lookup Table»
+- Refactoring «Move Columns»
+- Find Data
+- Generate Select Statement
+- Script Table Data
+- Change collation of table columns
+- Highlight all occurrences of selected word
+- Scripting an object as ALTER
+- Get row count
+- Get Top(N) rows
 
 
 <a id="sqlsmash"></a>
@@ -695,7 +716,7 @@ Adds a true dark theme to SSMS.
 
 
 [SSMSBoost]:http://www.ssmsboost.com/
-[Statistics Reporter SSMS Extension]:https://analyticsbar.com/blog/statistics-reporter-ssms-extension/
+[SQL Refactor Studio]: https://sqlrefactorstudio.com/
 [SqlSmash]:http://www.sqlsmash.com/
 [Red Gate SQL Code Guard]:https://www.red-gate.com/products/sql-development/sql-code-guard/
 [SQL Search]:http://www.red-gate.com/products/sql-development/sql-search/
