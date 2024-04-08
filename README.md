@@ -492,6 +492,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [Industry-specific Data Models - cover Subject Areas and are used to create Enterprise Data Models](https://web.archive.org/web/20220330034214/http://databaseanswers.org/data_models/)
     - [Library of Database Schemas](https://dbschemalibrary.com/)
     - [SQLFacts - A powerful suite of FREE TSQL tools for SQL Server database professionals](https://www.sqlfacts.com)
+    - [sql-log-shipping-service - provides a solution for automatically restoring SQL Server transaction log backups](https://github.com/trimble-oss/sql-log-shipping-service) (by Trimble Online Source Store)
 
 **[⬆ back to top](#table-of-contents)**
 
