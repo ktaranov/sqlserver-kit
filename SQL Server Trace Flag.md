@@ -2819,9 +2819,9 @@ Link: https://support.microsoft.com/kb/3003760
 <a id="3895"></a>
 #### Trace Flag: 3895
 **Undocumented trace flag**<br />
-Function: In SQL Server 2019, when you enable the [Memory-Optimized TempDB Metadata](https://docs.microsoft.com/en-us/sql/relational-databases/databases/tempdb-database) feature, this trace flag is automatically enabled after the next restart.
-When you disable that feature, the trace flag is automatically removed after the next restart.
-Also if you add race flag 3895 to startup parameters after restarting SQL Server option `IsTempdbMetadataMemoryOptimized` will be enabled.<br />
+Function: In SQL Server 2019, when you enable the [Memory-Optimized TempDB Metadata](https://docs.microsoft.com/en-us/sql/relational-databases/databases/tempdb-database) feature, this trace flag is automatically enabled as a global session flag after the next restart.
+When you disable that feature, the trace flag is automatically removed as a global session flag after the next restart.
+Also, if you add trace flag 3895 to startup parameters after restarting SQL Server option `IsTempdbMetadataMemoryOptimized` will be enabled. NOTE: It is NOT recommended to add trace flag 3895 as a startup trace flag to enable TempDB Memory-Optimized Metadata. Although this technically enables the option, you will no longer be able to disable it using sp_configure or ALTER SERVER CONFIGURATION. The only way you'll be able to disable this feature is to manually remove this trace flag from startup parameters in the SQL Server Configuration Manager startup properties<br />
 Link: https://github.com/ktaranov/sqlserver-kit/blob/master/Scripts/Trace_Flag/Trace_Flag_3895.sql<br />
 Scope: global only
 
