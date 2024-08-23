@@ -234,7 +234,7 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
  - [Trace Flag 3427](#3427) (for SQL Server 2016)
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
  - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server))
- - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016)
+ - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016 and < SQl Server 2019)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016 and Query Store enabled)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016 and < 2019 and Query Store enabled)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
@@ -3575,7 +3575,8 @@ Scope: global or session or query
 Function: Enables the lightweight query execution statistics profiling infrastructure.
 unless your server is already CPU bound, like you’re running all the time with 95% CPU, unless you are at that point, turn on this trace flag at any server you have.
 This would be my advice here because this enables that lightweight profiling infrastructure there and then you’ll see in a few minutes what it unleashes here.
-So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem. To tap into running system and look at what it’s doing.”<br />
+So one thing that happens when I enable the lightweight profiling is that the sys.dm_exec_query_profiles DMV, which is something that actually populates the live query stats ability or feature of SSMS, now also is also populated with this lightweight profiling, which means that for all essence, we are now able to run a live query stats on all fashions at any given point in time, and this is extremely useful for let’s say a production DBA that someone calls and says, “Hey, you have a problem. To tap into running system and look at what it’s doing.”
+**Applies to: SQL Server 2016 (13.x) Service Pack 1 and later versions. Starting with SQL Server 2019 (15.x), this trace flag has no effect because lightweight profiling is enabled by default.**<br />
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/3170113<br />
 Link: https://www.brentozar.com/archive/2017/10/get-live-query-plans-sp_blitzwho/<br />
