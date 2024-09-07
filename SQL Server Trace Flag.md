@@ -45,7 +45,7 @@ Source links:
 **Great thanks to:**
 - Aaron Morelli ([b](https://sqlcrossjoin.wordpress.com) | [@sqlcrossjoin](https://twitter.com/sqlcrossjoin))
 - Steinar Andersen ([b](http://www.sqlservice.se/) | [@SQLSteinar](https://twitter.com/SQLSteinar))
-- Brent Ozar ([b](https://www.brentozar.com/) | [@BrentO](https://twitter.com/BrentO))
+- Brent Ozar ([b](https://www.brentozar.com/))
 - Yusuf Anis
 - Lars Utterström
 - Martin Höglund
@@ -5581,6 +5581,23 @@ Function: Enables Query Store for secondary replicas.<br />
 Link: https://learn.microsoft.com/en-us/sql/relational-databases/performance/query-store-for-secondary-replicas?view=sql-server-ver16<br />
 Scope: global<br />
 SQL Server Version: >= 2022
+
+
+<a id="12618"></a>
+#### Trace Flag: 12618
+Function: Introduces a new plan regression detection model for Automatic Plan Correction that includes multiple consecutive checks.<br />
+Link: [SQL Server 2022 CU4 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate4#2344871)<br />
+Scope: global<br />
+SQL Server Version: >= 2022 CU4
+
+
+<a id="12656"></a>
+#### Trace Flag: 12656
+Function: For Automatic Plan Correction, introduces the ability to use a time-based plan regression check that will occur five minutes after a plan change is discovered, which avoids biasing the regression checks by queries that execute quickly.<br />
+Link: [SQL Server 2022 CU4 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate4#2344871)<br />
+Scope: global<br />
+SQL Server Version: >= 2022 CU4
+
 
 
 [Docs Trace Flags]:https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql
