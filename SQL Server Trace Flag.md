@@ -234,11 +234,11 @@ If you know behavior some of them please open an issue or contact me (taranov.pr
  - [Trace Flag 3427](#3427) (for SQL Server 2016)
  - [Trace Flag 3449](#3449) (for versions SQL Server 2012 SP3 CU3 or later or SQL Server 2014 SP1 CU7 or later)
  - [Trace Flag 6534](#6534) (for versions SQL Server 2012, 2014, 2016) (if use [spatial data types](https://docs.microsoft.com/sql/relational-databases/spatial/spatial-data-sql-server))
- - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016 and < SQl Server 2019)
+ - [Trace Flag 7412](#7412) (for versions >= SQL Server 2016 and < SQL Server 2019)
  - [Trace Flag 7745](#7745) (for versions >= SQL Server 2016 and Query Store enabled)
  - [Trace Flag 7752](#7752) (for versions >= SQL Server 2016 and < 2019 and Query Store enabled)
  - [Trace Flag 7806](#7806) (for SQL Server Express Edition)
- - [Trace Flag 8099](#8099) (for versions >= 2019 CU2)
+ - [Trace Flag 8099](#8099) (for versions 2019 CU2 and 2019 CU3 only)
 
 **Trace Flag 272** prevents identity gap after restarting SQL Server 2012 instance, critical for columns with identity and `tinyint` and `smallint` data types.
 (Demo for repeating this issue [here](https://github.com/ktaranov/sqlserver-kit/Errors/Identity_gap_sql_server_2012.sql))
@@ -285,7 +285,7 @@ Use this trace flag if SQL Server is experiencing high number of [QDS_LOADDB](ht
 
 **Trace Flag: 7806** enables a dedicated administrator connection ([DAC]) on SQL Server Express.
 
-**Trace Flag: 8099** enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.
+**Trace Flag: 8099** enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.  Starting with SQL 2019 CU 4 this fix is enabled by default.
 
 
 <a id="trace-flags-list"></a>
