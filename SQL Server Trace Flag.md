@@ -3484,6 +3484,13 @@ Scope: global only<br />
 SQL Server Version: >= 2022
 
  
+<a id="6981"></a>
+#### Trace Flag: 6981
+Function: Handle large objects (LOBs) when rebuilding the index that has an assertion issue (Location: blobbase.cpp:345; Expression: IS_ON (BLB_TI_END, m_status)). After turning on this trace flag and rebuilding the affected index, the assertion dump shouldn't be generated again. Added in SQL Server 2019 CU29.<br />
+Link: [SQL Server 2019 CU29 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2019/cumulativeupdate29#3370476)<br />
+SQL Server Version: >= 2019 CU29
+
+
 <a id="7103"></a>
 #### Trace Flag: 7103
 **Undocumented trace flag**<br />
@@ -3666,6 +3673,12 @@ Link: None
 #### Trace Flag: 7614
 Function: SQL 9 - Full-text index population for the indexed view is very slow<br />
 Link: None
+
+
+<a id="7617"></a>
+#### Trace Flag: 7617
+Function: Skip dropping full-text index fragments marked as deletion during a database recovery process. Added in SQL Server 2019 CU29.<br />
+Link: [SQL Server 2019 CU29 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2019/cumulativeupdate29#3540450)
 
 
 <a id="7646"></a>
@@ -4063,6 +4076,12 @@ Link: https://support.microsoft.com/kb/959008
 #### Trace Flag: 8501
 Function: Writes detailed information about Ms-DTC context & state changes to the log<br />
 Link: None
+
+
+<a id="8531"></a>
+#### Trace Flag: 8531
+Function: Fixes a contention issue with high KTM_RECOVERY_MANAGER wait times that you might encounter when running XA distributed transactions. Note: You need to turn on trace flag 8531 as a startup trace flag.<br />
+Link: [SQL Server 2019 CU29 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2019/cumulativeupdate29#3417392)
 
 
 <a id="8599"></a>
@@ -5597,6 +5616,12 @@ Function: For Automatic Plan Correction, introduces the ability to use a time-ba
 Link: [SQL Server 2022 CU4 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate4#2344871)<br />
 Scope: global<br />
 SQL Server Version: >= 2022 CU4
+
+<a id="15915"></a>
+#### Trace Flag: 15915
+Function: Fixes a performance issue that you might encounter only when sp_lock is called frequently from multiple connections, which might cause a memory leak. The memory isn't cleaned up until you restart the SQL Server service. Added in SQL Server 2019 CU29.<br />
+Link: [SQL Server 2019 CU29 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2019/cumulativeupdate29#3180085)<br />
+SQL Server Version: >= 2019 CU29
 
 
 
