@@ -26,6 +26,12 @@ This driver is developed, tested, and supported by Microsoft.
 [Microsoft ADO.NET for SQL Server](https://docs.microsoft.com/en-us/sql/connect/ado-net/microsoft-ado-net-for-sql-server) | [Download .Net Driver](http://www.microsoft.com/net/download/)
 
 
+### Ballerina
+The Ballerina MSSQL Connector provides seamless integration with Microsoft SQL Server, allowing developers to work with databases efficiently in cloud-native and REST-based applications. This connector is an open-source project which is actively developed, tested, and supported by the Ballerina team.
+
+[ballerinax/mssql connector for SQL Server](https://central.ballerina.io/ballerinax/mssql/latest) | [GitHub](https://github.com/ballerina-platform/module-ballerinax-mssql)
+
+
 ### JDBC
 The JDBC SQL driver is a Java implementation of the TDS protocol, which is supported by all modern versions of SQL Server. This driver is developed, tested, and supported by Microsoft.
 
