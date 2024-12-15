@@ -23,74 +23,61 @@ MODIFICATION LOG
 *******************************************************************************/
 SET NOCOUNT ON;
 
--- Declare and initialize variables.
-DECLARE @MaxValue   INT,
-        @SQLCMD     VARCHAR(MAX),
-        @RegHive    VARCHAR(50),
-        @RegKey     VARCHAR(100),
-        @DebugLevel TINYINT;
+DECLARE @MaxValue INT,
+        @SQLCMD VARCHAR(MAX),
+        @RegHive VARCHAR(50) = 'HKEY_LOCAL_MACHINE',
+        @RegKey VARCHAR(100) = 'Software\Microsoft\MSSQLSERVER\MSSQLServer\Parameters',
+        @DebugLevel TINYINT = 1;
 
--- Registry hive and key for SQL Server startup parameters
-SET @RegHive = 'HKEY_LOCAL_MACHINE';
-SET @RegKey  = 'Software\Microsoft\MSSQLSERVER\MSSQLServer\Parameters';
--- Set debug level: 0 to execute changes, 1 to only show what will happen
-SET @DebugLevel = 1;
-
--- Add the trace flags that you want to modify here.
 DECLARE @TraceFlags TABLE (
-    TF                  INT,
-    enable              BIT,
-    enable_on_startup   BIT,
-    TF2                 AS '-T' + CONVERT(VARCHAR(15), TF)
+    TF INT,
+    enable BIT,
+    enable_on_startup BIT,
+    TF2 AS '-T' + CONVERT(VARCHAR(15), TF)
 );
 INSERT INTO @TraceFlags (TF, enable, enable_on_startup)
-SELECT 1117, 1, 1 UNION ALL
-SELECT 1118, 1, 1 UNION ALL
-SELECT 1204, 0, 0 UNION ALL
-SELECT 1222, 0, 0;
+VALUES (1117, 1, 1),
+       (1118, 1, 1),
+       (1204, 0, 0),
+       (1222, 0, 0);
 
--- Get all arguments/parameters when starting up the service.
 DECLARE @SQLArgs TABLE (
-    Value   VARCHAR(50),
-    Data    VARCHAR(500),
-    ArgNum  AS CONVERT(INT, REPLACE(Value, 'SQLArg', ''))
+    Value VARCHAR(50),
+    Data VARCHAR(500),
+    ArgNum AS CONVERT(INT, REPLACE(Value, 'SQLArg', ''))
 );
 INSERT INTO @SQLArgs
 EXEC master.sys.xp_instance_regenumvalues @RegHive, @RegKey;
 
--- Get the highest argument number that is currently set
 SELECT @MaxValue = MAX(ArgNum) FROM @SQLArgs;
 PRINT 'MaxValue: ' + CAST(@MaxValue AS VARCHAR);
 
--- Disable specified trace flags
 SELECT @SQLCMD = 'DBCC TRACEOFF(' + 
     STUFF((SELECT ',' + CONVERT(VARCHAR(15), TF)
            FROM @TraceFlags
            WHERE enable = 0
            ORDER BY TF
-           FOR XML PATH(''), TYPE).value('.','varchar(max)'), 1, 1, '') + ', -1);'
+           FOR XML PATH(''), TYPE).value('.','varchar(max)'), 1, 1, '') + ', -1);';
 IF @DebugLevel = 0 EXEC (@SQLCMD);
 PRINT 'Disable TFs Command: "' + @SQLCMD + '"';
 
--- Enable specified trace flags
 SELECT @SQLCMD = 'DBCC TRACEON(' + 
     STUFF((SELECT ',' + CONVERT(VARCHAR(15), TF)
            FROM @TraceFlags
            WHERE enable = 1
            ORDER BY TF
-           FOR XML PATH(''), TYPE).value('.','varchar(max)'), 1, 1, '') + ', -1);'
+           FOR XML PATH(''), TYPE).value('.','varchar(max)'), 1, 1, '') + ', -1);';
 IF @DebugLevel = 0 EXEC (@SQLCMD);
 PRINT 'Enable TFs Command:  "' + @SQLCMD + '"';
 
--- Prepare to update the registry with new trace flags
 DECLARE cSQLParams CURSOR LOCAL FAST_FORWARD FOR
 WITH cte AS (
-    SELECT *,
+    SELECT * ,
            ROW_NUMBER() OVER (ORDER BY ISNULL(ArgNum, 999999999), TF) - 1 AS RN
     FROM @SQLArgs arg
     FULL OUTER JOIN @TraceFlags tf ON arg.Data = tf.TF2
 ), cte2 AS (
-    SELECT ca.Value, ca.Data, 
+    SELECT ca.Value, ca.Data,
            ROW_NUMBER() OVER (ORDER BY RN) - 1 AS RN2
     FROM cte
     CROSS APPLY (SELECT ISNULL(Value, 'SQLArg' + CONVERT(VARCHAR(15), RN)), ISNULL(Data, TF2)) ca(Value, Data)
@@ -113,7 +100,6 @@ END;
 CLOSE cSQLParams;
 DEALLOCATE cSQLParams;
 
--- Delete extra SQLArg values if more trace flags were removed than added
 WHILE @MaxValue > @MaxRN2
 BEGIN
     SET @Value = 'SQLArg' + CONVERT(VARCHAR(15), @MaxValue);
