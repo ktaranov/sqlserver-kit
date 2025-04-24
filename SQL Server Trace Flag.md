@@ -83,6 +83,7 @@ Source links:
 - Wilfred van Dijk
 - Tracy Boggiano ([b](http://databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
 - Danilo Zocco (https://github.com/CrazySwimmer)
+- Abair (https://github.com/abair34)
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
