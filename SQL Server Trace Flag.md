@@ -3465,7 +3465,14 @@ Link: https://support.microsoft.com/kb/4517771<br />
 Scope: global only<br />
 SQL Server Version: >= 2019 CU1, >= 2017 CU18, >= 2016 SP1 CU10
 
- 
+
+<a id="6773"></a>
+#### Trace Flag: 6773
+Function: Enables a fix to address an out of memory issue that occurs when bulk copying XML data where the sum of all XML attributes are > 2MB.  This flag can help in circumstances where a client is running bulk copy of XML data and it receives sql error 6303 "XML parsing: Document parsing required too much memory".<br />
+Link: https://support.microsoft.com/en-us/topic/kb4019125-fix-system-center-configuration-manager-replication-process-by-using-bcp-apis-fails-when-there-is-a-large-value-in-an-xml-column-53a969d5-801c-63ab-a557-bc89fe264394<br />
+SQL Server Version: >= 2016 CU7, >= 2014 SP2 CU6, >= 2014 SP1 CU13, >= 2012 SP3 CU9
+
+
 <a id="6950"></a>
 #### Trace Flag: 6950
 **Undocumented trace flag**<br />
