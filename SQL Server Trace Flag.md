@@ -84,6 +84,7 @@ Source links:
 - Tracy Boggiano ([b](http://databasesuperhero.com) | [t](https://twitter.com/TracyBoggiano))
 - Danilo Zocco (https://github.com/CrazySwimmer)
 - Michael Abair (https://github.com/abair34)
+- Mikulas Mraz (https://github.com/Prohiller)
 
 
 <a id="what-are-microsoft-sql-server-trace-flags"></a>
@@ -5600,6 +5601,20 @@ Link: [KB4565944]<br />
 Link: https://aboutsqlserver.com/2019/06/09/hadr-sync-commit/<br />
 Scope: global or session<br />
 SQL Server Version: >= 2019 CU9, >= 2017 CU21
+
+
+### Trace Flag: 12502
+Function: Disables external authorization policies for on-premises SQL Server instances.
+Use this flag when you see increased PREEMPTIVE_OS_QUERYREGISTRY waits to occur. Due to a bug a SQL Server might lookup Windows Registry values even for a simple queries which do not work with operating system at all.
+Link: [Docs Trace Flags](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql)
+Link: [SQL Server 2022 CU5 Documentation](https://learn.microsoft.com/en-us/troubleshoot/sql/releases/sqlserver-2022/cumulativeupdate5#2351584)
+Scope: global<br />
+SQL Server Version: >= 2022 CU5
+
+
+Note: In my case vast majority of queries executed against SQL Server started looking up non-existing registry value at:
+`HKLM\Software\Microsoft\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQLServer\PurviewConfig`
+so this buggy behavior might be triggered only after other software gets integrated with SQL Server 2022.
 
 
 <a id="12606"></a>
