@@ -5,10 +5,7 @@
 SET NOCOUNT ON;
 
 USE tempdb;
-IF OBJECT_ID(N'dbo.outputTest', N'P') IS NOT NULL
-DROP PROCEDURE dbo.outputTest;
-GO
-CREATE PROCEDURE dbo.outputTest
+CREATE or ALTER PROCEDURE dbo.outputTest
 (
     @column_i int
     , @column_j varchar(30)
