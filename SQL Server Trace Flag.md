@@ -1554,13 +1554,13 @@ Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/0489f308-2e0c-479
 
 <a id="2301"></a>
 #### Trace Flag: 2301
-Function: Trace flag 2301 enables advanced optimizations that are specific to decision support queries.
-This option applies to decision support processing of large data sets.<br />
+Function: Trace flag 2301 enables advanced optimizations that are specific to decision support queries. This option applies to decision support processing of large data sets.This trace flag enables enhanced decision support optimizations, further information on this trace flag can be found in this Microsoft technical note. Trace flag 2301 comes at the expense of increasing compilation and recompilation times. The sweet spot for this trace flag, as “Decision support” suggests is OLAP/reporting/MI style query workloads, rather than turn this on globally, my preference would be to test this on a statement by statement basis using QUERYTRACEON.<br />
 Link: [KB920093]<br />
 Link: [Docs Trace Flags]<br />
 Link: http://www.queryprocessor.com/ce_join_base_containment_assumption<br />
 Link: https://connect.microsoft.com/SQLServer/feedback/details/772232/make-optimizer-estimations-more-accurate-by-using-metadata<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-2301/<br />
+Link: https://web.archive.org/web/20160331120855/http://exadat.co.uk/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches/
 Scope: global or session or query
 
 
@@ -1619,9 +1619,9 @@ Link: http://www.queryprocessor.com/few-outer-rows-optimization
 
 <a id="2330"></a>
 #### Trace Flag: 2330
-Function: Query performance decreases when sys.dm_db_index_usage_stats has large number of rows<br />
+Function: Query performance decreases when sys.dm_db_index_usage_stats has large number of rows.Statistics collection for the data structures which sys.dm_db_index_usage_stats and sys.dm_db_missing_index_group_stats use is disabled by specifying this trace flag as a start up parameter. Consider using this if there is heavy spin activity on the OPT_IDX_STATS spinlock.<br />
 Link: http://www.brentozar.com/archive/2015/11/trace-flag-2330-who-needs-missing-index-requests/<br />
-Link: https://chrisadkin.org/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches/
+Link: https://web.archive.org/web/20160331120855/http://exadat.co.uk/2015/04/14/well-known-and-not-so-well-known-sql-server-tuning-knobs-and-switches/
 
 
 <a id="2332"></a>
