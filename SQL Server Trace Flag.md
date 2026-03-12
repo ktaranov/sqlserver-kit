@@ -27,7 +27,7 @@ Headers:
  - [Trace flags list](#trace-flags-list)
 
 Source links:
-- [Docs Trace Flags]
+- [Docs Trace Flags](https://learn.microsoft.com/en-us/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql)
 - [A Topical Collection of SQL Server Flags](https://sqlcrossjoin.wordpress.com/2013/10/28/a-topical-collection-of-sql-server-flags/) (by Aaron Morelli)
 - [Steinar Andersen great post](http://www.sqlservice.se/updated-microsoft-sql-server-trace-flag-list/)
 - [Yusuf Anis trace flag table](http://www.sqlservercentral.com/articles/trace+flags/70131/)
@@ -1036,6 +1036,23 @@ Function: Enables support for locked pages for SQL 2000<br />
 Link: None
 
 
+<a id="890"></a>
+#### Trace Flag: 890
+Function: Suppress long buffer pool scan complete messages (error 898) in the error log. For more information on buffer pool scan and the message that is logged in the error log, see Operations that trigger a buffer pool scan may run slowly on large-memory computers.<br />
+**Note: Applies to SQL Server 2017 (14.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="898"></a>
+#### Trace Flag: 898
+Function: Disables the Direct Write behavior of the hybrid buffer pool for troubleshooting or debugging purposes.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 1 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/5022375<br />
+Scope: global only
+
+
 <a id="902"></a>
 #### Trace Flag: 902
 Function: Bypasses execution of database upgrade script when installing a Cumulative Update or Service Pack.
@@ -1649,6 +1666,13 @@ Function: Aaron: Another one that I stumbled onto. Appears to tie memory info an
 Link: None
 
 
+<a id="2338"></a>
+#### Trace Flag: 2338
+Function: Causes SQL Server to use a narrow plan when executing an UPDATE statement to update indexes in a table. When you do an UPDATE against a clustered index column, SQL Server updates not only the clustered index itself, but also all the nonclustered indexes because the nonclustered indexes contain the cluster key. This trace flag forces a narrow plan update (Per-Row Update).<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session or query
+
+
 <a id="2340"></a>
 #### Trace Flag: 2340
 Function: Causes SQL Server not to use a sort operation (batch sort) for optimized Nested Loops joins when generating a plan.
@@ -1849,6 +1873,15 @@ Link: https://support.microsoft.com/kb/2746341
 #### Trace Flag: 2440
 Function: SQL 10 - Parallel query execution strategy on partitioned tables. SQL 9 used single thread per partition parallel query execution strategy. In SQL 10, multiple threads can be allocated to a single partition by turning on this flag.<br />
 Link: https://social.msdn.microsoft.com/Forums/sqlserver/en-US/dc010af9-afa0-4c87-937c-4343b4e1119a/trace-flag-2440
+
+
+<a id="2446"></a>
+#### Trace Flag: 2446
+Function: Causes SQL Server to generate a Showplan XML fragment with the ParameterRuntimeValue when using the lightweight query execution statistics profiling infrastructure or executing the sys.dm_exec_query_statistics_xml DMV while troubleshooting long running queries.<br />
+**Note: Applies to SQL Server 2017 (14.x) CU 31, SQL Server 2019 (15.x) CU 19, and SQL Server 2022 (16.x) and later versions.**<br />
+**Warning: Trace flag 2446 is not meant to be enabled continuously in a production environment, but only for time-limited troubleshooting purposes.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="2451"></a>
@@ -2233,6 +2266,22 @@ Link: [Docs Trace Flags]<br />
 Scope: global or session
 
 
+<a id="2610"></a>
+#### Trace Flag: 2610
+Function: Enables memory dump compression and faster dump generation with SQLDumper and via DBCC STACKDUMP.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 8, SQL Server 2019 (15.x) CU 23, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session
+
+
+<a id="2616"></a>
+#### Trace Flag: 2616
+Function: Enables the stack signature feature to make Sqldumper.exe generate a single dump per unique stack signature per hour, which avoids potential dump flooding problems when the same issue repeats frequently within one hour.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 12 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="2701"></a>
 #### Trace Flag: 2701
 Function: SQL 6.5 - Sets the `@@ERROR` system function to 50000 for `RAISERROR` messages with severity levels of 10 or less. When disabled, sets the @@ERROR system function to 0 for RAISERROR messages with severity levels of 10 or less<br />
@@ -2286,6 +2335,14 @@ Link: [Undocumented Trace Flags: Inside the Restore Process]<br />
 Link: [What’s CHECKDB doing in my database restore?]<br />
 Link: https://www.sqlservergeeks.com/sql-server-trace-flag-3014/<br />
 Scope: session only
+
+
+<a id="3015"></a>
+#### Trace Flag: 3015
+Function: Disables writing backups to Azure immutable storage.<br />
+**Note: Applies to SQL Server 2025 (17.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="3023"></a>
@@ -2454,6 +2511,22 @@ Link: http://www.sqlskills.com/blogs/kimberly/understanding-backups-and-log-rela
 Scope: ?
 
 
+<a id="3261"></a>
+#### Trace Flag: 3261
+Function: Disables differential database backups on secondary replica of an Always On availability group.<br />
+**Note: Applies to SQL Server 2025 (17.x).**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="3262"></a>
+#### Trace Flag: 3262
+Function: Disables full database backups on secondary replica of an Always On availability group.<br />
+**Note: Applies to SQL Server 2025 (17.x).**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="3282"></a>
 #### Trace Flag: 3282
 **Undocumented trace flag**<br />
@@ -2504,6 +2577,15 @@ Unfortunately, this overhead is incurred whether you have CCC enabled or not. In
 Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/3216543<br />
 Link: [TEMPDB – Files and Trace Flags and Updates]<br />
+Scope: global only
+
+
+<a id="3428"></a>
+#### Trace Flag: 3428
+Function: The Always On Redo Thread on a secondary replica can sometimes be blocked by T-SQL queries, which can cause delays in synchronization. This trace flag terminates such blocking queries by setting their lock timeout to 60 seconds.<br />
+**Warning: Be sure that you test and understand this option before deploying it in a production environment as queries might be terminated.**<br />
+**Note: Applies to SQL Server 2019 (15.x).**<br />
+Link: [Docs Trace Flags]<br />
 Scope: global only
 
 
@@ -2860,6 +2942,21 @@ Function: According to Bob Ward’s PASS 2014 SQL Server IO talk, forces the Eag
 Link: None
 
 
+<a id="3880"></a>
+#### Trace Flag: 3880
+Function: Disable the timer task that checks the state of a resumable index.<br />
+**Note: Applies to SQL Server 2017 (14.x) and later versions and is intended for high-end systems with high performance workloads.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session
+
+
+<a id="3972"></a>
+#### Trace Flag: 3972
+Function: Disables concurrent Page Free Space (PFS) updates feature.<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="3979"></a>
 #### Trace Flag: 3979
 **Undocumented trace flag**<br />
@@ -2964,6 +3061,14 @@ Function: Traces the SQL commands coming in from the client. When enabled with 3
 Link: https://support.microsoft.com/kb/199037<br />
 Link: http://www.sqlservergeeks.com/sql-server-trace-flag-4032/<br />
 Scope: global only
+
+
+<a id="4043"></a>
+#### Trace Flag: 4043
+Function: Fixes an error that occurs when you apply a security policy on PolyBase external table and use Row-Level Security (RLS) in SQL Server 2019 (15.x).<br />
+Link: https://support.microsoft.com/help/4552159<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session
 
 
 <a id="4044"></a>
@@ -3460,6 +3565,14 @@ Link: [KB2964518]<br />
 Scope: global only
 
 
+<a id="6408"></a>
+#### Trace Flag: 6408
+Function: Enables visibility of the estimated execution plan to see the remote query plan of PolyBase pushdown computation.<br />
+**Note: Applies to SQL Server 2019 (15.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session or query
+
+
 <a id="6545"></a>
 #### Trace Flag: 6545
 Function: Enables "CLR strict security" behavior (introduced in SQL Server 2017) in SQL Server 2012, SQL Server 2014, and SQL Server 2016.
@@ -3520,6 +3633,14 @@ SQL Server Version: >= 2019 CU29
 **Undocumented trace flag**<br />
 Function: Disable table lock promotion for text columns<br />
 Link: None
+
+
+<a id="7117"></a>
+#### Trace Flag: 7117
+Function: Mitigates an assertion failure that you might encounter when you have multiple nested inserts. This trace flag enables the persistent version store (PVS) cleaner thread to proceed, if the PVS bit is set for a row that might have been part of an aborted transaction.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 9 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="7300"></a>
@@ -4030,10 +4151,81 @@ Scope: global only
  
  
  <a id="8101"></a>
+#### Trace Flag: 8086
+Function: Disable NUMA locality check for memory commits.<br />
+**Note: Applies to SQL Server 2019 (15.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8089"></a>
+#### Trace Flag: 8089
+Function: In SQL Server 2017 (14.x) CU 16, enables the bitmap filtering for reducing the size of filtered memory dumps. Starting with SQL Server 2017 (14.x) CU 20, bitmap filtering is enabled by default and trace flag 8089 no longer applies.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/4488943<br />
+Scope: global only
+
+
+<a id="8095"></a>
+#### Trace Flag: 8095
+Function: Disables the bitmap filtering for filtered memory dumps. This trace flag applies to builds where bitmap filtering is enabled by default.<br />
+**Note: Applies to SQL Server 2016 (13.x) CU 13 and later, SQL Server 2017 (14.x) CU 20 and later, and SQL Server 2019 (15.x).**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8099"></a>
+#### Trace Flag: 8099
+Function: Enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users. Starting with SQL Server 2019 (15.x) CU 4, this behavior is enabled by default.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/4538688<br />
+Scope: global only
+
+
 #### Trace Flag: 8101
 Function: Enables a spinlock contention fix for high-end systems running SQL Server 2019 (15.x) serving many concurrent users.<br />
 Note: This trace flag applies to SQL Server 2019 (15.x) CU2 and higher builds.<br />
 Link: https://support.microsoft.com/kb/4538688<br />
+Scope: global only
+
+
+<a id="8145"></a>
+#### Trace Flag: 8102
+Function: Addresses a high-CPU scenario caused by spinlock contention on the XVB_LIST spinlock. This trace flag staggers the spinlock backoffs and can be enabled together with trace flag 8101.<br />
+**Note: Applies to SQL Server 2019 (15.x).**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8121"></a>
+#### Trace Flag: 8121
+Function: Fixes a system-wide low memory issue that occurs when SQL Server commits memory above the maximum server memory under the memory model with the Lock Pages In Memory security policy setting.<br />
+**Note: Applies to SQL Server 2019 (15.x). For SQL Server 2022 (16.x) and later, this functionality is enabled by default.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8134"></a>
+#### Trace Flag: 8134
+Function: Enables the tracking of spinlock waits with the SPINLOCK_EXT wait type. You can enable this trace flag when troubleshooting high CPU utilization to confirm or rule out a spinlock contention problem.<br />
+**Note: Applies to SQL Server 2025 (17.x).**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8142"></a>
+#### Trace Flag: 8142
+Function: Partitions the specific spinlock-protected list by CPU, up to 64 partitions. Should be used only on large-memory machines experiencing SOS_BLOCKALLOCPARTIALLIST spinlock contention with elevated CPU utilization. See also trace flag 8145.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 21 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8145"></a>
+#### Trace Flag: 8145
+Function: Modifies the partitioning enabled by trace flag 8142 to be per soft-NUMA node, instead of per CPU. You must also enable trace flag 8142 for this setting to take effect.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 21 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
 Scope: global only
 
 
@@ -4069,6 +4261,64 @@ Scope: global only
 
 
 <a id="8209"></a>
+#### Trace Flag: 8239
+Function: When trace flag 8239 is set, a safe_cleanup_version() value less than the cleanup point is ignored, and change tracking cleanup runs. Incorrect use of this trace flag can lead to data corruption.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 3 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8273"></a>
+#### Trace Flag: 8273
+Function: Disables adaptive shallow cleanup for change tracking.<br />
+**Note: Applies to SQL Server 2025 (17.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8284"></a>
+#### Trace Flag: 8284
+Function: Fixes a manual cleanup issue where repeated lock escalations on the tables cause contention and slowness in cleaning up the expired change tracking metadata.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 21 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8285"></a>
+#### Trace Flag: 8285
+Function: Converts an assertion failure to an exception to prevent a dump issue under certain circumstances when change tracking is enabled on a database that has snapshot isolation turned on.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 6, SQL Server 2019 (15.x) CU 21, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="8286"></a>
+#### Trace Flag: 8286
+Function: Forces the change tracking cleanup query to use the FORCE ORDER hint to improve performance. Can be used with trace flag 8287 to use the FORCESEEK hint.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 19, SQL Server 2022 (16.x) CU 1, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/5022375<br />
+Scope: global only
+
+
+<a id="8287"></a>
+#### Trace Flag: 8287
+Function: Forces the change tracking cleanup query to use the FORCESEEK hint to improve performance. Can be used with trace flag 8286 to use the FORCE ORDER hint.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 19, SQL Server 2022 (16.x) CU 1, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/5022375<br />
+Scope: global only
+
+
+<a id="8290"></a>
+#### Trace Flag: 8290
+Function: After this trace flag is enabled, the change tracking (CT) auto cleanup process will reset any invalid cleanup version to a cleanup version based on the retention period.<br />
+**Note: Applies to SQL Server 2017 (14.x) CU 19, SQL Server 2019 (15.x) CU 4, SQL Server 2022 (16.x), and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/4538365<br />
+Scope: global or session
+
+
 #### Trace Flag: 8209
 Function: Output extra information to error log regarding replication of schema changes in SQL Server Replication<br />
 Link: None
@@ -4109,6 +4359,13 @@ Link: [SQL Server 2019 CU29 Documentation](https://learn.microsoft.com/en-us/tro
 
 
 <a id="8599"></a>
+#### Trace Flag: 8558
+Function: Enables a fix to ensure that when RCSI isolation level is enabled, a transaction can always see the latest data from tables modified using DTC transactions after xa_commit returns success.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 18, SQL Server 2022 (16.x), and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 #### Trace Flag: 8599
 Function: Allows you to use a save-point within a distributed transaction<br />
 Link: None
@@ -4570,12 +4827,29 @@ Function: Enables new (in 7.0) code to correct a problem with the SHRINK command
 Link: None
 
 
+<a id="8902"></a>
+#### Trace Flag: 8902
+Function: Disable locked pages for IO operations for high-end systems with high performance workloads.<br />
+**Note: Applies to SQL Server 2019 (15.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="8903"></a>
 #### Trace Flag: 8903
 Function: Allows SQL Server to use a specific  API (SetFileIoOverlappedRange) when Locked Pages in Memory is enabled.<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2012/03/20/setfileiooverlappedrange-can-lead-to-unexpected-behavior-for-sql-server-2008-r2-or-sql-server-2012-denali<br />
 Link: https://support.microsoft.com/kb/2679255<br />
 Link: https://blogs.msdn.microsoft.com/psssql/2013/10/16/every-time-i-attach-database-sql-logs-error-1314-for-setfileiooverlappedrange
+
+
+<a id="8904"></a>
+#### Trace Flag: 8904
+Function: Enables a fix to address a parallel redo failure on a secondary replica by disabling inlined log IO, limiting the contention possibility from many workers to the subset of background LogWriter workers.<br />
+**Note: Applies to SQL Server 2019 (15.x) only, starting with CU 12.**<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/5004649<br />
+Scope: global only
 
 
 <a id="9024"></a>
@@ -4709,6 +4983,14 @@ Scope: global or session or query
 #### Trace Flag: 9134
 Function: SQL 8 - Does additional reads to test if the page is allocated & linked correctly this checks IAM & PFS. Fixes error 601 for queries under Isolation level read uncommitted. In case performance is affected (because of a bug) apply SP4.<br />
 Link: https://support.microsoft.com/kb/815008
+
+
+<a id="9135"></a>
+#### Trace Flag: 9135
+Function: Prevents the usage of indexed views. To accomplish this at the query level, add the USE HINT 'EXPAND VIEWS' query hint instead of using this trace flag.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 23, SQL Server 2022 (16.x) CU 19, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="9136"></a>
@@ -5027,6 +5309,14 @@ Link: [SQL Server 2017: Adaptive Join Internals]<br />
 Scope: ?
 
 
+<a id="9440"></a>
+#### Trace Flag: 9440
+Function: Disables the fix for outer join cardinality estimation overestimation when join predicates consist of primary keys. The bug fix doesn't apply when using the legacy CE model. This trace flag only applies to databases with a compatibility level of 160 and lower.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 20, SQL Server 2022 (16.x) CU 9, and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session or query
+
+
 <a id="9424"></a>
 #### Trace Flag: 9424
 **Undocumented trace flag**<br />
@@ -5322,6 +5612,22 @@ Function: Software Usage Metrics is disabled.<br />
 Link: [Bad Idea Jeans: Finding Undocumented Trace Flags]
 
 
+<a id="9708"></a>
+#### Trace Flag: 9708
+Function: Enables collection of event publishing metrics for extended event sessions.<br />
+**Note: Applies to SQL Server 2022 (16.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
+<a id="9714"></a>
+#### Trace Flag: 9714
+Function: Enables the SQL Server error log to record the start or stop of Extended Events (XEvents) sessions.<br />
+**Note: Applies to SQL Server 2022 (16.x) CU 15 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="9806"></a>
 #### Trace Flag: 9806
 **Undocumented trace flag**<br />
@@ -5341,6 +5647,14 @@ Link: None
 **Undocumented trace flag**<br />
 Function: Unknown. Is turned on on SQL Server 2014 CTP1 standard installation in Windows Azure VM<br />
 Link: None
+
+
+<a id="9810"></a>
+#### Trace Flag: 9810
+Function: Disables the In-Memory OLTP engine from reclaiming Thread Local Storage (TLS) memory. In SQL Server 2022 (16.x), a new memory optimization causes the In-Memory OLTP engine to reclaim TLS memory. This trace flag reverts to the behavior before SQL Server 2022 (16.x).<br />
+**Note: Applies to SQL Server 2022 (16.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="9830"></a>
@@ -5375,6 +5689,13 @@ be sure to turn off the trace flag when done testing.<br/>
 Link: http://gsl.azurewebsites.net/Portals/0/Users/dewitt/talks/HekatonWhitePaper.pdf
 
 
+<a id="9898"></a>
+#### Trace Flag: 9898
+Function: Changes the memory partitioning scheme for the In-Memory OLTP engine from per-CPU to per-NUMA node. For existing In-Memory OLTP objects in a database, takes effect only after the server is restarted or when a database is brought online.<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="9929"></a>
 #### Trace Flag: 9929
 Function: Enables an update that reduces the “disk footprint [of In-Memory OLTP] by reducing the In-Memory checkpoint files to 1 MB (megabytes) each.”
@@ -5394,6 +5715,22 @@ Link: [Parallelism in Hekaton (In-Memory OLTP)]
 Scope: global or session
 
 
+<a id="9944"></a>
+#### Trace Flag: 9944
+Function: Enables a non-default fix for slow database recovery time when a database has a large number of memory optimized tables or memory optimized table types, and blocking with PREMPTIVE_OS_FINDFILE or PREEMPTIVE_OS_CREATEDIRECTORY wait types might be observed.<br />
+Link: [Docs Trace Flags]<br />
+Link: https://support.microsoft.com/help/4090789<br />
+Scope: global only
+
+
+<a id="9953"></a>
+#### Trace Flag: 9953
+Function: Reuses the hidden schedulers used by the Memory Optimized tables.<br />
+**Note: Applies to SQL Server 2019 (15.x) CU 20 and later versions, and SQL Server 2022 (16.x) CU 3 and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
+
+
 <a id="9989"></a>
 #### Trace Flag: 9989
 **Undocumented trace flag**<br />
@@ -5407,6 +5744,14 @@ Link: https://connect.microsoft.com/SQLServer/feedback/details/795360/secondary-
 Function: According to demo scripts from a Sunil Agarwal session at PASS 2014, enables a new DMV named sys.dm_db_column_store_row_group_physical_stats.
 This DMV is not in SQL 2014 RTM and Sunil did not perform this demo during the session, so this DMV appears to be in a future (or internal) version of SQL Server.<br/>
 Link: None
+
+
+<a id="10054"></a>
+#### Trace Flag: 10054
+Function: Disables the SQL Server Query Optimizer rule that decorrelates subqueries in OR predicates into outer joins.<br />
+**Note: Applies to SQL Server 2019 (15.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global or session or query
 
 
 <a id="10204"></a>
@@ -5453,6 +5798,14 @@ Link: [Docs Trace Flags]<br />
 Link: https://support.microsoft.com/kb/3198846<br />
 Link: https://blogs.msdn.microsoft.com/sqlcat/2016/12/08/improve-query-performance-on-memory-optimized-tables-with-temporal-using-new-index-creation-enhancement-in-sp1/<br />
 Scope: global or session
+
+
+<a id="10460"></a>
+#### Trace Flag: 10460
+Function: Causes the SQL Server Stretch Database feature to provision a stretched table within the Azure SQL Database Hyperscale service tier.<br />
+**Note: Applies to SQL Server 2017 (14.x) CU 31, SQL Server 2019 (15.x) CU 18, and SQL Server 2022 (16.x) and later versions.**<br />
+Link: [Docs Trace Flags]<br />
+Scope: global only
 
 
 <a id="10809"></a>
