@@ -43,6 +43,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SqlDynamite](#sqldynamite)                                      | No                            | No        | [S]      | [SqlDynamite]                                      | 2016-04-06 | Anatoly Sova            |            | Yes            | No    |
 | [SQL Server Data Tools](#ssdt)                                   | No                            | No        | [MS]     | [SQL Server Data Tools]                            | 2018-04-10 | Microsoft               |            | Yes            | No    |
 | [Database Health Monitor](#database-health-monitor)              | No                            | No        | [M]      | [Database Health Monitor]                          | 2019-12-01 | Steve Stedman           |            | Yes            | No    |
+| [Windows & DB Server Monitor](#SQLPlanner)              | No                            | No        | [M]      | [SQL Planner]                          | 2019-12-01 | Chandan Kumar           |            | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                      | No                            | No        | [SC]     | [SchemaDrift]                                      | 2016-02-28 | Steve Stedman           |            | Yes            | No    |
 | [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                          | 2020-11-29 | Open Source             |            | Yes            | No    |
 | [HeidiSQL](#heidisql)                                            | MySQL,PostgreSQL,Other        | No        | [MS]     | [HeidiSQL]                                         | 2020-11-02 | Open Source             |            | Yes            | No    |
@@ -691,6 +692,22 @@ Price: No
 Database Health Monitor is a powerful performance monitoring and diagnostics solution that alerts administrators to server health,
 performance or availability problems within their SQL Server environment, all from a central console.
 
+## SQL Planner
+<a id="SQLPlanner"></a>
+Download page: [https://mssqlplanner.com/download-product/]<br/>
+Release date: 2019-12-01<br/>
+Support Version: 2012/2014/2017/2025/ Onwards<br/>
+Author: Chandan Kumar<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Planner, is a browser based centralised solution to get a 360-degree view of your windows and SQL server environment , It’s a comprehensive toolkit designed to help you:
+✅ Real-time SQL & Windows Monitoring
+✅ Deep-Dive Health Analysis
+✅ Security Auditing for SQL server
+✅ Advanced Backup & Scripting Automation
+✅ DBA HandoverNotes Management 
+Visit to know more : https://mssqlplanner.com/
 
 ## SchemaDrift
 <a id="schemadrift"></a>
