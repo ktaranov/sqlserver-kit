@@ -465,7 +465,8 @@ public class SSRSReportGenerator
     /// <summary>
     /// Returns the parameters defined on an SSRS report, including
     /// name, type, nullable, allow blank, multi-value, default values, and valid values.
-    /// Uses the ReportService2010 endpoint.
+    /// Uses LoadReport + GetExecutionInfo via the ReportExecution2005 endpoint
+    /// (same endpoint used for rendering, proven to work).
     /// </summary>
     [SqlProcedure]
     public static void GetReportParameters(
@@ -483,11 +484,15 @@ public class SSRSReportGenerator
             string pass = password.IsNull ? null : password.Value;
             string dom = domain.IsNull ? null : domain.Value;
 
-            string svcUrl = srv + "/ReportService2010.asmx";
-            string soap = string.Format(SoapGetParametersTemplate, XmlEscape(path));
+            // Step 1: Load the report to get an execution ID
+            string executionId = LoadReport(srv, path, user, pass, dom);
 
-            var request = CreateSoapRequest(svcUrl,
-                "http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer/GetItemParameters",
+            // Step 2: Call GetExecutionInfo to retrieve parameters
+            string execUrl = srv + "/ReportExecution2005.asmx";
+            string soap = string.Format(SoapGetParametersFromExecTemplate, executionId);
+
+            var request = CreateSoapRequest(execUrl,
+                "http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices/GetExecutionInfo",
                 user, pass, dom);
 
             var doc = SendSoapRequest(request, soap);
@@ -507,13 +512,12 @@ public class SSRSReportGenerator
 
             SqlContext.Pipe.SendResultsStart(record);
 
-            var paramNodes = doc.GetElementsByTagName("ItemParameter");
+            // GetExecutionInfo returns parameters under ReportParameter nodes
+            var paramNodes = doc.GetElementsByTagName("ReportParameter");
             foreach (XmlNode paramNode in paramNodes)
             {
                 string name = GetChildText(paramNode, "Name");
-                string dataType = GetChildText(paramNode, "ParameterTypeName");
-                if (string.IsNullOrEmpty(dataType))
-                    dataType = GetChildText(paramNode, "Type");
+                string dataType = GetChildText(paramNode, "Type");
 
                 bool nullable = GetChildBool(paramNode, "Nullable");
                 bool allowBlank = GetChildBool(paramNode, "AllowBlank");
@@ -550,8 +554,12 @@ public class SSRSReportGenerator
                 record.SetBoolean(4, multiValue);
                 record.SetSqlString(5, string.IsNullOrEmpty(prompt) ? SqlString.Null : new SqlString(prompt));
                 record.SetBoolean(6, promptUser);
-                record.SetSqlString(7, defaults.Count > 0 ? string.Join(",", defaults.ToArray()) : SqlString.Null.ToString());
-                record.SetSqlString(8, valids.Count > 0 ? string.Join("|", valids.ToArray()) : SqlString.Null.ToString());
+                record.SetSqlString(7, defaults.Count > 0
+                    ? new SqlString(string.Join(",", defaults.ToArray()))
+                    : SqlString.Null);
+                record.SetSqlString(8, valids.Count > 0
+                    ? new SqlString(string.Join("|", valids.ToArray()))
+                    : SqlString.Null);
                 record.SetBoolean(9, queryBased);
 
                 SqlContext.Pipe.SendResultsRow(record);
