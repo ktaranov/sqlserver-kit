@@ -6,13 +6,17 @@
     http://myserver/ReportServer
 
   Adjust server URL, report paths, and credentials for your environment.
+
+  Schema conventions:
+    ssrs.*   - stored procedures and functions
+    vSys.*   - configuration and log tables
 =============================================================================
 */
 
 -- ============================================================================
 --  1. LIST AVAILABLE EXPORT FORMATS
 -- ============================================================================
-SELECT * FROM data_driven_export.ssrs_fn_ListExportFormats();
+SELECT * FROM ssrs.fn_list_export_formats();
 /*
   FormatName      | Extension | Description
   ----------------+-----------+----------------------------------------------
@@ -28,12 +32,12 @@ SELECT * FROM data_driven_export.ssrs_fn_ListExportFormats();
 --  2. QUERY REPORT PARAMETERS
 --     Discover what parameters a report expects before exporting.
 -- ============================================================================
-EXEC data_driven_export.ssrs_GetReportParameters
+EXEC ssrs.get_report_parameters
     @serverUrl  = N'http://myserver/ReportServer',
     @reportPath = N'/Sales/MonthlySalesReport';
 
 -- With explicit credentials:
-EXEC data_driven_export.ssrs_GetReportParameters
+EXEC ssrs.get_report_parameters
     @serverUrl  = N'http://myserver/ReportServer',
     @reportPath = N'/Sales/MonthlySalesReport',
     @username   = N'reportuser',
@@ -49,7 +53,7 @@ EXEC data_driven_export.ssrs_GetReportParameters
 -- ============================================================================
 --  3. EXPORT REPORT TO PDF (return as VARBINARY result set)
 -- ============================================================================
-EXEC data_driven_export.ssrs_ExportReport
+EXEC ssrs.export_report
     @serverUrl    = N'http://myserver/ReportServer',
     @reportPath   = N'/Sales/MonthlySalesReport',
     @exportFormat = N'PDF',
@@ -58,12 +62,12 @@ EXEC data_driven_export.ssrs_ExportReport
 -- ============================================================================
 --  4. EXPORT REPORT TO EXCEL FILE ON DISK
 -- ============================================================================
-EXEC data_driven_export.ssrs_ExportReportToFile
+EXEC ssrs.export_report_to_file
     @serverUrl      = N'http://myserver/ReportServer',
     @reportPath     = N'/Sales/MonthlySalesReport',
     @exportFormat   = N'EXCELOPENXML',
     @parameters     = N'Year=2024;Month=12;Region=East,West',   -- multi-value param
-    @outputFilePath = N'C:\Reports\MonthlySales_Dec2024.xlsx';
+    @outputFilePath = N'D:\SSRS\MonthlySales_Dec2024.xlsx';
 
 -- ============================================================================
 --  5. EXPORT USING SCALAR FUNCTION (usable in SELECT / INSERT)
@@ -71,7 +75,7 @@ EXEC data_driven_export.ssrs_ExportReportToFile
 
 -- Get report as binary data in a SELECT
 SELECT
-    data_driven_export.ssrs_fn_ExportReport(
+    ssrs.fn_export_report(
         N'http://myserver/ReportServer',
         N'/Sales/MonthlySalesReport',
         N'PDF',
@@ -83,12 +87,12 @@ SELECT
     ) AS ReportPDF;
 
 -- Save to a table for later retrieval
-INSERT INTO data_driven_export.ReportArchive (ReportName, ExportDate, Format, ReportData)
+INSERT INTO dbo.ReportArchive (ReportName, ExportDate, Format, ReportData)
 SELECT
     N'MonthlySalesReport',
     GETDATE(),
     N'PDF',
-    data_driven_export.ssrs_fn_ExportReport(
+    ssrs.fn_export_report(
         N'http://myserver/ReportServer',
         N'/Sales/MonthlySalesReport',
         N'PDF',
@@ -99,12 +103,12 @@ SELECT
 -- ============================================================================
 --  6. EXPORT REPORT WITH DEVICE INFO (custom page size, margins, etc.)
 -- ============================================================================
-EXEC data_driven_export.ssrs_ExportReportToFile
+EXEC ssrs.export_report_to_file
     @serverUrl      = N'http://myserver/ReportServer',
     @reportPath     = N'/Sales/MonthlySalesReport',
     @exportFormat   = N'PDF',
     @parameters     = N'Year=2024;Month=12',
-    @outputFilePath = N'C:\Reports\MonthlySales_A3.pdf',
+    @outputFilePath = N'D:\SSRS\MonthlySales_A3.pdf',
     @deviceInfo     = N'<DeviceInfo><PageWidth>16.5in</PageWidth><PageHeight>11.7in</PageHeight><MarginTop>0.5in</MarginTop><MarginBottom>0.5in</MarginBottom><MarginLeft>0.5in</MarginLeft><MarginRight>0.5in</MarginRight></DeviceInfo>';
 
 -- ============================================================================
@@ -112,12 +116,12 @@ EXEC data_driven_export.ssrs_ExportReportToFile
 -- ============================================================================
 
 -- List all items in a folder
-EXEC data_driven_export.ssrs_ListReports
+EXEC ssrs.list_reports
     @serverUrl  = N'http://myserver/ReportServer',
     @folderPath = N'/Sales';
 
 -- List all reports recursively from root
-EXEC data_driven_export.ssrs_ListReports
+EXEC ssrs.list_reports
     @serverUrl  = N'http://myserver/ReportServer',
     @folderPath = N'/',
     @recursive  = 1;
@@ -125,32 +129,32 @@ EXEC data_driven_export.ssrs_ListReports
 -- ============================================================================
 --  8. BULK EXPORT - Multiple formats at once
 -- ============================================================================
-EXEC data_driven_export.ssrs_BulkExportReport
+EXEC ssrs.bulk_export_report
     @serverUrl    = N'http://myserver/ReportServer',
     @reportPath   = N'/Sales/MonthlySalesReport',
     @formats      = N'PDF,EXCELOPENXML,WORDOPENXML,CSV',
     @parameters   = N'Year=2024;Month=12',
-    @outputFolder = N'C:\Reports\Monthly';
+    @outputFolder = N'D:\SSRS\Monthly';
 
 -- ============================================================================
 --  9. URL ACCESS METHOD (alternative, works with SharePoint mode too)
 -- ============================================================================
-EXEC data_driven_export.ssrs_ExportReportUrlAccess
+EXEC ssrs.export_report_url_access
     @serverUrl      = N'http://myserver/ReportServer',
     @reportPath     = N'/Sales/MonthlySalesReport',
     @exportFormat   = N'PDF',
     @urlParameters  = N'Year=2024&Month=12&Region=East',
-    @outputFilePath = N'C:\Reports\Sales_UrlAccess.pdf';
+    @outputFilePath = N'D:\SSRS\Sales_UrlAccess.pdf';
 
 -- ============================================================================
 --  10. SHAREPOINT INTEGRATED MODE
 -- ============================================================================
-EXEC data_driven_export.ssrs_ExportReportSharePoint
+EXEC ssrs.export_report_sharepoint
     @sharePointUrl      = N'http://sharepoint.mycompany.com/sites/reports',
     @reportLibraryPath  = N'/sites/reports/Documents/MonthlySales.rdl',
     @exportFormat       = N'EXCELOPENXML',
     @urlParameters      = N'Year=2024&Month=12',
-    @outputFilePath     = N'C:\Reports\SP_MonthlySales.xlsx',
+    @outputFilePath     = N'D:\SSRS\SP_MonthlySales.xlsx',
     @username           = N'spuser',
     @password           = N'P@ssw0rd',
     @domain             = N'MYDOMAIN';
@@ -158,7 +162,7 @@ EXEC data_driven_export.ssrs_ExportReportSharePoint
 -- ============================================================================
 --  11. EMAIL REPORT AS ATTACHMENT
 -- ============================================================================
-EXEC data_driven_export.ssrs_EmailReport
+EXEC ssrs.email_report
     @serverUrl    = N'http://myserver/ReportServer',
     @reportPath   = N'/Sales/MonthlySalesReport',
     @exportFormat = N'PDF',
@@ -179,14 +183,14 @@ EXEC data_driven_export.ssrs_EmailReport
 -- ============================================================================
 
 -- Step 1: Configure export jobs
-INSERT INTO data_driven_export.ssrs_ExportJobs (JobName, ServerUrl, ReportPath, ExportFormat, Parameters, OutputFilePath, EmailTo, EmailSubject)
+INSERT INTO vSys.ssrs_export_jobs (JobName, ServerUrl, ReportPath, ExportFormat, Parameters, OutputFilePath, EmailTo, EmailSubject)
 VALUES
     (N'Monthly Sales PDF',
      N'http://myserver/ReportServer',
      N'/Sales/MonthlySalesReport',
      N'PDF',
      N'Year=2024&Month=12',
-     N'C:\Reports\{ReportName}_{Date}.pdf',
+     N'D:\SSRS\{ReportName}_{Date}.pdf',
      N'manager@mycompany.com',
      N'Monthly Sales Report'),
 
@@ -195,7 +199,7 @@ VALUES
      N'/Warehouse/InventoryStatus',
      N'EXCELOPENXML',
      N'WarehouseId=1',
-     N'C:\Reports\{ReportName}_{DateTime}.xlsx',
+     N'D:\SSRS\{ReportName}_{DateTime}.xlsx',
      NULL,    -- no email
      NULL),
 
@@ -204,33 +208,33 @@ VALUES
      N'/HR/HeadcountReport',
      N'CSV',
      N'Department=Engineering&AsOfDate=2024-12-31',
-     N'C:\Reports\HR\{ReportName}_{Date}.csv',
+     N'D:\SSRS\HR\{ReportName}_{Date}.csv',
      N'hr@mycompany.com;cfo@mycompany.com',
      N'Headcount Report');
 
 -- Step 2: Run all active jobs
-EXEC data_driven_export.ssrs_RunAllExportJobs
-    @outputFolder  = N'C:\Reports\Export',
+EXEC ssrs.run_all_export_jobs
+    @outputFolder  = N'D:\SSRS\Export',
     @smtpServer    = N'smtp.mycompany.com',
     @smtpPort      = 25,
     @smtpFrom      = N'reports@mycompany.com';
 
 -- Step 3: Check export log
 SELECT j.JobName, l.Status, l.Message, l.ExportedAt
-FROM data_driven_export.ssrs_ExportLog l
-INNER JOIN data_driven_export.ssrs_ExportJobs j ON j.JobId = l.JobId
+FROM vSys.ssrs_export_log l
+INNER JOIN vSys.ssrs_export_jobs j ON j.JobId = l.JobId
 ORDER BY l.ExportedAt DESC;
 
 -- Run with custom query (e.g., only specific jobs)
-EXEC data_driven_export.ssrs_DataDrivenExport
-    @configQuery     = N'SELECT * FROM data_driven_export.ssrs_ExportJobs WHERE JobName LIKE ''%Sales%'' AND IsActive = 1',
-    @outputFolder    = N'C:\Reports\Sales',
-    @statusTableName = N'data_driven_export.ssrs_ExportLog';
+EXEC ssrs.data_driven_export
+    @configQuery     = N'SELECT * FROM vSys.ssrs_export_jobs WHERE JobName LIKE ''%Sales%'' AND IsActive = 1',
+    @outputFolder    = N'D:\SSRS\Sales',
+    @statusTableName = N'vSys.ssrs_export_log';
 
 -- ============================================================================
 --  13. LIST REPORT SUBSCRIPTIONS
 -- ============================================================================
-EXEC data_driven_export.ssrs_ListReportSubscriptions
+EXEC ssrs.list_report_subscriptions
     @serverUrl  = N'http://myserver/ReportServer',
     @reportPath = N'/Sales/MonthlySalesReport';
 
@@ -238,10 +242,10 @@ EXEC data_driven_export.ssrs_ListReportSubscriptions
 --  14. VALIDATE FORMAT AND GET EXTENSION (helper functions)
 -- ============================================================================
 SELECT
-    data_driven_export.ssrs_fn_IsValidFormat(N'PDF')           AS IsPdfValid,      -- 1
-    data_driven_export.ssrs_fn_IsValidFormat(N'JPEG')          AS IsJpegValid,     -- 0
-    data_driven_export.ssrs_fn_GetFormatExtension(N'PDF')      AS PdfExt,          -- .pdf
-    data_driven_export.ssrs_fn_GetFormatExtension(N'EXCELOPENXML') AS ExcelExt;    -- .xlsx
+    ssrs.fn_is_valid_format(N'PDF')           AS IsPdfValid,      -- 1
+    ssrs.fn_is_valid_format(N'JPEG')          AS IsJpegValid,     -- 0
+    ssrs.fn_get_format_extension(N'PDF')      AS PdfExt,          -- .pdf
+    ssrs.fn_get_format_extension(N'EXCELOPENXML') AS ExcelExt;    -- .xlsx
 
 -- ============================================================================
 --  15. DYNAMIC REPORT GENERATION IN A LOOP
@@ -253,10 +257,10 @@ DECLARE @filePath NVARCHAR(500);
 
 WHILE @month <= 12
 BEGIN
-    SET @filePath = N'C:\Reports\Sales_' + CAST(@year AS NVARCHAR)
+    SET @filePath = N'D:\SSRS\Sales_' + CAST(@year AS NVARCHAR)
         + N'_' + RIGHT('0' + CAST(@month AS NVARCHAR), 2) + N'.pdf';
 
-    EXEC data_driven_export.ssrs_ExportReportToFile
+    EXEC ssrs.export_report_to_file
         @serverUrl      = N'http://myserver/ReportServer',
         @reportPath     = N'/Sales/MonthlySalesReport',
         @exportFormat   = N'PDF',
@@ -273,8 +277,8 @@ END
 /*
   In SQL Agent Job Step (T-SQL type):
 
-  EXEC data_driven_export.ssrs_RunAllExportJobs
-      @outputFolder  = N'C:\Reports\Scheduled',
+  EXEC ssrs.run_all_export_jobs
+      @outputFolder  = N'D:\SSRS\Scheduled',
       @smtpServer    = N'smtp.mycompany.com',
       @smtpPort      = 25,
       @smtpFrom      = N'reports@mycompany.com';
@@ -293,10 +297,10 @@ END
 --        {Month}      - 2-digit month
 --        {Day}        - 2-digit day
 -- ============================================================================
-INSERT INTO data_driven_export.ssrs_ExportJobs (JobName, ServerUrl, ReportPath, ExportFormat, Parameters, OutputFilePath)
+INSERT INTO vSys.ssrs_export_jobs (JobName, ServerUrl, ReportPath, ExportFormat, Parameters, OutputFilePath)
 VALUES (N'Dynamic Path Demo',
         N'http://myserver/ReportServer',
         N'/Finance/QuarterlyPnL',
         N'PDF',
         N'Quarter=Q4&Year=2024',
-        N'C:\Reports\{Year}\{Month}\{ReportName}_{DateTime}.{Format}');
+        N'D:\SSRS\{Year}\{Month}\{ReportName}_{DateTime}.{Format}');

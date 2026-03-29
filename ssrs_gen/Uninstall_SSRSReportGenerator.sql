@@ -11,59 +11,59 @@ USE [YourDatabase];
 GO
 
 -- Drop wrapper procedures
-IF OBJECT_ID('data_driven_export.ssrs_RunAllExportJobs', 'P') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_RunAllExportJobs;
+IF OBJECT_ID('ssrs.run_all_export_jobs', 'P') IS NOT NULL
+    DROP PROCEDURE ssrs.run_all_export_jobs;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_BulkExportReport', 'P') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_BulkExportReport;
+IF OBJECT_ID('ssrs.bulk_export_report', 'P') IS NOT NULL
+    DROP PROCEDURE ssrs.bulk_export_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ExportReportViaUrl', 'P') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReportViaUrl;
+IF OBJECT_ID('ssrs.export_report_via_url', 'P') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report_via_url;
 GO
 
 -- Drop extended CLR procedures
-IF OBJECT_ID('data_driven_export.ssrs_ExportReportUrlAccess', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReportUrlAccess;
+IF OBJECT_ID('ssrs.export_report_url_access', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report_url_access;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ExportReportSharePoint', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReportSharePoint;
+IF OBJECT_ID('ssrs.export_report_sharepoint', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report_sharepoint;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_EmailReport', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_EmailReport;
+IF OBJECT_ID('ssrs.email_report', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.email_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_DataDrivenExport', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_DataDrivenExport;
+IF OBJECT_ID('ssrs.data_driven_export', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.data_driven_export;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ListReportSubscriptions', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ListReportSubscriptions;
+IF OBJECT_ID('ssrs.list_report_subscriptions', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.list_report_subscriptions;
 GO
 
 -- Drop core CLR procedures
-IF OBJECT_ID('data_driven_export.ssrs_ExportReport', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReport;
+IF OBJECT_ID('ssrs.export_report', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ExportReportToFile', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReportToFile;
+IF OBJECT_ID('ssrs.export_report_to_file', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report_to_file;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_GetReportParameters', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_GetReportParameters;
+IF OBJECT_ID('ssrs.get_report_parameters', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.get_report_parameters;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ListReports', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ListReports;
+IF OBJECT_ID('ssrs.list_reports', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.list_reports;
 GO
 
 -- Drop functions
-IF OBJECT_ID('data_driven_export.ssrs_fn_ExportReport', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_ExportReport;
+IF OBJECT_ID('ssrs.fn_export_report', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_export_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_GetFormatExtension;
+IF OBJECT_ID('ssrs.fn_get_format_extension', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_get_format_extension;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_IsValidFormat;
+IF OBJECT_ID('ssrs.fn_is_valid_format', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_is_valid_format;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_ListExportFormats;
+IF OBJECT_ID('ssrs.fn_list_export_formats', 'IF') IS NOT NULL
+    DROP FUNCTION ssrs.fn_list_export_formats;
 GO
 
 -- Drop assemblies
@@ -76,16 +76,18 @@ GO
 
 -- Optionally drop config tables (uncomment to remove)
 /*
-IF OBJECT_ID('data_driven_export.ssrs_ExportLog', 'U') IS NOT NULL
-    DROP TABLE data_driven_export.ssrs_ExportLog;
-IF OBJECT_ID('data_driven_export.ssrs_ExportJobs', 'U') IS NOT NULL
-    DROP TABLE data_driven_export.ssrs_ExportJobs;
+IF OBJECT_ID('vSys.ssrs_export_log', 'U') IS NOT NULL
+    DROP TABLE vSys.ssrs_export_log;
+IF OBJECT_ID('vSys.ssrs_export_jobs', 'U') IS NOT NULL
+    DROP TABLE vSys.ssrs_export_jobs;
 */
 
--- Optionally drop schema (uncomment to remove)
+-- Optionally drop schemas (uncomment to remove)
 /*
-IF EXISTS (SELECT * FROM sys.schemas WHERE name = 'data_driven_export')
-    DROP SCHEMA data_driven_export;
+IF EXISTS (SELECT * FROM sys.schemas WHERE name = 'ssrs')
+    DROP SCHEMA ssrs;
+IF EXISTS (SELECT * FROM sys.schemas WHERE name = 'vSys')
+    DROP SCHEMA vSys;
 */
 
 PRINT '=== SSRS Report Generator uninstalled successfully ===';

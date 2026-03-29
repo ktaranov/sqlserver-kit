@@ -61,45 +61,45 @@ USE [YourDatabase];
 GO
 
 -- ============================================================================
---  Step 3: Create schema if it does not exist
+--  Step 3: Create schemas if they do not exist
 -- ============================================================================
-IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'data_driven_export')
-    EXEC('CREATE SCHEMA data_driven_export');
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'ssrs')
+    EXEC('CREATE SCHEMA ssrs');
 GO
 
 -- ============================================================================
 --  Step 4: Drop existing objects if upgrading
 -- ============================================================================
-IF OBJECT_ID('data_driven_export.ssrs_ExportReport', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReport;
+IF OBJECT_ID('ssrs.export_report', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ExportReportToFile', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ExportReportToFile;
+IF OBJECT_ID('ssrs.export_report_to_file', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.export_report_to_file;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_GetReportParameters', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_GetReportParameters;
+IF OBJECT_ID('ssrs.get_report_parameters', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.get_report_parameters;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_ListReports', 'PC') IS NOT NULL
-    DROP PROCEDURE data_driven_export.ssrs_ListReports;
+IF OBJECT_ID('ssrs.list_reports', 'PC') IS NOT NULL
+    DROP PROCEDURE ssrs.list_reports;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_ExportReport', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_ExportReport;
+IF OBJECT_ID('ssrs.fn_export_report', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_export_report;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_GetFormatExtension;
+IF OBJECT_ID('ssrs.fn_get_format_extension', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_get_format_extension;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_IsValidFormat;
+IF OBJECT_ID('ssrs.fn_is_valid_format', 'FS') IS NOT NULL
+    DROP FUNCTION ssrs.fn_is_valid_format;
 GO
-IF OBJECT_ID('data_driven_export.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
-    DROP FUNCTION data_driven_export.ssrs_fn_ListExportFormats;
+IF OBJECT_ID('ssrs.fn_list_export_formats', 'IF') IS NOT NULL
+    DROP FUNCTION ssrs.fn_list_export_formats;
 GO
 IF EXISTS (SELECT * FROM sys.assemblies WHERE name = 'SSRSReportGenerator')
     DROP ASSEMBLY SSRSReportGenerator;
 GO
 
 -- ============================================================================
---  Step 4: Create the assembly
+--  Step 5: Create the assembly
 -- ============================================================================
 
 -- Load from DLL file path (update path to match your environment)
@@ -109,11 +109,11 @@ WITH PERMISSION_SET = EXTERNAL_ACCESS;
 GO
 
 -- ============================================================================
---  Step 5: Create stored procedures
+--  Step 6: Create stored procedures
 -- ============================================================================
 
--- 5a. Export a report and return as result set (VARBINARY)
-CREATE PROCEDURE data_driven_export.ssrs_ExportReport
+-- 6a. Export a report and return as result set (VARBINARY)
+CREATE PROCEDURE ssrs.export_report
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -125,8 +125,8 @@ CREATE PROCEDURE data_driven_export.ssrs_ExportReport
 AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.ExportReport;
 GO
 
--- 5b. Export a report and save to file on disk
-CREATE PROCEDURE data_driven_export.ssrs_ExportReportToFile
+-- 6b. Export a report and save to file on disk
+CREATE PROCEDURE ssrs.export_report_to_file
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -139,8 +139,8 @@ CREATE PROCEDURE data_driven_export.ssrs_ExportReportToFile
 AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.ExportReportToFile;
 GO
 
--- 5c. Get report parameters metadata
-CREATE PROCEDURE data_driven_export.ssrs_GetReportParameters
+-- 6c. Get report parameters metadata
+CREATE PROCEDURE ssrs.get_report_parameters
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @username       NVARCHAR(256)  = NULL,
@@ -149,8 +149,8 @@ CREATE PROCEDURE data_driven_export.ssrs_GetReportParameters
 AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.GetReportParameters;
 GO
 
--- 5d. List reports and folders on the server
-CREATE PROCEDURE data_driven_export.ssrs_ListReports
+-- 6d. List reports and folders on the server
+CREATE PROCEDURE ssrs.list_reports
     @serverUrl      NVARCHAR(500),
     @folderPath     NVARCHAR(1000) = N'/',
     @recursive      BIT            = 0,
@@ -161,11 +161,11 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.ListReports;
 GO
 
 -- ============================================================================
---  Step 6: Create scalar functions
+--  Step 7: Create scalar functions
 -- ============================================================================
 
--- 6a. Export report as VARBINARY (usable in SELECT)
-CREATE FUNCTION data_driven_export.ssrs_fn_ExportReport
+-- 7a. Export report as VARBINARY (usable in SELECT)
+CREATE FUNCTION ssrs.fn_export_report
 (
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
@@ -180,8 +180,8 @@ RETURNS VARBINARY(MAX)
 AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_ExportReport;
 GO
 
--- 6b. Get file extension for a format
-CREATE FUNCTION data_driven_export.ssrs_fn_GetFormatExtension
+-- 7b. Get file extension for a format
+CREATE FUNCTION ssrs.fn_get_format_extension
 (
     @exportFormat   NVARCHAR(50)
 )
@@ -189,8 +189,8 @@ RETURNS NVARCHAR(10)
 AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_GetFormatExtension;
 GO
 
--- 6c. Validate export format string
-CREATE FUNCTION data_driven_export.ssrs_fn_IsValidFormat
+-- 7c. Validate export format string
+CREATE FUNCTION ssrs.fn_is_valid_format
 (
     @exportFormat   NVARCHAR(50)
 )
@@ -199,10 +199,10 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_IsValidFormat;
 GO
 
 -- ============================================================================
---  Step 7: Create table-valued function
+--  Step 8: Create table-valued function
 -- ============================================================================
 
-CREATE FUNCTION data_driven_export.ssrs_fn_ListExportFormats()
+CREATE FUNCTION ssrs.fn_list_export_formats()
 RETURNS TABLE
 (
     FormatName  NVARCHAR(50),
@@ -213,11 +213,11 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_ListExportFormats;
 GO
 
 -- ============================================================================
---  Step 8: Create helper wrapper procedures for common scenarios
+--  Step 9: Create helper wrapper procedures for common scenarios
 -- ============================================================================
 
--- 8a. Bulk export: export a report in multiple formats at once
-CREATE PROCEDURE data_driven_export.ssrs_BulkExportReport
+-- 9a. Bulk export: export a report in multiple formats at once
+CREATE PROCEDURE ssrs.bulk_export_report
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @formats        NVARCHAR(500)  = N'PDF,EXCELOPENXML,WORDOPENXML',
@@ -265,13 +265,13 @@ BEGIN
             SET @remaining = SUBSTRING(@remaining, @pos + 1, LEN(@remaining));
         END
 
-        IF LEN(@fmt) > 0 AND data_driven_export.ssrs_fn_IsValidFormat(@fmt) = 1
+        IF LEN(@fmt) > 0 AND ssrs.fn_is_valid_format(@fmt) = 1
         BEGIN
-            SET @ext = data_driven_export.ssrs_fn_GetFormatExtension(@fmt);
+            SET @ext = ssrs.fn_get_format_extension(@fmt);
             SET @outPath = @outputFolder + @prefix + '_' + @timestamp + @ext;
 
             BEGIN TRY
-                EXEC data_driven_export.ssrs_ExportReportToFile
+                EXEC ssrs.export_report_to_file
                     @serverUrl      = @serverUrl,
                     @reportPath     = @reportPath,
                     @exportFormat   = @fmt,
@@ -294,8 +294,8 @@ BEGIN
 END;
 GO
 
--- 8b. Dynamic export using URL Access method (alternative to SOAP)
-CREATE PROCEDURE data_driven_export.ssrs_ExportReportViaUrl
+-- 9b. Dynamic export using URL Access method (alternative to SOAP)
+CREATE PROCEDURE ssrs.export_report_via_url
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -345,7 +345,7 @@ BEGIN
     -- Convert URL-style params to our semicolon format
     DECLARE @soapParams NVARCHAR(MAX) = REPLACE(@parameters, '&', ';');
 
-    EXEC data_driven_export.ssrs_ExportReportToFile
+    EXEC ssrs.export_report_to_file
         @serverUrl      = @serverUrl,
         @reportPath     = @reportPath,
         @exportFormat   = @exportFormat,
@@ -358,19 +358,19 @@ END;
 GO
 
 -- ============================================================================
---  Step 9: Grant permissions (adjust as needed)
+--  Step 10: Grant permissions (adjust as needed)
 -- ============================================================================
 /*
-GRANT EXECUTE ON data_driven_export.ssrs_ExportReport TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_ExportReportToFile TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_GetReportParameters TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_ListReports TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_fn_ExportReport TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_fn_GetFormatExtension TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_fn_IsValidFormat TO [YourRole];
-GRANT SELECT ON data_driven_export.ssrs_fn_ListExportFormats TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_BulkExportReport TO [YourRole];
-GRANT EXECUTE ON data_driven_export.ssrs_ExportReportViaUrl TO [YourRole];
+GRANT EXECUTE ON ssrs.export_report TO [YourRole];
+GRANT EXECUTE ON ssrs.export_report_to_file TO [YourRole];
+GRANT EXECUTE ON ssrs.get_report_parameters TO [YourRole];
+GRANT EXECUTE ON ssrs.list_reports TO [YourRole];
+GRANT EXECUTE ON ssrs.fn_export_report TO [YourRole];
+GRANT EXECUTE ON ssrs.fn_get_format_extension TO [YourRole];
+GRANT EXECUTE ON ssrs.fn_is_valid_format TO [YourRole];
+GRANT SELECT ON ssrs.fn_list_export_formats TO [YourRole];
+GRANT EXECUTE ON ssrs.bulk_export_report TO [YourRole];
+GRANT EXECUTE ON ssrs.export_report_via_url TO [YourRole];
 */
 
 -- ============================================================================
