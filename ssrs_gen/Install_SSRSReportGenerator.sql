@@ -99,8 +99,25 @@ IF EXISTS (SELECT * FROM sys.assemblies WHERE name = 'SSRSReportGenerator')
 GO
 
 -- ============================================================================
---  Step 5: Create the assembly
+--  Step 5: Trust and create the assembly
 -- ============================================================================
+
+-- SQL Server 2017+ requires CLR strict security. Use ONE of these approaches:
+--
+-- Option A: TRUSTWORTHY (simplest, less secure)
+--   ALTER DATABASE [YourDatabase] SET TRUSTWORTHY ON;
+--
+-- Option B: sp_add_trusted_assembly (SQL Server 2017+)
+--   Registers the DLL hash so SQL Server trusts it without TRUSTWORTHY ON.
+--   Run this BEFORE CREATE ASSEMBLY:
+DECLARE @hash VARBINARY(64);
+SELECT @hash = HASHBYTES('SHA2_512', BulkColumn)
+FROM OPENROWSET(BULK 'C:\CLR\SSRSReportGenerator.dll', SINGLE_BLOB) AS f;
+
+IF NOT EXISTS (SELECT 1 FROM sys.trusted_assemblies WHERE hash = @hash)
+    EXEC sys.sp_add_trusted_assembly @hash,
+        N'SSRSReportGenerator, version=0.0.0.0, culture=neutral, publickeytoken=null, processorarchitecture=msil';
+GO
 
 -- Load from DLL file path (update path to match your environment)
 CREATE ASSEMBLY SSRSReportGenerator

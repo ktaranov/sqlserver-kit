@@ -39,8 +39,20 @@ IF EXISTS (SELECT * FROM sys.assemblies WHERE name = 'SSRSReportGeneratorExtende
 GO
 
 -- ============================================================================
---  Create the extended assembly
+--  Trust and create the extended assembly
 -- ============================================================================
+
+-- SQL Server 2017+ requires CLR strict security.
+-- Register the DLL hash so SQL Server trusts it.
+DECLARE @hash VARBINARY(64);
+SELECT @hash = HASHBYTES('SHA2_512', BulkColumn)
+FROM OPENROWSET(BULK 'C:\CLR\SSRSReportGenerator_Extended.dll', SINGLE_BLOB) AS f;
+
+IF NOT EXISTS (SELECT 1 FROM sys.trusted_assemblies WHERE hash = @hash)
+    EXEC sys.sp_add_trusted_assembly @hash,
+        N'SSRSReportGeneratorExtended, version=0.0.0.0, culture=neutral, publickeytoken=null, processorarchitecture=msil';
+GO
+
 CREATE ASSEMBLY SSRSReportGeneratorExtended
 FROM 'C:\CLR\SSRSReportGenerator_Extended.dll'
 WITH PERMISSION_SET = EXTERNAL_ACCESS;
