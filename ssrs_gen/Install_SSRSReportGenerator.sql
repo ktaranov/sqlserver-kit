@@ -134,8 +134,8 @@ CREATE PROCEDURE ssrs.export_report
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
-    @parameters     NVARCHAR(MAX)  = NULL,   -- 'Param1=Val1;Param2=Val2'
-    @deviceInfo     NVARCHAR(MAX)  = NULL,   -- optional XML device info
+    @parameters     NVARCHAR(MAX),             -- 'Param1=Val1;Param2=Val2'
+    @deviceInfo     NVARCHAR(MAX),             -- optional XML device info
     @username       NVARCHAR(256)  = NULL,
     @password       NVARCHAR(256)  = NULL,
     @domain         NVARCHAR(256)  = NULL
@@ -147,9 +147,9 @@ CREATE PROCEDURE ssrs.export_report_to_file
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
-    @parameters     NVARCHAR(MAX)  = NULL,
+    @parameters     NVARCHAR(MAX),
     @outputFilePath NVARCHAR(1000),
-    @deviceInfo     NVARCHAR(MAX)  = NULL,
+    @deviceInfo     NVARCHAR(MAX),
     @username       NVARCHAR(256)  = NULL,
     @password       NVARCHAR(256)  = NULL,
     @domain         NVARCHAR(256)  = NULL

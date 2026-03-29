@@ -67,7 +67,7 @@ CREATE PROCEDURE ssrs.export_report_url_access
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
-    @urlParameters  NVARCHAR(MAX)  = NULL,   -- 'Param1=Val1&Param2=Val2'
+    @urlParameters  NVARCHAR(MAX),             -- 'Param1=Val1&Param2=Val2'
     @outputFilePath NVARCHAR(1000) = NULL,
     @username       NVARCHAR(256)  = NULL,
     @password       NVARCHAR(256)  = NULL,
@@ -80,7 +80,7 @@ CREATE PROCEDURE ssrs.export_report_sharepoint
     @sharePointUrl      NVARCHAR(500),
     @reportLibraryPath  NVARCHAR(1000),
     @exportFormat       NVARCHAR(50)   = N'PDF',
-    @urlParameters      NVARCHAR(MAX)  = NULL,
+    @urlParameters      NVARCHAR(MAX),
     @outputFilePath     NVARCHAR(1000),
     @username           NVARCHAR(256)  = NULL,
     @password           NVARCHAR(256)  = NULL,
@@ -93,17 +93,17 @@ CREATE PROCEDURE ssrs.email_report
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
-    @parameters     NVARCHAR(MAX)  = NULL,
+    @parameters     NVARCHAR(MAX),
     @smtpServer     NVARCHAR(256),
     @smtpPort       INT            = 25,
     @smtpUseSsl     BIT            = 0,
     @smtpUsername   NVARCHAR(256)  = NULL,
     @smtpPassword   NVARCHAR(256)  = NULL,
     @fromAddress    NVARCHAR(256),
-    @toAddresses    NVARCHAR(MAX),            -- semicolon-separated
-    @ccAddresses    NVARCHAR(MAX)  = NULL,
+    @toAddresses    NVARCHAR(MAX),             -- semicolon-separated
+    @ccAddresses    NVARCHAR(MAX),
     @subject        NVARCHAR(500)  = NULL,
-    @body           NVARCHAR(MAX)  = NULL,
+    @body           NVARCHAR(MAX),
     @ssrsUsername   NVARCHAR(256)  = NULL,
     @ssrsPassword   NVARCHAR(256)  = NULL,
     @ssrsDomain     NVARCHAR(256)  = NULL
@@ -112,14 +112,14 @@ GO
 
 -- Data-driven export from config table
 CREATE PROCEDURE ssrs.data_driven_export
-    @configQuery      NVARCHAR(MAX),          -- SQL query returning job rows
+    @configQuery      NVARCHAR(MAX),           -- SQL query returning job rows
     @outputFolder     NVARCHAR(1000) = NULL,
     @smtpServer       NVARCHAR(256)  = NULL,
     @smtpPort         INT            = 25,
     @smtpFrom         NVARCHAR(256)  = NULL,
-    @statusTableName  NVARCHAR(256)  = NULL,  -- table to log results
+    @statusTableName  NVARCHAR(256)  = NULL,   -- table to log results
     @ssrsUsername      NVARCHAR(256)  = NULL,
-    @ssrsPassword      NVARCHAR(256)  = NULL,
+    @ssrsPassword     NVARCHAR(256)  = NULL,
     @ssrsDomain       NVARCHAR(256)  = NULL
 AS EXTERNAL NAME SSRSReportGeneratorExtended.SSRSReportGeneratorExtended.DataDrivenExport;
 GO
