@@ -17,22 +17,29 @@ USE [YourDatabase];
 GO
 
 -- ============================================================================
+--  Create schema if it does not exist
+-- ============================================================================
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'data_driven_export')
+    EXEC('CREATE SCHEMA data_driven_export');
+GO
+
+-- ============================================================================
 --  Drop existing extended objects if upgrading
 -- ============================================================================
-IF OBJECT_ID('dbo.ssrs_ExportReportUrlAccess', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportUrlAccess;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportUrlAccess', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportUrlAccess;
 GO
-IF OBJECT_ID('dbo.ssrs_ExportReportSharePoint', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportSharePoint;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportSharePoint', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportSharePoint;
 GO
-IF OBJECT_ID('dbo.ssrs_EmailReport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_EmailReport;
+IF OBJECT_ID('data_driven_export.ssrs_EmailReport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_EmailReport;
 GO
-IF OBJECT_ID('dbo.ssrs_DataDrivenExport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_DataDrivenExport;
+IF OBJECT_ID('data_driven_export.ssrs_DataDrivenExport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_DataDrivenExport;
 GO
-IF OBJECT_ID('dbo.ssrs_ListReportSubscriptions', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ListReportSubscriptions;
+IF OBJECT_ID('data_driven_export.ssrs_ListReportSubscriptions', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ListReportSubscriptions;
 GO
 IF EXISTS (SELECT * FROM sys.assemblies WHERE name = 'SSRSReportGeneratorExtended')
     DROP ASSEMBLY SSRSReportGeneratorExtended;
@@ -51,7 +58,7 @@ GO
 -- ============================================================================
 
 -- URL Access export
-CREATE PROCEDURE dbo.ssrs_ExportReportUrlAccess
+CREATE PROCEDURE data_driven_export.ssrs_ExportReportUrlAccess
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -64,7 +71,7 @@ AS EXTERNAL NAME SSRSReportGeneratorExtended.SSRSReportGeneratorExtended.ExportR
 GO
 
 -- SharePoint integrated mode export
-CREATE PROCEDURE dbo.ssrs_ExportReportSharePoint
+CREATE PROCEDURE data_driven_export.ssrs_ExportReportSharePoint
     @sharePointUrl      NVARCHAR(500),
     @reportLibraryPath  NVARCHAR(1000),
     @exportFormat       NVARCHAR(50)   = N'PDF',
@@ -77,7 +84,7 @@ AS EXTERNAL NAME SSRSReportGeneratorExtended.SSRSReportGeneratorExtended.ExportR
 GO
 
 -- Email report as attachment
-CREATE PROCEDURE dbo.ssrs_EmailReport
+CREATE PROCEDURE data_driven_export.ssrs_EmailReport
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -99,7 +106,7 @@ AS EXTERNAL NAME SSRSReportGeneratorExtended.SSRSReportGeneratorExtended.EmailRe
 GO
 
 -- Data-driven export from config table
-CREATE PROCEDURE dbo.ssrs_DataDrivenExport
+CREATE PROCEDURE data_driven_export.ssrs_DataDrivenExport
     @configQuery      NVARCHAR(MAX),          -- SQL query returning job rows
     @outputFolder     NVARCHAR(1000) = NULL,
     @smtpServer       NVARCHAR(256)  = NULL,
@@ -113,7 +120,7 @@ AS EXTERNAL NAME SSRSReportGeneratorExtended.SSRSReportGeneratorExtended.DataDri
 GO
 
 -- List report subscriptions
-CREATE PROCEDURE dbo.ssrs_ListReportSubscriptions
+CREATE PROCEDURE data_driven_export.ssrs_ListReportSubscriptions
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @username       NVARCHAR(256)  = NULL,
@@ -127,9 +134,9 @@ GO
 -- ============================================================================
 
 -- Job configuration table
-IF OBJECT_ID('dbo.ssrs_ExportJobs', 'U') IS NULL
+IF OBJECT_ID('data_driven_export.ssrs_ExportJobs', 'U') IS NULL
 BEGIN
-    CREATE TABLE dbo.ssrs_ExportJobs
+    CREATE TABLE data_driven_export.ssrs_ExportJobs
     (
         JobId           INT IDENTITY(1,1) PRIMARY KEY,
         JobName         NVARCHAR(256)   NOT NULL,
@@ -145,14 +152,14 @@ BEGIN
         ModifiedDate    DATETIME        NULL
     );
 
-    PRINT 'Created table dbo.ssrs_ExportJobs';
+    PRINT 'Created table data_driven_export.ssrs_ExportJobs';
 END
 GO
 
 -- Export status/log table
-IF OBJECT_ID('dbo.ssrs_ExportLog', 'U') IS NULL
+IF OBJECT_ID('data_driven_export.ssrs_ExportLog', 'U') IS NULL
 BEGIN
-    CREATE TABLE dbo.ssrs_ExportLog
+    CREATE TABLE data_driven_export.ssrs_ExportLog
     (
         LogId       INT IDENTITY(1,1) PRIMARY KEY,
         JobId       INT             NOT NULL,
@@ -162,16 +169,16 @@ BEGIN
     );
 
     CREATE NONCLUSTERED INDEX IX_ssrs_ExportLog_JobId
-        ON dbo.ssrs_ExportLog (JobId, ExportedAt DESC);
+        ON data_driven_export.ssrs_ExportLog (JobId, ExportedAt DESC);
 
-    PRINT 'Created table dbo.ssrs_ExportLog';
+    PRINT 'Created table data_driven_export.ssrs_ExportLog';
 END
 GO
 
 -- ============================================================================
 --  Convenience wrapper: Run all active data-driven export jobs
 -- ============================================================================
-CREATE OR ALTER PROCEDURE dbo.ssrs_RunAllExportJobs
+CREATE OR ALTER PROCEDURE data_driven_export.ssrs_RunAllExportJobs
     @outputFolder   NVARCHAR(1000) = N'C:\Reports\Export',
     @smtpServer     NVARCHAR(256)  = NULL,
     @smtpPort       INT            = 25,
@@ -183,13 +190,13 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    EXEC dbo.ssrs_DataDrivenExport
-        @configQuery     = N'SELECT * FROM dbo.ssrs_ExportJobs WHERE IsActive = 1',
+    EXEC data_driven_export.ssrs_DataDrivenExport
+        @configQuery     = N'SELECT * FROM data_driven_export.ssrs_ExportJobs WHERE IsActive = 1',
         @outputFolder    = @outputFolder,
         @smtpServer      = @smtpServer,
         @smtpPort        = @smtpPort,
         @smtpFrom        = @smtpFrom,
-        @statusTableName = N'dbo.ssrs_ExportLog',
+        @statusTableName = N'data_driven_export.ssrs_ExportLog',
         @ssrsUsername     = @ssrsUsername,
         @ssrsPassword     = @ssrsPassword,
         @ssrsDomain      = @ssrsDomain;

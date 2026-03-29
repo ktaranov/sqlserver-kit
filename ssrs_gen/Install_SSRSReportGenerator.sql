@@ -61,31 +61,38 @@ USE [YourDatabase];
 GO
 
 -- ============================================================================
---  Step 3: Drop existing objects if upgrading
+--  Step 3: Create schema if it does not exist
 -- ============================================================================
-IF OBJECT_ID('dbo.ssrs_ExportReport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReport;
+IF NOT EXISTS (SELECT * FROM sys.schemas WHERE name = 'data_driven_export')
+    EXEC('CREATE SCHEMA data_driven_export');
 GO
-IF OBJECT_ID('dbo.ssrs_ExportReportToFile', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportToFile;
+
+-- ============================================================================
+--  Step 4: Drop existing objects if upgrading
+-- ============================================================================
+IF OBJECT_ID('data_driven_export.ssrs_ExportReport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReport;
 GO
-IF OBJECT_ID('dbo.ssrs_GetReportParameters', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_GetReportParameters;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportToFile', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportToFile;
 GO
-IF OBJECT_ID('dbo.ssrs_ListReports', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ListReports;
+IF OBJECT_ID('data_driven_export.ssrs_GetReportParameters', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_GetReportParameters;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_ExportReport', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_ExportReport;
+IF OBJECT_ID('data_driven_export.ssrs_ListReports', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ListReports;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_GetFormatExtension;
+IF OBJECT_ID('data_driven_export.ssrs_fn_ExportReport', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_ExportReport;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_IsValidFormat;
+IF OBJECT_ID('data_driven_export.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_GetFormatExtension;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_ListExportFormats;
+IF OBJECT_ID('data_driven_export.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_IsValidFormat;
+GO
+IF OBJECT_ID('data_driven_export.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_ListExportFormats;
 GO
 IF EXISTS (SELECT * FROM sys.assemblies WHERE name = 'SSRSReportGenerator')
     DROP ASSEMBLY SSRSReportGenerator;
@@ -106,7 +113,7 @@ GO
 -- ============================================================================
 
 -- 5a. Export a report and return as result set (VARBINARY)
-CREATE PROCEDURE dbo.ssrs_ExportReport
+CREATE PROCEDURE data_driven_export.ssrs_ExportReport
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -119,7 +126,7 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.ExportReport;
 GO
 
 -- 5b. Export a report and save to file on disk
-CREATE PROCEDURE dbo.ssrs_ExportReportToFile
+CREATE PROCEDURE data_driven_export.ssrs_ExportReportToFile
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -133,7 +140,7 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.ExportReportToFile;
 GO
 
 -- 5c. Get report parameters metadata
-CREATE PROCEDURE dbo.ssrs_GetReportParameters
+CREATE PROCEDURE data_driven_export.ssrs_GetReportParameters
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @username       NVARCHAR(256)  = NULL,
@@ -143,7 +150,7 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.GetReportParameters;
 GO
 
 -- 5d. List reports and folders on the server
-CREATE PROCEDURE dbo.ssrs_ListReports
+CREATE PROCEDURE data_driven_export.ssrs_ListReports
     @serverUrl      NVARCHAR(500),
     @folderPath     NVARCHAR(1000) = N'/',
     @recursive      BIT            = 0,
@@ -158,7 +165,7 @@ GO
 -- ============================================================================
 
 -- 6a. Export report as VARBINARY (usable in SELECT)
-CREATE FUNCTION dbo.ssrs_fn_ExportReport
+CREATE FUNCTION data_driven_export.ssrs_fn_ExportReport
 (
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
@@ -174,7 +181,7 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_ExportReport;
 GO
 
 -- 6b. Get file extension for a format
-CREATE FUNCTION dbo.ssrs_fn_GetFormatExtension
+CREATE FUNCTION data_driven_export.ssrs_fn_GetFormatExtension
 (
     @exportFormat   NVARCHAR(50)
 )
@@ -183,7 +190,7 @@ AS EXTERNAL NAME SSRSReportGenerator.SSRSReportGenerator.fn_GetFormatExtension;
 GO
 
 -- 6c. Validate export format string
-CREATE FUNCTION dbo.ssrs_fn_IsValidFormat
+CREATE FUNCTION data_driven_export.ssrs_fn_IsValidFormat
 (
     @exportFormat   NVARCHAR(50)
 )
@@ -195,7 +202,7 @@ GO
 --  Step 7: Create table-valued function
 -- ============================================================================
 
-CREATE FUNCTION dbo.ssrs_fn_ListExportFormats()
+CREATE FUNCTION data_driven_export.ssrs_fn_ListExportFormats()
 RETURNS TABLE
 (
     FormatName  NVARCHAR(50),
@@ -210,7 +217,7 @@ GO
 -- ============================================================================
 
 -- 8a. Bulk export: export a report in multiple formats at once
-CREATE PROCEDURE dbo.ssrs_BulkExportReport
+CREATE PROCEDURE data_driven_export.ssrs_BulkExportReport
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @formats        NVARCHAR(500)  = N'PDF,EXCELOPENXML,WORDOPENXML',
@@ -258,13 +265,13 @@ BEGIN
             SET @remaining = SUBSTRING(@remaining, @pos + 1, LEN(@remaining));
         END
 
-        IF LEN(@fmt) > 0 AND dbo.ssrs_fn_IsValidFormat(@fmt) = 1
+        IF LEN(@fmt) > 0 AND data_driven_export.ssrs_fn_IsValidFormat(@fmt) = 1
         BEGIN
-            SET @ext = dbo.ssrs_fn_GetFormatExtension(@fmt);
+            SET @ext = data_driven_export.ssrs_fn_GetFormatExtension(@fmt);
             SET @outPath = @outputFolder + @prefix + '_' + @timestamp + @ext;
 
             BEGIN TRY
-                EXEC dbo.ssrs_ExportReportToFile
+                EXEC data_driven_export.ssrs_ExportReportToFile
                     @serverUrl      = @serverUrl,
                     @reportPath     = @reportPath,
                     @exportFormat   = @fmt,
@@ -288,7 +295,7 @@ END;
 GO
 
 -- 8b. Dynamic export using URL Access method (alternative to SOAP)
-CREATE PROCEDURE dbo.ssrs_ExportReportViaUrl
+CREATE PROCEDURE data_driven_export.ssrs_ExportReportViaUrl
     @serverUrl      NVARCHAR(500),
     @reportPath     NVARCHAR(1000),
     @exportFormat   NVARCHAR(50)   = N'PDF',
@@ -338,7 +345,7 @@ BEGIN
     -- Convert URL-style params to our semicolon format
     DECLARE @soapParams NVARCHAR(MAX) = REPLACE(@parameters, '&', ';');
 
-    EXEC dbo.ssrs_ExportReportToFile
+    EXEC data_driven_export.ssrs_ExportReportToFile
         @serverUrl      = @serverUrl,
         @reportPath     = @reportPath,
         @exportFormat   = @exportFormat,
@@ -354,16 +361,16 @@ GO
 --  Step 9: Grant permissions (adjust as needed)
 -- ============================================================================
 /*
-GRANT EXECUTE ON dbo.ssrs_ExportReport TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_ExportReportToFile TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_GetReportParameters TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_ListReports TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_fn_ExportReport TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_fn_GetFormatExtension TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_fn_IsValidFormat TO [YourRole];
-GRANT SELECT ON dbo.ssrs_fn_ListExportFormats TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_BulkExportReport TO [YourRole];
-GRANT EXECUTE ON dbo.ssrs_ExportReportViaUrl TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_ExportReport TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_ExportReportToFile TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_GetReportParameters TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_ListReports TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_fn_ExportReport TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_fn_GetFormatExtension TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_fn_IsValidFormat TO [YourRole];
+GRANT SELECT ON data_driven_export.ssrs_fn_ListExportFormats TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_BulkExportReport TO [YourRole];
+GRANT EXECUTE ON data_driven_export.ssrs_ExportReportViaUrl TO [YourRole];
 */
 
 -- ============================================================================

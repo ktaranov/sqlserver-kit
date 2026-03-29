@@ -11,59 +11,59 @@ USE [YourDatabase];
 GO
 
 -- Drop wrapper procedures
-IF OBJECT_ID('dbo.ssrs_RunAllExportJobs', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_RunAllExportJobs;
+IF OBJECT_ID('data_driven_export.ssrs_RunAllExportJobs', 'P') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_RunAllExportJobs;
 GO
-IF OBJECT_ID('dbo.ssrs_BulkExportReport', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_BulkExportReport;
+IF OBJECT_ID('data_driven_export.ssrs_BulkExportReport', 'P') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_BulkExportReport;
 GO
-IF OBJECT_ID('dbo.ssrs_ExportReportViaUrl', 'P') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportViaUrl;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportViaUrl', 'P') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportViaUrl;
 GO
 
 -- Drop extended CLR procedures
-IF OBJECT_ID('dbo.ssrs_ExportReportUrlAccess', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportUrlAccess;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportUrlAccess', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportUrlAccess;
 GO
-IF OBJECT_ID('dbo.ssrs_ExportReportSharePoint', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportSharePoint;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportSharePoint', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportSharePoint;
 GO
-IF OBJECT_ID('dbo.ssrs_EmailReport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_EmailReport;
+IF OBJECT_ID('data_driven_export.ssrs_EmailReport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_EmailReport;
 GO
-IF OBJECT_ID('dbo.ssrs_DataDrivenExport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_DataDrivenExport;
+IF OBJECT_ID('data_driven_export.ssrs_DataDrivenExport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_DataDrivenExport;
 GO
-IF OBJECT_ID('dbo.ssrs_ListReportSubscriptions', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ListReportSubscriptions;
+IF OBJECT_ID('data_driven_export.ssrs_ListReportSubscriptions', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ListReportSubscriptions;
 GO
 
 -- Drop core CLR procedures
-IF OBJECT_ID('dbo.ssrs_ExportReport', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReport;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReport', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReport;
 GO
-IF OBJECT_ID('dbo.ssrs_ExportReportToFile', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ExportReportToFile;
+IF OBJECT_ID('data_driven_export.ssrs_ExportReportToFile', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ExportReportToFile;
 GO
-IF OBJECT_ID('dbo.ssrs_GetReportParameters', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_GetReportParameters;
+IF OBJECT_ID('data_driven_export.ssrs_GetReportParameters', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_GetReportParameters;
 GO
-IF OBJECT_ID('dbo.ssrs_ListReports', 'PC') IS NOT NULL
-    DROP PROCEDURE dbo.ssrs_ListReports;
+IF OBJECT_ID('data_driven_export.ssrs_ListReports', 'PC') IS NOT NULL
+    DROP PROCEDURE data_driven_export.ssrs_ListReports;
 GO
 
 -- Drop functions
-IF OBJECT_ID('dbo.ssrs_fn_ExportReport', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_ExportReport;
+IF OBJECT_ID('data_driven_export.ssrs_fn_ExportReport', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_ExportReport;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_GetFormatExtension;
+IF OBJECT_ID('data_driven_export.ssrs_fn_GetFormatExtension', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_GetFormatExtension;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_IsValidFormat;
+IF OBJECT_ID('data_driven_export.ssrs_fn_IsValidFormat', 'FS') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_IsValidFormat;
 GO
-IF OBJECT_ID('dbo.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
-    DROP FUNCTION dbo.ssrs_fn_ListExportFormats;
+IF OBJECT_ID('data_driven_export.ssrs_fn_ListExportFormats', 'IF') IS NOT NULL
+    DROP FUNCTION data_driven_export.ssrs_fn_ListExportFormats;
 GO
 
 -- Drop assemblies
@@ -76,10 +76,16 @@ GO
 
 -- Optionally drop config tables (uncomment to remove)
 /*
-IF OBJECT_ID('dbo.ssrs_ExportLog', 'U') IS NOT NULL
-    DROP TABLE dbo.ssrs_ExportLog;
-IF OBJECT_ID('dbo.ssrs_ExportJobs', 'U') IS NOT NULL
-    DROP TABLE dbo.ssrs_ExportJobs;
+IF OBJECT_ID('data_driven_export.ssrs_ExportLog', 'U') IS NOT NULL
+    DROP TABLE data_driven_export.ssrs_ExportLog;
+IF OBJECT_ID('data_driven_export.ssrs_ExportJobs', 'U') IS NOT NULL
+    DROP TABLE data_driven_export.ssrs_ExportJobs;
+*/
+
+-- Optionally drop schema (uncomment to remove)
+/*
+IF EXISTS (SELECT * FROM sys.schemas WHERE name = 'data_driven_export')
+    DROP SCHEMA data_driven_export;
 */
 
 PRINT '=== SSRS Report Generator uninstalled successfully ===';
