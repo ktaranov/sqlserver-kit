@@ -75,6 +75,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - and many others...
  - [Solution](/Solution)
     - [dbWarden](/Solution/dbWarden) a free SQL Server Monitoring Package (by Stevie Rounds and Michael Rounds)
+    - [SQLPlanner](https://mssqlplanner.com/) a free Windows and SQL Server Monitoring Solution (by Chandan Kumar)
     - [Base line Collector script](/Solution/BaselineCollector) (by Robert Virag)
     - [SysJobHistory](/Solution/SysJobHistory) (by David Wentzel)
  - [SSMS](/SSMS)

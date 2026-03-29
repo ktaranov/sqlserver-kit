@@ -43,6 +43,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [SqlDynamite](#sqldynamite)                                      | No                            | No        | [S]      | [SqlDynamite]                                      | 2016-04-06 | Anatoly Sova            |            | Yes            | No    |
 | [SQL Server Data Tools](#ssdt)                                   | No                            | No        | [MS]     | [SQL Server Data Tools]                            | 2018-04-10 | Microsoft               |            | Yes            | No    |
 | [Database Health Monitor](#database-health-monitor)              | No                            | No        | [M]      | [Database Health Monitor]                          | 2019-12-01 | Steve Stedman           |            | Yes            | No    |
+| [Windows & DB Server Monitor](#SQLPlanner)              | No                            | No        | [M]      | [SQL Planner]                          | 2019-12-01 | Chandan Kumar           |            | Yes            | No    |
 | [SchemaDrift](#schemadrift)                                      | No                            | No        | [SC]     | [SchemaDrift]                                      | 2016-02-28 | Steve Stedman           |            | Yes            | No    |
 | [Dbeaver](#dbeaver)                                              | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [MS]     | [Dbeaver]                                          | 2020-11-29 | Open Source             |            | Yes            | No    |
 | [HeidiSQL](#heidisql)                                            | MySQL,PostgreSQL,Other        | No        | [MS]     | [HeidiSQL]                                         | 2020-11-02 | Open Source             |            | Yes            | No    |
@@ -217,6 +218,7 @@ Utility types (main purpose), in braces `{}` current counts:
 | [EMS Data Comparer](#ems-data-comparer)                          | No                            | No        | [DC]     | [EMS Data Comparer]                                | 2012-11-16 | EMS                     |            | No             |   $47 |
 | [NitroAccelerator](#nitroaccelerator)                            | No                            | No        | [?]      | [NitroAccelerator]                                 | 2016-07-10 | Nitrosphere             |            | No             | $1265 |
 | [ERwin Data Modeler](#erwin-data-modeler)                        | Oracle,MySQL,PostgreSQL,Other | No        | [DA]     | [ERwin Data Modeler]                               | 2016-06-03 | ERwin                   |            | No             |  $810 |
+| [Luna Modeler](#luna-modeler)                        | Oracle,MySQL,PostgreSQL,Other | Linux,Mac        | [DA]     | [Luna Modeler]                               | 2022-10-05 | Ideamerit                   |            | No             |  $99 |
 | [Toad Data Point](#toad-data-point)                              | Oracle,MySQL,PostgreSQL,Other | No        | [?]      | [Toad Data Point]                                  | 2016-06-16 | Quest Software          |            | No             | ?     |
 | [SQL Power Architect](#sql-power-architect)                      | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [SQL Power Architect]                              | 2016-02-11 | SQLPower                |            | Yes            |  $995 |
 | [DbWrench](#dbwrench)                                            | Oracle,MySQL,PostgreSQL,Other | Linux,Mac | [DA]     | [DbWrench]                                         | 2019-09-17 | Nizana Systems          |            | No             |   $99 |
@@ -690,6 +692,22 @@ Price: No
 Database Health Monitor is a powerful performance monitoring and diagnostics solution that alerts administrators to server health,
 performance or availability problems within their SQL Server environment, all from a central console.
 
+## SQL Planner
+<a id="SQLPlanner"></a>
+Download page: [https://mssqlplanner.com/download-product/]<br/>
+Release date: 2019-12-01<br/>
+Support Version: 2012/2014/2017/2025/ Onwards<br/>
+Author: Chandan Kumar<br/>
+Free version: Yes<br/>
+Price: No
+
+SQL Planner, is a browser based centralised solution to get a 360-degree view of your windows and SQL server environment , It’s a comprehensive toolkit designed to help you:
+✅ Real-time SQL & Windows Monitoring
+✅ Deep-Dive Health Analysis
+✅ Security Auditing for SQL server
+✅ Advanced Backup & Scripting Automation
+✅ DBA HandoverNotes Management 
+Visit to know more : https://mssqlplanner.com/
 
 ## SchemaDrift
 <a id="schemadrift"></a>
@@ -3110,6 +3128,18 @@ Free version: No<br/>
 Price: $810
 
 ERwin Data Modeler is an industry-leading data modeling solution that provides a simple, visual interface to manage your complex data environment
+
+
+## Luna Modeler
+<a id="luna-modeler"></a>
+Download page: [Luna Modeler]<br/>
+Release date: 2022-10-05<br/>
+Support Version: 2019/2022<br/>
+Author: Ideamerit<br/>
+Free version: No<br/>
+Price: $99
+
+Luna Modeler is a database design and data modeling tool for relational databases. With Luna Modeler, you can create ER diagrams, design and visualize database structures, generate SQL scripts, and document your data models. 
 
 
 ## Toad Data Point
@@ -6396,6 +6426,7 @@ SQLWATCH is an Open Source (MIT License) Real-Time monitoring solution for SQL S
 [EMS Data Comparer]:http://www.sqlmanager.net/en/products/mssql/datacomparer
 [NitroAccelerator]:http://nitrosphere.com/nitroaccelerator/
 [ERwin Data Modeler]:http://erwin.com/products/data-modeler
+[Luna Modeler]:https://www.datensen.com/luna-modeler-for-relational-databases.html
 [Toad Data Point]:https://www.quest.com/products/toad-data-point/
 [SQL Power Architect]:http://www.sqlpower.ca/page/architect
 [DbWrench]:http://www.dbwrench.com/

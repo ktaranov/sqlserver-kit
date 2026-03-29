@@ -21,7 +21,7 @@ INNER JOIN sys.tables ta  ON ta.object_id = tr.parent_id
 INNER JOIN sys.schemas sc ON sc.schema_id = ta.schema_id
 WHERE tr.is_disabled = 0;
 
--- Perpare Variable Script for Execution
+-- Prepare Variable Script for Execution
 DECLARE @Disable_Statement nvarchar(max) = (
     SELECT tmp.DisableTriggerStatement + CHAR(10) AS "data()"
      FROM #Triggers tmp
@@ -31,9 +31,9 @@ DECLARE @Disable_Statement nvarchar(max) = (
 -- Execute SQL
 EXEC sys.sp_executesql @Disable_Statement;
 
--- Perpare Variable Script for Execution
+-- Prepare Variable Script for Execution
 DECLARE @Enable_Statement nvarchar(max) = (
-   SELECT tmp.DisableTriggerStatement + CHAR(10) AS "data()"
+   SELECT tmp.EnableTriggerStatement + CHAR(10) AS data
      FROM #Triggers tmp
     FOR XML PATH('')
     );

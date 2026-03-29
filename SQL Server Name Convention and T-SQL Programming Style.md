@@ -325,7 +325,7 @@ SQL Server T-SQL Coding Conventions, Best Practices, and Programming Guidelines.
    4. All [Service Broker statements](https://docs.microsoft.com/sql/t-sql/statements/send-transact-sql):
    > If the SEND statement isn't the first statement in a batch or stored procedure, the preceding statement must be terminated with a semicolon (;).
    
- - All script files should end with `GO` and line break. This is neccesary for batching scripts run throw `sqlcmd` or another tools.
+ - All script files should end with `GO` and line break. This is necessary for batching scripts run through `sqlcmd` or another tools.
  - Keywords should be in **UPPERCASE**: `SELECT`, `FROM`, `GROUP BY` etc. This increases the readability of the code.
  - Data types declaration should be in **lowercase**: `varchar(30)`, `int`, `real`, `nvarchar(max)` etc.
    More details [here](https://www.sentryone.com/blog/aaronbertrand/backtobasics-lower-case-data-types).

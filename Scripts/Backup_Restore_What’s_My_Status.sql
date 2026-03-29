@@ -28,4 +28,6 @@ FROM sys.dm_exec_requests r
 WHERE command IN (
         'RESTORE DATABASE'
         , 'BACKUP DATABASE'
+        ,'RESTORE LOG'
+        ,'BACKUP LOG'
         );

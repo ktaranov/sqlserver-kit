@@ -43,6 +43,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SSMS Lizard](#ssms-lizard)                           | [SSMS Lizard]                 | 2020-06-15   | 2018-2018            | Lizard Labs Software | Yes          | No    |
 | [SSMS Object Explorer Menu](#ssms-menu)               | [SSMS Object Explorer Menu]   | 2023-07-10   | 2018-2022            | Daniel Brink         | Yes          | No    |
 | [SQL Shades dark mode](#sql-shades)                   | [SQL Shades]                  | 2022-08-03   | 2018-2022            | Wrism Innovations    | Yes          | No    |
+| [Axial SQL Tools](#axial-sql-tools)                   | [Axial SQL Tools]             | 2025-01-26   | 2022-2025            | Alex Bochkov         | Yes          | No    |
 
 
 <a id="ssmsboost"></a>
@@ -714,6 +715,31 @@ Price: No
 
 Adds a true dark theme to SSMS.
 
+<a id="axial-sql-tools"></a>
+## Axial SQL Tools
+Download page: [Axial SQL Tools]<br/>
+Release date: 2025-01-26<br/>
+Support Version: 20+<br/>
+Developer: Alex Bochkov<br/>
+Free version: Yes<br/>
+Price: No
+
+Axial SQL Tools is a productivity add-in for SQL Server Management Studio 20/21, designed to streamline your workflow and address common limitations in SSMS. Built from the personal experience of a seasoned SQL Server engineer, this tool incorporates community feedback to continuously improve and simplify routine tasks.
+
+Main Features:
+- Transaction Warning: Instantly see if you’ve left any transactions open.
+- Precise Execution Time: Monitor query execution times down to the millisecond on the status bar.
+- Format Any TSQL Code: Validate and format your TSQL code using the Microsoft TSQL parser for improved readability.
+- Query Templates and Snippets: Access a library of query templates for common tasks, saving time on routine queries.
+- Export Grid to Excel: Quickly export grid results directly into an Excel file.
+- Export Grid to Email: Export grid results and send the file via email directly from SSMS.
+- Export Grid as Temp Table: Convert grid results into temporary tables using generated INSERT statements.
+- Script Selected Object Definition: Easily generate scripts for the definitions of selected objects from your query.
+- Server Health Dashboard: Get a quick overview of the server’s key metrics.
+- Right Alignment for Numeric Values in Grid: Automatically align numeric values to the right in the grid for better readability.
+- BULK Data Transfer Between Two Open Connections: Seamlessly transfer bulk data between two open connections with a single click.
+- Query History: Maintain a detailed log of executed queries for auditing and easy retrieval.
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Refactor Studio]: https://sqlrefactorstudio.com/
@@ -761,3 +787,4 @@ Adds a true dark theme to SSMS.
 [DbForge Search Download]:https://www.devart.com/dbforge/sql/search/searchsql22std.exe
 [SSMS Lizard]:https://www.lizard-labs.com/sql_server_management_studio_ssms_extesnsion_lizard.aspx
 [SQL Shades]:https://www.sqlshades.com/
+[Axial SQL Tools]:(https://github.com/Axial-SQL/AxialSqlTools)
