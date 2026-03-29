@@ -81,10 +81,10 @@ public class SSRSReportGenerator
   <soap:Body>
     <GetItemParameters xmlns=""http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer"">
       <ItemPath>{0}</ItemPath>
-      <HistoryID xsi:nil=""true"" />
+      <HistoryID></HistoryID>
       <ForRendering>true</ForRendering>
-      <Values xsi:nil=""true"" />
-      <Credentials xsi:nil=""true"" />
+      <Values></Values>
+      <Credentials></Credentials>
     </GetItemParameters>
   </soap:Body>
 </soap:Envelope>";
