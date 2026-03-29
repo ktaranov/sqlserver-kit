@@ -546,14 +546,14 @@ public class SSRSReportGeneratorExtended
 @"<?xml version=""1.0"" encoding=""utf-8""?>
 <soap:Envelope xmlns:soap=""http://schemas.xmlsoap.org/soap/envelope/"">
   <soap:Body>
-    <ListSubscriptions xmlns=""http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices"">
+    <ListSubscriptions xmlns=""http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer"">
       <ItemPathOrSiteURL>{0}</ItemPathOrSiteURL>
     </ListSubscriptions>
   </soap:Body>
 </soap:Envelope>", XmlEscape(path));
 
             var request = CreateSoapRequest(svcUrl,
-                "http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices/ListSubscriptions",
+                "http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer/ListSubscriptions",
                 user, pass, dom);
 
             var doc = SendSoapRequest(request, soap);
@@ -632,12 +632,44 @@ public class SSRSReportGeneratorExtended
             stream.Write(bodyBytes, 0, bodyBytes.Length);
         }
 
-        using (var response = request.GetResponse())
-        using (var responseStream = response.GetResponseStream())
+        try
         {
-            var doc = new XmlDocument();
-            doc.Load(responseStream);
-            return doc;
+            using (var response = request.GetResponse())
+            using (var responseStream = response.GetResponseStream())
+            {
+                var doc = new XmlDocument();
+                doc.Load(responseStream);
+                return doc;
+            }
+        }
+        catch (WebException wex)
+        {
+            if (wex.Response != null)
+            {
+                try
+                {
+                    using (var errStream = wex.Response.GetResponseStream())
+                    using (var reader = new StreamReader(errStream))
+                    {
+                        string faultBody = reader.ReadToEnd();
+                        var faultDoc = new XmlDocument();
+                        faultDoc.LoadXml(faultBody);
+                        var faultString = faultDoc.SelectSingleNode("//*[local-name()='faultstring']");
+                        var message = faultDoc.SelectSingleNode("//*[local-name()='Message']");
+
+                        string errorMsg = "SSRS SOAP Fault: ";
+                        if (faultString != null) errorMsg += faultString.InnerText;
+                        if (message != null) errorMsg += " | " + message.InnerText;
+
+                        throw new Exception(errorMsg, wex);
+                    }
+                }
+                catch (Exception parseEx)
+                {
+                    if (parseEx.InnerException == wex) throw;
+                }
+            }
+            throw;
         }
     }
 

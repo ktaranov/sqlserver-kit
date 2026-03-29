@@ -79,7 +79,7 @@ public class SSRSReportGenerator
                xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
                xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <soap:Body>
-    <GetItemParameters xmlns=""http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices"">
+    <GetItemParameters xmlns=""http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer"">
       <ItemPath>{0}</ItemPath>
       <HistoryID xsi:nil=""true"" />
       <ForRendering>true</ForRendering>
@@ -95,7 +95,7 @@ public class SSRSReportGenerator
                xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
                xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <soap:Body>
-    <ListChildren xmlns=""http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices"">
+    <ListChildren xmlns=""http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer"">
       <ItemPath>{0}</ItemPath>
       <Recursive>{1}</Recursive>
     </ListChildren>
@@ -170,12 +170,51 @@ public class SSRSReportGenerator
             stream.Write(bodyBytes, 0, bodyBytes.Length);
         }
 
-        using (var response = request.GetResponse())
-        using (var responseStream = response.GetResponseStream())
+        try
         {
-            var doc = new XmlDocument();
-            doc.Load(responseStream);
-            return doc;
+            using (var response = request.GetResponse())
+            using (var responseStream = response.GetResponseStream())
+            {
+                var doc = new XmlDocument();
+                doc.Load(responseStream);
+                return doc;
+            }
+        }
+        catch (WebException wex)
+        {
+            // Capture the SOAP fault detail from the response body
+            if (wex.Response != null)
+            {
+                try
+                {
+                    using (var errStream = wex.Response.GetResponseStream())
+                    using (var reader = new System.IO.StreamReader(errStream))
+                    {
+                        string faultBody = reader.ReadToEnd();
+
+                        // Try to extract the SOAP fault message
+                        var faultDoc = new XmlDocument();
+                        faultDoc.LoadXml(faultBody);
+                        var faultString = faultDoc.SelectSingleNode("//*[local-name()='faultstring']");
+                        var detail = faultDoc.SelectSingleNode("//*[local-name()='Detail']")
+                            ?? faultDoc.SelectSingleNode("//*[local-name()='detail']");
+                        var message = faultDoc.SelectSingleNode("//*[local-name()='Message']");
+
+                        string errorMsg = "SSRS SOAP Fault: ";
+                        if (faultString != null) errorMsg += faultString.InnerText;
+                        if (message != null) errorMsg += " | " + message.InnerText;
+                        if (detail != null && message == null) errorMsg += " | " + detail.InnerText;
+
+                        throw new Exception(errorMsg, wex);
+                    }
+                }
+                catch (Exception parseEx)
+                {
+                    if (parseEx.InnerException == wex) throw;
+                    // If we can't parse the fault, throw the original
+                }
+            }
+            throw;
         }
     }
 
@@ -451,7 +490,7 @@ public class SSRSReportGenerator
             string soap = string.Format(SoapGetParametersTemplate, XmlEscape(path));
 
             var request = CreateSoapRequest(svcUrl,
-                "http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices/GetItemParameters",
+                "http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer/GetItemParameters",
                 user, pass, dom);
 
             var doc = SendSoapRequest(request, soap);
@@ -556,7 +595,7 @@ public class SSRSReportGenerator
                 XmlEscape(folder), recurse.ToString().ToLower());
 
             var request = CreateSoapRequest(svcUrl,
-                "http://schemas.microsoft.com/sqlserver/2005/06/30/reporting/reportingservices/ListChildren",
+                "http://schemas.microsoft.com/sqlserver/reporting/2010/03/01/ReportServer/ListChildren",
                 user, pass, dom);
 
             var doc = SendSoapRequest(request, soap);
