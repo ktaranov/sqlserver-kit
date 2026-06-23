@@ -432,6 +432,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [lowlydba.sqlserver - A cross-platform Ansible collection using PowerShell to configure and maintain SQL Server](https://github.com/lowlydba/lowlydba.sqlserver) - (by John McCall)
     - [SQLWatch - SQLWATCH is an Open Source and completely free SQL Server Monitoring project](https://sqlwatch.io/) (by Marcin Gminski)
     - [Azure_Synapse_Toolbox - Repository of tools/queries for managing and monitoring Azure Synapse](https://github.com/microsoft/Azure_Synapse_Toolbox) (by Microsoft)
+    - [SQLTriage - free, agentless SQL Server health, risk and compliance engine; 500+ checks across 17 frameworks with a graded report](https://github.com/SQLAdrian/SQLTriage) (by Adrian Sullivan) (Github)
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
