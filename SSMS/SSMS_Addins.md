@@ -44,6 +44,7 @@ Complete list of useful and must have add-ins for SQL Server Management Studio -
 | [SSMS Object Explorer Menu](#ssms-menu)               | [SSMS Object Explorer Menu]   | 2023-07-10   | 2018-2022            | Daniel Brink         | Yes          | No    |
 | [SQL Shades dark mode](#sql-shades)                   | [SQL Shades]                  | 2022-08-03   | 2018-2022            | Wrism Innovations    | Yes          | No    |
 | [Axial SQL Tools](#axial-sql-tools)                   | [Axial SQL Tools]             | 2025-01-26   | 2022-2025            | Alex Bochkov         | Yes          | No    |
+| [SqlPulse](#sqlpulse)                                 | [SqlPulse]                    | 2026-04-03   | 2018-2022            | István Safár         | Yes          | Pro avail. |
 
 
 <a id="ssmsboost"></a>
@@ -740,6 +741,36 @@ Main Features:
 - BULK Data Transfer Between Two Open Connections: Seamlessly transfer bulk data between two open connections with a single click.
 - Query History: Maintain a detailed log of executed queries for auditing and easy retrieval.
 
+<a id="sqlpulse"></a>
+## SqlPulse
+Download page: [SqlPulse]<br/>
+Release date: 2026-04-03<br/>
+Support Version: 2018-2026 (SSMS 18, 19, 20, 21, 22)<br/>
+Developer: István Safár<br/>
+Free version: Yes<br/>
+Price: Pro version available
+
+SqlPulse is a high-performance productivity suite for SSMS that consolidates essential power-user features into a single, modern extension.
+
+Main Features:
+- **Query History**: Automatically logs every executed statement into a searchable local database (SQLite/JSON/SQL Server) with optional AES-256 encryption.
+- **Live Result Grid Filter**: Instantly filter and search through result sets in real-time using a high-performance proxy layer.
+- **Grid Conditional Formatting**: Highlight rows or cells based on complex rules and operators directly in the SSMS results grid.
+- **SQL Code Inspector**: Real-time static analysis with 50+ rules to detect performance bottlenecks, legacy syntax, and risky queries (e.g., missing WHERE clauses).
+- **Execution Plan Analysis**: Side-by-side plan comparison, table usage summaries, and operator search for complex execution plans.
+- **Object Explorer Grouping**: Organize databases, SQL Agent jobs, and objects into custom colored folders or automatic schema-based groups.
+- **SQL Profiler**: Lightweight, DMV-based live query capture with blocking trees and top-resource consumer dashboards.
+- **Quick Connect**: Searchable dropdown for preferred and recent connections with the ability to replace the connection of the active editor tab.
+- **Workspace Safety**: Transaction Guard (open transaction reminders), Connection Strip (color-coded environment indicators), and Important DB Alerts for production servers.
+- **Smart Export**: High-speed export of result grids to Excel (XLSX), CSV, or JSON.
+- **SQL Code formatting**
+- **GoTo Definition**
+- **Restore last session**
+- **Connection coloring**
+- **Important db alert**
+- **Transaction open alert**
+- **And even more**
+
 
 [SSMSBoost]:http://www.ssmsboost.com/
 [SQL Refactor Studio]: https://sqlrefactorstudio.com/
@@ -788,3 +819,4 @@ Main Features:
 [SSMS Lizard]:https://www.lizard-labs.com/sql_server_management_studio_ssms_extesnsion_lizard.aspx
 [SQL Shades]:https://www.sqlshades.com/
 [Axial SQL Tools]:(https://github.com/Axial-SQL/AxialSqlTools)
+[SqlPulse]:https://github.com/IstvanSafar/SqlPulse
