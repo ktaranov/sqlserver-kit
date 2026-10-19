@@ -433,6 +433,7 @@ Useful links, scripts, tools and best practice for Microsoft SQL Server Database
     - [SQLWatch - SQLWATCH is an Open Source and completely free SQL Server Monitoring project](https://sqlwatch.io/) (by Marcin Gminski)
     - [Azure_Synapse_Toolbox - Repository of tools/queries for managing and monitoring Azure Synapse](https://github.com/microsoft/Azure_Synapse_Toolbox) (by Microsoft)
     - [Culprit SQL Studio - desktop app, CLI and MCP server that turns Query Store, the plan cache and DMVs into ranked findings with fixes: slow queries, plan regressions, missing indexes, blocking and deadlocks](https://github.com/cristipufu/culprit-sql-studio)
+    - [SQL Rig Free](https://github.com/scottkcoffey-a11y/sqlrig-free) - MIT-licensed SQL Server starter kit for AI coding agents: prompts plus tested T-SQL and PowerShell scripts with dry-run defaults and safety guardrails.
  - Other
     - [SQL# SQLCLR functions](https://sqlsharp.com/) (by Sql Quantum Lift)
     - [SQL Server Latch Classes Library](https://www.sqlskills.com/help/latches/) (by Paul S. Randal)
