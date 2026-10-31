@@ -1,0 +1,153 @@
+USE [master]
+GO
+if exists (select * from sys.tables where name = '#temp1')
+drop table #temp1
+go
+set nocount on
+DECLARE    @SQL              VARCHAR(MAX)
+DECLARE @DatabaseName VARCHAR(255)
+Declare @domain varchar(6)
+Declare @primary varchar(50), @Secondary varchar(50) , @Listnername varchar(20)
+set @domain =  DEFAULT_DOMAIN() 
+--Print (@domain)
+SELECT
+   AGC.name -- Availability Group
+ , RCS.replica_server_name -- SQL cluster node name
+ , ARS.role_desc  -- Replica Role
+ , AGL.dns_name  -- Listener Name
+ into #temp1
+FROM
+ sys.availability_groups_cluster AS AGC
+  INNER JOIN sys.dm_hadr_availability_replica_cluster_states AS RCS
+   ON
+    RCS.group_id = AGC.group_id
+  INNER JOIN sys.dm_hadr_availability_replica_states AS ARS
+   ON
+    ARS.replica_id = RCS.replica_id
+  INNER JOIN sys.availability_group_listeners AS AGL
+   ON
+    AGL.group_id = ARS.group_id
+	--select * from #temp1
+	set @primary = (select replica_server_name from #temp1 where role_desc = 'Primary')
+	set @Secondary = (select replica_server_name from #temp1 where role_desc = 'secondary')
+	set @Listnername = (select distinct dns_name from #temp1 )
+DECLARE crFetch CURSOR FOR
+
+SELECT   NAME FROM  SYS.DATABASES WHERE name  not in 
+(select distinct database_name from 
+master.sys.dm_hadr_database_replica_cluster_states AS dbcs) and database_id > 4 --and name in ( 'EnterpriseEvent','EnterprisePrivate')
+
+
+OPEN crFetch
+FETCH NEXT FROM crFetch INTO @DatabaseName
+
+WHILE @@FETCH_STATUS <> -1
+BEGIN
+
+
+SET @SQL =
+
+
+'
+:Connect '+ @primary +'
+GO
+USE [master]
+GO
+ALTER DATABASE [' + @DatabaseName + '] SET RECOVERY FULL WITH rollback immediate
+GO
+BACKUP DATABASE [' + @DatabaseName + '] TO  DISK = N''\\Shared Path\' + @DatabaseName + '.bak'' WITH NOFORMAT, NOINIT,  
+NAME = N''' + @DatabaseName + '-Full Database Backup'',
+SKIP, NOREWIND, NOUNLOAD, COMPRESSION,  STATS = 10
+GO
+--- YOU MUST EXECUTE THE FOLLOWING SCRIPT IN SQLCMD MODE.
+-- Primary
+:Connect '+ @primary +'
+
+IF (SELECT state FROM sys.endpoints WHERE name = N''Hadr_endpoint'') <> 0
+BEGIN
+	ALTER ENDPOINT [Hadr_endpoint] STATE = STARTED
+END
+
+GO
+
+:Connect '+ @primary +'
+
+IF EXISTS(SELECT * FROM sys.server_event_sessions WHERE name=''AlwaysOn_health'')
+BEGIN
+  ALTER EVENT SESSION [AlwaysOn_health] ON SERVER WITH (STARTUP_STATE=ON);
+END
+IF NOT EXISTS(SELECT * FROM sys.dm_xe_sessions WHERE name=''AlwaysOn_health'')
+BEGIN
+  ALTER EVENT SESSION [AlwaysOn_health] ON SERVER STATE=START;
+END
+GO
+--Secondary
+:Connect '+ @secondary +'
+
+IF (SELECT state FROM sys.endpoints WHERE name = N''Hadr_endpoint'') <> 0
+BEGIN
+	ALTER ENDPOINT [Hadr_endpoint] STATE = STARTED
+END
+
+GO
+
+:Connect '+ @secondary +'
+
+IF EXISTS(SELECT * FROM sys.server_event_sessions WHERE name=''AlwaysOn_health'')
+BEGIN
+  ALTER EVENT SESSION [AlwaysOn_health] ON SERVER WITH (STARTUP_STATE=ON);
+END
+IF NOT EXISTS(SELECT * FROM sys.dm_xe_sessions WHERE name=''AlwaysOn_health'')
+BEGIN
+  ALTER EVENT SESSION [AlwaysOn_health] ON SERVER STATE=START;
+END
+GO
+
+:Connect '+ @primary +'
+
+USE [master]
+GO
+
+CREATE AVAILABILITY GROUP [' +left( @primary ,14)+ '_' + @DatabaseName + ']
+WITH (AUTOMATED_BACKUP_PREFERENCE = PRIMARY,
+--BASIC, -- please use it for Standard edition
+DB_FAILOVER = OFF,
+DTC_SUPPORT = NONE,
+REQUIRED_SYNCHRONIZED_SECONDARIES_TO_COMMIT = 0)
+FOR DATABASE [' + @DatabaseName + ']
+REPLICA ON N'''+ @primary +''' WITH (ENDPOINT_URL = N''TCP://'+left( @primary ,15)+'.'+@domain+'.local:5022'', FAILOVER_MODE = AUTOMATIC, AVAILABILITY_MODE = SYNCHRONOUS_COMMIT, SEEDING_MODE = AUTOMATIC, SECONDARY_ROLE(ALLOW_CONNECTIONS = NO)),
+	N'''+ @secondary +''' WITH (ENDPOINT_URL = N''TCP://'+left( @secondary ,15)+'.'+@domain+'.local:5022'', FAILOVER_MODE = AUTOMATIC, AVAILABILITY_MODE = SYNCHRONOUS_COMMIT, SEEDING_MODE = AUTOMATIC, SECONDARY_ROLE(ALLOW_CONNECTIONS = NO));
+GO
+waitfor delay ''00:00:05''
+go
+:Connect '+ @secondary +'
+ALTER AVAILABILITY GROUP [' +left( @primary ,14)+ '_' + @DatabaseName + '] JOIN;
+GO
+ALTER AVAILABILITY GROUP [' +left( @primary ,14)+ '_' + @DatabaseName + '] GRANT CREATE ANY DATABASE;
+GO
+
+
+GO
+
+
+
+'
+
+PRINT @SQL
+
+
+
+
+--EXEC(@SQL)
+
+
+FETCH NEXT FROM crFetch INTO @DatabaseName
+END
+
+CLOSE crFetch
+DEALLOCATE crFetch
+go
+drop table #temp1
+go
+
+SELECT DEFAULT_DOMAIN() 
